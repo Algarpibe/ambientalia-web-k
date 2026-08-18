@@ -2,21 +2,21 @@
   "meta": {
     "sonda": "escalon-etiquetas",
     "que": "qué emite el original de kunakair.com en una entrada de blog sin etiquetas (post_tag)",
-    "fuente": "corpus/entradas-blog — 149 capturas congeladas el 2026-08-04",
+    "fuente": "corpus/entradas-blog — 152 capturas congeladas el 2026-08-14",
     "ficha": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS",
-    "sello": "2026-08-08T21-14-01",
+    "sello": "2026-08-18T16-50-17",
     "sabotaje": null
   },
   "contrato": {
     "unidad": "entradas del corpus",
-    "minimo": 149,
-    "evaluadas": 149,
+    "minimo": 152,
+    "evaluadas": 152,
     "fallos": []
   },
   "censo": {
-    "bloque": 149,
-    "case-categorias": 149,
-    "case-tags": 141,
+    "bloque": 152,
+    "case-categorias": 152,
+    "case-tags": 143,
     "localizador": "case-taxonomies",
     "discriminante": "case-tags",
     "problemas": []
@@ -26,8 +26,8 @@
     "soloDisco": []
   },
   "sinEtiquetas": {
-    "n": 8,
-    "de": 149,
+    "n": 9,
+    "de": 152,
     "ficheros": [
       "covid-19-calidad-del-aire.html",
       "detectores-emisiones-coronavirus-contaminacion.html",
@@ -35,6 +35,7 @@
       "nos-hemos-mudado.html",
       "proyecto-simgo.html",
       "webinar-como-controlar-las-emisiones-en-mineria-junio-2025.html",
+      "webinar-control-de-la-contaminacion-del-aire-en-la-industria.html",
       "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar.html",
       "webinar-redes-hibridas-monitorizacion-ambiental.html"
     ]
@@ -42,7 +43,7 @@
   "formasSinEtiquetas": [
     {
       "forma": "<span class=\"case-categorias\"><span>…</span><a href=\"…\">…</a></span>",
-      "n": 8,
+      "n": 9,
       "ficheros": [
         "covid-19-calidad-del-aire.html",
         "detectores-emisiones-coronavirus-contaminacion.html",
@@ -50,6 +51,7 @@
         "nos-hemos-mudado.html",
         "proyecto-simgo.html",
         "webinar-como-controlar-las-emisiones-en-mineria-junio-2025.html",
+        "webinar-control-de-la-contaminacion-del-aire-en-la-industria.html",
         "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar.html",
         "webinar-redes-hibridas-monitorizacion-ambiental.html"
       ]
@@ -57,14 +59,14 @@
   ],
   "bloquesVacios": [],
   "rotulo": {
-    "conEtiquetas": 141,
-    "conUna": 63,
+    "conEtiquetas": 143,
+    "conUna": 65,
     "conVarias": 78,
     "noCuadran": [],
     "derivadoDelNumero": true
   },
   "veredicto": {
     "decision": "OMITE",
-    "porQue": "8 de 149 entradas no traen etiquetas, y en las 8 el original NO emite el <span class=\"case-tags\">: el bloque .case-taxonomies sigue ahí con la categoría sola. Una sola forma, sin excepciones."
+    "porQue": "9 de 152 entradas no traen etiquetas, y en las 9 el original NO emite el <span class=\"case-tags\">: el bloque .case-taxonomies sigue ahí con la categoría sola. Una sola forma, sin excepciones."
   }
 }

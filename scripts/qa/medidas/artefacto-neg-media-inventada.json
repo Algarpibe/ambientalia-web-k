@@ -8,7 +8,7 @@
   },
   "servido": {
     "referencias": 406,
-    "ausentesFichadas": 23,
+    "ausentesFichadas": 22,
     "ausentesNuevas": [],
     "listaFichadas": [
       "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines-1.jpg",
@@ -42,27 +42,21 @@
     "shaNoCasa": []
   },
   "cms": {
-    "tamanosDeclarados": 557,
+    "tamanosDeclarados": 2273,
     "varianteAusente": [],
     "dimensionDistinta": []
   },
   "cuerpo": {
     "referidos": 433,
-    "resuelven": 424,
+    "resuelven": 429,
     "enCaptura": 373,
-    "yaLocales": 51,
+    "yaLocales": 56,
     "origen404": [
       "2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg",
       "2026/05/Emisiones-fugitivas_programa-LDAR.jpg",
       "2026/05/Exposicion-de-la-infancia-al-oxido-nitrico_Kunak-scaled.jpg"
     ],
-    "nuncaPedida": [
-      "2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf",
-      "2024/11/Efectos-del-ozono-troposferico-en-la-vegetacion-y-los-ecosistemas-de-Ecologistas-en-Accion.pdf",
-      "2024/12/EEA-Report-Air-Pollution.pdf",
-      "2025/02/Rapport_Ombrieres_village_olympique_2024.pdf",
-      "2026/06/Kunak_AIR_Pro_Co-location_tests.pdf"
-    ],
+    "nuncaPedida": [],
     "nuevas": [
       "2099/01/esta-referencia-no-se-pidio-jamas.jpg"
     ],

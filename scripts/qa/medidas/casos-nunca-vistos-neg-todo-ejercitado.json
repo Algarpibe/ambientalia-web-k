@@ -1,27 +1,27 @@
 {
   "meta": {
-    "fecha": "2026-08-09",
+    "fecha": "2026-08-18",
     "pregunta": "¿qué casos que el esquema ADMITE no ejercita ninguna fila sembrada?",
-    "alcance": "los 9 catálogos de src/lib — 46 filas. NO el corpus del original",
+    "alcance": "los 9 catálogos de src/lib — 324 filas. NO el corpus del original",
     "deDonde": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS · PASO 3",
     "noEsUnJuicio": "un caso sin ejercitar no es un defecto: es un camino de render sin estrenar",
     "sabotaje": "todo-ejercitado"
   },
   "contrato": {
-    "universo": 296,
-    "filasRecorridas": 46,
-    "ejercitados": 296,
-    "minimo": 296,
+    "universo": 335,
+    "filasRecorridas": 324,
+    "ejercitados": 335,
+    "minimo": 335,
     "problemas": [
-      "PLENO — 0 de 296 casos sin ejercitar sobre 46 filas. Lo que esta sonda discrimina es la AUSENCIA: cobertura total significa que no está mirando la ausencia"
+      "PLENO — 0 de 335 casos sin ejercitar sobre 324 filas. Lo que esta sonda discrimina es la AUSENCIA: cobertura total significa que no está mirando la ausencia"
     ]
   },
   "fueraDelUniverso": {
-    "total": 111,
+    "total": 199,
     "porColeccion": {
-      "articulos-kb": 37,
+      "articulos-kb": 124,
       "categorias": 0,
-      "etiquetas": 0,
+      "etiquetas": 1,
       "categorias-recursos": 1,
       "categorias-cientificas": 0,
       "media": 61,

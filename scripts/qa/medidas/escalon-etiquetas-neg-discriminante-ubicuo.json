@@ -2,25 +2,25 @@
   "meta": {
     "sonda": "escalon-etiquetas",
     "que": "qué emite el original de kunakair.com en una entrada de blog sin etiquetas (post_tag)",
-    "fuente": "corpus/entradas-blog — 149 capturas congeladas el 2026-08-04",
+    "fuente": "corpus/entradas-blog — 152 capturas congeladas el 2026-08-14",
     "ficha": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS",
-    "sello": "2026-08-08T21-13-59",
+    "sello": "2026-08-18T16-50-15",
     "sabotaje": "discriminante-ubicuo"
   },
   "contrato": {
     "unidad": "entradas del corpus",
-    "minimo": 149,
-    "evaluadas": 149,
+    "minimo": 152,
+    "evaluadas": 152,
     "fallos": []
   },
   "censo": {
-    "bloque": 149,
-    "case-categorias": 149,
-    "case-tags": 141,
+    "bloque": 152,
+    "case-categorias": 152,
+    "case-tags": 143,
     "localizador": "case-taxonomies",
     "discriminante": "case-categorias",
     "problemas": [
-      "DISCRIMINANTE UBICUO — .case-categorias casó en las 149/149. Un patrón que casa en TODAS no discrimina, y «0 sin etiquetas» es su pleno, no una medida."
+      "DISCRIMINANTE UBICUO — .case-categorias casó en las 152/152. Un patrón que casa en TODAS no discrimina, y «0 sin etiquetas» es su pleno, no una medida."
     ]
   },
   "cotejoIndiceDisco": {
@@ -29,14 +29,14 @@
   },
   "sinEtiquetas": {
     "n": 0,
-    "de": 149,
+    "de": 152,
     "ficheros": []
   },
   "formasSinEtiquetas": [],
   "bloquesVacios": [],
   "rotulo": {
-    "conEtiquetas": 149,
-    "conUna": 147,
+    "conEtiquetas": 152,
+    "conUna": 150,
     "conVarias": 2,
     "noCuadran": [
       {
@@ -239,6 +239,12 @@
       },
       {
         "f": "covid-19-calidad-del-aire.html",
+        "enlaces": 1,
+        "rotulo": "Categoría: ",
+        "esperado": "Etiqueta: "
+      },
+      {
+        "f": "descarga-catalogo-kunak.html",
         "enlaces": 1,
         "rotulo": "Categoría: ",
         "esperado": "Etiqueta: "
@@ -497,6 +503,12 @@
       },
       {
         "f": "kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024.html",
+        "enlaces": 1,
+        "rotulo": "Categoría: ",
+        "esperado": "Etiqueta: "
+      },
+      {
+        "f": "kunak-obtiene-el-sello-reconcilia.html",
         "enlaces": 1,
         "rotulo": "Categoría: ",
         "esperado": "Etiqueta: "
@@ -898,6 +910,12 @@
         "esperado": "Etiqueta: "
       },
       {
+        "f": "webinar-control-de-la-contaminacion-del-aire-en-la-industria.html",
+        "enlaces": 1,
+        "rotulo": "Categoría: ",
+        "esperado": "Etiqueta: "
+      },
+      {
         "f": "webinar-control-de-olores-en-vertederos-y-edar.html",
         "enlaces": 1,
         "rotulo": "Categoría: ",
@@ -938,6 +956,6 @@
   },
   "veredicto": {
     "decision": "NO SE PUDO MEDIR",
-    "porQue": "DISCRIMINANTE UBICUO — .case-categorias casó en las 149/149. Un patrón que casa en TODAS no discrimina, y «0 sin etiquetas» es su pleno, no una medida."
+    "porQue": "DISCRIMINANTE UBICUO — .case-categorias casó en las 152/152. Un patrón que casa en TODAS no discrimina, y «0 sin etiquetas» es su pleno, no una medida."
   }
 }

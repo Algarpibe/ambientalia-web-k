@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-08",
+    "fecha": "2026-08-18",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
     "sabotaje": "selector-muerto"
@@ -48,8 +48,10 @@
       "casos.galeria",
       "casos.sectores",
       "casos.soluciones",
+      "monograficos.cuerpo.filas.columnas.modulos.titulares",
       "monograficos.hero.modulos.paragraphs",
-      "productos.cuerpo"
+      "productos.cuerpo",
+      "productos.cuerpo.titulares"
     ]
   },
   "contrato": {
@@ -108,6 +110,7 @@
       "productos.cuerpo",
       "productos.cuerpo.bloques",
       "productos.cuerpo.bloques.ul",
+      "productos.cuerpo.titulares",
       "productos.cuerpo.diapositivas",
       "productos.cuerpo.imagenes",
       "productos.cuerpo.body",
@@ -138,6 +141,7 @@
       "monograficos.cuerpo.filas.columnas.modulos",
       "monograficos.cuerpo.filas.columnas.modulos.bloques",
       "monograficos.cuerpo.filas.columnas.modulos.bloques.ul",
+      "monograficos.cuerpo.filas.columnas.modulos.titulares",
       "monograficos.cuerpo.filas.columnas.modulos.items",
       "monograficos.cuerpo.filas.columnas.modulos.cabeceras",
       "monograficos.cuerpo.filas.columnas.modulos.filas",

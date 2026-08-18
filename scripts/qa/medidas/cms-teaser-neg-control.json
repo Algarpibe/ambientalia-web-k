@@ -1,9 +1,9 @@
 {
   "meta": {
-    "fecha": "2026-08-04",
+    "fecha": "2026-08-18",
     "sabotaje": null,
     "pregunta": "¿es `CaseStudy`/`BlogPost` una proyección derivable del documento destino?",
-    "alcance": "3 pares comparables de 34 teasers — el resto no tiene destino transcrito",
+    "alcance": "34 pares comparables de 34 teasers — el resto no tiene destino transcrito",
     "asimetria": "un DISTINTO basta para falsar la derivación; un IDÉNTICO en estos pares NO prueba derivabilidad universal",
     "equivalencias": {
       "casos": {
@@ -59,28 +59,29 @@
   "veredicto": {
     "decision": "SE SOSTIENE",
     "noDerivables": [
+      "entradas-blog.title",
       "entradas-blog.date"
     ],
-    "paresComparables": 3
+    "paresComparables": 34
   },
   "porCampo": {
     "casos.title": {
-      "IDÉNTICO": 1,
+      "IDÉNTICO": 16,
       "POR REGLA": 0,
       "DISTINTO": 0,
       "AUSENTE": 0,
       "ejemplo": null
     },
     "casos.client": {
-      "IDÉNTICO": 1,
+      "IDÉNTICO": 16,
       "POR REGLA": 0,
       "DISTINTO": 0,
       "AUSENTE": 0,
       "ejemplo": null
     },
     "casos.image": {
-      "IDÉNTICO": 0,
-      "POR REGLA": 1,
+      "IDÉNTICO": 3,
+      "POR REGLA": 13,
       "DISTINTO": 0,
       "AUSENTE": 0,
       "ejemplo": {
@@ -92,7 +93,7 @@
     },
     "casos.href": {
       "IDÉNTICO": 0,
-      "POR REGLA": 1,
+      "POR REGLA": 16,
       "DISTINTO": 0,
       "AUSENTE": 0,
       "ejemplo": {
@@ -103,7 +104,7 @@
       }
     },
     "casos.sector": {
-      "IDÉNTICO": 1,
+      "IDÉNTICO": 16,
       "POR REGLA": 0,
       "DISTINTO": 0,
       "AUSENTE": 0,
@@ -111,7 +112,7 @@
     },
     "casos.sectorHref": {
       "IDÉNTICO": 0,
-      "POR REGLA": 1,
+      "POR REGLA": 16,
       "DISTINTO": 0,
       "AUSENTE": 0,
       "ejemplo": {
@@ -122,44 +123,48 @@
       }
     },
     "entradas-blog.title": {
-      "IDÉNTICO": 2,
+      "IDÉNTICO": 17,
       "POR REGLA": 0,
-      "DISTINTO": 0,
+      "DISTINTO": 1,
       "AUSENTE": 0,
-      "ejemplo": null
+      "ejemplo": {
+        "estado": "DISTINTO",
+        "teaser": "Medición de gases en los vertederos de basura",
+        "documento": "Contaminación del aire en vertederos: cómo afecta a la calidad del aire"
+      }
     },
     "entradas-blog.date": {
       "IDÉNTICO": 0,
       "POR REGLA": 0,
-      "DISTINTO": 2,
+      "DISTINTO": 18,
       "AUSENTE": 0,
       "ejemplo": {
         "estado": "DISTINTO",
-        "teaser": "Mar 25, 2026",
-        "documento": "25 marzo 2026"
+        "teaser": "Ago 30, 2024",
+        "documento": "30 agosto 2024"
       }
     },
     "entradas-blog.image": {
-      "IDÉNTICO": 0,
-      "POR REGLA": 2,
+      "IDÉNTICO": 8,
+      "POR REGLA": 10,
       "DISTINTO": 0,
       "AUSENTE": 0,
       "ejemplo": {
         "estado": "POR REGLA",
-        "teaser": "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1024x683.jpg",
-        "documento": "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg",
+        "teaser": "/images/uploads/2024/08/SEVESO-1976-1024x819.jpg",
+        "documento": "/images/uploads/2024/08/SEVESO-1976.jpg",
         "regla": "M-IMG · el teaser pinta la variante de `srcset`"
       }
     },
     "entradas-blog.href": {
       "IDÉNTICO": 0,
-      "POR REGLA": 2,
+      "POR REGLA": 18,
       "DISTINTO": 0,
       "AUSENTE": 0,
       "ejemplo": {
         "estado": "POR REGLA",
-        "teaser": "/monitorizacion-de-emisiones-del-trafico-urbano",
-        "documento": "monitorizacion-de-emisiones-del-trafico-urbano",
+        "teaser": "https://kunakair.com/es/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas/",
+        "documento": "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
         "regla": "§4 · la ruta se compone de prefijo + slug"
       }
     }
@@ -204,6 +209,365 @@
     },
     {
       "origen": "sectores/calidad-del-aire-en-las-ciudades",
+      "grupo": "proyectos",
+      "destino": "casos/citytraq-calidad-del-aire-urbano",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "CityTRAQ: Colaboración europea para mejorar la calidad del aire urbano"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "CityTRAQ"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/07/CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano-1024x683.jpg",
+          "documento": "/images/uploads/2025/07/CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/citytraq-calidad-del-aire-urbano/",
+          "documento": "citytraq-calidad-del-aire-urbano",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Urbano"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/urbano/",
+          "documento": "urbano",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/calidad-del-aire-en-las-ciudades",
+      "grupo": "proyectos",
+      "destino": "casos/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Integración avanzada para el monitoreo del tráfico y la calidad del aire en Castel D’Ario (Italia)"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Ayuntamiento de Castel D’Ario"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/06/castel-d-ario-1024x683.jpg",
+          "documento": "/images/uploads/2025/06/castel-d-ario.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario/",
+          "documento": "monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Urbano"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/urbano/",
+          "documento": "urbano",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/control-de-emisiones-industriales",
+      "grupo": "proyectos",
+      "destino": "casos/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de la calidad del aire en el mayor corredor de centros de datos de EE.UU"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Virginia Department of Environmental Quality (DEQ)"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2026/05/639130508516830000.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+          "documento": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/control-de-emisiones-industriales",
+      "grupo": "proyectos",
+      "destino": "casos/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de la calidad del aire en la planta petroquímica de BASF en Ludwigshafen (Alemania)"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "BASF SE"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany-1024x683.jpg",
+          "documento": "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/",
+          "documento": "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/control-de-emisiones-industriales",
+      "grupo": "proyectos",
+      "destino": "casos/calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Análisis de la calidad del aire en una planta de procesamiento de alimentos en Singapur"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Planta de procesamiento de alimentos"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/01/food-processing-plant-in-Singapore-1024x683.jpg",
+          "documento": "/images/uploads/2025/01/food-processing-plant-in-Singapore.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur/",
+          "documento": "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/contaminacion-por-construccion",
+      "grupo": "proyectos",
+      "destino": "casos/demolicion-estadio-vicente-calderon",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Vigilancia ambiental en la demolición del estadio Vicente Calderón"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "AFC Ingenieros"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium-1024x683.jpg",
+          "documento": "/images/uploads/2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/demolicion-estadio-vicente-calderon/",
+          "documento": "demolicion-estadio-vicente-calderon",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Obras"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/obras/",
+          "documento": "obras",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/estudio-de-la-contaminacion-atmosferica",
+      "grupo": "proyectos",
+      "destino": "casos/red-de-monitorizacion-ambiental-mades-paraguay",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Modernización de la red de monitorización ambiental del MADES de Paraguay"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Ministerio del Ambiente y Desarrollo Sostenible (MADES)"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2026/05/MADES-1-1024x683.jpg",
+          "documento": "/images/uploads/2026/05/MADES-1.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/red-de-monitorizacion-ambiental-mades-paraguay/",
+          "documento": "red-de-monitorizacion-ambiental-mades-paraguay",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Investigación y consultoría"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/investigacion-consultoria/",
+          "documento": "investigacion-consultoria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/estudio-de-la-contaminacion-atmosferica",
+      "grupo": "proyectos",
+      "destino": "casos/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Respirar Fundo, el proyecto que revela qué aire respiran los escolares portugueses"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Associação Bora Ambientar"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas-1024x683.jpg",
+          "documento": "/images/uploads/2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas/",
+          "documento": "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Investigación y consultoría"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/investigacion-consultoria/",
+          "documento": "investigacion-consultoria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/estudio-de-la-contaminacion-atmosferica",
+      "grupo": "proyectos",
+      "destino": "casos/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de gases tóxicos por sargazo en el Caribe para protección ambiental y turística"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Instituto Politécnico Nacional"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/06/sargazo-cancun-repmex-1024x683.jpg",
+          "documento": "/images/uploads/2025/06/sargazo-cancun-repmex.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe/",
+          "documento": "monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Investigación y consultoría"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/investigacion-consultoria/",
+          "documento": "investigacion-consultoria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "sectores/calidad-del-aire-en-las-ciudades",
+      "grupo": "articulos",
+      "destino": "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Normativa Seveso, el control de riesgos con las sustancias peligrosas"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Ago 30, 2024",
+          "documento": "30 agosto 2024"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2024/08/SEVESO-1976-1024x819.jpg",
+          "documento": "/images/uploads/2024/08/SEVESO-1976.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas/",
+          "documento": "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/calidad-del-aire-en-las-ciudades",
       "grupo": "articulos",
       "destino": "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano",
       "campos": {
@@ -226,6 +590,601 @@
           "estado": "POR REGLA",
           "teaser": "/monitorizacion-de-emisiones-del-trafico-urbano",
           "documento": "monitorizacion-de-emisiones-del-trafico-urbano",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/calidad-del-aire-en-las-ciudades",
+      "grupo": "articulos",
+      "destino": "entradas-blog/contaminacion-del-aire-en-madrid",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Contaminación del aire en Madrid, desafíos y soluciones en la lucha por la salud ambiental"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Dic 27, 2023",
+          "documento": "27 diciembre 2023"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2024/01/Air_pollution_in_Madrid.webp"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/contaminacion-del-aire-en-madrid/",
+          "documento": "contaminacion-del-aire-en-madrid",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/control-de-emisiones-industriales",
+      "grupo": "articulos",
+      "destino": "entradas-blog/contaminacion-incendios-forestales-aire",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "El impacto del humo de incendios forestales en la calidad del aire"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Mar 3, 2021",
+          "documento": "3 marzo 2021"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2021/03/contaminacion-por-incendios-forestales-monitorizacion-aire.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/contaminacion-incendios-forestales-aire/",
+          "documento": "contaminacion-incendios-forestales-aire",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/control-de-emisiones-industriales",
+      "grupo": "articulos",
+      "destino": "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura",
+      "campos": {
+        "title": {
+          "estado": "DISTINTO",
+          "teaser": "Medición de gases en los vertederos de basura",
+          "documento": "Contaminación del aire en vertederos: cómo afecta a la calidad del aire"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Abr 4, 2023",
+          "documento": "1 febrero 2025"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2023/04/gases-en-los-vertederos-de-basura.png",
+          "documento": "/images/uploads/2025/01/movimiento-de-residuos-en-vertedero-Kunak.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/medicion-de-gases-en-los-vertederos-de-basura/",
+          "documento": "medicion-de-gases-en-los-vertederos-de-basura",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/control-de-emisiones-industriales",
+      "grupo": "articulos",
+      "destino": "entradas-blog/contaminacion-aire-deporte",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "¿Cómo afecta la contaminación del aire en el deporte practicado al aire libre?"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Sep 24, 2020",
+          "documento": "24 septiembre 2020"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2020/09/contaminacion-del-aire-en-el-deporte_.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/contaminacion-aire-deporte/",
+          "documento": "contaminacion-aire-deporte",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/contaminacion-por-construccion",
+      "grupo": "articulos",
+      "destino": "entradas-blog/contaminacion-del-aire-por-obras",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Contaminación del aire por obras, analizando el impacto ambiental de la construcción"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Ago 31, 2023",
+          "documento": "31 agosto 2023"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2023/08/contaminacion-del-aire-por-obras-1024x683.jpg",
+          "documento": "/images/uploads/2023/08/contaminacion-del-aire-por-obras.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/contaminacion-del-aire-por-obras/",
+          "documento": "contaminacion-del-aire-por-obras",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/contaminacion-por-construccion",
+      "grupo": "articulos",
+      "destino": "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización del aire en proyectos de remediación: control de emisiones y cumplimiento ambiental"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Abr 28, 2026",
+          "documento": "28 abril 2026"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2026/05/Trabajos-de-remediacion-ambiental_Kunak-1024x683.jpeg",
+          "documento": "/images/uploads/2026/05/Trabajos-de-remediacion-ambiental_Kunak.jpeg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/monitorizacion-aire-remediacion-suelos-contaminados/",
+          "documento": "monitorizacion-aire-remediacion-suelos-contaminados",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/contaminacion-por-construccion",
+      "grupo": "articulos",
+      "destino": "entradas-blog/impacto-ambiental-industria-cementera",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Impacto ambiental de la industria cementera: desafíos y soluciones tecnológicas"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Feb 21, 2022",
+          "documento": "21 febrero 2022"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2022/02/the-cement-industry-and-the-environment-air-quality-monitoring.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/impacto-ambiental-industria-cementera/",
+          "documento": "impacto-ambiental-industria-cementera",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/estudio-de-la-contaminacion-atmosferica",
+      "grupo": "articulos",
+      "destino": "entradas-blog/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "¿Qué está pasando con la calidad del aire en Ciudad de México?"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "May 15, 2019",
+          "documento": "15 mayo 2019"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2019/05/calidad-del-aire-ciudad-de-mexico-1024x682.jpeg",
+          "documento": "/images/uploads/2019/05/calidad-del-aire-ciudad-de-mexico.jpeg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico/",
+          "documento": "que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/estudio-de-la-contaminacion-atmosferica",
+      "grupo": "articulos",
+      "destino": "entradas-blog/quemas-prescritas-agricolas-calidad-aire",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Quemas controladas de cultivos, conciliando práctica agrícola y calidad del aire"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Abr 27, 2022",
+          "documento": "27 abril 2022"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2022/04/quemas-prescritas-agricolas-calidad-aire-1.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/quemas-prescritas-agricolas-calidad-aire/",
+          "documento": "quemas-prescritas-agricolas-calidad-aire",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "sectores/estudio-de-la-contaminacion-atmosferica",
+      "grupo": "articulos",
+      "destino": "entradas-blog/conferencia-partes-cop26-incendios",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Conferencia sobre el Cambio Climático COP26, una cita ineludible para una humanidad en la encrucijada"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Sep 21, 2021",
+          "documento": "21 septiembre 2021"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/conferencia-partes-cop26-incendios/",
+          "documento": "conferencia-partes-cop26-incendios",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "grupo": "proyectos",
+      "destino": "casos/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de la calidad del aire en el mayor corredor de centros de datos de EE.UU"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Virginia Department of Environmental Quality (DEQ)"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2026/05/639130508516830000.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+          "documento": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "grupo": "proyectos",
+      "destino": "casos/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de la calidad del aire en la planta petroquímica de BASF en Ludwigshafen (Alemania)"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "BASF SE"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany-1024x683.jpg",
+          "documento": "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/",
+          "documento": "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "grupo": "proyectos",
+      "destino": "casos/calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Análisis de la calidad del aire en una planta de procesamiento de alimentos en Singapur"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Planta de procesamiento de alimentos"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/01/food-processing-plant-in-Singapore-1024x683.jpg",
+          "documento": "/images/uploads/2025/01/food-processing-plant-in-Singapore.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur/",
+          "documento": "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "grupo": "proyectos",
+      "destino": "casos/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de la calidad del aire en el mayor corredor de centros de datos de EE.UU"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Virginia Department of Environmental Quality (DEQ)"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2026/05/639130508516830000.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos/",
+          "documento": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "grupo": "proyectos",
+      "destino": "casos/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de la calidad del aire en la planta petroquímica de BASF en Ludwigshafen (Alemania)"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "BASF SE"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany-1024x683.jpg",
+          "documento": "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/",
+          "documento": "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "grupo": "proyectos",
+      "destino": "casos/calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Análisis de la calidad del aire en una planta de procesamiento de alimentos en Singapur"
+        },
+        "client": {
+          "estado": "IDÉNTICO",
+          "teaser": "Planta de procesamiento de alimentos"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/01/food-processing-plant-in-Singapore-1024x683.jpg",
+          "documento": "/images/uploads/2025/01/food-processing-plant-in-Singapore.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur/",
+          "documento": "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        },
+        "sector": {
+          "estado": "IDÉNTICO",
+          "teaser": "Industria"
+        },
+        "sectorHref": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/sector/industria/",
+          "documento": "industria",
+          "regla": "§4 · ruta del término, `/sector/<slug>` en el original"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "grupo": "articulos",
+      "destino": "entradas-blog/monitorizacion-mal-olor-industrial",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Control de malos olores industriales, una solución para reducir la contaminación odorífera"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Oct 28, 2022",
+          "documento": "28 octubre 2022"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2022/10/industrial-odour-control.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/monitorizacion-mal-olor-industrial/",
+          "documento": "monitorizacion-mal-olor-industrial",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "grupo": "articulos",
+      "destino": "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Contaminación de la industria de fertilizantes y su impacto en la calidad del aire"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Mar 1, 2024",
+          "documento": "1 marzo 2024"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2024/03/airplane-465619_1280-1024x680.jpeg",
+          "documento": "/images/uploads/2024/03/airplane-465619_1280.jpeg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire/",
+          "documento": "contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "grupo": "articulos",
+      "destino": "entradas-blog/contaminacion-incendios-forestales-aire",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "El impacto del humo de incendios forestales en la calidad del aire"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Mar 3, 2021",
+          "documento": "3 marzo 2021"
+        },
+        "image": {
+          "estado": "IDÉNTICO",
+          "teaser": "/images/uploads/2021/03/contaminacion-por-incendios-forestales-monitorizacion-aire.jpg"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/contaminacion-incendios-forestales-aire/",
+          "documento": "contaminacion-incendios-forestales-aire",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "grupo": "articulos",
+      "destino": "entradas-blog/contaminacion-por-produccion-de-energia",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Contaminación por producción de energía: impacto ambiental y en la salud"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "May 29, 2025",
+          "documento": "29 mayo 2025"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2025/05/contaminacion-produccion-energia-1024x683.jpg",
+          "documento": "/images/uploads/2025/05/contaminacion-produccion-energia.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/contaminacion-por-produccion-de-energia/",
+          "documento": "contaminacion-por-produccion-de-energia",
           "regla": "§4 · la ruta se compone de prefijo + slug"
         }
       }
@@ -254,6 +1213,34 @@
           "estado": "POR REGLA",
           "teaser": "/contaminacion-por-metano",
           "documento": "contaminacion-por-metano",
+          "regla": "§4 · la ruta se compone de prefijo + slug"
+        }
+      }
+    },
+    {
+      "origen": "monograficos/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "grupo": "articulos",
+      "destino": "entradas-blog/monitorizacion-de-emisiones-fugitivas",
+      "campos": {
+        "title": {
+          "estado": "IDÉNTICO",
+          "teaser": "Monitorización de emisiones fugitivas: detección y control de fugas industriales"
+        },
+        "date": {
+          "estado": "DISTINTO",
+          "teaser": "Jul 21, 2026",
+          "documento": "21 julio 2026"
+        },
+        "image": {
+          "estado": "POR REGLA",
+          "teaser": "/images/uploads/2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak-1024x683.jpg",
+          "documento": "/images/uploads/2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak.jpg",
+          "regla": "M-IMG · el teaser pinta la variante de `srcset`"
+        },
+        "href": {
+          "estado": "POR REGLA",
+          "teaser": "https://kunakair.com/es/monitorizacion-de-emisiones-fugitivas/",
+          "documento": "monitorizacion-de-emisiones-fugitivas",
           "regla": "§4 · la ruta se compone de prefijo + slug"
         }
       }

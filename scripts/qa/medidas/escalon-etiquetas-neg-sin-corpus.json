@@ -2,14 +2,14 @@
   "meta": {
     "sonda": "escalon-etiquetas",
     "que": "qué emite el original de kunakair.com en una entrada de blog sin etiquetas (post_tag)",
-    "fuente": "corpus/entradas-blog — 0 capturas congeladas el 2026-08-04",
+    "fuente": "corpus/entradas-blog — 0 capturas congeladas el 2026-08-14",
     "ficha": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS",
-    "sello": "2026-08-08T21-14-00",
+    "sello": "2026-08-18T16-50-16",
     "sabotaje": "sin-corpus"
   },
   "contrato": {
     "unidad": "entradas del corpus",
-    "minimo": 149,
+    "minimo": 152,
     "evaluadas": 0,
     "fallos": []
   },

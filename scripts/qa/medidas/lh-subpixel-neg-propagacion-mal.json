@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-17",
+    "fecha": "2026-08-18",
     "que": "de dónde salen los residuos SUB-PÍXEL del paginador de listados — un residuo y sus consecuencias aritméticas",
     "fuente": "medidas/lh-cmp-<ancho>*.json (la última congelada de cada ancho, derivada) + medidas/lh-espejo-<ancho>.json",
     "porQue": "§sin campaña de ruido un residuo pequeño NO es «limpio», es SIN PROBAR — y sale de ahí NOMBRANDO el mecanismo, como el −30 de EDAR. Aquí el mecanismo explica los `.x` y NO explica los `.w`, y las dos mitades se dicen aparte.",
@@ -14,15 +14,15 @@
   },
   "porAncho": {
     "390": {
-      "comparador": "lh-cmp-390-todas-2026-08-17-2.json",
-      "candidatas": 8,
+      "comparador": "lh-cmp-390-todas-2026-08-18-3.json",
+      "candidatas": 14,
       "candidatasDescartadas": [
-        "lh-cmp-390-todas-2026-08-17.json",
-        "lh-cmp-390-vivo-2026-08-14.json",
-        "lh-cmp-390-2026-08-13-2.json"
+        "lh-cmp-390-2026-08-18-2.json",
+        "lh-cmp-390-todas-2026-08-18-2.json",
+        "lh-cmp-390-2026-08-18.json"
       ],
-      "paresDistintos": 5254,
-      "numericos": 316,
+      "paresDistintos": 5401,
+      "numericos": 303,
       "subPixel": 147,
       "umbral": 0.05,
       "anchosSubPixel": 31,
@@ -39,14 +39,14 @@
       ],
       "xSubPixel": 116,
       "formasConPaginadorDistinto": 31,
-      "formasSoloSubPixel": 25,
-      "formasConOtroDefectoDePaginador": 6,
+      "formasSoloSubPixel": 30,
+      "formasConOtroDefectoDePaginador": 1,
       "propagacion": {
-        "dominio": 25,
+        "dominio": 30,
         "casan": 0,
         "casanDentroDeLaCota": 0,
-        "noObservables": 38,
-        "fallan": 141,
+        "noObservables": 45,
+        "fallan": 193,
         "fallos": [
           "L1-etiqueta::/es/etiqueta/calidad-del-aire/ pieza 0 (span.pages): Δx 0 contra acumulado 0",
           "L1-etiqueta::/es/etiqueta/calidad-del-aire/ pieza 1 (span.current): Δx 0.03 contra acumulado 0.03",
@@ -60,58 +60,51 @@
       },
       "ySubPixel": 0,
       "extendConAnchoDistinto": 0,
-      "sobreElUmbral": 169,
-      "noNumericos": 4938
+      "sobreElUmbral": 156,
+      "noNumericos": 5098
     },
     "1440": {
-      "comparador": "lh-cmp-1440-todas-2026-08-17-2.json",
-      "candidatas": 15,
+      "comparador": "lh-cmp-1440-2026-08-18-4.json",
+      "candidatas": 24,
       "candidatasDescartadas": [
-        "lh-cmp-1440-todas-2026-08-17.json",
-        "lh-cmp-1440-vivo-2026-08-14.json",
-        "lh-cmp-1440-2026-08-13-9.json"
+        "lh-cmp-1440-2026-08-18-3.json",
+        "lh-cmp-1440-todas-2026-08-18-3.json",
+        "lh-cmp-1440-2026-08-18-2.json"
       ],
-      "paresDistintos": 5265,
-      "numericos": 326,
-      "subPixel": 155,
+      "paresDistintos": 698,
+      "numericos": 28,
+      "subPixel": 6,
       "umbral": 0.05,
-      "anchosSubPixel": 31,
+      "anchosSubPixel": 1,
       "porMarca": {
-        "span.pages": 31
+        "span.pages": 1
       },
       "anchosSubPixelFueraDelPaginador": 0,
       "deltasDeAncho": [
-        0.01,
-        0.02,
-        0.03,
-        0.04,
-        0.05
+        0.03
       ],
-      "xSubPixel": 124,
-      "formasConPaginadorDistinto": 31,
-      "formasSoloSubPixel": 25,
-      "formasConOtroDefectoDePaginador": 6,
+      "xSubPixel": 5,
+      "formasConPaginadorDistinto": 1,
+      "formasSoloSubPixel": 1,
+      "formasConOtroDefectoDePaginador": 0,
       "propagacion": {
-        "dominio": 25,
+        "dominio": 1,
         "casan": 0,
         "casanDentroDeLaCota": 0,
-        "noObservables": 38,
-        "fallan": 141,
+        "noObservables": 1,
+        "fallan": 5,
         "fallos": [
           "L1-etiqueta::/es/etiqueta/calidad-del-aire/ pieza 0 (span.pages): Δx 0 contra acumulado 0",
           "L1-etiqueta::/es/etiqueta/calidad-del-aire/ pieza 1 (span.current): Δx 0.03 contra acumulado 0.03",
           "L1-etiqueta::/es/etiqueta/calidad-del-aire/ pieza 2 (a.page.larger): Δx 0.03 contra acumulado 0.03",
           "L1-etiqueta::/es/etiqueta/calidad-del-aire/ pieza 3 (a.page.larger): Δx 0.03 contra acumulado 0.03",
-          "L1-etiqueta::/es/etiqueta/calidad-del-aire/ pieza 4 (a.page.larger): Δx 0.03 contra acumulado 0.03",
-          "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/2/ pieza 0 (span.pages): Δx 0 contra acumulado 0",
-          "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/2/ pieza 2 (a.page.smaller): Δx 0.03 contra acumulado 0.03",
-          "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/2/ pieza 3 (span.current): Δx 0.03 contra acumulado 0.03"
+          "L1-etiqueta::/es/etiqueta/calidad-del-aire/ pieza 4 (a.page.larger): Δx 0.03 contra acumulado 0.03"
         ]
       },
       "ySubPixel": 0,
       "extendConAnchoDistinto": 0,
-      "sobreElUmbral": 171,
-      "noNumericos": 4939
+      "sobreElUmbral": 22,
+      "noNumericos": 670
     }
   }
 }

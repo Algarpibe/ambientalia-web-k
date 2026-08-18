@@ -2,14 +2,14 @@
   "meta": {
     "sonda": "escalon-etiquetas",
     "que": "qué emite el original de kunakair.com en una entrada de blog sin etiquetas (post_tag)",
-    "fuente": "corpus/entradas-blog — 149 capturas congeladas el 2026-08-04",
+    "fuente": "corpus/entradas-blog — 152 capturas congeladas el 2026-08-14",
     "ficha": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS",
-    "sello": "2026-08-08T21-13-58",
+    "sello": "2026-08-18T16-50-14",
     "sabotaje": "localizador-muerto"
   },
   "contrato": {
     "unidad": "entradas del corpus",
-    "minimo": 149,
+    "minimo": 152,
     "evaluadas": 0,
     "fallos": [
       "additive-presenta-sistema-kunak-air-en-sensortest-2018.html — sin bloque .case-taxonomias",
@@ -46,6 +46,7 @@
       "control-emisiones-industriales.html — sin bloque .case-taxonomias",
       "corrosion-ambiental-causas-factores-y-como-prevenirla.html — sin bloque .case-taxonomias",
       "covid-19-calidad-del-aire.html — sin bloque .case-taxonomias",
+      "descarga-catalogo-kunak.html — sin bloque .case-taxonomias",
       "despliegue-estaciones-kunak-air-pro-filipinas.html — sin bloque .case-taxonomias",
       "detectores-calidad-aire-movilidad.html — sin bloque .case-taxonomias",
       "detectores-emisiones-coronavirus-contaminacion.html — sin bloque .case-taxonomias",
@@ -89,6 +90,7 @@
       "kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna.html — sin bloque .case-taxonomias",
       "kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares.html — sin bloque .case-taxonomias",
       "kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024.html — sin bloque .case-taxonomias",
+      "kunak-obtiene-el-sello-reconcilia.html — sin bloque .case-taxonomias",
       "kunak-oem-industrial-iot-en-el-basque-industry-4-0.html — sin bloque .case-taxonomias",
       "kunak-participa-en-aqemission-monitoring-2017-con-alphasense.html — sin bloque .case-taxonomias",
       "kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex.html — sin bloque .case-taxonomias",
@@ -155,6 +157,7 @@
       "vigilancia-calidad-aire-maraton-valencia-2019.html — sin bloque .case-taxonomias",
       "webinar-calidad-del-aire-en-europa.html — sin bloque .case-taxonomias",
       "webinar-como-controlar-las-emisiones-en-mineria-junio-2025.html — sin bloque .case-taxonomias",
+      "webinar-control-de-la-contaminacion-del-aire-en-la-industria.html — sin bloque .case-taxonomias",
       "webinar-control-de-olores-en-vertederos-y-edar.html — sin bloque .case-taxonomias",
       "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar.html — sin bloque .case-taxonomias",
       "webinar-redes-hibridas-monitorizacion-ambiental.html — sin bloque .case-taxonomias",
@@ -170,7 +173,7 @@
     "localizador": "case-taxonomias",
     "discriminante": "case-tags",
     "problemas": [
-      "LOCALIZADOR MUERTO — .case-taxonomias no casó en NINGUNA de las 149 entradas. Eso no es «no hay taxonomías»: es que no se miró nada."
+      "LOCALIZADOR MUERTO — .case-taxonomias no casó en NINGUNA de las 152 entradas. Eso no es «no hay taxonomías»: es que no se miró nada."
     ]
   },
   "cotejoIndiceDisco": {
@@ -193,6 +196,6 @@
   },
   "veredicto": {
     "decision": "NO SE PUDO MEDIR",
-    "porQue": "LOCALIZADOR MUERTO — .case-taxonomias no casó en NINGUNA de las 149 entradas. Eso no es «no hay taxonomías»: es que no se miró nada."
+    "porQue": "LOCALIZADOR MUERTO — .case-taxonomias no casó en NINGUNA de las 152 entradas. Eso no es «no hay taxonomías»: es que no se miró nada."
   }
 }

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-18",
     "que": "el hueco de `productos` repartido por PARA-QUÉ: qué desbloquea `casos` y qué es cola de §F3-COLA-DESTINOS",
     "fuentes": [
       "corpus/INDICE.json (24 URLs del CPT, congeladas con sha256)",
@@ -45,6 +45,31 @@
           "casos": 45
         },
         {
+          "slug": "dioxido-de-nitrogeno",
+          "n": 37,
+          "casos": 37
+        },
+        {
+          "slug": "ozono",
+          "n": 29,
+          "casos": 29
+        },
+        {
+          "slug": "monoxido-de-carbono",
+          "n": 25,
+          "casos": 25
+        },
+        {
+          "slug": "dioxido-de-azufre",
+          "n": 20,
+          "casos": 20
+        },
+        {
+          "slug": "oxido-nitrico",
+          "n": 14,
+          "casos": 14
+        },
+        {
           "slug": "sulfuro-de-hidrogeno",
           "n": 11,
           "casos": 11
@@ -60,9 +85,34 @@
           "casos": 9
         },
         {
+          "slug": "dioxido-de-carbono",
+          "n": 8,
+          "casos": 8
+        },
+        {
           "slug": "amoniaco",
           "n": 5,
           "casos": 5
+        },
+        {
+          "slug": "metano",
+          "n": 5,
+          "casos": 5
+        },
+        {
+          "slug": "accesories",
+          "n": 2,
+          "casos": 2
+        },
+        {
+          "slug": "ozone-2",
+          "n": 2,
+          "casos": 2
+        },
+        {
+          "slug": "air-cloud",
+          "n": 1,
+          "casos": 1
         },
         {
           "slug": "kunak-api",
@@ -76,465 +126,15 @@
         }
       ],
       "EN-CPT-SIN-MODELAR": [],
-      "SIN-CPT": [
-        {
-          "slug": "dioxido-de-nitrogeno",
-          "n": 37,
-          "casos": 37,
-          "rotulo": "Dióxido de nitrógeno Datos fiables sobre el NO 2",
-          "href": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-nitrogeno/",
-          "forma": "alias-de-ruta",
-          "visto": "analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica"
-        },
-        {
-          "slug": "ozono",
-          "n": 29,
-          "casos": 29,
-          "rotulo": "Ozono Datos fiables sobre el O 3",
-          "href": "https://kunakair.com/es/cartuchos-inteligentes/ozono/",
-          "forma": "alias-de-ruta",
-          "visto": "analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica"
-        },
-        {
-          "slug": "monoxido-de-carbono",
-          "n": 25,
-          "casos": 25,
-          "rotulo": "Monóxido de carbono Datos fiables sobre el CO",
-          "href": "https://kunakair.com/es/cartuchos-inteligentes/monoxido-de-carbono/",
-          "forma": "alias-de-ruta",
-          "visto": "vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey"
-        },
-        {
-          "slug": "dioxido-de-azufre",
-          "n": 20,
-          "casos": 20,
-          "rotulo": "Dióxido de azufre Datos fiables sobre el SO 2",
-          "href": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-azufre/",
-          "forma": "alias-de-ruta",
-          "visto": "control-quemas-controladas-cana-azucar"
-        },
-        {
-          "slug": "oxido-nitrico",
-          "n": 14,
-          "casos": 14,
-          "rotulo": "Óxido nítrico Datos fiables sobre el NO",
-          "href": "https://kunakair.com/es/cartuchos-inteligentes/oxido-nitrico/",
-          "forma": "alias-de-ruta",
-          "visto": "vigilancia-contaminacion-aire-albacete"
-        },
-        {
-          "slug": "dioxido-de-carbono",
-          "n": 8,
-          "casos": 8,
-          "rotulo": "Dióxido de carbono Datos fiables sobre el CO 2",
-          "href": "https://kunakair.com/es/cartuchos-inteligentes/dioxido-de-carbono/",
-          "forma": "alias-de-ruta",
-          "visto": "monitorizacion-de-gases-y-particulas-en-metro-valparaiso"
-        },
-        {
-          "slug": "metano",
-          "n": 5,
-          "casos": 5,
-          "rotulo": "Metano Datos fiables sobre el CH 4",
-          "href": "https://kunakair.com/es/sensor-de-calidad-del-aire/metano/",
-          "forma": "alias-de-ruta",
-          "visto": "control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama"
-        },
-        {
-          "slug": "accesories",
-          "n": 2,
-          "casos": 2,
-          "rotulo": "Accesorios",
-          "href": "https://kunakair.com/es/accesorios/",
-          "forma": "alias-de-ruta",
-          "visto": "monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023"
-        },
-        {
-          "slug": "ozone-2",
-          "n": 2,
-          "casos": 2,
-          "rotulo": "Ozone",
-          "href": "https://kunakair.com/?post_type=solutions&p=56674",
-          "forma": "sin-permalink",
-          "visto": "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas"
-        },
-        {
-          "slug": "air-cloud",
-          "n": 1,
-          "casos": 1,
-          "rotulo": "AIR Cloud Air quality software",
-          "href": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
-          "forma": "alias-de-ruta",
-          "visto": "vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey"
-        }
-      ],
+      "SIN-CPT": [],
       "SIN CLASIFICAR": []
     }
   },
   "reparto": {
     "desbloquean": [],
     "cola": [],
-    "casosBloqueadosHoy": 43,
-    "casosBloqueadosTrasModelarLos15": [
-      {
-        "slug": "analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "transformacion-digital-y-un-aire-mas-limpio-en-etiopia",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "control-quemas-controladas-cana-azucar",
-        "culpables": [
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "red-hibrida-calidad-aire-atmo-france",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey",
-        "culpables": [
-          "air-cloud",
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "monoxido-de-carbono"
-        ]
-      },
-      {
-        "slug": "vigilancia-contaminacion-aire-albacete",
-        "culpables": [
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "oxido-nitrico",
-          "monoxido-de-carbono",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "control-de-la-calidad-del-aire-en-puertos-apb",
-        "culpables": [
-          "monoxido-de-carbono",
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "dioxido-de-azufre"
-        ]
-      },
-      {
-        "slug": "suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian",
-        "culpables": [
-          "monoxido-de-carbono",
-          "dioxido-de-nitrogeno",
-          "dioxido-de-azufre",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "red-sensores-calidad-aire-alaquas",
-        "culpables": [
-          "monoxido-de-carbono",
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "monitorizacion-de-gases-y-particulas-en-metro-valparaiso",
-        "culpables": [
-          "monoxido-de-carbono",
-          "dioxido-de-carbono",
-          "dioxido-de-nitrogeno"
-        ]
-      },
-      {
-        "slug": "monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "monoxido-de-carbono",
-          "dioxido-de-carbono",
-          "accesories"
-        ]
-      },
-      {
-        "slug": "calle-30-natura-sensores-de-calidad-del-aire-kunak-air",
-        "culpables": [
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "monoxido-de-carbono",
-          "dioxido-de-carbono"
-        ]
-      },
-      {
-        "slug": "control-de-la-contaminacion-en-bilbao",
-        "culpables": [
-          "monoxido-de-carbono",
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "control-de-la-calidad-del-aire-en-la-formula-e",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria",
-        "culpables": [
-          "monoxido-de-carbono",
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "dioxido-de-azufre"
-        ]
-      },
-      {
-        "slug": "control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama",
-        "culpables": [
-          "metano"
-        ]
-      },
-      {
-        "slug": "red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals",
-        "culpables": [
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "dioxido-de-azufre",
-          "monoxido-de-carbono",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "sistema-de-vigilancia-de-la-calidad-del-aire-en-minas",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "monoxido-de-carbono",
-          "dioxido-de-azufre"
-        ]
-      },
-      {
-        "slug": "control-ambiental-actividades-portuarias-bahia-cadiz",
-        "culpables": [
-          "oxido-nitrico",
-          "ozono",
-          "monoxido-de-carbono",
-          "dioxido-de-carbono"
-        ]
-      },
-      {
-        "slug": "monitorizacion-calidad-aire-planta-fertilizantes-lifeco",
-        "culpables": [
-          "monoxido-de-carbono",
-          "dioxido-de-nitrogeno",
-          "oxido-nitrico",
-          "dioxido-de-azufre"
-        ]
-      },
-      {
-        "slug": "estudio-de-la-contaminacion-atmosferica-gwadair",
-        "culpables": [
-          "ozono"
-        ]
-      },
-      {
-        "slug": "calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "monoxido-de-carbono",
-          "dioxido-de-azufre"
-        ]
-      },
-      {
-        "slug": "pure-cities",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "monoxido-de-carbono"
-        ]
-      },
-      {
-        "slug": "monitorizacion-ambiental-mediante-boyas-en-neom",
-        "culpables": [
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "dioxido-de-carbono",
-          "dioxido-de-azufre",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "oxido-nitrico",
-          "monoxido-de-carbono"
-        ]
-      },
-      {
-        "slug": "control-de-la-contaminacion-atmosferica-universidad-de-chipre",
-        "culpables": [
-          "accesories"
-        ]
-      },
-      {
-        "slug": "monitoreo-ambiental-en-el-puerto-de-cotonu",
-        "culpables": [
-          "monoxido-de-carbono",
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "porto-alegre-red-de-control-de-la-calidad-del-aire",
-        "culpables": [
-          "monoxido-de-carbono",
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "monitorizacion-ambiental-instalacion-petroleo-gas",
-        "culpables": [
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "monoxido-de-carbono"
-        ]
-      },
-      {
-        "slug": "monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "oxido-nitrico"
-        ]
-      },
-      {
-        "slug": "citytraq-calidad-del-aire-urbano",
-        "culpables": [
-          "dioxido-de-nitrogeno"
-        ]
-      },
-      {
-        "slug": "red-de-control-de-emisiones-en-planta-de-aluminio",
-        "culpables": [
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "metano"
-        ]
-      },
-      {
-        "slug": "monitorizacion-ambiental-aeropuerto-subic-bay",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozono",
-          "dioxido-de-azufre",
-          "dioxido-de-carbono"
-        ]
-      },
-      {
-        "slug": "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "ozone-2"
-        ]
-      },
-      {
-        "slug": "control-de-la-calidad-del-aire-en-el-volcan-turrialba",
-        "culpables": [
-          "dioxido-de-carbono",
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "control-de-emisiones-plantas-ternium-en-mexico",
-        "culpables": [
-          "dioxido-de-azufre",
-          "dioxido-de-nitrogeno",
-          "monoxido-de-carbono",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "red-de-monitorizacion-ambiental-mades-paraguay",
-        "culpables": [
-          "monoxido-de-carbono",
-          "dioxido-de-azufre",
-          "ozono",
-          "dioxido-de-nitrogeno"
-        ]
-      },
-      {
-        "slug": "clean-air-champions-league",
-        "culpables": [
-          "dioxido-de-nitrogeno"
-        ]
-      },
-      {
-        "slug": "monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
-        "culpables": [
-          "metano"
-        ]
-      },
-      {
-        "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
-        "culpables": [
-          "dioxido-de-nitrogeno",
-          "monoxido-de-carbono"
-        ]
-      },
-      {
-        "slug": "running-for-clean-air-ciudades-saludables",
-        "culpables": [
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "monoxido-de-carbono",
-          "dioxido-de-carbono",
-          "ozono"
-        ]
-      },
-      {
-        "slug": "control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez",
-        "culpables": [
-          "metano"
-        ]
-      },
-      {
-        "slug": "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
-        "culpables": [
-          "monoxido-de-carbono",
-          "oxido-nitrico",
-          "dioxido-de-nitrogeno",
-          "ozone-2",
-          "dioxido-de-azufre",
-          "metano"
-        ]
-      }
-    ]
+    "casosBloqueadosHoy": 0,
+    "casosBloqueadosTrasModelarLos15": []
   },
   "arquetipo": {
     "grupos": {},

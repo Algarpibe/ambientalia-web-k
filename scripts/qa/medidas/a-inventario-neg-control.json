@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-12",
+    "fecha": "2026-08-18",
     "pregunta": "¿qué trae el corpus congelado, y qué de eso sabe leer ya la maquinaria de F2?",
     "fuente": "corpus/ (captura congelada de F2-2) + src/lib/arquetipo-a.ts como CONTROL",
     "sabotaje": null,
@@ -11,7 +11,7 @@
     ]
   },
   "enDisco": {
-    "entradas-blog": 149,
+    "entradas-blog": 152,
     "terminos-kunakpedia": 37,
     "documentos-cientificos": 23,
     "casos": 57,
@@ -20,11 +20,11 @@
   },
   "porColeccion": {
     "entradas-blog": {
-      "n": 149,
+      "n": 152,
       "sinTitulo": 0,
-      "sinSeoDesc": 24,
+      "sinSeoDesc": 26,
       "sinFecha": 0,
-      "conRelacionados": 83
+      "conRelacionados": 84
     },
     "terminos-kunakpedia": {
       "n": 37,
@@ -45,8 +45,8 @@
     "categorias": {
       "terminos": 4,
       "cuentas": {
-        "articulos": 96,
-        "noticias": 31,
+        "articulos": 97,
+        "noticias": 33,
         "eventos": 22,
         "podcast-es": 2
       }
@@ -54,7 +54,7 @@
     "etiquetas": {
       "terminos": 12,
       "cuentas": {
-        "monitorizacion-ambiental": 89,
+        "monitorizacion-ambiental": 91,
         "contaminantes-atmosfericos": 36,
         "sensor-de-calidad-del-aire": 34,
         "calidad-del-aire": 33,
@@ -95,22 +95,15 @@
     "detalle": []
   },
   "assets": {
-    "referenciados": 1296,
-    "yaEnPublico": 122,
-    "faltanEnPublico": 1174,
+    "referenciados": 1299,
+    "yaEnPublico": 1269,
+    "faltanEnPublico": 30,
     "reparto": {
-      "yaCapturadosEnMediaCorpus": 476,
-      "variantesQueRegeneraSharp": 664,
-      "origenesSinCapturar": 34
+      "yaCapturadosEnMediaCorpus": 0,
+      "variantesQueRegeneraSharp": 1,
+      "origenesSinCapturar": 29
     },
     "origenesSinCapturar": [
-      "/images/uploads/2018/07/Fig..5_Smart-cities.jpg",
-      "/images/uploads/2018/07/Programa-Suez-Go-Seeds-en-@4YFN_MWC-2018-4.mp4",
-      "/images/uploads/2018/07/RECI_Rivas.jpg",
-      "/images/uploads/2018/07/SCEWC.jpg",
-      "/images/uploads/2018/07/suez_go_seeds_mwc_kunak2.png",
-      "/images/uploads/2018/08/Javier-Fernandez-en-IMIC-BIEMH-2018.jpg",
-      "/images/uploads/2018/11/Uno-de-los-dispositivos-Kunak-AIR-de-calidad-del-aire-que-seran-instalados-en-las-pistas-de-la-IAAF-1.jpg",
       "/images/uploads/2019/03/ECOTEC-Ingenieria.pdf",
       "/images/uploads/2019/03/Guia-tecnica-para-la-gestion-de-las-emisiones-odoriferas.pdf#page=14",
       "/images/uploads/2020/02/Riesgo_Sargazo_Big_Data.pdf",
@@ -133,6 +126,8 @@
       "/images/uploads/2024/07/dossier_sport-et-pollution-de-lair-3.pdf",
       "/images/uploads/2024/12/1.-Air-Quality-in-Data-Centers_People-vs-The-Machines.pdf",
       "/images/uploads/2025/01/Book_of_abstracts_EmiLi24.pdf",
+      "/images/uploads/2025/12/Reconcilia2.jpg",
+      "/images/uploads/2025/12/reconcilia.png",
       "/images/uploads/2026/03/Diesel-Generators-at-Data-Centers-Status-Impacts-and-Protective-Policies.pdf",
       "/images/uploads/2026/05/Ambiente-laboral-en-entorno-industrial-confinado_Kunak-scaled.jpg",
       "/images/uploads/2026/05/Emisiones-fugitivas_programa-LDAR.jpg",
@@ -4628,6 +4623,67 @@
         "evaluaciones-independientes"
       ],
       "relacionados": null
+    },
+    "entradas-blog/kunak-obtiene-el-sello-reconcilia": {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-obtiene-el-sello-reconcilia",
+      "titulo": "Kunak obtiene el Sello Reconcilia por su compromiso con la conciliación laboral y la igualdad",
+      "seo": {
+        "title": "Kunak obtiene el Sello Reconcilia por su compromiso con la conciliación laboral y la igualdad - Kunak",
+        "description": null,
+        "ogImage": "https://kunakair.com/wp-content/uploads/2025/12/Reconcilia.jpg"
+      },
+      "fechaPublicacion": "1 diciembre 2025",
+      "fechaActualizacion": "15 junio 2026",
+      "categorias": [
+        "noticias"
+      ],
+      "etiquetas": [
+        "monitorizacion-ambiental"
+      ],
+      "recurso": [],
+      "cientifica": [],
+      "relacionados": null
+    },
+    "entradas-blog/descarga-catalogo-kunak": {
+      "coleccion": "entradas-blog",
+      "slug": "descarga-catalogo-kunak",
+      "titulo": "Catálogo Kunak AIR",
+      "seo": {
+        "title": "Catálogo Kunak AIR - Kunak",
+        "description": null,
+        "ogImage": "https://kunakair.com/wp-content/uploads/2024/04/kunak-air-catalogue.jpg"
+      },
+      "fechaPublicacion": "26 abril 2024",
+      "fechaActualizacion": "15 junio 2026",
+      "categorias": [
+        "noticias"
+      ],
+      "etiquetas": [
+        "monitorizacion-ambiental"
+      ],
+      "recurso": [],
+      "cientifica": [],
+      "relacionados": null
+    },
+    "entradas-blog/webinar-control-de-la-contaminacion-del-aire-en-la-industria": {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-control-de-la-contaminacion-del-aire-en-la-industria",
+      "titulo": "Webinar: Control de la contaminación atmosférica en la industria – Grabación y preguntas y respuestas",
+      "seo": {
+        "title": "Webinar: Control de la contaminación atmosférica en la industria - Kunak",
+        "description": "En este seminario web hemos analizado cómo es posible obtener datos precisos y en tiempo real sobre las emisiones industriales.",
+        "ogImage": "https://kunakair.com/wp-content/uploads/2023/06/contaminacion-del-aire-en-industria.jpg"
+      },
+      "fechaPublicacion": "16 junio 2023",
+      "fechaActualizacion": "17 enero 2024",
+      "categorias": [
+        "articulos"
+      ],
+      "etiquetas": [],
+      "recurso": [],
+      "cientifica": [],
+      "relacionados": true
     }
   }
 }

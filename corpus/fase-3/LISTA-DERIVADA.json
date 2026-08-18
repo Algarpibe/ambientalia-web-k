@@ -1,0 +1,1197 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "solo": "derivación"
+  },
+  "trabajo": [
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/index.html"
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/index.html"
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/index.html"
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/index.html"
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/index.html"
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+      "bucket": "articulos-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "articulos-kb/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/index.html"
+    },
+    {
+      "ruta": "/es/author/admin/",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "autor/author/admin/index.html"
+    },
+    {
+      "ruta": "/es/author/edurne-ibarrola/",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "autor/author/edurne-ibarrola/index.html"
+    },
+    {
+      "ruta": "/es/author/irene/",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "autor/author/irene/index.html"
+    },
+    {
+      "ruta": "/es/author/javier-fernandez/",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "autor/author/javier-fernandez/index.html"
+    },
+    {
+      "ruta": "/es/author/kunak/",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "autor/author/kunak/index.html"
+    },
+    {
+      "ruta": "/es/author/mar_ramirez/",
+      "bucket": "autor",
+      "familia": "autor",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "autor/author/mar_ramirez/index.html"
+    },
+    {
+      "ruta": "/es/categoria/articulos/",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "categoria/categoria/articulos/index.html"
+    },
+    {
+      "ruta": "/es/categoria/eventos/",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "categoria/categoria/eventos/index.html"
+    },
+    {
+      "ruta": "/es/categoría/eventos/",
+      "bucket": "categoria",
+      "familia": "categoria-tilde",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "categoria/categoría/eventos/index.html"
+    },
+    {
+      "ruta": "/es/categoria/noticias/",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "categoria/categoria/noticias/index.html"
+    },
+    {
+      "ruta": "/es/categoría/noticias/",
+      "bucket": "categoria",
+      "familia": "categoria-tilde",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "categoria/categoría/noticias/index.html"
+    },
+    {
+      "ruta": "/es/categoria/podcast-es/",
+      "bucket": "categoria",
+      "familia": "categoria",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "categoria/categoria/podcast-es/index.html"
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air-cloud/index.html"
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air/index.html"
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/index.html"
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air/video-tutoriales/index.html"
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "hubs-kb/soporte/centro-de-ayuda/index.html"
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "hubs-kb/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/index.html"
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/",
+      "bucket": "hubs-kb",
+      "familia": "grupo-d",
+      "fuentes": [
+        "sitemap",
+        "grupo-d"
+      ],
+      "paginable": false,
+      "fichero": "hubs-kb/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/index.html"
+    },
+    {
+      "ruta": "/es/blog/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/blog/index.html"
+    },
+    {
+      "ruta": "/es/casos-de-exito/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/casos-de-exito/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/calidad-del-aire/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/calidad-del-aire/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/co2-es/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/co2-es/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/contaminantes-atmosfericos/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/contaminantes-atmosfericos/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/cov/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/cov/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/emisiones-industriales/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/emisiones-industriales/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/gases-de-efecto-invernadero/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/gases-de-efecto-invernadero/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/h2s-es/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/h2s-es/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/malos-olores/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/malos-olores/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/monitorizacion-ambiental/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/monitorizacion-ambiental/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/normativa-de-calidad-del-aire/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/normativa-de-calidad-del-aire/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/particulas-en-suspension/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/particulas-en-suspension/index.html"
+    },
+    {
+      "ruta": "/es/etiqueta/sensor-de-calidad-del-aire/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/etiqueta/sensor-de-calidad-del-aire/index.html"
+    },
+    {
+      "ruta": "/es/glosario/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/glosario/index.html"
+    },
+    {
+      "ruta": "/es/preguntas-frecuentes/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/preguntas-frecuentes/index.html"
+    },
+    {
+      "ruta": "/es/productos/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/productos/index.html"
+    },
+    {
+      "ruta": "/es/recursos/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/contaminacion-en-la-construccion/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/contaminacion-en-la-construccion/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/contaminacion-minera/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/contaminacion-minera/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/contaminacion-urbana/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/contaminacion-urbana/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/contaminacion-y-salud/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/contaminacion-y-salud/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/industria-y-contaminacion-por-olores/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/industria-y-contaminacion-por-olores/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/petroleo-y-gas/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/petroleo-y-gas/index.html"
+    },
+    {
+      "ruta": "/es/recursos/articulos/productos-kunak/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/articulos/productos-kunak/index.html"
+    },
+    {
+      "ruta": "/es/recursos/documentos-cientificos/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/documentos-cientificos/index.html"
+    },
+    {
+      "ruta": "/es/recursos/kunakpedia/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/kunakpedia/index.html"
+    },
+    {
+      "ruta": "/es/recursos/preguntas-frecuentes/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/preguntas-frecuentes/index.html"
+    },
+    {
+      "ruta": "/es/recursos/seminarios-web/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/recursos/seminarios-web/index.html"
+    },
+    {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/scientific-category/articulos-cientificos-y-estudios/index.html"
+    },
+    {
+      "ruta": "/es/scientific-category/articulos-tecnicos/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/scientific-category/articulos-tecnicos/index.html"
+    },
+    {
+      "ruta": "/es/scientific-category/evaluaciones-independientes/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/scientific-category/evaluaciones-independientes/index.html"
+    },
+    {
+      "ruta": "/es/sectores/",
+      "bucket": "listados",
+      "familia": "lh-censo",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon",
+        "lh-censo"
+      ],
+      "paginable": true,
+      "fichero": "listados/sectores/index.html"
+    },
+    {
+      "ruta": "/es/air-quality-monitor-2/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/air-quality-monitor-2/index.html"
+    },
+    {
+      "ruta": "/es/air-quality-software-2/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/air-quality-software-2/index.html"
+    },
+    {
+      "ruta": "/es/aviso-legal/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/aviso-legal/index.html"
+    },
+    {
+      "ruta": "/es/calidad-aire-puertos-maritimos/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/calidad-aire-puertos-maritimos/index.html"
+    },
+    {
+      "ruta": "/es/cartuchos-inteligentes/",
+      "bucket": "sueltas",
+      "familia": "cartuchos",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/cartuchos-inteligentes/index.html"
+    },
+    {
+      "ruta": "/es/cartuchos-inteligentes/acido-sulfhidrico/",
+      "bucket": "sueltas",
+      "familia": "cartuchos",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/cartuchos-inteligentes/acido-sulfhidrico/index.html"
+    },
+    {
+      "ruta": "/es/cartuchos-inteligentes/metano/",
+      "bucket": "sueltas",
+      "familia": "cartuchos",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/cartuchos-inteligentes/metano/index.html"
+    },
+    {
+      "ruta": "/es/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/",
+      "bucket": "sueltas",
+      "familia": "caso-suelto",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/index.html"
+    },
+    {
+      "ruta": "/es/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/",
+      "bucket": "sueltas",
+      "familia": "caso-suelto",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/index.html"
+    },
+    {
+      "ruta": "/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/",
+      "bucket": "sueltas",
+      "familia": "caso-suelto",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/index.html"
+    },
+    {
+      "ruta": "/es/contacto/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/contacto/index.html"
+    },
+    {
+      "ruta": "/es/descarga-catalogo/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/descarga-catalogo/index.html"
+    },
+    {
+      "ruta": "/es/emision-de-gases-y-particulas-en-refinerias/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/emision-de-gases-y-particulas-en-refinerias/index.html"
+    },
+    {
+      "ruta": "/es/empresa/",
+      "bucket": "sueltas",
+      "familia": "empresa",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/empresa/index.html"
+    },
+    {
+      "ruta": "/es/empresa/premios-y-reconocimientos/",
+      "bucket": "sueltas",
+      "familia": "empresa",
+      "fuentes": [
+        "sitemap",
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/empresa/premios-y-reconocimientos/index.html"
+    },
+    {
+      "ruta": "/es/estaciones-control-calidad-del-aire/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/estaciones-control-calidad-del-aire/index.html"
+    },
+    {
+      "ruta": "/es/glossary/huella-de-carbono/",
+      "bucket": "sueltas",
+      "familia": "glossary-en",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/glossary/huella-de-carbono/index.html"
+    },
+    {
+      "ruta": "/es/higiene-industrial-y-seguridad-laboral/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/higiene-industrial-y-seguridad-laboral/index.html"
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/index.html"
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-industria/index.html"
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/index.html"
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-obras/index.html"
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/",
+      "bucket": "sueltas",
+      "familia": "informe-tecnico",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/index.html"
+    },
+    {
+      "ruta": "/es/newsletter/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/newsletter/index.html"
+    },
+    {
+      "ruta": "/es/politica-de-cookies/",
+      "bucket": "sueltas",
+      "familia": "legal-politica",
+      "fuentes": [
+        "corpus",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/politica-de-cookies/index.html"
+    },
+    {
+      "ruta": "/es/politica-de-privacidad-y-de-proteccion-de-datos/",
+      "bucket": "sueltas",
+      "familia": "legal-politica",
+      "fuentes": [
+        "corpus",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/politica-de-privacidad-y-de-proteccion-de-datos/index.html"
+    },
+    {
+      "ruta": "/es/politica-de-seguridad-de-la-informacion/",
+      "bucket": "sueltas",
+      "familia": "legal-politica",
+      "fuentes": [
+        "corpus",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/politica-de-seguridad-de-la-informacion/index.html"
+    },
+    {
+      "ruta": "/es/recursos/guias/",
+      "bucket": "sueltas",
+      "familia": "recursos-otros",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/recursos/guias/index.html"
+    },
+    {
+      "ruta": "/es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/redes-hibridas-de-calidad-del-aire-grabacion-webinar/index.html"
+    },
+    {
+      "ruta": "/es/sistema-interno-de-informacion/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/sistema-interno-de-informacion/index.html"
+    },
+    {
+      "ruta": "/es/soluciones/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/soluciones/index.html"
+    },
+    {
+      "ruta": "/es/soporte/",
+      "bucket": "sueltas",
+      "familia": "soporte",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/soporte/index.html"
+    },
+    {
+      "ruta": "/es/soporte/servicio-de-reparacion/",
+      "bucket": "sueltas",
+      "familia": "soporte",
+      "fuentes": [
+        "corpus",
+        "clon",
+        "censo-noindex"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/soporte/servicio-de-reparacion/index.html"
+    },
+    {
+      "ruta": "/es/suscribete/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "sitemap",
+        "clon"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/suscribete/index.html"
+    },
+    {
+      "ruta": "/es/vigilancia-perimetral-calidad-del-aire/",
+      "bucket": "sueltas",
+      "familia": "cola-larga",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": false,
+      "fichero": "sueltas/vigilancia-perimetral-calidad-del-aire/index.html"
+    },
+    {
+      "ruta": "/es/sector/edar/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/edar/index.html"
+    },
+    {
+      "ruta": "/es/sector/industria/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/industria/index.html"
+    },
+    {
+      "ruta": "/es/sector/investigacion-consultoria/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/investigacion-consultoria/index.html"
+    },
+    {
+      "ruta": "/es/sector/metalurgia/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/metalurgia/index.html"
+    },
+    {
+      "ruta": "/es/sector/mineria/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/mineria/index.html"
+    },
+    {
+      "ruta": "/es/sector/obras/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/obras/index.html"
+    },
+    {
+      "ruta": "/es/sector/oil-gas-es/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/oil-gas-es/index.html"
+    },
+    {
+      "ruta": "/es/sector/olores/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/olores/index.html"
+    },
+    {
+      "ruta": "/es/sector/puertos/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/puertos/index.html"
+    },
+    {
+      "ruta": "/es/sector/sports/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/sports/index.html"
+    },
+    {
+      "ruta": "/es/sector/urbano/",
+      "bucket": "taxonomia-sector",
+      "familia": "sector-tax",
+      "fuentes": [
+        "corpus",
+        "clon"
+      ],
+      "paginable": true,
+      "fichero": "taxonomia-sector/sector/urbano/index.html"
+    }
+  ]
+}

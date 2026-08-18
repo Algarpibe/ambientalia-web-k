@@ -2,6 +2,34 @@
   "version": 4,
   "routes": {},
   "dynamicRoutes": {
+    "/blog/page/[n]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/blog/page/([^/]+?)(?:/)?$",
+      "dataRoute": "/blog/page/[n].rsc",
+      "fallback": false,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/blog/page/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/case-studies/[slug]": {
       "experimentalBypassFor": [
         {
@@ -48,6 +76,90 @@
       "fallbackRootParams": [],
       "fallbackRouteParams": [],
       "dataRouteRegex": "^/casos\\-de\\-exito/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/centro-de-ayuda/[...ruta]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/centro\\-de\\-ayuda/(.+?)(?:/)?$",
+      "dataRoute": "/centro-de-ayuda/[...ruta].rsc",
+      "fallback": false,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/centro\\-de\\-ayuda/(.+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/etiqueta/[slug]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/etiqueta/([^/]+?)(?:/)?$",
+      "dataRoute": "/etiqueta/[slug].rsc",
+      "fallback": false,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/etiqueta/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/etiqueta/[slug]/page/[n]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/etiqueta/([^/]+?)/page/([^/]+?)(?:/)?$",
+      "dataRoute": "/etiqueta/[slug]/page/[n].rsc",
+      "fallback": false,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/etiqueta/([^/]+?)/page/([^/]+?)\\.rsc$",
       "prefetchDataRoute": null,
       "allowHeader": [
         "host",
@@ -114,6 +226,62 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/scientific-category/[slug]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/scientific\\-category/([^/]+?)(?:/)?$",
+      "dataRoute": "/scientific-category/[slug].rsc",
+      "fallback": false,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/scientific\\-category/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/scientific-category/[slug]/page/[n]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/scientific\\-category/([^/]+?)/page/([^/]+?)(?:/)?$",
+      "dataRoute": "/scientific-category/[slug]/page/[n].rsc",
+      "fallback": false,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/scientific\\-category/([^/]+?)/page/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/sectores/[slug]": {
       "experimentalBypassFor": [
         {
@@ -132,6 +300,34 @@
       "fallbackRootParams": [],
       "fallbackRouteParams": [],
       "dataRouteRegex": "^/sectores/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/soporte/[...ruta]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/soporte/(.+?)(?:/)?$",
+      "dataRoute": "/soporte/[...ruta].rsc",
+      "fallback": false,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/soporte/(.+?)\\.rsc$",
       "prefetchDataRoute": null,
       "allowHeader": [
         "host",
@@ -173,8 +369,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "c8552dadbaecdee66de2ca5ef4e2ac44",
-    "previewModeSigningKey": "33a5828632911ba00cabe0d13ed5aff7cb4865736c71443dd8ba8294de388b1b",
-    "previewModeEncryptionKey": "40d2eb877b0b811f2b5e79f2adb3aa3e53044bc9f0ea0aece5db6d9064aa078d"
+    "previewModeId": "f307a937f62fc5fac777d1efd0adf200",
+    "previewModeSigningKey": "82f6c8cbdaa81ce2b6f141578c2f57b390175c84a79c05d369399c0df0876a5f",
+    "previewModeEncryptionKey": "3d991bbce18c2a10cf337a42304127afe288d20518235f2cb791ab515f577b2f"
   }
 }

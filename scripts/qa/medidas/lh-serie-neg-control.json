@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-11",
+    "fecha": "2026-08-18",
     "pregunta": "¿basta UNA página por serie /page/N/, o cada una es su propia unidad?",
     "fuente": "corpus/fase-3/listados — captura congelada de F3-0, población COMPLETA (sin red, sin muestreo)",
     "preRegistro": {
@@ -363,14 +363,14 @@
       "nPaginas": 2,
       "nClases": 1,
       "clases": [
-        "t57·ninguna·--·s6·sb"
+        "t57·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t57·ninguna·--·s6·sb",
+          "clase": "t57·ninguna·--·s6",
           "tarjetas": 57,
           "vacia": false,
           "ventanaMax": null,
@@ -383,12 +383,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t57·ninguna·--·s6·sb",
+          "clase": "t57·ninguna·--·s6",
           "tarjetas": 57,
           "vacia": false,
           "ventanaMax": null,
@@ -401,7 +401,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -1838,9 +1838,9 @@
       "nPaginas": 8,
       "nClases": 3,
       "clases": [
-        "t5·ninguna·-N·s4·sb",
-        "t5·ninguna·PN·s4·sb",
-        "t2·ninguna·P-·s4·sb"
+        "t5·ninguna·-N·s4",
+        "t5·ninguna·PN·s4",
+        "t2·ninguna·P-·s4"
       ],
       "varia": {
         "tarjetas": [
@@ -1864,7 +1864,7 @@
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t5·ninguna·-N·s4·sb",
+          "clase": "t5·ninguna·-N·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 5,
@@ -1877,12 +1877,12 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "intermedia",
-          "clase": "t5·ninguna·PN·s4·sb",
+          "clase": "t5·ninguna·PN·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 5,
@@ -1895,12 +1895,12 @@
           "spanPages": null,
           "ventana": 3,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 3,
           "pos": "intermedia",
-          "clase": "t5·ninguna·PN·s4·sb",
+          "clase": "t5·ninguna·PN·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 5,
@@ -1913,12 +1913,12 @@
           "spanPages": null,
           "ventana": 3,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 4,
           "pos": "intermedia",
-          "clase": "t5·ninguna·PN·s4·sb",
+          "clase": "t5·ninguna·PN·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 6,
@@ -1931,12 +1931,12 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 5,
           "pos": "intermedia",
-          "clase": "t5·ninguna·PN·s4·sb",
+          "clase": "t5·ninguna·PN·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 7,
@@ -1949,12 +1949,12 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 6,
           "pos": "intermedia",
-          "clase": "t5·ninguna·PN·s4·sb",
+          "clase": "t5·ninguna·PN·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 8,
@@ -1967,12 +1967,12 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 7,
           "pos": "intermedia",
-          "clase": "t5·ninguna·PN·s4·sb",
+          "clase": "t5·ninguna·PN·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 8,
@@ -1985,12 +1985,12 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 8,
           "pos": "última",
-          "clase": "t2·ninguna·P-·s4·sb",
+          "clase": "t2·ninguna·P-·s4",
           "tarjetas": 2,
           "vacia": false,
           "ventanaMax": 7,
@@ -2003,7 +2003,7 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2011,9 +2011,9 @@
       "nPaginas": 4,
       "nClases": 3,
       "clases": [
-        "t5·ninguna·-N·s4·sb",
-        "t5·ninguna·PN·s4·sb",
-        "t4·ninguna·P-·s4·sb"
+        "t5·ninguna·-N·s4",
+        "t5·ninguna·PN·s4",
+        "t4·ninguna·P-·s4"
       ],
       "varia": {
         "tarjetas": [
@@ -2037,7 +2037,7 @@
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t5·ninguna·-N·s4·sb",
+          "clase": "t5·ninguna·-N·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 4,
@@ -2050,12 +2050,12 @@
           "spanPages": null,
           "ventana": 3,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "intermedia",
-          "clase": "t5·ninguna·PN·s4·sb",
+          "clase": "t5·ninguna·PN·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 4,
@@ -2068,12 +2068,12 @@
           "spanPages": null,
           "ventana": 2,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 3,
           "pos": "intermedia",
-          "clase": "t5·ninguna·PN·s4·sb",
+          "clase": "t5·ninguna·PN·s4",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 4,
@@ -2086,12 +2086,12 @@
           "spanPages": null,
           "ventana": 2,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 4,
           "pos": "última",
-          "clase": "t4·ninguna·P-·s4·sb",
+          "clase": "t4·ninguna·P-·s4",
           "tarjetas": 4,
           "vacia": false,
           "ventanaMax": 3,
@@ -2104,7 +2104,7 @@
           "spanPages": null,
           "ventana": 2,
           "secciones": 4,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2112,14 +2112,14 @@
       "nPaginas": 2,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s6·sb"
+        "t0·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2132,12 +2132,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2150,7 +2150,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2158,14 +2158,14 @@
       "nPaginas": 2,
       "nClases": 1,
       "clases": [
-        "t3·ninguna·--·s8·sb"
+        "t3·ninguna·--·s8"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t3·ninguna·--·s8·sb",
+          "clase": "t3·ninguna·--·s8",
           "tarjetas": 3,
           "vacia": false,
           "ventanaMax": null,
@@ -2178,12 +2178,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 8,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t3·ninguna·--·s8·sb",
+          "clase": "t3·ninguna·--·s8",
           "tarjetas": 3,
           "vacia": false,
           "ventanaMax": null,
@@ -2196,7 +2196,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 8,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2204,10 +2204,10 @@
       "nPaginas": 16,
       "nClases": 4,
       "clases": [
-        "t15·C·-N·s6·sb",
-        "t15·C·PN·s6·sb",
-        "t5·C·P-·s6·sb",
-        "t0·ninguna·--·s6·sb"
+        "t15·C·-N·s6",
+        "t15·C·PN·s6",
+        "t5·C·P-·s6",
+        "t0·ninguna·--·s6"
       ],
       "varia": {
         "tarjetas": [
@@ -2238,7 +2238,7 @@
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t15·C·-N·s6·sb",
+          "clase": "t15·C·-N·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 6,
@@ -2251,12 +2251,12 @@
           "spanPages": null,
           "ventana": 3,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "intermedia",
-          "clase": "t15·C·PN·s6·sb",
+          "clase": "t15·C·PN·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 6,
@@ -2269,12 +2269,12 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 3,
           "pos": "intermedia",
-          "clase": "t15·C·PN·s6·sb",
+          "clase": "t15·C·PN·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 6,
@@ -2287,12 +2287,12 @@
           "spanPages": null,
           "ventana": 5,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 4,
           "pos": "intermedia",
-          "clase": "t15·C·PN·s6·sb",
+          "clase": "t15·C·PN·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 6,
@@ -2305,12 +2305,12 @@
           "spanPages": null,
           "ventana": 5,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 5,
           "pos": "intermedia",
-          "clase": "t15·C·PN·s6·sb",
+          "clase": "t15·C·PN·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 6,
@@ -2323,12 +2323,12 @@
           "spanPages": null,
           "ventana": 4,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 6,
           "pos": "intermedia",
-          "clase": "t5·C·P-·s6·sb",
+          "clase": "t5·C·P-·s6",
           "tarjetas": 5,
           "vacia": false,
           "ventanaMax": 5,
@@ -2341,12 +2341,12 @@
           "spanPages": null,
           "ventana": 3,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 7,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2359,12 +2359,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 8,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2377,12 +2377,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 9,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2395,12 +2395,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 10,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2413,12 +2413,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 11,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2431,12 +2431,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 12,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2449,12 +2449,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 13,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2467,12 +2467,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 14,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2485,12 +2485,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 15,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2503,12 +2503,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 16,
           "pos": "última",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2521,7 +2521,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2529,14 +2529,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t4·ninguna·--·s6·sb"
+        "t4·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t4·ninguna·--·s6·sb",
+          "clase": "t4·ninguna·--·s6",
           "tarjetas": 4,
           "vacia": false,
           "ventanaMax": null,
@@ -2549,7 +2549,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2557,14 +2557,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t1·ninguna·--·s6·sb"
+        "t1·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t1·ninguna·--·s6·sb",
+          "clase": "t1·ninguna·--·s6",
           "tarjetas": 1,
           "vacia": false,
           "ventanaMax": null,
@@ -2577,7 +2577,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2585,14 +2585,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t1·ninguna·--·s6·sb"
+        "t1·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t1·ninguna·--·s6·sb",
+          "clase": "t1·ninguna·--·s6",
           "tarjetas": 1,
           "vacia": false,
           "ventanaMax": null,
@@ -2605,7 +2605,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2613,9 +2613,9 @@
       "nPaginas": 5,
       "nClases": 3,
       "clases": [
-        "t15·C·-N·s6·sb",
-        "t9·C·P-·s6·sb",
-        "t0·ninguna·--·s6·sb"
+        "t15·C·-N·s6",
+        "t9·C·P-·s6",
+        "t0·ninguna·--·s6"
       ],
       "varia": {
         "tarjetas": [
@@ -2644,7 +2644,7 @@
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t15·C·-N·s6·sb",
+          "clase": "t15·C·-N·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 2,
@@ -2657,12 +2657,12 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "intermedia",
-          "clase": "t9·C·P-·s6·sb",
+          "clase": "t9·C·P-·s6",
           "tarjetas": 9,
           "vacia": false,
           "ventanaMax": 1,
@@ -2675,12 +2675,12 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 3,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2693,12 +2693,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 4,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2711,12 +2711,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 5,
           "pos": "última",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2729,7 +2729,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2737,9 +2737,9 @@
       "nPaginas": 4,
       "nClases": 3,
       "clases": [
-        "t15·C·-N·s6·sb",
-        "t4·C·P-·s6·sb",
-        "t0·ninguna·--·s6·sb"
+        "t15·C·-N·s6",
+        "t4·C·P-·s6",
+        "t0·ninguna·--·s6"
       ],
       "varia": {
         "tarjetas": [
@@ -2768,7 +2768,7 @@
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t15·C·-N·s6·sb",
+          "clase": "t15·C·-N·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 2,
@@ -2781,12 +2781,12 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "intermedia",
-          "clase": "t4·C·P-·s6·sb",
+          "clase": "t4·C·P-·s6",
           "tarjetas": 4,
           "vacia": false,
           "ventanaMax": 1,
@@ -2799,12 +2799,12 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 3,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2817,12 +2817,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 4,
           "pos": "última",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2835,7 +2835,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2843,9 +2843,9 @@
       "nPaginas": 5,
       "nClases": 3,
       "clases": [
-        "t15·C·-N·s6·sb",
-        "t6·C·P-·s6·sb",
-        "t0·ninguna·--·s6·sb"
+        "t15·C·-N·s6",
+        "t6·C·P-·s6",
+        "t0·ninguna·--·s6"
       ],
       "varia": {
         "tarjetas": [
@@ -2874,7 +2874,7 @@
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t15·C·-N·s6·sb",
+          "clase": "t15·C·-N·s6",
           "tarjetas": 15,
           "vacia": false,
           "ventanaMax": 2,
@@ -2887,12 +2887,12 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "intermedia",
-          "clase": "t6·C·P-·s6·sb",
+          "clase": "t6·C·P-·s6",
           "tarjetas": 6,
           "vacia": false,
           "ventanaMax": 1,
@@ -2905,12 +2905,12 @@
           "spanPages": null,
           "ventana": 1,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 3,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2923,12 +2923,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 4,
           "pos": "intermedia",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2941,12 +2941,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 5,
           "pos": "última",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -2959,7 +2959,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2967,14 +2967,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t3·ninguna·--·s6·sb"
+        "t3·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t3·ninguna·--·s6·sb",
+          "clase": "t3·ninguna·--·s6",
           "tarjetas": 3,
           "vacia": false,
           "ventanaMax": null,
@@ -2987,7 +2987,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -2995,8 +2995,8 @@
       "nPaginas": 2,
       "nClases": 2,
       "clases": [
-        "t7·ninguna·--·s6·sb",
-        "t0·ninguna·--·s6·sb"
+        "t7·ninguna·--·s6",
+        "t0·ninguna·--·s6"
       ],
       "varia": {
         "tarjetas": [
@@ -3008,7 +3008,7 @@
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t7·ninguna·--·s6·sb",
+          "clase": "t7·ninguna·--·s6",
           "tarjetas": 7,
           "vacia": false,
           "ventanaMax": null,
@@ -3021,12 +3021,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3039,7 +3039,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -3047,14 +3047,14 @@
       "nPaginas": 2,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s7·sb"
+        "t0·ninguna·--·s7"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s7·sb",
+          "clase": "t0·ninguna·--·s7",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3067,12 +3067,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 7,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t0·ninguna·--·s7·sb",
+          "clase": "t0·ninguna·--·s7",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3085,7 +3085,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 7,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -3093,14 +3093,14 @@
       "nPaginas": 2,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s6·sb"
+        "t0·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3113,12 +3113,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3131,7 +3131,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -3139,14 +3139,14 @@
       "nPaginas": 2,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s6·sb"
+        "t0·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3159,12 +3159,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t0·ninguna·--·s6·sb",
+          "clase": "t0·ninguna·--·s6",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3177,7 +3177,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -3185,14 +3185,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t3·ninguna·--·s6·sb"
+        "t3·ninguna·--·s6"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t3·ninguna·--·s6·sb",
+          "clase": "t3·ninguna·--·s6",
           "tarjetas": 3,
           "vacia": false,
           "ventanaMax": null,
@@ -3205,7 +3205,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 6,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -3213,14 +3213,14 @@
       "nPaginas": 3,
       "nClases": 1,
       "clases": [
-        "t14·ninguna·--·s5·sb"
+        "t14·ninguna·--·s5"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t14·ninguna·--·s5·sb",
+          "clase": "t14·ninguna·--·s5",
           "tarjetas": 14,
           "vacia": false,
           "ventanaMax": null,
@@ -3233,12 +3233,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "intermedia",
-          "clase": "t14·ninguna·--·s5·sb",
+          "clase": "t14·ninguna·--·s5",
           "tarjetas": 14,
           "vacia": false,
           "ventanaMax": null,
@@ -3251,12 +3251,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 3,
           "pos": "última",
-          "clase": "t14·ninguna·--·s5·sb",
+          "clase": "t14·ninguna·--·s5",
           "tarjetas": 14,
           "vacia": false,
           "ventanaMax": null,
@@ -3269,7 +3269,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -3277,14 +3277,14 @@
       "nPaginas": 1,
       "nClases": 1,
       "clases": [
-        "t1·ninguna·--·s5·sb"
+        "t1·ninguna·--·s5"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t1·ninguna·--·s5·sb",
+          "clase": "t1·ninguna·--·s5",
           "tarjetas": 1,
           "vacia": false,
           "ventanaMax": null,
@@ -3297,7 +3297,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -3305,14 +3305,14 @@
       "nPaginas": 2,
       "nClases": 1,
       "clases": [
-        "t8·ninguna·--·s5·sb"
+        "t8·ninguna·--·s5"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t8·ninguna·--·s5·sb",
+          "clase": "t8·ninguna·--·s5",
           "tarjetas": 8,
           "vacia": false,
           "ventanaMax": null,
@@ -3325,12 +3325,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t8·ninguna·--·s5·sb",
+          "clase": "t8·ninguna·--·s5",
           "tarjetas": 8,
           "vacia": false,
           "ventanaMax": null,
@@ -3343,7 +3343,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 5,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     },
@@ -3351,14 +3351,14 @@
       "nPaginas": 2,
       "nClases": 1,
       "clases": [
-        "t0·ninguna·--·s7·sb"
+        "t0·ninguna·--·s7"
       ],
       "varia": {},
       "paginas": [
         {
           "n": 1,
           "pos": "primera",
-          "clase": "t0·ninguna·--·s7·sb",
+          "clase": "t0·ninguna·--·s7",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3371,12 +3371,12 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 7,
-          "sidebar": true
+          "sidebar": false
         },
         {
           "n": 2,
           "pos": "última",
-          "clase": "t0·ninguna·--·s7·sb",
+          "clase": "t0·ninguna·--·s7",
           "tarjetas": 0,
           "vacia": true,
           "ventanaMax": null,
@@ -3389,7 +3389,7 @@
           "spanPages": null,
           "ventana": 0,
           "secciones": 7,
-          "sidebar": true
+          "sidebar": false
         }
       ]
     }
@@ -3401,46 +3401,49 @@
     "homogeneas": 9,
     "heterogeneas": 19,
     "clasesGlobales": {
-      "t0·ninguna·--·s6·sb": 61,
+      "t0·ninguna·--·s6·sb": 36,
+      "t0·ninguna·--·s6": 25,
       "t9·ninguna·PN·s6·sb": 17,
-      "t5·ninguna·PN·s4·sb": 8,
+      "t5·ninguna·PN·s4": 8,
       "t9·ninguna·-N·s6·sb": 7,
       "t9·A·PN·s6·sb": 6,
-      "t15·C·-N·s6·sb": 4,
-      "t15·C·PN·s6·sb": 4,
-      "t0·ninguna·--·s7·sb": 4,
-      "t14·ninguna·--·s5·sb": 3,
-      "t57·ninguna·--·s6·sb": 2,
-      "t7·ninguna·--·s6·sb": 2,
-      "t4·ninguna·--·s6·sb": 2,
+      "t15·C·-N·s6": 4,
+      "t15·C·PN·s6": 4,
+      "t0·ninguna·--·s7": 4,
+      "t14·ninguna·--·s5": 3,
+      "t57·ninguna·--·s6": 2,
       "t7·ninguna·P-·s6·sb": 2,
-      "t5·ninguna·-N·s4·sb": 2,
-      "t3·ninguna·--·s8·sb": 2,
-      "t1·ninguna·--·s6·sb": 2,
-      "t3·ninguna·--·s6·sb": 2,
-      "t8·ninguna·--·s5·sb": 2,
+      "t5·ninguna·-N·s4": 2,
+      "t3·ninguna·--·s8": 2,
+      "t1·ninguna·--·s6": 2,
+      "t3·ninguna·--·s6": 2,
+      "t8·ninguna·--·s5": 2,
       "t9·A·-N·s6·sb": 1,
       "t5·A·P-·s6·sb": 1,
       "t6·ninguna·P-·s6·sb": 1,
+      "t7·ninguna·--·s6·sb": 1,
       "t9·ninguna·P-·s6·sb": 1,
       "t6·ninguna·--·s6·sb": 1,
       "t5·ninguna·P-·s6·sb": 1,
       "t9·ninguna·--·s6·sb": 1,
+      "t4·ninguna·--·s6·sb": 1,
       "t8·ninguna·--·s6·sb": 1,
       "t1·ninguna·P-·s6·sb": 1,
       "t2·ninguna·P-·s6·sb": 1,
-      "t2·ninguna·P-·s4·sb": 1,
-      "t4·ninguna·P-·s4·sb": 1,
-      "t5·C·P-·s6·sb": 1,
-      "t9·C·P-·s6·sb": 1,
-      "t4·C·P-·s6·sb": 1,
-      "t6·C·P-·s6·sb": 1,
-      "t1·ninguna·--·s5·sb": 1
+      "t2·ninguna·P-·s4": 1,
+      "t4·ninguna·P-·s4": 1,
+      "t5·C·P-·s6": 1,
+      "t4·ninguna·--·s6": 1,
+      "t9·C·P-·s6": 1,
+      "t4·C·P-·s6": 1,
+      "t6·C·P-·s6": 1,
+      "t7·ninguna·--·s6": 1,
+      "t1·ninguna·--·s5": 1
     },
     "clasesPorPosicion": {
-      "primera": 18,
-      "intermedia": 17,
-      "última": 8
+      "primera": 20,
+      "intermedia": 18,
+      "última": 9
     },
     "paginasVacias": {
       "n": 55,
@@ -3609,5 +3612,10 @@
       }
     ],
     "veredicto": "LA SERIE NO ES UNA UNIDAD"
+  },
+  "sidebar": {
+    "conSidebar": 80,
+    "deCuantos": 149,
+    "patron": "et_pb_sidebar_N_tb_body (el bueno)"
   }
 }

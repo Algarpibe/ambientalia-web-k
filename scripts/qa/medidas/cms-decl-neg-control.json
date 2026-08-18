@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-08",
+    "fecha": "2026-08-18",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
     "sabotaje": "control"
@@ -12,8 +12,8 @@
       "casos.sectores": "objeto",
       "casos.soluciones": "slug",
       "entradas-blog.categorias": "objeto",
-      "entradas-blog.etiquetas": "objeto",
       "entradas-blog.recurso": "objeto",
+      "entradas-blog.etiquetas": "objeto",
       "documentos-cientificos.categoria": "objeto"
     },
     "conKind": [
@@ -79,23 +79,23 @@
     ],
     "listas": {
       "casos.galeria": {
-        "presente": 2,
-        "ausente": 2
+        "presente": 48,
+        "ausente": 9
       },
       "casos.sectores": {
-        "presente": 3,
-        "ausente": 1
+        "presente": 53,
+        "ausente": 4
       },
       "casos.soluciones": {
-        "presente": 3,
-        "ausente": 1
+        "presente": 53,
+        "ausente": 4
       },
       "entradas-blog.categorias": {
-        "presente": 7,
+        "presente": 152,
         "ausente": 0
       },
       "entradas-blog.etiquetas": {
-        "presente": 7,
+        "presente": 152,
         "ausente": 0
       },
       "monograficos.articulos.posts": {
@@ -154,6 +154,10 @@
         "presente": 1,
         "ausente": 0
       },
+      "monograficos.cuerpo.filas.columnas.modulos.titulares": {
+        "presente": 0,
+        "ausente": 17
+      },
       "monograficos.hero.ctas": {
         "presente": 2,
         "ausente": 0
@@ -175,12 +179,12 @@
         "ausente": 0
       },
       "productos.bullets": {
-        "presente": 9,
+        "presente": 19,
         "ausente": 0
       },
       "productos.cuerpo": {
         "presente": 0,
-        "ausente": 9
+        "ausente": 19
       },
       "sectores.articulos.posts": {
         "presente": 4,
@@ -277,23 +281,26 @@
       "casos.galeria",
       "casos.sectores",
       "casos.soluciones",
+      "monograficos.cuerpo.filas.columnas.modulos.titulares",
       "monograficos.hero.modulos.paragraphs",
-      "productos.cuerpo"
+      "productos.cuerpo",
+      "productos.cuerpo.titulares"
     ]
   },
   "contrato": {
-    "evaluadas": 63,
-    "minimo": 63,
+    "evaluadas": 64,
+    "minimo": 64,
     "suficiente": true
   },
   "veredicto": {
-    "verificadas": 63,
+    "verificadas": 64,
     "huecos": [],
     "muertas": [],
     "sinEjercitar": [],
     "listasSinEjercitar": [
       "productos.cuerpo.bloques",
       "productos.cuerpo.bloques.ul",
+      "productos.cuerpo.titulares",
       "productos.cuerpo.diapositivas",
       "productos.cuerpo.imagenes",
       "productos.cuerpo.body",

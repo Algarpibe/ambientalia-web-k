@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-05",
+    "fecha": "2026-08-18",
     "app": "apps/web",
     "manifiesto": "medidas/manifiesto-neg-vacio-entrada.json",
     "base": "medidas/clon-base-1440-f21-antes.json"
@@ -9,19 +9,33 @@
   "familias": {},
   "dinamicas": [
     "/[slug]",
+    "/blog/page/[n]",
     "/case-studies/[slug]",
     "/casos-de-exito/[slug]",
+    "/centro-de-ayuda/[...ruta]",
+    "/etiqueta/[slug]",
+    "/etiqueta/[slug]/page/[n]",
     "/faqs/[slug]",
     "/recursos/[...ruta]",
-    "/sectores/[slug]"
+    "/scientific-category/[slug]",
+    "/scientific-category/[slug]/page/[n]",
+    "/sectores/[slug]",
+    "/soporte/[...ruta]"
   ],
   "vacias": [
     "/[slug]",
+    "/blog/page/[n]",
     "/case-studies/[slug]",
     "/casos-de-exito/[slug]",
+    "/centro-de-ayuda/[...ruta]",
+    "/etiqueta/[slug]",
+    "/etiqueta/[slug]/page/[n]",
     "/faqs/[slug]",
     "/recursos/[...ruta]",
-    "/sectores/[slug]"
+    "/scientific-category/[slug]",
+    "/scientific-category/[slug]/page/[n]",
+    "/sectores/[slug]",
+    "/soporte/[...ruta]"
   ],
   "desaparecidas": [
     "/",

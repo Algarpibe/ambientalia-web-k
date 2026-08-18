@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-18",
-    "sabotaje": "t3",
+    "sabotaje": "t10",
     "fuente": "corpus/ (captura congelada) — OFFLINE, sin tocar el sitio vivo",
     "parcial": false,
     "solo": null,
@@ -26,116 +26,9 @@
       "violaciones": []
     },
     "t3": {
-      "aplicadas": 0,
+      "aplicadas": 892,
       "dianas": 892,
-      "violaciones": [
-        "entradas-blog/proyecto-simgo: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/el-sensor-de-calidad-del-aire-mas-preciso: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/particulas-ultrafinas-puf: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/emisiones-ganaderas-y-calidad-del-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-de-olores-en-edar: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/calidad-del-aire-en-islas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/biometano-y-biogas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-acustica: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/impacto-ambiental-de-la-industria-petroquimica: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/running-for-clean-air: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-del-aire-en-vertederos: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-por-produccion-de-energia: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/proyecto-pure-cities: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-por-metano: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/microsensores-de-calidad-del-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-juegos-olimpicos-de-paris-2024: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-del-aire-en-nueva-york: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/calidad-del-aire-en-las-comunidades: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/impacto-ambiental-industria-papelera: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/calidad-del-aire-en-puertos: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/calidad-del-aire-en-los-aeropuertos: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-del-aire-en-madrid: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/guia-sobre-la-contaminacion-urbana: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/ehs-industrial: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/calidad-del-aire-en-los-asentamientos-informales: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-mal-olor-industrial: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/calidad-del-aire-alrededor-de-los-colegios: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/redes-hibridas-vigilancia-calidad-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/impacto-ambiental-industria-cementera: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/kunak-cloud-plataforma-web-calidad-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/sensores-calidad-aire-volcanes: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/kunak-air-pro-sensor-multi-contaminante-preciso-airlab: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/estres-por-calor-bienestar: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/zonas-bajas-emisiones-monitorizacion: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitores-calidad-aire-moviles: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-incendios-forestales-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-mal-olor-sensores: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/premios-aqe-2024: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/medicion-de-la-calidad-del-aire-en-puertos-maritimos: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/plan-recuperacion-transformacion-resiliencia-zbe: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/calidad-aire-tiempo-real-kunak-air-lite: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/medir-calidad-aire-asic-2022: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/sensores-calidad-aire-exterior-pamplona: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/vigilancia-calidad-aire-maraton-valencia-2019: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/participamos-con-suez-en-el-4yfn-del-mobile-world-congress: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/exponemos-en-la-smart-city-expo-world-congress-2017: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/quemas-prescritas-agricolas-calidad-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/medidores-de-calidad-del-aire-mediciones-indicativas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-del-aire-urbano: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/control-emisiones-industriales: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/emisiones-de-las-refinerias-de-petroleo: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-de-emisiones-en-refinerias: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/contaminacion-del-aire-por-obras: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-near-reference: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-perimetral: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/monitorizacion-de-emisiones-fugitivas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/sensor-calidad-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/particulas-ultrafinas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/metano: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/sulfuro-de-hidrogeno: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/ruido: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/cianuro-de-hidrogeno-hcn: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/amoniaco-nh3: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/gases-de-efecto-invernadero: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/compuestos-organicos-volatiles: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/esmog: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/inmisiones-atmosfericas: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/fluoruro-de-hidrogeno-hf: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/cloruro-de-hidrogeno-hcl: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/oxido-nitrico-no: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/oxigeno: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/ozono-troposferico: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/dioxido-de-nitrogeno: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/particulas-en-suspension: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/indice-de-calidad-del-aire: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/monoxido-de-carbono: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/contaminantes-atmosfericos: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/ldar: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/oxidos-de-nitrogeno-nox: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "terminos-kunakpedia/emisiones-por-chimenea: queda `wp-image-<id>` o `aligncenter` en el contenido",
-        "entradas-blog/kunak-obtiene-el-sello-reconcilia: queda `wp-image-<id>` o `aligncenter` en el contenido"
-      ]
+      "violaciones": []
     },
     "t3b": {
       "aplicadas": 444,
@@ -178,9 +71,181 @@
       "violaciones": []
     },
     "t10": {
-      "aplicadas": 1819,
+      "aplicadas": 0,
       "dianas": 1819,
-      "violaciones": []
+      "violaciones": [
+        "entradas-blog/estamos-listos-para-ayudarle: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/nos-hemos-mudado: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/covid-19-calidad-del-aire: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/detectores-emisiones-coronavirus-contaminacion: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2020/06/Nitrogen_dioxide_concentrations_over_Spain-reduced.g",
+        "entradas-blog/webinar-redes-hibridas-monitorizacion-ambiental: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/webinar-como-controlar-las-emisiones-en-mineria-junio-2025: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/proyecto-simgo: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/el-sensor-de-calidad-del-aire-mas-preciso: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/01/premios-kunak-en-airlab-2023.jpg",
+        "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados: quedan 11 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos: quedan 30 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas: quedan 11 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/05/kunak-air-pro-pm-sensor.jpg",
+        "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano: quedan 16 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales: quedan 12 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/05/LDAR-es-clave-para-la-industria-moderna_Kunak.jpg",
+        "entradas-blog/particulas-ultrafinas-puf: quedan 9 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/emisiones-ganaderas-y-calidad-del-aire: quedan 46 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/monitorizacion-de-olores-en-edar: quedan 34 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/calidad-del-aire-en-islas: quedan 37 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/10/atardecer-en-isla_contaminacion-aire_kunak.jpg",
+        "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla: quedan 40 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/09/Efectos-de-la-corrosion-ambiental-en-instalacion-ind",
+        "entradas-blog/biometano-y-biogas: quedan 26 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica: quedan 44 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/06/stop-cambio-climatico-kunak-scaled.jpg",
+        "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto: quedan 53 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/calibracion-de-sensores-de-calidad-del-aire: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-acustica: quedan 42 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/05/Contaminacion_acustica_y_salud_cardiovascular_2023.p",
+        "entradas-blog/nueva-directiva-de-calidad-del-aire-ue-2024-2881: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/impacto-ambiental-de-la-industria-petroquimica: quedan 29 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/03/US_Contaminacion-petroquimica-comparativa.png",
+        "entradas-blog/running-for-clean-air: quedan 43 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/02/World-Athletics-Running-for-Clean-Air-project-launch",
+        "entradas-blog/contaminacion-del-aire-en-vertederos: quedan 32 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-por-produccion-de-energia: quedan 25 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/05/industria-produccion-energia-Kunak.png",
+        "entradas-blog/webinar-control-de-olores-en-vertederos-y-edar: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/proyecto-pure-cities: quedan 31 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-por-metano: quedan 30 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire: quedan 16 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/10/World_Steel_in_Figures_2024.pdf",
+        "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica: quedan 20 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/10/mapa-de-temperaturas-2024.png",
+        "entradas-blog/microsensores-de-calidad-del-aire: quedan 5 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/10/dispositivo-iot-para-medir-la-calidad-del-aire.jpg",
+        "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio: quedan 22 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas: quedan 7 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-juegos-olimpicos-de-paris-2024: quedan 25 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-del-aire-en-nueva-york: quedan 26 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire: quedan 46 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/06/How-many-people-die-from-air-pollution.png",
+        "entradas-blog/calidad-del-aire-en-las-comunidades: quedan 28 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/impacto-ambiental-industria-papelera: quedan 15 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/calidad-del-aire-en-puertos: quedan 20 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire: quedan 12 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/calidad-del-aire-en-los-aeropuertos: quedan 5 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-del-aire-en-madrid: quedan 7 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/guia-sobre-la-contaminacion-urbana: quedan 9 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-air-pro-certificado-mcerts: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/ehs-industrial: quedan 8 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/calidad-del-aire-en-los-asentamientos-informales: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura: quedan 32 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/monitorizacion-mal-olor-industrial: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/calidad-del-aire-alrededor-de-los-colegios: quedan 14 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/despliegue-estaciones-kunak-air-pro-filipinas: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/redes-hibridas-vigilancia-calidad-aire: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/impacto-ambiental-industria-cementera: quedan 6 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-cloud-plataforma-web-calidad-aire: quedan 25 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2022/01/arquitectura-kunak-cloud.png",
+        "entradas-blog/sensores-calidad-aire-volcanes: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-air-pro-sensor-multi-contaminante-preciso-airlab: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/directrices-oms-calidad-aire-innovacion: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2021/10/infografia-directrices-de-la-OMS-sobre-calidad-del-a",
+        "entradas-blog/conferencia-partes-cop26-incendios: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/estres-por-calor-bienestar: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/zonas-bajas-emisiones-monitorizacion: quedan 7 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/monitores-calidad-aire-moviles: quedan 11 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/entrevista-jelle-hofman-investigador-calidad-del-aire-imec: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-incendios-forestales-aire: quedan 7 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/entrevista-agustin-torres-product-manager-suez: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/detectores-calidad-aire-movilidad: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/comparativa-de-los-informes-de-evaluacion-de-aqspec: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contador-particulas-suspension-movilidad-sostenible: quedan 12 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2020/09/sem2020.png",
+        "entradas-blog/contaminacion-aire-deporte: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-mal-olor-sensores: quedan 16 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2020/08/Vertedero-con-basura-maquinaria-y-aves-volando.jpg",
+        "entradas-blog/detectores-emisiones-proyecto-trafair: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2020/06/trafair-project.jpg",
+        "entradas-blog/efectos-de-la-contaminacion-en-la-salud: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/webinar-calidad-del-aire-en-europa: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/premios-pyme-2024-kunak: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/premios-aqe-2024: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-del-transporte-urbano: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-referente-en-medicion-de-calidad-del-aire: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/medicion-de-la-calidad-del-aire-en-puertos-maritimos: quedan 6 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/plan-recuperacion-transformacion-resiliencia-zbe: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/calidad-aire-tiempo-real-kunak-air-lite: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/medir-calidad-aire-asic-2022: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/fondos-nextgen-eu-zonas-bajas-emisiones: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/lanzamiento-kunak-air-pro: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/sensores-calidad-aire-exterior-pamplona: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf",
+        "entradas-blog/kunak-proveedor-sensores-calidad-aire-brightsites-signify: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/vigilancia-calidad-aire-maraton-valencia-2019: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2020/01/valencia_marathon_kunak_3.jpg",
+        "entradas-blog/maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/calidad-aire-paises-sanos: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/por-que-es-importante-monitorizar-en-tiempo-real: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/workshop-sensores-ambientales-bajo-coste: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/eugreenweek-we-have-gone-green: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/fourth-session-of-the-united-nations-environment-assembly-2: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/05/kunak-air-pro-label.jpg",
+        "entradas-blog/kunak-oem-industrial-iot-en-el-basque-industry-4-0: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/exponemos-en-la-smart-city-expo-world-congress-2017: quedan 6 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2017/11/Javier-Fernández-@KunaK_sensing-contaminación-ambi",
+        "entradas-blog/kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/quemas-prescritas-agricolas-calidad-aire: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/medidores-de-calidad-del-aire-mediciones-indicativas: quedan 4 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-del-aire-urbano: quedan 12 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/sensores-calidad-aire-urbano-donostia: quedan 14 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/control-emisiones-industriales: quedan 8 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/emisiones-de-las-refinerias-de-petroleo: quedan 19 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/04/infografia_refino_petroleo_Kunak.pdf",
+        "entradas-blog/monitorizacion-de-emisiones-en-refinerias: quedan 6 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-del-aire-por-obras: quedan 23 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/contaminacion-aire-obras-demoliciones-derribos: quedan 8 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/impacto-ambiental-mineria-calidad-aire: quedan 7 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/monitorizacion-near-reference: quedan 41 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/06/Que-es-la-monitorizacion-near-reference_Kunak.jpeg",
+        "entradas-blog/monitorizacion-perimetral: quedan 34 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "entradas-blog/monitorizacion-de-emisiones-fugitivas: quedan 42 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/07/Las-emisiones-difusas-pueden-ser-un-dato-gestionable",
+        "terminos-kunakpedia/sensor-calidad-aire: quedan 5 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/redes-de-vigilancia-de-calidad-del-aire: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/calidad-del-aire: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/particulas-ultrafinas: quedan 25 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/04/Particulas-ultrafinas-Karlsruhe-Institute-of-Technol",
+        "terminos-kunakpedia/metano: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/sulfuro-de-hidrogeno: quedan 14 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/05/canal-de-alcantarillado_kunak.jpg",
+        "terminos-kunakpedia/ruido: quedan 18 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/06/frecyLong.png",
+        "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire: quedan 15 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/07/AAQMS-Ambient-Air-Quality-Monitoring-Station-Kunak.j",
+        "terminos-kunakpedia/cianuro-de-hidrogeno-hcn: quedan 26 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/09/cianuro-de-hidrogeno-molecula.gif",
+        "terminos-kunakpedia/amoniaco-nh3: quedan 21 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/10/molecula-amoniaco_Kunak.png",
+        "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc: quedan 26 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/11/Hidrocarburos-no-metanicos-NMHC.jpg",
+        "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2: quedan 26 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/12/Papel-blanqueado-con-cloro-scaled.jpg",
+        "terminos-kunakpedia/gases-de-efecto-invernadero: quedan 15 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/06/Greenhouse-effect-t2.svg",
+        "terminos-kunakpedia/compuestos-organicos-volatiles: quedan 7 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/03/VOC-origen.png",
+        "terminos-kunakpedia/esmog: quedan 7 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/estaciones-de-calidad-del-aire: quedan 6 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/10/estaciones-fijas-de-calidad-del-aire.jpg",
+        "terminos-kunakpedia/inmisiones-atmosfericas: quedan 5 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/justicia-ambiental: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/fluoruro-de-hidrogeno-hf: quedan 14 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/cloruro-de-hidrogeno-hcl: quedan 12 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/05/emision-de-cloruro-de-hidrogeno.jpeg",
+        "terminos-kunakpedia/oxido-nitrico-no: quedan 8 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/oxigeno: quedan 7 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/ozono-troposferico: quedan 8 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/dioxido-de-carbono: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/dioxido-de-nitrogeno: quedan 10 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/particulas-en-suspension: quedan 3 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/04/clasificacion-tamano-particulas-en-suspension-kunak.",
+        "terminos-kunakpedia/indice-de-calidad-del-aire: quedan 5 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/dioxido-de-azufre: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/emisiones-atmosfericas: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/huella-de-carbono: quedan 2 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/monoxido-de-carbono: quedan 8 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/01/Fuentes-de-Monoxido-CO-Emision-de-CO-infografia-US-E",
+        "terminos-kunakpedia/contaminantes-atmosfericos: quedan 17 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/ldar: quedan 25 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/05/LDAR-monitoring_control-operativa_Kunak.jpg",
+        "terminos-kunakpedia/monitorizacion-de-la-calidad-del-aire: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/oxidos-de-nitrogeno-nox: quedan 43 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/06/monoxido-nitrogeno-emitido-por-trafico_kunak.jpg",
+        "terminos-kunakpedia/vigilancia-perimetral-industrial: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg",
+        "terminos-kunakpedia/emisiones-por-chimenea: quedan 65 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2026/07/emisiones-de-fuentes-estacionarias_Kunak.jpg",
+        "entradas-blog/kunak-obtiene-el-sello-reconcilia: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2025/12/Reconcilia.jpg",
+        "entradas-blog/webinar-control-de-la-contaminacion-del-aire-en-la-industria: quedan 1 URL(s) de subida SIN localizar y publicadas: https://kunakair.com/wp-content/uploads/2024/11/banner-suscripcion.svg"
+      ]
     }
   },
   "scriptsQuitados": [
@@ -6379,10 +6444,11 @@
   "paginas": {
     "entradas-blog/estamos-listos-para-ayudarle": {
       "bytes": 3432,
-      "bytesTransformado": 3417,
+      "bytesTransformado": 3441,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6390,15 +6456,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 1
+      "t7": 0
     },
     "entradas-blog/nos-hemos-mudado": {
       "bytes": 1865,
-      "bytesTransformado": 1850,
+      "bytesTransformado": 1874,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6406,8 +6472,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 1
+      "t7": 0
     },
     "entradas-blog/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar": {
       "bytes": 3231,
@@ -6415,6 +6480,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6422,15 +6488,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/covid-19-calidad-del-aire": {
       "bytes": 4886,
-      "bytesTransformado": 4791,
+      "bytesTransformado": 4815,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6438,15 +6504,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/detectores-emisiones-coronavirus-contaminacion": {
       "bytes": 7858,
-      "bytesTransformado": 7739,
+      "bytesTransformado": 7787,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6454,15 +6520,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 2
+      "t7": 2
     },
     "entradas-blog/webinar-redes-hibridas-monitorizacion-ambiental": {
       "bytes": 6616,
-      "bytesTransformado": 6514,
+      "bytesTransformado": 6538,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6470,15 +6536,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/webinar-como-controlar-las-emisiones-en-mineria-junio-2025": {
       "bytes": 14200,
-      "bytesTransformado": 14014,
+      "bytesTransformado": 14038,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6486,15 +6552,15 @@
       "t4": 0,
       "t5": 1,
       "t6": 0,
-      "t7": 4,
-      "t10": 1
+      "t7": 4
     },
     "entradas-blog/proyecto-simgo": {
       "bytes": 2606,
-      "bytesTransformado": 2567,
+      "bytesTransformado": 2588,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6502,15 +6568,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 2
+      "t7": 0
     },
     "entradas-blog/el-sensor-de-calidad-del-aire-mas-preciso": {
       "bytes": 7283,
-      "bytesTransformado": 7084,
+      "bytesTransformado": 7105,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6518,15 +6584,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 2
+      "t7": 4
     },
     "entradas-blog/monitorizacion-aire-remediacion-suelos-contaminados": {
       "bytes": 78745,
-      "bytesTransformado": 77596,
+      "bytesTransformado": 77510,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3": 20,
       "t3b": 10,
       "t4b": 0,
       "t9": 0,
@@ -6534,15 +6600,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 10,
-      "t10": 11
+      "t7": 10
     },
     "entradas-blog/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
       "bytes": 83283,
-      "bytesTransformado": 80704,
+      "bytesTransformado": 81179,
       "t8": 1,
       "t1": 1,
       "t2": 7,
+      "t3": 14,
       "t3b": 7,
       "t4b": 0,
       "t9": 0,
@@ -6550,15 +6616,15 @@
       "t4": 1,
       "t5": 2,
       "t6": 0,
-      "t7": 30,
-      "t10": 30
+      "t7": 30
     },
     "entradas-blog/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas": {
       "bytes": 39037,
-      "bytesTransformado": 37499,
+      "bytesTransformado": 37378,
       "t8": 0,
       "t1": 0,
       "t2": 11,
+      "t3": 22,
       "t3b": 11,
       "t4b": 0,
       "t9": 0,
@@ -6566,15 +6632,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 7,
-      "t10": 11
+      "t7": 7
     },
     "entradas-blog/monitorizacion-de-emisiones-del-trafico-urbano": {
       "bytes": 90311,
-      "bytesTransformado": 85050,
+      "bytesTransformado": 84944,
       "t8": 1,
       "t1": 1,
       "t2": 14,
+      "t3": 28,
       "t3b": 14,
       "t4b": 1,
       "t9": 0,
@@ -6582,15 +6648,15 @@
       "t4": 1,
       "t5": 3,
       "t6": 0,
-      "t7": 12,
-      "t10": 16
+      "t7": 12
     },
     "entradas-blog/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales": {
       "bytes": 71967,
-      "bytesTransformado": 70387,
+      "bytesTransformado": 70247,
       "t8": 0,
       "t1": 1,
       "t2": 12,
+      "t3": 24,
       "t3b": 12,
       "t4b": 0,
       "t9": 0,
@@ -6598,15 +6664,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 13,
-      "t10": 12
+      "t7": 13
     },
     "entradas-blog/particulas-ultrafinas-puf": {
       "bytes": 58428,
-      "bytesTransformado": 57332,
+      "bytesTransformado": 57268,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3": 16,
       "t3b": 8,
       "t4b": 0,
       "t9": 0,
@@ -6614,15 +6680,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 9
+      "t7": 9
     },
     "entradas-blog/emisiones-ganaderas-y-calidad-del-aire": {
       "bytes": 60823,
-      "bytesTransformado": 58670,
+      "bytesTransformado": 59424,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3": 20,
       "t3b": 10,
       "t4b": 0,
       "t9": 0,
@@ -6630,15 +6696,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 12,
-      "t10": 46
+      "t7": 12
     },
     "entradas-blog/monitorizacion-de-olores-en-edar": {
       "bytes": 77446,
-      "bytesTransformado": 75389,
+      "bytesTransformado": 75855,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3": 20,
       "t3b": 10,
       "t4b": 0,
       "t9": 0,
@@ -6646,15 +6712,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 19,
-      "t10": 34
+      "t7": 19
     },
     "entradas-blog/calidad-del-aire-en-islas": {
       "bytes": 55152,
-      "bytesTransformado": 53257,
+      "bytesTransformado": 53830,
       "t8": 0,
       "t1": 1,
       "t2": 9,
+      "t3": 18,
       "t3b": 9,
       "t4b": 0,
       "t9": 0,
@@ -6662,15 +6728,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 11,
-      "t10": 37
+      "t7": 11
     },
     "entradas-blog/corrosion-ambiental-causas-factores-y-como-prevenirla": {
       "bytes": 51551,
-      "bytesTransformado": 49811,
+      "bytesTransformado": 50421,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3": 20,
       "t3b": 10,
       "t4b": 0,
       "t9": 0,
@@ -6678,15 +6744,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 7,
-      "t10": 40
+      "t7": 7
     },
     "entradas-blog/biometano-y-biogas": {
       "bytes": 61235,
-      "bytesTransformado": 59600,
+      "bytesTransformado": 60014,
       "t8": 0,
       "t1": 1,
       "t2": 6,
+      "t3": 12,
       "t3b": 6,
       "t4b": 0,
       "t9": 0,
@@ -6694,15 +6760,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 15,
-      "t10": 26
+      "t7": 15
     },
     "entradas-blog/justicia-climatica-financiacion-climatica-y-seguridad-climatica": {
       "bytes": 63406,
-      "bytesTransformado": 61523,
+      "bytesTransformado": 62237,
       "t8": 0,
       "t1": 1,
       "t2": 9,
+      "t3": 19,
       "t3b": 9,
       "t4b": 0,
       "t9": 0,
@@ -6710,15 +6776,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 6,
-      "t10": 44
+      "t7": 6
     },
     "entradas-blog/sargazo-problemas-ambientales-y-monitorizacion-del-impacto": {
       "bytes": 47553,
-      "bytesTransformado": 45408,
+      "bytesTransformado": 46295,
       "t8": 0,
       "t1": 1,
       "t2": 11,
+      "t3": 22,
       "t3b": 11,
       "t4b": 0,
       "t9": 0,
@@ -6726,15 +6792,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 53
+      "t7": 4
     },
     "entradas-blog/calibracion-de-sensores-de-calidad-del-aire": {
       "bytes": 27668,
-      "bytesTransformado": 27399,
+      "bytesTransformado": 27495,
       "t8": 0,
       "t1": 3,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6742,15 +6808,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 4
+      "t7": 5
     },
     "entradas-blog/contaminacion-acustica": {
       "bytes": 52257,
-      "bytesTransformado": 50200,
+      "bytesTransformado": 50823,
       "t8": 0,
       "t1": 1,
       "t2": 15,
+      "t3": 23,
       "t3b": 15,
       "t4b": 0,
       "t9": 0,
@@ -6758,15 +6824,15 @@
       "t4": 0,
       "t5": 1,
       "t6": 0,
-      "t7": 1,
-      "t10": 42
+      "t7": 1
     },
     "entradas-blog/nueva-directiva-de-calidad-del-aire-ue-2024-2881": {
       "bytes": 22014,
-      "bytesTransformado": 21759,
+      "bytesTransformado": 21783,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6774,15 +6840,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 6,
-      "t10": 1
+      "t7": 6
     },
     "entradas-blog/impacto-ambiental-de-la-industria-petroquimica": {
       "bytes": 45388,
-      "bytesTransformado": 43657,
+      "bytesTransformado": 44108,
       "t8": 0,
       "t1": 1,
       "t2": 7,
+      "t3": 14,
       "t3b": 7,
       "t4b": 0,
       "t9": 0,
@@ -6790,15 +6856,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 15,
-      "t10": 29
+      "t7": 15
     },
     "entradas-blog/running-for-clean-air": {
       "bytes": 46993,
-      "bytesTransformado": 41347,
+      "bytesTransformado": 42092,
       "t8": 2,
       "t1": 1,
       "t2": 8,
+      "t3": 16,
       "t3b": 8,
       "t4b": 1,
       "t9": 0,
@@ -6806,15 +6872,15 @@
       "t4": 2,
       "t5": 1,
       "t6": 0,
-      "t7": 16,
-      "t10": 43
+      "t7": 16
     },
     "entradas-blog/contaminacion-del-aire-en-vertederos": {
       "bytes": 60982,
-      "bytesTransformado": 59477,
+      "bytesTransformado": 59965,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3": 16,
       "t3b": 8,
       "t4b": 0,
       "t9": 0,
@@ -6822,15 +6888,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 32
+      "t7": 9
     },
     "entradas-blog/contaminacion-por-produccion-de-energia": {
       "bytes": 50544,
-      "bytesTransformado": 49098,
+      "bytesTransformado": 49433,
       "t8": 0,
       "t1": 1,
       "t2": 7,
+      "t3": 15,
       "t3b": 7,
       "t4b": 0,
       "t9": 0,
@@ -6838,15 +6904,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 10,
-      "t10": 25
+      "t7": 10
     },
     "entradas-blog/webinar-control-de-olores-en-vertederos-y-edar": {
       "bytes": 3632,
-      "bytesTransformado": 3577,
+      "bytesTransformado": 3601,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -6854,15 +6920,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/proyecto-pure-cities": {
       "bytes": 32856,
-      "bytesTransformado": 31794,
+      "bytesTransformado": 32476,
       "t8": 1,
       "t1": 2,
       "t2": 1,
+      "t3": 3,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -6870,15 +6936,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 31
+      "t7": 4
     },
     "entradas-blog/contaminacion-por-metano": {
       "bytes": 92535,
-      "bytesTransformado": 90790,
+      "bytesTransformado": 91230,
       "t8": 0,
       "t1": 2,
       "t2": 8,
+      "t3": 16,
       "t3b": 8,
       "t4b": 0,
       "t9": 0,
@@ -6886,15 +6952,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 16,
-      "t10": 30
+      "t7": 16
     },
     "entradas-blog/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
       "bytes": 24557,
-      "bytesTransformado": 20916,
+      "bytesTransformado": 20924,
       "t8": 1,
       "t1": 1,
       "t2": 1,
+      "t3": 2,
       "t3b": 1,
       "t4b": 1,
       "t9": 0,
@@ -6902,15 +6968,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 2
+      "t7": 4
     },
     "entradas-blog/impacto-ambiental-del-acero-en-la-calidad-del-aire": {
       "bytes": 41192,
-      "bytesTransformado": 39888,
+      "bytesTransformado": 39995,
       "t8": 0,
       "t1": 4,
       "t2": 7,
+      "t3": 14,
       "t3b": 7,
       "t4b": 0,
       "t9": 0,
@@ -6918,15 +6984,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 11,
-      "t10": 16
+      "t7": 11
     },
     "entradas-blog/gases-de-efecto-invernadero-y-accion-climatica": {
       "bytes": 58656,
-      "bytesTransformado": 57482,
+      "bytesTransformado": 57787,
       "t8": 0,
       "t1": 1,
       "t2": 5,
+      "t3": 10,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -6934,15 +7000,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 20
+      "t7": 9
     },
     "entradas-blog/microsensores-de-calidad-del-aire": {
       "bytes": 10845,
-      "bytesTransformado": 10647,
+      "bytesTransformado": 10732,
       "t8": 0,
       "t1": 2,
       "t2": 1,
+      "t3": 2,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -6950,15 +7016,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 5
+      "t7": 1
     },
     "entradas-blog/justicia-ambiental-el-derecho-a-respirar-aire-limpio": {
       "bytes": 42306,
-      "bytesTransformado": 40761,
+      "bytesTransformado": 41079,
       "t8": 0,
       "t1": 1,
       "t2": 6,
+      "t3": 12,
       "t3b": 6,
       "t4b": 0,
       "t9": 0,
@@ -6966,15 +7032,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 14,
-      "t10": 22
+      "t7": 14
     },
     "entradas-blog/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas": {
       "bytes": 40350,
-      "bytesTransformado": 39488,
+      "bytesTransformado": 39481,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3": 10,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -6982,15 +7048,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 11,
-      "t10": 7
+      "t7": 11
     },
     "entradas-blog/contaminacion-juegos-olimpicos-de-paris-2024": {
       "bytes": 17710,
-      "bytesTransformado": 16561,
+      "bytesTransformado": 17126,
       "t8": 1,
       "t1": 1,
       "t2": 1,
+      "t3": 2,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -6998,15 +7064,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 25
+      "t7": 9
     },
     "entradas-blog/contaminacion-del-aire-en-nueva-york": {
       "bytes": 47904,
-      "bytesTransformado": 46097,
+      "bytesTransformado": 46476,
       "t8": 0,
       "t1": 2,
       "t2": 7,
+      "t3": 14,
       "t3b": 7,
       "t4b": 0,
       "t9": 0,
@@ -7014,15 +7080,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 18,
-      "t10": 26
+      "t7": 18
     },
     "entradas-blog/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire": {
       "bytes": 56611,
-      "bytesTransformado": 54123,
+      "bytesTransformado": 54877,
       "t8": 0,
       "t1": 3,
       "t2": 11,
+      "t3": 20,
       "t3b": 10,
       "t4b": 0,
       "t9": 0,
@@ -7030,15 +7096,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 19,
-      "t10": 46
+      "t7": 19
     },
     "entradas-blog/calidad-del-aire-en-las-comunidades": {
       "bytes": 45046,
-      "bytesTransformado": 43534,
+      "bytesTransformado": 43911,
       "t8": 0,
       "t1": 2,
       "t2": 8,
+      "t3": 17,
       "t3b": 8,
       "t4b": 0,
       "t9": 0,
@@ -7046,15 +7112,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 10,
-      "t10": 28
+      "t7": 10
     },
     "entradas-blog/impacto-ambiental-industria-papelera": {
       "bytes": 46910,
-      "bytesTransformado": 46078,
+      "bytesTransformado": 46323,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3": 6,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -7062,15 +7128,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 12,
-      "t10": 15
+      "t7": 12
     },
     "entradas-blog/calidad-del-aire-en-puertos": {
       "bytes": 51299,
-      "bytesTransformado": 50010,
+      "bytesTransformado": 50345,
       "t8": 0,
       "t1": 2,
       "t2": 6,
+      "t3": 8,
       "t3b": 6,
       "t4b": 0,
       "t9": 0,
@@ -7078,15 +7144,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 18,
-      "t10": 20
+      "t7": 18
     },
     "entradas-blog/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire": {
       "bytes": 33106,
-      "bytesTransformado": 32212,
+      "bytesTransformado": 32325,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3": 10,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -7094,15 +7160,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 7,
-      "t10": 12
+      "t7": 7
     },
     "entradas-blog/calidad-del-aire-en-los-aeropuertos": {
       "bytes": 19288,
-      "bytesTransformado": 19062,
+      "bytesTransformado": 19142,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3": 2,
       "t3b": 2,
       "t4b": 0,
       "t9": 0,
@@ -7110,15 +7176,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 5
+      "t7": 4
     },
     "entradas-blog/contaminacion-del-aire-en-madrid": {
       "bytes": 19861,
-      "bytesTransformado": 19231,
+      "bytesTransformado": 19369,
       "t8": 0,
       "t1": 2,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7126,15 +7192,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 12,
-      "t10": 7
+      "t7": 12
     },
     "entradas-blog/guia-sobre-la-contaminacion-urbana": {
       "bytes": 23652,
-      "bytesTransformado": 19480,
+      "bytesTransformado": 19618,
       "t8": 1,
       "t1": 3,
       "t2": 2,
+      "t3": 4,
       "t3b": 2,
       "t4b": 1,
       "t9": 0,
@@ -7142,15 +7208,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 9
+      "t7": 9
     },
     "entradas-blog/kunak-air-pro-certificado-mcerts": {
       "bytes": 4855,
-      "bytesTransformado": 4640,
+      "bytesTransformado": 4664,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7158,15 +7224,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 1
+      "t7": 5
     },
     "entradas-blog/ehs-industrial": {
       "bytes": 23847,
-      "bytesTransformado": 23420,
+      "bytesTransformado": 23534,
       "t8": 0,
       "t1": 2,
       "t2": 2,
+      "t3": 4,
       "t3b": 2,
       "t4b": 0,
       "t9": 0,
@@ -7174,15 +7240,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 8
+      "t7": 3
     },
     "entradas-blog/calidad-del-aire-en-los-asentamientos-informales": {
       "bytes": 8888,
-      "bytesTransformado": 8729,
+      "bytesTransformado": 8750,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7190,15 +7256,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 2
+      "t7": 3
     },
     "entradas-blog/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair": {
       "bytes": 5445,
-      "bytesTransformado": 5222,
+      "bytesTransformado": 5267,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7206,15 +7272,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 3
+      "t7": 4
     },
     "entradas-blog/medicion-de-gases-en-los-vertederos-de-basura": {
       "bytes": 60982,
-      "bytesTransformado": 59477,
+      "bytesTransformado": 59965,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3": 16,
       "t3b": 8,
       "t4b": 0,
       "t9": 0,
@@ -7222,15 +7288,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 32
+      "t7": 9
     },
     "entradas-blog/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web": {
       "bytes": 8536,
-      "bytesTransformado": 8441,
+      "bytesTransformado": 8465,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7238,15 +7304,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/monitorizacion-mal-olor-industrial": {
       "bytes": 36203,
-      "bytesTransformado": 35526,
+      "bytesTransformado": 35475,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3": 7,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -7254,15 +7320,15 @@
       "t4": 0,
       "t5": 7,
       "t6": 0,
-      "t7": 12,
-      "t10": 4
+      "t7": 12
     },
     "entradas-blog/calidad-del-aire-alrededor-de-los-colegios": {
       "bytes": 23780,
-      "bytesTransformado": 22904,
+      "bytesTransformado": 23120,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3": 7,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -7270,15 +7336,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 14
+      "t7": 9
     },
     "entradas-blog/despliegue-estaciones-kunak-air-pro-filipinas": {
       "bytes": 4839,
-      "bytesTransformado": 4664,
+      "bytesTransformado": 4688,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7286,15 +7352,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 1
+      "t7": 4
     },
     "entradas-blog/redes-hibridas-vigilancia-calidad-aire": {
       "bytes": 14791,
-      "bytesTransformado": 14568,
+      "bytesTransformado": 14586,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7302,15 +7368,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 3
+      "t7": 4
     },
     "entradas-blog/impacto-ambiental-industria-cementera": {
       "bytes": 38938,
-      "bytesTransformado": 38518,
+      "bytesTransformado": 38642,
       "t8": 1,
       "t1": 1,
       "t2": 5,
+      "t3": 1,
       "t3b": 5,
       "t4b": 1,
       "t9": 0,
@@ -7318,15 +7384,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 12,
-      "t10": 6
+      "t7": 12
     },
     "entradas-blog/kunak-cloud-plataforma-web-calidad-aire": {
       "bytes": 31313,
-      "bytesTransformado": 29737,
+      "bytesTransformado": 30291,
       "t8": 1,
       "t1": 1,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7334,15 +7400,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 21,
-      "t10": 25
+      "t7": 21
     },
     "entradas-blog/sensores-calidad-aire-volcanes": {
       "bytes": 23657,
-      "bytesTransformado": 22876,
+      "bytesTransformado": 22904,
       "t8": 1,
       "t1": 1,
       "t2": 1,
+      "t3": 1,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -7350,15 +7416,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 16,
-      "t10": 2
+      "t7": 16
     },
     "entradas-blog/kunak-air-pro-sensor-multi-contaminante-preciso-airlab": {
       "bytes": 5925,
-      "bytesTransformado": 5662,
+      "bytesTransformado": 5718,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7366,15 +7432,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 3
+      "t7": 5
     },
     "entradas-blog/directrices-oms-calidad-aire-innovacion": {
       "bytes": 5698,
-      "bytesTransformado": 5531,
+      "bytesTransformado": 5627,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7382,15 +7448,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 4
+      "t7": 2
     },
     "entradas-blog/conferencia-partes-cop26-incendios": {
       "bytes": 11989,
-      "bytesTransformado": 11790,
+      "bytesTransformado": 11838,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7398,15 +7464,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 2
+      "t7": 4
     },
     "entradas-blog/estres-por-calor-bienestar": {
       "bytes": 13704,
-      "bytesTransformado": 13453,
+      "bytesTransformado": 13489,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 3,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7414,15 +7480,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 4
+      "t7": 4
     },
     "entradas-blog/zonas-bajas-emisiones-monitorizacion": {
       "bytes": 41930,
-      "bytesTransformado": 41182,
+      "bytesTransformado": 41335,
       "t8": 1,
       "t1": 1,
       "t2": 1,
+      "t3": 1,
       "t3b": 1,
       "t4b": 1,
       "t9": 0,
@@ -7430,15 +7496,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 18,
-      "t10": 7
+      "t7": 18
     },
     "entradas-blog/monitores-calidad-aire-moviles": {
       "bytes": 17868,
-      "bytesTransformado": 17293,
+      "bytesTransformado": 17542,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7446,15 +7512,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 11
+      "t7": 8
     },
     "entradas-blog/entrevista-jelle-hofman-investigador-calidad-del-aire-imec": {
       "bytes": 9119,
-      "bytesTransformado": 8952,
+      "bytesTransformado": 9048,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7462,15 +7528,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 4
+      "t7": 2
     },
     "entradas-blog/contaminacion-incendios-forestales-aire": {
       "bytes": 31487,
-      "bytesTransformado": 31028,
+      "bytesTransformado": 31156,
       "t8": 0,
       "t1": 2,
       "t2": 2,
+      "t3": 2,
       "t3b": 2,
       "t4b": 0,
       "t9": 0,
@@ -7478,15 +7544,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 7
+      "t7": 9
     },
     "entradas-blog/entrevista-agustin-torres-product-manager-suez": {
       "bytes": 12189,
-      "bytesTransformado": 12065,
+      "bytesTransformado": 12137,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3": 0,
       "t3b": 2,
       "t4b": 0,
       "t9": 0,
@@ -7494,15 +7560,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 3
+      "t7": 2
     },
     "entradas-blog/detectores-calidad-aire-movilidad": {
       "bytes": 14264,
-      "bytesTransformado": 14025,
+      "bytesTransformado": 14073,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7510,15 +7576,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 2
+      "t7": 5
     },
     "entradas-blog/comparativa-de-los-informes-de-evaluacion-de-aqspec": {
       "bytes": 4353,
-      "bytesTransformado": 4258,
+      "bytesTransformado": 4282,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7526,15 +7592,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/contador-particulas-suspension-movilidad-sostenible": {
       "bytes": 12160,
-      "bytesTransformado": 11681,
+      "bytesTransformado": 11969,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7542,15 +7608,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 12
+      "t7": 5
     },
     "entradas-blog/contaminacion-aire-deporte": {
       "bytes": 16188,
-      "bytesTransformado": 15853,
+      "bytesTransformado": 15877,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7558,15 +7624,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 1
+      "t7": 8
     },
     "entradas-blog/contaminacion-mal-olor-sensores": {
       "bytes": 37219,
-      "bytesTransformado": 36479,
+      "bytesTransformado": 36758,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3": 6,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -7574,15 +7640,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 16
+      "t7": 5
     },
     "entradas-blog/detectores-emisiones-proyecto-trafair": {
       "bytes": 6751,
-      "bytesTransformado": 6632,
+      "bytesTransformado": 6680,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7590,15 +7656,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 2
+      "t7": 2
     },
     "entradas-blog/efectos-de-la-contaminacion-en-la-salud": {
       "bytes": 7558,
-      "bytesTransformado": 7463,
+      "bytesTransformado": 7487,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7606,15 +7672,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/sensores-calidad-aire-exterior-rendimiento-uso": {
       "bytes": 7659,
-      "bytesTransformado": 7210,
+      "bytesTransformado": 7282,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 2,
       "t9": 0,
@@ -7622,8 +7688,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 3
+      "t7": 1
     },
     "entradas-blog/necesidad-estandares-y-programas-certificacion": {
       "bytes": 1674,
@@ -7631,6 +7696,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7638,15 +7704,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/webinar-calidad-del-aire-en-europa": {
       "bytes": 3573,
-      "bytesTransformado": 3518,
+      "bytesTransformado": 3542,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7654,15 +7720,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/premios-pyme-2024-kunak": {
       "bytes": 7395,
-      "bytesTransformado": 7207,
+      "bytesTransformado": 7231,
       "t8": 1,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7670,15 +7736,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024": {
       "bytes": 4347,
-      "bytesTransformado": 4212,
+      "bytesTransformado": 4236,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7686,15 +7752,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 1
+      "t7": 3
     },
     "entradas-blog/premios-aqe-2024": {
       "bytes": 7501,
-      "bytesTransformado": 7315,
+      "bytesTransformado": 7336,
       "t8": 0,
       "t1": 3,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7702,15 +7768,15 @@
       "t4": 0,
       "t5": 1,
       "t6": 0,
-      "t7": 2,
-      "t10": 2
+      "t7": 2
     },
     "entradas-blog/contaminacion-del-transporte-urbano": {
       "bytes": 44250,
-      "bytesTransformado": 43955,
+      "bytesTransformado": 43979,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7718,15 +7784,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 7,
-      "t10": 1
+      "t7": 7
     },
     "entradas-blog/kunak-referente-en-medicion-de-calidad-del-aire": {
       "bytes": 8720,
-      "bytesTransformado": 8545,
+      "bytesTransformado": 8569,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7734,15 +7800,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 1
+      "t7": 4
     },
     "entradas-blog/medicion-de-la-calidad-del-aire-en-puertos-maritimos": {
       "bytes": 11434,
-      "bytesTransformado": 11059,
+      "bytesTransformado": 11128,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 5,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7750,15 +7816,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 6,
-      "t10": 6
+      "t7": 6
     },
     "entradas-blog/plan-recuperacion-transformacion-resiliencia-zbe": {
       "bytes": 11034,
-      "bytesTransformado": 10847,
+      "bytesTransformado": 10865,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7766,15 +7832,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 3
+      "t7": 3
     },
     "entradas-blog/calidad-aire-tiempo-real-kunak-air-lite": {
       "bytes": 13452,
-      "bytesTransformado": 13137,
+      "bytesTransformado": 13179,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7782,15 +7848,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 6,
-      "t10": 3
+      "t7": 6
     },
     "entradas-blog/medir-calidad-aire-asic-2022": {
       "bytes": 9654,
-      "bytesTransformado": 9495,
+      "bytesTransformado": 9516,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7798,15 +7864,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 2
+      "t7": 3
     },
     "entradas-blog/fondos-nextgen-eu-zonas-bajas-emisiones": {
       "bytes": 9678,
-      "bytesTransformado": 9511,
+      "bytesTransformado": 9607,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7814,15 +7880,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 4
+      "t7": 2
     },
     "entradas-blog/lanzamiento-kunak-air-pro": {
       "bytes": 5920,
-      "bytesTransformado": 5697,
+      "bytesTransformado": 5769,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7830,15 +7896,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 3
+      "t7": 4
     },
     "entradas-blog/sensores-calidad-aire-exterior-pamplona": {
       "bytes": 14133,
-      "bytesTransformado": 13883,
+      "bytesTransformado": 13940,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3": 1,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -7846,15 +7912,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 3
+      "t7": 5
     },
     "entradas-blog/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades": {
       "bytes": 9001,
-      "bytesTransformado": 9312,
+      "bytesTransformado": 9360,
       "t8": 2,
       "t1": 1,
       "t2": 1,
+      "t3": 0,
       "t3b": 1,
       "t4b": 2,
       "t9": 0,
@@ -7862,15 +7928,15 @@
       "t4": 2,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 2
+      "t7": 2
     },
     "entradas-blog/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra": {
       "bytes": 11833,
-      "bytesTransformado": 8468,
+      "bytesTransformado": 8540,
       "t8": 1,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 1,
       "t9": 0,
@@ -7878,15 +7944,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 3
+      "t7": 0
     },
     "entradas-blog/kunak-proveedor-sensores-calidad-aire-brightsites-signify": {
       "bytes": 6083,
-      "bytesTransformado": 5916,
+      "bytesTransformado": 6012,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7894,15 +7960,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 4
+      "t7": 2
     },
     "entradas-blog/exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo": {
       "bytes": 8195,
-      "bytesTransformado": 8100,
+      "bytesTransformado": 8124,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7910,15 +7976,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/vigilancia-calidad-aire-maraton-valencia-2019": {
       "bytes": 6011,
-      "bytesTransformado": 5764,
+      "bytesTransformado": 5834,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7926,15 +7992,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 4
+      "t7": 4
     },
     "entradas-blog/maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton": {
       "bytes": 3178,
-      "bytesTransformado": 3123,
+      "bytesTransformado": 3147,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7942,15 +8008,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico": {
       "bytes": 3998,
-      "bytesTransformado": 3943,
+      "bytesTransformado": 3967,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7958,15 +8024,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/calidad-aire-paises-sanos": {
       "bytes": 4924,
-      "bytesTransformado": 4869,
+      "bytesTransformado": 4893,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7974,15 +8040,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/por-que-es-importante-monitorizar-en-tiempo-real": {
       "bytes": 4652,
-      "bytesTransformado": 4597,
+      "bytesTransformado": 4621,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -7990,15 +8056,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares": {
       "bytes": 5155,
-      "bytesTransformado": 5020,
+      "bytesTransformado": 5044,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8006,15 +8072,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 1
+      "t7": 3
     },
     "entradas-blog/en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco": {
       "bytes": 7758,
-      "bytesTransformado": 7663,
+      "bytesTransformado": 7687,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8022,15 +8088,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/workshop-sensores-ambientales-bajo-coste": {
       "bytes": 3088,
-      "bytesTransformado": 2993,
+      "bytesTransformado": 3017,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8038,15 +8104,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0": {
       "bytes": 3262,
-      "bytesTransformado": 3247,
+      "bytesTransformado": 3271,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8054,15 +8120,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 1
+      "t7": 0
     },
     "entradas-blog/proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire": {
       "bytes": 3761,
-      "bytesTransformado": 3706,
+      "bytesTransformado": 3730,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8070,15 +8136,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/eugreenweek-we-have-gone-green": {
       "bytes": 2627,
-      "bytesTransformado": 2572,
+      "bytesTransformado": 2596,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8086,15 +8152,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/fourth-session-of-the-united-nations-environment-assembly-2": {
       "bytes": 3071,
-      "bytesTransformado": 3016,
+      "bytesTransformado": 3040,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8102,15 +8168,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente": {
       "bytes": 3644,
-      "bytesTransformado": 3549,
+      "bytesTransformado": 3573,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8118,15 +8184,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas": {
       "bytes": 11083,
-      "bytesTransformado": 10948,
+      "bytesTransformado": 10942,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8134,8 +8200,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 1
+      "t7": 3
     },
     "entradas-blog/kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona": {
       "bytes": 2563,
@@ -8143,6 +8208,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8150,15 +8216,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 0
+      "t7": 2
     },
     "entradas-blog/la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo": {
       "bytes": 6638,
-      "bytesTransformado": 6583,
+      "bytesTransformado": 6607,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8166,15 +8232,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia": {
       "bytes": 5649,
-      "bytesTransformado": 5554,
+      "bytesTransformado": 5578,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8182,8 +8248,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/todas-nuestras-soluciones-en-el-iotswc": {
       "bytes": 387,
@@ -8191,6 +8256,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8198,8 +8264,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "entradas-blog/la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire": {
       "bytes": 966,
@@ -8207,6 +8272,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8214,8 +8280,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/additive-presenta-sistema-kunak-air-en-sensortest-2018": {
       "bytes": 578,
@@ -8223,6 +8288,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8230,15 +8296,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "entradas-blog/mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge": {
       "bytes": 4756,
-      "bytesTransformado": 4557,
+      "bytesTransformado": 4605,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8246,15 +8312,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 2
+      "t7": 4
     },
     "entradas-blog/ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea": {
       "bytes": 3437,
-      "bytesTransformado": 3422,
+      "bytesTransformado": 3446,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8262,8 +8328,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 1
+      "t7": 0
     },
     "entradas-blog/comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell": {
       "bytes": 851,
@@ -8271,6 +8336,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8278,8 +8344,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018": {
       "bytes": 996,
@@ -8287,6 +8352,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8294,15 +8360,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "entradas-blog/la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti": {
       "bytes": 3135,
-      "bytesTransformado": 3040,
+      "bytesTransformado": 3064,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8310,8 +8376,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "entradas-blog/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid": {
       "bytes": 905,
@@ -8319,6 +8384,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8326,15 +8392,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018": {
       "bytes": 2830,
-      "bytesTransformado": 2775,
+      "bytesTransformado": 2785,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8342,8 +8408,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 1
+      "t7": 1
     },
     "entradas-blog/exponemos-en-greencities-malaga-2018": {
       "bytes": 1945,
@@ -8351,6 +8416,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8358,15 +8424,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 0
+      "t7": 2
     },
     "entradas-blog/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2": {
       "bytes": 2260,
-      "bytesTransformado": 2245,
+      "bytesTransformado": 2255,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8374,15 +8440,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 1
+      "t7": 0
     },
     "entradas-blog/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur": {
       "bytes": 9561,
-      "bytesTransformado": 9402,
+      "bytesTransformado": 9418,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8390,15 +8456,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 2
+      "t7": 3
     },
     "entradas-blog/participamos-con-suez-en-el-4yfn-del-mobile-world-congress": {
       "bytes": 1210,
-      "bytesTransformado": 1210,
+      "bytesTransformado": 1196,
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8406,8 +8472,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "entradas-blog/presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades": {
       "bytes": 1254,
@@ -8415,6 +8480,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8422,15 +8488,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/kunak-oem-industrial-iot-en-el-basque-industry-4-0": {
       "bytes": 2475,
-      "bytesTransformado": 2460,
+      "bytesTransformado": 2484,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8438,15 +8504,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 1
+      "t7": 0
     },
     "entradas-blog/exponemos-en-la-smart-city-expo-world-congress-2017": {
       "bytes": 3608,
-      "bytesTransformado": 3393,
+      "bytesTransformado": 3509,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8454,8 +8520,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 6
+      "t7": 2
     },
     "entradas-blog/kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna": {
       "bytes": 1433,
@@ -8463,6 +8528,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8470,8 +8536,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 0
+      "t7": 2
     },
     "entradas-blog/exponemos-en-la-feria-sensortest-2017-con-alphasense": {
       "bytes": 1038,
@@ -8479,6 +8544,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8486,15 +8552,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future": {
       "bytes": 2536,
-      "bytesTransformado": 2521,
+      "bytesTransformado": 2545,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8502,8 +8568,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 1
+      "t7": 0
     },
     "entradas-blog/kunak-participa-en-aqemission-monitoring-2017-con-alphasense": {
       "bytes": 1393,
@@ -8511,6 +8576,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8518,15 +8584,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex": {
       "bytes": 868,
-      "bytesTransformado": 868,
+      "bytesTransformado": 840,
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 2,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8534,8 +8600,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "entradas-blog/presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16": {
       "bytes": 1295,
@@ -8543,6 +8608,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8550,15 +8616,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 0
+      "t7": 1
     },
     "entradas-blog/quemas-prescritas-agricolas-calidad-aire": {
       "bytes": 7509,
-      "bytesTransformado": 7310,
+      "bytesTransformado": 7331,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8566,15 +8632,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 2
+      "t7": 4
     },
     "entradas-blog/medidores-de-calidad-del-aire-mediciones-indicativas": {
       "bytes": 8994,
-      "bytesTransformado": 8787,
+      "bytesTransformado": 8868,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8582,15 +8648,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 4
+      "t7": 3
     },
     "entradas-blog/contaminacion-del-aire-urbano": {
       "bytes": 42006,
-      "bytesTransformado": 40844,
+      "bytesTransformado": 41007,
       "t8": 0,
       "t1": 1,
       "t2": 4,
+      "t3": 7,
       "t3b": 4,
       "t4b": 0,
       "t9": 0,
@@ -8598,15 +8664,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 19,
-      "t10": 12
+      "t7": 19
     },
     "entradas-blog/sensores-calidad-aire-urbano-donostia": {
       "bytes": 16849,
-      "bytesTransformado": 16225,
+      "bytesTransformado": 16561,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3": 0,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -8614,15 +8680,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 14
+      "t7": 8
     },
     "entradas-blog/control-emisiones-industriales": {
       "bytes": 32994,
-      "bytesTransformado": 32279,
+      "bytesTransformado": 32366,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3": 5,
       "t3b": 2,
       "t4b": 0,
       "t9": 0,
@@ -8630,15 +8696,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 12,
-      "t10": 8
+      "t7": 12
     },
     "entradas-blog/emisiones-de-las-refinerias-de-petroleo": {
       "bytes": 49866,
-      "bytesTransformado": 48604,
+      "bytesTransformado": 48892,
       "t8": 0,
       "t1": 2,
       "t2": 3,
+      "t3": 8,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -8646,15 +8712,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 16,
-      "t10": 19
+      "t7": 16
     },
     "entradas-blog/monitorizacion-de-emisiones-en-refinerias": {
       "bytes": 58463,
-      "bytesTransformado": 57957,
+      "bytesTransformado": 58066,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3": 2,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -8662,15 +8728,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 6
+      "t7": 8
     },
     "entradas-blog/contaminacion-del-aire-por-obras": {
       "bytes": 40431,
-      "bytesTransformado": 39243,
+      "bytesTransformado": 39620,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3": 10,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -8678,15 +8744,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 10,
-      "t10": 23
+      "t7": 10
     },
     "entradas-blog/contaminacion-aire-obras-demoliciones-derribos": {
       "bytes": 17800,
-      "bytesTransformado": 17306,
+      "bytesTransformado": 17498,
       "t8": 0,
       "t1": 2,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8694,15 +8760,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 8
+      "t7": 8
     },
     "entradas-blog/impacto-ambiental-mineria-calidad-aire": {
       "bytes": 24932,
-      "bytesTransformado": 24173,
+      "bytesTransformado": 24341,
       "t8": 0,
       "t1": 2,
       "t2": 5,
+      "t3": 0,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -8710,15 +8776,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 7
+      "t7": 8
     },
     "entradas-blog/monitorizacion-near-reference": {
       "bytes": 74304,
-      "bytesTransformado": 69187,
+      "bytesTransformado": 69891,
       "t8": 1,
       "t1": 1,
       "t2": 8,
+      "t3": 16,
       "t3b": 8,
       "t4b": 1,
       "t9": 0,
@@ -8726,15 +8792,15 @@
       "t4": 1,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 41
+      "t7": 8
     },
     "entradas-blog/monitorizacion-perimetral": {
       "bytes": 53636,
-      "bytesTransformado": 52149,
+      "bytesTransformado": 52685,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3": 16,
       "t3b": 8,
       "t4b": 0,
       "t9": 0,
@@ -8742,15 +8808,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 34
+      "t7": 8
     },
     "entradas-blog/monitorizacion-de-emisiones-fugitivas": {
       "bytes": 61561,
-      "bytesTransformado": 59060,
+      "bytesTransformado": 59753,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3": 17,
       "t3b": 8,
       "t4b": 0,
       "t9": 0,
@@ -8758,15 +8824,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 25,
-      "t10": 42
+      "t7": 25
     },
     "terminos-kunakpedia/sensor-calidad-aire": {
       "bytes": 25672,
-      "bytesTransformado": 25161,
+      "bytesTransformado": 25266,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8774,15 +8840,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 10,
-      "t10": 5
+      "t7": 10
     },
     "terminos-kunakpedia/redes-de-vigilancia-de-calidad-del-aire": {
       "bytes": 18413,
-      "bytesTransformado": 18278,
+      "bytesTransformado": 18302,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8790,15 +8856,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 1
+      "t7": 3
     },
     "terminos-kunakpedia/calidad-del-aire": {
       "bytes": 13848,
-      "bytesTransformado": 13753,
+      "bytesTransformado": 13777,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -8806,15 +8872,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "terminos-kunakpedia/particulas-ultrafinas": {
       "bytes": 38390,
-      "bytesTransformado": 37195,
+      "bytesTransformado": 37585,
       "t8": 0,
       "t1": 1,
       "t2": 6,
+      "t3": 12,
       "t3b": 6,
       "t4b": 0,
       "t9": 0,
@@ -8822,15 +8888,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 7,
-      "t10": 25
+      "t7": 7
     },
     "terminos-kunakpedia/metano": {
       "bytes": 23225,
-      "bytesTransformado": 22948,
+      "bytesTransformado": 22961,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3": 2,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -8838,15 +8904,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 2
+      "t7": 4
     },
     "terminos-kunakpedia/sulfuro-de-hidrogeno": {
       "bytes": 44648,
-      "bytesTransformado": 43859,
+      "bytesTransformado": 44090,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3": 6,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -8854,15 +8920,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 6,
-      "t10": 14
+      "t7": 6
     },
     "terminos-kunakpedia/ruido": {
       "bytes": 36858,
-      "bytesTransformado": 36071,
+      "bytesTransformado": 36363,
       "t8": 0,
       "t1": 1,
       "t2": 4,
+      "t3": 8,
       "t3b": 4,
       "t4b": 0,
       "t9": 0,
@@ -8870,15 +8936,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 1,
-      "t10": 18
+      "t7": 1
     },
     "terminos-kunakpedia/aaqms-estaciones-de-calidad-del-aire": {
       "bytes": 39701,
-      "bytesTransformado": 38808,
+      "bytesTransformado": 39063,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3": 6,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -8886,15 +8952,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 15
+      "t7": 9
     },
     "terminos-kunakpedia/cianuro-de-hidrogeno-hcn": {
       "bytes": 46169,
-      "bytesTransformado": 44955,
+      "bytesTransformado": 45334,
       "t8": 0,
       "t1": 1,
       "t2": 7,
+      "t3": 14,
       "t3b": 7,
       "t4b": 0,
       "t9": 0,
@@ -8902,15 +8968,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 26
+      "t7": 2
     },
     "terminos-kunakpedia/amoniaco-nh3": {
       "bytes": 37059,
-      "bytesTransformado": 36078,
+      "bytesTransformado": 36407,
       "t8": 0,
       "t1": 1,
       "t2": 5,
+      "t3": 10,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -8918,15 +8984,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 21
+      "t7": 4
     },
     "terminos-kunakpedia/hidrocarburos-no-metanicos-nmhc": {
       "bytes": 64455,
-      "bytesTransformado": 62996,
+      "bytesTransformado": 63410,
       "t8": 0,
       "t1": 1,
       "t2": 6,
+      "t3": 12,
       "t3b": 6,
       "t4b": 0,
       "t9": 0,
@@ -8934,15 +9000,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 10,
-      "t10": 26
+      "t7": 10
     },
     "terminos-kunakpedia/cloro-cl2-dioxido-de-cloro-clo2": {
       "bytes": 42704,
-      "bytesTransformado": 41573,
+      "bytesTransformado": 42022,
       "t8": 0,
       "t1": 1,
       "t2": 5,
+      "t3": 10,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -8950,15 +9016,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 6,
-      "t10": 26
+      "t7": 6
     },
     "terminos-kunakpedia/gases-de-efecto-invernadero": {
       "bytes": 45691,
-      "bytesTransformado": 44764,
+      "bytesTransformado": 44984,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3": 8,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -8966,15 +9032,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 10,
-      "t10": 15
+      "t7": 10
     },
     "terminos-kunakpedia/compuestos-organicos-volatiles": {
       "bytes": 34937,
-      "bytesTransformado": 34290,
+      "bytesTransformado": 34408,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3": 3,
       "t3b": 2,
       "t4b": 0,
       "t9": 0,
@@ -8982,15 +9048,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 7
+      "t7": 8
     },
     "terminos-kunakpedia/esmog": {
       "bytes": 26619,
-      "bytesTransformado": 25610,
+      "bytesTransformado": 25708,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3": 4,
       "t3b": 2,
       "t4b": 0,
       "t9": 0,
@@ -8998,15 +9064,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 17,
-      "t10": 7
+      "t7": 17
     },
     "terminos-kunakpedia/estaciones-de-calidad-del-aire": {
       "bytes": 15886,
-      "bytesTransformado": 15479,
+      "bytesTransformado": 15623,
       "t8": 0,
       "t1": 2,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9014,15 +9080,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 7,
-      "t10": 6
+      "t7": 7
     },
     "terminos-kunakpedia/inmisiones-atmosfericas": {
       "bytes": 12694,
-      "bytesTransformado": 12296,
+      "bytesTransformado": 12381,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3": 2,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -9030,15 +9096,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 5
+      "t7": 5
     },
     "terminos-kunakpedia/justicia-ambiental": {
       "bytes": 16795,
-      "bytesTransformado": 16460,
+      "bytesTransformado": 16484,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9046,15 +9112,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 8,
-      "t10": 1
+      "t7": 8
     },
     "terminos-kunakpedia/fluoruro-de-hidrogeno-hf": {
       "bytes": 42949,
-      "bytesTransformado": 42187,
+      "bytesTransformado": 42418,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3": 6,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -9062,15 +9128,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 14
+      "t7": 5
     },
     "terminos-kunakpedia/cloruro-de-hidrogeno-hcl": {
       "bytes": 72682,
-      "bytesTransformado": 71461,
+      "bytesTransformado": 71364,
       "t8": 0,
       "t1": 1,
       "t2": 11,
+      "t3": 22,
       "t3b": 11,
       "t4b": 0,
       "t9": 0,
@@ -9078,15 +9144,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 9,
-      "t10": 12
+      "t7": 9
     },
     "terminos-kunakpedia/oxido-nitrico-no": {
       "bytes": 65823,
-      "bytesTransformado": 64652,
+      "bytesTransformado": 64584,
       "t8": 0,
       "t1": 1,
       "t2": 8,
+      "t3": 15,
       "t3b": 8,
       "t4b": 0,
       "t9": 0,
@@ -9094,15 +9160,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 11,
-      "t10": 8
+      "t7": 11
     },
     "terminos-kunakpedia/oxigeno": {
       "bytes": 44832,
-      "bytesTransformado": 44022,
+      "bytesTransformado": 43965,
       "t8": 0,
       "t1": 1,
       "t2": 7,
+      "t3": 13,
       "t3b": 7,
       "t4b": 0,
       "t9": 0,
@@ -9110,15 +9176,15 @@
       "t4": 0,
       "t5": 1,
       "t6": 0,
-      "t7": 6,
-      "t10": 7
+      "t7": 6
     },
     "terminos-kunakpedia/ozono-troposferico": {
       "bytes": 24181,
-      "bytesTransformado": 23414,
+      "bytesTransformado": 23516,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3": 5,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -9126,15 +9192,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 11,
-      "t10": 8
+      "t7": 11
     },
     "terminos-kunakpedia/dioxido-de-carbono": {
       "bytes": 28542,
-      "bytesTransformado": 28359,
+      "bytesTransformado": 28383,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9142,15 +9208,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 1
+      "t7": 4
     },
     "terminos-kunakpedia/dioxido-de-nitrogeno": {
       "bytes": 22182,
-      "bytesTransformado": 21596,
+      "bytesTransformado": 21739,
       "t8": 0,
       "t1": 1,
       "t2": 2,
+      "t3": 5,
       "t3b": 2,
       "t4b": 0,
       "t9": 0,
@@ -9158,15 +9224,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 6,
-      "t10": 10
+      "t7": 6
     },
     "terminos-kunakpedia/particulas-en-suspension": {
       "bytes": 20149,
-      "bytesTransformado": 19624,
+      "bytesTransformado": 19684,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9174,15 +9240,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 11,
-      "t10": 3
+      "t7": 11
     },
     "terminos-kunakpedia/indice-de-calidad-del-aire": {
       "bytes": 17251,
-      "bytesTransformado": 16892,
+      "bytesTransformado": 16997,
       "t8": 0,
       "t1": 1,
       "t2": 1,
+      "t3": 1,
       "t3b": 1,
       "t4b": 0,
       "t9": 0,
@@ -9190,15 +9256,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 5
+      "t7": 4
     },
     "terminos-kunakpedia/dioxido-de-azufre": {
       "bytes": 19672,
-      "bytesTransformado": 19217,
+      "bytesTransformado": 19241,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9206,15 +9272,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 11,
-      "t10": 1
+      "t7": 11
     },
     "terminos-kunakpedia/emisiones-atmosfericas": {
       "bytes": 9196,
-      "bytesTransformado": 8981,
+      "bytesTransformado": 9005,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9222,15 +9288,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 5,
-      "t10": 1
+      "t7": 5
     },
     "terminos-kunakpedia/huella-de-carbono": {
       "bytes": 32522,
-      "bytesTransformado": 32232,
+      "bytesTransformado": 32280,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9238,15 +9304,15 @@
       "t4": 0,
       "t5": 1,
       "t6": 0,
-      "t7": 6,
-      "t10": 2
+      "t7": 6
     },
     "terminos-kunakpedia/monoxido-de-carbono": {
       "bytes": 26494,
-      "bytesTransformado": 25914,
+      "bytesTransformado": 26001,
       "t8": 0,
       "t1": 1,
       "t2": 3,
+      "t3": 6,
       "t3b": 3,
       "t4b": 0,
       "t9": 0,
@@ -9254,15 +9320,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 7,
-      "t10": 8
+      "t7": 7
     },
     "terminos-kunakpedia/contaminantes-atmosfericos": {
       "bytes": 58446,
-      "bytesTransformado": 57128,
+      "bytesTransformado": 57416,
       "t8": 0,
       "t1": 1,
       "t2": 4,
+      "t3": 7,
       "t3b": 4,
       "t4b": 0,
       "t9": 0,
@@ -9270,15 +9336,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 15,
-      "t10": 17
+      "t7": 15
     },
     "terminos-kunakpedia/ldar": {
       "bytes": 33125,
-      "bytesTransformado": 32056,
+      "bytesTransformado": 32481,
       "t8": 0,
       "t1": 1,
       "t2": 5,
+      "t3": 10,
       "t3b": 5,
       "t4b": 0,
       "t9": 0,
@@ -9286,15 +9352,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 4,
-      "t10": 25
+      "t7": 4
     },
     "terminos-kunakpedia/monitorizacion-de-la-calidad-del-aire": {
       "bytes": 18549,
-      "bytesTransformado": 17934,
+      "bytesTransformado": 17958,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9302,15 +9368,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 15,
-      "t10": 1
+      "t7": 15
     },
     "terminos-kunakpedia/oxidos-de-nitrogeno-nox": {
       "bytes": 69573,
-      "bytesTransformado": 67232,
+      "bytesTransformado": 67934,
       "t8": 0,
       "t1": 1,
       "t2": 10,
+      "t3": 19,
       "t3b": 10,
       "t4b": 0,
       "t9": 0,
@@ -9318,15 +9384,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 20,
-      "t10": 43
+      "t7": 20
     },
     "terminos-kunakpedia/vigilancia-perimetral-industrial": {
       "bytes": 15436,
-      "bytesTransformado": 15325,
+      "bytesTransformado": 15349,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9334,15 +9400,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 1
+      "t7": 2
     },
     "terminos-kunakpedia/emisiones-por-chimenea": {
       "bytes": 81862,
-      "bytesTransformado": 79023,
+      "bytesTransformado": 80136,
       "t8": 0,
       "t1": 1,
       "t2": 12,
+      "t3": 25,
       "t3b": 12,
       "t4b": 0,
       "t9": 0,
@@ -9350,8 +9416,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 15,
-      "t10": 65
+      "t7": 15
     },
     "documentos-cientificos/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones": {
       "bytes": 3018,
@@ -9359,6 +9424,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9366,8 +9432,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal": {
       "bytes": 2344,
@@ -9375,6 +9440,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9382,8 +9448,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
       "bytes": 802,
@@ -9391,6 +9456,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9398,8 +9464,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid": {
       "bytes": 1538,
@@ -9407,6 +9472,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9414,8 +9480,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor": {
       "bytes": 2185,
@@ -9423,6 +9488,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9430,8 +9496,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas": {
       "bytes": 2406,
@@ -9439,6 +9504,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9446,8 +9512,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica": {
       "bytes": 2544,
@@ -9455,6 +9520,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9462,8 +9528,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 1,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo": {
       "bytes": 1908,
@@ -9471,6 +9536,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9478,8 +9544,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 1,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste": {
       "bytes": 2089,
@@ -9487,6 +9552,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9494,8 +9560,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores": {
       "bytes": 1100,
@@ -9503,6 +9568,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9510,8 +9576,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/desafio-de-sensores-contra-incendios-forestales-de-la-us-epa": {
       "bytes": 2596,
@@ -9519,6 +9584,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9526,8 +9592,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
       "bytes": 2768,
@@ -9535,6 +9600,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9542,8 +9608,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana": {
       "bytes": 2336,
@@ -9551,6 +9616,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9558,8 +9624,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire": {
       "bytes": 1653,
@@ -9567,6 +9632,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9574,8 +9640,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/kunak-air-pro-informe-de-evaluacion-en-campo": {
       "bytes": 1212,
@@ -9583,6 +9648,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9590,8 +9656,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/kunak-air-lite-informe-de-evaluacion-en-campo": {
       "bytes": 1213,
@@ -9599,6 +9664,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9606,8 +9672,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones": {
       "bytes": 2668,
@@ -9615,6 +9680,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9622,8 +9688,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite": {
       "bytes": 923,
@@ -9631,6 +9696,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9638,8 +9704,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro": {
       "bytes": 874,
@@ -9647,6 +9712,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9654,8 +9720,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/desafio-airlab-de-microsensores-2023": {
       "bytes": 1185,
@@ -9663,6 +9728,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9670,8 +9736,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19": {
       "bytes": 1622,
@@ -9679,6 +9744,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9686,8 +9752,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/soluciones-avanzadas-de-monitorizacion": {
       "bytes": 1945,
@@ -9695,6 +9760,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9702,8 +9768,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "documentos-cientificos/evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico": {
       "bytes": 1115,
@@ -9711,6 +9776,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9718,15 +9784,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 0
+      "t7": 0
     },
     "entradas-blog/kunak-obtiene-el-sello-reconcilia": {
       "bytes": 5850,
-      "bytesTransformado": 5816,
+      "bytesTransformado": 5805,
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 1,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9734,8 +9800,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 0,
-      "t10": 1
+      "t7": 0
     },
     "entradas-blog/descarga-catalogo-kunak": {
       "bytes": 1409,
@@ -9743,6 +9808,7 @@
       "t8": 0,
       "t1": 0,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9750,15 +9816,15 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 2,
-      "t10": 0
+      "t7": 2
     },
     "entradas-blog/webinar-control-de-la-contaminacion-del-aire-en-la-industria": {
       "bytes": 7002,
-      "bytesTransformado": 6867,
+      "bytesTransformado": 6891,
       "t8": 0,
       "t1": 1,
       "t2": 0,
+      "t3": 0,
       "t3b": 0,
       "t4b": 0,
       "t9": 0,
@@ -9766,8 +9832,7 @@
       "t4": 0,
       "t5": 0,
       "t6": 0,
-      "t7": 3,
-      "t10": 1
+      "t7": 3
     }
   }
 }

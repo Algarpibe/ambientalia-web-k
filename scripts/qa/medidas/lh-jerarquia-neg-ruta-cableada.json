@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-14",
+    "fecha": "2026-08-18",
     "que": "La FORMA de la jerarquía de términos, medida por tres vías sobre el corpus congelado, y cruzada con lo que el esquema declara.",
     "alcance": "5 taxonomías · 38 términos (29 de taxonomía MODELADA · 9 sin modelar) · corpus congelado (sin red, sin clon)",
     "coberturaDeArchivos": {
@@ -356,9 +356,19 @@
     "sinExpresar": []
   },
   "enrutado": {
-    "rutasEmitidasTotal": 345,
+    "rutasEmitidasTotal": 374,
     "porQueNoHayManifiesto": null,
     "rutasDeTerminosEmitidasHoy": [
+      "/recursos/articulos",
+      "/recursos/articulos/contaminacion-en-la-construccion",
+      "/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "/recursos/articulos/contaminacion-minera",
+      "/recursos/articulos/contaminacion-urbana",
+      "/recursos/articulos/contaminacion-y-salud",
+      "/recursos/articulos/petroleo-y-gas",
+      "/recursos/articulos/industria-y-contaminacion-por-olores",
+      "/recursos/articulos/productos-kunak",
+      "/recursos/seminarios-web",
       "/etiqueta/calidad-del-aire",
       "/etiqueta/co2-es",
       "/etiqueta/contaminantes-atmosfericos",
@@ -370,9 +380,17 @@
       "/etiqueta/monitorizacion-ambiental",
       "/etiqueta/normativa-de-calidad-del-aire",
       "/etiqueta/particulas-en-suspension",
-      "/etiqueta/sensor-de-calidad-del-aire"
+      "/etiqueta/sensor-de-calidad-del-aire",
+      "/scientific-category/articulos-cientificos-y-estudios",
+      "/scientific-category/articulos-tecnicos",
+      "/scientific-category/evaluaciones-independientes"
     ],
     "consumidoresDeLaJerarquiaEnElClon": [
+      {
+        "fichero": "apps/web/src/app/recursos/[...ruta]/page.tsx",
+        "linea": 79,
+        "texto": "*   · si el catálogo de `categorias-recursos` declara esa ruta → `L1-resources`;"
+      },
       {
         "fichero": "apps/web/src/app/[slug]/page.tsx",
         "linea": 134,
@@ -382,6 +400,51 @@
         "fichero": "apps/web/src/app/[slug]/page.tsx",
         "linea": 135,
         "texto": "{ label: recurso.nombre, href: `${O}/recursos/articulos/${recurso.slug}/` },"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/Paginador.tsx",
+        "linea": 376,
+        "texto": "/es/recursos/articulos/page/1/   → 301 → /es/recursos/articulos/"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/Paginador.tsx",
+        "linea": 377,
+        "texto": "/es/recursos/articulos/page/16/  → 200"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/Paginador.tsx",
+        "linea": 378,
+        "texto": "/es/recursos/articulos/page/17/  → 404"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/PaginaRecursos.tsx",
+        "linea": 90,
+        "texto": "* clon** (`/recursos/articulos/` acaba en la 6 por contenido y en la 16 por"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/TarjetaCaso.tsx",
+        "linea": 73,
+        "texto": "* `Medición de PM<sub>10</sub>` en `/recursos/articulos/`—. **1 de 57**, y cae"
+      },
+      {
+        "fichero": "apps/web/src/lib/cms/listados.ts",
+        "linea": 278,
+        "texto": "* | `/recursos/articulos/` | 15·15·15·15·15·**5** | 80 | 6 |"
+      },
+      {
+        "fichero": "apps/web/src/lib/cms/listados.ts",
+        "linea": 285,
+        "texto": "* Y cuadra con `qa:lh-paginas` del día: `/recursos/articulos/` da **6** páginas"
+      },
+      {
+        "fichero": "apps/web/src/lib/cms/listados.ts",
+        "linea": 354,
+        "texto": "return leeColeccion<CategoriaRecurso>(\"categorias-recursos\");"
+      },
+      {
+        "fichero": "apps/web/src/lib/cms/listados.ts",
+        "linea": 399,
+        "texto": "* cómo funciona WordPress: está medido.** `/es/recursos/articulos/` sirve"
       }
     ],
     "consumidoresCONELPADRECABLEADO": [
@@ -394,15 +457,59 @@
         "fichero": "apps/web/src/app/[slug]/page.tsx",
         "linea": 135,
         "texto": "{ label: recurso.nombre, href: `${O}/recursos/articulos/${recurso.slug}/` },"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/Paginador.tsx",
+        "linea": 376,
+        "texto": "/es/recursos/articulos/page/1/   → 301 → /es/recursos/articulos/"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/Paginador.tsx",
+        "linea": 377,
+        "texto": "/es/recursos/articulos/page/16/  → 200"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/Paginador.tsx",
+        "linea": 378,
+        "texto": "/es/recursos/articulos/page/17/  → 404"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/PaginaRecursos.tsx",
+        "linea": 90,
+        "texto": "* clon** (`/recursos/articulos/` acaba en la 6 por contenido y en la 16 por"
+      },
+      {
+        "fichero": "apps/web/src/components/listados/TarjetaCaso.tsx",
+        "linea": 73,
+        "texto": "* `Medición de PM<sub>10</sub>` en `/recursos/articulos/`—. **1 de 57**, y cae"
+      },
+      {
+        "fichero": "apps/web/src/lib/cms/listados.ts",
+        "linea": 278,
+        "texto": "* | `/recursos/articulos/` | 15·15·15·15·15·**5** | 80 | 6 |"
+      },
+      {
+        "fichero": "apps/web/src/lib/cms/listados.ts",
+        "linea": 285,
+        "texto": "* Y cuadra con `qa:lh-paginas` del día: `/recursos/articulos/` da **6** páginas"
+      },
+      {
+        "fichero": "apps/web/src/lib/cms/listados.ts",
+        "linea": 399,
+        "texto": "* cómo funciona WordPress: está medido.** `/es/recursos/articulos/` sirve"
       }
     ],
     "consecuenciaYaCobrada": {
-      "denominador": "149 entradas de blog del corpus",
-      "soloBlog": 66,
+      "denominador": "152 entradas de blog del corpus",
+      "soloBlog": 68,
       "bajoHijaDeArticulos": 81,
       "bajoTerminoDePRIMERNIVEL": [
         {
           "slug": "control-de-la-contaminacion-del-aire-en-la-industria-seminario-web",
+          "termino": "seminarios-web"
+        },
+        {
+          "slug": "webinar-control-de-la-contaminacion-del-aire-en-la-industria",
           "termino": "seminarios-web"
         },
         {

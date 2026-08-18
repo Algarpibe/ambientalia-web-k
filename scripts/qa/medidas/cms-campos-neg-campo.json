@@ -29,7 +29,7 @@
       "colecciones": [
         "casos"
       ],
-      "nCampos": 26,
+      "nCampos": 27,
       "falta": [
         {
           "coleccion": "casos",
@@ -62,7 +62,7 @@
       "colecciones": [
         "terminos-kunakpedia"
       ],
-      "nCampos": 7,
+      "nCampos": 8,
       "falta": []
     },
     "DocumentoCientifico": {

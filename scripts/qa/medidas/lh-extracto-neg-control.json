@@ -1,9 +1,9 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-18",
     "que": "LH-SP10 (los dos mecanismos de extracto) y la deriva corpus↔espejo",
     "corpus": "corpus/fase-3/listados",
-    "espejo": "medidas/lh-spec-1440.json (2026-08-11)",
+    "espejo": "medidas/lh-spec-1440.json (2026-08-18)",
     "alcance": "SÓLO /blog y /etiqueta/*. `/recursos/*` NO entra: su taxonomía está incompleta en el clon (8 de 10 términos, `padre` a null) y sus tarjetas no se pueden emparejar todavía.",
     "loQueNoDecide": "cuál de las dos fotos manda. Manda el original; aquí se establece el DENOMINADOR de la duda."
   },

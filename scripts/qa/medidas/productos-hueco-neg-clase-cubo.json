@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-18",
     "que": "el hueco de `productos` repartido por PARA-QUÉ: qué desbloquea `casos` y qué es cola de §F3-COLA-DESTINOS",
     "fuentes": [
       "corpus/INDICE.json (24 URLs del CPT, congeladas con sha256)",
@@ -20,8 +20,8 @@
   },
   "inventario": {
     "cpt": 24,
-    "modelados": 9,
-    "sinModelar": 15,
+    "modelados": 16,
+    "sinModelar": 8,
     "rutas": [
       {
         "ruta": "accesorios",
@@ -63,19 +63,19 @@
         "ruta": "cartuchos-inteligentes/dioxido-de-azufre",
         "slug": "dioxido-de-azufre",
         "padre": "cartuchos-inteligentes",
-        "modelado": false
+        "modelado": true
       },
       {
         "ruta": "cartuchos-inteligentes/dioxido-de-carbono",
         "slug": "dioxido-de-carbono",
         "padre": "cartuchos-inteligentes",
-        "modelado": false
+        "modelado": true
       },
       {
         "ruta": "cartuchos-inteligentes/dioxido-de-nitrogeno",
         "slug": "dioxido-de-nitrogeno",
         "padre": "cartuchos-inteligentes",
-        "modelado": false
+        "modelado": true
       },
       {
         "ruta": "cartuchos-inteligentes/fluoruro-de-hidrogeno",
@@ -93,13 +93,13 @@
         "ruta": "cartuchos-inteligentes/monoxido-de-carbono",
         "slug": "monoxido-de-carbono",
         "padre": "cartuchos-inteligentes",
-        "modelado": false
+        "modelado": true
       },
       {
         "ruta": "cartuchos-inteligentes/oxido-nitrico",
         "slug": "oxido-nitrico",
         "padre": "cartuchos-inteligentes",
-        "modelado": false
+        "modelado": true
       },
       {
         "ruta": "cartuchos-inteligentes/oxigeno",
@@ -111,7 +111,7 @@
         "ruta": "cartuchos-inteligentes/ozono",
         "slug": "ozono",
         "padre": "cartuchos-inteligentes",
-        "modelado": false
+        "modelado": true
       },
       {
         "ruta": "cartuchos-inteligentes/particulas-en-suspension",
@@ -159,7 +159,7 @@
         "ruta": "sensor-de-calidad-del-aire/metano",
         "slug": "metano",
         "padre": "sensor-de-calidad-del-aire",
-        "modelado": false
+        "modelado": true
       },
       {
         "ruta": "software-de-medicion-calidad-del-aire",
@@ -190,38 +190,6 @@
           "casos": 45
         },
         {
-          "slug": "sulfuro-de-hidrogeno",
-          "n": 11,
-          "casos": 11
-        },
-        {
-          "slug": "estacion-de-monitoreo-de-calidad-del-aire",
-          "n": 10,
-          "casos": 10
-        },
-        {
-          "slug": "compuestos-organicos-volatiles",
-          "n": 9,
-          "casos": 9
-        },
-        {
-          "slug": "amoniaco",
-          "n": 5,
-          "casos": 5
-        },
-        {
-          "slug": "kunak-api",
-          "n": 1,
-          "casos": 1
-        },
-        {
-          "slug": "sensor-de-calidad-del-aire",
-          "n": 1,
-          "casos": 1
-        }
-      ],
-      "EN-CPT-SIN-MODELAR": [
-        {
           "slug": "dioxido-de-nitrogeno",
           "n": 37,
           "casos": 37
@@ -247,45 +215,63 @@
           "casos": 14
         },
         {
+          "slug": "sulfuro-de-hidrogeno",
+          "n": 11,
+          "casos": 11
+        },
+        {
+          "slug": "estacion-de-monitoreo-de-calidad-del-aire",
+          "n": 10,
+          "casos": 10
+        },
+        {
+          "slug": "compuestos-organicos-volatiles",
+          "n": 9,
+          "casos": 9
+        },
+        {
           "slug": "dioxido-de-carbono",
           "n": 8,
           "casos": 8
         },
         {
+          "slug": "amoniaco",
+          "n": 5,
+          "casos": 5
+        },
+        {
           "slug": "metano",
           "n": 5,
           "casos": 5
-        }
-      ],
-      "SIN-CPT": [
+        },
         {
           "slug": "accesories",
           "n": 2,
-          "casos": 2,
-          "rotulo": "Accesorios",
-          "href": "https://kunakair.com/es/accesorios/",
-          "forma": "alias-de-ruta",
-          "visto": "monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023"
+          "casos": 2
         },
         {
           "slug": "ozone-2",
           "n": 2,
-          "casos": 2,
-          "rotulo": "Ozone",
-          "href": "https://kunakair.com/?post_type=solutions&p=56674",
-          "forma": "sin-permalink",
-          "visto": "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas"
+          "casos": 2
         },
         {
           "slug": "air-cloud",
           "n": 1,
-          "casos": 1,
-          "rotulo": "AIR Cloud Air quality software",
-          "href": "https://kunakair.com/es/software-de-medicion-calidad-del-aire/",
-          "forma": "alias-de-ruta",
-          "visto": "vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey"
+          "casos": 1
+        },
+        {
+          "slug": "kunak-api",
+          "n": 1,
+          "casos": 1
+        },
+        {
+          "slug": "sensor-de-calidad-del-aire",
+          "n": 1,
+          "casos": 1
         }
       ],
+      "EN-CPT-SIN-MODELAR": [],
+      "SIN-CPT": [],
       "SIN CLASIFICAR": [
         {
           "slug": "\u0000cubo-sin-clase",
@@ -296,43 +282,7 @@
     }
   },
   "reparto": {
-    "desbloquean": [
-      {
-        "ruta": "cartuchos-inteligentes/dioxido-de-azufre",
-        "slug": "dioxido-de-azufre",
-        "n": 20
-      },
-      {
-        "ruta": "cartuchos-inteligentes/dioxido-de-carbono",
-        "slug": "dioxido-de-carbono",
-        "n": 8
-      },
-      {
-        "ruta": "cartuchos-inteligentes/dioxido-de-nitrogeno",
-        "slug": "dioxido-de-nitrogeno",
-        "n": 37
-      },
-      {
-        "ruta": "cartuchos-inteligentes/monoxido-de-carbono",
-        "slug": "monoxido-de-carbono",
-        "n": 25
-      },
-      {
-        "ruta": "cartuchos-inteligentes/oxido-nitrico",
-        "slug": "oxido-nitrico",
-        "n": 14
-      },
-      {
-        "ruta": "cartuchos-inteligentes/ozono",
-        "slug": "ozono",
-        "n": 29
-      },
-      {
-        "ruta": "sensor-de-calidad-del-aire/metano",
-        "slug": "metano",
-        "n": 5
-      }
-    ],
+    "desbloquean": [],
     "cola": [
       {
         "ruta": "accesorios",
@@ -367,39 +317,8 @@
         "slug": "sensor-particulas-ultrafinas"
       }
     ],
-    "casosBloqueadosHoy": 43,
-    "casosBloqueadosTrasModelarLos15": [
-      {
-        "slug": "vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey",
-        "culpables": [
-          "air-cloud"
-        ]
-      },
-      {
-        "slug": "monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023",
-        "culpables": [
-          "accesories"
-        ]
-      },
-      {
-        "slug": "control-de-la-contaminacion-atmosferica-universidad-de-chipre",
-        "culpables": [
-          "accesories"
-        ]
-      },
-      {
-        "slug": "respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
-        "culpables": [
-          "ozone-2"
-        ]
-      },
-      {
-        "slug": "monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
-        "culpables": [
-          "ozone-2"
-        ]
-      }
-    ]
+    "casosBloqueadosHoy": 0,
+    "casosBloqueadosTrasModelarLos15": []
   },
   "arquetipo": {
     "grupos": {
@@ -410,19 +329,10 @@
         "cartuchos-inteligentes/cianuro-de-hidrogeno",
         "cartuchos-inteligentes/cloro-dioxido-de-cloro",
         "cartuchos-inteligentes/cloruro-de-hidrogeno",
-        "cartuchos-inteligentes/dioxido-de-azufre",
-        "cartuchos-inteligentes/dioxido-de-carbono",
-        "cartuchos-inteligentes/dioxido-de-nitrogeno",
         "cartuchos-inteligentes/fluoruro-de-hidrogeno",
         "cartuchos-inteligentes/hidrocarburos-no-metanicos",
-        "cartuchos-inteligentes/monoxido-de-carbono",
-        "cartuchos-inteligentes/oxido-nitrico",
         "cartuchos-inteligentes/oxigeno",
-        "cartuchos-inteligentes/ozono",
         "cartuchos-inteligentes/sensor-particulas-ultrafinas"
-      ],
-      "ficha · solutions-template-default et-tb-has-template · 7 secciones": [
-        "sensor-de-calidad-del-aire/metano"
       ]
     },
     "tplConstruidos": [
@@ -485,48 +395,6 @@
           "toggle": 19
         }
       },
-      "cartuchos-inteligentes/dioxido-de-azufre": {
-        "forma": "cartucho",
-        "tpl": "solutions-template-default et-tb-has-template",
-        "nSecciones": 6,
-        "nModulos": 47,
-        "kinds": {
-          "text": 16,
-          "image": 6,
-          "button_module_wrapper": 4,
-          "fullwidth_slider": 1,
-          "posts": 1,
-          "toggle": 19
-        }
-      },
-      "cartuchos-inteligentes/dioxido-de-carbono": {
-        "forma": "cartucho",
-        "tpl": "solutions-template-default et-tb-has-template",
-        "nSecciones": 6,
-        "nModulos": 46,
-        "kinds": {
-          "text": 16,
-          "image": 6,
-          "button_module_wrapper": 3,
-          "fullwidth_slider": 1,
-          "posts": 1,
-          "toggle": 19
-        }
-      },
-      "cartuchos-inteligentes/dioxido-de-nitrogeno": {
-        "forma": "cartucho",
-        "tpl": "solutions-template-default et-tb-has-template",
-        "nSecciones": 6,
-        "nModulos": 47,
-        "kinds": {
-          "text": 16,
-          "image": 6,
-          "button_module_wrapper": 4,
-          "fullwidth_slider": 1,
-          "posts": 1,
-          "toggle": 19
-        }
-      },
       "cartuchos-inteligentes/fluoruro-de-hidrogeno": {
         "forma": "cartucho",
         "tpl": "solutions-template-default et-tb-has-template",
@@ -555,34 +423,6 @@
           "toggle": 19
         }
       },
-      "cartuchos-inteligentes/monoxido-de-carbono": {
-        "forma": "cartucho",
-        "tpl": "solutions-template-default et-tb-has-template",
-        "nSecciones": 6,
-        "nModulos": 47,
-        "kinds": {
-          "text": 16,
-          "image": 6,
-          "button_module_wrapper": 4,
-          "fullwidth_slider": 1,
-          "posts": 1,
-          "toggle": 19
-        }
-      },
-      "cartuchos-inteligentes/oxido-nitrico": {
-        "forma": "cartucho",
-        "tpl": "solutions-template-default et-tb-has-template",
-        "nSecciones": 6,
-        "nModulos": 47,
-        "kinds": {
-          "text": 16,
-          "image": 6,
-          "button_module_wrapper": 4,
-          "fullwidth_slider": 1,
-          "posts": 1,
-          "toggle": 19
-        }
-      },
       "cartuchos-inteligentes/oxigeno": {
         "forma": "cartucho",
         "tpl": "solutions-template-default et-tb-has-template",
@@ -597,20 +437,6 @@
           "toggle": 19
         }
       },
-      "cartuchos-inteligentes/ozono": {
-        "forma": "cartucho",
-        "tpl": "solutions-template-default et-tb-has-template",
-        "nSecciones": 6,
-        "nModulos": 47,
-        "kinds": {
-          "text": 16,
-          "image": 6,
-          "button_module_wrapper": 4,
-          "fullwidth_slider": 1,
-          "posts": 1,
-          "toggle": 19
-        }
-      },
       "cartuchos-inteligentes/sensor-particulas-ultrafinas": {
         "forma": "cartucho",
         "tpl": "solutions-template-default et-tb-has-template",
@@ -618,20 +444,6 @@
         "nModulos": 48,
         "kinds": {
           "text": 18,
-          "image": 6,
-          "button_module_wrapper": 3,
-          "fullwidth_slider": 1,
-          "posts": 1,
-          "toggle": 19
-        }
-      },
-      "sensor-de-calidad-del-aire/metano": {
-        "forma": "ficha",
-        "tpl": "solutions-template-default et-tb-has-template",
-        "nSecciones": 7,
-        "nModulos": 47,
-        "kinds": {
-          "text": 17,
           "image": 6,
           "button_module_wrapper": 3,
           "fullwidth_slider": 1,

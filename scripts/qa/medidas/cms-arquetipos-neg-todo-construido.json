@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-04",
+    "fecha": "2026-08-18",
     "sabotaje": "todo-construido",
     "pregunta": "¿de qué colecciones es cierta la premisa «src/lib/*.ts son los datos»?",
     "fuentes": {
@@ -23,14 +23,14 @@
       "mixtas": [],
       "referenciadas": []
     },
-    "rutasEmitidas": 34,
+    "rutasEmitidas": 377,
     "ejeB": "ESTA SONDA NO MIDE EL EJE B (cuántas filas hay de las que existen en el original). El corpus completo son 57 casos y 149 entradas; aquí sólo se cuenta lo transcrito."
   },
   "colecciones": [
     {
       "coleccion": "productos",
-      "filas": 9,
-      "conRuta": 9,
+      "filas": 19,
+      "conRuta": 19,
       "sinRuta": [],
       "colganteDesde": 0,
       "colganteHacia": 0,
@@ -65,8 +65,8 @@
     },
     {
       "coleccion": "casos",
-      "filas": 4,
-      "conRuta": 4,
+      "filas": 57,
+      "conRuta": 57,
       "sinRuta": [],
       "colganteDesde": 0,
       "colganteHacia": 0,
@@ -74,8 +74,8 @@
     },
     {
       "coleccion": "faqs",
-      "filas": 2,
-      "conRuta": 2,
+      "filas": 19,
+      "conRuta": 19,
       "sinRuta": [],
       "colganteDesde": 0,
       "colganteHacia": 0,
@@ -83,8 +83,8 @@
     },
     {
       "coleccion": "entradas-blog",
-      "filas": 7,
-      "conRuta": 7,
+      "filas": 152,
+      "conRuta": 152,
       "sinRuta": [],
       "colganteDesde": 0,
       "colganteHacia": 0,
@@ -92,8 +92,8 @@
     },
     {
       "coleccion": "terminos-kunakpedia",
-      "filas": 3,
-      "conRuta": 3,
+      "filas": 37,
+      "conRuta": 37,
       "sinRuta": [],
       "colganteDesde": 0,
       "colganteHacia": 0,
@@ -101,8 +101,8 @@
     },
     {
       "coleccion": "documentos-cientificos",
-      "filas": 4,
-      "conRuta": 4,
+      "filas": 23,
+      "conRuta": 23,
       "sinRuta": [],
       "colganteDesde": 0,
       "colganteHacia": 0,

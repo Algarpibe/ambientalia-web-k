@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-06",
+    "fecha": "2026-08-18",
     "pregunta": "¿dos rutas distintas comparten su último segmento? Si no, `filename → ruta` es una función y CMS-0g se cierra sin campo nuevo.",
     "fuente": "walker de mapeo.mjs sobre los 9 catálogos (dominio) · media-corpus/INDICE.json · apps/web/public/images · media/ (salida servida)",
     "sabotaje": "filename-renombrado"
@@ -8,8 +8,8 @@
   "poblaciones": {
     "dominio": {
       "que": "rutas que HOY llegan a un campo `upload` (el dominio de rutaDeMedia)",
-      "rutas": 112,
-      "suelo": 110,
+      "rutas": 614,
+      "suelo": 653,
       "decide": true,
       "basenamesRepetidos": 0,
       "referenciasDelCorpusAfectadas": 0,
@@ -26,11 +26,11 @@
     },
     "union": {
       "que": "dominio ∪ corpus: todo lo que alguna vez podrá ser fila de `media`",
-      "rutas": 646,
-      "suelo": 534,
+      "rutas": 1139,
+      "suelo": 653,
       "decide": true,
-      "basenamesRepetidos": 1,
-      "referenciasDelCorpusAfectadas": 12,
+      "basenamesRepetidos": 3,
+      "referenciasDelCorpusAfectadas": 76,
       "colisiones": [
         {
           "basename": "control-de-la-calidad-del-aire-en-ciudades.jpg",
@@ -41,11 +41,45 @@
           "referenciasEnCorpus": [
             {
               "ruta": "uploads/2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
-              "n": 3
+              "n": 8
             },
             {
               "ruta": "uploads/2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg",
               "n": 9
+            }
+          ]
+        },
+        {
+          "basename": "cemex.jpg",
+          "rutas": [
+            "uploads/2022/07/cemex.jpg",
+            "uploads/2024/08/cemex.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2022/07/cemex.jpg",
+              "n": 7
+            },
+            {
+              "ruta": "uploads/2024/08/cemex.jpg",
+              "n": 10
+            }
+          ]
+        },
+        {
+          "basename": "demolicion-estadio-vicente-calderon-0.jpg",
+          "rutas": [
+            "uploads/2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+            "uploads/2024/08/demolicion-estadio-vicente-calderon-0.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+              "n": 36
+            },
+            {
+              "ruta": "uploads/2024/08/demolicion-estadio-vicente-calderon-0.jpg",
+              "n": 6
             }
           ]
         }
@@ -53,11 +87,11 @@
     },
     "publico": {
       "que": "apps/web/public/images entero — superconjunto, incluye el CASCARÓN",
-      "rutas": 628,
+      "rutas": 2686,
       "suelo": null,
       "decide": false,
-      "basenamesRepetidos": 12,
-      "referenciasDelCorpusAfectadas": 670,
+      "basenamesRepetidos": 15,
+      "referenciasDelCorpusAfectadas": 1140,
       "colisiones": [
         {
           "basename": "ico-arrow.svg",
@@ -225,7 +259,7 @@
             },
             {
               "ruta": "uploads/2022/12/punteado.svg",
-              "n": 123
+              "n": 223
             }
           ]
         },
@@ -247,7 +281,41 @@
             },
             {
               "ruta": "uploads/2022/12/recurso-k-fondo.svg",
-              "n": 234
+              "n": 253
+            }
+          ]
+        },
+        {
+          "basename": "demolicion-estadio-vicente-calderon-0.jpg",
+          "rutas": [
+            "uploads/2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+            "uploads/2024/08/demolicion-estadio-vicente-calderon-0.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+              "n": 36
+            },
+            {
+              "ruta": "uploads/2024/08/demolicion-estadio-vicente-calderon-0.jpg",
+              "n": 6
+            }
+          ]
+        },
+        {
+          "basename": "cemex.jpg",
+          "rutas": [
+            "uploads/2022/07/cemex.jpg",
+            "uploads/2024/08/cemex.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2022/07/cemex.jpg",
+              "n": 7
+            },
+            {
+              "ruta": "uploads/2024/08/cemex.jpg",
+              "n": 10
             }
           ]
         },
@@ -260,11 +328,28 @@
           "referenciasEnCorpus": [
             {
               "ruta": "uploads/2023/02/kunak-api.jpg",
-              "n": 4
+              "n": 12
             },
             {
               "ruta": "uploads/2026/04/kunak-api.jpg",
-              "n": 309
+              "n": 576
+            }
+          ]
+        },
+        {
+          "basename": "control-de-la-calidad-del-aire-en-ciudades.jpg",
+          "rutas": [
+            "uploads/2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
+            "uploads/2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
+              "n": 8
+            },
+            {
+              "ruta": "uploads/2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg",
+              "n": 9
             }
           ]
         }
@@ -274,10 +359,11 @@
   "comprobaciones": {
     "filenameEsBasename": {
       "que": "cada basename del dominio existe en media/ con su nombre EXACTO ⇒ Payload no saneó ni desduplicó",
-      "ficherosEnMedia": 666,
-      "sinTestigo": 1,
+      "ficherosEnMedia": 2928,
+      "sinTestigo": 2,
       "cuales": [
-        "Kunak-AIR-Pro-1024.jpg"
+        "air-cloud.jpg",
+        "Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg"
       ],
       "ok": false
     },
@@ -299,14 +385,35 @@
         "enPublico": "ad1cf00dd7fec3b9",
         "copiaVerbatim": true
       },
-      "n": 3,
-      "materializadas": 2,
+      "n": 17,
+      "materializadas": 14,
       "cuales": [
         {
           "origen": "uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro-1024x683.jpg",
           "pisaria": "Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro(-1024x683)",
           "shaEnMedia": "6ea1001028621aad",
           "shaEnPublico": "b5121641e2d4d292",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2025/07/CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano-1024x683.jpg",
+          "pisaria": "CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano(-1024x683)",
+          "shaEnMedia": "4d34647adaadb4fd",
+          "shaEnPublico": "5226f1bdf684f557",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2025/06/castel-d-ario-1024x683.jpg",
+          "pisaria": "castel-d-ario(-1024x683)",
+          "shaEnMedia": "cad08c467d5ef2e3",
+          "shaEnPublico": "c7410b8ec261ed92",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2024/08/SEVESO-1976-1024x819.jpg",
+          "pisaria": "SEVESO-1976(-1024x819)",
+          "shaEnMedia": "dff90304d79d0d40",
+          "shaEnPublico": "3b4a419b1031a711",
           "ficheroPisado": true
         },
         {
@@ -317,11 +424,88 @@
           "ficheroPisado": true
         },
         {
+          "origen": "uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany-1024x683.jpg",
+          "pisaria": "Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany(-1024x683)",
+          "shaEnMedia": "fc5eae2a0e41d844",
+          "shaEnPublico": "5e9a1c45690031cb",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2025/01/food-processing-plant-in-Singapore-1024x683.jpg",
+          "pisaria": "food-processing-plant-in-Singapore(-1024x683)",
+          "shaEnMedia": "3646cc9274ec1fe3",
+          "shaEnPublico": "82c48ca4dfe16a56",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium-1024x683.jpg",
+          "pisaria": "environmental-monitoring-demolition-of-the-vicente-calderon-stadium(-1024x683)",
+          "shaEnMedia": "82a8c0201d8c3996",
+          "shaEnPublico": "eaef2af9d1e3adc0",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2023/08/contaminacion-del-aire-por-obras-1024x683.jpg",
+          "pisaria": "contaminacion-del-aire-por-obras(-1024x683)",
+          "shaEnMedia": "566411e6247b3146",
+          "shaEnPublico": "e83864e0074cb5fb",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2026/05/Trabajos-de-remediacion-ambiental_Kunak-1024x683.jpeg",
+          "pisaria": "Trabajos-de-remediacion-ambiental_Kunak(-1024x683)",
+          "shaEnMedia": "d0668d779c8eeb91",
+          "shaEnPublico": "d0668d779c8eeb91",
+          "ficheroPisado": false
+        },
+        {
+          "origen": "uploads/2026/05/MADES-1-1024x683.jpg",
+          "pisaria": "MADES-1(-1024x683)",
+          "shaEnMedia": "d1f4ec3d72a312a4",
+          "shaEnPublico": "6d5ab137e48b24e8",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas-1024x683.jpg",
+          "pisaria": "Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas(-1024x683)",
+          "shaEnMedia": "f64eeaaf6defee03",
+          "shaEnPublico": "df4f817f2564fdb1",
+          "ficheroPisado": true
+        },
+        {
           "origen": "uploads/2025/06/sargazo-cancun-repmex-1024x683.jpg",
           "pisaria": "sargazo-cancun-repmex(-1024x683)",
-          "shaEnMedia": "350aa42d14d64906",
+          "shaEnMedia": "9cca8c45fd6f4390",
           "shaEnPublico": "350aa42d14d64906",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2019/05/calidad-del-aire-ciudad-de-mexico-1024x682.jpeg",
+          "pisaria": "calidad-del-aire-ciudad-de-mexico(-1024x682)",
+          "shaEnMedia": "854307d53c340cc8",
+          "shaEnPublico": "854307d53c340cc8",
           "ficheroPisado": false
+        },
+        {
+          "origen": "uploads/2024/03/airplane-465619_1280-1024x680.jpeg",
+          "pisaria": "airplane-465619_1280(-1024x680)",
+          "shaEnMedia": "9cdbc6778da1d854",
+          "shaEnPublico": "9cdbc6778da1d854",
+          "ficheroPisado": false
+        },
+        {
+          "origen": "uploads/2025/05/contaminacion-produccion-energia-1024x683.jpg",
+          "pisaria": "contaminacion-produccion-energia(-1024x683)",
+          "shaEnMedia": "5afe727750e98a90",
+          "shaEnPublico": "d37cb51a2147a382",
+          "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak-1024x683.jpg",
+          "pisaria": "Deteccion-temprana-emisiones-fugitivas_Kunak(-1024x683)",
+          "shaEnMedia": "c8022d5b0cbe72d4",
+          "shaEnPublico": "c8e469dc9c25a344",
+          "ficheroPisado": true
         }
       ],
       "ok": false
@@ -334,8 +518,8 @@
     }
   },
   "veredicto": {
-    "referenciasUpload": 133,
-    "rutasDistintas": 112,
+    "referenciasUpload": 647,
+    "rutasDistintas": 614,
     "funcionHoy": false,
     "funcionEnLaUnion": false,
     "lectura": "es una función HOY y NO en la unión: el bloque 2 la rompe. La decisión de CMS-0g no puede aplazarse a entonces."

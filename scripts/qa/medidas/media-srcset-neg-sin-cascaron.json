@@ -1,44 +1,44 @@
 {
   "meta": {
-    "fecha": "2026-08-04",
-    "fuente": "corpus/ (309 páginas congeladas, sha256 por página)",
+    "fecha": "2026-08-14",
+    "fuente": "corpus/ (312 páginas congeladas, sha256 por página)",
     "alcance": "grupo A (entradas-blog · terminos-kunakpedia · documentos-cientificos) + casos · faqs · productos. ⚠ NO incluye sectores ni monograficos — están FUERA del corpus por construcción (INDICE.meta.fuera), y son EXACTAMENTE la población donde M-IMG está medida.",
     "sabotaje": "sin-cascaron"
   },
   "totales": {
-    "paginas": 309,
-    "atributos": 1719,
-    "atributosCuerpo": 1719,
+    "paginas": 312,
+    "atributos": 1728,
+    "atributosCuerpo": 1728,
     "atributosCascaron": 0,
-    "candidatos": 4318,
-    "origenes": 519,
-    "origenesCuerpo": 519,
+    "candidatos": 4342,
+    "origenes": 521,
+    "origenesCuerpo": 521,
     "sinDescriptor": 0,
     "conX": 0,
     "mezclanOrigen": 24
   },
   "censo": {
     "srcset en <img>/<source>": {
-      "casos": 1719,
-      "paginas": 309,
+      "casos": 1728,
+      "paginas": 312,
       "max": null,
       "razon": "enumerador, no discriminante: está en las 309 porque el PIE lleva el sello de certificación con srcset (cascarón, medido). El que discrimina es el del cuerpo"
     },
     "sizes en <img>/<source>": {
-      "casos": 1719,
-      "paginas": 309,
+      "casos": 1728,
+      "paginas": 312,
       "max": null,
       "razon": "ídem — y restringido a img/source a propósito: sin restringir casaba sobre <link rel=icon sizes=32x32> en las 309 (sobre-casado)"
     },
     "srcset DENTRO de post_content": {
       "casos": 311,
       "paginas": 66,
-      "max": 209,
-      "razon": "las páginas de builder (casos · faqs · productos) NO tienen post_content: el tope se deriva del INDICE (209)"
+      "max": 212,
+      "razon": "las páginas de builder (casos · faqs · productos) NO tienen post_content: el tope se deriva del INDICE (212)"
     },
     "variante -WxH": {
-      "casos": 2935,
-      "paginas": 309,
+      "casos": 2952,
+      "paginas": 312,
       "max": null,
       "razon": "enumerador: el sello del pie ya trae una variante en las 309"
     }
@@ -127,15 +127,15 @@
       "114": 1,
       "126": 1,
       "150": 50,
-      "247": 309,
+      "247": 312,
       "300": 7,
-      "480": 1352,
+      "480": 1358,
       "576": 2,
       "600": 14,
       "768": 2,
-      "980": 956,
+      "980": 961,
       "1024": 59,
-      "1280": 181,
+      "1280": 184,
       "1920": 1
     }
   },
@@ -146,7 +146,7 @@
         "126x300",
         "247x300"
       ],
-      "cuerpo": 311,
+      "cuerpo": 314,
       "cascaron": 0,
       "recorta": false
     },
@@ -241,7 +241,7 @@
         "480x738",
         "480x853"
       ],
-      "cuerpo": 1352,
+      "cuerpo": 1358,
       "cascaron": 0,
       "recorta": false
     },
@@ -335,7 +335,7 @@
         "980x929",
         "980x980"
       ],
-      "cuerpo": 956,
+      "cuerpo": 961,
       "cascaron": 0,
       "recorta": false
     },
@@ -380,7 +380,7 @@
         "1280x884",
         "1280x960"
       ],
-      "cuerpo": 181,
+      "cuerpo": 184,
       "cascaron": 0,
       "recorta": false
     },
@@ -529,17 +529,38 @@
     }
   ],
   "porPuntoDeUso": {
-    "origenesConVariasFirmas": 39,
-    "origenes": 519,
+    "origenesConVariasFirmas": 40,
+    "origenes": 521,
     "ejemplos": [
+      {
+        "origen": "2023/06/contaminacion-del-aire-en-industria.jpg",
+        "firmas": [
+          {
+            "firma": "480x320 980x653",
+            "usos": 2,
+            "paginas": [
+              "entradas-blog/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+              "entradas-blog/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web"
+            ]
+          },
+          {
+            "firma": "1280x853 480x320 980x653 FULL@1800",
+            "usos": 1,
+            "paginas": [
+              "entradas-blog/webinar-control-de-la-contaminacion-del-aire-en-la-industria"
+            ]
+          }
+        ]
+      },
       {
         "origen": "2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1.png",
         "firmas": [
           {
             "firma": "480x270 980x551",
-            "usos": 1,
+            "usos": 2,
             "paginas": [
-              "entradas-blog/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar"
+              "entradas-blog/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+              "entradas-blog/webinar-control-de-la-contaminacion-del-aire-en-la-industria"
             ]
           },
           {
@@ -936,38 +957,18 @@
             ]
           }
         ]
-      },
-      {
-        "origen": "2025/05/contaminacion-produccion-energia.jpg",
-        "firmas": [
-          {
-            "firma": "1280x853 480x320 980x653 FULL@1800",
-            "usos": 1,
-            "paginas": [
-              "entradas-blog/contaminacion-por-produccion-de-energia"
-            ]
-          },
-          {
-            "firma": "480x320 980x653",
-            "usos": 2,
-            "paginas": [
-              "productos/cartuchos-inteligentes/cianuro-de-hidrogeno",
-              "productos/cartuchos-inteligentes/sensor-particulas-ultrafinas"
-            ]
-          }
-        ]
       }
     ]
   },
   "sizes": {
     "formas": 74,
     "top": {
-      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1024px, 100vw": 410,
-      "(max-width: 100px) 100vw, 100px": 309,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1024px, 100vw": 412,
+      "(max-width: 100px) 100vw, 100px": 312,
       "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 492px, 100vw": 220,
       "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1000px, 100vw": 133,
       "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1200px, 100vw": 129,
-      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw": 94,
+      "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) and (max-width: 1280px) 1280px, (min-width: 1281px) 1800px, 100vw": 97,
       "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw": 93,
       "(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 900px, 100vw": 77,
       "(max-width: 300px) 100vw, 300px": 50,

@@ -125,6 +125,7 @@
     "qa:artefacto": "node scripts/qa/artefacto.mjs",
     "qa:artefacto-neg": "node scripts/qa/artefacto.neg.mjs",
     "qa:manifiesto": "node scripts/qa/manifiesto.mjs",
+    "qa:negativos": "node scripts/qa/negativos.mjs",
     "qa:manifiesto-neg": "node scripts/qa/manifiesto.neg.mjs",
     "qa:html-cmp": "node scripts/qa/html-cmp.mjs",
     "qa:html-cmp-neg": "node scripts/qa/html-cmp.neg.mjs",

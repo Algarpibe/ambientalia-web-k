@@ -2,21 +2,21 @@
   "meta": {
     "sonda": "escalon-etiquetas",
     "que": "qué emite el original de kunakair.com en una entrada de blog sin etiquetas (post_tag)",
-    "fuente": "corpus/entradas-blog — 149 capturas congeladas el 2026-08-04",
+    "fuente": "corpus/entradas-blog — 152 capturas congeladas el 2026-08-14",
     "ficha": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS",
-    "sello": "2026-08-08T21-14-00",
+    "sello": "2026-08-18T16-50-16",
     "sabotaje": "tags-vacio"
   },
   "contrato": {
     "unidad": "entradas del corpus",
-    "minimo": 149,
-    "evaluadas": 149,
+    "minimo": 152,
+    "evaluadas": 152,
     "fallos": []
   },
   "censo": {
-    "bloque": 149,
-    "case-categorias": 149,
-    "case-tags": 142,
+    "bloque": 152,
+    "case-categorias": 152,
+    "case-tags": 144,
     "localizador": "case-taxonomies",
     "discriminante": "case-tags",
     "problemas": []
@@ -26,14 +26,15 @@
     "soloDisco": []
   },
   "sinEtiquetas": {
-    "n": 7,
-    "de": 149,
+    "n": 8,
+    "de": 152,
     "ficheros": [
       "covid-19-calidad-del-aire.html",
       "detectores-emisiones-coronavirus-contaminacion.html",
       "estamos-listos-para-ayudarle.html",
       "proyecto-simgo.html",
       "webinar-como-controlar-las-emisiones-en-mineria-junio-2025.html",
+      "webinar-control-de-la-contaminacion-del-aire-en-la-industria.html",
       "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar.html",
       "webinar-redes-hibridas-monitorizacion-ambiental.html"
     ]
@@ -41,13 +42,14 @@
   "formasSinEtiquetas": [
     {
       "forma": "<span class=\"case-categorias\"><span>…</span><a href=\"…\">…</a></span>",
-      "n": 7,
+      "n": 8,
       "ficheros": [
         "covid-19-calidad-del-aire.html",
         "detectores-emisiones-coronavirus-contaminacion.html",
         "estamos-listos-para-ayudarle.html",
         "proyecto-simgo.html",
         "webinar-como-controlar-las-emisiones-en-mineria-junio-2025.html",
+        "webinar-control-de-la-contaminacion-del-aire-en-la-industria.html",
         "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar.html",
         "webinar-redes-hibridas-monitorizacion-ambiental.html"
       ]
@@ -60,8 +62,8 @@
     }
   ],
   "rotulo": {
-    "conEtiquetas": 142,
-    "conUna": 63,
+    "conEtiquetas": 144,
+    "conUna": 65,
     "conVarias": 79,
     "noCuadran": [
       {
@@ -75,6 +77,6 @@
   },
   "veredicto": {
     "decision": "AMBIGUO",
-    "porQue": "el corpus contiene las DOS formas: 7 entradas OMITEN el bloque y 1 lo traen PRESENTE Y VACÍO. Un arbitraje no se apoya en una mayoría."
+    "porQue": "el corpus contiene las DOS formas: 8 entradas OMITEN el bloque y 1 lo traen PRESENTE Y VACÍO. Un arbitraje no se apoya en una mayoría."
   }
 }
