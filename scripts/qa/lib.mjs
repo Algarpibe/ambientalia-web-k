@@ -1471,6 +1471,28 @@ export function gritaSiRevienta(limpia = null) {
     );
     console.error(e);
     process.exitCode = 1;
+    /* ⚠⚠ `exitCode` NO TERMINA EL PROCESO: sólo dice con qué código terminará
+     * **cuando el bucle de eventos se vacíe**. Y si algo lo mantiene vivo —un
+     * navegador de puppeteer abierto, un socket, un `setInterval`— **no se vacía
+     * nunca**: la sonda imprime su banner de fallo y se queda colgada para
+     * siempre. Con `spawnSync` delante eso es `status: null` tras 15 min de
+     * espera, o sea un negativo que ni pasa ni falla: se agota.
+     *
+     * Es §4bis-sexta una vuelta más abajo. Allí el gancho RELEVABA a Node y no
+     * devolvía el fallo; aquí lo devuelve (pone el código) y **sigue sin
+     * devolver la MUERTE**, que es la otra mitad del comportamiento por defecto:
+     * ante una excepción no capturada Node **sale en el acto**, no espera al
+     * bucle. Restaurar sólo el código y no la salida deja la guarda gritando
+     * dentro de un proceso inmortal.
+     *
+     * `unref()` es lo que lo hace no-invasivo: si nada más sostiene el bucle, el
+     * proceso muere solo con su código y este temporizador no lo estorba (que es
+     * el caso que `qa:lib` §3b ya cubría, y por eso el defecto era invisible ahí:
+     * su dominio no tenía ningún handle abierto). Si algo SÍ lo sostiene, el
+     * temporizador salta igual y fuerza la salida. El margen deja que `stderr`
+     * —asíncrono en tuberías de Windows— acabe de vaciarse antes. */
+    const remate = setTimeout(() => process.exit(process.exitCode || 1), 500);
+    remate.unref?.();
   };
   process.on("uncaughtException", (e) => revienta(e, "EXCEPCIÓN NO CAPTURADA"));
   process.on("unhandledRejection", (e) => revienta(e, "PROMESA RECHAZADA SIN CAPTURAR"));

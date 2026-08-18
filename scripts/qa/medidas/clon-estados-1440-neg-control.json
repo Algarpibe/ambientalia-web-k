@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "ancho": 1440,
+    "cargasPorRuta": 2,
+    "rutas": [
+      "/contaminacion-por-metano",
+      "/monitorizacion-de-emisiones-del-trafico-urbano"
+    ],
+    "base": "http://127.0.0.1:<efímero>",
+    "ts": "2026-08-18T01:28:58.731Z",
+    "escala": {
+      "ts": "UTC"
+    },
+    "queEs": "UNA SOLA SENTADA contra UN SOLO build. La unidad es la CARGA. Contesta la dispersión DENTRO de un build, que es justo lo que clon-base no puede ver."
+  },
+  "resumen": {
+    "/contaminacion-por-metano": {
+      "cargasValidas": 2,
+      "cargasConError": 0,
+      "nEstados": 1,
+      "estados": [
+        {
+          "valor": 41990,
+          "veces": 2
+        }
+      ],
+      "huecos": [],
+      "cotaSiUnEstado": 1.5,
+      "cargaMs": {
+        "min": 9323,
+        "max": 10056
+      }
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "cargasValidas": 2,
+      "cargasConError": 0,
+      "nEstados": 1,
+      "estados": [
+        {
+          "valor": 38502,
+          "veces": 2
+        }
+      ],
+      "huecos": [],
+      "cotaSiUnEstado": 1.5,
+      "cargaMs": {
+        "min": 7969,
+        "max": 8033
+      }
+    }
+  },
+  "crudo": {
+    "/contaminacion-por-metano": [
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 10056,
+        "i": 0
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9323,
+        "i": 1
+      }
+    ],
+    "/monitorizacion-de-emisiones-del-trafico-urbano": [
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7969,
+        "i": 0
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8033,
+        "i": 1
+      }
+    ]
+  }
+}

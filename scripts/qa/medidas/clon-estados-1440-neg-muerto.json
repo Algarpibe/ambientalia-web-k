@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "ancho": 1440,
+    "cargasPorRuta": 2,
+    "rutas": [
+      "/contaminacion-por-metano",
+      "/monitorizacion-de-emisiones-del-trafico-urbano"
+    ],
+    "base": "http://127.0.0.1:<efímero>",
+    "ts": "2026-08-18T01:29:36.279Z",
+    "escala": {
+      "ts": "UTC"
+    },
+    "queEs": "UNA SOLA SENTADA contra UN SOLO build. La unidad es la CARGA. Contesta la dispersión DENTRO de un build, que es justo lo que clon-base no puede ver."
+  },
+  "resumen": {
+    "/contaminacion-por-metano": {
+      "cargasValidas": 0,
+      "cargasConError": 2,
+      "nEstados": 0,
+      "estados": [],
+      "huecos": [],
+      "cotaSiUnEstado": null,
+      "cargaMs": null
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "cargasValidas": 0,
+      "cargasConError": 2,
+      "nEstados": 0,
+      "estados": [],
+      "huecos": [],
+      "cotaSiUnEstado": null,
+      "cargaMs": null
+    }
+  },
+  "crudo": {
+    "/contaminacion-por-metano": [
+      {
+        "docH": null,
+        "h1y": 332.58,
+        "secciones": null,
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9753,
+        "i": 0
+      },
+      {
+        "docH": null,
+        "h1y": 332.58,
+        "secciones": null,
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9279,
+        "i": 1
+      }
+    ],
+    "/monitorizacion-de-emisiones-del-trafico-urbano": [
+      {
+        "docH": null,
+        "h1y": 332.58,
+        "secciones": null,
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8129,
+        "i": 0
+      },
+      {
+        "docH": null,
+        "h1y": 332.58,
+        "secciones": null,
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7947,
+        "i": 1
+      }
+    ]
+  }
+}
