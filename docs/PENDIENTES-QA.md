@@ -1,5 +1,116 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 📋 META-CANARIOS-DE-CARGA · SIETE MARCADORES OPACOS EN `CLAUDE.md` PARA MEDIR SI LLEGA ENTERO (2026-08-18, instrumentación — la medida la toma la sesión siguiente)
+
+**Esto no mide nada todavía.** Deja puesto el instrumento y escribe la lectura
+**antes** de mirar, que es lo único que impide decidirla por cansancio.
+
+### La pregunta, y por qué no se contesta sola
+
+`CLAUDE.md` mide **156.290 caracteres** y el límite del harness son **150.000**,
+o sea **6.290 de exceso**. Lo que no se sabe es si el aviso que lo motiva es de
+**presupuesto** (llega entero y sólo se avisa del tamaño) o de **truncado**
+(llega cortado, y entonces las reglas de la cola están fuera de contexto sin que
+nada lo diga).
+
+> **Los dos casos producen EXACTAMENTE la misma salida** —una sesión que trabaja
+> con normalidad— así que la ausencia de síntoma no discrimina. Es §la regla del
+> cero aplicada al canal por el que entran las reglas: hace falta un marcador que
+> **sólo se pueda citar si esa parte del fichero llegó**.
+
+⚠ **En CHARS, no en bytes.** `wc -c` da **160.284** porque cuenta bytes y el
+documento va lleno de acentos, «», ⚠, · y →. Contra el límite se compara
+`readFileSync(…,'utf8').length`.
+
+### Los NUEVE marcadores, con sus offsets RE-DERIVADOS sobre el fichero final
+
+Ocho viven en el repo; **KC-00 es el control y vive fuera** (§el control, abajo).
+
+| marcador | offset real | línea | dónde cae |
+|---|---|---|---|
+| `KC-01 @39000 QF7MVB` | **47.824** | 810 | antes de §El principio |
+| `KC-02 @78000 ZTR4KP` | **86.712** | 1443 | antes de §sondas 1 |
+| `KC-03 @117000 MJ2WDX` | **120.095** | 2030 | antes de §sondas 6 |
+| `KC-04 @146600 BHN8QS` | **146.748** | 2520 | antes de §sondas 16 |
+| **`KC-05 @149352 XLV5GC`** | **149.470** | 2564 | **último bloque BAJO la raya** |
+| **`KC-06 @150328 PWD3RY`** | **150.476** | 2581 | **primero SOBRE la raya** (§sondas 17) |
+| `KC-07 @154432 NKS9TF` | **154.610** | 2656 | antes de §sondas 18 |
+| `CANARIO-CARGA-2026-08-18` (commit `9fe7add`) | **156.217** | 2693 | final del fichero |
+| `KC-00 @0 HGB6ZW` | 19 | 3 | **control, fuera del repo** |
+
+**Criterio de aceptación, comprobado y no supuesto:**
+`KC-05 149.470 < 150.000 < KC-06 150.476` ✅ — el par **cruza la raya** con 530 y
+476 de margen. Un par que no la cruza no localiza el corte.
+
+> ⚠ **El `@N` que lleva escrito cada canario es una ETIQUETA, no su offset.** Se
+> escribió antes de insertarlos y los siete se empujan entre sí (~208 chars en
+> total). Las siete etiquetas quedan **por debajo** del real —de **−8.824**
+> (KC-01) a **−118** (KC-05)— así que leerlas es **conservador**: subestiman
+> dónde llegó el fichero, nunca al revés. **El número bueno es el de esta tabla**
+> (§regla 9: un offset recordado no vale).
+
+### Qué se pierde si corta a 150.000, derivado sobre el fichero final
+
+| | |
+|---|---|
+| el corte cae en | **línea 2573**, a mitad de un blockquote de §sondas 16 |
+| §sondas 17 | off **150.506** — **fuera entera** |
+| §sondas 18 | off **154.640** — **fuera entera** |
+| §sondas 1…16 | dentro |
+
+O sea que la hipótesis de truncado predice una respuesta muy concreta, y por eso
+el par KC-05/KC-06 es el que decide.
+
+### Por qué siete y no uno
+
+**El reinicio de sesión es la unidad cara, no el canario.** Con uno solo al
+final, un «no lo cita» obliga a otro reinicio para saber **por dónde** corta.
+
+**Y por qué el de `9fe7add` no cuenta como medida:** su texto —*«si lees esto, el
+fichero llega entero»*— es **adivinable** a partir de la fecha y de la pregunta,
+así que una sesión que no lo hubiera recibido podría emitirlo igual. Es un
+sabotaje que no muerde. Se queda porque no estorba, no porque mida.
+
+Los siete nuevos cumplen las tres reglas de construcción: **token opaco** (nada
+derivable del contexto), **inertes** (comentario HTML, sin ⚠, sin negrita, sin
+mayúsculas — este fichero está lleno de avisos y un canario con forma de aviso
+acabaría citado como doctrina) y **autodescriptivos** (llevan su offset, con la
+salvedad de arriba).
+
+### LA LECTURA, escrita ANTES de medir
+
+| lo que conteste la sesión nueva | lectura |
+|---|---|
+| los 7 + el final | **llega entero**; el aviso es de presupuesto |
+| `KC-01`…`KC-05` y para | **corta cerca de 150.000**: §17 y §18 no llegan |
+| corta antes de `KC-05` | corta **antes** de lo previsto |
+| ninguno, y `KC-00` tampoco | **la sonda no mide: es la pregunta** |
+| ninguno, pero `KC-00` sí | **el fichero se descarta entero** (caso peor) |
+| desordenado (`KC-07` sí, `KC-06` no) | **no es un corte**: la sonda mide peor de lo que promete. **Se repite una vez** antes de fichar nada |
+
+### El control, sin el cual la medición no discrimina
+
+`C:\Users\algar\kc-control-canario\CLAUDE.md` — **fuera del repo y sin
+commitear**, tres líneas cuyo único contenido relevante es
+`<!-- KC-00 @0 HGB6ZW -->`. Si la sesión nueva tampoco cita `KC-00` **allí**, lo
+medido es que **la pregunta no discrimina**, no que el fichero se corte. Sin él,
+un «no cita nada» es ambiguo entre las dos causas y no dirime.
+
+### Alcance — lo que esta ficha NO establece
+
+**Que los canarios estén escritos no dice nada sobre si llegan.** Eso lo contesta
+la sesión nueva, y sólo con su control al lado. Tampoco se ha reducido ni tocado
+ninguna regla: el fichero **crece** 208 chars con esta tanda.
+
+Y no se puede autoverificar desde aquí: **un `Read` de `CLAUDE.md` va por un
+canal DISTINTO del auto-cargado** y saldría verde diga lo que diga el
+auto-cargado. Es §La causa común con un contenedor nuevo — el canal por el que
+se mira.
+
+**No se corrió `npm run check`:** son comentarios HTML en documentos —cero
+código, cero superficie de build— y sigue habiendo ~17 `node.exe` sin
+identificar (§regla 18).
+
 ## ⛔ F3-LH-ORDEN-DE-L5-SIN-MODELAR · EL ÍNDICE DE CASOS NO SE PUEDE CONSTRUIR: SU CLAVE DE ORDEN NO ESTÁ EN EL MODELO (2026-08-18, 80.ª tanda)
 
 **`L5` NO se construye en esta tanda, y no es por falta de tiempo: es un hueco

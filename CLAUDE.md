@@ -807,6 +807,7 @@ Estas se pagaron con horas de depuración. No las reinventes:
   > Regla: **mientras haya una sonda en vuelo, nada de `build`, `check` ni
   > `dev`.** Si hay que verificar código, se espera o se hace en otra copia.
 
+<!-- KC-01 @39000 QF7MVB -->
 ## El principio: verificar contra la salida servida
 
 **Nunca contra la fuente que uno supone responsable.** Es la regla que gobierna
@@ -1439,6 +1440,7 @@ defecto en ellas no se ve: se cree. Las dos primeras salieron de arreglar E1 y
 E3; la tercera, de auditar el piloto de CMS-0e; la cuarta, de C-SP16; la quinta,
 de que la corrida que verificaba C-QA1 se comiera el diagnóstico de C-QA1.
 
+<!-- KC-02 @78000 ZTR4KP -->
 **1 · Un descuadre impreso y no contado da el mismo informe que uno no visto.**
 
 > **Toda sonda tiene UN solo canal de verdad: lo que imprime y lo que cuenta no
@@ -2025,6 +2027,7 @@ cuadrar el `null`** — o sea cablearlo al defecto del instrumento.
 **Y el defecto se pone en la dirección que grita:** liberado el canónico, lo que
 todavía no se ha re-medido **falla en voz alta** en vez de leer lo caducado.
 
+<!-- KC-03 @117000 MJ2WDX -->
 **6 · UN PARÁMETRO POR DEFECTO CONVIERTE «NO LO SÉ» EN «ESTÁ BIEN».**
 
 Las cinco reglas de arriba persiguen el mismo animal: *no encontrar nada y no
@@ -2514,6 +2517,7 @@ está verificado»**. Se escribe qué lo verifica —una derivación independien
 un negativo que salga rojo si la premisa se rompe— o se dice que nadie lo ha
 verificado.
 
+<!-- KC-04 @146600 BHN8QS -->
 **16 · «MISMO CÓDIGO» ES UN HECHO NEGATIVO. EL NO-DETERMINISMO ES LA ÚLTIMA
 HIPÓTESIS, NUNCA LA PRIMERA.** (2026-08-18)
 
@@ -2557,6 +2561,7 @@ bastar:
 > claves menos y 0 nuevas**, que es la forma de una secuencia de arreglos y no la
 > de un árbol que tiembla.
 
+<!-- KC-05 @149352 XLV5GC -->
 **Y la mitad que protege a la hipótesis de morir injustamente:** lo que quede sin
 explicar **se declara con su n**, no se descarta por asociación. Aquí quedó
 `/contaminacion-por-metano` **+16** con **n = 1**, en una corrida que murió antes
@@ -2573,6 +2578,7 @@ ya planificada**.
 > 1440 y sólo de 1440** — §regla espejo: en el otro ancho hay un contenedor que
 > se lo come.
 
+<!-- KC-06 @150328 PWD3RY -->
 **17 · UNA GUARDA TIENE QUE DEVOLVER TODAS LAS MITADES DEL COMPORTAMIENTO QUE
 RELEVA — Y `process.exitCode` NO MATA.** (2026-08-17)
 
@@ -2647,6 +2653,7 @@ aquí lo compartido no es el fichero, es **la variable**.
 > vio que el rojo y el verde estaban imprimiendo la misma frase. §regla 1 —*lo
 > que imprime y lo que cuenta no pueden discrepar*— aplicada al **negativo**.
 
+<!-- KC-07 @154432 NKS9TF -->
 **18 · «HAY UNA SONDA EN VUELO» NO SE DERIVA DEL ÁRBOL.** (2026-08-17)
 
 Este documento ya manda *«mientras haya una sonda en vuelo, nada de `build`,
