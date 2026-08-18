@@ -3,7 +3,7 @@
     "fecha": "2026-08-18",
     "pregunta": "¿qué camino de extracción les toca a casos y faqs, qué pide su esquema, qué trae el corpus y qué falta?",
     "fuente": "corpus/ (captura congelada) + colecciones.ts (campos, derivados) + src/lib/{casos,faqs}.ts (CONTROL)",
-    "sabotaje": "campo-inventado",
+    "sabotaje": null,
     "alcance": {
       "controlCasos": "4 de 57",
       "controlFaqs": "2 de 19",
@@ -62,12 +62,6 @@
           "tipo": "text"
         },
         "titulo": {
-          "traen": 57,
-          "de": 57,
-          "requerido": true,
-          "tipo": "text"
-        },
-        "fechaPublicacion": {
           "traen": 57,
           "de": 57,
           "requerido": true,
@@ -190,10 +184,10 @@
     }
   },
   "camposSinLector": [
-    "faqs.campoQueNadieLee"
+    "casos.fechaPublicacion"
   ],
   "control": {
-    "comparaciones": 64,
+    "comparaciones": 60,
     "discrepancias": 0,
     "detalle": []
   },
@@ -206,7 +200,6 @@
       "seo.description": null,
       "seo.ogImage": "/images/uploads/2021/03/imec-2.jpg",
       "titulo": "Análisis de la calidad del aire mediante estaciones móviles en Bélgica",
-      "fechaPublicacion": "2021-04-20T10:35:17+02:00",
       "imagenCabecera": "/images/uploads/2021/03/imec-2.jpg",
       "cliente": "IMEC - Centro Interuniversitario de Microelectrónica",
       "sectores": [
@@ -258,7 +251,6 @@
       "seo.description": "Caso de éxito sobre la instalación de redes de calidad del aire en pistas de atletismo para World Athletics (Asociación Internacional de Federaciones de Atletismo).",
       "seo.ogImage": "/images/uploads/2019/05/sports.jpg",
       "titulo": "Red global de calidad de aire en pistas de atletismo de World Athletics",
-      "fechaPublicacion": "2019-05-07T14:06:33+02:00",
       "imagenCabecera": "/images/uploads/2019/05/sports.jpg",
       "cliente": "World Athletics",
       "sectores": [],
@@ -287,7 +279,6 @@
       "seo.description": null,
       "seo.ogImage": "/images/uploads/2023/03/unep.jpg",
       "titulo": "Transformación digital y un aire más limpio en Etiopía",
-      "fechaPublicacion": "2021-03-12T14:54:55+02:00",
       "imagenCabecera": "/images/uploads/2023/03/unep.jpg",
       "cliente": "UNEP - Programa de las Naciones Unidas para el Medio Ambiente",
       "sectores": [],
@@ -384,7 +375,6 @@
       "seo.description": "Despliegue de estaciones Kunak AIR Pro para el control del impacto de la quema de caña de azúcar a través del monitoreo en tiempo real.",
       "seo.ogImage": "/images/uploads/2022/04/asazgua-2-1.jpg",
       "titulo": "Sistema de control de puntos críticos en quemas controladas del sector azucarero en Guatemala",
-      "fechaPublicacion": "2022-04-13T14:40:26+02:00",
       "imagenCabecera": "/images/uploads/2022/04/asazgua-2-1.jpg",
       "cliente": "ASAZGUA – Azúcar de Guatemala",
       "sectores": [
@@ -462,7 +452,6 @@
       "seo.description": "Ampliación de la red de estaciones oficiales de calidad del aire de Atmo France con estaciones basadas en sensores Kunak AIR Pro.",
       "seo.ogImage": "/images/uploads/2022/05/atmo-hausde-france.jpg",
       "titulo": "Red híbrida de vigilancia ambiental en entornos urbanos en Francia",
-      "fechaPublicacion": "2022-05-26T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2022/05/atmo-hausde-france.jpg",
       "cliente": "Atmo Hauts-de-France",
       "sectores": [
@@ -498,7 +487,6 @@
       "seo.description": "Sistema de monitorización mediante sensores para vigilar los niveles de contaminación ambiental en la planta cementera de Cemex en Monterrey.",
       "seo.ogImage": "/images/uploads/2022/07/cemex.jpg",
       "titulo": "Vigilancia de la calidad del aire en la planta de Cemex de Monterrey, México",
-      "fechaPublicacion": "2022-07-20T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2022/07/cemex.jpg",
       "cliente": "Cemex",
       "sectores": [
@@ -557,7 +545,6 @@
       "seo.description": "Sistema de monitorización mediante sensores para vigilar los niveles de contaminación atmosférica y el control del ruido ambiental en Albacete",
       "seo.ogImage": "/images/uploads/2022/01/albacete.jpg",
       "titulo": "Vigilancia de la contaminación del aire y ruido ambiental en Albacete",
-      "fechaPublicacion": "2022-01-20T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2022/01/albacete.jpg",
       "cliente": "Ayuntamiento de Albacete",
       "sectores": [
@@ -669,7 +656,6 @@
       "seo.description": "Despliegue de una red de 25 Kunak AIR para la monitorización de gases, partículas y contaminación acústica en los puertos de la APB.",
       "seo.ogImage": "/images/uploads/2020/09/apb-1.jpg",
       "titulo": "Control de la calidad del aire en los puertos de la APB",
-      "fechaPublicacion": "2020-09-06T11:27:55+02:00",
       "imagenCabecera": "/images/uploads/2020/09/apb-1.jpg",
       "cliente": "APB - Port Authority of the Balearic Islands",
       "sectores": [
@@ -749,7 +735,6 @@
       "seo.description": "La red de calidad del aire urbano instalada por Kunak en Donostia-San Sebastián mejorará la calidad de vida de visitantes y ciudadanía.",
       "seo.ogImage": "/images/uploads/2020/08/donostia-urban-air-quality-1.jpg",
       "titulo": "Despliegue de una red de sensores de calidad del aire en Donostia-San Sebastián",
-      "fechaPublicacion": "2020-08-03T11:49:24+02:00",
       "imagenCabecera": "/images/uploads/2020/08/donostia-urban-air-quality-1.jpg",
       "cliente": "Promotion of San Sebastian",
       "sectores": [
@@ -835,7 +820,6 @@
       "seo.description": "Alaquàs (Valencia), con unos 30000 hab., es una muestra de cómo los municipios medios también pueden beneficiarse de una red de sensores de calidad del aire",
       "seo.ogImage": "/images/uploads/2020/05/alaquas.jpg",
       "titulo": "Red de sensores de calidad del aire y parámetros meteorológicos en Alaquàs",
-      "fechaPublicacion": "2020-05-11T09:33:43+02:00",
       "imagenCabecera": "/images/uploads/2020/05/alaquas.jpg",
       "cliente": "Alaquàs town hall",
       "sectores": [
@@ -873,7 +857,6 @@
       "seo.description": "Caso de éxito sobre la vigilancia ambiental en la demolición del estadio Vicente Calderón en Madrid a través de equipos Kunak AIR.",
       "seo.ogImage": "/images/uploads/2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium.jpg",
       "titulo": "Vigilancia ambiental en la demolición del estadio Vicente Calderón",
-      "fechaPublicacion": "2020-04-15T13:27:11+02:00",
       "imagenCabecera": "/images/uploads/2020/04/environmental-monitoring-demolition-of-the-vicente-calderon-stadium.jpg",
       "cliente": "AFC Ingenieros",
       "sectores": [
@@ -903,7 +886,6 @@
       "seo.description": "Sistema de alerta temprana para la deteccion de episodios de emisiones de aguas contaminadas al río en una zona rural sin cobertura.",
       "seo.ogImage": "/images/uploads/2018/06/IMG-20160729-WA0013-sice.jpg",
       "titulo": "Alerta de contaminación de acuífero por lindano",
-      "fechaPublicacion": "2018-06-08T16:27:06+02:00",
       "imagenCabecera": "/images/uploads/2018/06/IMG-20160729-WA0013-sice.jpg",
       "cliente": "SICE",
       "sectores": [
@@ -933,7 +915,6 @@
       "seo.description": "Red de calidad de aire con integración de datos en SCADA para la monitorización de la calidad de aire de la ciudad de Rivas Vaciamadrid.",
       "seo.ogImage": "/images/uploads/2018/09/inmobiliaria-Rivas-Vaciamadrid2.jpg",
       "titulo": "Red urbana de calidad de aire para Rivas-Vaciamadrid",
-      "fechaPublicacion": "2018-09-11T12:07:03+02:00",
       "imagenCabecera": "/images/uploads/2018/09/inmobiliaria-Rivas-Vaciamadrid2.jpg",
       "cliente": "Rivas Vaciamadrid City Council",
       "sectores": [
@@ -994,7 +975,6 @@
       "seo.description": "Proyecto de monitorización de gases y partículas en diferentes estaciones del metro de Valparaíso para el estudio de la calidad del aire.",
       "seo.ogImage": "/images/uploads/2023/07/metro-valparaiso-3-1.webp",
       "titulo": "Monitorización continua de gases y partículas en el metro de Valparaíso",
-      "fechaPublicacion": "2023-07-19T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2023/07/metro-valparaiso-3-1.webp",
       "cliente": "EFE Trenes de Chile",
       "sectores": [
@@ -1056,7 +1036,6 @@
       "seo.description": "Control de la calidad del aire y de los efectos del estrés térmico durante el campeonato del mundo de atletismo Budapest 2023 realizado por WA",
       "seo.ogImage": "/images/uploads/2023/09/Air-quality-and-heat-stress-during-the-World-Athletics-Championships-Budapest-2023.webp",
       "titulo": "Monitorización de la calidad del aire y el estrés térmico durante los Mundiales de Atletismo Budapest 2023",
-      "fechaPublicacion": "2023-09-05T16:16:06+02:00",
       "imagenCabecera": "/images/uploads/2023/09/Air-quality-and-heat-stress-during-the-World-Athletics-Championships-Budapest-2023.webp",
       "cliente": "World Athletics",
       "sectores": [
@@ -1114,7 +1093,6 @@
       "seo.description": "Descubre cómo el innovador proyecto \"Calle 30 Natura\" combate la contaminación en la M-30 con jardines verticales y sensores Kunak AIR.",
       "seo.ogImage": "/images/uploads/2023/07/calle-30-natura.jpg",
       "titulo": "Calle 30 Natura: jardines verticales y sensores de calidad del aire combaten la contaminación en la M-30 de Madrid",
-      "fechaPublicacion": "2023-08-01T09:10:07+02:00",
       "imagenCabecera": "/images/uploads/2023/07/calle-30-natura.jpg",
       "cliente": "Ayuntamiento de Madrid",
       "sectores": [
@@ -1194,7 +1172,6 @@
       "seo.description": "Descubre cómo Kunak ha ayudado a monitorizar la calidad del aire en Bilbao con una solución innovadora, precisa y sostenible.",
       "seo.ogImage": "/images/uploads/2024/01/Control-de-la-contaminacion-en-Bilbao-Kunak.jpg",
       "titulo": "Control de la contaminación en Bilbao: un proyecto de referencia para las zonas de bajas emisiones (ZBE)",
-      "fechaPublicacion": "2024-01-31T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2024/01/Control-de-la-contaminacion-en-Bilbao-Kunak.jpg",
       "cliente": "Ayuntamiento de Bilbao",
       "sectores": [
@@ -1281,7 +1258,6 @@
       "seo.description": "Kunak y la FIA Fórmula E se unieron para monitorizar la calidad del aire durante el Berlín E-prix en el Tempelhof Airport Street Circuit",
       "seo.ogImage": "/images/uploads/2024/03/fia-formula-e-berlin-eprix-air-quaility-monitoring.jpg",
       "titulo": "FIA Fórmula E y Kunak: una alianza por el aire limpio en el Berlín E-Prix",
-      "fechaPublicacion": "2024-04-26T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2024/03/fia-formula-e-berlin-eprix-air-quaility-monitoring.jpg",
       "cliente": "FIA Formula E",
       "sectores": [
@@ -1348,7 +1324,6 @@
       "seo.description": "Proyecto de medición de diversos contaminantes ambientales en la ciudad de Cartagena de Indias, Colombia de la mano de Grupo Gexo.",
       "seo.ogImage": "/images/uploads/2023/06/cartagena-1.jpg",
       "titulo": "Medición de contaminantes ambientales en la ciudad de Cartagena de Indias, Colombia",
-      "fechaPublicacion": "2023-06-08T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2023/06/cartagena-1.jpg",
       "cliente": "Sensora",
       "sectores": [
@@ -1409,7 +1384,6 @@
       "seo.description": null,
       "seo.ogImage": "/images/uploads/2024/06/barrick_gold_pueblo_viejo-scaled.jpg",
       "titulo": "Red de monitoreo de polvo en la mina de oro Pueblo Viejo de Barrick",
-      "fechaPublicacion": "2024-06-14T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2024/06/barrick_gold_pueblo_viejo-scaled.jpg",
       "cliente": "Barrick Gold Corporation",
       "sectores": [
@@ -1462,7 +1436,6 @@
       "seo.description": "Estudio del impacto ambiental de las operaciones portuarias a través de algoritmos que permitan optimizar la actividad en el puerto de Almería.",
       "seo.ogImage": "/images/uploads/2023/05/aptica-puerto-almeria-1.jpg",
       "titulo": "Predicción del impacto ambiental de las operaciones portuarias en el puerto de Almería",
-      "fechaPublicacion": "2023-05-12T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2023/05/aptica-puerto-almeria-1.jpg",
       "cliente": "Aptica",
       "sectores": [],
@@ -1532,7 +1505,6 @@
       "seo.description": "Control de las emisiones de olor y análisis de dispersión de las concentraciones de H2S en la PTAR Shafdan en Rishon LeZion, en Israel.",
       "seo.ogImage": "/images/uploads/2023/06/Shapdan-WWTP.jpg",
       "titulo": "Control de las emisiones de olor y análisis de dispersión de las concentraciones de H 2 S en una PTAR de Israel",
-      "fechaPublicacion": "2023-06-07T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2023/06/Shapdan-WWTP.jpg",
       "cliente": "Shafdan WWTP",
       "sectores": [
@@ -1607,7 +1579,6 @@
       "seo.description": "Despliegue de una red de monitorización ambiental mediante sensores para la detección de emisiones difusas en la EDAR de Arazuri",
       "seo.ogImage": "/images/uploads/2022/07/industrial-air-emission-control-WTP-Arazuri.jpg",
       "titulo": "Control de la contaminación por malos olores en la EDAR Arazuri",
-      "fechaPublicacion": "2021-02-19T11:39:26+02:00",
       "imagenCabecera": "/images/uploads/2022/07/industrial-air-emission-control-WTP-Arazuri.jpg",
       "cliente": "MCP - Mancomunidad de la Comarca de Pamplona",
       "sectores": [
@@ -1645,7 +1616,6 @@
       "seo.description": "Descubre cómo Des Moines implementó soluciones avanzadas de monitoreo de calidad del aire para controlar la contaminación por malos olores.",
       "seo.ogImage": "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg",
       "titulo": "Red de control de la contaminación por malos olores en Des Moines, Iowa",
-      "fechaPublicacion": "2024-09-30T14:59:58+02:00",
       "imagenCabecera": "/images/uploads/2024/09/control-de-la-contaminacion-por-malos-olores-des-moines.jpg",
       "cliente": "Ayuntamiento de Des Moines",
       "sectores": [
@@ -1728,7 +1698,6 @@
       "seo.description": "Proyecto sobre el control en tiempo real de las emisiones en Cerro Patacón para mejorar la calidad del aire y proteger la salud de las comunidades cercanas.",
       "seo.ogImage": "/images/uploads/2024/10/odor-and-particulate-matter-emissions-control-cerro-patacon-panama-kunak.jpg",
       "titulo": "Control de las emisiones de olor y material particulado en Cerro Patacón, Ciudad de Panamá",
-      "fechaPublicacion": "2024-10-23T12:48:27+02:00",
       "imagenCabecera": "/images/uploads/2024/10/odor-and-particulate-matter-emissions-control-cerro-patacon-panama-kunak.jpg",
       "cliente": "Vertedero Cerro Patacón",
       "sectores": [
@@ -1799,7 +1768,6 @@
       "seo.description": "Cobre Panamá ahora es capaz de medir y controlar el impacto ambiental de su mina de cobre mediante una red de estaciones de calidad del aire.",
       "seo.ogImage": "/images/uploads/2024/02/Red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-First-Quantum-Minerals-Kunak-1.jpg",
       "titulo": "Red de vigilancia ambiental en la mina de cobre de First Quantum Minerals",
-      "fechaPublicacion": "2024-03-04T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2024/02/Red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-First-Quantum-Minerals-Kunak-1.jpg",
       "cliente": "Cobre Panamá - First Quantum Minerals",
       "sectores": [
@@ -1897,7 +1865,6 @@
       "seo.description": "Despliegue de un sistema de vigilancia de la calidad del aire mediante estaciones Kunak AIR en la mina Las Palmeras en Córdoba, Colombia.",
       "seo.ogImage": "/images/uploads/2023/01/mining-1.jpg",
       "titulo": "Sistema de vigilancia de la calidad del aire en la mina de carbón Las Palmeras en Colombia",
-      "fechaPublicacion": "2023-01-27T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2023/01/mining-1.jpg",
       "cliente": "Gecelca S.A. E.S.P.",
       "sectores": [
@@ -1977,7 +1944,6 @@
       "seo.description": "Red de monitorización mediante estaciones Kunak AIR Pro para controlar el impacto ambiental derivado de la producción minera.",
       "seo.ogImage": "/images/uploads/2022/06/brazil-iron.jpg",
       "titulo": "Red de monitorización del polvo y partículas en suspensión en minas en Brasil",
-      "fechaPublicacion": "2022-06-22T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2022/06/brazil-iron.jpg",
       "cliente": "Brazil Iron Mineração LTDA",
       "sectores": [
@@ -2032,7 +1998,6 @@
       "seo.description": "Red de monitorización ambiental para vigilar la contaminación atmosférica y el ruido ambiental en Autoridad Portuaria de la Bahía de Cádiz.",
       "seo.ogImage": "/images/uploads/2022/03/apbc-autoridad-portuaria-bahia-cadiz.jpg",
       "titulo": "Control ambiental de las actividades portuarias en la Bahía de Cádiz",
-      "fechaPublicacion": "2022-03-17T13:43:28+02:00",
       "imagenCabecera": "/images/uploads/2022/03/apbc-autoridad-portuaria-bahia-cadiz.jpg",
       "cliente": "Autoridad Portuaria de la Bahía de Cádiz",
       "sectores": [
@@ -2070,7 +2035,6 @@
       "seo.description": "Caso de éxito: Despliegue de una red de sensores Kunak AIR para la cuantificación de emisiones de partículas difusas en tiempo real en el Puerto de Bilbao.",
       "seo.ogImage": "/images/uploads/2021/06/port-of-bilbao-kunak.jpg",
       "titulo": "Cuantificación en tiempo real de las emisiones de partículas difusas en el puerto de Bilbao",
-      "fechaPublicacion": "2021-06-15T09:55:00+02:00",
       "imagenCabecera": "/images/uploads/2021/06/port-of-bilbao-kunak.jpg",
       "cliente": "Autoridad portuaria de Bilbao",
       "sectores": [
@@ -2104,7 +2068,6 @@
       "seo.description": "Descubre cómo LIFECO mejoró su monitorización ambiental con Kunak, garantizando seguridad y salud en su planta de fertilizantes en Libia.",
       "seo.ogImage": "/images/uploads/2024/11/Red-de-monitorizacion-de-la-calidad-del-aire-en-la-planta-de-fertilizantes-de-Lifeco-en-Libia-Kunak.jpg",
       "titulo": "Red de monitorización de la calidad del aire en la planta de fertilizantes de Lifeco en Libia",
-      "fechaPublicacion": "2024-11-25T09:05:37+02:00",
       "imagenCabecera": "/images/uploads/2024/11/Red-de-monitorizacion-de-la-calidad-del-aire-en-la-planta-de-fertilizantes-de-Lifeco-en-Libia-Kunak.jpg",
       "cliente": "Compañía Libia de Fertilizantes (Lifeco)",
       "sectores": [
@@ -2188,7 +2151,6 @@
       "seo.description": "Descrubre el estudio realizado sobre la calidad del aire en el océano por Gwad'Air con el sensor Hom'Air a bordo del barco We Explore.",
       "seo.ogImage": "/images/uploads/2023/05/GwadAir_1.jpg",
       "titulo": "Estudio de la contaminación atmosférica en el océano: Gwad’Air y el sensor Hom’Air",
-      "fechaPublicacion": "2024-12-27T12:41:52+02:00",
       "imagenCabecera": "/images/uploads/2023/05/GwadAir_1.jpg",
       "cliente": "Gwad'Air (ATMO Guadaloupe)",
       "sectores": [
@@ -2291,7 +2253,6 @@
       "seo.description": "Evaluación de emisiones en una planta alimentaria en Singapur con sensores Kunak AIR: datos precisos para optimizar la calidad del aire.",
       "seo.ogImage": "/images/uploads/2025/01/food-processing-plant-in-Singapore.jpg",
       "titulo": "Análisis de la calidad del aire en una planta de procesamiento de alimentos en Singapur",
-      "fechaPublicacion": "2025-01-28T16:04:06+02:00",
       "imagenCabecera": "/images/uploads/2025/01/food-processing-plant-in-Singapore.jpg",
       "cliente": "Planta de procesamiento de alimentos",
       "sectores": [
@@ -2330,7 +2291,6 @@
       "seo.description": "Descubre cómo el proyecto Pure Cities mejora la calidad del aire y la sostenibilidad urbana mediante tecnología de monitorización ambiental.",
       "seo.ogImage": "/images/uploads/2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak.jpg",
       "titulo": "Pure Cities, monitorización ambiental para un futuro más sostenible en Bélgica",
-      "fechaPublicacion": "2025-02-24T12:20:01+02:00",
       "imagenCabecera": "/images/uploads/2024/11/Proyecto-Pure-Cities-Innovacion-tecnologia-y-sostenibilidad-urbana-en-Belgica-de-la-mano-de-Kunak.jpg",
       "cliente": "Airscan",
       "sectores": [
@@ -2408,7 +2368,6 @@
       "seo.description": "Descubre cómo Tridel Technologies lidera la innovación en monitorización ambiental con sensores Kunak AIR instalados en boyas en NEOM.",
       "seo.ogImage": "/images/uploads/2024/05/Monitorizacion-ambiental-con-datos-oceanicos-mediante-boyas-en-NEOM-Kunak.jpg",
       "titulo": "Monitorización ambiental con datos oceánicos mediante boyas en NEOM",
-      "fechaPublicacion": "2024-05-28T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2024/05/Monitorizacion-ambiental-con-datos-oceanicos-mediante-boyas-en-NEOM-Kunak.jpg",
       "cliente": "Tridel Technologies",
       "sectores": [
@@ -2480,7 +2439,6 @@
       "seo.description": "Monitorización de la calidad del aire en el puerto de Le Havre con sensores Kunak para una gestión ambiental más eficaz del entorno portuario",
       "seo.ogImage": "/images/uploads/2025/03/Monitorizacion-de-calidad-del-aire-en-el-puerto-de-Le-Havre-para-medir-contaminantes-en-tiempo-real.jpg",
       "titulo": "Monitorización avanzada de la calidad del aire en el puerto de Le Havre",
-      "fechaPublicacion": "2025-03-28T15:00:20+02:00",
       "imagenCabecera": "/images/uploads/2025/03/Monitorizacion-de-calidad-del-aire-en-el-puerto-de-Le-Havre-para-medir-contaminantes-en-tiempo-real.jpg",
       "cliente": "Haropa Port",
       "sectores": [
@@ -2566,7 +2524,6 @@
       "seo.description": "Mejora de la investigación científica y la evaluación de la calidad del aire con Kunak Air Pro en la estación AURA de la Univ. de Chipre.",
       "seo.ogImage": "/images/uploads/2023/09/control_de_la_contaminacion_del_aire.webp",
       "titulo": "Control de la contaminación atmosférica con el Kunak AIR Pro por la Universidad de Chipre",
-      "fechaPublicacion": "2023-09-19T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2023/09/control_de_la_contaminacion_del_aire.webp",
       "cliente": "Departamento de Ingeniería Civil y Medioambiental, Universidad de Chipre",
       "sectores": [],
@@ -2621,7 +2578,6 @@
       "seo.description": "El puerto de Cotonú requería de un sistema que les permitiera monitorear en tiempo real el impacto ambiental de las actividades portuarias.",
       "seo.ogImage": "/images/uploads/2024/09/Monitoreo-ambiental-en-el-puerto-de-Cotonu.jpg",
       "titulo": "Monitoreo ambiental en el puerto de Cotonú mediante una red de estaciones Kunak AIR Pro",
-      "fechaPublicacion": "2024-09-10T12:52:39+02:00",
       "imagenCabecera": "/images/uploads/2024/09/Monitoreo-ambiental-en-el-puerto-de-Cotonu.jpg",
       "cliente": "Puerto de Cotonú",
       "sectores": [
@@ -2708,7 +2664,6 @@
       "seo.description": null,
       "seo.ogImage": "/images/uploads/2025/04/Porto-Alegre-air-quality-monitoring-network-0.jpg",
       "titulo": "Porto Alegre despliega una innovadora red de control de la calidad del aire",
-      "fechaPublicacion": "2025-04-09T12:57:52+02:00",
       "imagenCabecera": "/images/uploads/2025/04/Porto-Alegre-air-quality-monitoring-network-0.jpg",
       "cliente": "Secretaría municipal de medio ambiente, urbanismo y sostenibilidad",
       "sectores": [
@@ -2819,7 +2774,6 @@
       "seo.description": "Red de monitorización ambiental en una planta de petróleo y gas para identificar las fuentes de emisiones y el cumplimiento de la normativa.",
       "seo.ogImage": "/images/uploads/2023/10/1.jpg",
       "titulo": "Monitorización ambiental continua en una instalación de petróleo y gas en Oriente Medio",
-      "fechaPublicacion": "2023-04-30T12:19:48+02:00",
       "imagenCabecera": "/images/uploads/2023/10/1.jpg",
       "cliente": "Empresa de petróleo y gas",
       "sectores": [
@@ -2876,7 +2830,6 @@
       "seo.description": "Solución integrada en Castel D’Ario para monitorizar tráfico y calidad del aire, mejorando salud pública y gestión ambiental.",
       "seo.ogImage": "/images/uploads/2025/06/castel-d-ario.jpg",
       "titulo": "Integración avanzada para el monitoreo del tráfico y la calidad del aire en Castel D’Ario (Italia)",
-      "fechaPublicacion": "2025-06-25T11:46:03+02:00",
       "imagenCabecera": "/images/uploads/2025/06/castel-d-ario.jpg",
       "cliente": "Ayuntamiento de Castel D’Ario",
       "sectores": [
@@ -2936,7 +2889,6 @@
       "seo.description": "El proyecto CityTraq incorpora sistemas de monitorización para mejorar la calidad del aire urbano y diseñar políticas basadas en datos.",
       "seo.ogImage": "/images/uploads/2025/07/CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano.jpg",
       "titulo": "CityTRAQ: Colaboración europea para mejorar la calidad del aire urbano",
-      "fechaPublicacion": "2025-08-22T12:02:51+02:00",
       "imagenCabecera": "/images/uploads/2025/07/CityTRAQ-Colaboracion-europea-para-mejorar-la-calidad-del-aire-urbano.jpg",
       "cliente": "CityTRAQ",
       "sectores": [
@@ -3020,7 +2972,6 @@
       "seo.description": "Monitorización ambiental en planta de aluminio: cumplimiento normativo, datos en tiempo real y reducción del impacto.",
       "seo.ogImage": "/images/uploads/2025/09/Red-de-control-de-emisiones-en-la-planta-de-aluminio.jpg",
       "titulo": "Red de control de emisiones en una planta de aluminio en Oriente Medio",
-      "fechaPublicacion": "2025-09-25T15:41:19+02:00",
       "imagenCabecera": "/images/uploads/2025/09/Red-de-control-de-emisiones-en-la-planta-de-aluminio.jpg",
       "cliente": "Empresa de aluminio",
       "sectores": [
@@ -3120,7 +3071,6 @@
       "seo.description": "Monitorización ambiental en aeropuertos: datos en tiempo real para controlar emisiones, ruido y mejorar la sostenibilidad.",
       "seo.ogImage": "/images/uploads/2025/10/Estacion-Kunak-AIR-Pro-monitorizando-la-calidad-del-aire-y-el-ruido-en-el-Aeropuerto-Internacional-de-Subic-Bay-Filipinas.jpg",
       "titulo": "Monitorización ambiental de la calidad del aire y del ruido en el Aeropuerto Internacional de Subic Bay",
-      "fechaPublicacion": "2025-10-21T12:14:33+02:00",
       "imagenCabecera": "/images/uploads/2025/10/Estacion-Kunak-AIR-Pro-monitorizando-la-calidad-del-aire-y-el-ruido-en-el-Aeropuerto-Internacional-de-Subic-Bay-Filipinas.jpg",
       "cliente": "Autoridad Metropolitana de Subic Bay",
       "sectores": [
@@ -3208,7 +3158,6 @@
       "seo.description": "La monitorización del polvo en la mina Northparkes con Kunak AIR Pro mejora el cumplimiento normativo, la eficiencia y la transparencia.",
       "seo.ogImage": "/images/uploads/2025/11/Smart-dust-monitoring-at-Northparkes-mine-in-Australia.jpg",
       "titulo": "Monitorización inteligente de polvo en la mina Northparkes (Australia)",
-      "fechaPublicacion": "2025-11-24T17:44:29+02:00",
       "imagenCabecera": "/images/uploads/2025/11/Smart-dust-monitoring-at-Northparkes-mine-in-Australia.jpg",
       "cliente": "Northparkes Operations (empresa conjunta entre Evolution Mining y Sumitomo Group)",
       "sectores": [
@@ -3284,7 +3233,6 @@
       "seo.description": "Proyecto Respirar Fundo mide la calidad del aire en escuelas portuguesas con tecnología Kunak AIR, fomentando educación y ciencia ciudadana.",
       "seo.ogImage": "/images/uploads/2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas.jpg",
       "titulo": "Respirar Fundo, el proyecto que revela qué aire respiran los escolares portugueses",
-      "fechaPublicacion": "2025-12-19T13:48:40+02:00",
       "imagenCabecera": "/images/uploads/2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas.jpg",
       "cliente": "Associação Bora Ambientar",
       "sectores": [
@@ -3366,7 +3314,6 @@
       "seo.description": "Descubre cómo el Kunak AIR Pro proporcionó datos en tiempo real para comprender y mitigar los riesgos asociados a la actividad volcánica.",
       "seo.ogImage": "/images/uploads/2024/03/Air-quality-monitoring-at-theTurrialba-volcano-Kunak-8.jpg",
       "titulo": "Control de la calidad del aire en el volcán Turrialba (Costa Rica)",
-      "fechaPublicacion": "2024-03-25T09:36:15+02:00",
       "imagenCabecera": "/images/uploads/2024/03/Air-quality-monitoring-at-theTurrialba-volcano-Kunak-8.jpg",
       "cliente": "Atmospheric Analytical Services",
       "sectores": [
@@ -3442,7 +3389,6 @@
       "seo.description": "Río de Janeiro crea el primer distrito de baja emisión de Brasil con monitoreo avanzado del aire para mejorar la salud y la sostenibilidad urbana.",
       "seo.ogImage": "/images/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg",
       "titulo": "El primer distrito de bajas emisiones (DBE) en Río de Janeiro (Brasil) para mejorar la calidad del aire y la salud urbana",
-      "fechaPublicacion": "2026-01-30T11:57:23+02:00",
       "imagenCabecera": "/images/uploads/2025/12/Brazil-first-Low-Emission-District-LED-Rio-de-Janeiro.jpg",
       "cliente": "Secretaria Municipal do Ambiente e Clima (SMAC)",
       "sectores": [
@@ -3567,7 +3513,6 @@
       "seo.description": "Control de emisiones en tiempo real con red perimetral multiparamétrica y datos 24/7 verificables en las plantas de Ternium en México.",
       "seo.ogImage": "/images/uploads/2026/05/Planta-Guerrero-1.jpeg",
       "titulo": "Control de emisiones con datos en tiempo real en las plantas siderúrgicas de Ternium en México",
-      "fechaPublicacion": "2026-02-25T10:08:16+02:00",
       "imagenCabecera": "/images/uploads/2026/05/Planta-Guerrero-1.jpeg",
       "cliente": "Ternium México",
       "sectores": [
@@ -3655,7 +3600,6 @@
       "seo.description": "Modernización de la red de calidad del aire en Asunción con sensores Kunak AIR Pro y validación con estaciones de referencia.",
       "seo.ogImage": "/images/uploads/2026/05/MADES-1.jpg",
       "titulo": "Modernización de la red de monitorización ambiental del MADES de Paraguay",
-      "fechaPublicacion": "2026-03-31T09:59:14+02:00",
       "imagenCabecera": "/images/uploads/2026/05/MADES-1.jpg",
       "cliente": "Ministerio del Ambiente y Desarrollo Sostenible (MADES)",
       "sectores": [
@@ -3724,7 +3668,6 @@
       "seo.description": "Cómo los clubes de fútbol en Europa utilizan la monitorización en tiempo real para mejorar la calidad del aire y concienciar a la sociedad.",
       "seo.ogImage": "/images/uploads/2026/05/clean-air-champions-league-betis-1.jpg",
       "titulo": "Clean Air Champions League: fútbol como herramienta de concienciación sobre la calidad del aire en Europa",
-      "fechaPublicacion": "2026-04-24T12:26:06+02:00",
       "imagenCabecera": "/images/uploads/2026/05/clean-air-champions-league-betis-1.jpg",
       "cliente": "Clean Air Champions League",
       "sectores": [
@@ -3784,7 +3727,6 @@
       "seo.description": "Monitorización en tiempo real de gases tóxicos por sargazo en el Caribe para proteger la salud, el turismo y el medio ambiente. Sigue leyendo",
       "seo.ogImage": "/images/uploads/2025/06/sargazo-cancun-repmex.jpg",
       "titulo": "Monitorización de gases tóxicos por sargazo en el Caribe para protección ambiental y turística",
-      "fechaPublicacion": "2025-07-18T15:04:39+02:00",
       "imagenCabecera": "/images/uploads/2025/06/sargazo-cancun-repmex.jpg",
       "cliente": "Instituto Politécnico Nacional",
       "sectores": [
@@ -3858,7 +3800,6 @@
       "seo.description": "El DEQ de Virginia despliega sensores Kunak AIR Pro para monitorizar emisiones en el mayor corredor de centros de datos de EE. UU.",
       "seo.ogImage": "/images/uploads/2026/05/639130508516830000.jpg",
       "titulo": "Monitorización de la calidad del aire en el mayor corredor de centros de datos de EE.UU",
-      "fechaPublicacion": "2026-05-20T14:32:07+02:00",
       "imagenCabecera": "/images/uploads/2026/05/639130508516830000.jpg",
       "cliente": "Virginia Department of Environmental Quality (DEQ)",
       "sectores": [
@@ -3960,7 +3901,6 @@
       "seo.description": "\"Running for Clean Air\" mide la calidad del aire en maratones urbanos para fomentar ciudades más saludables y un ejercicio seguro.",
       "seo.ogImage": "/images/uploads/2024/07/Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw.jpg",
       "titulo": "Running for Clean Air: ciudades más saludables a través del deporte y la monitorización ambiental",
-      "fechaPublicacion": "2024-07-15T11:43:48+02:00",
       "imagenCabecera": "/images/uploads/2024/07/Kunak-part-of-World-Athletics-Running-for-Clean-Air-project-in-Lagos-and-Warsaw.jpg",
       "cliente": "World Athletics",
       "sectores": [
@@ -4055,7 +3995,6 @@
       "seo.description": "Monitorización continua de metano, H2S, NH3 y COVs en vertederos. Reduce olores, detecta emisiones y mejora el control ambiental.",
       "seo.ogImage": "/images/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg",
       "titulo": "Control avanzado de olores y gases en el vertedero de Valdemingómez",
-      "fechaPublicacion": "2026-06-22T12:54:22+02:00",
       "imagenCabecera": "/images/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg",
       "cliente": "Vertedero de Valdemingómez",
       "sectores": [
@@ -4111,7 +4050,6 @@
       "seo.description": "Nama Water Services monitoriza emisiones de olor en depuradoras de Omán con 28 estaciones AIR Pro equipadas con sensores de H2S, NH3 y COV.",
       "seo.ogImage": "/images/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg",
       "titulo": "Monitorización de olores en estaciones depuradoras de aguas residuales en Omán",
-      "fechaPublicacion": "2026-07-20T09:46:56+02:00",
       "imagenCabecera": "/images/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg",
       "cliente": "Nama Water Services (NWS)",
       "sectores": [
@@ -4207,7 +4145,6 @@
       "seo.description": "Monitorización avanzada de la calidad del aire en la planta petroquímica BASF Ludwigshafen para control y cumplimiento ambiental.",
       "seo.ogImage": "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany.jpg",
       "titulo": "Monitorización de la calidad del aire en la planta petroquímica de BASF en Ludwigshafen (Alemania)",
-      "fechaPublicacion": "2025-05-26T14:39:27+02:00",
       "imagenCabecera": "/images/uploads/2025/05/Air-quality-monitoring-at-BASF-chemical-plant-in-Ludwigshafen-Germany.jpg",
       "cliente": "BASF SE",
       "sectores": [

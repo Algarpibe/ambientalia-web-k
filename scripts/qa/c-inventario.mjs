@@ -131,6 +131,20 @@ const CASO_SEL = {
   resultados: /class="entry-content entry-content-results"[\s\S]*?<div class="entry-content-bloque">([\s\S]*?)<\/div>\s*<\/div>/,
   destacado: /<div class="texto-destacado">([\s\S]*?)<\/div>/,
   mapa: /<div class="marker" data-lat="([-\d.]+)" data-lng="([-\d.]+)"/,
+  /**
+   * `fechaPublicacion` — añadido 2026-08-18 (83.ª). El campo entró en el
+   * esquema con el listado (`021b6b0`) y en `extractor-c` con su control, y
+   * ESTA sonda se quedó sin lector: llevaba desde entonces saliendo por
+   * ERROR con «1 campo del esquema SIN LECTOR», que es exactamente lo que su
+   * invariante promete hacer. Nadie la corrió hasta que `qa:negativos` la
+   * destapó desde fuera.
+   *
+   * Va contra el HTML **crudo** y no contra `sin`, igual que en
+   * `extractor-c.mjs:455`: el dato vive en el JSON-LD, o sea DENTRO de un
+   * `<script>`. Es la excepción declarada a «el markup se busca sin script»
+   * — aquí el script no se hace pasar por marcado: es el canal del dato.
+   */
+  pubIso: /"datePublished"\s*:\s*"([^"]+)"/,
 };
 
 /**
@@ -235,6 +249,7 @@ function leeCaso(crudo, url) {
     "seo.description": cuenta("seo.description", deco(uno(crudo, /<meta\s+name="description"\s+content="([^"]*)"/))),
     "seo.ogImage": cuenta("seo.ogImage", rutaLocalMedia(uno(crudo, /<meta\s+property="og:image"\s+content="([^"]*)"/))),
     titulo: cuenta("titulo", textoPlano(uno(ambito, titRe))),
+    fechaPublicacion: cuenta("caso.fechaPublicacion", uno(crudo, CASO_SEL.pubIso)),
     imagenCabecera: cuenta("caso.imagenCabecera", imagenCabeceraDe(crudo)),
     cliente: cuenta("caso.cliente", textoPlano(uno(ambito, CASO_SEL.cliente))),
     sectores: cuenta("caso.sectores", sectoresDe(ambito)),
@@ -394,7 +409,11 @@ const cmp = (slug, campo, leido, esperado) => {
  * Lo que se compara aquí son los campos ESCALARES y las LISTAS; el verbatim del
  * cuerpo es control del extractor, cuando lo haya (PASO 6).
  */
-const ESCALARES_CASO = ["titulo", "cliente", "imagenCabecera", "seo.title", "seo.description", "seo.ogImage", "detalles.usuario", "detalles.ubicacion", "detalles.anyo"];
+/* `fechaPublicacion` entra en el CONTROL, no sólo en la tabla de lectores: un
+ * lector presente y sin contrastar es §regla 3 (*documentado no es
+ * conectado*) — la transcripción a mano lo trae en los 4 casos, así que hay
+ * con qué compararlo. Es el mismo criterio que `extractor-c.mjs:575`. */
+const ESCALARES_CASO = ["titulo", "cliente", "imagenCabecera", "fechaPublicacion", "seo.title", "seo.description", "seo.ogImage", "detalles.usuario", "detalles.ubicacion", "detalles.anyo"];
 let nControl = 0;
 for (const e of LIB_CASOS.CASOS_PUBLICADOS) {
   const d = documentos[`casos/${e.slug}`];
