@@ -147,3 +147,100 @@ que en sus 33 hermanas. Es la firma del **suelo bimodal de 390 (Δ = 30)** que
   negativo tiene que caer **por su motivo**, no por el código de salida;
 - si el PASO 2 o el PASO 3 obligan a tocar `lh-barrido`, **eso caduca los dos
   espejos otra vez** y se declara con su alcance antes de seguir.
+
+---
+
+# RESULTADO DEL PASO 0 — contrastado contra lo pre-registrado (2026-08-18)
+
+**Canales:** `medidas/lh-cmp-{1440,390}-todas-2026-08-18.json` (el comparador,
+con el clon SIN TOCAR) · `medidas/lh-cubos-{1440,390}.json` (el reparto por
+causa) · los dos espejos.
+
+## Las predicciones, una a una
+
+| # | predicción | medido | |
+|---|---|---|---|
+| **A1** | 62 comparadas · 20 AUSENTES, las mismas 20 | **62 · 20**, las mismas 20 | ✅ |
+| **B1** | el cubo 2 (arreglo del SELECTOR) es **0** en las 62 | **0 @1440 · 0 @390** en los tres cubos; en las mixtas **0 @1440 · 33 @390** | ✅ |
+| **B2** | `paginador.piezasTotales` entra como par nuevo; que difiera no se predice | entra (**pares comparados 110 779 → 110 830**, +51 exactos) y **no difiere ni una vez** | ✅ |
+| **B3** | el cubo **1a** (pares que la deriva CREA) es ≈ 0 | **0 @1440.** A 390 son **11**, y los 11 son de **una sola página** — ver abajo | ✅ |
+| **B4** | `esqueleto.cascaron.*` ya diferían: la deriva los MUEVE, no los crea | **248 de 248 @1440 MUEVE, 0 CREA** | ✅ |
+| **B5** | la mayoría de la deriva cae en el cubo 1b | **248 de 248 @1440 · 379 de 390 @390** | ✅ |
+| **C1** | las 4 rutas de ±30 @390 caen en uno de sus dos picos | **Δ0 · Δ0 · Δ0 · Δ−30.** Ni un valor intermedio | ✅ |
+
+## Los tres cubos, con su número
+
+| | @1440 | @390 |
+|---|---|---|
+| **cubo 2 · INSTRUMENTO** | **0** | **0** |
+| **cubo 1 · DERIVA** | **0** | **0** |
+| **cubo 3 · DEL CLON** | **4996** | **4974** |
+| pares comparados | 110 830 | 110 889 |
+| resueltos por la deriva | 0 | 0 |
+| sin clasificar | 0 | 0 |
+| *control* · caminos que el espejo movió | 299 | 513 |
+
+## ⚠ Y LA MITAD QUE ESTUVO A PUNTO DE PUBLICARSE COMO UN CERO
+
+La primera versión de `lh-cubos` saltaba los pares de eje **mixto** con un
+`continue` —el comparador los declara *sin referencia limpia*— y publicó
+**`cubo 1 = 0`** al lado de un control que decía **299 caminos movidos**. Los dos
+números eran ciertos y juntos daban la lectura falsa: *«la deriva no llega al
+clon»*.
+
+> **Lo que pasa es que los caminos que la deriva movió son EXACTAMENTE los de eje
+> mixto**: `pie.rect.h` y `esqueleto.cascaron.N.rect.{y,h}` son `y`/`h`, y
+> `ejeDe()` las clasifica mixtas por construcción. La deriva **sí llega**, y
+> llega entera al único cubo que el comparador no lee como defecto.
+
+Repartidas también las mixtas (bloque propio, **fuera** del recuento):
+
+| mixtas que difieren | @1440 | @390 |
+|---|---|---|
+| total | 8451 | 8588 |
+| de instrumento | 0 | 33 |
+| **de DERIVA** | **248** | **390** |
+| — de ellas **CREA** | **0** | **11** |
+| — de ellas **MUEVE** | **248** | **379** |
+| del clon | 8203 | 8165 |
+
+Congelada anterior renombrada con su defecto (§regla 7):
+`lh-cubos-1440-SONDA-NO-REPARTIA-LAS-MIXTAS.json`.
+
+## Los 11 «creados» de 390 NO son deriva del pie: son el SEGUNDO PICO
+
+Los once están **en una sola página** —`/recursos/articulos/industria-y-contaminacion-por-olores/page/2/`—
+y los once son el **mismo +30**:
+
+| camino | antes | ahora | clon |
+|---|---|---|---|
+| `baseEnCrudo.yAbsoluta` · `baseEnCrudo.rect.y` | 262.58 | **292.58** | 262.58 |
+| `contenedorTema.rect.y` · `esqueleto.cuerpo.0.rect.y` · su fila · su columna | 136.58 / 148.58 | **166.58 / 178.58** | 136.58 / 148.58 |
+| `esqueleto.cuerpo.1.*` (sección, fila, columna, módulo) | 212.58 / 262.58 | **242.58 / 292.58** | 212.58 / 262.58 |
+
+> **El clon está en el pico dominante y el original salió en el otro.** Es la
+> firma de 390 con Δ = 30 que `cqa6-390` cerró el 2026-08-04 sobre otras rutas —
+> **y aquí no se declara la forma como establecida**: dos lecturas separadas 4
+> días son n = 2, no una campaña (C2 del pre-registro).
+
+## LA RESPUESTA A LA PREGUNTA DE LA TANDA
+
+> **De la deriva del original, al clon le llega CERO en la unidad que el
+> comparador lee como defecto.** Toca **248** pares a 1440 y **390** a 390,
+> todos de eje mixto, y a 1440 **no crea ni uno**: los 248 ya diferían por la
+> divergencia de cascarón YA DECLARADA (Divi mete cabecera y pie dentro de
+> `.et_pb_section`).
+>
+> **Y el pie nunca casó.** El congelado del 17 da `pie.rect.h` **orig 590.75 →
+> clon 594.75**; con el pie nuevo a **593.75** el par sigue difiriendo, **con
+> Δ +1 en vez de Δ +4**. O sea que la deriva **acercó** el original al clon.
+
+## Los cinco disparadores del ESCALÓN 2
+
+| # | veredicto |
+|---|---|
+| **(a)** | **NO dispara** — las 4 rutas dan Δ0 · Δ0 · Δ0 · Δ−30, los dos picos exactos |
+| **(b)** | **NO dispara** — `L3`/`L4`/`L5` están AUSENTES: 0 pares repartidos en ellas |
+| **(c)** | **NO dispara** — a 1440 la deriva atribuida son `pie.rect.h` y `esqueleto.cascaron.*`, ninguno por encima del pie. `cabecera.rect.h` sale movido **sólo a 390** y en las **4** páginas del segundo pico |
+| **(d)** | pendiente del PASO 4 (`qa:lh-poblacion`) |
+| **(e)** | pendiente del PASO 2 (el extracto de `L3`) |

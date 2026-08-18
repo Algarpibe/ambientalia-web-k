@@ -1,0 +1,645 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "que": "REPARTO POR CAUSA de las diferencias de lh-cmp @1440 — tres cubos, no un total",
+    "ancho": 1440,
+    "canales": {
+      "cmp": "medidas/lh-cmp-1440-todas-2026-08-18.json",
+      "espejoVigente": "medidas/lh-espejo-1440.json",
+      "espejoCaducado": "medidas/lh-espejo-1440-SONDA-EXTRACTO-EN-2-FORMAS-DE-9.json",
+      "cmpAnterior": "medidas/lh-cmp-1440-todas-2026-08-17-4.json"
+    },
+    "fechas": {
+      "cmp": "2026-08-18",
+      "espejoVigente": "2026-08-18",
+      "espejoCaducado": "«SABOTAJE: sin espejo caducado»"
+    },
+    "ventanaDeLaDerivacion": "2026-08-14 → 2026-08-18: la que separa los DOS espejos, no la del último commit",
+    "camposDelInstrumento": [
+      {
+        "campo": "paginador.piezasTotales",
+        "commit": "0bb9707",
+        "tanda": "75.ª"
+      },
+      {
+        "campo": "titulo",
+        "commit": "3412c91",
+        "tanda": "78.ª"
+      },
+      {
+        "campo": "meta",
+        "commit": "3412c91",
+        "tanda": "78.ª"
+      },
+      {
+        "campo": "extracto",
+        "commit": "3412c91",
+        "tanda": "78.ª"
+      }
+    ],
+    "noMide": [
+      "el clon: no abre navegador ni pide una URL — cruza congeladas",
+      "si el clon está BIEN: dice de quién es cada diferencia, no si es defecto",
+      "los pares MIXTOS del comparador: sin referencia limpia (§ESCALÓN), no se reparten",
+      "el TOPE de `diferencias` del comparador (400 por forma): lo que se reparte es lo que la congelada lista"
+    ]
+  },
+  "resumen": {
+    "formasRepartidas": 62,
+    "paresRepartidos": 0,
+    "cubo2_instrumento": 0,
+    "cubo1_deriva": 0,
+    "cubo1a_derivaCREA": 0,
+    "cubo1b_derivaMUEVE": 0,
+    "cubo1a_deElloPorCaminoNuevo": 0,
+    "cubo3_delClon": 0,
+    "mixtas_paresQueDifieren": 0,
+    "mixtas_instrumento": 0,
+    "mixtas_deriva": 0,
+    "mixtas_derivaCREA": 0,
+    "mixtas_derivaMUEVE": 0,
+    "mixtas_delClon": 0,
+    "resueltosPorLaDeriva": 0,
+    "paresDistintosEnLaCorridaANTERIOR": 4996,
+    "sinClasificar": 13447,
+    "control_caminosQueElEspejoMovio": 0
+  },
+  "cubos": {
+    "instrumento": {
+      "pares": 0,
+      "porCampo": {},
+      "porForma": {}
+    },
+    "deriva": {
+      "pares": 0,
+      "creados": 0,
+      "movidos": 0,
+      "porCaminoNuevo": 0,
+      "porCamino": {},
+      "porForma": {}
+    },
+    "clon": {
+      "pares": 0,
+      "porCamino": {},
+      "porForma": {}
+    }
+  },
+  "mixtas": {
+    "pares": 0,
+    "instrumento": 0,
+    "deriva": 0,
+    "derivaCrea": 0,
+    "derivaMueve": 0,
+    "clon": 0,
+    "derivaPorCamino": {},
+    "derivaPorForma": {},
+    "ejemplosDeriva": [],
+    "creados": []
+  },
+  "porForma": {
+    "L1-blog::/es/blog/": {
+      "distintosSegunCmp": 211,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-blog::/es/blog/page/2/": {
+      "distintosSegunCmp": 248,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-blog::/es/blog/page/3/": {
+      "distintosSegunCmp": 217,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-blog::/es/blog/page/4/": {
+      "distintosSegunCmp": 222,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-blog::/es/blog/page/5/": {
+      "distintosSegunCmp": 292,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-blog::/es/blog/page/6/": {
+      "distintosSegunCmp": 299,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-blog::/es/blog/page/7/": {
+      "distintosSegunCmp": 219,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-blog::/es/blog/page/8/": {
+      "distintosSegunCmp": 204,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
+      "distintosSegunCmp": 230,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/2/": {
+      "distintosSegunCmp": 233,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/3/": {
+      "distintosSegunCmp": 231,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/page/4/": {
+      "distintosSegunCmp": 225,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/co2-es/": {
+      "distintosSegunCmp": 216,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/": {
+      "distintosSegunCmp": 227,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/2/": {
+      "distintosSegunCmp": 241,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/3/": {
+      "distintosSegunCmp": 231,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/contaminantes-atmosfericos/page/4/": {
+      "distintosSegunCmp": 228,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/cov/": {
+      "distintosSegunCmp": 221,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/emisiones-industriales/": {
+      "distintosSegunCmp": 230,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/emisiones-industriales/page/2/": {
+      "distintosSegunCmp": 230,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/emisiones-industriales/page/3/": {
+      "distintosSegunCmp": 239,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/gases-de-efecto-invernadero/": {
+      "distintosSegunCmp": 213,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/h2s-es/": {
+      "distintosSegunCmp": 213,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/malos-olores/": {
+      "distintosSegunCmp": 215,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/": {
+      "distintosSegunCmp": 240,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/2/": {
+      "distintosSegunCmp": 254,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/3/": {
+      "distintosSegunCmp": 242,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/4/": {
+      "distintosSegunCmp": 240,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/5/": {
+      "distintosSegunCmp": 250,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/6/": {
+      "distintosSegunCmp": 241,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/7/": {
+      "distintosSegunCmp": 236,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/8/": {
+      "distintosSegunCmp": 244,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/9/": {
+      "distintosSegunCmp": 219,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/10/": {
+      "distintosSegunCmp": 218,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/monitorizacion-ambiental/page/11/": {
+      "distintosSegunCmp": 185,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/": {
+      "distintosSegunCmp": 223,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/page/2/": {
+      "distintosSegunCmp": 232,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/normativa-de-calidad-del-aire/page/3/": {
+      "distintosSegunCmp": 202,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/particulas-en-suspension/": {
+      "distintosSegunCmp": 237,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/particulas-en-suspension/page/2/": {
+      "distintosSegunCmp": 229,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/": {
+      "distintosSegunCmp": 237,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/2/": {
+      "distintosSegunCmp": 227,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/3/": {
+      "distintosSegunCmp": 227,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-etiqueta::/es/etiqueta/sensor-de-calidad-del-aire/page/4/": {
+      "distintosSegunCmp": 226,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/": {
+      "distintosSegunCmp": 191,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/2/": {
+      "distintosSegunCmp": 198,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/3/": {
+      "distintosSegunCmp": 213,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/4/": {
+      "distintosSegunCmp": 206,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/5/": {
+      "distintosSegunCmp": 204,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-padre::/es/recursos/articulos/page/6/": {
+      "distintosSegunCmp": 204,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-la-construccion/": {
+      "distintosSegunCmp": 173,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "distintosSegunCmp": 147,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-minera/": {
+      "distintosSegunCmp": 138,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
+      "distintosSegunCmp": 188,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/page/2/": {
+      "distintosSegunCmp": 179,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-y-salud/": {
+      "distintosSegunCmp": 190,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-y-salud/page/2/": {
+      "distintosSegunCmp": 187,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/industria-y-contaminacion-por-olores/": {
+      "distintosSegunCmp": 186,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/industria-y-contaminacion-por-olores/page/2/": {
+      "distintosSegunCmp": 186,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/petroleo-y-gas/": {
+      "distintosSegunCmp": 173,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-hijo::/es/recursos/articulos/productos-kunak/": {
+      "distintosSegunCmp": 171,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    },
+    "L1-resources-padre::/es/recursos/seminarios-web/": {
+      "distintosSegunCmp": 169,
+      "instrumento": 0,
+      "deriva1a": 0,
+      "deriva1b": 0,
+      "clon": 0,
+      "sinEspejoViejo": true
+    }
+  },
+  "ejemplos": {
+    "instrumento": [],
+    "deriva1a": [],
+    "deriva1b": [],
+    "clon": []
+  },
+  "sinClasificar": [
+    "L1-blog::/es/blog/::body.clases.length — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.0 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.1 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.2 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.3 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.4 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.5 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.6 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.7 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.8 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.9 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.10 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.11 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.12 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.13 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.14 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.15 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.16 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.17 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.18 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.clases.19 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::body.regimen.tbBody — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::cabecera.marca — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::cabecera.rect.h — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::cabecera.caja.borderColor — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::cabecera.caja.position — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::pie.marca — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::pie.yAbsoluta — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::pie.rect.h — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::pie.rect.y — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::contenedorTema.marca — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::contenedorTema.rect.h — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::esqueleto.nSecciones — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::esqueleto.porCapa.tb_header — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::esqueleto.porCapa.tb_footer — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::esqueleto.cascaron.length — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::esqueleto.cascaron.0.capa — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::esqueleto.cascaron.0.clases.length — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::esqueleto.cascaron.0.clases.0 — la página no está en el espejo caducado",
+    "L1-blog::/es/blog/::esqueleto.cascaron.0.clases.1 — la página no está en el espejo caducado"
+  ]
+}

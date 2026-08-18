@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "que": "REPARTO POR CAUSA de las diferencias de lh-cmp @1440 — tres cubos, no un total",
+    "ancho": 1440,
+    "canales": {
+      "cmp": "medidas/lh-cubos-neg-cmp-sin-diferencias.json",
+      "espejoVigente": "medidas/lh-espejo-1440.json",
+      "espejoCaducado": "medidas/lh-espejo-1440-SONDA-EXTRACTO-EN-2-FORMAS-DE-9.json",
+      "cmpAnterior": "«no se pasó --antes=»"
+    },
+    "fechas": {
+      "cmp": "«artefacto de negativo»",
+      "espejoVigente": "2026-08-18",
+      "espejoCaducado": "2026-08-14"
+    },
+    "ventanaDeLaDerivacion": "2026-08-14 → 2026-08-18: la que separa los DOS espejos, no la del último commit",
+    "camposDelInstrumento": [
+      {
+        "campo": "paginador.piezasTotales",
+        "commit": "0bb9707",
+        "tanda": "75.ª"
+      },
+      {
+        "campo": "titulo",
+        "commit": "3412c91",
+        "tanda": "78.ª"
+      },
+      {
+        "campo": "meta",
+        "commit": "3412c91",
+        "tanda": "78.ª"
+      },
+      {
+        "campo": "extracto",
+        "commit": "3412c91",
+        "tanda": "78.ª"
+      }
+    ],
+    "noMide": [
+      "el clon: no abre navegador ni pide una URL — cruza congeladas",
+      "si el clon está BIEN: dice de quién es cada diferencia, no si es defecto",
+      "los pares MIXTOS del comparador: sin referencia limpia (§ESCALÓN), no se reparten",
+      "los pares que la deriva RESOLVIÓ: sin `--antes=` salen `null`, no 0",
+      "el TOPE de `diferencias` del comparador (400 por forma): lo que se reparte es lo que la congelada lista"
+    ]
+  },
+  "resumen": {
+    "formasRepartidas": 0,
+    "paresRepartidos": 0,
+    "cubo2_instrumento": 0,
+    "cubo1_deriva": 0,
+    "cubo1a_derivaCREA": 0,
+    "cubo1b_derivaMUEVE": 0,
+    "cubo1a_deElloPorCaminoNuevo": 0,
+    "cubo3_delClon": 0,
+    "mixtas_paresQueDifieren": 0,
+    "mixtas_instrumento": 0,
+    "mixtas_deriva": 0,
+    "mixtas_derivaCREA": 0,
+    "mixtas_derivaMUEVE": 0,
+    "mixtas_delClon": 0,
+    "resueltosPorLaDeriva": null,
+    "paresDistintosEnLaCorridaANTERIOR": null,
+    "sinClasificar": 0,
+    "control_caminosQueElEspejoMovio": 0
+  },
+  "cubos": {
+    "instrumento": {
+      "pares": 0,
+      "porCampo": {},
+      "porForma": {}
+    },
+    "deriva": {
+      "pares": 0,
+      "creados": 0,
+      "movidos": 0,
+      "porCaminoNuevo": 0,
+      "porCamino": {},
+      "porForma": {}
+    },
+    "clon": {
+      "pares": 0,
+      "porCamino": {},
+      "porForma": {}
+    }
+  },
+  "mixtas": {
+    "pares": 0,
+    "instrumento": 0,
+    "deriva": 0,
+    "derivaCrea": 0,
+    "derivaMueve": 0,
+    "clon": 0,
+    "derivaPorCamino": {},
+    "derivaPorForma": {},
+    "ejemplosDeriva": [],
+    "creados": []
+  },
+  "porForma": {},
+  "ejemplos": {
+    "instrumento": [],
+    "deriva1a": [],
+    "deriva1b": [],
+    "clon": []
+  },
+  "sinClasificar": []
+}
