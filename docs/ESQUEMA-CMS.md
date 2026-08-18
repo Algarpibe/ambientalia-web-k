@@ -1058,6 +1058,52 @@ hueco de **CAPTURA**, fichado en §F3-LH-DOS-CONJUNTOS-DE-149.
 >    269 dan 6/6** y ninguna longitud en bytes pasa de 5/6. Se elige 269 y **se
 >    declara que n = 6 no separa 268 de 269**.
 
+### ✅ 2c.2b · `extracto` de `L3` — LA UNIDAD ES **BYTES**, Y EL MODELO DE CARACTERES QUEDA REFUTADO (2026-08-18, 78.ª tanda)
+
+`§2c.2(b)` cerró el extracto de `/blog` y `/etiqueta/*`. **`L3`
+(`scientific-docs`) es un TERCER mecanismo**, y se cierra aquí con medida.
+Instrumento: `qa:lh-extracto-unidad` (negativo **4/4**), congelada
+`medidas/lh-extracto-unidad.json`. Derivación **sobre disco**: sin red y sin
+tocar el original.
+
+| | contrato |
+|---|---|
+| **derivación** | `substr(textoPlano(cuerpo), 0, 100)` **en BYTES** + `"..."` ⇒ **DERIVADO**, no se guarda |
+| **el tope** | **100 bytes**, y es el ÚNICO que acierta — barrido 80…130, **0 topes indistinguibles** |
+| **el momento** | **ANTES de decodificar las entidades**: el corte se aplica al HTML crudo, donde `&amp;` ocupa **5 bytes** |
+| **el texto** | `strip_tags` **sin** poner nada en su sitio (`H<sub>2</sub>S` → `H2S`), espacios colapsados |
+| **el terminador** | `"..."` ASCII, **23/23**. No se ha visto un solo `…` (hellip) en este arquetipo |
+
+**Se ELIGE, no se acierta** (§*un modelo se elige por lo que lo SEPARA de su
+alternativa*): `bytes-crudo` da **23/23** y se separa de sus rivales en **27
+instancias**. Y el rival **no empata: queda REFUTADO** —
+
+> **Una COTA (`≤ N`) y una REGLA GENERADORA (`corta a N`) no son la misma
+> afirmación, y ahí estaba la indeterminación de la 77.ª.** Las dos cotas
+> —`chars ≤ 99` y `bytes ≤ 100`— aciertan las 23 y **0 separadoras**. Las dos
+> **reglas** no empatan: una regla generadora predice la longitud **EXACTA**, y
+> el dato tiene `bytes {100: 23}` —constante— contra `chars {97:4, 98:9,
+> 99:10}` —tres valores—. `chars` cae a **10/23** en su mejor tope.
+
+⚠ **Y apareció un SEGUNDO EJE que la ficha bancada no tenía, y lo trajo el
+dato**: `crudo` contra `deco`. Con las entidades decodificadas los bytes salen
+`{100: 22, **96: 1}`, y esa única instancia —`informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro`,
+la única con un `&amp;`— es **la separadora entera de ese eje**. Un dominio sin
+un solo `&` no habría podido verlo: se declara con su **n = 1**.
+
+> ⚠⚠ **NO SE GENERALIZA A LOS OTROS DOS MECANISMOS, y el dato lo prohíbe.**
+> `/etiqueta/*` midió lo **contrario** en §2c.2(b): *«268 y 269 dan 6/6 y ninguna
+> longitud en bytes pasa de 5/6»* — allí gana **caracteres**. Son piezas
+> distintas —módulo `et_pb_blog` de Divi contra plantilla del tema hijo— y **la
+> unidad es propiedad de la pieza, no del sitio**. Tres mecanismos, tres
+> contratos.
+
+**Lo que esta medida NO contesta**, y va escrito porque el fichero no puede
+decirlo (§*antes de construir sobre una medida, escribe qué preguntas NO
+contesta*): **qué pasa cuando el cuerpo es MÁS CORTO que el tope**. Lo ejercitan
+**0 de 23** tarjetas ⇒ **SIN PROBAR**, no «soportado». Es §F2-5-ESCALON-ETIQUETAS
+otra vez: un camino de render que el dato de calibración no estrena.
+
 **Arquetipos**: LISTADO-B (23 instancias, **una plantilla con tres variantes
 de tarjeta** — config uniforme al 100 % dentro de cada familia) ·
 LISTADO-TEMA-CPT (2) · LISTADO-TEMA-TAX (3, separado **con reapertura

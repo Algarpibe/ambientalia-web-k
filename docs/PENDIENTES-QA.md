@@ -135,6 +135,72 @@ barrido 15…20 palabras, mejor **7/23**.
 > **La separadora se fabrica aplicando la regla al `cuerpo` del CMS** y viendo
 > cuál reproduce los 23; es el primer paso barato de la 78.ª.
 
+## ✅ F3-LH-UNIDAD-DEL-EXTRACTO · CERRADO: SON **BYTES**, Y NO HABÍA EMPATE — HABÍA DOS AFIRMACIONES DISTINTAS (2026-08-18, 78.ª tanda)
+
+**Cierra lo bancado justo arriba.** Instrumento nuevo `qa:lh-extracto-unidad`
+(negativo **4/4**), congelada `medidas/lh-extracto-unidad.json`. Derivación
+**sobre disco**: sin red, sin original, sin clon.
+
+### El resultado
+
+| modelo | mejor tope | aciertos |
+|---|---|---|
+| **`bytes-crudo`** | **100** | **23/23** ✅ |
+| `bytes-deco` | 100 | 22/23 |
+| `chars-crudo` | 99 | **10/23** |
+| `chars-deco` | 99 | **10/23** |
+
+**Elegido con 27 instancias separadoras**, no por acierto. Y como control
+independiente, el extracto es **prefijo del cuerpo en 23/23** — el cuerpo sale
+de `corpus/documentos-cientificos`, que es otro canal que el listado.
+
+### Por qué la 77.ª vio un empate que no existía — y es una regla, no un descuido
+
+La ficha bancada era **cierta**: las dos **cotas** aciertan 23/23 con 0
+separadoras. Lo que faltaba no era medir más, era ver que se estaban comparando
+**dos afirmaciones distintas**:
+
+> **Una COTA (`≤ N`) y una REGLA GENERADORA (`corta a N`) no son la misma
+> afirmación.** Una cota sólo se moja sobre el **techo**; una regla generadora
+> predice la **longitud exacta**. Dos cotas empatan con facilidad —les basta que
+> nadie pase del techo—; dos reglas generadoras empatan sólo si predicen lo
+> mismo. Aquí el dato tiene `bytes {100: 23}` (**constante**) contra `chars
+> {97:4, 98:9, 99:10}` (**tres valores**): una regla en caracteres predice
+> constante en caracteres, así que **no empataba — estaba refutada desde el
+> primer día**, y la cota lo tapaba.
+
+Es §*la causa común: el NIVEL al que se mide* con un contenedor nuevo: **la cota
+es el nivel de arriba de la regla**, y absorbe toda la varianza que la regla sí
+predice. Un techo de 100 se lleva por igual al 97, al 98 y al 99.
+
+### El eje que no estaba en la ficha, y lo trajo el dato
+
+`crudo` contra `deco` —cortar antes o después de decodificar las entidades—.
+Con las entidades decodificadas los bytes salen `{100: 22, 96: 1}`, y la única
+instancia que separa ese eje es
+`informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro`: **la única de las 23
+con un `&amp;`**, que en crudo ocupa 5 bytes y decodificado 1. `96 + 4 = 100`.
+
+> **Se declara con su n = 1.** Un dominio sin un solo `&` no habría podido ver
+> este eje, y por tanto habría escrito «bytes» sin saber **sobre qué texto**.
+
+### El defecto de instrumento que estuvo a punto de colarse
+
+`strip_tags` de PHP quita la etiqueta **sin poner nada en su sitio**; la regex
+`→ " "` que este repo usa en otros extractores convierte `H<sub>2</sub>S` en
+«H 2 S». Con ella, 1 de 23 dejaba de ser prefijo del cuerpo. **Es el mismo corte
+en `<sub>` que la 76.ª se comió** al nombrar el sobrante de la serie
+(§F3-TARJETA-DE-MAS-76). Vive como sabotaje `plano-con-espacio`, y tumba el pleno
+en vez de convivir con él.
+
+### Lo que NO contesta
+
+| limitación | cardinal |
+|---|---|
+| el caso «cuerpo **más corto** que el tope» | **0 de 23** tarjetas lo ejercitan ⇒ **SIN PROBAR**, no soportado |
+| otros arquetipos | `/blog` y `/etiqueta/*` son **otros dos mecanismos**, medidos aparte. En `/etiqueta` gana **caracteres** (bytes 5/6): la unidad es propiedad **de la pieza**, no del sitio |
+| el terminador | `"..."` ASCII en 23/23; **0** apariciones de `…` (hellip) en este arquetipo |
+
 ## ✅ F3-TARJETA-DE-MAS-76 · NO FALTA NINGUNA TARJETA: SOBRA UNA EN 3 FORMAS, Y LAS DOS CAUSAS YA TIENEN FICHA (2026-08-18, 76.ª tanda)
 
 **El encargo pedía adjudicar «el clon sirve 5 tarjetas donde el original sirve

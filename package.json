@@ -195,6 +195,8 @@
     "qa:lh-poblacion-neg": "node scripts/qa/lh-poblacion.neg.mjs",
     "qa:lh-extracto": "node scripts/qa/lh-extracto.mjs",
     "qa:lh-extracto-neg": "node scripts/qa/lh-extracto.neg.mjs",
+    "qa:lh-extracto-unidad": "node scripts/qa/lh-extracto-unidad.mjs",
+    "qa:lh-extracto-unidad-neg": "node scripts/qa/lh-extracto-unidad.neg.mjs",
     "qa:lh-jerarquia": "node scripts/qa/lh-jerarquia.mjs",
     "qa:lh-jerarquia-neg": "node scripts/qa/lh-jerarquia.neg.mjs",
     "qa:lh-huecos": "node scripts/qa/lh-huecos.mjs",

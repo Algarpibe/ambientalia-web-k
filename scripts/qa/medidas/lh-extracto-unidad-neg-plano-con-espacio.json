@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "que": "la UNIDAD del corte del extracto de la tarjeta de L3 (scientific-docs)",
+    "corpus": "corpus/fase-3/listados/scientific-category (23 tarjetas, 3 términos) + corpus/documentos-cientificos (23 cuerpos)",
+    "sinRed": "derivación sobre disco: no toca el original ni el clon",
+    "contesta": "en qué unidad y sobre qué texto corta el extracto de L3",
+    "noMide": [
+      "otros arquetipos: /blog y /etiqueta/* tienen su mecanismo medido aparte (lh-extracto), y son OTRO",
+      "el caso «cuerpo MÁS CORTO que el tope»: 0 de 23 tarjetas lo ejercitan — SIN PROBAR, no soportado",
+      "el terminador: las 23/23 acaban en «...» ASCII; no se ha visto un solo «…» (hellip) en este arquetipo"
+    ],
+    "sabotaje": "plano-con-espacio"
+  },
+  "poblacion": {
+    "tarjetas": 23,
+    "conCuerpo": 23,
+    "sinCuerpo": 0,
+    "esPrefijoDelCuerpo": "22/23",
+    "porTermino": [
+      {
+        "termino": "articulos-cientificos-y-estudios",
+        "n": 14
+      },
+      {
+        "termino": "evaluaciones-independientes",
+        "n": 8
+      },
+      {
+        "termino": "articulos-tecnicos",
+        "n": 1
+      }
+    ]
+  },
+  "distribucionObservada": {
+    "bytesCrudo": {
+      "100": 23
+    },
+    "charsCrudo": {
+      "97": 4,
+      "98": 9,
+      "99": 10
+    },
+    "bytesDeco": {
+      "96": 1,
+      "100": 22
+    },
+    "charsDeco": {
+      "94": 1,
+      "97": 4,
+      "98": 8,
+      "99": 10
+    }
+  },
+  "barrido": {
+    "bytes-crudo": {
+      "unidad": "bytes",
+      "momento": "crudo",
+      "mejorN": 100,
+      "aciertos": 22,
+      "de": 23,
+      "topesIndistinguibles": [
+        100
+      ]
+    },
+    "bytes-deco": {
+      "unidad": "bytes",
+      "momento": "deco",
+      "mejorN": 100,
+      "aciertos": 21,
+      "de": 23,
+      "topesIndistinguibles": [
+        100
+      ]
+    },
+    "chars-crudo": {
+      "unidad": "chars",
+      "momento": "crudo",
+      "mejorN": 99,
+      "aciertos": 10,
+      "de": 23,
+      "topesIndistinguibles": [
+        99
+      ]
+    },
+    "chars-deco": {
+      "unidad": "chars",
+      "momento": "deco",
+      "mejorN": 99,
+      "aciertos": 10,
+      "de": 23,
+      "topesIndistinguibles": [
+        99
+      ]
+    }
+  },
+  "separadoras": {
+    "bytes-crudo vs bytes-deco": {
+      "n": 1,
+      "ejemplos": [
+        "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro"
+      ]
+    },
+    "bytes-crudo vs chars-crudo": {
+      "n": 13,
+      "ejemplos": [
+        "uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+        "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid"
+      ]
+    },
+    "bytes-crudo vs chars-deco": {
+      "n": 13,
+      "ejemplos": [
+        "uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+        "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid"
+      ]
+    },
+    "bytes-deco vs chars-crudo": {
+      "n": 13,
+      "ejemplos": [
+        "uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+        "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid"
+      ]
+    },
+    "bytes-deco vs chars-deco": {
+      "n": 13,
+      "ejemplos": [
+        "uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+        "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+        "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid"
+      ]
+    },
+    "chars-crudo vs chars-deco": {
+      "n": 1,
+      "ejemplos": [
+        "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro"
+      ]
+    }
+  },
+  "veredicto": {
+    "ganadores": [],
+    "separadorasDelGanador": 0
+  }
+}

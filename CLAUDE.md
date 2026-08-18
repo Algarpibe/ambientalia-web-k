@@ -1189,6 +1189,36 @@ publica `separadores` junto a `aciertos`, y **su control en negativo exige
 > los dos predicados dan resultados distintos.** Si no puedes escribirla —ni
 > siquiera una hipotética, fuera de tu dominio— no tienes dos modelos.
 
+> ⚠⚠ **Y LA TERCERA CARA, QUE FABRICA EMPATES QUE NO EXISTEN (2026-08-18, 78.ª
+> tanda): UNA COTA Y UNA REGLA GENERADORA NO SON LA MISMA AFIRMACIÓN.**
+>
+> Las dos de arriba miran si los dos modelos difieren. Ésta mira **qué se está
+> comparando**, y es la que deja una pregunta bancada meses:
+>
+> > **Una COTA (`≤ N`) sólo se moja sobre el TECHO. Una REGLA GENERADORA
+> > (`corta a N`) predice el VALOR EXACTO.** Dos cotas empatan con facilidad
+> > —les basta que nadie pase del techo—; dos reglas generadoras empatan sólo
+> > si predicen lo mismo. **Comparar cotas y creer que has comparado reglas da
+> > «0 separadoras» sobre un dominio que separaba de sobra.**
+>
+> **Medido:** el tope del extracto de un arquetipo tenía dos candidatos,
+> `chars ≤ 99` y `bytes ≤ 100`, y las dos cotas aciertan **23/23** con **0
+> separadoras** — de ahí una indeterminación fichada y bancada. Leídas como
+> reglas, no había empate: el dato da `bytes {100: 23}` —**constante**— contra
+> `chars {97:4, 98:9, 99:10}` —**tres valores**—, así que una regla en
+> caracteres predice constante en caracteres y cae a **10/23**. Estaba
+> **refutada desde el primer día**; la cota lo tapaba.
+>
+> **Es §*la causa común: el NIVEL al que se mide* con un contenedor nuevo — la
+> cota es el nivel de arriba de la regla**, y absorbe toda la varianza que la
+> regla sí predice. Un techo de 100 se lleva por igual al 97, al 98 y al 99.
+>
+> **Operativamente, y cuesta una línea:** si tu candidato tiene la forma `≤ N`,
+> **conviértelo en `= f(x)` antes de contar separadoras** — y compara la
+> DISTRIBUCIÓN de lo observado, no si cabe. Una distribución con varianza refuta
+> por sí sola cualquier regla que prediga constante, sin necesidad de fabricar
+> ninguna instancia.
+
 ⚠ **Y la misma álgebra aplicada AL COMPARADOR en vez de a la spec: UN VERDE VALE
 LO QUE VALEN SUS INSTANCIAS SEPARADORAS, NO LO QUE VALE SU RECUENTO DE PARES
 (2026-08-14, F3-2).**
