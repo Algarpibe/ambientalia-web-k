@@ -1,3 +1,40 @@
+# HANDOFF — las DOS medidas abiertas, cerradas; y el `+16` tiene ahora un ancho
+
+> ⚠ **Tanda de MEDICIÓN, 2026-08-17 (77.ª). Se cerraron los PASOS 0·1·2 y la
+> tanda paró en el CORTE LIMPIO 1 declarado por el encargo. `L3` y `L5` NO se
+> construyeron.** Acta entera con sus tablas: `PENDIENTES-QA.md`
+> §**F3-LH-DOS-MEDIDAS-77**.
+>
+> **Lo que ya no está abierto:**
+> - **el `+16` de `/contaminacion-por-metano`** — `qa:clon-estados`, 60 cargas
+>   contra un solo build: **UN estado** en la ruta y en el control. Se escribe
+>   **la cota** (`3/30` ⇒ **< 10 % por carga y ruta**), **no** «el clon es
+>   determinista»; el `+16` sigue siendo **regresión con mecanismo SIN PROBAR**.
+>   Y **es de 1440 y sólo de 1440**: a 390 la ruta da `81132 → 81132`;
+> - **la guarda `clon-base` @390** — `367/367 comparadas · 0 sin medir · 5 con
+>   regresión`, las cinco de `/etiqueta/monitorizacion-ambiental` con **+1 ancla**
+>   cada una. Las páginas **6…11 no se mueven**, que es la ventana de 5.
+>
+> **Verificación:** `npm run check` **exit 0** · `qa:lib` **93/93, las 175 sondas
+> declaran su mínimo** · `qa:clon-estados-neg` **3/3** · `qa:lh-poblacion`
+> **0 de 29 series sin alcanzar** (déficit **0** en `documentos-cientificos` y en
+> `casos`: la población de `L3` y `L5` **está**).
+>
+> **Dos reglas nuevas en `CLAUDE.md`** —§17 (`exitCode` no mata; una guarda
+> devuelve **todas** las mitades de lo que releva) y §18 («hay una sonda en
+> vuelo» **no se deriva del árbol**)—, las dos pagadas en esta tanda y ninguna
+> salida del barrido: el barrido de §regla 12 sobre las actas de F3-2 dio
+> **45 enunciados · 0 reglas ausentes**.
+>
+> **Lo primero y más barato de la 78.ª**, ya derivado y bancado: el extracto de
+> la tarjeta de `L3` sale del **corpus capturado** (canal **sin recortar**), y
+> sobre **23/23** tarjetas encajan **las dos** unidades —`chars ≤ 99` y
+> `bytes ≤ 100`—, o sea **0 separadoras**. **No se elige unidad**: la separadora
+> se fabrica aplicando la regla al `cuerpo` del CMS. `wp_trim_words` ya está
+> **descartado por medida** (cortan a mitad de palabra; mejor barrido 7/23).
+
+---
+
 # HANDOFF — la VENTANA cerrada, y lo que queda del paginador es **una sola cosa con nombre**
 
 > ⚠ **Tanda de CONSTRUCCIÓN, 2026-08-17 (75.ª). Se cerró el PASO 1 y el PASO 2;
