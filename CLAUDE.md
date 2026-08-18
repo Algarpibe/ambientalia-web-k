@@ -2152,6 +2152,37 @@ las rutas del build: **lo nuevo entra solo**.
 > nombres puede combinarlos, **la lista está incompleta desde el día que se
 > escribió**; y si el consumidor no falla cuando no casa, no te vas a enterar.
 
+⚠ **Y EL 8.º CASO, QUE ES EL QUE CIERRA LA REGLA POR ARRIBA (2026-08-19, 79.ª
+tanda): CUANDO HAY QUE TOCAR UN CONJUNTO, LA ELECCIÓN ENTRE «RENOMBRAR EL
+ORIGEN» Y «REPUNTAR A LOS CONSUMIDORES» SE DECIDE CONTÁNDOLOS — Y EL RECUENTO SE
+DERIVA.**
+
+> **Repuntar a los consumidores exige conocerlos a todos, o sea escribir la
+> lista.** Renombrar el origen no exige conocer a ninguno: **los consumidores lo
+> recogen porque resuelven el nombre, no porque estén enumerados.** Así que la
+> segunda opción es la única que no envejece — y la primera es una lista escrita a
+> mano disfrazada de plan de trabajo.
+
+**Medido, y la evidencia es que el propio encargo lo cometió:** para cambiar de
+espejo, un encargo verificado en disco enumeraba **6 puntos de entrada**.
+Derivados con un `grep`, eran **16 en 11 ficheros**. **La lista se había quedado
+corta en 10 antes de usarse**, así que la opción «repuntar» habría dejado 10
+consumidores leyendo el fichero inválido **en verde y sin un solo error**.
+
+**Las dos mitades operativas:**
+
+1. **antes de elegir, DERIVA el conjunto** —`grep` sobre el nombre que vas a
+   mover—, y decide con el número delante. Si sale más grande de lo que creías,
+   eso *es* la respuesta;
+2. **y al renombrar el origen, el nombre nuevo dice el DEFECTO Y SU ALCANCE**, no
+   «viejo» ni «malo» (§regla 7). Un espejo que sólo está mal en un campo se
+   nombra por ese campo: quien lo encuentre dentro de seis meses tiene que poder
+   saber **qué parte suya seguía valiendo**.
+
+**El efecto secundario es la mitad buena:** liberado el nombre canónico, los
+consumidores que aún no se hayan re-medido **tiran en voz alta** en vez de leer
+lo caducado. Es el defecto puesto en la dirección que grita (§sondas 6).
+
 **Cómo se barre, y es siempre lo mismo:**
 
 | lo que se quiere afirmar | cómo se deriva |

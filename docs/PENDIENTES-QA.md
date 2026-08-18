@@ -293,6 +293,47 @@ uno **nuevo** sí cierra el código — es un inventario con fecha, no una amnis
 `p.resources-categories a`, que **no está en la lista** de `categoria`. Sin
 cardinal todavía: no se ha medido cuántas tarjetas pierde.
 
+## ✅ F3-LH-CABLEADO-DEL-ESPEJO · SE LIBERA EL NOMBRE CANÓNICO — Y LOS PUNTOS DE ENTRADA NO ERAN 6, ERAN 16 (2026-08-19, 79.ª tanda)
+
+**El PASO 0 de la tanda tenía dos salidas y la decisión la tomó una derivación,
+no la preferencia.**
+
+`w()` **no pisa** una congelada cuyo contenido difiera: la manda a un fichero
+fechado. Así que re-congelar sin tocar nada dejaría la medida nueva **en un
+fichero que nadie lee**, y todos los consumidores seguirían comparando contra el
+espejo que esta casa ya declaró inválido — **en verde y sin un solo error**.
+
+### La decisión: salida A (marcar los viejos con `SONDA-`), y el número que la impuso
+
+| salida | qué hace | por qué |
+|---|---|---|
+| **A ✅** | renombrar los 4 espejos a `…-SONDA-EXTRACTO-EN-2-FORMAS-DE-9.json` | **libera el nombre canónico**; los consumidores recogen el espejo nuevo **por derivación**, sin enumerar nada |
+| B ⛔ | repuntar los literales a nombres fechados | vuelve a escribir a mano un conjunto que envejece contra el repo (§regla 9, 7.º caso) |
+
+> ⚠ **Y lo que decidió no fue la preferencia: fue contar.** El encargo enumeraba
+> **6** puntos de entrada, verificados en disco. Derivados con `grep`, son **16
+> en 11 ficheros** — los 6 del encargo **más** `lh-alcance:63` · `lh-canales:120`
+> · `lh-contenedores:76` · `lh-espejo:96` · `lh-extracto:146` · `lh-huecos:178` ·
+> `lh-huecos:613` · `lh-pieles-css:68` · `lh-subpixel:113`.
+>
+> **La lista escrita a mano se había quedado corta en 10 antes de usarse**, que es
+> exactamente el fallo del que la salida A protege — §regla 9 cometida **sobre el
+> propio encargo**, y la mejor demostración posible de por qué B no era viable.
+
+**El nombre dice el defecto Y SU ALCANCE, no «viejo»** (§regla 7, 39
+precedentes): el espejo caducado **sólo está mal en el campo `extracto`** —
+geometría, ritmo, tipografía y árbol siguen siendo válidos—, y por eso el
+marcador nombra *`EXTRACTO-EN-2-FORMAS-DE-9`* y no *`MAL`*.
+
+**Efecto secundario buscado:** las sondas que leen el canónico **tiran ahora en
+voz alta** hasta que la campaña re-congele. Es el defecto puesto en la dirección
+que grita (§sondas 6): mejor una sonda que no arranca que una que compara contra
+un espejo inválido y sale verde.
+
+**Y el ORDEN de la campaña no es libre:** `lh-espejo.mjs:96` **lee**
+`lh-spec-<ancho>.json` como precondición, así que primero `lh-spec` (los dos
+anchos) y después `lh-espejo`.
+
 ## ⛔ F3-LH-ESPEJO-INVALIDADO-EN-EXTRACTO · ARREGLAR EL INSTRUMENTO CADUCA LA MEDIDA QUE TOMÓ (2026-08-18, 78.ª tanda)
 
 **Es la consecuencia inmediata de la ficha de arriba, y hay que verla antes de
