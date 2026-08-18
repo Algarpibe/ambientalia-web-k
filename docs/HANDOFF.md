@@ -37,6 +37,31 @@
 > Enumerar de memoria qué cambió el instrumento, en vez de derivarlo del `git
 > diff`, es §regla 9 cometida **dentro de un pre-registro**, donde llega
 > blindada.
+>
+> **El `null` de 107 tarjetas queda repartido y la suma cuadra:** **51** eran
+> defecto del instrumento (`L3` 16 · glosario 23 · faqs 12) y **56** eran **dato**
+> (`L1-resources` 50 · `L5` 3 · `L4` 3). **51 + 56 = 107.**
+>
+> **Verificación:** `check` **exit 0** · `qa:lib` **179 sondas** ·
+> `qa:lh-poblacion` **0 de 29 sin alcanzar** (disparador **(d)** no dispara) ·
+> `qa:lh-huecos` **5/5** · `qa:cobertura` **367 rutas, idéntica** (sin
+> antecedente: no se construyó). **Disparador (b)** verificado
+> **ejercitándolo**: `qa:lh-alcance-todas` reporta `lh-espejo-1440.json
+> (congelado 2026-08-18)`.
+>
+> **DOS reglas nuevas en `CLAUDE.md`** —§regla 9 **8.º caso** (renombrar el
+> origen vs repuntar a los consumidores: se decide **contándolos**, derivados) y
+> la 2.ª mitad del pre-registro (**qué cambió el instrumento se deriva del
+> `diff`**)— **más UNA subida por el barrido de §regla 12**, que esta vez **no
+> salió cero**: *«arreglar un instrumento no arregla sus medidas: las CADUCA»*
+> (§sondas **5bis**), que la 78.ª había dejado sólo en un acta.
+>
+> ⚠ **LO PRIMERO DE LA 80.ª NO ES CONSTRUIR: es medir cuánto de la deriva llega
+> al CLON** (`qa:lh-cmp` y `-todas`, dos anchos, contra el espejo ya bueno).
+> Construir antes metería **dos causas en el mismo comparador** —lo nuevo y el
+> `−3` heredado de `L1`— y separarlas después cuesta más. `L3` y `L5` **no están
+> bloqueadas por conocimiento**: sus specs están confirmadas contra el original
+> de hoy y no tienen deriva. Sólo por el **orden**.
 
 ---
 

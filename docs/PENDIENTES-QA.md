@@ -392,6 +392,42 @@ es SIN PROBAR*.
 cambio o estado es una campaña de ráfagas sobre estas rutas, que es trabajo con
 su propio encargo.
 
+### Verificación de cierre de la 79.ª
+
+`npm run check` **exit 0** · `qa:lib` **179 sondas declaran su mínimo** ·
+`qa:lh-poblacion` **0 de 29 series sin alcanzar** (disparador **(d)** no
+dispara) · `qa:lh-huecos` **5/5 huecos derivados** · `qa:cobertura` **367 rutas,
+matriz idéntica** · `qa:manifiesto` y `qa:slugs` verdes dentro de `check`.
+
+**Disparador (b) — verificado EJERCITÁNDOLO, no releyéndolo** (§regla 10):
+`qa:lh-alcance-todas` reporta `medidas/lh-espejo-1440.json (congelado
+2026-08-18)` y `qa:lh-huecos` declara su fuente en `lh-spec-{1440,390}.json`.
+**Los consumidores leen el espejo nuevo, y ninguno hubo que tocarlo.**
+
+### Las predicciones: dos evaluadas, tres sin antecedente
+
+| predicción | resultado |
+|---|---|
+| **el `extracto` es un eje nuevo y los pares distintos SUBEN** | ✅ **cumplida**, y con su reparto: **+51 tarjetas** con dato. Publicado por campo, no en total |
+| **`L1-blog`/`L1-etiqueta` no se mueven por el arreglo** | ✅ **cumplida** — 24/24 y 105/105 a los dos anchos y en los dos espejos. Es lo que convierte el resto en deriva atribuible |
+| rutas **367 → 374** | ⬜ **sin antecedente**: no se construyó. Siguen **367** |
+| formas `13·6·7` → `13·3·10` · páginas `82·20` → `82·13` | ⬜ **sin antecedente** |
+| `qa:cobertura` **tiene que subir** | ⬜ **sin antecedente** — plana es el resultado **correcto**, y el encargo lo dejaba dicho: sólo sería «cuenta otra cosa» **si se hubiera construido** |
+
+### ⚠ Lo primero de la 80.ª, y no es construir
+
+**Medir cuánto de la deriva llega al CLON**, con `qa:lh-cmp` y `qa:lh-cmp-todas`
+a los dos anchos contra el espejo ya bueno. Hasta tener ese número:
+
+> **Construir `L3`/`L5` ahora metería en el MISMO comparador dos causas —lo
+> nuevo y el `−3` heredado de `L1`— y separarlas después cuesta más que
+> separarlas antes.** Es §*un Δ de cero puede ser dos errores que se anulan* en
+> su versión barata: aquí ni siquiera se anulan, se **suman en el total** y el
+> total es lo único que se mira si nadie lo reparte.
+
+Y el dato que hace la medida barata: **`L3` y `L5` no tienen deriva**, así que su
+construcción no está bloqueada por conocimiento — sólo por el orden.
+
 ## ✅ F3-LH-CABLEADO-DEL-ESPEJO · SE LIBERA EL NOMBRE CANÓNICO — Y LOS PUNTOS DE ENTRADA NO ERAN 6, ERAN 16 (2026-08-19, 79.ª tanda)
 
 **El PASO 0 de la tanda tenía dos salidas y la decisión la tomó una derivación,

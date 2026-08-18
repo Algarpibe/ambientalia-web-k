@@ -1,0 +1,493 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "que": "los huecos que las specs de L2·L3·L5 no contestan y que DECIDEN la construcción",
+    "fuente": "corpus/fase-3/listados (149 documentos congelados de F3-0) + corpus/fase-3/_sitemaps + medidas/lh-spec-{1440,390}.json",
+    "porQue": "§UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA: una medida no lleva escrito qué NO contesta, así que el alcance se escribe a mano ANTES de construir. Es lo que costó `L1-resources`.",
+    "sabotaje": null,
+    "noMide": [
+      "el CLON: las 6 formas de L2·L3·L5 no están emitidas, así que esto es de UN lado",
+      "píxeles nuevos: la geometría la pone lh-spec contra el original vivo; aquí sólo se cruza con ella",
+      "si los huecos son TODOS los que hay — es una lista de los encontrados al escribir el alcance, no un censo cerrado",
+      "los números grandes con 2 o más a la vez (0 de 43: exige total ≥ 20) y los que van DELANTE de la ventana (0 de 43: exige total ≥ 15 y n ≥ 13). El componente TIRA en los dos en vez de adivinar",
+      "el CÓDIGO del generador: se intentó leer `wp-pagenavi` en su repositorio (403/404), así que «corre con las opciones por defecto» es hipótesis con mecanismo, no medida. El múltiplo 10 se apoya en UNA observación",
+      "los totales 5·6·7·9·10·12…19 de la piel B: 0 de 43 instancias — la ventana interpola sin salto y nadie lo ha medido"
+    ]
+  },
+  "huecos": {
+    "barraDeTema": {
+      "pregunta": "¿`L2` sirve barra lateral? — `lh-barra.json` dice conBarra 0 de 12",
+      "canalDeLaMedidaVieja": "la partición de columnas de Divi (`et_pb_column_3_4` + `et_pb_widget_area`)",
+      "canalQueLoContesta": "`<body class=… et_right_sidebar>` + `#sidebar` hermano de `#left-area`",
+      "documentos": 12,
+      "conSidebar": 12,
+      "conColumnaDivi3_4EnElCuerpo": 0,
+      "conColumnaDivi3_4EnElDocumento": 12,
+      "firmasDeWidgets": 1,
+      "widgets": [
+        "widget_search",
+        "widget_text",
+        "widget_text"
+      ],
+      "titulos": [
+        "Buscar",
+        "Categorías",
+        "¡Suscríbete a nuestra newsletter!"
+      ],
+      "veredicto": "SÍ hay barra, la misma en las 12 (varianza 0 ⇒ plantilla de la familia). Las DOS medidas son ciertas y contestan preguntas distintas."
+    },
+    "bandaDelContenedor": {
+      "pregunta": "¿qué hay entre el contenedor del tema y la primera tarjeta de `L2`?",
+      "porAncho": {
+        "390": [
+          {
+            "forma": "L2-glosario",
+            "ancla": 194.58,
+            "cabecera": 136.58,
+            "contenedorTema": 136.58,
+            "banda": 58
+          },
+          {
+            "forma": "L2-faqs",
+            "ancla": 194.58,
+            "cabecera": 136.58,
+            "contenedorTema": 136.58,
+            "banda": 58
+          }
+        ],
+        "1440": [
+          {
+            "forma": "L2-glosario",
+            "ancla": 283,
+            "cabecera": 225,
+            "contenedorTema": 225,
+            "banda": 58
+          },
+          {
+            "forma": "L2-faqs",
+            "ancla": 283,
+            "cabecera": 225,
+            "contenedorTema": 225,
+            "banda": 58
+          }
+        ]
+      },
+      "valoresDistintos": [
+        58
+      ],
+      "veredicto": "58 px, IGUALES a 1440 y a 390 — px absolutos: la spec los tiene en sus dos números y no los nombra"
+    },
+    "ventanaPielB": {
+      "pregunta": "¿qué números pinta la piel B? — el componente emitía TODAS de n+1 a total",
+      "instancias": 43,
+      "totalesDistintos": [
+        2,
+        3,
+        4,
+        8,
+        11
+      ],
+      "separadoras": 19,
+      "aciertaVentana5": 43,
+      "aciertaTodas": 24,
+      "secuenciaNuevaAcierta": 43,
+      "secuenciaViejaAcierta": 7,
+      "viejoAciertaEn": [
+        {
+          "ruta": "etiqueta/calidad-del-aire",
+          "n": 1,
+          "total": 4,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos",
+          "n": 1,
+          "total": 4,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales",
+          "n": 1,
+          "total": 3,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire",
+          "n": 1,
+          "total": 3,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/particulas-en-suspension",
+          "n": 1,
+          "total": 2,
+          "esPagina1": true
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire",
+          "n": 1,
+          "total": 4,
+          "esPagina1": true
+        },
+        {
+          "ruta": "preguntas-frecuentes",
+          "n": 1,
+          "total": 4,
+          "esPagina1": true
+        }
+      ],
+      "viejoAciertaSoloEnPagina1": true,
+      "instancias_": [
+        {
+          "ruta": "etiqueta/calidad-del-aire",
+          "n": 1,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/2",
+          "n": 2,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/3",
+          "n": 3,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/calidad-del-aire/page/4",
+          "n": 4,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos",
+          "n": 1,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/2",
+          "n": 2,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/3",
+          "n": 3,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/contaminantes-atmosfericos/page/4",
+          "n": 4,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales",
+          "n": 1,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales/page/2",
+          "n": 2,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/emisiones-industriales/page/3",
+          "n": 3,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental",
+          "n": 1,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/10",
+          "n": 10,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/11",
+          "n": 11,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/2",
+          "n": 2,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/3",
+          "n": 3,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/4",
+          "n": 4,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/5",
+          "n": 5,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/6",
+          "n": 6,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/7",
+          "n": 7,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/8",
+          "n": 8,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/9",
+          "n": 9,
+          "total": 11
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire",
+          "n": 1,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire/page/2",
+          "n": 2,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/normativa-de-calidad-del-aire/page/3",
+          "n": 3,
+          "total": 3
+        },
+        {
+          "ruta": "etiqueta/particulas-en-suspension",
+          "n": 1,
+          "total": 2
+        },
+        {
+          "ruta": "etiqueta/particulas-en-suspension/page/2",
+          "n": 2,
+          "total": 2
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire",
+          "n": 1,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/2",
+          "n": 2,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/3",
+          "n": 3,
+          "total": 4
+        },
+        {
+          "ruta": "etiqueta/sensor-de-calidad-del-aire/page/4",
+          "n": 4,
+          "total": 4
+        },
+        {
+          "ruta": "glosario",
+          "n": 1,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/2",
+          "n": 2,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/3",
+          "n": 3,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/4",
+          "n": 4,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/5",
+          "n": 5,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/6",
+          "n": 6,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/7",
+          "n": 7,
+          "total": 8
+        },
+        {
+          "ruta": "glosario/page/8",
+          "n": 8,
+          "total": 8
+        },
+        {
+          "ruta": "preguntas-frecuentes",
+          "n": 1,
+          "total": 4
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/2",
+          "n": 2,
+          "total": 4
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/3",
+          "n": 3,
+          "total": 4
+        },
+        {
+          "ruta": "preguntas-frecuentes/page/4",
+          "n": 4,
+          "total": 4
+        }
+      ],
+      "secuenciaDenominador": 43,
+      "instanciasExcluidasDeLaSecuencia": 0,
+      "fallosDeSecuencia": [],
+      "instanciasConMasDe12Piezas": [
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/4",
+          "n": 4,
+          "total": 11,
+          "piezasConLaDePages": 14
+        },
+        {
+          "ruta": "etiqueta/monitorizacion-ambiental/page/5",
+          "n": 5,
+          "total": 11,
+          "piezasConLaDePages": 14
+        }
+      ],
+      "topeDePiezasDelEspejo": 12,
+      "unidadDelTope": "piezas del paginador INCLUYENDO `span.pages`, que es lo que cuenta el `slice(0, 12)` de lh-barrido",
+      "sinEjercitar": {
+        "unGrande": 5,
+        "dosOMasGrandes": 0,
+        "grandesDelanteDeLaVentana": 0,
+        "totalesNoVistos": [
+          5,
+          6,
+          7,
+          9,
+          10,
+          12
+        ]
+      },
+      "conFirst": 13,
+      "conLast": 13,
+      "conLargerPage": 5,
+      "seriesConLargerPage": [
+        "etiqueta/monitorizacion-ambiental"
+      ],
+      "fallosDeLaVentana": []
+    },
+    "ordenDeL2": {
+      "pregunta": "¿qué ordena el archivo de CPT? — ninguna de las specs lo trata",
+      "donde": "la página INDIVIDUAL de cada tarjeta (corpus/faqs · corpus/terminos-kunakpedia), no el listado",
+      "canalesMirados": [
+        "<span class=\"fecha-publicacion\"> (el que usa `entradas-blog`)",
+        "JSON-LD `datePublished`",
+        "JSON-LD `dateModified`",
+        "`article:published_time`",
+        "`article:modified_time`",
+        "sitemap `<lastmod>`"
+      ],
+      "canalesQueQUEDAN": [
+        "el FEED RSS (`rel=alternate` está servido en 4/4 y 8/8, y lleva `pubDate`) — NO capturado",
+        "la API REST de WP (`/wp-json/wp/v2/...`) — fuera del corpus",
+        "`menu_order` / `orderby`: no aparecen en lo servido, así que sólo los vería la API"
+      ],
+      "porForma": [
+        {
+          "forma": "L2-glosario",
+          "papel": "CONTROL",
+          "tarjetas": 37,
+          "conSpanFechaRenderizado": 0,
+          "conDatePublished": 37,
+          "datePublishedOrdenaDesc": true,
+          "conLastmod": 37,
+          "lastmodOrdenaDesc": false,
+          "conDateModified": 37,
+          "dateModifiedOrdenaDesc": false,
+          "conPublishedTime": 0,
+          "publishedTimeOrdenaDesc": null,
+          "conModifiedTime": 34,
+          "modifiedTimeOrdenaDesc": null
+        },
+        {
+          "forma": "L2-faqs",
+          "papel": "el que se quiere contestar",
+          "tarjetas": 19,
+          "conSpanFechaRenderizado": 0,
+          "conDatePublished": 0,
+          "datePublishedOrdenaDesc": null,
+          "conLastmod": 19,
+          "lastmodOrdenaDesc": false,
+          "conDateModified": 0,
+          "dateModifiedOrdenaDesc": null,
+          "conPublishedTime": 0,
+          "publishedTimeOrdenaDesc": null,
+          "conModifiedTime": 19,
+          "modifiedTimeOrdenaDesc": false
+        }
+      ],
+      "faqsConDatoEn": [
+        "modifiedTime",
+        "lastmod"
+      ],
+      "faqsOrdenadoPor": [],
+      "control": "`/glosario`: `datePublished` DESC reproduce el orden servido, así que el canal se sabe LEER",
+      "veredicto": "`/glosario` ordena por `datePublished` DESC. `/preguntas-frecuentes` TIENE dato en modifiedTime · lastmod pero NINGUNO reproduce su orden ⇒ no derivable de lo servido MIRADO."
+    },
+    "bandaDeFiltros": {
+      "pregunta": "¿qué hay entre el `h1` y el listado en `L3` y `L5`? — ninguna spec lo nombra",
+      "filas": [
+        {
+          "forma": "L3-sci",
+          "ruta": "/scientific-category/articulos-cientificos-y-estudios",
+          "presente": true,
+          "botones": 3,
+          "etiqueta": "a",
+          "titulo": null,
+          "enLaSpec": false
+        },
+        {
+          "forma": "L3-sci",
+          "ruta": "/scientific-category/articulos-tecnicos",
+          "presente": true,
+          "botones": 3,
+          "etiqueta": "a",
+          "titulo": null,
+          "enLaSpec": false
+        },
+        {
+          "forma": "L5-casos",
+          "ruta": "/casos-de-exito",
+          "presente": true,
+          "botones": 12,
+          "etiqueta": "button",
+          "titulo": "Sectores",
+          "enLaSpec": false
+        }
+      ],
+      "pxEntreH1YListado": {
+        "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": 108.8,
+        "L5-casos::/es/casos-de-exito/": 210.6
+      },
+      "veredicto": "las TRES sirven banda de filtros. Está en la geometría congelada y no en la prosa: construir sin ella sube el listado."
+    }
+  }
+}
