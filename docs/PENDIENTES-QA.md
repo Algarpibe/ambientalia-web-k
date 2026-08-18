@@ -14534,3 +14534,355 @@ puede afirmar que el suelo sea inocuo** — podría estar tapando un cambio real
 paso es barato: **dos builds SIN tocar una línea** y comparar. Si salen 31/31, el
 suelo es del build; si salen 0/31, lo de hoy sí era la edición y esta ficha se
 cae.
+
+---
+
+## ✅ F3-LH-L5 · CERRADA (2026-08-18, 82.ª tanda) — `L5` construida y verificada a los dos anchos
+
+**Alcance de la afirmación:** `/casos-de-exito`, **1 instancia — y n=1 aquí es la
+POBLACIÓN, no la muestra**. Δ base `h1` **−0.01 @1440** y **0 @390**, con los
+mismos 20 caminos de diferencia a los dos anchos (sin asimetría espejo).
+
+| | antes | después |
+|---|---|---|
+| pares distintos `L5` @1440 | — (AUSENTE) | **76 de 818** |
+| base `h1` @1440 | — | **−0.01** (era −5.11 a media tanda) |
+| base `h1` @390 | — | **0** |
+| formas del comparador | 13 · 4 aus · 9 comp | **13 · 3 · 10** |
+| páginas del comparador | 82 · 14 aus | **82 · 13** |
+| rutas emitidas | 373 | **374** |
+
+**Los 20 que quedan tienen TODOS causa nombrada**, y por eso la ficha cierra en
+vez de quedarse abierta:
+
+| n | camino | causa | ¿es de `L5`? |
+|---|---|---|---|
+| 5 | `esqueleto` · `cascaron` | el clon no emite los `.et_pb_section` del theme builder | **no** — `cascaron.length` del clon es **0 en las 10 formas comparadas** |
+| 3 | `tarjetas.N.caja.position` | **Isotope**: el filtro posiciona las tarjetas en absoluto | no — va con el filtro a **F3-4** |
+| 6 | `media`/`envoltorioMedia` `.backgroundImage` | host + variante `1024×*`, que el almacén del clon no genera | clase de §F3-LH-VARIANTE-724x1024 |
+| 6 | `titulo.href` · `hrefs.0` | **ruta local a propósito** | regla de rutas locales |
+
+> **Y el cardinal del cascarón discrimina en vez de sumar:** `L5` trae **56** y
+> las otras nueve **45**. La diferencia son **11**, que es exactamente un
+> registro de sección — su **4.ª sección de pie**, la que la spec avisaba que no
+> se diera por común.
+
+### Lo que el canal SIN RECORTAR pagó, y el espejo no podía enseñar
+
+El espejo congela `cards.slice(0, 3)` y **las tres primeras tarjetas tienen UN
+sector cada una**. O sea que enseña **un** camino de render de los **tres** que
+el original ejercita. Derivado de `corpus/fase-3/listados/casos-de-exito/index.html`
+(las 57 enteras):
+
+| sectores del caso | qué sirve `span.case-sectores` | n | el clon |
+|---|---|---|---|
+| **0** | el `<span>` **vacío**: ni rótulo ni enlace | **4** | **4** |
+| **1** | `<span>Sector: </span>` + un `<a rel=tag>` | **49** | **49** |
+| **2** | `<span>Sectores: </span>` + dos `<a>` con `, ` | **4** | **4** |
+
+**El rótulo cambia de NÚMERO con el cardinal**, y los tres caminos están
+**ESTRENADOS**. Construir desde el espejo habría emitido «Sector: » en las 57 y
+un enlace donde no hay ninguno.
+
+Verificado además, en las 57: **orden de las clases `sector-*` == orden de los
+`<a rel=tag>` == orden del array de la DB**, 0 desajustes.
+
+### El orden: 57/57, y cruzado por DOS canales
+
+`qa:lh-fecha-orden` ya daba 57/57 con **56 separadoras** contra el corpus. Esta
+tanda lo cruzó contra la **DB** (57 slugs por `fechaPublicacion` DESC) y contra
+el **HTML que el clon sirve**: **57/57 en los tres**.
+
+### Las desviaciones DECLARADAS
+
+1. **la banda de 12 filtros entra INERTE** — lo declarado es *«sin FILTRADO»*,
+   **no «sin BANDA»**: la banda es geometría y omitirla sería un defecto de
+   264.6 px con una desviación por coartada. El filtrado consume `caso → sector`
+   y se decide en **F3-4** (§LH-C6-FILTRO-L5);
+2. **`/casos-de-exito/page/2` no se construye** — `D2.4·duplicado`;
+3. **1 de 57 títulos no se puede reproducir**: el original sirve
+   `H<sub>2</sub>S` en `control-emisiones-de-olor-en-ptar-en-israel` y el modelo
+   guarda el texto aplanado. Es §CMS-TITULO-RICO, **defecto vivo con dueño y
+   anterior a esta forma**. ⚠ **Cae fuera del `slice(0, 3)` del espejo, así que
+   ningún comparador lo va a ver** — por eso está escrito aquí;
+4. **el orden de los 12 botones va TRANSCRITO, no derivado** — ver
+   §F3-LH-ORDEN-BOTONES-SIN-SEPARADORAS.
+
+---
+
+## ⚠ F3-LH-INTERLINEA-RATIO-VS-LONGITUD · el clon hereda una RATIO donde el original hereda una LONGITUD (2026-08-18, 82.ª tanda)
+
+**Es una CLASE, no dos instancias, y la raíz toca las 374 rutas.**
+
+El original sirve, en el `<style>` del propio documento:
+
+```css
+body { font-family: …; font-size: 14px; line-height: 1.7em; … }
+```
+
+y el customizer de Divi sube el `font-size` a **18px**. Un `line-height` en `em`
+**computa contra la propia letra del elemento y se hereda ya resuelto**: todo
+descendiente recibe **30.6px como LONGITUD**, mida lo que mida su propia letra.
+
+El clon escribió la **ratio** — `globals.css` §`body`:
+
+```css
+line-height: 1.7; /* 30.6 / 18 */
+```
+
+⚠ **El propio comentario delata el mecanismo del error**: alguien midió la
+longitud (30.6), la dividió por la letra (18) y escribió el cociente. Las dos
+formas son **idénticas a 18px** y divergen en todo lo demás — que es justo por
+qué nadie lo vio en cuatro arquetipos de texto a 18px.
+
+### Lo medido, y son las dos instancias que `L5` ejercita
+
+| elemento | letra | original | clon | Δ |
+|---|---|---|---|---|
+| `p.sobretitulo` | 15px | **30.6** | 25.5 | **−5.09** — la BASE |
+| `.case-cliente` | 16px | **30.6** | 27.19 | **−3.41** — el alto de la TARJETA |
+
+### ⚠⚠ Y el Δ0 que lo tapaba: DOS errores de 5 px anulándose
+
+`lista.y` daba **857.77** contra **857.88** medidos, o sea **−0.11**, y se leía
+como limpio. Dentro había:
+
+| pieza | Δ |
+|---|---|
+| sobretítulo (esta ficha) | **−5.09** |
+| banda de filtros (§F3-LH-BOTON-VER-TODOS) | **+5.00** |
+| **neto en el listado** | **−0.11** |
+
+**Lo destapó el `h1`**, que está *por encima* de la banda y por tanto no podía
+absorber el segundo error: su Δ era **−5.11** limpio. Es §*un Δ de cero puede
+ser dos errores que se anulan*, y la salida fue **medir por composición la
+cadena entera** —cabecera · migas · `.container` · sobretítulo · `h1` · banda ·
+listado— en vez de leer el total.
+
+### Lo que se hizo y lo que NO, con su razón
+
+**Arregladas las DOS instancias medidas**, cada una con su número congelado.
+**La raíz NO se toca**: cambiar `globals.css` §`body` de `1.7` a `1.7em` es un
+carácter y **toca las 374 rutas a la vez**, o sea el disparador (b) del escalón
+—mover pares en formas ya verificadas—. Es un arreglo de CLASE y necesita **su
+tanda**, con antes/después a umbral cero sobre las 374 × 2 anchos.
+
+> **Y hasta que eso pase, la clase sigue viva**: cualquier elemento del clon con
+> letra ≠ 18px dentro de un cuerpo heredado tiene la interlínea equivocada, y
+> **nadie ha barrido cuántos son**. Ese barrido es la primera mitad de la tanda
+> que la cierre.
+
+---
+
+## ⚠ F3-LH-BOTON-VER-TODOS · el original ESCONDE «Ver todos», y el recuento publicado no lo distingue (2026-08-18, 82.ª tanda)
+
+La hoja del tema sirve, **al lado de la regla que sí se había transcrito**:
+
+```css
+.button-group .button:first-child.is-checked { display: none }
+```
+
+O sea que `L5` sirve **12 botones en el DOM y ONCE visibles**.
+
+**Y aquí está lo que lo hace ficha y no erratum:** `qa:lh-huecos` publica
+**«12 botones»** — cuenta **nodos**, y hace bien. Pero ese número **no
+distingue** *«hay 12»* de *«se ven 11»*, y quien construye desde él pone doce.
+Coste medido: **una fila de más, +5.00 px** en la banda, que es la mitad exacta
+del Δ0 falso del listado (§F3-LH-INTERLINEA-RATIO-VS-LONGITUD).
+
+> **La forma general, que es lo reutilizable:** un censo de nodos y un censo de
+> **lo que se ve** son dos medidas distintas, y la primera se lee como la
+> segunda cuando el CSS puede esconder. Un recuento de elementos se publica
+> **con su criterio** —«12 en el DOM, 11 con caja»— o invita a construir el
+> número equivocado. Es §*la causa común: el NIVEL al que se mide* con el
+> contenedor puesto en **la definición de «cuántos hay»**.
+
+**Corregido** en `tema.css`, con la regla transcrita verbatim. La banda sigue a
++4.99 por otra causa — ver la ficha siguiente.
+
+---
+
+## ⚠ F3-LH-BANDA-FILTROS-SIN-INTERNOS · +4.99 px que NINGÚN par del comparador mira (2026-08-18, 82.ª tanda)
+
+| | valor |
+|---|---|
+| banda `h1` → listado, **original** | **210.6** (`lh-huecos.json` §`pxEntreH1YListado`) |
+| banda `h1` → listado, **clon** | **215.59** |
+| **Δ** | **+4.99** |
+
+⚠⚠ **Y esto NO sale en los 76 pares de `L5`**, que es la mitad importante: el
+espejo **no congela la banda de filtros** —sus internos están marcados
+`enLaSpec: false`— así que **ningún par la compara**. El verde de `qa:lh-cmp`
+para `L5` es cierto **de lo que compara**, y la banda no está dentro.
+
+**Por qué no se arregla en esta tanda, y no es pereza:** el único número medido
+de la banda es **el total**. Sus internos —alto del `h2.case-filter-title`, alto
+de `#filters`, paso de fila de los botones— **no están en ninguna congelada**.
+Ajustar el total sin ellos es cablear contra un contenedor con holgura, que es
+§*la causa común: el NIVEL al que se mide* cometida a propósito.
+
+**Lo que sí está derivado, para que la tanda que lo mida no empiece de cero:**
+
+| pieza (clon) | valor |
+|---|---|
+| `.case-filter` | 215.59 = `pt` 30 + h2 38 + `#filters` 101.59 + `pb` 46 |
+| `h2.case-filter-title` | 38 = `lh` 25 + `pb` 12 + borde 1 |
+| `#filters` | 101.59 = `pt` 16 + **2 filas** de botones (paso 42.79) |
+| botones con caja | **11** de 12 (el 12.º va `display:none`) |
+
+**Lo que hace falta:** medir esos cuatro sobre el original, a los dos anchos.
+Con eso el Δ se atribuye; sin eso, no.
+
+---
+
+## ⚠ F3-LH-ORDEN-BOTONES-SIN-SEPARADORAS · tres modelos aciertan 11/11 y NINGUNO está elegido (2026-08-18, 82.ª tanda)
+
+El orden de los 12 botones de `L5` **no es el de `TERMINOS_SECTOR`** (que va por
+frecuencia y acierta **3 de 11**). Contados los candidatos que sí aciertan:
+
+| modelo | aciertos |
+|---|---|
+| `nombre` ascendente, locale `es` | **11/11** |
+| `nombre` ascendente, punto de código | **11/11** |
+| `slug` ascendente | **11/11** |
+
+**Posiciones SEPARADORAS entre los tres: CERO.**
+
+Y —§*antes de fichar una indeterminación, comprueba que las hipótesis sean
+DISTINTAS*— **sí lo son**, y la entrada que las separaría se puede escribir: un
+término cuyo nombre empiece por letra acentuada o `Ñ` ordena distinto en locale
+`es` que por punto de código; y un término cuyo `slug` no sea el prefijo
+normalizado de su `nombre` separa `slug-asc` de los dos anteriores. **Ninguna de
+las dos existe en los 11 términos que hay.**
+
+**Decisión: se TRANSCRIBE el orden medido** (`ORDEN_BOTONES` en
+`app/casos-de-exito/page.tsx`), que es el dato y no puede estar mal, y la
+indeterminación se declara. Elegir una de las tres derivaciones sería
+**escribirla, no elegirla** (§*dos modelos que predicen lo mismo en todo tu
+dominio son uno solo*).
+
+**Qué la resolvería:** un 12.º término de sector con acento inicial o con slug
+no derivable — o el archivo de taxonomía `/es/sector/`, que es del grupo B y no
+está clonado. Con **n = 1 instancia** y **11 términos**, hoy no hay quien los
+separe.
+
+---
+
+## ⛔ F3-LH-ENLACES-105 · la guarda de enlaces llevaba DOS TANDAS sin correrse, y su verde era del 8 % del sitio (2026-08-18, 82.ª tanda)
+
+**Disparador (d) del escalón de la 82.ª: se ficha con su número y no se
+construye encima.**
+
+| corrida | páginas | fallos | rotos |
+|---|---|---|---|
+| 2026-08-06 | **31** | 0 | 0 |
+| 2026-08-08 | **31** | 0 | 0 |
+| **2026-08-18** | **374** | **105 hrefs distintos** (1379 apariciones) | **2** |
+
+> ⚠⚠ **El verde del 08-08 era de 31 páginas de las ~300 que el build emitía.**
+> «0 fallos» era **cierto de las 31** y se leyó como del sitio. Es §*la cobertura
+> declarada al nivel de arriba absorbe todo lo que no se midió abajo*, con el
+> contenedor puesto en **el ALCANCE de la propia guarda** — un sitio nuevo del
+> catálogo: no la unidad del informe, sino **cuántas unidades entraron**.
+
+### La atribución, derivada y no supuesta
+
+- **los 2 ROTOS** son `/cdn-cgi/l/email-protection` — la ofuscación de correo de
+  Cloudflare que **el original sirve** y que el cuerpo rico transcribe
+  **verbatim**. Salen del corpus (`entradas-blog`, aviso legal). **CERO en
+  `/casos-de-exito`**;
+- **de los 105, `L5` no origina ninguno.** El único que `L5` **causa** es que
+  `https://kunakair.com/es/casos-de-exito/` pase a tener ruta local — y sus
+  orígenes son **siete ficheros anteriores** (`HeaderNav` ×2, `footer`,
+  `software`, `UltimosProyectos`, `CasoPagina`), ninguno de esta tanda;
+- `app/casos-de-exito/page.tsx:62` aparece en la lista **por contener el
+  literal**: es el `canonical`, y la sonda **excluye `<link rel=canonical>` y
+  `og:url` a propósito** (su línea 172, y con razón: deben apuntar al original).
+  No es un ancla y no es el defecto.
+
+**O sea: la deuda la contrajo cada tanda que emitió rutas sin localizar sus
+hrefs, y la guarda no estaba corriendo para decirlo.**
+
+### Lo que hay que decidir, y no es mecánico
+
+Los 105 no son todos el mismo caso. Al menos tres familias, y **el reparto está
+sin hacer**:
+
+1. **navegación y pie** (`/blog`, `/casos-de-exito`, `/software-…`) — clonados,
+   y la regla de rutas locales dice que van locales;
+2. **enlaces DENTRO del cuerpo rico** — los escribió el editor en WordPress y
+   viajan en el campo. Localizarlos es la transformación **T7**, que ya está
+   decidida pero no cubre estos;
+3. **términos y taxonomías** cuyo destino real es del grupo B y **no está
+   clonado** — ésos **deben** seguir apuntando fuera, y contarlos como fallo
+   sería el error contrario.
+
+**Hasta que ese reparto se haga, `qa:enlaces` NO se lee como un rojo de 105
+defectos: se lee como 105 destinos que hay que clasificar.**
+
+---
+
+## ⛔ F3-SONDAS-NEGATIVOS-PODRIDOS · 10 de 40 negativos baratos ya no saben fallar (2026-08-18, 82.ª tanda)
+
+La regla de la casa —*«cada arreglo de una sonda vuelve a correr SU negativo,
+entero»*— es **correcta y no se deroga**. Lo que **no cubre** es el negativo de
+una sonda **que nadie toca**: puede pudrirse durante meses y el repo **no tiene
+forma de enterarse**, porque un negativo que no se corre **no da error: no da
+nada**. Ya se pagó con su fecha (`cms:extractor-a-neg`, ROJO desde el
+2026-08-17 con `149` cableado contra un corpus de `152`, cazado **por azar**).
+
+### Los tres números, derivados
+
+| | |
+|---|---|
+| ficheros `.neg.mjs` censados | **67** |
+| **baratos** (ni navegador ni DB) | **40** |
+| con **DB** (Docker) | **13** |
+| con **navegador** o clon servido | **14** |
+| **coste de correr los 40** | **≈ 450 s**, una corrida, medido |
+| lo que `qa:lib` ya cubre | que las sondas **COMPILAN y declaran su mínimo** |
+| lo que `qa:lib` **NO** cubre | **si un negativo sigue sabiendo fallar** — compilar no es eso |
+
+### El resultado: 10 de 40 ROJOS
+
+| negativo | marcador |
+|---|---|
+| `media-hueco` | **0/7** — no caza NADA |
+| `media-regenera` | **0/5** — no caza NADA |
+| `a-inventario` | 1/3 |
+| `cms-teaser` | 1/3 |
+| `coloca-media` | 2/3 |
+| `c-inventario` | 3/4 |
+| `media-siembra` | 3/4 |
+| `media-colision` | 3/6 |
+| `productos-hueco` | 3/5 |
+| `manifiesto` | 4/6 |
+
+**Instrumento:** `npm run qa:negativos`, congelada en `medidas/negativos.json`.
+**Nace roja y NO se cablea a `check`**: bloquearía el repo por una deuda que
+acaba de **descubrir**, no de causar.
+
+### Tres errores de medición cazados al construirla, y los tres son de manual
+
+1. **el reparto dio 67 de 67 «necesita navegador»** — un **PLENO**, que §sondas 4
+   dice que no mide nada. Causa: seguía los imports hasta `lib.mjs`, **que la
+   importan todas** y contiene `iniciarClon`/`openPage`. Se corrige mirando la
+   **llamada** real y sin seguir a `lib.mjs`;
+2. **2 de los 12 rojos iniciales eran del CORREDOR, no de las sondas**
+   (§regla 8): la primera pasada lanzó los 40 con `node <fichero>` a secas y
+   `cms-decl` y `casos-nunca-vistos` cayeron por faltarles `--env-file`. Con su
+   comando del `package.json`: **8/8 y 4/4, verdes**. Por eso la sonda **deriva
+   el comando del `package.json`** en vez de suponerlo;
+3. **un bucle de control imprimió `EXIT=0` al lado de `❌ … 0/7`** — el `$?`
+   estaba contaminado por la sustitución de órdenes del mismo `echo`. Medido
+   limpio: **EXIT=2**. Lo delató **que la salida se contradecía con el código**,
+   que es §sondas 1 aplicada al corredor de uno mismo.
+
+### Lo que `qa:negativos` NO contesta, con su cardinal (§regla 14)
+
+- los **14** con navegador y los **13** con DB — fuera por coste y por entorno,
+  y **nombrados** en la salida en vez de desaparecer;
+- **si un negativo VERDE prueba lo que su tabla promete.** Mira el **código de
+  salida**, no la calidad del sabotaje: uno que anula media hipótesis sale verde
+  aquí y sigue sin medir nada (§*un sabotaje que anula media hipótesis no
+  falsea nada*).

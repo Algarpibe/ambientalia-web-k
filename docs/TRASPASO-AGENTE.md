@@ -464,11 +464,23 @@ Subcarpetas de `docs/research/`: `accesorios`, `arquetipo-A`, `components`,
 3. **`scripts/qa/ruido.mjs` línea 43** documenta `ETIQUETA=cqa6` en un comentario,
    pero el código lee **`CAMPANA`** (línea 407). Usa `CAMPANA`.
 4. ~~**Recuento de sondas**: el HANDOFF declara **47 migradas** y hay 48.~~
-   **RESUELTA (2026-08-02): son 48 y no queda ninguna fuera.** El «47» era un
-   recuento a mano equivocado, no una sonda sin migrar. Ya no hay que confirmarlo
-   nunca más porque **el número lo deriva `auditarSondas()`** y `qa:lib` lo
-   imprime: *«las 48 sondas COMPILAN y declaran su mínimo»*. Añadir una sonda
-   sube el listón sola.
+   **RESUELTA (2026-08-02): no queda ninguna fuera.** El «47» era un recuento a
+   mano equivocado, no una sonda sin migrar. Ya no hay que confirmarlo nunca más
+   porque **el número lo deriva `auditarSondas()`** y `qa:lib` lo imprime en su
+   última línea. Añadir una sonda sube el listón sola.
+
+   > ⚠⚠ **Y EL PROPIO TEXTO DE ESTE PUNTO SE CONVIRTIÓ EN EL ERROR QUE DESCRIBE
+   > (corregido 2026-08-18, 82.ª tanda).** Decía *«las **48** sondas COMPILAN»*
+   > citando la salida de `qa:lib` **como si fuera un dato del documento**. Son
+   > **184** a fecha de hoy: el número llevaba **136** de retraso dentro del
+   > párrafo que explica por qué no hay que escribirlo.
+   >
+   > Es §regla 9 en su forma pura —*un número recordado y uno derivado se
+   > escriben igual y no valen lo mismo*—, y la moraleja es que **citar la
+   > salida de una derivación TAMBIÉN es recordar**: lo que envejece no es el
+   > método, es la transcripción. Por eso aquí ya no hay cifra, sólo el comando.
+   >
+   > **Deriva:** `npm run qa:lib` (última línea). No lo cites: córrelo.
 5. **`docs/research/COBERTURA-MEDICION.md` lleva fecha 2026-08-01** pero la matriz
    se recomputó en el commit `4a36bbb`. Recomputar con `npm run qa:cobertura` en
    vez de leer la fecha.

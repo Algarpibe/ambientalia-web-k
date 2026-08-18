@@ -3635,6 +3635,34 @@ módulo sin `mb` propio cogería el de su fila **y sólo en las filas que traen
 > que hubiera cerrado las tres a la vez habría cableado un orden inventado en la
 > tercera.
 
+> ✅✅ **CONSUMIDA POR UNA RUTA EMITIDA — 2026-08-18 (82.ª tanda), y esto es lo
+> que faltaba para que la decisión estuviera EJERCITADA y no sólo tomada.**
+>
+> La 81.ª dejó el campo modelado, migrado y sembrado, y **ninguna ruta lo leía**:
+> de sus seis predicciones sólo `P6` pudo evaluarse. `L5` lo consume, y las seis
+> quedan **cumplidas** (`PENDIENTES-QA.md` §F3-LH-L5). El orden que la ruta sirve
+> reproduce el original **57/57**, cruzado por **tres canales**: el corpus
+> (`qa:lh-fecha-orden`, 56 separadoras), la **DB** y el **HTML servido**.
+>
+> ⚠ **Y ejercitarla destapó lo que ninguna guarda podía ver: el campo NO había
+> llegado a los TIPOS.** `fechaPublicacion` estaba en las dos colecciones de
+> Payload y **no** en `CasoDeExito` ni en `TerminoKunakpedia` (`types/kunak.ts`).
+> Nada dio error —`qa:cms-campos` 10/10, `qa:cms-decl` 64/64, el round-trip
+> 352/352— porque **el round-trip compara DATOS y el tipo sólo lo ejercita quien
+> lo lee**. Es §*una afirmación de completitud se verifica EJERCITÁNDOLA*: el
+> primer consumidor la verificó, y hasta él la decisión estaba *tomada* pero no
+> *probada*. Cerrado en los dos tipos, y los **7 controles transcritos a mano**
+> que el tipo pasa a exigir (4 casos + 3 términos) entran además en la lista
+> comparada de los dos extractores —**82→86** y **125→128** comparaciones— para
+> que la transcripción no sea peso muerto (§sondas 3).
+>
+> ⚠ **Recordatorio de formato, que es donde se confunde:** el verbatim de este
+> campo es **ISO 8601** en `casos` y en `terminos-kunakpedia` (el JSON-LD es su
+> único canal), y el **literal español** en `entradas-blog` (que sí lo pinta).
+> Reutilizar `aEpoch` de `cms/listados.ts` en un caso **tira en las 57**, que es
+> la dirección buena del fallo; el parser propio es `aEpochIso` en
+> `cms/casos.ts`. Ficha: §F3-LH-FECHA-DOS-FORMATOS.
+
 > ✅ **EJECUTADA EN LA MISMA TANDA (81.ª).** El campo existe, está migrado,
 > sembrado y verificado:
 >

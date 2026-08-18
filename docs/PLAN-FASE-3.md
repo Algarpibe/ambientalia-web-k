@@ -203,6 +203,25 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 
 ## F3-2 · listados y hubs — LISTADO-B y sus hermanos
 
+> ✅ **`L5` CONSTRUIDA Y VERIFICADA (2026-08-18, 82.ª tanda).** El comparador de
+> formas pasa de **13 · 4 ausentes · 9 comparadas** a **13 · 3 · 10**, y las tres
+> que quedan son exactamente **`L2-glosario`, `L2-faqs` y `L4`** — de las cuales
+> `L4` es **F3-3**, así que **lo que F3-2 sigue debiendo es `L2` (2 formas)**.
+> Rutas 373 → **374**. `qa:cobertura` sube **+1 en cinco ejes**. Cierre con sus
+> números y sus 20 diferencias con causa nombrada:
+> `PENDIENTES-QA.md` §F3-LH-L5.
+>
+> ⚠ **Y la entrega se lee «`L5` menos el FILTRADO», no «menos la banda»**: los 12
+> botones entran como geometría (inerte), y el comportamiento es **F3-4**.
+>
+> ⛔ **Lo que esta tanda NO puede declarar cerrado, y va con su número:** la
+> banda de filtros queda a **+4.99 px** y **ningún par del comparador la mira**
+> —el espejo no congela sus internos— así que el verde de `L5` es cierto *de lo
+> que compara* y la banda está fuera (§F3-LH-BANDA-FILTROS-SIN-INTERNOS). Y
+> `qa:enlaces`, corrido tras **dos tandas** sin correrse, sale con **105 destinos
+> que hay que clasificar** sobre 374 páginas, frente a un verde anterior que era
+> de **31** (§F3-LH-ENLACES-105).
+
 > ⛔⛔ **SEGUNDA PARADA DE ALCANCE (2026-08-14, 70.ª tanda) — y la ordenó el
 > ESCALÓN 1 del encargo, con su condición cumplida al pie de la letra.** El PASO 1
 > pedía derivar qué rutas compara `qa:lh-cmp` de verdad y cruzarlo contra

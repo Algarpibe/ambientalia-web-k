@@ -1,4 +1,126 @@
-# HANDOFF — el campo de fecha ENTRA, `L5` queda desbloqueada, y la tanda cierra en el CORTE LIMPIO 1
+# HANDOFF — `L5` construida, el Δ0 que eran dos errores, y una guarda que llevaba dos tandas muda
+
+> ✅ **Tanda de CONSTRUCCIÓN Y BARRIDO, 2026-08-18 (82.ª). Se cierran el PASO 0,
+> el PASO 1, el PASO 2, el PASO 3 y el PASO 4. `L5` entra entera y verificada a
+> los dos anchos.**
+>
+> **1 · `L5` CONSTRUIDA.** `/casos-de-exito`, 57 tarjetas, una página, sin
+> paginador. **76 de 818 pares** distintos, base `h1` **−0.01 @1440** y **0
+> @390**, y los **20** caminos que quedan tienen **todos causa nombrada**
+> (cascarón del theme builder ×5 —que tienen las 10 formas—, Isotope del filtro
+> diferido ×3, host+variante de la foto ×6, ruta local a propósito ×6).
+> Rutas **373 → 374**.
+>
+> **2 · LAS SEIS PREDICCIONES de la 81.ª, TODAS CUMPLIDAS** (aquella tanda sólo
+> pudo evaluar `P6`): rutas 374 · formas **13 · 3 · 10** con las 3 restantes
+> siendo exactamente `L2`×2 y `L4` · páginas **14 → 13 ausentes** · cobertura
+> **+1 en cinco ejes** · **0 pares movidos en `L1` y `L3`** · «documento sin
+> fecha» sigue en **0/57 y 0/37**.
+>
+> ⚠ **`P5` se verificó contra el estado FINAL, no el intermedio**, que es donde
+> habría fallado la lectura: los arreglos tocan `tema.css`, **hoja compartida con
+> `L3`**. Tras ellos se mueve **1 forma de 13**, y es `L5`.
+>
+> **3 · EL HALLAZGO: un Δ0 que eran DOS errores de 5 px anulándose.**
+> `lista.y` daba **857.77** contra **857.88** —Δ **−0.11**, que se lee como
+> limpio— y dentro había **−5.09** de sobretítulo y **+5.00** de banda de
+> filtros. Lo destapó el **`h1`**, que está por encima de la banda y no podía
+> absorberlo: su Δ era **−5.11** limpio. La salida fue medir **por composición**
+> la cadena entera, no leer el total.
+>
+> **4 · Y la causa del −5.09 es una CLASE, no una instancia:** el original sirve
+> `body { line-height: 1.7em }` —que **computa 30.6px y se hereda como
+> LONGITUD**— y el clon escribió la **ratio** `1.7`, con el comentario
+> `/* 30.6 / 18 */` delatando que alguien dividió la longitud por la letra. Son
+> idénticas a 18px y divergen en todo lo demás: `.sobretitulo` (15px) **−5.09** y
+> `.case-cliente` (16px) **−3.41**. **Arregladas las dos instancias medidas; la
+> raíz NO se toca** — es un carácter en `globals.css` y toca **las 374 rutas**,
+> o sea el disparador (b). Ficha con su alcance:
+> §F3-LH-INTERLINEA-RATIO-VS-LONGITUD.
+>
+> **5 · El canal SIN RECORTAR pagó lo que el espejo no podía enseñar.** El
+> espejo congela `slice(0, 3)` y sus tres tarjetas tienen **un** sector cada una:
+> enseña **uno** de los **tres** caminos de render. Las 57 del canal completo dan
+> **0 sectores → `<span>` vacío (4) · 1 → «Sector: » (49) · 2 → «Sectores: » (4)**
+> — el rótulo cambia de **número** con el cardinal. El clon los reproduce 4/49/4.
+>
+> **6 · Una regla del tema que no se había transcrito:**
+> `.button-group .button:first-child.is-checked { display: none }`. `L5` sirve
+> **12 botones en el DOM y ONCE visibles**, y `qa:lh-huecos` publica «12» —cuenta
+> nodos, y hace bien—, así que **el número publicado no distingue los dos casos**.
+> Coste: la fila de más, **+5.00**.
+>
+> **7 · El campo de la 81.ª NO había llegado a los TIPOS**, y sólo se vio al
+> consumirlo: `fechaPublicacion` estaba en las dos colecciones de Payload y no en
+> `CasoDeExito` ni en `TerminoKunakpedia`. **Nada dio error** —`cms-campos` 10/10,
+> `cms-decl` 64/64, round-trip 352/352— porque el round-trip compara **datos**.
+> Es §*una afirmación de completitud se verifica EJERCITÁNDOLA*. Cerrado, y los
+> **7 controles** que el tipo pasa a exigir entran en la lista comparada de los
+> extractores (**82→86** y **125→128**), para que la transcripción no sea peso
+> muerto.
+>
+> **8 · §sondas 20 aplicada tal cual está escrita.** `qa:lh-poblacion` **0 de 29
+> ANTES** del round-trip → `qa:cms-roundtrip` **352/352** (resetea) →
+> `qa:lh-poblacion` **1 de 29 DESPUÉS**. **Dirimido contra la congelada anterior
+> ANTES de fichar nada**: es la mutación, no una regresión. Restaurado con
+> `cms:seed-listados` → **0 de 29** otra vez.
+>
+> **9 · ⛔ DISPARADOR (d): `qa:enlaces` llevaba DOS TANDAS sin correrse.**
+> 2026-08-06 y 08: **31 páginas · 0 fallos**. Hoy: **374 páginas · 105 destinos ·
+> 2 rotos**. **El verde anterior era del 8 % del sitio.** Atribución derivada:
+> los 2 rotos son la ofuscación de correo de Cloudflare que el corpus transcribe
+> verbatim (**0 en `/casos-de-exito`**), y de los 105 **`L5` no origina ninguno**.
+> No son 105 defectos: son **105 destinos que hay que clasificar** en tres
+> familias. Ficha: §F3-LH-ENLACES-105.
+>
+> **10 · `qa:negativos`: 10 de 40 negativos baratos YA NO SABEN FALLAR**, dos de
+> ellos (`media-hueco` 0/7 y `media-regenera` 0/5) **no cazan nada**. Los tres
+> números que lo deciden, medidos: **67 ficheros · 40 baratos / 13 con DB / 14
+> con navegador · ≈450 s** la corrida. `qa:lib` cubre que **compilan y declaran
+> mínimo**; **compilar no es seguir sabiendo fallar**. Nace roja y **no se cablea
+> a `check`**. Ficha: §F3-SONDAS-NEGATIVOS-PODRIDOS.
+>
+> **11 · Tres errores de medición cazados en MIS propios instrumentos**, y los
+> tres son de manual: un reparto que dio **67 de 67** (un PLENO, §sondas 4:
+> seguía los imports hasta `lib.mjs`); **2 rojos que eran del corredor** y no de
+> las sondas (§regla 8: les faltaba `--env-file`); y un bucle que imprimió
+> `EXIT=0` al lado de `❌ 0/7` porque el `$?` estaba contaminado por una
+> sustitución de órdenes — lo delató **que la salida se contradijera con el
+> código** (§sondas 1).
+>
+> **12 · Números publicados corregidos.** El «186 sondas» del encargo **no existe
+> en el repo**: el obsoleto real era **«las 48 sondas»** en `TRASPASO-AGENTE.md`,
+> dentro del párrafo que explica por qué el número no se escribe — **136 de
+> retraso**. Sustituido por el comando, sin cifra. Y «los SEIS arquetipos» de
+> F3-5 **ya estaba corregido** a *5 rutas · 4 arquetipos + 1 variante* con su
+> criterio al lado.
+>
+> **13 · Barrido §regla 12, con sus números y su ámbito.** Ámbito:
+> `PLAN-FASE-3.md` §F3-2 (líneas 204–717), patrón `^> \*\*MAYÚSCULA…\*\*` →
+> **35 candidatos**. Aplicado el discriminador de la regla —*quítale la fecha y
+> el nombre propio; si sigue diciendo qué hacer, es regla*— **34 son EVENTOS**
+> (llevan su número, su ruta o su forma) y **1 tiene forma de regla general**:
+> *«un listado no tiene contenido propio: es una CONSULTA»* (L403), **que ya
+> está en `CLAUDE.md`** §regla 12 desde el barrido del 2026-08-13.
+> **0 subidas.**
+>
+> ⚠ Y las lecciones de esta tanda **tampoco suben**, a propósito: las tres
+> —el Δ0 que eran dos errores, el pleno del 67/67, el `$?` contaminado— son
+> **instancias nuevas de reglas que ya están escritas** (§*un Δ de cero puede ser
+> dos errores que se anulan*, §sondas 4, §sondas 1). Subirlas sería duplicar la
+> regla con otro ejemplo; van como **eventos** en `PENDIENTES-QA.md`.
+>
+> **14 · Lo que NO entra, y se dice:** `L2` (glosario y faqs) · `L4` (F3-3) · el
+> **filtrado** de `L5` (F3-4; la banda entra INERTE, que es geometría) · los
+> internos de la banda, a **+4.99 px que ningún par mira**
+> (§F3-LH-BANDA-FILTROS-SIN-INTERNOS) · el desempate de `L3`, DECLARADO · y **1
+> de 57 títulos** que el modelo no puede reproducir (`H<sub>2</sub>S`,
+> §CMS-TITULO-RICO, defecto vivo anterior a esta forma y **fuera del `slice(0,3)`
+> del espejo**, o sea que ningún comparador lo verá).
+
+---
+
+## 81.ª tanda — el campo de fecha ENTRA, `L5` queda desbloqueada, y la tanda cierra en el CORTE LIMPIO 1
 
 > ✅ **Tanda de ESQUEMA Y DATOS, 2026-08-18 (81.ª). Se cierran el PASO 0, el
 > PASO 1, el PASO 2 y el PASO 3. `L5` NO se construye: la tanda para en el CORTE
@@ -61,8 +183,8 @@
 > nuevas, porque éstas no la pintan en ninguna parte. **1 concepto · 2 formatos ·
 > 3 colecciones.** Unificar toca una colección poblada y verificada.
 
----
 
+---
 ## 80.ª tanda · ADENDA — los canarios cierran: el fichero llega ENTERO y la forma comentario no viaja
 
 > ✅ **Adenda de REGISTRO Y LIMPIEZA, 2026-08-18. No mide nada nuevo:

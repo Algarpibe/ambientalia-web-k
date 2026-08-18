@@ -152,7 +152,7 @@ console.log(`  tiempo total        ${total}s`);
 console.log(`  noMide · ${conNavegador.length} negativos con navegador: ${conNavegador.join(" ")}`);
 console.log(`  noMide · ${conDb.length} negativos con DB: ${conDb.join(" ")}`);
 
-w("negativos.json", {
+w("medidas/negativos.json", {
   meta: { fecha: new Date().toISOString().slice(0, 10), censados: negs.length, corridos: filas.length, segundos: total },
   reparto: { baratos: baratos.map((b) => path.basename(b)), conNavegador, conDb },
   filas,

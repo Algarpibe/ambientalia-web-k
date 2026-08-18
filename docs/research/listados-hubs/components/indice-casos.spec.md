@@ -40,7 +40,35 @@ clon ya la construye (`CtaInmerso`) · que n=1 es la población, no la muestra.
 > `L3` va 225 → 136.58). No es una anomalía a corregir: es su cascarón propio, el
 > del grupo C. **Calibrarla contra la base de las otras formas la rompe a 390.**
 
-### ⛔⛔ Y LA PREGUNTA QUE NADIE LE HIZO A ESTA SPEC, Y QUE PARA LA CONSTRUCCIÓN (2026-08-18, 80.ª tanda)
+### ✅ CONSTRUIDA (2026-08-18, 82.ª tanda) — y lo que la spec NO decía costó tres arreglos
+
+`L5` está construida y verificada a los dos anchos: **76 de 818 pares**, base
+`h1` **−0.01 @1440** y **0 @390**, con los **20** caminos restantes todos con
+causa nombrada. Acta: `PENDIENTES-QA.md` §F3-LH-L5.
+
+**Lo que esta spec midió salió bien.** Lo que costó fueron **tres cosas que
+ninguna de sus tablas nombra**, y las tres se sacaron del canal SIN RECORTAR
+(`corpus/fase-3/listados/casos-de-exito/index.html`) o de la hoja del tema:
+
+| lo que faltaba | dónde estaba | coste |
+|---|---|---|
+| `span.case-sectores` tiene **tres** formas según el cardinal (0 · «Sector: » · «Sectores: ») | las 57 tarjetas del canal sin recortar — **el espejo congela 3, y las 3 tienen un sector** | habría emitido «Sector: » en las 57 |
+| el original **esconde «Ver todos»** (`.button:first-child.is-checked{display:none}`) | la hoja del tema, **al lado** de la regla que sí se copió | **+5.00 px** de banda |
+| `.sobretitulo` y `.case-cliente` heredan **30.6px como LONGITUD**, no una ratio | el `<style>` servido: `body{line-height:1.7em}` | **−5.09** de base y **−3.41** de tarjeta |
+
+> ⚠⚠ **Y los dos últimos se anulaban entre sí en el sitio donde uno miraría.**
+> `lista.y` daba **857.77** contra **857.88**, o sea **−0.11**, que parece
+> limpio. Dentro había **−5.09 y +5.00**. Lo destapó el **`h1`**, que está por
+> encima de la banda y no podía absorberlo. Es §*un Δ de cero puede ser dos
+> errores que se anulan* — y la salida fue medir **por composición** la cadena
+> entera, no leer el total.
+
+**Sigue sin medir, y va con su número:** los **internos** de la banda de filtros
+—alto del `h2`, alto de `#filters`, paso de fila— que esta spec nunca pidió y sin
+los cuales el **+4.99** restante no se puede atribuir
+(§F3-LH-BANDA-FILTROS-SIN-INTERNOS).
+
+### ⛔⛔ Y LA PREGUNTA QUE NADIE LE HIZO A ESTA SPEC, Y QUE PARÓ LA CONSTRUCCIÓN (2026-08-18, 80.ª tanda — RESUELTA en la 81.ª/82.ª)
 
 **`L5` NO se construyó en la 80.ª tanda, y el motivo no está en ninguna de las
 listas de arriba: `¿EN QUÉ ORDEN VAN LAS 57 TARJETAS?`**
