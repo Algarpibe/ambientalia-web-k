@@ -340,6 +340,33 @@ es el 90 % de lo que el espejo contiene.
 > se tocaron salvo dos selectores muertos que el fallback ya suplía. **Todo lo
 > demás del espejo sigue siendo válido** — geometría, ritmo, tipografía, árbol.
 
+### Verificación de cierre de la 78.ª
+
+`npm run check` **exit 0** · `qa:lib` **93/93, las 179 sondas declaran su
+mínimo** · `qa:lh-extracto-unidad-neg` **4/4** · `qa:lh-selectores-neg` **4/4** ·
+`qa:lh-poblacion` **0 de 29 series sin alcanzar** (`casos` **57/57**: el
+disparador (c) **no dispara**) · `qa:cobertura` **367 rutas, matriz idéntica** ·
+`qa:manifiesto` y `qa:slugs` verdes dentro de `check`.
+
+> ⚠ **El primer `check` de la tanda salió `exit 1`** con *«Failed to collect page
+> data for `/case-studies/[slug]`»*. **No era el árbol: era el contenedor
+> `kunak-cms-pg` parado.** Arrancado el existente (no `compose up`), el mismo
+> árbol da **exit 0**. Se anota porque el mensaje **no nombra la DB** y se lee
+> como un fallo de código.
+
+### Las CUATRO predicciones del encargo: NO SE EVALÚAN, y su antecedente es falso
+
+Las cuatro tenían la forma *«tras construir `L3` y `L5`, X pasa a Y»*, y **no se
+construyó**. Así que no salen «fallidas» ni «cumplidas»: **no se evalúan**, y se
+arrastran enteras a la 79.ª —§regla del cero aplicada a una predicción—.
+
+| predicción | hoy | por qué no se evalúa |
+|---|---|---|
+| rutas **367 → 374** | **367** | nada construido |
+| formas `13 · 6 ausentes · 7` → `13 · 3 · 10` | sin correr | ídem |
+| páginas `82 · 20 ausentes` → `82 · 13` | sin correr | ídem |
+| `qa:cobertura` **tiene que subir** | **idéntica** | ídem — el encargo avisaba de que una cobertura plana con construcción sería *«cuenta otra cosa»*; **sin construcción es el resultado correcto**, igual que en la 75.ª y la 77.ª |
+
 ## ✅ F3-TARJETA-DE-MAS-76 · NO FALTA NINGUNA TARJETA: SOBRA UNA EN 3 FORMAS, Y LAS DOS CAUSAS YA TIENEN FICHA (2026-08-18, 76.ª tanda)
 
 **El encargo pedía adjudicar «el clon sirve 5 tarjetas donde el original sirve

@@ -39,11 +39,33 @@
 > el sabotaje revertía **media** hipótesis. Lo destapó exigir que cayera **por su
 > motivo** (`prohibidoEnSalida`), no el código de salida.
 >
+> **Verificación:** `npm run check` **exit 0** · `qa:lib` **93/93, las 179 sondas
+> declaran su mínimo** · los dos negativos nuevos **4/4** · `qa:lh-poblacion`
+> **0 de 29 series sin alcanzar** (`casos` **57/57** — el disparador (c) del
+> encargo **no dispara**) · `qa:cobertura` **367 rutas, matriz idéntica**.
+>
+> ⚠ **El primer `check` salió `exit 1` por el contenedor `kunak-cms-pg` PARADO**,
+> con un mensaje que no nombra la DB (*«Failed to collect page data for
+> `/case-studies/[slug]`»*) y se lee como fallo de código. Arrancado el
+> existente, el mismo árbol da **exit 0**.
+>
+> **Las CUATRO predicciones del encargo NO SE EVALÚAN**: las cuatro presuponían
+> `L3`/`L5` construidas. Rutas siguen en **367**, cobertura **idéntica**, y los
+> dos comparadores sin correr. No son fallos ni aciertos — se arrastran.
+>
 > **Lo primero de la 79.ª, y es una PRECONDICIÓN dura:** re-congelar
 > `lh-spec-{1440,390}` y `lh-espejo-{1440,390}` con el `deTarjeta` arreglado —
 > contra el original **vivo**, 13 y 82 páginas × 2 anchos. **No vale re-derivarlo
 > del corpus**: sin las hojas, la geometría sale plausible y falsa. Hasta
 > entonces, `L3` **no se puede construir contra el espejo**.
+>
+> **Y lo que la 79.ª ya NO tiene que re-derivar**, todo commiteado:
+> la unidad del extracto (**bytes · 100 · crudo**) · que `L5` **no** lleva
+> extracto y `L3` **sí** · la cobertura por forma de los 9 grupos
+> (`medidas/lh-selectores.json`) · los **8** selectores no ejercitados, ya
+> declarados · y que la banda de filtros de `L3` (3 botones, 108.8 px) y la de
+> `L5` (12 botones, «Sectores», 210.6 px) **son geometría obligatoria**, no
+> adorno omitible.
 
 ---
 
