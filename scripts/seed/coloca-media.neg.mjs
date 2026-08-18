@@ -9,6 +9,28 @@
  * | `origen-ausente` | **SIN ORIGEN** ⇒ exit 2 | un fichero que el original no sirve (ésos van aparte) |
  * | `control` | ✅ 0 sin origen, y el CONTROL del redimensionado con pares > 0 | — |
  *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠ 2026-08-18 (83.ª) · POR QUÉ EL CONTROL ESTÁ ROJO — y NO se toca
+ *
+ * El control exige `sinOrigen === 0` y hoy salen **28**. La prosa de abajo dice
+ * que ésos son *«los 28 que el original 404»*, y **eso no tiene fichero**:
+ * derivado contra el archivo (§regla 8b, *los hechos negativos se comprueban
+ * contra el archivo, no de memoria*),
+ *
+ *   media-corpus/datos/INDICE.json    → `ausentesEnOrigen`: **0**
+ *   media-corpus/fase-3/INDICE.json   → **la clave no existe**
+ *
+ * y `coloca-media` lee los 404 declarados exactamente de ahí. O sea que los 28
+ * no están declarados como ausentes en ninguna campaña: su condición de «404
+ * del original» es una afirmación **sin respaldo**, no una ausencia MEDIDA
+ * como la propia sonda pide en su §Los 404 DECLARADOS.
+ *
+ * El control hace bien en estar rojo, y NO se rebaja a `exit: 2` ni se le
+ * quita la condición: eso convertiría 28 rutas de estado desconocido en un
+ * verde. Dirimirlo exige pegarle al ORIGINAL —una campaña con su congelada—,
+ * que es lo que declara la ficha §COLOCA-MEDIA-28-SIN-ORIGEN.
+ * ══════════════════════════════════════════════════════════════════════════
+ *
  * ── ⚠ EL CONTROL TIENE UNA TRAMPA PROPIA, Y HAY QUE DECIRLA ──────────────
  * Cuando la colocación ya está hecha, `coloca-media` no copia ni regenera nada:
  * las 1889 rutas están en `public` y sólo quedan los 28 que el original 404. O

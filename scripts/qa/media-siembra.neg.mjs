@@ -68,8 +68,31 @@ const casos = [
     comprueba: (j) => {
       const ok = lee("control");
       if (!ok) return "falta la corrida de control con la que comparar";
+      /* ⚠ CORREGIDO 2026-08-18 (83.ª) — el mensaje afirmaba MÁS de lo que el
+       * dato soporta. «Las dos guardas dan el mismo número» tiene DOS causas y
+       * sólo una es un defecto:
+       *
+       *   · la sonda usa la guarda blanda            → defecto real;
+       *   · el dominio no tiene INSTANCIAS SEPARADORAS → SIN PROBAR.
+       *
+       * Y hoy es la segunda: las 33 que faltan, faltan en `public` Y en
+       * `media-corpus`, así que ninguna guarda las distingue. (En el conjunto
+       * global sí hay con qué separarlas —1 248 ficheros de `media-corpus`
+       * que no están en `public`—, pero ninguno cae en el dominio que estos 3
+       * canales referencian.)
+       *
+       * Es §*dos modelos que predicen lo mismo en todo tu dominio son uno
+       * solo*: con 0 separadoras el caso NO ha elegido entre las dos guardas.
+       * Sigue en ROJO —un SIN PROBAR no puede leerse como probado— pero
+       * nombrando la causa correcta, que es lo que decide qué haría falta
+       * para cerrarlo: una ruta del dominio presente en `media-corpus` y
+       * ausente de `public`. */
       if (!(j.reparto.faltanEnPublico < ok.reparto.faltanEnPublico))
-        return `la guarda blanda dio ${j.reparto.faltanEnPublico} y la buena ${ok.reparto.faltanEnPublico}: la sonda NO está usando la guarda que declara`;
+        return (
+          `SIN PROBAR · 0 instancias separadoras: la blanda dio ${j.reparto.faltanEnPublico} y la estricta ` +
+          `${ok.reparto.faltanEnPublico}, o sea que las ${ok.reparto.faltanEnPublico} que faltan, faltan en LOS DOS sitios. ` +
+          `No dice que la sonda use la guarda mala: dice que hoy el dominio no las distingue`
+        );
       return null;
     },
   },

@@ -52,6 +52,24 @@ const casos = [
     sabotaje: "panel-muerto",
     exit: 2,
     porQue: "el localizador del panel no casa ⇒ LOCALIZADOR MUERTO (el fallo REAL de la 1.ª corrida)",
+    /* ⚠ 2026-08-18 (83.ª) · este caso está SIN PROBAR, no roto.
+     * La guarda que ejercita es `noModeladoNiCpt.length && evidencia.size === 0`,
+     * o sea que necesita AL MENOS UN slug fuera del CPT para poder saltar. Hoy
+     * el dominio trae **0 SIN-CPT**, así que matar el localizador no puede
+     * producir «LOCALIZADOR MUERTO» — no porque la guarda falle, sino porque no
+     * hay nada que localizar.
+     *
+     * Es §*una regla derivada sobre un dominio donde el caso NO SE DA está SIN
+     * PROBAR para ese caso*, aplicado al sabotaje: el negativo no puede
+     * fabricar el hueco sin inventarse un slug, y un sabotaje que se inventa su
+     * propio dominio prueba el sabotaje, no la sonda.
+     *
+     * NO se rebaja a `exit: 0` ni se retira: se deja rojo con su razón, porque
+     * el día que vuelva a haber un slug fuera del CPT esta guarda es la que
+     * impide leer su cero como «no son nada». */
+    sinProbarSi: (d) => (d.referencias?.porClase?.["SIN-CPT"]?.length ?? 0) === 0,
+    porQueSinProbar:
+      "0 slugs fuera del CPT en el dominio de hoy ⇒ la guarda del cero no tiene qué ejercitar (SIN PROBAR, no roto)",
     salidaTiene: /LOCALIZADOR MUERTO/,
     comprueba: (d) =>
       d.referencias?.porClase?.["SIN-CPT"]?.length === 0
@@ -102,6 +120,16 @@ for (const c of casos) {
   if (!mal) {
     if (!existsSync(fichero)) mal = `no congeló ${fichero.split(/[\\/]/).pop()}`;
     else mal = c.comprueba(JSON.parse(readFileSync(fichero, "utf8")));
+  }
+
+  /* Un caso cuyo DOMINIO no ejercita la guarda no es un caso roto: es un caso
+   * SIN PROBAR, y los dos se leen igual si no se nombran (§*una regla derivada
+   * sobre un dominio donde el caso NO SE DA está SIN PROBAR*). Sigue contando
+   * como fallo —un SIN PROBAR no puede leerse como probado— pero con su razón
+   * y su número delante, que es lo que dice qué haría falta para cerrarlo. */
+  if (mal && c.sinProbarSi) {
+    const dCongelada = existsSync(fichero) ? JSON.parse(readFileSync(fichero, "utf8")) : null;
+    if (dCongelada && c.sinProbarSi(dCongelada)) mal = `SIN PROBAR · ${c.porQueSinProbar}`;
   }
 
   if (mal) { fallos++; console.log(`  ❌ SABOTAJE=${c.sabotaje.padEnd(20)} ${mal}`); }
