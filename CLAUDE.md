@@ -807,7 +807,6 @@ Estas se pagaron con horas de depuración. No las reinventes:
   > Regla: **mientras haya una sonda en vuelo, nada de `build`, `check` ni
   > `dev`.** Si hay que verificar código, se espera o se hace en otra copia.
 
-<!-- KC-01 @39000 QF7MVB -->
 `KV-01 · 7HQMPD`
 ## El principio: verificar contra la salida servida
 
@@ -1441,8 +1440,6 @@ defecto en ellas no se ve: se cree. Las dos primeras salieron de arreglar E1 y
 E3; la tercera, de auditar el piloto de CMS-0e; la cuarta, de C-SP16; la quinta,
 de que la corrida que verificaba C-QA1 se comiera el diagnóstico de C-QA1.
 
-<!-- KC-02 @78000 ZTR4KP -->
-`KV-02 · 4RXKTB`
 **1 · Un descuadre impreso y no contado da el mismo informe que uno no visto.**
 
 > **Toda sonda tiene UN solo canal de verdad: lo que imprime y lo que cuenta no
@@ -2029,8 +2026,6 @@ cuadrar el `null`** — o sea cablearlo al defecto del instrumento.
 **Y el defecto se pone en la dirección que grita:** liberado el canónico, lo que
 todavía no se ha re-medido **falla en voz alta** en vez de leer lo caducado.
 
-<!-- KC-03 @117000 MJ2WDX -->
-`KV-03 · 9DWNZL`
 **6 · UN PARÁMETRO POR DEFECTO CONVIERTE «NO LO SÉ» EN «ESTÁ BIEN».**
 
 Las cinco reglas de arriba persiguen el mismo animal: *no encontrar nada y no
@@ -2520,8 +2515,6 @@ está verificado»**. Se escribe qué lo verifica —una derivación independien
 un negativo que salga rojo si la premisa se rompe— o se dice que nadie lo ha
 verificado.
 
-<!-- KC-04 @146600 BHN8QS -->
-`KV-04 · 2FGVSC`
 **16 · «MISMO CÓDIGO» ES UN HECHO NEGATIVO. EL NO-DETERMINISMO ES LA ÚLTIMA
 HIPÓTESIS, NUNCA LA PRIMERA.** (2026-08-18)
 
@@ -2565,8 +2558,6 @@ bastar:
 > claves menos y 0 nuevas**, que es la forma de una secuencia de arreglos y no la
 > de un árbol que tiembla.
 
-<!-- KC-05 @149352 XLV5GC -->
-`KV-05 · 6BJYRM`
 **Y la mitad que protege a la hipótesis de morir injustamente:** lo que quede sin
 explicar **se declara con su n**, no se descarta por asociación. Aquí quedó
 `/contaminacion-por-metano` **+16** con **n = 1**, en una corrida que murió antes
@@ -2583,8 +2574,6 @@ ya planificada**.
 > 1440 y sólo de 1440** — §regla espejo: en el otro ancho hay un contenedor que
 > se lo come.
 
-<!-- KC-06 @150328 PWD3RY -->
-`KV-06 · 3PKXWQ`
 **17 · UNA GUARDA TIENE QUE DEVOLVER TODAS LAS MITADES DEL COMPORTAMIENTO QUE
 RELEVA — Y `process.exitCode` NO MATA.** (2026-08-17)
 
@@ -2659,8 +2648,6 @@ aquí lo compartido no es el fichero, es **la variable**.
 > vio que el rojo y el verde estaban imprimiendo la misma frase. §regla 1 —*lo
 > que imprime y lo que cuenta no pueden discrepar*— aplicada al **negativo**.
 
-<!-- KC-07 @154432 NKS9TF -->
-`KV-07 · 8NTHVG`
 **18 · «HAY UNA SONDA EN VUELO» NO SE DERIVA DEL ÁRBOL.** (2026-08-17)
 
 Este documento ya manda *«mientras haya una sonda en vuelo, nada de `build`,
@@ -2688,6 +2675,44 @@ habrían entrado en la línea base indistinguibles de las 357 buenas.
 > construye fuera** (`NEXT_DIST_DIR`), que es lo que la §regla del build ya dice
 > hacer.
 
+**19 · UN MARCADOR DE INSTRUMENTO NO PUEDE SER UN COMENTARIO HTML EN UN
+DOCUMENTO QUE SE INYECTA COMO CONTEXTO.** (2026-08-18)
+
+> **El canal que auto-carga este fichero NO transporta los comentarios HTML**, y
+> un comentario es la única forma cuyo «no aparece» **no deja hueco**: ni línea
+> en blanco, ni marca, ni error. Así que su ausencia **no se distingue de que no
+> exista**, y un canario con esa forma mide **cero por construcción**.
+
+Es **§sondas 4** —*un selector que no casa con nada no es un cero*— cometida en
+el **DISEÑO** de la sonda en vez de en su código. Y **se pagó dos veces en la
+misma tanda**, que es la mitad que la convierte en regla:
+
+| | qué se montó | cardinal |
+|---|---|---|
+| la sonda | 7 `KC-` + el `CANARIO-CARGA`, los ocho comentarios | **8 de 8 mudos** |
+| **el control** | `KC-00`, fuera del repo — **y también un comentario** | **1 de 1 mudo** |
+
+**Un control montado en la misma forma rota que la sonda no es un control**
+(§regla 8: *un negativo sin control no es un negativo*): hereda el defecto que
+venía a vigilar, así que su cero tampoco dirimía entre *«el canal los borra»* y
+*«la copia auto-cargada es vieja»* — **0 instancias separadoras**, y la pregunta
+se quedó abierta con el instrumento entero gastado.
+
+> **Y el corolario operativo, que costó una iteración completa (v1 → v2): la
+> forma correcta es TEXTO VISIBLE.** Ocho `KV-` en línea suelta se citaron **los
+> ocho**, en orden y **ubicados en la estructura** del documento —o sea que llegó
+> el contenido, no sólo las líneas de marcador—, y la pregunta que v1 dejó
+> indecidible se cerró al primer intento.
+
+Medido el 2026-08-18 sobre la v2 de este fichero —**156.426 chars**, **6.426**
+por encima del aviso de 150.000—: **el truncado queda REFUTADO**, el aviso del
+harness es **informativo** y §regla 12 conserva su premisa —`CLAUDE.md` se lee
+cada sesión, **entero**—. El instrumento se retira salvo dos líneas sueltas,
+`KV-01` (~30 % del fichero) y `KV-08` (a 16 chars del final), que se quedan de
+**tripwire permanente**: con los dos extremos, cualquier sesión futura contesta
+«¿me llega entero?» **sin volver a instrumentar**. Acta, los cinco veredictos y
+lo que sigue sin medir: `PENDIENTES-QA.md` §META-CANARIOS-DE-CARGA.
+
 ## Comandos
 
 ```bash
@@ -2697,5 +2722,4 @@ npm run build
 npm run typecheck
 ```
 
-<!-- CANARIO-CARGA-2026-08-18: si lees esto, el fichero llega entero -->
 `KV-08 · 5ZMCFR`

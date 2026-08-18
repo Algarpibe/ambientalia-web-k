@@ -1,9 +1,12 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## 📋 META-CANARIOS-DE-CARGA · MARCADORES EN `CLAUDE.md` PARA MEDIR SI LLEGA ENTERO (v1 opaca 2026-08-18 — **MEDIDA** · v2 visible 2026-08-18 — instrumentación, la medida la toma la sesión siguiente)
+## ✅ META-CANARIOS-DE-CARGA · MARCADORES EN `CLAUDE.md` PARA MEDIR SI LLEGA ENTERO — **CERRADA 2026-08-18** (v1 opaca MEDIDA · v2 visible MEDIDA · instrumento retirado)
 
-**Esto no mide nada todavía.** Deja puesto el instrumento y escribe la lectura
-**antes** de mirar, que es lo único que impide decidirla por cansancio.
+**CERRADA.** Las dos hipótesis están dirimidas y el instrumento retirado: el
+resultado, los cinco veredictos y lo que sigue sin medir viven al final, en
+§✅ v2 · EL CIERRE. Todo lo que va desde aquí hasta §Alcance de v2 es el
+**pre-registro** —el de v1 y el de v2— y **se conserva tal como se escribió**,
+que es lo único que impide releer una lectura decidida por cansancio.
 
 > ⚠ **Lo de aquí abajo hasta §Alcance es v1, y su lectura ya está tomada.** El
 > resultado, el defecto del instrumento que lo produjo y la v2 que lo corrige
@@ -219,7 +222,7 @@ modificadas`, y los 8 comentarios de v1 intactos (`grep -c` → **7** `KC-` + **
 
 | lo que conteste la sesión nueva | lectura |
 |---|---|
-| cita los `KV-` y **no** los `KC-` | **H1: los comentarios HTML no llegan.** El fichero sí, y el medio queda medido |
+| ✅ **CUMPLIDO** — cita los `KV-` y **no** los `KC-` | **H1: los comentarios HTML no llegan.** El fichero sí, y el medio queda medido |
 | **ni** `KV-` **ni** `KC-` | **H2: copia obsoleta.** Y la pregunta siguiente es **cuánto** de obsoleta |
 | cita **los dos** juegos | la respuesta de v1 era **incorrecta**: se repite v1 antes de fichar nada |
 | unos `KV-` sí y otros no | **ahí sí hay un corte**, y el reparto dice dónde. Es el único caso que reabre el truncado, **y con otro número** |
@@ -234,6 +237,92 @@ común, con el canal por el que se mira como contenedor).
 **No se corrió `npm run check`:** son ocho líneas de texto en un documento —cero
 código, cero superficie de build— y sigue habiendo ~17 `node.exe` sin
 identificar (§regla 18).
+
+### ✅ v2 · EL CIERRE — lo que midió la sesión nueva (2026-08-18)
+
+Sesión nueva en el repo, **sin abrir ningún fichero y sin herramientas**,
+preguntada sólo por lo auto-cargado:
+
+| se preguntó | contestó | qué prueba |
+|---|---|---|
+| primera línea y primera sección | `# kunak-web-clone` · `## Qué es esto` | el **principio** llega |
+| los `KV-` en orden y con su token | **los OCHO**, en orden, **y UBICADOS en la estructura** (`KV-05` «dentro de la regla 16, antes de *Y la mitad que protege a la hipótesis…*») | llegó **el contenido**, no sólo las líneas de marcador |
+| los comentarios `KC-` | **cero** — *«el texto recibido no contiene la secuencia `<!--` en ningún punto»* | la **forma** comentario no viaja |
+| con qué termina | §Comandos + su bloque `bash` + `KV-08 · 5ZMCFR` | el **final** llega |
+
+**Los cinco veredictos, con sus números:**
+
+| # | hipótesis | veredicto | el número |
+|---|---|---|---|
+| 1 | **truncado a 150.000** | ❌ **REFUTADO** | fichero **156.426** chars, exceso **6.426**; `KV-01` en **47.855**, `KV-08` en **156.410** —a **16** del final—, y **el medio medido en 8 puntos** |
+| 2 | **H1 · el canal no transporta comentarios HTML** | ✅ **CONFIRMADA** | **8 de 8** comentarios mudos contra **8 de 8** `KV-` citados, **en las mismas líneas**: la única variable que queda es la forma |
+| 3 | **H2 · copia auto-cargada obsoleta** | ❌ **REFUTADA** | los `KV-` entraron en `d2a392b`, **el commit más reciente**; una copia vieja no podría traerlos |
+| 4 | el aviso del harness | **INFORMATIVO**, no truncante | lo auto-cargado llega **6.426** chars más allá del límite del que avisa |
+| 5 | §regla 12 (*`CLAUDE.md` se lee cada sesión*) | ✅ **premisa intacta** | se lee **entero**, no sólo hasta 150.000 |
+
+> ⚠ **El método del offset, otra vez, porque difiere en 1 de la tabla de v2:**
+> aquí `indexOf('KV-01')` sobre el **token pelado**, 0-indexado y en chars
+> (**47.855**); la tabla de §v2 indexa el **backtick** de apertura (**47.854**).
+> Es diferencia **de método, no del fichero** — se escribe para que nadie lea
+> ese −1 como un desplazamiento.
+
+> **Lo que hizo discriminador a v2 fue la FORMA, no la posición.** v1 dejó H1 y
+> H2 con **0 instancias separadoras** porque las dos predecían exactamente el
+> mismo texto; v2 puso `KV-` y `KC-` **en la misma línea del fichero**, con lo
+> que citados y mudos sólo se diferencian en la forma. Es §*dos modelos que
+> predicen lo mismo en todo tu dominio son uno solo*, resuelto **fabricando la
+> separadora** en vez de midiendo más veces.
+
+### El control NO se corrió, y es correcto
+
+`C:\Users\algar\kc-control-canario\CLAUDE.md` —**62 bytes**, derivado con
+`statSync`— **se queda donde está, sin correr**. Un control sirve para
+desambiguar un **cero**, y aquí no hay cero: los ocho `KV-` se citaron. **Un
+positivo no lo necesita**, y correrlo habría costado un reinicio de sesión para
+confirmar algo ya decidido.
+
+### El instrumento, RETIRADO — con su coste, que va en la dirección incómoda
+
+| | antes (`d2a392b`) | ahora | por qué |
+|---|---|---|---|
+| comentarios `KC-` + `CANARIO-CARGA` | **8** | **0** | medidos inertes al canal: no pueden volver a medir nada |
+| `KV-` en el cuerpo | **8** | **2** — `KV-01` y `KV-08` | **tripwire permanente**: con los dos extremos, una sesión futura contesta «¿me llega entero?» sin volver a instrumentar |
+| tamaño en chars | **156.426** | **158.274** | **+1.848** |
+
+⚠ **La retirada NO redujo el fichero, y hay que decirlo con el signo bueno:** los
+14 marcadores retirados pesaban ~**450** chars y la **regla 19** que registra el
+hallazgo pesa ~**2.300**. Esta tanda **cierra la pregunta y engorda el
+documento** — que es justo la tensión que la nota de higiene de `HANDOFF.md`
+deja abierta.
+
+**Comprobado sobre el fichero final:** `7HQMPD` **1 vez** (47.834) · `5ZMCFR`
+**1 vez** (158.266, a **16** del final) · los seis tokens retirados **0 veces
+cada uno** · `<!--` **0 veces**. Los identificadores `KV-01`/`KV-08` sí aparecen
+además **dentro de la regla 19**, pero **sus tokens no**: lo que prueba llegada
+sigue sin poder citarse sin haber recibido su línea.
+
+### Lo que sigue SIN medir: si el comportamiento depende del TAMAÑO
+
+**No se ha comprobado**, y el alcance es estrecho:
+
+> Lo medido es que **un fichero de 156.426 chars llega entero**. De ahí **no se
+> sigue** que llegue uno mayor: no hay ninguna medida al otro lado de ningún
+> umbral, porque el único fichero con el que se contrastó —el control— pesa
+> **62 bytes** y está **por debajo**, no por encima.
+
+El dominio medido es **un punto**, así que *«el aviso es informativo»* vale
+**para este tamaño**. Un `CLAUDE.md` que siga creciendo puede cruzar otro umbral
+sin que nada lo diga, y el tripwire `KV-01`/`KV-08` es exactamente lo que lo
+detectaría sin volver a instrumentar.
+
+**Y un factor del número que tampoco está medido:** `core.autocrlf=true` en esta
+máquina, así que un checkout limpio dejaría el fichero en **CRLF** y su cuenta en
+chars subiría ~**2.700** (una por línea). Todo lo de esta ficha está medido sobre
+el fichero **en disco tal como está, en LF**.
+
+**No se corrió `npm run check`:** esta tanda toca **tres documentos y cero
+código** —`CLAUDE.md`, esta ficha y `HANDOFF.md`— y el encargo lo prohíbe
+explícitamente (§regla 18).
 
 ## ⛔ F3-LH-ORDEN-DE-L5-SIN-MODELAR · EL ÍNDICE DE CASOS NO SE PUEDE CONSTRUIR: SU CLAVE DE ORDEN NO ESTÁ EN EL MODELO (2026-08-18, 80.ª tanda)
 

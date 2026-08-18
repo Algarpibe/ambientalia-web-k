@@ -1,4 +1,63 @@
-# HANDOFF — la deriva no llega, `L3` se construye, y `L5` lo para el MODELO
+# HANDOFF — los canarios cierran: el fichero llega ENTERO, la forma comentario no viaja, y reducir `CLAUDE.md` pasa a HIGIENE
+
+> ✅ **Tanda de REGISTRO Y LIMPIEZA, 2026-08-18 (81.ª). No mide nada nuevo:
+> cierra la pregunta de los canarios, escribe la regla y retira el instrumento.**
+>
+> **1 · El truncado a 150.000 queda REFUTADO, y con el medio medido en 8
+> puntos.** Una sesión nueva, sin herramientas, citó **los ocho `KV-`** en orden,
+> con su token y **ubicados en la estructura** del documento —o sea que llegó el
+> **contenido**, no sólo las líneas de marcador—. Fichero **156.426** chars,
+> **6.426** por encima del aviso; `KV-08` a **16** chars del final. El aviso del
+> harness es **INFORMATIVO**, y §regla 12 conserva su premisa: `CLAUDE.md` se lee
+> cada sesión, **entero**.
+>
+> **2 · H1 CONFIRMADA · H2 REFUTADA, y lo que las separó fue la FORMA.** Cero
+> comentarios `KC-` llegaron —*«el texto recibido no contiene la secuencia
+> `<!--` en ningún punto»*— frente a **8 de 8** `KV-` citados **desde las mismas
+> líneas del fichero**. Y la copia no es vieja: los `KV-` entraron en `d2a392b`,
+> el commit más reciente. v1 había dejado las dos hipótesis con **0 instancias
+> separadoras**; v2 las separó **fabricando la separadora**, no midiendo más
+> veces.
+>
+> **3 · Regla nueva en `CLAUDE.md` (§sondas 19), con sus dos mitades.** Un
+> marcador de instrumento **no puede ser un comentario HTML** en un documento que
+> se inyecta como contexto: es la única forma cuyo «no aparece» no deja hueco, así
+> que su cero es ambiguo por construcción. Y **se pagó dos veces en la misma
+> tanda** — la sonda (**8 de 8** mudos) y **el control** (`KC-00`, también
+> comentario: **1 de 1**), montado en la misma forma rota que venía a vigilar.
+>
+> **4 · Instrumento RETIRADO, y el coste va en la dirección incómoda.** Fuera los
+> 8 comentarios y 6 `KV-`; quedan **`KV-01` y `KV-08`** de **tripwire
+> permanente**. Los 14 marcadores pesaban ~**450** chars y la regla 19 pesa
+> ~**2.300**: el fichero **sube 156.426 → 158.274** (**+1.848**). El control
+> **no se corrió** —un positivo no lo necesita— y se queda donde está.
+>
+> **5 · Lo que sigue SIN medir, con su número:** si el comportamiento depende del
+> **TAMAÑO**. El dominio medido es **un punto**, y el único contraste disponible
+> —el control— pesa **62 bytes**, o sea que está **por debajo** del umbral, no por
+> encima. De «156.426 llega entero» no se sigue nada sobre un fichero mayor.
+>
+> **6 · Y la consecuencia de gestión: REDUCIR `CLAUDE.md` DEJA DE SER BLOQUEANTE
+> Y PASA A HIGIENE.** No se pierde ninguna regla por el camino —llega entero—, así
+> que ya no hay nada que **rescatar**; lo que queda es **coste**. Cada sesión paga
+> **158.274** chars de contexto, y el fichero crece de forma sostenida:
+>
+> | ventana (commits que TOCAN `CLAUDE.md`) | crecimiento medio |
+> |---|---|
+> | los **80** desde el primero | **1.955** chars |
+> | los últimos **10** | **2.010** chars |
+> | los últimos **20** | **2.265** chars |
+> | los últimos **30** | **2.322** chars |
+>
+> ⚠ **El «4.081 chars por tanda» del encargo NO reproduce:** ninguna ventana
+> derivada lo da, y la mayor de las cuatro se queda en **2.322**. Se escribe el
+> **derivado con su ventana**, y con su unidad declarada — *commit que toca el
+> fichero*, **no** *tanda*: una tanda puede tocarlo varias veces o ninguna, y las
+> tres últimas (los canarios: +74, +208, +136) son atípicamente pequeñas.
+
+---
+
+## 80.ª tanda — la deriva no llega, `L3` se construye, y `L5` lo para el MODELO
 
 > ✅⛔ **Tanda MIXTA, 2026-08-18 (80.ª). Se cierran el PASO 0, el PASO 1 y el
 > PASO 2; el PASO 3 NO se construye, y no por tiempo: por un hueco del modelo
