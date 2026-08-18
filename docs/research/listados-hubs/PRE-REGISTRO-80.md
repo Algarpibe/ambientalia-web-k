@@ -302,3 +302,48 @@ de WordPress).
 
 Fichas: `PENDIENTES-QA.md` §F3-LH-ORDEN-DE-L5-SIN-MODELAR · `ESQUEMA-CMS.md`
 §7g (**`CMS-ORDEN-L2` no era de `L2`: es de TRES arquetipos**).
+
+---
+
+# PASO 4 · CIERRE — lo corrido, con su código de salida
+
+| sonda | resultado |
+|---|---|
+| `qa:lh-cmp-todas` @1440 | **82 · 14 ausentes · 68 comparadas · 5347 distintos** (4996 + los 351 de `L3`) |
+| `qa:lh-cmp-todas` @390 | **82 · 14 · 68 · 5325** |
+| `qa:lh-cmp` @1440 · @390 | **13 · 4 · 9** · 622 y 619 distintos |
+| `qa:lh-cubos` @1440 · @390 | cubo 1 **0** · cubo 2 **0** · cubo 3 **5347 / 5325**. Negativo **4/4** |
+| `qa:lh-huecos` + negativo | **5/5 huecos derivados** · negativo **6/6**, cada uno por su motivo |
+| `qa:lh-selectores` | **149/149 páginas · 0 parciales sin declarar** |
+| `qa:lh-poblacion` | **0 déficit** en las 29 series — disparador (d) NO dispara |
+| `qa:cobertura` | base **93 → 99** · árbol **93 → 99** · anchos **77 → 83** · filas **68 → 74** · módulos **64 → 70** · total **367 → 373** |
+| `qa:manifiesto` · `qa:slugs` | **373 rutas · 19 familias · 0 vacías** · **194 slugs de 3 familias, 0 colisiones** |
+| `npm run check` | **EXIT 0** (lint 0 errores · typecheck · build · manifiesto · slugs · `cms-campos` 0 campos sin contraparte) |
+
+**Estado derivado al cerrar:** **416** commits · **1107** congeladas · **181**
+sondas (`qa:lib`, última línea) · **373** rutas.
+
+⚠ **Lo que NO se corrió, y va dicho:** `qa:enlaces` — pide un servidor en el
+puerto 3000 que esta sesión no levanta, y **no está en la lista del PASO 4** del
+encargo. Los `href` nuevos de `L3` apuntan a rutas **que el build emite** (las 23
+de documento, los 3 archivos de término) y al hub externo, pero **eso es una
+comprobación a mano, no la guarda**.
+
+## Barrido §regla 12, acotado a F3-2 — CON SU NÚMERO
+
+**35 enunciados** con forma de regla (`^> **MAYÚSCULA…**`) en `PLAN-FASE-3.md`
+§F3-2 (líneas 204–699). De ellos:
+
+- **1 es regla general y NO estaba en `CLAUDE.md`** → escrito en §La causa común,
+  como contenedor nuevo: **el recuento de pares tocados por una deriva del
+  objetivo no dice si hay daño; lo dice el corte CREA/MUEVE**, con su mitad de
+  redacción y con el aviso de que **la deriva geométrica cae entera en el eje que
+  el comparador no lee como defecto**;
+- **1 ya estaba** (*«un listado no tiene contenido propio: es una CONSULTA»*,
+  subida el 2026-08-13);
+- los **33** restantes son **eventos** con su fecha y su número, y se quedan
+  donde están.
+
+**No es rutina:** la 79.ª lo sacó en 1 y ésta también, y la regla que sale de
+aquí es exactamente la que esta tanda estuvo a punto de incumplir publicando
+`cubo 1 = 0`.
