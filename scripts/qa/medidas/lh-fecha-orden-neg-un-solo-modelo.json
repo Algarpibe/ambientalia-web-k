@@ -1,0 +1,90 @@
+{
+  "fecha": "2026-08-18",
+  "sonda": "lh-fecha-orden",
+  "sabotaje": "un-solo-modelo",
+  "arquetipos": {
+    "L5-casos": {
+      "coleccion": "casos",
+      "listado": "/es/casos-de-exito/",
+      "paginasLeidas": 1,
+      "tarjetasServidas": 57,
+      "singularesEnDisco": 57,
+      "comparadas": 57,
+      "veredicto": "57/57",
+      "pleno": true,
+      "separadorasPorRival": {},
+      "separadorasDistintas": 0,
+      "empates": 0,
+      "sinFecha": {
+        "n": 0,
+        "de": 57,
+        "slugs": []
+      },
+      "fechaAmbigua": 0,
+      "servidasSinSingular": 0,
+      "primerasTres": [
+        {
+          "slug": "monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman",
+          "fecha": "2026-07-20T09:46:56+02:00"
+        },
+        {
+          "slug": "control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez",
+          "fecha": "2026-06-22T12:54:22+02:00"
+        },
+        {
+          "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+          "fecha": "2026-05-20T14:32:07+02:00"
+        }
+      ]
+    },
+    "L2-glosario": {
+      "coleccion": "terminos-kunakpedia",
+      "listado": "/es/glosario/",
+      "paginasLeidas": 8,
+      "tarjetasServidas": 37,
+      "singularesEnDisco": 37,
+      "comparadas": 37,
+      "veredicto": "37/37",
+      "pleno": true,
+      "separadorasPorRival": {},
+      "separadorasDistintas": 0,
+      "empates": 0,
+      "sinFecha": {
+        "n": 0,
+        "de": 37,
+        "slugs": []
+      },
+      "fechaAmbigua": 0,
+      "servidasSinSingular": 0,
+      "primerasTres": [
+        {
+          "slug": "emisiones-por-chimenea",
+          "fecha": "2026-07-28T16:23:34+02:00"
+        },
+        {
+          "slug": "oxidos-de-nitrogeno-nox",
+          "fecha": "2026-06-23T09:31:56+02:00"
+        },
+        {
+          "slug": "ldar",
+          "fecha": "2026-05-26T11:20:13+02:00"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "noMide": [
+      "el MECANISMO: reproducir el orden no prueba que WordPress ordene por ese campo (por eso las separadoras)",
+      "`documentos-cientificos`: 0 de 23 traen datePublished — fuera de alcance por DATO, decisión DECLARAR",
+      "el caso «documento SIN fecha»: 0 de 94 — camino de render SIN ESTRENAR",
+      "el orden de `/casos-de-exito/page/2`: es un DUPLICADO (D2.4) y NO entra, 1 página excluida de 2 en disco"
+    ]
+  },
+  "veredicto": {
+    "plenos": 2,
+    "arquetiposEvaluados": 2,
+    "separadorasTotales": 0,
+    "ganador": "fecha-desc",
+    "rivales": []
+  }
+}
