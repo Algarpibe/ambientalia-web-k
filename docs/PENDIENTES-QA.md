@@ -5874,6 +5874,41 @@ su render con el round-trip verde, después la migración del dato.
 carácter Unicode, no una marca — y `monitor.ts` y `nav.ts` no son monográficos.
 **Se decide contra el original de cada ruta, no por búsqueda y reemplazo.**
 
+> ✅ **DECIDIDO UNO A UNO el 2026-08-18 (76.ª tanda), contra el original de cada
+> ruta — y la advertencia de arriba se cobra: los cuatro ficheros dan TRES
+> veredictos distintos, así que un `sed` habría roto dos de ellos.**
+>
+> Recuentos re-derivados hoy (`grep -o '[₀-₉]' | wc -l`, ocurrencias y no
+> líneas): **nav 9 · monitor 14 · casos 1 · monográfico 25** — los cuatro
+> **coinciden con los de la ficha**.
+>
+> | fichero | n | canal mirado | veredicto |
+> |---|---|---|---|
+> | **`nav.ts`** | **9** | el **nav de cabecera** del original, en `corpus/productos/monitor-calidad-aire.html` y en las 149 capturas de listado: `Dióxido de nitrógeno (NO<sub>2</sub>)`, `Ozono (O<sub>3</sub>)`, `Sulfuro de hidrógeno (H<sub>2</sub>S)`… **9 de 9** | ⛔ **MARCA — DEFECTO**, y el de mayor alcance del proyecto: el nav va en **las 367 rutas**. El clon sirve `NO₂` donde el original sirve `NO<sub>2</sub>` |
+> | **`monitor.ts`** | **14** | **13 están en `alt=` de imagen y 1 en un comentario de código.** `alt` es un atributo de **texto plano**: `<sub>` no puede existir ahí *por la gramática de HTML*, y el comentario no se sirve | ✅ **FUERA DE ESTA CLASE**, sin depender de lo que haga el original |
+> | **`casos.ts`** | **1** | `corpus/casos/distrito-baja-emision-rio-de-janeiro.html`: el original escribe **`<b>394 megatoneladas de CO₂ equivalente</b>`**, con el **carácter Unicode**, no `<sub>` | ✅ **TEXTO — CORRECTO, no se toca.** Es el caso exacto que la advertencia describía |
+> | **`monografico.ts`** | **25** | ya derivado por esta ficha: **41** `<sub>` en EDAR y **31** en petróleo | ⛔ **MARCA — DEFECTO** |
+>
+> **O sea que el criterio 1 no es «cero subíndices Unicode en `src/lib/*.ts`»:
+> es cero en `nav.ts` y en `monografico.ts`, y EXACTAMENTE UNO en `casos.ts`.**
+> Escribirlo como «cero» convertiría una transcripción fiel en un defecto — que
+> es §*la salida servida de una declaración es lo que el navegador hace con
+> ella, no lo que el autor pretendía*, aplicado a la dirección contraria.
+>
+> ⚠ **Lo que esto NO decide, con su cardinal:** de las **7** imágenes de
+> co-ubicación de `monitor.ts`, la captura del original sólo trae **1**
+> (`co_mexico.webp`) **y sin `alt`** — sólo `title="co_mexico"`. Si el `alt`
+> inventado del clon es fidelidad, mejora o defecto **no se puede dirimir con lo
+> capturado**, y es otra pregunta que ésta: aquí no hay marcado que aplanar.
+> (Las otras 6 no se sirven en el HTML capturado — el mismo mecanismo de panel
+> activo de `ESQUEMA-CMS.md` §7d.)
+>
+> **Y el defecto de `nav.ts` no es de este bloque:** sube a su propia línea de
+> alcance porque toca **367 rutas** y no 2, y porque su arreglo **no depende de
+> `MonoInline`** — el rótulo del nav es un literal de `nav.ts`, no un campo del
+> modelo. Ver §CMS-TITULO-RICO (`ESQUEMA-CMS.md` §7f), que es la misma clase
+> —**fórmula química aplanada**— en el otro extremo del sistema.
+
 ## 🧨 CLASE-INLINE-PRESTADO · `inline` en campos cuyo tipo medido es RICO — 4 instancias, y una de ellas está VIVA en pantalla (2026-08-09)
 
 **La clase que destapó el escalón del texto**, generalizada para que no haga
