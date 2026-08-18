@@ -1594,6 +1594,43 @@ apariciones, al lado de `h2`, `h3` y `h1`.
 > selector es **discriminar**, casar en el 100 % no es «esta propiedad la tienen
 > todas»: casi siempre es que está mirando otra cosa.
 
+⚠ **Y EL HUECO QUE HAY ENTRE LOS DOS, QUE ES DONDE VIVEN LOS LARGOS (2026-08-18,
+78.ª tanda): UN SELECTOR QUE CASA EN UNAS FORMAS Y EN OTRAS NO NO ES NI EL CERO
+NI EL PLENO.**
+
+> **La guarda del cero mira el TOTAL, y un total no distingue «casa en todas
+> partes un poco» de «casa en dos sitios y en ninguno más».** Así que un selector
+> que cubre dos formas de nueve **sale VIVO**, y los ceros de las otras siete se
+> leen como *«esa forma no tiene esa parte»* — que es una afirmación sobre el
+> original hecha por un descuido del instrumento.
+
+**Medido:** el selector del extracto de la tarjeta era `.post-content p ·
+.post-content-inner p · .entry-summary p · .excerpt`, que cubre `/blog` y
+`/etiqueta` —**355/355**— y **ninguna** de las otras siete formas. El espejo
+publicó `extracto: null` en **107 de 236** tarjetas y el `null` se leyó como
+dato. Al censar aparecieron **dos** huecos, y sólo uno era un selector que faltaba:
+`.scientific-excerpt` (105 nodos, y es un `<div>`, no un `<p>`) y **texto SUELTO
+sin envoltorio ninguno** —nodo de texto hermano del título—, que **ningún
+selector CSS puede casar**. Recuperadas **163** tarjetas, movidas **0**.
+
+**La señal de que estás en este hueco, y es barata:** los ceros **se agrupan por
+forma** y son **idénticos a los dos anchos**. Un defecto de maquetación varía con
+el ancho; un selector, no.
+
+**Operativamente:** cuando un censo abarque más de una forma, **se cuenta POR
+FORMA y no sólo en total**, y todo selector con cobertura parcial sale
+**nombrado**. Implementado en el sitio común —`Censo.grupo()` / `parciales()` /
+`informeGrupos()` en `lib.mjs`— porque lo que hay que acordarse de llamar se
+olvida. Los parciales legítimos —una piel de tarjeta sólo existe en su forma— se
+**declaran**; uno sin declarar cierra el código de salida.
+
+> **Y su corolario, que es el que ahorra la tanda siguiente:** un fallback que
+> nunca casa **no es inofensivo por tener otro delante**. `.case-titulo` y
+> `.scientific-titulo` llevaban meses muertos —las clases servidas son
+> `case-title` y `scientific-title`, en INGLÉS— y no daban error porque el
+> fallback genérico `h3` los tapaba: **el dato salía bien por el selector
+> equivocado**, que es la forma de §sondas 4 que ninguna guarda ve.
+
 **Y vale igual para una COMPARACIÓN, no solo para un selector (2026-08-01):**
 
 > **31 de 31 rutas distintas no es un hallazgo: es el instrumento.** Un
@@ -2464,6 +2501,38 @@ EVALUAR»*, y con `minimo: RUTAS.length * CARGAS` poner `CARGAS=0` deja el míni
 **en 0 también**: no hay «0 contra un mínimo positivo», hay «0 contra 0». Es
 §regla 15 —*compartir premisa no verifica la premisa*— con el objeto cambiado:
 aquí lo compartido no es el fichero, es **la variable**.
+
+> ⚠ **Y SU SEGUNDA CARA, PAGADA EL 2026-08-18: UN SABOTAJE QUE ANULA MEDIA
+> HIPÓTESIS NO FALSEA NADA.**
+>
+> La de arriba es sobre un sabotaje que mueve la portería. Ésta es sobre uno que
+> **apunta a la mitad del blanco**, y sale VERDE — que es peor, porque un verde
+> de un negativo se lee como *«la sonda sabe fallar»*:
+>
+> > **Si el arreglo que estás probando tiene DOS mitades, el sabotaje tiene que
+> > anular LAS DOS.** Con una viva, el efecto sigue apareciendo, el caso pasa, y
+> > lo que has demostrado es que **la otra mitad basta** — no lo que la tabla
+> > del negativo dice.
+>
+> **Medido:** el arreglo del extracto de la tarjeta eran dos cosas —añadir un
+> selector a la lista **y** rescatar el texto suelto sin envoltorio—. El sabotaje
+> revertía sólo la lista, así que las **56** tarjetas que se ganan por la otra
+> mitad mantenían la ganancia y el caso salía **exit 0 imprimiendo «NO-OP
+> confirmado»**, que es literalmente lo contrario de lo que venía a probar.
+>
+> **Las dos mitades operativas:**
+>
+> 1. **el sabotaje anula el arreglo ENTERO** — si hace falta una bandera que
+>    atraviese varias funciones, se pasa;
+> 2. **y el CONTROL exige que cada mitad APORTE por separado.** Si una no gana
+>    nada en el control, el sabotaje que la anula no prueba nada de ella, y su
+>    código puede estar muerto sin que nadie lo vea. Se comprueba nombrando **la
+>    vía por la que entró cada ganancia**, no el total.
+>
+> **Y lo que lo destapó no fue el código de salida, fue exigir que cayera POR SU
+> MOTIVO**: el caso comprobaba `prohibidoEnSalida: /NO-OP confirmado/`, y ahí se
+> vio que el rojo y el verde estaban imprimiendo la misma frase. §regla 1 —*lo
+> que imprime y lo que cuenta no pueden discrepar*— aplicada al **negativo**.
 
 **18 · «HAY UNA SONDA EN VUELO» NO SE DERIVA DEL ÁRBOL.** (2026-08-17)
 

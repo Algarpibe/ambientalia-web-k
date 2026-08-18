@@ -163,6 +163,21 @@ export class Censo {
     /** selector → nº de nodos casados sumando TODAS las páginas medidas */
     this.total = {};
     this.paginas = 0;
+    /** grupo → { selector → nº casado } — ver `parciales()` */
+    this.porGrupo = {};
+    /** el grupo en curso; lo mueve `grupo()` */
+    this._grupo = null;
+  }
+
+  /**
+   * Declara a qué GRUPO pertenecen las páginas que vienen a continuación —una
+   * forma, una familia, un arquetipo—. Sin grupos el censo sigue funcionando
+   * exactamente igual; con ellos se puede además contestar `parciales()`.
+   */
+  grupo(nombre) {
+    this._grupo = nombre;
+    this.porGrupo[nombre] = this.porGrupo[nombre] || {};
+    return this;
   }
 
   /** Inyecta `__q`/`__qa`, corre `fn` y acumula el censo de esta página. */
@@ -170,7 +185,13 @@ export class Censo {
     await page.evaluate(CENSO_JS);
     const datos = await page.evaluate(fn, ...args);
     const censo = await page.evaluate(() => window.__censo);
-    for (const [sel, n] of Object.entries(censo)) this.total[sel] = (this.total[sel] || 0) + n;
+    for (const [sel, n] of Object.entries(censo)) {
+      this.total[sel] = (this.total[sel] || 0) + n;
+      if (this._grupo) {
+        const g = this.porGrupo[this._grupo];
+        g[sel] = (g[sel] || 0) + n;
+      }
+    }
     this.paginas++;
     return { datos, censo };
   }
@@ -178,6 +199,73 @@ export class Censo {
   /** Selectores que no casaron ni una vez en ninguna página. */
   muertos() {
     return Object.entries(this.total).filter(([, n]) => n === 0).map(([s]) => s);
+  }
+
+  /**
+   * ⚠ EL HUECO ENTRE EL CERO Y EL PLENO: **UN SELECTOR QUE CASA EN UNAS FORMAS
+   * Y EN OTRAS NO NO ES NI LO UNO NI LO OTRO** (2026-08-18, 78.ª tanda).
+   *
+   * `muertos()` suma **todas** las páginas, así que un selector que casa 129
+   * veces en dos formas y **0 veces en otras siete** sale VIVO — y sus siete
+   * ceros se leen como dato. `CLAUDE.md` §sondas 4 tenía las dos puntas
+   * —el cero (selector equivocado) y el pleno (selector que no discrimina)— y
+   * **no el medio**, que es donde vivió éste.
+   *
+   * Medido: el selector del `extracto` de `lh-barrido` era
+   * `.post-content p · .post-content-inner p · .entry-summary p · .excerpt`, que
+   * cubre `/blog` y `/etiqueta` (**129/129**) y **ninguna** de las otras siete
+   * formas. El espejo publicó `extracto: null` en **107 de 236** tarjetas, y ese
+   * `null` se leyó como *«esta forma no tiene extracto»* — falso en al menos dos
+   * de ellas: el corpus da **105 nodos `.scientific-excerpt`** y los 23 extractos
+   * de `L3` están medidos al byte (`qa:lh-extracto-unidad`).
+   *
+   * Devuelve, por selector, los grupos donde casó y los grupos donde **no**.
+   * No decide si eso es defecto —hay roles que legítimamente faltan en una
+   * forma, como la fecha en `L5`—: lo que hace es **impedir que sea invisible**.
+   * Quien la llama declara los parciales esperados y el resto sale por error.
+   */
+  parciales() {
+    const grupos = Object.keys(this.porGrupo);
+    if (grupos.length < 2) return [];
+    const out = [];
+    for (const sel of Object.keys(this.total)) {
+      const con = grupos.filter((g) => (this.porGrupo[g][sel] || 0) > 0);
+      const sin = grupos.filter((g) => (this.porGrupo[g][sel] || 0) === 0);
+      if (con.length && sin.length) out.push({ sel, casaEn: con, noCasaEn: sin });
+    }
+    return out;
+  }
+
+  /**
+   * El veredicto de la cobertura por grupo. `declarados` es la lista de
+   * selectores cuya cobertura parcial **está medida y es dato**; cualquier otro
+   * parcial sale por error. Devuelve el nº de parciales NO declarados.
+   *
+   * Se declara el SELECTOR, no el par (selector, grupo): un rol que falta en
+   * una forma casi siempre falta en varias, y obligar a enumerarlas convierte la
+   * declaración en una lista que envejece contra el repo (§regla 9).
+   */
+  informeGrupos(declarados = [], etiqueta = "") {
+    const p = this.parciales();
+    const grupos = Object.keys(this.porGrupo);
+    if (grupos.length < 2) {
+      console.log(`  · censo por grupo${etiqueta ? " " + etiqueta : ""}: ${grupos.length} grupo(s) — hacen falta ≥2 para discriminar`);
+      return 0;
+    }
+    const sinDeclarar = p.filter((x) => !declarados.includes(x.sel));
+    for (const x of p.filter((x) => declarados.includes(x.sel)))
+      console.log(`  · parcial DECLARADO: ${x.sel} — casa en ${x.casaEn.length}/${grupos.length} grupos (falta en ${x.noCasaEn.join(", ")})`);
+    if (!sinDeclarar.length) {
+      console.log(`  ✓ cobertura por grupo${etiqueta ? " " + etiqueta : ""}: ${grupos.length} grupos, 0 parciales sin declarar`);
+      return 0;
+    }
+    console.error(
+      `\n❌ ${sinDeclarar.length} SELECTOR(ES) con cobertura PARCIAL sin declarar — casan en unos\n` +
+        `   grupos y en NINGUNO de otros. Eso no sale por \`muertos()\`, que suma todas las\n` +
+        `   páginas, y sus ceros se leen como «esta forma no tiene esa parte»:\n` +
+        sinDeclarar.map((x) => `     · ${x.sel}\n         casa en: ${x.casaEn.join(", ")}\n         NO casa en: ${x.noCasaEn.join(", ")}`).join("\n") + "\n",
+    );
+    return sinDeclarar.length;
   }
 
   /**

@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "que": "cobertura POR FORMA de los selectores de rol de lh-barrido, y el NO-OP del arreglo del extracto",
+    "corpus": "corpus/fase-3/listados · 149 páginas · 9 formas",
+    "sinRed": "corpus por file://: no toca el original",
+    "contesta": "en qué formas casa cada selector, y si el arreglo mueve las formas que ya casaban",
+    "noMide": [
+      "la GEOMETRÍA: el corpus no trae sus hojas (§F3-1-CSS-NO-CAPTURADO), así que ningún rect de aquí vale — 0 campos de rect en esta salida",
+      "las formas que el corpus no capturó: se miden 149 páginas de las 149 que hay en disco, y lo que no está capturado no sale nombrado aquí"
+    ],
+    "sabotaje": "un-solo-grupo"
+  },
+  "formas": [
+    "blog",
+    "casos-de-exito",
+    "etiqueta",
+    "glosario",
+    "preguntas-frecuentes",
+    "productos",
+    "recursos",
+    "scientific-category",
+    "sectores"
+  ],
+  "cobertura": {
+    "todo-junto": {
+      "paginas": 149,
+      "cards": 811,
+      "conViejo": 355,
+      "conNuevo": 518,
+      "selUsados": {
+        ".post-content p": 355,
+        "«suelto»": 56,
+        ".scientific-excerpt": 107
+      },
+      "extractoViejo": "355/811",
+      "extractoNuevo": "518/811"
+    }
+  },
+  "noOp": {
+    "rotos": 0,
+    "ejemplos": []
+  },
+  "parciales": [],
+  "noEjercitados": {
+    "declarados": 8,
+    "vistos": 8,
+    "sinDeclarar": [],
+    "revividos": [],
+    "de": "0 de 149 páginas"
+  },
+  "censoTotal": {
+    "titulo:h1.entry-title": 0,
+    "titulo:h2.entry-title": 574,
+    "titulo:h3.entry-title": 12,
+    "titulo:.case-title": 114,
+    "titulo:.scientific-title": 151,
+    "fecha:.published": 287,
+    "fecha:time": 0,
+    "fecha:.post-meta .updated": 0,
+    "fecha:.fecha": 0,
+    "categoria:a[rel~='category']": 70,
+    "categoria:a[href*='/scientific-category/']": 157,
+    "categoria:.post-meta a": 359,
+    "meta:.post-meta": 530,
+    "meta:.entry-meta": 0,
+    "meta:.case-taxonomies": 114,
+    "meta:.scientific-taxonomies": 151,
+    "media:.entry-featured-image-url img": 458,
+    "media:.et_pb_image_container img": 0,
+    "media:a.case-imagen": 114,
+    "media:.scientific-imagen-container": 151,
+    "extracto:.post-content p": 355,
+    "extracto:.post-content-inner p": 287,
+    "extracto:.entry-summary p": 0,
+    "extracto:.excerpt": 0,
+    "extracto:.scientific-excerpt": 151
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "que": "cobertura POR FORMA de los selectores de rol de lh-barrido, y el NO-OP del arreglo del extracto",
+    "corpus": "corpus/fase-3/listados · 149 páginas · 9 formas",
+    "sinRed": "corpus por file://: no toca el original",
+    "contesta": "en qué formas casa cada selector, y si el arreglo mueve las formas que ya casaban",
+    "noMide": [
+      "la GEOMETRÍA: el corpus no trae sus hojas (§F3-1-CSS-NO-CAPTURADO), así que ningún rect de aquí vale — 0 campos de rect en esta salida",
+      "las formas que el corpus no capturó: se miden 149 páginas de las 149 que hay en disco, y lo que no está capturado no sale nombrado aquí"
+    ],
+    "sabotaje": "extracto-viejo"
+  },
+  "formas": [
+    "blog",
+    "casos-de-exito",
+    "etiqueta",
+    "glosario",
+    "preguntas-frecuentes",
+    "productos",
+    "recursos",
+    "scientific-category",
+    "sectores"
+  ],
+  "cobertura": {
+    "blog": {
+      "paginas": 17,
+      "cards": 68,
+      "conViejo": 68,
+      "conNuevo": 68,
+      "selUsados": {
+        ".post-content p": 68
+      },
+      "extractoViejo": "68/68",
+      "extractoNuevo": "68/68"
+    },
+    "casos-de-exito": {
+      "paginas": 2,
+      "cards": 114,
+      "conViejo": 0,
+      "conNuevo": 0,
+      "selUsados": {},
+      "extractoViejo": "0/114",
+      "extractoNuevo": "0/114"
+    },
+    "etiqueta": {
+      "paginas": 63,
+      "cards": 287,
+      "conViejo": 287,
+      "conNuevo": 287,
+      "selUsados": {
+        ".post-content p": 287
+      },
+      "extractoViejo": "287/287",
+      "extractoNuevo": "287/287"
+    },
+    "glosario": {
+      "paginas": 8,
+      "cards": 37,
+      "conViejo": 0,
+      "conNuevo": 0,
+      "selUsados": {},
+      "extractoViejo": "0/37",
+      "extractoNuevo": "0/37"
+    },
+    "preguntas-frecuentes": {
+      "paginas": 4,
+      "cards": 19,
+      "conViejo": 0,
+      "conNuevo": 0,
+      "selUsados": {},
+      "extractoViejo": "0/19",
+      "extractoNuevo": "0/19"
+    },
+    "productos": {
+      "paginas": 2,
+      "cards": 2,
+      "conViejo": 0,
+      "conNuevo": 0,
+      "selUsados": {},
+      "extractoViejo": "0/2",
+      "extractoNuevo": "0/2"
+    },
+    "recursos": {
+      "paginas": 45,
+      "cards": 223,
+      "conViejo": 0,
+      "conNuevo": 0,
+      "selUsados": {},
+      "extractoViejo": "0/223",
+      "extractoNuevo": "0/223"
+    },
+    "scientific-category": {
+      "paginas": 6,
+      "cards": 59,
+      "conViejo": 0,
+      "conNuevo": 0,
+      "selUsados": {},
+      "extractoViejo": "0/59",
+      "extractoNuevo": "0/59"
+    },
+    "sectores": {
+      "paginas": 2,
+      "cards": 2,
+      "conViejo": 0,
+      "conNuevo": 0,
+      "selUsados": {},
+      "extractoViejo": "0/2",
+      "extractoNuevo": "0/2"
+    }
+  },
+  "noOp": {
+    "rotos": 0,
+    "ejemplos": []
+  },
+  "parciales": [
+    {
+      "sel": "titulo:h2.entry-title",
+      "casaEn": [
+        "blog",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "recursos"
+      ],
+      "noCasaEn": [
+        "casos-de-exito",
+        "productos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "titulo:h3.entry-title",
+      "casaEn": [
+        "recursos"
+      ],
+      "noCasaEn": [
+        "blog",
+        "casos-de-exito",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "titulo:.case-title",
+      "casaEn": [
+        "casos-de-exito"
+      ],
+      "noCasaEn": [
+        "blog",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "recursos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "titulo:.scientific-title",
+      "casaEn": [
+        "recursos",
+        "scientific-category"
+      ],
+      "noCasaEn": [
+        "blog",
+        "casos-de-exito",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "fecha:.published",
+      "casaEn": [
+        "etiqueta"
+      ],
+      "noCasaEn": [
+        "blog",
+        "casos-de-exito",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "recursos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "categoria:a[rel~='category']",
+      "casaEn": [
+        "blog"
+      ],
+      "noCasaEn": [
+        "casos-de-exito",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "recursos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "categoria:a[href*='/scientific-category/']",
+      "casaEn": [
+        "recursos",
+        "scientific-category"
+      ],
+      "noCasaEn": [
+        "blog",
+        "casos-de-exito",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "categoria:.post-meta a",
+      "casaEn": [
+        "blog",
+        "etiqueta"
+      ],
+      "noCasaEn": [
+        "casos-de-exito",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "recursos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "meta:.post-meta",
+      "casaEn": [
+        "blog",
+        "etiqueta",
+        "recursos"
+      ],
+      "noCasaEn": [
+        "casos-de-exito",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "meta:.case-taxonomies",
+      "casaEn": [
+        "casos-de-exito"
+      ],
+      "noCasaEn": [
+        "blog",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "recursos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "meta:.scientific-taxonomies",
+      "casaEn": [
+        "recursos",
+        "scientific-category"
+      ],
+      "noCasaEn": [
+        "blog",
+        "casos-de-exito",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "media:.entry-featured-image-url img",
+      "casaEn": [
+        "blog",
+        "etiqueta",
+        "recursos"
+      ],
+      "noCasaEn": [
+        "casos-de-exito",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "media:a.case-imagen",
+      "casaEn": [
+        "casos-de-exito"
+      ],
+      "noCasaEn": [
+        "blog",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "recursos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "media:.scientific-imagen-container",
+      "casaEn": [
+        "recursos",
+        "scientific-category"
+      ],
+      "noCasaEn": [
+        "blog",
+        "casos-de-exito",
+        "etiqueta",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "extracto:.post-content p",
+      "casaEn": [
+        "blog",
+        "etiqueta"
+      ],
+      "noCasaEn": [
+        "casos-de-exito",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "recursos",
+        "scientific-category",
+        "sectores"
+      ]
+    },
+    {
+      "sel": "extracto:.post-content-inner p",
+      "casaEn": [
+        "etiqueta"
+      ],
+      "noCasaEn": [
+        "blog",
+        "casos-de-exito",
+        "glosario",
+        "preguntas-frecuentes",
+        "productos",
+        "recursos",
+        "scientific-category",
+        "sectores"
+      ]
+    }
+  ],
+  "noEjercitados": {
+    "declarados": 8,
+    "vistos": 8,
+    "sinDeclarar": [],
+    "revividos": [],
+    "de": "0 de 149 páginas"
+  },
+  "censoTotal": {
+    "titulo:h1.entry-title": 0,
+    "titulo:h2.entry-title": 574,
+    "titulo:h3.entry-title": 12,
+    "titulo:.case-title": 114,
+    "titulo:.scientific-title": 151,
+    "fecha:.published": 287,
+    "fecha:time": 0,
+    "fecha:.post-meta .updated": 0,
+    "fecha:.fecha": 0,
+    "categoria:a[rel~='category']": 70,
+    "categoria:a[href*='/scientific-category/']": 157,
+    "categoria:.post-meta a": 359,
+    "meta:.post-meta": 530,
+    "meta:.entry-meta": 0,
+    "meta:.case-taxonomies": 114,
+    "meta:.scientific-taxonomies": 151,
+    "media:.entry-featured-image-url img": 458,
+    "media:.et_pb_image_container img": 0,
+    "media:a.case-imagen": 114,
+    "media:.scientific-imagen-container": 151,
+    "extracto:.post-content p": 355,
+    "extracto:.post-content-inner p": 287,
+    "extracto:.entry-summary p": 0,
+    "extracto:.excerpt": 0
+  }
+}

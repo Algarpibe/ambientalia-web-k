@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "fecha": "2026-08-18",
+    "que": "cobertura POR FORMA de los selectores de rol de lh-barrido, y el NO-OP del arreglo del extracto",
+    "corpus": "C:\\Users\\algar\\OneDrive\\Documentos\\Ambientalia_2026_K\\kunak-web-clone\\scripts\\qa\\medidas\\no-existe · 0 páginas · 0 formas",
+    "sinRed": "corpus por file://: no toca el original",
+    "contesta": "en qué formas casa cada selector, y si el arreglo mueve las formas que ya casaban",
+    "noMide": [
+      "la GEOMETRÍA: el corpus no trae sus hojas (§F3-1-CSS-NO-CAPTURADO), así que ningún rect de aquí vale — 0 campos de rect en esta salida",
+      "las formas que el corpus no capturó: se miden 0 páginas de las 0 que hay en disco, y lo que no está capturado no sale nombrado aquí"
+    ],
+    "sabotaje": "sin-corpus"
+  },
+  "formas": [],
+  "cobertura": {},
+  "noOp": {
+    "rotos": 0,
+    "ejemplos": []
+  },
+  "parciales": [],
+  "noEjercitados": {
+    "declarados": 8,
+    "vistos": 0,
+    "sinDeclarar": [],
+    "revividos": [
+      "titulo:h1.entry-title",
+      "fecha:time",
+      "fecha:.post-meta .updated",
+      "fecha:.fecha",
+      "meta:.entry-meta",
+      "media:.et_pb_image_container img",
+      "extracto:.entry-summary p",
+      "extracto:.excerpt"
+    ],
+    "de": "0 de 0 páginas"
+  },
+  "censoTotal": {}
+}

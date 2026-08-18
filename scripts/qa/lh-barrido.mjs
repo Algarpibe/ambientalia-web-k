@@ -92,11 +92,49 @@ export function barrer() {
   const deTarjeta = (card) => {
     const media = parteDe(card, [".entry-featured-image-url img", ".et_pb_image_container img", "a.case-imagen", ".scientific-imagen-container", ".post-thumbnail img", "img"]);
     const envoltorioMedia = parteDe(card, [".entry-featured-image-url", ".et_pb_image_container", "a.case-imagen", ".scientific-imagen-container"]);
-    const titulo = parteDe(card, ["h1.entry-title", "h2.entry-title", "h3.entry-title", ".case-titulo", ".scientific-titulo", "h1", "h2", "h3", "h4"]);
+    /* ⚠ `.case-titulo` y `.scientific-titulo` estuvieron aquí y son **MUERTOS**:
+     * las clases servidas son `case-title` y `scientific-title`, en INGLÉS
+     * (censadas sobre las 149 páginas del corpus: 114 y 105 nodos). No daban
+     * error porque el fallback genérico `h3` las tapaba — el título salía bien
+     * y por el selector equivocado, que es §sondas 4 con red de seguridad. */
+    const titulo = parteDe(card, ["h1.entry-title", "h2.entry-title", "h3.entry-title", ".case-title", ".scientific-title", "h1", "h2", "h3", "h4"]);
     const fecha = parteDe(card, [".published", "time", ".post-meta .updated", ".fecha"]);
     const categoria = parteDe(card, ["a[rel~='category']", ".post-meta a[href*='/categoria/']", "a[href*='/scientific-category/']", ".post-meta a"]);
-    const meta = parteDe(card, [".post-meta", ".et_pb_title_meta_container", ".entry-meta"]);
-    const extracto = parteDe(card, [".post-content p", ".post-content-inner p", ".entry-summary p", ".excerpt"]);
+    const meta = parteDe(card, [".post-meta", ".et_pb_title_meta_container", ".entry-meta", ".case-taxonomies", ".scientific-taxonomies"]);
+    /**
+     * ⚠ EL EXTRACTO TENÍA **DOS** HUECOS, Y NINGUNA GUARDA PODÍA VERLOS.
+     *
+     * La lista era `.post-content p · .post-content-inner p · .entry-summary p
+     * · .excerpt`: cubre `/blog` y `/etiqueta` y **ninguna** de las otras siete
+     * formas. Los dos denominadores, que son de cosas distintas y conviene no
+     * mezclar: en el ESPEJO casaba **129 de 236** tarjetas (y publicó **107**
+     * `null`); en el CORPUS entero casa **355 de 743**. `Censo.muertos()` no lo
+     * caza en ninguno de los dos: suma todas las páginas y eso no es cero. Es el
+     * hueco entre el cero y el pleno — ver `Censo.parciales()`.
+     *
+     * Los dos huecos, derivados **censando el corpus** y no de memoria:
+     *
+     * 1. **`.scientific-excerpt`** — 105 nodos en 51 páginas (`L3` y
+     *    `L1-resources`). Es un `<div>` con texto suelto, **no un `<p>`**, así
+     *    que ni siquiera el fallback de párrafo lo alcanzaba. Sus 23 extractos
+     *    de `L3` están medidos al byte en `qa:lh-extracto-unidad`;
+     * 2. **el texto SUELTO del `<article>`** — en `L2-glosario` y `L2-faqs` el
+     *    extracto no tiene envoltorio **ninguno**: es un nodo de texto hermano
+     *    del `h2.entry-title`. Ningún selector CSS puede casarlo, y por eso va
+     *    aparte, por nodos de texto directos.
+     *
+     * ⚠ Y `L5-casos` **no tiene extracto, y eso es DATO**: su tarjeta es
+     * imagen + sector + ubicación + cliente + título, medido sobre las 114
+     * instancias del corpus. Su `null` era correcto — que sea el mismo `null`
+     * que el de `L3` es justo lo que hacía indistinguible «no hay» de «no miré».
+     */
+    const extracto = parteDe(card, [".post-content p", ".post-content-inner p", ".entry-summary p", ".excerpt", ".scientific-excerpt"]);
+    /** El extracto SIN envoltorio: nodos de texto hijos directos del article. */
+    const extractoSuelto = (() => {
+      if (extracto) return null;
+      const t = [...card.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent.replace(/\s+/g, " ").trim()).filter((s) => s.length > 20);
+      return t.length ? { sel: "«texto suelto del <article>»", texto: t.join(" ").slice(0, 300) } : null;
+    })();
     const enlaces = [...card.querySelectorAll("a[href]")].map((a) => a.getAttribute("href"));
     const un = (p, extra = {}) => (p ? { sel: p.sel, marca: marca(p.el), rect: R(p.el), tipo: S(p.el, TIPO), ritmo: S(p.el, RITMO), caja: S(p.el, CAJA), texto: txt(p.el)?.slice(0, 300), renglones: renglones(p.el), ...extra } : null);
     return {
@@ -111,7 +149,7 @@ export function barrer() {
       fecha: un(fecha),
       categoria: un(categoria, { href: categoria?.el.getAttribute("href") ?? null }),
       meta: un(meta),
-      extracto: un(extracto),
+      extracto: un(extracto) ?? extractoSuelto,
       hrefs: [...new Set(enlaces)].slice(0, 6),
       etiquetas: [...new Set([...card.querySelectorAll("*")].map((e) => e.tagName.toLowerCase()))],
     };

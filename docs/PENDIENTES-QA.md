@@ -201,6 +201,145 @@ en vez de convivir con él.
 | otros arquetipos | `/blog` y `/etiqueta/*` son **otros dos mecanismos**, medidos aparte. En `/etiqueta` gana **caracteres** (bytes 5/6): la unidad es propiedad **de la pieza**, no del sitio |
 | el terminador | `"..."` ASCII en 23/23; **0** apariciones de `…` (hellip) en este arquetipo |
 
+## ✅ F3-LH-EXTRACTO-NULL-ERA-LA-SONDA · EL SELECTOR CUBRÍA 2 FORMAS DE 9, Y NINGUNA GUARDA PODÍA VERLO (2026-08-18, 78.ª tanda)
+
+**El espejo publicaba `extracto: null` en 107 de 236 tarjetas, repartidas POR
+FORMA e idénticas a 1440 y a 390** — que es la firma de un selector, no la de un
+defecto de maquetación. Instrumento nuevo `qa:lh-selectores` (negativo 4/4),
+congelada `medidas/lh-selectores.json`. **Sin red**: corpus por `file://`.
+
+### El resultado, y el NO-OP con su antes/después
+
+| forma | tarjetas | extracto ANTES | DESPUÉS |
+|---|---|---|---|
+| `blog` | 68 | **68/68** | **68/68** ✅ NO-OP |
+| `etiqueta` | 287 | **287/287** | **287/287** ✅ NO-OP |
+| `scientific-category` (**L3**) | 59 | 0/59 | **59/59** |
+| `glosario` (**L2**) | 37 | 0/37 | **37/37** |
+| `preguntas-frecuentes` (**L2**) | 19 | 0/19 | **19/19** |
+| `recursos` | 223 | 0/223 | **48/223** |
+| `casos-de-exito` (**L5**) | 114 | 0/114 | **0/114** ⬅ **DATO** |
+| `productos` · `sectores` | 2 · 2 | 0 | 0 |
+
+**+163 tarjetas** recuperadas · **355 sin mover una sola**.
+
+### Los DOS huecos, y ninguno era el que se buscaba
+
+1. **`.scientific-excerpt`** — 105 nodos en 51 páginas. Es un `<div>` con texto
+   suelto, **no un `<p>`**, así que ni el fallback de párrafo lo alcanzaba;
+2. **el texto SUELTO del `<article>`** — en `L2-glosario` y `L2-faqs` el extracto
+   **no tiene envoltorio ninguno**: es un nodo de texto hermano del
+   `h2.entry-title`. **Ningún selector CSS puede casarlo**, y por eso va aparte.
+
+### ⚠ Y `L5` NO tiene extracto: su `null` era DATO
+
+Medido sobre las **114** instancias del corpus, la tarjeta de `L5` es imagen +
+sector + ubicación + cliente + título, **y nada más**. Igual `recursos/articulos`
+(imagen + título + categorías + fecha). **Que sea el mismo `null` que el de `L3`
+es exactamente lo que hacía indistinguible «no hay» de «no miré»** — el
+disparador (a) del encargo se resuelve **por medida y con los dos signos**: `L3`
+sí (23 extractos al byte), `L5` no.
+
+### Por qué ninguna guarda lo cazó — y el arreglo va en la CLASE
+
+> **`Censo.muertos()` suma TODAS las páginas, y 129 no es cero.** Un selector que
+> casa en dos formas y en **ninguna** de las otras siete sale VIVO, y sus siete
+> ceros se leen como dato.
+
+Es el hueco entre §sondas 4 (el cero) y su complementario (el pleno). Cerrado en
+`lib.mjs` con **`Censo.grupo()` · `parciales()` · `informeGrupos()`**: un selector
+con cobertura parcial por forma sale **nombrado**, y el que no esté declarado
+cierra el código de salida.
+
+### Los dos selectores MUERTOS que el fallback tapaba
+
+`.case-titulo` y `.scientific-titulo` — **en español**. Las clases servidas son
+`case-title` y `scientific-title`, **en inglés**: 114 y 105 nodos censados. No
+daban error porque el fallback genérico `h3` los tapaba: **el título salía bien y
+por el selector equivocado.**
+
+### ⚠ Y el negativo se estrenó FALLANDO, que es para lo que está
+
+El caso `extracto-viejo` prometía *«sin arreglo, el NO-OP es trivial y la sonda
+no puede dar verde»*, y salió **exit 0 imprimiendo «NO-OP confirmado»**. La causa
+no era la sonda: era **el sabotaje**, que revertía la lista de selectores y
+dejaba viva **la otra mitad del arreglo** —el rescate del texto suelto—, así que
+las **56** tarjetas de `L2-glosario` + `L2-faqs` seguían ganándose.
+
+> **Un sabotaje que anula media hipótesis no falsea nada**, y su verde se lee
+> como *«la sonda sabe fallar»*. Regla nueva en `CLAUDE.md`, como segunda cara de
+> §regla 17-hermana. El control exige ahora que **cada mitad aporte por
+> separado**, nombrando la vía (`.scientific-excerpt` · `«suelto»`) en vez del
+> total — si una no aportara, el sabotaje que la anula no probaría nada de ella.
+
+**Y lo destapó `prohibidoEnSalida`, no el código de salida**: el caso exigía
+caer *por su motivo*, y ahí se vio que el rojo y el verde imprimían la misma
+frase (§regla 1 aplicada al negativo).
+
+### ⚠ Fichado, no arreglado — §F3-LH-SELECTORES-NO-EJERCITADOS
+
+**8 selectores de `deTarjeta` no casan en NINGUNA de las 149 páginas** del
+corpus: `titulo:h1.entry-title` · `fecha:time` · `fecha:.post-meta .updated` ·
+`fecha:.fecha` · `meta:.entry-meta` · `media:.et_pb_image_container img` ·
+`extracto:.entry-summary p` · `extracto:.excerpt`.
+
+Son **fallbacks con otro delante que sí casa**, así que el rol se resuelve igual.
+**No se quitan en esta tanda**: `deTarjeta` corre también contra el original vivo
+y contra formas que este corpus no capturó, y borrarlos sería un cambio sin
+medida que lo respalde. Quedan **declarados en `NO_EJERCITADOS`**, de modo que
+uno **nuevo** sí cierra el código — es un inventario con fecha, no una amnistía.
+
+**Y uno más, de otro rol:** la categoría de `recursos/articulos` vive en
+`p.resources-categories a`, que **no está en la lista** de `categoria`. Sin
+cardinal todavía: no se ha medido cuántas tarjetas pierde.
+
+## ⛔ F3-LH-ESPEJO-INVALIDADO-EN-EXTRACTO · ARREGLAR EL INSTRUMENTO CADUCA LA MEDIDA QUE TOMÓ (2026-08-18, 78.ª tanda)
+
+**Es la consecuencia inmediata de la ficha de arriba, y hay que verla antes de
+construir `L3`.** Los dos espejos se congelaron con el selector defectuoso:
+
+| espejo | páginas | tarjetas con `extracto` | **`null`** |
+|---|---|---|---|
+| `lh-spec-1440.json` (FORMAS) | 13 | 9 | **29** |
+| `lh-espejo-1440.json` (PÁGINAS) | 82 | 129 | **107** |
+
+Reparto del `null` en el espejo de páginas: `L3-sci` **16** · `L1-resources-hijo`
+**29** · `L2-glosario` **23** · `L1-resources-padre` **21** · `L2-faqs` **12** ·
+`L4` **3** · `L5-casos` **3**.
+
+> **Un espejo es una MEDIDA TOMADA CON UN INSTRUMENTO, y arreglar el instrumento
+> no arregla la medida: la caduca.** El `extracto: null` de esas 107 tarjetas
+> **no es del original** —el corpus dice que al menos 59+37+19 tienen texto— ni
+> es del clon: **es del selector con el que se midió**. Comparar el clon medido
+> HOY contra ese espejo produce diferencias que no son de ninguno de los dos
+> lados.
+
+**Y el defecto se pone en la dirección que grita** (§sondas 6): el peligro no es
+un rojo, es un **falso rojo que invita a construir mal**. Si `L3` se construyera
+comparándose contra ese espejo, el camino de menor resistencia sería **pintar la
+tarjeta SIN extracto para que cuadre el `null`** — y eso es exactamente cómo se
+fabrica una FAMILIA DE CALIBRACIÓN: el clon quedaría cableado al defecto del
+instrumento, y los 23 extractos medidos al byte en `qa:lh-extracto-unidad` dirían
+lo contrario sin que nada fallara.
+
+### Qué hay que hacer antes de construir `L3`, y por qué no cabía en esta tanda
+
+**Re-congelar los dos espejos con el `deTarjeta` arreglado** — `qa:lh-spec` y
+`qa:lh-espejo`, que miden **contra el original VIVO** (13 y 82 páginas × 2
+anchos). Eso es una campaña contra el original con su protocolo, no un paso más:
+el original es un objetivo inestable (§Notas de método) y esas rutas **no tienen
+campaña de ruido cerrada** (`SP-T5` / `SP-K4` siguen abiertas en las dos specs).
+
+**Lo que NO hay que hacer:** re-derivar el espejo del corpus. El corpus **no trae
+sus hojas** (§F3-1-CSS-NO-CAPTURADO: `columna.width` 678.52 offline contra 430.80
+en vivo), así que serviría para el texto y **falsearía toda la geometría** — que
+es el 90 % de lo que el espejo contiene.
+
+> **El alcance del daño está acotado y con su número: SÓLO el campo `extracto`.**
+> El arreglo es NO-OP sobre las 355 tarjetas que ya casaban, y los otros roles no
+> se tocaron salvo dos selectores muertos que el fallback ya suplía. **Todo lo
+> demás del espejo sigue siendo válido** — geometría, ritmo, tipografía, árbol.
+
 ## ✅ F3-TARJETA-DE-MAS-76 · NO FALTA NINGUNA TARJETA: SOBRA UNA EN 3 FORMAS, Y LAS DOS CAUSAS YA TIENEN FICHA (2026-08-18, 76.ª tanda)
 
 **El encargo pedía adjudicar «el clon sirve 5 tarjetas donde el original sirve

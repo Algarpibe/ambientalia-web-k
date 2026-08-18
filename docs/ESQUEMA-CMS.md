@@ -1104,6 +1104,26 @@ contesta*): **qué pasa cuando el cuerpo es MÁS CORTO que el tope**. Lo ejercit
 **0 de 23** tarjetas ⇒ **SIN PROBAR**, no «soportado». Es §F2-5-ESCALON-ETIQUETAS
 otra vez: un camino de render que el dato de calibración no estrena.
 
+### ✅ 2c.2c · `L5` NO lleva extracto en su tarjeta — y su `null` era DATO (2026-08-18, 78.ª tanda)
+
+Medido sobre las **114** instancias del corpus (`qa:lh-selectores`), la tarjeta
+del índice de casos es exactamente:
+
+> imagen (`a.case-imagen`, fondo CSS y **sin `<img>`**) · **sector** ·
+> **ubicación** · **cliente** · título (`h3.case-title`). **Y nada más.**
+
+**Consecuencia para el content type:** el listado de `casos` **no consume ningún
+campo de extracto**, así que no hay que derivar uno ni guardarlo. Lo que sí
+consume, y ya estaba en el modelo, es `sector` y `ubicacion` — con la salvedad de
+que **el filtrado** por sector se decide en F3-4 (§LH-C6-FILTRO-L5).
+
+> ⚠ **Y por qué esto merece una entrada en vez de una línea:** el `extracto:
+> null` de `L5` en el espejo es **exactamente el mismo valor** que el de `L3`, y
+> uno era dato y el otro un defecto del instrumento. **Sin medir los dos, un
+> `null` no distingue «no hay» de «no miré»** — que es la regla del cero
+> aplicada a un campo del esquema. `recursos/articulos` está en el mismo caso:
+> imagen + título + categorías + fecha, **sin extracto**.
+
 **Arquetipos**: LISTADO-B (23 instancias, **una plantilla con tres variantes
 de tarjeta** — config uniforme al 100 % dentro de cada familia) ·
 LISTADO-TEMA-CPT (2) · LISTADO-TEMA-TAX (3, separado **con reapertura

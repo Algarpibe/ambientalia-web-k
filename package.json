@@ -53,6 +53,8 @@
     "qa:lh": "node scripts/qa/lh-censo.mjs",
     "qa:lh-paginas": "node scripts/qa/lh-paginas.mjs",
     "qa:lh-tarjetas": "node scripts/qa/lh-tarjetas.mjs",
+    "qa:lh-selectores": "node scripts/qa/lh-selectores.mjs",
+    "qa:lh-selectores-neg": "node scripts/qa/lh-selectores.neg.mjs",
     "qa:lh-serie": "node scripts/qa/lh-serie.mjs",
     "qa:lh-cmp": "node scripts/qa/lh-cmp.mjs",
     "qa:lh-pieles-css": "node scripts/qa/lh-pieles-css.mjs",

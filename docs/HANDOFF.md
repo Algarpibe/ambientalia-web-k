@@ -1,3 +1,52 @@
+# HANDOFF — el extracto cierra en BYTES, y el `null` de 107 tarjetas era la SONDA
+
+> ⚠ **Tanda de MEDICIÓN, 2026-08-18 (78.ª). Se cerraron los PASOS 0 y 1 y la
+> tanda paró en el CORTE LIMPIO 1 declarado por el encargo. `L3` y `L5` NO se
+> construyeron** — y esta vez **no por presupuesto**: el PASO 1 destapó que **el
+> espejo contra el que habría que compararlas está caducado en el campo
+> `extracto`**, y construir contra él fabricaría una familia de calibración. Ver
+> §F3-LH-ESPEJO-INVALIDADO-EN-EXTRACTO.
+>
+> **Lo que ya no está abierto:**
+>
+> - **la UNIDAD del extracto de `L3`** — `qa:lh-extracto-unidad`: es
+>   **`bytes`, tope 100, sobre el texto CRUDO** (antes de decodificar entidades).
+>   **23/23**, elegido con **27 instancias separadoras**, y el modelo de
+>   caracteres **REFUTADO** (10/23), no empatado;
+> - **el `extracto: null` de 107 tarjetas del espejo** — `qa:lh-selectores`: era
+>   **el selector**, que cubría **2 formas de 9**. Recuperadas **163** tarjetas,
+>   movidas **0** de las 355 que ya casaban;
+> - **si `L5` tiene extracto** — **NO**, y su `null` era **dato**. Medido sobre
+>   las 114 instancias del corpus. El disparador (a) del encargo queda resuelto
+>   **con los dos signos**: `L3` sí, `L5` no.
+>
+> **TRES reglas nuevas en `CLAUDE.md`**, las tres pagadas hoy y ninguna salida
+> del barrido:
+>
+> 1. **una COTA y una REGLA GENERADORA no son la misma afirmación** — es lo que
+>    fabricó el empate que la 77.ª bancó, y §La causa común con la cota de
+>    contenedor;
+> 2. **el hueco entre el cero y el pleno**: un selector que casa en unas formas y
+>    en otras no no es ni lo uno ni lo otro, y `muertos()` no lo ve porque suma;
+> 3. **un sabotaje que anula media hipótesis no falsea nada** — 2.ª cara de
+>    §regla 17-hermana, pagada por el negativo de esta misma tanda.
+>
+> Barrido de §regla 12 acotado a las actas de F3-2: **45 enunciados · 0 reglas
+> ausentes** (las tres de arriba salen de lo pagado, no del barrido).
+>
+> ⚠ **Y el negativo de `lh-selectores` se estrenó FALLANDO**, que es para lo que
+> está: `extracto-viejo` salía **exit 0 imprimiendo «NO-OP confirmado»** porque
+> el sabotaje revertía **media** hipótesis. Lo destapó exigir que cayera **por su
+> motivo** (`prohibidoEnSalida`), no el código de salida.
+>
+> **Lo primero de la 79.ª, y es una PRECONDICIÓN dura:** re-congelar
+> `lh-spec-{1440,390}` y `lh-espejo-{1440,390}` con el `deTarjeta` arreglado —
+> contra el original **vivo**, 13 y 82 páginas × 2 anchos. **No vale re-derivarlo
+> del corpus**: sin las hojas, la geometría sale plausible y falsa. Hasta
+> entonces, `L3` **no se puede construir contra el espejo**.
+
+---
+
 # HANDOFF — las DOS medidas abiertas, cerradas; y el `+16` tiene ahora un ancho
 
 > ⚠ **Tanda de MEDICIÓN, 2026-08-17 (77.ª). Se cerraron los PASOS 0·1·2 y la
