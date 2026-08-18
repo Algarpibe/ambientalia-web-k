@@ -1,0 +1,898 @@
+{
+  "meta": {
+    "ancho": 1440,
+    "cargasPorRuta": 30,
+    "rutas": [
+      "/contaminacion-por-metano",
+      "/monitorizacion-de-emisiones-del-trafico-urbano"
+    ],
+    "base": "http://127.0.0.1:<efímero>",
+    "ts": "2026-08-18T01:40:22.617Z",
+    "escala": {
+      "ts": "UTC"
+    },
+    "queEs": "UNA SOLA SENTADA contra UN SOLO build. La unidad es la CARGA. Contesta la dispersión DENTRO de un build, que es justo lo que clon-base no puede ver."
+  },
+  "resumen": {
+    "/contaminacion-por-metano": {
+      "cargasValidas": 30,
+      "cargasConError": 0,
+      "nEstados": 1,
+      "estados": [
+        {
+          "valor": 41990,
+          "veces": 30
+        }
+      ],
+      "huecos": [],
+      "cotaSiUnEstado": 0.1,
+      "cargaMs": {
+        "min": 8938,
+        "max": 10004
+      }
+    },
+    "/monitorizacion-de-emisiones-del-trafico-urbano": {
+      "cargasValidas": 30,
+      "cargasConError": 0,
+      "nEstados": 1,
+      "estados": [
+        {
+          "valor": 38502,
+          "veces": 30
+        }
+      ],
+      "huecos": [],
+      "cotaSiUnEstado": 0.1,
+      "cargaMs": {
+        "min": 7910,
+        "max": 9236
+      }
+    }
+  },
+  "crudo": {
+    "/contaminacion-por-metano": [
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9949,
+        "i": 0
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 10004,
+        "i": 1
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9224,
+        "i": 2
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9212,
+        "i": 3
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9165,
+        "i": 4
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9146,
+        "i": 5
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9177,
+        "i": 6
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9160,
+        "i": 7
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9169,
+        "i": 8
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9093,
+        "i": 9
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8988,
+        "i": 10
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9004,
+        "i": 11
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9094,
+        "i": 12
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9244,
+        "i": 13
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9165,
+        "i": 14
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9164,
+        "i": 15
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9141,
+        "i": 16
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9173,
+        "i": 17
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9162,
+        "i": 18
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9396,
+        "i": 19
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9222,
+        "i": 20
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9285,
+        "i": 21
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9186,
+        "i": 22
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9159,
+        "i": 23
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8938,
+        "i": 24
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9101,
+        "i": 25
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9174,
+        "i": 26
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9254,
+        "i": 27
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9062,
+        "i": 28
+      },
+      {
+        "docH": 41990,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          40446.56,
+          674.02
+        ],
+        "nImgs": 26,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9188,
+        "i": 29
+      }
+    ],
+    "/monitorizacion-de-emisiones-del-trafico-urbano": [
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8174,
+        "i": 0
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8094,
+        "i": 1
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8052,
+        "i": 2
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7989,
+        "i": 3
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7958,
+        "i": 4
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8039,
+        "i": 5
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8028,
+        "i": 6
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8082,
+        "i": 7
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7985,
+        "i": 8
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8028,
+        "i": 9
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7948,
+        "i": 10
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7998,
+        "i": 11
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7910,
+        "i": 12
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7998,
+        "i": 13
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 9236,
+        "i": 14
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8091,
+        "i": 15
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8034,
+        "i": 16
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8078,
+        "i": 17
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8019,
+        "i": 18
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8007,
+        "i": 19
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8014,
+        "i": 20
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7950,
+        "i": 21
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8038,
+        "i": 22
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7992,
+        "i": 23
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8028,
+        "i": 24
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8044,
+        "i": 25
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8016,
+        "i": 26
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 7965,
+        "i": 27
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8581,
+        "i": 28
+      },
+      {
+        "docH": 38502,
+        "h1y": 332.58,
+        "secciones": [
+          225,
+          36957.89,
+          674.02
+        ],
+        "nImgs": 31,
+        "imgsSinCargar": 0,
+        "fuentes": "loaded",
+        "cargaMs": 8000,
+        "i": 29
+      }
+    ]
+  }
+}
