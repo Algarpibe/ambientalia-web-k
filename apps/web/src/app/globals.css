@@ -154,7 +154,27 @@
     @apply bg-background text-foreground;
     font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
     font-size: 18px;
-    line-height: 1.7; /* 30.6 / 18 */
+    /**
+     * ⚠ `1.7em`, NO `1.7`. Es una diferencia de MECANISMO DE HERENCIA, no un
+     * número equivalente escrito de otra forma (§F3-LH-INTERLINEA-RATIO-VS-LONGITUD).
+     *
+     *   · `1.7em` computa a LONGITUD (1.7 × 18 = 30.6px) y **se hereda ya
+     *     resuelta**: todo descendiente recibe 30.6 mida lo que mida su letra;
+     *   · `1.7` sin unidad se hereda como RAZÓN: cada descendiente computa
+     *     1.7 × su propia letra, o sea MENOS de 30.6 en toda letra < 18.
+     *
+     * El original sirve `body{…font-size:14px;…line-height:1.7em;…}` —577
+     * documentos del corpus— y el customizer sube el `font-size` a 18, contra
+     * el que el `em` se resuelve. Las dos formas son idénticas a 18px y
+     * divergen en todo lo demás, que es por qué esto vivió cuatro arquetipos.
+     *
+     * El comentario anterior era «30.6 partido por 18» y delataba el error:
+     * alguien midió la longitud, la dividió por la letra y escribió el
+     * cociente. (Ese texto NO se cita literalmente aquí: un comentario CSS no
+     * puede contener su propio token de cierre, ni escapado — lo que sigue
+     * pasaría a ser selector y el parser se comería la regla base.)
+     */
+    line-height: 1.7em;
     color: #333333;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
