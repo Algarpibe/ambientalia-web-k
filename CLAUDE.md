@@ -970,6 +970,63 @@ dependen de las dos cosas a la vez. Saltarlo con un `continue` publica **«deriv
 ciertos y una lectura falsa. **Los ejes excluidos se reparten igual y se
 publican con su cardinal, fuera del recuento** (§regla 14).
 
+> ⚠ **Y EL EJE QUE NO LEE COMO DEFECTO ESCONDE LA MEJORA EXACTAMENTE IGUAL QUE
+> ESCONDE LA DERIVA (2026-08-19, 84.ª tanda).** La regla de arriba se escribió
+> mirando el daño, y por eso se lee como una guarda contra falsos verdes. Tiene
+> la otra mitad, y **produce el error contrario: dar por INERTE un arreglo que
+> funcionó.**
+>
+> Medido: un arreglo de una línea movió **31 164 elementos** y el titular del
+> comparador —`pares distintos`— dio **5 423 → 5 423** y **5 401 → 5 401**, o sea
+> idéntico al par a los dos anchos. Todo el efecto había caído en el eje
+> **mixto** (*«sin referencia limpia»*): `cabecera.rect.h` pasó de **203.59 a
+> 217.19** contra un original de **225**, o sea **+13.6 px HACIA el original en
+> las 69 formas, +938.4 acumulados y 0 que se alejen**. Leído por el titular, el
+> veredicto habría sido «el cambio no hace nada» — y el paso siguiente,
+> revertirlo.
+>
+> > **La lectura que sí discrimina no es un recuento: es comparar
+> > `|clon − original|` ANTES y DESPUÉS, par a par.** El recuento dice cuántos
+> > pares difieren; sólo la distancia dice **hacia dónde se movieron**. Un
+> > comparador que clasifica antes de restar puede dejar el efecto entero fuera
+> > de su titular, y el titular es lo que se cita.
+
+---
+
+### CUANDO EL CAMBIO SE PUEDA APLICAR, APLÍCALO Y MIDE — UN CENSO POR HEURÍSTICA NO DISTINGUE «HEREDA» DE «DECLARA LO MISMO» (2026-08-19)
+
+Es §El principio —*verificar contra la salida servida*— aplicado a **un cambio
+que todavía no se ha hecho**:
+
+> **Para saber qué mueve un cambio, la heurística es el último recurso, no el
+> primero.** Si el cambio se puede **simular por el mismo canal** que la regla
+> que vas a escribir, simúlalo y mide qué se movió: eso no es una estimación del
+> efecto, **es el efecto**.
+
+**Y el motivo por el que la heurística falla no es la pereza — es que la
+pregunta no se puede contestar con `getComputedStyle`:** el valor computado **no
+dice de dónde viene**. Medido: censar *«elementos cuyo `lineHeight` es 1.7 × su
+`fontSize`»* para encontrar los que heredan una razón tiene un falso positivo
+real —un elemento que declara `font-size:14px` **y** `line-height:1.7em`, o sea
+23.8, que es exactamente `1.7 × 14`—. La heurística lo cuenta como heredado
+cuando declara lo suyo.
+
+**Las dos mitades operativas:**
+
+1. **la simulación va por el canal que reproduce la cascada** —un estilo en línea
+   en el mismo elemento donde vive la regla—, no por un `!important` global ni
+   reescribiendo hojas;
+2. **y lleva su CONTROL, o no prueba nada** (§sondas 8): escribir **el valor de
+   HOY** por ese mismo canal tiene que ser **NO-OP**. Si mueve algo, el canal no
+   reproduce la regla y el censo no mide lo que dice medir. Sin ese control, un
+   censo de 31 164 elementos es un número grande sin garantía de ser el correcto.
+
+**Y la contrapartida, que es lo que lo cierra:** una vez aplicado el cambio de
+verdad, **la misma sonda tiene que dar CERO**. El tratamiento pasa a ser NO-OP
+porque ya está puesto, así que «0 movidos» es la prueba de que lo escrito en el
+código es exactamente lo que se simuló — y de que no queda ni un elemento en el
+estado viejo. Medido: **0 movidos y 374 rutas intactas a los dos anchos**.
+
 **Y hay un octavo contenedor, que no contiene píxeles sino AFIRMACIONES: la
 unidad en la que se declara la COBERTURA (2026-08-02).**
 

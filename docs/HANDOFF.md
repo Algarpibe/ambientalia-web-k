@@ -1,3 +1,123 @@
+# HANDOFF — la letra: 31.164 elementos, un carácter, y la mejora escondida en el eje que no cuenta
+
+> ✅ **Tanda de la 84.ª, 2026-08-19. Se cierran el PASO 0, 1, 2, 3 y 4.**
+> **§F3-LH-INTERLINEA-RATIO-VS-LONGITUD queda CERRADA** y deja una ficha nueva.
+>
+> **1 · EL CENSO QUE LA FICHA PEDÍA, con su número.** Instrumento nuevo
+> `qa:lh-letra`, que **no censa por heurística: aplica el cambio y mide qué se
+> mueve**, con CONTROL que escribe el valor de hoy por el mismo canal y exige
+> NO-OP. Control limpio en las 374 rutas y a los dos anchos.
+>
+> | | |
+> |---|---|
+> | elementos inspeccionados | 289 888 @1440 · 255 575 @390 |
+> | **cambian de interlínea** | **31 164**, *idéntico a los dos anchos* |
+> | rutas tocadas | **374 de 374** · **0 intactas** |
+>
+> **2 · Y la heurística obvia era IMPOSIBLE, no sólo peor.** *«Elementos cuyo
+> `lineHeight` es 1.7 × su `fontSize`»* tiene un falso positivo real en el repo:
+> `.et_pb_widget` declara `font-size:14px` **y** `line-height:1.7em` = 23.8, que
+> es exactamente `1.7 × 14`. El valor computado **no dice de dónde viene**.
+>
+> **3 · EL PREDICTOR PRE-REGISTRADO TENÍA EL SIGNO INVERTIDO.** La magnitud
+> reproduce al céntimo (7.66 vs 7.65 · 15.31 vs 15.3 · 8.50 vs 8.50) —el
+> mecanismo estaba bien— y la dirección no: `1.7·fs − 30.6` es *«cuánto sobra
+> hoy»*; el MOVIMIENTO es **`30.6 − 1.7·fs`**, **positivo**. Los elementos
+> **suben**, y suben **hacia** el original.
+>
+> **4 · LA DESCOMPOSICIÓN QUE DECIDIÓ LA TANDA: el 99.6 % es UN componente.**
+>
+> | clase | rutas | elementos |
+> |---|---|---|
+> | **cascarón compartido** (`header`/`footer`/`nav`), 83 por ruta | 374 | **31 042** |
+> | cuerpo HOME + PRODUCTO | 2 | 28 |
+> | cuerpo FAQ | 19 | 38 |
+> | cuerpo CASO (`span` inline, **sin efecto**) | 56 | 56 |
+>
+> Medido en 8 arquetipos distintos: `enCascaron = 83` **en los ocho**. Por eso el
+> **disparador (a)** —**305 de 374 rutas sin comparador de dos lados**, y **0 de
+> 9 ejes de la matriz miden tipografía**— se declaró con su número **sin
+> bloquear**: en esas 305 lo que se mueve no es contenido propio, es el mismo
+> cascarón que sí se compara en las 69. **La unidad verificable es el COMPONENTE,
+> no la ruta.**
+>
+> **5 · ⚠⚠ EL HALLAZGO DE MÉTODO: el titular decía «sin efecto» y el cambio
+> ganaba 938 px.** `lh-cmp --todas` publicó `pares distintos` **5 423 → 5 423** y
+> **5 401 → 5 401**, idéntico al par. Todo el efecto había caído en el eje
+> **mixto** (*«sin referencia limpia»*), que **no cuenta como defecto**:
+>
+> | ancho | mejoran | empeoran | neto |
+> |---|---|---|---|
+> | **1440** | **69** (`cabecera.rect.h`) | **0** | **+938.4 px** |
+> | **390** | 6 | **63** (`pie.rect.h`) | **−17.1 px** |
+>
+> `cabecera.rect.h`: original **225**, clon **203.59 → 217.19**. Es §*el sitio
+> donde la deriva se esconde* **con el signo cambiado** — ahí se escondió la
+> MEJORA, y leído por el titular el paso siguiente habría sido revertir. **La
+> lectura que discrimina es comparar `|clon − original|` antes y después par a
+> par**, no leer el recuento. Regla subida a `CLAUDE.md`.
+>
+> **6 · La verificación en DOS pasos, sin fusionar.** Frescura: la hoja servida
+> trae `line-height:1.7em`. **Efecto: `lh-letra` tras el cambio da 0 elementos
+> movidos y 374 rutas INTACTAS a los dos anchos** — el tratamiento pasa a ser
+> NO-OP porque ya está puesto, o sea que lo escrito es exactamente lo simulado y
+> **no queda un solo elemento heredando la razón**.
+>
+> **7 · La 83.ª tenía razón y esta tanda pre-registró lo contrario.** Predije
+> *«`clon-base` marca las 374 rutas»*: **falso**, marca **19 @1440 y 128 @390**
+> (todas suben; `docH` neto **+131** y **+256**). 31 164 elementos cambian y
+> `docH` se mueve en 19 de 374 — lo demás lo absorben contenedores con holgura.
+> **(d) no se dispara**: son subconjunto de lo que el censo predijo. Y los dos
+> ceros valen tanto como el movimiento: **0 cambios de nº de secciones** y **0 en
+> `h1.y`**, o sea que ningún delta de cuerpo medido contra el `h1` queda
+> invalidado.
+>
+> **8 · Los 57 «fallos» del predictor, ADJUDICADOS y no descartados.** Todos el
+> mismo `span.text-[13px]` de coordenadas: medición dirigida da **`display:inline`,
+> `h 18 → 18`**, con el padre en `lh 30.6 / h 30.59`. Un `inline` **no forma caja
+> de línea**; y el padre tampoco se mueve porque su **strut** de 30.6 ya dominaba
+> al inline box de 22.1. **Cambian de interlínea y no mueven un píxel** — el
+> predictor no aplicaba a ese dominio. Instrumento corregido (los `inline` salen
+> del dominio y se cuentan aparte con su cardinal).
+>
+> **9 · Disparador (b): CONTESTADO POR MEDICIÓN, ninguna instancia parcheada se
+> mueve.** `.sobretitulo` 30.6→30.6 · `.case-cliente` (×57) 30.6→30.6 ·
+> `.et_pb_widget` **23.8→23.8** · `.wp-pagenavi a` 30.6→30.6 ·
+> `.kunak-pagination li` 30.6→30.6. El del widget pasa de coincidente a
+> **necesario**. ⚠ El encargo nombraba 3 instancias en `listados.css`; hay un
+> **tercer fichero que no nombra**, `tema.css`, con los 2 parches de la 82.ª
+> (§regla 9: el conjunto se deriva).
+>
+> **10 · La ficha nueva: §F3-LH-PIE-390-SE-ALEJA-030.** Único disparador que se
+> disparó de verdad. El pie a 390 pasa de **+1.80 a +2.10** contra un original de
+> **1761.17**, en **63 formas**. Mecanismo medido: la **zona legal** lleva `<a>` y
+> `<span>` **inline de fs 12** que pasan de `lh 20.4` a `30.6`; uno envuelve y
+> crece **+10.2**, y el contenedor absorbe el resto. No se persigue: el balance es
+> **+921.3 px netos** hacia el original. **Sin dirimir**: si el +1.80 preexistente
+> y este +0.30 son el mismo mecanismo o dos.
+>
+> **11 · El original CONFIRMADO en la salida servida**, no de memoria: **577
+> documentos del corpus** traen `body{…font-size:14px;…line-height:1.7em;…}`, y
+> el `em` se resuelve contra el `font-size` computado, que el customizer sube a
+> 18 → 30.6. *(Observación lateral: 2 de 59 hojas capturadas traen
+> `body{line-height:1.65em;font-size:16px}`, las dos de la misma página id 24813
+> — no cambia el alcance, pero queda anotado.)*
+>
+> **12 · Deudas que siguen abiertas, con su número:** **6 negativos rojos** con
+> ficha (`media-hueco` 6/7 · `media-regenera` 2/5 · `media-colision` 3/6 ·
+> `media-siembra` 3/4 · `productos-hueco` 3/5 · `coloca-media` 2/3) · **3 páginas
+> más** con el ofuscador de Cloudflare · **54 destinos en `src/` y 51 en cuerpo
+> rico** · y **66 elementos de cuerpo** (28 en HOME/PRODUCTO + 38 en FAQ) que
+> este cambio mueve y **ninguna sonda de dos lados cubre**.
+>
+> **13 · Barrido §regla 12**, acotado a `PLAN-FASE-3.md`: **45 enunciados con
+> forma de titular, de los que 2 son REGLA y no evento**, y se suben a
+> `CLAUDE.md` — (a) *el eje que no lee como defecto esconde la MEJORA igual que
+> esconde la deriva*; (b) *cuando el cambio se pueda aplicar, aplícalo y mide —
+> un censo por heurística no distingue «hereda» de «declara lo mismo»*.
+
+---
+
 # HANDOFF — los instrumentos primero: 4 negativos arreglados, 6 que gritaban, y un enlace que Cloudflare reparaba
 
 > ✅ **Tanda de INSTRUMENTOS, 2026-08-18 (83.ª). Se cierran el PASO 0, el PASO 1,

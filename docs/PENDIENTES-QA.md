@@ -14695,6 +14695,160 @@ el carácter, y el antes/después a umbral cero sobre las 374 × 2 anchos.
 > renglones **no le mueve un píxel**. La adjudicación tiene que venir de una
 > sonda que mida **la interlínea computada**, no de un `clon-base` limpio.
 
+### ✅ CERRADA 2026-08-19 (84.ª tanda) — el carácter aplicado, con su antes/después
+
+**El barrido que la ficha pedía como «primera mitad» existe y tiene número.**
+Instrumento nuevo: `qa:lh-letra` (`scripts/qa/lh-letra.mjs`), que **no censa por
+heurística — aplica el cambio y mide qué se mueve**, con un CONTROL que escribe
+el valor de HOY por el mismo canal y exige NO-OP (§sondas 8). Control limpio en
+las 374 rutas, a los dos anchos.
+
+| | |
+|---|---|
+| elementos inspeccionados | 289 888 @1440 · 255 575 @390 |
+| **elementos que cambian de interlínea** | **31 164** — *idéntico a los dos anchos* |
+| rutas tocadas | **374 de 374** · **0 intactas** |
+
+**El reparto por clase, que es lo que la ficha no tenía:**
+
+| `font-size` | Δ/renglón al arreglar | elementos | rutas |
+|---|---|---|---|
+| 13.5 | **+7.65** | 13 838 | 374 |
+| 14 | **+6.80** | 10 122 | 374 |
+| 13 | **+8.50** | 7 162 | 374 |
+| 16 | **+3.40** | 40 | 20 |
+| 15 | **+5.10** | 2 | 1 |
+
+#### ⚠ El predictor pre-registrado tenía el SIGNO INVERTIDO
+
+La magnitud reproduce al céntimo —7.66 vs 7.65 · 15.31 vs 15.3 · 8.50 vs 8.50—,
+o sea que **el mecanismo estaba bien entendido**; lo que estaba mal era la
+dirección. `1.7·fs − 30.6` dice *«cuánto sobra hoy»*; el **movimiento** al
+arreglar es su negativo:
+
+    hoy (razón heredada) 1.7 × fs  →  tras el arreglo (longitud) 30.6
+    MOVIMIENTO = 30.6 − 1.7 × fs     ← POSITIVO: los elementos SUBEN
+
+Y el signo no es cosmética: dice que el clon se mueve **hacia** el original.
+
+#### La descomposición que decidió la tanda: el 99.6 % es UN componente
+
+| clase | rutas | elementos |
+|---|---|---|
+| **cascarón compartido** (`header`/`footer`/`nav`), 83 por ruta | 374 | **31 042** |
+| cuerpo de HOME y PRODUCTO (14 c/u) | 2 | 28 |
+| cuerpo de FAQ (2 c/u) | 19 | 38 |
+| cuerpo de CASO (`span` inline de coordenadas, **sin efecto**) | 56 | 56 |
+| | | **31 164** ✅ |
+
+Medido en 8 arquetipos distintos: `enCascaron = 83` **en los ocho**. Por eso las
+**305 rutas sin comparador** no bloquearon: lo que se mueve ahí **no es contenido
+propio**, es el mismo cascarón que sí se compara en las 69 — **la unidad
+verificable es el COMPONENTE, no la ruta**.
+
+#### Los 57 «fallos» del predictor, ADJUDICADOS y no descartados
+
+Todos el mismo elemento (`span.text-[13px]` de coordenadas). Medición dirigida:
+**`display:inline`, `h 18 → 18`**, con el padre `div` block en `lh 30.6 / h 30.59`.
+Un `inline` **no forma caja de línea**, así que su rect es la caja de
+font-metrics y no responde al `line-height`; y el padre tampoco se mueve porque
+su **strut** de 30.6 ya dominaba al inline box de 22.1. **Cambian de interlínea
+computada y no mueven un píxel** — el predictor no aplicaba a ese dominio, no
+estaba refutado. Congelada: `lh-letra-1440-adjudicacion-predictor.json`.
+
+#### El resultado, con sus dos pasos separados
+
+**1 · frescura** — la hoja servida trae `line-height:1.7em`.
+**2 · efecto** — `lh-letra` tras el cambio da **0 elementos movidos y 374 rutas
+INTACTAS a los dos anchos**: el tratamiento pasa a ser NO-OP porque ya está
+puesto. Es la prueba de que el cambio en el CSS es exactamente el que se simuló
+y de que **no queda ningún elemento heredando la razón**.
+
+**Y la fidelidad contra el ORIGINAL** (`lh-cmp --todas`, 118 725 y 118 791 pares):
+
+| ancho | mejoran | empeoran | neto |
+|---|---|---|---|
+| **1440** | **69** (`cabecera.rect.h`) | **0** | **+938.4 px** |
+| **390** | 6 | **63** (`pie.rect.h`) | **−17.1 px** |
+
+`cabecera.rect.h`: original **225** · clon **203.59 → 217.19**. **+13.6 px por
+forma, hacia el original, en las 69.**
+
+> ⚠⚠ **Y ESTO NO SALÍA EN EL TITULAR: `pares distintos` dio 5 423 → 5 423 y
+> 5 401 → 5 401, o sea IDÉNTICO.** Todo el efecto cayó en el eje **mixto**, que
+> el comparador marca *«sin referencia limpia»* y **no cuenta como defecto**. Es
+> exactamente §*el sitio donde la deriva se esconde* — con el signo cambiado:
+> aquí lo que se escondió fue **la mejora**. Leído por el titular, un cambio que
+> gana 938 px se habría publicado como «sin efecto».
+>
+> **La lectura correcta se obtuvo comparando `|clon − original|` antes y después
+> par a par**, no leyendo el recuento.
+
+Cerrada la clase: `globals.css` §`body` sirve `1.7em`. Los parches locales
+(`tema.css` ×2 a `30.6px`, `listados.css` ×3 a `1.7em`) **se quedan**: medido
+antes y después, ninguno cambia de valor computado, y el de `.et_pb_widget`
+(23.8 sobre fs 14) pasa de coincidente a **necesario**.
+
+#### ⚠ Y la 83.ª TENÍA RAZÓN: `clon-base` casi no ve este cambio
+
+La condición que aquella tanda añadió —*«un cambio de `line-height` que no altere
+el nº de renglones no le mueve un píxel; la adjudicación tiene que venir de una
+sonda que mida la interlínea computada»*— **se pre-registró en contra y salió a
+favor**. La predicción de esta tanda decía *«`clon-base` marca movimiento en las
+374 rutas»*. Falsa:
+
+| | @1440 | @390 |
+|---|---|---|
+| rutas con `docH` movido | **19** (todas SUBEN) | **128** (todas suben) |
+| rutas sin ningún cambio | 355 | 246 |
+| cambio de **nº de secciones** | **0** | **0** |
+| cambio en **`h1.y`** | **0** | **0** |
+| `docH` neto | **+131 px** | **+256 px** |
+
+**31 164 elementos cambian de interlínea y `docH` se mueve en 19 rutas de 374**:
+el resto lo absorben contenedores con holgura y cajas de alto fijo. Y el
+**disparador (d) NO se dispara** — las 19/128 son **subconjunto** de las 374 que
+el censo predijo, no rutas nuevas.
+
+Los dos ceros son la otra mitad de la lectura, y valen tanto como el movimiento:
+**la estructura no se tocó** (0 cambios de nº de secciones) y **la base de
+lectura no se desplazó** (0 en `h1.y`), o sea que ningún delta de cuerpo medido
+contra el `h1` en tandas anteriores queda invalidado.
+
+---
+
+## ⚠ F3-LH-PIE-390-SE-ALEJA-030 · el pie a 390 pierde 0.30 px por forma con el arreglo de la letra (2026-08-19, 84.ª tanda)
+
+**Disparador (e) del escalón, y es el único que se disparó de verdad.** El
+arreglo de la raíz mejora 938.4 px a 1440 y **empeora 18.9 px a 390**, todos en
+`pie.rect.h`:
+
+| | |
+|---|---|
+| original | **1761.17** |
+| clon antes | 1762.97 (**+1.80**) |
+| clon después | **1763.27** (**+2.10**) |
+| formas afectadas | **63** que se alejan · 6 que se acercan |
+
+**No estaban a Δ0** —arrastraban +1.80 de antes—, así que el arreglo no rompe un
+par exacto: le añade **0.30**. Se ficha igualmente, porque a 390 el contrato es
+**fidelidad** y 0.30 no es ruido: el clon es determinista contra sí mismo.
+
+**Mecanismo, medido y no supuesto:** la **zona legal** del pie a 390 lleva `<a>`
+y `<span>` **inline de `font-size: 12`**, que pasan de `lh 20.4` a `30.6`. Uno de
+ellos envuelve en dos renglones y crece **+10.2**; el resto lo **absorbe el
+contenedor**, y los 0.30 son lo que se escapa (§*la causa común: el NIVEL al que
+se mide* — un contenedor con holgura).
+
+**Por qué no se persigue en esta tanda:** el balance del cambio es **+921.3 px
+netos** hacia el original, y revertir la raíz para salvar 0.30 devolvería los
+−13.6 por forma de la cabecera a 1440 y dejaría 31 164 elementos heredando la
+razón otra vez. **Se ficha con su número y su mecanismo**, que es lo que permite
+atacarlo sin volver a medirlo.
+
+> **Lo que NO está dirimido:** si el **+1.80 preexistente** y este **+0.30** son
+> el mismo mecanismo o dos. No se ha medido, y suponerlo sería inventar.
+
 ---
 
 ## ⚠ F3-LH-BOTON-VER-TODOS · el original ESCONDE «Ver todos», y el recuento publicado no lo distingue (2026-08-18, 82.ª tanda)
