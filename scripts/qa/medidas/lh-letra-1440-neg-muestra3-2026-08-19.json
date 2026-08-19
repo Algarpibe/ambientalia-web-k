@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "width": 1440,
+    "rutasMedidas": 3,
+    "rutasEmitidas": 374,
+    "rutasRecortadas": 371,
+    "elementosInspeccionados": 3464,
+    "controlLimpio": true
+  },
+  "noMide": [
+    "no corre settle(): 3 rutas medidas sin pase de scroll — el lineHeight computado no lo necesita, los altos de elementos dependientes de imagen pueden venir cortos",
+    "es CLON-CONTRA-CLON: 0 de 3 rutas comparadas contra el ORIGINAL — dice qué se mueve, no si queda bien",
+    "renglones contados con Range en los 263 elementos movidos; NO en los 3464 inspeccionados",
+    "RECORTE: 371 de 374 rutas emitidas NO se midieron"
+  ],
+  "clases": [
+    {
+      "fs": 13.5,
+      "dPorRenglon": 7.65,
+      "dPreRegistradoEncargo": -7.65,
+      "elementos": 111,
+      "rutas": 3,
+      "ejemplos": [
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "block px-5 py-1.5",
+          "renglones": 1,
+          "texto": "Centro de ayuda",
+          "lhAntes": 22.95,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "block px-5 py-1.5",
+          "renglones": 2,
+          "texto": "Servicio de reparación (RMA)",
+          "lhAntes": 22.95,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "block px-5 py-1.5",
+          "renglones": 1,
+          "texto": "Soporte técnico",
+          "lhAntes": 22.95,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "block px-5 py-1.5",
+          "renglones": 1,
+          "texto": "English",
+          "lhAntes": 22.95,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "block px-5 py-1.5",
+          "renglones": 1,
+          "texto": "Français",
+          "lhAntes": 22.95,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "block px-5 py-1.5",
+          "renglones": 1,
+          "texto": "العربية",
+          "lhAntes": 22.95,
+          "lhDespues": 30.6
+        }
+      ]
+    },
+    {
+      "fs": 14,
+      "dPorRenglon": 6.8,
+      "dPreRegistradoEncargo": -6.8,
+      "elementos": 93,
+      "rutas": 3,
+      "ejemplos": [
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "px-2 text-[14px] font-medium",
+          "renglones": 1,
+          "texto": "Inicio",
+          "lhAntes": 23.8,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "inline-flex items-center gap-1",
+          "renglones": 2,
+          "texto": "Productos",
+          "lhAntes": 23.8,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "svg",
+          "cls": "h-3 w-3",
+          "renglones": 1,
+          "texto": "",
+          "lhAntes": 23.8,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "polyline",
+          "cls": "",
+          "renglones": null,
+          "texto": "",
+          "lhAntes": 23.8,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "inline-flex items-center gap-1",
+          "renglones": 2,
+          "texto": "Sectores",
+          "lhAntes": 23.8,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "svg",
+          "cls": "h-3 w-3",
+          "renglones": 1,
+          "texto": "",
+          "lhAntes": 23.8,
+          "lhDespues": 30.6
+        }
+      ]
+    },
+    {
+      "fs": 13,
+      "dPorRenglon": 8.5,
+      "dPreRegistradoEncargo": -8.5,
+      "elementos": 57,
+      "rutas": 3,
+      "ejemplos": [
+        {
+          "ruta": "/",
+          "tag": "div",
+          "cls": "mx-auto flex h-[41px]",
+          "renglones": 7,
+          "texto": "SoporteCentro de ayudaServicio de repara",
+          "lhAntes": 22.1,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "div",
+          "cls": "group relative",
+          "renglones": 7,
+          "texto": "SoporteCentro de ayudaServicio de repara",
+          "lhAntes": 22.1,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "inline-flex items-center gap-1",
+          "renglones": 2,
+          "texto": "Soporte",
+          "lhAntes": 22.1,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "svg",
+          "cls": "h-3 w-3",
+          "renglones": 1,
+          "texto": "",
+          "lhAntes": 22.1,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "polyline",
+          "cls": "",
+          "renglones": null,
+          "texto": "",
+          "lhAntes": 22.1,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "div",
+          "cls": "pointer-events-none absolute right-0",
+          "renglones": 7,
+          "texto": "Centro de ayudaServicio de reparación (R",
+          "lhAntes": 22.1,
+          "lhDespues": 30.6
+        }
+      ]
+    },
+    {
+      "fs": 15,
+      "dPorRenglon": 5.1,
+      "dPreRegistradoEncargo": -5.1,
+      "elementos": 2,
+      "rutas": 1,
+      "ejemplos": [
+        {
+          "ruta": "/",
+          "tag": "a",
+          "cls": "group mb-[10px] inline-flex",
+          "renglones": 2,
+          "texto": "¡Me apunto!→",
+          "lhAntes": 25.5,
+          "lhDespues": 30.6
+        },
+        {
+          "ruta": "/",
+          "tag": "span",
+          "cls": "inline-block transition-transform duration-200",
+          "renglones": 1,
+          "texto": "→",
+          "lhAntes": 25.5,
+          "lhDespues": 30.6
+        }
+      ]
+    }
+  ],
+  "predictor": {
+    "cuadran": 100,
+    "fallan": 0,
+    "casos": []
+  },
+  "rutasTocadas": {
+    "/": 97,
+    "/aaqms-estaciones-de-calidad-del-aire": 83,
+    "/accesorios": 83
+  },
+  "fallosControl": []
+}

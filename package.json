@@ -206,6 +206,8 @@
     "qa:lh-fecha-orden-neg": "node scripts/qa/lh-fecha-orden.neg.mjs",
     "qa:lh-jerarquia": "node scripts/qa/lh-jerarquia.mjs",
     "qa:lh-jerarquia-neg": "node scripts/qa/lh-jerarquia.neg.mjs",
+    "qa:lh-letra": "node scripts/qa/lh-letra.mjs",
+    "qa:lh-letra-390": "node scripts/qa/lh-letra.mjs 390",
     "qa:lh-huecos": "node scripts/qa/lh-huecos.mjs",
     "qa:lh-huecos-neg": "node scripts/qa/lh-huecos.neg.mjs",
     "qa:lh-subpixel": "node scripts/qa/lh-subpixel.mjs",

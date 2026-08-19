@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "fecha": "2026-08-19",
+    "tanda": "84",
+    "ruta": "/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu",
+    "ancho": 1440,
+    "proposito": "adjudicar los 57 fallos del predictor de lh-letra-1440.json",
+    "instrumento": "medicion dirigida con puppeteer sobre el clon servido; NO es una corrida de lh-letra"
+  },
+  "hipotesis": "los 57 son spans INLINE, cuyo getBoundingClientRect no responde al line-height",
+  "medido": [
+    {
+      "display": "inline",
+      "fs": "13px",
+      "lh": "22.1px",
+      "h": 18,
+      "padre": { "tag": "div", "display": "block", "lh": "30.6px", "h": 30.59375 }
+    }
+  ],
+  "veredicto": {
+    "display": "inline — CONFIRMADO por medicion, no supuesto",
+    "porQueNoSeMueve": "un elemento inline no forma caja de linea propia: su rect es la caja de font-metrics (18px a fs 13) y es constante frente al line-height",
+    "elPadreTampoco": "el padre es un div block con lh 30.6px y alto 30.59; su caja de linea la fija el STRUT de 30.6, que ya domina al inline box de 22.1 — al subir el hijo a 30.6 el strut sigue dominando y el alto no se mueve",
+    "conclusion": "los 57 CAMBIAN de lineHeight computado y NO mueven un pixel. NO es el disparador (c) —mecanismo mal entendido—: es que el clasificador hojaTexto de la sonda metia en el dominio del predictor elementos donde el predictor NO APLICA",
+    "consecuencia": "el predictor se lee 11627 cuadran / 0 fallan / 57 FUERA DE DOMINIO",
+    "queSonLos57": "span.text-[13px] text-[#666] con las coordenadas geograficas de la ficha de caso; 1 por ruta de caso"
+  },
+  "arregloDelInstrumento": {
+    "que": "el clasificador hojaTexto pasa a exigir que el PROPIO elemento no sea display:inline, y los inline se cuentan aparte como fueraDeDominio",
+    "alcanceDeLaCaducidad": "SOLO el campo `predictor` de lh-letra-{1440,390}.json. El CENSO (clases, elementos movidos, rutasTocadas) NO cambia: los 57 estan correctamente contados como movidos, porque su lineHeight computado SI cambia",
+    "regla": "CLAUDE.md §sondas 5bis — arreglar un instrumento no arregla sus medidas: las caduca, y el alcance del dano se declara con su numero"
+  }
+}
