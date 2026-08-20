@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "width": 1440,
+    "rutasMedidas": 374,
+    "rutasEmitidas": 374,
+    "rutasRecortadas": 0,
+    "elementosInspeccionados": 289882,
+    "controlLimpio": true
+  },
+  "noMide": [
+    "no corre settle(): 374 rutas medidas sin pase de scroll — el lineHeight computado no lo necesita, los altos de elementos dependientes de imagen pueden venir cortos",
+    "es CLON-CONTRA-CLON: 0 de 374 rutas comparadas contra el ORIGINAL — dice qué se mueve, no si queda bien",
+    "renglones contados con Range en los 0 elementos movidos; NO en los 289882 inspeccionados",
+    "sin recorte: 374/374 rutas emitidas"
+  ],
+  "clases": [],
+  "predictor": {
+    "cuadran": 0,
+    "fallan": 0,
+    "fueraDeDominioInline": 0,
+    "casos": []
+  },
+  "rutasTocadas": {},
+  "fallosControl": []
+}

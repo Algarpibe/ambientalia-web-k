@@ -4,7 +4,7 @@
     "width": 1440,
     "que": "descomposición del PIE por sección, de dos lados",
     "ladoOriginal": "kunakair.com VIVO (no el espejo: el espejo no trae el clon)",
-    "ladoClon": "http://127.0.0.1:55830",
+    "ladoClon": "http://127.0.0.1:52949",
     "unidad": "la SECCIÓN de pie (rol × forma), no el alto del pie",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio»",
     "noMide": [
@@ -483,7 +483,7 @@
       "clon": {
         "pie": {
           "w": 1440,
-          "h": 594.75,
+          "h": 682.09,
           "y": 3487.98,
           "x": 0
         },
@@ -497,7 +497,7 @@
             "rol": "links",
             "rect": {
               "w": 1440,
-              "h": 430.78,
+              "h": 518.13,
               "y": 3487.98,
               "x": 0
             },
@@ -510,7 +510,7 @@
             "rect": {
               "w": 1440,
               "h": 122.97,
-              "y": 3918.77,
+              "y": 4006.11,
               "x": 0
             },
             "padTop": "0px",
@@ -522,7 +522,7 @@
             "rect": {
               "w": 1440,
               "h": 41,
-              "y": 4041.73,
+              "y": 4129.08,
               "x": 0
             },
             "padTop": "0px",
@@ -784,8 +784,8 @@
       "forma": "L3-sci",
       "rol": "links",
       "orig": 518.13,
-      "clon": 430.78,
-      "delta": -87.35
+      "clon": 518.13,
+      "delta": 0
     },
     {
       "forma": "L3-sci",
@@ -805,8 +805,8 @@
       "forma": "L3-sci",
       "rol": "· TOTAL",
       "orig": 681.09,
-      "clon": 594.75,
-      "delta": -86.34
+      "clon": 682.09,
+      "delta": 1
     },
     {
       "forma": "L5-casos",
@@ -911,9 +911,9 @@
     {
       "forma": "L3-sci",
       "lado": "clon",
-      "suma": 594.75,
-      "pie": 594.75,
-      "resto": 0
+      "suma": 682.1,
+      "pie": 682.09,
+      "resto": -0.01
     },
     {
       "forma": "L5-casos",
