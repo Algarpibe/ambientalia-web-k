@@ -1236,6 +1236,166 @@ export function corridaNegativa({ etiqueta, args, env = {}, cwd, timeout = 900_0
   return spawnSync(process.execPath, args, { cwd, env: hijo, encoding: "utf8", timeout });
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL EJE QUE NO LEE COMO DEFECTO, PUBLICÁNDOSE SOLO
+ *
+ * `CLAUDE.md` §regla 14 lo manda desde hace tandas —*«los ejes excluidos se
+ * reparten igual y se publican con su cardinal, fuera del recuento»*— y **el
+ * instrumento no lo hacía**. Es §*documentado no es conectado* con una regla
+ * general contra su propia sonda, y se cobró TRES tandas seguidas:
+ *
+ * | tanda | lo que el titular dijo | lo que el eje mixto tenía dentro |
+ * |---|---|---|
+ * | 84.ª | `5423 → 5423`, «sin efecto» | una MEJORA de **+938.4 px** en 69 formas |
+ * | 85.ª | (no dijo nada) | un DEFECTO de **−611.53** y **−289.64** sin adjudicar |
+ * | 86.ª | `5423 → 5423`, «sin efecto» | una mejora de **−512.04** en 6 rutas |
+ *
+ * Las tres veces se cazó a mano. La lectura que discrimina **no es un
+ * recuento** —el recuento clasifica ANTES de restar, así que el efecto entero
+ * cae fuera del titular— sino **comparar `|clon − referencia|` ANTES y DESPUÉS,
+ * par a par**.
+ * ══════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Elige la congelada ANTERIOR de una sonda: la más reciente **por `mtime`** de
+ * entre las que casan el patrón, excluyendo la que se acaba de escribir.
+ *
+ * ⚠ **El orden se deriva del `mtime`, NUNCA del nombre, y esto no es una
+ * preferencia de estilo: el alfabético INVIERTE el tiempo.** `-2.json` ordena
+ * **antes** que `.json` porque `-` (45) < `.` (46), así que un `sort()` sobre
+ * nombres toma la congelada de HOY como «antes» y publica **el resultado exacto
+ * invertido, con un signo perfectamente plausible**. Pasó en la 86.ª: dio
+ * `Σ +512.04 · se alejan 6` donde había `−512.04 · se acercan 6`, y sólo lo
+ * delató que contradecía a `pie-cmp` (§sondas 4, *la contradicción con una
+ * medida buena anterior*). Es §regla 9 en el sitio donde menos se espera —
+ * **el ORDEN de dos ficheros también es un dato que se deriva o se supone**.
+ *
+ * Los artefactos de negativo quedan fuera por §regla 7 (lo dice el nombre), y
+ * las `-CONTAMINADA` también: una corrida que se descartó no es una foto de la
+ * que se pueda restar nada.
+ *
+ * Devuelve `{ fichero, ruta, fecha, candidatas }` o `null` si no hay ninguna.
+ * **`candidatas` va siempre**: un `null` sin denominador no distingue «no hay
+ * congeladas» de «el patrón no casa con nada» (§sondas 4).
+ */
+export function eligeCongeladaAnterior(patron, { dir = path.join(QA, "medidas"), excluir = [] } = {}) {
+  if (!(patron instanceof RegExp)) throw new Error("eligeCongeladaAnterior: `patron` tiene que ser una RegExp");
+  /* El orden se puede forzar SÓLO por parámetro y para el negativo: un fallback
+   * silencioso a alfabético es exactamente el defecto que esta función existe
+   * para no volver a cometer. */
+  const porNombre = process.env.ORDEN_POR_NOMBRE === "1";
+  const fuera = new Set(excluir.map((f) => path.basename(f)));
+  if (!fs.existsSync(dir)) return { fichero: null, ruta: null, fecha: null, candidatas: 0, ordenadoPor: porNombre ? "NOMBRE (sabotaje)" : "mtime" };
+  const todas = fs
+    .readdirSync(dir)
+    .filter((f) => patron.test(f) && !yaMarcado(f) && !/-CONTAMINADA/.test(f) && !fuera.has(f))
+    .map((f) => ({ f, ruta: path.join(dir, f), mtime: fs.statSync(path.join(dir, f)).mtimeMs }));
+  if (!todas.length) return { fichero: null, ruta: null, fecha: null, candidatas: 0, ordenadoPor: porNombre ? "NOMBRE (sabotaje)" : "mtime" };
+  todas.sort(porNombre ? (a, b) => (a.f < b.f ? 1 : a.f > b.f ? -1 : 0) : (a, b) => b.mtime - a.mtime);
+  const g = todas[0];
+  return {
+    fichero: g.f,
+    ruta: g.ruta,
+    fecha: new Date(g.mtime).toISOString().replace("T", " ").slice(0, 16),
+    candidatas: todas.length,
+    ordenadoPor: porNombre ? "NOMBRE (sabotaje)" : "mtime",
+  };
+}
+
+const _num = (v) => (typeof v === "number" && Number.isFinite(v) ? v : typeof v === "string" && /^-?\d+(\.\d+)?$/.test(v) ? Number(v) : null);
+
+/**
+ * El reparto ACERCAN / ALEJAN de un eje, entre dos congeladas de `lh-cmp`.
+ *
+ * **La unidad es el PAR** (`forma::camino`), no la forma ni la página: un eje
+ * que se reparte en formas vuelve a ser el nivel de arriba que absorbe
+ * (§La causa común).
+ *
+ * Cómo se emparejan las dos fotos, y por qué no basta con leer `diferencias`:
+ * el comparador **sólo guarda los pares que DIFIEREN**. Así que un par que
+ * antes difería y ahora casa no aparece en la foto nueva — y su distancia de
+ * hoy es **0**, no «ausente». Se toma por tanto **la unión** de los dos
+ * conjuntos, con distancia 0 en el lado donde el par no está.
+ *
+ * Los límites se devuelven **con su cardinal** (§regla 14), nunca como frase:
+ * - `noNumericos` — pares cuyo valor no es un número: no tienen distancia;
+ * - `truncadas` — formas cuyo `diferencias` viene recortado por el `slice`, o
+ *   sea donde la foto **afirma menos pares de los que hubo** (§sondas 4, 4.ª cara);
+ * - `referenciaMovida` — pares cuya REFERENCIA cambió entre las dos fotos: su
+ *   Δ de distancia mezcla deriva del original con movimiento del clon.
+ */
+export function repartoDeDistancia(anterior, actual, { eje = "mixta" } = {}) {
+  const lee = (foto) => {
+    const m = new Map();
+    let truncadas = 0;
+    const formas = (foto && foto.formas) || {};
+    for (const [clave, v] of Object.entries(formas)) {
+      if (!v || !Array.isArray(v.diferencias)) continue;
+      if (typeof v.distintos === "number" && v.distintos > v.diferencias.length) truncadas++;
+      for (const d of v.diferencias) {
+        if (d.eje !== eje) continue;
+        /* ⚠ El separador es ` ` y no `::` PORQUE LA CLAVE DE FORMA YA
+         * LLEVA `::` DENTRO (`L3-sci::/es/scientific-category/…`). Con `::`,
+         * `split("::")[0]` devuelve la FAMILIA y el reparto se publica agrupado
+         * por familia mientras el rótulo dice «forma»: un agregado que se lee
+         * como el nivel de abajo, o sea §La causa común dentro del propio
+         * instrumento que existe para no cometerla. */
+        m.set(`${clave} ${d.camino}`, d);
+      }
+    }
+    return { m, truncadas, formas: Object.keys(formas).length };
+  };
+  const A = lee(anterior);
+  const B = lee(actual);
+
+  const claves = new Set([...A.m.keys(), ...B.m.keys()]);
+  const r = {
+    eje,
+    unidad: "el PAR (forma::camino)",
+    paresEnLaUnion: claves.size,
+    conDistancia: 0,
+    acercan: 0,
+    alejan: 0,
+    igual: 0,
+    sumaDelta: 0,
+    sumaAcercan: 0,
+    sumaAlejan: 0,
+    noNumericos: 0,
+    referenciaMovida: 0,
+    truncadas: { anterior: A.truncadas, actual: B.truncadas },
+    formasVistas: { anterior: A.formas, actual: B.formas },
+    porForma: {},
+    ejemplos: [],
+  };
+
+  for (const k of claves) {
+    const a = A.m.get(k);
+    const b = B.m.get(k);
+    /* La referencia de cada foto es la suya. Si el par no está en una foto, es
+     * que allí CASABA: distancia 0, y la referencia es la de la otra. */
+    const refA = a ? _num(a.referencia) : b ? _num(b.referencia) : null;
+    const refB = b ? _num(b.referencia) : a ? _num(a.referencia) : null;
+    const clA = a ? _num(a.clon) : refA;
+    const clB = b ? _num(b.clon) : refB;
+    if (refA === null || refB === null || clA === null || clB === null) { r.noNumericos++; continue; }
+    if (refA !== refB) r.referenciaMovida++;
+    const dA = Math.abs(clA - refA);
+    const dB = Math.abs(clB - refB);
+    const delta = +(dB - dA).toFixed(4);
+    r.conDistancia++;
+    r.sumaDelta = +(r.sumaDelta + delta).toFixed(4);
+    const forma = k.slice(0, k.indexOf(" "));
+    const pf = (r.porForma[forma] ||= { acercan: 0, alejan: 0, igual: 0, suma: 0 });
+    if (delta < 0) { r.acercan++; r.sumaAcercan = +(r.sumaAcercan + delta).toFixed(4); pf.acercan++; }
+    else if (delta > 0) { r.alejan++; r.sumaAlejan = +(r.sumaAlejan + delta).toFixed(4); pf.alejan++; }
+    else { r.igual++; pf.igual++; continue; }
+    pf.suma = +(pf.suma + delta).toFixed(4);
+    if (r.ejemplos.length < 40) r.ejemplos.push({ forma, camino: k.slice(k.indexOf(" ") + 1), antes: dA, ahora: dB, delta, referencia: refB, clon: clB });
+  }
+  r.ejemplos.sort((x, y) => Math.abs(y.delta) - Math.abs(x.delta));
+  return r;
+}
+
 export function w(file, data, { pisar = false } = {}) {
   /* Congelar una medida es la señal de que esta sonda MIDE, y por tanto de que
    * le toca el contrato de `Evaluadas`. Se apunta aquí —el sitio por el que

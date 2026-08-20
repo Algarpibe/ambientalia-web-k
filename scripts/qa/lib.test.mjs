@@ -25,10 +25,10 @@
  * fuerza una barra inicial y la convierte en absoluta. Por eso hay dos lecturas
  * distintas —`env()` y `envRuta()`— y por eso se prueban las dos.
  */
-import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, readdirSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { auditarSondas, corridaNegativa, LIBRERIAS, desMsys, env, envRuta, envRutas, Evaluadas, hoy, iniciarClon, nombreNeg, ruta, sello, sinLiterales, w } from "./lib.mjs";
+import { auditarSondas, corridaNegativa, eligeCongeladaAnterior, LIBRERIAS, desMsys, env, envRuta, envRutas, Evaluadas, hoy, iniciarClon, nombreNeg, repartoDeDistancia, ruta, sello, sinLiterales, w } from "./lib.mjs";
 
 /* Este fichero NO es una sonda: no mide el sitio, prueba `lib.mjs`. Lo declara
  * él mismo —como `ruido` declara `SIN_CLON`— en vez de exigírselo a quien lo
@@ -498,6 +498,106 @@ console.log("\n── `sinLiterales()`: qué es código y qué es texto ──")
     true,
   );
   eq("y una división no se come el código", hay(`const r = a / b; const ev = new Evaluadas({minimo:1});`), true);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL EJE MIXTO: el reparto ACERCAN/ALEJAN y la elección de la foto anterior
+ *
+ * Dos funciones y **dos sabotajes distintos**, porque los fallos son distintos:
+ *
+ * | sabotaje | qué anula | cómo tiene que caer |
+ * |---|---|---|
+ * | `ORDEN_POR_NOMBRE=1` | que el orden se derive del `mtime` | **por el SIGNO**: `Σ +N` donde hay `−N`. Nunca por excepción ni por código |
+ * | `slice` que recorta | que la foto declare cuántos pares hubo | por el cardinal de `truncadas`, que deja de ser 0 |
+ *
+ * ⚠ El primero es el que importa y es el que **ya se cometió** (86.ª): un
+ * `sort()` alfabético publica el resultado **exacto invertido** con cara
+ * plausible, porque `-2.json` ordena antes que `.json` (`-`=45 < `.`=46). Un
+ * negativo que cayera por «exit ≠ 0» no probaría nada de eso — §regla 17:
+ * **el caso tiene que caer POR SU MOTIVO**.
+ * ══════════════════════════════════════════════════════════════════════════ */
+console.log("\n── el eje mixto: reparto ACERCAN/ALEJAN, y el orden por mtime ──");
+{
+  const dir = mkdtempSync(join(tmpdir(), "qa-mixto-"));
+  /* Dos fotos con el mismo par mixto. El clon se ACERCA: de 100 a 10 contra una
+   * referencia de 0, o sea Δ −90. */
+  const foto = (clon) => ({ formas: { "L3-sci": { distintos: 1, diferencias: [{ camino: "cabecera.rect.h", eje: "mixta", contra: "espejo", referencia: 0, clon }] } } });
+  const antes = foto(100);
+  const ahora = foto(10);
+
+  const r = repartoDeDistancia(antes, ahora);
+  eq("la unidad es el PAR, y se dice", r.unidad, "el PAR (forma::camino)");
+  eq("un par que se acerca: acercan 1 · alejan 0", [r.acercan, r.alejan], [1, 0]);
+  eq("…y su Σ lleva el signo NEGATIVO (hacia el original)", r.sumaDelta, -90);
+  eq("el reparto por forma nombra la forma", Object.keys(r.porForma), ["L3-sci"]);
+
+  /* ⚠ Y la clave de forma de `lh-cmp` LLEVA `::` DENTRO. Un `split("::")[0]`
+   * agrupa por FAMILIA y rotula «forma»: el agregado se lee como el nivel de
+   * abajo (§La causa común), dentro del instrumento escrito para no cometerla.
+   * Éste es el caso que lo separa: dos RUTAS de la misma familia. */
+  const conRuta = (clon, ruta) => ({ formas: { [`L3-sci::/es/${ruta}/`]: { distintos: 1, diferencias: [{ camino: "cabecera.rect.h", eje: "mixta", referencia: 0, clon }] } } });
+  const dosRutas = (c1, c2) => ({ formas: { ...conRuta(c1, "uno").formas, ...conRuta(c2, "dos").formas } });
+  eq(
+    "dos RUTAS de la misma familia salen SEPARADAS, no fundidas en 'L3-sci'",
+    Object.keys(repartoDeDistancia(dosRutas(100, 100), dosRutas(10, 40)).porForma),
+    ["L3-sci::/es/uno/", "L3-sci::/es/dos/"],
+  );
+
+  /* Y AL REVÉS, que es la mitad que prueba que el signo no está cableado. */
+  const r2 = repartoDeDistancia(ahora, antes);
+  eq("invirtiendo las dos fotos, el signo se invierte", [r2.acercan, r2.alejan, r2.sumaDelta], [0, 1, 90]);
+
+  /* Un par que ANTES difería y AHORA casa no está en la foto nueva: su
+   * distancia de hoy es 0, no «ausente». Si esto se leyera como ausente, la
+   * mejora entera desaparecería del reparto — que es justo el fallo original. */
+  eq("un par que desaparece de la foto nueva vale 0, no «ausente»", repartoDeDistancia(antes, { formas: { "L3-sci": { distintos: 0, diferencias: [] } } }).sumaDelta, -100);
+
+  /* Los límites salen CON SU CARDINAL (§regla 14), nunca como frase. */
+  const conTexto = { formas: { X: { distintos: 9, diferencias: [{ camino: "c", eje: "mixta", referencia: "et_pb_row", clon: "fila" }] } } };
+  const rl = repartoDeDistancia(conTexto, conTexto);
+  eq("un par NO numérico no tiene distancia: se CUENTA", rl.noNumericos, 1);
+  eq("…y no se cuela en el reparto", [rl.acercan, rl.alejan, rl.conDistancia], [0, 0, 0]);
+  eq("una foto con `diferencias` recortado declara su truncado", rl.truncadas.actual, 1);
+  eq("y la referencia movida se cuenta aparte", repartoDeDistancia(foto(100), { formas: { "L3-sci": { distintos: 1, diferencias: [{ camino: "cabecera.rect.h", eje: "mixta", referencia: 5, clon: 10 }] } } }).referenciaMovida, 1);
+
+  /* El eje se ELIGE: un par de otro eje no entra en el reparto del mixto. */
+  eq("un par de otro eje no entra en el reparto del mixto", repartoDeDistancia({ formas: { X: { distintos: 1, diferencias: [{ camino: "c", eje: "plantilla", referencia: 0, clon: 9 }] } } }, { formas: {} }).paresEnLaUnion, 0);
+
+  /* ── La elección de la foto anterior: mtime, NUNCA nombre ──────────────── */
+  const toca = (f, ms) => { writeFileSync(join(dir, f), "{}"); utimesSync(join(dir, f), new Date(ms / 1000), new Date(ms / 1000)); };
+  const base = Date.parse("2026-08-20T09:33:00Z");
+  toca("lh-cmp-1440-todas-2026-08-20.json", base);              // 09:33 — la VIEJA
+  toca("lh-cmp-1440-todas-2026-08-20-2.json", base + 2 * 3600e3); // 11:58 — la NUEVA
+  toca("lh-cmp-1440-todas-2026-08-20-3-neg-sabotaje.json", base + 9 * 3600e3); // artefacto
+  toca("lh-cmp-1440-todas-2026-08-19-CONTAMINADA.json", base + 9 * 3600e3);    // descartada
+  const P = /^lh-cmp-1440-todas(-\d{4}-\d{2}-\d{2}(-\d+)?)?\.json$/;
+
+  delete process.env.ORDEN_POR_NOMBRE;
+  const g = eligeCongeladaAnterior(P, { dir });
+  eq("por mtime gana la MÁS RECIENTE (11:58)", g.fichero, "lh-cmp-1440-todas-2026-08-20-2.json");
+  eq("…y lo declara: ordenado por mtime", g.ordenadoPor, "mtime");
+  eq("§regla 7 · el artefacto -neg- y la -CONTAMINADA quedan FUERA", g.candidatas, 2);
+  eq("excluir la recién escrita deja la anterior", eligeCongeladaAnterior(P, { dir, excluir: ["lh-cmp-1440-todas-2026-08-20-2.json"] }).fichero, "lh-cmp-1440-todas-2026-08-20.json");
+
+  /* ⚠ EL SABOTAJE, Y CAE POR EL SIGNO. */
+  process.env.ORDEN_POR_NOMBRE = "1";
+  const s = eligeCongeladaAnterior(P, { dir });
+  eq("SABOTAJE · por NOMBRE gana la de 09:33 — el tiempo INVERTIDO", s.fichero, "lh-cmp-1440-todas-2026-08-20.json");
+  eq("…y lo dice en la salida en vez de callárselo", s.ordenadoPor, "NOMBRE (sabotaje)");
+  delete process.env.ORDEN_POR_NOMBRE;
+
+  /* La consecuencia, que es lo que el negativo viene a probar: con el orden
+   * invertido, el MISMO par publica el signo contrario. Y no da error. */
+  const bueno = repartoDeDistancia(antes, ahora).sumaDelta;
+  const roto = repartoDeDistancia(ahora, antes).sumaDelta;
+  eq("SABOTAJE · el orden invertido publica el signo CONTRARIO", [bueno, roto], [-90, 90]);
+  eq("…y ninguno de los dos da error: los dos son números plausibles", [Number.isFinite(bueno), Number.isFinite(roto)], [true, true]);
+
+  /* Sin foto anterior: un cero CON denominador, no un `null` mudo (§sondas 4). */
+  const v = eligeCongeladaAnterior(/^no-existe-nada\.json$/, { dir });
+  eq("sin candidatas, el cero viene con su cardinal", [v.fichero, v.candidatas], [null, 0]);
+
+  rmSync(dir, { recursive: true, force: true });
 }
 
 console.log("\n── el barrido del contrato: EJECUTAR, no casar texto ──");

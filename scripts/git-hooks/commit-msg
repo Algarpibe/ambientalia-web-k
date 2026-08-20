@@ -1,0 +1,62 @@
+#!/bin/sh
+# ══════════════════════════════════════════════════════════════════════════
+# LA GUARDA DE §regla 13, PUESTA DONDE SÍ PUEDE CAZAR ALGO
+#
+# `CLAUDE.md` §regla 13: *un documento se escribe con `Write`/`Edit`, nunca con
+# `node -e` ni con un heredoc*, porque **todo texto que pasa por la línea de
+# órdenes atraviesa un intérprete que reclama caracteres para sí** —backticks,
+# `$`, `!`, comillas— y **no falla: entrega el documento con huecos**.
+#
+# La regla se ha cobrado DOS TANDAS SEGUIDAS con el patrón bueno usado en la
+# misma sesión, así que «poner más atención» ya está descartado como remedio.
+# La decisión, escrita para que no haya que volver a tomarla:
+#
+#   1 · UN MENSAJE DE COMMIT SE PASA SIEMPRE CON `git commit -F <fichero>`,
+#       y el fichero se escribe con `Write`. Sin excepción, ni para los cortos:
+#       la excepción es exactamente donde reaparece.
+#   2 · Y ESTE HOOK ES LA RED, no la regla. Un hook NO puede reparar lo que el
+#       shell ya se comió —cuando `commit-msg` corre, el mensaje ya llegó
+#       mutilado—, así que lo único que puede hacer es **RECHAZARLO en voz
+#       alta**. Es el defecto puesto en la dirección que grita (§sondas 6).
+#
+# ── Qué detecta, y por qué ESTO y no una heurística general ────────────────
+# El modo de fallo está MEDIDO, no supuesto: el shell se comió
+# `qa:lh-pieles-css`, `L1` y `@media…` **dejando los huecos vacíos**. O sea que
+# la firma es un par de delimitadores VACÍO — algo que en prosa no se escribe
+# nunca a propósito. Se buscan los tres pares que este repo usa:
+#
+#   ``      inline-code vacío     ← la firma de los dos incidentes medidos
+#   ****    negrita vacía
+#   «»      comillas vacías
+#
+# Un mensaje legítimo no contiene ninguno. Si alguna vez hiciera falta, se
+# salta con `--no-verify` — pero eso hay que escribirlo, que es el punto.
+# ══════════════════════════════════════════════════════════════════════════
+msg_file="$1"
+[ -f "$msg_file" ] || exit 0
+
+# Sólo el cuerpo real: los comentarios de git no cuentan.
+cuerpo=$(grep -v '^#' "$msg_file")
+
+malos=""
+printf '%s' "$cuerpo" | grep -q '``'   && malos="$malos  ·  \`\` (inline-code VACÍO)"
+printf '%s' "$cuerpo" | grep -q '\*\*\*\*' && malos="$malos  ·  **** (negrita VACÍA)"
+printf '%s' "$cuerpo" | grep -q '«»'   && malos="$malos  ·  «» (comillas VACÍAS)"
+
+if [ -n "$malos" ]; then
+  echo ""
+  echo "❌ COMMIT RECHAZADO — el mensaje trae PARES DE DELIMITADOR VACÍOS:"
+  echo "  $malos"
+  echo ""
+  echo "   Ésa es la firma de §regla 13: el shell se comió lo que iba dentro."
+  echo "   Un backtick, un \$ o un ! en la línea de órdenes los reclama el"
+  echo "   intérprete, y NO da error — entrega el mensaje con huecos."
+  echo ""
+  echo "   La forma correcta, y es más corta:"
+  echo "     escribe el mensaje a un fichero con Write y usa  git commit -F <fichero>"
+  echo ""
+  echo "   (si de verdad querías escribir un par vacío: git commit --no-verify)"
+  echo ""
+  exit 1
+fi
+exit 0

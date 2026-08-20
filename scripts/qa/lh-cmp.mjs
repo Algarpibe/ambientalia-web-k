@@ -123,7 +123,7 @@ import { barrer } from "./lh-barrido.mjs";
  * —dos verdes en su marco midiendo cosas distintas—, que es exactamente el
  * argumento que ya está escrito arriba para `lh-barrido.mjs`. */
 import { aplana, censaEjes, ejeDe, IGNORAR } from "./lh-ejes.mjs";
-import { Censo, Evaluadas, env, gritaSiRevienta, hoy, iniciarClon, launch, openPage, QA, settle, w } from "./lib.mjs";
+import { Censo, eligeCongeladaAnterior, Evaluadas, env, gritaSiRevienta, hoy, iniciarClon, launch, openPage, QA, repartoDeDistancia, settle, w } from "./lib.mjs";
 
 const ARGS = process.argv.slice(2);
 const ANCHO = Number(ARGS.find((a) => /^\d+$/.test(a)) || 1440);
@@ -617,7 +617,72 @@ console.log(`\n  ⚠ sin campaña de ruido en estas rutas: un residuo pequeño e
 for (const b of basesQueNoCasan)
   console.log(`  ⛔ P-LH-C8 · ${b.forma}: original ${b.original.que}/${b.original.marca} → clon ${b.clon.que}/${b.clon.marca}`);
 
-w(`medidas/lh-cmp-${ANCHO}${SUFIJO}${VIVO ? "-vivo" : ""}.json`, salida);
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL EJE MIXTO, PUBLICÁNDOSE SOLO — por defecto y FUERA del recuento
+ *
+ * Tres tandas seguidas el titular de arriba dijo «sin efecto» mientras el eje
+ * mixto llevaba dentro +938.4, −611.53 y −512.04 px. No es que el recuento
+ * mintiera: es que **clasifica antes de restar**, así que el efecto entero cae
+ * en un eje que el titular no cita. §regla 14 lo manda desde entonces y **el
+ * instrumento no lo hacía** — §*documentado no es conectado*, con una regla
+ * general contra su propia sonda.
+ *
+ * `ANTES=` elige la foto anterior a mano (para reproducir un reparto conocido);
+ * sin él, se DERIVA la más reciente por `mtime` — nunca por nombre.
+ * ══════════════════════════════════════════════════════════════════════════ */
+const DESTINO = `medidas/lh-cmp-${ANCHO}${SUFIJO}${VIVO ? "-vivo" : ""}.json`;
+const ANTES_REL = env("ANTES");
+const patronAnterior = new RegExp(`^lh-cmp-${ANCHO}${SUFIJO}${VIVO ? "-vivo" : ""}(-\\d{4}-\\d{2}-\\d{2}(-\\d+)?)?\\.json$`);
+let elegida;
+if (ANTES_REL) {
+  const ruta = join(QA, ANTES_REL.replace(/^\.?\//, ""));
+  if (!existsSync(ruta)) throw new Error(`ANTES=${ANTES_REL}: no existe ${ruta}`);
+  elegida = { fichero: ANTES_REL.split(/[\\/]/).pop(), ruta, fecha: "(elegida a mano por ANTES=)", candidatas: 1, ordenadoPor: "ANTES= explícito" };
+} else {
+  elegida = eligeCongeladaAnterior(patronAnterior);
+}
+let reparto = null;
+if (elegida.ruta) {
+  const anterior = JSON.parse(readFileSync(elegida.ruta, "utf8"));
+  reparto = repartoDeDistancia(anterior, salida, { eje: "mixta" });
+  reparto.anterior = { fichero: elegida.fichero, fecha: elegida.fecha, candidatas: elegida.candidatas, ordenadoPor: elegida.ordenadoPor };
+}
+salida.repartoDelEjeMixto = reparto ?? {
+  /* §sondas 4: un `null` sin denominador no distingue «no hay foto anterior» de
+   * «el patrón no casó con nada». El cardinal va SIEMPRE. */
+  sinFotoAnterior: true,
+  candidatas: elegida.candidatas,
+  patron: String(patronAnterior),
+};
+
+console.log(`\n  ══ EL EJE MIXTO, REPARTIDO — fuera del recuento de defectos (§regla 14) ══`);
+if (!reparto) {
+  console.log(`  · sin foto anterior: 0 candidatas casaron ${patronAnterior}. No se puede repartir nada.`);
+} else {
+  console.log(`  anterior      ${reparto.anterior.fichero}   (${reparto.anterior.fecha})`);
+  console.log(`  elegida por   ${reparto.anterior.ordenadoPor}   de ${reparto.anterior.candidatas} candidata(s)   ⚠ NUNCA por nombre: '-2.json' ordena antes que '.json'`);
+  console.log(`  unidad        ${reparto.unidad}`);
+  console.log(`  pares en la unión de las dos fotos      ${reparto.paresEnLaUnion}`);
+  console.log(`  con distancia comparable               ${reparto.conDistancia}`);
+  console.log(
+    `  se ACERCAN ${String(reparto.acercan).padStart(5)}  Σ ${reparto.sumaAcercan.toFixed(2)} px` +
+      `   ·   se ALEJAN ${String(reparto.alejan).padStart(5)}  Σ +${reparto.sumaAlejan.toFixed(2)} px` +
+      `   ·   sin mover ${reparto.igual}`,
+  );
+  console.log(`  Σ NETA        ${reparto.sumaDelta > 0 ? "+" : ""}${reparto.sumaDelta.toFixed(2)} px   ${reparto.sumaDelta < 0 ? "← HACIA el original" : reparto.sumaDelta > 0 ? "← ALEJÁNDOSE del original" : "← sin movimiento neto"}`);
+  console.log(`  ── y sus límites, con su cardinal (§regla 14: una limitación sin número se lee como nota al pie) ──`);
+  console.log(`  pares NO numéricos (sin distancia)     ${reparto.noNumericos}`);
+  console.log(`  pares con la REFERENCIA movida         ${reparto.referenciaMovida}   (su Δ mezcla deriva del original con movimiento del clon)`);
+  console.log(`  formas con 'diferencias' TRUNCADAS     anterior ${reparto.truncadas.anterior} · actual ${reparto.truncadas.actual}   (el slice(0,400) afirma menos pares de los que hubo)`);
+  const formas = Object.entries(reparto.porForma).sort((a, b) => Math.abs(b[1].suma) - Math.abs(a[1].suma)).slice(0, 10);
+  if (formas.length) {
+    console.log(`  ── por forma (top ${formas.length}), y el reparto NO cambia el veredicto: sigue sin ser defecto ──`);
+    for (const [f, v] of formas)
+      console.log(`   ${f.padEnd(46)} acercan ${String(v.acercan).padStart(4)} · alejan ${String(v.alejan).padStart(4)} · Σ ${v.suma > 0 ? "+" : ""}${v.suma.toFixed(2)}`);
+  }
+}
+
+w(DESTINO, salida);
 const muertos = censo.informe?.() ?? 0;
 await pararClon?.();
 
