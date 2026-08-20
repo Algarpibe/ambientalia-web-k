@@ -15163,6 +15163,86 @@ midió abajo*, con el contenedor puesto en la palabra «el pie».
 
 ---
 
+## 🔒 VEREDICTO DEL PRE-REGISTRO DE LA 87.ª — 5 cumplidas, 1 a medias, 2 FALSADAS, 2 no ejercitadas (2026-08-20)
+
+El pre-registro está en `docs/research/PRE-REGISTRO-T87.md` y **se conserva tal
+como se escribió**. Aquí sólo el veredicto.
+
+### PASO 1 · el eje mixto — las cinco cumplidas
+
+| | predicción | resultado |
+|---|---|---|
+| **P1.1** | el bloque nuevo no mueve `pares distintos` | ✅ **5423 → 5423** @1440 |
+| **P1.2** | contra la foto de 09:33: ACERCAN 6 · ALEJAN 0 · Σ ≈ −512.04, las 6 de `L3-sci` | ✅ **al céntimo**, y las 6 nombradas por su ruta (−85.34 cada una) |
+| **P1.3** | la unidad publicada es el PAR | ✅ |
+| **P1.4** | el sabotaje del orden cae **por el signo** | ✅ −90 → +90, sin error |
+| **P1.5** | los tres límites con su cardinal | ✅ 5985 no numéricos · 0 referencia movida · 0 truncadas |
+
+### PASO 2 · el `legal` — una a medias y dos falsadas
+
+**P2.1 · «el Δ de `legal` es MÁS DE UNA causa» — ✅ CUMPLIDA en el nivel en que
+se planteó, ❌ FALSA en el par que el encargo nombraba.** Y las dos mitades hay
+que decirlas, porque sólo juntas describen lo medido:
+
+| pregunta | componentes | veredicto |
+|---|---|---|
+| el Δ de la SECCIÓN `legal` (donde vivían los números del encargo) | **3**: `padding` de sección + cuerpo del icono + `mb` | **P2.1 acierta** |
+| el Δ entre **B y C**, que es lo que bloqueaba `L2` | **1**: el cuerpo del icono | **P2.1 falla** |
+
+**Lo que la falsó fue exactamente el falsador que escribí**, y por eso sirve:
+*«un solo camino cuyo Δ valga +22.67 a 1440 y +97 a 390 a la vez»*. No existe —
+pero tampoco hacía falta: **el camino único da +67.00 a los DOS anchos**, y los
+dos números del encargo salen de sumarle otras dos cosas (la absorción de la
+columna hermana a 1440, el `mb` a 390). El falsador estaba escrito **en la
+unidad equivocada** —el Δ observado— en vez de en la de la causa.
+
+**P2.2 · «el eje que separa B de C dentro de `legal` es NUEVO, no la fila
+1238.39/1152» — ✅ CUMPLIDA, con un matiz que la refuerza.** El eje que separa B
+de C **es nuevo** (cuerpo del icono, y su discriminador es el contexto de caché).
+Y el **segundo** componente de `col1` —el `mb` de los hermanos— **sí** es el eje
+de la fila a 1440 (1.5 % del ancho): o sea que los dos ejes conviven en la misma
+columna, y sólo uno separa B de C.
+
+**P2.3 · «el Δ NO se reproduce con la misma composición a los dos anchos» —
+❌ FALSADA, y limpiamente.** La causa entre B y C vale **+67.00 a 1440 y +67.00 a
+390**: misma causa, mismo número, misma composición. Mi razón para predecir lo
+contrario era que *«+22.67 y +97 no guardan proporción entre sí»* — cierta como
+observación y **falsa como inferencia**, porque los dos números no eran del mismo
+par de pieles ni de la misma unidad.
+
+> **Lo que las dos falsaciones tienen en común, y es la lección:** las dos
+> razonaban sobre **los Δ observados** en vez de sobre **las causas**, y un Δ
+> observado es un total — §La causa común. Predecir sobre totales produce
+> predicciones que fallan aunque el razonamiento sea correcto en su nivel.
+
+### PASO 3 · condicionales
+
+| | predicción | resultado |
+|---|---|---|
+| **P3.1** | `L1 · L4 · L5` no se mueven (**no** condicional) | ✅ `pie-cmp` a los dos anchos: sin cambio |
+| **P3.2** | `pie-cmp` 9·3·6 → 9·2·7 | ⬜ **NO EJERCITADA** — el PASO 3 no se hizo |
+| **P3.3** | rutas 374 → 375 | ⬜ **NO EJERCITADA** — siguen **374** |
+
+### Y la predicción sobre el propio cambio de instrumento (§regla 8b-2.ª)
+
+El pre-registro **empezó pegando la lista derivada** de lo que el cambio tocaba
+—`lib.mjs`, `lh-cmp.mjs`, `lib.test.mjs`— y predijo que **ningún otro fichero
+cambiaría y ninguna congelada se invalidaría**.
+
+**Parcialmente falsada, y la parte que falló es información:** el cambio acabó
+tocando también **`lh-cubos.mjs`** y **`cobertura.mjs`**, ninguno de los dos por
+el eje mixto sino por defectos que la tanda destapó al correrlos. Y **una
+congelada sí se invalidó**: la del primer intento del reparto, renombrada con su
+defecto (`…-SONDA-REPARTO-AGRUPADO-POR-FAMILIA.json`).
+
+> La predicción se escribió sobre **el cambio planeado**, y lo que la falsó fue
+> **lo que el cambio encontró**. No es un defecto del método: es la diferencia
+> entre predecir un diff y predecir una tanda — y conviene saber que el segundo
+> no se puede.
+
+
+---
+
 ## ✅ F3-LH-CUBOS-LEIA-LA-CANONICA · el reparto por causa usaba una foto de TRES DÍAS ANTES, y su propio comentario lo avisaba (2026-08-20, 87.ª tanda)
 
 **Encontrado al correr la batería de cierre, no buscándolo.** Es un EVENTO, no
