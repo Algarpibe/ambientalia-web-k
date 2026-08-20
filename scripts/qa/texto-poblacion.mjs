@@ -68,7 +68,7 @@ const SEC = join(RAIZ, "corpus/fase-3-sectores");
  * ellas es la que congeló el escalón. Un cambio silencioso en el conjunto
  * reescribiría el pasado de las dos a la vez.
  */
-const EXPRESABLES = new Set(["p", "ul", "li", "h1", "h2", "h3", "h4", "strong", "b"]);
+const EXPRESABLES = new Set(["p", "ul", "li", "h1", "h2", "h3", "h4", "strong", "b", "span", "sub", "sup", "a", "i", "em", "img"]);
 
 /* ══════════════════════════════════════════════════════════════════════════
  * ⚠ EL SOBRE-CASADO, CAZADO EN LA PRIMERA CORRIDA — y por qué hay clasificador

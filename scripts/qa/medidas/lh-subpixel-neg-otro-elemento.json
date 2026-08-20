@@ -14,20 +14,20 @@
   },
   "porAncho": {
     "390": {
-      "comparador": "lh-cmp-390-todas-2026-08-20-2.json",
-      "candidatas": 19,
+      "comparador": "lh-cmp-390-todas-2026-08-20-4.json",
+      "candidatas": 23,
       "candidatasDescartadas": [
-        "lh-cmp-390-2026-08-20.json",
-        "lh-cmp-390-todas-2026-08-20.json",
-        "lh-cmp-390-todas-2026-08-19-2.json"
+        "lh-cmp-390-2026-08-20-3.json",
+        "lh-cmp-390-todas-2026-08-20-3.json",
+        "lh-cmp-390-2026-08-20-2.json"
       ],
-      "paresDistintos": 5401,
-      "numericos": 303,
-      "subPixel": 147,
+      "paresDistintos": 5994,
+      "numericos": 371,
+      "subPixel": 185,
       "umbral": 0.05,
-      "anchosSubPixel": 31,
+      "anchosSubPixel": 39,
       "porMarca": {
-        "div.inventado": 31
+        "div.inventado": 39
       },
       "anchosSubPixelFueraDelPaginador": 0,
       "deltasDeAncho": [
@@ -37,10 +37,10 @@
         0.04,
         0.05
       ],
-      "xSubPixel": 116,
-      "formasConPaginadorDistinto": 31,
+      "xSubPixel": 146,
+      "formasConPaginadorDistinto": 39,
       "formasSoloSubPixel": 30,
-      "formasConOtroDefectoDePaginador": 1,
+      "formasConOtroDefectoDePaginador": 9,
       "propagacion": {
         "dominio": 30,
         "casan": 83,
@@ -51,24 +51,24 @@
       },
       "ySubPixel": 0,
       "extendConAnchoDistinto": 0,
-      "sobreElUmbral": 156,
-      "noNumericos": 5098
+      "sobreElUmbral": 186,
+      "noNumericos": 5623
     },
     "1440": {
-      "comparador": "lh-cmp-1440-todas-2026-08-20-3.json",
-      "candidatas": 30,
+      "comparador": "lh-cmp-1440-todas-2026-08-20-5.json",
+      "candidatas": 34,
       "candidatasDescartadas": [
-        "lh-cmp-1440-todas-2026-08-20-2.json",
-        "lh-cmp-1440-2026-08-20.json",
-        "lh-cmp-1440-todas-2026-08-20.json"
+        "lh-cmp-1440-todas-2026-08-20-4.json",
+        "lh-cmp-1440-2026-08-20-3.json",
+        "lh-cmp-1440-todas-2026-08-20-3.json"
       ],
-      "paresDistintos": 5423,
-      "numericos": 324,
-      "subPixel": 166,
+      "paresDistintos": 6035,
+      "numericos": 411,
+      "subPixel": 213,
       "umbral": 0.05,
-      "anchosSubPixel": 31,
+      "anchosSubPixel": 39,
       "porMarca": {
-        "div.inventado": 31
+        "div.inventado": 39
       },
       "anchosSubPixelFueraDelPaginador": 0,
       "deltasDeAncho": [
@@ -78,10 +78,10 @@
         0.04,
         0.05
       ],
-      "xSubPixel": 135,
-      "formasConPaginadorDistinto": 31,
+      "xSubPixel": 174,
+      "formasConPaginadorDistinto": 39,
       "formasSoloSubPixel": 30,
-      "formasConOtroDefectoDePaginador": 1,
+      "formasConOtroDefectoDePaginador": 9,
       "propagacion": {
         "dominio": 30,
         "casan": 104,
@@ -92,8 +92,8 @@
       },
       "ySubPixel": 0,
       "extendConAnchoDistinto": 0,
-      "sobreElUmbral": 158,
-      "noNumericos": 5099
+      "sobreElUmbral": 198,
+      "noNumericos": 5624
     }
   }
 }

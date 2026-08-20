@@ -2602,6 +2602,24 @@ interpola— y ésa es justo la trampa: la forma segura y la que se come el
 documento **se distinguen en una comilla**, y equivocarse es **silencioso**.
 Un heredoc que funciona veinte veces enseña que los heredocs funcionan.
 
+⚠ **Y SU NEGATIVO TAMPOCO SE ESCRIBE POR EL SHELL (2026-08-20, 88.ª tanda).**
+
+> **Un test que fabrica su entrada con `printf`/`echo` NO puede probar una
+> guarda contra el shell: el sabotaje atraviesa el mismo intérprete que vigila,
+> llega desactivado, y el caso sale VERDE.**
+
+Medido en la misma sesión que esta nota: verificar el hook de `commit-msg` con
+`printf '… `` …' > msg.txt` dio **exit 0** en el caso que tenía que fallar. No
+era que el hook estuviera roto — era que **los backticks nunca llegaron al
+fichero**, comidos exactamente por el mecanismo que el hook existe para cazar.
+La segunda vuelta, con el fichero escrito por `Write`, dio **sabotaje 1 ·
+control 0**.
+
+Es §regla 15 —*compartir premisa no verifica la premisa*— con el objeto
+cambiado: aquí lo compartido no es el fichero ni la variable, es **el defecto**.
+La regla operativa es la de siempre y ya estaba escrita: **el fichero se crea
+con `Write`** — también cuando el fichero es la entrada de un negativo.
+
 **14 · UNA LIMITACIÓN DECLARADA SIN SU NÚMERO SE LEE COMO UNA NOTA AL PIE.**
 (2026-08-14)
 

@@ -7,7 +7,7 @@
     "solo": null,
     "deUnTotalDe": 212,
     "alcance": "212 cuerpos de entradas-blog · terminos-kunakpedia · documentos-cientificos; fuera (builder): casos · faqs · productos",
-    "rutasParaT7": 377
+    "rutasParaT7": 385
   },
   "porT": {
     "t8": {
@@ -2999,7 +2999,7 @@
     "noCanonicos": 2
   },
   "t7": {
-    "rutasPublicadas": 377,
+    "rutasPublicadas": 385,
     "fuente": "SÓLO `.next/prerender-manifest.json` — una URL capturada no es una ruta publicada (§F2-3-HREF-DERIVADO b)",
     "dejadosAlOriginal": 747,
     "porDestino": {

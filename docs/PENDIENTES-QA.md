@@ -16817,3 +16817,76 @@ cambiar el comparador **caduca sus congeladas** (§sondas 5bis) y esta tanda es
 de construcción.
 
 ---
+
+### 6 · LAS DEUDAS, con su número DERIVADO — y una que se PAGÓ, otra que CRECIÓ
+
+**Derivadas, no heredadas** (§regla 9). Se dice cuáles cambian y por qué.
+
+| deuda | número de HOY | cómo se derivó |
+|---|---|---|
+| negativos rojos **entre los baratos** | **6 de 42**, y son **exactamente los 6 fichados con sus mismas fracciones**: `media-hueco` 6/7 · `media-regenera` 2/5 · `media-colision` 3/6 · `media-siembra` 3/4 · `productos-hueco` 3/5 · `coloca-media` 2/3 | `npm run qa:negativos` |
+| ⚠ **negativos que NADIE barre** | **20** — el `package.json` declara **62** y el barrido evalúa **42** | `grep -c '"qa:.*-neg"' package.json` contra la línea de unidades de `qa:negativos` |
+| ⚠ **rojos ENTRE esos 20** | **≥ 2**: `lh-poblacion-neg` **3/4** y `lh-selectores-neg` **3/4** | corridos a mano en esta tanda |
+| páginas con el ofuscador de Cloudflare | **5 distintas** — **2 clonadas** + **3 sueltas** | `grep -rl cdn-cgi/l/email-protection corpus/` → 7 ficheros, 2 duplicados en `transformado/` |
+| destinos pendientes de localizar | **105** = **54** en `src/` + **51** en cuerpo rico | `qa:enlaces-clases`, congelada |
+| ⚠ **sus APARICIONES** | **1379 → 1395** (**+16**) | `qa:enlaces`: `/blog` lo escriben cabecera y pie, y hay 8 páginas más |
+| elementos de cuerpo sin sonda de dos lados | **66** (28 HOME/PRODUCTO + 38 FAQ) | cifra **histórica** de la 84.ª; **no re-derivable** con una sonda de hoy, y se dice |
+| `footer-legal` sin mecanismo | **+1.00 @1440** · **+1.88 / +1.89 @390** | `pie-cmp-{1440,390}-2026-08-20-3.json`, campo `reparto` |
+| `footer-links` sin mecanismo | **0 @1440** · **+0.18 / +0.20 / +0.21 @390** | ídem |
+| `kb-cmp` fuera de la matriz | **6** congeladas | la lista de no declaradas que imprime `qa:cobertura` |
+| el `mb` de los iconos del pie a 390 | **0 en A · 30 en B y C** | `pie-legal.json` §`ejes.2` |
+| mapeo sonda → eje de `cobertura.mjs` | **semántico, NO derivable** | — |
+| límite del hook de `commit-msg` | **caza 1 de las 2 formas**, y está declarado en su cabecera | `core.hooksPath = scripts/git-hooks` ✓ · sabotaje **exit 1** · control **exit 0** |
+
+#### ✅ La que se PAGÓ
+
+| deuda de la 87.ª | hoy |
+|---|---|
+| *«el override del icono, TEXTO sin leer — 1 hoja, **0 de 505 capturadas**»* | **la hoja estaba capturada**, y con ella las 11 de `/glosario`. Leída: 343 bytes, **sin `font-size:25px`**. El mecanismo del `+67.00` queda **LEÍDO** |
+
+#### ⚠ Y la que CRECIÓ al derivarla: el denominador de «6 negativos rojos»
+
+> **«6 negativos rojos» se lee como «hay 6 en el repo» y significa «hay 6 entre
+> los 42 que el barrido mira».** El repo declara **62**.
+
+Es §regla 14 —*una limitación sin cardinal se lee como nota al pie*— sobre el
+propio recuento: `qa:negativos` corre los **baratos**, y todo el que levante el
+clon o toque la DB queda fuera **sin salir nombrado**. Los dos que se corrieron
+a mano en esta tanda están **los dos rojos**, así que el 6 no es una cota:
+
+| negativo | fracción | qué es, leído con §regla 21 |
+|---|---|---|
+| `lh-poblacion-neg` | **3/4** | **la sonda sola sale VERDE** ⇒ el fallo está en el negativo. Su caso `control` espera *«rojo con 3 series cortas»* y hoy hay **0** — el objeto mejoró (`seriesQueNoAlcanzan` **19 → 0**, y ya valía 0 el **2026-08-18**, o sea que **NO lo pone rojo esta tanda**). Es §sondas 5ter: *arreglar el objeto caduca el control del instrumento*. **Tercer caso de §regla 21: el dominio ya no tiene con qué ejercitarlo ⇒ SIN PROBAR, y sigue contando como fallo.** ⚠ **No se ajusta la expectativa al valor de hoy** — eso escribiría el defecto dentro de la guarda |
+| `lh-selectores-neg` | **3/4**, con `exit null` en 2 casos | **`exit null` no es un veredicto: es agotamiento** (§regla 17). La sonda sola no termina en **>18 min**, así que su negativo se queda sin tiempo. **SIN PROBAR por el instrumento, no por el dato** |
+
+**Lo que haría falta**, y es barato: que `qa:negativos` **declare los que no
+corre, con su cardinal**, en vez de dejarlos fuera en silencio — §regla 14
+aplicada a su propia línea de unidades. Hoy dice `42/42` y lo cierto es
+`42 de 62`.
+
+### 7 · Barrido §regla 12 — acotado, y con su número
+
+Barridas las secciones de la fase en curso (`PLAN-FASE-3.md` §F3-2 en adelante y
+las últimas 1.200 líneas de `PENDIENTES-QA.md`), buscando enunciados con forma
+de **regla general** que no estuvieran en `CLAUDE.md`:
+
+> **31 enunciados revisados · 1 era regla y no estaba · 2 nacieron en esta tanda.**
+
+Las tres han entrado en `CLAUDE.md`:
+
+1. **un censo de NODOS y un censo de LO QUE SE VE son dos medidas distintas** —
+   la primera se lee como la segunda en cuanto el CSS puede esconder, así que un
+   recuento se publica **con su criterio** («12 en el DOM, 11 con caja»). Estaba
+   sólo en la ficha de la interlínea de la banda;
+2. **el negativo de una guarda contra el shell no se escribe por el shell** — el
+   sabotaje atraviesa el mismo intérprete que vigila, llega desactivado y el caso
+   sale VERDE. **Medido en esta sesión**: verificar el hook con `printf` dio
+   exit 0 donde tenía que dar 1, porque los backticks nunca llegaron al fichero;
+3. y la que no es regla nueva sino **un caso más de §El principio**, ya escrita
+   en su sitio: *derivar un valor de la geometría y transcribir la regla que lo
+   produce no son lo mismo*.
+
+Los demás enunciados son **eventos** con su fecha y su número, y se quedan donde
+están.
+
+---

@@ -1,0 +1,390 @@
+{
+  "meta": {
+    "fecha": "2026-08-20",
+    "censados": 70,
+    "corridos": 42,
+    "segundos": 764.5
+  },
+  "reparto": {
+    "baratos": [
+      "a-inventario.neg.mjs",
+      "artefacto.neg.mjs",
+      "c-inventario.neg.mjs",
+      "casos-nunca-vistos.neg.mjs",
+      "cms-arquetipos.neg.mjs",
+      "cms-campos.neg.mjs",
+      "cms-decl.neg.mjs",
+      "cms-teaser.neg.mjs",
+      "escalon-etiquetas.neg.mjs",
+      "hover-zonal.neg.mjs",
+      "lh-alcance.neg.mjs",
+      "lh-canales.neg.mjs",
+      "lh-cubos.neg.mjs",
+      "lh-extracto-unidad.neg.mjs",
+      "lh-extracto.neg.mjs",
+      "lh-fecha-orden.neg.mjs",
+      "lh-huecos.neg.mjs",
+      "lh-jerarquia.neg.mjs",
+      "lh-pieles-css.neg.mjs",
+      "lh-serie.neg.mjs",
+      "lh-subpixel.neg.mjs",
+      "manifiesto.neg.mjs",
+      "media-colision.neg.mjs",
+      "media-hueco.neg.mjs",
+      "media-regenera.neg.mjs",
+      "media-siembra.neg.mjs",
+      "media-srcset.neg.mjs",
+      "pie-familias.neg.mjs",
+      "pie-legal.neg.mjs",
+      "productos-hueco.neg.mjs",
+      "saneador.neg.mjs",
+      "t9-css.neg.mjs",
+      "texto-poblacion.neg.mjs",
+      "captura-css.neg.mjs",
+      "captura-f3-media.neg.mjs",
+      "captura-f3.neg.mjs",
+      "coloca-media.neg.mjs",
+      "extractor-a.neg.mjs",
+      "extractor-c.neg.mjs",
+      "extractor-kb.neg.mjs",
+      "extractor-listados.neg.mjs",
+      "extractor.neg.mjs"
+    ],
+    "conNavegador": [
+      "clase-rango.neg.mjs",
+      "clon-estados.neg.mjs",
+      "cmp-srcset.neg.mjs",
+      "comportamiento.neg.mjs",
+      "html-cmp.neg.mjs",
+      "lh-cmp.neg.mjs",
+      "lh-espejo.neg.mjs",
+      "lh-selectores.neg.mjs",
+      "media-poblaciones.neg.mjs",
+      "pie-cmp.neg.mjs",
+      "programada.neg.mjs",
+      "rsc-original.neg.mjs",
+      "solutions-campos.neg.mjs",
+      "solutions-seo.neg.mjs",
+      "t4b-bloque.neg.mjs"
+    ],
+    "conDb": [
+      "cms-lectura.neg.mjs",
+      "cms-roundtrip.neg.mjs",
+      "cms-slugs.neg.mjs",
+      "f25-final.neg.mjs",
+      "lh-poblacion.neg.mjs",
+      "pagina-propia.neg.mjs",
+      "publica-e2e.neg.mjs",
+      "publicar.neg.mjs",
+      "roles.neg.mjs",
+      "tipo-hoja.neg.mjs",
+      "vacio-legal.neg.mjs",
+      "seed-listados.neg.mjs",
+      "sondeo.neg.mjs"
+    ]
+  },
+  "filas": [
+    {
+      "neg": "a-inventario.neg.mjs",
+      "script": "qa:a-inventario-neg",
+      "code": 0,
+      "seg": 6.2,
+      "marcador": "✅ a-inventario · test en negativo: 3/3"
+    },
+    {
+      "neg": "artefacto.neg.mjs",
+      "script": "qa:artefacto-neg",
+      "code": 0,
+      "seg": 109.7,
+      "marcador": "✅ eje `existencia` · test en negativo: 7/7  (6 que cazan · control)"
+    },
+    {
+      "neg": "c-inventario.neg.mjs",
+      "script": "qa:c-inventario-neg",
+      "code": 0,
+      "seg": 10.2,
+      "marcador": "✅ c-inventario · test en negativo: 4/4"
+    },
+    {
+      "neg": "casos-nunca-vistos.neg.mjs",
+      "script": "qa:nunca-vistos-neg",
+      "code": 0,
+      "seg": 17.3,
+      "marcador": "✅ casos-nunca-vistos · test en negativo: 4/4"
+    },
+    {
+      "neg": "cms-arquetipos.neg.mjs",
+      "script": "qa:cms-arquetipos-neg",
+      "code": 0,
+      "seg": 3.8,
+      "marcador": "✅ cms-arquetipos · test en negativo: 4/4"
+    },
+    {
+      "neg": "cms-campos.neg.mjs",
+      "script": "qa:cms-campos-neg",
+      "code": 0,
+      "seg": 25.9,
+      "marcador": "✅ cms-campos · test en negativo: 5/5"
+    },
+    {
+      "neg": "cms-decl.neg.mjs",
+      "script": "qa:cms-decl-neg",
+      "code": 0,
+      "seg": 36.3,
+      "marcador": "✅ cms-decl · test en negativo: 8/8  (7 sabotajes · control)"
+    },
+    {
+      "neg": "cms-teaser.neg.mjs",
+      "script": "qa:cms-teaser-neg",
+      "code": 0,
+      "seg": 6.5,
+      "marcador": "✅ cms-teaser · test en negativo: 3/3"
+    },
+    {
+      "neg": "escalon-etiquetas.neg.mjs",
+      "script": "qa:escalon-neg",
+      "code": 0,
+      "seg": 5.1,
+      "marcador": "✅ escalon-etiquetas · test en negativo: 5/5"
+    },
+    {
+      "neg": "hover-zonal.neg.mjs",
+      "script": "qa:hover-zonal-neg",
+      "code": 0,
+      "seg": 99.6,
+      "marcador": "✅ hover-zonal · test en negativo: 4/4"
+    },
+    {
+      "neg": "lh-alcance.neg.mjs",
+      "script": "qa:lh-alcance-neg",
+      "code": 0,
+      "seg": 2.6,
+      "marcador": "✅ lh-alcance · test en negativo: 5/5"
+    },
+    {
+      "neg": "lh-canales.neg.mjs",
+      "script": "qa:lh-canales-neg",
+      "code": 0,
+      "seg": 4.8,
+      "marcador": "✅ lh-canales · test en negativo: 5/5"
+    },
+    {
+      "neg": "lh-cubos.neg.mjs",
+      "script": "qa:lh-cubos-neg",
+      "code": 0,
+      "seg": 3.9,
+      "marcador": "✅ lh-cubos · test en negativo: 4/4"
+    },
+    {
+      "neg": "lh-extracto-unidad.neg.mjs",
+      "script": "qa:lh-extracto-unidad-neg",
+      "code": 0,
+      "seg": 2.8,
+      "marcador": "✅ 4/4 — la sonda sabe FALLAR: sin corpus no evalúa, sin rival no elige,"
+    },
+    {
+      "neg": "lh-extracto.neg.mjs",
+      "script": "qa:lh-extracto-neg",
+      "code": 0,
+      "seg": 3.3,
+      "marcador": "✅ lh-extracto · test en negativo: 4/4"
+    },
+    {
+      "neg": "lh-fecha-orden.neg.mjs",
+      "script": "qa:lh-fecha-orden-neg",
+      "code": 0,
+      "seg": 3.2,
+      "marcador": "✅ 4/4 — la sonda sabe FALLAR: sin listados no evalúa, sin rival no elige,"
+    },
+    {
+      "neg": "lh-huecos.neg.mjs",
+      "script": "qa:lh-huecos-neg",
+      "code": 0,
+      "seg": 6.8,
+      "marcador": "✅ lh-huecos · test en negativo: 6/6"
+    },
+    {
+      "neg": "lh-jerarquia.neg.mjs",
+      "script": "qa:lh-jerarquia-neg",
+      "code": 0,
+      "seg": 3.2,
+      "marcador": "✅ lh-jerarquia · test en negativo: 4/4"
+    },
+    {
+      "neg": "lh-pieles-css.neg.mjs",
+      "script": "qa:lh-pieles-css-neg",
+      "code": 0,
+      "seg": 2.6,
+      "marcador": "✅ lh-pieles-css · test en negativo: 3/3"
+    },
+    {
+      "neg": "lh-serie.neg.mjs",
+      "script": "qa:lh-serie-neg",
+      "code": 0,
+      "seg": 2.6,
+      "marcador": "✅ lh-serie · test en negativo: 3/3"
+    },
+    {
+      "neg": "lh-subpixel.neg.mjs",
+      "script": "qa:lh-subpixel-neg",
+      "code": 0,
+      "seg": 2.8,
+      "marcador": "✅ lh-subpixel · test en negativo: 4/4"
+    },
+    {
+      "neg": "manifiesto.neg.mjs",
+      "script": "qa:manifiesto-neg",
+      "code": 0,
+      "seg": 3,
+      "marcador": "✅ manifiesto · test en negativo: 6/6"
+    },
+    {
+      "neg": "media-colision.neg.mjs",
+      "script": "qa:media-colision-neg",
+      "code": 2,
+      "seg": 89.2,
+      "marcador": "❌ media-colision · test en negativo: 3/6  (5 sabotajes · control)"
+    },
+    {
+      "neg": "media-hueco.neg.mjs",
+      "script": "qa:media-hueco-neg",
+      "code": 2,
+      "seg": 27.9,
+      "marcador": "❌ media-hueco · test en negativo: 6/7  (6 que cazan · control)"
+    },
+    {
+      "neg": "media-regenera.neg.mjs",
+      "script": "qa:media-regenera-neg",
+      "code": 2,
+      "seg": 32.3,
+      "marcador": "❌ media-regenera · test en negativo: 2/5  (4 que cazan · control)"
+    },
+    {
+      "neg": "media-siembra.neg.mjs",
+      "script": "qa:media-siembra-neg",
+      "code": 2,
+      "seg": 16.4,
+      "marcador": "❌ media-siembra · test en negativo: 3/4"
+    },
+    {
+      "neg": "media-srcset.neg.mjs",
+      "script": "qa:media-srcset-neg",
+      "code": 0,
+      "seg": 16.7,
+      "marcador": "✅ media-srcset · test en negativo: 7/7  (5 que cazan · 1 diana perdida verificada"
+    },
+    {
+      "neg": "pie-familias.neg.mjs",
+      "script": "qa:pie-familias-neg",
+      "code": 0,
+      "seg": 3.1,
+      "marcador": "✅ pie-familias · test en negativo: 4/4"
+    },
+    {
+      "neg": "pie-legal.neg.mjs",
+      "script": "qa:pie-legal-neg",
+      "code": 0,
+      "seg": 4,
+      "marcador": "✅ 4/4 — cada caso cae POR SU MOTIVO, y `corpus-mudo` lo hace"
+    },
+    {
+      "neg": "productos-hueco.neg.mjs",
+      "script": "qa:productos-hueco-neg",
+      "code": 2,
+      "seg": 5.4,
+      "marcador": "❌ productos-hueco · test en negativo: 3/5"
+    },
+    {
+      "neg": "saneador.neg.mjs",
+      "script": "qa:saneador-neg",
+      "code": 0,
+      "seg": 2.2,
+      "marcador": "✅ saneador · test en negativo: 10/10"
+    },
+    {
+      "neg": "t9-css.neg.mjs",
+      "script": "qa:t9-css-neg",
+      "code": 0,
+      "seg": 4.5,
+      "marcador": "✅ t9-css · test en negativo: 4/4"
+    },
+    {
+      "neg": "texto-poblacion.neg.mjs",
+      "script": "qa:texto-poblacion-neg",
+      "code": 0,
+      "seg": 52.3,
+      "marcador": ""
+    },
+    {
+      "neg": "captura-css.neg.mjs",
+      "script": "qa:captura-css-neg",
+      "code": 0,
+      "seg": 7.3,
+      "marcador": "✅ captura-css · test en negativo: 5/5"
+    },
+    {
+      "neg": "captura-f3-media.neg.mjs",
+      "script": "cms:captura-f3-media-neg",
+      "code": 0,
+      "seg": 18,
+      "marcador": "✅ captura-f3-media · test en negativo: 5/5"
+    },
+    {
+      "neg": "captura-f3.neg.mjs",
+      "script": "cms:captura-f3-neg",
+      "code": 0,
+      "seg": 5.5,
+      "marcador": "✅ captura-f3 · test en negativo: 4/4"
+    },
+    {
+      "neg": "coloca-media.neg.mjs",
+      "script": "cms:coloca-media-neg",
+      "code": 2,
+      "seg": 25.1,
+      "marcador": "❌ coloca-media · test en negativo: 2/3"
+    },
+    {
+      "neg": "extractor-a.neg.mjs",
+      "script": "cms:extractor-a-neg",
+      "code": 0,
+      "seg": 7.4,
+      "marcador": "✅ extractor-a · test en negativo: 5/5"
+    },
+    {
+      "neg": "extractor-c.neg.mjs",
+      "script": "cms:extractor-c-neg",
+      "code": 0,
+      "seg": 18.8,
+      "marcador": "✅ extractor-c · test en negativo: 7/7"
+    },
+    {
+      "neg": "extractor-kb.neg.mjs",
+      "script": "cms:extractor-kb-neg",
+      "code": 0,
+      "seg": 5.3,
+      "marcador": "✅ extractor-kb · test en negativo: 8/8"
+    },
+    {
+      "neg": "extractor-listados.neg.mjs",
+      "script": "cms:extractor-listados-neg",
+      "code": 0,
+      "seg": 2.4,
+      "marcador": "✅ extractor-listados · test en negativo: 4/4"
+    },
+    {
+      "neg": "extractor.neg.mjs",
+      "script": "cms:extractor-neg",
+      "code": 0,
+      "seg": 58.7,
+      "marcador": "✅ extractor · test en negativo: 14/14"
+    }
+  ],
+  "rojos": [
+    "media-colision.neg.mjs",
+    "media-hueco.neg.mjs",
+    "media-regenera.neg.mjs",
+    "media-siembra.neg.mjs",
+    "productos-hueco.neg.mjs",
+    "coloca-media.neg.mjs"
+  ]
+}
