@@ -25,12 +25,38 @@
 # la firma es un par de delimitadores VACÍO — algo que en prosa no se escribe
 # nunca a propósito. Se buscan los tres pares que este repo usa:
 #
-#   ``      inline-code vacío     ← la firma de los dos incidentes medidos
+#   ``      inline-code vacío     ← la firma de los incidentes medidos
 #   ****    negrita vacía
 #   «»      comillas vacías
 #
 # Un mensaje legítimo no contiene ninguno. Si alguna vez hiciera falta, se
 # salta con `--no-verify` — pero eso hay que escribirlo, que es el punto.
+#
+# ── ⚠ LO QUE ESTE HOOK NO CAZA, CON SU CARDINAL (§regla 14) ────────────────
+# **Hay DOS formas de que el shell se coma un span, y este hook sólo ve una.**
+# Medido el 2026-08-20, cuarto incidente de la misma sesión y el único con daño
+# real:
+#
+#   | forma | qué queda | ¿lo caza? |
+#   |---|---|---|
+#   | el CONTENIDO se expande a vacío | `` — el par sobrevive | **SÍ** |
+#   | la SUSTITUCIÓN se consume entera (backticks en contexto no comillado) | **nada**: ni backticks ni contenido | **NO** |
+#
+# La segunda no deja firma **por construcción**: `\`KV-01\`` dentro de una
+# cadena con comillas dobles es sustitución de órdenes, y el shell reemplaza
+# **backticks incluidos** por la salida (vacía). El documento queda con un
+# hueco de prosa —«dejó  (~30 %) y »— que se lee como una errata de escritura,
+# no como una mutilación.
+#
+# **No se amplía el patrón, y la razón se declara:** un hueco de prosa no tiene
+# firma sintáctica que distinguirlo de una frase mal redactada, así que
+# cualquier regex que lo intente casaría en mensajes legítimos — §*un patrón
+# que casa en TODAS tampoco mide nada*.
+#
+# > **Por eso el hook es la RED y no la regla, y por eso la regla es sobre el
+# > HÁBITO: la única defensa contra la segunda forma es que el texto NO PASE
+# > POR EL SHELL.** `-F` no basta — si el fichero se creó con un heredoc, el
+# > texto ya lo atravesó. El fichero se escribe con `Write`.
 # ══════════════════════════════════════════════════════════════════════════
 msg_file="$1"
 [ -f "$msg_file" ] || exit 0

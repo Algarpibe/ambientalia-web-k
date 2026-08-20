@@ -15313,6 +15313,37 @@ caso por su motivo.
 
 ---
 
+
+> ✅ **LECTURA DEL TRIPWIRE · 2026-08-20 (87.ª tanda): el fichero sigue llegando
+> ENTERO a 169.877 chars, o sea 13.451 por encima de la cota que cerró esta
+> ficha.**
+>
+> La ficha se cerró midiendo **156.426 chars** y dejó `KV-01` (~30 %) y `KV-08`
+> (a 16 chars del final) como **tripwire permanente**, con el argumento de que
+> «con los dos extremos, cualquier sesión futura contesta *¿me llega entero?*
+> **sin volver a instrumentar**». Es la primera vez que se cobra el interés:
+>
+> | | chars | `KV-01` | `KV-08` |
+> |---|---|---|---|
+> | cierre de la ficha (2026-08-18) | 156.426 | ✅ | ✅ |
+> | **apertura de la 87.ª (2026-08-20)** | **169.877** | ✅ | ✅ |
+>
+> **Y lo que hace que esta lectura valga algo es que NO costó nada**: los dos
+> marcadores estaban en el contexto de la sesión, se citan y ya está. El coste de
+> instrumentar se pagó una vez; la comprobación es ahora una lectura.
+>
+> ⚠ **Alcance, porque un tripwire de dos puntos NO es un censo:** dice que el
+> principio y el final llegaron. **No dice que no falte nada en medio** — para eso
+> harían falta los 8 marcadores de la v2, que se retiraron a propósito. La
+> afirmación respaldada es **«los dos extremos llegan a 169.877»**, no «el
+> fichero llega íntegro».
+>
+> **La cota sube y el aviso del harness sigue siendo informativo** (salta a
+> 150.000). Sin campaña nueva, lo único que se puede decir del tramo por encima
+> de 169.877 es que **no se ha medido**.
+
+---
+
 ## ✅ F3-LH-EJE-MIXTO-PUBLICADO · el eje que no lee como defecto se publica SOLO, y su primer reparto reproduce el −512.04 (2026-08-20, 87.ª tanda)
 
 **§regla 14 llevaba tres tandas escrita en `CLAUDE.md` y el instrumento no la
@@ -15646,6 +15677,53 @@ bien.
 
 **Y la evidencia de que el remedio no era «más atención»:** el incidente lo
 cometió, el mismo día y con la regla recién redactada, **quien la escribió**.
+
+### ⚠⚠ Y hubo CUATRO en la misma sesión — el cuarto SÍ hizo daño, y corrigió el hook
+
+| # | forma | ¿sobrevivió? |
+|---|---|---|
+| 1 | `node -e` con un escape dentro | ❌ falló **en voz alta** (error de sintaxis): se vio y se rehízo |
+| 2 | heredoc directo, dos commits tras decidir «`-F` sin excepción» | ✅ `<<'FIN'` no interpola |
+| 3 | `cat > f <<'FIN'` **+** `git commit -F f` — parecía cumplimiento | ✅ ídem |
+| 4 | **`node -e "…"` con backticks dentro de la cadena** | ❌ **MUTILÓ el documento** |
+
+**El cuarto es el que enseña**, y por dos razones.
+
+**(a) Es la forma que el hook NO ve, y no por descuido: por construcción.**
+
+| forma | qué queda | ¿el hook la caza? |
+|---|---|---|
+| el CONTENIDO se expande a vacío | `` ` ` `` — **el par sobrevive** | **SÍ** |
+| la SUSTITUCIÓN se consume entera | **nada**: ni backticks ni contenido | **NO** |
+
+Backticks dentro de una cadena con comillas dobles son **sustitución de
+órdenes**: el shell reemplaza *backticks incluidos* por la salida (vacía). Lo
+medido, literal —el shell hasta lo dijo en voz alta y aun así el fichero se
+escribió—:
+
+```
+/usr/bin/bash: line 41: KV-01: command not found
+…
+> La ficha se cerró midiendo **156.426 chars** y dejó  (~30 %) y
+> | | chars |  |  |
+```
+
+**Un hueco de prosa**, que se lee como una errata de redacción y no como una
+mutilación.
+
+**(b) Y NO se amplía el patrón del hook, con su razón declarada:** un hueco de
+prosa **no tiene firma sintáctica** que lo distinga de una frase mal escrita, así
+que cualquier regex que lo persiga casaría en mensajes legítimos — §*un patrón
+que casa en TODAS tampoco mide nada*. El límite se declara en el propio hook
+(§regla 14) en vez de fingir que no existe.
+
+> **De donde la forma final de la regla, que es la que hay que recordar:** el
+> hook cubre **una de las dos formas**; contra la otra **no hay red posible**. La
+> única defensa es que el texto **no pase por el shell** — y eso incluye el
+> `node -e` que escribe el documento, no sólo el `git commit`.
+
+**Cuatro incidentes, una sesión, un autor, la regla recién escrita delante.** Si
+hacía falta una prueba de que el remedio no es la atención, es ésta.
 
 ---
 
