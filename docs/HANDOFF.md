@@ -1,4 +1,59 @@
-# HANDOFF — el pie descompuesto: el «+1.80» son dos, y el clon sirve un pie donde el original sirve cuatro
+# HANDOFF — no eran cuatro pies: tres pieles por dos ejes, y L3 pasa de −289.64 a +2.06
+
+> ✅ **Tanda de la 86.ª, 2026-08-20. PASO 0, 1 y 2 cerrados. CORTE LIMPIO 2: el
+> PASO 3 —construir `L2-glosario`— NO se hace, y la razón es nueva y tiene
+> número.**
+>
+> **1 · TODO EL PASO 1 SALIÓ DEL ARCHIVO, sin abrir el original.** Y el PASO 0
+> también: el encargo pedía congelar línea base nueva a los dos anchos y **no
+> hacía falta** — `git diff` de `apps/web/src`, `public` y `packages` entre las
+> líneas base de la 85.ª y HEAD sale **vacío**. §regla 16 usada para **ahorrar
+> una hora de medición**, no sólo para evitar un error.
+>
+> **2 · EL «CUATRO» ERA EL TOTAL CONFUNDIENDO DOS EJES.** Por la firma entera
+> salen 4 familias y una —`L5-casos`— con **n = 1**. Sacando la CTA de la firma,
+> `L5` cae **exactamente encima de la piel de `L1`**, el `n = 1` desaparece y
+> quedan **3 pieles con n = 64 · 12 · 6**. El disparador (a) **no se dispara**,
+> pero sólo *después* de separar los ejes: con la firma entera sí lo habría hecho.
+>
+> **3 · EL MECANISMO, un nivel por debajo de la sección:** la **FILA**.
+> **1238.39 (86 %)** en la piel A contra **1152 (80 %)** en B y C, y el
+> `padding` de sección separando B de C. **Dos ejes binarios**, no tres pieles
+> opacas — y el discriminador **se reproduce a los dos anchos**. El alto sale de
+> la interlínea (`leading-26` → `leading-30.6`), con los **renglones idénticos**.
+>
+> **4 · Y ENTONCES: LAS TRES PIELES YA ESTABAN EN EL CLON.** `ancha` = A,
+> `estrecha` = C, `estrechaPad` = B. El defecto estaba en **`DE_TIPO`**, que
+> mandaba `grupoA` también para `sci`. El arreglo es de **mapeo**, no de
+> componente.
+>
+> | | antes | después |
+> |---|---|---|
+> | `L3-sci` TOTAL @1440 | −86.34 | **+1.00** |
+> | `L3-sci` TOTAL @390 | −289.64 | **+2.06** |
+> | `L1-*` · `L4` · `L5` | +1.00 / +2.10 | **sin moverse** |
+>
+> **Ganancia 87.34 px @1440 y 291.70 @390** en 6 páginas, y las **seis** formas
+> comparadas quedan ya en el mismo residuo.
+>
+> ⚠ **5 · POR QUÉ NO SE CONSTRUYE `L2`, y la razón es NUEVA:** entre las pieles
+> B y C —que comparten fila y sólo difieren en el `padding`— el **contenido** de
+> `legal` difiere **+22.67 @1440 · +97 @390**, en la columna de iconos sociales
+> (115.86 contra 48.86). **`L2` es piel B**, así que nacería con ese residuo sin
+> medir dentro. Es la misma razón que paró la 85.ª, **un nivel más abajo** — que
+> es lo que significa haber avanzado.
+>
+> **6 · `cobertura.mjs` arreglado en la CLASE, por la mitad que se puede.** Ya
+> tenía la guarda de «fuente declarada que no existe»; faltaba la **simétrica**,
+> que es la que falló **tres veces**. El mapeo *sonda → eje* no se puede derivar
+> (es semántico); el **conjunto de sondas que han congelado** sí. Estreno: **21
+> huérfanas**, y entre ellas **`kb-cmp`** —el comparador de dos lados de
+> `articulos-kb`, 6 congeladas— que **no está en la matriz**.
+>
+> **Predicción NO EJERCITADA (no fallada):** «rutas 374 → 375» era condicional al
+> PASO 3, que no se ejecutó. Siguen **374**.
+
+---
 
 > ⛔ **Tanda de la 85.ª, 2026-08-20. PASO 0 y PASO 1 cerrados. ESCALÓN 2
 > DISPARADO por (a): el PASO 2 —construir `L2-glosario`— NO se hace, y se dice

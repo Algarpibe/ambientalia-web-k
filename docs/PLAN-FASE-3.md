@@ -808,6 +808,33 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ✅ **ACTUALIZACIÓN 2026-08-20 (86.ª tanda) — el cascarón de `L3` queda
+> ARREGLADO, y el bloqueo de `L2` BAJA UN NIVEL.**
+>
+> La 85.ª paró por el cascarón: el clon servía un pie donde el original sirve
+> varios. **Eso está resuelto para `L3-sci`** —de **−86.34/−289.64** a
+> **+1.00/+2.06**, con `L1` sin moverse— y el modelo resultó más simple de lo
+> que la 85.ª escribió: **3 pieles por dos ejes binarios** (fila 86 %/80 % ×
+> `padSeccion`), no cuatro pies. Las tres **ya estaban implementadas**; el
+> defecto era el mapeo `DE_TIPO`.
+>
+> **`L2` sigue sin construirse, y la razón ya NO es el pie entero sino un
+> residuo dentro de él:** entre las pieles B y C, que comparten fila y sólo
+> difieren en el `padding`, el **contenido** de `footer-legal` difiere **+22.67
+> @1440 · +97 @390** —columna de iconos sociales, 115.86 contra 48.86— y **no
+> tiene mecanismo**. `L2` es piel B, así que nacería con él dentro.
+>
+> **Lo que la 87.ª necesita para desbloquearla:** medir esa columna un nivel más
+> abajo, igual que `qa:pie-mecanismo` hizo con la fila. El resto del cascarón de
+> `L2` ya está derivado y congelado (`pie-familias`, `pie-mecanismo`).
+>
+> ⚠ **La actualización de la 85.ª que sigue abajo conserva su redacción**, y su
+> número de `−394.99/−611.53` sigue siendo el desfase de `L2` **si se
+> construyera con la piel A**. Lo que cambia es que ahora se sabe **qué piel le
+> toca** y qué falta para dársela.
+
+---
+
 > ⛔ **ACTUALIZACIÓN 2026-08-20 (85.ª tanda) — `L2-glosario` NO se construye, y
 > el bloqueo es NUEVO y tiene número.**
 >

@@ -1309,6 +1309,41 @@ publica `separadores` junto a `aciertos`, y **su control en negativo exige
 > por sí sola cualquier regla que prediga constante, sin necesidad de fabricar
 > ninguna instancia.
 
+> ⚠⚠ **Y LA CUARTA CARA, QUE NO CONFUNDE DOS VARIABLES SINO DOS EJES: N VALORES
+> DE UN TOTAL NO SON N FAMILIAS (2026-08-20, 86.ª tanda).**
+>
+> Las tres de arriba miran si dos candidatos difieren. Ésta mira **cuántas cosas
+> hay**, y su síntoma es una tabla que cuadra:
+>
+> > **Un TOTAL puede confundir DOS EJES INDEPENDIENTES, y entonces `N` valores
+> > distintos se leen como `N` familias.** Descompuesto, casi siempre son
+> > **`a × b` combinaciones de dos ejes** con `a·b ≥ N` — y las familias que
+> > parecían tener `n = 1` resultan ser **una combinación de ejes que sí están
+> > sostenidos**.
+>
+> **Medido:** el pie del original servía **4 valores del alto total**, y de ahí
+> «cuatro pies, uno por familia». Una de las cuatro tenía **n = 1** —o sea una
+> varianza cero que sólo dice que no había con qué variar—. Descompuesto por
+> sección, eran **3 pieles × una sección CTA ortogonal**, y las pieles a su vez
+> **dos ejes binarios** (ancho de fila × `padding` de sección). Con la CTA fuera
+> de la firma, la familia de `n = 1` **cae encima de otra** y su `n` pasa a
+> **64**.
+>
+> **Las dos consecuencias, y la segunda es la que ahorra el trabajo:**
+>
+> 1. **el modelo se encoge y se sostiene mejor a la vez** — de «4 familias, una
+>    sin establecer» a «3 pieles, todas con n ≥ 2»;
+> 2. **los ejes suelen estar YA implementados por separado.** Aquí las tres
+>    pieles existían en el clon como tres presentaciones; lo que fallaba era el
+>    **mapeo**. Escribir «cuatro pies» habría creado una variante nueva
+>    duplicando una existente.
+>
+> **Operativamente:** antes de nombrar `N` familias por `N` valores de un total,
+> **descompón el total y agrupa por la firma SIN cada componente, uno a uno.**
+> Si al quitar uno dos familias colapsan, ese componente es un **eje ortogonal**
+> y no parte de la familia. Cuesta un `groupBy` y es §*la causa común* aplicada
+> al **recuento de tipos** en vez de al valor.
+
 ⚠ **Y la misma álgebra aplicada AL COMPARADOR en vez de a la spec: UN VERDE VALE
 LO QUE VALEN SUS INSTANCIAS SEPARADORAS, NO LO QUE VALE SU RECUENTO DE PARES
 (2026-08-14, F3-2).**

@@ -808,6 +808,22 @@ Recon completo en `docs/research/arquetipo-A/`.
 > original sirve **cuatro pies**. Eso no es un campo que falte: es una
 > **plantilla que falta**, y su coste está medido —`L3-sci` a **−86.34 @1440** y
 > **−289.64 @390**— en `PENDIENTES-QA.md` §F3-LH-PIE-UNO-CONTRA-CUATRO.
+>
+> ⚠⚠ **CORREGIDO EL MISMO DÍA (86.ª tanda): no son cuatro pies, y el esquema
+> sigue sin cambiar — pero por una razón MÁS FUERTE.**
+>
+> Descompuesto por sección, el pie del original son **TRES PIELES × una sección
+> CTA ortogonal**, y las pieles son **dos ejes binarios**: el ancho de la FILA
+> (1238.39 = 86 % contra 1152 = 80 %) y el `padding` de sección. `L5-casos` no
+> era una cuarta familia: es **piel A + CTA**, y con la CTA fuera su `n` pasa de
+> **1 a 64**.
+>
+> **Eso refuerza la conclusión en vez de matizarla:** el pie no sólo es
+> plantilla —es plantilla **derivable de una propiedad que la página ya tiene**,
+> su ancho de fila. `L3-sci` sirve su cuerpo al 80 % y su pie al 80 %; `L1` los
+> dos al 86 %. **No hay un campo «piel de pie»: hay una consecuencia del ancho
+> de fila**, y modelarla como campo habría sido inventar un eje que el original
+> no tiene. Arreglado en `DE_TIPO` (86.ª): `L3-sci` a **+1.00 / +2.06**.
 
 **Cero varianza en 24 instancias** (ritmo, tipografía, retícula). **No hay ni un
 campo por instancia en el cascarón.** Y son **tres plantillas distintas**, no

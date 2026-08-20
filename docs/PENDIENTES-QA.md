@@ -15163,7 +15163,98 @@ midió abajo*, con el contenedor puesto en la palabra «el pie».
 
 ---
 
-## ⛔ F3-LH-PIE-UNO-CONTRA-CUATRO · el clon sirve UN pie donde el original sirve CUATRO — y es lo que bloquea L2 (2026-08-20, 85.ª tanda)
+## ✅ F3-LH-PIE-TRES-PIELES · no eran cuatro pies: son TRES PIELES × una CTA ortogonal, y L3 queda arreglado (2026-08-20, 86.ª tanda)
+
+**Cierra §F3-LH-PIE-UNO-CONTRA-CUATRO en su mitad de `L3`, y CORRIGE su
+enunciado.** Todo el PASO 1 salió del **archivo**, sin abrir el original.
+
+### 1 · El «cuatro» era el TOTAL confundiendo dos ejes
+
+`qa:pie-familias` (nueva, negativo **4/4**) agrupa el pie del original por firma
+de secciones. Por la firma **entera** salen 4 familias — y una, `L5-casos`, con
+**n = 1**, o sea una «varianza cero» que sólo dice que no había con qué variar.
+
+**Sacando la sección CTA de la firma, `L5-casos` cae EXACTAMENTE encima de la
+familia de `L1`** (430.78 · 121.97 · 41 a 1440; 1437.42 · 283.75 · 40 a 390):
+
+| piel | `links` @1440/@390 | `legal` | `background` | **n** | formas |
+|---|---|---|---|---|---|
+| **A** | 430.78 / 1437.42 | 121.97 / 283.75 | 41 / 40 | **64** | `L1-*` · `L4` · **`L5`** |
+| **B** | 573.72 / 1754.05 | 259.83 / 480.75 | 156.19 / 140 | **12** | `L2-*` |
+| **C** | 518.13 / 1699.16 | 121.97 / 283.75 | 41 / 40 | **6** | `L3-sci` |
+
+> **Con la CTA fuera, el `n = 1` desaparece**: `L5` suma a la piel A y las tres
+> pieles quedan con **64 · 12 · 6**, todas ≥ 2. **El disparador (a) NO se
+> dispara** — pero sólo después de separar los dos ejes; con la firma entera sí
+> lo habría hecho.
+
+Es §*dos variables confundidas* al revés: la 85.ª midió **4 valores del TOTAL**
+y nombró «4 pies»; el total confundía **piel × CTA**. El total era el
+contenedor, otra vez.
+
+### 2 · El mecanismo, un nivel por debajo de la sección
+
+`qa:pie-mecanismo` (nueva) mide la FILA dentro de cada sección, en el original:
+
+| piel | fila @1440 / @390 | columnas | `padding` de sección |
+|---|---|---|---|
+| A | **1238.39** (86 %) / 335.39 | 5 × 247.67 | no |
+| C | **1152** (80 %) / 312 | 5 × 230.39 | no |
+| B | **1152** / 312 | 5 × 230.39 | **sí** (57.5938) |
+
+**No son tres pieles opacas: son DOS EJES BINARIOS** —ancho de fila × `padSeccion`—
+de los que se ven 3 de las 4 combinaciones. **Y el discriminador se reproduce a
+los dos anchos**, que es lo que lo hace robusto.
+
+Y el sub-mecanismo del alto: los **renglones son IDÉNTICOS** en A y C
+(8 · 10 · 7+2 · 11 · 2). Lo que cambia es la **interlínea** — 232.59/8 = 29.07
+por renglón en A contra 288.16/8 = 36.02 en C, o sea `leading-26` → `leading-30.6`.
+
+### 3 · Lo que esto cambió en el trabajo: **las tres pieles YA estaban en el clon**
+
+`ancha` (86 %, sin pad, `leading-26`) = **A** · `estrecha` (80 %, sin pad,
+`leading-30.6`) = **C** · `estrechaPad` (80 %, con pad) = **B**. El defecto
+estaba en `DE_TIPO`: `PaginaTema` mandaba `grupoA` **también para `sci`**.
+
+Se añadió `estrechaSinMargen` en vez de reutilizar `estrecha`, y **la razón está
+medida**: `estrecha` lleva `antesDelPie: mt-[42px]` (calibrado para `software`)
+y el hueco entre el contenedor del tema y el pie es **CERO en las 9 formas y a
+los dos anchos**. Reutilizarla habría arreglado `links` **rompiendo la base**.
+
+### 4 · El efecto, contra el «antes» y a los dos anchos
+
+| | antes | después |
+|---|---|---|
+| `L3-sci` `links` @1440 | **−87.35** | **0** ✓ |
+| `L3-sci` TOTAL @1440 | **−86.34** | **+1.00** |
+| `L3-sci` `links` @390 | **−261.53** | **+0.18** |
+| `L3-sci` TOTAL @390 | **−289.64** | **+2.06** |
+| `L1-*` · `L4` · `L5` | +1.00 / +2.10 | **+1.00 / +2.10 — sin moverse** |
+
+**Ganancia: 87.34 px @1440 y 291.70 @390**, en las 6 páginas de `L3`. Y las
+**seis** formas comparadas quedan ahora en el **mismo** residuo; antes `L3` era
+la única con un desfase de tres cifras.
+
+> `L1` no se movió **por construcción**, no por suerte: no se tocó su tipo. El
+> disparador (b) no podía dispararse.
+
+### 5 · Lo que sigue SIN MECANISMO, con su número (disparador (e))
+
+- el **+1.00 / +1.89** de `footer-legal` en **todas** las formas;
+- el **+0.18 / +0.21** de `footer-links`;
+- ⚠ **y uno NUEVO que esta tanda destapa: entre las pieles B y C**, que
+  comparten fila y sólo difieren en el `padding`, el **contenido** de `legal`
+  difiere **+22.67 @1440** y **+97 @390** — vive en la columna de iconos
+  sociales (**115.86** contra **48.86**).
+
+> **Ese último es el que BLOQUEA construir `L2`**, y por eso el PASO 3 no se
+> hizo: `L2` es piel B, así que nacería con ese residuo sin medir dentro. Es
+> exactamente la razón por la que la 85.ª paró — con el bloqueo movido un nivel
+> más abajo, que es lo que significa haber avanzado.
+
+---
+
+## ⛔ F3-LH-PIE-UNO-CONTRA-CUATRO · el clon sirve UN pie donde el original sirve CUATRO — y es lo que bloquea L2 (2026-08-20, 85.ª tanda) — ⚠ ENUNCIADO CORREGIDO el mismo día, ver §F3-LH-PIE-TRES-PIELES
 
 **Disparador (a) del ESCALÓN, en su forma extendida, y el que para el hilo.**
 
