@@ -16575,3 +16575,93 @@ congela en `medidas/enlaces-clases.json`, y **deriva** su fuente y su mínimo.
 **ALCANCE, con su fecha:** el reparto es contra las **374** rutas que el build
 emite **HOY (2026-08-18)**. Una familia que se construya mañana mueve destinos
 de «NO emitida» a «emitida» **sin que la sonda cambie una línea**.
+
+---
+
+## 88.ª tanda · `L2-glosario` — PASO 0 y PRE-REGISTRO (2026-08-20)
+
+### 0 · ¿El `+67.00` está ARREGLADO? **NO. Está MEDIDO, y no había nada que arreglar.**
+
+**Derivado del ÁRBOL, no de la ficha** (§regla 9 · §regla 16 en afirmativo):
+
+| derivación | resultado |
+|---|---|
+| `grep -rn iconoPx` en `apps · packages · src` | **0** — sólo aparece en 4 documentos |
+| `PRESENTACION` de `Footer.tsx` | **4** entradas (`ancha · estrecha · estrechaSinMargen · estrechaPad`); **ninguna** declara un eje de cuerpo de icono |
+| `pie-cmp-{1440,390}-2026-08-20-2.json`, rol `legal` | el clon sirve **un solo** valor en las 6 formas comparadas: `122.97 @1440` · `285.64 @390` |
+
+**Y la formulación correcta, que la pregunta del encargo invitaba a torcer:**
+
+> **El `+67.00` nunca fue un defecto del clon: es la distancia entre DOS PIELES
+> DEL ORIGINAL** (`col1` de `legal`, B − C). El clon no lo tenía porque **no
+> sirve la piel B** — `L2-glosario` y `L2-faqs` salen `ausente` en `pie-cmp`,
+> con su cardinal (**3 de 9 formas**). Así que «arreglado / no arreglado» es una
+> dicotomía sobre un Δ que no existía; lo que sí se decide es **si `L2` nace con
+> el eje del icono implementado**.
+
+### 0b · La decisión: **(A)**, y con una razón que (A) no tenía en el encargo
+
+Se elige **(A) — implementar el eje antes de dar `L2` por construida**, porque
+al derivar el mapeo de pieles apareció que **el coste de (A) es CERO para el
+resto del sitio**:
+
+> **`estrechaPad` NO es la piel B, y el mapeo de la 86.ª lo dio por bueno con
+> 0 instancias separadoras.**
+
+La 86.ª dedujo *«3 pieles = ancho de fila × `padSeccion`»* y mapeó
+**B → `estrechaPad`**. Los dos ejes son correctos y el mapeo no: `estrechaPad`
+se calibró contra **catálogo y producto**, que **no tienen ni una instancia en
+el espejo de listados** del que salió el modelo. O sea §*dos modelos que
+predicen lo mismo en todo tu dominio son uno solo*, con el dominio **vacío** en
+el lado que decidía.
+
+Lo que lo separa, derivado de `pie-mecanismo-{1440,390}.json`:
+
+| | `col0` de `legal` | `col2` de `links` (el «¡Suscríbete!») |
+|---|---|---|
+| piel **B** (L2, n=12) | **93.19** — legal a **12 px** | **357.56** a los dos anchos |
+| `estrechaPad` (catálogo/producto) | legal a **18 px** ⇒ +32.59 de `footer-legal` | **366.16 @1440 · 335.56 @390** |
+
+Ninguno de los dos coincide. Así que **la piel B necesita presentación propia**,
+y en una presentación nueva el eje del icono **no puede tocar a nadie más**: (A)
+deja de ser «arreglar código compartido» y pasa a ser «declarar el eje donde
+nace». (B) sólo tendría sentido si el arreglo arriesgara las otras 8 formas.
+
+### 0c · La piel B, derivada entera antes de escribir una línea
+
+`links` en B y C tiene **las 5 columnas idénticas salvo `col2`**, y `legal`
+**las 3 idénticas salvo `col1`**. Todo lo demás es `padSeccion` y borde:
+
+| eje | valor de B | de dónde sale |
+|---|---|---|
+| ancho de fila | **1152 / 312** (80 %) | = C (`ESTRECHA_FILA`) |
+| `padSeccion` | **sí** — 57.5938 @1440 · 50 @390 **en las TRES secciones** | `esqueleto.cascaron[].ritmo`, 12/12 |
+| borde de fila | **ninguno** | A y C llevan `+2.00` de `border-y` en `links` a los dos anchos; B **no** |
+| tipografía de `links` | fs 14 · lh 30.6 · renglones 8·10·7·11·2 | **idéntica a C**: cols 288.16 · 363.34 · … · 400.94 · 184.05 |
+| `sus` (botón «¡Suscríbete!») | **75** | C da **67.3 / 68.11**; la diferencia es **10 − 2.297 = 7.703 @1440** y **10 − 3.109 = 6.891 @390**, y `357.56 − 349.86 = 7.70` · `357.56 − 350.67 = 6.89` — **exacto a los dos anchos** |
+| `legal` col0 | **93.19** | = A y C ⇒ legal a 12 px, **no** a 18 |
+| `legal` col1 (**el eje nuevo**) | **115.86 @1440 · 128.59 @390** | `col1.h = altoIcono + mbHermanos`, 6/6 en `pie-legal.json` |
+
+⚠ **El eje del icono hay que declararlo a LOS DOS anchos, y en A y C no hacía
+falta.** El clon lleva `sm:h-auto` en el bloque social, o sea que a 1440 su alto
+lo pone el contenido — y en A y C eso da igual porque **manda `col0` (93.19)**.
+En B `col1` vale **115.86 > 93.19**, así que la columna hermana ya no absorbe:
+es §*la causa común* con el contenedor dejando de tapar por primera vez.
+
+### 0d · PREDICCIONES PRE-REGISTRADAS — cada una con su CAUSA y su falsador
+
+| # | predicción | **causa** | qué la FALSA |
+|---|---|---|---|
+| P1 | `pie-cmp`: **9 formas · 3 ausentes · 6 comparadas → 9 · 2 · 7** | se emite `/glosario`, que es la ruta que `pie-cmp` pide para `L2-glosario`. `L2-faqs` y `L4` siguen sin emitirse | que `/glosario` no responda 200, o que la sonda no la reconozca por `data-pie` |
+| P2 | rutas emitidas **374 → 382** (`+8`) | el original sirve **8 páginas** de `/glosario` (`span.pages` «Page 1 of 8», 37 términos ÷ 5 por página = ⌈7.4⌉ = 8) y el clon emite serie completa, como `/blog` (8) y `/etiqueta/*` | que la serie salga con otro cardinal ⇒ el `entradasPorPagina` medido (5) o el censo de 37 términos están mal |
+| P3 | `L1 · L3 · L4 · L5` **no se mueven** en `clon-base` | `L2` estrena presentación de pie y cascarón propios; lo único compartido que se toca es mover `sm:h-auto` del JSX a cada presentación, que es **NO-OP por construcción** | cualquier par movido en esas formas ⇒ el `sm:h-auto` no era NO-OP, y se nombra la causa antes de tocar |
+| P4 | `qa:cobertura` sube **en el eje `pie`** para `L2-glosario` | pasa de `ausente` a comparada de dos lados en `pie-cmp` | que suba en otro eje y no en ése, o que no suba |
+| P5 | el eje **mixto** de `L2` publica su reparto ACERCAN/ALEJAN **desde la primera corrida** | la 87.ª lo sacó del recuento y lo publica solo, en el PAR, con las rutas nombradas | que salga sin reparto, o que `L2` no aparezca en él |
+
+⚠ **P2 CONTRADICE la predicción del encargo (`374 → 375`)**, y se escribe así a
+propósito: **375 sólo cuadra si se emite la página 1 y se dejan 7 en 404**, con
+el paginador de la propia página 1 apuntando a `…/page/2/`…`…/page/8/`. El
+canal que lo decide es `span.pages` = «Page 1 of 8» en el corpus **sin
+recortar**, no el espejo.
+
+---
