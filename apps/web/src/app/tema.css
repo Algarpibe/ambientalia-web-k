@@ -699,29 +699,94 @@
  * y `L3` no lleva barra (`grep 'id="sidebar"'` en su captura: **0**).
  * ═════════════════════════════════════════════════════════════════════════ */
 
-/* ⚠ **Los dos porcentajes son los que PRODUCEN el número medido, y por eso se
-   escriben como porcentaje y no como px.** `#left-area` mide **911.52** a 1440
-   y **312** a 390 dentro de un `.container` de 1152 / 312: eso es 79.125 % en
-   el ancho y 100 % en el estrecho, o sea que **se mueve con el ancho** — el
-   test A de Divi lo lee como plantilla, y aquí el régimen es PLANTILLADO, así
-   que la lectura vale tal cual.
+/* ⚠⚠ **TRANSCRITAS DEL CSS SERVIDO, NO DEDUCIDAS DE LA GEOMETRÍA — y la
+   diferencia costó una corrida.**
 
-   El `padding-right` de **63.3594** es el 5.5 % de 1152, y con `border-box` el
-   contenido queda en **848.16**: exactamente el ancho de la tarjeta medida. Es
-   la comprobación de que los dos porcentajes son los buenos y no dos números
-   que casualmente suman. */
+   La primera versión de este bloque se escribió por composición: los
+   porcentajes salían de dividir los px medidos, el corte se puso «el 980 de
+   Divi» y el resto se dio por análogo a `L1`. Cuadraba a 1440 y **fallaba
+   −96.80 a 390**, todo en `#sidebar`.
+
+   El canal que lo dirime estaba capturado: **las 11 hojas que `/glosario`
+   enlaza están las 11 en `corpus/css/`**, y su `<style>` en línea trae las
+   reglas con su `@media`. Es §El principio en su forma exacta —*«la salida
+   servida incluye el CSS que el documento se trae»*— y la lección es que
+   **derivar un valor de la geometría y transcribir la regla que lo produce no
+   son lo mismo**: lo primero acierta donde mediste y lo segundo acierta donde
+   no.
+
+   Lo servido, verbatim (`corpus/fase-3/listados/glosario/index.html`):
+
+     ol,ul                          { list-style:none }
+     #sidebar                       { padding-bottom:28px }
+     #sidebar .et_pb_widget         { margin-bottom:30px;width:100%;float:none }
+     #sidebar .et_pb_widget         { margin-left:0 }
+     .et_pb_widget                  { float:left;max-width:100%;word-wrap:break-word }
+     @media all and (min-width:981px) {
+       #sidebar                     { float:left;width:20.875% }
+       .et_right_sidebar #left-area { float:left;padding-right:5.5% }
+       .et_right_sidebar #sidebar   { padding-left:30px }
+     }
+     @media (min-width:981px) {
+       #left-area                   { width:79.125%;padding-bottom:23px }
+     }
+     @media all and (max-width:980px) {
+       .et_right_sidebar #left-area,
+       .et_right_sidebar #sidebar   { width:auto;float:none;padding-right:0;padding-left:0 }
+       .et_right_sidebar #left-area { margin-right:0 }
+       .et_right_sidebar #sidebar   { margin-left:0;border-left:none }
+     }
+
+   ⚠ **Tres cosas que la deducción no habría dado nunca:**
+
+   1. **`#sidebar .et_pb_widget { float:none }`** — dentro del `#sidebar` del
+      tema los widgets **no flotan**, al revés que en el `.et_pb_widget_area`
+      de `L1`. El clon tenía consolidado `.lh-cuerpo .et_pb_widget{float:left}`
+      para `L1` y en `L2` daba el reparto equivocado. Es §*consolidar reglas de
+      origen distinto cambia quién gana la cascada*, con la vuelta puesta: aquí
+      lo que cambia no es quién gana, es **a qué marcado llega**;
+   2. **el `:last-child` con `margin-bottom:0` NO EXISTE en esta hoja.** El clon
+      lo sirve (`.lh-cuerpo .et_pb_widget:last-child`) porque `L1` lo tiene, y
+      en `#sidebar` los **cuatro** widgets llevan sus 30. Un `id` en el selector
+      gana a la regla del clon sin tocarla — que es lo que hay que hacer, porque
+      tocarla rompería `L1`;
+   3. **`#sidebar { padding-bottom:28px }`**, que ninguna medida de altura total
+      podía separar de los márgenes de sus hijos.
+
+   ⚠ **Y el corte NO estaba «sin probar»: es 981/980, y viene escrito.** La
+   nota anterior decía «se pone el 980 de Divi» como elección razonable. Estaba
+   bien elegido y **mal justificado** — el número lo sirve el original, así que
+   no había nada que suponer. */
+
 .lh-cpt #left-area {
   float: left;
   width: 79.125%;
   padding-right: 5.5%;
   /* `#left-area` mide 968.91 con 5 tarjetas de 138.78 + 5 `mb` de 42 + un
-     paginador de 42: `903.9 + 42 + 23 = 968.9`. Los 23 son este `padding`. */
+     paginador de 42: `903.9 + 42 + 23 = 968.9`. Los 23 son este `padding`, y
+     **son de ≥981**: el espejo da `paddingBottom` `23px` @1440 y `0px` @390.
+     Escrito a los dos anchos, el comparador lo cazó al céntimo —
+     `listado.contenedor.rect.h` **+23.00 exactos** a 390 —, y el número estaba
+     en la congelada desde el principio. */
   padding-bottom: 23px;
 }
 
+/* `float: left` y no `right`: el reparto lo hace el ORDEN del DOM, con los dos
+   bloques flotando al mismo lado. Lo dice la regla servida. */
 .lh-cpt #sidebar {
-  float: right;
+  float: left;
   width: 20.875%;
+  padding-left: 30px;
+  padding-bottom: 28px;
+}
+
+/* Los cuatro widgets, con su `mb` de 30 **incluido el último**. El `id` sube la
+   especificidad por encima de las reglas de `L1` sin tocarlas. */
+.lh-cpt #sidebar .et_pb_widget {
+  float: none;
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 30px;
 }
 
 /* `clearfix` es una clase SERVIDA (`<div id="content-area" class="clearfix">`),
@@ -733,17 +798,21 @@
   clear: both;
 }
 
-/* ⚠ **El corte está SIN PROBAR y se declara**: los dos repartos se midieron a
-   1440 (lado a lado) y a 390 (apilado), y entre esos dos anchos caben varios
-   cortes. Se pone el **980** de Divi, que es el que este tema usa en el resto
-   de sus apilados. En los anchos intermedios el contrato es de RANGO: lo que
-   se exige es que el clon VARÍE como varía el original, no un Δ0. */
 @media (max-width: 980px) {
   .lh-cpt #left-area,
   .lh-cpt #sidebar {
     float: none;
-    width: 100%;
+    width: auto;
     padding-right: 0;
+    padding-left: 0;
+  }
+  .lh-cpt #left-area {
+    padding-bottom: 0;
+    margin-right: 0;
+  }
+  .lh-cpt #sidebar {
+    margin-left: 0;
+    border-left: none;
   }
 }
 

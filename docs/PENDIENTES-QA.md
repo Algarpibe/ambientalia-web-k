@@ -16665,3 +16665,155 @@ canal que lo decide es `span.pages` = «Page 1 of 8» en el corpus **sin
 recortar**, no el espejo.
 
 ---
+
+---
+
+## 88.ª · EL CIERRE — lo medido, lo arreglado y el ESCALÓN 2 (2026-08-20)
+
+### 1 · `L2-glosario` construida y comparada de DOS LADOS
+
+`/glosario` + `/glosario/page/2..8` = **8 rutas**, las 8 con 200. Rutas del build
+**374 → 382**.
+
+| verificación | resultado |
+|---|---|
+| tarjetas, por ELEMENTO | **37 · 37**, diferencia simétrica **0 por los dos lados** |
+| orden (`CMS-ORDEN-L2`) | **0 de 37** posiciones distintas contra el orden servido |
+| extractos | **0 de 37** distintos |
+| pie @1440 | `links` · `legal` · `background` · TOTAL — **Δ0 en los cuatro** |
+| pie @390 | `links` +0.20 · `legal` +1.88 · `background` **Δ0** — los residuos transversales ya fichados, **nada propio** |
+| `clon-base` los dos anchos | **374 comparadas · 0 con regresión**, umbral CERO |
+| `lh-cmp-todas` | las **8** páginas entran en el barrido (82 formas) |
+
+**`L2` es la única de las 7 formas comparadas con Δ0 en las tres secciones del
+pie @1440** — las otras seis llevan el `+1` de `footer-legal`, que sale del
+`border-y` que la piel B no tiene.
+
+### 2 · EL MECANISMO DEL `+67.00`, CERRADO — y lo cerró un hecho negativo mal derivado
+
+§F3-LH-PIE-LEGAL-ICONO §6 decía: *«el TEXTO de la regla NO leído — lo dirime UNA
+hoja (`et-cache/archive/et-divi-dynamic-tb-140-tb-342.css`), **no capturada**
+(0 de 505)»*, y de ahí *«volver al original: disparador (b)»*.
+
+> **La hoja estaba capturada desde el 2026-08-13.** Y no sólo ella: **las 11
+> hojas que `/glosario` enlaza están las 11** en `corpus/css/`.
+
+Leída, mide **343 bytes** y trae **sólo** las reglas base del módulo icono
+—`text-align:center`, `height:auto`, `position:relative`—: **no trae
+`font-size:25px`**. O sea que el mecanismo queda **LEÍDO, no inferido**:
+
+> **La piel B mide 96 px porque su hoja dinámica NO trae el override de 25.**
+> El defecto del tema (`.et-pb-icon{font-size:96px}`) viene en línea en las
+> tres pieles y es lo único que le llega.
+
+**Es §regla 9 sobre un hecho NEGATIVO**, que es la variante que la propia regla
+señala como la peor: *«no hay»* parece que no cuesta comprobarlo. Costó que una
+pregunta cerrable con un `ls` se fichara como «hay que volver al original».
+
+### 3 · ⛔ ESCALÓN 2 · disparador (a) — §F3-LH-BARRA-SIN-GEOMETRIA
+
+**`#sidebar` de `L2` mide 350.39 a 390 contra los 426.19 del original: −75.80.**
+A **1440 no se ve** —`#left-area` mide 968.91 y **manda**—, así que es §La causa
+común con el contenedor tapando, y la **regla espejo** en su forma de manual.
+
+**Lo que esta tanda SÍ arregló, porque estaba en un canal capturado:**
+
+| era | lo servido | resultado |
+|---|---|---|
+| `#left-area{padding-bottom:23px}` a los dos anchos | `23px` sólo en `@media (min-width:981px)` | **+23.00 → Δ0** |
+| `#sidebar{float:right}` | `#sidebar{float:left}` — el reparto lo hace el ORDEN del DOM | transcrito |
+| widgets con `float:left` (regla de `L1`) | `#sidebar .et_pb_widget{float:none;width:100%}` | transcrito |
+| último widget con `mb:0` (regla de `L1`) | **no existe** para `#sidebar`: los cuatro llevan 30 | transcrito |
+| sin `padding-bottom` | `#sidebar{padding-bottom:28px}` | transcrito |
+| corte «el 980 de Divi», declarado SIN PROBAR | **981/980, servido** | deja de ser una suposición |
+
+Todo eso salió del `<style>` de la captura, **sin volver al original**, y su
+control es que el cambio es **NO-OP a 1440**: `acercan 0 · alejan 0 · igual 329
+· Σ 0.00`.
+
+**Lo que NO se arregla aquí, y por qué:**
+
+> **La spec de `L2` declara que hay barra (`SP-C8`: 12 de 12) y no da UN SOLO
+> PÍXEL de su composición**, y `lh-barra` lo dice de sí misma: *«no mide el
+> píxel»*. Así que el objetivo por widget **no existe en ningún fichero**.
+
+**El reparto del CLON, medido para que la tanda siguiente no empiece de cero**
+(un solo lado, y se dice):
+
+| widget | alto | `mb` |
+|---|---|---|
+| `search-6` (h4 28 + form 40) | **78** | 30 |
+| `text-1` (servido y vacío) | **0** | 30 — **colapsa** con el anterior |
+| `text-7` · Categorías (h4 28 + ul 54.59) | **92.59** | 30 |
+| `custom_html-25` · newsletter (h4 28 + botón 23.8) | **61.80** | 30 |
+| `padding-bottom` | **28** | |
+| **Σ** | **350.39** | objetivo **426.19** |
+
+**Y una causa parcial ya identificada con su regla servida:** el original sirve
+`.et_pb_button{font-size:20px;font-weight:500;padding:.3em 1em;line-height:1.7em!important}`
+y el clon sólo `display:inline-block;cursor:pointer`. Sólo eso son **~22 px** de
+los 75.80.
+
+> ⚠⚠ **Y EL ALCANCE ES LO QUE HACE QUE ESTO MEREZCA TANDA PROPIA: NO ES DE `L2`.**
+> El botón, el buscador y la lista de categorías son **los mismos cuatro widgets
+> que sirve `L1`**, y allí el defecto está **TAPADO** —la barra vive dentro de una
+> fila Divi cuyo alto lo manda el listado—. O sea que `L2` no introduce nada:
+> **destapa** geometría de la barra que ninguna sonda había comparado nunca
+> contra el original. Es §*a veces el detector de un defecto no es otro ANCHO,
+> es otro CONTENIDO* con el contenido cambiado por **otro cascarón**.
+
+**Qué haría falta:** comparar los 4 widgets contra el original a 390 —una sonda
+de dos lados, 2 rutas (`/glosario` y `/blog`), ~12 nodos—. El canal está: las 11
+hojas de `/glosario` capturadas y el original vivo.
+
+### 4 · ⛔ `P-LH-C8` MEDIDO, y sale ROJO — §F3-LH-ANCLA-SIN-POST-ID
+
+La spec pedía *«que el ancla sea el MISMO elemento en los dos lados»* y no se
+había podido comprobar porque el clon no emitía las rutas. Ya se puede, y dice:
+
+```
+original  article.et_pb_post.post-71556.glossary
+clon      article.et_pb_post.glossary.type-glossary
+```
+
+**El elemento es el mismo —la primera tarjeta, Δ 0— y su FIRMA no.** El clon no
+emite `post-<id>` porque **no tiene los ids de WordPress**, y `has-post-thumbnail`
+porque no sirve imagen. Cardinal: `listado.tarjetas.N.clases.length` **7 en el
+original y 5 en el clon**, en las 3 tarjetas congeladas y en las 8 páginas.
+
+**No se cablea un id inventado.** Lo que decide si `post-<id>` entra es de
+ESQUEMA —un campo `idOriginal` en las colecciones— y afecta a las 149 entradas,
+no a `L2`. Se ficha con su número.
+
+### 5 · Un defecto del INSTRUMENTO — §F3-LH-MIXTO-CONFUNDE-APARECER
+
+El eje mixto, que la 87.ª sacó del recuento para que se leyera solo, tiene un
+punto ciego que sólo una FORMA NUEVA podía enseñar:
+
+> **Un par que pasa de AUSENTE a presente entra en el reparto con `antes = 0`, y
+> `0 → d` se lee como «se ALEJA d px».** No se alejó: **apareció**. El reparto
+> no distingue las dos cosas, y con una forma nueva mete su distancia entera en
+> la columna ALEJAN.
+
+Medido: la primera corrida con `L2` publicó **`alejan 5 · Σ +32.81` @1440** y
+**`alejan 10 · Σ +283.06` @390**, y **ninguno de los 15 era un alejamiento**:
+3 eran clases que el clon declara no reproducir, 1 la deuda transversal de
+`cabecera.rect.h` (225 → 217.19, en todas las formas) y el resto la geometría
+estrenada de `L2`.
+
+`referenciaMovida` **no lo capta**, y no puede: la referencia no se movió — lo
+que cambió es **la PRESENCIA**. Es §*el recuento de pares tocados por una deriva
+del objetivo* con un tercer estado que aquella ficha no nombra: **CREA / MUEVE /
+APARECE**.
+
+**Coste si nadie lo mira:** el titular `Σ NETA +283.06 px ← ALEJÁNDOSE del
+original` invita a revertir una construcción que está bien. La segunda corrida,
+con las dos fotos ya conteniendo la forma, dio **Σ −17.00 ← HACIA el original**,
+que es la lectura verdadera.
+
+**Arreglo:** el reparto tiene que excluir —o etiquetar aparte, con su cardinal—
+los pares cuya forma **no estaba en la foto anterior**. No se toca en esta tanda:
+cambiar el comparador **caduca sus congeladas** (§sondas 5bis) y esta tanda es
+de construcción.
+
+---
