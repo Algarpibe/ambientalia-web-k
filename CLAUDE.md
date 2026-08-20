@@ -2570,6 +2570,24 @@ La forma correcta es además la más corta: `Write`/`Edit` escriben el fichero
 **sin intérprete en medio**. Para un mensaje de commit largo, el mismo criterio —
 se escribe a un fichero y se pasa con `git commit -F`.
 
+⚠ **Y AFINADO EL 2026-08-20, porque `-F` SE LEE COMO CUMPLIMIENTO SIN SERLO.**
+
+> **`-F` no es la protección. La protección es que el TEXTO no pase por el
+> shell.** `cat > msg.txt <<'FIN' … FIN; git commit -F msg.txt` tiene **la misma
+> exposición** que `git commit -m`: el heredoc ya atravesó el intérprete. Y encima
+> **parece la forma buena**, porque el `-F` está ahí a la vista.
+
+Así que la regla se escribe con las dos mitades: **el fichero se crea con
+`Write`** y **se pasa con `-F`**. La segunda sin la primera no protege de nada.
+
+**Y la evidencia de que «más atención» no es el remedio son tres incidentes en
+UNA sesión, todos de quien acababa de redactar la regla**: un `node -e` que se
+comió un escape, un heredoc directo, y un `cat` + `-F` que parecía correcto. Los
+tres sobrevivieron —`<<'FIN'` con el delimitador **entre comillas** no
+interpola— y ésa es justo la trampa: la forma segura y la que se come el
+documento **se distinguen en una comilla**, y equivocarse es **silencioso**.
+Un heredoc que funciona veinte veces enseña que los heredocs funcionan.
+
 **14 · UNA LIMITACIÓN DECLARADA SIN SU NÚMERO SE LEE COMO UNA NOTA AL PIE.**
 (2026-08-14)
 
