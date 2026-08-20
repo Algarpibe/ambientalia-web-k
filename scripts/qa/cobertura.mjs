@@ -497,7 +497,11 @@ const NO_APORTAN = new Set([
   "lh-espejo", "lh-barra", "lh-h1", "lh-ancla", "lh-spec", "lh-huecos", "lh-cubos",
   "lh-fecha-orden", "lh-jerarquia", "lh-extracto", "lh-extracto-unidad", "lh-pieles-css",
   "lh-subpixel", "lh-canales", "lh-poblacion", "lh-letra", "lh-barrido",
-  "pie-familias", "pie-mecanismo", // describen el ORIGINAL; quien compara los dos lados es pie-cmp
+  // Las tres describen el ORIGINAL y sólo el original; quien compara los dos
+  // lados es `pie-cmp`. `pie-legal` además no abre navegador: deriva de
+  // `pie-mecanismo` y del corpus capturado, así que no puede aportar a una
+  // matriz cuya unidad es «ruta comparada contra el original».
+  "pie-familias", "pie-mecanismo", "pie-legal",
   "dos-rutas", "c-rutas", "c-censo", "c-muestra", "c-spec", "c-embeds", "c-bases",
   "a-censo", "a-muestra", "a-behaviors", "a-scripts", "a-lexical", "a-ids", "a-embeds", "a-spec",
   "c-behaviors", "c1-localiza", "d4-pie", "d4-tipografia", "d4-cta", "d4-suscribete", "d123-flujo",
