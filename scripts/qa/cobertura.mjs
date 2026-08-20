@@ -457,4 +457,85 @@ if (errores.length) {
   );
   process.exit(2);
 }
+
+/**
+ * ⚠⚠ **LA GUARDA DEL LADO CONTRARIO, Y ES LA QUE FALTABA TRES VECES
+ * (2026-08-20, 86.ª tanda).**
+ *
+ * Arriba se caza *«una fuente declarada que no existe»*. El fallo que este
+ * fichero ha tenido **tres veces** es el simétrico y no daba error ninguno:
+ * *«una congelada que existe y que NADIE declaró»*. Pasó con el sufijo `-vivo`
+ * en julio, con `-todas` en agosto y con **`pie-cmp` ayer** — y las tres veces
+ * se arregló **la instancia**, añadiendo la línea que faltaba, que es por lo que
+ * volvió.
+ *
+ * **La mitad derivable se deriva, y la que no, GRITA.** El mapeo *sonda → eje*
+ * no se puede derivar: es semántico —qué mide `a-miga` y contra qué— y por eso
+ * cada fuente sigue teniendo su bloque. Lo que sí se deriva es **el conjunto de
+ * sondas que han congelado algo**, y de ahí las que ninguna fuente nombra.
+ *
+ * Así una sonda nueva **aparece en el informe el día que congela**, en vez de
+ * ser invisible hasta que alguien note que la matriz no subió. Es §*el defecto
+ * se pone en la dirección que grita* aplicado al sitio donde este repo ya se ha
+ * tropezado tres veces.
+ *
+ * Las que **no aportan a la matriz por naturaleza** se declaran aquí una vez
+ * —con su razón— y dejan de avisar. Declarar es barato; el olvido, no.
+ */
+const NO_APORTAN = new Set([
+  "cobertura", "manifiesto", "slugs", "negativos", "ruido", "estados-390", "clon-estados",
+  "lib", "artefacto", "esqueleto", "arbol-todos", "clase-censo", "clase-rango",
+  "cms-campos", "cms-slugs", "cms-roundtrip", "cms-decl", "cms-teaser", "cms-arquetipos",
+  "cms-lectura", "lectura-forma", "roles", "publicar", "publica-e2e", "pagina-propia",
+  "media-hueco", "media-regenera", "media-srcset", "media-colision", "media-poblaciones",
+  "media-canales", "media-siembra", "coloca-media", "productos-hueco", "saneador",
+  "extractor", "extractor-a", "extractor-c", "extractor-kb", "extractor-listados", "extractor-corpus",
+  "kb-extraido", "a-extraido", "c-extraido", "a-inventario", "c-inventario", "casos-nunca-vistos",
+  "escalon-etiquetas", "hover-zonal", "t9-css", "texto-poblacion", "tipo-hoja", "vacio-legal",
+  "seed-listados", "sondeo", "f25-final", "captura-css", "captura-f3", "captura-f3-media",
+  "lh-censo", "lh-paginas", "lh-tarjetas", "lh-selectores", "lh-serie", "lh-alcance",
+  "lh-espejo", "lh-barra", "lh-h1", "lh-ancla", "lh-spec", "lh-huecos", "lh-cubos",
+  "lh-fecha-orden", "lh-jerarquia", "lh-extracto", "lh-extracto-unidad", "lh-pieles-css",
+  "lh-subpixel", "lh-canales", "lh-poblacion", "lh-letra", "lh-barrido",
+  "pie-familias", "pie-mecanismo", // describen el ORIGINAL; quien compara los dos lados es pie-cmp
+  "dos-rutas", "c-rutas", "c-censo", "c-muestra", "c-spec", "c-embeds", "c-bases",
+  "a-censo", "a-muestra", "a-behaviors", "a-scripts", "a-lexical", "a-ids", "a-embeds", "a-spec",
+  "c-behaviors", "c1-localiza", "d4-pie", "d4-tipografia", "d4-cta", "d4-suscribete", "d123-flujo",
+  "cabecera-cmp", "html-cmp", "rsc-original", "t4b-bloque", "cmp-srcset", "solutions-campos",
+  "solutions-seo", "corte-cuerpo", "enlaces-clases", "c-cascaron", "a-cascaron",
+]);
+const DECLARADAS = new Set(["clon-base", "c-cabecera", "c-cmp", "mono-cmp", "lh-cmp", "pie-cmp", "tree-cmp", "cmp-sector", "a-miga", "c-banda", "offsets", "enlaces", "comportamiento", "ancho-cuerpo"]);
+/**
+ * ⚠ **El discriminador es que el prefijo sea UNA SONDA REAL, no que el nombre
+ * parezca uno.** La primera versión partía el nombre del fichero por sufijos y
+ * sacaba **106 huérfanas**, casi todas artefactos con nombre largo
+ * (`ancho-diag-sector-img2`, `a-spec-SEGUNDA-CARGA-…`). Una lista de 106 no se
+ * lee: se archiva — que es §*un patrón que casa en todas no mide nada*, y
+ * habría hecho inútil la guarda el día de estrenarla.
+ *
+ * Se cruza contra `scripts/qa/*.mjs`: sólo avisa de congeladas cuyo prefijo
+ * **es** una sonda del repo. Un artefacto no tiene `.mjs` y desaparece solo.
+ */
+const SONDAS = new Set(
+  fs.readdirSync(QA).filter((f) => f.endsWith(".mjs") && !f.endsWith(".neg.mjs")).map((f) => f.replace(/\.mjs$/, "")),
+);
+const huerfanas = new Map();
+for (const f of fs.readdirSync(M)) {
+  if (!f.endsWith(".json") || ARTEFACTO.test(f)) continue;
+  const base = f.replace(/\.json$/, "");
+  /* El prefijo más largo que sea una sonda real. */
+  let p = null;
+  for (const s of SONDAS) if ((base === s || base.startsWith(s + "-")) && (!p || s.length > p.length)) p = s;
+  if (!p || DECLARADAS.has(p) || NO_APORTAN.has(p)) continue;
+  huerfanas.set(p, (huerfanas.get(p) || 0) + 1);
+}
+if (huerfanas.size) {
+  console.log(
+    `\n⚠ ${huerfanas.size} SONDA(S) CON CONGELADAS QUE NINGUNA FUENTE DECLARA.\n` +
+      `   No es un error: puede que no aporten a la matriz. Pero se dice, porque la\n` +
+      `   alternativa —el silencio— es como esta lista se quedó corta TRES veces.\n` +
+      `   Añádelas arriba con su eje, o a NO_APORTAN con su razón:\n` +
+      [...huerfanas.entries()].map(([p, n]) => `     · ${p}  (${n} congelada${n > 1 ? "s" : ""})`).join("\n"),
+  );
+}
 console.log("\n✅ matriz computada · todas las fuentes declaradas existen.");
