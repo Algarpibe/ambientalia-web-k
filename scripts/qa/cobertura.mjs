@@ -108,6 +108,21 @@ const EJES = [
   ["anchos", "anchos horiz."],
   ["enlaces", "enlaces"],
   ["comport", "comportamiento"],
+  /**
+   * ⚠ **EJE NUEVO (2026-08-20, 85.ª tanda): la COMPOSICIÓN del pie.**
+   *
+   * No cabía en `secciones`. Ese eje dice *«el árbol del cuerpo cuadra»*, y el
+   * pie **no está en el cuerpo**: en Divi vive en la capa `tb_footer`, y las
+   * sondas que llenan `secciones` no bajan a él. Meterlo ahí habría subido un
+   * eje ya poblado sin que nadie pudiera saber qué parte era del pie — que es
+   * §*una cobertura declarada al nivel de arriba absorbe lo que no se midió
+   * abajo*, cometida al declarar la cobertura.
+   *
+   * Lo que este eje afirma es estrecho y por eso es útil: **el pie se comparó
+   * SECCIÓN A SECCIÓN contra el original**, no sólo su alto total —que es lo
+   * único que `lh-cmp` miraba, y en eje mixto—.
+   */
+  ["pie", "pie (secciones)"],
 ];
 
 const FAMILIAS = [
@@ -252,6 +267,26 @@ for (const f of congeladasDe("lh-cmp")) {
     .map((v) => String(v.clon || "").replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, ""))
     .filter(Boolean);
   set(["base", "secciones", "filas", "modulos", "anchos"], rutas, "O", "lh-cmp", f.replace(".json", ""));
+}
+
+/**
+ * 4c · pie-cmp — la COMPOSICIÓN del pie, sección a sección contra el original
+ * (85.ª tanda). Se deriva con `congeladasDe` por la misma razón que `lh-cmp`
+ * (§regla 9, 7.º caso): un sufijo futuro tiene que entrar solo.
+ *
+ * ⚠ **Su unidad nativa es la FORMA, y la matriz cuenta RUTAS.** Cada forma
+ * aporta **la ruta que se midió**, que es una por forma — así que este eje
+ * marca **6**, no 374, y ése es su alcance real. Las 3 formas `ausentes`
+ * (`L2-glosario` · `L2-faqs` · `L4`) **no se cuentan**: el clon no las emite, y
+ * contarlas convertiría un hueco declarado en cobertura inventada.
+ */
+for (const f of congeladasDe("pie-cmp")) {
+  if (!fuente(f)) continue;
+  const rutas = Object.values(J(f).formas || {})
+    .filter((v) => v && !v.error && v.orig && v.clon)
+    .map((v) => String(v.rutaClon || ""))
+    .filter(Boolean);
+  set(["pie"], rutas, "O", "pie-cmp", f.replace(".json", ""));
 }
 
 // 5 · tree-cmp — árbol de secciones/filas del cuerpo, original vs clon.
