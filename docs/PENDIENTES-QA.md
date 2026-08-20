@@ -14817,6 +14817,111 @@ contra el `h1` en tandas anteriores queda invalidado.
 
 ---
 
+## 🔒 PRE-REGISTRO · LA 85.ª — el +0.30 del pie a 390, y L2-glosario (2026-08-20)
+
+**Escrito ANTES de medir nada del pie.** §sondas 8b: *los hechos negativos que
+un pre-registro afirme se comprueban contra el ARCHIVO, no de memoria* — así que
+cada afirmación de abajo trae su derivación al lado, y las que no se pudieron
+derivar se dicen **sin derivar**.
+
+### 0 · La foto del día, DERIVADA
+
+| | valor | de dónde |
+|---|---|---|
+| árbol | limpio, `c771245` | `git status` · `git log` |
+| congeladas | **1.173** | `ls medidas/*.json` |
+| sondas | **186** | `qa:lib`, última línea |
+| rutas · familias | **374 · 20** | `qa:manifiesto` |
+| **sondas en vuelo** | **CERO** | §regla 18 |
+
+> ⚠ **Las «8 shells de la 84.ª» NO dejaron procesos del repo, y eso se
+> comprobó por PROCESOS.** `Get-CimInstance Win32_Process`: los 24 `node.exe`
+> son servidores MCP (`chrome-devtools-mcp`, `server-postgres`, `firebase-tools`,
+> `n8n-mcp`) y los 15 `chrome.exe` son el navegador del usuario con su perfil
+> `User Data` —ninguno headless—. **Puerto 3000 vacío.** §regla 18 es
+> exactamente esto: `git status` da lo mismo con una sonda ajena en vuelo y sin
+> ella.
+
+Y **dos condiciones de partida que el encargo no nombra**:
+
+1. **no había `.next`** — el árbol venía sin construir, así que el `check` del
+   PASO 0 no era una comprobación: era la **única** forma de tener servidor. Se
+   hizo con el puerto verificado vacío, que es el único momento en que es seguro;
+2. **Docker estaba parado** y `kunak-cms-pg` en `Exited (255)`. Arrancado antes
+   de nada — con él parado el `check` sale exit 1 **con un mensaje que no nombra
+   la DB**, que es la trampa que las notas de operación ya avisan.
+
+### 1 · ¿Comparten causa el +0.30 y el +1.80? — se predice **NO**, con su derivación
+
+**Derivado de las dos fichas congeladas, no razonado:** son movimientos de
+**lados opuestos del mismo par**.
+
+| | clon | original | quién se movió |
+|---|---|---|---|
+| **+1.80** (§F3-LH-PIE-DECLARADO-NO-RECALIBRADO, 80.ª) | **fijo** 1762.97 | 1754.52 → **1761.17** | **el ORIGINAL** |
+| **+0.30** (§F3-LH-PIE-390-SE-ALEJA-030, 84.ª) | 1762.97 → **1763.27** | **fijo** 1761.17 | **el CLON** |
+
+Predicción falsable: en `qa:lh-cubos-390` el pie cae en el **cubo 1 · MUEVE**
+(deriva del original, ya declarada por `D6`) y el +0.30 es **del clon**. Origen
+distinto ⇒ **no comparten causa**.
+
+> ⚠⚠ **Y la distinción de la que depende el disparador (a), porque las dos
+> preguntas se escriben casi igual: COMPARTIR SITIO NO ES COMPARTIR CAUSA.**
+>
+> Que los dos vivan en la zona legal del pie **no los hace un mecanismo**; que
+> tengan origen distinto **no los saca del mismo elemento**. Son dos preguntas
+> con dos respuestas independientes, y el encargo pide las dos —*«¿viven en los
+> mismos elementos?»* y *«¿el +1.80 se movió cuando el +0.30 apareció?»*—.
+> Contestar una y publicar la otra es cómo se declara una clase que no existe,
+> o se parte en dos flecos lo que era una.
+
+**Lo que NO está derivado, y es la medición que falta:** *dónde* vive el 1.80
+residual. `pie.rect.h` es un **TOTAL**, y §La causa común dice que un total
+absorbe su composición. **Ninguna sonda del repo descompone el pie** — se
+comprobó con `grep` sobre `lh-ejes.mjs`: `pie` entra entero y `ejeDe()` lo
+clasifica **mixto** por construcción (l. 124), que es el eje que el comparador
+no lee como defecto. O sea que el instrumento que adjudica esto **no existe y
+construirlo es parte de la tanda** (§UN ARQUETIPO NUEVO NO HEREDA COBERTURA).
+
+### 2 · DOS predicciones del encargo que NO sobreviven a su propia derivación
+
+El encargo pide *«escribe la ENTRADA CONCRETA que lo produce y comprueba el
+signo con un caso real antes de commitear la predicción»*. Hecho — y se cae el
+supuesto del que colgaban las dos:
+
+| predicción del encargo | entrada concreta que la refuta | corregida |
+|---|---|---|
+| rutas **374 → 375** (+1 de L2-glosario) | `ls corpus/fase-3/listados/glosario/page/` → **2 3 4 5 6 7 8**; spec §4: **8 páginas · 5 entradas/página** | **374 → 382** (la index + `/page/2..8`) |
+| `lh-letra` sigue dando **374 intactas** | `lh-letra.mjs:75` deriva `TODAS` de `prerender-manifest.routes` —**no** de una lista fija— y `minimo: RUTAS.length` (l. 194) | **382 intactas** |
+
+> **Las dos venían del MISMO supuesto** —que L2-glosario es *una* ruta— y las dos
+> se caen con el mismo `ls`. Es §regla 9: *un número recordado y uno derivado se
+> escriben igual y no valen lo mismo*. Y nótese que la segunda era **internamente
+> incoherente con la primera**: un encargo que predice +1 ruta no puede predecir
+> el mismo denominador en una sonda que lo deriva del manifiesto.
+
+**`0 movidos` en `lh-letra` sí se mantiene**: nada de esta tanda toca
+`globals.css:157` ni la herencia de interlínea.
+
+### 3 · El resto de predicciones
+
+- comparador de FORMAS **13 · 3 ausentes · 10** → **13 · 2 · 11**; las 2 que
+  quedan son **L2-faqs** (bloqueada: ningún canal la ordena) y **L4** (es F3-3);
+- `qa:cobertura` **sube**;
+- **`clon-base` no adjudica nada del pie**, y se dice antes de correrla: es
+  clon-contra-clon. Dirá **qué se movió**, nunca **si quedó bien**.
+
+### 4 · Lo que dispararía el ESCALÓN 2, y el más probable con su número
+
+Los cinco del encargo siguen en pie. El más probable es **(c)/(d) por la vía de
+la paginación**: no es una ruta, son **8**, y la spec declara además una **barra
+lateral del tema en 12 de 12** (`SP-C8`) que ninguna de las formas construidas
+hasta hoy tiene. Es exactamente la forma en que `L1-resources` se hundió — una
+medida que acertó en todo lo que midió y a la que nadie preguntó cuántas filas
+tenía el cuerpo.
+
+---
+
 ## ⚠ F3-LH-PIE-390-SE-ALEJA-030 · el pie a 390 pierde 0.30 px por forma con el arreglo de la letra (2026-08-19, 84.ª tanda)
 
 **Disparador (e) del escalón, y es el único que se disparó de verdad.** El
