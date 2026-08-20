@@ -257,7 +257,8 @@
     "qa:pie-familias-neg": "node scripts/qa/pie-familias.neg.mjs",
     "qa:pie-mecanismo": "node scripts/qa/pie-mecanismo.mjs",
     "qa:pie-mecanismo-390": "node scripts/qa/pie-mecanismo.mjs 390",
-    "qa:pie-legal": "node scripts/qa/pie-legal.mjs"
+    "qa:pie-legal": "node scripts/qa/pie-legal.mjs",
+    "qa:pie-legal-neg": "node scripts/qa/pie-legal.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

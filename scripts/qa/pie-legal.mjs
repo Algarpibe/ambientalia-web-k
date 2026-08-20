@@ -86,7 +86,7 @@
  *   (5.03 y 4.68), así que a ese ancho **el eje del ancho de fila NO lo explica**
  *   y se queda **SIN MECANISMO**, con su número.
  * ══════════════════════════════════════════════════════════════════════════ */
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { Evaluadas, hoy, QA, w } from "./lib.mjs";
 
@@ -107,8 +107,32 @@ const ev = new Evaluadas({ unidad: "descomposiciones de `legal` (piel × ancho)"
 
 const raiz = join(QA, "..", "..");
 const rel = (p) => join(raiz, p);
-const num = (v) => (typeof v === "string" ? parseFloat(v) : v) || 0;
 const r2 = (n) => +n.toFixed(2);
+
+/* ── Los sabotajes, DECLARADOS aquí y no en el negativo ───────────────────
+ * Cada uno anula UNA de las tres cosas que esta sonda afirma, y tiene que caer
+ * **por su motivo** (§regla 17), no por una excepción ni por el código a secas:
+ *
+ * | sabotaje | anula | cae por |
+ * |---|---|---|
+ * | `mb-cero`      | el modelo `col1.h = altoIcono + mbHermanos` | el recuento 6/6 |
+ * | `glifo-torcido`| que los 5 glifos sean los mismos iconos     | las firmas de razón |
+ * | `corpus-mudo`  | el DENOMINADOR del cruce (las 149 capturas) | el dominio del cruce |
+ */
+const SABOTAJE = process.env.SABOTAJE || "";
+const num = (v) => (typeof v === "string" ? parseFloat(v) : v) || 0;
+/** El `mb` de un módulo. El sabotaje entra AQUÍ y no en `num()`: si entrara ahí
+ * se llevaría también los `padding`, y entonces el caso caería por el control
+ * de sección en vez de por el modelo — que es §regla 17, *caer por su motivo*. */
+const mbDe = (m) => (SABOTAJE === "mb-cero" ? 0 : r2(num(m.mb)));
+/** El ancho de glifo. `glifo-torcido` mueve uno **EN UNA SOLA PIEL**.
+ *
+ * ⚠ La primera versión lo movía en las seis lecturas y el negativo salió VERDE:
+ * `firmasDistintas` compara las razones **entre lecturas**, así que una
+ * perturbación uniforme produce otra firma… **única**. O sea que el sabotaje
+ * no ejercitaba lo que su tabla prometía — §regla 17, y cazado por el propio
+ * negativo en vez de por el código de salida. */
+const anchoDe = (m, i, piel) => (SABOTAJE === "glifo-torcido" && piel === "C" && i === 0 ? r2(m.rect.w * 1.37) : m.rect.w);
 
 /* ── 1 · La geometría, de la congelada de `pie-mecanismo` ─────────────────── */
 const mec = {};
@@ -168,7 +192,7 @@ for (const a of ANCHOS) {
      * primeros (el quinto lleva 0 SIEMPRE, en las 6 lecturas). */
     const c1 = fila.cols[1];
     const mods = c1.modulos || [];
-    const mbH = [...new Set(mods.slice(0, -1).map((m) => r2(num(m.mb))))];
+    const mbH = [...new Set(mods.slice(0, -1).map((m) => mbDe(m)))];
     const altos = [...new Set(mods.slice(0, -1).map((m) => m.rect.h))];
     if (mbH.length !== 1 || altos.length !== 1)
       throw new Error(`${p}@${a}: los 4 primeros iconos no son homogéneos (mb ${JSON.stringify(mbH)} · h ${JSON.stringify(altos)}) — el modelo asume que lo son`);
@@ -182,7 +206,7 @@ for (const a of ANCHOS) {
     /* El cuerpo del icono, DERIVADO de los anchos de glifo. Las razones tienen
      * que ser las mismas en las tres pieles: si no, no son los mismos iconos y
      * dividir no significa nada (el control va antes que el número). */
-    const anchos = mods.map((m) => m.rect.w);
+    const anchos = mods.map((m, i) => anchoDe(m, i, p));
     const base = anchos[1]; // el 2.º glifo es el de 1 em
     const razones = anchos.map((x) => +(x / base).toFixed(3));
     salida.cuerpoDelIcono[`${p}@${a}`] = { anchos, razones, cuerpoDerivado: base, altoIcono, mbHermanos: mbH[0] };
@@ -263,6 +287,115 @@ salida.canalCss.__resumen = {
   canalesMirados: ["el marcado de la sección entera (diff de las 3)", "todo `<style>` en línea", "los `<link rel=stylesheet>` (nombres, no contenido)"],
 };
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4bis · EL DENOMINADOR: de 3 capturas a las 149
+ *
+ * Lo de arriba es *«una explicación con mecanismo y DOS casos a favor»*, que es
+ * exactamente la forma que `CLAUDE.md` manda **no** dar por buena: *«se parece
+ * muchísimo a una medida, y la única diferencia es EL DENOMINADOR»*. Así que
+ * antes de escribir nada, se barre **el dominio alcanzable entero** — las 149
+ * capturas del corpus de listados — cruzando tres cosas:
+ *
+ *   piel  ×  contexto de caché de la hoja dinámica  ×  ¿trae el override en línea?
+ *
+ * Si el contexto `archive/` cae 1:1 con la piel B en las 149, la afirmación deja
+ * de apoyarse en 3 páginas. Y si NO cae, eso también es el resultado: el eje
+ * elegido sería la sombra de otro (§*un discriminador 1:1 puede ser la sombra
+ * de otro*).
+ *
+ * ⚠ La piel de cada ruta **no se adivina**: sale de `pie-familias.json`, que ya
+ * agrupó las 82 formas por su firma medida. Escribirla a mano aquí sería un dato
+ * recordado (§regla 9).
+ * ══════════════════════════════════════════════════════════════════════════ */
+const FAM = join(QA, "medidas/pie-familias.json");
+if (!existsSync(FAM)) throw new Error(`falta ${FAM} — la piel de cada ruta se DERIVA de ahí, no se escribe a mano`);
+const familias = JSON.parse(readFileSync(FAM, "utf8"));
+/* Los grupos de `pie-familias` van por índice; se les pone nombre por su `legal`
+ * y su `padding`, que es lo que `pie-mecanismo` midió — no por el orden. */
+const grupos = familias.pieles["1440"];
+const nombreDePiel = {};
+for (const [i, g] of Object.entries(grupos)) {
+  const legal = g.partes.legal;
+  const cual = PIELES.find((p) => D[`${p}@1440`].seccion.h === legal && D[`${p}@1440`].fila.w === (legal === 259.83 ? 1152 : D[`${p}@1440`].fila.w));
+  /* La firma que separa las tres a 1440 es (legal, links). Se busca por las dos. */
+  const exacto = PIELES.find((p) => D[`${p}@1440`].seccion.h === legal && Math.abs(mec[1440].pieles[p].secciones[0].rect.h - g.partes.links) < 0.01);
+  const p = exacto || cual;
+  if (!p) throw new Error(`el grupo ${i} de pie-familias (legal ${legal}, links ${g.partes.links}) no casa con ninguna piel de pie-mecanismo`);
+  for (const forma of Object.keys(g.formas)) nombreDePiel[forma] = p;
+}
+
+/** De una ruta capturada a su FORMA, con el mismo criterio que `pie-familias`. */
+const formaDeRuta = (r) =>
+  r.startsWith("glosario") ? "L2-glosario"
+  : r.startsWith("preguntas-frecuentes") ? "L2-faqs"
+  : r.startsWith("scientific-category") ? "L3-sci"
+  : r.startsWith("blog") ? "L1-blog"
+  : r.startsWith("etiqueta") ? "L1-etiqueta"
+  : r.startsWith("casos-de-exito") ? "L5-casos"
+  : r === "recursos" ? "L4-listado-embebido"
+  : r.startsWith("recursos/articulos/") && r.split("/").length > 2 && !/^recursos\/articulos\/page\//.test(r) ? "L1-resources-hijo"
+  : r.startsWith("recursos") ? "L1-resources-padre"
+  : null;
+
+const RAIZ_CORPUS = rel("corpus/fase-3/listados");
+const anda = (d, out = []) => {
+  for (const e of readdirSync(d, { withFileTypes: true })) {
+    const p = join(d, e.name);
+    if (e.isDirectory()) anda(p, out);
+    else if (e.name === "index.html") out.push(p);
+  }
+  return out;
+};
+/* El listón del cruce se DERIVA del corpus entero, no del subárbol que el
+ * sabotaje pueda estar mirando: así `corpus-mudo` no puede mover la portería
+ * (§regla 17 · *un sabotaje que comparte variable con el mínimo no lo
+ * ejercita*). Se cuenta sobre la raíz de verdad, siempre. */
+const MIN_CRUCE = Math.floor(anda(rel("corpus/fase-3/listados")).length * 0.9);
+/* ⚠ `corpus-mudo` FILTRA, no reapunta la raíz. La primera versión apuntaba
+ * `RAIZ_CORPUS` al subárbol de `glosario`, y con eso las rutas relativas salían
+ * vacías, `formaDeRuta` devolvía `null` en todas y el caso caía por «0
+ * clasificadas» — o sea por otro motivo. Filtrando, las 12 se clasifican bien,
+ * `esUnoAUno` SIGUE en `true`, y lo único que se desploma es el DENOMINADOR:
+ * que es exactamente la guarda que este caso viene a ejercitar. */
+const capturas = anda(RAIZ_CORPUS).filter((f) => SABOTAJE !== "corpus-mudo" || /[\\/]glosario[\\/]/.test(f));
+const cruce = {};
+const sinForma = [];
+for (const f of capturas) {
+  const h = readFileSync(f, "utf8");
+  const estilos = [...h.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)].map((m) => m[1]).join("\n");
+  const hoja = (h.match(/et-cache\/[^"'?]*et-divi-dynamic-tb-[^"'?]*/) || [])[0] || null;
+  const ctx = hoja ? hoja.replace(/^et-cache\//, "").split("/")[0] : "(sin hoja dinámica)";
+  const ov = estilos.match(RE_OVERRIDE);
+  const r = f.slice(RAIZ_CORPUS.length + 1).split(/[\\/]/).slice(0, -1).join("/");
+  const forma = formaDeRuta(r);
+  if (!forma || !nombreDePiel[forma]) { sinForma.push(r); continue; }
+  const clave = `${nombreDePiel[forma]} · ctx=${ctx} · override ${ov ? ov[1] + "px" : "ENLAZADO"}`;
+  (cruce[clave] ||= { n: 0, ejemplo: r }).n++;
+}
+salida.cruceContextoDeCache = {
+  capturas: capturas.length,
+  clasificadas: capturas.length - sinForma.length,
+  sinClasificar: sinForma.length,
+  ejemplosSinClasificar: sinForma.slice(0, 8),
+  grupos: cruce,
+};
+/* El discriminador: ¿el contexto `archive/` cae 1:1 con la piel B? */
+const ctxDePiel = {};
+for (const [k, v] of Object.entries(cruce)) {
+  const [p, c] = k.split(" · ");
+  ((ctxDePiel[p.trim()] ||= {})[c.replace("ctx=", "").trim()] ||= 0);
+  ctxDePiel[p.trim()][c.replace("ctx=", "").trim()] += v.n;
+}
+salida.cruceContextoDeCache.contextosPorPiel = ctxDePiel;
+const ctxB = Object.keys(ctxDePiel.B || {});
+const ctxOtros = new Set([...Object.keys(ctxDePiel.A || {}), ...Object.keys(ctxDePiel.C || {})]);
+salida.cruceContextoDeCache.veredicto = {
+  contextosDeB: ctxB,
+  contextosDeAyC: [...ctxOtros],
+  esUnoAUno: ctxB.length === 1 && !ctxOtros.has(ctxB[0]),
+  n: Object.values(ctxDePiel).reduce((s, o) => s + Object.values(o).reduce((a, b) => a + b, 0), 0),
+};
+
 /* ── 5 · Los ejes, nombrados uno a uno ────────────────────────────────────── */
 const cuerpoPorPiel = Object.fromEntries(PIELES.map((p) => [p, [...new Set(ANCHOS.map((a) => salida.cuerpoDelIcono[`${p}@${a}`].cuerpoDerivado))]]));
 const mbPorPiel = Object.fromEntries(PIELES.map((p) => [p, Object.fromEntries(ANCHOS.map((a) => [a, salida.cuerpoDelIcono[`${p}@${a}`].mbHermanos]))]));
@@ -275,8 +408,14 @@ salida.ejes = {
       "CSS compilado. El DEFECTO del tema —`.et-pb-icon{…font-size:96px;line-height:1}`— viene EN LÍNEA en las tres capturas, y es exactamente lo que mide B. " +
       "El override por módulo —`.et_pb_icon_N_tb_footer … .et-pb-icon{…font-size:25px}`— viene en línea SÓLO en C; A y B lo ENLAZAN en su `et-divi-dynamic-tb-*.css`. " +
       "A mide 25 (le llega por la hoja) y B mide 96 (no le llega, o su hoja no lo trae)",
-    estado: "IDENTIFICADO · NO VERIFICADO — lo dirime UNA hoja (`et-cache/archive/et-divi-dynamic-tb-140-tb-342.css`), y no está capturada",
+    estado: "IDENTIFICADO con n = 145 · el TEXTO de la regla NO leído — lo dirime UNA hoja (`et-cache/archive/et-divi-dynamic-tb-140-tb-342.css`), no capturada",
+    discriminador: "el CONTEXTO DE CACHÉ de la hoja dinámica: `archive/` en las 12 de la piel B y en NINGUNA de las 133 restantes (1:1, n = 145)",
+    control: "dentro de la piel A, 37 páginas TRAEN el override en línea y 63 lo ENLAZAN, y las dos miden 25px ⇒ «enlazarlo» no es el eje",
+    confundidoCon: "«ser el archivo de un CPT» — las 12 son `glosario` y `preguntas-frecuentes`, así que las dos variables van juntas en todo el dominio",
     queLoDirimiria: "un GET a la hoja `archive/` y buscar `font-size:25px` en el selector del módulo. 1 fichero, no 505 — pero es volver al original: §disparador (b)",
+    paraConstruir:
+      "NO hace falta el porqué: el CUÁNTO está medido —`legal` 259.83 @1440 y 480.75 @390 en las 12 instancias, varianza cero (`pie-familias`)—. " +
+      "Es un TERCER eje de la piel de pie, no una hipótesis",
   },
   "2-mbDeLosHermanos": {
     valores: mbPorPiel,
@@ -346,6 +485,23 @@ console.log(`   ⚠ ${RES.pielesQueLoENLAZAN} de ${PIELES.length} pieles ENLAZAN
 console.log(`   y el DEFECTO de Divi vale ${JSON.stringify(RES.defectoDeDivi)} px en las tres — que es EXACTAMENTE lo que mide la piel B`);
 console.log(`   canales mirados para decir «no está en el marcado»: ${RES.canalesMirados.join(" · ")}`);
 
+const CR = salida.cruceContextoDeCache;
+console.log(`\n  ── EL DENOMINADOR: de 3 capturas a las ${CR.capturas} (§«la única diferencia es EL DENOMINADOR») ──`);
+console.log(`   capturas ${CR.capturas} · clasificadas ${CR.clasificadas} · SIN CLASIFICAR ${CR.sinClasificar}  ${CR.sinClasificar ? "(" + CR.ejemplosSinClasificar.join(" · ") + " — no son formas de `pie-familias`)" : ""}`);
+for (const [k, v] of Object.entries(CR.grupos).sort()) console.log(`   ${k.padEnd(52)} n=${String(v.n).padStart(3)}   p.ej. ${v.ejemplo}`);
+console.log(`   veredicto · contexto de B: ${JSON.stringify(CR.veredicto.contextosDeB)} · de A y C: ${JSON.stringify(CR.veredicto.contextosDeAyC)}`);
+console.log(`   ⇒ 1:1 en ${CR.veredicto.n} páginas: ${CR.veredicto.esUnoAUno ? "SÍ" : "NO"}`);
+console.log(
+  `   ⚠ y el CONTROL que lo hace concluyente: dentro de la piel A hay ${CR.grupos["A · ctx=taxonomy · override 25px"]?.n ?? 0} páginas que TRAEN el override\n` +
+    `     y ${CR.grupos["A · ctx=taxonomy · override ENLAZADO"]?.n ?? 0} que lo ENLAZAN, y las dos miden 25px. O sea que «traerlo en línea» NO es\n` +
+    `     el eje: el eje es el CONTEXTO 'archive/'. Sin ese control, enlazar y medir 96 iban juntos.`,
+);
+console.log(
+  `   ⚠ ⚠ CONFUNDIDO, y hay que decirlo (§dos variables que toman siempre el mismo valor): 'ctx=archive' y\n` +
+    `     «ser el archivo de un CPT» son la MISMA cosa en este dominio — las 12 son \`glosario\` y \`preguntas-frecuentes\`.\n` +
+    `     El 1:1 no dice cuál de las dos es la causa; dice que en las ${CR.veredicto.n} van juntas.`,
+);
+
 console.log(`\n  ── LOS EJES, uno a uno (§disparador (a): se reparten y se NOMBRAN antes de tocar nada) ──`);
 for (const [k, v] of Object.entries(salida.ejes)) {
   console.log(`   ${k}`);
@@ -364,6 +520,16 @@ if (salida.modeloColumna.aciertos !== salida.modeloColumna.total) {
   codigo = 2;
 } else if (salida.controlRazones.firmasDistintas !== 1) {
   console.log(`\n⛔ los 5 glifos NO tienen la misma firma de razones en las 6 lecturas (${salida.controlRazones.firmasDistintas}): no son los mismos iconos.`);
+  codigo = 2;
+} else if (CR.veredicto.n < MIN_CRUCE) {
+  /* §regla 14 y §sondas 4bis: un cruce que no alcanza dominio NO es «1:1», es
+   * un cruce sin denominador — y con `esUnoAUno: true` encima, que es como se
+   * lee un 1:1 de una sola página. El mínimo se DERIVA del corpus, no se
+   * escribe: si mañana hay más capturas, el listón sube solo. */
+  console.log(
+    `\n⛔ el cruce sólo clasificó ${CR.veredicto.n} páginas de las ${CR.capturas} capturadas (mínimo ${MIN_CRUCE}).\n` +
+      `   Un 1:1 sobre un dominio recortado no es un discriminador: es el denominador que falta.`,
+  );
   codigo = 2;
 } else {
   console.log(

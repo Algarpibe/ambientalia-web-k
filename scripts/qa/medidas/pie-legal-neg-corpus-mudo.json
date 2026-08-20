@@ -637,89 +637,28 @@
     ]
   },
   "cruceContextoDeCache": {
-    "capturas": 149,
-    "clasificadas": 145,
-    "sinClasificar": 4,
-    "ejemplosSinClasificar": [
-      "productos",
-      "productos/page/2",
-      "sectores",
-      "sectores/page/2"
-    ],
+    "capturas": 8,
+    "clasificadas": 8,
+    "sinClasificar": 0,
+    "ejemplosSinClasificar": [],
     "grupos": {
-      "A · ctx=home · override ENLAZADO": {
-        "n": 17,
-        "ejemplo": "blog"
-      },
-      "A · ctx=26987 · override 25px": {
-        "n": 2,
-        "ejemplo": "casos-de-exito"
-      },
-      "A · ctx=taxonomy · override ENLAZADO": {
-        "n": 63,
-        "ejemplo": "etiqueta/calidad-del-aire"
-      },
       "B · ctx=archive · override ENLAZADO": {
-        "n": 12,
+        "n": 8,
         "ejemplo": "glosario"
-      },
-      "A · ctx=taxonomy · override 25px": {
-        "n": 37,
-        "ejemplo": "recursos/articulos/contaminacion-en-la-construccion"
-      },
-      "A · ctx=61902 · override 25px": {
-        "n": 2,
-        "ejemplo": "recursos/documentos-cientificos"
-      },
-      "A · ctx=33166 · override 25px": {
-        "n": 2,
-        "ejemplo": "recursos"
-      },
-      "A · ctx=33769 · override 25px": {
-        "n": 2,
-        "ejemplo": "recursos/kunakpedia"
-      },
-      "A · ctx=65877 · override 25px": {
-        "n": 2,
-        "ejemplo": "recursos/preguntas-frecuentes"
-      },
-      "C · ctx=taxonomy · override 25px": {
-        "n": 6,
-        "ejemplo": "scientific-category/articulos-cientificos-y-estudios"
       }
     },
     "contextosPorPiel": {
-      "A": {
-        "26987": 2,
-        "33166": 2,
-        "33769": 2,
-        "61902": 2,
-        "65877": 2,
-        "home": 17,
-        "taxonomy": 100
-      },
       "B": {
-        "archive": 12
-      },
-      "C": {
-        "taxonomy": 6
+        "archive": 8
       }
     },
     "veredicto": {
       "contextosDeB": [
         "archive"
       ],
-      "contextosDeAyC": [
-        "26987",
-        "33166",
-        "33769",
-        "61902",
-        "65877",
-        "home",
-        "taxonomy"
-      ],
+      "contextosDeAyC": [],
       "esUnoAUno": true,
-      "n": 145
+      "n": 8
     }
   }
 }

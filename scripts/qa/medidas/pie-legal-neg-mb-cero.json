@@ -283,26 +283,26 @@
       {
         "caso": "A@1440",
         "altoIcono": 31.59,
-        "mbHermanos": 18.56,
-        "predicho": 50.15,
+        "mbHermanos": 0,
+        "predicho": 31.59,
         "medido": 50.16,
-        "acierta": true
+        "acierta": false
       },
       {
         "caso": "B@1440",
         "altoIcono": 98.59,
-        "mbHermanos": 17.27,
-        "predicho": 115.86,
+        "mbHermanos": 0,
+        "predicho": 98.59,
         "medido": 115.86,
-        "acierta": true
+        "acierta": false
       },
       {
         "caso": "C@1440",
         "altoIcono": 31.59,
-        "mbHermanos": 17.27,
-        "predicho": 48.86,
+        "mbHermanos": 0,
+        "predicho": 31.59,
         "medido": 48.86,
-        "acierta": true
+        "acierta": false
       },
       {
         "caso": "A@390",
@@ -315,21 +315,21 @@
       {
         "caso": "B@390",
         "altoIcono": 98.59,
-        "mbHermanos": 30,
-        "predicho": 128.59,
+        "mbHermanos": 0,
+        "predicho": 98.59,
         "medido": 128.59,
-        "acierta": true
+        "acierta": false
       },
       {
         "caso": "C@390",
         "altoIcono": 31.59,
-        "mbHermanos": 30,
-        "predicho": 61.59,
+        "mbHermanos": 0,
+        "predicho": 31.59,
         "medido": 61.59,
-        "acierta": true
+        "acierta": false
       }
     ],
-    "aciertos": 6,
+    "aciertos": 1,
     "total": 6
   },
   "cuerpoDelIcono": {
@@ -350,7 +350,7 @@
       ],
       "cuerpoDerivado": 25,
       "altoIcono": 31.59,
-      "mbHermanos": 18.56
+      "mbHermanos": 0
     },
     "B@1440": {
       "anchos": [
@@ -369,7 +369,7 @@
       ],
       "cuerpoDerivado": 96,
       "altoIcono": 98.59,
-      "mbHermanos": 17.27
+      "mbHermanos": 0
     },
     "C@1440": {
       "anchos": [
@@ -388,7 +388,7 @@
       ],
       "cuerpoDerivado": 25,
       "altoIcono": 31.59,
-      "mbHermanos": 17.27
+      "mbHermanos": 0
     },
     "A@390": {
       "anchos": [
@@ -426,7 +426,7 @@
       ],
       "cuerpoDerivado": 96,
       "altoIcono": 98.59,
-      "mbHermanos": 30
+      "mbHermanos": 0
     },
     "C@390": {
       "anchos": [
@@ -445,7 +445,7 @@
       ],
       "cuerpoDerivado": 25,
       "altoIcono": 31.59,
-      "mbHermanos": 30
+      "mbHermanos": 0
     }
   },
   "canalCss": {
@@ -591,15 +591,15 @@
       "valores": {
         "A": {
           "390": 0,
-          "1440": 18.56
+          "1440": 0
         },
         "B": {
-          "390": 30,
-          "1440": 17.27
+          "390": 0,
+          "1440": 0
         },
         "C": {
-          "390": 30,
-          "1440": 17.27
+          "390": 0,
+          "1440": 0
         }
       },
       "separa": "A de {B, C} — NO separa B de C",
