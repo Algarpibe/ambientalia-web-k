@@ -252,7 +252,9 @@
     "qa:media-canales-neg": "node --env-file=apps/cms/.env scripts/qa/media-canales.neg.mjs",
     "qa:hotlink-recuento": "node scripts/qa/hotlink-recuento.mjs",
     "qa:atributos-censo": "node scripts/qa/atributos-censo.mjs",
-    "qa:atributos-censo-neg": "node scripts/qa/atributos-censo.neg.mjs"
+    "qa:atributos-censo-neg": "node scripts/qa/atributos-censo.neg.mjs",
+    "qa:pie-familias": "node scripts/qa/pie-familias.mjs",
+    "qa:pie-familias-neg": "node scripts/qa/pie-familias.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"
