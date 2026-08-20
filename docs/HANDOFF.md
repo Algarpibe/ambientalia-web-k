@@ -1,4 +1,62 @@
-# HANDOFF — la letra: 31.164 elementos, un carácter, y la mejora escondida en el eje que no cuenta
+# HANDOFF — el pie descompuesto: el «+1.80» son dos, y el clon sirve un pie donde el original sirve cuatro
+
+> ⛔ **Tanda de la 85.ª, 2026-08-20. PASO 0 y PASO 1 cerrados. ESCALÓN 2
+> DISPARADO por (a): el PASO 2 —construir `L2-glosario`— NO se hace, y se dice
+> con su número.**
+>
+> **1 · LA ADJUDICACIÓN, y sale del ARCHIVO antes que del navegador.** El espejo
+> congelado **ya descomponía el pie del original** en `esqueleto.cascaron[]`, y
+> nadie lo había leído. De ahí que el pie del original tenga **CUATRO valores,
+> uno por familia, con varianza CERO dentro de cada una** (n = 36 en
+> `L1-etiqueta`) — y que **el «+1.80» se citara siempre contra 1761.17, que es
+> sólo el de `L1`**.
+>
+> **2 · EL «+1.80» NUNCA FUE UN FLECO: SON DOS.** Reconstruido desde el reparto,
+> al céntimo — `legal 285.64 − 0.30 = 285.34`, `285.34 − 283.75 = +1.59`;
+> `links 1437.63 − 1437.42 = +0.21`; **suma 1.80 exacto**.
+>
+> | | dónde vive | mecanismo |
+> |---|---|---|
+> | **+1.59** | `footer-legal` | **ninguno medido** |
+> | **+0.21** | `footer-links` | residuo que dejó la deriva del original al cerrarse |
+> | **+0.30** (84.ª) | `footer-legal` | la interlínea heredada de los inline de 12 px |
+>
+> **La respuesta a la pregunta del encargo va en dos mitades:** comparten
+> **SITIO** —`footer-legal` concentra el **100 %** del residuo a 1440 y el
+> **90 %** a 390— y comparten **CAUSA: SIN PROBAR**, porque el +1.59 no tiene
+> mecanismo. La predicción pre-registrada acertó en ORIGEN y **se quedó corta en
+> SITIO**; se escribe como salió.
+>
+> **3 · LA CLASE QUE PARA EL HILO: el clon emite UN pie y el original sirve
+> CUATRO.** `L3-sci` a **−86.34 @1440** y **−289.64 @390**, sin adjudicar hasta
+> hoy porque `pie.rect.h` es eje **mixto**. Y `L2-glosario`, construido con el
+> `Footer` de hoy, **nacería con −394.99 @1440 y −611.53 @390** de cascarón que
+> no son suyos. Por eso no se construye: medirlo después no distinguiría el
+> defecto de `L2` del defecto de clase — una FAMILIA DE CALIBRACIÓN con el
+> diagnóstico escrito **antes** de cometerla.
+>
+> **4 · DOS PREDICCIONES DEL ENCARGO NO SOBREVIVIERON A SU DERIVACIÓN.** El
+> glosario **no es una ruta, son 8** (`corpus/…/glosario/page/` → 2..8), así que
+> rutas iban a **374 → 382** y `lh-letra` a **382 intactas** —`lh-letra.mjs:75`
+> deriva del `prerender-manifest`, no de una lista fija—. Las dos colgaban del
+> mismo supuesto y las dos se caen con el mismo `ls`.
+>
+> **5 · EL INSTRUMENTO LLEGÓ CON CINCO DEFECTOS, y los cinco son del catálogo.**
+> `qa:pie-cmp` + `data-pie` + negativo **4/4**. Usaba `censo.evaluate` —el método
+> es `medir`— y publicó **una tabla vacía con `evaluadas 12/12` y EXIT 0**: el
+> contrato cuenta PÁGINAS y las 12 se abrieron; lo que falló fue **la lectura
+> dentro de cada una**. No llamaba a `parar()` y se colgó hasta un timeout de 10
+> min (§sondas 17: `exitCode` no mata). Y el negativo encontró otros tres —dos
+> campos asignados **después** de `w()`, un `prohibidoEnSalida` que imprimían los
+> dos lados, y un control a la vez laxo y estricto—.
+>
+> ⚠ **Lo que queda abierto, con su número:** la causa del **+1.59** pide
+> descomponer `footer-legal` **un nivel más abajo**; `L2` y `L4` siguen
+> **ausentes del clon** (3 de 9 formas), así que la fila peor desviada de la
+> tabla **no se comparó**; y estas rutas **no tienen campaña de ruido**, así que
+> el +0.21 y el +1.00 son **SIN PROBAR**, no «limpios».
+
+---
 
 > ✅ **Tanda de la 84.ª, 2026-08-19. Se cierran el PASO 0, 1, 2, 3 y 4.**
 > **§F3-LH-INTERLINEA-RATIO-VS-LONGITUD queda CERRADA** y deja una ficha nueva.

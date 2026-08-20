@@ -786,6 +786,29 @@ Recon completo en `docs/research/arquetipo-A/`.
 
 ### 2.1 · El cascarón es plantilla pura
 
+> ✅ **CONFIRMADO EN EL PIE Y CON SU DENOMINADOR (2026-08-20, 85.ª tanda) — y el
+> resultado es que NO ENTRA NINGÚN CAMPO.**
+>
+> `qa:pie-cmp` descompone el pie en sus secciones (`footer-links` ·
+> `footer-legal` · `footer-background` · CTA) en los dos lados. Aplicados los dos
+> tests:
+>
+> | test | resultado |
+> |---|---|
+> | **B · varianza intra-página** | el pie **no varía dentro de una página**: hay uno |
+> | **varianza entre INSTANCIAS de la misma forma** | **CERO** — n = 36 en `L1-etiqueta`, 8 en `L1-blog`, 8 en `L2-glosario` |
+> | varianza entre **FORMAS** | **cuatro valores** (`L1/L4` · `L5` · `L3` · `L2`) |
+>
+> Es exactamente el patrón del **régimen plantillado** (§*lo que varía entre
+> FORMAS distingue plantillas, no campos*): **el pie es plantilla DE LA FORMA**,
+> no un campo de la instancia. **El esquema no cambia.**
+>
+> **Y la consecuencia es de código, no de modelo:** hoy el `Footer` del clon
+> distingue **una** variante (`tipo="caso"`, que añade la 4.ª sección) donde el
+> original sirve **cuatro pies**. Eso no es un campo que falte: es una
+> **plantilla que falta**, y su coste está medido —`L3-sci` a **−86.34 @1440** y
+> **−289.64 @390**— en `PENDIENTES-QA.md` §F3-LH-PIE-UNO-CONTRA-CUATRO.
+
 **Cero varianza en 24 instancias** (ritmo, tipografía, retícula). **No hay ni un
 campo por instancia en el cascarón.** Y son **tres plantillas distintas**, no
 una: difieren en estructura, ritmo (`post_content mb` 72 en blog vs 0 en las

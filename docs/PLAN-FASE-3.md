@@ -808,6 +808,35 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ⛔ **ACTUALIZACIÓN 2026-08-20 (85.ª tanda) — `L2-glosario` NO se construye, y
+> el bloqueo es NUEVO y tiene número.**
+>
+> La 81.ª dejó `L2-glosario` **construible** (el campo de fecha entra, orden
+> 37/37). Sigue siéndolo **en su contenido**; lo que la para es **el cascarón**:
+>
+> > **El clon emite UN pie y el original sirve CUATRO**, uno por familia y con
+> > varianza cero dentro de cada una. `L2` construido con el `Footer` de hoy
+> > nacería con **−394.99 @1440** y **−611.53 @390** de desfase de pie **que no
+> > son suyos** — repartidos en las tres secciones (`links −142.94` ·
+> > `legal −136.86` · `background −115.19` a 1440).
+>
+> Medirlo después **no distinguiría el defecto de `L2` del defecto de clase**,
+> que es la definición de FAMILIA DE CALIBRACIÓN. Instrumento y números:
+> `qa:pie-cmp` (negativo 4/4) · `PENDIENTES-QA.md`
+> §F3-LH-PIE-UNO-CONTRA-CUATRO.
+>
+> **Lo que la 86.ª necesita para desbloquearla**, en este orden:
+> 1. hacer que el pie **dependa de la forma** (hoy `Footer` sólo distingue
+>    `caso`, que le añade la 4.ª sección) — `L3-sci` lo verifica ya construido,
+>    a **−86.34 @1440** y **−289.64 @390**;
+> 2. descomponer `footer-legal` **un nivel más abajo**, que es lo único que
+>    puede dirimir si el **+1.59** sin mecanismo y el **+0.30** de la interlínea
+>    comparten causa además de sección.
+>
+> **Y lo que ya NO hace falta volver a medir:** el reparto del pie del original
+> está congelado en `medidas/pie-cmp-{1440,390}.json` para las **6 formas
+> comparadas**, con su control interno a 0 y las **3 ausentes** nombradas.
+
 | fase | estado |
 |---|---|
 | **F3-0** · la captura | ✅ **EJECUTADA** (2026-08-09) — HTML **272 registros** + media **337 ficheros**, 0 fallos, commiteadas |
