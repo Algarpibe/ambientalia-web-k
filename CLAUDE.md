@@ -2092,6 +2092,36 @@ cuadrar el `null`** — o sea cablearlo al defecto del instrumento.
 **Y el defecto se pone en la dirección que grita:** liberado el canónico, lo que
 todavía no se ha re-medido **falla en voz alta** en vez de leer lo caducado.
 
+**5ter · Y LA SIMÉTRICA, QUE ES PEOR: ARREGLAR EL OBJETO MEDIDO CADUCA EL
+CONTROL DEL INSTRUMENTO QUE LO MIDIÓ.** (2026-08-20)
+
+La 5bis va del instrumento a sus medidas. Ésta va **del objeto al instrumento**,
+y su síntoma engaña más:
+
+> **Un control se define como «escribe el valor de HOY y exige NO-OP». En cuanto
+> el arreglo entra, «hoy» es otro valor — y el control sigue escribiendo el de
+> AYER, o sea aplicando el tratamiento al revés.** No calla: **falla en voz
+> alta**, así que se lee como un hallazgo del objeto en vez de como una avería
+> del instrumento.
+
+**Medido:** `lh-letra` verificó el cambio de `1.7` a `1.7em` y su control tenía
+`"1.7"` **cableado**. Tras el arreglo falló en **374 de 374 rutas y a los dos
+anchos**, y como su `process.exit(1)` va **antes** del `ev.ok()`, el contrato
+publicó **«0 evaluadas»** junto a un informe que decía **«374 medidas»**. Las dos
+frases eran ciertas; **se citó la segunda**, y la tanda cerró en verde con
+`EXIT 1`.
+
+> **Operativamente: el valor que un control escribe se DERIVA de la fuente que lo
+> declara, nunca se cablea.** Es §regla 9 en el sitio donde más tarda en verse
+> —un control sólo se estrena **cuando el objeto ya cambió**—, y por eso no basta
+> con acordarse: si no se puede derivar, la sonda **tira** en vez de suponer.
+
+**Y el corolario de lectura, que es el que cierra la clase:** cuando una sonda
+imprima un recuento y su contrato imprima otro, **no son dos opiniones**. El
+recuento describe lo que el bloque de arriba alcanzó a medir; el contrato
+describe **si eso vale**. Citar el primero sin mirar el segundo es §regla 1
+cometida por el lector, y sale idéntica a un verde.
+
 **6 · UN PARÁMETRO POR DEFECTO CONVIERTE «NO LO SÉ» EN «ESTÁ BIEN».**
 
 Las cinco reglas de arriba persiguen el mismo animal: *no encontrar nada y no

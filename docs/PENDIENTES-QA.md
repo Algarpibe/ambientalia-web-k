@@ -14941,6 +14941,94 @@ tenía el cuerpo.
 
 ---
 
+## ⚠→✅ F3-LH-CONTROL-CADUCADO · el arreglo de la 84.ª caducó el CONTROL de la sonda que lo verificó — y la 84.ª cerró en ROJO sin verlo (2026-08-20, 85.ª tanda)
+
+**Encontrado corriendo `qa:lh-letra` en el PASO 3, y dirimido contra el ARCHIVO,
+no supuesto.**
+
+### Lo que pasó
+
+`lh-letra` lleva un CONTROL —§sondas 8: *un negativo sin control no es un
+negativo*— que **escribe el valor de HOY por el mismo canal y exige NO-OP**. Si
+mueve algo, el canal no reproduce la regla y el censo no mide lo que dice medir.
+
+Ese valor estaba **cableado a `"1.7"`** (l. 231). Y `"1.7"` fue el valor de hoy
+**hasta que esta misma sonda sirvió para cambiarlo a `1.7em`** en
+`globals.css:177`. Desde ese instante el control **escribía el valor de AYER**:
+o sea aplicaba el tratamiento al revés, movía 83–97 elementos por ruta y fallaba
+**en las 374**.
+
+### La 84.ª ya salía en rojo, y esto se comprueba en disco
+
+| congelada | `fallosControl` |
+|---|---|
+| `lh-letra-{1440,390}.json` (16:53–17:04, **antes** del arreglo) | **0** ✓ |
+| `lh-letra-{1440,390}-SONDA-CONTROL-CADUCADO-2026-08-19.json` (17:39–18:12, **después**) | **374** ❌ |
+| `lh-letra-1440-SONDA-CONTROL-CADUCADO-2026-08-20.json` (esta tanda, antes de arreglar) | **374** ❌ |
+| **`lh-letra-{1440,390}-2026-08-20.json`** (esta tanda, **ya arreglado**) | **0** ✓ |
+
+Las tres rojas **se renombran con su defecto** (§regla 7): son la evidencia de
+que el control estuvo caducado, no medidas del sitio — y con el nombre viejo
+eran indistinguibles de una corrida buena. Renombrarlas **libera además el
+nombre fechado** para la corrida válida (§regla 9, 8.º caso).
+
+> **El acta de la 84.ª escribió *«`lh-letra` da 0 movidos y 374 rutas
+> intactas»*. Es CIERTO del censo — y su corrida salió con EXIT 1 y
+> «NO SE PUDO EVALUAR · 0 de 374».** El titular y el veredicto decían cosas
+> distintas y **se citó el titular**.
+>
+> Y no fue un descuido de lectura: el `process.exit(1)` del control está
+> **antes** del `ev.ok()`, así que el contrato de `Evaluadas` hizo exactamente
+> su trabajo —negarse a contar— y el número que se citó venía del bloque de
+> arriba, impreso momentos antes. **Los dos canales existían, los dos eran
+> correctos, y sólo uno se leyó.**
+
+### El arreglo, y por qué NO es acomodar la guarda al defecto
+
+El valor **se DERIVA de `globals.css`** en vez de cablearse (§regla 9): el día
+que alguien vuelva a cambiar la declaración, el control lo sigue **solo**. Y si
+no la encuentra, **tira con exit 2** en vez de suponer nada.
+
+No es rebajar la expectativa (§regla 21): el contrato del control es literalmente
+*«escribe el valor de hoy»*, así que **corregir cuál es «hoy» es mantenerlo**,
+no relajarlo. La prueba está en el resultado — con `1.7em` el control vuelve a
+ser **NO-OP en las 374 rutas y a los dos anchos**.
+
+| tras el arreglo | @1440 | @390 |
+|---|---|---|
+| control | **NO-OP en 374** ✓ | **NO-OP en 374** ✓ |
+| elementos movidos | **0** | **0** |
+| rutas intactas | **374** | **374** |
+| evaluadas | **374/374** | **374/374** |
+| exit | **0** | **0** |
+
+**Lo que esto rehabilita:** el *«0 movidos»* de la 84.ª ahora **está
+respaldado**. Antes era un número cierto **sin control que lo validara**, que
+por el propio criterio de la sonda significa *«no se concluye nada»*.
+
+**Lo que NO cambia:** el arreglo de la letra sigue siendo correcto — lo
+sostienen los **+938.4 px hacia el original** medidos en la cabecera a 1440, que
+no dependen de esta sonda.
+
+### La regla, que es lo reutilizable
+
+> **Arreglar el OBJETO MEDIDO caduca el CONTROL del instrumento que lo midió.**
+> Es §sondas 5bis con los papeles cambiados —allí arreglar el *instrumento*
+> caduca sus *medidas*— y su síntoma es **peor**: un control caducado **falla en
+> voz alta**, así que se lee como un hallazgo del objeto en vez de como una
+> avería del instrumento. Y si el fallo aborta antes del recuento, el contrato
+> publica **«0 evaluadas»** al lado de un informe que dice «374 medidas»: dos
+> frases ciertas de las que **sólo la segunda se cita**.
+>
+> **Operativamente: el valor que un control escribe se DERIVA de la fuente que
+> lo declara, nunca se cablea** — es la §regla 9 aplicada al sitio donde más
+> tarda en verse, porque un control sólo se estrena cuando el objeto ya cambió.
+
+Subida a `CLAUDE.md` §sondas (es regla, no evento: quitada la fecha y el nombre
+propio, sigue diciendo qué hacer).
+
+---
+
 ## 📋 BARRIDO §regla 12 · la 85.ª — **0 reglas que subir**, y la que el encargo señalaba YA ESTABA (2026-08-20)
 
 **El número se escribe aunque sea cero**, que es lo que distingue *«no encontré

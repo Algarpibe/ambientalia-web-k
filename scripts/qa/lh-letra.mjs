@@ -194,6 +194,37 @@ const ev = new Evaluadas({
   minimo: RUTAS.length,
 });
 
+/**
+ * ⚠⚠ **EL VALOR DEL CONTROL SE DERIVA DE LA HOJA, NUNCA SE CABLEA — y esto se
+ * pagó (2026-08-20, 85.ª tanda).**
+ *
+ * Un control se define como *«escribe el valor de HOY por el mismo canal y
+ * exige NO-OP»*. Estaba escrito `"1.7"`, que era el valor de hoy **hasta que
+ * esta misma sonda sirvió para cambiarlo a `1.7em`**. Desde ese momento el
+ * control escribía el valor de AYER, o sea que aplicaba el tratamiento al revés
+ * y fallaba en las 374 rutas — por diseño, no por defecto del clon.
+ *
+ * > **La forma general: arreglar el OBJETO MEDIDO caduca el CONTROL del
+ * > instrumento que lo midió.** Es §sondas 5bis con los papeles cambiados —allí
+ * > arreglar el instrumento caduca sus medidas— y su síntoma es peor, porque un
+ * > control roto **falla en voz alta** y por tanto se lee como un hallazgo del
+ * > objeto en vez de como una avería del instrumento.
+ *
+ * Se deriva de `globals.css`, que es donde vive la declaración: así el día que
+ * alguien la cambie otra vez, el control lo sigue **solo**.
+ */
+const CSS_GLOBAL = readFileSync(join(RAIZ, "src/app/globals.css"), "utf8");
+const M_LH = CSS_GLOBAL.match(/\bbody\s*\{[\s\S]*?\bline-height:\s*([^;]+);/);
+if (!M_LH) {
+  console.error(
+    `\n❌ NO SE PUDO EVALUAR · no se encuentra \`body { line-height }\` en globals.css.\n` +
+      `   El control necesita el valor de HOY y no se cablea. Sin él la sonda no\n` +
+      `   puede probar que su canal reproduce la regla, así que no mide nada.\n`,
+  );
+  process.exit(2);
+}
+const LH_DE_HOY = M_LH[1].trim();
+
 const porFs = {};            // fontSize → { n, dPorRenglon, rutas:Set, ejemplos:[] }
 const rutasTocadas = {};     // ruta → nº de elementos movidos
 const fallosControl = [];    // rutas en las que el CONTROL movió algo
@@ -228,7 +259,7 @@ for (const ruta of RUTAS) {
   totalElementos += antes.length;
 
   /* ── CONTROL: el valor de HOY por el mismo canal. Debe ser NO-OP ── */
-  const lhControl = await page.evaluate(APLICA, "1.7");
+  const lhControl = await page.evaluate(APLICA, LH_DE_HOY);
   const control = await page.evaluate(FOTO);
   const movidosControl = [];
   for (let i = 0; i < antes.length && i < control.length; i++) {
@@ -423,7 +454,7 @@ console.log("");
  * reproduce la regla y el censo NO significa lo que dice. */
 if (fallosControl.length > 0) {
   console.error(
-    `\n❌ EL CONTROL NO ES NO-OP en ${fallosControl.length} ruta(s): escribir \`1.7\`\n` +
+    `\n❌ EL CONTROL NO ES NO-OP en ${fallosControl.length} ruta(s): escribir \`${LH_DE_HOY}\`\n` +
       `   por estilo en línea movió elementos. El canal no reproduce la regla del\n` +
       `   body, así que el censo NO mide el cambio que dice medir. No se concluye nada.\n`,
   );
@@ -431,6 +462,6 @@ if (fallosControl.length > 0) {
   process.exit(1);
 }
 
-console.log(`✓ CONTROL limpio: escribir \`1.7\` por el mismo canal es NO-OP en las ${RUTAS.length} rutas`);
+console.log(`✓ CONTROL limpio: escribir \`${LH_DE_HOY}\` (DERIVADO de globals.css) por el mismo canal es NO-OP en las ${RUTAS.length} rutas`);
 ev.ok(medidas);
 console.log(`  ✓ evaluadas ${medidas}/${RUTAS.length} rutas · censo de la letra`);
