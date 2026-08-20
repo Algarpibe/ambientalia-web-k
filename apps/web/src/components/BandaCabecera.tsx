@@ -191,4 +191,20 @@ export const BANDA = {
    * no se derivan de sus partes.
    */
   indiceCasos: { alto: 458.09, altoMovil: 473.08 },
+  /**
+   * `L2` — el archivo de CPT (`/glosario` · `/preguntas-frecuentes`).
+   * **225 / 136.58**, leídos en crudo del espejo: `cabecera.rect.h` en las 8
+   * páginas de glosario y las 4 de faqs, varianza **0** dentro de cada CPT.
+   *
+   * ⚠ **Coincide con `listado` en los dos anchos y va con entrada propia**, por
+   * la misma razón de siempre: `L2` corre en **plantilla PHP del archivo de
+   * CPT** y `L1` en theme builder, así que la cabecera se la sirve otra capa.
+   * Que hoy midan igual no acopla dos plantillas distintas — y con una entrada
+   * compartida un cambio en una saldría como defecto en la otra.
+   *
+   * ⚠ **El `corte` está SIN PROBAR**, igual que en `listado`: los dos altos se
+   * midieron a 1440 y a 390, y entre esos dos anchos caben los dos cortes. Se
+   * deja el 768 por defecto. En los anchos intermedios el contrato es de RANGO.
+   */
+  archivoCpt: { alto: 225, altoMovil: 136.58 },
 } as const;

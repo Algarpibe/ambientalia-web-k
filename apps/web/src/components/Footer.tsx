@@ -43,7 +43,14 @@ import type { SocialLink } from "@/types/kunak";
  * |---|---|---|---|---|
  * | `ancha`       | grupo A · sector · monográfico · caso · faq · home | 86 % | 0 | 593.75 |
  * | `estrecha`    | software | 80 % | 0 | 681.09 |
+ * | `estrechaSinMargen` | `L3-sci` (**piel C**) | 80 % | 0 | 681.10 |
+ * | **`archivoCpt`** | **`L2` (**piel B**)** | **80 %** | **4 %** | **989.74** |
  * | `estrechaPad` | catálogo · producto | 80 % | 4 % | 1048.25 |
+ *
+ * ⚠ **`archivoCpt` y `estrechaPad` comparten los DOS ejes de la 86.ª y difieren
+ * en 58.51** (2026-08-20, 88.ª). Es la prueba de que *«ancho de fila ×
+ * `padSeccion`»* no agota el modelo: la tipografía es el tercer eje y ya estaba
+ * en esta cabecera; el cuerpo del icono es el cuarto y lo estrena `L2`.
  *
  * ⚠ **Son TRES ejes, no dos.** El ESQUEMA §6b registró el ancho de fila y el
  * `padding`; con esos dos, `footer-background` cuadra al céntimo y catálogo se
@@ -84,6 +91,28 @@ export type TipoPagina =
    * `mt-[42px]` antes del pie y estas formas tienen hueco **cero**.
    */
   | "listadoTema"
+  /**
+   * Archivo de CPT del tema (`L2`: `/glosario` · `/preguntas-frecuentes`) —
+   * **piel B**, la única de las tres que lleva `padding` de sección.
+   *
+   * ⚠⚠ **NO es `estrechaPad`, y el mapeo de la 86.ª lo dio por bueno con CERO
+   * instancias separadoras** (2026-08-20, 88.ª tanda). Aquella tanda dedujo
+   * bien el mecanismo —*«3 pieles = ancho de fila × `padSeccion`»*— y mapeó
+   * `B → estrechaPad` sobre un dominio, el espejo de listados, **en el que
+   * `estrechaPad` no tiene ni una instancia**: catálogo y producto no son
+   * listados. Los dos ejes coincidían y los otros dos no estaban en el modelo.
+   *
+   * Lo que los separa, derivado de `pie-mecanismo-{1440,390}.json`:
+   *
+   * | | `col0` de `legal` | `col2` de `links` («¡Suscríbete!») |
+   * |---|---|---|
+   * | **B** (n = 12) | **93.19** ⇒ legal a **12 px** | **357.56** a los dos anchos |
+   * | `estrechaPad` | legal a **18 px** (+32.59 de `footer-legal`) | **366.16 / 335.56** |
+   *
+   * Es §*dos modelos que predicen lo mismo en todo tu dominio son uno solo*
+   * con el dominio **vacío** en el lado que decidía.
+   */
+  | "archivoCpt"
   | "home";
 
 type Presentacion = {
@@ -103,10 +132,30 @@ type Presentacion = {
    */
   legal2: string;
   /**
-   * Alto del bloque de iconos sociales (solo móvil; en `sm:` pasa a `auto`).
+   * Alto del bloque de iconos sociales — o sea **`col1` de `footer-legal`**.
    * Cuarto eje de presentación, medido a
    * 390 en la columna 2 de `footer-legal`: **31.59 en `ancha`** y **61.59 en las
    * dos estrechas** — exactamente +30. El clon servía 31.59 en las tres.
+   *
+   * ⚠⚠ **EL VALOR DE `sm:` ENTRA EN EL CAMPO (88.ª tanda), y hasta hoy estaba
+   * cableado a `h-auto` en el JSX.** No era un descuido: en `ancha` y en las dos
+   * estrechas **daba igual**, porque a 1440 `col1` vale 50.16 · 48.86 y la
+   * columna hermana `col0` mide **93.19** — o sea que **el contenedor lo
+   * absorbía entero** y el alto que el clon pusiera ahí no llegaba a la fila.
+   *
+   * La piel **B** es la primera en la que deja de absorber: `col1 = 115.86 >
+   * 93.19`, así que **manda**, y la fila de `legal` sube a `115.86 + 28.78 =
+   * 144.64`. §*La causa común: el NIVEL al que se mide*, con el contenedor
+   * dejando de tapar por primera vez en este eje.
+   *
+   * Las cuatro presentaciones anteriores conservan `sm:h-auto` **verbatim**:
+   * el cambio es NO-OP para ellas por construcción, y `clon-base` lo adjudica.
+   *
+   * | piel | `col1` @390 | `col1` @1440 | cuerpo del icono |
+   * |---|---|---|---|
+   * | A | 31.59 | 50.16 (absorbido) | 25 px |
+   * | C | 61.59 | 48.86 (absorbido) | 25 px |
+   * | **B** | **128.59** | **115.86 (manda)** | **96 px** — el defecto de Divi |
    */
   social: string;
   /**
@@ -189,7 +238,10 @@ type Presentacion = {
 const ANCHA_FILA = "w-[86%] max-w-[1380px]";
 const ESTRECHA_FILA = "w-[80%] max-w-[1380px]";
 
-const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaSinMargen" | "estrechaPad", Presentacion> = {
+const PRESENTACION: Record<
+  "ancha" | "estrecha" | "estrechaSinMargen" | "estrechaPad" | "archivoCpt",
+  Presentacion
+> = {
   ancha: {
     fila: ANCHA_FILA,
     padSeccion: false,
@@ -199,7 +251,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaSinMargen" | "estrech
     titulo: "text-[14px]",
     legal: "text-[12px]",
     legal2: "text-[9.6px]",
-    social: "h-[31.6px]",
+    social: "h-[31.6px] sm:h-auto",
     sus: "mb-[46px] mt-[16px] [&>a]:pb-[10px]",
     antesDelPie: "",
     borde: "border-y border-[#333]",
@@ -213,7 +265,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaSinMargen" | "estrech
     titulo: "text-[14px]",
     legal: "text-[12px]",
     legal2: "text-[9.6px]",
-    social: "h-[61.59px]",
+    social: "h-[61.59px] sm:h-auto",
     sus: "mb-[46px] mt-[16px] [&>a]:pb-[3.109px] sm:[&>a]:pb-[2.297px]",
     antesDelPie: "mt-[42px]",
     borde: "border-y border-[#333]",
@@ -252,7 +304,7 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaSinMargen" | "estrech
     titulo: "text-[14px]",
     legal: "text-[12px]",
     legal2: "text-[9.6px]",
-    social: "h-[61.59px]",
+    social: "h-[61.59px] sm:h-auto",
     sus: "mb-[46px] mt-[16px] [&>a]:pb-[3.109px] sm:[&>a]:pb-[2.297px]",
     antesDelPie: "",
     borde: "border-y border-[#333]",
@@ -266,9 +318,45 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaSinMargen" | "estrech
     titulo: "text-[18px]",
     legal: "text-[18px]",
     legal2: "text-[14.4px]",
-    social: "h-[61.59px]",
+    social: "h-[61.59px] sm:h-auto",
     sus: "mb-[30px] [&>a]:pb-[10px]",
     antesDelPie: "mt-[42px]",
+    borde: "",
+  },
+  /**
+   * **La piel B**, la de `L2` — y cada uno de sus seis ejes está DERIVADO de
+   * `pie-mecanismo-{1440,390}.json`, no copiado de una presentación vecina.
+   *
+   * Lo que hace legible el conjunto es que `links` en B y C tiene **las 5
+   * columnas idénticas salvo `col2`**, y `legal` **las 3 idénticas salvo
+   * `col1`**. O sea: **B = C + `padSeccion` + sin borde + dos módulos**.
+   *
+   * | eje | valor | de dónde |
+   * |---|---|---|
+   * | fila | 1152 / 312 | = C |
+   * | `padSeccion` | **sí**, y en las TRES secciones (57.5938 @1440 · 50 @390) | `esqueleto.cascaron[].ritmo`, 12/12 |
+   * | `borde` | **ninguno** | A y C llevan `+2.00` de `border-y` en la fila de `links` a los dos anchos; B no |
+   * | tipografía de `links` | fs 14 · lh 30.6 | = C: cols 288.16 · 363.34 · … · 400.94 · 184.05 |
+   * | `sus` | **botón a 10 px** | C da 67.3 / 68.11 y B **75**: `10 − 2.297 = 7.703` y `10 − 3.109 = 6.891`, contra `357.56 − 349.86 = 7.70` y `357.56 − 350.67 = 6.89`. **Exacto a los dos anchos** |
+   * | `social` | 128.59 / **115.86** | el eje del icono, §0c de la 88.ª |
+   *
+   * ⚠ **El `sus` se escribe como C con el `pb` de A, y eso NO es mezclar dos
+   * calibraciones**: el `pb` del botón es un eje **suyo** —10 en A, 2.297/3.109
+   * en C, 10 en `estrechaPad`— y el número de B lo fija su propia medida.
+   * Quien lo adjudica es `pie-cmp`, no esta tabla.
+   */
+  archivoCpt: {
+    fila: ESTRECHA_FILA,
+    padSeccion: true,
+    li: "mb-[7px]",
+    liA: "text-[14px]",
+    ul: "pb-[32px] text-[14px] leading-[30.6px]",
+    titulo: "text-[14px]",
+    legal: "text-[12px]",
+    legal2: "text-[9.6px]",
+    social: "h-[128.59px] sm:h-[115.86px]",
+    sus: "mb-[46px] mt-[16px] [&>a]:pb-[10px]",
+    antesDelPie: "",
     borde: "",
   },
 };
@@ -281,6 +369,7 @@ const DE_TIPO: Record<Exclude<TipoPagina, "home">, keyof typeof PRESENTACION> = 
   faq: "ancha",
   software: "estrecha",
   listadoTema: "estrechaSinMargen",
+  archivoCpt: "archivoCpt",
   catalogo: "estrechaPad",
   producto: "estrechaPad",
 };
@@ -495,7 +584,9 @@ export function Footer({
       <div
         className={
           tb
-            ? `mb-[30px] ${p.social} flex items-center gap-[38px] pl-[19px] text-[#333] sm:mb-0 sm:h-auto sm:gap-[9px] sm:pl-0`
+            ? // El `sm:h-auto` que estaba aquí vive ahora en `p.social` — ver su
+              // ficha: en la piel B ese alto MANDA y no lo puede fijar el JSX.
+              `mb-[30px] ${p.social} flex items-center gap-[38px] pl-[19px] text-[#333] sm:mb-0 sm:gap-[9px] sm:pl-0`
             : "mb-[38px] flex items-center gap-[42.7px] pl-[9px] text-[#333] sm:mb-0 sm:gap-[9px] sm:pl-0"
         }
       >

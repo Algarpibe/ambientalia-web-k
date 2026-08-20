@@ -690,3 +690,104 @@
     margin-inline-end: 40px;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 6 · `L2` — EL ARCHIVO DE CPT (`.lh-cpt`)
+ *
+ * La partición `#left-area` + `#sidebar` del TEMA, que ninguna otra forma
+ * clonada sirve: `L1` lleva su barra como MÓDULO Divi dentro del theme builder
+ * y `L3` no lleva barra (`grep 'id="sidebar"'` en su captura: **0**).
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/* ⚠ **Los dos porcentajes son los que PRODUCEN el número medido, y por eso se
+   escriben como porcentaje y no como px.** `#left-area` mide **911.52** a 1440
+   y **312** a 390 dentro de un `.container` de 1152 / 312: eso es 79.125 % en
+   el ancho y 100 % en el estrecho, o sea que **se mueve con el ancho** — el
+   test A de Divi lo lee como plantilla, y aquí el régimen es PLANTILLADO, así
+   que la lectura vale tal cual.
+
+   El `padding-right` de **63.3594** es el 5.5 % de 1152, y con `border-box` el
+   contenido queda en **848.16**: exactamente el ancho de la tarjeta medida. Es
+   la comprobación de que los dos porcentajes son los buenos y no dos números
+   que casualmente suman. */
+.lh-cpt #left-area {
+  float: left;
+  width: 79.125%;
+  padding-right: 5.5%;
+  /* `#left-area` mide 968.91 con 5 tarjetas de 138.78 + 5 `mb` de 42 + un
+     paginador de 42: `903.9 + 42 + 23 = 968.9`. Los 23 son este `padding`. */
+  padding-bottom: 23px;
+}
+
+.lh-cpt #sidebar {
+  float: right;
+  width: 20.875%;
+}
+
+/* `clearfix` es una clase SERVIDA (`<div id="content-area" class="clearfix">`),
+   no un apaño: sin ella los dos flotantes se salen del `.container` y el pie
+   sube. Se emite la clase porque el original la emite, y aquí va su efecto. */
+.lh-cpt #content-area::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ⚠ **El corte está SIN PROBAR y se declara**: los dos repartos se midieron a
+   1440 (lado a lado) y a 390 (apilado), y entre esos dos anchos caben varios
+   cortes. Se pone el **980** de Divi, que es el que este tema usa en el resto
+   de sus apilados. En los anchos intermedios el contrato es de RANGO: lo que
+   se exige es que el clon VARÍE como varía el original, no un Δ0. */
+@media (max-width: 980px) {
+  .lh-cpt #left-area,
+  .lh-cpt #sidebar {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+/* ── La tarjeta ──────────────────────────────────────────────────────────
+   ⚠ **No lleva ninguna de las reglas de rejilla de `listados.css`**, y eso es
+   una propiedad del marcado servido, no una omisión: aquellas cuelgan de
+   `.et_pb_posts`, y en `L2` los `<article>` son hijos DIRECTOS de `#left-area`
+   — no hay `.et_pb_posts` en la captura. Una sola columna a ancho completo. */
+.lh-cpt #left-area .et_pb_post {
+  /* `mb 42` **igual a los dos anchos**, que es lo contrario de `L1` (40 → 32).
+     No es una tarjeta de rejilla: es una lista. */
+  margin-bottom: 42px;
+}
+
+/* El titular: **37 / 37 / 300 / −0.5px / #333 con `pb 10`, IDÉNTICO a los dos
+   anchos** (`lh-espejo-{1440,390}`, `titulo.tipo` y `titulo.ritmo`).
+
+   ⚠ **El `@media (max-width:479px)` que baja el `padding-bottom` a 0 en `L1`
+   NO aplica aquí, y está medido**: a 390 el título de `L2` mide 84 con 2
+   renglones de 37, o sea `74 + 10`. Así que la regla que sirve este `10` gana
+   a `.et_pb_post h2` (0,2,0) también en el original — y el `font-size` tampoco
+   baja a 16. Se transcribe lo servido, no lo que la regla de `L1` haría. */
+.lh-cpt #left-area .et_pb_post .entry-title {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 37px;
+  line-height: 37px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  color: #333;
+}
+
+/* El extracto es **texto suelto dentro del `<article>`** —sin envoltorio, como
+   en el original— así que hereda del contenedor.
+
+   ⚠ **La interlínea está DERIVADA por composición y el cuerpo NO está medido**
+   (`SP-C3`: `lh-spec` congeló la caja y el ritmo, no el tipo de los hijos).
+   `30.59` sale de cuatro casos sin holgura: `138.78 − 47 = 91.78 = 3 × 30.59`
+   @1440, y `359.34 − 84`, `328.75 − 84`, `365.75 − 121` = 275.34 · 244.75 ·
+   244.75 = **9 · 8 · 8** renglones @390. Los **18 px** son el cuerpo del sitio,
+   que es lo que produce esa interlínea (18 × 1.7), y se declaran **sin medir**:
+   quien lo adjudica es `lh-cmp` contra el original, no este comentario. */
+.lh-cpt #left-area .et_pb_post {
+  font-size: 18px;
+  line-height: 30.6px;
+  color: #333;
+}

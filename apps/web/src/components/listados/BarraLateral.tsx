@@ -48,26 +48,33 @@ const CATEGORIAS_DEL_WIDGET = [
   { id: 14, slug: "noticias", nombre: "Noticias" },
 ];
 
-export function BarraLateral({
-  conBorde,
-  hrefCategoria,
-}: {
-  /**
-   * `et_pb_with_border` — lo lleva **`/blog` y no `/etiqueta`**, medido en las
-   * dos instancias. Es una clase del módulo, o sea plantilla de la variante.
-   */
-  conBorde: boolean;
-  /** `(slug) => href`. Aplica la regla de rutas locales de quien la usa. */
-  hrefCategoria: (slug: string) => string;
-}) {
+/**
+ * LOS CUATRO WIDGETS, SIN CASCARÓN — y por qué se extraen (88.ª tanda).
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * **`L1` y `L2` sirven los MISMOS cuatro widgets dentro de DOS envoltorios
+ * distintos**, y eso es exactamente lo que el repo manda extraer: *«cuando un
+ * componente de página se reutiliza en una segunda página, se extrae»*.
+ *
+ * | forma | envoltorio servido |
+ * |---|---|
+ * | `L1` (theme builder) | `div.et_pb_module.et_pb_sidebar_0_tb_body.et_pb_widget_area…` |
+ * | **`L2`** (plantilla PHP del archivo de CPT) | **`div#sidebar`**, con los widgets como hijos DIRECTOS |
+ *
+ * Derivado del corpus sin recortar (`corpus/fase-3/listados/glosario/`): los
+ * cuatro `id` —`search-6` · `text-1` · `text-7` · `custom_html-25`— y su
+ * contenido son **idénticos byte a byte** salvo los `href`, que la regla de
+ * rutas locales resuelve en cada forma. Copiarlos habría sido la clase de
+ * duplicación que este repo ya pagó con la miga: cuatro copias a mano que
+ * divergen el día que alguien toca una.
+ *
+ * ⚠ **Lo que NO se extrae es el envoltorio**, y es lo único que difiere. Un
+ * componente que aceptara «con módulo Divi o sin él» por prop estaría
+ * parametrizando la CAPA, que es justo lo que separa los dos regímenes.
+ */
+export function WidgetsBarra({ hrefCategoria }: { hrefCategoria: (slug: string) => string }) {
   return (
-    <div
-      className={
-        (conBorde ? "et_pb_with_border " : "") +
-        "et_pb_module et_pb_sidebar_0_tb_body et_pb_widget_area clearfix" +
-        " et_pb_widget_area_right et_pb_bg_layout_light"
-      }
-    >
+    <>
       {/* 1 · Buscar — `search-6`. SP-B4: la interacción está SIN MEDIR. */}
       <div id="search-6" className="et_pb_widget widget_search">
         <h4 className="widgettitle">Buscar</h4>
@@ -116,6 +123,31 @@ export function BarraLateral({
           </span>
         </div>
       </div>
+    </>
+  );
+}
+
+export function BarraLateral({
+  conBorde,
+  hrefCategoria,
+}: {
+  /**
+   * `et_pb_with_border` — lo lleva **`/blog` y no `/etiqueta`**, medido en las
+   * dos instancias. Es una clase del módulo, o sea plantilla de la variante.
+   */
+  conBorde: boolean;
+  /** `(slug) => href`. Aplica la regla de rutas locales de quien la usa. */
+  hrefCategoria: (slug: string) => string;
+}) {
+  return (
+    <div
+      className={
+        (conBorde ? "et_pb_with_border " : "") +
+        "et_pb_module et_pb_sidebar_0_tb_body et_pb_widget_area clearfix" +
+        " et_pb_widget_area_right et_pb_bg_layout_light"
+      }
+    >
+      <WidgetsBarra hrefCategoria={hrefCategoria} />
     </div>
   );
 }
