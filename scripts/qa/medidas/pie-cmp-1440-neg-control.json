@@ -4,11 +4,11 @@
     "width": 1440,
     "que": "descomposición del PIE por sección, de dos lados",
     "ladoOriginal": "kunakair.com VIVO (no el espejo: el espejo no trae el clon)",
-    "ladoClon": "http://127.0.0.1:56701",
+    "ladoClon": "http://127.0.0.1:58968",
     "unidad": "la SECCIÓN de pie (rol × forma), no el alto del pie",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio»",
     "noMide": [
-      "L2-* NO está en el clon: 3 forma(s) ausente(s) de 9 — la peor desviada del espejo entre ellas",
+      "L2-* NO está en el clon: 2 forma(s) ausente(s) de 9 — la peor desviada del espejo entre ellas",
       "el MECANISMO por el que el original sirve cuatro pies distintos: se mide el reparto, no la causa"
     ]
   },
@@ -429,6 +429,110 @@
       "rutaOrig": "https://kunakair.com/es/recursos/articulos/",
       "rutaClon": "/recursos/articulos"
     },
+    "L2-glosario": {
+      "orig": {
+        "pie": {
+          "w": 1440,
+          "h": 989.73,
+          "y": 1326.09,
+          "x": 0
+        },
+        "marca": "footer.et-l.et-l--footer",
+        "via": "et_pb_section",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 1440,
+              "h": 573.72,
+              "y": 1326.09,
+              "x": 0
+            },
+            "padTop": "57.5938px",
+            "padBottom": "57.5938px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 1440,
+              "h": 259.83,
+              "y": 1899.81,
+              "x": 0
+            },
+            "padTop": "57.5938px",
+            "padBottom": "57.5938px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 1440,
+              "h": 156.19,
+              "y": 2159.64,
+              "x": 0
+            },
+            "padTop": "57.5938px",
+            "padBottom": "57.5938px"
+          }
+        ]
+      },
+      "clon": {
+        "pie": {
+          "w": 1440,
+          "h": 989.73,
+          "y": 1251.91,
+          "x": 0
+        },
+        "marca": "footer.et-l--footer.bg-white",
+        "via": "data-pie",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 1440,
+              "h": 573.72,
+              "y": 1251.91,
+              "x": 0
+            },
+            "padTop": "57.5938px",
+            "padBottom": "57.5938px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 1440,
+              "h": 259.83,
+              "y": 1825.63,
+              "x": 0
+            },
+            "padTop": "57.5938px",
+            "padBottom": "57.5938px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 1440,
+              "h": 156.19,
+              "y": 2085.45,
+              "x": 0
+            },
+            "padTop": "57.5938px",
+            "padBottom": "57.5938px"
+          }
+        ]
+      },
+      "rutaOrig": "https://kunakair.com/es/glosario/",
+      "rutaClon": "/glosario"
+    },
     "L3-sci": {
       "orig": {
         "pie": {
@@ -657,11 +761,6 @@
       "pieEspejo": 989.73
     },
     {
-      "forma": "L2-glosario",
-      "clon": "/glosario",
-      "pieEspejo": 989.73
-    },
-    {
       "forma": "L4-listado-embebido",
       "clon": "/recursos",
       "pieEspejo": 593.75
@@ -779,6 +878,34 @@
       "orig": 593.75,
       "clon": 594.75,
       "delta": 1
+    },
+    {
+      "forma": "L2-glosario",
+      "rol": "links",
+      "orig": 573.72,
+      "clon": 573.72,
+      "delta": 0
+    },
+    {
+      "forma": "L2-glosario",
+      "rol": "legal",
+      "orig": 259.83,
+      "clon": 259.83,
+      "delta": 0
+    },
+    {
+      "forma": "L2-glosario",
+      "rol": "background",
+      "orig": 156.19,
+      "clon": 156.19,
+      "delta": 0
+    },
+    {
+      "forma": "L2-glosario",
+      "rol": "· TOTAL",
+      "orig": 989.73,
+      "clon": 989.73,
+      "delta": 0
     },
     {
       "forma": "L3-sci",
@@ -900,6 +1027,20 @@
       "suma": 594.75,
       "pie": 594.75,
       "resto": 0
+    },
+    {
+      "forma": "L2-glosario",
+      "lado": "orig",
+      "suma": 989.74,
+      "pie": 989.73,
+      "resto": -0.01
+    },
+    {
+      "forma": "L2-glosario",
+      "lado": "clon",
+      "suma": 989.74,
+      "pie": 989.73,
+      "resto": -0.01
     },
     {
       "forma": "L3-sci",

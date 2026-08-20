@@ -4385,3 +4385,73 @@ Y el aviso que vale aquí más que en ningún sitio: **`clon-base` exige un
 `MARCADOR` del build servido antes de medir**. La corrida que más importa es la
 que dice «no se movió nada», y es justo la que un `next start` viejo falsifica
 sin dejar rastro.
+
+---
+
+## 2026-08-20 · 88.ª tanda — dos decisiones que `L2` DESTAPA y no cierra
+
+Ninguna de las dos es de `L2`: las dos afectan a **las colecciones de grupo A**,
+y `L2` es sólo la primera forma que las pone a la vista. Se registran aquí en la
+misma tanda que las mide (§MENCIONADO NO ES DOCUMENTADO).
+
+### CMS-A-ROTULO · **el rótulo se guarda como TEXTO PLANO y el original sirve MARCADO**
+
+`titulo` y `tituloMiga` son `type: "text"`, y el extractor les quita las
+etiquetas. El original sirve `<sub>`:
+
+| campo | el original sirve | el clon sirve | cardinal |
+|---|---|---|---|
+| `tituloMiga` | `Oxígeno (O<sub>2</sub>)` | `Oxígeno (O 2 )` — etiquetas fuera **y un espacio dentro** | **9 de 37** términos · 1 de 152 blog · 0 de 23 doc |
+| `titulo` (el `h1`) | ídem | `Oxígeno (O2)` — etiquetas fuera, **sin** espacio | **6 de 37** términos |
+
+> ⚠ **Las dos rutas del MISMO extractor discrepan entre sí** —una mete espacio y
+> la otra no—, y eso es lo que dice que ninguna de las dos es deliberada. Es el
+> mismo error que `extractoDerivado` ya tiene documentado y resuelto en su
+> comentario (*«las etiquetas se quitan sin meter un espacio, que es lo que hace
+> `wp_strip_all_tags`»*): la corrección se aplicó **allí** y no en el extractor.
+
+**Dónde se ve, y por eso no es cosmético:** la **miga** de las 37 páginas de
+término (`/[slug]`, desde que se transcribieron) y ahora también el **rótulo de
+las tarjetas** de `/glosario`. En la miga el último eslabón lleva
+`max-width:350px` con `text-ellipsis`, o sea que un ancho distinto puede además
+recortar.
+
+**Qué habría que decidir**, y son dos cosas, no una:
+
+1. **si el campo admite marcado** — pasa de `text` a un texto con contrato de
+   etiquetas admitidas (aquí basta `sub`, pero el censo hay que hacerlo);
+2. **cómo se renderiza en los TRES sitios** que lo pintan (`h1`, miga, tarjeta
+   de `L2`), que es lo que hoy no puede hacerse porque el dato no lo lleva.
+
+**Coste:** esquema + re-extracción + re-siembra. **No se parchea con una tabla
+de sustituciones** — eso sería inventar el dato en el render.
+
+### CMS-A-IDORIGINAL · **el `post-<id>` de WordPress no está en ninguna colección**
+
+`P-LH-C8` se pudo comprobar por primera vez al construir `L2`, y sale rojo:
+
+```
+original  article.et_pb_post.post-71556.glossary
+clon      article.et_pb_post.glossary.type-glossary
+```
+
+**El elemento es el mismo —Δ0 en su `y`— y su FIRMA no.** Cardinal:
+`listado.tarjetas.N.clases.length` **7 en el original y 5 en el clon**, en las
+3 tarjetas congeladas de cada una de las 8 páginas.
+
+Faltan dos clases y **son de naturaleza distinta**:
+
+| clase | por qué falta | qué haría falta |
+|---|---|---|
+| `post-71556` | el clon **no tiene los ids de WordPress** | un campo `idOriginal` en las colecciones de grupo A, poblado desde la captura |
+| `has-post-thumbnail` | el clon **no sirve imagen** en esta tarjeta (`media: null` en el original también) | nada: es una clase que el original emite y **no usa**. Se replicaría por fidelidad, no por efecto |
+
+> ⚠ **No se cablea un id inventado.** Y el alcance no es `L2`: `idOriginal`
+> afectaría a **las 149 entradas de grupo A** y a cualquier forma que emita
+> `article.et_pb_post` — o sea también a `L1`, donde nadie lo ha comprobado.
+>
+> **Y hay una pregunta previa que decide si merece la pena:** si esas clases
+> **pintan algo**. `has-post-thumbnail` casi seguro que no; `post-<id>` es el
+> gancho de los overrides por post que Divi compila, así que **puede pintar**.
+> Se mide antes de modelar.
+

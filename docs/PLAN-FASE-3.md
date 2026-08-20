@@ -808,6 +808,75 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ✅ **ACTUALIZACIÓN 2026-08-20 (88.ª tanda) — `L2-glosario` CONSTRUIDA. Tres
+> tandas de aplazamiento se cierran, y el hilo del pie con ellas.**
+>
+> Rutas **374 → 382** (`/glosario` + `/glosario/page/2..8`). El cardinal salió
+> del canal SIN recortar —`span.pages` = «Page 1 of 8» y 37 tarjetas en las 8
+> capturas—, no del espejo, que congela `cards.slice(0,3)`.
+>
+> ### 1 · La piel B del pie: Δ0 en las TRES secciones @1440
+>
+> | | `links` | `legal` | `background` | TOTAL |
+> |---|---|---|---|---|
+> | @1440 | **Δ0** | **Δ0** | **Δ0** | **Δ0** |
+> | @390 | +0.20 | +1.88 | **Δ0** | +2.08 |
+>
+> Los de 390 son **los residuos transversales ya fichados** (+0.21/+0.18 en
+> `links` y +1.89/+1.88 en `legal` en las otras formas): `L2` no trae nada
+> propio. Y **es la única de las 7 formas comparadas con Δ0 en las tres @1440**,
+> porque la piel B no lleva el `border-y` que da el `+1` a las demás.
+>
+> ### 2 · ⚠ `estrechaPad` NO era la piel B — el mapeo de la 86.ª tenía 0 separadoras
+>
+> La 86.ª dedujo bien el mecanismo (*«3 pieles = ancho de fila × `padSeccion`»*)
+> y mapeó `B → estrechaPad` sobre **el espejo de listados, donde `estrechaPad`
+> no tiene ni una instancia**: catálogo y producto no son listados. Lo separan
+> dos números —`col0` de `legal` **93.19** (legal a 12 px) contra el de 18 px, y
+> `col2` de `links` **357.56** contra 366.16/335.56—, así que `L2` estrena
+> presentación propia (`archivoCpt`) con sus **seis** ejes derivados de
+> `pie-mecanismo`, y el `sus` cuadra al centésimo por las dos vías.
+>
+> ### 3 · El mecanismo del `+67.00` queda LEÍDO, no inferido
+>
+> §6 de aquella ficha decía *«el TEXTO de la regla NO leído — lo dirime UNA hoja,
+> **no capturada** (0 de 505)»*. **Estaba capturada desde el 13 de agosto**, y con
+> ella **las 11 hojas** que `/glosario` enlaza. Leída (343 bytes): trae sólo las
+> reglas base del módulo icono y **no trae `font-size:25px`**.
+>
+> > **La piel B mide 96 px porque su hoja dinámica no le lleva el override.**
+>
+> Es §regla 9 sobre un **hecho negativo**, la variante que la propia regla
+> señala como peor: *«no hay»* parece que no cuesta comprobarlo. Costó fichar
+> como «hay que volver al original» algo que un `ls` cerraba.
+>
+> ### 4 · Y el mismo canal arregló el cuerpo, con su control
+>
+> A 390 el comparador sacó **`#left-area` +23.00** (el `padding-bottom` es de
+> `≥981` y estaba escrito a los dos anchos — el número llevaba en la congelada
+> desde el principio) y **`contenedorTema` −73.80**. El bloque de CSS se
+> reescribió **transcrito del `<style>` servido** en vez de deducido de la
+> geometría, y son cinco cosas que ninguna división de píxeles daba:
+> `#sidebar{float:left}`, `#sidebar .et_pb_widget{float:none}`, la **ausencia**
+> del `:last-child` con `mb:0`, `#sidebar{padding-bottom:28px}` y el corte
+> **981/980 servido** donde se había escrito «se pone el 980 de Divi».
+>
+> **Control:** el cambio es **NO-OP a 1440** (`acercan 0 · alejan 0 · igual 329 ·
+> Σ 0.00`), que es donde `#left-area` tapa al sidebar.
+>
+> ### 5 · Lo que queda, con su número
+>
+> | # | qué | cardinal |
+> |---|---|---|
+> | ⛔ **ESCALÓN 2 · (a)** | `#sidebar` sigue a **−75.80 a 390** y Δ0 a 1440 (tapado). La spec declara que hay barra y **no da un solo píxel** de su composición | reparto del clon medido widget a widget; `.et_pb_button` sin transcribir explica ~22. **Y no es de `L2`: los 4 widgets son los de `L1`, donde está TAPADO** |
+> | ⛔ `P-LH-C8` | el ancla es el mismo elemento (Δ0) y su **firma** no: falta `post-<id>` | `clases.length` **7 → 5**, 3 tarjetas × 8 páginas |
+> | ⛔ instrumento | el eje mixto lee **APARECER como ALEJARSE** | publicó `+283.06 ← ALEJÁNDOSE` en la primera corrida y `−17.00 ← HACIA` en la segunda |
+> | ⛔ dato | el rótulo perdió su `<sub>` al extraer | **9 de 37** en `tituloMiga`, **6 de 37** en `titulo` |
+>
+> `pie-cmp`: **3 formas ausentes de 9 → 2**. Quedan `L2-faqs` (la otra mitad de
+> `L2`) y `L4-listado-embebido`.
+
+
 > ✅ **ACTUALIZACIÓN 2026-08-20 (87.ª tanda) — el residuo de `L2` queda MEDIDO:
 > es UNA causa, vale +67.00 a los dos anchos, y su discriminador se sostiene en
 > 145 páginas. `L2` NO se construye —ESCALÓN 2 pre-registrado— pero el hilo se

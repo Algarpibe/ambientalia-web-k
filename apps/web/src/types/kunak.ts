@@ -515,8 +515,15 @@ export interface TerminoKunakpedia {
    * posiciones separadoras. Ficha del doble formato:
    * `PENDIENTES-QA.md` §F3-LH-FECHA-DOS-FORMATOS.
    *
-   * ⛔ **`L2` no está construida**, así que este campo todavía **no lo consume
-   * ninguna ruta emitida**: está medido y modelado, no ejercitado por el render.
+   * ✅ **EJERCITADO desde la 88.ª tanda (2026-08-20).** `L2-glosario` lo
+   * consume en las **8** rutas de `/glosario`, y el orden servido lo confirma
+   * de dos lados: **0 de 37 posiciones distintas** contra el original.
+   *
+   * ⚠ **Y NO se ordena con `porFechaDesc` de `listados.ts`**, que parsea el
+   * literal español y **tira** si no casa: aquí el medio es el **ISO del
+   * JSON-LD**. Pasarle un ISO a `aEpoch` no daría un orden malo — daría un
+   * `throw`. Comparador propio en `PaginaGlosario`, con desempate por `slug`
+   * para que el reparto en páginas sea estable entre builds.
    */
   fechaPublicacion: string;
   /**

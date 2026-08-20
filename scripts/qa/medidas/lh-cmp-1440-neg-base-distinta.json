@@ -10,7 +10,7 @@
       "queSignificaUnVerde": "Δ0 en la PÁGINA 1 de 13 formas — NO dice nada de /page/2 en adelante (§F3-LH-ALCANCE-PAGINA-1)",
       "loQueElCruceNoPrueba": "que el universo sea el bueno: qa:lh-alcance y esta sonda salen del mismo espejo. El universo lo verifica la derivación de qa:lh-espejo con su sabotaje `duplicado-sin-marcar`."
     },
-    "ladoClon": "http://127.0.0.1:50431",
+    "ladoClon": "http://127.0.0.1:61639",
     "unidad": "el PAR (camino × propiedad), NO el Δ0 de página",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio». Un suelo es propiedad de las rutas medidas y no se hereda de otra.",
     "baseDeLectura": "h1 donde lo hay; primera tarjeta en L2 (D4b/D4b.1). P-LH-C8: se verifica que sea EL MISMO ELEMENTO."
@@ -18,7 +18,7 @@
   "formas": {
     "L1-blog::/es/blog/": {
       "ruta": "/es/blog/",
-      "clon": "http://127.0.0.1:50431/blog",
+      "clon": "http://127.0.0.1:61639/blog",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -1669,7 +1669,7 @@
     },
     "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "clon": "http://127.0.0.1:50431/etiqueta/calidad-del-aire",
+      "clon": "http://127.0.0.1:61639/etiqueta/calidad-del-aire",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -3463,7 +3463,7 @@
     },
     "L1-etiqueta::/es/etiqueta/h2s-es/": {
       "ruta": "/es/etiqueta/h2s-es/",
-      "clon": "http://127.0.0.1:50431/etiqueta/h2s-es",
+      "clon": "http://127.0.0.1:61639/etiqueta/h2s-es",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -5131,7 +5131,7 @@
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "clon": "http://127.0.0.1:50431/recursos/articulos/contaminacion-urbana",
+      "clon": "http://127.0.0.1:61639/recursos/articulos/contaminacion-urbana",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -6595,7 +6595,7 @@
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
       "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
-      "clon": "http://127.0.0.1:50431/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "clon": "http://127.0.0.1:61639/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -7740,7 +7740,7 @@
     },
     "L1-resources-padre::/es/recursos/seminarios-web/": {
       "ruta": "/es/recursos/seminarios-web/",
-      "clon": "http://127.0.0.1:50431/recursos/seminarios-web",
+      "clon": "http://127.0.0.1:61639/recursos/seminarios-web",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -9060,21 +9060,1231 @@
     },
     "L2-glosario::/es/glosario/": {
       "ruta": "/es/glosario/",
-      "clon": "http://127.0.0.1:50431/glosario",
-      "estado": "AUSENTE",
-      "status": 404,
-      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+      "clon": "http://127.0.0.1:61639/glosario",
+      "estado": "CON DIFERENCIAS",
+      "baseCruda": {
+        "original": {
+          "que": "primera tarjeta",
+          "marca": "article.et_pb_post.post-71556.glossary",
+          "y": 283
+        },
+        "clon": {
+          "que": "primera tarjeta",
+          "marca": "article.et_pb_post.glossary.type-glossary",
+          "y": 283
+        },
+        "mismaBase": false,
+        "delta": 0
+      },
+      "pares": 859,
+      "porEje": {
+        "contenido": 28,
+        "plantilla": 657,
+        "mixta": 166
+      },
+      "difPorEje": {
+        "contenido": 13,
+        "plantilla": 61,
+        "mixta": 83
+      },
+      "derivaExcluida": 0,
+      "corpus": "corpus\\fase-3\\listados\\glosario\\index.html",
+      "distintos": 157,
+      "diferencias": [
+        {
+          "camino": "body.clases.length",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 22,
+          "clon": 3,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.0",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "archive",
+          "clon": "min-h-full",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.1",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "post-type-archive",
+          "clon": "flex",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.2",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "post-type-archive-glossary",
+          "clon": "flex-col",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.3",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "custom-background",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.4",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "wp-theme-Divi",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.5",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "wp-child-theme-KunakAir",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.6",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et-tb-has-template",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.7",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et-tb-has-header",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.8",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et-tb-has-footer",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.9",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "es",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.10",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_button_icon_visible",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.11",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_button_custom_icon",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.12",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_button_helper_class",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.13",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_cover_background",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.14",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_gutter",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.15",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "windows",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.16",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_gutters3",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.17",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_right_sidebar",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.18",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_divi_theme",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.19",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et-db",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.20",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "min-768",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "body.clases.21",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "chrome",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "baseEnCrudo.anclaAlternativa.marca",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "article.et_pb_post.post-71556.glossary",
+          "clon": "article.et_pb_post.glossary.type-glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "cabecera.marca",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "header.et-l.et-l--header",
+          "clon": "header.et-l.et-l--header.absolute",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "cabecera.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 225,
+          "clon": 217.19,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "cabecera.caja.borderColor",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "rgb(51, 51, 51)",
+          "clon": "rgba(0, 0, 0, 0.1)"
+        },
+        {
+          "camino": "cabecera.caja.position",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "static",
+          "clon": "absolute"
+        },
+        {
+          "camino": "pie.marca",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "footer.et-l.et-l--footer",
+          "clon": "footer.et-l--footer.bg-white",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "contenedorTema.marca",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "div",
+          "clon": "div.lh-cuerpo.lh-tema.lh-cpt",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.nSecciones",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 4,
+          "clon": 0
+        },
+        {
+          "camino": "esqueleto.porCapa.tb_header",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 1,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.porCapa.tb_footer",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 3,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.length",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 4,
+          "clon": 0
+        },
+        {
+          "camino": "esqueleto.cascaron.0.capa",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "tb_header",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.clases.length",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 6,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.clases.0",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.clases.1",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section_0_tb_header",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.clases.2",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "cabecera",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.clases.3",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_with_background",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.clases.4",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_section_regular",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.clases.5",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section--with-menu",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 1440,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 225,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.rect.y",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 0,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 0,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.ritmo.paddingTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.ritmo.paddingRight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.ritmo.paddingBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "40px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.ritmo.paddingLeft",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.ritmo.marginTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.ritmo.marginRight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.ritmo.marginBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.0.ritmo.marginLeft",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.capa",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "tb_footer",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.clases.length",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 4,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.clases.0",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.clases.1",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section_0_tb_footer",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.clases.2",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "footer-links",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.clases.3",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_section_regular",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 1440,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 573.72,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.rect.y",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 1251.91,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 0,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.ritmo.paddingTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "57.5938px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.ritmo.paddingRight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.ritmo.paddingBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "57.5938px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.ritmo.paddingLeft",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.ritmo.marginTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.ritmo.marginRight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.ritmo.marginBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.1.ritmo.marginLeft",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.capa",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "tb_footer",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.clases.length",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 5,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.clases.0",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.clases.1",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section_1_tb_footer",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.clases.2",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "footer-legal",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.clases.3",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_section_regular",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.clases.4",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section--with-menu",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 1440,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 259.83,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.rect.y",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 1825.63,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 0,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.ritmo.paddingTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "57.5938px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.ritmo.paddingRight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.ritmo.paddingBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "57.5938px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.ritmo.paddingLeft",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.ritmo.marginTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.ritmo.marginRight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.ritmo.marginBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.2.ritmo.marginLeft",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.capa",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "tb_footer",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.clases.length",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 4,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.clases.0",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.clases.1",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_pb_section_2_tb_footer",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.clases.2",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "footer-background",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.clases.3",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "et_section_regular",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 1440,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.rect.h",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 156.19,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.rect.y",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 2085.45,
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 0,
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.ritmo.paddingTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "57.5938px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.ritmo.paddingRight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.ritmo.paddingBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "57.5938px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.ritmo.paddingLeft",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.ritmo.marginTop",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.ritmo.marginRight",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.ritmo.marginBottom",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "esqueleto.cascaron.3.ritmo.marginLeft",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "0px",
+          "clon": "«AUSENTE»"
+        },
+        {
+          "camino": "listado.tarjetas.0.marca",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "article.et_pb_post.post-71556.glossary",
+          "clon": "article.et_pb_post.glossary.type-glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.clases.length",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 7,
+          "clon": 5,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.clases.1",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "post-71556",
+          "clon": "glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.clases.2",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "glossary",
+          "clon": "type-glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.clases.3",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "type-glossary",
+          "clon": "status-publish",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.clases.4",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "status-publish",
+          "clon": "hentry",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.clases.5",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "has-post-thumbnail",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.clases.6",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "hentry",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.0.titulo.href",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/emisiones-por-chimenea/",
+          "clon": "/emisiones-por-chimenea"
+        },
+        {
+          "camino": "listado.tarjetas.0.hrefs.0",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/emisiones-por-chimenea/",
+          "clon": "/emisiones-por-chimenea"
+        },
+        {
+          "camino": "listado.tarjetas.1.marca",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "article.et_pb_post.post-70034.glossary",
+          "clon": "article.et_pb_post.glossary.type-glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.clases.length",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 7,
+          "clon": 5,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.clases.1",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "post-70034",
+          "clon": "glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.clases.2",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "glossary",
+          "clon": "type-glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.clases.3",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "type-glossary",
+          "clon": "status-publish",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.clases.4",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "status-publish",
+          "clon": "hentry",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.clases.5",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "has-post-thumbnail",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.clases.6",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "hentry",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.1.titulo.href",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/oxidos-de-nitrogeno-nox/",
+          "clon": "/oxidos-de-nitrogeno-nox"
+        },
+        {
+          "camino": "listado.tarjetas.1.hrefs.0",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/oxidos-de-nitrogeno-nox/",
+          "clon": "/oxidos-de-nitrogeno-nox"
+        },
+        {
+          "camino": "listado.tarjetas.2.marca",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "article.et_pb_post.post-69261.glossary",
+          "clon": "article.et_pb_post.glossary.type-glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.clases.length",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": 7,
+          "clon": 5,
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.clases.1",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "post-69261",
+          "clon": "glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.clases.2",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "glossary",
+          "clon": "type-glossary",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.clases.3",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "type-glossary",
+          "clon": "status-publish",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.clases.4",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "status-publish",
+          "clon": "hentry",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.clases.5",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "has-post-thumbnail",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.clases.6",
+          "eje": "mixta",
+          "contra": "espejo",
+          "referencia": "hentry",
+          "clon": "«AUSENTE»",
+          "noEsDefecto": "sin referencia limpia (§ESCALÓN eje mixto)"
+        },
+        {
+          "camino": "listado.tarjetas.2.titulo.href",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/ldar/",
+          "clon": "/ldar"
+        },
+        {
+          "camino": "listado.tarjetas.2.hrefs.0",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/ldar/",
+          "clon": "/ldar"
+        },
+        {
+          "camino": "paginador.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "start",
+          "clon": "left"
+        },
+        {
+          "camino": "paginador.linkNextDelHead",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/glosario/page/2/",
+          "clon": "/glosario/page/2"
+        },
+        {
+          "camino": "paginador.hrefs.0",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/glosario/page/2/",
+          "clon": "/glosario/page/2"
+        },
+        {
+          "camino": "paginador.hrefs.1",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/glosario/page/3/",
+          "clon": "/glosario/page/3"
+        },
+        {
+          "camino": "paginador.hrefs.2",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/glosario/page/4/",
+          "clon": "/glosario/page/4"
+        },
+        {
+          "camino": "paginador.hrefs.3",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/glosario/page/5/",
+          "clon": "/glosario/page/5"
+        },
+        {
+          "camino": "paginador.hrefs.4",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/glosario/page/2/",
+          "clon": "/glosario/page/2"
+        },
+        {
+          "camino": "paginador.hrefs.5",
+          "eje": "contenido",
+          "contra": "corpus",
+          "referencia": "https://kunakair.com/es/glosario/page/8/",
+          "clon": "/glosario/page/8"
+        },
+        {
+          "camino": "paginador.piezas.0.rect.w",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 82.44,
+          "clon": 82.48
+        },
+        {
+          "camino": "paginador.piezas.0.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "start",
+          "clon": "left"
+        },
+        {
+          "camino": "paginador.piezas.1.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 232.44,
+          "clon": 232.48
+        },
+        {
+          "camino": "paginador.piezas.2.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 272.44,
+          "clon": 272.48
+        },
+        {
+          "camino": "paginador.piezas.3.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 312.44,
+          "clon": 312.48
+        },
+        {
+          "camino": "paginador.piezas.4.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 352.44,
+          "clon": 352.48
+        },
+        {
+          "camino": "paginador.piezas.5.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 392.44,
+          "clon": 392.48
+        },
+        {
+          "camino": "paginador.piezas.6.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 432.44,
+          "clon": 432.48
+        },
+        {
+          "camino": "paginador.piezas.6.tipo.textAlign",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": "start",
+          "clon": "left"
+        },
+        {
+          "camino": "paginador.piezas.8.rect.x",
+          "eje": "plantilla",
+          "contra": "espejo",
+          "referencia": 457.86,
+          "clon": 457.91
+        }
+      ]
     },
     "L2-faqs::/es/preguntas-frecuentes/": {
       "ruta": "/es/preguntas-frecuentes/",
-      "clon": "http://127.0.0.1:50431/preguntas-frecuentes",
+      "clon": "http://127.0.0.1:61639/preguntas-frecuentes",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "clon": "http://127.0.0.1:50431/scientific-category/articulos-cientificos-y-estudios",
+      "clon": "http://127.0.0.1:61639/scientific-category/articulos-cientificos-y-estudios",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -10225,7 +11435,7 @@
     },
     "L3-sci::/es/scientific-category/articulos-tecnicos/": {
       "ruta": "/es/scientific-category/articulos-tecnicos/",
-      "clon": "http://127.0.0.1:50431/scientific-category/articulos-tecnicos",
+      "clon": "http://127.0.0.1:61639/scientific-category/articulos-tecnicos",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -11183,14 +12393,14 @@
     },
     "L4-listado-embebido::/es/recursos/": {
       "ruta": "/es/recursos/",
-      "clon": "http://127.0.0.1:50431/recursos",
+      "clon": "http://127.0.0.1:61639/recursos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L5-casos::/es/casos-de-exito/": {
       "ruta": "/es/casos-de-exito/",
-      "clon": "http://127.0.0.1:50431/casos-de-exito",
+      "clon": "http://127.0.0.1:61639/casos-de-exito",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -12356,7 +13566,7 @@
           "eje": "plantilla",
           "contra": "espejo",
           "referencia": "url(\"https://kunakair.com/wp-content/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1-1024x683.jpg\")",
-          "clon": "url(\"http://127.0.0.1:50431/images/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg\")"
+          "clon": "url(\"http://127.0.0.1:61639/images/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg\")"
         },
         {
           "camino": "listado.tarjetas.0.envoltorioMedia.rect.y",
@@ -12371,7 +13581,7 @@
           "eje": "plantilla",
           "contra": "espejo",
           "referencia": "url(\"https://kunakair.com/wp-content/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1-1024x683.jpg\")",
-          "clon": "url(\"http://127.0.0.1:50431/images/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg\")"
+          "clon": "url(\"http://127.0.0.1:61639/images/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg\")"
         },
         {
           "camino": "listado.tarjetas.0.titulo.rect.y",
@@ -12527,7 +13737,7 @@
           "eje": "plantilla",
           "contra": "espejo",
           "referencia": "url(\"https://kunakair.com/wp-content/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1-1024x683.jpg\")",
-          "clon": "url(\"http://127.0.0.1:50431/images/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg\")"
+          "clon": "url(\"http://127.0.0.1:61639/images/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg\")"
         },
         {
           "camino": "listado.tarjetas.1.envoltorioMedia.rect.y",
@@ -12542,7 +13752,7 @@
           "eje": "plantilla",
           "contra": "espejo",
           "referencia": "url(\"https://kunakair.com/wp-content/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1-1024x683.jpg\")",
-          "clon": "url(\"http://127.0.0.1:50431/images/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg\")"
+          "clon": "url(\"http://127.0.0.1:61639/images/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg\")"
         },
         {
           "camino": "listado.tarjetas.1.titulo.rect.y",
@@ -12674,7 +13884,7 @@
           "eje": "plantilla",
           "contra": "espejo",
           "referencia": "url(\"https://kunakair.com/wp-content/uploads/2026/05/639130508516830000.jpg\")",
-          "clon": "url(\"http://127.0.0.1:50431/images/uploads/2026/05/639130508516830000.jpg\")"
+          "clon": "url(\"http://127.0.0.1:61639/images/uploads/2026/05/639130508516830000.jpg\")"
         },
         {
           "camino": "listado.tarjetas.2.envoltorioMedia.rect.y",
@@ -12689,7 +13899,7 @@
           "eje": "plantilla",
           "contra": "espejo",
           "referencia": "url(\"https://kunakair.com/wp-content/uploads/2026/05/639130508516830000.jpg\")",
-          "clon": "url(\"http://127.0.0.1:50431/images/uploads/2026/05/639130508516830000.jpg\")"
+          "clon": "url(\"http://127.0.0.1:61639/images/uploads/2026/05/639130508516830000.jpg\")"
         },
         {
           "camino": "listado.tarjetas.2.titulo.rect.y",
@@ -12741,7 +13951,7 @@
     },
     "L1-resources-padre::/es/recursos/articulos/": {
       "ruta": "/es/recursos/articulos/",
-      "clon": "http://127.0.0.1:50431/recursos/articulos",
+      "clon": "http://127.0.0.1:61639/recursos/articulos",
       "estado": "CON DIFERENCIAS",
       "baseCruda": {
         "original": {
@@ -14228,16 +15438,16 @@
   },
   "resumen": {
     "formas": 13,
-    "ausentesEnElClon": 3,
-    "conDiferencias": 10,
-    "paresComparados": 13636,
-    "paresDistintos": 698,
-    "paresMixtos": 2391,
-    "mixtasQueDifieren": 1119,
+    "ausentesEnElClon": 2,
+    "conDiferencias": 11,
+    "paresComparados": 14487,
+    "paresDistintos": 772,
+    "paresMixtos": 2557,
+    "mixtasQueDifieren": 1202,
     "derivaExcluida": 0,
     "paresDeContenidoSinCorpus": 0,
     "formasSinCorpus": 0,
-    "basesQueNoCasan": 10,
+    "basesQueNoCasan": 11,
     "paginasSinNingunPar": 0
   },
   "paginasSinNingunPar": [],
@@ -14322,6 +15532,19 @@
       }
     },
     {
+      "forma": "L2-glosario",
+      "original": {
+        "que": "primera tarjeta",
+        "marca": "article.et_pb_post.post-71556.glossary",
+        "y": 283
+      },
+      "clon": {
+        "que": "primera tarjeta",
+        "marca": "article.et_pb_post.glossary.type-glossary",
+        "y": 283
+      }
+    },
+    {
       "forma": "L3-sci",
       "original": {
         "que": "h1",
@@ -14382,15 +15605,15 @@
   "repartoDelEjeMixto": {
     "eje": "mixta",
     "unidad": "el PAR (forma::camino)",
-    "paresEnLaUnion": 1119,
-    "conDistancia": 324,
+    "paresEnLaUnion": 1202,
+    "conDistancia": 329,
     "acercan": 0,
     "alejan": 0,
-    "igual": 324,
+    "igual": 329,
     "sumaDelta": 0,
     "sumaAcercan": 0,
     "sumaAlejan": 0,
-    "noNumericos": 795,
+    "noNumericos": 873,
     "referenciaMovida": 0,
     "truncadas": {
       "anterior": 0,
@@ -14437,6 +15660,12 @@
         "igual": 30,
         "suma": 0
       },
+      "L2-glosario::/es/glosario/": {
+        "acercan": 0,
+        "alejan": 0,
+        "igual": 5,
+        "suma": 0
+      },
       "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
         "acercan": 0,
         "alejan": 0,
@@ -14464,9 +15693,9 @@
     },
     "ejemplos": [],
     "anterior": {
-      "fichero": "lh-cmp-1440-2026-08-20.json",
-      "fecha": "2026-08-20 18:04 UTC",
-      "candidatas": 15,
+      "fichero": "lh-cmp-1440-2026-08-20-3.json",
+      "fecha": "2026-08-20 21:09 UTC",
+      "candidatas": 17,
       "ordenadoPor": "mtime"
     }
   }

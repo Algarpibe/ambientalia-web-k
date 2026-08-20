@@ -1,4 +1,130 @@
-# HANDOFF — el eje mixto se publica solo, y el residuo del `legal` es UNA causa con n = 145
+# HANDOFF — `L2-glosario` construida: la piel B a Δ0 y el CSS que llevaba capturado una semana
+
+> ✅ **Tanda de la 88.ª, 2026-08-20. ESCALÓN 1 cerrado —`L2-glosario` construida
+> y comparada de dos lados— y ESCALÓN 2 disparado por (a), con ficha y número.**
+>
+> **0 · El PASO 0 volvió a salir gratis, tercera tanda seguida.** `git diff` de
+> `src`, `public`, `packages` y `apps` entre la línea base vigente
+> (`clon-base-*-t86-despues`, commit `dd79629`) y HEAD: **vacío**. §regla 16 en
+> afirmativo. Estado derivado al abrir: **1.233 congeladas · 374 rutas ·
+> 20 familias · 193 sondas bajo contrato · `qa:lib` 114**.
+>
+> ---
+>
+> ## 1 · EL PASO 0 — y la pregunta estaba mal planteada, no mal contestada
+>
+> El encargo preguntaba si el `+67.00` estaba **arreglado**. Derivado del árbol
+> —`iconoPx` sale **0** en `apps·packages·src·public` y sólo aparece en 4
+> documentos; `PRESENTACION` tiene 4 entradas y ninguna con eje de icono;
+> `pie-cmp` publica **un solo** valor de `legal` en las 6 formas comparadas— la
+> respuesta es que no. Pero lo que importa es la otra mitad:
+>
+> > **El `+67.00` nunca fue un defecto del clon: es la distancia entre DOS PIELES
+> > DEL ORIGINAL.** El clon no lo tenía porque **no servía la piel B**. Así que
+> > «arreglado / no arreglado» era una dicotomía sobre un Δ que no existía; lo
+> > que se decidía era **si `L2` nace con el eje implementado**.
+>
+> Se eligió **(A)**, y la razón la dio la derivación, no el encargo: **el coste
+> de (A) resultó ser CERO** — ver §2.
+>
+> ---
+>
+> ## 2 · `estrechaPad` NO era la piel B, y el mapeo tenía CERO separadoras
+>
+> La 86.ª dedujo el mecanismo bien —*«3 pieles = ancho de fila × `padSeccion`»*—
+> y mapeó `B → estrechaPad` **sobre un dominio en el que `estrechaPad` no tiene
+> ni una instancia**: el espejo son listados y catálogo/producto no lo son.
+>
+> | | `col0` de `legal` | `col2` de `links` |
+> |---|---|---|
+> | **piel B** (n = 12) | **93.19** ⇒ legal a **12 px** | **357.56** a los dos anchos |
+> | `estrechaPad` | legal a **18 px** (+32.59) | **366.16 / 335.56** |
+>
+> §*dos modelos que predicen lo mismo en todo tu dominio son uno solo*, con el
+> dominio **vacío** en el lado que decidía. `L2` estrena `archivoCpt` con sus
+> seis ejes derivados de `pie-mecanismo`, y el `sus` cuadra al centésimo por las
+> dos vías: `10 − 2.297 = 7.703` contra `357.56 − 349.86 = 7.70`, y
+> `10 − 3.109 = 6.891` contra `357.56 − 350.67 = 6.89`.
+>
+> **Resultado:** `L2` es **la única de las 7 formas comparadas con Δ0 en las
+> TRES secciones del pie @1440**. A 390 sólo trae los residuos transversales ya
+> fichados (`links` +0.20, `legal` +1.88, `background` Δ0).
+>
+> ---
+>
+> ## 3 · EL CANAL QUE NO MIRÉ — y llevaba una semana capturado
+>
+> **Dos hallazgos, el mismo canal, y el segundo se pagó con una corrida.**
+>
+> **(a) El mecanismo del `+67.00` queda LEÍDO.** La ficha decía *«lo dirime UNA
+> hoja, `et-cache/archive/…`, **no capturada** (0 de 505)»* y de ahí *«volver al
+> original»*. **Estaba capturada desde el 2026-08-13**, y con ella **las 11
+> hojas** que `/glosario` enlaza. Leída (**343 bytes**): trae sólo las reglas
+> base del módulo icono y **no trae `font-size:25px`**. O sea que la piel B mide
+> 96 px porque **su hoja no le lleva el override**. Es §regla 9 sobre un hecho
+> NEGATIVO — la variante que la propia regla marca como peor.
+>
+> **(b) El CSS del cuerpo se estaba DEDUCIENDO de la geometría.** El comparador
+> a 390 sacó `#left-area` **+23.00 exactos** —el `padding-bottom` es de `≥981` y
+> el espejo lo decía desde el principio— y `contenedorTema` **−73.80**. El
+> bloque se reescribió **transcrito del `<style>` servido**, y son cinco cosas
+> que ninguna división de píxeles daba:
+>
+> | deducido | servido |
+> |---|---|
+> | `#sidebar{float:right}` | **`float:left`** — el reparto lo hace el orden del DOM |
+> | widgets con `float:left` (regla de `L1`) | **`#sidebar .et_pb_widget{float:none;width:100%}`** |
+> | último widget con `mb:0` | **no existe** para `#sidebar`: los cuatro llevan 30 |
+> | sin `padding-bottom` | **`#sidebar{padding-bottom:28px}`** |
+> | «se pone el 980 de Divi», SIN PROBAR | **981/980, servido** |
+>
+> **Control:** el cambio es **NO-OP a 1440** (`acercan 0 · alejan 0 · igual 329 ·
+> Σ 0.00`), que es donde `#left-area` (968.91) tapa al sidebar.
+>
+> > **La lección, y es de método: derivar un valor de la geometría y transcribir
+> > la regla que lo produce NO son lo mismo.** Lo primero acierta donde mediste
+> > y lo segundo acierta donde no. §El principio ya lo dice —*«la salida servida
+> > incluye el CSS que el documento se trae»*— y aquí el canal **estaba en el
+> > repo**.
+>
+> ---
+>
+> ## 4 · EL PRE-REGISTRO: 5 de 5, y una contradice al encargo
+>
+> | # | predicción | resultado |
+> |---|---|---|
+> | P1 | `pie-cmp` 9 · 3 ausentes · 6 → **9 · 2 · 7** | ✅ |
+> | P2 | rutas **374 → 382** (`+8`), **NO 375** | ✅ — el encargo predecía 375, que sólo cuadra dejando 7 páginas en 404 |
+> | P3 | `L1·L3·L4·L5` no se mueven | ✅ **374 comparadas · 0 con regresión**, umbral CERO, los dos anchos |
+> | P4 | `qa:cobertura` sube, y en el eje **`pie`** | ✅ `pie` **6 → 7**, y además 5 ejes de `lh-cmp` **+8** con el denominador **+8** |
+> | P5 | el eje mixto publica su reparto desde la 1.ª corrida | ✅ — y **destapó un defecto SUYO**, ver §5 |
+>
+> **P2 se escribió contra el encargo a propósito**, y el canal que lo decidió fue
+> `span.pages` = «Page 1 of 8» en el corpus **sin recortar**, más las 37 tarjetas
+> de las 8 capturas (`⌈37/5⌉ = 8` ✓).
+>
+> ---
+>
+> ## 5 · Lo que queda, cada cosa con su número
+>
+> | # | qué | cardinal | por qué no se toca aquí |
+> |---|---|---|---|
+> | ⛔ **ESCALÓN 2 · (a)** | `#sidebar` a **−75.80 @390**, Δ0 @1440 (tapado) | reparto del clon medido widget a widget: `search` 78 · `text-1` 0 · `text-7` 92.59 · `custom_html` 61.80 · `pb` 28 = **350.39** contra **426.19** | **la spec declara que hay barra y no da un solo píxel** de su composición, y `lh-barra` dice de sí misma que *«no mide el píxel»*. **Y no es de `L2`**: son los 4 widgets de `L1`, donde está TAPADO |
+> | ⛔ `P-LH-C8` | el ancla es el mismo elemento (Δ0) y su **firma** no | `clases.length` **7 → 5** (falta `post-<id>` y `has-post-thumbnail`), 3 tarjetas × 8 páginas | cablear un id inventado no; el campo `idOriginal` es de ESQUEMA y afecta a las 149 |
+> | ⛔ instrumento | el eje mixto lee **APARECER como ALEJARSE** | `+283.06 ← ALEJÁNDOSE` en la 1.ª corrida y `−17.00 ← HACIA` en la 2.ª, mismas rutas | tocar el comparador **caduca sus congeladas** (§sondas 5bis) y ésta es una tanda de construcción |
+> | ⛔ dato | el rótulo perdió su `<sub>` al extraer | **9 de 37** en `tituloMiga` (con espacio) · **6 de 37** en `titulo` (sin) · 1 de 152 blog · 0 de 23 doc | esquema + re-extracción + re-siembra |
+>
+> ---
+>
+> ## 6 · Estado al cierre, derivado
+>
+> **382 rutas · 22 familias · 196 slugs sin colisión · `qa:lib` 114 · 193 sondas
+> bajo contrato.** `npm run check` en verde.
+
+---
+
+
+## 87.ª — el eje mixto se publica solo, y el residuo del `legal` es UNA causa con n = 145
 
 > ✅ **Tanda de la 87.ª, 2026-08-20. PASO 0, 1 y 2 cerrados. CORTE LIMPIO 2: el
 > PASO 3 —construir `L2-glosario`— NO se hace, y esta vez el hilo se para

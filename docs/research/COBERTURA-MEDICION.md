@@ -1176,3 +1176,56 @@ el prefijo cruzado, y que una ruta no exista es el hallazgo).
 
 Es la misma forma que la auditoría de `clon-base` de la tanda anterior, y tiene
 el mismo mérito prestado: **la respuesta existe porque las sondas congelan.**
+
+---
+
+## ⏫ 2026-08-20 · 88.ª tanda — `L2-glosario` entra en la matriz: **6 ejes suben y el DENOMINADOR también**
+
+| eje | antes | ahora | Δ | quién lo acredita |
+|---|---|---|---|---|
+| base cruda (`h1.y`) | 100 | **108** | **+8** | `lh-cmp` |
+| árbol secciones | 100 | **108** | **+8** | `lh-cmp` |
+| filas | 75 | **83** | **+8** | `lh-cmp` |
+| módulos | 71 | **79** | **+8** | `lh-cmp` |
+| anchos horiz. | 84 | **92** | **+8** | `lh-cmp` |
+| **pie (secciones)** | 6 | **7** | **+1** | **`pie-cmp`** |
+| `docH` · enlaces · comportamiento · offsets | — | — | **0** | no bajan a `L2` |
+| **RUTAS (el denominador)** | 374 | **382** | **+8** | el build |
+
+> ⚠ **«Sube» no es «mejor cubierto» hasta mirar el denominador** (§*una cobertura
+> declarada al nivel de arriba absorbe lo que no se midió abajo*). Los cinco ejes
+> de `lh-cmp` suben **+8 con el denominador +8**: es cobertura **nueva**, no
+> mejora de la vieja — las 8 páginas de `/glosario` entran comparadas de dos
+> lados desde su primera corrida. El eje `pie` sube **+1 sobre +8**, y eso sí es
+> una fracción que mejora: `pie-cmp` compara **la página 1** de cada forma, así
+> que `L2-glosario` aporta una ruta, no ocho.
+
+**Y el `pie` es el eje que esta tanda vino a mover**, con su cardinal:
+`pie-cmp` pasa de **3 formas ausentes de 9 a 2**. Quedan `L2-faqs` y
+`L4-listado-embebido`.
+
+### Lo que `L2` NO acredita, con su número (§regla 14)
+
+| eje | por qué sigue en `nunca` para las 8 rutas |
+|---|---|
+| `docH` · `enlaces` | los acredita `c-cmp` / `enlaces`, cuyo universo son **31 rutas** fijas |
+| `comportamiento` | **37 de 382**, y sigue siendo el hueco mayor del proyecto |
+| `offsets/holgura` | `0` de dos lados en todo el repo: **3 en `c`** y nada más |
+
+### ⛔ Y una celda que sale ROJA por primera vez: `P-LH-C8` en `L2`
+
+El criterio de `c-cabecera` —*que el ancla sea **el mismo elemento** en los dos
+lados*— no se había podido comprobar en `L2` porque el clon no emitía las rutas.
+Ya se comprueba, y **no casa**:
+
+```
+original  article.et_pb_post.post-71556.glossary
+clon      article.et_pb_post.glossary.type-glossary
+```
+
+**El elemento es el mismo y la FIRMA no** —el clon no tiene los ids de WordPress—.
+Así que las celdas `base cruda` de `L2` acreditan **«se comparó»**, no
+**«el ancla está verificada»**: son dos afirmaciones y sólo la primera está
+respaldada. Ficha con su cardinal: `PENDIENTES-QA.md`
+§F3-LH-ANCLA-SIN-POST-ID.
+

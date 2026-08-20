@@ -1,9 +1,9 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-20",
     "pregunta": "¿tiene el clon población para emitir y verificar las 142 rutas que D2.5 declara?",
     "fuentes": {
-      "original": "medidas/lh-serie.json (población COMPLETA de F3-0) + medidas/lh-paginas-2026-08-13.json (2026-08-13) — manda ésta para el recuento de rutas",
+      "original": "medidas/lh-serie.json (población COMPLETA de F3-0) + medidas/lh-paginas-2026-08-17.json (2026-08-17) — manda ésta para el recuento de rutas",
       "clon": "DB por Local API, estado=publicado — la misma fuente que usa el build"
     },
     "sabotaje": "taxonomia-a-medias",
@@ -18,8 +18,9 @@
   "porVia": {
     "coleccion-con-filtro": 1,
     "coleccion-entera": 3,
-    "termino-AUSENTE": 14,
-    "termino": 11
+    "termino-AUSENTE": 12,
+    "termino-padre-por-sus-hijas": 1,
+    "termino": 12
   },
   "seriesSinTermino": [
     {
@@ -69,18 +70,10 @@
     {
       "ruta": "/etiqueta/sensor-de-calidad-del-aire",
       "motivo": "SABOTAJE: el término 'sensor-de-calidad-del-aire' se declara ausente de etiquetas"
-    },
-    {
-      "ruta": "/recursos/articulos",
-      "motivo": "el término 'articulos' NO existe en categorias-recursos"
-    },
-    {
-      "ruta": "/recursos/seminarios-web",
-      "motivo": "el término 'seminarios-web' NO existe en categorias-recursos"
     }
   ],
   "poblacionClon": {
-    "entradas-blog": 149,
+    "entradas-blog": 152,
     "terminos-kunakpedia": 37,
     "faqs": 19,
     "documentos-cientificos": 23,
@@ -634,12 +627,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 80,
       "via": "suma-de-paginas-con-contenido",
-      "poblacionClon": 0,
-      "viaClon": "termino-AUSENTE",
-      "motivoClon": "el término 'articulos' NO existe en categorias-recursos",
+      "poblacionClon": 81,
+      "viaClon": "termino-padre-por-sus-hijas",
+      "motivoClon": null,
       "cotaSuperior": false,
-      "paginasClon": 1,
-      "alcanza": false
+      "paginasClon": 6,
+      "alcanza": true
     },
     {
       "ruta": "/recursos/articulos/contaminacion-en-la-construccion",
@@ -971,12 +964,12 @@
       "coleccion": "entradas-blog",
       "poblacionOriginal": 3,
       "via": "pagina-unica",
-      "poblacionClon": 0,
-      "viaClon": "termino-AUSENTE",
-      "motivoClon": "el término 'seminarios-web' NO existe en categorias-recursos",
+      "poblacionClon": 3,
+      "viaClon": "termino",
+      "motivoClon": null,
       "cotaSuperior": false,
       "paginasClon": 1,
-      "alcanza": false
+      "alcanza": true
     },
     {
       "ruta": "/scientific-category/articulos-cientificos-y-estudios",
@@ -1098,12 +1091,12 @@
       "/recursos/preguntas-frecuentes",
       "/sectores"
     ],
-    "rutasClonCotaSuperior": 55,
-    "seriesQueNoAlcanzan": 14,
+    "rutasClonCotaSuperior": 60,
+    "seriesQueNoAlcanzan": 12,
     "seriesConPoblacion": 29,
     "deficitPorColeccion": {
       "entradas-blog": {
-        "clon": 149,
+        "clon": 152,
         "mayorSerie": 91,
         "deficit": 0
       },

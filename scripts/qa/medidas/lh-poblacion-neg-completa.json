@@ -1,9 +1,9 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-20",
     "pregunta": "¿tiene el clon población para emitir y verificar las 142 rutas que D2.5 declara?",
     "fuentes": {
-      "original": "medidas/lh-serie.json (población COMPLETA de F3-0) + medidas/lh-paginas-2026-08-13.json (2026-08-13) — manda ésta para el recuento de rutas",
+      "original": "medidas/lh-serie.json (población COMPLETA de F3-0) + medidas/lh-paginas-2026-08-17.json (2026-08-17) — manda ésta para el recuento de rutas",
       "clon": "DB por Local API, estado=publicado — la misma fuente que usa el build"
     },
     "sabotaje": "completa",

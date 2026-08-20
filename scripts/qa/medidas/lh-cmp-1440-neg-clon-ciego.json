@@ -10,7 +10,7 @@
       "queSignificaUnVerde": "Δ0 en la PÁGINA 1 de 13 formas — NO dice nada de /page/2 en adelante (§F3-LH-ALCANCE-PAGINA-1)",
       "loQueElCruceNoPrueba": "que el universo sea el bueno: qa:lh-alcance y esta sonda salen del mismo espejo. El universo lo verifica la derivación de qa:lh-espejo con su sabotaje `duplicado-sin-marcar`."
     },
-    "ladoClon": "http://127.0.0.1:50073",
+    "ladoClon": "http://127.0.0.1:60243",
     "unidad": "el PAR (camino × propiedad), NO el Δ0 de página",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio». Un suelo es propiedad de las rutas medidas y no se hereda de otra.",
     "baseDeLectura": "h1 donde lo hay; primera tarjeta en L2 (D4b/D4b.1). P-LH-C8: se verifica que sea EL MISMO ELEMENTO."
@@ -18,91 +18,91 @@
   "formas": {
     "L1-blog::/es/blog/": {
       "ruta": "/es/blog/",
-      "clon": "http://127.0.0.1:50073/blog",
+      "clon": "http://127.0.0.1:60243/blog",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "clon": "http://127.0.0.1:50073/etiqueta/calidad-del-aire",
+      "clon": "http://127.0.0.1:60243/etiqueta/calidad-del-aire",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-etiqueta::/es/etiqueta/h2s-es/": {
       "ruta": "/es/etiqueta/h2s-es/",
-      "clon": "http://127.0.0.1:50073/etiqueta/h2s-es",
+      "clon": "http://127.0.0.1:60243/etiqueta/h2s-es",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "clon": "http://127.0.0.1:50073/recursos/articulos/contaminacion-urbana",
+      "clon": "http://127.0.0.1:60243/recursos/articulos/contaminacion-urbana",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
       "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
-      "clon": "http://127.0.0.1:50073/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "clon": "http://127.0.0.1:60243/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/seminarios-web/": {
       "ruta": "/es/recursos/seminarios-web/",
-      "clon": "http://127.0.0.1:50073/recursos/seminarios-web",
+      "clon": "http://127.0.0.1:60243/recursos/seminarios-web",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-glosario::/es/glosario/": {
       "ruta": "/es/glosario/",
-      "clon": "http://127.0.0.1:50073/glosario",
+      "clon": "http://127.0.0.1:60243/glosario",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L2-faqs::/es/preguntas-frecuentes/": {
       "ruta": "/es/preguntas-frecuentes/",
-      "clon": "http://127.0.0.1:50073/preguntas-frecuentes",
+      "clon": "http://127.0.0.1:60243/preguntas-frecuentes",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "clon": "http://127.0.0.1:50073/scientific-category/articulos-cientificos-y-estudios",
+      "clon": "http://127.0.0.1:60243/scientific-category/articulos-cientificos-y-estudios",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L3-sci::/es/scientific-category/articulos-tecnicos/": {
       "ruta": "/es/scientific-category/articulos-tecnicos/",
-      "clon": "http://127.0.0.1:50073/scientific-category/articulos-tecnicos",
+      "clon": "http://127.0.0.1:60243/scientific-category/articulos-tecnicos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L4-listado-embebido::/es/recursos/": {
       "ruta": "/es/recursos/",
-      "clon": "http://127.0.0.1:50073/recursos",
+      "clon": "http://127.0.0.1:60243/recursos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L5-casos::/es/casos-de-exito/": {
       "ruta": "/es/casos-de-exito/",
-      "clon": "http://127.0.0.1:50073/casos-de-exito",
+      "clon": "http://127.0.0.1:60243/casos-de-exito",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
     },
     "L1-resources-padre::/es/recursos/articulos/": {
       "ruta": "/es/recursos/articulos/",
-      "clon": "http://127.0.0.1:50073/recursos/articulos",
+      "clon": "http://127.0.0.1:60243/recursos/articulos",
       "estado": "AUSENTE",
       "status": 404,
       "nota": "el clon no emite (o no sirve contenido) en esta ruta"
@@ -133,15 +133,15 @@
   "repartoDelEjeMixto": {
     "eje": "mixta",
     "unidad": "el PAR (forma::camino)",
-    "paresEnLaUnion": 1119,
-    "conDistancia": 324,
-    "acercan": 324,
+    "paresEnLaUnion": 1202,
+    "conDistancia": 329,
+    "acercan": 329,
     "alejan": 0,
     "igual": 0,
-    "sumaDelta": -12720.38,
-    "sumaAcercan": -12720.38,
+    "sumaDelta": -12753.19,
+    "sumaAcercan": -12753.19,
     "sumaAlejan": 0,
-    "noNumericos": 795,
+    "noNumericos": 873,
     "referenciaMovida": 0,
     "truncadas": {
       "anterior": 0,
@@ -187,6 +187,12 @@
         "alejan": 0,
         "igual": 0,
         "suma": -32.86
+      },
+      "L2-glosario::/es/glosario/": {
+        "acercan": 5,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -32.81
       },
       "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
         "acercan": 6,
@@ -576,9 +582,9 @@
       }
     ],
     "anterior": {
-      "fichero": "lh-cmp-1440-2026-08-20.json",
-      "fecha": "2026-08-20 18:04 UTC",
-      "candidatas": 15,
+      "fichero": "lh-cmp-1440-2026-08-20-3.json",
+      "fecha": "2026-08-20 21:09 UTC",
+      "candidatas": 17,
       "ordenadoPor": "mtime"
     }
   }
