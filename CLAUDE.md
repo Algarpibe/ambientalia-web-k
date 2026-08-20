@@ -2922,6 +2922,36 @@ regla no nombra.
 > se **restaura con el pipeline completo** antes de leer ninguna otra sonda —
 > porque las que vengan detrás van a medir el universo que ella dejó, no el tuyo.
 
+⚠⚠ **Y SU CASO PEOR, PORQUE EL ENTORNO ES EL PROPIO REPO: UN SABOTAJE QUE EDITA
+EL FUENTE SOBREVIVE A LA MUERTE DE SU CORRIDA (2026-08-20, 88.ª tanda).**
+
+> **Un `finally` de JavaScript NO corre cuando el proceso muere por una SEÑAL.**
+> `SIGTERM`/`SIGKILL` —un `taskkill`, el timeout de un harness, un Ctrl-C—
+> terminan sin desenrollar la pila, así que el `revierte()` **nunca se ejecuta**
+> y el sabotaje **se queda escrito en el fichero versionado**.
+
+Y a partir de ahí no lo ve nadie: el fuente saboteado **sigue compilando**, así
+que `qa:lib` pasa, `npm run check` pasa, y la sonda saboteada devuelve **un
+número plausible**. El siguiente `git add -A` lo commitea.
+
+**Medido:** el sabotaje `marcador-ubicuo` ensancha `EXPRESABLES` de 9 etiquetas
+a 16 en `scripts/qa/texto-poblacion.mjs`. Tras matar una corrida colgada, quedó
+puesto y **entró en un commit**. Se cazó leyendo la lista de ficheros del propio
+commit —`scripts/qa/*.mjs` en una tanda que no tocó ninguna sonda— y se
+verificó restaurándolo: la sonda vuelve a reproducir su control `kb-recon.json`
+**al carácter**.
+
+**Las tres mitades operativas:**
+
+1. **antes de commitear, mira si hay FUENTES de sonda en el `git status`** que la
+   tanda no haya tocado. Es la única señal, porque no hay guarda que lo vea;
+2. **un sabotaje no edita el fuente: corre una COPIA.** Si tiene que editar,
+   registra además `process.on("exit")` y los manejadores de señal — un
+   `finally` solo cubre la salida ordenada;
+3. **y el cardinal se declara**: hoy es **1 de 59** negativos (`texto-poblacion`),
+   derivado con un `grep` de `writeFileSync(SONDA`. Que sea uno es lo que hace
+   barato el arreglo, y saberlo es lo que impide creer que son todos.
+
 **21 · UN NEGATIVO EN ROJO NO ES UN NEGATIVO PODRIDO HASTA QUE CORRES SU SONDA
 SOLA.** (2026-08-18)
 

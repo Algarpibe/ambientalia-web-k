@@ -16890,3 +16890,42 @@ Los demás enunciados son **eventos** con su fecha y su número, y se quedan don
 están.
 
 ---
+
+### 8 · ⚠ INCIDENTE · un SABOTAJE quedó escrito en el fuente y entró en un commit
+
+**Qué pasó, con su cadena entera:**
+
+1. `lh-selectores` no termina en >18 min, así que su corrida y la de su negativo
+   quedaron colgadas y **las maté** (`taskkill /F`);
+2. entre las que murieron estaba una corrida de `texto-poblacion.neg.mjs`, que
+   sabotea **editando el fuente** `scripts/qa/texto-poblacion.mjs`;
+3. su `finally { s.revierte() }` **está bien escrito y no corrió**: un `finally`
+   de JavaScript no se ejecuta cuando el proceso muere por **señal**;
+4. el fuente quedó con `EXPRESABLES` ensanchado de **9 etiquetas a 16**, y
+   `git add -A` lo metió en `7244ac9`.
+
+**Por qué no lo vio nada:** el fichero saboteado **sigue compilando**, así que
+`qa:lib` da 193/193, `npm run check` sale verde y la sonda devolvería un número
+plausible. **No hay guarda en este repo que mire un fuente de sonda.**
+
+**Cómo se cazó:** leyendo la lista de ficheros del propio commit y viendo un
+`scripts/qa/*.mjs` en una tanda que **no tocó ninguna sonda**. Restaurado y
+verificado: `qa:texto-poblacion` vuelve a reproducir su control `kb-recon.json`
+**al carácter** (85 módulos · 16 etiquetas) y su congelada sale idéntica.
+
+**Cardinal, derivado:** **1 de 59** negativos escribe sobre un fuente del repo
+(`grep -l 'writeFileSync(SONDA' scripts/qa/*.neg.mjs`). Los otros escriben en
+`medidas/` o en temporales. Que sea **uno** es lo que hace barato el arreglo.
+
+**Arreglo propuesto, NO aplicado:** que el sabotaje corra **una copia** en vez
+de editar el fuente; y si tuviera que editarlo, que registre `process.on("exit")`
+y los manejadores de señal además del `finally`. **No se toca aquí** porque
+cambiar un negativo ajeno en una tanda de construcción obliga a re-correrlo
+entero (§sondas 5bis) y no es el hilo de esta tanda.
+
+**Y la regla que sale de esto ya está en `CLAUDE.md`** (§regla 20, caso peor):
+*un `finally` no corre si el proceso muere por señal*, y por tanto **antes de
+commitear hay que mirar si hay fuentes de sonda en el `git status` que la tanda
+no haya tocado** — es la única señal que existe.
+
+---
