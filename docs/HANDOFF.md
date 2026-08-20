@@ -247,6 +247,32 @@
 > cableados y ninguno activo, `pie-legal.json` sale **idéntica** a la congelada
 > anterior. NO-OP sobre lo medido.
 >
+> ---
+>
+> ## 6 · UN HALLAZGO DE LA PROPIA BATERÍA DE CIERRE
+>
+> **`qa:lh-cubos` repartía por causa una foto de TRES DÍAS ANTES.** Su defecto de
+> `--cmp=` era **la canónica**, y la línea de comentario **inmediatamente
+> anterior** decía *«§sondas 5: el nombre canónico conserva la PRIMERA foto, así
+> que la corrida de hoy hay que nombrarla en vez de suponerla»*.
+>
+> | fichero | fecha | `paresDistintos` |
+> |---|---|---|
+> | `lh-cmp-1440-todas.json` (canónica) | **2026-08-17** | **6207** |
+> | la corrida del día | 2026-08-20 | **5423** |
+>
+> §*documentado no es conectado* con el aviso escrito literalmente al lado — un
+> lector del fichero veía el problema **descrito y evitado**. Arreglado
+> derivando por `mtime` con la misma función del eje mixto; ahora `cubo 3` da
+> **5423 / 5401**, exactamente el titular de `lh-cmp`. Ficha con su alcance en
+> `PENDIENTES-QA.md` §F3-LH-CUBOS-LEIA-LA-CANONICA.
+>
+> Y de paso: el sello de `mtime` ahora **lleva su zona** (`UTC`). Un «12:49» que
+> es «17:49Z» se lee mal justo al cruzar congeladas con la hora de un commit,
+> que es lo que §regla 16 manda hacer.
+>
+> ---
+>
 > **Predicciones NO EJERCITADAS (no falladas):** `pie-cmp 9 · 3 · 6 → 9 · 2 · 7`
 > y `rutas 374 → 375` eran condicionales al PASO 3. Siguen **374** y **9 · 3 · 6**.
 

@@ -15163,6 +15163,76 @@ midió abajo*, con el contenedor puesto en la palabra «el pie».
 
 ---
 
+## ✅ F3-LH-CUBOS-LEIA-LA-CANONICA · el reparto por causa usaba una foto de TRES DÍAS ANTES, y su propio comentario lo avisaba (2026-08-20, 87.ª tanda)
+
+**Encontrado al correr la batería de cierre, no buscándolo.** Es un EVENTO, no
+una regla nueva: las dos reglas que lo cubren ya están escritas —§sondas 5 (*el
+nombre canónico conserva la PRIMERA foto*) y §regla 9-7.ª (*un conjunto
+enumerado a mano dentro de una sonda es un dato recordado*)—. Lo que lo hace
+digno de ficha es **dónde** estaba.
+
+### El defecto
+
+`lh-cubos.mjs` resolvía su entrada así:
+
+```js
+const F_CMP = arg("cmp", `medidas/lh-cmp-${ANCHO}-todas.json`);   // ← la CANÓNICA
+```
+
+y la línea **inmediatamente anterior**, en el mismo bloque de comentario, decía:
+
+> *«§sondas 5: el nombre canónico de una congelada conserva la PRIMERA foto, así
+> que la corrida de hoy hay que nombrarla en vez de suponerla.»*
+
+**El comentario y el defecto de la línea siguiente se contradicen, y gana el
+código.** §*documentado no es conectado* en su forma más pura — esta vez con el
+aviso escrito literalmente al lado, que es lo que la hace peor que las
+anteriores: un lector del fichero veía el problema **descrito y evitado**.
+
+### El número
+
+| fichero | fecha | `paresDistintos` |
+|---|---|---|
+| `lh-cmp-1440-todas.json` (canónica) | **2026-08-17** | **6207** |
+| la corrida del día | 2026-08-20 | **5423** |
+
+`npm run qa:lh-cubos` sin argumento repartía por causa **una foto de tres días
+antes**, y sin un aviso: la sonda imprimía el nombre del fichero, así que la
+información estaba —§sondas 1 se cumplía— pero nadie la lee como una fecha.
+
+**Alcance, con su cardinal:** las corridas anteriores **sí** pasaban `--cmp=` a
+mano (su congelada lo registra en `meta.canales.cmp`), así que el defecto sólo
+mordía a quien la corriera **como está escrita en `package.json`** — que es
+exactamente lo que hace una batería de cierre.
+
+### El arreglo, y reutiliza lo de esta misma tanda
+
+Sin `--cmp=`, se toma **la más reciente por `mtime`** con la
+`eligeCongeladaAnterior()` escrita para el eje mixto — nunca por nombre, nunca
+la canónica — y **se dice en la salida**:
+
+```
+cmp  medidas/lh-cmp-1440-todas-2026-08-20-3.json   ← DERIVADA por mtime de
+     13 candidata(s), mtime 2026-08-20 17:49 UTC
+```
+
+**Resultado:** `cubo 3 = 5423 @1440` y `5401 @390`, que es **exactamente** el
+titular de `lh-cmp`. Antes habría repartido 6207 — o sea 784 pares que hoy no
+existen.
+
+### Y el sello lleva su ZONA
+
+`toISOString()` da UTC. Un «12:49» que en realidad es «17:49Z» se lee mal justo
+cuando importa: **al cruzar el orden de dos congeladas con la hora de un
+commit**, que es lo que §regla 16 manda hacer. Este repo ya pagó una vez por
+sellos ambiguos (§regla 9, 3.ª instancia: *«2 citas usan UTC»* resultaron ser
+**8**). Ahora el sello lo dice.
+
+**Negativo corrido entero tras el arreglo:** `qa:lh-cubos-neg` **4/4**, cada
+caso por su motivo.
+
+---
+
 ## ✅ F3-LH-EJE-MIXTO-PUBLICADO · el eje que no lee como defecto se publica SOLO, y su primer reparto reproduce el −512.04 (2026-08-20, 87.ª tanda)
 
 **§regla 14 llevaba tres tandas escrita en `CLAUDE.md` y el instrumento no la
