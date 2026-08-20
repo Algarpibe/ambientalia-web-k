@@ -14,12 +14,12 @@
   },
   "porAncho": {
     "390": {
-      "comparador": "lh-cmp-390-todas-2026-08-20.json",
-      "candidatas": 17,
+      "comparador": "lh-cmp-390-todas-2026-08-20-2.json",
+      "candidatas": 19,
       "candidatasDescartadas": [
-        "lh-cmp-390-todas-2026-08-19-2.json",
-        "lh-cmp-390-todas-2026-08-19.json",
-        "lh-cmp-390-todas-2026-08-18-3.json"
+        "lh-cmp-390-2026-08-20.json",
+        "lh-cmp-390-todas-2026-08-20.json",
+        "lh-cmp-390-todas-2026-08-19-2.json"
       ],
       "paresDistintos": 5401,
       "numericos": 303,
@@ -64,12 +64,12 @@
       "noNumericos": 5098
     },
     "1440": {
-      "comparador": "lh-cmp-1440-todas-2026-08-20-2.json",
-      "candidatas": 28,
+      "comparador": "lh-cmp-1440-todas-2026-08-20-3.json",
+      "candidatas": 30,
       "candidatasDescartadas": [
-        "lh-cmp-1440-todas-2026-08-20.json",
-        "lh-cmp-1440-todas-2026-08-19-2.json",
-        "lh-cmp-1440-todas-2026-08-19.json"
+        "lh-cmp-1440-todas-2026-08-20-2.json",
+        "lh-cmp-1440-2026-08-20.json",
+        "lh-cmp-1440-todas-2026-08-20.json"
       ],
       "paresDistintos": 5423,
       "numericos": 324,
