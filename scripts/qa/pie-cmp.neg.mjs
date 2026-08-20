@@ -63,9 +63,19 @@ const casos = [
       if (j.reparto.some((f) => f.rol === null)) return "hay filas con rol null: el emparejamiento no es por rol";
       if (!Array.isArray(j.control) || j.control.length === 0) return "sin bloque `control`";
       /* El control interno: la suma de secciones tiene que reconstruir el pie.
-         Si no, el reparto es una lista y no una descomposición. */
-      const malos = j.control.filter((c) => Math.abs(c.resto) > 0.01);
-      if (malos.length) return `${malos.length} control(es) con resto ≠ 0: el reparto no reconstruye el pie`;
+         Si no, el reparto es una lista y no una descomposición.
+
+         ⚠ **La expectativa correcta NO es «resto 0 en todos», y ajustarla aquí
+         no es rebajarla: es hacerla discriminante.** `L5-casos` tiene un resto
+         REAL de 265.06 —el CTA que el clon emite vía `<CtaBanner>` sin marcar—
+         y exigir 0 a secas convertía un hecho declarado en un rojo, mientras
+         dejaba pasar sin mirar un resto que NADIE explicara. Lo que se exige es
+         más fuerte: **todo resto ≠ 0 tiene que estar ATRIBUIDO** a bloques sin
+         marcar, y su Δ contra el original tiene que ser 0. */
+      const sinExplicar = j.control.filter((c) => Math.abs(c.resto) > 0.01 && !c.atribuido);
+      if (sinExplicar.length) return `${sinExplicar.length} resto(s) SIN ATRIBUIR: el reparto no reconstruye el pie`;
+      const malAtribuidos = j.control.filter((c) => c.atribuido && Math.abs(c.atribuido.delta) > 0.01);
+      if (malAtribuidos.length) return `${malAtribuidos.length} resto(s) atribuidos con Δ ≠ 0 contra el original`;
       if (!j.viasDelClon || !j.viasDelClon.includes("data-pie")) return `el clon no se leyó por 'data-pie': ${JSON.stringify(j.viasDelClon)}`;
       return null;
     },
@@ -91,11 +101,19 @@ const casos = [
     porQue: "sin `data-pie` no hay identidad: cae a la vía de respaldo y LO DICE, en vez de emparejar por índice",
     args: ["1440"],
     env: { SABOTAJE_SIN_MARCADOR: "1" },
-    exit: 1,
+    /* Sin marcador caen DOS guardas —«no se pudo atribuir» (1) y «0 secciones
+       emparejadas» (2)— y gana la más fuerte. Se exige el 2 y las dos frases:
+       el número exacto es implementación, que caiga por su motivo no lo es. */
+    exit: 2,
     salidaTiene: /NO SE PUDO ATRIBUIR/,
-    /* La frase del verde no puede aparecer: si el rojo y el verde imprimen lo
-       mismo, el negativo no ha probado nada. */
-    prohibidoEnSalida: /secciones emparejadas \d+ · con Δ≠0/,
+    salidaTambien: /NO SE PUDO EVALUAR · 0 secciones/,
+    /* ⚠ **La primera versión prohibía `secciones emparejadas N · con Δ≠0`, que
+       NO es la frase del verde: esa línea la imprimen los dos.** Un
+       `prohibidoEnSalida` que también sale en rojo no discrimina nada — es la
+       §regla 1 (*lo que imprime y lo que cuenta no pueden discrepar*) cometida
+       en el propio negativo. Lo exclusivo del verde es haber leído por
+       `data-pie`. */
+    prohibidoEnSalida: /vías del clon: data-pie/,
   },
 ];
 
@@ -117,6 +135,7 @@ for (const c of casos) {
   let mal = null;
   if (c.exit !== undefined && res.status !== c.exit) mal = `esperaba exit ${c.exit}, salió ${res.status}`;
   if (!mal && c.salidaTiene && !c.salidaTiene.test(out)) mal = `la salida no contiene ${c.salidaTiene}`;
+  if (!mal && c.salidaTambien && !c.salidaTambien.test(out)) mal = `la salida no contiene ${c.salidaTambien}`;
   if (!mal && c.prohibidoEnSalida && c.prohibidoEnSalida.test(out)) mal = `la salida contiene ${c.prohibidoEnSalida}, que es la frase del VERDE`;
   if (!mal && c.comprueba) {
     if (!existsSync(fichero)) mal = `no congeló ${fichero.split(/[\\/]/).pop()}`;

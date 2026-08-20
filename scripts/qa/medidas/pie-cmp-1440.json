@@ -4,7 +4,7 @@
     "width": 1440,
     "que": "descomposición del PIE por sección, de dos lados",
     "ladoOriginal": "kunakair.com VIVO (no el espejo: el espejo no trae el clon)",
-    "ladoClon": "http://127.0.0.1:62787",
+    "ladoClon": "http://127.0.0.1:55160",
     "unidad": "la SECCIÓN de pie (rol × forma), no el alto del pie",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio»",
     "noMide": [
@@ -927,7 +927,25 @@
       "lado": "clon",
       "suma": 594.75,
       "pie": 937.81,
-      "resto": 343.06
+      "resto": 343.06,
+      "atribuido": {
+        "bloquesSinMarcar": 1,
+        "roles": [
+          "cta"
+        ],
+        "origSuma": 343.06,
+        "delta": 0
+      }
+    }
+  ],
+  "viasDelClon": [
+    "data-pie"
+  ],
+  "sinMarcar": [
+    {
+      "forma": "L5-casos",
+      "sinMarcar": 1,
+      "nBloques": 4
     }
   ]
 }

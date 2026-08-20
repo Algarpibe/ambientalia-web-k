@@ -312,6 +312,37 @@ for (const [forma, v] of Object.entries(salida.formas)) {
   }
 }
 
+/**
+ * El RESTO de un lado con bloques sin marcar no es basura: es **el alto de esos
+ * bloques**, y se compara contra los roles del original que quedaron sin pareja.
+ * En `L5-casos` eso da **el CTA sin necesidad de marcarlo** — y sale Δ0, que es
+ * un dato que el reparto por sí solo no daba. Va ANTES de `w()`: una atribución
+ * que sólo existe en la consola no la puede auditar nadie (§sondas 2).
+ */
+for (const c of salida.control) {
+  const v = salida.formas[c.forma];
+  const sinM = v && v.clon ? v.clon.sinMarcar : 0;
+  if (c.lado !== "clon" || !sinM || Math.abs(c.resto) <= 0.05) continue;
+  const huerfanos = filas.filter((f) => f.forma === c.forma && f.rol !== "· TOTAL" && f.clon === null);
+  const sumaOrig = +huerfanos.reduce((a, f) => a + (f.orig || 0), 0).toFixed(2);
+  c.atribuido = { bloquesSinMarcar: sinM, roles: huerfanos.map((f) => f.rol), origSuma: sumaOrig, delta: +(c.resto - sumaOrig).toFixed(2) };
+}
+
+/**
+ * ⚠ **TODO lo derivado se calcula ANTES de congelar.** `viasDelClon` y
+ * `sinMarcar` se asignaban después de `w()` y salían `undefined` en el fichero
+ * —el informe de consola los enseñaba y la congelada no—, que es §sondas 1 (*un
+ * solo canal de verdad*) con los dos canales discrepando en silencio. Congelar
+ * tarde es congelar incompleto.
+ */
+const vias = [...new Set(Object.values(salida.formas).filter((v) => v.clon).map((v) => v.clon.via))];
+salida.viasDelClon = vias;
+const porRespaldo = Object.values(salida.formas).filter((v) => v.clon && v.clon.via === "hijos").length;
+const sinMarcar = Object.entries(salida.formas)
+  .filter(([, v]) => v.clon && v.clon.sinMarcar > 0)
+  .map(([forma, v]) => ({ forma, sinMarcar: v.clon.sinMarcar, nBloques: v.clon.nBloques }));
+salida.sinMarcar = sinMarcar;
+
 w(`medidas/pie-cmp-${width}.json`, salida);
 
 /* ───────────────────────────── el informe ─────────────────────────────── */
@@ -332,7 +363,29 @@ for (const f of filas) {
 
 console.log(`\n── CONTROL · suma de secciones contra el alto del pie ──`);
 for (const c of salida.control) {
-  console.log(`  ${c.forma.padEnd(ANCHO)} ${c.lado.padEnd(6)} suma ${String(c.suma).padStart(9)} · pie ${String(c.pie).padStart(9)} · resto ${String(c.resto).padStart(8)}${c.resto === 0 ? " ✓" : " ⚠ el pie tiene ritmo propio"}`);
+  const nota = Math.abs(c.resto) <= 0.05 ? " ✓" : c.atribuido ? ` → ${c.atribuido.roles.join("+")} sin marcar: orig ${c.atribuido.origSuma} · Δ ${c.atribuido.delta}${c.atribuido.delta === 0 ? " ✓" : " ⚠"}` : " ⚠ resto SIN EXPLICAR: el pie tiene ritmo propio";
+  console.log(`  ${c.forma.padEnd(ANCHO)} ${c.lado.padEnd(6)} suma ${String(c.suma).padStart(9)} · pie ${String(c.pie).padStart(9)} · resto ${String(c.resto).padStart(8)}${nota}`);
+}
+
+/**
+ * Un resto que NADIE explica es un descuadre de verdad: el reparto deja de ser
+ * una descomposición y pasa a ser una lista. Eso cierra el código de salida.
+ *
+ * ⚠ **`TOL` es tolerancia de REDONDEO, no un umbral de defecto**, y la
+ * diferencia importa: cada sección se redondea a 2 decimales antes de sumarse,
+ * así que N sumandos pueden desviar hasta `N × 0.005` del alto del pie —medido:
+ * `L3-sci` da `518.13 + 121.97 + 41 = 681.10` contra un pie de `681.09`—.
+ *
+ * Lo que hace legítimo el umbral es que **no puede tapar nada de lo que esta
+ * sonda persigue**: el Δ más pequeño que mide es **0.21**, cuatro veces `TOL`.
+ * Un umbral que se solapara con el rango medido sería acomodar la guarda al
+ * defecto que vigila (§regla 21), que es exactamente lo contrario.
+ */
+const TOL = 0.05;
+const restoSinExplicar = salida.control.filter((c) => Math.abs(c.resto) > TOL && !c.atribuido);
+if (restoSinExplicar.length) {
+  console.error(`\n❌ ${restoSinExplicar.length} resto(s) sin explicar: el reparto no reconstruye el pie y no es una descomposición.`);
+  process.exitCode = 2;
 }
 
 if (AUSENTES.length) {
@@ -340,9 +393,6 @@ if (AUSENTES.length) {
   for (const a of salida.ausentes) console.log(`  ${a.forma.padEnd(ANCHO)} ${a.clon} · pie del original: ${a.pieEspejo}`);
 }
 
-const vias = [...new Set(Object.values(salida.formas).filter((v) => v.clon).map((v) => v.clon.via))];
-salida.viasDelClon = vias;
-const porRespaldo = Object.values(salida.formas).filter((v) => v.clon && v.clon.via === "hijos").length;
 if (porRespaldo > 0) {
   console.error(
     `\n❌ NO SE PUDO ATRIBUIR · el clon se leyó por la vía de RESPALDO ('hijos') en ${porRespaldo} de ${COMPARABLES.length} formas.\n` +
@@ -353,10 +403,6 @@ if (porRespaldo > 0) {
 }
 
 /* El descuadre del marcador, con su cardinal y por forma. */
-const sinMarcar = Object.entries(salida.formas)
-  .filter(([, v]) => v.clon && v.clon.sinMarcar > 0)
-  .map(([forma, v]) => ({ forma, sinMarcar: v.clon.sinMarcar, nBloques: v.clon.nBloques }));
-salida.sinMarcar = sinMarcar;
 if (sinMarcar.length) {
   console.log(`\n⚠ BLOQUES DE PIE SIN \`data-pie\` EN EL CLON — un rol que falte NO significa que el clon no lo emita:`);
   for (const s of sinMarcar) console.log(`  ${s.forma.padEnd(ANCHO)} ${s.sinMarcar} de ${s.nBloques} bloques sin marcar`);

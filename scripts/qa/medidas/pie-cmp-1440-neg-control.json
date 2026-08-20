@@ -1,10 +1,10 @@
 {
   "meta": {
     "fecha": "2026-08-20",
-    "width": 390,
+    "width": 1440,
     "que": "descomposición del PIE por sección, de dos lados",
     "ladoOriginal": "kunakair.com VIVO (no el espejo: el espejo no trae el clon)",
-    "ladoClon": "http://127.0.0.1:57541",
+    "ladoClon": "http://127.0.0.1:55830",
     "unidad": "la SECCIÓN de pie (rol × forma), no el alto del pie",
     "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio»",
     "noMide": [
@@ -16,9 +16,9 @@
     "L1-blog": {
       "orig": {
         "pie": {
-          "w": 390,
-          "h": 1761.17,
-          "y": 5836.16,
+          "w": 1440,
+          "h": 593.75,
+          "y": 2577.98,
           "x": 0
         },
         "marca": "footer.et-l.et-l--footer",
@@ -30,21 +30,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.42,
-              "y": 5836.16,
+              "w": 1440,
+              "h": 430.78,
+              "y": 2577.98,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 283.75,
-              "y": 7273.58,
+              "w": 1440,
+              "h": 121.97,
+              "y": 3008.77,
               "x": 0
             },
             "padTop": "0px",
@@ -54,9 +54,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 7557.33,
+              "w": 1440,
+              "h": 41,
+              "y": 3130.73,
               "x": 0
             },
             "padTop": "0px",
@@ -66,9 +66,9 @@
       },
       "clon": {
         "pie": {
-          "w": 390,
-          "h": 1763.27,
-          "y": 5588.83,
+          "w": 1440,
+          "h": 594.75,
+          "y": 2577.95,
           "x": 0
         },
         "marca": "footer.et-l--footer.bg-white",
@@ -80,21 +80,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.63,
-              "y": 5588.83,
+              "w": 1440,
+              "h": 430.78,
+              "y": 2577.95,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 285.64,
-              "y": 7026.45,
+              "w": 1440,
+              "h": 122.97,
+              "y": 3008.73,
               "x": 0
             },
             "padTop": "0px",
@@ -104,9 +104,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 7312.09,
+              "w": 1440,
+              "h": 41,
+              "y": 3131.7,
               "x": 0
             },
             "padTop": "0px",
@@ -120,9 +120,9 @@
     "L1-etiqueta": {
       "orig": {
         "pie": {
-          "w": 390,
-          "h": 1761.17,
-          "y": 5966.23,
+          "w": 1440,
+          "h": 593.75,
+          "y": 2483.94,
           "x": 0
         },
         "marca": "footer.et-l.et-l--footer",
@@ -134,21 +134,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.42,
-              "y": 5966.23,
+              "w": 1440,
+              "h": 430.78,
+              "y": 2483.94,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 283.75,
-              "y": 7403.66,
+              "w": 1440,
+              "h": 121.97,
+              "y": 2914.72,
               "x": 0
             },
             "padTop": "0px",
@@ -158,9 +158,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 7687.41,
+              "w": 1440,
+              "h": 41,
+              "y": 3036.69,
               "x": 0
             },
             "padTop": "0px",
@@ -170,9 +170,9 @@
       },
       "clon": {
         "pie": {
-          "w": 390,
-          "h": 1763.27,
-          "y": 5984.3,
+          "w": 1440,
+          "h": 594.75,
+          "y": 2531.27,
           "x": 0
         },
         "marca": "footer.et-l--footer.bg-white",
@@ -184,21 +184,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.63,
-              "y": 5984.3,
+              "w": 1440,
+              "h": 430.78,
+              "y": 2531.27,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 285.64,
-              "y": 7421.92,
+              "w": 1440,
+              "h": 122.97,
+              "y": 2962.05,
               "x": 0
             },
             "padTop": "0px",
@@ -208,9 +208,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 7707.56,
+              "w": 1440,
+              "h": 41,
+              "y": 3085.02,
               "x": 0
             },
             "padTop": "0px",
@@ -224,9 +224,9 @@
     "L1-resources-hijo": {
       "orig": {
         "pie": {
-          "w": 390,
-          "h": 1761.17,
-          "y": 2574.72,
+          "w": 1440,
+          "h": 593.75,
+          "y": 1522.59,
           "x": 0
         },
         "marca": "footer.et-l.et-l--footer",
@@ -238,21 +238,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.42,
-              "y": 2574.72,
+              "w": 1440,
+              "h": 430.78,
+              "y": 1522.59,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 283.75,
-              "y": 4012.14,
+              "w": 1440,
+              "h": 121.97,
+              "y": 1953.38,
               "x": 0
             },
             "padTop": "0px",
@@ -262,9 +262,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 4295.89,
+              "w": 1440,
+              "h": 41,
+              "y": 2075.34,
               "x": 0
             },
             "padTop": "0px",
@@ -274,9 +274,9 @@
       },
       "clon": {
         "pie": {
-          "w": 390,
-          "h": 1763.27,
-          "y": 2545.69,
+          "w": 1440,
+          "h": 594.75,
+          "y": 1522.56,
           "x": 0
         },
         "marca": "footer.et-l--footer.bg-white",
@@ -288,21 +288,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.63,
-              "y": 2545.69,
+              "w": 1440,
+              "h": 430.78,
+              "y": 1522.56,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 285.64,
-              "y": 3983.31,
+              "w": 1440,
+              "h": 122.97,
+              "y": 1953.34,
               "x": 0
             },
             "padTop": "0px",
@@ -312,9 +312,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 4268.95,
+              "w": 1440,
+              "h": 41,
+              "y": 2076.31,
               "x": 0
             },
             "padTop": "0px",
@@ -328,9 +328,9 @@
     "L1-resources-padre": {
       "orig": {
         "pie": {
-          "w": 390,
-          "h": 1761.17,
-          "y": 7103.69,
+          "w": 1440,
+          "h": 593.75,
+          "y": 3008.69,
           "x": 0
         },
         "marca": "footer.et-l.et-l--footer",
@@ -342,21 +342,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.42,
-              "y": 7103.69,
+              "w": 1440,
+              "h": 430.78,
+              "y": 3008.69,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 283.75,
-              "y": 8541.11,
+              "w": 1440,
+              "h": 121.97,
+              "y": 3439.47,
               "x": 0
             },
             "padTop": "0px",
@@ -366,9 +366,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 8824.86,
+              "w": 1440,
+              "h": 41,
+              "y": 3561.44,
               "x": 0
             },
             "padTop": "0px",
@@ -378,9 +378,9 @@
       },
       "clon": {
         "pie": {
-          "w": 390,
-          "h": 1763.27,
-          "y": 7101.66,
+          "w": 1440,
+          "h": 594.75,
+          "y": 2974.61,
           "x": 0
         },
         "marca": "footer.et-l--footer.bg-white",
@@ -392,21 +392,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.63,
-              "y": 7101.66,
+              "w": 1440,
+              "h": 430.78,
+              "y": 2974.61,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 285.64,
-              "y": 8539.28,
+              "w": 1440,
+              "h": 122.97,
+              "y": 3405.39,
               "x": 0
             },
             "padTop": "0px",
@@ -416,9 +416,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 8824.92,
+              "w": 1440,
+              "h": 41,
+              "y": 3528.36,
               "x": 0
             },
             "padTop": "0px",
@@ -432,9 +432,9 @@
     "L3-sci": {
       "orig": {
         "pie": {
-          "w": 390,
-          "h": 2052.91,
-          "y": 10015.97,
+          "w": 1440,
+          "h": 681.09,
+          "y": 3487.98,
           "x": 0
         },
         "marca": "footer.et-l.et-l--footer",
@@ -446,21 +446,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1699.16,
-              "y": 10015.97,
+              "w": 1440,
+              "h": 518.13,
+              "y": 3487.98,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 313.75,
-              "y": 11715.13,
+              "w": 1440,
+              "h": 121.97,
+              "y": 4006.11,
               "x": 0
             },
             "padTop": "0px",
@@ -470,9 +470,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 12028.88,
+              "w": 1440,
+              "h": 41,
+              "y": 4128.08,
               "x": 0
             },
             "padTop": "0px",
@@ -482,9 +482,9 @@
       },
       "clon": {
         "pie": {
-          "w": 390,
-          "h": 1763.27,
-          "y": 10015.97,
+          "w": 1440,
+          "h": 594.75,
+          "y": 3487.98,
           "x": 0
         },
         "marca": "footer.et-l--footer.bg-white",
@@ -496,21 +496,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.63,
-              "y": 10015.97,
+              "w": 1440,
+              "h": 430.78,
+              "y": 3487.98,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 285.64,
-              "y": 11453.59,
+              "w": 1440,
+              "h": 122.97,
+              "y": 3918.77,
               "x": 0
             },
             "padTop": "0px",
@@ -520,9 +520,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 11739.23,
+              "w": 1440,
+              "h": 41,
+              "y": 4041.73,
               "x": 0
             },
             "padTop": "0px",
@@ -536,9 +536,9 @@
     "L5-casos": {
       "orig": {
         "pie": {
-          "w": 390,
-          "h": 2026.23,
-          "y": 25580.83,
+          "w": 1440,
+          "h": 936.81,
+          "y": 9784.28,
           "x": 0
         },
         "marca": "footer.et-l.et-l--footer",
@@ -550,9 +550,9 @@
             "i": 0,
             "rol": "cta",
             "rect": {
-              "w": 390,
-              "h": 265.06,
-              "y": 25580.83,
+              "w": 1440,
+              "h": 343.06,
+              "y": 9784.28,
               "x": 0
             },
             "padTop": "0px",
@@ -562,21 +562,21 @@
             "i": 1,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.42,
-              "y": 25845.89,
+              "w": 1440,
+              "h": 430.78,
+              "y": 10127.34,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 2,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 283.75,
-              "y": 27283.31,
+              "w": 1440,
+              "h": 121.97,
+              "y": 10558.13,
               "x": 0
             },
             "padTop": "0px",
@@ -586,9 +586,9 @@
             "i": 3,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 27567.06,
+              "w": 1440,
+              "h": 41,
+              "y": 10680.09,
               "x": 0
             },
             "padTop": "0px",
@@ -598,9 +598,9 @@
       },
       "clon": {
         "pie": {
-          "w": 390,
-          "h": 2028.33,
-          "y": 25585.83,
+          "w": 1440,
+          "h": 937.81,
+          "y": 11773.98,
           "x": 0
         },
         "marca": "footer.et-l--footer.bg-white",
@@ -612,21 +612,21 @@
             "i": 0,
             "rol": "links",
             "rect": {
-              "w": 390,
-              "h": 1437.63,
-              "y": 25850.89,
+              "w": 1440,
+              "h": 430.78,
+              "y": 12117.05,
               "x": 0
             },
-            "padTop": "50px",
+            "padTop": "57.5938px",
             "padBottom": "0px"
           },
           {
             "i": 1,
             "rol": "legal",
             "rect": {
-              "w": 390,
-              "h": 285.64,
-              "y": 27288.52,
+              "w": 1440,
+              "h": 122.97,
+              "y": 12547.83,
               "x": 0
             },
             "padTop": "0px",
@@ -636,9 +636,9 @@
             "i": 2,
             "rol": "background",
             "rect": {
-              "w": 390,
-              "h": 40,
-              "y": 27574.16,
+              "w": 1440,
+              "h": 41,
+              "y": 12670.8,
               "x": 0
             },
             "padTop": "0px",
@@ -654,286 +654,286 @@
     {
       "forma": "L2-faqs",
       "clon": "/preguntas-frecuentes",
-      "pieEspejo": 2374.8
+      "pieEspejo": 989.73
     },
     {
       "forma": "L2-glosario",
       "clon": "/glosario",
-      "pieEspejo": 2374.8
+      "pieEspejo": 989.73
     },
     {
       "forma": "L4-listado-embebido",
       "clon": "/recursos",
-      "pieEspejo": 1761.17
+      "pieEspejo": 593.75
     }
   ],
   "reparto": [
     {
       "forma": "L1-blog",
       "rol": "links",
-      "orig": 1437.42,
-      "clon": 1437.63,
-      "delta": 0.21
-    },
-    {
-      "forma": "L1-blog",
-      "rol": "legal",
-      "orig": 283.75,
-      "clon": 285.64,
-      "delta": 1.89
-    },
-    {
-      "forma": "L1-blog",
-      "rol": "background",
-      "orig": 40,
-      "clon": 40,
+      "orig": 430.78,
+      "clon": 430.78,
       "delta": 0
     },
     {
       "forma": "L1-blog",
+      "rol": "legal",
+      "orig": 121.97,
+      "clon": 122.97,
+      "delta": 1
+    },
+    {
+      "forma": "L1-blog",
+      "rol": "background",
+      "orig": 41,
+      "clon": 41,
+      "delta": 0
+    },
+    {
+      "forma": "L1-blog",
       "rol": "· TOTAL",
-      "orig": 1761.17,
-      "clon": 1763.27,
-      "delta": 2.1
+      "orig": 593.75,
+      "clon": 594.75,
+      "delta": 1
     },
     {
       "forma": "L1-etiqueta",
       "rol": "links",
-      "orig": 1437.42,
-      "clon": 1437.63,
-      "delta": 0.21
+      "orig": 430.78,
+      "clon": 430.78,
+      "delta": 0
     },
     {
       "forma": "L1-etiqueta",
       "rol": "legal",
-      "orig": 283.75,
-      "clon": 285.64,
-      "delta": 1.89
+      "orig": 121.97,
+      "clon": 122.97,
+      "delta": 1
     },
     {
       "forma": "L1-etiqueta",
       "rol": "background",
-      "orig": 40,
-      "clon": 40,
+      "orig": 41,
+      "clon": 41,
       "delta": 0
     },
     {
       "forma": "L1-etiqueta",
       "rol": "· TOTAL",
-      "orig": 1761.17,
-      "clon": 1763.27,
-      "delta": 2.1
+      "orig": 593.75,
+      "clon": 594.75,
+      "delta": 1
     },
     {
       "forma": "L1-resources-hijo",
       "rol": "links",
-      "orig": 1437.42,
-      "clon": 1437.63,
-      "delta": 0.21
+      "orig": 430.78,
+      "clon": 430.78,
+      "delta": 0
     },
     {
       "forma": "L1-resources-hijo",
       "rol": "legal",
-      "orig": 283.75,
-      "clon": 285.64,
-      "delta": 1.89
+      "orig": 121.97,
+      "clon": 122.97,
+      "delta": 1
     },
     {
       "forma": "L1-resources-hijo",
       "rol": "background",
-      "orig": 40,
-      "clon": 40,
+      "orig": 41,
+      "clon": 41,
       "delta": 0
     },
     {
       "forma": "L1-resources-hijo",
       "rol": "· TOTAL",
-      "orig": 1761.17,
-      "clon": 1763.27,
-      "delta": 2.1
+      "orig": 593.75,
+      "clon": 594.75,
+      "delta": 1
     },
     {
       "forma": "L1-resources-padre",
       "rol": "links",
-      "orig": 1437.42,
-      "clon": 1437.63,
-      "delta": 0.21
+      "orig": 430.78,
+      "clon": 430.78,
+      "delta": 0
     },
     {
       "forma": "L1-resources-padre",
       "rol": "legal",
-      "orig": 283.75,
-      "clon": 285.64,
-      "delta": 1.89
+      "orig": 121.97,
+      "clon": 122.97,
+      "delta": 1
     },
     {
       "forma": "L1-resources-padre",
       "rol": "background",
-      "orig": 40,
-      "clon": 40,
+      "orig": 41,
+      "clon": 41,
       "delta": 0
     },
     {
       "forma": "L1-resources-padre",
       "rol": "· TOTAL",
-      "orig": 1761.17,
-      "clon": 1763.27,
-      "delta": 2.1
+      "orig": 593.75,
+      "clon": 594.75,
+      "delta": 1
     },
     {
       "forma": "L3-sci",
       "rol": "links",
-      "orig": 1699.16,
-      "clon": 1437.63,
-      "delta": -261.53
+      "orig": 518.13,
+      "clon": 430.78,
+      "delta": -87.35
     },
     {
       "forma": "L3-sci",
       "rol": "legal",
-      "orig": 313.75,
-      "clon": 285.64,
-      "delta": -28.11
+      "orig": 121.97,
+      "clon": 122.97,
+      "delta": 1
     },
     {
       "forma": "L3-sci",
       "rol": "background",
-      "orig": 40,
-      "clon": 40,
+      "orig": 41,
+      "clon": 41,
       "delta": 0
     },
     {
       "forma": "L3-sci",
       "rol": "· TOTAL",
-      "orig": 2052.91,
-      "clon": 1763.27,
-      "delta": -289.64
+      "orig": 681.09,
+      "clon": 594.75,
+      "delta": -86.34
     },
     {
       "forma": "L5-casos",
       "rol": "cta",
-      "orig": 265.06,
+      "orig": 343.06,
       "clon": null,
       "delta": null
     },
     {
       "forma": "L5-casos",
       "rol": "links",
-      "orig": 1437.42,
-      "clon": 1437.63,
-      "delta": 0.21
+      "orig": 430.78,
+      "clon": 430.78,
+      "delta": 0
     },
     {
       "forma": "L5-casos",
       "rol": "legal",
-      "orig": 283.75,
-      "clon": 285.64,
-      "delta": 1.89
+      "orig": 121.97,
+      "clon": 122.97,
+      "delta": 1
     },
     {
       "forma": "L5-casos",
       "rol": "background",
-      "orig": 40,
-      "clon": 40,
+      "orig": 41,
+      "clon": 41,
       "delta": 0
     },
     {
       "forma": "L5-casos",
       "rol": "· TOTAL",
-      "orig": 2026.23,
-      "clon": 2028.33,
-      "delta": 2.1
+      "orig": 936.81,
+      "clon": 937.81,
+      "delta": 1
     }
   ],
   "control": [
     {
       "forma": "L1-blog",
       "lado": "orig",
-      "suma": 1761.17,
-      "pie": 1761.17,
+      "suma": 593.75,
+      "pie": 593.75,
       "resto": 0
     },
     {
       "forma": "L1-blog",
       "lado": "clon",
-      "suma": 1763.27,
-      "pie": 1763.27,
+      "suma": 594.75,
+      "pie": 594.75,
       "resto": 0
     },
     {
       "forma": "L1-etiqueta",
       "lado": "orig",
-      "suma": 1761.17,
-      "pie": 1761.17,
+      "suma": 593.75,
+      "pie": 593.75,
       "resto": 0
     },
     {
       "forma": "L1-etiqueta",
       "lado": "clon",
-      "suma": 1763.27,
-      "pie": 1763.27,
+      "suma": 594.75,
+      "pie": 594.75,
       "resto": 0
     },
     {
       "forma": "L1-resources-hijo",
       "lado": "orig",
-      "suma": 1761.17,
-      "pie": 1761.17,
+      "suma": 593.75,
+      "pie": 593.75,
       "resto": 0
     },
     {
       "forma": "L1-resources-hijo",
       "lado": "clon",
-      "suma": 1763.27,
-      "pie": 1763.27,
+      "suma": 594.75,
+      "pie": 594.75,
       "resto": 0
     },
     {
       "forma": "L1-resources-padre",
       "lado": "orig",
-      "suma": 1761.17,
-      "pie": 1761.17,
+      "suma": 593.75,
+      "pie": 593.75,
       "resto": 0
     },
     {
       "forma": "L1-resources-padre",
       "lado": "clon",
-      "suma": 1763.27,
-      "pie": 1763.27,
+      "suma": 594.75,
+      "pie": 594.75,
       "resto": 0
     },
     {
       "forma": "L3-sci",
       "lado": "orig",
-      "suma": 2052.91,
-      "pie": 2052.91,
-      "resto": 0
+      "suma": 681.1,
+      "pie": 681.09,
+      "resto": -0.01
     },
     {
       "forma": "L3-sci",
       "lado": "clon",
-      "suma": 1763.27,
-      "pie": 1763.27,
+      "suma": 594.75,
+      "pie": 594.75,
       "resto": 0
     },
     {
       "forma": "L5-casos",
       "lado": "orig",
-      "suma": 2026.23,
-      "pie": 2026.23,
+      "suma": 936.81,
+      "pie": 936.81,
       "resto": 0
     },
     {
       "forma": "L5-casos",
       "lado": "clon",
-      "suma": 1763.27,
-      "pie": 2028.33,
-      "resto": 265.06,
+      "suma": 594.75,
+      "pie": 937.81,
+      "resto": 343.06,
       "atribuido": {
         "bloquesSinMarcar": 1,
         "roles": [
           "cta"
         ],
-        "origSuma": 265.06,
+        "origSuma": 343.06,
         "delta": 0
       }
     }
