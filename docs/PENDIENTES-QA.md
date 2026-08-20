@@ -15163,6 +15163,50 @@ midió abajo*, con el contenedor puesto en la palabra «el pie».
 
 ---
 
+## 📋 DEUDAS ABIERTAS AL CIERRE DE LA 87.ª — cada una con su número DERIVADO (2026-08-20)
+
+**Derivadas, no copiadas** (§regla 9: *un número recordado y uno derivado se
+escriben igual y no valen lo mismo*). Dos de las que el encargo citaba **han
+cambiado al derivarlas**, y se dice cuál y por qué.
+
+| deuda | número de HOY | cómo se derivó |
+|---|---|---|
+| negativos rojos con ficha | **6**, y son **exactamente los 6 fichados, con sus mismas fracciones**: `media-hueco` 6/7 · `media-regenera` 2/5 · `media-colision` 3/6 · `media-siembra` 3/4 · `productos-hueco` 3/5 · `coloca-media` 2/3 | `npm run qa:negativos` — 42/42 baratos evaluados |
+| páginas del original con el ofuscador de Cloudflare | **5 distintas**: **2 clonadas** que sirven el enlace roto + **3 sueltas** aún sin clonar | `grep -rl cdn-cgi/l/email-protection corpus/` (7 ficheros, 2 duplicados en `transformado/`) cruzado con los `rotos` de `enlaces` |
+| destinos pendientes de localizar | **105** = **54** con origen en `src/` + **51** en cuerpo rico | `enlaces-2026-08-20.json`, `fallos` deduplicados por `href` |
+| elementos de cuerpo sin sonda de dos lados | **66** (28 HOME/PRODUCTO + 38 FAQ) | cifra **histórica** de la 84.ª, atada a aquel cambio de letra; no re-derivable con una sonda de hoy |
+| `footer-legal` sin mecanismo | **+1.00 @1440 · +1.89 / +1.88 @390** | `pie-cmp-{1440,390}-2026-08-20-2.json`, campo `reparto` |
+| `footer-links` sin mecanismo | **0 @1440 · +0.21 / +0.18 @390** | ídem |
+| `kb-cmp` fuera de la matriz de cobertura | **6** congeladas | `ls medidas/kb-cmp*.json` |
+| el `mb` de los iconos del pie a 390 | **0 en A · 30 en B y C** — no es 1.5 % de 335.39 (5.03) ni de 312 (4.68) | `pie-legal.json` §`ejes.2-mbDeLosHermanos` |
+| el override del icono, TEXTO sin leer | **1 hoja** (`et-cache/archive/et-divi-dynamic-tb-140-tb-342.css`), 0 de 505 capturadas | `pie-legal.json` §`canalCss` |
+| mapeo sonda → eje de `cobertura.mjs` | **semántico, NO derivable** | — |
+
+### Las dos que cambiaron al derivarlas, y por qué importa
+
+**1 · El `footer-legal` no vale `+1.59`, vale `+1.89` a 390.** El `+1.59` es la
+cifra que midió la 85.ª, y **la diferencia es exactamente +0.30**: el
+§F3-LH-PIE-390-SE-ALEJA-030 que entró con el arreglo de la letra de la 84.ª.
+O sea que citar `+1.59` hoy no es sólo un número viejo — es un número **de antes
+de un cambio conocido**, y suma dos deudas en una.
+
+**2 · El ofuscador de Cloudflare no está en «3 páginas más», sino en 5
+distintas, repartidas en dos estados que no se pueden sumar.** Las **2 clonadas**
+(`/estamos-listos-para-ayudarle` · `/fourth-session-…`) sirven hoy un enlace
+roto y las caza `enlaces`; las **3 sueltas** (`aviso-legal` ·
+`politica-de-privacidad-y-de-proteccion-de-datos` ·
+`sistema-interno-de-informacion`) **todavía no se han clonado**, así que ninguna
+sonda las ve. Son deudas de tipo distinto: la primera es un defecto servido, la
+segunda un trabajo pendiente.
+
+> **Y la lección de método, que ya está escrita y se volvió a cobrar:** el `7`
+> del `grep -rl` **no es el cardinal de páginas** — 2 de los 7 ficheros son la
+> copia en `transformado/`. §*un cardinal es un contenedor y absorbe la
+> membresía*: lo que discrimina es nombrar los elementos, no contarlos.
+
+
+---
+
 ## 🔒 VEREDICTO DEL PRE-REGISTRO DE LA 87.ª — 5 cumplidas, 1 a medias, 2 FALSADAS, 2 no ejercitadas (2026-08-20)
 
 El pre-registro está en `docs/research/PRE-REGISTRO-T87.md` y **se conserva tal
