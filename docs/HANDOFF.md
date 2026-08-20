@@ -50,11 +50,47 @@
 > campos asignados **después** de `w()`, un `prohibidoEnSalida` que imprimían los
 > dos lados, y un control a la vez laxo y estricto—.
 >
+> **6 · Y EL PASO 3 DESTAPÓ OTRO, QUE NO ERA DEL CLON SINO DEL INSTRUMENTO: EL
+> CONTROL DE `lh-letra` LLEVABA CADUCADO DESDE LA 84.ª.** Su control escribe *el
+> valor de hoy y exige NO-OP*, y ese valor estaba **cableado a `"1.7"`** — que
+> fue el valor de hoy **hasta que esta misma sonda sirvió para cambiarlo a
+> `1.7em`**. Desde entonces escribía el de AYER y fallaba en **374 de 374**.
+>
+> **La 84.ª ya salía en ROJO y nadie lo vio**, y se comprueba en disco: sus
+> congeladas posteriores al arreglo traen `fallosControl: 374` a los dos anchos.
+> El acta citó *«0 movidos y 374 intactas»* —cierto del censo— mientras el
+> contrato decía **«NO SE PUDO EVALUAR · 0 de 374»**. El `process.exit(1)` del
+> control va **antes** del `ev.ok()`, así que los dos canales eran correctos y
+> **sólo se leyó uno**. Arreglado derivando el valor de `globals.css`: control
+> **NO-OP en 374 · 0 movidos · EXIT 0** a los dos anchos. Regla nueva en
+> `CLAUDE.md` §sondas **5ter**.
+>
+> **7 · EL ENCARGO MEZCLABA DOS UNIDADES, y se deriva del propio comparador:**
+>
+> | | total | ausentes | comparadas |
+> |---|---|---|---|
+> | **FORMAS** | **9** | **3** | **6** |
+> | **PÁGINAS** | **82** | **13** | **69** |
+>
+> El «13» que el encargo llamaba formas son **páginas**; el «10» no cuadra con
+> ninguna de las dos. Y el «69 formas» de la 84.ª son **69 páginas** — lo dice
+> la propia salida de `lh-cubos`, o sea que **el instrumento también mezcla**.
+>
+> **8 · CERO REGRESIÓN, con los números al lado:** `lh-cmp-todas` **5423 @1440**
+> y **5401 @390**, idénticos a la 84.ª; `lh-cubos` con **cubo 1 DERIVA 0 y
+> CREA 0** —el marcador no creó ni un par—; `clon-base` **374 · 0 regresiones**
+> a los dos anchos; `qa:enlaces` **374/374 · 105 · 2**, igual que la 83.ª; y los
+> **mismos 6** negativos rojos con los mismos números.
+>
 > ⚠ **Lo que queda abierto, con su número:** la causa del **+1.59** pide
 > descomponer `footer-legal` **un nivel más abajo**; `L2` y `L4` siguen
 > **ausentes del clon** (3 de 9 formas), así que la fila peor desviada de la
 > tabla **no se comparó**; y estas rutas **no tienen campaña de ruido**, así que
 > el +0.21 y el +1.00 son **SIN PROBAR**, no «limpios».
+>
+> **Deudas heredadas que siguen abiertas, sin tocar:** 6 negativos rojos · 3
+> páginas con el ofuscador de Cloudflare · 54 destinos en `src/` y 51 en cuerpo
+> rico · 66 elementos de cuerpo sin sonda de dos lados.
 
 ---
 
