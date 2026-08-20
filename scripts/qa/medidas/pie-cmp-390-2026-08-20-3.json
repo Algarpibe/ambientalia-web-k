@@ -1,0 +1,1092 @@
+{
+  "meta": {
+    "fecha": "2026-08-20",
+    "width": 390,
+    "que": "descomposición del PIE por sección, de dos lados",
+    "ladoOriginal": "kunakair.com VIVO (no el espejo: el espejo no trae el clon)",
+    "ladoClon": "http://127.0.0.1:52398",
+    "unidad": "la SECCIÓN de pie (rol × forma), no el alto del pie",
+    "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio»",
+    "noMide": [
+      "L2-* NO está en el clon: 2 forma(s) ausente(s) de 9 — la peor desviada del espejo entre ellas",
+      "el MECANISMO por el que el original sirve cuatro pies distintos: se mide el reparto, no la causa"
+    ]
+  },
+  "formas": {
+    "L1-blog": {
+      "orig": {
+        "pie": {
+          "w": 390,
+          "h": 1761.17,
+          "y": 5836.16,
+          "x": 0
+        },
+        "marca": "footer.et-l.et-l--footer",
+        "via": "et_pb_section",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.42,
+              "y": 5836.16,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 283.75,
+              "y": 7273.58,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 7557.33,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "clon": {
+        "pie": {
+          "w": 390,
+          "h": 1763.27,
+          "y": 5588.83,
+          "x": 0
+        },
+        "marca": "footer.et-l--footer.bg-white",
+        "via": "data-pie",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.63,
+              "y": 5588.83,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 285.64,
+              "y": 7026.45,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 7312.09,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "rutaOrig": "https://kunakair.com/es/blog/",
+      "rutaClon": "/blog"
+    },
+    "L1-etiqueta": {
+      "orig": {
+        "pie": {
+          "w": 390,
+          "h": 1761.17,
+          "y": 5966.23,
+          "x": 0
+        },
+        "marca": "footer.et-l.et-l--footer",
+        "via": "et_pb_section",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.42,
+              "y": 5966.23,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 283.75,
+              "y": 7403.66,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 7687.41,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "clon": {
+        "pie": {
+          "w": 390,
+          "h": 1763.27,
+          "y": 5984.3,
+          "x": 0
+        },
+        "marca": "footer.et-l--footer.bg-white",
+        "via": "data-pie",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.63,
+              "y": 5984.3,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 285.64,
+              "y": 7421.92,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 7707.56,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "rutaOrig": "https://kunakair.com/es/etiqueta/calidad-del-aire/",
+      "rutaClon": "/etiqueta/calidad-del-aire"
+    },
+    "L1-resources-hijo": {
+      "orig": {
+        "pie": {
+          "w": 390,
+          "h": 1761.17,
+          "y": 2574.72,
+          "x": 0
+        },
+        "marca": "footer.et-l.et-l--footer",
+        "via": "et_pb_section",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.42,
+              "y": 2574.72,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 283.75,
+              "y": 4012.14,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 4295.89,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "clon": {
+        "pie": {
+          "w": 390,
+          "h": 1763.27,
+          "y": 2545.69,
+          "x": 0
+        },
+        "marca": "footer.et-l--footer.bg-white",
+        "via": "data-pie",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.63,
+              "y": 2545.69,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 285.64,
+              "y": 3983.31,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 4268.95,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "rutaOrig": "https://kunakair.com/es/recursos/articulos/contaminacion-en-la-construccion/",
+      "rutaClon": "/recursos/articulos/contaminacion-en-la-construccion"
+    },
+    "L1-resources-padre": {
+      "orig": {
+        "pie": {
+          "w": 390,
+          "h": 1761.17,
+          "y": 7103.69,
+          "x": 0
+        },
+        "marca": "footer.et-l.et-l--footer",
+        "via": "et_pb_section",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.42,
+              "y": 7103.69,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 283.75,
+              "y": 8541.11,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 8824.86,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "clon": {
+        "pie": {
+          "w": 390,
+          "h": 1763.27,
+          "y": 7101.66,
+          "x": 0
+        },
+        "marca": "footer.et-l--footer.bg-white",
+        "via": "data-pie",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.63,
+              "y": 7101.66,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 285.64,
+              "y": 8539.28,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 8824.92,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "rutaOrig": "https://kunakair.com/es/recursos/articulos/",
+      "rutaClon": "/recursos/articulos"
+    },
+    "L2-glosario": {
+      "orig": {
+        "pie": {
+          "w": 390,
+          "h": 2374.8,
+          "y": 2637.11,
+          "x": 0
+        },
+        "marca": "footer.et-l.et-l--footer",
+        "via": "et_pb_section",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1754.05,
+              "y": 2637.11,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "50px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 480.75,
+              "y": 4391.16,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "50px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 140,
+              "y": 4871.91,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "50px"
+          }
+        ]
+      },
+      "clon": {
+        "pie": {
+          "w": 390,
+          "h": 2376.88,
+          "y": 2474.31,
+          "x": 0
+        },
+        "marca": "footer.et-l--footer.bg-white",
+        "via": "data-pie",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1754.25,
+              "y": 2474.31,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "50px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 482.63,
+              "y": 4228.56,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "50px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 140,
+              "y": 4711.19,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "50px"
+          }
+        ]
+      },
+      "rutaOrig": "https://kunakair.com/es/glosario/",
+      "rutaClon": "/glosario"
+    },
+    "L3-sci": {
+      "orig": {
+        "pie": {
+          "w": 390,
+          "h": 2052.91,
+          "y": 10015.97,
+          "x": 0
+        },
+        "marca": "footer.et-l.et-l--footer",
+        "via": "et_pb_section",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1699.16,
+              "y": 10015.97,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 313.75,
+              "y": 11715.13,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 12028.88,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "clon": {
+        "pie": {
+          "w": 390,
+          "h": 2054.97,
+          "y": 10015.97,
+          "x": 0
+        },
+        "marca": "footer.et-l--footer.bg-white",
+        "via": "data-pie",
+        "nBloques": 3,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1699.34,
+              "y": 10015.97,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 315.63,
+              "y": 11715.31,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 12030.94,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "rutaOrig": "https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/",
+      "rutaClon": "/scientific-category/articulos-cientificos-y-estudios"
+    },
+    "L5-casos": {
+      "orig": {
+        "pie": {
+          "w": 390,
+          "h": 2026.23,
+          "y": 25580.83,
+          "x": 0
+        },
+        "marca": "footer.et-l.et-l--footer",
+        "via": "et_pb_section",
+        "nBloques": 4,
+        "sinMarcar": 0,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "cta",
+            "rect": {
+              "w": 390,
+              "h": 265.06,
+              "y": 25580.83,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.42,
+              "y": 25845.89,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 283.75,
+              "y": 27283.31,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 3,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 27567.06,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "clon": {
+        "pie": {
+          "w": 390,
+          "h": 2028.33,
+          "y": 25585.83,
+          "x": 0
+        },
+        "marca": "footer.et-l--footer.bg-white",
+        "via": "data-pie",
+        "nBloques": 4,
+        "sinMarcar": 1,
+        "secciones": [
+          {
+            "i": 0,
+            "rol": "links",
+            "rect": {
+              "w": 390,
+              "h": 1437.63,
+              "y": 25850.89,
+              "x": 0
+            },
+            "padTop": "50px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 1,
+            "rol": "legal",
+            "rect": {
+              "w": 390,
+              "h": 285.64,
+              "y": 27288.52,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          },
+          {
+            "i": 2,
+            "rol": "background",
+            "rect": {
+              "w": 390,
+              "h": 40,
+              "y": 27574.16,
+              "x": 0
+            },
+            "padTop": "0px",
+            "padBottom": "0px"
+          }
+        ]
+      },
+      "rutaOrig": "https://kunakair.com/es/casos-de-exito/",
+      "rutaClon": "/casos-de-exito"
+    }
+  },
+  "ausentes": [
+    {
+      "forma": "L2-faqs",
+      "clon": "/preguntas-frecuentes",
+      "pieEspejo": 2374.8
+    },
+    {
+      "forma": "L4-listado-embebido",
+      "clon": "/recursos",
+      "pieEspejo": 1761.17
+    }
+  ],
+  "reparto": [
+    {
+      "forma": "L1-blog",
+      "rol": "links",
+      "orig": 1437.42,
+      "clon": 1437.63,
+      "delta": 0.21
+    },
+    {
+      "forma": "L1-blog",
+      "rol": "legal",
+      "orig": 283.75,
+      "clon": 285.64,
+      "delta": 1.89
+    },
+    {
+      "forma": "L1-blog",
+      "rol": "background",
+      "orig": 40,
+      "clon": 40,
+      "delta": 0
+    },
+    {
+      "forma": "L1-blog",
+      "rol": "· TOTAL",
+      "orig": 1761.17,
+      "clon": 1763.27,
+      "delta": 2.1
+    },
+    {
+      "forma": "L1-etiqueta",
+      "rol": "links",
+      "orig": 1437.42,
+      "clon": 1437.63,
+      "delta": 0.21
+    },
+    {
+      "forma": "L1-etiqueta",
+      "rol": "legal",
+      "orig": 283.75,
+      "clon": 285.64,
+      "delta": 1.89
+    },
+    {
+      "forma": "L1-etiqueta",
+      "rol": "background",
+      "orig": 40,
+      "clon": 40,
+      "delta": 0
+    },
+    {
+      "forma": "L1-etiqueta",
+      "rol": "· TOTAL",
+      "orig": 1761.17,
+      "clon": 1763.27,
+      "delta": 2.1
+    },
+    {
+      "forma": "L1-resources-hijo",
+      "rol": "links",
+      "orig": 1437.42,
+      "clon": 1437.63,
+      "delta": 0.21
+    },
+    {
+      "forma": "L1-resources-hijo",
+      "rol": "legal",
+      "orig": 283.75,
+      "clon": 285.64,
+      "delta": 1.89
+    },
+    {
+      "forma": "L1-resources-hijo",
+      "rol": "background",
+      "orig": 40,
+      "clon": 40,
+      "delta": 0
+    },
+    {
+      "forma": "L1-resources-hijo",
+      "rol": "· TOTAL",
+      "orig": 1761.17,
+      "clon": 1763.27,
+      "delta": 2.1
+    },
+    {
+      "forma": "L1-resources-padre",
+      "rol": "links",
+      "orig": 1437.42,
+      "clon": 1437.63,
+      "delta": 0.21
+    },
+    {
+      "forma": "L1-resources-padre",
+      "rol": "legal",
+      "orig": 283.75,
+      "clon": 285.64,
+      "delta": 1.89
+    },
+    {
+      "forma": "L1-resources-padre",
+      "rol": "background",
+      "orig": 40,
+      "clon": 40,
+      "delta": 0
+    },
+    {
+      "forma": "L1-resources-padre",
+      "rol": "· TOTAL",
+      "orig": 1761.17,
+      "clon": 1763.27,
+      "delta": 2.1
+    },
+    {
+      "forma": "L2-glosario",
+      "rol": "links",
+      "orig": 1754.05,
+      "clon": 1754.25,
+      "delta": 0.2
+    },
+    {
+      "forma": "L2-glosario",
+      "rol": "legal",
+      "orig": 480.75,
+      "clon": 482.63,
+      "delta": 1.88
+    },
+    {
+      "forma": "L2-glosario",
+      "rol": "background",
+      "orig": 140,
+      "clon": 140,
+      "delta": 0
+    },
+    {
+      "forma": "L2-glosario",
+      "rol": "· TOTAL",
+      "orig": 2374.8,
+      "clon": 2376.88,
+      "delta": 2.08
+    },
+    {
+      "forma": "L3-sci",
+      "rol": "links",
+      "orig": 1699.16,
+      "clon": 1699.34,
+      "delta": 0.18
+    },
+    {
+      "forma": "L3-sci",
+      "rol": "legal",
+      "orig": 313.75,
+      "clon": 315.63,
+      "delta": 1.88
+    },
+    {
+      "forma": "L3-sci",
+      "rol": "background",
+      "orig": 40,
+      "clon": 40,
+      "delta": 0
+    },
+    {
+      "forma": "L3-sci",
+      "rol": "· TOTAL",
+      "orig": 2052.91,
+      "clon": 2054.97,
+      "delta": 2.06
+    },
+    {
+      "forma": "L5-casos",
+      "rol": "cta",
+      "orig": 265.06,
+      "clon": null,
+      "delta": null
+    },
+    {
+      "forma": "L5-casos",
+      "rol": "links",
+      "orig": 1437.42,
+      "clon": 1437.63,
+      "delta": 0.21
+    },
+    {
+      "forma": "L5-casos",
+      "rol": "legal",
+      "orig": 283.75,
+      "clon": 285.64,
+      "delta": 1.89
+    },
+    {
+      "forma": "L5-casos",
+      "rol": "background",
+      "orig": 40,
+      "clon": 40,
+      "delta": 0
+    },
+    {
+      "forma": "L5-casos",
+      "rol": "· TOTAL",
+      "orig": 2026.23,
+      "clon": 2028.33,
+      "delta": 2.1
+    }
+  ],
+  "control": [
+    {
+      "forma": "L1-blog",
+      "lado": "orig",
+      "suma": 1761.17,
+      "pie": 1761.17,
+      "resto": 0
+    },
+    {
+      "forma": "L1-blog",
+      "lado": "clon",
+      "suma": 1763.27,
+      "pie": 1763.27,
+      "resto": 0
+    },
+    {
+      "forma": "L1-etiqueta",
+      "lado": "orig",
+      "suma": 1761.17,
+      "pie": 1761.17,
+      "resto": 0
+    },
+    {
+      "forma": "L1-etiqueta",
+      "lado": "clon",
+      "suma": 1763.27,
+      "pie": 1763.27,
+      "resto": 0
+    },
+    {
+      "forma": "L1-resources-hijo",
+      "lado": "orig",
+      "suma": 1761.17,
+      "pie": 1761.17,
+      "resto": 0
+    },
+    {
+      "forma": "L1-resources-hijo",
+      "lado": "clon",
+      "suma": 1763.27,
+      "pie": 1763.27,
+      "resto": 0
+    },
+    {
+      "forma": "L1-resources-padre",
+      "lado": "orig",
+      "suma": 1761.17,
+      "pie": 1761.17,
+      "resto": 0
+    },
+    {
+      "forma": "L1-resources-padre",
+      "lado": "clon",
+      "suma": 1763.27,
+      "pie": 1763.27,
+      "resto": 0
+    },
+    {
+      "forma": "L2-glosario",
+      "lado": "orig",
+      "suma": 2374.8,
+      "pie": 2374.8,
+      "resto": 0
+    },
+    {
+      "forma": "L2-glosario",
+      "lado": "clon",
+      "suma": 2376.88,
+      "pie": 2376.88,
+      "resto": 0
+    },
+    {
+      "forma": "L3-sci",
+      "lado": "orig",
+      "suma": 2052.91,
+      "pie": 2052.91,
+      "resto": 0
+    },
+    {
+      "forma": "L3-sci",
+      "lado": "clon",
+      "suma": 2054.97,
+      "pie": 2054.97,
+      "resto": 0
+    },
+    {
+      "forma": "L5-casos",
+      "lado": "orig",
+      "suma": 2026.23,
+      "pie": 2026.23,
+      "resto": 0
+    },
+    {
+      "forma": "L5-casos",
+      "lado": "clon",
+      "suma": 1763.27,
+      "pie": 2028.33,
+      "resto": 265.06,
+      "atribuido": {
+        "bloquesSinMarcar": 1,
+        "roles": [
+          "cta"
+        ],
+        "origSuma": 265.06,
+        "delta": 0
+      }
+    }
+  ],
+  "viasDelClon": [
+    "data-pie"
+  ],
+  "sinMarcar": [
+    {
+      "forma": "L5-casos",
+      "sinMarcar": 1,
+      "nBloques": 4
+    }
+  ]
+}

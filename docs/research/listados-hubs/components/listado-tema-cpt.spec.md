@@ -131,9 +131,10 @@ forma**. Es la única de las cinco de la que se puede decir eso.
 
 | # | qué | por qué importa |
 |---|---|---|
-| **SP-C1** | el **clon**: no existe, las dos rutas dan 404 | esta spec es de un lado |
-| **SP-C2** | **la mitad de `P-LH-C8`** — que el ancla sea el mismo elemento en los dos lados | sin ella la base de `L2` está verificada a medias |
-| **SP-C3** | la **tipografía de la tarjeta** (título del término, su enlace) | `lh-spec` congeló la caja y el ritmo, no el tipo de sus hijos |
+| ~~**SP-C1**~~ | ✅ **CONSTRUIDA 2026-08-20 (88.ª tanda), la mitad `glosario`.** `/glosario` + `/glosario/page/2..8` = **8 rutas**, las 8 con 200. Verificado contra la **salida servida**: 37 tarjetas por lado, **diferencia simétrica 0** por los dos —membresía, no cardinal (§*un cardinal absorbe la membresía*)—, **orden 0/37 posiciones distintas** y **extractos 0/37 distintos**. Pie: **Δ0 en las TRES secciones @1440**, la única de las 7 formas comparadas que lo consigue. ⚠ **`preguntas-frecuentes` sigue sin construir**: `pie-cmp` pasa de 3 ausentes a **2 de 9** |
+| **SP-C2** | **la mitad de `P-LH-C8`** — que el ancla sea el mismo elemento en los dos lados | ✅ **desbloqueada**: el clon ya emite las rutas, así que la comprobación es posible. **Todavía no corrida** |
+| ~~**SP-C3**~~ | ✅ **la INTERLÍNEA, derivada por composición y sin holgura.** `30.59` sale de cuatro casos: `138.78 − 47 = 91.78 = 3 × 30.59` @1440 y `359.34 − 84`, `328.75 − 84`, `365.75 − 121` = **9 · 8 · 8** renglones @390. El **título** ya estaba en el espejo y es idéntico a los dos anchos: `37 / 37 / 300 / −0.5px / #333` con `pb 10`. ⚠ **El `font-size` del extracto sigue SIN MEDIR** —se pone el 18 del cuerpo del sitio, que es lo que produce esa interlínea— y quien lo adjudica es `lh-cmp`, no la deducción |
+| **SP-C12** | **el RÓTULO de la tarjeta es `tituloMiga` — 37/37 contra la miga y 0/37 contra el `h1`** | derivado del dominio entero al construir. Y destapó **§F3-LH-ROTULO-SIN-MARCADO**: el extractor tiró el `<sub>` del rótulo, así que el clon sirve `Oxígeno (O 2 )` donde el original sirve `Oxígeno (O<sub>2</sub>)`. **9 de 37** en `tituloMiga` (con espacio) y **6 de 37** en `titulo` (sin espacio), más 1 de 152 en blog y 0 de 23 en documentos. **No lo introduce `L2`** — lleva servido en la miga de `/[slug]` desde la transcripción; `L2` sólo lo pinta en un segundo sitio |
 | **SP-C4** | **anchos intermedios** | contrato de RANGO, no de fidelidad (§CONTRATO) |
 | **SP-C5** | **el ruido** de estas rutas | sin campaña, un residuo pequeño es SIN PROBAR |
 | **SP-C6** | la **varianza con n = 2** | dos instancias no separan «plantilla» de «coincidencia»; lo que sólo aparezca en una está SIN PROBAR |

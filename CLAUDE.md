@@ -947,6 +947,20 @@ siempre: **se compara en la unidad que se afirma**. Si la afirmación es «son l
 mismos», la unidad es el ELEMENTO — y el recuento va al lado como resumen, nunca
 como prueba.
 
+**Y el cardinal tiene una hermana que muerde ANTES: LA DEFINICIÓN DE «CUÁNTOS
+HAY» ES ELLA MISMA UN CONTENEDOR.**
+
+> **Un censo de NODOS y un censo de LO QUE SE VE son dos medidas distintas, y la
+> primera se lee como la segunda en cuanto el CSS puede esconder.** Un elemento
+> con `display:none`, con alto 0 o recortado por su padre **está en el DOM y no
+> está en la página**: los dos recuentos son ciertos y sólo uno contesta la
+> pregunta que se estaba haciendo.
+
+Así que **un recuento de elementos se publica con su CRITERIO** —*«12 en el DOM,
+11 con caja»*— o invita a construir el número equivocado. Es §*la causa común*
+con el contenedor puesto **en la definición**, no en el dato: el nivel de arriba
+aquí no es una fila ni un total, es *qué cuenta como «uno»*.
+
 **Y hay un contenedor hermano que no contiene elementos sino CAUSAS: EL RECUENTO
 DE PARES TOCADOS POR UNA DERIVA DEL OBJETIVO.**
 
