@@ -513,17 +513,25 @@ export function Footer({
             buttonMtClassName="mt-[20px]"
           />
         ) : null}
+        {/* ⚠ `data-pie` es MARCADOR DE SONDA, NO ESTILO — el precedente es
+            `data-fila` (§*que el objeto medido diga qué es*). El original
+            nombra sus tres secciones con `footer-links` · `footer-legal` ·
+            `footer-background`; el clon no tenía equivalente, así que
+            `pie-cmp` sólo podía emparejarlas **por índice**, que es un
+            heurístico posicional y se rompe en cuanto `L5-casos` mete su CTA
+            delante. Antes/después a umbral cero en `clon-base`: no mueve un
+            píxel. */}
         {/* Sección links: pt 4% desktop (57.5938 a 1440) / 50px móvil. El `pb`
             solo lo llevan catálogo y producto — `padSeccion`. */}
-        <div className={p.padSeccion ? padSec : "pt-[50px] sm:pt-[4%]"}>{linksGrid}</div>
+        <div data-pie="links" className={p.padSeccion ? padSec : "pt-[50px] sm:pt-[4%]"}>{linksGrid}</div>
         {/* Sección legal: sin padding propio salvo en `estrechaPad` (la fila
             lleva su 1% en todos los casos). */}
-        <div className={padSec}>{legalRow}</div>
+        <div data-pie="legal" className={padSec}>{legalRow}</div>
         {/* `footer-background` — franja foto del puerto. QA 2026-07-26:
             41px desktop / 40px móvil, cover 50% 0%. La franja mide siempre lo
             mismo; lo que crece en catálogo/producto es el `padding` de SU
             sección: 41 → 156.19 = 41 + 57.5938×2, al céntimo. */}
-        <div className={padSec}>
+        <div data-pie="background" className={padSec}>
           <div
             aria-hidden
             className="h-[40px] w-full bg-cover lg:h-[41px]"

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "fecha": "2026-08-20",
+    "width": 390,
+    "que": "descomposición del PIE por sección, de dos lados",
+    "ladoOriginal": "kunakair.com VIVO (no el espejo: el espejo no trae el clon)",
+    "ladoClon": "http://127.0.0.1:63894",
+    "unidad": "la SECCIÓN de pie (rol × forma), no el alto del pie",
+    "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio»",
+    "noMide": [
+      "L2-* NO está en el clon: 3 forma(s) ausente(s) de 9 — la peor desviada del espejo entre ellas",
+      "el MECANISMO por el que el original sirve cuatro pies distintos: se mide el reparto, no la causa"
+    ]
+  },
+  "formas": {
+    "L1-blog": {
+      "error": "censo.evaluate is not a function"
+    },
+    "L1-etiqueta": {
+      "error": "censo.evaluate is not a function"
+    },
+    "L1-resources-hijo": {
+      "error": "censo.evaluate is not a function"
+    },
+    "L1-resources-padre": {
+      "error": "censo.evaluate is not a function"
+    },
+    "L3-sci": {
+      "error": "censo.evaluate is not a function"
+    },
+    "L5-casos": {
+      "error": "censo.evaluate is not a function"
+    }
+  },
+  "ausentes": [
+    {
+      "forma": "L2-faqs",
+      "clon": "/preguntas-frecuentes",
+      "pieEspejo": 2374.8
+    },
+    {
+      "forma": "L2-glosario",
+      "clon": "/glosario",
+      "pieEspejo": 2374.8
+    },
+    {
+      "forma": "L4-listado-embebido",
+      "clon": "/recursos",
+      "pieEspejo": 1761.17
+    }
+  ],
+  "reparto": [],
+  "control": []
+}
