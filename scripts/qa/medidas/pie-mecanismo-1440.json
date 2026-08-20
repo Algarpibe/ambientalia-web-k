@@ -1,0 +1,1195 @@
+{
+  "meta": {
+    "fecha": "2026-08-20",
+    "width": 1440,
+    "que": "el mecanismo de las 3 pieles de pie, un nivel por debajo de la sección",
+    "lado": "SÓLO el original vivo (kunakair.com). El clon lo compara pie-cmp",
+    "unidad": "la FILA y la COLUMNA dentro de cada sección de pie",
+    "noMide": [
+      "el clon: esta sonda es de un lado",
+      "la CTA: es ortogonal y pie-cmp ya la mide a Δ0",
+      "el ruido de estas rutas: sin campaña, un residuo pequeño es SIN PROBAR"
+    ]
+  },
+  "pieles": {
+    "A": {
+      "ruta": "https://kunakair.com/es/blog/",
+      "n": 64,
+      "formas": [
+        "L1-blog",
+        "L5-casos",
+        "L1-etiqueta",
+        "L4-listado-embebido",
+        "L1-resources-padre",
+        "L1-resources-hijo"
+      ],
+      "partes": {
+        "links": 430.78,
+        "legal": 121.97,
+        "background": 41
+      },
+      "secciones": [
+        {
+          "rol": "links",
+          "rect": {
+            "w": 1440,
+            "h": 430.78,
+            "y": 2577.98,
+            "x": 0
+          },
+          "padTop": "57.5938px",
+          "padBottom": "0px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1238.39,
+                "h": 373.19,
+                "y": 2635.58,
+                "x": 100.8
+              },
+              "padTop": "28.7969px",
+              "padBottom": "28.7969px",
+              "maxWidth": "1380px",
+              "nCols": 5,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 247.67,
+                    "h": 232.59,
+                    "y": 2665.38,
+                    "x": 100.8
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 247.67,
+                        "h": 232.59,
+                        "y": 2665.38,
+                        "x": 100.8
+                      },
+                      "mb": "0px",
+                      "renglones": 8,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 247.67,
+                    "h": 284.59,
+                    "y": 2665.38,
+                    "x": 348.47
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 247.67,
+                        "h": 284.59,
+                        "y": 2665.38,
+                        "x": 348.47
+                      },
+                      "mb": "0px",
+                      "renglones": 10,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 247.67,
+                    "h": 313.59,
+                    "y": 2665.38,
+                    "x": 596.14
+                  },
+                  "nModulos": 4,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 247.67,
+                        "h": 206.59,
+                        "y": 2665.38,
+                        "x": 596.14
+                      },
+                      "mb": "0px",
+                      "renglones": 7,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 247.67,
+                        "h": 0,
+                        "y": 2871.97,
+                        "x": 596.14
+                      },
+                      "mb": "16px",
+                      "renglones": null,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 247.67,
+                        "h": 75,
+                        "y": 2887.97,
+                        "x": 596.14
+                      },
+                      "mb": "16px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 247.67,
+                        "h": 0,
+                        "y": 2978.97,
+                        "x": 596.14
+                      },
+                      "mb": "16px",
+                      "renglones": null,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 247.67,
+                    "h": 310.59,
+                    "y": 2665.38,
+                    "x": 843.81
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 247.67,
+                        "h": 310.59,
+                        "y": 2665.38,
+                        "x": 843.81
+                      },
+                      "mb": "0px",
+                      "renglones": 11,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 247.67,
+                    "h": 184.05,
+                    "y": 2665.38,
+                    "x": 1091.48
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 247.67,
+                        "h": 184.05,
+                        "y": 2665.38,
+                        "x": 1091.48
+                      },
+                      "mb": "0px",
+                      "renglones": 2,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rol": "legal",
+          "rect": {
+            "w": 1440,
+            "h": 121.97,
+            "y": 3008.77,
+            "x": 0
+          },
+          "padTop": "0px",
+          "padBottom": "0px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1238.39,
+                "h": 121.97,
+                "y": 3008.77,
+                "x": 100.8
+              },
+              "padTop": "14.3906px",
+              "padBottom": "14.3906px",
+              "maxWidth": "1380px",
+              "nCols": 3,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 728.17,
+                    "h": 93.19,
+                    "y": 3023.16,
+                    "x": 100.8
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 728.17,
+                        "h": 93.19,
+                        "y": 3023.16,
+                        "x": 100.8
+                      },
+                      "mb": "0px",
+                      "renglones": 3,
+                      "fs": "12px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 217.95,
+                    "h": 50.16,
+                    "y": 3023.16,
+                    "x": 866.11
+                  },
+                  "nModulos": 5,
+                  "modulos": [
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 21.88,
+                        "h": 31.59,
+                        "y": 3023.16,
+                        "x": 875.11
+                      },
+                      "mb": "18.5625px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 25,
+                        "h": 31.59,
+                        "y": 3023.16,
+                        "x": 905.98
+                      },
+                      "mb": "18.5625px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 21.88,
+                        "h": 31.59,
+                        "y": 3023.16,
+                        "x": 939.98
+                      },
+                      "mb": "18.5625px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 25,
+                        "h": 31.59,
+                        "y": 3023.16,
+                        "x": 970.86
+                      },
+                      "mb": "18.5625px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 28.13,
+                        "h": 50.16,
+                        "y": 3023.16,
+                        "x": 1004.86
+                      },
+                      "mb": "0px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 217.95,
+                    "h": 30,
+                    "y": 3023.16,
+                    "x": 1121.2
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_menu",
+                      "rect": {
+                        "w": 217.95,
+                        "h": 30,
+                        "y": 3023.16,
+                        "x": 1121.2
+                      },
+                      "mb": "0px",
+                      "renglones": 4,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rol": "background",
+          "rect": {
+            "w": 1440,
+            "h": 41,
+            "y": 3130.73,
+            "x": 0
+          },
+          "padTop": "0px",
+          "padBottom": "0px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1238.39,
+                "h": 41,
+                "y": 3130.73,
+                "x": 100.8
+              },
+              "padTop": "20px",
+              "padBottom": "20px",
+              "maxWidth": "1380px",
+              "nCols": 1,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 1238.39,
+                    "h": 1,
+                    "y": 3150.73,
+                    "x": 100.8
+                  },
+                  "nModulos": 0,
+                  "modulos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "B": {
+      "ruta": "https://kunakair.com/es/glosario/",
+      "n": 12,
+      "formas": [
+        "L2-glosario",
+        "L2-faqs"
+      ],
+      "partes": {
+        "links": 573.72,
+        "legal": 259.83,
+        "background": 156.19
+      },
+      "secciones": [
+        {
+          "rol": "links",
+          "rect": {
+            "w": 1440,
+            "h": 573.72,
+            "y": 1326.09,
+            "x": 0
+          },
+          "padTop": "57.5938px",
+          "padBottom": "57.5938px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1152,
+                "h": 458.53,
+                "y": 1383.69,
+                "x": 144
+              },
+              "padTop": "28.7969px",
+              "padBottom": "28.7969px",
+              "maxWidth": "1380px",
+              "nCols": 5,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 288.16,
+                    "y": 1412.48,
+                    "x": 144
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 288.16,
+                        "y": 1412.48,
+                        "x": 144
+                      },
+                      "mb": "0px",
+                      "renglones": 8,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 363.34,
+                    "y": 1412.48,
+                    "x": 374.39
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 363.34,
+                        "y": 1412.48,
+                        "x": 374.39
+                      },
+                      "mb": "0px",
+                      "renglones": 10,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 357.56,
+                    "y": 1412.48,
+                    "x": 604.78
+                  },
+                  "nModulos": 4,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 250.56,
+                        "y": 1412.48,
+                        "x": 604.78
+                      },
+                      "mb": "0px",
+                      "renglones": 7,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 0,
+                        "y": 1663.05,
+                        "x": 604.78
+                      },
+                      "mb": "16px",
+                      "renglones": null,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 75,
+                        "y": 1679.05,
+                        "x": 604.78
+                      },
+                      "mb": "16px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 0,
+                        "y": 1770.05,
+                        "x": 604.78
+                      },
+                      "mb": "16px",
+                      "renglones": null,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 400.94,
+                    "y": 1412.48,
+                    "x": 835.17
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 400.94,
+                        "y": 1412.48,
+                        "x": 835.17
+                      },
+                      "mb": "0px",
+                      "renglones": 11,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 184.05,
+                    "y": 1412.48,
+                    "x": 1065.56
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 184.05,
+                        "y": 1412.48,
+                        "x": 1065.56
+                      },
+                      "mb": "0px",
+                      "renglones": 2,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rol": "legal",
+          "rect": {
+            "w": 1440,
+            "h": 259.83,
+            "y": 1899.81,
+            "x": 0
+          },
+          "padTop": "57.5938px",
+          "padBottom": "57.5938px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1152,
+                "h": 144.64,
+                "y": 1957.41,
+                "x": 144
+              },
+              "padTop": "14.3906px",
+              "padBottom": "14.3906px",
+              "maxWidth": "1380px",
+              "nCols": 3,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 677.38,
+                    "h": 93.19,
+                    "y": 1971.8,
+                    "x": 144
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 677.38,
+                        "h": 93.19,
+                        "y": 1971.8,
+                        "x": 144
+                      },
+                      "mb": "0px",
+                      "renglones": 3,
+                      "fs": "12px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 202.75,
+                    "h": 115.86,
+                    "y": 1971.8,
+                    "x": 855.92
+                  },
+                  "nModulos": 5,
+                  "modulos": [
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 84,
+                        "h": 98.59,
+                        "y": 1971.8,
+                        "x": 864.92
+                      },
+                      "mb": "17.2656px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 96,
+                        "h": 98.59,
+                        "y": 1971.8,
+                        "x": 957.92
+                      },
+                      "mb": "17.2656px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 84,
+                        "h": 98.59,
+                        "y": 1971.8,
+                        "x": 1062.92
+                      },
+                      "mb": "17.2656px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 96,
+                        "h": 98.59,
+                        "y": 1971.8,
+                        "x": 1155.92
+                      },
+                      "mb": "17.2656px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 108,
+                        "h": 115.86,
+                        "y": 1971.8,
+                        "x": 1260.92
+                      },
+                      "mb": "0px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 202.75,
+                    "h": 30,
+                    "y": 1971.8,
+                    "x": 1093.22
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_menu",
+                      "rect": {
+                        "w": 202.75,
+                        "h": 30,
+                        "y": 1971.8,
+                        "x": 1093.22
+                      },
+                      "mb": "0px",
+                      "renglones": 5,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rol": "background",
+          "rect": {
+            "w": 1440,
+            "h": 156.19,
+            "y": 2159.64,
+            "x": 0
+          },
+          "padTop": "57.5938px",
+          "padBottom": "57.5938px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1152,
+                "h": 41,
+                "y": 2217.23,
+                "x": 144
+              },
+              "padTop": "20px",
+              "padBottom": "20px",
+              "maxWidth": "1380px",
+              "nCols": 1,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 1152,
+                    "h": 1,
+                    "y": 2237.23,
+                    "x": 144
+                  },
+                  "nModulos": 0,
+                  "modulos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "C": {
+      "ruta": "https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/",
+      "n": 6,
+      "formas": [
+        "L3-sci"
+      ],
+      "partes": {
+        "links": 518.13,
+        "legal": 121.97,
+        "background": 41
+      },
+      "secciones": [
+        {
+          "rol": "links",
+          "rect": {
+            "w": 1440,
+            "h": 518.13,
+            "y": 3487.98,
+            "x": 0
+          },
+          "padTop": "57.5938px",
+          "padBottom": "0px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1152,
+                "h": 460.53,
+                "y": 3545.58,
+                "x": 144
+              },
+              "padTop": "28.7969px",
+              "padBottom": "28.7969px",
+              "maxWidth": "1380px",
+              "nCols": 5,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 288.16,
+                    "y": 3575.38,
+                    "x": 144
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 288.16,
+                        "y": 3575.38,
+                        "x": 144
+                      },
+                      "mb": "0px",
+                      "renglones": 8,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 363.34,
+                    "y": 3575.38,
+                    "x": 374.39
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 363.34,
+                        "y": 3575.38,
+                        "x": 374.39
+                      },
+                      "mb": "0px",
+                      "renglones": 10,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 349.86,
+                    "y": 3575.38,
+                    "x": 604.78
+                  },
+                  "nModulos": 4,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 250.56,
+                        "y": 3575.38,
+                        "x": 604.78
+                      },
+                      "mb": "0px",
+                      "renglones": 7,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 0,
+                        "y": 3825.94,
+                        "x": 604.78
+                      },
+                      "mb": "16px",
+                      "renglones": null,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 67.3,
+                        "y": 3841.94,
+                        "x": 604.78
+                      },
+                      "mb": "16px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": "et_pb_button_module_wrapper",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 0,
+                        "y": 3925.23,
+                        "x": 604.78
+                      },
+                      "mb": "16px",
+                      "renglones": null,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 400.94,
+                    "y": 3575.38,
+                    "x": 835.17
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 400.94,
+                        "y": 3575.38,
+                        "x": 835.17
+                      },
+                      "mb": "0px",
+                      "renglones": 11,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 230.39,
+                    "h": 184.05,
+                    "y": 3575.38,
+                    "x": 1065.56
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 230.39,
+                        "h": 184.05,
+                        "y": 3575.38,
+                        "x": 1065.56
+                      },
+                      "mb": "0px",
+                      "renglones": 2,
+                      "fs": "14px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rol": "legal",
+          "rect": {
+            "w": 1440,
+            "h": 121.97,
+            "y": 4006.11,
+            "x": 0
+          },
+          "padTop": "0px",
+          "padBottom": "0px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1152,
+                "h": 121.97,
+                "y": 4006.11,
+                "x": 144
+              },
+              "padTop": "14.3906px",
+              "padBottom": "14.3906px",
+              "maxWidth": "1380px",
+              "nCols": 3,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 677.38,
+                    "h": 93.19,
+                    "y": 4020.5,
+                    "x": 144
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_widget_area",
+                      "rect": {
+                        "w": 677.38,
+                        "h": 93.19,
+                        "y": 4020.5,
+                        "x": 144
+                      },
+                      "mb": "0px",
+                      "renglones": 3,
+                      "fs": "12px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 202.75,
+                    "h": 48.86,
+                    "y": 4020.5,
+                    "x": 855.92
+                  },
+                  "nModulos": 5,
+                  "modulos": [
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 21.88,
+                        "h": 31.59,
+                        "y": 4020.5,
+                        "x": 864.92
+                      },
+                      "mb": "17.2656px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 25,
+                        "h": 31.59,
+                        "y": 4020.5,
+                        "x": 895.8
+                      },
+                      "mb": "17.2656px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 21.88,
+                        "h": 31.59,
+                        "y": 4020.5,
+                        "x": 929.8
+                      },
+                      "mb": "17.2656px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 25,
+                        "h": 31.59,
+                        "y": 4020.5,
+                        "x": 960.67
+                      },
+                      "mb": "17.2656px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    },
+                    {
+                      "clase": null,
+                      "rect": {
+                        "w": 28.13,
+                        "h": 48.86,
+                        "y": 4020.5,
+                        "x": 994.67
+                      },
+                      "mb": "0px",
+                      "renglones": 2,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                },
+                {
+                  "rect": {
+                    "w": 202.75,
+                    "h": 30,
+                    "y": 4020.5,
+                    "x": 1093.22
+                  },
+                  "nModulos": 1,
+                  "modulos": [
+                    {
+                      "clase": "et_pb_menu",
+                      "rect": {
+                        "w": 202.75,
+                        "h": 30,
+                        "y": 4020.5,
+                        "x": 1093.22
+                      },
+                      "mb": "0px",
+                      "renglones": 5,
+                      "fs": "18px",
+                      "lh": "30.6px"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "rol": "background",
+          "rect": {
+            "w": 1440,
+            "h": 41,
+            "y": 4128.08,
+            "x": 0
+          },
+          "padTop": "0px",
+          "padBottom": "0px",
+          "nFilas": 1,
+          "filas": [
+            {
+              "rect": {
+                "w": 1152,
+                "h": 41,
+                "y": 4128.08,
+                "x": 144
+              },
+              "padTop": "20px",
+              "padBottom": "20px",
+              "maxWidth": "1380px",
+              "nCols": 1,
+              "cols": [
+                {
+                  "rect": {
+                    "w": 1152,
+                    "h": 1,
+                    "y": 4148.08,
+                    "x": 144
+                  },
+                  "nModulos": 0,
+                  "modulos": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

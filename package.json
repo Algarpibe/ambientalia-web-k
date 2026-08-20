@@ -254,7 +254,9 @@
     "qa:atributos-censo": "node scripts/qa/atributos-censo.mjs",
     "qa:atributos-censo-neg": "node scripts/qa/atributos-censo.neg.mjs",
     "qa:pie-familias": "node scripts/qa/pie-familias.mjs",
-    "qa:pie-familias-neg": "node scripts/qa/pie-familias.neg.mjs"
+    "qa:pie-familias-neg": "node scripts/qa/pie-familias.neg.mjs",
+    "qa:pie-mecanismo": "node scripts/qa/pie-mecanismo.mjs",
+    "qa:pie-mecanismo-390": "node scripts/qa/pie-mecanismo.mjs 390"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"
