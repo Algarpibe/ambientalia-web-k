@@ -77,6 +77,13 @@ export type TipoPagina =
   | "software"
   | "catalogo"
   | "producto"
+  /**
+   * Archivo de taxonomía del tema (`L3-sci`) — **piel C**: fila al 80 % y sin
+   * `padding` de sección. Es un tipo propio y no un alias de `software`
+   * porque lo que comparten es la FILA, no la presentación: `software` lleva
+   * `mt-[42px]` antes del pie y estas formas tienen hueco **cero**.
+   */
+  | "listadoTema"
   | "home";
 
 type Presentacion = {
@@ -182,7 +189,7 @@ type Presentacion = {
 const ANCHA_FILA = "w-[86%] max-w-[1380px]";
 const ESTRECHA_FILA = "w-[80%] max-w-[1380px]";
 
-const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> = {
+const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaSinMargen" | "estrechaPad", Presentacion> = {
   ancha: {
     fila: ANCHA_FILA,
     padSeccion: false,
@@ -211,6 +218,45 @@ const PRESENTACION: Record<"ancha" | "estrecha" | "estrechaPad", Presentacion> =
     antesDelPie: "mt-[42px]",
     borde: "border-y border-[#333]",
   },
+  /**
+   * ⚠ **`estrecha` SIN el `mt-[42px]`, y la diferencia está MEDIDA — no es una
+   * variante «por si acaso» (2026-08-20, 86.ª tanda).**
+   *
+   * El original sirve **tres pieles de pie**, y `qa:pie-mecanismo` las explicó
+   * un nivel por debajo de la sección: son **dos ejes binarios**, el ancho de
+   * la FILA y el `padding` de sección.
+   *
+   * | piel | fila @1440 / @390 | `padSeccion` | presentación |
+   * |---|---|---|---|
+   * | A | 1238.39 (86 %) / 335.39 | no | `ancha` |
+   * | **C** | **1152 (80 %) / 312** | **no** | **ésta** |
+   * | B | 1152 / 312 | **sí** | `estrechaPad` |
+   *
+   * Y el alto sale de la interlínea, no de envolver más: los renglones son
+   * **idénticos** en A y C (8 · 10 · 7+2 · 11 · 2) y lo que cambia es
+   * `leading-26` → `leading-30.6`, o sea 29.07 px por renglón contra 36.02.
+   *
+   * **Por qué no se reutiliza `estrecha` tal cual:** lleva
+   * `antesDelPie: "mt-[42px]"`, calibrado para `software`. Derivado del espejo,
+   * el hueco entre el contenedor del tema y el pie es **CERO en las 9 formas de
+   * listado y a los dos anchos**, así que ese margen arreglaría `links`
+   * rompiendo la base — un arreglo que se paga en el eje que no estabas
+   * mirando.
+   */
+  estrechaSinMargen: {
+    fila: ESTRECHA_FILA,
+    padSeccion: false,
+    li: "mb-[7px]",
+    liA: "text-[14px]",
+    ul: "pb-[32px] text-[14px] leading-[30.6px]",
+    titulo: "text-[14px]",
+    legal: "text-[12px]",
+    legal2: "text-[9.6px]",
+    social: "h-[61.59px]",
+    sus: "mb-[46px] mt-[16px] [&>a]:pb-[3.109px] sm:[&>a]:pb-[2.297px]",
+    antesDelPie: "",
+    borde: "border-y border-[#333]",
+  },
   estrechaPad: {
     fila: ESTRECHA_FILA,
     padSeccion: true,
@@ -234,6 +280,7 @@ const DE_TIPO: Record<Exclude<TipoPagina, "home">, keyof typeof PRESENTACION> = 
   caso: "ancha",
   faq: "ancha",
   software: "estrecha",
+  listadoTema: "estrechaSinMargen",
   catalogo: "estrechaPad",
   producto: "estrechaPad",
 };

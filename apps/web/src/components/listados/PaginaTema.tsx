@@ -151,7 +151,14 @@ export function PaginaTema({
           hueco declarado que otro sitio llenaba, o sea un comentario que promete
           algo que el código no hace (§sondas 3). Se borra en vez de
           actualizarse. */}
-      <Footer tipo={esCasos ? "caso" : "grupoA"} />
+      {/* ⚠ **`L3` y `L5` NO comparten pie, y esto llevaba mal desde que se
+          construyeron** (2026-08-20, 86.ª tanda, §F3-LH-PIE-UNO-CONTRA-CUATRO).
+          `grupoA` sirve la piel A —fila al 86 %— y `L3-sci` usa la **piel C**,
+          fila al 80 %, igual que su cuerpo. Medido: **−86.34 @1440** y
+          **−289.64 @390**, todo en `footer-links`, y sin adjudicar hasta hoy
+          porque `pie.rect.h` es eje MIXTO y el comparador no lo lee como
+          defecto. `L5` sí es piel A + la sección CTA, así que se queda. */}
+      <Footer tipo={esCasos ? "caso" : "listadoTema"} />
       <ScrollToTop />
     </>
   );
