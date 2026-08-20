@@ -15539,6 +15539,34 @@ encontró.
 **Salida de escape declarada:** `git commit --no-verify`. Que haya que
 escribirlo es el punto.
 
+### ⚠ Y la regla se rompió A LA HORA DE ESCRIBIRLA, por su autor
+
+**Dos commits después de decidir «`-F` sin excepción», usé un heredoc.** El
+mensaje **sobrevivió intacto** —y no por suerte: `<<'FIN'`, con el delimitador
+**entre comillas**, no interpola nada—. El hook tampoco saltó, y hacía bien: no
+había nada mutilado que cazar.
+
+**Y eso es exactamente lo que convierte la excepción en el problema, no la
+salva:**
+
+| forma | qué hace el shell | se distinguen en |
+|---|---|---|
+| `<<'FIN'` | **nada** — literal | |
+| `<<FIN` | **interpola** backticks, `$`, `!` | **un carácter** |
+
+> **La diferencia entre la forma segura y la que se come el documento es UNA
+> COMILLA, y equivocarse es SILENCIOSO.** Un heredoc que funciona 20 veces
+> enseña que los heredocs funcionan — hasta el que se escribe sin comillar.
+
+**Por eso «sin excepción» no es sobre el riesgo de UN mensaje concreto: es sobre
+el hábito.** `-F` no tiene dos variantes, una buena y otra que falla callada. Es
+§*el defecto se pone en la dirección que grita* aplicado a la elección de
+herramienta: se elige la que no puede fallar en silencio, no la que suele salir
+bien.
+
+**Y la evidencia de que el remedio no era «más atención»:** el incidente lo
+cometió, el mismo día y con la regla recién redactada, **quien la escribió**.
+
 ---
 
 ## 📋 BARRIDO §regla 12 · la 87.ª — **1 regla que sube a `CLAUDE.md`** (2026-08-20)
