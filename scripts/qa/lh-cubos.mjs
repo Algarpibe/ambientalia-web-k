@@ -92,7 +92,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { aplana, IGNORAR } from "./lh-ejes.mjs";
-import { Evaluadas, gritaSiRevienta, hoy, QA, w } from "./lib.mjs";
+import { eligeCongeladaAnterior, Evaluadas, gritaSiRevienta, hoy, QA, w } from "./lib.mjs";
 
 process.env.SIN_CLON = "1"; // cruza congeladas: un build del clon no la contamina
 gritaSiRevienta();
@@ -110,8 +110,27 @@ const arg = (n, d) => (ARGS.find((a) => a.startsWith(`--${n}=`)) ?? `--${n}=${d}
  * ⚠ **Los ficheros se nombran por ARGUMENTO, nunca por fallback silencioso**
  * (§regla 6). Y §sondas 5: el nombre canónico de una congelada conserva la
  * PRIMERA foto, así que la corrida de hoy hay que nombrarla en vez de suponerla.
+ *
+ * ⚠⚠ **Y ESTE COMENTARIO AVISABA DEL ERROR EXACTO QUE EL CÓDIGO DE ABAJO
+ * COMETÍA (corregido 2026-08-20, 87.ª tanda).** El defecto de `--cmp=` era
+ * `medidas/lh-cmp-<ancho>-todas.json`, o sea **la canónica** — justo el fichero
+ * que la línea de arriba dice que conserva la primera foto. Medido el día de la
+ * corrección: esa canónica es del **2026-08-17** y publica `paresDistintos:
+ * 6207` mientras la corrida del día daba **5423**. Correr `qa:lh-cubos` sin
+ * argumento repartía por causa **una foto de tres días antes**, sin un aviso.
+ *
+ * Es §*documentado no es conectado* en su forma más pura: el comentario y el
+ * defecto de la línea siguiente se contradicen, y gana el código.
+ *
+ * **El arreglo es §regla 9 en su 8.ª forma —derivar en vez de recordar—** y
+ * reutiliza la función que la misma tanda escribió para el eje mixto: sin
+ * `--cmp=`, se toma **la más reciente por `mtime`** (nunca por nombre: `-2.json`
+ * ordena antes que `.json`) y **se dice cuál en la salida, con su fecha**. Los
+ * artefactos de negativo y las `-CONTAMINADA` quedan fuera por §regla 7.
  */
-const F_CMP = arg("cmp", `medidas/lh-cmp-${ANCHO}-todas.json`);
+const _autoCmp = eligeCongeladaAnterior(new RegExp(`^lh-cmp-${ANCHO}-todas(-\\d{4}-\\d{2}-\\d{2}(-\\d+)?)?\\.json$`));
+const F_CMP = arg("cmp", _autoCmp.fichero ? `medidas/${_autoCmp.fichero}` : `medidas/lh-cmp-${ANCHO}-todas.json`);
+const CMP_DERIVADO = !ARGS.some((a) => a.startsWith("--cmp="));
 const F_NUEVO = arg("espejo", `medidas/lh-espejo-${ANCHO}.json`);
 const F_VIEJO = SABOTAJE === "espejo-igual" ? arg("espejo", `medidas/lh-espejo-${ANCHO}.json`) : arg("viejo", `medidas/lh-espejo-${ANCHO}-SONDA-EXTRACTO-EN-2-FORMAS-DE-9.json`);
 const F_ANTES = arg("antes", "");
@@ -338,6 +357,7 @@ const informe = {
     fecha: hoy(),
     que: `REPARTO POR CAUSA de las diferencias de lh-cmp @${ANCHO} — tres cubos, no un total`,
     ancho: ANCHO,
+    cmpDerivadoPorMtime: CMP_DERIVADO ? { candidatas: _autoCmp.candidatas, mtime: _autoCmp.fecha } : false,
     canales: { cmp: F_CMP, espejoVigente: F_NUEVO, espejoCaducado: F_VIEJO, cmpAnterior: F_ANTES || "«no se pasó --antes=»" },
     fechas: { cmp: CMP.meta?.fecha ?? "?", espejoVigente: NUEVO.meta?.fecha ?? "?", espejoCaducado: VIEJO.meta?.fecha ?? "?" },
     ventanaDeLaDerivacion: "2026-08-14 → 2026-08-18: la que separa los DOS espejos, no la del último commit",
@@ -380,7 +400,12 @@ const informe = {
 };
 
 console.log(`\n════════ LISTADOS · REPARTO POR CAUSA @${ANCHO} ════════`);
-console.log(`  cmp         ${F_CMP} (${informe.meta.fechas.cmp})`);
+console.log(
+  `  cmp         ${F_CMP} (${informe.meta.fechas.cmp})` +
+    (CMP_DERIVADO
+      ? `   ← DERIVADA por mtime de ${_autoCmp.candidatas} candidata(s), mtime ${_autoCmp.fecha}. NUNCA por nombre ni por la canónica (§sondas 5: la canónica es la PRIMERA foto)`
+      : `   ← nombrada con --cmp=`),
+);
 console.log(`  espejo      ${F_NUEVO} (${informe.meta.fechas.espejoVigente})   ← VIGENTE`);
 console.log(`  caducado    ${F_VIEJO} (${informe.meta.fechas.espejoCaducado})`);
 console.log(`  instrumento ${CAMPOS_DEL_INSTRUMENTO.map((c) => `${c.campo}(${c.commit})`).join(" · ")}`);

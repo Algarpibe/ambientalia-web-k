@@ -1296,7 +1296,11 @@ export function eligeCongeladaAnterior(patron, { dir = path.join(QA, "medidas"),
   return {
     fichero: g.f,
     ruta: g.ruta,
-    fecha: new Date(g.mtime).toISOString().replace("T", " ").slice(0, 16),
+    /* El sello lleva su ZONA. `toISOString()` da UTC, y este repo ya pagó una
+     * vez por citas con sello ambiguo (§regla 9, 3.ª instancia: «2 citas usan
+     * UTC» resultaron ser 8). Un `12:49` que en realidad es `17:49Z` se lee mal
+     * justo cuando importa — al cruzar el orden de dos congeladas con un commit. */
+    fecha: `${new Date(g.mtime).toISOString().replace("T", " ").slice(0, 16)} UTC`,
     candidatas: todas.length,
     ordenadoPor: porNombre ? "NOMBRE (sabotaje)" : "mtime",
   };

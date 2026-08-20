@@ -3,6 +3,7 @@
     "fecha": "2026-08-20",
     "que": "REPARTO POR CAUSA de las diferencias de lh-cmp @1440 — tres cubos, no un total",
     "ancho": 1440,
+    "cmpDerivadoPorMtime": false,
     "canales": {
       "cmp": "medidas/lh-cmp-1440-todas-2026-08-18.json",
       "espejoVigente": "medidas/lh-espejo-1440.json",

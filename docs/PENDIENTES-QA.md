@@ -15203,6 +15203,27 @@ con las 6 **nombradas por su RUTA** —`/es/scientific-category/…` × 6, a −
 en **5423** (el bloque no toca el titular) y el reparto reproduce el −512.04 de
 la 86.ª sobre las mismas 6 rutas.
 
+### 2bis · Lo que sacó SIN QUE NADIE LO BUSCARA — la prueba de que sirve
+
+En la batería de cierre el bloque corrió **por defecto** (sin `ANTES=`), eligió
+su foto anterior por `mtime` y publicó dos cosas que hubo que cazar a mano en su
+día:
+
+| corrida | contra | qué sacó |
+|---|---|---|
+| `lh-cmp` @1440 | `lh-cmp-1440-2026-08-18-4.json` (21:14) | **−13.60 por forma** en 8 formas y **−98.94** en las de `L3`. El −13.60 es el **+13.6 hacia el original de la 84.ª**, cuyo titular dijo «sin efecto» |
+| `lh-cmp` @390 | `lh-cmp-390-2026-08-18-2.json` (21:15) | **se ACERCAN 2 (Σ −575.76) · se ALEJAN 8 (Σ +2.40)**, o sea **+0.30 por forma** — el §F3-LH-PIE-390-SE-ALEJA-030, fichado y adjudicado por la 85.ª |
+
+> **Los DOS lados a la vez, y ése era el punto.** El reparto enseña la mejora
+> (Σ neta **−573.36** @390) **y** la regresión pequeña que vive dentro, en vez de
+> dejar que el signo de la suma se las coma. Ninguna de las dos aparece en
+> `pares distintos`, que es el número que se cita.
+
+**Y la lectura correcta del `+0.30`, que hay que dejar dicha:** no es un
+hallazgo nuevo — está fichado desde la 84.ª y adjudicado en la 85.ª. Lo que
+cambia es que **ya no hace falta acordarse de él**: sale nombrado, con su forma
+y su ruta, en cada corrida.
+
 ### 3 · El orden de las congeladas: `mtime`, y el negativo cae POR EL SIGNO
 
 `eligeCongeladaAnterior()` deriva el orden del **`mtime`**. El sabotaje

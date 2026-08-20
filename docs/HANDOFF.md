@@ -41,6 +41,22 @@
 > no numéricos · **0** con la referencia movida · **0** formas con `diferencias`
 > truncadas por el `slice(0, 400)`.
 >
+> ### Y lo que sacó SIN QUE NADIE LO BUSCARA, que es la prueba de que sirve
+>
+> El bloque corre **por defecto**, así que en la batería de cierre eligió su foto
+> anterior por `mtime` sin `ANTES=` y publicó dos cosas que las tandas anteriores
+> tuvieron que cazar a mano:
+>
+> | corrida | qué sacó |
+> |---|---|
+> | `lh-cmp` @1440 (contra 2026-08-18) | **−13.60 por forma** en 8 formas y −98.94 en las de `L3` — el **+13.6 hacia el original** de la 84.ª, que su titular dio por «sin efecto» |
+> | `lh-cmp` @390 (contra 2026-08-18) | **se ALEJAN 8 · Σ +2.40**, o sea **+0.30 por forma** — el §F3-LH-PIE-390-SE-ALEJA-030, ya fichado y adjudicado por la 85.ª |
+>
+> **Los dos lados a la vez, y ése era el punto**: el reparto enseña la mejora
+> (Σ neta −573.36 @390) **y** la regresión pequeña que vive dentro, en vez de
+> dejar que el signo de la suma se las coma. Ninguna de las dos habría aparecido
+> en `pares distintos`.
+>
 > ### El orden de las congeladas, que es donde la 86.ª se equivocó
 >
 > `eligeCongeladaAnterior()` deriva el orden del **`mtime`**. El negativo lo
