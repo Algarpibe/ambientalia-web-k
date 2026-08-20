@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-18",
+    "fecha": "2026-08-19",
     "que": "La media de los CAMPOS de las 5 colecciones de la tanda de DATOS. Índice PROPIO: los de `media-corpus/` y `fase-3/` no se mueven.",
     "derivacion": "medidas/media-siembra.json → `origenesACapturar`, derivado contra la guarda que PARA (apps/web/public) y con los canales enumerados contra el esquema",
     "etiqueta": "secuencial · 500 ms · nunca en paralelo · una petición por fichero, también entre corridas",

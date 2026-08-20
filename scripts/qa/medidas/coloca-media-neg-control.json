@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-18",
+    "fecha": "2026-08-19",
     "que": "el paso SIN RED entre la captura y la siembra: colocar orígenes y regenerar variantes",
     "fuente": "medidas/media-siembra.json (la lista) + media-corpus/ (los bytes)",
     "soloDeriva": true,

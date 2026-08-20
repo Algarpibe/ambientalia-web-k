@@ -115,6 +115,30 @@
 > `CLAUDE.md` — (a) *el eje que no lee como defecto esconde la MEJORA igual que
 > esconde la deriva*; (b) *cuando el cambio se pueda aplicar, aplícalo y mide —
 > un censo por heurística no distingue «hereda» de «declara lo mismo»*.
+>
+> **14 · Estado final, con sus números:** `check` **verde** · `qa:manifiesto`
+> **374 rutas · 20 familias** · `qa:slugs` **A · B · C limpias** · `qa:lh-huecos`
+> **5/5** · `qa:enlaces` **374/374 páginas · 105 destinos · 2 rotos** (idénticos
+> a la 83.ª: sin regresión) · `qa:negativos` **6 de 40 rojos, los MISMOS seis**
+> con los mismos números — **0 negativos nuevos rotos por este cambio**.
+>
+> **15 · Y una deuda de INSTRUMENTO que esta tanda descubrió a su costa:
+> `qa:enlaces` NO ES DUEÑA DE SU SERVIDOR.** Espera un `next start` ajeno en el
+> **3000** (`enlaces.mjs:42`), y con el puerto vacío **murió dos veces sin
+> veredicto**: 4 líneas de salida y nada congelado. Es el terreno exacto del
+> fallo que `clon-base` ya se quitó de encima haciéndose dueña de su puerto
+> (*«así el modo de fallo no se detecta, NO EXISTE»*).
+>
+> **Lo que SÍ funcionó, y conviene decirlo:** el contrato de `Evaluadas` la puso
+> roja en voz alta —*«NO SE PUDO EVALUAR · 0 de 374 páginas servidas»*— en vez de
+> dejarla salir en verde. La guarda hizo su trabajo; lo que falta es que la sonda
+> no dependa de un puerto ajeno.
+>
+> ⚠ **Y la mitad que me costó a mí:** la primera muerte fue **muda para mí**
+> porque la lancé con `2>/dev/null`. El motivo —`ECONNREFUSED ::1:3000`— estaba
+> en stderr y yo lo había tirado. **Tirar el canal de error es la §regla 11 por
+> otra puerta:** no anula el código de salida, pero anula la única línea que
+> explica *por qué*.
 
 ---
 

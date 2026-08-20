@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-18",
+    "fecha": "2026-08-19",
     "app": "apps/web",
     "manifiesto": "medidas/manifiesto-neg-vacio-entrada.json",
     "base": "medidas/clon-base-1440-f21-antes.json"

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-18",
+    "fecha": "2026-08-19",
     "que": "ALCANCE VERIFICABLE de los listados a 1440: el denominador de qa:lh-cmp, derivado ANTES de comparar",
     "espejo": "medidas/lh-spec-1440.json (2026-08-18)",
     "unidad": "el PAR (camino × propiedad), la misma que qa:lh-cmp",

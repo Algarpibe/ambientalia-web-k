@@ -14851,6 +14851,40 @@ atacarlo sin volver a medirlo.
 
 ---
 
+## ⚠ SONDA-ENLACES-NO-ES-DUENA-DE-SU-SERVIDOR · muere muda con el puerto 3000 vacío (2026-08-19, 84.ª tanda)
+
+`enlaces.mjs:42` hace `const BASE = process.env.CLON || "http://localhost:3000"`
+y **da por hecho un `next start` ajeno**. Con el puerto vacío la sonda **murió
+dos veces sin veredicto**: 4 líneas de salida, nada congelado, y el proceso
+desaparecido.
+
+**Es exactamente el terreno del que `clon-base` ya se sacó** haciéndose dueña de
+su puerto — su propia cabecera lo dice: *«antes daba por hecho un `next start`
+ajeno en el 3000, y ése era el terreno en el que se cultivó su peor fallo: con
+el puerto vacío medía 31 errores y salía con código 0. Ahora arranca el suyo […],
+así el modo de fallo no se detecta, NO EXISTE»*. La lección está aplicada en una
+sonda y **no en la otra**.
+
+**Lo que SÍ funcionó y hay que decirlo, porque es la mitad buena:** el contrato
+de `Evaluadas` la puso roja en voz alta —**«NO SE PUDO EVALUAR · 0 de 374
+páginas servidas»**— en vez de dejarla salir verde. La guarda cumplió; lo que
+falta es que la sonda no dependa de un puerto ajeno.
+
+**Arreglo propuesto (no hecho en esta tanda):** `iniciarClon()`, como
+`clon-base`, `lh-cmp` y `lh-letra`. Corrida buena de hoy, con servidor levantado
+a mano: **374/374 páginas · 105 destinos · 2 rotos**.
+
+> ⚠ **Y la mitad que se pagó en la lectura, no en la sonda:** la primera muerte
+> fue **muda para quien la lanzó** porque el comando llevaba `2>/dev/null`. El
+> motivo —`ECONNREFUSED ::1:3000`— estaba en **stderr**, y estaba tirado.
+>
+> > **Tirar el canal de error es §regla 11 por otra puerta.** Pipear anula el
+> > *código de salida*; redirigir stderr a la nada anula **la única línea que
+> > explica por qué**. Las sondas de este repo escriben su diagnóstico ahí:
+> > `2>/tmp/x.err` y se lee, nunca `2>/dev/null`.
+
+---
+
 ## ⚠ F3-LH-BOTON-VER-TODOS · el original ESCONDE «Ver todos», y el recuento publicado no lo distingue (2026-08-18, 82.ª tanda)
 
 La hoja del tema sirve, **al lado de la regla que sí se había transcrito**:

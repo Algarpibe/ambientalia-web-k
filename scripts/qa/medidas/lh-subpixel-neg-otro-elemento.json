@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-18",
+    "fecha": "2026-08-19",
     "que": "de dónde salen los residuos SUB-PÍXEL del paginador de listados — un residuo y sus consecuencias aritméticas",
     "fuente": "medidas/lh-cmp-<ancho>*.json (la última congelada de cada ancho, derivada) + medidas/lh-espejo-<ancho>.json",
     "porQue": "§sin campaña de ruido un residuo pequeño NO es «limpio», es SIN PROBAR — y sale de ahí NOMBRANDO el mecanismo, como el −30 de EDAR. Aquí el mecanismo explica los `.x` y NO explica los `.w`, y las dos mitades se dicen aparte.",
@@ -14,12 +14,12 @@
   },
   "porAncho": {
     "390": {
-      "comparador": "lh-cmp-390-todas-2026-08-18-3.json",
-      "candidatas": 14,
+      "comparador": "lh-cmp-390-todas-2026-08-19-2.json",
+      "candidatas": 16,
       "candidatasDescartadas": [
-        "lh-cmp-390-2026-08-18-2.json",
-        "lh-cmp-390-todas-2026-08-18-2.json",
-        "lh-cmp-390-2026-08-18.json"
+        "lh-cmp-390-todas-2026-08-19.json",
+        "lh-cmp-390-todas-2026-08-18-3.json",
+        "lh-cmp-390-2026-08-18-2.json"
       ],
       "paresDistintos": 5401,
       "numericos": 303,
@@ -55,41 +55,45 @@
       "noNumericos": 5098
     },
     "1440": {
-      "comparador": "lh-cmp-1440-2026-08-18-4.json",
-      "candidatas": 24,
+      "comparador": "lh-cmp-1440-todas-2026-08-19-2.json",
+      "candidatas": 26,
       "candidatasDescartadas": [
-        "lh-cmp-1440-2026-08-18-3.json",
-        "lh-cmp-1440-todas-2026-08-18-3.json",
-        "lh-cmp-1440-2026-08-18-2.json"
+        "lh-cmp-1440-todas-2026-08-19.json",
+        "lh-cmp-1440-2026-08-18-4.json",
+        "lh-cmp-1440-2026-08-18-3.json"
       ],
-      "paresDistintos": 698,
-      "numericos": 28,
-      "subPixel": 6,
+      "paresDistintos": 5423,
+      "numericos": 324,
+      "subPixel": 166,
       "umbral": 0.05,
-      "anchosSubPixel": 1,
+      "anchosSubPixel": 31,
       "porMarca": {
-        "div.inventado": 1
+        "div.inventado": 31
       },
       "anchosSubPixelFueraDelPaginador": 0,
       "deltasDeAncho": [
-        0.03
+        0.01,
+        0.02,
+        0.03,
+        0.04,
+        0.05
       ],
-      "xSubPixel": 5,
-      "formasConPaginadorDistinto": 1,
-      "formasSoloSubPixel": 1,
-      "formasConOtroDefectoDePaginador": 0,
+      "xSubPixel": 135,
+      "formasConPaginadorDistinto": 31,
+      "formasSoloSubPixel": 30,
+      "formasConOtroDefectoDePaginador": 1,
       "propagacion": {
-        "dominio": 1,
-        "casan": 4,
-        "casanDentroDeLaCota": 0,
-        "noObservables": 2,
+        "dominio": 30,
+        "casan": 104,
+        "casanDentroDeLaCota": 25,
+        "noObservables": 109,
         "fallan": 0,
         "fallos": []
       },
       "ySubPixel": 0,
       "extendConAnchoDistinto": 0,
-      "sobreElUmbral": 22,
-      "noNumericos": 670
+      "sobreElUmbral": 158,
+      "noNumericos": 5099
     }
   }
 }
