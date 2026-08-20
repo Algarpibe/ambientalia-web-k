@@ -808,6 +808,80 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ✅ **ACTUALIZACIÓN 2026-08-20 (87.ª tanda) — el residuo de `L2` queda MEDIDO:
+> es UNA causa, vale +67.00 a los dos anchos, y su discriminador se sostiene en
+> 145 páginas. `L2` NO se construye —ESCALÓN 2 pre-registrado— pero el hilo se
+> para DESBLOQUEADO.**
+>
+> **Tres aplazamientos, y éste no es como los dos anteriores.** La 85.ª paró por
+> el cascarón entero; la 86.ª, por un residuo **sin mecanismo**; la 87.ª para
+> con el residuo **medido, cuantificado y con denominador**. La 88.ª puede ir
+> directa al PASO 3.
+>
+> ### 1 · El número que el plan citaba era de otro par de pieles
+>
+> > **`+22.67 @1440 · +97 @390` es `B − A`, no `B − C`.** A 1440 coinciden porque
+> > A y C tienen la misma fila `legal` (121.97); **a 390 A y C difieren 30**.
+>
+> Por eso `115.86 − 48.86 = 67.00` no reconstruía ninguno de los dos. §sondas 1
+> con el par cambiado: los dos lados no son original/clon, son **qué dos pieles**.
+>
+> ### 2 · Entre B y C hay UNA causa, y el resto es un contenedor con holgura
+>
+> | | @1440 | @390 |
+> |---|---|---|
+> | `col0` (widget legal) | Δ0 | Δ0 |
+> | **`col1` (iconos)** | **+67.00** | **+67.00** |
+> | `col2` (menú idioma) | Δ0 | Δ0 |
+> | absorbido por la columna hermana | **−44.33** | 0 |
+> | ⇒ lo que llega a la FILA | **+22.67** | **+67.00** |
+>
+> A 1440 las columnas van en fila y la gobierna la más alta, que en C es `col0`
+> (93.19) porque `col1` sólo mide 48.86. A 390 apilan. **Dos números distintos
+> eran una sola cosa** — §La causa común con el contenedor a la vista.
+>
+> Modelo `col1.h = altoIcono + mbHermanos`: **exacto 6/6**.
+>
+> ### 3 · El mecanismo, con n = 145 y su control
+>
+> **Cuerpo del icono: 96 px en la piel B, 25 px en A y C** — derivado de los
+> anchos de glifo, con la firma de razones idéntica en las 6 lecturas.
+> `.et-pb-icon{…font-size:96px}` es **el defecto de Divi**, servido en línea en
+> las tres capturas; el override de 25px lo trae en línea sólo C.
+>
+> Barrido el corpus entero (**149 capturas, 145 clasificables**), el contexto de
+> caché de la hoja dinámica del theme builder cae **1:1** con la piel:
+> **`archive/` en las 12 de B y en ninguna de las 133 restantes**.
+>
+> **CONTROL:** dentro de la piel A, **37** páginas traen el override en línea y
+> **63** lo enlazan, y **las dos miden 25px** ⇒ «enlazarlo» no es el eje.
+>
+> ⚠ **CONFUNDIDO:** `ctx=archive` y «ser el archivo de un CPT» son la misma cosa
+> aquí (las 12 son `glosario` y `preguntas-frecuentes`).
+>
+> ### 4 · Lo que la 88.ª necesita — y es POCO
+>
+> **Para construir NO hace falta el porqué.** El *cuánto* está medido: `legal`
+> vale **259.83 @1440** y **480.75 @390** en las **12** instancias de la piel B,
+> varianza cero. Es un **TERCER eje de la piel de pie** (`iconoPx: 96 | 25`),
+> junto al ancho de fila y al `padding` de sección que la 86.ª ya implementó.
+>
+> **Lo único abierto es el TEXTO de la regla**, y lo dirime **UNA hoja** —
+> `et-cache/archive/et-divi-dynamic-tb-140-tb-342.css`, no capturada (0 de 505).
+> Es disparador (b): **se declara y se planifica, no se improvisa**. Y **no
+> bloquea la construcción**: bloquearía explicar por qué el original hace eso.
+>
+> ### 5 · Lo que sigue SIN MECANISMO, con su número
+>
+> - el **+1.00 / +1.89** de `footer-legal` en todas las formas (heredado);
+> - el **+0.18 / +0.21** de `footer-links` (heredado);
+> - ⚠ **el `mb` de los iconos a 390**: `0` en A y `30` en B y C. A 1440 sí tiene
+>   mecanismo —**1.5 % del ancho de FILA**, o sea el eje ya conocido— pero a 390
+>   no es 1.5 % de 335.39 (5.03) ni de 312 (4.68). **Separa A de {B,C}, así que
+>   NO afecta a construir `L2`.**
+
+---
+
 > ✅ **ACTUALIZACIÓN 2026-08-20 (86.ª tanda) — el cascarón de `L3` queda
 > ARREGLADO, y el bloqueo de `L2` BAJA UN NIVEL.**
 >

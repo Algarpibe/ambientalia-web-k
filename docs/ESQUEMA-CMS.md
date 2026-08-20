@@ -824,6 +824,53 @@ Recon completo en `docs/research/arquetipo-A/`.
 > dos al 86 %. **No hay un campo «piel de pie»: hay una consecuencia del ancho
 > de fila**, y modelarla como campo habría sido inventar un eje que el original
 > no tiene. Arreglado en `DE_TIPO` (86.ª): `L3-sci` a **+1.00 / +2.06**.
+>
+> ⚠⚠ **AMPLIADO 2026-08-20 (87.ª tanda): hay un TERCER eje, y NO se deriva del
+> ancho de fila — pero tampoco es un campo del CMS.**
+>
+> Los dos ejes de arriba explican `footer-links` y el `padding` de sección. **No
+> explican `footer-legal`**, que entre las pieles B y C —que comparten fila,
+> 1152— difiere **+67.00 a los dos anchos**. Descompuesto (`qa:pie-legal`), el
+> residuo vive **entero en la columna de iconos**: `col0` (widget legal) y `col2`
+> (menú de idioma) están a **Δ0 en las tres pieles y a los dos anchos**.
+>
+> **El tercer eje es el CUERPO del icono: 96 px en la piel B, 25 px en A y C.**
+> Y no es un ajuste editorial: **96 px es el DEFECTO del módulo de icono de
+> Divi** (`.et-pb-icon{…font-size:96px;line-height:1}`, servido en línea en las
+> tres capturas). O sea que la piel B **no elige 96: se queda sin el override de
+> 25**, que las otras dos sí reciben.
+>
+> **Discriminador, derivado y con denominador:** el **contexto de caché** de la
+> hoja dinámica del theme builder cae **1:1 con la piel en 145 páginas** —
+> `archive/` en las 12 de B, en ninguna de las 133 restantes. **Control:** dentro
+> de la piel A hay 37 páginas que traen el override en línea y 63 que lo enlazan,
+> y **las dos miden 25px** ⇒ «enlazarlo» no es el eje.
+>
+> ### Y la consecuencia para el ESQUEMA, que es la que importa
+>
+> **Sigue sin haber un campo «piel de pie», y ahora por una razón más precisa: lo
+> que cambia no es una decisión editorial, es un ARTEFACTO DE COMPILACIÓN del
+> tema.** Nadie lo escribió en el builder; nadie puede editarlo desde el admin;
+> no varía entre instancias de la misma forma (varianza cero en las 12). Es
+> **plantilla**, y de la clase más rígida: una propiedad del *pipeline de CSS*
+> del origen, no del contenido.
+>
+> **Para el clon, por tanto, es una tercera dimensión de la presentación del pie
+> —`iconoPx: 96 | 25`— derivada del mismo `DE_TIPO` que ya elige las otras dos.**
+> No añade campo, no añade colección y no llega al editor.
+>
+> ⚠ **Y una nota de fidelidad que conviene dejar escrita:** es muy probable que
+> el 96 sea **un defecto del original** (una caché de Divi que no regeneró el
+> override). **Se replica igual** — regla 1 del proyecto, *los textos van
+> verbatim, erratas incluidas*, y aquí lo mismo vale para la geometría. Lo que
+> **no** se hace es corregirlo por criterio propio. Si el original lo arregla
+> algún día, el clon lo verá como un Δ y lo adjudicará entonces.
+>
+> **Lo que queda sin leer, con su cardinal:** el TEXTO de la regla. Lo dirime
+> **UNA** hoja (`et-cache/archive/et-divi-dynamic-tb-140-tb-342.css`), no
+> capturada — 0 de 505 (§F3-1-CSS-NO-CAPTURADO). **No bloquea construir**: el
+> *cuánto* está medido con varianza cero en 12 instancias.
+
 
 **Cero varianza en 24 instancias** (ritmo, tipografía, retícula). **No hay ni un
 campo por instancia en el cascarón.** Y son **tres plantillas distintas**, no

@@ -2913,6 +2913,33 @@ denominador y **sigue contando como fallo**, porque un SIN PROBAR que sale verde
 se lee como probado (§*dos modelos que predicen lo mismo en todo tu dominio son
 uno solo*, aplicado al sabotaje).
 
+**22 · UN BOOLEANO DE CONCORDANCIA ES VERDADERO SOBRE UN DOMINIO DE UNO IGUAL
+QUE SOBRE UNO DE MIL.** (2026-08-20)
+
+Las reglas 9 y 14 persiguen números afirmados de memoria y límites sin cardinal.
+Ésta persigue el sitio donde el cardinal **no se olvida: se sustituye por un
+`true`**, y por eso ninguna de las dos lo caza.
+
+> **«1:1» · «coincide» · «no hay excepciones» · «varianza cero» son
+> INDICADORES BOOLEANOS, y su valor no depende del tamaño del dominio.** Así que
+> la guarda **no se pone sobre el booleano —sale `true` en los dos lados— sino
+> sobre su CARDINAL.** Un `esUnoAUno: true` al lado de un `n` que nadie lee es
+> §regla 14 con el número dentro del propio veredicto.
+
+**Medido:** el sabotaje `corpus-mudo` de `qa:pie-legal` encoge el dominio del
+cruce de **145 páginas a 12**. `esUnoAUno` **sigue saliendo `true`** —una piel,
+un contexto: técnicamente 1:1— y el veredicto se leería como *«el discriminador
+está probado»* sobre 12. El único modo de que el negativo cayera fue comprobar
+**el denominador**; comprobar la concordancia **no podía** cazarlo.
+
+**Y su forma general, que es la que lo hace regla:** es §*un patrón que casa en
+TODAS tampoco mide nada* con el objeto cambiado — aquí el pleno **no lo fabrica
+un selector, lo fabrica un dominio encogido**. Operativamente: toda sonda que
+publique un booleano de concordancia **publica su `n` al lado y cierra su código
+de salida con el `n`**, no con el booleano. Y el mínimo del `n` se **deriva de la
+fuente entera**, nunca del subconjunto que la corrida esté mirando — si
+compartieran variable, el sabotaje movería la portería (§regla 17).
+
 ## Comandos
 
 ```bash

@@ -47,10 +47,20 @@
  * el código de salida**: un modelo que no reproduce sus 6 casos no es un modelo.
  *
  * ── EL MECANISMO, y hasta dónde llega el archivo ──────────────────────────
- * El marcado de `legal` es **idéntico** en las tres pieles salvo los `href` del
- * selector de idioma (diff de la sección entera, los tres capturados). O sea que
- * **no está en el marcado**: §El principio, *«Divi no escribe marcado: COMPILA
- * CSS»*.
+ * **Entre B y C el marcado de `legal` es IDÉNTICO** salvo los `href` — byte a
+ * byte tras normalizarlos, y ése es justo el par del que va la conclusión. O sea
+ * que el +67.00 **no está en el marcado**: §El principio, *«Divi no escribe
+ * marcado: COMPILA CSS»*.
+ *
+ * ⚠ **Esta frase se ESTRECHÓ al derivarla, y conviene dejar por qué.** La
+ * primera redacción decía *«idéntico en las TRES pieles»* — salido de leer un
+ * diff a ojo. Comprobado por código da **2 firmas, no 1**: `B ≡ C`, y **A no
+ * lleva el item de idioma `fr`** (3 contra 4, 344 caracteres). Es una diferencia
+ * de **contenido** —esa página no tiene traducción al francés—, no de piel, y no
+ * toca la geometría: `col2` mide **30 en las tres** a los dos anchos.
+ *
+ * Es §sondas 1 cobrada sobre la PROSA: la cabecera afirmaba y **nada contaba**.
+ * Ahora lo cuenta, y cierra el código de salida.
  *
  * Y el CSS aparece — **en una de las tres**. La captura de C trae la regla EN
  * LÍNEA:
@@ -273,6 +283,61 @@ for (const p of PIELES) {
     hojaCapturada: false, // 0 de 505 en el corpus (§F3-1-CSS-NO-CAPTURADO)
   };
 }
+/* ── El marcado: la afirmación «es idéntico» se DERIVA, no se recuerda ─────
+ * La cabecera de esta sonda dice que el marcado de `legal` es idéntico en las
+ * tres pieles salvo los `href` del selector de idioma. Eso es una afirmación
+ * sobre el dato, y si nada la comprueba es §sondas 1 —*lo que imprime y lo que
+ * cuenta no pueden discrepar*— con el canal cambiado: la prosa afirma y el
+ * código no cuenta. Se extrae la sección de cada captura, se normalizan los
+ * `href` (que es la excepción DECLARADA) y se compara. */
+const seccionLegalDe = (h) => {
+  const i = h.indexOf("footer-legal");
+  if (i < 0) return null;
+  const ini = h.lastIndexOf('<div class="et_pb_section', i);
+  const marca = h.indexOf("et_pb_section_2_tb_footer", i);
+  const fin = marca < 0 ? i + 9000 : h.lastIndexOf('<div class="et_pb_section', marca);
+  return h.slice(ini, fin);
+};
+const sinHrefs = (s) => s.replace(/href="[^"]*"/g, 'href="—"').replace(/\s+/g, " ").trim();
+const marcados = {};
+for (const p of PIELES) {
+  const s = seccionLegalDe(readFileSync(rel(CAPTURA[p]), "utf8"));
+  if (!s) throw new Error(`la captura de ${p} no tiene la sección footer-legal`);
+  marcados[p] = { largo: s.length, normalizado: sinHrefs(s) };
+}
+const idiomasDe = (s) => [...new Set(s.match(/wpml-ls-item-([a-z]{2})/g) || [])].map((x) => x.slice(-2)).sort();
+salida.controlMarcado = {
+  /* ⚠ **LA AFIRMACIÓN SE ESTRECHÓ AL DERIVARLA, y ése es el hallazgo.** La
+   * primera redacción decía *«el marcado es idéntico en las TRES pieles salvo
+   * los href»*, que es lo que salió de leer un diff a ojo. Derivado, da **2
+   * firmas, no 1**: `B ≡ C` byte a byte, y **A no lleva el item de idioma
+   * `fr`** (3 items contra 4) — 344 caracteres normalizados de diferencia.
+   *
+   * La conclusión no cambia y se apoya mejor: lo que hace falta para descartar
+   * el marcado como causa del +67.00 es **`B ≡ C`**, que es exactamente el par
+   * en cuestión. La diferencia de A es de CONTENIDO (esa página no tiene
+   * traducción al francés), no de piel, y no toca la geometría: `col2` mide
+   * **30 en las tres** a los dos anchos.
+   *
+   * §sondas 1 cobrada sobre la PROSA: la cabecera afirmaba y nada contaba. */
+  afirmacion: "entre las pieles B y C el marcado de `legal` es IDÉNTICO salvo los `href` — que es el par del que va la conclusión",
+  excepcionDeclarada: "los `href` se normalizan antes de comparar; sin normalizarlos, las 3 difieren",
+  B_identico_a_C: marcados.B.normalizado === marcados.C.normalizado,
+  A_difiere: marcados.A.normalizado !== marcados.C.normalizado,
+  porQueDifiereA: {
+    idiomas: Object.fromEntries(PIELES.map((p) => [p, idiomasDe(marcados[p].normalizado)])),
+    caracteresDeDiferencia: marcados.C.normalizado.length - marcados.A.normalizado.length,
+    efectoGeometrico: "NINGUNO: `col2` (el menú de idioma) mide 30 en las 3 pieles y a los 2 anchos",
+    queEs: "contenido (esa página no tiene traducción al francés), no piel",
+  },
+  largos: Object.fromEntries(PIELES.map((p) => [p, marcados[p].largo])),
+  /* El control en negativo de la propia comprobación: SIN normalizar, B y C
+   * tienen que DIFERIR. Si no difirieran, la normalización no estaría
+   * discriminando nada y el «idéntico» sería un pleno que no mide. */
+  BdifiereDeCsinNormalizar:
+    seccionLegalDe(readFileSync(rel(CAPTURA.B), "utf8")).replace(/\s+/g, " ") !== seccionLegalDe(readFileSync(rel(CAPTURA.C), "utf8")).replace(/\s+/g, " "),
+};
+
 const conRegla = PIELES.filter((p) => salida.canalCss[p].overrideDelModuloEnLinea !== null);
 const enlazan = PIELES.filter((p) => salida.canalCss[p].overrideDelModuloEnLinea === null);
 salida.canalCss.__resumen = {
@@ -484,6 +549,13 @@ const RES = salida.canalCss.__resumen;
 console.log(`   ⚠ ${RES.pielesQueLoENLAZAN} de ${PIELES.length} pieles ENLAZAN el override (${RES.cualesEnlazan.join(" · ")}): ${RES.hojasQueHabriaQueCapturarParaCerrarlo} hojas lo dirimen (§F3-1-CSS-NO-CAPTURADO, 0 de 505 capturadas)`);
 console.log(`   y el DEFECTO de Divi vale ${JSON.stringify(RES.defectoDeDivi)} px en las tres — que es EXACTAMENTE lo que mide la piel B`);
 console.log(`   canales mirados para decir «no está en el marcado»: ${RES.canalesMirados.join(" · ")}`);
+const CM = salida.controlMarcado;
+console.log(
+  `   y «el marcado es idéntico» DERIVADO, no recordado:  B≡C ${CM.B_identico_a_C}  ·  A difiere ${CM.A_difiere}` +
+    `  (le falta el idioma: ${JSON.stringify(CM.porQueDifiereA.idiomas)}, ${CM.porQueDifiereA.caracteresDeDiferencia} chars — CONTENIDO, no piel; col2 = 30 en las 3)
+` +
+    `   control · B≠C SIN normalizar: ${CM.BdifiereDeCsinNormalizar} (si fuera false, normalizar no discriminaría nada)`,
+);
 
 const CR = salida.cruceContextoDeCache;
 console.log(`\n  ── EL DENOMINADOR: de 3 capturas a las ${CR.capturas} (§«la única diferencia es EL DENOMINADOR») ──`);
@@ -520,6 +592,13 @@ if (salida.modeloColumna.aciertos !== salida.modeloColumna.total) {
   codigo = 2;
 } else if (salida.controlRazones.firmasDistintas !== 1) {
   console.log(`\n⛔ los 5 glifos NO tienen la misma firma de razones en las 6 lecturas (${salida.controlRazones.firmasDistintas}): no son los mismos iconos.`);
+  codigo = 2;
+} else if (!salida.controlMarcado.B_identico_a_C || !salida.controlMarcado.BdifiereDeCsinNormalizar) {
+  console.log(
+    `\n⛔ el control del MARCADO no cuadra: B≡C normalizando = ${salida.controlMarcado.B_identico_a_C} (esperado true) · ` +
+      `B≠C sin normalizar = ${salida.controlMarcado.BdifiereDeCsinNormalizar} (esperado true).\n` +
+      `   Si B y C fueran iguales SIN normalizar, la normalización no discriminaría nada y el «idéntico» sería un pleno que no mide.`,
+  );
   codigo = 2;
 } else if (CR.veredicto.n < MIN_CRUCE) {
   /* §regla 14 y §sondas 4bis: un cruce que no alcanza dominio NO es «1:1», es

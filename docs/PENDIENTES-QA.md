@@ -15163,6 +15163,323 @@ midió abajo*, con el contenedor puesto en la palabra «el pie».
 
 ---
 
+## ✅ F3-LH-EJE-MIXTO-PUBLICADO · el eje que no lee como defecto se publica SOLO, y su primer reparto reproduce el −512.04 (2026-08-20, 87.ª tanda)
+
+**§regla 14 llevaba tres tandas escrita en `CLAUDE.md` y el instrumento no la
+cumplía.** Es §*documentado no es conectado* con una **regla general contra su
+propia sonda**, que es la variante más difícil de ver: nadie audita el
+`CLAUDE.md` contra el código.
+
+### 1 · El coste, con sus tres números
+
+| tanda | el titular de `lh-cmp` dijo | el eje mixto llevaba dentro |
+|---|---|---|
+| 84.ª | `5423 → 5423`, «sin efecto» | **+938.4 px** de MEJORA, 69 formas |
+| 85.ª | (nada) | **−611.53** y **−289.64** de DEFECTO sin adjudicar |
+| 86.ª | `5423 → 5423`, «sin efecto» | **−512.04** de mejora, 6 rutas |
+
+Las tres veces se cazó **a mano**. La razón mecánica es la que ya está escrita:
+el recuento **clasifica antes de restar**, así que un efecto que caiga entero en
+un eje excluido no aparece en el titular — y el titular es lo que se cita.
+
+### 2 · Lo que publica ahora, por defecto y fuera del recuento
+
+```
+unidad        el PAR (forma::camino)
+se ACERCAN 6 · se ALEJAN 0 · Σ  −512.04 px  ← HACIA el original   (@1440)
+se ACERCAN 6 · se ALEJAN 0 · Σ −1725.48 px  ← HACIA el original   (@390)
+```
+
+con las 6 **nombradas por su RUTA** —`/es/scientific-category/…` × 6, a −85.34 y
+−287.58 cada una—, y los límites **con su cardinal**:
+
+| límite | @1440 |
+|---|---|
+| pares no numéricos (sin distancia) | **5985** de 9084 |
+| pares con la REFERENCIA movida | **0** |
+| formas con `diferencias` truncadas por el `slice(0,400)` | **0** |
+
+**P1.1 y P1.2 del pre-registro cumplidas al céntimo:** `pares distintos` sigue
+en **5423** (el bloque no toca el titular) y el reparto reproduce el −512.04 de
+la 86.ª sobre las mismas 6 rutas.
+
+### 3 · El orden de las congeladas: `mtime`, y el negativo cae POR EL SIGNO
+
+`eligeCongeladaAnterior()` deriva el orden del **`mtime`**. El sabotaje
+`ORDEN_POR_NOMBRE=1` reproduce el error de la 86.ª:
+
+| | gana | y el mismo par publica |
+|---|---|---|
+| `mtime` | la de **11:58** (la nueva) | **−90** |
+| NOMBRE | la de **09:33** — el tiempo INVERTIDO | **+90** |
+
+y **ninguno de los dos da error**: los dos son números plausibles. Por eso el
+caso tiene que caer **por el signo** y no por el código de salida (§regla 17).
+
+### 4 · Un defecto de mi propia sonda, cazado antes de publicarlo
+
+La primera versión agrupaba el reparto con `split("::")[0]`, y **la clave de
+forma de `lh-cmp` ya lleva `::` dentro** (`L3-sci::/es/…`): el reparto salía
+agrupado por **FAMILIA** con el rótulo «forma». O sea el agregado leído como el
+nivel de abajo — §La causa común **dentro del instrumento escrito para no
+cometerla**.
+
+La congelada afectada se renombró **con el defecto y su alcance** (§sondas
+5bis), no con «vieja»:
+`lh-cmp-1440-todas-2026-08-20-3-SONDA-REPARTO-AGRUPADO-POR-FAMILIA.json`.
+
+### 5 · Alcance, y lo que NO cubre
+
+- vive en `lib.mjs` (`eligeCongeladaAnterior` · `repartoDeDistancia`), o sea en
+  la clase y no en la instancia;
+- **sólo `lh-cmp` produce pares con eje** — derivado, no recordado:
+  `grep -ln "dif.push({ camino" scripts/qa/*.mjs` da **1 fichero**. `pie-cmp`
+  cita el eje mixto en un comentario pero su salida es una descomposición por
+  rol, no pares;
+- `qa:lib` **93 → 114** aserciones.
+
+---
+
+## ✅ F3-LH-LEGAL-UNA-CAUSA · el residuo del `legal` es UNA causa con n = 145 — y el «+22.67 / +97» era de OTRO par de pieles (2026-08-20, 87.ª tanda)
+
+**Desbloquea el hilo que la 85.ª y la 86.ª pararon por «SIN MECANISMO».**
+Instrumento nuevo: `qa:pie-legal` (+ negativo 4/4), que deriva de
+`pie-mecanismo` y del corpus capturado — **cero vueltas al original**.
+
+### 1 · Lo primero: el encargo citaba un par de pieles y un número de otro
+
+> **`+22.67 @1440 · +97 @390` es `B − A`, no `B − C`.**
+
+A 1440 da igual —A y C tienen la misma fila `legal`, **121.97**— pero a **390 A
+y C difieren en 30**, así que a ese ancho la etiqueta nombra un par y el número
+es de otro. Es §sondas 1 —*un número de un par se cita con sus dos lados*— con
+el par cambiado: aquí los dos lados no son original/clon, son **qué dos pieles**.
+
+Y explica por qué `115.86 − 48.86 = 67.00` no reconstruía ninguno de los dos,
+que es justo lo que el encargo sospechaba.
+
+### 2 · La descomposición: el residuo vive ENTERO en una columna
+
+| @1440 | sección | = pad | + fila | col0 | col1 | col2 |
+|---|---|---|---|---|---|---|
+| A (n=64) | 121.97 | 0 | 121.97 | 93.19 | 50.16 | 30 |
+| B (n=12) | 259.83 | **115.19** | 144.64 | 93.19 | **115.86** | 30 |
+| C (n=6) | 121.97 | 0 | 121.97 | 93.19 | 48.86 | 30 |
+
+| @390 | sección | = pad | + fila | col0 | col1 | col2 |
+|---|---|---|---|---|---|---|
+| A | 283.75 | 0 | 283.75 | 154.38 | 31.59 | 30 |
+| B | 480.75 | **100** | 380.75 | 154.38 | **128.59** | 30 |
+| C | 313.75 | 0 | 313.75 | 154.38 | 61.59 | 30 |
+
+**`col0` (widget legal) y `col2` (menú de idioma) son idénticas en las tres
+pieles y a los dos anchos.** Δ0 exacto. Todo está en `col1`.
+
+### 3 · Dentro de `col1`, DOS ejes — y sólo uno separa B de C
+
+| eje | separa | @1440 | @390 |
+|---|---|---|---|
+| **cuerpo del icono** | **B** de {A, C} | 96 vs 25 px ⇒ **+67.00** | ídem ⇒ **+67.00** |
+| `mb` de los hermanos | **A** de {B, C} — **NO separa B de C** | 18.5625 vs 17.2656 ⇒ +1.30 | 0 vs 30 ⇒ −30 |
+
+> **Entre B y C hay UNA sola causa, y vale +67.00 A LOS DOS ANCHOS.**
+
+El `+22.67` de 1440 **es ese mismo +67.00** con **44.33 absorbidos por la
+columna hermana**: a 1440 las columnas van en fila y la gobierna la más alta,
+que en C es `col0` (93.19) porque `col1` sólo mide 48.86. A 390 apilan y no hay
+dónde absorber, así que sale entero.
+
+**§La causa común con el contenedor a la vista** — y la razón de que dos números
+distintos fueran una sola cosa.
+
+**Modelo, exacto 6/6** (3 pieles × 2 anchos): `col1.h = altoIcono + mbHermanos`.
+Cierra el código de salida: un modelo que no reproduce sus 6 casos no es un
+modelo.
+
+**El `mb` @1440 sí tiene mecanismo, y es el YA conocido:** `18.5625/1237.5 =
+17.2656/1151.04 = 1.4989 %`, o sea **1.5 % del ancho de FILA** — el mismo eje que
+separa las pieles. **A 390 no**: vale 0 y 30, que no son 1.5 % de 335.39 (5.03)
+ni de 312 (4.68). **SIN MECANISMO, con su número.**
+
+### 4 · El mecanismo del cuerpo del icono: sale del ARCHIVO
+
+**Entre B y C el marcado de `legal` es IDÉNTICO** salvo los `href` — byte a byte
+tras normalizarlos, y ése es justo el par del que va la conclusión. O sea que el
++67.00 **no está en el marcado**: §El principio, *«Divi no escribe marcado:
+COMPILA CSS»*.
+
+> ⚠ **Y esta frase se ESTRECHÓ al derivarla — es un hallazgo, no una errata.**
+> Se escribió primero como *«idéntico en las TRES pieles»*, salida de leer un
+> diff a ojo. Al hacer que la sonda **la contara**, dio **2 firmas, no 1**:
+> `B ≡ C` byte a byte, y **A no lleva el item de idioma `fr`** (3 contra 4,
+> **344 caracteres**).
+>
+> Es §sondas 1 cobrada sobre la **PROSA**: *lo que imprime y lo que cuenta no
+> pueden discrepar*, con la cabecera de la sonda afirmando y **nada contando**.
+> La diferencia de A es de **contenido** —esa página no tiene traducción al
+> francés—, no de piel, y **no toca la geometría**: `col2` mide 30 en las tres a
+> los dos anchos.
+>
+> **La conclusión no cambia y se apoya mejor**: lo que hace falta para descartar
+> el marcado como causa del +67.00 es `B ≡ C`, que es exactamente el par en
+> cuestión. Y el control en negativo va al lado: **sin normalizar los `href`, B y
+> C tienen que DIFERIR** — si no difirieran, normalizar no discriminaría nada y
+> el «idéntico» sería un pleno que no mide.
+
+| piel | override del módulo EN LÍNEA | **MEDIDO** (derivado del ancho de glifo) |
+|---|---|---|
+| A | — (lo enlaza) | **25 px** |
+| B | — (lo enlaza) | **96 px** ← el DEFECTO de Divi |
+| C | **25 px** | 25 px |
+
+`.et-pb-icon{…font-size:96px;line-height:1}` viene **en línea en las tres**: es
+el defecto del tema, y es exactamente lo que mide B.
+
+**El cuerpo se DERIVA de los anchos de glifo, con su control delante:** los 5
+iconos miden `0.875 · 1 · 0.875 · 1 · 1.125` em, y esa firma tiene que ser **la
+misma en las 6 lecturas** antes de dividir. Lo es (**1 firma**) — si no lo
+fuera, no serían los mismos iconos y dividir no significaría nada.
+
+### 5 · EL DENOMINADOR: de 3 capturas a 145 páginas
+
+Con 3 capturas esto es *«una explicación con mecanismo y dos casos a favor»*,
+que es la forma que `CLAUDE.md` manda **no** dar por buena. Barrido el corpus
+entero —**149 capturas, 145 clasificables**—:
+
+| piel | contexto de caché de la hoja dinámica | n |
+|---|---|---|
+| **B** | **`archive/`** | **12 de 12** |
+| A | `home` · `taxonomy` · 5 ids de post | 133 |
+| C | `taxonomy` | 6 |
+
+**1:1 en 145 páginas.**
+
+**Y el CONTROL que lo hace concluyente:** dentro de la piel A hay **37** páginas
+que **traen** el override en línea y **63** que lo **enlazan**, y **las dos miden
+25 px**. O sea que «enlazarlo» **no** es el eje — el eje es el **contexto**. Sin
+ese control, «enlazar» y «medir 96» iban juntos y el discriminador habría sido
+el equivocado.
+
+> ⚠ **CONFUNDIDO, y se dice** (§*dos variables que toman siempre el mismo
+> valor*): `ctx=archive` y «ser el archivo de un CPT» son **la misma cosa** en
+> este dominio — las 12 son `glosario` y `preguntas-frecuentes`. **El 1:1 no dice
+> cuál de las dos es la causa**; dice que en las 145 van juntas.
+
+### 6 · Lo que queda SIN LEER, con su cardinal
+
+**El TEXTO de la regla.** Lo dirime **UNA** hoja —
+`et-cache/archive/et-divi-dynamic-tb-140-tb-342.css`— y **no está capturada**
+(0 de 505, §F3-1-CSS-NO-CAPTURADO). Es volver al original: **disparador (b)**,
+se declara y se planifica. **1 fichero, no 505 ni el navegador entero.**
+
+### 7 · Y por qué esto DESBLOQUEA `L2` aunque no se haya construido
+
+> **Para construir NO hace falta el porqué: el CUÁNTO está medido.** `legal` vale
+> **259.83 @1440** y **480.75 @390** en las **12** instancias de la piel B, con
+> **varianza cero** (`pie-familias`). Es un **TERCER eje de la piel de pie**
+> (`iconoPx: 96 | 25`), no una hipótesis.
+
+Que el 96 sea probablemente un defecto de Divi filtrándose por una caché **es
+irrelevante para la fidelidad**: el original **sirve eso**, y este repo clona
+erratas incluidas (regla 1 del proyecto).
+
+**La 88.ª puede ir directa al PASO 3.**
+
+### 8 · Negativo: 4 casos, y los dos que fallaron eran SABOTAJES defectuosos
+
+§regla 21 aplicada: se corrió la sonda sola primero, y salía verde ⇒ el problema
+estaba en los negativos, no en el dato.
+
+| sabotaje | qué estaba mal | arreglo |
+|---|---|---|
+| `glifo-torcido` | movía el glifo en las **seis** lecturas, y `firmasDistintas` compara **entre** lecturas: una perturbación uniforme produce otra firma… **única**. Salía **verde** | mueve **una sola piel** |
+| `corpus-mudo` | reapuntaba la raíz del corpus ⇒ rutas relativas vacías ⇒ **todo caía por «0 clasificadas»**, que es otro motivo | **filtra**: las 12 se clasifican bien |
+
+**`corpus-mudo` es el que enseña**, y su lección es reutilizable:
+
+> **`esUnoAUno` sale `true` sobre 12 páginas exactamente igual que sobre 145.**
+> Así que la guarda que hace falta **no es sobre el 1:1 — es sobre su
+> CARDINAL**. §regla 14 metida dentro del código de salida.
+
+Y su mínimo **se deriva del corpus entero**, no del subárbol que el sabotaje
+mira: si compartieran variable, el sabotaje **movería la portería** y el caso no
+probaría nada (§regla 17).
+
+**Control de que el cableado del sabotaje no mueve la medida:** con los tres
+cableados y ninguno activo, `pie-legal.json` sale **idéntica** a la congelada
+anterior. **NO-OP sobre lo medido.**
+
+---
+
+## ✅ META-REGLA-13-DECIDIDA · `-F` sin excepción, y un hook que RECHAZA en vez de reparar (2026-08-20, 87.ª tanda)
+
+**El encargo pedía decidirlo y escribirlo**, porque §regla 13 se cobró **dos
+tandas seguidas** con el patrón bueno usado **en la misma sesión**. Eso descarta
+«más atención» como remedio: si el que conoce la regla la incumple el mismo día,
+el remedio no puede ser recordarla.
+
+### La decisión
+
+1. **`git commit -F <fichero>` sin excepción**, y el fichero se escribe con
+   `Write`. Ni para los mensajes cortos — **la excepción es donde reaparece**.
+2. **El hook es la RED, no la regla.** Y hay que decir por qué, porque invita a
+   pensar lo contrario: **un `commit-msg` no puede reparar** lo que el shell ya
+   se comió. Cuando corre, el mensaje **ya llegó mutilado**. Lo único que puede
+   hacer es **rechazarlo en voz alta** — §sondas 6, el defecto en la dirección
+   que grita.
+
+### Qué detecta, y por qué esto y no una heurística
+
+La firma del fallo está **medida, no supuesta**: el shell se comió
+`` `qa:lh-pieles-css` ``, `` `L1` `` y `` `@media…` `` **dejando los huecos
+vacíos**. O sea que la firma es **un par de delimitadores VACÍO**, algo que en
+prosa no se escribe nunca a propósito:
+
+| patrón | qué es |
+|---|---|
+| `` `` `` | inline-code vacío ← la firma de los dos incidentes medidos |
+| `****` | negrita vacía |
+| `«»` | comillas vacías |
+
+Vive en **`scripts/git-hooks/commit-msg`** (versionado, `core.hooksPath`), con
+**control verde y sabotaje rojo por su motivo** — el rojo nombra qué par
+encontró.
+
+**Salida de escape declarada:** `git commit --no-verify`. Que haya que
+escribirlo es el punto.
+
+---
+
+## 📋 BARRIDO §regla 12 · la 87.ª — **1 regla que sube a `CLAUDE.md`** (2026-08-20)
+
+Barrido **acotado** (§regla 12: *se barren las actas de la fase en curso, no el
+archivo entero*), sobre `docs/PLAN-FASE-3.md` y las entradas de la 85.ª–87.ª de
+este documento, buscando enunciados con forma de regla general.
+
+**Enunciados con forma de regla encontrados: 48 en el plan de fase. De ellos, 47
+son EVENTOS** (llevan fecha, número o ruta propia) y se quedan donde están.
+
+**El que sube, porque quitándole la fecha y el nombre propio sigue diciendo qué
+hacer:**
+
+> **UN INDICADOR BOOLEANO DE CONCORDANCIA —«1:1», «coincide», «no hay
+> excepciones»— ES VERDADERO SOBRE UN DOMINIO DE UNO IGUAL QUE SOBRE UNO DE MIL.**
+> Así que la guarda no se pone sobre el booleano: se pone sobre **su cardinal**.
+> Un `esUnoAUno: true` al lado de un `n` que nadie mira es §regla 14 —*una
+> limitación sin número se archiva*— con el número **dentro del propio
+> veredicto**.
+
+Medido en esta tanda: el sabotaje `corpus-mudo` deja `esUnoAUno` en `true` con
+**12** páginas donde el control tiene **145**, y el único modo de que el negativo
+cayera fue **comprobar el denominador**, no la concordancia.
+
+**Y su corolario, que es el que evita escribir la guarda inútil:** comprobar el
+booleano **no puede** cazar este caso — sale `true` en los dos lados. Es la misma
+forma que §*un patrón que casa en TODAS tampoco mide nada*, con el objeto
+cambiado: aquí el pleno no lo fabrica un selector, lo fabrica **un dominio
+encogido**.
+
+
 ## ✅ F3-LH-PIE-TRES-PIELES · no eran cuatro pies: son TRES PIELES × una CTA ortogonal, y L3 queda arreglado (2026-08-20, 86.ª tanda)
 
 **Cierra §F3-LH-PIE-UNO-CONTRA-CUATRO en su mitad de `L3`, y CORRIGE su

@@ -637,6 +637,42 @@
       "[1.199,1,0.875,1,1.125]"
     ]
   },
+  "controlMarcado": {
+    "afirmacion": "entre las pieles B y C el marcado de `legal` es IDÉNTICO salvo los `href` — que es el par del que va la conclusión",
+    "excepcionDeclarada": "los `href` se normalizan antes de comparar; sin normalizarlos, las 3 difieren",
+    "B_identico_a_C": true,
+    "A_difiere": true,
+    "porQueDifiereA": {
+      "idiomas": {
+        "A": [
+          "ar",
+          "en",
+          "es"
+        ],
+        "B": [
+          "ar",
+          "en",
+          "es",
+          "fr"
+        ],
+        "C": [
+          "ar",
+          "en",
+          "es",
+          "fr"
+        ]
+      },
+      "caracteresDeDiferencia": 344,
+      "efectoGeometrico": "NINGUNO: `col2` (el menú de idioma) mide 30 en las 3 pieles y a los 2 anchos",
+      "queEs": "contenido (esa página no tiene traducción al francés), no piel"
+    },
+    "largos": {
+      "A": 5931,
+      "B": 6320,
+      "C": 6451
+    },
+    "BdifiereDeCsinNormalizar": true
+  },
   "cruceContextoDeCache": {
     "capturas": 149,
     "clasificadas": 145,
