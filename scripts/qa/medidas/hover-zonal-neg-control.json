@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-19",
+    "fecha": "2026-08-20",
     "pregunta": "§LH-C6-HOVER-ZONAL — qué CONTENEDOR dispara el zoom de la media de tarjeta",
     "instrumento": "el CSS SERVIDO (los <style> del documento + las hojas EXTERNAS que pide)",
     "alcance": {
@@ -19,11 +19,11 @@
   "formas": {
     "L1-blog": {
       "ruta": "/es/blog/",
-      "hojasExternas": 11,
-      "hojasPedidas": 11,
-      "hojasQueContestaron": 11,
-      "bytesCss": 574028,
-      "reglasServidas": 4546,
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 564422,
+      "reglasServidas": 4521,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -50,11 +50,11 @@
     },
     "L1-etiqueta": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "hojasExternas": 13,
-      "hojasPedidas": 13,
-      "hojasQueContestaron": 13,
-      "bytesCss": 634116,
-      "reglasServidas": 5016,
+      "hojasExternas": 12,
+      "hojasPedidas": 12,
+      "hojasQueContestaron": 12,
+      "bytesCss": 624510,
+      "reglasServidas": 4991,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -81,11 +81,11 @@
     },
     "L1-resources-hijo": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "hojasExternas": 10,
-      "hojasPedidas": 10,
-      "hojasQueContestaron": 10,
-      "bytesCss": 583413,
-      "reglasServidas": 4572,
+      "hojasExternas": 9,
+      "hojasPedidas": 9,
+      "hojasQueContestaron": 9,
+      "bytesCss": 573807,
+      "reglasServidas": 4547,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -121,11 +121,11 @@
     },
     "L1-resources-padre": {
       "ruta": "/es/recursos/seminarios-web/",
-      "hojasExternas": 10,
-      "hojasPedidas": 10,
-      "hojasQueContestaron": 10,
-      "bytesCss": 583413,
-      "reglasServidas": 4572,
+      "hojasExternas": 9,
+      "hojasPedidas": 9,
+      "hojasQueContestaron": 9,
+      "bytesCss": 573807,
+      "reglasServidas": 4547,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -161,11 +161,11 @@
     },
     "L2-glosario": {
       "ruta": "/es/glosario/",
-      "hojasExternas": 11,
-      "hojasPedidas": 11,
-      "hojasQueContestaron": 11,
-      "bytesCss": 648645,
-      "reglasServidas": 4580,
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 638851,
+      "reglasServidas": 4553,
       "reglasHoverConTransform": 2,
       "disparadores": [
         {
@@ -186,11 +186,11 @@
     },
     "L2-faqs": {
       "ruta": "/es/preguntas-frecuentes/",
-      "hojasExternas": 11,
-      "hojasPedidas": 11,
-      "hojasQueContestaron": 11,
-      "bytesCss": 648645,
-      "reglasServidas": 4580,
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 638851,
+      "reglasServidas": 4553,
       "reglasHoverConTransform": 2,
       "disparadores": [
         {
@@ -211,11 +211,11 @@
     },
     "L3-sci": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "hojasExternas": 11,
-      "hojasPedidas": 11,
-      "hojasQueContestaron": 11,
-      "bytesCss": 665229,
-      "reglasServidas": 4631,
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 655623,
+      "reglasServidas": 4606,
       "reglasHoverConTransform": 2,
       "disparadores": [
         {
@@ -276,11 +276,11 @@
     },
     "L5-casos": {
       "ruta": "/es/casos-de-exito/",
-      "hojasExternas": 8,
-      "hojasPedidas": 8,
-      "hojasQueContestaron": 8,
-      "bytesCss": 561695,
-      "reglasServidas": 4437,
+      "hojasExternas": 7,
+      "hojasPedidas": 7,
+      "hojasQueContestaron": 7,
+      "bytesCss": 550468,
+      "reglasServidas": 4372,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -316,9 +316,9 @@
     }
   },
   "resumen": {
-    "reglasServidas": 41222,
+    "reglasServidas": 40978,
     "reglasHoverConTransform": 24,
-    "fraccion": 0.00058,
+    "fraccion": 0.00059,
     "efectosMedidosSinRegla": 0,
     "veredicto": "LEÍDO"
   }

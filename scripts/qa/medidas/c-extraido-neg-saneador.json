@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-19",
+    "fecha": "2026-08-20",
     "que": "el catálogo de CASOS y FAQS extraído del corpus congelado, con T1–T8 por región",
     "fuente": "corpus/{casos,faqs} (metadatos y regiones) + TRANSFORMACIONES (las mismas 10 del grupo A)",
     "control": "86 comparaciones sobre 6 documentos transcritos a mano",

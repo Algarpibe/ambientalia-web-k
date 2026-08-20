@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-19",
+    "fecha": "2026-08-20",
     "que": "los huecos que las specs de L2·L3·L5 no contestan y que DECIDEN la construcción",
     "fuente": "corpus/fase-3/listados (149 documentos congelados de F3-0) + corpus/fase-3/_sitemaps + medidas/lh-spec-{1440,390}.json",
     "porQue": "§UNA REGLA INCOMPLETA SE LEE IGUAL QUE UNA COMPLETA: una medida no lleva escrito qué NO contesta, así que el alcance se escribe a mano ANTES de construir. Es lo que costó `L1-resources`.",
