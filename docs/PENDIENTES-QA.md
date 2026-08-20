@@ -505,6 +505,25 @@ de media de las 374 rutas para arreglar 23 tarjetas cuya diferencia nadie mide.
 
 ## 📋 F3-LH-PIE-DECLARADO-NO-RECALIBRADO · EL DESFASE DEL PIE, CON SU NÚMERO — Y NO ES REGRESIÓN (2026-08-18, 80.ª tanda)
 
+> ⚠⚠ **CORREGIDA EN DOS PUNTOS EL 2026-08-20 (85.ª tanda, §F3-LH-PIE-ADJUDICADO).
+> La decisión de esta ficha —DECLARAR y no recalibrar— sigue siendo la correcta;
+> lo que estaba mal es la UNIDAD en que describe lo que declara.**
+>
+> **(a) «el +1.80» son DOS.** Descompuesto el pie por sección, el residuo de
+> `L1` @390 es **+1.59 en `footer-legal` y +0.21 en `footer-links`** (suman 1.80
+> exacto). Un solo número para dos desfases de dos secciones distintas es
+> §*la causa común* con el contenedor puesto en la palabra «el pie».
+>
+> **(b) la deriva «+3 · +6.65» es la de `L1`, no la del pie.** En `L2` la misma
+> deriva vale **+308.64 @1440 y +321.89 @390**, y toca las **tres** secciones.
+> Y el pie del original **no tiene un valor sino CUATRO**, uno por familia, con
+> varianza cero dentro de cada una — así que el `1761.17` contra el que esta
+> ficha compara es el de `L1` y `L4`, no «el original».
+>
+> Lo que **no** cambia: `pie.rect.h` del clon no se movió, la deriva acercó el
+> original al clon, y recalibrar sigue sin estar justificado. Lo que cambia es
+> que ahora se sabe **dónde** hay que mirar cuando se recalibre.
+
 **Decisión `D6` de `docs/research/listados-hubs/DECISIONES.md`: se DECLARA, no se
 recalibra.** Esta ficha existe para que un `Δ` futuro en el pie no se lea como
 defecto del clon: **un desfase conocido y no escrito se lee como defecto dos
@@ -14922,7 +14941,172 @@ tenía el cuerpo.
 
 ---
 
-## ⚠ F3-LH-PIE-390-SE-ALEJA-030 · el pie a 390 pierde 0.30 px por forma con el arreglo de la letra (2026-08-19, 84.ª tanda)
+## ✅ F3-LH-PIE-ADJUDICADO · el pie DESCOMPUESTO, y el «+1.80» resulta ser DOS (2026-08-20, 85.ª tanda)
+
+**Cierra la pregunta que la 84.ª dejó abierta** —*«si el +1.80 preexistente y
+este +0.30 son el mismo mecanismo o dos»*— y de paso destapa una clase mayor que
+ninguna de las dos fichas podía ver.
+
+### 0 · Por qué no se podía contestar antes: `pie.rect.h` es un TOTAL
+
+Las dos fichas hablan del pie citando **una sola magnitud**, el alto del pie
+entero. §*La causa común: el NIVEL al que se mide* — un total absorbe su
+composición, así que *«dónde vive el desfase»* no era una pregunta difícil: era
+**una pregunta que ningún dato del repo contestaba**.
+
+### 1 · Lo que YA estaba medido y nadie había leído
+
+El espejo congelado **sí descompone el pie del ORIGINAL**, en
+`esqueleto.cascaron[].rect.h` con su clase. Derivado de él, el pie del original
+tiene **CUATRO valores, uno por familia, con varianza CERO dentro de cada una**
+(n = 36 en `L1-etiqueta`):
+
+| forma | `links` | `legal` | `background` | total @390 | total @1440 |
+|---|---|---|---|---|---|
+| `L1-*` · `L4` | 1437.42 | 283.75 | 40 | **1761.17** | **593.75** |
+| `L5-casos` | +CTA · 1437.42 | 283.75 | 40 | **2026.23** | **936.81** |
+| `L3-sci` | **1699.16** | **313.75** | 40 | **2052.91** | **681.09** |
+| `L2-*` | **1754.05** | **480.75** | **140** | **2374.8** | **989.73** |
+
+> **El «+1.80» siempre se citó contra 1761.17, que es sólo el valor de `L1`.**
+
+Y del lado del **CLON** esa descomposición **no existía**: `lh-cmp` publica
+`esqueleto.cascaron.length = 0` y todas las secciones del clon salen
+`«AUSENTE»`, porque el clon no emite las clases `et_pb_section_N_tb_footer`. O
+sea que el reparto del original llevaba meses congelado **sin nada contra qué
+compararse** — §*un selector que no casa con nada no es un cero*, con la mitad
+que menos se mira: **casa en un lado y no en el otro**, y eso no da un cero
+ruidoso sino un `«AUSENTE»` que el comparador manda al eje **mixto**.
+
+Instrumento nuevo: **`qa:pie-cmp`** (+ negativo **4/4**) y el marcador
+`data-pie` en el `Footer` del clon — marcador de sonda, no estilo.
+
+### 2 · El reparto medido, con el control interno a CERO
+
+| rol | @1440 orig → clon | Δ | @390 orig → clon | Δ |
+|---|---|---|---|---|
+| `links` | 430.78 → 430.78 | **0** ✓ | 1437.42 → 1437.63 | **+0.21** |
+| `legal` | 121.97 → **122.97** | **+1.00** | 283.75 → **285.64** | **+1.89** |
+| `background` | 41 → 41 | **0** ✓ | 40 → 40 | **0** ✓ |
+| **TOTAL** | 593.75 → 594.75 | **+1.00** | 1761.17 → 1763.27 | **+2.10** |
+
+**Control**: la suma de secciones reconstruye el pie con resto **0** en los dos
+lados y las 6 formas. El único resto es el de `L5-casos` —343.06 @1440 · 265.06
+@390— y **está atribuido**: es el CTA que el clon emite sin marcar, y su Δ
+contra el original es **0**. O sea que el CTA del clon está bien sin necesidad
+de marcarlo, que es un dato que el reparto por sí solo no daba.
+
+### 3 · La respuesta: **el «+1.80» nunca fue un fleco — son DOS**
+
+Reconstruido desde el reparto, **al céntimo**:
+
+```
+legal clon hoy 285.64 − 0.30 (la 84.ª) = 285.34 ;  285.34 − 283.75 = +1.59
+links clon 1437.63 − orig 1437.42                                  = +0.21
+                                                          SUMA      = +1.80
+```
+
+| | dónde vive | de quién es |
+|---|---|---|
+| **+1.59** | `footer-legal` | del CLON. **Sin mecanismo medido** |
+| **+0.21** | `footer-links` | del CLON. Es el residuo que la DERIVA del original dejó al cerrarse |
+| **+0.30** (84.ª) | `footer-legal` | del CLON, con mecanismo medido: la interlínea heredada de los inline de 12 px |
+
+> **La pregunta del encargo —*«¿comparten causa?»*— estaba planteada sobre una
+> cosa que son dos.** Y la respuesta tiene que darse en dos mitades:
+>
+> - **comparten SITIO**: el +0.30 y el +1.59 viven los dos en `footer-legal`,
+>   que a 1440 concentra **el 100 %** del residuo del pie (+1 de +1) y a 390 el
+>   **90 %** (+1.89 de +2.10);
+> - **comparten CAUSA: SIN PROBAR.** El +0.30 tiene mecanismo; el +1.59 no
+>   tiene ninguno. Dirimirlo pide bajar **un nivel más, dentro de `legal`** —
+>   que es §La causa común otra vez, con el contenedor ya un piso más abajo.
+
+**La predicción pre-registrada acertó en ORIGEN y se quedó corta en SITIO**, y
+se escribe como salió: se predijo *«no comparten causa»* por ser movimientos de
+lados opuestos —cierto— y **no** se predijo que cayeran en la misma sección.
+
+### 4 · Y la deriva del original, que también estaba mal atribuida
+
+Cruzando el espejo de **08-14** contra el de **08-18** (§sondas 5bis: aquel
+caducó **sólo en el campo `extracto`**, su geometría vale), la deriva del pie
+del original **vivió entera en `footer-links`**:
+
+| forma | `links` | `legal` | `background` | total |
+|---|---|---|---|---|
+| `L1-*` @390 | **+6.65** | 0 | 0 | +6.65 |
+| `L1-*` @1440 | **+3.00** | 0 | 0 | +3.00 |
+| **`L2-*`** @390 | +54.89 | **+167** | **+100** | **+321.89** |
+| **`L2-*`** @1440 | +55.59 | **+137.86** | **+115.19** | **+308.64** |
+
+`D6` citó los de `L1` (+3 · +6.65) **como si fueran la deriva del pie**. Lo eran
+de `L1`; en `L2` la deriva es **cincuenta veces mayor** y toca las tres
+secciones. Es §*una cobertura declarada al nivel de arriba absorbe lo que no se
+midió abajo*, con el contenedor puesto en la palabra «el pie».
+
+---
+
+## ⛔ F3-LH-PIE-UNO-CONTRA-CUATRO · el clon sirve UN pie donde el original sirve CUATRO — y es lo que bloquea L2 (2026-08-20, 85.ª tanda)
+
+**Disparador (a) del ESCALÓN, en su forma extendida, y el que para el hilo.**
+
+`qa:pie-cmp` mide, en la misma corrida que lo de arriba:
+
+| forma | @1440 | @390 |
+|---|---|---|
+| `L3-sci` · `links` | **−87.35** | **−261.53** |
+| `L3-sci` · `legal` | +1.00 | −28.11 |
+| `L3-sci` · **TOTAL** | **−86.34** | **−289.64** |
+
+**No es un fleco: es una sección entera equivocada.** El clon emite el pie de
+`L1` en todas las formas; el original sirve **cuatro pies distintos**. Y llevaba
+sin adjudicar porque `pie.rect.h` es eje **mixto** y el comparador no lo lee
+como defecto — la misma cañería por la que la 84.ª casi da por inerte un arreglo
+que funcionaba.
+
+### Lo que esto le hace a L2-glosario, con su número
+
+Si `L2` se construyera con el `Footer` de hoy, **nacería con**:
+
+| | `links` | `legal` | `background` | **total** |
+|---|---|---|---|---|
+| @1440 | −142.94 | −136.86 | −115.19 | **−394.99** |
+| @390 | −316.42 | −195.11 | −100.00 | **−611.53** |
+
+> **Por eso `L2-glosario` NO se construye en esta tanda, y la razón no es
+> presupuesto: es que el arquetipo nacería con ~395 px de desfase de cascarón
+> que NO son suyos.** Medirlo después no distinguiría el defecto de `L2` del
+> defecto de clase, que es exactamente cómo se fabrica una FAMILIA DE
+> CALIBRACIÓN — y esta vez con el diagnóstico ya escrito antes de cometerlo.
+
+### Por qué se para el hilo del +0.30 en vez de arreglarlo
+
+El +0.30 vive en `footer-legal`, **pegado a un +1.59 sin mecanismo**, y
+`footer-legal` es una de las tres secciones que la clase de arriba sirve mal en
+`L2` y `L3`. Arreglar los 0.30 dejaría:
+
+- el **+1.59** de la misma sección sin tocar → tercera tanda del mismo bug;
+- los **−136.86 / −195.11** de `legal` en `L2` intactos;
+- y un `footer-legal` recalibrado contra `L1` que habría que **volver a mover**
+  al hacer que el pie dependa de la forma.
+
+**Se ficha con su número y su mecanismo, que es lo que permite atacarlo sin
+volver a medirlo.** Lo que falta para cerrarlo del todo es **una descomposición
+de `footer-legal` un nivel más abajo**, que es la tanda siguiente.
+
+### Lo que esta ficha NO afirma
+
+- **no dice por qué** el original sirve cuatro pies. Se mide el reparto; el
+  mecanismo que lo produce no se ha tocado;
+- **no establece el ruido** de estas rutas: sin campaña, un residuo pequeño
+  —el +0.21, el +1.00— es **SIN PROBAR**, no «limpio»;
+- **no cubre `L2` ni `L4`**: sus formas están **ausentes del clon**, así que la
+  fila peor desviada de la tabla **no se comparó**. Sale con su cardinal —3 de 9
+  formas ausentes—, no como un cero.
+
+---
+
+## ⚠ F3-LH-PIE-390-SE-ALEJA-030 · el pie a 390 pierde 0.30 px por forma con el arreglo de la letra (2026-08-19, 84.ª tanda) — ✅ ADJUDICADO el 2026-08-20, ver §F3-LH-PIE-ADJUDICADO
 
 **Disparador (e) del escalón, y es el único que se disparó de verdad.** El
 arreglo de la raíz mejora 938.4 px a 1440 y **empeora 18.9 px a 390**, todos en
