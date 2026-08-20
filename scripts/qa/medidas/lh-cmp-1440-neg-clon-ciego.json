@@ -1,0 +1,585 @@
+{
+  "meta": {
+    "fecha": "2026-08-20",
+    "que": "COMPARADOR de dos lados de listados, par a par, a 1440",
+    "ladoOriginal": "medidas/lh-spec-1440.json (congelado 2026-08-18)",
+    "alcance": {
+      "espejo": "medidas/lh-spec-1440.json",
+      "unidadDelEspejo": "?",
+      "paginasQueCompara": 13,
+      "queSignificaUnVerde": "Δ0 en la PÁGINA 1 de 13 formas — NO dice nada de /page/2 en adelante (§F3-LH-ALCANCE-PAGINA-1)",
+      "loQueElCruceNoPrueba": "que el universo sea el bueno: qa:lh-alcance y esta sonda salen del mismo espejo. El universo lo verifica la derivación de qa:lh-espejo con su sabotaje `duplicado-sin-marcar`."
+    },
+    "ladoClon": "http://127.0.0.1:50073",
+    "unidad": "el PAR (camino × propiedad), NO el Δ0 de página",
+    "ruido": "⚠ estas rutas NO tienen campaña de ruido: un residuo pequeño es SIN PROBAR, no «limpio». Un suelo es propiedad de las rutas medidas y no se hereda de otra.",
+    "baseDeLectura": "h1 donde lo hay; primera tarjeta en L2 (D4b/D4b.1). P-LH-C8: se verifica que sea EL MISMO ELEMENTO."
+  },
+  "formas": {
+    "L1-blog::/es/blog/": {
+      "ruta": "/es/blog/",
+      "clon": "http://127.0.0.1:50073/blog",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
+      "ruta": "/es/etiqueta/calidad-del-aire/",
+      "clon": "http://127.0.0.1:50073/etiqueta/calidad-del-aire",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L1-etiqueta::/es/etiqueta/h2s-es/": {
+      "ruta": "/es/etiqueta/h2s-es/",
+      "clon": "http://127.0.0.1:50073/etiqueta/h2s-es",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
+      "ruta": "/es/recursos/articulos/contaminacion-urbana/",
+      "clon": "http://127.0.0.1:50073/recursos/articulos/contaminacion-urbana",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+      "ruta": "/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/",
+      "clon": "http://127.0.0.1:50073/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L1-resources-padre::/es/recursos/seminarios-web/": {
+      "ruta": "/es/recursos/seminarios-web/",
+      "clon": "http://127.0.0.1:50073/recursos/seminarios-web",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L2-glosario::/es/glosario/": {
+      "ruta": "/es/glosario/",
+      "clon": "http://127.0.0.1:50073/glosario",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L2-faqs::/es/preguntas-frecuentes/": {
+      "ruta": "/es/preguntas-frecuentes/",
+      "clon": "http://127.0.0.1:50073/preguntas-frecuentes",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
+      "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
+      "clon": "http://127.0.0.1:50073/scientific-category/articulos-cientificos-y-estudios",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L3-sci::/es/scientific-category/articulos-tecnicos/": {
+      "ruta": "/es/scientific-category/articulos-tecnicos/",
+      "clon": "http://127.0.0.1:50073/scientific-category/articulos-tecnicos",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L4-listado-embebido::/es/recursos/": {
+      "ruta": "/es/recursos/",
+      "clon": "http://127.0.0.1:50073/recursos",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L5-casos::/es/casos-de-exito/": {
+      "ruta": "/es/casos-de-exito/",
+      "clon": "http://127.0.0.1:50073/casos-de-exito",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    },
+    "L1-resources-padre::/es/recursos/articulos/": {
+      "ruta": "/es/recursos/articulos/",
+      "clon": "http://127.0.0.1:50073/recursos/articulos",
+      "estado": "AUSENTE",
+      "status": 404,
+      "nota": "el clon no emite (o no sirve contenido) en esta ruta"
+    }
+  },
+  "resumen": {
+    "formas": 13,
+    "ausentesEnElClon": 13,
+    "conDiferencias": 0,
+    "paresComparados": 0,
+    "paresDistintos": 0,
+    "paresMixtos": 0,
+    "mixtasQueDifieren": 0,
+    "derivaExcluida": 0,
+    "paresDeContenidoSinCorpus": 0,
+    "formasSinCorpus": 0,
+    "basesQueNoCasan": 0,
+    "paginasSinNingunPar": 0
+  },
+  "paginasSinNingunPar": [],
+  "faltanCorpus": [],
+  "basesQueNoCasan": [],
+  "ejes": {
+    "contenido": "referencia = el CORPUS del que se sembró el clon (corpus/fase-3/listados)",
+    "plantilla": "referencia = el ORIGINAL (medidas/lh-spec-1440.json (congelado 2026-08-18))",
+    "mixta": "SIN referencia limpia: depende de la plantilla Y del contenido a la vez (alto, y, renglones, nTarjetas, clases, marca). Se cuentan y se enseñan, NO se leen como defecto."
+  },
+  "repartoDelEjeMixto": {
+    "eje": "mixta",
+    "unidad": "el PAR (forma::camino)",
+    "paresEnLaUnion": 1119,
+    "conDistancia": 324,
+    "acercan": 324,
+    "alejan": 0,
+    "igual": 0,
+    "sumaDelta": -12720.38,
+    "sumaAcercan": -12720.38,
+    "sumaAlejan": 0,
+    "noNumericos": 795,
+    "referenciaMovida": 0,
+    "truncadas": {
+      "anterior": 0,
+      "actual": 0
+    },
+    "formasVistas": {
+      "anterior": 13,
+      "actual": 13
+    },
+    "porForma": {
+      "L1-blog::/es/blog/": {
+        "acercan": 53,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -221.28
+      },
+      "L1-etiqueta::/es/etiqueta/calidad-del-aire/": {
+        "acercan": 55,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -2417.7
+      },
+      "L1-etiqueta::/es/etiqueta/h2s-es/": {
+        "acercan": 48,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -676.34
+      },
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-urbana/": {
+        "acercan": 41,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -462.63
+      },
+      "L1-resources-hijo::/es/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/": {
+        "acercan": 19,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -31.44
+      },
+      "L1-resources-padre::/es/recursos/seminarios-web/": {
+        "acercan": 30,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -32.86
+      },
+      "L3-sci::/es/scientific-category/articulos-cientificos-y-estudios/": {
+        "acercan": 6,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -31.81
+      },
+      "L3-sci::/es/scientific-category/articulos-tecnicos/": {
+        "acercan": 4,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -29.81
+      },
+      "L5-casos::/es/casos-de-exito/": {
+        "acercan": 26,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -8306.45
+      },
+      "L1-resources-padre::/es/recursos/articulos/": {
+        "acercan": 42,
+        "alejan": 0,
+        "igual": 0,
+        "suma": -510.06
+      }
+    },
+    "ejemplos": [
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.columnas.1.rect.h",
+        "antes": 82.80000000000001,
+        "ahora": 0,
+        "delta": -82.8,
+        "referencia": 430.19,
+        "clon": 430.19
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.h",
+        "antes": 82.80000000000001,
+        "ahora": 0,
+        "delta": -82.8,
+        "referencia": 430.19,
+        "clon": 430.19
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.0.extracto.rect.h",
+        "antes": 23.25,
+        "ahora": 0,
+        "delta": -23.25,
+        "referencia": 232.5,
+        "clon": 232.5
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000body.clases.length",
+        "antes": 17,
+        "ahora": 0,
+        "delta": -17,
+        "referencia": 20,
+        "clon": 20
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000cabecera.rect.h",
+        "antes": 7.810000000000002,
+        "ahora": 0,
+        "delta": -7.81,
+        "referencia": 225,
+        "clon": 225
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000pie.rect.h",
+        "antes": 1,
+        "ahora": 0,
+        "delta": -1,
+        "referencia": 593.75,
+        "clon": 593.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.clases.length",
+        "antes": 1,
+        "ahora": 0,
+        "delta": -1,
+        "referencia": 4,
+        "clon": 4
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.0.clases.length",
+        "antes": 1,
+        "ahora": 0,
+        "delta": -1,
+        "referencia": 9,
+        "clon": 9
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.0.extracto.renglones",
+        "antes": 1,
+        "ahora": 0,
+        "delta": -1,
+        "referencia": 10,
+        "clon": 10
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.clases.length",
+        "antes": 1,
+        "ahora": 0,
+        "delta": -1,
+        "referencia": 13,
+        "clon": 13
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.2.clases.length",
+        "antes": 1,
+        "ahora": 0,
+        "delta": -1,
+        "referencia": 11,
+        "clon": 11
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.media.rect.h",
+        "antes": 0.15999999999996817,
+        "ahora": 0,
+        "delta": -0.16,
+        "referencia": 293.17,
+        "clon": 293.17
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.2.media.rect.h",
+        "antes": 0.15999999999996817,
+        "ahora": 0,
+        "delta": -0.16,
+        "referencia": 293.17,
+        "clon": 293.17
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.media.rect.y",
+        "antes": 0.11000000000001364,
+        "ahora": 0,
+        "delta": -0.11,
+        "referencia": 396.72,
+        "clon": 396.72
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.2.media.rect.y",
+        "antes": 0.11000000000001364,
+        "ahora": 0,
+        "delta": -0.11,
+        "referencia": 396.72,
+        "clon": 396.72
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000pie.yAbsoluta",
+        "antes": 0.03000000000020009,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 2577.98,
+        "clon": 2577.98
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000pie.rect.y",
+        "antes": 0.03000000000020009,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 2577.98,
+        "clon": 2577.98
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000contenedorTema.rect.h",
+        "antes": 0.03000000000020009,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 2352.98,
+        "clon": 2352.98
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.rect.h",
+        "antes": 0.03000000000020009,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 2302.98,
+        "clon": 2302.98
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.columnas.0.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.columnas.0.modulos.0.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.columnas.1.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.columnas.1.modulos.0.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.0.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.0.titulo.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.0.categoria.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 489.5,
+        "clon": 489.5
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.0.meta.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 488.5,
+        "clon": 488.5
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.0.extracto.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 515.42,
+        "clon": 515.42
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.envoltorioMedia.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.titulo.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 666.86,
+        "clon": 666.86
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.categoria.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 764.11,
+        "clon": 764.11
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.meta.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 763.11,
+        "clon": 763.11
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.1.extracto.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 790.03,
+        "clon": 790.03
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000listado.tarjetas.2.rect.y",
+        "antes": 0.029999999999972715,
+        "ahora": 0,
+        "delta": -0.03,
+        "referencia": 449.75,
+        "clon": 449.75
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.0.rect.h",
+        "antes": 0.01999999999999602,
+        "ahora": 0,
+        "delta": -0.02,
+        "referencia": 102.77,
+        "clon": 102.77
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.0.columnas.0.rect.h",
+        "antes": 0.01999999999999602,
+        "ahora": 0,
+        "delta": -0.02,
+        "referencia": 94.77,
+        "clon": 94.77
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.0.columnas.0.modulos.0.rect.h",
+        "antes": 0.01999999999999602,
+        "ahora": 0,
+        "delta": -0.02,
+        "referencia": 94.77,
+        "clon": 94.77
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.rect.y",
+        "antes": 0.020000000000038654,
+        "ahora": 0,
+        "delta": -0.02,
+        "referencia": 435.36,
+        "clon": 435.36
+      },
+      {
+        "forma": "L1-blog::/es/blog/",
+        "camino": "L1-blog::/es/blog/\u0000esqueleto.cuerpo.1.filas.1.rect.h",
+        "antes": 0.010000000000218279,
+        "ahora": 0,
+        "delta": -0.01,
+        "referencia": 2085.03,
+        "clon": 2085.03
+      }
+    ],
+    "anterior": {
+      "fichero": "lh-cmp-1440-2026-08-20.json",
+      "fecha": "2026-08-20 18:04 UTC",
+      "candidatas": 15,
+      "ordenadoPor": "mtime"
+    }
+  }
+}

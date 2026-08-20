@@ -273,6 +273,77 @@
 >
 > ---
 >
+>
+> ---
+>
+> ## 7 · LA BATERÍA DE CIERRE, CON SUS NÚMEROS
+>
+> | sonda | resultado |
+> |---|---|
+> | `qa:pie-cmp` · `-390` | 9 formas · **3 ausentes** · 6 comparadas — `L1 · L3 · L4 · L5` **sin moverse** (P3.1 ✅) |
+> | `qa:pie-familias` | 4 familias · **3 pieles** · partición estable, 2/2 anchos |
+> | `qa:lh-cmp` · `-390` | eje mixto publicado por defecto; titular sin cambio |
+> | `qa:lh-cmp-todas` · `-390` | **5423** · **5401** pares distintos |
+> | `qa:lh-cubos` · `-390` | cubo 3 = **5423 / 5401** — cuadra con `lh-cmp` tras el arreglo |
+> | `qa:lh-letra` · `-390` | **0 movidos · 374 intactas**, control derivado **NO-OP** |
+> | `qa:lh-huecos` | 5/5 huecos derivados |
+> | `qa:cobertura` | matriz computada · **21 huérfanas** (`pie-legal` declarada) |
+> | `qa:manifiesto` | **374 rutas · 20 familias · 0 vacías · 0 desaparecidas** |
+> | `qa:slugs` | 2/2 familias · ninguna colisión |
+> | `qa:enlaces` | 374/374 páginas · **2 rotos · 105 destinos** — idéntico a la congelada del día |
+> | `qa:negativos` | 42/42 baratos · **6 rojos**, los 6 fichados con sus mismas fracciones |
+> | `qa:pie-cmp-neg` · `qa:pie-familias-neg` | **4/4** cada uno, por su motivo |
+> | `qa:pie-legal-neg` | **4/4**, y `corpus-mudo` cae por el DENOMINADOR con `esUnoAUno` aún en `true` |
+> | `qa:lib` | **114/114** aserciones · **193** sondas |
+> | `qa:lh-cmp-neg` | **4/4** — el `control` corrió CON el bloque nuevo dentro y pasa |
+> | `npm run check` | **EXIT 0** · lint + typecheck + build, `BUILD_ID` nuevo |
+>
+> **Estado derivado al cierre:** **374 rutas** · **20 familias** · **1.232+
+> congeladas** · **198 ficheros de sonda** (193 bajo contrato + 5 librerías).
+>
+> ### Y una lectura que salió gratis: el TRIPWIRE de `CLAUDE.md`
+>
+> La ficha META-CANARIOS se cerró midiendo **156.426 chars** y dejó `KV-01` y
+> `KV-08` como tripwire permanente *«para que cualquier sesión futura conteste
+> ¿me llega entero? sin volver a instrumentar»*. **Primera vez que se cobra el
+> interés:** esta sesión abrió con **169.877 chars** y **los dos marcadores
+> llegaron**. La cota sube 13.451 sin instrumentar nada.
+>
+> ⚠ Con su alcance: un tripwire de dos puntos dice que **los extremos** llegaron,
+> **no** que no falte nada en medio.
+>
+> ---
+>
+> ## 8 · §regla 13 SE COBRÓ CUATRO VECES EN ESTA SESIÓN, TODAS MÍAS
+>
+> Y con la regla recién redactada delante, que es lo que la hace concluyente:
+>
+> | # | forma | resultado |
+> |---|---|---|
+> | 1 | `node -e` con un escape | ❌ falló **en voz alta** — se vio |
+> | 2 | heredoc directo, 2 commits tras decidir «`-F` sin excepción» | ✅ sobrevivió |
+> | 3 | `cat > f <<'FIN'` **+** `git commit -F f` — **parecía cumplimiento** | ✅ sobrevivió |
+> | 4 | `node -e "…"` con backticks dentro | ❌ **MUTILÓ el documento** |
+>
+> **El 3 y el 4 son los que aportan.** El 3 enseña que **`-F` no es la
+> protección**: si el fichero se creó con un heredoc, el texto ya atravesó el
+> intérprete, y el `-F` sólo lo hace *parecer* correcto. El 4 enseña que **el
+> hook cubre una de las dos formas y contra la otra no hay red posible**:
+>
+> | forma | qué queda | ¿el hook la caza? |
+> |---|---|---|
+> | el CONTENIDO se expande a vacío | `` ` ` `` — el par sobrevive | **SÍ** |
+> | la SUSTITUCIÓN se consume entera | **nada** — un hueco de prosa | **NO** |
+>
+> No se amplía el patrón, y la razón va declarada en el hook: un hueco de prosa
+> **no tiene firma sintáctica** que lo separe de una frase mal escrita, así que
+> el regex casaría en mensajes legítimos. **El hook es la red; la regla es el
+> hábito** — y el hábito es que el texto **no pase por el shell**, incluido el
+> `node -e` que escribe el documento.
+
+>
+> ---
+>
 > **Predicciones NO EJERCITADAS (no falladas):** `pie-cmp 9 · 3 · 6 → 9 · 2 · 7`
 > y `rutas 374 → 375` eran condicionales al PASO 3. Siguen **374** y **9 · 3 · 6**.
 
