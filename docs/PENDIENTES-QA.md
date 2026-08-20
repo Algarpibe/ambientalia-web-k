@@ -14941,6 +14941,35 @@ tenía el cuerpo.
 
 ---
 
+## 📋 BARRIDO §regla 12 · la 85.ª — **0 reglas que subir**, y la que el encargo señalaba YA ESTABA (2026-08-20)
+
+**El número se escribe aunque sea cero**, que es lo que distingue *«no encontré
+ninguna»* de *«no barrí»*.
+
+| qué | resultado |
+|---|---|
+| enunciados con forma de regla en `PLAN-FASE-3.md` | **45** |
+| revisados (los de las secciones recientes) | **14** |
+| **reglas generales sin subir** | **0** |
+
+Los 14 llevan **cardinal, ruta o nombre de instrumento** (`P-LH-C3`,
+`L1-resources`, `qa:lh-alcance`, «el cierre con sus TRES números»): aplicado el
+discriminador de §regla 12 —*quítale la fecha y el nombre propio; si sigue
+diciendo qué hacer, es regla*— los 14 son **eventos** y se quedan donde están.
+
+**Y la que el encargo mandaba comprobar ya estaba puesta**, derivado con `grep`
+y no recordado: *«EL EJE QUE NO LEE COMO DEFECTO ESCONDE LA MEJORA»* vive en
+**`CLAUDE.md:973`**, subida por la 84.ª. No hay nada que hacer con ella — y
+comprobarlo costó una línea, que es justo el argumento de §regla 9.
+
+> ⚠ **Lo que esta tanda SÍ aporta a esa regla es una instancia nueva, y por eso
+> se anota aquí en vez de reescribirla arriba:** el eje mixto no sólo escondió
+> la mejora de la 84.ª — llevaba escondiendo **−86.34 / −289.64 px de `L3-sci`**
+> desde que `L3` se construyó. La regla estaba bien escrita; lo que faltaba era
+> **un instrumento que bajara al nivel del pie**, y ése es §F3-LH-PIE-ADJUDICADO.
+
+---
+
 ## ✅ F3-LH-PIE-ADJUDICADO · el pie DESCOMPUESTO, y el «+1.80» resulta ser DOS (2026-08-20, 85.ª tanda)
 
 **Cierra la pregunta que la 84.ª dejó abierta** —*«si el +1.80 preexistente y
