@@ -16929,3 +16929,35 @@ commitear hay que mirar si hay fuentes de sonda en el `git status` que la tanda
 no haya tocado** — es la única señal que existe.
 
 ---
+
+### 9 · VEREDICTO DEL PRE-REGISTRO — **5 de 5**, y las causas se sostienen
+
+Cada una se escribió **nombrando la causa**, no el Δ, y con su falsador delante
+(§0d). Ninguna se falsó.
+
+| # | predicción | resultado | la CAUSA aguantó |
+|---|---|---|---|
+| P1 | `pie-cmp` **9 · 3 · 6 → 9 · 2 · 7** | ✅ | `/glosario` responde 200 y la sonda la reconoce por `data-pie` |
+| P2 | rutas **374 → 382** (`+8`), **NO 375** | ✅ | el cardinal del canal sin recortar (`span.pages` = «Page 1 of 8», 37 tarjetas ÷ 5) |
+| P3 | `L1 · L3 · L4 · L5` no se mueven | ✅ **374 comparadas · 0 con regresión**, umbral CERO, los dos anchos | presentación y cascarón propios; lo único compartido —mover `sm:h-auto` del JSX al campo— era NO-OP **por construcción**, y `clon-base` lo adjudicó |
+| P4 | `qa:cobertura` sube, **en el eje `pie`** | ✅ `pie` **6 → 7** · y además 5 ejes de `lh-cmp` **+8** | `L2` pasa de `ausente` a comparada de dos lados |
+| P5 | el eje mixto publica su reparto **desde la primera corrida** | ✅ | lo publica solo, fuera del recuento, con las rutas nombradas |
+
+**Y P5 fue la más útil de las cinco, por lo que NO predecía.** El reparto salió,
+y su primer titular decía `Σ NETA +283.06 px ← ALEJÁNDOSE del original`. Mirarlo
+**antes** que el titular —que es lo que el encargo mandaba— enseñó que **ninguno
+de los 15 pares era un alejamiento**: eran clases que el clon declara no
+reproducir, la deuda transversal de `cabecera.rect.h` y la geometría que `L2`
+estrenaba. La segunda corrida, con la forma ya en las dos fotos, dio **−17.00 ←
+HACIA el original**.
+
+> **De ahí sale el defecto del instrumento (§5): el eje mixto no distingue
+> APARECER de ALEJARSE.** Sin haberlo mirado antes del titular, el paso siguiente
+> habría sido revertir una construcción correcta.
+
+**P2 se escribió CONTRA el encargo a propósito** —él predecía 375— y es la que
+mejor ilustra el método: 375 sólo cuadra emitiendo la página 1 y dejando siete en
+404, **con el paginador de la primera apuntando a ellas**. El canal que lo dirime
+no es una opinión de alcance: es `span.pages` en el corpus sin recortar.
+
+---
