@@ -3858,7 +3858,7 @@ obligatorios distintos.
 > | # | qué tendría que pasar | por qué reabre |
 > |---|---|---|
 > | **RA-1** | que aparezca **un campo obligatorio de verdad en un subconjunto y no en el otro** — no un bloque, un campo del documento | es Razón 2 con evidencia: la obligatoriedad volvería a poder vivir en el esquema, que es lo único que C3 sacrifica hoy |
-> | **RA-2** | que las **2 páginas de cero secciones propias** dejen de ser 2 y pasen a ser **una forma poblada** (≥ 2 instancias con contenido propio de otra naturaleza) | hoy `bloques` es opcional **por 2 de 32**; si esa forma crece, el opcional deja de ser una excepción y pasa a ser un segundo content type. ⚠ **Y sólo puede crecer por CONTENIDO NUEVO**: la vía «aparecen al capturar» quedó cerrada el 2026-08-22 — no quedan páginas por capturar |
+> | **RA-2** | que las **2 páginas de cero secciones propias** dejen de ser 2 y pasen a ser **una forma poblada** (≥ 2 instancias con contenido propio de otra naturaleza) | hoy `bloques` es opcional **por 2 de 32**; si esa forma crece, el opcional deja de ser una excepción y pasa a ser un segundo content type. ⚠ **Y sólo puede crecer por CONTENIDO NUEVO**: la vía «aparecen al capturar» quedó cerrada el 2026-08-22 — no quedan páginas por capturar.<br>⚠⚠ **REDACTADA SOBRE UN CONJUNTO QUE NO EXISTE (corregido en la 92.ª, §2j.3b).** «las 2» se escribió como si fueran **una** forma con dos instancias. Medido, son **DOS FORMAS DE UNA INSTANCIA CADA UNA** —régimen `-T` (entrada de blog) y régimen `--` (plantilla clásica)—, así que el denominador de RA-2 es **1 + 1**, no 2. **Y con n = 1 por forma, RA-2 se dispara con la SEGUNDA instancia de cualquiera de las dos**, que es un listón mucho más bajo del que su redacción sugiere |
 > | **RA-3** | que un hub estrene **plantilla** (no bloque): que R1 caiga | R1 es lo único que hoy pesa más que Razón 3. Si cae, Razón 3 vuelve a mandar y C4 gana |
 >
 > **Y lo que costaría separar ENTONCES, escrito hoy que es barato** (§Razón 3:
@@ -3870,12 +3870,95 @@ obligatorios distintos.
 > de ese momento. Hoy la separación cuesta **editar un fichero de config antes
 > de sembrar**.
 
+### ⚠⚠ 2j.3b · LA UNIÓN SE ESCRIBIÓ Y SE PROBÓ (92.ª tanda) — Y EXPRESA **30 DE 32**
+
+**Refutación MEDIDA, no una objeción.** `derivaciones/prueba-union-f33.mjs`
+recorre las 32 capturas por EXTRACCIÓN —offline, sin abrir el original y sin
+emitir una página— y pregunta si cada módulo cae en un bloque de la unión.
+Publicado **por régimen**, porque el reparto nunca es uniforme:
+
+| régimen | n | expresadas | NO expresadas |
+|---|---|---|---|
+| BUILDER (`B-`) | 22 | **22** | 0 |
+| HÍBRIDO (`BT`) | 8 | **8** | 0 |
+| PLANTILLADO (`-T`) | 1 | 0 | **1** |
+| **SIN MARCADOR (`--`)** | **1** | 0 | **1** |
+| **TOTAL** | **32** | **30** | **2** |
+
+**Y la mitad honesta primero, porque decide cómo se lee: la refutación NO es
+sobre los bloques.** Los 11 tipos de la unión expresan **313 de 313 módulos de
+contenido**, y **0 tipos del corpus quedan sin correspondencia**. Lo que falla
+son **dos documentos cuyo contenido NO SON MÓDULOS**.
+
+**Las dos, nombradas** (§*toda página que la unión no exprese sale NOMBRADA, no
+contada*):
+
+| ruta | régimen | qué trae | dónde |
+|---|---|---|---|
+| `/es/politica-de-seguridad-de-la-informacion/` | **`--`** | **8387 car.** (`p,h2,ul,li,b`) | `entry-content` — plantilla CLÁSICA de WordPress |
+| `/es/redes-hibridas-…-grabacion-webinar/` | `-T` | **5749 car.** (`h2,p,iframe,a,ul,li,…`) | `et_pb_post_content` |
+
+**Dos cosas que el plan no decía, y las dos salieron de contar POR RÉGIMEN:**
+
+**1 · Hay una CUARTA combinación de régimen, y está DENTRO de las 32.** El plan
+decía «híbrido 8 · builder 22 · plantillado 2». Medido: **8 · 22 · 1 · 1**.
+`/es/politica-de-seguridad-de-la-informacion/` no lleva
+`et_pb_pagebuilder_layout` **ni** `et-tb-has-body` — lleva
+`page-template-default` + `et-tb-has-header/footer`, o sea `<article><div
+class="entry-content">`. La taxonomía `BT`/`B-`/`-T` de `CLAUDE.md` **no tiene
+ese casillero**, y el caso no estaba entre las 16 que no existen: estaba
+capturado desde el principio.
+
+**2 · Las 2 «de cero módulos» NO son el mismo caso, y ninguna está vacía.** La
+lectura de §2j.1 —*«son el caso que obliga al opcional»*— es **cierta en la
+forma** (`bloques` ausente) y **falsa en el fondo**. Y una de las dos **ni
+siquiera es de esta colección**: `/es/redes-hibridas-…-grabacion-webinar/` es
+una **entrada de blog** (`single-post`, `postid-51434`), y aparece como
+`<article id="post-51434">` en el bucle de `corpus/entradas-blog/…` con su
+titular y su fecha. Está en el bucket `sueltas` **por su URL, no por su forma**.
+
+> ⚠⚠ **POR QUÉ `bloques` OPCIONAL NO LAS CUBRE, que es el punto entero.** Un
+> documento con `bloques` ausente se emite con cabecera, pie y **nada en
+> medio**. Las dos responderían **200 sirviendo una página vacía** — §*una ruta
+> que responde 200 no prueba que sirva CONTENIDO*, el mismo modo de fallo que
+> costó seis páginas de `articulos-kb` servidas con cero módulos y todo lo demás
+> en verde.
+>
+> **Y el negativo lo demuestra en vez de argumentarlo:** desactivando la
+> comprobación *«sin capa propia PERO CON contenido»*, la prueba da **32/32 y
+> exit 0** — el verde falso completo. Ese es el único cambio entre el veredicto
+> real y el cómodo (`prueba-union-f33-neg.log`, sabotaje B).
+
+**Qué cambia en la decisión: NADA de la elección, TODO del precio.** C3 sigue
+siendo lo que el propietario eligió y 30 de 32 caen limpias. Lo que estaba mal
+contado es el **coste**: §2j.1 lo cifró en *«`bloques` opcional en las 32»* y el
+coste medido es *«`bloques` opcional **más** un segundo canal de contenido para
+2 documentos cuyo contenido no son bloques»*. **Es un precio distinto y quién lo
+paga es del propietario** — no se arregla ampliando la unión sobre la marcha,
+que sería el reproche que tumbó a **C2** en pequeño (*un escape elegido sin
+medir*).
+
+**Las tres salidas, con lo que cada una cuesta — sin recomendación, porque no
+toca:**
+
+| # | salida | cuesta |
+|---|---|---|
+| **S1** | la webinar sale de `paginas` y entra en **`entradas-blog`**, que ya existe y ya tiene campo rico | **casi nada**, y es la que más evidencia tiene: su forma es la de una entrada, no la de una página |
+| **S2** | `paginas` gana un campo rico **para el régimen `--`** (1 documento hoy) | un campo que **1 de 32** ejercita — §*un campo que ningún dato ejercita es un camino de render sin estrenar*, aquí con n = 1 |
+| **S3** | el régimen `--` sale de la cola larga y espera a su segunda instancia | deja **1 ruta sin emitir**, declarada, en vez de un campo sin probar |
+
+⚠ **Y esto cambia RA-2, que hay que releer con el dato nuevo:** RA-2 vigila que
+«las 2 de cero secciones propias» no crezcan a forma poblada. Medido, **esas 2
+nunca fueron una forma**: son **dos formas distintas de una instancia cada
+una**. Así que RA-2 tal como está escrita vigila un conjunto que no existe, y su
+denominador correcto es **1 + 1**, no 2.
+
 ### 2j.4 · Lo que esta decisión NO decide
 
 | | |
 |---|---|
-| **la forma de cada uno de los 12 bloques** | se mide al construir, contra el original **con sus hojas**. Hoy están **nombrados**, no especificados |
-| **si `slide` es bloque o hijo de `slider`** | en Divi `et_pb_slide` es hijo; en las 2 páginas que lo traen **nunca aparece sin un slider al lado**. Si se confirma, la unión baja a **11 top-level**. Predicho en el pre-registro para que pueda salir mal |
+| **la forma de cada uno de los ~~12~~ 11 bloques** | ⚠ **escrita en la 92.ª** (`bloques/paginas.ts`), con **el n de cada tipo al lado y lo SIN PROBAR declarado**: 5 de las 8 definiciones nuevas descansan en **n ≤ 2 páginas** y **3 en n = 1**. Lo que queda por medir es la GEOMETRÍA, contra el original con sus hojas — **0 ejes comparados en las 32** |
+| ~~**si `slide` es bloque o hijo de `slider`**~~ | ✅ **CONTESTADO OFFLINE en la 92.ª: es HIJO**, medido en el árbol con pila (`et_pb_fullwidth_slider_0 > et_pb_slides > et_pb_slide_0`, **2/2**). **La unión son 11 bloques, no 12.** `mod-v4` lo contaba como tipo de primer nivel porque barre con un regex plano: los dos instrumentos son correctos en lo que miden y **sólo uno contesta la pregunta que el pre-registro hacía** |
 | **`code`** | qué es exactamente su contenido (formulario incrustado, script) y si cae bajo la whitelist de §3 o necesita campo propio |
 | ~~las 16 sueltas sin capturar~~ | ✅ **resuelto el mismo día: no son páginas** (13 × 301 · 3 × 404). La unión **no** es un mínimo: es completa para las 32 |
 | **quién emite los 13 REDIRECTS** | no es esta colección. Un 301 no es un documento de `paginas`; es un mapa de redirecciones del enrutado (§4), y F3-3 tiene que decir dónde vive |

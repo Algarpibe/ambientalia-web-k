@@ -1036,6 +1036,37 @@ contenedor puesto en **la definición del conjunto**.
 > mientras las dos estén escritas, la nota es una tercera lectura, no un
 > arreglo.
 
+⚠⚠ **Y AL BORRARLA, LA MITAD QUE FALTA — Y ES DONDE SE FABRICA EL ERROR ESPEJO:
+CORREGIR UN DENOMINADOR NO ES SUSTITUIRLO EN TODAS PARTES (2026-08-22).**
+
+El caso de arriba se arregla borrando una lectura. Pero cuando lo que cambia es
+**el denominador de un conjunto**, el arreglo tiene dos mitades y sólo se hace
+la primera:
+
+> **Un mismo conjunto puede tener DOS CARDINALES CIERTOS A LA VEZ, uno por
+> unidad.** Así que un acta que dice *«el denominador es 32, no 48»* está
+> corrigiendo **una** unidad, y leerla como *«48 estaba mal»* mete 32 en los
+> sitios donde la unidad correcta era la otra — que es el mismo error, con el
+> signo cambiado y ninguna forma de notarlo.
+
+**Medido:** un conjunto de rutas valía **48 en unidad RUTA** (URLs que el
+original sirve de algún modo) y **32 en unidad PÁGINA** (documentos con HTML
+propio), porque `48 = 32 páginas + 13 redirecciones + 3 bajas`. Barridos los
+**19** sitios donde el 48 vivía: **2** eran lecturas refutadas, **6** eran
+unidad RUTA y **ciertos**, **8** eran unidad PÁGINA y falsos, y **3** eran
+predicados pre-registrados que no se reescriben. Sustituir a ciegas habría roto
+los 6 buenos.
+
+> **Operativamente, y cuesta una palabra por sitio: cada denominador se escribe
+> CON SU UNIDAD** —«48 RUTAS», «32 páginas»—, **y el barrido clasifica antes de
+> sustituir.** Un denominador sin unidad no se puede auditar: las dos lecturas
+> se escriben igual.
+
+**Y el corolario que decide dónde mirar:** cuando un acta corrija un cardinal,
+lo que hay que derivar **no es dónde aparece el número viejo, sino qué unidad
+usa cada aparición**. El primero es un `grep`; el segundo hay que leerlo — y es
+el que evita cambiar un acierto por un fallo.
+
 **Y el cardinal tiene una hermana que muerde ANTES: LA DEFINICIÓN DE «CUÁNTOS
 HAY» ES ELLA MISMA UN CONTENEDOR.**
 
@@ -2411,6 +2442,42 @@ rutas. Lo cazó el comparador de dos lados con `columna.nModulos: orig 2 → clo
    sólo un comparador **contra el original** distingue la segunda. Es §UN
    ARQUETIPO NUEVO NO HEREDA COBERTURA con su caso más barato: aquí el clon no
    estaba un poco mal, estaba **vacío**, y todo lo verde siguió verde.
+
+⚠⚠ **Y SU HERMANO EN EL ESQUEMA, QUE ES EL MISMO MECANISMO UNA CAPA MÁS ARRIBA:
+UN CAMPO OPCIONAL NO EXPRESA UN CASO — SÓLO PERMITE QUE FALTE (2026-08-22).**
+
+La regla 6 dice que un valor por defecto convierte *«no lo sé»* en *«está
+bien»*. Ésta es la versión de **modelo de datos**, y engaña más porque el
+opcional suele estar bien puesto:
+
+> **`required: false` contesta «este documento PUEDE no traerlo». NO contesta
+> «este documento no lo trae».** Y las dos se leen igual desde el esquema, así
+> que un documento cuyo contenido **no cabe en ningún campo** sale «expresado»
+> —el campo admite estar ausente— cuando lo correcto es **OMITIDO**.
+
+**Medido:** un content type declaraba su cuerpo `bloques` opcional *«por las 2
+páginas de cero módulos»*. Las 2 tenían **8387 y 5749 caracteres** de contenido
+— en otro canal (`entry-content` clásico y `post_content`), que el modelo no
+tiene. Con el opcional se habrían emitido con cabecera, pie y **nada en medio**,
+respondiendo 200: exactamente el modo de fallo de arriba, pero **originado en el
+esquema** en vez de en el render.
+
+**Las dos mitades operativas:**
+
+1. **la prueba de que un modelo expresa un corpus no es «¿cabe lo que hay?»,
+   sino «¿queda contenido SIN SITIO?»** — y esas dos preguntas se contestan
+   distinto: la primera recorre los campos, la segunda recorre **el documento**.
+   Un recorrido que sólo mira lo que el modelo sabe leer **no puede ver lo que
+   no sabe leer**;
+2. **y esa comprobación se escribe ANTES de mirar el dato, con su
+   justificación.** Añadida después de ver que dos documentos salen vacíos, es
+   una condición ajustada al resultado. La prueba de que estaba antes es que su
+   negativo la pueda anular: desactivarla dio **32/32 y exit 0** —el verde falso
+   completo— y eso es lo único que demuestra de dónde viene el veredicto.
+
+> **Y la lectura que NO hay que dar:** un opcional legítimo existe —hay
+> documentos que de verdad no traen el campo—. Lo que la regla prohíbe es
+> **inferir cuál es cuál desde el esquema**. Se mira el documento.
 
 **7 · UN ARTEFACTO DE TEST EN NEGATIVO NO PUEDE PARECER UNA MEDIDA.**
 

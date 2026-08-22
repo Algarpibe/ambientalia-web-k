@@ -715,13 +715,36 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > congelada de F3-0, y si difiere, el que manda es el original y la diferencia
 > se ficha con su fecha.**
 
-## F3-3 · la cola larga — **48 RUTAS = 32 páginas + 13 redirecciones + 3 bajas**, en TRES subconjuntos y TRES regímenes
+## F3-3 · la cola larga — **48 RUTAS = 32 páginas + 13 redirecciones + 3 bajas**, en TRES subconjuntos y **CUATRO** regímenes
 
 > ⚠ **DOS UNIDADES, LAS DOS CIERTAS, Y NO SON INTERCAMBIABLES** (91.ª tanda):
 > **48** es lo que la fase tiene que RESOLVER (URLs que el original sirve de
 > algún modo); **32** es lo que la colección `paginas` ALOJA. Todo denominador
 > de este §F3-3 dice cuál de las dos usa. El «13 redirecciones» **no es un
 > hueco**: es otro mecanismo, y su reparto está abajo.
+
+> ⚠⚠ **EL REPARTO DE REGÍMENES, DERIVADO EN LA 92.ª — SON CUATRO, NO TRES.**
+> Este §F3-3 decía «híbrido 8 · builder 22 · plantillado 2». Leído el `<body>`
+> de las 32 capturas:
+>
+> | régimen | marcadores en el `<body>` | n | quiénes |
+> |---|---|---|---|
+> | **HÍBRIDO `BT`** | `et_pb_pagebuilder_layout` **+** `et-tb-has-body` | **8** | los 7 hubs de KB + `/es/sistema-interno-de-informacion/` |
+> | **BUILDER `B-`** | sólo `et_pb_pagebuilder_layout` | **22** | los 6 hubs L4 + 16 sueltas |
+> | **PLANTILLADO `-T`** | sólo `et-tb-has-body` | **1** | `/es/redes-hibridas-…-grabacion-webinar/` |
+> | **SIN MARCADOR `--`** | **ninguno de los dos** | **1** | `/es/politica-de-seguridad-de-la-informacion/` |
+>
+> **El cuarto casillero no está en la taxonomía de `CLAUDE.md`**, que enumera
+> `BT` / `B-` / `-T`. Es `page-template-default` + `et-tb-has-header/footer`, o
+> sea la **plantilla clásica del tema** con `<article><div class="entry-content">`
+> dentro — un tercer mecanismo de entrega de contenido, ni builder ni
+> theme-builder. Y **no venía de las 16 que no existen: estaba capturado desde
+> el principio**, invisible porque nadie contó por régimen.
+>
+> **Consecuencia inmediata:** la unión de CMS-3 expresa **30 de 32**, y las 2
+> que faltan son exactamente estas dos últimas filas. Acta con sus números, sus
+> nombres y su negativo: `ESQUEMA-CMS.md` §2j.3b ·
+> `derivaciones/prueba-union-f33.log`.
 
 > ✅ **MEMBRESÍA DERIVADA Y CERRADA (2026-08-22, 90.ª tanda). Las dos lecturas
 > que convivían quedan BORRADAS, no conciliadas** — precedente de F3-5: mientras
@@ -956,6 +979,7 @@ de su alternativa, no por lo que acierta*).
 | **alimenta** | §2d.1 (**cero arquetipos**; `video`/`toggle` **no** entran en `MonoSeccion[]`) |
 | **incógnita** | ✅ **DECIDIDA POR EL PROPIETARIO, 2026-08-22 (91.ª): C3** — una colección `paginas` con **unión PROPIA** de bloques, por el camino de `articulos-kb`. `MonoSeccion[]` **no se toca**. Escrita como **CMS-3** en `ESQUEMA §2j`, con por qué caen los otros tres, su **condición de reapertura** (C3 va contra Razón 3, §2j.3) y su pre-registro (`docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`) |
 | **precondición NUEVA** | ✅ **A CERO, LOS DOS (2026-08-22, 91.ª).** Eran **dos** huecos y esta fila declaraba uno. ① **50 hojas `et-cache` → 0 faltan**: KB `49/49` (7/7 páginas) · L4 `43/43` (6/6, ya estaba) · sueltas `133/133` (19/19). **32 de 32 páginas con TODAS sus hojas**, contra 6/32 al empezar. ② **los «16 HTML sin capturar» NO ERAN UN HUECO**: re-preguntados al origen **vivo** hoy dan **13 × 301 y 3 × 404**, idéntico a la lectura del 2026-08-09. Congelado: `derivaciones/sueltas-16-reverificadas-2026-08-22.json` |
+| **estado** | ⛔ **BLOQUEADA POR CORTE LIMPIO 2 (2026-08-22, 92.ª).** La unión está **escrita** (`bloques/paginas.ts`, 11 bloques) y **probada por extracción**: expresa **30 de 32**. Las 2 que no —régimen `-T` y régimen `--`— tienen contenido en un canal que el modelo no tiene, y `bloques` opcional **no las cubre: las emitiría vacías con 200**. Es una refutación medida y **sube al propietario**: `ESQUEMA §2j.3b` da las tres salidas (S1/S2/S3) con su coste. **La colección NO está en `COLECCIONES`** — registrarla es la mitad irreversible y es de la tanda que emita |
 | **hecho** | la decisión escrita en el ESQUEMA **con su pre-registro**, **las 32 emitidas con Δ0** y **las 13 redirecciones emitidas por su mecanismo** (no por la colección) |
 
 ## F3-4 · las tres familias de archivo sin censar

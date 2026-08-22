@@ -1,5 +1,122 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⚠⚠ F3-3-CORTE-2 · la unión de CMS-3 expresa **30 de 32**, y el corte lo dispara el RÉGIMEN, no los bloques — **92.ª tanda, 2026-08-22**
+
+**Qué es.** La 92.ª escribió la unión de CMS-3 (11 bloques) y la probó **por
+extracción, offline**, contra las 32 capturas. **CORTE LIMPIO 2 disparó**:
+`prueba-union-f33.mjs` sale con **exit 3** y **2 documentos NOMBRADOS**.
+
+**La mitad honesta primero, porque decide cómo se lee:** la refutación **no es
+sobre los bloques**. Los 11 tipos expresan **313 de 313 módulos de contenido**,
+**0 tipos del corpus quedan sin correspondencia**, y **30 de 32 páginas caen
+limpias**. Lo que falla son **dos documentos cuyo contenido NO SON MÓDULOS**.
+
+| régimen | n | expresadas | NO |
+|---|---|---|---|
+| BUILDER (`B-`) | 22 | 22 | 0 |
+| HÍBRIDO (`BT`) | 8 | 8 | 0 |
+| PLANTILLADO (`-T`) | 1 | 0 | **1** |
+| **SIN MARCADOR (`--`)** | **1** | 0 | **1** |
+
+**Las dos, nombradas:**
+
+| ruta | régimen | contenido | canal |
+|---|---|---|---|
+| `/es/politica-de-seguridad-de-la-informacion/` | **`--`** | 8387 car. (`p,h2,ul,li,b`) | `entry-content` |
+| `/es/redes-hibridas-…-grabacion-webinar/` | `-T` | 5749 car. (`h2,p,iframe,a,ul,li,…`) | `et_pb_post_content` |
+
+**Y una de las dos ni siquiera es de esta colección:** la webinar es una
+**entrada de blog** (`single-post`, `postid-51434`) y aparece como
+`<article id="post-51434">` en el bucle de `corpus/entradas-blog/…` con su
+titular y su fecha. Está en el bucket `sueltas` **por su URL, no por su forma**.
+
+**Por qué `bloques` opcional no las cubre.** Se emitirían con cabecera, pie y
+**nada en medio**, respondiendo **200** — §*una ruta que responde 200 no prueba
+que sirva CONTENIDO*. **Y el negativo lo demuestra en vez de argumentarlo:**
+desactivando la comprobación *«sin capa propia PERO CON contenido»*, la prueba
+da **32/32 y exit 0**, el verde falso completo (sabotaje B).
+
+**Qué hay que decidir, y NO lo decide esta tanda** (§*una refutación medida
+vuelve al propietario*): S1 mover la webinar a `entradas-blog` · S2 campo rico
+en `paginas` para el régimen `--` (n = 1) · S3 dejar el `--` fuera hasta su
+segunda instancia. Las tres con su coste en `ESQUEMA-CMS.md` §2j.3b.
+
+---
+
+## ⚠ F3-3-REGIMEN-CUARTO · la taxonomía `BT`/`B-`/`-T` **no tiene el casillero de `page-template-default`** — 92.ª tanda
+
+`CLAUDE.md` enumera tres regímenes y el reparto medido de las 32 da **cuatro**:
+8 · 22 · 1 · **1**. El cuarto (`--`) es la **plantilla clásica del tema** —
+`<article><div class="entry-content">`, ni builder ni theme-builder — y estaba
+**capturado desde el principio**: no salió al capturar más, salió al **contar
+por régimen en vez de en total**.
+
+**Lo que NO se sabe, y hay que decirlo con su n:** si el `--` es una rareza de
+una página o una familia. **n = 1 en la cola larga**, y **nadie ha barrido las
+otras 6 familias de la campaña F3** buscándolo. Hasta que se barra, «es una
+excepción» es una afirmación sobre 32 páginas, no sobre el sitio.
+
+---
+
+## ⚠ F3-3-RETICULA-BLURB · el enum de retícula de KB **no cubre la cola larga** — 92.ª tanda
+
+`MODULO_BLURB` vive en `MODULOS_KB` y `paginas` lo **consume** (no lo
+re-declara: sería la clase C7). Pero su enum de retícula se midió en KB
+—`iconos-xs-2 iconos-md-3` · `col-md-4` · ninguna— y el censo de la cola larga
+da **`iconos-xs-2` 13/22 · `iconos-md-4` 8/22 · `iconos-md-3` 5/22**: un valor,
+**`iconos-md-4`**, que el enum **no tiene**. Consumir el bloque tal cual dejaría
+**8 instancias sin representar**.
+
+Es §*una regla derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR
+para ese caso*: el enum es correcto **en KB** e **incompleto fuera**. **No se
+amplía de paso** — se mide contra qué defecto compara cada valor, como se hizo
+en KB.
+
+---
+
+## ⚠ F3-3-SIN-PROBAR · las cinco definiciones de n ≤ 2, con lo que NO se puede decidir — 92.ª tanda
+
+De las 8 definiciones nuevas de la unión, **5 descansan en n ≤ 2 páginas y 3 en
+n = 1**. Se escribieron con **lo que la instancia trae seguro** y con lo no
+probado **declarado**, no con los valores de su única instancia convertidos en
+modelo. Lo pendiente, ficha a ficha:
+
+| ficha | bloque | n | qué NO se puede decidir |
+|---|---|---|---|
+| **F3-3-ICONO-DATO** | `icono` | **1 pág / 3 inst.** | si el dato es **enum, carácter o imagen** — las tres dan render idéntico aquí: **0 instancias separadoras**. Se guarda el carácter servido y se declara **transcripción, no decisión de modelo** |
+| **F3-3-MAPA-AJUSTES** | `mapa` | **1 / 1** | si el pin es **uno o varios** (va `array` con `minRows: 1`: un escalar afirmaría «siempre uno»); si **zoom y centro** son campo. **No se cablean** |
+| **F3-3-SLIDER-AJUSTES** | `slider-completo` | **2 / 2** | todo lo que no sea el array de diapositivas: autoplay, transición, flechas, puntos, alto. Las 2 traen las mismas clases, así que **cualquier eje «discrimina» trivialmente** |
+| **F3-3-TOGGLE-ABIERTO** | `toggle` | 5 / 10 | si «abierto por defecto» es campo. **Varianza cero en 10**, y *varianza cero no prueba plantilla* |
+| **F3-3-VIDEO-PROVEEDOR** | `video-pagina` | 5 / 30 | si el proveedor es un **enum**. Las 30 son de una sola familia, así que se guarda la **URL completa** en vez de `{proveedor, id}` |
+| **F3-3-CODE-SEGURIDAD** | `codigo` | 9 / 9 | **qué se le permite y quién puede editarlo.** Es el único campo que admite `<script>` a propósito — no pasa por la whitelist del cuerpo rico porque el módulo existe para meter lo que esa whitelist prohíbe |
+
+**Y `slider` vs `slider-completo` (n = 1 y n = 2) se dejan SEPARADOS**, con el
+criterio citado **con su operación** para que el signo no se invierta al
+releerlo (§regla 23): *deshacer «separado» es **fusionar**, que es el lado
+barato*. **Condición de reapertura: la segunda instancia de cualquiera de los
+dos.**
+
+---
+
+## ⚠ F3-3-REDIRECTS · los 13, repartidos — y **cero canal** en el repo para emitirlos — 92.ª tanda
+
+Derivado del código (**149 ficheros barridos**): `next.config redirects()` ·
+`middleware.ts` · `redirect()` · `permanentRedirect()` → **0 de 4 vivos**. Hay
+que estrenar uno.
+
+| n | cubo | qué hace falta |
+|---|---|---|
+| **8** | el build **ya emite** el destino | sólo el canal |
+| 1 | el destino está **dentro** de la cola larga (`/es/soluciones/` → `/es/productos/`) | el canal + que F3-3 emita el destino |
+| 2 | el destino es una **IMAGEN** | decidir si un 301 a un asset se replica |
+| **2** | **otro prefijo** — el destino no se emite con ese prefijo pero **sí con otro** | ⚠ **INDECIDIBLE con un solo salto**: `/es/cartuchos-inteligentes/metano/` → `/es/sensor-de-calidad-del-aire/metano/`, y el build emite `/metano` **en la raíz**. Cadena de 301 o decisión de prefijo — hay que preguntarle al origen |
+
+**+ 3 bajas (404)**, que **no son redirección** y necesitan su propia decisión:
+404 propio, 410, o no emitir nada.
+
+---
+
+
 ## ⚠ F3-SEED-SIN-GUARDA-DE-W · los scripts de `scripts/seed/` PISAN sus congeladas — **91.ª tanda, 2026-08-22**
 
 **Qué es.** §sondas 5 —*ninguna sonda pisa una salida existente cuyo contenido
