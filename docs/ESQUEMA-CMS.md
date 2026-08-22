@@ -3853,7 +3853,7 @@ obligatorios distintos.
 > | # | qué tendría que pasar | por qué reabre |
 > |---|---|---|
 > | **RA-1** | que aparezca **un campo obligatorio de verdad en un subconjunto y no en el otro** — no un bloque, un campo del documento | es Razón 2 con evidencia: la obligatoriedad volvería a poder vivir en el esquema, que es lo único que C3 sacrifica hoy |
-> | **RA-2** | que las **2 páginas de cero secciones propias** dejen de ser 2 y pasen a ser **una forma poblada** (≥ 2 instancias con contenido propio de otra naturaleza) | hoy `bloques` es opcional **por 2 de 48**; si esa forma crece, el opcional deja de ser una excepción y pasa a ser un segundo content type |
+> | **RA-2** | que las **2 páginas de cero secciones propias** dejen de ser 2 y pasen a ser **una forma poblada** (≥ 2 instancias con contenido propio de otra naturaleza) | hoy `bloques` es opcional **por 2 de 32**; si esa forma crece, el opcional deja de ser una excepción y pasa a ser un segundo content type. ⚠ **Y sólo puede crecer por CONTENIDO NUEVO**: la vía «aparecen al capturar» quedó cerrada el 2026-08-22 — no quedan páginas por capturar |
 > | **RA-3** | que un hub estrene **plantilla** (no bloque): que R1 caiga | R1 es lo único que hoy pesa más que Razón 3. Si cae, Razón 3 vuelve a mandar y C4 gana |
 >
 > **Y lo que costaría separar ENTONCES, escrito hoy que es barato** (§Razón 3:
