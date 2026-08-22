@@ -1,0 +1,60 @@
+═══ 1 · MECANISMOS DE REDIRECCIÓN EN EL REPO, derivados
+  ❌ next.config redirects()          NO EXISTE
+  ❌ middleware.ts                    NO EXISTE
+  ❌ redirect() de next/navigation    NO EXISTE
+  ❌ permanentRedirect()              NO EXISTE
+  ▸ canales de redirección VIVOS en el repo: 0 de 4
+     (barrido sobre 149 ficheros de fuente)
+
+═══ 2 · LOS 13 REDIRECTS, con su destino y su estado
+  build de referencia: 385 rutas emitidas · prerender-manifest de 2026-08-22 00:38
+  imagen         /es/air-quality-monitor-2/                                                      
+                   → /wp-content/uploads/2022/06/air-quality-monitor.png
+  imagen         /es/air-quality-software-2/                                                     
+                   → /wp-content/uploads/2018/03/air-quality-software.jpg
+  emitida        /es/calidad-aire-puertos-maritimos/                                             
+                   → /es/calidad-del-aire-en-puertos/   [local /calidad-del-aire-en-puertos]
+  otroPrefijo    /es/cartuchos-inteligentes/acido-sulfhidrico/                                   
+                   → /es/cartuchos-inteligentes/sulfuro-de-hidrogeno/   [local /cartuchos-inteligentes/sulfuro-de-hidrogeno]
+                   ⚠ el build sí emite: /sulfuro-de-hidrogeno
+  otroPrefijo    /es/cartuchos-inteligentes/metano/                                              
+                   → /es/sensor-de-calidad-del-aire/metano/   [local /sensor-de-calidad-del-aire/metano]
+                   ⚠ el build sí emite: /metano
+  emitida        /es/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/
+                   → /es/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/   [local /casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez]
+  emitida        /es/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/  
+                   → /es/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb/   [local /casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb]
+  emitida        /es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/
+                   → /es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/   [local /casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania]
+  emitida        /es/estaciones-control-calidad-del-aire/                                        
+                   → /es/monitor-calidad-aire/   [local /monitor-calidad-aire]
+  emitida        /es/glossary/huella-de-carbono/                                                 
+                   → /es/huella-de-carbono/   [local /huella-de-carbono]
+  emitida        /es/recursos/guias/                                                             
+                   → /es/recursos/articulos/   [local /recursos/articulos]
+  enCola         /es/soluciones/                                                                 
+                   → /es/productos/   [local /productos]
+  emitida        /es/vigilancia-perimetral-calidad-del-aire/                                     
+                   → /es/vigilancia-perimetral-industrial/   [local /vigilancia-perimetral-industrial]
+
+═══ 3 · EL REPARTO — por lo que hace falta para emitir cada uno
+   8  emitida        el build YA EMITE el destino, tal cual
+   1  enCola         el destino está DENTRO de la cola larga (lo emitirá F3-3)
+   0  enOtraFamilia  el destino está en OTRA familia del corpus de trabajo
+   2  otroPrefijo    ⚠ el destino NO se emite con ese prefijo, pero SÍ con otro — cadena de 301 o decisión de prefijo, INDECIDIBLE con un solo salto
+   2  imagen         el destino es una IMAGEN, no una página
+   0  externa        el destino está fuera de kunakair.com
+   0  sinDestino     sin destino resoluble a ninguna ruta del clon
+  ──
+  13  TOTAL 301   (+ 3 bajas 404, que NO son redirects)
+
+  ▸ las 3 BAJAS (404) — no tienen destino, así que no son redirección:
+      /es/cartuchos-inteligentes/
+      /es/emision-de-gases-y-particulas-en-refinerias/
+      /es/higiene-industrial-y-seguridad-laboral/
+
+═══ 4 · LO QUE ESTO **NO** CONTESTA
+  · no dice CÓMO emitirlos: no hay canal en el repo, así que hay que estrenar uno
+  · no dice si la página del destino es CORRECTA — sólo que la ruta se emite
+  · no dice qué hacer con las 3 bajas: 404 propio, 410, o no emitir nada
+  · el prerender-manifest es una FOTO (2026-08-22 00:38); un build nuevo puede mover el reparto

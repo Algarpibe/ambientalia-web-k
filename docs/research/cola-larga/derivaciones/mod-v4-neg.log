@@ -1,0 +1,57 @@
+NEGATIVO de modulos-f33-v4.mjs — 92.ª tanda, 2026-08-22
+(§regla 7: esto NO es una medida del sitio, es un artefacto de test en negativo)
+
+El pie de v3 decretaba «COTA» sin mirar nada. El de v4 lo DERIVA. Para que eso
+signifique algo hay que probar que el instrumento puede emitir LOS DOS
+veredictos según el dato — si no, «TOTAL» sería el decreto nuevo (§*dos modelos
+que predicen lo mismo en todo tu dominio son uno solo*).
+
+Los sabotajes corren sobre una COPIA en el scratchpad, no sobre el fuente
+(§regla 20: un `finally` no corre si el proceso muere por señal, y un sabotaje
+que edita el fuente sobrevive a la muerte de su corrida y se commitea).
+
+┌───────────────────┬──────────────────────────────────┬──────┬─────────────────┐
+│ caso              │ dato                             │ exit │ veredicto       │
+├───────────────────┼──────────────────────────────────┼──────┼─────────────────┤
+│ CONTROL (real)    │ la congelada de las 16            │  0   │ ✅ TOTAL, 0 huecos │
+│ SABOTAJE A        │ congelada que no casa con ninguna │  1   │ CONTROL ROTO    │
+│ SABOTAJE B        │ congelada con 14 de 16            │  0   │ ⚠ COTA, 2 nombrados │
+└───────────────────┴──────────────────────────────────┴──────┴─────────────────┘
+
+SABOTAJE A — la congelada explica CERO ausencias
+  Error: CONTROL ROTO: hay 16 ausencias y la congelada no explica NINGUNA.
+  Un 0 de cobertura no es «no había no-páginas»: es que las rutas no casan.
+  ▸ Es §sondas 4 sobre el CRUCE: un 0 de casado no puede leerse como 0 de
+    ausencias. Sin esta guarda, una congelada con las rutas mal normalizadas
+    daría «0 no-páginas · 16 huecos reales» — o sea el veredicto contrario, con
+    la misma cara de dato.
+
+SABOTAJE B — la congelada explica 14 de 16
+  ⚠ COTA, no total: quedan 2 rutas SIN capturar y SIN explicar.
+     Pueden añadir tipos. La unión es un MÍNIMO. Son:
+       /es/soluciones/
+       /es/vigilancia-perimetral-calidad-del-aire/
+  ▸ Éste es el caso SEPARADOR: prueba que «TOTAL» no está cableado. Con dos
+    ausencias sin explicar el instrumento vuelve a COTA **y las nombra**, que es
+    lo que §*toda página que la unión no exprese sale NOMBRADA, no contada* pide.
+
+CONTROL EN POSITIVO — con la congelada real
+  ✅ TOTAL, no cota: las 16 rutas sin HTML NO SON PÁGINAS
+     (13 × 301 · 3 × 404, dos lecturas separadas 13 días),
+     así que no queda nada por capturar y la unión de 12 tipos es COMPLETA para
+     las 32.
+
+CONTROL DE NO-REGRESIÓN DEL CENSO — v3 vs v4, `diff` completo
+  2 hunks y nada más:
+    · línea 83  : `derivada de 32/48 páginas` → `derivada de 32 páginas`
+    · líneas 101-102 : el pie viejo → el pie derivado
+  Las líneas 1-82 y 84-100 son IDÉNTICAS AL CARÁCTER. O sea que v4 no toca el
+  censo: sólo cambia lo que el censo CONCLUYE. Sin este diff, «v4 arregla el
+  pie» sería una afirmación sobre el diff que nadie miró.
+
+LO QUE ESTE NEGATIVO **NO** PRUEBA (§*escribe qué preguntas NO contesta*)
+  · no prueba que las 16 sean 301/404 — eso lo prueba la congelada, medida
+    contra el origen vivo dos veces con 13 días de separación;
+  · no prueba que la correspondencia `et_pb_<tipo>` → slug sea correcta: es una
+    decisión de modelado declarada en el MAPA, no derivada;
+  · no dice nada de geometría. v4 no abre el original y no congela en `medidas/`.

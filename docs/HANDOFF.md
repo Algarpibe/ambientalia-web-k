@@ -180,7 +180,7 @@
 > > cardinal es un contenedor y absorbe la membresía* — dos conjuntos de 13 que
 > > no comparten ni la mitad de sus elementos.
 >
-> **El conjunto real es la UNIÓN: 7 + 6 + 35 = 48 rutas, disjuntas** (los 6 de L4
+> **El conjunto real es la UNIÓN: 7 + 6 + 35 = 48 RUTAS, disjuntas** (los 6 de L4
 > caen en `bucket: listados`, no en `sueltas` — comprobado). **Las dos
 > formulaciones quedan BORRADAS** en los dos documentos, no conciliadas
 > (precedente F3-5).
@@ -226,9 +226,9 @@
 > | hubs **L4** (6) | **0/6** | **0/6** | **NINGUNO** |
 > | **sueltas** (19) | **0/19** | **0/19** | **5** — `map`·`slider`·`fullwidth_slider`·`slide`·`icon` |
 >
-> > *«La cola larga usa `video`/`toggle`»* es **cierta en 7 de 48**. Hacia atrás
-> > la regla es correcta en su dominio; hacia delante se había generalizado a 48
-> > páginas donde **en 41 el caso no se da** — y con **cinco tipos que nadie
+> > *«La cola larga usa `video`/`toggle`»* es **cierta en 7 de las 32 PÁGINAS**. Hacia atrás
+> > la regla es correcta en su dominio; hacia delante se había generalizado a las 48 RUTAS
+> > y **en 25 de las 32 páginas el caso no se da** — con **cinco tipos que nadie
 > > había nombrado** en su lugar. **R2 sale REFORZADA**: los tipos fuera de
 > > `MonoSeccion[]` no son 2, son **7**.
 >

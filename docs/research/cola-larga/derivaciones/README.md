@@ -13,10 +13,10 @@ Las cifras que estos cuatro ficheros producen son las que citan
 
 | script | contesta | NO contesta | salida |
 |---|---|---|---|
-| `inv-f33.mjs` | ¿está capturado el HTML de cada una de las 48? | nada de geometría ni de modelo | `inv-f33.log` |
+| `inv-f33.mjs` | ¿está capturado el HTML de cada una de las **48 RUTAS**? | **si una ausencia es un hueco o una NO-PÁGINA** — eso lo contesta `modulos-f33-v4.mjs` §6 | `inv-f33.log` |
 | `css-f33.mjs` | ¿están capturadas **sus hojas**? | qué dicen esas hojas | `css-f33.log` |
 | `sondas-f33-v2.mjs` | ¿la ha **medido** alguna congelada no-artefacto? | qué midió, ni con qué calidad | `sondas-v2.log` |
-| ~~`modulos-f33-v2.mjs`~~ → **`modulos-f33-v3.mjs`** | qué **tipos de módulo** trae cada una, por capa, **y cuáles no tienen bloque en el repo** | **ni un píxel** | `mod-v3.log` |
+| ~~`modulos-f33-v2.mjs`~~ → **`modulos-f33-v4.mjs`** | qué **tipos de módulo** trae cada una, por capa, **y cuáles no tienen bloque en el repo** | **ni un píxel** | `mod-v4.log` |
 
 > ⚠ **v2 → v3 (91.ª tanda) — la tercera vez que este censo falla por §sondas 4, y
 > ahora en la LISTA CONTRA LA QUE COMPARA.** v2 usaba

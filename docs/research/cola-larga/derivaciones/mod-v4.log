@@ -1,0 +1,127 @@
+═══ REGISTRO DE BLOQUES, derivado de packages/cms-config/src/bloques/
+    contenido    boton · claim · imagen · p · texto · titular · ul
+    kb           blurb · boton-kb · gallery · imagen-kb · texto-kb
+    monografico  ctaDescarga · mapaProyectos · serie · tabla
+    sector       beneficiosAplicaciones · claimConFoto · ctaDescarga · listaSimple2Col · mapaProyectos
+    UNION_MONO (lo que MonoSeccion[] consume): titular · claim · texto · imagen · boton · serie · tabla · ctaDescarga · mapaProyectos
+
+═══ hubs-KB — 7/7 HTML capturados
+  MÓDULOS DE CONTENIDO de la capa propia (los que deciden el modelo):
+       et_pb_text                   7/7 páginas
+       et_pb_image                  7/7 páginas
+     ★ et_pb_toggle                 5/7 páginas
+     ★ et_pb_video                  5/7 páginas
+       et_pb_button                 1/7 páginas
+  estructura (retícula, ya modelada por flujo/anchoPct/filas/columnas): column · column_1 · column_3 · column_4 · row · section
+  capa _tb_ (cascarón, común): button · code · column · icon · menu · post_content · row · section · sidebar · text
+  ★ FUERA de MonoSeccion[]: 2 — toggle · video
+  ★ sin bloque en NINGUNA unión del repo: 2 — toggle · video
+  por página:
+      /es/centro-de-ayuda/kunak-air-cloud/                                       image,text,toggle,video
+      /es/centro-de-ayuda/kunak-air/                                             image,text,toggle,video
+      /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/                          image,text,toggle
+      /es/centro-de-ayuda/kunak-air/video-tutoriales/                            image,text,video
+      /es/soporte/centro-de-ayuda/                                               button,image,text,toggle,video
+      /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/            image,text,toggle
+      /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/              image,text,video
+
+═══ hubs-L4 — 6/6 HTML capturados
+  MÓDULOS DE CONTENIDO de la capa propia (los que deciden el modelo):
+       et_pb_text                   6/6 páginas
+       et_pb_image                  6/6 páginas
+       et_pb_button                 3/6 páginas
+     ≈ et_pb_blurb                  1/6 páginas
+  estructura (retícula, ya modelada por flujo/anchoPct/filas/columnas): column · column_1 · column_2 · column_3 · column_4 · row · section
+  capa _tb_ (cascarón, común): blog · button · code · column · icon · menu · row · section · sidebar
+  ★ FUERA de MonoSeccion[]: 1 — blurb
+  ★ sin bloque en NINGUNA unión del repo: 0 — NINGUNO
+  por página:
+      /es/productos/                                                             button,image,text
+      /es/sectores/                                                              image,text
+      /es/recursos/                                                              blurb,button,image,text
+      /es/recursos/kunakpedia/                                                   image,text
+      /es/recursos/documentos-cientificos/                                       image,text
+      /es/recursos/preguntas-frecuentes/                                         button,image,text
+
+═══ sueltas — 19/35 HTML capturados
+  MÓDULOS DE CONTENIDO de la capa propia (los que deciden el modelo):
+       et_pb_text                  16/19 páginas
+     ★ et_pb_code                   9/19 páginas
+       et_pb_image                  6/19 páginas
+     ★ et_pb_fullwidth_slider       2/19 páginas
+     ★ et_pb_slide                  2/19 páginas
+       et_pb_button                 2/19 páginas
+     ≈ et_pb_blurb                  2/19 páginas
+     ★ et_pb_map                    1/19 páginas
+     ★ et_pb_slider                 1/19 páginas
+     ★ et_pb_icon                   1/19 páginas
+  estructura (retícula, ya modelada por flujo/anchoPct/filas/columnas): column · column_1 · column_2 · column_3 · column_4 · row · section
+  capa _tb_ (cascarón, común): blog · button · code · column · icon · image · menu · post_content · row · section · sidebar · text
+  ★ FUERA de MonoSeccion[]: 7 — code · fullwidth_slider · slide · blurb · map · slider · icon
+  ★ sin bloque en NINGUNA unión del repo: 6 — code · fullwidth_slider · slide · map · slider · icon
+  por página:
+      /es/aviso-legal/                                                           text
+      /es/contacto/                                                              code,fullwidth_slider,image,map,slide,text
+      /es/descarga-catalogo/                                                     code,image
+      /es/empresa/                                                               blurb,button,fullwidth_slider,image,slide,slider,text
+      /es/empresa/premios-y-reconocimientos/                                     image,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/            code,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/           code,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/           code,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/               code,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/             code,text
+      /es/newsletter/                                                            code,text
+      /es/politica-de-cookies/                                                   text
+      /es/politica-de-privacidad-y-de-proteccion-de-datos/                       text
+      /es/politica-de-seguridad-de-la-informacion/                               — (0 módulos de contenido)
+      /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/                  — (0 módulos de contenido)
+      /es/sistema-interno-de-informacion/                                        text
+      /es/soporte/                                                               icon,image,text
+      /es/soporte/servicio-de-reparacion/                                        blurb,button,image,text
+      /es/suscribete/                                                            code,text
+
+═══ LA UNIÓN QUE C3 NECESITA — derivada de 32 páginas
+  tipos de CONTENIDO distintos (capa propia): 12
+     et_pb_text                  29 págs · MonoSeccion[] lo expresa
+     et_pb_image                 19 págs · MonoSeccion[] lo expresa
+     et_pb_code                   9 págs · SIN BLOQUE EN EL REPO — definición nueva
+     et_pb_button                 6 págs · MonoSeccion[] lo expresa
+     et_pb_toggle                 5 págs · SIN BLOQUE EN EL REPO — definición nueva
+     et_pb_video                  5 págs · SIN BLOQUE EN EL REPO — definición nueva
+     et_pb_blurb                  3 págs · bloque existe, pero fuera de MonoSeccion[] (blurb)
+     et_pb_fullwidth_slider       2 págs · SIN BLOQUE EN EL REPO — definición nueva
+     et_pb_slide                  2 págs · SIN BLOQUE EN EL REPO — definición nueva
+     et_pb_map                    1 págs · SIN BLOQUE EN EL REPO — definición nueva
+     et_pb_slider                 1 págs · SIN BLOQUE EN EL REPO — definición nueva
+     et_pb_icon                   1 págs · SIN BLOQUE EN EL REPO — definición nueva
+  ▸ fuera de MonoSeccion[]: 9 — code · toggle · video · blurb · fullwidth_slider · slide · map · slider · icon
+  ▸ definiciones NUEVAS que C3 tiene que escribir: 8 — code · toggle · video · fullwidth_slider · slide · map · slider · icon
+  ▸ copiables de otra unión: 1 — blurb
+
+═══ ¿COTA o TOTAL? — derivado, no supuesto
+  rutas de la cola larga (URLs conocidas) : 48
+  de ellas, PÁGINAS leídas               : 32
+  de ellas, NO SON PÁGINAS (301/404)     : 16   ← derivado de 2026-08-22
+  de ellas, HUECO REAL de captura        : 0
+
+  ✅ TOTAL, no cota: las 16 rutas sin HTML NO SON PÁGINAS
+     (13 × 301 · 3 × 404, dos lecturas separadas 13 días),
+     así que no queda nada por capturar y la unión de 12 tipos es COMPLETA para las 32.
+
+  ▸ las 16 que NO son páginas, NOMBRADAS (no contadas):
+      301  /es/air-quality-monitor-2/                                 https://kunakair.com/wp-content/uploads/2022/06/air-quality-monitor.png
+      301  /es/air-quality-software-2/                                https://kunakair.com/wp-content/uploads/2018/03/air-quality-software.jpg
+      301  /es/calidad-aire-puertos-maritimos/                        https://kunakair.com/es/calidad-del-aire-en-puertos/
+      404  /es/cartuchos-inteligentes/                                
+      301  /es/cartuchos-inteligentes/acido-sulfhidrico/              https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/
+      301  /es/cartuchos-inteligentes/metano/                         https://kunakair.com/es/sensor-de-calidad-del-aire/metano/
+      301  /es/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/ https://kunakair.com/es/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/
+      301  /es/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/ https://kunakair.com/es/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb/
+      301  /es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/ https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/
+      404  /es/emision-de-gases-y-particulas-en-refinerias/           
+      301  /es/estaciones-control-calidad-del-aire/                   https://kunakair.com/es/monitor-calidad-aire/
+      301  /es/glossary/huella-de-carbono/                            https://kunakair.com/es/huella-de-carbono/
+      404  /es/higiene-industrial-y-seguridad-laboral/                
+      301  /es/recursos/guias/                                        https://kunakair.com/es/recursos/articulos/
+      301  /es/soluciones/                                            https://kunakair.com/es/productos/
+      301  /es/vigilancia-perimetral-calidad-del-aire/                https://kunakair.com/es/vigilancia-perimetral-industrial/

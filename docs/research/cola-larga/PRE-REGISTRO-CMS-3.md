@@ -36,7 +36,7 @@
 > **Honestidad sobre el punto de partida, porque sin ella esto no es un
 > pre-registro:** la evidencia de **32 de las 48** páginas ya está mirada y
 > congelada (`corpus/fase-3/`, censo en
-> `derivaciones/modulos-f33-v3.mjs` + `mod-v3.log`). Lo que aquí se fija ANTES de
+> `derivaciones/modulos-f33-v4.mjs` + `mod-v4.log`). Lo que aquí se fija ANTES de
 > existir es lo que dirán **las 16 que todavía no se han capturado** — que son
 > justamente la precondición de la fase. Ésa es la muestra ciega, y es lo que
 > hace que estos predicados sean predicciones y no descripciones.
@@ -85,9 +85,9 @@ mismo constructor y del mismo sitio, así que deben reutilizar tipos ya vistos.
 
 | # | predicado | evaluable con | resultado |
 |---|---|---|---|
-| **P-U1** | capturadas las 48, la unión de tipos de contenido queda en **12 ≤ N ≤ 17** | el censo v3 corrido sobre 48 | ⏳ |
-| **P-U2** | los 16 nuevos añaden **≤ 5 tipos** que hoy no están | ídem | ⏳ |
-| **P-U3** | **ningún tipo nuevo aparece en ≥ 8 de las 16** — o sea, lo que falta es cola, no un tipo mayoritario que el muestreo se dejó fuera | ídem | ⏳ |
+| **P-U1** | capturadas las 48, la unión de tipos de contenido queda en **12 ≤ N ≤ 17** | el censo v3 corrido sobre 48 | ✅ **CERRADO SIN EJERCITARSE** — no quedaban 16 por capturar. N = **12**, y es TOTAL, no cota (`mod-v4.log` §¿COTA o TOTAL?) |
+| **P-U2** | los 16 nuevos añaden **≤ 5 tipos** que hoy no están | ídem | ✅ **SIN OBJETO** — añaden **0**, porque no existen (13 × 301 · 3 × 404) |
+| **P-U3** | **ningún tipo nuevo aparece en ≥ 8 de las 16** — o sea, lo que falta es cola, no un tipo mayoritario que el muestreo se dejó fuera | ídem | ✅ **SIN OBJETO** — mismo motivo. ⚠ Y por eso NO se lee como *«el muestreo era bueno»*: es que no había muestreo, el conjunto está entero |
 
 **Qué significa qué:**
 
@@ -108,21 +108,21 @@ mismo constructor y del mismo sitio, así que deben reutilizar tipos ya vistos.
 ## P-O · LA OPCIONALIDAD — el predicado que puede salir CONTRA C3
 
 **Éste es el que puede tumbar la decisión, y por eso va con su umbral escrito
-antes.** C3 paga que `bloques` sea **opcional en las 48** por culpa de **2**
+antes.** C3 paga que `bloques` sea **opcional en las ~~48~~ 32** por culpa de **2**
 páginas con cero secciones propias. Ese precio es asumible **mientras esas 2
 sean una excepción**; si son la punta de una forma poblada, RA-2 se cumple y la
 colección única deja de valer.
 
 | # | predicado | evaluable con | resultado |
 |---|---|---|---|
-| **P-O1** | capturadas las 48, las páginas con **0 secciones propias** siguen siendo **exactamente 2** | `reg-f33` sobre 48 | ⏳ |
-| **P-O2** | ninguna de las 16 trae un **campo de documento obligatorio** que las otras 32 no tengan (no un bloque: un campo del cascarón — cabecera, hero, barra, ficha) | recon del cascarón de las 16 | ⏳ |
-| **P-O3** | los 16 nuevos no estrenan **régimen**: siguen siendo `BT` / `B-` / `-T`, sin cuarta combinación | `reg-f33` sobre 48 | ⏳ |
+| **P-O1** | capturadas las 48, las páginas con **0 secciones propias** siguen siendo **exactamente 2** | `reg-f33` sobre 48 | ✅ **CERRADO A FAVOR DE C3, sin ejercitarse** — quedan en **2 de 32** y **no pueden crecer por captura**. RA-2 sólo puede dispararse por contenido nuevo dado de alta |
+| **P-O2** | ninguna de las 16 trae un **campo de documento obligatorio** que las otras 32 no tengan (no un bloque: un campo del cascarón — cabecera, hero, barra, ficha) | recon del cascarón de las 16 | ✅ **SIN OBJETO** — no hay 16 páginas nuevas |
+| **P-O3** | los 16 nuevos no estrenan **régimen**: siguen siendo `BT` / `B-` / `-T`, sin cuarta combinación | `reg-f33` sobre 48 | ✅ **SIN OBJETO** — mismo motivo |
 
 **Qué significa qué:**
 
 - **P-O1 ∧ P-O2 ∧ P-O3** → C3 se sostiene tal como está escrita. `bloques`
-  opcional por 2 de 48 es una excepción declarada, no un content type.
+  opcional por **2 de 32** (⚠ escrito «2 de 48»; el denominador bajó el mismo día) es una excepción declarada, no un content type.
 - **¬P-O1 con ≥ 4 páginas de 0 secciones** → **RA-2 se cumple** (`ESQUEMA §2j.3`):
   la forma «sin capa propia» deja de ser excepción. **Se reabre CMS-3 y C4 pasa
   a ganar**, porque además Razón 3 ya la favorecía. **Esta es la predicción que
@@ -134,11 +134,18 @@ colección única deja de valer.
 - **¬P-O3** → hay un régimen nuevo en la cola larga; antes de modelar nada hay
   que leerlo por capas (§*el régimen es propiedad de la CAPA*).
 
-> ⚠ **Y el enunciado va con su alcance, porque el cero de hoy es de 32 y no de
+> ⚠ ~~**Y el enunciado va con su alcance, porque el cero de hoy es de 32 y no de
 > 48:** *«sólo 2 páginas sin capa propia»* es una afirmación sobre **las 32
 > capturadas**. Las 16 que faltan **no están medidas**, así que P-O1 no es una
 > confirmación esperada: es una **apuesta a que el 2 aguante**, y el conjunto que
-> la puede romper es exactamente el que falta por capturar.
+> la puede romper es exactamente el que falta por capturar.**~~
+>
+> ✅ **ESTE PÁRRAFO QUEDA REFUTADO EL MISMO DÍA, y su forma es la que enseña:**
+> daba por sentado que *«las 16 que faltan»* son un conjunto que **puede romper
+> el 2**. No lo es: son 13 × 301 y 3 × 404. Así que **32 no es una muestra de
+> 48 — es el conjunto entero**, y el «2» no es una apuesta: es el total. La
+> apuesta que sí queda viva es otra —**contenido NUEVO dado de alta**— y ésa es
+> RA-2, que no depende de ninguna captura.
 
 ---
 
@@ -151,7 +158,7 @@ de la unión: es el `array` interno del bloque slider.
 
 | # | predicado | resultado |
 |---|---|---|
-| **P-S1** | en las 48, `et_pb_slide` **nunca** aparece en una página sin `slider` ni `fullwidth_slider` | ⏳ |
+| **P-S1** | en las ~~48~~ **32**, `et_pb_slide` **nunca** aparece en una página sin `slider` ni `fullwidth_slider` | ⏳ **VIVO** — y ahora sobre el conjunto ENTERO, no sobre una muestra |
 | **P-S2** | y anidado: cada `et_pb_slide` está **dentro** del DOM de un slider | ⏳ |
 
 - **P-S1 ∧ P-S2** → la unión baja a **11 bloques top-level** y `slide` es un
@@ -234,8 +241,8 @@ camino de render sin estrenar* (`CLAUDE.md`, `qa:nunca-vistos`). Declarados
 |---|---|
 | la **forma** (campos) de cada uno de los 12 bloques | se mide al construir, contra el original **con sus hojas**. Hoy los 26 de 32 sin `et-cache` darían números plausibles y falsos |
 | si la unión de C3 **reutiliza** `texto-kb`/`imagen-kb`/`boton-kb` o declara los suyos | es decisión de construcción; el precedente de `MODULOS_KB` autoriza las dos |
-| **la geometría de las 48** | no se ha comparado ni un eje contra el original en 42 de ellas (`COBERTURA-MEDICION`), y §*UN ARQUETIPO NUEVO NO HEREDA COBERTURA* obliga a un comparador de dos lados propio |
-| si las 16 sin capturar **siguen vivas** en el original | se sabrá al capturarlas; una 404 es un resultado, no un fallo de campaña |
+| **la geometría de las 32** | no se ha comparado ni un eje contra el original en **26 de las 32** (`COBERTURA-MEDICION`), y §*UN ARQUETIPO NUEVO NO HEREDA COBERTURA* obliga a un comparador de dos lados propio |
+| ~~si las 16 sin capturar **siguen vivas** en el original~~ | ✅ **CONTESTADO el mismo día**: 13 × 301 · 3 × 404, dos lecturas separadas 13 días. Ya no es una incógnita |
 
 ---
 
@@ -245,7 +252,7 @@ camino de render sin estrenar* (`CLAUDE.md`, `qa:nunca-vistos`). Declarados
 |---|---|
 | **decisión** | **C3** — `ESQUEMA-CMS.md` §2j · CMS-3 |
 | **escrito** | 2026-08-22, 91.ª tanda, **antes** de capturar las 16 y **antes** de construir |
-| **evidencia de partida** | `derivaciones/modulos-f33-v3.mjs` + `mod-v3.log` · `inv-f33.log` · `css-f33.log` · `reg-f33.log` |
+| **evidencia de partida** | `derivaciones/modulos-f33-v4.mjs` + `mod-v4.log` · `inv-f33.log` · `css-f33.log` · `reg-f33.log` |
 | **predicado que puede salir CONTRA la decisión** | se escribió **P-O1** (umbral **≥ 4** páginas de 0 secciones ⇒ RA-2 ⇒ C4 gana) y **quedó cerrado a favor el mismo día, sin celebrarse**: las 16 que podían moverlo no son páginas. **Los que siguen pudiendo tumbar C3 son RA-1 y RA-3**, y se miden sobre las 32 |
 | **precondición** | ✅ **a cero (2026-08-22)**: `et-cache` **0 faltan** (32/32 páginas con todas sus hojas) · los «16 HTML» **no eran un hueco** |
 | **evaluable** | **ya**: las 32 están capturadas **con sus hojas**, que es lo que faltaba para que una medida offline no fuera plausible-y-falsa |

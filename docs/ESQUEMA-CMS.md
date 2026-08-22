@@ -1546,14 +1546,19 @@ cola larga necesitará su propia decisión de modelo cuando toque.
 
 > ⚠⚠ **CORREGIDA EN SU MEMBRESÍA Y EN SU ALCANCE (2026-08-22, 90.ª tanda).** La
 > frase decía *«la cola de páginas compuestas (6 hubs LH-2 + 7 hubs KB)»* y
-> **omitía 35 rutas**: la cola larga es **48** —7 hubs KB + 6 hubs L4 + **35
-> sueltas**—, derivada elemento a elemento en `PLAN-FASE-3.md` §F3-3. Convivía
+> **omitía 35 rutas**: la cola larga son **48 RUTAS** —7 hubs KB + 6 hubs L4 +
+> **35 sueltas**—, derivada elemento a elemento en `PLAN-FASE-3.md` §F3-3.
+> ⚠ **48 es la unidad RUTA; en unidad PÁGINA son 32** (91.ª: de las 35 sueltas,
+> 13 son 301 y 3 son 404 — §2j). Los dos números son ciertos y **no son
+> intercambiables**: 48 es lo que la fase tiene que RESOLVER, 32 lo que la
+> colección `paginas` ALOJA. Convivía
 > con la lectura del PLAN (*«7 hubs KB + las autónomas»*), que a su vez omitía
 > los 6 de L4; **las dos sumaban 13 por coincidencia** —una contaba 6 páginas,
 > la otra 6 familias— y su única intersección eran los 7 hubs de KB. **Las dos
 > formulaciones quedan borradas**, no conciliadas.
 >
-> **Y el *«usan `video`/`toggle`»* es cierto en 7 de las 48.** Censado el marcado
+> **Y el *«usan `video`/`toggle`»* es cierto en 7 de las 32 PÁGINAS** (la 91.ª
+> bajó el denominador de 48 a 32: 48 son rutas, 32 son páginas). Censado el marcado
 > de las 32 capturadas: **hubs KB** `video` 5/7 y `toggle` 5/7 ✅ · **hubs L4**
 > 0/6 y 0/6 · **sueltas** 0/19 y 0/19, pero con **cinco tipos que nadie había
 > nombrado**: `map` · `slider` · `fullwidth_slider` · `slide` · `icon`. La
@@ -3770,7 +3775,7 @@ la cola larga no estrena plantilla, estrena content type.
 
 | candidato | cae por | separadoras |
 |---|---|---|
-| **C1** · campo RICO por página | **contradice la frontera que este repo ya declara**: *hasta el contenedor de contenido la estructura se modela; RICO empieza POR DEBAJO*. `flujo` y `anchoPct` están **por encima** de ese contenedor, así que aplanarlos a un blob de HTML tira modelado que ya está medido y construido | **16 de las 32 capturadas** — toda página con **>1 sección propia** (KB **5/7** · L4 **6/6** · sueltas **5/19**). La más clara: `/es/soporte/centro-de-ayuda/` y `/es/empresa/` (**11 secciones** cada una) contra `/es/aviso-legal/` (**1**). C1 las representa igual; los otros tres no. ⚠ **El plan decía «≥ 30» y no reproduce**: 16/32 medidas, y las 16 sin capturar sólo pueden subirlo. Es cota inferior, no 30 |
+| **C1** · campo RICO por página | **contradice la frontera que este repo ya declara**: *hasta el contenedor de contenido la estructura se modela; RICO empieza POR DEBAJO*. `flujo` y `anchoPct` están **por encima** de ese contenedor, así que aplanarlos a un blob de HTML tira modelado que ya está medido y construido | **16 de las 32 capturadas** — toda página con **>1 sección propia** (KB **5/7** · L4 **6/6** · sueltas **5/19**). La más clara: `/es/soporte/centro-de-ayuda/` y `/es/empresa/` (**11 secciones** cada una) contra `/es/aviso-legal/` (**1**). C1 las representa igual; los otros tres no. ⚠ **El plan decía «≥ 30» y no reproduce: son 16 de 32, y NO es una cota** — las 16 restantes no son páginas (13 × 301 · 3 × 404), así que no hay nada que las suba. El «≥ 30» del plan salía de contar sobre 48 |
 | **C2** · `MonoSeccion[]` tal cual + bloque de escape | el escape **se ejercita en 20 de las 32 páginas leídas**, o sea que no es una vía de escape: es el modelo. Un escape que traga el caso mayoritario no acota nada | **20 páginas** — KB **7/7** · L4 **1/6** · sueltas **12/19**. ⚠ **El plan decía «12» contando INSTANCIAS DE TIPO** (5 `toggle` + 5 `video` + `map` + `slider`); en la unidad que la afirmación usa —la página— son **20**, y con los dos tipos que v3 recupera: **9** sueltas con `code` y **3** páginas con `blurb`. Y **dentro de los 6 hubs L4 sólo hay 1** (`/es/recursos/`, `blurb`), que por §*un discriminador hallado en UNA SOLA instancia no es un discriminador* sigue significando lo que el plan concluyó: **L4 no podía elegir** entre C2 y C3 |
 | **C4** · dos colecciones (`hubs` 13 · `paginas` 35) | **R1 — «cero arquetipos»** (`ESQUEMA:1216`, `:1524`). Los hubs no estrenan arquetipo, así que partir en dos colecciones **por familia de ruta** no tiene una diferencia de content type que lo sostenga: sería separar por procedencia, no por forma. ⚠ **Y esta tensión hay que dejarla escrita**: `PLAN-FASE-3.md` §F3-3 listaba C4 **vivo** sin reconciliarlo con R1, y §1.5b Razón 3 lo **favorece** (§2j.3) | **2, y bastan para separarlo de C3** — `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`, con **0 secciones propias**: en C4 la colección que las aloje puede declararlas de otra forma; en C3, colección única, **el campo de bloques tiene que ser opcional para las 32** |
 
@@ -3796,7 +3801,7 @@ a `MonoSeccion[]` **cuatro tipos que no expresa**: `blurb` y `gallery` existen
 como bloque pero en **`MODULOS_KB`**, y `code` y `divider` **no existen en
 ninguna unión del repo** (derivado: `grep 'slug:' packages/cms-config/src/bloques/*.ts`).
 
-`modulos-f33-v3.mjs` no reescribe la lista —eso sólo reinicia el reloj— sino que
+`modulos-f33-v4.mjs` no reescribe la lista —eso sólo reinicia el reloj— sino que
 **deriva `UNION_MONO` del registro de bloques**, y separa la retícula
 (`section`/`row`/`column*`, que `flujo`/`anchoPct`/`filas`/`columnas` ya modelan)
 de los módulos de contenido.
@@ -3875,8 +3880,8 @@ obligatorios distintos.
 | ~~las 16 sueltas sin capturar~~ | ✅ **resuelto el mismo día: no son páginas** (13 × 301 · 3 × 404). La unión **no** es un mínimo: es completa para las 32 |
 | **quién emite los 13 REDIRECTS** | no es esta colección. Un 301 no es un documento de `paginas`; es un mapa de redirecciones del enrutado (§4), y F3-3 tiene que decir dónde vive |
 
-**Evidencia:** `docs/research/cola-larga/derivaciones/modulos-f33-v3.mjs` +
-`mod-v3.log` (registro de bloques derivado, control §sondas 4: el parseo tira si
+**Evidencia:** `docs/research/cola-larga/derivaciones/modulos-f33-v4.mjs` +
+`mod-v4.log` (registro de bloques derivado, control §sondas 4: el parseo tira si
 casa con 0 slugs) · pre-registro en
 `docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`.
 

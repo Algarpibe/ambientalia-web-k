@@ -715,7 +715,13 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > congelada de F3-0, y si difiere, el que manda es el original y la diferencia
 > se ficha con su fecha.**
 
-## F3-3 · la cola larga — **48 rutas en TRES subconjuntos y TRES regímenes**
+## F3-3 · la cola larga — **48 RUTAS = 32 páginas + 13 redirecciones + 3 bajas**, en TRES subconjuntos y TRES regímenes
+
+> ⚠ **DOS UNIDADES, LAS DOS CIERTAS, Y NO SON INTERCAMBIABLES** (91.ª tanda):
+> **48** es lo que la fase tiene que RESOLVER (URLs que el original sirve de
+> algún modo); **32** es lo que la colección `paginas` ALOJA. Todo denominador
+> de este §F3-3 dice cuál de las dos usa. El «13 redirecciones» **no es un
+> hueco**: es otro mecanismo, y su reparto está abajo.
 
 > ✅ **MEMBRESÍA DERIVADA Y CERRADA (2026-08-22, 90.ª tanda). Las dos lecturas
 > que convivían quedan BORRADAS, no conciliadas** — precedente de F3-5: mientras
@@ -734,7 +740,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > membresía*: **la intersección real de las dos lecturas son sólo los 7 hubs de
 > KB.** El conjunto de la fase es **la UNIÓN**, y se nombra elemento a elemento.
 
-### La membresía, DERIVADA — 7 + 6 + 35 = **48 rutas**, sin solapamiento
+### La membresía, DERIVADA — 7 + 6 + 35 = **48 RUTAS** (= **32 páginas**), sin solapamiento
 
 Fuente: `corpus/fase-3/LISTA-DERIVADA.json` (2026-08-20) por `bucket`, cruzado
 con `medidas/lh-regimen.json` (2026-07-31) para separar L4. **Los 6 de L4 caen en
@@ -795,18 +801,25 @@ listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 
 | | hubs KB | hubs L4 | sueltas |
 |---|---|---|---|
-| **HTML capturado** | **7/7** | **6/6** | **19/35** |
-| **hojas CSS completas** | **0/7** — faltan **14** `et-cache` | **6/6** ✅ | **0/19** — faltan **36** `et-cache` |
-| **medida por alguna sonda** | **0/7** | **6/6** (12 sondas) | **0/35** |
-| **fila en `COBERTURA-MEDICION`** | **0/7** | — | **0/35** |
+| **HTML capturado** | **7/7** | **6/6** | **19/19** ✅ — las otras 16 no son páginas |
+| **hojas CSS completas** | **7/7** ✅ (`49/49`) | **6/6** ✅ (`43/43`) | **19/19** ✅ (`133/133`) |
+| **medida por alguna sonda** | **0/7** | **6/6** (12 sondas) | **0/19** |
+| **fila en `COBERTURA-MEDICION`** | **0/7** | — | **0/19** |
 
-> ⚠⚠ **EL DATO QUE MANDA SOBRE CUALQUIER PLAN DE MEDICIÓN: de las 32 páginas
-> capturadas, sólo 6 tienen sus hojas.** Y las que faltan son **todas
-> `et-cache`** — las que Divi **compila por página**, o sea justo donde vive lo
-> que el editor escribió (§*Divi no escribe marcado: COMPILA CSS*). Medir estas
-> páginas offline hoy daría **números plausibles y falsos en 26 de 32**, que es
-> exactamente §F3-1-CSS-NO-CAPTURADO cobrado por segunda vez. **Capturar las 50
-> hojas es precondición de medir, no un extra.**
+> ✅ **PAGADO EL 2026-08-22 (91.ª). Esta caja decía *«de las 32 capturadas, sólo
+> 6 tienen sus hojas»* y hoy son 32 de 32** (`derivaciones/css-f33-2026-08-22.log`).
+> Se conserva el porqué, porque es lo que hace que la precondición existiera:
+> las que faltaban eran **todas `et-cache`** —las que Divi **compila por
+> página**, o sea justo donde vive lo que el editor escribió (§*Divi no escribe
+> marcado: COMPILA CSS*)—, y medir offline sin ellas habría dado **números
+> plausibles y falsos en 26 de 32**, que es §F3-1-CSS-NO-CAPTURADO cobrado por
+> segunda vez.
+>
+> ⚠ **Y el mecanismo que lo hizo pagable, que es lo reutilizable:** pedir una
+> hoja `et-cache` **en frío devuelve 404**; pedir antes **su página** la
+> recompila y entonces la hoja existe. 15 de 49 dieron 404 y **no eran bajas**:
+> calentadas sus 8 páginas, **15/15**. Un 404 de `et-cache` **no se reporta como
+> ausencia sin haber calentado su página** (ya en `CLAUDE.md`).
 >
 > **El «medida por alguna sonda» de los hubs L4 dice QUÉ pregunta se contestó y
 > cuál no:** `lh-censo` · `lh-regimen` · `lh-paginas` · `lh-jerarquia` son de
@@ -829,7 +842,7 @@ listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 | R1 | los hubs **no estrenan arquetipo** — cero arquetipos | `ESQUEMA:1216`, `:1524` | ✅ nada la contradice |
 | R2 | añadir `video`/`toggle` a `MonoSeccion[]` es el **arreglo falso** de §1.5b Razón 1 | `ESQUEMA:1526` | ✅ y se refuerza: los tipos fuera de `MonoSeccion[]` **no son 2, son ~~7~~ 9** (⚠ recontado en la 91.ª, `ESQUEMA §2j.2`) |
 | R3 | la hipótesis del **grupo D cayó** → la cola larga no hereda su modelo | `ESQUEMA:1522` | ✅ |
-| R4 | `MonoSeccion[]` sola **no cubre** la cola larga — usan `video`/`toggle` | `ESQUEMA §2d.1` (`:1542`) | ⚠ **CIERTA SÓLO EN 7 DE 48** |
+| R4 | `MonoSeccion[]` sola **no cubre** la cola larga — usan `video`/`toggle` | `ESQUEMA §2d.1` (`:1542`) | ⚠ **CIERTA SÓLO EN 7 DE LAS 32 PÁGINAS** |
 
 > ⚠⚠ **R4 NO SE SOSTIENE FUERA DE LOS HUBS DE KB, y es el hallazgo que más
 > cambia la decisión.** Censado el marcado de las 32 páginas capturadas (capa
@@ -843,7 +856,7 @@ listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 >
 > Las dos direcciones, y las dos dan resultado: **hacia atrás**, R4 es correcta
 > en el dominio donde se derivó (los hubs de KB); **hacia delante**, se había
-> generalizado a 48 páginas y en 41 de ellas **el caso no se da** — §*una regla
+> generalizado a las 48 RUTAS y en 25 de las 32 PÁGINAS **el caso no se da** — §*una regla
 > derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese
 > caso*, aquí además con **cinco tipos que nadie había nombrado** en su lugar.
 >
@@ -852,7 +865,7 @@ listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 > > `YA = ["text","image","button","blurb","cta","divider","code","gallery"]`,
 > > que acredita a `MonoSeccion[]` **cuatro tipos que no expresa**: `blurb` y
 > > `gallery` existen como bloque pero en **`MODULOS_KB`**, y `code` y `divider`
-> > **no existen en ninguna unión del repo**. `modulos-f33-v3.mjs` **deriva el
+> > **no existen en ninguna unión del repo**. `modulos-f33-v4.mjs` **deriva el
 > > conjunto del registro de bloques** en vez de reescribir la lista.
 > >
 > > **Fuera de `MonoSeccion[]` son 9, no 7** (`code` · `toggle` · `video` ·
@@ -904,10 +917,10 @@ de su alternativa, no por lo que acierta*).
 
 | par | instancias separadoras | cuáles |
 |---|---|---|
-| **C1 vs C2/C3/C4** | ~~≥ 30~~ → **16 de las 32 capturadas** | toda página con **>1 sección propia** (KB **5/7** · L4 **6/6** · sueltas **5/19**): C1 las aplana a un blob, los otros conservan `flujo`/`anchoPct`. La más clara: `/es/soporte/centro-de-ayuda/` y `/es/empresa/` (**11 secciones**) contra `/es/aviso-legal/` (**1**). **«≥30» no reproduce** — es cota inferior sobre 32, y las 16 sin capturar sólo pueden subirla |
+| **C1 vs C2/C3/C4** | ~~≥ 30~~ → **16 de las 32 capturadas** | toda página con **>1 sección propia** (KB **5/7** · L4 **6/6** · sueltas **5/19**): C1 las aplana a un blob, los otros conservan `flujo`/`anchoPct`. La más clara: `/es/soporte/centro-de-ayuda/` y `/es/empresa/` (**11 secciones**) contra `/es/aviso-legal/` (**1**). **«≥30» no reproduce** — **y NO es una cota**: las 16 restantes no son páginas (13 × 301 · 3 × 404), así que nada la sube. El «≥30» salía de contar sobre 48 RUTAS |
 | **C2 vs C3** | ~~12~~ → **20 páginas de 32** | KB **7/7** · L4 **1/6** · sueltas **12/19**. Además de `video`/`toggle`/`map`/`slider`: **9** sueltas con `code` y **3** páginas con `blurb`. C2 las mete en el escape; C3 les da tipo. **20 de 32 no es una vía de escape: es el modelo** |
 | **C2 vs C3 · dentro de los 6 hubs L4** | ~~0~~ → **1** (`/es/recursos/`, `blurb`) | **la conclusión NO cambia**: por §*un discriminador hallado en UNA SOLA instancia no es un discriminador*, **L4 sigue sin poder elegir** entre C2 y C3. Lo que cambia es que el cero era del instrumento —`blurb` estaba en la lista escrita a mano— y no del original |
-| **C3 vs C4** | **2, y bastan** | `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`: **0 secciones propias**. En C4 la colección `paginas` puede declararlas de otra forma; en C3, colección única, **el campo de bloques tendría que ser opcional para las 48** — que es §1.5b Razón 2 al pie de la letra |
+| **C3 vs C4** | **2, y bastan** | `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`: **0 secciones propias**. En C4 la colección `paginas` puede declararlas de otra forma; en C3, colección única, **el campo de bloques tendría que ser opcional para las 32** — que es §1.5b Razón 2 al pie de la letra |
 | **todos vs «lo que hay»** | **2** | las mismas dos: **ningún** candidato basado en bloques del builder tiene qué poner en ellas sin una vía de escape |
 
 > **Y el criterio ya ratificado que el propietario puede aplicar sin medir más**
@@ -939,11 +952,11 @@ de su alternativa, no por lo que acierta*).
 
 | | |
 |---|---|
-| **entrega** | las **48 rutas** derivadas arriba (7 hubs KB + 6 hubs L4 + 35 sueltas), emitidas con Δ0 en sus ejes |
+| **entrega** | **32 páginas** emitidas con Δ0 en sus ejes (7 hubs KB + 6 hubs L4 + **19** sueltas) **+ un mapa de 13 redirecciones**. Las 48 rutas quedan resueltas, pero **no como 48 documentos**: 32 lo son, 13 son redirección y 3 son baja |
 | **alimenta** | §2d.1 (**cero arquetipos**; `video`/`toggle` **no** entran en `MonoSeccion[]`) |
 | **incógnita** | ✅ **DECIDIDA POR EL PROPIETARIO, 2026-08-22 (91.ª): C3** — una colección `paginas` con **unión PROPIA** de bloques, por el camino de `articulos-kb`. `MonoSeccion[]` **no se toca**. Escrita como **CMS-3** en `ESQUEMA §2j`, con por qué caen los otros tres, su **condición de reapertura** (C3 va contra Razón 3, §2j.3) y su pre-registro (`docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`) |
 | **precondición NUEVA** | ✅ **A CERO, LOS DOS (2026-08-22, 91.ª).** Eran **dos** huecos y esta fila declaraba uno. ① **50 hojas `et-cache` → 0 faltan**: KB `49/49` (7/7 páginas) · L4 `43/43` (6/6, ya estaba) · sueltas `133/133` (19/19). **32 de 32 páginas con TODAS sus hojas**, contra 6/32 al empezar. ② **los «16 HTML sin capturar» NO ERAN UN HUECO**: re-preguntados al origen **vivo** hoy dan **13 × 301 y 3 × 404**, idéntico a la lectura del 2026-08-09. Congelado: `derivaciones/sueltas-16-reverificadas-2026-08-22.json` |
-| **hecho** | la decisión escrita en el ESQUEMA **con su pre-registro**, y las 48 emitidas con Δ0 |
+| **hecho** | la decisión escrita en el ESQUEMA **con su pre-registro**, **las 32 emitidas con Δ0** y **las 13 redirecciones emitidas por su mecanismo** (no por la colección) |
 
 ## F3-4 · las tres familias de archivo sin censar
 
