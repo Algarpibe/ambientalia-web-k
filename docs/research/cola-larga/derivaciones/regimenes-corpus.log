@@ -1,0 +1,96 @@
+═══ 0 · UNIVERSO — derivado del árbol de `corpus/`, no de una lista
+  .html bajo corpus/              788
+  − derivados (transformado/)     212   fuera: no son captura, son salida
+  = CAPTURAS                      576
+  − sin `<body class=…>`            0
+  = DENOMINADOR                   576
+
+═══ 1 · EJE DIVI — los CASILLEROS de régimen de `CLAUDE.md`
+  casillero                      n   %
+  -T · plantillado             371   64.4%
+  -- · sin marcador Divi       131   22.7%
+  B- · builder                  60   10.4%
+  BT · híbrido                  14   2.4%
+  combinaciones POSIBLES 4 · VISTAS 4 · con n = 0: 0
+
+═══ 2 · EJE WORDPRESS — qué plantilla del tema sirve el documento
+  single-post                                      154
+  archive (sin taxonomía nombrada)                  97
+  single-CPT (case-studies)                         57
+  page-template-default                             43
+  archive (tax-resources)                           37
+  single-CPT (glossary)                             37
+  single-CPT (solutions)                            24
+  single-CPT (scientific-docs)                      23
+  single-CPT (faqs)                                 19
+  home/blog                                         17
+  archive (category-articulos)                      16
+  archive (tax-sector)                              13
+  archive (post-type-archive-glossary)               8
+  page-template-sectors                              8
+  archive (category-noticias)                        6
+  archive (tax-scientific-category)                  6
+  archive (category-eventos)                         4
+  archive (post-type-archive-faqs)                   4
+  page-template-case-studies                         2
+  archive (category-podcast-es)                      1
+
+═══ 3 · EL CRUCE — si tuviera UNA sola celda por fila, los dos ejes serían el mismo
+    154  -T · plantillado  ×  single-post
+     63  -T · plantillado  ×  archive (sin taxonomía nombrada)
+     57  -- · sin marcador Divi  ×  single-CPT (case-studies)
+     37  -T · plantillado  ×  archive (tax-resources)
+     37  -T · plantillado  ×  single-CPT (glossary)
+     34  -- · sin marcador Divi  ×  archive (sin taxonomía nombrada)
+     28  B- · builder  ×  page-template-default
+     24  B- · builder  ×  single-CPT (solutions)
+     23  -T · plantillado  ×  single-CPT (scientific-docs)
+     19  -- · sin marcador Divi  ×  single-CPT (faqs)
+     17  -T · plantillado  ×  home/blog
+     16  -T · plantillado  ×  archive (category-articulos)
+     14  BT · híbrido  ×  page-template-default
+     13  -T · plantillado  ×  archive (tax-sector)
+      8  -- · sin marcador Divi  ×  archive (post-type-archive-glossary)
+      8  B- · builder  ×  page-template-sectors
+      6  -T · plantillado  ×  archive (category-noticias)
+      6  -- · sin marcador Divi  ×  archive (tax-scientific-category)
+      4  -T · plantillado  ×  archive (category-eventos)
+      4  -- · sin marcador Divi  ×  archive (post-type-archive-faqs)
+      2  -- · sin marcador Divi  ×  page-template-case-studies
+      1  -T · plantillado  ×  archive (category-podcast-es)
+      1  -- · sin marcador Divi  ×  page-template-default
+
+  celdas pobladas 23 de 4 × 20 = 80 posibles
+  -T · plantillado           → 11 plantilla(s) WP distinta(s)
+  -- · sin marcador Divi     → 8 plantilla(s) WP distinta(s)
+  B- · builder               → 3 plantilla(s) WP distinta(s)
+  BT · híbrido               → 1 plantilla(s) WP distinta(s)   ⚠ esta fila NO separa los dos ejes
+
+═══ 4 · CELDAS RARAS (n ≤ 3) — NOMBRADAS, no contadas
+    2  -- · sin marcador Divi  ×  page-template-case-studies
+       fase-3/listados/casos-de-exito/index.html
+       fase-3/listados/casos-de-exito/page/2/index.html
+    1  -T · plantillado  ×  archive (category-podcast-es)
+       fase-3/categoria/categoria/podcast-es/index.html
+    1  -- · sin marcador Divi  ×  page-template-default
+       fase-3/sueltas/politica-de-seguridad-de-la-informacion/index.html
+
+═══ 5 · LA COLA LARGA DENTRO DE ESTO — las 32 de CMS-3
+  n = 32
+  B- · builder                22
+  BT · híbrido                 8
+  -- · sin marcador Divi       1
+  -T · plantillado             1
+  — por celda:
+   22  B- · builder  ×  page-template-default
+    8  BT · híbrido  ×  page-template-default
+    1  -- · sin marcador Divi  ×  page-template-default
+       /es/politica-de-seguridad-de-la-informacion/
+    1  -T · plantillado  ×  single-post
+       /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/
+
+═══ 7 · LO QUE ESTE CENSO **NO** CONTESTA
+  · no dice quién decidió cada valor: eso lo dice la VARIANZA de la capa,
+    no el marcador (CLAUDE.md, corrección del 2026-08-03)
+  · no mira el CSS ni la geometría: es un censo del `<body>` servido
+  · el universo son los ficheros CAPTURADOS (576), no el sitio
