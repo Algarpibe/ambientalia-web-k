@@ -4,10 +4,10 @@
     "que": "la BARRA LATERAL widget a widget, clon contra original — las 3 formas que la sirven",
     "ancho": 1440,
     "ladoOriginal": "kunakair.com VIVO (el espejo NO descompone la barra: 0 apariciones de search-6/custom_html/widgettitle)",
-    "ladoClon": "http://127.0.0.1:50489",
+    "ladoClon": "http://127.0.0.1:61976",
     "sabotaje": "delta-inyectado",
     "unidad": "el PAR (forma·página·camino) — no la ruta, no la forma",
-    "minimoDerivadoDe": "lh-barra.json (4 widgets) × 6 páginas del fuente",
+    "minimoDerivadoDe": "lh-barra.json (4 widgets) × 7 páginas del fuente",
     "noMide": [
       "L1-resources: 0 de 37 documentos — no sirve barra (lh-barra.json §porFamilia); el clon ya ramifica",
       "/faqs/[slug]: 4 rutas — FaqSidebar.tsx es OTRO componente con otros 4 widgets, fuera de alcance por encargo",
@@ -81,6 +81,22 @@
         }
       ]
     },
+    "L1-etiqueta::/etiqueta/monitorizacion-ambiental/page/11": {
+      "forma": "L1-etiqueta",
+      "rutaOrig": "/es/etiqueta/monitorizacion-ambiental/page/11/",
+      "rutaClon": "/etiqueta/monitorizacion-ambiental/page/11",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 1,
+      "diferencias": [
+        {
+          "camino": "contenedor.h",
+          "eje": "mixta",
+          "orig": 430.19,
+          "clon": 437.19,
+          "delta": 7
+        }
+      ]
+    },
     "L2-glosario::/glosario": {
       "forma": "L2-glosario",
       "rutaOrig": "/es/glosario/",
@@ -115,7 +131,7 @@
     }
   },
   "ejes": {
-    "mixta": 6
+    "mixta": 7
   },
   "mixto": {
     "unidad": "el PAR",
@@ -149,6 +165,13 @@
         "delta": 7
       },
       {
+        "par": "L1-etiqueta::/etiqueta/monitorizacion-ambiental/page/11 contenedor.h",
+        "orig": 430.19,
+        "clon": 437.19,
+        "distancia": 7,
+        "delta": 7
+      },
+      {
         "par": "L2-glosario::/glosario contenedor.h",
         "orig": 426.19,
         "clon": 433.19,
@@ -163,15 +186,15 @@
         "delta": 7
       }
     ],
-    "suma": 42,
-    "cardinal": 6
+    "suma": 49,
+    "cardinal": 7
   },
   "resumen": {
-    "paresComparados": 918,
-    "paresDistintos": 6,
+    "paresComparados": 1071,
+    "paresDistintos": 7,
     "porEje": {
-      "mixta": 6
+      "mixta": 7
     },
-    "formasVistas": 6
+    "formasVistas": 7
   }
 }

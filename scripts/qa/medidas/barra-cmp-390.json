@@ -2,10 +2,10 @@
   "meta": {
     "fecha": "2026-08-21",
     "que": "la BARRA LATERAL widget a widget, clon contra original — las 3 formas que la sirven",
-    "ancho": 1440,
+    "ancho": 390,
     "ladoOriginal": "kunakair.com VIVO (el espejo NO descompone la barra: 0 apariciones de search-6/custom_html/widgettitle)",
-    "ladoClon": "http://127.0.0.1:59006",
-    "sabotaje": "dominio-encogido",
+    "ladoClon": "http://127.0.0.1:51296",
+    "sabotaje": null,
     "unidad": "el PAR (forma·página·camino) — no la ruta, no la forma",
     "minimoDerivadoDe": "lh-barra.json (4 widgets) × 7 páginas del fuente",
     "noMide": [
@@ -32,6 +32,46 @@
       "envoltorio": "envoltorio-L1",
       "distintos": 0,
       "diferencias": []
+    },
+    "L1-etiqueta::/etiqueta/calidad-del-aire": {
+      "forma": "L1-etiqueta",
+      "rutaOrig": "/es/etiqueta/calidad-del-aire/",
+      "rutaClon": "/etiqueta/calidad-del-aire",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 0,
+      "diferencias": []
+    },
+    "L1-etiqueta::/etiqueta/calidad-del-aire/page/2": {
+      "forma": "L1-etiqueta",
+      "rutaOrig": "/es/etiqueta/calidad-del-aire/page/2/",
+      "rutaClon": "/etiqueta/calidad-del-aire/page/2",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 0,
+      "diferencias": []
+    },
+    "L1-etiqueta::/etiqueta/monitorizacion-ambiental/page/11": {
+      "forma": "L1-etiqueta",
+      "rutaOrig": "/es/etiqueta/monitorizacion-ambiental/page/11/",
+      "rutaClon": "/etiqueta/monitorizacion-ambiental/page/11",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 0,
+      "diferencias": []
+    },
+    "L2-glosario::/glosario": {
+      "forma": "L2-glosario",
+      "rutaOrig": "/es/glosario/",
+      "rutaClon": "/glosario",
+      "envoltorio": "envoltorio-L2",
+      "distintos": 0,
+      "diferencias": []
+    },
+    "L2-glosario::/glosario/page/2": {
+      "forma": "L2-glosario",
+      "rutaOrig": "/es/glosario/page/2/",
+      "rutaClon": "/glosario/page/2",
+      "envoltorio": "envoltorio-L2",
+      "distintos": 0,
+      "diferencias": []
     }
   },
   "ejes": {},
@@ -42,9 +82,9 @@
     "cardinal": 0
   },
   "resumen": {
-    "paresComparados": 306,
+    "paresComparados": 1071,
     "paresDistintos": 0,
     "porEje": {},
-    "formasVistas": 2
+    "formasVistas": 7
   }
 }

@@ -70,12 +70,33 @@ const mobile = width <= 500;
 const SABOTAJE = env("SABOTAJE", "");
 const { base: CLON, parar: pararClon } = await iniciarClon();
 
-/* ── El catálogo. Dos páginas por forma: la primera y una intermedia. ────── */
+/* ── El catálogo. Dos páginas por forma: la primera y una intermedia.
+ *
+ * ⚠⚠ **Y UNA SÉPTIMA QUE NO ES «UNA MÁS»: LA ÚNICA DONDE LA BARRA MANDA.**
+ *
+ * Las seis primeras miden la barra **al nivel donde vive** —el elemento— y eso
+ * está bien. Lo que ninguna de las seis podía contestar es si el arreglo llega
+ * a la MAQUETACIÓN, porque en todas ellas `#left-area` es más alto que la barra
+ * y **la tapa**: la fila vale lo mismo con la barra bien y con la barra mal.
+ * Cero instancias separadoras para esa pregunta.
+ *
+ * `/etiqueta/monitorizacion-ambiental/page/11` es la **última** página de su
+ * serie, o sea la de menos tarjetas, y ahí la barra **sobrepasa** a la columna
+ * de contenido. Lo destapó `clon-base` tras la transcripción: **382 rutas
+ * comparadas, 1 movida**, y fue ésta (`docH +10`). Las otras 381 no se movieron
+ * **porque no podían**, no porque el arreglo no llegara.
+ *
+ * > **La lección, y es de catálogo: elegir «la primera y una intermedia» de cada
+ * > forma parece muestreo y para una propiedad TAPADA es un cero garantizado.**
+ * > Cuando la pieza que mides vive dentro de un contenedor con holgura, el
+ * > catálogo tiene que incluir **la instancia donde la holgura se acaba** — que
+ * > casi siempre es la más corta, no la más típica. */
 const CATALOGO = [
   ["L1-blog", "/es/blog/", "/blog"],
   ["L1-blog", "/es/blog/page/2/", "/blog/page/2"],
   ["L1-etiqueta", "/es/etiqueta/calidad-del-aire/", "/etiqueta/calidad-del-aire"],
   ["L1-etiqueta", "/es/etiqueta/calidad-del-aire/page/2/", "/etiqueta/calidad-del-aire/page/2"],
+  ["L1-etiqueta", "/es/etiqueta/monitorizacion-ambiental/page/11/", "/etiqueta/monitorizacion-ambiental/page/11"],
   ["L2-glosario", "/es/glosario/", "/glosario"],
   ["L2-glosario", "/es/glosario/page/2/", "/glosario/page/2"],
 ];
