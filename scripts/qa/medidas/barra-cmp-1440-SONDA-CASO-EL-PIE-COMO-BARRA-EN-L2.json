@@ -1,0 +1,2873 @@
+{
+  "meta": {
+    "fecha": "2026-08-21",
+    "que": "la BARRA LATERAL widget a widget, clon contra original — las 3 formas que la sirven",
+    "ancho": 1440,
+    "ladoOriginal": "kunakair.com VIVO (el espejo NO descompone la barra: 0 apariciones de search-6/custom_html/widgettitle)",
+    "ladoClon": "http://127.0.0.1:58237",
+    "sabotaje": null,
+    "unidad": "el PAR (forma·página·camino) — no la ruta, no la forma",
+    "minimoDerivadoDe": "lh-barra.json (4 widgets) × 6 páginas del fuente",
+    "noMide": [
+      "L1-resources: 0 de 37 documentos — no sirve barra (lh-barra.json §porFamilia); el clon ya ramifica",
+      "/faqs/[slug]: 4 rutas — FaqSidebar.tsx es OTRO componente con otros 4 widgets, fuera de alcance por encargo",
+      "el buscador como INTERACCIÓN (SP-B4): se compara la caja, no lo que hace al enviarse",
+      "las páginas fuera del catálogo: 2 de 17 en blog · 2 de 63 en etiqueta · 2 de 8 en glosario",
+      "el blanco entre widgets: el original lo sirve (\\n\\t\\t\\t\\t en blog, \\n\\t\\t en glosario) y el clon no emite ninguno — con float:left/none no debería renderizar, pero NO está medido"
+    ]
+  },
+  "paginas": {
+    "L1-blog::/blog": {
+      "forma": "L1-blog",
+      "rutaOrig": "/es/blog/",
+      "rutaClon": "/blog",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 39,
+      "diferencias": [
+        {
+          "camino": "contenedor.h",
+          "eje": "mixta",
+          "orig": 430.19,
+          "clon": 347.39,
+          "delta": -82.8
+        },
+        {
+          "camino": "widgets.search-6.h",
+          "eje": "geometria",
+          "orig": 72,
+          "clon": 78,
+          "delta": 6
+        },
+        {
+          "camino": "widgets.search-6.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.search-6.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.search-6·titulo.h",
+          "eje": "geometria",
+          "orig": 32,
+          "clon": 28,
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.search-6·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-1.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.text-1.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-1.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.text-7.h",
+          "eje": "geometria",
+          "orig": 102.19,
+          "clon": 99.59,
+          "delta": -2.6
+        },
+        {
+          "camino": "widgets.text-7.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.text-7.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.text-7·titulo.h",
+          "eje": "geometria",
+          "orig": 32,
+          "clon": 28,
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.text-7·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25.h",
+          "eje": "geometria",
+          "orig": 128,
+          "clon": 79.8,
+          "delta": -48.2
+        },
+        {
+          "camino": "widgets.custom_html-25.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "0px",
+          "delta": -32
+        },
+        {
+          "camino": "widgets.custom_html-25.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.h",
+          "eje": "geometria",
+          "orig": 54,
+          "clon": 46,
+          "delta": -8
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "boton.h",
+          "eje": "geometria",
+          "orig": 44,
+          "clon": 23.8,
+          "delta": -20.2
+        },
+        {
+          "camino": "boton.w",
+          "eje": "geometria",
+          "orig": 141.86,
+          "clon": 69.06,
+          "delta": -72.8
+        },
+        {
+          "camino": "boton.mb",
+          "eje": "caja",
+          "orig": "30px",
+          "clon": "0px",
+          "delta": -30
+        },
+        {
+          "camino": "boton.pt",
+          "eje": "caja",
+          "orig": "7.5px",
+          "clon": "0px",
+          "delta": -7.5
+        },
+        {
+          "camino": "boton.pb",
+          "eje": "caja",
+          "orig": "9px",
+          "clon": "0px",
+          "delta": -9
+        },
+        {
+          "camino": "boton.pl",
+          "eje": "caja",
+          "orig": "22.5px",
+          "clon": "0px",
+          "delta": -22.5
+        },
+        {
+          "camino": "boton.bt",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.bb",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.bl",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.fs",
+          "eje": "caja",
+          "orig": "15px",
+          "clon": "14px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.lh",
+          "eje": "caja",
+          "orig": "25.5px",
+          "clon": "23.8px",
+          "delta": -1.7
+        }
+      ]
+    },
+    "L1-blog::/blog/page/2": {
+      "forma": "L1-blog",
+      "rutaOrig": "/es/blog/page/2/",
+      "rutaClon": "/blog/page/2",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 39,
+      "diferencias": [
+        {
+          "camino": "contenedor.h",
+          "eje": "mixta",
+          "orig": 430.19,
+          "clon": 347.39,
+          "delta": -82.8
+        },
+        {
+          "camino": "widgets.search-6.h",
+          "eje": "geometria",
+          "orig": 72,
+          "clon": 78,
+          "delta": 6
+        },
+        {
+          "camino": "widgets.search-6.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.search-6.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.search-6·titulo.h",
+          "eje": "geometria",
+          "orig": 32,
+          "clon": 28,
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.search-6·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-1.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.text-1.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-1.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.text-7.h",
+          "eje": "geometria",
+          "orig": 102.19,
+          "clon": 99.59,
+          "delta": -2.6
+        },
+        {
+          "camino": "widgets.text-7.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.text-7.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.text-7·titulo.h",
+          "eje": "geometria",
+          "orig": 32,
+          "clon": 28,
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.text-7·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25.h",
+          "eje": "geometria",
+          "orig": 128,
+          "clon": 79.8,
+          "delta": -48.2
+        },
+        {
+          "camino": "widgets.custom_html-25.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "0px",
+          "delta": -32
+        },
+        {
+          "camino": "widgets.custom_html-25.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.h",
+          "eje": "geometria",
+          "orig": 54,
+          "clon": 46,
+          "delta": -8
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "boton.h",
+          "eje": "geometria",
+          "orig": 44,
+          "clon": 23.8,
+          "delta": -20.2
+        },
+        {
+          "camino": "boton.w",
+          "eje": "geometria",
+          "orig": 141.86,
+          "clon": 69.06,
+          "delta": -72.8
+        },
+        {
+          "camino": "boton.mb",
+          "eje": "caja",
+          "orig": "30px",
+          "clon": "0px",
+          "delta": -30
+        },
+        {
+          "camino": "boton.pt",
+          "eje": "caja",
+          "orig": "7.5px",
+          "clon": "0px",
+          "delta": -7.5
+        },
+        {
+          "camino": "boton.pb",
+          "eje": "caja",
+          "orig": "9px",
+          "clon": "0px",
+          "delta": -9
+        },
+        {
+          "camino": "boton.pl",
+          "eje": "caja",
+          "orig": "22.5px",
+          "clon": "0px",
+          "delta": -22.5
+        },
+        {
+          "camino": "boton.bt",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.bb",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.bl",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.fs",
+          "eje": "caja",
+          "orig": "15px",
+          "clon": "14px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.lh",
+          "eje": "caja",
+          "orig": "25.5px",
+          "clon": "23.8px",
+          "delta": -1.7
+        }
+      ]
+    },
+    "L1-etiqueta::/etiqueta/calidad-del-aire": {
+      "forma": "L1-etiqueta",
+      "rutaOrig": "/es/etiqueta/calidad-del-aire/",
+      "rutaClon": "/etiqueta/calidad-del-aire",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 39,
+      "diferencias": [
+        {
+          "camino": "contenedor.h",
+          "eje": "mixta",
+          "orig": 430.19,
+          "clon": 347.39,
+          "delta": -82.8
+        },
+        {
+          "camino": "widgets.search-6.h",
+          "eje": "geometria",
+          "orig": 72,
+          "clon": 78,
+          "delta": 6
+        },
+        {
+          "camino": "widgets.search-6.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.search-6.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.search-6·titulo.h",
+          "eje": "geometria",
+          "orig": 32,
+          "clon": 28,
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.search-6·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-1.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.text-1.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-1.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.text-7.h",
+          "eje": "geometria",
+          "orig": 102.19,
+          "clon": 99.59,
+          "delta": -2.6
+        },
+        {
+          "camino": "widgets.text-7.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.text-7.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.text-7·titulo.h",
+          "eje": "geometria",
+          "orig": 32,
+          "clon": 28,
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.text-7·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25.h",
+          "eje": "geometria",
+          "orig": 128,
+          "clon": 79.8,
+          "delta": -48.2
+        },
+        {
+          "camino": "widgets.custom_html-25.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "0px",
+          "delta": -32
+        },
+        {
+          "camino": "widgets.custom_html-25.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.h",
+          "eje": "geometria",
+          "orig": 54,
+          "clon": 46,
+          "delta": -8
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "boton.h",
+          "eje": "geometria",
+          "orig": 44,
+          "clon": 23.8,
+          "delta": -20.2
+        },
+        {
+          "camino": "boton.w",
+          "eje": "geometria",
+          "orig": 141.86,
+          "clon": 69.06,
+          "delta": -72.8
+        },
+        {
+          "camino": "boton.mb",
+          "eje": "caja",
+          "orig": "30px",
+          "clon": "0px",
+          "delta": -30
+        },
+        {
+          "camino": "boton.pt",
+          "eje": "caja",
+          "orig": "7.5px",
+          "clon": "0px",
+          "delta": -7.5
+        },
+        {
+          "camino": "boton.pb",
+          "eje": "caja",
+          "orig": "9px",
+          "clon": "0px",
+          "delta": -9
+        },
+        {
+          "camino": "boton.pl",
+          "eje": "caja",
+          "orig": "22.5px",
+          "clon": "0px",
+          "delta": -22.5
+        },
+        {
+          "camino": "boton.bt",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.bb",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.bl",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.fs",
+          "eje": "caja",
+          "orig": "15px",
+          "clon": "14px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.lh",
+          "eje": "caja",
+          "orig": "25.5px",
+          "clon": "23.8px",
+          "delta": -1.7
+        }
+      ]
+    },
+    "L1-etiqueta::/etiqueta/calidad-del-aire/page/2": {
+      "forma": "L1-etiqueta",
+      "rutaOrig": "/es/etiqueta/calidad-del-aire/page/2/",
+      "rutaClon": "/etiqueta/calidad-del-aire/page/2",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 39,
+      "diferencias": [
+        {
+          "camino": "contenedor.h",
+          "eje": "mixta",
+          "orig": 430.19,
+          "clon": 347.39,
+          "delta": -82.8
+        },
+        {
+          "camino": "widgets.search-6.h",
+          "eje": "geometria",
+          "orig": 72,
+          "clon": 78,
+          "delta": 6
+        },
+        {
+          "camino": "widgets.search-6.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.search-6.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.search-6·titulo.h",
+          "eje": "geometria",
+          "orig": 32,
+          "clon": 28,
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.search-6·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.search-6·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-1.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.text-1.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-1.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.text-7.h",
+          "eje": "geometria",
+          "orig": 102.19,
+          "clon": 99.59,
+          "delta": -2.6
+        },
+        {
+          "camino": "widgets.text-7.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "30px",
+          "delta": -2
+        },
+        {
+          "camino": "widgets.text-7.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.text-7·titulo.h",
+          "eje": "geometria",
+          "orig": 32,
+          "clon": 28,
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.text-7·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.text-7·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25.h",
+          "eje": "geometria",
+          "orig": 128,
+          "clon": 79.8,
+          "delta": -48.2
+        },
+        {
+          "camino": "widgets.custom_html-25.mb",
+          "eje": "caja",
+          "orig": "32px",
+          "clon": "0px",
+          "delta": -32
+        },
+        {
+          "camino": "widgets.custom_html-25.fs",
+          "eje": "caja",
+          "orig": "18px",
+          "clon": "14px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25.lh",
+          "eje": "caja",
+          "orig": "30.6px",
+          "clon": "23.8px",
+          "delta": -6.8
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.h",
+          "eje": "geometria",
+          "orig": 54,
+          "clon": 46,
+          "delta": -8
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.mb",
+          "eje": "caja",
+          "orig": "0px",
+          "clon": "10px",
+          "delta": 10
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.fs",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.lh",
+          "eje": "caja",
+          "orig": "22px",
+          "clon": "18px",
+          "delta": -4
+        },
+        {
+          "camino": "boton.h",
+          "eje": "geometria",
+          "orig": 44,
+          "clon": 23.8,
+          "delta": -20.2
+        },
+        {
+          "camino": "boton.w",
+          "eje": "geometria",
+          "orig": 141.86,
+          "clon": 69.06,
+          "delta": -72.8
+        },
+        {
+          "camino": "boton.mb",
+          "eje": "caja",
+          "orig": "30px",
+          "clon": "0px",
+          "delta": -30
+        },
+        {
+          "camino": "boton.pt",
+          "eje": "caja",
+          "orig": "7.5px",
+          "clon": "0px",
+          "delta": -7.5
+        },
+        {
+          "camino": "boton.pb",
+          "eje": "caja",
+          "orig": "9px",
+          "clon": "0px",
+          "delta": -9
+        },
+        {
+          "camino": "boton.pl",
+          "eje": "caja",
+          "orig": "22.5px",
+          "clon": "0px",
+          "delta": -22.5
+        },
+        {
+          "camino": "boton.bt",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.bb",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.bl",
+          "eje": "caja",
+          "orig": "1px",
+          "clon": "0px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.fs",
+          "eje": "caja",
+          "orig": "15px",
+          "clon": "14px",
+          "delta": -1
+        },
+        {
+          "camino": "boton.lh",
+          "eje": "caja",
+          "orig": "25.5px",
+          "clon": "23.8px",
+          "delta": -1.7
+        }
+      ]
+    },
+    "L2-glosario::/glosario": {
+      "forma": "L2-glosario",
+      "rutaOrig": "/es/glosario/",
+      "rutaClon": "/glosario",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 131,
+      "diferencias": [
+        {
+          "camino": "contenedor.h",
+          "eje": "mixta",
+          "orig": 288.16,
+          "clon": 368.39,
+          "delta": 80.23
+        },
+        {
+          "camino": "contenedor.w",
+          "eje": "mixta",
+          "orig": 230.39,
+          "clon": 240.47,
+          "delta": 10.08
+        },
+        {
+          "camino": "contenedor.pb",
+          "eje": "mixta",
+          "orig": "0px",
+          "clon": "28px",
+          "delta": 28
+        },
+        {
+          "camino": "contenedor.pl",
+          "eje": "mixta",
+          "orig": "0px",
+          "clon": "30px",
+          "delta": 30
+        },
+        {
+          "camino": "contenedor.fs",
+          "eje": "mixta",
+          "orig": "14px",
+          "clon": "18px",
+          "delta": 4
+        },
+        {
+          "camino": "contenedor.float",
+          "eje": "mixta",
+          "orig": "none",
+          "clon": "left",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "boton",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.tag",
+          "eje": "texto",
+          "clon": "div",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.h",
+          "eje": "geometria",
+          "clon": 78,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.mb",
+          "eje": "caja",
+          "clon": "30px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.tag",
+          "eje": "texto",
+          "clon": "h4",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.h",
+          "eje": "geometria",
+          "clon": 28,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.mb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.pb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.fs",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.lh",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.tag",
+          "eje": "texto",
+          "clon": "div",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.h",
+          "eje": "geometria",
+          "clon": 0,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.mb",
+          "eje": "caja",
+          "clon": "30px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.tag",
+          "eje": "texto",
+          "clon": "div",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.h",
+          "eje": "geometria",
+          "clon": 92.59,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.mb",
+          "eje": "caja",
+          "clon": "30px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.tag",
+          "eje": "texto",
+          "clon": "h4",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.h",
+          "eje": "geometria",
+          "clon": 28,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.mb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.pb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.fs",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.lh",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.tag",
+          "eje": "texto",
+          "clon": "div",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.h",
+          "eje": "geometria",
+          "clon": 79.8,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.mb",
+          "eje": "caja",
+          "clon": "30px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.tag",
+          "eje": "texto",
+          "clon": "h4",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.h",
+          "eje": "geometria",
+          "clon": 46,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.mb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.pb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.fs",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.lh",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "boton.tag",
+          "eje": "texto",
+          "clon": "span",
+          "delta": null
+        },
+        {
+          "camino": "boton.h",
+          "eje": "geometria",
+          "clon": 23.8,
+          "delta": null
+        },
+        {
+          "camino": "boton.w",
+          "eje": "geometria",
+          "clon": 69.06,
+          "delta": null
+        },
+        {
+          "camino": "boton.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.mb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "boton.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "boton.disp",
+          "eje": "texto",
+          "clon": "inline-block",
+          "delta": null
+        },
+        {
+          "camino": "boton.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        }
+      ]
+    },
+    "L2-glosario::/glosario/page/2": {
+      "forma": "L2-glosario",
+      "rutaOrig": "/es/glosario/page/2/",
+      "rutaClon": "/glosario/page/2",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 131,
+      "diferencias": [
+        {
+          "camino": "contenedor.h",
+          "eje": "mixta",
+          "orig": 288.16,
+          "clon": 368.39,
+          "delta": 80.23
+        },
+        {
+          "camino": "contenedor.w",
+          "eje": "mixta",
+          "orig": 230.39,
+          "clon": 240.47,
+          "delta": 10.08
+        },
+        {
+          "camino": "contenedor.pb",
+          "eje": "mixta",
+          "orig": "0px",
+          "clon": "28px",
+          "delta": 28
+        },
+        {
+          "camino": "contenedor.pl",
+          "eje": "mixta",
+          "orig": "0px",
+          "clon": "30px",
+          "delta": 30
+        },
+        {
+          "camino": "contenedor.fs",
+          "eje": "mixta",
+          "orig": "14px",
+          "clon": "18px",
+          "delta": 4
+        },
+        {
+          "camino": "contenedor.float",
+          "eje": "mixta",
+          "orig": "none",
+          "clon": "left",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "boton",
+          "eje": "caja",
+          "orig": null,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.tag",
+          "eje": "texto",
+          "clon": "div",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.h",
+          "eje": "geometria",
+          "clon": 78,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.mb",
+          "eje": "caja",
+          "clon": "30px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.tag",
+          "eje": "texto",
+          "clon": "h4",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.h",
+          "eje": "geometria",
+          "clon": 28,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.mb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.pb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.fs",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.lh",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.search-6·titulo.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.tag",
+          "eje": "texto",
+          "clon": "div",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.h",
+          "eje": "geometria",
+          "clon": 0,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.mb",
+          "eje": "caja",
+          "clon": "30px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-1.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.tag",
+          "eje": "texto",
+          "clon": "div",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.h",
+          "eje": "geometria",
+          "clon": 92.59,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.mb",
+          "eje": "caja",
+          "clon": "30px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.tag",
+          "eje": "texto",
+          "clon": "h4",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.h",
+          "eje": "geometria",
+          "clon": 28,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.mb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.pb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.fs",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.lh",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.text-7·titulo.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.tag",
+          "eje": "texto",
+          "clon": "div",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.h",
+          "eje": "geometria",
+          "clon": 79.8,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.mb",
+          "eje": "caja",
+          "clon": "30px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.tag",
+          "eje": "texto",
+          "clon": "h4",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.h",
+          "eje": "geometria",
+          "clon": 46,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.w",
+          "eje": "geometria",
+          "clon": 210.47,
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.mb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.pb",
+          "eje": "caja",
+          "clon": "10px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.fs",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.lh",
+          "eje": "caja",
+          "clon": "18px",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.disp",
+          "eje": "texto",
+          "clon": "block",
+          "delta": null
+        },
+        {
+          "camino": "widgets.custom_html-25·titulo.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        },
+        {
+          "camino": "boton.tag",
+          "eje": "texto",
+          "clon": "span",
+          "delta": null
+        },
+        {
+          "camino": "boton.h",
+          "eje": "geometria",
+          "clon": 23.8,
+          "delta": null
+        },
+        {
+          "camino": "boton.w",
+          "eje": "geometria",
+          "clon": 69.06,
+          "delta": null
+        },
+        {
+          "camino": "boton.mt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.mb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.pt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.pb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.pl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.bt",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.bb",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.bl",
+          "eje": "caja",
+          "clon": "0px",
+          "delta": null
+        },
+        {
+          "camino": "boton.fs",
+          "eje": "caja",
+          "clon": "14px",
+          "delta": null
+        },
+        {
+          "camino": "boton.lh",
+          "eje": "caja",
+          "clon": "23.8px",
+          "delta": null
+        },
+        {
+          "camino": "boton.disp",
+          "eje": "texto",
+          "clon": "inline-block",
+          "delta": null
+        },
+        {
+          "camino": "boton.float",
+          "eje": "texto",
+          "clon": "none",
+          "delta": null
+        }
+      ]
+    }
+  },
+  "ejes": {
+    "mixta": 16,
+    "geometria": 64,
+    "caja": 290,
+    "texto": 48
+  },
+  "mixto": {
+    "unidad": "el PAR",
+    "pares": [
+      {
+        "par": "L1-blog::/blog contenedor.h",
+        "orig": 430.19,
+        "clon": 347.39,
+        "distancia": 82.8,
+        "delta": -82.8
+      },
+      {
+        "par": "L1-blog::/blog/page/2 contenedor.h",
+        "orig": 430.19,
+        "clon": 347.39,
+        "distancia": 82.8,
+        "delta": -82.8
+      },
+      {
+        "par": "L1-etiqueta::/etiqueta/calidad-del-aire contenedor.h",
+        "orig": 430.19,
+        "clon": 347.39,
+        "distancia": 82.8,
+        "delta": -82.8
+      },
+      {
+        "par": "L1-etiqueta::/etiqueta/calidad-del-aire/page/2 contenedor.h",
+        "orig": 430.19,
+        "clon": 347.39,
+        "distancia": 82.8,
+        "delta": -82.8
+      },
+      {
+        "par": "L2-glosario::/glosario contenedor.h",
+        "orig": 288.16,
+        "clon": 368.39,
+        "distancia": 80.23,
+        "delta": 80.23
+      },
+      {
+        "par": "L2-glosario::/glosario/page/2 contenedor.h",
+        "orig": 288.16,
+        "clon": 368.39,
+        "distancia": 80.23,
+        "delta": 80.23
+      },
+      {
+        "par": "L2-glosario::/glosario contenedor.pl",
+        "orig": 0,
+        "clon": 30,
+        "distancia": 30,
+        "delta": 30
+      },
+      {
+        "par": "L2-glosario::/glosario/page/2 contenedor.pl",
+        "orig": 0,
+        "clon": 30,
+        "distancia": 30,
+        "delta": 30
+      },
+      {
+        "par": "L2-glosario::/glosario contenedor.pb",
+        "orig": 0,
+        "clon": 28,
+        "distancia": 28,
+        "delta": 28
+      },
+      {
+        "par": "L2-glosario::/glosario/page/2 contenedor.pb",
+        "orig": 0,
+        "clon": 28,
+        "distancia": 28,
+        "delta": 28
+      },
+      {
+        "par": "L2-glosario::/glosario contenedor.w",
+        "orig": 230.39,
+        "clon": 240.47,
+        "distancia": 10.08,
+        "delta": 10.08
+      },
+      {
+        "par": "L2-glosario::/glosario/page/2 contenedor.w",
+        "orig": 230.39,
+        "clon": 240.47,
+        "distancia": 10.08,
+        "delta": 10.08
+      },
+      {
+        "par": "L2-glosario::/glosario contenedor.fs",
+        "orig": 14,
+        "clon": 18,
+        "distancia": 4,
+        "delta": 4
+      },
+      {
+        "par": "L2-glosario::/glosario/page/2 contenedor.fs",
+        "orig": 14,
+        "clon": 18,
+        "distancia": 4,
+        "delta": 4
+      }
+    ],
+    "suma": 635.82,
+    "cardinal": 14
+  },
+  "resumen": {
+    "paresComparados": 820,
+    "paresDistintos": 418,
+    "porEje": {
+      "mixta": 16,
+      "geometria": 64,
+      "caja": 290,
+      "texto": 48
+    },
+    "formasVistas": 6
+  }
+}

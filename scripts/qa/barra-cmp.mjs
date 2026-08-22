@@ -135,16 +135,34 @@ const LECTOR = (widgets, sab) => {
       float: cs.cssFloat,
     };
   };
-  /* El contenedor: `L1` lo sirve como módulo Divi y `L2` como `#sidebar`. Los
-   * dos selectores se piden SIEMPRE en las dos formas — así el censo por forma
-   * puede publicar el parcial en vez de que un `||` lo esconda. */
-  const envL1 = window.__q(".et_pb_widget_area");
-  const envL2 = window.__q("#sidebar");
-  /* `lector-ciego` anula el arreglo ENTERO: sin contenedor no hay barra ni
-   * widgets, que es lo que este caso viene a probar. */
-  const cont = sab === "lector-ciego" ? null : envL1 || envL2;
+  /* ⚠⚠ EL CONTENEDOR SE DERIVA DEL DATO, NO DE LA POSICIÓN — y la primera
+   * versión de esta sonda cometió justo el error contrario.
+   *
+   * `.et_pb_widget_area` **también lo lleva el PIE**. Buscándolo a secas, en
+   * `L2` —que no tiene ese envoltorio en la barra— casaba el del pie y la sonda
+   * devolvía `envoltorio-L1` con un contenedor de 288.16 y **cero widgets
+   * dentro**: un número plausible de otra cosa. Es §sondas 4 en su tercera cara
+   * —*un heurístico que encuentra MÁS de lo que hay da un número plausible de
+   * más*— y es **el mismo error que la cabecera de `lh-barra` le reprocha a
+   * `lh-serie`**, cometido después de leerlo.
+   *
+   * La barra es, por definición, **el contenedor de los cuatro widgets**. Así
+   * que se ancla en el primero de la firma congelada y se sube con `closest`:
+   * derivado del dato, no de una suposición sobre el DOM. Y si el ancla no
+   * existe, el `null` es un cero de verdad. */
+  const ancla = sab === "lector-ciego" ? null : window.__q("#" + widgets[0]);
+  const cont = ancla ? ancla.closest(".et_pb_widget_area, #sidebar") : null;
+  /* Se censan además los dos envoltorios A SECAS, para que el censo por forma
+   * siga pudiendo publicar su parcial — y para dejar a la vista que
+   * `.et_pb_widget_area` casa en las tres formas por culpa del pie. */
+  window.__q(".et_pb_widget_area");
+  window.__q("#sidebar");
   const out = {
-    forma: envL1 ? "envoltorio-L1" : envL2 ? "envoltorio-L2" : "SIN-ENVOLTORIO",
+    forma: !cont
+      ? "SIN-ENVOLTORIO"
+      : cont.id === "sidebar"
+        ? "envoltorio-L2"
+        : "envoltorio-L1",
     contenedor: caja(cont),
     widgets: {},
     boton: null,
@@ -190,7 +208,8 @@ const num = (v) => {
 
 /* ── Corrida ────────────────────────────────────────────────────────────── */
 const censo = new Censo();
-const browser = await launch();
+/* `launch()` devuelve `{browser, userDataDir}`, no el browser pelado. */
+const { browser } = await launch();
 const salida = {
   meta: {
     fecha: hoy(),
@@ -227,7 +246,8 @@ for (const [forma, rutaOrig, rutaClon] of CATALOGO) {
   censo.grupo(forma);
 
   const lee = async (url) => {
-    const page = await openPage(browser, url, { width, height: mobile ? 844 : 900, mobile });
+    /* `openPage` devuelve `{page, client, status}`. */
+    const { page } = await openPage(browser, url, { width, height: mobile ? 844 : 900, mobile });
     await settle(page);
     const { datos } = await censo.medir(page, LECTOR, WIDGETS, SABOTAJE);
     await page.close();
