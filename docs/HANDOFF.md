@@ -417,7 +417,7 @@
 > | `qa:manifiesto` | **374 rutas · 20 familias · 0 vacías · 0 desaparecidas** |
 > | `qa:slugs` | 2/2 familias · ninguna colisión |
 > | `qa:enlaces` | 374/374 páginas · **2 rotos · 105 destinos** — idéntico a la congelada del día |
-> | `qa:negativos` | 42/42 baratos · **6 rojos**, los 6 fichados con sus mismas fracciones |
+> | `qa:negativos` | 42/42 **negativos baratos CORRIDOS** · **6 rojos DE ESOS 42**, los 6 fichados con sus mismas fracciones. ⚠ **no es el total de negativos del repo** — ver §El denominador de los negativos, más abajo |
 > | `qa:pie-cmp-neg` · `qa:pie-familias-neg` | **4/4** cada uno, por su motivo |
 > | `qa:pie-legal-neg` | **4/4**, y `corpus-mudo` cae por el DENOMINADOR con `esUnoAUno` aún en `true` |
 > | `qa:lib` | **114/114** aserciones · **193** sondas |

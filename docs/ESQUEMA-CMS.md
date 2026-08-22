@@ -1288,6 +1288,24 @@ la única que el original hace jerárquica —`etiquetas` (12), `categoriasCient
 widgets con **una sola firma en los 80**: buscador · uno de texto vacío · la
 lista «Categorías» · el CTA de newsletter.
 
+> ✅ **Y desde la 89.ª tanda (2026-08-21) está VERIFICADA DE DOS LADOS, no sólo
+> censada.** Hasta ahí la barra tenía su **marcado** medido (`lh-barra`, un
+> lado) y **ni un píxel** de su presentación: `qa:barra-cmp` la compara widget a
+> widget contra el original y da **Δ0 en las tres formas que la sirven** —`L1`
+> blog y etiqueta, `L2` glosario— **a 1440 y a 390**, 918 caminos por ancho.
+>
+> **Por qué esto es de ESQUEMA y no sólo de QA:** si la barra es plantilla, su
+> **CSS es parte del contrato de la plantilla**, no un detalle de maquetación
+> del clon. Un CMS que renderice `LISTADO-B` tiene que emitir esta barra con
+> esta caja, y hasta hoy nadie había comprobado que la caja del clon fuera la del
+> original — lo era en el marcado y **no en la presentación**: `−82.80` en `L1` y
+> `−75.80` en `L2`, por cinco causas de cascada (`PENDIENTES-QA.md`
+> §F3-LH-BARRA-CASCADA).
+>
+> ⚠ **Y lo que sigue sin ser contrato: el buscador.** `SP-B4` mide la caja y
+> **no la interacción** — qué hace el formulario al enviarse sigue **SIN
+> MEDIR**, así que el content type no puede prometerlo todavía.
+
 > ✅ **Y `D3` queda CONFIRMADA: su condición de reapertura se comprobó y NO se
 > cumple.** El widget «Categorías» **no consume la taxonomía**: es
 > `et_pb_widget_area`/`widget_text` en 80/80 —no el nativo `widget_categories`—,

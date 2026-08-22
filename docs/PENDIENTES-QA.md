@@ -324,6 +324,111 @@ el fichero **en disco tal como está, en LF**.
 código** —`CLAUDE.md`, esta ficha y `HANDOFF.md`— y el encargo lo prohíbe
 explícitamente (§regla 18).
 
+## ✅ F3-LH-BARRA-CASCADA · LA BARRA LATERAL, DE DOS LADOS POR PRIMERA VEZ — **CERRADA 2026-08-21 (89.ª tanda): Δ0 EN LAS 3 FORMAS Y LOS 2 ANCHOS**
+
+**Estado: CERRADA.** La barra lateral no se había comparado **nunca** contra el
+original a nivel de widget. Se construyó el comparador de dos lados
+(`qa:barra-cmp`, negativo 5/5) y se transcribieron las cinco causas que nombró.
+
+### El déficit, con sus dos lados
+
+| forma | @1440 antes | @390 antes | después |
+|---|---|---|---|
+| `L1` (blog · etiqueta) | `430.19 → 347.39` (**−82.80**) | `408.19 → 329.39` (**−78.80**) | **Δ0** |
+| `L2` (glosario) | `426.19 → 368.39` (**−57.80**) | `426.19 → 350.39` (**−75.80**) | **Δ0** |
+
+**234 pares distintos → 0**, a los dos anchos, 918 caminos comparados por ancho,
+`36/36` piezas leídas en los dos lados. Congeladas: `barra-cmp-{1440,390}-antes.json`
+y `barra-cmp-{1440,390}-despues.json`.
+
+> **CONTROL:** el `−75.80` de `L2@390` reproduce **al céntimo** el número que la
+> 88.ª había fichado con otro instrumento. Es la confirmación con una medida
+> buena anterior, que es lo único que distingue un comparador nuevo que mide de
+> uno que produce números plausibles.
+
+### Las cinco causas, todas del canal servido
+
+| # | causa | cuota |
+|---|---|---|
+| 1 | `.et_pb_button` **sin caja**: el clon servía sólo `display` y `cursor` | **−20.20** por botón |
+| 2 | `.widgettitle` a `18px` donde el original da **`22px`**, y con `margin-bottom:10px` que no existe | −4 por título ×3, y **−26** en el del boletín a 390 por el envolvimiento que a 18 px no ocurre |
+| 3 | `.widgettitle` a `font-weight:500` donde el original da **`300`** | 0 de alto, pero decide dónde envuelve |
+| 4 | `font-size` y `line-height` **inventados** sobre `.et_pb_widget` (14 / 1.7em): el original no le pone ninguno y hereda 18 / 30.6 | transversal |
+| 5 | el `:last-child{margin-bottom:0}` en el **nivel equivocado** | **+9.00** en `text-7`, y con él el `+9.00` del contenedor de `L1` |
+
+El alto del botón cierra exacto: `lh 25.5 + pt 7.5 + pb 9 + bt 1 + bb 1 = 44.00`.
+Y el contenedor: `L1@1440 = 72 + 0 + 102.19 + 128 + 4×32 = 430.19`.
+
+### Lo que esta sección deja como REGLA (ya en `CLAUDE.md`)
+
+1. **Transcribir la declaración servida no es transcribir la cascada.** La 88.ª
+   leyó bien `#sidebar .et_pb_widget{margin-bottom:30px}` y el valor real es
+   **32**, porque el tema sirve `.et_pb_widget{margin-bottom:2rem !important}` y
+   gana. `grep` contesta *«¿existe?»*; la pregunta es *«¿cuál gana?»*;
+2. **un `em` citado sin su `font-size` es la trampa del `%` sin su contenedor.**
+   El pre-registro predijo 22 px de `padding: .5em/.6em` usando el `font-size:20px`
+   de Divi; el customizer lo baja a **15** y la cuota real es 16.5;
+3. **una regla en el nivel equivocado no da error**: el `:last-child` sobrante
+   sobre el widget y el que faltaba sobre el `li` son invisibles los dos;
+4. **un caso de negativo puede morirse VERDE** el día que se arregla el objeto —
+   ver §El negativo, abajo.
+
+### El negativo, y el caso que se retiró en la misma tanda
+
+`qa:barra-cmp-neg`: **5/5**. Cuatro sabotajes —`sin-original`, `lector-ciego`,
+`dominio-encogido`, `delta-inyectado`— más el control.
+
+> ⚠ **Hubo un quinto, `sin-diferencias`, y se retiró.** Copiaba el lado del
+> original al del clon y exigía «0 distintos»; **con el defecto puesto
+> discriminaba**. En cuanto la transcripción dejó los dos lados a Δ0, pasó a
+> predecir **lo mismo que la corrida limpia**: cero separadoras, y habría
+> seguido imprimiendo su ✓. Lo sustituye su simétrico —inyectar un Δ conocido y
+> exigir que la sonda lo cace y lo **nombre**—, porque con el objeto en verde la
+> pregunta ya no es *«¿sabe callar?»* sino *«¿sabe gritar?»*.
+
+Y el control **no mira el código de salida** a propósito: el exit de un
+comparador cambia con el estado del objeto (2 con defecto, 0 sin él), así que
+cablearlo lo habría caducado el mismo día.
+
+### Defecto de la propia sonda, cazado por ella
+
+`barra-cmp-1440-SONDA-CASO-EL-PIE-COMO-BARRA-EN-L2.json`. La primera versión
+buscaba `.et_pb_widget_area` a secas; **el pie también lo lleva**, así que en
+`L2` casaba el pie y devolvía `envoltorio-L1` con un contenedor de 288.16 y
+**cero widgets dentro**. §sondas 4 en su tercera cara, y es **el mismo error que
+la cabecera de `lh-barra` le reprocha a `lh-serie`** — cometido después de
+leerlo. El contenedor se deriva ahora **del dato**: es el que contiene el primer
+widget de la firma congelada, por `closest()`.
+
+### ⛔ Lo que NO se midió, con su cardinal (§regla 14)
+
+- **`L1-resources`: 0 de 37 documentos.** No sirve barra, y el clon ya ramifica
+  por `esRecursos`. No hay par que comparar — **y eso corrige el denominador de
+  la cabecera de `BarraLateral.tsx`**: los «80 documentos con una sola firma»
+  son 80 de **117** documentos de `L1`, o sea el 68 %, no la totalidad;
+- **`/faqs/[slug]`: 4 rutas.** `FaqSidebar.tsx` es otro componente con otros
+  cuatro widgets, con clases Tailwind propias y fuera de `.lh-cuerpo`. **Fuera
+  de alcance por encargo**, no por olvido;
+- **el buscador como INTERACCIÓN (`SP-B4`)**: se comparó la caja, no lo que hace
+  al enviarse. Sigue **SIN MEDIR**;
+- **páginas fuera del catálogo**: 2 de 17 en blog, 2 de 63 en etiqueta, 2 de 8
+  en glosario. La firma del marcado es una en 80 documentos con varianza 0, pero
+  eso es un supuesto sobre el **marcado** y el **píxel** podría variar sin que el
+  marcado lo haga;
+- **el blanco entre widgets**: el original lo sirve (`\n\t\t\t\t` en `L1`,
+  `\n\t\t` en `L2`) y el clon no emite ninguno. Da Δ0 igual, pero **no se ha
+  medido con el blanco puesto**;
+- **el alcance de las reglas del botón**: el original las sirve **globales**
+  (`body .et_pb_button`) y el clon las transcribe **acotadas a la barra**, que es
+  lo medido. Hacerlas globales movería rutas que esta tanda no ha comparado.
+
+### Dato suelto, para la sección de canarios
+
+`CLAUDE.md` mide hoy **180.510 chars** y **`KV-01` y `KV-08` llegaron los dos**
+en esta sesión. El techo medido de «llega entero» sube de 178.777 a **180.510**.
+
+---
+
 ## ✅ F3-LH-ORDEN-DE-L5-SIN-MODELAR · **DESBLOQUEADA EL 2026-08-18 (81.ª): LA CLAVE YA ESTÁ EN EL MODELO** (abierta en la 80.ª)
 
 > ✅ **El bloqueo se levanta.** `casos.fechaPublicacion` existe, está migrado
@@ -16827,6 +16932,33 @@ de construcción.
 | negativos rojos **entre los baratos** | **6 de 42**, y son **exactamente los 6 fichados con sus mismas fracciones**: `media-hueco` 6/7 · `media-regenera` 2/5 · `media-colision` 3/6 · `media-siembra` 3/4 · `productos-hueco` 3/5 · `coloca-media` 2/3 | `npm run qa:negativos` |
 | ⚠ **negativos que NADIE barre** | **20** — el `package.json` declara **62** y el barrido evalúa **42** | `grep -c '"qa:.*-neg"' package.json` contra la línea de unidades de `qa:negativos` |
 | ⚠ **rojos ENTRE esos 20** | **≥ 2**: `lh-poblacion-neg` **3/4** y `lh-selectores-neg` **3/4** | corridos a mano en esta tanda |
+
+> ⚠⚠ **EL DENOMINADOR DE LOS NEGATIVOS SON CINCO NÚMEROS EN CINCO UNIDADES, Y
+> NINGUNO ES «LOS NEGATIVOS» (derivado el 2026-08-21, 89.ª tanda).** La tabla de
+> arriba da sus unidades y es correcta; lo que se citaba suelto —«42», «62»,
+> «59»— no, y tres números distintos sin unidad se leen como tres opiniones
+> sobre el mismo conjunto.
+>
+> | número de HOY | unidad | cómo se deriva |
+> |---|---|---|
+> | **42** | negativos **baratos que el barrido CORRE** | la línea de unidades de `qa:negativos` |
+> | **60** | **ficheros** `.neg.mjs` en `scripts/qa/` | `ls scripts/qa/*.neg.mjs \| wc -l` |
+> | **71** | **ficheros** `.neg.mjs` en TODO `scripts/` (60 de `qa/` + 11 de `seed/`) — **es lo que censa el barrido de existencia** | `find scripts -name '*.neg.mjs' \| wc -l` |
+> | **63** | scripts npm **`qa:*-neg`** | `node -e` sobre `package.json` |
+> | **75** | scripts npm `-neg` **declarados en total** = 63 `qa:` + 12 `cms:` | idem |
+>
+> *(Los cinco suben en 1, 1, 1, 1 y 1 respecto a la 88.ª: esta tanda añadió
+> `barra-cmp.neg.mjs` con su `qa:barra-cmp-neg`.)*
+>
+> **Y «el repo declara 62» era MEDIA declaración**: son **63 `qa:` + 12 `cms:`**.
+> Citar sólo los `qa:` deja 12 negativos fuera del denominador sin decirlo.
+>
+> ⚠ **El total de ROJOS no es 8: es «≥ 8, con 18 SIN CORRER».** 6 rojos entre
+> los 42 barridos + 2 entre los 20 que nadie barre = **8 observados**, y los
+> **18 restantes de esos 20 no se han corrido nunca**. Escribir «son 8» convierte
+> 18 no-medidos en 18 limpios, que es §la regla del cero —*no encontrar nada y no
+> mirar nada dan la misma salida*— cobrada sobre el recuento de las propias
+> guardas.
 | páginas con el ofuscador de Cloudflare | **5 distintas** — **2 clonadas** + **3 sueltas** | `grep -rl cdn-cgi/l/email-protection corpus/` → 7 ficheros, 2 duplicados en `transformado/` |
 | destinos pendientes de localizar | **105** = **54** en `src/` + **51** en cuerpo rico | `qa:enlaces-clases`, congelada |
 | ⚠ **sus APARICIONES** | **1379 → 1395** (**+16**) | `qa:enlaces`: `/blog` lo escriben cabecera y pie, y hay 8 páginas más |

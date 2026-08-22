@@ -1,6 +1,30 @@
 /**
- * LA BARRA LATERAL DE `LISTADO-B` — 4 widgets, **una sola firma en 80
- * documentos**.
+ * LA BARRA LATERAL DE `LISTADO-B` — 4 widgets, **una sola firma en 80 de los
+ * 117 documentos de `L1`**.
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ EL DENOMINADOR DE ESOS «80», QUE FALTABA (89.ª tanda)
+ *
+ * «Una sola firma en 80 documentos» es cierto y estaba **sin denominador**, y
+ * eso lo hacía leerse como *«toda `L1` sirve esta barra»*. Censado por forma
+ * —que es como hay que censar cuando hay más de una— sale otra cosa
+ * (`medidas/lh-barra.json` §`porFamilia`):
+ *
+ * | variante de `L1` | documentos | con barra |
+ * |---|---|---|
+ * | `blog` | 17 | **17** |
+ * | `etiqueta` | 63 | **63** |
+ * | **`resources`** | **37** | **0 — NO SIRVE BARRA** |
+ *
+ * O sea que **`L1` tiene tres variantes y sólo dos tienen barra**, y los 80 son
+ * el **68 %** de `L1`, no su totalidad. El clon ya lo respeta —`PaginaListado`
+ * ramifica por `esRecursos` y no la pinta—, así que `WidgetsBarra` **no está
+ * extraída sobre un dominio que no la sostenga**; lo que estaba mal era la
+ * frase, que invitaba a la generalización contraria.
+ *
+ * Es §*un selector que casa en unas formas y en otras no no es ni el cero ni el
+ * pleno*, aplicado al **enunciado** en vez de al selector: el total no
+ * distingue «casa en todas un poco» de «casa en dos de tres».
  *
  * ══════════════════════════════════════════════════════════════════════════
  * POR QUÉ SU CONTENIDO VA CABLEADO, Y NO ES PEREZA
@@ -61,12 +85,20 @@ const CATEGORIAS_DEL_WIDGET = [
  * | `L1` (theme builder) | `div.et_pb_module.et_pb_sidebar_0_tb_body.et_pb_widget_area…` |
  * | **`L2`** (plantilla PHP del archivo de CPT) | **`div#sidebar`**, con los widgets como hijos DIRECTOS |
  *
- * Derivado del corpus sin recortar (`corpus/fase-3/listados/glosario/`): los
+ * Derivado del corpus sin recortar, **y de LOS DOS lados** (89.ª tanda): los
  * cuatro `id` —`search-6` · `text-1` · `text-7` · `custom_html-25`— y su
- * contenido son **idénticos byte a byte** salvo los `href`, que la regla de
- * rutas locales resuelve en cada forma. Copiarlos habría sido la clase de
+ * contenido son **idénticos**, medido normalizando el blanco entre etiquetas:
+ * **1167 caracteres los dos** (`blog/index.html` contra `glosario/index.html`),
+ * y **los `href` también coinciden** — `/categoria/<slug>/` no está clonado, así
+ * que las dos formas apuntan al original. Copiarlos habría sido la clase de
  * duplicación que este repo ya pagó con la miga: cuatro copias a mano que
  * divergen el día que alguien toca una.
+ *
+ * ⚠ **Lo único que difiere en el HTML servido es la INDENTACIÓN** (`\n\t\t\t\t`
+ * en `L1`, `\n\t\t` en `L2`), y el clon no emite ninguna. Con `float:left` en
+ * `L1` y `float:none` en `L2` no debería renderizar — pero eso es un
+ * razonamiento, **no una medida**, y `barra-cmp` da Δ0 a los dos anchos con el
+ * blanco ausente. Queda declarado como no medido, no como inofensivo.
  *
  * ⚠ **Lo que NO se extrae es el envoltorio**, y es lo único que difiere. Un
  * componente que aceptara «con módulo Divi o sin él» por prop estaría

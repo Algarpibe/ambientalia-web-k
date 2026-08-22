@@ -885,6 +885,68 @@ tres cosas que «la salida servida» incluye y nadie mira (2026-08-13):**
 > no un extra. Un marcado ofuscado más su descifrador son **una unidad**: media
 > unidad no es una versión más limpia, es un defecto que el original no tiene.
 
+⚠⚠ **Y LA QUINTA, QUE ES LA QUE SE COLA CON UNA MEDICIÓN BUENA DE COARTADA:
+TRANSCRIBIR LA DECLARACIÓN SERVIDA NO ES TRANSCRIBIR LA CASCADA (2026-08-21).**
+
+Las cuatro de arriba avisan de transcribir **algo que no estaba servido**. Ésta
+avisa de lo contrario, y por eso es más difícil de ver: la declaración **estaba
+servida, se leyó bien y se copió entera** — y aun así el clon sirve otro número.
+
+> **Una regla puede estar en el canal, leerse correctamente y NO LLEGAR A LA
+> PROPIEDAD.** Lo que el navegador aplica es el ganador de la cascada, y el
+> ganador puede vivir en otra hoja, con otra especificidad, o con un
+> `!important` que no está a la vista de quien leyó la regla que buscaba.
+
+**Medido:** una tanda transcribió `#sidebar .et_pb_widget{margin-bottom:30px}`
+del CSS servido. Correcto como lectura. Lo que no se miró es **quién gana**: el
+tema sirve además `.et_pb_widget{margin-bottom:2rem !important}`, y ese
+`!important` de hoja de autor le gana a la declaración específica. El valor real
+es **32**, no 30, en las tres formas y a los dos anchos — y el error se pagó
+cuatro veces, una por widget.
+
+**Las dos mitades operativas:**
+
+1. **el veredicto lo da `getComputedStyle` SOBRE EL ORIGINAL, no `grep` sobre
+   las hojas.** `grep` contesta *«¿existe esta declaración?»*; la pregunta es
+   *«¿cuál gana?»*, y sólo la tiene el navegador;
+2. **y cuando haga falta saber POR QUÉ, se le pregunta a la cascada**
+   (`CSS.getMatchedStylesForNode` por CDP), que devuelve **las reglas que casan,
+   en orden**. Buscarla con `grep` depende de acertar el selector: en la misma
+   tanda, la regla que faltaba se llamaba `.boton-azul` y el filtro exigía
+   `button` en el selector, así que salió **cero** — §sondas 4 cometida sobre el
+   filtro de un `grep` en vez de sobre un `querySelector`.
+
+⚠ **Y su hermana pequeña, del mismo día: UN `em` CITADO SIN SU `font-size` ES
+LA MISMA TRAMPA QUE UN `%` CITADO SIN SU CONTENEDOR.**
+
+El documento ya avisa —«*un default expresado como porcentaje se lee como
+constante en cuanto se cita, porque el px es lo que se puede comparar y el
+contenedor no viaja con él*»— y **el `em` tiene exactamente la misma forma**,
+con el contenedor cambiado: **el `font-size` final del propio elemento**.
+
+**Medido:** de `padding: 0.5em 2.7em 0.6em 1.5em` se predijo una cuota de
+**22 px** multiplicando por el `font-size: 20px` que declara el core del
+constructor. El customizer del sitio lo baja a **15**, así que la cuota real es
+**16.5**. La regla estaba bien leída y el número salió mal **por el
+denominador**, que es el modo de fallo de esta familia entera.
+
+> **Un valor relativo se escribe CON SU BASE MEDIDA —«0.5em de un cuerpo de
+> 15»— o no se escribe.** Y la base se mide en el elemento, no se hereda de la
+> hoja donde apareció la declaración.
+
+⚠ **Y la tercera del mismo día, que es §*la causa común* con el contenedor
+puesto en el SELECTOR: UNA REGLA EN EL NIVEL EQUIVOCADO NO DA ERROR.**
+
+El clon servía un `:last-child { margin-bottom: 0 }` sobre **el widget**, donde
+el original no lo tiene, y le faltaba el mismo `:last-child` sobre **el `li`**,
+donde el original sí lo tiene. Las dos mitades del error son invisibles: la
+sobrante quita un margen que nadie echa en falta, y la que falta añade **9 px**
+en un elemento que ninguna medida de la página mira.
+
+> **Al transcribir un `:first-*`/`:last-*`, la pregunta no es «¿existe?» sino
+> «¿SOBRE QUÉ?».** Se comprueba midiendo **el primero y el último hermano por
+> separado** en el original: si difieren, ahí está el nivel; si no, no está ahí.
+
 De ahí las dos formas de aplicarlo, que son la misma:
 
 - **Alturas** — se mide el DOM renderizado, y **por composición**: `padding-top`,
@@ -2992,6 +3054,45 @@ vigila. Eso no es «roto» ni «probado»: es **SIN PROBAR**, se reporta con su
 denominador y **sigue contando como fallo**, porque un SIN PROBAR que sale verde
 se lee como probado (§*dos modelos que predicen lo mismo en todo tu dominio son
 uno solo*, aplicado al sabotaje).
+
+⚠⚠ **Y LA VUELTA, QUE ES LA QUE NADIE MIRA PORQUE SALE EN VERDE: UN CASO DE
+NEGATIVO PUEDE MORIRSE EL DÍA QUE SE ARREGLA EL OBJETO — Y SE MUERE VERDE
+(2026-08-21).**
+
+La regla de arriba enseña a leer un negativo **en rojo**. Su complementaria es
+que un negativo en **verde** puede haber dejado de probar nada, y ahí no hay
+ninguna señal:
+
+> **El poder discriminante de un sabotaje depende del ESTADO DEL OBJETO, no
+> sólo del código de la sonda.** Un caso que separaba de sobra mientras había
+> defecto puede pasar a predecir **exactamente lo mismo que la corrida limpia**
+> en cuanto el defecto se arregla. Cero instancias separadoras — y sigue
+> imprimiendo su ✓.
+
+**Medido, y en la misma tanda que lo produjo:** el caso `sin-diferencias`
+copiaba el lado del original al del clon y exigía «0 distintos». Con el defecto
+puesto **discriminaba**: separaba *«la comparación compara»* de *«el comparador
+inventa diferencias»*. Terminada la transcripción, los dos lados quedaron a Δ0 y
+el sabotaje pasó a predecir lo mismo que no sabotear nada. Habría seguido en
+verde indefinidamente.
+
+**Las dos mitades operativas:**
+
+1. **cada vez que una tanda mueva el objeto a verde, RELEE sus negativos
+   preguntando qué separa cada caso AHORA** — no si pasa. Es §regla 5ter (*
+   arreglar el objeto caduca el control*) con el objeto cambiado: allí el
+   control escribía el valor de ayer, aquí el sabotaje anula algo que ya no
+   estaba;
+2. **y el caso muerto se SUSTITUYE por su simétrico, no se borra.** Con defecto
+   la pregunta es *«¿sabe callar?»*; sin defecto es *«¿sabe gritar?»* — se
+   inyecta un Δ **conocido** y se exige que la sonda lo cace **y lo nombre**.
+
+> **Y el corolario de diseño, que evita la mitad del problema: el control de un
+> negativo NO se cablea al código de salida cuando la sonda es un
+> COMPARADOR.** Su exit cambia con el estado del objeto —2 con defecto, 0 sin
+> él— así que un control atado a cualquiera de los dos caduca el día del
+> arreglo. Se ata a lo que es cierto en los dos estados: que alcanza su dominio,
+> que publica sus ejes y que discrimina lo que dice discriminar.
 
 **22 · UN BOOLEANO DE CONCORDANCIA ES VERDADERO SOBRE UN DOMINIO DE UNO IGUAL
 QUE SOBRE UNO DE MIL.** (2026-08-20)
