@@ -16999,12 +16999,34 @@ de construcción.
 > **Y «el repo declara 62» era MEDIA declaración**: son **63 `qa:` + 12 `cms:`**.
 > Citar sólo los `qa:` deja 12 negativos fuera del denominador sin decirlo.
 >
-> ⚠ **El total de ROJOS no es 8: es «≥ 8, con 18 SIN CORRER».** 6 rojos entre
-> los 42 barridos + 2 entre los 20 que nadie barre = **8 observados**, y los
-> **18 restantes de esos 20 no se han corrido nunca**. Escribir «son 8» convierte
-> 18 no-medidos en 18 limpios, que es §la regla del cero —*no encontrar nada y no
-> mirar nada dan la misma salida*— cobrada sobre el recuento de las propias
-> guardas.
+> ⚠⚠ **Y «los 20 que NADIE barre» estaba mal en las DOS mitades — derivado el
+> 2026-08-21 replicando la clasificación de `negativos.mjs`.**
+>
+> **(a) El número es 29, no 20.** El «20» salía de restar **`62` scripts npm
+> menos `42` ficheros evaluados**: dos unidades distintas, que es exactamente lo
+> que esta misma nota vino a corregir. En la unidad del barrido —**ficheros**—
+> el reparto cierra:
+>
+> | | n | ¿los corre? |
+> |---|---|---|
+> | censados en `scripts/qa` + `scripts/seed` | **71** | — |
+> | **baratos** (ni navegador ni DB) | **42** | ✅ sí |
+> | con **NAVEGADOR** | **16** | ❌ no |
+> | con **DB** | **13** | ❌ no |
+>
+> `42 + 16 + 13 = 71` ✓.
+>
+> **(b) Y «nadie los barre» es falso: el barrido LOS CENSA Y LOS DECLARA**, con
+> su cardinal, en su propia salida. No son un hueco — son una **limitación
+> declarada** (§regla 14 cumplida por el instrumento). Lo que sí es cierto es que
+> **hay que correrlos a mano**, y casi nunca se hace.
+>
+> ⚠ **El total de ROJOS: «≥ 8, con 26 SIN CORRER».** 6 entre los 42 barridos + 2
+> entre los caros corridos a mano (`lh-poblacion-neg` 3/4 · `lh-selectores-neg`
+> 3/4) = **8 observados**. De los 29 caros sólo **3** se han corrido
+> recientemente —esos dos más `barra-cmp-neg` (5/5, verde)—, así que **26 no se
+> han corrido**. Escribir «son 8» convierte 26 no-medidos en 26 limpios, que es
+> §la regla del cero cobrada sobre el recuento de las propias guardas.
 | páginas con el ofuscador de Cloudflare | **5 distintas** — **2 clonadas** + **3 sueltas** | `grep -rl cdn-cgi/l/email-protection corpus/` → 7 ficheros, 2 duplicados en `transformado/` |
 | destinos pendientes de localizar | **105** = **54** en `src/` + **51** en cuerpo rico | `qa:enlaces-clases`, congelada |
 | ⚠ **sus APARICIONES** | **1379 → 1395** (**+16**) | `qa:enlaces`: `/blog` lo escriben cabecera y pie, y hay 8 páginas más |
