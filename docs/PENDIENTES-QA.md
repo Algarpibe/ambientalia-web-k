@@ -1,6 +1,9 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⚠⚠ F3-3-CORTE-2 · la unión de CMS-3 expresa **30 de 32**, y el corte lo dispara el RÉGIMEN, no los bloques — **92.ª tanda, 2026-08-22**
+## ✅ F3-3-CORTE-2 · **RESUELTO el 2026-08-22 (93.ª): el propietario tomó S1 y S2, y la unión expresa 31 de 31** — el acta de la refutación se conserva entera debajo
+
+*(Titular original, 92.ª tanda: «la unión de CMS-3 expresa **30 de 32**, y el
+corte lo dispara el RÉGIMEN, no los bloques».)*
 
 **Qué es.** La 92.ª escribió la unión de CMS-3 (11 bloques) y la probó **por
 extracción, offline**, contra las 32 capturas. **CORTE LIMPIO 2 disparó**:
@@ -41,9 +44,55 @@ vuelve al propietario*): S1 mover la webinar a `entradas-blog` · S2 campo rico
 en `paginas` para el régimen `--` (n = 1) · S3 dejar el `--` fuera hasta su
 segunda instancia. Las tres con su coste en `ESQUEMA-CMS.md` §2j.3b.
 
+### ✅ CÓMO SE CERRÓ (93.ª, 2026-08-22) — y lo que se aprendió al cerrarlo
+
+**El propietario tomó S1 y S2. S3 cae.** Medido, exit 0: `B-` 22/22 · `BT` 8/8 ·
+`--` 1/1 · **TOTAL 31/31**, 313 de 313 módulos. **Tres regímenes en `paginas`,
+no cuatro.**
+
+⚠⚠ **Y el negativo destapó una constricción que ninguna de las dos salidas
+decía: S1 y S2 NO SON INDEPENDIENTES.** El contrafactual —desaplicar S1— da
+**32/32 y exit 0**, porque el campo rico de S2 **se traga también el
+`post_content` de la webinar**. O sea **0 instancias separadoras**: por
+expresabilidad, las dos salidas predicen lo mismo. Si S1 se hubiera justificado
+por ahí, sería *un escape que traga el caso que decía acotar* — el reproche que
+tumbó a C2, por la puerta de atrás.
+
+**Lo que sí adjudica S1 es dato servido sin campo donde caer:**
+
+| campo del JSON-LD | n de 32 | ¿separa? |
+|---|---|---|
+| `articleSection` | **1** | SÍ — sólo la webinar |
+| `author` | **1** | SÍ — sólo la webinar |
+| `datePublished` | **32** | **NO — lo traen todas** |
+
+Alojar la webinar en `paginas` **perdería su categoría y su autor**. Y el
+candidato obvio —la fecha— **no separa**, que es lo que más importa decir:
+citarlo habría sido nombrar una propiedad del conjunto entero.
+
+**El sabotaje B quedó MUDO** y se sustituyó por su simétrico **B′** —quitarle el
+campo rico al MODELO, no desactivar la guarda—, que vuelve a morder con el
+mensaje exacto de la 92.ª: 30/31, exit 3. Es §regla 21, la vuelta.
+
 ---
 
-## ⚠ F3-3-REGIMEN-CUARTO · la taxonomía `BT`/`B-`/`-T` **no tiene el casillero de `page-template-default`** — 92.ª tanda
+## ⚠ F3-3-FECHA-SIN-CAMPO · las 32 capturadas sirven `datePublished` y `paginas` **no tiene campo de fecha** — 93.ª, 2026-08-22
+
+**Salió de lado**, censando qué separa la webinar del resto: `datePublished` está
+en **32 de 32** y `paginas` no lo modela. Es **dato servido sin campo**, o sea el
+mismo criterio que obligó a S2, un nivel más abajo.
+
+**Lo que NO es, para que nadie lo escale de más:** no es `CMS-ORDEN-L2`.
+`paginas` no es un archivo y nadie ordena por esa clave, así que **no bloquea la
+emisión**. Y no se decide de paso: modelarlo o declararlo es de la tanda que
+emita, con su antes/después.
+
+**Denominador con su unidad:** 32 CAPTURADAS (31 de `paginas` + 1 entrada).
+Evidencia: §1b de `derivaciones/prueba-union-f33.log`.
+
+---
+
+## ✅ F3-3-REGIMEN-CUARTO · **CONTESTADO el 2026-08-22 (93.ª): el casillero `--` son 131 de 576, no una rareza** — abierto en la 92.ª
 
 `CLAUDE.md` enumera tres regímenes y el reparto medido de las 32 da **cuatro**:
 8 · 22 · 1 · **1**. El cuarto (`--`) es la **plantilla clásica del tema** —
@@ -55,6 +104,46 @@ por régimen en vez de en total**.
 una página o una familia. **n = 1 en la cola larga**, y **nadie ha barrido las
 otras 6 familias de la campaña F3** buscándolo. Hasta que se barra, «es una
 excepción» es una afirmación sobre 32 páginas, no sobre el sitio.
+
+### ✅ BARRIDO (93.ª, 2026-08-22) — y era una FAMILIA, no una rareza
+
+Derivado sobre **todo** lo capturado —576 documentos con `<body class>`, sin
+abrir el original— con `derivaciones/regimenes-corpus.{mjs,log}`:
+
+| casillero | n | % |
+|---|---|---|
+| `-T` plantillado | 371 | 64.4 % |
+| **`--` sin marcador Divi** | **131** | **22.7 %** |
+| `B-` builder | 60 | 10.4 % |
+| `BT` híbrido | 14 | 2.4 % |
+
+**El `--` es el SEGUNDO casillero más poblado del corpus.** Y lo que lo
+convierte en regla y no en curiosidad: dentro viven `single-CPT (case-studies)`
+**×57** y `single-CPT (faqs)` **×19**, o sea los arquetipos **CASO** y **FAQ**,
+**ya clonados y en la tabla de «Páginas clonadas»**. La taxonomía de `CLAUDE.md`
+tenía dos casilleros más la nota del híbrido, y **22.7 % del corpus caía fuera
+de los tres**.
+
+**La segunda dirección, con su número: 0 combinaciones más sin nombrar** — y
+**es cero POR CONSTRUCCIÓN**, no por suerte: dos marcadores binarios sólo dan
+cuatro combinaciones, y las cuatro están pobladas (**4 de 4, ninguna con
+n = 0**). El valor del censo **no es el recuento de combinaciones nuevas: es el
+reparto.**
+
+**Y un eje que sí aporta:** la plantilla de WordPress. **20 plantillas · 23
+celdas pobladas de 80 posibles**, o sea que los dos ejes **no son el mismo**
+(§*dos variables confundidas*, refutado con su cruce). La única fila que no los
+separa es `BT` —14 documentos, todos `page-template-default`— y se declara.
+
+**La regla que sale de aquí vive en `CLAUDE.md`** (§*identifica el RÉGIMEN*),
+no aquí: §regla 12 — quítale la fecha y el nombre propio y sigue diciendo qué
+hacer.
+
+⚠ **Lo que este censo NO contesta:** no dice **quién decidió** cada valor. Eso
+lo dice la **varianza de la capa**, no el marcador (corrección del 2026-08-03),
+y **la varianza del `--` no se ha medido**: qué lectura toca ahí sigue siendo
+una afirmación sin barrido — ver la fila `--` de la tabla de regímenes de
+`CLAUDE.md`, que la declara SIN MEDIR.
 
 ---
 

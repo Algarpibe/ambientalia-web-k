@@ -715,12 +715,16 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > congelada de F3-0, y si difiere, el que manda es el original y la diferencia
 > se ficha con su fecha.**
 
-## F3-3 · la cola larga — **48 RUTAS = 32 páginas + 13 redirecciones + 3 bajas**, en TRES subconjuntos y **CUATRO** regímenes
+## F3-3 · la cola larga — **48 RUTAS = 31 páginas + 1 entrada de blog + 13 redirecciones + 3 bajas**, en TRES subconjuntos y **CUATRO** regímenes
 
-> ⚠ **DOS UNIDADES, LAS DOS CIERTAS, Y NO SON INTERCAMBIABLES** (91.ª tanda):
+> ⚠ **TRES UNIDADES, LAS TRES CIERTAS, Y NO SON INTERCAMBIABLES** (91.ª y 93.ª):
 > **48** es lo que la fase tiene que RESOLVER (URLs que el original sirve de
-> algún modo); **32** es lo que la colección `paginas` ALOJA. Todo denominador
-> de este §F3-3 dice cuál de las dos usa. El «13 redirecciones» **no es un
+> algún modo); **32** son los documentos CAPTURADOS —el denominador de toda
+> medida hecha sobre el corpus—; **31** es lo que la colección `paginas` ALOJA,
+> desde que S1 mandó la webinar a `entradas-blog` (§2j.3c del ESQUEMA). Todo
+> denominador de este §F3-3 dice cuál de las tres usa. ⚠ **S1 no descapturó
+> nada**: las 32 capturadas siguen siendo 32, y el reparto sitio a sitio está en
+> `derivaciones/denominador-32-reparto.md`. El «13 redirecciones» **no es un
 > hueco**: es otro mecanismo, y su reparto está abajo.
 
 > ⚠⚠ **EL REPARTO DE REGÍMENES, DERIVADO EN LA 92.ª — SON CUATRO, NO TRES.**
@@ -763,7 +767,7 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > membresía*: **la intersección real de las dos lecturas son sólo los 7 hubs de
 > KB.** El conjunto de la fase es **la UNIÓN**, y se nombra elemento a elemento.
 
-### La membresía, DERIVADA — 7 + 6 + 35 = **48 RUTAS** (= **32 páginas**), sin solapamiento
+### La membresía, DERIVADA — 7 + 6 + 35 = **48 RUTAS** (= **32 capturadas** = **31 de `paginas`** + 1 entrada), sin solapamiento
 
 Fuente: `corpus/fase-3/LISTA-DERIVADA.json` (2026-08-20) por `bucket`, cruzado
 con `medidas/lh-regimen.json` (2026-07-31) para separar L4. **Los 6 de L4 caen en
@@ -797,7 +801,7 @@ literal que LH-2 §D1 cita:
 listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 
 > ⚠⚠ **CORREGIDO 2026-08-22 (91.ª): LAS 16 «SIN CAPTURAR» NO SON PÁGINAS, Y LA
-> COLA LARGA NO TIENE 48 RUTAS SINO 32.**
+> COLA LARGA NO TIENE 48 RUTAS SINO 32.** *(⚠ y de esas 32 capturadas, `paginas` aloja **31**: la 93.ª mandó la webinar a `entradas-blog` — S1, §2j.3c)*
 >
 > Re-preguntadas al **origen vivo** (`cms:captura-f3`, que vuelve a pedir todo
 > fichero ausente): **0 nuevas**. El original responde **13 × HTTP 301** y **3 ×
@@ -806,7 +810,8 @@ listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 >
 > | | n | qué son |
 > |---|---|---|
-> | **páginas** | **32** | 7 hubs KB + 6 hubs L4 + **19** sueltas — las que `paginas` (CMS-3) aloja |
+> | **páginas** | ~~32~~ **31** | 7 hubs KB + 6 hubs L4 + **18** sueltas — las que `paginas` (CMS-3) aloja *(93.ª, S1)* |
+> | **entrada de blog** | **1** | la webinar — `entradas-blog`, que ya existe. Estaba en `sueltas` **por su URL, no por su forma** |
 > | **redirecciones** | **13** | un **mapa de redirecciones**, que NO es un documento de la colección. Varias apuntan a sitio ya clonado (`/es/estaciones-control-calidad-del-aire/` → `/es/monitor-calidad-aire/`) o ya dentro del conjunto (`/es/soluciones/` → `/es/productos/`); **dos redirigen a una IMAGEN** |
 > | **bajas** | **3** | `404` — fuera del sitio |
 >
@@ -817,8 +822,11 @@ listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 >
 > **Y lo que esto cierra de golpe** (`PRE-REGISTRO-CMS-3.md` §P-U, §P-O): la
 > unión de 12 tipos **deja de ser una cota** —no quedan páginas por capturar— y
-> las de **0 secciones propias** quedan fijadas en **2 de 32**, así que **RA-2 no
-> puede dispararse** por una captura futura.
+> las de **0 secciones propias** quedan fijadas, así que **RA-2 no puede
+> dispararse** por una captura futura. ⚠ **Y no eran «2 de 32» de una forma:**
+> son dos formas de una instancia cada una (92.ª), y con **S1** una de ellas sale
+> de `paginas`. **RA-2 vigila hoy UNA forma con n = 1** —el régimen `--`— y su
+> tercera redacción está en `ESQUEMA §2j.3`.
 
 ### Qué hay ya medido — con sus denominadores y sus ceros NOMBRADOS
 
@@ -943,7 +951,7 @@ de su alternativa, no por lo que acierta*).
 | **C1 vs C2/C3/C4** | ~~≥ 30~~ → **16 de las 32 capturadas** | toda página con **>1 sección propia** (KB **5/7** · L4 **6/6** · sueltas **5/19**): C1 las aplana a un blob, los otros conservan `flujo`/`anchoPct`. La más clara: `/es/soporte/centro-de-ayuda/` y `/es/empresa/` (**11 secciones**) contra `/es/aviso-legal/` (**1**). **«≥30» no reproduce** — **y NO es una cota**: las 16 restantes no son páginas (13 × 301 · 3 × 404), así que nada la sube. El «≥30» salía de contar sobre 48 RUTAS |
 | **C2 vs C3** | ~~12~~ → **20 páginas de 32** | KB **7/7** · L4 **1/6** · sueltas **12/19**. Además de `video`/`toggle`/`map`/`slider`: **9** sueltas con `code` y **3** páginas con `blurb`. C2 las mete en el escape; C3 les da tipo. **20 de 32 no es una vía de escape: es el modelo** |
 | **C2 vs C3 · dentro de los 6 hubs L4** | ~~0~~ → **1** (`/es/recursos/`, `blurb`) | **la conclusión NO cambia**: por §*un discriminador hallado en UNA SOLA instancia no es un discriminador*, **L4 sigue sin poder elegir** entre C2 y C3. Lo que cambia es que el cero era del instrumento —`blurb` estaba en la lista escrita a mano— y no del original |
-| **C3 vs C4** | **2, y bastan** | `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`: **0 secciones propias**. En C4 la colección `paginas` puede declararlas de otra forma; en C3, colección única, **el campo de bloques tendría que ser opcional para las 32** — que es §1.5b Razón 2 al pie de la letra |
+| **C3 vs C4** | **2, y bastan** | `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`: **0 secciones propias**. En C4 la colección `paginas` puede declararlas de otra forma; en C3, colección única, **el campo de bloques tendría que ser opcional para las 32** — que es §1.5b Razón 2 al pie de la letra. *(⚠ argumento SUPERADO en la 93.ª: el opcional **nunca fue el mecanismo** —§2j.3c del ESQUEMA—; a esas 2 las expresan una colección distinta (S1) y un campo rico (S2). El resultado de la comparación no cambia; **esta celda ya no dice por qué**)* |
 | **todos vs «lo que hay»** | **2** | las mismas dos: **ningún** candidato basado en bloques del builder tiene qué poner en ellas sin una vía de escape |
 
 > **Y el criterio ya ratificado que el propietario puede aplicar sin medir más**
@@ -975,12 +983,12 @@ de su alternativa, no por lo que acierta*).
 
 | | |
 |---|---|
-| **entrega** | **32 páginas** emitidas con Δ0 en sus ejes (7 hubs KB + 6 hubs L4 + **19** sueltas) **+ un mapa de 13 redirecciones**. Las 48 rutas quedan resueltas, pero **no como 48 documentos**: 32 lo son, 13 son redirección y 3 son baja |
+| **entrega** | **31 páginas** de `paginas` emitidas con Δ0 en sus ejes (7 hubs KB + 6 hubs L4 + **18** sueltas) **+ 1 entrada de blog** (la webinar, a `entradas-blog` — S1) **+ un mapa de 13 redirecciones**. Las 48 rutas quedan resueltas, pero **no como 48 documentos**: **31 + 1** lo son, 13 son redirección y 3 son baja |
 | **alimenta** | §2d.1 (**cero arquetipos**; `video`/`toggle` **no** entran en `MonoSeccion[]`) |
 | **incógnita** | ✅ **DECIDIDA POR EL PROPIETARIO, 2026-08-22 (91.ª): C3** — una colección `paginas` con **unión PROPIA** de bloques, por el camino de `articulos-kb`. `MonoSeccion[]` **no se toca**. Escrita como **CMS-3** en `ESQUEMA §2j`, con por qué caen los otros tres, su **condición de reapertura** (C3 va contra Razón 3, §2j.3) y su pre-registro (`docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`) |
 | **precondición NUEVA** | ✅ **A CERO, LOS DOS (2026-08-22, 91.ª).** Eran **dos** huecos y esta fila declaraba uno. ① **50 hojas `et-cache` → 0 faltan**: KB `49/49` (7/7 páginas) · L4 `43/43` (6/6, ya estaba) · sueltas `133/133` (19/19). **32 de 32 páginas con TODAS sus hojas**, contra 6/32 al empezar. ② **los «16 HTML sin capturar» NO ERAN UN HUECO**: re-preguntados al origen **vivo** hoy dan **13 × 301 y 3 × 404**, idéntico a la lectura del 2026-08-09. Congelado: `derivaciones/sueltas-16-reverificadas-2026-08-22.json` |
-| **estado** | ⛔ **BLOQUEADA POR CORTE LIMPIO 2 (2026-08-22, 92.ª).** La unión está **escrita** (`bloques/paginas.ts`, 11 bloques) y **probada por extracción**: expresa **30 de 32**. Las 2 que no —régimen `-T` y régimen `--`— tienen contenido en un canal que el modelo no tiene, y `bloques` opcional **no las cubre: las emitiría vacías con 200**. Es una refutación medida y **sube al propietario**: `ESQUEMA §2j.3b` da las tres salidas (S1/S2/S3) con su coste. **La colección NO está en `COLECCIONES`** — registrarla es la mitad irreversible y es de la tanda que emita |
-| **hecho** | la decisión escrita en el ESQUEMA **con su pre-registro**, **las 32 emitidas con Δ0** y **las 13 redirecciones emitidas por su mecanismo** (no por la colección) |
+| **estado** | ✅ **CORTE LIMPIO 2 RESUELTO (2026-08-22, 93.ª): el propietario tomó S1 y S2, y la unión expresa 31 de 31.** ~~⛔ BLOQUEADA (92.ª): expresaba **30 de 32**; las 2 que no —régimen `-T` y `--`— tenían contenido en un canal que el modelo no tenía, y `bloques` opcional **no las cubría: las emitiría vacías con 200**.~~ **S1** manda la webinar a `entradas-blog` (su `<body>` es `single-post`, y `articleSection`/`author` son dato servido que `paginas` no tiene dónde poner: **1 de 32 cada uno**); **S2** da a `paginas` un `campoHtml` para el régimen `--`, con contrato heredado y validación **ejercitada**. Acta: `ESQUEMA §2j.3c`. ⚠ **La colección SIGUE sin estar en `COLECCIONES`** — registrarla es la mitad irreversible y es de la tanda que emita |
+| **hecho** | la decisión escrita en el ESQUEMA **con su pre-registro**, **las 31 emitidas con Δ0** (más la entrada por `entradas-blog`) y **las 13 redirecciones emitidas por su mecanismo** (no por la colección) |
 
 ## F3-4 · las tres familias de archivo sin censar
 

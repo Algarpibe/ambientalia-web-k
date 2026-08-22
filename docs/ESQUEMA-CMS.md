@@ -1548,18 +1548,31 @@ cola larga necesitará su propia decisión de modelo cuando toque.
 > frase decía *«la cola de páginas compuestas (6 hubs LH-2 + 7 hubs KB)»* y
 > **omitía 35 rutas**: la cola larga son **48 RUTAS** —7 hubs KB + 6 hubs L4 +
 > **35 sueltas**—, derivada elemento a elemento en `PLAN-FASE-3.md` §F3-3.
-> ⚠ **48 es la unidad RUTA; en unidad PÁGINA son 32** (91.ª: de las 35 sueltas,
-> 13 son 301 y 3 son 404 — §2j). Los dos números son ciertos y **no son
-> intercambiables**: 48 es lo que la fase tiene que RESOLVER, 32 lo que la
-> colección `paginas` ALOJA. Convivía
+> ⚠ **48 es la unidad RUTA; en unidad DOCUMENTO CAPTURADO son 32; en unidad
+> DOCUMENTO DE `paginas` son 31** (91.ª: de las 35 sueltas, 13 son 301 y 3 son
+> 404 — §2j; 93.ª: una de las 32 capturadas es una entrada de blog, §2j.3c).
+> **Los tres números son ciertos y no son intercambiables:**
+>
+> | unidad | n | qué es | quién la usa |
+> |---|---|---|---|
+> | **RUTA** | **48** | URLs que el original sirve *de algún modo* | F3-3: lo que la fase tiene que **RESOLVER** |
+> | **CAPTURADA** | **32** | documentos de la cola larga con HTML propio | toda medida hecha sobre el corpus de F3-3 |
+> | **DOCUMENTO DE `paginas`** | **31** | lo que la colección **ALOJA** | CMS-3: el esquema, el opcional, la emisión |
+>
+> `48 = 31 páginas + 1 entrada de blog + 13 redirecciones + 3 bajas`. **S1 no
+> movió la unidad CAPTURADA** —se capturaron 32 y se siguen habiendo capturado
+> 32—: movió **de qué colección es una de ellas**. Reparto sitio a sitio en
+> `derivaciones/denominador-32-reparto.md`. Convivía
 > con la lectura del PLAN (*«7 hubs KB + las autónomas»*), que a su vez omitía
 > los 6 de L4; **las dos sumaban 13 por coincidencia** —una contaba 6 páginas,
 > la otra 6 familias— y su única intersección eran los 7 hubs de KB. **Las dos
 > formulaciones quedan borradas**, no conciliadas.
 >
-> **Y el *«usan `video`/`toggle`»* es cierto en 7 de las 32 PÁGINAS** (la 91.ª
-> bajó el denominador de 48 a 32: 48 son rutas, 32 son páginas). Censado el marcado
-> de las 32 capturadas: **hubs KB** `video` 5/7 y `toggle` 5/7 ✅ · **hubs L4**
+> **Y el *«usan `video`/`toggle`»* es cierto en 7 de las 32 CAPTURADAS** (la 91.ª
+> bajó el denominador de 48 a 32: 48 son rutas, 32 son documentos capturados).
+> ⚠ **Aquí la unidad es CAPTURADA y por eso el 32 SIGUE SIENDO EL BUENO** aunque
+> `paginas` aloje 31: es una medida sobre el corpus, y el corpus no cambió con
+> S1. Censado el marcado de las 32 capturadas: **hubs KB** `video` 5/7 y `toggle` 5/7 ✅ · **hubs L4**
 > 0/6 y 0/6 · **sueltas** 0/19 y 0/19, pero con **cinco tipos que nadie había
 > nombrado**: `map` · `slider` · `fullwidth_slider` · `slide` · `icon`. La
 > conclusión de §1.5b Razón 1 —no ampliar `MonoSeccion[]`— **se refuerza**, no
@@ -3755,15 +3768,22 @@ los suyos (`texto-kb` · `imagen-kb` · `boton-kb` · `blurb` · `gallery`).
 >
 > | | n | dónde vive |
 > |---|---|---|
-> | **documentos de `paginas`** | **32** | 7 hubs KB + 6 hubs L4 + 19 sueltas |
+> | **documentos de `paginas`** | ~~32~~ **31** | 7 hubs KB + 6 hubs L4 + **18** sueltas *(93.ª, S1)* |
+> | **entrada de blog** | **1** | `entradas-blog`, que ya existe — la webinar. **Estaba en `sueltas` por su URL, no por su forma** (§2j.3c) |
 > | **redirecciones** | **13** | **mapa de redirecciones — otro mecanismo**, no un documento. Dos apuntan a una imagen; varias, a rutas ya clonadas o ya dentro del conjunto |
 > | **bajas** | **3** | fuera del sitio |
 >
 > **No cambia la decisión** —ninguna separadora depende de las 16— y **cierra dos
 > incógnitas**: la unión de 12 tipos ya **no es una cota** (no quedan páginas que
-> capturar) y las de 0 secciones propias quedan en **2 de 32**, con lo que
-> **RA-2 no puede dispararse por una captura futura**. Lo que sí abre: quién
-> emite los **13 redirects**, que es trabajo de F3-3 y **no** de esta colección.
+> capturar) y las de 0 secciones propias quedan fijadas, con lo que **RA-2 no
+> puede dispararse por una captura futura**. Lo que sí abre: quién emite los
+> **13 redirects**, que es trabajo de F3-3 y **no** de esta colección.
+>
+> ⚠ **Y las 32 CAPTURADAS siguen siendo 32.** S1 no descaptura nada: mueve un
+> documento de colección. Toda medida hecha *sobre el corpus* —el censo de
+> tipos, las hojas, el `<body>`— conserva su denominador de **32**; lo que baja
+> a **31** es lo que `paginas` **aloja**. Es §*corregir un denominador no es
+> sustituirlo en todas partes*, con **tres** unidades en juego en vez de dos.
 
 **`MonoSeccion[]` no se toca** — es R2, y es §1.5b Razón 1: ampliarla para que
 quepa la cola larga metería en SECTOR y MONOGRÁFICO tipos que **ninguno de los
@@ -3777,7 +3797,7 @@ la cola larga no estrena plantilla, estrena content type.
 |---|---|---|
 | **C1** · campo RICO por página | **contradice la frontera que este repo ya declara**: *hasta el contenedor de contenido la estructura se modela; RICO empieza POR DEBAJO*. `flujo` y `anchoPct` están **por encima** de ese contenedor, así que aplanarlos a un blob de HTML tira modelado que ya está medido y construido | **16 de las 32 capturadas** — toda página con **>1 sección propia** (KB **5/7** · L4 **6/6** · sueltas **5/19**). La más clara: `/es/soporte/centro-de-ayuda/` y `/es/empresa/` (**11 secciones** cada una) contra `/es/aviso-legal/` (**1**). C1 las representa igual; los otros tres no. ⚠ **El plan decía «≥ 30» y no reproduce: son 16 de 32, y NO es una cota** — las 16 restantes no son páginas (13 × 301 · 3 × 404), así que no hay nada que las suba. El «≥ 30» del plan salía de contar sobre 48 |
 | **C2** · `MonoSeccion[]` tal cual + bloque de escape | el escape **se ejercita en 20 de las 32 páginas leídas**, o sea que no es una vía de escape: es el modelo. Un escape que traga el caso mayoritario no acota nada | **20 páginas** — KB **7/7** · L4 **1/6** · sueltas **12/19**. ⚠ **El plan decía «12» contando INSTANCIAS DE TIPO** (5 `toggle` + 5 `video` + `map` + `slider`); en la unidad que la afirmación usa —la página— son **20**, y con los dos tipos que v3 recupera: **9** sueltas con `code` y **3** páginas con `blurb`. Y **dentro de los 6 hubs L4 sólo hay 1** (`/es/recursos/`, `blurb`), que por §*un discriminador hallado en UNA SOLA instancia no es un discriminador* sigue significando lo que el plan concluyó: **L4 no podía elegir** entre C2 y C3 |
-| **C4** · dos colecciones (`hubs` 13 · `paginas` 35) | **R1 — «cero arquetipos»** (`ESQUEMA:1216`, `:1524`). Los hubs no estrenan arquetipo, así que partir en dos colecciones **por familia de ruta** no tiene una diferencia de content type que lo sostenga: sería separar por procedencia, no por forma. ⚠ **Y esta tensión hay que dejarla escrita**: `PLAN-FASE-3.md` §F3-3 listaba C4 **vivo** sin reconciliarlo con R1, y §1.5b Razón 3 lo **favorece** (§2j.3) | **2, y bastan para separarlo de C3** — `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`, con **0 secciones propias**: en C4 la colección que las aloje puede declararlas de otra forma; en C3, colección única, **el campo de bloques tiene que ser opcional para las 32** |
+| **C4** · dos colecciones (`hubs` 13 · `paginas` 35) | **R1 — «cero arquetipos»** (`ESQUEMA:1216`, `:1524`). Los hubs no estrenan arquetipo, así que partir en dos colecciones **por familia de ruta** no tiene una diferencia de content type que lo sostenga: sería separar por procedencia, no por forma. ⚠ **Y esta tensión hay que dejarla escrita**: `PLAN-FASE-3.md` §F3-3 listaba C4 **vivo** sin reconciliarlo con R1, y §1.5b Razón 3 lo **favorece** (§2j.3) | **2, y bastan para separarlo de C3** — `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`, con **0 secciones propias**: en C4 la colección que las aloje puede declararlas de otra forma; en C3, colección única, **el campo de bloques tiene que ser opcional para las 32** *(⚠ argumento SUPERADO en la 93.ª: el opcional **nunca fue el mecanismo** —§2j.3c—; quien expresa esas 2 es una colección distinta (S1) y un campo rico (S2). La comparación C3/C4 no cambia de resultado, pero **esta celda ya no dice por qué**)* |
 
 > **Lo que C3 paga por elegirse, dicho con su número y no escondido:** esas dos
 > páginas de cero secciones propias obligan a que `bloques` sea **opcional en las
@@ -3858,15 +3878,53 @@ obligatorios distintos.
 > | # | qué tendría que pasar | por qué reabre |
 > |---|---|---|
 > | **RA-1** | que aparezca **un campo obligatorio de verdad en un subconjunto y no en el otro** — no un bloque, un campo del documento | es Razón 2 con evidencia: la obligatoriedad volvería a poder vivir en el esquema, que es lo único que C3 sacrifica hoy |
-> | **RA-2** | que las **2 páginas de cero secciones propias** dejen de ser 2 y pasen a ser **una forma poblada** (≥ 2 instancias con contenido propio de otra naturaleza) | hoy `bloques` es opcional **por 2 de 32**; si esa forma crece, el opcional deja de ser una excepción y pasa a ser un segundo content type. ⚠ **Y sólo puede crecer por CONTENIDO NUEVO**: la vía «aparecen al capturar» quedó cerrada el 2026-08-22 — no quedan páginas por capturar.<br>⚠⚠ **REDACTADA SOBRE UN CONJUNTO QUE NO EXISTE (corregido en la 92.ª, §2j.3b).** «las 2» se escribió como si fueran **una** forma con dos instancias. Medido, son **DOS FORMAS DE UNA INSTANCIA CADA UNA** —régimen `-T` (entrada de blog) y régimen `--` (plantilla clásica)—, así que el denominador de RA-2 es **1 + 1**, no 2. **Y con n = 1 por forma, RA-2 se dispara con la SEGUNDA instancia de cualquiera de las dos**, que es un listón mucho más bajo del que su redacción sugiere |
+> | **RA-2** | ⚠⚠ **REESCRITA POR TERCERA VEZ EN LA 93.ª — su denominador es 1, y lo que vigila ya NO es «que `bloques` sea opcional».** Ver la caja de debajo | — |
 > | **RA-3** | que un hub estrene **plantilla** (no bloque): que R1 caiga | R1 es lo único que hoy pesa más que Razón 3. Si cae, Razón 3 vuelve a mandar y C4 gana |
+>
+> ### ⚠⚠ RA-2, TERCERA REDACCIÓN (93.ª, 2026-08-22) — y las dos anteriores vigilaban conjuntos que no existen
+>
+> | versión | qué vigilaba | por qué cayó |
+> |---|---|---|
+> | 1.ª (91.ª) | «las **2** páginas de cero secciones propias, si pasan a ser una forma poblada» | las 2 **no eran una forma**: eran dos formas de una instancia cada una (92.ª) |
+> | 2.ª (92.ª) | «**1 + 1**, dos formas de una instancia cada una» | con **S1**, la mitad `-T` **sale de `paginas`**: ya no es un caso de esta colección, es una entrada de blog más entre 153 |
+> | **3.ª (hoy)** | **UNA forma, UNA instancia: el régimen `--`** | — |
+>
+> **El disparador, reescrito con el dato de hoy:**
+>
+> > **RA-2 se dispara cuando aparezca una SEGUNDA página en régimen `--`** —sin
+> > `et_pb_pagebuilder_layout` ni `et-tb-has-body`, con su contenido en
+> > `entry-content`— **dentro de `paginas`.**
+>
+> **Y lo que vigila ha cambiado de objeto, que es lo que hay que leer dos veces.**
+> Las dos redacciones anteriores vigilaban *«que `bloques` opcional deje de ser
+> una excepción»*. Eso ya no es lo que está en juego: **el opcional no era el
+> mecanismo** —§*un campo opcional no expresa un caso*—, y quien expresa el
+> régimen `--` es **`cuerpoClasico`**, un campo con `n = 1`. Así que:
+>
+> > **RA-2 vigila que el SEGUNDO canal de contenido deje de ser una excepción.**
+> > Con 1 instancia es un camino de render sin estrenar y declarado; con 2 pasa a
+> > ser una forma, y una forma con su propio canal de cuerpo **es un content type
+> > distinto** — que es exactamente lo que Razón 2 pedía para reabrir.
+>
+> ⚠ **El listón es bajo y hay que decirlo, no suavizarlo:** `n = 1` significa que
+> **basta una página nueva** para reabrir CMS-3. No es una condición remota. Y
+> **sólo puede crecer por CONTENIDO NUEVO**: la vía «aparece al capturar» quedó
+> cerrada el 2026-08-22 — no quedan páginas por capturar.
+>
+> ⚠⚠ **Y lo que RA-2 NO vigila, que es la mitad que se cuela.** El régimen `--`
+> es **el segundo más poblado del corpus entero** —**131 de 576 documentos
+> capturados**, medido en `derivaciones/regimenes-corpus.log`—, e incluye los
+> arquetipos **CASO (57)** y **FAQ (19)**, ya clonados. RA-2 mira **sólo dentro
+> de `paginas`**: que el régimen sea común fuera de esta colección **no la
+> dispara** y no debe leerse como que ya está disparada. Su denominador es 1 de
+> **31**, no 1 de 576.
 >
 > **Y lo que costaría separar ENTONCES, escrito hoy que es barato** (§Razón 3:
 > *para entonces ya se habrá escrito contenido en la forma mixta*): con las 32
 > pobladas hay que **decidir fila por fila** de qué colección era cada
 > documento —y el discriminador de ruta **no basta**, porque `/es/soporte/` es
 > suelta y `/es/soporte/centro-de-ayuda/` es hub—, reescribir toda relación que
-> apunte a `paginas`, y **re-aceptar las 32 a umbral cero** sobre el manifiesto
+> apunte a `paginas`, y **re-aceptar las 31 a umbral cero** sobre el manifiesto
 > de ese momento. Hoy la separación cuesta **editar un fichero de config antes
 > de sembrar**.
 
@@ -3951,13 +4009,111 @@ toca:**
 «las 2 de cero secciones propias» no crezcan a forma poblada. Medido, **esas 2
 nunca fueron una forma**: son **dos formas distintas de una instancia cada
 una**. Así que RA-2 tal como está escrita vigila un conjunto que no existe, y su
-denominador correcto es **1 + 1**, no 2.
+denominador correcto es **1 + 1**, no 2. *(Y con S1 baja a **1** — tercera
+redacción en §2j.3.)*
+
+### ✅⚠ 2j.3c · CERRADA — EL PROPIETARIO TOMÓ **S1 Y S2**, Y S3 CAE (93.ª, 2026-08-22)
+
+> ✅ **DECISIÓN DEL PROPIETARIO, 2026-08-22: se toman LAS DOS.**
+> **S1** — `/es/redes-hibridas-…-grabacion-webinar/` sale de `paginas` y entra
+> en **`entradas-blog`**. **S2** — `paginas` gana campo rico para el régimen
+> `--`. **S3 cae**: no queda ninguna ruta sin emitir.
+
+**Estado tras aplicarlas, medido y no supuesto** (`prueba-union-f33.log`,
+exit 0):
+
+| régimen | n | expresadas |
+|---|---|---|
+| BUILDER (`B-`) | 22 | **22** |
+| HÍBRIDO (`BT`) | 8 | **8** |
+| SIN MARCADOR (`--`) | 1 | **1** — por campo rico, `n = 1`, DECLARADO |
+| **TOTAL `paginas`** | **31** | **31** · 313 de 313 módulos |
+
+**TRES regímenes en `paginas`, no cuatro:** el `-T` se fue con la webinar.
+
+#### Por qué S1, y por qué NO es la razón que parecía
+
+**La razón que parecía —«así se expresa»— está REFUTADA por el contrafactual
+del negativo.** Desaplicando S1, la prueba sigue dando **32/32 y exit 0**:
+el campo rico que S2 añadió **se traga también el `et_pb_post_content` de la
+webinar**. O sea **0 instancias separadoras**: por expresabilidad, «la webinar
+en `paginas`» y «la webinar en `entradas-blog`» predicen exactamente lo mismo,
+y elegir ahí sería §*dos modelos que predicen lo mismo en todo tu dominio son
+uno solo*.
+
+> ⚠⚠ **Y esto es una constricción sobre las dos salidas, no una curiosidad: S1
+> y S2 NO SON INDEPENDIENTES.** Con S2 puesta, S1 deja de ser necesaria *para
+> que el documento se exprese*. Si S1 se hubiera justificado por
+> expresabilidad, sería **un escape que traga el caso que decía acotar** — el
+> reproche exacto que tumbó a C2, cometido esta vez por la puerta de atrás.
+
+**La razón que SÍ la sostiene es DATO SERVIDO SIN CAMPO DONDE CAER**, que es el
+criterio del punto 3 un nivel más abajo — del campo en vez del documento:
+
+| campo del JSON-LD | n de 32 | ¿separa? |
+|---|---|---|
+| `articleSection` | **1** | **SÍ** — sólo la webinar (`Seminarios Web`) |
+| `author` | **1** | **SÍ** — sólo la webinar (`Equipo de marketing y comunicación`) |
+| `datePublished` | **32** | **NO** — lo traen TODAS |
+
+**Alojar la webinar en `paginas` PERDERÍA su categoría y su autor.**
+`entradas-blog` los tiene (`categorias` es `required`); `paginas` no tiene
+ninguno de los dos. Y la forma corrobora: su `<body>` es
+`single single-post postid-51434 single-format-standard … tax-resource`,
+**la misma firma que las 152 capturas de `corpus/entradas-blog`**.
+
+> ⚠ **`datePublished` no separa, y decirlo importa más que el resto.** Es el
+> candidato obvio —*«es una entrada, luego tiene fecha»*— y lo traen las 32.
+> Citarlo como evidencia habría sido §*comprueba que Y VARÍE en el dominio
+> donde se midió*: nombrar una propiedad del conjunto entero creyendo que
+> discrimina. Lo que sí abre —y **no** lo decide esta tanda— es que **las 31
+> sirven `datePublished` y `paginas` no tiene campo de fecha**: dato servido sin
+> modelar, fichado en `PENDIENTES-QA.md` §F3-3-FECHA-SIN-CAMPO.
+
+#### Por qué S2, y por qué NO S3
+
+**S2 no inventa contrato: hereda uno censado.** `campoHtml` es el helper que ya
+usan `entradas-blog`, `terminos-kunakpedia`, `documentos-cientificos` y
+`articulos-kb`, con `validaHtmlCorpus` y su contrato medido en **209/209**
+documentos (43 etiquetas · `<script>` prohibido · rango 275–69 784). Ésa es la
+diferencia con C2: C2 metía un escape **cuyo contrato nadie había medido**.
+
+**Y está EJERCITADA, corrida y no inspeccionada** (`valida-campo-rico-f33.log`):
+el cuerpo del régimen `--` son **9 169 caracteres de marcado / 8 364 de texto**
+—el 8 387 de §2j.3b es el mismo cuerpo con otro corte— con **5 etiquetas**
+(`b · h2 · li · p · ul`), y **PASA**. Con su control: el mismo cuerpo con un
+`<script>` inyectado **RECHAZA por su motivo** (§3.3 · T4). Sin ese control el
+`true` no valdría nada — `validaHtmlCorpus` devuelve `true` de entrada para lo
+que no es `string`, así que una extracción fallida habría dicho «PASA» sin mirar
+un carácter (§regla 6).
+
+**S3 cae, y su coste era el que no se quería pagar:** S3 dejaba **1 ruta sin
+emitir** para no estrenar un campo con `n = 1`. Pero esa ruta **existe y se
+sirve hoy**, y el campo no es un salto al vacío: es un helper con contrato
+heredado y validación ejercitada. Entre «un camino de render con `n = 1`
+declarado» y «una baja declarada», se toma el primero. **Lo que queda SIN
+PROBAR es la geometría — que es exactamente lo que queda sin probar en los
+otros 30.**
+
+> ⚠ **Lo que S2 NO compra, dicho con su número:** `n = 1` es **un camino de
+> render sin variación que lo pruebe**. Está probado que el campo **ADMITE** el
+> dato; no está probado que lo **RENDERICE** — para eso hace falta el
+> comparador de dos lados, y §2j.4 dice que hay **0 ejes comparados**. Y es
+> justo lo que dispara **RA-2** en su tercera redacción: con `n = 1`, basta una
+> segunda página en régimen `--` para reabrir CMS-3.
+
+**Evidencia:** `derivaciones/prueba-union-f33.log` (control, exit 0) ·
+`prueba-union-f33-neg.log` (5 casos: A muerde · **B queda MUDO y se sustituye
+por B′** · B′ muerde por el mismo motivo · contrafactual C con 0 separadoras) ·
+`valida-campo-rico-f33.log` · `regimenes-corpus.log`. Las congeladas de la 92.ª
+se conservan con su alcance en el nombre:
+`prueba-union-f33-{,neg-}92a-SIN-S1-NI-S2.log`.
 
 ### 2j.4 · Lo que esta decisión NO decide
 
 | | |
 |---|---|
-| **la forma de cada uno de los ~~12~~ 11 bloques** | ⚠ **escrita en la 92.ª** (`bloques/paginas.ts`), con **el n de cada tipo al lado y lo SIN PROBAR declarado**: 5 de las 8 definiciones nuevas descansan en **n ≤ 2 páginas** y **3 en n = 1**. Lo que queda por medir es la GEOMETRÍA, contra el original con sus hojas — **0 ejes comparados en las 32** |
+| **la forma de cada uno de los ~~12~~ 11 bloques** | ⚠ **escrita en la 92.ª** (`bloques/paginas.ts`), con **el n de cada tipo al lado y lo SIN PROBAR declarado**: 5 de las 8 definiciones nuevas descansan en **n ≤ 2 páginas** y **3 en n = 1**. Lo que queda por medir es la GEOMETRÍA, contra el original con sus hojas — **0 ejes comparados en las 31** |
 | ~~**si `slide` es bloque o hijo de `slider`**~~ | ✅ **CONTESTADO OFFLINE en la 92.ª: es HIJO**, medido en el árbol con pila (`et_pb_fullwidth_slider_0 > et_pb_slides > et_pb_slide_0`, **2/2**). **La unión son 11 bloques, no 12.** `mod-v4` lo contaba como tipo de primer nivel porque barre con un regex plano: los dos instrumentos son correctos en lo que miden y **sólo uno contesta la pregunta que el pre-registro hacía** |
 | **`code`** | qué es exactamente su contenido (formulario incrustado, script) y si cae bajo la whitelist de §3 o necesita campo propio |
 | ~~las 16 sueltas sin capturar~~ | ✅ **resuelto el mismo día: no son páginas** (13 × 301 · 3 × 404). La unión **no** es un mínimo: es completa para las 32 |

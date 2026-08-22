@@ -184,10 +184,45 @@ apiladas a 390. Tabla con el coste de cada una en el `⚠ CORRIGE` de
 sitio**, y aplicarlos en el otro da la respuesta invertida. Lo demostró el recon
 del arquetipo A (`docs/research/arquetipo-A/PAGE_TOPOLOGY.md` §5).
 
-| régimen | cómo se reconoce | quién decidió los valores |
-|---|---|---|
-| **página de BUILDER** | `et_pb_pagebuilder_layout` en el `<body>`; secciones **propias** de la instancia | **quien editó ESTA página** |
-| **página PLANTILLADA** | `et-tb-has-body`; secciones `…_tb_body`; el contenido entra por un módulo `post_content` | **quien construyó la plantilla**, para todas las instancias a la vez |
+**Son DOS marcadores binarios, así que la taxonomía tiene CUATRO casilleros —
+y el reparto medido dice que ninguno es raro:**
+
+| # | régimen | cómo se reconoce | quién decidió los valores | n de 576 |
+|---|---|---|---|---|
+| `B-` | **página de BUILDER** | `et_pb_pagebuilder_layout` en el `<body>`; secciones **propias** de la instancia | **quien editó ESTA página** | **60** |
+| `-T` | **página PLANTILLADA** | `et-tb-has-body`; secciones `…_tb_body`; el contenido entra por un módulo `post_content` | **quien construyó la plantilla**, para todas las instancias a la vez | **371** |
+| `BT` | **HÍBRIDO** | los **dos** marcadores a la vez — las dos capas conviviendo | **cada capa el suyo**: se lee por la VARIANZA de la capa (caja de abajo) | **14** |
+| `--` | **⚠ SIN NINGÚN MARCADOR DE DIVI** | **ni uno ni otro**: `page-template-default` / `single-<CPT>` / `archive`, y el cuerpo en `entry-content` o `post_content`. Es la **plantilla clásica del tema**, PHP puro | **quien construyó la plantilla del TEMA** — no hay capa de builder que mirar | **131** |
+
+> ⚠⚠ **EL CUARTO CASILLERO NO LLEVA NINGÚN MARCADOR DE DIVI, Y POR ESO SE
+> CONFUNDE CON «no lo he mirado».** Es §*un selector que no casa con nada no es
+> un cero* cometida sobre el `<body>`: la ausencia de los dos marcadores **es un
+> dato**, no un fallo de lectura, y las dos salidas se escriben igual.
+>
+> **Y no es una rareza que se pueda despachar como excepción: son 131 de 576
+> documentos capturados (22.7 %), el segundo casillero más poblado.** Dentro
+> viven **CASO (57)** y **FAQ (19)** —dos arquetipos de la tabla de «Páginas
+> clonadas», ya construidos—, así que este régimen lleva usándose desde antes de
+> tener nombre.
+>
+> **La regla operativa, que es lo único que hay que recordar:** ante un `<body>`
+> **se comprueban los DOS marcadores y se nombra la combinación**, incluida la
+> vacía. *«No es builder»* no implica *«es plantillado»*: son dos preguntas
+> binarias, no una de dos valores.
+>
+> ⚠ **Y lo que este reparto NO dice, que hay que declarar:** el marcador
+> **anuncia qué mecanismos hay presentes**; **quién decidió cada valor lo dice la
+> VARIANZA de la capa** (corrección del 2026-08-03, más abajo). Para `--` **esa
+> varianza no está medida**: la columna de arriba dice lo que el mecanismo
+> implica —no hay builder, luego no hay editor de instancia— y **eso es una
+> deducción, no un barrido**. Se trata como SIN PROBAR hasta que alguien mida la
+> varianza entre sus instancias.
+>
+> Derivado, no recordado: `docs/research/cola-larga/derivaciones/regimenes-corpus.{mjs,log}`
+> — 576 documentos, censo del `<body>`, **4 combinaciones de 4 pobladas, 0 con
+> n = 0** (cero **por construcción**: dos binarios sólo dan cuatro). El eje de la
+> **plantilla de WordPress** es otro y **no coincide** con éste: 20 plantillas y
+> 23 celdas pobladas de 80.
 
 **En régimen de builder** —SECTOR, MONOGRÁFICO, artículo de KB— los dos tests
 valen tal como están escritos: existe una persona que editó esta página, y px
@@ -207,6 +242,15 @@ Y el discriminador que sí vale en plantillado es otro:
 > forma = **plantilla**, aunque la huella diga px absolutos. Lo que varía entre
 > **formas** distingue plantillas, no campos.
 
+**En régimen `--` la lectura es la del plantillado, y por el mismo motivo — con
+una diferencia que hay que saber**: allí no hay **ninguna** capa de builder, ni
+propia ni de theme-builder, así que **no existe la persona que editó la
+instancia** y todo lo que se mida lo fijó quien construyó la plantilla PHP del
+tema. El discriminador vuelve a ser **la varianza entre instancias**, y hay con
+qué: 57 casos y 19 FAQ. ⚠ **Y esa varianza NO se ha medido todavía** — la frase
+anterior es lo que el mecanismo implica, no un barrido, así que se trata como
+SIN PROBAR hasta que alguien la mida.
+
 Medido: `post_content margin-bottom` vale **72 en las 12 instancias de blog** y
 **0 en las 12 de término y documento científico**, a los dos anchos. Por el
 enunciado literal del test A eso sería «campo»; **no lo es** — es el valor que el
@@ -215,9 +259,15 @@ la tipografía y la retícula del cascarón tienen varianza cero dentro de cada
 forma**.
 
 **Consecuencia operativa: identifica el régimen ANTES de aplicar el test.** Se
-mira el `<body>` —una línea de HTML servido— y ya sabes cuál de las dos lecturas
+mira el `<body>` —una línea de HTML servido— y ya sabes cuál de las lecturas
 toca. Aplicar el test sin mirarlo es cómo se convierte una plantilla en ocho
 campos inventados, o al revés.
+
+> ⚠ **Y se miran LOS DOS marcadores, no uno**: la tabla tiene cuatro casilleros
+> y **el cuarto no lleva ninguno**. Comprobar sólo `et_pb_pagebuilder_layout` y
+> concluir «plantillada» al no verlo mete en el casillero equivocado a **131 de
+> 576** documentos capturados — los dos casos, `-T` y `--`, dan la misma
+> respuesta a esa única pregunta y **tienen contenido en canales distintos**.
 
 > ⚠ **CORREGIDO 2026-08-03 (grupo D, por predicado pre-registrado): el régimen
 > es propiedad de la CAPA, no de la página — y el `<body>` puede llevar LOS DOS
