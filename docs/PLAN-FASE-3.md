@@ -767,6 +767,30 @@ literal que LH-2 §D1 cita:
 **▸ C · las 35 sueltas** (`bucket: sueltas`) — **19 capturadas · 16 sin capturar**,
 listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 
+> ⚠⚠ **CORREGIDO 2026-08-22 (91.ª): LAS 16 «SIN CAPTURAR» NO SON PÁGINAS, Y LA
+> COLA LARGA NO TIENE 48 RUTAS SINO 32.**
+>
+> Re-preguntadas al **origen vivo** (`cms:captura-f3`, que vuelve a pedir todo
+> fichero ausente): **0 nuevas**. El original responde **13 × HTTP 301** y **3 ×
+> HTTP 404** — y **la misma respuesta que el 2026-08-09**, o sea dos lecturas
+> separadas 13 días, sin una discrepancia.
+>
+> | | n | qué son |
+> |---|---|---|
+> | **páginas** | **32** | 7 hubs KB + 6 hubs L4 + **19** sueltas — las que `paginas` (CMS-3) aloja |
+> | **redirecciones** | **13** | un **mapa de redirecciones**, que NO es un documento de la colección. Varias apuntan a sitio ya clonado (`/es/estaciones-control-calidad-del-aire/` → `/es/monitor-calidad-aire/`) o ya dentro del conjunto (`/es/soluciones/` → `/es/productos/`); **dos redirigen a una IMAGEN** |
+> | **bajas** | **3** | `404` — fuera del sitio |
+>
+> **El «16 sin capturar» era membresía mal derivada, no captura pendiente**, y su
+> forma es §*un cardinal es un contenedor*: `35 sueltas` contaba **URLs
+> conocidas**, no **páginas servidas**. Las dos son ciertas y sólo una es la
+> unidad que la fase necesita.
+>
+> **Y lo que esto cierra de golpe** (`PRE-REGISTRO-CMS-3.md` §P-U, §P-O): la
+> unión de 12 tipos **deja de ser una cota** —no quedan páginas por capturar— y
+> las de **0 secciones propias** quedan fijadas en **2 de 32**, así que **RA-2 no
+> puede dispararse** por una captura futura.
+
 ### Qué hay ya medido — con sus denominadores y sus ceros NOMBRADOS
 
 | | hubs KB | hubs L4 | sueltas |
@@ -918,7 +942,7 @@ de su alternativa, no por lo que acierta*).
 | **entrega** | las **48 rutas** derivadas arriba (7 hubs KB + 6 hubs L4 + 35 sueltas), emitidas con Δ0 en sus ejes |
 | **alimenta** | §2d.1 (**cero arquetipos**; `video`/`toggle` **no** entran en `MonoSeccion[]`) |
 | **incógnita** | ✅ **DECIDIDA POR EL PROPIETARIO, 2026-08-22 (91.ª): C3** — una colección `paginas` con **unión PROPIA** de bloques, por el camino de `articulos-kb`. `MonoSeccion[]` **no se toca**. Escrita como **CMS-3** en `ESQUEMA §2j`, con por qué caen los otros tres, su **condición de reapertura** (C3 va contra Razón 3, §2j.3) y su pre-registro (`docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`) |
-| **precondición NUEVA** | ⚠ **SON DOS HUECOS, NO UNO** — esta fila decía sólo el primero. ① **las 50 hojas `et-cache`** (14 de KB + 36 de sueltas): sin ellas 26 de 32 páginas dan números plausibles y falsos. ② **los 16 HTML de sueltas sin capturar** (19/35): sin HTML no hay página que emitir, ni tipo que censar — la unión de CMS-3 es hoy una **cota derivada de 32 de 48**. **F3-3 no arranca hasta que los dos estén a cero** |
+| **precondición NUEVA** | ✅ **A CERO, LOS DOS (2026-08-22, 91.ª).** Eran **dos** huecos y esta fila declaraba uno. ① **50 hojas `et-cache` → 0 faltan**: KB `49/49` (7/7 páginas) · L4 `43/43` (6/6, ya estaba) · sueltas `133/133` (19/19). **32 de 32 páginas con TODAS sus hojas**, contra 6/32 al empezar. ② **los «16 HTML sin capturar» NO ERAN UN HUECO**: re-preguntados al origen **vivo** hoy dan **13 × 301 y 3 × 404**, idéntico a la lectura del 2026-08-09. Congelado: `derivaciones/sueltas-16-reverificadas-2026-08-22.json` |
 | **hecho** | la decisión escrita en el ESQUEMA **con su pre-registro**, y las 48 emitidas con Δ0 |
 
 ## F3-4 · las tres familias de archivo sin censar

@@ -16,7 +16,29 @@ Las cifras que estos cuatro ficheros producen son las que citan
 | `inv-f33.mjs` | ¿está capturado el HTML de cada una de las 48? | nada de geometría ni de modelo | `inv-f33.log` |
 | `css-f33.mjs` | ¿están capturadas **sus hojas**? | qué dicen esas hojas | `css-f33.log` |
 | `sondas-f33-v2.mjs` | ¿la ha **medido** alguna congelada no-artefacto? | qué midió, ni con qué calidad | `sondas-v2.log` |
-| `modulos-f33-v2.mjs` | qué **tipos de módulo** trae cada una, por capa | **ni un píxel** — el corpus de 26 de 32 está sin sus hojas | `mod-v2.log` |
+| ~~`modulos-f33-v2.mjs`~~ → **`modulos-f33-v3.mjs`** | qué **tipos de módulo** trae cada una, por capa, **y cuáles no tienen bloque en el repo** | **ni un píxel** | `mod-v3.log` |
+
+> ⚠ **v2 → v3 (91.ª tanda) — la tercera vez que este censo falla por §sondas 4, y
+> ahora en la LISTA CONTRA LA QUE COMPARA.** v2 usaba
+> `YA = ["text","image","button","blurb","cta","divider","code","gallery"]`,
+> escrita a mano, que acredita a `MonoSeccion[]` **cuatro tipos que no expresa**:
+> `blurb`/`gallery` viven en `MODULOS_KB` y `code`/`divider` **no existen en
+> ninguna unión**. v3 **deriva el conjunto del registro de bloques**
+> (`packages/cms-config/src/bloques/*.ts`) en vez de reescribir la lista —
+> §regla 9 caso 7: *lo nuevo entra solo*— y separa la **retícula**
+> (`section`/`row`/`column*`) de los **módulos de contenido**, que es la unidad
+> que decide el modelo. Control: si el parseo casa con 0 slugs, **tira**.
+>
+> Efecto: fuera de `MonoSeccion[]` **7 → 9**, hubs L4 **NINGUNO → 1**, sueltas
+> **5 → 7**. `code` (**9/19** sueltas) se había perdido entero.
+
+**Añadidos en la 91.ª:**
+
+| fichero | qué dice |
+|---|---|
+| `sueltas-16-reverificadas-2026-08-22.json` | las 16 «sin capturar» **no son páginas**: 13 × 301 · 3 × 404, re-preguntadas al origen vivo. Misma respuesta que el 2026-08-09 |
+| `css-f33-2026-08-22.log` | el estado **final** tras pagar la precondición: **32/32 páginas con TODAS sus hojas** |
+| `css-f33-2026-08-22-mitad-campana.log` | el estado **intermedio**, con 15 hojas en 404. Se conserva porque es la evidencia de que el `et-cache` se recompila al pedir la página: los mismos 15 dieron 200 tras calentar sus 8 páginas |
 
 `reg-f33.log` es la lectura del `<body>` servido (régimen) y el recuento de
 secciones propias, de donde salen R5 y R6.

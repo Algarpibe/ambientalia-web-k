@@ -1,5 +1,60 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⚠ F3-SEED-SIN-GUARDA-DE-W · los scripts de `scripts/seed/` PISAN sus congeladas — **91.ª tanda, 2026-08-22**
+
+**Qué es.** §sondas 5 —*ninguna sonda pisa una salida existente cuyo contenido
+difiera*— vive en `w()` de `scripts/qa/lib.mjs`, y **los scripts de
+`scripts/seed/` no la usan**: escriben su índice con `writeFileSync` directo. Así
+que **una re-corrida de una campaña puede sustituir evidencia medida por
+evidencia peor, en silencio y con código 0.**
+
+**Medido hoy, y no era hipotético.** `npm run cms:captura-f3` re-escribió
+`corpus/fase-3/INDICE.json` y **degradó las 7 entradas** que llevaban
+
+```
+"motivo": "page/2/ sirve 200 y su canonical vuelve a /es/…: no es una ruta",
+"canonicalConfirmaMismaPagina": true
+```
+
+a `"motivo": "page/2/ → HTTP sin respuesta"` — o sea, **una determinación medida
+sustituida por «no se pudo preguntar»**, en las 7. Recuento antes/después:
+`canonicalConfirmaMismaPagina` **7 → 0**, `HTTP sin respuesta` **0 → 7**.
+
+**Por qué importa más de lo que parece:** esas 7 son la evidencia de que *«hay 7
+`/page/N` que no son rutas, con el canonical apuntando a la página 1»*, y ese
+hallazgo **está citado en `CLAUDE.md` §regla 15** como el caso que dos cruces al
+par no vieron. La re-corrida no cambió la conclusión —siguen sin ser rutas— pero
+**se llevó por delante el único fichero que dice POR QUÉ**.
+
+**Qué se hizo hoy.** El índice se **restauró desde HEAD** (7/7 recuperadas,
+verificado) y el único hecho nuevo de la corrida —la re-verificación de las 16
+sueltas— se congeló **aparte**, con su fecha:
+`docs/research/cola-larga/derivaciones/sueltas-16-reverificadas-2026-08-22.json`.
+Es la guarda de §sondas 5 aplicada **a mano**, que es justamente lo que la regla
+dice que no funciona: *«la guarda sólo cuenta cuando está en el sitio por el que
+escriben todas»*.
+
+**Qué queda pendiente, CON SU CARDINAL DERIVADO** (no «los scripts de seed»):
+de los **9** `scripts/seed/*.mjs` que escriben ficheros —excluidos los `.neg.`—,
+**7 NO importan `w()`** y sólo **2 sí** (`coloca-media.mjs`, `extractor.mjs`):
+
+| sin `w()` — 7 | `captura.mjs` · `captura-css.mjs` · `captura-f3.mjs` · `captura-f3-media.mjs` · `captura-media.mjs` · `captura-sectores.mjs` · `catalogos.mjs` |
+|---|---|
+| **con `w()` — 2** | `coloca-media.mjs` · `extractor.mjs` |
+
+**El arreglo es llevar `w()` a esos 7**, y hasta entonces toda re-corrida de una
+campaña se commitea **mirando el diff**, no en confianza. No se hace en esta
+tanda porque tocar el mecanismo de escritura de las campañas **mientras la
+precondición de F3-3 se estaba pagando** es lo que §regla 18 prohíbe: primero se
+paga la precondición, luego se toca el instrumento.
+
+⚠ **Y ojo con el arreglo ingenuo:** estas campañas son **reanudables por
+diseño** —re-escriben su índice en cada corrida a propósito—, así que un `w()`
+tal cual las rompería mandando cada corrida a un fichero fechado. Lo que hace
+falta es la **mitad de la guarda que avisa**: detectar que un campo medido pasa
+a un valor *peor* (una determinación → «no se pudo preguntar») y **gritar**, no
+mover el fichero.
+
 ## ⚠ F3-LH-GLOSARIO-RESIDUO-2.00 · NO ATRIBUIBLE, y la medida que lo dirimía ya no se puede tomar — **90.ª tanda, 2026-08-22**
 
 **Qué es.** Al cerrar la 89.ª por el ancho que faltaba, `clon-base @390`

@@ -1,5 +1,31 @@
 # CMS-3 · PRE-REGISTRO de la decisión de la COLA LARGA
 
+> ⚠⚠ **RESUELTO EN PARTE EL MISMO DÍA, Y NO POR LLEGAR EVIDENCIA NUEVA: POR
+> DESAPARECER EL DOMINIO.** Este documento se escribió tratando las **16 sueltas
+> sin capturar** como muestra ciega. Al pagar la precondición (ESCALÓN 2 de la
+> misma tanda) resultó que **las 16 no son páginas**: el origen vivo responde
+> **13 × 301 y 3 × 404**, igual que el 2026-08-09.
+>
+> **Así que P-U y P-O no se «confirmaron»: se quedaron sin instancias que los
+> pudieran ejercitar** — y eso es una resolución legítima **sólo porque la
+> pregunta era sobre el recuento final**, que ahora se conoce entero. Redactarlo
+> como *«P-U1 ✅ confirmado»* sería §*0 instancias separadoras leído como
+> acierto*. Se redacta como lo que es: **el denominador cambió de 48 a 32 y la
+> pregunta se cerró con él.**
+>
+> | predicado | estado | por qué |
+> |---|---|---|
+> | **P-U1 · P-U2 · P-U3** | ✅ **cerrados** | no quedan páginas por capturar ⇒ la unión de **12 tipos es COMPLETA para las 32**, no una cota. Las 16 añaden **0** tipos porque no existen |
+> | **P-O1** | ✅ **cerrado a favor de C3** | las de 0 secciones propias quedan en **2 de 32** y **no pueden crecer** por captura. **RA-2 no puede dispararse por esta vía** — sólo por contenido nuevo dado de alta |
+> | **P-O2 · P-O3** | ✅ **sin objeto** por la misma razón | no hay 16 páginas nuevas que puedan traer campo obligatorio ni régimen nuevo |
+> | **P-S · P-C · P-R1a/b** | ⏳ **siguen vivos** | no dependían de las 16: se evalúan sobre las 32, y ahora **con sus hojas** (32/32) |
+>
+> **Y la mitad honesta:** el predicado que se escribió *«para poder salir contra
+> la decisión»* —**P-O1**— salió **a favor**, y por una vía que el pre-registro
+> no contemplaba. Eso **no es una validación de C3**: es que la prueba que iba a
+> tensionarla **no llegó a celebrarse**. Lo que sí sigue pudiendo tumbar C3 son
+> **RA-1** y **RA-3**, que dependen de medir las 32 y no de capturar nada.
+
 > **Escrito el 2026-08-22 (91.ª tanda), ANTES de construir nada y ANTES de
 > capturar las 16 sueltas que faltan.** La decisión (**C3**: una colección
 > `paginas` con unión PROPIA de bloques) ya está tomada por el propietario y
@@ -220,5 +246,6 @@ camino de render sin estrenar* (`CLAUDE.md`, `qa:nunca-vistos`). Declarados
 | **decisión** | **C3** — `ESQUEMA-CMS.md` §2j · CMS-3 |
 | **escrito** | 2026-08-22, 91.ª tanda, **antes** de capturar las 16 y **antes** de construir |
 | **evidencia de partida** | `derivaciones/modulos-f33-v3.mjs` + `mod-v3.log` · `inv-f33.log` · `css-f33.log` · `reg-f33.log` |
-| **predicado que puede salir CONTRA la decisión** | **P-O1** con umbral **≥ 4** páginas de 0 secciones propias ⇒ RA-2 ⇒ se reabre y **C4 gana** |
-| **evaluable cuando** | la precondición de F3-3 esté a cero: **50 hojas `et-cache` + 16 HTML** |
+| **predicado que puede salir CONTRA la decisión** | se escribió **P-O1** (umbral **≥ 4** páginas de 0 secciones ⇒ RA-2 ⇒ C4 gana) y **quedó cerrado a favor el mismo día, sin celebrarse**: las 16 que podían moverlo no son páginas. **Los que siguen pudiendo tumbar C3 son RA-1 y RA-3**, y se miden sobre las 32 |
+| **precondición** | ✅ **a cero (2026-08-22)**: `et-cache` **0 faltan** (32/32 páginas con todas sus hojas) · los «16 HTML» **no eran un hueco** |
+| **evaluable** | **ya**: las 32 están capturadas **con sus hojas**, que es lo que faltaba para que una medida offline no fuera plausible-y-falsa |

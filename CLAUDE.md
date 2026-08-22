@@ -1694,6 +1694,36 @@ eso vivió más:
 > canales antes de necesitarlos**, que es lo que la regla ya decía y lo que
 > «esperar a que el seed muera» venía sustituyendo sin que se notara.
 
+> ⚠⚠ **Y EL MECANISMO QUE HACE OPERATIVA LA MITAD 1, medido el 2026-08-22: EL
+> `et-cache` NO ES UN FICHERO ESTÁTICO — SE RECOMPILA AL RENDERIZAR LA PÁGINA.**
+>
+> *«Captura HTML y hojas como una unidad»* sonaba a higiene —capturar junto lo
+> que va junto—. **No es higiene: es el único ORDEN que funciona.**
+>
+> > **Pedir una hoja `et-cache` EN FRÍO devuelve 404. Pedir primero su PÁGINA la
+> > crea, y entonces la hoja existe.** Divi la compila por página, y si la ha
+> > purgado no la sirve hasta que alguien renderiza la página que la necesita.
+>
+> **Medido, y la trampa es que el 404 tiene toda la cara de una baja
+> definitiva:** una campaña pidió 49 hojas y **15 dieron 404** en 8 páginas. La
+> lectura natural —*«Divi las purga, son irrecuperables al `?ver=` capturado»*—
+> es **falsa**, y la refutó **una petición**: las mismas URLs daban **200** justo
+> después de pedir su página. Calentadas las 8 y repetida la campaña: **15/15,
+> 0 fallos.**
+>
+> **Las dos mitades operativas:**
+>
+> 1. **una campaña de hojas pide la PÁGINA antes que sus hojas**, siempre — no
+>    sólo cuando falle. El coste es una petición por página;
+> 2. **y un 404 de `et-cache` NO se reporta como ausencia sin haber calentado su
+>    página.** Es §*un selector que no casa con nada no es un cero* con el
+>    contenedor puesto en el **servidor**: el cero lo fabricó el orden de las
+>    peticiones, no el original.
+>
+> **Y lo que costaba creérselo:** el informe iba a declarar «35 de 50, y 8
+> páginas sin hojas recuperables» — un pendiente **inventado**, sobre páginas que
+> incluían una de las dos separadoras que deciden un campo del esquema.
+
 ### Reglas sobre las sondas mismas
 
 Las sondas son el único sitio donde este proyecto mira la realidad, así que un
