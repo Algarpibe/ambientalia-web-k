@@ -1540,10 +1540,26 @@ ritmo se exportan una vez y las consumen `MonoModulo` y la futura unión de
 > medida: §2d.3.
 
 **Consecuencia nueva para la cola larga, que antes no estaba escrita:** la cola
-de páginas compuestas (6 hubs LH-2 + 7 hubs KB) **ya se sabe que `MonoSeccion[]`
-solo no la cubre** — usan `video`/`toggle`. LH-2 D1 la dejó apuntando a la
-hipótesis del grupo D; la hipótesis cayó, así que la cola larga necesitará su
-propia decisión de modelo cuando toque.
+de páginas compuestas **ya se sabe que `MonoSeccion[]` solo no la cubre**. LH-2
+D1 la dejó apuntando a la hipótesis del grupo D; la hipótesis cayó, así que la
+cola larga necesitará su propia decisión de modelo cuando toque.
+
+> ⚠⚠ **CORREGIDA EN SU MEMBRESÍA Y EN SU ALCANCE (2026-08-22, 90.ª tanda).** La
+> frase decía *«la cola de páginas compuestas (6 hubs LH-2 + 7 hubs KB)»* y
+> **omitía 35 rutas**: la cola larga es **48** —7 hubs KB + 6 hubs L4 + **35
+> sueltas**—, derivada elemento a elemento en `PLAN-FASE-3.md` §F3-3. Convivía
+> con la lectura del PLAN (*«7 hubs KB + las autónomas»*), que a su vez omitía
+> los 6 de L4; **las dos sumaban 13 por coincidencia** —una contaba 6 páginas,
+> la otra 6 familias— y su única intersección eran los 7 hubs de KB. **Las dos
+> formulaciones quedan borradas**, no conciliadas.
+>
+> **Y el *«usan `video`/`toggle`»* es cierto en 7 de las 48.** Censado el marcado
+> de las 32 capturadas: **hubs KB** `video` 5/7 y `toggle` 5/7 ✅ · **hubs L4**
+> 0/6 y 0/6 —**`MonoSeccion[]` los cubriría hoy**— · **sueltas** 0/19 y 0/19,
+> pero con **cinco tipos que nadie había nombrado**: `map` · `slider` ·
+> `fullwidth_slider` · `slide` · `icon`. Así que los tipos fuera de
+> `MonoSeccion[]` **no son 2, son 7**, y la conclusión de §1.5b Razón 1 —no
+> ampliarlo— **se refuerza**, no se debilita.
 
 ### ✅ 2d.2 · `articulos-kb` CONSTRUIDA a medias — `blurb` y `gallery` MEDIDOS, y el texto PARADO en su escalón (2026-08-09, F3-1)
 

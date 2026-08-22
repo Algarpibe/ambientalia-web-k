@@ -163,6 +163,109 @@
 >
 > ---
 >
+> ## 4 · ESCALÓN 2 — F3-3 DECIDIBLE. **La mesa, sin decidir nada**
+>
+> Todo lo de abajo salió de `medidas/` y `corpus/`. **El original no se abrió, y
+> no hizo falta.**
+>
+> ### 4.1 · La membresía: no eran dos lecturas, eran DOS CONJUNTOS
+>
+> | lectura | decía | era | omitía |
+> |---|---|---|---|
+> | `ESQUEMA:1542` | «6 hubs LH-2 + 7 hubs KB» | **13 páginas**, todas hubs | **las 35 sueltas** |
+> | `PLAN §F3-3` | «7 hubs KB + las autónomas (6 cosas)» | 7 páginas **+ 6 FAMILIAS** = 35 rutas | **los 6 hubs de L4** |
+>
+> > **El «13 = 13» era una coincidencia aritmética: una contaba 6 PÁGINAS y la
+> > otra 6 FAMILIAS.** Su única intersección son los **7 hubs de KB**. Es §*un
+> > cardinal es un contenedor y absorbe la membresía* — dos conjuntos de 13 que
+> > no comparten ni la mitad de sus elementos.
+>
+> **El conjunto real es la UNIÓN: 7 + 6 + 35 = 48 rutas, disjuntas** (los 6 de L4
+> caen en `bucket: listados`, no en `sueltas` — comprobado). **Las dos
+> formulaciones quedan BORRADAS** en los dos documentos, no conciliadas
+> (precedente F3-5).
+>
+> **De dónde sale cada una:** los «6 hubs LH-2» son el casillero **L4** de
+> `DECISIONES.md` §D1, y son **`/es/productos/` · `/es/sectores/` ·
+> `/es/recursos/` · `/es/recursos/{kunakpedia,documentos-cientificos,preguntas-frecuentes}/`**
+> — derivados de `lh-regimen.json` como `esBuilder && !tieneTbBody`, con
+> secciones **6·7·8·6·7·6**, la oscilación literal que LH-2 cita. **Ninguno es
+> del centro de ayuda**, y por eso las dos listas nunca podían ser la misma: las
+> 35 páginas del recon de LH-2 **no incluyen ni una ruta de `centro-de-ayuda`**.
+>
+> ### 4.2 · Lo medido, con sus ceros nombrados
+>
+> | | hubs KB | hubs L4 | sueltas |
+> |---|---|---|---|
+> | HTML capturado | **7/7** | **6/6** | **19/35** |
+> | **hojas CSS completas** | **0/7** (faltan 14) | **6/6** ✅ | **0/19** (faltan 36) |
+> | medida por alguna sonda | **0/7** | 6/6 | **0/35** |
+> | fila en `COBERTURA-MEDICION` | **0/7** | — | **0/35** |
+>
+> > ⚠⚠ **De las 32 páginas capturadas, sólo 6 tienen sus hojas** — y las 50 que
+> > faltan son **todas `et-cache`**, las que Divi compila por página. Medir esto
+> > offline hoy daría **números plausibles y falsos en 26 de 32**: es
+> > §F3-1-CSS-NO-CAPTURADO esperando a cobrarse por segunda vez. **Precondición
+> > nueva de la fase, escrita en su fila.**
+>
+> **Y el «0 sondas» costó corregir mi propio instrumento:** el cruce v1 aceptaba
+> la ruta **sin `/es/`**, que en los extractores es la clave de un **recuento de
+> enlaces entrantes** (`"/contacto": 4`) — no una medida. Daba **22/35 falsos**.
+> Lo destapó **verificar un caso a mano contra el fichero**, que es justo la
+> guarda que §sondas 4 manda antes de creerse un resultado; v2 exige la forma
+> `/es/…` y lleva **control en negativo** (ruta inventada → 0 ficheros ✅).
+>
+> ### 4.3 · Las restricciones, en LAS DOS DIRECCIONES — y una cae
+>
+> R1 (cero arquetipos, `:1216`/`:1524`), R2 (no ampliar `MonoSeccion[]`,
+> `:1526`) y R3 (grupo D caído, `:1522`) **se sostienen**. **R4 no:**
+>
+> | conjunto | `video` | `toggle` | tipos fuera de `MonoSeccion[]` |
+> |---|---|---|---|
+> | hubs **KB** (7) | **5/7** | **5/7** | **2** |
+> | hubs **L4** (6) | **0/6** | **0/6** | **NINGUNO** |
+> | **sueltas** (19) | **0/19** | **0/19** | **5** — `map`·`slider`·`fullwidth_slider`·`slide`·`icon` |
+>
+> > *«La cola larga usa `video`/`toggle`»* es **cierta en 7 de 48**. Hacia atrás
+> > la regla es correcta en su dominio; hacia delante se había generalizado a 48
+> > páginas donde **en 41 el caso no se da** — y con **cinco tipos que nadie
+> > había nombrado** en su lugar. **R2 sale REFORZADA**: los tipos fuera de
+> > `MonoSeccion[]` no son 2, son **7**.
+>
+> **Dos restricciones NUEVAS, derivadas:**
+> **R5 · el conjunto tiene TRES REGÍMENES** —híbrido `BT` **8** · builder puro
+> `B-` **22** · plantillado/sin capa propia **2**—, leídos del `<body>` servido.
+> **R6 · las secciones propias van de 0 a 11.**
+>
+> ### 4.4 · Cuatro candidatos, con sus separadoras
+>
+> **C1** rico · **C2** `MonoSeccion[]` + escape · **C3** unión propia de
+> `paginas` (7 tipos) · **C4** dos colecciones. Tabla completa en el PLAN. Lo que
+> las separa:
+>
+> | par | separadoras |
+> |---|---|
+> | C1 vs el resto | **≥30** — toda página con >1 sección (`/es/soporte/centro-de-ayuda/` **11** vs `/es/aviso-legal/` **1**) |
+> | C2 vs C3 | **12** — las 10 de KB con `video`/`toggle` + `/es/contacto/` (`map`) + `/es/empresa/` (`slider`) |
+> | **C2 vs C3 dentro de L4** | **0 — son el mismo modelo ahí.** Calibrada sólo con L4, la fase habría escrito uno de los dos sin elegir |
+> | C3 vs C4 | **2, y bastan** — `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`: **0 secciones propias** |
+>
+> > **Las dos de cero secciones son la separadora más dura de la fase:** ningún
+> > modelo de bloques del builder **tiene qué poner en ellas**. No son un caso
+> > raro — son el caso que decide si hace falta vía de escape. Es §*la instancia
+> > que hay que meter en el catálogo es aquélla DONDE LA HOLGURA SE ACABA*,
+> > aplicada al modelo en vez de al píxel.
+>
+> **Y un criterio ya ratificado que el propietario puede aplicar sin medir más:**
+> §1.5b **Razón 3** —*entre dos opciones reversibles se toma la que se deshace
+> mejor*— ordena **C3 antes que C4**. **No** ordena C1 frente a C2/C3: pasar de
+> rico a bloques **no** es reversible barato.
+>
+> **NO SE DECIDIÓ NADA.** La decisión es `CMS-n` y vuelve al propietario con esto
+> delante.
+>
+> ---
+>
 > ### (entrada anterior) HANDOFF — la barra lateral, de dos lados por primera vez: Δ0 y una declaración que no ganaba
 >
 > ✅ **Tanda de la 89.ª, 2026-08-21. ESCALÓN 1 cerrado sin abrir el original ·

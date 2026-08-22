@@ -1009,6 +1009,33 @@ siempre: **se compara en la unidad que se afirma**. Si la afirmación es «son l
 mismos», la unidad es el ELEMENTO — y el recuento va al lado como resumen, nunca
 como prueba.
 
+⚠ **Y SU CASO PEOR, PORQUE EL EMPATE APAGA LA SOSPECHA EN VEZ DE ENCENDERLA: DOS
+LECTURAS PUEDEN DAR EL MISMO CARDINAL CONTANDO UNIDADES DISTINTAS (2026-08-22).**
+
+El caso de arriba —`68 → 68` con 2 por lado de diferencia— al menos cuenta lo
+mismo en los dos lados. Éste no:
+
+> **Cuando dos documentos describen «el mismo» conjunto y sus cardinales
+> coinciden, la coincidencia se lee como confirmación cruzada — y puede ser que
+> uno cuente PÁGINAS y el otro FAMILIAS.** Entonces no hay nada que cruzar: son
+> dos conjuntos distintos, y el empate es lo único que impide verlo.
+
+**Medido:** una fase tenía dos definiciones de su membresía, **las dos con 13**.
+Una eran **13 páginas** (7 + 6 hubs); la otra, **7 páginas + 6 FAMILIAS** —que
+son 35 rutas—. Su **intersección real eran 7**, y el conjunto verdadero, la
+unión: **48**. Las dos llevaban meses escritas, y **cada lector elegía la suya**.
+
+**Operativamente, y es lo de siempre con el objeto cambiado:** antes de dar dos
+recuentos por concordantes, **comprueba que cuenten la misma unidad** — y si el
+conjunto se puede nombrar, **nómbralo elemento a elemento**; la unión y la
+intersección se calculan solas y el empate deja de decidir nada. Es §*una
+cobertura declarada al nivel de arriba absorbe lo que no se midió abajo* con el
+contenedor puesto en **la definición del conjunto**.
+
+> **Y la salida es BORRAR una, nunca conciliarlas con una nota al pie**:
+> mientras las dos estén escritas, la nota es una tercera lectura, no un
+> arreglo.
+
 **Y el cardinal tiene una hermana que muerde ANTES: LA DEFINICIÓN DE «CUÁNTOS
 HAY» ES ELLA MISMA UN CONTENEDOR.**
 

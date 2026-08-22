@@ -1,0 +1,63 @@
+
+═══ hubs-KB (7) — n=7
+  ✔ /es/centro-de-ayuda/kunak-air-cloud/                                      271240  [sitemap+grupo-d]
+  ✔ /es/centro-de-ayuda/kunak-air/                                            273957  [sitemap+grupo-d]
+  ✔ /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/                         267513  [sitemap+grupo-d]
+  ✔ /es/centro-de-ayuda/kunak-air/video-tutoriales/                           279658  [sitemap+grupo-d]
+  ✔ /es/soporte/centro-de-ayuda/                                              281578  [sitemap+corpus+clon+grupo-d]
+  ✔ /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/           266655  [sitemap+grupo-d]
+  ✔ /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/             275236  [sitemap+grupo-d]
+  → capturadas 7/7
+
+═══ hubs-L4 (6) — n=6
+  ✔ /es/productos/                                                            268235  [sitemap+corpus+clon+lh-censo]
+  ✔ /es/sectores/                                                             262843  [sitemap+corpus+clon+lh-censo]
+  ✔ /es/recursos/                                                             278883  [sitemap+corpus+lh-censo]
+  ✔ /es/recursos/kunakpedia/                                                  265913  [sitemap+corpus+clon+lh-censo]
+  ✔ /es/recursos/documentos-cientificos/                                      313196  [sitemap+corpus+clon+lh-censo]
+  ✔ /es/recursos/preguntas-frecuentes/                                        271950  [sitemap+corpus+clon+lh-censo]
+  → capturadas 6/6
+
+═══ sueltas (35) — n=35
+  ✘ /es/air-quality-monitor-2/                                                     0  [corpus]
+  ✘ /es/air-quality-software-2/                                                    0  [corpus]
+  ✔ /es/aviso-legal/                                                          264903  [corpus+censo-noindex]
+  ✘ /es/calidad-aire-puertos-maritimos/                                            0  [corpus]
+  ✘ /es/cartuchos-inteligentes/                                                    0  [corpus+clon]
+  ✘ /es/cartuchos-inteligentes/acido-sulfhidrico/                                  0  [corpus]
+  ✘ /es/cartuchos-inteligentes/metano/                                             0  [corpus+clon]
+  ✘ /es/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/       0  [corpus]
+  ✘ /es/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/       0  [corpus]
+  ✘ /es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/       0  [corpus]
+  ✔ /es/contacto/                                                             340911  [sitemap+corpus+clon]
+  ✔ /es/descarga-catalogo/                                                    319215  [corpus+clon+censo-noindex]
+  ✘ /es/emision-de-gases-y-particulas-en-refinerias/                               0  [corpus]
+  ✔ /es/empresa/                                                              312075  [sitemap+corpus+clon]
+  ✔ /es/empresa/premios-y-reconocimientos/                                    279844  [sitemap+corpus+clon]
+  ✘ /es/estaciones-control-calidad-del-aire/                                       0  [corpus]
+  ✘ /es/glossary/huella-de-carbono/                                                0  [corpus]
+  ✘ /es/higiene-industrial-y-seguridad-laboral/                                    0  [corpus+clon]
+  ✔ /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/           315281  [corpus+clon+censo-noindex]
+  ✔ /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/          314467  [corpus+clon+censo-noindex]
+  ✔ /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/          314641  [corpus]
+  ✔ /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/              315372  [corpus+clon]
+  ✔ /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/            315423  [corpus]
+  ✔ /es/newsletter/                                                           316331  [censo-noindex]
+  ✔ /es/politica-de-cookies/                                                  278437  [corpus+censo-noindex]
+  ✔ /es/politica-de-privacidad-y-de-proteccion-de-datos/                      252235  [corpus+censo-noindex]
+  ✔ /es/politica-de-seguridad-de-la-informacion/                              261601  [corpus+censo-noindex]
+  ✘ /es/recursos/guias/                                                            0  [corpus+clon]
+  ✔ /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/                 321105  [corpus]
+  ✔ /es/sistema-interno-de-informacion/                                       289336  [corpus]
+  ✘ /es/soluciones/                                                                0  [corpus+clon]
+  ✔ /es/soporte/                                                              256867  [corpus+clon+censo-noindex]
+  ✔ /es/soporte/servicio-de-reparacion/                                       275374  [corpus+clon+censo-noindex]
+  ✔ /es/suscribete/                                                           316331  [sitemap+clon]
+  ✘ /es/vigilancia-perimetral-calidad-del-aire/                                    0  [corpus]
+  → capturadas 19/35
+
+═══ corpus/css: 4 entradas
+  INDICE-neg-control.json
+  INDICE.json
+  wp-content
+  wp-includes

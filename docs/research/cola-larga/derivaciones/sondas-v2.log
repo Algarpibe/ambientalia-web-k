@@ -1,0 +1,68 @@
+
+═══ hubs-KB — n=7
+  ✘ /es/centro-de-ayuda/kunak-air-cloud/                                       — NINGUNA
+  ✘ /es/centro-de-ayuda/kunak-air/                                             — NINGUNA
+  ✘ /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/                          — NINGUNA
+  ✘ /es/centro-de-ayuda/kunak-air/video-tutoriales/                            — NINGUNA
+  ✘ /es/soporte/centro-de-ayuda/                                               — NINGUNA
+  ✘ /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/            — NINGUNA
+  ✘ /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/              — NINGUNA
+  → MEDIDAS (forma /es/, congelada no-artefacto): 0/7
+  → sondas: ninguna
+
+═══ hubs-L4 — n=6
+  ✔ /es/productos/                                                             lh-censo, lh-paginas, lh-regimen
+        ctx: …2", "modo": "censo", "sabotaje": false, "paginas": 35 }, "paginas": { "/es/productos/": { "grupo": "hub", "status": 200, "cargaM…
+  ✔ /es/sectores/                                                              lh-censo, lh-paginas, lh-regimen
+        ctx: … "muestra": [] }, "h1": "Sistemas de sensores de calidad del aire" }, "/es/sectores/": { "grupo": "hub", "status": 200, "cargaM…
+  ✔ /es/recursos/                                                              comportamiento, hover-zonal, lh-alcance, lh-censo, lh-cmp, lh-espejo, lh-jerarquia, lh-paginas, lh-pieles-css, lh-regimen, lh-spec, lh-tarjetas
+        ctx: …recuentes/", "/es/scientific-category/articulos-cientificos-y-estudios/", "/es/recursos/", "/es/casos-de-exito/" ], "emitidas": […
+  ✔ /es/recursos/kunakpedia/                                                   lh-censo, lh-jerarquia, lh-paginas, lh-regimen
+        ctx: … contaminación po" } ] }, "h1": "Seminarios Web" }, "/es/recursos/kunakpedia/": { "grupo": "hub", "status": 200, "cargaM…
+  ✔ /es/recursos/documentos-cientificos/                                       lh-censo, lh-jerarquia, lh-paginas, lh-regimen
+        ctx: … "conFecha": 0, "muestra": [] }, "h1": "Kunakpedia" }, "/es/recursos/documentos-cientificos/": { "grupo": "hub", "status": 200, "cargaM…
+  ✔ /es/recursos/preguntas-frecuentes/                                         lh-censo, lh-jerarquia, lh-paginas, lh-regimen
+        ctx: …a": [] }, "h1": "Precisión validada por organismos independientes" }, "/es/recursos/preguntas-frecuentes/": { "grupo": "hub", "status": 200, "cargaM…
+  → MEDIDAS (forma /es/, congelada no-artefacto): 6/6
+  → sondas: comportamiento · hover-zonal · lh-alcance · lh-censo · lh-cmp · lh-espejo · lh-jerarquia · lh-paginas · lh-pieles-css · lh-regimen · lh-spec · lh-tarjetas
+
+═══ sueltas — n=35
+  ✘ /es/air-quality-monitor-2/                                                 — NINGUNA
+  ✘ /es/air-quality-software-2/                                                — NINGUNA
+  ✘ /es/aviso-legal/                                                           — NINGUNA
+  ✘ /es/calidad-aire-puertos-maritimos/                                        — NINGUNA
+  ✘ /es/cartuchos-inteligentes/                                                — NINGUNA
+  ✘ /es/cartuchos-inteligentes/acido-sulfhidrico/                              — NINGUNA
+  ✘ /es/cartuchos-inteligentes/metano/                                         — NINGUNA
+  ✘ /es/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/ — NINGUNA
+  ✘ /es/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/ — NINGUNA
+  ✘ /es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/ — NINGUNA
+  ✘ /es/contacto/                                                              — NINGUNA
+  ✘ /es/descarga-catalogo/                                                     — NINGUNA
+  ✘ /es/emision-de-gases-y-particulas-en-refinerias/                           — NINGUNA
+  ✘ /es/empresa/                                                               — NINGUNA
+  ✘ /es/empresa/premios-y-reconocimientos/                                     — NINGUNA
+  ✘ /es/estaciones-control-calidad-del-aire/                                   — NINGUNA
+  ✘ /es/glossary/huella-de-carbono/                                            — NINGUNA
+  ✘ /es/higiene-industrial-y-seguridad-laboral/                                — NINGUNA
+  ✘ /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/            — NINGUNA
+  ✘ /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/           — NINGUNA
+  ✘ /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/           — NINGUNA
+  ✘ /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/               — NINGUNA
+  ✘ /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/             — NINGUNA
+  ✘ /es/newsletter/                                                            — NINGUNA
+  ✘ /es/politica-de-cookies/                                                   — NINGUNA
+  ✘ /es/politica-de-privacidad-y-de-proteccion-de-datos/                       — NINGUNA
+  ✘ /es/politica-de-seguridad-de-la-informacion/                               — NINGUNA
+  ✘ /es/recursos/guias/                                                        — NINGUNA
+  ✘ /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/                  — NINGUNA
+  ✘ /es/sistema-interno-de-informacion/                                        — NINGUNA
+  ✘ /es/soluciones/                                                            — NINGUNA
+  ✘ /es/soporte/                                                               — NINGUNA
+  ✘ /es/soporte/servicio-de-reparacion/                                        — NINGUNA
+  ✘ /es/suscribete/                                                            — NINGUNA
+  ✘ /es/vigilancia-perimetral-calidad-del-aire/                                — NINGUNA
+  → MEDIDAS (forma /es/, congelada no-artefacto): 0/35
+  → sondas: ninguna
+
+▸ CONTROL en negativo (ruta inventada): 0 ficheros — debe ser 0. ✅

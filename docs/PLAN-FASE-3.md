@@ -715,14 +715,171 @@ rutas se emitan. Lo demás lo hereda gratis porque las sondas derivan del build.
 > congelada de F3-0, y si difiere, el que manda es el original y la diferencia
 > se ficha con su fecha.**
 
-## F3-3 · la cola larga — 7 hubs de KB + las sueltas
+## F3-3 · la cola larga — **48 rutas en TRES subconjuntos y TRES regímenes**
+
+> ✅ **MEMBRESÍA DERIVADA Y CERRADA (2026-08-22, 90.ª tanda). Las dos lecturas
+> que convivían quedan BORRADAS, no conciliadas** — precedente de F3-5: mientras
+> las dos estén escritas, cada lector elige la suya.
+>
+> **Y no eran «dos lecturas del mismo conjunto»: eran DOS CONJUNTOS DISTINTOS
+> que suman 13 por coincidencia aritmética.**
+>
+> | lectura | decía | era | omitía |
+> |---|---|---|---|
+> | `ESQUEMA:1542` | «6 hubs LH-2 + 7 hubs KB» | **13 páginas reales**, todas hubs | **las 35 sueltas** |
+> | `PLAN §F3-3` (esta fila) | «7 hubs KB + las autónomas (legal · descarga · empresa · suscripción · soporte · contacto)» | 7 páginas **+ 6 FAMILIAS** = 35 rutas | **los 6 hubs de L4** |
+>
+> El «13 = 13» salía de que la segunda contaba **6 familias** donde la primera
+> contaba **6 páginas**. Es §*un cardinal es un contenedor y absorbe la
+> membresía*: **la intersección real de las dos lecturas son sólo los 7 hubs de
+> KB.** El conjunto de la fase es **la UNIÓN**, y se nombra elemento a elemento.
+
+### La membresía, DERIVADA — 7 + 6 + 35 = **48 rutas**, sin solapamiento
+
+Fuente: `corpus/fase-3/LISTA-DERIVADA.json` (2026-08-20) por `bucket`, cruzado
+con `medidas/lh-regimen.json` (2026-07-31) para separar L4. **Los 6 de L4 caen en
+el bucket `listados`, no en `sueltas`**, así que los tres subconjuntos son
+disjuntos — comprobado, no supuesto.
+
+**▸ A · los 7 hubs de KB** (`bucket: hubs-kb`) — **régimen HÍBRIDO `BT`, los 7**
+
+| ruta | secciones propias | módulos propios |
+|---|---|---|
+| `/es/soporte/centro-de-ayuda/` | **11** | text · image · **toggle** · **video** · button |
+| `/es/centro-de-ayuda/kunak-air/` | 7 | text · image · **toggle** · **video** |
+| `/es/centro-de-ayuda/kunak-air/video-tutoriales/` | 7 | text · image · **video** |
+| `/es/centro-de-ayuda/kunak-air-cloud/` | 5 | text · image · **toggle** · **video** |
+| `/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/` | 5 | text · image · **video** |
+| `/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/` | **1** | text · image · **toggle** |
+| `/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/` | **1** | text · image · **toggle** |
+
+> **Y traen una regularidad de 7/7 que nadie había escrito:** los `…/articulos-de-ayuda/`
+> llevan **toggle sin video**, los `…/video-tutoriales/` **video sin toggle**, y
+> los tres índices **los dos**. El tipo de hub predice sus módulos.
+
+**▸ B · los 6 hubs de L4** (`lh-regimen`: `esBuilder && !tieneTbBody`) — **régimen
+BUILDER PURO `B-`, los 6.** Secciones Divi **6·7·8·6·7·6**, que es la oscilación
+literal que LH-2 §D1 cita:
+
+`/es/productos/` · `/es/sectores/` · `/es/recursos/` · `/es/recursos/kunakpedia/`
+· `/es/recursos/documentos-cientificos/` · `/es/recursos/preguntas-frecuentes/`
+
+**▸ C · las 35 sueltas** (`bucket: sueltas`) — **19 capturadas · 16 sin capturar**,
+listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
+
+### Qué hay ya medido — con sus denominadores y sus ceros NOMBRADOS
+
+| | hubs KB | hubs L4 | sueltas |
+|---|---|---|---|
+| **HTML capturado** | **7/7** | **6/6** | **19/35** |
+| **hojas CSS completas** | **0/7** — faltan **14** `et-cache` | **6/6** ✅ | **0/19** — faltan **36** `et-cache` |
+| **medida por alguna sonda** | **0/7** | **6/6** (12 sondas) | **0/35** |
+| **fila en `COBERTURA-MEDICION`** | **0/7** | — | **0/35** |
+
+> ⚠⚠ **EL DATO QUE MANDA SOBRE CUALQUIER PLAN DE MEDICIÓN: de las 32 páginas
+> capturadas, sólo 6 tienen sus hojas.** Y las que faltan son **todas
+> `et-cache`** — las que Divi **compila por página**, o sea justo donde vive lo
+> que el editor escribió (§*Divi no escribe marcado: COMPILA CSS*). Medir estas
+> páginas offline hoy daría **números plausibles y falsos en 26 de 32**, que es
+> exactamente §F3-1-CSS-NO-CAPTURADO cobrado por segunda vez. **Capturar las 50
+> hojas es precondición de medir, no un extra.**
+>
+> **El «medida por alguna sonda» de los hubs L4 dice QUÉ pregunta se contestó y
+> cuál no:** `lh-censo` · `lh-regimen` · `lh-paginas` · `lh-jerarquia` son de
+> **recon**; el único comparador de dos lados que los toca es `lh-cmp`, y **sólo
+> alcanza a `/es/recursos/`**. Los otros **5 no tienen ni un eje comparado contra
+> el original**.
+>
+> ⚠ **Y cómo se derivó el «0 sondas», porque el primer intento salió mal:** el
+> cruce v1 aceptaba la ruta **sin** `/es/` y eso casaba con las claves de los
+> **recuentos de enlaces entrantes** de los extractores (`"/contacto": 4`), que
+> **no son medidas**. Daba 22/35 falsos. Destapado verificando **un caso a mano
+> contra el fichero** —la guarda que §sondas 4 manda antes de creerse un
+> resultado—, corregido a la forma `/es/…` y **con control en negativo (ruta
+> inventada → 0 ficheros ✅)**.
+
+### Las restricciones, con su cita — y comprobadas EN LAS DOS DIRECCIONES
+
+| # | restricción | cita | ¿se sostiene contra lo medido? |
+|---|---|---|---|
+| R1 | los hubs **no estrenan arquetipo** — cero arquetipos | `ESQUEMA:1216`, `:1524` | ✅ nada la contradice |
+| R2 | añadir `video`/`toggle` a `MonoSeccion[]` es el **arreglo falso** de §1.5b Razón 1 | `ESQUEMA:1526` | ✅ y se refuerza: los tipos fuera de `MonoSeccion[]` **no son 2, son 7** |
+| R3 | la hipótesis del **grupo D cayó** → la cola larga no hereda su modelo | `ESQUEMA:1522` | ✅ |
+| R4 | `MonoSeccion[]` sola **no cubre** la cola larga — usan `video`/`toggle` | `ESQUEMA §2d.1` (`:1542`) | ⚠ **CIERTA SÓLO EN 7 DE 48** |
+
+> ⚠⚠ **R4 NO SE SOSTIENE FUERA DE LOS HUBS DE KB, y es el hallazgo que más
+> cambia la decisión.** Censado el marcado de las 32 páginas capturadas (capa
+> propia, `et_pb_<tipo>_<n>`, con `<style>`/`<script>` fuera):
+>
+> | conjunto | `video` | `toggle` | tipos FUERA de `MonoSeccion[]` |
+> |---|---|---|---|
+> | hubs **KB** (7) | **5/7** | **5/7** | **2** — `video` · `toggle` |
+> | hubs **L4** (6) | **0/6** | **0/6** | **NINGUNO** — `MonoSeccion[]` los cubriría **hoy** |
+> | **sueltas** (19 leídas) | **0/19** | **0/19** | **5** — `map` · `slider` · `fullwidth_slider` · `slide` · `icon` |
+>
+> Las dos direcciones, y las dos dan resultado: **hacia atrás**, R4 es correcta
+> en el dominio donde se derivó (los hubs de KB); **hacia delante**, se había
+> generalizado a 48 páginas y en 41 de ellas **el caso no se da** — §*una regla
+> derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese
+> caso*, aquí además con **cinco tipos que nadie había nombrado** en su lugar.
+
+**▸ R5 — RESTRICCIÓN NUEVA, derivada: el conjunto tiene TRES REGÍMENES, no uno.**
+Leído el `<body>` servido de las 32 (§*identifica el RÉGIMEN antes de aplicar
+ningún test*):
+
+| régimen | marcadores | n | quién decidió los valores |
+|---|---|---|---|
+| **híbrido** `BT` | los dos | **8** (los 7 hubs KB + `/es/sistema-interno-de-informacion/`) | **por capas** — `_tb_` plantilla, propia editor |
+| **builder puro** `B-` | sólo `et_pb_pagebuilder_layout` | **22** (los 6 L4 + 16 sueltas) | el editor de la instancia |
+| **plantillado / sin capa propia** | `-T` o **ninguno**, y **0 secciones propias** | **2** — `/es/redes-hibridas-…-grabacion-webinar/` · `/es/politica-de-seguridad-de-la-informacion/` | la plantilla |
+
+> **Las 2 últimas son la separadora más dura de la fase:** tienen **cero
+> secciones propias**, así que **cualquier modelo basado en bloques del builder
+> no tiene nada que poner en ellas**. No es un caso raro: es el caso que decide
+> si el modelo necesita una vía de escape.
+
+**▸ R6 — y el rango de secciones propias va de 0 a 11** (`0·1·…·7·11`), con
+`/es/soporte/centro-de-ayuda/` y `/es/empresa/` en **11**. Un modelo de página
+compuesta tiene que admitir ese rango sin que 11 sea un caso especial.
+
+### Los MODELOS CANDIDATOS que las restricciones dejan vivos
+
+**Ninguno se decide aquí** — es `CMS-n`, del propietario. Se publican con su
+coste y **con las instancias que los separan**, que es lo único que convierte
+una lista de opciones en una decisión (§*un modelo se elige por lo que lo SEPARA
+de su alternativa, no por lo que acierta*).
+
+| # | candidato | coste | qué restricción lo mantiene vivo |
+|---|---|---|---|
+| **C1** | **campo RICO por página**: una colección `paginas`, cascarón + **un** campo HTML | **el más bajo** — 1 colección, 1 campo | la frontera que `CLAUDE.md` ya declara: *a partir del contenedor de contenido, se declara RICO* |
+| **C2** | **`MonoSeccion[]` TAL CUAL** (sin ampliar) + un bloque de **escape** para lo que no cabe | bajo — reutiliza lo existente | R2 se respeta: no se toca `MonoSeccion[]` |
+| **C3** | **unión PROPIA de bloques** de `paginas`, con los **7 tipos medidos** — el camino que `articulos-kb` ya abrió con `texto-kb` | alto — 7 tipos nuevos | R2 se respeta **porque no toca el compartido**; hay precedente |
+| **C4** | **dos colecciones**: `hubs` (13) y `paginas` (35), cada una con su unión | el más alto | §1.5b Razón 2 (obligatoriedad real por colección) |
+
+**LAS SEPARADORAS, nombradas — y una pareja que NO tiene ninguna:**
+
+| par | instancias separadoras | cuáles |
+|---|---|---|
+| **C1 vs C2/C3/C4** | **≥ 30** | toda página con **>1 sección propia**: C1 las aplana a un blob, los otros conservan `flujo`/`anchoPct`. La más clara: `/es/soporte/centro-de-ayuda/` (**11 secciones**) contra `/es/aviso-legal/` (**1**) |
+| **C2 vs C3** | **12** | las **10** de KB con `video`/`toggle` + `/es/contacto/` (**`map`**) + `/es/empresa/` (**`slider`**). C2 las mete en el escape; C3 les da tipo |
+| **C2 vs C3 · dentro de los 6 hubs L4** | **0** | **son el mismo modelo ahí**: L4 no usa ningún tipo fuera de `MonoSeccion[]`, así que el escape de C2 nunca se ejercita. **Si la fase se hubiera calibrado sólo con L4, C2 y C3 serían indistinguibles** |
+| **C3 vs C4** | **2, y bastan** | `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`: **0 secciones propias**. En C4 la colección `paginas` puede declararlas de otra forma; en C3, colección única, **el campo de bloques tendría que ser opcional para las 48** — que es §1.5b Razón 2 al pie de la letra |
+| **todos vs «lo que hay»** | **2** | las mismas dos: **ningún** candidato basado en bloques del builder tiene qué poner en ellas sin una vía de escape |
+
+> **Y el criterio ya ratificado que el propietario puede aplicar sin medir más**
+> es §1.5b **Razón 3**: *fusionar luego es más barato que separar luego; entre dos
+> opciones reversibles se toma la que se deshace mejor*. Eso ordena **C3 antes
+> que C4** sin necesidad de una medición nueva — y **no** ordena C1 frente a C2/C3,
+> porque pasar de rico a bloques **no es reversible barato**: hay que decidir
+> bloque a bloque sobre HTML ya escrito.
 
 | | |
 |---|---|
-| **entrega** | los 7 hubs del centro de ayuda (casillero **L4**: página compuesta por instancia) + las páginas autónomas (legal · landing de descarga · empresa · suscripción · soporte · contacto) |
-| **alimenta** | §2d.1 (los hubs van a cola larga, **cero arquetipos**; `video`/`toggle` **no** entran en `MonoSeccion[]`) |
-| **incógnita** | **el modelo de la cola larga no está decidido.** §2d.1 lo dejó dicho: *«la cola larga necesitará su propia decisión de modelo cuando toque»*. Es una decisión de ESQUEMA (`CMS-n`), no una fase |
-| **hecho** | la decisión de modelo escrita en el ESQUEMA **con su pre-registro**, y las páginas emitidas con Δ0 en sus ejes |
+| **entrega** | las **48 rutas** derivadas arriba (7 hubs KB + 6 hubs L4 + 35 sueltas), emitidas con Δ0 en sus ejes |
+| **alimenta** | §2d.1 (**cero arquetipos**; `video`/`toggle` **no** entran en `MonoSeccion[]`) |
+| **incógnita** | **el modelo sigue SIN DECIDIR — y ya es decidible**: 4 candidatos con sus separadoras nombradas. Es `CMS-n`, del propietario, no una fase |
+| **precondición NUEVA** | **las 50 hojas `et-cache` que faltan** (14 de KB + 36 de sueltas). Sin ellas no se puede medir: 26 de 32 páginas darían números plausibles y falsos |
+| **hecho** | la decisión escrita en el ESQUEMA **con su pre-registro**, y las 48 emitidas con Δ0 |
 
 ## F3-4 · las tres familias de archivo sin censar
 

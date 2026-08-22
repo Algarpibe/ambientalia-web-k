@@ -1,0 +1,89 @@
+
+═══ hubs-KB — 7 HTML
+  CAPA PROPIA (la del builder de la instancia — la que decide el modelo):
+     ★ et_pb_column_4                   7/7 páginas
+     ★ et_pb_column_1                   7/7 páginas
+     ★ et_pb_column_3                   7/7 páginas
+     ★ et_pb_section                    7/7 páginas
+     ★ et_pb_row                        7/7 páginas
+     ★ et_pb_column                     7/7 páginas
+       et_pb_text                       7/7 páginas
+       et_pb_image                      7/7 páginas
+     ★ et_pb_toggle                     5/7 páginas
+     ★ et_pb_video                      5/7 páginas
+       et_pb_button                     1/7 páginas
+  CAPA _tb_ (cascarón, común): button · code · column · icon · menu · post_content · row · section · sidebar · text
+  ★ FUERA de lo que MonoSeccion[] expresa: 8 — column_4 · column_1 · column_3 · section · row · column · toggle · video
+  por página:
+      /es/centro-de-ayuda/kunak-air-cloud/                                       column,column_1,column_3,column_4,image,row,section,text,toggle,video
+      /es/centro-de-ayuda/kunak-air/                                             column,column_1,column_3,column_4,image,row,section,text,toggle,video
+      /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/                          column,column_1,column_3,column_4,image,row,section,text,toggle
+      /es/centro-de-ayuda/kunak-air/video-tutoriales/                            column,column_1,column_3,column_4,image,row,section,text,video
+      /es/soporte/centro-de-ayuda/                                               button,column,column_1,column_3,column_4,image,row,section,text,toggle,video
+      /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/            column,column_1,column_3,column_4,image,row,section,text,toggle
+      /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/              column,column_1,column_3,column_4,image,row,section,text,video
+
+═══ hubs-L4 — 6 HTML
+  CAPA PROPIA (la del builder de la instancia — la que decide el modelo):
+     ★ et_pb_column_4                   6/6 páginas
+     ★ et_pb_column_1                   6/6 páginas
+     ★ et_pb_column_3                   6/6 páginas
+     ★ et_pb_section                    6/6 páginas
+     ★ et_pb_row                        6/6 páginas
+     ★ et_pb_column                     6/6 páginas
+       et_pb_text                       6/6 páginas
+       et_pb_image                      6/6 páginas
+     ★ et_pb_column_2                   5/6 páginas
+       et_pb_button                     3/6 páginas
+       et_pb_blurb                      1/6 páginas
+  CAPA _tb_ (cascarón, común): blog · button · code · column · icon · menu · row · section · sidebar
+  ★ FUERA de lo que MonoSeccion[] expresa: 7 — column_4 · column_1 · column_3 · section · row · column · column_2
+  por página:
+      /es/productos/                                                             button,column,column_1,column_3,column_4,image,row,section,text
+      /es/sectores/                                                              column,column_1,column_2,column_3,column_4,image,row,section,text
+      /es/recursos/                                                              blurb,button,column,column_1,column_2,column_3,column_4,image,row,section,text
+      /es/recursos/kunakpedia/                                                   column,column_1,column_2,column_3,column_4,image,row,section,text
+      /es/recursos/documentos-cientificos/                                       column,column_1,column_2,column_3,column_4,image,row,section,text
+      /es/recursos/preguntas-frecuentes/                                         button,column,column_1,column_2,column_3,column_4,image,row,section,text
+
+═══ sueltas — 19 HTML
+  CAPA PROPIA (la del builder de la instancia — la que decide el modelo):
+     ★ et_pb_column_4                  19/19 páginas
+     ★ et_pb_column_1                  19/19 páginas
+     ★ et_pb_column_3                  19/19 páginas
+     ★ et_pb_section                   17/19 páginas
+     ★ et_pb_row                       17/19 páginas
+     ★ et_pb_column                    17/19 páginas
+       et_pb_text                      16/19 páginas
+       et_pb_code                       9/19 páginas
+       et_pb_image                      6/19 páginas
+     ★ et_pb_column_2                   3/19 páginas
+     ★ et_pb_fullwidth_slider           2/19 páginas
+     ★ et_pb_slide                      2/19 páginas
+       et_pb_button                     2/19 páginas
+       et_pb_blurb                      2/19 páginas
+     ★ et_pb_map                        1/19 páginas
+     ★ et_pb_slider                     1/19 páginas
+     ★ et_pb_icon                       1/19 páginas
+  CAPA _tb_ (cascarón, común): blog · button · code · column · icon · image · menu · post_content · row · section · sidebar · text
+  ★ FUERA de lo que MonoSeccion[] expresa: 12 — column_4 · column_1 · column_3 · section · row · column · column_2 · map · fullwidth_slider · slide · slider · icon
+  por página:
+      /es/aviso-legal/                                                           column,column_1,column_3,column_4,row,section,text
+      /es/contacto/                                                              code,column,column_1,column_2,column_3,column_4,fullwidth_slider,image,map,row,section,slide,text
+      /es/descarga-catalogo/                                                     code,column,column_1,column_3,column_4,image,row,section
+      /es/empresa/                                                               blurb,button,column,column_1,column_2,column_3,column_4,fullwidth_slider,image,row,section,slide,slider,text
+      /es/empresa/premios-y-reconocimientos/                                     column,column_1,column_3,column_4,image,row,section,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/            code,column,column_1,column_3,column_4,row,section,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/           code,column,column_1,column_3,column_4,row,section,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/           code,column,column_1,column_3,column_4,row,section,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/               code,column,column_1,column_3,column_4,row,section,text
+      /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/             code,column,column_1,column_3,column_4,row,section,text
+      /es/newsletter/                                                            code,column,column_1,column_3,column_4,row,section,text
+      /es/politica-de-cookies/                                                   column,column_1,column_3,column_4,row,section,text
+      /es/politica-de-privacidad-y-de-proteccion-de-datos/                       column,column_1,column_3,column_4,row,section,text
+      /es/politica-de-seguridad-de-la-informacion/                               column_1,column_3,column_4
+      /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/                  column_1,column_2,column_3,column_4
+      /es/sistema-interno-de-informacion/                                        column,column_1,column_3,column_4,row,section,text
+      /es/soporte/                                                               column,column_1,column_3,column_4,icon,image,row,section,text
+      /es/soporte/servicio-de-reparacion/                                        blurb,button,column,column_1,column_3,column_4,image,row,section,text
+      /es/suscribete/                                                            code,column,column_1,column_3,column_4,row,section,text

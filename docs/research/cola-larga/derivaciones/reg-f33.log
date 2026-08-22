@@ -1,0 +1,35 @@
+=== hubs-KB
+   BT  secProp= 5  /es/centro-de-ayuda/kunak-air-cloud/
+   BT  secProp= 7  /es/centro-de-ayuda/kunak-air/
+   BT  secProp= 1  /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/
+   BT  secProp= 7  /es/centro-de-ayuda/kunak-air/video-tutoriales/
+   BT  secProp=11  /es/soporte/centro-de-ayuda/
+   BT  secProp= 1  /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/
+   BT  secProp= 5  /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/
+=== hubs-L4
+   B-  secProp= 2  /es/productos/
+   B-  secProp= 3  /es/sectores/
+   B-  secProp= 4  /es/recursos/
+   B-  secProp= 2  /es/recursos/kunakpedia/
+   B-  secProp= 3  /es/recursos/documentos-cientificos/
+   B-  secProp= 2  /es/recursos/preguntas-frecuentes/
+=== sueltas
+   B-  secProp= 1  /es/aviso-legal/
+   B-  secProp= 4  /es/contacto/
+   B-  secProp= 1  /es/descarga-catalogo/
+   B-  secProp=11  /es/empresa/
+   B-  secProp= 2  /es/empresa/premios-y-reconocimientos/
+   B-  secProp= 1  /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/
+   B-  secProp= 1  /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/
+   B-  secProp= 1  /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/
+   B-  secProp= 1  /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/
+   B-  secProp= 1  /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/
+   B-  secProp= 1  /es/newsletter/
+   B-  secProp= 1  /es/politica-de-cookies/
+   B-  secProp= 1  /es/politica-de-privacidad-y-de-proteccion-de-datos/
+   --  secProp= 0  /es/politica-de-seguridad-de-la-informacion/
+   -T  secProp= 0  /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/
+   BT  secProp= 1  /es/sistema-interno-de-informacion/
+   B-  secProp= 2  /es/soporte/
+   B-  secProp= 2  /es/soporte/servicio-de-reparacion/
+   B-  secProp= 1  /es/suscribete/
