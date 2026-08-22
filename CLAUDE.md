@@ -1523,6 +1523,39 @@ Petróleo a 1440 hay **11 columnas con holgura, de 16 a 421.11**: ése es el mar
 de error real del árbol de filas en esa página. Cuando la sonda dice que **no hay
 holgura**, entonces sí: el alto de la fila es concluyente.
 
+⚠⚠ **Y LA HOLGURA TIENE UNA CONSECUENCIA SOBRE EL MUESTREO QUE NO ESTABA
+ESCRITA: PARA UNA PROPIEDAD TAPADA, «LA PRIMERA Y UNA INTERMEDIA» ES UN CERO
+GARANTIZADO (2026-08-21).**
+
+Todo lo de arriba dice **a qué nivel** medir. Esto dice **qué instancias**
+elegir, y es el mismo error una vuelta más arriba:
+
+> **Un catálogo de instancias «típicas» no puede detectar si un arreglo llega a
+> la MAQUETACIÓN cuando la pieza vive dentro de un contenedor con holgura.** En
+> todas las instancias típicas el contenedor gana, así que el número sale igual
+> con la pieza bien y con la pieza mal: **cero instancias separadoras**, y el
+> verde es del muestreo, no del arreglo.
+
+**Medido:** un comparador de barra lateral eligió *«la primera y una
+intermedia»* de cada forma —6 páginas— y dio **Δ0** tras el arreglo. Correcto y
+**mudo sobre la maquetación**: en las 6, la columna de contenido es más alta que
+la barra y la tapa. Lo destapó la guarda de regresión: **382 rutas, 1 movida**, y
+era la **última página de una serie** —la de menos tarjetas—, donde la barra
+sobrepasa a la columna. Añadida al catálogo, el veredicto pasó de «Δ0 en 6
+páginas que no podían distinguir» a «Δ0 en 7, una de ellas separadora».
+
+> **La instancia que hay que meter en el catálogo es aquélla DONDE LA HOLGURA SE
+> ACABA, y casi nunca es la típica: es la más corta, la más vacía, la última de
+> su serie.** Se busca preguntando *«¿en qué instancia deja de mandar el
+> contenedor?»*, no *«¿cuál es representativa?»*.
+
+**Y el corolario de lectura, que es la otra mitad:** cuando una guarda vertical
+diga **«N−1 sin mover un píxel y 1 movida»** tras un arreglo de una pieza tapada,
+eso **no es una regresión con ruido**: es exactamente la firma esperada — las
+N−1 no se movieron **porque no podían**. Leerlo como *«el arreglo casi no hizo
+nada»* invierte el veredicto, y es §*el eje que no lee como defecto esconde la
+mejora igual que esconde la deriva* con el contenedor puesto en el **muestreo**.
+
 ### EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA, NO DE LOS QUE ALGÚN EXTRACTOR YA LEE (2026-08-13)
 
 **Es la §regla 9 —derivar en vez de recordar— aplicada a un CONJUNTO en vez de a

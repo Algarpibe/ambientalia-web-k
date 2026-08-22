@@ -428,6 +428,38 @@ widget de la firma congelada, por `closest()`.
 llegaron los dos**. El techo medido de «llega entero» sube de 178.777 a
 **180.510**.
 
+⚠ **Y al cerrar mide 188.345** — las cuatro reglas de esta tanda pesan ~7.800.
+Ese número **NO está medido**: el canario contesta por la copia que se inyectó
+al ABRIR. La sesión siguiente lo comprobará sola citando `KV-01` y `KV-08`, que
+es justo para lo que se dejaron puestos.
+
+### ⚠ El catálogo del comparador no tenía NI UNA instancia separadora
+
+Lo destapó la guarda de regresión, no la sonda: `qa:clon-base` a 1440 sobre las
+**382 rutas** dio **381 sin mover un píxel y 1 movida** —
+`/etiqueta/monitorizacion-ambiental/page/11`, `docH +10`, `S1 h +10.22`.
+
+**Las 381 no se movieron porque NO PODÍAN**: `clon-base` mide `docH`, y la barra
+está tapada por `#left-area`. La 382 es la **última página de su serie** —la de
+menos tarjetas— y ahí la barra sobrepasa a la columna de contenido.
+
+> Mi catálogo eran *«la primera y una intermedia»* de cada forma: **seis páginas
+> donde el contenedor siempre gana**. Miden la barra al nivel donde vive, que
+> está bien, y **ninguna podía contestar si el arreglo llega a la maquetación**.
+> Cero separadoras.
+
+Añadida como séptima entrada. Con ella: **42/42 piezas · 1071 caminos · 0
+distintos**, a 1440 **y** a 390. Regla en `CLAUDE.md` §*para una propiedad
+tapada, «la primera y una intermedia» es un cero garantizado*.
+
+### Una corrida perdida por el original, y no salió en verde
+
+Un `TimeoutError` de navegación contra `kunakair.com` mató una corrida a mitad.
+El contrato publicó **«30 de 42 piezas · NO SE PUDO EVALUAR»** con `exit 1`, y
+`gritaSiRevienta` imprimió la excepción. Repetida, limpia. Es el original como
+objetivo inestable **y las dos guardas haciendo exactamente su trabajo** — sin
+ellas habría sido un fichero congelado con 5 de 7 páginas y cara de completo.
+
 ### Evento de §regla 13, y es el caso que la regla dice que engaña
 
 Un mensaje de commit de esta tanda se escribió con **`printf` + `-F`**, que es

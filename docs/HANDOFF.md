@@ -137,6 +137,41 @@
 >
 > ---
 >
+> ## 5bis · LA GUARDA DE REGRESIÓN REFUTÓ MI PROPIA PREDICCIÓN, Y ES EL MEJOR HALLAZGO DE LA TANDA
+>
+> Antes de correrla escribí: *«deben moverse 52 rutas (8 blog + 36 etiqueta + 8
+> glosario) y no deben moverse 330»*. `qa:clon-base @1440` contra
+> `clon-base-1440-t88-despues.json` dio **382 comparadas · 1 con regresión**.
+>
+> **Y la refutación es correcta, no un fallo del arreglo:** `clon-base` mide
+> `docH` y `h1.y`, y la barra está **tapada por `#left-area`**. Las 381 no se
+> movieron **porque no podían**. La única que se movió es
+> `/etiqueta/monitorizacion-ambiental/page/11` —`docH +10`, `S1 h +10.22`—, la
+> **última página de su serie**, la de menos tarjetas, donde la barra sobrepasa
+> a la columna de contenido.
+>
+> > ⚠⚠ **El hueco no era del arreglo: era de MI CATÁLOGO.** Las seis páginas que
+> > elegí eran *«la primera y una intermedia»* de cada forma, o sea **seis
+> > páginas donde el contenedor siempre gana**. Miden la barra al nivel donde
+> > vive —correcto— y **ninguna podía contestar si el arreglo llega a la
+> > maquetación**: cero instancias separadoras.
+>
+> Añadida esa página como séptima entrada: **42/42 piezas · 1071 caminos · 0
+> distintos**, a 1440 **y** a 390. Negativo re-corrido entero: **5/5**.
+>
+> **Regla nueva (`CLAUDE.md`):** *para una propiedad TAPADA, «la primera y una
+> intermedia» es un cero garantizado — la instancia que hay que meter en el
+> catálogo es aquélla DONDE LA HOLGURA SE ACABA, y casi nunca es la típica.* Con
+> su corolario de lectura: **«N−1 sin mover y 1 movida» tras arreglar una pieza
+> tapada NO es una regresión con ruido, es la firma esperada.**
+>
+> ⚠ Y una corrida se perdió por un `TimeoutError` contra el original vivo. **No
+> salió en verde**: el contrato publicó «30 de 42 piezas · NO SE PUDO EVALUAR»
+> con `exit 1`. Sin esa guarda habría quedado una congelada con 5 de 7 páginas y
+> cara de completa.
+>
+> ---
+>
 > ## 6 · Lo que queda, cada cosa con su cardinal
 >
 > | # | qué | cardinal |
