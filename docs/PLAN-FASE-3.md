@@ -803,7 +803,7 @@ listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 | # | restricción | cita | ¿se sostiene contra lo medido? |
 |---|---|---|---|
 | R1 | los hubs **no estrenan arquetipo** — cero arquetipos | `ESQUEMA:1216`, `:1524` | ✅ nada la contradice |
-| R2 | añadir `video`/`toggle` a `MonoSeccion[]` es el **arreglo falso** de §1.5b Razón 1 | `ESQUEMA:1526` | ✅ y se refuerza: los tipos fuera de `MonoSeccion[]` **no son 2, son 7** |
+| R2 | añadir `video`/`toggle` a `MonoSeccion[]` es el **arreglo falso** de §1.5b Razón 1 | `ESQUEMA:1526` | ✅ y se refuerza: los tipos fuera de `MonoSeccion[]` **no son 2, son ~~7~~ 9** (⚠ recontado en la 91.ª, `ESQUEMA §2j.2`) |
 | R3 | la hipótesis del **grupo D cayó** → la cola larga no hereda su modelo | `ESQUEMA:1522` | ✅ |
 | R4 | `MonoSeccion[]` sola **no cubre** la cola larga — usan `video`/`toggle` | `ESQUEMA §2d.1` (`:1542`) | ⚠ **CIERTA SÓLO EN 7 DE 48** |
 
@@ -811,17 +811,32 @@ listadas una a una en el acta de la 90.ª (`HANDOFF.md` §2).
 > cambia la decisión.** Censado el marcado de las 32 páginas capturadas (capa
 > propia, `et_pb_<tipo>_<n>`, con `<style>`/`<script>` fuera):
 >
-> | conjunto | `video` | `toggle` | tipos FUERA de `MonoSeccion[]` |
-> |---|---|---|---|
-> | hubs **KB** (7) | **5/7** | **5/7** | **2** — `video` · `toggle` |
-> | hubs **L4** (6) | **0/6** | **0/6** | **NINGUNO** — `MonoSeccion[]` los cubriría **hoy** |
-> | **sueltas** (19 leídas) | **0/19** | **0/19** | **5** — `map` · `slider` · `fullwidth_slider` · `slide` · `icon` |
+> | conjunto | `video` | `toggle` | tipos FUERA de `MonoSeccion[]` — ⚠ **v2 (mal)** | **v3, derivado (2026-08-22)** |
+> |---|---|---|---|---|
+> | hubs **KB** (7) | **5/7** | **5/7** | **2** — `video` · `toggle` | **2** ✅ sin cambio |
+> | hubs **L4** (6) | **0/6** | **0/6** | ~~**NINGUNO**~~ | **1** — `blurb` (1/6) |
+> | **sueltas** (19 leídas) | **0/19** | **0/19** | ~~**5**~~ — `map` · `slider` · `fullwidth_slider` · `slide` · `icon` | **7** — los 5 **+ `code` (9/19)** + `blurb` (2/19) |
 >
 > Las dos direcciones, y las dos dan resultado: **hacia atrás**, R4 es correcta
 > en el dominio donde se derivó (los hubs de KB); **hacia delante**, se había
 > generalizado a 48 páginas y en 41 de ellas **el caso no se da** — §*una regla
 > derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese
 > caso*, aquí además con **cinco tipos que nadie había nombrado** en su lugar.
+>
+> > ⚠⚠ **RECONTADO EN LA 91.ª — y el instrumento tenía una LISTA ESCRITA A MANO
+> > (§regla 9 caso 7).** `modulos-f33-v2.mjs` comparaba contra
+> > `YA = ["text","image","button","blurb","cta","divider","code","gallery"]`,
+> > que acredita a `MonoSeccion[]` **cuatro tipos que no expresa**: `blurb` y
+> > `gallery` existen como bloque pero en **`MODULOS_KB`**, y `code` y `divider`
+> > **no existen en ninguna unión del repo**. `modulos-f33-v3.mjs` **deriva el
+> > conjunto del registro de bloques** en vez de reescribir la lista.
+> >
+> > **Fuera de `MonoSeccion[]` son 9, no 7** (`code` · `toggle` · `video` ·
+> > `blurb` · `fullwidth_slider` · `slide` · `map` · `slider` · `icon`), y **la
+> > unión que la cola larga necesita son 12 tipos de contenido**, de los que
+> > **8 no tienen definición en el repo** y 1 (`blurb`) es copiable.
+> > **`code` es el segundo módulo más frecuente de las sueltas (9/19)** y se
+> > había perdido entero. Detalle y consecuencia: `ESQUEMA §2j.2`.
 
 **▸ R5 — RESTRICCIÓN NUEVA, derivada: el conjunto tiene TRES REGÍMENES, no uno.**
 Leído el `<body>` servido de las 32 (§*identifica el RÉGIMEN antes de aplicar
@@ -853,32 +868,57 @@ de su alternativa, no por lo que acierta*).
 |---|---|---|---|
 | **C1** | **campo RICO por página**: una colección `paginas`, cascarón + **un** campo HTML | **el más bajo** — 1 colección, 1 campo | la frontera que `CLAUDE.md` ya declara: *a partir del contenedor de contenido, se declara RICO* |
 | **C2** | **`MonoSeccion[]` TAL CUAL** (sin ampliar) + un bloque de **escape** para lo que no cabe | bajo — reutiliza lo existente | R2 se respeta: no se toca `MonoSeccion[]` |
-| **C3** | **unión PROPIA de bloques** de `paginas`, con los **7 tipos medidos** — el camino que `articulos-kb` ya abrió con `texto-kb` | alto — 7 tipos nuevos | R2 se respeta **porque no toca el compartido**; hay precedente |
+| **C3** | **unión PROPIA de bloques** de `paginas`, con los tipos medidos — el camino que `articulos-kb` ya abrió con `texto-kb` | alto — ~~7~~ **12 tipos en la unión, 8 sin definición previa** (v3) | R2 se respeta **porque no toca el compartido**; hay precedente |
 | **C4** | **dos colecciones**: `hubs` (13) y `paginas` (35), cada una con su unión | el más alto | §1.5b Razón 2 (obligatoriedad real por colección) |
 
 **LAS SEPARADORAS, nombradas — y una pareja que NO tiene ninguna:**
 
+> ⚠ **Los tres primeros cardinales quedan RECONTADOS en la 91.ª, y en la unidad
+> que la afirmación usa: la PÁGINA.** El «12» de C2-vs-C3 contaba **instancias
+> de tipo** (5 `toggle` + 5 `video` + `map` + `slider`), que es §*un cardinal es
+> un contenedor* con dos unidades mezcladas en la misma columna.
+
 | par | instancias separadoras | cuáles |
 |---|---|---|
-| **C1 vs C2/C3/C4** | **≥ 30** | toda página con **>1 sección propia**: C1 las aplana a un blob, los otros conservan `flujo`/`anchoPct`. La más clara: `/es/soporte/centro-de-ayuda/` (**11 secciones**) contra `/es/aviso-legal/` (**1**) |
-| **C2 vs C3** | **12** | las **10** de KB con `video`/`toggle` + `/es/contacto/` (**`map`**) + `/es/empresa/` (**`slider`**). C2 las mete en el escape; C3 les da tipo |
-| **C2 vs C3 · dentro de los 6 hubs L4** | **0** | **son el mismo modelo ahí**: L4 no usa ningún tipo fuera de `MonoSeccion[]`, así que el escape de C2 nunca se ejercita. **Si la fase se hubiera calibrado sólo con L4, C2 y C3 serían indistinguibles** |
+| **C1 vs C2/C3/C4** | ~~≥ 30~~ → **16 de las 32 capturadas** | toda página con **>1 sección propia** (KB **5/7** · L4 **6/6** · sueltas **5/19**): C1 las aplana a un blob, los otros conservan `flujo`/`anchoPct`. La más clara: `/es/soporte/centro-de-ayuda/` y `/es/empresa/` (**11 secciones**) contra `/es/aviso-legal/` (**1**). **«≥30» no reproduce** — es cota inferior sobre 32, y las 16 sin capturar sólo pueden subirla |
+| **C2 vs C3** | ~~12~~ → **20 páginas de 32** | KB **7/7** · L4 **1/6** · sueltas **12/19**. Además de `video`/`toggle`/`map`/`slider`: **9** sueltas con `code` y **3** páginas con `blurb`. C2 las mete en el escape; C3 les da tipo. **20 de 32 no es una vía de escape: es el modelo** |
+| **C2 vs C3 · dentro de los 6 hubs L4** | ~~0~~ → **1** (`/es/recursos/`, `blurb`) | **la conclusión NO cambia**: por §*un discriminador hallado en UNA SOLA instancia no es un discriminador*, **L4 sigue sin poder elegir** entre C2 y C3. Lo que cambia es que el cero era del instrumento —`blurb` estaba en la lista escrita a mano— y no del original |
 | **C3 vs C4** | **2, y bastan** | `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`: **0 secciones propias**. En C4 la colección `paginas` puede declararlas de otra forma; en C3, colección única, **el campo de bloques tendría que ser opcional para las 48** — que es §1.5b Razón 2 al pie de la letra |
 | **todos vs «lo que hay»** | **2** | las mismas dos: **ningún** candidato basado en bloques del builder tiene qué poner en ellas sin una vía de escape |
 
 > **Y el criterio ya ratificado que el propietario puede aplicar sin medir más**
 > es §1.5b **Razón 3**: *fusionar luego es más barato que separar luego; entre dos
-> opciones reversibles se toma la que se deshace mejor*. Eso ordena **C3 antes
-> que C4** sin necesidad de una medición nueva — y **no** ordena C1 frente a C2/C3,
+> opciones reversibles se toma la que se deshace mejor*. Eso ordena **C4 antes
+> que C3** sin necesidad de una medición nueva — y **no** ordena C1 frente a C2/C3,
 > porque pasar de rico a bloques **no es reversible barato**: hay que decidir
 > bloque a bloque sobre HTML ya escrito.
+>
+> > ⚠⚠ **CORREGIDO EL SIGNO, 2026-08-22 (91.ª tanda). Esta línea decía «ordena
+> > C3 antes que C4», que es Razón 3 AL REVÉS** — y es de las que más caro salen
+> > porque es un criterio que se relee y llega blindado por venir de una decisión
+> > ratificada.
+> >
+> > Razón 3 dice que **se toma la opción que se deshace mejor**, y la que se
+> > deshace mejor es **la que empieza SEPARADA**: deshacerla es *fusionar*, que
+> > es el lado barato. **C4 son dos colecciones y C3 es una, así que Razón 3
+> > ordena C4 antes que C3.** Es exactamente lo que la misma maquinaria ya
+> > decidió dos veces en este repo — **dos apps** en CMS-0f (*«de DOS apps a
+> > una: mecánico y electivo»*) y **dos colecciones** en §1.5b — y el propio
+> > párrafo la aplica bien tres líneas antes, al negarse a usarla para C1.
+> >
+> > **La decisión no cambia**: el propietario eligió **C3** (CMS-3, `ESQUEMA §2j`)
+> > **contra** lo que Razón 3 favorece, porque **R1 —cero arquetipos— pesa más**,
+> > y la asimetría de deshacer sólo arbitra cuando ninguna medida arbitra. Lo
+> > que cambia es que C3 necesita **condición de reapertura explícita**, que es
+> > `ESQUEMA §2j.3`. Escrito con el signo invertido, C3 parecía la opción que el
+> > criterio ya bendecía y esa condición no habría existido.
 
 | | |
 |---|---|
 | **entrega** | las **48 rutas** derivadas arriba (7 hubs KB + 6 hubs L4 + 35 sueltas), emitidas con Δ0 en sus ejes |
 | **alimenta** | §2d.1 (**cero arquetipos**; `video`/`toggle` **no** entran en `MonoSeccion[]`) |
-| **incógnita** | **el modelo sigue SIN DECIDIR — y ya es decidible**: 4 candidatos con sus separadoras nombradas. Es `CMS-n`, del propietario, no una fase |
-| **precondición NUEVA** | **las 50 hojas `et-cache` que faltan** (14 de KB + 36 de sueltas). Sin ellas no se puede medir: 26 de 32 páginas darían números plausibles y falsos |
+| **incógnita** | ✅ **DECIDIDA POR EL PROPIETARIO, 2026-08-22 (91.ª): C3** — una colección `paginas` con **unión PROPIA** de bloques, por el camino de `articulos-kb`. `MonoSeccion[]` **no se toca**. Escrita como **CMS-3** en `ESQUEMA §2j`, con por qué caen los otros tres, su **condición de reapertura** (C3 va contra Razón 3, §2j.3) y su pre-registro (`docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`) |
+| **precondición NUEVA** | ⚠ **SON DOS HUECOS, NO UNO** — esta fila decía sólo el primero. ① **las 50 hojas `et-cache`** (14 de KB + 36 de sueltas): sin ellas 26 de 32 páginas dan números plausibles y falsos. ② **los 16 HTML de sueltas sin capturar** (19/35): sin HTML no hay página que emitir, ni tipo que censar — la unión de CMS-3 es hoy una **cota derivada de 32 de 48**. **F3-3 no arranca hasta que los dos estén a cero** |
 | **hecho** | la decisión escrita en el ESQUEMA **con su pre-registro**, y las 48 emitidas con Δ0 |
 
 ## F3-4 · las tres familias de archivo sin censar

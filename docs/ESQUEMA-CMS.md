@@ -1555,11 +1555,19 @@ cola larga necesitará su propia decisión de modelo cuando toque.
 >
 > **Y el *«usan `video`/`toggle`»* es cierto en 7 de las 48.** Censado el marcado
 > de las 32 capturadas: **hubs KB** `video` 5/7 y `toggle` 5/7 ✅ · **hubs L4**
-> 0/6 y 0/6 —**`MonoSeccion[]` los cubriría hoy**— · **sueltas** 0/19 y 0/19,
-> pero con **cinco tipos que nadie había nombrado**: `map` · `slider` ·
-> `fullwidth_slider` · `slide` · `icon`. Así que los tipos fuera de
-> `MonoSeccion[]` **no son 2, son 7**, y la conclusión de §1.5b Razón 1 —no
-> ampliarlo— **se refuerza**, no se debilita.
+> 0/6 y 0/6 · **sueltas** 0/19 y 0/19, pero con **cinco tipos que nadie había
+> nombrado**: `map` · `slider` · `fullwidth_slider` · `slide` · `icon`. La
+> conclusión de §1.5b Razón 1 —no ampliar `MonoSeccion[]`— **se refuerza**, no
+> se debilita.
+>
+> > ⚠⚠ **DOS CIFRAS DE ESTE PÁRRAFO RECONTADAS EN LA 91.ª (§2j.2): son 9, no 7,
+> > y L4 NO estaba a cero.** El censo comparaba contra una **lista de literales
+> > escrita a mano** que acreditaba a `MonoSeccion[]` cuatro tipos que no
+> > expresa (`blurb`/`gallery` viven en `MODULOS_KB`; `code`/`divider` no
+> > existen en el repo). Derivado del registro de bloques: **hubs L4 → 1**
+> > (`blurb`) y **sueltas → 7** (los cinco **+ `code`, que es su segundo módulo
+> > más frecuente, 9/19**). *«`MonoSeccion[]` los cubriría hoy»* aplicado a L4
+> > queda **borrado**: no los cubre.
 
 ### ✅ 2d.2 · `articulos-kb` CONSTRUIDA a medias — `blurb` y `gallery` MEDIDOS, y el texto PARADO en su escalón (2026-08-09, F3-1)
 
@@ -3719,6 +3727,139 @@ módulo sin `mb` propio cogería el de su fila **y sólo en las filas que traen
 | el discriminador que llega al render es **`kind`**, no `blockType` | ninguna en el esquema; sí en el render, que ahora **TIRA** ante un `kind` desconocido |
 | **`srcset`** tiene consecuencia GEOMÉTRICA: hasta **108.83 px** de alto a 390 | sube la prioridad de **M-IMG** (§CMS-0b): deja de ser una ficha de peso |
 | el `align` de la piel de blurb **no se extrae** (9 de 36) | el campo existe; lo que falta es derivarlo **de la regla compilada**, no del computado, donde está confundido con la herencia |
+
+## ✅ 2j · CMS-3 · LA COLA LARGA — **UNA colección `paginas` con UNIÓN PROPIA de bloques** (2026-08-22, 91.ª tanda)
+
+> **DECISIÓN DEL PROPIETARIO, no derivación de esta tanda.** Los cuatro
+> candidatos se publicaron con sus separadoras en `PLAN-FASE-3.md` §F3-3 (90.ª
+> tanda) para que se decidiera, y se decidió **C3**. Aquí se escribe con su
+> razón, con **por qué caen los otros tres** —cada uno con sus separadoras, no
+> con un adjetivo— y con su **condición de reapertura**, que hace falta porque
+> **C3 se toma CONTRA lo que §1.5b Razón 3 favorece** (§2j.3).
+
+**Las 48 rutas de la cola larga** —7 hubs KB + 6 hubs L4 + 35 sueltas, membresía
+derivada elemento a elemento en §F3-3— se modelan como **una sola colección
+`paginas`**, cuyo cuerpo es un campo `blocks` de **unión PROPIA**. Es el camino
+que `articulos-kb` ya abrió y que este repo tiene construido: `MODULOS_KB`
+**no** consume `MODULOS_COMPARTIDOS`, declara los suyos
+(`texto-kb` · `imagen-kb` · `boton-kb` · `blurb` · `gallery`).
+
+**`MonoSeccion[]` no se toca** — es R2, y es §1.5b Razón 1: ampliarla para que
+quepa la cola larga metería en SECTOR y MONOGRÁFICO tipos que **ninguno de los
+dos tiene medidos**. La unión propia respeta R2 *porque no toca el compartido*,
+y **R1 (cero arquetipos) se respeta porque una colección no es un arquetipo**:
+la cola larga no estrena plantilla, estrena content type.
+
+### 2j.1 · Por qué caen los otros tres — con sus separadoras
+
+| candidato | cae por | separadoras |
+|---|---|---|
+| **C1** · campo RICO por página | **contradice la frontera que este repo ya declara**: *hasta el contenedor de contenido la estructura se modela; RICO empieza POR DEBAJO*. `flujo` y `anchoPct` están **por encima** de ese contenedor, así que aplanarlos a un blob de HTML tira modelado que ya está medido y construido | **16 de las 32 capturadas** — toda página con **>1 sección propia** (KB **5/7** · L4 **6/6** · sueltas **5/19**). La más clara: `/es/soporte/centro-de-ayuda/` y `/es/empresa/` (**11 secciones** cada una) contra `/es/aviso-legal/` (**1**). C1 las representa igual; los otros tres no. ⚠ **El plan decía «≥ 30» y no reproduce**: 16/32 medidas, y las 16 sin capturar sólo pueden subirlo. Es cota inferior, no 30 |
+| **C2** · `MonoSeccion[]` tal cual + bloque de escape | el escape **se ejercita en 20 de las 32 páginas leídas**, o sea que no es una vía de escape: es el modelo. Un escape que traga el caso mayoritario no acota nada | **20 páginas** — KB **7/7** · L4 **1/6** · sueltas **12/19**. ⚠ **El plan decía «12» contando INSTANCIAS DE TIPO** (5 `toggle` + 5 `video` + `map` + `slider`); en la unidad que la afirmación usa —la página— son **20**, y con los dos tipos que v3 recupera: **9** sueltas con `code` y **3** páginas con `blurb`. Y **dentro de los 6 hubs L4 sólo hay 1** (`/es/recursos/`, `blurb`), que por §*un discriminador hallado en UNA SOLA instancia no es un discriminador* sigue significando lo que el plan concluyó: **L4 no podía elegir** entre C2 y C3 |
+| **C4** · dos colecciones (`hubs` 13 · `paginas` 35) | **R1 — «cero arquetipos»** (`ESQUEMA:1216`, `:1524`). Los hubs no estrenan arquetipo, así que partir en dos colecciones **por familia de ruta** no tiene una diferencia de content type que lo sostenga: sería separar por procedencia, no por forma. ⚠ **Y esta tensión hay que dejarla escrita**: `PLAN-FASE-3.md` §F3-3 listaba C4 **vivo** sin reconciliarlo con R1, y §1.5b Razón 3 lo **favorece** (§2j.3) | **2, y bastan para separarlo de C3** — `/es/redes-hibridas-…-grabacion-webinar/` y `/es/politica-de-seguridad-de-la-informacion/`, con **0 secciones propias**: en C4 la colección que las aloje puede declararlas de otra forma; en C3, colección única, **el campo de bloques tiene que ser opcional para las 48** |
+
+> **Lo que C3 paga por elegirse, dicho con su número y no escondido:** esas dos
+> páginas de cero secciones propias obligan a que `bloques` sea **opcional en las
+> 48**, que es §1.5b **Razón 2** al pie de la letra —*la obligatoriedad deja de
+> vivir en el esquema*—. **Es el coste conocido de la decisión, no un
+> descubrimiento**: se paga a cambio de no partir la cola larga en dos
+> colecciones que R1 no sostiene.
+
+### 2j.2 · ⚠ CORRIGE el recuento de tipos: no son 7, y el instrumento tenía una lista escrita a mano
+
+La 90.ª concluyó *«los tipos fuera de `MonoSeccion[]` no son 2, son 7»* y de ahí
+el coste de C3 como *«7 tipos nuevos»*. **Derivado en esta tanda, son 9 fuera y
+8 nuevos**, y el error es §regla 9 caso 7: `modulos-f33-v2.mjs` comparaba contra
+
+```js
+const YA = new Set(["text","image","button","blurb","cta","divider","code","gallery"]);
+```
+
+—**una lista de literales escrita a mano dentro de la derivación**—, que acredita
+a `MonoSeccion[]` **cuatro tipos que no expresa**: `blurb` y `gallery` existen
+como bloque pero en **`MODULOS_KB`**, y `code` y `divider` **no existen en
+ninguna unión del repo** (derivado: `grep 'slug:' packages/cms-config/src/bloques/*.ts`).
+
+`modulos-f33-v3.mjs` no reescribe la lista —eso sólo reinicia el reloj— sino que
+**deriva `UNION_MONO` del registro de bloques**, y separa la retícula
+(`section`/`row`/`column*`, que `flujo`/`anchoPct`/`filas`/`columnas` ya modelan)
+de los módulos de contenido.
+
+| conjunto | v2 decía | **v3, derivado** |
+|---|---|---|
+| hubs KB (7) | 2 | **2** — `toggle` · `video` ✅ sin cambio |
+| hubs L4 (6) | **NINGUNO** | **1** — `blurb` (1/6) |
+| sueltas (19) | **5** | **7** — `code` (**9/19**) · `fullwidth_slider` · `slide` · `blurb` · `map` · `slider` · `icon` |
+
+**La unión que C3 necesita, con su cota:** **12 tipos de contenido distintos**
+en la capa propia · **9 fuera de `MonoSeccion[]`** · **8 sin definición en el
+repo** (`code` · `toggle` · `video` · `fullwidth_slider` · `slide` · `map` ·
+`slider` · `icon`) · **1 copiable** de otra unión (`blurb`).
+
+> **El tipo que más se había perdido es `code`, y es el segundo más frecuente de
+> las sueltas (9/19)** — las páginas de formulario e informe técnico. No es un
+> caso raro de la cola: es un tercio del subconjunto.
+>
+> ⚠⚠ **Y esto NO es un choque con C3: la refuerza.** Los 2 tipos que aparecen
+> corrigen a C2 **en contra**: `code` y `blurb` mandan al escape **12 páginas
+> más** de las que el plan contaba. C3 sale **más caro** (8 definiciones en vez
+> de 7) y **mejor sostenido**. Lo que la corrección sí hace es subir el coste
+> que la fase tiene que presupuestar.
+>
+> ⚠ **Es una COTA, no un total: derivada de 32 páginas de 48.** Las 16 sueltas
+> sin capturar pueden añadir tipos, y la precondición de F3-3 existe justamente
+> para que dejen de faltar.
+
+### 2j.3 · La condición de reapertura — obligatoria, porque C3 va CONTRA Razón 3
+
+**§1.5b Razón 3 favorece C4, no C3.** *Fusionar luego es más barato que separar
+luego; entre dos opciones reversibles se toma la que se deshace mejor* — y la
+que se deshace mejor es **la que empieza separada**, porque deshacerla es
+fusionar. C4 son dos colecciones y C3 es una, así que **Razón 3 ordena C4 antes
+que C3**. Es la misma maquinaria que ya eligió **dos apps** en CMS-0f (§*de DOS
+apps a una: mecánico y electivo*) y **dos colecciones** en §1.5b.
+
+**C3 se elige igualmente porque R1 pesa más que la asimetría**: no hay dos
+content types, hay uno; separar por familia de ruta crearía una frontera que
+ninguna medida sostiene, y la asimetría de deshacer sólo arbitra **cuando
+ninguna medida arbitra** (§CMS-0f, *«el criterio, escrito ANTES de la
+elección»*). Aquí una medida arbitra: **0 tipos de contenido separan a los hubs
+de las sueltas como content type distinto** — comparten `text`, `image`,
+`button`, y lo que los diferencia (`toggle`/`video` contra `code`/`map`/
+`slider`) son **tipos de bloque dentro de la misma unión**, no campos
+obligatorios distintos.
+
+> **CONDICIÓN DE REAPERTURA, explícita.** `paginas` se parte en dos colecciones
+> el día que se cumpla **cualquiera** de estas tres, y no antes:
+>
+> | # | qué tendría que pasar | por qué reabre |
+> |---|---|---|
+> | **RA-1** | que aparezca **un campo obligatorio de verdad en un subconjunto y no en el otro** — no un bloque, un campo del documento | es Razón 2 con evidencia: la obligatoriedad volvería a poder vivir en el esquema, que es lo único que C3 sacrifica hoy |
+> | **RA-2** | que las **2 páginas de cero secciones propias** dejen de ser 2 y pasen a ser **una forma poblada** (≥ 2 instancias con contenido propio de otra naturaleza) | hoy `bloques` es opcional **por 2 de 48**; si esa forma crece, el opcional deja de ser una excepción y pasa a ser un segundo content type |
+> | **RA-3** | que un hub estrene **plantilla** (no bloque): que R1 caiga | R1 es lo único que hoy pesa más que Razón 3. Si cae, Razón 3 vuelve a mandar y C4 gana |
+>
+> **Y lo que costaría separar ENTONCES, escrito hoy que es barato** (§Razón 3:
+> *para entonces ya se habrá escrito contenido en la forma mixta*): con las 48
+> pobladas hay que **decidir fila por fila** de qué colección era cada
+> documento —y el discriminador de ruta **no basta**, porque `/es/soporte/` es
+> suelta y `/es/soporte/centro-de-ayuda/` es hub—, reescribir toda relación que
+> apunte a `paginas`, y **re-aceptar las 48 a umbral cero** sobre el manifiesto
+> de ese momento. Hoy la separación cuesta **editar un fichero de config antes
+> de sembrar**.
+
+### 2j.4 · Lo que esta decisión NO decide
+
+| | |
+|---|---|
+| **la forma de cada uno de los 12 bloques** | se mide al construir, contra el original **con sus hojas**. Hoy están **nombrados**, no especificados |
+| **si `slide` es bloque o hijo de `slider`** | en Divi `et_pb_slide` es hijo; en las 2 páginas que lo traen **nunca aparece sin un slider al lado**. Si se confirma, la unión baja a **11 top-level**. Predicho en el pre-registro para que pueda salir mal |
+| **`code`** | qué es exactamente su contenido (formulario incrustado, script) y si cae bajo la whitelist de §3 o necesita campo propio |
+| **las 16 sueltas sin capturar** | pueden añadir tipos. La unión de arriba es un **mínimo**, y por eso la captura es **precondición** de F3-3 y no un extra |
+
+**Evidencia:** `docs/research/cola-larga/derivaciones/modulos-f33-v3.mjs` +
+`mod-v3.log` (registro de bloques derivado, control §sondas 4: el parseo tira si
+casa con 0 slugs) · pre-registro en
+`docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`.
 
 ## 7 · Decisiones abiertas, en un sitio
 

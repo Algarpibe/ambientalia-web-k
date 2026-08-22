@@ -3205,6 +3205,45 @@ de salida con el `n`**, no con el booleano. Y el mínimo del `n` se **deriva de 
 fuente entera**, nunca del subconjunto que la corrida esté mirando — si
 compartieran variable, el sabotaje movería la portería (§regla 17).
 
+**23 · UN CRITERIO DE ASIMETRÍA SE CITA CON SU OPERACIÓN DE DESHACER NOMBRADA.
+SU CONCLUSIÓN SOLA ES SIMÉTRICA, Y AL RELEERLA EL SIGNO SE INVIERTE.**
+(2026-08-22)
+
+La §regla 9 persigue **números** recordados en vez de derivados. Ésta persigue lo
+mismo en un **criterio**, y es peor porque un criterio no se puede `grep`ear
+contra el repo: se vuelve a derivar en la cabeza de quien lo cita.
+
+> **«Entre dos opciones reversibles se toma la que se deshace mejor» NO DICE
+> CUÁL ES.** Para aplicarlo hay que rehacer el paso *«¿cuál es aquí la operación
+> de deshacer, y qué lado es el barato?»* — y ese paso, hecho de memoria, sale
+> invertido **la mitad de las veces sin que nada chirríe**, porque las dos
+> lecturas suenan igual de sensatas.
+
+**Medido:** §1.5b Razón 3 —*fusionar luego es más barato que separar luego*—
+favorece **la opción que empieza SEPARADA**, porque deshacerla es *fusionar*, que
+es el lado barato. Dos veces en este repo la maquinaria eligió bien con ese
+razonamiento (**dos apps** en CMS-0f, **dos colecciones** en §1.5b). A la
+tercera, un plan de fase escribió *«ordena la colección ÚNICA antes que las
+dos»* — el signo al revés — y **el mismo párrafo la aplicaba bien tres líneas
+antes**. Derivado con `grep`: **11 citas en el repo, 2 invertidas**, y las dos
+eran del mismo enunciado copiado de un documento a otro.
+
+**Y lo caro no es el error, es lo que TAPA:** con el signo invertido, la opción
+elegida parecía la que el criterio ya bendecía, así que **no llevaba condición de
+reapertura**. Con el signo bueno resulta elegida **CONTRA** el criterio — que es
+perfectamente legítimo cuando otra restricción pesa más, pero **obliga a escribir
+qué tendría que pasar para revisarla**. Un signo invertido no produce una
+decisión distinta: produce **una decisión sin su salvaguarda**.
+
+**Operativamente, y son dos mitades:**
+
+1. **al citar un criterio de asimetría se escribe la OPERACIÓN, no sólo la
+   conclusión** — *«se toma la separada, porque deshacerla es fusionar y fusionar
+   es el lado barato»*. Con la operación delante el signo no se puede invertir;
+2. **y cuando una decisión se tome CONTRA el criterio, se dice** —qué restricción
+   pesó más y por qué— **y se le pone condición de reapertura**. Una decisión
+   alineada con el criterio puede no llevarla; una que lo contradice, siempre.
+
 ## Comandos
 
 ```bash

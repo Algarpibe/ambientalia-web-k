@@ -258,8 +258,20 @@
 >
 > **Y un criterio ya ratificado que el propietario puede aplicar sin medir más:**
 > §1.5b **Razón 3** —*entre dos opciones reversibles se toma la que se deshace
-> mejor*— ordena **C3 antes que C4**. **No** ordena C1 frente a C2/C3: pasar de
-> rico a bloques **no** es reversible barato.
+> mejor*— ordena **~~C3 antes que C4~~ → C4 ANTES QUE C3**. **No** ordena C1
+> frente a C2/C3: pasar de rico a bloques **no** es reversible barato.
+>
+> > ⚠⚠ **SIGNO CORREGIDO EN LA 91.ª (2026-08-22).** La que se deshace mejor es
+> > **la que empieza SEPARADA** —deshacerla es *fusionar*, el lado barato—, así
+> > que Razón 3 favorece **C4** (dos colecciones), no C3 (una). Esta acta y
+> > `PLAN-FASE-3.md` §F3-3 llevaban el mismo enunciado invertido; **los dos
+> > corregidos en el texto**, no reconciliados con una nota, porque mientras las
+> > dos lecturas estén escritas cada lector elige la suya. Derivado con `grep`:
+> > **11 citas de Razón 3 en el repo, 2 invertidas** (ésta y `PLAN §F3-3`); las
+> > otras 9 la aplican bien, incluidas `ESQUEMA:479` y `HANDOFF:8380`, que con
+> > esta misma maquinaria eligieron **la opción separada**. La decisión del
+> > propietario (**C3**, `ESQUEMA §2j` · CMS-3) se toma **contra** Razón 3 y por
+> > eso lleva condición de reapertura.
 >
 > **NO SE DECIDIÓ NADA.** La decisión es `CMS-n` y vuelve al propietario con esto
 > delante.
