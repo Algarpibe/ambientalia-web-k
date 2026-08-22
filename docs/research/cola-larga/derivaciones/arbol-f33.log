@@ -1,0 +1,119 @@
+═══ 1 · EL ÁRBOL DE LA CAPA PROPIA, derivado de las 32 capturas
+  páginas 32 · secciones 86 · filas 113 · columnas 179 · módulos 313
+  formas de anidamiento vistas:
+      113  seccion>fila>columna>modulo
+        2  seccion>modulo (sin fila)
+
+═══ 2 · LOS REPARTOS DE COLUMNA — ¿vale la regla de la retícula de KB?
+      62  4_4                        suma 1.0000 ✅
+      24  1_2+1_2                    suma 1.0000 ✅
+      15  1_3+2_3                    suma 1.0000 ✅
+       7  1_3+1_3+1_3                suma 1.0000 ✅
+       2  2_3+1_3                    suma 1.0000 ✅
+       2  1_5+1_5+1_5+1_5+1_5        suma 1.0000 ✅
+       1  1_4+1_4+1_4+1_4            suma 1.0000 ✅
+
+═══ 3 · POR PÁGINA — secciones · filas · módulos · tipos
+  hubs-KB   /es/centro-de-ayuda/kunak-air-cloud/                                     S 5 F 5 M  8  image,text,toggle,video
+  hubs-KB   /es/centro-de-ayuda/kunak-air/                                           S 7 F 7 M 10  image,text,toggle,video
+  hubs-KB   /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/                        S 1 F 1 M  3  image,text,toggle
+  hubs-KB   /es/centro-de-ayuda/kunak-air/video-tutoriales/                          S 7 F15 M 21  image,text,video
+  hubs-KB   /es/soporte/centro-de-ayuda/                                             S11 F12 M 21  button,image,text,toggle,video
+  hubs-KB   /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/          S 1 F 1 M  3  image,text,toggle
+  hubs-KB   /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/            S 5 F11 M 15  image,text,video
+  hubs-L4   /es/productos/                                                           S 2 F 5 M 24  button,image,text
+  hubs-L4   /es/sectores/                                                            S 3 F 3 M  6  image,text
+  hubs-L4   /es/recursos/                                                            S 4 F 5 M 13  blurb,button,image,text
+  hubs-L4   /es/recursos/kunakpedia/                                                 S 2 F 2 M  7  image,text
+  hubs-L4   /es/recursos/documentos-cientificos/                                     S 3 F 3 M  6  image,text
+  hubs-L4   /es/recursos/preguntas-frecuentes/                                       S 2 F 2 M  7  button,image,text
+  sueltas   /es/aviso-legal/                                                         S 1 F 1 M 14  text
+  sueltas   /es/contacto/                                                            S 4 F 3 M 12  code,fullwidth_slider,image,map,text
+  sueltas   /es/descarga-catalogo/                                                   S 1 F 1 M  2  code,image
+  sueltas   /es/empresa/                                                             S11 F12 M 60  blurb,button,fullwidth_slider,image,slider,text
+  sueltas   /es/empresa/premios-y-reconocimientos/                                   S 2 F 7 M 33  image,text
+  sueltas   /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/          S 1 F 1 M  2  code,text
+  sueltas   /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/         S 1 F 1 M  2  code,text
+  sueltas   /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/         S 1 F 1 M  3  code,text
+  sueltas   /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/             S 1 F 1 M  2  code,text
+  sueltas   /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/           S 1 F 1 M  3  code,text
+  sueltas   /es/newsletter/                                                          S 1 F 1 M  3  code,text
+  sueltas   /es/politica-de-cookies/                                                 S 1 F 1 M  8  text
+  sueltas   /es/politica-de-privacidad-y-de-proteccion-de-datos/                     S 1 F 1 M  2  text
+  sueltas   /es/politica-de-seguridad-de-la-informacion/                             S 0 F 0 M  0  
+  sueltas   /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/                S 0 F 0 M  0  
+  sueltas   /es/sistema-interno-de-informacion/                                      S 1 F 1 M  1  text
+  sueltas   /es/soporte/                                                             S 2 F 3 M  9  icon,image,text
+  sueltas   /es/soporte/servicio-de-reparacion/                                      S 2 F 4 M 10  blurb,button,image,text
+  sueltas   /es/suscribete/                                                          S 1 F 1 M  3  code,text
+
+═══ 4 · CADA TIPO, CON SU n Y SU CONTENIDO
+
+  ── et_pb_text  ·  151 instancias en 29 páginas
+     rasgos: con <img> 3/151 · con <a href> 27/151 · con encabezado 94/151 · con texto 151/151 · con <iframe> 0/151
+     clases que NO están en todas (candidatas a campo): breadcrumbs 10/151 · et_clickable 6/151 · none 4/151 · lista-tax-resources 3/151
+     páginas: /es/centro-de-ayuda/kunak-air-cloud/ · /es/centro-de-ayuda/kunak-air/ · /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/ · /es/centro-de-ayuda/kunak-air/video-tutoriales/ · /es/soporte/centro-de-ayuda/ · /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/ · /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/ · /es/productos/ · /es/sectores/ · /es/recursos/ · /es/recursos/kunakpedia/ · /es/recursos/documentos-cientificos/ · /es/recursos/preguntas-frecuentes/ · /es/aviso-legal/ · /es/contacto/ · /es/empresa/ · /es/empresa/premios-y-reconocimientos/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/ · /es/newsletter/ · /es/politica-de-cookies/ · /es/politica-de-privacidad-y-de-proteccion-de-datos/ · /es/sistema-interno-de-informacion/ · /es/soporte/ · /es/soporte/servicio-de-reparacion/ · /es/suscribete/
+
+  ── et_pb_image  ·  71 instancias en 19 páginas
+     rasgos: con <img> 71/71 · con <a href> 18/71 · con encabezado 0/71 · con texto 0/71 · con <iframe> 0/71
+     clases que NO están en todas (candidatas a campo): NINGUNA
+     páginas: /es/centro-de-ayuda/kunak-air-cloud/ · /es/centro-de-ayuda/kunak-air/ · /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/ · /es/centro-de-ayuda/kunak-air/video-tutoriales/ · /es/soporte/centro-de-ayuda/ · /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/ · /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/ · /es/productos/ · /es/sectores/ · /es/recursos/ · /es/recursos/kunakpedia/ · /es/recursos/documentos-cientificos/ · /es/recursos/preguntas-frecuentes/ · /es/contacto/ · /es/descarga-catalogo/ · /es/empresa/ · /es/empresa/premios-y-reconocimientos/ · /es/soporte/ · /es/soporte/servicio-de-reparacion/
+
+  ── et_pb_video  ·  30 instancias en 5 páginas
+     rasgos: con <img> 0/30 · con <a href> 0/30 · con encabezado 0/30 · con texto 0/30 · con <iframe> 30/30
+     clases que NO están en todas (candidatas a campo): NINGUNA
+     páginas: /es/centro-de-ayuda/kunak-air-cloud/ · /es/centro-de-ayuda/kunak-air/ · /es/centro-de-ayuda/kunak-air/video-tutoriales/ · /es/soporte/centro-de-ayuda/ · /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/
+
+  ── et_pb_blurb  ·  22 instancias en 3 páginas
+     rasgos: con <img> 17/22 · con <a href> 4/22 · con encabezado 22/22 · con texto 22/22 · con <iframe> 0/22
+     clases que NO están en todas (candidatas a campo): et_pb_text_align_left 17/22 · iconos-xs-2 13/22 · iconos-md-4 8/22 · iconos-md-3 5/22 · et_pb_with_border 5/22 · et_pb_section_video_on_hover 5/22 · et_pb_text_align_center 5/22 · recursos-glosario 4/22 · et_clickable 1/22
+     páginas: /es/recursos/ · /es/empresa/ · /es/soporte/servicio-de-reparacion/
+
+  ── et_pb_button  ·  13 instancias en 6 páginas
+     rasgos: con <img> 0/13 · con <a href> 0/13 · con encabezado 0/13 · con texto 13/13 · con <iframe> 0/13
+     clases que NO están en todas (candidatas a campo): boton-azul 4/13
+     páginas: /es/soporte/centro-de-ayuda/ · /es/productos/ · /es/recursos/ · /es/recursos/preguntas-frecuentes/ · /es/empresa/ · /es/soporte/servicio-de-reparacion/
+
+  ── et_pb_toggle  ·  10 instancias en 5 páginas
+     rasgos: con <img> 0/10 · con <a href> 10/10 · con encabezado 10/10 · con texto 10/10 · con <iframe> 0/10
+     clases que NO están en todas (candidatas a campo): NINGUNA
+     páginas: /es/centro-de-ayuda/kunak-air-cloud/ · /es/centro-de-ayuda/kunak-air/ · /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/ · /es/soporte/centro-de-ayuda/ · /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/
+
+  ── et_pb_code  ·  9 instancias en 9 páginas
+     rasgos: con <img> 0/9 · con <a href> 0/9 · con encabezado 0/9 · con texto 9/9 · con <iframe> 0/9
+     clases que NO están en todas (candidatas a campo): NINGUNA
+     páginas: /es/contacto/ · /es/descarga-catalogo/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/ · /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/ · /es/newsletter/ · /es/suscribete/
+
+  ── et_pb_icon  ·  3 instancias en 1 páginas
+     rasgos: con <img> 0/3 · con <a href> 0/3 · con encabezado 0/3 · con texto 3/3 · con <iframe> 0/3
+     clases que NO están en todas (candidatas a campo): NINGUNA
+     páginas: /es/soporte/
+
+  ── et_pb_fullwidth_slider  ·  2 instancias en 2 páginas
+     rasgos: con <img> 0/2 · con <a href> 2/2 · con encabezado 2/2 · con texto 2/2 · con <iframe> 0/2
+     clases que NO están en todas (candidatas a campo): NINGUNA
+     páginas: /es/contacto/ · /es/empresa/
+     [1] /es/contacto/
+         texto (200): ¿Estás inmerso en un proyecto de calidad del aire? Cuéntanos tu caso
+     [2] /es/empresa/
+         texto (200): ¿Necesitas tener un mayor control sobre tu negocio o ciudad? Estudiaremos tu caso y te ayudaremos a dar con la solución más adecuada. Contacta con nosotros
+
+  ── et_pb_map  ·  1 instancias en 1 páginas
+     rasgos: con <img> 0/1 · con <a href> 0/1 · con encabezado 1/1 · con texto 1/1 · con <iframe> 0/1
+     clases que NO están en todas (candidatas a campo): NINGUNA
+     páginas: /es/contacto/
+     [1] /es/contacto/
+         texto (200): Kunak Technologies Polígono Parque Empresarial la Muga, 9 Planta 4, Oficina 1, 31160 Orcoyen, Navarra SPAIN
+
+  ── et_pb_slider  ·  1 instancias en 1 páginas
+     rasgos: con <img> 1/1 · con <a href> 0/1 · con encabezado 1/1 · con texto 1/1 · con <iframe> 0/1
+     clases que NO están en todas (candidatas a campo): NINGUNA
+     páginas: /es/empresa/
+     [1] /es/empresa/
+         texto (200): Jérôme De Waele Director general - AIRSCAN Valoramos especialmente la escalabilidad y fiabilidad de la solución Kunak: gestionamos más de 100 estaciones en África, Europa y Asia. Los datos son preciso…
+
+═══ 5 · CONTROL CRUZADO contra mod-v4.log (otro instrumento, mismo objeto)
+     ℹ et_pb_slide              árbol 0 · mod-v4 2 — EXPLICADA:
+        mod-v4 barre el documento con un regex plano, así que cuenta `et_pb_slide` como tipo de primer nivel. El ÁRBOL dice que vive DENTRO de su slider (`et_pb_fullwidth_slider_0 > et_pb_slides > et_pb_slide_0`), o sea que NO es un bloque de la unión: es el array interno del slider. Contesta P-S1 y P-S2 offline.
+     tipos comparados: 12 · discrepancias SIN EXPLICAR: 0 · explicadas: 1
+     ✅ los dos instrumentos cuentan lo mismo salvo las 1 declaradas
