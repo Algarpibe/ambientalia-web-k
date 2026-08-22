@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "fecha": "2026-08-22",
+    "tanda": "91.a",
+    "que": "RE-VERIFICACION CONTRA EL ORIGEN VIVO de las 16 sueltas que PLAN-FASE-3 §F3-3 daba por «sin capturar».",
+    "conclusion": "NO son un hueco de captura: son 13 REDIRECCIONES y 3 BAJAS. El original las sirve asi HOY, igual que el 2026-08-09.",
+    "consecuencia": "La cola larga no tiene 48 paginas: tiene 32 (7 hubs KB + 6 hubs L4 + 19 sueltas). Los 13 restantes son un MAPA DE REDIRECCIONES, que no es un documento de la coleccion `paginas`, y 3 no existen.",
+    "instrumento": "npm run cms:captura-f3 — reanudable: un fichero AUSENTE se vuelve a pedir, asi que las 16 se preguntaron de verdad (0 nuevas, o sea que ninguna devolvio 200).",
+    "primeraLectura": "2026-08-09 (corpus/fase-3/INDICE.json)",
+    "segundaLectura": "2026-08-22 — misma respuesta en las 16, mismo http y mismo location",
+    "alcance": "SOLO el bucket `sueltas` de la cola larga. No dice nada de las otras 6 familias de la campana F3.",
+    "noMide": [
+      "no dice si el DESTINO de cada 301 esta capturado, ni si el clon lo emite: eso es trabajo de F3-3",
+      "no dice si el 301 es permanente en el sentido editorial (podria volver), solo lo que el origen sirve hoy",
+      "no dice nada de las hojas CSS: ese hueco es el otro y sigue abierto en su propia campana"
+    ],
+    "porQueEsteFicheroYNoElINDICE": "La corrida de hoy dejo 7 entradas de `motivo` DEGRADADAS ('HTTP sin respuesta' donde antes habia una determinacion medida por canonical). El INDICE se restaura a la version buena y el unico hecho nuevo de hoy —estas 16— se congela aqui, con su fecha. Es la guarda de §sondas 5 aplicada a mano, porque los scripts de seed no la tienen."
+  },
+  "recuento": { "total": 16, "r301": 13, "r404": 3 },
+  "rutas": [
+    { "ruta": "/es/air-quality-monitor-2/", "http": 301, "location": "https://kunakair.com/wp-content/uploads/2022/06/air-quality-monitor.png", "nota": "redirige a una IMAGEN, no a una pagina" },
+    { "ruta": "/es/air-quality-software-2/", "http": 301, "location": "https://kunakair.com/wp-content/uploads/2018/03/air-quality-software.jpg", "nota": "redirige a una IMAGEN, no a una pagina" },
+    { "ruta": "/es/calidad-aire-puertos-maritimos/", "http": 301, "location": "https://kunakair.com/es/calidad-del-aire-en-puertos/" },
+    { "ruta": "/es/cartuchos-inteligentes/", "http": 404, "location": null },
+    { "ruta": "/es/cartuchos-inteligentes/acido-sulfhidrico/", "http": 301, "location": "https://kunakair.com/es/cartuchos-inteligentes/sulfuro-de-hidrogeno/" },
+    { "ruta": "/es/cartuchos-inteligentes/metano/", "http": 301, "location": "https://kunakair.com/es/sensor-de-calidad-del-aire/metano/" },
+    { "ruta": "/es/case-studies/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/", "http": 301, "location": "https://kunakair.com/es/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez/" },
+    { "ruta": "/es/casos-de-exito/control-de-la-contaminacion-del-transporte-maritimo-en-apb/", "http": 301, "location": "https://kunakair.com/es/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb/" },
+    { "ruta": "/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-quimica-en-alemania/", "http": 301, "location": "https://kunakair.com/es/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania/" },
+    { "ruta": "/es/emision-de-gases-y-particulas-en-refinerias/", "http": 404, "location": null },
+    { "ruta": "/es/estaciones-control-calidad-del-aire/", "http": 301, "location": "https://kunakair.com/es/monitor-calidad-aire/", "nota": "el destino YA esta clonado (src/app/monitor-calidad-aire)" },
+    { "ruta": "/es/glossary/huella-de-carbono/", "http": 301, "location": "https://kunakair.com/es/huella-de-carbono/", "nota": "el destino es un termino de kunakpedia, grupo A" },
+    { "ruta": "/es/higiene-industrial-y-seguridad-laboral/", "http": 404, "location": null },
+    { "ruta": "/es/recursos/guias/", "http": 301, "location": "https://kunakair.com/es/recursos/articulos/", "nota": "el destino es un LISTADO, no una pagina de la cola larga" },
+    { "ruta": "/es/soluciones/", "http": 301, "location": "https://kunakair.com/es/productos/", "nota": "el destino es uno de los 6 hubs L4, ya dentro del conjunto" },
+    { "ruta": "/es/vigilancia-perimetral-calidad-del-aire/", "http": 301, "location": "https://kunakair.com/es/vigilancia-perimetral-industrial/" }
+  ]
+}
