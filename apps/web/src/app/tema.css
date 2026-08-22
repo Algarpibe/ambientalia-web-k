@@ -780,13 +780,25 @@
   padding-bottom: 28px;
 }
 
-/* Los cuatro widgets, con su `mb` de 30 **incluido el último**. El `id` sube la
-   especificidad por encima de las reglas de `L1` sin tocarlas. */
+/* Los cuatro widgets, con su `mb` **incluido el último**. El `id` sube la
+   especificidad por encima de las reglas de `L1` sin tocarlas.
+
+   ⚠⚠ **EL `30px` ERA CORRECTO COMO DECLARACIÓN Y FALSO COMO RESULTADO
+   (89.ª tanda).** `#sidebar .et_pb_widget{margin-bottom:30px}` está servido y
+   la 88.ª lo transcribió tal cual — bien leído. Lo que no se miró es **quién
+   gana**: el tema sirve además `.et_pb_widget{margin-bottom:2rem !important}`,
+   y un `!important` de hoja de autor le gana a una declaración normal por
+   específica que sea. Medido en el original: **32**, en las tres formas y a
+   los dos anchos.
+
+   > **Transcribir la DECLARACIÓN servida no es transcribir la CASCADA.** Una
+   > regla puede estar en el canal, leerse bien y no llegar a la propiedad;
+   > `getComputedStyle` sobre el original lo dice y `grep` sobre las hojas no. */
 .lh-cpt #sidebar .et_pb_widget {
   float: none;
   width: 100%;
   margin-left: 0;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
 /* `clearfix` es una clase SERVIDA (`<div id="content-area" class="clearfix">`),

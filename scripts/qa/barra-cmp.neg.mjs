@@ -2,14 +2,18 @@
  * TEST EN NEGATIVO de `barra-cmp` — cada sabotaje por SU motivo, con control.
  * Uso: npm run qa:barra-cmp-neg     (necesita red: el lado del original es vivo)
  *
- * ── El control NO es «exit 0», y decirlo importa ──────────────────────────
- * `barra-cmp` es un COMPARADOR y su primera corrida encuentra diferencias: ése
- * es el hallazgo, no un fallo. Así que un control que exigiera exit 0 estaría
- * exigiendo que la sonda **no encuentre lo que vino a buscar**, y ponerla verde
- * ajustando esa expectativa sería escribir el defecto DENTRO de la guarda
- * (§regla 21).
+ * ── El control NO se define por el código de salida, y decirlo importa ────
+ * `barra-cmp` es un COMPARADOR, y **su código de salida cambia con el estado
+ * del objeto**: en su primera corrida encontró 234 pares distintos (exit 2) y
+ * tras la transcripción da 0 (exit 0). Un control cableado a cualquiera de los
+ * dos habría caducado **el mismo día** — que es §regla 5ter: *arreglar el
+ * objeto medido caduca el control del instrumento que lo midió*.
  *
- * Lo que el control sí afirma, y es comprobable:
+ * Así que el control **no mira el exit**: mira que la sonda alcance su dominio,
+ * publique su eje mixto y distinga las dos capas. Esas tres cosas son ciertas
+ * con defecto y sin él.
+ *
+ * Lo que el control afirma, y es comprobable:
  *
  *   · **alcanza su dominio entero** — `evaluadas N/N piezas`, numerador y
  *     denominador **en la misma unidad**;
@@ -26,7 +30,16 @@
  * | `sin-original` | el lado del original **entero** | el CONTRATO (0 piezas leídas en los dos lados) |
  * | `lector-ciego` | el contenedor, y con él widgets y botón | el CONTRATO |
  * | `dominio-encogido` | 2 de las 3 formas | el CONTRATO — **y el mínimo NO baja con él** |
- * | `sin-diferencias` | la diferencia entre los dos lados | **exit 0 y `distintos: 0`** |
+ * | `delta-inyectado` | la IGUALDAD de los dos lados: +7 en el contenedor | el par nombrado (`contenedor.h`) |
+ *
+ * ⚠⚠ **HUBO UN QUINTO, `sin-diferencias`, Y SE RETIRÓ EN LA MISMA TANDA.**
+ * Copiaba el lado del original al del clon y exigía «0 distintos», y con el
+ * defecto puesto **discriminaba**. En cuanto la transcripción dejó los dos
+ * lados a Δ0, pasó a predecir **exactamente lo mismo que la corrida limpia**:
+ * cero instancias separadoras. Habría seguido saliendo verde sin probar nada,
+ * que es como un caso muerto se lee como uno bueno. Su simétrico
+ * —`delta-inyectado`— es el que discrimina ahora: con el objeto en verde, la
+ * pregunta ya no es *«¿sabe callar?»* sino *«¿sabe gritar?»*.
  *
  * ⚠ **`dominio-encogido` es el que prueba §regla 17.** Si el mínimo se
  * derivara de la variable que el sabotaje encoge —el catálogo— encoger el
@@ -70,12 +83,11 @@ const casos = [
     salidaTiene: /NO SE PUDO EVALUAR/,
   },
   {
-    etiqueta: "sin-diferencias",
-    exit: 0,
-    porQue: "los dos lados idénticos ⇒ 0 distintos. Es el que prueba que la comparación COMPARA",
-    env: { SABOTAJE: "sin-diferencias" },
-    salidaTiene: /0 distintos|distintos 0/,
-    prohibidoEnSalida: /pares DISTINTOS de/,
+    etiqueta: "delta-inyectado",
+    exit: 2,
+    porQue: "un Δ de +7 en el contenedor tiene que salir CAZADO y NOMBRADO — es el que prueba que la comparación compara",
+    env: { SABOTAJE: "delta-inyectado" },
+    salidaTiene: /contenedor\.h/,
   },
 ];
 

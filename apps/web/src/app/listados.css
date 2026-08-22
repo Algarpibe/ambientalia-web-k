@@ -987,19 +987,32 @@
   clear: both;
 }
 
+/* ⚠⚠ TRANSCRITO DE LA CASCADA SERVIDA (89.ª tanda), y las tres cosas que
+   cambian aquí no las daba ninguna división de píxeles:
+
+   1 · **el `margin-bottom` es `2rem !important` del tema, no los `30px` de
+       Divi.** Los dos están servidos y el que gana es el del tema: medido
+       **32** en las tres formas y a los dos anchos, `custom_html-25` incluido;
+   2 · **el `:last-child { margin-bottom: 0 }` NO EXISTE en el original — ni en
+       `L1`.** La 88.ª lo dejó puesto razonando *«`#sidebar` no lo tiene pero
+       `L1` sí»*; medido, el último widget de `L1` lleva sus **32** igual que
+       los otros tres. Con él puesto, la barra perdía un margen entero;
+   3 · **`font-size` y `line-height` aquí eran INVENTADOS.** El original no le
+       pone ninguno de los dos a `.et_pb_widget` —la cascada servida sólo trae
+       `margin-bottom`— así que el widget **hereda** los 18px/30.6px del
+       cuerpo. El clon servía 14px/1.7em, que es el default de Divi que este
+       sitio no usa.
+
+   La aritmética cierra al céntimo con los dos lados:
+     L1@1440  72 + 0 + 102.19 + 128 + 4×32 = 430.19  (original)
+     L1@390   72 + 0 + 102.19 + 106 + 4×32 = 408.19  (original)  */
 .lh-cuerpo .et_pb_widget {
   float: left;
   max-width: 100%;
   width: 100%;
   word-wrap: break-word;
-  margin-bottom: 30px;
-  font-size: 14px;
-  line-height: 1.7em;
+  margin-bottom: 2rem;
   color: #666;
-}
-
-.lh-cuerpo .et_pb_widget:last-child {
-  margin-bottom: 0;
 }
 
 .lh-cuerpo .et_pb_widget a {
@@ -1011,11 +1024,26 @@
   color: #82c0c7;
 }
 
+/* El `h4` de la barra. Cascada servida: `h1..h6 { padding-bottom:10px;
+   line-height:1em }` + `.widgettitle, h4.widgettitle { font-size:22px }`, y el
+   `margin` se lo deja en 0 el reset del tema.
+
+   ⚠ El `font-size` era **18** y es **22**: 4 px por título, tres títulos. Y no
+   es sólo alto — a 22 px el titular del boletín **envuelve** donde a 18 no, que
+   es lo que hacía que `custom_html-25·titulo` diera 54 en el original y 28 en
+   el clon a 390 (−26 de un solo módulo). El `margin-bottom: 10px` tampoco
+   existe: el alto del título es `line-height + padding-bottom` = 22 + 10 = 32. */
 .lh-cuerpo .et_pb_widget .widgettitle {
-  margin: 0 0 10px;
+  margin: 0;
   padding-bottom: 10px;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 22px;
+  /* `300` y no `500`. La regla del tema —`.widgettitle, h4.widgettitle{
+     font-size:22px; letter-spacing:-.5px; font-weight:300}`— estaba leída desde
+     la primera vuelta y NO se transcribió a propósito: el peso no se había
+     MEDIDO, y transcribir una regla leída sin medirla es suponer. Se añadió
+     `fw` al lector, salió `orig 300 → clon 500` en los tres títulos, y entonces
+     sí. Es la diferencia entre leer el canal y comprobar lo que llega. */
+  font-weight: 300;
   line-height: 1em;
   color: #333;
   letter-spacing: -0.5px;
@@ -1030,6 +1058,21 @@
 
 .lh-cuerpo .et_pb_widget ul li {
   margin-bottom: 0.5em;
+}
+
+/* ⚠ **La ironía exacta de esta tanda, y por eso se deja escrita.** El clon
+   servía un `:last-child { margin-bottom: 0 }` sobre **el widget**, donde el
+   original NO lo tiene, y le faltaba el que el original SÍ tiene: sobre **el
+   `li`**. Servido: `.et_pb_widget ol li:last-child, .et_pb_widget ul li:last-child
+   { margin-bottom: 0 }`.
+
+   Medido, y es lo que lo dirimió — no la lectura de la hoja: en el original el
+   primer `li` de «Categorías» computa `margin-bottom: 9px` y el último `0px`.
+   Son los `+9.00` que quedaban en `text-7`, y con ellos el `+9.00` del
+   contenedor entero de `L1`. Una regla en el nivel equivocado no da error:
+   da 9 px en el sitio donde nadie los busca. */
+.lh-cuerpo .et_pb_widget ul li:last-child {
+  margin-bottom: 0;
 }
 
 /* El buscador. ⚠ `SP-B4`: es una INTERACCIÓN y `P-LH-C6` no la midió — su
@@ -1069,9 +1112,51 @@
   cursor: pointer;
 }
 
-/* El botón de la newsletter. `et_pb_button` es la convención del tema que el
-   80 % del corpus usa para que un enlace se vea como botón. */
+/* ⚠⚠ EL BOTÓN DE LA NEWSLETTER — la mayor cuota del déficit, y estaba SIN CAJA.
+   El clon servía `display:inline-block; cursor:pointer` y nada más: 23.80 de
+   alto contra **44** del original, o sea **−20.20**, y con él dentro
+   `custom_html-25` iba a −48.20 (@1440) y −66.20 (@390).
+
+   La cascada servida, preguntada a la página con `CSS.getMatchedStylesForNode`
+   y no adivinada con `grep` —que es lo que la dejó sin encontrar la primera
+   vez, porque el filtro exigía `button` en el selector y la regla que faltaba
+   se llama `.boton-azul`—:
+
+     .et_pb_button          font-size:20px; padding:.3em 1em;
+                            line-height:1.7em!important; border:2px solid;   [Divi core]
+     .et_pb_button          display:inline-block; margin-inline-end:1em;
+                            padding:.5em 2.7em .6em 1.5em !important;        [tema]
+     body .et_pb_button     font-size:15px; border-width:1px!important;
+                            border-color:#333; border-radius:30px;
+                            font-weight:bold;                                [customizer]
+     .boton-azul            margin-bottom:30px!important                     [tema]
+     .et_pb_button.boton-azul  border-color/color/background: var(--azul)    [tema]
+
+   ⚠ **El `em` se resuelve contra el `font-size` FINAL, que es 15 y no 20.** El
+   `padding: .5em/.6em` da **7.5 / 9**, no 10 / 12; y el pre-registro predijo
+   «≥26» multiplicando por el 20 px de Divi sin ver que el customizer lo baja.
+   Es la trampa del porcentaje-sin-contenedor con un `em` en vez de un `%`.
+
+   El alto sale exacto: `lh 25.5 + pt 7.5 + pb 9 + bt 1 + bb 1 = 44.00`.
+
+   ⚠ **ALCANCE: se transcribe ACOTADO a la barra, y el original lo sirve
+   GLOBAL** (`body .et_pb_button`). Lo medido es la barra; hacerlo global movería
+   rutas que esta tanda no ha comparado. Queda declarado, no cableado. */
 .lh-cuerpo .et_pb_widget .et_pb_button {
   display: inline-block;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.7em;
+  padding: 0.5em 2.7em 0.6em 1.5em;
+  border: 1px solid #333333;
+  border-radius: 30px;
+  margin-inline-end: 1em;
+}
+
+.lh-cuerpo .et_pb_widget .et_pb_button.boton-azul {
+  margin-bottom: 30px;
+  border-color: #0075c9;
+  color: #fff;
+  background-color: #0075c9;
 }

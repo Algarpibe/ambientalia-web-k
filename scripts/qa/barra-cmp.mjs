@@ -131,6 +131,16 @@ const LECTOR = (widgets, sab) => {
       bl: cs.borderLeftWidth,
       fs: cs.fontSize,
       lh: cs.lineHeight,
+      /* ⚠ AÑADIDOS tras la 1.ª corrida. No corrigen nada de lo medido —los
+       * caminos anteriores siguen significando lo mismo, así que las
+       * congeladas del 2026-08-21 NO caducan (§regla 5bis mira las
+       * correcciones, no las ampliaciones)—. Se añaden porque el reparto dejó
+       * una pregunta que ningún campo leído podía contestar: el titular del
+       * boletín envuelve a DOS renglones en el original y a UNO en el clon, y
+       * el ancho del texto depende del peso y del interletraje tanto como del
+       * cuerpo. Sin medirlos, «ya cuadra» sería una suposición. */
+      fw: cs.fontWeight,
+      ls: cs.letterSpacing,
       disp: cs.display,
       float: cs.cssFloat,
     };
@@ -266,10 +276,24 @@ for (const [forma, rutaOrig, rutaClon] of CATALOGO) {
 
   const A = aplana(orig);
   let B = aplana(clon);
-  /* `sin-diferencias`: el clon devuelve los valores del original. Prueba que la
-   * comparación COMPARA — si con esto siguen saliendo diferencias, el
-   * comparador está inventándolas. */
-  if (SABOTAJE === "sin-diferencias") B = { ...A };
+  /* ⚠⚠ `sin-diferencias` EXISTIÓ Y SE RETIRÓ EN LA MISMA TANDA, y por qué es
+   * más útil que el caso en sí (§regla 5ter · §*dos modelos que predicen lo
+   * mismo en todo tu dominio son uno solo*).
+   *
+   * Mientras el clon difería del original, copiar el lado del original al del
+   * clon y exigir «0 distintos» **discriminaba**: separaba «la comparación
+   * compara» de «el comparador inventa diferencias». En cuanto la
+   * transcripción dejó los dos lados a Δ0, ese sabotaje **predice exactamente
+   * lo mismo que la corrida limpia**: 0 distintos y exit 0. Cero instancias
+   * separadoras, o sea que dejó de probar nada — y habría seguido saliendo
+   * VERDE, que es como un caso muerto se lee como un caso bueno.
+   *
+   * Lo sustituye el simétrico, que es el que discrimina **ahora** que la sonda
+   * está en verde: se inyecta un Δ CONOCIDO en el lado del clon y se exige que
+   * la sonda lo cace, lo nombre y salga ≠0. Con el objeto arreglado, la
+   * pregunta ya no es «¿sabe callar?» sino «¿sabe gritar?». */
+  if (SABOTAJE === "delta-inyectado" && B["contenedor.h"] !== undefined)
+    B["contenedor.h"] = Math.round((Number(B["contenedor.h"]) + 7) * 100) / 100;
 
   /* Las PIEZAS leídas en los dos lados — la unidad del contrato. Una pieza que
    * un lado no devuelve NO cuenta, que es lo que hace que `lector-ciego` caiga

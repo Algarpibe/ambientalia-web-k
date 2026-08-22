@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "fecha": "2026-08-21",
+    "que": "la BARRA LATERAL widget a widget, clon contra original — las 3 formas que la sirven",
+    "ancho": 1440,
+    "ladoOriginal": "kunakair.com VIVO (el espejo NO descompone la barra: 0 apariciones de search-6/custom_html/widgettitle)",
+    "ladoClon": "http://127.0.0.1:65402",
+    "sabotaje": "dominio-encogido",
+    "unidad": "el PAR (forma·página·camino) — no la ruta, no la forma",
+    "minimoDerivadoDe": "lh-barra.json (4 widgets) × 6 páginas del fuente",
+    "noMide": [
+      "L1-resources: 0 de 37 documentos — no sirve barra (lh-barra.json §porFamilia); el clon ya ramifica",
+      "/faqs/[slug]: 4 rutas — FaqSidebar.tsx es OTRO componente con otros 4 widgets, fuera de alcance por encargo",
+      "el buscador como INTERACCIÓN (SP-B4): se compara la caja, no lo que hace al enviarse",
+      "las páginas fuera del catálogo: 2 de 17 en blog · 2 de 63 en etiqueta · 2 de 8 en glosario",
+      "el blanco entre widgets: el original lo sirve (\\n\\t\\t\\t\\t en blog, \\n\\t\\t en glosario) y el clon no emite ninguno — con float:left/none no debería renderizar, pero NO está medido"
+    ]
+  },
+  "paginas": {
+    "L1-blog::/blog": {
+      "forma": "L1-blog",
+      "rutaOrig": "/es/blog/",
+      "rutaClon": "/blog",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 0,
+      "diferencias": []
+    },
+    "L1-blog::/blog/page/2": {
+      "forma": "L1-blog",
+      "rutaOrig": "/es/blog/page/2/",
+      "rutaClon": "/blog/page/2",
+      "envoltorio": "envoltorio-L1",
+      "distintos": 0,
+      "diferencias": []
+    }
+  },
+  "ejes": {},
+  "mixto": {
+    "unidad": "el PAR",
+    "pares": [],
+    "suma": 0,
+    "cardinal": 0
+  },
+  "resumen": {
+    "paresComparados": 306,
+    "paresDistintos": 0,
+    "porEje": {},
+    "formasVistas": 2
+  }
+}
