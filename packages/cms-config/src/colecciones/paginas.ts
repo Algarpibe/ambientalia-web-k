@@ -30,7 +30,7 @@
  */
 import type { CollectionConfig } from "payload";
 
-import { seoA } from "../campos/comunes.ts";
+import { campoHtml, seoA } from "../campos/comunes.ts";
 import { bloquesPagina } from "../bloques/paginas.ts";
 import { registroDeSlug } from "../hooks/registro-slug.ts";
 
@@ -52,6 +52,44 @@ export const paginas: CollectionConfig = {
     seoA,
     { name: "titulo", type: "text", required: true },
     bloquesPagina,
+    /**
+     * ⚠⚠ **S2 · EL SEGUNDO CANAL DE CONTENIDO — decisión del propietario,
+     * 2026-08-22, cierre de §2j.3b.**
+     *
+     * `bloques` es opcional, y por sí solo **eso no expresa nada**: un
+     * documento sin bloques se emite con cabecera, pie y nada en medio. Es
+     * §*un campo opcional no expresa un caso — sólo permite que falte*, que
+     * salió justo de este documento.
+     *
+     * Este campo es lo que da sitio al contenido del **régimen `--`**: sin
+     * `et_pb_pagebuilder_layout` ni `et-tb-has-body`, el tema sirve la
+     * plantilla clásica de WordPress y el cuerpo vive en `entry-content` como
+     * HTML. Hoy lo ejercita **1 documento de 31**
+     * (`/es/politica-de-seguridad-de-la-informacion/`, 8387 caracteres,
+     * `p · h2 · ul · li · b`).
+     *
+     * ⚠ **Y ese n = 1 se DECLARA, no se disimula** (§*un campo que ningún dato
+     * ejercita es un camino de render sin estrenar*): con una sola instancia,
+     * nada de lo que este campo haga está probado por variación. Lo que sí
+     * está probado es que el dato **PASA la validación**, corrida y no
+     * inspeccionada — `derivaciones/valida-campo-rico-f33.log`.
+     *
+     * **NO es un campo nuevo**: es `campoHtml`, el mismo helper y el mismo
+     * `validaHtmlCorpus` que ya usan `entradas-blog`, `terminos-kunakpedia`,
+     * `documentos-cientificos` y `articulos-kb`, con su contrato medido en
+     * 209/209 documentos (43 etiquetas · `<script>` prohibido · 275–69 784).
+     * Reusarlo es lo que impide que S2 sea «un escape elegido sin medir», que
+     * es el reproche que tumbó a C2.
+     *
+     * **Por qué NO se tomó S3** (dejar el régimen `--` fuera y esperar a su
+     * segunda instancia): S3 cambia un campo sin probar por **una ruta sin
+     * emitir**, y esa ruta existe y se sirve hoy. El campo, en cambio, no
+     * inventa contrato: hereda uno ya censado. Entre «un camino de render con
+     * n = 1 y contrato heredado» y «una baja declarada», el propietario tomó
+     * el primero — y lo que queda SIN PROBAR es la geometría, que es lo mismo
+     * que queda sin probar en los otros 30.
+     */
+    campoHtml("cuerpoClasico"),
   ],
 };
 

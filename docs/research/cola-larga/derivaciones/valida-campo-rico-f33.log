@@ -1,0 +1,20 @@
+═══ 1 · DOMINIO — documentos en régimen `--`, DERIVADO del `<body>`
+  n = 1   ⚠ con n = 1, «pasa» es un dato de UNA instancia, no una propiedad del campo
+
+  ── /es/politica-de-seguridad-de-la-informacion/
+     ✅ 1/3 EXTRACCIÓN: string de 9169 caracteres · rango del contrato 275–69784
+     ✅ 2/3 VALIDACIÓN: PASA
+     ✅ 3/3 CONTROL: el mismo cuerpo con `<script>` → RECHAZA
+            motivo: §3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustit…
+     etiquetas (5): b · h2 · li · p · ul
+     texto sin marcado: 8364 caracteres
+
+═══ 2 · VEREDICTO
+  documentos 1 · condiciones evaluadas 3 · fallos 0
+  ✅ S2 EJERCITADA — el dato del régimen `--` entra en `campoHtml`, y el
+     control prueba que la validación se estaba ejecutando de verdad.
+
+═══ 3 · LO QUE ESTO **NO** DICE
+  · no dice que RENDERICE: dice que el campo lo ADMITE
+  · no dice nada de geometría — 0 ejes comparados en estas rutas
+  · con n = 1 no hay variación que probar: SIN PROBAR se declara, no se disimula

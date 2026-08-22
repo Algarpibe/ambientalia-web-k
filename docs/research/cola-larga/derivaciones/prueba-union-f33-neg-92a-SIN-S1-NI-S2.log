@@ -1,0 +1,72 @@
+NEGATIVO de prueba-union-f33.mjs — 92.ª tanda, 2026-08-22
+(§regla 7: esto NO es una medida del sitio, es un artefacto de test en negativo)
+
+La prueba concluye que la unión NO expresa 2 de las 32. Eso es una REFUTACIÓN
+MEDIDA de una premisa del ESQUEMA, así que antes de subirla al propietario hay
+que probar que el instrumento sabe fallar **en los dos sentidos** — y sobre todo
+que su veredicto viene de donde dice venir.
+
+Los sabotajes corren sobre una COPIA en el scratchpad, nunca sobre el fuente
+(§regla 20).
+
+┌────────────┬──────────────────────────────────────┬──────┬──────────────────────┐
+│ caso       │ qué se anula                          │ exit │ veredicto            │
+├────────────┼──────────────────────────────────────┼──────┼──────────────────────┤
+│ CONTROL    │ nada                                  │  3   │ 30/32 · 2 nombradas  │
+│ SABOTAJE A │ `toggle` fuera de la correspondencia  │  3   │ 25/32 · 7 nombradas  │
+│ SABOTAJE B │ el PUNTO 3 (sin capa propia + contenido) │ 0 │ **32/32 · 0**        │
+└────────────┴──────────────────────────────────────┴──────┴──────────────────────┘
+
+SABOTAJE A — ¿sabe ver que falta un bloque?
+  Quitando `toggle` del MAPA, por régimen:
+      HIBRIDO (BT)   8 →  3 expresadas ·  5 NO
+      TOTAL         32 → 25 expresadas ·  7 NO
+      módulos expresados: 303 de 313  (los 10 `toggle`)
+  Las 5 salen NOMBRADAS con `módulo et_pb_toggle SIN CORRESPONDENCIA en la unión`.
+  ▸ Cae por SU invariante (exit 3), no por una excepción aguas abajo. Y el
+    reparto por régimen enseña por qué se publica así: las 5 son TODAS del mismo
+    régimen. Un total de «7 de 32» habría escondido que el daño es de una familia.
+
+  ⚠ El primer intento de este caso cayó con `ERR_MODULE_NOT_FOUND` (exit 1) por
+    una ruta manglada, no por su invariante. Un sabotaje que cae por un motivo
+    ajeno no prueba nada — se arregló la ruta y se repitió. Queda anotado porque
+    el exit 1 se lee como «el negativo funciona» si nadie mira el motivo.
+
+SABOTAJE B — ¿de dónde viene el veredicto? **ÉSTE ES EL SEPARADOR**
+  Desactivando el punto 3 —la comprobación de «sin capa propia PERO CON
+  contenido»— la prueba da:
+      TOTAL  32 → **32 expresadas · 0 NO** · exit **0**
+  O sea: **el verde falso completo.**
+
+  ▸ Eso es exactamente lo que produce leer «`bloques` es opcional» como
+    suficiente: los 2 documentos sin capa propia salen «expresados» porque el
+    campo admite estar ausente, y nadie pregunta si tenían algo que poner. La
+    página se emitiría con cabecera, pie y **nada en medio**, respondiendo 200
+    — §*una ruta que responde 200 no prueba que sirva CONTENIDO*, que es el modo
+    de fallo que ya costó seis páginas de `articulos-kb` servidas con cero
+    módulos y todo lo demás en verde.
+
+  ▸ Y por eso el punto 3 está escrito **en la cabecera del script, con su
+    justificación, ANTES de haber mirado el dato**: si se hubiera añadido al ver
+    que dos páginas salían vacías, sería una condición ajustada al resultado.
+
+CONTROL EN POSITIVO — con todo puesto
+  11 bloques · 11 correspondencias · **0 tipos del corpus sin correspondencia**
+  BUILDER (B-)      22 / 22  ✅
+  HIBRIDO (BT)       8 /  8  ✅
+  PLANTILLADO (-T)   0 /  1  ❌
+  SIN MARCADOR (--)  0 /  1  ❌
+  módulos de contenido: **313 de 313 expresados por un bloque**
+
+  ▸ Los 313/313 son la mitad que NO hay que perder de vista: la refutación **no
+    es sobre los bloques**. Los 11 tipos cubren todos los módulos que existen.
+    Es sobre dos documentos cuyo contenido **no son módulos**.
+
+LO QUE ESTE NEGATIVO **NO** PRUEBA (§*escribe qué preguntas NO contesta*)
+  · no prueba que los CAMPOS de cada bloque basten — prueba que el TIPO existe.
+    Contraejemplo ya conocido y declarado: la retícula de `blurb` trae
+    `iconos-md-4` en 8 de 22 y el enum de KB no lo tiene (F3-3-RETICULA-BLURB);
+  · no prueba nada de GEOMETRÍA. 0 ejes de estas 32 están comparados contra el
+    original, y esta prueba no abre el original;
+  · no prueba que las 30 «expresadas» se RENDERICEN bien: expresable y correcto
+    son dos afirmaciones, y sólo un comparador de dos lados da la segunda.

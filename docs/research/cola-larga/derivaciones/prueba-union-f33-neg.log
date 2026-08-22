@@ -1,72 +1,130 @@
-NEGATIVO de prueba-union-f33.mjs — 92.ª tanda, 2026-08-22
+NEGATIVO de prueba-union-f33.mjs — 93.ª tanda, 2026-08-22, CON S1 Y S2 APLICADAS
 (§regla 7: esto NO es una medida del sitio, es un artefacto de test en negativo)
 
-La prueba concluye que la unión NO expresa 2 de las 32. Eso es una REFUTACIÓN
-MEDIDA de una premisa del ESQUEMA, así que antes de subirla al propietario hay
-que probar que el instrumento sabe fallar **en los dos sentidos** — y sobre todo
-que su veredicto viene de donde dice venir.
-
+El de la 92.ª se conserva íntegro en `prueba-union-f33-neg-92a-SIN-S1-NI-S2.log`.
 Los sabotajes corren sobre una COPIA en el scratchpad, nunca sobre el fuente
-(§regla 20).
+(§regla 20): un `finally` no corre si el proceso muere por señal, y un fuente
+saboteado sigue compilando y entra en el siguiente `git add -A`.
 
-┌────────────┬──────────────────────────────────────┬──────┬──────────────────────┐
-│ caso       │ qué se anula                          │ exit │ veredicto            │
-├────────────┼──────────────────────────────────────┼──────┼──────────────────────┤
-│ CONTROL    │ nada                                  │  3   │ 30/32 · 2 nombradas  │
-│ SABOTAJE A │ `toggle` fuera de la correspondencia  │  3   │ 25/32 · 7 nombradas  │
-│ SABOTAJE B │ el PUNTO 3 (sin capa propia + contenido) │ 0 │ **32/32 · 0**        │
-└────────────┴──────────────────────────────────────┴──────┴──────────────────────┘
+┌──────────────┬──────────────────────────────────────┬──────┬───────────────────────┐
+│ caso         │ qué se anula                          │ exit │ veredicto             │
+├──────────────┼──────────────────────────────────────┼──────┼───────────────────────┤
+│ CONTROL      │ nada                                  │  0   │ 31/31 · 0 nombradas   │
+│ SABOTAJE A   │ `toggle` fuera de la correspondencia  │  3   │ 26/31 · 5 nombradas   │
+│ SABOTAJE B   │ el PUNTO 3 (sin capa propia + contenido) │ 0 │ **31/31 — MUDO**      │
+│ SABOTAJE B′  │ el CAMPO RICO fuera del MODELO        │  3   │ 30/31 · 1 nombrada    │
+│ CONTRAFACT C │ S1 desaplicada                        │  0   │ **32/32 — NO SEPARA** │
+└──────────────┴──────────────────────────────────────┴──────┴───────────────────────┘
 
-SABOTAJE A — ¿sabe ver que falta un bloque?
-  Quitando `toggle` del MAPA, por régimen:
-      HIBRIDO (BT)   8 →  3 expresadas ·  5 NO
-      TOTAL         32 → 25 expresadas ·  7 NO
-      módulos expresados: 303 de 313  (los 10 `toggle`)
-  Las 5 salen NOMBRADAS con `módulo et_pb_toggle SIN CORRESPONDENCIA en la unión`.
-  ▸ Cae por SU invariante (exit 3), no por una excepción aguas abajo. Y el
-    reparto por régimen enseña por qué se publica así: las 5 son TODAS del mismo
-    régimen. Un total de «7 de 32» habría escondido que el daño es de una familia.
 
-  ⚠ El primer intento de este caso cayó con `ERR_MODULE_NOT_FOUND` (exit 1) por
-    una ruta manglada, no por su invariante. Un sabotaje que cae por un motivo
-    ajeno no prueba nada — se arregló la ruta y se repitió. Queda anotado porque
-    el exit 1 se lee como «el negativo funciona» si nadie mira el motivo.
+═══ SABOTAJE A — ¿sabe ver que falta un bloque? SÍ, y por su motivo
 
-SABOTAJE B — ¿de dónde viene el veredicto? **ÉSTE ES EL SEPARADOR**
-  Desactivando el punto 3 —la comprobación de «sin capa propia PERO CON
-  contenido»— la prueba da:
-      TOTAL  32 → **32 expresadas · 0 NO** · exit **0**
-  O sea: **el verde falso completo.**
+  Quitando `toggle` del MAPA: 31 → 26 expresadas · 5 NO · exit 3.
+  Las 5 salen NOMBRADAS con `módulo et_pb_toggle SIN CORRESPONDENCIA en la
+  unión`, y las 5 son del MISMO régimen (BT). Un total de «5 de 31» habría
+  escondido que el daño es de una familia entera.
 
-  ▸ Eso es exactamente lo que produce leer «`bloques` es opcional» como
-    suficiente: los 2 documentos sin capa propia salen «expresados» porque el
-    campo admite estar ausente, y nadie pregunta si tenían algo que poner. La
-    página se emitiría con cabecera, pie y **nada en medio**, respondiendo 200
-    — §*una ruta que responde 200 no prueba que sirva CONTENIDO*, que es el modo
-    de fallo que ya costó seis páginas de `articulos-kb` servidas con cero
-    módulos y todo lo demás en verde.
+  ▸ Cae por SU invariante, no por una excepción aguas abajo.
 
-  ▸ Y por eso el punto 3 está escrito **en la cabecera del script, con su
-    justificación, ANTES de haber mirado el dato**: si se hubiera añadido al ver
-    que dos páginas salían vacías, sería una condición ajustada al resultado.
 
-CONTROL EN POSITIVO — con todo puesto
+═══ SABOTAJE B — QUEDA MUDO, Y ESO SE DICE EN VOZ ALTA
+
+  Desactivando el punto 3, el veredicto es **idéntico al control**: 31/31,
+  exit 0. En la 92.ª este mismo sabotaje convertía 30/32 en 32/32 y era EL
+  separador del negativo entero. Hoy no separa nada.
+
+  ⚠ **Y la pregunta correcta no es «¿por qué calla?» sino «¿calla porque se
+  arregló el objeto o porque se debilitó la guarda?»** — que es exactamente lo
+  que el encargo de esta tanda exigía comprobar, y §regla 21 (la vuelta: *un
+  caso de negativo puede morirse el día que se arregla el objeto, y se muere
+  verde*).
+
+  **Se arregló el objeto, y hay dos pruebas, no una:**
+
+  1 · **el rastro observable.** El control imprime `S2 (1 por campo rico)` y el
+      sabotaje B imprime `S2 (0 por campo rico)`. O sea que el punto 3 SÍ deja
+      de ejecutarse — lo que ya no hay es nada que rescatar, porque el único
+      documento que caía por él ahora tiene campo donde caer;
+  2 · **el simétrico, que es la prueba de verdad** → SABOTAJE B′.
+
+  ▸ Un caso mudo NO se borra: se sustituye por su simétrico (§regla 21). Con
+    defecto la pregunta era *«¿sabe callar?»*; sin defecto es *«¿sabe gritar?»*.
+
+
+═══ SABOTAJE B′ — EL SUSTITUTO. Muerde, y por el MISMO motivo
+
+  Se sabotea **el MODELO, no la guarda**: una copia de `colecciones/paginas.ts`
+  con `campoHtml("cuerpoClasico")` retirado, inyectada por `NEG_COL`. La sonda
+  la lee por la misma derivación que en el fuente, así que no hay ninguna rama
+  de test en el camino.
+
+      campos ricos declarados → NINGUNO — el punto 3 no tiene dónde mandar el contenido
+      TOTAL  31 → 30 expresadas · 1 NO · exit 3
+
+  Y la nombrada es la que tiene que ser, con el mensaje de la 92.ª intacto:
+      ❌ /es/politica-de-seguridad-de-la-informacion/
+         · SIN CAPA PROPIA y CON CONTENIDO: 8387 caracteres en `entry-content`,
+           etiquetas p,h2,ul,li,b — la unión NO tiene campo donde ponerlo
+
+  ▸ Esto es lo que prueba que **el 31/31 lo compró S2 y no una guarda relajada**:
+    quitando S2 vuelve el rojo exacto de la 92.ª, mensaje incluido.
+
+
+═══ CONTRAFACTUAL C — S1 desaplicada: **0 INSTANCIAS SEPARADORAS**. Es el hallazgo
+
+  Desaplicando S1 —la webinar vuelve a contarse como documento de `paginas`—
+  la prueba da **32/32 y exit 0**. O sea: **por expresabilidad, esta prueba no
+  distingue si la webinar está en `paginas` o en `entradas-blog`.**
+
+  El motivo está en su propia salida: `S2 (2 por campo rico)`. El campo rico que
+  S2 añadió **se traga también el `et_pb_post_content` de la webinar**, así que
+  las dos salidas predicen lo mismo en todo el dominio — §*dos modelos que
+  predicen lo mismo en todo tu dominio son uno solo*.
+
+  ⚠⚠ **Y esto NO es un defecto del instrumento: es una constricción sobre las
+  dos salidas, y hay que escribirla.** S1 y S2 **no son independientes**: con S2
+  puesta, S1 deja de ser necesaria *para que el documento se exprese*. Si S1 se
+  justificara por expresabilidad, sería un escape que traga el caso que decía
+  acotar — el reproche exacto que tumbó a C2.
+
+  **Lo que SÍ adjudica S1, medido en la misma corrida** (§1b de la salida):
+
+      campo del JSON-LD    n/32   ¿separa?
+      articleSection        1/32  SÍ — sólo la webinar («Seminarios Web»)
+      author                1/32  SÍ — sólo la webinar («Equipo de marketing…»)
+      datePublished        32/32  NO — lo traen TODAS
+
+  ▸ Alojar la webinar en `paginas` **perdería su categoría y su autor**: dato
+    servido sin campo donde caer. Ése es el criterio del punto 3 un nivel más
+    abajo, y es el único que separa.
+
+  ▸ **`datePublished` NO separa, y decirlo importa más que el resto.** Es el
+    candidato obvio —«es una entrada, luego tiene fecha»— y lo traen las 32.
+    Citarlo habría sido §*comprueba que Y VARÍE en el dominio donde se midió*:
+    nombrar una propiedad del conjunto entero creyendo que discrimina.
+
+
+═══ CONTROL EN POSITIVO — con todo puesto
+
   11 bloques · 11 correspondencias · **0 tipos del corpus sin correspondencia**
   BUILDER (B-)      22 / 22  ✅
   HIBRIDO (BT)       8 /  8  ✅
-  PLANTILLADO (-T)   0 /  1  ❌
-  SIN MARCADOR (--)  0 /  1  ❌
+  SIN MARCADOR (--)  1 /  1  ✅   ← por campo rico, n = 1, DECLARADO
+  PLANTILLADO (-T)   — fuera de alcance (S1), NOMBRADO
   módulos de contenido: **313 de 313 expresados por un bloque**
 
-  ▸ Los 313/313 son la mitad que NO hay que perder de vista: la refutación **no
-    es sobre los bloques**. Los 11 tipos cubren todos los módulos que existen.
-    Es sobre dos documentos cuyo contenido **no son módulos**.
+  ▸ TRES regímenes en `paginas`, no cuatro: el `-T` se fue con la webinar.
 
-LO QUE ESTE NEGATIVO **NO** PRUEBA (§*escribe qué preguntas NO contesta*)
-  · no prueba que los CAMPOS de cada bloque basten — prueba que el TIPO existe.
-    Contraejemplo ya conocido y declarado: la retícula de `blurb` trae
-    `iconos-md-4` en 8 de 22 y el enum de KB no lo tiene (F3-3-RETICULA-BLURB);
-  · no prueba nada de GEOMETRÍA. 0 ejes de estas 32 están comparados contra el
+
+═══ LO QUE ESTE NEGATIVO **NO** PRUEBA (§*escribe qué preguntas NO contesta*)
+
+  · **no prueba S1.** Lo dice el contrafactual C con su número: 0 separadoras
+    por expresabilidad. S1 la adjudica el censo de campos servidos, que es otra
+    medida y está al lado — no este exit;
+  · no prueba que los CAMPOS de cada bloque basten: prueba que el TIPO existe.
+    Contraejemplo declarado: la retícula de `blurb` trae `iconos-md-4` en 8 de 22
+    y el enum de KB no lo tiene (F3-3-RETICULA-BLURB);
+  · **no prueba NADA de geometría.** 0 ejes de estas 31 comparados contra el
     original, y esta prueba no abre el original;
-  · no prueba que las 30 «expresadas» se RENDERICEN bien: expresable y correcto
-    son dos afirmaciones, y sólo un comparador de dos lados da la segunda.
+  · no prueba que el campo rico RENDERICE — sólo que ADMITE el dato
+    (`valida-campo-rico-f33.log`), y con n = 1 ni siquiera por variación.

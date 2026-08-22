@@ -2,52 +2,26 @@
   11 bloques: texto-pagina · imagen-pagina · boton-pagina · codigo · toggle · video-pagina · blurb · slider-completo · slider · mapa · icono
   correspondencias declaradas: 11 tipos de Divi
   tipos vistos en el corpus SIN correspondencia: 0
-  ── S2 · campos ricos que el MODELO declara (derivados de colecciones/paginas.ts):
-     `cuerpoClasico`
-
-═══ 1b · S1 · FUERA DE ALCANCE — documentos que NO aloja esta colección
-  ⚠ NO son aprobados: son documentos de OTRA colección, y por eso salen NOMBRADOS
-  y RESTADOS del denominador en vez de contarse como expresados.
-  · /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/
-      → `entradas-blog` · derivado de `single-post` en el <body> · régimen PLANTILLADO (-T) · grupo sueltas
-
-  ── QUÉ ADJUDICA S1, medido — y NO es la expresabilidad:
-     el contrafactual C del negativo desaplica S1 y esta prueba SIGUE en verde,
-     porque el campo rico de S2 se traga también el post_content de la webinar.
-     0 instancias separadoras por expresabilidad. Lo que separa es DATO SERVIDO
-     que `paginas` no tiene dónde poner:
-
-     campo del JSON-LD    n/32  ¿separa?
-     articleSection       1/32  SÍ
-                             · /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/
-     author               1/32  SÍ
-                             · /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/
-     datePublished       32/32  NO — lo traen todas, nombrarlo sería una propiedad del conjunto entero
-
-     ⚠ `datePublished` NO separa, y decirlo importa: es el candidato obvio y
-     citarlo habría sido §*comprueba que Y VARÍE en el dominio donde se midió*.
 
 ═══ 2 · EL RESULTADO **POR RÉGIMEN** — el reparto nunca es uniforme
   régimen                n  expresadas  NO expresadas
   BUILDER (B-)          22          22              0
   HIBRIDO (BT)           8           8              0
-  SIN MARCADOR (--)      1           1              0
-  TOTAL                 31          31              0
+  PLANTILLADO (-T)       1           0              1
+  SIN MARCADOR (--)      1           0              1
+  TOTAL                 32          30              2
 
   módulos de contenido: 313 · expresados por un bloque: 313
-  denominador: 31 páginas  (32 capturadas − 1 de otra colección)
-
-═══ 2b · LAS QUE DESCANSAN EN EL CAMPO RICO — con su n, no calladas
-  §*un campo opcional no expresa un caso: sólo permite que falte*. Estas NO se
-  expresan por un bloque: se expresan porque S2 añadió un segundo canal.
-  · /es/politica-de-seguridad-de-la-informacion/
-      régimen SIN MARCADOR (--) · 8387 car. en `entry-content` → campo `cuerpoClasico`
-      etiquetas: p · h2 · ul · li · b
-  ⚠ n = 1. Un camino de render con n = 1 está SIN PROBAR por variación:
-     lo que sí está probado es que el dato PASA la validación (valida-campo-rico-f33.log).
 
 ═══ 3 · LAS QUE LA UNIÓN NO EXPRESA — NOMBRADAS, no contadas
-  (ninguna)
+
+  ❌ /es/politica-de-seguridad-de-la-informacion/
+     grupo sueltas · régimen SIN MARCADOR (--)
+     · SIN CAPA PROPIA y CON CONTENIDO: 8387 caracteres en `entry-content`, etiquetas p,h2,ul,li,b — la unión NO tiene campo donde ponerlo
+
+  ❌ /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/
+     grupo sueltas · régimen PLANTILLADO (-T)
+     · SIN CAPA PROPIA y CON CONTENIDO: 5749 caracteres en `et_pb_post_content`, etiquetas h2,span,p,iframe,br,a,h3,div,img,section,ul,li,article — la unión NO tiene campo donde ponerlo
 
 ═══ 4 · TODAS, con su régimen
   ✅ HIBRIDO (BT)         hubs-KB   /es/centro-de-ayuda/kunak-air-cloud/                                     S 5 M  8
@@ -76,7 +50,8 @@
   ✅ BUILDER (B-)         sueltas   /es/newsletter/                                                          S 1 M  3
   ✅ BUILDER (B-)         sueltas   /es/politica-de-cookies/                                                 S 1 M  8
   ✅ BUILDER (B-)         sueltas   /es/politica-de-privacidad-y-de-proteccion-de-datos/                     S 1 M  2
-  ✅ SIN MARCADOR (--)    sueltas   /es/politica-de-seguridad-de-la-informacion/                             S 0 M  0
+  ❌ SIN MARCADOR (--)    sueltas   /es/politica-de-seguridad-de-la-informacion/                             S 0 M  0
+  ❌ PLANTILLADO (-T)     sueltas   /es/redes-hibridas-de-calidad-del-aire-grabacion-webinar/                S 0 M  0
   ✅ HIBRIDO (BT)         sueltas   /es/sistema-interno-de-informacion/                                      S 1 M  1
   ✅ BUILDER (B-)         sueltas   /es/soporte/                                                             S 2 M  9
   ✅ BUILDER (B-)         sueltas   /es/soporte/servicio-de-reparacion/                                      S 2 M 10
@@ -90,6 +65,4 @@
     enum de KB no lo tiene (F3-3-RETICULA-BLURB)
   · no dice nada de las 16 no-páginas ni de los 13 redirects
 
-═══ 6 · CONTRATO — evaluadas 31/31 páginas · alcance: la cola larga capturada (32 documentos)
-
-✅ LA UNIÓN EXPRESA 31 DE 31 — con S1 (1 fuera de alcance) y S2 (1 por campo rico) aplicadas.
+⚠ CORTE LIMPIO 2: 2 de 32 documentos NO se expresan. Sube al propietario.
