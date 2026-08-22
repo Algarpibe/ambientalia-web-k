@@ -424,8 +424,22 @@ widget de la firma congelada, por `closest()`.
 
 ### Dato suelto, para la sección de canarios
 
-`CLAUDE.md` mide hoy **180.510 chars** y **`KV-01` y `KV-08` llegaron los dos**
-en esta sesión. El techo medido de «llega entero» sube de 178.777 a **180.510**.
+`CLAUDE.md` medía **180.510 chars** al abrir la sesión y **`KV-01` y `KV-08`
+llegaron los dos**. El techo medido de «llega entero» sube de 178.777 a
+**180.510**.
+
+### Evento de §regla 13, y es el caso que la regla dice que engaña
+
+Un mensaje de commit de esta tanda se escribió con **`printf` + `-F`**, que es
+exactamente lo que la regla prohíbe —*«`-F` no es la protección; la protección
+es que el TEXTO no pase por el shell»*—. **Llegó entero**, y ahí está el punto:
+no llevaba backticks ni `$`, así que el intérprete no tuvo nada que comerse.
+
+> **No es una regla nueva: es evidencia de la que ya está escrita.** La forma
+> segura y la que mutila un documento **se distinguen en un carácter que no
+> estaba en este mensaje**, y el resultado —un commit correcto— refuerza
+> justamente el hábito equivocado. Los demás mensajes de la tanda sí se
+> escribieron con `Write`.
 
 ---
 
