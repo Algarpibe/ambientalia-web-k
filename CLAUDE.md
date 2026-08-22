@@ -1556,6 +1556,30 @@ N−1 no se movieron **porque no podían**. Leerlo como *«el arreglo casi no hi
 nada»* invierte el veredicto, y es §*el eje que no lee como defecto esconde la
 mejora igual que esconde la deriva* con el contenedor puesto en el **muestreo**.
 
+⚠ **Y SU TERCERA MITAD, QUE ES DE PRE-REGISTRO Y SE COBRA AL DÍA SIGUIENTE: UNA
+PREDICCIÓN SOBRE UNA PROPIEDAD TAPADA SE ESCRIBE CON SU ANCHO (2026-08-22).**
+
+Las dos de arriba dicen qué instancias elegir y cómo leer el resultado. Ésta
+dice **cómo se enuncia la predicción**, y su síntoma es que la misma frase sale
+refutada y confirmada sin que nadie se haya equivocado:
+
+> **El contenedor que tapa una propiedad NO ES EL MISMO a los dos anchos** —a
+> 1440 las columnas van en fila y la más alta manda; a 390 apilan y no hay dónde
+> absorber—. Así que **una predicción de movimiento sin ancho es DOS
+> predicciones**, y el ancho al que la corras decide cuál de las dos contestas.
+
+**Medido, y las dos lecturas son correctas:** el pre-registro decía *«deben
+moverse 52 rutas y no deben moverse 330»*. A **1440** dio **1 de 52** —refutado,
+y bien: `#left-area` tapa a las otras 51—. A **390**, **52 de 52 y 330 quietas**,
+con **diferencia simétrica 0/0** contra el conjunto derivado. Misma frase, mismo
+arreglo, mismo día: lo único que cambió fue el ancho.
+
+> **Operativamente, y cuesta tres palabras: «a 390» dentro de la predicción.** Y
+> su corolario de lectura, que es el que ahorra una tanda: **una refutación en el
+> ancho donde la propiedad está tapada no refuta nada** — deja la predicción
+> **sin ejercitar**, y el instrumento que la ejercita es **el otro ancho**, no
+> otra sonda. Es §la regla espejo aplicada al pre-registro en vez de al residuo.
+
 ### EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA, NO DE LOS QUE ALGÚN EXTRACTOR YA LEE (2026-08-13)
 
 **Es la §regla 9 —derivar en vez de recordar— aplicada a un CONJUNTO en vez de a

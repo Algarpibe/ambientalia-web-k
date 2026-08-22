@@ -845,7 +845,8 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 > objeto — `sin-diferencias` dejó de discriminar y se sustituyó por su simétrico.
 >
 > ▸ ⚠ **Y el PASO 0 NO salió gratis, tras tres tandas seguidas que sí:**
-> `ed5517a` tocó `tema.css` **después** de congelar `clon-base-*-t88-despues`.
+> `ed5517a` tocó `tema.css` **después** de congelar `clon-base-*-t88-despues`
+> *(90.ª: renombrada a `…-CADUCADA-glosario-8-de-382-pre-ed5517a.json`)*.
 > Todo el diff está bajo `.lh-cpt`, que lo escribe un solo sitio, así que la base
 > queda **caducada para las 8 rutas de `/glosario` y vigente para las otras 374**.
 

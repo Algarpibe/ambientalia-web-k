@@ -1,5 +1,47 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⚠ F3-LH-GLOSARIO-RESIDUO-2.00 · NO ATRIBUIBLE, y la medida que lo dirimía ya no se puede tomar — **90.ª tanda, 2026-08-22**
+
+**Qué es.** Al cerrar la 89.ª por el ancho que faltaba, `clon-base @390`
+(`clon-base-390-2026-08-21.json` contra
+`clon-base-390-t88-despues-CADUCADA-glosario-8-de-382-pre-ed5517a.json`) movió
+**52 rutas, todas ACERCANDO**. Las 44 de `L1` cierran **al céntimo** contra el
+déficit que `barra-cmp` midió de dos lados (`−78.80` → `+78.79/+78.80`). Las
+**8 de `/glosario`** traen **`+73.80`** contra un déficit medido de **`−75.80`**.
+
+**Por qué no cuadra, derivado del diff y no supuesto.** `ed5517a` (08-20 16:14)
+no fue un cambio cualquiera bajo `.lh-cpt`: escribió **reglas de `#sidebar`**
+—`padding-bottom:28px`, `.et_pb_widget{margin-bottom:30px;float:none}`—, o sea
+que **ya era un primer arreglo parcial de la barra en glosario**. La base t88 se
+congeló **27 minutos antes** (15:47). Por tanto:
+
+| número | qué mide | punto de partida |
+|---|---|---|
+| `+73.80` (`clon-base`) | la suma de **DOS** arreglos | pre-`ed5517a` |
+| `+75.80` (`barra-cmp`) | **sólo** el segundo | post-`ed5517a` |
+
+**El punto de partida no era el mismo, así que el número no podía cuadrar.**
+
+> **Estado: NO ATRIBUIBLE — ni defecto ni limpio.** Y no por falta de rigor:
+> **nadie congeló `clon-base` entre `ed5517a` y `1c37bd9`**, así que la medida
+> que lo dirime **no existe y ya no se puede tomar** sin volver a ese estado del
+> árbol.
+
+**Alcance, con su cardinal:** **8 rutas de 382** · **2.00 de un movimiento de
+~75.80**, o sea el **2.7 %** de lo que se movió en esas ocho · **0 de las otras
+374** afectadas. **ALEJAN: 0.**
+
+**Cerrado por delante:** `clon-base-{1440,390}-2026-08-21.json` es la primera
+base congelada **después** de los dos arreglos, así que la próxima corrida de
+glosario compara contra un punto de partida único. **No hay nada que hacer aquí
+salvo no volver a citar el `+73.80` como si fuera un déficit del clon.**
+
+**Lección, que ya es regla:** una línea base clon-contra-clon **caduca en el
+instante en que alguien toca el render**, y el coste no es que «haya que
+re-medir»: es que **el Δ de la siguiente corrida deja de ser atribuible a un solo
+cambio**. Congelar la base **antes** de tocar nada es más barato que adjudicar
+después.
+
 ## ✅ META-CANARIOS-DE-CARGA · MARCADORES EN `CLAUDE.md` PARA MEDIR SI LLEGA ENTERO — **CERRADA 2026-08-18** (v1 opaca MEDIDA · v2 visible MEDIDA · instrumento retirado)
 
 **CERRADA.** Las dos hipótesis están dirimidas y el instrumento retirado: el

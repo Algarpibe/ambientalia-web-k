@@ -1,5 +1,170 @@
-# HANDOFF — la barra lateral, de dos lados por primera vez: Δ0 y una declaración que no ganaba
+# HANDOFF — el mismo pre-registro, REFUTADO a 1440 y CONFIRMADO a 390: no le faltaba puntería, le faltaba el ANCHO
 
+> ✅ **Tanda de la 90.ª, 2026-08-22. ESCALÓN 1 cerrado — la 89.ª queda cerrada
+> por los dos anchos, sin abrir el original y sin correr una sola sonda.**
+>
+> ---
+>
+> ## 0 · EL ESTADO AL ABRIR, derivado
+>
+> **§regla 18 primero:** `tasklist` + `Get-CimInstance Win32_Process` → **26
+> `node.exe`, los 26 servidores MCP**. Ni `qa:*`, ni `next start`, ni puppeteer.
+> **La sonda no estaba en vuelo: había aterrizado** a las **21:04:41** del 21
+> (`clon-base-390-2026-08-21.json`), y su log entero seguía en `/tmp/cb390.log`.
+> Un `git status` limpio no habría distinguido las dos cosas — que es exactamente
+> lo que dice §regla 18.
+>
+> ---
+>
+> ## 1 · EL VEREDICTO @390, con sus dos lados
+>
+> ```
+> @1440   382 comparadas · 1 con regresión · 381 quietas · 0 sin comparar
+> @390    382 comparadas · 52 con regresión · 330 quietas · 0 sin comparar
+> ```
+>
+> **Las 52 son EXACTAMENTE las 52 rutas que sirven barra**, y no es un empate de
+> cardinales: **diferencia simétrica 0 y 0** contra el conjunto
+> `blog|etiqueta|glosario` derivado del propio manifiesto (§*un cardinal es un
+> contenedor y absorbe la membresía*).
+>
+> | familia | rutas en el build | movidas | Δ `S1 h` |
+> |---|---|---|---|
+> | `/blog` + `page/2…8` | 8 | **8** | +78.79 / +78.80 |
+> | `/etiqueta/**` | 36 | **36** | +78.79 / +78.80 |
+> | `/glosario` + `page/2…8` | 8 | **8** | **+73.80** |
+> | `/recursos/**` (`L1-resources`, **sin barra**) | 41 | **0** | — |
+> | `/scientific-category/**` | 6 | **0** | — |
+> | todo lo demás | 291 | **0** | — |
+>
+> **El reparto ACERCAN / ALEJAN, cruzado con `barra-cmp` —que es el que tiene el
+> lado del original, porque `clon-base` no lo tiene—:**
+>
+> | forma | déficit medido @390 | movimiento observado | veredicto |
+> |---|---|---|---|
+> | `L1` (blog + etiqueta) | **−78.80** | **+78.79 / +78.80** ×44 | ✅ **ACERCAN, al céntimo** |
+> | `L2-glosario` | **−75.80** | **+73.80** ×8 | ✅ ACERCAN · **2.00 sin atribuir** |
+>
+> > **ACERCAN 52 · ALEJAN 0 · 0 deltas negativos en los 104** (52 `docH` + 52
+> > `S1 h`). **Y el eje mixto se declara con su cardinal: `clon-base` NO TIENE
+> > eje mixto** — sus seis ejes (`docH`, `h1.y`, nº de secciones, alto de
+> > sección, ritmo de sección, nº de anclas) leen **todos** como defecto, así que
+> > **0 pares quedaron fuera del recuento** (§regla 14). `h1.y`, nº de secciones
+> > y anclas: **Δ0 en las 52** — el arreglo entra entero **por debajo del `h1`**,
+> > que es donde vive la barra.
+>
+> **El control en negativo venía dentro de la misma corrida y no hubo que
+> fabricarlo:** `L1-resources` es la **tercera variante de la misma forma `L1`**
+> y `lh-barra.json` dice que **no sirve barra (0 de 37)**. Sus **41 rutas** están
+> a **Δ0**. La forma se movió donde tiene barra y se quedó quieta donde no la
+> tiene — que es lo que separa *«el arreglo llegó»* de *«algo movió todo»*.
+>
+> ---
+>
+> ## 1b · EL HALLAZGO: el mismo pre-registro, refutado y confirmado
+>
+> La 89.ª escribió, **antes de medir**: *«deben moverse 52 rutas (8 blog + 36
+> etiqueta + 8 glosario) y no deben moverse 330»*.
+>
+> | ancho | resultado | lectura |
+> |---|---|---|
+> | 1440 | **1 de 52** | ❌ refutado — y **correctamente**: `#left-area` tapa |
+> | **390** | **52 de 52 · 330 quietas** | ✅ **confirmado al elemento** |
+>
+> > **Las dos lecturas son correctas y la predicción era buena.** Lo que le
+> > faltaba no era puntería: era **decir a qué ancho**. La 89.ª cerró
+> > interpretando la refutación —«las 381 no se movieron porque no podían»— y esa
+> > interpretación **acaba de quedar verificada por el otro ancho**, que es la
+> > única cosa que podía verificarla.
+>
+> **Regla nueva** (`CLAUDE.md`, §El principio): *un pre-registro sobre una
+> propiedad TAPADA se escribe con su ANCHO, porque el contenedor que la tapa no
+> es el mismo a los dos anchos.*
+>
+> ---
+>
+> ## 2 · LA BASE: vigente para las 382, y **0 caducadas**
+>
+> Cronología derivada (`git log --date=format:'%H:%M'` contra las **mtime** de
+> las congeladas, §regla 16 discriminador 1):
+>
+> | hora | evento | ¿toca render? |
+> |---|---|---|
+> | 08-20 15:47 | base **t88** congelada @390 | — |
+> | 08-20 **16:14** | `ed5517a` — `tema.css` bajo `.lh-cpt` | **SÍ** → caduca t88 para las 8 de `/glosario` |
+> | 08-21 19:48 | `1c37bd9` — el arreglo de la barra | **SÍ** |
+> | 08-21 **20:06** | `7d25274` — `BarraLateral.tsx` +37/−5 | **NO: todo JSDoc**, verificado en el diff |
+> | 08-21 20:15 | aterriza `clon-base-1440-2026-08-21.json` | — |
+> | 08-21 21:04 | aterriza `clon-base-390-2026-08-21.json` | — |
+> | 08-21 20:29–20:33 | 3 commits | **NO**: sólo `docs/` y `scripts/qa/` |
+>
+> `git diff 1c37bd9 HEAD -- src apps packages public` = **un fichero, y su diff
+> entero es comentario**. La corrida **no salió `-CONTAMINADA`**, coherente con
+> que ningún `build` tocara el `.next` durante las dos.
+>
+> > ✅ **`clon-base-{1440,390}-2026-08-21.json` es la línea base VIGENTE para las
+> > 382 rutas. Caducadas: 0.** Las 8 de `/glosario` recuperan punto de partida —
+> > es la primera base congelada **después** de `ed5517a`.
+>
+> **Lo caducado, renombrado con su defecto y su alcance** (§regla 7, §regla 9
+> 8.º caso) y con **las 3 citas derivadas por `grep` y actualizadas** —ninguna
+> era código, las tres eran prosa—:
+>
+> ```
+> clon-base-{1440,390}-t88-despues.json
+>   → clon-base-{1440,390}-t88-despues-CADUCADA-glosario-8-de-382-pre-ed5517a.json
+> ```
+>
+> ⚠ **Y el aviso de §regla 5 que esta corrida imprimió y conviene no perder:**
+> `medidas/clon-base-390.json` —**el nombre obvio**— sigue siendo **la primera
+> foto, de julio, con 17 rutas**. Quien cite «la línea base de `clon-base`» sin
+> nombrar el fichero manda a la sesión siguiente a leer 17 en vez de 382.
+>
+> ---
+>
+> ## 2b · EL RESIDUO DE 2.00, y por qué NO es defecto ni limpio
+>
+> Las 44 de `L1` cierran al céntimo; las 8 de `/glosario` traen **+73.80** contra
+> los **+75.80** que `barra-cmp` mide del envoltorio. **La causa es la caducidad
+> misma, y se deriva del diff:** `ed5517a` no fue un cambio cualquiera bajo
+> `.lh-cpt` — escribió **reglas de `#sidebar`** (`padding-bottom:28px`,
+> `.et_pb_widget{margin-bottom:30px;float:none}`). O sea que **ya era un primer
+> arreglo parcial de la barra en glosario**, hecho el día 20.
+>
+> Por tanto el `+73.80` de esas 8 es **la suma de DOS arreglos** —`ed5517a` y
+> `1c37bd9`— mientras que el `+75.80` de `barra-cmp` mide **sólo el segundo**: su
+> «antes» se tomó el día 21, ya con `ed5517a` puesto. **El punto de partida no
+> era el mismo, así que el número no podía cuadrar.**
+>
+> > **El 2.00 no es defecto ni limpio: es NO ATRIBUIBLE con lo congelado**, y no
+> > por falta de rigor sino porque **nadie congeló `clon-base` entre `ed5517a`
+> > (día 20, 16:14) y `1c37bd9` (día 21, 19:48)**. La medida que lo dirimiría no
+> > existe y **ya no se puede tomar**: exigiría volver a ese estado del árbol.
+> > Alcance: **8 rutas de 382**, y **2.00 de un movimiento de ~75.80** — el 2.7 %
+> > de lo que se movió en esas ocho. Fichado en `PENDIENTES-QA.md`.
+>
+> Y queda **cerrado por delante**: la base nueva es post-ambos, así que la
+> próxima corrida de glosario compara contra un punto de partida único.
+>
+> ---
+>
+> ## 3 · CORTE LIMPIO 1: **no dispara**
+>
+> `clon-base` salió con **exit 1**, y hace bien: es una guarda de umbral cero y
+> su trabajo es gritar. Pero **un exit 1 no es un rojo hasta que se adjudica**, y
+> éste está adjudicado en las dos direcciones: **52 ACERCAN · 0 ALEJAN · 0 deltas
+> negativos · 0 sin comparar**, con las 41 hermanas sin barra a Δ0 de control. Es
+> literalmente la firma que `CLAUDE.md` acababa de describir —*«N−1 sin mover y 1
+> movida tras arreglar una pieza tapada NO es una regresión con ruido»*— **con el
+> ancho puesto del lado donde nada tapa**.
+>
+> Lo único abierto es el **2.00 no atribuible en 8 rutas**, que es una deuda con
+> número y alcance, no un defecto vivo. **Se pasa al ESCALÓN 2.**
+>
+> ---
+>
+> ### (entrada anterior) HANDOFF — la barra lateral, de dos lados por primera vez: Δ0 y una declaración que no ganaba
+>
 > ✅ **Tanda de la 89.ª, 2026-08-21. ESCALÓN 1 cerrado sin abrir el original ·
 > disparadores (a), (c) y (d) · ESCALÓN 2 construido · ESCALÓN 3 transcrito y a
 > Δ0 en las tres formas y los dos anchos.**
@@ -11,6 +176,10 @@
 > `git diff` de `src`, `apps`, `packages` y `public` entre la línea base vigente
 > (`clon-base-*-t88-despues`, commit **`afc2997`**) y HEAD: **dos ficheros**.
 > `ed5517a` tocó `src` a las 16:14 y la base se congeló a las 15:47.
+>
+> *(90.ª: renombrada a `clon-base-*-t88-despues-CADUCADA-glosario-8-de-382-pre-ed5517a.json`
+> — la caducidad que este párrafo derivó se cobró un residuo de 2.00 en glosario;
+> ver el acta de la 90.ª, §1.)*
 >
 > | fichero | qué cambió | qué puede mover |
 > |---|---|---|
@@ -141,7 +310,13 @@
 >
 > Antes de correrla escribí: *«deben moverse 52 rutas (8 blog + 36 etiqueta + 8
 > glosario) y no deben moverse 330»*. `qa:clon-base @1440` contra
-> `clon-base-1440-t88-despues.json` dio **382 comparadas · 1 con regresión**.
+> `clon-base-1440-t88-despues-CADUCADA-glosario-8-de-382-pre-ed5517a.json` dio
+> **382 comparadas · 1 con regresión**.
+>
+> ✅ **Y a 390 el MISMO pre-registro salió CONFIRMADO al elemento (90.ª): 52
+> movidas —8 + 36 + 8— y 330 quietas, diferencia simétrica 0/0.** Refutado a
+> 1440 y confirmado a 390, las dos lecturas correctas: a la predicción no le
+> faltaba puntería, le faltaba **el ancho**. Ver el acta de la 90.ª, §1.
 >
 > **Y la refutación es correcta, no un fallo del arreglo:** `clon-base` mide
 > `docH` y `h1.y`, y la barra está **tapada por `#left-area`**. Las 381 no se
