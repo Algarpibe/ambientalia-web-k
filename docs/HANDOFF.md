@@ -1,4 +1,162 @@
-# HANDOFF — `L2-glosario` construida: la piel B a Δ0 y el CSS que llevaba capturado una semana
+# HANDOFF — la barra lateral, de dos lados por primera vez: Δ0 y una declaración que no ganaba
+
+> ✅ **Tanda de la 89.ª, 2026-08-21. ESCALÓN 1 cerrado sin abrir el original ·
+> disparadores (a), (c) y (d) · ESCALÓN 2 construido · ESCALÓN 3 transcrito y a
+> Δ0 en las tres formas y los dos anchos.**
+>
+> ---
+>
+> ## 0 · EL PASO 0 **NO** SALIÓ GRATIS, y era la cuarta tanda seguida que sí
+>
+> `git diff` de `src`, `apps`, `packages` y `public` entre la línea base vigente
+> (`clon-base-*-t88-despues`, commit **`afc2997`**) y HEAD: **dos ficheros**.
+> `ed5517a` tocó `src` a las 16:14 y la base se congeló a las 15:47.
+>
+> | fichero | qué cambió | qué puede mover |
+> |---|---|---|
+> | `types/kunak.ts` | **sólo un comentario JSDoc** | **nada** |
+> | `app/tema.css` | +97/−21, **todo bajo `.lh-cpt`** | sólo lo que escriba `.lh-cpt` |
+>
+> Y `.lh-cpt` lo escribe **un solo sitio** (`PaginaArchivoCpt.tsx:104`), cuyo
+> único consumidor es `PaginaGlosario`: la base está **caducada para las 8 rutas
+> de `/glosario` y vigente para las otras 374**. `L1` lleva `.lh-cuerpo`, así que
+> el diff **no contamina** lo que esta tanda medía. Estado derivado al abrir:
+> **382 rutas** (385 del manifiesto − 3 internas) · árbol limpio · **1.260**
+> congeladas *(el encargo decía 1.258; manda la derivación)*.
+>
+> ---
+>
+> ## 1 · ESCALÓN 1 — la respuesta estaba congelada desde el 2026-08-11
+>
+> **No hizo falta abrir el original.** `medidas/lh-barra.json` §`porFamilia` ya
+> contestaba la pregunta del encargo, en las dos direcciones y **por forma**:
+>
+> | variante de `L1` | documentos | con barra |
+> |---|---|---|
+> | `blog` | 17 | **17** |
+> | `etiqueta` | 63 | **63** |
+> | **`resources`** | **37** | **0** |
+>
+> > **`L1` tiene TRES variantes y sólo DOS sirven barra.** Los «80 documentos con
+> > una sola firma» que cita la cabecera de `BarraLateral.tsx` son **80 de 117**
+> > —el 68 % de `L1`—, y el denominador nunca se había escrito. El clon **ya
+> > ramificaba** (`esRecursos`), así que `WidgetsBarra` no está extraída sobre un
+> > dominio que no la sostenga: lo que estaba mal era la **frase**.
+>
+> Y el interior de la barra: **idéntico byte a byte** entre `L1` y `L2` —1167
+> caracteres los dos normalizando el blanco— **y hasta los `href` coinciden**. Lo
+> único que difiere es el envoltorio, que es exactamente lo que no se extrajo.
+>
+> **Hojas capturadas, con su denominador:** `blog 12/12 · etiqueta 25/25 ·
+> recursos 29/29 · glosario 11/11`. El `11/11` reproduce la medida de la 88.ª —
+> ése fue el control. ⚠ Mi primera derivación dio **`0/11`** porque las claves
+> del índice no llevan `?ver=` y los `href` sí: **un cero que era mi selector**
+> (§sondas 4), cazado por contradecir una medida buena anterior.
+>
+> ---
+>
+> ## 2 · ESCALÓN 2 — `qa:barra-cmp`, y cazó un defecto SUYO antes que nada
+>
+> No existía comparador de dos lados para la barra: `lh-barra` es de un lado y
+> declara *«no mide el píxel»*; el espejo **no la descompone** (0 apariciones de
+> `search-6`, `custom_html`, `widgettitle` en 5,8 MB); y `lh-cmp` la mete en
+> `contenedorTema`, o sea al nivel que absorbe.
+>
+> **La primera corrida imprimió un número plausible de otra cosa.** Buscaba
+> `.et_pb_widget_area` a secas y **el pie también lo lleva**: en `L2` casaba el
+> pie y devolvía `envoltorio-L1` con 288.16 y **cero widgets dentro**. Es §sondas
+> 4 en su tercera cara, y es **el mismo error que la cabecera de `lh-barra` le
+> reprocha a `lh-serie`** — cometido después de leerlo. Artefacto renombrado:
+> `barra-cmp-1440-SONDA-CASO-EL-PIE-COMO-BARRA-EN-L2.json`. El contenedor se
+> deriva ahora **del dato**: el que contiene el primer widget de la firma
+> congelada, por `closest()`.
+>
+> **El déficit, con sus dos lados:**
+>
+> | forma | @1440 | @390 |
+> |---|---|---|
+> | `L1` | `430.19 → 347.39` (**−82.80**) | `408.19 → 329.39` (**−78.80**) |
+> | `L2` | `426.19 → 368.39` (**−57.80**) | `426.19 → 350.39` (**−75.80**) |
+>
+> > **CONTROL:** el `−75.80` de `L2@390` reproduce **al céntimo** el número que
+> > la 88.ª fichó con otro instrumento.
+>
+> ---
+>
+> ## 3 · EL PRE-REGISTRO: 2 cumplidas, 3 refutadas, 1 partida
+>
+> | # | predicción | resultado |
+> |---|---|---|
+> | P4 | `text-1` a Δ0 | ✅ ni aparece en las diferencias |
+> | P6 | el ELEMENTO no está tapado a 1440 | ✅ **−82.80 y −57.80** — el «Δ0 @1440» de la ficha era `#left-area` (968.91) tapando |
+> | P1 | el déficit de la pila es el mismo en `L1` y `L2` (±2) | ❌ **−44.80 vs −51.80**. Mismo widget byte a byte (`text-7`) con −2.60 y −9.60: **el envoltorio SÍ cambia lo que le llega a los widgets** |
+> | P2 | la cuota del botón es **≥26**, no ~22 ⚠ *escrita contra el encargo* | ❌ **y por el otro lado: 20.20.** Leí bien la regla (`.5em/.6em`) y supuse mal el cuerpo — 20 px de Divi cuando el servido es **15** |
+> | P3 | la mayor cuota cae en `text-7` | ❌ es `custom_html-25`: **−48.20** @1440, **−66.20** @390 |
+> | P5 | el déficit no depende del ancho (<5) | ➗ ✅ en `L1` (4.00) · ❌ en `L2` (18.00). Causa medida: el titular del boletín envuelve a dos renglones o a uno según la forma, y a `fs 18` el clon **nunca** envuelve |
+>
+> **P2 es la útil, y falló por el DENOMINADOR** — que es el modo de fallo de toda
+> esa familia. Ver §regla nueva 2, abajo.
+>
+> ---
+>
+> ## 4 · ESCALÓN 3 — cinco causas, y la que enseña es la del `!important`
+>
+> **234 pares distintos → 0**, a los dos anchos, 918 caminos por ancho, 36/36
+> piezas. Congeladas: `barra-cmp-{1440,390}-{antes,despues}.json`.
+>
+> | # | causa | cuota |
+> |---|---|---|
+> | 1 | `.et_pb_button` **sin caja** (sólo `display` y `cursor`) | **−20.20** |
+> | 2 | `.widgettitle` a 18 px donde el original da **22**, y con un `mb:10` que no existe | −4 ×3, y **−26** en el del boletín a 390 |
+> | 3 | `.widgettitle` a `font-weight:500` donde el original da **300** | 0 de alto, decide dónde envuelve |
+> | 4 | `font-size`/`line-height` **inventados** sobre `.et_pb_widget` | transversal |
+> | 5 | el `:last-child{mb:0}` en el **nivel equivocado** | **+9.00** |
+>
+> > ⚠⚠ **Y la que vale más que las cinco.** La 88.ª transcribió
+> > `#sidebar .et_pb_widget{margin-bottom:30px}` del CSS servido — **bien leído**.
+> > Lo que no se miró es **quién gana**: el tema sirve además
+> > `.et_pb_widget{margin-bottom:2rem !important}`, y el valor real es **32**.
+> > **Transcribir la DECLARACIÓN servida no es transcribir la CASCADA.**
+>
+> **Método:** las reglas se **preguntaron a la página**
+> (`CSS.getMatchedStylesForNode`), no se buscaron con `grep`. La que faltaba se
+> llamaba `.boton-azul` y mi filtro exigía `button` en el selector: salió **cero**.
+>
+> ---
+>
+> ## 5 · El negativo, y un caso que se murió VERDE el mismo día
+>
+> `qa:barra-cmp-neg`: **5/5**. Y **`sin-diferencias` se retiró en la misma
+> tanda**: discriminaba mientras había defecto y, con los dos lados a Δ0, pasó a
+> predecir **lo mismo que la corrida limpia** — cero separadoras, y habría
+> seguido imprimiendo su ✓. Lo sustituye `delta-inyectado`, porque con el objeto
+> en verde la pregunta ya no es *«¿sabe callar?»* sino *«¿sabe gritar?»*.
+>
+> El control **no mira el exit** a propósito: el de un comparador cambia con el
+> estado del objeto, así que cablearlo lo habría caducado igual.
+>
+> ---
+>
+> ## 6 · Lo que queda, cada cosa con su cardinal
+>
+> | # | qué | cardinal |
+> |---|---|---|
+> | ⛔ `SP-B4` | el buscador como **interacción** | 1 widget × 3 formas — se comparó la caja, no lo que hace al enviarse |
+> | ⛔ alcance | las reglas del botón se transcriben **acotadas** y el original las sirve **globales** (`body .et_pb_button`) | declarado, no cableado: hacerlas globales movería rutas sin comparar |
+> | ⛔ muestreo | páginas fuera del catálogo | **2 de 17** blog · **2 de 63** etiqueta · **2 de 8** glosario |
+> | ⛔ sin medir | el **blanco** entre widgets: el original lo sirve y el clon no emite ninguno | Δ0 igual, pero **no medido con el blanco puesto** |
+> | ⛔ deuda vieja | negativos **sin correr nunca** | **18 de 20** — el total de rojos es **≥8**, no 8 |
+>
+> ---
+>
+> ## 7 · Dato suelto: el canario
+>
+> `CLAUDE.md` medía **180.510 chars** al abrir y **`KV-01` y `KV-08` llegaron
+> los dos**. El techo medido de «llega entero» sube de 178.777 a **180.510**.
+>
+> ---
+
+## 88.ª — `L2-glosario` construida: la piel B a Δ0 y el CSS que llevaba capturado una semana
 
 > ✅ **Tanda de la 88.ª, 2026-08-20. ESCALÓN 1 cerrado —`L2-glosario` construida
 > y comparada de dos lados— y ESCALÓN 2 disparado por (a), con ficha y número.**
