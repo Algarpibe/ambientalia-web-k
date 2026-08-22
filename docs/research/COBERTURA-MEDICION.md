@@ -573,6 +573,55 @@ algún momento se muestrea, será *una por CLASE medida*, con el censo detrás.
 > se habrían dado por cubiertas comparando otra. Detalle: `PENDIENTES-QA.md`
 > §LH-SERIE-HIGIENE.
 
+> ⚠⚠ **Y `.et_pb_widget_area` VA POR SU TERCERA VÍCTIMA (2026-08-21). Eso ya no
+> es una instancia: es una CLASE, y el selector se declara tóxico.**
+>
+> | # | sonda | cómo mordió |
+> |---|---|---|
+> | 1 | `lh-serie` | la firma `·sb` casaba en el documento entero ⇒ `·sb` en **las 149**, y **3 de 38** clases fusionadas |
+> | 2 | `lh-barra` | ventana fija de 14 000 chars desde el inicio de la barra ⇒ **6 de sus «10 widgets» eran del PIE** |
+> | 3 | **`barra-cmp`** | `.et_pb_widget_area` a secas ⇒ en `L2` casaba **el pie**, y devolvía un contenedor de 288.16 con **cero widgets dentro** |
+>
+> **La causa es siempre la misma y no es el descuido: el PIE lleva un
+> `et_pb_widget_area` igual que la barra**, así que el selector es ambiguo **por
+> construcción** y cualquier sonda nueva lo hereda. Las tres veces dio un número
+> plausible; ninguna dio error.
+>
+> > **La forma que sí resiste: no identificar el contenedor por su CLASE, sino
+> > por SU CONTENIDO.** La barra es, por definición, el contenedor de los cuatro
+> > widgets, así que se ancla en el primer `id` de la firma **congelada** y se
+> > sube con `closest()`. Eso se deriva del dato y no de una suposición sobre
+> > dónde cae el elemento en el DOM — y si el ancla no existe, el `null` es un
+> > cero de verdad.
+>
+> Es §*para identificar un COMPONENTE, el literal de `className` no discrimina*
+> con un caso más: aquí la clase ni siquiera es de Tailwind, es **del tema**, y
+> aun así nombra **dos cosas**.
+
+## ✅ EL EJE `barra lateral` PASA DE CENSADO A COMPARADO — **3/3 formas** (2026-08-21)
+
+Hasta la 89.ª tanda la barra tenía su **marcado** censado (`lh-barra`, un lado,
+80/149 documentos) y **ni un píxel** comparado contra el original. Era el caso
+literal de §*una guarda solo-clon se lee como verde y no mide fidelidad*, con el
+agravante de que aquí ni siquiera había guarda solo-clon: había un **censo**.
+
+| forma | antes | ahora |
+|---|---|---|
+| `L1-blog` | marcado censado · píxel **nunca** | **Δ0** @1440 y @390 |
+| `L1-etiqueta` | ídem | **Δ0** @1440 y @390 |
+| `L2-glosario` | ídem | **Δ0** @1440 y @390 |
+| `L1-resources` | — | **no aplica: 0 de 37 documentos sirven barra** |
+
+**Lo que costó no haberlo mirado antes:** `−82.80` en `L1` y `−75.80` en `L2`,
+por cinco causas de cascada que ningún censo de marcado podía ver — el marcado
+era **idéntico byte a byte** en las dos formas. Instrumento: `qa:barra-cmp`
+(dos lados, negativo 5/5). Detalle: `PENDIENTES-QA.md` §F3-LH-BARRA-CASCADA.
+
+> **Y la lectura de cobertura que deja:** *«el marcado está censado»* y *«la
+> pieza está comparada»* son **dos ejes**, no dos redacciones del mismo. Un
+> censo de marcado con varianza 0 en 80 documentos es una afirmación fuerte
+> sobre **qué HTML se sirve** y **no dice nada** sobre con qué caja se pinta.
+
 ## ✅✅✅ EL EJE `comportamiento` ESTÁ COMPLETO — **37/37** (2026-08-11)
 
 **Era el hueco mayor del proyecto y hoy es el único eje con cobertura completa**,

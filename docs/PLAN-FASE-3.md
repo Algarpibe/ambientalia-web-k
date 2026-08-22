@@ -808,6 +808,47 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ✅ **ACTUALIZACIÓN 2026-08-21 (89.ª tanda) — LA BARRA LATERAL, COMPARADA DE
+> DOS LADOS POR PRIMERA VEZ: Δ0 EN LAS 3 FORMAS QUE LA SIRVEN Y EN LOS 2 ANCHOS.**
+>
+> **Rutas 382, sin cambio: esta tanda no construye, corrige.** Lo que estaba
+> pendiente del ESCALÓN 2 de la 88.ª —`#sidebar` a `−75.80 @390`— resultó ser un
+> caso de §*UN ARQUETIPO NUEVO NO HEREDA COBERTURA* con el instrumento que
+> faltaba: la barra tenía su **marcado** censado (`lh-barra`, un lado, 80/149) y
+> **ni un píxel** contra el original.
+>
+> **Instrumento nuevo:** `qa:barra-cmp` (dos lados, widget a widget, negativo
+> 5/5). **Resultado: 234 pares distintos → 0**, 918 caminos por ancho, 36/36
+> piezas leídas en los dos lados.
+>
+> | forma | @1440 | @390 | después |
+> |---|---|---|---|
+> | `L1` (blog · etiqueta) | **−82.80** | **−78.80** | **Δ0** |
+> | `L2` (glosario) | **−57.80** | **−75.80** | **Δ0** |
+>
+> **Y la corrección de alcance que sale de aquí, que sí toca al plan:** `L1`
+> tiene **tres** variantes y sólo **dos** sirven barra —`resources` **0 de 37**—,
+> así que los «80 documentos con una sola firma» son **80 de 117**. El clon ya
+> ramificaba; lo que estaba sin denominador era la frase.
+>
+> ▸ **REGLAS NUEVAS (`CLAUDE.md`), las cuatro pagadas aquí:**
+> **(1)** *transcribir la DECLARACIÓN servida no es transcribir la CASCADA* — la
+> 88.ª leyó bien `#sidebar .et_pb_widget{margin-bottom:30px}` y el valor real es
+> **32**, porque el tema sirve `.et_pb_widget{margin-bottom:2rem !important}`;
+> **(2)** *un `em` citado sin su `font-size` es la trampa del `%` sin su
+> contenedor* — el pre-registro predijo 22 px usando el `font-size:20px` de Divi
+> y el customizer lo baja a **15**;
+> **(3)** *una regla en el nivel equivocado no da error* — el clon tenía un
+> `:last-child{mb:0}` sobre el widget, donde el original no lo tiene, y le
+> faltaba sobre el `li`, donde sí;
+> **(4)** *un caso de negativo puede morirse VERDE* el día que se arregla el
+> objeto — `sin-diferencias` dejó de discriminar y se sustituyó por su simétrico.
+>
+> ▸ ⚠ **Y el PASO 0 NO salió gratis, tras tres tandas seguidas que sí:**
+> `ed5517a` tocó `tema.css` **después** de congelar `clon-base-*-t88-despues`.
+> Todo el diff está bajo `.lh-cpt`, que lo escribe un solo sitio, así que la base
+> queda **caducada para las 8 rutas de `/glosario` y vigente para las otras 374**.
+
 > ✅ **ACTUALIZACIÓN 2026-08-20 (88.ª tanda) — `L2-glosario` CONSTRUIDA. Tres
 > tandas de aplazamiento se cierran, y el hilo del pie con ellas.**
 >
