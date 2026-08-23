@@ -147,6 +147,30 @@ en el builder, **es un campo**. Defaults medidos: sección `pt/pb` 4%
 > del claim. Aplicado ahí, el test A responde "plantilla" a cosas que son campo:
 > **da la respuesta al revés.**
 
+> ⚠⚠ **Y SU PREMISA, QUE NO ESTÁ ESCRITA Y ES DONDE MÁS BARATO SE ROMPE: EL
+> TEST A SUPONE QUE HAY ALGO ESCRITO. UN VALOR IGUAL AL INICIAL DE LA PROPIEDAD
+> NO ES «PX ABSOLUTOS», ES QUE NADIE TOCÓ NADA.**
+>
+> El enunciado del test —*lo que el editor toca queda en px absolutos, iguales a
+> 1440 y a 390*— tiene una precondición callada: **que el editor tocara**. Un
+> `margin-top` computado de **0** también sale igual a los dos anchos, y no
+> porque alguien escribiera «0px»: porque **0 es el valor inicial** y no hay
+> nada que resolver contra el ancho.
+>
+> > **Un eje cuyo ÚNICO valor observado es el inicial de la propiedad sale SIN
+> > ESCRIBIR — que no es ni campo ni plantilla.** Para el modelo pesa lo mismo
+> > que SIN PROBAR: **no se cablea.**
+>
+> **Y no es un caso marginal: suele ser la mayoría.** Medido al derivar la
+> geometría de un arquetipo de builder, **24 de 49 celdas** (tipo × eje) computan
+> 0. Leerlas por el enunciado literal habría producido **24 campos inventados de
+> una sola vez**, cada uno con su medición real de coartada — que es la misma
+> forma del *arreglo falso* que el test A existe para evitar.
+>
+> **La comprobación cuesta una condición:** antes de aplicar el test A a un eje,
+> mira **cuántos valores distintos tiene y si alguno es distinto del inicial**.
+> Si no lo hay, el test A no tiene nada sobre lo que pronunciarse.
+
 **Test B — el general (la variación intra-página).** Es la regla, no el atajo:
 
 > **¿Varía de un módulo a otro dentro de la misma página?** Si dos hermanos del
@@ -1131,6 +1155,28 @@ Así que **un recuento de elementos se publica con su CRITERIO** —*«12 en el 
 con el contenedor puesto **en la definición**, no en el dato: el nivel de arriba
 aquí no es una fila ni un total, es *qué cuenta como «uno»*.
 
+> ⚠⚠ **Y LA MITAD QUE NO ES DE RECUENTO, QUE ES PEOR: LO QUE NO TIENE CAJA NO ES
+> QUE NO SE CUENTE — ES QUE NO SE PUEDE MEDIR, Y AUN ASÍ DEVUELVE NÚMEROS.**
+>
+> La regla de arriba dice *publica los dos recuentos*. Le falta decir qué hacer
+> con esos elementos **después**, y la respuesta no es «contarlos aparte»:
+>
+> > **`getComputedStyle` sobre un elemento sin caja —dentro de un desplegable
+> > cerrado, de una pestaña inactiva, de un `display:none`— NO resuelve los
+> > porcentajes contra nada.** Devuelve ceros, y esos ceros **entran en una
+> > distribución como si fueran dato**, fabricando un pico que el original no
+> > tiene.
+>
+> Así que **se excluyen del análisis, no sólo del recuento** — y su exclusión se
+> publica con su cardinal y su mecanismo. Medido: **36 de 313 módulos** de un
+> arquetipo, **30 de ellos de un solo tipo**, todos dentro de desplegables
+> cerrados; incluirlos habría dado ese tipo por «ritmo 0 en las 30».
+>
+> **Y lo que su geometría necesita no es otra sonda del HTML servido: es
+> INTERACCIÓN** — abrir el desplegable—, o sea el eje que casi nunca está medido.
+> Un tipo cuyas instancias viven todas escondidas se declara **SIN DERIVAR con lo
+> que haría falta**, no se rellena con los ceros que el navegador devolvió.
+
 **Y hay un contenedor hermano que no contiene elementos sino CAUSAS: EL RECUENTO
 DE PARES TOCADOS POR UNA DERIVA DEL OBJETIVO.**
 
@@ -1255,6 +1301,19 @@ original— apareció en la misma corrida.
 De donde el corolario operativo: **cuando el síntoma sea de envolvimiento, mide
 al ancho donde NO envuelve.** El ancho estrecho da el efecto; el ancho donde
 cabe da la causa.
+
+> ⚠ **Y su INVERSA, que muerde al derivar un ancho DECLARADO a partir de una
+> razón medida:** en un elemento de nivel **enlínea** la caja **es la de su
+> contenido**, así que `caja / contenedor` no recupera ninguna declaración —
+> mide el texto. La razón sólo devuelve lo que el editor escribió cuando la caja
+> del numerador **la impone esa declaración**, o sea en nivel de bloque.
+>
+> **Se distingue con una propiedad que ya está a mano: `display`.** Medido, la
+> señal es visible en los propios valores — un tipo de bloque da `33 · 50 · 75 ·
+> 80 · 85 · 100` (limpios, declarados) y uno enlínea da `33.36 · 38.76 · 62.16`
+> (fracciones del contenido). **Los dos se escriben igual y no son lo mismo**, así
+> que el reparto se publica con su cardinal y los enlínea salen **SIN MEDIR por
+> el instrumento, no por el original**.
 
 **Y la vuelta que le faltaba: LA GUARDA TAMBIÉN TIENE UN NIVEL, y el suyo es
 vertical (2026-08-01).** Al unificar las cuatro migas copiadas a mano se esperaba
@@ -3500,6 +3559,41 @@ palabra que faltaba: *«las estáticas que nadie declara»*, y se calcula
 > §*un patrón que casa en TODAS tampoco mide nada* con el objeto cambiado: no un
 > selector que sobra, sino un conjunto que dejó de ser disjunto sin que nadie lo
 > tocara.
+
+**26 · UN COMANDO QUE NOMBRA UNA GUARDA NO PRUEBA QUE LA GUARDA EXISTA — Y LA
+SONDA QUE LAS CENSA MIRA EL OTRO CANAL.** (2026-08-22)
+
+Las guardas de arriba vigilan sondas que **no miran**. Ésta vigila una que **no
+existe**, y sobrevive porque **los dos canales que podrían delatarla miran cada
+uno una mitad**:
+
+> **Un `npm run <algo>-neg` declarado en `package.json` y el fichero del negativo
+> en el disco son DOS CANALES.** El registro de comandos dice *«esto existe»*; la
+> sonda que censa negativos **enumera el disco**, así que un negativo que falta
+> **no le sale rojo: no le sale**. Y nadie lo corre a mano, porque el `npm run`
+> está ahí y eso **se lee como que el negativo está ahí**.
+
+Es §*un selector que no casa con nada no es un cero* con el selector puesto en un
+`readdirSync`, y §*documentado no es conectado* con el objeto cambiado: allí el
+comentario prometía una llamada que no existía; aquí **el registro de comandos
+promete un fichero que no existe**.
+
+**Medido:** cruzando los `*-neg` de `package.json` contra el disco, **4 de 76
+nombraban un fichero ausente**. Ninguno aparecía en el censo de negativos —61
+ficheros— ni en ningún recuento: no eran «negativos rojos», eran **negativos que
+no existen**, y las dos cosas se leen igual desde fuera, como silencio.
+
+> **La guarda cuesta un `filter` de tres líneas —cruzar el registro contra el
+> disco— y hay que escribirla en la sonda que censa, no acordarse.** Mientras no
+> esté, la única prueba de que un negativo existe es **abrir el fichero**.
+
+⚠ **Y el aviso de método que vino con ella, porque se cometió al derivarla:** el
+primer filtro dio **0** porque el regex `scripts\/[\w\/-]+\.mjs` **no casa un
+punto**, y todos los negativos llevan `.neg.` en medio. Un cero perfectamente
+plausible **de un filtro roto** — §sondas 4 sobre un `grep` propio. Lo delató
+que **el fichero que se iba a escribir tenía que salir en esa lista y no salía**:
+o sea, **un caso conocido de antemano**, que es la forma más barata de auditar un
+cero que uno mismo acaba de producir.
 
 ## Comandos
 
