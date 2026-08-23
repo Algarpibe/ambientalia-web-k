@@ -1,6 +1,47 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⛔ CMS-4 · **DECISIÓN DE PROPIETARIO — ¿quién sirve las 31 de la cola larga?** — 94.ª tanda, 2026-08-22
+## ✅ CMS-4 · **CERRADA el 2026-08-22 (95.ª): el propietario tomó `E1` — el PLANO EXISTENTE** — la ficha de la 94.ª se conserva entera debajo
+
+> ✅ **DECISIÓN DEL PROPIETARIO, 2026-08-22.** Las 31 las sirve el plano que ya
+> existe: `/[slug]` despacha un **tercer catálogo** para las **19** de un
+> segmento, los tres catch-all —`centro-de-ayuda` · `soporte` · `recursos`—
+> extienden su `generateStaticParams` para las **11**, y
+> `/empresa/premios-y-reconocimientos` **estrena ruta** (es la única sin plano
+> que la sirva ni que la estorbe).
+>
+> **La razón, con su número: 0 URLs cambian.** E2 rompía **19 vivas** —la primera
+> desviación estructural del clon, que es literalmente la salida `(b)` que
+> `ENRUTADO.md` §3 ya descartó para grupo A—; E3 dejaba **19 sin emitir** y no
+> cerraba F3-3. Y E1 no estrena patrón: es `ENRUTADO.md` §3 punto 2 —*«un solo
+> `[slug]` de raíz para las familias planas (blog, término, **y lo que
+> venga**)»*— aplicado por tercera vez.
+>
+> **La decisión completa, con sus separadoras y su CONDICIÓN DE REAPERTURA**
+> —obligatoria, porque E1 va contra §1.5b Razón 3— vive en `ESQUEMA-CMS.md` §2k.
+>
+> ### Lo que la 95.ª derivó al escribirla, en las DOS direcciones
+>
+> `derivaciones/cms4-reclamos-f33.mjs` + `cms4-reclamos.log`, sobre la congelada
+> **ya commiteada** `medidas/f33-rutas.json` — sin abrir el original y sin DB:
+>
+> | dirección | cruce | resultado |
+> |---|---|---|
+> | ¿lo viejo estorba a E1? | los **6** reclamos de raíz de `articulos-kb` ∩ los **19** que E1 baja al plano | **0 de 6** — siguen LATENTES, E1 **no** los activa |
+> | ¿E1 estorba a lo viejo? | los **19** de E1 ∩ las 4 familias del registro (152 + 37 + 6 + 5 = **200 slugs**) | **0 colisiones** — E1 es sembrable sin tocar ninguna familia |
+>
+> ⚠ **Los dos ceros llevan su fecha y su denominador.** No dicen «nunca habrá
+> colisión»: dicen que con el contenido que HOY existe la guarda no tiene nada
+> que rechazar. Y la guarda no hay que tocarla — desde la 94.ª `qa:slugs` deriva
+> sus familias del registro, así que `paginas` entra **sola**.
+>
+> ⚠ **La emisión NO está hecha y esta tanda no la hace.** Sigue en
+> §F3-3-EMISION, con su coste declarado: **3 rutas verificadas se tocan** (los 6
+> artículos de KB bajo `/centro-de-ayuda/[...ruta]`) y **entran con su
+> antes/después a umbral cero**.
+
+---
+
+## ⛔ CMS-4 · **DECISIÓN DE PROPIETARIO — ¿quién sirve las 31 de la cola larga?** — 94.ª tanda, 2026-08-22 *(enunciado original, conservado)*
 
 **CORTE LIMPIO 1 disparó**: el enrutado abre decisión de modelo, así que se ficha
 con su reparto y **la tanda NO entró en la geometría** (ESCALÓN 2 queda para la
@@ -69,6 +110,200 @@ raíz o bajo prefijo, y por tanto si su unicidad hay que imponerla ENTRE familia
 
 ---
 
+## ✅ QA-DOMINIO-CANAL-MUDO · la guarda de `qa:media-canales` iteraba una LISTA donde tenía que iterar lo OBSERVADO — 95.ª, 2026-08-22
+
+**Qué era.** `media-canales` deriva bien sus canales —camina la config resuelta—
+pero **la guarda `CANAL MUDO` recorría `SEMBRADAS`**, 9 literales escritos a mano
+en `seed.mjs`. La pregunta que esa guarda hace es *«¿alguna colección EJERCE
+media y el esquema no le declara NINGÚN canal?»*, y esa pregunta **no lleva un
+`SEMBRADAS` dentro**: el conjunto correcto es **lo observado** (`porCanal`), que
+lo produce el propio recorrido.
+
+Con la lista, una colección de fuera salía **AUSENTE, no roja** — el `for` no la
+visitaba, y **un bucle que no itera no da error: da cero** (§sondas 4).
+
+**El arreglo, y es de CLASE, no de instancia:** el dominio se deriva de lo
+observado, se publica con su cardinal (en la salida y en `meta.dominioCanalMudo`),
+y **si no se puede derivar TIRA** (§regla 6). Añadir `paginas` a mano a
+`SEMBRADAS` habría sido arreglar la instancia — que es exactamente lo que hizo
+volver el mismo defecto dos veces en `cobertura.mjs`.
+
+### ⚠ LA MITAD HONESTA, y va primero porque decide cómo se lee: **0 instancias separadoras EN EL DATO**
+
+**`SEMBRADAS` y `CATALOGOS` son hoy EL MISMO CONJUNTO** —derivado: **9 y 9,
+diferencia simétrica 0 y 0**— y `porCanal` sólo puede contener colecciones que el
+recorrido camina, o sea de `CATALOGOS`. Son **dos variables confundidas**: dentro
+de este dominio la guarda «nombraba una de las dos al azar», y la que tenía a mano
+era la incorrecta **por construcción** —`SEMBRADAS` la mantiene una persona,
+`porCanal` lo produce el recorrido—.
+
+**Consecuencia: el cambio es NO-OP sobre el veredicto, y está probado al byte.**
+
+| | antes | después |
+|---|---|---|
+| congelada | `media-canales-2026-08-22.json` | `media-canales-2026-08-22-2.json` |
+| recuento | 39 declarados · 16 ejercidos · 22 sin dato · 4 de otro sembrador · 614 refs · **0** ausentes | **idéntico** |
+| cuerpo entero sin `meta` | — | **idéntico carácter a carácter** |
+| `meta.dominioCanalMudo` | (no existía) | **6** colecciones derivadas, nombradas |
+
+> **Que sea NO-OP hoy no es un argumento para dejarlo: es la forma que tiene este
+> defecto de sobrevivir.** Lo que prueba que la guarda discrimina **no es esta
+> corrida — es su negativo**, porque la instancia separadora **hay que
+> fabricarla**.
+
+### ⚠⚠ Y el negativo NO EXISTÍA, con el `npm run` puesto desde hacía meses
+
+`package.json` declaraba `qa:media-canales-neg → scripts/qa/media-canales.neg.mjs`
+y **el fichero no estaba en el disco**. Nadie se enteró, por dos motivos y los dos
+de este catálogo:
+
+- `qa:negativos` **enumera `*.neg.mjs` DEL DISCO**, así que un negativo que no
+  existe **no sale rojo: no sale**. §sondas 4 con el selector puesto en un
+  `readdirSync`;
+- y nadie lo corrió a mano, porque **el `npm run` existía** y eso se lee como que
+  el negativo existe.
+
+**Derivado hoy** cruzando los `*-neg` de `package.json` contra el disco:
+**4 de 76 nombran un fichero AUSENTE**.
+
+| script | fichero que nombra | estado |
+|---|---|---|
+| `qa:media-canales-neg` | `scripts/qa/media-canales.neg.mjs` | ✅ **escrito hoy, 4/4** |
+| `qa:atributos-censo-neg` | `scripts/qa/atributos-censo.neg.mjs` | ⛔ **ficha abierta** — ver §QA-NEGATIVOS-QUE-NO-EXISTEN |
+| `cms:captura-sectores-neg` | `scripts/seed/captura-sectores.neg.mjs` | ⛔ ídem |
+| `cms:extractor-p-neg` | `scripts/seed/extractor-p.neg.mjs` | ⛔ ídem |
+
+> ⚠ **Y el primer filtro que escribí para derivar esto dio `0`**, porque el regex
+> `scripts\/[\w\/-]+\.mjs` **no casa un punto**, y todos los negativos llevan
+> `.neg.` en medio. Un cero perfectamente plausible de un filtro roto: §sondas 4
+> cometida sobre un `grep` propio, la misma que el repo tiene catalogada con
+> `.boton-azul`. Lo delató que el fichero que yo estaba a punto de escribir
+> **tenía que salir en esa lista y no salía**.
+
+**El negativo escrito, 4 casos y 4/4, cada uno por su motivo:**
+
+| caso | prueba | ¿separa los dos dominios? |
+|---|---|---|
+| `control` | el inventario se deriva; el dominio se publica y **es exactamente lo observado** (diferencia simétrica 0/0 contra `porCanal`) | — |
+| `canal-mudo` | una colección **de dentro** de la lista vieja ejerce media sin canales ⇒ ROJA | **NO**, y se dice: `productos` está en `SEMBRADAS`, así que el `for` viejo también la visitaba |
+| **`coleccion-fuera`** | una colección **FUERA** de `SEMBRADAS` ejerce media sin canales ⇒ **ROJA** | **SÍ — es la única.** Con el dominio viejo salía ausente y en verde |
+| `guarda-floja` | con todo dado por existente, la existencia deja de comprobarse ⇒ ROJA | — |
+
+> ⚠ **`coleccion-fuera` lleva su CONTROL dentro, y hace falta** (§regla 8). Que
+> hoy salga roja **no prueba** que el dominio viejo no la viera; lo que lo prueba
+> es que su slug **NO ESTÁ en `SEMBRADAS`**, comprobado **importando la lista**,
+> no razonándolo. El día que alguien metiera la postiza ahí, el caso **lo dice**
+> en vez de seguir en verde (§regla 21, la vuelta).
+
+**Evidencia:** `medidas/media-canales-2026-08-22{,-2}.json` ·
+`medidas/media-canales-neg-{control,canal-mudo,coleccion-fuera,guarda-floja}.json`.
+
+---
+
+## ⚠ QA-NEGATIVOS-QUE-NO-EXISTEN · **3** `npm run …-neg` nombran un fichero ausente — 95.ª, 2026-08-22
+
+Derivado con el cruce de arriba: de los **76** scripts `*-neg` de `package.json`,
+**4** nombraban un fichero que no está en el disco. Uno se paga hoy
+(`qa:media-canales-neg`); **quedan 3**, y se fichan en vez de arreglarse porque
+cada uno pertenece a otra sonda y **escribir un negativo es diseñar qué separa**,
+no rellenar un hueco:
+
+| script | fichero ausente | de quién es |
+|---|---|---|
+| `qa:atributos-censo-neg` | `scripts/qa/atributos-censo.neg.mjs` | `atributos-censo`, que **sí declara** sus sabotajes (`lector-muerto` · `tope-cero`) — o sea que los casos existen y lo que falta es **el corredor** |
+| `cms:captura-sectores-neg` | `scripts/seed/captura-sectores.neg.mjs` | campaña de captura de sectores |
+| `cms:extractor-p-neg` | `scripts/seed/extractor-p.neg.mjs` | extractor de `productos` |
+
+**Por qué importa, con su número:** `qa:negativos` censa **61** ficheros
+`.neg.mjs` y corre los baratos. Estos 3 **no están en ese censo** ni en ningún
+recuento — no son «negativos rojos», son **negativos que no existen**, y las dos
+cosas se leen igual desde fuera: como silencio.
+
+> **Y la guarda barata que este repo no tiene**, dicha aquí para que la tanda que
+> la escriba no la redescubra: **cruzar `package.json` contra el disco**. Es un
+> `filter` de tres líneas y habría cazado los 4 el día que se escribieron. Hoy
+> lo hace nadie, así que el `npm run` es la única prueba de que el negativo
+> existe — y no lo es.
+
+---
+
+## ⚠ QA-LISTAS-A-MANO-BARRIDO · **25 candidatos**, clasificados — 95.ª, 2026-08-22
+
+**El barrido que la 95.ª tenía encargado, en las dos direcciones y con su
+número aunque fuera cero.** Instrumento:
+`derivaciones/listas-a-mano-f33.{mjs,log}` — recorre `scripts/` y `packages/`,
+extrae arrays/Sets de literales **puros** y los cruza contra los tres conjuntos
+que el repo **produce** (slugs de colección · nombres de sonda · slugs de
+bloque), los tres derivados y con control §sondas 4 (un productor vacío TIRA).
+
+```
+290 ficheros barridos · 23 de .tmp excluidos (bundles de esbuild: copias)
+138 arrays/Sets de literales PUROS
+ 25 que nombran algo que el repo PRODUCE   ← CANDIDATOS
+```
+
+> ⚠ **Un candidato NO es un defecto, y el barrido sólo puede contestar media
+> regla.** La señal tiene **dos mitades** y sólo la primera es mecánica:
+> *(1) el productor de esos nombres puede hacerlos crecer* ← el barrido;
+> *(2) y el consumidor NO FALLA cuando no casa* ← se lee en el código.
+> Publicar los 25 como «25 defectos» sería §*un patrón que casa en todas tampoco
+> mide nada*.
+
+### La clasificación, con su razón por cada clase
+
+| clase | n | qué son |
+|---|---|---|
+| **A · misma clase, latente** | **1** | `COMPONEN_RUTA` en `packages/cms-config/src/entorno.mjs:47` |
+| **B · alcance DECLARADO, con guarda o con complemento** | **3** | `cobertura.mjs` `NO_APORTAN` y `DECLARADAS` · `seed.mjs` `SEMBRADAS` |
+| **C · falso positivo del barrido** | **11** | 10 que casan sólo porque hay slugs de bloque que se llaman como una etiqueta HTML o un campo (`p` · `ul` · `texto` · `titular` · `imagen` · `icono`) + 1 lista de sabotajes que **además TIRA** al no casar |
+| **C′ · exposición compartida, SIN defecto hoy** | **10** | los alcances de arquetipo de los extractores e inventarios |
+
+**A · `COMPONEN_RUTA` — 1, y es la única de la clase de hoy.**
+`new Set(["productos"])`, consumida en `apps/web/src/lib/cms/proyector.ts:82`
+como `if (!COMPONEN_RUTA.has(col)) return x;` — **silencio puro**. Su productor
+es `DEVUELVE` en `vuelta.mjs`, y **no se puede derivar de él**: `DEVUELVE` tiene
+**2** claves (`productos` · `taxonomia-sectores`) y `COMPONEN_RUTA` **1**, o sea
+que no son el mismo conjunto y tomar las claves de `DEVUELVE` metería una
+colección que no compone ruta. Su propio comentario declara la obligación —*«quien
+añada un compositor de ruta a `vuelta.mjs` tiene que añadirlo aquí»*— y eso es
+§regla 3: **un comentario no es una guarda**. **No se arregla aquí**: vive en el
+camino de RENDER y su arreglo es una decisión de modelado, no una línea.
+
+**B · los 3 declarados — y son el modelo, no la excepción.**
+
+- `cobertura.mjs` `NO_APORTAN` (118) y `DECLARADAS` (14) son listas a mano **con
+  la guarda puesta**: una sonda con congeladas que ninguna de las dos declara sale
+  **NOMBRADA con su cardinal**. Que el consumidor hable al no casar es justo la
+  mitad 2 de la regla, cumplida. Y es también por lo que **`f33-cmp` no se
+  autorregistra**: ese mapeo es semántico;
+- `seed.mjs` `SEMBRADAS` (9) declara **lo que este bloque siembra**, con su
+  complemento explícito `FUERA_DE_BLOQUE_1` (4 entradas, cada una con su razón).
+  **El defecto nunca fue `SEMBRADAS`: fue un CONSUMIDOR usándola como un dominio
+  que no es** — arreglado hoy en §QA-DOMINIO-CANAL-MUDO.
+
+**C′ · los 10 alcances de arquetipo — exposición real, defecto cero HOY.**
+`GRUPO_A` · `DE_BUILDER` · `GRUPO_C` · `DEL_C` · `FAMILIA` · `DEL_GRUPO_A` ·
+`FUERA`, en `a-inventario` (+su negativo), `c-inventario`, `c-embeds`,
+`t4b-bloque`, `extractor`, `extractor-a` y `extractor-c`. **Las diez son
+`filter(… .includes(…))` sobre las claves de `corpus/INDICE.json`: una clave que
+no case se descarta en silencio, y ninguna de las diez `throw`.**
+
+**Y sin embargo hoy no hay defecto, derivado:** el corpus tiene **6 prefijos**
+—`casos` · `documentos-cientificos` · `entradas-blog` · `faqs` · `productos` ·
+`terminos-kunakpedia`— y la unión `GRUPO_A ∪ FUERA` los reclama **6 de 6, 0 sin
+reclamar**. Cada lista es el alcance legítimo de una herramienta de arquetipo.
+
+> ⚠ **Lo que sí queda declarado, porque es lo que la clase C′ comparte: NO EXISTE
+> NINGUNA COMPROBACIÓN DE COMPLETITUD.** Nadie verifica que toda clave del corpus
+> la reclame algún extractor. Un **séptimo** prefijo entraría en `INDICE.json` y
+> las diez lo descartarían **en silencio y a la vez** — y la evidencia de que ese
+> silencio es caro son los **cuatro canales de media** que este repo descubrió
+> chocando, uno por uno. **La cola larga no lo dispara** (`corpus/fase-3/` es un
+> árbol aparte, fuera de `INDICE.json`), y por eso esto es una ficha y no un
+> arreglo de hoy.
+
+---
+
 ## ⚠ F3-3-REGISTRO-SOBRE-RECLAMA · el registro reserva **8 slugs de raíz que nadie sirve** — 94.ª, 2026-08-22
 
 Salió al derivar las familias de `qa:slugs`. `registroDeSlug({familia,
@@ -94,6 +329,30 @@ cambiar el portón del repo por criterio propio.
 **No se arregla en esta tanda** porque toca una colección verificada. El arreglo
 medido es una línea: `enElPlano: () => false` en `articulos-kb`, y decidir si los
 2 productos sin página deben reclamar.
+
+> ✅ **95.ª · ¿CMS-4 = E1 los saca de latentes? NO — 0 de 6, derivado.**
+> (`derivaciones/cms4-reclamos-f33.mjs` + `cms4-reclamos.log`, sobre la congelada
+> ya commiteada `medidas/f33-rutas.json`: sin original y sin DB.)
+>
+> | cruce | n |
+> |---|---|
+> | los **6** de `articulos-kb` ∩ los **19** que E1 baja al plano de raíz | **0** |
+> | los **6** ∩ `entradas-blog` (152) · `productos` (5) · `terminos-kunakpedia` (37) | **0 · 0 · 0** |
+>
+> **Siguen LATENTES.** Lo único que E1 cambia es **cuánta población compite** por
+> el plano de raíz —de 200 slugs registrados a 219—, y esa población **no quiere
+> ninguno de los 6**. Así que la ficha sigue siendo exactamente la que era: un
+> arreglo de una línea sobre una colección verificada, sin urgencia nueva.
+>
+> ⚠ **Y lo que este cero NO dice**, porque es la mitad que se cuela: que sean
+> inofensivos. Un reclamo de raíz que el sitio no usa **puede bloquear un alta
+> legítima**, y eso no depende de E1 — depende de qué quiera llamarse así el
+> primer editor. El cero es **de hoy y con su denominador**, no una propiedad.
+>
+> **Los 2 de `productos`, nombrados** (que es la otra mitad de los 8, y **otra
+> decisión**): `sensor-de-calidad-del-aire` y
+> `estacion-de-monitoreo-de-calidad-del-aire` — reclaman raíz y **no tienen
+> página emitida** en las 385 del manifiesto. También **0** contra los 19 de E1.
 
 > ✅ **Lo que sí se arregló, porque era gratis: `paginas`.** Llamaba a
 > `registroDeSlug` **sin** `enElPlano` y habría reservado **12 slugs de raíz que

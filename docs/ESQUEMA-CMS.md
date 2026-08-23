@@ -4124,11 +4124,125 @@ se conservan con su alcance en el nombre:
 casa con 0 slugs) · pre-registro en
 `docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`.
 
+## ✅ 2k · CMS-4 · QUIÉN SIRVE LAS 31 — **EL PLANO EXISTENTE (E1)** (2026-08-22, 95.ª tanda)
+
+> ✅ **DECISIÓN DEL PROPIETARIO, 2026-08-22.** Las tres salidas se publicaron con
+> su coste en `PENDIENTES-QA.md` §CMS-4 (94.ª tanda) **sin recomendación**, y se
+> eligió **E1**. Aquí se escribe con su razón, con **por qué caen E2 y E3** —cada
+> una con su separadora, no con un adjetivo— y con su **condición de
+> reapertura**, que hace falta porque **E1 se toma CONTRA lo que §1.5b Razón 3
+> favorece** (abajo).
+>
+> ⚠ **Esta tanda escribe la decisión. NO la implementa**: la emisión es la
+> siguiente, y sigue declarada en `PENDIENTES-QA.md` §F3-3-EMISION.
+
+**La forma, en tres piezas** (reparto derivado en `medidas/f33-rutas.json`, 94.ª):
+
+| pieza | n | qué se hace |
+|---|---|---|
+| **plano de raíz** | **19** | `/[slug]` despacha un **TERCER catálogo**, junto a `entradas-blog` y `terminos-kunakpedia` |
+| **catch-all** | **11** | `centro-de-ayuda` (4) · `soporte` (4) · `recursos` (3) extienden su `generateStaticParams` |
+| **ruta nueva** | **1** | `/empresa/premios-y-reconocimientos` — no hay plano que la sirva **ni que la estorbe** |
+
+### Por qué E1, y no es «la menos mala»: es la decisión que este repo YA TOMÓ
+
+**E1 no estrena patrón — es `ENRUTADO.md` §3 punto 2 aplicado por tercera vez**,
+y ese documento lo escribió con el hueco ya previsto:
+
+> *«Un solo `[slug]` de raíz para las familias planas (blog, término, **y lo que
+> venga**), despachando por slug contra los catálogos — exactamente el patrón que
+> `/sectores/[slug]` ya usa para servir dos arquetipos.»*
+
+O sea que la pregunta de CMS-4 **no era si el patrón vale**: vale, está probado
+dos veces (`/sectores/[slug]` sirve SECTOR y MONOGRÁFICO desde la 1.ª tanda;
+`/[slug]` sirve blog y término desde grupo A) y **vigilado** (`qa:slugs` impone
+la unicidad ENTRE familias, que es el punto 4 del mismo documento). La pregunta
+era **si merece la pena tocar rutas verificadas**, y ésa sí es del propietario.
+
+**La razón, con su número: 0 URLs cambian.** Es la regla 1 del proyecto
+—*fidelidad al píxel y a la topología de URLs*— y es lo único que separa a E1 de
+E2 de forma que ninguna medición discute.
+
+### Por qué caen E2 y E3 — con sus separadoras
+
+| salida | cae por | separadoras |
+|---|---|---|
+| **E2** · prefijo propio para la cola larga | **rompe 19 URLs vivas.** Sería la **primera desviación estructural del clon**, y es literalmente la salida **(b)** que `ENRUTADO.md` §3 ya descartó para grupo A —allí eran 187 URLs, aquí 19: **el mismo error, más barato, y sigue siendo el mismo error**—. Elegir E2 no es tomar una decisión nueva: es **revertir una tomada**, y revertirla sin que ninguna medida nueva la contradiga | **19** — las 19 páginas de un segmento. Bajo E1 su URL es la del original; bajo E2, otra. Ninguna otra salida las mueve. ⚠ Y son **producto, no fidelidad**: quien las visite hoy por la URL del original recibe un 404 |
+| **E3** · emitir sólo las 12 prefijadas | **no cierra F3-3**, que es la fase entera. Deja **19 rutas sin emitir** para no tocar 3 verificadas, y el proyecto ya tiene escrito cómo se resuelve ese cambio: **con su antes/después**, no evitándolo | **19** sin emitir, **y las mismas 19**: E3 y E2 se separan de E1 por el mismo conjunto, con distinto síntoma —E2 las sirve en otra URL, E3 no las sirve—. Lo que las separa **entre sí** son las 12 prefijadas, que E3 sí emite |
+
+### El coste, declarado y no escondido
+
+**3 rutas verificadas se tocan**, y son los `generateStaticParams` de los tres
+catch-all. La única con contenido verificado detrás es
+`/centro-de-ayuda/[...ruta]`, que hoy emite **los 6 artículos de KB** con
+`dynamicParams = false`. **Entra con su antes/después a umbral cero sobre esas 6
+rutas** — no es un extra de la tanda que emita: es parte de ella.
+
+**Y lo que NO cuesta, derivado hoy y no supuesto** (`derivaciones/cms4-reclamos-f33.mjs`
++ `cms4-reclamos.log`), en las dos direcciones (§*una comprobación retroactiva
+se enmarca en LAS DOS DIRECCIONES*):
+
+| dirección | cruce | resultado |
+|---|---|---|
+| **¿lo viejo estorba a E1?** | los **6** slugs de raíz que `articulos-kb` reclama sin usar (§F3-3-REGISTRO-SOBRE-RECLAMA) ∩ los **19** que E1 baja al plano | **0 de 6.** Siguen LATENTES: E1 **no** los activa |
+| **¿E1 estorba a lo viejo?** | los **19** de E1 ∩ las **4** familias del registro (`entradas-blog` 152 · `terminos-kunakpedia` 37 · `articulos-kb` 6 · `productos` 5 = **200 slugs**) | **0 colisiones.** E1 es sembrable sin tocar ninguna familia existente |
+
+> ⚠ **Los dos ceros son de HOY y se leen con su fecha.** No dicen que nunca vaya
+> a haber colisión: dicen que la guarda que la impondría —`qa:slugs`, que desde
+> la 94.ª **deriva sus familias del registro**— no tiene nada que rechazar con el
+> contenido que existe. `paginas` entra en esa guarda **sola** el día que se
+> siembre, sin que nadie toque la sonda; y `paginas` ya lleva
+> `enElPlano: (doc) => !doc.prefijo`, así que reclama **19** y no 31.
+
+### ⚠ E1 va CONTRA §1.5b Razón 3 — y por eso lleva condición de reapertura
+
+**Se cita el criterio CON SU OPERACIÓN, para que el signo no se pueda invertir al
+releerlo** (§regla 23): *entre dos opciones reversibles se toma la que se deshace
+mejor, y la que se deshace mejor es **la que empieza SEPARADA**, porque
+deshacerla es **fusionar**, que es el lado barato.* Aquí la separada es **E2**
+—plano propio— y la fusionada es **E1** —tres catálogos en un plano—. **Razón 3
+ordena E2 antes que E1.**
+
+**E1 se elige igualmente porque la FIDELIDAD pesa más que la asimetría**, y la
+maquinaria es la misma con la que R1 le ganó a Razón 3 en §2j.3: la asimetría de
+deshacer sólo arbitra **cuando ninguna medida arbitra**. Aquí una medida arbitra
+—**19 URLs vivas**— y además hay un matiz que conviene decir en voz alta:
+
+> **La premisa de Razón 3 es «dos opciones REVERSIBLES», y E2 no lo es en la
+> misma moneda.** Deshacer E1 cuesta *código de enrutado*; E2 **cambia el
+> producto el día que se aplica** y su vuelta atrás vuelve a cambiar 19 URLs. O
+> sea que E1 y E2 no compiten en el eje que Razón 3 mide, y aplicárselo tal cual
+> compara dos cosas que no son del mismo tipo.
+
+> **CONDICIÓN DE REAPERTURA, explícita** —obligatoria porque la decisión va
+> contra el criterio (§regla 23, mitad 2). CMS-4 se reabre el día que se cumpla
+> **cualquiera** de estas dos, y no antes:
+>
+> | # | qué tendría que pasar | por qué reabre |
+> |---|---|---|
+> | **RE-1** | una **colisión de slug entre familias en el plano de raíz que no se pueda resolver renombrando** — o sea, dos documentos que *tienen que* llamarse igual porque el original los llama igual | es lo único que hace caro el plano compartido. Hoy: **0 sobre 219 slugs** (200 registrados + 19 de E1), así que la condición está lejos **y su denominador se publica** |
+> | **RE-2** | que `/[slug]` **deje de poder despachar por catálogo** — que dos familias necesiten resolución distinta para el mismo segmento (p. ej. una que dependa de la petición) | rompería el mecanismo, no la preferencia. Entonces la elección ya no sería E1-vs-E2 sino otra |
+>
+> ⚠ **Lo que NO reabre: que el número de familias crezca.** Tres catálogos en un
+> plano no es peor que dos — `ENRUTADO.md` §3 lo escribió como *«y lo que
+> venga»*, y el coste de cada familia nueva es **un despacho más**, no una
+> frontera nueva. Leer «ya son tres, mejor partimos» sería exactamente Razón 3
+> aplicada donde su premisa no se cumple.
+
+### Lo que CMS-4 NO decide
+
+| | |
+|---|---|
+| **quién emite los 13 REDIRECTS** | sigue abierto, y es del enrutado (§4), no de `paginas` (§2j.4). E1 no lo toca: un 301 no ocupa slug |
+| **el orden de despacho dentro de `/[slug]`** | tres catálogos y una sola ruta: en qué orden se consultan es implementación, y **da igual mientras la unicidad se imponga** — que es lo que `qa:slugs` hace. Si alguna vez dejara de dar igual, eso es **RE-1** |
+| **la GEOMETRÍA de las 31** | otra cosa completamente, y sigue en **0 ejes comparados** (§2j.4). Emitir sin derivarla es cómo se fabrica una FAMILIA DE CALIBRACIÓN |
+| **si los 6 reclamos falsos de `articulos-kb` se quitan** | derivado que E1 **no** los activa (0 de 6), así que sigue siendo la ficha que ya era — `F3-3-REGISTRO-SOBRE-RECLAMA`, arreglo medido de una línea sobre una colección verificada |
+
 ## 7 · Decisiones abiertas, en un sitio
 
 | # | decisión | bloquea |
 |---|---|---|
-| ⛔ **CMS-4 · ¿QUIÉN SIRVE LAS 31 DE LA COLA LARGA?** (94.ª, 2026-08-22) | **`0 de 31` colisionan literalmente y `30 de 31` SOLAPAN el plano de otra familia** — dos afirmaciones distintas y sólo la primera estaba medida. Reparto: **19 → `/[slug]`** (el plano de raíz de grupo A) · **4 + 4 + 3 → los catch-all de `centro-de-ayuda`, `soporte` y `recursos`**, los tres con `dynamicParams = false` · **1 sin plano**. Tres salidas con su coste en `PENDIENTES-QA.md` §CMS-4: **E1** `/[slug]` sirve una tercera familia (0 URLs cambian, se tocan 3 rutas verificadas) · **E2** prefijo propio (no toca nada, **rompe 19 URLs vivas**) · **E3** emitir sólo las 12 prefijadas. ⚠ **El precedente de que un plano sirva dos formas existe** (`/sectores/[slug]`), así que la pregunta no es si se puede: es **cuál se toma**. Lo que ya NO espera: la guarda — `qa:slugs` deriva sus familias del registro y `paginas` entra sola el día que se siembre | **la EMISIÓN entera de F3-3** (31 páginas) y, con ella, los 9 ejes de cobertura de la cola larga |
+| ✅ **CMS-4 · ¿QUIÉN SIRVE LAS 31 DE LA COLA LARGA?** — **CERRADA el 2026-08-22 (95.ª): el propietario tomó `E1`, el PLANO EXISTENTE. Escrita con su razón, sus separadoras y su condición de reapertura en §2k.** Enunciado original de la 94.ª debajo | **`0 de 31` colisionan literalmente y `30 de 31` SOLAPAN el plano de otra familia** — dos afirmaciones distintas y sólo la primera estaba medida. Reparto: **19 → `/[slug]`** (el plano de raíz de grupo A) · **4 + 4 + 3 → los catch-all de `centro-de-ayuda`, `soporte` y `recursos`**, los tres con `dynamicParams = false` · **1 sin plano**. Tres salidas con su coste en `PENDIENTES-QA.md` §CMS-4: **E1** `/[slug]` sirve una tercera familia (0 URLs cambian, se tocan 3 rutas verificadas) · **E2** prefijo propio (no toca nada, **rompe 19 URLs vivas**) · **E3** emitir sólo las 12 prefijadas. ⚠ **El precedente de que un plano sirva dos formas existe** (`/sectores/[slug]`), así que la pregunta no es si se puede: es **cuál se toma**. Lo que ya NO espera: la guarda — `qa:slugs` deriva sus familias del registro y `paginas` entra sola el día que se siembre | **la EMISIÓN entera de F3-3** (31 páginas) y, con ella, los 9 ejes de cobertura de la cola larga |
 | ⛔ **CMS-TITULO-RICO** | **`titulo` es `type: "text"` y 8 de 288 documentos del corpus llevan MARCADO dentro del `<h1>`** — `<sub>` de fórmula química (`O<sub>2</sub>`, `H<sub>2</sub>S`, `PM<sub>10</sub>`). Un campo de texto plano **no puede contener su dato medido**, y el clon ya sirve esos 8 aplanados en rutas dadas por verificadas. Reparto: **término 6/37 · blog 1/152 · caso 1/57 · doc. científico 0/23 · faq 0/19**. Ver §7f | **`L2`** (`/glosario` es donde se concentra: 6 de sus 37 términos) y la fidelidad de **8 rutas ya emitidas** |
 | **CMS-ORDEN-L2** ✅ **DECIDIDA 2026-08-18 (81.ª) para sus DOS mitades con clave SERVIDA —se añade el campo de fecha a `casos` y `terminos-kunakpedia`—; la tercera (`documentos-cientificos`) queda DECLARADA y sin modelar. Ver §7g** ⚠ **ALCANCE AMPLIADO 2026-08-18 (80.ª): son TRES arquetipos, no uno, y uno de ellos BLOQUEA `L5` — ver §7g** | **¿cómo ordena el clon un ARCHIVO DE CPT?** El original ordena `/glosario` por **`datePublished` DESC (37/37)** y **ninguno de los dos tipos del clon tiene campo de fecha**. Dos mitades distintas, y **no se resuelven con la misma decisión** — ver §7e. ~~⚠ **AMPLIADA 2026-08-17 (75.ª): la pregunta no es sólo *«por qué campo»*, es también *«con qué DESEMPATE»*.**~~ ⛔⛔ **AMPLIACIÓN RETIRADA POR MEDIDA el 2026-08-18 (76.ª): su ÚNICA evidencia eran los «36 pares que oscilan entre builds del mismo código», y no eran builds del mismo código** — entre las corridas `-1` y `-2` se aplicó la salida `A` del 301 y entre la `-2` y la `-3` se revirtió; en la `-2` el clon sirve `/etiqueta/cov` con **`nTarjetas` 5 contra 6 del original**, o sea **un documento menos**, no un empate resuelto de otra forma. Sin esa evidencia **no hay ninguna medida que diga que el orden del clon sea inestable**, y hay 205 comparaciones de ruta a Δ0 contra el mismo build que dicen lo contrario. **La decisión vuelve a ser la de la 69.ª: sólo *«por qué campo ordena»*.** Un desempate total y estable sigue siendo sensato, pero entra **con esta decisión y con su antes/después**, no como reparación. Retirada y su prueba: `PENDIENTES-QA.md` §F3-AUDITORIA-76; la ficha original queda marcada `(RETIRADA)` en §F3-LH-LISTADO-QUE-OSCILA | **`L2` entera** (12 rutas) **y la estabilidad de los listados ya emitidos** |
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
