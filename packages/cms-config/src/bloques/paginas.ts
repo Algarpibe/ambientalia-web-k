@@ -62,7 +62,7 @@
  */
 import type { Block, Field } from "payload";
 
-import { anchoPct, campoHtml, medida, subida } from "../campos/comunes.ts";
+import { anchoPct, campoHtml, conDefecto, medida, subida } from "../campos/comunes.ts";
 import {
   CAMPOS_MODULO_BOTON,
   CAMPOS_MODULO_IMAGEN,
@@ -266,12 +266,44 @@ export const MODULO_CODIGO: Block = {
  * nadie lo tocó*. No se cablea como campo (sería inventarse un booleano) y no
  * se da por plantilla. Ficha `F3-3-TOGGLE-ABIERTO`.
  */
+/**
+ * ⚠⚠ **EL TITULAR DEL `toggle` ES `h5`, Y `nivelTitular` NO LO ADMITE
+ * (2026-08-23, 96.ª tanda — lo destapó la PRIMERA siembra).**
+ *
+ * `nivelTitular` es `nivelCon(3, "titular")`, o sea `min: 2, max: 4`, y su
+ * fuente lo dice: **«§1.5 · MonoNivel 2|3|4»** — se derivó del MONOGRÁFICO. En
+ * F3-3 el original sirve `<h5 class="et_pb_toggle_title">` en **10 de 10**
+ * instancias, así que Payload rechazó las 10 con *«5 is greater than the max
+ * allowed Value of 4»*.
+ *
+ * Es §*una regla derivada sobre un dominio donde el caso NO SE DA está SIN
+ * PROBAR para ese caso*: el rango 2–4 es correcto **donde se midió** y nunca
+ * cubrió a éste. Y como manda esa misma regla, **se estrecha a su dominio en vez
+ * de sustituirse por la contraria**: `nivelTitular` no se toca —ampliarlo
+ * movería el `max` de las 12 columnas `nivel` de arquetipos ya verificados, para
+ * arreglar a uno—, y el `toggle` de la cola larga lleva **el suyo**. Es el mismo
+ * criterio con el que `MODULO_BOTON_PAGINA` lleva ritmo aunque el botón
+ * compartido lo omita.
+ *
+ * ⚠ **Y el RANGO no es el enum de lo visto: es el de la etiqueta.** Medido hay
+ * un solo valor (`h5`, 10/10), y escribir `max: 5` convertiría una muestra en
+ * una cota. Es el criterio ya escrito para `MonoAncho` tres bloques más allá
+ * —*«no es el enum de los valores vistos: es la retícula»*—: aquí la retícula
+ * son los seis niveles que HTML define, y `min: 2` se conserva porque el `h1` es
+ * el título de la página, no de un módulo.
+ */
+const nivelToggle: Field = conDefecto(
+  { name: "nivel", type: "number", min: 2, max: 6 } as Field,
+  5,
+  "F3-3 · `et_pb_toggle_title` sirve `h5` en 10/10 (arbol-f33). El RANGO es el de la etiqueta HTML, no el de la muestra.",
+);
+
 export const MODULO_TOGGLE: Block = {
   slug: "toggle",
   labels: { singular: "Desplegable", plural: "Desplegables" },
   fields: [
     { name: "titulo", type: "text", required: true },
-    nivelTitular,
+    nivelToggle,
     campoHtml("cuerpo", { requerido: true }),
     ...moduloBasePagina,
   ],
@@ -515,7 +547,32 @@ export const columnasPagina: Field = {
   minRows: 1,
   fields: [
     ancho,
-    { name: "modulos", type: "blocks", blocks: MODULOS_PAGINA, required: true, custom: { conKind: true } },
+    /**
+     * ⚠⚠ **`modulos` NO es `required`: LA COLUMNA VACÍA ES CONTENIDO
+     * (2026-08-23, 96.ª tanda — lo destapó la siembra, no una revisión).**
+     *
+     * Con `required: true` Payload rechazó con *«This field requires at least 1
+     * Row»*. Medido sobre el HTML SERVIDO de las 31: **21 de 179 columnas
+     * (11.7 %) no tienen ni un módulo**, repartidas en **6 páginas** —12 de
+     * ellas en `video-tutoriales`, que es el patrón de «vídeo a la izquierda,
+     * hueco a la derecha»—.
+     *
+     * ⚠ Y la primera pregunta era si el original las sirve vacías **o si el
+     * extractor no sabe leer sus módulos** (§sondas 4). Se comprobó midiendo el
+     * HTML interno de cada una: **0 caracteres en las 21**. O sea que están
+     * vacías en la salida servida, y dejar una columna vacía para empujar el
+     * contenido a media fila es una decisión **del editor** — contenido, no
+     * defecto.
+     *
+     * ⚠ **Y esto NO es «un campo opcional que no expresa nada»** (§*un campo
+     * opcional sólo permite que falte*): esa regla exige comprobar si queda
+     * contenido SIN SITIO, y aquí la comprobación se hizo sobre el documento —
+     * los 0 caracteres— en vez de sobre el esquema. La columna sigue existiendo
+     * en la retícula porque `ancho` sí es `required` y `validaReticulaPagina`
+     * exige que los anchos sumen 1: **quitar la columna rompería la fila**, que
+     * es justo la diferencia entre «no hay módulos» y «no hay columna».
+     */
+    { name: "modulos", type: "blocks", blocks: MODULOS_PAGINA, required: false, custom: { conKind: true } },
   ],
 };
 

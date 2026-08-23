@@ -76,6 +76,16 @@ export const CATALOGOS = [
    * de panel que faltaban se capturaron contra la lista derivada por canales
    * (`qa:media-canales`) y se colocaron. Ficha: §DATOS-P-MEDIA. */
   { coleccion: "productos", json: "medidas/p-extraido.json", en: "catalogo.productos" },
+  /**
+   * ⚠ **`paginas` — la cola larga F3-3, 96.ª tanda.** 31 documentos, 11 tipos de
+   * módulo, 313 módulos. Nace del CORPUS desde el primer día: no hay etapa de
+   * `src/lib` que saltarse, porque este arquetipo nunca se construyó a mano.
+   *
+   * Su dato lo produce `npm run cms:extractor-f33`, cuyo negativo (5/5) se
+   * escribió ANTES que esta línea (§regla 24): así, si la siembra sale roja, el
+   * rojo sólo puede ser suyo — el extractor ya está adjudicado.
+   */
+  { coleccion: "paginas", json: "medidas/f33-extraido.json", en: "catalogo.paginas" },
   { coleccion: "sectores", modulo: "src/lib/sectores.ts", exportado: "SECTORES_PUBLICADOS" },
   { coleccion: "monograficos", modulo: "src/lib/monografico.ts", exportado: "MONOGRAFICOS_PUBLICADOS" },
   { coleccion: "taxonomia-sectores", modulo: "src/lib/taxonomia-sectores.ts", exportado: "TERMINOS_SECTOR" },

@@ -1,0 +1,34 @@
+═══ censo-f33 · las etiquetas de F3-3 fuera del censo de campoHtml
+
+  censo declarado (leído de comunes.ts)   43 etiquetas
+  documentos de f33-extraido              31
+  PÁGINAS AFECTADAS                       10 de 31
+
+  etiqueta      páginas   dónde
+  <meta>          10     documentos-cientificos · empresa · kunakpedia · preguntas-frecuentes · premios-y-reconocimientos · productos · recursos · sectores · servicio-de-reparacion · soporte
+  <article>        2     documentos-cientificos · recursos
+  <svg>            1     documentos-cientificos
+  <path>           1     documentos-cientificos
+  <header>         1     documentos-cientificos
+
+  y el SITIO exacto, que es lo que dice si es contenido o cascarón:
+     <meta>  documentos-cientificos·texto-pagina.html
+     <meta>  empresa·texto-pagina.html
+     <meta>  kunakpedia·texto-pagina.html
+     <meta>  preguntas-frecuentes·texto-pagina.html
+     <meta>  premios-y-reconocimientos·texto-pagina.html
+     <meta>  productos·texto-pagina.html
+     <meta>  recursos·texto-pagina.html
+     <meta>  sectores·texto-pagina.html
+     <meta>  servicio-de-reparacion·texto-pagina.html
+     <meta>  soporte·texto-pagina.html
+     <article>  documentos-cientificos·texto-pagina.html
+     <article>  recursos·texto-pagina.html
+     <svg>  documentos-cientificos·texto-pagina.html
+     <path>  documentos-cientificos·texto-pagina.html
+     <header>  documentos-cientificos·texto-pagina.html
+
+  ⚠ LO QUE ESTO NO DICE: si son legítimas. `<meta itemprop>` viene de una miga
+     `schema.org/BreadcrumbList` servida DENTRO del `et_pb_text`, y
+     `<article>/<header>/<svg>` pueden ser un LISTADO EMBEBIDO — o sea una
+     CONSULTA, que no se congela como texto. Eso se mide, no se deduce.

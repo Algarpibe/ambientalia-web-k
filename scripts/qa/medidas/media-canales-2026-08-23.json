@@ -1,0 +1,994 @@
+{
+  "meta": {
+    "fecha": "2026-08-23",
+    "que": "el inventario de media DERIVADO POR CANALES del esquema, cruzado contra la guarda que para",
+    "regla": "el inventario se deriva de los canales que el ESQUEMA declara, no de los que algún extractor ya lee",
+    "guardas": {
+      "seed": "exige el fichero EXACTO en apps/web/public",
+      "seed-kb": "acepta media-corpus/ y colapsa variantes"
+    },
+    "sabotaje": null,
+    "noHace": [
+      "no abre el original",
+      "no captura",
+      "no siembra"
+    ],
+    "dominioCanalMudo": [
+      "casos",
+      "documentos-cientificos",
+      "entradas-blog",
+      "monograficos",
+      "paginas",
+      "productos",
+      "sectores"
+    ]
+  },
+  "recuento": {
+    "canalesDeclarados": 50,
+    "canalesEjercidos": 19,
+    "canalesSinDato": 33,
+    "canalesDeOtroSembrador": 4,
+    "referencias": 676,
+    "rutasDistintas": 676,
+    "ausentes": 45
+  },
+  "canalesDeclarados": [
+    {
+      "coleccion": "sectores",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "header.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "hero.image.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "body.ctaDescarga.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "body.claimConFoto.image.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "ctaSlides.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "proyectos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "articulos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "footerStripImage",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "header.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "hero.image.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "cuerpo.filas.columnas.modulos.imagen.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "cuerpo.filas.columnas.modulos.ctaDescarga.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "ctaSlides.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "proyectos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "articulos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "footerStripImage",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.imagen.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.blurb.icono",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.slider.diapositivas.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.gallery.imagenes.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.video.archivo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.video.poster",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.cta.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "imagenCabecera",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "galeria.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "ruta": "imagenDestacada.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "ruta": "portada.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.imagen-pagina.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.slider-completo.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.slider.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.icono.icono",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.imagen-pagina.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.slider-completo.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.slider.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.icono.icono",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.imagen-kb.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.gallery.items.imagen",
+      "tipo": "upload"
+    }
+  ],
+  "canalesSinDato": [
+    {
+      "coleccion": "sectores",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "body.ctaDescarga.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "body.claimConFoto.image.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "footerStripImage",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "cuerpo.filas.columnas.modulos.imagen.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "cuerpo.filas.columnas.modulos.ctaDescarga.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "ctaSlides.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "proyectos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "footerStripImage",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.imagen.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.blurb.icono",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.slider.diapositivas.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.gallery.imagenes.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.video.archivo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.video.poster",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.cta.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.imagen-pagina.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.slider-completo.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.slider.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.icono.icono",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.imagen-pagina.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.slider-completo.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.slider.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.icono.icono",
+      "tipo": "texto-url"
+    }
+  ],
+  "canalesDeOtroSembrador": [
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.imagen-kb.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.gallery.items.imagen",
+      "tipo": "upload"
+    }
+  ],
+  "porCanal": [
+    {
+      "coleccion": "productos",
+      "canal": "image",
+      "guarda": "seed",
+      "refs": 12,
+      "rutas": 12,
+      "ausentes": []
+    },
+    {
+      "coleccion": "paginas",
+      "canal": "bloques.filas.columnas.modulos.src",
+      "guarda": "seed",
+      "refs": 42,
+      "rutas": 42,
+      "ausentes": [
+        "/images/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled-2.jpg",
+        "/images/uploads/2023/02/Kunak-AIR-Lite.jpg",
+        "/images/uploads/2023/02/Kunak-logo.png",
+        "/images/uploads/2023/02/Video-Checking-before-deployment.jpg",
+        "/images/uploads/2023/02/Video-account-and-device-management.jpg",
+        "/images/uploads/2023/02/Video-air-quality-index-control-panel-aqi.jpg",
+        "/images/uploads/2023/02/Video-gas-calibration-tool.jpg",
+        "/images/uploads/2023/02/Video-installation-1.jpg",
+        "/images/uploads/2023/02/Video-installation-of-a-probe.jpg",
+        "/images/uploads/2023/02/Video-introduction-to-Kunak-Cloud.jpg",
+        "/images/uploads/2023/02/Video-replacement-of-a-cartridge.jpg",
+        "/images/uploads/2023/02/Video-solar-panel-installation.jpg",
+        "/images/uploads/2023/02/Video-storage-and-transportation.jpg",
+        "/images/uploads/2023/03/air-pollution.jpg",
+        "/images/uploads/2023/03/kunak-office.jpg",
+        "/images/uploads/2023/03/smart-cartridges.jpg",
+        "/images/uploads/2023/06/Logo-PIN_A-cast-ingles-BN.jpg",
+        "/images/uploads/2024/03/Airlab-Microsensors-Challenge-2023-1024x683.jpg",
+        "/images/uploads/2024/03/DeliveredBy_DHL_GoGreen-Plus_webshop_logo_with_addition.svg",
+        "/images/uploads/2024/03/Premio-DHL-Atlas-2-1.jpg",
+        "/images/uploads/2024/03/Premio-DHL-Atlas-2.jpg",
+        "/images/uploads/2024/03/Premio-La-Caixa-Emprendedor-XXI.jpg",
+        "/images/uploads/2024/03/aqe-show-1024x683.jpg",
+        "/images/uploads/2024/03/premio-airlab-2021.jpg",
+        "/images/uploads/2024/03/premio-atana.jpg",
+        "/images/uploads/2024/03/premio-tesicnor-2.jpg",
+        "/images/uploads/2024/03/premios-y-reconocimientos.jpg",
+        "/images/uploads/2024/03/wildland-fire-sensor-challenge.jpg",
+        "/images/uploads/2024/04/premios-aster-navarra-2024-kunak.jpg",
+        "/images/uploads/2024/12/premios-pyme-2024-kunak.jpg",
+        "/images/uploads/2025/01/Logos_web_beneficiarios_1.png",
+        "/images/uploads/2025/04/Sello_Ciberemprende_INCIBE_Emprende_Kunak.svg",
+        "/images/uploads/2025/08/Logo_FEDER_GN_bilingue.png",
+        "/images/uploads/2025/11/Kunak_premio_itelna_2025.jpg",
+        "/images/uploads/2025/12/sello_pyme_innovadora_kunak.svg"
+      ]
+    },
+    {
+      "coleccion": "paginas",
+      "canal": "bloques.filas.columnas.modulos.imagen",
+      "guarda": "seed",
+      "refs": 17,
+      "rutas": 17,
+      "ausentes": [
+        "/images/uploads/2023/02/Reliable-rugged.svg",
+        "/images/uploads/2023/02/awarded.svg",
+        "/images/uploads/2023/02/efficiency-1.svg",
+        "/images/uploads/2023/02/fast.svg",
+        "/images/uploads/2023/02/flexible.svg",
+        "/images/uploads/2023/02/immediately.svg",
+        "/images/uploads/2023/02/innovation.svg",
+        "/images/uploads/2023/02/patented-1.svg",
+        "/images/uploads/2023/02/protected-designs.svg",
+        "/images/uploads/2023/02/winner.svg"
+      ]
+    },
+    {
+      "coleccion": "paginas",
+      "canal": "bloques.filas.columnas.modulos.diapositivas.fondo",
+      "guarda": "seed",
+      "refs": 5,
+      "rutas": 5,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "header.image",
+      "guarda": "seed",
+      "refs": 4,
+      "rutas": 4,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "hero.image.src",
+      "guarda": "seed",
+      "refs": 4,
+      "rutas": 4,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "body.image",
+      "guarda": "seed",
+      "refs": 3,
+      "rutas": 3,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "body.image.src",
+      "guarda": "seed",
+      "refs": 4,
+      "rutas": 4,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "ctaSlides.image",
+      "guarda": "seed",
+      "refs": 12,
+      "rutas": 12,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "proyectos.posts.image",
+      "guarda": "seed",
+      "refs": 10,
+      "rutas": 10,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "articulos.posts.image",
+      "guarda": "seed",
+      "refs": 12,
+      "rutas": 12,
+      "ausentes": []
+    },
+    {
+      "coleccion": "monograficos",
+      "canal": "header.image",
+      "guarda": "seed",
+      "refs": 2,
+      "rutas": 2,
+      "ausentes": []
+    },
+    {
+      "coleccion": "monograficos",
+      "canal": "hero.image.src",
+      "guarda": "seed",
+      "refs": 2,
+      "rutas": 2,
+      "ausentes": []
+    },
+    {
+      "coleccion": "monograficos",
+      "canal": "cuerpo.filas.columnas.modulos.src",
+      "guarda": "seed",
+      "refs": 11,
+      "rutas": 11,
+      "ausentes": []
+    },
+    {
+      "coleccion": "monograficos",
+      "canal": "articulos.posts.image",
+      "guarda": "seed",
+      "refs": 5,
+      "rutas": 5,
+      "ausentes": []
+    },
+    {
+      "coleccion": "casos",
+      "canal": "imagenCabecera",
+      "guarda": "seed",
+      "refs": 56,
+      "rutas": 56,
+      "ausentes": []
+    },
+    {
+      "coleccion": "casos",
+      "canal": "galeria.src",
+      "guarda": "seed",
+      "refs": 348,
+      "rutas": 348,
+      "ausentes": []
+    },
+    {
+      "coleccion": "entradas-blog",
+      "canal": "imagenDestacada.src",
+      "guarda": "seed",
+      "refs": 104,
+      "rutas": 104,
+      "ausentes": []
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "canal": "portada.src",
+      "guarda": "seed",
+      "refs": 23,
+      "rutas": 23,
+      "ausentes": []
+    }
+  ],
+  "origenesACapturar": [
+    "/images/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled-2.jpg",
+    "/images/uploads/2023/02/Kunak-AIR-Lite.jpg",
+    "/images/uploads/2023/02/Kunak-logo.png",
+    "/images/uploads/2023/02/Reliable-rugged.svg",
+    "/images/uploads/2023/02/Video-Checking-before-deployment.jpg",
+    "/images/uploads/2023/02/Video-account-and-device-management.jpg",
+    "/images/uploads/2023/02/Video-air-quality-index-control-panel-aqi.jpg",
+    "/images/uploads/2023/02/Video-gas-calibration-tool.jpg",
+    "/images/uploads/2023/02/Video-installation-1.jpg",
+    "/images/uploads/2023/02/Video-installation-of-a-probe.jpg",
+    "/images/uploads/2023/02/Video-introduction-to-Kunak-Cloud.jpg",
+    "/images/uploads/2023/02/Video-replacement-of-a-cartridge.jpg",
+    "/images/uploads/2023/02/Video-solar-panel-installation.jpg",
+    "/images/uploads/2023/02/Video-storage-and-transportation.jpg",
+    "/images/uploads/2023/02/awarded.svg",
+    "/images/uploads/2023/02/efficiency-1.svg",
+    "/images/uploads/2023/02/fast.svg",
+    "/images/uploads/2023/02/flexible.svg",
+    "/images/uploads/2023/02/immediately.svg",
+    "/images/uploads/2023/02/innovation.svg",
+    "/images/uploads/2023/02/patented-1.svg",
+    "/images/uploads/2023/02/protected-designs.svg",
+    "/images/uploads/2023/02/winner.svg",
+    "/images/uploads/2023/03/air-pollution.jpg",
+    "/images/uploads/2023/03/kunak-office.jpg",
+    "/images/uploads/2023/03/smart-cartridges.jpg",
+    "/images/uploads/2023/06/Logo-PIN_A-cast-ingles-BN.jpg",
+    "/images/uploads/2024/03/Airlab-Microsensors-Challenge-2023-1024x683.jpg",
+    "/images/uploads/2024/03/DeliveredBy_DHL_GoGreen-Plus_webshop_logo_with_addition.svg",
+    "/images/uploads/2024/03/Premio-DHL-Atlas-2-1.jpg",
+    "/images/uploads/2024/03/Premio-DHL-Atlas-2.jpg",
+    "/images/uploads/2024/03/Premio-La-Caixa-Emprendedor-XXI.jpg",
+    "/images/uploads/2024/03/aqe-show-1024x683.jpg",
+    "/images/uploads/2024/03/premio-airlab-2021.jpg",
+    "/images/uploads/2024/03/premio-atana.jpg",
+    "/images/uploads/2024/03/premio-tesicnor-2.jpg",
+    "/images/uploads/2024/03/premios-y-reconocimientos.jpg",
+    "/images/uploads/2024/03/wildland-fire-sensor-challenge.jpg",
+    "/images/uploads/2024/04/premios-aster-navarra-2024-kunak.jpg",
+    "/images/uploads/2024/12/premios-pyme-2024-kunak.jpg",
+    "/images/uploads/2025/01/Logos_web_beneficiarios_1.png",
+    "/images/uploads/2025/04/Sello_Ciberemprende_INCIBE_Emprende_Kunak.svg",
+    "/images/uploads/2025/08/Logo_FEDER_GN_bilingue.png",
+    "/images/uploads/2025/11/Kunak_premio_itelna_2025.jpg",
+    "/images/uploads/2025/12/sello_pyme_innovadora_kunak.svg"
+  ],
+  "faltan": {
+    "/images/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled-2.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Kunak-AIR-Lite.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Kunak-logo.png": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Reliable-rugged.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/Video-Checking-before-deployment.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-account-and-device-management.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-air-quality-index-control-panel-aqi.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-gas-calibration-tool.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-installation-1.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-installation-of-a-probe.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-introduction-to-Kunak-Cloud.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-replacement-of-a-cartridge.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-solar-panel-installation.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/Video-storage-and-transportation.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/02/awarded.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/efficiency-1.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/fast.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/flexible.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/immediately.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/innovation.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/patented-1.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/protected-designs.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/02/winner.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.imagen"
+      ]
+    },
+    "/images/uploads/2023/03/air-pollution.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/03/kunak-office.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/03/smart-cartridges.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2023/06/Logo-PIN_A-cast-ingles-BN.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/Airlab-Microsensors-Challenge-2023-1024x683.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/DeliveredBy_DHL_GoGreen-Plus_webshop_logo_with_addition.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/Premio-DHL-Atlas-2-1.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/Premio-DHL-Atlas-2.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/Premio-La-Caixa-Emprendedor-XXI.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/aqe-show-1024x683.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/premio-airlab-2021.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/premio-atana.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/premio-tesicnor-2.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/premios-y-reconocimientos.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/03/wildland-fire-sensor-challenge.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/04/premios-aster-navarra-2024-kunak.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2024/12/premios-pyme-2024-kunak.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2025/01/Logos_web_beneficiarios_1.png": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2025/04/Sello_Ciberemprende_INCIBE_Emprende_Kunak.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2025/08/Logo_FEDER_GN_bilingue.png": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2025/11/Kunak_premio_itelna_2025.jpg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    },
+    "/images/uploads/2025/12/sello_pyme_innovadora_kunak.svg": {
+      "canales": [
+        "bloques.filas.columnas.modulos.src"
+      ]
+    }
+  },
+  "porColeccion": {
+    "productos": {
+      "filas": 19,
+      "recorridas": 19
+    },
+    "paginas": {
+      "error": "MEDIA: en paginas.bloques[10].filas[0].columnas[1].modulos[9].src se esperaba una ruta de asset y llegó \"https://upload.wikimedia.org/wikipedia/commons/9/9d/Log",
+      "filas": 31,
+      "recorridas": 30
+    },
+    "sectores": {
+      "filas": 4,
+      "recorridas": 4
+    },
+    "monograficos": {
+      "filas": 2,
+      "recorridas": 2
+    },
+    "taxonomia-sectores": {
+      "filas": 11,
+      "recorridas": 11
+    },
+    "casos": {
+      "filas": 57,
+      "recorridas": 57
+    },
+    "faqs": {
+      "filas": 19,
+      "recorridas": 19
+    },
+    "entradas-blog": {
+      "filas": 152,
+      "recorridas": 152
+    },
+    "terminos-kunakpedia": {
+      "filas": 37,
+      "recorridas": 37
+    },
+    "documentos-cientificos": {
+      "filas": 23,
+      "recorridas": 23
+    }
+  }
+}

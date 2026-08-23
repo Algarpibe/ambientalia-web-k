@@ -27,6 +27,7 @@ import {
   categoriasRecursos,
   etiquetas,
 } from "./colecciones/taxonomias.ts";
+import { paginas } from "./colecciones/paginas.ts";
 import { media } from "./colecciones/media.ts";
 import { slugs } from "./colecciones/slugs.ts";
 import { usuarios } from "./colecciones/usuarios.ts";
@@ -150,6 +151,8 @@ export const COLECCIONES: CollectionConfig[] = [
   entradasBlog,
   terminosKunakpedia,
   documentosCientificos,
+  // Cola larga F3-3 (§2j) — 31 páginas, 11 tipos de módulo, 313 módulos
+  paginas,
   // Grupo D (§2d.1)
   articulosKb,
   // Taxonomías (§2c)
@@ -182,6 +185,7 @@ export {
   faqs,
   media,
   monograficos,
+  paginas,
   productos,
   sectores,
   slugs,

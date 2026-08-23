@@ -65,8 +65,37 @@ export const paginas: CollectionConfig = {
     familia: "paginas",
     enElPlano: (doc) => !doc.prefijo,
   }),
+  /**
+   * ⚠⚠ **LA IDENTIDAD ES EL PAR `(prefijo, slug)`, NO EL SLUG — y F3-3 es el
+   * PRIMER arquetipo donde eso importa (2026-08-23, 96.ª; lo destapó la
+   * siembra).**
+   *
+   * Las otras siete colecciones declaran `slug` con `unique: true`, y hacen
+   * bien: **en sus dominios el slug ES único**. Copiarlo aquí falla, y está
+   * medido — de las 31 páginas salen **29 slugs distintos**:
+   *
+   * | slug | ×  | prefijos |
+   * |---|---|---|
+   * | `articulos-de-ayuda` | 2 | `centro-de-ayuda/kunak-air` · `soporte/centro-de-ayuda/kunak-air-cloud` |
+   * | `video-tutoriales`   | 2 | ídem |
+   *
+   * Los pares `(prefijo, slug)`, en cambio, son **31 de 31 distintos**. Así que
+   * `unique` sobre el slug no es una guarda estricta: es una guarda cuyo
+   * DOMINIO no coincide con el invariante, y por eso **rechaza dos páginas
+   * legítimas** (§*una guarda cuyo dominio es más ancho que su invariante deja
+   * de proteger y pasa a bloquear*).
+   *
+   * ⚠ Y es §*una regla derivada sobre un dominio donde el caso NO SE DA está
+   * SIN PROBAR para ese caso*, cometida sobre un PATRÓN en vez de sobre un
+   * número: `unique: true` se venía copiando de colección en colección porque
+   * en todas valía, y nadie podía notar que su premisa era del dato.
+   *
+   * El índice compuesto expresa la identidad real. `index: true` en el slug se
+   * conserva porque las consultas siguen entrando por él.
+   */
+  indexes: [{ fields: ["prefijo", "slug"], unique: true }],
   fields: [
-    { name: "slug", type: "text", required: true, unique: true, index: true },
+    { name: "slug", type: "text", required: true, index: true },
     /**
      * ⚠ **El prefijo es CAMPO, y lo dice la medida — igual que en
      * `articulos-kb` y en `/recursos/[...ruta]`.** Las 32 rutas tienen

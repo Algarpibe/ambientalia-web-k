@@ -55,7 +55,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { Evaluadas, gritaSiRevienta, hoy, nombreNeg, QA, w } from "../qa/lib.mjs";
+import { Evaluadas, gritaSiRevienta, hoy, nombreNeg, PLIEGUES_FINAL, QA, w } from "../qa/lib.mjs";
 
 process.env.SIN_CLON = "1";
 gritaSiRevienta();
@@ -119,6 +119,60 @@ const nivelDe = (n, def) => {
 const oUndef = (v) => (v === undefined || v === null || v === "" ? undefined : v);
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ EL `<img>` NO ESTÁ EN EL ÁRBOL — §sondas 4, EL PLENO (2026-08-23)
+ *
+ * `parsea()` lleva `VACIOS = {img, br, hr, input, …}` y hace `continue` con
+ * ellas: **las etiquetas vacías no entran en el árbol**, por diseño — a
+ * `arbol-f33` sólo le interesaba la estructura de `div`s, y ahí eso es correcto.
+ *
+ * La primera versión de este extractor buscaba la imagen con
+ * `recorre(n).find(x => x.etiqueta === "img")`, o sea **un selector que no casa
+ * NUNCA**. Y no dio error: dio `src: undefined` en **71 de 71** imágenes.
+ *
+ * > **71 de 71 no es un dato del original: es el instrumento.** Es el
+ * > complementario de la regla del cero —*un patrón que casa en TODAS tampoco
+ * > mide nada*— y aquí con el pleno invertido: un campo AUSENTE en el 100 % de
+ * > las instancias de su tipo no dice «el original no lo trae», dice «no lo sé
+ * > leer». Lo destapó Payload al exigir `src`; sin ese `required`, habrían
+ * > entrado 71 imágenes sin origen y la página se habría servido con huecos.
+ *
+ * `<iframe>` y `<a>` **sí** están en el árbol (no son vacías), y por eso
+ * `embedUrl` y `href` salían bien: el defecto era exactamente de una etiqueta.
+ *
+ * Se lee del HTML crudo del nodo, que es donde está. **Y no se toca
+ * `arbol-f33`**: es la definición compartida, su control cruzado la validó, y
+ * cambiar `VACIOS` movería el censo de otro instrumento para arreglar a éste.
+ * ═════════════════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════════════════
+ * T3b · LA RUTA DEL ORIGINAL PASA A LA LOCAL QUE SIRVE EL CLON
+ *
+ * `creaContexto().media()` de `seed.mjs` exige una ruta que empiece por `/` y
+ * resuelve contra `apps/web/public`. Una URL absoluta del original la hace TIRAR
+ * —y bien: un `media` sin fichero convertiría «falta el asset» en «la imagen es
+ * opcional».
+ *
+ * ⚠ **Se toma de `PLIEGUES_FINAL` §`media-original`, que es donde vive la
+ * definición** (§una definición, no dos). Y hay que decir lo que se ve al
+ * buscarla: **ya existen DOS copias a mano** —`extractor-a.mjs` l. 98 y
+ * `extractor-c.mjs` l. 182, las dos con `rutaLocalMedia` propia— que además NO
+ * son idénticas a ésta: las suyas no admiten `www.`. Ésta sería la tercera, así
+ * que se importa en vez de copiarse. Las otras dos quedan FICHADAS, no
+ * arregladas aquí: tocan extractores ya verificados y su unificación es una
+ * tanda con su medición, no un arreglo de paso.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const T3B = PLIEGUES_FINAL.find((p) => p.clase === "media-original");
+if (!T3B) throw new Error("PLIEGUES_FINAL no trae `media-original`: T3b no se puede derivar (§sondas 4).");
+const rutaLocalMedia = (u) => (typeof u === "string" ? T3B.aplica(u) : u);
+
+const RE_IMG = /<img\b[^>]*>/i;
+const imgDe = (html, n) => RE_IMG.exec(dentro(html, n))?.[0] ?? null;
+const attrTag = (tag, nombre) => {
+  if (!tag) return undefined;
+  const m = new RegExp(`\\b${nombre}="([^"]*)"`).exec(tag);
+  return m ? m[1] : undefined;
+};
+
+/* ══════════════════════════════════════════════════════════════════════════
  * 2 · UN MÓDULO DIVI → UN BLOQUE DEL ESQUEMA
  *
  * Los selectores están DERIVADOS del marcado servido (una instancia de cada uno
@@ -139,7 +193,7 @@ function diapositivasDe(html, n) {
     const desc = buscaClase(s, "et_pb_slide_description");
     const btn = buscaClase(s, "et_pb_button");
     const img = buscaClase(s, "et_pb_slide_image");
-    const imgN = img ? buscaClase(img, "wp-image") || [...A.recorre(img)].find((x) => x.etiqueta === "img") : null;
+    const imgN = img ? imgDe(html, img) : null;
     /* El cuerpo es la descripción SIN su titular ni su botón: los dos son campos
      * propios, y dejarlos dentro los duplicaría en el render. */
     let cuerpo;
@@ -156,7 +210,7 @@ function diapositivasDe(html, n) {
       cuerpo,
       botonLabel: btn ? oUndef(texto(html, btn)) : undefined,
       botonHref: btn ? oUndef(attr(btn, "href")) : undefined,
-      fondo: imgN ? oUndef(attr(imgN, "src")) : undefined,
+      fondo: oUndef(rutaLocalMedia(attrTag(imgN, "src"))),
     };
   });
 }
@@ -174,17 +228,17 @@ function aBloque(html, n, donde) {
   switch (tipo) {
     case "text": {
       const inner = buscaClase(n, "et_pb_text_inner");
-      return { blockType: "texto-pagina", html: dentro(html, inner ?? n) };
+      return { kind: "texto-pagina", html: dentro(html, inner ?? n) };
     }
 
     case "image": {
-      const img = [...A.recorre(n)].find((x) => x.etiqueta === "img");
+      const img = imgDe(html, n);
       const a = [...A.recorre(n)].find((x) => x.etiqueta === "a");
       const href = a ? attr(a, "href") : undefined;
       return {
-        blockType: "imagen-pagina",
-        src: img ? attr(img, "src") : undefined,
-        alt: img ? oUndef(attr(img, "alt")) : undefined,
+        kind: "imagen-pagina",
+        src: rutaLocalMedia(attrTag(img, "src")),
+        alt: oUndef(attrTag(img, "alt")),
         href: oUndef(href),
         /* `external` se DERIVA del destino, no se supone: la regla de rutas
          * locales dice que `_blank` sólo vale si el destino es externo. */
@@ -194,7 +248,7 @@ function aBloque(html, n, donde) {
 
     case "button":
       return {
-        blockType: "boton-pagina",
+        kind: "boton-pagina",
         label: texto(html, n),
         href: attr(n, "href"),
         external: undefined,
@@ -205,14 +259,14 @@ function aBloque(html, n, donde) {
 
     case "code": {
       const inner = buscaClase(n, "et_pb_code_inner");
-      return { blockType: "codigo", html: dentro(html, inner ?? n) };
+      return { kind: "codigo", html: dentro(html, inner ?? n) };
     }
 
     case "toggle": {
       const t = buscaClase(n, "et_pb_toggle_title");
       const c = buscaClase(n, "et_pb_toggle_content");
       return {
-        blockType: "toggle",
+        kind: "toggle",
         titulo: t ? texto(html, t) : "(sin título)",
         nivel: t ? nivelDe(t, 3) : undefined,
         cuerpo: c ? dentro(html, c) : "",
@@ -222,7 +276,7 @@ function aBloque(html, n, donde) {
     case "video": {
       const f = [...A.recorre(n)].find((x) => x.etiqueta === "iframe");
       return {
-        blockType: "video-pagina",
+        kind: "video-pagina",
         embedUrl: f ? attr(f, "src") : undefined,
         titulo: f ? oUndef(attr(f, "title")) : undefined,
       };
@@ -232,26 +286,26 @@ function aBloque(html, n, donde) {
       const cab = buscaClase(n, "et_pb_module_header");
       const desc = buscaClase(n, "et_pb_blurb_description");
       const wrap = buscaClase(n, "et_pb_main_blurb_image");
-      const img = wrap ? [...A.recorre(wrap)].find((x) => x.etiqueta === "img") : null;
+      const img = wrap ? imgDe(html, wrap) : null;
       return {
-        blockType: "blurb",
+        kind: "blurb",
         titulo: cab ? texto(html, cab) : "(sin título)",
         nivel: cab ? nivelDe(cab, 3) : undefined,
-        imagen: img ? oUndef(attr(img, "src")) : undefined,
-        alt: img ? oUndef(attr(img, "alt")) : undefined,
+        imagen: oUndef(rutaLocalMedia(attrTag(img, "src"))),
+        alt: oUndef(attrTag(img, "alt")),
         descripcion: desc ? oUndef(dentro(html, desc)) : undefined,
       };
     }
 
     case "fullwidth_slider":
-      return { blockType: "slider-completo", diapositivas: diapositivasDe(html, n) };
+      return { kind: "slider-completo", diapositivas: diapositivasDe(html, n) };
 
     case "slider":
-      return { blockType: "slider", diapositivas: diapositivasDe(html, n) };
+      return { kind: "slider", diapositivas: diapositivasDe(html, n) };
 
     case "map":
       return {
-        blockType: "mapa",
+        kind: "mapa",
         pines: todasClase(n, "et_pb_map_pin").map((p) => {
           const info = buscaClase(p, "infowindow");
           return {
@@ -266,7 +320,7 @@ function aBloque(html, n, donde) {
     case "icon": {
       const i = buscaClase(n, "et-pb-icon");
       return {
-        blockType: "icono",
+        kind: "icono",
         /* El carácter de la fuente, TAL CUAL lo sirve Divi. No se traduce a un
          * enum: con n = 1 página, enum / carácter / imagen son indistinguibles
          * (F3-3-ICONO-DATO). */
@@ -481,6 +535,67 @@ if (!censo.modulos) err(`0 MÓDULOS en las ${docs.length} páginas: el parser no
 if (!censo.secciones) err(`0 SECCIONES propias: `+`\`seccionesPropias\` no casa con nada (§sondas 4).`);
 if (sinFichero.length) err(`${sinFichero.length} ruta(s) SIN CAPTURA: ${sinFichero.join(" · ")}`);
 for (const x of problemas) err(x);
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ LA GUARDA DEL PLENO — un campo AUSENTE en el 100 % de su tipo
+ *
+ * Es la lección del `<img>` puesta en código en vez de en un comentario
+ * (§sondas 3: *documentado no es conectado*). El defecto que se pagó —71 de 71
+ * imágenes sin `src`— no dio error, dio un dato plausible-por-omisión, y lo
+ * destapó Payload dos pasos más allá.
+ *
+ * > **Un campo que sale ausente en TODAS las instancias de su tipo no dice «el
+ * > original no lo trae»: dice «no lo sé leer».** Es el complementario de la
+ * > regla del cero, con el pleno invertido — y a diferencia de un selector
+ * > muerto, aquí el módulo SÍ se encuentra: lo que no casa es una pieza de
+ * > dentro, así que ni el recuento de tipos ni el cruce con `arbol-f33` pueden
+ * > verlo. Los dos siguen dando 313.
+ *
+ * ⚠ Se declara qué campos son **exigibles por tipo**, y se declara con su
+ * denominador. Un campo legítimamente opcional —`alt`, `href`, `texto`— no
+ * entra: lo que se vigila es lo que el ESQUEMA marca `required`, porque ahí
+ * «ausente en todas» sólo puede ser el instrumento.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const EXIGIBLES = {
+  "texto-pagina": ["html"],
+  "imagen-pagina": ["src"],
+  "boton-pagina": ["label", "href"],
+  codigo: ["html"],
+  toggle: ["titulo", "cuerpo"],
+  "video-pagina": ["embedUrl"],
+  blurb: ["titulo"],
+  "slider-completo": ["diapositivas"],
+  slider: ["diapositivas"],
+  mapa: ["pines"],
+  icono: ["icono"],
+};
+const plenos = [];
+{
+  const porTipo = {};
+  const rec = (v) => {
+    if (Array.isArray(v)) return v.forEach(rec);
+    if (v && typeof v === "object") {
+      if (v.kind) (porTipo[v.kind] ??= []).push(v);
+      for (const x of Object.values(v)) rec(x);
+    }
+  };
+  for (const d of docs) rec(d.bloques ?? []);
+  for (const [tipo, campos] of Object.entries(EXIGIBLES)) {
+    const inst = porTipo[tipo] ?? [];
+    if (!inst.length) continue;
+    for (const c of campos) {
+      const faltan = inst.filter((m) => m[c] === undefined || m[c] === null || m[c] === "" || (Array.isArray(m[c]) && !m[c].length));
+      if (faltan.length === inst.length) plenos.push(`${tipo}.${c}: ausente en ${faltan.length}/${inst.length}`);
+    }
+  }
+}
+if (plenos.length)
+  err(
+    `PLENO DE AUSENCIAS: ${plenos.length} campo(s) exigibles ausentes en el 100 % de su tipo —\n` +
+      `   ${plenos.join("\n   ")}\n` +
+      `   Un campo que falta en TODAS las instancias no dice «el original no lo trae»:\n` +
+      `   dice que el selector no casa. Ni el recuento de tipos ni el cruce lo ven.`,
+  );
 
 /**
  * ⚠ EL CRUCE OBLIGATORIO (§sondas 4): otro instrumento, mismo objeto.

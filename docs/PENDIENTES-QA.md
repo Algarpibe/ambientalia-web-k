@@ -1,5 +1,55 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-3-CENSO-CAMPO-RICO · **CORTE LIMPIO 2 de la 96.ª (2026-08-23) — la siembra de `paginas` está BLOQUEADA por una decisión de MODELO, no por el extractor**
+
+> **Estado, para que no se lea como un fallo del trabajo hecho:** el extractor de
+> las 31 está construido y verificado —`cms:extractor-f33`: **31 documentos ·
+> 313 módulos · 11 tipos cruzados con `arbol-f33` · 0 claves de geometría**, con
+> su negativo en **5/5**—, la colección está registrada en `COLECCIONES`, su
+> migración aplicada (**18 tablas**), y sus **45 ficheros de media colocados sin
+> red**. Lo único que falta para sembrar es una decisión que **no se toma de
+> paso**.
+
+**Qué la para.** `campoHtml` valida contra el censo de **43 etiquetas** derivado
+de las **209 páginas del arquetipo A**, y el corpus de F3-3 trae **5 fuera de
+él**, en **10 de las 31 páginas**:
+
+| etiqueta | páginas | dónde, medido |
+|---|---|---|
+| `<meta>` | **10** | `<meta itemprop="position">` de una miga `schema.org/BreadcrumbList` servida **dentro** del `et_pb_text` |
+| `<article>` | 2 | `recursos` · `documentos-cientificos` |
+| `<svg>` · `<path>` · `<header>` | 1 | `documentos-cientificos` |
+
+Derivación congelada, con el sitio exacto de cada una:
+`docs/research/cola-larga/derivaciones/censo-f33.{mjs,log}`. El censo **se lee
+del fuente que lo declara**, no se copia (§regla 9, caso 7).
+
+**Por qué NO se amplió el censo en esta tanda, y son tres razones distintas:**
+
+1. **toca un contrato de CINCO colecciones ya verificadas** —209/209 documentos
+   censados—. Ampliarlo en la tanda que estrena un arquetipo es exactamente lo
+   que este repo llama *resolver de paso una decisión sin medida*, que es el
+   reproche que tumbó a C2;
+2. **el censo es además una WHITELIST de seguridad**, y `<svg>`/`<path>` no son
+   «una etiqueta de texto más»;
+3. **y `<article>`/`<header>`/`<svg>` huelen a LISTADO EMBEBIDO.** Si lo son,
+   meterlos en un campo rico **congelaría una CONSULTA como texto** — justo el
+   error que §*un listado no tiene contenido propio: es una consulta* existe para
+   evitar. **Eso hay que medirlo mirando el contenido, no la etiqueta**, y esa
+   medida es de la 97.ª.
+
+⚠ **Lo que la derivación NO dice, y se declara:** si las 5 son legítimas. Contesta
+*qué* y *dónde*, no *qué son*.
+
+**Qué se hizo para que el entorno quede consistente:** `paginas` sale de
+`SEMBRADAS` con su comentario y su razón (`seed.mjs`). Las otras 9 siembran, el
+pipeline completo corre, y **el round-trip da 352/352 idénticos en 13
+colecciones**. La 97.ª la reactiva descomentando una línea, con la decisión del
+censo tomada.
+
+---
+
+
 ## ✅ CMS-4 · **CERRADA el 2026-08-22 (95.ª): el propietario tomó `E1` — el PLANO EXISTENTE** — la ficha de la 94.ª se conserva entera debajo
 
 > ✅ **DECISIÓN DEL PROPIETARIO, 2026-08-22.** Las 31 las sirve el plano que ya

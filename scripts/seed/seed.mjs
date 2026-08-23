@@ -61,6 +61,43 @@ import { comoEmbebido, DEVUELVE } from "../../packages/cms-config/src/vuelta.mjs
  */
 export const SEMBRADAS = [
   "productos",
+  /* ⚠⚠ **`paginas` NO ENTRA TODAVÍA — CORTE LIMPIO 2 de la 96.ª tanda.**
+   *
+   * La colección está registrada, su migración aplicada (18 tablas) y su dato
+   * producido y verificado (`cms:extractor-f33`: 31 documentos · 313 módulos ·
+   * 11 tipos cruzados con `arbol-f33` · 0 claves de geometría; negativo 5/5).
+   * Lo que la para **no es el extractor**: es una decisión de MODELO que no se
+   * toma de paso.
+   *
+   * `campoHtml` valida contra el censo de **43 etiquetas** derivado de las 209
+   * páginas del arquetipo A, y el corpus de F3-3 trae **5 fuera de él**, en
+   * **10 de las 31 páginas**:
+   *
+   * | etiqueta | páginas | qué es, medido |
+   * |---|---|---|
+   * | `<meta>` | **10** | `<meta itemprop="position">` de una miga `schema.org/BreadcrumbList` servida DENTRO del `et_pb_text` |
+   * | `<article>` | 2 | `recursos` · `documentos-cientificos` |
+   * | `<svg>` `<path>` `<header>` | 1 | `documentos-cientificos` |
+   *
+   * **Por qué no se amplía el censo aquí, y son tres razones distintas:**
+   *
+   * 1 · **toca un contrato de CINCO colecciones ya verificadas** (209/209
+   *     documentos censados). Ampliarlo en la tanda que estrena un arquetipo es
+   *     literalmente lo que este repo llama *resolver de paso una decisión sin
+   *     medida*;
+   * 2 · **el censo es además una WHITELIST de seguridad**, y `<svg>`/`<path>`
+   *     no son una etiqueta de texto más;
+   * 3 · **y `<article>`/`<header>`/`<svg>` huelen a LISTADO EMBEBIDO**, no a
+   *     texto del editor. Si lo son, meterlos en un campo rico **congelaría una
+   *     consulta como texto** — justo el error que §*un listado no tiene
+   *     contenido propio: es una CONSULTA* existe para evitar. Eso hay que
+   *     medirlo antes de decidir, no después.
+   *
+   * Sacarla de aquí deja el entorno CONSISTENTE para las otras 9 y para todas
+   * las sondas que dependen de ellas (§regla 20). Ficha con su lista nombrada:
+   * `PENDIENTES-QA.md` §F3-3-CENSO-CAMPO-RICO.
+   */
+  // "paginas",  ← la reactiva la 97.ª, con la decisión del censo tomada
   "sectores",
   "monograficos",
   "taxonomia-sectores",

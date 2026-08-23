@@ -2174,6 +2174,44 @@ el clon **omitiera dos piezas en 2 de 11 páginas** creyendo que replicaba.
    por el `slice`, y que decía lo contrario. No hizo falta volver al original —
    hizo falta mirar el otro campo.
 
+⚠⚠ **Y SU QUINTA CARA, QUE NI EL RECUENTO NI EL CRUCE PUEDEN VER: UN CAMPO
+AUSENTE EN EL 100 % DE SU TIPO ES EL INSTRUMENTO, NO EL DATO (2026-08-23).**
+
+Las cuatro de arriba son sobre el objeto que se busca: el cero no lo encuentra,
+el pleno lo encuentra siempre, el sobre-casado encuentra de más, el `slice`
+recorta. Ésta es sobre **una pieza DENTRO del objeto**, y por eso se cuela por
+debajo de todas:
+
+> **Cuando el elemento SÍ se encuentra y lo que no casa es un campo suyo, el
+> recuento de elementos sigue saliendo perfecto.** El tipo aparece, el cardinal
+> cuadra, el cruce con el otro instrumento da el mismo número — y el campo sale
+> `undefined` en todas las instancias. **Un campo ausente en el 100 % de su tipo
+> no dice «el original no lo trae»: dice «no lo sé leer».**
+
+**Medido:** un extractor buscaba la imagen con `recorre(n).find(x => x.etiqueta
+=== "img")` sobre un árbol cuyo tokenizador **descarta las etiquetas vacías por
+diseño** (`VACIOS = {img, br, hr, input…}`). Resultado: **71 de 71** imágenes con
+`src: undefined`. Y los dos controles que el proyecto exige **pasaron los dos**:
+313 módulos y 11 tipos, cruzados al elemento con otro instrumento. `<iframe>` y
+`<a>` sí estaban en el árbol, así que el defecto era **de una etiqueta**, y todo
+lo demás salía bien — que es lo que lo hace invisible.
+
+**Las dos mitades operativas:**
+
+1. **la guarda se pone sobre los campos EXIGIBLES por tipo, con su denominador**
+   — `tipo.campo: ausente en N/N` cierra el código de salida. Y sólo sobre lo que
+   el esquema marca `required`: en un campo legítimamente opcional, «ausente en
+   todas» puede ser dato;
+2. **y no se arregla tocando el parser compartido.** El tokenizador estaba bien
+   *para lo suyo*; cambiar su `VACIOS` movería el censo de otro instrumento para
+   arreglar a éste. La pieza que falta se lee por su canal —aquí, un regex sobre
+   el HTML crudo del nodo—, que es §*la salida servida incluye el canal que no
+   estabas mirando* aplicado dentro de una sonda.
+
+> **Y la señal para buscarlo, que es gratis: un 100 % redondo.** `71 de 71`,
+> `0 de N` — un dato del original casi nunca es unánime, y cuando lo es, la
+> primera hipótesis es el instrumento.
+
 ⚠ **Y EL LADO DEL LECTOR, que ninguna guarda de la sonda puede cubrir: UNA REGLA
 INCOMPLETA SE LEE EXACTAMENTE IGUAL QUE UNA COMPLETA (2026-08-14).**
 
@@ -2389,6 +2427,33 @@ la sesión siguiente a leer 17.
 fichero**, y el número se deriva de él —`grep '"rutas"'` sobre el montón dice
 cuál es cuál—. Es la §regla 9 aplicada al sitio donde menos se espera: **el
 nombre de una congelada es un dato recordado, no derivado.**
+
+> ⚠⚠ **Y ESTO NO ES SÓLO PARA QUIEN LEE: UN CONSUMIDOR AUTOMÁTICO QUE RESUELVE
+> AL NOMBRE CANÓNICO CONSUME LA PRIMERA FOTO, Y NO HAY LECTOR QUE LO NOTE
+> (2026-08-23).**
+>
+> El aviso de arriba está redactado para una persona que abre un fichero —*«el
+> que cualquiera abre para saber cómo está la cosa es, con el tiempo, el más
+> viejo del montón»*—. Le falta la mitad cara:
+>
+> > **Cuando el que abre el canónico es una CAMPAÑA, el envejecimiento no se lee:
+> > se ejecuta.** La campaña hace su trabajo entero, con su código de salida y su
+> > informe, **sobre el conjunto de hace semanas** — y su verde es cierto de ese
+> > conjunto.
+>
+> **Medido:** una campaña de colocación de media resolvía su lista al canónico y
+> trabajaba sobre la foto de **11 días antes**. La diferencia simétrica —que es
+> como se compara membresía, no por cardinal— tenía **dos lados**: 21 ya
+> colocadas y **5 que faltaban HOY y la lista vieja no tenía**. De esas 5, **3
+> eran resolubles SIN RED** y ninguna campaña iba a colocarlas nunca, porque la
+> lista que consumen no las contenía.
+>
+> **La regla operativa, y son dos ejes ORTOGONALES que no hay que confundir:**
+> un parámetro elige **qué DEFINICIÓN** se usa (y ahí un fallback silencioso sí
+> sería la clase C7); **qué CORRIDA de esa definición se resuelve por `mtime`,
+> nunca por nombre** — descartando los artefactos de la §regla 7, porque el más
+> reciente de una familia puede ser el sabotaje que acaba de correr el negativo.
+> Y la sonda **dice en voz alta qué fichero resolvió, con su fecha**.
 
 ⚠ **Y su moraleja es la de la regla 4, otra vez:** `c-cabecera` se parcheó a mano
 primero. Eso es arreglar **la instancia y no la CLASE**, que es exactamente cómo
