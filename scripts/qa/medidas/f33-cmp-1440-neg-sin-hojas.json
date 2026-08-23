@@ -1,0 +1,614 @@
+{
+  "meta": {
+    "sonda": "f33-cmp",
+    "fecha": "2026-08-22",
+    "ancho": 1440,
+    "movil": false,
+    "contrato": "FIDELIDAD (1440/390)",
+    "sabotajes": {
+      "SIN_HOJAS": true,
+      "MISMO_LADO": true,
+      "DELTA": 0
+    }
+  },
+  "paginas": {
+    "/es/politica-de-seguridad-de-la-informacion/": {
+      "regimen": "--",
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0,
+        "sinResolver": 0,
+        "aplicadas": 8,
+        "peticionesBloqueadas": 37
+      },
+      "original": {
+        "docH": 4677.55,
+        "base": 249.92,
+        "nSecciones": 0,
+        "nFilas": 0,
+        "nModulos": 0,
+        "anchos": {},
+        "cajas": {},
+        "enlaces": 108,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "\"Open Sans\", Arial, sans-serif"
+      },
+      "clon": {
+        "docH": 4677.55,
+        "base": 249.92,
+        "nSecciones": 0,
+        "nFilas": 0,
+        "nModulos": 0,
+        "anchos": {},
+        "cajas": {},
+        "enlaces": 108,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "\"Open Sans\", Arial, sans-serif"
+      }
+    },
+    "/es/contacto/": {
+      "regimen": "B-",
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0,
+        "sinResolver": 0,
+        "aplicadas": 10,
+        "peticionesBloqueadas": 49
+      },
+      "original": {
+        "docH": 3592.94,
+        "base": 227.52,
+        "nSecciones": 4,
+        "nFilas": 3,
+        "nModulos": 12,
+        "anchos": {
+          "fila0": 1152,
+          "fila1": 1152,
+          "fila2": 1152
+        },
+        "cajas": {
+          "sec0": {
+            "x": 0,
+            "y": 193.72,
+            "w": 1440,
+            "h": 949.08
+          },
+          "sec1": {
+            "x": 0,
+            "y": 1142.8,
+            "w": 1440,
+            "h": 574.19
+          },
+          "sec2": {
+            "x": 0,
+            "y": 1716.98,
+            "w": 1440,
+            "h": 335.56
+          },
+          "sec3": {
+            "x": 0,
+            "y": 2052.55,
+            "w": 1440,
+            "h": 501.72
+          }
+        },
+        "enlaces": 107,
+        "hojasAplicadas": 10,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      },
+      "clon": {
+        "docH": 3592.94,
+        "base": 227.52,
+        "nSecciones": 4,
+        "nFilas": 3,
+        "nModulos": 12,
+        "anchos": {
+          "fila0": 1152,
+          "fila1": 1152,
+          "fila2": 1152
+        },
+        "cajas": {
+          "sec0": {
+            "x": 0,
+            "y": 193.72,
+            "w": 1440,
+            "h": 949.08
+          },
+          "sec1": {
+            "x": 0,
+            "y": 1142.8,
+            "w": 1440,
+            "h": 574.19
+          },
+          "sec2": {
+            "x": 0,
+            "y": 1716.98,
+            "w": 1440,
+            "h": 335.56
+          },
+          "sec3": {
+            "x": 0,
+            "y": 2052.55,
+            "w": 1440,
+            "h": 501.72
+          }
+        },
+        "enlaces": 107,
+        "hojasAplicadas": 10,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      }
+    },
+    "/es/empresa/": {
+      "regimen": "B-",
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0,
+        "sinResolver": 0,
+        "aplicadas": 8,
+        "peticionesBloqueadas": 55
+      },
+      "original": {
+        "docH": 13361.03,
+        "base": 8251.92,
+        "nSecciones": 11,
+        "nFilas": 12,
+        "nModulos": 73,
+        "anchos": {
+          "fila0": 1152,
+          "fila1": 1152,
+          "fila2": 1152,
+          "fila3": 1152,
+          "fila4": 1152,
+          "fila5": 1152,
+          "fila6": 1152,
+          "fila7": 1152,
+          "fila8": 1152,
+          "fila9": 1152,
+          "fila10": 1152,
+          "fila11": 1152
+        },
+        "cajas": {
+          "sec0": {
+            "x": 0,
+            "y": 193.72,
+            "w": 1440,
+            "h": 88
+          },
+          "sec1": {
+            "x": 0,
+            "y": 281.72,
+            "w": 1440,
+            "h": 667.64
+          },
+          "sec2": {
+            "x": 0,
+            "y": 949.36,
+            "w": 1440,
+            "h": 6862.67
+          },
+          "sec3": {
+            "x": 0,
+            "y": 7812.03,
+            "w": 1440,
+            "h": 353.5
+          },
+          "sec4": {
+            "x": 0,
+            "y": 8165.53,
+            "w": 1440,
+            "h": 317.36
+          },
+          "sec5": {
+            "x": 0,
+            "y": 8482.89,
+            "w": 1440,
+            "h": 207.58
+          },
+          "sec6": {
+            "x": 0,
+            "y": 8690.47,
+            "w": 1440,
+            "h": 372.39
+          },
+          "sec7": {
+            "x": 0,
+            "y": 9062.86,
+            "w": 1440,
+            "h": 300.77
+          },
+          "sec8": {
+            "x": 0,
+            "y": 9363.63,
+            "w": 1440,
+            "h": 321.66
+          },
+          "sec9": {
+            "x": 0,
+            "y": 9685.28,
+            "w": 1440,
+            "h": 1071.02
+          },
+          "sec10": {
+            "x": 0,
+            "y": 10756.3,
+            "w": 1440,
+            "h": 1566.06
+          }
+        },
+        "enlaces": 111,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      },
+      "clon": {
+        "docH": 13361.03,
+        "base": 8251.92,
+        "nSecciones": 11,
+        "nFilas": 12,
+        "nModulos": 73,
+        "anchos": {
+          "fila0": 1152,
+          "fila1": 1152,
+          "fila2": 1152,
+          "fila3": 1152,
+          "fila4": 1152,
+          "fila5": 1152,
+          "fila6": 1152,
+          "fila7": 1152,
+          "fila8": 1152,
+          "fila9": 1152,
+          "fila10": 1152,
+          "fila11": 1152
+        },
+        "cajas": {
+          "sec0": {
+            "x": 0,
+            "y": 193.72,
+            "w": 1440,
+            "h": 88
+          },
+          "sec1": {
+            "x": 0,
+            "y": 281.72,
+            "w": 1440,
+            "h": 667.64
+          },
+          "sec2": {
+            "x": 0,
+            "y": 949.36,
+            "w": 1440,
+            "h": 6862.67
+          },
+          "sec3": {
+            "x": 0,
+            "y": 7812.03,
+            "w": 1440,
+            "h": 353.5
+          },
+          "sec4": {
+            "x": 0,
+            "y": 8165.53,
+            "w": 1440,
+            "h": 317.36
+          },
+          "sec5": {
+            "x": 0,
+            "y": 8482.89,
+            "w": 1440,
+            "h": 207.58
+          },
+          "sec6": {
+            "x": 0,
+            "y": 8690.47,
+            "w": 1440,
+            "h": 372.39
+          },
+          "sec7": {
+            "x": 0,
+            "y": 9062.86,
+            "w": 1440,
+            "h": 300.77
+          },
+          "sec8": {
+            "x": 0,
+            "y": 9363.63,
+            "w": 1440,
+            "h": 321.66
+          },
+          "sec9": {
+            "x": 0,
+            "y": 9685.28,
+            "w": 1440,
+            "h": 1071.02
+          },
+          "sec10": {
+            "x": 0,
+            "y": 10756.3,
+            "w": 1440,
+            "h": 1566.06
+          }
+        },
+        "enlaces": 111,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      }
+    },
+    "/es/soporte/": {
+      "regimen": "B-",
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0,
+        "sinResolver": 0,
+        "aplicadas": 8,
+        "peticionesBloqueadas": 42
+      },
+      "original": {
+        "docH": 1922.86,
+        "base": 339.31,
+        "nSecciones": 2,
+        "nFilas": 3,
+        "nModulos": 9,
+        "anchos": {
+          "fila0": 1152,
+          "fila1": 1152,
+          "fila2": 1152
+        },
+        "cajas": {
+          "sec0": {
+            "x": 0,
+            "y": 193.72,
+            "w": 1440,
+            "h": 88
+          },
+          "sec1": {
+            "x": 0,
+            "y": 281.72,
+            "w": 1440,
+            "h": 602.47
+          }
+        },
+        "enlaces": 107,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      },
+      "clon": {
+        "docH": 1922.86,
+        "base": 339.31,
+        "nSecciones": 2,
+        "nFilas": 3,
+        "nModulos": 9,
+        "anchos": {
+          "fila0": 1152,
+          "fila1": 1152,
+          "fila2": 1152
+        },
+        "cajas": {
+          "sec0": {
+            "x": 0,
+            "y": 193.72,
+            "w": 1440,
+            "h": 88
+          },
+          "sec1": {
+            "x": 0,
+            "y": 281.72,
+            "w": 1440,
+            "h": 602.47
+          }
+        },
+        "enlaces": 107,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      }
+    },
+    "/es/centro-de-ayuda/kunak-air-cloud/": {
+      "regimen": "BT",
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0,
+        "sinResolver": 0,
+        "aplicadas": 8,
+        "peticionesBloqueadas": 49
+      },
+      "original": {
+        "docH": 1966.42,
+        "base": 442.78,
+        "nSecciones": 5,
+        "nFilas": 5,
+        "nModulos": 8,
+        "anchos": {
+          "fila0": 678.52,
+          "fila1": 0,
+          "fila2": 0,
+          "fila3": 0,
+          "fila4": 0
+        },
+        "cajas": {
+          "sec0": {
+            "x": 447.83,
+            "y": 427.78,
+            "w": 848.16,
+            "h": 292.19
+          },
+          "sec1": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "sec2": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "sec3": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "sec4": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        "enlaces": 122,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      },
+      "clon": {
+        "docH": 1966.42,
+        "base": 442.78,
+        "nSecciones": 5,
+        "nFilas": 5,
+        "nModulos": 8,
+        "anchos": {
+          "fila0": 678.52,
+          "fila1": 0,
+          "fila2": 0,
+          "fila3": 0,
+          "fila4": 0
+        },
+        "cajas": {
+          "sec0": {
+            "x": 447.83,
+            "y": 427.78,
+            "w": 848.16,
+            "h": 292.19
+          },
+          "sec1": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "sec2": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "sec3": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "sec4": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        },
+        "enlaces": 122,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      }
+    },
+    "/es/recursos/": {
+      "regimen": "B-",
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0,
+        "sinResolver": 0,
+        "aplicadas": 8,
+        "peticionesBloqueadas": 53
+      },
+      "original": {
+        "docH": 3195.53,
+        "base": 368.11,
+        "nSecciones": 4,
+        "nFilas": 5,
+        "nModulos": 17,
+        "anchos": {
+          "fila0": 1152,
+          "fila1": 1152,
+          "fila2": 1152,
+          "fila3": 1152,
+          "fila4": 1152
+        },
+        "cajas": {
+          "sec0": {
+            "x": 0,
+            "y": 193.72,
+            "w": 1440,
+            "h": 88
+          },
+          "sec1": {
+            "x": 0,
+            "y": 281.72,
+            "w": 1440,
+            "h": 573.2
+          },
+          "sec2": {
+            "x": 0,
+            "y": 854.92,
+            "w": 1440,
+            "h": 536.23
+          },
+          "sec3": {
+            "x": 0,
+            "y": 1391.16,
+            "w": 1440,
+            "h": 765.7
+          }
+        },
+        "enlaces": 127,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      },
+      "clon": {
+        "docH": 3195.53,
+        "base": 368.11,
+        "nSecciones": 4,
+        "nFilas": 5,
+        "nModulos": 17,
+        "anchos": {
+          "fila0": 1152,
+          "fila1": 1152,
+          "fila2": 1152,
+          "fila3": 1152,
+          "fila4": 1152
+        },
+        "cajas": {
+          "sec0": {
+            "x": 0,
+            "y": 193.72,
+            "w": 1440,
+            "h": 88
+          },
+          "sec1": {
+            "x": 0,
+            "y": 281.72,
+            "w": 1440,
+            "h": 573.2
+          },
+          "sec2": {
+            "x": 0,
+            "y": 854.92,
+            "w": 1440,
+            "h": 536.23
+          },
+          "sec3": {
+            "x": 0,
+            "y": 1391.16,
+            "w": 1440,
+            "h": 765.7
+          }
+        },
+        "enlaces": 127,
+        "hojasAplicadas": 8,
+        "cuerpoTieneEstilo": "Manrope, sans-serif"
+      }
+    }
+  }
+}

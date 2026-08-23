@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-20",
+    "fecha": "2026-08-22",
     "que": "de dónde salen los residuos SUB-PÍXEL del paginador de listados — un residuo y sus consecuencias aritméticas",
     "fuente": "medidas/lh-cmp-<ancho>*.json (la última congelada de cada ancho, derivada) + medidas/lh-espejo-<ancho>.json",
     "porQue": "§sin campaña de ruido un residuo pequeño NO es «limpio», es SIN PROBAR — y sale de ahí NOMBRANDO el mecanismo, como el −30 de EDAR. Aquí el mecanismo explica los `.x` y NO explica los `.w`, y las dos mitades se dicen aparte.",

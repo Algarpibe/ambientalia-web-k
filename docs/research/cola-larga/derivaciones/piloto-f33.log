@@ -1,0 +1,64 @@
+═══ 1 · CENSO — n de cada tipo EN PÁGINAS (de 31 de `paginas`)
+  et_pb_text                  29 páginas
+  et_pb_image                 19 páginas
+  et_pb_code                   9 páginas
+  et_pb_button                 6 páginas
+  et_pb_toggle                 5 páginas
+  et_pb_video                  5 páginas
+  et_pb_blurb                  3 páginas
+  et_pb_fullwidth_slider       2 páginas   ← RARO (n ≤ 2): arrastra SIN PROBAR
+  et_pb_map                    1 páginas   ← RARO (n ≤ 2): arrastra SIN PROBAR
+  et_pb_slider                 1 páginas   ← RARO (n ≤ 2): arrastra SIN PROBAR
+  et_pb_icon                   1 páginas   ← RARO (n ≤ 2): arrastra SIN PROBAR
+
+═══ 2 · OBLIGADOS — derivados, no escritos
+  raros (n ≤ 2): map · fullwidth_slider · slider · icon
+  + `code` por F3-3-CODE-SEGURIDAD (n = 9)
+
+═══ 3 · EL PILOTO — 6 páginas
+
+  · /es/politica-de-seguridad-de-la-informacion/
+      grupo sueltas · régimen -- · 0 secciones
+      tipos: (ninguno — el cuerpo va por campo rico)
+      ▸ régimen `--` — estrena el campo rico de S2 (n = 1)
+
+  · /es/contacto/
+      grupo sueltas · régimen B- · 4 secciones
+      tipos: text×6 · code×1 · image×3 · map×1 · fullwidth_slider×1
+      ▸ única/primera con `et_pb_map` (n = 1 páginas)
+
+  · /es/empresa/
+      grupo sueltas · régimen B- · 11 secciones
+      tipos: text×24 · image×20 · button×1 · blurb×13 · slider×1 · fullwidth_slider×1
+      ▸ única/primera con `et_pb_slider` (n = 1 páginas)
+
+  · /es/soporte/
+      grupo sueltas · régimen B- · 2 secciones
+      tipos: text×5 · image×1 · icon×3
+      ▸ única/primera con `et_pb_icon` (n = 1 páginas)
+
+  · /es/centro-de-ayuda/kunak-air-cloud/
+      grupo hubs-KB · régimen BT · 5 secciones
+      tipos: text×1 · toggle×2 · image×1 · video×4
+      ▸ único representante del régimen `BT` (8 de 31 páginas)
+
+  · /es/recursos/
+      grupo hubs-L4 · régimen B- · 4 secciones
+      tipos: text×6 · image×2 · blurb×4 · button×1
+      ▸ BUILDER puro con 4 secciones — el caso NORMAL, para no medir sólo excepciones
+
+═══ 4 · COBERTURA — lo que el piloto EJERCITA
+  obligados cubiertos: 5/5 — map · fullwidth_slider · slider · icon · code
+  regímenes: -- · B- · BT de -- · B- · BT
+  tipos del corpus tocados: 11/11
+
+═══ 5 · LO QUE EL PILOTO **NO** EJERCITA — la mitad que decide cómo leerlo
+  tipos sin tocar: 0
+  páginas sin emitir: 25 de 31
+  regímenes sin tocar: ninguno
+  ⚠ un verde del piloto NO es un verde de las 31: es un verde de 6,
+    y de los tipos raros lo es con n = 1 POR TIPO — sin variación que lo pruebe.
+
+═══ 6 · CONTRATO
+  evaluadas 31/31 páginas · piloto 6 · obligados 5/5
+  ✅ los 5 obligados están cubiertos.

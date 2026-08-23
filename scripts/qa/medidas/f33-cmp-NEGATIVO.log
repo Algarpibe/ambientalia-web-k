@@ -1,0 +1,148 @@
+NEGATIVO de f33-cmp — 93.ª tanda, 2026-08-22. **CORTE LIMPIO 3.**
+(§regla 7: esto NO es una medida del sitio, es el registro de un test en negativo)
+
+El encargo pone la puerta aquí: *«si el comparador no sale con su negativo
+cayendo por su motivo, la tanda cierra sin emitir. Un comparador sin negativo
+probado no adjudica nada, y este arquetipo no tiene NINGÚN eje comparado del que
+heredar.»*
+
+⚠ **Y por eso el negativo se corre ANTES de que exista emisión.** Los tres casos
+usan `NEG_MISMO_LADO`, que copia el lado del original al del clon y **no levanta
+el servidor**: lo que preguntan —*¿compara? ¿sabe gritar? ¿tiene las hojas?*— no
+depende de que haya nada emitido. Probar el instrumento primero es el orden que
+CORTE LIMPIO 3 impone, no una comodidad.
+
+┌──────────────┬─────────────────────────────────────┬──────┬──────────────────────────┐
+│ caso         │ qué se anula / inyecta               │ exit │ veredicto                │
+├──────────────┼─────────────────────────────────────┼──────┼──────────────────────────┤
+│ mismo-lado   │ nada — los dos lados IDÉNTICOS       │  0   │ 248 pares · **0 distintos** │
+│ inyecta-Δ    │ +37.50 en `docH`, valor CONOCIDO     │  3   │ **6 cazados y NOMBRADOS**   │
+│ sin-hojas    │ los `<link rel=stylesheet>` fuera    │  2   │ **6 páginas · corrida NULA** │
+└──────────────┴─────────────────────────────────────┴──────┴──────────────────────────┘
+
+Tres códigos de salida distintos y tres mensajes distintos: los casos **no se
+confunden entre sí**, que es lo que hace que un rojo se pueda atribuir.
+
+
+═══ CASO 1 · `mismo-lado` — ¿COMPARA, o INVENTA diferencias?
+
+  248 pares numéricos · 0 mixtos · **0 distintos** · exit 0.
+
+  ▸ Es el control que impide leer un futuro «0 distintos» como un logro del
+    clon cuando podría ser un comparador que no mira. Con los dos lados
+    idénticos **tiene** que dar cero, y da cero.
+
+
+═══ CASO 2 · `inyecta-Δ` — ¿SABE GRITAR? Sí, y NOMBRA
+
+  Se suma **37.50** —un Δ conocido— al `docH` del lado del clon. Cazados **6 de
+  6**, exit 3, cada uno con **SUS DOS LADOS** (§sondas 1: *un número de un par
+  se cita con sus dos lados o no se cita*):
+
+      /es/politica-de-seguridad-de-la-informacion/  docH  orig 6055.09 → clon 6092.59  Δ37.50
+      /es/contacto/                                 docH  orig 3111.16 → clon 3148.66  Δ37.50
+      /es/empresa/                                  docH  orig 6623.91 → clon 6661.41  Δ37.50
+      /es/soporte/                                  docH  orig 1443.13 → clon 1480.63  Δ37.50
+      /es/centro-de-ayuda/kunak-air-cloud/          docH  orig 1497.09 → clon 1534.59  Δ37.50
+      /es/recursos/                                 docH  orig 2712.83 → clon 2750.33  Δ37.50
+
+  ▸ **Éste es el caso que §regla 21 exige y que casi nunca se escribe.** Sin
+    defecto que ocultar, la pregunta del negativo deja de ser *«¿sabe callar?»*
+    y pasa a ser *«¿sabe gritar?»* — y se contesta inyectando un Δ conocido y
+    exigiendo que lo cace **y lo nombre**, no sólo que el exit cambie.
+
+
+═══ CASO 3 · `sin-hojas` — Y AQUÍ EL NEGATIVO ENCONTRÓ UN DEFECTO EN LA PROPIA SONDA
+
+  **La v1 de la guarda NO PODÍA DISPARARSE.** Comprobaba
+  `document.styleSheets.length === 0`, y estas páginas traen **8 `<style>` EN
+  LÍNEA**: con las 7 hojas externas fuera, el contador valía **8** y la guarda
+  daba verde. Es §sondas 4 —*un selector que no casa con nada no es un cero*—
+  **cometida dentro de la guarda que venía a evitarlo**, y la destapó su propio
+  sabotaje: exit 0 donde tenía que salir rojo.
+
+  **Lo que discrimina es `enlazadas` contra `resueltas`**, las dos derivadas del
+  documento. Corregido: exit **2**, las 6 nombradas.
+
+  ⚠⚠ **Y el número que justifica que esta guarda exista, medido por el
+  sabotaje** — porque «sin hojas la medida es falsa» sin número es una nota al
+  pie (§regla 14):
+
+      página                                 docH CON hojas   docH SIN hojas  factor
+      /es/empresa/                                 6623.91         13361.03   ×2.02
+      /es/soporte/                                 1443.13          1922.86   ×1.33
+      /es/centro-de-ayuda/kunak-air-cloud/         1497.09          1966.42   ×1.31
+      /es/recursos/                                2712.83          3195.53   ×1.18
+      /es/contacto/                                3111.16          3592.94   ×1.15
+      /es/politica-de-seguridad-de-la-informacion/ 6055.09          4677.55   ×0.77
+
+  ▸ **Ni un error, ni un aviso: seis números plausibles y todos falsos.** Es
+    §F3-1-CSS-NO-CAPTURADO otra vez, y por eso el recuento de hojas se publica
+    en la cabecera del informe en vez de comprobarse en silencio.
+
+  ▸ **Y el signo NO es uniforme, que es lo que impide leerlo como un factor de
+    escala:** cinco páginas CRECEN sin hojas (el CSS de Divi es lo que
+    compacta) y la del régimen `--` **ENCOGE** (×0.77). Una corrección «a ojo»
+    del tipo *«sin hojas todo sale más alto»* habría dado el signo al revés
+    justo en la única página que estrena camino de render.
+
+
+═══ EL SEGUNDO DEFECTO DE LA PROPIA SONDA, y lo destapó el CRUCE (no un sabotaje)
+
+  Corriendo el control a **390** salió que `/es/recursos/` tenía **8 secciones**
+  y el censo de `piloto-f33` —que parsea el HTML— dice **4**. Las otras 4 eran
+  **la cabecera y el pie del theme-builder**, que Divi mete dentro de
+  `.et_pb_section` y el clon no emite así.
+
+  ▸ **Es el defecto que ya se cobró `c-cmp`**, palabra por palabra: su primera
+    versión dio **31 de 31 rutas con el árbol distinto** y eran **cero
+    defectos** — dos selectores que no denotan el mismo conjunto. Aquí habría
+    dado «las 6 distintas» y el veredicto habría sido del INSTRUMENTO.
+
+  ▸ El discriminador es el sufijo **`_tb_`** (`arbol-f33.mjs` §`esPropia`).
+    Puesto el filtro, los dos instrumentos **coinciden en las 6**:
+
+        ruta                                         DOM   parser
+        /es/politica-de-seguridad-de-la-informacion/   0      0
+        /es/contacto/                                  4      4
+        /es/empresa/                                  11     11
+        /es/soporte/                                   2      2
+        /es/centro-de-ayuda/kunak-air-cloud/           5      5
+        /es/recursos/                                  4      4
+
+  ▸ **Y el cruce queda CABLEADO como control**, no como anécdota: si el DOM y
+    el parser discrepan, la página cae por `CRUCE ROTO` en vez de compararse.
+    Un sabotaje no podía cazar esto —no había caso que lo mirara—; lo cazó
+    **otra medida del mismo objeto con otro instrumento**, que es el control que
+    §sondas 4 manda cruzar antes de creerse un recuento.
+
+  ⚠ Su límite, declarado (§regla 15): los dos instrumentos leen **la misma
+    captura**, así que el cruce prueba *«los dos cuentan lo mismo»* y **no**
+    *«el recuento es correcto»*.
+
+
+═══ CONTROL EN POSITIVO — con todo puesto
+
+  Las 6 páginas del piloto resuelven **7 de 7** hojas enlazadas, **0 sin
+  resolver**, 15–17 `styleSheets` (las 7 externas + los `<style>` en línea) y
+  **38–57 peticiones bloqueadas** — o sea que la red estaba cortada de verdad y
+  las hojas venían del disco.
+
+  **A 1440:** 248 pares numéricos · 0 mixtos.
+  **A 390:**  142 pares numéricos · 0 mixtos, con emulación de móvil
+  (`isMobile`+`hasTouch`+UA) **en los dos lados** — si sólo se emulara uno, el Δ
+  mediría la emulación y no el clon. Que la emulación ACTÚA se ve en el dato:
+  `docH` de /es/soporte/ pasa de **1443.13** a **3247.38** al reflotar.
+
+
+═══ LO QUE ESTE NEGATIVO **NO** PRUEBA (§*escribe qué preguntas NO contesta*)
+
+  · **no prueba que el clon esté bien: no había clon cuando se corrió.** Prueba
+    que el INSTRUMENTO discrimina. Son dos afirmaciones y sólo se tiene la
+    primera;
+  · no prueba nada de **390**: los tres casos se corrieron a **1440**. El
+    contrato de fidelidad es a los dos anchos, y el otro está sin correr;
+  · el lado «original» es **la CAPTURA**, no el sitio vivo. Que la captura
+    reproduzca al vivo es otra pregunta y otra sonda (`kb-css` la hace para KB);
+  · **6 páginas de 31.** Un verde de este comparador nunca será un verde del
+    arquetipo, y de los 4 tipos raros lo sería con **n = 1 por tipo**.

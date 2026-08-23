@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-20",
+    "fecha": "2026-08-22",
     "pregunta": "¿qué camino de extracción les toca a casos y faqs, qué pide su esquema, qué trae el corpus y qué falta?",
     "fuente": "corpus/ (captura congelada) + colecciones.ts (campos, derivados) + src/lib/{casos,faqs}.ts (CONTROL)",
     "sabotaje": "control-roto",

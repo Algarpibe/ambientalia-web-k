@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-20",
+    "fecha": "2026-08-22",
     "pregunta": "¿qué casos que el esquema ADMITE no ejercita ninguna fila sembrada?",
     "alcance": "los 9 catálogos de src/lib — 0 filas. NO el corpus del original",
     "deDonde": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS · PASO 3",

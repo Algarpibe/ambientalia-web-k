@@ -1,0 +1,113 @@
+{
+  "generado": "93.ª tanda",
+  "piloto": [
+    {
+      "ruta": "/es/politica-de-seguridad-de-la-informacion/",
+      "fichero": "sueltas/politica-de-seguridad-de-la-informacion/index.html",
+      "reg": "--",
+      "nSec": 0,
+      "tipos": {},
+      "porQue": [
+        "régimen `--` — estrena el campo rico de S2 (n = 1)"
+      ]
+    },
+    {
+      "ruta": "/es/contacto/",
+      "fichero": "sueltas/contacto/index.html",
+      "reg": "B-",
+      "nSec": 4,
+      "tipos": {
+        "text": 6,
+        "code": 1,
+        "image": 3,
+        "map": 1,
+        "fullwidth_slider": 1
+      },
+      "porQue": [
+        "única/primera con `et_pb_map` (n = 1 páginas)"
+      ]
+    },
+    {
+      "ruta": "/es/empresa/",
+      "fichero": "sueltas/empresa/index.html",
+      "reg": "B-",
+      "nSec": 11,
+      "tipos": {
+        "text": 24,
+        "image": 20,
+        "button": 1,
+        "blurb": 13,
+        "slider": 1,
+        "fullwidth_slider": 1
+      },
+      "porQue": [
+        "única/primera con `et_pb_slider` (n = 1 páginas)"
+      ]
+    },
+    {
+      "ruta": "/es/soporte/",
+      "fichero": "sueltas/soporte/index.html",
+      "reg": "B-",
+      "nSec": 2,
+      "tipos": {
+        "text": 5,
+        "image": 1,
+        "icon": 3
+      },
+      "porQue": [
+        "única/primera con `et_pb_icon` (n = 1 páginas)"
+      ]
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+      "fichero": "hubs-kb/centro-de-ayuda/kunak-air-cloud/index.html",
+      "reg": "BT",
+      "nSec": 5,
+      "tipos": {
+        "text": 1,
+        "toggle": 2,
+        "image": 1,
+        "video": 4
+      },
+      "porQue": [
+        "único representante del régimen `BT` (8 de 31 páginas)"
+      ]
+    },
+    {
+      "ruta": "/es/recursos/",
+      "fichero": "listados/recursos/index.html",
+      "reg": "B-",
+      "nSec": 4,
+      "tipos": {
+        "text": 6,
+        "image": 2,
+        "blurb": 4,
+        "button": 1
+      },
+      "porQue": [
+        "BUILDER puro con 4 secciones — el caso NORMAL, para no medir sólo excepciones"
+      ]
+    }
+  ],
+  "nPaginasPorTipo": {
+    "text": 29,
+    "toggle": 5,
+    "image": 19,
+    "video": 5,
+    "button": 6,
+    "blurb": 3,
+    "code": 9,
+    "map": 1,
+    "fullwidth_slider": 2,
+    "slider": 1,
+    "icon": 1
+  },
+  "obligados": [
+    "map",
+    "fullwidth_slider",
+    "slider",
+    "icon",
+    "code"
+  ],
+  "noTocados": []
+}

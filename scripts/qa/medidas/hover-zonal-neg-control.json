@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-20",
+    "fecha": "2026-08-22",
     "pregunta": "§LH-C6-HOVER-ZONAL — qué CONTENEDOR dispara el zoom de la media de tarjeta",
     "instrumento": "el CSS SERVIDO (los <style> del documento + las hojas EXTERNAS que pide)",
     "alcance": {
@@ -19,11 +19,11 @@
   "formas": {
     "L1-blog": {
       "ruta": "/es/blog/",
-      "hojasExternas": 10,
-      "hojasPedidas": 10,
-      "hojasQueContestaron": 10,
-      "bytesCss": 564422,
-      "reglasServidas": 4521,
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 575893,
+      "reglasServidas": 4556,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -50,11 +50,11 @@
     },
     "L1-etiqueta": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "hojasExternas": 12,
-      "hojasPedidas": 12,
-      "hojasQueContestaron": 12,
-      "bytesCss": 624510,
-      "reglasServidas": 4991,
+      "hojasExternas": 14,
+      "hojasPedidas": 14,
+      "hojasQueContestaron": 14,
+      "bytesCss": 635981,
+      "reglasServidas": 5026,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -81,11 +81,11 @@
     },
     "L1-resources-hijo": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "hojasExternas": 9,
-      "hojasPedidas": 9,
-      "hojasQueContestaron": 9,
-      "bytesCss": 573807,
-      "reglasServidas": 4547,
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 596505,
+      "reglasServidas": 4647,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -121,11 +121,11 @@
     },
     "L1-resources-padre": {
       "ruta": "/es/recursos/seminarios-web/",
-      "hojasExternas": 9,
-      "hojasPedidas": 9,
-      "hojasQueContestaron": 9,
-      "bytesCss": 573807,
-      "reglasServidas": 4547,
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 585278,
+      "reglasServidas": 4582,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -161,11 +161,11 @@
     },
     "L2-glosario": {
       "ruta": "/es/glosario/",
-      "hojasExternas": 10,
-      "hojasPedidas": 10,
-      "hojasQueContestaron": 10,
-      "bytesCss": 638851,
-      "reglasServidas": 4553,
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 671683,
+      "reglasServidas": 4704,
       "reglasHoverConTransform": 2,
       "disparadores": [
         {
@@ -186,11 +186,11 @@
     },
     "L2-faqs": {
       "ruta": "/es/preguntas-frecuentes/",
-      "hojasExternas": 10,
-      "hojasPedidas": 10,
-      "hojasQueContestaron": 10,
-      "bytesCss": 638851,
-      "reglasServidas": 4553,
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 671683,
+      "reglasServidas": 4704,
       "reglasHoverConTransform": 2,
       "disparadores": [
         {
@@ -211,11 +211,11 @@
     },
     "L3-sci": {
       "ruta": "/es/scientific-category/articulos-cientificos-y-estudios/",
-      "hojasExternas": 10,
-      "hojasPedidas": 10,
-      "hojasQueContestaron": 10,
-      "bytesCss": 655623,
-      "reglasServidas": 4606,
+      "hojasExternas": 11,
+      "hojasPedidas": 11,
+      "hojasQueContestaron": 11,
+      "bytesCss": 667094,
+      "reglasServidas": 4641,
       "reglasHoverConTransform": 2,
       "disparadores": [
         {
@@ -239,8 +239,8 @@
       "hojasExternas": 7,
       "hojasPedidas": 7,
       "hojasQueContestaron": 7,
-      "bytesCss": 533746,
-      "reglasServidas": 4288,
+      "bytesCss": 535611,
+      "reglasServidas": 4298,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -279,8 +279,8 @@
       "hojasExternas": 7,
       "hojasPedidas": 7,
       "hojasQueContestaron": 7,
-      "bytesCss": 550468,
-      "reglasServidas": 4372,
+      "bytesCss": 552333,
+      "reglasServidas": 4382,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -316,9 +316,9 @@
     }
   },
   "resumen": {
-    "reglasServidas": 40978,
+    "reglasServidas": 41540,
     "reglasHoverConTransform": 24,
-    "fraccion": 0.00059,
+    "fraccion": 0.00058,
     "efectosMedidosSinRegla": 0,
     "veredicto": "LEÍDO"
   }
