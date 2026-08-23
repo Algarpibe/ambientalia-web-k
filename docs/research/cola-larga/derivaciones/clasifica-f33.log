@@ -1,0 +1,184 @@
+═══ clasifica-f33 · qué SON las etiquetas de F3-3 fuera del censo
+
+  censo leído de comunes.ts                43 etiquetas
+  documentos de f33-extraido               31
+  campos ricos recorridos                  178
+  etiquetas fuera del censo                <article> <header> <meta> <path> <svg>
+  OCURRENCIAS (no páginas: la unidad es la ocurrencia)   120
+
+─── §1 · el reparto POR ETIQUETA — la unidad es la OCURRENCIA ───
+  ⚠ y no se publica el total: «5 etiquetas en 10 páginas» es un contenedor
+     que absorbe tres casos distintos (§la causa común).
+
+  etiqueta    ocurr.  páginas  contenedor generado → n
+  <article>   26      2        bucle-entradas → 3 · listado-cientifico → 23
+  <header>    23      1        listado-cientifico → 23
+  <meta>      25      10       miga → 25
+  <path>      23      1        listado-cientifico → 23
+  <svg>       23      1        listado-cientifico → 23
+
+  y POR PÁGINA, que es la otra unidad que el total absorbe:
+  página                      etiqueta   n   contenedor
+  documentos-cientificos      <article>  23  listado-cientifico
+  documentos-cientificos      <header>   23  listado-cientifico
+  documentos-cientificos      <meta>     3   miga
+  documentos-cientificos      <path>     23  listado-cientifico
+  documentos-cientificos      <svg>      23  listado-cientifico
+  empresa                     <meta>     2   miga
+  kunakpedia                  <meta>     3   miga
+  preguntas-frecuentes        <meta>     3   miga
+  premios-y-reconocimientos   <meta>     3   miga
+  productos                   <meta>     2   miga
+  recursos                    <article>  3   bucle-entradas
+  recursos                    <meta>     2   miga
+  sectores                    <meta>     2   miga
+  servicio-de-reparacion      <meta>     3   miga
+  soporte                     <meta>     2   miga
+
+  las CADENAS distintas observadas (una por combinación etiqueta·contenedor):
+     <meta>  ol.kunak-breadcrumbs ▸ li
+     <article>  div.et_pb_module.et_pb_blog_0_tb_body.bucle-entradas.et_pb_posts.et_pb_bg_layout_light ▸ div.et_pb_ajax_pagination_container
+     <article>  div.scientific-list-content
+     <svg>  article ▸ div.scientific-imagen-container ▸ a ▸ span.scientific-ico
+     <path>  div.scientific-imagen-container ▸ a ▸ span.scientific-ico ▸ svg
+     <header>  div.scientific-list-content ▸ article
+
+─── §2 · el contenedor «miga»: ¿escrita o GENERADA? ───
+
+  páginas de F3-3                          31
+  con `kunak-breadcrumbs` en el MARCADO     18
+     · en la capa PROPIA (et_pb_text_N)     10   ← las que llegan al campo rico
+     · en la capa THEME BUILDER (_tb_)      8   ← las que el extractor ya NO recoge
+  sin miga                                 13
+  sin fichero                              0
+
+  ⚠ El censo de la 96.ª dijo «<meta> en 10 páginas». Cierto — y el contenedor
+     está en 18. Las 8 de `_tb_` no salían porque el extractor lee
+     SECCIONES PROPIAS: ya las trata como cascarón, sin que nadie lo escribiera.
+
+  las FORMAS de <li> (marcado sin texto, sin href, sin posición):
+     formas distintas en las 18                3
+     <li> totales                             58
+     diferencia simétrica propia ↔ theme-builder:  0 sólo propia · 0 sólo _tb_
+       ×22   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="pagina padre"><a itemprop="item" href=""><span itemprop="name"><…
+       ×18   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="" itemprop="item"><span itemprop="name"></span…
+       ×18   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="pagina"><span itemprop="name"></span><meta itemprop="position" c…
+
+  ¿el contenido de la miga se DERIVA de la posición de la página?
+     eslabones totales                        58
+     intermedios cuyo href ES prefijo de la ruta   30 de 40
+     últimos SIN href (= la página actual)     18 de 18
+     ‼ NO derivables por la URL (10):
+        kunak-air-cloud: eslabón 2 ("Soporte") href=https://kunakair.com/es/soporte/ NO es prefijo de /es/centro-de-ayuda/kunak-air-cloud/
+        kunak-air-cloud: eslabón 3 ("Centro de ayuda") href=https://kunakair.com/es/soporte/centro-de-ayuda/ NO es prefijo de /es/centro-de-ayuda/kunak-air-cloud/
+        kunak-air: eslabón 2 ("Soporte") href=https://kunakair.com/es/soporte/ NO es prefijo de /es/centro-de-ayuda/kunak-air/
+        kunak-air: eslabón 3 ("Centro de ayuda") href=https://kunakair.com/es/soporte/centro-de-ayuda/ NO es prefijo de /es/centro-de-ayuda/kunak-air/
+        articulos-de-ayuda: eslabón 2 ("Soporte") href=https://kunakair.com/es/soporte/ NO es prefijo de /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/
+        articulos-de-ayuda: eslabón 3 ("Centro de ayuda") href=https://kunakair.com/es/soporte/centro-de-ayuda/ NO es prefijo de /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/
+        video-tutoriales: eslabón 2 ("Soporte") href=https://kunakair.com/es/soporte/ NO es prefijo de /es/centro-de-ayuda/kunak-air/video-tutoriales/
+        video-tutoriales: eslabón 3 ("Centro de ayuda") href=https://kunakair.com/es/soporte/centro-de-ayuda/ NO es prefijo de /es/centro-de-ayuda/kunak-air/video-tutoriales/
+        articulos-de-ayuda: eslabón 4 ("Kunak Air Cloud") href=https://kunakair.com/es/centro-de-ayuda/kunak-air-cloud/ NO es prefijo de /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/
+        video-tutoriales: eslabón 4 ("Kunak Air Cloud") href=https://kunakair.com/es/centro-de-ayuda/kunak-air-cloud/ NO es prefijo de /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/
+
+     y el reparto POR CAPA, que es lo que el 30/40 absorbe:
+       propia          15 de 15 intermedios son prefijo de su ruta
+       theme-builder   15 de 25 intermedios son prefijo de su ruta
+       → los 10 que fallan son TODOS de `_tb_`, y no fallan por azar: son
+         las páginas del centro de ayuda, que el original sirve en DOS familias
+         de URL a la vez. La miga sigue el PADRE de WordPress, no la URL pedida —
+         que es justo lo que un generador hace y lo que una persona escribiendo
+         el HTML de la página en la que está NO haría.
+
+  la GUARDA de la retirada: ¿el campo rico contiene SÓLO la miga?
+     campos ricos con miga                    10
+     que NO contienen NADA MÁS                10
+
+  y su POSICIÓN, que también es derivable:
+     módulo Divi que la contiene en las 10 propias:  et_pb_text_0
+
+  cruce ENTRE páginas (la etiqueta del padre según la hija vs. según el padre):
+     pares comprobables                       22
+     coinciden                                22
+
+─── §3 · los dos listados: ¿CONSULTA? ───
+
+  3a · /es/recursos/ — el módulo `et_pb_blog…bucle-entradas`
+       tarjetas <article id="post-N">        3
+       corpus `entradas-blog`                152 documentos
+         post-71347    monitorizacion-de-emisiones-fugitivas          ✓ en entradas-blog
+         post-70141    monitorizacion-perimetral                      ✓ en entradas-blog
+         post-68582    monitorizacion-near-reference                  ✓ en entradas-blog
+       tarjetas que NO son entradas del corpus   0 de 3
+
+  3b · /es/recursos/documentos-cientificos/ — `div.scientific-list-content`
+       tarjetas <article id="post-N">        23
+       con slug de /es/recursos/…/           23
+       corpus `documentos-cientificos`       23 documentos
+       DIFERENCIA SIMÉTRICA (§el cardinal absorbe la membresía):
+         en el listado y NO en el corpus      0
+         en el corpus y NO en el listado      0
+
+  3c · la GUARDA: ¿el campo rico contiene SÓLO el listado?
+     bucle-entradas      recursos                  texto-pagina.html
+       campo 3593 chars · fuera del listado: 0  ✓ SÓLO el listado
+     listado-cientifico  documentos-cientificos    texto-pagina.html
+       campo 56313 chars · fuera del listado: 0  ✓ SÓLO el listado
+
+  3d · el veredicto REAL de `validaHtmlCorpus` — los cuatro ejes, no sólo etiquetas
+       campos ricos                          178
+       que RECHAZA hoy                       13
+       por familia                           etiqueta → 12 · atributo → 1
+         productos                  texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         sectores                   texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         recursos                   texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         recursos                   texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <article>. Lo que no está en el censo no entra; si es legítima, se a
+         kunakpedia                 texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         documentos-cientificos     texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         documentos-cientificos     texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <article>, <header>, <path>, <svg>. Lo que no está en el censo no en
+         preguntas-frecuentes       texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         empresa                    texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         empresa                    texto-pagina.html   atributo: §3.1-atributos: atributo(s) fuera del censo de 81 — data-teams. El censo (qa:atributos-censo, 291 páginas) mid
+         premios-y-reconocimientos  texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         soporte                    texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+         servicio-de-reparacion     texto-pagina.html   etiqueta: §3.1: etiqueta(s) fuera del censo de 43 — <meta>. Lo que no está en el censo no entra; si es legítima, se admi
+
+       DESPUÉS (simulado: los 3 contenedores retirados)
+       campos que seguirían rechazados       1
+         ‼ empresa                    texto-pagina.html   atributo: §3.1-atributos: atributo(s) fuera del censo de 81 — data-teams. El censo (qa:atributos-censo, 291 páginas) mide CERO manejadores `on*`, CERO
+
+       ⚠ Esto es la SIMULACIÓN, no el efecto (§CUANDO EL CAMBIO SE PUEDA
+          APLICAR, APLÍCALO Y MIDE). El efecto lo dice re-correr el extractor
+          y volver a pasar esta misma comprobación: tiene que dar 0.
+
+─── §4 · la dirección contraria: ¿alguna es CONTENIDO? ───
+
+  ocurrencias FUERA de todo contenedor generado   0 de 120
+     → ninguna. Las 120 ocurrencias caen dentro de uno de los 3 contenedores.
+
+─── §5 · control en línea del recorrido ───
+
+  sintético: 1 <meta> dentro de la miga + 1 <meta> suelto
+     ocurrencias vistas                       2   (esperado 2)
+     clasificadas «miga»                      1   (esperado 1)
+     clasificadas FUERA                       1   (esperado 1)
+     → el recorrido SABE decir «fuera». El 0 de §4 es un dato, no un cero por construcción.
+
+═══ EL REPARTO ═══
+
+  etiqueta    ocurr.  contenedor            veredicto   evidencia
+  <article>   3       bucle-entradas        CONSULTA    §3a
+  <article>   23      listado-cientifico    CONSULTA    §3b
+  <header>    23      listado-cientifico    CONSULTA    §3b
+  <meta>      25      miga                  CASCARÓN    §2
+  <path>      23      listado-cientifico    CONSULTA    §3b
+  <svg>       23      listado-cientifico    CONSULTA    §3b
+
+  CONTENIDO: 0 ocurrencias de las 120.
+
+  ⚠⚠ Y LO QUE ESTE REPARTO NO BASTA PARA CONCLUIR — está en §3d:
+     «0 de contenido» es cierto de las ETIQUETAS, y la siembra NO se desbloquea
+     con eso. `validaHtmlCorpus` mira CUATRO ejes y devuelve el PRIMERO que
+     falla, así que retirar los contenedores destapa lo que estaba detrás:
+     quedan 1 campo(s) rechazados, por ATRIBUTO, no por etiqueta.
+     Preguntar «¿qué etiquetas sobran?» no puede ver un atributo — §El principio:
+     el veredicto lo da la función sobre la salida servida, no la lectura de ella.
