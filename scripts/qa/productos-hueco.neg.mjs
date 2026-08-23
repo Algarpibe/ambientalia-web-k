@@ -147,25 +147,91 @@ else if (!existsSync(fCtl)) malCtl = "no congeló su medida";
 else {
   const d = JSON.parse(readFileSync(fCtl, "utf8"));
   const cl = d.referencias?.porClase ?? {};
-  if (d.inventario?.cpt !== 24) malCtl = `CPT ${d.inventario?.cpt}, esperaba 24`;
-  else if (d.inventario?.sinModelar !== 15) malCtl = `sinModelar ${d.inventario?.sinModelar}, esperaba 15`;
-  else if (d.reparto?.desbloquean?.length !== 7) malCtl = `desbloquean ${d.reparto?.desbloquean?.length}, esperaba 7`;
-  else if (cl["SIN-CPT"]?.length !== 3) malCtl = `SIN-CPT ${cl["SIN-CPT"]?.length}, esperaba 3`;
-  else if (cl["SIN CLASIFICAR"]?.length !== 0) malCtl = `${cl["SIN CLASIFICAR"]?.length} sin clasificar en la corrida limpia`;
-  else if (d.reparto?.casosBloqueadosTrasModelarLos15?.length !== 5)
-    malCtl = `${d.reparto?.casosBloqueadosTrasModelarLos15?.length} casos seguirían bloqueados, esperaba 5`;
-  /* Y la mitad que hace que el hallazgo sea un hallazgo: los 3 SIN-CPT traen su
-   * evidencia SERVIDA, con las dos formas distinguidas. Sin esto, «3 huérfanos»
-   * sería un recuento sin saber qué son. */
-  else if (cl["SIN-CPT"].filter((x) => x.href).length !== 3)
-    malCtl = `sólo ${cl["SIN-CPT"].filter((x) => x.href).length} de 3 SIN-CPT traen href servido`;
-  else if (cl["SIN-CPT"].filter((x) => x.forma === "sin-permalink").length !== 1)
-    malCtl = `esperaba exactamente 1 sin-permalink entre los SIN-CPT`;
+  /* ⚠⚠ REESCRITO 2026-08-23 (96.ª tanda) — §regla 5ter: ARREGLAR EL OBJETO
+   * MEDIDO CADUCA EL CONTROL DEL INSTRUMENTO QUE LO MIDIÓ.
+   *
+   * Este control cableaba **seis números de un acta**: `15` sin modelar, `7`
+   * que desbloquean, `3` SIN-CPT (2 alias + 1 sin permalink) y `5` casos
+   * bloqueados. Los seis eran ciertos **el día que se escribieron** y ninguno
+   * lo es hoy — y no porque nada se rompiera, sino porque **el objeto cambió
+   * legítimamente**: el 2026-08-13 `productos` cambió de fuente (9 productos
+   * transcritos a mano → los 19 de `p-extraido.json`), así que
+   *
+   *   · los 3 que caían en SIN-CPT pasaron a estar MODELADOS  ⇒ SIN-CPT 3 → 0
+   *   · `sinModelar` bajó de 15 a 8, y `desbloquean` de 7 a 0.
+   *
+   * O sea que el control llevaba **desde el 13 aplicando el tratamiento al
+   * revés**, y fallando en voz alta — que se lee como hallazgo del objeto en
+   * vez de como avería del instrumento.
+   *
+   * ── Y CÓMO SE ARREGLA SIN «AJUSTAR LA EXPECTATIVA AL VALOR DE HOY» ───────
+   * Escribir `8` donde ponía `15` sería exactamente el corolario que §regla 21
+   * prohíbe: el defecto entra DENTRO de la guarda y vuelve a caducar el día que
+   * `productos` cambie de fuente otra vez. Así que se parte en dos:
+   *
+   *   **(a) lo que se puede DERIVAR de la fuente que lo declara** — el
+   *   inventario. `cpt` sale de `INDICE.json` y `sinModelar` del cruce con el
+   *   catálogo real, o sea de las MISMAS fuentes que la sonda pero por un
+   *   camino independiente. Si la sonda dejara de cargar el catálogo, esto lo
+   *   caza; y si mañana entra un producto nuevo, el listón sube solo;
+   *
+   *   **(b) lo que NO se puede derivar sin reimplementar la clasificación**
+   *   —`desbloquean`, `SIN-CPT`, `casosBloqueados`— pasa de VALOR a
+   *   **INVARIANTE ESTRUCTURAL**: la partición suma, los subconjuntos son
+   *   subconjuntos, nadie queda sin clasificar, y toda evidencia SIN-CPT trae
+   *   su `href` **si la hay**. Eso discrimina una sonda que pierda una clase y
+   *   **no caduca con el dato**, que es la propiedad que le faltaba.
+   *
+   * ⚠ Lo que se PIERDE al hacerlo, y se dice: el control ya no fija los
+   * cardinales del acta. Ese trabajo lo hace hoy la congelada de `medidas/`,
+   * que es donde vive la evidencia (§sondas 2). Un control no es el sitio donde
+   * se archiva un número: es el sitio donde se comprueba que el instrumento no
+   * se ha desviado de sus fuentes. */
+  const { cargaCatalogos } = await import("../seed/catalogos.mjs");
+  const INDICE = JSON.parse(readFileSync(join(QA, "../../corpus/INDICE.json"), "utf8"));
+  const rutasCptCtl = Object.keys(INDICE.paginas)
+    .filter((k) => k.startsWith("productos/"))
+    .map((k) => k.slice("productos/".length));
+  const idsCtl = new Set(((await cargaCatalogos()).get("productos") ?? []).map((p) => p.id));
+  const hojaCtl = (r) => r.split("/").pop();
+  const cptCtl = rutasCptCtl.length;
+  const sinModelarCtl = rutasCptCtl.filter((r) => !idsCtl.has(hojaCtl(r))).length;
+
+  const referenciados = Object.values(cl).reduce((n, v) => n + (v?.length ?? 0), 0);
+  const sinCpt = cl["SIN-CPT"] ?? [];
+  const desbloquean = d.reparto?.desbloquean ?? [];
+  /* `casosBloqueadosTrasModelarLos15` conserva el nombre de cuando eran 15: es
+   * una CLAVE de la congelada, y renombrarla rompería las actas que la citan. */
+  const bloqueados = d.reparto?.casosBloqueadosTrasModelarLos15 ?? [];
+  /* Las rutas sin modelar, del propio inventario: es el conjunto del que
+   * «desbloquean» tiene que ser subconjunto. */
+  const sinModelarRutas = (d.inventario?.rutas ?? []).filter((r) => !r.modelado).map((r) => r.ruta);
+
+  // (a) inventario DERIVADO de las fuentes
+  if (d.inventario?.cpt !== cptCtl) malCtl = `CPT ${d.inventario?.cpt}, derivado del corpus ${cptCtl}`;
+  else if (d.inventario?.sinModelar !== sinModelarCtl)
+    malCtl = `sinModelar ${d.inventario?.sinModelar}, derivado del cruce corpus×catálogo ${sinModelarCtl}`;
+  // (b) INVARIANTES estructurales, que no caducan con el dato
+  else if (d.inventario?.modelados + d.inventario?.sinModelar !== d.inventario?.cpt)
+    malCtl = `la partición del CPT no suma: ${d.inventario?.modelados} + ${d.inventario?.sinModelar} ≠ ${d.inventario?.cpt}`;
+  else if (referenciados !== d.referencias?.slugsDistintos)
+    malCtl = `las clases suman ${referenciados} y hay ${d.referencias?.slugsDistintos} slugs referenciados: alguien se perdió por el camino`;
+  else if (cl["SIN CLASIFICAR"]?.length !== 0)
+    malCtl = `${cl["SIN CLASIFICAR"]?.length} sin clasificar en la corrida limpia`;
+  else if (!desbloquean.every((x) => sinModelarRutas.includes(x.ruta ?? x.slug ?? x)))
+    malCtl = `«desbloquean» no es subconjunto de «sin modelar»: la clasificación no cierra`;
+  else if (bloqueados.length > d.referencias?.casos)
+    malCtl = `${bloqueados.length} casos bloqueados de ${d.referencias?.casos}: imposible`;
+  /* Y la mitad que hace que un hallazgo sea un hallazgo: **si** hay SIN-CPT,
+   * traen su evidencia SERVIDA. Condicionado a que los haya — hoy son 0 y eso
+   * es dato, no un fallo (§regla del cero). */
+  else if (sinCpt.length && sinCpt.filter((x) => x.href).length !== sinCpt.length)
+    malCtl = `sólo ${sinCpt.filter((x) => x.href).length} de ${sinCpt.length} SIN-CPT traen href servido`;
 }
 if (malCtl) { fallos++; console.log(`  ❌ CONTROL   (sin sabotaje)      ${malCtl}`); }
 else
   console.log(
-    `  ✓  CONTROL   (sin sabotaje)      15 sin modelar · 7 desbloquean · 3 SIN-CPT (2 alias + 1 sin permalink) · 5 casos siguen bloqueados`,
+    `  ✓  CONTROL   (sin sabotaje)      inventario DERIVADO del corpus×catálogo · partición cierra · 0 sin clasificar`,
   );
 
 console.log(

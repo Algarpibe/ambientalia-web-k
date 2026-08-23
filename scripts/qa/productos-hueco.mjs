@@ -103,8 +103,48 @@ const cptPorHoja = new Map(CPT.map((r) => [hoja(r), r]));
  * ═════════════════════════════════════════════════════════════════════════ */
 
 const catalogos = await cargaCatalogos();
-const modelados = new Set((catalogos.get("productos") ?? []).map((p) => p.id));
+const productosCat = catalogos.get("productos") ?? [];
+const modelados = new Set(productosCat.map((p) => p.id));
 if (SABOTAJE === "modelado-fantasma") modelados.add("producto-que-no-existe-en-el-cpt");
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 2bis · LOS DOCUMENTOS DEL CPT **SIN PÁGINA PROPIA** — CMS-PR3
+ *
+ * ⚠⚠ **AÑADIDO 2026-08-23 (96.ª tanda). Es §regla 5ter: ARREGLAR EL OBJETO
+ * MEDIDO CADUCA EL CONTROL DEL INSTRUMENTO QUE LO MIDIÓ.**
+ *
+ * Esta sonda hizo su trabajo: fue ELLA la que midió que 3 de los 19 slugs
+ * referenciados no son ninguna de las 24 URLs del CPT. La 95.ª leyó el hallazgo,
+ * lo modeló —el campo `pagina: propia | ninguna`, 21 · 3— y la ida lo derivó en
+ * `preparaProducto()`. **Lo que nadie actualizó fue esta guarda**, que siguió
+ * escribiendo la expectativa de ayer (*«todo lo modelado es una URL del CPT»*) y
+ * por eso fallaba **en voz alta** — que se lee como hallazgo del objeto en vez de
+ * como avería del instrumento.
+ *
+ * Y en su forma es §regla 25: **el DOMINIO de la guarda quedó más ancho que su
+ * invariante**, así que dejó de proteger y pasó a BLOQUEAR. El invariante que
+ * quiere vigilar es *«un slug modelado que no corresponde a ningún DOCUMENTO del
+ * CPT»* —lo que inyecta el sabotaje `modelado-fantasma`—; el dominio que
+ * reclamaba era *«…que no es ninguna URL del CPT»*, y **documento ≠ URL**: el
+ * corpus tiene 24 URLs porque los otros 3 documentos **no tienen permalink**
+ * (`ozone-2` sólo sale por `?post_type=solutions&p=56674`).
+ *
+ * ⚠ **El discriminador se DERIVA con la función de la IDA, no se reimplementa**
+ * (§una definición, no dos) y **no se escribe como lista** (§regla 9): una lista
+ * de tres slugs envejecería contra el catálogo en silencio. `preparaProducto()`
+ * decide por la medida —*¿el último segmento del `href` SERVIDO es el `slug`?*—
+ * así que si mañana el original le da permalink a `ozone-2`, la exclusión
+ * desaparece sola.
+ *
+ * ⚠ **Y el sabotaje sigue mordiendo, que es la condición de que esto no sea
+ * «ajustar la expectativa»** (§regla 21): el fantasma se añade a `modelados`
+ * DESPUÉS de leer el catálogo, así que no está en `productosCat`, no puede salir
+ * `ninguna`, y cae en la guarda igual que antes.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const { preparaProducto } = await import("../seed/seed.mjs");
+const sinPaginaPropia = new Set(
+  productosCat.filter((p) => preparaProducto(p).pagina === "ninguna").map((p) => p.id),
+);
 
 /* ══════════════════════════════════════════════════════════════════════════
  * 3 · LO QUE LOS 57 CASOS REFERENCIAN
@@ -287,12 +327,27 @@ console.log(`   SIN MODELAR                         ${String(sinModelar.length).
 const modeladosEnCpt = CPT.filter((r) => modelados.has(hoja(r))).length;
 if (modeladosEnCpt + sinModelar.length !== CPT.length)
   err(`RECONCILIACIÓN: ${modeladosEnCpt} + ${sinModelar.length} ≠ ${CPT.length} productos del CPT.`);
-const modeladosFueraDelCpt = [...modelados].filter((s) => !cptPorHoja.has(s));
+/* §regla 25: el cardinal de lo que la GUARDA alcanza y el INVARIANTE no. Si sale
+ * 0, la guarda está ajustada; si no, ése es el número de rechazos falsos que
+ * evita — y se publica, porque un dominio mal puesto no da error: rechaza cosas
+ * correctas con toda la autoridad de la guarda. */
+const fueraDelInvariante = [...modelados].filter((s) => !cptPorHoja.has(s) && sinPaginaPropia.has(s));
+console.log(
+  `   documentos del CPT SIN PÁGINA propia ${String(sinPaginaPropia.size).padStart(4)}` +
+    (sinPaginaPropia.size ? `   ${[...sinPaginaPropia].sort().join(" · ")} (CMS-PR3 · derivado por preparaProducto)` : ""),
+);
+console.log(
+  `   ├ de ésos, fuera de las URLs del CPT ${String(fueraDelInvariante.length).padStart(4)}   ← los que la guarda alcanzaría y el invariante NO`,
+);
+
+const modeladosFueraDelCpt = [...modelados].filter((s) => !cptPorHoja.has(s) && !sinPaginaPropia.has(s));
 if (modeladosFueraDelCpt.length)
   err(
-    `MODELADO FUERA DEL CPT: ${modeladosFueraDelCpt.length} slug(s) que el clon modela y el corpus\n` +
-      `   no tiene como URL — ${modeladosFueraDelCpt.join(" · ")}.\n` +
-      `   Eso NO es «uno de más»: es que las dos fuentes no denotan el mismo conjunto.`,
+    `MODELADO FUERA DEL CPT: ${modeladosFueraDelCpt.length} slug(s) que el clon modela y que no son\n` +
+      `   NINGÚN DOCUMENTO del corpus — ${modeladosFueraDelCpt.join(" · ")}.\n` +
+      `   Eso NO es «uno de más»: es que las dos fuentes no denotan el mismo conjunto.\n` +
+      `   (Los documentos del CPT SIN PÁGINA propia no cuentan aquí: son documentos\n` +
+      `    legítimos sin permalink, y el invariante es sobre el DOCUMENTO, no la URL.)`,
   );
 
 console.log(`\n  ── 2 · LO QUE LOS ${casos.length} CASOS REFERENCIAN (${refs.size} slugs distintos) ──`);
