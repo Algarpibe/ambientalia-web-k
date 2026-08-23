@@ -1,0 +1,66 @@
+
+════════ BARRIDO DE LISTAS A MANO — §regla 9 caso 7 ════════
+
+   ficheros barridos                        290   (scripts/ + packages/, sin node_modules)
+   ficheros de .tmp EXCLUIDOS                23   ← bundles de esbuild: copias, no fuentes
+   arrays/Sets de literales PUROS           138
+   · que nombran algo que el repo PRODUCE    25   ← CANDIDATOS (mitad 1 de la regla)
+
+   productores derivados: colección 17 · sonda 142 · bloque 29
+
+  ── LOS CANDIDATOS, uno a uno (la mitad 2 —«¿falla al no casar?»— se clasifica A MANO) ──
+   packages/cms-config/src/campos/comunes.ts:294  ETIQUETAS_CENSADAS     bloque 2/43
+      p, span, a, div, br, h2, sub, strong, li, ul, img, h3 … (+31)
+   packages/cms-config/src/entorno.mjs:47         (new Set)              colección 1/1
+      productos
+   scripts/qa/a-inventario.mjs:53                 GRUPO_A                colección 3/3
+      entradas-blog, terminos-kunakpedia, documentos-cientificos
+   scripts/qa/a-inventario.mjs:54                 DE_BUILDER             colección 3/3
+      casos, faqs, productos
+   scripts/qa/a-inventario.neg.mjs:75             (new Set)              colección 3/3
+      entradas-blog, terminos-kunakpedia, documentos-cientificos
+   scripts/qa/c-cmp.mjs:344                       (new Set)              bloque 2/35
+      p, a, strong, b, em, i, u, sub, sup, br, span, div … (+23)
+   scripts/qa/c-embeds.mjs:49                     DEL_C                  colección 2/2
+      casos, faqs
+   scripts/qa/c-inventario.mjs:69                 GRUPO_C                colección 2/2
+      casos, faqs
+   scripts/qa/cms-roundtrip.mjs:71                VALIDOS                sonda 1/5
+      defecto, defecto-compartido, sintetico, envoltorio, tipo-hoja
+   scripts/qa/cobertura.mjs:485                   (new Set)              colección 1/118 · sonda 101/118
+      cobertura, manifiesto, slugs, negativos, ruido, estados-390, clon-estados, lib, artefacto, esqueleto, arbol-todos, clase-censo … (+106)
+   scripts/qa/cobertura.mjs:511                   (new Set)              sonda 14/14
+      clon-base, c-cabecera, c-cmp, mono-cmp, lh-cmp, pie-cmp, tree-cmp, cmp-sector, a-miga, c-banda, offsets, enlaces … (+2)
+   scripts/qa/kb-recon.mjs:198                    (new Set)              bloque 2/9
+      p, ul, li, h1, h2, h3, h4, strong, b
+   scripts/qa/lh-ejes.mjs:72                      (new Set)              bloque 2/9
+      texto, titular, alt, src, srcset, href, linkNextDelHead, attrW, attrH
+   scripts/qa/media-canales.mjs:85                (new Set)              bloque 2/8
+      ogimage, portada, image, imagen, icono, poster, src, archivo
+   scripts/qa/t4b-bloque.mjs:214                  FAMILIA                colección 2/2
+      entradas-blog, terminos-kunakpedia
+   scripts/qa/texto-poblacion.mjs:71              (new Set)              bloque 2/9
+      p, ul, li, h1, h2, h3, h4, strong, b
+   scripts/qa/texto-poblacion.neg.mjs:46          (new Set)              bloque 2/9
+      p, ul, li, h1, h2, h3, h4, strong, b
+   scripts/qa/texto-poblacion.neg.mjs:47          (new Set)              bloque 2/16
+      p, ul, li, h1, h2, h3, h4, strong, b, span, sub, sup … (+4)
+   scripts/qa/tipo-hoja.mjs:153                   (new Set)              bloque 1/3
+      p, strong, b
+   scripts/seed/extractor-a.mjs:68                GRUPO_A                colección 3/3
+      entradas-blog, terminos-kunakpedia, documentos-cientificos
+   scripts/seed/extractor-c.mjs:94                GRUPO_C                colección 2/2
+      casos, faqs
+   scripts/seed/extractor.mjs:71                  DEL_GRUPO_A            colección 3/3
+      entradas-blog, terminos-kunakpedia, documentos-cientificos
+   scripts/seed/extractor.mjs:72                  FUERA                  colección 3/3
+      casos, faqs, productos
+   scripts/seed/seed.mjs:62                       SEMBRADAS              colección 9/9
+      productos, sectores, monograficos, taxonomia-sectores, casos, faqs, entradas-blog, terminos-kunakpedia, documentos-cientificos
+   scripts/seed/transformaciones.mjs:855          (new Set)              bloque 1/2
+      p, br
+
+  ⚠ Un candidato NO es un defecto. La regla exige las DOS mitades, y la
+     segunda —que el consumidor no falle cuando no casa— se lee en el código.
+     La clasificación con su razón por cada uno va en el acta de la tanda.
+

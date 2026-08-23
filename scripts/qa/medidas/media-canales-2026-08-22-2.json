@@ -1,0 +1,535 @@
+{
+  "meta": {
+    "fecha": "2026-08-22",
+    "que": "el inventario de media DERIVADO POR CANALES del esquema, cruzado contra la guarda que para",
+    "regla": "el inventario se deriva de los canales que el ESQUEMA declara, no de los que algún extractor ya lee",
+    "guardas": {
+      "seed": "exige el fichero EXACTO en apps/web/public",
+      "seed-kb": "acepta media-corpus/ y colapsa variantes"
+    },
+    "sabotaje": null,
+    "noHace": [
+      "no abre el original",
+      "no captura",
+      "no siembra"
+    ],
+    "dominioCanalMudo": [
+      "casos",
+      "documentos-cientificos",
+      "entradas-blog",
+      "monograficos",
+      "productos",
+      "sectores"
+    ]
+  },
+  "recuento": {
+    "canalesDeclarados": 39,
+    "canalesEjercidos": 16,
+    "canalesSinDato": 22,
+    "canalesDeOtroSembrador": 4,
+    "referencias": 614,
+    "rutasDistintas": 614,
+    "ausentes": 0
+  },
+  "canalesDeclarados": [
+    {
+      "coleccion": "sectores",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "header.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "hero.image.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "body.ctaDescarga.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "body.claimConFoto.image.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "ctaSlides.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "proyectos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "articulos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "footerStripImage",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "header.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "hero.image.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "cuerpo.filas.columnas.modulos.imagen.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "cuerpo.filas.columnas.modulos.ctaDescarga.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "ctaSlides.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "proyectos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "articulos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "footerStripImage",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.imagen.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.blurb.icono",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.slider.diapositivas.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.gallery.imagenes.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.video.archivo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.video.poster",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.cta.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "imagenCabecera",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "galeria.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "ruta": "imagenDestacada.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "ruta": "portada.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.imagen-kb.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.gallery.items.imagen",
+      "tipo": "upload"
+    }
+  ],
+  "canalesSinDato": [
+    {
+      "coleccion": "sectores",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "body.ctaDescarga.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "body.claimConFoto.image.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "sectores",
+      "ruta": "footerStripImage",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "cuerpo.filas.columnas.modulos.imagen.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "cuerpo.filas.columnas.modulos.ctaDescarga.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "ctaSlides.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "proyectos.posts.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "monograficos",
+      "ruta": "footerStripImage",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.imagen.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.blurb.icono",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.slider.diapositivas.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.gallery.imagenes.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.video.archivo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.video.poster",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "productos",
+      "ruta": "cuerpo.cta.image",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "casos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "terminos-kunakpedia",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    }
+  ],
+  "canalesDeOtroSembrador": [
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.imagen-kb.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "articulos-kb",
+      "ruta": "cuerpo.columnas.modulos.gallery.items.imagen",
+      "tipo": "upload"
+    }
+  ],
+  "porCanal": [
+    {
+      "coleccion": "productos",
+      "canal": "image",
+      "guarda": "seed",
+      "refs": 12,
+      "rutas": 12,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "header.image",
+      "guarda": "seed",
+      "refs": 4,
+      "rutas": 4,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "hero.image.src",
+      "guarda": "seed",
+      "refs": 4,
+      "rutas": 4,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "body.image",
+      "guarda": "seed",
+      "refs": 3,
+      "rutas": 3,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "body.image.src",
+      "guarda": "seed",
+      "refs": 4,
+      "rutas": 4,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "ctaSlides.image",
+      "guarda": "seed",
+      "refs": 12,
+      "rutas": 12,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "proyectos.posts.image",
+      "guarda": "seed",
+      "refs": 10,
+      "rutas": 10,
+      "ausentes": []
+    },
+    {
+      "coleccion": "sectores",
+      "canal": "articulos.posts.image",
+      "guarda": "seed",
+      "refs": 12,
+      "rutas": 12,
+      "ausentes": []
+    },
+    {
+      "coleccion": "monograficos",
+      "canal": "header.image",
+      "guarda": "seed",
+      "refs": 2,
+      "rutas": 2,
+      "ausentes": []
+    },
+    {
+      "coleccion": "monograficos",
+      "canal": "hero.image.src",
+      "guarda": "seed",
+      "refs": 2,
+      "rutas": 2,
+      "ausentes": []
+    },
+    {
+      "coleccion": "monograficos",
+      "canal": "cuerpo.filas.columnas.modulos.src",
+      "guarda": "seed",
+      "refs": 11,
+      "rutas": 11,
+      "ausentes": []
+    },
+    {
+      "coleccion": "monograficos",
+      "canal": "articulos.posts.image",
+      "guarda": "seed",
+      "refs": 5,
+      "rutas": 5,
+      "ausentes": []
+    },
+    {
+      "coleccion": "casos",
+      "canal": "imagenCabecera",
+      "guarda": "seed",
+      "refs": 56,
+      "rutas": 56,
+      "ausentes": []
+    },
+    {
+      "coleccion": "casos",
+      "canal": "galeria.src",
+      "guarda": "seed",
+      "refs": 348,
+      "rutas": 348,
+      "ausentes": []
+    },
+    {
+      "coleccion": "entradas-blog",
+      "canal": "imagenDestacada.src",
+      "guarda": "seed",
+      "refs": 106,
+      "rutas": 106,
+      "ausentes": []
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "canal": "portada.src",
+      "guarda": "seed",
+      "refs": 23,
+      "rutas": 23,
+      "ausentes": []
+    }
+  ],
+  "origenesACapturar": [],
+  "faltan": {},
+  "porColeccion": {
+    "productos": {
+      "filas": 19,
+      "recorridas": 19
+    },
+    "sectores": {
+      "filas": 4,
+      "recorridas": 4
+    },
+    "monograficos": {
+      "filas": 2,
+      "recorridas": 2
+    },
+    "taxonomia-sectores": {
+      "filas": 11,
+      "recorridas": 11
+    },
+    "casos": {
+      "filas": 57,
+      "recorridas": 57
+    },
+    "faqs": {
+      "filas": 19,
+      "recorridas": 19
+    },
+    "entradas-blog": {
+      "filas": 152,
+      "recorridas": 152
+    },
+    "terminos-kunakpedia": {
+      "filas": 37,
+      "recorridas": 37
+    },
+    "documentos-cientificos": {
+      "filas": 23,
+      "recorridas": 23
+    }
+  }
+}

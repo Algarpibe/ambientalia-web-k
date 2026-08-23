@@ -48,7 +48,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { CATALOGOS, TAXONOMIAS_DERIVADAS, cargaCatalogos } from "../seed/catalogos.mjs";
-import { creaContexto, derivaTaxonomias, PREPARA, SEMBRADAS } from "../seed/seed.mjs";
+import { creaContexto, derivaTaxonomias, PREPARA } from "../seed/seed.mjs";
 import { aPayload } from "../../packages/cms-config/src/mapeo.mjs";
 import { APP, enApp, Evaluadas, gritaSiRevienta, hoy, QA, w } from "./lib.mjs";
 
@@ -56,7 +56,7 @@ process.env.SIN_CLON = "1";
 gritaSiRevienta();
 
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["canal-mudo", "guarda-floja"];
+const VALIDOS = ["canal-mudo", "guarda-floja", "coleccion-fuera"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
@@ -168,6 +168,17 @@ for (const m of ctx.mediaAuditada) {
   filas.push({ ...m, existe, canal: canalDe(m.donde), coleccion: coleccionDe(m.donde) });
 }
 
+/**
+ * SABOTAJE `coleccion-fuera` — **la instancia separadora que el dominio viejo
+ * no tenía.** Inyecta una colección que EJERCE media y a la que el esquema no
+ * le declara NINGÚN canal, **fuera de `SEMBRADAS`**. Con el dominio de la
+ * guarda escrito a mano salía **ausente y en verde**; con el dominio derivado
+ * de lo observado, sale **ROJA**. Es el caso que la 95.ª existe para no volver
+ * a tener en silencio (§regla 9 caso 7).
+ */
+if (SABOTAJE === "coleccion-fuera")
+  filas.push({ donde: "coleccion-fantasma.portada", ruta: "/images/postiza-del-sabotaje.jpg", existe: true, canal: "portada", coleccion: "coleccion-fantasma" });
+
 const porCanal = new Map();
 for (const f of filas) {
   const k = `${f.coleccion} · ${f.canal}`;
@@ -215,6 +226,10 @@ console.log(`   · de OTRO sembrador (seed-kb)         ${String(otroSembrador.le
 console.log(`   referencias de media recorridas       ${String(filas.length).padStart(4)}`);
 console.log(`   rutas DISTINTAS                       ${String(new Set(filas.map((f) => f.ruta)).size).padStart(4)}`);
 console.log(`   · AUSENTES                            ${String(faltan.length).padStart(4)}`);
+console.log(
+  `\n   dominio de la guarda CANAL MUDO: ${[...new Set([...porCanal.values()].map((e) => e.coleccion))].length} colecciones ` +
+    `DERIVADAS de lo observado (no una lista) — ${[...new Set([...porCanal.values()].map((e) => e.coleccion))].sort().join(", ")}`,
+);
 
 console.log(`\n  ── POR COLECCIÓN Y CANAL (guarda entre paréntesis) ──`);
 for (const e of [...porCanal.values()].sort((a, b) => b.faltan.size - a.faltan.size || b.refs - a.refs))
@@ -240,9 +255,53 @@ if (filas.length === 0) err(`0 referencias recorridas — eso no es «no hay med
  * walker dejó de mirarla. Un canal que desaparece del inventario es peor que uno
  * que falta: nadie lo echa de menos. */
 const conCanales = new Set(canales.map((c) => c.coleccion));
-for (const col of SEMBRADAS)
-  if (!conCanales.has(col) && [...porCanal.values()].some((e) => e.coleccion === col))
-    err(`CANAL MUDO: '${col}' ejerce media pero el esquema no le declara NINGÚN canal — el walker no la está mirando.`);
+/**
+ * ⚠⚠ **EL DOMINIO DE ESTA GUARDA SE DERIVA DE LO OBSERVADO. NO SE ESCRIBE.**
+ * (95.ª tanda — §regla 9 caso 7, tercera vez de la misma clase en el repo)
+ *
+ * Aquí ponía `for (const col of SEMBRADAS)`, o sea **9 literales escritos a
+ * mano en `seed.mjs`**. La pregunta que la guarda hace es *«¿hay alguna
+ * colección que EJERCE media y a la que el esquema no le declara NINGÚN
+ * canal?»*, y esa pregunta **no tiene un `SEMBRADAS` dentro**: el conjunto
+ * correcto es *las colecciones que el recorrido vio ejerciendo media*, que es
+ * exactamente `porCanal` — el dato, no una lista.
+ *
+ * Con la lista, una colección fuera de `SEMBRADAS` que ejerciera media sin
+ * canales declarados salía **AUSENTE, no roja**: el `for` no la visitaba y un
+ * bucle que no itera **no da error, da cero** (§sondas 4).
+ *
+ * ── LA MITAD HONESTA, y va primero porque decide cómo se lee este cambio ──
+ * **Hoy `SEMBRADAS` y `CATALOGOS` son EL MISMO CONJUNTO** —diferencia
+ * simétrica **0 y 0**, derivado, los dos con 9—, y `porCanal` sólo puede
+ * contener colecciones de `CATALOGOS`, que es lo que el recorrido camina. O
+ * sea: **0 instancias separadoras en el dato de hoy**, y por tanto el cambio
+ * es **NO-OP sobre el veredicto**. Son §*dos variables confundidas*: dentro de
+ * este dominio la guarda «nombraba una de las dos al azar», y la que tenía a
+ * mano era la incorrecta por construcción — `SEMBRADAS` la mantiene una
+ * persona, `porCanal` lo produce el propio recorrido.
+ *
+ * **Que sea NO-OP hoy no es un argumento para dejarlo**: es justo la forma que
+ * tiene este defecto de sobrevivir. Lo que prueba que la guarda ahora
+ * discrimina **no es esta corrida, es su negativo** (`SABOTAJE=coleccion-fuera`),
+ * porque la instancia separadora **hay que fabricarla**: el dato no la tiene.
+ *
+ * **Y lo que no se puede derivar, TIRA** (§regla 6: una ausencia se rechaza,
+ * no se sustituye) — el bloque de abajo.
+ */
+const ejercenMedia = [...new Set([...porCanal.values()].map((e) => e.coleccion))].sort();
+if (ejercenMedia.length === 0 && filas.length > 0)
+  throw new Error(
+    "DOMINIO VACÍO: hay referencias de media recorridas y CERO colecciones derivadas de ellas.\n" +
+      "  `porCanal` no puede quedarse vacío con `filas` poblado: o `coleccionDe` dejó de partir\n" +
+      "  el `donde`, o el agrupado no corrió. «0 colecciones» y «no pude derivarlas» no pueden\n" +
+      "  dar la misma salida (§regla 6).",
+  );
+for (const col of ejercenMedia)
+  if (!conCanales.has(col))
+    err(
+      `CANAL MUDO: '${col}' ejerce media pero el esquema no le declara NINGÚN canal — el walker no la está mirando.\n` +
+        `   Dominio de esta guarda: las ${ejercenMedia.length} colecciones DERIVADAS de lo observado, no una lista.`,
+    );
 /* `guarda-floja`: si nadie falta Y el corpus tiene ausencias conocidas, la
  * guarda dejó de discriminar. Se comprueba contra el disco, no contra memoria. */
 if (SABOTAJE === "guarda-floja" && faltan.length === 0)
@@ -259,6 +318,13 @@ w("medidas/media-canales.json", {
     },
     sabotaje: SABOTAJE,
     noHace: ["no abre el original", "no captura", "no siembra"],
+    /**
+     * El dominio de la guarda CANAL MUDO, congelado con su cardinal: se DERIVA
+     * de las colecciones que el recorrido vio ejerciendo media (95.ª). Antes
+     * era `SEMBRADAS`, 9 literales a mano — y una colección fuera de esa lista
+     * salía ausente en vez de roja.
+     */
+    dominioCanalMudo: [...new Set([...porCanal.values()].map((e) => e.coleccion))].sort(),
   },
   recuento: {
     canalesDeclarados: canales.length,

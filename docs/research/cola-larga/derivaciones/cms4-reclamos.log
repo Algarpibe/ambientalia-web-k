@@ -1,0 +1,56 @@
+
+════════ CMS-4 = E1 · ¿los 6 reclamos falsos dejan de ser inertes? ════════
+
+   páginas de la cola larga                  31
+   · que E1 pone en el PLANO DE RAÍZ         19   ← con éstas compiten los reclamos
+   · que quedan BAJO PREFIJO (catch-all)     12   ← no tocan el plano
+   reclamos de raíz de `articulos-kb`         6   (6 de 6 sin ruta de raíz)
+
+  ── EL CRUCE ──
+   `articulos-kb` ∩ lo que E1 pone en raíz     0   — ninguno
+   `articulos-kb` ∩ `entradas-blog`             0   (familia de 152)
+   `articulos-kb` ∩ `productos`                 0   (familia de 5)
+   `articulos-kb` ∩ `terminos-kunakpedia`       0   (familia de 37)
+
+  ── `productos`, que es la OTRA decisión y no se mezcla ──
+   reclama 5 · sin página emitida 2: sensor-de-calidad-del-aire · estacion-de-monitoreo-de-calidad-del-aire
+   ∩ lo que E1 pone en raíz: 0
+
+  ── VEREDICTO ──
+   ✅ **E1 NO lo cambia: 0 de 6.** Los 6 reclamos siguen siendo LATENTES.
+      Ninguno de los 19 slugs que E1 baja al plano de raíz es uno de ellos, y
+      tampoco choca con ninguna de las 3 familias ya registradas.
+
+   ⚠ Y lo que esto NO dice: que sean inofensivos. Siguen pudiendo bloquear
+      un alta legítima — lo único que E1 cambia es CUÁNTA población compite
+      por el plano, y hoy esa población no los quiere. Ficha abierta:
+      F3-3-REGISTRO-SOBRE-RECLAMA (arreglo medido: `enElPlano: () => false`).
+
+  ── LA VUELTA: ¿los 19 de E1 chocan con lo YA registrado? ──
+   E1 ∩ `articulos-kb`                          0   — ninguno (familia de 6)
+   E1 ∩ `entradas-blog`                         0   — ninguno (familia de 152)
+   E1 ∩ `productos`                             0   — ninguno (familia de 5)
+   E1 ∩ `terminos-kunakpedia`                   0   — ninguno (familia de 37)
+   ✅ **0 colisiones de slug.** E1 es sembrable sin tocar ninguna familia existente.
+
+  ── los 19 slugs que E1 baja al plano, nombrados ──
+   aviso-legal
+   contacto
+   descarga-catalogo
+   empresa
+   informe-tecnico-control-de-la-calidad-del-aire-en-ciudades
+   informe-tecnico-control-de-la-calidad-del-aire-en-industria
+   informe-tecnico-control-de-la-calidad-del-aire-en-las-minas
+   informe-tecnico-control-de-la-calidad-del-aire-en-obras
+   informe-tecnico-control-de-la-calidad-del-aire-en-puertos
+   newsletter
+   politica-de-cookies
+   politica-de-privacidad-y-de-proteccion-de-datos
+   politica-de-seguridad-de-la-informacion
+   productos
+   recursos
+   sectores
+   sistema-interno-de-informacion
+   soporte
+   suscribete
+
