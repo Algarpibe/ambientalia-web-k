@@ -65,7 +65,7 @@ const casos = [
     porQue: "medido contra la guarda de seed-kb el hueco SALE MENOR — y el seed muere igual",
     env: { SABOTAJE: "guarda-blanda" },
     exit: 0, // no da error por sí solo: ése ES el problema, y por eso se comprueba el número
-    comprueba: (j) => {
+    comprueba: (j, caso) => {
       const ok = lee("control");
       if (!ok) return "falta la corrida de control con la que comparar";
       /* ⚠ CORREGIDO 2026-08-18 (83.ª) — el mensaje afirmaba MÁS de lo que el
@@ -75,24 +75,40 @@ const casos = [
        *   · la sonda usa la guarda blanda            → defecto real;
        *   · el dominio no tiene INSTANCIAS SEPARADORAS → SIN PROBAR.
        *
-       * Y hoy es la segunda: las 33 que faltan, faltan en `public` Y en
-       * `media-corpus`, así que ninguna guarda las distingue. (En el conjunto
-       * global sí hay con qué separarlas —1 248 ficheros de `media-corpus`
-       * que no están en `public`—, pero ninguno cae en el dominio que estos 3
-       * canales referencian.)
+       * ⚠⚠ **Y LA CAUSA QUE SE ESCRIBIÓ AQUÍ ERA UNA TERCERA, NO NOMBRADA
+       * (corregido 2026-08-23, 96.ª).** La 83.ª concluyó *«las 33 que faltan,
+       * faltan en `public` Y en `media-corpus`, así que ninguna guarda las
+       * distingue»*. **Falso, y el propio informe de la sonda lo desmentía tres
+       * renglones más arriba**: `3 VARIANTES con su origen ya en public/`. Lo
+       * que producía el empate no era el dominio —era que **el sabotaje
+       * simulaba media guarda**: `enPublico || enCorpus`, sin el colapso de la
+       * variante que `seed-kb · ficheroDe()` sí hace al probar
+       * `[origenDe(rel), rel]`.
+       *
+       * O sea §regla 17 (*un sabotaje que anula media hipótesis no falsea
+       * nada*), y su síntoma es justo éste: un SIN PROBAR **con causa atribuida
+       * al dominio**, que es la atribución que impide ir a mirar el sabotaje.
+       * Completada la guarda: estricta **33** · blanda **30** ⇒ **3
+       * separadoras**, exactamente las `variantesConOrigenEnPublico`.
        *
        * Es §*dos modelos que predicen lo mismo en todo tu dominio son uno
-       * solo*: con 0 separadoras el caso NO ha elegido entre las dos guardas.
-       * Sigue en ROJO —un SIN PROBAR no puede leerse como probado— pero
-       * nombrando la causa correcta, que es lo que decide qué haría falta
-       * para cerrarlo: una ruta del dominio presente en `media-corpus` y
-       * ausente de `public`. */
-      if (!(j.reparto.faltanEnPublico < ok.reparto.faltanEnPublico))
+       * solo*: con 0 separadoras el caso NO ha elegido entre las dos guardas,
+       * y sigue en ROJO —un SIN PROBAR no puede leerse como probado—. Lo que
+       * cambia con la corrección es **qué haría falta para cerrarlo**, que ya
+       * no es «una ruta en `media-corpus` y no en `public`»: con el colapso
+       * puesto, basta una variante cuyo origen esté en disco. */
+      const separadoras = ok.reparto.faltanEnPublico - j.reparto.faltanEnPublico;
+      if (!(separadoras > 0))
         return (
           `SIN PROBAR · 0 instancias separadoras: la blanda dio ${j.reparto.faltanEnPublico} y la estricta ` +
           `${ok.reparto.faltanEnPublico}, o sea que las ${ok.reparto.faltanEnPublico} que faltan, faltan en LOS DOS sitios. ` +
           `No dice que la sonda use la guarda mala: dice que hoy el dominio no las distingue`
         );
+      /* §regla 22: el veredicto es un booleano (`blanda < estricta`) y sale
+       * `true` igual sobre 1 separadora que sobre 300. El cardinal va al lado
+       * o el caso no se puede sopesar. */
+      caso.detalle =
+        `${separadoras} separadora(s): estricta ${ok.reparto.faltanEnPublico} → blanda ${j.reparto.faltanEnPublico}`;
       return null;
     },
   },
@@ -128,11 +144,17 @@ for (const c of casos) {
   if (!mal && c.salidaTiene && !c.salidaTiene.test(out)) mal = `la salida no contiene ${c.salidaTiene}`;
   if (!mal && c.comprueba) {
     if (!existsSync(fichero)) mal = `no congeló ${fichero.split(/[\\/]/).pop()}`;
-    else mal = c.comprueba(JSON.parse(readFileSync(fichero, "utf8")));
+    else mal = c.comprueba(JSON.parse(readFileSync(fichero, "utf8")), c);
   }
 
   if (mal) { fallos++; console.log(`  ❌ ${c.etiqueta.padEnd(18)} (${seg}s)  ${mal}`); }
-  else console.log(`  ✓  ${c.etiqueta.padEnd(18)} (${seg}s)  cayó por lo suyo: ${c.porQue}`);
+  else
+    console.log(
+      `  ✓  ${c.etiqueta.padEnd(18)} (${seg}s)  cayó por lo suyo: ${c.porQue}` +
+        // §regla 22: un caso que pasa por un booleano publica su CARDINAL, o su
+        // ✓ vale lo mismo sobre 1 instancia separadora que sobre 300.
+        (c.detalle ? `\n${" ".repeat(28)}└ ${c.detalle}` : ""),
+    );
 }
 
 console.log(

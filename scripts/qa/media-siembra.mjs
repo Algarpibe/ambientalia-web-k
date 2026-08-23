@@ -195,13 +195,28 @@ const enMediaCorpus = new Set();
 })(MEDIA_CORPUS);
 
 /**
- * ⚠ **`guarda-blanda` mide contra `media-corpus` en vez de contra `public`**,
- * que es exactamente el error que esta sonda existe para no cometer: el hueco
- * sale más pequeño, la sonda sale verde y el seed muere igual.
+ * ⚠ **`guarda-blanda` mide contra la guarda de `seed-kb` en vez de contra la de
+ * `seed`**, que es exactamente el error que esta sonda existe para no cometer:
+ * el hueco sale más pequeño, la sonda sale verde y el seed muere igual.
+ *
+ * ⚠⚠ **Y la guarda blanda tiene DOS MITADES, no una (corregido 2026-08-23, 96.ª
+ * tanda).** Hasta hoy este sabotaje simulaba `enPublico || enCorpus` y se dejaba
+ * **el colapso de la variante**, que es la otra mitad de `ficheroDe()`: la real
+ * prueba `[origenDe(rel), rel]`, así que acepta una variante `-WxH` **cuyo
+ * origen** esté en disco. Con media hipótesis anulada las dos guardas coincidían
+ * —33 y 33— y el caso se autoclasificaba **SIN PROBAR · 0 separadoras**, o sea
+ * §regla 17 (*un sabotaje que anula media hipótesis no falsea nada*): el 0 no lo
+ * ponía la pobreza del dominio, lo ponía el sabotaje.
+ *
+ * Completada, las separadoras son exactamente las `variantesConOrigenEnPublico`
+ * que el reparto de abajo ya cuenta —hoy **3**— y se derivan, no se citan.
  */
 const enPublico = (ruta) => existsSync(join(PUBLICO, decodeURIComponent(ruta)));
 const enCorpus = (ruta) => enMediaCorpus.has(decodeURIComponent(ruta).replace(/^\/images\/uploads\//, ""));
-const disponible = SABOTAJE === "guarda-blanda" ? (r) => enPublico(r) || enCorpus(r) : enPublico;
+/** `seed-kb · ficheroDe()`: prueba el ORIGEN y la ruta, en `public` y en `media-corpus`. */
+const guardaBlanda = (r) =>
+  (RE_VARIANTE.test(r) ? [origenDe(r), r] : [r]).some((c) => enPublico(c) || enCorpus(c));
+const disponible = SABOTAJE === "guarda-blanda" ? guardaBlanda : enPublico;
 
 const porColeccion = {};
 const porCanal = { A: new Set(), B: new Set(), C: new Set() };
