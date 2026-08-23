@@ -1,5 +1,84 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⚠ F3-3-EMISION · el comparador EXISTE y su negativo está probado; **la emisión NO está hecha** — 93.ª tanda, 2026-08-22
+
+**CORTE LIMPIO 3 está PASADO**, así que emitir queda autorizado. Lo que sigue
+abierto es el trabajo de construcción, y se declara con lo que ya está listo
+para que la tanda que emita no lo redescubra.
+
+### Lo que SÍ está hecho
+
+| pieza | estado |
+|---|---|
+| **el piloto** | **6 páginas, DERIVADO** por lo que ejercita: 11/11 tipos · 3/3 regímenes · 5/5 obligados (`derivaciones/piloto-f33.{mjs,json,log}`) |
+| **el comparador de dos lados** | `npm run qa:f33-cmp [390]` — original por `file://` **con sus 7 hojas** y la red cortada, contra `next start` |
+| **su negativo** | `npm run qa:f33-cmp-neg` — **3/3**, tres exits y tres mensajes distintos |
+| **la base en cruda** | el comparador la mide **sin corregir**, que es lo que §Notas de método pide una vez por arquetipo |
+
+### Lo que NO está hecho, y es una tanda de construcción entera
+
+**extractor** (corpus → documentos, 11 tipos de módulo + el campo rico) ·
+**renderizador** (11 componentes + retícula fila/columna) · **rutas** ·
+**registro de `paginas` en `COLECCIONES`** (la mitad irreversible) · **siembra**.
+
+> ⚠⚠ **Y la parte que NO se puede improvisar: la GEOMETRÍA.** `CAMPOS_FILA_PAGINA`
+> declara `pt/pb/mt/mb` como **«SIN PROBAR — 0 ejes comparados»**, y lo mismo
+> `anchoPct`. Emitir exige **derivar esos valores del original medido**, no
+> elegirlos: cablear los de una instancia es exactamente cómo se fabrica una
+> FAMILIA DE CALIBRACIÓN, y con 4 tipos a **n = 1** no hay variación que lo
+> corrija. El comparador es el antídoto —da el lazo de realimentación—, pero
+> hay que **usarlo mientras se construye**, no al final.
+
+### ⚠ EL ENRUTADO, derivado hoy y no supuesto — es lo que más sorprende
+
+**0 de las 6 rutas del piloto las emite el build de hoy** (385 rutas en el
+manifiesto) y **0 colisionan literalmente** con una ya emitida. Pero *quién las
+serviría* no es uniforme:
+
+| ruta del clon | hoy caería en | qué hay que hacer |
+|---|---|---|
+| `/politica-de-seguridad-de-la-informacion` · `/contacto` · `/empresa` | **`app/[slug]`** — el plano de grupo A, 202 slugs | `[slug]` pasaría a servir una **TERCERA** familia. `npm run qa:slugs` ya impone la unicidad ENTRE familias, y es obligatoria: una colisión **no da error**, compila y sirve la página equivocada con 200 |
+| `/soporte` · `/recursos` | `app/<x>/[...ruta]` **NO casa el segmento desnudo** → cae también en `app/[slug]` | ídem |
+| `/centro-de-ayuda/kunak-air-cloud` | **`app/centro-de-ayuda/[...ruta]`**, que es de KB y tiene **`dynamicParams = false`** | hay que extender su `generateStaticParams`, o sea **tocar una ruta ya verificada**: entra con su antes/después sobre los 6 artículos de KB |
+
+> **El precedente existe y está bendecido:** `/sectores/[slug]` ya sirve DOS
+> arquetipos despachando por slug contra dos catálogos. Lo que aquí hay que
+> decidir es si `[slug]` sirve tres familias o si la cola larga estrena plano
+> propio — y esa decisión **no la toma esta tanda**.
+
+### ⚠ Y `f33-cmp` NO está registrada en `qa:cobertura`, a propósito
+
+Acreditaría ejes que **nadie ha comparado**: el lado del clon no existe, y las
+congeladas de hoy son de corridas de CONTROL (`-neg-mismo-lado`) donde el
+«clon» es una copia del original. Registrarla ahora sería §*acreditar un eje que
+la sonda no compara*, con el contenedor puesto en el nombre de la sonda. **Se
+registra la tanda que emita, con su corrida de verdad.**
+
+**La cola larga sigue a 0 ejes comparados contra el original.** El comparador
+existe; la comparación no.
+
+---
+
+## ⚠ QA-NEGATIVOS-ROJOS · tres negativos preexistentes en rojo — barrido del 2026-08-22
+
+`npm run qa:negativos` (42/42 evaluados, exit 0) deja **tres** casos rojos, y
+**ninguno es de las sondas que la 93.ª tocó**:
+
+    media-siembra    3/4
+    productos-hueco  3/5
+    coloca-media     2/3
+
+**No se arreglan de paso, y §regla 21 dice por qué:** ante un negativo rojo la
+primera orden **no** es abrir el negativo, sino **correr su sonda sola** — un
+rojo se lee igual si el sabotaje dejó de morder que si la sonda tiene razón, y
+sólo el primero se arregla tocando el negativo. Ajustar la expectativa para
+ponerlo verde escribiría el defecto **dentro** de la guarda.
+
+Precedente medido: de 6 negativos rojos de una tanda anterior, **5** lo estaban
+por un rojo legítimo de su sonda y **1** era un negativo podrido.
+
+---
+
 ## ✅ F3-3-CORTE-2 · **RESUELTO el 2026-08-22 (93.ª): el propietario tomó S1 y S2, y la unión expresa 31 de 31** — el acta de la refutación se conserva entera debajo
 
 *(Titular original, 92.ª tanda: «la unión de CMS-3 expresa **30 de 32**, y el

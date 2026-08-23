@@ -1,5 +1,29 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠⚠ **2026-08-22 (93.ª tanda) · LA COLA LARGA SIGUE A 0 EJES COMPARADOS, Y
+> AHORA HAY UN COMPARADOR QUE NO ESTÁ REGISTRADO AQUÍ. Las dos cosas son
+> correctas y hay que leerlas juntas.**
+>
+> La tanda construyó `qa:f33-cmp` —comparador de dos lados para las 31 páginas
+> de `paginas`, original por `file://` **con sus hojas** contra `next start`— y
+> probó su negativo (**3/3**, `medidas/f33-cmp-NEGATIVO.log`). Pero
+> **`cobertura.mjs` NO lo lee, a propósito**:
+>
+> > **El lado del clon no existe todavía.** La emisión de la cola larga no está
+> > hecha, así que las congeladas de hoy son de corridas de **CONTROL**
+> > (`-neg-mismo-lado`), donde el «clon» es una copia del original. Acreditar
+> > cualquier eje con eso sería §*acreditar un eje que la sonda no COMPARA*, con
+> > el contenedor puesto en **el nombre de la sonda**.
+>
+> **Así que la lectura correcta de estas dos frases, que se contradicen sólo en
+> apariencia:** *«existe el comparador»* y *«no hay nada comparado»* son las dos
+> ciertas, y la segunda es la que manda en esta matriz. La cola larga entra aquí
+> **la tanda que emita**, con su corrida de verdad — y entonces se añade su
+> bloque a `cobertura.mjs`, derivando las rutas de la congelada como hacen los
+> demás.
+>
+> Ficha con lo que está listo y lo que falta: `PENDIENTES-QA.md` §F3-3-EMISION.
+
 > ⚠ **2026-08-17 (75.ª tanda) · LA MATRIZ NO SE MUEVE, Y ESO ES LO CORRECTO:
 > `93 · 93 · 77 · 68 · 64` sobre **367**, idéntica a la de la 74.ª.**
 >

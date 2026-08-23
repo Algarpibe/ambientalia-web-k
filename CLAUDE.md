@@ -3391,6 +3391,59 @@ decisión distinta: produce **una decisión sin su salvaguarda**.
    pesó más y por qué— **y se le pone condición de reapertura**. Una decisión
    alineada con el criterio puede no llevarla; una que lo contradice, siempre.
 
+**24 · EL NEGATIVO DE UN COMPARADOR SE CORRE ANTES DE QUE EXISTA EL LADO QUE VA
+A MEDIR.** (2026-08-22)
+
+Este documento ya manda construir la sonda comparadora al estrenar arquetipo
+(§*UN ARQUETIPO NUEVO NO HEREDA COBERTURA*). Le faltaba **cuándo se prueba**, y
+la respuesta no es «cuando haya algo que comparar»:
+
+> **Un comparador tiene DOS lados, y casi todas las preguntas de su negativo
+> —*¿compara o inventa? ¿sabe gritar? ¿tiene sus insumos?*— **no dependen del
+> lado que todavía no existe**. Se contestan copiando un lado sobre el otro. Así
+> que el instrumento se puede probar **antes** de construir lo que va a medir —
+> y entonces hay que hacerlo, porque un comparador sin negativo probado no
+> adjudica nada y llegaría a su primera corrida sin garantía.
+
+**Y la ganancia no es de calendario, es de ATRIBUCIÓN:** cuando el lado nuevo
+aparezca, un rojo sólo puede ser suyo — el instrumento ya está adjudicado. Si
+los dos se estrenan a la vez, un rojo tiene **dos** explicaciones y ninguna
+medida las separa.
+
+**Medido:** un comparador estrenado sin objeto pasó sus 3 casos —`mismo-lado`
+0 distintos · Δ conocido de 37.50 cazado y **nombrado** en 6 de 6 · insumos
+ausentes ⇒ corrida NULA— con **tres códigos de salida y tres mensajes
+distintos**, que es lo que hace que un rojo futuro se pueda atribuir. **Y de
+paso encontró DOS defectos del propio comparador**, los dos invisibles: una
+guarda que no podía dispararse y un selector que contaba la capa equivocada.
+
+> ⚠ **Y el caso `sabe gritar` es el que hay que acordarse de escribir.** Sin
+> objeto no hay defecto que ocultar, así que la pregunta del negativo **no** es
+> *«¿sabe callar?»*: se inyecta un Δ **conocido** y se exige que lo cace **y lo
+> nombre con sus dos lados**. Un caso atado sólo al código de salida caduca el
+> día que haya objeto (§regla 21, la vuelta).
+
+**Y SU MITAD DE HIGIENE, que se cobró en la misma tanda: UN SABOTAJE POR
+VARIABLE DE ENTORNO TIENE QUE DESVIAR EL NOMBRE DE LA SALIDA ÉL MISMO.**
+
+> **Si el desvío depende de que quien lanza la sonda ponga además la variable
+> que nombra la corrida —aquí `NEG=`—, el nombre CANÓNICO queda al alcance de
+> una corrida de control.** Y lo que sale entonces es lo peor de §regla 7: un
+> fichero con **nombre de medida y contenido de control**, plausible y con la
+> autoridad de una congelada.
+
+Medido: `NEG_MISMO_LADO=1 node <sonda>.mjs` —sin `NEG=`— congeló la canónica con
+el lado del clon **copiado del original** y un `httpClon: 200` **fabricado**.
+Quien la abriera leería *«248 pares · 0 distintos · clon 200»* y concluiría que
+el clon es perfecto, **sin que exista clon**.
+
+**La forma correcta, y es una línea:** la sonda comprueba **sus propios
+sabotajes** y, si hay alguno activo sin corrida de negativo, **desvía y lo dice
+en voz alta**. Se arregla la CLASE —la sonda—, no la instancia —acordarse de
+poner `NEG=`—. Y el efecto secundario es la mitad buena: **el nombre canónico
+queda libre**, así que hasta que haya una corrida de verdad, quien lo lea falla
+en voz alta en vez de leer un control.
+
 ## Comandos
 
 ```bash
