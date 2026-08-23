@@ -29,6 +29,29 @@
  * quita la condición: eso convertiría 28 rutas de estado desconocido en un
  * verde. Dirimirlo exige pegarle al ORIGINAL —una campaña con su congelada—,
  * que es lo que declara la ficha §COLOCA-MEDIA-28-SIN-ORIGEN.
+ *
+ * ⚠⚠ ACTUALIZADO 2026-08-23 (96.ª) — **HOY SON 30, Y EL 28 NO SE «CORRIGE»:
+ * SE EXPLICA.** El 28 de la 83.ª era cierto **contra la lista que se leía
+ * entonces**, y esta tanda destapó que esa lista era la congelada del
+ * **2026-08-12** — `coloca-media` resolvía su defecto al NOMBRE CANÓNICO, que
+ * por §regla 5 es **la PRIMERA foto y no el estado de hoy**. Con la corrida
+ * VIGENTE la lista trae 33 pendientes y quedan **30** sin origen:
+ *
+ *   · **+5** que la canónica no tenía —3 de canal B, 2 de C, todas de
+ *     `entradas-blog`— porque entraron al corpus después del 12;
+ *   · **−3** que se regeneraron en el acto: tenían su origen ya en `public` y
+ *     eran resolubles SIN RED. Ninguna campaña iba a colocarlas, porque la
+ *     lista que consumen no las contenía.
+ *
+ * O sea que el número no subió por empeorar nada: subió porque **antes se
+ * estaba mirando un conjunto viejo**. La cifra de este bloque se DERIVA de la
+ * congelada en cada corrida (`porQueRojo`), así que no vuelve a envejecer.
+ *
+ * ⚠ Y lo que el rojo NO significa, que es la mitad que se lee mal: los 30 son
+ * canal **B y C** —escalar y cuerpo rico—, que bloquean el **RENDER**. El
+ * canal **A** (`upload`), que es el único que BLOQUEA LA SIEMBRA, falta **0**.
+ * Sembrar con este rojo puesto no es sembrar a ciegas: es sembrar con un hueco
+ * de render medido y nombrado.
  * ══════════════════════════════════════════════════════════════════════════
  *
  * ── ⚠ EL CONTROL TIENE UNA TRAMPA PROPIA, Y HAY QUE DECIRLA ──────────────
@@ -73,6 +96,17 @@ const casos = [
       if (!j.resumen.pendientes) return "0 pendientes: la lista no se está leyendo";
       return null;
     },
+    /* El rojo esperado HOY, con su causa y su cardinal derivados de la propia
+     * congelada. No rebaja nada: el caso sigue contando como fallo (§regla 21,
+     * *un caso que pasa a verde ajustando su expectativa ha escrito el defecto
+     * dentro de la guarda*) — sólo deja de ser mudo. */
+    porQueRojo: (j) =>
+      j.resumen?.sinOrigen
+        ? `CAMPAÑA DE CAPTURA PENDIENTE: ${j.resumen.sinOrigen} orígenes de ${j.resumen.pendientes} pendientes ` +
+          `no están ni en media-corpus ni en public.\n${" ".repeat(30)}` +
+          `Es un hueco del DATO —exige pegarle al ORIGINAL—, no una avería de coloca-media. ` +
+          `Ficha: §COLOCA-MEDIA-28-SIN-ORIGEN.`
+        : null,
   },
   {
     etiqueta: "lista-vacia",
@@ -94,7 +128,11 @@ const casos = [
 console.log(`\n════════ TEST EN NEGATIVO · coloca-media ════════`);
 console.log(`  alcance: la LISTA, la resolución del origen y el CONTROL del redimensionado`);
 console.log(`  NO cubre: copiar o regenerar ficheros nuevos — eso lo probó la corrida que lo hizo,`);
-console.log(`            con el hueco cayendo de 1889 a 28 medido DESPUÉS (medidas/media-siembra.json)\n`);
+console.log(`            con el hueco cayendo de 1889 a 28 medido DESPUÉS`);
+/* §regla 5: la línea base se cita CON SU FICHERO. `medidas/media-siembra.json`
+ * es la foto del 2026-08-12, no el estado de hoy — y citarla a secas mandaba a
+ * la sesión siguiente a leer 49 rutas creyendo que eran las vigentes. */
+console.log(`            (medidas/media-siembra-2026-08-12.json — foto de entonces, NO el estado de hoy)\n`);
 
 const ev = new Evaluadas({ nombre: "coloca-media-neg", unidad: "sabotajes", minimo: casos.length });
 
@@ -116,6 +154,16 @@ for (const c of casos) {
   if (!mal && c.comprueba) {
     if (!existsSync(fichero)) mal = `no congeló ${fichero.split(/[\\/]/).pop()}`;
     else mal = c.comprueba(JSON.parse(readFileSync(fichero, "utf8")));
+  }
+
+  /* ⚠ AÑADIDO 2026-08-23 (96.ª): un rojo se lee como AVERÍA DEL INSTRUMENTO si
+   * no nombra su causa. `esperaba exit 0, salió 2` es cierto y mudo — no
+   * distingue «coloca-media está roto» de «falta una campaña de captura», y las
+   * dos piden trabajos opuestos. La causa se DERIVA de la congelada, no se
+   * escribe (§regla 9), así que el número envejece con el repo. */
+  if (mal && c.porQueRojo && existsSync(fichero)) {
+    const extra = c.porQueRojo(JSON.parse(readFileSync(fichero, "utf8")));
+    if (extra) mal = `${mal}\n${" ".repeat(28)}└ ${extra}`;
   }
 
   if (mal) { fallos++; console.log(`  ❌ ${c.etiqueta.padEnd(16)} (${seg}s)  ${mal}`); }

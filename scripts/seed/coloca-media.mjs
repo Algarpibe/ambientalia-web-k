@@ -46,8 +46,8 @@
  *   (`ausentesEnOrigen`). Se cuentan aparte y se nombran, nunca se descartan en
  *   silencio.
  */
-import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { dirname, join, relative, sep } from "node:path";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { basename, dirname, join, relative, sep } from "node:path";
 import sharp from "sharp";
 import { Evaluadas, gritaSiRevienta, hoy, origenDe, QA, RE_VARIANTE, w } from "../qa/lib.mjs";
 
@@ -78,10 +78,72 @@ if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fall
  * un fallback silencioso entre las dos **sí** sería la clase C7 — dos
  * definiciones de «lo que falta» y ninguna forma de saber cuál corrió.
  */
-const LISTA =
+const LISTA_PEDIDA =
   process.env.LISTA ||
   (process.argv.slice(2).find((a) => a.startsWith("--lista=")) ?? "").split("=").slice(1).join("=") ||
   "medidas/media-siembra.json";
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ QUÉ CORRIDA DE ESA LISTA — AÑADIDO 2026-08-23 (96.ª tanda)
+ *
+ * El bloque de arriba resuelve **QUÉ DEFINICIÓN** (`media-siembra` o
+ * `media-canales`) y lo hace bien. Lo que no resolvía es **QUÉ CORRIDA**, y por
+ * defecto cogía el nombre canónico — que es justo lo que `CLAUDE.md` §regla 5
+ * advierte y nadie había aplicado a un consumidor automático:
+ *
+ * > **`<nombre>.json` significa «LA PRIMERA FOTO», NO «el estado de hoy».**
+ *
+ * Como `w()` nunca pisa una congelada que difiera, en una sonda que se corre
+ * muchas veces el nombre canónico **conserva la PRIMERA corrida** y las demás se
+ * van a su fechado. La advertencia está escrita para quien LEE un fichero; aquí
+ * el que lo leía era **una campaña**, y por eso no saltó.
+ *
+ * ── Lo que costó, medido en esta tanda ───────────────────────────────────
+ * `medidas/media-siembra.json` es del **2026-08-12** y dice **49** rutas; la
+ * corrida de hoy dice **33**. Y el cardinal no lo cuenta —§*un cardinal es un
+ * contenedor*—: la diferencia simétrica tiene **DOS** lados,
+ *
+ *   · **21** de la canónica que hoy ya no faltan (se colocaron);
+ *   · **5** que faltan HOY y la canónica **no tiene** — 3 de canal B y 2 de C,
+ *     todas de `entradas-blog`, y tres de ellas de las dos entradas que
+ *     entraron al corpus después del 12 (`descarga-catalogo-kunak` y
+ *     `kunak-obtiene-el-sello-reconcilia`).
+ *
+ * De esas 5, **3 tenían su origen ya en `public`**, o sea que eran regenerables
+ * SIN RED — y ninguna campaña iba a colocarlas, porque la lista que consumen no
+ * las contiene. Con la lista vigente se regeneran las 3 en la primera corrida.
+ *
+ * ── La regla, y por qué no reintroduce el fallback que el bloque de arriba
+ *    prohíbe ───────────────────────────────────────────────────────────────
+ * Son **dos ejes ortogonales**: el parámetro elige la DEFINICIÓN —y sigue sin
+ * fallback, un `LISTA=` desconocido tira igual— y esto elige **la corrida
+ * VIGENTE de esa definición**, por `mtime` y nunca por nombre. Un nombre que ya
+ * trae fecha es una corrida concreta pedida a propósito y se respeta tal cual.
+ *
+ * ⚠ Y descarta los artefactos de la §regla 7 (`-neg-`, `SABOTAJE`, `SONDA-`,
+ * `CONTAMINADA`, `BASE`): son ficheros de `medidas/` que **no son medidas del
+ * sitio**, y el más reciente de una familia puede ser perfectamente el sabotaje
+ * que acaba de correr el negativo.
+ * ═════════════════════════════════════════════════════════════════════════ */
+/** Marcadores de §regla 7: lo que vive en `medidas/` y NO es una medida del sitio. */
+const NO_ES_MEDIDA = /-neg-|SABOTAJE|-SONDA-|CONTAMINADA|-BASE-/;
+
+function corridaVigente(rel) {
+  const base = basename(rel, ".json");
+  // Un nombre con fecha es una corrida concreta pedida a propósito: se respeta.
+  if (/-\d{4}-\d{2}-\d{2}(-\d+)?$/.test(base)) return rel;
+  const dirRel = dirname(rel);
+  const dirAbs = join(QA, dirRel);
+  if (!existsSync(dirAbs)) return rel;
+  const candidatas = readdirSync(dirAbs)
+    .filter((f) => f.endsWith(".json") && (f === `${base}.json` || f.startsWith(`${base}-`)))
+    .filter((f) => !NO_ES_MEDIDA.test(f))
+    .map((f) => ({ f, m: statSync(join(dirAbs, f)).mtimeMs }))
+    .sort((a, b) => b.m - a.m);
+  return candidatas.length ? `${dirRel}/${candidatas[0].f}` : rel;
+}
+
+const LISTA = corridaVigente(LISTA_PEDIDA);
 const FUENTE = join(QA, LISTA);
 if (!existsSync(FUENTE))
   throw new Error(
@@ -90,7 +152,12 @@ if (!existsSync(FUENTE))
       "  falta» serían la clase C7, y la segunda mediría contra la guarda cómoda.",
   );
 const SIEMBRA = JSON.parse(readFileSync(FUENTE, "utf8"));
-console.log(`\n  (lista: ${LISTA})`);
+/* §regla 5: una línea base se cita CON SU FICHERO y su fecha, no con el patrón —
+ * si no, la sesión siguiente no puede saber cuál corrió. */
+console.log(
+  `\n  (lista: ${LISTA}${LISTA === LISTA_PEDIDA ? "" : `  ← corrida VIGENTE de \`${LISTA_PEDIDA}\` por mtime`})` +
+    `${SIEMBRA.meta?.fecha ? `  · derivada el ${SIEMBRA.meta.fecha}` : ""}`,
+);
 const pendientes = SABOTAJE === "lista-vacia" ? [] : Object.keys(SIEMBRA.faltan ?? {});
 if (!pendientes.length)
   throw new Error(

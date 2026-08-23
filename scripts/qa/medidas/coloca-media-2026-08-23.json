@@ -3,17 +3,17 @@
     "fecha": "2026-08-23",
     "que": "el paso SIN RED entre la captura y la siembra: colocar orígenes y regenerar variantes",
     "fuente": "medidas/media-siembra.json (la lista) + media-corpus/ (los bytes)",
-    "soloDeriva": true,
+    "soloDeriva": false,
     "sabotaje": null,
     "renuncia": "una variante REGENERADA coincide en DIMENSIÓN, no byte a byte (qa:media-regenera, 73/73)"
   },
   "resumen": {
-    "pendientes": 33,
-    "yaEstaban": 3,
+    "pendientes": 49,
+    "yaEstaban": 21,
     "copiadas": 0,
     "regeneradas": 0,
     "ausentesEnOrigen": 0,
-    "sinOrigen": 30
+    "sinOrigen": 28
   },
   "control": {
     "pares": 175,
@@ -112,14 +112,6 @@
     {
       "ruta": "/images/uploads/2025/01/Book_of_abstracts_EmiLi24.pdf",
       "origen": "2025/01/Book_of_abstracts_EmiLi24.pdf"
-    },
-    {
-      "ruta": "/images/uploads/2025/12/Reconcilia2.jpg",
-      "origen": "2025/12/Reconcilia2.jpg"
-    },
-    {
-      "ruta": "/images/uploads/2025/12/reconcilia.png",
-      "origen": "2025/12/reconcilia.png"
     },
     {
       "ruta": "/images/uploads/2026/03/Diesel-Generators-at-Data-Centers-Status-Impacts-and-Protective-Policies.pdf",

@@ -3,15 +3,15 @@
     "fecha": "2026-08-23",
     "que": "el paso SIN RED entre la captura y la siembra: colocar orígenes y regenerar variantes",
     "fuente": "medidas/media-siembra.json (la lista) + media-corpus/ (los bytes)",
-    "soloDeriva": true,
+    "soloDeriva": false,
     "sabotaje": null,
     "renuncia": "una variante REGENERADA coincide en DIMENSIÓN, no byte a byte (qa:media-regenera, 73/73)"
   },
   "resumen": {
     "pendientes": 33,
-    "yaEstaban": 3,
+    "yaEstaban": 0,
     "copiadas": 0,
-    "regeneradas": 0,
+    "regeneradas": 3,
     "ausentesEnOrigen": 0,
     "sinOrigen": 30
   },
