@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "fecha": "2026-08-23",
+    "sonda": "extractor-f33",
+    "pregunta": "¿qué documentos de `paginas` produce el corpus de las 31 de la cola larga?",
+    "fuente": "corpus/fase-3/ (32/32 con sus hojas) + medidas/f33-rutas.json (el dominio)",
+    "parser": "docs/research/cola-larga/derivaciones/arbol-f33.mjs — importado, no reescrito",
+    "sabotaje": "sin-secciones",
+    "alcance": {
+      "completaPara": "SEMBRAR las 31 en la colección `paginas`",
+      "noCubre": [
+        "la GEOMETRÍA: `pt/pb/mt/mb` y `anchoPct` salen SIN ESCRIBIR (0 ejes comparados en las 31). No es 0: es ausente, que en `medida()` significa «el default de Divi»",
+        "`srcset`: omisión DECLARADA, M-IMG sigue abierta en §CMS-0b",
+        "los 36 módulos dentro de desplegables CERRADOS: su geometría NO ES MEDIBLE sin interacción, y no medible no es 0",
+        "`anchoPct` de las 25 instancias en LÍNEA: el instrumento no las midió (una razón sobre un enlínea mide el texto, no una declaración)"
+      ]
+    }
+  },
+  "censo": {
+    "porTipo": {},
+    "modulos": 0,
+    "secciones": 0,
+    "filas": 0,
+    "columnas": 0,
+    "sueltos": 0,
+    "porRegimen": {
+      "BT": 8,
+      "B-": 22,
+      "--": 1
+    }
+  },
+  "cruce": {
+    "esperado": {
+      "text": 151,
+      "image": 71,
+      "video": 30,
+      "blurb": 22,
+      "button": 13,
+      "toggle": 10,
+      "code": 9,
+      "icon": 3,
+      "fullwidth_slider": 2,
+      "map": 1,
+      "slider": 1
+    },
+    "totalEsperado": 313,
+    "discrepancias": [
+      "text: 0 ≠ 151",
+      "image: 0 ≠ 71",
+      "video: 0 ≠ 30",
+      "blurb: 0 ≠ 22",
+      "button: 0 ≠ 13",
+      "toggle: 0 ≠ 10",
+      "code: 0 ≠ 9",
+      "icon: 0 ≠ 3",
+      "fullwidth_slider: 0 ≠ 2",
+      "map: 0 ≠ 1",
+      "slider: 0 ≠ 1"
+    ]
+  },
+  "geometria": {
+    "clavesEscritas": 0,
+    "detalle": []
+  },
+  "catalogo": {
+    "paginas": [
+      {
+        "slug": "kunak-air-cloud",
+        "prefijo": "centro-de-ayuda",
+        "titulo": "AIR Cloud",
+        "seo": {
+          "title": "Kunak Air Cloud - Kunak"
+        }
+      },
+      {
+        "slug": "kunak-air",
+        "prefijo": "centro-de-ayuda",
+        "titulo": "Kunak AIR",
+        "seo": {
+          "title": "Kunak AIR - Kunak"
+        }
+      },
+      {
+        "slug": "articulos-de-ayuda",
+        "prefijo": "centro-de-ayuda/kunak-air",
+        "titulo": "AIR Pro",
+        "seo": {
+          "title": "Artículos de ayuda - Kunak"
+        }
+      },
+      {
+        "slug": "video-tutoriales",
+        "prefijo": "centro-de-ayuda/kunak-air",
+        "titulo": "Kunak Help Center",
+        "seo": {
+          "title": "Video tutoriales - Kunak"
+        }
+      },
+      {
+        "slug": "centro-de-ayuda",
+        "prefijo": "soporte",
+        "titulo": "Kunak Help Center",
+        "seo": {
+          "title": "Centro de ayuda - Kunak"
+        }
+      },
+      {
+        "slug": "articulos-de-ayuda",
+        "prefijo": "soporte/centro-de-ayuda/kunak-air-cloud",
+        "titulo": "AIR Cloud",
+        "seo": {
+          "title": "Artículos de ayuda - Kunak"
+        }
+      },
+      {
+        "slug": "video-tutoriales",
+        "prefijo": "soporte/centro-de-ayuda/kunak-air-cloud",
+        "titulo": "Kunak Help Center",
+        "seo": {
+          "title": "Video tutoriales - Kunak"
+        }
+      },
+      {
+        "slug": "productos",
+        "titulo": "Sistemas de sensores de calidad del aire",
+        "seo": {
+          "title": "Sistemas de sensores de calidad del aire - Kunak",
+          "description": "La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS."
+        }
+      },
+      {
+        "slug": "sectores",
+        "titulo": "Soluciones líderes de control del aire",
+        "seo": {
+          "title": "Sectores - Kunak"
+        }
+      },
+      {
+        "slug": "recursos",
+        "titulo": "Centro de recursos sobre la calidad del aire",
+        "seo": {
+          "title": "Recursos - Kunak"
+        }
+      },
+      {
+        "slug": "kunakpedia",
+        "prefijo": "recursos",
+        "titulo": "Kunakpedia",
+        "seo": {
+          "title": "Kunakpedia - Kunak",
+          "description": "Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak."
+        }
+      },
+      {
+        "slug": "documentos-cientificos",
+        "prefijo": "recursos",
+        "titulo": "Precisión validada por organismos independientes",
+        "seo": {
+          "title": "Documentos científicos - Kunak",
+          "description": "Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions."
+        }
+      },
+      {
+        "slug": "preguntas-frecuentes",
+        "prefijo": "recursos",
+        "titulo": "Preguntas frecuentes",
+        "seo": {
+          "title": "Preguntas frecuentes - Kunak",
+          "description": "Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak."
+        }
+      },
+      {
+        "slug": "aviso-legal",
+        "titulo": "Aviso legal - Kunak",
+        "seo": {
+          "title": "Aviso legal - Kunak"
+        }
+      },
+      {
+        "slug": "contacto",
+        "titulo": "Contacta con nosotros",
+        "seo": {
+          "title": "Contacto - Kunak"
+        }
+      },
+      {
+        "slug": "descarga-catalogo",
+        "titulo": "Descarga de catálogo - Kunak",
+        "seo": {
+          "title": "Descarga de catálogo - Kunak"
+        }
+      },
+      {
+        "slug": "empresa",
+        "titulo": "Misión",
+        "seo": {
+          "title": "Empresa - Quiénes somos, nuestra misión y visión - Kunak"
+        }
+      },
+      {
+        "slug": "premios-y-reconocimientos",
+        "prefijo": "empresa",
+        "titulo": "Premios  y reconocimientos",
+        "seo": {
+          "title": "Premios y reconocimientos - Kunak"
+        }
+      },
+      {
+        "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
+        "titulo": "Informe técnico: control de la calidad del aire en ciudades - Kunak",
+        "seo": {
+          "title": "Informe técnico: control de la calidad del aire en ciudades - Kunak"
+        }
+      },
+      {
+        "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-industria",
+        "titulo": "Informe técnico: control de la calidad del aire en industria - Kunak",
+        "seo": {
+          "title": "Informe técnico: control de la calidad del aire en industria - Kunak"
+        }
+      },
+      {
+        "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
+        "titulo": "Informe técnico: Control de la calidad del aire en las minas - Kunak",
+        "seo": {
+          "title": "Informe técnico: Control de la calidad del aire en las minas - Kunak"
+        }
+      },
+      {
+        "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-obras",
+        "titulo": "Informe técnico: control de la calidad del aire en obras - Kunak",
+        "seo": {
+          "title": "Informe técnico: control de la calidad del aire en obras - Kunak"
+        }
+      },
+      {
+        "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
+        "titulo": "Informe técnico: Control de la calidad del aire en puertos - Kunak",
+        "seo": {
+          "title": "Informe técnico: Control de la calidad del aire en puertos - Kunak"
+        }
+      },
+      {
+        "slug": "newsletter",
+        "titulo": "Suscríbete - Kunak",
+        "seo": {
+          "title": "Suscríbete - Kunak"
+        }
+      },
+      {
+        "slug": "politica-de-cookies",
+        "titulo": "Política de cookies",
+        "seo": {
+          "title": "Política de cookies - Kunak"
+        }
+      },
+      {
+        "slug": "politica-de-privacidad-y-de-proteccion-de-datos",
+        "titulo": "Política de privacidad y de protección de datos - Kunak",
+        "seo": {
+          "title": "Política de privacidad y de protección de datos - Kunak"
+        }
+      },
+      {
+        "slug": "politica-de-seguridad-de-la-informacion",
+        "titulo": "Política de seguridad de la información",
+        "seo": {
+          "title": "Política de seguridad de la información - Kunak"
+        },
+        "cuerpoClasico": "<p>KUNAK TECHNOLOGIES S.L.</p>\n<h2>Introducción</h2>\n<p>En KUNAK TECHNOLOGIES S.L. diseñamos y operamos soluciones de monitorización ambiental e IoT que procesan datos críticos para nuestros clientes. La confianza en nuestros servicios se basa en que la información esté siempre disponible, sea precisa y esté debidamente protegida frente a accesos no autorizados.</p>\n<p>Con esta Política de Seguridad de la Información, la Dirección manifiesta su compromiso con la protección de la información y con el cumplimiento de los requisitos legales y contractuales aplicables, integrando la seguridad en todos los procesos y servicios de la organización.</p>\n<h2>1. Objeto y alcance</h2>\n<p>Esta Política tiene por objeto establecer los principios y directrices generales para gestionar la seguridad de la información en KUNAK TECHNOLOGIES S.L.</p>\n<p>Su alcance incluye:</p>\n<ul>\n<li>Todos los sistemas de información, infraestructuras y servicios gestionados por KUNAK TECHNOLOGIES S.L., tanto internos como en la nube.</li>\n<li>Todo el personal propio y las terceras partes que tengan acceso a dichos sistemas o a información gestionada por la organización.</li>\n</ul>\n<p>El cumplimiento de esta Política es obligatorio para todas las personas y entidades incluidas en su alcance.</p>\n<h2>2. Marco de referencia</h2>\n<p>La gestión de la seguridad de la información en KUNAK TECHNOLOGIES S.L. se alinea con el Esquema Nacional de Seguridad (ENS) y con la norma ISO/IEC 27001 para sistemas de gestión de la seguridad de la información, actualmente en proceso de certificación.</p>\n<p>Asimismo, cumple la normativa de protección de datos aplicable, incluyendo el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), sobre cuya base se desarrollan los procedimientos y controles internos de la organización.</p>\n<h2>3. Principios de seguridad</h2>\n<p>KUNAK TECHNOLOGIES S.L. se compromete a proteger la información bajo los siguientes principios:</p>\n<ul>\n<li>Confidencialidad: la información solo será accesible a personas, sistemas o entidades autorizadas.</li>\n<li>Integridad: la información será exacta y completa, evitando modificaciones no autorizadas o errores no controlados.</li>\n<li>Disponibilidad: los sistemas y servicios estarán operativos cuando se necesiten, con los niveles definidos de continuidad y resiliencia.</li>\n<li>Autenticidad: se garantizará la identidad de las partes que intervienen y el origen de los datos intercambiados.</li>\n<li>Trazabilidad: las acciones relevantes quedarán registradas de forma que puedan ser analizadas y auditadas.</li>\n</ul>\n<h2>4. Organización y responsabilidades</h2>\n<p>La Dirección de KUNAK TECHNOLOGIES S.L. asume la responsabilidad última sobre la seguridad de la información y aprueba esta Política.</p>\n<p>La organización cuenta con un Comité de Seguridad de la Información, formado por los responsables de servicio, información, seguridad y sistema, que tiene entre sus funciones:</p>\n<p><b>Responsable del servicio</b>:</p>\n<ul>\n<li>Establecer los requisitos del servicio en materia de seguridad, incluyendo los requisitos de interoperabilidad, accesibilidad y disponibilidad.</li>\n<li>Determinar los niveles de seguridad de los servicios.</li>\n<li>Aprobar formalmente el nivel de seguridad del servicio.</li>\n</ul>\n<p><b>Responsable de la información:</b></p>\n<ul>\n<li>Velar por el buen uso de la información y, por tanto, de su protección.</li>\n<li>Ser responsable último de cualquier error o negligencia que lleve a un incidente de confidencialidad o de integridad.</li>\n<li>Establecer los requisitos de la información en materia de seguridad.</li>\n<li>Determinar los niveles de seguridad de la información.</li>\n<li>Aprobar formalmente el nivel de seguridad de la información.</li>\n</ul>\n<p><b>Responsable de seguridad:</b></p>\n<ul>\n<li>Mantener el nivel adecuado de seguridad de la información manejada y de los servicios prestados por los sistemas.</li>\n<li>Realizar o promover las auditorías periódicas a las que obliga el ENS para verificar el cumplimiento de los requisitos del mismo.</li>\n<li>Gestionar la formación y concienciación en materia de seguridad TIC.</li>\n<li>Comprobar que las medidas de seguridad existentes son las adecuadas para las necesidades de la entidad.</li>\n<li>Revisar, completar y aprobar toda la documentación relacionada con la seguridad del sistema.</li>\n<li>Monitorizar el estado de seguridad del sistema proporcionado por las herramientas de gestión de eventos de seguridad y mecanismos de auditoría implementados en el sistema.</li>\n<li>Apoyar y supervisar la investigación de los incidentes de seguridad desde su notificación hasta su resolución, emitiendo informes periódicos sobre los más relevantes al Comité.</li>\n</ul>\n<p><b>Responsable del sistema:</b></p>\n<ul>\n<li>Gestionar el Sistema de Información durante todo su ciclo de vida, desde la especificación, instalación hasta el seguimiento de su funcionamiento.</li>\n<li>Definir los criterios de uso y los servicios disponibles en el Sistema.</li>\n<li>Definir las políticas de acceso de usuarios al Sistema.</li>\n<li>Aprobar los cambios que afecten a la seguridad del modo de operación del Sistema.</li>\n<li>Determinar la configuración autorizada de hardware y software a utilizar en el Sistema y aprobar las modificaciones importantes de dicha configuración.</li>\n<li>Realizar el análisis y gestión de riesgos en el Sistema.</li>\n<li>Elaborar y aprobar la documentación de seguridad del Sistema.</li>\n<li>Determinar la categoría del sistema según el procedimiento descrito en el Anexo I del ENS y determinar las medidas de seguridad que deben aplicarse según se describe en el Anexo II del ENS.</li>\n<li>Implantar y controlar las medidas específicas de seguridad del Sistema.</li>\n<li>Establecer planes de contingencia y emergencia, llevando a cabo frecuentes ejercicios para que el personal se familiarice con ellos.</li>\n<li>Suspensión del manejo de cierta información o la prestación de un cierto servicio si detecta deficiencias graves de seguridad que pudieran afectar a la satisfacción de los requisitos establecidos.</li>\n</ul>\n<p>Todo el personal, así como las empresas colaboradoras que trabajan con KUNAK TECHNOLOGIES S.L., debe conocer y cumplir esta Política y la normativa interna que la desarrolla.</p>\n<h2>5. Gestión de riesgos y cumplimiento</h2>\n<p>KUNAK TECHNOLOGIES S.L. realiza análisis y gestión de riesgos de sus sistemas de información, revisándolos periódicamente y siempre que se produzcan cambios significativos, nuevas amenazas o incidentes relevantes.</p>\n<p>La organización se compromete a:</p>\n<ul>\n<li>Implementar medidas técnicas y organizativas acordes al nivel de riesgo.</li>\n<li>Mantener evidencias de cumplimiento frente al ENS, ISO/IEC 27001, RGPD, LOPDGDD y demás normativa aplicable.</li>\n<li>Someter sus sistemas a revisiones y auditorías periódicas, internas y de terceros.</li>\n</ul>\n<h2>6. Protección de datos personales</h2>\n<p>Los datos de carácter personal se tratan únicamente cuando son adecuados, pertinentes y no excesivos para las finalidades legítimas de la organización y de sus clientes.</p>\n<p>KUNAK TECHNOLOGIES S.L. aplica medidas técnicas y organizativas apropiadas para:</p>\n<ul>\n<li>Garantizar un nivel de seguridad adecuado al riesgo.</li>\n<li>Facilitar el ejercicio de los derechos de las personas interesadas.</li>\n<li>Asegurar la confidencialidad, integridad y disponibilidad de los datos personales a lo largo de todo su ciclo de vida.</li>\n</ul>\n<h2>7. Formación, concienciación y terceras partes</h2>\n<p>La seguridad de la información es responsabilidad de todas las personas que participan en las actividades de KUNAK TECHNOLOGIES S.L.</p>\n<p>La organización:</p>\n<ul>\n<li>Proporciona formación y concienciación periódica en materia de seguridad y protección de datos.</li>\n<li>Exige contractualmente a proveedores y terceros que prestan servicios o tratan información para KUNAK TECHNOLOGIES S.L. el cumplimiento de requisitos de seguridad equivalentes a los propios.</li>\n<li>Establece mecanismos de supervisión y coordinación en materia de seguridad con dichas terceras partes.</li>\n</ul>\n<h2>8. Gestión de incidentes y continuidad</h2>\n<p>KUNAK TECHNOLOGIES S.L. dispone de procedimientos para la detección, notificación, análisis y respuesta ante incidentes de seguridad de la información, así como para la recuperación de los servicios afectados.</p>\n<p>La organización mantiene planes de copia de seguridad, contingencia y continuidad de negocio que permiten restaurar los servicios esenciales en caso de fallo grave o desastre, de acuerdo con los requisitos acordados con los clientes y con el ENS.</p>\n<h2>9. Revisión y mejora continua</h2>\n<p>Esta Política de Seguridad de la Información será revisada al menos una vez al año, o cuando se produzcan cambios significativos en los sistemas, servicios, normativa aplicable o riesgos identificados.</p>\n<p>La Dirección y el Comité de Seguridad de la Información impulsan la mejora continua del sistema de gestión de la seguridad, incorporando las lecciones aprendidas de auditorías, revisiones, análisis de riesgos y gestión de incidentes.</p>"
+      },
+      {
+        "slug": "sistema-interno-de-informacion",
+        "titulo": "Política interna del canal del informante",
+        "seo": {
+          "title": "Política interna del canal del informante - Kunak"
+        }
+      },
+      {
+        "slug": "soporte",
+        "titulo": "Soporte",
+        "seo": {
+          "title": "Soporte - Kunak"
+        }
+      },
+      {
+        "slug": "servicio-de-reparacion",
+        "prefijo": "soporte",
+        "titulo": "Servicio de reparación (RMA)",
+        "seo": {
+          "title": "Servicio de reparación (RMA) - Kunak"
+        }
+      },
+      {
+        "slug": "suscribete",
+        "titulo": "Suscríbete - Kunak",
+        "seo": {
+          "title": "Suscríbete - Kunak"
+        }
+      }
+    ]
+  }
+}

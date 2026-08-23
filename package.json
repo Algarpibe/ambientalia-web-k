@@ -246,6 +246,8 @@
     "cms:extractor-a-neg": "node scripts/seed/extractor-a.neg.mjs",
     "cms:extractor-c": "node scripts/seed/extractor-c.mjs",
     "cms:extractor-c-neg": "node scripts/seed/extractor-c.neg.mjs",
+    "cms:extractor-f33": "node scripts/seed/extractor-f33.mjs",
+    "cms:extractor-f33-neg": "node scripts/seed/extractor-f33.neg.mjs",
     "cms:extractor-p": "node scripts/seed/extractor-p.mjs",
     "cms:extractor-p-neg": "node scripts/seed/extractor-p.neg.mjs",
     "qa:dom-ajeno": "node scripts/qa/dom-ajeno.mjs",
