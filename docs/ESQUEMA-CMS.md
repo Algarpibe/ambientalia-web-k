@@ -2592,6 +2592,13 @@ Lo que hay que hacerle a las 209 al importar. **Ninguna es opcional.**
 >   diera error**;
 > · **T4b ANTES de T4a** — la referencia al PDF de 6 de los 8 visores FB3D vive
 >   **dentro del `<script>`**, así que después de T4a ya no existe.
+>
+> ⚠ **«LAS DIEZ» ES DE 2026-08-05 Y NO SE ACTUALIZA A MANO** (§regla 9: un
+> recuento recordado envejece **contra** el repo). El número de la cadena lo dice
+> `TRANSFORMACIONES.length` en `scripts/seed/transformaciones.mjs`; el del
+> registro, esa cadena **más las que se declaran fuera de ella con su razón**
+> —hoy **T11**, §3.2d—. Se deriva, no se cita: `node -e` sobre el módulo, o el
+> propio informe de `cms:extractor`, que las imprime una por línea.
 
 | # | qué | acción |
 |---|---|---|
@@ -2724,6 +2731,82 @@ sólo el `<style>` en línea; lo medido es que en la única página que ejercita
 las enlazadas **no habrían añadido ninguna**. Un arquetipo nuevo con DOM ajeno
 vuelve a pasar por `qa:t9-css`. (Y §regla 9: «10 clases» era un número recordado
 — derivado son **44**.)
+
+#### ✅ 3.2d · T11 — `data-teams` se LIMPIA, y `ATRIBUTOS_CENSADOS` **no se amplía** (2026-08-23, 98.ª tanda)
+
+> ✅ **DECISIÓN DEL PROPIETARIO (D1, 2026-08-22), no derivación de esta tanda.**
+> Las dos salidas se publicaron con su cardinal en `PENDIENTES-QA.md`
+> §F3-3-BLOQUEOS-DE-SIEMBRA (97.ª) —alta en el censo con su evidencia, o
+> transformación de importación— y se eligió **la transformación**.
+
+**Qué es.** `<span data-teams="true">` envolviendo un párrafo en `/es/empresa/`:
+la huella de **texto pegado desde Teams** en el editor. Es **contenido** —la
+única cosa de todo el barrido que lo era— y **no es una etiqueta**, así que la
+whitelist del §3.1 no lo veía: el que lo paró fue `ATRIBUTOS_CENSADOS`.
+
+**El cardinal, derivado:** **1 fichero de 788** bajo `corpus/`, **1 ocurrencia**,
+portadora `span`, valor `"true"`, **inerte** en las cuatro familias que el censo
+mide a cero —manejador `on*` · `javascript:` · `data:` URI · `srcdoc`—
+(`derivaciones/atributo-teams-f33.log`).
+
+##### Por qué NO se amplía `ATRIBUTOS_CENSADOS` — tres razones, y ninguna es de gusto
+
+1. **Es la whitelist de SEGURIDAD de cinco colecciones verificadas.** `campoHtml`
+   la consume en `entradas-blog`, `terminos-kunakpedia`, `documentos-cientificos`,
+   `casos`/`faqs` y ahora `paginas`. Un alta ahí **no es un alta local**: cambia
+   el contrato de todo lo que ya pasó por él;
+2. **lo que se limpia está MEDIDO como inerte, así que la salida servida no
+   cambia.** `data-teams="true"` no ejecuta, no navega y no pinta — y por eso
+   quitarlo **es fidelidad**, no una desviación: §*lo que se replica es lo que el
+   navegador hace con lo servido*, y con esto el navegador no hace nada. El
+   listón de §8 (Δ0 contra el original) **se mantiene entero**;
+3. **y el alta abre una puerta que la limpieza no abre.** Admitir un atributo de
+   otra herramienta en el censo dice *«los atributos de pegado son contenido»*, y
+   eso es una **CLASE** que nadie ha medido. La transformación dice sólo *«este
+   atributo se va»*, que es exactamente lo que hay medido.
+
+> ⚠ **Y el alcance se declara, porque sin él este uno se lee como una clase:**
+> T11 limpia **UN atributo**, no la familia «residuo de pegado del editor».
+> Cuántos hay de esa familia en el corpus **sale SIN MEDIR — que no es 0**
+> (`atributo-teams-f33.log` §ALCANCE).
+
+##### El NO-OP, medido por IDENTIDAD DE BYTES y no argumentado
+
+`derivaciones/t11-noop-f33.{mjs,log}` **aplica** T11 a los **788** `.html` de
+`corpus/` —§*cuando el cambio se pueda aplicar, aplícalo y mide*— y compara la
+salida con la entrada byte a byte:
+
+| | n |
+|---|---|
+| ficheros que T11 toca | **1** (`fase-3/sueltas/empresa/index.html`, −18 chars) |
+| ficheros **idénticos byte a byte** | **787** |
+| controles sintéticos de las formas vecinas | **6** — `data-teamsx`, `xdata-teams`, `data-team`, el literal dentro del texto (los 4 intactos) + las 2 formas servidas |
+| control POSITIVO (el patrón no está muerto) | ✓ |
+
+Un censo del atributo **no podía** contestar esto: sólo cuenta apariciones, y la
+pregunta era si la regex **casa de más**. Eso sólo lo ve aplicarla.
+
+##### ⚠⚠ T11 NO está en `TRANSFORMACIONES`, y es una MEDIDA
+
+La cadena `TRANSFORMACIONES` la corre `extractor.mjs` sobre el `post_content` del
+**grupo A** (209 cuerpos). Ahí la diana de T11 es **0**: el fichero con
+`data-teams` no es `post_content` de nadie. Y `extractor.neg.mjs` desactiva una T
+por corrida **y exige que su postcondición muerda**; con diana 0 informa **SIN
+DIANA** y sale rojo — que es lo correcto (§regla 8a).
+
+> **Meterla ahí sería el tercer caso de §regla 21**: el sabotaje muerde, la sonda
+> está bien y **el dominio no tiene con qué ejercitar el caso**. Eso no es «roto»
+> ni «probado»: es **SIN PROBAR**, y un SIN PROBAR en verde se lee como probado.
+
+Vive en **`TRANSFORMACIONES_F33`**, la cadena de la cola larga, y su negativo
+está donde **sí** hay diana: `extractor-f33.neg.mjs` §`t11` (rojo con el
+sabotaje, y cayendo por su postcondición, no sólo por el exit).
+
+⚠ **Y lo que esto NO decide:** cuál de las otras doce transformaciones le
+corresponde a este arquetipo. `extractor-f33` no aplicaba **ninguna** antes de
+hoy, así que esto es el **estreno del canal**, no un recorte — y derivar la diana
+de cada una contra `corpus/fase-3/` está **SIN MEDIR**, nombrado en el `noCubre`
+de la congelada.
 
 #### 3.2b · T3b — `wp-caption` → `<figure>` con relación de media (2026-08-05)
 
@@ -4310,12 +4393,138 @@ Ficha: `PENDIENTES-QA.md` §F3-3-CONSULTAS-EMBEBIDAS.
 | qué | estado |
 |---|---|
 | la **whitelist** de `campoHtml` | **INTACTA**. Ni una etiqueta añadida: no hacía falta |
-| el atributo `data-teams` de `empresa` | **CONTENIDO** (texto pegado desde Teams), 1 de 788 ficheros. Decisión del propietario: alta en `ATRIBUTOS_CENSADOS` con su evidencia, o transformación de importación. **NO se toma de paso** |
-| el `<img src>` a `upload.wikimedia.org` | **canal de media nuevo** —el asset alojado fuera—. Sin decidir |
-| `ancho: "1_5"` ×10 | la retícula `MonoAncho` no lo expresa, **y el docstring de `validaReticulaPagina` sí lo lista**. Necesita el valor **y su migración** |
+| el atributo `data-teams` de `empresa` | ✅ **DECIDIDO (D1, 2026-08-22) y aplicado en la 98.ª**: transformación de importación **T11**; `ATRIBUTOS_CENSADOS` **NO se amplía**. Las tres razones y el NO-OP por identidad de bytes (787 de 788): **§3.2d** |
+| el `<img src>` a `upload.wikimedia.org` | ✅ **DECIDIDO (D2, 2026-08-22) y aplicado en la 98.ª**: **se deja ABSOLUTO**. Es lo que el original sirve, y la regla de no hotlinkear es sobre `kunakair.com`, para no depender del original. Estrena `imagen-pagina.srcExterno` — **§2j.7** |
+| `ancho: "1_5"` ×10 | ✅ **DECIDIDO (D3, 2026-08-22) y aplicado en la 98.ª**: `1_5` **y** `1_6` en la misma migración versionada (`20260823_190450`), con la reversa probada. `1_6` entra **SIN EJERCITAR, con su denominador** — **§2j.7** |
 | el módulo hermano `scientific-filter` | **SIN MEDIR.** Sus etiquetas están todas en el censo, así que no bloquea nada y ninguna medida se pronunció sobre él. Retirarlo «porque parece» sería clasificar por plausibilidad |
 
-Los tres primeros, con su cardinal: `PENDIENTES-QA.md` §F3-3-BLOQUEOS-DE-SIEMBRA.
+Los tres primeros nacieron con su cardinal en `PENDIENTES-QA.md`
+§F3-3-BLOQUEOS-DE-SIEMBRA; su cierre está en §2j.7 (D2 y D3) y en §3.2d (D1).
+
+## ✅ 2j.7 · LOS DOS BLOQUEOS DE MODELO QUE QUEDABAN — **el asset de FUERA (D2) y la retícula de QUINTOS (D3)** (2026-08-23, 98.ª tanda)
+
+*(Es de **CMS-3**: cierra los dos huecos que §2j.6 dejó nombrados y que
+`F3-3-BLOQUEOS-DE-SIEMBRA` cuantificó. El tercero —`data-teams`— es de §3.2d,
+porque lo que decidió es una **transformación**, no un campo.)*
+
+> ✅ **DECISIONES DEL PROPIETARIO, 2026-08-22.** Las tres se publicaron con su
+> cardinal y sus salidas en `PENDIENTES-QA.md` §F3-3-BLOQUEOS-DE-SIEMBRA (97.ª),
+> **sin recomendación**. Aquí se escriben las dos de esquema con su razón y con
+> lo que cuestan.
+
+### D2 · el asset alojado FUERA — `imagen-pagina.srcExterno`
+
+**El dato:** 1 de las 71 imágenes de la cola larga es
+`<img src="https://upload.wikimedia.org/…">` en `/es/empresa/`
+(`derivaciones/bloqueos-f33.log` §media — **1 bloqueo de 93 comprobados**).
+
+**La decisión: se deja ABSOLUTO. No se captura.** Es lo que el original sirve, y
+**la regla de no hotlinkear es sobre `kunakair.com`** — su propósito es no
+depender del original, no prohibir que una página cite un asset de un tercero.
+
+#### Por qué es un CAMPO y no un `src` opcional a secas
+
+`src` es `upload → media`, o sea que **sólo puede expresar un asset local**. Un
+documento cuyo asset vive fuera **no cabe en el modelo**, y §*un campo opcional
+NO expresa un caso — sólo permite que falte* dice qué pasaría si se dejara así:
+la imagen saldría ausente y la página se serviría **con 200 y sin ella**.
+
+> **La prueba de que un modelo expresa un corpus no es «¿cabe lo que hay?», sino
+> «¿queda contenido SIN SITIO?»** — y aquí quedaba. Las dos preguntas se
+> contestan distinto: la primera recorre los campos; la segunda, el documento.
+
+**Y la obligatoriedad no desaparece: se MUEVE.** `src` deja de ser `required` y
+`validaOrigenImagen` exige **exactamente uno** de `src` / `srcExterno`. Ni cero
+—un módulo de imagen sin origen no da error, **no pinta**— ni dos, que sería un
+dato ambiguo con el render eligiendo. El defecto se pone en la dirección que
+grita.
+
+#### El canal se declara EN EL ESQUEMA, no en la sonda
+
+`custom: { canalDeMedia: "externo" }`. Es lo que hace que `qa:media-canales` lo
+encuentre **caminando la config**, que es literalmente lo que §*el inventario de
+media se deriva de los canales que el ESQUEMA declara* pide — y hasta hoy su
+segunda mitad los derivaba de `NOMBRES_URL`, **una lista de literales dentro de
+la sonda** (§regla 9, 7.º caso).
+
+**Y sale en su propio cubo, con su cardinal**, porque meterlo en «sin dato» diría
+lo contrario de lo que pasa:
+
+| cubo | qué significa |
+|---|---|
+| ejercido | tiene dato y la guarda lo resuelve contra `apps/web/public` |
+| **sin dato** | declarado y vacío: **hueco futuro** |
+| de otro sembrador | existe, pero esta sonda no lo mira |
+| **EXTERNO** ← nuevo | **tiene dato (1) y NO se resuelve localmente.** No hay fichero que capturar, así que su ausencia de la carpeta **no es un hueco** — y por eso **no entra en `origenesACapturar`** |
+
+⚠ **Y con D2 el canal nacía VIGILADO POR NADIE**, así que se paga en la misma
+tanda: `cms:sondeo` hace `ctx.media = async () => 0` —sustituye el resolutor por
+una constante— y su *«0 defectos de INSTRUMENTO»* **no dice nada del canal que
+anuló**. Desde hoy publica sus **CANALES ANULADOS con sus llamadas**, junto al
+veredicto y no en un anexo (§regla 14, mitad 2: si la limitación cambia lo que
+una frase de cierre afirma, se escribe también en esa frase). Son **dos**:
+`creaContexto().media` y `payload.create`.
+
+### D3 · la retícula gana `1_5` **y** `1_6`
+
+| valor | estado | denominador |
+|---|---|---|
+| **`1_5`** | **EJERCITADO** | **10** instancias — dos filas de cinco columnas en `/es/servicio-de-reparacion/` (10 bloqueos de 173 comprobados) |
+| **`1_6`** | **SIN EJERCITAR** | **0** de 313 módulos y **0** de 113 filas de la cola larga; **0** en los otros tres arquetipos. Divi lo sirve; este corpus no lo trae |
+
+**Los dos entran porque `ancho` es LA RETÍCULA y no el enum de los valores
+vistos** — que es lo que su propio docstring lleva escrito desde que Petróleo
+estrenó cuatro valores nuevos. Escribirlo sólo desde lo visto es cómo se llega a
+la cuarta migración de enum en cuatro arquetipos, y ésta es la cuarta.
+
+> **SIN EJERCITAR no es 0.** `1_6` es un camino de render **sin estrenar**
+> (§*un campo que ADMITE un caso y que ningún dato de calibración EJERCITA*), y
+> sale nombrado en vez de darse por soportado.
+
+**Y de paso, la §sondas 3 que lo destapó:** el docstring de
+`validaReticulaPagina` **ya listaba `1_5+1_5+1_5+1_5+1_5`** entre los siete
+repartos medidos y el `select` **no lo podía expresar**. El comentario decía una
+cosa y el campo otra; no lo cazó ningún `check` ni ninguna sonda — **lo notó
+Payload al sembrar**, con 10 rechazos en una página. Corregido en el CAMPO, que
+es donde estaba el defecto.
+
+#### La migración, con su reversa PROBADA
+
+Un `select` de Payload sobre Postgres es un **tipo enum**, así que los dos
+valores van en la **misma** migración versionada
+(`20260823_190450_f3_3_ancho_quintos_y_media_externa`), junto con las dos
+columnas de D2. Medido sobre la DB poblada por el pipeline completo y **antes**
+de sembrar `paginas`:
+
+| | filas | tablas | enums `_ancho` | `src_id` | `src_externo` | migraciones |
+|---|---|---|---|---|---|---|
+| antes | **3333** | 80 | 8 ×3 | `NOT NULL` | — | 19 · batch 1 |
+| `up` | 3334 | 80 | **10 ×3** | `NULL` | `varchar` | 20 · batch 2 |
+| `down` | **3333** | 80 | 8 ×3 | `NOT NULL` | — | **19 · batch 1** |
+
+La fila de diferencia es **el registro de la propia migración**. Y el control no
+es el total: el censo **tabla a tabla** de antes y después de la reversa es
+**idéntico línea a línea** (`diff` sin salida) — §*un cardinal es un contenedor y
+absorbe la membresía*: `3333 → 3333` sería exacto con dos tablas compensándose.
+
+⚠ **La reversa sólo es limpia MIENTRAS `paginas` no tenga la fila externa**: el
+`down` hace `src_id SET NOT NULL`. Con `empresa` sembrada **fallaría**, y estaría
+bien que fallara — es el esquema diciendo que el dato ya no cabe en la forma
+vieja. Por eso se prueba **ahí**, que es donde la pregunta tiene respuesta.
+
+⚠ Y `payload migrate:down` imprime *«Rolling back batch 2 consisting of 20
+migration(s)»*. **El 20 es de su mensaje, no de lo que hace**: revirtió UNA, y
+las 19 anteriores siguen en batch 1 — comprobado en `payload_migrations`, no
+leído en el log.
+
+### Lo que §2j.7 NO decide
+
+| | |
+|---|---|
+| **si el asset de Wikimedia se captura algún día** | D2 dice que hoy no. Si alguna vez se quisiera, es **añadir** (subir el fichero y mover el valor de `srcExterno` a `src`), no cambiar el modelo |
+| **la CLASE «asset de tercero»** | se ha medido **una** instancia. Que haya más en otros arquetipos está **SIN MEDIR** — el inventario los nombraría con su cero el día que se declaren |
+| **qué RENDERIZA `srcExterno`** | no hay plantilla todavía (la emisión es otra tanda). El campo expresa el dato; pintarlo es de quien construya el componente |
+| **`1_6` en el render** | camino sin estrenar. Sale en `qa:nunca-vistos`, no se da por soportado |
 
 ## ✅ 2k · CMS-4 · QUIÉN SIRVE LAS 31 — **EL PLANO EXISTENTE (E1)** (2026-08-22, 95.ª tanda)
 
