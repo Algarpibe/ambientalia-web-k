@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-20",
+    "fecha": "2026-08-22",
     "que": "Qué hay dentro de los `et_pb_text` del ORIGINAL, en las DOS poblaciones que consumen `MODULO_TEXTO`.",
     "fuente": "corpus/fase-3/articulos-kb/** (6) + corpus/fase-3-sectores/** (8)",
     "metodo": "file:// + DOM real, red BLOQUEADA; sólo SECCIONES PROPIAS (se excluyen las _tb_)",
@@ -44,7 +44,15 @@
         "style": 74,
         "decoding": 1
       },
-      "fueraDelTipo": {},
+      "fueraDelTipo": {
+        "a": 5,
+        "em": 2,
+        "sub": 7,
+        "span": 50,
+        "sup": 1,
+        "img": 1,
+        "i": 4
+      },
       "prosa": {
         "etiquetas": {},
         "atributos": {},
@@ -54,19 +62,32 @@
       "porPagina": {
         "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/": {
           "modulos": 14,
-          "fuera": []
+          "fuera": [
+            "a",
+            "em"
+          ]
         },
         "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/": {
           "modulos": 15,
-          "fuera": []
+          "fuera": [
+            "em",
+            "span",
+            "sub"
+          ]
         },
         "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/": {
           "modulos": 11,
-          "fuera": []
+          "fuera": [
+            "a",
+            "sup"
+          ]
         },
         "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/": {
           "modulos": 13,
-          "fuera": []
+          "fuera": [
+            "a",
+            "img"
+          ]
         },
         "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/": {
           "modulos": 8,
@@ -74,7 +95,11 @@
         },
         "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/": {
           "modulos": 24,
-          "fuera": []
+          "fuera": [
+            "a",
+            "i",
+            "span"
+          ]
         }
       }
     },
@@ -133,11 +158,16 @@
       },
       "fueraDelTipo": {
         "div": 427,
+        "img": 165,
         "ol": 8,
+        "a": 170,
+        "span": 271,
         "meta": 24,
         "article": 42,
         "header": 22,
+        "em": 1,
         "br": 3,
+        "sub": 52,
         "table": 1,
         "thead": 1,
         "tr": 9,
@@ -156,74 +186,97 @@
         "/es/sectores/calidad-del-aire-en-las-ciudades/": {
           "modulos": 21,
           "fuera": [
+            "a",
             "article",
             "div",
             "header",
+            "img",
             "meta",
-            "ol"
+            "ol",
+            "span"
           ]
         },
         "/es/sectores/contaminacion-del-aire-por-la-mineria/": {
           "modulos": 22,
           "fuera": [
+            "a",
             "article",
             "div",
+            "em",
             "header",
+            "img",
             "meta",
-            "ol"
+            "ol",
+            "span"
           ]
         },
         "/es/sectores/contaminacion-del-transporte-maritimo/": {
           "modulos": 23,
           "fuera": [
+            "a",
             "article",
             "div",
             "header",
+            "img",
             "meta",
-            "ol"
+            "ol",
+            "span"
           ]
         },
         "/es/sectores/contaminacion-por-construccion/": {
           "modulos": 21,
           "fuera": [
+            "a",
             "article",
             "div",
             "header",
+            "img",
             "meta",
-            "ol"
+            "ol",
+            "span"
           ]
         },
         "/es/sectores/control-de-emisiones-industriales/": {
           "modulos": 25,
           "fuera": [
+            "a",
             "article",
             "br",
             "div",
             "header",
+            "img",
             "meta",
-            "ol"
+            "ol",
+            "span"
           ]
         },
         "/es/sectores/estudio-de-la-contaminacion-atmosferica/": {
           "modulos": 21,
           "fuera": [
+            "a",
             "article",
             "div",
             "header",
+            "img",
             "meta",
-            "ol"
+            "ol",
+            "span"
           ]
         },
         "/es/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar/": {
           "modulos": 40,
           "fuera": [
+            "a",
             "article",
             "br",
             "div",
             "h5",
             "header",
+            "img",
             "meta",
             "ol",
+            "span",
+            "sub",
             "table",
             "tbody",
             "td",
@@ -235,11 +288,15 @@
         "/es/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas/": {
           "modulos": 42,
           "fuera": [
+            "a",
             "article",
             "div",
             "header",
+            "img",
             "meta",
-            "ol"
+            "ol",
+            "span",
+            "sub"
           ]
         }
       }
@@ -247,15 +304,7 @@
   },
   "control": {
     "contra": "medidas/kb-recon.json → veredicto.moduloTexto",
-    "discrepancias": [
-      "fueraDelTipo perdió 'a'",
-      "fueraDelTipo perdió 'em'",
-      "fueraDelTipo perdió 'sub'",
-      "fueraDelTipo perdió 'span'",
-      "fueraDelTipo perdió 'sup'",
-      "fueraDelTipo perdió 'img'",
-      "fueraDelTipo perdió 'i'"
-    ]
+    "discrepancias": []
   },
   "marcadores": {
     "cuenta": {

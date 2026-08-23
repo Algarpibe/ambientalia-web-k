@@ -3,7 +3,7 @@
     "fecha": "2026-08-22",
     "pregunta": "¿dos rutas distintas comparten su último segmento? Si no, `filename → ruta` es una función y CMS-0g se cierra sin campo nuevo.",
     "fuente": "walker de mapeo.mjs sobre los 9 catálogos (dominio) · media-corpus/INDICE.json · apps/web/public/images · media/ (salida servida)",
-    "sabotaje": "sin-corpus"
+    "sabotaje": "variante-pisa-origen"
   },
   "poblaciones": {
     "dominio": {
@@ -17,8 +17,8 @@
     },
     "corpus": {
       "que": "orígenes capturados en media-corpus/ (el cuerpo rico del bloque 2)",
-      "rutas": 0,
-      "suelo": 537,
+      "rutas": 534,
+      "suelo": 534,
       "decide": false,
       "basenamesRepetidos": 0,
       "referenciasDelCorpusAfectadas": 0,
@@ -26,12 +26,64 @@
     },
     "union": {
       "que": "dominio ∪ corpus: todo lo que alguna vez podrá ser fila de `media`",
-      "rutas": 614,
+      "rutas": 1139,
       "suelo": 653,
       "decide": true,
-      "basenamesRepetidos": 0,
-      "referenciasDelCorpusAfectadas": 0,
-      "colisiones": []
+      "basenamesRepetidos": 3,
+      "referenciasDelCorpusAfectadas": 76,
+      "colisiones": [
+        {
+          "basename": "control-de-la-calidad-del-aire-en-ciudades.jpg",
+          "rutas": [
+            "uploads/2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
+            "uploads/2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2023/04/control-de-la-calidad-del-aire-en-ciudades.jpg",
+              "n": 8
+            },
+            {
+              "ruta": "uploads/2024/06/control-de-la-calidad-del-aire-en-ciudades.jpg",
+              "n": 9
+            }
+          ]
+        },
+        {
+          "basename": "cemex.jpg",
+          "rutas": [
+            "uploads/2022/07/cemex.jpg",
+            "uploads/2024/08/cemex.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2022/07/cemex.jpg",
+              "n": 7
+            },
+            {
+              "ruta": "uploads/2024/08/cemex.jpg",
+              "n": 10
+            }
+          ]
+        },
+        {
+          "basename": "demolicion-estadio-vicente-calderon-0.jpg",
+          "rutas": [
+            "uploads/2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+            "uploads/2024/08/demolicion-estadio-vicente-calderon-0.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2020/04/demolicion-estadio-vicente-calderon-0.jpg",
+              "n": 36
+            },
+            {
+              "ruta": "uploads/2024/08/demolicion-estadio-vicente-calderon-0.jpg",
+              "n": 6
+            }
+          ]
+        }
+      ]
     },
     "publico": {
       "que": "apps/web/public/images entero — superconjunto, incluye el CASCARÓN",
@@ -332,7 +384,7 @@
         "enPublico": "ad1cf00dd7fec3b9",
         "copiaVerbatim": true
       },
-      "n": 17,
+      "n": 18,
       "materializadas": 14,
       "cuales": [
         {
@@ -453,6 +505,13 @@
           "shaEnMedia": "c8022d5b0cbe72d4",
           "shaEnPublico": "c8e469dc9c25a344",
           "ficheroPisado": true
+        },
+        {
+          "origen": "uploads/2023/01/air-cloud-300x999.jpg",
+          "pisaria": "air-cloud(-300x999)",
+          "shaEnMedia": null,
+          "shaEnPublico": null,
+          "ficheroPisado": false
         }
       ],
       "ok": false
@@ -468,7 +527,7 @@
     "referenciasUpload": 647,
     "rutasDistintas": 614,
     "funcionHoy": false,
-    "funcionEnLaUnion": true,
-    "lectura": "`filename → ruta` es una función en el dominio Y en la unión: rutaDeMedia se tabula sobre el basename y CMS-0g no necesita campo."
+    "funcionEnLaUnion": false,
+    "lectura": "es una función HOY y NO en la unión: el bloque 2 la rompe. La decisión de CMS-0g no puede aplazarse a entonces."
   }
 }

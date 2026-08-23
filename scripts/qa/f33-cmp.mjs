@@ -338,8 +338,28 @@ console.log(`  · ${PILOTO.length} páginas de 31: un verde aquí NO es un verde
 
 /* El nombre del negativo NO lo pone la sonda: lo pone `w()` desde `NEG`.
  * Ponerlo aquí produciría `…-neg-mismo-lado-neg-delta`, que ningún negativo
- * sabe buscar — y el caso saldría «no congeló» en vez de por su motivo. */
-w(`medidas/f33-cmp-${ANCHO}.json`, salida);
+ * sabe buscar — y el caso saldría «no congeló» en vez de por su motivo.
+ *
+ * ⚠⚠ **PERO UNA CORRIDA SABOTEADA A MANO NO PUEDE LLEVARSE EL NOMBRE
+ * CANÓNICO, y esta sonda ya se lo llevó una vez (93.ª).** Lanzada como
+ * `NEG_MISMO_LADO=1 node f33-cmp.mjs` —sin `NEG=`— `w()` no desvía nada y
+ * congeló `medidas/f33-cmp-1440.json` con el lado del clon COPIADO del
+ * original y un `httpClon: 200` fabricado. Un fichero con **nombre de medida y
+ * contenido de control**: quien lo abriera leería «248 pares · 0 distintos ·
+ * clon 200» y concluiría que el clon es perfecto (§regla 7, el precedente de
+ * `dos-rutas-1440.json`).
+ *
+ * Se arregla **la clase, no la instancia**: si hay sabotaje y no hay `NEG`, la
+ * salida se desvía igual y se dice en voz alta. Así el nombre canónico sólo
+ * puede escribirlo una corrida de verdad — y hasta que exista, quien lo lea
+ * **falla en voz alta** en vez de leer un control (§el defecto en la dirección
+ * que grita). */
+const SABOTEADA = SIN_HOJAS || MISMO_LADO || DELTA;
+if (SABOTEADA && !process.env.NEG) {
+  console.log(`\n⚠ CORRIDA SABOTEADA SIN \`NEG=\`: la salida NO puede llevarse el nombre canónico.`);
+  console.log(`  Se desvía a \`f33-cmp-${ANCHO}-neg-a-mano.json\`. Para un negativo con nombre propio, usa \`npm run qa:f33-cmp-neg\`.`);
+}
+w(`medidas/f33-cmp-${ANCHO}${SABOTEADA && !process.env.NEG ? "-neg-a-mano" : ""}.json`, salida);
 
 console.log(`\n═══ 6 · VEREDICTO`);
 console.log(`  ✓ evaluadas ${ev.n}/${PILOTO.length} páginas del piloto · pares ${pares.length} · distintos ${distintos.length}`);
