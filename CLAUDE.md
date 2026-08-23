@@ -3660,6 +3660,98 @@ que **el fichero que se iba a escribir tenía que salir en esa lista y no salía
 o sea, **un caso conocido de antemano**, que es la forma más barata de auditar un
 cero que uno mismo acaba de producir.
 
+**27 · UN PROCESO QUE ABORTA EN EL PRIMER FALLO CONTESTA «HAY AL MENOS UNO»,
+NUNCA «HAY N» — Y SU RESPUESTA SE LEE COMO UN INVENTARIO.** (2026-08-23)
+
+§regla 10 manda **ejercitar** una afirmación de completitud en vez de releerla, y
+tiene razón. Le falta decir **qué devuelve el ejercicio**, porque casi nunca es lo
+que hace falta para decidir:
+
+> **Un validador que corta en el primer fallo, un `create` que lanza en el primer
+> campo inválido, un build que muere en el primer error: los tres contestan
+> «existe al menos un problema» y ninguno contesta «hay N».** Y como la respuesta
+> llega **nombrando uno concreto**, se lee como si fuera el problema — no como una
+> muestra de tamaño 1.
+
+**Las dos formas en que muerde, y son la misma con distinto eje:**
+
+| eje | qué pasa | cómo se ve |
+|---|---|---|
+| **entre unidades** | arreglas el que te dijo, vuelves a correr, aparece otro | *«uno por corrida»*, cada una con su reset por delante |
+| **dentro de una unidad** | el validador mira N cosas y devuelve **la primera** que falla | **retirar lo de delante DESTAPA lo de detrás**, y lo de detrás no estaba en ningún informe |
+
+**Medido, y las dos mitades el mismo día.** Una tanda midió UN eje —etiquetas—
+sobre un validador que mira **cuatro** (script · etiqueta · host · atributo) y
+concluyó que las etiquetas eran lo que paraba la siembra. Cierto **del eje que
+miró**. Retiradas las etiquetas, quedó **1 campo rechazado por ATRIBUTO** que
+nadie había visto. Y sembrar, que era la forma correcta de ejercitarlo, sacó
+**dos bloqueos más a razón de uno por corrida**.
+
+Derivado el denominador entero por los cuatro canales: **12 bloqueos · 2 páginas
+de 31 · 3 canales de 4**, con el cuarto publicado a **0 sobre 697 comprobados**.
+
+**Las dos mitades operativas:**
+
+1. **el denominador NO se obtiene re-corriendo el proceso: se DERIVA recorriendo
+   todos sus ejes** contra el mismo dato. Un instrumento que clasifica en vez de
+   abortar contesta la pregunta que la decisión necesita, y de paso convierte N
+   corridas en una;
+2. **y los ejes que salen a CERO se publican CON SU DENOMINADOR.** «0 bloqueos de
+   `required`» y «no miré `required`» son la misma salida si el informe no lo
+   nombra — que es §sondas 4 aplicada al **eje** en vez de al selector.
+
+> **Y el corolario de redacción, que es donde se cuela:** *«lo que para esto es
+> X»* y *«lo primero que encontré es X»* se escriben casi igual, y sólo la segunda
+> es lo que el proceso dijo. Un titular con la primera forma manda a la tanda
+> siguiente a arreglar X y a descubrir Y — otra vez de uno en uno.
+
+**28 · UN SABOTAJE SE PONE EN EL DATO, NO EN EL UMBRAL — Y UNA SONDA QUE
+SUSTITUYE UNA PIEZA POR UNA CONSTANTE DEJA ESE CANAL SIN MEDIR.** (2026-08-23)
+
+Dos caras de lo mismo: **una pieza del instrumento sustituida por una constante**,
+y en las dos el resultado sale en verde y se lee como dato.
+
+**(a) El sabotaje que mueve el umbral.** Casi toda guarda tiene la forma
+`medido > umbral`. Sabotear el **umbral** parece equivalente a sabotear el
+**dato** — y no lo es:
+
+> **Bajar el umbral a 0 sólo muerde si `medido > 0`.** Si el dominio da `medido =
+> 0`, la condición pasa a ser `0 > 0` y el caso sale **exit 0**, sin haber
+> ejercitado nada. Es §regla 17 segunda cara con nombre y apellidos: el sabotaje
+> anula **media** hipótesis y deja el otro lado quieto, así que tiene **0
+> instancias separadoras POR CONSTRUCCIÓN** — no por pobreza del dominio.
+
+**Medido:** un censo declaraba el sabotaje `tope-cero` —bajar a 0 el tope de
+atributos ubicuos— y en ese corpus hay **0 ubicuos** (el más extendido está en 242
+de 294 páginas). El caso llevaba declarado desde que se escribió la sonda y salía
+**verde**. Rehecho contra el DATO —hacer que todos los atributos salgan en todas
+las páginas, que es el modo de fallo del que la guarda protege— muerde a la
+primera.
+
+> **La regla operativa: el sabotaje reproduce EL MODO DE FALLO que la guarda
+> vigila, no la aritmética de su condición.** Y se comprueba antes de creérselo,
+> preguntando *«¿cuánto vale el lado medido HOY?»* — si es 0, tocar el umbral no
+> puede hacer nada.
+
+**(b) El stub que ciega un canal para siempre.** La misma sustitución, pero
+puesta en la sonda buena en vez de en su negativo:
+
+> **Una sonda que reemplaza una dependencia por una constante —`ctx.media = async
+> () => 0`, un `payload` de mentira, un `fetch` que devuelve `{}`— no está
+> midiendo ese canal.** Su «0 defectos» es cierto de lo que mira y **no dice nada
+> del canal que anuló**, que es §sondas 4 con el cero puesto en un stub.
+
+**Medido:** un sondeo de frontera que sustituía el resolutor de media por `0`
+publicó **«0 defectos de INSTRUMENTO»** y dejó pasar hasta el `seed` una imagen
+alojada en un host ajeno. **El comentario del código lo decía** —*«un payload de
+mentira»*—; **el informe no**, y §regla 14 es exactamente eso: una limitación sin
+su número se lee como nota al pie.
+
+> **Operativamente: toda sonda que sustituya una dependencia lo PUBLICA en su
+> informe, con el nombre del canal que deja de medir.** Un stub es una limitación
+> de alcance, y las limitaciones de alcance se declaran arriba, no en un
+> comentario junto a la línea que las causa.
+
 ## Comandos
 
 ```bash
