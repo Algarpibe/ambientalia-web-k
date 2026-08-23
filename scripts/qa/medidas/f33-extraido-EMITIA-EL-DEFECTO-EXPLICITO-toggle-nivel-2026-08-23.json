@@ -5,7 +5,7 @@
     "pregunta": "¿qué documentos de `paginas` produce el corpus de las 31 de la cola larga?",
     "fuente": "corpus/fase-3/ (32/32 con sus hojas) + medidas/f33-rutas.json (el dominio)",
     "parser": "docs/research/cola-larga/derivaciones/arbol-f33.mjs — importado, no reescrito",
-    "sabotaje": "arrasa-control",
+    "sabotaje": null,
     "alcance": {
       "completaPara": "SEMBRAR las 31 en la colección `paginas`",
       "noCubre": [
@@ -44,10 +44,10 @@
     }
   },
   "emision": {
-    "modulos": 302,
-    "columnasColapsadas": 9,
-    "filasColapsadas": 9,
-    "seccionesColapsadas": 9
+    "modulos": 301,
+    "columnasColapsadas": 10,
+    "filasColapsadas": 10,
+    "seccionesColapsadas": 10
   },
   "retirada": {
     "derivadaDe": "docs/research/cola-larga/derivaciones/clasifica-f33.{mjs,log} — 120 ocurrencias, 0 de contenido",
@@ -69,8 +69,8 @@
       }
     ],
     "modulosTocados": 12,
-    "modulosOmitidos": 11,
-    "modulosConservados": 1,
+    "modulosOmitidos": 12,
+    "modulosConservados": 0,
     "detalle": [
       {
         "ruta": "/es/productos/",
@@ -82,10 +82,10 @@
             "evidencia": "clasifica-f33 §2"
           }
         ],
-        "brutoChars": 593,
-        "limpioChars": 70,
-        "restoChars": 58,
-        "moduloOmitido": false
+        "brutoChars": 523,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
       },
       {
         "ruta": "/es/sectores/",
@@ -305,109 +305,6 @@
     ],
     "noOp": "derivaciones/t11-noop-f33.log — 1 de 788 ficheros de corpus/ tocado, 787 idénticos byte a byte"
   },
-  "omitidosPorDefecto": {
-    "porQue": "`conDefecto` escribe `null` cuando el valor coincide con el defecto, así que en la DB el defecto explícito y la ausencia son la MISMA fila. El lado medido elige OMITIR.",
-    "bloquesConDefecto": {
-      "blurb": {
-        "nivel": 3,
-        "reticula": "iconos",
-        "alineacion": "center",
-        "anchoPct": 100
-      },
-      "boton-pagina": {
-        "piel": "defecto",
-        "anchoPct": 100
-      },
-      "codigo": {
-        "anchoPct": 100
-      },
-      "icono": {
-        "anchoPct": 100
-      },
-      "imagen-pagina": {
-        "anchoPct": 100
-      },
-      "mapa": {
-        "anchoPct": 100
-      },
-      "slider": {
-        "anchoPct": 100
-      },
-      "texto-pagina": {
-        "anchoPct": 100
-      },
-      "toggle": {
-        "nivel": 5,
-        "anchoPct": 100
-      },
-      "video-pagina": {
-        "anchoPct": 100
-      }
-    },
-    "n": 10,
-    "detalle": [
-      {
-        "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/centro-de-ayuda/kunak-air/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/centro-de-ayuda/kunak-air/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/soporte/centro-de-ayuda/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/soporte/centro-de-ayuda/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/soporte/centro-de-ayuda/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/soporte/centro-de-ayuda/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      },
-      {
-        "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/",
-        "kind": "toggle",
-        "campo": "nivel",
-        "valor": 5
-      }
-    ]
-  },
   "catalogo": {
     "paginas": [
       {
@@ -432,11 +329,13 @@
                       {
                         "kind": "toggle",
                         "titulo": "Artículos de ayuda",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/plataforma-de-calidad-del-aire-kunak-cloud-que-es/\">Plataforma de calidad del aire Kunak AIR Cloud ¿Qúe es?</a></li>\n</ul>"
                       },
                       {
                         "kind": "toggle",
                         "titulo": "Video tutoriales",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"#introduccion-a-kunak-cloud-popup\">Introducción a Kunak AIR Cloud</a></li>\n<li><a target=\"_blank\" href=\"#panel-de-control-del-indice-de-calidad-del-aire-popup\">Panel de control del índice de calidad del aire (AQI)</a></li>\n<li><a target=\"_blank\" href=\"#herramienta-de-calibracion-de-gases-popup\">Herramienta de calibración de gases</a></li>\n<li><a target=\"_blank\" href=\"#administracion-de-las-cuentas-y-dispositivos-popup\">Administración de las cuentas y dispositivos</a></li>\n</ul>"
                       }
                     ]
@@ -551,11 +450,13 @@
                       {
                         "kind": "toggle",
                         "titulo": "Artículos de ayuda",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air\">¿Qué es Kunak AIR?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air\">¿Qué puedes hacer con Kunak AIR?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/\">Evidencias de funcionamiento</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/\">¿Por qué Kunak AIR es la mejor estación de calidad del aire?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/\">¿Cómo garantiza Kunak la mejor precisión?</a></li>\n</ul>"
                       },
                       {
                         "kind": "toggle",
                         "titulo": "Video tutoriales",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"#verificacion-previa-a-una-instalacion-popup\">Verificación previa a una instalación</a></li>\n<li><a target=\"_blank\" href=\"#instalacion-popup\">Instalación</a></li>\n<li><a target=\"_blank\" href=\"#colocacion-del-panel-solar-popup\">Colocación del panel solar</a></li>\n<li><a target=\"_blank\" href=\"#instalacion-de-una-sonda-popup\">Instalación de una sonda</a></li>\n<li><a target=\"_blank\" href=\"#sustitucion-de-un-cartucho-popup\">Sustitución de un cartucho</a></li>\n<li><a target=\"_blank\" href=\"#almacenamiento-y-transporte-popup\">Almacenamiento y transporte</a></li>\n</ul>"
                       }
                     ]
@@ -706,6 +607,7 @@
                       {
                         "kind": "toggle",
                         "titulo": "Artículos de ayuda",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air\">¿Qué es Kunak AIR?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air\">¿Qué puedes hacer con Kunak AIR?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/\">Evidencias de funcionamiento</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/\">¿Por qué Kunak AIR es la mejor estación de calidad del aire?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/\">¿Cómo garantiza Kunak la mejor precisión?</a></li>\n</ul>"
                       }
                     ]
@@ -1075,11 +977,13 @@
                       {
                         "kind": "toggle",
                         "titulo": "Artículos de ayuda",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air\">¿Qué es Kunak AIR?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air\">¿Qué puedes hacer con Kunak AIR?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/\">Evidencias de funcionamiento</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/\">¿Por qué Kunak AIR es la mejor estación de calidad del aire?</a></li>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/\">¿Cómo garantiza Kunak la mejor precisión?</a></li>\n</ul>"
                       },
                       {
                         "kind": "toggle",
                         "titulo": "Video tutoriales",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"#verificacion-previa-a-una-instalacion-popup\">Verificación previa a una instalación</a></li>\n<li><a target=\"_blank\" href=\"#instalacion-popup\">Instalación</a></li>\n<li><a target=\"_blank\" href=\"#colocacion-del-panel-solar-popup\">Colocación del panel solar</a></li>\n<li><a target=\"_blank\" href=\"#instalacion-de-una-sonda-popup\">Instalación de una sonda</a></li>\n<li><a target=\"_blank\" href=\"#sustitucion-de-un-cartucho-popup\">Sustitución de un cartucho</a></li>\n<li><a target=\"_blank\" href=\"#almacenamiento-y-transporte-popup\">Almacenamiento y transporte</a></li>\n</ul>"
                       }
                     ]
@@ -1105,11 +1009,13 @@
                       {
                         "kind": "toggle",
                         "titulo": "Artículos de ayuda",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/\">¿Qué es Kunak AIR Cloud?</a></li>\n</ul>"
                       },
                       {
                         "kind": "toggle",
                         "titulo": "Video tutoriales",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"#introduccion-a-kunak-cloud-popup\">Introducción a Kunak AIR Cloud</a></li>\n<li><a target=\"_blank\" href=\"#panel-de-control-del-indice-de-calidad-del-aire-popup\">Panel de control del índice de calidad del aire (AQI)</a></li>\n<li><a target=\"_blank\" href=\"#herramienta-de-calibracion-de-gases-popup\">Herramienta de calibración de gases</a></li>\n<li><a target=\"_blank\" href=\"#administracion-de-las-cuentas-y-dispositivos-popup\">Administración de las cuentas y dispositivos</a></li>\n</ul>"
                       }
                     ]
@@ -1322,6 +1228,7 @@
                       {
                         "kind": "toggle",
                         "titulo": "Artículos de ayuda",
+                        "nivel": 5,
                         "cuerpo": "<ul>\n<li><a target=\"_blank\" href=\"https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/\">Plataforma de calidad del aire Kunak AIR Cloud ¿Qúe es?</a></li>\n</ul>"
                       }
                     ]
@@ -1571,23 +1478,6 @@
           "description": "La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS."
         },
         "bloques": [
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<p>PÁRRAFO INYECTADO: esto NO es cascarón y no se puede ir con él.</p>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "filas": [
               {

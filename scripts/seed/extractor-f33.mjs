@@ -59,7 +59,8 @@
  * **nombrados con lo que haría falta para medirlos**. Siguen sin cablear.
  * ══════════════════════════════════════════════════════════════════════════
  */
-import { existsSync, readFileSync } from "node:fs";
+import { createRequire } from "node:module";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { Evaluadas, gritaSiRevienta, hoy, nombreNeg, PLIEGUES_FINAL, QA, w } from "../qa/lib.mjs";
@@ -263,6 +264,70 @@ function finBalanceado(html, i, etiqueta) {
   return -1;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 1ter · LOS DEFECTOS DEL ESQUEMA — porque «igual al defecto» = «no escrito»
+ *
+ * `conDefecto` tiene DOS mitades: el `defaultValue` **y** el `beforeChange` que
+ * escribe `null` cuando el valor coincide con él —*«coincidir con el defecto =
+ * no haber escrito»*—. O sea que en la DB **el defecto explícito y la ausencia
+ * son la misma fila**, y por tanto el dato medido tiene que elegir UNA de las
+ * dos preimágenes. La convención del repo es **OMITIR**.
+ *
+ * ⚠ **Lo destapó la primera siembra**: el extractor emitía `toggle.nivel: 5`,
+ * que es exactamente el `defaultValue` de `nivelToggle`. El hook lo anuló, la
+ * vuelta devolvió ausente, y el round-trip dio **8 diferencias de FORMA en 3
+ * documentos**. Ninguna de las dos partes estaba «mal» por su cuenta: lo que
+ * faltaba era que el lado medido respetara el contrato.
+ *
+ * ── Y el valor NO se cablea: se DERIVA del esquema (§regla 5ter) ─────────
+ * Escribir `if (nivel === 5)` aquí sería un número recordado que envejece
+ * **contra** el esquema en silencio — y encima en el sitio donde menos se ve,
+ * porque sólo se estrena cuando alguien cambia el defecto. Se lee del propio
+ * `paginas.ts`, bundleado con esbuild igual que hace `bloqueos-f33`.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const DEFECTOS = await (async () => {
+  const req = createRequire(import.meta.url);
+  const esbuild = req("esbuild");
+  const TMP = join(QA, ".tmp");
+  mkdirSync(TMP, { recursive: true });
+  const ENTRY = join(TMP, "entry-f33-defectos.ts");
+  writeFileSync(
+    ENTRY,
+    `export * as BL from ${JSON.stringify(join(RAIZ, "packages/cms-config/src/bloques/paginas.ts").replace(/\\/g, "/"))};\n`,
+  );
+  const out = join(TMP, "f33-defectos-bundle.mjs");
+  await esbuild.build({ entryPoints: [ENTRY], outfile: out, bundle: true, platform: "node", format: "esm", packages: "external", logLevel: "silent" });
+  const { BL } = await import(`${pathToFileURL(out).href}?t=${Date.now()}`);
+  const bloques = BL.MODULOS_PAGINA;
+  if (!Array.isArray(bloques) || !bloques.length)
+    throw new Error("no encuentro `MODULOS_PAGINA` en el bundle del esquema (§sondas 4, el cero).");
+  /** `slug del bloque` → `{ campo: defecto }`, sólo para los que declaran uno. */
+  const m = new Map();
+  for (const b of bloques) {
+    const d = {};
+    for (const c of b.fields ?? []) if (c?.name && c.defaultValue !== undefined) d[c.name] = c.defaultValue;
+    if (Object.keys(d).length) m.set(b.slug, d);
+  }
+  return m;
+})();
+
+/**
+ * Quita del módulo emitido todo campo cuyo valor COINCIDA con el defecto que el
+ * esquema declara. Devuelve además qué quitó, para publicarlo con su cardinal:
+ * una omisión silenciosa aquí es indistinguible de un campo que no se leyó.
+ */
+const OMITIDOS_POR_DEFECTO = [];
+function omiteDefectos(mod, donde) {
+  const d = DEFECTOS.get(mod?.kind);
+  if (!d) return mod;
+  for (const [k, v] of Object.entries(d))
+    if (mod[k] !== undefined && JSON.stringify(mod[k]) === JSON.stringify(v)) {
+      OMITIDOS_POR_DEFECTO.push({ ruta: donde, kind: mod.kind, campo: k, valor: v });
+      delete mod[k];
+    }
+  return mod;
+}
+
 /** El censo de todo lo retirado. Se publica y se congela: nada se va en silencio. */
 const RETIRADAS = [];
 
@@ -336,7 +401,15 @@ let fantasmaInyectado = false;
 /** El sabotaje `arrasa`/`arrasa-control`: el párrafo que crea la separadora. */
 let inyectado = false;
 
-function aBloque(html, n, donde) {
+/**
+ * La envoltura que aplica el contrato de `conDefecto` a TODO módulo emitido:
+ * un valor igual al defecto del esquema **no se escribe** (§1ter). Va aquí y no
+ * en cada `return` de `aBloqueBruto` porque son once ramas y acordarse once
+ * veces es exactamente cómo se olvida la doceava.
+ */
+const aBloque = (html, n, donde) => omiteDefectos(aBloqueBruto(html, n, donde), donde);
+
+function aBloqueBruto(html, n, donde) {
   let tipo = A.tipoDe(n);
   if (SABOTAJE === "tipo-fantasma" && !fantasmaInyectado) {
     fantasmaInyectado = true;
@@ -1071,6 +1144,20 @@ for (const t of TRANSFORMACIONES_F33)
 for (const r of T_IMPORT.rutas) console.log(`      ${r.ruta}  (−${r.chars} chars${r.reconstruye ? "" : ", RECONSTRUCCIÓN MAL"})`);
 console.log(`   NO-OP fuera de aquí: 1 de 788 ficheros de corpus/ (t11-noop-f33.log, 787 idénticos byte a byte)`);
 
+console.log(`\n  ── 7 · CAMPOS OMITIDOS POR COINCIDIR CON EL DEFECTO DEL ESQUEMA ──`);
+{
+  const por = {};
+  for (const o of OMITIDOS_POR_DEFECTO) {
+    const k = `${o.kind}.${o.campo} = ${JSON.stringify(o.valor)}`;
+    por[k] = (por[k] || 0) + 1;
+  }
+  console.log(`   bloques con defecto declarado     ${String(DEFECTOS.size).padStart(4)}   ${[...DEFECTOS.keys()].sort().join(" · ")}`);
+  console.log(`   campos omitidos                   ${String(OMITIDOS_POR_DEFECTO.length).padStart(4)}`);
+  for (const [k, v] of Object.entries(por).sort()) console.log(`      ${String(v).padStart(4)} × ${k}`);
+  console.log(`   («igual al defecto» = «no escrito»: es la segunda mitad de \`conDefecto\`, y en`);
+  console.log(`    la DB las dos preimágenes son la MISMA fila. El lado medido elige OMITIR.)`);
+}
+
 if (discrepancias.length) err(`CRUCE CON arbol-f33: ${discrepancias.length} discrepancia(s) — ${discrepancias.join(" · ")}`);
 if (geoEscrita.length)
   err(
@@ -1142,6 +1229,17 @@ w(SALIDA, {
     porT: T_IMPORT.porT,
     rutas: T_IMPORT.rutas,
     noOp: "derivaciones/t11-noop-f33.log — 1 de 788 ficheros de corpus/ tocado, 787 idénticos byte a byte",
+  },
+  /**
+   * Los campos que se omiten por coincidir con el defecto que el esquema
+   * declara. Se congelan con su ruta: una omisión sin censo es indistinguible
+   * de un campo que el extractor no supo leer (§regla 1).
+   */
+  omitidosPorDefecto: {
+    porQue: "`conDefecto` escribe `null` cuando el valor coincide con el defecto, así que en la DB el defecto explícito y la ausencia son la MISMA fila. El lado medido elige OMITIR.",
+    bloquesConDefecto: Object.fromEntries([...DEFECTOS.entries()].sort()),
+    n: OMITIDOS_POR_DEFECTO.length,
+    detalle: OMITIDOS_POR_DEFECTO,
   },
   catalogo: { paginas: docs },
 });

@@ -1,6 +1,97 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⛔ F3-3-BLOQUEOS-DE-SIEMBRA · **97.ª (2026-08-23) — `paginas` sigue fuera de `SEMBRADAS`, y ya NO por las etiquetas: son 12 bloqueos en 2 páginas y 3 canales**
+## ✅ F3-3-SIEMBRA · **CERRADA por la 98.ª (2026-08-23): `paginas` SEMBRADA — 31 documentos, round-trip 383/383** — la ficha de la 97.ª se conserva entera debajo
+
+> ✅ **Los 12 bloqueos eran tres decisiones de MODELO, el propietario las tomó el
+> 2026-08-22 y esta tanda las aplicó.** Los cuatro canales que `validaHtmlCorpus`
+> mira dan **0**, y `paginas` vuelve a `SEMBRADAS` con su razón escrita ahí
+> mismo (`seed.mjs`), no en un acta.
+
+### 1 · Las tres decisiones, con lo que cada una dejó medido
+
+| | decisión | dónde vive | qué dejó en la DB |
+|---|---|---|---|
+| **D1** | `data-teams` → **T11**, transformación de importación. `ATRIBUTOS_CENSADOS` **NO se amplía** | `ESQUEMA` §3.2d | **0** `data-teams` en las 31 |
+| **D2** | el `<img>` de `upload.wikimedia.org` **se deja ABSOLUTO** | `ESQUEMA` §2j.7 | **70** `src` local · **1** `srcExterno` = 71 |
+| **D3** | `1_5` y `1_6` en la retícula, una migración con **reversa probada** | `ESQUEMA` §2j.7 | `1_5` ×10 ejercitado · `1_6` **SIN EJERCITAR** |
+
+**El NO-OP de T11 se midió por IDENTIDAD DE BYTES, no se argumentó:**
+`derivaciones/t11-noop-f33.{mjs,log}` aplica T11 a los **788** `.html` de
+`corpus/` y **787 salen byte a byte idénticos**, con **6 controles sintéticos**
+de las formas vecinas que no debe tocar y su control positivo.
+
+### 2 · La membresía, POR ELEMENTO — y su instrumento nuevo
+
+`npm run qa:f33-membresia` (negativo **3/3**): **diferencia simétrica 0 y 0**
+sobre 31 documentos, con **los dos lados nombrados**. `31 → 31` no habría
+probado nada — es el `68 → 68` de `lh-poblacion` otra vez, y por eso el sabotaje
+`cardinal` **mueve un elemento por lado dejando los cardinales intactos**.
+
+**La llave es `prefijo|slug`, no el slug**: ver §3.
+
+**Y los tres huecos de geometría siguen OMITIDOS, comprobados AHORA sobre lo que
+la DB devuelve** —que no es lo mismo que comprobarlo sobre lo que el extractor
+emite: entre los dos hay un mapeo, un `aPayload` y un esquema con
+`defaultValue`—. **0 claves de ritmo/ancho con valor** en las 31.
+
+> ⚠ Y el predicado que lo mide llegó con su propio defecto, cazado antes de
+> creérselo: `hayValor` miraba **un solo nivel** y contó **299** claves —Payload
+> devuelve `ritmo` **poblado de nulos**—. No lo delató ningún error: lo delató
+> **contradecir una medida buena anterior** (`cms:extractor-f33` afirma 0
+> escritas). Corregido a recursivo, **con un control de 4 casos dentro de la
+> sonda** que exige que sepa decir SÍ y decir NO — sin él, «0 claves» sería el
+> instrumento.
+
+### 3 · ⚠⚠ LO QUE LA SIEMBRA DESTAPÓ, con su DENOMINADOR y no de uno en uno
+
+La primera corrida del round-trip dio **352 de 383**. El titular es engañoso y
+por eso se descompone: **133 diferencias en 29 documentos, y CUATRO causas
+distintas** (`derivaciones/llave-paginas-f33.{mjs,log}` + el desglose del
+congelado):
+
+| causa | diferencias | docs | de quién es |
+|---|---|---|---|
+| **A · la LLAVE** — `ids.get(slug)` empareja con OTRO documento | **53** | 2 | del **instrumento**: `paginas` es la 1.ª colección con `prefijo` — **29 slugs distintos para 31 documentos** |
+| **B · lista vacía** — `(ausente)` contra `[]` | **63** | 26 | del **esquema**: faltaban 3 `vaciaEsAusente` (§7e) |
+| **C · `toggle.nivel: 5`** — el DEFECTO escrito explícito | **8** | 3 | del **extractor**: `conDefecto` anula el valor igual al defecto, así que el lado medido tiene que OMITIRLO |
+| **D · `piel: "defecto"`** — la DB lo devuelve explícito | **9** | 3 | del **esquema**: `defaultValue` **sin** `conDefecto`, o sea media pieza del patrón |
+
+**Ninguna de las cuatro es una decisión de modelo**: las cuatro son contratos que
+este repo ya tiene escritos, aplicados a una colección nueva. Por eso se
+arreglan aquí y no se fichan.
+
+**A** es §regla 29, nueva en `CLAUDE.md`: *un índice construido para una pregunta
+no contesta otra, y cuando su llave deja de identificar no da error — empareja
+mal*. El arreglo **no cambia la llave del índice de relaciones** (rompería a
+`rel` y a `slugPorId` para arreglar a otro consumidor): añade
+`ctx.idsPorLlave`, desde **la misma derivación** (`llaveDocumento`, exportada) y
+en la misma llamada. Una fuente, dos preguntas.
+
+**B** lo derivó `qa:cms-decl` —no se eligió— y sus **3 HUECOS** eran exactamente
+las tres rutas: `paginas.bloques` · `.filas` · `.modulosSueltos`. Declararlas
+pone además **en verde uno de los 9 rojos** del censo de negativos, y por su
+motivo: la sonda tenía razón (§regla 21).
+
+**C** se arregla **derivando el defecto del esquema**, no cableando el 5: el
+extractor bundlea `bloques/paginas.ts` y omite todo campo que coincida con su
+`defaultValue`. Publica el censo: **10 × `toggle.nivel = 5`**, y nada más.
+
+**Resultado: `npm run qa:cms-roundtrip` → 383/383 documentos IDÉNTICOS en 14
+colecciones.**
+
+### 4 · Lo que la siembra deja ABIERTO, nombrado y con su número
+
+| qué | estado |
+|---|---|
+| **las 19 rutas del plano de raíz** | `qa:slugs` las cuenta como **RECLAMO SIN RUTA** junto a las 6 de `articulos-kb` y 2 de `productos` (27 en total). **NO son el mismo caso**: las 6 de KB son una colección PREFIJADA reservando slugs que sus URLs no usan (§F3-3-REGISTRO-SOBRE-RECLAMA); **las 19 de `paginas` SON su URL bajo E1** y sólo esperan a que la 99.ª las emita. Conflarlas por el titular sería leer un cardinal sin su unidad |
+| **`qa:slugs` cuenta `paginas` «publicados 29»** y son **31 documentos** | es el mismo hecho que la causa A, visto por otro instrumento: cuenta **slugs distintos**. Su invariante —unicidad en el plano de raíz— **no se ve afectado**: los 19 sin prefijo son únicos y da 0 colisiones. Se declara para que nadie lea 29 como documentos |
+| **la GEOMETRÍA del clon** | sigue en **0 ejes comparados** (`qa:f33-cmp`). Sembrar no es emitir |
+| **`1_6`** | **SIN EJERCITAR**, camino de render sin estrenar. Sale en `qa:nunca-vistos` |
+| **`paginas.bloques.modulosSueltos.pines`** y 10 slugs bajo `modulosSueltos` | **SIN EJERCITAR** en el catálogo: `cms-decl` los nombra para no contarlos como verificados |
+
+---
+
+## ⛔ F3-3-BLOQUEOS-DE-SIEMBRA · **97.ª (2026-08-23) — `paginas` sigue fuera de `SEMBRADAS`, y ya NO por las etiquetas: son 12 bloqueos en 2 páginas y 3 canales** *(enunciado original, conservado)*
 
 > **Estado.** La pregunta de la 96.ª está **cerrada y medida** (§F3-3-CENSO-CAMPO-RICO,
 > justo debajo): las 5 etiquetas eran **cascarón y consulta, 0 de contenido**, y
@@ -72,7 +163,7 @@ medias: `2_5` y `3_5` sí, `1_5` no.**
 > versionada**, porque un `select` de Payload sobre Postgres es un tipo enum. No
 > se toca en una tanda de emisión. **SUBE.**
 
-### ⚠ Y una limitación de instrumento que salió de camino
+### ✅ Y una limitación de instrumento que salió de camino — **PAGADA por la 98.ª**
 
 **`cms:sondeo` es CIEGO al canal de media POR CONSTRUCCIÓN.** `sondeo.mjs` hace
 `ctx.media = async () => 0`: sustituye el resolutor por una constante. Su «0
@@ -82,6 +173,26 @@ imagen de host ajeno hasta el `seed`. El comentario lo dice («un payload de
 mentira»); **el informe no lo declara**, y §regla 14 es justo eso: una limitación
 sin su número se lee como nota al pie. **Ficha abierta**: que el informe del
 sondeo publique sus canales anulados con su cardinal.
+
+> ✅ **HECHO el 2026-08-23 (98.ª), y con su cardinal — que es la mitad que la
+> convierte en decisión en vez de en nota al pie.** El informe imprime los
+> canales anulados **junto al veredicto**, no en un anexo (§regla 14, mitad 2:
+> *si la limitación cambia lo que una frase de cierre afirma, se escribe TAMBIÉN
+> en esa frase*):
+>
+> | canal anulado | sustituto | llamadas | qué NO dice |
+> |---|---|---|---|
+> | `creaContexto().media` | constante `0` | **739** | si el fichero existe, si la ruta es local, ni si el asset vive fuera |
+> | `payload.create` | `{ id: 0 }` | **0** | nada de lo que la DB rechazaría al escribir de verdad |
+>
+> Y el titular pasa a ser *«0 defectos de INSTRUMENTO **sobre los canales que SÍ
+> mira** (2 anulados, 739 llamadas)»*. Los dos números están en
+> `medidas/sondeo-frontera*.json` §`instrumento.canalesAnulados`.
+>
+> ⚠ **El canal que anula lo mide OTRA sonda, y se nombra**: `qa:media-canales`,
+> que desde hoy tiene un cubo propio para el asset alojado FUERA — **1 canal · 1
+> valor**, con sus dos rutas declaradas y **fuera de `origenesACapturar`**,
+> porque no hay fichero que pedir.
 
 ### Lo que sí quedó hecho
 
@@ -131,6 +242,44 @@ nombre, `npm run cms:sondeo` **y volver a congelar**; `cms-decl` pide declarar
 las 3 rutas que la ida ve. Las dos son mantenimiento del registro que estrenó la
 96.ª, **no de la retirada**, y re-congelar una medida con `PISAR=1` es un acto
 deliberado que se toma con su tanda delante.
+
+> ✅ **`cms-decl` CERRADO por la 98.ª (2026-08-23), y no como mantenimiento: lo
+> pidió el round-trip.** Sus 3 HUECOS —`paginas.bloques` · `.filas` ·
+> `.modulosSueltos`— eran exactamente las **63 diferencias** de «lista vacía» que
+> la primera siembra sacó, así que declarar los tres `vaciaEsAusente` cierra las
+> dos cosas a la vez. **La sonda tenía razón** (§regla 21: el discriminador es
+> correr la sonda sola, y salía roja). `qa:cms-decl-neg` → **8/8**.
+>
+> **Quedan 8 de los 9**, y `cms-arquetipos` sigue pidiendo lo mismo con su
+> nombre: re-congelar `sondeo-frontera.json`, que es un acto deliberado.
+
+> ⚠⚠ **Y HAY UN DÉCIMO ROJO, QUE NO ES DE LA 97.ª NI DE LA 98.ª: `sondeo.neg`
+> llevaba rojo DESDE EL 2026-08-13 y nadie lo había visto** (hallado el
+> 2026-08-23).
+>
+> Su CONTROL exigía `/evaluadas 46\/46 filas de catálogo/`, un número **cableado
+> el 2026-08-04** (`63db8eb`), cuando `SEMBRADAS` tenía de verdad 46 filas. El
+> **2026-08-13** `casos` y `faqs` cambiaron de fuente (4→57 y 2→19) y el
+> denominador real pasó a 324; hoy, con `paginas`, a **355**.
+>
+> **Por qué no se vio:** `sondeo.neg` está en el grupo `conDb` de
+> `qa:negativos`, y la corrida completa **se agota antes de llegar** — la de la
+> 97.ª declaró **47 corridos de 78 censados**. O sea que su rojo no estaba
+> «ignorado»: **no se había ejecutado**, y §*«no ejecutado» y «rojo» salen
+> iguales* es exactamente lo que la 97.ª ya avisó del tope de 600 s.
+>
+> **Arreglado, y NO poniendo el número de hoy** —eso sería *«un caso que pasa a
+> verde ajustando su expectativa al valor de hoy»* (§regla 21)—: el denominador
+> se **DERIVA** de `CATALOGOS` + `cargaCatalogos()`, la misma fuente con la que
+> la sonda declara su mínimo (§regla 5ter), y **tira si no se puede derivar**.
+> Además comprueba el par entero: `N/M` con `N ≠ M` sale rojo igual.
+> `cms:sondeo-neg` → **4/4** con sus **355** filas.
+>
+> ⚠ **Lo que esto NO dice, y hay que declararlo:** cuántos de los 31 negativos
+> que la corrida de la 97.ª **no llegó a ejecutar** están en el mismo estado.
+> Uno de 31 encontrado por casualidad no es un censo — sale **SIN MEDIR**, y el
+> instrumento que lo contestaría es una corrida de `qa:negativos` que **no se
+> agote**.
 
 ⚠ **Y la congelada del sondeo que esta tanda produjo NO sirve para eso**: se hizo
 con `paginas` metida a mano en `SEMBRADAS` para el ensayo, así que está marcada

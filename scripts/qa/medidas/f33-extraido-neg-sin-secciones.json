@@ -115,6 +115,48 @@
     "rutas": [],
     "noOp": "derivaciones/t11-noop-f33.log — 1 de 788 ficheros de corpus/ tocado, 787 idénticos byte a byte"
   },
+  "omitidosPorDefecto": {
+    "porQue": "`conDefecto` escribe `null` cuando el valor coincide con el defecto, así que en la DB el defecto explícito y la ausencia son la MISMA fila. El lado medido elige OMITIR.",
+    "bloquesConDefecto": {
+      "blurb": {
+        "nivel": 3,
+        "reticula": "iconos",
+        "alineacion": "center",
+        "anchoPct": 100
+      },
+      "boton-pagina": {
+        "piel": "defecto",
+        "anchoPct": 100
+      },
+      "codigo": {
+        "anchoPct": 100
+      },
+      "icono": {
+        "anchoPct": 100
+      },
+      "imagen-pagina": {
+        "anchoPct": 100
+      },
+      "mapa": {
+        "anchoPct": 100
+      },
+      "slider": {
+        "anchoPct": 100
+      },
+      "texto-pagina": {
+        "anchoPct": 100
+      },
+      "toggle": {
+        "nivel": 5,
+        "anchoPct": 100
+      },
+      "video-pagina": {
+        "anchoPct": 100
+      }
+    },
+    "n": 0,
+    "detalle": []
+  },
   "catalogo": {
     "paginas": [
       {

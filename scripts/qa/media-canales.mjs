@@ -140,11 +140,14 @@ const ctx = creaContexto(payload, { sondeo: true });
 for (const c of CATALOGOS)
   for (const fila of catalogos.get(c.coleccion) ?? []) {
     const d = (PREPARA[c.coleccion] ?? ((x) => x))(fila);
-    if (d?.slug) ctx.registra(c.coleccion, d.slug, `sondeo:${c.coleccion}:${d.slug}`);
+    /* El 4.º argumento es EL DOCUMENTO: `registra` indexa también por IDENTIDAD
+     * y una colección con `prefijo` colisiona si sólo se le pasa el slug
+     * (§regla 29). */
+    if (d?.slug) ctx.registra(c.coleccion, d.slug, `sondeo:${c.coleccion}:${d.slug}`, d);
   }
 for (const t of TAXONOMIAS_DERIVADAS)
   for (const term of derivaTaxonomias(catalogos).get(t.coleccion) ?? [])
-    ctx.registra(t.coleccion, term.slug, `sondeo:${t.coleccion}:${term.slug}`);
+    ctx.registra(t.coleccion, term.slug, `sondeo:${t.coleccion}:${term.slug}`, term);
 
 const porColeccion = new Map();
 for (const c of CATALOGOS) {
@@ -256,13 +259,37 @@ function cuentaPorClave(v, clave, n = { n: 0 }) {
     }
   return n;
 }
-const externos = canales
-  .filter((c) => c.clase === "externo")
-  .map((c) => ({
-    ...c,
-    valores: cuentaPorClave(catalogos.get(c.coleccion) ?? [], c.ruta.split(".").pop()).n,
-  }));
-const rutasExternas = new Set(externos.map((c) => `${c.coleccion} · ${c.ruta}`));
+/**
+ * ⚠ **EL CARDINAL ES POR COLECCIÓN Y HOJA, NO POR RUTA — y se etiqueta como
+ * tal.** Un mismo bloque aparece en VARIAS rutas de la config (`imagen-pagina`
+ * cuelga de `modulosSueltos` y de `filas.columnas.modulos`), y `cuentaPorClave`
+ * recorre el catálogo entero por el nombre de la hoja: no sabe por cuál de las
+ * dos entró el valor. Publicarlo contra cada ruta diría **1 y 1** donde hay
+ * **un solo valor**, que es §sondas 4 en su tercera cara — un número plausible
+ * de más, y encima uno que invita a explicarlo.
+ *
+ * Se cuenta UNA vez por `(coleccion, hoja)` y las rutas que comparten esa hoja
+ * se nombran juntas. Repartirlo por ruta exigiría recorrer el dato **por
+ * camino**, y eso es otra sonda: aquí lo que se declara es EL CANAL.
+ */
+const externos = [];
+for (const c of canales.filter((x) => x.clase === "externo")) {
+  const hoja = c.ruta.split(".").pop();
+  const k = `${c.coleccion}\0${hoja}`;
+  const ya = externos.find((x) => x.k === k);
+  if (ya) { ya.rutas.push(c.ruta); continue; }
+  externos.push({
+    k,
+    coleccion: c.coleccion,
+    hoja,
+    clase: c.clase,
+    tipo: c.tipo,
+    rutas: [c.ruta],
+    valores: cuentaPorClave(catalogos.get(c.coleccion) ?? [], hoja).n,
+    unidad: "valores de la HOJA en toda la colección — no por ruta",
+  });
+}
+const rutasExternas = new Set(externos.flatMap((c) => c.rutas.map((r) => `${c.coleccion} · ${r}`)));
 
 const noEjercidos = canales.filter((c) => !ejercidos.has(`${c.coleccion} · ${c.ruta}`) && !rutasExternas.has(`${c.coleccion} · ${c.ruta}`));
 const sinDato = noEjercidos.filter((c) => RECORRIDAS.has(c.coleccion));
@@ -308,11 +335,15 @@ if (sinDato.length) {
 
 if (externos.length) {
   console.log(`\n  ── CANALES EXTERNOS — el asset alojado FUERA (D2, 2026-08-22) ──`);
-  for (const c of externos)
+  for (const c of externos) {
     console.log(
-      `   ${(c.coleccion + " · " + c.ruta).padEnd(46)} ${String(c.valores).padStart(4)} valor(es)   ` +
+      `   ${(c.coleccion + " · " + c.hoja).padEnd(30)} ${String(c.valores).padStart(4)} valor(es) en la COLECCIÓN   ` +
         `[${c.tipo}:${c.clase}]  ← NO se captura ni se resuelve contra apps/web/public`,
     );
+    for (const r of c.rutas) console.log(`        ruta declarada: ${r}`);
+  }
+  console.log(`   ⚠ el cardinal es por (colección · HOJA), no por ruta: un mismo bloque cuelga de`);
+  console.log(`     varias rutas y publicarlo contra cada una diría «1 y 1» donde hay UN valor.`);
   console.log(`   Su ausencia de la carpeta no es un hueco: no hay fichero que capturar.`);
   console.log(`   Y su cardinal se cuenta contra el DATO del catálogo, no contra \`mediaAuditada\`,`);
   console.log(`   porque este canal no pasa por la guarda que resuelve rutas locales.`);

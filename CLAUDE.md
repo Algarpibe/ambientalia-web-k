@@ -3774,6 +3774,76 @@ su número se lee como nota al pie.
 > de alcance, y las limitaciones de alcance se declaran arriba, no en un
 > comentario junto a la línea que las causa.
 
+**29 · UN ÍNDICE CONSTRUIDO PARA UNA PREGUNTA NO CONTESTA OTRA — Y CUANDO SU
+LLAVE DEJA DE IDENTIFICAR NO DA ERROR: EMPAREJA MAL.** (2026-08-23)
+
+Las reglas de arriba persiguen instrumentos que no miran. Ésta persigue uno que
+mira **la fila equivocada**, y por eso todos sus recuentos salen perfectos:
+
+> **Reutilizar un índice porque «ya está ahí» funciona mientras su llave sea una
+> identidad. El día que entra un dominio donde no lo es, el `get` sigue
+> devolviendo algo** —el último que se registró— **y la comparación se hace
+> contra otro documento.** No hay `undefined`, no hay excepción y el cardinal no
+> se mueve: sólo aparecen diferencias, y **parecen del dato**.
+
+Es §*un cardinal es un contenedor y absorbe la membresía* con el objeto
+cambiado: allí los dos conjuntos difieren y el recuento lo tapa; aquí **los dos
+conjuntos son el mismo** y lo que está mal es **el emparejamiento**. La
+diferencia simétrica sale `0 y 0` y el comparador sigue mintiendo.
+
+**Medido:** un round-trip emparejaba por `idsPorColeccion`, el índice de
+**relaciones**, cuya llave es el slug porque es lo único que un valor de
+`relationship` trae escrito. Al sembrar la primera colección **con prefijo** —29
+slugs distintos para 31 documentos— **2 documentos se compararon contra el
+documento equivocado**, y produjeron **53 de las 133 diferencias** de esa
+corrida. Las otras 80 eran reales; sin separar las dos cosas, el diagnóstico
+habría empezado por las falsas.
+
+**Las tres mitades operativas:**
+
+1. **la señal es el diff, no el recuento**: si las diferencias tienen forma de
+   *«dos valores reales de documentos distintos»* —y no de *«un campo mal»*—, lo
+   primero que se comprueba es **la llave**, no el dato;
+2. **no se cambia la llave del índice existente: se añade la que contesta la
+   otra pregunta**, desde la MISMA derivación y en la misma llamada. Cambiarla
+   rompería a sus consumidores legítimos para arreglar a otro, y dos
+   derivaciones independientes darían Δ0 en falso con un mismo olvido;
+3. **y la llave se deriva del DOCUMENTO, no de una lista de colecciones
+   especiales** (§regla 9, 7.º caso). Con un separador que ningún componente
+   pueda contener, o la colisión que la llave venía a cerrar vuelve por dentro.
+
+> **Y el corolario de guarda: un índice de IDENTIDAD tira si una llave se
+> repite.** Pisarla en silencio es exactamente el defecto original una vuelta más
+> abajo.
+
+**30 · UNA MIGRACIÓN QUE RELAJA UNA RESTRICCIÓN TIENE UNA REVERSA CON FECHA DE
+CADUCIDAD: SE PRUEBA ANTES DE QUE ENTRE EL DATO.** (2026-08-23)
+
+> **Un `down` que reimpone lo que el `up` relajó** —`NULL` → `NOT NULL`, un enum
+> que pierde valores, un `required` que vuelve— **sólo puede correr mientras no
+> exista una fila que use la relajación.** En cuanto entra la primera, la reversa
+> falla **y hace bien**: es el esquema diciendo que el dato ya no cabe en la
+> forma vieja.
+
+De donde lo operativo, que es una cuestión de **orden** y no de diligencia:
+
+> **«¿revierte limpia?» no es una pregunta que se pueda hacer cuando venga
+> bien.** Se hace **antes de sembrar**, que es la única ventana en la que tiene
+> respuesta. Después, lo único medible es que falla — y eso ya no distingue *«la
+> migración está bien escrita»* de *«está mal escrita»*.
+
+**Y la reversa se comprueba en la UNIDAD, no con el total** (§*un cardinal es un
+contenedor*): `3333 → 3333` es exacto con dos tablas compensándose. Lo que
+prueba es el censo **tabla a tabla** antes y después, idéntico línea a línea.
+Medido: 80 tablas, `diff` sin salida, y la única fila de diferencia entre `up` y
+`down` era **el registro de la propia migración**.
+
+⚠ **Y el LOG de la herramienta no es lo que la herramienta hizo.**
+`payload migrate:down` imprime *«Rolling back batch 2 consisting of 20
+migration(s)»* y revierte **una**. Se comprueba en la tabla de migraciones, no
+en la consola — §*verificar contra la salida servida*, con el objeto puesto en
+la propia herramienta.
+
 ## Comandos
 
 ```bash

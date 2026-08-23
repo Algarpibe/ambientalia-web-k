@@ -7,7 +7,7 @@
       "seed": "exige el fichero EXACTO en apps/web/public",
       "seed-kb": "acepta media-corpus/ y colapsa variantes"
     },
-    "sabotaje": "guarda-floja",
+    "sabotaje": null,
     "noHace": [
       "no abre el original",
       "no captura",
@@ -28,7 +28,7 @@
     "canalesEjercidos": 19,
     "canalesSinDato": 33,
     "canalesDeOtroSembrador": 4,
-    "canalesExternos": 1,
+    "canalesExternos": 2,
     "referencias": 677,
     "rutasDistintas": 677,
     "ausentes": 0
@@ -488,17 +488,18 @@
   ],
   "canalesExternos": [
     {
-      "k": "paginas\u0000srcExterno",
       "coleccion": "paginas",
-      "hoja": "srcExterno",
-      "clase": "externo",
+      "ruta": "bloques.modulosSueltos.imagen-pagina.srcExterno",
       "tipo": "declarado",
-      "rutas": [
-        "bloques.modulosSueltos.imagen-pagina.srcExterno",
-        "bloques.filas.columnas.modulos.imagen-pagina.srcExterno"
-      ],
-      "valores": 1,
-      "unidad": "valores de la HOJA en toda la colección — no por ruta"
+      "clase": "externo",
+      "valores": 1
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.imagen-pagina.srcExterno",
+      "tipo": "declarado",
+      "clase": "externo",
+      "valores": 1
     }
   ],
   "porCanal": [

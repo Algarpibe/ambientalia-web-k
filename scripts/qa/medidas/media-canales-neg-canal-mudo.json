@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "que": "el inventario de media DERIVADO POR CANALES del esquema, cruzado contra la guarda que para",
     "regla": "el inventario se deriva de los canales que el ESQUEMA declara, no de los que algún extractor ya lee",
     "guardas": {
@@ -18,17 +18,19 @@
       "documentos-cientificos",
       "entradas-blog",
       "monograficos",
+      "paginas",
       "productos",
       "sectores"
     ]
   },
   "recuento": {
-    "canalesDeclarados": 30,
-    "canalesEjercidos": 16,
-    "canalesSinDato": 14,
+    "canalesDeclarados": 43,
+    "canalesEjercidos": 19,
+    "canalesSinDato": 25,
     "canalesDeOtroSembrador": 4,
-    "referencias": 614,
-    "rutasDistintas": 614,
+    "canalesExternos": 1,
+    "referencias": 677,
+    "rutasDistintas": 677,
     "ausentes": 0
   },
   "canalesDeclarados": [
@@ -163,6 +165,73 @@
       "tipo": "upload"
     },
     {
+      "coleccion": "paginas",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.imagen-pagina.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.imagen-pagina.srcExterno",
+      "tipo": "declarado",
+      "clase": "externo"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.slider-completo.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.slider.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.icono.icono",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.imagen-pagina.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.imagen-pagina.srcExterno",
+      "tipo": "declarado",
+      "clase": "externo"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.slider-completo.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.slider.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.icono.icono",
+      "tipo": "texto-url"
+    },
+    {
       "coleccion": "articulos-kb",
       "ruta": "seo.ogImage",
       "tipo": "texto-url"
@@ -253,6 +322,61 @@
       "coleccion": "documentos-cientificos",
       "ruta": "seo.ogImage",
       "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "seo.ogImage",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.imagen-pagina.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.slider-completo.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.slider.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.modulosSueltos.icono.icono",
+      "tipo": "texto-url"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.imagen-pagina.src",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.blurb.imagen",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.slider-completo.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.slider.diapositivas.fondo",
+      "tipo": "upload"
+    },
+    {
+      "coleccion": "paginas",
+      "ruta": "bloques.filas.columnas.modulos.icono.icono",
+      "tipo": "texto-url"
     }
   ],
   "canalesDeOtroSembrador": [
@@ -277,6 +401,21 @@
       "tipo": "upload"
     }
   ],
+  "canalesExternos": [
+    {
+      "k": "paginas\u0000srcExterno",
+      "coleccion": "paginas",
+      "hoja": "srcExterno",
+      "clase": "externo",
+      "tipo": "declarado",
+      "rutas": [
+        "bloques.modulosSueltos.imagen-pagina.srcExterno",
+        "bloques.filas.columnas.modulos.imagen-pagina.srcExterno"
+      ],
+      "valores": 1,
+      "unidad": "valores de la HOJA en toda la colección — no por ruta"
+    }
+  ],
   "porCanal": [
     {
       "coleccion": "productos",
@@ -284,6 +423,30 @@
       "guarda": "seed",
       "refs": 12,
       "rutas": 12,
+      "ausentes": []
+    },
+    {
+      "coleccion": "paginas",
+      "canal": "bloques.filas.columnas.modulos.src",
+      "guarda": "seed",
+      "refs": 43,
+      "rutas": 43,
+      "ausentes": []
+    },
+    {
+      "coleccion": "paginas",
+      "canal": "bloques.filas.columnas.modulos.imagen",
+      "guarda": "seed",
+      "refs": 17,
+      "rutas": 17,
+      "ausentes": []
+    },
+    {
+      "coleccion": "paginas",
+      "canal": "bloques.filas.columnas.modulos.diapositivas.fondo",
+      "guarda": "seed",
+      "refs": 5,
+      "rutas": 5,
       "ausentes": []
     },
     {
@@ -394,8 +557,8 @@
       "coleccion": "entradas-blog",
       "canal": "imagenDestacada.src",
       "guarda": "seed",
-      "refs": 106,
-      "rutas": 106,
+      "refs": 104,
+      "rutas": 104,
       "ausentes": []
     },
     {
@@ -413,6 +576,10 @@
     "productos": {
       "filas": 19,
       "recorridas": 19
+    },
+    "paginas": {
+      "filas": 31,
+      "recorridas": 31
     },
     "sectores": {
       "filas": 4,

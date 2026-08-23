@@ -385,6 +385,9 @@
       "casos.soluciones",
       "monograficos.cuerpo.filas.columnas.modulos.titulares",
       "monograficos.hero.modulos.paragraphs",
+      "paginas.bloques",
+      "paginas.bloques.filas",
+      "paginas.bloques.modulosSueltos",
       "productos.bullets",
       "productos.cuerpo",
       "productos.cuerpo.titulares"
@@ -396,27 +399,8 @@
     "suficiente": false
   },
   "veredicto": {
-    "verificadas": 79,
-    "huecos": [
-      {
-        "tipo": "vaciaEsAusente",
-        "ruta": "paginas.bloques",
-        "derivado": "ausente en 1 de 31",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "vaciaEsAusente",
-        "ruta": "paginas.bloques.modulosSueltos",
-        "derivado": "ausente en 74 de 76",
-        "declarado": "(nada)"
-      },
-      {
-        "tipo": "vaciaEsAusente",
-        "ruta": "paginas.bloques.filas",
-        "derivado": "ausente en 2 de 76",
-        "declarado": "(nada)"
-      }
-    ],
+    "verificadas": 82,
+    "huecos": [],
     "muertas": [
       {
         "tipo": "vaciaEsAusente",

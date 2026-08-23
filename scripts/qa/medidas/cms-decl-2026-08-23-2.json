@@ -3,7 +3,7 @@
     "fecha": "2026-08-23",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
-    "sabotaje": "sin-forma-de-rel"
+    "sabotaje": null
   },
   "derivado": {
     "formaDeRel": {
@@ -322,6 +322,7 @@
   },
   "declarado": {
     "formaDeRel": {
+      "sectores.soluciones": "objeto",
       "monograficos.soluciones": "objeto",
       "casos.sectores": "objeto",
       "entradas-blog.categorias": "objeto",
@@ -397,15 +398,8 @@
     "suficiente": true
   },
   "veredicto": {
-    "verificadas": 82,
-    "huecos": [
-      {
-        "tipo": "formaDeRel",
-        "ruta": "sectores.soluciones",
-        "derivado": "objeto",
-        "declarado": "(nada)"
-      }
-    ],
+    "verificadas": 83,
+    "huecos": [],
     "muertas": [],
     "sinEjercitar": [
       {
@@ -466,6 +460,6 @@
       "paginas.bloques.modulosSueltos.pines",
       "monograficos.cuerpo.filas.columnas.modulos.filas.celdas"
     ],
-    "ok": false
+    "ok": true
   }
 }

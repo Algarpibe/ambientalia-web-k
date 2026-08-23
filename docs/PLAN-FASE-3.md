@@ -1077,6 +1077,67 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ✅ **ACTUALIZACIÓN 2026-08-23 (98.ª tanda) — `paginas` SEMBRADA: 31 documentos
+> en la DB y round-trip 383/383. Las tres decisiones del propietario, aplicadas
+> y escritas.**
+>
+> **Rutas 382, sin cambio: esta tanda siembra, NO emite.** La emisión (CMS-4 /
+> E1) sigue siendo la siguiente, y con ella la plantilla y la ruta.
+>
+> ### 1 · Las tres decisiones (D1 · D2 · D3), con lo que cada una dejó medido
+>
+> | | qué se decidió | dónde vive | qué quedó |
+> |---|---|---|---|
+> | **D1** | `data-teams` → **T11**, transformación de importación; `ATRIBUTOS_CENSADOS` **NO se amplía** | `ESQUEMA` §3.2d | NO-OP medido **por identidad de bytes**: 1 de 788 ficheros tocado, **787 idénticos**, 6 controles sintéticos |
+> | **D2** | el `<img>` de `upload.wikimedia.org` **se deja ABSOLUTO** | `ESQUEMA` §2j.7 | `imagen-pagina.srcExterno` + `validaOrigenImagen` (exactamente uno). **70 local · 1 externo = 71** |
+> | **D3** | `1_5` **y** `1_6` en la retícula, una migración versionada | `ESQUEMA` §2j.7 | `1_5` ×10 **ejercitado**; `1_6` **SIN EJERCITAR con su denominador** (0 de 313 módulos, 0 de 113 filas) |
+>
+> **La reversa se probó ANTES de sembrar, que es la única ventana en la que la
+> pregunta tiene respuesta** — el `down` hace `src_id SET NOT NULL` y con el
+> documento externo dentro fallaría. `3333 → 3334 → 3333` filas en 80 tablas,
+> con el censo **tabla a tabla idéntico línea a línea**, y 19 migraciones en
+> batch 1 antes y después.
+>
+> ### 2 · Lo que la siembra destapó — 133 diferencias, CUATRO causas, 0 decisiones nuevas
+>
+> La primera corrida del round-trip dio **352 de 383**, y el titular es
+> engañoso: **29 documentos, 4 causas**, ninguna de modelo.
+>
+> | causa | n | de quién |
+> |---|---|---|
+> | la **LLAVE** (`ids.get(slug)` empareja con otro documento) | **53** | instrumento — `paginas` es la 1.ª con `prefijo`: **29 slugs para 31 documentos** |
+> | **lista vacía** `(ausente)` ↔ `[]` | **63** | esquema — faltaban 3 `vaciaEsAusente`, y **`qa:cms-decl` las nombró una a una** |
+> | **`toggle.nivel: 5`** = el defecto escrito explícito | **8** | extractor — `conDefecto` anula lo igual al defecto |
+> | **`piel`** con `defaultValue` **sin** `conDefecto` | **9** | esquema — media pieza del patrón |
+>
+> **Resultado: 383/383 IDÉNTICOS.** Y de paso **uno de los 9 rojos** del censo de
+> negativos (`cms-decl`) cierra por su motivo, no por mantenimiento.
+>
+> ### 3 · Instrumento nuevo: `qa:f33-membresia` (negativo 3/3)
+>
+> **Diferencia simétrica 0 y 0 sobre 31**, con los dos lados nombrados, más los
+> tres huecos de geometría comprobados **sobre lo que la DB devuelve** (0 claves
+> con valor). Su sabotaje `cardinal` **mueve un elemento por lado dejando los
+> cardinales intactos**: sin esa instancia separadora, la sonda sería un `31 ===
+> 31` con otro nombre.
+>
+> ⚠ Y llegó con un defecto propio, cazado por **contradecir una medida buena
+> anterior**: su predicado `hayValor` miraba un solo nivel y contó **299** claves
+> de geometría —Payload devuelve `ritmo` poblado de nulos—. Corregido a
+> recursivo, con un control de 4 casos dentro.
+>
+> ▸ **REGLAS NUEVAS (`CLAUDE.md` §29 y §30), las dos pagadas aquí:**
+> **(29)** *un índice construido para una pregunta no contesta otra — y cuando
+> su llave deja de identificar no da error: empareja mal*;
+> **(30)** *una migración que RELAJA una restricción tiene una reversa con fecha
+> de caducidad: se prueba antes de que entre el dato*.
+>
+> ▸ ⚠ **Y un DÉCIMO rojo, que no es de esta tanda ni de la 97.ª:** `sondeo.neg`
+> llevaba rojo **desde el 2026-08-13** con un `46` cableado, y no se veía porque
+> el tope de `qa:negativos` se agota antes de llegar a su grupo (**47 corridos de
+> 78**). Arreglado **derivando** el denominador, no poniendo el de hoy. Cuántos
+> de los 31 no ejecutados están igual: **SIN MEDIR**.
+
 > ✅ **ACTUALIZACIÓN 2026-08-21 (89.ª tanda) — LA BARRA LATERAL, COMPARADA DE
 > DOS LADOS POR PRIMERA VEZ: Δ0 EN LAS 3 FORMAS QUE LA SIRVEN Y EN LOS 2 ANCHOS.**
 >

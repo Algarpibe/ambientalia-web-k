@@ -56,6 +56,7 @@ import {
   DEVUELVE,
   SCRIPTS_ELIMINADOS,
   comoEmbebido,
+  llaveDocumento,
   podaFrontera,
   podaScripts,
   sonInversas,
@@ -390,14 +391,29 @@ let conDiferencia = 0;
 
 for (const [col, filas] of filasPorColeccion) {
   const cfg = config.collections.find((c) => c.slug === col);
-  const ids = ctx.idsPorColeccion.get(col);
+  /**
+   * ⚠⚠ **`idsPorLlave`, NO `idsPorColeccion` (2026-08-23, 98.ª tanda).**
+   *
+   * Este bucle pregunta *«¿qué FILA le corresponde a este DOCUMENTO?»*, que no
+   * es la pregunta que contesta el índice de relaciones —*«¿a qué id apunta este
+   * SLUG?»*—. Las dos coinciden mientras el slug identifique, y **`paginas` es la
+   * primera colección con prefijo**: 29 slugs distintos para 31 documentos, así
+   * que `ids.get(slug)` devolvía el ÚLTIMO registrado y **2 documentos se
+   * comparaban contra el documento equivocado** — 53 de las 133 diferencias que
+   * salieron al sembrarla (`derivaciones/llave-paginas-f33.log`).
+   *
+   * La llave la deriva `llaveDocumento`, **la misma función que usa la ida al
+   * registrar**: una definición, dos sentidos. Con dos, un mismo olvido en las
+   * dos daría Δ0 en falso.
+   */
+  const ids = ctx.idsPorLlave.get(col);
   let malas = 0;
   for (const fila of filas) {
     const esperado = normalizaEmbebidos(
       cfg.fields,
       podaScripts(podaFrontera((PREPARA[col] ?? ((x) => x))(fila)), `esperado:${col}`),
     );
-    const id = ids?.get(esperado.slug);
+    const id = ids?.get(llaveDocumento(esperado));
     if (id === undefined) {
       ev.fallo(`${col}/${esperado.slug}`, "el seed no registró su id");
       malas++;

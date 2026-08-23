@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-18",
+    "fecha": "2026-08-23",
     "sabotaje": "defecto-compartido",
     "alcance": {
       "comparadas": [
@@ -9,6 +9,7 @@
         "categorias-recursos",
         "categorias-cientificas",
         "productos",
+        "paginas",
         "sectores",
         "monograficos",
         "taxonomia-sectores",
@@ -18,7 +19,7 @@
         "terminos-kunakpedia",
         "documentos-cientificos"
       ],
-      "pares": 352,
+      "pares": 383,
       "fuera": {
         "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
         "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
@@ -48,6 +49,10 @@
     "productos": {
       "documentos": 19,
       "conDiferencia": 0
+    },
+    "paginas": {
+      "documentos": 31,
+      "conDiferencia": 3
     },
     "sectores": {
       "documentos": 4,
@@ -83,6 +88,102 @@
     }
   },
   "diferencias": [
+    {
+      "coleccion": "paginas",
+      "slug": "contacto",
+      "ruta": "bloques[2].modulosSueltos[0].diapositivas[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[1].filas[2].columnas[0].modulos[0].diapositivas[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[1].filas[2].columnas[0].modulos[0].diapositivas[1].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[1].filas[2].columnas[0].modulos[0].diapositivas[2].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[1].filas[2].columnas[0].modulos[0].diapositivas[3].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[1].filas[2].columnas[0].modulos[0].diapositivas[4].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[2].modulosSueltos[0].diapositivas[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "servicio-de-reparacion",
+      "ruta": "bloques[0].filas[1].columnas[0].modulos[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "servicio-de-reparacion",
+      "ruta": "bloques[0].filas[1].columnas[1].modulos[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "servicio-de-reparacion",
+      "ruta": "bloques[0].filas[1].columnas[2].modulos[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "servicio-de-reparacion",
+      "ruta": "bloques[0].filas[1].columnas[3].modulos[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "servicio-de-reparacion",
+      "ruta": "bloques[0].filas[1].columnas[4].modulos[0].nivel",
+      "clase": "FORMA",
+      "esperado": "2",
+      "real": "(ausente)"
+    },
     {
       "coleccion": "monograficos",
       "slug": "monitorizacion-ambiental-y-control-de-olores-en-edar",

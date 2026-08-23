@@ -50,10 +50,16 @@ import { comoEmbebido, DEVUELVE } from "../../packages/cms-config/src/vuelta.mjs
  * usa de denominador, así que el alcance viaja con el dato.
  */
 /**
- * ✅ **LAS 9, desde el 2026-08-04.** Las tres fronteras que pararon el bloque 1
- * están decididas y aplicadas —teaser como dato propio · `seo` medido en el
- * original · T4a antes del alta— así que el alcance es **el catálogo entero**:
- * **46 filas** en 9 colecciones, más las 4 taxonomías derivadas.
+ * ✅ **LAS 9, desde el 2026-08-04** — y **10 desde el 2026-08-23**, con la
+ * vuelta de `paginas` (abajo, con su razón). Las tres fronteras que pararon el
+ * bloque 1 están decididas y aplicadas —teaser como dato propio · `seo` medido
+ * en el original · T4a antes del alta— así que el alcance es **el catálogo
+ * entero**, más las 4 taxonomías derivadas.
+ *
+ * ⚠ **El «46 filas» que ponía aquí era un número RECORDADO** (§regla 9), y con
+ * `paginas` dentro se habría quedado corto en 31 **sin dar error**. El recuento
+ * lo publica el propio `cms:seed` en su línea de catálogos, colección a
+ * colección: se lee de ahí, no de este comentario.
  *
  * El orden **NO es estético y ya no se afirma**: `scripts/seed/grafo.mjs` lo
  * deriva de la config resuelta y `cms:sondeo` verifica que es topológico. Lo que
@@ -61,7 +67,41 @@ import { comoEmbebido, DEVUELVE } from "../../packages/cms-config/src/vuelta.mjs
  */
 export const SEMBRADAS = [
   "productos",
-  /* ⚠⚠ **`paginas` NO ENTRA TODAVÍA — CORTE LIMPIO 2 de la 96.ª tanda.**
+  /* ══════════════════════════════════════════════════════════════════════
+   * ✅ **`paginas` VUELVE, el 2026-08-23 (98.ª tanda) — y con la razón, que es
+   * lo único que hace auditable un alta en esta lista.**
+   *
+   * La 96.ª la sacó porque `campoHtml` rechazaba 12 campos por etiqueta; la
+   * 97.ª midió que esas 5 etiquetas eran **cascarón y consulta, 0 de contenido**
+   * (§2j.6) y el extractor las retira. Pero retirar lo de delante **destapó lo
+   * de detrás**: `validaHtmlCorpus` mira CUATRO canales y devuelve el primero
+   * que falla, así que la 96.ª contestaba *«hay al menos uno»* y nunca
+   * *«hay N»*. Derivados los cuatro (`derivaciones/bloqueos-f33.log`):
+   *
+   *   | canal | comprobados | bloqueos | páginas |
+   *   |---|---|---|---|
+   *   | `validate` (campoHtml) | 196 | **1** | `empresa` |
+   *   | `select`.`options`     | 173 | **10** | `servicio-de-reparacion` |
+   *   | `required` vacío       | 697 | **0** | — |
+   *   | media (`type: upload`) |  93 | **1** | `empresa` |
+   *
+   * **12 bloqueos · 2 páginas de 31 · 3 canales de 4**, y los tres eran
+   * decisiones de MODELO. Las tomó el propietario el 2026-08-22 y la 98.ª las
+   * aplicó:
+   *
+   *   · **D1** — `data-teams` se limpia con **T11**, una transformación de
+   *     importación; `ATRIBUTOS_CENSADOS` NO se amplía (`ESQUEMA` §3.2d);
+   *   · **D2** — el `<img>` de `upload.wikimedia.org` **se deja ABSOLUTO**, y
+   *     el modelo estrena `imagen-pagina.srcExterno` (`ESQUEMA` §2j.7);
+   *   · **D3** — `1_5` y `1_6` en la retícula, en una migración versionada con
+   *     su **reversa probada** antes de sembrar (`ESQUEMA` §2j.7).
+   *
+   * O sea que lo que la sacaba **ya no existe**: los cuatro canales dan 0.
+   * ═══════════════════════════════════════════════════════════════════════ */
+  "paginas",
+  /* ⚠⚠ **`paginas` NO ENTRABA — CORTE LIMPIO 2 de la 96.ª tanda. Se conserva
+   * el enunciado entero: es la evidencia de por qué salió, y la de arriba dice
+   * por qué vuelve.**
    *
    * La colección está registrada, su migración aplicada (18 tablas) y su dato
    * producido y verificado (`cms:extractor-f33`: 31 documentos · 313 módulos ·
@@ -96,8 +136,14 @@ export const SEMBRADAS = [
    * Sacarla de aquí deja el entorno CONSISTENTE para las otras 9 y para todas
    * las sondas que dependen de ellas (§regla 20). Ficha con su lista nombrada:
    * `PENDIENTES-QA.md` §F3-3-CENSO-CAMPO-RICO.
+   *
+   * ⚠ **Y las tres razones de arriba siguen siendo CIERTAS** — no se
+   * derogaron, se contestaron: (1) el contrato de las cinco colecciones NO se
+   * tocó (ni una etiqueta añadida al censo, ni un atributo a
+   * `ATRIBUTOS_CENSADOS`); (2) la whitelist de seguridad sigue igual; (3) y lo
+   * que olía a listado embebido **lo era**, medido — por eso se retira como
+   * CONSULTA en vez de entrar al campo rico.
    */
-  // "paginas",  ← la reactiva la 97.ª, con la decisión del censo tomada
   "sectores",
   "monograficos",
   "taxonomia-sectores",
@@ -137,15 +183,71 @@ const PUBLICO = path.join(APP, "public");
  * CONTEXTO — lo que el walker no puede derivar de la forma
  * ═════════════════════════════════════════════════════════════════════════ */
 
+/**
+ * LA IDENTIDAD DE UN DOCUMENTO — **una definición, dos sentidos.**
+ *
+ * La usan la IDA (`registra`, al sembrar) y el COMPARADOR (`qa:cms-roundtrip`,
+ * al emparejar). Si fueran dos, un mismo olvido en las dos daría Δ0 en falso —
+ * que es lo que `seed.mjs` ya dice de sus tres métodos de vuelta.
+ *
+ * **Se deriva del DOCUMENTO, no de una lista de colecciones prefijadas**: un
+ * `prefijo` no vacío es lo que hace que el slug deje de identificar, y eso lo
+ * dice el dato. Una lista de literales aquí sería §regla 9, 7.º caso — envejece
+ * contra el esquema en silencio, y una colección prefijada nueva entraría por el
+ * hueco sin dar error.
+ *
+ * ⚠ Y el separador es `\0` a propósito: ningún slug ni prefijo puede contenerlo,
+ * así que `{prefijo:"a", slug:"b|c"}` y `{prefijo:"a|b", slug:"c"}` **no
+ * colisionan**. Con `|` sí lo harían, y la colisión sería silenciosa.
+ */
+export const llaveDocumento = (doc) => {
+  const p = doc?.prefijo;
+  return typeof p === "string" && p !== "" ? `${p}\0${doc.slug}` : String(doc?.slug);
+};
+
 export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
   const mediaPorRuta = new Map();
   /** T-canales · lo que el sondeo anota en vez de morir: ruta + CANAL + existencia. */
   const mediaAuditada = [];
   const idsPorColeccion = new Map(); // coleccion → Map(slug → id)
+  /**
+   * ⚠⚠ **EL SEGUNDO MAPA, Y NO ES UNA SEGUNDA DEFINICIÓN DE LO MISMO: SON DOS
+   * PREGUNTAS DISTINTAS (2026-08-23, 98.ª tanda — lo destapó sembrar `paginas`).**
+   *
+   * `idsPorColeccion` contesta *«¿a qué id apunta ESTE SLUG?»* — es el índice de
+   * **RELACIONES**, y por eso su llave es el slug: es lo único que un valor de
+   * `relationship` trae escrito.
+   *
+   * El round-trip preguntaba otra cosa —*«¿qué fila le corresponde a ESTE
+   * DOCUMENTO?»*— y venía tomando prestado el mismo mapa. **Las dos preguntas
+   * coinciden sólo mientras el slug identifique**, y `paginas` es la primera
+   * colección **con prefijo**: mide **29 slugs distintos para 31 documentos**
+   * (`derivaciones/llave-paginas-f33.log`), así que `ids.get(slug)` devuelve el
+   * ÚLTIMO registrado y **2 documentos se comparaban contra el documento
+   * equivocado** — 53 de las 133 diferencias de la primera siembra.
+   *
+   * No se cambia la llave del índice de relaciones (rompería a `rel` y a
+   * `slugPorId` para arreglar a otro consumidor): se registra **también** por
+   * IDENTIDAD, en la misma llamada y desde la misma derivación. Una fuente, dos
+   * preguntas — igual que `formaDeRel` y `centinelas`.
+   */
+  const idsPorLlave = new Map(); // coleccion → Map(llaveDocumento → id)
 
-  const registra = (coleccion, slug, id) => {
+  const registra = (coleccion, slug, id, doc) => {
     if (!idsPorColeccion.has(coleccion)) idsPorColeccion.set(coleccion, new Map());
     idsPorColeccion.get(coleccion).set(slug, id);
+
+    const k = llaveDocumento(doc ?? { slug });
+    if (!idsPorLlave.has(coleccion)) idsPorLlave.set(coleccion, new Map());
+    /* Una identidad repetida NO se pisa en silencio: pisarla es exactamente el
+     * defecto que este mapa existe para cerrar, sólo que una vuelta más abajo. */
+    if (idsPorLlave.get(coleccion).has(k))
+      throw new Error(
+        `LLAVE DE IDENTIDAD REPETIDA: '${k}' ya está registrada en '${coleccion}'.\n` +
+          `  Dos documentos con la misma identidad no se pueden emparejar, y pisar el\n` +
+          `  primero deja al round-trip comparando uno contra el otro sin dar error.`,
+      );
+    idsPorLlave.get(coleccion).set(k, id);
   };
 
   /** `"/images/…"` → id de `media`. Sube el fichero de `apps/web/public`. */
@@ -401,7 +503,7 @@ export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
     CON_KIND.has(`${rutaLimpia(ruta)}\0${slug}`) ? { kind: slug, ...cuerpo } : cuerpo;
 
   return {
-    media, rel, registra, mediaPorRuta, idsPorColeccion, huerfanas, sinLlave, formaDeRel,
+    media, rel, registra, mediaPorRuta, idsPorColeccion, idsPorLlave, huerfanas, sinLlave, formaDeRel,
     rutaDeMedia, deRel, conKind, declaraKinds, declaraProyector,
     centinelaVacio, esCentinela, centinelas,
     /** Sólo en sondeo: el inventario de media POR CANAL, con su existencia. */
@@ -753,7 +855,7 @@ export async function siembra(payload, colecciones) {
        */
       if (cfg.fields.some((f) => f.name === "estado")) data.estado = "publicado";
       const doc = await payload.create({ collection: coleccion, data });
-      ctx.registra(coleccion, data.slug ?? doc.slug, doc.id);
+      ctx.registra(coleccion, data.slug ?? doc.slug, doc.id, data.slug ? data : doc);
       n++;
     }
     resumen.push({ coleccion, insertados: n });

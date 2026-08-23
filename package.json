@@ -80,6 +80,8 @@
     "qa:f33-cmp-neg": "node scripts/qa/f33-cmp.neg.mjs",
     "qa:f33-geo": "node scripts/qa/f33-geo.mjs",
     "qa:f33-geo-neg": "node scripts/qa/f33-geo.neg.mjs",
+    "qa:f33-membresia": "node --env-file=apps/cms/.env scripts/qa/f33-membresia.mjs",
+    "qa:f33-membresia-neg": "node scripts/qa/f33-membresia.neg.mjs",
     "qa:c1": "node scripts/qa/c1-localiza.mjs",
     "qa:d4": "node scripts/qa/d4-pie.mjs",
     "qa:d4-tipo": "node scripts/qa/d4-tipografia.mjs",

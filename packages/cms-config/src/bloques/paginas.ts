@@ -260,16 +260,38 @@ export const MODULO_BOTON_PAGINA: Block = {
   labels: { singular: "Botón", plural: "Botones" },
   fields: [
     ...CAMPOS_MODULO_BOTON,
-    {
-      name: "piel",
-      type: "select",
-      options: [
-        { label: "Por defecto", value: "defecto" },
-        { label: "Azul (boton-azul)", value: "azul" },
-      ],
-      defaultValue: "defecto",
-      admin: { description: "`boton-azul` — 4 de 13 instancias (arbol-f33.log §4)" },
-    },
+    /**
+     * ⚠⚠ **`piel` LLEVABA `defaultValue` SIN LA SEGUNDA MITAD DEL PATRÓN, y lo
+     * destapó la primera siembra (2026-08-23, 98.ª tanda).**
+     *
+     * `conDefecto` no es «poner `defaultValue`»: son **dos mitades**, y la que
+     * faltaba es el `beforeChange` que escribe `null` cuando el valor coincide
+     * con el defecto —*«coincidir con el defecto = no haber escrito»*—. Sin
+     * ella, la DB guardaba `"defecto"` EXPLÍCITO donde el dato medido **omite
+     * la clave**, y el round-trip dio **9 diferencias de FORMA en 3
+     * documentos**: `(ausente)` contra `"defecto"`.
+     *
+     * Es exactamente la forma que el sabotaje `defecto` de `qa:cms-roundtrip`
+     * existe para cazar —*«que la DB devuelva el valor explícito donde el hook
+     * escribió null»*—, sólo que aquí **no había hook que lo escribiera**. Un
+     * `defaultValue` suelto no da error: da un valor plausible en la fila.
+     *
+     * Y `conDefecto` además **impide el caso que lo haría inútil**: tira si el
+     * campo es `required`, porque un defecto que no se puede omitir no
+     * distingue «el editor lo eligió» de «nadie lo tocó».
+     */
+    conDefecto(
+      {
+        name: "piel",
+        type: "select",
+        options: [
+          { label: "Por defecto", value: "defecto" },
+          { label: "Azul (boton-azul)", value: "azul" },
+        ],
+      } as Field,
+      "defecto",
+      "`boton-azul` — 4 de 13 instancias (arbol-f33.log §4); las otras 9 no llevan piel",
+    ),
     ...moduloBasePagina,
   ],
 };
@@ -728,10 +750,36 @@ export const CAMPOS_FILA_PAGINA: Field[] = [
  * esta tanda** — se paga a cambio de no partir la cola larga en dos colecciones
  * que R1 no sostiene.
  */
+/**
+ * ⚠⚠ **LAS TRES LISTAS DE ESTE ARQUETIPO SON `vaciaEsAusente`, Y LA
+ * DECLARACIÓN SE DERIVÓ — NO SE ELIGIÓ (2026-08-23, 98.ª tanda).**
+ *
+ * §7e: *una lista vuelve como `[]` **salvo** que el campo declare que el dato
+ * medido OMITE la clave cuando está vacía*. El discriminador **no se elige**:
+ * lo deriva `qa:cms-decl` de la ida, que es lo único que puede saberlo — en la
+ * DB las dos preimágenes son el mismo `[]`.
+ *
+ * Lo destapó la PRIMERA siembra de `paginas`: el round-trip dio **352 de 383**,
+ * y de las **133 diferencias** de esta colección, **63 eran exactamente esto**
+ * —`(ausente)` contra `[]`— en **26 documentos**. `qa:cms-decl` las nombró una
+ * a una con su denominador, y son estas tres:
+ *
+ * | ruta | por qué el dato la omite |
+ * |---|---|
+ * | `paginas.bloques` | **2 páginas** de régimen `--` sirven su cuerpo por `cuerpoClasico` y no tienen ni una sección propia (§2j.1) |
+ * | `paginas.bloques.filas` | una sección puede traer **sólo** `modulosSueltos` (los 2 `fullwidth_slider` cuelgan de la sección sin fila) |
+ * | `paginas.bloques.modulosSueltos` | y al revés: **casi todas** las secciones son sólo filas |
+ *
+ * **Y el defecto sigue puesto en la dirección que grita** (§7e): no declarar
+ * una lista omitible hace fallar el round-trip **por FORMA en el acto**;
+ * declarar de más sale por `PODA MUERTA` en `cms-decl`. El olvido contrario —el
+ * que no falla nada— es el que mata el render delante del editor.
+ */
 export const bloquesPagina: Field = {
   name: "bloques",
   type: "array",
   required: false,
+  custom: { vaciaEsAusente: true },
   fields: [
     medida("pt", "SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)"),
     medida("pb", "SIN PROBAR — ídem"),
@@ -740,10 +788,10 @@ export const bloquesPagina: Field = {
       type: "blocks",
       blocks: MODULOS_PAGINA,
       required: false,
-      custom: { conKind: true },
+      custom: { conKind: true, vaciaEsAusente: true },
       admin: { description: "Módulos *fullwidth* que cuelgan de la sección sin fila. 2 medidos en 32 páginas." },
     },
-    { name: "filas", type: "array", required: false, fields: CAMPOS_FILA_PAGINA },
+    { name: "filas", type: "array", required: false, custom: { vaciaEsAusente: true }, fields: CAMPOS_FILA_PAGINA },
   ],
   validate: validaReticulaPagina,
 } as Field;

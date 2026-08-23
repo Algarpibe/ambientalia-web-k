@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-18",
+    "fecha": "2026-08-23",
     "sabotaje": "defecto",
     "alcance": {
       "comparadas": [
@@ -9,6 +9,7 @@
         "categorias-recursos",
         "categorias-cientificas",
         "productos",
+        "paginas",
         "sectores",
         "monograficos",
         "taxonomia-sectores",
@@ -18,7 +19,7 @@
         "terminos-kunakpedia",
         "documentos-cientificos"
       ],
-      "pares": 352,
+      "pares": 383,
       "fuera": {
         "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
         "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
@@ -48,6 +49,10 @@
     "productos": {
       "documentos": 19,
       "conDiferencia": 19
+    },
+    "paginas": {
+      "documentos": 31,
+      "conDiferencia": 0
     },
     "sectores": {
       "documentos": 4,

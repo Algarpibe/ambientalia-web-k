@@ -70,7 +70,9 @@ const ctxIda = creaContexto(payload);
   for (const m of docs) if (m.rutaOrigen) ctxIda.mediaPorRuta.set(m.rutaOrigen, m.id);
   for (const col of COLECCIONES) {
     const { docs: d } = await payload.find({ collection: col, pagination: false, depth: 0 });
-    for (const x of d) ctxIda.registra(col, x.slug ?? x.id, x.id);
+    /* El 4.º argumento es EL DOCUMENTO — el índice de IDENTIDAD lo necesita
+     * para las colecciones con `prefijo` (§regla 29). */
+    for (const x of d) ctxIda.registra(col, x.slug ?? x.id, x.id, x);
   }
   const { CATALOGOS, cargaCatalogos } = await import("../seed/catalogos.mjs");
   const { aPayload } = await import("../../packages/cms-config/src/mapeo.mjs");

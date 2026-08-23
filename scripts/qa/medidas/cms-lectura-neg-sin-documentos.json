@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-06",
+    "fecha": "2026-08-23",
     "pregunta": "¿proyecta el contexto del RENDER (declaraciones de la config) lo mismo que el de la IDA (mapas que la ida llenó)?",
     "fuente": "los mismos documentos de la misma DB, con `depth: 1`, por el mismo walker",
     "noPrueba": "que la proyección sea fiel al dato medido — eso es `qa:cms-roundtrip`. Prueba que el camino del render no pierde nada respecto del verificado.",
@@ -8,12 +8,17 @@
   },
   "contrato": {
     "evaluadas": 0,
-    "minimo": 63,
+    "minimo": 384,
     "suficiente": false
   },
   "porColeccion": {
     "productos": {
-      "documentos": 9,
+      "documentos": 19,
+      "comparados": 0,
+      "distintos": 0
+    },
+    "paginas": {
+      "documentos": 31,
       "comparados": 0,
       "distintos": 0
     },
@@ -33,42 +38,42 @@
       "distintos": 0
     },
     "casos": {
-      "documentos": 4,
+      "documentos": 57,
       "comparados": 0,
       "distintos": 0
     },
     "faqs": {
-      "documentos": 2,
+      "documentos": 19,
       "comparados": 0,
       "distintos": 0
     },
     "entradas-blog": {
-      "documentos": 7,
+      "documentos": 152,
       "comparados": 0,
       "distintos": 0
     },
     "terminos-kunakpedia": {
-      "documentos": 3,
+      "documentos": 37,
       "comparados": 0,
       "distintos": 0
     },
     "documentos-cientificos": {
-      "documentos": 4,
+      "documentos": 23,
       "comparados": 0,
       "distintos": 0
     },
     "categorias": {
-      "documentos": 3,
+      "documentos": 4,
       "comparados": 0,
       "distintos": 0
     },
     "etiquetas": {
-      "documentos": 8,
+      "documentos": 12,
       "comparados": 0,
       "distintos": 0
     },
     "categorias-recursos": {
-      "documentos": 3,
+      "documentos": 10,
       "comparados": 0,
       "distintos": 0
     },

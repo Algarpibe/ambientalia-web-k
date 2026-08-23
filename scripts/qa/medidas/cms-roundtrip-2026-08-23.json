@@ -1,0 +1,1156 @@
+{
+  "meta": {
+    "fecha": "2026-08-23",
+    "sabotaje": null,
+    "alcance": {
+      "comparadas": [
+        "categorias",
+        "etiquetas",
+        "categorias-recursos",
+        "categorias-cientificas",
+        "productos",
+        "paginas",
+        "sectores",
+        "monograficos",
+        "taxonomia-sectores",
+        "casos",
+        "faqs",
+        "entradas-blog",
+        "terminos-kunakpedia",
+        "documentos-cientificos"
+      ],
+      "pares": 383,
+      "fuera": {
+        "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
+        "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+        "usuarios": "infraestructura (CMS-0f), sin lado medido",
+        "slugs": "registro del plano (§4): lo escriben los hooks, no un seed"
+      },
+      "rutasEnFrontera": []
+    }
+  },
+  "porColeccion": {
+    "categorias": {
+      "documentos": 4,
+      "conDiferencia": 0
+    },
+    "etiquetas": {
+      "documentos": 12,
+      "conDiferencia": 0
+    },
+    "categorias-recursos": {
+      "documentos": 9,
+      "conDiferencia": 0
+    },
+    "categorias-cientificas": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "productos": {
+      "documentos": 19,
+      "conDiferencia": 0
+    },
+    "paginas": {
+      "documentos": 31,
+      "conDiferencia": 31
+    },
+    "sectores": {
+      "documentos": 4,
+      "conDiferencia": 0
+    },
+    "monograficos": {
+      "documentos": 2,
+      "conDiferencia": 0
+    },
+    "taxonomia-sectores": {
+      "documentos": 11,
+      "conDiferencia": 0
+    },
+    "casos": {
+      "documentos": 57,
+      "conDiferencia": 0
+    },
+    "faqs": {
+      "documentos": 19,
+      "conDiferencia": 0
+    },
+    "entradas-blog": {
+      "documentos": 152,
+      "conDiferencia": 0
+    },
+    "terminos-kunakpedia": {
+      "documentos": 37,
+      "conDiferencia": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 23,
+      "conDiferencia": 0
+    }
+  },
+  "diferencias": [
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air-cloud",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[1].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air-cloud",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[2].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air-cloud",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air-cloud",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air-cloud",
+      "ruta": "bloques[2].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air-cloud",
+      "ruta": "bloques[3].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air-cloud",
+      "ruta": "bloques[4].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[1].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[2].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[2].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[3].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[4].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[5].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunak-air",
+      "ruta": "bloques[6].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "prefijo",
+      "clase": "VALOR",
+      "esperado": "\"centro-de-ayuda/kunak-air\"",
+      "real": "\"soporte/centro-de-ayuda/kunak-air-cloud\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "titulo",
+      "clase": "VALOR",
+      "esperado": "\"AIR Pro\"",
+      "real": "\"AIR Cloud\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[0].html",
+      "clase": "VALOR",
+      "esperado": "\"<h1>AIR Pro</h1>\"",
+      "real": "\"<h1>AIR Cloud</h1>\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[1].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[1].cuerpo",
+      "clase": "VALOR",
+      "esperado": "\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-ai…",
+      "real": "\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-de-ayuda/…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "bloques[0].filas[0].columnas[1].modulos[0].src",
+      "clase": "VALOR",
+      "esperado": "\"/images/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled.jpg\"",
+      "real": "\"/images/uploads/2023/01/air-cloud.jpg\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "bloques[0].filas[0].columnas[1].modulos[0].alt",
+      "clase": "VALOR",
+      "esperado": "\"Kunak AIR Pro\"",
+      "real": "\"Kunak AIR Cloud\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "prefijo",
+      "clase": "VALOR",
+      "esperado": "\"centro-de-ayuda/kunak-air\"",
+      "real": "\"soporte/centro-de-ayuda/kunak-air-cloud\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques",
+      "clase": "LONGITUD",
+      "esperado": "7 ítems",
+      "real": "5 ítems"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas",
+      "clase": "LONGITUD",
+      "esperado": "9 ítems",
+      "real": "7 ítems"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[1].columnas[0].modulos[0].html",
+      "clase": "VALOR",
+      "esperado": "\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"",
+      "real": "\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales</p>\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[2].columnas[0].modulos[0].html",
+      "clase": "VALOR",
+      "esperado": "\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"#verificacion-previa-a-una-instalacion\\\">Verific…",
+      "real": "\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"#introduccion-a-kunak-cloud\\\">Introducción a Kun…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[3].columnas[0].modulos[0].html",
+      "clase": "VALOR",
+      "esperado": "\"<h3>Verificación previa a una instalación</h3>\"",
+      "real": "\"<h3>Introducción a Kunak AIR Cloud</h3>\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[3].columnas[0].modulos[1].src",
+      "clase": "VALOR",
+      "esperado": "\"/images/uploads/2023/02/Video-Checking-before-deployment.jpg\"",
+      "real": "\"/images/uploads/2023/02/Video-introduction-to-Kunak-Cloud.jpg\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[3].columnas[0].modulos[1].alt",
+      "clase": "VALOR",
+      "esperado": "\"Checking before deployment\"",
+      "real": "\"Introduction to Kunak AIR Cloud\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[3].columnas[0].modulos[1].href",
+      "clase": "VALOR",
+      "esperado": "\"#verificacion-previa-a-una-instalacion-popup\"",
+      "real": "\"#introduccion-a-kunak-cloud-popup\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[4].columnas[0].modulos[0].html",
+      "clase": "VALOR",
+      "esperado": "\"<h3>Instalación</h3>\"",
+      "real": "\"<h3>Panel de control del índice de calidad del aire (AQI)</h3>\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[4].columnas[0].modulos[1].src",
+      "clase": "VALOR",
+      "esperado": "\"/images/uploads/2023/02/Video-installation-1.jpg\"",
+      "real": "\"/images/uploads/2023/02/Video-air-quality-index-control-panel-aqi.jpg\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[4].columnas[0].modulos[1].alt",
+      "clase": "VALOR",
+      "esperado": "\"Installation\"",
+      "real": "\"Air Quality Index control panel (AQI)\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[4].columnas[0].modulos[1].href",
+      "clase": "VALOR",
+      "esperado": "\"#instalacion-popup\"",
+      "real": "\"#panel-de-control-del-indice-de-calidad-del-aire-popup\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[5].columnas[0].modulos[0].html",
+      "clase": "VALOR",
+      "esperado": "\"<h3>Colocación del panel solar</h3>\"",
+      "real": "\"<h3>Herramienta de calibración de gases</h3>\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[5].columnas[0].modulos[1].src",
+      "clase": "VALOR",
+      "esperado": "\"/images/uploads/2023/02/Video-solar-panel-installation.jpg\"",
+      "real": "\"/images/uploads/2023/02/Video-gas-calibration-tool.jpg\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[5].columnas[0].modulos[1].alt",
+      "clase": "VALOR",
+      "esperado": "\"Solar panel installation\"",
+      "real": "\"Gas calibration tool\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[5].columnas[0].modulos[1].href",
+      "clase": "VALOR",
+      "esperado": "\"#colocacion-del-panel-solar-popup\"",
+      "real": "\"#herramienta-de-calibracion-de-gases-popup\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[6].columnas[0].modulos[0].html",
+      "clase": "VALOR",
+      "esperado": "\"<h3>Instalación de una sonda</h3>\"",
+      "real": "\"<h3>Administración de las cuentas y dispositivos</h3>\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[6].columnas[0].modulos[1].src",
+      "clase": "VALOR",
+      "esperado": "\"/images/uploads/2023/02/Video-installation-of-a-probe.jpg\"",
+      "real": "\"/images/uploads/2023/02/Video-account-and-device-management.jpg\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[6].columnas[0].modulos[1].alt",
+      "clase": "VALOR",
+      "esperado": "\"Installation of a probe\"",
+      "real": "\"Account and device management\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[6].columnas[0].modulos[1].href",
+      "clase": "VALOR",
+      "esperado": "\"#instalacion-de-una-sonda-popup\"",
+      "real": "\"#administracion-de-las-cuentas-y-dispositivos-popup\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[7]",
+      "clase": "FORMA",
+      "esperado": "{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h3>Sustitución d…",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].filas[8]",
+      "clase": "FORMA",
+      "esperado": "{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h3>Almacenamient…",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[1].filas[0].columnas[0].modulos[0].embedUrl",
+      "clase": "VALOR",
+      "esperado": "\"https://www.youtube.com/embed/FLeB5LEEHTE?feature=oembed\"",
+      "real": "\"https://www.youtube.com/embed/XZTQYQF-bT0?feature=oembed\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[1].filas[0].columnas[0].modulos[0].titulo",
+      "clase": "VALOR",
+      "esperado": "\"Kunak AIR Pro - Verificación previa\"",
+      "real": "\"Kunak Cloud - Introduction\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[2].filas[0].columnas[0].modulos[0].embedUrl",
+      "clase": "VALOR",
+      "esperado": "\"https://www.youtube.com/embed/2xwd9LDn2uI?feature=oembed\"",
+      "real": "\"https://www.youtube.com/embed/thQWMyR2Tyg?feature=oembed\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[2].filas[0].columnas[0].modulos[0].titulo",
+      "clase": "VALOR",
+      "esperado": "\"Kunak AIR Pro - Instalación\"",
+      "real": "\"Kunak Cloud - AQI Dashboard\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[2].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[3].filas[0].columnas[0].modulos[0].embedUrl",
+      "clase": "VALOR",
+      "esperado": "\"https://www.youtube.com/embed/sO0otqYue1A?feature=oembed\"",
+      "real": "\"https://www.youtube.com/embed/7y_YPXNL3F8?feature=oembed\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[3].filas[0].columnas[0].modulos[0].titulo",
+      "clase": "VALOR",
+      "esperado": "\"Kunak Air Pro - Colocación panel solar\"",
+      "real": "\"Kunak Cloud - Gas Calibration\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[3].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[4].filas[0].columnas[0].modulos[0].embedUrl",
+      "clase": "VALOR",
+      "esperado": "\"https://www.youtube.com/embed/dbEFWNgJyR0?feature=oembed\"",
+      "real": "\"https://www.youtube.com/embed/f-9hHRoG044?feature=oembed\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[4].filas[0].columnas[0].modulos[0].titulo",
+      "clase": "VALOR",
+      "esperado": "\"Kunak Air Pro - Instalación de una sonda\"",
+      "real": "\"Kunak Cloud - Account Admin\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[4].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[5]",
+      "clase": "FORMA",
+      "esperado": "{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"video-pagina\",\"embedUrl\":\"htt…",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[6]",
+      "clase": "FORMA",
+      "esperado": "{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"video-pagina\",\"embedUrl\":\"htt…",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[0].filas[1].columnas[0].modulos[2].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[0].filas[1].columnas[0].modulos[3].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[0].filas[1].columnas[0].modulos[4].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[0].filas[1].columnas[1].modulos[2].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[0].filas[1].columnas[1].modulos[3].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[0].filas[1].columnas[1].modulos[4].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[2].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[3].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[4].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[5].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[6].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[7].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[8].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[9].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "centro-de-ayuda",
+      "ruta": "bloques[10].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[1].nivel",
+      "clase": "FORMA",
+      "esperado": "5",
+      "real": "(ausente)"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "articulos-de-ayuda",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[2].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[3].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "video-tutoriales",
+      "ruta": "bloques[4].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "productos",
+      "ruta": "bloques[0].filas[2].columnas[0].modulos[2].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "productos",
+      "ruta": "bloques[0].filas[2].columnas[1].modulos[2].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "productos",
+      "ruta": "bloques[0].filas[2].columnas[2].modulos[2].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "productos",
+      "ruta": "bloques[0].filas[3].columnas[0].modulos[2].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "productos",
+      "ruta": "bloques[0].filas[3].columnas[1].modulos[2].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "productos",
+      "ruta": "bloques[0].filas[3].columnas[2].modulos[2].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "productos",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "sectores",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "sectores",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "recursos",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "recursos",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "recursos",
+      "ruta": "bloques[2].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "kunakpedia",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "documentos-cientificos",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "documentos-cientificos",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "preguntas-frecuentes",
+      "ruta": "bloques[0].filas[0].columnas[1].modulos[1].piel",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"defecto\""
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "preguntas-frecuentes",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "aviso-legal",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "contacto",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "contacto",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "contacto",
+      "ruta": "bloques[2].filas",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "contacto",
+      "ruta": "bloques[3].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "descarga-catalogo",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[1].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[2].filas",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[3].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[4].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[5].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[6].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[7].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[8].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "empresa",
+      "ruta": "bloques[9].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "premios-y-reconocimientos",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-industria",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-obras",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "newsletter",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-privacidad-y-de-proteccion-de-datos",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-seguridad-de-la-informacion",
+      "ruta": "bloques",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "sistema-interno-de-informacion",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "soporte",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "servicio-de-reparacion",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "suscribete",
+      "ruta": "bloques[0].modulosSueltos",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    }
+  ]
+}

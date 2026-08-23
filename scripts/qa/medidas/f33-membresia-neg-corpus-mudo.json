@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "fecha": "2026-08-23",
+    "sonda": "f33-membresia",
+    "pregunta": "¿las filas de `paginas` son LOS MISMOS documentos que produjo `cms:extractor-f33`?",
+    "fuente": "medidas/f33-extraido.json (canónica) + la colección `paginas` de la DB",
+    "llave": "`prefijo|slug` — `paginas` es una colección con prefijo, así que el slug suelto NO identifica",
+    "sabotaje": "corpus-mudo",
+    "noCubre": [
+      "el CONTENIDO de cada documento campo a campo: eso lo mide `qa:cms-roundtrip` (ida y vuelta)",
+      "la GEOMETRÍA del clon contra el original: sigue en 0 ejes comparados (`qa:f33-cmp`)",
+      "las rutas EMITIDAS: `paginas` todavía no tiene plantilla ni ruta (CMS-4/E1, otra tanda)"
+    ]
+  },
+  "membresia": {
+    "enElExtraido": 0,
+    "enLaDb": 31,
+    "soloEnElExtraido": [],
+    "soloEnLaDb": [
+      "centro-de-ayuda/kunak-air|articulos-de-ayuda",
+      "centro-de-ayuda/kunak-air|video-tutoriales",
+      "centro-de-ayuda|kunak-air",
+      "centro-de-ayuda|kunak-air-cloud",
+      "empresa|premios-y-reconocimientos",
+      "recursos|documentos-cientificos",
+      "recursos|kunakpedia",
+      "recursos|preguntas-frecuentes",
+      "soporte/centro-de-ayuda/kunak-air-cloud|articulos-de-ayuda",
+      "soporte/centro-de-ayuda/kunak-air-cloud|video-tutoriales",
+      "soporte|centro-de-ayuda",
+      "soporte|servicio-de-reparacion",
+      "|aviso-legal",
+      "|contacto",
+      "|descarga-catalogo",
+      "|empresa",
+      "|informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
+      "|informe-tecnico-control-de-la-calidad-del-aire-en-industria",
+      "|informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
+      "|informe-tecnico-control-de-la-calidad-del-aire-en-obras",
+      "|informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
+      "|newsletter",
+      "|politica-de-cookies",
+      "|politica-de-privacidad-y-de-proteccion-de-datos",
+      "|politica-de-seguridad-de-la-informacion",
+      "|productos",
+      "|recursos",
+      "|sectores",
+      "|sistema-interno-de-informacion",
+      "|soporte",
+      "|suscribete"
+    ],
+    "diferenciaSimetrica": 31
+  },
+  "geometria": {
+    "clavesConValor": 0,
+    "detalle": []
+  },
+  "decisiones": {
+    "d1": {
+      "dataTeamsEnLaDb": 0
+    },
+    "d2": {
+      "imagenes": 71,
+      "conSrcLocal": 70,
+      "conSrcExterno": 1
+    },
+    "d3": {
+      "repartoDeAncho": {
+        "4_4": 52,
+        "1_2": 48,
+        "1_5": 10,
+        "1_3": 38,
+        "2_3": 17,
+        "1_4": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+═══ llave-paginas-f33 · ¿el slug SUELTO identifica un documento de `paginas`?
+
+  documentos en el extraído                31
+  llaves distintas por SLUG                29
+  llaves distintas por PREFIJO|SLUG        31
+  slugs REPETIDOS                          2
+  documentos que arrastran                 4
+
+  uno a uno — el mismo slug en rutas distintas:
+     articulos-de-ayuda         prefijo="centro-de-ayuda/kunak-air"
+     articulos-de-ayuda         prefijo="soporte/centro-de-ayuda/kunak-air-cloud"
+     video-tutoriales           prefijo="centro-de-ayuda/kunak-air"
+     video-tutoriales           prefijo="soporte/centro-de-ayuda/kunak-air-cloud"
+
+  ── el reparto por prefijo (por qué se repiten) ──
+      19  (sin prefijo — plano de raíz)
+       2  centro-de-ayuda
+       2  centro-de-ayuda/kunak-air
+       1  empresa
+       3  recursos
+       2  soporte
+       2  soporte/centro-de-ayuda/kunak-air-cloud
+
+  ── control · ¿es `paginas` un caso especial, o le pasa a más? ──
+     `paginas` es la ÚNICA colección de SEMBRADAS con `prefijo` como campo,
+     así que es la única en la que el slug suelto puede repetirse. Las demás
+     viven en un plano donde su CPT garantiza unicidad dentro de sí.
+     Comprobado sobre el propio dato: en las otras 9, un slug = un documento.
+
+  ── veredicto ──
+     ✓ el slug suelto NO identifica: 2 slug(s) con más de un documento,
+       4 documentos implicados. `ids.get(slug)` devuelve el ÚLTIMO registrado,
+       así que 2 documento(s) se comparan contra el documento equivocado.
+     ✓ con la llave `prefijo|slug`: 31 llaves para 31 documentos
+
+✅ llave-paginas-f33: 2 slugs repetidos · 4 documentos · 29 llaves por slug contra 31 por prefijo|slug
+   ⚠ Y lo que esto NO dice: si además hay diferencias REALES de contenido en las 31.
+     El emparejamiento equivocado las tapa por construcción — sólo se ven con la
+     llave arreglada, y hasta entonces «31 con diferencia» es un número del
+     INSTRUMENTO, no del dato.

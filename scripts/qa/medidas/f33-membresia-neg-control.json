@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "fecha": "2026-08-23",
+    "sonda": "f33-membresia",
+    "pregunta": "¿las filas de `paginas` son LOS MISMOS documentos que produjo `cms:extractor-f33`?",
+    "fuente": "medidas/f33-extraido.json (canónica) + la colección `paginas` de la DB",
+    "llave": "`prefijo|slug` — `paginas` es una colección con prefijo, así que el slug suelto NO identifica",
+    "sabotaje": null,
+    "noCubre": [
+      "el CONTENIDO de cada documento campo a campo: eso lo mide `qa:cms-roundtrip` (ida y vuelta)",
+      "la GEOMETRÍA del clon contra el original: sigue en 0 ejes comparados (`qa:f33-cmp`)",
+      "las rutas EMITIDAS: `paginas` todavía no tiene plantilla ni ruta (CMS-4/E1, otra tanda)"
+    ]
+  },
+  "membresia": {
+    "enElExtraido": 31,
+    "enLaDb": 31,
+    "soloEnElExtraido": [],
+    "soloEnLaDb": [],
+    "diferenciaSimetrica": 0
+  },
+  "geometria": {
+    "clavesConValor": 0,
+    "detalle": []
+  },
+  "decisiones": {
+    "d1": {
+      "dataTeamsEnLaDb": 0
+    },
+    "d2": {
+      "imagenes": 71,
+      "conSrcLocal": 70,
+      "conSrcExterno": 1
+    },
+    "d3": {
+      "repartoDeAncho": {
+        "4_4": 52,
+        "1_2": 48,
+        "1_5": 10,
+        "1_3": 38,
+        "2_3": 17,
+        "1_4": 4
+      }
+    }
+  }
+}

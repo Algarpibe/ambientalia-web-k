@@ -221,10 +221,16 @@ ctx.media = async () => (ANULADOS.media.llamadas++, 0);
 
 /* Se registran TODOS los slugs de TODAS las colecciones primero: así lo que
  * quede huérfano es «no existe en `src/lib`», no «aún no lo he insertado». */
-for (const [col, filas] of taxonomias) for (const f of filas) ctx.registra(col, f.slug, 1);
+/* ⚠ El 4.º argumento es EL DOCUMENTO, y hace falta desde que existe una
+ * colección con `prefijo`: `registra` indexa además por IDENTIDAD y con sólo el
+ * slug dos páginas de la misma familia colisionarían — que es justo lo que ese
+ * índice existe para no dejar pasar (§regla 29). */
+for (const [col, filas] of taxonomias) for (const f of filas) ctx.registra(col, f.slug, 1, f);
 for (const c of CATALOGOS)
-  for (const f of catalogos.get(c.coleccion))
-    ctx.registra(c.coleccion, (PREPARA[c.coleccion] ? PREPARA[c.coleccion](f) : f).slug, 1);
+  for (const f of catalogos.get(c.coleccion)) {
+    const d = PREPARA[c.coleccion] ? PREPARA[c.coleccion](f) : f;
+    ctx.registra(c.coleccion, d.slug, 1, d);
+  }
 
 const porColeccion = new Map();
 const erroresDeMapeo = [];

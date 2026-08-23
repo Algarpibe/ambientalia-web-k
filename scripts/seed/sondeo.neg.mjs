@@ -107,6 +107,53 @@ for (const c of dianasPerdidas) {
   } else console.log(`  ○  SABOTAJE=${c.sabotaje.padEnd(6)} (${seg}s)  SIN DIANA declarado — ${c.porQue}`);
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ EL DENOMINADOR DEL CONTROL SE **DERIVA**, Y AQUÍ ESTABA CABLEADO
+ * (corregido 2026-08-23, 98.ª tanda — §regla 5ter)
+ *
+ * Ponía `/evaluadas 46\/46 filas de catálogo/`, escrito el **2026-08-04**,
+ * cuando `SEMBRADAS` tenía de verdad 46 filas. Desde entonces los catálogos
+ * crecieron —`casos` y `faqs` cambiaron de fuente el 2026-08-13 (4→57 y 2→19),
+ * y el resto con ellos—, así que el control llevaba **rojo desde entonces** y
+ * **nadie lo vio**: `sondeo.neg` está en el grupo `conDb`, y la corrida completa
+ * de `qa:negativos` se agota antes de llegar (47 corridos de 78 censados).
+ *
+ * ⚠ **Y no se arregla poniendo el número de hoy.** Eso sería *«un caso que pasa
+ * a verde AJUSTANDO su expectativa al valor de hoy»* (§regla 21): volvería a
+ * envejecer en la primera tanda que siembre algo. Se deriva **de la misma
+ * fuente que la sonda usa para declarar su mínimo** —`CATALOGOS` +
+ * `cargaCatalogos()`—, que es literalmente lo que §regla 5ter pide: *el valor
+ * que un control escribe se DERIVA de la fuente que lo declara, nunca se
+ * cablea; y si no se puede derivar, la sonda TIRA en vez de suponer*.
+ *
+ * ⚠ Y se comprueba el par entero, no sólo el denominador: `N/M` con `N !== M`
+ * es «no se midió todo» y sale rojo igual (§regla 22 — el cardinal al lado del
+ * booleano).
+ * ═════════════════════════════════════════════════════════════════════════ */
+const { CATALOGOS, cargaCatalogos } = await import("./catalogos.mjs");
+const FILAS_ESPERADAS = await (async () => {
+  const c = await cargaCatalogos();
+  const n = CATALOGOS.reduce((a, x) => a + (c.get(x.coleccion)?.length ?? 0), 0);
+  if (!n)
+    throw new Error(
+      "DENOMINADOR NO DERIVABLE: los catálogos suman 0 filas.\n" +
+        "  Eso no es «el control no tiene qué comprobar»: es que no se pudo derivar,\n" +
+        "  y las dos cosas no pueden dar la misma salida (§regla 6).",
+    );
+  return n;
+})();
+
+/** `null` si la línea de unidades está y cuadra; el motivo si no. */
+function malUnidades(salida) {
+  const m = /evaluadas (\d+)\/(\d+) filas de catálogo/.exec(salida);
+  if (!m) return "sin la línea de unidades evaluadas";
+  const [, n, total] = m.map(Number);
+  if (n !== total) return `evaluó ${n} de ${total}: no midió todo lo que declara`;
+  if (total !== FILAS_ESPERADAS)
+    return `declara ${total} filas y los catálogos suman ${FILAS_ESPERADAS} — el denominador no sale de la fuente`;
+  return null;
+}
+
 /* ── EL CONTROL, que es lo que decide si los tres de arriba significan algo.
  *    Sin él, una sonda que fallara SIEMPRE los pasaría los tres — y la lección
  *    de F2-1 §5 se pagó justo por no tenerlo. ─────────────────────────────── */
@@ -118,12 +165,14 @@ if (ctl.status !== 0) {
 } else if (!/0 defecto\(s\) de INSTRUMENTO/.test(ctlOut)) {
   fallos++;
   console.log(`  ❌ CONTROL          exit 0 pero sin la línea de 0 defectos de instrumento`);
-} else if (!/evaluadas 46\/46 filas de catálogo/.test(ctlOut)) {
+} else if (!malUnidades(ctlOut)) {
+  console.log(`  ✓  CONTROL         (sin sabotaje) exit 0 con sus ${FILAS_ESPERADAS} filas — la sonda no falla siempre`);
+} else {
   /* La línea de unidades es la mitad legible del contrato: un verde sin ella no
    * distingue «no hay defectos» de «no se midió». */
   fallos++;
-  console.log(`  ❌ CONTROL          exit 0 pero sin la línea de unidades evaluadas`);
-} else console.log(`  ✓  CONTROL         (sin sabotaje) exit 0 con sus 46 filas — la sonda no falla siempre`);
+  console.log(`  ❌ CONTROL          exit 0 pero ${malUnidades(ctlOut)}`);
+}
 
 const total = dianasPerdidas.length + 1;
 console.log(

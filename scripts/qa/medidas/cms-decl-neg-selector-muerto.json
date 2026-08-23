@@ -76,6 +76,9 @@
       "casos.soluciones",
       "monograficos.cuerpo.filas.columnas.modulos.titulares",
       "monograficos.hero.modulos.paragraphs",
+      "paginas.bloques",
+      "paginas.bloques.filas",
+      "paginas.bloques.modulosSueltos",
       "productos.cuerpo",
       "productos.cuerpo.titulares"
     ]
