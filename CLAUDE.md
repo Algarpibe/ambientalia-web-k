@@ -2467,6 +2467,28 @@ el sitio por el que escriben todas. Test en negativo: **`npm run qa:lib`**.
 > De un **borrado manual** —o de un `rm` para «dejar sitio», o de un `git
 > checkout` distraído— no protege nada excepto que el fichero ya esté en git.
 
+⚠ **Y EL BORRADOR NO SIEMPRE ES UNA MANO: UN NEGATIVO QUE FALLA SE LLEVA LA
+CONGELADA QUE IBA A ESCRIBIR** (2026-08-23).
+
+Casi todo test en negativo hace `if (existsSync(fichero)) rmSync(fichero)` antes
+de lanzar su caso —y **hace bien**: si no, una congelada vieja pasaría la
+comprobación y el caso saldría verde sin haber corrido. Pero:
+
+> **Si el caso después FALLA —o se agota, o lo matan—, el fichero se queda
+> borrado.** El negativo no ha pisado la evidencia: **se la ha llevado**, y el
+> repo queda sin ella con `git status` como único aviso.
+
+**Medido:** una corrida completa de `qa:negativos` dejó **4 congeladas borradas**
+—3 de `cms-arquetipos` (murió en 1/4) y 1 de `f33-geo` (se agotó a los 300 s)—.
+Todas recuperables con `git checkout` **porque estaban commiteadas**; ésa es
+exactamente la protección que la regla de arriba compra, y aquí es la única que
+había.
+
+> **Operativamente, y no hay que tocar ningún negativo: tras correr un barrido de
+> negativos, se mira `git status` buscando BORRADOS antes de commitear.** Un
+> `-neg-*.json` que desaparece no es ruido de la corrida: es evidencia de otra
+> tanda que se va con la tuya.
+
 Se pagó en la tanda siguiente a escribir la guarda, y **lo hizo quien la había
 escrito**: la ráfaga A de C-QA6 midió `h1 ±32.28` en tres rutas —el episodio que
 justifica toda la corrección del protocolo de ruido— y su salida se borró **a

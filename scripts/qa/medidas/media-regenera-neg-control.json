@@ -7,14 +7,14 @@
   },
   "reproduccion": {
     "generadas": {
-      "n": 438,
-      "pares": 440,
-      "dimensionesIguales": 438,
-      "shaIdentico": 191,
+      "n": 441,
+      "pares": 443,
+      "dimensionesIguales": 441,
+      "shaIdentico": 194,
       "difDim": [],
       "peso": {
         "jpeg": {
-          "n": 416,
+          "n": 419,
           "media": 1.5,
           "min": -20.4,
           "max": 17.2

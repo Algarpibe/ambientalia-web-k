@@ -1,17 +1,17 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "pregunta": "¿qué casos que el esquema ADMITE no ejercita ninguna fila sembrada?",
-    "alcance": "los 9 catálogos de src/lib — 0 filas. NO el corpus del original",
+    "alcance": "los 10 catálogos de src/lib — 0 filas. NO el corpus del original",
     "deDonde": "docs/PENDIENTES-QA.md §F2-5-ESCALON-ETIQUETAS · PASO 3",
     "noEsUnJuicio": "un caso sin ejercitar no es un defecto: es un camino de render sin estrenar",
     "sabotaje": "sin-catalogos"
   },
   "contrato": {
-    "universo": 335,
+    "universo": 545,
     "filasRecorridas": 0,
     "ejercitados": 0,
-    "minimo": 335,
+    "minimo": 545,
     "problemas": [
       "CERO FILAS RECORRIDAS — sin catálogos TODO sale sin ejercitar, y la lista sería verdadera y vacua"
     ]
@@ -40,11 +40,11 @@
     }
   },
   "sinEjercitar": {
-    "total": 335,
+    "total": 545,
     "porForma": {
-      "ausente": 198,
-      "vacía": 51,
-      "valor": 86
+      "ausente": 317,
+      "vacía": 60,
+      "valor": 168
     },
     "casos": [
       {
@@ -1236,6 +1236,1476 @@
         "forma": "valor",
         "tipo": "checkbox",
         "detalle": "false"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "1_4"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "1_3"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "2_5"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "1_2"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "3_5"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "2_3"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "3_4"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.ancho",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "4_4"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos",
+        "forma": "vacía",
+        "tipo": "blocks",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.alineacion",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.alineacion",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "center"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.alineacion",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "left"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.anchoPct",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.descripcion",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.diapositivas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.diapositivas.botonHref",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.diapositivas.botonLabel",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.diapositivas.cuerpo",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.diapositivas.fondo",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.diapositivas.nivel",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.href",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.imagen",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.nivel",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "defecto"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "azul"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.align",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.align",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "left"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.align",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "center"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.align",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "right"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.align",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "justify"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.color",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.fs",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.fw",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.lh",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.piel.movilFs",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.pines",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.pines.descripcion",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.pines.lat",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.pines.lng",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.reticula",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.reticula",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "iconos"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.reticula",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "col-md-4"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.reticula",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "ninguna"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mb.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.mt.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.ritmo.pb.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.texto",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.columnas.modulos.titulo",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mb.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.mt.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pb.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.filas.pt.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos",
+        "forma": "vacía",
+        "tipo": "blocks",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.alineacion",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.alineacion",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "center"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.alineacion",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "left"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.alt",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.anchoPct",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.descripcion",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.diapositivas",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.diapositivas.botonHref",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.diapositivas.botonLabel",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.diapositivas.cuerpo",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.diapositivas.fondo",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.diapositivas.nivel",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.external",
+        "forma": "ausente",
+        "tipo": "checkbox",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "true"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.external",
+        "forma": "valor",
+        "tipo": "checkbox",
+        "detalle": "false"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.href",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.imagen",
+        "forma": "ausente",
+        "tipo": "upload",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.nivel",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "defecto"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "azul"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.align",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.align",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "left"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.align",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "center"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.align",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "right"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.align",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "justify"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.color",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.fs",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.fw",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.lh",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.piel.movilFs",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.pines",
+        "forma": "vacía",
+        "tipo": "array",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.pines.descripcion",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.pines.lat",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.pines.lng",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.reticula",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.reticula",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "iconos"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.reticula",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "col-md-4"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.reticula",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "ninguna"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mb.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.mt.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.ritmo.pb.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.texto",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.modulosSueltos.titulo",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pb.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt.movilUnidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt.movilUnidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt.movilValor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt.unidad",
+        "forma": "ausente",
+        "tipo": "select",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "px"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt.unidad",
+        "forma": "valor",
+        "tipo": "select",
+        "detalle": "pct"
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.bloques.pt.valor",
+        "forma": "ausente",
+        "tipo": "number",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.cuerpoClasico",
+        "forma": "ausente",
+        "tipo": "code",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.prefijo",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.seo",
+        "forma": "ausente",
+        "tipo": "group",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.seo.description",
+        "forma": "ausente",
+        "tipo": "textarea",
+        "detalle": null
+      },
+      {
+        "coleccion": "paginas",
+        "ruta": "paginas.seo.ogImage",
+        "forma": "ausente",
+        "tipo": "text",
+        "detalle": null
       },
       {
         "coleccion": "productos",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "pregunta": "¿dos rutas distintas comparten su último segmento? Si no, `filename → ruta` es una función y CMS-0g se cierra sin campo nuevo.",
     "fuente": "walker de mapeo.mjs sobre los 9 catálogos (dominio) · media-corpus/INDICE.json · apps/web/public/images · media/ (salida servida)",
     "sabotaje": "selector-muerto"
@@ -35,7 +35,7 @@
     },
     "publico": {
       "que": "apps/web/public/images entero — superconjunto, incluye el CASCARÓN",
-      "rutas": 2686,
+      "rutas": 2734,
       "suelo": null,
       "decide": false,
       "basenamesRepetidos": 15,

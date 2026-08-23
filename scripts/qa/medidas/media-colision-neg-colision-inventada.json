@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "pregunta": "¿dos rutas distintas comparten su último segmento? Si no, `filename → ruta` es una función y CMS-0g se cierra sin campo nuevo.",
     "fuente": "walker de mapeo.mjs sobre los 9 catálogos (dominio) · media-corpus/INDICE.json · apps/web/public/images · media/ (salida servida)",
     "sabotaje": "colision-inventada"
@@ -8,7 +8,7 @@
   "poblaciones": {
     "dominio": {
       "que": "rutas que HOY llegan a un campo `upload` (el dominio de rutaDeMedia)",
-      "rutas": 616,
+      "rutas": 679,
       "suelo": 653,
       "decide": true,
       "basenamesRepetidos": 1,
@@ -44,12 +44,29 @@
     },
     "union": {
       "que": "dominio ∪ corpus: todo lo que alguna vez podrá ser fila de `media`",
-      "rutas": 1141,
+      "rutas": 1204,
       "suelo": 653,
       "decide": true,
       "basenamesRepetidos": 4,
       "referenciasDelCorpusAfectadas": 664,
       "colisiones": [
+        {
+          "basename": "kunak-api.jpg",
+          "rutas": [
+            "uploads/2023/02/kunak-api.jpg",
+            "uploads/2026/04/kunak-api.jpg"
+          ],
+          "referenciasEnCorpus": [
+            {
+              "ruta": "uploads/2023/02/kunak-api.jpg",
+              "n": 12
+            },
+            {
+              "ruta": "uploads/2026/04/kunak-api.jpg",
+              "n": 576
+            }
+          ]
+        },
         {
           "basename": "control-de-la-calidad-del-aire-en-ciudades.jpg",
           "rutas": [
@@ -100,29 +117,12 @@
               "n": 6
             }
           ]
-        },
-        {
-          "basename": "kunak-api.jpg",
-          "rutas": [
-            "uploads/2023/02/kunak-api.jpg",
-            "uploads/2026/04/kunak-api.jpg"
-          ],
-          "referenciasEnCorpus": [
-            {
-              "ruta": "uploads/2023/02/kunak-api.jpg",
-              "n": 12
-            },
-            {
-              "ruta": "uploads/2026/04/kunak-api.jpg",
-              "n": 576
-            }
-          ]
         }
       ]
     },
     "publico": {
       "que": "apps/web/public/images entero — superconjunto, incluye el CASCARÓN",
-      "rutas": 2686,
+      "rutas": 2734,
       "suelo": null,
       "decide": false,
       "basenamesRepetidos": 15,
@@ -395,9 +395,28 @@
     "filenameEsBasename": {
       "que": "cada basename del dominio existe en media/ con su nombre EXACTO ⇒ Payload no saneó ni desduplicó",
       "ficherosEnMedia": 2930,
-      "sinTestigo": 1,
+      "sinTestigo": 62,
       "cuales": [
-        "Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg"
+        "Video-Checking-before-deployment.jpg",
+        "Video-installation-1.jpg",
+        "Video-solar-panel-installation.jpg",
+        "Video-installation-of-a-probe.jpg",
+        "Video-replacement-of-a-cartridge.jpg",
+        "Video-storage-and-transportation.jpg",
+        "Video-introduction-to-Kunak-Cloud.jpg",
+        "Video-air-quality-index-control-panel-aqi.jpg",
+        "Video-gas-calibration-tool.jpg",
+        "Video-account-and-device-management.jpg",
+        "air-pollution.jpg",
+        "01-Kunak-AIR-Pro-1-scaled-2.jpg",
+        "Kunak-AIR-Lite.jpg",
+        "smart-cartridges.jpg",
+        "kunak-air-accessories.jpg",
+        "punteado.svg",
+        "guides.jpg",
+        "scientific_docs.jpg",
+        "glossary.jpg",
+        "webinar.jpg"
       ],
       "ok": false
     },
@@ -546,14 +565,16 @@
     },
     "dominioBajoPublico": {
       "que": "cada ruta del dominio existe en apps/web/public/images — el invariante que `ctx.media` comprueba al sembrar",
-      "n": 0,
-      "cuales": [],
-      "ok": true
+      "n": 1,
+      "cuales": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/9d/Logotipo_del_Ministerio_de_Economía,_Industria_y_Competitividad.svg"
+      ],
+      "ok": false
     }
   },
   "veredicto": {
-    "referenciasUpload": 649,
-    "rutasDistintas": 616,
+    "referenciasUpload": 742,
+    "rutasDistintas": 679,
     "funcionHoy": false,
     "funcionEnLaUnion": false,
     "lectura": "NO es una función ni hoy: hace falta guardar la procedencia en `media`."

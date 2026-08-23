@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "pregunta": "¿dos rutas distintas comparten su último segmento? Si no, `filename → ruta` es una función y CMS-0g se cierra sin campo nuevo.",
     "fuente": "walker de mapeo.mjs sobre los 9 catálogos (dominio) · media-corpus/INDICE.json · apps/web/public/images · media/ (salida servida)",
     "sabotaje": "variante-pisa-origen"
@@ -8,7 +8,7 @@
   "poblaciones": {
     "dominio": {
       "que": "rutas que HOY llegan a un campo `upload` (el dominio de rutaDeMedia)",
-      "rutas": 614,
+      "rutas": 678,
       "suelo": 653,
       "decide": true,
       "basenamesRepetidos": 0,
@@ -26,7 +26,7 @@
     },
     "union": {
       "que": "dominio ∪ corpus: todo lo que alguna vez podrá ser fila de `media`",
-      "rutas": 1139,
+      "rutas": 1203,
       "suelo": 653,
       "decide": true,
       "basenamesRepetidos": 3,
@@ -87,7 +87,7 @@
     },
     "publico": {
       "que": "apps/web/public/images entero — superconjunto, incluye el CASCARÓN",
-      "rutas": 2686,
+      "rutas": 2734,
       "suelo": null,
       "decide": false,
       "basenamesRepetidos": 15,
@@ -360,9 +360,28 @@
     "filenameEsBasename": {
       "que": "cada basename del dominio existe en media/ con su nombre EXACTO ⇒ Payload no saneó ni desduplicó",
       "ficherosEnMedia": 2929,
-      "sinTestigo": 1,
+      "sinTestigo": 63,
       "cuales": [
-        "Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg"
+        "Video-Checking-before-deployment.jpg",
+        "Video-installation-1.jpg",
+        "Video-solar-panel-installation.jpg",
+        "Video-installation-of-a-probe.jpg",
+        "Video-replacement-of-a-cartridge.jpg",
+        "Video-storage-and-transportation.jpg",
+        "Video-introduction-to-Kunak-Cloud.jpg",
+        "Video-air-quality-index-control-panel-aqi.jpg",
+        "Video-gas-calibration-tool.jpg",
+        "Video-account-and-device-management.jpg",
+        "air-pollution.jpg",
+        "01-Kunak-AIR-Pro-1-scaled-2.jpg",
+        "Kunak-AIR-Lite.jpg",
+        "smart-cartridges.jpg",
+        "kunak-air-accessories.jpg",
+        "kunak-api.jpg",
+        "punteado.svg",
+        "guides.jpg",
+        "scientific_docs.jpg",
+        "glossary.jpg"
       ],
       "ok": false
     },
@@ -518,14 +537,16 @@
     },
     "dominioBajoPublico": {
       "que": "cada ruta del dominio existe en apps/web/public/images — el invariante que `ctx.media` comprueba al sembrar",
-      "n": 0,
-      "cuales": [],
-      "ok": true
+      "n": 1,
+      "cuales": [
+        "https://upload.wikimedia.org/wikipedia/commons/9/9d/Logotipo_del_Ministerio_de_Economía,_Industria_y_Competitividad.svg"
+      ],
+      "ok": false
     }
   },
   "veredicto": {
-    "referenciasUpload": 647,
-    "rutasDistintas": 614,
+    "referenciasUpload": 740,
+    "rutasDistintas": 678,
     "funcionHoy": false,
     "funcionEnLaUnion": false,
     "lectura": "es una función HOY y NO en la unión: el bloque 2 la rompe. La decisión de CMS-0g no puede aplazarse a entonces."

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "fuente": "hojas CSS que el HTML del corpus enlaza (bytes servidos, sin re-codificar)",
     "derivacion": "los <link> de los HTML de corpus/ — inventario completo; se PIDE sólo la lista nombrada",
     "etiqueta": "secuencial · 500 ms entre peticiones · sha256 · reanudable",

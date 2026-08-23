@@ -42,9 +42,19 @@
     "shaNoCasa": []
   },
   "cms": {
-    "tamanosDeclarados": 0,
+    "tamanosDeclarados": 2273,
     "varianteAusente": [],
-    "dimensionDistinta": []
+    "dimensionDistinta": [
+      {
+        "original": "air-cloud.jpg",
+        "tamano": "card",
+        "fichero": "air-cloud-1024x1024.jpg",
+        "width": 1031,
+        "height": 1024,
+        "real": "1024x1024",
+        "declarado": "1031x1024"
+      }
+    ]
   },
   "cuerpo": {
     "referidos": 432,

@@ -93,6 +93,70 @@ a **7/7**. El entorno está restaurado con el pipeline completo (§regla 20):
 
 ---
 
+## ⛔ QA-NEGATIVOS-ROJOS-97 · **3 rojos nuevos en el censo, y los 3 ATRIBUIDOS — 97.ª, 2026-08-23**
+
+`qa:negativos` completo: **47 corridos · 9 ROJOS · 702.7 s**, contra **7** en la
+línea base del `negativos-2026-08-22.json`. Diferencia: **+3 nuevos, −1 curado**
+(`artefacto.neg.mjs` pasa a verde).
+
+> ⚠ **Y la primera corrida de hoy decía 21, que era falso.** Se cortó al agotar
+> los 600 s del que la lanzó, y `qa:negativos` marca `✗ 0s` **a los que nunca
+> llegaron a correr** — o sea que «no ejecutado» y «rojo» salen iguales. **La
+> corrida se descartó entera y se repitió**, no se salvaron las que parecían
+> bien. Es la §regla del corte que no se sabe dónde cayó, con el contenedor
+> puesto en el presupuesto de tiempo.
+>
+> ⚠ Y el **código de salida real es 1**: el harness informó *exit 0* porque el
+> comando era `npm run … > log; echo "EXIT=$?"`, y el compuesto se queda con el
+> del `echo` (§regla 11 — no hace falta una tubería, basta un `;`).
+
+### Los tres, con su atribución MEDIDA — no supuesta
+
+| negativo | qué pasa | de quién es |
+|---|---|---|
+| `f33-geo.neg.mjs` | **`✗ 300s` con veredicto VACÍO** | **de nadie: es el TOPE por negativo del censo.** No falló — no cupo. Está clasificado como «barato» y no lo es. Su verde/rojo aquí no dice nada de la sonda |
+| `cms-arquetipos.neg.mjs` (1/4) | *«la congelada del sondeo describe OTRO modelo: sondeo 9 colecciones, hoy 10 — falta `paginas`»* | **de la 96.ª.** `sondeo-frontera.json` está congelado el **2026-08-04**, anterior a que `paginas` existiera |
+| `cms-decl.neg.mjs` (5/8) | **3 HUECOS** — «la ida lo ve y nadie lo declaró», uno de ellos `paginas.bloques.filas.columnas.modulos ← slider-completo` | **de la 96.ª.** Son declaraciones de la unión de bloques que la colección nueva estrena |
+
+**La atribución no se dedujo, se derivó, y con el discriminador barato primero**
+(§regla 21): **las dos sondas salen ROJAS corriendo SOLAS**, o sea que no son
+negativos podridos — son hallazgos reales, y arreglar el negativo habría borrado
+el hallazgo. Y **ninguna de las dos lee `f33-extraido.json`** (`grep`: 0
+coincidencias en las dos), así que la retirada de la 97.ª **no puede** haberlas
+causado — que es §regla 16 contestada con el eje del DATO en vez de con «no toqué
+nada».
+
+**Qué haría falta, y por qué no se hace aquí:** `cms-arquetipos` pide, con su
+nombre, `npm run cms:sondeo` **y volver a congelar**; `cms-decl` pide declarar
+las 3 rutas que la ida ve. Las dos son mantenimiento del registro que estrenó la
+96.ª, **no de la retirada**, y re-congelar una medida con `PISAR=1` es un acto
+deliberado que se toma con su tanda delante.
+
+⚠ **Y la congelada del sondeo que esta tanda produjo NO sirve para eso**: se hizo
+con `paginas` metida a mano en `SEMBRADAS` para el ensayo, así que está marcada
+`sondeo-frontera-neg-ENSAYO-CON-PAGINAS-EN-SEMBRADAS-2026-08-23.json` (§regla 7)
+y **no se puede promover a canónica** — tiene nombre de artefacto porque lo es.
+
+### Dos cosas más que el barrido dejó en el árbol, y las dos son de clase conocida
+
+**① 4 congeladas BORRADAS por los negativos que fallaron.** `cms-arquetipos`
+(murió en 1/4) y `f33-geo` (se agotó a 300 s) hacen `rmSync` de su fichero
+esperado antes de correr —y hacen bien: si no, una congelada vieja pasaría la
+comprobación—. Al fallar, no lo reescriben. **Las 4 restauradas con `git
+checkout` porque estaban commiteadas**, que es la única protección que había.
+Subido a `CLAUDE.md` §regla 5 como ⚠: *tras un barrido de negativos, se mira
+`git status` buscando BORRADOS antes de commitear*.
+
+**② `corpus/fase-3/LISTA-DERIVADA.json` reescrito con la fecha de hoy** por
+`captura-f3.neg.mjs`. Es **la misma clase que la 97.ª acaba de arreglar en
+`captura-sectores`**: una campaña que escribe en `corpus/` —donde `w()` no
+vigila— **sin desviar bajo sabotaje**. Aquí sólo cambió `meta.fecha`, así que el
+daño es cosmético; el mecanismo no. Revertido. **`captura-f3` (y quien más
+escriba en `corpus/`) necesita el mismo desvío** — no se hace aquí porque es otra
+campaña y su negativo pasa: sería tocar una sonda verificada de paso.
+
+---
+
 ## ⛔ F3-3-CONSULTAS-EMBEBIDAS · **97.ª (2026-08-23) — 2 páginas se sirven INCOMPLETAS a propósito, y hay que decir con qué se rellenan**
 
 Medido en §F3-3-CENSO-CAMPO-RICO: los dos listados embebidos son **CONSULTA**, y
@@ -102,7 +166,7 @@ al lado**:
 
 | página | lo que se retira | lo que QUEDA a la vista sin nada debajo |
 |---|---|---|
-| `/es/recursos/` | `div.et_pb_blog…bucle-entradas` — 3 tarjetas (3 391 chars) | `<h2>Guías más recientes</h2>` |
+| `/es/recursos/` | `div.et_pb_blog…bucle-entradas` — 3 tarjetas (3 593 chars) | `<h2>Guías más recientes</h2>` |
 | `/es/recursos/documentos-cientificos/` | `div.scientific-list-content` — 23 tarjetas (56 313 chars) | el módulo hermano `scientific-filter`, con sus 3 botones de categoría |
 
 **No es un descuido: es un hueco declarado.** El extractor lo imprime como

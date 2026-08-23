@@ -7,14 +7,14 @@
   },
   "reproduccion": {
     "generadas": {
-      "n": 438,
-      "pares": 440,
-      "dimensionesIguales": 438,
-      "shaIdentico": 191,
+      "n": 441,
+      "pares": 443,
+      "dimensionesIguales": 441,
+      "shaIdentico": 194,
       "difDim": [],
       "peso": {
         "jpeg": {
-          "n": 416,
+          "n": 419,
           "media": 1.5,
           "min": -20.4,
           "max": 17.2
@@ -79,8 +79,8 @@
     "origenesTodoElHtml": 1339,
     "urlsEnCuerpo": 2824,
     "origenesEnCuerpo": 1339,
-    "yaLocales": 876,
-    "aCapturar": 463
+    "yaLocales": 878,
+    "aCapturar": 461
   },
   "cajasDelCuerpo": {
     "variantes": 1554,
@@ -186,7 +186,6 @@
     "https://kunakair.com/wp-content/uploads/2023/02/Ammonia.jpg",
     "https://kunakair.com/wp-content/uploads/2023/02/Carbon-monoxide.jpg",
     "https://kunakair.com/wp-content/uploads/2023/02/Hydrogen_sulfide.jpg",
-    "https://kunakair.com/wp-content/uploads/2023/02/Kunak-AIR-Lite.jpg",
     "https://kunakair.com/wp-content/uploads/2023/02/Nitric-oxide.jpg",
     "https://kunakair.com/wp-content/uploads/2023/02/Nitrogen_dioxide_cabecera.jpg",
     "https://kunakair.com/wp-content/uploads/2023/02/Ozone.jpg",
@@ -201,7 +200,6 @@
     "https://kunakair.com/wp-content/uploads/2023/02/mcerts-logo.png",
     "https://kunakair.com/wp-content/uploads/2023/02/multiple-uses.svg",
     "https://kunakair.com/wp-content/uploads/2023/02/particulate-matter.jpg",
-    "https://kunakair.com/wp-content/uploads/2023/02/patented-1.svg",
     "https://kunakair.com/wp-content/uploads/2023/02/smart-cartridges-technology-2.jpg",
     "https://kunakair.com/wp-content/uploads/2023/03/DSC0010.jpg",
     "https://kunakair.com/wp-content/uploads/2023/03/DSC0011.jpg",

@@ -42,8 +42,16 @@
     "shaNoCasa": []
   },
   "cms": {
-    "tamanosDeclarados": 0,
-    "varianteAusente": [],
+    "tamanosDeclarados": 2273,
+    "varianteAusente": [
+      {
+        "original": "air-cloud.jpg",
+        "tamano": "card",
+        "fichero": "no-generada-jamas-12x12.jpg",
+        "width": 1024,
+        "height": 1024
+      }
+    ],
     "dimensionDistinta": []
   },
   "cuerpo": {

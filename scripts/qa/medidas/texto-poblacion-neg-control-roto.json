@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "que": "Qué hay dentro de los `et_pb_text` del ORIGINAL, en las DOS poblaciones que consumen `MODULO_TEXTO`.",
     "fuente": "corpus/fase-3/articulos-kb/** (6) + corpus/fase-3-sectores/** (8)",
     "metodo": "file:// + DOM real, red BLOQUEADA; sólo SECCIONES PROPIAS (se excluyen las _tb_)",

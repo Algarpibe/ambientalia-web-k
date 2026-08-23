@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
     "sabotaje": "selector-muerto"
@@ -22,6 +22,32 @@
       "documentos-cientificos.categoria": "objeto"
     },
     "conKind": {
+      "paginas.bloques.modulosSueltos": [
+        "texto-pagina",
+        "imagen-pagina",
+        "boton-pagina",
+        "codigo",
+        "toggle",
+        "video-pagina",
+        "blurb",
+        "slider-completo",
+        "slider",
+        "mapa",
+        "icono"
+      ],
+      "paginas.bloques.filas.columnas.modulos": [
+        "texto-pagina",
+        "imagen-pagina",
+        "boton-pagina",
+        "codigo",
+        "toggle",
+        "video-pagina",
+        "blurb",
+        "slider-completo",
+        "slider",
+        "mapa",
+        "icono"
+      ],
       "sectores.body": [
         "ctaDescarga",
         "beneficiosAplicaciones",
@@ -93,6 +119,14 @@
       },
       {
         "tipo": "conKind",
+        "ruta": "paginas.bloques.modulosSueltos"
+      },
+      {
+        "tipo": "conKind",
+        "ruta": "paginas.bloques.filas.columnas.modulos"
+      },
+      {
+        "tipo": "conKind",
         "ruta": "sectores.body"
       },
       {
@@ -117,6 +151,15 @@
       "productos.cuerpo.cabeceras",
       "productos.cuerpo.filas",
       "productos.cuerpo.filas.celdas",
+      "paginas.bloques",
+      "paginas.bloques.modulosSueltos",
+      "paginas.bloques.modulosSueltos.diapositivas",
+      "paginas.bloques.modulosSueltos.pines",
+      "paginas.bloques.filas",
+      "paginas.bloques.filas.columnas",
+      "paginas.bloques.filas.columnas.modulos",
+      "paginas.bloques.filas.columnas.modulos.diapositivas",
+      "paginas.bloques.filas.columnas.modulos.pines",
       "sectores.breadcrumb",
       "sectores.hero.ctas",
       "sectores.hero.paragraphs",

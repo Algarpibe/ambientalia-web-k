@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "app": "apps/web",
     "manifiesto": "(el del build)",
     "base": "medidas/clon-base-1440-f21-antes.json"

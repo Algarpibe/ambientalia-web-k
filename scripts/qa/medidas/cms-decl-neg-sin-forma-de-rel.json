@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
     "sabotaje": "sin-forma-de-rel"
@@ -17,6 +17,50 @@
       "documentos-cientificos.categoria": "objeto"
     },
     "conKind": [
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "texto-pagina"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "imagen-pagina"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "video-pagina"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "toggle"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "boton-pagina"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "blurb"
+      ],
+      [
+        "paginas.bloques.modulosSueltos",
+        "slider-completo"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "mapa"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "codigo"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "slider"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "icono"
+      ],
       [
         "sectores.body",
         "ctaDescarga"
@@ -178,6 +222,38 @@
         "presente": 2,
         "ausente": 0
       },
+      "paginas.bloques": {
+        "presente": 30,
+        "ausente": 1
+      },
+      "paginas.bloques.filas": {
+        "presente": 74,
+        "ausente": 2
+      },
+      "paginas.bloques.filas.columnas": {
+        "presente": 103,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos": {
+        "presente": 169,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos.diapositivas": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos.pines": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "paginas.bloques.modulosSueltos": {
+        "presente": 2,
+        "ausente": 74
+      },
+      "paginas.bloques.modulosSueltos.diapositivas": {
+        "presente": 2,
+        "ausente": 0
+      },
       "productos.bullets": {
         "presente": 19,
         "ausente": 0
@@ -254,6 +330,32 @@
       "documentos-cientificos.categoria": "objeto"
     },
     "conKind": {
+      "paginas.bloques.modulosSueltos": [
+        "texto-pagina",
+        "imagen-pagina",
+        "boton-pagina",
+        "codigo",
+        "toggle",
+        "video-pagina",
+        "blurb",
+        "slider-completo",
+        "slider",
+        "mapa",
+        "icono"
+      ],
+      "paginas.bloques.filas.columnas.modulos": [
+        "texto-pagina",
+        "imagen-pagina",
+        "boton-pagina",
+        "codigo",
+        "toggle",
+        "video-pagina",
+        "blurb",
+        "slider-completo",
+        "slider",
+        "mapa",
+        "icono"
+      ],
       "sectores.body": [
         "ctaDescarga",
         "beneficiosAplicaciones",
@@ -287,22 +389,85 @@
     ]
   },
   "contrato": {
-    "evaluadas": 64,
-    "minimo": 64,
+    "evaluadas": 83,
+    "minimo": 83,
     "suficiente": true
   },
   "veredicto": {
-    "verificadas": 63,
+    "verificadas": 79,
     "huecos": [
       {
         "tipo": "formaDeRel",
         "ruta": "sectores.soluciones",
         "derivado": "objeto",
         "declarado": "(nada)"
+      },
+      {
+        "tipo": "vaciaEsAusente",
+        "ruta": "paginas.bloques",
+        "derivado": "ausente en 1 de 31",
+        "declarado": "(nada)"
+      },
+      {
+        "tipo": "vaciaEsAusente",
+        "ruta": "paginas.bloques.modulosSueltos",
+        "derivado": "ausente en 74 de 76",
+        "declarado": "(nada)"
+      },
+      {
+        "tipo": "vaciaEsAusente",
+        "ruta": "paginas.bloques.filas",
+        "derivado": "ausente en 2 de 76",
+        "declarado": "(nada)"
       }
     ],
     "muertas": [],
-    "sinEjercitar": [],
+    "sinEjercitar": [
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "texto-pagina"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "imagen-pagina"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "boton-pagina"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "codigo"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "toggle"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "video-pagina"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "blurb"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "slider"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "mapa"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "icono"
+      },
+      {
+        "ruta": "paginas.bloques.filas.columnas.modulos",
+        "slug": "slider-completo"
+      }
+    ],
     "listasSinEjercitar": [
       "productos.cuerpo.bloques",
       "productos.cuerpo.bloques.ul",
@@ -313,6 +478,7 @@
       "productos.cuerpo.cabeceras",
       "productos.cuerpo.filas",
       "productos.cuerpo.filas.celdas",
+      "paginas.bloques.modulosSueltos.pines",
       "monograficos.cuerpo.filas.columnas.modulos.filas.celdas"
     ],
     "ok": false

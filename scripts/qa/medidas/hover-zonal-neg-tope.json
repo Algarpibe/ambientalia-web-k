@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "pregunta": "§LH-C6-HOVER-ZONAL — qué CONTENEDOR dispara el zoom de la media de tarjeta",
     "instrumento": "el CSS SERVIDO (los <style> del documento + las hojas EXTERNAS que pide)",
     "alcance": {
@@ -50,9 +50,9 @@
     },
     "L1-etiqueta": {
       "ruta": "/es/etiqueta/calidad-del-aire/",
-      "hojasExternas": 14,
-      "hojasPedidas": 14,
-      "hojasQueContestaron": 14,
+      "hojasExternas": 13,
+      "hojasPedidas": 13,
+      "hojasQueContestaron": 13,
       "bytesCss": 635981,
       "reglasServidas": 5026,
       "reglasHoverConTransform": 3,
@@ -81,11 +81,11 @@
     },
     "L1-resources-hijo": {
       "ruta": "/es/recursos/articulos/contaminacion-urbana/",
-      "hojasExternas": 11,
-      "hojasPedidas": 11,
-      "hojasQueContestaron": 11,
-      "bytesCss": 596505,
-      "reglasServidas": 4647,
+      "hojasExternas": 10,
+      "hojasPedidas": 10,
+      "hojasQueContestaron": 10,
+      "bytesCss": 585278,
+      "reglasServidas": 4582,
       "reglasHoverConTransform": 3,
       "disparadores": [
         {
@@ -164,8 +164,8 @@
       "hojasExternas": 11,
       "hojasPedidas": 11,
       "hojasQueContestaron": 11,
-      "bytesCss": 671683,
-      "reglasServidas": 4704,
+      "bytesCss": 650510,
+      "reglasServidas": 4590,
       "reglasHoverConTransform": 2,
       "disparadores": [
         {
@@ -189,8 +189,8 @@
       "hojasExternas": 11,
       "hojasPedidas": 11,
       "hojasQueContestaron": 11,
-      "bytesCss": 671683,
-      "reglasServidas": 4704,
+      "bytesCss": 650510,
+      "reglasServidas": 4590,
       "reglasHoverConTransform": 2,
       "disparadores": [
         {
@@ -316,7 +316,7 @@
     }
   },
   "resumen": {
-    "reglasServidas": 41540,
+    "reglasServidas": 41247,
     "reglasHoverConTransform": 24,
     "fraccion": 0.00058,
     "efectosMedidosSinRegla": 0,

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-23",
     "sabotaje": "hoja"
   },
   "tipos": {
@@ -79,6 +79,7 @@
     }
   },
   "sinContraparte": [
+    "paginas",
     "articulos-kb",
     "media",
     "slugs",

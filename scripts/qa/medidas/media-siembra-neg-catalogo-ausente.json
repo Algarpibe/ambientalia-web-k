@@ -31,7 +31,7 @@
         "B": {
           "rutas": 357,
           "referencias": 470,
-          "faltan": 3
+          "faltan": 0
         },
         "A": {
           "rutas": 115,
@@ -92,7 +92,7 @@
     },
     "B": {
       "rutas": 448,
-      "faltan": 3
+      "faltan": 0
     },
     "C": {
       "rutas": 1316,
@@ -100,9 +100,9 @@
     }
   },
   "reparto": {
-    "faltanEnPublico": 33,
-    "sinRed": 3,
-    "variantesConOrigenEnPublico": 3,
+    "faltanEnPublico": 30,
+    "sinRed": 0,
+    "variantesConOrigenEnPublico": 0,
     "origenesYaEnMediaCorpus": 0,
     "variantesConOrigenEnMediaCorpus": 0,
     "aPedirAlOriginal": 30,
@@ -244,15 +244,6 @@
       ],
       "referencias": 1
     },
-    "/images/uploads/2023/06/contaminacion-del-aire-en-industria-1280x853.jpg": {
-      "canales": [
-        "B"
-      ],
-      "colecciones": [
-        "entradas-blog"
-      ],
-      "referencias": 1
-    },
     "/images/uploads/2023/07/innovative-biomethane-for-repowereu-ZZ0923084ENN.pdf": {
       "canales": [
         "C"
@@ -289,15 +280,6 @@
       ],
       "referencias": 1
     },
-    "/images/uploads/2024/04/kunak-air-catalogue-1280x853.jpg": {
-      "canales": [
-        "B"
-      ],
-      "colecciones": [
-        "entradas-blog"
-      ],
-      "referencias": 1
-    },
     "/images/uploads/2024/05/CAN-Guidelines-NDCs-es.pdf": {
       "canales": [
         "C"
@@ -328,15 +310,6 @@
     "/images/uploads/2025/01/Book_of_abstracts_EmiLi24.pdf": {
       "canales": [
         "C"
-      ],
-      "colecciones": [
-        "entradas-blog"
-      ],
-      "referencias": 1
-    },
-    "/images/uploads/2025/12/Reconcilia-1280x853.jpg": {
-      "canales": [
-        "B"
       ],
       "colecciones": [
         "entradas-blog"
@@ -408,11 +381,7 @@
     }
   },
   "sinRedDetalle": {
-    "variantesConOrigenEnPublico": [
-      "/images/uploads/2023/06/contaminacion-del-aire-en-industria-1280x853.jpg",
-      "/images/uploads/2024/04/kunak-air-catalogue-1280x853.jpg",
-      "/images/uploads/2025/12/Reconcilia-1280x853.jpg"
-    ],
+    "variantesConOrigenEnPublico": [],
     "origenesYaEnMediaCorpus": [],
     "variantesConOrigenEnMediaCorpus": []
   },
