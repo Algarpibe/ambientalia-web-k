@@ -1,0 +1,43 @@
+═══ t11-noop-f33 · T11 APLICADA sobre el corpus entero: ¿toca sólo lo suyo?
+
+  ficheros .html bajo corpus/              788
+  ficheros que T11 TOCA                    1
+  ficheros idénticos byte a byte           787
+     1×  fase-3/sueltas/empresa/index.html   (−18 chars)
+
+  ── control POSITIVO ──
+     ✓ T11 actúa en 1 fichero(s): el patrón está vivo
+
+  ── control SINTÉTICO · las vecinas que T11 NO debe tocar ──
+     ✓ n=0  atributo más largo                     (intacto)
+     ✓ n=0  atributo con prefijo                   (intacto)
+     ✓ n=0  atributo más corto                     (intacto)
+     ✓ n=0  fuera de un tag                        (intacto)
+     ✓ n=1  la forma servida (con otra clase al lado) → <span class="x">a</span>
+     ✓ n=1  la forma servida, desnuda              → <span>a</span>
+
+  ── el reparto, por subárbol de corpus/ ──
+     casos               0 /   57
+     documentos-cientificos    0 /   23
+     entradas-blog       0 /  152
+     faqs                0 /   19
+     fase-3              1 /  256
+     fase-3-sectores     0 /    8
+     productos           0 /   24
+     terminos-kunakpedia    0 /   37
+     transformado        0 /  212
+
+  ── por qué T11 NO entra en `TRANSFORMACIONES` (§regla 21, tercer caso) ──
+     Ts en la cadena del grupo A            13
+     ¿está T11 entre ellas?                 no
+     ficheros tocados FUERA de fase-3/      0
+     → con diana 0 en su corpus, `extractor.neg` informaría SIN DIANA y saldría
+       ROJO. Eso no es «roto» ni «probado»: es SIN PROBAR, y un SIN PROBAR en
+       verde se lee como probado. Su negativo vive donde SÍ hay diana:
+       `extractor-f33.neg.mjs` §t11.
+
+✅ t11-noop-f33: 1 de 788 ficheros tocados · 787 idénticos byte a byte · 6 controles sintéticos · 0 en rojo
+   El NO-OP es por IDENTIDAD, no por argumento: los 787 ficheros que T11 no
+   toca salen con los MISMOS bytes con los que entraron.
+   ⚠ Y el alcance: esto mide UN atributo. La CLASE «residuo de pegado del editor»
+     sigue SIN MEDIR — que no es 0 (atributo-teams-f33.log §ALCANCE).

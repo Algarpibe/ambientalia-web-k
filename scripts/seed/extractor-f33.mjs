@@ -8,6 +8,10 @@
  *   SABOTAJE=arrasa          → exit ≠0 (retirar el MÓDULO en vez del CONTENEDOR)
  *   SABOTAJE=arrasa-control  → exit  0 (el mismo párrafo inyectado, SIN arrasar:
  *                              es lo que prueba que `arrasa` tiene separadora)
+ *   SABOTAJE=t11             → exit ≠0 (sin la transformación de importación, el
+ *                              `data-teams` llega al campo rico y lo bloquea)
+ *   SABOTAJE=media-externa   → exit ≠0 (el asset alojado FUERA metido en `src`,
+ *                              que es `upload → media` y sólo expresa lo local)
  *
  * ── Qué contesta ──────────────────────────────────────────────────────────
  * `arbol-f33` (92.ª) DERIVÓ la forma: 11 tipos, 313 módulos, sección → fila →
@@ -59,6 +63,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { Evaluadas, gritaSiRevienta, hoy, nombreNeg, PLIEGUES_FINAL, QA, w } from "../qa/lib.mjs";
+import { TRANSFORMACIONES_F33 } from "./transformaciones.mjs";
 
 process.env.SIN_CLON = "1";
 gritaSiRevienta();
@@ -66,7 +71,7 @@ gritaSiRevienta();
 const RAIZ = join(QA, "../..");
 const CORPUS = join(RAIZ, "corpus/fase-3");
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["tipo-fantasma", "sin-secciones", "geometria", "arrasa", "arrasa-control"];
+const VALIDOS = ["tipo-fantasma", "sin-secciones", "geometria", "arrasa", "arrasa-control", "t11", "media-externa"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
@@ -372,9 +377,28 @@ function aBloque(html, n, donde) {
       const img = imgDe(html, n);
       const a = [...A.recorre(n)].find((x) => x.etiqueta === "a");
       const href = a ? attr(a, "href") : undefined;
+      /**
+       * ⚠ **D2 · el asset alojado FUERA va a `srcExterno`, no a `src`.**
+       *
+       * `rutaLocalMedia` (T3b) sólo reescribe `kunakair.com`, así que un host
+       * ajeno **pasa entero** — y `src` es `upload → media`, cuyo resolutor
+       * (`creaContexto().media`) exige `ruta.startsWith("/")` y TIRA. Eso no era
+       * un defecto del resolutor: era el modelo sin sitio para el caso.
+       *
+       * El discriminador es la SALIDA de T3b, no una lista de hosts: si después
+       * de aplicarla la ruta sigue siendo absoluta, es que no es nuestra.
+       * Medido: **1 de 71** (`bloqueos-f33.log` §media).
+       */
+      const origen = rutaLocalMedia(attrTag(img, "src"));
+      const externo = typeof origen === "string" && /^(?:https?:)?\/\//i.test(origen);
+      /* El sabotaje mete el asset externo por el canal LOCAL, que es el defecto
+       * que D2 arregla: sin la guarda, sale un `src` absoluto en un campo
+       * `upload` y el que lo caza es Payload, dos pasos más allá. */
+      const alLocal = externo && SABOTAJE === "media-externa";
       return {
         kind: "imagen-pagina",
-        src: rutaLocalMedia(attrTag(img, "src")),
+        src: externo && !alLocal ? undefined : origen,
+        srcExterno: externo && !alLocal ? origen : undefined,
         alt: oUndef(attrTag(img, "alt")),
         href: oUndef(href),
         /* `external` se DERIVA del destino, no se supone: la regla de rutas
@@ -587,12 +611,19 @@ const censo = { porTipo: {}, modulos: 0, secciones: 0, filas: 0, columnas: 0, su
 const emision = { modulos: 0, columnasColapsadas: 0, filasColapsadas: 0, seccionesColapsadas: 0 };
 const sinFichero = [];
 const problemas = [];
+/**
+ * La DIANA de las transformaciones de importación, contada sobre el HTML **de
+ * entrada** de las 31 (§6bis). Es el denominador contra el que se lee cuántas
+ * se aplicaron, y se DERIVA de la fuente en vez de escribirse.
+ */
+let dianaEntrada = 0;
 
 for (const p of RUTAS.paginas) {
   const f = ficheroDe(p.ruta);
   if (!f) { sinFichero.push(p.ruta); continue; }
 
   const html = A.limpia(readFileSync(f, "utf8"));
+  for (const t of TRANSFORMACIONES_F33) dianaEntrada += t.diana(html);
   const reg = regimenDe(html);
   censo.porRegimen[reg] = (censo.porRegimen[reg] || 0) + 1;
   const { title, desc, h1 } = cascaronDe(html);
@@ -679,6 +710,67 @@ for (const p of RUTAS.paginas) {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * 6bis · LAS TRANSFORMACIONES DE IMPORTACIÓN — hoy sólo T11 (D1, 2026-08-22)
+ *
+ * `data-teams="true"` es el residuo de **pegar desde Teams** en el editor. El
+ * propietario decidió limpiarlo con una transformación en vez de ampliar
+ * `ATRIBUTOS_CENSADOS`, que es la whitelist de seguridad de cinco colecciones
+ * verificadas (razón entera en `ESQUEMA-CMS.md` §3.2 T11).
+ *
+ * ── Se aplica en una PASADA FINAL sobre lo emitido, y no módulo a módulo ──
+ * Los campos ricos de este arquetipo son **seis** (`texto-pagina.html`,
+ * `toggle.cuerpo`, las dos variantes de slider, `blurb.descripcion`,
+ * `cuerpoClasico`), y enumerarlos aquí sería **una lista escrita a mano dentro
+ * de un instrumento** (§regla 9, 7.º caso): envejece contra el esquema, en
+ * silencio, y un campo rico nuevo entraría sin transformar sin dar error. La
+ * pasada recorre **todas** las cadenas del documento, así que un campo nuevo
+ * entra solo.
+ *
+ * ⚠ Y como la pasada es ciega al campo, **lo que la sostiene es la medida, no
+ * el argumento**: `derivaciones/t11-noop-f33.log` aplica T11 a los **788**
+ * `.html` de `corpus/` y **787 salen byte a byte idénticos**, con seis
+ * controles sintéticos de las formas vecinas que NO debe tocar. Aquí, además,
+ * se publica **la ruta exacta** de cada aplicación: si tocara algo que no es un
+ * campo rico, saldría con nombre y apellidos.
+ *
+ * ── La guarda: DIANA DE ENTRADA vs APLICADAS EN LA SALIDA ────────────────
+ * La diana se cuenta sobre el HTML **de entrada de las 31 páginas** y las
+ * aplicaciones sobre **los documentos emitidos**. Si la entrada trae más de las
+ * que se aplican, el atributo vive en un sitio que el extractor no recoge —el
+ * cascarón, un campo que no viaja— y eso sale ROJO en vez de salir como «ya
+ * está limpio». El número NO se cablea: se deriva de la fuente (§regla 5ter).
+ * ═════════════════════════════════════════════════════════════════════════ */
+const T_IMPORT = { aplicadas: 0, rutas: [], diana: dianaEntrada, porT: {} };
+if (SABOTAJE !== "t11")
+  (function transforma(v, ruta) {
+    if (Array.isArray(v)) return v.forEach((x, i) => transforma(x, `${ruta}[${i}]`));
+    if (!v || typeof v !== "object") return;
+    for (const [k, x] of Object.entries(v)) {
+      if (typeof x === "string") {
+        let s = x;
+        let n = 0;
+        for (const t of TRANSFORMACIONES_F33) {
+          const r = t.aplica(s);
+          if (r.n) {
+            n += r.n;
+            T_IMPORT.porT[t.id] = (T_IMPORT.porT[t.id] || 0) + r.n;
+          }
+          s = r.html;
+        }
+        if (n) {
+          /* Reconstrucción: T11 quita el ATRIBUTO y nada más. Se comprueba con
+           * los bytes, no con la intención (§verificar contra la salida). */
+          const quitados = [...x.matchAll(/\sdata-teams\s*=\s*"[^"]*"/gi)];
+          const suma = s.length + quitados.reduce((a, m) => a + m[0].length, 0);
+          T_IMPORT.aplicadas += n;
+          T_IMPORT.rutas.push({ ruta: `${ruta}.${k}`, n, chars: x.length - s.length, reconstruye: suma === x.length });
+          v[k] = s;
+        }
+      } else transforma(x, `${ruta}.${k}`);
+    }
+  })(docs, "docs");
+
+/* ══════════════════════════════════════════════════════════════════════════
  * 7 · LOS CONTROLES — antes de congelar nada
  * ═════════════════════════════════════════════════════════════════════════ */
 let rojo = 0;
@@ -760,7 +852,16 @@ for (const x of problemas) err(x);
  * ═════════════════════════════════════════════════════════════════════════ */
 const EXIGIBLES = {
   "texto-pagina": ["html"],
-  "imagen-pagina": ["src"],
+  /**
+   * ⚠ **El origen de la imagen son DOS campos ALTERNATIVOS desde D2**
+   * (2026-08-23): `src` (asset local, `upload → media`) o `srcExterno` (la URL
+   * absoluta cuando el asset vive fuera). El pleno se mide sobre **el par**:
+   * que falten LOS DOS en el 100 % sí sería el instrumento; que falte uno de
+   * los dos es dato, y su reparto se publica en §5 del informe.
+   *
+   * Una entrada de `EXIGIBLES` puede ser un nombre o un ARRAY de alternativas.
+   */
+  "imagen-pagina": [["src", "srcExterno"]],
   "boton-pagina": ["label", "href"],
   codigo: ["html"],
   toggle: ["titulo", "cuerpo"],
@@ -772,6 +873,8 @@ const EXIGIBLES = {
   icono: ["icono"],
 };
 const plenos = [];
+/** El reparto local/externo del origen de imagen, y sus defectos (D2). */
+const origenImagen = { total: 0, local: 0, externo: 0, mal: [] };
 {
   const porTipo = {};
   const rec = (v) => {
@@ -782,13 +885,43 @@ const plenos = [];
     }
   };
   for (const d of docs) rec(d.bloques ?? []);
+  const vacio = (v) => v === undefined || v === null || v === "" || (Array.isArray(v) && !v.length);
   for (const [tipo, campos] of Object.entries(EXIGIBLES)) {
     const inst = porTipo[tipo] ?? [];
     if (!inst.length) continue;
     for (const c of campos) {
-      const faltan = inst.filter((m) => m[c] === undefined || m[c] === null || m[c] === "" || (Array.isArray(m[c]) && !m[c].length));
-      if (faltan.length === inst.length) plenos.push(`${tipo}.${c}: ausente en ${faltan.length}/${inst.length}`);
+      /* Un nombre o un array de ALTERNATIVAS: falta sólo si faltan todas. */
+      const alternativas = Array.isArray(c) ? c : [c];
+      const faltan = inst.filter((m) => alternativas.every((k) => vacio(m[k])));
+      if (faltan.length === inst.length)
+        plenos.push(`${tipo}.${alternativas.join("|")}: ausente en ${faltan.length}/${inst.length}`);
     }
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════
+   * LA GUARDA DEL ORIGEN DE IMAGEN — el espejo del `validate` del esquema
+   *
+   * `validaOrigenImagen` exige **exactamente uno** de `src`/`srcExterno`, y
+   * Payload lo comprobaría al sembrar. Comprobarlo aquí es lo que hace que el
+   * defecto salga **en el extractor**, con la ruta del módulo, en vez de
+   * salir dos pasos más allá como un rechazo de un documento entero
+   * (§*un proceso que aborta en el primer fallo contesta «hay al menos uno»*).
+   *
+   * Y el segundo lado, que es el que el sabotaje `media-externa` ejercita: un
+   * `src` que NO es una ruta local. `creaContexto().media` tira con eso, así
+   * que dejarlo pasar sería mandar a la siembra un dato que ya se sabe malo.
+   * ═══════════════════════════════════════════════════════════════════════ */
+  const imgs = porTipo["imagen-pagina"] ?? [];
+  origenImagen.local = imgs.filter((m) => !vacio(m.src)).length;
+  origenImagen.externo = imgs.filter((m) => !vacio(m.srcExterno)).length;
+  origenImagen.total = imgs.length;
+  for (const m of imgs) {
+    const l = !vacio(m.src);
+    const e = !vacio(m.srcExterno);
+    if (l && e) origenImagen.mal.push(`dos orígenes a la vez: src=${String(m.src).slice(0, 50)} · srcExterno=${String(m.srcExterno).slice(0, 50)}`);
+    else if (!l && !e) origenImagen.mal.push(`imagen SIN origen (ni local ni externo)`);
+    else if (l && !String(m.src).startsWith("/"))
+      origenImagen.mal.push(`\`src\` no es una ruta local: ${String(m.src).slice(0, 70)} — \`creaContexto().media\` TIRA con eso`);
   }
 }
 if (plenos.length)
@@ -797,6 +930,46 @@ if (plenos.length)
       `   ${plenos.join("\n   ")}\n` +
       `   Un campo que falta en TODAS las instancias no dice «el original no lo trae»:\n` +
       `   dice que el selector no casa. Ni el recuento de tipos ni el cruce lo ven.`,
+  );
+
+if (origenImagen.mal.length)
+  err(
+    `ORIGEN DE IMAGEN: ${origenImagen.mal.length} módulo(s) con el origen mal puesto —\n` +
+      `   ${[...new Set(origenImagen.mal)].slice(0, 6).join("\n   ")}\n` +
+      `   \`validaOrigenImagen\` exige EXACTAMENTE UNO de \`src\` / \`srcExterno\`, y \`src\`\n` +
+      `   es \`upload → media\`: sólo expresa un asset LOCAL. Un absoluto ahí no da un\n` +
+      `   defecto de imagen, mata la siembra del documento entero.`,
+  );
+
+/* ── T11: lo aplicado tiene que cubrir lo que la ENTRADA traía ───────────── */
+const t11Mal = [];
+if (SABOTAJE !== "t11") {
+  if (T_IMPORT.aplicadas !== T_IMPORT.diana)
+    t11Mal.push(
+      `la entrada de las ${docs.length} páginas trae ${T_IMPORT.diana} diana(s) y lo emitido sólo recogió ` +
+        `${T_IMPORT.aplicadas}: el atributo vive en un sitio que el extractor no transforma`,
+    );
+  for (const r of T_IMPORT.rutas)
+    if (!r.reconstruye) t11Mal.push(`${r.ruta}: la reconstrucción no cuadra — T11 se llevó algo que no era el atributo`);
+  /* §sondas 4: 0 aplicadas con diana > 0 sería un patrón muerto leído como
+   * «ya está limpio». Y con diana 0 también sale rojo: `atributo-teams-f33`
+   * midió 1 ocurrencia en el corpus, así que 0 significa que el patrón dejó de
+   * casar, no que el corpus haya cambiado. */
+  if (!T_IMPORT.diana)
+    t11Mal.push(`0 dianas en las ${docs.length} páginas: \`atributo-teams-f33\` midió 1. Un patrón muerto no es un cero.`);
+}
+/* La postcondición, sobre lo EMITIDO: es la que el sabotaje `t11` tiene que
+ * hacer morder. Se pregunta a la transformación, no a una regex de aquí. */
+{
+  const emitido = JSON.stringify(docs);
+  for (const t of TRANSFORMACIONES_F33)
+    for (const v of t.post(emitido)) t11Mal.push(`postcondición de ${t.id.toUpperCase()}: ${v}`);
+}
+if (t11Mal.length)
+  err(
+    `TRANSFORMACIÓN DE IMPORTACIÓN: ${t11Mal.length} problema(s) —\n   ${t11Mal.join("\n   ")}\n` +
+      `   Sin T11, \`data-teams\` llega al campo rico y \`campoHtml\` lo rechaza: el bloqueo\n` +
+      `   no lo caza el extractor, lo caza Payload al sembrar (§F3-3-BLOQUEOS-DE-SIEMBRA).`,
   );
 
 /**
@@ -883,6 +1056,21 @@ console.log(`\n  ── 4 · GEOMETRÍA ──`);
 console.log(`   claves de ritmo/ancho escritas    ${String(geoEscrita.length).padStart(4)}   ← tiene que ser 0`);
 console.log(`   (SIN ESCRIBIR se omite · NO MEDIBLE se declara · ninguno se convierte en número)`);
 
+console.log(`\n  ── 5 · EL ORIGEN DE LA IMAGEN (D2, 2026-08-22) ──`);
+console.log(`   módulos \`imagen-pagina\`           ${String(origenImagen.total).padStart(4)}`);
+console.log(`   · \`src\`        (asset LOCAL)      ${String(origenImagen.local).padStart(4)}`);
+console.log(`   · \`srcExterno\` (asset FUERA)      ${String(origenImagen.externo).padStart(4)}   ← se deja ABSOLUTO: es lo que el original sirve`);
+console.log(`   con el origen mal puesto          ${String(origenImagen.mal.length).padStart(4)}   ← tiene que ser 0`);
+console.log(`   (la regla de no hotlinkear es sobre kunakair.com, para no depender del original)`);
+
+console.log(`\n  ── 6 · TRANSFORMACIONES DE IMPORTACIÓN ──`);
+console.log(`   diana en la ENTRADA de las 31     ${String(T_IMPORT.diana).padStart(4)}`);
+console.log(`   aplicadas sobre lo EMITIDO        ${String(T_IMPORT.aplicadas).padStart(4)}   ${T_IMPORT.aplicadas === T_IMPORT.diana ? "✓" : "✗ la entrada trae más de las que se recogen"}`);
+for (const t of TRANSFORMACIONES_F33)
+  console.log(`   ${t.id.padEnd(6)} ${t.titulo.slice(6, 62).padEnd(58)} ${String(T_IMPORT.porT[t.id] || 0).padStart(4)}`);
+for (const r of T_IMPORT.rutas) console.log(`      ${r.ruta}  (−${r.chars} chars${r.reconstruye ? "" : ", RECONSTRUCCIÓN MAL"})`);
+console.log(`   NO-OP fuera de aquí: 1 de 788 ficheros de corpus/ (t11-noop-f33.log, 787 idénticos byte a byte)`);
+
 if (discrepancias.length) err(`CRUCE CON arbol-f33: ${discrepancias.length} discrepancia(s) — ${discrepancias.join(" · ")}`);
 if (geoEscrita.length)
   err(
@@ -912,6 +1100,8 @@ w(SALIDA, {
       completaPara: "SEMBRAR las 31 en la colección `paginas`",
       noCubre: [
         "la GEOMETRÍA: `pt/pb/mt/mb` y `anchoPct` salen SIN ESCRIBIR (0 ejes comparados en las 31). No es 0: es ausente, que en `medida()` significa «el default de Divi»",
+        "las otras 12 transformaciones de `TRANSFORMACIONES`: cuál le toca a este arquetipo está SIN MEDIR — habría que derivar la diana de cada una contra `corpus/fase-3/`",
+        "la CLASE «residuo de pegado del editor»: T11 limpia UN atributo (`data-teams`). Cuántos más hay de esa familia sale SIN MEDIR, que no es 0 (`atributo-teams-f33.log` §ALCANCE)",
         "`srcset`: omisión DECLARADA, M-IMG sigue abierta en §CMS-0b",
         "los 36 módulos dentro de desplegables CERRADOS: su geometría NO ES MEDIBLE sin interacción, y no medible no es 0",
         "`anchoPct` de las 25 instancias en LÍNEA: el instrumento no las midió (una razón sobre un enlínea mide el texto, no una declaración)",
@@ -931,12 +1121,35 @@ w(SALIDA, {
   },
   cruce: { esperado: ESPERADO, totalEsperado: TOTAL_ESPERADO, discrepancias },
   geometria: { clavesEscritas: geoEscrita.length, detalle: geoEscrita.slice(0, 20) },
+  /**
+   * D2 · el reparto del origen de imagen. `externo` es el CANAL NUEVO —el asset
+   * alojado fuera— y sale con su cardinal aunque sea 1: un canal declarado con
+   * su cero (o con su uno) es un hueco visible, no la próxima sorpresa.
+   */
+  origenImagen: {
+    decision: "D2 (propietario, 2026-08-22): se deja ABSOLUTO. No se captura.",
+    total: origenImagen.total,
+    local: origenImagen.local,
+    externo: origenImagen.externo,
+    mal: origenImagen.mal,
+  },
+  /** D1 · las transformaciones de importación, con diana y aplicadas. */
+  transformaciones: {
+    decision: "D1 (propietario, 2026-08-22): transformación de importación; `ATRIBUTOS_CENSADOS` NO se amplía.",
+    cadena: TRANSFORMACIONES_F33.map((t) => ({ id: t.id, titulo: t.titulo })),
+    dianaEntrada: T_IMPORT.diana,
+    aplicadas: T_IMPORT.aplicadas,
+    porT: T_IMPORT.porT,
+    rutas: T_IMPORT.rutas,
+    noOp: "derivaciones/t11-noop-f33.log — 1 de 788 ficheros de corpus/ tocado, 787 idénticos byte a byte",
+  },
   catalogo: { paginas: docs },
 });
 
 console.log(
   `\n${rojo ? "❌" : "✅"} extractor-f33: ${docs.length} documentos · ${censo.modulos} módulos en el árbol → ` +
     `${emision.modulos} emitidos · ${Object.keys(censo.porTipo).length} tipos · ${geoEscrita.length} claves de geometría · ` +
-    `${RETIRADAS.length} módulos con generado retirado · ${rojo} guarda(s) en rojo`,
+    `${RETIRADAS.length} módulos con generado retirado · ${T_IMPORT.aplicadas}/${T_IMPORT.diana} transformaciones de importación · ` +
+    `${origenImagen.externo} imagen(es) de origen EXTERNO · ${rojo} guarda(s) en rojo`,
 );
 if (rojo) process.exit(2);

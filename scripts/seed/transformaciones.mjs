@@ -1073,3 +1073,82 @@ export const T10 = {
  *   `cierreDe`, y un cierre huérfano por medio le desplaza el emparejado.
  */
 export const TRANSFORMACIONES = [T8, T1, T2, T3, T3B, T4B, T9, T9B, T4, T5, T6, T7, T10];
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * T11 · `data-teams` — el residuo de PEGAR DESDE TEAMS en el editor
+ *
+ * Decisión del propietario (2026-08-22, D1): **transformación de importación
+ * que lo limpie**. La otra salida —dar el atributo de alta en
+ * `ATRIBUTOS_CENSADOS`— se descartó, y la razón está escrita en
+ * `ESQUEMA-CMS.md` §3.2 T11: ese censo es la **whitelist de cinco colecciones
+ * verificadas**, y lo que aquí se limpia está medido como **inerte**, así que
+ * la salida servida no cambia y el listón de §8 se mantiene.
+ *
+ * ── El cardinal, DERIVADO y no recordado (§regla 9) ───────────────────────
+ * `derivaciones/atributo-teams-f33.log`: **1 fichero de 788** bajo `corpus/`,
+ * **1 ocurrencia**, portadora `span`, valor `"true"`. Inerte en las cuatro
+ * familias que el censo mide a cero (manejador `on*` · `javascript:` · `data:`
+ * URI · `srcdoc`).
+ *
+ * ⚠ **Y el ALCANCE se declara, porque sin él este uno se lee como una clase:**
+ * T11 limpia **UN atributo**, no la familia «residuo de pegado del editor».
+ * Cuántos atributos de esa familia trae el corpus es otra pregunta y sale
+ * **SIN MEDIR — que no es 0** (mismo log, §ALCANCE).
+ *
+ * ── Se quita el ATRIBUTO, no el envoltorio ────────────────────────────────
+ * Es la forma de T3a, que descarta clases y deja el tag: la transformación
+ * mínima que hace desaparecer el bloqueo. Lo que quede desnudo es trabajo de
+ * T5, que es exactamente el reparto que el contrato de orden ya declara
+ * (*«T3a antes que T5: las clases descartadas pueden dejar el envoltorio
+ * desnudo, y ése es el que T5 normaliza»*).
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ POR QUÉ T11 **NO** ESTÁ EN `TRANSFORMACIONES`, Y ES UNA MEDIDA
+ *
+ * La cadena `TRANSFORMACIONES` la corre `extractor.mjs` sobre el `post_content`
+ * del **grupo A** (209 cuerpos: `entradas-blog` · `terminos-kunakpedia` ·
+ * `documentos-cientificos`). Ahí la diana de T11 es **0**: el único fichero con
+ * `data-teams` es `fase-3/sueltas/empresa/index.html`, que **no es post_content
+ * de nadie**.
+ *
+ * Y `extractor.neg.mjs` desactiva una T por corrida y **exige que su
+ * postcondición muerda**; con diana 0 informa **SIN DIANA** y sale rojo — que es
+ * lo correcto (§regla 8a: *un sabotaje que no cambia el resultado no ha probado
+ * la guarda*). Meterla ahí sería, literalmente, el **tercer caso de §regla 21**:
+ * el sabotaje muerde, la sonda está bien y **el dominio no tiene con qué
+ * ejercitar el caso**. Eso no es «roto» ni «probado»: es **SIN PROBAR**, y un
+ * SIN PROBAR que sale verde se lee como probado.
+ *
+ * Así que T11 se declara en el registro con su número y **se consume donde
+ * SÍ tiene diana**: `TRANSFORMACIONES_F33`, la cadena de la cola larga, y su
+ * negativo vive en `extractor-f33.neg.mjs` §`t11`.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const RE_TAG_T11 = /<[a-zA-Z][^>]*\sdata-teams\s*=\s*"[^"]*"[^>]*>/g;
+const RE_ATR_T11 = /\sdata-teams\s*=\s*"[^"]*"/gi;
+
+export const T11 = {
+  id: "t11",
+  titulo: 'T11 · `data-teams` — residuo de pegar desde Teams; se quita el ATRIBUTO, no el envoltorio',
+  aplica(html) {
+    let n = 0;
+    const salida = String(html).replace(RE_TAG_T11, (tag) => {
+      n++;
+      return tag.replace(new RegExp(RE_ATR_T11.source, "gi"), "");
+    });
+    return { html: salida, n };
+  },
+  /** Muerde si queda un `data-teams` servido: ése tenía que irse. */
+  post: (html) => (/\sdata-teams\s*=/i.test(String(html)) ? ["queda `data-teams` en el contenido"] : []),
+  diana: (html) => [...String(html).matchAll(RE_TAG_T11)].length,
+};
+
+/**
+ * LA CADENA DE LA COLA LARGA (F3-3) — hoy, **una sola transformación**.
+ *
+ * ⚠ **No es «la cadena entera menos las que no hacían falta»**: `extractor-f33`
+ * no aplicaba NINGUNA transformación de importación, así que esto es el estreno
+ * del canal, no un recorte. Cuál de las otras doce le corresponde a este
+ * arquetipo **está SIN MEDIR** —cada una tendría que derivar su diana contra
+ * `corpus/fase-3/`— y sale nombrado en vez de resuelto de paso.
+ */
+export const TRANSFORMACIONES_F33 = [T11];

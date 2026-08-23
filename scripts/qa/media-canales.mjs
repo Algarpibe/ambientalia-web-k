@@ -81,15 +81,42 @@ const payload = await getPayload({ config: await construyeConfig() });
  * de texto nuevo lleva una URL de asset y no está aquí, es un canal invisible.
  * Por eso la sonda IMPRIME los nombres que reconoce — una heurística que no se
  * puede auditar es la que produce el sobre-casado de §sondas 4.
- */
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ Y HAY UNA TERCERA, AÑADIDA EL 2026-08-23 (98.ª, D2), QUE ES LA BUENA:
+ * **`custom.canalDeMedia`, DECLARADO EN EL ESQUEMA.**
+ *
+ * `NOMBRES_URL` es *«una lista de literales dentro de una sonda cuyo trabajo es
+ * reconocer algo»* — o sea la señal exacta de §regla 9, 7.º caso: **envejece
+ * contra el repo, en silencio**, y un campo que no case no da error porque un
+ * patrón que no casa no es un cero. La regla que esta sonda implementa dice
+ * *«los canales se derivan de los que el ESQUEMA declara»*, y hasta hoy la
+ * segunda mitad los derivaba **de una lista de la sonda**.
+ *
+ * Con `custom.canalDeMedia` el campo dice **él mismo** que es un canal, y con
+ * qué clase:
+ *
+ *   · `"externo"` — el asset vive FUERA (`srcExterno` de `imagen-pagina`, 1
+ *     instancia medida). **No se resuelve contra `apps/web/public`**: no hay
+ *     fichero que capturar y su ausencia de la carpeta no es un hueco. Sale
+ *     nombrado en el inventario con su cardinal, que es lo que lo convierte en
+ *     un hueco visible en vez de en la próxima sorpresa.
+ *
+ * ⚠ `NOMBRES_URL` se conserva —hay campos vivos que dependen de ella y
+ * migrarlos es otra tanda— pero **no se amplía**: un canal nuevo se declara en
+ * el esquema. Los dos caminos se publican por separado abajo, con su cardinal,
+ * para que no se lea uno como el otro.
+ * ═════════════════════════════════════════════════════════════════════════ */
 const NOMBRES_URL = new Set(["ogimage", "portada", "image", "imagen", "icono", "poster", "src", "archivo"]);
 
-const canales = []; // { coleccion, ruta, tipo }
+const canales = []; // { coleccion, ruta, tipo, clase? }
 function caminaCampos(coleccion, campos, prefijo = "") {
   for (const c of campos ?? []) {
     const nombre = "name" in c ? c.name : null;
     const aqui = nombre ? (prefijo ? `${prefijo}.${nombre}` : nombre) : prefijo;
-    if (c.type === "upload") canales.push({ coleccion, ruta: aqui, tipo: "upload" });
+    const declarado = c.custom?.canalDeMedia;
+    if (declarado) canales.push({ coleccion, ruta: aqui, tipo: "declarado", clase: declarado });
+    else if (c.type === "upload") canales.push({ coleccion, ruta: aqui, tipo: "upload" });
     else if (c.type === "text" && nombre && NOMBRES_URL.has(nombre.toLowerCase()))
       canales.push({ coleccion, ruta: aqui, tipo: "texto-url" });
     if (Array.isArray(c.fields)) caminaCampos(coleccion, c.fields, aqui);
@@ -202,7 +229,42 @@ for (const f of filas) {
  */
 const ejercidos = new Set([...porCanal.values()].map((e) => `${e.coleccion} · ${e.canal}`));
 const RECORRIDAS = new Set(CATALOGOS.map((c) => c.coleccion));
-const noEjercidos = canales.filter((c) => !ejercidos.has(`${c.coleccion} · ${c.ruta}`));
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ EL CUARTO CUBO: EL CANAL DECLARADO QUE **NO SE RESUELVE LOCALMENTE**
+ *
+ * `creaContexto().media` es la guarda de los assets **nuestros**: resuelve
+ * contra `apps/web/public` y por eso es la que sabe si falta un fichero. Un
+ * canal `custom.canalDeMedia === "externo"` **no pasa por ella** —su valor es
+ * una URL absoluta, no una ruta— así que **nunca aparece en `mediaAuditada`**.
+ *
+ * Meterlo en `sinDato` diría exactamente lo contrario de lo que pasa: no es
+ * que el canal esté vacío, es que **su dato no se mide con esta guarda**.
+ * Sería §sondas 4 con el cero puesto en el cubo de destino, y encima con el
+ * canal recién estrenado — o sea el hueco que esta sonda existe para evitar.
+ *
+ * Así que se cuenta **contra el dato del catálogo**, por su clave hoja, y sale
+ * con su cardinal. `0` aquí sí sería un hueco (el canal declarado sin
+ * ejercer); `1` es lo medido hoy (`f33-extraido.json` §origenImagen).
+ * ═════════════════════════════════════════════════════════════════════════ */
+function cuentaPorClave(v, clave, n = { n: 0 }) {
+  if (Array.isArray(v)) { for (const x of v) cuentaPorClave(x, clave, n); return n; }
+  if (v && typeof v === "object")
+    for (const [k, x] of Object.entries(v)) {
+      if (k === clave && typeof x === "string" && x.trim() !== "") n.n++;
+      cuentaPorClave(x, clave, n);
+    }
+  return n;
+}
+const externos = canales
+  .filter((c) => c.clase === "externo")
+  .map((c) => ({
+    ...c,
+    valores: cuentaPorClave(catalogos.get(c.coleccion) ?? [], c.ruta.split(".").pop()).n,
+  }));
+const rutasExternas = new Set(externos.map((c) => `${c.coleccion} · ${c.ruta}`));
+
+const noEjercidos = canales.filter((c) => !ejercidos.has(`${c.coleccion} · ${c.ruta}`) && !rutasExternas.has(`${c.coleccion} · ${c.ruta}`));
 const sinDato = noEjercidos.filter((c) => RECORRIDAS.has(c.coleccion));
 const otroSembrador = noEjercidos.filter((c) => !RECORRIDAS.has(c.coleccion));
 
@@ -223,6 +285,7 @@ console.log(`   canales DECLARADOS por el esquema     ${String(canales.length).p
 console.log(`   · ejercidos por algún dato            ${String(ejercidos.size).padStart(4)}`);
 console.log(`   · declarados y SIN DATO todavía       ${String(sinDato.length).padStart(4)}   ← hueco futuro, nombrado`);
 console.log(`   · de OTRO sembrador (seed-kb)         ${String(otroSembrador.length).padStart(4)}   ← existe, pero esta sonda no lo mira`);
+console.log(`   · EXTERNOS (no se resuelven local)    ${String(externos.length).padStart(4)}   ← su dato no pasa por \`creaContexto().media\``);
 console.log(`   referencias de media recorridas       ${String(filas.length).padStart(4)}`);
 console.log(`   rutas DISTINTAS                       ${String(new Set(filas.map((f) => f.ruta)).size).padStart(4)}`);
 console.log(`   · AUSENTES                            ${String(faltan.length).padStart(4)}`);
@@ -241,6 +304,18 @@ for (const e of [...porCanal.values()].sort((a, b) => b.faltan.size - a.faltan.s
 if (sinDato.length) {
   console.log(`\n  ── CANALES DECLARADOS SIN DATO (cuestan una línea, y son el próximo hueco) ──`);
   for (const c of sinDato) console.log(`   ${c.coleccion} · ${c.ruta}   [${c.tipo}]`);
+}
+
+if (externos.length) {
+  console.log(`\n  ── CANALES EXTERNOS — el asset alojado FUERA (D2, 2026-08-22) ──`);
+  for (const c of externos)
+    console.log(
+      `   ${(c.coleccion + " · " + c.ruta).padEnd(46)} ${String(c.valores).padStart(4)} valor(es)   ` +
+        `[${c.tipo}:${c.clase}]  ← NO se captura ni se resuelve contra apps/web/public`,
+    );
+  console.log(`   Su ausencia de la carpeta no es un hueco: no hay fichero que capturar.`);
+  console.log(`   Y su cardinal se cuenta contra el DATO del catálogo, no contra \`mediaAuditada\`,`);
+  console.log(`   porque este canal no pasa por la guarda que resuelve rutas locales.`);
 }
 
 if (faltan.length) {
@@ -331,6 +406,7 @@ w("medidas/media-canales.json", {
     canalesEjercidos: ejercidos.size,
     canalesSinDato: sinDato.length,
     canalesDeOtroSembrador: otroSembrador.length,
+    canalesExternos: externos.length,
     referencias: filas.length,
     rutasDistintas: new Set(filas.map((f) => f.ruta)).size,
     ausentes: faltan.length,
@@ -338,6 +414,13 @@ w("medidas/media-canales.json", {
   canalesDeclarados: canales,
   canalesSinDato: sinDato,
   canalesDeOtroSembrador: otroSembrador,
+  /**
+   * Los EXTERNOS, con su cardinal contado sobre el DATO. No entran en
+   * `origenesACapturar`: no hay fichero que pedir, y meterlos ahí mandaría a la
+   * campaña de captura a por un asset que el propietario decidió NO capturar
+   * (D2, 2026-08-22).
+   */
+  canalesExternos: externos,
   porCanal: [...porCanal.values()].map((e) => ({
     coleccion: e.coleccion,
     canal: e.canal,

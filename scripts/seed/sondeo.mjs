@@ -181,11 +181,43 @@ const llave = SABOTAJE === "slug" ? (v) => (typeof v === "string" ? esSlug(v) : 
 if (SABOTAJE === "slug")
   console.log(`\n⚠ SABOTAJE=slug — el lector de llaves no mira el \`href\`. Esta corrida DEBE fallar.\n`);
 
-/* Un payload de mentira: el sondeo no escribe. `media` devuelve un id falso
- * porque aquí la pregunta es de RELACIONES, no de ficheros. */
-const falso = { create: async () => ({ id: 0 }) };
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS CANALES QUE ESTE SONDEO **ANULA** — declarados, con su cardinal
+ *
+ * Un payload de mentira: el sondeo no escribe, y `media` devuelve un id falso
+ * porque aquí la pregunta es de RELACIONES, no de ficheros. Eso está bien
+ * **y hay que decirlo en el informe**, no sólo en este comentario:
+ *
+ * > **Una sonda que sustituye una dependencia por una constante no está
+ * > midiendo ese canal.** Su «0 defectos» es cierto de lo que mira y no dice
+ * > NADA del canal que anuló — §sondas 4 con el cero puesto en un stub.
+ *
+ * ⚠ **Y no es teoría: es lo que dejó pasar hasta el `seed` la imagen alojada en
+ * `upload.wikimedia.org`** (§F3-3-BLOQUEOS-DE-SIEMBRA, 97.ª). El comentario ya
+ * decía «un payload de mentira»; **el informe no lo declaraba**, y §regla 14 es
+ * exactamente eso: una limitación sin su número se lee como nota al pie.
+ *
+ * Se cuentan las llamadas. El cardinal es lo que convierte *«no mide media»* en
+ * *«no midió las N referencias de media que este recorrido tocó»*, que es lo
+ * único que se puede sopesar contra la frase de cierre.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const ANULADOS = {
+  media: {
+    canal: "creaContexto().media — resolución de assets contra apps/web/public",
+    sustituto: "constante `0` (un id de media falso)",
+    llamadas: 0,
+    queNoDice: "si el fichero existe, si la ruta es local, ni si el asset vive fuera. Ese canal lo mide `qa:media-canales`.",
+  },
+  create: {
+    canal: "payload.create — la escritura en la DB",
+    sustituto: "objeto de mentira `{ id: 0 }`",
+    llamadas: 0,
+    queNoDice: "nada de lo que la DB rechazaría al escribir de verdad (unicidad, FK, tipos de columna). Eso lo mide el `seed` y `qa:cms-roundtrip`.",
+  },
+};
+const falso = { create: async () => (ANULADOS.create.llamadas++, { id: 0 }) };
 const ctx = creaContexto(falso, { sondeo: true, llave });
-ctx.media = async () => 0;
+ctx.media = async () => (ANULADOS.media.llamadas++, 0);
 
 /* Se registran TODOS los slugs de TODAS las colecciones primero: así lo que
  * quede huérfano es «no existe en `src/lib`», no «aún no lo he insertado». */
@@ -548,12 +580,35 @@ const informe = {
     porRuta: Object.fromEntries(Object.entries(rechazosPorColeccion).map(([k, v]) => [k, [...v].sort()])),
     noEvaluables: validatesNoEvaluables,
   },
-  instrumento: { sinLlave: ctx.sinLlave, erroresDeMapeo, podasMuertas: muertas },
+  instrumento: {
+    sinLlave: ctx.sinLlave,
+    erroresDeMapeo,
+    podasMuertas: muertas,
+    /** §regla 14 · la limitación con su CARDINAL, no como nota al pie. */
+    canalesAnulados: Object.values(ANULADOS),
+  },
 };
 w(SABOTAJE ? `medidas/sondeo-neg-${SABOTAJE}.json` : "medidas/sondeo-frontera.json", informe);
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ LOS CANALES ANULADOS — se imprimen JUNTO al veredicto, no en un anexo
+ *
+ * Van aquí y no al final del informe porque §regla 14 no es sólo «declara la
+ * limitación»: es *«si la limitación cambia lo que una frase de cierre afirma,
+ * se escribe TAMBIÉN en esa frase»*. El campo que declara el límite y el titular
+ * que lo ignora conviven sin contradecirse a la vista, y gana el titular.
+ * ═════════════════════════════════════════════════════════════════════════ */
+console.log(`\n  ⚠ CANALES ANULADOS por sustitución — el «0 defectos» de abajo NO los cubre:`);
+for (const a of Object.values(ANULADOS))
+  console.log(
+    `     ${a.canal}\n` +
+      `        → ${a.sustituto}   ·   ${a.llamadas} llamada(s) anulada(s)\n` +
+      `        no dice: ${a.queNoDice}`,
+  );
+
 console.log(
-  `\n${fallos === 0 ? "✅" : "❌"} sondeo: ${fallos} defecto(s) de INSTRUMENTO.` +
+  `\n${fallos === 0 ? "✅" : "❌"} sondeo: ${fallos} defecto(s) de INSTRUMENTO` +
+    ` — sobre los canales que SÍ mira (2 anulados, ${Object.values(ANULADOS).reduce((a, x) => a + x.llamadas, 0)} llamadas).` +
     (fallos === 0
       ? `  El grafo es acíclico, el orden es topológico, toda relación tiene llave\n` +
         `   y las ${esperadas.size} rutas \`required\` del esquema se auditaron.\n` +

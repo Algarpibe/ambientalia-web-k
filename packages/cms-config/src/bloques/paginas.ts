@@ -10,9 +10,17 @@
  * es el arreglo falso de §1.5b Razón 1. `MonoSeccion[]` no se toca.
  *
  * Lo compartido sí se CONSUME: `medida()`, `anchoPct`, `campoHtml`, `subida`,
- * `nivelTitular`, `CAMPOS_MODULO_IMAGEN`, `CAMPOS_MODULO_BOTON`. *Lo que se
- * duplica es el documento, no la definición* (§1.5b) — dos declaraciones de
- * «la imagen de un módulo» son la clase C7.
+ * `nivelTitular`, `CAMPOS_MODULO_BOTON`. *Lo que se duplica es el documento, no
+ * la definición* (§1.5b).
+ *
+ * ⚠ **`CAMPOS_MODULO_IMAGEN` dejó de consumirse el 2026-08-23 (98.ª, D2)**, y
+ * no por gusto: `src` cambia de obligatoriedad **sólo aquí**, porque sólo este
+ * arquetipo tiene medido un asset alojado FUERA. Esparcir el compartido y
+ * pisar `src` encima mutaría el objeto que también usan `MODULO_IMAGEN`
+ * (MONOGRÁFICO · SECTOR) y `MODULO_IMAGEN_KB` — que es exactamente el defecto
+ * que `nivelCon()` documenta en `contenido.ts` («los cuatro sitios acabaron con
+ * el mismo defecto»). La duplicación es de DOS campos y está acotada; la
+ * mutación habría tocado tres arquetipos verificados.
  *
  * ══════════════════════════════════════════════════════════════════════════
  * ⚠⚠ LA MITAD QUE HAY QUE LEER ANTES DE USAR ESTE FICHERO: **CINCO DE LAS OCHO
@@ -63,12 +71,7 @@
 import type { Block, Field } from "payload";
 
 import { anchoPct, campoHtml, conDefecto, medida, subida } from "../campos/comunes.ts";
-import {
-  CAMPOS_MODULO_BOTON,
-  CAMPOS_MODULO_IMAGEN,
-  ancho,
-  nivelTitular,
-} from "./contenido.ts";
+import { CAMPOS_MODULO_BOTON, ancho, nivelTitular } from "./contenido.ts";
 
 /* ══════════════════════════════════════════════════════════════════════════
  * EL RITMO — el de KB, con UNIDAD, y por la misma razón medida
@@ -144,12 +147,93 @@ export const MODULO_TEXTO_PAGINA: Block = {
  * `MODULO_IMAGEN_KB`: M-IMG sigue abierta en §CMS-0b y resolverla de paso, en
  * la tanda que estrena el arquetipo, es cómo se fabrica una decisión sin
  * medida.
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ `srcExterno` — EL ASSET ALOJADO FUERA. Decisión del propietario (D2).
+ *
+ * **1 de las 71** imágenes de este arquetipo no está en `kunakair.com`: es un
+ * `<img src>` a `upload.wikimedia.org` en `/es/empresa/`
+ * (`derivaciones/bloqueos-f33.log` §media — **1 URL absoluta en las 31**). El
+ * propietario decidió el **2026-08-22** que **se deja absoluto**: es lo que el
+ * original sirve, y la regla de no hotlinkear es sobre `kunakair.com`, para no
+ * depender del original.
+ *
+ * ── Por qué es un CAMPO y no un `src` opcional a secas ───────────────────
+ * `src` es `upload → media`, o sea que **sólo puede expresar un asset local**.
+ * Un documento cuyo asset vive fuera **no cabe en el modelo**, y §*un campo
+ * opcional NO expresa un caso — sólo permite que falte* dice exactamente qué
+ * pasaría si se dejara así: la imagen saldría ausente y la página se serviría
+ * con 200 y sin ella. La pregunta que decide no es *«¿cabe lo que hay?»* sino
+ * *«¿queda contenido SIN SITIO?»*, y aquí quedaba.
+ *
+ * ── Y por eso la obligatoriedad se mueve, no desaparece ──────────────────
+ * `src` deja de ser `required` y en su sitio hay un `validate` que exige
+ * **exactamente uno de los dos**. Ni cero (una imagen sin origen es un módulo
+ * que no pinta) ni dos (dos orígenes para un `<img>` es un dato ambiguo, y el
+ * render tendría que elegir). El defecto se pone en la dirección que grita.
+ *
+ * ── El canal se DECLARA, y en el ESQUEMA ─────────────────────────────────
+ * `custom.canalDeMedia` es lo que hace que `qa:media-canales` lo encuentre
+ * **caminando la config** en vez de por su nombre: el inventario de media se
+ * deriva de los canales que el ESQUEMA declara, no de una lista de nombres
+ * dentro de la sonda (§regla 9, 7.º caso). `"externo"` dice además que este
+ * canal **no se resuelve contra `apps/web/public`**: no tiene fichero que
+ * capturar y su ausencia de la carpeta no es un hueco.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Exactamente UNO de `src` / `srcExterno`. Vive en `src` y no en el bloque
+ * porque Payload evalúa el `validate` de campo con `siblingData` delante, que
+ * es lo único que hace falta para decidir — y porque así el mensaje sale en el
+ * campo que el editor está mirando.
+ *
+ * ⚠ **Rechaza el CERO tanto como el DOS.** El cero es el modo de fallo que
+ * §*un campo opcional sólo permite que falte* describe: un módulo de imagen sin
+ * origen no da error, **no pinta**, y la página se sirve con 200. El dos es un
+ * dato ambiguo que obligaría al render a elegir.
  */
+export function validaOrigenImagen(
+  valor: unknown,
+  opciones?: { siblingData?: { srcExterno?: unknown } },
+): true | string {
+  const local = valor !== undefined && valor !== null && valor !== "";
+  const ext = opciones?.siblingData?.srcExterno;
+  const externo = typeof ext === "string" && ext.trim() !== "";
+  if (local && externo)
+    return "Una imagen tiene UN origen: deja `src` (asset local) o `srcExterno` (URL absoluta), no los dos.";
+  if (!local && !externo)
+    return "Falta el origen de la imagen: `src` si el asset es local, `srcExterno` si vive fuera (1 de 71 medida).";
+  return true;
+}
+
 export const MODULO_IMAGEN_PAGINA: Block = {
   slug: "imagen-pagina",
   labels: { singular: "Imagen", plural: "Imágenes" },
   fields: [
-    ...CAMPOS_MODULO_IMAGEN,
+    /* `CAMPOS_MODULO_IMAGEN` se re-declara aquí en vez de esparcirse porque
+     * `src` cambia de obligatoriedad SÓLO en este bloque. Mutar el compartido
+     * se llevaría por delante a `MODULO_IMAGEN` (MONOGRÁFICO · SECTOR) y a
+     * `MODULO_IMAGEN_KB`, que no tienen medido ningún asset externo. */
+    {
+      name: "src",
+      type: "upload",
+      relationTo: "media",
+      required: false,
+      validate: validaOrigenImagen,
+      admin: { description: "El asset local. 70 de 71 instancias medidas." },
+    },
+    {
+      name: "srcExterno",
+      type: "text",
+      required: false,
+      custom: { canalDeMedia: "externo" },
+      admin: {
+        description:
+          "La URL absoluta, tal cual la sirve el original, cuando el asset vive FUERA. " +
+          "1 de 71 medida (`upload.wikimedia.org` en `/es/empresa/`). No se captura: D2, 2026-08-22.",
+      },
+    },
+    { name: "alt", type: "text" },
     { name: "href", type: "text" },
     { name: "external", type: "checkbox" },
     ...moduloBasePagina,
@@ -581,6 +665,20 @@ export const columnasPagina: Field = {
  * vistos suman 1 sin excepción (`arbol-f33.log` §2). Sin ella el dato admite
  * `1_2 + 1_3`, que no es una fila que el original pueda producir, y se
  * renderizaría torcida sin dar error (§regla 6: la ausencia se rechaza).
+ *
+ * ⚠⚠ **Y este docstring FUE el caso de §sondas 3 —*documentado no es
+ * conectado*— hasta el 2026-08-23 (98.ª).** Listaba `1_5+1_5+1_5+1_5+1_5`
+ * entre los repartos válidos y **el `select` de `ancho` no podía expresar
+ * `1_5`**: el comentario decía una cosa y el campo otra, y no lo cazó ningún
+ * `check` ni ninguna sonda —**lo notó Payload al sembrar**, con 10 rechazos en
+ * una página—. Corregido en el CAMPO (`contenido.ts` §`ancho`, con su
+ * migración), no aquí: la retícula que este validador describe es la que
+ * estaba bien.
+ *
+ * ⚠ La lista de repartos del mensaje es una **ayuda al editor**, no la regla.
+ * La regla es *«los anchos suman 1»*, y por eso `1_6 ×6` valida sin estar en la
+ * lista: `1_6` es un valor de la retícula **SIN EJERCITAR** en este corpus
+ * (0 de 113 filas), no un valor prohibido.
  */
 export function validaReticulaPagina(valor: unknown): true | string {
   if (!Array.isArray(valor)) return true;

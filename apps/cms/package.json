@@ -12,6 +12,7 @@
     "generate:importmap": "payload generate:importmap",
     "migrate:create": "payload migrate:create",
     "migrate": "payload migrate",
+    "migrate:down": "payload migrate:down",
     "migrate:status": "payload migrate:status"
   },
   "dependencies": {

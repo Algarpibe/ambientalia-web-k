@@ -910,7 +910,7 @@ export interface Monografico {
               pb?: number | null;
               columnas?:
                 | {
-                    ancho: '1_4' | '1_3' | '2_5' | '1_2' | '3_5' | '2_3' | '3_4' | '4_4';
+                    ancho: '1_6' | '1_5' | '1_4' | '1_3' | '2_5' | '1_2' | '3_5' | '2_3' | '3_4' | '4_4';
                     punteado?: boolean | null;
                     mbMovil?: number | null;
                     modulos: (
@@ -1726,7 +1726,14 @@ export interface Pagina {
                   blockType: 'texto-pagina';
                 }
               | {
-                  src: number | Media;
+                  /**
+                   * El asset local. 70 de 71 instancias medidas.
+                   */
+                  src?: (number | null) | Media;
+                  /**
+                   * La URL absoluta, tal cual la sirve el original, cuando el asset vive FUERA. 1 de 71 medida (`upload.wikimedia.org` en `/es/empresa/`). No se captura: D2, 2026-08-22.
+                   */
+                  srcExterno?: string | null;
                   alt?: string | null;
                   href?: string | null;
                   external?: boolean | null;
@@ -2520,796 +2527,805 @@ export interface Pagina {
                 movilUnidad?: ('px' | 'pct') | null;
               };
               columnas: {
-                ancho: '1_4' | '1_3' | '2_5' | '1_2' | '3_5' | '2_3' | '3_4' | '4_4';
-                modulos: (
-                  | {
-                      /**
-                       * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-                       */
-                      html: string;
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'texto-pagina';
-                    }
-                  | {
-                      src: number | Media;
-                      alt?: string | null;
-                      href?: string | null;
-                      external?: boolean | null;
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'imagen-pagina';
-                    }
-                  | {
-                      label: string;
-                      href: string;
-                      external?: boolean | null;
-                      /**
-                       * `boton-azul` — 4 de 13 instancias (arbol-f33.log §4)
-                       */
-                      piel?: ('defecto' | 'azul') | null;
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'boton-pagina';
-                    }
-                  | {
-                      /**
-                       * HTML crudo del módulo `et_pb_code`. NO se valida contra el censo del cuerpo rico: este módulo existe para meter lo que ese censo prohíbe. 9 instancias en 9 páginas.
-                       */
-                      html: string;
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'codigo';
-                    }
-                  | {
-                      titulo: string;
-                      /**
-                       * Defecto 5 — F3-3 · `et_pb_toggle_title` sirve `h5` en 10/10 (arbol-f33). El RANGO es el de la etiqueta HTML, no el de la muestra.
-                       */
-                      nivel?: number | null;
-                      /**
-                       * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-                       */
-                      cuerpo: string;
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'toggle';
-                    }
-                  | {
-                      /**
-                       * `src` del `<iframe>`, tal cual. 30/30 instancias lo traen.
-                       */
-                      embedUrl: string;
-                      /**
-                       * `title` del iframe. Es lo que lee un lector de pantalla.
-                       */
-                      titulo?: string | null;
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'video-pagina';
-                    }
-                  | {
-                      titulo: string;
-                      /**
-                       * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
-                       */
-                      nivel?: number | null;
-                      imagen?: (number | null) | Media;
-                      alt?: string | null;
-                      /**
-                       * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-                       */
-                      descripcion?: string | null;
-                      /**
-                       * Lo que el editor tocó en la tipografía del titular. Vacío = el defecto del tema.
-                       */
-                      piel?: {
-                        /**
-                         * Tamaño en PX. 18·20·21·23·32·37·44·44.1·45·50 medidos.
-                         */
-                        fs?: number | null;
-                        /**
-                         * Interlínea en EM (razón), no en px. 1.1·1.2·1.25 medidos.
-                         */
-                        lh?: number | null;
-                        /**
-                         * Peso CSS 100–900. 300·600·700·800 medidos.
-                         */
-                        fw?: number | null;
-                        /**
-                         * Hex, sin `!important` (lo pone el compilador de Divi).
-                         */
-                        color?: string | null;
-                        align?: ('left' | 'center' | 'right' | 'justify') | null;
-                        /**
-                         * Tamaño en PX bajo 980px. Divi emite el mismo valor a 980 y a 767: 323/323.
-                         */
-                        movilFs?: number | null;
-                      };
-                      /**
-                       * Defecto "iconos" — kb-recon · iconos×24 · col-md-4×9 · ninguna×3
-                       */
-                      reticula?: ('iconos' | 'col-md-4' | 'ninguna') | null;
-                      /**
-                       * Defecto "center" — kb-recon · center×27 · left×9
-                       */
-                      alineacion?: ('center' | 'left') | null;
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×121 · `−25`×6 · `−18→0`×14 · `−15`×2
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'blurb';
-                    }
-                  | {
-                      /**
-                       * `et_pb_slide` — hijo del slider, no bloque de la unión (P-S2, 2/2)
-                       */
-                      diapositivas: {
-                        titulo: string;
-                        /**
-                         * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
-                         */
-                        nivel?: number | null;
-                        /**
-                         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-                         */
-                        cuerpo?: string | null;
-                        botonLabel?: string | null;
-                        botonHref?: string | null;
-                        fondo?: (number | null) | Media;
-                        id?: string | null;
-                      }[];
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'slider-completo';
-                    }
-                  | {
-                      diapositivas: {
-                        titulo: string;
-                        /**
-                         * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
-                         */
-                        nivel?: number | null;
-                        /**
-                         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-                         */
-                        cuerpo?: string | null;
-                        botonLabel?: string | null;
-                        botonHref?: string | null;
-                        fondo?: (number | null) | Media;
-                        id?: string | null;
-                      }[];
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'slider';
-                    }
-                  | {
-                      /**
-                       * array y no escalar: con n = 1 no se puede afirmar «siempre uno»
-                       */
-                      pines: {
-                        titulo: string;
-                        /**
-                         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
-                         */
-                        descripcion?: string | null;
-                        lat?: string | null;
-                        lng?: string | null;
-                        id?: string | null;
-                      }[];
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'mapa';
-                    }
-                  | {
-                      /**
-                       * El carácter de la fuente de iconos, tal cual lo sirve Divi (`data-icon`). n = 1 página: enum / carácter / imagen son indistinguibles aquí — F3-3-ICONO-DATO.
-                       */
-                      icono: string;
-                      texto?: string | null;
-                      ritmo?: {
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
-                         */
-                        mt?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
-                         */
-                        mb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                        /**
-                         * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
-                         */
-                        pb?: {
-                          valor?: number | null;
-                          /**
-                           * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          unidad?: ('px' | 'pct') | null;
-                          /**
-                           * Vacío = hereda el de escritorio.
-                           */
-                          movilValor?: number | null;
-                          /**
-                           * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
-                           */
-                          movilUnidad?: ('px' | 'pct') | null;
-                        };
-                      };
-                      /**
-                       * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
-                       */
-                      anchoPct?: number | null;
-                      id?: string | null;
-                      blockName?: string | null;
-                      blockType: 'icono';
-                    }
-                )[];
+                ancho: '1_6' | '1_5' | '1_4' | '1_3' | '2_5' | '1_2' | '3_5' | '2_3' | '3_4' | '4_4';
+                modulos?:
+                  | (
+                      | {
+                          /**
+                           * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+                           */
+                          html: string;
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'texto-pagina';
+                        }
+                      | {
+                          /**
+                           * El asset local. 70 de 71 instancias medidas.
+                           */
+                          src?: (number | null) | Media;
+                          /**
+                           * La URL absoluta, tal cual la sirve el original, cuando el asset vive FUERA. 1 de 71 medida (`upload.wikimedia.org` en `/es/empresa/`). No se captura: D2, 2026-08-22.
+                           */
+                          srcExterno?: string | null;
+                          alt?: string | null;
+                          href?: string | null;
+                          external?: boolean | null;
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'imagen-pagina';
+                        }
+                      | {
+                          label: string;
+                          href: string;
+                          external?: boolean | null;
+                          /**
+                           * `boton-azul` — 4 de 13 instancias (arbol-f33.log §4)
+                           */
+                          piel?: ('defecto' | 'azul') | null;
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'boton-pagina';
+                        }
+                      | {
+                          /**
+                           * HTML crudo del módulo `et_pb_code`. NO se valida contra el censo del cuerpo rico: este módulo existe para meter lo que ese censo prohíbe. 9 instancias en 9 páginas.
+                           */
+                          html: string;
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'codigo';
+                        }
+                      | {
+                          titulo: string;
+                          /**
+                           * Defecto 5 — F3-3 · `et_pb_toggle_title` sirve `h5` en 10/10 (arbol-f33). El RANGO es el de la etiqueta HTML, no el de la muestra.
+                           */
+                          nivel?: number | null;
+                          /**
+                           * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+                           */
+                          cuerpo: string;
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'toggle';
+                        }
+                      | {
+                          /**
+                           * `src` del `<iframe>`, tal cual. 30/30 instancias lo traen.
+                           */
+                          embedUrl: string;
+                          /**
+                           * `title` del iframe. Es lo que lee un lector de pantalla.
+                           */
+                          titulo?: string | null;
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'video-pagina';
+                        }
+                      | {
+                          titulo: string;
+                          /**
+                           * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
+                           */
+                          nivel?: number | null;
+                          imagen?: (number | null) | Media;
+                          alt?: string | null;
+                          /**
+                           * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+                           */
+                          descripcion?: string | null;
+                          /**
+                           * Lo que el editor tocó en la tipografía del titular. Vacío = el defecto del tema.
+                           */
+                          piel?: {
+                            /**
+                             * Tamaño en PX. 18·20·21·23·32·37·44·44.1·45·50 medidos.
+                             */
+                            fs?: number | null;
+                            /**
+                             * Interlínea en EM (razón), no en px. 1.1·1.2·1.25 medidos.
+                             */
+                            lh?: number | null;
+                            /**
+                             * Peso CSS 100–900. 300·600·700·800 medidos.
+                             */
+                            fw?: number | null;
+                            /**
+                             * Hex, sin `!important` (lo pone el compilador de Divi).
+                             */
+                            color?: string | null;
+                            align?: ('left' | 'center' | 'right' | 'justify') | null;
+                            /**
+                             * Tamaño en PX bajo 980px. Divi emite el mismo valor a 980 y a 767: 323/323.
+                             */
+                            movilFs?: number | null;
+                          };
+                          /**
+                           * Defecto "iconos" — kb-recon · iconos×24 · col-md-4×9 · ninguna×3
+                           */
+                          reticula?: ('iconos' | 'col-md-4' | 'ninguna') | null;
+                          /**
+                           * Defecto "center" — kb-recon · center×27 · left×9
+                           */
+                          alineacion?: ('center' | 'left') | null;
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×121 · `−25`×6 · `−18→0`×14 · `−15`×2
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'blurb';
+                        }
+                      | {
+                          /**
+                           * `et_pb_slide` — hijo del slider, no bloque de la unión (P-S2, 2/2)
+                           */
+                          diapositivas: {
+                            titulo: string;
+                            /**
+                             * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
+                             */
+                            nivel?: number | null;
+                            /**
+                             * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+                             */
+                            cuerpo?: string | null;
+                            botonLabel?: string | null;
+                            botonHref?: string | null;
+                            fondo?: (number | null) | Media;
+                            id?: string | null;
+                          }[];
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'slider-completo';
+                        }
+                      | {
+                          diapositivas: {
+                            titulo: string;
+                            /**
+                             * Defecto 3 — §1.5 · MonoNivel 2|3|4 — el titular lo lee con `?? 3` en MonoCuerpo.tsx
+                             */
+                            nivel?: number | null;
+                            /**
+                             * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+                             */
+                            cuerpo?: string | null;
+                            botonLabel?: string | null;
+                            botonHref?: string | null;
+                            fondo?: (number | null) | Media;
+                            id?: string | null;
+                          }[];
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'slider';
+                        }
+                      | {
+                          /**
+                           * array y no escalar: con n = 1 no se puede afirmar «siempre uno»
+                           */
+                          pines: {
+                            titulo: string;
+                            /**
+                             * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+                             */
+                            descripcion?: string | null;
+                            lat?: string | null;
+                            lng?: string | null;
+                            id?: string | null;
+                          }[];
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'mapa';
+                        }
+                      | {
+                          /**
+                           * El carácter de la fuente de iconos, tal cual lo sirve Divi (`data-icon`). n = 1 página: enum / carácter / imagen son indistinguibles aquí — F3-3-ICONO-DATO.
+                           */
+                          icono: string;
+                          texto?: string | null;
+                          ritmo?: {
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5
+                             */
+                            mt?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
+                             */
+                            mb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                            /**
+                             * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
+                             */
+                            pb?: {
+                              valor?: number | null;
+                              /**
+                               * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad?: ('px' | 'pct') | null;
+                              /**
+                               * Vacío = hereda el de escritorio.
+                               */
+                              movilValor?: number | null;
+                              /**
+                               * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              movilUnidad?: ('px' | 'pct') | null;
+                            };
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'icono';
+                        }
+                    )[]
+                  | null;
                 id?: string | null;
               }[];
               id?: string | null;
@@ -3421,7 +3437,7 @@ export interface ArticulosKb {
       movilUnidad?: ('px' | 'pct') | null;
     };
     columnas: {
-      ancho: '1_4' | '1_3' | '2_5' | '1_2' | '3_5' | '2_3' | '3_4' | '4_4';
+      ancho: '1_6' | '1_5' | '1_4' | '1_3' | '2_5' | '1_2' | '3_5' | '2_3' | '3_4' | '4_4';
       modulos: (
         | {
             /**
@@ -5228,6 +5244,7 @@ export interface PaginasSelect<T extends boolean = true> {
                 | T
                 | {
                     src?: T;
+                    srcExterno?: T;
                     alt?: T;
                     href?: T;
                     external?: T;
@@ -5692,6 +5709,7 @@ export interface PaginasSelect<T extends boolean = true> {
                             | T
                             | {
                                 src?: T;
+                                srcExterno?: T;
                                 alt?: T;
                                 href?: T;
                                 external?: T;

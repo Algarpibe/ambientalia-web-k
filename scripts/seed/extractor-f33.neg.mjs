@@ -8,7 +8,9 @@
  * | `geometria` | una clave de ritmo escrita ⇒ **rojo** | 24 campos INVENTADOS, cada uno con su medición real de coartada |
  * | `arrasa` | retirar el MÓDULO en vez del CONTENEDOR ⇒ **rojo** | un párrafo del editor que se va con el cascarón, sin error |
  * | `arrasa-control` | el mismo párrafo inyectado SIN arrasar ⇒ **verde, con el párrafo dentro** | que `arrasa` estuviera cayendo por la inyección y no por arrasar |
- * | `control` | ✅ 31 docs · 313 módulos en el árbol → 301 emitidos · 11 tipos · 0 geometría · 12 retiradas | — |
+ * | `t11` | sin la transformación de importación ⇒ **rojo, y por la POSTCONDICIÓN** | `data-teams` llega al campo rico; lo caza Payload al sembrar, no aquí |
+ * | `media-externa` | el asset alojado FUERA metido en `src` ⇒ **rojo** | un absoluto en un campo `upload`, que no da «imagen mal»: mata el documento |
+ * | `control` | ✅ 31 docs · 313 módulos en el árbol → 301 emitidos · 11 tipos · 0 geometría · 12 retiradas · 1/1 T11 · 1 origen externo | — |
  *
  * ══════════════════════════════════════════════════════════════════════════
  * ⚠ POR QUÉ ESTE NEGATIVO SE ESCRIBE **AHORA** — §regla 24
@@ -62,6 +64,20 @@ const casos = [
       if (j.emision?.modulos !== 301) return `${j.emision?.modulos} módulos emitidos, esperaba 301`;
       if (j.retirada?.modulosTocados !== 12) return `${j.retirada?.modulosTocados} módulos con generado retirado, esperaba 12`;
       if (j.retirada?.modulosConservados !== 0) return `${j.retirada?.modulosConservados} conservados: hay texto del editor junto a un generado`;
+      /* D1 · la transformación de importación, con SU DENOMINADOR: «1 aplicada»
+       * no dice nada si la entrada traía 2 (§regla 22: el booleano sale igual
+       * sobre un dominio de uno que sobre uno de mil). */
+      const t = j.transformaciones ?? {};
+      if (t.dianaEntrada !== 1) return `${t.dianaEntrada} dianas de T11 en la entrada, esperaba 1 (atributo-teams-f33)`;
+      if (t.aplicadas !== t.dianaEntrada) return `${t.aplicadas} aplicadas contra ${t.dianaEntrada} dianas: hay atributo que no se recoge`;
+      if ((t.rutas ?? []).some((r) => !r.reconstruye)) return `una ruta de T11 no reconstruye: se llevó algo que no era el atributo`;
+      if (JSON.stringify(j.catalogo?.paginas ?? []).includes("data-teams"))
+        return "queda `data-teams` en el catálogo: T11 no llegó al campo que lo trae";
+      /* D2 · el origen de imagen, con su reparto y su cero de defectos. */
+      const o = j.origenImagen ?? {};
+      if (o.externo !== 1) return `${o.externo} imágenes de origen externo, esperaba 1 (bloqueos-f33 §media)`;
+      if (o.local + o.externo !== o.total) return `${o.local}+${o.externo} ≠ ${o.total}: hay imágenes sin origen o con dos`;
+      if ((o.mal ?? []).length) return `${o.mal.length} módulo(s) con el origen mal puesto`;
       return null;
     },
   },
@@ -134,6 +150,49 @@ const casos = [
       /* y que la miga sí se fue: si no, el control pasa sin que la retirada actúe */
       if (JSON.stringify(j.catalogo?.paginas ?? []).includes("kunak-breadcrumbs"))
         return "queda `kunak-breadcrumbs` en el catálogo: la retirada no actuó, así que el verde no dice nada";
+      return null;
+    },
+  },
+  /* ══════════════════════════════════════════════════════════════════════
+   * LOS DOS DE LA 98.ª — y los dos son «¿SABE GRITAR?», no «¿sabe callar?»
+   *
+   * `t11` y `media-externa` sabotean **el arreglo que esta tanda acaba de
+   * hacer**, así que su pregunta es la de §regla 24: se quita el arreglo y se
+   * exige que la guarda **cace el defecto Y LO NOMBRE**. Un caso atado sólo al
+   * código de salida caducaría el día que otra cosa lo mueva.
+   *
+   * ⚠ Y los dos tienen instancias separadoras MEDIDAS, no supuestas: 1 diana
+   * de `data-teams` en las 31 (`atributo-teams-f33.log`) y 1 asset externo de
+   * 71 imágenes (`bloqueos-f33.log` §media). Si alguno de los dos cardinales
+   * fuera 0, el sabotaje no podría ejercitar nada — y el caso `control` lo
+   * comprueba con su denominador, arriba, para que no salga verde por vacío.
+   * ═══════════════════════════════════════════════════════════════════════ */
+  {
+    etiqueta: "t11",
+    porQue: "sin la transformación de importación, `data-teams` llega al campo rico ⇒ rojo AQUÍ, no en Payload",
+    env: { SABOTAJE: "t11" },
+    exit: 2,
+    salidaTiene: /TRANSFORMACIÓN DE IMPORTACIÓN/,
+    comprueba: (j) => {
+      /* §regla 1: el rojo no basta — tiene que caer POR SU MOTIVO. El atributo
+       * tiene que seguir dentro del catálogo, que es lo que Payload rechazaría. */
+      if (!JSON.stringify(j.catalogo?.paginas ?? []).includes("data-teams"))
+        return "el sabotaje no dejó `data-teams` en el catálogo: no ejercita la guarda (0 separadoras)";
+      if (j.transformaciones?.aplicadas !== 0) return `${j.transformaciones?.aplicadas} aplicadas con el sabotaje puesto, esperaba 0`;
+      return null;
+    },
+  },
+  {
+    etiqueta: "media-externa",
+    porQue: "el asset alojado FUERA metido en `src` (`upload → media`) ⇒ ORIGEN DE IMAGEN en rojo",
+    env: { SABOTAJE: "media-externa" },
+    exit: 2,
+    salidaTiene: /ORIGEN DE IMAGEN/,
+    comprueba: (j) => {
+      const o = j.origenImagen ?? {};
+      if (o.externo !== 0) return `${o.externo} en \`srcExterno\` con el sabotaje puesto, esperaba 0`;
+      if (!(o.mal ?? []).some((m) => /no es una ruta local/.test(m)))
+        return "la guarda no nombró el `src` absoluto: cayó por otra cosa";
       return null;
     },
   },

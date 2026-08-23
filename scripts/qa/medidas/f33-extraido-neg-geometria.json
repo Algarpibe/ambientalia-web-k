@@ -10,6 +10,8 @@
       "completaPara": "SEMBRAR las 31 en la colección `paginas`",
       "noCubre": [
         "la GEOMETRÍA: `pt/pb/mt/mb` y `anchoPct` salen SIN ESCRIBIR (0 ejes comparados en las 31). No es 0: es ausente, que en `medida()` significa «el default de Divi»",
+        "las otras 12 transformaciones de `TRANSFORMACIONES`: cuál le toca a este arquetipo está SIN MEDIR — habría que derivar la diana de cada una contra `corpus/fase-3/`",
+        "la CLASE «residuo de pegado del editor»: T11 limpia UN atributo (`data-teams`). Cuántos más hay de esa familia sale SIN MEDIR, que no es 0 (`atributo-teams-f33.log` §ALCANCE)",
         "`srcset`: omisión DECLARADA, M-IMG sigue abierta en §CMS-0b",
         "los 36 módulos dentro de desplegables CERRADOS: su geometría NO ES MEDIBLE sin interacción, y no medible no es 0",
         "`anchoPct` de las 25 instancias en LÍNEA: el instrumento no las midió (una razón sobre un enlínea mide el texto, no una declaración)"
@@ -274,6 +276,36 @@
     "detalle": [
       "docs[0].bloques[0].pt"
     ]
+  },
+  "origenImagen": {
+    "decision": "D2 (propietario, 2026-08-22): se deja ABSOLUTO. No se captura.",
+    "total": 71,
+    "local": 70,
+    "externo": 1,
+    "mal": []
+  },
+  "transformaciones": {
+    "decision": "D1 (propietario, 2026-08-22): transformación de importación; `ATRIBUTOS_CENSADOS` NO se amplía.",
+    "cadena": [
+      {
+        "id": "t11",
+        "titulo": "T11 · `data-teams` — residuo de pegar desde Teams; se quita el ATRIBUTO, no el envoltorio"
+      }
+    ],
+    "dianaEntrada": 1,
+    "aplicadas": 1,
+    "porT": {
+      "t11": 1
+    },
+    "rutas": [
+      {
+        "ruta": "docs[16].bloques[9].filas[0].columnas[1].modulos[13].html",
+        "n": 1,
+        "chars": 18,
+        "reconstruye": true
+      }
+    ],
+    "noOp": "derivaciones/t11-noop-f33.log — 1 de 788 ficheros de corpus/ tocado, 787 idénticos byte a byte"
   },
   "catalogo": {
     "paginas": [
@@ -2750,7 +2782,7 @@
                       },
                       {
                         "kind": "imagen-pagina",
-                        "src": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Logotipo_del_Ministerio_de_Econom%C3%ADa%2C_Industria_y_Competitividad.svg",
+                        "srcExterno": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Logotipo_del_Ministerio_de_Econom%C3%ADa%2C_Industria_y_Competitividad.svg",
                         "alt": "Sello Digital INCIBE EMPRENDE. Este distintivo acredita la participación de Kunak en el programa INCIBE Emprende y respalda la incorporación de una estrategia sólida de ciberseguridad en nuestros productos y proyectos. Un compromiso con la innovación segura y la protección digital en el desarrollo tecnológico."
                       },
                       {
@@ -2768,7 +2800,7 @@
                       },
                       {
                         "kind": "texto-pagina",
-                        "html": "<p><span data-teams=\"true\">Esta empresa ha recibido una ayuda del Gobierno de Navarra al amparo de la convocatoria de 2025 de Fomento de la Empresa Digital.</span></p>"
+                        "html": "<p><span>Esta empresa ha recibido una ayuda del Gobierno de Navarra al amparo de la convocatoria de 2025 de Fomento de la Empresa Digital.</span></p>"
                       }
                     ]
                   }

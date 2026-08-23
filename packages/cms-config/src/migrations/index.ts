@@ -17,6 +17,7 @@ import * as migration_20260813_140606_f3_pr3_documento_sin_pagina from './202608
 import * as migration_20260813_211316_f3_etiqueta_descripcion from './20260813_211316_f3_etiqueta_descripcion';
 import * as migration_20260818_193649_f3_fecha_publicacion_orden from './20260818_193649_f3_fecha_publicacion_orden';
 import * as migration_20260823_131718_f3_3_paginas_cola_larga from './20260823_131718_f3_3_paginas_cola_larga';
+import * as migration_20260823_190450_f3_3_ancho_quintos_y_media_externa from './20260823_190450_f3_3_ancho_quintos_y_media_externa';
 
 export const migrations = [
   {
@@ -112,6 +113,11 @@ export const migrations = [
   {
     up: migration_20260823_131718_f3_3_paginas_cola_larga.up,
     down: migration_20260823_131718_f3_3_paginas_cola_larga.down,
-    name: '20260823_131718_f3_3_paginas_cola_larga'
+    name: '20260823_131718_f3_3_paginas_cola_larga',
+  },
+  {
+    up: migration_20260823_190450_f3_3_ancho_quintos_y_media_externa.up,
+    down: migration_20260823_190450_f3_3_ancho_quintos_y_media_externa.down,
+    name: '20260823_190450_f3_3_ancho_quintos_y_media_externa'
   },
 ];

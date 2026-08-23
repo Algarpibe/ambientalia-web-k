@@ -5,13 +5,11 @@
     "pregunta": "¿qué documentos de `paginas` produce el corpus de las 31 de la cola larga?",
     "fuente": "corpus/fase-3/ (32/32 con sus hojas) + medidas/f33-rutas.json (el dominio)",
     "parser": "docs/research/cola-larga/derivaciones/arbol-f33.mjs — importado, no reescrito",
-    "sabotaje": "arrasa-control",
+    "sabotaje": null,
     "alcance": {
       "completaPara": "SEMBRAR las 31 en la colección `paginas`",
       "noCubre": [
         "la GEOMETRÍA: `pt/pb/mt/mb` y `anchoPct` salen SIN ESCRIBIR (0 ejes comparados en las 31). No es 0: es ausente, que en `medida()` significa «el default de Divi»",
-        "las otras 12 transformaciones de `TRANSFORMACIONES`: cuál le toca a este arquetipo está SIN MEDIR — habría que derivar la diana de cada una contra `corpus/fase-3/`",
-        "la CLASE «residuo de pegado del editor»: T11 limpia UN atributo (`data-teams`). Cuántos más hay de esa familia sale SIN MEDIR, que no es 0 (`atributo-teams-f33.log` §ALCANCE)",
         "`srcset`: omisión DECLARADA, M-IMG sigue abierta en §CMS-0b",
         "los 36 módulos dentro de desplegables CERRADOS: su geometría NO ES MEDIBLE sin interacción, y no medible no es 0",
         "`anchoPct` de las 25 instancias en LÍNEA: el instrumento no las midió (una razón sobre un enlínea mide el texto, no una declaración)"
@@ -44,10 +42,10 @@
     }
   },
   "emision": {
-    "modulos": 302,
-    "columnasColapsadas": 9,
-    "filasColapsadas": 9,
-    "seccionesColapsadas": 9
+    "modulos": 301,
+    "columnasColapsadas": 10,
+    "filasColapsadas": 10,
+    "seccionesColapsadas": 10
   },
   "retirada": {
     "derivadaDe": "docs/research/cola-larga/derivaciones/clasifica-f33.{mjs,log} — 120 ocurrencias, 0 de contenido",
@@ -69,8 +67,8 @@
       }
     ],
     "modulosTocados": 12,
-    "modulosOmitidos": 11,
-    "modulosConservados": 1,
+    "modulosOmitidos": 12,
+    "modulosConservados": 0,
     "detalle": [
       {
         "ruta": "/es/productos/",
@@ -82,10 +80,10 @@
             "evidencia": "clasifica-f33 §2"
           }
         ],
-        "brutoChars": 593,
-        "limpioChars": 70,
-        "restoChars": 58,
-        "moduloOmitido": false
+        "brutoChars": 523,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
       },
       {
         "ruta": "/es/sectores/",
@@ -274,36 +272,6 @@
   "geometria": {
     "clavesEscritas": 0,
     "detalle": []
-  },
-  "origenImagen": {
-    "decision": "D2 (propietario, 2026-08-22): se deja ABSOLUTO. No se captura.",
-    "total": 71,
-    "local": 70,
-    "externo": 1,
-    "mal": []
-  },
-  "transformaciones": {
-    "decision": "D1 (propietario, 2026-08-22): transformación de importación; `ATRIBUTOS_CENSADOS` NO se amplía.",
-    "cadena": [
-      {
-        "id": "t11",
-        "titulo": "T11 · `data-teams` — residuo de pegar desde Teams; se quita el ATRIBUTO, no el envoltorio"
-      }
-    ],
-    "dianaEntrada": 1,
-    "aplicadas": 1,
-    "porT": {
-      "t11": 1
-    },
-    "rutas": [
-      {
-        "ruta": "docs[16].bloques[9].filas[0].columnas[1].modulos[13].html",
-        "n": 1,
-        "chars": 18,
-        "reconstruye": true
-      }
-    ],
-    "noOp": "derivaciones/t11-noop-f33.log — 1 de 788 ficheros de corpus/ tocado, 787 idénticos byte a byte"
   },
   "catalogo": {
     "paginas": [
@@ -1478,23 +1446,6 @@
           "description": "La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS."
         },
         "bloques": [
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<p>PÁRRAFO INYECTADO: esto NO es cascarón y no se puede ir con él.</p>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "filas": [
               {
@@ -2793,7 +2744,7 @@
                       },
                       {
                         "kind": "imagen-pagina",
-                        "srcExterno": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Logotipo_del_Ministerio_de_Econom%C3%ADa%2C_Industria_y_Competitividad.svg",
+                        "src": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Logotipo_del_Ministerio_de_Econom%C3%ADa%2C_Industria_y_Competitividad.svg",
                         "alt": "Sello Digital INCIBE EMPRENDE. Este distintivo acredita la participación de Kunak en el programa INCIBE Emprende y respalda la incorporación de una estrategia sólida de ciberseguridad en nuestros productos y proyectos. Un compromiso con la innovación segura y la protección digital en el desarrollo tecnológico."
                       },
                       {
@@ -2811,7 +2762,7 @@
                       },
                       {
                         "kind": "texto-pagina",
-                        "html": "<p><span>Esta empresa ha recibido una ayuda del Gobierno de Navarra al amparo de la convocatoria de 2025 de Fomento de la Empresa Digital.</span></p>"
+                        "html": "<p><span data-teams=\"true\">Esta empresa ha recibido una ayuda del Gobierno de Navarra al amparo de la convocatoria de 2025 de Fomento de la Empresa Digital.</span></p>"
                       }
                     ]
                   }

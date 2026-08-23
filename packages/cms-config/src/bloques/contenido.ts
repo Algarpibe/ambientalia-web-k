@@ -82,12 +82,43 @@ function nivelCon(defecto: 2 | 3, deQuien: string): Field {
  * lo consumen MONOGRÁFICO y `articulos-kb`, y un arquetipo importando la
  * retícula *del otro arquetipo* invierte la dirección de la dependencia. Se
  * reexporta desde `monografico.ts` para no partir a quien lo importaba de allí.
- */
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ `1_5` Y `1_6`, AÑADIDOS EL 2026-08-23 (98.ª, D3) — Y NO SON EL MISMO CASO
+ *
+ * **`1_5` está EJERCITADO: 10 instancias**, dos filas de cinco columnas en
+ * `/es/servicio-de-reparacion/` (`derivaciones/bloqueos-f33.log` §select —
+ * 10 bloqueos de 173 comprobados). La familia de quintos estaba **a medias**:
+ * `2_5` y `3_5` sí, `1_5` no.
+ *
+ * ⚠ **Y es §sondas 3 —*documentado no es conectado*— DENTRO del esquema:** el
+ * docstring de `validaReticulaPagina` ya listaba `1_5+1_5+1_5+1_5+1_5` como uno
+ * de los siete repartos medidos, y el `select` **no lo podía expresar**. El
+ * comentario decía una cosa y el campo otra, y **sólo Payload lo notó**, al
+ * sembrar. Un lector del código veía una retícula completa.
+ *
+ * **`1_6` NO está ejercitado, y eso se escribe con su denominador: 0 de 313
+ * módulos y 0 de 113 filas del corpus de la cola larga, 0 en los otros tres
+ * arquetipos.** Divi lo sirve —la retícula de sextos existe en el builder— y
+ * este corpus no lo trae. Entra **porque esto es LA RETÍCULA y no el enum de
+ * los valores vistos**, que es lo que el párrafo de arriba lleva escrito desde
+ * que Petróleo estrenó cuatro valores nuevos: escribirlo sólo desde lo visto es
+ * cómo se llega a la cuarta migración de enum en cuatro arquetipos.
+ *
+ * > **SIN EJERCITAR no es 0.** `1_6` es un camino de render sin estrenar
+ * > (§*un campo que ADMITE un caso y que ningún dato de calibración EJERCITA*),
+ * > y sale nombrado en `qa:nunca-vistos` en vez de darse por soportado.
+ *
+ * ⚠ **Los dos van en la MISMA migración versionada**: un `select` de Payload
+ * sobre Postgres es un **tipo enum**, así que cada valor nuevo es un
+ * `ALTER TYPE`. Meter `1_5` hoy y `1_6` mañana son dos migraciones sobre el
+ * mismo tipo, y la 81.ª ya se comió una que `migrate:create` generó mal.
+ * ═════════════════════════════════════════════════════════════════════════ */
 export const ancho: Field = {
   name: "ancho",
   type: "select",
   required: true,
-  options: ["1_4", "1_3", "2_5", "1_2", "3_5", "2_3", "3_4", "4_4"],
+  options: ["1_6", "1_5", "1_4", "1_3", "2_5", "1_2", "3_5", "2_3", "3_4", "4_4"],
 };
 
 /** El defecto del `claim`: `Claim({ nivel = 2 })`. */
