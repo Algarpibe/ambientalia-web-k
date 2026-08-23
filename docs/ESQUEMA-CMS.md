@@ -4249,6 +4249,74 @@ congelada. **En ninguno de los dos casos se elige un valor plausible.**
 > da rojo, se AGOTA*). Con las dos puestas, **dos corridas consecutivas congelan
 > IDÉNTICO**.
 
+## ✅ 2j.6 · LO QUE EL CAMPO RICO DE LA COLA LARGA **NO** MODELA — cascarón y consulta (2026-08-23, 97.ª tanda)
+
+*(Es de **CMS-3**: cierra qué entra en `campoHtml` y qué no, que es la frontera
+que paró la siembra en la 96.ª. Va aquí, después de la geometría.)*
+
+**El corpus de F3-3 traía 5 etiquetas fuera del censo de 43 de `campoHtml`, y la
+pregunta de modelo no era «¿se amplía el censo?» sino «¿qué SON».** Medido
+recorriendo el HTML servido de los **178 campos ricos** y publicando la cadena de
+ancestros de cada una de las **120 ocurrencias**
+(`docs/research/cola-larga/derivaciones/clasifica-f33.{mjs,log}`):
+
+| contenedor | ocurrencias | qué es | qué implica para el modelo |
+|---|---|---|---|
+| `ol.kunak-breadcrumbs` | 25 `<meta>` en 10 páginas | **CASCARÓN** — lo genera el tema | **lo retira el extractor**; el censo NO se toca |
+| `div.et_pb_blog…bucle-entradas` | 3 `<article>` | **CONSULTA** — bucle de entradas | **no entra en el campo rico** |
+| `div.scientific-list-content` | 23 × `<article>·<header>·<svg>·<path>` | **CONSULTA** — listado del CPT | ídem |
+
+**CONTENIDO: 0 de 120.** Y ese 0 es un dato y no un cero por construcción: el
+control en línea de la derivación prueba que el recorrido **sabe decir «fuera»**,
+y TIRA si no separa.
+
+### La decisión, en una frase
+
+> **Un listado embebido dentro de una página NO es un campo del contenido de esa
+> página: es una CONSULTA sobre otra colección.** Es §*un listado no tiene
+> contenido propio* —que hasta hoy se había aplicado a **archivos enteros** (por
+> eso no hay colección `blog` ni `recursos`)— aplicado **a escala de MÓDULO**, que
+> es donde no estaba escrito.
+
+**Y por eso el extractor retira el CONTENEDOR y no el MÓDULO:** lo generado se va,
+y lo que quede al lado lo escribió una persona y se conserva. Medido: 12 módulos
+tocados, **12 omitidos, 0 conservados**, con guarda de reconstrucción
+(`chars(bruto) = chars(limpio) + Σ chars(retirado)`) y su pareja de negativos.
+
+⚠ **No se eligió el criterio fácil.** Retirar por la clase `breadcrumbs` del
+módulo acierta igual en las 31 — **0 instancias separadoras**, así que el acierto
+no decide (§*dos modelos que predicen lo mismo en todo tu dominio son uno solo*).
+Decide qué predicen **fuera**: por contenido, un futuro módulo con miga + párrafo
+conserva el párrafo; por clase, lo pierde.
+
+### Qué serviría las consultas — y la respuesta es «una tanda futura»
+
+Un bloque de **listado embebido** que declare su consulta en vez de su HTML. Los
+dos parámetros ya están medidos y no hay que volver al original:
+
+| bloque futuro | consulta | evidencia |
+|---|---|---|
+| `bucle-entradas` | las **N más recientes** de `entradas-blog` (N = 3) | 3 de 3 tarjetas cruzan contra el corpus |
+| `listado-cientifico` | **`documentos-cientificos` entera**, con filtro por `scientific-category` | diferencia simétrica **0 y 0** contra sus 23 |
+
+**Mientras no exista, 2 páginas se sirven INCOMPLETAS y está declarado**, no
+tapado: `recursos` conserva `<h2>Guías más recientes</h2>` sin lista debajo y
+`documentos-cientificos` conserva su `scientific-filter` sin nada que filtrar. El
+extractor lo imprime como `⚠ HUECO DECLARADO` y lo congela en `retirada.detalle`.
+Ficha: `PENDIENTES-QA.md` §F3-3-CONSULTAS-EMBEBIDAS.
+
+### ⚠ Lo que esta decisión NO decide
+
+| qué | estado |
+|---|---|
+| la **whitelist** de `campoHtml` | **INTACTA**. Ni una etiqueta añadida: no hacía falta |
+| el atributo `data-teams` de `empresa` | **CONTENIDO** (texto pegado desde Teams), 1 de 788 ficheros. Decisión del propietario: alta en `ATRIBUTOS_CENSADOS` con su evidencia, o transformación de importación. **NO se toma de paso** |
+| el `<img src>` a `upload.wikimedia.org` | **canal de media nuevo** —el asset alojado fuera—. Sin decidir |
+| `ancho: "1_5"` ×10 | la retícula `MonoAncho` no lo expresa, **y el docstring de `validaReticulaPagina` sí lo lista**. Necesita el valor **y su migración** |
+| el módulo hermano `scientific-filter` | **SIN MEDIR.** Sus etiquetas están todas en el censo, así que no bloquea nada y ninguna medida se pronunció sobre él. Retirarlo «porque parece» sería clasificar por plausibilidad |
+
+Los tres primeros, con su cardinal: `PENDIENTES-QA.md` §F3-3-BLOQUEOS-DE-SIEMBRA.
+
 ## ✅ 2k · CMS-4 · QUIÉN SIRVE LAS 31 — **EL PLANO EXISTENTE (E1)** (2026-08-22, 95.ª tanda)
 
 > ✅ **DECISIÓN DEL PROPIETARIO, 2026-08-22.** Las tres salidas se publicaron con

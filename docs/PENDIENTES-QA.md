@@ -1,5 +1,191 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-3-BLOQUEOS-DE-SIEMBRA · **97.ª (2026-08-23) — `paginas` sigue fuera de `SEMBRADAS`, y ya NO por las etiquetas: son 12 bloqueos en 2 páginas y 3 canales**
+
+> **Estado.** La pregunta de la 96.ª está **cerrada y medida** (§F3-3-CENSO-CAMPO-RICO,
+> justo debajo): las 5 etiquetas eran **cascarón y consulta, 0 de contenido**, y
+> el extractor las retira. El bloqueo por etiqueta pasó de **12 campos a 0**.
+>
+> **Lo que la para ahora es otra cosa, y la 96.ª no podía verlo**: midió UN eje
+> —etiquetas— y `validaHtmlCorpus` mira **cuatro**, devolviendo sólo el primero
+> que falla. Retirar lo de delante destapó lo de detrás.
+
+**El denominador, derivado.** Sembrar los saca **de uno en uno** —Payload lanza
+en el primer campo inválido del primer documento y no sigue—, así que contesta
+*«hay al menos uno»* y nunca *«hay N»*. `bloqueos-f33` da el N por los cuatro
+canales que Payload mira:
+
+| canal | comprobados | bloqueos | páginas |
+|---|---|---|---|
+| `validate` (campoHtml) | 196 | **1** | `empresa` |
+| `select`.`options` | 173 | **10** | `servicio-de-reparacion` |
+| `required` vacío | 697 | **0** | — |
+| media (`type: upload`) | 93 | **1** | `empresa` |
+
+**12 bloqueos · 2 páginas de 31 · 3 canales de 4.** El canal que sale a cero se
+publica **con su denominador**: «697 comprobados, 0 bloqueos» y «no se miró» son
+la misma salida si el informe no lo nombra.
+
+Derivación congelada con su control en línea —un documento sintético con un
+fallo de cada canal, y TIRA si no caza los cuatro—:
+`docs/research/cola-larga/derivaciones/bloqueos-f33.{mjs,log}`.
+
+### Los tres, uno a uno — y los tres son decisiones de MODELO
+
+**1 · `[validate]` `empresa` — el atributo `data-teams`.**
+`<span data-teams="true">` envolviendo el párrafo de una ayuda del Gobierno de
+Navarra: la huella de texto **pegado desde Teams** en el editor. O sea que **es
+CONTENIDO** — la única cosa de todo el barrido que lo es, y no es una etiqueta.
+Censado en **1 fichero de 788** bajo `corpus/`
+(`derivaciones/atributo-teams-f33.{mjs,log}`), inerte en las cuatro familias
+peligrosas.
+
+> **No se amplía.** `ATRIBUTOS_CENSADOS` lo consume `campoHtml`, que es la
+> whitelist de seguridad de cinco colecciones verificadas. Hay dos salidas —alta
+> en el censo con su evidencia, o una transformación de importación que lo
+> limpie— y las dos son del propietario. **SUBE.**
+
+**2 · `[media]` `empresa` — un `<img src>` en `upload.wikimedia.org`.**
+`rutaLocalMedia` (T3b) sólo reescribe `kunakair.com`, así que un host ajeno pasa
+entero y `creaContexto().media` TIRA (`ruta.startsWith("/")`). Censado: **1 URL
+absoluta en las 31**, y está en la misma página que el anterior. Es un **canal de
+media nuevo** —*el asset alojado fuera*— y encaja en §EL INVENTARIO DE MEDIA SE
+DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA: hay que decidir si se captura, si
+se deja absoluto, o si se declara fuera de alcance. **SUBE.**
+
+**3 · `[select]` `servicio-de-reparacion` — `ancho: "1_5"` ×10.**
+Dos filas de cinco columnas. El enum `MonoAncho` expresa
+`1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4` — **la familia de quintos está a
+medias: `2_5` y `3_5` sí, `1_5` no.**
+
+> ⚠ **Y es §sondas 3 —*documentado no es conectado*— dentro del propio esquema:**
+> el docstring de `validaReticulaPagina` **ya lista `1_5+1_5+1_5+1_5+1_5`** como
+> reparto válido, y el `select` no lo puede expresar. El comentario dice una cosa
+> y el campo otra, y sólo Payload lo nota.
+>
+> Su propio docstring lo predijo: *«no es el enum de los valores vistos: **es la
+> retícula**. Escrito sólo desde EDAR habría salido de cuatro valores y Petróleo
+> estrena otros cuatro»*. Éste es el **cuarto** arquetipo trayendo uno nuevo.
+>
+> **Qué haría falta:** añadir `1_5` (y decidir sobre `1_6`, que Divi también
+> sirve y este corpus no ejercita — SIN MEDIR, que no es 0) **con su migración
+> versionada**, porque un `select` de Payload sobre Postgres es un tipo enum. No
+> se toca en una tanda de emisión. **SUBE.**
+
+### ⚠ Y una limitación de instrumento que salió de camino
+
+**`cms:sondeo` es CIEGO al canal de media POR CONSTRUCCIÓN.** `sondeo.mjs` hace
+`ctx.media = async () => 0`: sustituye el resolutor por una constante. Su «0
+defectos de INSTRUMENTO» es cierto de lo que mira y **no dice nada del canal que
+anuló** (§sondas 4, con el cero puesto en un stub) — es lo que dejó pasar la
+imagen de host ajeno hasta el `seed`. El comentario lo dice («un payload de
+mentira»); **el informe no lo declara**, y §regla 14 es justo eso: una limitación
+sin su número se lee como nota al pie. **Ficha abierta**: que el informe del
+sondeo publique sus canales anulados con su cardinal.
+
+### Lo que sí quedó hecho
+
+`cms:extractor-f33` emite **31 documentos · 313 módulos en el árbol → 301
+emitidos** con la retirada de lo generado y **0 guardas en rojo**; su negativo va
+a **7/7**. El entorno está restaurado con el pipeline completo (§regla 20):
+`cms:reset` + `cms:seed` (**352 documentos en 13 colecciones**) +
+`cms:seed-listados` (88/88) + `cms:seed-kb` (6/6).
+
+---
+
+## ⛔ F3-3-CONSULTAS-EMBEBIDAS · **97.ª (2026-08-23) — 2 páginas se sirven INCOMPLETAS a propósito, y hay que decir con qué se rellenan**
+
+Medido en §F3-3-CENSO-CAMPO-RICO: los dos listados embebidos son **CONSULTA**, y
+una consulta **no se congela como texto** (§*un listado no tiene contenido
+propio*). El extractor los retira, y eso deja un hueco **visible y con su vecino
+al lado**:
+
+| página | lo que se retira | lo que QUEDA a la vista sin nada debajo |
+|---|---|---|
+| `/es/recursos/` | `div.et_pb_blog…bucle-entradas` — 3 tarjetas (3 391 chars) | `<h2>Guías más recientes</h2>` |
+| `/es/recursos/documentos-cientificos/` | `div.scientific-list-content` — 23 tarjetas (56 313 chars) | el módulo hermano `scientific-filter`, con sus 3 botones de categoría |
+
+**No es un descuido: es un hueco declarado.** El extractor lo imprime como
+`⚠ HUECO DECLARADO` y lo congela entero en `retirada.detalle`, módulo a módulo.
+
+**Qué lo serviría, y la respuesta es «una tanda futura»:** un bloque de **listado
+embebido** que declare su consulta en vez de su HTML. Los dos parámetros ya están
+medidos y no hay que volver al original:
+
+- `bucle-entradas` → las **N más recientes** de `entradas-blog` (N = 3, y las 3
+  cruzan 3/3 contra el corpus);
+- `listado-cientifico` → **la colección `documentos-cientificos` entera**
+  (diferencia simétrica **0 y 0** contra sus 23), con filtro por
+  `scientific-category`.
+
+⚠ **Y lo que NO se midió, que se declara en vez de suponerse:** si el módulo
+hermano `scientific-filter` es la otra mitad de la misma consulta. Sus etiquetas
+están todas en el censo, así que **no bloquea nada** y ninguna medida de esta
+tanda se pronunció sobre él. Retirarlo «porque parece» sería clasificar por
+plausibilidad. **SIN MEDIR.**
+
+---
+
+## ✅ F3-3-CENSO-CAMPO-RICO · **CERRADA por la 97.ª (2026-08-23): las 5 etiquetas eran 3 CONTENEDORES, y 0 de contenido** — la ficha de la 96.ª se conserva entera debajo
+
+> ✅ **MEDIDO, no deducido** (`derivaciones/clasifica-f33.{mjs,log}`). La 96.ª
+> cerró diciendo *«lo que esto NO dice: si son legítimas… eso se mide, no se
+> deduce»*. Se midió recorriendo el HTML servido de los **178 campos ricos** y
+> publicando la **CADENA DE ANCESTROS** de cada ocurrencia — porque la etiqueta
+> sola no distingue las tres respuestas: lo que las distingue es **dentro de qué
+> está**.
+>
+> **Y la unidad no era la página ni la etiqueta: es la OCURRENCIA.** «5 etiquetas
+> en 10 páginas» absorbía tres casos distintos (§la causa común). Son **120**:
+>
+> | etiqueta | ocurr. | contenedor | veredicto | evidencia |
+> |---|---|---|---|---|
+> | `<meta>` | 25 | `ol.kunak-breadcrumbs` | **CASCARÓN** | §2 |
+> | `<article>` | 3 | `div.et_pb_blog…bucle-entradas` | **CONSULTA** | §3a |
+> | `<article>` `<header>` `<svg>` `<path>` | 23 c/u | `div.scientific-list-content` | **CONSULTA** | §3b |
+>
+> **La dirección contraria, que casi nunca se hace, se contestó con el mismo
+> barrido:** toda ocurrencia cuya cadena no lleve contenedor generado sale
+> nombrada. Salen **0 de 120**. Y ese 0 significa algo porque el control en línea
+> —HTML sintético con una dentro y una fuera— prueba que el recorrido **sabe
+> decir «fuera»**, y TIRA si no las separa.
+>
+> **Por qué la miga es cascarón, y no es que «parezca de plantilla».** El
+> discriminador es **la CAPA**: `kunak-breadcrumbs` está en **18 de 31** páginas
+> —**10** en la capa propia y **8 en `_tb_`**, donde por la regla de regímenes NO
+> EXISTE la persona que editó la instancia— y las dos capas sirven **el mismo
+> marcado**: 3 formas de `<li>`, **diferencia simétrica propia ↔ `_tb_` 0 / 0**,
+> cada una con la jerarquía correcta de su página. Eso sólo lo hace un generador.
+> Cierra el cruce entre páginas: **22 de 22** veces, la etiqueta que una hija usa
+> para su padre es la que el padre usa para sí.
+>
+> ⚠ Los **10** eslabones intermedios que NO son prefijo de su ruta son **todos de
+> `_tb_`**, y no fallan por azar: son las páginas del centro de ayuda, que el
+> original sirve en **dos familias de URL a la vez**. La miga sigue el **padre de
+> WordPress**, no la URL pedida — que es lo que un generador hace y lo que una
+> persona escribiendo el HTML de la página en la que está no haría. En la capa
+> propia: **15 de 15**.
+>
+> **Por qué los dos listados son consulta: por la MEMBRESÍA, nombrada elemento a
+> elemento.** `/es/recursos/` sirve 3 tarjetas y **3 de 3** son entradas de
+> `entradas-blog`; `/es/recursos/documentos-cientificos/` sirve 23 y la
+> **diferencia simétrica** contra la colección es **0 y 0**. `23 → 23` no habría
+> probado nada (§*un cardinal es un contenedor y absorbe la membresía*).
+>
+> **Consecuencia aplicada** (§F3-3-CONSULTAS-EMBEBIDAS): el extractor retira **el
+> CONTENEDOR, no el módulo** —lo que quede al lado lo escribió una persona y se
+> conserva—, con su guarda de reconstrucción y su pareja de negativos
+> `arrasa`/`arrasa-control`. Medido: **12 módulos tocados, 12 omitidos, 0
+> conservados**, y **10 secciones colapsadas** porque las 10 migas ocupaban ellas
+> solas su sección entera (`S0 F0 C0`, `4_4`, un módulo, resto **0**). Las **21
+> columnas vacías** del original NO se filtran: son retícula, no cascarón.
+>
+> **Y lo que este reparto NO bastaba para concluir**, que es lo que abre
+> §F3-3-BLOQUEOS-DE-SIEMBRA: «0 de contenido» es cierto **de las etiquetas**, y la
+> siembra no se desbloquea con eso.
+
+---
+
 ## ⛔ F3-3-CENSO-CAMPO-RICO · **CORTE LIMPIO 2 de la 96.ª (2026-08-23) — la siembra de `paginas` está BLOQUEADA por una decisión de MODELO, no por el extractor**
 
 > **Estado, para que no se lea como un fallo del trabajo hecho:** el extractor de
@@ -218,10 +404,26 @@ de este catálogo:
 
 | script | fichero que nombra | estado |
 |---|---|---|
-| `qa:media-canales-neg` | `scripts/qa/media-canales.neg.mjs` | ✅ **escrito hoy, 4/4** |
-| `qa:atributos-censo-neg` | `scripts/qa/atributos-censo.neg.mjs` | ⛔ **ficha abierta** — ver §QA-NEGATIVOS-QUE-NO-EXISTEN |
-| `cms:captura-sectores-neg` | `scripts/seed/captura-sectores.neg.mjs` | ⛔ ídem |
-| `cms:extractor-p-neg` | `scripts/seed/extractor-p.neg.mjs` | ⛔ ídem |
+| `qa:media-canales-neg` | `scripts/qa/media-canales.neg.mjs` | ✅ **escrito el 2026-08-22, 4/4** |
+| `cms:extractor-p-neg` | `scripts/seed/extractor-p.neg.mjs` | ✅ **escrito por la 97.ª, 6/6** |
+| `cms:captura-sectores-neg` | `scripts/seed/captura-sectores.neg.mjs` | ✅ **escrito por la 97.ª, 5/5** |
+| `qa:atributos-censo-neg` | `scripts/qa/atributos-censo.neg.mjs` | ✅ **escrito por la 97.ª, 4/4** |
+
+> ✅ **LOS CUATRO CERRADOS (2026-08-23, 97.ª).** Y escribirlos no fue rellenar un
+> hueco: **los tres nuevos destaparon un defecto cada uno**, y ninguno daba error.
+>
+> | dónde | qué había | por qué no saltaba |
+> |---|---|---|
+> | los **tres** | congelaban en su nombre **canónico** con `SABOTAJE` puesto | `w()` no pisa una congelada que difiera, así que salía un fichero **fechado y SIN marcar**: nombre de medida, contenido de sabotaje (§regla 7). En `captura-sectores` ni eso — escribe en `corpus/`, que **ninguna guarda vigila** |
+> | `atributos-censo` | el sabotaje `tope-cero` **no podía morder** | bajaba el umbral a 0 y hay **0 ubicuos** (`href`, el más extendido, está en 242 de 294): `0 > 0` es falso y el caso salía **exit 0**. §regla 17 segunda cara — anulaba media hipótesis, **0 separadoras por construcción**. Rehecho como `lector-ubicuo`: toca el DATO, no el umbral |
+> | `captura-sectores` · `atributos-censo` | dos ternarios que **rebajaban el mínimo bajo sabotaje** | uno no hacía nada (`? lista.length : lista.length`) y el otro rebajaba un mínimo que se cumplía igual. Leían como si el sabotaje moviera la portería (§regla 17); quitados, cada caso cae por SU guarda y no por el contrato |
+>
+> **Y el de `extractor-p` se comprobó que SEPARA en vez de darlo por hecho**
+> (§regla 21, la vuelta): corrida la versión de ANTES sacada de git, con sabotaje
+> y sin `NEG=`, congeló `p-extraido-2026-08-23.json` —fechado, sin marcador— y
+> `«la salida se desvía a»` salió **0 veces**, o sea que el caso habría fallado.
+> Evidencia conservada con su defecto en el nombre:
+> `p-extraido-neg-SIN-DESVIO-asi-congelaba-un-SABOTAJE-antes-de-la-97a.json`.
 
 > ⚠ **Y el primer filtro que escribí para derivar esto dio `0`**, porque el regex
 > `scripts\/[\w\/-]+\.mjs` **no casa un punto**, y todos los negativos llevan
@@ -247,6 +449,29 @@ de este catálogo:
 
 **Evidencia:** `medidas/media-canales-2026-08-22{,-2}.json` ·
 `medidas/media-canales-neg-{control,canal-mudo,coleccion-fuera,guarda-floja}.json`.
+
+---
+
+## ✅ QA-NEGATIVOS-QUE-NO-EXISTEN · **CERRADA por la 97.ª (2026-08-23): los 3 escritos, 15/15, y los 3 destaparon un defecto** — la ficha de la 95.ª se conserva entera debajo
+
+> ✅ `cms:extractor-p-neg` **6/6** · `cms:captura-sectores-neg` **5/5** ·
+> `qa:atributos-censo-neg` **4/4**. El detalle de lo que cada uno destapó —tres
+> sondas que no desviaban sus sabotajes, un sabotaje con 0 separadoras por
+> construcción y dos ternarios que rebajaban el mínimo— está en la tabla de
+> §DATOS-MEDIA-CANALES, justo encima.
+>
+> ⚠ **Lo que sigue ABIERTO es la guarda que el propio texto de abajo pedía**, y no
+> se escribió aquí: **cruzar `package.json` contra el disco** dentro de
+> `qa:negativos`. Mientras no esté, el `npm run` sigue siendo la única prueba de
+> que un negativo existe — y ya se ha visto cuatro veces que no lo es. Es un
+> `filter` de tres líneas y **va en la sonda que censa, no en la memoria de
+> nadie**.
+>
+> ⚠ **Y el orden en que se escribieron no fue el de la lista: fue el del RIESGO.**
+> `extractor-p` primero porque era el único de los 6 extractores sin negativo **y
+> el que estaba debajo del camino de siembra** que la 97.ª iba a usar. Un
+> pendiente de tres se ordena por qué hay encima de cada uno, no por cómo quedó
+> escrito.
 
 ---
 
