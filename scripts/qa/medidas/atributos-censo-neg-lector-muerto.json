@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "fecha": "2026-08-23",
+    "que": "el censo de ATRIBUTOS del campo rico — la mitad que `validaHtmlCorpus` no mira",
+    "alcance": "294 páginas · 610 regiones ricas (grupo A desde corpus/transformado, grupo C desde c-extraido)",
+    "nivel": "el HTML que ENTRA al CMS (post-pipeline), no el crudo del original",
+    "sabotaje": "lector-muerto",
+    "noDecide": "esto CENSA. Qué se admite y qué se rechaza lo decide el contrato, con este censo delante."
+  },
+  "recuento": {
+    "paginas": 294,
+    "regiones": 610,
+    "aperturas": 0,
+    "atributosDistintos": 0
+  },
+  "familias": {
+    "manejador-on*": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "ejecuta JS sobre una etiqueta admitida"
+    },
+    "url-javascript:": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "`href`/`src` con esquema `javascript:`"
+    },
+    "url-data:": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "`href`/`src` con `data:` — puede llevar HTML ejecutable"
+    },
+    "style": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "CSS en línea del editor: no ejecuta, pero pinta"
+    },
+    "srcdoc": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "documento embebido en línea dentro de un iframe"
+    },
+    "data-* ajeno": {
+      "n": 0,
+      "paginas": 0,
+      "muestras": [],
+      "porQue": "restos de otra aplicación (§DATOS-DOM-AJENO)"
+    }
+  },
+  "atributos": {}
+}

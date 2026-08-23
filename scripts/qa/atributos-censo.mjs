@@ -1,6 +1,6 @@
 /**
  * EL CENSO DE ATRIBUTOS DEL CAMPO RICO — la mitad que la whitelist no mira.
- * Uso: npm run qa:atributos-censo      (SABOTAJE=lector-muerto | tope-cero)
+ * Uso: npm run qa:atributos-censo   ·   Negativo: npm run qa:atributos-censo-neg
  *
  * ── Por qué existe ────────────────────────────────────────────────────────
  * `validaHtmlCorpus` censa **ETIQUETAS** (las 43 de 209/209) y **HOSTS** de
@@ -37,7 +37,7 @@
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Evaluadas, gritaSiRevienta, hoy, QA, w } from "./lib.mjs";
+import { Evaluadas, gritaSiRevienta, hoy, nombreNeg, QA, w } from "./lib.mjs";
 
 process.env.SIN_CLON = "1";
 gritaSiRevienta();
@@ -45,7 +45,22 @@ gritaSiRevienta();
 const RAIZ = join(QA, "../..");
 const TRANSFORMADO = join(RAIZ, "corpus/transformado");
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["lector-muerto", "tope-cero"];
+/**
+ * ⚠ `tope-cero` → `lector-ubicuo` (97.ª, al escribir el negativo que no existía).
+ *
+ * `tope-cero` bajaba `TOPE_UBICUOS` a 0 y **no podía morder**: la guarda dispara
+ * con `ubicuos.length > TOPE_UBICUOS`, y en este corpus hay **0 ubicuos** —el
+ * atributo más extendido, `href`, está en 242 de 294 páginas—. O sea `0 > 0`,
+ * falso, y el caso salía VERDE. Es §regla 17 segunda cara: un sabotaje que anula
+ * **media** hipótesis no falsea nada; movía el umbral y dejaba el otro lado
+ * quieto, así que tenía **0 instancias separadoras** por construcción.
+ *
+ * El sabotaje correcto reproduce el modo de fallo que la guarda vigila —*el
+ * lector no está discriminando*—: hace que **todos** los atributos salgan en
+ * todas las páginas. Con eso `ubicuos.length === filas.length` y supera el tope
+ * real, que es la mitad. No se toca el tope: se toca el dato.
+ */
+const VALIDOS = ["lector-muerto", "lector-ubicuo"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
@@ -135,7 +150,13 @@ const censo = new Map(); // atributo → { n, paginas:Set, porEtiqueta:Map, mues
 const porFamilia = Object.fromEntries(FAMILIAS.map((f) => [f.id, { n: 0, paginas: new Set(), muestras: [] }]));
 let aperturas = 0;
 
-const ev = new Evaluadas({ nombre: "atributos-censo", unidad: "regiones ricas", minimo: SABOTAJE ? 1 : regiones.length });
+/* ⚠ El mínimo se deriva de las REGIONES y **no lo rebaja ningún sabotaje**
+ * (97.ª). Aquí ponía `SABOTAJE ? 1 : regiones.length`, y aunque en la práctica
+ * daba igual —`ev.ok()` corre por región con sabotaje o sin él—, leía como que
+ * el sabotaje mueve la portería (§regla 17). Con el mínimo quieto, cada caso del
+ * negativo cae por SU guarda —`LECTOR MUERTO`, `UBICUO`— y no por el contrato,
+ * que es lo único que hace que su verde signifique algo. */
+const ev = new Evaluadas({ nombre: "atributos-censo", unidad: "regiones ricas", minimo: regiones.length });
 
 for (const r of regiones) {
   RE_APERTURA.lastIndex = 0;
@@ -196,13 +217,24 @@ if (aperturas === 0) err(`LECTOR MUERTO: 0 aperturas de etiqueta en ${regiones.l
 /* UBICUO: un atributo que aparece en TODAS las páginas no discrimina nada —
  * puede ser cierto (`class`), así que no es rojo por sí solo; lo que sí es rojo
  * es que TODOS lo hagan, porque entonces el lector está leyendo otra cosa. */
-const TOPE_UBICUOS = SABOTAJE === "tope-cero" ? 0 : Math.max(1, Math.floor(filas.length * 0.5));
+/* El sabotaje toca el DATO, no el umbral: simula un lector que casa lo mismo en
+ * todas las páginas, que es el modo de fallo del que la guarda protege. */
+if (SABOTAJE === "lector-ubicuo") for (const [, e] of censo) e.paginas = new Set(paginas);
+const TOPE_UBICUOS = Math.max(1, Math.floor(filas.length * 0.5));
 const ubicuos = filas.filter(([, e]) => e.paginas.size === paginas.size);
 if (ubicuos.length > TOPE_UBICUOS)
   err(`UBICUO: ${ubicuos.length} atributos aparecen en las ${paginas.size} páginas (tope ${TOPE_UBICUOS}) — el lector no está discriminando.`);
 if (!filas.length) err(`0 atributos distintos: el censo no puede estar vacío con ${aperturas} aperturas leídas.`);
 
-w("medidas/atributos-censo.json", {
+/* ⚠ §regla 24, mitad de higiene: **la sonda desvía sus propios sabotajes.** Si
+ * el desvío dependiera de que quien la lanza ponga `NEG=`, una corrida saboteada
+ * a mano dejaría un fichero fechado y SIN marcar — nombre de medida, contenido
+ * de sabotaje (§regla 7). Y este censo es el que decide qué atributos se pueden
+ * rechazar sin perder contenido servido: leerlo saboteado sale caro. */
+const SALIDA = SABOTAJE ? nombreNeg("medidas/atributos-censo.json", SABOTAJE) : "medidas/atributos-censo.json";
+if (SABOTAJE) console.log(`\n  ⚠ SABOTAJE activo: la salida se desvía a \`${SALIDA}\` — el canónico NO se toca.`);
+
+w(SALIDA, {
   meta: {
     fecha: hoy(),
     que: "el censo de ATRIBUTOS del campo rico — la mitad que `validaHtmlCorpus` no mira",

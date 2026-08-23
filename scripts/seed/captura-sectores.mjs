@@ -130,11 +130,12 @@ if (SOLO_DERIVA) {
 }
 
 /* ══════════════════════════ 2 · LA CAMPAÑA ══════════════════════════════════ */
-const ev = new Evaluadas({
-  nombre: "captura-sectores",
-  unidad: "páginas",
-  minimo: SABOTAJE === "cero-evaluadas" ? lista.length : lista.length,
-});
+/* ⚠ El mínimo se deriva de la LISTA y **no lo toca ningún sabotaje** — es lo
+ * que hace que `cero-evaluadas` pueda morder. Aquí vivía un ternario cuyas dos
+ * ramas eran `lista.length`, o sea que no hacía nada y **leía como si el
+ * sabotaje moviera la portería** (§regla 17). Se quita: lo que el sabotaje anula
+ * es el `ev.ok()`, y el mínimo tiene que quedarse quieto para acusarlo. */
+const ev = new Evaluadas({ nombre: "captura-sectores", unidad: "páginas", minimo: lista.length });
 
 const indice = existsSync(INDICE)
   ? JSON.parse(readFileSync(INDICE, "utf8"))
@@ -206,10 +207,21 @@ indice.meta = {
 };
 indice.resumen = { paginas: Object.keys(indice.paginas).length, bytes, bajadas, reusadas, fallos };
 
+/* ⚠ §regla 24, mitad de higiene: **la campaña desvía sus propios sabotajes.**
+ * Ésta no congela por `w()` —escribe en `corpus/`, que ninguna guarda vigila—,
+ * así que una corrida saboteada reescribiría el índice REAL con su fecha de hoy
+ * y su recuento saboteado: un fichero con nombre de artefacto bueno y contenido
+ * de sabotaje (§regla 7). El desvío no puede depender de que quien la lanza se
+ * acuerde de nada, y se marca además DENTRO del JSON. */
+const SALIDA = SABOTAJE ? join(BASE, `INDICE-neg-${SABOTAJE}.json`) : INDICE;
+if (SABOTAJE) {
+  indice.meta.sabotaje = SABOTAJE;
+  console.log(`\n  ⚠ SABOTAJE activo: el índice se desvía a \`${SALIDA.slice(RAIZ.length + 1)}\` — el real NO se toca.`);
+}
 mkdirSync(BASE, { recursive: true });
-writeFileSync(INDICE, `${JSON.stringify(indice, null, 2)}\n`);
+writeFileSync(SALIDA, `${JSON.stringify(indice, null, 2)}\n`);
 
 console.log(`\n  bajadas ${bajadas} · reusadas ${reusadas} · fallos ${fallos} · ${(bytes / 1e6).toFixed(1)} MB`);
-console.log(`  índice   corpus/fase-3-sectores/INDICE.json`);
+console.log(`  índice   ${SALIDA.slice(RAIZ.length + 1).replace(/\\/g, "/")}`);
 
 process.exit(ev.informe() + (fallos ? 1 : 0) === 0 ? 0 : 1);
