@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "fecha": "2026-08-23",
+    "que": "el catálogo del CPT `solutions` derivado del PANEL servido en el corpus congelado",
+    "fuentes": [
+      "corpus/ (312 páginas) — el panel de #lista-soluciones",
+      "medidas/solutions-seo.json — el bloque seo de las 24 URLs",
+      "apps/web/src/lib/products.ts — el CONTROL (9 transcritos a mano)"
+    ],
+    "alcance": "los 19 slugs que los 57 casos referencian. Los 8 productos del CPT que NINGÚN caso referencia NO tienen panel en el corpus y quedan fuera con su razón medida (§F3-COLA-DESTINOS: necesitan PÁGINA).",
+    "sabotaje": "lector-muerto",
+    "noMide": [
+      "no toca el original",
+      "no siembra",
+      "no decide modelo"
+    ]
+  },
+  "recuento": {
+    "extraidos": 0,
+    "conPagina": 0,
+    "sinPagina": 0,
+    "apariciones": 0
+  },
+  "invariante": {
+    "divergentes": []
+  },
+  "control": {
+    "denominador": "9 de 0 productos · 8 campos · 0 comparaciones",
+    "porClase": {
+      "SIN CLASIFICAR": 9
+    },
+    "discrepancias": [
+      {
+        "id": "monitor-calidad-aire",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      },
+      {
+        "id": "estacion-de-monitoreo-de-calidad-del-aire",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      },
+      {
+        "id": "sensor-de-calidad-del-aire",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      },
+      {
+        "id": "software-de-medicion-calidad-del-aire",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      },
+      {
+        "id": "kunak-api",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      },
+      {
+        "id": "sulfuro-de-hidrogeno",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      },
+      {
+        "id": "amoniaco",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      },
+      {
+        "id": "compuestos-organicos-volatiles",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      },
+      {
+        "id": "particulas-en-suspension",
+        "campo": "(documento)",
+        "clase": "SIN CLASIFICAR",
+        "aMano": "existe",
+        "extraido": "AUSENTE"
+      }
+    ]
+  },
+  "catalogo": {
+    "productos": []
+  }
+}

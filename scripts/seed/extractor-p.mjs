@@ -1,7 +1,7 @@
 /**
  * EXTRACTOR DE `productos` — del corpus congelado al catálogo del CPT
  * `solutions`. Uso: npm run cms:extractor-p
- * Negativos: SABOTAJE=lector-muerto | control-roto | ficha-divergente | sin-seo
+ * Negativos: npm run cms:extractor-p-neg  (lector-muerto · control-roto · ficha-divergente · sin-seo)
  *
  * ── Por qué existe, y por qué la fuente es el PANEL y no la página ────────
  * `qa:productos-hueco` (PASO 1) repartió el hueco: de los 19 slugs que los 57
@@ -39,7 +39,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { cargaExportados } from "./catalogos.mjs";
-import { Evaluadas, gritaSiRevienta, hoy, QA, w } from "../qa/lib.mjs";
+import { Evaluadas, gritaSiRevienta, hoy, nombreNeg, QA, w } from "../qa/lib.mjs";
 
 process.env.SIN_CLON = "1";
 gritaSiRevienta();
@@ -389,7 +389,17 @@ if (!lectores.size) err(`el censo de lectores está VACÍO: ningún lector lleg�
 if (muertos.length) err(`LECTOR MUERTO: ${muertos.join(" · ")} — no casó ni una vez. Un cero de lector no es un dato.`);
 if (!filas.length) err(`0 productos extraídos — eso no es «el CPT está vacío», es que el lector no casa.`);
 
-w("medidas/p-extraido.json", {
+/* ⚠ §regla 24, mitad de higiene: **la sonda desvía sus propios sabotajes.**
+ * Hasta la 97.ª esto congelaba en `medidas/p-extraido.json` con SABOTAJE puesto.
+ * La guarda de `w()` impide pisar la canónica —el contenido difiere—, así que no
+ * había corrupción; pero lo que salía era un fichero **fechado y SIN marcar**,
+ * o sea con nombre de medida y contenido de sabotaje (§regla 7). El desvío no
+ * puede depender de que quien la lanza se acuerde de poner `NEG=`: se arregla la
+ * CLASE, no la instancia. */
+const SALIDA = SABOTAJE ? nombreNeg("medidas/p-extraido.json", SABOTAJE) : "medidas/p-extraido.json";
+if (SABOTAJE) console.log(`\n  ⚠ SABOTAJE activo: la salida se desvía a \`${SALIDA}\` — el canónico NO se toca.`);
+
+w(SALIDA, {
   meta: {
     fecha: hoy(),
     que: "el catálogo del CPT `solutions` derivado del PANEL servido en el corpus congelado",
