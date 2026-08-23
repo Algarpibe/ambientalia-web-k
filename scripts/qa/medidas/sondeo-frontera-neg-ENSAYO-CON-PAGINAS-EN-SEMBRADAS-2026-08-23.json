@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "fecha": "2026-08-23",
+    "sabotaje": null,
+    "filas": 355,
+    "alcance": "los 9 catálogos de CATALOGOS contra la config RESUELTA, sin escribir en la DB. Las taxonomías derivadas entran como destino de relación, no como origen."
+  },
+  "grafo": {
+    "podadas": [],
+    "orden": [
+      "categorias",
+      "etiquetas",
+      "categorias-recursos",
+      "categorias-cientificas",
+      "productos",
+      "paginas",
+      "sectores",
+      "monograficos",
+      "taxonomia-sectores",
+      "casos",
+      "faqs",
+      "entradas-blog",
+      "terminos-kunakpedia",
+      "documentos-cientificos"
+    ],
+    "aristas": [
+      {
+        "origen": "categorias-recursos",
+        "destino": "categorias-recursos",
+        "rutas": [
+          "padre"
+        ]
+      },
+      {
+        "origen": "sectores",
+        "destino": "productos",
+        "rutas": [
+          "soluciones"
+        ]
+      },
+      {
+        "origen": "monograficos",
+        "destino": "productos",
+        "rutas": [
+          "soluciones"
+        ]
+      },
+      {
+        "origen": "taxonomia-sectores",
+        "destino": "sectores",
+        "rutas": [
+          "pagina"
+        ]
+      },
+      {
+        "origen": "taxonomia-sectores",
+        "destino": "monograficos",
+        "rutas": [
+          "pagina"
+        ]
+      },
+      {
+        "origen": "casos",
+        "destino": "taxonomia-sectores",
+        "rutas": [
+          "sectores"
+        ]
+      },
+      {
+        "origen": "casos",
+        "destino": "productos",
+        "rutas": [
+          "soluciones"
+        ]
+      },
+      {
+        "origen": "entradas-blog",
+        "destino": "categorias",
+        "rutas": [
+          "categorias"
+        ]
+      },
+      {
+        "origen": "entradas-blog",
+        "destino": "etiquetas",
+        "rutas": [
+          "etiquetas"
+        ]
+      },
+      {
+        "origen": "entradas-blog",
+        "destino": "categorias-recursos",
+        "rutas": [
+          "recurso"
+        ]
+      },
+      {
+        "origen": "documentos-cientificos",
+        "destino": "categorias-cientificas",
+        "rutas": [
+          "categoria"
+        ]
+      }
+    ],
+    "ciclos": [],
+    "autoRelaciones": [
+      {
+        "coleccion": "categorias-recursos",
+        "rutas": [
+          "padre"
+        ],
+        "filas": 9,
+        "usada": 0
+      }
+    ],
+    "violaciones": []
+  },
+  "huerfanas": {
+    "porColeccion": {
+      "productos": 0,
+      "paginas": 0,
+      "sectores": 0,
+      "monograficos": 0,
+      "taxonomia-sectores": 0,
+      "casos": 0,
+      "faqs": 0,
+      "entradas-blog": 0,
+      "terminos-kunakpedia": 0,
+      "documentos-cientificos": 0
+    },
+    "porDestino": {},
+    "total": 0
+  },
+  "required": {
+    "delEsquema": 73,
+    "cubiertas": 73,
+    "extra": 89,
+    "sinAuditar": [],
+    "sinDato": {},
+    "vacios": {}
+  },
+  "validate": {
+    "rechazos": [
+      {
+        "col": "paginas",
+        "ruta": "bloques[].filas[].columnas[].modulos[texto-pagina].html",
+        "motivo": "§3.1-atributos: atributo(s) fuera del censo de 81 — data-teams. El censo (qa:atributos-censo, 291 páginas) mide CERO manejadores `on*`, CERO `javascript:` y CERO `data:`, así que rechazar no cuesta contenido servido. Si es legítimo, se admite AÑADIÉNDOLO a ATRIBUTOS_CENSADOS con su evidencia — no se limpia en silencio."
+      }
+    ],
+    "porRuta": {
+      "paginas · bloques[].filas[].columnas[].modulos[texto-pagina].html": [
+        "(sin slug)"
+      ]
+    },
+    "noEvaluables": 4094
+  },
+  "instrumento": {
+    "sinLlave": [],
+    "erroresDeMapeo": [],
+    "podasMuertas": []
+  }
+}

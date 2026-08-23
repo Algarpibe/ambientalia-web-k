@@ -1,0 +1,90 @@
+═══ bloqueos-f33 · qué impide sembrar `paginas`, por los CUATRO canales
+
+  extraído leído de                        scripts/qa/medidas/f33-extraido.json   (canónico)
+  documentos                               31
+  páginas con algún bloqueo                2
+  BLOQUEOS                                 12
+
+  canal       comprobados  bloqueos  páginas
+  validate    196          1         empresa
+  select      173          10        servicio-de-reparacion
+  required    697          0         —
+  media       93           1         empresa
+
+  uno a uno:
+
+   ‼ [media] empresa
+      ruta   bloques[9].filas[0].columnas[1].modulos[9]<imagen-pagina>.src
+      valor  "https://upload.wikimedia.org/wikipedia/commons/9/9d/Logotipo_del_Ministerio_de_Econom%C3%A"
+      motivo no es una ruta de asset local: `creaContexto().media` TIRA (`ruta.startsWith("/")`)
+
+   ‼ [validate] empresa
+      ruta   bloques[9].filas[0].columnas[1].modulos[13]<texto-pagina>.html
+      valor  "<p><span data-teams=\"true\">Esta empresa ha recibido una ayuda del Gobierno de Navarra al a"
+      motivo §3.1-atributos: atributo(s) fuera del censo de 81 — data-teams. El censo (qa:atributos-censo, 291 páginas) mide CERO manejadores `on*`, CERO `javascript:` y CERO `data:`, así que rechazar no cuesta co
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[1].columnas[0].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[1].columnas[1].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[1].columnas[2].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[1].columnas[3].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[1].columnas[4].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[2].columnas[0].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[2].columnas[1].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[2].columnas[2].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[2].columnas[3].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+   ‼ [select] servicio-de-reparacion
+      ruta   bloques[0].filas[2].columnas[4].ancho
+      valor  "1_5"
+      motivo valor fuera de `options` — el enum expresa 1_4 · 1_3 · 2_5 · 1_2 · 3_5 · 2_3 · 3_4 · 4_4
+
+─── CONTROL en línea del recorrido ───
+
+  documento sintético con un fallo de CADA canal
+     validate    ✓ lo caza   (comprobados +2)
+     select      ✓ lo caza   (comprobados +1)
+     required    ✓ lo caza   (comprobados +6)
+     media       ✓ lo caza   (comprobados +1)
+     → los 4 canales SABEN fallar. Los 12 de arriba son un dato.
+
+═══ LO QUE ESTO NO DECIDE ═══
+
+  Ninguno de estos bloqueos se arregla aquí. Los tres canales que salen
+  poblados son decisiones de MODELO —whitelist de seguridad, retícula de
+  columnas, canal de media de host ajeno— y una tanda de emisión no las toma
+  de paso. Fichas con su número: PENDIENTES-QA.md §F3-3-BLOQUEOS-DE-SIEMBRA.
