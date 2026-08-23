@@ -29,6 +29,36 @@
       "--": 1
     }
   },
+  "emision": {
+    "modulos": 0,
+    "columnasColapsadas": 0,
+    "filasColapsadas": 0,
+    "seccionesColapsadas": 0
+  },
+  "retirada": {
+    "derivadaDe": "docs/research/cola-larga/derivaciones/clasifica-f33.{mjs,log} — 120 ocurrencias, 0 de contenido",
+    "contenedores": [
+      {
+        "id": "miga",
+        "clase": "CASCARÓN",
+        "evidencia": "clasifica-f33 §2"
+      },
+      {
+        "id": "bucle-entradas",
+        "clase": "CONSULTA",
+        "evidencia": "clasifica-f33 §3a"
+      },
+      {
+        "id": "listado-cientifico",
+        "clase": "CONSULTA",
+        "evidencia": "clasifica-f33 §3b"
+      }
+    ],
+    "modulosTocados": 0,
+    "modulosOmitidos": 0,
+    "modulosConservados": 0,
+    "detalle": []
+  },
   "cruce": {
     "esperado": {
       "text": 151,

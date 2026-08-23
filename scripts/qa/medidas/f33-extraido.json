@@ -41,6 +41,217 @@
       "--": 1
     }
   },
+  "emision": {
+    "modulos": 301,
+    "columnasColapsadas": 10,
+    "filasColapsadas": 10,
+    "seccionesColapsadas": 10
+  },
+  "retirada": {
+    "derivadaDe": "docs/research/cola-larga/derivaciones/clasifica-f33.{mjs,log} — 120 ocurrencias, 0 de contenido",
+    "contenedores": [
+      {
+        "id": "miga",
+        "clase": "CASCARÓN",
+        "evidencia": "clasifica-f33 §2"
+      },
+      {
+        "id": "bucle-entradas",
+        "clase": "CONSULTA",
+        "evidencia": "clasifica-f33 §3a"
+      },
+      {
+        "id": "listado-cientifico",
+        "clase": "CONSULTA",
+        "evidencia": "clasifica-f33 §3b"
+      }
+    ],
+    "modulosTocados": 12,
+    "modulosOmitidos": 12,
+    "modulosConservados": 0,
+    "detalle": [
+      {
+        "ruta": "/es/productos/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 523,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 523,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/sectores/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 491,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 491,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/recursos/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 491,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 491,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/recursos/",
+        "retirados": [
+          {
+            "contenedor": "bucle-entradas",
+            "clase": "CONSULTA",
+            "chars": 3593,
+            "evidencia": "clasifica-f33 §3a"
+          }
+        ],
+        "brutoChars": 3593,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/recursos/kunakpedia/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 737,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 737,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/recursos/documentos-cientificos/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 749,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 749,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/recursos/documentos-cientificos/",
+        "retirados": [
+          {
+            "contenedor": "listado-cientifico",
+            "clase": "CONSULTA",
+            "chars": 56313,
+            "evidencia": "clasifica-f33 §3b"
+          }
+        ],
+        "brutoChars": 56313,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/recursos/preguntas-frecuentes/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 747,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 747,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/empresa/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 490,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 490,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/empresa/premios-y-reconocimientos/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 750,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 750,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/soporte/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 490,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 490,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      },
+      {
+        "ruta": "/es/soporte/servicio-de-reparacion/",
+        "retirados": [
+          {
+            "contenedor": "miga",
+            "clase": "CASCARÓN",
+            "chars": 753,
+            "evidencia": "clasifica-f33 §2"
+          }
+        ],
+        "brutoChars": 753,
+        "limpioChars": 0,
+        "restoChars": 0,
+        "moduloOmitido": true
+      }
+    ]
+  },
   "cruce": {
     "esperado": {
       "text": 151,
@@ -1244,23 +1455,6 @@
                     "modulos": [
                       {
                         "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Sistemas de sensores de calidad del aire</span><meta itemprop=\"position\" content=\"2\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
                         "html": "<h1>Sistemas de sensores de calidad del aire</h1>"
                       }
                     ]
@@ -1442,23 +1636,6 @@
               {
                 "columnas": [
                   {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Sectores</span><meta itemprop=\"position\" content=\"2\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
                     "ancho": "1_3",
                     "modulos": [
                       {
@@ -1515,23 +1692,6 @@
           "title": "Recursos - Kunak"
         },
         "bloques": [
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Recursos</span><meta itemprop=\"position\" content=\"2\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "filas": [
               {
@@ -1638,10 +1798,6 @@
                       {
                         "kind": "texto-pagina",
                         "html": "<h2>Guías más recientes</h2>"
-                      },
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<div class=\"et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light\"><div class=\"et_pb_ajax_pagination_container\"><article id=\"post-71347\" class=\"et_pb_post clearfix post-71347 post type-post hentry\"><a href=\"https://kunakair.com/es/monitorizacion-de-emisiones-fugitivas/\" class=\"entry-featured-image-url\"><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"683\" src=\"https://kunakair.com/wp-content/uploads/2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak-1024x683.jpg\" class=\"attachment-large size-large wp-post-image\" alt=\"La monitorización de emisiones fugitivas es el conjunto de técnicas y sistemas empleados para detectar, medir y gestionar fugas no canalizadas de gases o partículas en instalaciones industriales. - Kunak\" srcset=\"https://kunakair.com/wp-content/uploads/2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak-980x653.jpg 980w, https://kunakair.com/wp-content/uploads/2026/07/Deteccion-temprana-emisiones-fugitivas_Kunak-480x320.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1024px, 100vw\" /></a><h3 class=\"entry-title\"><a href=\"https://kunakair.com/es/monitorizacion-de-emisiones-fugitivas/\">Monitorización de emisiones fugitivas: detección y control de fugas industriales</a></h3><p class=\"post-meta\">Jul 21, 2026</p></article><article id=\"post-70141\" class=\"et_pb_post clearfix post-70141 post type-post hentry\"><a href=\"https://kunakair.com/es/monitorizacion-perimetral/\" class=\"entry-featured-image-url\"><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"683\" src=\"https://kunakair.com/wp-content/uploads/2026/06/monitorizacion-perimetral_Kunak-1024x683.jpg\" class=\"attachment-large size-large wp-post-image\" alt=\"La monitorización perimetral en instalaciones industriales sitúa la medición donde el impacto se vuelve real, convierte el perímetro en el punto de control más valioso de la instalación. - Kunak\" srcset=\"https://kunakair.com/wp-content/uploads/2026/06/monitorizacion-perimetral_Kunak-980x653.jpg 980w, https://kunakair.com/wp-content/uploads/2026/06/monitorizacion-perimetral_Kunak-480x320.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1024px, 100vw\" /></a><h3 class=\"entry-title\"><a href=\"https://kunakair.com/es/monitorizacion-perimetral/\">Monitorización perimetral en instalaciones industriales: control continuo y detección de emisiones</a></h3><p class=\"post-meta\">Jun 25, 2026</p></article><article id=\"post-68582\" class=\"et_pb_post clearfix post-68582 post type-post hentry\"><a href=\"https://kunakair.com/es/monitorizacion-near-reference/\" class=\"entry-featured-image-url\"><img loading=\"lazy\" decoding=\"async\" width=\"1024\" height=\"683\" src=\"https://kunakair.com/wp-content/uploads/2025/07/aaqms-1024x683.jpg\" class=\"attachment-large size-large wp-post-image\" alt=\"AAQMS (Estaciones de monitorización de calidad del aire ambiental): definición, sistemas relacionados y distinciones - Kunak\" srcset=\"https://kunakair.com/wp-content/uploads/2025/07/aaqms-980x653.jpg 980w, https://kunakair.com/wp-content/uploads/2025/07/aaqms-480x320.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1024px, 100vw\" /></a><h3 class=\"entry-title\"><a href=\"https://kunakair.com/es/monitorizacion-near-reference/\">Monitorización near-reference: precisión avanzada en la medición de la calidad del aire</a></h3><p class=\"post-meta\">Jun 18, 2026</p></article></div></div>"
                       }
                     ]
                   }
@@ -1679,23 +1835,6 @@
           "description": "Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak."
         },
         "bloques": [
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina padre\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Kunakpedia</span><meta itemprop=\"position\" content=\"3\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "filas": [
               {
@@ -1755,23 +1894,6 @@
               {
                 "columnas": [
                   {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina padre\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Documentos científicos</span><meta itemprop=\"position\" content=\"3\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
                     "ancho": "1_3",
                     "modulos": [
                       {
@@ -1808,10 +1930,6 @@
                       {
                         "kind": "texto-pagina",
                         "html": "<div class=\"scientific-filter\">\n        <div id=\"filters\" class=\"button-group filtros-scientific\"> \n            <a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" class=\"button\">Artículos científicos y estudios</a><a href=\"https://kunakair.com/es/scientific-category/articulos-tecnicos/\" class=\"button\">Artículos técnicos</a><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" class=\"button\">Evaluaciones independientes</a>        </div>\n    </div>"
-                      },
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<div class=\"scientific-list-content\"><article id=\"post-71039\" Array><div class=\"scientific-imagen-container\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Technical_publications/February_2026_Kunak_Hydrocarbon_engineering.pdf\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Technical_publications/February_2026_Kunak_Hydrocarbon_engineering.pdf\" target=\"_blank\">Soluciones avanzadas de monitorización</a></h3></header><div class=\"scientific-taxonomies\"><strong>Revista Hydrocarbon Engineering</strong> | 2026<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-tecnicos/\" rel=\"tag\">Artículos técnicos</a></div></div><div class=\"scientific-excerpt\">Publicado en la revista internacional Hydrocarbon Engineering, este artículo analiza cómo las rede... <a href=\"https://kunakair.com/es/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion/\">Seguir leyendo</a></div></article><article id=\"post-61964\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.aqmd.gov/docs/default-source/aq-spec/field-evaluations/kunak-air-pro---field-evaluation.pdf\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/aq-spec-kunak_air_pro-Field-evaluation-report-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.aqmd.gov/docs/default-source/aq-spec/field-evaluations/kunak-air-pro---field-evaluation.pdf\" target=\"_blank\">Kunak AIR Pro &#8211; Informe de evaluación en campo</a></h3></header><div class=\"scientific-taxonomies\"><strong>AQ-SPEC (Centro de Evaluación del Rendimiento de los Sensores de Calidad del Aire)</strong> | 2025<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" rel=\"tag\">Evaluaciones independientes</a></div></div><div class=\"scientific-excerpt\">El protocolo de evaluación de campo AQ-SPEC para sensores de calidad del aire prueba dispositivos e... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-pro-informe-de-evaluacion-en-campo/\">Seguir leyendo</a></div></article><article id=\"post-61980\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.aqmd.gov/docs/default-source/aq-spec/field-evaluations/kunak-air-lite---field-evaluation.pdf\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/aq-spec-kunak_air_lite-Field-evaluation-report-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.aqmd.gov/docs/default-source/aq-spec/field-evaluations/kunak-air-lite---field-evaluation.pdf\" target=\"_blank\">Kunak AIR Lite &#8211; Informe de evaluación en campo</a></h3></header><div class=\"scientific-taxonomies\"><strong>AQ-SPEC (Centro de Evaluación del Rendimiento de los Sensores de Calidad del Aire)</strong> | 2025<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" rel=\"tag\">Evaluaciones independientes</a></div></div><div class=\"scientific-excerpt\">El protocolo de evaluación de campo AQ-SPEC para sensores de calidad del aire prueba dispositivos e... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-lite-informe-de-evaluacion-en-campo/\">Seguir leyendo</a></div></article><article id=\"post-61981\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.cetjournal.it/index.php/cet/article/view/CET24112023\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/The-Use-of-Sensor-Based-System-to-Measure-Accurate-Low-Odorant-Concentrations-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.cetjournal.it/index.php/cet/article/view/CET24112023\" target=\"_blank\">Uso de un sistema basado en sensores para medir con precisión los olores a bajas concentraciones</a></h3></header><div class=\"scientific-taxonomies\"><strong>Lara-Ibeas et al.</strong> | 2024<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen La contaminación por olores se ha convertido en una preocupación creciente debido a la ind... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones/\">Seguir leyendo</a></div></article><article id=\"post-61982\" Array><div class=\"scientific-imagen-container\"><a href=\"https://pubmed.ncbi.nlm.nih.gov/38565357/\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Dynamic-and-stationary-monitoring-of-air-pollutant-exposures-and-dose-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://pubmed.ncbi.nlm.nih.gov/38565357/\" target=\"_blank\">Vigilancia dinámica y estacionaria de la exposición a los contaminantes atmosféricos y de las dosis durante los maratones</a></h3></header><div class=\"scientific-taxonomies\"><strong>Ribalta et al.</strong> | 2024<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" rel=\"tag\">Evaluaciones independientes</a></div></div><div class=\"scientific-excerpt\">Resumen Correr maratones incrementa significativamente los volúmenes respiratorios y, como consecue... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones/\">Seguir leyendo</a></div></article><article id=\"post-61983\" Array><div class=\"scientific-imagen-container\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/Ricardo_Glasgow_Kerbside_KUNAK_Air_Lite_2022.html\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/ricardo-sensor-report-air-lite-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/Ricardo_Glasgow_Kerbside_KUNAK_Air_Lite_2022.html\" target=\"_blank\">Informe de co-ubicación en Glasgow Kerbside &#8211; Kunak AIR Lite</a></h3></header><div class=\"scientific-taxonomies\"><strong>Ricardo</strong> | 2024<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" rel=\"tag\">Evaluaciones independientes</a></div></div><div class=\"scientific-excerpt\">Este informe presenta una evaluación independiente del sistema de monitoreo de calidad del aire Kun... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite/\">Seguir leyendo</a></div></article><article id=\"post-61984\" Array><div class=\"scientific-imagen-container\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/Ricardo_Glasgow_Kerbside_KUNAK_Air_Pro_2022.html\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/ricardo-sensor-report-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/Ricardo_Glasgow_Kerbside_KUNAK_Air_Pro_2022.html\" target=\"_blank\">Informe de co-ubicación en Glasgow Kerbside &#8211; Kunak AIR Pro</a></h3></header><div class=\"scientific-taxonomies\"><strong>Ricardo</strong> | 2024<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" rel=\"tag\">Evaluaciones independientes</a></div></div><div class=\"scientific-excerpt\">El informe de 2022 de Ricardo Energy &amp; Environment evaluó la precisión del monitor de calidad ... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro/\">Seguir leyendo</a></div></article><article id=\"post-61985\" Array><div class=\"scientific-imagen-container\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/AIRLAB_Microsensors_Challenge_%202023_Kunak_AIR.pdf\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/airlab-microsensors-challenge-2023-kunak-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/AIRLAB_Microsensors_Challenge_%202023_Kunak_AIR.pdf\" target=\"_blank\">Desafío AIRLAB de microsensores 2023</a></h3></header><div class=\"scientific-taxonomies\"><strong>Airparif</strong> | 2023<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" rel=\"tag\">Evaluaciones independientes</a></div></div><div class=\"scientific-excerpt\">El «Challenge AIRLAB Microcapteurs» es una iniciativa internacional organizada por Airparif y AIRL... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023/\">Seguir leyendo</a></div></article><article id=\"post-61986\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.frontiersin.org/journals/environmental-health/articles/10.3389/fenvh.2023.1232867/full\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Opportunistic-mobile-air-quality-mapping-using-sensors-on-postal-service-vehicles-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.frontiersin.org/journals/environmental-health/articles/10.3389/fenvh.2023.1232867/full\" target=\"_blank\">Cartografía móvil de la calidad del aire mediante sensores instalados en vehículos del servicio postal</a></h3></header><div class=\"scientific-taxonomies\"><strong>Hofman et al.</strong> | 2023<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen Este estudio tuvo como objetivo examinar la validez de una flota móvil de sensores de calid... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal/\">Seguir leyendo</a></div></article><article id=\"post-62046\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.envirotech-online.com/article/air-monitoring/6/vodafone/the-suitability-of-a-mobile-communications-network-to-deliver-high-resolution-air-quality-measurements/3344\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.envirotech-online.com/article/air-monitoring/6/vodafone/the-suitability-of-a-mobile-communications-network-to-deliver-high-resolution-air-quality-measurements/3344\" target=\"_blank\">Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución</a></h3></header><div class=\"scientific-taxonomies\"><strong>Thibault et al.</strong> | 2023<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen En la mayoría de los países, los operadores de redes móviles (MNO, por sus siglas en ingl... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion/\">Seguir leyendo</a></div></article><article id=\"post-62047\" Array><div class=\"scientific-imagen-container\"><a href=\"https://ojs.diffundit.com/index.php/rsa/article/view/1158/1455\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Plan-de-Control-Ambiental-de-las-obras-del-Mahou-Calderon-2018-2020-en-la-ciudad-de-Madrid-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://ojs.diffundit.com/index.php/rsa/article/view/1158/1455\" target=\"_blank\">Plan de control ambiental de las obras del Mahou-Calderón (2018-2020) en la ciudad de Madrid</a></h3></header><div class=\"scientific-taxonomies\"><strong>de Garrastazu Diaz et al.</strong> | 2023<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen Las obras de construcción y demolición son una de las principales fuentes de contaminació... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid/\">Seguir leyendo</a></div></article><article id=\"post-62048\" Array><div class=\"scientific-imagen-container\"><a href=\"https://epr.atmosfera.unam.mx/Microsensores-2022/documentos/2b_Evaluacion_Sensores_CDMX_2022.pdf\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://epr.atmosfera.unam.mx/Microsensores-2022/documentos/2b_Evaluacion_Sensores_CDMX_2022.pdf\" target=\"_blank\">Evaluación de microsensores para la medición de calidad del aire en Ciudad de México</a></h3></header><div class=\"scientific-taxonomies\"><strong>Instituto de ciencias atmosféricas y cambio climático, UNAM</strong> | 2023<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" rel=\"tag\">Evaluaciones independientes</a></div></div><div class=\"scientific-excerpt\">En 2022, la Secretaría del Medio Ambiente de Ciudad de México (SEDEMA) y el Instituto de Ciencias ... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico/\">Seguir leyendo</a></div></article><article id=\"post-62049\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.mdpi.com/1920830\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Establishing-Correlation-between-Cruise-Ship-Activities-and-Ambient-PM-Concentrations-in-the-Kotor-Bay-Area-Using-a-Low-Cost-Sensor-Network-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.mdpi.com/1920830\" target=\"_blank\">Correlación entre las actividades de los cruceros y las concentraciones de PM en el aire de la bahía de Kotor mediante una red de sensores de bajo coste</a></h3></header><div class=\"scientific-taxonomies\"><strong>Gagic et al.</strong> | 2022<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen El análisis de los cruceros se centra en las zonas portuarias, donde pueden representar una... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor/\">Seguir leyendo</a></div></article><article id=\"post-62050\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.mdpi.com/2073-4433/13/6/944\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2022/06/Air-Quality-Sensor-Networks-for-Evidence-Based-Policy-Making-Best-Practices-for-Actionable-Insights-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.mdpi.com/2073-4433/13/6/944\" target=\"_blank\">Redes de sensores de la calidad del aire para la elaboración de políticas basadas en pruebas: Buenas prácticas para una visión práctica</a></h3></header><div class=\"scientific-taxonomies\"><strong>Hofman et al.</strong> | 2022<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen (1) Antecedentes: Este trabajo evaluó la usabilidad de sistemas comerciales de sensores de ... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas/\">Seguir leyendo</a></div></article><article id=\"post-62051\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.mdpi.com/2072-4292/14/11/2613\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Fine-Grained-Urban-Air-Quality-Mapping-from-Sparse-Mobile-Air-Pollution-Measurements-and-Dense-Traffic-Density-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.mdpi.com/2072-4292/14/11/2613\" target=\"_blank\">Cartografía detallada de la calidad del aire urbano a partir de mediciones móviles dispersas de la contaminación atmosférica y una densa densidad de tráfico</a></h3></header><div class=\"scientific-taxonomies\"><strong>Qin et al.</strong> | 2022<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen El mapeo de la calidad del aire urbano se ha aplicado ampliamente en la planificación urban... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica/\">Seguir leyendo</a></div></article><article id=\"post-62052\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.mdpi.com/1660-4601/19/6/3561\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2022/02/Air-Quality-Sensors-Systems-as-Tools-to-Support-Guidance-in-Athletics-Stadia-for-Elite-and-Recreational-Athletes-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.mdpi.com/1660-4601/19/6/3561\" target=\"_blank\">Sistemas de sensores de la calidad del aire como herramientas de apoyo a la orientación en los estadios de atletismo para deportistas de élite y recreativos</a></h3></header><div class=\"scientific-taxonomies\"><strong>Viana et al.</strong> | 2022<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen Aunque los atletas tienen una alta exposición a los contaminantes del aire debido a sus tas... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo/\">Seguir leyendo</a></div></article><article id=\"post-62053\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.sciencedirect.com/science/article/abs/pii/S1364815222000123\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Spatiotemporal-air-quality-inference-of-low-cost-sensor-data-Evidence-from-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.sciencedirect.com/science/article/abs/pii/S1364815222000123\" target=\"_blank\">Inferencia espaciotemporal de la calidad del aire a partir de datos de sensores de bajo coste: Pruebas de múltiples bancos de sensores</a></h3></header><div class=\"scientific-taxonomies\"><strong>Hofman et al.</strong> | 2022<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen Los avances recientes en tecnologías de sensores e IoT permiten mediciones de calidad del a... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste/\">Seguir leyendo</a></div></article><article id=\"post-62054\" Array><div class=\"scientific-imagen-container\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Papers_and_studies/Estudio_en_la_EDAR_de_Arazuri-Kunak.pdf\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Evaluation-of-the-use-of-air-quality-monitoring-stations-based-on-electrochemical-sensors-for-early-odour-detection-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Papers_and_studies/Estudio_en_la_EDAR_de_Arazuri-Kunak.pdf\" target=\"_blank\">Evaluación del uso de estaciones de control de la calidad del aire basadas en sensores electroquímicos para la detección precoz de olores</a></h3></header><div class=\"scientific-taxonomies\"><strong>MCP</strong> | 2021<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen El estudio evalúa la solución para la monitorización de H<sub>2</sub>S en ambientes de tratamiento d... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores/\">Seguir leyendo</a></div></article><article id=\"post-62055\" Array><div class=\"scientific-imagen-container\"><a href=\"https://www.sciencedirect.com/science/article/pii/S1352231020308955\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/The-US-EPA-wildland-fire-sensor-challenge-Performance-and-evaluation-of-solver-submitted-multi-pollutant-sensor-systems-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://www.sciencedirect.com/science/article/pii/S1352231020308955\" target=\"_blank\">El desafío de sensores contra incendios forestales de la US EPA: Rendimiento y evaluación de los sistemas de sensores multicontaminantes presentados al solucionador</a></h3></header><div class=\"scientific-taxonomies\"><strong>S. Landis et al.</strong> | 2021<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen Los incendios forestales pueden emitir cantidades sustanciales de contaminación atmosféric... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/desafio-de-sensores-contra-incendios-forestales-de-la-us-epa/\">Seguir leyendo</a></div></article><article id=\"post-62056\" Array><div class=\"scientific-imagen-container\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/USEPA_Wildland_Fire_Challenge_Kunak_AIR_Evaluation.pdf\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/03/USEPA_Wildland_Fire_Sensors_Challenge_Kunak_AIR_Evaluation-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"19\" height=\"25\" viewBox=\"0 0 21 28\">\n                    <path id=\"Trazado_25\" data-name=\"Trazado 25\" d=\"M0,0A3.5,3.5,0,0,1-3.5,3.5h-14A3.5,3.5,0,0,1-21,0h1.75A1.749,1.749,0,0,0-17.5,1.75h14A1.748,1.748,0,0,0-1.75,0ZM-7.875-14A2.626,2.626,0,0,1-10.5-16.625V-22.75h-7A1.75,1.75,0,0,0-19.25-21v8.75H-21V-21a3.5,3.5,0,0,1,3.5-3.5h8.537a2.635,2.635,0,0,1,1.859.769L-.771-17.4A2.638,2.638,0,0,1,0-15.537v3.287H-1.75V-14Zm5.868-2.155-6.338-6.339a.849.849,0,0,0-.4-.23v6.1a.878.878,0,0,0,.875.875h6.1A.835.835,0,0,0-2.007-16.155ZM-16.187-10.5a3.064,3.064,0,0,1,3.063,3.063,3.064,3.064,0,0,1-3.063,3.063h-.437v1.75a.876.876,0,0,1-.875.875.876.876,0,0,1-.875-.875v-7A.876.876,0,0,1-17.5-10.5Zm1.313,3.063A1.309,1.309,0,0,0-16.187-8.75h-.437v2.625h.438A1.309,1.309,0,0,0-14.875-7.437Zm2.625-2.187a.878.878,0,0,1,.875-.875h1.313A2.626,2.626,0,0,1-7.437-7.875v3.5A2.626,2.626,0,0,1-10.062-1.75h-1.312a.878.878,0,0,1-.875-.875ZM-10.5-3.5h.438a.878.878,0,0,0,.875-.875v-3.5a.878.878,0,0,0-.875-.875H-10.5Zm7.875-7a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75V-7h1.75a.878.878,0,0,1,.875.875.878.878,0,0,1-.875.875h-1.75v2.625a.878.878,0,0,1-.875.875.878.878,0,0,1-.875-.875v-7A.878.878,0,0,1-5.25-10.5Z\" transform=\"translate(21 24.5)\" fill=\"#0075C9\"/>\n                    </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/USEPA_Wildland_Fire_Challenge_Kunak_AIR_Evaluation.pdf\" target=\"_blank\">Desafío de los Sensores de Incendios Forestales: Evaluación del Solucionador nº 19</a></h3></header><div class=\"scientific-taxonomies\"><strong>Agencia de Protección del Medio Ambiente de EE.UU. (US EPA)</strong> | 2021<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/evaluaciones-independientes/\" rel=\"tag\">Evaluaciones independientes</a></div></div><div class=\"scientific-excerpt\">Esta es una evaluación independiente realizada por la Agencia de Protección Ambiental de los Estad... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/evaluaciones-independientes/desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19/\">Seguir leyendo</a></div></article><article id=\"post-62057\" Array><div class=\"scientific-imagen-container\"><a href=\"https://pubmed.ncbi.nlm.nih.gov/32065890/\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://pubmed.ncbi.nlm.nih.gov/32065890/\" target=\"_blank\">Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto</a></h3></header><div class=\"scientific-taxonomies\"><strong>Reche et al.</strong> | 2020<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen Las posibles consecuencias adversas de la exposición a contaminantes atmosféricos durante ... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo/\">Seguir leyendo</a></div></article><article id=\"post-62092\" Array><div class=\"scientific-imagen-container\"><a href=\"https://link.springer.com/article/10.5572/ajae.2018.12.3.232\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Spatial-temporal-Assessment-and-Mapping-of-the-Air-Quality-and-Noise-Pollution-in-a-Sub-area-Local-Environment-inside-the-Center-of-a-Latin-American-Megacity-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://link.springer.com/article/10.5572/ajae.2018.12.3.232\" target=\"_blank\">Evaluación espaciotemporal y cartografía de la calidad del aire y la contaminación acústica en un entorno local suburbano en el centro de una megaciudad latinoamericana: Universidad Nacional de Colombia &#8211; Campus Bogotá</a></h3></header><div class=\"scientific-taxonomies\"><strong>Luna et al.</strong> | 2018<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen La construcción, desarrollo y mantenimiento de un campus económicamente, ambientalmente y ... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana/\">Seguir leyendo</a></div></article><article id=\"post-62093\" Array><div class=\"scientific-imagen-container\"><a href=\"https://pubs.acs.org/doi/10.1021/acssensors.7b00620#\" target=\"_blank\"><span class=\"scientific-imagen\" style=\"background-image: url(https://kunakair.com/wp-content/uploads/2025/02/Amperometric-Gas-Sensors-as-a-Low-Cost-Emerging-Technology-Platform-for-Air-Quality-Monitoring-Applications-A-Review-724x1024.jpg)\"></span><span class=\"scientific-ico\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"19.372\" viewBox=\"0 0 30.718 23.803\">\n\t\t\t  \t\t<path id=\"Trazado_26\" data-name=\"Trazado 26\" d=\"M-23.715-16.072a7.3,7.3,0,0,1,10.334,0,7.3,7.3,0,0,1,.33,9.973l-.269.31a1.221,1.221,0,0,1-1.721.117,1.221,1.221,0,0,1-.117-1.721l.274-.31a4.868,4.868,0,0,0-.223-6.647,4.841,4.841,0,0,0-6.927,0L-27.745-8.6a4.87,4.87,0,0,0,0,6.886,4.914,4.914,0,0,0,6.646.223l.315-.274a1.215,1.215,0,0,1,1.716.117A1.215,1.215,0,0,1-19.18.071l-.315.274A7.3,7.3,0,0,1-29.469.01a7.3,7.3,0,0,1,0-10.329ZM-8.785-3.428a7.307,7.307,0,0,1-10.334,0,7.264,7.264,0,0,1-.335-9.973l.239-.274a1.221,1.221,0,0,1,1.721-.117,1.221,1.221,0,0,1,.117,1.721l-.239.274A4.868,4.868,0,0,0-17.4-5.149a4.879,4.879,0,0,0,6.891,0L-4.753-10.9a4.873,4.873,0,0,0,0-6.886A4.867,4.867,0,0,0-11.4-18.01l-.315.272a1.217,1.217,0,0,1-1.716-.115,1.218,1.218,0,0,1,.112-1.719l.315-.272a7.3,7.3,0,0,1,9.973.332,7.3,7.3,0,0,1,0,10.331Z\" transform=\"translate(31.609 21.652)\" fill=\"#0075C9\"/> </svg></span></a></div><header><h3 class=\"scientific-title\"><a href=\"https://pubs.acs.org/doi/10.1021/acssensors.7b00620#\" target=\"_blank\">Sensores amperométricos de gas como plataforma tecnológica emergente de bajo coste para aplicaciones de monitorización de la calidad del aire: Una revisión</a></h3></header><div class=\"scientific-taxonomies\"><strong>Ronan Baron and John Saffell</strong> | 2017<div class=\"scientific-category\"><a href=\"https://kunakair.com/es/scientific-category/articulos-cientificos-y-estudios/\" rel=\"tag\">Artículos científicos y estudios</a></div></div><div class=\"scientific-excerpt\">Resumen Esta revisión examina el uso de sensores amperométricos electroquímicos de gases para el ... <a href=\"https://kunakair.com/es/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire/\">Seguir leyendo</a></div></article></div>"
                       }
                     ]
                   }
@@ -1830,23 +1948,6 @@
           "description": "Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak."
         },
         "bloques": [
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina padre\"><a itemprop=\"item\" href=\"https://kunakair.com/es/recursos/\"><span itemprop=\"name\">Recursos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Preguntas frecuentes</span><meta itemprop=\"position\" content=\"3\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "filas": [
               {
@@ -2145,23 +2246,6 @@
           "title": "Empresa - Quiénes somos, nuestra misión y visión - Kunak"
         },
         "bloques": [
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Empresa</span><meta itemprop=\"position\" content=\"2\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "filas": [
               {
@@ -2696,23 +2780,6 @@
           "title": "Premios y reconocimientos - Kunak"
         },
         "bloques": [
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina padre\"><a itemprop=\"item\" href=\"https://kunakair.com/es/empresa/\"><span itemprop=\"name\">Empresa</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Premios y reconocimientos</span><meta itemprop=\"position\" content=\"3\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "filas": [
               {
@@ -3279,23 +3346,6 @@
               {
                 "columnas": [
                   {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Soporte</span><meta itemprop=\"position\" content=\"2\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
                     "ancho": "1_2",
                     "modulos": [
                       {
@@ -3370,23 +3420,6 @@
           "title": "Servicio de reparación (RMA) - Kunak"
         },
         "bloques": [
-          {
-            "filas": [
-              {
-                "columnas": [
-                  {
-                    "ancho": "4_4",
-                    "modulos": [
-                      {
-                        "kind": "texto-pagina",
-                        "html": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina padre\"><a itemprop=\"item\" href=\"https://kunakair.com/es/soporte/\"><span itemprop=\"name\">Soporte</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\" class=\"pagina\"><span itemprop=\"name\">Servicio de reparación (RMA)</span><meta itemprop=\"position\" content=\"3\"></li></ol>"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "filas": [
               {

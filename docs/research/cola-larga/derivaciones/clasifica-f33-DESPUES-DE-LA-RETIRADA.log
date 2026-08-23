@@ -1,0 +1,133 @@
+═══ clasifica-f33 · qué SON las etiquetas de F3-3 fuera del censo
+
+  censo leído de comunes.ts                43 etiquetas
+  documentos de f33-extraido               31
+  campos ricos recorridos                  166
+  etiquetas fuera del censo                
+  OCURRENCIAS (no páginas: la unidad es la ocurrencia)   0
+
+─── §1 · el reparto POR ETIQUETA — la unidad es la OCURRENCIA ───
+  ⚠ y no se publica el total: «5 etiquetas en 10 páginas» es un contenedor
+     que absorbe tres casos distintos (§la causa común).
+
+  etiqueta    ocurr.  páginas  contenedor generado → n
+
+  y POR PÁGINA, que es la otra unidad que el total absorbe:
+  página                      etiqueta   n   contenedor
+
+  las CADENAS distintas observadas (una por combinación etiqueta·contenedor):
+
+─── §2 · el contenedor «miga»: ¿escrita o GENERADA? ───
+
+  páginas de F3-3                          31
+  con `kunak-breadcrumbs` en el MARCADO     18
+     · en la capa PROPIA (et_pb_text_N)     10   ← las que llegan al campo rico
+     · en la capa THEME BUILDER (_tb_)      8   ← las que el extractor ya NO recoge
+  sin miga                                 13
+  sin fichero                              0
+
+  ⚠ El censo de la 96.ª dijo «<meta> en 10 páginas». Cierto — y el contenedor
+     está en 18. Las 8 de `_tb_` no salían porque el extractor lee
+     SECCIONES PROPIAS: ya las trata como cascarón, sin que nadie lo escribiera.
+
+  las FORMAS de <li> (marcado sin texto, sin href, sin posición):
+     formas distintas en las 18                3
+     <li> totales                             58
+     diferencia simétrica propia ↔ theme-builder:  0 sólo propia · 0 sólo _tb_
+       ×22   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="pagina padre"><a itemprop="item" href=""><span itemprop="name"><…
+       ×18   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="" itemprop="item"><span itemprop="name"></span…
+       ×18   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="pagina"><span itemprop="name"></span><meta itemprop="position" c…
+
+  ¿el contenido de la miga se DERIVA de la posición de la página?
+     eslabones totales                        58
+     intermedios cuyo href ES prefijo de la ruta   30 de 40
+     últimos SIN href (= la página actual)     18 de 18
+     ‼ NO derivables por la URL (10):
+        kunak-air-cloud: eslabón 2 ("Soporte") href=https://kunakair.com/es/soporte/ NO es prefijo de /es/centro-de-ayuda/kunak-air-cloud/
+        kunak-air-cloud: eslabón 3 ("Centro de ayuda") href=https://kunakair.com/es/soporte/centro-de-ayuda/ NO es prefijo de /es/centro-de-ayuda/kunak-air-cloud/
+        kunak-air: eslabón 2 ("Soporte") href=https://kunakair.com/es/soporte/ NO es prefijo de /es/centro-de-ayuda/kunak-air/
+        kunak-air: eslabón 3 ("Centro de ayuda") href=https://kunakair.com/es/soporte/centro-de-ayuda/ NO es prefijo de /es/centro-de-ayuda/kunak-air/
+        articulos-de-ayuda: eslabón 2 ("Soporte") href=https://kunakair.com/es/soporte/ NO es prefijo de /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/
+        articulos-de-ayuda: eslabón 3 ("Centro de ayuda") href=https://kunakair.com/es/soporte/centro-de-ayuda/ NO es prefijo de /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/
+        video-tutoriales: eslabón 2 ("Soporte") href=https://kunakair.com/es/soporte/ NO es prefijo de /es/centro-de-ayuda/kunak-air/video-tutoriales/
+        video-tutoriales: eslabón 3 ("Centro de ayuda") href=https://kunakair.com/es/soporte/centro-de-ayuda/ NO es prefijo de /es/centro-de-ayuda/kunak-air/video-tutoriales/
+        articulos-de-ayuda: eslabón 4 ("Kunak Air Cloud") href=https://kunakair.com/es/centro-de-ayuda/kunak-air-cloud/ NO es prefijo de /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/
+        video-tutoriales: eslabón 4 ("Kunak Air Cloud") href=https://kunakair.com/es/centro-de-ayuda/kunak-air-cloud/ NO es prefijo de /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/
+
+     y el reparto POR CAPA, que es lo que el 30/40 absorbe:
+       propia          15 de 15 intermedios son prefijo de su ruta
+       theme-builder   15 de 25 intermedios son prefijo de su ruta
+       → los 10 que fallan son TODOS de `_tb_`, y no fallan por azar: son
+         las páginas del centro de ayuda, que el original sirve en DOS familias
+         de URL a la vez. La miga sigue el PADRE de WordPress, no la URL pedida —
+         que es justo lo que un generador hace y lo que una persona escribiendo
+         el HTML de la página en la que está NO haría.
+
+  la GUARDA de la retirada: ¿el campo rico contiene SÓLO la miga?
+     campos ricos con miga                    0
+     que NO contienen NADA MÁS                0
+
+  y su POSICIÓN, que también es derivable:
+     módulo Divi que la contiene en las 10 propias:  et_pb_text_0
+
+  cruce ENTRE páginas (la etiqueta del padre según la hija vs. según el padre):
+     pares comprobables                       22
+     coinciden                                22
+
+─── §3 · los dos listados: ¿CONSULTA? ───
+
+  3a · /es/recursos/ — el módulo `et_pb_blog…bucle-entradas`
+       tarjetas <article id="post-N">        0
+       corpus `entradas-blog`                152 documentos
+       tarjetas que NO son entradas del corpus   0 de 0
+
+  3b · /es/recursos/documentos-cientificos/ — `div.scientific-list-content`
+       tarjetas <article id="post-N">        0
+       con slug de /es/recursos/…/           0
+       corpus `documentos-cientificos`       23 documentos
+       DIFERENCIA SIMÉTRICA (§el cardinal absorbe la membresía):
+         en el listado y NO en el corpus      0
+         en el corpus y NO en el listado      23 → cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica, cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal, correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor, desafio-airlab-de-microsensores-2023, desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19, desafio-de-sensores-contra-incendios-forestales-de-la-us-epa, evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico, evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores, evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana, exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo, idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion, inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste, informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite, informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro, kunak-air-lite-informe-de-evaluacion-en-campo, kunak-air-pro-informe-de-evaluacion-en-campo, plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid, redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas, sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire, sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo, soluciones-avanzadas-de-monitorizacion, uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones, vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones
+
+  3c · la GUARDA: ¿el campo rico contiene SÓLO el listado?
+
+  3d · el veredicto REAL de `validaHtmlCorpus` — los cuatro ejes, no sólo etiquetas
+       campos ricos                          166
+       que RECHAZA hoy                       1
+       por familia                           atributo → 1
+         empresa                    texto-pagina.html   atributo: §3.1-atributos: atributo(s) fuera del censo de 81 — data-teams. El censo (qa:atributos-censo, 291 páginas) mid
+
+       DESPUÉS (simulado: los 3 contenedores retirados)
+       campos que seguirían rechazados       1
+         ‼ empresa                    texto-pagina.html   atributo: §3.1-atributos: atributo(s) fuera del censo de 81 — data-teams. El censo (qa:atributos-censo, 291 páginas) mide CERO manejadores `on*`, CERO
+
+       ⚠ Esto es la SIMULACIÓN, no el efecto (§CUANDO EL CAMBIO SE PUEDA
+          APLICAR, APLÍCALO Y MIDE). El efecto lo dice re-correr el extractor
+          y volver a pasar esta misma comprobación: tiene que dar 0.
+
+─── §4 · la dirección contraria: ¿alguna es CONTENIDO? ───
+
+  ocurrencias FUERA de todo contenedor generado   0 de 0
+     → ninguna. Las 0 ocurrencias caen dentro de uno de los 3 contenedores.
+
+─── §5 · control en línea del recorrido ───
+
+  sintético: 1 <meta> dentro de la miga + 1 <meta> suelto
+     ocurrencias vistas                       2   (esperado 2)
+     clasificadas «miga»                      1   (esperado 1)
+     clasificadas FUERA                       1   (esperado 1)
+     → el recorrido SABE decir «fuera». El 0 de §4 es un dato, no un cero por construcción.
+
+═══ EL REPARTO ═══
+
+  etiqueta    ocurr.  contenedor            veredicto   evidencia
+
+  CONTENIDO: 0 ocurrencias de las 0.
+
+  ⚠⚠ Y LO QUE ESTE REPARTO NO BASTA PARA CONCLUIR — está en §3d:
+     «0 de contenido» es cierto de las ETIQUETAS, y la siembra NO se desbloquea
+     con eso. `validaHtmlCorpus` mira CUATRO ejes y devuelve el PRIMERO que
+     falla, así que retirar los contenedores destapa lo que estaba detrás:
+     quedan 1 campo(s) rechazados, por ATRIBUTO, no por etiqueta.
+     Preguntar «¿qué etiquetas sobran?» no puede ver un atributo — §El principio:
+     el veredicto lo da la función sobre la salida servida, no la lectura de ella.

@@ -5,6 +5,9 @@
  *   SABOTAJE=tipo-fantasma   → exit ≠0 (un tipo Divi sin bloque ⇒ TIRA, no se omite)
  *   SABOTAJE=sin-secciones   → exit ≠0 (0 secciones propias ⇒ parser roto, no «página vacía»)
  *   SABOTAJE=geometria       → exit ≠0 (escribir un 0 de ritmo ⇒ campo INVENTADO)
+ *   SABOTAJE=arrasa          → exit ≠0 (retirar el MÓDULO en vez del CONTENEDOR)
+ *   SABOTAJE=arrasa-control  → exit  0 (el mismo párrafo inyectado, SIN arrasar:
+ *                              es lo que prueba que `arrasa` tiene separadora)
  *
  * ── Qué contesta ──────────────────────────────────────────────────────────
  * `arbol-f33` (92.ª) DERIVÓ la forma: 11 tipos, 313 módulos, sección → fila →
@@ -63,7 +66,7 @@ gritaSiRevienta();
 const RAIZ = join(QA, "../..");
 const CORPUS = join(RAIZ, "corpus/fase-3");
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["tipo-fantasma", "sin-secciones", "geometria"];
+const VALIDOS = ["tipo-fantasma", "sin-secciones", "geometria", "arrasa", "arrasa-control"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
@@ -173,6 +176,114 @@ const attrTag = (tag, nombre) => {
 };
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * 1bis · LA RETIRADA DE LO GENERADO — cascarón y consulta fuera del campo rico
+ *
+ * Derivado el 2026-08-23 por `docs/research/cola-larga/derivaciones/clasifica-f33`,
+ * que recorrió los 178 campos ricos y publicó la CADENA DE ANCESTROS de cada una
+ * de las **120 ocurrencias** de etiqueta fuera del censo de `campoHtml`. Las tres
+ * respuestas salieron con su cardinal, y **ninguna es contenido**:
+ *
+ * | contenedor | ocurrencias | qué es | evidencia |
+ * |---|---|---|---|
+ * | `ol.kunak-breadcrumbs` | 25 `<meta>` en 10 páginas | **CASCARÓN** | §2 |
+ * | `div.et_pb_blog…bucle-entradas` | 3 `<article>` | **CONSULTA** | §3a |
+ * | `div.scientific-list-content` | 23 × `<article>·<header>·<svg>·<path>` | **CONSULTA** | §3b |
+ *
+ * ── Por qué la miga es cascarón, y no es que «parezca de plantilla» ──────
+ * El discriminador es **la CAPA**. `kunak-breadcrumbs` está en 18 de 31 páginas:
+ * 10 en la capa propia y **8 en `_tb_`**, donde por la regla de regímenes NO
+ * EXISTE la persona que editó la instancia. Las dos capas sirven el MISMO
+ * marcado —3 formas de `<li>`, diferencia simétrica propia ↔ `_tb_` **0/0**— con
+ * la jerarquía correcta de cada página. Eso sólo lo hace un generador. Y el
+ * cruce entre páginas cierra: **22 de 22** veces, la etiqueta que una hija usa
+ * para su padre es la que el padre usa para sí.
+ *
+ * ── Por qué los dos listados son consulta: por la MEMBRESÍA, nombrada ────
+ * `/es/recursos/` sirve 3 tarjetas, **3 de 3** son entradas de `entradas-blog`;
+ * `/es/recursos/documentos-cientificos/` sirve 23 y la **diferencia simétrica**
+ * contra la colección `documentos-cientificos` es **0 y 0**. `23 → 23` no habría
+ * probado nada (§*un cardinal es un contenedor y absorbe la membresía*).
+ *
+ * ── Qué se retira, exactamente ──────────────────────────────────────────
+ * **El CONTENEDOR, no el módulo.** El criterio es *«lo generado se va»*, y si
+ * quedara algo al lado, ese algo es del editor y **se conserva**. El módulo sólo
+ * se omite cuando lo que queda está en blanco — medido hoy: **12 de 12**.
+ *
+ * ⚠ Y no se usa la clase `breadcrumbs` del módulo como criterio aunque en este
+ * dominio acierte igual: los dos modelos tienen **0 instancias separadoras**
+ * (§*dos modelos que predicen lo mismo en todo tu dominio son uno solo*), así que
+ * la elección no la decide el acierto. La decide qué predicen fuera: retirar POR
+ * CONTENIDO conserva el texto de un futuro módulo con miga + párrafo; retirar
+ * POR CLASE se lo lleva.
+ *
+ * ── La guarda: que no se lleve contenido por delante ─────────────────────
+ * Dos condiciones, las dos sobre cada módulo tocado:
+ *   1 · **reconstrucción**: `chars(bruto) === chars(limpio) + Σ chars(retirado)`
+ *       — la retirada quita el contenedor y NADA más;
+ *   2 · **omitido ⟺ resto en blanco** — un módulo no se va con texto dentro.
+ * Sabotaje `arrasa` (inyecta un párrafo Y omite sin mirar) tiene que TIRAR;
+ * `arrasa-control` (inyecta y NO arrasa) tiene que salir en verde conservando el
+ * párrafo. Sin el control, `arrasa` no tendría instancias separadoras: hoy los
+ * 12 restos están vacíos, así que arrasar y no arrasar producen lo mismo
+ * (§regla 17, segunda cara).
+ *
+ * ── Lo que esta retirada CUESTA, y se declara aquí porque es visible ─────
+ * Las 10 migas ocupan **ellas solas su sección entera** (`S0 F0 C0`, `4_4`, un
+ * módulo, resto de la fila y de la sección **0**), así que al retirarlas la
+ * sección se va con ellas: eso es cascarón entero y no se pierde nada.
+ *
+ * **Las dos consultas NO.** Dejan la página servida INCOMPLETA y con su vecino a
+ * la vista: `recursos` conserva `<h2>Guías más recientes</h2>` sin lista debajo,
+ * y `documentos-cientificos` conserva su `scientific-filter` sin nada que
+ * filtrar. **Es un hueco declarado, no un descuido**: lo sirve un bloque de
+ * listado embebido que todavía no existe. Ficha con su número y con qué lo
+ * serviría: `ESQUEMA-CMS.md` §2j.6 y `PENDIENTES-QA.md` §F3-3-CONSULTAS-EMBEBIDAS.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const GENERADOS = [
+  { id: "miga", clase: "CASCARÓN", abre: /<ol\s+class="kunak-breadcrumbs"[^>]*>/, etiqueta: "ol", evidencia: "clasifica-f33 §2" },
+  { id: "bucle-entradas", clase: "CONSULTA", abre: /<div\s+class="et_pb_module et_pb_blog[^"]*"[^>]*>/, etiqueta: "div", evidencia: "clasifica-f33 §3a" },
+  { id: "listado-cientifico", clase: "CONSULTA", abre: /<div\s+class="scientific-list-content"[^>]*>/, etiqueta: "div", evidencia: "clasifica-f33 §3b" },
+];
+
+/** El índice JUSTO DESPUÉS del cierre balanceado del elemento que abre en `i`. */
+function finBalanceado(html, i, etiqueta) {
+  const re = new RegExp(`<(/?)${etiqueta}\\b[^>]*>`, "gi");
+  re.lastIndex = i;
+  let hondo = 0;
+  let m;
+  while ((m = re.exec(html))) {
+    hondo += m[1] === "/" ? -1 : 1;
+    if (hondo === 0) return m.index + m[0].length;
+  }
+  return -1;
+}
+
+/** El censo de todo lo retirado. Se publica y se congela: nada se va en silencio. */
+const RETIRADAS = [];
+
+function retiraGenerado(bruto) {
+  let h = bruto;
+  const retirados = [];
+  for (let vuelta = 0; vuelta < 50; vuelta++) {
+    let toco = false;
+    for (const g of GENERADOS) {
+      const m = g.abre.exec(h);
+      if (!m) continue;
+      const fin = finBalanceado(h, m.index, g.etiqueta);
+      /* §sondas 4: un contenedor que casa al abrir y no cierra NO es «no había
+       * nada que retirar» — es que el acotador no sabe dónde acaba. Tira. */
+      if (fin < 0) throw new Error(`RETIRADA SIN CIERRE: \`${g.id}\` abre y no cierra balanceado. El acotador no puede decidir qué se va.`);
+      retirados.push({ contenedor: g.id, clase: g.clase, chars: fin - m.index, evidencia: g.evidencia });
+      h = h.slice(0, m.index) + h.slice(fin);
+      toco = true;
+      break;
+    }
+    if (!toco) break;
+  }
+  return { limpio: h, retirados };
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
  * 2 · UN MÓDULO DIVI → UN BLOQUE DEL ESQUEMA
  *
  * Los selectores están DERIVADOS del marcado servido (una instancia de cada uno
@@ -217,6 +328,8 @@ function diapositivasDe(html, n) {
 
 /** El sabotaje `tipo-fantasma`: un doceavo tipo, que el esquema no tiene. */
 let fantasmaInyectado = false;
+/** El sabotaje `arrasa`/`arrasa-control`: el párrafo que crea la separadora. */
+let inyectado = false;
 
 function aBloque(html, n, donde) {
   let tipo = A.tipoDe(n);
@@ -228,7 +341,31 @@ function aBloque(html, n, donde) {
   switch (tipo) {
     case "text": {
       const inner = buscaClase(n, "et_pb_text_inner");
-      return { kind: "texto-pagina", html: dentro(html, inner ?? n) };
+      let bruto = dentro(html, inner ?? n);
+
+      /* El sabotaje inyecta un párrafo JUNTO al contenedor generado, y es lo que
+       * crea la instancia separadora: sin él, arrasar y no arrasar dan lo mismo
+       * (los 12 restos medidos están vacíos). Va en las dos etiquetas —`arrasa`
+       * y su control— porque un control que no inyecte no prueba la inyección. */
+      if ((SABOTAJE === "arrasa" || SABOTAJE === "arrasa-control") && !inyectado && /kunak-breadcrumbs/.test(bruto)) {
+        inyectado = true;
+        bruto += "<p>PÁRRAFO INYECTADO: esto NO es cascarón y no se puede ir con él.</p>";
+      }
+
+      const { limpio, retirados } = retiraGenerado(bruto);
+      if (!retirados.length) return { kind: "texto-pagina", html: bruto };
+
+      const resto = limpio.replace(/\s|&nbsp;/g, "");
+      const omitido = SABOTAJE === "arrasa" ? true : resto === "";
+      RETIRADAS.push({
+        ruta: donde,
+        retirados,
+        brutoChars: bruto.length,
+        limpioChars: limpio.length,
+        restoChars: resto.length,
+        moduloOmitido: omitido,
+      });
+      return omitido ? null : { kind: "texto-pagina", html: limpio };
     }
 
     case "image": {
@@ -441,6 +578,13 @@ const ev = new Evaluadas({ nombre: "extractor-f33", unidad: "páginas", minimo: 
 
 const docs = [];
 const censo = { porTipo: {}, modulos: 0, secciones: 0, filas: 0, columnas: 0, sueltos: 0, porRegimen: {} };
+/**
+ * ⚠ `censo` cuenta el ÁRBOL (313 módulos, lo que cruza con `arbol-f33`);
+ * `emision` cuenta lo EMITIDO, que desde la retirada ya no es el mismo número.
+ * Publicar sólo uno sería §regla 1 — lo que se imprime y lo que se cuenta no
+ * pueden discrepar — con la discrepancia escondida en la diferencia.
+ */
+const emision = { modulos: 0, columnasColapsadas: 0, filasColapsadas: 0, seccionesColapsadas: 0 };
 const sinFichero = [];
 const problemas = [];
 
@@ -483,13 +627,17 @@ for (const p of RUTAS.paginas) {
       censo.sueltos += sueltos.length;
 
       const seccion = {};
-      if (sueltos.length)
-        seccion.modulosSueltos = sueltos.map((m) => {
-          censo.modulos++;
-          const t = A.tipoDe(m);
-          censo.porTipo[t] = (censo.porTipo[t] || 0) + 1;
-          return aBloque(html, m, p.ruta);
-        });
+      if (sueltos.length) {
+        const ms = sueltos
+          .map((m) => {
+            censo.modulos++;
+            const t = A.tipoDe(m);
+            censo.porTipo[t] = (censo.porTipo[t] || 0) + 1;
+            return aBloque(html, m, p.ruta);
+          })
+          .filter(Boolean);
+        if (ms.length) seccion.modulosSueltos = ms;
+      }
 
       const filasOut = [];
       for (const fila of filas) {
@@ -498,18 +646,30 @@ for (const p of RUTAS.paginas) {
         const columnas = [];
         for (const col of cols) {
           censo.columnas++;
-          const modulos = A.modulosDe(col).map((m) => {
+          const brutos = A.modulosDe(col).map((m) => {
             censo.modulos++;
             const t = A.tipoDe(m);
             censo.porTipo[t] = (censo.porTipo[t] || 0) + 1;
             return aBloque(html, m, p.ruta);
           });
+          const modulos = brutos.filter(Boolean);
+          /* ⚠ Una columna VACÍA no se filtra: hay **21 medidas** en las 31, y son
+           * retícula legítima de Divi. Lo que se colapsa es sólo la columna que
+           * **la retirada** dejó sin nada — `tenía > 0 y ahora 0` —, porque ésa
+           * no es una columna vacía del original: es un contenedor de cascarón.
+           * Filtrar por «está vacía» se llevaría las 21 por delante. */
+          if (brutos.length && !modulos.length) {
+            emision.columnasColapsadas++;
+            continue;
+          }
           columnas.push({ ancho: anchoDe(col), modulos });
         }
         if (columnas.length) filasOut.push({ columnas });
+        else if (cols.length) emision.filasColapsadas++;
       }
       if (filasOut.length) seccion.filas = filasOut;
       if (seccion.filas || seccion.modulosSueltos) bloques.push(seccion);
+      else emision.seccionesColapsadas++;
     }
     if (bloques.length) doc.bloques = bloques;
   }
@@ -526,6 +686,48 @@ const err = (m) => { rojo++; console.error(`\n❌ ${m}`); };
 
 /** El sabotaje de la geometría: escribir un ritmo donde el esquema dice SIN PROBAR. */
 if (SABOTAJE === "geometria" && docs[0]?.bloques?.[0]) docs[0].bloques[0].pt = { valor: 0, unidad: "px" };
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 7bis · LA GUARDA DE LA RETIRADA — que no se lleve contenido por delante
+ *
+ * Dos condiciones sobre CADA módulo tocado, y hacen falta las dos: la primera
+ * dice que se quitó **exactamente el contenedor**, la segunda que **nadie se fue
+ * con texto dentro**. Un módulo omitido con resto es el arreglo falso de esta
+ * tanda, y sale por su propio motivo, nombrando la página.
+ * ═════════════════════════════════════════════════════════════════════════ */
+(function contarEmitidos(v) {
+  if (Array.isArray(v)) return v.forEach(contarEmitidos);
+  if (v && typeof v === "object") {
+    if (v.kind) emision.modulos++;
+    for (const x of Object.values(v)) contarEmitidos(x);
+  }
+})(docs.map((d) => d.bloques ?? []));
+
+const retiradaMal = [];
+for (const r of RETIRADAS) {
+  const suma = r.limpioChars + r.retirados.reduce((a, x) => a + x.chars, 0);
+  if (suma !== r.brutoChars)
+    retiradaMal.push(`${r.ruta}: reconstrucción ${suma} ≠ ${r.brutoChars} chars — la retirada quitó algo que no era el contenedor`);
+  if (r.moduloOmitido && r.restoChars > 0)
+    retiradaMal.push(`${r.ruta}: módulo OMITIDO con ${r.restoChars} chars de resto — se lleva contenido del editor por delante`);
+}
+if (retiradaMal.length)
+  err(
+    `RETIRADA QUE SE LLEVA CONTENIDO: ${retiradaMal.length} caso(s) —\n   ${retiradaMal.join("\n   ")}\n` +
+      `   Lo generado se va; lo que quede al lado lo escribió una persona y se CONSERVA.`,
+  );
+
+/**
+ * §regla del cero, aplicada a la retirada: `clasifica-f33` midió 12 módulos con
+ * contenedor generado en las 31. Si esto retira 0, no es que el corpus haya
+ * cambiado — es que los tres patrones dejaron de casar, y eso sale ROJO en vez
+ * de salir como «ya no hay nada que retirar».
+ */
+if (SABOTAJE !== "sin-secciones" && !RETIRADAS.length)
+  err(
+    `0 RETIRADAS en las ${docs.length} páginas: los 3 patrones de \`GENERADOS\` no casan con nada.\n` +
+      `   \`clasifica-f33\` midió 12 módulos con contenedor generado. Un patrón muerto no es un cero (§sondas 4).`,
+  );
 
 /**
  * §regla del cero: un extractor que no encuentra NI UN módulo en NINGUNA página
@@ -648,6 +850,35 @@ for (const [t, n] of Object.entries(ESPERADO)) {
 }
 console.log(`   ${"TOTAL".padEnd(20)} ${String(censo.modulos).padStart(4)}   ${censo.modulos === TOTAL_ESPERADO ? "✓" : `✗ arbol-f33 dice ${TOTAL_ESPERADO}`}`);
 
+console.log(`\n  ── 3bis · LA RETIRADA DE LO GENERADO (clasifica-f33, 2026-08-23) ──`);
+{
+  const porCont = {};
+  for (const r of RETIRADAS)
+    for (const x of r.retirados) {
+      const k = `${x.contenedor} (${x.clase})`;
+      porCont[k] ??= { modulos: 0, chars: 0, evidencia: x.evidencia, paginas: new Set() };
+      porCont[k].modulos++;
+      porCont[k].chars += x.chars;
+      porCont[k].paginas.add(r.ruta);
+    }
+  for (const [k, v] of Object.entries(porCont).sort())
+    console.log(`   ${k.padEnd(32)} ${String(v.modulos).padStart(3)} contenedor(es) · ${String(v.paginas.size).padStart(2)} páginas · ${String(v.chars).padStart(6)} chars   ${v.evidencia}`);
+  const omit = RETIRADAS.filter((r) => r.moduloOmitido).length;
+  console.log(`   ${"módulos tocados".padEnd(32)} ${String(RETIRADAS.length).padStart(3)}`);
+  console.log(`   ${"· omitidos (resto en blanco)".padEnd(32)} ${String(omit).padStart(3)}`);
+  console.log(`   ${"· conservados (queda texto)".padEnd(32)} ${String(RETIRADAS.length - omit).padStart(3)}   ← si no es 0, hay contenido del editor junto a un generado`);
+  console.log(`   ${"árbol → emitido".padEnd(32)} ${String(censo.modulos).padStart(3)} → ${emision.modulos} módulos`);
+  console.log(`   ${"colapsados por la retirada".padEnd(32)} ${emision.columnasColapsadas} columnas · ${emision.filasColapsadas} filas · ${emision.seccionesColapsadas} secciones`);
+  console.log(`   (las 21 columnas vacías del original NO se filtran: son retícula, no cascarón)`);
+  const consultas = RETIRADAS.filter((r) => r.retirados.some((x) => x.clase === "CONSULTA"));
+  console.log(`\n   ⚠ HUECO DECLARADO — ${consultas.length} página(s) quedan servidas INCOMPLETAS:`);
+  for (const r of consultas)
+    console.log(`      ${r.ruta}  → ${r.retirados.filter((x) => x.clase === "CONSULTA").map((x) => x.contenedor).join(", ")}`);
+  console.log(`      Un listado no tiene contenido propio: es una CONSULTA, y congelarla como`);
+  console.log(`      texto es el error que esa regla existe para evitar. Lo serviría un bloque`);
+  console.log(`      de listado embebido que NO existe todavía — ESQUEMA-CMS §2j.6.`);
+}
+
 console.log(`\n  ── 4 · GEOMETRÍA ──`);
 console.log(`   claves de ritmo/ancho escritas    ${String(geoEscrita.length).padStart(4)}   ← tiene que ser 0`);
 console.log(`   (SIN ESCRIBIR se omite · NO MEDIBLE se declara · ninguno se convierte en número)`);
@@ -688,13 +919,24 @@ w(SALIDA, {
     },
   },
   censo,
+  emision,
+  /* Nada se va en silencio: la retirada se congela entera, módulo a módulo. */
+  retirada: {
+    derivadaDe: "docs/research/cola-larga/derivaciones/clasifica-f33.{mjs,log} — 120 ocurrencias, 0 de contenido",
+    contenedores: GENERADOS.map((g) => ({ id: g.id, clase: g.clase, evidencia: g.evidencia })),
+    modulosTocados: RETIRADAS.length,
+    modulosOmitidos: RETIRADAS.filter((r) => r.moduloOmitido).length,
+    modulosConservados: RETIRADAS.filter((r) => !r.moduloOmitido).length,
+    detalle: RETIRADAS,
+  },
   cruce: { esperado: ESPERADO, totalEsperado: TOTAL_ESPERADO, discrepancias },
   geometria: { clavesEscritas: geoEscrita.length, detalle: geoEscrita.slice(0, 20) },
   catalogo: { paginas: docs },
 });
 
 console.log(
-  `\n${rojo ? "❌" : "✅"} extractor-f33: ${docs.length} documentos · ${censo.modulos} módulos · ` +
-    `${Object.keys(censo.porTipo).length} tipos · ${geoEscrita.length} claves de geometría · ${rojo} guarda(s) en rojo`,
+  `\n${rojo ? "❌" : "✅"} extractor-f33: ${docs.length} documentos · ${censo.modulos} módulos en el árbol → ` +
+    `${emision.modulos} emitidos · ${Object.keys(censo.porTipo).length} tipos · ${geoEscrita.length} claves de geometría · ` +
+    `${RETIRADAS.length} módulos con generado retirado · ${rojo} guarda(s) en rojo`,
 );
 if (rojo) process.exit(2);

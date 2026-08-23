@@ -5,7 +5,7 @@
     "pregunta": "¿qué documentos de `paginas` produce el corpus de las 31 de la cola larga?",
     "fuente": "corpus/fase-3/ (32/32 con sus hojas) + medidas/f33-rutas.json (el dominio)",
     "parser": "docs/research/cola-larga/derivaciones/arbol-f33.mjs — importado, no reescrito",
-    "sabotaje": null,
+    "sabotaje": "arrasa-control",
     "alcance": {
       "completaPara": "SEMBRAR las 31 en la colección `paginas`",
       "noCubre": [
@@ -42,10 +42,10 @@
     }
   },
   "emision": {
-    "modulos": 301,
-    "columnasColapsadas": 10,
-    "filasColapsadas": 10,
-    "seccionesColapsadas": 10
+    "modulos": 302,
+    "columnasColapsadas": 9,
+    "filasColapsadas": 9,
+    "seccionesColapsadas": 9
   },
   "retirada": {
     "derivadaDe": "docs/research/cola-larga/derivaciones/clasifica-f33.{mjs,log} — 120 ocurrencias, 0 de contenido",
@@ -67,8 +67,8 @@
       }
     ],
     "modulosTocados": 12,
-    "modulosOmitidos": 12,
-    "modulosConservados": 0,
+    "modulosOmitidos": 11,
+    "modulosConservados": 1,
     "detalle": [
       {
         "ruta": "/es/productos/",
@@ -80,10 +80,10 @@
             "evidencia": "clasifica-f33 §2"
           }
         ],
-        "brutoChars": 523,
-        "limpioChars": 0,
-        "restoChars": 0,
-        "moduloOmitido": true
+        "brutoChars": 593,
+        "limpioChars": 70,
+        "restoChars": 58,
+        "moduloOmitido": false
       },
       {
         "ruta": "/es/sectores/",
@@ -1446,6 +1446,23 @@
           "description": "La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS."
         },
         "bloques": [
+          {
+            "filas": [
+              {
+                "columnas": [
+                  {
+                    "ancho": "4_4",
+                    "modulos": [
+                      {
+                        "kind": "texto-pagina",
+                        "html": "<p>PÁRRAFO INYECTADO: esto NO es cascarón y no se puede ir con él.</p>"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
           {
             "filas": [
               {

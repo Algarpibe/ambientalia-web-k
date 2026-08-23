@@ -5,7 +5,7 @@
     "pregunta": "¿qué documentos de `paginas` produce el corpus de las 31 de la cola larga?",
     "fuente": "corpus/fase-3/ (32/32 con sus hojas) + medidas/f33-rutas.json (el dominio)",
     "parser": "docs/research/cola-larga/derivaciones/arbol-f33.mjs — importado, no reescrito",
-    "sabotaje": null,
+    "sabotaje": "arrasa",
     "alcance": {
       "completaPara": "SEMBRAR las 31 en la colección `paginas`",
       "noCubre": [
@@ -80,9 +80,9 @@
             "evidencia": "clasifica-f33 §2"
           }
         ],
-        "brutoChars": 523,
-        "limpioChars": 0,
-        "restoChars": 0,
+        "brutoChars": 593,
+        "limpioChars": 70,
+        "restoChars": 58,
         "moduloOmitido": true
       },
       {

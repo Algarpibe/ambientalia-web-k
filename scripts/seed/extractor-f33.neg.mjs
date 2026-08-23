@@ -6,7 +6,9 @@
  * | `tipo-fantasma` | un tipo Divi sin bloque ⇒ **TIRA** | el módulo se OMITE y el documento sale con menos módulos y CERO errores |
  * | `sin-secciones` | 0 secciones propias ⇒ **rojo** | «las 31 páginas están vacías», que es un cero del parser leído como dato |
  * | `geometria` | una clave de ritmo escrita ⇒ **rojo** | 24 campos INVENTADOS, cada uno con su medición real de coartada |
- * | `control` | ✅ 31 docs · 313 módulos · 11 tipos · 0 geometría | — |
+ * | `arrasa` | retirar el MÓDULO en vez del CONTENEDOR ⇒ **rojo** | un párrafo del editor que se va con el cascarón, sin error |
+ * | `arrasa-control` | el mismo párrafo inyectado SIN arrasar ⇒ **verde, con el párrafo dentro** | que `arrasa` estuviera cayendo por la inyección y no por arrasar |
+ * | `control` | ✅ 31 docs · 313 módulos en el árbol → 301 emitidos · 11 tipos · 0 geometría · 12 retiradas | — |
  *
  * ══════════════════════════════════════════════════════════════════════════
  * ⚠ POR QUÉ ESTE NEGATIVO SE ESCRIBE **AHORA** — §regla 24
@@ -54,6 +56,12 @@ const casos = [
        * 1 tipo que sobre 11. El cardinal va al lado. */
       const tipos = Object.keys(j.censo?.porTipo ?? {}).length;
       if (tipos !== 11) return `${tipos} tipos, esperaba 11`;
+      /* La retirada, con sus dos números: el del árbol (313, el que cruza con
+       * `arbol-f33`) y el EMITIDO (301). Publicar sólo uno escondería la
+       * diferencia justo en el sitio donde vive lo retirado. */
+      if (j.emision?.modulos !== 301) return `${j.emision?.modulos} módulos emitidos, esperaba 301`;
+      if (j.retirada?.modulosTocados !== 12) return `${j.retirada?.modulosTocados} módulos con generado retirado, esperaba 12`;
+      if (j.retirada?.modulosConservados !== 0) return `${j.retirada?.modulosConservados} conservados: hay texto del editor junto a un generado`;
       return null;
     },
   },
@@ -83,6 +91,51 @@ const casos = [
       j.geometria?.clavesEscritas > 0
         ? null
         : "el sabotaje no llegó a escribir ninguna clave: el caso no ejercita la guarda",
+  },
+  /* ══════════════════════════════════════════════════════════════════════
+   * LA PAREJA DE LA RETIRADA — y va en PAREJA porque sola no probaría nada
+   *
+   * `arrasa` retira el MÓDULO en vez del CONTENEDOR. Con los 12 restos medidos
+   * VACÍOS, arrasar y no arrasar producen exactamente lo mismo: **0 instancias
+   * separadoras**, y el caso saldría verde sin haber ejercitado la guarda
+   * (§regla 17, segunda cara — un sabotaje que anula media hipótesis no falsea
+   * nada). Por eso el sabotaje INYECTA un párrafo junto a la miga: eso es lo
+   * que fabrica la separadora.
+   *
+   * Y entonces hace falta el CONTROL, porque «cayó» y «cayó por la inyección,
+   * no por arrasar» se leen igual: `arrasa-control` inyecta el MISMO párrafo y
+   * NO arrasa. Tiene que salir en verde **y con el párrafo dentro del
+   * documento**. Sin él, `arrasa` podría estar cayendo porque la inyección
+   * rompe cualquier cosa (§regla 8a: un negativo sin control no es un negativo).
+   * ═════════════════════════════════════════════════════════════════════ */
+  {
+    etiqueta: "arrasa",
+    porQue: "retirar el MÓDULO en vez del CONTENEDOR ⇒ rojo, no un párrafo del editor perdido en silencio",
+    env: { SABOTAJE: "arrasa" },
+    exit: 2,
+    salidaTiene: /RETIRADA QUE SE LLEVA CONTENIDO/,
+    comprueba: (j) => {
+      const con = (j.retirada?.detalle ?? []).filter((r) => r.moduloOmitido && r.restoChars > 0);
+      if (!con.length) return "el sabotaje no dejó ningún módulo omitido CON resto: no ejercita la guarda (0 separadoras)";
+      return null;
+    },
+  },
+  {
+    etiqueta: "arrasa-control",
+    porQue: "el mismo párrafo inyectado SIN arrasar ⇒ verde, y el párrafo SIGUE en el documento",
+    env: { SABOTAJE: "arrasa-control" },
+    exit: 0,
+    salidaTiene: /conservados \(queda texto\)\s+1/,
+    comprueba: (j) => {
+      if (j.retirada?.modulosConservados !== 1) return `${j.retirada?.modulosConservados} módulos conservados, esperaba 1`;
+      /* §regla 1: el recuento no basta. Se comprueba que el TEXTO sobrevive. */
+      const hay = JSON.stringify(j.catalogo?.paginas ?? []).includes("PÁRRAFO INYECTADO");
+      if (!hay) return "el párrafo inyectado NO está en ningún documento: la retirada se lo llevó igual";
+      /* y que la miga sí se fue: si no, el control pasa sin que la retirada actúe */
+      if (JSON.stringify(j.catalogo?.paginas ?? []).includes("kunak-breadcrumbs"))
+        return "queda `kunak-breadcrumbs` en el catálogo: la retirada no actuó, así que el verde no dice nada";
+      return null;
+    },
   },
 ];
 
@@ -155,7 +208,10 @@ if (malSuelta) { fallos++; console.log(`  ❌ ${"sin-NEG".padEnd(16)}       ${ma
 else
   console.log(
     `  ✓  ${"sin-NEG".padEnd(16)}       cayó por lo suyo: un sabotaje lanzado a mano DESVÍA solo — el canónico intacto\n` +
-      `${" ".repeat(28)}└ §regla 24: los otros 4 casos no pueden ejercitar esto (NEG= ya desvía), o sea 0 separadoras`,
+      /* §regla 9: el número se DERIVA de `casos`. Escrito a mano decía «4»
+       * cuando ya eran 6 — un recuento recordado envejece contra el repo en
+       * silencio, y aquí lo hacía dentro de la frase que declara 0 separadoras. */
+      `${" ".repeat(28)}└ §regla 24: los otros ${casos.length} casos no pueden ejercitar esto (NEG= ya desvía), o sea 0 separadoras`,
   );
 
 console.log(
@@ -163,7 +219,10 @@ console.log(
     (fallos === 0
       ? `   Un tipo sin bloque TIRA, un parser que no casa sale ROJO en vez de dar\n` +
         `   «páginas vacías», y una clave de ritmo escrita se caza y se NOMBRA. O sea\n` +
-        `   que «313 módulos y 0 geometría» es una medida, no un descuido de conteo.\n`
+        `   que «313 módulos y 0 geometría» es una medida, no un descuido de conteo.\n` +
+        `   Y la retirada de lo generado se lleva el CONTENEDOR, no el módulo: con un\n` +
+        `   párrafo del editor al lado, arrasar sale rojo y conservarlo sale verde CON\n` +
+        `   el párrafo dentro — o sea que «301 emitidos» tampoco es una resta a ojo.\n`
       : `   El dato de \`f33-extraido.json\` NO se puede sembrar hasta que esto salga verde.\n`),
 );
 process.exit(fallos === 0 ? 0 : 2);
