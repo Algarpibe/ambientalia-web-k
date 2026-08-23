@@ -56,34 +56,109 @@ if (!bloque) throw new Error("no encuentro ETIQUETAS_CENSADAS: el censo no se pu
 const CENSO = new Set([...bloque[1].matchAll(/"([a-z0-9-]+)"/g)].map((m) => m[1]));
 if (CENSO.size < 10) throw new Error(`censo de ${CENSO.size} etiquetas: el regex no casó (§sondas 4, el cero)`);
 
-const EXTRAIDO = JSON.parse(readFileSync(join(RAIZ, "scripts/qa/medidas/f33-extraido.json"), "utf8"));
+/* El fichero se puede NOMBRAR por parámetro, y no es una comodidad: la corrida
+ * del ANTES lee la congelada que el extractor produjo antes de la retirada, y
+ * sin esto dejaría de ser reproducible en cuanto esa congelada se renombra
+ * (§regla 5bis). El defecto es el canónico —un parámetro elige QUÉ definición,
+ * nunca la sustituye en silencio— y la corrida dice en voz alta cuál leyó. */
+const CUAL = process.env.EXTRAIDO || "scripts/qa/medidas/f33-extraido.json";
+const EXTRAIDO = JSON.parse(readFileSync(join(RAIZ, CUAL), "utf8"));
 const RUTAS = JSON.parse(readFileSync(join(RAIZ, "scripts/qa/medidas/f33-rutas.json"), "utf8")).paginas;
 const INDICE = JSON.parse(readFileSync(join(CORPUS, "INDICE.json"), "utf8"));
 const CLAVES = Object.keys(INDICE.paginas);
 
-/** Los campos que pasan por `campoHtml` → `validaHtmlCorpus`. Igual que censo-f33. */
-const RICOS = { "texto-pagina": ["html"], toggle: ["cuerpo"], blurb: ["descripcion"] };
-const RICOS_ARR = { slider: "diapositivas", "slider-completo": "diapositivas", mapa: "pines" };
+/* ═════════════════════════════════════════════════════════════════════════
+ * LOS CAMPOS RICOS SE DERIVAN DEL ESQUEMA — no se enumeran
+ *
+ * ⚠ La primera versión de esto heredó de `censo-f33` un mapa escrito a mano
+ * —`{"texto-pagina":["html"], toggle:["cuerpo"], blurb:["descripcion"]}`— y eso
+ * es §regla 9 caso 7 dentro del propio instrumento: **un conjunto enumerado a
+ * mano cuyo trabajo es RECONOCER algo**. Un `campoHtml` nuevo en el esquema no
+ * daría error aquí: daría un campo menos recorrido, o sea un bloqueo de siembra
+ * invisible. Y el que importa —«¿se completa la siembra?»— se contesta con el
+ * denominador entero o no se contesta.
+ *
+ * Se recorre la colección `paginas` resuelta y se recogen los campos cuyo
+ * `validate` **es** `validaHtmlCorpus` —identidad de función, no nombre—, con su
+ * ruta dentro del bloque. Derivado: los `campoHtml` de verdad, tenga dato hoy o no.
+ * ═══════════════════════════════════════════════════════════════════════ */
+const { createRequire } = await import("node:module");
+const { pathToFileURL } = await import("node:url");
+const { mkdirSync, writeFileSync } = await import("node:fs");
+const req = createRequire(import.meta.url);
+const esbuild = req("esbuild");
+const TMP = join(RAIZ, "scripts/qa/.tmp");
+mkdirSync(TMP, { recursive: true });
 
-/** (pagina, campo, html) de todo lo que valida `campoHtml`. */
+/* ⚠ UN SOLO punto de entrada, y no es cosmética: dos `esbuild.build` producen
+ * DOS copias de `comunes.ts`, así que `f.validate === CM.validaHtmlCorpus`
+ * compara funciones de bundles distintos y sale `false` **siempre**. La primera
+ * versión lo hizo, y no dio un mapa incompleto: dio **0 bloques**, que es
+ * exactamente lo que la guarda del cero existe para no dejar pasar. Se bundlea
+ * un entry que reexporta las dos, y con eso la identidad es la de verdad. */
+const ENTRY = join(TMP, "entry-clasifica-f33.ts");
+writeFileSync(
+  ENTRY,
+  `export * as CM from ${JSON.stringify(join(RAIZ, "packages/cms-config/src/campos/comunes.ts").replace(/\\/g, "/"))};\n` +
+    `export * as COL from ${JSON.stringify(join(RAIZ, "packages/cms-config/src/colecciones/paginas.ts").replace(/\\/g, "/"))};\n`,
+);
+const salida = join(TMP, "clasifica-f33-bundle.mjs");
+await esbuild.build({ entryPoints: [ENTRY], outfile: salida, bundle: true, platform: "node", format: "esm", packages: "external", logLevel: "silent" });
+const { CM, COL } = await import(`${pathToFileURL(salida).href}?t=${Date.now()}`);
+
+/** `{ bloqueSlug: [rutas de campo rico] }`, derivado de la config resuelta. */
+const RICOS = {};
+/** Campos ricos fuera de un bloque (p. ej. `cuerpoClasico` en la raíz). */
+const RICOS_RAIZ = [];
+(function recorre(campos, bloque, ruta) {
+  for (const f of campos ?? []) {
+    const aqui = f.name ? (ruta ? `${ruta}.${f.name}` : f.name) : ruta;
+    /* ⚠ Se DEDUPLICA: el mismo objeto de bloque cuelga de más de una rama del
+     * árbol (fila ▸ columna ▸ módulo y módulos sueltos), así que un recorrido
+     * ingenuo lo visita dos veces y publica «13 campos» donde hay 7 — y de paso
+     * duplica el denominador de §3d, que es el número con el que se decide si la
+     * siembra se completa. Un recuento inflado no da error: da otro número. */
+    if (f.validate === CM.validaHtmlCorpus) {
+      const lista = bloque ? (RICOS[bloque] ??= []) : RICOS_RAIZ;
+      if (!lista.includes(aqui)) lista.push(aqui);
+    }
+    if (f.fields) recorre(f.fields, bloque, f.type === "array" ? aqui : ruta);
+    for (const b of f.blocks ?? []) recorre(b.fields, b.slug, "");
+    for (const t of f.tabs ?? []) recorre(t.fields, bloque, ruta);
+  }
+})(Object.values(COL).find((x) => x?.slug === "paginas")?.fields, null, "");
+if (!Object.keys(RICOS).length)
+  throw new Error("0 bloques con `campoHtml` en `paginas`: el recorrido del esquema no casa (§sondas 4, el cero)");
+
+/** Resuelve una ruta `a.b.c` sobre un objeto, abriendo los arrays por el camino. */
+function resuelveRuta(obj, ruta) {
+  let actual = [{ v: obj, r: "" }];
+  for (const seg of ruta.split(".").filter(Boolean)) {
+    const sig = [];
+    for (const { v, r } of actual) {
+      const x = v?.[seg];
+      if (Array.isArray(x)) x.forEach((y, i) => sig.push({ v: y, r: `${r}${r ? "." : ""}${seg}[${i}]` }));
+      else if (x !== undefined) sig.push({ v: x, r: `${r}${r ? "." : ""}${seg}` });
+    }
+    actual = sig;
+  }
+  return actual;
+}
+
+/** (pagina, campo, html) de todo lo que valida `campoHtml`, por las rutas DERIVADAS. */
 const CAMPOS = [];
 const rec = (v, pag) => {
   if (Array.isArray(v)) return v.forEach((x) => rec(x, pag));
   if (v && typeof v === "object") {
-    if (v.kind) {
-      for (const c of RICOS[v.kind] ?? []) if (typeof v[c] === "string") CAMPOS.push({ pag, campo: `${v.kind}.${c}`, html: v[c] });
-      const arr = RICOS_ARR[v.kind];
-      if (arr && Array.isArray(v[arr]))
-        for (const d of v[arr])
-          for (const [k, x] of Object.entries(d))
-            if (typeof x === "string" && /<[a-z]/i.test(x)) CAMPOS.push({ pag, campo: `${v.kind}.${arr}.${k}`, html: x });
-    }
+    if (v.kind)
+      for (const ruta of RICOS[v.kind] ?? [])
+        for (const { v: x, r } of resuelveRuta(v, ruta)) if (typeof x === "string") CAMPOS.push({ pag, campo: `${v.kind}.${r}`, html: x });
     for (const x of Object.values(v)) rec(x, pag);
   }
 };
 for (const p of EXTRAIDO.catalogo.paginas) {
   rec(p.bloques ?? [], p.slug);
-  if (p.cuerpoClasico) CAMPOS.push({ pag: p.slug, campo: "cuerpoClasico", html: p.cuerpoClasico });
+  for (const ruta of RICOS_RAIZ) for (const { v: x, r } of resuelveRuta(p, ruta)) if (typeof x === "string") CAMPOS.push({ pag: p.slug, campo: r, html: x });
 }
 
 /* ═════════════════════════════════════════════════════════════════════════
@@ -150,9 +225,13 @@ for (const { pag, campo, html } of CAMPOS)
   for (const o of ocurrencias(html, FUERA)) hallazgos.push({ pag, campo, ...o, contenedor: contenedorDe(o.cadena) });
 
 L(`═══ clasifica-f33 · qué SON las etiquetas de F3-3 fuera del censo\n`);
+L(`  extraído leído de                        ${CUAL}${process.env.EXTRAIDO ? "   ← por parámetro EXTRAIDO=" : "   (canónico)"}`);
 L(`  censo leído de comunes.ts                ${CENSO.size} etiquetas`);
 L(`  documentos de f33-extraido               ${EXTRAIDO.catalogo.paginas.length}`);
-L(`  campos ricos recorridos                  ${CAMPOS.length}`);
+L(`  campos \`campoHtml\` DERIVADOS del esquema  ${Object.values(RICOS).flat().length + RICOS_RAIZ.length} en ${Object.keys(RICOS).length} bloques + ${RICOS_RAIZ.length} en la raíz`);
+for (const [b, rs] of Object.entries(RICOS).sort()) L(`     ${pad(b, 20)}${rs.join(" · ")}`);
+if (RICOS_RAIZ.length) L(`     ${pad("(raíz)", 20)}${RICOS_RAIZ.join(" · ")}`);
+L(`  campos ricos CON DATO recorridos         ${CAMPOS.length}`);
 L(`  etiquetas fuera del censo                ${[...FUERA].sort().map((t) => `<${t}>`).join(" ")}`);
 L(`  OCURRENCIAS (no páginas: la unidad es la ocurrencia)   ${hallazgos.length}\n`);
 
@@ -422,20 +501,6 @@ for (const { id, re } of MARCAS) {
  * «¿se completa la siembra?» se le hace A LA FUNCIÓN, no a mi lectura de ella
  * (§El principio: verificar contra la salida servida).
  * ═══════════════════════════════════════════════════════════════════════ */
-const { createRequire } = await import("node:module");
-const { pathToFileURL } = await import("node:url");
-const { mkdirSync } = await import("node:fs");
-const req = createRequire(import.meta.url);
-const esbuild = req("esbuild");
-const TMP = join(RAIZ, "scripts/qa/.tmp");
-mkdirSync(TMP, { recursive: true });
-const bundle = join(TMP, "comunes-clasifica-f33.mjs");
-await esbuild.build({
-  entryPoints: [join(RAIZ, "packages/cms-config/src/campos/comunes.ts")],
-  outfile: bundle, bundle: true, platform: "node", format: "esm", packages: "external", logLevel: "silent",
-});
-const CM = await import(`${pathToFileURL(bundle).href}?t=${Date.now()}`);
-
 const familia = (msg) => (/§3\.3 · T4/.test(msg) ? "script" : /§3\.1:/.test(msg) ? "etiqueta" : /§3\.3b/.test(msg) ? "host" : /§3\.1-atributos/.test(msg) ? "atributo" : "?");
 const veredictos = CAMPOS.map((c) => ({ ...c, r: CM.validaHtmlCorpus(c.html) })).filter((c) => c.r !== true);
 L(`\n  3d · el veredicto REAL de \`validaHtmlCorpus\` — los cuatro ejes, no sólo etiquetas`);
@@ -471,7 +536,15 @@ const huerfanas = hallazgos.filter((h) => !h.contenedor);
 L(`\n─── §4 · la dirección contraria: ¿alguna es CONTENIDO? ───\n`);
 L(`  ocurrencias FUERA de todo contenedor generado   ${huerfanas.length} de ${hallazgos.length}`);
 for (const h of huerfanas) L(`     ‼ ${h.pag} · ${h.campo} · <${h.tag}> · cadena: ${h.cadena.join(" ▸ ") || "(raíz)"}`);
-if (!huerfanas.length) L(`     → ninguna. Las ${hallazgos.length} ocurrencias caen dentro de uno de los ${CONTENEDORES.length} contenedores.`);
+if (!hallazgos.length)
+  L(
+    `     ⚠ 0 DE 0, que NO es la misma afirmación que «0 de ${120}».\n` +
+      `        No queda ninguna etiqueta fuera del censo, así que aquí no hay nada\n` +
+      `        que clasificar: esta corrida es el DESPUÉS de la retirada, y su §4 no\n` +
+      `        dice «ninguna es contenido» — dice «no hay ocurrencias». El reparto\n` +
+      `        con su denominador está en la corrida del ANTES.`,
+  );
+else if (!huerfanas.length) L(`     → ninguna. Las ${hallazgos.length} ocurrencias caen dentro de uno de los ${CONTENEDORES.length} contenedores.`);
 
 /* ═════════════════════════════════════════════════════════════════════════
  * 5 · EL CONTROL — sin esto, «0 fuera» es un cero por construcción

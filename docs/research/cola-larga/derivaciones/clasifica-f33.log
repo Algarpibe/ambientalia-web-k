@@ -1,8 +1,17 @@
 ═══ clasifica-f33 · qué SON las etiquetas de F3-3 fuera del censo
 
+  extraído leído de                        scripts/qa/medidas/f33-extraido-CONGELABA-CASCARON-Y-CONSULTA-COMO-CAMPO-RICO-2026-08-23.json   ← por parámetro EXTRAIDO=
   censo leído de comunes.ts                43 etiquetas
   documentos de f33-extraido               31
-  campos ricos recorridos                  178
+  campos `campoHtml` DERIVADOS del esquema  7 en 6 bloques + 1 en la raíz
+     blurb               descripcion
+     mapa                pines.descripcion
+     slider              diapositivas.cuerpo
+     slider-completo     diapositivas.cuerpo
+     texto-pagina        html
+     toggle              cuerpo
+     (raíz)              cuerpoClasico
+  campos ricos CON DATO recorridos         178
   etiquetas fuera del censo                <article> <header> <meta> <path> <svg>
   OCURRENCIAS (no páginas: la unidad es la ocurrencia)   120
 

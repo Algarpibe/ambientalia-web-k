@@ -1,8 +1,17 @@
 ═══ clasifica-f33 · qué SON las etiquetas de F3-3 fuera del censo
 
+  extraído leído de                        scripts/qa/medidas/f33-extraido.json   (canónico)
   censo leído de comunes.ts                43 etiquetas
   documentos de f33-extraido               31
-  campos ricos recorridos                  166
+  campos `campoHtml` DERIVADOS del esquema  7 en 6 bloques + 1 en la raíz
+     blurb               descripcion
+     mapa                pines.descripcion
+     slider              diapositivas.cuerpo
+     slider-completo     diapositivas.cuerpo
+     texto-pagina        html
+     toggle              cuerpo
+     (raíz)              cuerpoClasico
+  campos ricos CON DATO recorridos         166
   etiquetas fuera del censo                
   OCURRENCIAS (no páginas: la unidad es la ocurrencia)   0
 
@@ -108,7 +117,11 @@
 ─── §4 · la dirección contraria: ¿alguna es CONTENIDO? ───
 
   ocurrencias FUERA de todo contenedor generado   0 de 0
-     → ninguna. Las 0 ocurrencias caen dentro de uno de los 3 contenedores.
+     ⚠ 0 DE 0, que NO es la misma afirmación que «0 de 120».
+        No queda ninguna etiqueta fuera del censo, así que aquí no hay nada
+        que clasificar: esta corrida es el DESPUÉS de la retirada, y su §4 no
+        dice «ninguna es contenido» — dice «no hay ocurrencias». El reparto
+        con su denominador está en la corrida del ANTES.
 
 ─── §5 · control en línea del recorrido ───
 

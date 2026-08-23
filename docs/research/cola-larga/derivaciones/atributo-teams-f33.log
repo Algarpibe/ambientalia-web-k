@@ -1,0 +1,30 @@
+═══ atributo-teams-f33 · el 13.º bloqueo, que no es una etiqueta
+
+  ficheros .html bajo corpus/              788
+  ficheros con `data-teams` en el marcado  1
+     1×  fase-3/sueltas/empresa/index.html
+
+  el elemento y el valor, uno a uno:
+     <span data-teams="true">
+     etiquetas portadoras                  span
+     valores distintos                     "true"
+
+  ¿es inerte? (las 4 familias que `ATRIBUTOS_CENSADOS` mide a CERO):
+     manejador on*        no
+     javascript:          no
+     data: URI            no
+     srcdoc               no
+     → `data-teams="true"` no ejecuta, no navega y no pinta. Es un booleano
+       muerto. **Y eso no lo da de alta**: el procedimiento es añadirlo al
+       censo CON SU EVIDENCIA, que es un cambio revisable, no una excepción.
+
+  qué envuelve (lo que se perdería si se limpiara sin mirar):
+     fase-3/sueltas/empresa/index.html
+       …b_text_23 et_pb_text_align_left et_pb_bg_layout_light"> <div class="et_pb_text_inner"><p><span data-teams="true">Esta empresa ha recibido una ayuda del Gobierno de Navarra al amparo de la convocatoria de 2025 de Fomento de la Empresa Digital.</span></p></div> </div> </div> </div> </div> </div> </div> </div> </article> </div> <footer class="et-l …
+
+  ⚠ ALCANCE, y se declara porque sin él este cero es del canal, no del dato:
+     · mira el MARCADO de `corpus/`, sin `<style>` ni `<script>`
+     · NO mira el original vivo, ni las páginas que el corpus no tiene
+     · NO mide la CLASE «residuo de pegado del editor»: mide UN atributo.
+       Cuántos atributos de esa familia hay en el corpus es otra pregunta,
+       y sale SIN MEDIR — que no es 0.
