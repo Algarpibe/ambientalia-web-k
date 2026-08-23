@@ -1,0 +1,2204 @@
+{
+  "meta": {
+    "sonda": "f33-geo",
+    "fecha": "2026-08-22",
+    "que": "la geometría (ritmo y caja) de la cola larga, derivada del corpus con sus hojas, a 1440 y 390",
+    "lado": "UNO — el original capturado. NO compara con el clon: eso es `qa:f33-cmp`, y sigue a 0 ejes comparados",
+    "anchos": [
+      1440,
+      390
+    ],
+    "sabotaje": "dominio-corto",
+    "dominio": {
+      "membresia": "medidas/f33-rutas.json (94.ª, congelada y commiteada) — las rutas de `paginas` POST-S1",
+      "rutasDeclaradas": 31,
+      "capturasLegibles": 31,
+      "controlCruzadoSinglePost": 0,
+      "medidas": 4,
+      "minimo": 31
+    },
+    "noContesta": [
+      "nada del CLON: es un solo lado, y la comparación de dos lados (qa:f33-cmp) sigue a 0 ejes comparados en las 31",
+      "el CONTENIDO de los módulos: eso lo derivó arbol-f33 (11 tipos) y ya está en bloques/paginas.ts",
+      "si un valor DEBE ser campo: los tests dicen qué está probado; la decisión de modelo es de quien escriba el bloque",
+      "el régimen -T: se fue con la webinar (S1, §2j.3c) y NO está en las 31 — control cruzado: 0 `single-post` en el dominio",
+      "el ancho INTERMEDIO: se miden 1440 y 390, que es donde el contrato es de FIDELIDAD (§El contrato no es el mismo a todos los anchos)",
+      "el ancho DECLARADO de los módulos de nivel ENLÍNEA: su caja es la del contenido, así que `anchoPct` no lo recupera — ver `anchoPctPorDisplay`",
+      "la geometría de los módulos SIN CAJA: están en desplegables cerrados y exigen INTERACCIÓN (eje `comportamiento`, 0/31)"
+    ]
+  },
+  "anchoDeFilaPorRegimen": {
+    "BT": {
+      "911.75": 11
+    }
+  },
+  "separabilidadFilaColumna": {
+    "anchosDistintos": 1,
+    "separables": false,
+    "cruce": {
+      "911.75": [
+        "1_2",
+        "4_4"
+      ]
+    }
+  },
+  "defaultMbPorAnchoDeFila": {
+    "nota": "2.75 % de la FILA — 1238.39⇒34.05 · 911.75⇒25.06. `CLAUDE.md` §Test A: la variable que manda es el ANCHO DE FILA, no el tipo de columna",
+    "cruce": {
+      "911.75": {
+        "total": 25,
+        "enElDefault": 5,
+        "esperado": 25.06,
+        "porReparto": {
+          "1_2": 5
+        },
+        "valores": {
+          "0": 14,
+          "13": 6,
+          "25.06": 5
+        }
+      }
+    },
+    "conElDefaultDeOtraFila": 0,
+    "cadaDefaultConMasDeUnReparto": false,
+    "separadoras": [],
+    "nSeparadoras": 0
+  },
+  "anchoPctPorDisplay": {
+    "text": {
+      "bloque": 11,
+      "enLinea": 0,
+      "displays": [
+        "block"
+      ]
+    },
+    "toggle": {
+      "bloque": 5,
+      "enLinea": 0,
+      "displays": [
+        "block"
+      ]
+    },
+    "image": {
+      "bloque": 9,
+      "enLinea": 0,
+      "displays": [
+        "block"
+      ]
+    }
+  },
+  "criterioDeRecuento": {
+    "nota": "«en el DOM» y «con caja» NO son la misma medida — un módulo dentro de un desplegable cerrado está en el primero y no en el segundo, y su geometría NO es medible",
+    "modulos": {
+      "enElDom": 42,
+      "conCaja": 25,
+      "sinCaja": 17
+    },
+    "filas": {
+      "enElDom": 28,
+      "conCaja": 11
+    },
+    "columnas": {
+      "enElDom": 38,
+      "conCaja": 21
+    },
+    "secciones": {
+      "enElDom": 20
+    },
+    "sinCajaPorTipo": {
+      "video": 16,
+      "text": 1
+    },
+    "sinCajaPorRuta": {
+      "/es/centro-de-ayuda/kunak-air-cloud/": 4,
+      "/es/centro-de-ayuda/kunak-air/": 6,
+      "/es/centro-de-ayuda/kunak-air/video-tutoriales/": 7
+    }
+  },
+  "porTipo": {
+    "video": {
+      "instancias": 16,
+      "instanciasConCaja": 0,
+      "paginas": 3,
+      "paginasConCaja": 0,
+      "rutas": [
+        "/es/centro-de-ayuda/kunak-air-cloud/",
+        "/es/centro-de-ayuda/kunak-air/",
+        "/es/centro-de-ayuda/kunak-air/video-tutoriales/"
+      ],
+      "valores": {
+        "mt": {},
+        "mb": {},
+        "pt": {},
+        "pb": {},
+        "anchoPct": {}
+      },
+      "testA": null
+    },
+    "text": {
+      "instancias": 12,
+      "instanciasConCaja": 11,
+      "paginas": 4,
+      "paginasConCaja": 4,
+      "rutas": [
+        "/es/centro-de-ayuda/kunak-air-cloud/",
+        "/es/centro-de-ayuda/kunak-air/",
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+        "/es/centro-de-ayuda/kunak-air/video-tutoriales/"
+      ],
+      "valores": {
+        "mt": {
+          "0": 11
+        },
+        "mb": {
+          "0": 2,
+          "13": 6,
+          "25.06": 3
+        },
+        "pt": {
+          "0": 11
+        },
+        "pb": {
+          "0": 11
+        },
+        "anchoPct": {
+          "100": 11
+        }
+      },
+      "testA": {
+        "mt": {
+          "mueve": 0,
+          "igual": 11
+        },
+        "mb": {
+          "mueve": 9,
+          "igual": 2
+        },
+        "pt": {
+          "mueve": 0,
+          "igual": 11
+        },
+        "pb": {
+          "mueve": 0,
+          "igual": 11
+        },
+        "anchoPct": {
+          "mueve": 0,
+          "igual": 11
+        },
+        "pares": 11
+      }
+    },
+    "image": {
+      "instancias": 9,
+      "instanciasConCaja": 9,
+      "paginas": 4,
+      "paginasConCaja": 4,
+      "rutas": [
+        "/es/centro-de-ayuda/kunak-air-cloud/",
+        "/es/centro-de-ayuda/kunak-air/",
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+        "/es/centro-de-ayuda/kunak-air/video-tutoriales/"
+      ],
+      "valores": {
+        "mt": {
+          "0": 7,
+          "-33": 2
+        },
+        "mb": {
+          "0": 9
+        },
+        "pt": {
+          "0": 9
+        },
+        "pb": {
+          "0": 9
+        },
+        "anchoPct": {
+          "100": 9
+        }
+      },
+      "testA": {
+        "mt": {
+          "mueve": 0,
+          "igual": 9
+        },
+        "mb": {
+          "mueve": 0,
+          "igual": 9
+        },
+        "pt": {
+          "mueve": 0,
+          "igual": 9
+        },
+        "pb": {
+          "mueve": 0,
+          "igual": 9
+        },
+        "anchoPct": {
+          "mueve": 0,
+          "igual": 9
+        },
+        "pares": 9
+      }
+    },
+    "toggle": {
+      "instancias": 5,
+      "instanciasConCaja": 5,
+      "paginas": 3,
+      "paginasConCaja": 3,
+      "rutas": [
+        "/es/centro-de-ayuda/kunak-air-cloud/",
+        "/es/centro-de-ayuda/kunak-air/",
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/"
+      ],
+      "valores": {
+        "mt": {
+          "0": 5
+        },
+        "mb": {
+          "0": 3,
+          "25.06": 2
+        },
+        "pt": {
+          "20": 5
+        },
+        "pb": {
+          "20": 5
+        },
+        "anchoPct": {
+          "100": 5
+        }
+      },
+      "testA": {
+        "mt": {
+          "mueve": 0,
+          "igual": 5
+        },
+        "mb": {
+          "mueve": 2,
+          "igual": 3
+        },
+        "pt": {
+          "mueve": 0,
+          "igual": 5
+        },
+        "pb": {
+          "mueve": 0,
+          "igual": 5
+        },
+        "anchoPct": {
+          "mueve": 0,
+          "igual": 5
+        },
+        "pares": 5
+      }
+    }
+  },
+  "veredictos": {
+    "text.mt": {
+      "ver": "SIN ESCRIBIR · valor inicial (0) en las N: el test A no puede separar «el editor puso 0» de «nadie tocó nada»",
+      "valores": 1,
+      "valoresDistintos": [
+        "0"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 11
+      },
+      "soloCero": true
+    },
+    "text.mb": {
+      "ver": "CAMPO (test B)",
+      "valores": 3,
+      "valoresDistintos": [
+        "0",
+        "13",
+        "25.06"
+      ],
+      "paginasQueVarian": 1,
+      "A": {
+        "mueve": 9,
+        "igual": 2
+      },
+      "soloCero": false
+    },
+    "text.pt": {
+      "ver": "SIN ESCRIBIR · valor inicial (0) en las N: el test A no puede separar «el editor puso 0» de «nadie tocó nada»",
+      "valores": 1,
+      "valoresDistintos": [
+        "0"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 11
+      },
+      "soloCero": true
+    },
+    "text.pb": {
+      "ver": "SIN ESCRIBIR · valor inicial (0) en las N: el test A no puede separar «el editor puso 0» de «nadie tocó nada»",
+      "valores": 1,
+      "valoresDistintos": [
+        "0"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 11
+      },
+      "soloCero": true
+    },
+    "text.anchoPct": {
+      "ver": "SIN PROBAR · el test A no aplica a la caja",
+      "valores": 1,
+      "valoresDistintos": [
+        "100"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 11
+      },
+      "soloCero": false
+    },
+    "image.mt": {
+      "ver": "CAMPO (test A: px absolutos)",
+      "valores": 2,
+      "valoresDistintos": [
+        "0",
+        "-33"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 9
+      },
+      "soloCero": false
+    },
+    "image.mb": {
+      "ver": "SIN ESCRIBIR · valor inicial (0) en las N: el test A no puede separar «el editor puso 0» de «nadie tocó nada»",
+      "valores": 1,
+      "valoresDistintos": [
+        "0"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 9
+      },
+      "soloCero": true
+    },
+    "image.pt": {
+      "ver": "SIN ESCRIBIR · valor inicial (0) en las N: el test A no puede separar «el editor puso 0» de «nadie tocó nada»",
+      "valores": 1,
+      "valoresDistintos": [
+        "0"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 9
+      },
+      "soloCero": true
+    },
+    "image.pb": {
+      "ver": "SIN ESCRIBIR · valor inicial (0) en las N: el test A no puede separar «el editor puso 0» de «nadie tocó nada»",
+      "valores": 1,
+      "valoresDistintos": [
+        "0"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 9
+      },
+      "soloCero": true
+    },
+    "image.anchoPct": {
+      "ver": "SIN PROBAR · el test A no aplica a la caja",
+      "valores": 1,
+      "valoresDistintos": [
+        "100"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 9
+      },
+      "soloCero": false
+    },
+    "toggle.mt": {
+      "ver": "SIN ESCRIBIR · valor inicial (0) en las N: el test A no puede separar «el editor puso 0» de «nadie tocó nada»",
+      "valores": 1,
+      "valoresDistintos": [
+        "0"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 5
+      },
+      "soloCero": true
+    },
+    "toggle.mb": {
+      "ver": "CAMPO (test B)",
+      "valores": 2,
+      "valoresDistintos": [
+        "0",
+        "25.06"
+      ],
+      "paginasQueVarian": 2,
+      "A": {
+        "mueve": 2,
+        "igual": 3
+      },
+      "soloCero": false
+    },
+    "toggle.pt": {
+      "ver": "CAMPO (test A: px absolutos)",
+      "valores": 1,
+      "valoresDistintos": [
+        "20"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 5
+      },
+      "soloCero": false
+    },
+    "toggle.pb": {
+      "ver": "CAMPO (test A: px absolutos)",
+      "valores": 1,
+      "valoresDistintos": [
+        "20"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 5
+      },
+      "soloCero": false
+    },
+    "toggle.anchoPct": {
+      "ver": "SIN PROBAR · el test A no aplica a la caja",
+      "valores": 1,
+      "valoresDistintos": [
+        "100"
+      ],
+      "paginasQueVarian": 0,
+      "A": {
+        "mueve": 0,
+        "igual": 5
+      },
+      "soloCero": false
+    }
+  },
+  "ejesSinEscribir": [
+    "text.mt",
+    "text.pt",
+    "text.pb",
+    "image.mb",
+    "image.pt",
+    "image.pb",
+    "toggle.mt"
+  ],
+  "corteLimpio2": [
+    {
+      "tipo": "video",
+      "inst": 16,
+      "conCaja": 0,
+      "paginas": 3,
+      "porQue": "NINGUNA instancia con caja: viven en desplegables cerrados y su geometría no es medible sin abrirlos",
+      "haceFalta": "medir con INTERACCIÓN (eje `comportamiento`, hoy 0/31)"
+    }
+  ],
+  "paginas": [
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 106
+      },
+      "n": {
+        "secciones": 5,
+        "filas": 5,
+        "columnas": 6,
+        "modulos": 8
+      },
+      "modulos1440": [
+        {
+          "id": "et_pb_text_0",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 25.06,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_0",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 25.06,
+          "pt": 20,
+          "pb": 20,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_1",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 0,
+          "pt": 20,
+          "pb": 20,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_0",
+          "tipo": "image",
+          "mt": -33,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_video_0",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_1",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_2",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_3",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        }
+      ],
+      "modulos390": [
+        {
+          "id": "et_pb_text_0",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 30,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_0",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 30,
+          "pt": 20,
+          "pb": 20,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_1",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 0,
+          "pt": 20,
+          "pb": 20,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_0",
+          "tipo": "image",
+          "mt": -33,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_video_0",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_1",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_2",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_3",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        }
+      ],
+      "filas1440": [
+        {
+          "id": "et_pb_row_0",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 11,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_1",
+          "seccion": "et_pb_section_1",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_2",
+          "seccion": "et_pb_section_2",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_3",
+          "seccion": "et_pb_section_3",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_4",
+          "seccion": "et_pb_section_4",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        }
+      ],
+      "secciones1440": [
+        {
+          "id": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 4,
+          "pb": 36.47,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_section_1",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_2",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_3",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_4",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        }
+      ]
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 124
+      },
+      "n": {
+        "secciones": 7,
+        "filas": 7,
+        "columnas": 8,
+        "modulos": 10
+      },
+      "modulos1440": [
+        {
+          "id": "et_pb_text_0",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 25.06,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_0",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 25.06,
+          "pt": 20,
+          "pb": 20,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_1",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 0,
+          "pt": 20,
+          "pb": 20,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_0",
+          "tipo": "image",
+          "mt": -33,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_video_0",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_1",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_2",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_3",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_4",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_5",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        }
+      ],
+      "modulos390": [
+        {
+          "id": "et_pb_text_0",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 30,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_0",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 30,
+          "pt": 20,
+          "pb": 20,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_1",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 0,
+          "pt": 20,
+          "pb": 20,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_0",
+          "tipo": "image",
+          "mt": -33,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_video_0",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_1",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_2",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_3",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_4",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_5",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        }
+      ],
+      "filas1440": [
+        {
+          "id": "et_pb_row_0",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 11,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_1",
+          "seccion": "et_pb_section_1",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_2",
+          "seccion": "et_pb_section_2",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_3",
+          "seccion": "et_pb_section_3",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_4",
+          "seccion": "et_pb_section_4",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_5",
+          "seccion": "et_pb_section_5",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_6",
+          "seccion": "et_pb_section_6",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        }
+      ],
+      "secciones1440": [
+        {
+          "id": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 4,
+          "pb": 36.47,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_section_1",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_2",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_3",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_4",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_5",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_6",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        }
+      ]
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 70
+      },
+      "n": {
+        "secciones": 1,
+        "filas": 1,
+        "columnas": 2,
+        "modulos": 3
+      },
+      "modulos1440": [
+        {
+          "id": "et_pb_text_0",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 25.06,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_0",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 0,
+          "pt": 20,
+          "pb": 20,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_0",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        }
+      ],
+      "modulos390": [
+        {
+          "id": "et_pb_text_0",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 30,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_toggle_0",
+          "tipo": "toggle",
+          "mt": 0,
+          "mb": 0,
+          "pt": 20,
+          "pb": 20,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_0",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        }
+      ],
+      "filas1440": [
+        {
+          "id": "et_pb_row_0",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 11,
+          "pb": 18.23,
+          "w": 911.75
+        }
+      ],
+      "secciones1440": [
+        {
+          "id": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 36.47,
+          "w": 911.75
+        }
+      ]
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 143
+      },
+      "n": {
+        "secciones": 7,
+        "filas": 15,
+        "columnas": 22,
+        "modulos": 21
+      },
+      "modulos1440": [
+        {
+          "id": "et_pb_text_0",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "none",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_text_1",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_2",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 911.75,
+          "wCol": 911.75,
+          "wFila": 911.75,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_3",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 13,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_0",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_4",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 13,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_1",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_5",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 13,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_2",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_6",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 13,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_3",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_7",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 13,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_4",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_8",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 13,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_5",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 430.8,
+          "wCol": 430.8,
+          "wFila": 911.75,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_video_0",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_1",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_2",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_3",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_4",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_5",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        }
+      ],
+      "modulos390": [
+        {
+          "id": "et_pb_text_0",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_1",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_2",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_3",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_0",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_4",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_1",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_5",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_2",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_6",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_3",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_7",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_4",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_text_8",
+          "tipo": "text",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_image_5",
+          "tipo": "image",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 249.59,
+          "wCol": 249.59,
+          "wFila": 249.59,
+          "reparto": "1_2",
+          "display": "block",
+          "anchoPct": 100
+        },
+        {
+          "id": "et_pb_video_0",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_1",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_2",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_3",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_4",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        },
+        {
+          "id": "et_pb_video_5",
+          "tipo": "video",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0,
+          "wCol": 0,
+          "wFila": 0,
+          "reparto": "4_4",
+          "display": "block",
+          "anchoPct": null
+        }
+      ],
+      "filas1440": [
+        {
+          "id": "et_pb_row_0",
+          "seccion": "et_pb_section_0",
+          "mt": null,
+          "mb": null,
+          "pt": 2,
+          "pb": 2,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_1",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 18.23,
+          "pb": 0,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_2",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 18.23,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_3",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 18.23,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_4",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 18.23,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_5",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 18.23,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_6",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 18.23,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_7",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 18.23,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_8",
+          "seccion": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 18.23,
+          "pb": 18.23,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_row_9",
+          "seccion": "et_pb_section_1",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_10",
+          "seccion": "et_pb_section_2",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_11",
+          "seccion": "et_pb_section_3",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_12",
+          "seccion": "et_pb_section_4",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_13",
+          "seccion": "et_pb_section_5",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_row_14",
+          "seccion": "et_pb_section_6",
+          "mt": null,
+          "mb": null,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        }
+      ],
+      "secciones1440": [
+        {
+          "id": "et_pb_section_0",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 36.47,
+          "w": 911.75
+        },
+        {
+          "id": "et_pb_section_1",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_2",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_3",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_4",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_5",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        },
+        {
+          "id": "et_pb_section_6",
+          "mt": 0,
+          "mb": 0,
+          "pt": 0,
+          "pb": 0,
+          "w": 0
+        }
+      ]
+    }
+  ]
+}

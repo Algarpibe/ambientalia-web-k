@@ -1,0 +1,692 @@
+{
+  "meta": {
+    "sonda": "f33-geo",
+    "fecha": "2026-08-22",
+    "que": "la geometría (ritmo y caja) de la cola larga, derivada del corpus con sus hojas, a 1440 y 390",
+    "lado": "UNO — el original capturado. NO compara con el clon: eso es `qa:f33-cmp`, y sigue a 0 ejes comparados",
+    "anchos": [
+      1440,
+      390
+    ],
+    "sabotaje": "selector-muerto",
+    "dominio": {
+      "membresia": "medidas/f33-rutas.json (94.ª, congelada y commiteada) — las rutas de `paginas` POST-S1",
+      "rutasDeclaradas": 31,
+      "capturasLegibles": 31,
+      "controlCruzadoSinglePost": 0,
+      "medidas": 31,
+      "minimo": 31
+    },
+    "noContesta": [
+      "nada del CLON: es un solo lado, y la comparación de dos lados (qa:f33-cmp) sigue a 0 ejes comparados en las 31",
+      "el CONTENIDO de los módulos: eso lo derivó arbol-f33 (11 tipos) y ya está en bloques/paginas.ts",
+      "si un valor DEBE ser campo: los tests dicen qué está probado; la decisión de modelo es de quien escriba el bloque",
+      "el régimen -T: se fue con la webinar (S1, §2j.3c) y NO está en las 31 — control cruzado: 0 `single-post` en el dominio",
+      "el ancho INTERMEDIO: se miden 1440 y 390, que es donde el contrato es de FIDELIDAD (§El contrato no es el mismo a todos los anchos)",
+      "el ancho DECLARADO de los módulos de nivel ENLÍNEA: su caja es la del contenido, así que `anchoPct` no lo recupera — ver `anchoPctPorDisplay`",
+      "la geometría de los módulos SIN CAJA: están en desplegables cerrados y exigen INTERACCIÓN (eje `comportamiento`, 0/31)"
+    ]
+  },
+  "anchoDeFilaPorRegimen": {},
+  "separabilidadFilaColumna": {
+    "anchosDistintos": 0,
+    "separables": false,
+    "cruce": {}
+  },
+  "defaultMbPorAnchoDeFila": {
+    "nota": "2.75 % de la FILA — 1238.39⇒34.05 · 911.75⇒25.06. `CLAUDE.md` §Test A: la variable que manda es el ANCHO DE FILA, no el tipo de columna",
+    "cruce": {},
+    "conElDefaultDeOtraFila": 0,
+    "cadaDefaultConMasDeUnReparto": true,
+    "separadoras": [],
+    "nSeparadoras": 0
+  },
+  "anchoPctPorDisplay": {},
+  "criterioDeRecuento": {
+    "nota": "«en el DOM» y «con caja» NO son la misma medida — un módulo dentro de un desplegable cerrado está en el primero y no en el segundo, y su geometría NO es medible",
+    "modulos": {
+      "enElDom": 0,
+      "conCaja": 0,
+      "sinCaja": 0
+    },
+    "filas": {
+      "enElDom": 0,
+      "conCaja": 0
+    },
+    "columnas": {
+      "enElDom": 0,
+      "conCaja": 0
+    },
+    "secciones": {
+      "enElDom": 0
+    },
+    "sinCajaPorTipo": {},
+    "sinCajaPorRuta": {}
+  },
+  "porTipo": {},
+  "veredictos": {},
+  "ejesSinEscribir": [],
+  "corteLimpio2": [],
+  "paginas": [
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 106
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 124
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 70
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 143
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 165
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 70
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 117
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/productos/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 98
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/sectores/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 92
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/recursos/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 99
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/recursos/kunakpedia/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 68
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/recursos/documentos-cientificos/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 112
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/recursos/preguntas-frecuentes/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 8,
+        "resueltas": 8,
+        "aplicadas": 17,
+        "bloqueadas": 70
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/aviso-legal/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 8,
+        "resueltas": 8,
+        "aplicadas": 16,
+        "bloqueadas": 67
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/contacto/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 17,
+        "bloqueadas": 82
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/descarga-catalogo/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 6,
+        "resueltas": 6,
+        "aplicadas": 16,
+        "bloqueadas": 71
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/empresa/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 150
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/empresa/premios-y-reconocimientos/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 129
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 17,
+        "bloqueadas": 68
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 17,
+        "bloqueadas": 68
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 17,
+        "bloqueadas": 68
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 17,
+        "bloqueadas": 65
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 17,
+        "bloqueadas": 68
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/newsletter/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 17,
+        "bloqueadas": 68
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/politica-de-cookies/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 65
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/politica-de-privacidad-y-de-proteccion-de-datos/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 65
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/politica-de-seguridad-de-la-informacion/",
+      "regimen": "--",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 63
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/sistema-interno-de-informacion/",
+      "regimen": "BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 66
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/soporte/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 68
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/soporte/servicio-de-reparacion/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 15,
+        "bloqueadas": 70
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    },
+    {
+      "ruta": "/es/suscribete/",
+      "regimen": "B-",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "aplicadas": 17,
+        "bloqueadas": 68
+      },
+      "n": {
+        "secciones": 0,
+        "filas": 0,
+        "columnas": 0,
+        "modulos": 0
+      },
+      "modulos1440": [],
+      "modulos390": [],
+      "filas1440": [],
+      "secciones1440": []
+    }
+  ]
+}
