@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "fecha": "2026-08-22",
+    "sabotaje": null
+  },
+  "familias": [
+    {
+      "familia": "estáticas (page · solutions)",
+      "n": 7,
+      "fuente": "prerender-manifest"
+    },
+    {
+      "familia": "articulos-kb",
+      "n": 6,
+      "fuente": "DB › articulos-kb (estado=publicado) · derivada del registro"
+    },
+    {
+      "familia": "entradas-blog",
+      "n": 152,
+      "fuente": "DB › entradas-blog (estado=publicado) · derivada del registro"
+    },
+    {
+      "familia": "productos",
+      "n": 19,
+      "fuente": "DB › productos (estado=publicado) · derivada del registro"
+    },
+    {
+      "familia": "terminos-kunakpedia",
+      "n": 37,
+      "fuente": "DB › terminos-kunakpedia (estado=publicado) · derivada del registro"
+    }
+  ],
+  "noConstruidas": [],
+  "emitidas": 382,
+  "estaticasDeUnSegmento": [
+    "accesorios",
+    "blog",
+    "casos-de-exito",
+    "glosario",
+    "kunak-api",
+    "monitor-calidad-aire",
+    "software-de-medicion-calidad-del-aire"
+  ],
+  "emitidasPorPlano": 189,
+  "colisiones": [
+    {
+      "slug": "kunak-api",
+      "familias": [
+        "estáticas (page · solutions)",
+        "productos"
+      ]
+    },
+    {
+      "slug": "monitor-calidad-aire",
+      "familias": [
+        "estáticas (page · solutions)",
+        "productos"
+      ]
+    },
+    {
+      "slug": "software-de-medicion-calidad-del-aire",
+      "familias": [
+        "estáticas (page · solutions)",
+        "productos"
+      ]
+    },
+    {
+      "slug": "compuestos-organicos-volatiles",
+      "familias": [
+        "productos",
+        "terminos-kunakpedia"
+      ]
+    },
+    {
+      "slug": "dioxido-de-azufre",
+      "familias": [
+        "productos",
+        "terminos-kunakpedia"
+      ]
+    },
+    {
+      "slug": "dioxido-de-carbono",
+      "familias": [
+        "productos",
+        "terminos-kunakpedia"
+      ]
+    },
+    {
+      "slug": "dioxido-de-nitrogeno",
+      "familias": [
+        "productos",
+        "terminos-kunakpedia"
+      ]
+    },
+    {
+      "slug": "metano",
+      "familias": [
+        "productos",
+        "terminos-kunakpedia"
+      ]
+    },
+    {
+      "slug": "monoxido-de-carbono",
+      "familias": [
+        "productos",
+        "terminos-kunakpedia"
+      ]
+    },
+    {
+      "slug": "particulas-en-suspension",
+      "familias": [
+        "productos",
+        "terminos-kunakpedia"
+      ]
+    },
+    {
+      "slug": "sulfuro-de-hidrogeno",
+      "familias": [
+        "productos",
+        "terminos-kunakpedia"
+      ]
+    }
+  ],
+  "sombras": [
+    {
+      "slug": "kunak-api",
+      "familia": "productos",
+      "emisor": "/kunak-api"
+    },
+    {
+      "slug": "monitor-calidad-aire",
+      "familia": "productos",
+      "emisor": "/monitor-calidad-aire"
+    },
+    {
+      "slug": "software-de-medicion-calidad-del-aire",
+      "familia": "productos",
+      "emisor": "/software-de-medicion-calidad-del-aire"
+    }
+  ],
+  "huerfanas": [],
+  "declaradosSinEmitir": [
+    "como-garantiza-kunak-la-mejor-precision",
+    "evidencias-de-funcionamiento",
+    "por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+    "que-es-kunak-air",
+    "que-puedes-hacer-con-kunak-air",
+    "que-es-kunak-air-cloud",
+    "accesories",
+    "air-cloud",
+    "amoniaco",
+    "estacion-de-monitoreo-de-calidad-del-aire",
+    "oxido-nitrico",
+    "ozone-2",
+    "ozono",
+    "sensor-de-calidad-del-aire"
+  ]
+}

@@ -2,8 +2,21 @@
  * GUARDA DE UNICIDAD DE SLUG **ENTRE FAMILIAS** — el plano de `/es/`.
  *
  * Uso:  node slugs.mjs                 (después de `npm run build`)
- * Test en negativo:
- *       SABOTAJE=accesorios node slugs.mjs      → debe salir con código ≠ 0
+ *
+ * ── Test en negativo — CUATRO casos, y cada uno cae por SU motivo ──────────
+ * Corrido el 2026-08-22 (94.ª), con el alcance ya derivado:
+ *
+ * | caso | qué simula | exit | por qué motivo |
+ * |---|---|---|---|
+ * | (control) | nada | **0** | `✅ LIMPIO — 204 slugs de 5 familias` |
+ * | `SABOTAJE=accesorios` | una familia postiza reclamando un slug estático | **1** | `❌ A · 1 SLUG EN COLISIÓN` |
+ * | `SABOTAJE_FAMILIA=<x>` | **una familia en el registro que la config NO declara** | **2** | `❌ FAMILIA EN EL REGISTRO SIN COLECCIÓN QUE LA SIRVA` + el contrato (`0 de 5`) |
+ * | `SABOTAJE_REGISTRO_VACIO=1` | el registro devuelve 0 familias | **1** | `Error: REGISTRO DE SLUGS VACÍO` |
+ *
+ * ⚠ **El tercero es el que esta corrección añade, y es el que faltaba.** Antes,
+ * una familia no cubierta **no salía roja: no salía**. Ahora el modo de fallo
+ * dejó de ser el silencio — que es lo único que hacía que una lista corta
+ * pudiera vivir años sin que nadie la mirara.
  *
  * ── Por qué existe: el build NO avisa, y está medido ───────────────────────
  * `docs/research/arquetipo-A/ENRUTADO.md` §2 montó un andamio `[slug]` de raíz
@@ -80,9 +93,23 @@
  * ── Alcance, declarado (`CLAUDE.md` §ruido, regla 3) ───────────────────────
  * **Sólo el plano de un segmento de `/es/`.** Las familias prefijadas —casos,
  * FAQ, sectores, documentos científicos— tienen unicidad *por colección*, que
- * es nativa, y **no entran aquí**. Si algún día una familia prefijada baja al
- * plano, se añade a `FAMILIAS` y la guarda la cubre; mientras tanto, que no
- * esté no es un hueco: es el alcance.
+ * es nativa, y **no entran aquí**.
+ *
+ * ⚠⚠ **CORREGIDO 2026-08-22 (94.ª): la frase que seguía aquí era el defecto.**
+ * Decía *«si algún día una familia prefijada baja al plano, se añade a
+ * `FAMILIAS` y la guarda la cubre; mientras tanto, que no esté no es un hueco:
+ * es el alcance»*. Las dos mitades fallan:
+ *
+ *   · **«se añade»** — eso es la lista a mano, o sea el modo de fallo. Ahora el
+ *     alcance **se deriva del registro** y una familia nueva entra sola;
+ *   · **«que no esté no es un hueco»** — sí lo era, y con número: el registro
+ *     tenía **4** familias y esta sonda comparaba **2**, o sea **11 slugs sin
+ *     cruzar**. La frase convertía un hueco medible en alcance declarado, que
+ *     es §*una limitación declarada sin su número se lee como una nota al pie*.
+ *
+ * **El alcance de verdad, hoy: lo que el registro `slugs` contenga.** Y si
+ * contiene una familia que la config no declara, la sonda **TIRA** en vez de
+ * comparar las que sí resuelven.
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -103,14 +130,65 @@ const RAIZ = APP;
 const PLANO = "/[slug]";
 
 /**
- * Las familias que viven en el plano de un segmento, y de dónde salen sus
- * slugs: **de la DB, que es el catálogo que el build usa desde F2-3** (ver la
- * corrección en la cabecera). Sólo las publicadas — el mismo filtro del build.
+ * ⚠⚠ **LAS FAMILIAS SE DERIVAN DEL REGISTRO. NO SE ESCRIBEN.** (94.ª tanda)
+ *
+ * Aquí había **dos literales a mano** —`entradas-blog` y `terminos-kunakpedia`—
+ * y la cabecera lo asumía: *«si algún día una familia prefijada baja al plano,
+ * se añade a `FAMILIAS`»*. Eso es §regla 9 caso 7, y el repo **ya pagó dos
+ * veces ese mismo patrón en `cobertura.mjs`** — la primera vez arreglando LA
+ * INSTANCIA (añadir el sufijo que faltaba), que es justo lo que hizo que
+ * volviera.
+ *
+ * **Y estaba corta desde antes de esta tanda, medido:** el registro tiene
+ * **4** familias con filas —`entradas-blog` 152 · `terminos-kunakpedia` 37 ·
+ * `articulos-kb` 6 · `productos` 5— y esta lista comparaba **2**. O sea **11
+ * slugs reclamados en el plano que ninguna comprobación cruzaba**, sin dar
+ * error: §*un patrón que no casa no es un cero*, con el cero puesto en una
+ * familia entera.
+ *
+ * **La fuente derivada es el REGISTRO (`slugs`)**, y es la correcta por
+ * construcción: lo escribe `registroDeSlug` **en la misma transacción** que el
+ * alta, así que *estar en el plano* y *tener fila aquí* son la misma cosa. Una
+ * familia nueva —`paginas` cuando se siembre— entra **sola**, sin que nadie
+ * tenga que acordarse de este fichero.
+ *
+ * **Y lo que NO se puede derivar, se TIRA** (§regla 6: una ausencia se rechaza,
+ * no se sustituye):
+ *
+ *   · registro vacío ⇒ error. «0 familias» y «no pude leer» no pueden dar la
+ *     misma salida;
+ *   · una familia del registro **sin colección que la sirva** ⇒ error. El
+ *     registro sabría algo que la config no, y comparar sólo las que sí
+ *     resuelven sería exactamente el silencio que esta corrección quita.
  */
-const FAMILIAS = [
-  { familia: "blog", coleccion: "entradas-blog" },
-  { familia: "termino", coleccion: "terminos-kunakpedia" },
-];
+async function familiasDelRegistro(payload) {
+  const { docs } = await payload.find({ collection: "slugs", pagination: false, depth: 0, sort: "familia" });
+  const porFam = {};
+  for (const d of docs) if (d.familia) (porFam[d.familia] = porFam[d.familia] || []).push(d.slug);
+  /**
+   * SABOTAJE `SABOTAJE_FAMILIA` — simula **una familia nueva en el registro que
+   * la config no declara**, que es el caso que esta corrección existe para no
+   * volver a tener en silencio. Tiene que salir **ROJA, no ausente**.
+   */
+  if (process.env.SABOTAJE_FAMILIA) {
+    porFam[process.env.SABOTAJE_FAMILIA] = ["slug-postizo-del-sabotaje"];
+    console.log(`\n⚠ SABOTAJE_FAMILIA=${process.env.SABOTAJE_FAMILIA} — familia sin colección. Esta corrida DEBE fallar.\n`);
+  }
+  /* SABOTAJE `SABOTAJE_REGISTRO_VACIO` — el registro no devuelve nada. La sonda
+   * no puede decir «sin colisiones» sin haber mirado (§sondas 4). */
+  if (process.env.SABOTAJE_REGISTRO_VACIO) {
+    for (const k of Object.keys(porFam)) delete porFam[k];
+    console.log(`\n⚠ SABOTAJE_REGISTRO_VACIO — registro a cero. Esta corrida DEBE fallar.\n`);
+  }
+  const familias = Object.keys(porFam).sort();
+  if (familias.length === 0)
+    throw new Error(
+      "REGISTRO DE SLUGS VACÍO: 0 familias en `slugs`.\n" +
+        "  Esta sonda no puede derivar el plano de la nada, y «0 familias» no puede\n" +
+        "  significar «sin colisiones» (§sondas 4). ¿Falta sembrar?",
+    );
+  return { familias, porFam };
+}
 
 /* ─────────────────── rutas emitidas, leídas del build ──────────────────── */
 
@@ -135,13 +213,30 @@ const quienEmite = new Map(emitidas.map(([r, v]) => [r, v.srcRoute ?? r]));
  * del grupo A — `/accesorios` es el ejemplo que la prueba del ENRUTADO usó.
  * Salen del manifiesto, así que nunca hay que mantenerlas.
  */
-const estaticas = emitidas
+const estaticasTodas = emitidas
   .filter(([r, v]) => r !== "/" && r.split("/").length === 2 && (v.srcRoute ?? r) === r)
   .map(([r]) => r.slice(1));
+/**
+ * ⚠ **La familia implícita es «estáticas que NADIE declara», y esa palabra
+ * hacía falta desde que las familias se derivan (94.ª).**
+ *
+ * Con la lista a mano de dos familias, ninguna colección declaraba una ruta
+ * estática, así que «todas las estáticas» y «las que nadie declara» eran el
+ * mismo conjunto. Al derivar entró `productos`, **cuyas páginas SON rutas
+ * estáticas** (`/monitor-calidad-aire`, `/kunak-api`, `/software-…`), y el
+ * mismo slug pasó a estar en dos familias derivadas: la sonda informó **3
+ * colisiones y 3 sombras** que eran **la misma página consigo misma**.
+ *
+ * Es §*un patrón que casa en TODAS tampoco mide nada* por el otro lado: no un
+ * selector que sobra, sino un conjunto implícito que dejó de ser disjunto en
+ * cuanto el otro creció. Se resta lo declarado, y se hace **después** de leer
+ * las familias — por eso el filtro vive abajo y no aquí.
+ */
+let estaticas = estaticasTodas;
 
 /* ──────────────────── slugs de cada catálogo declarado ─────────────────── */
 
-const porFamilia = [{ familia: "estáticas (page · solutions)", slugs: estaticas, fuente: "prerender-manifest" }];
+const porFamilia = [];
 const noConstruidas = [];
 
 /* La DB por la MISMA config que usa el build (Local API). Un fallo aquí TIRA:
@@ -154,19 +249,97 @@ const payload = await getPayload({ config: await construyeConfig() });
 /* Contrato de `Evaluadas` (lib.mjs): el mínimo se declara y por debajo el
  * veredicto es NO SE PUDO EVALUAR con código ≠ 0. Esta sonda no usa
  * `openPage`, así que cuenta ella misma cada unidad completada. */
+const { familias: FAMILIAS, porFam: SLUGS_REGISTRADOS } = await familiasDelRegistro(payload);
+
+/**
+ * El mínimo se DERIVA del registro, no se escribe: una familia nueva **sube el
+ * listón sola**, que es lo que un número escrito a mano nunca hace (§4bis).
+ */
 const ev = new Evaluadas({ nombre: "slugs", unidad: "familias de slug", minimo: FAMILIAS.length });
-for (const { familia, coleccion } of FAMILIAS) {
+
+/**
+ * La familia del registro es el `slug` de su colección (lo pone
+ * `registroDeSlug({familia})`). Si alguna no resuelve, **se TIRA**: el registro
+ * sabría algo que la config no.
+ */
+const conocidas = new Set((await import("../../packages/cms-config/src/colecciones.ts")).COLECCIONES.map((c) => c.slug));
+const huerfanasDeConfig = FAMILIAS.filter((f) => !conocidas.has(f));
+if (huerfanasDeConfig.length) {
+  console.error(
+    `\n❌ FAMILIA EN EL REGISTRO SIN COLECCIÓN QUE LA SIRVA: ${huerfanasDeConfig.join(" · ")}\n` +
+      `   El registro de slugs reclama el plano para una familia que \`COLECCIONES\` no\n` +
+      `   declara. Comparar sólo las que sí resuelven sería declarar un cero que nadie\n` +
+      `   midió — la familia entera quedaría fuera sin que nada lo dijera.\n`,
+  );
+  process.exit(2);
+}
+
+/**
+ * ⚠⚠ **LOS SLUGS SALEN DEL REGISTRO, NO DE LA COLECCIÓN — y la primera versión
+ * de esta corrección lo hizo al revés y salió ROJA.**
+ *
+ * La colección trae **todos** sus documentos; el registro trae los que están
+ * **EN EL PLANO**, porque es donde `registroDeSlug` ya aplicó su `enElPlano`.
+ * Medido: `productos` tiene **19 publicados** y sólo **5** en el plano — §2e
+ * midió que los que llevan `padre` cuelgan de un segmento y su unicidad es la
+ * nativa. Tomarlos de la colección metía 14 slugs que **en la URL real no
+ * colisionan**, y la sonda informaba «11 colisiones» que no existen.
+ *
+ * O sea: es §*la causa común, el NIVEL al que se mide* — la colección es el
+ * nivel de arriba del plano, y absorbe la distinción que decide el caso.
+ *
+ * El `estado` sí sale de la colección (el registro no lo guarda), así que la
+ * membresía es **la intersección**: en el plano Y publicado, que es exactamente
+ * lo que el build emite.
+ */
+for (const familia of FAMILIAS) {
   const { docs } = await payload.find({
-    collection: coleccion,
+    collection: familia,
     where: { estado: { equals: "publicado" } },
     pagination: false,
     depth: 0,
     sort: "id",
   });
-  porFamilia.push({ familia, slugs: docs.map((d) => d.slug), fuente: `DB › ${coleccion} (estado=publicado)` });
+  const publicados = new Set(docs.map((d) => d.slug));
+  const enElPlano = (SLUGS_REGISTRADOS[familia] ?? []).filter((s) => publicados.has(s));
+  porFamilia.push({
+    familia,
+    slugs: enElPlano,
+    fuente: `registro ∩ DB › ${familia} (en el plano ${SLUGS_REGISTRADOS[familia].length} · publicados ${publicados.size})`,
+  });
   ev.ok(); // unidad completada — el mínimo lo cobra el gancho de salida
 }
 await payload.db.destroy?.();
+
+/* La familia implícita, YA disjunta: estáticas de un segmento que ninguna
+ * familia declarada reclama. Va aquí porque necesita las familias leídas. */
+const declaradosPorDb = new Set(porFamilia.flatMap((f) => f.slugs));
+estaticas = estaticasTodas.filter((s) => !declaradosPorDb.has(s));
+porFamilia.unshift({
+  familia: "estáticas sin dueño",
+  slugs: estaticas,
+  fuente: `prerender-manifest (${estaticasTodas.length} de un segmento − ${estaticasTodas.length - estaticas.length} ya declaradas)`,
+});
+
+/**
+ * ⚠ **RECLAMO SIN RUTA — hallazgo NOMBRADO, y NO cierra el código de salida.**
+ *
+ * Un slug registrado en el plano cuya URL de raíz **no la sirve nada**. No es
+ * una colisión ni una sombra: es el registro **reservando un slug de raíz que
+ * el sitio no usa**, y eso no protege — **bloquea altas legítimas**, que es la
+ * otra forma de que una guarda deje de servir (lo dice el propio hook).
+ *
+ * Se publica con su cardinal y su familia (§regla 14) y **no es fatal**, con su
+ * razón: hoy no puede hacer daño —ningún documento del plano quiere esos
+ * slugs— y volver rojo permanente a `npm run check` por algo latente sería
+ * cambiar el portón del repo por criterio propio. Fichado en
+ * `PENDIENTES-QA.md` §F3-3-REGISTRO-SOBRE-RECLAMA.
+ */
+const reclamoSinRuta = [];
+for (const { familia, slugs } of porFamilia) {
+  if (familia.startsWith("estáticas")) continue;
+  for (const s of slugs) if (!quienEmite.has("/" + s)) reclamoSinRuta.push({ slug: s, familia });
+}
 
 /** Test en negativo: una familia postiza con el slug que se pida. */
 const sabotaje = process.env.SABOTAJE;
@@ -215,9 +388,23 @@ const colisiones = [...dueños]
 
 /* ────────────────────────────── B · sombra ─────────────────────────────── */
 
+/**
+ * ⚠ **La sombra sólo tiene sentido para una familia que `/[slug]` SIRVE.**
+ *
+ * La pregunta es *«esta familia cree que su página la emite el plano, y la
+ * emite otra cosa»*. Para una familia a la que **el plano no sirve nunca**
+ * —`productos`, cuyas páginas son rutas estáticas propias— la respuesta es
+ * «otra cosa» **siempre**, y eso no es una sombra: es su enrutado.
+ *
+ * El discriminador se DERIVA, no se declara: una familia es «del plano» si
+ * **alguno** de sus slugs lo emite `/[slug]`. Sin esto, derivar las familias
+ * hacía aparecer 3 sombras que eran el enrutado normal de `productos`.
+ */
+const esFamiliaDelPlano = (slugs) => slugs.some((s) => quienEmite.get("/" + s) === PLANO);
 const sombras = [];
 for (const { familia, slugs } of porFamilia) {
   if (familia.startsWith("estáticas")) continue; // la estática ES quien emite
+  if (!esFamiliaDelPlano(slugs)) continue;       // no la sirve el plano: su emisor propio no es sombra
   for (const s of slugs) {
     const emisor = quienEmite.get("/" + s);
     if (emisor && emisor !== PLANO)
@@ -236,7 +423,7 @@ const huerfanas = emitidas
   .filter((s) => !declarados.has(s));
 
 const emitidasPorPlano = emitidas.filter(([r]) => quienEmite.get(r) === PLANO).length;
-const sinEmitir = [...declarados].filter((s) => !quienEmite.has("/" + s));
+/* `sinEmitir` se sustituyó por `reclamoSinRuta`, que se publica por familia. */
 
 /* ──────────────────────────────  informe  ──────────────────────────────── */
 
@@ -245,15 +432,19 @@ console.log(
     `  ·  emitidas por \`${PLANO}\`: ${emitidasPorPlano}`,
 );
 
-if (sinEmitir.length) {
-  const grave = emitidasPorPlano > 0;
+if (reclamoSinRuta.length) {
+  const porFam = {};
+  for (const r of reclamoSinRuta) (porFam[r.familia] = porFam[r.familia] || []).push(r.slug);
+  console.log(`\n⚠ RECLAMO SIN RUTA — ${reclamoSinRuta.length} slug(s) reservados en el plano de raíz que NADIE sirve:`);
+  for (const [f, ss] of Object.entries(porFam).sort((a, b) => b[1].length - a[1].length))
+    console.log(`   ${f.padEnd(22)} ${String(ss.length).padStart(3)} · ${ss.join(" · ")}`);
   console.log(
-    `\n${grave ? "❌" : "⚠"} ${sinEmitir.length} slug(s) declarados y NO emitidos` +
-      (grave
-        ? ` — y \`${PLANO}\` SÍ emite: el catálogo y lo servido no cuadran.`
-        : ` — \`${PLANO}\` todavía no existe, así que es lo esperado.`),
+    `   No es colisión ni sombra: el registro RESERVA slugs de raíz que el sitio no usa.\n` +
+      `   Eso no protege — puede BLOQUEAR un alta legítima que quiera ese slug. Se publica\n` +
+      `   con su cardinal y NO cierra el código: hoy es latente (ningún documento del plano\n` +
+      `   los quiere) y volver rojo permanente a \`npm run check\` por eso sería cambiar el\n` +
+      `   portón del repo por criterio propio. Ficha: PENDIENTES-QA.md §F3-3-REGISTRO-SOBRE-RECLAMA.`,
   );
-  console.log(`   ${sinEmitir.slice(0, 10).join(" · ")}${sinEmitir.length > 10 ? " …" : ""}`);
 }
 
 // El sabotaje escribe en OTRO fichero: la primera versión de `c-cascaron`
@@ -269,7 +460,7 @@ w(sabotaje ? "medidas/slugs-SABOTAJE.json" : "medidas/slugs.json", {
   colisiones,
   sombras,
   huerfanas,
-  declaradosSinEmitir: sinEmitir,
+  reclamoSinRuta,
 });
 
 let codigo = 0;
@@ -297,7 +488,20 @@ if (huerfanas.length) {
   console.log(`   ${huerfanas.join(" · ")}\n`);
 }
 
-if (sinEmitir.length && emitidasPorPlano > 0) codigo = 1;
+/**
+ * ⚠ **AQUÍ HABÍA UN ROJO MUDO, y lo cometió esta misma corrección.**
+ *
+ * La línea era `if (sinEmitir.length && emitidasPorPlano > 0) codigo = 1;` —
+ * heredada de cuando «declarado y no emitido» era fatal. Al sustituir ese
+ * cálculo por `reclamoSinRuta` (que se publica y **no** cierra el código), la
+ * condición se quedó viva: la sonda salía con **código 1 imprimiendo CERO
+ * `❌`**.
+ *
+ * Es §sondas 1 al pie de la letra —*lo que imprime y lo que cuenta no pueden
+ * discrepar*— y su forma peor: un rojo **sin motivo a la vista**, que quien lo
+ * lea atribuirá a lo último que tocó. Se quita, y el hallazgo vive donde se
+ * publica, con su cardinal.
+ */
 
 if (codigo === 0) {
   console.log(

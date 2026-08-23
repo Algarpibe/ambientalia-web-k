@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "fecha": "2026-08-22",
+    "sabotaje": null
+  },
+  "familias": [
+    {
+      "familia": "estáticas (page · solutions)",
+      "n": 7,
+      "fuente": "prerender-manifest"
+    },
+    {
+      "familia": "articulos-kb",
+      "n": 6,
+      "fuente": "registro ∩ DB › articulos-kb (en el plano 6 · publicados 6)"
+    },
+    {
+      "familia": "entradas-blog",
+      "n": 152,
+      "fuente": "registro ∩ DB › entradas-blog (en el plano 152 · publicados 152)"
+    },
+    {
+      "familia": "productos",
+      "n": 5,
+      "fuente": "registro ∩ DB › productos (en el plano 5 · publicados 19)"
+    },
+    {
+      "familia": "terminos-kunakpedia",
+      "n": 37,
+      "fuente": "registro ∩ DB › terminos-kunakpedia (en el plano 37 · publicados 37)"
+    }
+  ],
+  "noConstruidas": [],
+  "emitidas": 382,
+  "estaticasDeUnSegmento": [
+    "accesorios",
+    "blog",
+    "casos-de-exito",
+    "glosario",
+    "kunak-api",
+    "monitor-calidad-aire",
+    "software-de-medicion-calidad-del-aire"
+  ],
+  "emitidasPorPlano": 189,
+  "colisiones": [
+    {
+      "slug": "kunak-api",
+      "familias": [
+        "estáticas (page · solutions)",
+        "productos"
+      ]
+    },
+    {
+      "slug": "monitor-calidad-aire",
+      "familias": [
+        "estáticas (page · solutions)",
+        "productos"
+      ]
+    },
+    {
+      "slug": "software-de-medicion-calidad-del-aire",
+      "familias": [
+        "estáticas (page · solutions)",
+        "productos"
+      ]
+    }
+  ],
+  "sombras": [
+    {
+      "slug": "software-de-medicion-calidad-del-aire",
+      "familia": "productos",
+      "emisor": "/software-de-medicion-calidad-del-aire"
+    },
+    {
+      "slug": "monitor-calidad-aire",
+      "familia": "productos",
+      "emisor": "/monitor-calidad-aire"
+    },
+    {
+      "slug": "kunak-api",
+      "familia": "productos",
+      "emisor": "/kunak-api"
+    }
+  ],
+  "huerfanas": [],
+  "declaradosSinEmitir": [
+    "que-es-kunak-air-cloud",
+    "que-puedes-hacer-con-kunak-air",
+    "que-es-kunak-air",
+    "por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+    "evidencias-de-funcionamiento",
+    "como-garantiza-kunak-la-mejor-precision",
+    "sensor-de-calidad-del-aire",
+    "estacion-de-monitoreo-de-calidad-del-aire"
+  ]
+}
