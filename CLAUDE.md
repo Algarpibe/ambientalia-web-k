@@ -3444,6 +3444,63 @@ poner `NEG=`—. Y el efecto secundario es la mitad buena: **el nombre canónico
 queda libre**, así que hasta que haya una corrida de verdad, quien lo lea falla
 en voz alta en vez de leer un control.
 
+**25 · UNA GUARDA CUYO DOMINIO ES MÁS ANCHO QUE SU INVARIANTE DEJA DE PROTEGER
+Y PASA A BLOQUEAR — Y ESO NO DA ERROR: DA UN RECHAZO LEGÍTIMO.** (2026-08-22)
+
+Todo lo escrito arriba sobre guardas persigue el mismo fallo: **que no vean**.
+Ésta es la dirección contraria, y por eso no la caza ninguna de las otras:
+
+> **Una guarda que reclama MÁS de lo que su invariante cubre no falla en voz
+> alta: rechaza cosas correctas.** Y el rechazo llega con toda la autoridad de
+> la guarda —un `UNIQUE` de la base, un `exit 1`, un mensaje bien redactado—
+> así que quien lo reciba **corrige lo que estaba bien**.
+
+**Medido, y en las dos direcciones el mismo día.** Un registro de unicidad
+impone *«dos documentos no pueden compartir slug EN EL PLANO DE RAÍZ»*, y quien
+lo escribe acepta un predicado para decir qué documentos están en ese plano.
+Una colección **prefijada** que no pase el predicado reclama sus slugs en un
+plano donde no vive:
+
+| | reclama | sin ruta de raíz | qué habría bloqueado |
+|---|---|---|---|
+| colección prefijada, ya en producción | 6 | **6 de 6** | 6 slugs de raíz que ninguna URL usa |
+| colección nueva, **antes** de emitir | 31 | **12 de 31** | 12 más — evitado por medir la profundidad primero |
+
+**El discriminador es barato y es el mismo siempre: comprobar que el DOMINIO de
+la guarda y el del invariante son el mismo conjunto**, no que la guarda
+funcione. Aquí se comprueba midiendo cuántos de los documentos reclamados
+**tienen de verdad** una URL en el plano que se reclama; si no la tienen, la
+reserva sólo puede estorbar.
+
+> **Y su corolario de redacción, que es donde se cuela:** *«la guarda cubre X»*
+> y *«la guarda SÓLO puede rechazar X»* suenan igual y son afirmaciones
+> distintas. La primera se comprueba con un caso que pasa; la segunda, con el
+> **cardinal de lo que la guarda alcanza y el invariante no**. Publícalo — si
+> sale 0, la guarda está ajustada; si no, ése es el número de rechazos falsos
+> que espera.
+
+**Y SU MITAD DE CONJUNTOS, del mismo día: UN CONJUNTO DEFINIDO POR COMPLEMENTO
+DEJA DE SER DISJUNTO EN CUANTO EL ENUMERADO CRECE.**
+
+> **«Todo lo que nadie declara» y «todo» son el mismo conjunto mientras nadie
+> declare nada** — y entonces la diferencia entre los dos no se puede ver. El
+> día que la enumeración se amplía, el complemento **hay que recalcularlo**, y
+> si no, el mismo elemento cae en dos grupos y la comparación informa
+> diferencias que son **la misma cosa consigo misma**.
+
+Medido: una familia implícita definida como *«las rutas estáticas»* funcionó
+mientras las familias explícitas eran 2 y ninguna tenía rutas estáticas. Al
+derivarlas —pasaron a 4— entró una **cuyas páginas SON rutas estáticas**, y la
+sonda informó **3 colisiones y 3 sombras inexistentes**. La corrección es la
+palabra que faltaba: *«las estáticas que nadie declara»*, y se calcula
+**después** de leer lo declarado, no antes.
+
+> **Operativamente: si tu comparación tiene un grupo «los demás», su definición
+> depende del resto de grupos — así que ampliar el resto es tocarlo.** Es
+> §*un patrón que casa en TODAS tampoco mide nada* con el objeto cambiado: no un
+> selector que sobra, sino un conjunto que dejó de ser disjunto sin que nadie lo
+> tocara.
+
 ## Comandos
 
 ```bash

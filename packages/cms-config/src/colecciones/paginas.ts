@@ -37,7 +37,34 @@ import { registroDeSlug } from "../hooks/registro-slug.ts";
 export const paginas: CollectionConfig = {
   slug: "paginas",
   admin: { useAsTitle: "titulo", group: "Contenido" },
-  hooks: registroDeSlug({ familia: "paginas" }),
+  /**
+   * ⚠⚠ **`enElPlano` NO es opcional aquí, y lo dice la medida (94.ª tanda).**
+   *
+   * Sin el predicado, `registroDeSlug` reclama **las 31** en el plano de un
+   * segmento de `/es/`. Y las 31 **no están en el plano**: `qa:f33-rutas` mide
+   * su profundidad y da **19 de un segmento · 8 de dos · 2 de tres · 2 de
+   * cuatro**. O sea que reclamar todas reservaría **12 slugs de raíz que no son
+   * la URL de nadie** —`kunak-air`, `kunakpedia`, `centro-de-ayuda`,
+   * `servicio-de-reparacion`…— y eso **no protege: BLOQUEA altas legítimas**,
+   * que es la otra forma de que una guarda deje de servir.
+   *
+   * **No es una precaución teórica: el defecto ya existe en el repo y está
+   * medido.** `articulos-kb` llama a `registroDeSlug` **sin** `enElPlano` y es
+   * una colección PREFIJADA (`prefijo` es `required`), así que reserva **6 de
+   * 6** slugs de raíz que sus URLs reales —`/centro-de-ayuda/kunak-air/
+   * articulos-de-ayuda/<slug>`, cuatro segmentos— no usan. Sale nombrado en
+   * `qa:slugs` §RECLAMO SIN RUTA y está fichado en `PENDIENTES-QA.md`
+   * §F3-3-REGISTRO-SOBRE-RECLAMA; **no se arregla aquí** porque toca una
+   * colección ya verificada.
+   *
+   * El predicado es el mismo patrón que `productos` (§2e), con su eje: allí el
+   * discriminador es `padre`, aquí es `prefijo`. Y va escrito **antes** de
+   * emitir, que es la única forma de que no se pague dos veces.
+   */
+  hooks: registroDeSlug({
+    familia: "paginas",
+    enElPlano: (doc) => !doc.prefijo,
+  }),
   fields: [
     { name: "slug", type: "text", required: true, unique: true, index: true },
     /**

@@ -1,5 +1,144 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ CMS-4 · **DECISIÓN DE PROPIETARIO — ¿quién sirve las 31 de la cola larga?** — 94.ª tanda, 2026-08-22
+
+**CORTE LIMPIO 1 disparó**: el enrutado abre decisión de modelo, así que se ficha
+con su reparto y **la tanda NO entró en la geometría** (ESCALÓN 2 queda para la
+siguiente, con esta decisión tomada).
+
+### El reparto, derivado (`qa:f33-rutas`, congelada `medidas/f33-rutas.json`)
+
+**Profundidad de las 31 rutas del clon** — decide si el slug vive en el plano de
+raíz o bajo prefijo, y por tanto si su unicidad hay que imponerla ENTRE familias:
+
+| segmentos | n |
+|---|---|
+| **1** | **19** |
+| 2 | 8 |
+| 3 | 2 |
+| 4 | 2 |
+
+**Y las DOS afirmaciones que la 93.ª no separaba, ahora con su cardinal cada una:**
+
+| | n | qué significa |
+|---|---|---|
+| **COLISIÓN LITERAL** | **0 de 31** | la ruta del clon ya la emite algo **hoy**. Ninguna |
+| **SOLAPE DE PLANO** | **30 de 31** | caería DENTRO del segmento dinámico de otra familia. Hoy no es colisión porque la página no se emite; **lo será el día que se emita**, y el build no avisa |
+
+> ⚠ La 93.ª midió *«0 colisiona literalmente»* y *«5 de 6 caen en `app/[slug]`»*.
+> Lo primero sigue siendo verdad; lo segundo, escalado a las 31 y con los
+> catch-all contados, es **30 de 31 y TRES catch-all distintos**, no uno.
+
+**A qué plano caería cada una:**
+
+| plano | n | páginas |
+|---|---|---|
+| **`/[slug]`** | **19** | el plano de raíz de grupo A (149 blog + 37 términos) |
+| `/centro-de-ayuda/[...ruta]` | 4 | catch-all de KB, `dynamicParams = false` |
+| `/soporte/[...ruta]` | 4 | ídem |
+| `/recursos/[...ruta]` | 3 | ídem |
+| **ninguno** | **1** | `/empresa/premios-y-reconocimientos` — **no hay ruta que la sirva ni que la estorbe** |
+
+### Qué haría falta para emitir las 31 sin que ninguna se sirva por dos vías
+
+1. **Las 19 de un segmento** — `/[slug]` tendría que despachar contra un
+   **TERCER** catálogo. El precedente existe y está bendecido (`/sectores/[slug]`
+   sirve SECTOR y MONOGRÁFICO desde la 1.ª tanda), así que **la pregunta no es
+   si se puede**. Es que hacerlo cambia el plano de raíz de grupo A, que está
+   verificado, y **eso es del propietario**;
+2. **Las 11 bajo catch-all** — hay que extender el `generateStaticParams` de los
+   tres, que hoy tienen `dynamicParams = false` y listan sólo lo suyo.
+   **Toca rutas ya verificadas** (los 6 artículos de KB) y entra con su
+   antes/después;
+3. **La 1 sin plano** — `/empresa/premios-y-reconocimientos` necesita ruta nueva;
+   es la única que no estorba a nadie.
+
+### Las tres salidas, con su coste — **sin recomendación, porque no toca**
+
+| # | salida | cuesta |
+|---|---|---|
+| **E1** | `/[slug]` sirve una tercera familia; los catch-all se extienden | el plano de raíz pasa a despachar 3 catálogos y **3 rutas verificadas se tocan**. Es lo más fiel: **0 URLs cambian** |
+| **E2** | la cola larga estrena **prefijo** propio | no toca nada verificado, y **rompe 19 URLs vivas** — sería la primera desviación estructural del clon, que es justo lo que `ENRUTADO.md` §3 descartó para grupo A |
+| **E3** | emitir **sólo las 12 prefijadas** y dejar las 19 de raíz | ninguna decisión hoy, **19 rutas sin emitir** declaradas |
+
+> **Lo que sí está resuelto y no espera a nadie: qué dice la GUARDA cuando se
+> haga.** `qa:slugs` ya no lleva lista: deriva sus familias del registro, así que
+> **`paginas` entra sola el día que se siembre** y una colisión con blog o
+> término sale roja sin que nadie toque la sonda. Era la pregunta del encargo, y
+> es lo que hace que E1 sea comprobable en vez de confiada.
+
+---
+
+## ⚠ F3-3-REGISTRO-SOBRE-RECLAMA · el registro reserva **8 slugs de raíz que nadie sirve** — 94.ª, 2026-08-22
+
+Salió al derivar las familias de `qa:slugs`. `registroDeSlug({familia,
+enElPlano})` escribe el registro que el `UNIQUE` de Postgres impone; **una
+colección PREFIJADA que no pase `enElPlano` reclama el plano de raíz sin estar
+en él**:
+
+| familia | reclama | sin ruta de raíz | por qué |
+|---|---|---|---|
+| `articulos-kb` | 6 | **6 de 6** | `prefijo` es `required`: sus URLs son `/centro-de-ayuda/kunak-air/articulos-de-ayuda/<slug>`, **4 segmentos** |
+| `productos` | 5 | **2 de 5** | dos sin página emitida todavía |
+
+**Por qué importa:** reservar un slug de raíz que el sitio no usa **no protege —
+puede BLOQUEAR un alta legítima** que lo quiera. Es la otra forma de que una
+guarda deje de servir, y lo dice el propio hook en su comentario de
+`afterDelete`.
+
+**Estado:** `qa:slugs` lo publica NOMBRADO y con su cardinal, y **no cierra el
+código de salida**, con su razón: hoy es latente —ningún documento del plano
+quiere esos 8— y volver rojo permanente a `npm run check` por algo latente sería
+cambiar el portón del repo por criterio propio.
+
+**No se arregla en esta tanda** porque toca una colección verificada. El arreglo
+medido es una línea: `enElPlano: () => false` en `articulos-kb`, y decidir si los
+2 productos sin página deben reclamar.
+
+> ✅ **Lo que sí se arregló, porque era gratis: `paginas`.** Llamaba a
+> `registroDeSlug` **sin** `enElPlano` y habría reservado **12 slugs de raíz que
+> no son la URL de nadie** (19 de sus 31 rutas son de un segmento; 12 no). Lleva
+> ya `enElPlano: (doc) => !doc.prefijo`, mismo patrón que `productos`. La
+> colección **no está registrada en `COLECCIONES`**, así que el cambio es de
+> riesgo cero — y escrito ANTES de emitir, que es la única forma de no pagarlo
+> dos veces.
+
+---
+
+## ⚠ F3-3-CAMINO-DE-SIEMBRA · qué se va a encontrar la tanda que emita — 94.ª, derivado
+
+**Los 7 scripts de `seed/` que escriben sin `w()`** (fichado por la 91.ª,
+re-derivado hoy y **coincide exactamente**): `captura.mjs` · `captura-css.mjs` ·
+`captura-f3.mjs` · `captura-f3-media.mjs` · `captura-media.mjs` ·
+`captura-sectores.mjs` · `catalogos.mjs`.
+
+> ✅ **El camino que sembrará `paginas` pasa por UNO de los siete, y NO puede
+> pisar una congelada.** `seed.mjs` importa `catalogos.mjs`, y sus
+> `writeFileSync` escriben **sólo en `scripts/qa/.tmp/`** — scratch, nunca
+> `medidas/`. Los otros **seis son `captura-*`**, y la captura está **completa**
+> (32/32 con todas sus hojas, pagado en la 91.ª): la tanda que emita no debería
+> correr ninguno.
+
+**Los 3 negativos rojos preexistentes** (93.ª) contra el camino de siembra:
+
+| negativo | ¿en el camino de `paginas`? | por qué |
+|---|---|---|
+| `coloca-media` 2/3 | **SÍ** | es el colocador `media-corpus/` → `apps/web/public`; *«sin él la siembra muere igual»* |
+| `media-siembra` 3/4 | **SÍ** | mide el hueco de media **por colección y por canal**, y `paginas` trae imágenes (71 instancias en 19 páginas) |
+| `productos-hueco` 3/5 | no | es de `productos` |
+
+**2 de 3 están en el camino.** Sólo se deriva: §regla 21 dice que un rojo se
+diagnostica **corriendo su sonda SOLA**, y eso es otra tanda.
+
+> ⚠ **Y una lista a mano más, encontrada al derivar esto:** `qa:media-canales`
+> camina la config (bien) pero su alcance es **`SEMBRADAS`**, que es un array de
+> **9 literales** en `seed.mjs` y no incluye `paginas` (ni `articulos-kb`). O sea
+> que el inventario de canales de media **no verá `paginas`** hasta que alguien
+> añada la línea — que es §regla 9 caso 7 otra vez, en el sitio donde ya costó
+> cuatro canales descubiertos a golpe de seed muerto.
+
+---
+
 ## ⚠ F3-3-EMISION · el comparador EXISTE y su negativo está probado; **la emisión NO está hecha** — 93.ª tanda, 2026-08-22
 
 **CORTE LIMPIO 3 está PASADO**, así que emitir queda autorizado. Lo que sigue
