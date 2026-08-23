@@ -25,15 +25,27 @@
  * lleva seguro** y con **lo que NO está probado declarado con su n**, nunca
  * con los valores de su única instancia convertidos en el modelo.
  *
- * | bloque | n páginas | n instancias | qué NO se puede decidir con esa n |
- * |---|---|---|---|
- * | `codigo`   | 9 | 9 | nada pendiente: es HTML crudo, no tiene forma que decidir |
- * | `toggle`   | 5 | 10 | si «abierto por defecto» es campo o plantilla |
- * | `video`    | 5 | 30 | si el proveedor del `iframe` es un enum o texto libre |
- * | `slider-completo` | **2** | **2** | **todo lo que no sea el array de diapositivas** |
- * | `mapa`     | **1** | **1** | **si el pin es uno o varios; si el zoom es campo** |
- * | `slider`   | **1** | **1** | **si difiere del `fullwidth` en algo más que el ancho** |
- * | `icono`    | **1** | **3** | **si el icono es enum, fuente o imagen** |
+ * | bloque | n páginas | n instancias | *con caja* (95.ª) | qué NO se puede decidir con esa n |
+ * |---|---|---|---|---|
+ * | `codigo`   | 9 | 9 | 9 | nada pendiente: es HTML crudo, no tiene forma que decidir |
+ * | `toggle`   | 5 | 10 | 10 | si «abierto por defecto» es campo o plantilla |
+ * | `video`    | 5 | 30 | **0** | ⛔ **NADA de su geometría**: sus 30 instancias viven en desplegables CERRADOS y no tienen caja que medir (§F3-3-GEOMETRIA). Sigue en pie lo del proveedor del `iframe` |
+ * | `slider-completo` | **2** | **2** | 2 | **todo lo que no sea el array de diapositivas** |
+ * | `mapa`     | **1** | **1** | 1 | **si el pin es uno o varios; si el zoom es campo** |
+ * | `slider`   | **1** | **1** | 1 | **si difiere del `fullwidth` en algo más que el ancho** |
+ * | `icono`    | **1** | **3** | 3 | **si el icono es enum, fuente o imagen** |
+ *
+ * ⚠ **La columna «con caja» es de la 95.ª y NO es higiene de recuento**: «en el
+ * DOM» y «con caja» son **dos medidas distintas**, y la geometría de un módulo
+ * sin caja **no es medible** — `getComputedStyle` sobre un contenedor cerrado no
+ * resuelve porcentajes contra nada. El n que decide **qué test se puede aplicar**
+ * es el de la tercera columna.
+ *
+ * ⚠ **Y el n de `n = 1` se lee CON SU UNIDAD** (§*un denominador se escribe con
+ * su unidad*): **3** tipos con n = 1 **página** (`mapa` · `slider` · `icono`) y
+ * **2** con n = 1 **instancia** (`mapa` · `slider`). El «4 tipos a n = 1» que
+ * circulaba en `PLAN-FASE-3` §F3-3 **es falso en las dos** — venía de contar
+ * `n ≤ 2` páginas entre las definiciones nuevas, que son **5**.
  *
  * **Y el corolario que evita el arreglo falso:** cuando para un tipo de n = 1
  * no se pueda distinguir plantilla de campo, **ésa es la respuesta y se
@@ -70,9 +82,16 @@ import {
  * ⚠ **NO se reutiliza `ritmoModuloKb` y esto NO es la clase C7.** Lo compartido
  * es la PRIMITIVA —`medida()`, una sola definición de «un valor con su
  * unidad»—; lo que difiere es la COMPOSICIÓN, y aquí todavía **no está
- * medida**: ninguna sonda ha comparado un solo eje de estas 32 contra el
- * original (`COBERTURA-MEDICION`, 0/32). Se declara la misma composición que
- * KB **como punto de partida SIN PROBAR**, no como medida.
+ * COMPARADA**: ninguna sonda ha comparado un solo eje de estas **31** contra el
+ * clon (`COBERTURA-MEDICION`, **0/31**), porque el lado del clon no existe. Se
+ * declara la misma composición que KB **como punto de partida SIN PROBAR**, no
+ * como medida.
+ *
+ * ✅ **95.ª — el lado del ORIGINAL sí está derivado** (`qa:f33-geo`, §2j.5), y
+ * lo que dice sobre esta composición hay que leerlo: **24 de 49 celdas
+ * (tipo × eje) computan `0`, o sea el VALOR INICIAL** — nadie escribió nada. El
+ * test A no puede separar «el editor puso 0» de «nadie tocó», así que esas
+ * celdas siguen SIN PROBAR **y por un motivo distinto del que decía esta nota**.
  * ═════════════════════════════════════════════════════════════════════════ */
 
 /**
@@ -86,9 +105,9 @@ export const ritmoModuloPagina: Field = {
   name: "ritmo",
   type: "group",
   fields: [
-    medida("mt", "SIN PROBAR — 0 ejes comparados en las 32 (COBERTURA-MEDICION)"),
+    medida("mt", "SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5"),
     medida("mb", "SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`"),
-    medida("pb", "SIN PROBAR — 0 ejes comparados en las 32"),
+    medida("pb", "SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)"),
   ],
 };
 
@@ -533,7 +552,7 @@ export function validaReticulaPagina(valor: unknown): true | string {
 }
 
 export const CAMPOS_FILA_PAGINA: Field[] = [
-  medida("pt", "SIN PROBAR — 0 ejes comparados en las 32 (COBERTURA-MEDICION)"),
+  medida("pt", "SIN PROBAR — 0 ejes COMPARADOS en las 31 (el lado del clon no existe). El lado del ORIGINAL sí está derivado: `qa:f33-geo`, §2j.5"),
   medida("pb", "SIN PROBAR — ídem"),
   medida("mt", "SIN PROBAR — ídem"),
   medida("mb", "SIN PROBAR — ídem"),
@@ -559,7 +578,7 @@ export const bloquesPagina: Field = {
   type: "array",
   required: false,
   fields: [
-    medida("pt", "SIN PROBAR — 0 ejes comparados en las 32"),
+    medida("pt", "SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)"),
     medida("pb", "SIN PROBAR — ídem"),
     {
       name: "modulosSueltos",

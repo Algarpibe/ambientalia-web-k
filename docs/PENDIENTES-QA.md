@@ -398,6 +398,113 @@ diagnostica **corriendo su sonda SOLA**, y eso es otra tanda.
 
 ---
 
+## ✅ F3-3-GEOMETRIA · **el lado del ORIGINAL, DERIVADO** — y la variable que manda sigue siendo la FILA, con su separadora — 95.ª, 2026-08-22
+
+`bloques/paginas.ts` declaraba `pt`/`pb`/`mt`/`mb` y `anchoPct` **SIN PROBAR**
+con la nota *«0 ejes comparados»*. **`qa:f33-geo`** (negativo **4/4**) deriva el
+lado del original: **31 páginas × 2 anchos**, offline por `file://` **con sus
+hojas** y la red cortada, midiendo el **mismo módulo** a 1440 y a 390 en la
+misma corrida — que es lo que el test A exige. Congelada: `medidas/f33-geo.json`.
+
+**Dominio y control cruzado:** la membresía sale de `medidas/f33-rutas.json`
+(94.ª, commiteada) y se cruza contra el `<body>` — **0 `single-post` en las 31**.
+El recorrido da **313 módulos**, que **cuadra con `arbol-f33.log` y §2j.3c**.
+
+### El resultado que más vale: la regla del ANCHO DE FILA, reproducida en un TERCER arquetipo
+
+La cola larga tiene **las dos filas** que este repo conoce en una sola colección
+—**1238.39** (`B-`, ×57) y **911.75** (`BT`, ×19)—, así que puede separar lo que
+`articulos-kb` no podía:
+
+```
+fila 1238.39 →  89 de 220 módulos en 34.05   repartos {1_2, 1_3, 2_3, 4_4}
+fila  911.75 →  12 de  48 módulos en 25.06   repartos {1_2}
+módulos con el default de OTRA fila: 0
+```
+
+> ✅ **SEPARADORA (1, y basta): `1_2` lleva `25.06` en fila de 911.75 y `34.05`
+> en fila de 1238.39.** El mismo tipo de columna con dos defaults según su fila
+> ⇒ el tipo de columna **no** los explica. Es §*un modelo se elige por lo que lo
+> SEPARA, no por lo que acierta*: los 101 aciertos no deciden nada, esta sí.
+>
+> ⚠ **Con su matiz:** a 911.75 el default sale con **un solo reparto**, así que
+> ese ancho **por sí solo** no separaría nada. Separa el **cruce**.
+
+### ⚠⚠ Las tres cosas que cambian cómo se lee la tabla, y sin ellas habría inventado campos
+
+**(a) EL CERO NO ES UN VALOR ESCRITO.** El test A supone que **hay algo
+escrito**; un ritmo computado de **0** es el **valor inicial** y sale igual a los
+dos anchos **porque nadie escribió nada**. Leerlo como *«px absolutos ⇒ CAMPO»*
+habría convertido el defecto del navegador en modelo, y aquí es masivo: **24 de
+49 celdas** (tipo × eje). Salen **SIN ESCRIBIR** y **no se cablean**.
+
+**(b) «EN EL DOM» ≠ «CON CAJA»** — **313 módulos** / **277 con caja**; 113 filas
+/ 79. Los **36** sin caja son **desplegables cerrados** (**30 `video`** · 5
+`text` · 1 `button`): `getComputedStyle` sobre un contenedor cerrado **no
+resuelve porcentajes contra nada**, así que meterlos habría fabricado un pico en
+0 que el original no tiene.
+
+**(c) `anchoPct` no significa lo mismo en todos los tipos** — en un módulo de
+bloque recupera el ancho declarado (`image`: 33·50·75·80·85·100, limpios); en
+uno **enlínea** mide el **contenido** (`button`: 33.36·38.76·62.16…). **25
+instancias en 2 tipos** quedan SIN MEDIR **por el instrumento**.
+
+### ⛔ CORTE LIMPIO 2 — nombrado, con lo que haría falta
+
+| tipo | n | por qué | haría falta |
+|---|---|---|---|
+| `video` | 30 inst · **0 con caja** | desplegables cerrados | **INTERACCIÓN** — eje `comportamiento`, **0/31** |
+| `map` | 1 inst | ni A ni B separan | una **2.ª** instancia |
+| `slider` | 1 inst | ídem | una **2.ª** instancia |
+
+Más **24 celdas** sin escribir, nombradas una a una en la congelada.
+
+### Los de n pequeño, y NO son el mismo caso
+
+- **`icon`** (3 inst · 1 pág) — **el test B aplica y contesta: NO varían** entre
+  los 3 hermanos. Varianza cero, que *no prueba plantilla*. Decide el **test A**:
+  `mb 29.59` **se mueve** ⇒ **PLANTILLA**; `anchoPct 86.93` se mueve pero el test
+  A **no vale para la caja** ⇒ SIN PROBAR; `mt`/`pt`/`pb` son 0 ⇒ sin escribir.
+  **De sus 5 ejes, UNO tiene veredicto**;
+- **`fullwidth_slider`** (2 inst · 2 pág) — varianza **entre** instancias: los 4
+  ejes valen **0 en las dos** ⇒ sin escribir, no plantilla;
+- **`map`** y **`slider`** (1/1) — **INDECIDIBLE, y ésa ES la respuesta.**
+  Medido con su n: 4 ejes a **0**, `anchoPct` **100**. No se cablea.
+
+### ⚠ DOS DERIVAS DEL INSTRUMENTO, cazadas y declaradas
+
+**1 · Un `loading=lazy` sin neutralizar.** Dos corridas del **mismo código**
+daban **269** y **270** módulos con caja. §regla 16 dice que el no-determinismo
+es la **última** hipótesis: el diff estaba **confinado a `image`**, o sea una
+imagen perezosa — y `CLAUDE.md` §Notas de método **ya manda** forzarlas a
+`eager`. Esta sonda se lo había saltado. Con el `eager` puesto, **dos corridas
+consecutivas congelan IDÉNTICO** (lo dice `w()`) y de paso se recuperan **8
+módulos** que salían sin caja.
+
+**2 · Y la espera que lo arregla hubo que ACOTARLA.** La primera versión
+esperaba a que todas las imágenes cargaran; con la red cortada, alguna nunca
+dispara su `onerror` y la sonda **colgó hasta el `protocolTimeout`**. Es §regla
+17: **una espera sin tope no da rojo — se AGOTA**, que ni pasa ni falla. Va con
+`Promise.race` a 2 s.
+
+**3 · Un flake declarado con su n:** el caso `sin-hojas` del negativo salió
+**exit 1 una vez de 4 observaciones** (2 corridas del harness + 2 réplicas
+directas; las otras 3, exit 2 por su motivo). Es del navegador, no del dato, y
+se dice en vez de darlo por bueno.
+
+**Congeladas caducadas, renombradas con su DEFECTO y su ALCANCE** (§regla 5bis,
+para liberar el nombre canónico): `-CONTABA-MODULOS-SIN-CAJA-Y-LEIA-EL-0-COMO-CAMPO`
+· `-SIN-DISPLAY-NI-CRUCE-MB` · `-SIN-SEPARADORAS-DE-MB` · `-SIN-EAGER-DERIVA-1-IMAGEN`.
+
+### Lo que esta ficha NO afirma
+
+**Que la geometría esté verificada.** Es **un solo lado**. `qa:f33-cmp` sigue a
+**0 ejes comparados en las 31**, y las dos frases —*«el original está
+derivado»* y *«hay 0 ejes comparados»*— son **verdad a la vez**. La segunda
+manda.
+
+---
+
 ## ⚠ F3-3-EMISION · el comparador EXISTE y su negativo está probado; **la emisión NO está hecha** — 93.ª tanda, 2026-08-22
 
 **CORTE LIMPIO 3 está PASADO**, así que emitir queda autorizado. Lo que sigue
@@ -423,9 +530,18 @@ para que la tanda que emita no lo redescubra.
 > declara `pt/pb/mt/mb` como **«SIN PROBAR — 0 ejes comparados»**, y lo mismo
 > `anchoPct`. Emitir exige **derivar esos valores del original medido**, no
 > elegirlos: cablear los de una instancia es exactamente cómo se fabrica una
-> FAMILIA DE CALIBRACIÓN, y con 4 tipos a **n = 1** no hay variación que lo
-> corrija. El comparador es el antídoto —da el lazo de realimentación—, pero
-> hay que **usarlo mientras se construye**, no al final.
+> FAMILIA DE CALIBRACIÓN. El comparador es el antídoto —da el lazo de
+> realimentación—, pero hay que **usarlo mientras se construye**, no al final.
+>
+> ✅ **95.ª: EL LADO DEL ORIGINAL YA ESTÁ DERIVADO** — `qa:f33-geo`, 31 páginas ×
+> 2 anchos, con su CORTE LIMPIO 2 nombrado (§F3-3-GEOMETRIA). Lo que la tanda que
+> emita ya **no** tiene que hacer es medir el original; lo que sí tiene que hacer
+> es **construir el lado del clon y compararlos**.
+>
+> ⚠ **Y «4 tipos a n = 1» era falso EN LAS DOS UNIDADES** (lo decía
+> `PLAN-FASE-3` §F3-3): son **3** en n = 1 **página** (`icon` · `map` · `slider`)
+> y **2** en n = 1 **instancia**. El 4 venía de contar `n ≤ 2` páginas entre las
+> definiciones nuevas, que son **5**. Corregido con su unidad en los tres sitios.
 
 ### ⚠ EL ENRUTADO, derivado hoy y no supuesto — es lo que más sorprende
 

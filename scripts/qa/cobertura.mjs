@@ -502,6 +502,18 @@ const NO_APORTAN = new Set([
   // `pie-mecanismo` y del corpus capturado, así que no puede aportar a una
   // matriz cuya unidad es «ruta comparada contra el original».
   "pie-familias", "pie-mecanismo", "pie-legal",
+  /**
+   * `f33-geo` (95.ª) — **UN SOLO LADO, y por eso no aporta.** Deriva la
+   * geometría de las 31 de la cola larga del CORPUS CON SUS HOJAS, offline. Es
+   * una medida buena del ORIGINAL y **no es una comparación**: quien compara
+   * los dos lados es `qa:f33-cmp`, que sigue sin corrida de verdad porque el
+   * lado del clon no existe.
+   *
+   * Acreditarle ejes aquí sería §*acreditar un eje que la sonda no compara* —
+   * exactamente el motivo por el que `f33-cmp` tampoco está en `DECLARADAS`.
+   * Entra en la matriz la tanda que emita, y por `f33-cmp`, no por ésta.
+   */
+  "f33-geo",
   "dos-rutas", "c-rutas", "c-censo", "c-muestra", "c-spec", "c-embeds", "c-bases",
   "a-censo", "a-muestra", "a-behaviors", "a-scripts", "a-lexical", "a-ids", "a-embeds", "a-spec",
   "c-behaviors", "c1-localiza", "d4-pie", "d4-tipografia", "d4-cta", "d4-suscribete", "d123-flujo",

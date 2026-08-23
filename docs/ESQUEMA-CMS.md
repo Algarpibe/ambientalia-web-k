@@ -4113,7 +4113,7 @@ se conservan con su alcance en el nombre:
 
 | | |
 |---|---|
-| **la forma de cada uno de los ~~12~~ 11 bloques** | ⚠ **escrita en la 92.ª** (`bloques/paginas.ts`), con **el n de cada tipo al lado y lo SIN PROBAR declarado**: 5 de las 8 definiciones nuevas descansan en **n ≤ 2 páginas** y **3 en n = 1**. Lo que queda por medir es la GEOMETRÍA, contra el original con sus hojas — **0 ejes comparados en las 31**.<br>✅ **93.ª: el INSTRUMENTO para medirla ya existe** — `qa:f33-cmp`, dos lados, negativo 3/3, sobre un piloto de 6 derivado por lo que ejercita (11/11 tipos · 3/3 regímenes). ⚠ **Y «0 ejes comparados» SIGUE SIENDO CIERTO**: el comparador está construido y la comparación no está hecha, porque el lado del clon no existe. Las dos frases son verdad y la segunda es la que manda (`PENDIENTES-QA.md` §F3-3-EMISION) |
+| **la forma de cada uno de los ~~12~~ 11 bloques** | ⚠ **escrita en la 92.ª** (`bloques/paginas.ts`), con **el n de cada tipo al lado y lo SIN PROBAR declarado**: 5 de las 8 definiciones nuevas descansan en **n ≤ 2 páginas** y **3 en n = 1 página** (`icon` · `map` · `slider`; en unidad INSTANCIA son **2**, y el «4» que circulaba en `PLAN-FASE-3` §F3-3 es falso en las dos — §2j.5).<br>✅ **93.ª: el INSTRUMENTO de DOS LADOS ya existe** — `qa:f33-cmp`, negativo 3/3, sobre un piloto de 6.<br>✅ **95.ª: el LADO DEL ORIGINAL ya está DERIVADO** — `qa:f33-geo` (negativo 4/4), 31 páginas × 2 anchos, offline con sus hojas: §2j.5.<br>⚠⚠ **Y «0 ejes comparados» SIGUE SIENDO CIERTO, que es lo que hay que leer dos veces**: *«la geometría del original está derivada»* y *«hay 0 ejes comparados»* son **las dos verdad**, porque comparar exige **dos** lados y el del clon no existe. La segunda es la que manda (`PENDIENTES-QA.md` §F3-3-EMISION) |
 | ~~**si `slide` es bloque o hijo de `slider`**~~ | ✅ **CONTESTADO OFFLINE en la 92.ª: es HIJO**, medido en el árbol con pila (`et_pb_fullwidth_slider_0 > et_pb_slides > et_pb_slide_0`, **2/2**). **La unión son 11 bloques, no 12.** `mod-v4` lo contaba como tipo de primer nivel porque barre con un regex plano: los dos instrumentos son correctos en lo que miden y **sólo uno contesta la pregunta que el pre-registro hacía** |
 | **`code`** | qué es exactamente su contenido (formulario incrustado, script) y si cae bajo la whitelist de §3 o necesita campo propio |
 | ~~las 16 sueltas sin capturar~~ | ✅ **resuelto el mismo día: no son páginas** (13 × 301 · 3 × 404). La unión **no** es un mínimo: es completa para las 32 |
@@ -4123,6 +4123,131 @@ se conservan con su alcance en el nombre:
 `mod-v4.log` (registro de bloques derivado, control §sondas 4: el parseo tira si
 casa con 0 slugs) · pre-registro en
 `docs/research/cola-larga/PRE-REGISTRO-CMS-3.md`.
+
+## ✅ 2j.5 · LA GEOMETRÍA DE LA COLA LARGA — DERIVADA DEL CORPUS (2026-08-22, 95.ª tanda)
+
+*(Es de **CMS-3**, no de CMS-4: la geometría es el hueco que §2j.4 dejó abierto.
+Va aquí, entre §2j.4 y la decisión de enrutado.)*
+
+**El lado del ORIGINAL, que era la mitad que faltaba.** `qa:f33-geo` (negativo
+**4/4**) renderiza las **31** capturas por `file://` **con sus hojas**, red
+cortada, y mide `mt`·`mb`·`pt`·`pb` y `anchoPct` **a 1440 y a 390 en la misma
+corrida y sobre el mismo módulo** — que es lo que el test A exige para poder
+aplicarse. Congelada: `medidas/f33-geo.json`.
+
+> **Dominio derivado, no enumerado:** la membresía sale de `medidas/f33-rutas.json`
+> (94.ª, commiteada), y se **cruza contra el `<body>`** — **0 `single-post` en
+> las 31**, o sea que `f33-rutas` y S1 concuerdan. El recorrido da **313 módulos**,
+> que **cuadra con `arbol-f33.log` y con §2j.3c**: otro instrumento, mismo objeto.
+
+### ⚠⚠ 1 · EL ANCHO DE FILA, y por eso la cola larga puede SEPARAR lo que KB no podía
+
+**Primero el contenedor, antes de comparar contra ningún default** (§*un default
+de ritmo se escribe CON SU CONTENEDOR o no se escribe*):
+
+| régimen | anchos de fila medidos |
+|---|---|
+| `B-` | **1238.39** (×57) · 1296 (×2) |
+| `BT` | **911.75** (×19) · 784.09 (×1) |
+
+**La cola larga tiene LAS DOS filas que este repo conoce en la misma
+colección**: la de **1238.39** del monográfico y la de **911.75** de
+`articulos-kb`. Eso es lo que la convierte en el **tercer** arquetipo capaz de
+volver a separar las dos variables que en KB estaban confundidas.
+
+**Y las separa.** `2.75 % de 1238.39 = 34.05` · `2.75 % de 911.75 = 25.06`:
+
+```
+fila 1238.39 →  89 de 220 módulos en 34.05   repartos {1_2, 1_3, 2_3, 4_4}
+fila  911.75 →  12 de  48 módulos en 25.06   repartos {1_2}
+módulos con el default de OTRA fila: 0
+```
+
+> ✅ **LA INSTANCIA SEPARADORA, y basta una:** **`1_2` lleva `25.06` en una fila
+> de 911.75 y `34.05` en una de 1238.39.** El MISMO tipo de columna con DOS
+> defaults según el ancho de su fila ⇒ **el tipo de columna NO los explica y la
+> FILA sí.** `CLAUDE.md` §Test A queda **reproducido de forma independiente en un
+> tercer arquetipo**, y no por acumular aciertos sino por la única instancia que
+> distingue los dos modelos (§*un modelo se elige por lo que lo SEPARA*).
+>
+> ⚠ **Con su matiz, porque el acierto solo engañaría:** a **911.75** el default
+> sale con **un solo reparto**, así que ese ancho **por sí solo no separaría
+> nada**. Lo que separa es el **cruce** entre los dos anchos, no cada fila suelta.
+
+### ⚠⚠ 2 · TRES COSAS QUE CAMBIAN CÓMO SE LEE TODO LO DEMÁS
+
+**(a) EL CERO NO ES UN VALOR ESCRITO, Y EL TEST A NO PUEDE VERLO.** La premisa
+del test A es que **hay algo escrito**; un `margin-top` computado de **0** es el
+**valor inicial** de la propiedad, y sale igual a 1440 y a 390 **porque nadie
+escribió nada**. Leerlo como *«px absolutos ⇒ CAMPO»* convierte un defecto del
+navegador en un campo del modelo — y aquí habría sido masivo: **24 de 49 celdas**
+(tipo × eje) son exactamente eso. Salen **SIN ESCRIBIR**, que no es ni campo ni
+plantilla, y para el modelo pesa lo mismo que SIN PROBAR: **no se cablea**.
+
+**(b) «EN EL DOM» Y «CON CAJA» NO SON LA MISMA MEDIDA** (§*un censo de NODOS y
+un censo de LO QUE SE VE*):
+
+| | en el DOM | con caja |
+|---|---|---|
+| módulos | **313** | **277** |
+| filas | 113 | 79 |
+| columnas | 179 | 145 |
+
+Los **36** sin caja son **desplegables cerrados** —**30 `video`** · 5 `text` · 1
+`button`—: están en el DOM y **no están en la página**. Y no es higiene de
+recuento: **`getComputedStyle` sobre un contenedor cerrado no resuelve
+porcentajes contra nada**, así que su `mb: 0` no significa «el editor puso 0».
+Meterlos en la distribución habría fabricado un pico en 0 que el original no
+tiene. Es §*el mecanismo de PESTAÑAS* (§7d) con el envoltorio cambiado — con una
+diferencia que importa: **aquí el CONTENIDO sí está capturado**, y lo que falta
+es sólo su geometría.
+
+**(c) `anchoPct` NO SIGNIFICA LO MISMO EN TODOS LOS TIPOS.** Se mide
+`caja / columna`: en un módulo de **bloque** eso recupera el ancho declarado
+—`image` da **33 · 50 · 75 · 80 · 85 · 100**, limpios—; en uno de nivel
+**enlínea** la caja **es la del contenido** —`button` da 33.36 · 38.76 · 62.16…—.
+**25 instancias en 2 tipos** (`button` · `blurb`) quedan **SIN MEDIR por el
+instrumento, no por el original**.
+
+### 3 · LOS DE n PEQUEÑO — y NO son el mismo caso
+
+| tipo | n | qué contesta cada test |
+|---|---|---|
+| **`icon`** | 3 inst · **1 pág** | **el test B APLICA** (hay hermanos) **y contesta: NO varían.** Varianza cero, que *no prueba plantilla*. Quien decide es el **test A**: `mb 29.59` **se mueve** a 390 ⇒ **PLANTILLA**. `anchoPct 86.93` también se mueve, pero el test A **no vale para la caja** ⇒ SIN PROBAR. `mt`/`pt`/`pb` son 0 ⇒ sin escribir. **De sus 5 ejes, UNO tiene veredicto** |
+| **`fullwidth_slider`** | 2 inst · 2 pág | varianza **ENTRE** instancias: los 4 ejes de ritmo valen **0 en las dos** ⇒ **sin escribir**, no plantilla |
+| **`map`** · **`slider`** | 1 inst · 1 pág | **INDECIDIBLE, y ésa ES la respuesta.** Medido con su n: los 4 ejes a **0** y `anchoPct` **100**. **No se cablea** |
+
+### ⛔ CORTE LIMPIO 2 · lo que NO se deriva del corpus, NOMBRADO
+
+| tipo | n | por qué | qué haría falta |
+|---|---|---|---|
+| **`video`** | 30 inst · **0 con caja** | viven en desplegables **cerrados** | medir con **INTERACCIÓN** — eje `comportamiento`, hoy **0/31** |
+| **`map`** | 1 inst | ni A ni B separan con una instancia | una **segunda** instancia |
+| **`slider`** | 1 inst | ídem | una **segunda** instancia |
+
+**Más 24 CELDAS** (tipo × eje) sin escribir, **nombradas una a una** en la
+congelada. **En ninguno de los dos casos se elige un valor plausible.**
+
+### Lo que esta derivación NO contesta
+
+- **nada del CLON**: es **un solo lado**. `qa:f33-cmp` sigue a **0 ejes
+  comparados en las 31**, y las dos frases son verdad a la vez;
+- el **contenido** de los módulos (eso lo derivó `arbol-f33`);
+- **si un valor DEBE ser campo**: los tests dicen qué está probado; la decisión
+  de modelo es de quien escriba el bloque, con esto delante;
+- el ancho **declarado** de los 25 módulos de nivel enlínea;
+- la geometría de los **36** módulos sin caja;
+- los **anchos intermedios**: se miden 1440 y 390, que es donde el contrato es de
+  **fidelidad** (§8.1).
+
+> ⚠ **Y dos derivas del INSTRUMENTO, cazadas y declaradas** (detalle en
+> `PENDIENTES-QA.md` §F3-3-GEOMETRIA): un `loading=lazy` sin neutralizar hacía
+> que dos corridas del mismo código dieran **269 y 270** módulos con caja —§regla
+> 16: la explicación aburrida era la buena, y el diff estaba **confinado a
+> `image`**—; y la espera que lo arregla **hubo que acotarla**, porque sin tope
+> colgó la sonda hasta el `protocolTimeout` (§regla 17: *una espera sin tope no
+> da rojo, se AGOTA*). Con las dos puestas, **dos corridas consecutivas congelan
+> IDÉNTICO**.
 
 ## ✅ 2k · CMS-4 · QUIÉN SIRVE LAS 31 — **EL PLANO EXISTENTE (E1)** (2026-08-22, 95.ª tanda)
 
