@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-23",
+    "fecha": "2026-08-24",
     "sonda": "extractor-f33",
     "pregunta": "¿qué documentos de `paginas` produce el corpus de las 31 de la cola larga?",
     "fuente": "corpus/fase-3/ (32/32 con sus hojas) + medidas/f33-rutas.json (el dominio)",
@@ -413,6 +413,7 @@
       {
         "slug": "kunak-air-cloud",
         "prefijo": "centro-de-ayuda",
+        "regimen": "BT",
         "titulo": "AIR Cloud",
         "seo": {
           "title": "Kunak Air Cloud - Kunak"
@@ -532,6 +533,7 @@
       {
         "slug": "kunak-air",
         "prefijo": "centro-de-ayuda",
+        "regimen": "BT",
         "titulo": "Kunak AIR",
         "seo": {
           "title": "Kunak AIR - Kunak"
@@ -687,6 +689,7 @@
       {
         "slug": "articulos-de-ayuda",
         "prefijo": "centro-de-ayuda/kunak-air",
+        "regimen": "BT",
         "titulo": "AIR Pro",
         "seo": {
           "title": "Artículos de ayuda - Kunak"
@@ -729,6 +732,7 @@
       {
         "slug": "video-tutoriales",
         "prefijo": "centro-de-ayuda/kunak-air",
+        "regimen": "BT",
         "titulo": "Kunak Help Center",
         "seo": {
           "title": "Video tutoriales - Kunak"
@@ -1032,6 +1036,7 @@
       {
         "slug": "centro-de-ayuda",
         "prefijo": "soporte",
+        "regimen": "BT",
         "titulo": "Kunak Help Center",
         "seo": {
           "title": "Centro de ayuda - Kunak"
@@ -1303,6 +1308,7 @@
       {
         "slug": "articulos-de-ayuda",
         "prefijo": "soporte/centro-de-ayuda/kunak-air-cloud",
+        "regimen": "BT",
         "titulo": "AIR Cloud",
         "seo": {
           "title": "Artículos de ayuda - Kunak"
@@ -1345,6 +1351,7 @@
       {
         "slug": "video-tutoriales",
         "prefijo": "soporte/centro-de-ayuda/kunak-air-cloud",
+        "regimen": "BT",
         "titulo": "Kunak Help Center",
         "seo": {
           "title": "Video tutoriales - Kunak"
@@ -1565,6 +1572,7 @@
       },
       {
         "slug": "productos",
+        "regimen": "B-",
         "titulo": "Sistemas de sensores de calidad del aire",
         "seo": {
           "title": "Sistemas de sensores de calidad del aire - Kunak",
@@ -1751,6 +1759,7 @@
       },
       {
         "slug": "sectores",
+        "regimen": "B-",
         "titulo": "Soluciones líderes de control del aire",
         "seo": {
           "title": "Sectores - Kunak"
@@ -1812,6 +1821,7 @@
       },
       {
         "slug": "recursos",
+        "regimen": "B-",
         "titulo": "Centro de recursos sobre la calidad del aire",
         "seo": {
           "title": "Recursos - Kunak"
@@ -1954,6 +1964,7 @@
       {
         "slug": "kunakpedia",
         "prefijo": "recursos",
+        "regimen": "B-",
         "titulo": "Kunakpedia",
         "seo": {
           "title": "Kunakpedia - Kunak",
@@ -2008,6 +2019,7 @@
       {
         "slug": "documentos-cientificos",
         "prefijo": "recursos",
+        "regimen": "B-",
         "titulo": "Precisión validada por organismos independientes",
         "seo": {
           "title": "Documentos científicos - Kunak",
@@ -2067,6 +2079,7 @@
       {
         "slug": "preguntas-frecuentes",
         "prefijo": "recursos",
+        "regimen": "B-",
         "titulo": "Preguntas frecuentes",
         "seo": {
           "title": "Preguntas frecuentes - Kunak",
@@ -2121,6 +2134,7 @@
       },
       {
         "slug": "aviso-legal",
+        "regimen": "B-",
         "titulo": "Aviso legal - Kunak",
         "seo": {
           "title": "Aviso legal - Kunak"
@@ -2199,6 +2213,7 @@
       },
       {
         "slug": "contacto",
+        "regimen": "B-",
         "titulo": "Contacta con nosotros",
         "seo": {
           "title": "Contacto - Kunak"
@@ -2330,6 +2345,7 @@
       },
       {
         "slug": "descarga-catalogo",
+        "regimen": "B-",
         "titulo": "Descarga de catálogo - Kunak",
         "seo": {
           "title": "Descarga de catálogo - Kunak"
@@ -2366,6 +2382,7 @@
       },
       {
         "slug": "empresa",
+        "regimen": "B-",
         "titulo": "Misión",
         "seo": {
           "title": "Empresa - Quiénes somos, nuestra misión y visión - Kunak"
@@ -2900,6 +2917,7 @@
       {
         "slug": "premios-y-reconocimientos",
         "prefijo": "empresa",
+        "regimen": "B-",
         "titulo": "Premios  y reconocimientos",
         "seo": {
           "title": "Premios y reconocimientos - Kunak"
@@ -3151,6 +3169,7 @@
       },
       {
         "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
+        "regimen": "B-",
         "titulo": "Informe técnico: control de la calidad del aire en ciudades - Kunak",
         "seo": {
           "title": "Informe técnico: control de la calidad del aire en ciudades - Kunak"
@@ -3181,6 +3200,7 @@
       },
       {
         "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-industria",
+        "regimen": "B-",
         "titulo": "Informe técnico: control de la calidad del aire en industria - Kunak",
         "seo": {
           "title": "Informe técnico: control de la calidad del aire en industria - Kunak"
@@ -3211,6 +3231,7 @@
       },
       {
         "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
+        "regimen": "B-",
         "titulo": "Informe técnico: Control de la calidad del aire en las minas - Kunak",
         "seo": {
           "title": "Informe técnico: Control de la calidad del aire en las minas - Kunak"
@@ -3245,6 +3266,7 @@
       },
       {
         "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-obras",
+        "regimen": "B-",
         "titulo": "Informe técnico: control de la calidad del aire en obras - Kunak",
         "seo": {
           "title": "Informe técnico: control de la calidad del aire en obras - Kunak"
@@ -3275,6 +3297,7 @@
       },
       {
         "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
+        "regimen": "B-",
         "titulo": "Informe técnico: Control de la calidad del aire en puertos - Kunak",
         "seo": {
           "title": "Informe técnico: Control de la calidad del aire en puertos - Kunak"
@@ -3309,6 +3332,7 @@
       },
       {
         "slug": "newsletter",
+        "regimen": "B-",
         "titulo": "Suscríbete - Kunak",
         "seo": {
           "title": "Suscríbete - Kunak"
@@ -3343,6 +3367,7 @@
       },
       {
         "slug": "politica-de-cookies",
+        "regimen": "B-",
         "titulo": "Política de cookies",
         "seo": {
           "title": "Política de cookies - Kunak"
@@ -3397,6 +3422,7 @@
       },
       {
         "slug": "politica-de-privacidad-y-de-proteccion-de-datos",
+        "regimen": "B-",
         "titulo": "Política de privacidad y de protección de datos - Kunak",
         "seo": {
           "title": "Política de privacidad y de protección de datos - Kunak"
@@ -3427,6 +3453,7 @@
       },
       {
         "slug": "politica-de-seguridad-de-la-informacion",
+        "regimen": "--",
         "titulo": "Política de seguridad de la información",
         "seo": {
           "title": "Política de seguridad de la información - Kunak"
@@ -3435,6 +3462,7 @@
       },
       {
         "slug": "sistema-interno-de-informacion",
+        "regimen": "BT",
         "titulo": "Política interna del canal del informante",
         "seo": {
           "title": "Política interna del canal del informante - Kunak"
@@ -3461,6 +3489,7 @@
       },
       {
         "slug": "soporte",
+        "regimen": "B-",
         "titulo": "Soporte",
         "seo": {
           "title": "Soporte - Kunak"
@@ -3540,6 +3569,7 @@
       {
         "slug": "servicio-de-reparacion",
         "prefijo": "soporte",
+        "regimen": "B-",
         "titulo": "Servicio de reparación (RMA)",
         "seo": {
           "title": "Servicio de reparación (RMA) - Kunak"
@@ -3671,6 +3701,7 @@
       },
       {
         "slug": "suscribete",
+        "regimen": "B-",
         "titulo": "Suscríbete - Kunak",
         "seo": {
           "title": "Suscríbete - Kunak"

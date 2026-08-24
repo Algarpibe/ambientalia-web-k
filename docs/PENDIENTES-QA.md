@@ -1,5 +1,43 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-3-CASCARON-SIN-DISCRIMINADOR · **CERRADA el 2026-08-24 (100.ª): CMS-5 = R1, el CAMPO DERIVADO** — enunciado original de la 99.ª debajo
+
+> ✅ **LAS DOS PRECONDICIONES ESTÁN CERRADAS, y se cerraron POR SEPARADO**, que
+> es como esta ficha pedía que se contaran:
+>
+> | precondición | qué la cierra | estado |
+> |---|---|---|
+> | **CMS-5 · qué cascarón** | `paginas.regimen`, `select` obligatorio de 4 valores derivado del `<body>` por `regimenDe()`. Reparto **`B-` 22 · `BT` 8 · `--` 1 · `-T` 0**, comprobado en la extracción **y en la DB**. Migración `20260824_155444_f3_3_regimen_cms5` con **reversa probada** (censo tabla a tabla; la única línea que se mueve es `payload_migrations`) | ✅ `ESQUEMA` §2j.9 |
+> | **la FASE DE SPECS · qué marcado** | `docs/research/cola-larga/components/` — `README.md` · `modulos.spec.md` · `reticula.spec.md`, derivados con `qa:f33-spec` (**313 módulos · 11 tipos · 31 páginas**, negativo **5/5**) | ✅ **PARCIAL DECLARADA** — ver abajo |
+>
+> ⚠ **Y lo que NO cierra ninguna de las dos: la EMISIÓN.** Sigue en
+> §F3-3-EMISION. Cerrar el modelo no emite nada — las **382 rutas** de la línea
+> base no se movieron (diferencia simétrica **0 y 0**).
+>
+> ⚠⚠ **La spec es PARCIAL Y ASÍ SE DECLARA (CORTE LIMPIO 2).** Lo cubierto va
+> con su denominador y lo que falta va nombrado:
+>
+> | hueco | cardinal | qué haría falta |
+> |---|---|---|
+> | `map` · `slider` | **n = 1** cada uno | una **SEGUNDA instancia**. SIN PROBAR, **no cableado** |
+> | `icon` | n = **1 página / 3 instancias** | el test B sí aplica y **no las separa**; `anchoPct` **SIN PROBAR** |
+> | geometría de los **SIN CAJA** | **36 de 313** (`video` 30 · `text` 5 · `button` 1) | **INTERACCIÓN** — abrir el desplegable (eje `comportamiento`, **0/31**) |
+> | celdas **SIN ESCRIBIR** | **24 de 49** | nada: su único valor es el INICIAL. **Se omiten** |
+> | las 3 filas de ancho minoritario | `1296` ×2 · `784.09` ×1 de 79 | SIN DERIVAR |
+> | el `:last-child` a nivel **fila-en-sección** | 9 contenedores | **NO ESTABLECIDO**: el numerador es `auto`, no un número |
+> | **el COTEJO de `CuerpoPagina.tsx` contra la spec** | — | **no está hecho.** Que exista la medida y que el componente la cumpla son **dos afirmaciones**, y sólo la primera está respaldada |
+>
+> **Y el hallazgo mayor de la spec fue del INSTRUMENTO, no del original:** la v1
+> de `qa:f33-spec` censaba por `.et_pb_module` y perdía **`button` ENTERO** —13
+> instancias; **300 módulos y 10 tipos** contra 313 y 11— porque en Divi el botón
+> es un `<a>` **sin** `et_pb_module`. **No dio error: dio un número plausible.**
+> Lo destapó **cruzar con `f33-geo`**, y ese cruce ahora se congela y cierra el
+> código de salida. Congelada defectuosa conservada con su nombre:
+> `f33-spec-SONDA-PERDIA-button-ENTERO-300-de-313-2026-08-24.json`.
+
+<details>
+<summary>Enunciado original de la 99.ª (2026-08-24)</summary>
+
 ## ⛔ F3-3-CASCARON-SIN-DISCRIMINADOR · **CORTE LIMPIO 2 disparó, y NO en un tipo de módulo: en el CASCARÓN. El clon no puede elegir el suyo en 30 de 31 páginas** — 99.ª, 2026-08-24
 
 **DECISIÓN DE PROPIETARIO.** La tanda **no emite**, y la razón no es que falte
@@ -129,6 +167,8 @@ medida, no transcripción verificada.**
   justamente la medida que hace visible este hueco;
 - **no reabre CMS-3.** La unión de 11 bloques expresa 313 de 313 módulos y eso
   no cambia. Esto es de la capa de **arriba** del contenido.
+
+</details>
 
 ---
 

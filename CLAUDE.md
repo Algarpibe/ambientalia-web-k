@@ -3874,6 +3874,44 @@ migration(s)»* y revierte **una**. Se comprueba en la tabla de migraciones, no
 en la consola — §*verificar contra la salida servida*, con el objeto puesto en
 la propia herramienta.
 
+**31 · UNA GUARDA QUE TIRA ANTES DE CONGELAR DEJA A SU PROPIO NEGATIVO SIN
+NADA QUE COMPARAR — Y EL EXIT ES JUSTO LO QUE ESE CASO DECLARA INSUFICIENTE.**
+(2026-08-24)
+
+La §regla 8 pide que todo negativo lleve control. Ésta dice **dónde tiene que
+estar la guarda para que ese control sea posible**:
+
+> **Una precondición que se comprueba con `throw` mata el proceso antes de
+> `w()`, así que el caso que la ejercita sólo puede mirar el CÓDIGO DE SALIDA.**
+> Y en las precondiciones que importan —las que hacen que la sonda **no falle,
+> sino que MIDA OTRA COSA**— el código de salida es exactamente lo que no basta.
+
+**Medido:** el caso `sin-hojas` de una sonda offline exige que **los números se
+muevan** sin CSS, porque una captura sin hojas **no da error: da una medida
+plausible y falsa** (678.52 contra 430.80 en vivo). Con la guarda como `throw`,
+el caso salía **4/5** y sólo podía comprobar el exit; movida a **guarda en rojo**
+—medir, congelar, y cerrar el código de salida al final— pasó a **5/5** pudiendo
+comparar el reparto con/sin caja contra la congelada del control.
+
+> **Operativamente: una precondición que invalida la MEDIDA se cuenta en rojo y
+> deja llegar al informe; una que impide medir del todo sí puede tirar.** La
+> señal para distinguirlas: **¿la sonda produciría números si siguiera?** Si sí,
+> esos números son la evidencia que su negativo necesita.
+
+**Y su hermana, del mismo día: DOS INSTRUMENTOS QUE CENSAN EL MISMO OBJETO
+TIENEN QUE COMPARTIR EL CRITERIO DE RECUENTO, O SU CRUCE INVENTA EL DESACUERDO.**
+
+> **§sondas 4 manda cruzar con otra medida del mismo objeto. Le falta decir que
+> el cruce exige la MISMA definición de «uno»** — si no, los dos censos son
+> ciertos, el cruce sale rojo, y la discrepancia no está en el dato sino en la
+> pregunta.
+
+**Medido:** un censo definió «con caja» como `w > 0 && h > 0` y el ya congelado
+como `w > 0`. Para `code` daban **1** y **9** — y las dos son verdad: un módulo
+dentro de un desplegable cerrado **conserva su ancho y pierde su alto**. Se
+unifica **con el criterio ya congelado**, no con el nuevo, porque el congelado
+ya tiene consumidores.
+
 ## Comandos
 
 ```bash
