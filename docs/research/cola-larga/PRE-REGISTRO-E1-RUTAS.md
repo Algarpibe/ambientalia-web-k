@@ -102,6 +102,26 @@ NIVEL al que se mide*). El reparto por plano es lo que hace auditable el fallo:
 > **Una ruta de más o de menos es un catálogo despachando lo que no debe**, y eso
 > no se descubre después.
 
+## ⚠ ADENDA del mismo día — la premisa de la pregunta 3, RE-DERIVADA
+
+**La predicción NO se toca.** Esto se añade porque la propia tanda cambió el
+árbol después de escribirla, y una premisa que envejece en silencio es peor que
+una predicción fallada.
+
+Al escribir el pre-registro, *«nadie en `apps/web` lee `paginas`»* se derivó con
+**0 referencias**. Horas después la tanda añadió `apps/web/src/lib/cms/paginas.ts`,
+que **sí** nombra la colección — así que el `grep` de entonces ya no reproduce.
+
+**Re-derivado:** 1 referencia (el propio camino de lectura) y **0 IMPORTADORES**
+— ninguna ruta lo consume. La premisa se sostiene, y su prueba no es el `grep`
+sino la medida: reconstruido el build con el fichero dentro, **382 rutas y
+diferencia simétrica 0 y 0** contra la línea base.
+
+> **El enunciado correcto de la pregunta 3 no era «nadie lo nombra» sino «nadie
+> lo IMPORTA»** — una familia sólo repagina si su catálogo crece, y para eso
+> alguien tiene que consumirlo. El primer enunciado era el barato; los dos daban
+> la misma respuesta hoy, y sólo uno la sigue dando mañana.
+
 ## Lo que este pre-registro NO afirma
 
 - **no afirma que el universo de 31 esté verificado.** La DB y la congelada
