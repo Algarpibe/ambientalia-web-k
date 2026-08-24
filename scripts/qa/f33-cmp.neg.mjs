@@ -147,9 +147,23 @@ console.log(
     `   producir sin haber comparado: la tumban el Δ inyectado y la guarda de hojas.`,
 );
 console.log(`\n⚠ LO QUE ESTE NEGATIVO **NO** PRUEBA:`);
-console.log(`  · no prueba que el clon esté bien — no hay clon en estos tres casos.`);
+console.log(`  · no prueba que el clon esté bien — no hay clon en estos ${casos.length} casos.`);
 console.log(`    Prueba que el INSTRUMENTO discrimina, que es otra afirmación;`);
-console.log(`  · los tres corren a 1440. El contrato de fidelidad es a los DOS anchos.`);
+console.log(`  · los ${casos.length} corren a 1440. El contrato de fidelidad es a los DOS anchos;`);
+console.log(`  · ⚠⚠ y la que YA SE COBRÓ UN DEFECTO, con su cardinal (101.ª, PASO 0):`);
+console.log(`    los ${casos.length} usan NEG_MISMO_LADO, que COPIA el lado del original`);
+console.log(`    sobre el del clon. Así que los selectores del LADO DEL CLON`);
+console.log(`      [class*='et_pb_module'], [data-modulo]   ·   .et_pb_section, [data-seccion]`);
+console.log(`    nunca se aplican a marcado del clon: **0 instancias separadoras**.`);
+console.log(`    Con ese hueco, \`CuerpoPagina.tsx\` emitía \`f33-modulo\`/\`f33-seccion\``);
+console.log(`    —que no casan ninguno— y este negativo salía 3/3 mientras el`);
+console.log(`    comparador habría publicado nModulos 313 → 10 y nSecciones 86 → 0`);
+console.log(`    CON EL RENDER CORRECTO. Es §regla 15 con lo compartido puesto en el`);
+console.log(`    MARCADO, y §regla 24 encontrando su límite: probar el instrumento`);
+console.log(`    antes de que exista el objeto no puede contestar esta pregunta.`);
+console.log(`    ⇒ FALTA un 4.º caso, y sólo se puede escribir CON clon emitido:`);
+console.log(`      «los selectores del lado del clon casan contra marcado del clon».`);
+console.log(`      Ficha: PENDIENTES-QA.md §F3-3-COMPARADOR-CIEGO.`);
 console.log(`  ✓ evaluadas ${casos.length}/${casos.length} casos`);
 ev.informe();
 process.exit(fallos === 0 ? 0 : 1);

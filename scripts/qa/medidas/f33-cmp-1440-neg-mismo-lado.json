@@ -55,7 +55,7 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 17,
-        "peticionesBloqueadas": 49
+        "peticionesBloqueadas": 50
       },
       "original": {
         "docH": 3111.16,
@@ -343,7 +343,7 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 15,
-        "peticionesBloqueadas": 42
+        "peticionesBloqueadas": 43
       },
       "original": {
         "docH": 1443.13,
@@ -412,7 +412,7 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 15,
-        "peticionesBloqueadas": 50
+        "peticionesBloqueadas": 51
       },
       "original": {
         "docH": 1497.09,
@@ -521,7 +521,7 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 15,
-        "peticionesBloqueadas": 49
+        "peticionesBloqueadas": 54
       },
       "original": {
         "docH": 2712.83,
