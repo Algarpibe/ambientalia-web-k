@@ -3361,6 +3361,36 @@ regla no nombra.
 > se **restaura con el pipeline completo** antes de leer ninguna otra sonda —
 > porque las que vengan detrás van a medir el universo que ella dejó, no el tuyo.
 
+⚠ **Y LE FALTABA LA TERCERA: CÓMO SE COMPRUEBA QUE LA RESTAURACIÓN FUNCIONÓ —
+NO ES EL RECUENTO (2026-08-24, 99.ª tanda).**
+
+Las dos de arriba dicen *declara* y *restaura*. Ninguna dice **con qué se
+verifica**, y el instrumento que uno coge solo es el que no puede contestar:
+
+> **El daño de un reseteo NO se mide con el total, porque un dato que falta
+> puede MOVER elementos en vez de quitarlos.** Y entonces el neto es pequeño, se
+> lee como «faltan unos pocos», y lo que hay debajo es un conjunto distinto.
+
+**Medido:** el `cms-roundtrip-neg` del PASO 0 reseteó la DB, y el build
+siguiente emitió **376 rutas contra 382**. Leído como neto: *«faltan 6»*. La
+diferencia simétrica dice otra cosa — **17 desaparecidas y 11 nuevas**, o sea
+**28 rutas tocadas**: sin el término `articulos` de `categorias-recursos` (lo
+escribe `cms:seed-listados`, que el round-trip no corre) **toda esa familia
+pierde un segmento**, `/recursos/articulos/contaminacion-minera` →
+`/recursos/contaminacion-minera`.
+
+**Las dos mitades operativas:**
+
+1. **la comprobación del entorno es la DIFERENCIA SIMÉTRICA contra la línea
+   base, con los dos lados nombrados** —aquí `0 y 0` tras el pipeline completo—,
+   nunca el recuento. Es §*un cardinal es un contenedor y absorbe la membresía*
+   aplicado al entorno en vez de al corpus;
+2. **y eso es además lo que permite ATRIBUIR.** Con `0 y 0` queda demostrado
+   —no argumentado— que el susto era del entorno y **no del código de la
+   tanda**. Sin esa comprobación, un `376` en mitad de una tanda que acaba de
+   escribir código se lee como regresión propia, y se «arregla» lo que no está
+   roto.
+
 ⚠⚠ **Y SU CASO PEOR, PORQUE EL ENTORNO ES EL PROPIO REPO: UN SABOTAJE QUE EDITA
 EL FUENTE SOBREVIVE A LA MUERTE DE SU CORRIDA (2026-08-20, 88.ª tanda).**
 
