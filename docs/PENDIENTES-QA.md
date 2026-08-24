@@ -222,6 +222,79 @@ que el número se mueva**, no sólo que el exit sea ≠0.
 Su lado de 1440 no está afectado; su lado de 390 hay que **re-medir** con el
 camino bueno antes de citar ningún número absoluto de ahí.
 
+### ✅ ALCANCE DEL DAÑO, DERIVADO — 104.ª, PASO 0·A (`derivaciones/caducidad-geo390.{mjs,log}`)
+
+§regla 5bis manda tres cosas y la primera es **declarar el alcance con su
+número, porque casi nunca es «todo»**. Aquí no lo es: **41 de las 49 celdas de
+veredicto se deciden a 1440 y están intactas.**
+
+`f33-geo.mjs` construye `todosMod1440`/`todasFilas`/`todasCols`/`todasSecs`
+desde `d[1440]` (líneas 350-354), así que **8 de los 10 bloques** de primer
+nivel son de 1440 y el defecto no los alcanza. El **único** consumidor de
+`mod390` es el test A (4 líneas: 376 · 541 · 544 · 701).
+
+| celdas de veredicto | n | ¿la toca el defecto? |
+|---|---|---|
+| **SIN ESCRIBIR** · valor inicial (1440) | 24 | no |
+| **CAMPO** (test B, intra-página) (1440) | 12 | no |
+| **SIN PROBAR** · el test A no aplica a la caja (1440) | 5 | no |
+| decididas por el **test A** (leen 390) | **8** | **2 sí, 6 no** |
+
+**Y las 2 no sólo cambian de número: INVIERTEN el veredicto.** El defecto sólo
+mueve `padding-top`/`padding-bottom` de `.f33-modulo`, y sólo su valor en `em`
+— `0.5em!`/`0.6em!` de la hoja enlazada → `0.3em` de Divi —, o sea **el botón**:
+
+| celda | @1440 | @390 camino VIEJO | @390 camino BUENO | veredicto congelado | veredicto real |
+|---|---|---|---|---|---|
+| `button.pt` | 7.5 | **4.5** | **7.5** | plantilla (se mueve) | ⚠⚠ **CAMPO (px absolutos)** |
+| `button.pb` | 9 | **4.5** | **9** | plantilla (se mueve) | ⚠⚠ **CAMPO (px absolutos)** |
+
+> **Es §*la causa común* con el contenedor puesto en el INSTRUMENTO: un defecto
+> de 3 px por módulo no cambia una medida, cambia una DECISIÓN DE MODELO** —
+> «plantilla» se cablea en el componente y «campo» va al esquema. Los dos ejes
+> del botón salían al lado equivocado.
+
+**Y la precisión que separa dos frases que se escriben casi igual:** el campo
+`A` está **contaminado en 6 celdas** (`text.pt` · `text.pb` · `image.pt` ·
+`image.pb` · `button.pt` · `button.pb`) y el veredicto **lo LEE en 2**. En las
+otras 4 deciden `soloCero` o el test B, los dos a 1440 — su `ver` es bueno y su
+`A` **no se puede citar**. Decir «2 contaminadas» a secas sería cierto del
+veredicto y falso de la congelada.
+
+**Lo medido, no lo argumentado:** las dos corridas de `qa:f33-clases` sobre los
+**mismos 31 documentos** por los dos caminos dan **34 reglas iguales a 390 y 7
+movidas** — y de las movidas, sólo `pt`/`pb` son ejes de ritmo. **`mt` y `mb`
+están intactos a 390 por los dos caminos**, así que `button.mb` (MIXTO) y
+`icon.mb` (plantilla) **no** están afectados aunque los decida el test A.
+
+**Renombrada (§regla 5bis mitad 2), con su defecto Y su alcance en el nombre:**
+`f33-geo-SONDA-390-SIN-HOJAS-ENLAZADAS-alcance-modulos390-y-veredictosA-2026-08-24.json`.
+**El canónico `f33-geo.json` queda LIBRE**, que es la mitad buena: lo que no se
+haya re-medido falla **en voz alta** en vez de leer lo caducado. Consumidores
+derivados con `grep`, no recordados (§regla 9, 8.º caso): **3 derivaciones**
+—`hoja-f33-derivable` · `f33-regimen-discriminador` · `clases-inertes-f33`—,
+**las tres leen bloques de 1440** (`defaultMbPorAnchoDeFila`, `paginas[].regimen`,
+`ejesSinEscribir`), **ninguna está cableada a `npm run`** y **las tres tienen su
+`.log` commiteado**. Se dejan sin repuntar a propósito: si una tanda futura las
+re-corre, tiene que enterarse.
+
+### ✅ ¿DEPENDE LA COMPARACIÓN A 390 DE ESTA TANDA? **NO** — y no es una lectura del código
+
+El discriminador es **el ORDEN**, y es mecánico:
+
+| sonda | orden | consecuencia |
+|---|---|---|
+| `f33-cmp` | `preparaViewport` **193** → `goto` 197 → `setContent` 198 | el `isMobile` se fija **ANTES** de montar ⇒ **no hay recarga después de reescribir los `<link>`** |
+| `f33-geo` | `goto` 280 → `setContent` 281 → `setViewport` **322** | el `isMobile` llega **DESPUÉS** ⇒ **RECARGA** |
+
+**Y la salida SERVIDA lo confirma, congelada y commiteada desde el 2026-08-22**
+(§regla 8b: *`medidas/` es una muestra del original que nadie interroga*):
+`f33-cmp-390-neg-mismo-lado.json` mide **28 anchos de fila** en el lado del
+original y da **`{335.39: 24, 0: 4}`** — o sea **24 con el valor BUENO y 0 con
+los del defecto** (312 / 249.59). Los 4 ceros son páginas sin filas propias.
+
+> **No hizo falta volver al original: hizo falta mirar el otro fichero.**
+
 ---
 
 ## ⚠ F3-3-GUTTERS-SIN-MODELAR · **el canal de la retícula tiene DOS valores, y la variable que manda no está en el modelo** — 102.ª, 2026-08-24

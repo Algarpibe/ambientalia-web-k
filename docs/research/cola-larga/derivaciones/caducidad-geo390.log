@@ -1,0 +1,135 @@
+
+══════════════════════════════════════════════════════════════════════
+  CADUCIDAD DEL LADO 390 DE `f33-geo` — alcance DERIVADO (104.ª · PASO 0·A)
+══════════════════════════════════════════════════════════════════════
+  fuentes (todas congeladas y commiteadas):
+    · f33-geo-SONDA-390-SIN-HOJAS-…    2026-08-22  (la CADUCADA, renombrada por esta tanda)
+    · f33-clases.json                   2026-08-24  (390 por el camino BUENO)
+    · f33-clases-…-QUE-RECARGA-….json   2026-08-24  (390 por el camino VIEJO)
+    · f33-cmp-390-neg-mismo-lado.json   2026-08-22  (el comparador, a 390)
+
+── 1 · LOS BLOQUES QUE LEEN 390, derivados del fuente ─────────────────
+   líneas de `f33-geo.mjs` que tocan el lado de 390: 4
+      376: const mod390 = todosMod390.filter(conCaja);
+      541: const en390 = new Map(mod390.map((m) => [`${m.ruta}|${m.id}`, m]));
+      544: const o = en390.get(`${m.ruta}|${m.id}`);
+      701: if (mod390.length === 0) err(`0 módulos a 390: sin el segundo ancho el test A no existe y todo s
+
+   bloques de primer nivel en la congelada: 10 — anchoDeFilaPorRegimen · separabilidadFilaColumna · defaultMbPorAnchoDeFila · anchoPctPorDisplay · criterioDeRecuento · porTipo · veredictos · ejesSinEscribir · corteLimpio2 · paginas
+   de 1440 (INTACTOS): anchoDeFilaPorRegimen · separabilidadFilaColumna · defaultMbPorAnchoDeFila
+                       anchoPctPorDisplay · criterioDeRecuento · porTipo · ejesSinEscribir · corteLimpio2
+   con 390 dentro:     veredictos (sólo su campo `A`) · paginas[].modulos390
+
+── 2 · LAS CELDAS DE VEREDICTO ────────────────────────────────────────
+   total: 49   ·   decididas a 1440: 41   ·   decididas por el test A (390): 8
+
+     24  1440 · SIN ESCRIBIR · valor inicial
+         text.pt · image.pt · blurb.mt · button.mt · toggle.mt · code.mt · code.mb · code.pt · code.pb · icon.mt · icon.pt · icon.pb · fullwidth_slider.mt · fullwidth_slider.mb · fullwidth_slider.pt · fullwidth_slider.pb · map.mt · map.mb · map.pt · map.pb · slider.mt · slider.mb · slider.pt · slider.pb
+
+     12  1440 · CAMPO (test B, intra-página)
+         text.mt · text.mb · text.pb · text.anchoPct · image.mt · image.mb · image.pb · image.anchoPct · blurb.mb · blurb.anchoPct · button.anchoPct · toggle.mb
+
+      5  1440 · SIN PROBAR · el test A no aplica a la caja
+         toggle.anchoPct · code.anchoPct · icon.anchoPct · map.anchoPct · slider.anchoPct
+
+      4  390 · CAMPO (test A: px absolutos)
+         blurb.pt · blurb.pb · toggle.pt · toggle.pb
+
+      3  390 · plantilla (test A: se mueve)
+         button.pt · button.pb · icon.mb
+
+      1  390 · MIXTO
+         button.mb
+
+── 3 · QUÉ MUEVE EL DEFECTO, medido por los dos caminos ───────────────
+   reglas de `f33-clases`: 48  ·  emparejadas 41  ·  SIN PAR 7
+     sin par (existen por el camino bueno y no por el viejo): .f33-col-1_2 | width · .f33-col-4_4 | width · .f33-col-1_3 | width · .f33-col-2_3 | width · .f33-col-1_4 | width · .f33-col-1_5 | width · .f33-modulo | width
+   @390 IGUALES por los dos caminos: 34   ·   MOVIDAS: 7
+
+     .f33-seccion | width
+        computado  bueno=[335.39,390]   viejo=[312,390]
+
+     .f33-fila | margin-left
+        computado  bueno=[0,27.3,23.48]   viejo=[0,31.2,39]
+
+     .f33-fila | width
+        declarado  bueno=["100%","86%"]   viejo=["80%"]
+        computado  bueno=[335.39,288.42]   viejo=[249.59,312]
+
+     .f33-modulo | padding-top
+        declarado  bueno=["0px","20px","0.5em !important !important"]   viejo=["0px","20px","0.3em"]
+        computado  bueno=[0,20,7.5]   viejo=[0,20,4.5]
+
+     .f33-modulo | padding-bottom
+        declarado  bueno=["0px","20px","0.6em !important !important"]   viejo=["0px","20px","0.3em"]
+        computado  bueno=[0,20,9]   viejo=[0,20,4.5]
+
+     .f33-modulo | margin-left
+        computado  bueno=[0,25.16]   viejo=[0,18.72,23.41]
+
+     .f33-modulo | margin-right
+        computado  bueno=[0,25.16,15,6.7]   viejo=[0,18.73,23.41]
+
+   ejes de RITMO que el defecto mueve: pt · pb
+   ejes de RITMO intactos:             mt · mb
+
+── 4 · ¿CAMBIA ALGÚN VEREDICTO? ───────────────────────────────────────
+   pt/pb de `.f33-modulo` computados:
+     @1440            [0,20,7.5,7.49] / [0,20,9,8.99]
+     @390 camino BUENO [0,20,7.5] / [0,20,9]
+     @390 camino VIEJO [0,20,4.5] / [0,20,4.5]
+
+   pt|pb por tipo (todas las instancias):
+     tipo               @1440                          @390 (en la congelada CADUCADA)
+     blurb              {"0|0":17,"32|32":5}           {"0|0":17,"32|32":5}
+     button             {"7.5|9":13}                   {"4.5|4.5":13}   ⚠ DIFIERE
+     code               {"0|0":9}                      {"0|0":9}
+     fullwidth_slider   {"0|0":2}                      {"0|0":2}
+     icon               {"0|0":3}                      {"0|0":3}
+     image              {"0|0":70,"0|29.25":1}         {"0|0":70,"0|15.59":1}   ⚠ DIFIERE
+     map                {"0|0":1}                      {"0|0":1}
+     slider             {"0|0":1}                      {"0|0":1}
+     text               {"0|0":146,"0|11.69":4,"0|10":1} {"0|0":146,"0|6.23":4,"0|10":1}   ⚠ DIFIERE
+     toggle             {"20|20":10}                   {"20|20":10}
+     video              {"0|0":30}                     {"0|0":30}
+
+   de las 8 celdas decididas por el test A:
+     CONTAMINADAS (el defecto mueve su entrada): 2 — button.pt · button.pb
+     intactas (el defecto no toca su eje/tipo):  6 — blurb.pt · blurb.pb · button.mb · toggle.pt · toggle.pb · icon.mb
+
+   ⚠ el campo `A` está CONTAMINADO en 6 celdas — text.pt · text.pb · image.pt · image.pb · button.pt · button.pb
+     de ésas, el veredicto lo LEE en 2: button.pt · button.pb
+     y en 4 NO lo lee (deciden `soloCero` o el test B, los dos a 1440): text.pt · text.pb · image.pt · image.pb
+     ⇒ su `ver` es bueno y su `A` no se puede citar.
+
+   recálculo con el 390 BUENO — el veredicto que llega al modelo:
+     button.pt      @1440 7.5    · @390 bueno [0,20,7.5]
+        congelado: «plantilla (test A: se mueve)»
+        con el 390 bueno: «CAMPO (test A: px absolutos)»  ⚠⚠ SE INVIERTE
+     button.pb      @1440 9      · @390 bueno [0,20,9]
+        congelado: «plantilla (test A: se mueve)»
+        con el 390 bueno: «CAMPO (test A: px absolutos)»  ⚠⚠ SE INVIERTE
+
+── 5 · ¿DEPENDE LA COMPARACIÓN A 390 DE ESTA TANDA? ───────────────────
+   el ORDEN, derivado del fuente (es el discriminador mecánico):
+     f33-cmp  · preparaViewport  193  →  goto  197  →  setContent  198   ⇒ el viewport se fija ANTES de montar
+     f33-geo  · goto  280  →  setContent  281  →  setViewport  322   ⇒ el `isMobile` llega DESPUÉS ⇒ RECARGA
+
+   la SALIDA SERVIDA de `f33-cmp` a 390 (lado ORIGINAL, 6 páginas del piloto):
+     anchos de fila medidos: 28  ·  reparto {"0":4,"335.39":24}
+     con el valor BUENO (335.39): 24 de 28   ·   con los del defecto (312/249.59): 0
+
+   ⇒ ✅ NO depende: `f33-cmp` mide 390 con las hojas puestas
+
+══ RESUMEN — el alcance del daño, con su número ═══════════════════════
+   celdas de veredicto             49
+     · decididas a 1440 (INTACTAS) 41
+     · decididas por el test A     8
+         de ésas, CONTAMINADAS     2   (button.pt · button.pb)
+         de ésas, que se INVIERTEN 2
+   bloques de primer nivel         10  ·  con 390 dentro: 2 (veredictos.A · paginas[].modulos390)
+   módulos con 390 crudo           313  (w/wCol/wFila resueltos contra el 80 %, no el 86 %)
+   comparación a 390 de esta tanda NO depende
+
+✅ caducidad-geo390: 0 control(es) en rojo
+
