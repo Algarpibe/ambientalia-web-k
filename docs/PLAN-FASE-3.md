@@ -1111,7 +1111,8 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 > tendría tres causas simultáneas y ninguna medida las separa.
 >
 > **Sube al propietario con sus tres salidas** (R1 campo derivado del `<body>`
-> que el extractor ya calcula · R2 emitir 23 y dejar 8 · R3 cablear la ruta, que
+> que el extractor ya calcula · R2 emitir **sólo lo derivable hoy, que es 1** ·
+> R3 cablear la ruta, que
 > es el arreglo falso y se nombra para que conste): `PENDIENTES-QA.md`
 > §F3-3-CASCARON-SIN-DISCRIMINADOR.
 >

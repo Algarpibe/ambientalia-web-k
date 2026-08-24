@@ -71,8 +71,23 @@ después». No se toma, y la razón tiene número:
 | # | salida | cuesta |
 |---|---|---|
 | **R1** | `paginas` gana un campo de régimen (`regimen` o `barraLateral`), **derivado del `<body>` del corpus** por el extractor, que ya lo calcula para su censo (`regimenDe()`) | migración versionada + re-extraer + re-sembrar. **El dato ya está**: no hay que volver al original. Es lo más barato y lo único que deja el cascarón MEDIDO |
-| **R2** | emitir sólo las **22 `B-` + 1 `--`** y dejar las **8 `BT`** sin emitir, declaradas | ninguna decisión de modelo hoy; **8 rutas sin emitir** y el pre-registro baja de 413 a 405 |
+| **R2** | emitir sólo lo que **hoy es derivable**, o sea el régimen `--`: **1 página** | ninguna decisión de modelo hoy, y **30 rutas sin emitir**. El pre-registro bajaría de 413 a **383** |
 | **R3** | cablear la ruta (`centro-de-ayuda` ⇒ BT) | **0 coste hoy y una separadora ya conocida en contra** — `/sistema-interno-de-informacion` saldría con el cascarón equivocado. Es el arreglo falso, y se nombra para que conste que se consideró |
+
+> ⚠⚠ **CORREGIDO EN LA MISMA TANDA, porque la primera redacción de R2 era
+> IMPLEMENTABLE SÓLO EN APARIENCIA.** Decía *«emitir las 22 `B-` + 1 `--` y
+> dejar las 8 `BT`»*, y **eso exige exactamente lo que falta**: para emitir *las
+> 22 B-* el build tiene que **saber cuáles son las 22**, o sea el mismo campo
+> que R1 añade. Excluir en vez de elegir **no cambia la pregunta**.
+>
+> La única forma de escribir R2 sin el campo sería **una lista de 8 rutas a
+> mano**, que es §regla 9 7.º caso —*un conjunto enumerado a mano dentro del
+> código es un dato recordado*— y envejecería contra el corpus en silencio.
+>
+> **Lo que R2 puede emitir de verdad es 1 página**, y por eso el reparto de
+> coste cambia de «8 sin emitir» a **«30 sin emitir»**. La corrección no elige
+> por el propietario; **le devuelve el precio real de la opción**, que es lo
+> único que hace comparable una tabla de salidas.
 
 > **R1 no es «añadir un campo por comodidad».** El régimen pasa el test B con
 > holgura —**22 · 8 · 1** dentro de la misma colección— así que **es campo por

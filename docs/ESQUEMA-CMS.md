@@ -4585,8 +4585,18 @@ construyó cada página en WordPress** al elegir plantilla, exactamente como
 | # | salida | cuesta |
 |---|---|---|
 | **R1** | `paginas` gana un campo de régimen (`regimen` o `barraLateral`), **derivado del `<body>`** por el extractor, que **ya lo calcula** para su censo (`regimenDe()`) | migración versionada + re-extraer + re-sembrar. **El dato ya está en el corpus**: no hay que volver al original. Es lo único que deja el cascarón MEDIDO |
-| **R2** | emitir sólo las **22 `B-` + 1 `--`** y dejar las **8 `BT`** sin emitir, declaradas | ninguna decisión de modelo hoy; **8 rutas sin emitir** y el pre-registro baja de 413 a 405 |
+| **R2** | emitir sólo lo que **hoy es derivable** — el régimen `--`: **1 página** | ninguna decisión de modelo hoy, y **30 rutas sin emitir**. El pre-registro bajaría de 413 a **383** |
 | **R3** | cablear la ruta (`centro-de-ayuda` ⇒ BT) | **0 coste hoy y una separadora YA CONOCIDA en contra**. Es el arreglo falso —el valor de la mayoría esperando a la tercera instancia— y se nombra para que conste que se consideró |
+
+> ⚠⚠ **R2 SE CORRIGIÓ EN LA MISMA TANDA, porque su primera redacción era
+> implementable sólo en apariencia.** Decía *«emitir las 22 `B-` y dejar las 8
+> `BT`»* — y **excluir exige lo mismo que elegir**: para dejar fuera las 8 hay
+> que saber cuáles son, o sea el campo que R1 añade. Escribirla sin el campo
+> obligaría a **una lista de 8 rutas a mano** (§regla 9, 7.º caso: *un conjunto
+> enumerado a mano es un dato recordado*), que envejece contra el corpus en
+> silencio. Lo que R2 emite de verdad es **1 página**, y su coste real es **30
+> rutas sin emitir**, no 8. La corrección no elige por el propietario: le
+> devuelve **el precio real de la opción**.
 
 ### Por qué esto PARA la emisión en vez de degradarla
 

@@ -36,6 +36,16 @@ import type {
  * / `--f33m-*` el hueco de cada nivel es suyo.
  *
  * **3 · El `switch` lleva `default` que TIRA.** Ver abajo.
+ *
+ * ── ⚠ Y LOS 11 `kind` SE CRUZARON CONTRA LA CONFIG, no se dedujeron ───────
+ * Es la comprobación que le faltó a KB, así que aquí se hace y se deja escrita:
+ * recorriendo `MODULOS_PAGINA` de `bloques/paginas.ts` salen **11 slugs** —
+ * `texto-pagina · imagen-pagina · boton-pagina · codigo · toggle · video-pagina
+ * · blurb · slider-completo · slider · mapa · icono`— y son **exactamente** los
+ * `case` de abajo. La cadena que lo justifica es `mapeo.mjs` §blocks:
+ * `ctx.conKind(aqui, b.slug, cuerpo)`, o sea que **el `kind` ES el slug del
+ * bloque**. Cruzar dos instrumentos sobre el mismo objeto es lo único que
+ * distingue «lo deduje bien» de «lo deduje».
  * ═════════════════════════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════════════════════════════════════════════
