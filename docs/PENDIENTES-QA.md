@@ -327,7 +327,7 @@ colecciones.**
 
 | qué | estado |
 |---|---|
-| **las 19 rutas del plano de raíz** | `qa:slugs` las cuenta como **RECLAMO SIN RUTA** junto a las 6 de `articulos-kb` y 2 de `productos` (27 en total). **NO son el mismo caso**: las 6 de KB son una colección PREFIJADA reservando slugs que sus URLs no usan (§F3-3-REGISTRO-SOBRE-RECLAMA); **las 19 de `paginas` SON su URL bajo E1** y sólo esperan a que la 99.ª las emita. Conflarlas por el titular sería leer un cardinal sin su unidad |
+| **las 19 rutas del plano de raíz** | `qa:slugs` las cuenta como **RECLAMO SIN RUTA** junto a las 6 de `articulos-kb` y 2 de `productos` (27 en total). **NO son el mismo caso**: las 6 de KB son una colección PREFIJADA reservando slugs que sus URLs no usan (§F3-3-REGISTRO-SOBRE-RECLAMA); **las 19 de `paginas` SON su URL bajo E1**. Conflarlas por el titular sería leer un cardinal sin su unidad. ⚠ **ACTUALIZADO 2026-08-24 (99.ª): la 99.ª NO las emitió** — la paró **CMS-5** (`ESQUEMA §2j.8`: el documento no lleva el régimen, así que el clon no puede elegir cascarón en 30 de 31). Siguen siendo reclamos correctos y siguen latentes; lo que cambia es **de qué dependen**: ya no de que alguien construya la ruta, sino de una decisión de propietario |
 | **`qa:slugs` cuenta `paginas` «publicados 29»** y son **31 documentos** | es el mismo hecho que la causa A, visto por otro instrumento: cuenta **slugs distintos**. Su invariante —unicidad en el plano de raíz— **no se ve afectado**: los 19 sin prefijo son únicos y da 0 colisiones. Se declara para que nadie lea 29 como documentos |
 | **la GEOMETRÍA del clon** | sigue en **0 ejes comparados** (`qa:f33-cmp`). Sembrar no es emitir |
 | **`1_6`** | **SIN EJERCITAR**, camino de render sin estrenar. Sale en `qa:nunca-vistos` |

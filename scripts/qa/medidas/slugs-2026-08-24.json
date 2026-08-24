@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "fecha": "2026-08-24",
+    "sabotaje": null
+  },
+  "familias": [
+    {
+      "familia": "estáticas sin dueño",
+      "n": 4,
+      "fuente": "prerender-manifest (7 de un segmento − 3 ya declaradas)"
+    },
+    {
+      "familia": "articulos-kb",
+      "n": 6,
+      "fuente": "registro ∩ DB › articulos-kb (en el plano 6 · publicados 6)"
+    },
+    {
+      "familia": "entradas-blog",
+      "n": 152,
+      "fuente": "registro ∩ DB › entradas-blog (en el plano 152 · publicados 152)"
+    },
+    {
+      "familia": "paginas",
+      "n": 19,
+      "fuente": "registro ∩ DB › paginas (en el plano 19 · publicados 29)"
+    },
+    {
+      "familia": "productos",
+      "n": 5,
+      "fuente": "registro ∩ DB › productos (en el plano 5 · publicados 19)"
+    },
+    {
+      "familia": "terminos-kunakpedia",
+      "n": 37,
+      "fuente": "registro ∩ DB › terminos-kunakpedia (en el plano 37 · publicados 37)"
+    }
+  ],
+  "noConstruidas": [],
+  "emitidas": 382,
+  "estaticasDeUnSegmento": [
+    "accesorios",
+    "blog",
+    "casos-de-exito",
+    "glosario"
+  ],
+  "emitidasPorPlano": 189,
+  "colisiones": [],
+  "sombras": [],
+  "huerfanas": [],
+  "reclamoSinRuta": [
+    {
+      "slug": "que-es-kunak-air-cloud",
+      "familia": "articulos-kb"
+    },
+    {
+      "slug": "que-puedes-hacer-con-kunak-air",
+      "familia": "articulos-kb"
+    },
+    {
+      "slug": "que-es-kunak-air",
+      "familia": "articulos-kb"
+    },
+    {
+      "slug": "por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+      "familia": "articulos-kb"
+    },
+    {
+      "slug": "evidencias-de-funcionamiento",
+      "familia": "articulos-kb"
+    },
+    {
+      "slug": "como-garantiza-kunak-la-mejor-precision",
+      "familia": "articulos-kb"
+    },
+    {
+      "slug": "suscribete",
+      "familia": "paginas"
+    },
+    {
+      "slug": "soporte",
+      "familia": "paginas"
+    },
+    {
+      "slug": "sistema-interno-de-informacion",
+      "familia": "paginas"
+    },
+    {
+      "slug": "politica-de-seguridad-de-la-informacion",
+      "familia": "paginas"
+    },
+    {
+      "slug": "politica-de-privacidad-y-de-proteccion-de-datos",
+      "familia": "paginas"
+    },
+    {
+      "slug": "politica-de-cookies",
+      "familia": "paginas"
+    },
+    {
+      "slug": "newsletter",
+      "familia": "paginas"
+    },
+    {
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
+      "familia": "paginas"
+    },
+    {
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-obras",
+      "familia": "paginas"
+    },
+    {
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
+      "familia": "paginas"
+    },
+    {
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-industria",
+      "familia": "paginas"
+    },
+    {
+      "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
+      "familia": "paginas"
+    },
+    {
+      "slug": "empresa",
+      "familia": "paginas"
+    },
+    {
+      "slug": "descarga-catalogo",
+      "familia": "paginas"
+    },
+    {
+      "slug": "contacto",
+      "familia": "paginas"
+    },
+    {
+      "slug": "aviso-legal",
+      "familia": "paginas"
+    },
+    {
+      "slug": "recursos",
+      "familia": "paginas"
+    },
+    {
+      "slug": "sectores",
+      "familia": "paginas"
+    },
+    {
+      "slug": "productos",
+      "familia": "paginas"
+    },
+    {
+      "slug": "sensor-de-calidad-del-aire",
+      "familia": "productos"
+    },
+    {
+      "slug": "estacion-de-monitoreo-de-calidad-del-aire",
+      "familia": "productos"
+    }
+  ]
+}
