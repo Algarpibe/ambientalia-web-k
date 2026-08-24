@@ -1,0 +1,96 @@
+
+══════════════════════════════════════════════════════════════════════
+  EL DEFECTO DE `mb`: ¿LA FILA O LA COLUMNA? (104.ª · PASO 0·B)
+══════════════════════════════════════════════════════════════════════
+
+── 0 · LOS PORCENTAJES SERVIDOS (cascada del original, `qa:f33-clases`) ──
+   reparto → % declarado @1440, y a qué equivale sobre la FILA:
+     1_2       5.82 %  de una columna que es el    47.25 % de la fila  ⇒  2.7500 % de la FILA
+     4_4       2.75 %  de una columna que es el      100 % de la fila  ⇒  2.7500 % de la FILA
+     1_3       9.27 %  de una columna que es el  29.6667 % de la fila  ⇒  2.7501 % de la FILA
+     2_3      4.242 %  de una columna que es el   64.833 % de la fila  ⇒  2.7502 % de la FILA
+     1_4    (sin instancias que lleguen al default)
+     1_5      8.523 %  de una columna que es el     17.6 % de la fila  ⇒  1.5000 % de la FILA
+
+── 1 · EL BARRIDO ─────────────────────────────────────────────────────
+   articulos-kb          143 módulos · anchos de FILA distintos: [911.75]
+   SECTOR/MONOGRÁFICO     95 módulos · anchos de FILA distintos: [1238.39]
+
+── 2 · LOS DOS MODELOS, GRUPO A GRUPO ─────────────────────────────────
+   «ambos» = las dos predicciones coinciden ⇒ el grupo NO SEPARA (§0 separadoras)
+
+   grupo                                               n │ ambos sólo T sólo % ninguno   mb medidos
+   SECTOR/MONOGRÁFICO · fila 1238.39 · 4_4            20 │    11      0      0       9   [0,17,34.0469,37.1406,41]
+        ↳ sin casar: 4_4 · col 1238.39 · mb 0 · tabla 34.0469 · %col 34.0557
+        ↳ sin casar: 4_4 · col 1238.39 · mb 37.1406 · tabla 34.0469 · %col 34.0557
+        ↳ sin casar: 4_4 · col 1238.39 · mb 0 · tabla 34.0469 · %col 34.0557
+   SECTOR/MONOGRÁFICO · fila 1238.39 · estrecha       75 │    31      4      0      40   [0,16,20,23,26,30,34.0469,41]
+        ↳ sin casar: 1_2 · col 585.13 · mb 41 · tabla 34.0469 · %col 34.0546
+        ↳ sin casar: 1_2 · col 585.13 · mb 0 · tabla 34.0469 · %col 34.0546
+        ↳ sin casar: 1_4 · col 258.5 · mb 0 · tabla 34.0469 · %col null
+   articulos-kb · fila 911.75 · 4_4                  101 │     0     59      0      42   [0,13,16,27,34.0469,40,45]
+        ↳ sin casar: 4_4 · col 911.75 · mb 0 · tabla 34.0469 · %col 25.0731
+        ↳ sin casar: 4_4 · col 911.75 · mb 13 · tabla 34.0469 · %col 25.0731
+        ↳ sin casar: 4_4 · col 911.75 · mb 0 · tabla 34.0469 · %col 25.0731
+   articulos-kb · fila 911.75 · estrecha              42 │    13      0      0      29   [0,16,25.0625]
+        ↳ sin casar: 1_2 · col 430.8 · mb 0 · tabla 25.0625 · %col 25.0726
+        ↳ sin casar: 1_2 · col 430.8 · mb 0 · tabla 25.0625 · %col 25.0726
+        ↳ sin casar: 1_3 · col 270.48 · mb 0 · tabla 25.0625 · %col 25.0735
+
+── 3 · SEPARADORAS ────────────────────────────────────────────────────
+   módulos barridos ................ 238
+   que llegan al DEFAULT ........... 118   (los demás llevan override del editor)
+   INSTANCIAS SEPARADORAS .......... 59   ← el denominador de la elección
+   acierto TABLA (vigente) ......... 118/118
+   acierto %COLUMNA (nuevo) ........ 55/118
+
+   dónde separan, y quién gana:
+     articulos-kb · 4_4 · fila 911.75 · col 911.75              n= 59 · mb [34.0469] · tabla 34.0469 · %col 25.0731  ⇒ gana TABLA
+
+── 4 · LO QUE `articulos-kb` SIRVE EN SU PROPIA PÁGINA ────────────────
+   gutters3: 4_4 2.75%  ·  3_4 3.735%  ·  2_3 4.242%  ·  3_5 4.758%  ·  1_2 5.82%  ·  2_5 7.493%  ·  1_3 9.27%  ·  1_4 13.174%  ·  1_5 17.628%  ·  1_6 22.759%
+   gutters2: 4_4 1.5%  ·  3_4 2.02%  ·  2_3 2.284%  ·  3_5 2.551%  ·  1_2 3.093%  ·  2_5 3.927%  ·  1_3 4.787%  ·  1_4 6.593%  ·  1_5 8.523%  ·  1_6 10.588%
+
+   ⇒ KB sirve para `gutters3 · 4_4` el MISMO 2.75 % que la cola larga.
+     su columna `4_4` mide 911.75 ⇒ 2.75 % predice 25.0731
+     y el original renderiza                            34.0469  en 59 de 59
+     ⇒ la excepción `4_4` de KB NO la explica el contenedor COLUMNA.
+
+   los dos arquetipos, con columnas DISTINTAS, aterrizan en el MISMO 34.0469:
+     SECTOR/MONOGRÁFICO · col 1238.39               n=11   (2.75 % de esa columna daría 34.0557)
+     articulos-kb · col 911.75                      n=59   (2.75 % de esa columna daría 25.0731)
+   ⇒ la pregunta abierta ya no es «¿qué VARIABLE manda?» sino
+     «¿contra QUÉ resuelve ese 2.75 % en KB?» — y 34.0469 / 0.0275 = 1238.07
+
+── 5 · CRUCE CON §F3-3-GUTTERS-SIN-MODELAR (otro canal) ───────────────
+   la cola larga declara para `1_5`: 8.523 %
+   Divi sirve  gutters2 · 1_5 = 8.523 %   ·   gutters3 · 1_5 = 17.628 %
+   ⇒ el valor SERVIDO en la cola larga es el de GUTTERS2, no el de gutters3.
+     Es el mismo veredicto de la ficha por un canal distinto: el discriminador
+     es `gutters2` y `reparto` es su sombra (§un discriminador 1:1 puede ser la sombra de otro).
+
+   ⚠ DENOMINADOR: n = 1. Con n = 1 esto NO establece nada por sí solo
+     (§un discriminador hallado en UNA SOLA instancia tampoco es un discriminador).
+     Se publica como CRUCE que concuerda, no como prueba.
+
+── 6 · ¿ES LA REJILLA DE 1/64 DE CHROME? ──────────────────────────────
+   predicción = floor(%·columna × 64)/64
+   EXACTOS al bit: 55 de 114   ·   no exactos: 59
+     ↳ articulos-kb · 4_4 · col 911.75  n=59 · medido 34.0469 · predicho 25.0625
+
+   CONTROL — los defaults ya publicados en `CLAUDE.md`, por la misma rejilla:
+     ✓ sección pt/pb 4 % de 1440          predicho 57.59375     publicado 57.5938
+     ✓ fila pt/pb 2 % de 1440             predicho 28.796875    publicado 28.7969
+     ✓ módulo mb 2.75 % de 1238.39        predicho 34.046875    publicado 34.0469
+     ✓ módulo mb 2.75 % de 911.75         predicho 25.0625      publicado 25.0625
+
+   ⇒ los 4 defaults publicados salen de floor(% × contenedor × 64)/64, EXACTOS.
+     Y el 25.0625 de las columnas estrechas de KB resulta ser `2.75 % de 911.75`
+     — o sea el MISMO 2.75 % de la FILA, no un default distinto.
+
+   ⚠ Lo que esto NO explica, y queda igual de abierto: `4_4` de KB.
+     Su columna mide 911.75 y la rejilla predice 25.0625 — que es justo lo que
+     miden sus columnas ESTRECHAS. El original sirve 34.0469 en 59 de 59.
+
+✅ mb-contenedor: 0 control(es) en rojo
+

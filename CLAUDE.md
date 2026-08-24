@@ -129,6 +129,51 @@ en el builder, **es un campo**. Defaults medidos: sección `pt/pb` 4%
 > no se explica el mecanismo. Implementación con su tabla y su `throw`:
 > `mbPorDefecto()` en `packages/cms-config/src/defaults.ts`.
 >
+> > ✅ **ESTRECHADA 2026-08-24 (104.ª), y el mecanismo YA NO es la incógnita —
+> > lo es el CONTENEDOR** (`derivaciones/mb-contenedor.{mjs,log}`, 238 módulos de
+> > los dos arquetipos, 118 llegando al default: **las cuatro filas de la tabla
+> > de arriba reproducidas exactas, 35 · 11 · 13 · 59**).
+> >
+> > Divi **no sirve un px: sirve un porcentaje POR REPARTO, resuelto contra la
+> > COLUMNA** —`.et_pb_gutters3 .et_pb_column_1_2 .et_pb_module{margin-bottom:5.82%}`—
+> > elegido para que el resultado sea **2.75 % de la FILA** en todos ellos
+> > (`5.82 × 47.25 % = 2.7500` · `9.27 × 29.6667 % = 2.7501` · `4.242 × 64.833 % =
+> > 2.7502`). O sea que «% de la columna» y «2.75 % de la fila» son **la misma
+> > función**, no dos modelos — §*antes de fichar una indeterminación, comprueba
+> > que las dos hipótesis sean DISTINTAS*.
+> >
+> > **Y se predice EXACTO, no aproximado, con la rejilla de `LayoutUnit`:**
+> >
+> > > **`px = floor(% × contenedor × 64) / 64`.** Chrome guarda la maquetación en
+> > > **1/64 de px y TRUNCA**, así que `2.75 % × 1238.39 = 34.055725` sirve
+> > > **34.046875**. El residuo de ~0.008 que aparecía en todas las predicciones
+> > > **no era ruido: era la rejilla**, y una tolerancia lo tapaba.
+> >
+> > Control, contra los defaults que este mismo documento publica: **4 de 4
+> > exactos** — `4 % × 1440 = 57.59375` · `2 % × 1440 = 28.796875` ·
+> > `2.75 % × 1238.39 = 34.046875` · `2.75 % × 911.75 = 25.0625`. **Y eso disuelve
+> > medio enigma**: el `25.0625` de las estrechas de KB **es** `2.75 % de 911.75`,
+> > o sea el mismo 2.75 % de la fila y **no un default distinto**.
+> >
+> > **⚠ Lo que sigue SIN PROBAR, ahora con su fracción y su número:** el modelo
+> > acierta **55 de 114** al bit, y los **59 fallos son UN SOLO GRUPO** —
+> > `articulos-kb · 4_4`, cuya columna mide **911.75** y a la que la rejilla
+> > predice **25.0625**, el mismo valor que miden sus columnas estrechas. El
+> > original sirve **34.0469 en 59 de 59**, y `34.0469 / 0.0275 = 1238.07`.
+> > Leído en el HTML servido de KB, **KB declara el MISMO `2.75 %`** que la cola
+> > larga, así que el porcentaje no es la variable.
+> >
+> > > **La pregunta abierta ya no es «¿qué VARIABLE manda?» —eso está medido—
+> > > sino «¿contra QUÉ resuelve ese 2.75 % en una `4_4` de KB?».** Los dos
+> > > arquetipos aterrizan en el **mismo 34.0469** con columnas de **911.75** y
+> > > **1238.39**, que es la forma de un porcentaje que **se salta su columna**.
+> >
+> > **Consecuencia operativa, y es la que importa: `mbPorDefecto()` NO se
+> > sustituye por la fórmula.** El modelo del porcentaje pondría **25.0625** donde
+> > hay **34.0469 medido en 59 módulos**. La tabla acierta **118 de 118** y **no
+> > está sobre-generalizada** — §*una comprobación retroactiva se enmarca en las
+> > DOS direcciones*, y ésta se contestó en la contraria a como se encargó.
+>
 > **Y la moraleja general, que vale para cualquier default futuro:**
 >
 > > **Un default expresado como porcentaje se lee como constante en cuanto se
