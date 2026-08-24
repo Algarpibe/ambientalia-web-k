@@ -4622,6 +4622,98 @@ barra después»— y las tres razones tienen número:
 | **que reabra CMS-3** | la unión de 11 bloques expresa **313 de 313** módulos y eso no cambia. Esto es de la capa de **arriba** del contenido |
 | **qué pasa con el `--`** | **sí** es derivable (`cuerpoClasico`, 31/31), así que esa página no depende de esta decisión |
 
+## ✅ 2j.9 · CMS-5 · QUÉ CASCARÓN LLEVA CADA PÁGINA — **EL CAMPO DERIVADO (R1)** (2026-08-24, 100.ª tanda)
+
+> ✅ **DECISIÓN DEL PROPIETARIO, 2026-08-24.** Las tres salidas se publicaron con
+> su coste en §2j.8 y en `PENDIENTES-QA.md` §F3-3-CASCARON-SIN-DISCRIMINADOR
+> **sin recomendación**, y se eligió **R1**. Aquí se escribe con su razón, con
+> **por qué caen R2 y R3** —cada una con su separadora o su número, no con un
+> adjetivo— y con la **reversa probada**.
+>
+> ⚠ **Esta tanda cierra el MODELO. NO emite ninguna ruta**: la emisión (E1)
+> sigue declarada en `PENDIENTES-QA.md` §F3-3-EMISION, y las 382 rutas de la
+> línea base **no se movieron ni una** (diferencia simétrica **0 y 0**).
+
+### Lo aplicado, en una línea
+
+`paginas` gana **`regimen`**, un `select` **obligatorio** de cuatro valores,
+**derivado del `<body>` del corpus** por `regimenDe()` —la misma función que el
+extractor **ya llamaba** para su censo—. El coste real de R1 era exactamente el
+que §2j.8 estimó: *«el dato ya está en el corpus: no hay que volver al
+original»*, y resultó literal — **la extracción es una línea**.
+
+| régimen | n medido | cascarón | default `mb` |
+|---|---|---|---|
+| `B-` | **22** | sin barra lateral (SECTOR/MONOGRÁFICO, fila 1238.39) | 34.05 |
+| `BT` | **8** | barra `1_4` + cuerpo `3_4` (`articulos-kb`, fila 911.75) | 25.06 |
+| `--` | **1** | plantilla clásica del tema (`entry-content`) | — |
+| `-T` | **0** | ⚠ **SIN EJERCITAR**, declarado — no recortado |
+
+**El reparto reproduce el 22 · 8 · 1 que sostiene que es campo**, y se comprobó
+**en los dos extremos**: en la extracción (`f33-extraido.json`) y **en la DB**
+(`SELECT regimen, count(*) FROM paginas`). Que cuadre en el destino y no sólo en
+el origen es lo que distingue «el extractor lo calcula» de «el clon lo tiene».
+
+### Por qué cae R3 — y no es un adjetivo, es una separadora por dirección
+
+R3 (cablear la ruta) acierta **30/31**, y **30 de 31 no es «casi bien»: es
+refutado**. Lo que se publica es la separadora, no el porcentaje:
+
+| separadora | medido | la ruta diría |
+|---|---|---|
+| `/sistema-interno-de-informacion` — **raíz, un segmento** | **BT** | B- |
+| `/soporte/servicio-de-reparacion` — **bajo `soporte`** | **B-** | BT |
+
+**Y el campo aplicado las sirve bien las dos**, comprobado en la extracción: es
+la prueba de que R1 funciona **justo donde R3 falla**, que es el único sitio
+donde las dos se distinguen. Con las otras 29 los dos modelos predicen lo mismo,
+así que el denominador real de esta elección es **2**, no 31.
+
+### Por qué cae R2 — por su precio real, que no era el de su primera redacción
+
+R2 («emitir sólo lo derivable hoy») cuesta **30 rutas sin emitir**, no 8: su
+primera redacción decía *«emitir las 22 `B-` y dejar las 8 `BT`»* y **excluir
+exige lo mismo que elegir** — para dejar fuera las 8 hay que saber cuáles son, o
+sea el campo que R1 añade. Sin él haría falta **una lista de 8 rutas a mano**,
+que envejece contra el corpus en silencio (§regla 9, 7.º caso).
+
+### La reversa, probada — y la VENTANA del `up`, medida y no deducida
+
+El detalle con sus censos está en la cabecera de
+`migrations/20260824_155444_f3_3_regimen_cms5.ts`. Lo que hay que saber aquí:
+
+| | filas | tablas | migraciones |
+|---|---|---|---|
+| poblada con `up` | **4103** | 130 | 21 |
+| tras `down` | **4102** | 130 | **20** |
+
+**La única línea que se movió en el censo tabla a tabla es
+`payload_migrations`** —el registro de la propia migración— y las **31 filas de
+`paginas` sobreviven**. El control no es el total: `4103 → 4102` sería exacto
+con dos tablas compensándose.
+
+⚠ **Y la mitad que hay que saber: `required` es `NOT NULL` sin defecto, así que
+el `up` sólo corre con `paginas` VACÍA.** No se dedujo de la semántica de SQL:
+se corrió **dos veces** sobre la tabla poblada y las dos dieron `exit 1` con
+`column "regimen" ... contains null values`, con **rollback limpio** las dos
+(censo idéntico línea a línea, 0 enums huérfanos). **Eso no es un defecto: es el
+esquema diciendo que las 31 filas viejas no tienen el valor medido**, y es la
+razón por la que la reversa se prueba antes de sembrar (§regla 30). El pipeline
+no lo sufre porque `cms:reset` reaplica las versionadas sobre vacío.
+
+**Y no se tapa con un `defaultValue`**, que era la salida cómoda: un defecto
+benigno serviría las **8 `BT` con el cascarón de las 22** y nadie se enteraría
+(§regla 6). El defecto se deja en la dirección que GRITA.
+
+### Lo que §2j.9 NO dice
+
+| | |
+|---|---|
+| **que las 31 se emitan** | **no se emite ninguna**. E1 sigue pendiente; las 382 rutas no se movieron (diferencia simétrica 0 y 0, `derivaciones/entorno-t100.log`) |
+| **que la geometría esté derivada** | sigue en **0 ejes comparados** (§2j.4). El campo dice *qué cascarón*; **no** dice qué marcado lleva cada módulo dentro |
+| **que `-T` esté soportado** | está **admitido y SIN EJERCITAR, 0 de 31**. Es un camino de render sin estrenar, declarado con su denominador |
+| **que el ancho de fila sea función del régimen** | **no lo es del todo**, y está medido: `f33-geo.json` §`anchoDeFilaPorRegimen` da `BT` {911.75 ×19, **784.09 ×1**} y `B-` {1238.39 ×57, **1296 ×2**}. El campo transporta el RÉGIMEN; las minorías de ancho son otra pregunta y siguen **SIN DERIVAR** |
+
 ## ✅ 2k · CMS-4 · QUIÉN SIRVE LAS 31 — **EL PLANO EXISTENTE (E1)** (2026-08-22, 95.ª tanda)
 
 > ✅ **DECISIÓN DEL PROPIETARIO, 2026-08-22.** Las tres salidas se publicaron con
@@ -4741,7 +4833,7 @@ deshacer sólo arbitra **cuando ninguna medida arbitra**. Aquí una medida arbit
 | # | decisión | bloquea |
 |---|---|---|
 | ✅ **CMS-4 · ¿QUIÉN SIRVE LAS 31 DE LA COLA LARGA?** — **CERRADA el 2026-08-22 (95.ª): el propietario tomó `E1`, el PLANO EXISTENTE. Escrita con su razón, sus separadoras y su condición de reapertura en §2k.** Enunciado original de la 94.ª debajo | **`0 de 31` colisionan literalmente y `30 de 31` SOLAPAN el plano de otra familia** — dos afirmaciones distintas y sólo la primera estaba medida. Reparto: **19 → `/[slug]`** (el plano de raíz de grupo A) · **4 + 4 + 3 → los catch-all de `centro-de-ayuda`, `soporte` y `recursos`**, los tres con `dynamicParams = false` · **1 sin plano**. Tres salidas con su coste en `PENDIENTES-QA.md` §CMS-4: **E1** `/[slug]` sirve una tercera familia (0 URLs cambian, se tocan 3 rutas verificadas) · **E2** prefijo propio (no toca nada, **rompe 19 URLs vivas**) · **E3** emitir sólo las 12 prefijadas. ⚠ **El precedente de que un plano sirva dos formas existe** (`/sectores/[slug]`), así que la pregunta no es si se puede: es **cuál se toma**. Lo que ya NO espera: la guarda — `qa:slugs` deriva sus familias del registro y `paginas` entra sola el día que se siembre | **la EMISIÓN entera de F3-3** (31 páginas) y, con ella, los 9 ejes de cobertura de la cola larga |
-| ⛔ **CMS-5 · ¿CÓMO SABE EL CLON QUÉ CASCARÓN LLEVA CADA PÁGINA DE LA COLA LARGA?** — abierta el 2026-08-24 (99.ª). Enunciado, mecanismo y las tres salidas en **§2j.8** | **`paginas` no lleva el RÉGIMEN, y sin él el clon no puede elegir.** Los dos cascarones **ya existen medidos y construidos** —`B-` = SECTOR/MONOGRÁFICO (fila **1238.39**), `BT` = `articulos-kb` (fila **911.75** con columna `1_4` de barra)—: lo que falta es **el campo que elige**. Y no es cosmético: el ancho de fila resuelve el **default de `mb`** de cada módulo (**34.05** contra **25.06**). Derivado (`derivaciones/f33-regimen-discriminador.{mjs,log}`): `cuerpoClasico` ⇒ `--` acierta **31/31** (o sea que el `--` **sí** es derivable), la RUTA acierta **30/31 y queda REFUTADA** por **2 separadoras, una por dirección** (`/sistema-interno-de-informacion` es **raíz y BT**; `/soporte/servicio-de-reparacion` es **prefijada y B-**), y **ningún** campo del documento los separa: **52 pares indistinguibles**. ⚠ **30 de 31 no es «casi bien»: es refutado.** Tres salidas con su coste en `PENDIENTES-QA.md` §F3-3-CASCARON-SIN-DISCRIMINADOR: **R1** campo derivado del `<body>` que el extractor **ya calcula** · **R2** emitir 23 y dejar 8 declaradas · **R3** cablear la ruta, que es **el arreglo falso** y se nombra para que conste | **la EMISIÓN de F3-3** (las 31), y con ella los 9 ejes de cobertura de la cola larga — o sea lo mismo que CMS-4 desbloqueó y esto vuelve a bloquear una capa más arriba |
+| ✅ **CMS-5 · ¿CÓMO SABE EL CLON QUÉ CASCARÓN LLEVA CADA PÁGINA DE LA COLA LARGA?** — **CERRADA el 2026-08-24 (100.ª): el propietario tomó `R1`, el CAMPO DERIVADO DEL `<body>`. Escrita con su razón, con por qué caen R2 y R3, y con la reversa probada en §2j.9.** Enunciado original de la 99.ª debajo | **`paginas` no lleva el RÉGIMEN, y sin él el clon no puede elegir.** Los dos cascarones **ya existen medidos y construidos** —`B-` = SECTOR/MONOGRÁFICO (fila **1238.39**), `BT` = `articulos-kb` (fila **911.75** con columna `1_4` de barra)—: lo que falta es **el campo que elige**. Y no es cosmético: el ancho de fila resuelve el **default de `mb`** de cada módulo (**34.05** contra **25.06**). Derivado (`derivaciones/f33-regimen-discriminador.{mjs,log}`): `cuerpoClasico` ⇒ `--` acierta **31/31** (o sea que el `--` **sí** es derivable), la RUTA acierta **30/31 y queda REFUTADA** por **2 separadoras, una por dirección** (`/sistema-interno-de-informacion` es **raíz y BT**; `/soporte/servicio-de-reparacion` es **prefijada y B-**), y **ningún** campo del documento los separa: **52 pares indistinguibles**. ⚠ **30 de 31 no es «casi bien»: es refutado.** Tres salidas con su coste en `PENDIENTES-QA.md` §F3-3-CASCARON-SIN-DISCRIMINADOR: **R1** campo derivado del `<body>` que el extractor **ya calcula** · **R2** emitir 23 y dejar 8 declaradas · **R3** cablear la ruta, que es **el arreglo falso** y se nombra para que conste | **la EMISIÓN de F3-3** (las 31), y con ella los 9 ejes de cobertura de la cola larga — o sea lo mismo que CMS-4 desbloqueó y esto vuelve a bloquear una capa más arriba |
 | ⛔ **CMS-TITULO-RICO** | **`titulo` es `type: "text"` y 8 de 288 documentos del corpus llevan MARCADO dentro del `<h1>`** — `<sub>` de fórmula química (`O<sub>2</sub>`, `H<sub>2</sub>S`, `PM<sub>10</sub>`). Un campo de texto plano **no puede contener su dato medido**, y el clon ya sirve esos 8 aplanados en rutas dadas por verificadas. Reparto: **término 6/37 · blog 1/152 · caso 1/57 · doc. científico 0/23 · faq 0/19**. Ver §7f | **`L2`** (`/glosario` es donde se concentra: 6 de sus 37 términos) y la fidelidad de **8 rutas ya emitidas** |
 | **CMS-ORDEN-L2** ✅ **DECIDIDA 2026-08-18 (81.ª) para sus DOS mitades con clave SERVIDA —se añade el campo de fecha a `casos` y `terminos-kunakpedia`—; la tercera (`documentos-cientificos`) queda DECLARADA y sin modelar. Ver §7g** ⚠ **ALCANCE AMPLIADO 2026-08-18 (80.ª): son TRES arquetipos, no uno, y uno de ellos BLOQUEA `L5` — ver §7g** | **¿cómo ordena el clon un ARCHIVO DE CPT?** El original ordena `/glosario` por **`datePublished` DESC (37/37)** y **ninguno de los dos tipos del clon tiene campo de fecha**. Dos mitades distintas, y **no se resuelven con la misma decisión** — ver §7e. ~~⚠ **AMPLIADA 2026-08-17 (75.ª): la pregunta no es sólo *«por qué campo»*, es también *«con qué DESEMPATE»*.**~~ ⛔⛔ **AMPLIACIÓN RETIRADA POR MEDIDA el 2026-08-18 (76.ª): su ÚNICA evidencia eran los «36 pares que oscilan entre builds del mismo código», y no eran builds del mismo código** — entre las corridas `-1` y `-2` se aplicó la salida `A` del 301 y entre la `-2` y la `-3` se revirtió; en la `-2` el clon sirve `/etiqueta/cov` con **`nTarjetas` 5 contra 6 del original**, o sea **un documento menos**, no un empate resuelto de otra forma. Sin esa evidencia **no hay ninguna medida que diga que el orden del clon sea inestable**, y hay 205 comparaciones de ruta a Δ0 contra el mismo build que dicen lo contrario. **La decisión vuelve a ser la de la 69.ª: sólo *«por qué campo ordena»*.** Un desempate total y estable sigue siendo sensato, pero entra **con esta decisión y con su antes/después**, no como reparación. Retirada y su prueba: `PENDIENTES-QA.md` §F3-AUDITORIA-76; la ficha original queda marcada `(RETIRADA)` en §F3-LH-LISTADO-QUE-OSCILA | **`L2` entera** (12 rutas) **y la estabilidad de los listados ya emitidos** |
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |

@@ -14,18 +14,25 @@
  * porque `MonoSeccion[]` no se toca**: la unión es propia (`bloques/paginas.ts`).
  *
  * ══════════════════════════════════════════════════════════════════════════
- * ⚠⚠ ESTA COLECCIÓN **NO ESTÁ EN `COLECCIONES` TODAVÍA**, Y ES DELIBERADO.
+ * ⚠ **CORREGIDO EN LA 100.ª (2026-08-24): aquí decía «ESTA COLECCIÓN NO ESTÁ EN
+ * `COLECCIONES` TODAVÍA, Y ES DELIBERADO», y llevaba tiempo siendo FALSO.**
  *
- * La 92.ª tenía escrito «no emitir ninguna página». Registrarla en el catálogo
- * la mete en el `payload.config`, en el push de esquema y en `qa:cms-campos`
- * —o sea, en la migración— que es la mitad irreversible. Se escribe, se
- * typechequea y **se prueba por extracción contra el corpus**; darla de alta es
- * de la tanda que emita.
+ * Derivado, no recordado: `colecciones.ts:155` y `:188` la importan y la
+ * registran, y la DB tiene sus **31 filas** y su migración
+ * (`20260823_131718_f3_3_paginas_cola_larga`). La 98.ª la dio de alta —está
+ * escrito con su razón en `seed.mjs` §SEMBRADAS— y **este comentario no se
+ * actualizó**.
  *
- * ⚠⚠ **Y HAY UN RESULTADO DE LA PRUEBA QUE HAY QUE LEER ANTES DE DARLA DE
- * ALTA:** `derivaciones/prueba-union-f33.log` dice que la unión **NO expresa 2
- * de las 32**, y no por falta de bloques — por **régimen**. Ver el bloque
- * `⚠ LO QUE LA PRUEBA DEVOLVIÓ` al final de este fichero.
+ * Es §regla 3 (*documentado no es conectado*) **por el otro lado**: allí el
+ * comentario prometía una llamada que no existía; aquí niega un alta que sí
+ * existe. Los dos fallan igual y por lo mismo — **el comentario es la única
+ * cosa del fichero que nadie ejecuta ni verifica**, así que lo que afirme sobre
+ * el estado del repo es un dato **recordado**, y envejece **contra** él en
+ * silencio (§regla 9).
+ *
+ * Lo que sigue en pie de aquel bloque es el resultado de la prueba por
+ * extracción —la unión no expresaba 2 de las 32, y **por régimen**—; está
+ * resuelto y se lee al final del fichero, en `⚠ LO QUE LA PRUEBA DEVOLVIÓ`.
  * ══════════════════════════════════════════════════════════════════════════
  */
 import type { CollectionConfig } from "payload";
@@ -105,6 +112,78 @@ export const paginas: CollectionConfig = {
      * cablear en la ruta.
      */
     { name: "prefijo", type: "text" },
+    /**
+     * ══════════════════════════════════════════════════════════════════════
+     * ⚠⚠ **CMS-5 · EL RÉGIMEN — R1, decidida por el propietario el 2026-08-24
+     * y aplicada en la 100.ª tanda.** Enunciado y las tres salidas en
+     * `ESQUEMA-CMS.md` §2j.8; el cierre, en §2j.9.
+     *
+     * **Qué decide, y no es cosmético.** El régimen del `<body>` decide **qué
+     * cascarón sirve el tema**, de ahí sale el **ancho de fila**, y de ahí el
+     * **default de `mb` de cada módulo** (34.05 contra 25.06). Sin este campo
+     * el clon no puede elegir en **30 de 31** páginas.
+     *
+     * | régimen | n | cascarón |
+     * |---|---|---|
+     * | `B-` | **22** | sin barra lateral (el de SECTOR/MONOGRÁFICO) |
+     * | `BT` | **8** | columna `1_4` de barra + `3_4` de cuerpo (el de `articulos-kb`) |
+     * | `--` | **1** | plantilla clásica del tema (`entry-content`) |
+     * | `-T` | **0** | ⚠ **SIN EJERCITAR** — ver abajo |
+     *
+     * ── Por qué es CAMPO y no plantilla ───────────────────────────────────
+     * Varía **dentro de la misma colección** —22 · 8 · 1—, así que pasa el
+     * **test B** (la variación intra-arquetipo) con holgura. Lo escribió quien
+     * construyó cada página en WordPress al elegir plantilla, igual que
+     * `prefijo` o `flujo`: es la huella del editor, no de quien maquetó.
+     *
+     * ── Por qué NO se cableó la ruta (R3) ─────────────────────────────────
+     * Porque está **REFUTADA con dos separadoras, una por dirección**
+     * (`derivaciones/f33-regimen-discriminador.log`): la ruta acierta 30/31, y
+     * `/sistema-interno-de-informacion` es **raíz y BT** mientras
+     * `/soporte/servicio-de-reparacion` es **prefijada y B-**. **30 de 31 no es
+     * «casi bien»: es refutado** — es el arreglo falso, o sea el valor de la
+     * mayoría esperando a la tercera instancia.
+     *
+     * ── Por qué se DERIVA y no se escribe a mano ──────────────────────────
+     * `regimenDe()` en `scripts/seed/extractor-f33.mjs` lo calcula del `<body>`
+     * del corpus —que ya lo hacía para su censo—, así que **no hay lista de
+     * rutas que envejezca contra el corpus** (§regla 9, 7.º caso) y **no hay
+     * que volver al original**.
+     *
+     * ── Los CUATRO casilleros, y el que entra SIN EJERCITAR ───────────────
+     * Son **dos marcadores binarios**, así que la taxonomía tiene `2 × 2 = 4`
+     * casilleros **por construcción**, y `regimenDe()` puede devolver los
+     * cuatro. `-T` entra **con su denominador: 0 de 31** en esta colección.
+     * **SIN EJERCITAR no es 0** (§*un campo que ADMITE un caso y que ningún dato
+     * de calibración EJERCITA es un camino de render sin estrenar*): se declara
+     * en vez de recortarse, porque recortar el enum haría que una página `-T`
+     * futura **fuese rechazada por el esquema** en lugar de sembrarse.
+     *
+     * ── `required`, y el porqué del coste que trae ────────────────────────
+     * Va **obligatorio a propósito**, con el defecto puesto en la dirección que
+     * GRITA (§sondas 6): sin regimen, la siembra **falla en el acto**; con un
+     * `defaultValue` benigno, las 8 `BT` se servirían con el cascarón de las 22
+     * y **nadie se enteraría** — que es §regla 6 exacta, *un valor por defecto
+     * convierte «no lo sé» en «está bien»*.
+     *
+     * ⚠ **Su precio, medido y declarado:** `required` es `NOT NULL` en
+     * Postgres, así que el `up` de la migración **sólo puede correr con la
+     * tabla VACÍA**. No es un problema del pipeline —`cms:reset` dropea el
+     * esquema y reaplica las versionadas sobre vacío en cada corrida— pero **sí
+     * es la ventana de la reversa**, y por eso se probó ahí (§regla 30). El
+     * número está en la cabecera de la migración.
+     * ═════════════════════════════════════════════════════════════════════ */
+    {
+      name: "regimen",
+      type: "select",
+      required: true,
+      options: [
+        { label: "B- · builder puro (sin barra lateral)", value: "B-" },
+        { label: "BT · híbrido (barra lateral 1_4 + cuerpo 3_4)", value: "BT" },
+        { label: "-T · plantillado (theme builder)", value: "-T" },
+        { label: "-- · plantilla clásica del tema (entry-content)", value: "--" },
+      ],
+    },
     seoA,
     { name: "titulo", type: "text", required: true },
     bloquesPagina,

@@ -704,6 +704,18 @@ for (const p of RUTAS.paginas) {
   const doc = {
     slug: p.slug,
     prefijo: oUndef(p.prefijo),
+    /**
+     * ⚠ **CMS-5 · R1, aplicada el 2026-08-24 (100.ª).** El régimen viaja al
+     * documento **derivado del `<body>`**, con la MISMA `regimenDe()` que esta
+     * función ya llamaba dos líneas más arriba para su censo: por eso R1 «no
+     * hay que volver al original» era literal y no una estimación.
+     *
+     * Se escribe **el valor medido, no una lista de rutas** — cablear la ruta
+     * (R3) está REFUTADO por dos separadoras, una por dirección
+     * (`derivaciones/f33-regimen-discriminador.log`). El modelo y los cuatro
+     * casilleros, en `colecciones/paginas.ts`.
+     */
+    regimen: reg,
     titulo: h1 || title || p.slug,
     seo: { title: oUndef(title), description: oUndef(desc) },
   };

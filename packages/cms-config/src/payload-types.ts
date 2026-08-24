@@ -1607,6 +1607,7 @@ export interface Pagina {
   id: number;
   slug: string;
   prefijo?: string | null;
+  regimen: 'B-' | 'BT' | '-T' | '--';
   seo: {
     title: string;
     description?: string | null;
@@ -1806,7 +1807,7 @@ export interface Pagina {
                   href: string;
                   external?: boolean | null;
                   /**
-                   * `boton-azul` — 4 de 13 instancias (arbol-f33.log §4)
+                   * Defecto "defecto" — `boton-azul` — 4 de 13 instancias (arbol-f33.log §4); las otras 9 no llevan piel
                    */
                   piel?: ('defecto' | 'azul') | null;
                   ritmo?: {
@@ -2680,7 +2681,7 @@ export interface Pagina {
                           href: string;
                           external?: boolean | null;
                           /**
-                           * `boton-azul` — 4 de 13 instancias (arbol-f33.log §4)
+                           * Defecto "defecto" — `boton-azul` — 4 de 13 instancias (arbol-f33.log §4); las otras 9 no llevan piel
                            */
                           piel?: ('defecto' | 'azul') | null;
                           ritmo?: {
@@ -5174,6 +5175,7 @@ export interface DocumentosCientificosSelect<T extends boolean = true> {
 export interface PaginasSelect<T extends boolean = true> {
   slug?: T;
   prefijo?: T;
+  regimen?: T;
   seo?:
     | T
     | {

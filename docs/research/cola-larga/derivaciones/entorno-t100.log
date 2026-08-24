@@ -1,0 +1,16 @@
+
+════════ ENTORNO T100 · DIFERENCIA SIMÉTRICA DE RUTAS ════════
+
+  línea base    clon-base-1440-t99-antes.json
+                382 rutas
+  tras CMS-5    manifiesto-2026-08-24.json
+                382 rutas
+
+  ── LOS DOS LADOS, NOMBRADOS ──
+  en la BASE que hoy NO se emiten    0
+  emitidas hoy que la BASE no tenía  0
+
+  ⇒ ✅ diferencia simétrica 0 y 0 — el entorno es el de la línea base
+
+  (resumen, no prueba: 382 → 382)
+

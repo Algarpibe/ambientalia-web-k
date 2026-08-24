@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "fecha": "2026-08-24",
+    "sabotaje": null,
+    "alcance": {
+      "comparadas": [
+        "categorias",
+        "etiquetas",
+        "categorias-recursos",
+        "categorias-cientificas",
+        "productos",
+        "paginas",
+        "sectores",
+        "monograficos",
+        "taxonomia-sectores",
+        "casos",
+        "faqs",
+        "entradas-blog",
+        "terminos-kunakpedia",
+        "documentos-cientificos"
+      ],
+      "pares": 383,
+      "fuera": {
+        "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
+        "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+        "usuarios": "infraestructura (CMS-0f), sin lado medido",
+        "slugs": "registro del plano (§4): lo escriben los hooks, no un seed"
+      },
+      "rutasEnFrontera": []
+    }
+  },
+  "porColeccion": {
+    "categorias": {
+      "documentos": 4,
+      "conDiferencia": 0
+    },
+    "etiquetas": {
+      "documentos": 12,
+      "conDiferencia": 0
+    },
+    "categorias-recursos": {
+      "documentos": 9,
+      "conDiferencia": 0
+    },
+    "categorias-cientificas": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "productos": {
+      "documentos": 19,
+      "conDiferencia": 0
+    },
+    "paginas": {
+      "documentos": 31,
+      "conDiferencia": 0
+    },
+    "sectores": {
+      "documentos": 4,
+      "conDiferencia": 0
+    },
+    "monograficos": {
+      "documentos": 2,
+      "conDiferencia": 0
+    },
+    "taxonomia-sectores": {
+      "documentos": 11,
+      "conDiferencia": 0
+    },
+    "casos": {
+      "documentos": 57,
+      "conDiferencia": 0
+    },
+    "faqs": {
+      "documentos": 19,
+      "conDiferencia": 0
+    },
+    "entradas-blog": {
+      "documentos": 152,
+      "conDiferencia": 0
+    },
+    "terminos-kunakpedia": {
+      "documentos": 37,
+      "conDiferencia": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 23,
+      "conDiferencia": 0
+    }
+  },
+  "diferencias": []
+}
