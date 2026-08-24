@@ -1,0 +1,52 @@
+fuente : .\scripts\qa\medidas\f33-geo.json
+mtime  : 2026-08-23T03:09:53.863Z
+medida : 2026-08-22 · 31/31 rutas
+
+═══ 1 · ANCHO DE COLUMNA por reparto (razón wCol/wFila) ═══
+   Es lo que hace que las columnas no apilen. Derivable: la
+   congelada trae `wCol`, `wFila` y `reparto` en cada módulo.
+
+  ── 1440 ──
+    1_2   n= 69  ⚠ 2 valores: 47.2498 ×46 · 47.2493 ×23
+    1_3   n= 81  ✅ 29.6659 %
+    1_4   n=  4  ✅ 22.7489 %
+    1_5   n=  7  ✅ 17.5995 %
+    2_3   n= 52  ✅ 64.8326 %
+    4_4   n= 64  ✅ 100 %
+
+  ── 390 ──
+    1_2   n= 69  ✅ 100 %
+    1_3   n= 81  ✅ 100 %
+    1_4   n=  4  ✅ 100 %
+    1_5   n=  7  ✅ 100 %
+    2_3   n= 52  ✅ 100 %
+    4_4   n= 68  ✅ 100 %
+
+═══ 2 · DEFAULT DE `mb` por ancho de fila ═══
+   2.75 % de la FILA — 1238.39⇒34.05 · 911.75⇒25.06. `CLAUDE.md` §Test A: la variable que manda es el ANCHO DE FILA, no el tipo de columna
+    fila 1296     n=  6  en el default 0  esperado — (SIN DERIVAR)
+    fila 911.75   n= 48  en el default 12  esperado 25.06
+    fila 1238.39  n=220  en el default 89  esperado 34.05
+    fila 784.09   n=  1  en el default 0  esperado — (SIN DERIVAR)
+   separadoras: 1
+
+═══ 3 · LO QUE LA CONGELADA **NO** TIENE ═══
+   claves de una FILA    : id · seccion · mt · mb · pt · pb · w
+   claves de una SECCIÓN : id · mt · mb · pt · pb · w
+   ¿filas/secciones a 390?  ⛔ NO — sólo 1440
+
+   Faltan, y ninguna se puede inventar:
+     · el ritmo por DEFECTO de sección y fila — la congelada trae el
+       valor COMPUTADO, y no separa «lo que el dato trae» de «lo que
+       la hoja pone». Eso es justo lo que `qa:kb-clases` hace en KB:
+       derivarlo de los nodos cuyo DATO omite la propiedad;
+     · el CANAL entre columnas (`margin-right` de la no-última);
+     · el corte RESPONSIVE y el comportamiento al apilar;
+     · `float` / `max-width` de fila / `min-height` de columna;
+     · el ritmo de los WRAPPERS interiores (`et_pb_text_inner`…),
+       que en KB se omitieron CON medida («ritmo 0 en los 85») y
+       aquí no están medidos — §F3-3-MARCADO-INTERIOR.
+
+   Instrumento que lo daría: `qa:f33-clases`, el equivalente de
+   `qa:kb-clases`. NO EXISTE (derivado: package.json declara
+   qa:f33-{cmp,geo,spec,membresia} y ninguna más).

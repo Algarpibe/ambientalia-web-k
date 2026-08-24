@@ -35,17 +35,44 @@ servida, y el cambio **no existe**. El precedente exacto es D4 —`pb-[30px]`
 sobre una caja de alto fijo, clase servida y efecto cero—, aquí multiplicado por
 la hoja entera.
 
-### Por qué NO se escribió en esta tanda
+### Por qué NO se escribió en esta tanda — y el reparto es **mitad y mitad**
 
 Porque los números no están derivados y escribirlos a ojo es el arreglo falso.
+Pero *«no están derivados»* sin número es §regla 14, así que se derivó cuánto
+falta: `derivaciones/hoja-f33-derivable.{mjs,log}`, leyendo `f33-geo.json`
+(mtime `2026-08-23T03:09`, medida del 2026-08-22, 31/31 rutas).
 
-| lo que la hoja necesita | ¿derivable hoy? | de dónde |
+**El corte no es entre «hoja» y «no hoja»: es entre RETÍCULA y RITMO.**
+
+| lo que la hoja necesita | ¿derivable hoy? | de dónde, con su `n` |
 |---|---|---|
-| anchos de columna por reparto | **sí** | `f33-geo.json` trae `wCol`/`wFila`/`reparto` por módulo (`1_2` ⇒ 430.8/911.75 = 47.249 %, el mismo número que `kb.css`) |
-| default de `mb` por ancho de fila | **sí** | `f33-geo.json` §`defaultMbPorAnchoDeFila`: 1238.39 ⇒ **34.05** · 911.75 ⇒ **25.06**, con `esperado` y `porReparto` explícitos |
-| `:last-child { mb: 0 }` del módulo | **sí** | `reticula.spec.md` §2: **78 de 79** columnas, y el nivel de arriba lo confirma por ausencia (**0 de 51**) |
-| ritmo por defecto de SECCIÓN y FILA | ⛔ **no** | `f33-geo` congela `filas1440`/`secciones1440` **sólo a 1440**, y no separa *lo que el dato trae* de *lo que la hoja pone* |
-| canal entre columnas · corte responsive · `float` | ⛔ **no** | nadie lo ha medido en este arquetipo |
+| **anchos de columna** @1440 | ✅ **sí** | `1_3` **29.6659** (n=81) · `1_4` **22.7489** (4) · `1_5` **17.5995** (7) · `2_3` **64.8326** (52) · `4_4` **100** (64) — varianza **cero** en los cinco |
+| **anchos de columna** @390 | ✅ **sí** | **100 % en los seis repartos** (n=281): a 390 **apilan**, medido y no supuesto |
+| default de `mb` por ancho de fila | ✅ **sí** | §`defaultMbPorAnchoDeFila`: 1238.39 ⇒ **34.05** (89 de 220 en el default) · 911.75 ⇒ **25.06** (12 de 48) |
+| `:last-child { mb: 0 }` del módulo | ✅ **sí** | `reticula.spec.md` §2: **78 de 79** columnas, y el nivel de arriba lo confirma **por ausencia** (0 de 51) |
+| **ritmo por defecto de SECCIÓN y FILA** | ⛔ **no** | la congelada trae el valor **COMPUTADO** y **no separa «lo que el dato trae» de «lo que la hoja pone»** — que es exactamente lo que `qa:kb-clases` hace en KB. Y `filas`/`secciones` están **sólo a 1440** |
+| canal entre columnas · corte responsive · `float` · `max-width` de fila | ⛔ **no** | nadie lo ha medido en este arquetipo |
+| ritmo de los wrappers interiores | ⛔ **no** | en KB se omitieron **CON** medida (*«ritmo 0 en los 85»*); aquí esa medida no existe (§F3-3-MARCADO-INTERIOR) |
+
+> ⚠ **Y la que enseña: `1_2` da DOS valores a 1440** —47.2498 ×46 y 47.2493
+> ×23—, que es la **cuantización a 1/64 px** que `kb.css` ya documenta
+> (*«no la resuelve la aritmética: quién adjudica es el comparador, midiendo el
+> clon con el mismo motor contra el mismo número»*). No es ruido ni un defecto:
+> es la retícula de Divi resolviéndose contra dos anchos de fila distintos.
+
+**El saldo, en la unidad que importa —las familias de variables que el
+componente emite—:**
+
+| familia | qué consume | ¿la hoja podría escribirla hoy? |
+|---|---|---|
+| `--f33m-w` + `.f33-col-*` | la RETÍCULA | ✅ sí |
+| `--f33m-mb` (default) | el default de módulo | ✅ sí |
+| **`--f33s-*` · `--f33f-*` · el resto de `--f33m-*`** | el RITMO | ⛔ **no** |
+| `--f33h-*` · `--f33blurb-*` | las pieles de titular | ⛔ no medidas aquí |
+
+O sea **3 de las 5 familias siguen sin números**, y son las que producen el alto
+de la página — es decir, exactamente `docH` y `base`, los dos ejes de
+`qa:f33-cmp` que una emisión de hoy dejaría sin poder adjudicar.
 
 **El instrumento que falta tiene nombre y hermano mayor:** cada número de
 `kb.css` (543 líneas) lo derivó **`qa:kb-clases`**, *«que lo deriva de los nodos

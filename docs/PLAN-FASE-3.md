@@ -1077,6 +1077,63 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ⛔⛔ **ACTUALIZACIÓN 2026-08-24 (101.ª tanda) — LA EMISIÓN SIGUE SIN HACERSE, Y
+> POR LA OTRA MITAD DEL MISMO ARQUETIPO: CORTE LIMPIO 1 DISPARÓ EN EL PASO 0.
+> `CuerpoPagina.tsx` NO TIENE HOJA, así que su ritmo, su retícula y su ancho son
+> INERTES.**
+>
+> **Rutas 382, sin cambio por segunda tanda consecutiva.** El pre-registro
+> **382 → 413 se RE-DERIVÓ** como el encargo pedía —no se supuso— y sale
+> **idéntico**: reparto por plano `19 · 4 · 4 · 3 · 1 = 31` desde
+> `f33-rutas.json`. **R1 no cambió el recuento**, y ahora eso está comprobado.
+>
+> ### Lo que encontró el PASO 0, que el encargo declara *barato y
+> no-verificación* — y lo es: dos `grep`, sin gastar un build
+>
+> | # | hallazgo | estado |
+> |---|---|---|
+> | **1** | **`qa:f33-cmp` no habría visto NI UN módulo del clon.** Cuenta los dos lados con `[class*='et_pb_module'], [data-modulo]` y `.et_pb_section, [data-seccion]`; el componente emitía `f33-modulo`/`f33-seccion`. Habría publicado **`nModulos 313 → 10`** y **`nSecciones 86 → 0`** con el render **correcto** | ✅ **arreglado** (`data-modulo`/`data-seccion`) |
+> | **2** | **No existe `f33.css`.** 17 clases y 5 familias de variables emitidas · **0 reglas** en las cuatro hojas del clon | ⛔ **§F3-3-SIN-HOJA** |
+> | **3** | **7 huecos de forma** medidos contra el HTML servido (`et_pb_text_inner` 151/151 · `et_pb_blurb_content` 22/22 · `et_pb_code_inner` 9/9 · `et_pb_image_wrap` 53/71 · `et_pb_icon_wrap` 3/3), y **un campo de alineación del botón** que el modelo no tiene (11 de 13) | ⚠ **§F3-3-MARCADO-INTERIOR** |
+>
+> **El 1 es el que justifica que el PASO 0 exista**, y es el defecto de KB
+> **leído al revés**: allí el render no pintaba y el comparador lo cazó; aquí el
+> render pinta y el comparador no sabe verlo. Los dos se leen igual desde fuera
+> —`orig N → clon 0`— y el segundo manda a arreglar lo que está bien. Su
+> negativo no podía cazarlo: el caso `mismo-lado` copia el lado del original
+> sobre el del clon, así que esos selectores tenían **0 instancias separadoras**.
+>
+> ### Por qué esto PARA la emisión, y es el argumento de la 99.ª aplicado a la otra mitad
+>
+> La 99.ª no degradó la emisión al cascarón equivocado porque *«el arreglo
+> posterior se leería como REGRESIÓN contra una línea base construida sobre el
+> cascarón equivocado — una FAMILIA DE CALIBRACIÓN fabricada a mano»*. **Ese
+> argumento vale igual para la hoja del cuerpo**, y con el mismo mecanismo:
+> emitir hoy congelaría una línea base de 31 páginas **sin ritmo ni retícula**, y
+> el día que llegue la hoja **todo se movería y se leería como regresión**.
+>
+> Y `f33-cmp` volvería a quedar sin poder adjudicar en la mitad de sus ejes:
+>
+> | eje | ¿lo invalida la hoja ausente? |
+> |---|---|
+> | `nSecciones` · `nFilas` · `nModulos` · `enlaces` | **no** — son recuentos de nodos |
+> | `docH` · `base` | **sí** — son geometría, y **3 de las 5 familias de variables** del componente (las del RITMO) siguen sin números |
+>
+> ### Lo que la tanda siguiente NO tiene que volver a descubrir
+>
+> Derivado y congelado: `derivaciones/hoja-f33-derivable.{mjs,log}`. **La
+> RETÍCULA ya está medida** —6 repartos × 2 anchos, varianza cero salvo la
+> cuantización a 1/64 px del `1_2`; a **390 los seis apilan al 100 %**— y el
+> default de `mb` también (34.05 / 25.06). Lo que falta es **el RITMO por
+> defecto de sección y fila**, y su instrumento tiene nombre: **`qa:f33-clases`**,
+> el equivalente de `qa:kb-clases` —*«lo deriva de los nodos cuyo DATO omite la
+> propiedad»*—, que **no existe**.
+>
+> > **Es §*UN ARQUETIPO NUEVO NO HEREDA COBERTURA* con el objeto cambiado:** allí
+> > lo que faltaba era el comparador, aquí la sonda que da los defaults de
+> > plantilla. Las dos veces el error sería el mismo — dar por hecha una fase que
+> > nadie hizo.
+
 > ⛔ **ACTUALIZACIÓN 2026-08-24 (99.ª tanda) — LA EMISIÓN NO SE HACE, Y NO POR
 > FALTA DE TRABAJO: CORTE LIMPIO 2 DISPARÓ EN EL CASCARÓN. El clon no puede
 > elegir el suyo en 30 de 31 páginas.**
