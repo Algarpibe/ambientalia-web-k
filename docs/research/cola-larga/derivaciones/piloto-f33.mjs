@@ -29,47 +29,20 @@
  *   · y el piloto se publica **con lo que NO ejercita**, que es la mitad que
  *       decide cómo leer su resultado.
  */
-import { readFileSync, existsSync, writeFileSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { limpia, parsea, tipoDe, esEstructura, seccionesPropias, modulosDe } from "./arbol-f33.mjs";
+import { censaPaginasF33 } from "./arbol-f33.mjs";
 
 const RAIZ = "C:/Users/algar/OneDrive/Documentos/Ambientalia_2026_K/kunak-web-clone";
 const CORPUS = join(RAIZ, "corpus/fase-3");
 
 /* ── 1 · censo: qué tipo trae cada página ─────────────────────────────────── */
-const ld = JSON.parse(readFileSync(join(CORPUS, "LISTA-DERIVADA.json"), "utf8")).trabajo;
-const L4 = ["/es/productos/", "/es/sectores/", "/es/recursos/", "/es/recursos/kunakpedia/",
-  "/es/recursos/documentos-cientificos/", "/es/recursos/preguntas-frecuentes/"];
-const GRUPOS = {
-  "hubs-KB": ld.filter((x) => x.bucket === "hubs-kb"),
-  "hubs-L4": L4.map((r) => ld.find((x) => x.ruta === r)).filter(Boolean),
-  "sueltas": ld.filter((x) => x.bucket === "sueltas"),
-};
-
 const paginas = [];
-for (const [grupo, lista] of Object.entries(GRUPOS)) {
-  for (const e of lista) {
-    if (!e.fichero || !existsSync(join(CORPUS, e.fichero))) continue;
-    const bruto = readFileSync(join(CORPUS, e.fichero), "utf8");
-    const html = limpia(bruto);
-    const bc = (/<body[^>]*class="([^"]*)"/.exec(html) || [])[1] || "";
-    /* S1 — las de otra colección no entran en el piloto de `paginas`. */
-    if (/\bsingle-post\b/.test(bc)) continue;
-    const B = /\bet_pb_pagebuilder_layout\b/.test(bc), T = /\bet-tb-has-body\b/.test(bc);
-    const reg = B && T ? "BT" : B ? "B-" : T ? "-T" : "--";
-    const tipos = {};
-    let nSec = 0;
-    for (const sec of seccionesPropias(parsea(html))) {
-      nSec++;
-      for (const m of modulosDe(sec)) {
-        const t = tipoDe(m);
-        if (!t || esEstructura(t)) continue;
-        tipos[t] = (tipos[t] || 0) + 1;
-      }
-    }
-    paginas.push({ ruta: e.ruta, grupo, reg, nSec, tipos, fichero: e.fichero });
-  }
-}
+/* ⚠ El censo vive en `arbol-f33.mjs` desde la 104.ª, porque `f33-cmp` lo
+ * necesita ENTERO para comparar las 31 y dos copias serían dos definiciones de
+ * «qué régimen tiene esta página» (clase C7). El control de que la extracción
+ * no cambió nada es que este fichero siga eligiendo EL MISMO piloto. */
+paginas.push(...censaPaginasF33());
 if (paginas.length === 0) throw new Error("CENSO VACÍO (§sondas 4)");
 
 /* ── 2 · el n de cada tipo, EN PÁGINAS ─────────────────────────────────────── */

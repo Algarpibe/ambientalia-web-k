@@ -51,13 +51,42 @@ const CORPUS = join(RAIZ, "corpus/fase-3");
 const CSS = join(RAIZ, "corpus/css");
 const ANCHO = Number(process.argv[2] || process.env.ANCHO || 1440);
 
-/* ── 1 · el dominio: el PILOTO, derivado de su congelada ───────────────────── */
-const PILOTO = JSON.parse(readFileSync(join(RAIZ, "docs/research/cola-larga/derivaciones/piloto-f33.json"), "utf8")).piloto;
-if (!PILOTO.length) throw new Error("PILOTO VACÍO: la congelada no lista ninguna página (§sondas 4)");
+/* ══════════════════════════════════════════════════════════════════════════
+ * 1 · EL DOMINIO — **las 31 por defecto** desde la 104.ª (E1)
+ *
+ * Hasta la 103.ª esto comparaba **el PILOTO (6)**, y era lo correcto: no había
+ * clon que comparar y el piloto se eligió por *lo que ejercita*. Emitido el
+ * arquetipo, el dominio pasa a ser el arquetipo entero — y el nombre CANÓNICO
+ * tiene que llevar la comparación completa, no una muestra, porque es el que se
+ * cita (§*una cobertura declarada al nivel de arriba absorbe lo que no se midió
+ * abajo*).
+ *
+ * `PILOTO=1` conserva el dominio corto **para los negativos**: su trabajo es
+ * probar el INSTRUMENTO, no la cobertura, y con 6 páginas hacen lo mismo en la
+ * quinta parte del tiempo. La salida se desvía en consecuencia — un fichero con
+ * nombre de medida y contenido de muestra sería §regla 7.
+ *
+ * ⚠ El censo NO se copia: vive en `arbol-f33.mjs` §`censaPaginasF33`, que es de
+ * donde `piloto-f33` saca el suyo. Dos definiciones de «qué régimen tiene esta
+ * página» serían la clase C7 y darían dos denominadores ciertos a la vez.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const SOLO_PILOTO = process.env.PILOTO === "1";
+const { censaPaginasF33 } = await import(
+  pathToFileURL(join(RAIZ, "docs/research/cola-larga/derivaciones/arbol-f33.mjs")).href
+);
+const TODAS = censaPaginasF33();
+const PILOTO = SOLO_PILOTO
+  ? JSON.parse(readFileSync(join(RAIZ, "docs/research/cola-larga/derivaciones/piloto-f33.json"), "utf8")).piloto
+  : TODAS;
+if (!PILOTO.length) throw new Error("DOMINIO VACÍO: 0 páginas que comparar (§sondas 4)");
 
-/* El mínimo se DERIVA del piloto, no se escribe: una página más sube el listón
+/* El mínimo se DERIVA del dominio, no se escribe: una página más sube el listón
  * sola (§4bis). */
-const ev = new Evaluadas({ nombre: "f33-cmp", minimo: PILOTO.length, unidad: "páginas del piloto" });
+const ev = new Evaluadas({
+  nombre: "f33-cmp",
+  minimo: PILOTO.length,
+  unidad: SOLO_PILOTO ? "páginas del piloto" : "páginas de la cola larga",
+});
 
 /* ── 2 · las HOJAS: mapa url → copia local, derivado del índice ────────────── */
 const INDICE = JSON.parse(readFileSync(join(CSS, "INDICE.json"), "utf8"));
@@ -156,6 +185,49 @@ function medir() {
   };
   secciones.forEach((s, i) => { out.cajas[`sec${i}`] = r(s); });
   filas.forEach((f, i) => { out.anchos[`fila${i}`] = +f.getBoundingClientRect().width.toFixed(2); });
+
+  /* ══════════════════════════════════════════════════════════════════════════
+   * EL NIVEL DE MÓDULO — el que la spec midió y este comparador NO comparaba
+   *
+   * §*la causa común: el NIVEL al que se mide*. Hasta la 103.ª esto publicaba
+   * `nModulos` —un RECUENTO— y las cajas de las SECCIONES. Las dos cosas son
+   * contenedores con holgura: **un módulo con el ritmo mal no mueve el alto de
+   * su sección si la columna hermana es más alta**, y el recuento no se mueve
+   * jamás. O sea que «el componente cumple la spec» no tenía con qué
+   * respaldarse: la spec midió MARCADO y GEOMETRÍA DE MÓDULO y aquí no se
+   * comparaba ninguno de los dos.
+   *
+   * ⚠ **La llave es POSICIONAL, y hay que decir por qué.** El original nombra
+   * sus módulos `et_pb_<tipo>_<n>` y el clon `data-modulo="<kind>"`: **no hay
+   * identificador común**, así que emparejar por nombre es imposible sin
+   * inventarse una tabla de equivalencias. El orden del documento sí es común —
+   * es lo que el render reproduce— y por eso se empareja por índice.
+   *
+   * Su límite, declarado: **si el clon emite un módulo de MENOS, todos los
+   * siguientes se desalinean** y el informe da muchos pares distintos en vez de
+   * uno. Eso no es ruido — es la firma de un módulo perdido — y `nModulos` al
+   * lado dice cuál de las dos cosas pasó.
+   * ════════════════════════════════════════════════════════════════════════ */
+  out.modulos = modulos.map((m, i) => {
+    const cs = getComputedStyle(m);
+    const b = m.getBoundingClientRect();
+    return {
+      i,
+      /* el TIPO, por el canal de cada lado — es dato, no llave */
+      tipo:
+        [...m.classList].map((c) => /^et_pb_(\w+?)_\d+$/.exec(c)?.[1]).find(Boolean) ??
+        m.getAttribute("data-modulo") ??
+        null,
+      etiqueta: m.tagName.toLowerCase(),
+      w: +b.width.toFixed(2),
+      h: +b.height.toFixed(2),
+      /* el RITMO: los tres ejes que el esquema modela (`pt` salió SIN ESCRIBIR) */
+      mt: +parseFloat(cs.marginTop).toFixed(2),
+      mb: +parseFloat(cs.marginBottom).toFixed(2),
+      pb: +parseFloat(cs.paddingBottom).toFixed(2),
+      pt: +parseFloat(cs.paddingTop).toFixed(2),
+    };
+  });
   return out;
 }
 
@@ -176,7 +248,7 @@ const DELTA = Number(process.env.NEG_INYECTA_DELTA || 0);
 const { browser } = await launch();
 const baseClon = MISMO_LADO ? null : (await iniciarClon()).base;
 
-const salida = { meta: { sonda: "f33-cmp", fecha: hoy(), ancho: ANCHO, movil: MOVIL, contrato: "FIDELIDAD (1440/390)", sabotajes: { SIN_HOJAS, MISMO_LADO, DELTA } }, paginas: {} };
+const salida = { meta: { sonda: "f33-cmp", fecha: hoy(), ancho: ANCHO, movil: MOVIL, contrato: "FIDELIDAD (1440/390)", dominio: { que: SOLO_PILOTO ? "PILOTO (6)" : "las 31 de `paginas`", n: PILOTO.length, de: TODAS.length }, sabotajes: { SIN_HOJAS, MISMO_LADO, DELTA } }, paginas: {} };
 const pares = [];
 let hojasCero = [];
 
@@ -280,6 +352,18 @@ for (const pg of PILOTO) {
   for (const k of Object.keys(orig.cajas))
     for (const d of ["y", "h", "w"])
       pares.push({ ruta: pg.ruta, eje: `caja.${k}.${d}`, o: orig.cajas[k][d], c: clon.cajas?.[k]?.[d] ?? null });
+
+  /* EL NIVEL DE MÓDULO — el cotejo contra los ejes que la SPEC estableció.
+   * Se empareja por índice de documento (ver el porqué en `medir`), y el `tipo`
+   * viaja como DATO para poder decir en qué tipo cae cada Δ. */
+  for (const m of orig.modulos ?? []) {
+    const c = (clon.modulos ?? [])[m.i] ?? null;
+    for (const eje of ["w", "h", "mt", "mb", "pt", "pb"])
+      pares.push({
+        ruta: pg.ruta, eje: `mod${m.i}.${eje}`, tipo: m.tipo,
+        tipoClon: c?.tipo ?? null, o: m[eje], c: c ? c[eje] : null,
+      });
+  }
 }
 
 await browser.close();
@@ -329,12 +413,75 @@ for (const [r, v] of Object.entries(salida.paginas)) {
   console.log(`     sec ${v.original.nSecciones}→${v.clon.nSecciones} · filas ${v.original.nFilas}→${v.clon.nFilas} · mód ${v.original.nModulos}→${v.clon.nModulos} · enlaces ${v.original.enlaces}→${v.clon.enlaces}`);
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4b · POR RÉGIMEN — porque el cascarón lo elige `regimen` y no la ruta
+ *
+ * Un titular sobre las 31 mezcla TRES cascarones distintos. Si uno está mal, su
+ * Δ se diluye en el total de los otros dos: es §*la causa común* con el
+ * contenedor puesto en el agregado del informe.
+ * ════════════════════════════════════════════════════════════════════════ */
+const regDe = {};
+for (const [r, v] of Object.entries(salida.paginas)) regDe[r] = v.regimen;
+console.log(`\n═══ 4b · POR RÉGIMEN — el cascarón lo elige el campo, no la ruta`);
+const porReg = {};
+for (const p of numericos) {
+  const g = (porReg[regDe[p.ruta] ?? "?"] ??= { n: 0, dist: 0, rutas: new Set() });
+  g.n++; g.rutas.add(p.ruta);
+  if (Math.abs(p.o - p.c) >= 0.01) g.dist++;
+}
+for (const [reg, g] of Object.entries(porReg).sort())
+  console.log(`  ${reg.padEnd(4)} ${String(g.rutas.size).padStart(3)} rutas · ${String(g.n).padStart(6)} pares numéricos · ${String(g.dist).padStart(6)} distintos`);
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * 4c · EL NIVEL DE MÓDULO — el cotejo contra los ejes de la SPEC
+ *
+ * §*UN ARQUETIPO NUEVO NO HEREDA COBERTURA* pide comparar los ejes estándar;
+ * la spec de este arquetipo midió MARCADO y GEOMETRÍA DE MÓDULO, y hasta la
+ * 103.ª este comparador publicaba `nModulos` —un recuento— y nada de dentro.
+ * Un recuento es el nivel de arriba de la membresía: `313 → 313` es exacto y
+ * los dos conjuntos pueden diferir sin que el número se mueva.
+ * ════════════════════════════════════════════════════════════════════════ */
+console.log(`\n═══ 4c · NIVEL DE MÓDULO — por TIPO (llave posicional; ver \`medir\`)`);
+const modPares = numericos.filter((p) => /^mod\d+\./.test(p.eje));
+const porTipoMod = {};
+for (const p of modPares) {
+  const t = (porTipoMod[p.tipo ?? "?"] ??= { n: 0, dist: 0, ejes: {} });
+  t.n++;
+  if (Math.abs(p.o - p.c) >= 0.01) {
+    t.dist++;
+    const e = p.eje.split(".")[1];
+    t.ejes[e] = (t.ejes[e] || 0) + 1;
+  }
+}
+console.log(`  pares de MÓDULO: ${modPares.length}  (de ${numericos.length} numéricos)`);
+if (modPares.length === 0)
+  console.log(`  ⚠⚠ CERO pares de módulo: eso NO es «los módulos cuadran», es que no se midió ninguno (§sondas 4).`);
+for (const [t, v] of Object.entries(porTipoMod).sort((a, b) => b[1].n - a[1].n))
+  console.log(`  ${String(t).padEnd(20)} ${String(v.n).padStart(5)} pares · ${String(v.dist).padStart(5)} distintos${v.dist ? "   ejes: " + Object.entries(v.ejes).map(([k, n]) => `${k}×${n}`).join(" · ") : ""}`);
+
+/* El CRUCE de tipo: la llave es posicional, así que si el clon emite un módulo
+ * de menos, el `tipo` de los siguientes deja de coincidir. Se publica porque es
+ * la señal que distingue «ritmo mal» de «módulo perdido». */
+const tipoCruz = pares.filter((p) => /^mod\d+\.w$/.test(p.eje));
+const desalineados = tipoCruz.filter((p) => p.tipoClon != null && p.tipo !== p.tipoClon);
+console.log(`\n  CRUCE DE TIPO en la llave posicional: ${desalineados.length} de ${tipoCruz.length} módulos emparejados con OTRO tipo`);
+if (desalineados.length)
+  for (const p of desalineados.slice(0, 10))
+    console.log(`     ⚠ ${p.ruta} ${p.eje.split(".")[0]}  orig \`${p.tipo}\` → clon \`${p.tipoClon}\``);
+
 console.log(`\n═══ 5 · LO QUE ESTE COMPARADOR **NO** CONTESTA`);
 console.log(`  · sólo mide ${ANCHO}. El contrato de FIDELIDAD es a 1440 y 390: hay que correr LOS DOS`);
 console.log(`  · NO mide ningún ancho intermedio — allí el contrato es de RANGO, y es otra pregunta`);
 console.log(`  · el lado «original» es la CAPTURA, no el sitio vivo. Lo que mide es fidelidad`);
 console.log(`    del clon a la captura; que la captura reproduzca al vivo lo dice otra sonda`);
-console.log(`  · ${PILOTO.length} páginas de 31: un verde aquí NO es un verde del arquetipo`);
+console.log(
+  SOLO_PILOTO
+    ? `  · ${PILOTO.length} páginas de ${TODAS.length}: un verde aquí NO es un verde del arquetipo`
+    : `  · las ${PILOTO.length} de ${TODAS.length}, o sea el arquetipo ENTERO — pero sólo sus ejes: la` +
+        `\n    TIPOGRAFÍA y el COMPORTAMIENTO (desplegables) siguen sin comparar`,
+);
+console.log(`  · los módulos SIN CAJA no se pueden medir: \`getComputedStyle\` no resuelve sus %`);
+console.log(`    y devolvería ceros que entrarían como dato (36 de 313 en el original)`);
 
 /* El nombre del negativo NO lo pone la sonda: lo pone `w()` desde `NEG`.
  * Ponerlo aquí produciría `…-neg-mismo-lado-neg-delta`, que ningún negativo
@@ -359,10 +506,13 @@ if (SABOTEADA && !process.env.NEG) {
   console.log(`\n⚠ CORRIDA SABOTEADA SIN \`NEG=\`: la salida NO puede llevarse el nombre canónico.`);
   console.log(`  Se desvía a \`f33-cmp-${ANCHO}-neg-a-mano.json\`. Para un negativo con nombre propio, usa \`npm run qa:f33-cmp-neg\`.`);
 }
-w(`medidas/f33-cmp-${ANCHO}${SABOTEADA && !process.env.NEG ? "-neg-a-mano" : ""}.json`, salida);
+/* ⚠ El dominio va EN EL NOMBRE: una corrida del piloto no puede llevarse el
+ * canónico, porque quien lo lea creería que compara las 31 (§regla 7 — un
+ * fichero con nombre de medida y contenido de muestra). */
+w(`medidas/f33-cmp-${ANCHO}${SOLO_PILOTO ? "-piloto" : ""}${SABOTEADA && !process.env.NEG ? "-neg-a-mano" : ""}.json`, salida);
 
 console.log(`\n═══ 6 · VEREDICTO`);
-console.log(`  ✓ evaluadas ${ev.n}/${PILOTO.length} páginas del piloto · pares ${pares.length} · distintos ${distintos.length}`);
+console.log(`  ✓ evaluadas ${ev.n}/${PILOTO.length} ${SOLO_PILOTO ? "páginas del piloto" : "páginas de la cola larga"} · pares ${pares.length} · distintos ${distintos.length}`);
 if (hojasCero.length) process.exit(2);
 if (distintos.length) {
   console.log(`\n  ${distintos.length} pares con Δ ≠ 0. Los 20 mayores:`);

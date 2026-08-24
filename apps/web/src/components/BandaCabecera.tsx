@@ -207,4 +207,34 @@ export const BANDA = {
    * deja el 768 por defecto. En los anchos intermedios el contrato es de RANGO.
    */
   archivoCpt: { alto: 225, altoMovil: 136.58 },
+  /**
+   * **COLA LARGA (F3-3), régimen `B-`** — `193.72 / 196.58`.
+   *
+   * Leídos en crudo del lado del ORIGINAL de `f33-cmp`, congelado y commiteado
+   * el 2026-08-22 (`f33-cmp-{1440,390}-neg-mismo-lado.json`): la `y` de la
+   * PRIMERA sección propia, en las **4 páginas `B-` del piloto** —`/contacto`,
+   * `/empresa`, `/soporte`, `/recursos`—, con **varianza 0 a cada ancho**. En
+   * `B-` no hay capa de theme-builder entre la cabecera y la primera sección,
+   * así que esa `y` **ES** el alto de la cabecera, sin nada que restar — el
+   * mismo argumento con el que se leyó `listado`.
+   *
+   * ⚠ **Es la base EN CRUDO que `CLAUDE.md` §Notas de método manda medir UNA
+   * VEZ por arquetipo nuevo** antes de fiarse de ningún Δ de cuerpo: la regla
+   * del `h1` resta la base antes de comparar y por eso **no puede auditarse a
+   * sí misma**. Aquí se mide antes de construir, no después.
+   *
+   * ⚠ **Sube al estrechar** (193.72 → 196.58), como `indiceCasos`. No es un
+   * número a redondear: es lo medido en 4 de 4 a los dos anchos.
+   *
+   * ⚠ **`corte` SIN PROBAR**, igual que en `listado` y `archivoCpt`: los dos
+   * altos se midieron a 1440 y a 390 y entre esos dos anchos caben los dos
+   * cortes. Se deja el 768 por defecto y se anota en vez de adivinar.
+   *
+   * ⚠⚠ **Alcance: `B-` SÓLO.** `BT` mete la plantilla del theme-builder en
+   * medio y su `y` de primera sección propia **no es el alto de la cabecera**
+   * (340.16 / 892.92 en la única `BT` del piloto, n = 1); por eso `BT` reusa el
+   * cascarón medido de `articulos-kb` y **no esta entrada**. Y `--` tiene
+   * **0 secciones propias**, así que esta medida no le aplica siquiera.
+   */
+  colaLargaB: { alto: 193.72, altoMovil: 196.58 },
 } as const;

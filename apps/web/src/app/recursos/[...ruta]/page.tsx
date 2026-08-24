@@ -27,6 +27,8 @@ import { PREFIJO_DOC_DEFECTO, rutaDocumento } from "@/lib/arquetipo-a";
 // conserva como seed histórico y sigue aportando los helpers de RUTA, que son
 // plantilla y no dato (`rutaDocumento`, `PREFIJO_DOC_DEFECTO`).
 import { documentosCientificos } from "@/lib/cms/arquetipo-a";
+import { PaginaF33, metadataF33 } from "@/components/cola-larga/PaginaF33";
+import { bajoPrefijo, getPaginaColaLarga, paginasColaLarga, rutaDePagina } from "@/lib/cms/paginas";
 
 /**
  * `/recursos/[...ruta]` — DOCUMENTO CIENTÍFICO, la tercera plantilla del
@@ -94,12 +96,28 @@ const porRuta = async (segmentos: string[]) => {
   return (await documentosCientificos()).find((d) => rutaDocumento(d) === ruta);
 };
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠ Y DESDE F3-3 (E1) SON **TRES** ARQUETIPOS: entra la COLA LARGA con 3 rutas
+ * —`/recursos/documentos-cientificos`, `/recursos/kunakpedia` y
+ * `/recursos/preguntas-frecuentes`—, las tres de régimen `B-`.
+ *
+ * El criterio no cambia y es el que ya estaba escrito: **el despacho es por
+ * CATÁLOGO, no por número de segmentos.** `/recursos/documentos-cientificos` es
+ * a la vez una PÁGINA de la cola larga (2 segmentos) y el prefijo de 14 fichas
+ * (4 segmentos); despachar por longitud volvería a ser la correlación de esta
+ * población, no el mecanismo.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const RAIZ_F33 = "recursos";
+
 export async function generateStaticParams() {
   const docs = (await documentosCientificos()).map((d) => ({
     ruta: [d.prefijo ?? PREFIJO_DOC_DEFECTO, d.categoria.slug, d.slug],
   }));
   /* Los 10 archivos de término. Sus `/page/N` los emite `page/[n]`, hermano. */
-  return [...docs, ...(await paramsRecursos())];
+  const cola = bajoPrefijo(await paginasColaLarga(), RAIZ_F33).map((p) => ({
+    ruta: rutaDePagina(p).slice(1).split("/").slice(1),
+  }));
+  return [...docs, ...(await paramsRecursos()), ...cola];
 }
 
 export async function generateMetadata({
@@ -108,6 +126,7 @@ export async function generateMetadata({
   params: Promise<{ ruta: string[] }>;
 }): Promise<Metadata> {
   const { ruta } = await params;
+  if (await getPaginaColaLarga([RAIZ_F33, ...ruta])) return metadataF33([RAIZ_F33, ...ruta]);
   const termino = await terminoDeRuta(ruta);
   if (termino) return metadataRecurso(ruta);
   const doc = await porRuta(ruta);
@@ -131,6 +150,12 @@ export default async function PaginaDocumento({
      indiferente porque `qa:slugs` garantiza que ninguna ruta la declaran los
      dos catálogos; se pregunta por el término primero porque es el caso más
      frecuente (10 rutas contra 23, pero 18 con sus `/page/N`). */
+  /* TERCER CATÁLOGO (E1): la cola larga. Va primero por el mismo motivo que
+     los otros dos van en el orden que van — es indiferente, porque `qa:slugs`
+     garantiza que ninguna ruta la declaran dos catálogos. */
+  if (await getPaginaColaLarga([RAIZ_F33, ...ruta]))
+    return <PaginaF33 segmentos={[RAIZ_F33, ...ruta]} />;
+
   const termino = await terminoDeRuta(ruta);
   if (termino) return PaginaRecursos({ rutaCompleta: ruta });
 

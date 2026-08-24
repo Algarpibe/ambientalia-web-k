@@ -44,14 +44,19 @@ import { join } from "node:path";
 import { corridaNegativa, Evaluadas, nombreNeg, QA } from "./lib.mjs";
 
 const SONDA = join(QA, "f33-cmp.mjs");
-const CANONICA = "medidas/f33-cmp-1440.json";
+/* ⚠ Los negativos corren con `PILOTO=1` (6 páginas) desde la 104.ª: su trabajo
+ * es probar el INSTRUMENTO, no la cobertura, y la sonda ya desvía su salida en
+ * consecuencia. Por eso la base del nombre lleva `-piloto`: un negativo que
+ * congelara sobre el nombre de las 31 sería §regla 7 —nombre de medida,
+ * contenido de muestra— y encima con un sabotaje dentro. */
+const CANONICA = "medidas/f33-cmp-1440-piloto.json";
 const DELTA = "37.5";
 
 const casos = [
   {
     etiqueta: "mismo-lado",
     porQue: "los dos lados IDÉNTICOS: tiene que dar 0 distintos, o el comparador inventa diferencias",
-    env: { NEG_MISMO_LADO: "1" },
+    env: { NEG_MISMO_LADO: "1", PILOTO: "1" },
     args: [SONDA],
     exit: 0,
     salidaTiene: /distintos 0/,
@@ -71,7 +76,7 @@ const casos = [
   {
     etiqueta: "inyecta-delta",
     porQue: `Δ CONOCIDO de ${DELTA} en docH: tiene que cazarlo Y NOMBRARLO con sus dos lados`,
-    env: { NEG_MISMO_LADO: "1", NEG_INYECTA_DELTA: DELTA },
+    env: { NEG_MISMO_LADO: "1", NEG_INYECTA_DELTA: DELTA, PILOTO: "1" },
     args: [SONDA],
     exit: 3,
     /* No basta con que el exit cambie: se exige que el informe DIGA qué se movió
@@ -89,7 +94,7 @@ const casos = [
   {
     etiqueta: "sin-hojas",
     porQue: "captura SIN sus hojas: la guarda tiene que anular la corrida, no publicar números plausibles",
-    env: { NEG_MISMO_LADO: "1", NEG_SIN_HOJAS: "1" },
+    env: { NEG_MISMO_LADO: "1", NEG_SIN_HOJAS: "1", PILOTO: "1" },
     args: [SONDA],
     exit: 2,
     salidaTiene: /CERO hojas aplicadas/,

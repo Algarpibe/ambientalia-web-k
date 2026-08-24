@@ -23,6 +23,8 @@ import {
   terminosKunakpedia,
   type PaginaPlana,
 } from "@/lib/cms/arquetipo-a";
+import { PaginaF33, metadataF33 } from "@/components/cola-larga/PaginaF33";
+import { enElPlanoDeRaiz, getPaginaColaLarga, paginasColaLarga } from "@/lib/cms/paginas";
 import type { EntradaBlog } from "@/types/kunak";
 
 /**
@@ -70,9 +72,33 @@ export const dynamicParams = false;
  */
 type Pagina = PaginaPlana;
 
+/**
+ * ⚠⚠ **DESDE F3-3 (E1) ESTE PLANO DESPACHA TRES CATÁLOGOS, NO DOS.**
+ *
+ * Los dos de siempre —blog (149) y término (37)— más **19 de la COLA LARGA**:
+ * las que no tienen `prefijo`, o sea las de un solo segmento. El predicado es
+ * `enElPlanoDeRaiz`, y **se escribe una vez**: la colección usa el MISMO para
+ * decidir si reclama el slug (`enElPlano: (doc) => !doc.prefijo`). Dos
+ * definiciones de «está en el plano» serían la clase C7, y la que decide la
+ * unicidad y la que decide la ruta tienen que ser la misma o **la guarda vigila
+ * un conjunto y el build emite otro** (§regla 25).
+ *
+ * La unicidad ENTRE familias la impone `npm run qa:slugs`, que deriva sus
+ * familias del registro — así que `paginas` entra sola. Sin esa guarda una
+ * colisión **no da error**: el build compila, emite la ruta por las dos vías y
+ * sirve la página equivocada con HTTP 200 (medido tres veces).
+ */
 export async function generateStaticParams() {
-  const [blog, terminos] = await Promise.all([entradasBlog(), terminosKunakpedia()]);
-  return [...blog, ...terminos].map((e) => ({ slug: e.slug }));
+  const [blog, terminos, cola] = await Promise.all([
+    entradasBlog(),
+    terminosKunakpedia(),
+    paginasColaLarga(),
+  ]);
+  return [
+    ...blog.map((e) => ({ slug: e.slug })),
+    ...terminos.map((e) => ({ slug: e.slug })),
+    ...cola.filter(enElPlanoDeRaiz).map((p) => ({ slug: p.slug })),
+  ];
 }
 
 export async function generateMetadata({
@@ -81,6 +107,9 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  /* La cola larga primero: son catálogos DISJUNTOS —lo garantiza `qa:slugs`—
+   * así que el orden no decide nada; se pregunta por el más pequeño antes. */
+  if (await getPaginaColaLarga([slug])) return metadataF33([slug]);
   const p = await getPaginaPlanaCms(slug);
   if (!p) return {};
   const { seo } = p.datos;
@@ -188,6 +217,12 @@ export default async function PaginaPlana({
   conBorradores?: boolean;
 }) {
   const { slug } = await params;
+  /* TERCER CATÁLOGO (E1). Su árbol vive en `PaginaF33` y **no se copia aquí**:
+   * el arquetipo tiene cinco planos de ruta y cinco copias del mismo árbol es
+   * la peor forma de duplicación que hay. */
+  if (await getPaginaColaLarga([slug], { conBorradores }))
+    return <PaginaF33 segmentos={[slug]} conBorradores={conBorradores} />;
+
   const p = await getPaginaPlanaCms(slug, { conBorradores });
   if (!p) notFound();
 

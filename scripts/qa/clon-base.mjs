@@ -111,7 +111,7 @@ if (marcador) {
 
 /* ─────────────────────────── medida ─────────────────────────── */
 
-const { browser } = await launch();
+let { browser } = await launch();
 /**
  * ⚠ **El PUERTO no entra en la congelada, y no es cosmética (2026-08-04).**
  *
@@ -137,7 +137,36 @@ const todo = { meta: { width, base: BASE_ESTABLE, rutas: RUTAS.length }, paginas
  */
 const ev = new Evaluadas({ nombre: `clon-base @${width}`, unidad: "rutas", minimo: RUTAS.length });
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ EL NAVEGADOR SE RELANZA CADA `LOTE` RUTAS — 104.ª tanda
+ *
+ * Con **413 rutas** (E1) un solo navegador no llega: muere con `Navigating
+ * frame was detached` y a partir de ahí **todo** da `Connection closed`. Medido
+ * dos veces el mismo día, y **en rutas DISTINTAS** —`/en-directo-…` la primera,
+ * `/blog/page/5` la segunda—, que es lo que descarta «es esa página» y deja
+ * «es el proceso»: 131 de 382 comparadas la primera, **10** la segunda.
+ *
+ * ⚠ **Y NO se lee como «casi todas bien».** La sonda lo dice como toca —*«251
+ * NO comparada(s) por error: no son sin regresión, son SIN MEDIR»*— y sale con
+ * ≠0. La corrida ENTERA se descarta; las dos rotas se conservan con su nombre
+ * (§regla 7). Este relanzamiento es el arreglo de la CLASE: reintentar era
+ * arreglar la instancia, y la segunda corrida salió PEOR que la primera.
+ *
+ * **No cambia lo que se mide**: cada ruta se abre en una pestaña nueva de un
+ * navegador con el mismo perfil limpio y las mismas opciones. Lo único que
+ * cambia es cuántas comparten proceso — así que NO caduca ninguna congelada
+ * anterior (§regla 5bis), y el control es que las rutas medidas antes del
+ * primer corte sigan dando lo mismo.
+ * ════════════════════════════════════════════════════════════════════════ */
+const LOTE = Number(env("LOTE") || 100);
+let hechas = 0;
 for (const ruta of RUTAS) {
+  if (hechas > 0 && hechas % LOTE === 0) {
+    await browser.close();
+    ({ browser } = await launch());
+    console.log(`  ↻ navegador relanzado tras ${hechas} rutas (LOTE=${LOTE})`);
+  }
+  hechas++;
   try {
     const { page } = await openPage(browser, BASE + ruta, {
       width,

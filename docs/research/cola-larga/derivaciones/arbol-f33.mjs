@@ -143,6 +143,68 @@ export function modulosDe(nodo) {
  * un log con dos informes pegados invita a citar el número del de arriba
  * creyendo que es del de abajo, que es §regla 1 cobrada sobre el lector.
  * ═════════════════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL CENSO DE PÁGINAS — una sola definición, importada por sus DOS clientes
+ *
+ * `piloto-f33.mjs` lo escribió primero para elegir las 6 del piloto; `f33-cmp`
+ * lo necesita entero para comparar las 31. Copiarlo habría dejado **dos
+ * definiciones de «qué régimen tiene esta página y cuántas secciones propias
+ * trae»** — la clase C7 — y las dos se leerían igual el día que una derive.
+ *
+ * ⚠ El filtro de S1 (`single-post`) va DENTRO: las capturas de otra colección
+ * no son de `paginas`, y dejarlas fuera aquí es lo que hace que los dos
+ * clientes cuenten el mismo conjunto.
+ * ═════════════════════════════════════════════════════════════════════════ */
+
+/** Los 6 hubs `L4`: no son un `bucket` de la lista, se nombran por ruta. */
+export const HUBS_L4 = [
+  "/es/productos/",
+  "/es/sectores/",
+  "/es/recursos/",
+  "/es/recursos/kunakpedia/",
+  "/es/recursos/documentos-cientificos/",
+  "/es/recursos/preguntas-frecuentes/",
+];
+
+/**
+ * Censa las páginas de `paginas` desde el corpus: régimen (los DOS marcadores
+ * del `<body>`), nº de secciones propias y tipos de módulo.
+ * Devuelve `{ ruta, grupo, reg, nSec, tipos, fichero }`.
+ */
+export function censaPaginasF33() {
+  const ld = JSON.parse(readFileSync(join(CORPUS, "LISTA-DERIVADA.json"), "utf8")).trabajo;
+  const GRUPOS = {
+    "hubs-KB": ld.filter((x) => x.bucket === "hubs-kb"),
+    "hubs-L4": HUBS_L4.map((r) => ld.find((x) => x.ruta === r)).filter(Boolean),
+    sueltas: ld.filter((x) => x.bucket === "sueltas"),
+  };
+  const paginas = [];
+  for (const [grupo, lista] of Object.entries(GRUPOS)) {
+    for (const e of lista) {
+      if (!e.fichero || !existsSync(join(CORPUS, e.fichero))) continue;
+      const html = limpia(readFileSync(join(CORPUS, e.fichero), "utf8"));
+      const bc = (/<body[^>]*class="([^"]*)"/.exec(html) || [])[1] || "";
+      /* S1 — las de otra colección no entran. */
+      if (/\bsingle-post\b/.test(bc)) continue;
+      const B = /\bet_pb_pagebuilder_layout\b/.test(bc), T = /\bet-tb-has-body\b/.test(bc);
+      const reg = B && T ? "BT" : B ? "B-" : T ? "-T" : "--";
+      const tipos = {};
+      let nSec = 0;
+      for (const sec of seccionesPropias(parsea(html))) {
+        nSec++;
+        for (const m of modulosDe(sec)) {
+          const t = tipoDe(m);
+          if (!t || esEstructura(t)) continue;
+          tipos[t] = (tipos[t] || 0) + 1;
+        }
+      }
+      paginas.push({ ruta: e.ruta, grupo, reg, nSec, tipos, fichero: e.fichero });
+    }
+  }
+  if (paginas.length === 0) throw new Error("CENSO VACÍO (§sondas 4): 0 páginas de `paginas` en el corpus.");
+  return paginas;
+}
+
 if (process.argv[1] && import.meta.url !== pathToFileURL(process.argv[1]).href) {
   /* importado como librería: nada de informe */
 } else {

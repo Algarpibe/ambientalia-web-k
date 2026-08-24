@@ -154,10 +154,30 @@ export type SeccionPagina = {
   filas?: FilaPagina[] | null;
 };
 
+/**
+ * Los CUATRO casilleros del régimen. Son **dos marcadores binarios del
+ * `<body>`**, así que la taxonomía tiene `2 × 2 = 4` **por construcción** —
+ * `-T` entra con su denominador (**0 de 31**) y **SIN EJERCITAR no es 0**.
+ * Esquema: `colecciones/paginas.ts` §`regimen` (CMS-5 = R1).
+ */
+export type RegimenPagina = "B-" | "BT" | "-T" | "--";
+
 export type PaginaColaLarga = {
   slug: string;
   /** CAMPO, no plantilla: las rutas van de 1 a 5 segmentos, así que el slug no basta. */
   prefijo?: string | null;
+  /**
+   * ⚠ **EL CAMPO QUE ELIGE EL CASCARÓN, y por eso está en el tipo de LECTURA y
+   * no sólo en el esquema.** CMS-5 (§2j.9): el régimen lo derivó `regimenDe()`
+   * del `<body>` del corpus, es `required`, y su reparto medido es
+   * **`B-` 22 · `BT` 8 · `--` 1 · `-T` 0**.
+   *
+   * Sin él el render **no puede elegir**, y el defecto está puesto en la
+   * dirección que grita: `PaginaF33` hace `switch` con `default` que TIRA. Un
+   * defecto benigno serviría las 8 `BT` con el cascarón de las 22 y **nadie se
+   * enteraría** (§regla 6).
+   */
+  regimen: RegimenPagina;
   titulo: string;
   seo: { title: string; description?: string | null; ogImage?: string | null };
   /** Opcional: es el coste conocido de C3 (§2j.1). Ver `cuerpoClasico`. */
@@ -208,11 +228,21 @@ export async function getPaginaColaLarga(
 
 /**
  * Las que el PLANO DE RAÍZ sirve: **las de un solo segmento**, o sea sin
- * prefijo. Es el mismo predicado que la colección usa para decidir si reclama
- * el slug (`enElPlano: (doc) => !doc.prefijo`), y **se escribe una vez** — dos
- * definiciones de «está en el plano» serían la clase C7, y la que decide la
- * unicidad y la que decide la ruta tienen que ser la misma o la guarda vigila
- * un conjunto y el build emite otro (§regla 25).
+ * prefijo.
+ *
+ * ⚠⚠ **ES EL MISMO PREDICADO QUE LA COLECCIÓN, Y ESTÁ ESCRITO DOS VECES —
+ * declarado, no ignorado.** `colecciones/paginas.ts` lleva
+ * `enElPlano: (doc) => !doc.prefijo` para decidir si reclama el slug en el
+ * registro; esto decide si `/[slug]` emite su ruta. **Tienen que denotar el
+ * mismo conjunto** o la guarda vigila uno y el build emite otro — que es
+ * §regla 25 exacta: *una guarda cuyo dominio no es el de su invariante deja de
+ * proteger y pasa a bloquear*, y aquí en la otra dirección.
+ *
+ * No se comparte el símbolo porque viven en paquetes distintos —el esquema no
+ * depende de la app y no debe—, así que **la unicidad la sostiene una
+ * comprobación, no la confianza**: `npm run qa:slugs` deriva sus familias del
+ * registro y compara los slugs reclamados contra las rutas que el build emite.
+ * Si los dos predicados divergieran, ahí sale.
  */
 export const enElPlanoDeRaiz = (p: Pick<PaginaColaLarga, "prefijo">): boolean => !p.prefijo;
 
