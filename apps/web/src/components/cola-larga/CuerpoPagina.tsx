@@ -335,7 +335,29 @@ function Modulo({ m }: { m: ModuloPagina }) {
 
 /* ── Columna · fila · sección ────────────────────────────────────────────── */
 
-function Columna({ c, anchoFila }: { c: ColumnaPagina; anchoFila: string }) {
+/**
+ * ⚠⚠ **LO QUE ESTA COLUMNA NO PUEDE DECIRLE A LA HOJA, Y POR QUÉ NO SE INVENTA
+ * (CMS-5, `ESQUEMA §2j.8`).**
+ *
+ * El default de `mb` de un módulo **depende del ANCHO DE LA FILA**, no del tipo
+ * de columna — medido en dos arquetipos: un `1_2` de **585.13** en fila de
+ * 1238.39 lleva **34.0469**, y un `2_3` de **591.11** —casi el mismo ancho de
+ * columna— en fila de 911.75 lleva **25.0625**. O sea que la hoja necesita el
+ * ancho de FILA para resolverlo.
+ *
+ * Y ese ancho **lo decide el RÉGIMEN** (`B-` ⇒ 1238.39 · `BT` ⇒ 911.75), que
+ * **este documento no lleva**: derivado, ningún campo separa `BT` de `B-`
+ * (**52 pares indistinguibles**) y la ruta queda **refutada** por 2 separadoras.
+ *
+ * **La primera versión de este componente emitía `data-fila-ancho` derivándolo
+ * del REPARTO DE COLUMNAS** —`4_4` sola ⇒ «completa», si no «repartida»—. Eso
+ * es exactamente **la variable equivocada**: es *tipo de columna* disfrazado de
+ * *ancho de fila*, que es el par que `CLAUDE.md` documenta como el caso donde
+ * dos variables confundidas dan la regla al revés. Se retira: **mientras CMS-5
+ * no se decida, la hoja NO puede resolver el default y el componente no le
+ * miente diciéndoselo.**
+ */
+function Columna({ c }: { c: ColumnaPagina }) {
   const modulos = c.modulos ?? [];
   /* Los kinds que esta tanda no pinta, NOMBRADOS en el marcado para que el
    * hueco sea contable. Marcador de sonda, no estilo. */
@@ -345,11 +367,6 @@ function Columna({ c, anchoFila }: { c: ColumnaPagina; anchoFila: string }) {
       className={`f33-columna f33-col-${c.ancho}`}
       data-columna={c.ancho}
       {...(sinCablear.length ? { "data-f33-sin-cablear": sinCablear.join(" ") } : {})}
-      /* El default de `mb` de un módulo **depende del ANCHO DE LA FILA**, no del
-       * tipo de columna — medido en dos arquetipos: un `1_2` de 585.13 en fila
-       * de 1238.39 lleva 34.0469 y un `2_3` de 591.11 en fila de 911.75 lleva
-       * 25.0625. La hoja lo resuelve porque el componente le dice las dos cosas. */
-      data-fila-ancho={anchoFila}
     >
       {modulos.map((m, i) => (
         <Modulo key={i} m={m} />
@@ -365,13 +382,10 @@ function Columna({ c, anchoFila }: { c: ColumnaPagina; anchoFila: string }) {
  * a las diapositivas de un slider y fabricaba un Δ que no existía.
  */
 function Fila({ f }: { f: FilaPagina }) {
-  /* El ancho de fila que la hoja necesita para resolver el default de `mb`: se
-   * deriva del reparto de columnas, que es lo único que el dato dice. */
-  const anchoFila = f.columnas.length === 1 && f.columnas[0]?.ancho === "4_4" ? "completa" : "repartida";
   return (
     <div className="f33-fila" data-fila="" style={vars("f33f", { pt: f.pt, pb: f.pb, mt: f.mt, mb: f.mb })}>
       {f.columnas.map((c, i) => (
-        <Columna key={i} c={c} anchoFila={anchoFila} />
+        <Columna key={i} c={c} />
       ))}
     </div>
   );
