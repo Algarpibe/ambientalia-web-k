@@ -95,6 +95,31 @@ después». No se toma, y la razón tiene número:
 > página en WordPress al elegir plantilla, y varía de una instancia a otra del
 > mismo arquetipo.
 
+### ⚠ Y LA SEGUNDA PRECONDICIÓN, que no es la misma y hay que contarla aparte: **ESTE ARQUETIPO NO TIENE FASE DE SPECS**
+
+`docs/research/cola-larga/` tiene `PRE-REGISTRO-*` y `derivaciones/`, y **no
+tiene `components/*.spec.md`**. O sea que el arquetipo llega al paso
+**«plantilla»** del orden obligado —*specs → filas/columnas → extractor+seed →
+plantilla → ruta → sonda de dos lados*— **sin el paso 1**.
+
+**Es literalmente el hueco que F3-1 ya pagó** y que el plan dejó escrito con su
+lección: *«sin `getComputedStyle` por sección, la plantilla se inventa y el
+“Δ0” deja de medir fidelidad»*. Y §regla 10 lo nombra: **un criterio de «hecho»
+no comprueba que exista lo que hace falta para cumplirlo**.
+
+**No es retórico: ya se cobró dos clases en esta misma tanda.** Verificando el
+`toggle` contra el corpus servido aparecieron **`et_pb_toggle_item`** y el
+**`clearfix`** de `et_pb_toggle_content`, los dos escritos de memoria y los dos
+mal. El componente entero está escrito así, y por eso lleva su etiqueta en la
+cabecera: **estructura del arquetipo con el marcado como primera aproximación
+medida, no transcripción verificada.**
+
+> **Las dos precondiciones son INDEPENDIENTES y se cuentan por separado:** el
+> campo de régimen (CMS-5) decide **qué cascarón**; la spec decide **qué marcado
+> lleva cada módulo dentro**. Resolver una no resuelve la otra, y una tanda que
+> sólo resuelva CMS-5 emitiría 31 páginas con el cascarón correcto y el marcado
+> sin verificar.
+
 ### Qué NO dice esta ficha
 
 - **no dice que el cascarón esté sin medir.** Los dos existen, medidos y
