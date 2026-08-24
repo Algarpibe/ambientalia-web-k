@@ -1077,6 +1077,99 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ⛔ **ACTUALIZACIÓN 2026-08-24 (99.ª tanda) — LA EMISIÓN NO SE HACE, Y NO POR
+> FALTA DE TRABAJO: CORTE LIMPIO 2 DISPARÓ EN EL CASCARÓN. El clon no puede
+> elegir el suyo en 30 de 31 páginas.**
+>
+> **Rutas 382, sin cambio.** El pre-registro dice **413** y se queda escrito y
+> commiteado **sin cobrar**, que es como tiene que quedarse un pre-registro cuya
+> precondición no se cumplió.
+>
+> ### 1 · El hallazgo, y por qué para en vez de degradar
+>
+> El régimen decide **qué cascarón lleva la página**, y **los dos ya existen
+> medidos** —`B-` es el de SECTOR/MONOGRÁFICO (fila **1238.39**), `BT` es el de
+> `articulos-kb` (fila **911.75** con columna `1_4` de barra)—. Lo que falta no
+> es construirlos: es **el campo que elige entre ellos**.
+>
+> | candidato | acierta | veredicto |
+> |---|---|---|
+> | `cuerpoClasico` presente ⇒ `--` | **31/31** | ✅ el régimen `--` **sí** es derivable |
+> | la RUTA (`centro-de-ayuda` ⇒ BT) | 30/31 | ❌ **REFUTADO** por 2 separadoras, una por dirección |
+> | cualquier campo del documento | — | ❌ **52 pares** de régimen distinto **indistinguibles** |
+>
+> **30 de 31 no es «casi bien»: es refutado**, y las separadoras son
+> `/sistema-interno-de-informacion` (**raíz y BT**) y
+> `/soporte/servicio-de-reparacion` (**bajo `soporte` y B-**). Derivado:
+> `derivaciones/f33-regimen-discriminador.{mjs,log}`.
+>
+> **Y no se degrada a «emitir todas con el cascarón B- y arreglar la barra
+> después»** por tres razones con número: son **326.64 px** de ancho de cuerpo
+> en 8 páginas; el arreglo posterior se leería como **regresión** contra una
+> línea base construida sobre el cascarón equivocado —una FAMILIA DE CALIBRACIÓN
+> fabricada a mano—; y `f33-cmp` quedaría **sin poder adjudicar**, porque un Δ
+> tendría tres causas simultáneas y ninguna medida las separa.
+>
+> **Sube al propietario con sus tres salidas** (R1 campo derivado del `<body>`
+> que el extractor ya calcula · R2 emitir 23 y dejar 8 · R3 cablear la ruta, que
+> es el arreglo falso y se nombra para que conste): `PENDIENTES-QA.md`
+> §F3-3-CASCARON-SIN-DISCRIMINADOR.
+>
+> ### 2 · Lo que SÍ queda hecho y no hay que rehacer
+>
+> | | |
+> |---|---|
+> | **el PRE-REGISTRO de rutas** | **382 → 413**, derivado y **con su reparto por plano** (19 · 4 · 4 · 3 · 1), commiteado **antes** de construir. Contesta las tres preguntas de las que depende el total, incluida la que produjo el «374 → 375»: **ninguna familia repagina**, porque nadie en `apps/web` lee `paginas` |
+> | **el RENDERIZADOR de los 11 tipos** | escrito desde el esquema medido y **compilando** (`npm run check` exit 0), **sin cablear a ninguna ruta** y con la razón al lado. `switch` con `default` que **TIRA** —el hueco que sirvió 6 páginas de KB con cero módulos— y **cero geometría emitida**, que es lo que el extractor garantiza en el otro extremo |
+> | **los 4 tipos que no se pintan** | **34 módulos de 313 · 7 rutas de 31**, con **las razones separadas**: `video` es NO MEDIBLE (30 instancias, **0 con caja**, todas en desplegables cerrados) y `slider-completo`/`slider`/`mapa` son n ≤ 2. §F3-3-CUATRO-SIN-CABLEAR |
+> | **la línea base de `clon-base`** | refrescada a **382 rutas** a los dos anchos. La que había era de **2026-08-14 y 345 rutas**: la tanda que extienda los catch-all necesitaba una vigente y ahora la tiene |
+>
+> ### 3 · El PASO 0, que encontró lo que la 98.ª mandó buscar
+>
+> De los **32 de 79** negativos que `qa:negativos` no corre —**derivado hoy**, la
+> 98.ª decía 31 de 78— se corrieron los **6** que están debajo de esta tanda.
+> Uno rojo: **`cms-slugs` llevaba sin poder ejercitarse desde el 2026-08-13**,
+> con dos fixtures caducados contra el esquema (§regla 5ter).
+>
+> **Los invariantes 3 y 4 no estaban fallando: estaban SIN EJERCITAR** — el alta
+> moría en la validación antes de llegar a la guarda. Y se llevó por delante a
+> su propio negativo **en las dos direcciones**: `sin-hook` en ROJO (el
+> invariante 2 caía por el campo ausente, o sea pasaba por el motivo equivocado,
+> y con eso la guarda de colisión **no se podía demostrar portante**) y
+> `fuera-plano` en VERDE **gratis** (0 separadoras). **2/4 → 4/4.**
+>
+> ⚠ Es la **segunda** instancia de la clase que la 98.ª estrenó con `sondeo.neg`,
+> y la causa es estructural: mientras no exista corredor para los de DB y los de
+> navegador, **«rojo» y «no ejecutado» siguen dando la misma salida** para 32 de
+> 79. Los otros **26** siguen SIN MEDIR.
+>
+> ### 4 · §regla 20 cobrada otra vez, y esta vez con RUTAS
+>
+> El `cms-roundtrip-neg` del PASO 0 **resetea la DB**, y la 98.ª ya lo había
+> escrito. Lo que se añade hoy es **cuánto cuesta y en qué unidad**: el build
+> siguiente emitió **376 rutas en vez de 382**, y el diff no es «faltan 6» —
+> es **17 desaparecidas y 11 nuevas**, porque sin el término `articulos` de
+> `categorias-recursos` (lo escribe `cms:seed-listados`, que el round-trip no
+> corre) **todas las rutas de esa familia pierden un segmento**:
+> `/recursos/articulos/contaminacion-minera` → `/recursos/contaminacion-minera`.
+>
+> > **Un neto de −6 escondía 28 rutas movidas**, que es §*un cardinal es un
+> > contenedor y absorbe la membresía* en su forma más barata de cazar: la
+> > diferencia simétrica, no el total.
+>
+> Restaurado con el pipeline completo (`cms:reset` + `cms:seed` **383 docs / 14
+> colecciones** + `cms:seed-listados` 88/88 + `cms:seed-kb` 6/6) y reconstruido:
+> **382 rutas, diferencia simétrica 0 y 0** contra la línea base. O sea que el
+> susto era del entorno y **no del código de esta tanda** — y así se demuestra,
+> no se argumenta.
+>
+> ### 5 · Lo que esta tanda NO tocó, y hay que decirlo
+>
+> `f33-cmp` **sigue sin haber comparado nada** y por tanto **no se registra en
+> `qa:cobertura`**: sus congeladas de hoy siguen siendo los CONTROLES de su
+> negativo, donde el «clon» es una copia del original. *«El comparador existe»* y
+> *«no se ha comparado nada»* son las dos ciertas, **y gobierna la segunda**.
+
 > ✅ **ACTUALIZACIÓN 2026-08-23 (98.ª tanda) — `paginas` SEMBRADA: 31 documentos
 > en la DB y round-trip 383/383. Las tres decisiones del propietario, aplicadas
 > y escritas.**

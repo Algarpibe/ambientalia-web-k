@@ -1,0 +1,31 @@
+[08:35:51] [33mWARN[39m: [36mNo email adapter provided. Email will be written to console. More info at https://payloadcms.com/docs/email/overview.[39m
+
+════════ ¿PUEDE EL CLON ELEGIR SU CASCARÓN? ════════
+
+  documentos            31
+  sin régimen medido    0
+  reparto               B-:22 · BT:8 · --:1
+
+  CANDIDATO 1 · `cuerpoClasico` presente ⇒ régimen `--`
+     acierta 31/31  ⇒ ✅ el régimen `--` SÍ es derivable del documento
+
+  CANDIDATO 2 · la RUTA elige el cascarón (`centro-de-ayuda` ⇒ BT)
+     acierta 30/31
+     ⚠ INSTANCIAS SEPARADORAS que lo REFUTAN: 1
+        /sistema-interno-de-informacion                medido=BT  la ruta diría=B-
+
+     y en la otra dirección, bajo `soporte` sin ser BT: 1
+        /soporte/servicio-de-reparacion                medido=B-
+
+  CANDIDATO 3 · ¿algún campo del DOCUMENTO los separa?
+     pares de régimen distinto e INDISTINGUIBLES por los campos: 52
+        BT /sistema-interno-de-informacion   ≡   B- /suscribete
+        BT /sistema-interno-de-informacion   ≡   B- /soporte
+        B- /politica-de-privacidad-y-de-proteccion-de-datos   ≡   BT /sistema-interno-de-informacion
+        B- /politica-de-cookies   ≡   BT /sistema-interno-de-informacion
+        B- /newsletter   ≡   BT /sistema-interno-de-informacion
+        B- /informe-tecnico-control-de-la-calidad-del-aire-en-puertos   ≡   BT /sistema-interno-de-informacion
+        … y 46 más
+
+  ⇒ ❌ NO existe discriminador en el documento: BT y B- son INDISTINGUIBLES
+

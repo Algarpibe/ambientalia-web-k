@@ -1,5 +1,125 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-3-CASCARON-SIN-DISCRIMINADOR · **CORTE LIMPIO 2 disparó, y NO en un tipo de módulo: en el CASCARÓN. El clon no puede elegir el suyo en 30 de 31 páginas** — 99.ª, 2026-08-24
+
+**DECISIÓN DE PROPIETARIO.** La tanda **no emite**, y la razón no es que falte
+trabajo: es que emitir exige **inventar un valor que ninguna medida da**.
+
+### Qué es
+
+El régimen decide **qué cascarón lleva la página**, y los dos cascarones **ya
+existen medidos en este repo** — no hay que construir ninguno:
+
+| régimen | n | fila | cascarón que le toca | de dónde sale |
+|---|---|---|---|---|
+| **`B-`** | **22** | **1238.39** | sin barra lateral | SECTOR / MONOGRÁFICO. `CLAUDE.md`: *«sin cascarón, la fila mide 1238.39 siempre»* |
+| **`BT`** | **8** | **911.75** | columna `1_4` de barra + `3_4` de cuerpo | **`articulos-kb`** (`SeccionCuerpoTb`/`FilaTb`/`ColumnaEstrecha`/`ColumnaAncha`), donde `col_3_4` mide **911.75** |
+| **`--`** | **1** | — | plantilla clásica del tema (`entry-content`) | S2, §2j.3c |
+
+**Y el ancho de fila no es decorativo:** es la variable que resuelve el default
+de `mb` de un módulo —**2.75 % de la FILA ⇒ 34.05 contra 25.06**—, que es
+exactamente el caso que `CLAUDE.md` documenta como *dos variables confundidas
+dan la regla al revés*. Elegir mal el cascarón no desplaza la barra: **cambia el
+default de ritmo de los 313 módulos**.
+
+### El problema: el documento no dice cuál
+
+`paginas` lleva `slug · prefijo · seo · titulo · bloques · cuerpoClasico`.
+**Ninguno distingue `BT` de `B-`.** Derivado, no razonado
+(`derivaciones/f33-regimen-discriminador.{mjs,log}`, 31 documentos de la DB
+contra el régimen medido en `medidas/f33-geo.json`):
+
+| candidato | acierta | veredicto |
+|---|---|---|
+| **1 · `cuerpoClasico` presente ⇒ `--`** | **31/31** | ✅ **el régimen `--` SÍ es derivable del documento** |
+| **2 · la RUTA (`centro-de-ayuda` ⇒ BT)** | 30/31 | ❌ **REFUTADO**, y por las dos direcciones |
+| **3 · cualquier campo del documento** | — | ❌ **52 pares de régimen distinto INDISTINGUIBLES** |
+
+> ⚠ **30 de 31 no es «casi bien»: es refutado, y lo que se publica es la
+> separadora** (§*un modelo se elige por lo que lo SEPARA, no por lo que
+> acierta*). Son dos, una por dirección:
+>
+> | separadora | medido | la ruta diría |
+> |---|---|---|
+> | `/sistema-interno-de-informacion` — **raíz, un segmento** | **BT** | B- |
+> | `/soporte/servicio-de-reparacion` — **bajo `soporte`** | **B-** | (BT si la regla fuera el prefijo) |
+>
+> O sea que ni *«sin prefijo ⇒ B-»* ni *«bajo soporte ⇒ BT»* se sostienen.
+> Cablear la ruta acertaría hoy en 30 y sería **el arreglo falso de manual**:
+> el valor de la mayoría, esperando a la tercera instancia.
+
+### Por qué esto PARA la emisión en vez de degradarla
+
+La salida cómoda sería emitir las 31 con el cascarón `B-` y «arreglar la barra
+después». No se toma, y la razón tiene número:
+
+1. **son 326.64 px de ancho de cuerpo** en 8 páginas (1238.39 contra 911.75).
+   Todo lo que se midiera encima —`docH`, `base`, el ritmo de sus módulos— sería
+   una medida de otra página;
+2. **y el arreglo posterior se leería como REGRESIÓN.** Una línea base
+   construida sobre el cascarón equivocado convierte la corrección en «se movió
+   todo», que es literalmente cómo este repo describe fabricar una **FAMILIA DE
+   CALIBRACIÓN**;
+3. **el comparador quedaría sin poder adjudicar.** `f33-cmp` mide `docH · base ·
+   nSecciones · nFilas · nModulos · enlaces`; con el cascarón inventado, un Δ
+   tendría **tres causas simultáneas** —cascarón mal, geometría ausente, 4 tipos
+   sin pintar— y ninguna medida las separa. Es §*la causa común: el NIVEL al que
+   se mide* con el contenedor puesto en el propio veredicto.
+
+### Las salidas, con su coste — **sin recomendación, porque no toca**
+
+| # | salida | cuesta |
+|---|---|---|
+| **R1** | `paginas` gana un campo de régimen (`regimen` o `barraLateral`), **derivado del `<body>` del corpus** por el extractor, que ya lo calcula para su censo (`regimenDe()`) | migración versionada + re-extraer + re-sembrar. **El dato ya está**: no hay que volver al original. Es lo más barato y lo único que deja el cascarón MEDIDO |
+| **R2** | emitir sólo las **22 `B-` + 1 `--`** y dejar las **8 `BT`** sin emitir, declaradas | ninguna decisión de modelo hoy; **8 rutas sin emitir** y el pre-registro baja de 413 a 405 |
+| **R3** | cablear la ruta (`centro-de-ayuda` ⇒ BT) | **0 coste hoy y una separadora ya conocida en contra** — `/sistema-interno-de-informacion` saldría con el cascarón equivocado. Es el arreglo falso, y se nombra para que conste que se consideró |
+
+> **R1 no es «añadir un campo por comodidad».** El régimen pasa el test B con
+> holgura —**22 · 8 · 1** dentro de la misma colección— así que **es campo por
+> la regla de la casa**, no por conveniencia: lo escribió quien construyó cada
+> página en WordPress al elegir plantilla, y varía de una instancia a otra del
+> mismo arquetipo.
+
+### Qué NO dice esta ficha
+
+- **no dice que el cascarón esté sin medir.** Los dos existen, medidos y
+  construidos; lo que falta es **el campo que elige entre ellos**;
+- **no dice que `f33-geo` se equivocara.** Derivó la geometría del ORIGINAL, que
+  es lo que decía derivar, y de ahí sale `anchoDeFilaPorRegimen` — que es
+  justamente la medida que hace visible este hueco;
+- **no reabre CMS-3.** La unión de 11 bloques expresa 313 de 313 módulos y eso
+  no cambia. Esto es de la capa de **arriba** del contenido.
+
+---
+
+## ⚠ F3-3-CUATRO-SIN-CABLEAR · los tipos que el renderizador NO pinta, con su cardinal — 99.ª, 2026-08-24
+
+**34 módulos de 313 · 7 rutas de 31.** Derivado de `medidas/f33-geo.json`, no
+recordado. Y **las razones NO son la misma**, así que van separadas — meterlas
+en un solo «faltan 4 tipos» sería un total absorbiendo dos preguntas distintas:
+
+| kind | inst. | con caja | por qué no se cabla | qué haría falta |
+|---|---|---|---|---|
+| `video-pagina` | **30** | **0** | **NO MEDIBLE**: las 30 viven en desplegables **cerrados**. `getComputedStyle` sobre un elemento sin caja no resuelve los % contra nada — devuelve **ceros que no son dato** | **INTERACCIÓN** (abrir el desplegable), que es el eje que este repo tiene a **0/31** |
+| `slider-completo` | **2** | 2 | **n = 2 y varianza CERO**: `et_pb_media_alignment_center` y `et_pb_bg_layout_dark` en las dos | una tercera instancia |
+| `slider` | **1** | 1 | **n = 1** | ídem |
+| `mapa` | **1** | 1 | **n = 1** | ídem |
+
+**Y «no pintar» no puede ser silencio.** El renderizador los lleva como `case`
+**explícito que devuelve `null` declarado** —no un `undefined` colado por el
+`default`— y la columna emite `data-f33-sin-cablear="<kinds>"`, marcador de
+sonda y no estilo (mismo precedente que `data-fila`). Así el hueco es
+**contable y localizable** en vez de invisible.
+
+⚠ `icono` **sí se pinta**, y la diferencia es la que importa: tiene `n = 1`
+página igual que `mapa`, pero **no hace falta inventar ningún valor** — el dato
+trae el carácter servido y sus tres ejes de ritmo salieron SIN ESCRIBIR, o sea
+que no se emite ninguno. Lo que sigue abierto de `icono` es **qué ES el dato**
+(enum / carácter / imagen: cero instancias separadoras), y eso es
+`F3-3-ICONO-DATO`, no esto.
+
+---
+
 ## ✅ QA-CMS-SLUGS-FIXTURES-CADUCADOS · **la guarda del plano llevaba 20 días sin poder ejercitarse, y su negativo fallaba EN LAS DOS DIRECCIONES** — 99.ª, 2026-08-24 · CERRADA en la misma tanda
 
 **Salió del PASO 0**, que es exactamente para lo que la 98.ª lo pidió: de los
