@@ -16,31 +16,45 @@ import type {
  * derivada en `qa:f33-geo` (congelada `medidas/f33-geo.json`, 2026-08-22).
  *
  * ══════════════════════════════════════════════════════════════════════════
- * ⚠ LA FASE DE SPECS YA EXISTE (100.ª, 2026-08-24) — Y ESTE FICHERO **TODAVÍA
- * NO ESTÁ TRANSCRITO DE ELLA**
+ * ⚠ COTEJADO CONTRA LA SALIDA SERVIDA (101.ª, PASO 0) — Y LO QUE SIGUE SIN
+ * ESTAR RESPALDADO ES **LA MITAD QUE PRODUCE PÍXELES**
  *
- * Hasta la 100.ª este bloque decía *«este arquetipo NO TIENE FASE DE SPECS»*, y
- * era cierto. Ya no: `docs/research/cola-larga/components/` tiene
- * `README.md` · `modulos.spec.md` · `reticula.spec.md`, derivados con
- * `qa:f33-spec` (313 módulos · 11 tipos · 31 páginas, negativo 5/5).
+ * Hasta la 100.ª este bloque decía *«pendiente de cotejo contra
+ * `modulos.spec.md`»*. El cotejo ya está hecho, y **no contra la spec sino
+ * contra el HTML servido de las 31** —`corpus/fase-3/**`—, porque la spec midió
+ * **las clases del módulo** y no contesta qué hay por ENCIMA ni por DEBAJO de
+ * él (§*una medida contesta las preguntas que se le hicieron, y su fichero no
+ * lleva escrito cuáles NO*). Control del instrumento: reprodujo **313 = 313** y
+ * los 11 cardinales de `f33-spec` uno a uno.
  *
- * **Pero el estado de ESTE fichero no cambia por eso, y decir lo contrario
- * sería §regla 3** —*documentado no es conectado*—: el marcado de aquí abajo
- * **se escribió de memoria antes de que la spec existiera** y **nadie lo ha
- * cotejado con ella todavía**. Que exista la medida y que el componente la
- * cumpla son **dos afirmaciones distintas**, y sólo la primera está respaldada.
+ * ⚠ **Y el cotejo NO es la verificación**: dice lo que este fichero pretende
+ * emitir, no lo que el clon sirve. Eso sólo lo cierra `qa:f33-cmp`, que sigue a
+ * **0 ejes comparados**.
  *
- * **Lo que la spec ya destapó del propio instrumento** —y que vale como aviso
- * de cuánto se le escapa a lo escrito de memoria—: un censo por `.et_pb_module`
- * pierde **`button` ENTERO** (13 instancias), porque en Divi el botón es un
- * `<a>` **sin** `et_pb_module`. No dio error: dio 300 módulos y 10 tipos en vez
- * de 313 y 11.
+ * ── LO QUE EL COTEJO ARREGLÓ, y por qué era urgente ───────────────────────
+ * `qa:f33-cmp` cuenta el lado del clon con `[class*='et_pb_module'],
+ * [data-modulo]` y `.et_pb_section, [data-seccion]`. Este fichero emitía
+ * `f33-modulo` / `f33-seccion`, que **no casan ninguno de los dos**. Habría
+ * publicado `nModulos 313 → 10` y `nSecciones 86 → 0` con el render CORRECTO —
+ * o sea el defecto de KB leído al revés, mandando a arreglar lo que no está
+ * roto. Corregido aquí con `data-modulo` / `data-seccion`.
  *
- * > **Léase como lo que es: la ESTRUCTURA del arquetipo, con su marcado como
- * > primera aproximación medida, PENDIENTE de cotejo contra
- * > `components/modulos.spec.md`.** El cotejo es trabajo de la tanda que emita,
- * > y su instrumento definitivo es `qa:f33-cmp` —el comparador de dos lados—,
- * > que sigue a **0 ejes comparados** porque el lado del clon no existe.
+ * ── ⚠⚠ LO QUE EL COTEJO NO PUEDE ARREGLAR: **NO EXISTE `f33.css`** ────────
+ * Derivado, no recordado: este fichero emite **17 clases `f33-*`** y **5
+ * familias de variables** (`--f33s-* · --f33f-* · --f33m-* · --f33h-* ·
+ * --f33blurb-*`), y las cuatro hojas del clon —`globals · kb · listados ·
+ * tema`— tienen **0 reglas** para cualquiera de ellas. Nadie las lee.
+ *
+ * O sea que **todo el sistema de ritmo, retícula y ancho de este componente es
+ * INERTE**: las variables llegan al HTML servido y no alcanzan ninguna
+ * propiedad. Es §*el marcador prueba que el build es nuevo, NO que el cambio
+ * tenga efecto* en su forma más cara — el diff se lee correcto, la clase está
+ * servida, y el cambio no existe.
+ *
+ * El patrón del repo es hoja-por-arquetipo (`kb.css` 543 líneas, `listados.css`)
+ * y **cada número de `kb.css` lo derivó `qa:kb-clases`**, que para este
+ * arquetipo **no existe**. Escribir `f33.css` a ojo sería fabricar una FAMILIA
+ * DE CALIBRACIÓN, así que no se escribe aquí: ficha `F3-3-SIN-HOJA`.
  * ═════════════════════════════════════════════════════════════════════════
  *
  * ══════════════════════════════════════════════════════════════════════════
@@ -169,9 +183,43 @@ function estiloModulo(m: ModuloPagina): CSSProperties {
   return s as CSSProperties;
 }
 
+/**
+ * ⚠⚠ **EL MARCADOR DE SONDA DEL MÓDULO — Y NO ES COSMÉTICO: SIN ÉL EL
+ * COMPARADOR DE DOS LADOS NO VE NINGUNO (cotejo del PASO 0, 101.ª).**
+ *
+ * `qa:f33-cmp` cuenta el lado del clon con
+ * `$$("[class*='et_pb_module'], [data-modulo]")`. Este componente emitía
+ * `f33-modulo` —que **no casa ninguno de los dos**— y `et_pb_module` sólo en el
+ * `case toggle`. Derivado contra los cardinales de `f33-spec`, el comparador
+ * habría publicado:
+ *
+ *     nModulos   orig 313 → clon  10   (los 10 `toggle`, por su `et_pb_module`)
+ *     nSecciones orig  86 → clon   0   (ni `.et_pb_section` ni `[data-seccion]`)
+ *
+ * o sea **el defecto de KB otra vez, un nivel más arriba**: allí el render no
+ * pintaba y el comparador lo cazó; aquí el render pinta y **el comparador no
+ * sabe verlo**. Los dos se leen igual desde fuera —`orig N → clon 0`— y el
+ * segundo mandaría a la tanda siguiente a arreglar un render que está bien.
+ *
+ * Y **su negativo no podía cazarlo**: el caso `mismo-lado` copia el lado del
+ * original sobre el del clon, así que estos selectores **nunca se ejercitaron
+ * contra marcado del clon** — 0 instancias separadoras (§regla 15: compartir
+ * premisa no verifica la premisa; §regla 24: el negativo se corrió antes de que
+ * existiera el lado que iba a medir, y ésta es justo la pregunta que ese
+ * momento no puede contestar).
+ *
+ * Mismo precedente que `data-fila`, que ya está aquí y se aceptó con su
+ * antes/después a umbral cero: **marcador de sonda, no estilo.** Lleva el
+ * `kind` porque un hueco nombrado es contable y localizable, y uno vacío sólo
+ * es contable.
+ */
 function Modulo({ m }: { m: ModuloPagina }) {
   const style = estiloModulo(m);
   const ancho = conAncho(m) ? " f33-ancho" : "";
+  /* Va en TODOS los `case`, incluidos los cuatro que devuelven `null`: ahí no
+   * hay elemento que marcar, y por eso el hueco lo nombra la COLUMNA con
+   * `data-f33-sin-cablear` (ver §CORTE LIMPIO 2). */
+  const sonda = { "data-modulo": m.kind };
 
   switch (m.kind) {
     /**
@@ -185,6 +233,7 @@ function Modulo({ m }: { m: ModuloPagina }) {
       return (
         <div
           className={`f33-modulo f33-texto${ancho}`}
+          {...sonda}
           style={{
             ...style,
             ...(m.titulares ?? []).reduce<Record<string, string>>(
@@ -209,7 +258,7 @@ function Modulo({ m }: { m: ModuloPagina }) {
       if (!src) throw new Error(`CuerpoPagina: módulo \`imagen-pagina\` sin \`src\` ni \`srcExterno\`.`);
       const img = <img src={src} alt={m.alt ?? ""} />;
       return (
-        <div className={`f33-modulo f33-imagen${ancho}`} style={style}>
+        <div className={`f33-modulo f33-imagen${ancho}`} style={style} {...sonda}>
           {m.href ? (
             <a href={m.href} {...(m.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
               {img}
@@ -230,7 +279,7 @@ function Modulo({ m }: { m: ModuloPagina }) {
      */
     case "boton-pagina":
       return (
-        <div className={`f33-modulo f33-boton${ancho}`} style={style}>
+        <div className={`f33-modulo f33-boton${ancho}`} style={style} {...sonda}>
           <a
             className={`et_pb_button${m.piel === "azul" ? " boton-azul" : ""}`}
             href={m.href}
@@ -250,6 +299,7 @@ function Modulo({ m }: { m: ModuloPagina }) {
       return (
         <div
           className={`f33-modulo f33-codigo${ancho}`}
+          {...sonda}
           style={style}
           dangerouslySetInnerHTML={{ __html: m.html }}
         />
@@ -275,6 +325,7 @@ function Modulo({ m }: { m: ModuloPagina }) {
       return (
         <div
           className={`f33-modulo f33-toggle et_pb_module et_pb_toggle et_pb_toggle_item et_pb_toggle_close${ancho}`}
+          {...sonda}
           style={style}
         >
           <H className="et_pb_toggle_title">{m.titulo}</H>
@@ -295,6 +346,7 @@ function Modulo({ m }: { m: ModuloPagina }) {
       return (
         <div
           className={`f33-modulo f33-blurb${m.alineacion === "center" ? " f33-blurb-center" : ""}${ancho}`}
+          {...sonda}
           style={{ ...style, ...varsPiel("--f33blurb", m.piel) }}
         >
           {m.imagen ? (
@@ -326,7 +378,7 @@ function Modulo({ m }: { m: ModuloPagina }) {
      */
     case "icono":
       return (
-        <div className={`f33-modulo f33-icono${ancho}`} style={style}>
+        <div className={`f33-modulo f33-icono${ancho}`} style={style} {...sonda}>
           <span className="et_pb_icon" aria-hidden="true">
             {m.icono}
           </span>
@@ -382,17 +434,34 @@ function Modulo({ m }: { m: ModuloPagina }) {
  * columna— en fila de 911.75 lleva **25.0625**. O sea que la hoja necesita el
  * ancho de FILA para resolverlo.
  *
- * Y ese ancho **lo decide el RÉGIMEN** (`B-` ⇒ 1238.39 · `BT` ⇒ 911.75), que
- * **este documento no lleva**: derivado, ningún campo separa `BT` de `B-`
- * (**52 pares indistinguibles**) y la ruta queda **refutada** por 2 separadoras.
+ * Y ese ancho **lo decide el RÉGIMEN** (`B-` ⇒ 1238.39 · `BT` ⇒ 911.75).
  *
  * **La primera versión de este componente emitía `data-fila-ancho` derivándolo
  * del REPARTO DE COLUMNAS** —`4_4` sola ⇒ «completa», si no «repartida»—. Eso
  * es exactamente **la variable equivocada**: es *tipo de columna* disfrazado de
  * *ancho de fila*, que es el par que `CLAUDE.md` documenta como el caso donde
- * dos variables confundidas dan la regla al revés. Se retira: **mientras CMS-5
- * no se decida, la hoja NO puede resolver el default y el componente no le
- * miente diciéndoselo.**
+ * dos variables confundidas dan la regla al revés. Se retiró, y bien.
+ *
+ * ⚠ **CORREGIDO 2026-08-24 (101.ª, PASO 0): ESTE BLOQUE AFIRMABA UN HECHO DEL
+ * REPO QUE YA ERA FALSO.** Decía *«mientras CMS-5 no se decida, la hoja NO
+ * puede resolver el default»*, y **CMS-5 se cerró en la 100.ª** —`ESQUEMA-CMS`
+ * §2j.9, R1: el campo `regimen`, derivado del `<body>`, `required`, con reparto
+ * **22 `B-` · 8 `BT` · 1 `--` · 0 `-T`**—. Derivado con `grep`, no recordado:
+ * `colecciones/paginas.ts:177` y `payload-types.ts:1610`. Es exactamente la
+ * clase que la 100.ª pagó en `colecciones/paginas.ts` — *ningún comentario
+ * declara un hecho del repo*.
+ *
+ * **Lo que sigue siendo cierto es la otra mitad, y es la que bloquea:** el
+ * régimen existe en la COLECCIÓN y **no llega hasta aquí** — ni
+ * `PaginaColaLarga` (lectura) lo declara ni `CuerpoPagina` lo recibe. No se
+ * cablea en esta tanda **porque no habría quién lo leyera**: sin `f33.css`
+ * (§F3-3-SIN-HOJA) sería una pieza inerte más, y una pieza inerte no se puede
+ * adjudicar. Va junto con la hoja, no antes.
+ *
+ * ⚠ **Y aun con el régimen, el ancho de fila NO es función total suya**:
+ * `reticula.spec.md` §1 mide **3 filas de 79 con ancho minoritario** (1296 ×2 ·
+ * 784.09 ×1) declaradas **SIN DERIVAR**. El campo transporta la mayoría; esas
+ * tres siguen sin explicación y no se rellenan con la regla general.
  */
 function Columna({ c }: { c: ColumnaPagina }) {
   const modulos = c.modulos ?? [];
@@ -430,7 +499,7 @@ function Fila({ f }: { f: FilaPagina }) {
 
 function Seccion({ s }: { s: SeccionPagina }) {
   return (
-    <section className="f33-seccion" style={vars("f33s", { pt: s.pt, pb: s.pb })}>
+    <section className="f33-seccion" data-seccion="" style={vars("f33s", { pt: s.pt, pb: s.pb })}>
       {/* Los *fullwidth* que cuelgan de la sección SIN fila — 2 medidos, los dos
           `slider-completo`, o sea que hoy los dos caen en SIN_CABLEAR. La rama
           existe igual: si sólo hubiera filas, esas 2 instancias no se podrían

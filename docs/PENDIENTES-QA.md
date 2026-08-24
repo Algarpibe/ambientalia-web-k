@@ -1,5 +1,225 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ F3-3-SIN-HOJA · **CORTE LIMPIO 1 de la 101.ª: el cuerpo de la cola larga NO TIENE HOJA, así que su ritmo, su retícula y su ancho son INERTES** — 2026-08-24
+
+**Lo destapó el PASO 0**, que el encargo declara *barato y no-verificación*. Lo
+es: costó dos `grep` y no gastó un build.
+
+> **`CuerpoPagina.tsx` emite 17 clases `f33-*` y 5 familias de variables CSS.
+> Las cuatro hojas del clon tienen CERO reglas para cualquiera de ellas.**
+
+Derivado, no recordado:
+
+```
+clases f33-* emitidas (del JSX, sin comentarios) : 17
+  f33-ancho · f33-blurb · f33-blurb-center · f33-boton · f33-clasico
+  f33-codigo · f33-col-<ancho> · f33-columna · f33-fila · f33-icono
+  f33-icono-texto · f33-imagen · f33-modulo · f33-seccion
+  f33-sin-cablear · f33-texto · f33-toggle
+
+familias de variables : --f33s-* · --f33f-* · --f33m-* · --f33h-* · --f33blurb-*
+
+grep -c f33 sobre las hojas del clon:
+  globals.css 0 · kb.css 0 · listados.css 0 · tema.css 0
+```
+
+**Lo que eso significa, dicho sin rebaja:** el componente tiene un sistema de
+cascada por nivel muy cuidado —prefijo por nivel para que las custom properties
+no hereden, `%` conservado para que la razón sobreviva a los dos anchos, piso
+móvil separado— y **ninguna de esas variables alcanza una propiedad**. Llegan al
+HTML servido y ahí se quedan.
+
+Es §*el marcador prueba que el build es nuevo, NO que el cambio tenga efecto*
+en su forma más cara: el diff se lee correcto, la clase **está** en la salida
+servida, y el cambio **no existe**. El precedente exacto es D4 —`pb-[30px]`
+sobre una caja de alto fijo, clase servida y efecto cero—, aquí multiplicado por
+la hoja entera.
+
+### Por qué NO se escribió en esta tanda
+
+Porque los números no están derivados y escribirlos a ojo es el arreglo falso.
+
+| lo que la hoja necesita | ¿derivable hoy? | de dónde |
+|---|---|---|
+| anchos de columna por reparto | **sí** | `f33-geo.json` trae `wCol`/`wFila`/`reparto` por módulo (`1_2` ⇒ 430.8/911.75 = 47.249 %, el mismo número que `kb.css`) |
+| default de `mb` por ancho de fila | **sí** | `f33-geo.json` §`defaultMbPorAnchoDeFila`: 1238.39 ⇒ **34.05** · 911.75 ⇒ **25.06**, con `esperado` y `porReparto` explícitos |
+| `:last-child { mb: 0 }` del módulo | **sí** | `reticula.spec.md` §2: **78 de 79** columnas, y el nivel de arriba lo confirma por ausencia (**0 de 51**) |
+| ritmo por defecto de SECCIÓN y FILA | ⛔ **no** | `f33-geo` congela `filas1440`/`secciones1440` **sólo a 1440**, y no separa *lo que el dato trae* de *lo que la hoja pone* |
+| canal entre columnas · corte responsive · `float` | ⛔ **no** | nadie lo ha medido en este arquetipo |
+
+**El instrumento que falta tiene nombre y hermano mayor:** cada número de
+`kb.css` (543 líneas) lo derivó **`qa:kb-clases`**, *«que lo deriva de los nodos
+cuyo DATO omite la propiedad»*. El equivalente **`qa:f33-clases` no existe** —
+derivado: `package.json` declara `qa:f33-{cmp,geo,spec,membresia}` y ninguna más.
+
+> **Construirlo es la tanda siguiente, y es §*UN ARQUETIPO NUEVO NO HEREDA
+> COBERTURA* con el objeto cambiado**: allí lo que faltaba era el comparador,
+> aquí la sonda que da los defaults de plantilla. Las dos veces el error sería
+> el mismo — dar por hecha una fase que nadie hizo.
+
+### ⚠ Y la consecuencia sobre la EMISIÓN, que es lo que corta
+
+Emitir las 31 hoy serviría 31 páginas con su marcado y **sin ritmo, sin
+retícula y sin ancho**: las columnas no flotan ni tienen anchura, así que
+apilan. De los 6 ejes de `qa:f33-cmp`:
+
+| eje | ¿lo invalida la hoja ausente? |
+|---|---|
+| `nSecciones` · `nFilas` · `nModulos` · `enlaces` | **no** — son recuentos de nodos |
+| `docH` · `base` | **sí** — son geometría, y saldrían rojos en las 6 del piloto por una causa **conocida y ajena al render** |
+
+**Ese rojo no se puede adjudicar**, que es literalmente la condición del CORTE
+LIMPIO 2 del encargo. Y peor: recalibrar contra él fabricaría la FAMILIA DE
+CALIBRACIÓN de manual — mover el clon para cuadrar un número cuya causa es que
+falta la hoja.
+
+---
+
+## ✅ F3-3-COMPARADOR-CIEGO · **el comparador no habría visto NI UN módulo del clon, con el render CORRECTO** — 101.ª, 2026-08-24, ARREGLADO en la misma tanda
+
+El segundo hallazgo del PASO 0, y el que justifica que el PASO 0 exista.
+
+`qa:f33-cmp` cuenta **los dos lados con el mismo selector**:
+
+```js
+const secciones = $$(".et_pb_section, [data-seccion]").filter(propio);
+const filas     = $$(".et_pb_row:not(.et_pb_row_inner), [data-fila]").filter(propio);
+const modulos   = $$("[class*='et_pb_module'], [data-modulo]").filter(propio);
+```
+
+Y `CuerpoPagina.tsx` emitía `f33-seccion` / `f33-modulo`, que **no casan
+ninguno de los dos**. Derivado contra los cardinales de `f33-spec`:
+
+| eje | lo que habría publicado | por qué |
+|---|---|---|
+| `nModulos` | **orig 313 → clon 10** | sólo el `case toggle` emite `et_pb_module` |
+| `nSecciones` | **orig 86 → clon 0** | ni `.et_pb_section` ni `[data-seccion]` |
+| `nFilas` | orig 113 → clon 113 ✅ | `data-fila` **sí** estaba |
+
+> ⚠⚠ **Y es el defecto de KB LEÍDO AL REVÉS, que es peor que el de KB.** Allí el
+> render no pintaba y el comparador lo cazó (`columna.nModulos: orig 2 → clon
+> 0`). Aquí **el render pinta y el comparador no sabe verlo** — y las dos cosas
+> se leen igual desde fuera: `orig N → clon 0`. La tanda siguiente habría ido a
+> arreglar un renderizador que está bien.
+
+**Y su negativo no podía cazarlo, por construcción.** `f33-cmp.neg` tiene 3
+casos y pasa 3/3; el que ejercita la comparación es `mismo-lado`, que **copia el
+lado del original sobre el del clon**. Así que estos selectores **nunca se
+ejercitaron contra marcado del clon**: **0 instancias separadoras**. Es §regla
+15 —*un cruce entre dos instrumentos que comparten premisa no verifica la
+premisa*— con lo compartido puesto en **el marcado**, y §regla 24 encontrando su
+límite: el negativo se corrió *antes de que existiera el lado que iba a medir*,
+y ésta es justo la pregunta que ese momento no puede contestar.
+
+**Arreglado**: `data-modulo={m.kind}` en los siete `case` que pintan y
+`data-seccion=""` en la sección. Mismo precedente que `data-fila`, que ya estaba
+y se aceptó con su antes/después a umbral cero — **marcador de sonda, no
+estilo**. Lleva el `kind` porque un hueco nombrado es localizable y uno vacío
+sólo es contable.
+
+⚠ **Lo que este arreglo NO prueba**: que el comparador dé verde. Sólo que
+**podrá ver**. La adjudicación sigue pendiente de `f33-cmp` con el clon vivo.
+
+---
+
+## ⚠ F3-3-MARCADO-INTERIOR · **siete huecos de forma que la spec no podía ver, medidos contra el HTML servido** — 101.ª, 2026-08-24
+
+`modulos.spec.md` midió **las clases del módulo**, y por eso no contesta qué hay
+por ENCIMA ni por DEBAJO de él. El cotejo del PASO 0 fue **contra el HTML
+servido de las 31** (`corpus/fase-3/**`), y ahí aparece lo que faltaba.
+
+**Control del instrumento, y hacía falta:** la v1 de este cotejo dio **574**
+instancias contra las 313 de `f33-spec` — incluía el cascarón (`_tb_header` /
+`_tb_footer`: 83 de los 96 `button` y 152 de los 155 `icon`) y casaba dentro de
+`<style>`. Acotado, reproduce **313 = 313** y los **11 cardinales uno a uno**
+(151 · 71 · 30 · 22 · 13 · 10 · 9 · 3 · 2 · 1 · 1) más las páginas. Eso es el
+cruce que §sondas 4 exige antes de creerse un recuento nuevo.
+
+> ⚠ **Y su límite, que se declara: mi cotejo y `f33-spec` leen el MISMO corpus.**
+> El cruce prueba que los dos leen lo mismo, **no** que el universo sea correcto
+> (§regla 15). Lo que verifica el universo es `f33-rutas.json`, congelada aparte.
+
+| tipo | n | **primer hijo REAL** (invariante) | lo que el clon emite | veredicto |
+|---|---|---|---|---|
+| `text` | 151 | **`div.et_pb_text_inner` 151/151** | el HTML directo en `.f33-texto` | ⚠ **falta el inner** |
+| `image` | 71 | `span.et_pb_image_wrap` ×53 · `a` ×18 | `img` suelto, o `a > img` | ⚠ **falta el wrap** |
+| `blurb` | 22 | **`div.et_pb_blurb_content` 22/22** | `span.et_pb_main_blurb_image` + `div.et_pb_blurb_container` | ⚠ **falta el `content`**, que es quien envuelve a esos dos |
+| `code` | 9 | **`div.et_pb_code_inner` 9/9** | el HTML directo | ⚠ **falta el inner** |
+| `icon` | 3 | **`span.et_pb_icon_wrap` > `span.et-pb-icon`** | `span.et_pb_icon` | ⚠ **nivel + clase** (ver abajo) |
+| `toggle` | 10 | `h5.et_pb_toggle_title` 10/10 | `h5.et_pb_toggle_title` | ✅ **casa entero** |
+| `video`·`slider`·`fullwidth_slider`·`map` | 34 | — | no se pintan | declarado (§F3-3-CUATRO-SIN-CABLEAR) |
+
+### El `icon`, que tiene tres cosas mal y ninguna da error
+
+Servido, medido en las 3 instancias de `/es/soporte/`:
+
+```html
+<div class="et_pb_module et_pb_icon et_pb_icon_0">
+  <span class="et_pb_icon_wrap "><span class="et-pb-icon">&#xe0a4;</span></span>
+</div>
+```
+
+Contra lo que el clon emite:
+
+1. **`et_pb_icon` va en el DIV del módulo, no en un span hijo** — §*una regla en
+   el nivel equivocado no da error*;
+2. **faltan un nivel de span**: el original es `icon_wrap > et-pb-icon`, el clon
+   tiene uno solo;
+3. **la clase interior es `et-pb-icon`, con GUIONES** — no `et_pb_icon`. Dos
+   nombres que se escriben casi igual y son selectores distintos.
+
+**Y una cuarta que es de MODELO, no de marcado:** el clon tiene
+`{m.texto ? <span className="f33-icono-texto">}`, y en el original **ese texto
+no existe dentro del icono** — es un módulo `text` HERMANO
+(`et_pb_text_2`, *«Centro de ayuda»*). Un campo que no corresponde a nada medido.
+
+### ⚠⚠ Y el `button`, donde la spec dijo lo contrario de lo que hay servido
+
+`modulos.spec.md` escribió *«etiqueta `a` (13/13) — el ÚNICO tipo que no es
+`div`»* y *«ESTE TIPO NO LLEVA `et_pb_module`»*. Las dos son **ciertas del
+`<a>`** y **falsas del módulo**. Servido:
+
+```html
+<div class="et_pb_button_module_wrapper et_pb_button_0_wrapper
+            et_pb_button_alignment_right et_pb_button_alignment_tablet_right
+            et_pb_button_alignment_phone_right et_pb_module ">
+  <a class="et_pb_button et_pb_button_0 boton-azul et_pb_bg_layout_light" …>
+```
+
+O sea: **el módulo `button` ES un `div` y SÍ lleva `et_pb_module`**; el `<a>` es
+su primer hijo. La spec no se equivocó — **contestó la pregunta que se le hizo**
+(las clases de la portadora que su selector identificó) y su fichero no lleva
+escrito cuál NO contestaba. Es §*una regla incompleta se lee exactamente igual
+que una completa*.
+
+**Lo que hay dentro de ese wrapper y el modelo no tiene:**
+
+| clase | n de 13 |
+|---|---|
+| `et_pb_button_alignment_center` | **10** |
+| `et_pb_button_alignment_tablet_center` | 8 |
+| `et_pb_button_alignment_phone_center` | 8 |
+| `et_pb_button_alignment_right` · `_tablet_right` · `_phone_right` | **1** cada una |
+
+**Es CAMPO por el test B** —dos valores del mismo hueco, `center` y `right`,
+conviviendo— **con tres ejes separados** (escritorio · tableta · móvil). Ni
+`bloques/paginas.ts` lo declara ni `CuerpoPagina.tsx` lo emite: **11 de 13
+botones traen alineación escrita por el editor y el clon la pierde entera.**
+
+> **Por qué NO se cablea aquí:** sin hoja no hay quién lo pinte
+> (§F3-3-SIN-HOJA), y un campo nuevo en el esquema es una migración. Va con la
+> hoja. Lo que sí queda es **medido y con su denominador**, que es lo que la
+> tanda siguiente necesita para no volver a descubrirlo.
+
+### Lo que este cotejo NO contesta
+
+| | |
+|---|---|
+| **si el clon lo sirve** | es un cotejo de LECTURA. Dice qué pretende emitir el componente, no qué sale por el puerto. Sólo `qa:f33-cmp` cierra eso |
+| **si estos huecos mueven un píxel** | hoy **no**, porque no hay hoja que los seleccione. Cuando la haya, sí — y por eso se apuntan ahora |
+| **el ritmo de estos wrappers** | `f33-geo` mide el MÓDULO, no sus interiores. En KB el `.et_pb_text_inner` se omitió **con medida** (*«ritmo 0 en los 85»*); aquí esa medida **no existe** |
+| **`display` del `blurb`** | `modulos.spec.md` lo da **partido**: `block` ×9 e `inline-block` ×13. El clon no distingue, y de ahí que su `anchoPct` no se lea entero |
+
 ## ✅ F3-3-CASCARON-SIN-DISCRIMINADOR · **CERRADA el 2026-08-24 (100.ª): CMS-5 = R1, el CAMPO DERIVADO** — enunciado original de la 99.ª debajo
 
 > ✅ **LAS DOS PRECONDICIONES ESTÁN CERRADAS, y se cerraron POR SEPARADO**, que

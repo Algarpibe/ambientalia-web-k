@@ -1,0 +1,120 @@
+ficheros leídos: 31/31
+
+## text — 151 instancias · 29 páginas
+   etiqueta portadora : div ×151
+   clases portadora   : et_pb_module ×151 · et_pb_text ×151 · et_pb_bg_layout_light ×151 · et_pb_text_align_left ×143 · breadcrumbs ×10 · et_pb_text_align_center ×8 · et_clickable ×6 · none ×4 · lista-tax-resources ×3
+   ENVOLTORIO         : div.et_pb_column.et_pb_css_mix_blend_mode_passthrough.et-last-child ×41
+                        div.et_pb_column.et_pb_css_mix_blend_mode_passthrough ×22
+                        img.wp-image-221 ×20
+                        p.(sin clase) ×13
+                        h2.(sin clase) ×10
+                        h3.(sin clase) ×9
+                        h1.(sin clase) ×5
+                        span.et-pb-icon ×3
+                        div.et_pb_column.et_pb_sticky_module.et_pb_css_mix_blend_mode_passthrough.et-last-child ×2
+                        h2.solucion-destacado ×1
+                        a.(sin clase) ×1
+                        span.glosario-letra ×1
+                        a.button ×1
+                        div.et_pb_column.banner-home-col-dcha.et_pb_css_mix_blend_mode_passthrough.et-last-child ×1
+                        span.(sin clase) ×1
+                        img.wp-image-34528 ×1
+                        img.wp-image-62713 ×1
+                        img.(sin clase) ×1
+                        img.wp-image-34426 ×1
+                        img.wp-image-34432 ×1
+                        div.dvmd_tm_cdata ×1
+                        ul.(sin clase) ×1
+   PRIMER HIJO        : div.et_pb_text_inner ×151
+
+## image — 71 instancias · 19 páginas
+   etiqueta portadora : div ×71
+   clases portadora   : et_pb_module ×71 · et_pb_image ×71
+   ENVOLTORIO         : div.et_pb_column.et_pb_css_mix_blend_mode_passthrough ×28
+                        div.et_pb_column.et_pb_css_mix_blend_mode_passthrough.et-last-child ×16
+                        h3.(sin clase) ×16
+                        p.(sin clase) ×5
+                        span.ui-provider.bqm.bqn.c.d.e.f.g.h.i.j.k.l.m.n.o.p.q.r.s.t.bqo.bqp.w.x.y.z.ab.ac.ae.af.ag.ah.ai.aj.ak ×1
+                        img.wp-image-66296 ×1
+                        br.(sin clase) ×1
+                        img.wp-image-221 ×1
+   PRIMER HIJO        : span.et_pb_image_wrap ×53
+                        a.(sin clase) ×18
+
+## video — 30 instancias · 5 páginas
+   etiqueta portadora : div ×30
+   clases portadora   : et_pb_module ×30 · et_pb_video ×30
+   ENVOLTORIO         : div.et_pb_column.et_pb_css_mix_blend_mode_passthrough.et-last-child ×30
+   PRIMER HIJO        : div.et_pb_video_box ×30
+
+## blurb — 22 instancias · 3 páginas
+   etiqueta portadora : div ×22
+   clases portadora   : et_pb_module ×22 · et_pb_blurb ×22 · et_pb_blurb_position_top ×22 · et_pb_bg_layout_light ×22 · et_pb_text_align_left ×17 · iconos-xs-2 ×13 · iconos-md-4 ×8 · iconos-md-3 ×5 · et_pb_with_border ×5 · et_pb_section_video_on_hover ×5 · et_pb_text_align_center ×5 · recursos-glosario ×4 · et_clickable ×1
+   ENVOLTORIO         : span.(sin clase) ×11
+                        div.et_pb_column.et_pb_css_mix_blend_mode_passthrough ×5
+                        div.et_pb_column.et_pb_css_mix_blend_mode_passthrough.et-last-child ×3
+                        p.(sin clase) ×1
+                        div.et_pb_with_border.et_pb_column.et_pb_section_video_on_hover.et_pb_css_mix_blend_mode_passthrough ×1
+                        div.et_pb_column.et_pb_section_video_on_hover.et_pb_css_mix_blend_mode_passthrough ×1
+   PRIMER HIJO        : div.et_pb_blurb_content ×22
+
+## button — 13 instancias · 6 páginas
+   etiqueta portadora : div ×13
+   clases portadora   : et_pb_button_module_wrapper ×13 · et_pb_module ×13 · et_pb_button_alignment_center ×10 · et_pb_button_alignment_tablet_center ×8 · et_pb_button_alignment_phone_center ×8 · et_pb_button_0_wrapper ×6 · et_pb_button_1_wrapper ×3 · et_pb_button_2_wrapper ×1 · et_pb_button_3_wrapper ×1 · et_pb_button_4_wrapper ×1 · et_pb_button_5_wrapper ×1 · et_pb_button_alignment_right ×1 · et_pb_button_alignment_tablet_right ×1 · et_pb_button_alignment_phone_right ×1
+   ENVOLTORIO         : img.wp-image-24899 ×2
+                        p.(sin clase) ×2
+                        img.wp-image-26340 ×1
+                        img.wp-image-26344 ×1
+                        img.wp-image-28571 ×1
+                        img.wp-image-28133 ×1
+                        img.wp-image-27197 ×1
+                        div.et_pb_column.et_pb_css_mix_blend_mode_passthrough.et-last-child ×1
+                        h2.(sin clase) ×1
+                        div.et_pb_with_border.et_pb_column.et_pb_section_video_on_hover.et_pb_css_mix_blend_mode_passthrough ×1
+   PRIMER HIJO        : a.et_pb_button.et_pb_bg_layout_light ×9
+                        a.et_pb_button.boton-azul.et_pb_bg_layout_light ×4
+
+## toggle — 10 instancias · 5 páginas
+   etiqueta portadora : div ×10
+   clases portadora   : et_pb_module ×10 · et_pb_toggle ×10 · et_pb_toggle_item ×10 · et_pb_toggle_close ×10
+   ENVOLTORIO         : a.(sin clase) ×4
+                        p.(sin clase) ×2
+                        h1.(sin clase) ×2
+                        a.et_pb_button.et_pb_bg_layout_light ×2
+   PRIMER HIJO        : h5.et_pb_toggle_title ×10
+
+## code — 9 instancias · 9 páginas
+   etiqueta portadora : div ×9
+   clases portadora   : et_pb_module ×9 · et_pb_code ×9
+   ENVOLTORIO         : p.(sin clase) ×7
+                        h3.(sin clase) ×1
+                        div.et_pb_column.et_pb_css_mix_blend_mode_passthrough ×1
+   PRIMER HIJO        : div.et_pb_code_inner ×9
+
+## icon — 3 instancias · 1 páginas
+   etiqueta portadora : div ×3
+   clases portadora   : et_pb_module ×3 · et_pb_icon ×3
+   ENVOLTORIO         : div.et_pb_column.et_clickable.et_pb_section_video_on_hover.et_pb_css_mix_blend_mode_passthrough ×2
+                        div.et_pb_column.et_clickable.et_pb_section_video_on_hover.et_pb_css_mix_blend_mode_passthrough.et-last-child ×1
+   PRIMER HIJO        : span.et_pb_icon_wrap ×3
+
+## fullwidth_slider — 2 instancias · 2 páginas
+   etiqueta portadora : div ×2
+   clases portadora   : et_pb_module ×2 · et_pb_slider ×2
+   ENVOLTORIO         : div.et_pb_section.et_pb_fullwidth_section.et_section_regular ×2
+   PRIMER HIJO        : div.et_pb_slides ×2
+
+## map — 1 instancias · 1 páginas
+   etiqueta portadora : div ×1
+   clases portadora   : et_pb_module ×1 · et_pb_map_container ×1
+   ENVOLTORIO         : div.et_pb_column.et_pb_css_mix_blend_mode_passthrough.et-last-child ×1
+   PRIMER HIJO        : div.et_pb_map ×1
+
+## slider — 1 instancias · 1 páginas
+   etiqueta portadora : div ×1
+   clases portadora   : et_pb_module ×1 · et_pb_slider ×1 · testimonios ×1 · et_pb_slider_fullwidth_off ×1 · et_pb_slider_no_pagination ×1 · et_slider_auto ×1 · et_slider_speed_7000 ×1
+   ENVOLTORIO         : div.et_pb_column.et_pb_css_mix_blend_mode_passthrough.et-last-child ×1
+   PRIMER HIJO        : div.et_pb_slides ×1
+
+TOTAL instancias censadas: 313
+(control: modulos.spec.md declara 313 módulos · 11 tipos · 31 páginas)
