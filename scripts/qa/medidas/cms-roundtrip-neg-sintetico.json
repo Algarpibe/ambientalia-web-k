@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-23",
+    "fecha": "2026-08-24",
     "sabotaje": "sintetico",
     "alcance": {
       "comparadas": [
@@ -94,7 +94,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:12.823Z\""
+      "real": "\"2026-08-24T12:58:38.320Z\""
     },
     {
       "coleccion": "productos",
@@ -102,7 +102,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.038Z\""
+      "real": "\"2026-08-24T12:58:38.579Z\""
     },
     {
       "coleccion": "productos",
@@ -110,7 +110,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.111Z\""
+      "real": "\"2026-08-24T12:58:38.673Z\""
     },
     {
       "coleccion": "productos",
@@ -118,7 +118,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.222Z\""
+      "real": "\"2026-08-24T12:58:38.816Z\""
     },
     {
       "coleccion": "productos",
@@ -126,7 +126,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.332Z\""
+      "real": "\"2026-08-24T12:58:38.972Z\""
     },
     {
       "coleccion": "productos",
@@ -134,7 +134,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.440Z\""
+      "real": "\"2026-08-24T12:58:39.114Z\""
     },
     {
       "coleccion": "productos",
@@ -142,7 +142,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.568Z\""
+      "real": "\"2026-08-24T12:58:39.259Z\""
     },
     {
       "coleccion": "productos",
@@ -150,7 +150,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.698Z\""
+      "real": "\"2026-08-24T12:58:39.378Z\""
     },
     {
       "coleccion": "productos",
@@ -158,7 +158,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.785Z\""
+      "real": "\"2026-08-24T12:58:39.501Z\""
     },
     {
       "coleccion": "productos",
@@ -166,7 +166,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.906Z\""
+      "real": "\"2026-08-24T12:58:39.622Z\""
     },
     {
       "coleccion": "productos",
@@ -174,7 +174,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.114Z\""
+      "real": "\"2026-08-24T12:58:39.857Z\""
     },
     {
       "coleccion": "productos",
@@ -182,7 +182,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.193Z\""
+      "real": "\"2026-08-24T12:58:39.937Z\""
     },
     {
       "coleccion": "productos",
@@ -190,7 +190,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.340Z\""
+      "real": "\"2026-08-24T12:58:40.089Z\""
     },
     {
       "coleccion": "productos",
@@ -198,7 +198,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.437Z\""
+      "real": "\"2026-08-24T12:58:40.188Z\""
     },
     {
       "coleccion": "productos",
@@ -206,7 +206,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.503Z\""
+      "real": "\"2026-08-24T12:58:40.277Z\""
     },
     {
       "coleccion": "productos",
@@ -214,7 +214,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.689Z\""
+      "real": "\"2026-08-24T12:58:40.460Z\""
     },
     {
       "coleccion": "productos",
@@ -222,7 +222,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.783Z\""
+      "real": "\"2026-08-24T12:58:40.561Z\""
     },
     {
       "coleccion": "productos",
@@ -230,7 +230,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.858Z\""
+      "real": "\"2026-08-24T12:58:40.635Z\""
     },
     {
       "coleccion": "productos",
@@ -238,7 +238,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.996Z\""
+      "real": "\"2026-08-24T12:58:40.749Z\""
     },
     {
       "coleccion": "paginas",
@@ -246,7 +246,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:15.094Z\""
+      "real": "\"2026-08-24T12:58:40.820Z\""
     },
     {
       "coleccion": "paginas",
@@ -254,7 +254,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:15.479Z\""
+      "real": "\"2026-08-24T12:58:41.239Z\""
     },
     {
       "coleccion": "paginas",
@@ -262,7 +262,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:15.558Z\""
+      "real": "\"2026-08-24T12:58:41.365Z\""
     },
     {
       "coleccion": "paginas",
@@ -270,7 +270,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:15.766Z\""
+      "real": "\"2026-08-24T12:58:41.610Z\""
     },
     {
       "coleccion": "paginas",
@@ -278,7 +278,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:15.890Z\""
+      "real": "\"2026-08-24T12:58:41.772Z\""
     },
     {
       "coleccion": "paginas",
@@ -286,7 +286,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:15.998Z\""
+      "real": "\"2026-08-24T12:58:41.870Z\""
     },
     {
       "coleccion": "paginas",
@@ -294,7 +294,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:16.163Z\""
+      "real": "\"2026-08-24T12:58:42.044Z\""
     },
     {
       "coleccion": "paginas",
@@ -302,7 +302,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:16.729Z\""
+      "real": "\"2026-08-24T12:58:42.581Z\""
     },
     {
       "coleccion": "paginas",
@@ -310,7 +310,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:16.870Z\""
+      "real": "\"2026-08-24T12:58:42.738Z\""
     },
     {
       "coleccion": "paginas",
@@ -318,7 +318,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:17.182Z\""
+      "real": "\"2026-08-24T12:58:43.061Z\""
     },
     {
       "coleccion": "paginas",
@@ -326,7 +326,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:17.294Z\""
+      "real": "\"2026-08-24T12:58:43.195Z\""
     },
     {
       "coleccion": "paginas",
@@ -334,7 +334,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:17.368Z\""
+      "real": "\"2026-08-24T12:58:43.301Z\""
     },
     {
       "coleccion": "paginas",
@@ -342,7 +342,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:17.442Z\""
+      "real": "\"2026-08-24T12:58:43.393Z\""
     },
     {
       "coleccion": "paginas",
@@ -350,7 +350,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:17.524Z\""
+      "real": "\"2026-08-24T12:58:43.492Z\""
     },
     {
       "coleccion": "paginas",
@@ -358,7 +358,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:17.681Z\""
+      "real": "\"2026-08-24T12:58:43.658Z\""
     },
     {
       "coleccion": "paginas",
@@ -366,7 +366,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:17.965Z\""
+      "real": "\"2026-08-24T12:58:43.974Z\""
     },
     {
       "coleccion": "paginas",
@@ -374,7 +374,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:19.056Z\""
+      "real": "\"2026-08-24T12:58:45.013Z\""
     },
     {
       "coleccion": "paginas",
@@ -382,7 +382,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:20.904Z\""
+      "real": "\"2026-08-24T12:58:47.020Z\""
     },
     {
       "coleccion": "paginas",
@@ -390,7 +390,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:21.028Z\""
+      "real": "\"2026-08-24T12:58:47.124Z\""
     },
     {
       "coleccion": "paginas",
@@ -398,7 +398,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:21.166Z\""
+      "real": "\"2026-08-24T12:58:47.261Z\""
     },
     {
       "coleccion": "paginas",
@@ -406,7 +406,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:21.304Z\""
+      "real": "\"2026-08-24T12:58:47.395Z\""
     },
     {
       "coleccion": "paginas",
@@ -414,7 +414,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:21.437Z\""
+      "real": "\"2026-08-24T12:58:47.541Z\""
     },
     {
       "coleccion": "paginas",
@@ -422,7 +422,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:21.586Z\""
+      "real": "\"2026-08-24T12:58:47.669Z\""
     },
     {
       "coleccion": "paginas",
@@ -430,7 +430,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:21.726Z\""
+      "real": "\"2026-08-24T12:58:47.827Z\""
     },
     {
       "coleccion": "paginas",
@@ -438,7 +438,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:21.849Z\""
+      "real": "\"2026-08-24T12:58:47.968Z\""
     },
     {
       "coleccion": "paginas",
@@ -446,7 +446,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:21.937Z\""
+      "real": "\"2026-08-24T12:58:48.082Z\""
     },
     {
       "coleccion": "paginas",
@@ -454,7 +454,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:22.015Z\""
+      "real": "\"2026-08-24T12:58:48.193Z\""
     },
     {
       "coleccion": "paginas",
@@ -462,7 +462,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:22.091Z\""
+      "real": "\"2026-08-24T12:58:48.270Z\""
     },
     {
       "coleccion": "paginas",
@@ -470,7 +470,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:22.227Z\""
+      "real": "\"2026-08-24T12:58:48.406Z\""
     },
     {
       "coleccion": "paginas",
@@ -478,7 +478,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:22.309Z\""
+      "real": "\"2026-08-24T12:58:48.500Z\""
     },
     {
       "coleccion": "paginas",
@@ -486,7 +486,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:22.390Z\""
+      "real": "\"2026-08-24T12:58:48.619Z\""
     },
     {
       "coleccion": "sectores",
@@ -494,7 +494,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.114Z\""
+      "real": "\"2026-08-24T12:58:39.857Z\""
     },
     {
       "coleccion": "sectores",
@@ -502,7 +502,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.698Z\""
+      "real": "\"2026-08-24T12:58:39.378Z\""
     },
     {
       "coleccion": "sectores",
@@ -510,7 +510,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.858Z\""
+      "real": "\"2026-08-24T12:58:40.635Z\""
     },
     {
       "coleccion": "sectores",
@@ -518,7 +518,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:24.504Z\""
+      "real": "\"2026-08-24T12:58:50.426Z\""
     },
     {
       "coleccion": "sectores",
@@ -526,7 +526,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.114Z\""
+      "real": "\"2026-08-24T12:58:39.857Z\""
     },
     {
       "coleccion": "sectores",
@@ -534,7 +534,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.698Z\""
+      "real": "\"2026-08-24T12:58:39.378Z\""
     },
     {
       "coleccion": "sectores",
@@ -542,7 +542,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.858Z\""
+      "real": "\"2026-08-24T12:58:40.635Z\""
     },
     {
       "coleccion": "sectores",
@@ -550,7 +550,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:26.008Z\""
+      "real": "\"2026-08-24T12:58:52.057Z\""
     },
     {
       "coleccion": "sectores",
@@ -558,7 +558,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.114Z\""
+      "real": "\"2026-08-24T12:58:39.857Z\""
     },
     {
       "coleccion": "sectores",
@@ -566,7 +566,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.698Z\""
+      "real": "\"2026-08-24T12:58:39.378Z\""
     },
     {
       "coleccion": "sectores",
@@ -574,7 +574,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.858Z\""
+      "real": "\"2026-08-24T12:58:40.635Z\""
     },
     {
       "coleccion": "sectores",
@@ -582,7 +582,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:27.444Z\""
+      "real": "\"2026-08-24T12:58:53.731Z\""
     },
     {
       "coleccion": "sectores",
@@ -590,7 +590,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.114Z\""
+      "real": "\"2026-08-24T12:58:39.857Z\""
     },
     {
       "coleccion": "sectores",
@@ -598,7 +598,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.698Z\""
+      "real": "\"2026-08-24T12:58:39.378Z\""
     },
     {
       "coleccion": "sectores",
@@ -606,7 +606,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.858Z\""
+      "real": "\"2026-08-24T12:58:40.635Z\""
     },
     {
       "coleccion": "sectores",
@@ -614,7 +614,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:28.855Z\""
+      "real": "\"2026-08-24T12:58:55.281Z\""
     },
     {
       "coleccion": "monograficos",
@@ -622,7 +622,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.114Z\""
+      "real": "\"2026-08-24T12:58:39.857Z\""
     },
     {
       "coleccion": "monograficos",
@@ -630,7 +630,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.698Z\""
+      "real": "\"2026-08-24T12:58:39.378Z\""
     },
     {
       "coleccion": "monograficos",
@@ -638,7 +638,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.858Z\""
+      "real": "\"2026-08-24T12:58:40.635Z\""
     },
     {
       "coleccion": "monograficos",
@@ -646,7 +646,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:29.816Z\""
+      "real": "\"2026-08-24T12:58:56.222Z\""
     },
     {
       "coleccion": "monograficos",
@@ -654,7 +654,7 @@
       "ruta": "soluciones[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.114Z\""
+      "real": "\"2026-08-24T12:58:39.857Z\""
     },
     {
       "coleccion": "monograficos",
@@ -662,7 +662,7 @@
       "ruta": "soluciones[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:13.698Z\""
+      "real": "\"2026-08-24T12:58:39.378Z\""
     },
     {
       "coleccion": "monograficos",
@@ -670,7 +670,7 @@
       "ruta": "soluciones[2].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:14.858Z\""
+      "real": "\"2026-08-24T12:58:40.635Z\""
     },
     {
       "coleccion": "monograficos",
@@ -678,7 +678,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.596Z\""
+      "real": "\"2026-08-24T12:58:58.216Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -686,7 +686,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -694,7 +694,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -702,7 +702,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.976Z\""
+      "real": "\"2026-08-24T12:58:58.651Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -710,7 +710,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.074Z\""
+      "real": "\"2026-08-24T12:58:58.761Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -718,7 +718,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.081Z\""
+      "real": "\"2026-08-24T12:58:58.768Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -726,7 +726,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.086Z\""
+      "real": "\"2026-08-24T12:58:58.778Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -734,7 +734,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.094Z\""
+      "real": "\"2026-08-24T12:58:58.787Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -742,7 +742,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.239Z\""
+      "real": "\"2026-08-24T12:58:58.971Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -750,7 +750,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.246Z\""
+      "real": "\"2026-08-24T12:58:58.982Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -758,7 +758,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.251Z\""
+      "real": "\"2026-08-24T12:58:58.990Z\""
     },
     {
       "coleccion": "taxonomia-sectores",
@@ -766,7 +766,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.378Z\""
+      "real": "\"2026-08-24T12:58:59.160Z\""
     },
     {
       "coleccion": "casos",
@@ -774,7 +774,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.976Z\""
+      "real": "\"2026-08-24T12:58:58.651Z\""
     },
     {
       "coleccion": "casos",
@@ -782,7 +782,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.612Z\""
+      "real": "\"2026-08-24T12:58:59.431Z\""
     },
     {
       "coleccion": "casos",
@@ -790,7 +790,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.892Z\""
+      "real": "\"2026-08-24T12:58:59.786Z\""
     },
     {
       "coleccion": "casos",
@@ -798,7 +798,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:33.475Z\""
+      "real": "\"2026-08-24T12:59:00.383Z\""
     },
     {
       "coleccion": "casos",
@@ -806,7 +806,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "casos",
@@ -814,7 +814,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:33.934Z\""
+      "real": "\"2026-08-24T12:59:00.975Z\""
     },
     {
       "coleccion": "casos",
@@ -822,7 +822,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -830,7 +830,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:34.265Z\""
+      "real": "\"2026-08-24T12:59:01.336Z\""
     },
     {
       "coleccion": "casos",
@@ -838,7 +838,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "casos",
@@ -846,7 +846,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:34.615Z\""
+      "real": "\"2026-08-24T12:59:01.660Z\""
     },
     {
       "coleccion": "casos",
@@ -854,7 +854,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -862,7 +862,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:35.131Z\""
+      "real": "\"2026-08-24T12:59:02.351Z\""
     },
     {
       "coleccion": "casos",
@@ -870,7 +870,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.074Z\""
+      "real": "\"2026-08-24T12:58:58.761Z\""
     },
     {
       "coleccion": "casos",
@@ -878,7 +878,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:35.641Z\""
+      "real": "\"2026-08-24T12:59:02.932Z\""
     },
     {
       "coleccion": "casos",
@@ -886,7 +886,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -894,7 +894,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:36.182Z\""
+      "real": "\"2026-08-24T12:59:03.470Z\""
     },
     {
       "coleccion": "casos",
@@ -902,7 +902,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -910,7 +910,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:36.443Z\""
+      "real": "\"2026-08-24T12:59:03.659Z\""
     },
     {
       "coleccion": "casos",
@@ -918,7 +918,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.246Z\""
+      "real": "\"2026-08-24T12:58:58.982Z\""
     },
     {
       "coleccion": "casos",
@@ -926,7 +926,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:36.730Z\""
+      "real": "\"2026-08-24T12:59:04.012Z\""
     },
     {
       "coleccion": "casos",
@@ -934,7 +934,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "casos",
@@ -942,7 +942,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:36.897Z\""
+      "real": "\"2026-08-24T12:59:04.161Z\""
     },
     {
       "coleccion": "casos",
@@ -950,7 +950,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -958,7 +958,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:37.147Z\""
+      "real": "\"2026-08-24T12:59:04.432Z\""
     },
     {
       "coleccion": "casos",
@@ -966,7 +966,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -974,7 +974,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:37.699Z\""
+      "real": "\"2026-08-24T12:59:05.096Z\""
     },
     {
       "coleccion": "casos",
@@ -982,7 +982,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -990,7 +990,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:38.792Z\""
+      "real": "\"2026-08-24T12:59:06.471Z\""
     },
     {
       "coleccion": "casos",
@@ -998,7 +998,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1006,7 +1006,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:39.343Z\""
+      "real": "\"2026-08-24T12:59:07.040Z\""
     },
     {
       "coleccion": "casos",
@@ -1014,7 +1014,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1022,7 +1022,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:39.801Z\""
+      "real": "\"2026-08-24T12:59:07.546Z\""
     },
     {
       "coleccion": "casos",
@@ -1030,7 +1030,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.976Z\""
+      "real": "\"2026-08-24T12:58:58.651Z\""
     },
     {
       "coleccion": "casos",
@@ -1038,7 +1038,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:40.270Z\""
+      "real": "\"2026-08-24T12:59:07.892Z\""
     },
     {
       "coleccion": "casos",
@@ -1046,7 +1046,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1054,7 +1054,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:40.684Z\""
+      "real": "\"2026-08-24T12:59:08.322Z\""
     },
     {
       "coleccion": "casos",
@@ -1062,7 +1062,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.081Z\""
+      "real": "\"2026-08-24T12:58:58.768Z\""
     },
     {
       "coleccion": "casos",
@@ -1070,7 +1070,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:41.072Z\""
+      "real": "\"2026-08-24T12:59:08.765Z\""
     },
     {
       "coleccion": "casos",
@@ -1078,7 +1078,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:41.572Z\""
+      "real": "\"2026-08-24T12:59:09.306Z\""
     },
     {
       "coleccion": "casos",
@@ -1086,7 +1086,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.094Z\""
+      "real": "\"2026-08-24T12:58:58.787Z\""
     },
     {
       "coleccion": "casos",
@@ -1094,7 +1094,7 @@
       "ruta": "sectores[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.086Z\""
+      "real": "\"2026-08-24T12:58:58.778Z\""
     },
     {
       "coleccion": "casos",
@@ -1102,7 +1102,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:42.078Z\""
+      "real": "\"2026-08-24T12:59:09.822Z\""
     },
     {
       "coleccion": "casos",
@@ -1110,7 +1110,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.094Z\""
+      "real": "\"2026-08-24T12:58:58.787Z\""
     },
     {
       "coleccion": "casos",
@@ -1118,7 +1118,7 @@
       "ruta": "sectores[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.086Z\""
+      "real": "\"2026-08-24T12:58:58.778Z\""
     },
     {
       "coleccion": "casos",
@@ -1126,7 +1126,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:42.331Z\""
+      "real": "\"2026-08-24T12:59:10.114Z\""
     },
     {
       "coleccion": "casos",
@@ -1134,7 +1134,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.086Z\""
+      "real": "\"2026-08-24T12:58:58.778Z\""
     },
     {
       "coleccion": "casos",
@@ -1142,7 +1142,7 @@
       "ruta": "sectores[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1150,7 +1150,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:42.879Z\""
+      "real": "\"2026-08-24T12:59:10.690Z\""
     },
     {
       "coleccion": "casos",
@@ -1158,7 +1158,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "casos",
@@ -1166,7 +1166,7 @@
       "ruta": "sectores[1].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.086Z\""
+      "real": "\"2026-08-24T12:58:58.778Z\""
     },
     {
       "coleccion": "casos",
@@ -1174,7 +1174,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:43.339Z\""
+      "real": "\"2026-08-24T12:59:11.169Z\""
     },
     {
       "coleccion": "casos",
@@ -1182,7 +1182,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.081Z\""
+      "real": "\"2026-08-24T12:58:58.768Z\""
     },
     {
       "coleccion": "casos",
@@ -1190,7 +1190,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:43.919Z\""
+      "real": "\"2026-08-24T12:59:11.758Z\""
     },
     {
       "coleccion": "casos",
@@ -1198,7 +1198,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.081Z\""
+      "real": "\"2026-08-24T12:58:58.768Z\""
     },
     {
       "coleccion": "casos",
@@ -1206,7 +1206,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:44.354Z\""
+      "real": "\"2026-08-24T12:59:12.233Z\""
     },
     {
       "coleccion": "casos",
@@ -1214,7 +1214,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.081Z\""
+      "real": "\"2026-08-24T12:58:58.768Z\""
     },
     {
       "coleccion": "casos",
@@ -1222,7 +1222,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:44.685Z\""
+      "real": "\"2026-08-24T12:59:12.542Z\""
     },
     {
       "coleccion": "casos",
@@ -1230,7 +1230,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.074Z\""
+      "real": "\"2026-08-24T12:58:58.761Z\""
     },
     {
       "coleccion": "casos",
@@ -1238,7 +1238,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:44.907Z\""
+      "real": "\"2026-08-24T12:59:12.788Z\""
     },
     {
       "coleccion": "casos",
@@ -1246,7 +1246,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.074Z\""
+      "real": "\"2026-08-24T12:58:58.761Z\""
     },
     {
       "coleccion": "casos",
@@ -1254,7 +1254,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:45.207Z\""
+      "real": "\"2026-08-24T12:59:13.068Z\""
     },
     {
       "coleccion": "casos",
@@ -1262,7 +1262,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "casos",
@@ -1270,7 +1270,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:45.677Z\""
+      "real": "\"2026-08-24T12:59:13.594Z\""
     },
     {
       "coleccion": "casos",
@@ -1278,7 +1278,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.976Z\""
+      "real": "\"2026-08-24T12:58:58.651Z\""
     },
     {
       "coleccion": "casos",
@@ -1286,7 +1286,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:55.665Z\""
+      "real": "\"2026-08-24T12:59:26.597Z\""
     },
     {
       "coleccion": "casos",
@@ -1294,7 +1294,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "casos",
@@ -1302,7 +1302,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:55.947Z\""
+      "real": "\"2026-08-24T12:59:26.860Z\""
     },
     {
       "coleccion": "casos",
@@ -1310,7 +1310,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1318,7 +1318,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:56.414Z\""
+      "real": "\"2026-08-24T12:59:27.378Z\""
     },
     {
       "coleccion": "casos",
@@ -1326,7 +1326,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.074Z\""
+      "real": "\"2026-08-24T12:58:58.761Z\""
     },
     {
       "coleccion": "casos",
@@ -1334,7 +1334,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:56.843Z\""
+      "real": "\"2026-08-24T12:59:27.832Z\""
     },
     {
       "coleccion": "casos",
@@ -1342,7 +1342,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.074Z\""
+      "real": "\"2026-08-24T12:58:58.761Z\""
     },
     {
       "coleccion": "casos",
@@ -1350,7 +1350,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:57.273Z\""
+      "real": "\"2026-08-24T12:59:28.481Z\""
     },
     {
       "coleccion": "casos",
@@ -1358,7 +1358,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:58.369Z\""
+      "real": "\"2026-08-24T12:59:29.803Z\""
     },
     {
       "coleccion": "casos",
@@ -1366,7 +1366,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.074Z\""
+      "real": "\"2026-08-24T12:58:58.761Z\""
     },
     {
       "coleccion": "casos",
@@ -1374,7 +1374,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:58.724Z\""
+      "real": "\"2026-08-24T12:59:30.195Z\""
     },
     {
       "coleccion": "casos",
@@ -1382,7 +1382,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1390,7 +1390,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:59.321Z\""
+      "real": "\"2026-08-24T12:59:30.820Z\""
     },
     {
       "coleccion": "casos",
@@ -1398,7 +1398,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.251Z\""
+      "real": "\"2026-08-24T12:58:58.990Z\""
     },
     {
       "coleccion": "casos",
@@ -1406,7 +1406,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:59.612Z\""
+      "real": "\"2026-08-24T12:59:31.179Z\""
     },
     {
       "coleccion": "casos",
@@ -1414,7 +1414,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1422,7 +1422,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:00.080Z\""
+      "real": "\"2026-08-24T12:59:31.680Z\""
     },
     {
       "coleccion": "casos",
@@ -1430,7 +1430,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1438,7 +1438,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:00.590Z\""
+      "real": "\"2026-08-24T12:59:32.248Z\""
     },
     {
       "coleccion": "casos",
@@ -1446,7 +1446,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.239Z\""
+      "real": "\"2026-08-24T12:58:58.971Z\""
     },
     {
       "coleccion": "casos",
@@ -1454,7 +1454,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:01.073Z\""
+      "real": "\"2026-08-24T12:59:32.877Z\""
     },
     {
       "coleccion": "casos",
@@ -1462,7 +1462,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.074Z\""
+      "real": "\"2026-08-24T12:58:58.761Z\""
     },
     {
       "coleccion": "casos",
@@ -1470,7 +1470,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:01.503Z\""
+      "real": "\"2026-08-24T12:59:33.366Z\""
     },
     {
       "coleccion": "casos",
@@ -1478,7 +1478,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.081Z\""
+      "real": "\"2026-08-24T12:58:58.768Z\""
     },
     {
       "coleccion": "casos",
@@ -1486,7 +1486,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:01.930Z\""
+      "real": "\"2026-08-24T12:59:33.920Z\""
     },
     {
       "coleccion": "casos",
@@ -1494,7 +1494,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.976Z\""
+      "real": "\"2026-08-24T12:58:58.651Z\""
     },
     {
       "coleccion": "casos",
@@ -1502,7 +1502,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:02.683Z\""
+      "real": "\"2026-08-24T12:59:34.707Z\""
     },
     {
       "coleccion": "casos",
@@ -1510,7 +1510,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.976Z\""
+      "real": "\"2026-08-24T12:58:58.651Z\""
     },
     {
       "coleccion": "casos",
@@ -1518,7 +1518,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:03.133Z\""
+      "real": "\"2026-08-24T12:59:35.128Z\""
     },
     {
       "coleccion": "casos",
@@ -1526,7 +1526,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1534,7 +1534,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:03.938Z\""
+      "real": "\"2026-08-24T12:59:35.903Z\""
     },
     {
       "coleccion": "casos",
@@ -1542,7 +1542,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.239Z\""
+      "real": "\"2026-08-24T12:58:58.971Z\""
     },
     {
       "coleccion": "casos",
@@ -1550,7 +1550,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:04.333Z\""
+      "real": "\"2026-08-24T12:59:36.383Z\""
     },
     {
       "coleccion": "casos",
@@ -1558,7 +1558,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.976Z\""
+      "real": "\"2026-08-24T12:58:58.651Z\""
     },
     {
       "coleccion": "casos",
@@ -1566,7 +1566,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:04.719Z\""
+      "real": "\"2026-08-24T12:59:36.780Z\""
     },
     {
       "coleccion": "casos",
@@ -1574,7 +1574,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.378Z\""
+      "real": "\"2026-08-24T12:58:59.160Z\""
     },
     {
       "coleccion": "casos",
@@ -1582,7 +1582,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:05.189Z\""
+      "real": "\"2026-08-24T12:59:37.247Z\""
     },
     {
       "coleccion": "casos",
@@ -1590,7 +1590,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.976Z\""
+      "real": "\"2026-08-24T12:58:58.651Z\""
     },
     {
       "coleccion": "casos",
@@ -1598,7 +1598,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:05.664Z\""
+      "real": "\"2026-08-24T12:59:37.745Z\""
     },
     {
       "coleccion": "casos",
@@ -1606,7 +1606,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "casos",
@@ -1614,7 +1614,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:06.043Z\""
+      "real": "\"2026-08-24T12:59:38.130Z\""
     },
     {
       "coleccion": "casos",
@@ -1622,7 +1622,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.808Z\""
+      "real": "\"2026-08-24T12:58:58.428Z\""
     },
     {
       "coleccion": "casos",
@@ -1630,7 +1630,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:06.533Z\""
+      "real": "\"2026-08-24T12:59:38.622Z\""
     },
     {
       "coleccion": "casos",
@@ -1638,7 +1638,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.086Z\""
+      "real": "\"2026-08-24T12:58:58.778Z\""
     },
     {
       "coleccion": "casos",
@@ -1646,7 +1646,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:06.943Z\""
+      "real": "\"2026-08-24T12:59:39.071Z\""
     },
     {
       "coleccion": "casos",
@@ -1654,7 +1654,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:32.094Z\""
+      "real": "\"2026-08-24T12:58:58.787Z\""
     },
     {
       "coleccion": "casos",
@@ -1662,7 +1662,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:07.518Z\""
+      "real": "\"2026-08-24T12:59:39.679Z\""
     },
     {
       "coleccion": "casos",
@@ -1670,7 +1670,7 @@
       "ruta": "sectores[0].updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:51:31.895Z\""
+      "real": "\"2026-08-24T12:58:58.544Z\""
     },
     {
       "coleccion": "casos",
@@ -1678,7 +1678,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:07.984Z\""
+      "real": "\"2026-08-24T12:59:40.189Z\""
     },
     {
       "coleccion": "faqs",
@@ -1686,7 +1686,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.103Z\""
+      "real": "\"2026-08-24T12:59:40.306Z\""
     },
     {
       "coleccion": "faqs",
@@ -1694,7 +1694,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.110Z\""
+      "real": "\"2026-08-24T12:59:40.315Z\""
     },
     {
       "coleccion": "faqs",
@@ -1702,7 +1702,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.116Z\""
+      "real": "\"2026-08-24T12:59:40.325Z\""
     },
     {
       "coleccion": "faqs",
@@ -1710,7 +1710,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.123Z\""
+      "real": "\"2026-08-24T12:59:40.329Z\""
     },
     {
       "coleccion": "faqs",
@@ -1718,7 +1718,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.128Z\""
+      "real": "\"2026-08-24T12:59:40.337Z\""
     },
     {
       "coleccion": "faqs",
@@ -1726,7 +1726,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.136Z\""
+      "real": "\"2026-08-24T12:59:40.346Z\""
     },
     {
       "coleccion": "faqs",
@@ -1734,7 +1734,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.143Z\""
+      "real": "\"2026-08-24T12:59:40.353Z\""
     },
     {
       "coleccion": "faqs",
@@ -1742,7 +1742,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.148Z\""
+      "real": "\"2026-08-24T12:59:40.360Z\""
     },
     {
       "coleccion": "faqs",
@@ -1750,7 +1750,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.154Z\""
+      "real": "\"2026-08-24T12:59:40.364Z\""
     },
     {
       "coleccion": "faqs",
@@ -1758,7 +1758,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.161Z\""
+      "real": "\"2026-08-24T12:59:40.370Z\""
     },
     {
       "coleccion": "faqs",
@@ -1766,7 +1766,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.167Z\""
+      "real": "\"2026-08-24T12:59:40.375Z\""
     },
     {
       "coleccion": "faqs",
@@ -1774,7 +1774,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.176Z\""
+      "real": "\"2026-08-24T12:59:40.379Z\""
     },
     {
       "coleccion": "faqs",
@@ -1782,7 +1782,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.181Z\""
+      "real": "\"2026-08-24T12:59:40.387Z\""
     },
     {
       "coleccion": "faqs",
@@ -1790,7 +1790,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.186Z\""
+      "real": "\"2026-08-24T12:59:40.393Z\""
     },
     {
       "coleccion": "faqs",
@@ -1798,7 +1798,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.191Z\""
+      "real": "\"2026-08-24T12:59:40.398Z\""
     },
     {
       "coleccion": "faqs",
@@ -1806,7 +1806,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.196Z\""
+      "real": "\"2026-08-24T12:59:40.406Z\""
     },
     {
       "coleccion": "faqs",
@@ -1814,7 +1814,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.204Z\""
+      "real": "\"2026-08-24T12:59:40.411Z\""
     },
     {
       "coleccion": "faqs",
@@ -1822,7 +1822,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.212Z\""
+      "real": "\"2026-08-24T12:59:40.417Z\""
     },
     {
       "coleccion": "faqs",
@@ -1830,7 +1830,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.218Z\""
+      "real": "\"2026-08-24T12:59:40.424Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1838,7 +1838,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.229Z\""
+      "real": "\"2026-08-24T12:59:40.444Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1846,7 +1846,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.265Z\""
+      "real": "\"2026-08-24T12:59:40.480Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1854,7 +1854,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.336Z\""
+      "real": "\"2026-08-24T12:59:40.611Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1862,7 +1862,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.403Z\""
+      "real": "\"2026-08-24T12:59:40.695Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1870,7 +1870,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.515Z\""
+      "real": "\"2026-08-24T12:59:40.856Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1878,7 +1878,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.704Z\""
+      "real": "\"2026-08-24T12:59:41.095Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1886,7 +1886,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.874Z\""
+      "real": "\"2026-08-24T12:59:41.291Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1894,7 +1894,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.899Z\""
+      "real": "\"2026-08-24T12:59:41.321Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1902,7 +1902,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:08.977Z\""
+      "real": "\"2026-08-24T12:59:41.424Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1910,7 +1910,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:09.173Z\""
+      "real": "\"2026-08-24T12:59:41.657Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1918,7 +1918,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:09.560Z\""
+      "real": "\"2026-08-24T12:59:42.159Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1926,7 +1926,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:09.806Z\""
+      "real": "\"2026-08-24T12:59:42.467Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1934,7 +1934,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:10.171Z\""
+      "real": "\"2026-08-24T12:59:42.847Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1942,7 +1942,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:10.337Z\""
+      "real": "\"2026-08-24T12:59:43.063Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1950,7 +1950,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:10.754Z\""
+      "real": "\"2026-08-24T12:59:43.541Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1958,7 +1958,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:10.942Z\""
+      "real": "\"2026-08-24T12:59:43.741Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1966,7 +1966,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:11.274Z\""
+      "real": "\"2026-08-24T12:59:44.124Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1974,7 +1974,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:11.507Z\""
+      "real": "\"2026-08-24T12:59:44.409Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1982,7 +1982,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:11.691Z\""
+      "real": "\"2026-08-24T12:59:44.597Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1990,7 +1990,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:11.953Z\""
+      "real": "\"2026-08-24T12:59:44.871Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -1998,7 +1998,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:12.251Z\""
+      "real": "\"2026-08-24T12:59:45.203Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2006,7 +2006,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:12.501Z\""
+      "real": "\"2026-08-24T12:59:45.481Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2014,7 +2014,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:12.775Z\""
+      "real": "\"2026-08-24T12:59:45.823Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2022,7 +2022,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:13.036Z\""
+      "real": "\"2026-08-24T12:59:46.078Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2030,7 +2030,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:13.294Z\""
+      "real": "\"2026-08-24T12:59:46.365Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2038,7 +2038,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:13.484Z\""
+      "real": "\"2026-08-24T12:59:46.570Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2046,7 +2046,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:13.760Z\""
+      "real": "\"2026-08-24T12:59:46.937Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2054,7 +2054,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:13.967Z\""
+      "real": "\"2026-08-24T12:59:47.158Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2062,7 +2062,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:14.249Z\""
+      "real": "\"2026-08-24T12:59:47.484Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2070,7 +2070,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:14.440Z\""
+      "real": "\"2026-08-24T12:59:47.670Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2078,7 +2078,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:14.469Z\""
+      "real": "\"2026-08-24T12:59:47.711Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2086,7 +2086,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:14.636Z\""
+      "real": "\"2026-08-24T12:59:47.871Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2094,7 +2094,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:14.843Z\""
+      "real": "\"2026-08-24T12:59:48.123Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2102,7 +2102,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:15.089Z\""
+      "real": "\"2026-08-24T12:59:48.366Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2110,7 +2110,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:15.368Z\""
+      "real": "\"2026-08-24T12:59:48.637Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2118,7 +2118,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:15.680Z\""
+      "real": "\"2026-08-24T12:59:49.057Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2126,7 +2126,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:16.000Z\""
+      "real": "\"2026-08-24T12:59:49.401Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2134,7 +2134,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:16.193Z\""
+      "real": "\"2026-08-24T12:59:49.630Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2142,7 +2142,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:16.491Z\""
+      "real": "\"2026-08-24T12:59:49.907Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2150,7 +2150,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:16.703Z\""
+      "real": "\"2026-08-24T12:59:50.157Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2158,7 +2158,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:16.973Z\""
+      "real": "\"2026-08-24T12:59:50.410Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2166,7 +2166,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:17.207Z\""
+      "real": "\"2026-08-24T12:59:50.629Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2174,7 +2174,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:17.593Z\""
+      "real": "\"2026-08-24T12:59:51.023Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2182,7 +2182,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:17.872Z\""
+      "real": "\"2026-08-24T12:59:51.395Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2190,7 +2190,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:18.089Z\""
+      "real": "\"2026-08-24T12:59:51.629Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2198,7 +2198,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:18.403Z\""
+      "real": "\"2026-08-24T12:59:51.949Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2206,7 +2206,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:18.508Z\""
+      "real": "\"2026-08-24T12:59:52.031Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2214,7 +2214,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:18.708Z\""
+      "real": "\"2026-08-24T12:59:52.269Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2222,7 +2222,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:18.973Z\""
+      "real": "\"2026-08-24T12:59:52.513Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2230,7 +2230,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:19.693Z\""
+      "real": "\"2026-08-24T12:59:53.399Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2238,7 +2238,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:19.899Z\""
+      "real": "\"2026-08-24T12:59:53.614Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2246,7 +2246,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:19.988Z\""
+      "real": "\"2026-08-24T12:59:53.699Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2254,7 +2254,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:20.011Z\""
+      "real": "\"2026-08-24T12:59:53.731Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2262,7 +2262,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:20.239Z\""
+      "real": "\"2026-08-24T12:59:54.027Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2270,7 +2270,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:20.275Z\""
+      "real": "\"2026-08-24T12:59:54.067Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2278,7 +2278,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:20.431Z\""
+      "real": "\"2026-08-24T12:59:54.214Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2286,7 +2286,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:20.607Z\""
+      "real": "\"2026-08-24T12:59:54.330Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2294,7 +2294,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:20.689Z\""
+      "real": "\"2026-08-24T12:59:54.444Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2302,7 +2302,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:20.756Z\""
+      "real": "\"2026-08-24T12:59:54.544Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2310,7 +2310,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:20.891Z\""
+      "real": "\"2026-08-24T12:59:54.715Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2318,7 +2318,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.040Z\""
+      "real": "\"2026-08-24T12:59:54.844Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2326,7 +2326,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.155Z\""
+      "real": "\"2026-08-24T12:59:54.953Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2334,7 +2334,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.215Z\""
+      "real": "\"2026-08-24T12:59:55.018Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2342,7 +2342,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.241Z\""
+      "real": "\"2026-08-24T12:59:55.036Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2350,7 +2350,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.324Z\""
+      "real": "\"2026-08-24T12:59:55.104Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2358,7 +2358,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.405Z\""
+      "real": "\"2026-08-24T12:59:55.204Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2366,7 +2366,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.539Z\""
+      "real": "\"2026-08-24T12:59:55.359Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2374,7 +2374,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.651Z\""
+      "real": "\"2026-08-24T12:59:55.481Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2382,7 +2382,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.672Z\""
+      "real": "\"2026-08-24T12:59:55.504Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2390,7 +2390,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.808Z\""
+      "real": "\"2026-08-24T12:59:55.628Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2398,7 +2398,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.880Z\""
+      "real": "\"2026-08-24T12:59:55.701Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2406,7 +2406,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:21.968Z\""
+      "real": "\"2026-08-24T12:59:55.780Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2414,7 +2414,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:22.051Z\""
+      "real": "\"2026-08-24T12:59:55.859Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2422,7 +2422,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:22.077Z\""
+      "real": "\"2026-08-24T12:59:55.889Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2430,7 +2430,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:22.227Z\""
+      "real": "\"2026-08-24T12:59:56.004Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2438,7 +2438,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:22.372Z\""
+      "real": "\"2026-08-24T12:59:56.136Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2446,7 +2446,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:22.497Z\""
+      "real": "\"2026-08-24T12:59:56.260Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2454,7 +2454,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:22.571Z\""
+      "real": "\"2026-08-24T12:59:56.330Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2462,7 +2462,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:22.691Z\""
+      "real": "\"2026-08-24T12:59:56.435Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2470,7 +2470,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:22.876Z\""
+      "real": "\"2026-08-24T12:59:56.667Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2478,7 +2478,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:23.100Z\""
+      "real": "\"2026-08-24T12:59:56.977Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2486,7 +2486,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:23.138Z\""
+      "real": "\"2026-08-24T12:59:57.010Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2494,7 +2494,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:23.293Z\""
+      "real": "\"2026-08-24T12:59:57.148Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2502,7 +2502,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:23.486Z\""
+      "real": "\"2026-08-24T12:59:57.339Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2510,7 +2510,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:23.697Z\""
+      "real": "\"2026-08-24T12:59:57.550Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2518,7 +2518,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:23.871Z\""
+      "real": "\"2026-08-24T12:59:57.691Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2526,7 +2526,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:23.952Z\""
+      "real": "\"2026-08-24T12:59:57.767Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2534,7 +2534,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.025Z\""
+      "real": "\"2026-08-24T12:59:57.855Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2542,7 +2542,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.105Z\""
+      "real": "\"2026-08-24T12:59:57.930Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2550,7 +2550,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.166Z\""
+      "real": "\"2026-08-24T12:59:57.992Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2558,7 +2558,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.231Z\""
+      "real": "\"2026-08-24T12:59:58.074Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2566,7 +2566,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.307Z\""
+      "real": "\"2026-08-24T12:59:58.152Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2574,7 +2574,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.374Z\""
+      "real": "\"2026-08-24T12:59:58.225Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2582,7 +2582,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.440Z\""
+      "real": "\"2026-08-24T12:59:58.296Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2590,7 +2590,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.460Z\""
+      "real": "\"2026-08-24T12:59:58.322Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2598,7 +2598,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.610Z\""
+      "real": "\"2026-08-24T12:59:58.480Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2606,7 +2606,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.640Z\""
+      "real": "\"2026-08-24T12:59:58.513Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2614,7 +2614,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.663Z\""
+      "real": "\"2026-08-24T12:59:58.546Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2622,7 +2622,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.785Z\""
+      "real": "\"2026-08-24T12:59:58.673Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2630,7 +2630,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:24.995Z\""
+      "real": "\"2026-08-24T12:59:58.860Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2638,7 +2638,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.066Z\""
+      "real": "\"2026-08-24T12:59:58.944Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2646,7 +2646,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.091Z\""
+      "real": "\"2026-08-24T12:59:58.970Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2654,7 +2654,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.116Z\""
+      "real": "\"2026-08-24T12:59:58.990Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2662,7 +2662,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.191Z\""
+      "real": "\"2026-08-24T12:59:59.063Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2670,7 +2670,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.218Z\""
+      "real": "\"2026-08-24T12:59:59.090Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2678,7 +2678,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.282Z\""
+      "real": "\"2026-08-24T12:59:59.174Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2686,7 +2686,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.305Z\""
+      "real": "\"2026-08-24T12:59:59.208Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2694,7 +2694,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.327Z\""
+      "real": "\"2026-08-24T12:59:59.232Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2702,7 +2702,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.343Z\""
+      "real": "\"2026-08-24T12:59:59.254Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2710,7 +2710,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.403Z\""
+      "real": "\"2026-08-24T12:59:59.317Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2718,7 +2718,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.427Z\""
+      "real": "\"2026-08-24T12:59:59.341Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2726,7 +2726,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.446Z\""
+      "real": "\"2026-08-24T12:59:59.359Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2734,7 +2734,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.465Z\""
+      "real": "\"2026-08-24T12:59:59.377Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2742,7 +2742,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.485Z\""
+      "real": "\"2026-08-24T12:59:59.399Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2750,7 +2750,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.503Z\""
+      "real": "\"2026-08-24T12:59:59.423Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2758,7 +2758,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.524Z\""
+      "real": "\"2026-08-24T12:59:59.444Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2766,7 +2766,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.698Z\""
+      "real": "\"2026-08-24T12:59:59.735Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2774,7 +2774,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.722Z\""
+      "real": "\"2026-08-24T12:59:59.765Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2782,7 +2782,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.753Z\""
+      "real": "\"2026-08-24T12:59:59.803Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2790,7 +2790,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.772Z\""
+      "real": "\"2026-08-24T12:59:59.827Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2798,7 +2798,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.791Z\""
+      "real": "\"2026-08-24T12:59:59.853Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2806,7 +2806,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.811Z\""
+      "real": "\"2026-08-24T12:59:59.885Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2814,7 +2814,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.832Z\""
+      "real": "\"2026-08-24T12:59:59.916Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2822,7 +2822,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.854Z\""
+      "real": "\"2026-08-24T12:59:59.947Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2830,7 +2830,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:25.875Z\""
+      "real": "\"2026-08-24T12:59:59.977Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2838,7 +2838,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.078Z\""
+      "real": "\"2026-08-24T13:00:00.176Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2846,7 +2846,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.107Z\""
+      "real": "\"2026-08-24T13:00:00.202Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2854,7 +2854,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.126Z\""
+      "real": "\"2026-08-24T13:00:00.232Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2862,7 +2862,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.157Z\""
+      "real": "\"2026-08-24T13:00:00.261Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2870,7 +2870,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.177Z\""
+      "real": "\"2026-08-24T13:00:00.295Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2878,7 +2878,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.198Z\""
+      "real": "\"2026-08-24T13:00:00.329Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2886,7 +2886,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.219Z\""
+      "real": "\"2026-08-24T13:00:00.357Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2894,7 +2894,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.238Z\""
+      "real": "\"2026-08-24T13:00:00.389Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2902,7 +2902,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.255Z\""
+      "real": "\"2026-08-24T13:00:00.420Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2910,7 +2910,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.274Z\""
+      "real": "\"2026-08-24T13:00:00.449Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2918,7 +2918,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.295Z\""
+      "real": "\"2026-08-24T13:00:00.481Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2926,7 +2926,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.316Z\""
+      "real": "\"2026-08-24T13:00:00.511Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2934,7 +2934,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.406Z\""
+      "real": "\"2026-08-24T13:00:00.647Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2942,7 +2942,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.493Z\""
+      "real": "\"2026-08-24T13:00:00.739Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2950,7 +2950,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.589Z\""
+      "real": "\"2026-08-24T13:00:00.841Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2958,7 +2958,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.730Z\""
+      "real": "\"2026-08-24T13:00:00.992Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2966,7 +2966,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:26.935Z\""
+      "real": "\"2026-08-24T13:00:01.227Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2974,7 +2974,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:27.060Z\""
+      "real": "\"2026-08-24T13:00:01.366Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2982,7 +2982,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:27.285Z\""
+      "real": "\"2026-08-24T13:00:01.584Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2990,7 +2990,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:27.586Z\""
+      "real": "\"2026-08-24T13:00:01.883Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -2998,7 +2998,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:27.901Z\""
+      "real": "\"2026-08-24T13:00:02.167Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -3006,7 +3006,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:28.183Z\""
+      "real": "\"2026-08-24T13:00:02.446Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -3014,7 +3014,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:28.486Z\""
+      "real": "\"2026-08-24T13:00:02.804Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -3022,7 +3022,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:28.753Z\""
+      "real": "\"2026-08-24T13:00:03.102Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -3030,7 +3030,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:28.973Z\""
+      "real": "\"2026-08-24T13:00:03.422Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -3038,7 +3038,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:28.999Z\""
+      "real": "\"2026-08-24T13:00:03.459Z\""
     },
     {
       "coleccion": "entradas-blog",
@@ -3046,7 +3046,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.289Z\""
+      "real": "\"2026-08-24T13:00:03.723Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3054,7 +3054,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.317Z\""
+      "real": "\"2026-08-24T13:00:03.746Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3062,7 +3062,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.390Z\""
+      "real": "\"2026-08-24T13:00:03.843Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3070,7 +3070,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.487Z\""
+      "real": "\"2026-08-24T13:00:03.932Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3078,7 +3078,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.507Z\""
+      "real": "\"2026-08-24T13:00:03.954Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3086,7 +3086,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.574Z\""
+      "real": "\"2026-08-24T13:00:04.024Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3094,7 +3094,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.638Z\""
+      "real": "\"2026-08-24T13:00:04.101Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3102,7 +3102,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.751Z\""
+      "real": "\"2026-08-24T13:00:04.194Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3110,7 +3110,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.819Z\""
+      "real": "\"2026-08-24T13:00:04.286Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3118,7 +3118,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.912Z\""
+      "real": "\"2026-08-24T13:00:04.358Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3126,7 +3126,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:29.978Z\""
+      "real": "\"2026-08-24T13:00:04.433Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3134,7 +3134,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.069Z\""
+      "real": "\"2026-08-24T13:00:04.508Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3142,7 +3142,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.171Z\""
+      "real": "\"2026-08-24T13:00:04.612Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3150,7 +3150,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.240Z\""
+      "real": "\"2026-08-24T13:00:04.678Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3158,7 +3158,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.310Z\""
+      "real": "\"2026-08-24T13:00:04.744Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3166,7 +3166,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.377Z\""
+      "real": "\"2026-08-24T13:00:04.816Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3174,7 +3174,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.437Z\""
+      "real": "\"2026-08-24T13:00:04.892Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3182,7 +3182,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.532Z\""
+      "real": "\"2026-08-24T13:00:04.957Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3190,7 +3190,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.546Z\""
+      "real": "\"2026-08-24T13:00:04.988Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3198,7 +3198,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.621Z\""
+      "real": "\"2026-08-24T13:00:05.052Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3206,7 +3206,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.707Z\""
+      "real": "\"2026-08-24T13:00:05.114Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3214,7 +3214,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.800Z\""
+      "real": "\"2026-08-24T13:00:05.208Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3222,7 +3222,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.865Z\""
+      "real": "\"2026-08-24T13:00:05.301Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3230,7 +3230,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.932Z\""
+      "real": "\"2026-08-24T13:00:05.397Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3238,7 +3238,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:30.993Z\""
+      "real": "\"2026-08-24T13:00:05.462Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3246,7 +3246,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.051Z\""
+      "real": "\"2026-08-24T13:00:05.537Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3254,7 +3254,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.113Z\""
+      "real": "\"2026-08-24T13:00:05.630Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3262,7 +3262,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.172Z\""
+      "real": "\"2026-08-24T13:00:05.695Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3270,7 +3270,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.231Z\""
+      "real": "\"2026-08-24T13:00:05.794Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3278,7 +3278,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.291Z\""
+      "real": "\"2026-08-24T13:00:05.867Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3286,7 +3286,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.308Z\""
+      "real": "\"2026-08-24T13:00:05.890Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3294,7 +3294,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.372Z\""
+      "real": "\"2026-08-24T13:00:05.989Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3302,7 +3302,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.431Z\""
+      "real": "\"2026-08-24T13:00:06.072Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3310,7 +3310,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.526Z\""
+      "real": "\"2026-08-24T13:00:06.159Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3318,7 +3318,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.593Z\""
+      "real": "\"2026-08-24T13:00:06.251Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3326,7 +3326,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.652Z\""
+      "real": "\"2026-08-24T13:00:06.320Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3334,7 +3334,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.710Z\""
+      "real": "\"2026-08-24T13:00:06.422Z\""
     },
     {
       "coleccion": "terminos-kunakpedia",
@@ -3342,7 +3342,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.721Z\""
+      "real": "\"2026-08-24T13:00:06.448Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3350,7 +3350,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:31.976Z\""
+      "real": "\"2026-08-24T13:00:06.738Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3358,7 +3358,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:32.091Z\""
+      "real": "\"2026-08-24T13:00:06.890Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3366,7 +3366,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:32.211Z\""
+      "real": "\"2026-08-24T13:00:07.035Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3374,7 +3374,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:32.320Z\""
+      "real": "\"2026-08-24T13:00:07.128Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3382,7 +3382,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:32.442Z\""
+      "real": "\"2026-08-24T13:00:07.274Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3390,7 +3390,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:32.561Z\""
+      "real": "\"2026-08-24T13:00:07.399Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3398,7 +3398,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:32.685Z\""
+      "real": "\"2026-08-24T13:00:07.517Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3406,7 +3406,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:32.799Z\""
+      "real": "\"2026-08-24T13:00:07.641Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3414,7 +3414,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:32.901Z\""
+      "real": "\"2026-08-24T13:00:07.764Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3422,7 +3422,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.014Z\""
+      "real": "\"2026-08-24T13:00:07.873Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3430,7 +3430,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.134Z\""
+      "real": "\"2026-08-24T13:00:07.988Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3438,7 +3438,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.256Z\""
+      "real": "\"2026-08-24T13:00:08.092Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3446,7 +3446,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.364Z\""
+      "real": "\"2026-08-24T13:00:08.219Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3454,7 +3454,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.474Z\""
+      "real": "\"2026-08-24T13:00:08.336Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3462,7 +3462,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.585Z\""
+      "real": "\"2026-08-24T13:00:08.465Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3470,7 +3470,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.704Z\""
+      "real": "\"2026-08-24T13:00:08.588Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3478,7 +3478,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.835Z\""
+      "real": "\"2026-08-24T13:00:08.706Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3486,7 +3486,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:33.943Z\""
+      "real": "\"2026-08-24T13:00:08.806Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3494,7 +3494,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:34.052Z\""
+      "real": "\"2026-08-24T13:00:08.908Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3502,7 +3502,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:34.166Z\""
+      "real": "\"2026-08-24T13:00:09.030Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3510,7 +3510,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:34.271Z\""
+      "real": "\"2026-08-24T13:00:09.122Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3518,7 +3518,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:34.358Z\""
+      "real": "\"2026-08-24T13:00:09.241Z\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -3526,7 +3526,7 @@
       "ruta": "updatedAt",
       "clase": "FORMA",
       "esperado": "(ausente)",
-      "real": "\"2026-08-23T19:52:34.444Z\""
+      "real": "\"2026-08-24T13:00:09.361Z\""
     }
   ]
 }

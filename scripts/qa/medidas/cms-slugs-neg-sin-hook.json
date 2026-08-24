@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-04",
+    "fecha": "2026-08-24",
     "sabotaje": "sin-hook"
   },
   "alcance": "plano de UN segmento de /es/ — entradas-blog · terminos-kunakpedia · productos SIN padre. Las prefijadas (casos, faqs, sectores, monograficos, documentos-cientificos, taxonomías) tienen unicidad nativa de colección y NO entran. Mismo alcance que `qa:slugs`.",

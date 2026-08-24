@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-24",
-    "sabotaje": "fuera-plano"
+    "sabotaje": null
   },
   "alcance": "plano de UN segmento de /es/ — entradas-blog · terminos-kunakpedia · productos SIN padre. Las prefijadas (casos, faqs, sectores, monograficos, documentos-cientificos, taxonomías) tienen unicidad nativa de colección y NO entran. Mismo alcance que `qa:slugs`.",
   "pasos": [
@@ -14,19 +14,19 @@
     {
       "paso": "2 · MISMO slug, otra familia ⇒ el alta CAE",
       "esperado": "cae",
-      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-38892-accesorios» ya está en el plano",
+      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-7468-accesorios» ya está en el plano ",
       "ok": true
     },
     {
       "paso": "3 · slug distinto ⇒ pasa en limpio",
       "esperado": "pasa",
-      "obtenido": "pasó",
-      "ok": true
+      "obtenido": "cayó: The following field is invalid: Fecha Publicacion",
+      "ok": false
     },
     {
       "paso": "4 · producto CON `padre` repite slug ⇒ PASA (fuera del plano)",
       "esperado": "pasa",
-      "obtenido": "cayó: COLISIÓN DE SLUG ENTRE FAMILIAS: «qa-slugs-38892-accesorios» ya está en el plano",
+      "obtenido": "cayó: The following field is invalid: Pagina",
       "ok": false
     },
     {

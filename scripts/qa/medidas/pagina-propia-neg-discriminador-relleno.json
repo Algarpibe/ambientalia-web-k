@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-13",
+    "fecha": "2026-08-24",
     "que": "CMS-PR3: el condicional `pagina` → {seo.title, hrefServido} verificado contra Payload, en las dos direcciones",
     "porQue": "un condicional con un solo lado no está probado: el esquema que acepta el dato de MÁS pasa igual, y ése es el que deja entrar un documento que miente sobre si tiene página",
     "sabotaje": "discriminador-relleno",

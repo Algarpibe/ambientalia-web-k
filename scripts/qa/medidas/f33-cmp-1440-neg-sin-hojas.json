@@ -1,7 +1,7 @@
 {
   "meta": {
     "sonda": "f33-cmp",
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-24",
     "ancho": 1440,
     "movil": false,
     "contrato": "FIDELIDAD (1440/390)",
@@ -343,7 +343,7 @@
         "resueltas": 0,
         "sinResolver": 0,
         "aplicadas": 8,
-        "peticionesBloqueadas": 41
+        "peticionesBloqueadas": 42
       },
       "original": {
         "docH": 1922.86,
@@ -412,7 +412,7 @@
         "resueltas": 0,
         "sinResolver": 0,
         "aplicadas": 8,
-        "peticionesBloqueadas": 48
+        "peticionesBloqueadas": 50
       },
       "original": {
         "docH": 1966.42,

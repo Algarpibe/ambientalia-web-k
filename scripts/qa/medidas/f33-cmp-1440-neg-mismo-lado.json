@@ -1,7 +1,7 @@
 {
   "meta": {
     "sonda": "f33-cmp",
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-24",
     "ancho": 1440,
     "movil": false,
     "contrato": "FIDELIDAD (1440/390)",
@@ -55,7 +55,7 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 17,
-        "peticionesBloqueadas": 50
+        "peticionesBloqueadas": 49
       },
       "original": {
         "docH": 3111.16,
@@ -412,7 +412,7 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 15,
-        "peticionesBloqueadas": 51
+        "peticionesBloqueadas": 50
       },
       "original": {
         "docH": 1497.09,
@@ -521,7 +521,7 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 15,
-        "peticionesBloqueadas": 54
+        "peticionesBloqueadas": 49
       },
       "original": {
         "docH": 2712.83,

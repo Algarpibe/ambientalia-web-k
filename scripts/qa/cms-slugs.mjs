@@ -108,6 +108,42 @@ const anota = (paso, esperado, obtenido, ok) => {
  * y no un campo obligatorio que se me olvidó: una caída por `categorias` vacías
  * se leería como «la guarda funciona», que es el falso verde de siempre con el
  * signo cambiado.
+ *
+ * ⚠⚠ **Y ESO ES EXACTAMENTE LO QUE PASÓ, con el signo al revés y durante 20
+ * días (cazado en la 99.ª, PASO 0).** El aviso de arriba miraba al falso verde;
+ * el fallo real fue **el fixture caducando contra el esquema** (§regla 5ter: *
+ * arreglar el objeto caduca el control del instrumento que lo midió*):
+ *
+ * | invariante | campo que pasó a `required` | commit | desde |
+ * |---|---|---|---|
+ * | **4** (`productos`) | `pagina` — CMS-PR3, **sin defecto a propósito** | `df64363` | **2026-08-13** |
+ * | **3** (`terminos-kunakpedia`) | `fechaPublicacion` — el orden del glosario | `021b6b0` | **2026-08-18** |
+ *
+ * Los dos fixtures dejaron de poder CREARSE, así que **los invariantes 3 y 4 no
+ * estaban fallando: estaban SIN EJERCITAR** — el alta moría antes de llegar a la
+ * guarda. Última corrida en verde: `medidas/cms-slugs.json`, **2026-08-04**.
+ *
+ * **Y se llevó por delante a su propio negativo EN LAS DOS DIRECCIONES**, que es
+ * lo que lo hace instructivo — el mismo fixture caducado produjo un rojo y un
+ * verde, los dos falsos:
+ *
+ * | caso | salía | por qué, y cuál es el modo de fallo |
+ * |---|---|---|
+ * | `sin-hook` | ❌ *«el invariante 2 no salió roto»* | el 2 crea un término con el slug repetido y **espera que caiga**. Quitado el hook debería PASAR — y seguía cayendo, por el campo obligatorio ausente. O sea: **el 2 pasaba POR EL MOTIVO EQUIVOCADO**, y con eso la guarda de colisión **no se podía demostrar portante** (§regla 8: *un sabotaje que no cambia el resultado no ha probado la guarda*) |
+ * | `fuera-plano` | ✓ **gratis** | el 4 ya salía rojo sin sabotaje, así que el caso pasaba **prediciendo lo mismo que la corrida limpia**: 0 instancias separadoras (§regla 17, segunda cara) |
+ *
+ * Las dos mitades tienen la misma causa y **ninguna se ve desde el código de
+ * salida del negativo**: uno grita por algo que no es lo suyo y el otro calla
+ * sin poder morder.
+ *
+ * **Por qué nadie lo vio:** `cms-slugs.neg` necesita la DB, y `qa:negativos` no
+ * corre los que la necesitan (hoy **32 de 79**: 17 de navegador · 15 de DB). Es
+ * la **segunda** instancia de la clase que la 98.ª estrenó con `sondeo.neg`.
+ *
+ * **El denominador se DERIVÓ, no se descubrió de uno en uno** (§regla 27):
+ * recorriendo la config resuelta salen **exactamente 2 campos ausentes, uno por
+ * fixture, y 0 restantes** — `productos {slug, titulo, pagina}` ·
+ * `terminos-kunakpedia {slug, seo.title, fechaPublicacion, cuerpo}`.
  */
 const cuerpoBlog = (slug, categoria) => ({
   slug,
@@ -120,12 +156,28 @@ const cuerpoBlog = (slug, categoria) => ({
 const cuerpoTermino = (slug) => ({
   slug,
   titulo: "sonda",
+  fechaPublicacion: "2025-01-07",
   cuerpo: "<p>sonda</p>",
   seo: { title: "sonda" },
 });
+/**
+ * ⚠ **`pagina: "propia"` NO es una elección de gusto: es la única que deja a
+ * `padre` siendo la causa separadora** (99.ª tanda). El predicado del alcance
+ * es una CONJUNCIÓN — `enElPlano: (doc) => !doc.padre && doc.pagina ===
+ * "propia"` (`colecciones/productos.ts`)— así que un fixture con `pagina:
+ * "ninguna"` **también** saldría fuera del plano, el invariante 4 pasaría, y
+ * **no habría forma de saber cuál de los dos términos hizo el trabajo**: 0
+ * instancias separadoras, que es §*dos modelos que predicen lo mismo en todo tu
+ * dominio son uno solo* cometida sobre un fixture.
+ *
+ * Con `"propia"`, el ÚNICO motivo por el que el alta puede quedar fuera del
+ * plano es el `padre` — que es exactamente lo que el invariante 4 afirma medir,
+ * y lo que el sabotaje `fuera-plano` tiene que poder romper.
+ */
 const cuerpoProducto = (slug, padre) => ({
   slug,
   titulo: "sonda",
+  pagina: "propia",
   seo: { title: "sonda" },
   ...(padre ? { padre } : {}),
 });

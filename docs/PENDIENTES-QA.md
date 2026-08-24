@@ -1,5 +1,89 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ QA-CMS-SLUGS-FIXTURES-CADUCADOS · **la guarda del plano llevaba 20 días sin poder ejercitarse, y su negativo fallaba EN LAS DOS DIRECCIONES** — 99.ª, 2026-08-24 · CERRADA en la misma tanda
+
+**Salió del PASO 0**, que es exactamente para lo que la 98.ª lo pidió: de los
+**32 de 79** negativos que `qa:negativos` **no** corre —17 de navegador · 15 de
+DB, derivado hoy, no citado—, se corrieron los **6** que están debajo del
+trabajo de esta tanda. Uno salió rojo.
+
+### Qué era, y por qué NO es un negativo podrido
+
+**§regla 21, primera orden: correr la sonda SOLA.** Salió **roja** (`exit 1`,
+3 de 5 invariantes), así que el arreglo no va en el negativo — va en la sonda.
+
+**Los fixtures habían caducado contra el esquema** (§regla 5ter: *arreglar el
+objeto caduca el control del instrumento que lo midió*):
+
+| invariante | campo que pasó a `required` | commit | rojo desde |
+|---|---|---|---|
+| **4** (`productos`) | `pagina` — CMS-PR3, **sin defecto a propósito** | `df64363` | **2026-08-13** |
+| **3** (`terminos-kunakpedia`) | `fechaPublicacion` — el orden del glosario | `021b6b0` | **2026-08-18** |
+
+Última corrida en verde: `medidas/cms-slugs.json`, **2026-08-04**.
+
+> **Y el enunciado correcto no es «fallaban»: es que los invariantes 3 y 4
+> estaban SIN EJERCITAR.** El alta moría en la validación **antes de llegar a la
+> guarda**, así que la sonda no estaba midiendo un plano roto — no estaba
+> midiendo. Es §*la causa común* con el contenedor puesto en el fixture.
+
+### Lo que se llevó por delante: el negativo, en las DOS direcciones
+
+Ésta es la mitad instructiva, porque **el mismo fixture caducado produjo un rojo
+y un verde, los dos falsos**, y ninguno se ve desde el código de salida:
+
+| caso | salía | por qué |
+|---|---|---|
+| `sin-hook` | ❌ *«el invariante 2 no salió roto»* | el 2 crea un término con el slug repetido y **espera que caiga**. Quitado el hook debería PASAR — y seguía cayendo, **por el campo obligatorio ausente**. O sea: el 2 pasaba **POR EL MOTIVO EQUIVOCADO**, y con eso la guarda de colisión **no se podía demostrar portante** (§regla 8) |
+| `fuera-plano` | ✓ **gratis** | el 4 ya salía rojo sin sabotaje, así que el caso pasaba **prediciendo lo mismo que la corrida limpia**: **0 instancias separadoras** (§regla 17, segunda cara) |
+
+### El arreglo — instrumento, no expectativa
+
+**Ninguna expectativa se tocó**: el 3 sigue esperando *«pasa en limpio»* y el 4
+*«PASA (fuera del plano)»*. Lo que cambia es que el fixture **se puede crear**,
+que es la precondición para que la guarda llegue a ejercitarse. §regla 21 avisa
+del arreglo contrario —*poner verde un negativo ajustando su expectativa*— y no
+es éste.
+
+**El denominador se DERIVÓ, no se descubrió de uno en uno** (§regla 27, *un
+proceso que aborta en el primer fallo contesta «hay al menos uno», nunca «hay
+N»*): recorriendo la config resuelta salen **exactamente 2 campos ausentes, uno
+por fixture, y 0 restantes** —
+
+| colección | requeridos (derivados) | le faltaba |
+|---|---|---|
+| `productos` | `slug · titulo · pagina · estado[default]` | **`pagina`** |
+| `terminos-kunakpedia` | `slug · seo.title · fechaPublicacion · cuerpo · estado[default]` | **`fechaPublicacion`** |
+
+> ⚠ **Y `pagina: "propia"` NO es una elección de gusto.** El predicado del
+> alcance es una **CONJUNCIÓN** — `enElPlano: (doc) => !doc.padre && doc.pagina
+> === "propia"` (`colecciones/productos.ts`)—, así que un fixture con
+> `"ninguna"` **también** saldría fuera del plano: el invariante 4 pasaría y
+> **no habría forma de saber cuál de los dos términos hizo el trabajo**. Con
+> `"propia"`, el único motivo posible es el `padre` — que es lo que el 4 afirma
+> medir y lo que `fuera-plano` tiene que poder romper.
+
+### Resultado
+
+`qa:cms-slugs` **5/5** · `qa:cms-slugs-neg` **4/4** (era 2/4). Congeladas:
+`cms-slugs-SONDA-FIXTURES-CADUCADOS-2026-08-24.json` (la evidencia del rojo,
+nombrada por §regla 7) y `cms-slugs-2026-08-24.json` (la verde).
+
+### ⚠ Lo que esto NO cierra, con su número
+
+**Es la SEGUNDA instancia de la clase que la 98.ª estrenó con `sondeo.neg`**
+—un negativo rojo que nadie podía ver porque su grupo no se corre—. Los otros
+**26** que `qa:negativos` no corre y que **no** están debajo de esta tanda
+siguen **SIN MEDIR**: 6 se corrieron hoy de 32.
+
+> **Y la causa es estructural, no de atención:** `qa:negativos` deriva bien su
+> reparto y **declara** los dos grupos que no corre, pero declararlos no es
+> correrlos. Mientras no exista un corredor para los de DB y los de navegador,
+> «rojo» y «no ejecutado» **siguen dando la misma salida** para 32 de 79.
+
+---
+
+
 ## ✅ F3-3-SIEMBRA · **CERRADA por la 98.ª (2026-08-23): `paginas` SEMBRADA — 31 documentos, round-trip 383/383** — la ficha de la 97.ª se conserva entera debajo
 
 > ✅ **Los 12 bloqueos eran tres decisiones de MODELO, el propietario las tomó el

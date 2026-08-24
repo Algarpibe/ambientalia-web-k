@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-23",
+    "fecha": "2026-08-24",
     "sonda": "f33-membresia",
     "pregunta": "¿las filas de `paginas` son LOS MISMOS documentos que produjo `cms:extractor-f33`?",
     "fuente": "medidas/f33-extraido.json (canónica) + la colección `paginas` de la DB",
