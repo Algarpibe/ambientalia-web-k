@@ -1,0 +1,1113 @@
+{
+  "meta": {
+    "sonda": "f33-spec",
+    "fecha": "2026-08-24",
+    "que": "el MARCADO de los 11 tipos de módulo de la cola larga, derivado del corpus con sus hojas, a 1440 y 390",
+    "lado": "UNO — el original capturado. NO compara con el clon: eso es `qa:f33-cmp`, y sigue a 0 ejes comparados",
+    "anchos": [
+      1440,
+      390
+    ],
+    "sabotaje": "sin-hojas",
+    "dominio": {
+      "rutasDeclaradas": 31,
+      "medidas": 31,
+      "minimo": 31
+    },
+    "noContesta": [
+      "nada del CLON: es un solo lado",
+      "la GEOMETRÍA (ritmo, caja, anchoPct): es de `qa:f33-geo`, ya congelada — aquí no se recalcula",
+      "la geometría de los 36 módulos SIN CAJA: su marcado se censa, su geometría exige INTERACCIÓN (eje `comportamiento`, 0/31)",
+      "si un valor DEBE ser campo: esto describe; la decisión de modelo es de quien escriba el bloque"
+    ]
+  },
+  "criterioDeRecuento": {
+    "modulos": {
+      "enElDom": 313,
+      "conCaja": 281,
+      "sinCaja": 32
+    }
+  },
+  "porTipo": {
+    "text": {
+      "instancias": 151,
+      "conCaja": 150,
+      "sinCaja": 1,
+      "paginas": 29,
+      "clasesInvariantes": [
+        "et_pb_bg_layout_light",
+        "et_pb_module",
+        "et_pb_text",
+        "et_pb_text_N"
+      ],
+      "clasesVariables": [
+        {
+          "clase": "et_pb_text_align_left",
+          "en": 143,
+          "de": 151
+        },
+        {
+          "clase": "breadcrumbs",
+          "en": 10,
+          "de": 151
+        },
+        {
+          "clase": "et_pb_text_align_center",
+          "en": 8,
+          "de": 151
+        },
+        {
+          "clase": "et_clickable",
+          "en": 6,
+          "de": 151
+        },
+        {
+          "clase": "none",
+          "en": 4,
+          "de": 151
+        },
+        {
+          "clase": "lista-tax-resources",
+          "en": 3,
+          "de": 151
+        }
+      ],
+      "tags": {
+        "div": 151
+      },
+      "formasDistintas": 30,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_bg_layout_light",
+          "et_pb_module",
+          "et_pb_text",
+          "et_pb_text_N",
+          "et_pb_text_align_left"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_text_inner"
+            ],
+            "hijos": [
+              {
+                "tag": "h3",
+                "cls": [],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "12": 10,
+        "15": 26,
+        "16": 15,
+        "18": 64,
+        "25": 21,
+        "26": 4,
+        "40": 6,
+        "50": 4
+      },
+      "lineHeight": {
+        "30": 21,
+        "48": 6,
+        "60": 4,
+        "30.6": 105,
+        "31.2": 1,
+        "27.36": 13
+      },
+      "display": {
+        "block": 150
+      }
+    },
+    "toggle": {
+      "instancias": 10,
+      "conCaja": 10,
+      "sinCaja": 0,
+      "paginas": 5,
+      "clasesInvariantes": [
+        "et_pb_module",
+        "et_pb_toggle",
+        "et_pb_toggle_N",
+        "et_pb_toggle_close",
+        "et_pb_toggle_item"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 10
+      },
+      "formasDistintas": 1,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_module",
+          "et_pb_toggle",
+          "et_pb_toggle_N",
+          "et_pb_toggle_close",
+          "et_pb_toggle_item"
+        ],
+        "hijos": [
+          {
+            "tag": "h5",
+            "cls": [
+              "et_pb_toggle_title"
+            ],
+            "hijos": []
+          },
+          {
+            "tag": "div",
+            "cls": [
+              "clearfix",
+              "et_pb_toggle_content"
+            ],
+            "hijos": [
+              {
+                "tag": "ul",
+                "cls": [],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 10
+      },
+      "lineHeight": {
+        "30.6": 10
+      },
+      "display": {
+        "block": 10
+      }
+    },
+    "image": {
+      "instancias": 71,
+      "conCaja": 71,
+      "sinCaja": 0,
+      "paginas": 19,
+      "clasesInvariantes": [
+        "et_pb_image",
+        "et_pb_image_N",
+        "et_pb_module"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 71
+      },
+      "formasDistintas": 31,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_image",
+          "et_pb_image_N",
+          "et_pb_module"
+        ],
+        "hijos": [
+          {
+            "tag": "span",
+            "cls": [
+              "et_pb_image_wrap"
+            ],
+            "hijos": [
+              {
+                "tag": "img",
+                "cls": [
+                  "wp-image-221"
+                ],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 71
+      },
+      "lineHeight": {
+        "0": 71
+      },
+      "display": {
+        "block": 71
+      }
+    },
+    "video": {
+      "instancias": 30,
+      "conCaja": 0,
+      "sinCaja": 30,
+      "paginas": 5,
+      "clasesInvariantes": [
+        "et_pb_module",
+        "et_pb_video",
+        "et_pb_video_N"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 30
+      },
+      "formasDistintas": 1,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_module",
+          "et_pb_video",
+          "et_pb_video_N"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_video_box"
+            ],
+            "hijos": [
+              {
+                "tag": "iframe",
+                "cls": [],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {},
+      "lineHeight": {},
+      "display": {}
+    },
+    "button": {
+      "instancias": 13,
+      "conCaja": 12,
+      "sinCaja": 1,
+      "paginas": 6,
+      "clasesInvariantes": [
+        "et_pb_bg_layout_light",
+        "et_pb_button",
+        "et_pb_button_N"
+      ],
+      "clasesVariables": [
+        {
+          "clase": "boton-azul",
+          "en": 4,
+          "de": 13
+        }
+      ],
+      "tags": {
+        "a": 13
+      },
+      "formasDistintas": 2,
+      "formaMasComun": {
+        "tag": "a",
+        "cls": [
+          "et_pb_bg_layout_light",
+          "et_pb_button",
+          "et_pb_button_N"
+        ],
+        "hijos": []
+      },
+      "fontSize": {
+        "15": 12
+      },
+      "lineHeight": {
+        "25.5": 12
+      },
+      "display": {
+        "inline-block": 12
+      }
+    },
+    "blurb": {
+      "instancias": 22,
+      "conCaja": 22,
+      "sinCaja": 0,
+      "paginas": 3,
+      "clasesInvariantes": [
+        "et_pb_bg_layout_light",
+        "et_pb_blurb",
+        "et_pb_blurb_N",
+        "et_pb_blurb_position_top",
+        "et_pb_module"
+      ],
+      "clasesVariables": [
+        {
+          "clase": "et_pb_text_align_left",
+          "en": 17,
+          "de": 22
+        },
+        {
+          "clase": "iconos-xs-2",
+          "en": 13,
+          "de": 22
+        },
+        {
+          "clase": "iconos-md-4",
+          "en": 8,
+          "de": 22
+        },
+        {
+          "clase": "iconos-md-3",
+          "en": 5,
+          "de": 22
+        },
+        {
+          "clase": "et_pb_section_video_on_hover",
+          "en": 5,
+          "de": 22
+        },
+        {
+          "clase": "et_pb_text_align_center",
+          "en": 5,
+          "de": 22
+        },
+        {
+          "clase": "et_pb_with_border",
+          "en": 5,
+          "de": 22
+        },
+        {
+          "clase": "recursos-glosario",
+          "en": 4,
+          "de": 22
+        },
+        {
+          "clase": "et_clickable",
+          "en": 1,
+          "de": 22
+        }
+      ],
+      "tags": {
+        "div": 22
+      },
+      "formasDistintas": 5,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_bg_layout_light",
+          "et_pb_blurb",
+          "et_pb_blurb_N",
+          "et_pb_blurb_position_top",
+          "et_pb_module",
+          "et_pb_text_align_left",
+          "iconos-md-4",
+          "iconos-xs-2"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_blurb_content"
+            ],
+            "hijos": [
+              {
+                "tag": "div",
+                "cls": [
+                  "et_pb_main_blurb_image"
+                ],
+                "hijos": []
+              },
+              {
+                "tag": "div",
+                "cls": [
+                  "et_pb_blurb_container"
+                ],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "16": 13,
+        "18": 4,
+        "14.5": 5
+      },
+      "lineHeight": {
+        "27": 4,
+        "21.92": 13,
+        "20.3": 5
+      },
+      "display": {
+        "block": 22
+      }
+    },
+    "code": {
+      "instancias": 9,
+      "conCaja": 9,
+      "sinCaja": 0,
+      "paginas": 9,
+      "clasesInvariantes": [
+        "et_pb_code",
+        "et_pb_code_N",
+        "et_pb_module"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 9
+      },
+      "formasDistintas": 8,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_code",
+          "et_pb_code_N",
+          "et_pb_module"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_code_inner"
+            ],
+            "hijos": [
+              {
+                "tag": "style",
+                "cls": [],
+                "hijos": []
+              },
+              {
+                "tag": "style",
+                "cls": [],
+                "hijos": []
+              },
+              {
+                "tag": "form",
+                "cls": [
+                  "_dark",
+                  "_form",
+                  "_form_84",
+                  "_inline-form"
+                ],
+                "hijos": []
+              },
+              {
+                "tag": "script",
+                "cls": [],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 9
+      },
+      "lineHeight": {
+        "30.6": 9
+      },
+      "display": {
+        "block": 9
+      }
+    },
+    "map": {
+      "instancias": 1,
+      "conCaja": 1,
+      "sinCaja": 0,
+      "paginas": 1,
+      "clasesInvariantes": [
+        "et_pb_map_N",
+        "et_pb_map_container",
+        "et_pb_module"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 1
+      },
+      "formasDistintas": 1,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_map_N",
+          "et_pb_map_container",
+          "et_pb_module"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_map"
+            ],
+            "hijos": []
+          },
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_map_pin"
+            ],
+            "hijos": [
+              {
+                "tag": "h3",
+                "cls": [],
+                "hijos": []
+              },
+              {
+                "tag": "div",
+                "cls": [
+                  "infowindow"
+                ],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 1
+      },
+      "lineHeight": {
+        "30.6": 1
+      },
+      "display": {
+        "block": 1
+      }
+    },
+    "fullwidth_slider": {
+      "instancias": 2,
+      "conCaja": 2,
+      "sinCaja": 0,
+      "paginas": 2,
+      "clasesInvariantes": [
+        "et_pb_fullwidth_slider_N",
+        "et_pb_module",
+        "et_pb_slider"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 2
+      },
+      "formasDistintas": 1,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_fullwidth_slider_N",
+          "et_pb_module",
+          "et_pb_slider"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_slides"
+            ],
+            "hijos": [
+              {
+                "tag": "div",
+                "cls": [
+                  "et-pb-active-slide",
+                  "et_pb_bg_layout_dark",
+                  "et_pb_media_alignment_center",
+                  "et_pb_slide",
+                  "et_pb_slide_N"
+                ],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 2
+      },
+      "lineHeight": {
+        "30.6": 2
+      },
+      "display": {
+        "block": 2
+      }
+    },
+    "slider": {
+      "instancias": 1,
+      "conCaja": 1,
+      "sinCaja": 0,
+      "paginas": 1,
+      "clasesInvariantes": [
+        "et_pb_module",
+        "et_pb_slider",
+        "et_pb_slider_N",
+        "et_pb_slider_fullwidth_off",
+        "et_pb_slider_no_pagination",
+        "et_slider_auto",
+        "et_slider_speed_7000",
+        "testimonios"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 1
+      },
+      "formasDistintas": 1,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_module",
+          "et_pb_slider",
+          "et_pb_slider_N",
+          "et_pb_slider_fullwidth_off",
+          "et_pb_slider_no_pagination",
+          "et_slider_auto",
+          "et_slider_speed_7000",
+          "testimonios"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_slides"
+            ],
+            "hijos": [
+              {
+                "tag": "div",
+                "cls": [
+                  "et-pb-active-slide",
+                  "et_pb_bg_layout_dark",
+                  "et_pb_media_alignment_center",
+                  "et_pb_slide",
+                  "et_pb_slide_N",
+                  "et_pb_slide_with_image"
+                ],
+                "hijos": []
+              },
+              {
+                "tag": "div",
+                "cls": [
+                  "et_pb_bg_layout_dark",
+                  "et_pb_media_alignment_center",
+                  "et_pb_slide",
+                  "et_pb_slide_N",
+                  "et_pb_slide_with_image"
+                ],
+                "hijos": []
+              },
+              {
+                "tag": "div",
+                "cls": [
+                  "et_pb_bg_layout_dark",
+                  "et_pb_media_alignment_center",
+                  "et_pb_slide",
+                  "et_pb_slide_N",
+                  "et_pb_slide_with_image"
+                ],
+                "hijos": []
+              },
+              {
+                "tag": "div",
+                "cls": [
+                  "et_pb_bg_layout_dark",
+                  "et_pb_media_alignment_center",
+                  "et_pb_slide",
+                  "et_pb_slide_N",
+                  "et_pb_slide_with_image"
+                ],
+                "hijos": []
+              },
+              {
+                "tag": "div",
+                "cls": [
+                  "et_pb_bg_layout_dark",
+                  "et_pb_media_alignment_center",
+                  "et_pb_slide",
+                  "et_pb_slide_N",
+                  "et_pb_slide_with_image"
+                ],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 1
+      },
+      "lineHeight": {
+        "28.8": 1
+      },
+      "display": {
+        "block": 1
+      }
+    },
+    "icon": {
+      "instancias": 3,
+      "conCaja": 3,
+      "sinCaja": 0,
+      "paginas": 1,
+      "clasesInvariantes": [
+        "et_pb_icon",
+        "et_pb_icon_N",
+        "et_pb_module"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 3
+      },
+      "formasDistintas": 1,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_icon",
+          "et_pb_icon_N",
+          "et_pb_module"
+        ],
+        "hijos": [
+          {
+            "tag": "span",
+            "cls": [
+              "et_pb_icon_wrap"
+            ],
+            "hijos": [
+              {
+                "tag": "span",
+                "cls": [
+                  "et-pb-icon"
+                ],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 3
+      },
+      "lineHeight": {
+        "30.6": 3
+      },
+      "display": {
+        "block": 3
+      }
+    }
+  },
+  "primerUltimo": {
+    "modulo-en-columna": {
+      "contenedores": 79,
+      "difiereMt": 9,
+      "difiereMb": 78,
+      "ejemplos": [
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+          "n": 3,
+          "primero": 18.66,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/",
+          "n": 3,
+          "primero": 18.66,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+          "n": 2,
+          "primero": 18.66,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+          "n": 2,
+          "primero": 13,
+          "ultimo": 0
+        }
+      ]
+    },
+    "columna-en-fila": {
+      "contenedores": 51,
+      "difiereMt": 1,
+      "difiereMb": 0,
+      "ejemplos": []
+    },
+    "fila-en-seccion": {
+      "contenedores": 9,
+      "difiereMt": 1,
+      "difiereMb": 2,
+      "ejemplos": [
+        {
+          "ruta": "/es/empresa/premios-y-reconocimientos/",
+          "n": 6,
+          "primero": 28.8,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/soporte/servicio-de-reparacion/",
+          "n": 3,
+          "primero": 0,
+          "ultimo": 64
+        }
+      ]
+    }
+  },
+  "cruce": {
+    "modulos": {
+      "geo": 313,
+      "spec": 313,
+      "cuadra": true
+    },
+    "conCaja": {
+      "geo": 277,
+      "spec": 281,
+      "cuadra": false
+    },
+    "tiposSoloEnGeo": [],
+    "tiposSoloEnSpec": []
+  },
+  "control": {
+    "exigidas": [
+      {
+        "clase": "et_pb_toggle_item",
+        "donde": "toggle",
+        "porQue": "la 99.ª la encontró a mano al verificar el toggle"
+      },
+      {
+        "clase": "clearfix",
+        "donde": "toggle",
+        "porQue": "el `clearfix` de `et_pb_toggle_content`, ídem"
+      }
+    ],
+    "faltan": []
+  },
+  "paginas": [
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 8
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 10
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 3
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 21
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 21
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 3
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 15
+    },
+    {
+      "ruta": "/es/productos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 24
+    },
+    {
+      "ruta": "/es/sectores/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 6
+    },
+    {
+      "ruta": "/es/recursos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 13
+    },
+    {
+      "ruta": "/es/recursos/kunakpedia/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 7
+    },
+    {
+      "ruta": "/es/recursos/documentos-cientificos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 6
+    },
+    {
+      "ruta": "/es/recursos/preguntas-frecuentes/",
+      "hojas": {
+        "enlazadas": 8,
+        "resueltas": 0
+      },
+      "modulos": 7
+    },
+    {
+      "ruta": "/es/aviso-legal/",
+      "hojas": {
+        "enlazadas": 8,
+        "resueltas": 0
+      },
+      "modulos": 14
+    },
+    {
+      "ruta": "/es/contacto/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 12
+    },
+    {
+      "ruta": "/es/descarga-catalogo/",
+      "hojas": {
+        "enlazadas": 6,
+        "resueltas": 0
+      },
+      "modulos": 2
+    },
+    {
+      "ruta": "/es/empresa/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 60
+    },
+    {
+      "ruta": "/es/empresa/premios-y-reconocimientos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 33
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 2
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 2
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 3
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 2
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 3
+    },
+    {
+      "ruta": "/es/newsletter/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 3
+    },
+    {
+      "ruta": "/es/politica-de-cookies/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 8
+    },
+    {
+      "ruta": "/es/politica-de-privacidad-y-de-proteccion-de-datos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 2
+    },
+    {
+      "ruta": "/es/politica-de-seguridad-de-la-informacion/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/sistema-interno-de-informacion/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 1
+    },
+    {
+      "ruta": "/es/soporte/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 9
+    },
+    {
+      "ruta": "/es/soporte/servicio-de-reparacion/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 10
+    },
+    {
+      "ruta": "/es/suscribete/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 0
+      },
+      "modulos": 3
+    }
+  ]
+}

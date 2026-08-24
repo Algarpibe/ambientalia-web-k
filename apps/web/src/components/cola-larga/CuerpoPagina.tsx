@@ -16,25 +16,31 @@ import type {
  * derivada en `qa:f33-geo` (congelada `medidas/f33-geo.json`, 2026-08-22).
  *
  * ══════════════════════════════════════════════════════════════════════════
- * ⚠⚠ ESTE ARQUETIPO NO TIENE FASE DE SPECS, Y ESO ACOTA LO QUE ESTE FICHERO ES
+ * ⚠ LA FASE DE SPECS YA EXISTE (100.ª, 2026-08-24) — Y ESTE FICHERO **TODAVÍA
+ * NO ESTÁ TRANSCRITO DE ELLA**
  *
- * `docs/research/cola-larga/` tiene `PRE-REGISTRO-*` y `derivaciones/`, y **no
- * tiene `components/*.spec.md`**. O sea que **el MARCADO de aquí abajo no está
- * transcrito de una spec: está leído del corpus servido, módulo a módulo, al
- * escribirlo.** Es exactamente el hueco que F3-1 ya pagó y que el plan dejó
- * escrito como orden obligado — *specs → filas/columnas → extractor+seed →
- * plantilla → ruta → sonda de dos lados*—: esto es el paso «plantilla» sin el
- * paso 1.
+ * Hasta la 100.ª este bloque decía *«este arquetipo NO TIENE FASE DE SPECS»*, y
+ * era cierto. Ya no: `docs/research/cola-larga/components/` tiene
+ * `README.md` · `modulos.spec.md` · `reticula.spec.md`, derivados con
+ * `qa:f33-spec` (313 módulos · 11 tipos · 31 páginas, negativo 5/5).
  *
- * **Y no es una salvedad retórica: ya se cobró dos clases en esta misma
- * tanda.** Al verificar el `toggle` contra `hubs-kb/centro-de-ayuda/kunak-air/`
- * aparecieron `et_pb_toggle_item` y el `clearfix` de `et_pb_toggle_content`,
- * los dos ausentes de lo que se había escrito de memoria. Un componente entero
- * escrito así tiene **más de esos**, y el único instrumento que los encuentra
- * es la spec — o el comparador, cuando exista el lado del clon.
+ * **Pero el estado de ESTE fichero no cambia por eso, y decir lo contrario
+ * sería §regla 3** —*documentado no es conectado*—: el marcado de aquí abajo
+ * **se escribió de memoria antes de que la spec existiera** y **nadie lo ha
+ * cotejado con ella todavía**. Que exista la medida y que el componente la
+ * cumpla son **dos afirmaciones distintas**, y sólo la primera está respaldada.
+ *
+ * **Lo que la spec ya destapó del propio instrumento** —y que vale como aviso
+ * de cuánto se le escapa a lo escrito de memoria—: un censo por `.et_pb_module`
+ * pierde **`button` ENTERO** (13 instancias), porque en Divi el botón es un
+ * `<a>` **sin** `et_pb_module`. No dio error: dio 300 módulos y 10 tipos en vez
+ * de 313 y 11.
  *
  * > **Léase como lo que es: la ESTRUCTURA del arquetipo, con su marcado como
- * > primera aproximación medida.** No como una transcripción verificada.
+ * > primera aproximación medida, PENDIENTE de cotejo contra
+ * > `components/modulos.spec.md`.** El cotejo es trabajo de la tanda que emita,
+ * > y su instrumento definitivo es `qa:f33-cmp` —el comparador de dos lados—,
+ * > que sigue a **0 ejes comparados** porque el lado del clon no existe.
  * ═════════════════════════════════════════════════════════════════════════
  *
  * ══════════════════════════════════════════════════════════════════════════

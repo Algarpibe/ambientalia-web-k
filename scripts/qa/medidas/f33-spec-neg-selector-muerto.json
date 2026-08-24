@@ -1,0 +1,404 @@
+{
+  "meta": {
+    "sonda": "f33-spec",
+    "fecha": "2026-08-24",
+    "que": "el MARCADO de los 11 tipos de módulo de la cola larga, derivado del corpus con sus hojas, a 1440 y 390",
+    "lado": "UNO — el original capturado. NO compara con el clon: eso es `qa:f33-cmp`, y sigue a 0 ejes comparados",
+    "anchos": [
+      1440,
+      390
+    ],
+    "sabotaje": "selector-muerto",
+    "dominio": {
+      "rutasDeclaradas": 31,
+      "medidas": 31,
+      "minimo": 31
+    },
+    "noContesta": [
+      "nada del CLON: es un solo lado",
+      "la GEOMETRÍA (ritmo, caja, anchoPct): es de `qa:f33-geo`, ya congelada — aquí no se recalcula",
+      "la geometría de los 36 módulos SIN CAJA: su marcado se censa, su geometría exige INTERACCIÓN (eje `comportamiento`, 0/31)",
+      "si un valor DEBE ser campo: esto describe; la decisión de modelo es de quien escriba el bloque"
+    ]
+  },
+  "criterioDeRecuento": {
+    "modulos": {
+      "enElDom": 0,
+      "conCaja": 0,
+      "sinCaja": 0
+    }
+  },
+  "porTipo": {},
+  "primerUltimo": {
+    "modulo-en-columna": {
+      "contenedores": 79,
+      "difiereMt": 9,
+      "difiereMb": 78,
+      "ejemplos": [
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+          "n": 3,
+          "primero": 25.06,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/",
+          "n": 3,
+          "primero": 25.06,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+          "n": 2,
+          "primero": 25.06,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+          "n": 2,
+          "primero": 13,
+          "ultimo": 0
+        }
+      ]
+    },
+    "columna-en-fila": {
+      "contenedores": 51,
+      "difiereMt": 1,
+      "difiereMb": 0,
+      "ejemplos": []
+    },
+    "fila-en-seccion": {
+      "contenedores": 9,
+      "difiereMt": 4,
+      "difiereMb": 6,
+      "ejemplos": [
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+          "n": 9,
+          "primero": null,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/soporte/centro-de-ayuda/",
+          "n": 2,
+          "primero": null,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/",
+          "n": 7,
+          "primero": null,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/productos/",
+          "n": 4,
+          "primero": null,
+          "ultimo": 0
+        }
+      ]
+    }
+  },
+  "cruce": {
+    "modulos": {
+      "geo": 313,
+      "spec": 0,
+      "cuadra": false
+    },
+    "conCaja": {
+      "geo": 277,
+      "spec": 0,
+      "cuadra": false
+    },
+    "tiposSoloEnGeo": [
+      "blurb",
+      "button",
+      "code",
+      "fullwidth_slider",
+      "icon",
+      "image",
+      "map",
+      "slider",
+      "text",
+      "toggle",
+      "video"
+    ],
+    "tiposSoloEnSpec": []
+  },
+  "control": {
+    "exigidas": [
+      {
+        "clase": "et_pb_toggle_item",
+        "donde": "toggle",
+        "porQue": "la 99.ª la encontró a mano al verificar el toggle"
+      },
+      {
+        "clase": "clearfix",
+        "donde": "toggle",
+        "porQue": "el `clearfix` de `et_pb_toggle_content`, ídem"
+      }
+    ],
+    "faltan": [
+      {
+        "clase": "et_pb_toggle_item",
+        "donde": "toggle",
+        "porQue": "la 99.ª la encontró a mano al verificar el toggle"
+      },
+      {
+        "clase": "clearfix",
+        "donde": "toggle",
+        "porQue": "el `clearfix` de `et_pb_toggle_content`, ídem"
+      }
+    ]
+  },
+  "paginas": [
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/productos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/sectores/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/recursos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/recursos/kunakpedia/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/recursos/documentos-cientificos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/recursos/preguntas-frecuentes/",
+      "hojas": {
+        "enlazadas": 8,
+        "resueltas": 8
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/aviso-legal/",
+      "hojas": {
+        "enlazadas": 8,
+        "resueltas": 8
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/contacto/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/descarga-catalogo/",
+      "hojas": {
+        "enlazadas": 6,
+        "resueltas": 6
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/empresa/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/empresa/premios-y-reconocimientos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/newsletter/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/politica-de-cookies/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/politica-de-privacidad-y-de-proteccion-de-datos/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/politica-de-seguridad-de-la-informacion/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/sistema-interno-de-informacion/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/soporte/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/soporte/servicio-de-reparacion/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    },
+    {
+      "ruta": "/es/suscribete/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 0
+    }
+  ]
+}

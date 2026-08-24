@@ -1,0 +1,367 @@
+{
+  "meta": {
+    "sonda": "f33-spec",
+    "fecha": "2026-08-24",
+    "que": "el MARCADO de los 11 tipos de módulo de la cola larga, derivado del corpus con sus hojas, a 1440 y 390",
+    "lado": "UNO — el original capturado. NO compara con el clon: eso es `qa:f33-cmp`, y sigue a 0 ejes comparados",
+    "anchos": [
+      1440,
+      390
+    ],
+    "sabotaje": "dominio-corto",
+    "dominio": {
+      "rutasDeclaradas": 31,
+      "medidas": 4,
+      "minimo": 31
+    },
+    "noContesta": [
+      "nada del CLON: es un solo lado",
+      "la GEOMETRÍA (ritmo, caja, anchoPct): es de `qa:f33-geo`, ya congelada — aquí no se recalcula",
+      "la geometría de los 36 módulos SIN CAJA: su marcado se censa, su geometría exige INTERACCIÓN (eje `comportamiento`, 0/31)",
+      "si un valor DEBE ser campo: esto describe; la decisión de modelo es de quien escriba el bloque"
+    ]
+  },
+  "criterioDeRecuento": {
+    "modulos": {
+      "enElDom": 42,
+      "conCaja": 25,
+      "sinCaja": 17
+    }
+  },
+  "porTipo": {
+    "text": {
+      "instancias": 12,
+      "conCaja": 11,
+      "sinCaja": 1,
+      "paginas": 4,
+      "clasesInvariantes": [
+        "et_pb_bg_layout_light",
+        "et_pb_module",
+        "et_pb_text",
+        "et_pb_text_N",
+        "et_pb_text_align_left"
+      ],
+      "clasesVariables": [
+        {
+          "clase": "none",
+          "en": 1,
+          "de": 12
+        }
+      ],
+      "tags": {
+        "div": 12
+      },
+      "formasDistintas": 6,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_bg_layout_light",
+          "et_pb_module",
+          "et_pb_text",
+          "et_pb_text_N",
+          "et_pb_text_align_left"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_text_inner"
+            ],
+            "hijos": [
+              {
+                "tag": "h3",
+                "cls": [],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "15": 6,
+        "18": 1,
+        "25": 4
+      },
+      "lineHeight": {
+        "30": 4,
+        "30.6": 7
+      },
+      "display": {
+        "block": 11
+      }
+    },
+    "toggle": {
+      "instancias": 5,
+      "conCaja": 5,
+      "sinCaja": 0,
+      "paginas": 3,
+      "clasesInvariantes": [
+        "et_pb_module",
+        "et_pb_toggle",
+        "et_pb_toggle_N",
+        "et_pb_toggle_close",
+        "et_pb_toggle_item"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 5
+      },
+      "formasDistintas": 1,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_module",
+          "et_pb_toggle",
+          "et_pb_toggle_N",
+          "et_pb_toggle_close",
+          "et_pb_toggle_item"
+        ],
+        "hijos": [
+          {
+            "tag": "h5",
+            "cls": [
+              "et_pb_toggle_title"
+            ],
+            "hijos": []
+          },
+          {
+            "tag": "div",
+            "cls": [
+              "clearfix",
+              "et_pb_toggle_content"
+            ],
+            "hijos": [
+              {
+                "tag": "ul",
+                "cls": [],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 5
+      },
+      "lineHeight": {
+        "30.6": 5
+      },
+      "display": {
+        "block": 5
+      }
+    },
+    "image": {
+      "instancias": 9,
+      "conCaja": 9,
+      "sinCaja": 0,
+      "paginas": 4,
+      "clasesInvariantes": [
+        "et_pb_image",
+        "et_pb_image_N",
+        "et_pb_module"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 9
+      },
+      "formasDistintas": 3,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_image",
+          "et_pb_image_N",
+          "et_pb_module"
+        ],
+        "hijos": [
+          {
+            "tag": "a",
+            "cls": [],
+            "hijos": [
+              {
+                "tag": "span",
+                "cls": [
+                  "et_pb_image_wrap"
+                ],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {
+        "18": 9
+      },
+      "lineHeight": {
+        "0": 9
+      },
+      "display": {
+        "block": 9
+      }
+    },
+    "video": {
+      "instancias": 16,
+      "conCaja": 0,
+      "sinCaja": 16,
+      "paginas": 3,
+      "clasesInvariantes": [
+        "et_pb_module",
+        "et_pb_video",
+        "et_pb_video_N"
+      ],
+      "clasesVariables": [],
+      "tags": {
+        "div": 16
+      },
+      "formasDistintas": 1,
+      "formaMasComun": {
+        "tag": "div",
+        "cls": [
+          "et_pb_module",
+          "et_pb_video",
+          "et_pb_video_N"
+        ],
+        "hijos": [
+          {
+            "tag": "div",
+            "cls": [
+              "et_pb_video_box"
+            ],
+            "hijos": [
+              {
+                "tag": "iframe",
+                "cls": [],
+                "hijos": []
+              }
+            ]
+          }
+        ]
+      },
+      "fontSize": {},
+      "lineHeight": {},
+      "display": {}
+    }
+  },
+  "primerUltimo": {
+    "modulo-en-columna": {
+      "contenedores": 9,
+      "difiereMt": 0,
+      "difiereMb": 9,
+      "ejemplos": [
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+          "n": 3,
+          "primero": 25.06,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/",
+          "n": 3,
+          "primero": 25.06,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+          "n": 2,
+          "primero": 25.06,
+          "ultimo": 0
+        },
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+          "n": 2,
+          "primero": 13,
+          "ultimo": 0
+        }
+      ]
+    },
+    "columna-en-fila": {
+      "contenedores": 10,
+      "difiereMt": 0,
+      "difiereMb": 0,
+      "ejemplos": []
+    },
+    "fila-en-seccion": {
+      "contenedores": 1,
+      "difiereMt": 1,
+      "difiereMb": 1,
+      "ejemplos": [
+        {
+          "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+          "n": 9,
+          "primero": null,
+          "ultimo": 0
+        }
+      ]
+    }
+  },
+  "cruce": {
+    "modulos": {
+      "geo": 313,
+      "spec": 42,
+      "cuadra": false
+    },
+    "conCaja": {
+      "geo": 277,
+      "spec": 25,
+      "cuadra": false
+    },
+    "tiposSoloEnGeo": [
+      "blurb",
+      "button",
+      "code",
+      "fullwidth_slider",
+      "icon",
+      "map",
+      "slider"
+    ],
+    "tiposSoloEnSpec": []
+  },
+  "control": {
+    "exigidas": [
+      {
+        "clase": "et_pb_toggle_item",
+        "donde": "toggle",
+        "porQue": "la 99.ª la encontró a mano al verificar el toggle"
+      },
+      {
+        "clase": "clearfix",
+        "donde": "toggle",
+        "porQue": "el `clearfix` de `et_pb_toggle_content`, ídem"
+      }
+    ],
+    "faltan": []
+  },
+  "paginas": [
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 8
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 10
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 3
+    },
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7
+      },
+      "modulos": 21
+    }
+  ]
+}
