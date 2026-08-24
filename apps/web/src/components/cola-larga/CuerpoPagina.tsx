@@ -16,6 +16,28 @@ import type {
  * derivada en `qa:f33-geo` (congelada `medidas/f33-geo.json`, 2026-08-22).
  *
  * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ ESTE ARQUETIPO NO TIENE FASE DE SPECS, Y ESO ACOTA LO QUE ESTE FICHERO ES
+ *
+ * `docs/research/cola-larga/` tiene `PRE-REGISTRO-*` y `derivaciones/`, y **no
+ * tiene `components/*.spec.md`**. O sea que **el MARCADO de aquí abajo no está
+ * transcrito de una spec: está leído del corpus servido, módulo a módulo, al
+ * escribirlo.** Es exactamente el hueco que F3-1 ya pagó y que el plan dejó
+ * escrito como orden obligado — *specs → filas/columnas → extractor+seed →
+ * plantilla → ruta → sonda de dos lados*—: esto es el paso «plantilla» sin el
+ * paso 1.
+ *
+ * **Y no es una salvedad retórica: ya se cobró dos clases en esta misma
+ * tanda.** Al verificar el `toggle` contra `hubs-kb/centro-de-ayuda/kunak-air/`
+ * aparecieron `et_pb_toggle_item` y el `clearfix` de `et_pb_toggle_content`,
+ * los dos ausentes de lo que se había escrito de memoria. Un componente entero
+ * escrito así tiene **más de esos**, y el único instrumento que los encuentra
+ * es la spec — o el comparador, cuando exista el lado del clon.
+ *
+ * > **Léase como lo que es: la ESTRUCTURA del arquetipo, con su marcado como
+ * > primera aproximación medida.** No como una transcripción verificada.
+ * ═════════════════════════════════════════════════════════════════════════
+ *
+ * ══════════════════════════════════════════════════════════════════════════
  * LAS TRES REGLAS QUE GOBIERNAN ESTE FICHERO
  *
  * **1 · Sólo se emite lo que el DATO trae.** Un eje ausente no se traduce a un
@@ -238,10 +260,19 @@ function Modulo({ m }: { m: ModuloPagina }) {
      */
     case "toggle": {
       const H = `h${m.nivel ?? 5}` as "h2" | "h3" | "h4" | "h5" | "h6";
+      /* Clases LEÍDAS del corpus servido, no recordadas
+       * (`hubs-kb/centro-de-ayuda/kunak-air/index.html`):
+       *   et_pb_module et_pb_toggle et_pb_toggle_<n> et_pb_toggle_item  et_pb_toggle_close
+       *   et_pb_toggle_title · et_pb_toggle_content clearfix
+       * El índice `et_pb_toggle_<n>` se omite: es el contador de Divi y sólo lo
+       * necesita el CSS compilado por página, que el clon no reproduce. */
       return (
-        <div className={`f33-modulo f33-toggle et_pb_toggle et_pb_toggle_close${ancho}`} style={style}>
+        <div
+          className={`f33-modulo f33-toggle et_pb_module et_pb_toggle et_pb_toggle_item et_pb_toggle_close${ancho}`}
+          style={style}
+        >
           <H className="et_pb_toggle_title">{m.titulo}</H>
-          <div className="et_pb_toggle_content" dangerouslySetInnerHTML={{ __html: m.cuerpo }} />
+          <div className="et_pb_toggle_content clearfix" dangerouslySetInnerHTML={{ __html: m.cuerpo }} />
         </div>
       );
     }
