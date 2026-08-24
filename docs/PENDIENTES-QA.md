@@ -1,6 +1,289 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ⛔ F3-3-SIN-HOJA · **CORTE LIMPIO 1 de la 101.ª: el cuerpo de la cola larga NO TIENE HOJA, así que su ritmo, su retícula y su ancho son INERTES** — 2026-08-24
+## ✅ F3-3-SIN-HOJA · **CERRADA por la 102.ª (2026-08-24): existe `qa:f33-clases`, existe `f33.css`, y el canal que hacía falta estaba SERVIDO** — el enunciado de la 101.ª se conserva entero debajo
+
+**El corte que la 101.ª derivó era correcto para la congelada que miró y falso
+para el repo**, que es exactamente la forma que el encargo mandaba comprobar
+antes de darlo por bueno.
+
+`hoja-f33-derivable.log` concluyó, leyendo `f33-geo.json`:
+
+> *«el ritmo por DEFECTO de sección y fila — la congelada trae el valor
+> COMPUTADO, y no separa «lo que el dato trae» de «lo que la hoja pone»»*
+
+Cierto de esa congelada. Y las **dos** direcciones que el encargo pedía comprobar
+dan esto:
+
+| canal | ¿separa? | número |
+|---|---|---|
+| `mbPorDefecto()` + `anchoDeFilaPorRegimen` | **no hacía falta** | el default de `mb` **no necesita el ancho de fila**: ver abajo |
+| «módulos que declaran ritmo / que no» (el dato del CMS) | **⛔ no puede** | el extractor **no emite ni una clave de geometría**, y con razón: **313 de 313 omiten, 0 declaran** ⇒ **0 instancias separadoras POR CONSTRUCCIÓN** |
+| **la CASCADA del original** | ✅ **sí** | **297 de 570 nodos** llevan override ganador del editor |
+
+### El canal que faltaba, y llevaba escrito en `CLAUDE.md` desde el 2026-08-10
+
+**Divi no escribe marcado: COMPILA CSS.** Lo que el editor tocó viaja en una
+regla con ORDINAL en el `<style>` de su propia página; lo que pone la plantilla
+viaja en reglas genéricas del tema. Medido antes de escribir la sonda, en 2
+páginas y sin una excepción:
+
+```
+reglas CON ordinal  →  100 % del <style> de la propia página
+reglas SIN ordinal  →  las 3 hojas del tema
+```
+
+`qa:f33-clases` lee la cascada por CDP (`CSS.getMatchedStylesForNode`), calcula
+**qué regla GANA** cada propiedad en cada nodo —`!important` primero, y entre
+iguales la última— y deriva el default de los nodos que llegan a la genérica.
+Es §El principio con sus dos mitades: **la cascada NOMBRA la regla,
+`getComputedStyle` ADJUDICA que llega a la propiedad.**
+
+### ⚠⚠ Lo que eso resolvió, y no estaba en el encargo: el `mb` va en PORCENTAJE
+
+`CLAUDE.md` documenta el default de `mb` como *«una función del ANCHO DE LA
+FILA … el mecanismo queda SIN PROBAR»*, y `kb.css` lo escribió en **px** con esta
+razón: *«escribirlo en % obligaría a elegir contra qué ancestro, que es
+exactamente lo que no se sabe»*.
+
+**La cascada lo dice.** La regla servida es
+
+```
+.et_pb_gutters3 .et_pb_column_1_2 .et_pb_module { margin-bottom: 5.82% }
+```
+
+— un porcentaje **de la COLUMNA, distinto por reparto**, elegido por Divi para
+que el px resultante sea la misma fracción de la FILA. Como el `%` se resuelve
+solo contra su contenedor, los mismos `5.82%` dan **25.06** en una fila de 911.75
+y **34.05** en una de 1238.39: los dos valores medidos, sin que la hoja sepa nada
+de la fila.
+
+**Consecuencia que retira una dependencia declarada bloqueante:**
+`CuerpoPagina.tsx` decía que el régimen *«va junto con la hoja, no antes»* porque
+la hoja necesitaría el ancho de fila. **No lo necesita.** El régimen sigue
+haciendo falta para elegir CASCARÓN; para el `mb` del módulo, no. Corregido el
+comentario (§*ningún comentario declara un hecho del repo*).
+
+⚠ **Lo que NO cierra:** por qué en `articulos-kb` una `4_4` de una fila de 911.75
+resuelve contra 1238.39 sigue **SIN PROBAR**. `kb.css` no se toca en esta tanda;
+queda que la misma lectura de la cascada podría dirimirlo.
+
+### El antes/después, en las DOS unidades (§*un denominador se escribe con su unidad*)
+
+Derivado: `derivaciones/clases-inertes-f33.{mjs,log}`.
+
+| unidad | antes (101.ª) | después |
+|---|---|---|
+| **TOKEN** (la del «17»: `f33-col-` cuenta 1, el atributo dentro) | **17 de 17 inertes** | **8 de 17** |
+| **CLASE** (enum de `ancho` expandido a 10, atributo fuera) | 25 de 25 | **12 de 25** |
+| **familias de variables** | **5 de 5 inertes** | **2 de 5** |
+
+⚠ **Y las 8 que siguen inertes NO lo están por descuido**, que es la diferencia
+entre un pendiente y una lista de tareas olvidadas. Cruzado con `f33-geo` y
+`f33-clases`, cada una con su razón: `f33-texto`·`f33-codigo`·`f33-blurb`·
+`f33-icono` tienen **sus ejes de ritmo SIN ESCRIBIR** (único valor observado = el
+INICIAL); `f33-boton` lleva su `padding` en `em` y **su base es la PIEL**;
+`f33-blurb-center` y `f33-icono-texto` sólo llevarían piel; `f33-clasico` es el
+régimen `--`, 1 página de 31.
+
+### Lo que la hoja NO escribe, con su cardinal
+
+| qué | n | por qué |
+|---|---|---|
+| las pieles de titular (`--f33h-*`, `--f33blurb-*`) | 2 de 5 familias | esta sonda mide **caja y ritmo, no tipografía**. Hace falta el equivalente de `qa:kb-tipografia` |
+| el `padding` del botón (`0.5em` / `0.6em`) | 12 | **un `em` sin su `font-size` es la misma trampa que un `%` sin su contenedor**, y su base es la piel |
+| `margin-bottom` de `.f33-col-1_4 > .f33-modulo` | **0 de 4** | las 4 columnas `1_4` tienen **un solo módulo**: ninguna llega al default. El `6.594 %` que sale de la aritmética de Divi sería un valor plausible, no una medida |
+| el centrado de `.f33-ancho` | — | `kb.css` lo derivó; **aquí no**, y copiarlo de otro arquetipo es el arreglo falso |
+| el ancho de `1_6 · 2_5 · 3_5 · 3_4` | **0 instancias** | el enum de `ancho` tiene **10 valores** y el corpus ejercita **6**: cuatro caminos de render sin estrenar |
+
+### ⚠ Y esto NO es una verificación
+
+*«Tiene regla»* y *«la regla llega a la propiedad»* son dos afirmaciones, y una
+declaración puede estar escrita, servida y ser **INERTE** (§*el marcador prueba
+que el build es nuevo, no que el cambio tenga efecto*). Quien adjudica es
+`qa:f33-cmp` midiendo el clon par a par, y **sigue a 0 ejes comparados**: las 31
+rutas no se emiten (§F3-3-EMISION). **Ese es el orden que el propietario
+decidió**, y es el que evita congelar una línea base sin maquetar.
+
+**Instrumento:** `npm run qa:f33-clases` · negativo `qa:f33-clases-neg`, **6 casos**
+—`control · selector-muerto · dominio-corto · sin-hojas · ordinal-ciego ·
+movil-recarga`—.
+
+> ⚠ **`ordinal-ciego` es el caso que el encargo mandaba comprobar**, y por la
+> razón que la 101.ª dejó escrita: su `f33-cmp-neg` tiene un hueco porque **los
+> tres casos copian el lado del original sobre el del clon**, así que los
+> selectores del lado del clon tenían **0 instancias separadoras**. La forma
+> equivalente aquí sería que ningún caso tocara la CASCADA, que es el canal
+> entero sobre el que esta sonda se apoya. `ordinal-ciego` lo apaga **entero** y
+> comprueba en las **dos** direcciones: que las separadoras caigan a **0** y que
+> de ahí salgan **conflictos que la corrida limpia no tiene**. Sin la segunda,
+> apagarlo podría ser inocuo y el caso pasaría igual.
+
+### ⚠ Lo que costó llegar a 6/6, y va con su n porque es una LIABILITY
+
+**Dos casos fallaron de forma intermitente**, y el que los explicó fue el propio
+negativo cuando se le añadió imprimir **las últimas líneas del hijo** — antes
+decía sólo *«esperaba exit 2, salió 1»*, que es una afirmación cierta y muda
+(§regla 1 cometida sobre el negativo).
+
+| caso | qué pasaba | estado |
+|---|---|---|
+| `movil-recarga` | **la recarga que el sabotaje reproduce cierra la sesión CDP**, y `DOM.getAttributes` tira `TargetCloseError` **antes de congelar**. El caso salía `exit 1` y su `comprueba` no podía mirar nada — §regla 31 exacta | ✅ **arreglado**: el sabotaje **rehace la sesión** tras la recarga. Es parte de reproducir el camino viejo, y no toca el camino real |
+| `sin-hojas` | **`setContent` con `networkidle0` se agotaba a los 120 s**, y sólo en este caso. El mecanismo es SUYO: sin CSS, todo lo que las hojas **esconden** pasa a ser visible, así que la página pide muchos más subrecursos, la intercepción los aborta y **la red no llega a quedarse quieta**. §regla 17: *una espera sin tope no da rojo, se AGOTA — ni pasa ni falla* | ✅ **arreglado**: la espera pasa a `load`, que es **la que contesta la pregunta** (*«las hojas y las imágenes ya están»*) y está acotada por los propios recursos |
+
+### ⚠ Y el arreglo de la espera NO fue NO-OP — se declara con lo que movió
+
+Cambiar `networkidle0` por `load` movió **un nodo**, y perseguirlo dio un
+hallazgo: era un **botón**, y su `padding` se declara en `em`. Sin esperar a las
+fuentes, el `font-size` resuelto no está asentado y el px sale mal:
+
+| corrida | `padding-top` computado de los 12 botones |
+|---|---|
+| `networkidle0` | `7.5 ×12` |
+| `load` | `7.5 ×11 · 7.27 ×1` |
+| `load` + `document.fonts.ready` | `7.5 ×11 · 7.49 ×1` |
+
+Es §*un `em` sin su `font-size`* cobrada **dentro del instrumento**: no en cómo
+se cita el valor, sino en **cuándo se lee la base**. `fonts.ready` (acotado)
+entra en `asienta()`.
+
+**Y el NO-OP se publica con lo que de verdad se comprobó, no con «idéntica»**,
+porque no lo es. Contra las **3** corridas:
+
+- **0 de 48 reglas** difieren en lo **DECLARADO**, ni en sus poblaciones, ni en
+  sus separadoras, ni en las reglas servidas — o sea **todo lo que la hoja usa**;
+  los `controles` y `anchoPorReparto`, idénticos también;
+- **1 nodo de 570** difiere en el campo de **EVIDENCIA** (`computado1440`), por
+  ≤ 0.23 px, y es el botón de arriba.
+
+Las dos congeladas superadas se conservan con su defecto en el nombre:
+`…-SONDA-CON-networkidle0-QUE-AGOTABA-EL-NEGATIVO-sin-hojas-…` y
+`…-SONDA-SIN-fonts-ready-1-boton-a-7.27-…`.
+
+---
+
+## ⚠ F3-3-GEO-390-SIN-HOJAS-ENLAZADAS · **el lado de 390 de `qa:f33-geo` se midió SIN las hojas enlazadas — y no falla: sale PLAUSIBLE** — 102.ª, 2026-08-24
+
+> **`page.setViewport({ isMobile: true })` RECARGA la página.** Sobre un
+> documento montado con `setContent`, la recarga vuelve al fichero CRUDO del
+> corpus, y con él a los `<link>` que apuntan a `kunakair.com` — que la
+> intercepción aborta. Quedan las hojas **EN LÍNEA**, que son la mayoría de las
+> reglas, así que la medida **no da error: da otro número**.
+
+`CLAUDE.md` §Notas de método lo manda desde el principio —*«Móvil solo con
+`Emulation.setDeviceMetricsOverride`»*— y la excepción que documenta es la
+CAPTURA. `f33-geo` no captura nada y usa el camino que recarga.
+
+**Medido en 6 de 6 rutas, y difieren las 6** (`derivaciones/movil-recarga-hojas.{mjs,log}`):
+
+| camino | `<link file:>` | ancho de fila @390 |
+|---|---|---|
+| `setViewport({isMobile})` | **ausente** | **249.594** |
+| `Emulation.setDeviceMetricsOverride` | presente | **335.391** |
+
+`335.39` es el ancho que `kb.css` ya tiene documentado a 390, y sale de
+`.et_pb_row { width: 86% }` de **`KunakAir/style.css`, una hoja ENLAZADA**. Sin
+ella gana el `80%` de Divi.
+
+> ⚠⚠ **Y la evidencia más limpia no es el px, es la DECLARACIÓN — porque
+> `qa:f33-clases` lee la cascada y publica lo declarado, no lo computado.** Las
+> dos corridas de esta misma sonda, mismo código salvo el camino de móvil:
+>
+> | corrida | `.f33-fila { width }` declarado @390 |
+> |---|---|
+> | con `setViewport({isMobile})` | **`["80%"]`** — la de Divi, porque la que la pisaba ya no está |
+> | con `deviceMetricsOverride` | **`["86%", "100%"]`** — la de `KunakAir/style.css` y la de `.help-content` |
+>
+> Un px se puede discutir; **una declaración que desaparece de la cascada, no**.
+> La congelada defectuosa se conserva con su nombre:
+> `f33-clases-SONDA-MEDIA-390-CON-setViewport-QUE-RECARGA-Y-PIERDE-LAS-HOJAS-ENLAZADAS-2026-08-24.json`.
+
+**El alcance en la congelada de `f33-geo`, derivado y no supuesto:** de los 311
+módulos con `wFila` a 390, **222 traen `312`** (= 80 % de 390) y **52 traen
+`249.59`** (= 80 % de 312, filas anidadas). El valor del original es `86 %`.
+
+> ⚠ **Y lo que NO invalida, que es la mitad que hay que decir:** las
+> **razones** siguen valiendo. La conclusión de la 101.ª *«a 390 los seis
+> repartos apilan al 100 %»* es correcta — el ancho de columna relativo a su
+> fila no cambia. Lo que está mal es la **geometría absoluta** de ese lado.
+
+**Es §F3-1-CSS-NO-CAPTURADO entrando por otra puerta**: allí las hojas no se
+habían capturado; aquí **se capturaron, se resolvieron, y se cayeron al medir**.
+De donde la guarda que faltaba y que `qa:f33-clases` ya lleva:
+
+> **Las hojas se cuentan EN CADA ANCHO, no sólo al cargar.** Resolver los
+> `<link>` al montar prueba que estaban; no prueba que sigan aplicándose donde se
+> mide. Entre las dos cosas cabe una recarga.
+
+Hoy: `desparejadasEntreAnchos: 0` en las 31. Y el negativo tiene su caso —
+`movil-recarga`— que reproduce el camino viejo y **exige que la guarda lo vea y
+que el número se mueva**, no sólo que el exit sea ≠0.
+
+**Lo que queda:** `qa:f33-geo` no se ha tocado (fuera del alcance de esta tanda).
+Su lado de 1440 no está afectado; su lado de 390 hay que **re-medir** con el
+camino bueno antes de citar ningún número absoluto de ahí.
+
+---
+
+## ⚠ F3-3-GUTTERS-SIN-MODELAR · **el canal de la retícula tiene DOS valores, y la variable que manda no está en el modelo** — 102.ª, 2026-08-24
+
+Medido: `.f33-columna:not(:last-child) { margin-right }` da **`5.5%` ×55** y
+**`3%` ×11**, y los separan **1:1 dos ejes**:
+
+| eje | ¿mecanismo? | ¿lo emite el clon? |
+|---|---|---|
+| **`et_pb_gutters2`** | ✅ el selector servido es `.et_pb_gutters2 .et_pb_column` — un ajuste **de la FILA** que el editor elige | ⛔ **no está en el esquema** |
+| `reparto` (`1_4`/`1_5` ⇒ 3 %) | ⛔ es su **SOMBRA** | ✅ sí (`f33-col-*`) |
+
+**Están CONFUNDIDOS** (§*un discriminador 1:1 puede ser la sombra de otro*): las
+**3 únicas filas con `gutters2` de las 113** son justamente las que llevan `1_4`
+y `1_5`. Censado sobre el HTML servido sin `<style>` ni `<script>`: el portador
+de `et_pb_gutters3` son **131 ancestros** (la sección), y `gutters2` aparece
+**en 3 filas**.
+
+`f33.css` escribe **por reparto**, que es lo único que el clon puede emitir hoy.
+**Eso es correcto para las 31 y falso para la primera página que meta un `1_2`
+en una fila `gutters2`** — y también afecta al `margin-bottom` del módulo, cuyos
+porcentajes por reparto salen de la misma tabla de gutters.
+
+**Decisión de esquema, no transcripción:** `gutters` sería un campo de la FILA
+(`2 | 3`, con defecto `3`). No se añade en esta tanda —un campo nuevo es una
+migración— y **n = 3 filas no basta para modelarlo**: con las tres cayendo en el
+mismo reparto, cualquier eje «discrimina» trivialmente.
+
+---
+
+## ⚠ F3-3-BOTON-ALINEACION · **campo por test B con TRES ejes, en 11 de 13 botones, y el clon lo pierde ENTERO** — 102.ª, 2026-08-24, fichado a petición del encargo
+
+Derivado del HTML servido (sin `<style>` ni `<script>`), capa propia:
+
+| eje | valores | n |
+|---|---|---|
+| escritorio | `center` ×10 · `right` ×1 | **11 de 13** |
+| tablet | `center` ×8 · `right` ×1 | 9 |
+| phone | `center` ×8 · `right` ×1 | 9 |
+
+**11 de 13 botones, en 4 rutas de 31.** Y los tres ejes son independientes: hay
+botones con alineación de escritorio y sin la de tablet/phone.
+
+**Es CAMPO por el test B** —dos valores distintos entre hermanos de la misma
+página— y **es geometría**: la clase se compila a `text-align` sobre el
+envoltorio del botón. En la corrida de `qa:f33-clases`, `text-align` aparece
+**74 veces** entre los overrides ganadores del editor.
+
+**Estado en el clon, derivado con `grep` sobre el fuente SIN comentarios**
+(la primera lectura dio un falso positivo desde un comentario — §*ningún
+comentario declara un hecho del repo*):
+
+- `CuerpoPagina.tsx` **no emite** ninguna clase de alineación;
+- `bloques/contenido.ts` **no tiene** el campo.
+
+> **Abre DECISIÓN DE ESQUEMA, no es transcripción.** Tres ejes responsive es un
+> grupo de campos, no un atributo — y meterlo es una migración. **No se añade en
+> esta tanda**, por instrucción explícita del encargo.
+
+---
+
+## ⛔ F3-3-SIN-HOJA · **CORTE LIMPIO 1 de la 101.ª: el cuerpo de la cola larga NO TIENE HOJA, así que su ritmo, su retícula y su ancho son INERTES** — 2026-08-24 *(enunciado original, conservado)*
 
 **Lo destapó el PASO 0**, que el encargo declara *barato y no-verificación*. Lo
 es: costó dos `grep` y no gastó un build.
@@ -149,7 +432,47 @@ sólo es contable.
 
 ---
 
-## ⚠ F3-3-MARCADO-INTERIOR · **siete huecos de forma que la spec no podía ver, medidos contra el HTML servido** — 101.ª, 2026-08-24
+## ⚠ F3-3-MARCADO-INTERIOR · **MEDIDO por la 102.ª: de los siete huecos, DOS son omitibles con número y CUATRO no** — el enunciado de la 101.ª se conserva entero debajo
+
+La 101.ª censó **el marcado** de los envoltorios interiores y dejó la pregunta
+que decide: *¿llevan geometría?* En KB eso se contestó **CON** medida
+(*«ritmo 0 en los 85»*) y por eso `CuerpoKb` pudo omitirlos; aquí esa medida no
+existía, así que **omitirlos sin medir era tan arbitrario como emitirlos sin
+medir**.
+
+Medido ahora sobre el corpus **con sus hojas**, 31 rutas, **311 primeros-hijos de
+módulo** (`derivaciones/interior-f33.{mjs,log}`): **258 con ritmo NULO en los
+cuatro lados · 10 que sí lo llevan · 43 sin caja**.
+
+| envoltorio | n | ritmo | caja | ¿lo necesita el clon? |
+|---|---|---|---|---|
+| `div.et_pb_text_inner` | **151** (146 con caja) | **NULO ×146** | `block` · `max-width: none` · **100 % del módulo** | ⛔ **NO.** Medido, igual que en KB |
+| `div.et_pb_code_inner` | **9** | **NULO ×9** | `block` · **100 %** | ⛔ **NO** |
+| `div.et_pb_blurb_content` | **22** | NULO ×22 | ⚠ **`max-width: 550px` en 9 de 22** · ancho 100 % ×13 y **81.4 % ×9** | ✅ **SÍ** — el `max-width` vive en el HIJO, y ponerlo en el módulo cambiaría otra caja |
+| `span.et_pb_image_wrap` | **53** | NULO ×53 | **`display: inline-block` ×26 · `block` ×27** · `max-width: 100%` · ancho **INTRÍNSECO** (8.4 – 100 %) | ⚠ **probablemente** — el `inline-block` importa (§*el espacio en blanco entre `inline-block` se RENDERIZA*) |
+| `a` envolviendo la imagen | 18 | NULO ×18 | `display: inline` | ✅ ya lo emite |
+| `span.et_pb_icon_wrap` | **3** | NULO ×3 | `inline-block` · 23.4 % | ✅ **SÍ** — el clon emite **un** span donde el original tiene **dos**, y la clase interior es `et-pb-icon` con GUIONES |
+| `h5.et_pb_toggle_title` | **10** | ⚠ **`padding-right: 50` ×10** | `block` · 90.3 % | ✅ el clon **ya lo emite**; lo que falta es **la REGLA** |
+| `div.et_pb_video_box` | 30 | **SIN CAJA** | — | ⛔ **no medible** — desplegables cerrados, exige INTERACCIÓN (eje a 0/31) |
+| `button` | 13 | — | **sin hijo ELEMENTO** | el walker mide el `<a>`, cuyo primer hijo es texto. Es la otra cara de §*el ENVOLTORIO* |
+
+### Lo que de aquí entra en `f33.css` y lo que NO
+
+**Nada.** Los `padding-right: 50` del toggle y el `max-width: 550px` del blurb
+**están medidos y NO se escriben**, y la razón es la misma que gobierna toda la
+hoja: `qa:f33-clases` deriva el default **de los nodos que la cascada dice que el
+editor no toca**, y esta derivación **no corrió la cascada sobre el nivel
+interior** — sólo su ritmo y su caja. Uniformidad en 10 de 10 es evidencia; **no
+es el discriminador**, y el test B tiene el falso negativo de *un campo que el
+editor puso uniforme*.
+
+> **Lo que haría falta, nombrado:** extender el nivel `interior` a
+> `qa:f33-clases` para que su declaración ganadora pase por el mismo filtro de
+> ordinal. Es una tanda de instrumento, no una decisión.
+
+---
+
+## ⚠ F3-3-MARCADO-INTERIOR · **siete huecos de forma que la spec no podía ver, medidos contra el HTML servido** — 101.ª, 2026-08-24 *(enunciado original, conservado)*
 
 `modulos.spec.md` midió **las clases del módulo**, y por eso no contesta qué hay
 por ENCIMA ni por DEBAJO de él. El cotejo del PASO 0 fue **contra el HTML

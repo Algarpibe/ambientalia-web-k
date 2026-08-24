@@ -1,0 +1,42 @@
+derivación: ¿los envoltorios INTERIORES del módulo llevan geometría?
+fuente    : corpus/fase-3 + corpus/css · 31 rutas · 1440 · páginas con hojas sin resolver: 0
+total     : 311 primeros-hijos de módulo
+
+  · text  →  div.et_pb_text_inner                  n=151 (sin caja 5)
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr0  ×146
+      display {"block":146} · max-width {"none":146} · ancho 100 % del módulo
+  · image  →  span.et_pb_image_wrap                n= 53
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr0  ×53
+      display {"inline-block":26,"block":27} · max-width {"100%":53} · ancho 35.5 · 31.1 · 27 · 100 · 39.2 · 19.8 · 8.4 · 10.4 · 16.7 · 12.8 · 65.8 · 57.6 · 31.6 · 99.1 · 15.4 % del módulo
+  ⚠ video  →  div.et_pb_video_box                  n= 30 (sin caja 30)
+  · blurb  →  div.et_pb_blurb_content              n= 22
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr0  ×22
+      display {"block":22} · max-width {"550px":9,"none":13} · ancho 100 · 81.4 % del módulo
+  · image  →  a.(sin clase)                        n= 18
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr0  ×18
+      display {"inline":18} · max-width {"none":18} · ancho 56.9 · 23.7 · 45.8 · 43.7 · 53.9 · 53.2 · 36.6 · 41.8 · 63.2 · 70.6 · 39.5 · 65.7 · 42.9 · 43.3 · 49 · 31.7 · 33.3 · 32 % del módulo
+  ⚠ button  →  ?.(sin hijo elemento)               n= 13 (sin caja 13)
+  ⚠ toggle  →  h5.et_pb_toggle_title               n= 10
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr50  ×10
+      display {"block":10} · max-width {"none":10} · ancho 90.3 % del módulo
+  · code  →  div.et_pb_code_inner                  n=  9
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr0  ×9
+      display {"block":9} · max-width {"none":9} · ancho 100 % del módulo
+  · icon  →  span.et_pb_icon_wrap                  n=  3
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr0  ×3
+      display {"inline-block":3} · max-width {"none":3} · ancho 23.4 % del módulo
+  · map  →  div.et_pb_map                          n=  1
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr0  ×1
+      display {"block":1} · max-width {"none":1} · ancho 100 % del módulo
+  · slider  →  div.et_pb_slides                    n=  1
+      ritmo  mt0 mb0 ml0 mr0 · pt0 pb0 pl0 pr0  ×1
+      display {"block":1} · max-width {"none":1} · ancho 100 % del módulo
+
+  ── LECTURA ──
+  envoltorios con ritmo NULO en los cuatro lados : 258
+  envoltorios que SÍ llevan ritmo                : 10
+
+  Un envoltorio de ritmo nulo, display block y ancho 100 % del módulo NO aporta
+  geometría: el clon puede omitirlo y la hoja no lo necesita. Uno que lleve ritmo,
+  o que no ocupe el 100 %, SÍ — y entonces la decisión es del COMPONENTE, no de la hoja.
+

@@ -1077,6 +1077,56 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 
 ## ESTADO DE LA FASE 3
 
+> ✅ **ACTUALIZACIÓN 2026-08-24 (102.ª tanda) — LA HOJA EXISTE Y SUS NÚMEROS
+> ESTÁN DERIVADOS. LA EMISIÓN SIGUE SIN HACERSE, Y ES LA DECISIÓN DEL
+> PROPIETARIO, NO UN BLOQUEO NUEVO.**
+>
+> **Rutas 382, sin cambio por TERCERA tanda consecutiva.** Esta tanda no emite
+> ninguna ruta: construye el instrumento que faltaba y escribe la hoja.
+>
+> ### Lo que cerró, y el canal que lo hizo posible
+>
+> El corte de la 101.ª decía que el ritmo de sección y fila **no era derivable**
+> porque la congelada de `f33-geo` trae el valor computado. **Cierto de esa
+> congelada y falso del repo** — que es exactamente la forma que el encargo
+> mandaba comprobar antes de darlo por bueno. Las dos direcciones, con su número:
+>
+> | canal | ¿separa «dato» de «plantilla»? |
+> |---|---|
+> | el DATO del CMS (`f33-extraido`) | ⛔ **no puede**: el extractor no emite geometría a propósito — **313 de 313 omiten, 0 declaran** ⇒ 0 separadoras POR CONSTRUCCIÓN |
+> | `mbPorDefecto()` + `anchoDeFilaPorRegimen` | **no hacía falta** (ver abajo) |
+> | **la CASCADA del original** | ✅ **sí** — **297 de 570 nodos** llevan override ganador del editor |
+>
+> **Divi no escribe marcado: COMPILA CSS.** `qa:f33-clases` lee la cascada por
+> CDP, calcula qué regla GANA cada propiedad en cada nodo, y deriva el default de
+> los que llegan a la regla genérica del tema.
+>
+> ### El resultado, en la unidad del «17» con que se abrió §F3-3-SIN-HOJA
+>
+> | | antes (101.ª) | después |
+> |---|---|---|
+> | clases inertes (unidad TOKEN) | **17 de 17** | **8 de 17** |
+> | familias de variables inertes | **5 de 5** | **2 de 5** |
+>
+> Y las 8 que quedan **no están inertes por descuido**: cada una con su razón
+> derivada (ejes SIN ESCRIBIR, o piel — que esta sonda no mide).
+>
+> ### Los dos hallazgos que salen fuera de este arquetipo
+>
+> | # | hallazgo | ficha |
+> |---|---|---|
+> | **1** | **el lado de 390 de `qa:f33-geo` se midió SIN las hojas enlazadas.** `setViewport({isMobile})` RECARGA, y la recarga vuelve al fichero crudo: **6 de 6 rutas difieren**, fila **249.594** contra **335.391**. No falla — sale PLAUSIBLE | ⚠ **§F3-3-GEO-390-SIN-HOJAS-ENLAZADAS** |
+> | **2** | **el `mb` del módulo NO necesita el ancho de fila**: la regla servida es un `%` de la COLUMNA. Retira el único consumidor que se le atribuía al régimen dentro del cuerpo — CMS-5 **no se reabre**, su razón sigue siendo el CASCARÓN | ✅ `ESQUEMA §2j.9` |
+>
+> ### Lo que sigue parando la emisión
+>
+> **Nada nuevo, y no es un bloqueo técnico: es el orden que el propietario
+> decidió.** La hoja está escrita y `qa:f33-cmp` sigue a **0 ejes comparados**
+> porque no hay lado del clon que comparar. Lo que la 101.ª puso como condición
+> —*«emitir sin hoja congelaría una línea base sin maquetar»*— **ya no aplica**.
+>
+> ---
+>
 > ⛔⛔ **ACTUALIZACIÓN 2026-08-24 (101.ª tanda) — LA EMISIÓN SIGUE SIN HACERSE, Y
 > POR LA OTRA MITAD DEL MISMO ARQUETIPO: CORTE LIMPIO 1 DISPARÓ EN EL PASO 0.
 > `CuerpoPagina.tsx` NO TIENE HOJA, así que su ritmo, su retícula y su ancho son

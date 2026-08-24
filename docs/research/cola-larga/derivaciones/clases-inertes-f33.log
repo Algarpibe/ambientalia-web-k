@@ -1,0 +1,65 @@
+derivación: ¿cuántas clases `f33-*` siguen INERTES?
+emitido de : .\apps\web\src\components\cola-larga\CuerpoPagina.tsx (sin comentarios)
+hojas      : f33.css · globals.css · kb.css · listados.css · tema.css
+
+  CLASES (25)
+    ✓ f33-ancho            {"f33.css":1}
+    ✗ f33-blurb            0 reglas — INERTE
+    ✗ f33-blurb-center     0 reglas — INERTE
+    ✗ f33-boton            0 reglas — INERTE
+    ✗ f33-clasico          0 reglas — INERTE
+    ✗ f33-codigo           0 reglas — INERTE
+    ✓ f33-col-1_2          {"f33.css":4}
+    ✓ f33-col-1_3          {"f33.css":4}
+    ✓ f33-col-1_4          {"f33.css":4}
+    ✓ f33-col-1_5          {"f33.css":6}
+    ✗ f33-col-1_6          0 reglas — INERTE
+    ✓ f33-col-2_3          {"f33.css":4}
+    ✗ f33-col-2_5          0 reglas — INERTE
+    ✗ f33-col-3_4          0 reglas — INERTE
+    ✗ f33-col-3_5          0 reglas — INERTE
+    ✓ f33-col-4_4          {"f33.css":4}
+    ✓ f33-columna          {"f33.css":6}
+    ✓ f33-fila             {"f33.css":3}
+    ✗ f33-icono            0 reglas — INERTE
+    ✗ f33-icono-texto      0 reglas — INERTE
+    ✓ f33-imagen           {"f33.css":1}
+    ✓ f33-modulo           {"f33.css":15}
+    ✓ f33-seccion          {"f33.css":2}
+    ✗ f33-texto            0 reglas — INERTE
+    ✓ f33-toggle           {"f33.css":1}
+
+  FAMILIAS DE VARIABLES (5)
+    ✗ --f33blurb-*         0 reglas — INERTE
+    ✓ --f33f-*             {"f33.css":12}
+    ✗ --f33h-*             0 reglas — INERTE
+    ✓ --f33m-*             {"f33.css":14}
+    ✓ --f33s-*             {"f33.css":6}
+
+  ATRIBUTOS de sonda (1) — no son clases y no pueden tener regla:
+    · data-f33-sin-cablear
+
+  ── RECUENTO, en las DOS unidades ──
+  · unidad TOKEN (la del «17» de §F3-3-SIN-HOJA: `f33-col-` cuenta 1, y el
+    atributo `f33-sin-cablear` estaba dentro)
+        8 de 17 inertes  —  f33-texto · f33-boton · f33-codigo · f33-blurb · f33-blurb-center · f33-icono · f33-icono-texto · f33-clasico
+  · unidad CLASE (enum de `ancho` expandido a 10, atributo fuera)
+        clases   INERTES: 12 de 25
+        familias INERTES: 2 de 5
+
+  ⚠ «tiene regla» NO es «la regla llega a la propiedad». Esto es la precondición
+  de la verificación, no la verificación: quien adjudica es `qa:f33-cmp`.
+
+  ── POR QUÉ sigue inerte cada una (cruzado con f33-geo y f33-clases) ──
+    · f33-texto          sus ejes de ritmo salieron SIN ESCRIBIR en f33-geo (pt): el único valor observado es el INICIAL
+    · f33-boton          su `padding` está en `em` y su base es la PIEL — un `em` sin su `font-size` no se puede escribir
+    · f33-codigo         sus ejes de ritmo salieron SIN ESCRIBIR en f33-geo (mt · mb · pt · pb): el único valor observado es el INICIAL
+    · f33-blurb          sus ejes de ritmo salieron SIN ESCRIBIR en f33-geo (mt): el único valor observado es el INICIAL
+    · f33-blurb-center   sin propiedad derivada propia: lo que llevarían es PIEL, y la tipografía es SIN DERIVAR aquí
+    · f33-icono          sus ejes de ritmo salieron SIN ESCRIBIR en f33-geo (mt · pt · pb): el único valor observado es el INICIAL
+    · f33-icono-texto    sin propiedad derivada propia: lo que llevarían es PIEL, y la tipografía es SIN DERIVAR aquí
+    · f33-clasico        el régimen `--`: 1 página de 31, cuerpo clásico de WordPress. Su geometría no la mide esta sonda (no tiene secciones de builder)
+
+  Ninguna de las 8 está inerte por descuido: las 2 familias de piel y las
+  2 propiedades de `sinDerivar` son lo que falta, y están nombradas con lo que haría falta.
+

@@ -26,6 +26,35 @@ filas tenía el cuerpo.
 | **NO contestan · la GEOMETRÍA** | ritmo, caja y `anchoPct` los derivó `qa:f33-geo` (49 celdas con veredicto). Aquí se **citan**, no se recalculan |
 | **NO contestan · el COMPORTAMIENTO** | **0 de 31 rutas**. Y no es un hueco cualquiera en este arquetipo: **36 módulos de 313 viven en desplegables CERRADOS** y su geometría **no es medible sin interacción** |
 | **NO contestan · si un valor DEBE ser campo** | describen. La decisión de modelo es de quien escriba el bloque, con esto delante |
+| **NO contestan · QUÉ NODO ES «EL MÓDULO»** | miden **el nodo que lleva el ORDINAL**. En 10 de los 11 tipos ese nodo es también el que lleva `et_pb_module`; en `button` **no**, y ahí las dos cosas se separan (ver abajo) |
+
+### ⚠ El límite declarado del `button` — la spec acertó, y hay que saber a qué
+
+`modulos.spec.md` escribió *«etiqueta `a` (13/13) — el ÚNICO tipo que no es
+`div`»* y *«ESTE TIPO NO LLEVA `et_pb_module`»*. **Las dos son ciertas** — del
+`<a>`, que es el nodo con ordinal (`et_pb_button_0`) y el que la spec fue a
+medir. Y **las dos son falsas del MÓDULO**, que servido es
+
+```html
+<div class="et_pb_button_module_wrapper et_pb_button_0_wrapper … et_pb_module ">
+  <a class="et_pb_button et_pb_button_0 boton-azul …">
+```
+
+**Contestó la pregunta que se le hizo**, y su fichero no puede llevar escrito
+cuál NO se le hizo (§*una medida contesta las preguntas que se le hicieron, y su
+fichero no lleva escrito cuáles NO*). Se declara aquí porque **cambia dónde cae
+la retícula**: el selector servido es `.et_pb_column_X .et_pb_module`, así que
+la regla de gutters llega al **envoltorio**, no al `<a>`.
+
+**Y ya se cobró una lectura falsa**: la primera versión de `qa:f33-clases`
+midió el `<a>` como módulo, sus 12 botones salieron con el `margin-bottom: 0`
+del reset universal metidos en la distribución de gutters, y el derivador
+informó *«el `1_2` declara DOS valores»* con un discriminador
+—`clase:et_pb_button`— que era **una conclusión sobre el instrumento disfrazada
+de dato del original**. Corregido midiendo el envoltorio **como nivel aparte**,
+sin tocar el criterio de recuento: los **313 módulos** de `f33-spec` y `f33-geo`
+ya tienen consumidores, y dos instrumentos que censan el mismo objeto se
+unifican **con el criterio ya congelado**.
 
 ## El alcance, DERIVADO — y en las DOS unidades
 

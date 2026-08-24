@@ -1,0 +1,2834 @@
+{
+  "meta": {
+    "sonda": "f33-clases",
+    "fecha": "2026-08-24",
+    "que": "la REGLA que el original sirve para cada clase `f33-*`, derivada de los nodos cuya declaración GANADORA no viene del editor",
+    "lado": "UNO — el original capturado con sus hojas. NO compara con el clon: eso es `qa:f33-cmp`",
+    "anchos": [
+      1440,
+      390
+    ],
+    "sabotaje": "sin-hojas",
+    "metodo": "el discriminador es la CASCADA (CSS.getMatchedStylesForNode): un selector con ordinal `et_pb_<tipo>_<n>` (sin `_tb_`) es el editor; uno genérico es la plantilla. default = valor computado en los nodos que llegan a la plantilla. Dos valores ⇒ no hay default.",
+    "noEsUnaVerificacion": "esto es la ENTRADA de la escritura de `f33.css`. La aceptación es `qa:f33-cmp`, que mide el clon renderizado par a par — verificar el CSS contra el CSS sería comprobar contra la fuente que uno supone responsable.",
+    "dominio": {
+      "membresia": "medidas/f33-rutas.json (94.ª, congelada y commiteada)",
+      "rutasDeclaradas": 31,
+      "medidas": 31,
+      "minimo": 31
+    },
+    "noContesta": [
+      "NADA del clon: un solo lado. `qa:f33-cmp` sigue a 0 ejes comparados en las 31",
+      "la TIPOGRAFÍA: 2 de las 5 familias de variables (--f33h-* y --f33blurb-*) salen SIN DERIVAR — esta sonda mide caja y ritmo",
+      "los 122 nodos SIN CAJA: getComputedStyle no resuelve los % sin caja y devolvería ceros que entrarían como dato",
+      "el ancho INTERMEDIO: se miden 1440 y 390, que es donde el contrato es de FIDELIDAD",
+      "si la hoja escrita FUNCIONA: eso sólo lo cierra una comparación de dos lados"
+    ]
+  },
+  "controles": {
+    "modulos": 313,
+    "modulosCruzadoConF33Spec": 313,
+    "tipos": 11,
+    "tiposCruzadoConF33Spec": 11,
+    "nodosTotales": 704,
+    "nodosVivos": 582,
+    "nodosSinCaja": 122,
+    "sinCajaPorTipo": {
+      "seccion": 30,
+      "fila": 30,
+      "columna": 30,
+      "video": 30,
+      "text": 1,
+      "button": 1
+    },
+    "separadorasDelDiscriminador": 297,
+    "overridesDelEditorPorPropiedad": {
+      "padding-top": 57,
+      "font-size": 104,
+      "margin-top": 32,
+      "margin-left": 67,
+      "text-align": 74,
+      "padding-bottom": 101,
+      "margin-bottom": 61,
+      "width": 13,
+      "margin-right": 14,
+      "padding-right": 9,
+      "padding-left": 9,
+      "max-width": 8
+    },
+    "plantillaDesdeHojaDePagina": {
+      "n": 94,
+      "selectores": {
+        ".container, .et_pb_row, .et_pb_slider .et_pb_container, .et_pb_fullwidth_section .et_pb_ti { max-width }": 82,
+        "body .et_pb_button { font-size }": 12
+      }
+    },
+    "selectoresMuertos": [],
+    "hojas": {
+      "paginasConCero": 31,
+      "rutas": [
+        "/es/centro-de-ayuda/kunak-air-cloud/",
+        "/es/centro-de-ayuda/kunak-air/",
+        "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+        "/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+        "/es/soporte/centro-de-ayuda/"
+      ],
+      "desparejadasEntreAnchos": 0,
+      "detalle": []
+    }
+  },
+  "anchoPorReparto": {
+    "1_2": {
+      "n": 48,
+      "pct1440": {
+        "47.2484": 34,
+        "47.2491": 14
+      },
+      "pct390": {
+        "100": 33
+      },
+      "anchosDeFila": [
+        678.52,
+        1152
+      ],
+      "adjudica": "qa:f33-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda"
+    },
+    "4_4": {
+      "n": 32,
+      "pct1440": {
+        "100": 32
+      },
+      "pct390": {
+        "100": 32
+      },
+      "anchosDeFila": [
+        678.52,
+        1152
+      ],
+      "adjudica": "qa:f33-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda"
+    },
+    "1_3": {
+      "n": 38,
+      "pct1440": {
+        "29.6658": 38
+      },
+      "pct390": {
+        "100": 37
+      },
+      "anchosDeFila": [
+        1152
+      ],
+      "adjudica": "qa:f33-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda"
+    },
+    "2_3": {
+      "n": 17,
+      "pct1440": {
+        "64.8333": 17
+      },
+      "pct390": {
+        "100": 16
+      },
+      "anchosDeFila": [
+        1152
+      ],
+      "adjudica": "qa:f33-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda"
+    },
+    "1_4": {
+      "n": 4,
+      "pct1440": {
+        "22.75": 4
+      },
+      "pct390": {
+        "100": 4
+      },
+      "anchosDeFila": [
+        1152
+      ],
+      "adjudica": "qa:f33-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda"
+    },
+    "1_5": {
+      "n": 10,
+      "pct1440": {
+        "17.5995": 10
+      },
+      "pct390": {
+        "100": 6
+      },
+      "anchosDeFila": [
+        1296
+      ],
+      "adjudica": "qa:f33-cmp — la cuantización a 1/64 px no la resuelve la aritmética de esta sonda"
+    }
+  },
+  "familiasSinDerivar": [
+    {
+      "familia": "--f33h-*",
+      "consume": "piel de TITULAR del módulo de texto",
+      "haceFalta": "una sonda de TIPOGRAFÍA sobre el mismo corpus (el equivalente de `qa:kb-tipografia`): esta mide caja y ritmo, no `font-size`/`line-height`/`color`"
+    },
+    {
+      "familia": "--f33blurb-*",
+      "consume": "piel del titular de BLURB",
+      "haceFalta": "una sonda de TIPOGRAFÍA sobre el mismo corpus (el equivalente de `qa:kb-tipografia`): esta mide caja y ritmo, no `font-size`/`line-height`/`color`"
+    }
+  ],
+  "sinDerivar": [],
+  "reglas": [
+    {
+      "selector": ".f33-seccion",
+      "prop": "padding-top",
+      "n": 35,
+      "nMovil": 35,
+      "deCuantos": 56,
+      "delEditor": 21,
+      "declarado1440": [
+        "4%",
+        "0px"
+      ],
+      "declarado390": [
+        "50px",
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "4%": 33,
+        "0px": 2
+      },
+      "repartoDeclarado390": {
+        "50px": 33,
+        "0px": 2
+      },
+      "computado1440": [
+        33.92,
+        57.59,
+        0
+      ],
+      "computado390": [
+        50,
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 2,
+        "33.92": 2,
+        "57.59": 31
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_section",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 33,
+          "valor": {
+            "4%": 33
+          }
+        },
+        {
+          "selector": ".et_pb_fullwidth_section",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 2,
+          "valor": {
+            "0px": 2
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_section",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 33,
+          "valor": {
+            "50px": 33
+          }
+        },
+        {
+          "selector": ".et_pb_fullwidth_section",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 2,
+          "valor": {
+            "0px": 2
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "4%  @390 50px": 33,
+        "0px  @390 0px": 2
+      },
+      "separa": {
+        "nCandidatos": 1,
+        "nBiyectivos": 1,
+        "candidatos": [
+          {
+            "eje": "clase:et_pb_fullwidth_section",
+            "biyectivo": true,
+            "grupos": {
+              "—": "4%  @390 50px",
+              "true": "0px  @390 0px"
+            },
+            "n": {
+              "—": 33,
+              "true": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "selector": ".f33-seccion",
+      "prop": "padding-bottom",
+      "n": 24,
+      "nMovil": 24,
+      "deCuantos": 56,
+      "delEditor": 32,
+      "declarado1440": [
+        "4%",
+        "0px"
+      ],
+      "declarado390": [
+        "50px",
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "4%": 22,
+        "0px": 2
+      },
+      "repartoDeclarado390": {
+        "50px": 22,
+        "0px": 2
+      },
+      "computado1440": [
+        33.92,
+        57.59,
+        0
+      ],
+      "computado390": [
+        50,
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 2,
+        "33.92": 8,
+        "57.59": 14
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_section",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 22,
+          "valor": {
+            "4%": 22
+          }
+        },
+        {
+          "selector": ".et_pb_fullwidth_section",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 2,
+          "valor": {
+            "0px": 2
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_section",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 22,
+          "valor": {
+            "50px": 22
+          }
+        },
+        {
+          "selector": ".et_pb_fullwidth_section",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 2,
+          "valor": {
+            "0px": 2
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "4%  @390 50px": 22,
+        "0px  @390 0px": 2
+      },
+      "separa": {
+        "nCandidatos": 1,
+        "nBiyectivos": 1,
+        "candidatos": [
+          {
+            "eje": "clase:et_pb_fullwidth_section",
+            "biyectivo": true,
+            "grupos": {
+              "—": "4%  @390 50px",
+              "true": "0px  @390 0px"
+            },
+            "n": {
+              "—": 22,
+              "true": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "selector": ".f33-seccion",
+      "prop": "margin-top",
+      "n": 56,
+      "nMovil": 56,
+      "deCuantos": 56,
+      "delEditor": 0,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 56
+      },
+      "repartoDeclarado390": {
+        "0px": 56
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 56
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 56,
+          "valor": {
+            "0px": 56
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 56,
+          "valor": {
+            "0px": 56
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 56
+      }
+    },
+    {
+      "selector": ".f33-seccion",
+      "prop": "margin-bottom",
+      "n": 55,
+      "nMovil": 55,
+      "deCuantos": 56,
+      "delEditor": 1,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 55
+      },
+      "repartoDeclarado390": {
+        "0px": 55
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 55
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 55,
+          "valor": {
+            "0px": 55
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 55,
+          "valor": {
+            "0px": 55
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 55
+      }
+    },
+    {
+      "selector": ".f33-seccion",
+      "prop": "width",
+      "n": 56,
+      "nMovil": 56,
+      "deCuantos": 56,
+      "delEditor": 0,
+      "declarado1440": [
+        "(inicial)"
+      ],
+      "declarado390": [
+        "(inicial)"
+      ],
+      "repartoDeclarado1440": {
+        "(inicial)": 56
+      },
+      "repartoDeclarado390": {
+        "(inicial)": 56
+      },
+      "computado1440": [
+        848.16,
+        1440
+      ],
+      "computado390": [
+        312,
+        390
+      ],
+      "repartoComputado1440": {
+        "1440": 48,
+        "848.16": 8
+      },
+      "regla1440": [],
+      "regla390": [],
+      "nota": null,
+      "par": {
+        "(inicial)  @390 (inicial)": 56
+      }
+    },
+    {
+      "selector": ".f33-seccion",
+      "prop": "box-sizing",
+      "n": 56,
+      "nMovil": 56,
+      "deCuantos": 56,
+      "delEditor": 0,
+      "declarado1440": [
+        "border-box"
+      ],
+      "declarado390": [
+        "border-box"
+      ],
+      "repartoDeclarado1440": {
+        "border-box": 56
+      },
+      "repartoDeclarado390": {
+        "border-box": 56
+      },
+      "computado1440": [
+        "border-box"
+      ],
+      "computado390": [
+        "border-box"
+      ],
+      "repartoComputado1440": {
+        "border-box": 56
+      },
+      "regla1440": [
+        {
+          "selector": "*",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 56,
+          "valor": {
+            "border-box": 56
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "*",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 56,
+          "valor": {
+            "border-box": 56
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "border-box  @390 border-box": 56
+      }
+    },
+    {
+      "selector": ".f33-seccion",
+      "prop": "text-align",
+      "n": 56,
+      "nMovil": 56,
+      "deCuantos": 56,
+      "delEditor": 0,
+      "declarado1440": [
+        "(inicial)"
+      ],
+      "declarado390": [
+        "(inicial)"
+      ],
+      "repartoDeclarado1440": {
+        "(inicial)": 56
+      },
+      "repartoDeclarado390": {
+        "(inicial)": 56
+      },
+      "computado1440": [
+        "start"
+      ],
+      "computado390": [
+        "start"
+      ],
+      "repartoComputado1440": {
+        "start": 56
+      },
+      "regla1440": [],
+      "regla390": [],
+      "nota": null,
+      "par": {
+        "(inicial)  @390 (inicial)": 56
+      }
+    },
+    {
+      "selector": ".f33-fila",
+      "prop": "padding-top",
+      "n": 57,
+      "nMovil": 57,
+      "deCuantos": 83,
+      "delEditor": 26,
+      "declarado1440": [
+        "2%"
+      ],
+      "declarado390": [
+        "30px"
+      ],
+      "repartoDeclarado1440": {
+        "2%": 57
+      },
+      "repartoDeclarado390": {
+        "30px": 57
+      },
+      "computado1440": [
+        16.95,
+        28.8
+      ],
+      "computado390": [
+        30
+      ],
+      "repartoComputado1440": {
+        "16.95": 19,
+        "28.8": 38
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 57,
+          "valor": {
+            "2%": 57
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_column .et_pb_row_inner, .et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 57,
+          "valor": {
+            "30px": 57
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "2%  @390 30px": 57
+      }
+    },
+    {
+      "selector": ".f33-fila",
+      "prop": "padding-bottom",
+      "n": 46,
+      "nMovil": 46,
+      "deCuantos": 83,
+      "delEditor": 37,
+      "declarado1440": [
+        "2%"
+      ],
+      "declarado390": [
+        "30px"
+      ],
+      "repartoDeclarado1440": {
+        "2%": 46
+      },
+      "repartoDeclarado390": {
+        "30px": 46
+      },
+      "computado1440": [
+        16.95,
+        28.8
+      ],
+      "computado390": [
+        30
+      ],
+      "repartoComputado1440": {
+        "16.95": 21,
+        "28.8": 25
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 46,
+          "valor": {
+            "2%": 46
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_column .et_pb_row_inner, .et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 46,
+          "valor": {
+            "30px": 46
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "2%  @390 30px": 46
+      }
+    },
+    {
+      "selector": ".f33-fila",
+      "prop": "margin-top",
+      "n": 79,
+      "nMovil": 79,
+      "deCuantos": 83,
+      "delEditor": 4,
+      "declarado1440": [
+        "auto"
+      ],
+      "declarado390": [
+        "auto"
+      ],
+      "repartoDeclarado1440": {
+        "auto": 79
+      },
+      "repartoDeclarado390": {
+        "auto": 79
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 79
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 79,
+          "valor": {
+            "auto": 79
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 79,
+          "valor": {
+            "auto": 79
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "auto  @390 auto": 79
+      }
+    },
+    {
+      "selector": ".f33-fila",
+      "prop": "margin-bottom",
+      "n": 80,
+      "nMovil": 80,
+      "deCuantos": 83,
+      "delEditor": 3,
+      "declarado1440": [
+        "auto"
+      ],
+      "declarado390": [
+        "auto"
+      ],
+      "repartoDeclarado1440": {
+        "auto": 80
+      },
+      "repartoDeclarado390": {
+        "auto": 80
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 80
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 80,
+          "valor": {
+            "auto": 80
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 80,
+          "valor": {
+            "auto": 80
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "auto  @390 auto": 80
+      }
+    },
+    {
+      "selector": ".f33-fila",
+      "prop": "margin-left",
+      "n": 78,
+      "nMovil": 78,
+      "deCuantos": 83,
+      "delEditor": 5,
+      "declarado1440": [
+        "auto"
+      ],
+      "declarado390": [
+        "auto"
+      ],
+      "repartoDeclarado1440": {
+        "auto": 78
+      },
+      "repartoDeclarado390": {
+        "auto": 78
+      },
+      "computado1440": [
+        84.81,
+        144
+      ],
+      "computado390": [
+        31.2,
+        39
+      ],
+      "repartoComputado1440": {
+        "144": 55,
+        "84.81": 23
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 78,
+          "valor": {
+            "auto": 78
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 78,
+          "valor": {
+            "auto": 78
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "auto  @390 auto": 78
+      }
+    },
+    {
+      "selector": ".f33-fila",
+      "prop": "width",
+      "n": 81,
+      "nMovil": 81,
+      "deCuantos": 83,
+      "delEditor": 2,
+      "declarado1440": [
+        "80%"
+      ],
+      "declarado390": [
+        "80%"
+      ],
+      "repartoDeclarado1440": {
+        "80%": 81
+      },
+      "repartoDeclarado390": {
+        "80%": 81
+      },
+      "computado1440": [
+        678.52,
+        1152
+      ],
+      "computado390": [
+        249.59,
+        312
+      ],
+      "repartoComputado1440": {
+        "1152": 58,
+        "678.52": 23
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 81,
+          "valor": {
+            "80%": 81
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_row",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 81,
+          "valor": {
+            "80%": 81
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "80%  @390 80%": 81
+      }
+    },
+    {
+      "selector": ".f33-fila",
+      "prop": "max-width",
+      "n": 83,
+      "nMovil": 83,
+      "deCuantos": 83,
+      "delEditor": 0,
+      "declarado1440": [
+        "1380px"
+      ],
+      "declarado390": [
+        "1380px"
+      ],
+      "repartoDeclarado1440": {
+        "1380px": 83
+      },
+      "repartoDeclarado390": {
+        "1380px": 83
+      },
+      "computado1440": [
+        1380
+      ],
+      "computado390": [
+        1380
+      ],
+      "repartoComputado1440": {
+        "1380": 83
+      },
+      "regla1440": [
+        {
+          "selector": ".container, .et_pb_row, .et_pb_slider .et_pb_container, .et_pb_fullwidth_section .et_pb_title_container, .et_pb_fullwidth_section .et_pb_title_featured_conta…",
+          "hoja": "kunak-air-cloud/index.html",
+          "important": false,
+          "n": 83,
+          "valor": {
+            "1380px": 83
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".container, .et_pb_row, .et_pb_slider .et_pb_container, .et_pb_fullwidth_section .et_pb_title_container, .et_pb_fullwidth_section .et_pb_title_featured_conta…",
+          "hoja": "kunak-air-cloud/index.html",
+          "important": false,
+          "n": 83,
+          "valor": {
+            "1380px": 83
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "1380px  @390 1380px": 83
+      }
+    },
+    {
+      "selector": ".f33-fila",
+      "prop": "box-sizing",
+      "n": 83,
+      "nMovil": 83,
+      "deCuantos": 83,
+      "delEditor": 0,
+      "declarado1440": [
+        "border-box"
+      ],
+      "declarado390": [
+        "border-box"
+      ],
+      "repartoDeclarado1440": {
+        "border-box": 83
+      },
+      "repartoDeclarado390": {
+        "border-box": 83
+      },
+      "computado1440": [
+        "border-box"
+      ],
+      "computado390": [
+        "border-box"
+      ],
+      "repartoComputado1440": {
+        "border-box": 83
+      },
+      "regla1440": [
+        {
+          "selector": "*",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 83,
+          "valor": {
+            "border-box": 83
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "*",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 83,
+          "valor": {
+            "border-box": 83
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "border-box  @390 border-box": 83
+      }
+    },
+    {
+      "selector": ".f33-columna",
+      "prop": "float",
+      "n": 149,
+      "nMovil": 149,
+      "deCuantos": 149,
+      "delEditor": 0,
+      "declarado1440": [
+        "left"
+      ],
+      "declarado390": [
+        "left"
+      ],
+      "repartoDeclarado1440": {
+        "left": 149
+      },
+      "repartoDeclarado390": {
+        "left": 149
+      },
+      "computado1440": [
+        "left"
+      ],
+      "computado390": [
+        "left"
+      ],
+      "repartoComputado1440": {
+        "left": 149
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_column",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 149,
+          "valor": {
+            "left": 149
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_column",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 149,
+          "valor": {
+            "left": 149
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "left  @390 left": 149
+      }
+    },
+    {
+      "selector": ".f33-columna",
+      "prop": "margin-bottom",
+      "n": 149,
+      "nMovil": 149,
+      "deCuantos": 149,
+      "delEditor": 0,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "30px",
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 149
+      },
+      "repartoDeclarado390": {
+        "30px": 66,
+        "0px": 83
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        30,
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 149
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 149,
+          "valor": {
+            "0px": 149
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_bottom_divider .et_pb_row:nth-last-child(2) .et_pb_column:last-child, .et_pb_row .et_pb_column.et-last-child, .et_pb_row .et_pb_column:last-child",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 80,
+          "valor": {
+            "0px": 80
+          }
+        },
+        {
+          "selector": ".et_pb_column",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 55,
+          "valor": {
+            "30px": 55
+          }
+        },
+        {
+          "selector": ".et_pb_row .et_pb_column.et_pb_column_1_4, .et_pb_row .et_pb_column.et_pb_column_1_5, .et_pb_row .et_pb_column.et_pb_column_1_6",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 11,
+          "valor": {
+            "30px": 11
+          }
+        },
+        {
+          "selector": ".et_pb_row .et_pb_column.et_pb_column_1_4.et-last-child, .et_pb_row .et_pb_column.et_pb_column_1_4:last-child, .et_pb_row .et_pb_column.et_pb_column_1_5.et-l…",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 3,
+          "valor": {
+            "0px": 3
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 30px": 66,
+        "0px  @390 0px": 83
+      },
+      "separa": {
+        "nCandidatos": 2,
+        "nBiyectivos": 2,
+        "candidatos": [
+          {
+            "eje": "ultimo",
+            "biyectivo": true,
+            "grupos": {
+              "false": "0px  @390 30px",
+              "true": "0px  @390 0px"
+            },
+            "n": {
+              "false": 66,
+              "true": 83
+            }
+          },
+          {
+            "eje": "clase:et-last-child",
+            "biyectivo": true,
+            "grupos": {
+              "—": "0px  @390 30px",
+              "true": "0px  @390 0px"
+            },
+            "n": {
+              "—": 66,
+              "true": 83
+            }
+          }
+        ]
+      }
+    },
+    {
+      "selector": ".f33-columna",
+      "prop": "padding-top",
+      "n": 145,
+      "nMovil": 144,
+      "deCuantos": 149,
+      "delEditor": 4,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 145
+      },
+      "repartoDeclarado390": {
+        "0px": 144
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 145
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 145,
+          "valor": {
+            "0px": 145
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 144,
+          "valor": {
+            "0px": 144
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 144
+      }
+    },
+    {
+      "selector": ".f33-columna",
+      "prop": "padding-bottom",
+      "n": 145,
+      "nMovil": 138,
+      "deCuantos": 149,
+      "delEditor": 4,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 145
+      },
+      "repartoDeclarado390": {
+        "0px": 138
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 145
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 145,
+          "valor": {
+            "0px": 145
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 138,
+          "valor": {
+            "0px": 138
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 138
+      }
+    },
+    {
+      "selector": ".f33-columna",
+      "prop": "box-sizing",
+      "n": 149,
+      "nMovil": 149,
+      "deCuantos": 149,
+      "delEditor": 0,
+      "declarado1440": [
+        "border-box"
+      ],
+      "declarado390": [
+        "border-box"
+      ],
+      "repartoDeclarado1440": {
+        "border-box": 149
+      },
+      "repartoDeclarado390": {
+        "border-box": 149
+      },
+      "computado1440": [
+        "border-box"
+      ],
+      "computado390": [
+        "border-box"
+      ],
+      "repartoComputado1440": {
+        "border-box": 149
+      },
+      "regla1440": [
+        {
+          "selector": "*",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 149,
+          "valor": {
+            "border-box": 149
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "*",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 149,
+          "valor": {
+            "border-box": 149
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "border-box  @390 border-box": 149
+      }
+    },
+    {
+      "selector": ".f33-columna:not(:last-child)",
+      "prop": "margin-right",
+      "n": 66,
+      "nMovil": 66,
+      "deCuantos": 66,
+      "delEditor": 0,
+      "declarado1440": [
+        "5.5%",
+        "3%"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "5.5%": 55,
+        "3%": 11
+      },
+      "repartoDeclarado390": {
+        "0px": 66
+      },
+      "computado1440": [
+        37.31,
+        63.36,
+        34.55,
+        38.88
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "37.31": 17,
+        "63.36": 38,
+        "34.55": 3,
+        "38.88": 8
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_gutters3 .et_pb_column, .et_pb_gutters3.et_pb_row .et_pb_column",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 55,
+          "valor": {
+            "5.5%": 55
+          }
+        },
+        {
+          "selector": ".et_pb_gutters2 .et_pb_column, .et_pb_gutters2.et_pb_row .et_pb_column",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 11,
+          "valor": {
+            "3%": 11
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 55,
+          "valor": {
+            "0px": 55
+          }
+        },
+        {
+          "selector": ".et_pb_row .et_pb_column.et_pb_column_1_4, .et_pb_row .et_pb_column.et_pb_column_1_5, .et_pb_row .et_pb_column.et_pb_column_1_6",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 11,
+          "valor": {
+            "0px": 11
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "5.5%  @390 0px": 55,
+        "3%  @390 0px": 11
+      },
+      "separa": {
+        "nCandidatos": 2,
+        "nBiyectivos": 1,
+        "candidatos": [
+          {
+            "eje": "de:et_pb_gutters2",
+            "biyectivo": true,
+            "grupos": {
+              "—": "5.5%  @390 0px",
+              "true": "3%  @390 0px"
+            },
+            "n": {
+              "—": 55,
+              "true": 11
+            }
+          },
+          {
+            "eje": "reparto",
+            "biyectivo": false,
+            "grupos": {
+              "1_2": "5.5%  @390 0px",
+              "1_3": "5.5%  @390 0px",
+              "1_4": "3%  @390 0px",
+              "2_3": "5.5%  @390 0px",
+              "1_5": "3%  @390 0px"
+            },
+            "n": {
+              "1_2": 24,
+              "1_3": 29,
+              "1_4": 3,
+              "2_3": 2,
+              "1_5": 8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "selector": ".f33-columna:last-child",
+      "prop": "margin-right",
+      "n": 83,
+      "nMovil": 83,
+      "deCuantos": 83,
+      "delEditor": 0,
+      "declarado1440": [
+        "0px !important !important"
+      ],
+      "declarado390": [
+        "0px !important !important"
+      ],
+      "repartoDeclarado1440": {
+        "0px !important !important": 83
+      },
+      "repartoDeclarado390": {
+        "0px !important !important": 83
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 83
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_row .et_pb_column.et-last-child, .et_pb_row .et_pb_column:last-child, .et_pb_row_inner .et_pb_column.et-last-child, .et_pb_row_inner .et_pb_column:las…",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": true,
+          "n": 83,
+          "valor": {
+            "0px !important": 83
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_row .et_pb_column.et-last-child, .et_pb_row .et_pb_column:last-child, .et_pb_row_inner .et_pb_column.et-last-child, .et_pb_row_inner .et_pb_column:las…",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": true,
+          "n": 83,
+          "valor": {
+            "0px !important": 83
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px !important !important  @390 0px !important !important": 83
+      }
+    },
+    {
+      "selector": ".f33-modulo",
+      "prop": "margin-top",
+      "n": 262,
+      "nMovil": 262,
+      "deCuantos": 279,
+      "delEditor": 17,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 262
+      },
+      "repartoDeclarado390": {
+        "0px": 262
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 262
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 262,
+          "valor": {
+            "0px": 262
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 262,
+          "valor": {
+            "0px": 262
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 262
+      }
+    },
+    {
+      "selector": ".f33-modulo",
+      "prop": "padding-top",
+      "n": 273,
+      "nMovil": 273,
+      "deCuantos": 279,
+      "delEditor": 6,
+      "declarado1440": [
+        "0px",
+        "20px",
+        "0.3em"
+      ],
+      "declarado390": [
+        "0px",
+        "20px",
+        "0.3em"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 251,
+        "20px": 10,
+        "0.3em": 12
+      },
+      "repartoDeclarado390": {
+        "0px": 251,
+        "20px": 10,
+        "0.3em": 12
+      },
+      "computado1440": [
+        0,
+        20,
+        4.5
+      ],
+      "computado390": [
+        0,
+        20,
+        4.5
+      ],
+      "repartoComputado1440": {
+        "0": 251,
+        "20": 10,
+        "4.5": 12
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 251,
+          "valor": {
+            "0px": 251
+          }
+        },
+        {
+          "selector": ".et_pb_button",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 12,
+          "valor": {
+            "0.3em": 12
+          }
+        },
+        {
+          "selector": ".et_pb_toggle_close",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 10,
+          "valor": {
+            "20px": 10
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 251,
+          "valor": {
+            "0px": 251
+          }
+        },
+        {
+          "selector": ".et_pb_button",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 12,
+          "valor": {
+            "0.3em": 12
+          }
+        },
+        {
+          "selector": ".et_pb_toggle_close",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 10,
+          "valor": {
+            "20px": 10
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 251,
+        "20px  @390 20px": 10,
+        "0.3em  @390 0.3em": 12
+      },
+      "separa": {
+        "nCandidatos": 1,
+        "nBiyectivos": 0,
+        "candidatos": [
+          {
+            "eje": "tipo",
+            "biyectivo": false,
+            "grupos": {
+              "text": "0px  @390 0px",
+              "toggle": "20px  @390 20px",
+              "image": "0px  @390 0px",
+              "button": "0.3em  @390 0.3em",
+              "blurb": "0px  @390 0px",
+              "code": "0px  @390 0px",
+              "map": "0px  @390 0px",
+              "slider": "0px  @390 0px",
+              "icon": "0px  @390 0px"
+            },
+            "n": {
+              "text": 149,
+              "toggle": 10,
+              "image": 71,
+              "button": 12,
+              "blurb": 17,
+              "code": 9,
+              "map": 1,
+              "slider": 1,
+              "icon": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "selector": ".f33-modulo",
+      "prop": "padding-bottom",
+      "n": 251,
+      "nMovil": 251,
+      "deCuantos": 279,
+      "delEditor": 28,
+      "declarado1440": [
+        "0px",
+        "20px",
+        "0.3em"
+      ],
+      "declarado390": [
+        "0px",
+        "20px",
+        "0.3em"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 229,
+        "20px": 10,
+        "0.3em": 12
+      },
+      "repartoDeclarado390": {
+        "0px": 229,
+        "20px": 10,
+        "0.3em": 12
+      },
+      "computado1440": [
+        0,
+        20,
+        4.5
+      ],
+      "computado390": [
+        0,
+        20,
+        4.5
+      ],
+      "repartoComputado1440": {
+        "0": 229,
+        "20": 10,
+        "4.5": 12
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 229,
+          "valor": {
+            "0px": 229
+          }
+        },
+        {
+          "selector": ".et_pb_button",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 12,
+          "valor": {
+            "0.3em": 12
+          }
+        },
+        {
+          "selector": ".et_pb_toggle_close",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 10,
+          "valor": {
+            "20px": 10
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 229,
+          "valor": {
+            "0px": 229
+          }
+        },
+        {
+          "selector": ".et_pb_button",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 12,
+          "valor": {
+            "0.3em": 12
+          }
+        },
+        {
+          "selector": ".et_pb_toggle_close",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 10,
+          "valor": {
+            "20px": 10
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 229,
+        "20px  @390 20px": 10,
+        "0.3em  @390 0.3em": 12
+      },
+      "separa": {
+        "nCandidatos": 1,
+        "nBiyectivos": 0,
+        "candidatos": [
+          {
+            "eje": "tipo",
+            "biyectivo": false,
+            "grupos": {
+              "text": "0px  @390 0px",
+              "toggle": "20px  @390 20px",
+              "image": "0px  @390 0px",
+              "button": "0.3em  @390 0.3em",
+              "blurb": "0px  @390 0px",
+              "code": "0px  @390 0px",
+              "map": "0px  @390 0px",
+              "slider": "0px  @390 0px",
+              "icon": "0px  @390 0px"
+            },
+            "n": {
+              "text": 128,
+              "toggle": 10,
+              "image": 70,
+              "button": 12,
+              "blurb": 17,
+              "code": 9,
+              "map": 1,
+              "slider": 1,
+              "icon": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "selector": ".f33-modulo",
+      "prop": "margin-left",
+      "n": 217,
+      "nMovil": 214,
+      "deCuantos": 279,
+      "delEditor": 62,
+      "declarado1440": [
+        "0px",
+        "auto"
+      ],
+      "declarado390": [
+        "0px",
+        "auto"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 208,
+        "auto": 9
+      },
+      "repartoDeclarado390": {
+        "0px": 205,
+        "auto": 9
+      },
+      "computado1440": [
+        0,
+        24.05,
+        40.83,
+        25.63
+      ],
+      "computado390": [
+        0,
+        18.72,
+        23.41
+      ],
+      "repartoComputado1440": {
+        "0": 208,
+        "24.05": 2,
+        "40.83": 1,
+        "25.63": 6
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 208,
+          "valor": {
+            "0px": 208
+          }
+        },
+        {
+          "selector": ".et_pb_image",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 9,
+          "valor": {
+            "auto": 9
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 205,
+          "valor": {
+            "0px": 205
+          }
+        },
+        {
+          "selector": ".et_pb_image",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 9,
+          "valor": {
+            "auto": 9
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 205,
+        "auto  @390 auto": 9
+      },
+      "separa": {
+        "nCandidatos": 2,
+        "nBiyectivos": 1,
+        "candidatos": [
+          {
+            "eje": "clase:et_pb_image",
+            "biyectivo": true,
+            "grupos": {
+              "—": "0px  @390 0px",
+              "true": "auto  @390 auto"
+            },
+            "n": {
+              "—": 205,
+              "true": 9
+            }
+          },
+          {
+            "eje": "tipo",
+            "biyectivo": false,
+            "grupos": {
+              "text": "0px  @390 0px",
+              "toggle": "0px  @390 0px",
+              "image": "auto  @390 auto",
+              "button": "0px  @390 0px",
+              "blurb": "0px  @390 0px",
+              "code": "0px  @390 0px",
+              "map": "0px  @390 0px",
+              "slider": "0px  @390 0px"
+            },
+            "n": {
+              "text": 150,
+              "toggle": 10,
+              "image": 9,
+              "button": 12,
+              "blurb": 22,
+              "code": 9,
+              "map": 1,
+              "slider": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "selector": ".f33-modulo",
+      "prop": "margin-right",
+      "n": 270,
+      "nMovil": 267,
+      "deCuantos": 279,
+      "delEditor": 9,
+      "declarado1440": [
+        "0px",
+        "auto"
+      ],
+      "declarado390": [
+        "0px",
+        "auto"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 208,
+        "auto": 62
+      },
+      "repartoDeclarado390": {
+        "0px": 205,
+        "auto": 62
+      },
+      "computado1440": [
+        0,
+        24.05,
+        40.83,
+        25.64
+      ],
+      "computado390": [
+        0,
+        18.73,
+        23.41
+      ],
+      "repartoComputado1440": {
+        "0": 261,
+        "24.05": 2,
+        "40.83": 1,
+        "25.64": 6
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 208,
+          "valor": {
+            "0px": 208
+          }
+        },
+        {
+          "selector": ".et_pb_image",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 62,
+          "valor": {
+            "auto": 62
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 205,
+          "valor": {
+            "0px": 205
+          }
+        },
+        {
+          "selector": ".et_pb_image",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 62,
+          "valor": {
+            "auto": 62
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 205,
+        "auto  @390 auto": 62
+      },
+      "separa": {
+        "nCandidatos": 2,
+        "nBiyectivos": 1,
+        "candidatos": [
+          {
+            "eje": "clase:et_pb_image",
+            "biyectivo": true,
+            "grupos": {
+              "—": "0px  @390 0px",
+              "true": "auto  @390 auto"
+            },
+            "n": {
+              "—": 205,
+              "true": 62
+            }
+          },
+          {
+            "eje": "tipo",
+            "biyectivo": false,
+            "grupos": {
+              "text": "0px  @390 0px",
+              "toggle": "0px  @390 0px",
+              "image": "auto  @390 auto",
+              "button": "0px  @390 0px",
+              "blurb": "0px  @390 0px",
+              "code": "0px  @390 0px",
+              "map": "0px  @390 0px",
+              "slider": "0px  @390 0px"
+            },
+            "n": {
+              "text": 150,
+              "toggle": 10,
+              "image": 62,
+              "button": 12,
+              "blurb": 22,
+              "code": 9,
+              "map": 1,
+              "slider": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "selector": ".f33-modulo",
+      "prop": "box-sizing",
+      "n": 279,
+      "nMovil": 279,
+      "deCuantos": 279,
+      "delEditor": 0,
+      "declarado1440": [
+        "border-box"
+      ],
+      "declarado390": [
+        "border-box"
+      ],
+      "repartoDeclarado1440": {
+        "border-box": 279
+      },
+      "repartoDeclarado390": {
+        "border-box": 279
+      },
+      "computado1440": [
+        "border-box"
+      ],
+      "computado390": [
+        "border-box"
+      ],
+      "repartoComputado1440": {
+        "border-box": 279
+      },
+      "regla1440": [
+        {
+          "selector": "*",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 279,
+          "valor": {
+            "border-box": 279
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "*",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 279,
+          "valor": {
+            "border-box": 279
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "border-box  @390 border-box": 279
+      }
+    },
+    {
+      "selector": ".f33-col-1_2 > .f33-modulo",
+      "prop": "margin-bottom",
+      "n": 20,
+      "nMovil": 20,
+      "deCuantos": 36,
+      "delEditor": 16,
+      "declarado1440": [
+        "5.82%"
+      ],
+      "declarado390": [
+        "30px"
+      ],
+      "repartoDeclarado1440": {
+        "5.82%": 20
+      },
+      "repartoDeclarado390": {
+        "30px": 20
+      },
+      "computado1440": [
+        18.66,
+        31.67
+      ],
+      "computado390": [
+        30
+      ],
+      "repartoComputado1440": {
+        "18.66": 12,
+        "31.67": 8
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_gutters3 .et_pb_column_1_2 .et_pb_module, .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 20,
+          "valor": {
+            "5.82%": 20
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_column .et_pb_module",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 20,
+          "valor": {
+            "30px": 20
+          }
+        }
+      ],
+      "nota": "el default lo sirve `.et_pb_gutters<n> .et_pb_column_<reparto> .et_pb_module` como % de la COLUMNA; ver `regla1440`",
+      "par": {
+        "5.82%  @390 30px": 20
+      }
+    },
+    {
+      "selector": ".f33-col-4_4 > .f33-modulo",
+      "prop": "margin-bottom",
+      "n": 24,
+      "nMovil": 24,
+      "deCuantos": 36,
+      "delEditor": 12,
+      "declarado1440": [
+        "2.75%"
+      ],
+      "declarado390": [
+        "30px"
+      ],
+      "repartoDeclarado1440": {
+        "2.75%": 24
+      },
+      "repartoDeclarado390": {
+        "30px": 24
+      },
+      "computado1440": [
+        31.67
+      ],
+      "computado390": [
+        30
+      ],
+      "repartoComputado1440": {
+        "31.67": 24
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_gutters3 .et_pb_column_4_4 .et_pb_module, .et_pb_gutters3.et_pb_row .et_pb_column_4_4 .et_pb_module",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 24,
+          "valor": {
+            "2.75%": 24
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_column .et_pb_module",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 24,
+          "valor": {
+            "30px": 24
+          }
+        }
+      ],
+      "nota": "el default lo sirve `.et_pb_gutters<n> .et_pb_column_<reparto> .et_pb_module` como % de la COLUMNA; ver `regla1440`",
+      "par": {
+        "2.75%  @390 30px": 24
+      }
+    },
+    {
+      "selector": ".f33-col-1_3 > .f33-modulo",
+      "prop": "margin-bottom",
+      "n": 30,
+      "nMovil": 30,
+      "deCuantos": 44,
+      "delEditor": 14,
+      "declarado1440": [
+        "9.27%"
+      ],
+      "declarado390": [
+        "30px"
+      ],
+      "repartoDeclarado1440": {
+        "9.27%": 30
+      },
+      "repartoDeclarado390": {
+        "30px": 30
+      },
+      "computado1440": [
+        31.67,
+        27.22
+      ],
+      "computado390": [
+        30
+      ],
+      "repartoComputado1440": {
+        "31.67": 27,
+        "27.22": 3
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_gutters3 .et_pb_column_1_3 .et_pb_module, .et_pb_gutters3.et_pb_row .et_pb_column_1_3 .et_pb_module",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 30,
+          "valor": {
+            "9.27%": 30
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_column .et_pb_module",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 30,
+          "valor": {
+            "30px": 30
+          }
+        }
+      ],
+      "nota": "el default lo sirve `.et_pb_gutters<n> .et_pb_column_<reparto> .et_pb_module` como % de la COLUMNA; ver `regla1440`",
+      "par": {
+        "9.27%  @390 30px": 30
+      }
+    },
+    {
+      "selector": ".f33-col-2_3 > .f33-modulo",
+      "prop": "margin-bottom",
+      "n": 30,
+      "nMovil": 30,
+      "deCuantos": 35,
+      "delEditor": 5,
+      "declarado1440": [
+        "4.242%"
+      ],
+      "declarado390": [
+        "30px"
+      ],
+      "repartoDeclarado1440": {
+        "4.242%": 30
+      },
+      "repartoDeclarado390": {
+        "30px": 30
+      },
+      "computado1440": [
+        31.67
+      ],
+      "computado390": [
+        30
+      ],
+      "repartoComputado1440": {
+        "31.67": 30
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_gutters3 .et_pb_column_2_3 .et_pb_module, .et_pb_gutters3.et_pb_row .et_pb_column_2_3 .et_pb_module",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 30,
+          "valor": {
+            "4.242%": 30
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_column .et_pb_module",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 30,
+          "valor": {
+            "30px": 30
+          }
+        }
+      ],
+      "nota": "el default lo sirve `.et_pb_gutters<n> .et_pb_column_<reparto> .et_pb_module` como % de la COLUMNA; ver `regla1440`",
+      "par": {
+        "4.242%  @390 30px": 30
+      }
+    },
+    {
+      "selector": ".f33-col-1_4 > .f33-modulo",
+      "prop": "margin-bottom",
+      "n": 0,
+      "nMovil": 0,
+      "deCuantos": 0,
+      "delEditor": 0,
+      "declarado1440": [],
+      "declarado390": [],
+      "repartoDeclarado1440": {},
+      "repartoDeclarado390": {},
+      "computado1440": [],
+      "computado390": [],
+      "repartoComputado1440": {},
+      "regla1440": [],
+      "regla390": [],
+      "nota": "el default lo sirve `.et_pb_gutters<n> .et_pb_column_<reparto> .et_pb_module` como % de la COLUMNA; ver `regla1440`",
+      "par": {}
+    },
+    {
+      "selector": ".f33-col-1_5 > .f33-modulo",
+      "prop": "margin-bottom",
+      "n": 1,
+      "nMovil": 1,
+      "deCuantos": 1,
+      "delEditor": 0,
+      "declarado1440": [
+        "8.523%"
+      ],
+      "declarado390": [
+        "30px"
+      ],
+      "repartoDeclarado1440": {
+        "8.523%": 1
+      },
+      "repartoDeclarado390": {
+        "30px": 1
+      },
+      "computado1440": [
+        19.44
+      ],
+      "computado390": [
+        30
+      ],
+      "repartoComputado1440": {
+        "19.44": 1
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_gutters2 .et_pb_column_1_5 .et_pb_module, .et_pb_gutters2.et_pb_row .et_pb_column_1_5 .et_pb_module",
+          "hoja": "divi-dynamic-critical-inline-css",
+          "important": false,
+          "n": 1,
+          "valor": {
+            "8.523%": 1
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_column .et_pb_module",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 1,
+          "valor": {
+            "30px": 1
+          }
+        }
+      ],
+      "nota": "el default lo sirve `.et_pb_gutters<n> .et_pb_column_<reparto> .et_pb_module` como % de la COLUMNA; ver `regla1440`",
+      "par": {
+        "8.523%  @390 30px": 1
+      }
+    },
+    {
+      "selector": ".f33-modulo:last-child",
+      "prop": "margin-bottom",
+      "n": 118,
+      "nMovil": 109,
+      "deCuantos": 128,
+      "delEditor": 10,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 118
+      },
+      "repartoDeclarado390": {
+        "0px": 109
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 118
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module.et-last-child, .et_pb_section.et_section_specialty div.et_pb_row …",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 118,
+          "valor": {
+            "0px": 118
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_row .et_pb_column .et_pb_module.et-last-child, .et_pb_row .et_pb_column .et_pb_module:last-child, .et_section_specialty .et_pb_row .et_pb_column .et_p…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 109,
+          "valor": {
+            "0px": 109
+          }
+        }
+      ],
+      "nota": "el original lo sirve con `.et-last-child`; el clon no emite esa clase, así que la hoja usa `:last-child`",
+      "par": {
+        "0px  @390 0px": 109
+      }
+    },
+    {
+      "selector": ".f33-modulo · ENVOLTORIO del original",
+      "prop": "(nivel aparte)",
+      "n": 13,
+      "deCuantos": 13,
+      "porTipo": {
+        "button": 13
+      },
+      "declarado1440": [
+        null,
+        "0px"
+      ],
+      "declarado390": [
+        null,
+        "0px"
+      ],
+      "regla1440": [
+        {
+          "selector": ".et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module.et-last-child, .et_pb_section.et_section_specialty div.et_pb_row …",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 10,
+          "valor": {
+            "0px": 10
+          }
+        }
+      ],
+      "nota": "el walker identifica el módulo por su ORDINAL y en `button` el ordinal está en el <a>; `et_pb_module` está en el div de fuera. Éste es el nodo que recibe la retícula, y el que el clon emite como `.f33-modulo.f33-boton`"
+    },
+    {
+      "selector": ".f33-modulo[envoltorio]",
+      "prop": "margin-bottom",
+      "n": 10,
+      "nMovil": 4,
+      "deCuantos": 13,
+      "delEditor": 3,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 10
+      },
+      "repartoDeclarado390": {
+        "0px": 4
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 10
+      },
+      "regla1440": [
+        {
+          "selector": ".et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module.et-last-child, .et_pb_section.et_section_specialty div.et_pb_row …",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 10,
+          "valor": {
+            "0px": 10
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": ".et_pb_row .et_pb_column .et_pb_module.et-last-child, .et_pb_row .et_pb_column .et_pb_module:last-child, .et_section_specialty .et_pb_row .et_pb_column .et_p…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 4,
+          "valor": {
+            "0px": 4
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 4
+      }
+    },
+    {
+      "selector": ".f33-modulo[envoltorio]",
+      "prop": "margin-top",
+      "n": 3,
+      "nMovil": 3,
+      "deCuantos": 13,
+      "delEditor": 10,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 3
+      },
+      "repartoDeclarado390": {
+        "0px": 3
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 3
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 3,
+          "valor": {
+            "0px": 3
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 3,
+          "valor": {
+            "0px": 3
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 3
+      }
+    },
+    {
+      "selector": ".f33-modulo[envoltorio]",
+      "prop": "padding-top",
+      "n": 13,
+      "nMovil": 13,
+      "deCuantos": 13,
+      "delEditor": 0,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 13
+      },
+      "repartoDeclarado390": {
+        "0px": 13
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 13
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 13,
+          "valor": {
+            "0px": 13
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 13,
+          "valor": {
+            "0px": 13
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 13
+      }
+    },
+    {
+      "selector": ".f33-modulo[envoltorio]",
+      "prop": "padding-bottom",
+      "n": 13,
+      "nMovil": 13,
+      "deCuantos": 13,
+      "delEditor": 0,
+      "declarado1440": [
+        "0px"
+      ],
+      "declarado390": [
+        "0px"
+      ],
+      "repartoDeclarado1440": {
+        "0px": 13
+      },
+      "repartoDeclarado390": {
+        "0px": 13
+      },
+      "computado1440": [
+        0
+      ],
+      "computado390": [
+        0
+      ],
+      "repartoComputado1440": {
+        "0": 13
+      },
+      "regla1440": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 13,
+          "valor": {
+            "0px": 13
+          }
+        }
+      ],
+      "regla390": [
+        {
+          "selector": "a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6,…",
+          "hoja": "divi-style-parent-inline-inline-css",
+          "important": false,
+          "n": 13,
+          "valor": {
+            "0px": 13
+          }
+        }
+      ],
+      "nota": null,
+      "par": {
+        "0px  @390 0px": 13
+      }
+    },
+    {
+      "selector": ".f33-seccion > .f33-modulo",
+      "prop": "(módulo suelto, sin fila)",
+      "n": 2,
+      "deCuantos": 2,
+      "declarado1440": [
+        "mt0 mb0 w1440"
+      ],
+      "nota": "los `fullwidth` cuelgan de la SECCIÓN sin pasar por fila; hoy los 2 medidos son `slider-completo`, o sea SIN_CABLEAR"
+    }
+  ],
+  "problemas": []
+}

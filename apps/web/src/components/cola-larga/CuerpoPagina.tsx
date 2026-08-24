@@ -1,5 +1,12 @@
 import type { CSSProperties, ReactNode } from "react";
 
+/**
+ * La HOJA de este arquetipo. Se importa aquí —y no en `globals.css`— por el
+ * mismo criterio que `listados.css`: la hoja viaja con el componente que la
+ * usa. Cada número suyo lo derivó `npm run qa:f33-clases`.
+ */
+import "@/app/f33.css";
+
 import type {
   ColumnaPagina,
   FilaPagina,
@@ -39,22 +46,28 @@ import type {
  * o sea el defecto de KB leído al revés, mandando a arreglar lo que no está
  * roto. Corregido aquí con `data-modulo` / `data-seccion`.
  *
- * ── ⚠⚠ LO QUE EL COTEJO NO PUEDE ARREGLAR: **NO EXISTE `f33.css`** ────────
- * Derivado, no recordado: este fichero emite **17 clases `f33-*`** y **5
- * familias de variables** (`--f33s-* · --f33f-* · --f33m-* · --f33h-* ·
- * --f33blurb-*`), y las cuatro hojas del clon —`globals · kb · listados ·
- * tema`— tienen **0 reglas** para cualquiera de ellas. Nadie las lee.
+ * ── ✅ `f33.css` EXISTE DESDE LA 102.ª — y sus números están DERIVADOS ─────
+ * Hasta la 101.ª este bloque decía *«NO EXISTE `f33.css` … todo el sistema de
+ * ritmo, retícula y ancho de este componente es INERTE»*. Era cierto y **ya no
+ * lo es**: la 102.ª construyó `qa:f33-clases` —el equivalente de
+ * `qa:kb-clases`— y escribió `src/app/f33.css` desde su congelada.
  *
- * O sea que **todo el sistema de ritmo, retícula y ancho de este componente es
- * INERTE**: las variables llegan al HTML servido y no alcanzan ninguna
- * propiedad. Es §*el marcador prueba que el build es nuevo, NO que el cambio
- * tenga efecto* en su forma más cara — el diff se lee correcto, la clase está
- * servida, y el cambio no existe.
+ * El discriminador que hacía falta estaba SERVIDO y nadie lo había mirado:
+ * **Divi no escribe marcado, COMPILA CSS**, así que lo que el editor tocó viaja
+ * en una regla con ORDINAL en el `<style>` de su página y lo que pone la
+ * plantilla viaja en reglas genéricas del tema. La sonda lee la cascada por CDP
+ * y deriva el default de los nodos que llegan a la genérica — **297 de 570 nodos
+ * llevan override**, que es lo que hace que la separación signifique algo.
  *
- * El patrón del repo es hoja-por-arquetipo (`kb.css` 543 líneas, `listados.css`)
- * y **cada número de `kb.css` lo derivó `qa:kb-clases`**, que para este
- * arquetipo **no existe**. Escribir `f33.css` a ojo sería fabricar una FAMILIA
- * DE CALIBRACIÓN, así que no se escribe aquí: ficha `F3-3-SIN-HOJA`.
+ * ⚠ **Y «la hoja existe» NO es «la hoja funciona».** Una declaración puede estar
+ * escrita, servida y ser INERTE (§*el marcador prueba que el build es nuevo, no
+ * que el cambio tenga efecto*). Eso sólo lo cierra `qa:f33-cmp` midiendo el clon
+ * par a par, y sigue a **0 ejes comparados** porque las 31 rutas no se emiten.
+ *
+ * ⚠ Lo que la hoja **no** escribe, con su cardinal, está en su propia cabecera:
+ * las 2 familias de piel (`--f33h-*`, `--f33blurb-*`), el `padding` en `em` del
+ * botón, el `mb` de `1_4`, el centrado de `.f33-ancho` y 4 de los 10 valores del
+ * enum `ancho`.
  * ═════════════════════════════════════════════════════════════════════════
  *
  * ══════════════════════════════════════════════════════════════════════════
@@ -428,13 +441,24 @@ function Modulo({ m }: { m: ModuloPagina }) {
  * ⚠⚠ **LO QUE ESTA COLUMNA NO PUEDE DECIRLE A LA HOJA, Y POR QUÉ NO SE INVENTA
  * (CMS-5, `ESQUEMA §2j.8`).**
  *
- * El default de `mb` de un módulo **depende del ANCHO DE LA FILA**, no del tipo
- * de columna — medido en dos arquetipos: un `1_2` de **585.13** en fila de
- * 1238.39 lleva **34.0469**, y un `2_3` de **591.11** —casi el mismo ancho de
- * columna— en fila de 911.75 lleva **25.0625**. O sea que la hoja necesita el
- * ancho de FILA para resolverlo.
+ * ⚠⚠ **CORREGIDO 2026-08-24 (102.ª): ESTE BLOQUE AFIRMABA QUE LA HOJA NECESITA
+ * EL ANCHO DE FILA PARA RESOLVER EL `mb`. NO LO NECESITA.**
  *
- * Y ese ancho **lo decide el RÉGIMEN** (`B-` ⇒ 1238.39 · `BT` ⇒ 911.75).
+ * El hecho medido sigue en pie —un `1_2` de **585.13** en fila de 1238.39 lleva
+ * **34.0469** y un `2_3` de **591.11** en fila de 911.75 lleva **25.0625**— y la
+ * conclusión que se sacaba de él era falsa. `qa:f33-clases` leyó la CASCADA y la
+ * regla que el original sirve es
+ *
+ *     .et_pb_gutters3 .et_pb_column_1_2 .et_pb_module { margin-bottom: 5.82% }
+ *
+ * o sea **un porcentaje de la COLUMNA**. Un `%` se resuelve solo contra su
+ * contenedor, así que los mismos `5.82%` dan 25.06 en una fila y 34.05 en la
+ * otra **sin que la hoja sepa nada de la fila ni del régimen**. Es §*el veredicto
+ * lo da la salida servida, no la fuente que uno supone responsable*: se estaba
+ * razonando sobre px cuando la declaración estaba escrita al lado.
+ *
+ * Lo que el régimen sigue decidiendo es **el CASCARÓN**; para el `mb` del
+ * módulo, no.
  *
  * **La primera versión de este componente emitía `data-fila-ancho` derivándolo
  * del REPARTO DE COLUMNAS** —`4_4` sola ⇒ «completa», si no «repartida»—. Eso
@@ -451,12 +475,13 @@ function Modulo({ m }: { m: ModuloPagina }) {
  * clase que la 100.ª pagó en `colecciones/paginas.ts` — *ningún comentario
  * declara un hecho del repo*.
  *
- * **Lo que sigue siendo cierto es la otra mitad, y es la que bloquea:** el
- * régimen existe en la COLECCIÓN y **no llega hasta aquí** — ni
- * `PaginaColaLarga` (lectura) lo declara ni `CuerpoPagina` lo recibe. No se
- * cablea en esta tanda **porque no habría quién lo leyera**: sin `f33.css`
- * (§F3-3-SIN-HOJA) sería una pieza inerte más, y una pieza inerte no se puede
- * adjudicar. Va junto con la hoja, no antes.
+ * **Y la otra mitad, que la 101.ª daba por bloqueante, TAMPOCO lo es ya.** Decía
+ * que el régimen *«existe en la COLECCIÓN y no llega hasta aquí»* y que había
+ * que cablearlo junto con la hoja. La hoja está escrita y **no lo pide**: el
+ * único consumidor que se le suponía era el default de `mb`, y ése se resuelve
+ * en % contra la columna. Así que el régimen **sigue sin llegar a este
+ * componente y ya no hay motivo para que llegue** — lo que lo necesita es la
+ * elección de CASCARÓN, que es otra pieza y otra tanda.
  *
  * ⚠ **Y aun con el régimen, el ancho de fila NO es función total suya**:
  * `reticula.spec.md` §1 mide **3 filas de 79 con ancho minoritario** (1296 ×2 ·

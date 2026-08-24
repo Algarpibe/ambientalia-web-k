@@ -1,0 +1,349 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * LAS CLASES `f33-*` — la PLANTILLA del cuerpo de la COLA LARGA
+ *
+ * Cada número de esta hoja sale de `npm run qa:f33-clases`
+ * (congelada `medidas/f33-clases.json`, 31 rutas · 704 nodos · 570 con caja).
+ * El `n=` de cada bloque es **cuántos nodos del original lo sostienen**, y no es
+ * el total: es la población que llega a la PLANTILLA, o sea los nodos donde el
+ * editor NO escribió nada.
+ *
+ * ── QUÉ SEPARA «lo que pone la plantilla» de «lo que escribió el editor» ───
+ * Divi **no escribe marcado: COMPILA CSS**. Lo que el editor tocó viaja en una
+ * regla con ORDINAL —`.et_pb_image_0 { margin-top: -33px !important }`—
+ * compilada en el `<style>` de su propia página; lo que pone la plantilla viaja
+ * en reglas GENÉRICAS de las hojas del tema. `qa:f33-clases` lee la cascada
+ * (`CSS.getMatchedStylesForNode`), mira **qué regla GANA** cada propiedad en
+ * cada nodo, y deriva el default de los nodos que llegan a la genérica.
+ *
+ * **297 nodos de 570 llevan al menos un override del editor**, así que el
+ * discriminador no es decorativo: sin él esos 297 entrarían en la población y
+ * el default saldría contaminado. Ese número es lo que hace que este verde
+ * signifique algo (§*un verde vale lo que valen sus instancias separadoras*).
+ *
+ * ── Las cuatro cosas que hay que saber antes de tocar una línea ────────────
+ *
+ * **1 · Lo que se escribe es la DECLARACIÓN, no el px medido.** El valor
+ * computado es el valor USADO, y confunde dos cosas: `margin: auto` de una fila
+ * **computa `0px`**, y `padding: 4%` computa 57.59 contra 1440 y 36.47 contra
+ * 911.75. Escribir el px sería cablear un contenedor (§*un default expresado
+ * como porcentaje se lee como constante en cuanto se cita*). La cascada
+ * devuelve lo DECLARADO, así que aquí van `4%`, `auto` y `2.75%`.
+ *
+ * **2 · El default vive AQUÍ y el campo llega por VARIABLE**, con tres pisos —
+ * porque el original tiene tres:
+ *
+ *     escritorio:  padding-top: var(--f33f-pt, 2%)
+ *     ≤980:        padding-top: var(--f33f-pt-movil, var(--f33f-pt, 30px))
+ *
+ * El de en medio no es adorno: un campo escrito en `%` **sigue siendo %** a 390,
+ * mientras el default de Divi cambia de UNIDAD al apilar (`2%` → `30px` plano).
+ *
+ * **3 · Los nombres llevan prefijo POR NIVEL**, y no es estética: las custom
+ * properties **heredan**, así que un `--f33-mb` puesto en la fila lo verían sus
+ * columnas y sus módulos. De ahí `--f33s-*` (sección) · `--f33f-*` (fila) ·
+ * `--f33m-*` (módulo).
+ *
+ * > ⚠⚠ **Y HOY NINGÚN DOCUMENTO PONE NINGUNA DE ESAS VARIABLES: el lado del
+ * > CAMPO está SIN ESTRENAR, 0 de 313.** El extractor **no emite ni una clave de
+ * > geometría** —a propósito, y con un sabotaje que lo vigila—, así que lo que
+ * > llega a la propiedad es **siempre el default de esta hoja**. Eso no es un
+ * > defecto: es lo que `f33-geo` decidió al declarar 24 de 49 celdas SIN
+ * > ESCRIBIR. Pero sí es §*un campo que ADMITE un caso y que ningún dato de
+ * > calibración EJERCITA es un camino de render sin estrenar*, y por eso se dice
+ * > aquí con su denominador en vez de dejar creer que la cascada de tres pisos
+ * > está probada. **Lo que está probado son los defaults.**
+ *
+ * **4 · El corte responsive es 980, el de Divi** (el mismo que `kb.css` y
+ * `CascaronTb`). ⚠ Con dos anchos medidos —1440 y 390— **el corte mismo está
+ * SIN PROBAR**: cualquier valor entre 391 y 1439 cumple.
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ EL `margin-bottom` DEL MÓDULO SE ESCRIBE EN %, Y ESO RETIRA UNA
+ * DEPENDENCIA QUE `CuerpoPagina.tsx` DABA POR BLOQUEANTE
+ *
+ * `kb.css` lo escribió **en px** con esta razón, que era honesta:
+ *
+ *   > *«el default de `mb` NO es un número: es una tabla por TIPO DE COLUMNA, y
+ *   > el mecanismo está SIN PROBAR … escribirlo en % obligaría a elegir contra
+ *   > qué ancestro, que es exactamente lo que no se sabe»*
+ *
+ * **La cascada lo dice.** La regla servida es
+ *
+ *     .et_pb_gutters3 .et_pb_column_1_2 .et_pb_module { margin-bottom: 5.82% }
+ *
+ * o sea **un porcentaje de la COLUMNA, distinto por reparto** — elegido por Divi
+ * para que el px resultante sea siempre la misma fracción de la FILA. Y como el
+ * % se resuelve solo contra la columna, **la hoja no necesita saber el ancho de
+ * fila ni el régimen**: los mismos `5.82%` dan `25.06` en una fila de 911.75 y
+ * `34.05` en una de 1238.39, que son exactamente los dos valores medidos.
+ *
+ * Con lo cual la nota de `CuerpoPagina.tsx` —*«la hoja necesita el ancho de FILA
+ * para resolverlo, y ese ancho lo decide el RÉGIMEN»*— **deja de aplicar a esta
+ * propiedad**. El régimen sigue haciendo falta para el cascarón; para el `mb`
+ * del módulo, no.
+ *
+ * ⚠ Lo que NO cierra: **por qué en `articulos-kb` una `4_4` de una fila de
+ * 911.75 resuelve contra 1238.39** sigue SIN PROBAR. Aquí no se toca `kb.css`;
+ * queda fichado que la misma lectura podría resolverlo (§F3-3-MB-EN-PORCENTAJE).
+ *
+ * ══════════════════════════════════════════════════════════════════════════
+ * LO QUE ESTA HOJA **NO** ESCRIBE — con su cardinal, y por qué
+ *
+ * | qué | n | por qué no |
+ * |---|---|---|
+ * | las PIELES de titular (`--f33h-*`, `--f33blurb-*`) | 2 de 5 familias | `qa:f33-clases` mide caja y ritmo, **no tipografía**. Hace falta el equivalente de `qa:kb-tipografia` |
+ * | el `padding` del BOTÓN (`0.5em` / `0.6em`) | 12 | está en `em`, y **un `em` sin su `font-size` es la misma trampa que un `%` sin su contenedor**. Su base es la piel del botón, que es SIN DERIVAR |
+ * | el `margin-bottom` de `.f33-col-1_4 > .f33-modulo` | 0 de 4 | las 4 columnas `1_4` tienen **un solo módulo**, así que ninguna llega al default: no hay población |
+ * | el centrado de `.f33-ancho` | — | esta sonda no cruzó `anchoPct` con el margen declarado por el editor. `kb.css` lo derivó; aquí **no**, y no se copia |
+ * | el ancho de `1_6 · 2_5 · 3_5 · 3_4` | 0 instancias | el enum de `ancho` tiene **10 valores** y el corpus ejercita **6**. Cuatro caminos de render sin estrenar (§`qa:nunca-vistos`) |
+ * | `width` y `text-align` de la sección | 56 | su ÚNICO valor observado es el INICIAL de la propiedad — *no es campo ni plantilla: nadie tocó nada*, y no se cablea |
+ * | el `padding-right: 50` del `et_pb_toggle_title` | 10 de 10 | está MEDIDO y su discriminador NO: `interior-f33` midió ritmo y caja del nivel interior, **no su cascada**. Uniforme en 10 no es plantilla probada |
+ * | el `max-width: 550px` del `et_pb_blurb_content` | 9 de 22 | idem — y además el clon **no emite ese envoltorio** |
+ *
+ * ── Y lo que de los SIETE HUECOS de forma queda decidido, con su número ────
+ * `derivaciones/interior-f33.log`, 311 primeros-hijos de módulo:
+ *
+ * | envoltorio | n | ¿lo necesita el clon? |
+ * |---|---|---|
+ * | `et_pb_text_inner` | **151** | ⛔ **NO** — ritmo NULO, `block`, **100 % del módulo**. Medido, igual que en KB |
+ * | `et_pb_code_inner` | **9** | ⛔ **NO** — idem |
+ * | `et_pb_blurb_content` | 22 | ✅ **SÍ**: `max-width: 550px` en 9 |
+ * | `et_pb_image_wrap` | 53 | ⚠ `display: inline-block` en 26 — importa |
+ * | `et_pb_icon_wrap` | 3 | ✅ **SÍ**: el clon emite UN span donde hay DOS |
+ * | `et_pb_video_box` | 30 | ⛔ **no medible** — desplegables cerrados |
+ *
+ * Ninguno de los que hacen falta se resuelve en esta hoja: **son del
+ * COMPONENTE**, y van con su ficha (§F3-3-MARCADO-INTERIOR).
+ *
+ * ⚠ **Y esta hoja no está VERIFICADA.** Verificar el CSS contra el CSS es
+ * *«contra la fuente que uno supone responsable»*: una declaración puede estar
+ * escrita, servida y ser INERTE. La aceptación es `qa:f33-cmp` midiendo el clon
+ * renderizado par a par contra el original — y sigue a **0 ejes comparados**,
+ * porque las 31 rutas no se emiten todavía (§F3-3-EMISION).
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── LA SECCIÓN · n=35 (pt) · 24 (pb) de 56 ────────────────────────────────
+ * `padding: 4% 0` es el default de Divi, y a ≤980 cambia de unidad a `50px`
+ * PLANO — las dos declaraciones están medidas, no deducidas.
+ *
+ * `margin: 0` en los cuatro lados (n=56 / 55).
+ *
+ * ⚠ **`width` y `text-align` NO se escriben**: su único valor observado es el
+ * inicial (`auto` y `start`) en las 56. Ojo con la tentación de copiar el
+ * `text-align: left` de `kb.css` — allí está MEDIDO y aquí el original computa
+ * `start`, que es otro par.
+ *
+ * ⚠ Las 2 secciones `et_pb_fullwidth_section` llevan `padding: 0` y **no se
+ * escriben**: el clon no emite ninguna. Sus 2 módulos sueltos son
+ * `slider-completo`, o sea SIN_CABLEAR (§F3-3-CUATRO-SIN-CABLEAR). */
+.f33-seccion {
+  padding-top: var(--f33s-pt, 4%);
+  padding-bottom: var(--f33s-pb, 4%);
+  margin: 0;
+}
+@media (max-width: 980px) {
+  .f33-seccion {
+    padding-top: var(--f33s-pt-movil, var(--f33s-pt, 50px));
+    padding-bottom: var(--f33s-pb-movil, var(--f33s-pb, 50px));
+  }
+}
+
+/* ── LA FILA · n=53 (pt) · 42 (pb) · 74–76 (márgenes) · 79 (max-width) ─────
+ * `padding: 2% 0` → `30px` plano al apilar. Mismo cambio de unidad que arriba.
+ *
+ * ⚠ **Los cuatro márgenes son `auto`, no `0`** — y sólo la cascada lo dice: las
+ * filas visibles COMPUTAN `0px`, que es el valor USADO de ese mismo `auto`.
+ * `kb.css` tuvo que leerlo en un nodo OCULTO para verlo; aquí sale directo de la
+ * declaración ganadora en 74 de 79.
+ *
+ * `width: 86%` lo sirve `KunakAir/style.css` (`.et_pb_row`), no Divi — el `80%`
+ * de Divi pierde la cascada. `max-width: 1380px` viene de la regla `.container,
+ * .et_pb_row, …` en 79 de 79.
+ *
+ * ⚠ **19 de las 77 filas van al 100 %, no al 86 %**, y el discriminador está
+ * SERVIDO: son las que cuelgan de `.help-content`
+ * (`.help-content > div > div > div > div { width: 100% }`). **El clon no emite
+ * ese contenedor**, así que esas 19 saldrán al 86 %. Es un hueco declarado, no
+ * un descuido: ficha `F3-3-HELP-CONTENT`. */
+.f33-fila {
+  width: 86%;
+  max-width: 1380px;
+  margin-top: var(--f33f-mt, auto);
+  margin-bottom: var(--f33f-mb, auto);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: var(--f33f-pt, 2%);
+  padding-bottom: var(--f33f-pb, 2%);
+}
+/* Las columnas van FLOTADAS, como en Divi: el clearfix es lo que le devuelve la
+   altura a la fila. `display:table` no añade alto. */
+.f33-fila::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width: 980px) {
+  .f33-fila {
+    margin-top: var(--f33f-mt-movil, var(--f33f-mt, auto));
+    margin-bottom: var(--f33f-mb-movil, var(--f33f-mb, auto));
+    padding-top: var(--f33f-pt-movil, var(--f33f-pt, 30px));
+    padding-bottom: var(--f33f-pb-movil, var(--f33f-pb, 30px));
+  }
+}
+
+/* ── LA COLUMNA · n=145 ────────────────────────────────────────────────────
+ * `float: left` (145/145) · `padding: 0` (141/145) · `margin-bottom: 0` en
+ * escritorio y **30px al apilar en toda columna que no sea la última** — regla
+ * POSICIONAL de la retícula, no campo. El canal (`margin-right`) es la otra
+ * mitad de la misma regla.
+ *
+ * ⚠⚠ **EL CANAL TIENE DOS VALORES Y LA VARIABLE QUE MANDA NO ES EL REPARTO.**
+ * Medido: `5.5%` ×55 y `3%` ×11, y los separan 1:1 **dos** ejes —
+ * `et_pb_gutters2` y `reparto`—. El que tiene MECANISMO es `gutters`: el
+ * selector servido es `.et_pb_gutters2 .et_pb_column`, o sea un ajuste **de la
+ * FILA** que el editor elige. `reparto` es su **SOMBRA**: en este corpus las 3
+ * únicas filas con `gutters2` son justamente las que llevan `1_4` y `1_5`, así
+ * que los dos ejes son indistinguibles (§*un discriminador 1:1 puede ser la
+ * sombra de otro*).
+ *
+ * Se escribe por REPARTO porque es lo único que el clon puede emitir hoy —
+ * `gutters` no está en el modelo—, **y eso es correcto para las 31 y falso para
+ * la primera página que meta un `1_2` en una fila `gutters2`.** Ficha
+ * `F3-3-GUTTERS-SIN-MODELAR`, con su n = 3 filas de 113. */
+.f33-columna {
+  float: left;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  min-height: 1px;
+  position: relative;
+}
+.f33-columna:not(:last-child) {
+  margin-right: 5.5%;
+}
+/* Los dos repartos que en este corpus viven en filas `gutters2` (n=3 filas). */
+.f33-col-1_4:not(:last-child),
+.f33-col-1_5:not(:last-child) {
+  margin-right: 3%;
+}
+
+/* Los anchos son la DECLARACIÓN servida por la retícula de Divi, no la razón
+   px/px: `47.25%` y no el `47.2498%` que sale de dividir. La razón medida queda
+   en `anchoPorReparto` de la congelada, como evidencia de que la declaración
+   llega a la propiedad.
+   ⚠ 6 de los 10 valores del enum `ancho`. `1_6 · 2_5 · 3_5 · 3_4` no tienen ni
+   una instancia en el corpus: son caminos de render SIN ESTRENAR. */
+.f33-col-1_2 { width: 47.25%; }
+.f33-col-1_3 { width: 29.6667%; }
+.f33-col-1_4 { width: 22.75%; }
+.f33-col-1_5 { width: 17.6%; }
+.f33-col-2_3 { width: 64.833%; }
+.f33-col-4_4 { width: 100%; }
+
+@media (max-width: 980px) {
+  .f33-columna {
+    float: none;
+    width: 100%;
+  }
+  /* ⚠ El `margin-right: 0` y el `margin-bottom: 30px` van en el selector CON
+     `:not(:last-child)`, no en `.f33-columna` a secas: **la media query no sube
+     la especificidad**, así que un (0,1,0) perdería contra el (0,2,0) de la
+     regla de escritorio y las columnas no-últimas se quedarían con su canal a
+     390. Es el defecto que `kb.css` ya documenta, medido allí en 15 columnas. */
+  .f33-columna:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .f33-col-1_4:not(:last-child),
+  .f33-col-1_5:not(:last-child) {
+    margin-right: 0;
+  }
+  /* Los seis repartos apilan al 100 % — medido, no supuesto. */
+  .f33-col-1_2,
+  .f33-col-1_3,
+  .f33-col-1_4,
+  .f33-col-1_5,
+  .f33-col-2_3,
+  .f33-col-4_4 {
+    width: 100%;
+  }
+}
+
+/* ── EL MÓDULO · n=258 (mt) · 247–269 (padding) de 275 ─────────────────────
+ * `margin-top: 0` · `padding: 0` · `margin-left/right: 0`, salvo lo que se
+ * separa por TIPO más abajo.
+ *
+ * El `margin-bottom` va por REPARTO y en PORCENTAJE DE LA COLUMNA — ver la
+ * cabecera. Al apilar cambia de unidad a `30px` plano, igual que la fila. */
+.f33-modulo {
+  margin-top: var(--f33m-mt, 0);
+  padding: 0;
+  padding-bottom: var(--f33m-pb, 0);
+  position: relative;
+}
+.f33-col-1_2 > .f33-modulo { margin-bottom: var(--f33m-mb, 5.82%); }
+.f33-col-1_3 > .f33-modulo { margin-bottom: var(--f33m-mb, 9.27%); }
+.f33-col-1_5 > .f33-modulo { margin-bottom: var(--f33m-mb, 8.523%); }
+.f33-col-2_3 > .f33-modulo { margin-bottom: var(--f33m-mb, 4.242%); }
+.f33-col-4_4 > .f33-modulo { margin-bottom: var(--f33m-mb, 2.75%); }
+/* ⚠ `.f33-col-1_4 > .f33-modulo` NO está: sus 4 columnas tienen un solo módulo
+   cada una, así que **ninguna llega al default** y no hay nada que derivar.
+   Escribir el 6.594 % que sale de la aritmética de Divi sería elegir un valor
+   plausible, que es justo lo que el CORTE LIMPIO prohíbe. */
+
+/* El ÚLTIMO módulo de la columna no lleva `mb` — n=114 de 124. El original lo
+   sirve con `.et-last-child`, que el clon no emite; `:last-child` denota aquí
+   el mismo conjunto porque el clon no intercala nada entre los módulos.
+   ⚠ Va DESPUÉS de los defaults por reparto: con la misma especificidad decide
+   el orden, y puesto antes perdería contra `.f33-col-4_4 > .f33-modulo`. */
+.f33-columna > .f33-modulo:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 980px) {
+  .f33-modulo,
+  .f33-col-1_2 > .f33-modulo,
+  .f33-col-1_3 > .f33-modulo,
+  .f33-col-1_5 > .f33-modulo,
+  .f33-col-2_3 > .f33-modulo,
+  .f33-col-4_4 > .f33-modulo {
+    margin-top: var(--f33m-mt-movil, var(--f33m-mt, 0));
+    margin-bottom: var(--f33m-mb-movil, var(--f33m-mb, 30px));
+    padding-bottom: var(--f33m-pb-movil, var(--f33m-pb, 0));
+  }
+  .f33-columna > .f33-modulo:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* `anchoPct` — el CAMPO. La clase sólo aparece cuando el dato lo trae, así que
+   el `100%` de respaldo no llega a aplicarse nunca: es el canal, no un default.
+   ⚠ **El CENTRADO no se escribe.** `kb.css` lo derivó (los márgenes medidos son
+   (100−anchoPct)/2 de la columna en los 12, o sea `auto`); aquí esa derivación
+   NO se ha hecho, y copiarla de otro arquetipo es exactamente lo que este
+   proyecto llama un arreglo falso. Ficha `F3-3-ANCHO-CENTRADO`. */
+.f33-modulo.f33-ancho {
+  width: var(--f33m-w, 100%);
+}
+
+/* ── LO QUE SE SEPARA POR TIPO ─────────────────────────────────────────────
+ * `tipo` separa 1:1 las tres declaraciones de `padding` y las dos de `margin`
+ * horizontal, y es un eje que el clon SÍ emite (`.f33-toggle`, `.f33-imagen`).
+ *
+ * `image` — `margin-left/right: auto` lo sirve `.et_pb_image` (n=9 llegan al
+ * default; los otros 62 los escribe el editor con su propio margen).
+ * `toggle`  — `padding: 20px 0` en los 10, a los dos anchos.
+ *
+ * ⚠ **El BOTÓN no está aquí.** Su `padding` medido es `0.5em` / `0.6em`, y un
+ * `em` **no se puede escribir sin su base**: la base es el `font-size` del
+ * propio botón, que es su PIEL — y la tipografía es justo lo que esta sonda no
+ * mide. Escribirlo daría un px distinto del original en cuanto el clon herede
+ * otro cuerpo. Ficha `F3-3-BOTON-PADDING-EM`. */
+.f33-imagen {
+  margin-left: auto;
+  margin-right: auto;
+}
+.f33-toggle {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

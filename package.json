@@ -78,6 +78,8 @@
     "qa:f33-cmp": "node scripts/qa/f33-cmp.mjs",
     "qa:f33-cmp-390": "node scripts/qa/f33-cmp.mjs 390",
     "qa:f33-cmp-neg": "node scripts/qa/f33-cmp.neg.mjs",
+    "qa:f33-clases": "node scripts/qa/f33-clases.mjs",
+    "qa:f33-clases-neg": "node scripts/qa/f33-clases.neg.mjs",
     "qa:f33-geo": "node scripts/qa/f33-geo.mjs",
     "qa:f33-geo-neg": "node scripts/qa/f33-geo.neg.mjs",
     "qa:f33-spec": "node scripts/qa/f33-spec.mjs",
