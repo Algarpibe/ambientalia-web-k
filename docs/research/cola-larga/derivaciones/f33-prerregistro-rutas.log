@@ -1,0 +1,30 @@
+[08:09:42] [33mWARN[39m: [36mNo email adapter provided. Email will be written to console. More info at https://payloadcms.com/docs/email/overview.[39m
+
+════════ PRE-REGISTRO · rutas que E1 debe emitir ════════
+
+  documentos en la DB          31
+  RUTAS distintas del catálogo 31
+  colisión literal con HOY     0
+
+  rutas emitidas HOY           382   (unidad rutasEmitidas; 385 claves de manifiesto)
+  PREDICCIÓN DESPUÉS           413
+
+  reparto PREDICHO por plano — cada uno auditable por separado:
+
+     19  /[slug]                      189 → 208
+      4  /centro-de-ayuda/[...ruta]   5 → 9
+      4  /soporte/[...ruta]           1 → 5
+      3  /recursos/[...ruta]          41 → 44
+      1  (ruta nueva) /empresa/premios-y-reconocimientos 0 → 1
+
+  familias PAGINADAS del build, y de qué catálogo comen:
+
+      7  /blog/page/[n]                         7 → 7  (no lee `paginas`)
+     24  /etiqueta/[slug]/page/[n]              24 → 24  (no lee `paginas`)
+      7  /glosario/page/[n]                     7 → 7  (no lee `paginas`)
+      3  /scientific-category/[slug]/page/[n]   3 → 3  (no lee `paginas`)
+
+  ⚠ La tercera pregunta —¿repagina alguna familia?— se contesta con que
+    NADIE en apps/web lee `paginas`: 0 referencias. Si eso cambia, este
+    número deja de valer y hay que re-derivarlo.
+
