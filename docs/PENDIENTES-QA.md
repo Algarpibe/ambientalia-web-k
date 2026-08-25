@@ -20688,3 +20688,107 @@ modelo «por línea» predice lo contrario —más líneas, más error— y qued
 **refutado por esa sola forma** sin necesidad de medir nada nuevo. A 390, en
 cambio, las 7 difieren, así que **la separadora sólo existe a 1440**: es §*una
 predicción sobre una propiedad tapada se escribe CON SU ANCHO*, otra vez.
+
+
+## 107.ª · EL CIERRE — la barra emitida y adjudicada, y CUATRO cifras del registro que no eran las de hoy (2026-08-25)
+
+### 1 · El veredicto, por DISTANCIA y no por recuento
+
+El titular de `f33-cmp` es **mudo**: 932 distintos a 1440 y 882 a 390, igual
+antes que después. Por eso el veredicto se da comparando `|clon − original|` par
+a par:
+
+| ancho | Σ ANTES | Σ DESPUÉS | movimiento | reparto |
+|---|---|---|---|---|
+| 1440 | 128276.74 | 128090.74 | **−186.00 HACIA el original** | ACERCAN 9 · **ALEJAN 0** |
+| 390 | 132851.21 | 128673.47 | **−4177.74 HACIA el original** | ACERCAN 20 · ALEJAN 5 |
+
+Y el eje MIXTO **aparte**, separando APARECER de ALEJARSE: **28 pares** pasan de
+`null` a número —las 7 rutas × `cascaron.barra` {x,y,w,h}—, **0 desaparecen**.
+
+**Los 5 que alejan a 390 son todos `docH`, +504 exacto, y no son regresión**:
+son las 5 rutas donde el clon **ya era más alto** (Δ +314 · +317 · +1096 · +41 ·
++34). La barra que faltaba estaba **cancelando un excedente de contenido
+preexistente** — dos errores anulándose, el mismo patrón que P1 destapó en los
+enlaces. §*el corte CREA / MUEVE*: los 5 pares ya diferían. **0 pares creados.**
+
+### 2 · La adjudicación fina — 28/30 a 1440 y 30/30 a 390
+
+`kb-barra` ganó su lado del clon en esta misma tanda, porque `f33-cmp` publica
+**una sola caja** de la barra y con eso un `+197.65` es un número sin causa.
+Nivel a nivel: `barra.h` · `widget0.h` · `menu.ul.h` · `nLi` · `nWidgets` ·
+`subMenu.ml` · `pr` · `borderRight` y los **18 ejes de los tres niveles** — todos
+a Δ0 a los dos anchos. Único residuo: **`w −0.06` a 1440**, preexistente.
+
+### 3 · El pre-registro: 4 de 5, y la que falla informa
+
+| | predicción | veredicto |
+|---|---|---|
+| P1 | enlaces **+12 exactos** | ✅ al bit: −12→0 (×4) · −11→+1 (×2) · −8→+4 (×1) |
+| P2 | el techo **NO se mueve a 1440** | ✅ `caja.sec0.y` = 282.58 en las 8, antes Y después |
+| P3 | `kb-cmp` **NO-OP exacto** | ✅ 5089/0 a los dos anchos, `iguales` idéntico |
+| P4 | `[id$='-sidebar']` **0 → 7** de 31 | ✅ 7, no 8 |
+| P5 | `docH` no se mueve a 1440 | ❌ **refutada en 2 de 7** |
+
+**P2 iba deliberadamente CONTRA la ficha vigente** y ganó: la ficha atribuye el
+`Δtecho` entero a la barra, y a 1440 eso es falso por mecanismo —las columnas van
+lado a lado, meter contenido en una no mueve el techo de su hermana—.
+
+**P5 estaba demasiado fuerte.** El mecanismo era correcto —la barra (493.66) la
+tapa la columna de contenido— pero lo afirmé de las 7 sin comprobar en cuáles la
+columna es **más baja** que 493.66. En las dos de `articulos-de-ayuda` —las que
+sólo listan— no lo es, y ahí la barra sí manda: **+57 cada una hacia el
+original**. Es §*la instancia donde la holgura se acaba, y casi nunca es la
+típica*: las 5 quietas no es que el arreglo no las tocara, es que **no podían
+moverse**.
+
+### 4 · CUATRO cifras del registro que no eran las de hoy
+
+Esta tanda no encontró un defecto de píxel grande; encontró que **cuatro números
+que el registro publica no los produce ninguna medición vigente**:
+
+| cifra | decía | mide | causa |
+|---|---|---|---|
+| widgets de la barra | «**1** en 6/6» | **3 en 13/13** | contaba lo que SE VE; el 3 cuenta NODOS |
+| `Δtecho` @1440 | −57.58 · −124.84 | **−56.58 · −123.84** | §regla 5bis: la ficha cita una congelada ya marcada CADUCADA |
+| `Δtecho` @390 | «−677.34» | **−676.34 ×5 · −650.34 ×2 · −377.67** | un singular donde hay **tres** valores |
+| pie `footer-legal` | «**+1.59**» | **+1.00 @1440 · +1.88/+1.89 @390** | **no existe**, y la fila mezcla DOS anchos |
+
+**Ninguna se habría visto releyendo.** Las cuatro salieron de derivar, que es lo
+que el encargo mandaba y lo que §regla 9 exige.
+
+### 5 · Lo que se rompió y se arregló DENTRO de esta tanda
+
+Cinco defectos, **cuatro míos**, y conviene listarlos porque tres son de
+instrumento y uno es de lectura:
+
+1. **el predicado dejaba 1 hub de 7 fuera** — `startsWith("…/soporte/centro-de-ayuda/")`
+   con barra es falso para `/soporte/centro-de-ayuda`. Verificado contra rutas
+   CON barra final y servido SIN ella: 31/31 contra la forma medida, **6 de 7**
+   contra la servida;
+2. **el `+197.65`** — tipografía en el `<a>` (enlínea) en vez del `li` que genera
+   el **strut**. Ya es ley;
+3. **el cruce comparaba dos NIVELES** —`kb-spec.barraLateral` es la COLUMNA y mi
+   `barra` el MÓDULO—, y publicaba `Δh −43.18`: §la causa común cometida dentro
+   del cruce escrito para cazarla;
+4. **mi comparador de distancia sumaba rects `{0,0,0,0}`** —elementos sin caja—
+   y publicó **+12465.64 ALEJÁNDOSE** cuando el movimiento real era −4177.74;
+5. **y el que no fue de código: di por colgadas DOS corridas sanas** usando la
+   CPU de node como señal de vida. Node bloquea en CDP; quien gasta CPU es
+   Chrome. El piloto terminando 6/6 lo refutó.
+
+### 6 · Lo que queda, con su cardinal
+
+- **`sistema-interno-de-informacion`**: la 8.ª `BT` tiene **otra** barra —un
+  índice que rellena un script— y **otra plantilla de theme-builder**. Su columna
+  sigue vacía **por la misma razón que las otras siete dejaron de estarlo**, y
+  medirla necesita el eje **COMPORTAMIENTO**, a **0 de 31**;
+- **14 hojas `et-cache`** de `articulos-kb` sin capturar: su geometría *offline*
+  no vale. Lo que valió aquí fue su **cruce con el VIVO** al nivel de la columna;
+- **`w −0.06`** de `ColumnaEstrecha`, con el número ya derivado (`20.874 %`) y
+  sus **tres** consumidores nombrados;
+- **13 assets en caliente** a `kunakair.com`, ya capturados: es una reescritura
+  al importar;
+- **el pie**, bajado un nivel y sin mecanismo ahí — pero con su **separadora**
+  identificada (`L2-glosario`, la única a Δ0 y la única cuyo `legal` mide el
+  doble), que refuta cualquier modelo «por línea» sin medir nada nuevo.
