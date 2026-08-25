@@ -64,7 +64,7 @@ separadas por el `display` del contenido) e implementada, `h` = **63 en 10 de
 |---|---|---|---|
 | 1 | **BARRA LATERAL `BT`** | `[id$='-sidebar']` **7 de 31 → 0** · Δtecho **−57.58** @1440 y **−677.34** @390 · enlaces −8 a −12 | **la de más leverage.** El `w×10` del toggle (−60.33 uniforme) y su `mb×4` cuelgan de aquí |
 | 2 | **el TECHO** | consecuencia de (1) | no se toca por separado hasta que (1) esté |
-| 3 | **el PIE** | **+1.59** en `footer-legal`, **sin mecanismo medido** · +0.21 en `links` | pide bajar un nivel DENTRO de `legal` |
+| 3 | **el PIE** | ⚠ el `+1.59` **NO EXISTE** — derivado 2026-08-25: `legal` **+1.00 @1440** (6 de 7; `L2-glosario` a **Δ0**) y **+1.88/+1.89 @390**; `links` **+0.21 @390**, **0 @1440**. La fila vieja mezclaba DOS anchos | bajado un nivel: el `padding` de `legal` es **0 en los dos lados y los dos anchos**, así que el mecanismo vive DENTRO de su contenido. Fichado §F3-3-PIE-LEGAL-CIFRA-INEXISTENTE y **no se persigue** |
 | 4 | **`hostsBloqueadosClon`** | `/es/sectores/` bloquea **12** peticiones del lado del CLON | añadido a la congelada y **SIN LEER**. Si fueran a kunakair.com sería defecto de fidelidad |
 | 5 | **F3-3-GALLERY-SIN-EXPRESAR** | `et_pb_gallery` de **11 items** en un `articulos-kb` | el esquema no tiene bloque. **Decisión de ESQUEMA** |
 | 6 | `cta` en `/monitor-calidad-aire` | 1 ruta | **SIN COMPROBAR** si el clon lo sirve por otro canal |

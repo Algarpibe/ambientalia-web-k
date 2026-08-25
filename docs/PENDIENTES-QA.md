@@ -20622,3 +20622,69 @@ la consumen **tres** arquetipos —derivado con `grep`, no recordado:
 `CascaronA` (grupo A, 209 páginas), `PaginaF33` y `PaginaKb`—, así que tocarla
 obliga a reconstruir y re-verificar grupo A entero en mitad de una tanda que
 mide otra cosa (§regla 20). Se ficha con el número hecho.
+
+
+## ⚠ F3-3-PIE-LEGAL-CIFRA-INEXISTENTE · el `+1.59` no lo produjo ninguna medición (2026-08-25, 107.ª tanda)
+
+El encargo mandó derivar el número *«no lo copies de aquí ni de la ficha: ese
+valor exacto ya se citó mal una vez»*. Derivado de la congelada
+(`pie-cmp-{1440,390}-2026-08-20-3.json`, campo `reparto`), el resultado es peor
+que una cita torcida: **el `+1.59` no coincide con ningún valor medido, a ningún
+ancho.**
+
+| dónde | qué dice |
+|---|---|
+| `HANDOFF.md` §65 | *«**+1.59** en `footer-legal` … · +0.21 en `links`»* |
+| `PENDIENTES-QA.md` §20011 | `+1.00 @1440` · `+1.88 / +1.89 @390` |
+| **derivado hoy** | **ninguno de los medidos es 1.59** |
+
+**Y la fila del `HANDOFF` mezcla DOS ANCHOS en una línea**, que es lo que la hace
+irrecuperable de un vistazo: su `+0.21 en links` **sí existe** — pero es de
+**390**, y va escrito al lado de un número de `legal` que no existe en ninguno.
+Es §*un `em` citado sin su `font-size`* con el denominador cambiado por **el
+ancho**: un Δ de este proyecto no significa nada sin decir a qué ancho se midió.
+
+### Lo medido, con sus dos lados y su cardinal
+
+| ancho | rol | original | clon | Δ | n |
+|---|---|---|---|---|---|
+| 1440 | `legal` | **121.97** | **122.97** | **+1.00** | 6 de 7 |
+| 1440 | `legal` | **259.83** | **259.83** | **0** | 1 (`L2-glosario`) |
+| 1440 | `links` · `background` | — | — | **0** | 7/7 |
+| 390 | `legal` | 283.75 | 285.64 | **+1.89** | 5 |
+| 390 | `legal` | 480.75 / 313.75 | 482.63 / 315.63 | **+1.88** | 2 |
+| 390 | `links` | — | — | **+0.21** (·+0.20 ·+0.18) | 7 |
+| 390 | `background` | — | — | **0** | 7/7 |
+
+### Bajado un nivel, como pedía la ficha — y el mecanismo NO está ahí
+
+Se bajó del alto del pie a **la sección `legal`**, que es lo que la congelada
+permite sin volver a medir:
+
+```
+@1440  legal  orig {h 121.97, padTop 0px, padBottom 0px}
+              clon {h 122.97, padTop 0px, padBottom 0px}
+@390   legal  orig {h 283.75, padTop 0px, padBottom 0px}
+              clon {h 285.64, padTop 0px, padBottom 0px}
+```
+
+**El `padding` es 0 en los dos lados y a los dos anchos**, así que el desfase
+**no está en el ritmo de la sección**: vive **dentro** de su contenido, un nivel
+más abajo del que `pie-cmp` congela. Llegar ahí exige tocar la sonda **y** volver
+a pegarle al original —su `ladoOriginal` es *«kunakair.com VIVO»*, no el espejo—,
+o sea una campaña con su encargo.
+
+**Se ficha con su alcance y NO se persigue**, que es lo que el encargo manda
+cuando el mecanismo no aparece bajando un nivel.
+
+### Lo que sí deja hecho para quien lo persiga: la SEPARADORA
+
+> **A 1440, `L2-glosario` es la única forma con Δ0 — y es la única cuyo `legal`
+> mide el doble (259.83 contra 121.97).**
+
+Eso es una instancia separadora servida en bandeja: cualquier modelo del
+mecanismo tiene que explicar **por qué el bloque MÁS ALTO es el que cuadra**. Un
+modelo «por línea» predice lo contrario —más líneas, más error— y queda
+**refutado por esa sola forma** sin necesidad de medir nada nuevo. A 390, en
+cambio, las 7 difieren, así que **la separadora sólo existe a 1440**: es §*una
+predicción sobre una propiedad tapada se escribe CON SU ANCHO*, otra vez.
