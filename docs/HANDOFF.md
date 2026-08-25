@@ -1,4 +1,232 @@
-# HANDOFF — el mismo pre-registro, REFUTADO a 1440 y CONFIRMADO a 390: no le faltaba puntería, le faltaba el ANCHO
+# HANDOFF — el `−47` no eran 47 módulos perdidos, y el `docH` no era un eje: los dos lados no se midieron en las mismas condiciones
+
+> ✅ **Tanda de la 105.ª, 2026-08-25. ESCALÓN 1 CERRADO —47 de 47 adjudicados—
+> y ESCALÓN 2 cerrado en la única dirección honesta: REFUTANDO el eje.**
+>
+> ---
+>
+> ## 0 · EL ESTADO AL ABRIR, derivado y no heredado
+>
+> **§regla 18 primero, y esto no se saca de `git status`:** `tasklist` +
+> `Get-CimInstance Win32_Process` → **30 `node.exe`, los 30 servidores MCP**
+> (chrome-devtools ×4, postgres ×4, n8n ×8, firebase ×4 y sus envoltorios). Ni
+> `qa:*`, ni `next start`, ni puppeteer. **Ninguna sonda en vuelo.**
+>
+> HEAD `66fa16d` · árbol limpio · ahead 0 · **CLAUDE.md 230.016 caracteres**
+> (235.950 bytes — el encargo dice bien «caracteres») · **1407 congeladas**
+> (`ls scripts/qa/medidas/*.json | wc -l`) · los dos tripwires `KV-01` y `KV-08`
+> presentes.
+>
+> ⚠ **Un número del encargo NO se pudo reproducir y se deja fichado, no
+> corregido:** «413 rutas». `prerender-manifest.routes` da **416**. Son unidades
+> potencialmente distintas y esta tanda **no lo derivó** — se dice para que la
+> siguiente no cite ninguno de los dos sin mirar (§*cada denominador se escribe
+> CON SU UNIDAD*).
+>
+> ---
+>
+> ## 1 · PASO 0 — el `docH 1497` NO era el instrumento, y no eran dos rutas: eran CINCO
+>
+> El encargo señalaba dos rutas con el mismo `docH` del original al entero. La
+> primera derivación dio **cinco, las cinco `BT`** — y **ninguna coincide a 390**.
+>
+> **Las tres comprobaciones, con su número:**
+>
+> | qué | resultado |
+> |---|---|
+> | viewport fijado ANTES de montar | ✅ y verificado con el discriminador que dejó `f33-clases`: las filas del original a 390 miden **335.39 ×76**, no 249.59 |
+> | cruce con otra congelada del mismo objeto | ✅ `f33-geo` dice **113 filas · 79 con caja**; `f33-cmp` ve **34 filas de ancho 0**. Exacto. Y **11 módulos sin caja** en `/soporte/centro-de-ayuda/` contra **10 de 11** secciones con caja cero |
+> | el asentado (`eager` · `fonts.ready` · scroll) | ⛔ **no lo tenía** — ver §3 |
+>
+> **La explicación, MEDIDA y no ajustada:** `docH − #main-content.h` es
+> **constante en 8 de 8 rutas `BT`** (787.4 @1440 · 1957.7 @390), o sea que el
+> cascarón está bien medido. El `1497` sale de **`#main-content` valiendo 709.63
+> clavado en las cinco** —con contenidos de 186.77 a 419.13— y **no repetirse en
+> ninguna a 390**.
+>
+> > **Es la §regla espejo con el contenedor puesto en el cascarón.** Y su
+> > consecuencia operativa: **`docH` no es un eje de fidelidad válido para esas 5
+> > rutas a 1440** —un defecto de ~180 px en la columna de contenido sería
+> > invisible— y **sí lo es a 390**.
+>
+> ---
+>
+> ## 2 · ESCALÓN 1 — los 47, NOMBRADOS
+>
+> `derivaciones/modulos-que-faltan.{mjs,log}`. Y lo primero, porque cambia cómo
+> se lee todo lo demás:
+>
+> > **El `−47` nunca fueron 47 módulos perdidos.** Con el comparador arreglado
+> > son **60 que faltan y 13 que sobran**, y **los 13 los inventaba él**. El neto
+> > los tapaba.
+>
+> | n | causa | estado |
+> |---|---|---|
+> | **34** | los 4 `kind` SIN CABLEAR (`video-pagina` 30 · `slider-completo` 2 · `slider` 1 · `mapa` 1) | ya declarado (99.ª) |
+> | **12** | la RETIRADA — y las 12 encuentran su módulo, **0 sobrantes** | ya declarado (97.ª) |
+> | **1** | **`dvmd_table_maker`** | ⛔ NUEVO |
+> | **47** | `B-` −17 · `BT` −30 · **+0 de sobra** · dif. simétrica entre anchos **0 y 0** | |
+>
+> **El discriminador NO es «sin caja»**, que era la hipótesis del encargo. Se
+> refuta con separadoras en **las dos** direcciones, contadas antes de escribir
+> la regla: **6** sin caja que el clon **sí** emite y **4** con caja que **no**.
+> Es el `kind`. Dentro de `video` las dos variables son inseparables —las 30
+> instancias son sin caja—, así que sin contarlas la regla salía al azar.
+>
+> ⚠ **Y el mecanismo de los 30 vídeos no es `et_pb_toggle_close`: es DIVIPOPUP.**
+> Los `div#*-popup` son **4·6·6·10·4 = 30**, exactamente los vídeos ruta a ruta,
+> y **dos de esas cinco rutas tienen CERO toggles cerrados**. No es vocabulario:
+> **abrir un popup saca el contenido a un overlay MODAL**, no en flujo, así que
+> «hace falta interacción» pide otra cosa de la que la ficha suponía.
+>
+> ---
+>
+> ## 3 · LOS DEFECTOS DEL COMPARADOR ERAN CINCO, no tres
+>
+> La 104.ª dejó escrito *«comprueba que no es un cuarto»*. Había un cuarto **y un
+> quinto**, y los dos daban números plausibles.
+>
+> **4 · el `_wrapper`.** El regex del tipo exigía que la clase **termine en
+> dígitos**, y el módulo BOTÓN lleva su ordinal en el envoltorio y con sufijo:
+> `et_pb_button_0_wrapper`. No daba error — **daba `null`**, y un alineador no
+> puede casar un `null`, así que los **13 botones** salían a la vez como «13 que
+> faltan» y «13 que sobran». Arreglado: **47 faltan · 0 sobran**.
+>
+> > ⚠ Es la **TERCERA** sonda de este arquetipo que tropieza con `_wrapper` y la
+> > **segunda** en pagarlo: `f33-clases` lo pagó el 24 y se arregló **la
+> > instancia**. §*arreglar la instancia y no la clase es cómo se llega a la
+> > tercera tanda del mismo bug*, cumplida literalmente.
+>
+> **5 · la red cortada en UN SOLO LADO.** Es el que invalida el eje, y tiene
+> ficha propia: §F3-3-CMP-IMAGENES-ROTAS.
+>
+> **Y el ASENTADO, que no es defecto pero es la misma historia:** `f33-geo` lo
+> pagó el 22, `f33-clases` el 24, y `f33-cmp` no lo tenía **mientras publicaba
+> `docH`**. Puesto en los dos lados → **2107·929 @1440 y 2107·890 @390,
+> idénticos a la 104.ª**. **NO-OP verificado a los dos anchos** — que se escribe
+> con lo medido, no como «idéntico» por no haber mirado.
+>
+> ---
+>
+> ## 4 · ESCALÓN 2 — `docH` REFUTADO como eje, y por qué eso es un resultado
+>
+> `derivaciones/doch-por-composicion.{mjs,log}`. `docH = TECHO + CUERPO + PIE`,
+> identidad aritmética exacta en **30 de 30** y a los dos anchos (1 ruta sin
+> ninguna sección con caja, nombrada y fuera del denominador).
+>
+> ### ⛔ El artefacto
+>
+> `setRequestInterception` está puesto en **un solo lado**. La captura conserva
+> los `src` absolutos a `kunakair.com` —decisión D2 del propietario— así que:
+>
+> | | imágenes | |
+> |---|---|---|
+> | ORIGINAL | 71 | **65 a EXACTAMENTE 16 px** · **1522** peticiones abortadas |
+> | CLON | 71 | las 71 cargadas, 19 alturas, hasta 825.59 · **0** abortadas |
+>
+> Sólo los altos de imagen: **+12 764.95 @1440** y **+9 861.29 @390**, contra un
+> `Δcuerpo` acumulado de **+21 841.58** y **+4 918.62** — el **58 %** y el
+> **200 %**.
+>
+> > **A 390 el artefacto es MAYOR que el total**, o sea que debajo hay efectos de
+> > signo contrario: §*un Δ de cero puede ser dos errores que se anulan*, y **el
+> > total no se puede leer ni para bien ni para mal.**
+>
+> Es §F3-1-CSS-NO-CAPTURADO **un canal más allá**, con el mismo modo de fallo:
+> *no da error, da una medida plausible*. `conHojasLocales` reescribe los
+> `<link>` y **no toca los `<img>`** — medio canal cerrado leído como el canal
+> entero.
+>
+> ### ✅ Lo que SÍ queda adjudicado, porque no depende de imágenes
+>
+> · **TECHO** — 8 de 30, y son **valores discretos**: el original sirve 3
+>   (340.16 · 193.72 · 407.42) y el clon 2 (282.58 · 193.72). Δ **−57.58** en 7
+>   `BT` y **−124.84** en 1; a 390 el mismo tramo vale **−677.34**;
+> · **PIE** — 30 de 30 y minúsculo en `B-`: 593.x → 594.x, o sea **≈ +1** (+3 a
+>   390);
+> · **la BARRA LATERAL `BT` no la emite el clon** — sostenido por **tres ejes
+>   independientes**: `[id$='-sidebar']` 7→0, el `Δtecho` de arriba, y **−8 a −12
+>   ENLACES** en las 7 rutas con barra;
+> · **`toggle`** — el original sirve **63 × 10**, uniforme: los diez **CERRADOS**.
+>   El clon: 254.16×5 · 131.78×2 · 223.56×2 · 101.19×1. **Los pinta ABIERTOS**;
+> · **`button`** — original 44×9 · 74×3 · 0×1; clon **30.59 × 13**. Constante
+>   donde el original varía. Si es un envoltorio que falta o un campo sin modelar
+>   está **SIN PROBAR**, y lo dirime medir envoltorio y `<a>` por separado.
+>
+> ### ⚠ La `base`: «2 `BT` con base 0» eran **14 SIN ANCLA**, en tres casos
+>
+> **10** sin `h1` en **ninguno** de los dos lados —y son exactamente los «10 en
+> ninguno de los dos» del eje mixto: **cruce exacto**—; **4** con `base 0` en el
+> original porque su `h1` vive en fila sin caja (**3 `BT` y `/es/productos/`, que
+> es `B-`**); y **2** donde el **CLON no tiene `h1`** y el original sí — ésa sí
+> es defecto. Quedan **16** con Δ real, y el clon sirve un `base` **constante**
+> (337.28 · 295.58) donde el original **varía** (355.16 · 351.16 · 387.63 /
+> 907.92 · 903.92 · 881.92 · 953.92).
+>
+> ---
+>
+> ## 5 · EL RESIDUO: un módulo que no censa nadie
+>
+> `/es/politica-de-cookies/` sirve un **`dvmd_table_maker`** —plugin Divi Table
+> Maker— con caja **880×1511**, `role="table"`, `aria-rowcount="11"`,
+> `aria-colcount="5"`. **El DOM cuenta 9 módulos y el censo del árbol 8.**
+>
+> No lo nombra **nadie**: ni el censo (313 en 11 tipos), ni el extractor —la
+> página extraída trae 8 `texto-pagina` y `dvmd_table` **no aparece en ningún
+> campo**, tampoco dentro del HTML rico—, ni el esquema. **La tabla no viaja por
+> ningún canal** y el clon sirve la ruta con **200**.
+>
+> ⚠ **Y no es un caso de uno:** derivado con `grep`, aparece en **22 documentos
+> del corpus** — 1 de la cola larga y **20 del arquetipo PRODUCTO, que ya está
+> clonado**. Si esas 20 sirven la tabla y el clon no, es el mismo defecto en un
+> arquetipo dado por bueno, **y no está medido**.
+>
+> **Guarda puesta:** el cruce de módulos entra en `f33-cmp`, **nombra el tipo**
+> que el censo no conoce y **cierra el código de salida** (`exit 4`). Antes era
+> un `+1` que nadie miraba — el comparador cruzaba `nSecciones` y **no
+> `nModulos`**, que es la unidad de su propio titular.
+>
+> ---
+>
+> ## 6 · LO QUE ESTA TANDA **NO** CONTESTA
+>
+> · **`docH`, `caja.*.h` y todo alto con imagen dentro**: NO ADJUDICABLES hasta
+>   cerrar el canal de imagen. **No se registra cobertura**, y ahora por un
+>   motivo mejor establecido que en la 104.ª;
+> · **el alcance del artefacto es de LAS TRES sondas**: `f33-geo` y `f33-clases`
+>   tampoco reescriben `<img src>` (derivado: 0 coincidencias en las dos). A
+>   `f33-geo` le afecta —publica alturas—; lo de `f33-clases` está **SIN
+>   COMPROBAR**;
+> · **las 20 páginas de PRODUCTO con `dvmd_table_maker`**: sin medir;
+> · **el 4.º caso del negativo** (§F3-3-COMPARADOR-CIEGO) sigue sin escribir, y
+>   ahora **ya se puede**: hay clon emitido. Es lo que convertiría «el clon no
+>   emite la barra» de *sostenido por tres ejes* a *probado*;
+> · **`/es/empresa/` +12 641 y `/es/sectores/` +7 291 de cuerpo**: los dos están
+>   contaminados por el artefacto, así que **no se persiguen** hasta que el canal
+>   esté cerrado. Perseguirlos ahora es calibrar contra un objetivo que se sabe
+>   movido.
+>
+> ---
+>
+> ## 7 · SI SIGUES POR AQUÍ, EL ORDEN QUE DEJA ESTA TANDA
+>
+> 1. **cerrar el canal de imagen en `f33-cmp`** —reescribir `<img src>` a la copia
+>    local por el mismo camino que las hojas, con su guarda (*«N imágenes sin
+>    resolver ⇒ la corrida NO vale»*) y su negativo—. El repo ya tiene los
+>    ficheros: `media-corpus/` y `apps/web/public`, y `f33-extraido §origenImagen`
+>    dice **71 · 70 locales · 1 externa**;
+> 2. **re-correr los dos anchos y volver a leer `docH`.** Sólo entonces el eje
+>    significa algo;
+> 3. **y entonces sí, `qa:cobertura`** — con los ejes elegidos por lo que la sonda
+>    compara.
+>
+> **Nada de esto se puede saltar recalibrando el clon**: mover el clon contra un
+> objetivo que se sabe contaminado es exactamente cómo se fabrica una FAMILIA DE
+> CALIBRACIÓN.
+
+---
+
+# (105.ª) Historial anterior — HANDOFF — el mismo pre-registro, REFUTADO a 1440 y CONFIRMADO a 390: no le faltaba puntería, le faltaba el ANCHO
 
 > ✅ **Tanda de la 90.ª, 2026-08-22. ESCALÓN 1 cerrado — la 89.ª queda cerrada
 > por los dos anchos, sin abrir el original y sin correr una sola sonda.**

@@ -834,6 +834,22 @@ en un solo «faltan 4 tipos» sería un total absorbiendo dos preguntas distinta
 sonda y no estilo (mismo precedente que `data-fila`). Así el hueco es
 **contable y localizable** en vez de invisible.
 
+> ⚠⚠ **CORREGIDO EL MECANISMO (105.ª): las 30 no viven en «desplegables
+> cerrados» — viven en POPUPS de DiviPopup.** Los `div#*-popup` de las cinco
+> rutas son **4·6·6·10·4 = 30**, exactamente los vídeos, ruta a ruta; y **dos de
+> esas cinco tienen CERO `et_pb_toggle_close`** y aun así sus 6 y 4 vídeos siguen
+> sin caja. **Dos instancias separadoras**, así que no es una precisión de
+> vocabulario:
+>
+> **Cambia lo que la columna «qué haría falta» pide.** Abrir un desplegable
+> expande contenido **en flujo**; abrir un popup lo saca a un **overlay modal**,
+> con su propia caja y su propio ancho. O sea que la geometría que se mediría al
+> abrirlo **no es la que el clon tendría que reproducir en flujo**, y eso hay que
+> resolverlo *antes* de encargar la medición, no después.
+>
+> ✅ **Y el `−30` del comparador queda ADJUDICADO a esta ficha**: los 30 vídeos
+> son 30 de los 47 módulos que faltan (§F3-3-CMP-DELTAS), nombrados uno a uno.
+
 ⚠ `icono` **sí se pinta**, y la diferencia es la que importa: tiene `n = 1`
 página igual que `mapa`, pero **no hace falta inventar ningún valor** — el dato
 trae el carácter servido y sus tres ejes de ritmo salieron SIN ESCRIBIR, o sea
@@ -1995,7 +2011,7 @@ relanzamientos, 0 muertes). Umbral CERO, clon contra clon.
 
 ---
 
-## ⛔ F3-3-CMP-DELTAS · **la cola larga YA se compara de dos lados — y lo que sale NO está adjudicado** — 104.ª, 2026-08-25
+## ⚠ F3-3-CMP-DELTAS · la cola larga se compara de dos lados — **los MÓDULOS ya están adjudicados (47/47); `docH` está REFUTADO como eje** — 104.ª · adjudicada por la 105.ª, 2026-08-25
 
 `qa:f33-cmp` pasa del piloto (6) a **las 31**, a los dos anchos. Es la primera
 comparación de dos lados de este arquetipo: `COBERTURA-MEDICION` decía **0 ejes
@@ -2035,13 +2051,45 @@ CLON · 10 en ninguno.** El clon **no inventa nada**; le faltan módulos.
 > y moverlo tocaría **6 rutas verificadas** por otra sonda, cuya re-verificación
 > es de quien lo toque.
 
-### ⛔ Lo que NO está adjudicado — y por eso NO se registra cobertura
+### ✅ ADJUDICADO EL 2026-08-25 (105.ª) — los módulos, 47 de 47; `docH`, refutado como eje
 
-| eje | Δ | qué se sabe |
+> **Y lo primero, porque cambia cómo se lee todo lo de abajo: el `−47` NUNCA
+> FUERON 47 MÓDULOS PERDIDOS.** Con el comparador arreglado son **60 que faltan
+> y 13 que sobran**, y los 13 los inventaba él (abajo, defecto 4). El neto los
+> tapaba — §*un cardinal es un contenedor y absorbe la membresía*, aquí con el
+> cardinal ni siquiera empatando.
+
+| eje | Δ | veredicto de la 105.ª |
 |---|---|---|
-| **módulos** | 314 → 267 · **−47** | la retirada explica **12**. Reparto: `B-` **−17** · `BT` **−30** |
-| **`docH`** | Δ≠0 en **31 de 31** | valores reales y en las **dos direcciones** tras arreglar la sonda |
-| **`base`** | Δ≠0 en **18 de 31** | incluye 2 `BT` con `base 0` en el original (su `h1` vive en fila oculta) |
+| **módulos** | 314 → 267 · **−47** | ✅ **ADJUDICADO 47 de 47**, nombrados uno a uno |
+| **`docH`** | Δ≠0 en **31 de 31** | ⛔ **NO ADJUDICABLE** — los dos lados no se midieron igual (§F3-3-CMP-IMAGENES-ROTAS) |
+| **`base`** | Δ≠0 en **16 de 31** | ⚠ **14 SIN ANCLA**, y no son «2 `BT`»: son tres casos distintos |
+
+**Los 47, contra causas YA declaradas en el repo** — derivado leyendo
+`SIN_CABLEAR` del propio render y `retirada` de `f33-extraido.json`, no de
+memoria (`derivaciones/modulos-que-faltan.{mjs,log}`):
+
+| n | causa | estado |
+|---|---|---|
+| **34** | los 4 `kind` **SIN CABLEAR** — `video-pagina` 30 · `slider-completo` 2 · `slider` 1 · `mapa` 1 | ya declarado, §F3-3-CUATRO-SIN-CABLEAR (99.ª) |
+| **12** | la **RETIRADA** — 10 migas + 2 consultas, y las 12 encuentran su módulo (0 sobrantes) | ya declarado (97.ª) |
+| **1** | ⛔ **`dvmd_table_maker`** — un módulo de TERCEROS que no censa nadie | **NUEVO** — §F3-3-MODULO-DE-TERCEROS |
+| **47** | `B-` −17 · `BT` −30 · **+0 de sobra** | diferencia simétrica entre anchos **0 y 0** |
+
+> **Y el discriminador NO es «sin caja», que era la hipótesis de partida.** Se
+> refuta con separadoras en las **dos** direcciones, contadas antes de escribir
+> la regla (§*dos variables confundidas*): **6** módulos sin caja que el clon
+> **SÍ** emite (5 `text` + 1 `button`) y **4** con caja que **no** emite (`mapa`
+> · `slider` · 2 `slider-completo`). **El discriminador es el `kind`.** Dentro de
+> `video` las dos variables son inseparables —las 30 instancias son sin caja—,
+> así que sin contar las separadoras la regla se habría escrito al azar.
+
+> ⚠ **Y EL MECANISMO DE LOS 30 VÍDEOS NO ES `et_pb_toggle_close`: ES DIVIPOPUP.**
+> Los `div#*-popup` son **4·6·6·10·4 = 30**, exactamente los vídeos que faltan
+> ruta a ruta — y **DOS de esas cinco rutas tienen CERO `et_pb_toggle_close`** y
+> aun así sus 6 y 4 vídeos siguen sin caja. Importa para lo que
+> §F3-3-CUATRO-SIN-CABLEAR declara que hace falta: **abrir un POPUP no es abrir
+> un desplegable**, y la geometría de dentro es **modal, no en flujo**.
 
 **Con sus dos lados, que es como se ficha un Δ sin adjudicar:**
 
@@ -2057,11 +2105,97 @@ CLON · 10 en ninguno.** El clon **no inventa nada**; le faltan módulos.
 > dos anchos** (324 mixtos · 98 cruces de tipo). Un defecto de maquetación varía
 > con el ancho; éstos no. **Son de EMISIÓN, no de layout.**
 
+> ✅ **CONFIRMADO POR MEMBRESÍA, no por cardinal (105.ª):** los 47 nombrados dan
+> **diferencia simétrica 0 y 0** entre 1440 y 390. No es que los recuentos
+> empaten: **es el mismo conjunto**.
+
 **CORTE LIMPIO 2 aplicado: la tanda cierra SIN registrar `f33-cmp` en
 `qa:cobertura`.** El bloque de acreditación llegó a escribirse —con sus ejes
 elegidos por lo que la sonda **compara** y no por lo que toca— y **se retiró**:
 acreditar cobertura sobre Δ sin adjudicar es justo lo que esa matriz existe para
 impedir.
+
+> ⚠ **SIGUE SIN REGISTRARSE TRAS LA 105.ª, y ahora por un motivo MEJOR
+> ESTABLECIDO:** los módulos ya están adjudicados, pero **`docH` y todo alto con
+> imagen dentro NO son adjudicables** — no porque falte trabajo, sino porque
+> **los dos lados no se midieron en las mismas condiciones**
+> (§F3-3-CMP-IMAGENES-ROTAS). Acreditar un eje geométrico sobre eso sería
+> acreditar el artefacto.
+
+### ⚠ EL PASO 0 DE LA 105.ª: EL `docH 1497` **NO ERA EL INSTRUMENTO**
+
+La ficha señalaba dos rutas con el mismo `docH` del original al entero. **Son
+CINCO, y las cinco `BT`** — y a 390 no coincide ninguna. Comprobado, con su
+número y sin argumentarlo:
+
+| comprobación | resultado |
+|---|---|
+| viewport fijado ANTES de montar el documento | ✅ y **verificado con el discriminador que dejó `f33-clases`**: las filas del original a 390 miden **335.39 ×76**, no 249.59. Las hojas enlazadas sobreviven |
+| cruce con otra congelada del mismo objeto | ✅ `f33-geo` cuenta **113 filas · 79 con caja** y `f33-cmp` ve **34 filas de ancho 0**. 113 − 79 = 34, exacto. Y **11 módulos sin caja** en `/soporte/centro-de-ayuda/` contra **10 de 11 secciones** con caja cero |
+| **el asentado** (`eager` · `fonts.ready` · pase de scroll) | ⛔ **NO LO TENÍA**, y sus dos hermanas sobre el mismo corpus ya lo pagaron. Puesto → **NO-OP verificado**: 2107·929 @1440 y 2107·890 @390, idénticos a la 104.ª |
+
+**Y la explicación, medida:** `docH − #main-content.h` es **CONSTANTE en 8 de 8
+rutas `BT`** —787.4 a 1440 · 1957.7 a 390—, así que el cascarón está bien
+medido. El `1497` sale de **`#main-content` valiendo 709.63 CLAVADO en las
+cinco**, con contenidos de 186.77 a 419.13, y **no repetirse en ninguna a 390**.
+
+> **Es la §regla espejo con el contenedor puesto en el cascarón:** a 1440 las
+> columnas van en fila y la más alta manda; a 390 apilan y no hay dónde
+> absorber. **`docH` no es un eje de fidelidad válido para esas 5 rutas a
+> 1440** —un defecto de hasta ~180 px en la columna de contenido sería
+> invisible— y sí lo es a 390.
+
+### ⚠ LA `base`: la ficha decía «2 `BT` con `base 0`» y son **14 SIN ANCLA**, en TRES casos distintos
+
+`docs/research/cola-larga/derivaciones/doch-por-composicion.{mjs,log}`, con sus
+dos lados y a los dos anchos:
+
+| n | qué | ¿es un Δ del clon? |
+|---|---|---|
+| **10** | **no hay `h1` en NINGUNO de los dos lados** (`aviso-legal`, `descarga-catalogo`, los 5 informes técnicos, `newsletter`, `politica-de-privacidad`, `suscribete`) | **no** — y son exactamente los «**10 en ninguno de los dos**» del eje mixto: **cruce exacto** |
+| **4** | `base 0` en el original: su `h1` vive en fila **sin caja** | **no** — 3 `BT` **y `/es/productos/`, que es `B-`**. La ficha decía «2 `BT`» |
+| **2** | el **CLON no tiene `h1`** y el original sí (`sistema-interno-de-informacion` · `politica-de-seguridad-de-la-informacion`) | ⛔ **SÍ**, y es defecto de estructura |
+
+**Y lo que queda (16) tiene forma, no ruido.** El clon sirve un `base`
+**CONSTANTE** —337.28 a 1440 · 295.58 a 390— donde el original **VARÍA**:
+
+| ruta `BT` | orig @1440 | orig @390 | clon |
+|---|---|---|---|
+| `/centro-de-ayuda/kunak-air-cloud/` | 355.16 | **907.92** | 337.28 / 295.58 |
+| `/centro-de-ayuda/kunak-air/` | 355.16 | **881.92** | ídem |
+| `/centro-de-ayuda/kunak-air/articulos-de-ayuda/` | 351.16 | **903.92** | ídem |
+| `/soporte/…/kunak-air-cloud/articulos-de-ayuda/` | 387.63 | **953.92** | ídem |
+
+> **Una constante donde el original varía es un valor cableado**, y §EL CONTRATO
+> NO ES EL MISMO A TODOS LOS ANCHOS lo llama por su nombre.
+
+### ⛔ LA BARRA LATERAL `BT` NO LA EMITE EL CLON — tres ejes independientes
+
+Es lo que explica el `Δtecho` y el grueso del `Δbase`, y **no se apoya en un solo
+selector** (que sería de Divi, y el clon no usa esa capa):
+
+| eje | original | clon |
+|---|---|---|
+| `[id$='-sidebar']` | **7** de 31 (`section#help-center-sidebar`, `h` 493.66 · 461.16) | **0** de 31 |
+| `Δtecho` de `docH` | 340.16 @1440 · **892.92 @390** | 282.58 · **215.58** → **−57.58** y **−677.34** |
+| **enlaces** | 122–128 | 110–120 → **−8 a −12 en las 7** |
+
+> **A 390 el original apila la barra ENCIMA del contenido**, y por eso el hueco
+> pasa de −57.58 a −677.34: es §la regla espejo otra vez, y el ancho que lo
+> enseña es el estrecho.
+>
+> ⚠ **Lo que cerraría esto es el 4.º caso del negativo que ya está fichado**
+> (§F3-3-COMPARADOR-CIEGO): un marcador del lado del clon contra el que
+> contrastar. Con lo medido hoy, «el clon no emite la barra» está **sostenido por
+> tres ejes y no probado por un selector**.
+
+### ⚠ TRES EJES DE MÓDULO QUE **NO** DEPENDEN DE IMÁGENES — medidos y limpios
+
+| tipo | ORIGINAL | CLON | lectura |
+|---|---|---|---|
+| `toggle` | **63 × 10** — uniforme: los diez **CERRADOS** | 254.16×5 · 131.78×2 · 223.56×2 · 101.19×1 | ⛔ **el clon los pinta ABIERTOS**. Es el eje COMPORTAMIENTO, que sigue a 0/31 |
+| `button` | 44×9 · 74×3 · 0×1 | **30.59 × 13** | ⛔ **constante donde el original varía**. Si es un envoltorio que falta o un campo sin modelar está **SIN PROBAR**: lo dirime medir el envoltorio y el `<a>` por separado en los dos lados (§*al transcribir, la pregunta no es «¿existe?» sino «¿SOBRE QUÉ?»*) |
+| `image` | 4 alturas, máx 245.03 | 19 alturas, máx 825.59 | ⚠ **NO se lee**: es el artefacto de §F3-3-CMP-IMAGENES-ROTAS |
 
 ### ⚠ Y TRES DEFECTOS ERAN DEL COMPARADOR, no del clon
 
@@ -2077,6 +2211,112 @@ plausibles:
 Congeladas defectuosas conservadas con su nombre y su número (§regla 7):
 `f33-cmp-{1440,390}-SONDA-docH-ERA-EL-VIEWPORT-31-de-31.json` ·
 `f33-cmp-1440-SONDA-CONTABA-et_pb_module_header-Y-EL-CAMPO-RICO-356-de-313.json`.
+
+### ⚠⚠ Y ERAN CINCO — el 4.º y el 5.º, encontrados por la 105.ª leyendo la misma salida
+
+La 104.ª escribió *«antes de atribuir un Δ nuevo al clon, comprueba que no es un
+cuarto»*. **Había un cuarto y un quinto**, y los dos daban números plausibles:
+
+| # | qué | cómo se vio | coste |
+|---|---|---|---|
+| **4** | **el regex del tipo exigía que la clase TERMINE en dígitos**, y el módulo BOTÓN lleva su ordinal en el envoltorio **y con sufijo**: `et_pb_button_0_wrapper` | 14 módulos con `tipo: null`. No da error — **da un valor**, y un alineador no puede casar un `null` | los **13 botones** salían A LA VEZ como «13 que faltan» y «13 que sobran». Arreglado: **47 faltan · 0 sobran** |
+| **5** | **`setRequestInterception` está en UN SOLO LADO** — el original mide con las imágenes rotas y el clon con las suyas | **65 de 71 imágenes del original a EXACTAMENTE 16 px**, el alto de un `<img>` roto | **+12 764.95 a 1440 · +9 861.29 a 390** sólo de altos de imagen. §F3-3-CMP-IMAGENES-ROTAS |
+
+> ⚠ **El 4.º es la TERCERA sonda de este arquetipo que tropieza con `_wrapper`,
+> y la segunda en pagarlo.** `f33-clases` lo pagó el 2026-08-24 —congelada
+> `…-SONDA-EL-ORDINAL-PERDIA-_wrapper-6-overrides-del-editor-como-PLANTILLA…`—
+> y se arregló **la instancia**. Es §*arreglar la instancia y no la CLASE es cómo
+> se llega a la tercera tanda del mismo bug*, cumplida al pie de la letra.
+
+**Y lo mismo con el ASENTADO:** `f33-geo` lo pagó el 22 (`SIN-EAGER-DERIVA-1-IMAGEN`),
+`f33-clases` el 24 (`SIN-fonts-ready`), y **`f33-cmp` no lo tenía** mientras
+publicaba `docH`, que es la suma de todo lo que haya cargado. Puesto en los dos
+lados y **NO-OP verificado a los dos anchos** — que se dice así, con lo medido,
+y no como «idéntico» por no haber mirado.
+
+Congeladas caducadas por el cambio de instrumento, renombradas con su defecto y
+su alcance (§regla 5bis) tras derivar por `grep` las **2** citas del nombre
+canónico —ninguna era código—:
+`f33-cmp-{1440,390}-CADUCADA-SIN-ASENTAR-Y-EL-BOTON-COMO-null-13-de-14-2026-08-25.json`.
+
+---
+
+## ⛔ F3-3-CMP-IMAGENES-ROTAS · **el comparador mide los dos lados con la red en distinto estado** — 105.ª, 2026-08-25
+
+**Qué es.** `f33-cmp` corta la red del lado del ORIGINAL —`setRequestInterception`
+con todo abortado salvo `file:` y `data:`— y **no la corta del lado del CLON**.
+La captura conserva los `src` **absolutos** a `kunakair.com` (decisión D2 del
+propietario, 2026-08-22: *«se deja ABSOLUTO. No se captura»*), así que:
+
+| | imágenes | resultado |
+|---|---|---|
+| ORIGINAL | 71 | **65 a EXACTAMENTE 16 px** — el alto de un `<img>` roto. **1522** peticiones abortadas |
+| CLON | 71 | las 71 cargadas, **19 alturas distintas**, hasta 825.59. **0** abortadas |
+
+**Lo que vale, con su número:** suma de altos `2310.04 → 15074.99`, o sea
+**Δ +12 764.95 a 1440** y **+9 861.29 a 390**. Contra un `Δcuerpo` acumulado de
+**+21 841.58** y **+4 918.62**: el artefacto vale el **58 %** del primero y el
+**200 %** del segundo.
+
+> **A 390 el artefacto es MAYOR que el total**, o sea que debajo hay efectos de
+> signo contrario. §*un Δ de cero puede ser dos errores que se anulan*: **el
+> total no se puede leer**, ni para bien ni para mal.
+
+**Es §F3-1-CSS-NO-CAPTURADO un canal más allá**, y con el mismo modo de fallo —
+*no da error, da una medida PLAUSIBLE*. `conHojasLocales` reescribe los `<link>`
+a copias locales y **no toca los `<img>`**: medio canal cerrado se lee como el
+canal entero.
+
+**⇒ NO ADJUDICABLES hasta que se arregle:** `docH`, `caja.*.h`, y todo alto de
+módulo con imagen dentro. **Sí quedan adjudicables** los ejes que no dependen de
+imágenes (árbol, ancho de fila, `toggle`, `button`, techo y pie del cascarón).
+
+**Lo que haría falta**, y no es caro: reescribir `<img src>` a la copia local por
+el mismo camino que las hojas. El repo **ya las tiene** —`media-corpus/` y
+`apps/web/public`— y `f33-extraido.json §origenImagen` dice **71 · 70 locales ·
+1 externa**. Se verifica igual que las hojas: con su guarda (*«N imágenes sin
+resolver ⇒ la corrida NO vale»*) y su negativo.
+
+⚠ **Y el alcance es de LAS TRES sondas, no de ésta:** `f33-geo` y `f33-clases`
+**tampoco** reescriben `<img src>` (derivado, 0 coincidencias en las dos). Lo que
+cada una se juega es distinto y hay que mirarlo por separado — `f33-geo` publica
+alturas de módulo, así que le afecta; `f33-clases` mide la cascada, y **eso está
+SIN COMPROBAR**.
+
+---
+
+## ⛔ F3-3-MODULO-DE-TERCEROS · **`dvmd_table_maker`: una tabla de 11×5 que el clon no sirve por ningún canal** — 105.ª, 2026-08-25
+
+**Es el ÚNICO residuo del `−47`**, y salió del cruce que el comparador no tenía:
+cruzaba `nSecciones` contra el censo del árbol y **no `nModulos`**, que es la
+unidad de su propio titular (§*se compara en la unidad que se afirma*).
+
+| | dice |
+|---|---|
+| el DOM de `/es/politica-de-cookies/` | **9** módulos propios |
+| el censo de `arbol-f33` | **8** |
+| el de más | `<div class="et_pb_module dvmd_table_maker dvmd_table_maker_0 dvmd_tm_version_4_0_1">`, **caja 880×1511**, `role="table"` con `aria-rowcount="11"` y `aria-colcount="5"` |
+
+**No lo nombra nadie:** ni el censo del árbol (313 módulos en 11 tipos, y no está
+entre ellos), ni el extractor —la página extraída trae **8 `texto-pagina`** y
+`dvmd_table` **no aparece en ningún campo**, ni siquiera dentro del HTML rico—,
+ni el esquema. **La tabla no viaja por ningún canal**, y el clon sirve la ruta
+con **200**: §*una ruta que responde 200 no prueba que sirva CONTENIDO*.
+
+**Y no es un caso de uno:** derivado con `grep`, `dvmd_table_maker` aparece en
+**22 documentos del corpus** — 1 de la cola larga y **20 del arquetipo PRODUCTO,
+que ya está clonado** (`monitor-calidad-aire`, `estacion-de-monitoreo…` y 18
+cartuchos), más la hoja del tema. **Si esas 20 sirven la tabla y el clon no, es
+el mismo defecto en un arquetipo dado por bueno — y NO está medido.**
+
+> ⚠ **Lo que este hallazgo dice de método:** el módulo llevaba visto desde antes
+> —`derivaciones/cotejo-marcado-f33.log` §`div.dvmd_tm_cdata ×1`— y nadie lo
+> persiguió. §*MENCIONADO NO ES DOCUMENTADO*, con el objeto puesto en una línea
+> de un log.
+
+**Guarda puesta, para que no vuelva a hacer falta un humano:** el cruce de
+módulos entra en `f33-cmp`, **nombra el tipo** que el censo no conoce y **cierra
+el código de salida** (`exit 4`). Antes era un `+1` que nadie miraba.
 
 <details>
 <summary>Enunciado original de la 93.ª (2026-08-22)</summary>
@@ -2475,6 +2715,22 @@ cambio**. Congelar la base **antes** de tocar nada es más barato que adjudicar
 después.
 
 ## ✅ META-CANARIOS-DE-CARGA · MARCADORES EN `CLAUDE.md` PARA MEDIR SI LLEGA ENTERO — **CERRADA 2026-08-18** (v1 opaca MEDIDA · v2 visible MEDIDA · instrumento retirado)
+
+> ✅ **LECTURA DEL TRIPWIRE, 2026-08-25 (105.ª) — y es gratis, que es para lo que
+> se dejó puesto.** El fichero entró en sesión a **230.016 caracteres**
+> (235.950 bytes) y **`KV-01` y `KV-08` llegaron LOS DOS**. `KV-08` vive a **16
+> caracteres del final**, así que su presencia acota el truncado por arriba:
+>
+> | refutación del truncado | tamaño en que se midió |
+> |---|---|
+> | 2026-08-18 (la que cerró la ficha) | **156.426** chars |
+> | **2026-08-25 (esta lectura)** | **230.016** chars — **+47 %**, y sigue llegando entero |
+>
+> **Lo que NO dice:** los dos extremos acotan; **el medio no se volvió a
+> muestrear** (la v2 lo hizo con 8 puntos y esos marcadores están retirados). Así
+> que lo respaldado es *«llegan el principio y el final a 230.016»*, no *«llega
+> entero»* — §*un cero de muestreo se publica como COTA*. Tras la 105.ª el
+> fichero queda en **233.733**.
 
 **CERRADA.** Las dos hipótesis están dirimidas y el instrumento retirado: el
 resultado, los cinco veredictos y lo que sigue sin medir viven al final, en

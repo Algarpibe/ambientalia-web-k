@@ -506,12 +506,25 @@ const NO_APORTAN = new Set([
    * `f33-geo` (95.ª) — **UN SOLO LADO, y por eso no aporta.** Deriva la
    * geometría de las 31 de la cola larga del CORPUS CON SUS HOJAS, offline. Es
    * una medida buena del ORIGINAL y **no es una comparación**: quien compara
-   * los dos lados es `qa:f33-cmp`, que sigue sin corrida de verdad porque el
-   * lado del clon no existe.
+   * los dos lados es `qa:f33-cmp`.
    *
    * Acreditarle ejes aquí sería §*acreditar un eje que la sonda no compara* —
-   * exactamente el motivo por el que `f33-cmp` tampoco está en `DECLARADAS`.
-   * Entra en la matriz la tanda que emita, y por `f33-cmp`, no por ésta.
+   * el mismo motivo por el que `f33-cmp` tampoco está en `DECLARADAS`.
+   *
+   * ⚠⚠ **PERO EL MOTIVO DE `f33-cmp` CAMBIÓ EL 2026-08-25 (105.ª), Y ESTE
+   * COMENTARIO DECÍA LO DE ANTES.** Hasta la 104.ª rezaba *«sigue sin corrida de
+   * verdad porque el lado del clon no existe»*, y **eso ya es falso**: la 104.ª
+   * emitió y `f33-cmp` comparó las 31 a los dos anchos (2107 pares). Un
+   * comentario que declara un hecho del repo envejece **contra** el repo (§regla
+   * 9), y éste llevaba una tanda haciéndolo.
+   *
+   * **El motivo de hoy es otro y está medido:** el comparador corta la red del
+   * lado del ORIGINAL y no del lado del CLON, así que **65 de 71 imágenes del
+   * original miden 16 px** —el alto de un `<img>` roto— y `docH` y todo alto con
+   * imagen dentro NO son acreditables (§F3-3-CMP-IMAGENES-ROTAS). Los ejes que
+   * **no** dependen de imágenes sí están comparados y entran **en cuanto ese
+   * canal se cierre**. El eje de MÓDULOS, que era la condición de la 104.ª, ya
+   * está adjudicado: **47 de 47**.
    */
   "f33-geo",
   "dos-rutas", "c-rutas", "c-censo", "c-muestra", "c-spec", "c-embeds", "c-bases",

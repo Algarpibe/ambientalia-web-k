@@ -3957,6 +3957,71 @@ dentro de un desplegable cerrado **conserva su ancho y pierde su alto**. Se
 unifica **con el criterio ya congelado**, no con el nuevo, porque el congelado
 ya tiene consumidores.
 
+**32 · A UN COMPARADOR DE DOS LADOS SE LE HACE A LOS DOS TODO LO QUE SE LE HACE
+A UNO — Y ESO INCLUYE LO QUE SE LE PROHÍBE.** (2026-08-25)
+
+Este documento ya avisa de que **una captura sin sus hojas no es la página: es
+su esqueleto con el estilo puesto por otro**, y de que eso *no da error, da una
+captura PLAUSIBLE*. Le falta la mitad que sólo aparece cuando hay **dos** lados:
+
+> **Un lado con la red cortada y el otro sin cortar no mide el objeto: mide la
+> asimetría.** Y la asimetría **no sale en ningún eje** — sale repartida por
+> dentro de todos los altos, con el signo de «el clon es más alto», que es
+> exactamente el signo que un defecto real tendría.
+
+**Medido:** un comparador ponía `setRequestInterception` **sólo en la página del
+original** —abortando todo lo que no fuera `file:` ni `data:`— mientras la
+captura conservaba `src` absolutos. Resultado: **65 de 71 imágenes del original a
+EXACTAMENTE 16 px**, el alto de un `<img>` roto, contra las 71 del clon cargadas.
+Sólo los altos de imagen valían **+12 764.95** a un ancho y **+9 861.29** al
+otro, el **58 %** y el **200 %** del Δ de cuerpo acumulado.
+
+> **Y el 200 % es lo que hay que saber leer:** cuando el artefacto es MAYOR que
+> el total, debajo hay efectos de signo contrario. §*un Δ de cero puede ser dos
+> errores que se anulan*, así que el total **no se puede leer ni para bien ni
+> para mal** — no es que esté inflado, es que no significa nada.
+
+**Las dos mitades operativas:**
+
+1. **la lista de lo que se aplica a un lado se aplica al otro, y se enumera**:
+   intercepción de red, asentado (imágenes, fuentes, scroll), viewport,
+   emulación, esperas. Un `setRequestInterception` que aparece **una sola vez**
+   en el fichero es la señal;
+2. **y reescribir un canal a copias locales y otro no es cerrar MEDIO canal.**
+   Si el `<link rel=stylesheet>` se reescribe, el `<img src>` también — o la
+   guarda que protege del primero se lee como si cubriera los dos. La marca de
+   que está cerrado es la misma que ya se le exige a las hojas: **su cardinal de
+   «sin resolver» y una corrida que NO VALE si no es cero.**
+
+**33 · UNA LLAVE DE EMPAREJAMIENTO QUE PUEDE VALER `null` FABRICA EL HALLAZGO
+DOS VECES, CON SIGNOS OPUESTOS — Y EL NETO LOS TAPA.** (2026-08-25)
+
+§sondas 4 dice que *un selector que no casa con nada no es un cero*. Ésta es la
+misma raíz en el sitio donde el daño **se duplica en vez de desaparecer**:
+
+> **Cuando lo que no casa es la LLAVE con la que se emparejan dos conjuntos, el
+> elemento no se pierde: se cuenta en los DOS lados.** Sale como «el original
+> tiene N que el clon no emite» **y** como «el clon tiene N que sobran», los dos
+> ciertos del instrumento y ninguno del objeto. En el neto se anulan, así que
+> **el recuento agregado no se mueve** y nada chirría.
+
+**Medido:** el patrón que nombraba el tipo de un módulo exigía que la clase
+**terminara en dígitos**, y el módulo botón de ese constructor lleva su ordinal
+en el envoltorio y con sufijo (`et_pb_button_0_wrapper`). Salían **13 botones
+como faltantes y 13 como sobrantes**; el neto era 0 y el titular no lo veía.
+Corregido, el reparto pasó de **60 faltan / 13 sobran** a **47 / 0**.
+
+**Las dos mitades operativas:**
+
+1. **una llave nunca es opcional: si no se puede derivar, se TIRA** (§regla 6 —
+   *una ausencia se rechaza, no se sustituye*). Un `null` en una llave es «no lo
+   sé» disfrazado de valor;
+2. **y la señal de que ya está pasando es que los dos lados crezcan a la vez.**
+   `faltan` y `sobran` subiendo juntos, con el mismo cardinal, casi nunca es un
+   hallazgo: es una llave que no casa. **Se publican los dos números, nunca su
+   diferencia** — que es §*un cardinal es un contenedor* con el contenedor puesto
+   en la resta.
+
 ## Comandos
 
 ```bash

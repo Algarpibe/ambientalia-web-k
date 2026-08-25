@@ -1,5 +1,37 @@
 # Cobertura de medición — qué se ha comparado contra el original y qué no
 
+> ⚠⚠ **2026-08-25 (105.ª tanda) · LA COLA LARGA YA NO ESTÁ A 0 EJES COMPARADOS —
+> Y SIGUE SIN REGISTRARSE AQUÍ, AHORA POR UN MOTIVO MEJOR ESTABLECIDO.**
+>
+> La 104.ª emitió y `qa:f33-cmp` comparó **las 31 rutas a los dos anchos** contra
+> el original: **2107 pares numéricos**, 929 distintos @1440 y 890 @390. O sea
+> que el aviso de la 93.ª —*«las congeladas de hoy son de corridas de CONTROL»*—
+> **ya no describe el estado**: hay corrida de verdad, con clon de verdad.
+>
+> **Lo que impide registrarla es otra cosa, y se midió en la 105.ª:**
+>
+> > **El comparador corta la red del lado del ORIGINAL y NO del lado del CLON.**
+> > `setRequestInterception` está en un solo lado, y la captura conserva los
+> > `src` absolutos, así que **65 de las 71 imágenes del original miden 16 px**
+> > —el alto de un `<img>` roto— mientras las del clon cargan. Sólo los altos de
+> > imagen valen **+12 764.95 a 1440** y **+9 861.29 a 390**, el 58 % y el 200 %
+> > del `Δcuerpo` acumulado.
+>
+> ⇒ **`docH`, `caja.*.h` y todo alto con imagen dentro NO son acreditables**:
+> acreditarlos sería acreditar el artefacto. Los ejes que **no** dependen de
+> imágenes —árbol, ancho de fila, `toggle`, `button`, techo y pie del cascarón—
+> **sí** están comparados y **entran en cuanto el canal de imagen se cierre**,
+> que es lo que hay que hacer antes de tocar `cobertura.mjs`.
+>
+> **Y el eje de MÓDULOS ya está adjudicado**, que era la condición que la 104.ª
+> puso: **47 de 47**, nombrados uno a uno —34 de §F3-3-CUATRO-SIN-CABLEAR, 12 de
+> la retirada, 1 residuo (§F3-3-MODULO-DE-TERCEROS)—, con diferencia simétrica
+> **0 y 0** entre anchos. Fichas: `PENDIENTES-QA.md` §F3-3-CMP-DELTAS y
+> §F3-3-CMP-IMAGENES-ROTAS.
+
+<details>
+<summary>Aviso anterior de la 93.ª (2026-08-22), conservado porque su razonamiento sigue valiendo aunque su premisa haya cambiado</summary>
+
 > ⚠⚠ **2026-08-22 (93.ª tanda) · LA COLA LARGA SIGUE A 0 EJES COMPARADOS, Y
 > AHORA HAY UN COMPARADOR QUE NO ESTÁ REGISTRADO AQUÍ. Las dos cosas son
 > correctas y hay que leerlas juntas.**
@@ -23,6 +55,8 @@
 > demás.
 >
 > Ficha con lo que está listo y lo que falta: `PENDIENTES-QA.md` §F3-3-EMISION.
+
+</details>
 
 > ⚠ **2026-08-17 (75.ª tanda) · LA MATRIZ NO SE MUEVE, Y ESO ES LO CORRECTO:
 > `93 · 93 · 77 · 68 · 64` sobre **367**, idéntica a la de la 74.ª.**
