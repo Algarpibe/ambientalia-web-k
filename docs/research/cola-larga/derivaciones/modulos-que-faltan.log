@@ -1,0 +1,141 @@
+═══ modulos-que-faltan — 105.ª tanda, 2026-08-25 · ESCALÓN 1
+    NOMBRA los módulos del −47. No abre el original: lee congeladas.
+    criterio de caja, tomado del congelado: «en el DOM» y «con caja» NO son la misma medida — un módulo dentro de un desplegable cerrado está en el primero y no en el segundo, y su geometría NO es medible
+
+═══ 0 · CONTROLES — antes de ningún titular
+  @1440  emparejados 267 · faltan 47 · sobran 0 · alineaciones rotas 0
+  @390  emparejados 267 · faltan 47 · sobran 0 · alineaciones rotas 0
+  membresía entre anchos — diferencia simétrica: 0 sólo @1440 · 0 sólo @390
+  ⚠ tipos del ORIGINAL sin traducir a `kind`: dvmd_table_maker
+
+═══ 1 · LOS QUE FALTAN — por RÉGIMEN (nunca en total)
+  B-    17 módulos en 12 rutas · CON caja 17 · SIN caja 0
+  BT    30 módulos en 5 rutas · CON caja 0 · SIN caja 30
+  TOTAL 47   (sobran en el clon: 0)
+
+═══ 2 · LOS QUE FALTAN — por TIPO, cruzado con el criterio de caja
+  video-pagina        30 · con caja   0 · SIN caja  30
+  texto-pagina        12 · con caja  12 · SIN caja   0
+  slider-completo      2 · con caja   2 · SIN caja   0
+  mapa                 1 · con caja   1 · SIN caja   0
+  slider               1 · con caja   1 · SIN caja   0
+  ?dvmd_table_maker    1 · con caja   1 · SIN caja   0
+
+═══ 3 · EL CRUCE QUE DECIDE — ¿es «sin caja» el discriminador?
+    §*un discriminador 1:1 puede ser la SOMBRA de otro*: se publica el 2×2 entero.
+  faltan y NO tienen caja en el original: 30
+  faltan y SÍ tienen caja en el original: 17
+  módulos SIN caja que el congelado `f33-geo` censa en total: 36
+  ⇒ sin caja QUE SÍ EMITE el clon: 6
+     (tipos sin caja según f33-geo: {"video":30,"text":5,"button":1})
+
+═══ 4 · LOS QUE FALTAN, NOMBRADOS — ruta por ruta
+  /es/centro-de-ayuda/kunak-air-cloud/  [BT]  faltan 4
+     · mod 4  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod 5  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod 6  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod 7  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+  /es/centro-de-ayuda/kunak-air/  [BT]  faltan 6
+     · mod 4  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod 5  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod 6  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod 7  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod 8  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod 9  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+  /es/centro-de-ayuda/kunak-air/video-tutoriales/  [BT]  faltan 6
+     · mod15  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod16  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod17  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod18  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod19  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod20  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+  /es/soporte/centro-de-ayuda/  [BT]  faltan 10
+     · mod11  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod12  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod13  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod14  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod15  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod16  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod17  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod18  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod19  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod20  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+  /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/  [BT]  faltan 4
+     · mod11  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod12  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod13  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+     · mod14  `video` → `video-pagina`  <div>  SIN CAJA (w=0)
+  /es/productos/  [B-]  faltan 1  · retirada declarada: miga/CASCARÓN
+     · mod 4  `text` → `texto-pagina`  <div>  caja 585.13×47
+  /es/sectores/  [B-]  faltan 1  · retirada declarada: miga/CASCARÓN
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+  /es/recursos/  [B-]  faltan 2  · retirada declarada: miga/CASCARÓN · bucle-entradas/CONSULTA
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+     · mod11  `text` → `texto-pagina`  <div>  caja 1238.39×427.52
+  /es/recursos/kunakpedia/  [B-]  faltan 1  · retirada declarada: miga/CASCARÓN
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+  /es/recursos/documentos-cientificos/  [B-]  faltan 2  · retirada declarada: miga/CASCARÓN · listado-cientifico/CONSULTA
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+     · mod 5  `text` → `texto-pagina`  <div>  caja 1238.39×4171.78
+  /es/recursos/preguntas-frecuentes/  [B-]  faltan 1  · retirada declarada: miga/CASCARÓN
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+  /es/contacto/  [B-]  faltan 2
+     · mod 6  `map` → `mapa`  <div>  caja 802.88×400
+     · mod 7  `fullwidth_slider` → `slider-completo`  <div>  caja 1440×343.06
+  /es/empresa/  [B-]  faltan 3  · retirada declarada: miga/CASCARÓN
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+     · mod17  `slider` → `slider`  <div>  caja 1238.39×228.61
+     · mod18  `fullwidth_slider` → `slider-completo`  <div>  caja 1440×349.72
+  /es/empresa/premios-y-reconocimientos/  [B-]  faltan 1  · retirada declarada: miga/CASCARÓN
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+  /es/politica-de-cookies/  [B-]  faltan 1
+     · mod 5  `dvmd_table_maker` → `?dvmd_table_maker`  <div>  caja 880×1511
+  /es/soporte/  [B-]  faltan 1  · retirada declarada: miga/CASCARÓN
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+  /es/soporte/servicio-de-reparacion/  [B-]  faltan 1  · retirada declarada: miga/CASCARÓN
+     · mod 0  `text` → `texto-pagina`  <div>  caja 1238.39×26
+
+═══ 5 · LA RETIRADA, cruzada al ELEMENTO (no al cardinal)
+  retiradas declaradas: 12 en 10 rutas
+  retiradas con hueco donde caer: 12 · SIN hueco: 0
+
+═══ 6 · LA ADJUDICACIÓN — cada uno contra una causa YA declarada
+  SIN_CABLEAR leído del render: video-pagina · slider-completo · slider · mapa
+  · los 4 kinds SIN CABLEAR (§F3-3-CUATRO-SIN-CABLEAR, 99.ª): 34
+       video-pagina       30
+       mapa               1
+       slider-completo    2
+       slider             1
+  · la RETIRADA (§f33-extraido.retirada, 97.ª):            12
+  · RESIDUO sin causa declarada:                           1
+       ⛔ /es/politica-de-cookies/ mod5 `?dvmd_table_maker` <div> caja 880×1511
+  sobrantes del retirada declarado que no encontraron módulo: 0
+
+═══ 7 · ¿KIND o SIN CAJA? — las separadoras, contadas antes de decidir
+  (a) SIN caja y el clon SÍ los emite:  6   ⇒ «sin caja» NO basta para faltar
+      tipos sin caja según f33-geo: {"video":30,"text":5,"button":1} · total 36
+  (b) CON caja y el clon NO los emite:  4   ⇒ «con caja» NO basta para estar
+  ⇒ separadoras en las DOS direcciones: 6 + 4 = 10
+     El discriminador es el KIND. Si fueran 0, la regla estaría nombrando una correlación.
+
+═══ 8 · VEREDICTO
+  −47 módulos nombrados uno a uno, +0 de sobra.
+  SIN CAJA en el original: 30  ⇒ es el grupo mayor.
+  CON CAJA (visibles en el original y ausentes del clon): 17
+     · /es/productos/ mod4 `texto-pagina` 585.13×47
+     · /es/sectores/ mod0 `texto-pagina` 1238.39×26
+     · /es/recursos/ mod0 `texto-pagina` 1238.39×26
+     · /es/recursos/ mod11 `texto-pagina` 1238.39×427.52
+     · /es/recursos/kunakpedia/ mod0 `texto-pagina` 1238.39×26
+     · /es/recursos/documentos-cientificos/ mod0 `texto-pagina` 1238.39×26
+     · /es/recursos/documentos-cientificos/ mod5 `texto-pagina` 1238.39×4171.78
+     · /es/recursos/preguntas-frecuentes/ mod0 `texto-pagina` 1238.39×26
+     · /es/contacto/ mod6 `mapa` 802.88×400
+     · /es/contacto/ mod7 `slider-completo` 1440×343.06
+     · /es/empresa/ mod0 `texto-pagina` 1238.39×26
+     · /es/empresa/ mod17 `slider` 1238.39×228.61
+     · /es/empresa/ mod18 `slider-completo` 1440×349.72
+     · /es/empresa/premios-y-reconocimientos/ mod0 `texto-pagina` 1238.39×26
+     · /es/politica-de-cookies/ mod5 `?dvmd_table_maker` 880×1511
+     · /es/soporte/ mod0 `texto-pagina` 1238.39×26
+     · /es/soporte/servicio-de-reparacion/ mod0 `texto-pagina` 1238.39×26

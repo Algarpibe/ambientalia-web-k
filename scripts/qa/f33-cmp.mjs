@@ -133,6 +133,53 @@ async function preparaViewport(page) {
   }
 }
 
+/**
+ * ⚠⚠ **EL ASENTADO — Y ESTA SONDA ERA LA ÚNICA DE LAS TRES QUE NO LO TENÍA**
+ * (105.ª tanda).
+ *
+ * `CLAUDE.md` §Notas de método lo manda —*«conviene además forzar las imágenes
+ * perezosas a `eager`»*, *«scroll + settle antes de medir»*— y sus dos hermanas
+ * sobre el MISMO corpus ya lo pagaron, cada una con su congelada de evidencia:
+ *
+ *   · `f33-geo`, 2026-08-22 — `…-SONDA-SIN-EAGER-DERIVA-1-IMAGEN.json`: dos
+ *     corridas del mismo código dieron **269 y 270** módulos con caja, y el diff
+ *     salía confinado a `image`;
+ *   · `f33-clases`, 2026-08-24 — `…-SONDA-SIN-fonts-ready-1-boton-a-7.27.json`:
+ *     un botón computaba `7.27` en vez de `7.5` porque `0.5em` se resolvía
+ *     contra una fuente todavía sin cargar.
+ *
+ * **Las dos veces se arregló la instancia.** Ésta es la tercera, y aquí muerde
+ * más que en ninguna: este comparador publica `docH`, que es **la suma de todo
+ * lo que haya cargado**. Una imagen que entra o sale mueve el titular entero.
+ *
+ * ⚠ **Va ACOTADA, y el tope es parte del contrato** (§regla 17): con la red
+ * cortada una `src` abortada puede dejar la promesa colgada, y una espera sin
+ * tope **no da rojo: se AGOTA** — ni pasa ni falla.
+ *
+ * ⚠ **Y NO se cambia el viewport después.** `setViewport` con `isMobile`
+ * RECARGA, y una recarga sobre un documento montado con `setContent` vuelve al
+ * fichero crudo y se lleva los siete `<link file://>` (`f33-clases`, 6 de 6
+ * rutas: fila **249.594** contra **335.391**). Por eso `preparaViewport` va
+ * ANTES de montar y esto sólo asienta. Control de que sigue siendo así: las
+ * filas del original a 390 miden **335.39**, no 249.59.
+ */
+async function asienta(page) {
+  await page.evaluate(async () => {
+    for (const img of document.querySelectorAll("img")) { img.loading = "eager"; img.decoding = "sync"; }
+    const listas = Promise.all(
+      [...document.images].filter((i) => !i.complete).map((i) => new Promise((r) => { i.onload = i.onerror = r; })),
+    );
+    await Promise.race([listas, new Promise((r) => setTimeout(r, 2000))]);
+    if (document.fonts?.ready) await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 3000))]);
+    /* El pase de scroll que §Notas de método pide: Divi recalcula alturas por JS
+     * después del load, y hay imágenes que sólo se piden al entrar en pantalla. */
+    window.scrollTo(0, document.documentElement.scrollHeight);
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    window.scrollTo(0, 0);
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  });
+}
+
 /* ── 3 · LOS EJES — los mismos nombres que la matriz de cobertura ──────────── */
 const censo = new Censo();
 function medir() {
@@ -220,6 +267,29 @@ function medir() {
     anchos: {},
     cajas: {},
     enlaces: $$("a[href]").map((a) => a.getAttribute("href")).filter((h) => h && !h.startsWith("#")).length,
+    /**
+     * EL CASCARÓN — **dato, no par**: no entra en la comparación y no mueve
+     * ningún denominador. Está para ATRIBUIR `docH`, que es un total y por
+     * tanto un contenedor (§*Alturas: se mide por composición; el total sólo
+     * dice si cuadra, la composición dice qué*).
+     *
+     * El caso que lo pide: **cinco rutas `BT` distintas dan `docH 1497` CLAVADO
+     * a 1440** —con contenidos de 186.77 a 419.13— **y ninguna coincide a 390**.
+     * Sobre las congeladas de la 104.ª, el modelo `docH = techo(sec0) +
+     * max(SUELO, contenido) + pie` ajusta 7 de 7 con `pie ≈ 680.35` y
+     * `SUELO ≈ 476.49`. Un suelo así **sólo puede ponerlo un hermano más alto
+     * que el contenido**, y el censo del `<body>` de esas rutas nombra uno:
+     * `section#help-center-sidebar`. Publicarlo convierte una constante
+     * AJUSTADA en una MEDIDA.
+     *
+     * Los selectores salen de censar los `id` de las capturas, no de suponer.
+     * Un `null` aquí es legítimo y sale nombrado: el clon no tiene el cascarón
+     * de Divi, y los regímenes `B-`/`--` no tienen barra.
+     */
+    cascaron: Object.fromEntries(
+      [["pagina", "#page-container"], ["area", "#et-main-area"], ["contenido", "#main-content"], ["barra", "[id$='-sidebar']"]]
+        .map(([k, sel]) => { const el = $(sel); return [k, el ? r(el) : null]; }),
+    ),
     /* CONTROL de que las hojas llegaron: sin CSS, Divi no pinta ni una caja. */
     hojasAplicadas: [...document.styleSheets].length,
     cuerpoTieneEstilo: getComputedStyle(document.body).fontFamily,
@@ -254,11 +324,54 @@ function medir() {
     const b = m.getBoundingClientRect();
     return {
       i,
-      /* el TIPO, por el canal de cada lado — es dato, no llave */
-      tipo:
-        [...m.classList].map((c) => /^et_pb_(\w+?)_\d+$/.exec(c)?.[1]).find(Boolean) ??
-        m.getAttribute("data-modulo") ??
-        null,
+      /**
+       * el TIPO, por el canal de cada lado — es dato, no llave.
+       *
+       * ⚠⚠ **EL ORDINAL DE DIVI NO SIEMPRE TERMINA EN DÍGITOS, Y EL REGEX SÍ LO
+       * EXIGÍA: 13 BOTONES DE 13 SALÍAN `null`** (105.ª tanda).
+       *
+       * El módulo BOTÓN no lleva su ordinal en el propio módulo: lo lleva su
+       * envoltorio, y con sufijo —`et_pb_button_module_wrapper
+       * et_pb_button_0_wrapper et_pb_module`—. Contra `^et_pb_(\w+?)_\d+$` eso
+       * **no casa**, así que el tipo salía `null`.
+       *
+       * **Y no daba error: daba `null`, que es un valor.** Un alineador que
+       * empareja por tipo no puede casar un `null` con nada, así que los 13
+       * botones salían **a la vez «el original tiene 13 módulos que el clon no
+       * emite» y «el clon tiene 13 que sobran»** — dos hallazgos inventados que
+       * se anulan en el neto y por eso no chirriaban en `nModulos`.
+       *
+       * ⚠ **Es la TERCERA sonda de este arquetipo que tropieza con `_wrapper`**,
+       * y la segunda en pagarlo: `f33-clases` lo pagó el 2026-08-24 —congelada
+       * `…-SONDA-EL-ORDINAL-PERDIA-_wrapper-6-overrides-del-editor-como-PLANTILLA…`—
+       * y se arregló **la instancia**. Aquí se arregla la CLASE: el sufijo entra
+       * en el patrón, derivado de censar las clases portadoras de los 31
+       * documentos (`derivaciones/modulos-que-faltan.mjs` §controles).
+       *
+       * ⚠⚠ **Y HAY MÓDULOS QUE NO SON DE DIVI.** `/es/politica-de-cookies/`
+       * sirve un `dvmd_table_maker` —un módulo de TERCEROS, plugin Divi Table
+       * Maker— con `class="et_pb_module dvmd_table_maker dvmd_table_maker_0
+       * dvmd_tm_version_4_0_1"`. Es un módulo real, **con caja de 880×1511**, y
+       * ni este comparador ni el censo del árbol ni el extractor lo nombran.
+       * Se le da nombre **derivándolo**, no listando vendedores: una clase
+       * `X_<n>` cuya base `X` también está presente en el elemento. Así
+       * `dvmd_table_maker_0`+`dvmd_table_maker` da `dvmd_table_maker`, y
+       * `dvmd_tm_version_4_0_1` **no** cuela (su base `dvmd_tm_version_4_0` no
+       * está). Un tipo que no sepamos traducir sale NOMBRADO en el informe —
+       * que es lo contrario de un `null`, y la diferencia entre un hueco
+       * contable y uno invisible.
+       */
+      tipo: (() => {
+        /* El CLON lo dice en un atributo suyo, y va PRIMERO: el heurístico de
+         * terceros mira clases, y las del clon son utilitarias (`mb-4`, `gap-2`)
+         * — dejarlo detrás sería un sobre-casado esperando a ocurrir. */
+        const propio = m.getAttribute("data-modulo");
+        if (propio) return propio;
+        const cls = [...m.classList];
+        const divi = cls.map((c) => /^et_pb_(\w+?)_\d+(?:_wrapper)?$/.exec(c)?.[1]).find(Boolean);
+        if (divi) return divi;
+        return cls.map((c) => /^(.+)_\d+$/.exec(c)?.[1]).find((b) => b && cls.includes(b)) ?? null;
+      })(),
       etiqueta: m.tagName.toLowerCase(),
       w: +b.width.toFixed(2),
       h: +b.height.toFixed(2),
@@ -292,6 +405,7 @@ const baseClon = MISMO_LADO ? null : (await iniciarClon()).base;
 const salida = { meta: { sonda: "f33-cmp", fecha: hoy(), ancho: ANCHO, movil: MOVIL, contrato: "FIDELIDAD (1440/390)", dominio: { que: SOLO_PILOTO ? "PILOTO (6)" : "las 31 de `paginas`", n: PILOTO.length, de: TODAS.length }, sabotajes: { SIN_HOJAS, MISMO_LADO, DELTA } }, paginas: {} };
 const pares = [];
 let hojasCero = [];
+const cruceModulos = [];
 
 for (const pg of PILOTO) {
   const f = join(CORPUS, pg.fichero);
@@ -310,6 +424,7 @@ for (const pg of PILOTO) {
   await off.goto(pathToFileURL(f).href, { waitUntil: "domcontentloaded", timeout: 120_000 });
   await off.setContent(html, { waitUntil: "networkidle0", timeout: 120_000 });
   await new Promise((r) => setTimeout(r, 800));
+  await asienta(off);
   const orig = (await censo.medir(off, medir)).datos;
   await off.close();
 
@@ -343,7 +458,9 @@ for (const pg of PILOTO) {
       const url = baseClon + (pg.ruta.replace(/^\/es/, "").replace(/\/$/, "") || "/");
       const resp = await cp.goto(url, { waitUntil: "networkidle0", timeout: 120_000 });
       httpClon = resp ? resp.status() : 0;
-      if (httpClon < 400 && httpClon !== 0) clon = (await censo.medir(cp, medir)).datos;
+      /* El MISMO asentado que el original: si sólo se asentara un lado, el Δ
+       * mediría el asentado y no el clon. */
+      if (httpClon < 400 && httpClon !== 0) { await asienta(cp); clon = (await censo.medir(cp, medir)).datos; }
     } catch { httpClon = -1; }
     await cp.close();
   }
@@ -377,6 +494,35 @@ for (const pg of PILOTO) {
    * cruce prueba *«los dos cuentan lo mismo»*, **no** *«el recuento es
    * correcto»* (§regla 15).
    */
+  /**
+   * ⚠⚠ **EL CRUCE SE HACÍA SOBRE LAS SECCIONES Y NO SOBRE LOS MÓDULOS — y el
+   * módulo es la unidad que este comparador AFIRMA** (105.ª tanda).
+   *
+   * El cruce de abajo lleva desde la 103.ª y hace su trabajo. Pero cruza **un
+   * solo eje**, y el titular que se cita es `nModulos: 314 → 267`. O sea que la
+   * unidad del veredicto **no tenía cruce**: §*se compara en la unidad que se
+   * afirma*.
+   *
+   * Lo que estaba escondido ahí: el DOM cuenta **314** módulos propios y el
+   * censo del árbol **313**. El de más es `/es/politica-de-cookies/` —**9
+   * contra 8**— y es un `dvmd_table_maker`, un módulo de **TERCEROS** (plugin
+   * Divi Table Maker) con caja de **880×1511** que ni el censo ni el extractor
+   * nombran. Un `+1` que nadie miraba, y debajo una tabla de 11×5 que el clon
+   * no sirve por ningún canal.
+   *
+   * ⚠ **Cuenta en ROJO pero NO salta la página** (§regla 31: *una guarda que
+   * tira antes de congelar deja a su propio negativo sin nada que comparar*).
+   * La diferencia con el cruce de secciones es de qué informa cada uno: un
+   * descuadre de SECCIONES dice que el selector no denota lo mismo y **invalida
+   * la página entera**; uno de MÓDULOS con el tipo NOMBRADO es un hallazgo
+   * sobre el corpus, y tirarlo perdería justo la medida que lo prueba.
+   */
+  const nCenso = Object.values(pg.tipos ?? {}).reduce((a, b) => a + b, 0);
+  if (orig.nModulos !== nCenso) {
+    const tipos = [...new Set((orig.modulos ?? []).map((m) => m.tipo))].filter((t) => !(t in (pg.tipos ?? {})));
+    cruceModulos.push({ ruta: pg.ruta, dom: orig.nModulos, censo: nCenso, tiposQueElCensoNoNombra: tipos });
+  }
+
   if (orig.nSecciones !== pg.nSec) {
     ev.fallo(pg.ruta, `CRUCE ROTO: el DOM cuenta ${orig.nSecciones} secciones propias y el parser de \`piloto-f33\` cuenta ${pg.nSec}. Es el selector, no la página.`);
     console.log(`  ⛔ ${pg.ruta}: DOM ${orig.nSecciones} ≠ parser ${pg.nSec} secciones propias`);
@@ -427,6 +573,16 @@ if (hojasCero.length) {
   console.log(`   La corrida NO vale: es la medida sin estilo, que da números plausibles y falsos.`);
   console.log(`   Medido con el sabotaje: sin las externas, docH de /es/empresa/ pasa de 6623.91 a 13361.03.`);
 }
+
+/* ⚠ EL CRUCE DE LA UNIDAD QUE SE AFIRMA, antes de los pares: si el DOM y el
+ * censo no cuentan los mismos módulos, el titular `nModulos` habla de dos
+ * conjuntos distintos y ninguno de los dos lo dice. */
+salida.cruceModulos = cruceModulos;
+console.log(`\n═══ 1b · CRUCE DE MÓDULOS — DOM contra el censo del árbol (\`arbol-f33\`)`);
+console.log(`  §*se compara en la unidad que se afirma*: el titular de esta sonda es \`nModulos\`.`);
+if (!cruceModulos.length) console.log(`  ✓ las ${PILOTO.length} cuadran`);
+for (const x of cruceModulos)
+  console.log(`  ⚠ ${x.ruta}: DOM ${x.dom} ≠ censo ${x.censo}  ·  tipos que el censo NO nombra: ${x.tiposQueElCensoNoNombra.map((t) => `\`${t}\``).join(" · ") || "(ninguno)"}`);
 
 console.log(`\n═══ 2 · LOS PARES`);
 console.log(`  numéricos ${numericos.length} · MIXTOS ${mixtos.length} · distintos ${distintos.length}`);
@@ -579,9 +735,15 @@ w(`medidas/f33-cmp-${ANCHO}${SOLO_PILOTO ? "-piloto" : ""}${SABOTEADA && !proces
 console.log(`\n═══ 6 · VEREDICTO`);
 console.log(`  ✓ evaluadas ${ev.n}/${PILOTO.length} ${SOLO_PILOTO ? "páginas del piloto" : "páginas de la cola larga"} · pares ${pares.length} · distintos ${distintos.length}`);
 if (hojasCero.length) process.exit(2);
+if (cruceModulos.length)
+  console.log(`  ⚠ ${cruceModulos.length} ruta(s) con el CRUCE DE MÓDULOS descuadrado — ver §1b. Cuenta como rojo.`);
 if (distintos.length) {
   console.log(`\n  ${distintos.length} pares con Δ ≠ 0. Los 20 mayores:`);
   for (const p of [...distintos].sort((a, b) => Math.abs(b.c - b.o) - Math.abs(a.c - a.o)).slice(0, 20))
     console.log(`     ${p.ruta.padEnd(46)} ${p.eje.padEnd(18)} orig ${String(p.o).padStart(9)} → clon ${String(p.c).padStart(9)}  Δ${(p.c - p.o).toFixed(2)}`);
   process.exit(3);
 }
+/* Sin este remate, «0 distintos» taparía un cruce descuadrado y la corrida
+ * saldría VERDE con dos censos que no cuentan lo mismo debajo (§regla 1: lo que
+ * imprime y lo que cuenta no pueden discrepar). */
+if (cruceModulos.length) process.exit(4);
