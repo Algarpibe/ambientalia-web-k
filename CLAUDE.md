@@ -1066,6 +1066,40 @@ en un elemento que ninguna medida de la página mira.
 > «¿SOBRE QUÉ?».** Se comprueba midiendo **el primero y el último hermano por
 > separado** en el original: si difieren, ahí está el nivel; si no, no está ahí.
 
+⚠⚠ **Y LA CUARTA DE LA FAMILIA, QUE ES LA QUE NINGUNA COMPARACIÓN DE LA
+PROPIEDAD PUEDE VER: UN VALOR BIEN LEÍDO PUEDE ESTAR ESCRITO EN EL ELEMENTO QUE
+NO MANDA (2026-08-25).**
+
+Las tres de arriba fallan por leer mal —una declaración que el navegador tira,
+un `em` sin su base, un `:last-child` sobre el nivel equivocado—. Ésta se lee
+bien, se transcribe bien, **y el elemento donde se escribe computa el valor
+correcto**. Por eso comparar esa propiedad en los dos lados da **Δ0** y el
+defecto sigue ahí.
+
+> **Hay propiedades cuyo efecto NO lo decide el elemento que las declara.** La
+> altura de una línea la fija el **STRUT del bloque** que la contiene, no la
+> caja **enlínea** que hay dentro. Así que `font-size`/`line-height` puestos en
+> un `<a>` —que computa `display: inline`— dan el `<a>` correcto y **dejan el
+> alto de la línea en manos del bloque**, que sigue heredando lo que herede.
+
+**Medido:** un menú de 12 enlaces en 3 niveles se transcribió con
+`16/20 · 15/18.75 · 13/16.25` sobre el `<a>`. Los dos lados computaban
+`font-size: 16px` y `line-height: 20px` **idénticos** — y la barra medía
+**691.31 contra 493.66**, o sea **+197.65**. Las 15 líneas del menú valían
+`2×20 + 4×18.75 + 9×16.25 = 261.25` en el original y `15 × 30.6 = 459` en el
+clon, porque el `li` heredaba el cuerpo del tema. Puesto en el `li`, el `<a>` lo
+hereda y computa lo mismo: **28 de 30 ejes a Δ0 a 1440 y 30 de 30 a 390**.
+
+**Las dos mitades operativas:**
+
+1. **al transcribir tipografía, se mide también el BLOQUE que la contiene**, no
+   sólo el elemento que pinta el texto. Si el `li`/`p`/`div` no está en la
+   medida, el strut no está medido — y es él quien pone el alto;
+2. **y la señal para sospecharlo es un Δ que NO aparece en ninguna propiedad
+   comparada**: si todos los ejes de tipografía cuadran y el ALTO no, el defecto
+   está en un elemento que no estás midiendo. Es §*la causa común: el NIVEL al
+   que se mide* con el nivel puesto en **quién genera el strut**.
+
 De ahí las dos formas de aplicarlo, que son la misma:
 
 - **Alturas** — se mide el DOM renderizado, y **por composición**: `padding-top`,

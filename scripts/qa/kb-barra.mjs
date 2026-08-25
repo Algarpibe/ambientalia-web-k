@@ -26,10 +26,13 @@
  *     `articulos-kb` y los 7 hubs `BT` de la cola larga—, que es una HIPÓTESIS
  *     mientras nadie la mida.
  *
+ * ✅ **Y DESDE EL ESCALÓN 2 CONTESTA TAMBIÉN EL LADO DEL CLON**, nivel a nivel.
+ * Nació de un solo lado —el clon no emitía nada ahí— y esa frase dejó de ser
+ * cierta en cuanto emitió. La adjudicación **no podía** dejarse a `f33-cmp`:
+ * publica **una sola caja** de la barra, así que su `+197.65` era un número sin
+ * causa. Con los dos lados y los tres niveles delante, el defecto se nombró solo.
+ *
  * NO CONTESTA:
- *   · el LADO DEL CLON. Es una sonda de un solo lado, deliberadamente: el clon
- *     todavía no emite nada ahí, así que no hay dos lados que comparar. La
- *     adjudicación la hacen `kb-cmp` y `f33-cmp`, cada una en su familia;
  *   · ningún ancho intermedio — allí el contrato es de RANGO, y es otra pregunta;
  *   · el COMPORTAMIENTO. El menú del original tiene submenús y estados
  *     `current-*`; si alguno se despliega por interacción, esto no lo ve.
@@ -282,7 +285,7 @@ async function asienta(page) {
 
 /* ── 4 · LA MEDIDA ───────────────────────────────────────────────────────── */
 const censo = new Censo();
-function medir(selBarra) {
+function medir(selBarra, selMenu) {
   const $ = (s) => globalThis.__q(s);
   const $$ = (s) => globalThis.__qa(s);
   const n2 = (v) => +Number(v).toFixed(2);
@@ -319,12 +322,14 @@ function medir(selBarra) {
   /* El MENÚ: el árbol completo, con la geometría y la tipografía de cada nivel. */
   /**
    * ⚠ El `ul` del menú: **los dos lados no escriben la misma clase** —el
-   * original `ul.menu`, el clon `ul.ayuda-menu`—, así que el selector lleva las
-   * dos. La primera versión sólo tenía la del original y el lado del clon salió
-   * `undefined` en los 18 ejes del menú: §sondas 4 dentro de la propia sonda, y
-   * un `undefined` se lee como *«el clon no lo emite»* cuando lo emitía.
+   * original `ul.menu`, el clon `ul.ayuda-menu`—, así que **cada lado trae el
+   * suyo**. Dos intentos encadenados (`A || B`) darían la medida correcta y
+   * dejarían **un selector MUERTO por construcción** en el censo: el del otro
+   * lado no casa nunca, y eso es justo lo que §sondas 4 no deja pasar. Un
+   * parcial legítimo se DECLARA —aquí, dándole a cada lado su selector—, no se
+   * tapa con un fallback.
    */
-  const menu = $(`${selBarra} ul.menu`) || $(`${selBarra} ul.ayuda-menu`);
+  const menu = $(selMenu);
   let arbol = null;
   if (menu) {
     const lis = [...menu.querySelectorAll("li")];
@@ -428,6 +433,9 @@ const SEL_BARRA = SABOTAJE === "selector-muerto"
  *  el elemento, no la cadena (§sondas 4: *dos selectores que no denotan el
  *  mismo conjunto* fue lo que dio «31 de 31 distintas» en `c-cmp`). */
 const SEL_CLON = SABOTAJE === "selector-muerto" ? ".ayuda-barra-NO-EXISTE" : ".ayuda-barra";
+/** El `ul` del menú, uno por lado — ver el ⚠ de `medir()`. */
+const SEL_MENU_ORIG = `${SEL_BARRA} ul.menu`;
+const SEL_MENU_CLON = `${SEL_CLON} ul.ayuda-menu`;
 
 const { browser } = await launch();
 const baseClon = CON_CLON ? (await iniciarClon()).base : null;
@@ -459,7 +467,7 @@ for (const pg of PAGINAS) {
   await new Promise((r) => setTimeout(r, 800));
   await asienta(page);
   censo.grupo(pg.familia);
-  const { datos } = await censo.medir(page, medir, SEL_BARRA);
+  const { datos } = await censo.medir(page, medir, SEL_BARRA, SEL_MENU_ORIG);
   await page.close();
 
   if (enlazadas && sinResolver.length) hojasIncompletas.push({ ruta: pg.ruta, familia: pg.familia, faltan: sinResolver.length, ej: sinResolver });
@@ -488,7 +496,7 @@ for (const pg of PAGINAS) {
       httpClon = resp ? resp.status() : 0;
       /* El MISMO asentado que el original: si sólo se asentara un lado, el Δ
        * mediría el asentado y no el clon. */
-      if (httpClon < 400 && httpClon !== 0) { await asienta(cp); clon = (await censo.medir(cp, medir, SEL_CLON)).datos; }
+      if (httpClon < 400 && httpClon !== 0) { await asienta(cp); clon = (await censo.medir(cp, medir, SEL_CLON, SEL_MENU_CLON)).datos; }
     } catch { httpClon = -1; }
     await cp.close();
   }
