@@ -4751,6 +4751,38 @@ benigno serviría las **8 `BT` con el cascarón de las 22** y nadie se enterarí
 >
 > ⚠ **Esta tanda escribe la decisión. NO la implementa**: la emisión es la
 > siguiente, y sigue declarada en `PENDIENTES-QA.md` §F3-3-EMISION.
+>
+> ✅✅ **IMPLEMENTADA EL 2026-08-24 (104.ª). E1 EMITE: 382 → 413 rutas, y el
+> reparto salió EXACTO al elemento.**
+>
+> | pieza | predicho | emitido |
+> |---|---|---|
+> | `/[slug]` — tercer catálogo | 19 | **19** (189 → 208) |
+> | `/centro-de-ayuda/[...ruta]` | 4 | **4** (5 → 9) |
+> | `/soporte/[...ruta]` | 4 | **4** (1 → 5) |
+> | `/recursos/[...ruta]` | 3 | **3** (41 → 44) |
+> | `/empresa/[...ruta]` — **ruta nueva** | 1 | **1** (0 → 1) |
+> | **total** | **413** | **413** |
+>
+> Leído por **diferencia simétrica, no por neto**: **31 nuevas · 0
+> desaparecidas**. El neto habría dado «+31» igual con una ruta perdida dentro —
+> y extender un catch-all toca las rutas ya verificadas de `articulos-kb`, donde
+> **emitir de MENOS no da error**.
+>
+> · el cascarón lo elige **`regimen`** (CMS-5), con `switch` exhaustivo por tipo:
+>   `-T` tiene `case` propio que **TIRA** (0 de 31, SIN EJERCITAR) y el `default`
+>   asigna a `never`, así que un quinto valor rompe el **typecheck** en vez de
+>   renderizar `undefined` — que en React no falla, **no pinta**;
+> · `qa:slugs` **limpio**, y `paginas` entró **sola**: 19 en el plano · 29
+>   publicados, sin tocar la sonda, porque sus familias se derivan del registro;
+> · `BANDA.colaLargaB` = **193.72 / 196.58**, la base EN CRUDO del arquetipo,
+>   medida **antes** de construir sobre el lado del original ya congelado.
+>
+> ⚠ **Y lo que la emisión NO cierra, con su cardinal:** el lado del **CAMPO** de
+> `f33.css` está **SIN ESTRENAR** — el extractor escribe **`clavesEscritas: 0`**
+> y el HTML servido no trae **ni una** variable `--f33*` (control en positivo:
+> 120 ficheros con `f33-seccion`). O sea que lo que la comparación pueda probar
+> de esa hoja son **sus DEFAULTS**, y **nada** del camino de override.
 
 **La forma, en tres piezas** (reparto derivado en `medidas/f33-rutas.json`, 94.ª):
 

@@ -1920,6 +1920,167 @@ manda.
 
 ---
 
+## ✅ F3-3-EMISION · **EMITIDA el 2026-08-24 (104.ª): 382 → 413 rutas, reparto exacto** — enunciado original de la 93.ª debajo
+
+| pieza | predicho | emitido |
+|---|---|---|
+| `/[slug]` — TERCER catálogo | 19 | **19** (189 → 208) |
+| `/centro-de-ayuda/[...ruta]` | 4 | **4** (5 → 9) |
+| `/soporte/[...ruta]` | 4 | **4** (1 → 5) |
+| `/recursos/[...ruta]` | 3 | **3** (41 → 44) |
+| `/empresa/[...ruta]` — **ruta nueva** | 1 | **1** (0 → 1) |
+| **total** | **413** | **413** |
+
+Leído por **diferencia simétrica**: **31 nuevas · 0 desaparecidas**. El neto
+habría dicho «+31» igual con una ruta perdida dentro, y extender un catch-all
+toca las rutas verificadas de `articulos-kb`, donde **emitir de MENOS no da
+error**. `qa:slugs` limpio (223 slugs · 6 familias · 0 colisiones), `paginas`
+entró **sola** con 19 en el plano · 29 publicados. `qa:manifiesto`: 413 rutas ·
+23 familias · **0 desaparecidas**.
+
+### ⚠ LA RETIRADA — 10 secciones que el clon NO emite, y es correcto
+
+**Predicho antes de comparar** (`docs/research/cola-larga/PRE-REGISTRO-E1.md`) y
+derivado de `f33-extraido.json` §`retirada`, que existía desde antes de esta
+tanda y **nadie había cruzado con la emisión**:
+
+`seccionesColapsadas 10 · filasColapsadas 10 · columnasColapsadas 10`, y
+**313 módulos censados → 301 emitidos**. En esas 10 la sección del original
+tiene **un solo módulo** y ese módulo se clasificó fuera del contenido:
+**CASCARÓN ×10** (la miga) y **CONSULTA ×2** (`bucle-entradas` en `/recursos`,
+`listado-cientifico` en `/recursos/documentos-cientificos`).
+
+Cruzado contra el **HTML estático** del build antes de levantar ninguna sonda:
+**21 de 31 cuadran, 10 descuadran en −1, y son exactamente esas 10.**
+
+> ⚠⚠ **Y EL HUECO QUE ESTO DESTAPA, QUE NO ES LA RETIRADA: LA MIGA NO LA EMITE
+> NADIE.** «CASCARÓN» significa *lo pone el cascarón, no el cuerpo* — y
+> `PaginaF33` **no emite miga**. La retirada sacó la miga del contenido **sobre
+> una promesa que el render todavía no cumple**: §*documentado no es conectado*,
+> con las dos mitades en ficheros distintos. Afecta a **10 de 31 rutas**, y esta
+> tanda **lo mide y lo ficha, no lo arregla**.
+
+### ⚠ EL LADO DEL CAMPO DE `f33.css` ESTÁ SIN ESTRENAR — con su cardinal
+
+El extractor escribe **`clavesEscritas: 0`**, y el HTML servido no trae **ni una**
+variable `--f33*` (control en positivo: **120** ficheros con `f33-seccion`). O
+sea **0 de 313 módulos · 0 de 113 filas · 0 de 86 secciones**.
+
+> Lo que una comparación limpia puede probar de esa hoja son **sus DEFAULTS** —
+> los `var(--x, DEFECTO)`— y **nada** del camino de override. Es §*un campo que
+> ADMITE un caso y que ningún dato de calibración EJERCITA es un camino de
+> render sin estrenar*, aplicado a una hoja de estilos.
+
+### ⚠ `clon-base` A 413 RUTAS: EL NAVEGADOR NO LLEGA — arreglado en la CLASE
+
+Dos corridas muertas el mismo día, **en rutas DISTINTAS** —`/en-directo-…` y
+`/blog/page/5`—, con `Navigating frame was detached` y de ahí `Connection
+closed` en cascada: **131 de 382 comparadas** la primera y **10** la segunda.
+Que fueran rutas distintas es lo que descarta «es esa página».
+
+La sonda lo dijo como toca —*«251 NO comparada(s) por error: no son sin
+regresión, son SIN MEDIR»*, `EXIT=1`— y las dos corridas se conservan con su
+nombre: `clon-base-1440-t104-despues{,2}-neg-corrida-rota-{131,10}-de-382.json`.
+
+**Arreglo de la CLASE, no de la instancia:** `clon-base` relanza el navegador
+cada `LOTE` rutas (50) **y además AL MORIR, re-midiendo la ruta que lo mató**.
+Reintentar era arreglar la instancia — la segunda corrida salió **peor** que la
+primera. Con `LOTE=100` los bloques de error terminaban **exactamente en la
+frontera del lote** (70–99 · 120–199), que es lo que prueba que el contador solo
+es profilaxis y no cura.
+
+✅ **RESULTADO: 382 de 382 SIN MOVER UN PÍXEL a los DOS anchos.** A 1440, 381
+por la corrida buena + 1 por `SOLO=`; a 390, las 382 de una vez (8
+relanzamientos, 0 muertes). Umbral CERO, clon contra clon.
+
+---
+
+## ⛔ F3-3-CMP-DELTAS · **la cola larga YA se compara de dos lados — y lo que sale NO está adjudicado** — 104.ª, 2026-08-25
+
+`qa:f33-cmp` pasa del piloto (6) a **las 31**, a los dos anchos. Es la primera
+comparación de dos lados de este arquetipo: `COBERTURA-MEDICION` decía **0 ejes
+comparados** y deja de decirlo.
+
+| | @1440 | @390 |
+|---|---|---|
+| pares numéricos | 2107 | 2107 |
+| **distintos** | **929** | **890** |
+| eje MIXTO | 334 | 334 |
+
+**Por régimen** — porque el cascarón lo elige `regimen` y un titular sobre las 31
+mezcla tres cascarones: `B-` 22 rutas · 601 distintos (568 @390) · `BT` 8 rutas ·
+326 (320) · `--` 1 ruta · 2.
+
+**El eje MIXTO, ANTES del titular:** **324 sólo en el ORIGINAL · 0 sólo en el
+CLON · 10 en ninguno.** El clon **no inventa nada**; le faltan módulos.
+
+### Lo que SÍ está adjudicado
+
+| eje | Δ | causa |
+|---|---|---|
+| **secciones** | 86 → 76 · **−10** | la **RETIRADA**, predicha ruta a ruta en el pre-registro |
+| **filas** | 113 → 111 · **−2** | ⚠ **NO es −2: son −10 y +8** (abajo) |
+
+> ⚠ **Las filas son dos efectos opuestos, y el neto los tapaba** (§*un Δ de cero
+> puede ser dos errores que se anulan*, aquí sin llegar a cero):
+>
+> · **`B-` −10** — la retirada otra vez: una fila por sección colapsada;
+> · **`BT` +8** — **`FilaTb` emite `data-fila=""` SIN marcador `_tb_`.** El
+>   comparador filtra la capa del theme-builder por ese sufijo —sin él daría
+>   «las 31 distintas», que es el precedente de `c-cmp`— y en el original esa
+>   fila **sí lo lleva**. O sea que el clon **no tiene una fila de más: tiene una
+>   fila que no se declara del cascarón**.
+>
+> **NO se arregla en esta tanda:** `CascaronTb` es compartido con `articulos-kb`
+> y moverlo tocaría **6 rutas verificadas** por otra sonda, cuya re-verificación
+> es de quien lo toque.
+
+### ⛔ Lo que NO está adjudicado — y por eso NO se registra cobertura
+
+| eje | Δ | qué se sabe |
+|---|---|---|
+| **módulos** | 314 → 267 · **−47** | la retirada explica **12**. Reparto: `B-` **−17** · `BT` **−30** |
+| **`docH`** | Δ≠0 en **31 de 31** | valores reales y en las **dos direcciones** tras arreglar la sonda |
+| **`base`** | Δ≠0 en **18 de 31** | incluye 2 `BT` con `base 0` en el original (su `h1` vive en fila oculta) |
+
+**Con sus dos lados, que es como se ficha un Δ sin adjudicar:**
+
+| ruta | reg | eje | @1440 | @390 |
+|---|---|---|---|---|
+| `/soporte/centro-de-ayuda/` | BT | `docH` | orig **1497** → clon **3326** | orig **3678** → clon **5964** |
+| `/centro-de-ayuda/kunak-air/video-tutoriales/` | BT | `docH` | orig **2081** → clon **3861** | orig **4256** → clon **5606** |
+| `/centro-de-ayuda/kunak-air/articulos-de-ayuda/` | BT | `docH` | orig **1497** → clon **1415** | orig **2997** → clon **2893** |
+| `/centro-de-ayuda/kunak-air-cloud/` | BT | `base` | orig **355.16** → clon **337.28** | orig **907.92** → clon **295.58** |
+| `/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/` | BT | `base` | orig **387.63** → clon **337.28** | orig **953.92** → clon **295.58** |
+
+> **Y el dato que dice de qué NO son:** las cifras de árbol son **idénticas a los
+> dos anchos** (324 mixtos · 98 cruces de tipo). Un defecto de maquetación varía
+> con el ancho; éstos no. **Son de EMISIÓN, no de layout.**
+
+**CORTE LIMPIO 2 aplicado: la tanda cierra SIN registrar `f33-cmp` en
+`qa:cobertura`.** El bloque de acreditación llegó a escribirse —con sus ejes
+elegidos por lo que la sonda **compara** y no por lo que toca— y **se retiró**:
+acreditar cobertura sobre Δ sin adjudicar es justo lo que esa matriz existe para
+impedir.
+
+### ⚠ Y TRES DEFECTOS ERAN DEL COMPARADOR, no del clon
+
+Los tres se encontraron **leyendo su propia salida**, y los tres daban números
+plausibles:
+
+| # | qué | cómo se vio | coste |
+|---|---|---|---|
+| 1 | **`docH` medía el VIEWPORT** — `getBoundingClientRect().height` sobre `<html>`, cuya caja constriñe el layout flex del clon | **900 a 1440 y 844 a 390, CONSTANTE en las 31**. §*un 100 % redondo: la primera hipótesis es el instrumento* | 31 de 31 «distintos», **todo artefacto** |
+| 2 | **contaba módulos DENTRO de módulos** — `[class*='et_pb_module']` casa `et_pb_module_header` **y el marcado del CAMPO RICO**, que es HTML del original verbatim | **356 módulos donde el censo cuenta 313**, con un tipo `?` de 312 pares | arreglado por ANIDAMIENTO: **356 → 314** |
+| 3 | **el cruce de tipos comparaba DOS SISTEMAS DE NOMBRES** (`et_pb_text` vs `texto-pagina`) | **257 de 356**, el 72 % — un patrón que casa en casi todas mide el instrumento | con la tabla Divi→`kind`: **98 de 314**, y ésos sí son reales |
+
+Congeladas defectuosas conservadas con su nombre y su número (§regla 7):
+`f33-cmp-{1440,390}-SONDA-docH-ERA-EL-VIEWPORT-31-de-31.json` ·
+`f33-cmp-1440-SONDA-CONTABA-et_pb_module_header-Y-EL-CAMPO-RICO-356-de-313.json`.
+
+<details>
+<summary>Enunciado original de la 93.ª (2026-08-22)</summary>
+
 ## ⚠ F3-3-EMISION · el comparador EXISTE y su negativo está probado; **la emisión NO está hecha** — 93.ª tanda, 2026-08-22
 
 **CORTE LIMPIO 3 está PASADO**, así que emitir queda autorizado. Lo que sigue
@@ -1985,6 +2146,8 @@ registra la tanda que emita, con su corrida de verdad.**
 
 **La cola larga sigue a 0 ejes comparados contra el original.** El comparador
 existe; la comparación no.
+
+</details>
 
 ---
 
