@@ -6,6 +6,7 @@ import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ColumnaAncha, ColumnaEstrecha, FilaTb, SeccionCuerpoTb } from "@/components/CascaronTb";
+import { BarraAyudaKb } from "@/components/BarraAyudaKb";
 import { CuerpoKb } from "@/components/kb/CuerpoKb";
 import { articulosKb, getArticuloKb } from "@/lib/cms/articulos-kb";
 
@@ -42,12 +43,19 @@ import { articulosKb, getArticuloKb } from "@/lib/cms/articulos-kb";
  * de la cabecera —225 / 165.58, varianza 0 en las 6— y por eso `BANDA.kb` tiene
  * entrada propia en vez de reusar la de grupo A.
  *
- * ⚠ **La barra lateral se emite VACÍA.** El original tiene ahí un
- * `et_pb_sidebar_0_tb_body` con **1 widget** en 6/6, y su contenido **no está
- * medido**: `cascaron.spec.md` §2 midió la caja (258.5 · canal 68.1094 · `y`
- * alineada con el contenido) y no lo de dentro. Emitir la columna sin el widget
- * conserva la retícula —que es lo medido— y deja el hueco visible;
- * inventarle contenido sería rellenar una medida que no se tomó.
+ * ✅ **La barra lateral YA SE EMITE** (107.ª tanda, `qa:kb-barra`). Lo que había
+ * aquí era una **medida que nunca se tomó**, no un defecto: `cascaron.spec.md`
+ * §2 midió la caja (258.5 · canal 68.1094 · `y` alineada) y no lo de dentro, y
+ * la decisión correcta mientras tanto era dejarla vacía. Tomada la medida
+ * —13 instancias, dos familias, dos anchos— el contenido vive en
+ * `components/BarraAyudaKb.tsx` + `app/barra-ayuda.css`, y su dato en
+ * `lib/menu-centro-ayuda.ts`.
+ *
+ * ⚠ Y esa nota decía **«1 widget en 6/6»**, que es el número equivocado: son
+ * **TRES en 13/13** —un `widget_nav_menu` y dos `widget_custom_html` vacíos—.
+ * El «1» contaba lo que SE VE y el «3» cuenta los NODOS: las dos son ciertas y
+ * contestan preguntas distintas, pero la que estaba escrita era la que no
+ * permitía construir.
  */
 
 /** El alto de cabecera de esta familia, medido en sus 6 instancias. */
@@ -109,8 +117,10 @@ export async function PaginaKb({
           <FilaTb>
             <div className="min-[981px]:flex">
               {/* `col_1_4` — 258.5 con canal DERECHO de 68.1094: aquí la barra
-                  va la primera. Vacía a propósito, ver ⚠ de arriba. */}
-              <ColumnaEstrecha lado="izquierda" />
+                  va la primera. Su contenido lo mide `qa:kb-barra` (107.ª). */}
+              <ColumnaEstrecha lado="izquierda">
+                <BarraAyudaKb ruta={`/${a.prefijo}/${a.slug}`} />
+              </ColumnaEstrecha>
               {/* `col_3_4` — 911.75. Aquí entra el `post_content`, que es la
                   capa PROPIA del builder: la sección, sus filas y sus módulos. */}
               <ColumnaAncha>

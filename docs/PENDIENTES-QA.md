@@ -20247,3 +20247,117 @@ nada de lo que la barra lateral tiene que explicar.**
 > leer.** Se ficha con su alcance —§`F3-3-CALIENTE-KUNAKAIR-13`— y no se
 > persigue aquí: arreglarlo es tocar el importador y re-sembrar, que mueve el
 > dato de 31 rutas en mitad de una tanda que mide otra cosa (§regla 20).
+
+
+## 107.ª · PRE-REGISTRO del ESCALÓN 2 — escrito ANTES de construir el `.next` (2026-08-25)
+
+El código está escrito y `npm run typecheck` pasa; **el build todavía NO se ha
+hecho**, así que `.next` sirve el clon SIN barra. Todo lo que sigue se predice
+contra medidas ya congeladas, y cada predicción lleva **su falsador**.
+
+**Y una va deliberadamente CONTRA la ficha vigente** (P2), que es la que más
+información da si acierta.
+
+### Las líneas base, con su fichero
+
+| ANTES | fichero |
+|---|---|
+| `f33-cmp` (31 rutas) | `medidas/f33-cmp-{1440,390}-2026-08-25-2.json` |
+| `kb-cmp` (6 rutas) | `medidas/kb-cmp-{1440,390}-2026-08-25-ANTES-barra.json` |
+
+`f33-cmp` vale como ANTES **derivado, no supuesto** (§regla 16): `git diff
+--name-only 06d23b4 HEAD -- apps packages` sale **vacío**, o sea que ningún
+fuente de la app cambió entre esa congelada y ahora.
+
+### P1 · ENLACES — **+12 exactos** en las 7, y nada más se mueve
+
+El menú emite **12 `<a>`**. Predicción por ruta, a los **dos** anchos:
+
+| ANTES Δ | rutas | DESPUÉS Δ esperado |
+|---|---|---|
+| −12 | 4 | **0** |
+| −11 | 2 | **+1** |
+| −8 | 1 (`/soporte/centro-de-ayuda/`) | **+4** |
+
+⚠ **Que 3 de las 7 pasen de déficit a SUPERÁVIT no es una regresión: es el
+hallazgo.** Significa que en esas 3 el `−11`/`−8` eran **dos errores
+parcialmente anulándose** —12 enlaces de menos y 1 ó 4 de más en otro sitio— y
+que la barra los estaba tapando. §*un Δ de cero puede ser dos errores que se
+anulan*, con el cero cambiado por un número pequeño.
+
+**Falsador:** que alguna de las 7 se mueva algo **distinto de +12**.
+**Control:** `sistema-interno-de-informacion` se queda en **+3** y las 24 rutas
+no-`BT` **no se mueven ni un enlace**.
+
+### P2 · TECHO — ⚠ **a 1440 NO SE MUEVE**, y eso CONTRADICE la ficha
+
+La ficha §LA BARRA LATERAL `BT` NO LA EMITE EL CLON atribuye el `Δtecho` entero
+a la barra. **Predigo que a 1440 eso es falso**, por mecanismo:
+
+> A **1440** las dos columnas van **lado a lado** (`min-[981px]:flex`). La barra
+> entra en `ColumnaEstrecha`; `caja.sec0` vive en `ColumnaAncha`. Meter
+> contenido en una columna **no mueve el techo de su hermana**.
+
+| ancho | ANTES | DESPUÉS predicho |
+|---|---|---|
+| 1440 | orig 339.16 · clon 282.58 · **Δ −56.58** | clon **282.58**, Δ **−56.58 SIN MOVER** |
+| 390 | orig 891.92/865.92 · clon 215.58 · **Δ −676.34/−650.34** | clon **~709–720**, residuo **~−172 a −182** |
+
+A **390** las columnas apilan y la barra sí empuja: `+493.66` (módulo) a
+`+504.34` (columna) medidos en `kb-barra`.
+
+**Falsador de la mitad de 1440:** que el techo se mueva a 1440.
+**Falsador de la mitad de 390:** que el residuo sea ≈0 —o sea, que la barra sí
+explicara el techo entero— o que se pase del original.
+
+**Y las dos mitades son la misma predicción a dos anchos**, que es justo lo que
+§*una predicción sobre una propiedad tapada se escribe CON SU ANCHO* pide: a
+1440 la propiedad está **tapada por la columna hermana**, y correr sólo ahí
+dejaría la predicción sin ejercitar.
+
+### P3 · `kb-cmp` — **NO-OP EXACTO**
+
+`aplanaEspejo()` compara **ritmo · tipo · caja** sobre `a.propias`, o sea **la
+capa del BUILDER**. No compara `x` ni `y`, y **no mira el cascarón**. Y su
+ANTES ya trae `soloOriginal: 0`: nunca vio la barra.
+
+Predicción: **5089 pares · 0 distintos · 454 soloClon**, idéntico a los dos
+anchos.
+
+**Falsador:** que se mueva **un solo par**. Si se mueve, la barra está tocando
+el CUERPO — y a 1440 eso sería un defecto, no una mejora.
+
+### P4 · `[id$='-sidebar']` — de **0 a 7** de 31
+
+Es el eje que la ficha usa como primer sostén. El clon pasa a emitir
+`section#help-center-sidebar` en las 7 del centro de ayuda y **en ninguna más**.
+
+**Falsador:** 8 (se coló `sistema-interno`) o ≠7.
+
+### P5 · `docH` — se mueve **sólo a 390**
+
+Mismo mecanismo que P2. A 1440 la barra (493.66) es **más baja** que la columna
+de contenido, así que **la tapa** y no suma; a 390 apila y suma.
+
+**Falsador:** que `docH` se mueva a 1440 en las 7.
+
+### Cómo se lee el resultado — y NO es el recuento de pares
+
+§*el eje que no lee como defecto esconde la mejora igual que esconde la deriva*:
+la 106.ª movió `Σ|clon−orig|` **−8600 @1440** con el recuento en **113 contra
+112**, o sea mudo. Así que el veredicto se da comparando **`|clon − original|`
+ANTES y DESPUÉS, par a par**, con el reparto **ACERCAN / ALEJAN** publicado, y
+el eje **MIXTO aparte con su cardinal**.
+
+### Lo que este escalón NO va a contestar
+
+- `sistema-interno-de-informacion` sigue con la columna vacía **a propósito**:
+  su barra es **otra** —un `widget_custom_html.pages-content` con «Índice del
+  artículo» y un `<ul id="indice-contenido">` que **rellena un script**— y otra
+  plantilla de theme-builder (`tb-61286-tb-61280` contra `tb-140-tb-25181`).
+  Medirla necesita el eje **COMPORTAMIENTO**, que está a **0/31**;
+- la CABECERA y el PIE de esta familia siguen **sin comparar** contra el
+  original (`c-cabecera` cubre 17 rutas y ninguna es de KB ni de la cola larga);
+- los **14 `et-cache`** que le faltan a `articulos-kb` siguen sin capturar, así
+  que la geometría **offline** de esa familia sigue sin valer. Lo que sí vale es
+  su cruce con el VIVO al nivel de la columna, que es lo que se usó.

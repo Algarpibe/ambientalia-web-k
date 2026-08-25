@@ -7,6 +7,10 @@
    Sin capa a propósito: el CSS no capado gana a `@layer base`, que es lo que
    hace falta para que `.kb-texto h2` pise el `h2` global de 44px. */
 @import "./kb.css";
+/* La barra lateral del cascarón `_tb_`. Fichero propio porque NO es el cuerpo
+   de `articulos-kb` —es la plantilla que comparten las dos familias de KB— y
+   `kb.css` declara en su cabecera que sólo cubre el cuerpo. */
+@import "./barra-ayuda.css";
 
 @custom-variant dark (&:is(.dark *));
 

@@ -5,6 +5,7 @@ import { HeaderNav } from "@/components/HeaderNav";
 import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { BarraAyudaKb, tieneBarraAyuda } from "@/components/BarraAyudaKb";
 import { ColumnaAncha, ColumnaEstrecha, FilaTb, SeccionCuerpoTb } from "@/components/CascaronTb";
 import { CuerpoPagina } from "@/components/cola-larga/CuerpoPagina";
 import {
@@ -131,10 +132,18 @@ function ConCascaron({ p }: { p: PaginaColaLarga }) {
           <SeccionCuerpoTb>
             <FilaTb>
               <div className="min-[981px]:flex">
-                {/* `col_1_4` — 258.5, canal derecho 68.1094. Vacía a propósito:
-                    el widget del original NO está medido, e inventarle
-                    contenido sería rellenar una medida que no se tomó. */}
-                <ColumnaEstrecha lado="izquierda" />
+                {/* `col_1_4` — 258.5, canal derecho 68.1094. Su contenido lo
+                    mide `qa:kb-barra` (107.ª): es el MISMO widget que sirve
+                    `articulos-kb`, y que sea el mismo está medido —15 ejes con
+                    varianza cero ENTRE las dos familias— y no supuesto. */}
+                <ColumnaEstrecha lado="izquierda">
+                  {/* ⚠ 7 de las 8 `BT`. La octava —`sistema-interno-de-informacion`—
+                      tiene OTRA barra (un índice que rellena un script) y otra
+                      plantilla de theme-builder; se queda vacía y está fichada
+                      como §F3-3-BT-DOS-FORMAS. El predicado casa el original en
+                      31/31, ver la cabecera de `BarraAyudaKb`. */}
+                  {tieneBarraAyuda(rutaDePagina(p)) ? <BarraAyudaKb ruta={rutaDePagina(p)} /> : null}
+                </ColumnaEstrecha>
                 {/* `col_3_4` — 911.75. Aquí entra la capa PROPIA del builder. */}
                 <ColumnaAncha>{cuerpo}</ColumnaAncha>
               </div>

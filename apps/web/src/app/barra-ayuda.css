@@ -1,0 +1,144 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * LA BARRA LATERAL DEL CASCARÓN `_tb_` — la plantilla, no el cuerpo
+ *
+ * Cada número sale de `npm run qa:kb-barra`
+ * (`medidas/kb-barra-{1440,390}.json`), medido con `getComputedStyle` sobre el
+ * original en **13 instancias** —6 `articulos-kb` + 7 hubs `BT`— y a **los dos
+ * anchos**. `n=13` en todo lo que sigue salvo donde se diga.
+ *
+ * ── Por qué en su propio fichero y no en `kb.css` ─────────────────────────
+ * `kb.css` es, por su propia cabecera, *«la PLANTILLA del CUERPO de
+ * `articulos-kb`»*. Esto no es el cuerpo: es el **cascarón `_tb_`**, y lo
+ * comparten dos familias que se sirven desde componentes distintos
+ * (`PaginaKb` y `PaginaF33`). Meterlo allí haría que su cabecera mintiera.
+ *
+ * ── Cómo se leyó cada valor: régimen PLANTILLADO ──────────────────────────
+ * El centro de ayuda es HÍBRIDO y esta barra vive en la capa `_tb_`. Ahí el px
+ * absoluto **NO** discrimina —aplicar el test A daría la respuesta invertida—:
+ * lo que decide es **la varianza entre instancias**. Es cero en los 15 ejes
+ * medidos y en las 13 páginas ⇒ todo esto es **plantilla**.
+ *
+ * ⚠ **Y el dominio es 13, no 1**: con una sola instancia cualquier eje «no
+ * varía» y el veredicto lo pondría el tamaño del dominio y no el dato
+ * (§regla 22). El sabotaje `dominio-corto` de `kb-barra.neg` existe para eso.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── EL MÓDULO ─────────────────────────────────────────────────────────────
+ * ⚠⚠ **EL BORDE Y EL `padding` LOS DECIDE LA CASCADA, Y GANA OTRO A CADA
+ * ANCHO** (§regla 35). Las hojas del original sirven **CINCO** reglas para
+ * `.et_pb_widget_area_left`, **dos con `border-right: none`**, así que `grep`
+ * no puede contestar — la pregunta es *«¿cuál GANA?»*. Medido:
+ *
+ *     @1440   border-right: 1px solid rgba(0,0,0,.1)   padding-right: 30px
+ *      @390   border-right: 0px none                   padding-right: 0px
+ *
+ * Por eso el default de esta hoja es **el de 390** y el `@media` añade lo de
+ * escritorio, en vez de al revés: así el ancho estrecho no depende de deshacer
+ * nada. Y `box-sizing: border-box` está medido: 258.5 − 30 − 1 = **227.5**, que
+ * es el ancho del widget. */
+.ayuda-barra {
+  box-sizing: border-box;
+  padding-right: 0;
+  border-right: none;
+  background-color: transparent;
+}
+@media (min-width: 981px) {
+  .ayuda-barra {
+    padding-right: 30px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ── LOS WIDGETS ───────────────────────────────────────────────────────────
+ * `margin-bottom: 32px` en los tres. **32 y no 30**: la ley ya lo tiene escrito
+ * —el tema sirve `.et_pb_widget{margin-bottom:2rem !important}` y ese
+ * `!important` de hoja de autor gana a la declaración específica de 30px—, y
+ * aquí sale confirmado por `getComputedStyle` en las 13.
+ *
+ * ⚠ **NO se pone `:last-child { margin-bottom: 0 }`**, y es deliberado: el
+ * original **no lo tiene sobre el widget**, y ponerlo es exactamente el defecto
+ * que la ley documenta (*una regla en el NIVEL equivocado no da error*). No
+ * hace falta: está medido que los tres márgenes **se colapsan fuera** del
+ * contenedor —`barra.h` = `widget0.h` = 493.66 a 1440 y 461.16 a 390, exacto—,
+ * así que el último no empuja nada. */
+.ayuda-widget {
+  margin-bottom: 32px;
+}
+
+/* ── EL MENÚ ───────────────────────────────────────────────────────────────
+ * `list-style: none outside` en los 5 `ul` y `list-style-type: none` en los 12
+ * `li`. El raíz sin márgenes ni `padding`. */
+.ayuda-menu,
+.ayuda-menu .sub-menu {
+  list-style: none outside;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* ⚠ **La SANGRÍA vive en el `ul` HIJO, no en el padre**, y medir sólo el raíz
+ * la daba en 0 con cara de dato (§sondas 4). `margin-left: 17.6px` en los
+ * niveles 1 y 2, IGUAL a los dos anchos — o sea que no tiene tramo responsive. */
+.ayuda-menu .sub-menu {
+  margin-left: 17.6px;
+}
+
+.ayuda-menu li {
+  list-style-type: none;
+  /* Uniformes en los tres niveles y en los dos anchos. */
+  margin-top: 11.2px;
+  margin-bottom: 3.2px;
+}
+.ayuda-menu a {
+  display: inline;
+  text-decoration: none;
+  letter-spacing: normal;
+  text-transform: none;
+  /* El color por defecto de los tres niveles. El azul es sólo del ítem actual. */
+  color: #333333;
+}
+
+/* ── LOS TRES NIVELES ──────────────────────────────────────────────────────
+ * `font-size` · `weight` · `line-height` · `padding-top` del `li`. Idénticos a
+ * 1440 y a 390 — que en la capa `_tb_` significa PLANTILLA, no campo.
+ *
+ * ⚠ El `line-height` es 1.25 × el cuerpo en los tres (20/16 · 18.75/15 ·
+ * 16.25/13), pero se escribe **en px medidos**: la razón se observa, no se ha
+ * probado que sea la declaración, y el `padding-top` NO la sigue (0.4em · 0.7em
+ * · 0.7em). Un valor relativo se escribe con su base medida o no se escribe. */
+.ayuda-menu > li {
+  padding-top: 6.4px;
+}
+.ayuda-menu > li > a {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.ayuda-menu > li > .sub-menu > li {
+  padding-top: 10.5px;
+}
+.ayuda-menu > li > .sub-menu > li > a {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18.75px;
+}
+
+.ayuda-menu > li > .sub-menu > li > .sub-menu > li {
+  padding-top: 9.1px;
+}
+.ayuda-menu > li > .sub-menu > li > .sub-menu > li > a {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.25px;
+}
+
+/* ── EL ESTADO ─────────────────────────────────────────────────────────────
+ * Derivado del cruce estado × color en las 13 instancias: **4 firmas de estado
+ * distintas, y sólo una pinta azul** — la del ítem EXACTO. Los ancestros
+ * (`current-menu-ancestor`, `current-page-parent`…) se quedan en `#333`, así
+ * que **no llevan regla**: escribirles una sería inventar una distinción que el
+ * original no hace. */
+.ayuda-menu .current-menu-item > a {
+  color: #0075c9;
+}
