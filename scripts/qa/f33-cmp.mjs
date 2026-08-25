@@ -93,24 +93,150 @@ const INDICE = JSON.parse(readFileSync(join(CSS, "INDICE.json"), "utf8"));
 const LOCAL = new Set(Object.keys(INDICE.ficheros));
 if (LOCAL.size === 0) throw new Error("ÍNDICE DE HOJAS VACÍO (§sondas 4)");
 
-/** Reescribe los `<link rel=stylesheet>` a la copia local. Devuelve cuántos
- *  ENLAZABA el documento y cuántos se resolvieron — los dos se publican. */
-function conHojasLocales(html, sinHojas = false) {
+/* ── 2b · LA MEDIA y LAS FUENTES: las otras dos raíces locales ─────────────
+ *
+ * ⚠⚠ **§regla 32 — A UN COMPARADOR DE DOS LADOS SE LE HACE A LOS DOS TODO LO
+ * QUE SE LE HACE A UNO, Y ESO INCLUYE LO QUE SE LE PROHÍBE.**
+ *
+ * Hasta la 105.ª esto reescribía **un canal de tres** —las hojas— y cortaba la
+ * red en **un lado de dos**. Resultado: el original componía sin imágenes y
+ * **sin su tipografía**, y el clon con las dos. `peticiones-f33` enumeró lo
+ * que se abortaba y salieron TRES canales, no uno:
+ *
+ *   | canal | abortadas | qué mueve |
+ *   |---|---|---|
+ *   | `image` | 1129 | 65 de 71 `<img>` a **16 px** (el alto del roto) |
+ *   | **fuente** | **47** | **944 de 1257 cajas (75.1 %)** — y `docH` sólo −1 |
+ *   | `document` | 60 | los `<iframe>` de YouTube |
+ *
+ * **El de fuente es el que enseña**: leído por `docH` parece despreciable
+ * (−1); leído por elemento mueve tres cuartas partes de la página. El total
+ * era el contenedor (`derivaciones/fuente-f33.log`).
+ *
+ * Y no vale con bloquearlas en los dos lados, que habría sido más barato: el
+ * clon sirve Manrope **auto-alojada** por `next/font/google`, con una cara de
+ * respaldo con `size-adjust`. Bloquear dejaría al original con el `sans-serif`
+ * del sistema y al clon con la de Next: **dos respaldos distintos**.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const MEDIA_RAICES = [
+  /* 1.º la captura PROPIA de este arquetipo; 2.º lo que el pipeline del clon ya
+   * bajó del original. El orden importa: donde las dos tienen el fichero manda
+   * la captura. Cruzadas por sha256, 305 de 306 coinciden — la que no es
+   * `2023/03/world.svg`, y por eso la captura va primera. */
+  { nombre: "media-corpus/fase-3", dir: join(RAIZ, "media-corpus/fase-3") },
+  { nombre: "public/images/uploads", dir: join(RAIZ, "apps/web/public/images/uploads") },
+];
+const FUENTES = join(RAIZ, "corpus/fuentes");
+const FUENTES_IDX = existsSync(join(FUENTES, "INDICE.json"))
+  ? JSON.parse(readFileSync(join(FUENTES, "INDICE.json"), "utf8"))
+  : null;
+if (!FUENTES_IDX) throw new Error("SIN FUENTES CAPTURADAS: corre `npm run cms:captura-fuentes` (§regla 32).");
+const HOJAS_FUENTE = Object.entries(FUENTES_IDX.ficheros).filter(([, v]) => v.tipo === "css").map(([k]) => k);
+if (!HOJAS_FUENTE.length) throw new Error("0 hojas de fuente en el índice: su cero se leería como «no hay fuentes» (§sondas 4).");
+
+/** Atributo HTML admitiendo comillas dobles, simples **y SIN comillas**.
+ *  ⚠ El corpus sirve `<img src=https://…>` sin comillar: un `/src="([^"]+)"/`
+ *  devuelve `null` en las 568 y ese `null` se lee como «no tiene src». */
+function attr(tag, name) {
+  const m = new RegExp(`\\s${name}\\s*=\\s*("([^"]*)"|'([^']*)'|([^\\s>]+))`, "i").exec(tag);
+  if (!m) return null;
+  return m[2] !== undefined ? m[2] : m[3] !== undefined ? m[3] : m[4];
+}
+function reemplazaAttr(tag, name, valor) {
+  return tag.replace(new RegExp(`(\\s${name}\\s*=\\s*)("[^"]*"|'[^']*'|[^\\s>]+)`, "i"), `$1"${valor}"`);
+}
+/**
+ * Resuelve una URL de `wp-content/uploads` a `file://` local. **EXACTA**: no se
+ * colapsan variantes `-WxH`, porque servir otra variante serviría otras
+ * dimensiones intrínsecas — que es justo lo que se está intentando igualar.
+ */
+function mediaLocal(url) {
+  const rel = url.replace(/^https?:\/\/kunakair\.com\/wp-content\/uploads\//, "").split("?")[0];
+  /**
+   * ⚠ **Un host AJENO no es un hueco de captura: es simétrico por
+   * construcción.** El `<img>` de `upload.wikimedia.org` de
+   * `/es/empresa/premios-y-reconocimientos/` lo sirve ABSOLUTO también el clon
+   * (decisión D2 de la 98.ª), así que con la red cortada en los dos lados
+   * **los dos** lo pintan roto. Se separa de «local sin capturar», que sí es
+   * un hueco — dos cosas distintas no pueden compartir contador.
+   */
+  if (/^https?:/i.test(rel) || rel.startsWith("/")) return { url: null, motivo: "externo" };
+  for (const r of MEDIA_RAICES) if (existsSync(join(r.dir, rel))) return { url: pathToFileURL(join(r.dir, rel)).href, motivo: null };
+  return { url: null, motivo: "sin-capturar" };
+}
+
+/**
+ * Reescribe a copia local **los TRES canales** y devuelve el cardinal de cada
+ * uno. §regla 32: *la marca de que un canal está cerrado es su cardinal de
+ * «sin resolver» y una corrida que NO VALE si no es cero.*
+ */
+function conAssetsLocales(html, sinHojas = false) {
   let enlazadas = 0, resueltas = 0;
   const sinResolver = [];
-  const out = html.replace(/<link\b[^>]*>/gi, (tag) => {
+  let out = html.replace(/<link\b[^>]*>/gi, (tag) => {
     if (!/rel=["']?stylesheet/i.test(tag)) return tag;
     enlazadas++;
     if (sinHojas) return "";                    /* SABOTAJE `sin-hojas` */
-    const href = (/href=["']([^"']+)["']/i.exec(tag) || [])[1];
+    const href = attr(tag, "href");
     if (!href) return tag;
     const rel = href.replace(/^https?:\/\/kunakair\.com\//, "").split("?")[0];
     if (!LOCAL.has(rel)) { sinResolver.push(rel); return tag; }
-    const abs = pathToFileURL(join(CSS, rel)).href;
     resueltas++;
-    return tag.replace(/href=["'][^"']+["']/i, `href="${abs}"`);
+    return reemplazaAttr(tag, "href", pathToFileURL(join(CSS, rel)).href);
   });
-  return { html: out, enlazadas, resueltas, sinResolver };
+
+  /* ── IMÁGENES: `src` y cada candidato de `srcset` ──────────────────────── */
+  let img = 0, imgOk = 0, cand = 0, candOk = 0, candCaidos = 0;
+  const imgSinCapturar = [], imgExterna = [];
+  out = out.replace(/<img\b[^>]*>/gi, (tag) => {
+    img++;
+    let t = tag;
+    const src = attr(t, "src");
+    if (src && !src.startsWith("data:")) {
+      /* SABOTAJE `sin-media`: reproduce el estado de antes de la 106.ª — el
+       * `src` se queda absoluto y la red cortada lo deja en 16 px. */
+      const f = SIN_MEDIA ? { url: null, motivo: "sin-capturar" } : mediaLocal(src);
+      if (f.url) { imgOk++; t = reemplazaAttr(t, "src", f.url); }
+      else (f.motivo === "externo" ? imgExterna : imgSinCapturar).push(src.slice(0, 120));
+    } else if (src) imgOk++;                              /* `data:` ya es local */
+
+    /**
+     * ⚠ El `srcset` hay que tocarlo o el navegador elige un candidato ABSOLUTO
+     * y la reescritura del `src` no sirve de nada. Los candidatos que no
+     * resuelven **se CAEN** en vez de quedarse rotos, y eso no mueve la caja:
+     * **los 87 `<img>` con `srcset` del corpus declaran `width` y `height` en
+     * los 87**, así que la razón de aspecto la fija el atributo y no los bits.
+     * Publicado con su cardinal por si algún día deja de ser cierto.
+     */
+    const ss = attr(t, "srcset");
+    if (ss) {
+      const vivos = [];
+      for (const trozo of ss.split(",")) {
+        const p = trozo.trim().split(/\s+/);
+        if (!p[0]) continue;
+        cand++;
+        const f = SIN_MEDIA ? { url: null } : mediaLocal(p[0]);
+        if (f.url) { candOk++; vivos.push([f.url, ...p.slice(1)].join(" ")); } else candCaidos++;
+      }
+      t = vivos.length ? reemplazaAttr(t, "srcset", vivos.join(", "))
+        : t.replace(/\ssrcset\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/i, "").replace(/\ssizes\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/i, "");
+      }
+    return t;
+  });
+
+  /* ── FUENTES: se INYECTAN, porque el `@import` vive DENTRO de una hoja del
+   * corpus y el corpus no se toca — es la evidencia capturada. Inyectar es
+   * aditivo: el `@import` sigue disparando y sigue abortado (se cuenta). ── */
+  const linksFuente = SIN_FUENTES ? "" : HOJAS_FUENTE
+    .map((f) => `<link rel="stylesheet" href="${pathToFileURL(join(FUENTES, f)).href}">`).join("");
+  out = /<\/head>/i.test(out) ? out.replace(/<\/head>/i, `${linksFuente}</head>`) : linksFuente + out;
+
+  return {
+    html: out, enlazadas, resueltas, sinResolver,
+    img: { n: img, resueltas: imgOk, sinCapturar: imgSinCapturar, externas: imgExterna.length },
+    srcset: { candidatos: cand, resueltos: candOk, caidos: candCaidos },
+    fuentes: SIN_FUENTES ? 0 : HOJAS_FUENTE.length,
+  };
 }
 
 /**
@@ -293,6 +419,15 @@ function medir() {
     /* CONTROL de que las hojas llegaron: sin CSS, Divi no pinta ni una caja. */
     hojasAplicadas: [...document.styleSheets].length,
     cuerpoTieneEstilo: getComputedStyle(document.body).fontFamily,
+    /**
+     * ⚠ **CONTROL DE LA FUENTE, y es el que NO tiene síntoma.** Una hoja que
+     * no carga deja la página sin maquetar y se ve; una fuente que no carga
+     * compone con el respaldo del sistema y **la página sigue midiendo**.
+     * Medido: con Manrope frente a sin ella, `docH` se mueve **−1** y **944 de
+     * 1257 cajas** (`derivaciones/fuente-f33.log`). Por eso el control no puede
+     * ser un total: es este booleano.
+     */
+    fuenteCargada: [...document.fonts].some((ff) => /manrope/i.test(ff.family) && ff.status === "loaded"),
   };
   secciones.forEach((s, i) => { out.cajas[`sec${i}`] = r(s); });
   filas.forEach((f, i) => { out.anchos[`fila${i}`] = +f.getBoundingClientRect().width.toFixed(2); });
@@ -389,6 +524,11 @@ function medir() {
 const SIN_HOJAS = !!process.env.NEG_SIN_HOJAS;
 const MISMO_LADO = !!process.env.NEG_MISMO_LADO;   /* control: los dos lados iguales */
 const DELTA = Number(process.env.NEG_INYECTA_DELTA || 0);
+/** Sabotajes del canal de media y del de fuentes: reproducen el estado
+ *  ASIMÉTRICO de antes de la 106.ª, que es el modo de fallo del que la guarda
+ *  nueva protege (§regla 28 — el sabotaje va en el DATO, no en el umbral). */
+const SIN_MEDIA = !!process.env.NEG_SIN_MEDIA;
+const SIN_FUENTES = !!process.env.NEG_SIN_FUENTES;
 
 /**
  * ⚠ **El control `mismo-lado` NO levanta el clon, y es deliberado.**
@@ -405,14 +545,16 @@ const baseClon = MISMO_LADO ? null : (await iniciarClon()).base;
 const salida = { meta: { sonda: "f33-cmp", fecha: hoy(), ancho: ANCHO, movil: MOVIL, contrato: "FIDELIDAD (1440/390)", dominio: { que: SOLO_PILOTO ? "PILOTO (6)" : "las 31 de `paginas`", n: PILOTO.length, de: TODAS.length }, sabotajes: { SIN_HOJAS, MISMO_LADO, DELTA } }, paginas: {} };
 const pares = [];
 let hojasCero = [];
+const mediaCero = [], fuenteCero = [];
 const cruceModulos = [];
 
 for (const pg of PILOTO) {
   const f = join(CORPUS, pg.fichero);
   if (!existsSync(f)) { ev.fallo(pg.ruta, "captura ausente"); continue; }
 
-  /* (a) ORIGINAL — captura por file:// con sus hojas y la red cortada */
-  const { html, enlazadas, resueltas, sinResolver } = conHojasLocales(readFileSync(f, "utf8"), SIN_HOJAS);
+  /* (a) ORIGINAL — captura por file:// con sus hojas, su media y sus fuentes */
+  const { html, enlazadas, resueltas, sinResolver, img, srcset, fuentes } =
+    conAssetsLocales(readFileSync(f, "utf8"), SIN_HOJAS);
   const off = await browser.newPage();
   await off.setRequestInterception(true);
   let bloqueadas = 0;
@@ -445,7 +587,8 @@ for (const pg of PILOTO) {
   if (enlazadas && !resueltas) hojasCero.push(pg.ruta);
 
   /* (b) CLON */
-  let clon = null, httpClon = 0;
+  let clon = null, httpClon = 0, bloqueadasClon = 0;
+  const hostsClon = new Map();
   if (MISMO_LADO) {
     /* CONTROL `mismo-lado`: se copia el original al lado del clon. Exige 0
      * distintos — si saliera algo, el comparador INVENTA diferencias. */
@@ -453,6 +596,35 @@ for (const pg of PILOTO) {
     httpClon = 200;
   } else {
     const cp = await browser.newPage();
+    /**
+     * ⚠⚠ **LA INTERCEPCIÓN VA EN LOS DOS LADOS. Que estuviera en UNO es el
+     * defecto que la 105.ª fichó** — y su forma general es §regla 32: *un lado
+     * con la red cortada y el otro sin cortar no mide el objeto, mide la
+     * asimetría*, repartida por dentro de todos los altos y con el signo de un
+     * defecto real.
+     *
+     * La política es **la misma frase en los dos lados: cada uno carga lo
+     * SUYO y nada externo.** Para el original «lo suyo» es `file:`; para el
+     * clon, su propio origen. Así ninguno de los dos toca la red, y un `<img>`
+     * a un host ajeno sale roto **en los dos** en vez de en uno.
+     *
+     * `bloqueadasClon` se publica por página, y es además el control de que
+     * esto es NO-OP donde no había nada externo: si sale 0 en N−1 páginas, la
+     * intercepción no cambió nada ahí.
+     */
+    await cp.setRequestInterception(true);
+    const propio = new URL(baseClon).origin;
+    cp.on("request", (q) => {
+      const u = q.url();
+      if (u.startsWith("data:") || u.startsWith("blob:") || u.startsWith(propio)) return void q.continue();
+      bloqueadasClon++;
+      /* El HOST, no sólo el recuento: «12 bloqueadas» no dice si el clon está
+       * pidiéndole assets al ORIGINAL EN CALIENTE —que sería un defecto de
+       * fidelidad, no del comparador— o a un tercero legítimo. Un cardinal sin
+       * su ejemplo manda a la tanda siguiente a averiguarlo otra vez. */
+      try { hostsClon.set(new URL(u).host, (hostsClon.get(new URL(u).host) || 0) + 1); } catch { /* noop */ }
+      q.abort().catch(() => {});
+    });
     await preparaViewport(cp);
     try {
       const url = baseClon + (pg.ruta.replace(/^\/es/, "").replace(/\/$/, "") || "/");
@@ -473,8 +645,16 @@ for (const pg of PILOTO) {
   salida.paginas[pg.ruta] = {
     regimen: pg.reg, httpClon,
     hojas: { enlazadas, resueltas, sinResolver: sinResolver.length, aplicadas: orig.hojasAplicadas, peticionesBloqueadas: bloqueadas },
+    /* §regla 32: los TRES canales con su cardinal de «sin resolver», y el
+     * bloqueo del lado del clon al lado del bloqueo del lado del original —
+     * la simetría se lee comparando los dos, no leyendo uno. */
+    media: { img: img.n, resueltas: img.resueltas, sinCapturar: img.sinCapturar.length, externas: img.externas, ejemplos: img.sinCapturar.slice(0, 3) },
+    srcset, fuentesInyectadas: fuentes, fuenteCargada: orig.fuenteCargada,
+    peticionesBloqueadasClon: bloqueadasClon, hostsBloqueadosClon: Object.fromEntries(hostsClon),
     original: orig, clon,
   };
+  if (img.sinCapturar.length) mediaCero.push({ ruta: pg.ruta, n: img.sinCapturar.length, ej: img.sinCapturar[0] });
+  if (!orig.fuenteCargada) fuenteCero.push(pg.ruta);
 
   /**
    * ⚠⚠ **CRUCE OBLIGATORIO CON OTRO INSTRUMENTO, y no es ceremonia.**
@@ -565,14 +745,44 @@ console.log(`  ORIGINAL: captura de corpus/fase-3 por file:// CON SUS HOJAS (cor
 console.log(`  CLON:     ${baseClon || "(no se levanta: control mismo-lado)"}`);
 if (SIN_HOJAS || MISMO_LADO || DELTA) console.log(`  ⚠ SABOTAJES ACTIVOS: ${JSON.stringify(salida.meta.sabotajes)}`);
 
-console.log(`\n═══ 1 · CONTROL DE HOJAS — sin ellas la medida es plausible y FALSA`);
+console.log(`\n═══ 1 · CONTROL DE LOS TRES CANALES — §regla 32: se cierran los tres o no se cierra ninguno`);
+console.log(`  Un lado con la red cortada y el otro sin cortar no mide el objeto: mide la ASIMETRÍA.`);
+console.log(`  ${"ruta".padEnd(50)} ${"hojas".padStart(9)} ${"imágenes".padStart(11)} ${"srcset".padStart(11)} ${"fuente".padStart(7)}  bloq O/C`);
 for (const [r, v] of Object.entries(salida.paginas))
-  console.log(`  ${r.padEnd(50)} enlazadas ${String(v.hojas.enlazadas).padStart(2)} · RESUELTAS ${String(v.hojas.resueltas).padStart(2)} · sin resolver ${String(v.hojas.sinResolver).padStart(2)} · styleSheets ${String(v.hojas.aplicadas).padStart(3)} (incluye <style> en línea) · bloqueadas ${v.hojas.peticionesBloqueadas}`);
+  console.log(
+    `  ${r.padEnd(50)} ${`${v.hojas.resueltas}/${v.hojas.enlazadas}`.padStart(9)}` +
+    ` ${`${v.media.resueltas}/${v.media.img}`.padStart(11)}` +
+    ` ${`${v.srcset.resueltos}/${v.srcset.candidatos}`.padStart(11)}` +
+    ` ${(v.fuenteCargada ? "✓" : "✗").padStart(7)}` +
+    `  ${String(v.hojas.peticionesBloqueadas).padStart(4)}/${String(v.peticionesBloqueadasClon).padStart(3)}` +
+    `${v.media.externas ? `   (externas ${v.media.externas}: rotas EN LOS DOS)` : ""}` +
+    `${v.media.sinCapturar ? `   ⛔ sin capturar ${v.media.sinCapturar}` : ""}`,
+  );
+
+/**
+ * ⚠ Las tres guardas **cuentan en rojo y NO tiran** (§regla 31): una
+ * precondición que invalida la MEDIDA tiene que dejar llegar al informe, o su
+ * propio negativo se queda sin nada que comparar salvo el código de salida.
+ */
+let canalRoto = 0;
 if (hojasCero.length) {
-  console.log(`\n⛔ ${hojasCero.length} página(s) con CERO hojas aplicadas: ${hojasCero.join(" · ")}`);
-  console.log(`   La corrida NO vale: es la medida sin estilo, que da números plausibles y falsos.`);
+  canalRoto++;
+  console.log(`\n⛔ HOJAS · ${hojasCero.length} página(s) con CERO hojas aplicadas: ${hojasCero.join(" · ")}`);
   console.log(`   Medido con el sabotaje: sin las externas, docH de /es/empresa/ pasa de 6623.91 a 13361.03.`);
 }
+if (mediaCero.length) {
+  canalRoto++;
+  console.log(`\n⛔ MEDIA · ${mediaCero.length} página(s) con imágenes LOCALES sin capturar (las externas NO cuentan: son simétricas)`);
+  for (const x of mediaCero.slice(0, 8)) console.log(`     ${x.ruta}  ${x.n}  p.ej. ${x.ej}`);
+  console.log(`   Un <img> abortado mide 16 px: medido, 65 de 71 en el original y las 71 vivas en el clon.`);
+}
+if (fuenteCero.length) {
+  canalRoto++;
+  console.log(`\n⛔ FUENTE · ${fuenteCero.length} página(s) SIN Manrope cargada: ${fuenteCero.slice(0, 6).join(" · ")}${fuenteCero.length > 6 ? " …" : ""}`);
+  console.log(`   Y éste NO tiene síntoma: docH se mueve −1 y 944 de 1257 cajas (derivaciones/fuente-f33.log).`);
+}
+if (canalRoto) console.log(`\n   La corrida NO VALE: ${canalRoto} de 3 canales abiertos. Los números son plausibles y falsos.`);
+else console.log(`\n  ✓ los TRES canales cerrados en las ${Object.keys(salida.paginas).length} páginas`);
 
 /* ⚠ EL CRUCE DE LA UNIDAD QUE SE AFIRMA, antes de los pares: si el DOM y el
  * censo no cuentan los mismos módulos, el titular `nModulos` habla de dos
@@ -722,7 +932,7 @@ console.log(`    y devolvería ceros que entrarían como dato (36 de 313 en el o
  * puede escribirlo una corrida de verdad — y hasta que exista, quien lo lea
  * **falla en voz alta** en vez de leer un control (§el defecto en la dirección
  * que grita). */
-const SABOTEADA = SIN_HOJAS || MISMO_LADO || DELTA;
+const SABOTEADA = SIN_HOJAS || MISMO_LADO || DELTA || SIN_MEDIA || SIN_FUENTES;
 if (SABOTEADA && !process.env.NEG) {
   console.log(`\n⚠ CORRIDA SABOTEADA SIN \`NEG=\`: la salida NO puede llevarse el nombre canónico.`);
   console.log(`  Se desvía a \`f33-cmp-${ANCHO}-neg-a-mano.json\`. Para un negativo con nombre propio, usa \`npm run qa:f33-cmp-neg\`.`);
@@ -734,7 +944,9 @@ w(`medidas/f33-cmp-${ANCHO}${SOLO_PILOTO ? "-piloto" : ""}${SABOTEADA && !proces
 
 console.log(`\n═══ 6 · VEREDICTO`);
 console.log(`  ✓ evaluadas ${ev.n}/${PILOTO.length} ${SOLO_PILOTO ? "páginas del piloto" : "páginas de la cola larga"} · pares ${pares.length} · distintos ${distintos.length}`);
-if (hojasCero.length) process.exit(2);
+/* Los TRES canales cierran el código de salida por el MISMO sitio: si uno solo
+ * lo cerrara, los otros dos serían una nota al pie (§regla 14). */
+if (hojasCero.length || mediaCero.length || fuenteCero.length) process.exit(2);
 if (cruceModulos.length)
   console.log(`  ⚠ ${cruceModulos.length} ruta(s) con el CRUCE DE MÓDULOS descuadrado — ver §1b. Cuenta como rojo.`);
 if (distintos.length) {

@@ -24,12 +24,28 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 15,
-        "peticionesBloqueadas": 39
+        "aplicadas": 19,
+        "peticionesBloqueadas": 24
       },
+      "media": {
+        "img": 15,
+        "resueltas": 15,
+        "sinCapturar": 0,
+        "externas": 0,
+        "ejemplos": []
+      },
+      "srcset": {
+        "candidatos": 2,
+        "resueltos": 2,
+        "caidos": 0
+      },
+      "fuentesInyectadas": 4,
+      "fuenteCargada": true,
+      "peticionesBloqueadasClon": 0,
+      "hostsBloqueadosClon": {},
       "original": {
-        "docH": 6055,
-        "base": 251.72,
+        "docH": 6111,
+        "base": 250.72,
         "nSecciones": 0,
         "nFilas": 0,
         "nModulos": 0,
@@ -41,29 +57,30 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 6055.09
+            "h": 6110.69
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 5861.38
+            "h": 5917.97
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 5267.63
+            "h": 5324.22
           },
           "barra": null
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": []
       },
       "clon": {
-        "docH": 6055,
-        "base": 251.72,
+        "docH": 6111,
+        "base": 250.72,
         "nSecciones": 0,
         "nFilas": 0,
         "nModulos": 0,
@@ -75,24 +92,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 6055.09
+            "h": 6110.69
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 5861.38
+            "h": 5917.97
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 5267.63
+            "h": 5324.22
           },
           "barra": null
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": []
       }
     },
@@ -103,12 +121,28 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 17,
-        "peticionesBloqueadas": 51
+        "aplicadas": 21,
+        "peticionesBloqueadas": 32
       },
+      "media": {
+        "img": 18,
+        "resueltas": 18,
+        "sinCapturar": 0,
+        "externas": 0,
+        "ejemplos": []
+      },
+      "srcset": {
+        "candidatos": 2,
+        "resueltos": 2,
+        "caidos": 0
+      },
+      "fuentesInyectadas": 4,
+      "fuenteCargada": true,
+      "peticionesBloqueadasClon": 0,
+      "hostsBloqueadosClon": {},
       "original": {
-        "docH": 3111,
-        "base": 227.52,
+        "docH": 3291,
+        "base": 226.52,
         "nSecciones": 4,
         "nFilas": 3,
         "nModulos": 12,
@@ -120,27 +154,27 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 959.27
+            "h": 969.27
           },
           "sec1": {
             "x": 0,
-            "y": 1152.98,
+            "y": 1161.98,
             "w": 1440,
             "h": 574.19
           },
           "sec2": {
             "x": 0,
-            "y": 1727.17,
+            "y": 1736.17,
             "w": 1440,
             "h": 343.06
           },
           "sec3": {
             "x": 0,
-            "y": 2070.23,
+            "y": 2079.23,
             "w": 1440,
-            "h": 447.17
+            "h": 617.66
           }
         },
         "enlaces": 107,
@@ -149,24 +183,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 3111.16
+            "h": 3290.64
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 2917.44
+            "h": 3097.92
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 2323.69
+            "h": 2504.17
           },
           "barra": null
         },
-        "hojasAplicadas": 17,
+        "hojasAplicadas": 21,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -195,7 +230,7 @@
             "tipo": "code",
             "etiqueta": "div",
             "w": 585.13,
-            "h": 728.38,
+            "h": 738.38,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -205,8 +240,8 @@
             "i": 3,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -260,8 +295,8 @@
             "i": 8,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -294,7 +329,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 16,
+            "h": 413.47,
             "mt": 30,
             "mb": 0,
             "pb": 0,
@@ -303,8 +338,8 @@
         ]
       },
       "clon": {
-        "docH": 3111,
-        "base": 227.52,
+        "docH": 3291,
+        "base": 226.52,
         "nSecciones": 4,
         "nFilas": 3,
         "nModulos": 12,
@@ -316,27 +351,27 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 959.27
+            "h": 969.27
           },
           "sec1": {
             "x": 0,
-            "y": 1152.98,
+            "y": 1161.98,
             "w": 1440,
             "h": 574.19
           },
           "sec2": {
             "x": 0,
-            "y": 1727.17,
+            "y": 1736.17,
             "w": 1440,
             "h": 343.06
           },
           "sec3": {
             "x": 0,
-            "y": 2070.23,
+            "y": 2079.23,
             "w": 1440,
-            "h": 447.17
+            "h": 617.66
           }
         },
         "enlaces": 107,
@@ -345,24 +380,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 3111.16
+            "h": 3290.64
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 2917.44
+            "h": 3097.92
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 2323.69
+            "h": 2504.17
           },
           "barra": null
         },
-        "hojasAplicadas": 17,
+        "hojasAplicadas": 21,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -391,7 +427,7 @@
             "tipo": "code",
             "etiqueta": "div",
             "w": 585.13,
-            "h": 728.38,
+            "h": 738.38,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -401,8 +437,8 @@
             "i": 3,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -456,8 +492,8 @@
             "i": 8,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -490,7 +526,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 16,
+            "h": 413.47,
             "mt": 30,
             "mb": 0,
             "pb": 0,
@@ -506,12 +542,28 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 15,
-        "peticionesBloqueadas": 79
+        "aplicadas": 19,
+        "peticionesBloqueadas": 35
       },
+      "media": {
+        "img": 53,
+        "resueltas": 52,
+        "sinCapturar": 0,
+        "externas": 1,
+        "ejemplos": []
+      },
+      "srcset": {
+        "candidatos": 34,
+        "resueltos": 20,
+        "caidos": 14
+      },
+      "fuentesInyectadas": 4,
+      "fuenteCargada": true,
+      "peticionesBloqueadasClon": 0,
+      "hostsBloqueadosClon": {},
       "original": {
-        "docH": 6346,
-        "base": 2620.31,
+        "docH": 7358,
+        "base": 2673.31,
         "nSecciones": 11,
         "nFilas": 12,
         "nModulos": 60,
@@ -532,69 +584,69 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 243.72,
+            "y": 242.72,
             "w": 1440,
             "h": 653.33
           },
           "sec2": {
             "x": 0,
-            "y": 897.05,
+            "y": 896.05,
             "w": 1440,
-            "h": 1287.16
+            "h": 1341.16
           },
           "sec3": {
             "x": 0,
-            "y": 2184.2,
+            "y": 2237.2,
             "w": 1440,
             "h": 349.72
           },
           "sec4": {
             "x": 0,
-            "y": 2533.92,
+            "y": 2586.92,
             "w": 1440,
             "h": 317.36
           },
           "sec5": {
             "x": 0,
-            "y": 2851.28,
+            "y": 2904.28,
             "w": 1440,
             "h": 207.94
           },
           "sec6": {
             "x": 0,
-            "y": 3059.22,
+            "y": 3112.22,
             "w": 1440,
             "h": 417.14
           },
           "sec7": {
             "x": 0,
-            "y": 3476.36,
+            "y": 3529.36,
             "w": 1440,
             "h": 300.77
           },
           "sec8": {
             "x": 0,
-            "y": 3777.13,
+            "y": 3830.13,
             "w": 1440,
-            "h": 242.03
+            "h": 324.03
           },
           "sec9": {
             "x": 0,
-            "y": 4019.16,
+            "y": 4154.16,
             "w": 1440,
-            "h": 362.88
+            "h": 416.88
           },
           "sec10": {
             "x": 0,
-            "y": 4382.03,
+            "y": 4571.03,
             "w": 1440,
-            "h": 1369.88
+            "h": 2193.41
           }
         },
         "enlaces": 111,
@@ -603,24 +655,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 6345.66
+            "h": 7358.19
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 6151.94
+            "h": 7165.47
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 5558.19
+            "h": 6571.72
           },
           "barra": null
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -637,8 +690,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -682,7 +735,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 585.13,
-            "h": 16,
+            "h": 341.31,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -692,8 +745,8 @@
             "i": 6,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -726,7 +779,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 100.19,
+            "h": 129.19,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -737,7 +790,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -748,7 +801,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -759,7 +812,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -770,7 +823,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 100.19,
+            "h": 129.19,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -791,8 +844,8 @@
             "i": 15,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -835,8 +888,8 @@
             "i": 19,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -868,8 +921,8 @@
             "i": 22,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -901,8 +954,8 @@
             "i": 25,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -934,8 +987,8 @@
             "i": 28,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -967,8 +1020,8 @@
             "i": 31,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1001,7 +1054,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 16,
+            "h": 98,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1011,8 +1064,8 @@
             "i": 35,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1034,7 +1087,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1045,7 +1098,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1056,7 +1109,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1067,7 +1120,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1078,7 +1131,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1089,7 +1142,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1100,7 +1153,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1111,7 +1164,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1121,8 +1174,8 @@
             "i": 45,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1133,7 +1186,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 642.3,
-            "h": 16,
+            "h": 39.95,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1144,7 +1197,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 401.44,
-            "h": 16,
+            "h": 113.67,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1155,7 +1208,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 602.16,
-            "h": 16,
+            "h": 93.98,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1177,7 +1230,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 16,
+            "h": 190.42,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1199,7 +1252,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 16,
+            "h": 236.02,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1221,7 +1274,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 16,
+            "h": 196.84,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1254,7 +1307,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 16,
+            "h": 64.64,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1285,8 +1338,8 @@
         ]
       },
       "clon": {
-        "docH": 6346,
-        "base": 2620.31,
+        "docH": 7358,
+        "base": 2673.31,
         "nSecciones": 11,
         "nFilas": 12,
         "nModulos": 60,
@@ -1307,69 +1360,69 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 243.72,
+            "y": 242.72,
             "w": 1440,
             "h": 653.33
           },
           "sec2": {
             "x": 0,
-            "y": 897.05,
+            "y": 896.05,
             "w": 1440,
-            "h": 1287.16
+            "h": 1341.16
           },
           "sec3": {
             "x": 0,
-            "y": 2184.2,
+            "y": 2237.2,
             "w": 1440,
             "h": 349.72
           },
           "sec4": {
             "x": 0,
-            "y": 2533.92,
+            "y": 2586.92,
             "w": 1440,
             "h": 317.36
           },
           "sec5": {
             "x": 0,
-            "y": 2851.28,
+            "y": 2904.28,
             "w": 1440,
             "h": 207.94
           },
           "sec6": {
             "x": 0,
-            "y": 3059.22,
+            "y": 3112.22,
             "w": 1440,
             "h": 417.14
           },
           "sec7": {
             "x": 0,
-            "y": 3476.36,
+            "y": 3529.36,
             "w": 1440,
             "h": 300.77
           },
           "sec8": {
             "x": 0,
-            "y": 3777.13,
+            "y": 3830.13,
             "w": 1440,
-            "h": 242.03
+            "h": 324.03
           },
           "sec9": {
             "x": 0,
-            "y": 4019.16,
+            "y": 4154.16,
             "w": 1440,
-            "h": 362.88
+            "h": 416.88
           },
           "sec10": {
             "x": 0,
-            "y": 4382.03,
+            "y": 4571.03,
             "w": 1440,
-            "h": 1369.88
+            "h": 2193.41
           }
         },
         "enlaces": 111,
@@ -1378,24 +1431,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 6345.66
+            "h": 7358.19
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 6151.94
+            "h": 7165.47
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 5558.19
+            "h": 6571.72
           },
           "barra": null
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -1412,8 +1466,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1457,7 +1511,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 585.13,
-            "h": 16,
+            "h": 341.31,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1467,8 +1521,8 @@
             "i": 6,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1501,7 +1555,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 100.19,
+            "h": 129.19,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1512,7 +1566,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1523,7 +1577,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1534,7 +1588,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1545,7 +1599,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 100.19,
+            "h": 129.19,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1566,8 +1620,8 @@
             "i": 15,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1610,8 +1664,8 @@
             "i": 19,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1643,8 +1697,8 @@
             "i": 22,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1676,8 +1730,8 @@
             "i": 25,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1709,8 +1763,8 @@
             "i": 28,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1742,8 +1796,8 @@
             "i": 31,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1776,7 +1830,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 16,
+            "h": 98,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1786,8 +1840,8 @@
             "i": 35,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1809,7 +1863,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1820,7 +1874,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1831,7 +1885,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1842,7 +1896,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1853,7 +1907,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1864,7 +1918,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1875,7 +1929,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1886,7 +1940,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 78.59,
+            "h": 107.59,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1896,8 +1950,8 @@
             "i": 45,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1908,7 +1962,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 642.3,
-            "h": 16,
+            "h": 39.95,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1919,7 +1973,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 401.44,
-            "h": 16,
+            "h": 113.67,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1930,7 +1984,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 602.16,
-            "h": 16,
+            "h": 93.98,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1952,7 +2006,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 16,
+            "h": 190.42,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1974,7 +2028,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 16,
+            "h": 236.02,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1996,7 +2050,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 16,
+            "h": 196.84,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2029,7 +2083,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 16,
+            "h": 64.64,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2067,12 +2121,28 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 15,
-        "peticionesBloqueadas": 43
+        "aplicadas": 19,
+        "peticionesBloqueadas": 27
       },
+      "media": {
+        "img": 16,
+        "resueltas": 16,
+        "sinCapturar": 0,
+        "externas": 0,
+        "ejemplos": []
+      },
+      "srcset": {
+        "candidatos": 2,
+        "resueltos": 2,
+        "caidos": 0
+      },
+      "fuentesInyectadas": 4,
+      "fuenteCargada": true,
+      "peticionesBloqueadasClon": 0,
+      "hostsBloqueadosClon": {},
       "original": {
-        "docH": 1443,
-        "base": 301.31,
+        "docH": 1442,
+        "base": 300.31,
         "nSecciones": 2,
         "nFilas": 3,
         "nModulos": 9,
@@ -2084,13 +2154,13 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 243.72,
+            "y": 242.72,
             "w": 1440,
             "h": 605.66
           }
@@ -2101,24 +2171,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 1443.13
+            "h": 1442.13
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 1249.41
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 655.66
           },
           "barra": null
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2135,8 +2206,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2222,8 +2293,8 @@
         ]
       },
       "clon": {
-        "docH": 1443,
-        "base": 301.31,
+        "docH": 1442,
+        "base": 300.31,
         "nSecciones": 2,
         "nFilas": 3,
         "nModulos": 9,
@@ -2235,13 +2306,13 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 243.72,
+            "y": 242.72,
             "w": 1440,
             "h": 605.66
           }
@@ -2252,24 +2323,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 1443.13
+            "h": 1442.13
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 1249.41
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 655.66
           },
           "barra": null
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2286,8 +2358,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2380,12 +2452,28 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 15,
-        "peticionesBloqueadas": 50
+        "aplicadas": 19,
+        "peticionesBloqueadas": 35
       },
+      "media": {
+        "img": 16,
+        "resueltas": 16,
+        "sinCapturar": 0,
+        "externas": 0,
+        "ejemplos": []
+      },
+      "srcset": {
+        "candidatos": 5,
+        "resueltos": 5,
+        "caidos": 0
+      },
+      "fuentesInyectadas": 4,
+      "fuenteCargada": true,
+      "peticionesBloqueadasClon": 0,
+      "hostsBloqueadosClon": {},
       "original": {
-        "docH": 1497,
-        "base": 355.16,
+        "docH": 1496,
+        "base": 354.16,
         "nSecciones": 5,
         "nFilas": 5,
         "nModulos": 8,
@@ -2399,9 +2487,9 @@
         "cajas": {
           "sec0": {
             "x": 427.41,
-            "y": 340.16,
+            "y": 339.16,
             "w": 911.75,
-            "h": 308.83
+            "h": 467.5
           },
           "sec1": {
             "x": 0,
@@ -2434,29 +2522,30 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 1497.09
+            "h": 1496.09
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 1303.38
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 709.63
           },
           "barra": {
             "x": 100.8,
-            "y": 291.3,
+            "y": 290.3,
             "w": 227.5,
             "h": 493.66
           }
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2496,7 +2585,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 430.8,
-            "h": 16,
+            "h": 430.8,
             "mt": -33,
             "mb": 0,
             "pb": 0,
@@ -2549,8 +2638,8 @@
         ]
       },
       "clon": {
-        "docH": 1497,
-        "base": 355.16,
+        "docH": 1496,
+        "base": 354.16,
         "nSecciones": 5,
         "nFilas": 5,
         "nModulos": 8,
@@ -2564,9 +2653,9 @@
         "cajas": {
           "sec0": {
             "x": 427.41,
-            "y": 340.16,
+            "y": 339.16,
             "w": 911.75,
-            "h": 308.83
+            "h": 467.5
           },
           "sec1": {
             "x": 0,
@@ -2599,29 +2688,30 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 1497.09
+            "h": 1496.09
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 1303.38
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 709.63
           },
           "barra": {
             "x": 100.8,
-            "y": 291.3,
+            "y": 290.3,
             "w": 227.5,
             "h": 493.66
           }
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2661,7 +2751,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 430.8,
-            "h": 16,
+            "h": 430.8,
             "mt": -33,
             "mb": 0,
             "pb": 0,
@@ -2721,12 +2811,28 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 15,
-        "peticionesBloqueadas": 55
+        "aplicadas": 19,
+        "peticionesBloqueadas": 32
       },
+      "media": {
+        "img": 24,
+        "resueltas": 24,
+        "sinCapturar": 0,
+        "externas": 0,
+        "ejemplos": []
+      },
+      "srcset": {
+        "candidatos": 20,
+        "resueltos": 20,
+        "caidos": 0
+      },
+      "fuentesInyectadas": 4,
+      "fuenteCargada": true,
+      "peticionesBloqueadasClon": 0,
+      "hostsBloqueadosClon": {},
       "original": {
-        "docH": 2713,
-        "base": 330.11,
+        "docH": 2711,
+        "base": 329.11,
         "nSecciones": 4,
         "nFilas": 5,
         "nModulos": 13,
@@ -2740,25 +2846,25 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 243.72,
+            "y": 242.72,
             "w": 1440,
             "h": 544.98
           },
           "sec2": {
             "x": 0,
-            "y": 788.7,
+            "y": 787.7,
             "w": 1440,
-            "h": 532.03
+            "h": 531.03
           },
           "sec3": {
             "x": 0,
-            "y": 1320.73,
+            "y": 1318.73,
             "w": 1440,
             "h": 798.34
           }
@@ -2769,24 +2875,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 2712.83
+            "h": 2710.83
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 2519.11
+            "h": 2518.11
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 1925.36
+            "h": 1924.36
           },
           "barra": null
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2803,8 +2910,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2848,7 +2955,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 281.72,
-            "h": 505.03,
+            "h": 504.03,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2859,7 +2966,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 281.72,
-            "h": 505.03,
+            "h": 504.03,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2870,7 +2977,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 281.72,
-            "h": 532.03,
+            "h": 531.03,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2881,7 +2988,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 281.72,
-            "h": 505.03,
+            "h": 504.03,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2891,8 +2998,8 @@
             "i": 9,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2934,8 +3041,8 @@
         ]
       },
       "clon": {
-        "docH": 2713,
-        "base": 330.11,
+        "docH": 2711,
+        "base": 329.11,
         "nSecciones": 4,
         "nFilas": 5,
         "nModulos": 13,
@@ -2949,25 +3056,25 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 243.72,
+            "y": 242.72,
             "w": 1440,
             "h": 544.98
           },
           "sec2": {
             "x": 0,
-            "y": 788.7,
+            "y": 787.7,
             "w": 1440,
-            "h": 532.03
+            "h": 531.03
           },
           "sec3": {
             "x": 0,
-            "y": 1320.73,
+            "y": 1318.73,
             "w": 1440,
             "h": 798.34
           }
@@ -2978,24 +3085,25 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 2712.83
+            "h": 2710.83
           },
           "area": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 2519.11
+            "h": 2518.11
           },
           "contenido": {
             "x": 0,
-            "y": 193.72,
+            "y": 192.72,
             "w": 1440,
-            "h": 1925.36
+            "h": 1924.36
           },
           "barra": null
         },
-        "hojasAplicadas": 15,
+        "hojasAplicadas": 19,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
+        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -3012,8 +3120,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -3057,7 +3165,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 281.72,
-            "h": 505.03,
+            "h": 504.03,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3068,7 +3176,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 281.72,
-            "h": 505.03,
+            "h": 504.03,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3079,7 +3187,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 281.72,
-            "h": 532.03,
+            "h": 531.03,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3090,7 +3198,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 281.72,
-            "h": 505.03,
+            "h": 504.03,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3100,8 +3208,8 @@
             "i": 9,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 166.09,
-            "h": 16,
+            "w": 60,
+            "h": 22,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,

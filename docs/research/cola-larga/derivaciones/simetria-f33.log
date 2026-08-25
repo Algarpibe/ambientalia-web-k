@@ -1,0 +1,47 @@
+═══ simetria-f33 · cerrar los TRES canales, leído por DISTANCIA
+
+  ANTES = red cortada en UN lado (imagen y fuente sólo en el clon)
+  AHORA = hojas + media + fuentes locales en el original · intercepción en LOS DOS
+
+─── 1440 ────────────────────────────────────────────────────────────
+  llaves            antes 2441 · ahora 2441 · sólo antes 0 · sólo ahora 0
+  pares comparables 2107
+  ACERCAN           113   (de ellos, a Δ0 exacto: 6)
+  ALEJAN            112   (de ellos, desde Δ0: 23)
+  iguales           1882
+  Σ|clon−orig|      365362.63 → 356762.68   (-8599.95)
+  se movió el lado  ORIGINAL 245 · CLON 3
+     ↑ el arreglo tocaba el montaje del ORIGINAL. El clon sólo puede moverse donde pedía algo EXTERNO.
+  los 10 que más se movieron:
+     ↓ /es/centro-de-ayuda/kunak-air/video-tutoriales/|docH           |Δ|    1780.00 →     425.00
+     ↓ /es/empresa/premios-y-reconocimientos/|docH                    |Δ|    1779.00 →     480.00
+     ↓ /es/empresa/|docH                                              |Δ|   12642.00 →   11545.00
+     ↓ /es/centro-de-ayuda/kunak-air/video-tutoriales/|caja.sec0.h    |Δ|    1203.51 →     152.21
+     ↓ /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/|docH |Δ|    1148.00 →     245.00
+     ↓ /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/|caja.sec0.h |Δ|     792.27 →     111.54
+     ↓ /es/productos/|docH                                            |Δ|     732.00 →     141.00
+     ↑ /es/empresa/premios-y-reconocimientos/|mod31.h                 |Δ|     130.78 →     678.81
+     ↓ /es/descarga-catalogo/|mod1.h                                  |Δ|     374.08 →       0.00
+     ↑ /es/sistema-interno-de-informacion/|caja.sec0.h                |Δ|    1359.40 →    1717.93
+
+─── 390 ────────────────────────────────────────────────────────────
+  llaves            antes 2441 · ahora 2441 · sólo antes 0 · sólo ahora 0
+  pares comparables 2107
+  ACERCAN           122   (de ellos, a Δ0 exacto: 7)
+  ALEJAN            119   (de ellos, desde Δ0: 23)
+  iguales           1866
+  Σ|clon−orig|      322097.89 → 310521.32   (-11576.57)
+  se movió el lado  ORIGINAL 268 · CLON 3
+     ↑ el arreglo tocaba el montaje del ORIGINAL. El clon sólo puede moverse donde pedía algo EXTERNO.
+  los 10 que más se movieron:
+     ↓ /es/empresa/premios-y-reconocimientos/|docH                    |Δ|    4505.00 →    1555.00
+     ↓ /es/productos/|docH                                            |Δ|    2262.00 →     444.00
+     ↓ /es/centro-de-ayuda/kunak-air/video-tutoriales/|caja.sec0.h    |Δ|    1088.10 →      53.85
+     ↓ /es/centro-de-ayuda/kunak-air/video-tutoriales/|docH           |Δ|    1350.00 →     317.00
+     ↑ /es/sistema-interno-de-informacion/|caja.sec0.h                |Δ|    2294.20 →    3203.42
+     ↑ /es/sistema-interno-de-informacion/|mod0.h                     |Δ|    2279.41 →    3188.62
+     ↑ /es/sistema-interno-de-informacion/|docH                       |Δ|    3191.00 →    4099.00
+     ↓ /es/empresa/|docH                                              |Δ|    5506.00 →    4643.00
+     ↓ /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/|caja.sec0.h |Δ|     820.13 →     100.03
+     ↓ /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/|docH |Δ|     760.00 →      41.00
+

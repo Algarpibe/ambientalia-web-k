@@ -112,6 +112,48 @@ const casos = [
       return null;
     },
   },
+  /* ══════════════════════════════════════════════════════════════════════════
+   * 106.ª · LOS DOS CANALES QUE FALTABAN
+   *
+   * Los dos sabotajes reproducen **el estado real de antes de la 106.ª** —el
+   * canal abierto en el lado del original y cerrado en el del clon— en vez de
+   * tocar el umbral de una condición (§regla 28: *el sabotaje va en el DATO*).
+   *
+   * ⚠ Y `sin-fuentes` es **el que enseña**, porque es el que NO se nota: sin
+   * Manrope la página **sigue midiendo** y `docH` sólo se mueve −1. Si su
+   * aserción fuera un total, el caso pasaría con el canal abierto.
+   * ════════════════════════════════════════════════════════════════════════ */
+  {
+    etiqueta: "sin-media",
+    porQue: "las imágenes del original sin resolver a copia local: la guarda anula la corrida en vez de medir 65 de 71 a 16 px",
+    env: { NEG_MISMO_LADO: "1", NEG_SIN_MEDIA: "1", PILOTO: "1" },
+    args: [SONDA],
+    exit: 2,
+    salidaTiene: /⛔ MEDIA ·/,
+    comprueba: (j) => {
+      for (const [r, v] of Object.entries(j.paginas || {})) {
+        if (!v.media) return `${r}: la congelada no publica el canal \`media\` — sin cardinal la limitación es una nota al pie (§regla 14)`;
+        if (v.media.resueltas !== 0) return `${r}: resueltas ${v.media.resueltas} ≠ 0 — el sabotaje no cerró el canal`;
+        if (!v.media.img) return `${r}: img 0 ⇒ el sabotaje MUEVE LA PORTERÍA (§regla 17): sin imágenes la guarda no puede disparar`;
+      }
+      return null;
+    },
+  },
+  {
+    etiqueta: "sin-fuentes",
+    porQue: "la tipografía del original sin inyectar: la guarda tiene que verlo AUNQUE docH sólo se mueva −1",
+    env: { NEG_MISMO_LADO: "1", NEG_SIN_FUENTES: "1", PILOTO: "1" },
+    args: [SONDA],
+    exit: 2,
+    salidaTiene: /⛔ FUENTE ·/,
+    comprueba: (j) => {
+      for (const [r, v] of Object.entries(j.paginas || {})) {
+        if (v.fuentesInyectadas !== 0) return `${r}: fuentesInyectadas ${v.fuentesInyectadas} ≠ 0 — el sabotaje no cerró el canal`;
+        if (v.fuenteCargada) return `${r}: Manrope CARGADA con el sabotaje puesto — el canal entra por otro sitio y el control no lo mide`;
+      }
+      return null;
+    },
+  },
 ];
 
 const ev = new Evaluadas({ nombre: "f33-cmp-neg", unidad: "casos", minimo: casos.length });

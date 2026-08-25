@@ -13,7 +13,7 @@
     "sabotajes": {
       "SIN_HOJAS": false,
       "MISMO_LADO": true,
-      "DELTA": 37.5
+      "DELTA": 0
     }
   },
   "paginas": {
@@ -25,19 +25,23 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 19,
-        "peticionesBloqueadas": 24
+        "peticionesBloqueadas": 39
       },
       "media": {
         "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
+        "resueltas": 0,
+        "sinCapturar": 15,
         "externas": 0,
-        "ejemplos": []
+        "ejemplos": [
+          "https://kunakair.com/wp-content/uploads/2022/12/01-Kunak-AIR-Pro-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2022/12/Kunak_AIR_Lite-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg"
+        ]
       },
       "srcset": {
         "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
+        "resueltos": 0,
+        "caidos": 2
       },
       "fuentesInyectadas": 4,
       "fuenteCargada": true,
@@ -79,7 +83,7 @@
         "modulos": []
       },
       "clon": {
-        "docH": 6148.5,
+        "docH": 6111,
         "base": 250.72,
         "nSecciones": 0,
         "nFilas": 0,
@@ -122,26 +126,30 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 21,
-        "peticionesBloqueadas": 33
+        "peticionesBloqueadas": 51
       },
       "media": {
         "img": 18,
-        "resueltas": 18,
-        "sinCapturar": 0,
+        "resueltas": 0,
+        "sinCapturar": 18,
         "externas": 0,
-        "ejemplos": []
+        "ejemplos": [
+          "https://kunakair.com/wp-content/uploads/2022/12/01-Kunak-AIR-Pro-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2022/12/Kunak_AIR_Lite-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg"
+        ]
       },
       "srcset": {
         "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
+        "resueltos": 0,
+        "caidos": 2
       },
       "fuentesInyectadas": 4,
       "fuenteCargada": true,
       "peticionesBloqueadasClon": 0,
       "hostsBloqueadosClon": {},
       "original": {
-        "docH": 3291,
+        "docH": 3120,
         "base": 226.52,
         "nSecciones": 4,
         "nFilas": 3,
@@ -174,7 +182,7 @@
             "x": 0,
             "y": 2079.23,
             "w": 1440,
-            "h": 617.66
+            "h": 447.17
           }
         },
         "enlaces": 107,
@@ -183,19 +191,19 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 3290.64
+            "h": 3120.16
           },
           "area": {
             "x": 0,
             "y": 192.72,
             "w": 1440,
-            "h": 3097.92
+            "h": 2927.44
           },
           "contenido": {
             "x": 0,
             "y": 192.72,
             "w": 1440,
-            "h": 2504.17
+            "h": 2333.69
           },
           "barra": null
         },
@@ -240,8 +248,8 @@
             "i": 3,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -295,8 +303,8 @@
             "i": 8,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -329,7 +337,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 413.47,
+            "h": 16,
             "mt": 30,
             "mb": 0,
             "pb": 0,
@@ -338,7 +346,7 @@
         ]
       },
       "clon": {
-        "docH": 3328.5,
+        "docH": 3120,
         "base": 226.52,
         "nSecciones": 4,
         "nFilas": 3,
@@ -371,7 +379,7 @@
             "x": 0,
             "y": 2079.23,
             "w": 1440,
-            "h": 617.66
+            "h": 447.17
           }
         },
         "enlaces": 107,
@@ -380,19 +388,19 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 3290.64
+            "h": 3120.16
           },
           "area": {
             "x": 0,
             "y": 192.72,
             "w": 1440,
-            "h": 3097.92
+            "h": 2927.44
           },
           "contenido": {
             "x": 0,
             "y": 192.72,
             "w": 1440,
-            "h": 2504.17
+            "h": 2333.69
           },
           "barra": null
         },
@@ -437,8 +445,8 @@
             "i": 3,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -492,8 +500,8 @@
             "i": 8,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -526,7 +534,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 413.47,
+            "h": 16,
             "mt": 30,
             "mb": 0,
             "pb": 0,
@@ -543,27 +551,31 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 19,
-        "peticionesBloqueadas": 35
+        "peticionesBloqueadas": 79
       },
       "media": {
         "img": 53,
-        "resueltas": 52,
-        "sinCapturar": 0,
-        "externas": 1,
-        "ejemplos": []
+        "resueltas": 0,
+        "sinCapturar": 53,
+        "externas": 0,
+        "ejemplos": [
+          "https://kunakair.com/wp-content/uploads/2022/12/01-Kunak-AIR-Pro-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2022/12/Kunak_AIR_Lite-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg"
+        ]
       },
       "srcset": {
         "candidatos": 34,
-        "resueltos": 20,
-        "caidos": 14
+        "resueltos": 0,
+        "caidos": 34
       },
       "fuentesInyectadas": 4,
       "fuenteCargada": true,
       "peticionesBloqueadasClon": 0,
       "hostsBloqueadosClon": {},
       "original": {
-        "docH": 7358,
-        "base": 2673.31,
+        "docH": 6333,
+        "base": 2613.31,
         "nSecciones": 11,
         "nFilas": 12,
         "nModulos": 60,
@@ -598,55 +610,55 @@
             "x": 0,
             "y": 896.05,
             "w": 1440,
-            "h": 1341.16
+            "h": 1281.16
           },
           "sec3": {
             "x": 0,
-            "y": 2237.2,
+            "y": 2177.2,
             "w": 1440,
             "h": 349.72
           },
           "sec4": {
             "x": 0,
-            "y": 2586.92,
+            "y": 2526.92,
             "w": 1440,
             "h": 317.36
           },
           "sec5": {
             "x": 0,
-            "y": 2904.28,
+            "y": 2844.28,
             "w": 1440,
             "h": 207.94
           },
           "sec6": {
             "x": 0,
-            "y": 3112.22,
+            "y": 3052.22,
             "w": 1440,
             "h": 417.14
           },
           "sec7": {
             "x": 0,
-            "y": 3529.36,
+            "y": 3469.36,
             "w": 1440,
             "h": 300.77
           },
           "sec8": {
             "x": 0,
-            "y": 3830.13,
+            "y": 3770.13,
             "w": 1440,
-            "h": 324.03
+            "h": 242.03
           },
           "sec9": {
             "x": 0,
-            "y": 4154.16,
+            "y": 4012.16,
             "w": 1440,
-            "h": 416.88
+            "h": 356.88
           },
           "sec10": {
             "x": 0,
-            "y": 4571.03,
+            "y": 4369.03,
             "w": 1440,
-            "h": 2193.41
+            "h": 1369.88
           }
         },
         "enlaces": 111,
@@ -655,19 +667,19 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 7358.19
+            "h": 6332.66
           },
           "area": {
             "x": 0,
             "y": 192.72,
             "w": 1440,
-            "h": 7165.47
+            "h": 6139.94
           },
           "contenido": {
             "x": 0,
             "y": 192.72,
             "w": 1440,
-            "h": 6571.72
+            "h": 5546.19
           },
           "barra": null
         },
@@ -690,8 +702,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -735,7 +747,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 585.13,
-            "h": 341.31,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -745,8 +757,8 @@
             "i": 6,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -779,7 +791,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 129.19,
+            "h": 99.19,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -790,7 +802,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -801,7 +813,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -812,7 +824,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -823,7 +835,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 129.19,
+            "h": 99.19,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -844,8 +856,8 @@
             "i": 15,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -888,8 +900,8 @@
             "i": 19,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -921,8 +933,8 @@
             "i": 22,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -954,8 +966,8 @@
             "i": 25,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -987,8 +999,8 @@
             "i": 28,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1020,8 +1032,8 @@
             "i": 31,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1054,7 +1066,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 98,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1064,8 +1076,8 @@
             "i": 35,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1087,7 +1099,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1098,7 +1110,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1109,7 +1121,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1120,7 +1132,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1131,7 +1143,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1142,7 +1154,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1153,7 +1165,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1164,7 +1176,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1174,8 +1186,8 @@
             "i": 45,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1186,7 +1198,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 642.3,
-            "h": 39.95,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1197,7 +1209,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 401.44,
-            "h": 113.67,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1208,7 +1220,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 602.16,
-            "h": 93.98,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1230,7 +1242,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 190.42,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1252,7 +1264,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 236.02,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1274,7 +1286,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 196.84,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1307,7 +1319,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 64.64,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1338,8 +1350,8 @@
         ]
       },
       "clon": {
-        "docH": 7395.5,
-        "base": 2673.31,
+        "docH": 6333,
+        "base": 2613.31,
         "nSecciones": 11,
         "nFilas": 12,
         "nModulos": 60,
@@ -1374,55 +1386,55 @@
             "x": 0,
             "y": 896.05,
             "w": 1440,
-            "h": 1341.16
+            "h": 1281.16
           },
           "sec3": {
             "x": 0,
-            "y": 2237.2,
+            "y": 2177.2,
             "w": 1440,
             "h": 349.72
           },
           "sec4": {
             "x": 0,
-            "y": 2586.92,
+            "y": 2526.92,
             "w": 1440,
             "h": 317.36
           },
           "sec5": {
             "x": 0,
-            "y": 2904.28,
+            "y": 2844.28,
             "w": 1440,
             "h": 207.94
           },
           "sec6": {
             "x": 0,
-            "y": 3112.22,
+            "y": 3052.22,
             "w": 1440,
             "h": 417.14
           },
           "sec7": {
             "x": 0,
-            "y": 3529.36,
+            "y": 3469.36,
             "w": 1440,
             "h": 300.77
           },
           "sec8": {
             "x": 0,
-            "y": 3830.13,
+            "y": 3770.13,
             "w": 1440,
-            "h": 324.03
+            "h": 242.03
           },
           "sec9": {
             "x": 0,
-            "y": 4154.16,
+            "y": 4012.16,
             "w": 1440,
-            "h": 416.88
+            "h": 356.88
           },
           "sec10": {
             "x": 0,
-            "y": 4571.03,
+            "y": 4369.03,
             "w": 1440,
-            "h": 2193.41
+            "h": 1369.88
           }
         },
         "enlaces": 111,
@@ -1431,19 +1443,19 @@
             "x": 0,
             "y": 0,
             "w": 1440,
-            "h": 7358.19
+            "h": 6332.66
           },
           "area": {
             "x": 0,
             "y": 192.72,
             "w": 1440,
-            "h": 7165.47
+            "h": 6139.94
           },
           "contenido": {
             "x": 0,
             "y": 192.72,
             "w": 1440,
-            "h": 6571.72
+            "h": 5546.19
           },
           "barra": null
         },
@@ -1466,8 +1478,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1511,7 +1523,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 585.13,
-            "h": 341.31,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1521,8 +1533,8 @@
             "i": 6,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1555,7 +1567,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 129.19,
+            "h": 99.19,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1566,7 +1578,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1577,7 +1589,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1588,7 +1600,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1599,7 +1611,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 240.86,
-            "h": 129.19,
+            "h": 99.19,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1620,8 +1632,8 @@
             "i": 15,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1664,8 +1676,8 @@
             "i": 19,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1697,8 +1709,8 @@
             "i": 22,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1730,8 +1742,8 @@
             "i": 25,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1763,8 +1775,8 @@
             "i": 28,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1796,8 +1808,8 @@
             "i": 31,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1830,7 +1842,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 98,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1840,8 +1852,8 @@
             "i": 35,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1863,7 +1875,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1874,7 +1886,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1885,7 +1897,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1896,7 +1908,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1907,7 +1919,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1918,7 +1930,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1929,7 +1941,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1940,7 +1952,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 184.66,
-            "h": 107.59,
+            "h": 77.59,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1950,8 +1962,8 @@
             "i": 45,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1962,7 +1974,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 642.3,
-            "h": 39.95,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1973,7 +1985,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 401.44,
-            "h": 113.67,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -1984,7 +1996,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 602.16,
-            "h": 93.98,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2006,7 +2018,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 190.42,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2028,7 +2040,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 236.02,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2050,7 +2062,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 802.88,
-            "h": 196.84,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2083,7 +2095,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 264.94,
-            "h": 64.64,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2122,19 +2134,23 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 19,
-        "peticionesBloqueadas": 26
+        "peticionesBloqueadas": 43
       },
       "media": {
         "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
+        "resueltas": 0,
+        "sinCapturar": 16,
         "externas": 0,
-        "ejemplos": []
+        "ejemplos": [
+          "https://kunakair.com/wp-content/uploads/2022/12/01-Kunak-AIR-Pro-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2022/12/Kunak_AIR_Lite-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg"
+        ]
       },
       "srcset": {
         "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
+        "resueltos": 0,
+        "caidos": 2
       },
       "fuentesInyectadas": 4,
       "fuenteCargada": true,
@@ -2206,8 +2222,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2293,7 +2309,7 @@
         ]
       },
       "clon": {
-        "docH": 1479.5,
+        "docH": 1442,
         "base": 300.31,
         "nSecciones": 2,
         "nFilas": 3,
@@ -2358,8 +2374,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2453,19 +2469,23 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 19,
-        "peticionesBloqueadas": 35
+        "peticionesBloqueadas": 51
       },
       "media": {
         "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
+        "resueltas": 0,
+        "sinCapturar": 16,
         "externas": 0,
-        "ejemplos": []
+        "ejemplos": [
+          "https://kunakair.com/wp-content/uploads/2022/12/01-Kunak-AIR-Pro-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2022/12/Kunak_AIR_Lite-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg"
+        ]
       },
       "srcset": {
         "candidatos": 5,
-        "resueltos": 5,
-        "caidos": 0
+        "resueltos": 0,
+        "caidos": 5
       },
       "fuentesInyectadas": 4,
       "fuenteCargada": true,
@@ -2489,7 +2509,7 @@
             "x": 427.41,
             "y": 339.16,
             "w": 911.75,
-            "h": 467.5
+            "h": 308.83
           },
           "sec1": {
             "x": 0,
@@ -2585,7 +2605,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 430.8,
-            "h": 430.8,
+            "h": 16,
             "mt": -33,
             "mb": 0,
             "pb": 0,
@@ -2638,7 +2658,7 @@
         ]
       },
       "clon": {
-        "docH": 1533.5,
+        "docH": 1496,
         "base": 354.16,
         "nSecciones": 5,
         "nFilas": 5,
@@ -2655,7 +2675,7 @@
             "x": 427.41,
             "y": 339.16,
             "w": 911.75,
-            "h": 467.5
+            "h": 308.83
           },
           "sec1": {
             "x": 0,
@@ -2751,7 +2771,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 430.8,
-            "h": 430.8,
+            "h": 16,
             "mt": -33,
             "mb": 0,
             "pb": 0,
@@ -2812,19 +2832,23 @@
         "resueltas": 7,
         "sinResolver": 0,
         "aplicadas": 19,
-        "peticionesBloqueadas": 32
+        "peticionesBloqueadas": 55
       },
       "media": {
         "img": 24,
-        "resueltas": 24,
-        "sinCapturar": 0,
+        "resueltas": 0,
+        "sinCapturar": 24,
         "externas": 0,
-        "ejemplos": []
+        "ejemplos": [
+          "https://kunakair.com/wp-content/uploads/2022/12/01-Kunak-AIR-Pro-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2022/12/Kunak_AIR_Lite-300.jpg",
+          "https://kunakair.com/wp-content/uploads/2023/01/air-cloud.jpg"
+        ]
       },
       "srcset": {
         "candidatos": 20,
-        "resueltos": 20,
-        "caidos": 0
+        "resueltos": 0,
+        "caidos": 20
       },
       "fuentesInyectadas": 4,
       "fuenteCargada": true,
@@ -2910,8 +2934,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -2998,8 +3022,8 @@
             "i": 9,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -3041,7 +3065,7 @@
         ]
       },
       "clon": {
-        "docH": 2748.5,
+        "docH": 2711,
         "base": 329.11,
         "nSecciones": 4,
         "nFilas": 5,
@@ -3120,8 +3144,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,
@@ -3208,8 +3232,8 @@
             "i": 9,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 169.17,
+            "h": 16,
             "mt": 0,
             "mb": 34.05,
             "pb": 0,

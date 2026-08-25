@@ -24,27 +24,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 34
+        "aplicadas": 15,
+        "peticionesBloqueadas": 50
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 5,
-        "resueltos": 5,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 3462,
-        "base": 906.92,
+        "docH": 3163,
+        "base": 907.92,
         "nSecciones": 5,
         "nFilas": 5,
         "nModulos": 8,
@@ -58,9 +43,9 @@
         "cajas": {
           "sec0": {
             "x": 27.3,
-            "y": 891.92,
+            "y": 892.92,
             "w": 335.39,
-            "h": 730.39
+            "h": 429
           },
           "sec1": {
             "x": 0,
@@ -93,30 +78,29 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3462.48
+            "h": 3162.64
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3266.91
+            "h": 2966.06
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1506.73
+            "h": 1205.34
           },
           "barra": {
             "x": 27.3,
-            "y": 286.77,
+            "y": 287.77,
             "w": 335.39,
             "h": 461.16
           }
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -156,7 +140,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 335.39,
+            "h": 16,
             "mt": -33,
             "mb": 0,
             "pb": 0,
@@ -263,7 +247,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -319,27 +302,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 38
+        "aplicadas": 15,
+        "peticionesBloqueadas": 54
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 6,
-        "resueltos": 3,
-        "caidos": 3
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 3436,
-        "base": 880.92,
+        "docH": 3137,
+        "base": 881.92,
         "nSecciones": 7,
         "nFilas": 7,
         "nModulos": 10,
@@ -355,9 +323,9 @@
         "cajas": {
           "sec0": {
             "x": 27.3,
-            "y": 865.92,
+            "y": 866.92,
             "w": 335.39,
-            "h": 730.39
+            "h": 429
           },
           "sec1": {
             "x": 0,
@@ -402,30 +370,29 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3436.48
+            "h": 3136.64
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3240.91
+            "h": 2940.06
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1480.73
+            "h": 1179.34
           },
           "barra": {
             "x": 27.3,
-            "y": 286.77,
+            "y": 287.77,
             "w": 335.39,
             "h": 461.16
           }
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -465,7 +432,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 335.39,
+            "h": 16,
             "mt": -33,
             "mb": 0,
             "pb": 0,
@@ -608,7 +575,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -664,27 +630,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 26
+        "aplicadas": 15,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 6,
-        "resueltos": 3,
-        "caidos": 3
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 3314,
-        "base": 902.92,
+        "docH": 2997,
+        "base": 903.92,
         "nSecciones": 1,
         "nFilas": 1,
         "nModulos": 3,
@@ -694,9 +645,9 @@
         "cajas": {
           "sec0": {
             "x": 27.3,
-            "y": 891.92,
+            "y": 892.92,
             "w": 335.39,
-            "h": 582.39
+            "h": 263
           }
         },
         "enlaces": 127,
@@ -705,30 +656,29 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3314.48
+            "h": 2996.64
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3118.91
+            "h": 2800.06
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1358.73
+            "h": 1039.34
           },
           "barra": {
             "x": 27.3,
-            "y": 286.77,
+            "y": 287.77,
             "w": 335.39,
             "h": 461.16
           }
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -757,7 +707,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 335.39,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -792,7 +742,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -837,26 +786,11 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 43
+        "aplicadas": 15,
+        "peticionesBloqueadas": 64
       },
-      "media": {
-        "img": 21,
-        "resueltas": 21,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 14,
-        "resueltos": 8,
-        "caidos": 6
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 5289,
+        "docH": 4256,
         "base": 0,
         "nSecciones": 7,
         "nFilas": 15,
@@ -881,9 +815,9 @@
         "cajas": {
           "sec0": {
             "x": 27.3,
-            "y": 891.92,
+            "y": 892.92,
             "w": 335.39,
-            "h": 2556.81
+            "h": 1522.56
           },
           "sec1": {
             "x": 0,
@@ -928,30 +862,29 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 5288.91
+            "h": 4256.2
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 5093.33
+            "h": 4059.63
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3333.16
+            "h": 2298.91
           },
           "barra": {
             "x": 27.3,
-            "y": 286.77,
+            "y": 287.77,
             "w": 335.39,
             "h": 461.16
           }
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -1002,7 +935,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1024,7 +957,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1046,7 +979,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1068,7 +1001,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1090,7 +1023,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1112,7 +1045,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -1263,7 +1196,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -1440,26 +1372,11 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 47
+        "aplicadas": 15,
+        "peticionesBloqueadas": 64
       },
-      "media": {
-        "img": 17,
-        "resueltas": 17,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 9,
-        "resueltos": 6,
-        "caidos": 3
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 4214,
+        "docH": 3678,
         "base": 0,
         "nSecciones": 11,
         "nFilas": 12,
@@ -1481,9 +1398,9 @@
         "cajas": {
           "sec0": {
             "x": 27.3,
-            "y": 865.92,
+            "y": 866.92,
             "w": 335.39,
-            "h": 1508.16
+            "h": 970
           },
           "sec1": {
             "x": 0,
@@ -1552,30 +1469,29 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 4214.25
+            "h": 3677.64
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 4018.67
+            "h": 3481.06
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2258.5
+            "h": 1720.34
           },
           "barra": {
             "x": 27.3,
-            "y": 286.77,
+            "y": 287.77,
             "w": 335.39,
             "h": 461.16
           }
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -1604,7 +1520,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 285.08,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -1659,7 +1575,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 285.08,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -1908,7 +1824,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2041,27 +1956,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 26
+        "aplicadas": 15,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 5,
-        "resueltos": 5,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 3364,
-        "base": 952.92,
+        "docH": 3047,
+        "base": 953.92,
         "nSecciones": 1,
         "nFilas": 1,
         "nModulos": 3,
@@ -2071,9 +1971,9 @@
         "cajas": {
           "sec0": {
             "x": 27.3,
-            "y": 891.92,
+            "y": 892.92,
             "w": 335.39,
-            "h": 632.39
+            "h": 313
           }
         },
         "enlaces": 123,
@@ -2082,30 +1982,29 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3364.48
+            "h": 3046.64
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3168.91
+            "h": 2850.06
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1408.73
+            "h": 1089.34
           },
           "barra": {
             "x": 27.3,
-            "y": 286.77,
+            "y": 287.77,
             "w": 335.39,
             "h": 461.16
           }
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2134,7 +2033,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 335.39,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2169,7 +2068,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2214,26 +2112,11 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 37
+        "aplicadas": 15,
+        "peticionesBloqueadas": 56
       },
-      "media": {
-        "img": 19,
-        "resueltas": 19,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 10,
-        "resueltos": 6,
-        "caidos": 4
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 4677,
+        "docH": 3958,
         "base": 0,
         "nSecciones": 5,
         "nFilas": 11,
@@ -2254,9 +2137,9 @@
         "cajas": {
           "sec0": {
             "x": 27.3,
-            "y": 891.92,
+            "y": 892.92,
             "w": 335.39,
-            "h": 1944.66
+            "h": 1224.56
           },
           "sec1": {
             "x": 0,
@@ -2289,30 +2172,29 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 4676.75
+            "h": 3958.2
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 4481.17
+            "h": 3761.63
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2721
+            "h": 2000.91
           },
           "barra": {
             "x": 27.3,
-            "y": 286.77,
+            "y": 287.77,
             "w": 335.39,
             "h": 461.16
           }
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2341,7 +2223,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 236.16,
+            "h": 205.56,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2363,7 +2245,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2385,7 +2267,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2407,7 +2289,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2429,7 +2311,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 188.38,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -2542,7 +2424,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2675,26 +2556,11 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 30
+        "aplicadas": 15,
+        "peticionesBloqueadas": 52
       },
-      "media": {
-        "img": 22,
-        "resueltas": 22,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 24,
-        "resueltos": 9,
-        "caidos": 15
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 5995,
+        "docH": 4177,
         "base": 0,
         "nSecciones": 2,
         "nFilas": 5,
@@ -2709,15 +2575,15 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 257.27,
+            "y": 258.27,
             "w": 390,
-            "h": 3977.08
+            "h": 2157.97
           }
         },
         "enlaces": 119,
@@ -2726,25 +2592,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 5994.52
+            "h": 4176.95
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 5798.94
+            "h": 3980.38
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 4038.77
+            "h": 2219.66
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -2784,7 +2649,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 244.75,
+            "h": 214.16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -2806,7 +2671,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 190.05,
+            "h": 16,
             "mt": 30,
             "mb": 0,
             "pb": 0,
@@ -2828,7 +2693,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 285.08,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -2861,7 +2726,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 285.08,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -2894,7 +2759,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 285.08,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -2927,7 +2792,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 285.08,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -2960,7 +2825,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 285.08,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -2993,7 +2858,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 285.08,
-            "h": 285.08,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -3041,7 +2906,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -3306,27 +3170,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 35
+        "aplicadas": 15,
+        "peticionesBloqueadas": 57
       },
-      "media": {
-        "img": 22,
-        "resueltas": 22,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 12,
       "original": {
-        "docH": 5266,
-        "base": 325.58,
+        "docH": 5268,
+        "base": 326.58,
         "nSecciones": 3,
         "nFilas": 3,
         "nModulos": 6,
@@ -3338,19 +3187,19 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
             "h": 860.63
           },
           "sec2": {
             "x": 0,
-            "y": 1106.2,
+            "y": 1107.2,
             "w": 390,
             "h": 2400
           }
@@ -3361,25 +3210,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 5266.38
+            "h": 5267.92
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 5070.8
+            "h": 5071.34
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 3310.63
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -3396,8 +3244,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -3482,7 +3330,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -3549,27 +3396,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 29
+        "aplicadas": 15,
+        "peticionesBloqueadas": 53
       },
-      "media": {
-        "img": 24,
-        "resueltas": 24,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 20,
-        "resueltos": 20,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 6673,
-        "base": 325.58,
+        "docH": 6597,
+        "base": 326.58,
         "nSecciones": 4,
         "nFilas": 5,
         "nModulos": 13,
@@ -3583,27 +3415,27 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
             "h": 1117.53
           },
           "sec2": {
             "x": 0,
-            "y": 1363.11,
+            "y": 1364.11,
             "w": 390,
-            "h": 2126.94
+            "h": 2076.94
           },
           "sec3": {
             "x": 0,
-            "y": 3490.05,
+            "y": 3441.05,
             "w": 390,
-            "h": 1422.53
+            "h": 1395.53
           }
         },
         "enlaces": 127,
@@ -3612,25 +3444,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 6672.75
+            "h": 6597.3
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 6477.17
+            "h": 6400.72
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 4717
+            "h": 4640
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -3647,8 +3478,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -3692,7 +3523,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 509.23,
+            "h": 483.23,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3703,7 +3534,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 509.23,
+            "h": 483.23,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3714,7 +3545,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 509.23,
+            "h": 510.23,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3725,7 +3556,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 509.23,
+            "h": 510.23,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3735,8 +3566,8 @@
             "i": 9,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -3758,7 +3589,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 1123.89,
+            "h": 1096.89,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -3818,7 +3649,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -3951,27 +3781,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 26
+        "aplicadas": 15,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 5880,
-        "base": 325.58,
+        "docH": 5856,
+        "base": 326.58,
         "nSecciones": 2,
         "nFilas": 2,
         "nModulos": 7,
@@ -3982,15 +3797,15 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
-            "h": 3874.69
+            "h": 3848.69
           }
         },
         "enlaces": 143,
@@ -3999,25 +3814,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 5880.44
+            "h": 5855.98
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 5684.86
+            "h": 5659.41
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3924.69
+            "h": 3898.69
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -4034,8 +3848,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -4079,7 +3893,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 3066.81,
+            "h": 3040.81,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -4124,7 +3938,6 @@
         },
         "hojasAplicadas": 3,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -4202,27 +4015,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 48
+        "aplicadas": 15,
+        "peticionesBloqueadas": 64
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 18308,
-        "base": 295.58,
+        "docH": 18283,
+        "base": 296.58,
         "nSecciones": 3,
         "nFilas": 3,
         "nModulos": 6,
@@ -4234,21 +4032,21 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
             "h": 919.13
           },
           "sec2": {
             "x": 0,
-            "y": 1164.7,
+            "y": 1165.7,
             "w": 390,
-            "h": 15382.75
+            "h": 15356.5
           }
         },
         "enlaces": 203,
@@ -4257,25 +4055,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 18307.63
+            "h": 18282.92
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 18112.05
+            "h": 18086.34
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 16351.88
+            "h": 16325.63
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -4292,8 +4089,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -4326,7 +4123,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 194.39,
+            "h": 191.39,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -4337,7 +4134,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 15078.36,
+            "h": 15055.11,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -4378,7 +4175,6 @@
         },
         "hojasAplicadas": 3,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -4434,27 +4230,12 @@
         "enlazadas": 8,
         "resueltas": 8,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 27
+        "aplicadas": 17,
+        "peticionesBloqueadas": 43
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 4495,
-        "base": 325.58,
+        "docH": 4453,
+        "base": 326.58,
         "nSecciones": 2,
         "nFilas": 2,
         "nModulos": 7,
@@ -4465,15 +4246,15 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
-            "h": 2489.66
+            "h": 2445.91
           }
         },
         "enlaces": 110,
@@ -4482,25 +4263,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 4495.41
+            "h": 4453.2
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 4299.83
+            "h": 4256.63
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2539.66
+            "h": 2495.91
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -4517,8 +4297,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -4529,7 +4309,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 97.5,
+            "h": 53.75,
             "mt": 0,
             "mb": 20,
             "pb": 0,
@@ -4607,7 +4387,6 @@
         },
         "hojasAplicadas": 3,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -4685,26 +4464,11 @@
         "enlazadas": 8,
         "resueltas": 8,
         "sinResolver": 0,
-        "aplicadas": 20,
-        "peticionesBloqueadas": 26
+        "aplicadas": 16,
+        "peticionesBloqueadas": 41
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 14199,
+        "docH": 13894,
         "base": null,
         "nSecciones": 1,
         "nFilas": 1,
@@ -4715,9 +4479,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 12242.78
+            "h": 11936.84
           }
         },
         "enlaces": 107,
@@ -4726,25 +4490,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 14198.53
+            "h": 13894.14
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 14002.95
+            "h": 13697.56
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 12242.78
+            "h": 11936.84
           },
           "barra": null
         },
-        "hojasAplicadas": 20,
+        "hojasAplicadas": 16,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -4806,7 +4569,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 3840.25,
+            "h": 3687.28,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -4828,7 +4591,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 2045.59,
+            "h": 1984.41,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -4850,7 +4613,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 3081,
+            "h": 3019.81,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -4872,7 +4635,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 770.25,
+            "h": 739.66,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -4928,7 +4691,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -5094,27 +4856,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 32
+        "aplicadas": 17,
+        "peticionesBloqueadas": 50
       },
-      "media": {
-        "img": 18,
-        "resueltas": 18,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 4796,
-        "base": 230.58,
+        "docH": 4622,
+        "base": 231.58,
         "nSecciones": 4,
         "nFilas": 3,
         "nModulos": 12,
@@ -5126,27 +4873,27 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1213.95
+            "h": 1230.36
           },
           "sec1": {
             "x": 0,
-            "y": 1409.53,
+            "y": 1426.94,
             "w": 390,
             "h": 684.31
           },
           "sec2": {
             "x": 0,
-            "y": 2093.84,
+            "y": 2111.25,
             "w": 390,
-            "h": 265.06
+            "h": 229.97
           },
           "sec3": {
             "x": 0,
-            "y": 2358.91,
+            "y": 2341.22,
             "w": 390,
-            "h": 677.03
+            "h": 520.31
           }
         },
         "enlaces": 107,
@@ -5155,25 +4902,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 4796.11
+            "h": 4622.25
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 4600.53
+            "h": 4425.67
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2840.36
+            "h": 2664.95
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -5202,7 +4948,7 @@
             "tipo": "code",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 907.95,
+            "h": 924.36,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -5212,8 +4958,8 @@
             "i": 3,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5257,7 +5003,7 @@
             "tipo": "fullwidth_slider",
             "etiqueta": "div",
             "w": 390,
-            "h": 265.06,
+            "h": 229.97,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -5267,8 +5013,8 @@
             "i": 8,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5301,7 +5047,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 172.72,
+            "h": 16,
             "mt": 30,
             "mb": 0,
             "pb": 0,
@@ -5355,7 +5101,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -5477,26 +5222,11 @@
         "enlazadas": 6,
         "resueltas": 6,
         "sinResolver": 0,
-        "aplicadas": 20,
-        "peticionesBloqueadas": 27
+        "aplicadas": 16,
+        "peticionesBloqueadas": 43
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 6,
-        "resueltos": 6,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 3245,
+        "docH": 3033,
         "base": null,
         "nSecciones": 1,
         "nFilas": 1,
@@ -5507,9 +5237,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1289.14
+            "h": 1075.55
           }
         },
         "enlaces": 106,
@@ -5518,25 +5248,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3244.89
+            "h": 3032.84
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3049.31
+            "h": 2836.27
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1289.14
+            "h": 1075.55
           },
           "barra": null
         },
-        "hojasAplicadas": 20,
+        "hojasAplicadas": 16,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -5554,7 +5283,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -5588,7 +5317,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -5622,27 +5350,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 30
+        "aplicadas": 15,
+        "peticionesBloqueadas": 74
       },
-      "media": {
-        "img": 53,
-        "resueltas": 52,
-        "sinCapturar": 0,
-        "externas": 1,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 34,
-        "resueltos": 20,
-        "caidos": 14
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 1,
       "original": {
-        "docH": 11565,
-        "base": 4211.56,
+        "docH": 10513,
+        "base": 3803.63,
         "nSecciones": 11,
         "nFilas": 12,
         "nModulos": 60,
@@ -5663,69 +5376,69 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
-            "h": 956.09
+            "h": 776.45
           },
           "sec2": {
             "x": 0,
-            "y": 1201.67,
+            "y": 1023.03,
             "w": 390,
-            "h": 2620.02
+            "h": 2390.72
           },
           "sec3": {
             "x": 0,
-            "y": 3821.69,
+            "y": 3413.75,
             "w": 390,
             "h": 309.88
           },
           "sec4": {
             "x": 0,
-            "y": 4131.56,
+            "y": 3723.63,
             "w": 390,
             "h": 598.28
           },
           "sec5": {
             "x": 0,
-            "y": 4729.84,
+            "y": 4321.91,
             "w": 390,
             "h": 396.72
           },
           "sec6": {
             "x": 0,
-            "y": 5126.56,
+            "y": 4718.63,
             "w": 390,
             "h": 514.5
           },
           "sec7": {
             "x": 0,
-            "y": 5641.06,
+            "y": 5233.13,
             "w": 390,
-            "h": 581.69
+            "h": 551.09
           },
           "sec8": {
             "x": 0,
-            "y": 6222.75,
+            "y": 5784.22,
             "w": 390,
-            "h": 447.94
+            "h": 365.94
           },
           "sec9": {
             "x": 0,
-            "y": 6670.69,
+            "y": 6150.16,
             "w": 390,
-            "h": 756.56
+            "h": 648.56
           },
           "sec10": {
             "x": 0,
-            "y": 7427.25,
+            "y": 6798.72,
             "w": 390,
-            "h": 2377.73
+            "h": 1953.75
           }
         },
         "enlaces": 111,
@@ -5734,25 +5447,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 11565.16
+            "h": 10513.19
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 11369.58
+            "h": 10316.61
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 9609.41
+            "h": 8555.89
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -5769,8 +5481,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5814,7 +5526,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 195.64,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -5824,8 +5536,8 @@
             "i": 6,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5858,7 +5570,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 124.41,
+            "h": 95.41,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5869,7 +5581,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5880,7 +5592,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 124.41,
+            "h": 95.41,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5891,7 +5603,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5902,7 +5614,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 124.41,
+            "h": 95.41,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5923,8 +5635,8 @@
             "i": 15,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -5946,7 +5658,7 @@
             "tipo": "slider",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 701.13,
+            "h": 552.83,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -5967,8 +5679,8 @@
             "i": 19,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6000,8 +5712,8 @@
             "i": 22,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6033,8 +5745,8 @@
             "i": 25,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6066,8 +5778,8 @@
             "i": 28,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6089,7 +5801,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 323.94,
+            "h": 293.34,
             "mt": 10,
             "mb": 0,
             "pb": 0,
@@ -6099,8 +5811,8 @@
             "i": 31,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6133,7 +5845,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 98,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -6143,8 +5855,8 @@
             "i": 35,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6166,7 +5878,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6177,7 +5889,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6188,7 +5900,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6199,7 +5911,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6210,7 +5922,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6221,7 +5933,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6232,7 +5944,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6243,7 +5955,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 160.98,
-            "h": 105.2,
+            "h": 76.2,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -6253,8 +5965,8 @@
             "i": 45,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -6265,7 +5977,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 268.31,
-            "h": 16.69,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6276,7 +5988,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 167.69,
-            "h": 47.48,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6287,7 +5999,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 251.53,
-            "h": 39.25,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6309,7 +6021,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 110.67,
-            "h": 79.53,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6320,7 +6032,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 446.31,
+            "h": 415.72,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6331,7 +6043,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 110.67,
-            "h": 98.59,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6353,7 +6065,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 196.84,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6386,7 +6098,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 110.67,
-            "h": 27,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -6417,7 +6129,7 @@
         ]
       },
       "clon": {
-        "docH": 16208,
+        "docH": 16019,
         "base": 5283.77,
         "nSecciones": 10,
         "nFilas": 11,
@@ -6494,7 +6206,7 @@
             "x": 0,
             "y": 11326.02,
             "w": 390,
-            "h": 3118.36
+            "h": 2929.75
           }
         },
         "enlaces": 112,
@@ -6506,7 +6218,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -7085,7 +6796,7 @@
             "tipo": "imagen-pagina",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 275.34,
+            "h": 86.73,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -7145,27 +6856,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 31
+        "aplicadas": 15,
+        "peticionesBloqueadas": 62
       },
-      "media": {
-        "img": 31,
-        "resueltas": 31,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 54,
-        "resueltos": 17,
-        "caidos": 37
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 10473,
-        "base": 325.58,
+        "docH": 7523,
+        "base": 326.58,
         "nSecciones": 2,
         "nFilas": 7,
         "nModulos": 33,
@@ -7181,15 +6877,15 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
-            "h": 8467.33
+            "h": 5515.47
           }
         },
         "enlaces": 108,
@@ -7198,25 +6894,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 10473.08
+            "h": 7522.77
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 10277.5
+            "h": 7326.19
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 8517.33
+            "h": 5565.47
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -7233,8 +6928,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -7278,7 +6973,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 240.36,
+            "h": 32.77,
             "mt": 16,
             "mb": 0,
             "pb": 16.77,
@@ -7288,8 +6983,8 @@
             "i": 6,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -7300,7 +6995,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7322,7 +7017,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7333,7 +7028,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 222.16,
+            "h": 254.16,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -7344,7 +7039,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7366,7 +7061,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7388,7 +7083,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 6,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7410,7 +7105,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.69,
+            "h": 6,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7432,7 +7127,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 6,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7454,7 +7149,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.69,
+            "h": 6,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7476,7 +7171,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 6,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7498,7 +7193,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7520,7 +7215,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7542,7 +7237,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7564,7 +7259,7 @@
             "tipo": "image",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 223.59,
+            "h": 16,
             "mt": 0,
             "mb": 23.2,
             "pb": 0,
@@ -7575,7 +7270,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 308.88,
+            "h": 281.52,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -7614,7 +7309,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -7978,24 +7672,9 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 27
+        "aplicadas": 17,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
         "docH": 3002,
         "base": null,
@@ -8008,9 +7687,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1046.33
+            "h": 1044.33
           }
         },
         "enlaces": 106,
@@ -8019,25 +7698,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3002.08
+            "h": 3001.63
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2806.5
+            "h": 2805.05
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1046.33
+            "h": 1044.33
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8089,7 +7767,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8123,24 +7800,9 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 27
+        "aplicadas": 17,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
         "docH": 3039,
         "base": null,
@@ -8153,9 +7815,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1083.33
+            "h": 1081.33
           }
         },
         "enlaces": 104,
@@ -8164,25 +7826,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3039.08
+            "h": 3038.63
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2843.5
+            "h": 2842.05
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1083.33
+            "h": 1081.33
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8234,7 +7895,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8268,24 +7928,9 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 27
+        "aplicadas": 17,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
         "docH": 3069,
         "base": null,
@@ -8298,9 +7943,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1113.33
+            "h": 1111.33
           }
         },
         "enlaces": 104,
@@ -8309,25 +7954,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3069.08
+            "h": 3068.63
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2873.5
+            "h": 2872.05
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1113.33
+            "h": 1111.33
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8390,7 +8034,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8435,24 +8078,9 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 25
+        "aplicadas": 17,
+        "peticionesBloqueadas": 40
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
         "docH": 3113,
         "base": null,
@@ -8465,9 +8093,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1157.33
+            "h": 1155.33
           }
         },
         "enlaces": 106,
@@ -8476,25 +8104,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3113.08
+            "h": 3112.63
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2917.5
+            "h": 2916.05
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1157.33
+            "h": 1155.33
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8546,7 +8173,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8580,24 +8206,9 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 27
+        "aplicadas": 17,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
         "docH": 3069,
         "base": null,
@@ -8610,9 +8221,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1113.33
+            "h": 1111.33
           }
         },
         "enlaces": 106,
@@ -8621,25 +8232,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3069.08
+            "h": 3068.63
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2873.5
+            "h": 2872.05
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1113.33
+            "h": 1111.33
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8702,7 +8312,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8747,26 +8356,11 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 27
+        "aplicadas": 17,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 2947,
+        "docH": 2915,
         "base": null,
         "nSecciones": 1,
         "nFilas": 1,
@@ -8777,9 +8371,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 990.91
+            "h": 957.91
           }
         },
         "enlaces": 98,
@@ -8788,25 +8382,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 2946.66
+            "h": 2915.2
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2751.08
+            "h": 2718.63
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 990.91
+            "h": 957.91
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8869,7 +8462,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -8914,27 +8506,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 25
+        "aplicadas": 15,
+        "peticionesBloqueadas": 40
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 6184,
-        "base": 275.58,
+        "docH": 6045,
+        "base": 276.58,
         "nSecciones": 1,
         "nFilas": 1,
         "nModulos": 9,
@@ -8944,9 +8521,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 4228.7
+            "h": 4088.14
           }
         },
         "enlaces": 112,
@@ -8955,25 +8532,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 6184.45
+            "h": 6045.44
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 5988.88
+            "h": 5848.86
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 4228.7
+            "h": 4088.14
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -9002,7 +8578,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 336.53,
+            "h": 305.94,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -9035,7 +8611,7 @@
             "tipo": "dvmd_table_maker",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 1824.88,
+            "h": 1806.69,
             "mt": -5.02,
             "mb": 30,
             "pb": 0,
@@ -9068,7 +8644,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 788.84,
+            "h": 697.06,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -9102,7 +8678,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -9202,26 +8777,11 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 25
+        "aplicadas": 15,
+        "peticionesBloqueadas": 40
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 3602,
+        "docH": 3542,
         "base": null,
         "nSecciones": 1,
         "nFilas": 1,
@@ -9232,9 +8792,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1645.75
+            "h": 1584.56
           }
         },
         "enlaces": 107,
@@ -9243,25 +8803,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3601.5
+            "h": 3541.86
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3405.92
+            "h": 3345.28
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 1645.75
+            "h": 1584.56
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -9279,7 +8838,7 @@
             "tipo": "text",
             "etiqueta": "div",
             "w": 335.39,
-            "h": 1295.75,
+            "h": 1234.56,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -9313,7 +8872,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -9347,27 +8905,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 24
+        "aplicadas": 15,
+        "peticionesBloqueadas": 39
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 12748,
-        "base": 253.58,
+        "docH": 12501,
+        "base": 254.58,
         "nSecciones": 0,
         "nFilas": 0,
         "nModulos": 0,
@@ -9379,25 +8922,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 12747.69
+            "h": 12500.86
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 12552.11
+            "h": 12304.28
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 10791.94
+            "h": 10543.56
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": []
       },
       "clon": {
@@ -9417,7 +8959,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": []
       }
     },
@@ -9428,27 +8969,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 25
+        "aplicadas": 15,
+        "peticionesBloqueadas": 41
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 4,
-        "resueltos": 3,
-        "caidos": 1
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 1,
       "original": {
-        "docH": 37211,
-        "base": 295.58,
+        "docH": 36303,
+        "base": 296.58,
         "nSecciones": 1,
         "nFilas": 1,
         "nModulos": 1,
@@ -9458,9 +8984,9 @@
         "cajas": {
           "sec0": {
             "x": 27.3,
-            "y": 593.25,
+            "y": 594.25,
             "w": 335.39,
-            "h": 34286.53
+            "h": 33377.31
           }
         },
         "enlaces": 111,
@@ -9469,32 +8995,31 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 37211.11
+            "h": 36303.44
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 37015.53
+            "h": 36106.86
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 35255.36
+            "h": 34346.14
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
             "tipo": "text",
             "etiqueta": "div",
             "w": 288.42,
-            "h": 34111.73,
+            "h": 33202.52,
             "mt": 0,
             "mb": 0,
             "pb": 0,
@@ -9529,7 +9054,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -9552,27 +9076,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 26
+        "aplicadas": 15,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 3246,
-        "base": 295.58,
+        "docH": 3247,
+        "base": 296.58,
         "nSecciones": 2,
         "nFilas": 3,
         "nModulos": 9,
@@ -9584,13 +9093,13 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
             "h": 1240.08
           }
@@ -9601,25 +9110,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 3245.83
+            "h": 3247.38
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3050.25
+            "h": 3050.8
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 1290.08
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -9636,8 +9144,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -9749,7 +9257,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -9849,27 +9356,12 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 19,
-        "peticionesBloqueadas": 27
+        "aplicadas": 15,
+        "peticionesBloqueadas": 43
       },
-      "media": {
-        "img": 16,
-        "resueltas": 16,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 4101,
-        "base": 295.58,
+        "docH": 4072,
+        "base": 296.58,
         "nSecciones": 2,
         "nFilas": 4,
         "nModulos": 10,
@@ -9882,15 +9374,15 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
             "h": 50
           },
           "sec1": {
             "x": 0,
-            "y": 245.58,
+            "y": 246.58,
             "w": 390,
-            "h": 2095.31
+            "h": 2064.52
           }
         },
         "enlaces": 110,
@@ -9899,25 +9391,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 4101.06
+            "h": 4071.81
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 3905.48
+            "h": 3875.23
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2145.31
+            "h": 2114.52
           },
           "barra": null
         },
-        "hojasAplicadas": 19,
+        "hojasAplicadas": 15,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -9934,8 +9425,8 @@
             "i": 1,
             "tipo": "image",
             "etiqueta": "div",
-            "w": 60,
-            "h": 22,
+            "w": 166.09,
+            "h": 16,
             "mt": 0,
             "mb": 30,
             "pb": 0,
@@ -10012,7 +9503,7 @@
             "tipo": "blurb",
             "etiqueta": "div",
             "w": 351,
-            "h": 331.08,
+            "h": 300.28,
             "mt": 0,
             "mb": 0,
             "pb": 32,
@@ -10059,7 +9550,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -10170,26 +9660,11 @@
         "enlazadas": 7,
         "resueltas": 7,
         "sinResolver": 0,
-        "aplicadas": 21,
-        "peticionesBloqueadas": 27
+        "aplicadas": 17,
+        "peticionesBloqueadas": 42
       },
-      "media": {
-        "img": 15,
-        "resueltas": 15,
-        "sinCapturar": 0,
-        "externas": 0,
-        "ejemplos": []
-      },
-      "srcset": {
-        "candidatos": 2,
-        "resueltos": 2,
-        "caidos": 0
-      },
-      "fuentesInyectadas": 4,
-      "fuenteCargada": true,
-      "peticionesBloqueadasClon": 0,
       "original": {
-        "docH": 2947,
+        "docH": 2915,
         "base": null,
         "nSecciones": 1,
         "nFilas": 1,
@@ -10200,9 +9675,9 @@
         "cajas": {
           "sec0": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 990.91
+            "h": 957.91
           }
         },
         "enlaces": 98,
@@ -10211,25 +9686,24 @@
             "x": 0,
             "y": 0,
             "w": 390,
-            "h": 2946.66
+            "h": 2915.2
           },
           "area": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 2751.08
+            "h": 2718.63
           },
           "contenido": {
             "x": 0,
-            "y": 195.58,
+            "y": 196.58,
             "w": 390,
-            "h": 990.91
+            "h": 957.91
           },
           "barra": null
         },
-        "hojasAplicadas": 21,
+        "hojasAplicadas": 17,
         "cuerpoTieneEstilo": "Manrope, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
@@ -10292,7 +9766,6 @@
         },
         "hojasAplicadas": 2,
         "cuerpoTieneEstilo": "Manrope, \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "fuenteCargada": true,
         "modulos": [
           {
             "i": 0,
