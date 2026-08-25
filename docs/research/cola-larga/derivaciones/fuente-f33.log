@@ -1,0 +1,15 @@
+═══ fuente-f33 · cuánto mueve la TIPOGRAFÍA el lado del original (1440)
+
+  brazo A = como hoy (todo abortado salvo file:/data:)   → Manrope NO carga
+  brazo B = idéntico + se deja pasar fonts.googleapis/gstatic → Manrope SÍ carga
+  (kunakair.com abortado en LOS DOS brazos)
+
+  ruta                                  docH A    docH B        Δ  manrope   cajas  MOVIDAS  |Δh| max  |Δw| max
+  /es/aviso-legal/                     5134.89   5133.89       -1  false→true     364      259     28.00     33.63
+  /es/politica-de-cookies/             3432.41   3431.41       -1  false→true     439      334     28.00     52.42
+  /es/recursos/kunakpedia/             4224.25   4223.25       -1  false→true     454      351     28.00     33.63
+
+  páginas medidas 3/3 · muestra, no dominio
+  cajas comparadas 1257 · MOVIDAS 944 (75.1 %)
+
+  ⚠ el veredicto lo da MOVIDAS, no `docH`: un total absorbe signos opuestos.

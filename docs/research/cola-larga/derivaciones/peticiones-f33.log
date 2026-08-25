@@ -1,0 +1,24 @@
+═══ peticiones-f33 · qué ABORTA hoy el lado del ORIGINAL en `f33-cmp`
+
+  páginas montadas                         31 / 31
+  peticiones abortadas                     1516
+
+  por resourceType:
+    image         1129   p.ej. https://kunakair.com/wp-content/uploads/2022/12/01-Kunak-AIR-Pro-300.jpg
+    stylesheet     265   p.ej. https://kunakair.com/wp-content/plugins/divi-modules-table-maker/extensions/styles/module-style.css?ver=4.0.1
+    other           62   p.ej. https://kunakair.com/wp-content/uploads/2023/02/cropped-favicon-32x32.png
+    document        60   p.ej. https://www.youtube.com/embed/XZTQYQF-bT0?feature=oembed
+
+  por host:
+    kunakair.com                  1407
+    www.youtube.com                 60
+    fonts.googleapis.com            31
+    fonts.bunny.net                 16
+    upload.wikimedia.org             2
+
+  por extensión:
+    svg            558
+    jpg            516
+    css            218
+    png            117
+    (sin ext)      107

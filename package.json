@@ -273,7 +273,9 @@
     "qa:pie-mecanismo": "node scripts/qa/pie-mecanismo.mjs",
     "qa:pie-mecanismo-390": "node scripts/qa/pie-mecanismo.mjs 390",
     "qa:pie-legal": "node scripts/qa/pie-legal.mjs",
-    "qa:pie-legal-neg": "node scripts/qa/pie-legal.neg.mjs"
+    "qa:pie-legal-neg": "node scripts/qa/pie-legal.neg.mjs",
+    "cms:captura-fuentes": "node scripts/seed/captura-fuentes.mjs",
+    "cms:captura-fuentes-neg": "node scripts/seed/captura-fuentes.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

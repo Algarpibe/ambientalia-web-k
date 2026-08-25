@@ -1,0 +1,417 @@
+{
+  "meta": {
+    "fecha": "2026-08-25",
+    "que": "Las FUENTES WEB que el corpus pide — el canal que no rompe nada y mueve el 75 % de las cajas.",
+    "fuente": "fonts.googleapis.com · fonts.bunny.net · fonts.gstatic.com (bytes servidos, sin re-codificar)",
+    "derivacion": "@import url() de corpus/css/**.css (canal 1) y de los <style> en línea de corpus/**.html (canal 2)",
+    "etiqueta": "secuencial · 500 ms · UA de navegador moderno (decide woff2 vs ttf) · sha256 · reanudable",
+    "porQue": "derivaciones/fuente-f33.log — con Manrope frente a sin ella, docH se mueve −1 y 944 de 1257 cajas (75.1 %) se mueven.",
+    "noToca": "kunakair.com. El original sigue fuera del camino crítico.",
+    "reescritura": "en el CSS capturado las url() absolutas quedan RELATIVAS a la copia local: la hoja vale servida por file://"
+  },
+  "resumen": {
+    "htmlLeidos": 788,
+    "hojasLeidas": 108,
+    "familias": 4,
+    "porCanal": {
+      "hoja": 1,
+      "style-en-linea": 3
+    },
+    "css": 4,
+    "binarios": 46,
+    "caras": 35,
+    "binariosPedidosEstaCorrida": 0,
+    "fallos": 0
+  },
+  "inventario": {
+    "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap": {
+      "canal": [
+        "hoja"
+      ],
+      "ficheros": 1,
+      "capturada": true
+    },
+    "https://fonts.bunny.net/css?family=lato:400": {
+      "canal": [
+        "style-en-linea"
+      ],
+      "ficheros": 1,
+      "capturada": true
+    },
+    "https://fonts.bunny.net/css?family=roboto:400": {
+      "canal": [
+        "style-en-linea"
+      ],
+      "ficheros": 6,
+      "capturada": true
+    },
+    "https://fonts.bunny.net/css?family=roboto:400,700": {
+      "canal": [
+        "style-en-linea"
+      ],
+      "ficheros": 2,
+      "capturada": true
+    }
+  },
+  "ficheros": {
+    "googleapis/css2-family-Manrope-wght-200..800-display-swap.css": {
+      "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap",
+      "bytes": 2078,
+      "sha256": "f773f3a23c7ed69bdeee5c3198d8b9f1cde5b9f24a29ffc06ba27db609962afd",
+      "fecha": "2026-08-25",
+      "tipo": "css",
+      "binarios": 6,
+      "caras": 6
+    },
+    "bunny/lato/files/lato-latin-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/lato/files/lato-latin-400-normal.woff2",
+      "bytes": 23580,
+      "sha256": "918b7dc3e2e2d015c16ce08b57bcb64d2253bafc1707658f361e72865498e537",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/lato/files/lato-latin-400-normal.woff": {
+      "url": "https://fonts.bunny.net/lato/files/lato-latin-400-normal.woff",
+      "bytes": 17452,
+      "sha256": "f55abc76e10cc86d799a7189e64e3c6e4cc6ced19b2474b1852a808be46232a8",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/lato/files/lato-latin-ext-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/lato/files/lato-latin-ext-400-normal.woff2",
+      "bytes": 5612,
+      "sha256": "8b9fc9737043f88c1a9a7195c27a239bd329cc33d928ffb67736c61ae7a1dbbd",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/lato/files/lato-latin-ext-400-normal.woff": {
+      "url": "https://fonts.bunny.net/lato/files/lato-latin-ext-400-normal.woff",
+      "bytes": 3828,
+      "sha256": "e1723d6f84b3ba7f43deaae2c98544625f341ad611e75ccc34d32960f7e4c1b3",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/css-family-lato-400.css": {
+      "url": "https://fonts.bunny.net/css?family=lato:400",
+      "bytes": 822,
+      "sha256": "9e1b5e3ad3bdefe18175560adede420e08436ed886c88caf3a688d5ba9347f0c",
+      "fecha": "2026-08-25",
+      "tipo": "css",
+      "binarios": 4,
+      "caras": 2
+    },
+    "bunny/roboto/files/roboto-math-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-math-400-normal.woff2",
+      "bytes": 20088,
+      "sha256": "6fb289fea179641579de5b208600d490ee52177b347f83e92cf673afc419704e",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-math-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-math-400-normal.woff",
+      "bytes": 18764,
+      "sha256": "a7232b8539b1050fcaa3ba8495b7d8af7d4a4e8ce66d44606b7de8c50618844a",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-greek-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-greek-400-normal.woff2",
+      "bytes": 9556,
+      "sha256": "1567c22e954336d26ec306a0dd756d19bb5e62c67e597ce0b778fc312dc68176",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-greek-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-greek-400-normal.woff",
+      "bytes": 7424,
+      "sha256": "e0b4a9370bb928018ef63412974b32e32c3392bc2a33bd02961a10307ea59b67",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-latin-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-latin-400-normal.woff2",
+      "bytes": 21884,
+      "sha256": "425c0713a8176f92273d378599c7eac57de7fafabd4bd0ed457b70eb8f80d371",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-latin-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-latin-400-normal.woff",
+      "bytes": 21060,
+      "sha256": "6cff12116b83321230347db75d0721e70c27c6ec69eccca93ca4b1556eaaf67f",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-symbols-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-symbols-400-normal.woff2",
+      "bytes": 10736,
+      "sha256": "a50e7f2d64f85c2d81fe7be1da5c943fde45c4ac47d3147f9b5a56b705b97824",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-symbols-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-symbols-400-normal.woff",
+      "bytes": 8752,
+      "sha256": "6c12462f33b711c773d282902ac26246f18c86dab70bca508372e9ca49efef03",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-cyrillic-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-cyrillic-400-normal.woff2",
+      "bytes": 12108,
+      "sha256": "fe349e5377e88095a1b04b615bf5e745f1899556545383c348a007aab628815e",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-cyrillic-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-cyrillic-400-normal.woff",
+      "bytes": 10208,
+      "sha256": "383c105bb30e149e8f2603918cbbf3e2f1051bb170a16ad3e329f695c136128c",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-greek-ext-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-greek-ext-400-normal.woff2",
+      "bytes": 3680,
+      "sha256": "34e65dc4e3deafe3d668d398a26c6a292730fe356a6a1f4303d5af3919a0e941",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-greek-ext-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-greek-ext-400-normal.woff",
+      "bytes": 1472,
+      "sha256": "02b4d89306066a2698c1e9f44463917fdbf17426c06789a52819d9f5f467cd64",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-latin-ext-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-latin-ext-400-normal.woff2",
+      "bytes": 15040,
+      "sha256": "5725eacca97303d8bce26f76cfcaee4393295bbf93c1eb6c3e5e4f260b2da189",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-latin-ext-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-latin-ext-400-normal.woff",
+      "bytes": 13836,
+      "sha256": "7468d3e77a4cbffab32ba29ef0201f6b6b6865ac5465964a7fbb973dbb7ff580",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-vietnamese-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-vietnamese-400-normal.woff2",
+      "bytes": 8368,
+      "sha256": "76afb0e482ab569c50a1ca35dfd052daa3d0f6d54d1b30865f6fea4c35c2b350",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-vietnamese-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-vietnamese-400-normal.woff",
+      "bytes": 6080,
+      "sha256": "8881cd907e8f10a4fe6b5ad9bbb37088dc421bc58285d3f7c6e789611f0f6c81",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-cyrillic-ext-400-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-cyrillic-ext-400-normal.woff2",
+      "bytes": 17372,
+      "sha256": "6d6be3a7d40feb9b785e62c4b629a0e5949e50cbbbad06eea4800a4c311e9898",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-cyrillic-ext-400-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-cyrillic-ext-400-normal.woff",
+      "bytes": 15956,
+      "sha256": "8a8ac89e32a6f299be8fe353e7303f3b281ebe127ce6aa7ee2670e9c11e1e251",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/css-family-roboto-400.css": {
+      "url": "https://fonts.bunny.net/css?family=roboto:400",
+      "bytes": 5370,
+      "sha256": "d8f9e55aa9575efc91b9067418cf05fc940fce41105a7966c30d2e03ccd51347",
+      "fecha": "2026-08-25",
+      "tipo": "css",
+      "binarios": 18,
+      "caras": 9
+    },
+    "bunny/roboto/files/roboto-math-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-math-700-normal.woff2",
+      "bytes": 20392,
+      "sha256": "3cacb4c77c955f56a94ddf8ec9af8a546d2f009696a5b710eaf4d9a8aa8b3d39",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-math-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-math-700-normal.woff",
+      "bytes": 18896,
+      "sha256": "37612c43570c35f4dbe1f79a1f91d5af0057a678c9a3e82251f6167cc4e4772d",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-greek-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-greek-700-normal.woff2",
+      "bytes": 9632,
+      "sha256": "1e88ca8df7c8bfd43deab63817490110b302732a281984cdae74c8e424e5900b",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-greek-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-greek-700-normal.woff",
+      "bytes": 7452,
+      "sha256": "ec24c155ac13c4b5e0ff97283506ece9ad386d6d79c37e7d69caf5b87e9fd332",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-latin-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-latin-700-normal.woff2",
+      "bytes": 22240,
+      "sha256": "b9d66d1708156f765ada51939bc24ed259dafa69eb631b36e443680fe9e15879",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-latin-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-latin-700-normal.woff",
+      "bytes": 21216,
+      "sha256": "19e78b1c5f2c683c28800f84dd6d453ddb67987b0079060a4cbe50c7bdded148",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-symbols-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-symbols-700-normal.woff2",
+      "bytes": 10868,
+      "sha256": "25910e65ad4da1280d717a906bb4677ba666405b3ca3a286f40e01f58fce24fb",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-symbols-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-symbols-700-normal.woff",
+      "bytes": 8776,
+      "sha256": "fbab7ac59b646e765441c65fdd0d1736c1aa1e67e167f83b21067bfda945316e",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-cyrillic-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-cyrillic-700-normal.woff2",
+      "bytes": 12416,
+      "sha256": "450e0c66acb4c5377a4f30dd5dec8370152f5f9521c0bc452589b3586bd978eb",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-cyrillic-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-cyrillic-700-normal.woff",
+      "bytes": 10396,
+      "sha256": "e49c6d295ba3dbd3a8f890ec383d7505e94653bf005a4b6018239fd2313874a4",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-greek-ext-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-greek-ext-700-normal.woff2",
+      "bytes": 3676,
+      "sha256": "4945ed8f5d96d8d5f16acdc8a3e383d56f7d82c9862b3e41a9e6c078f6b20ad8",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-greek-ext-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-greek-ext-700-normal.woff",
+      "bytes": 1452,
+      "sha256": "e93553409e766288b73b0fdf0c1c821e7afa952d70bd684e946c78e083671e38",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-latin-ext-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-latin-ext-700-normal.woff2",
+      "bytes": 15196,
+      "sha256": "7673803a2d402018b1f726dded5bf2dbf2be4307039e8718f4bea654d6eca249",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-latin-ext-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-latin-ext-700-normal.woff",
+      "bytes": 13836,
+      "sha256": "854a8fa1a954fe8f3d1582494af20984a18c04710992f6e96b2dfedf669d7675",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-vietnamese-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-vietnamese-700-normal.woff2",
+      "bytes": 8416,
+      "sha256": "bec340ec8c7ec4940533eeceadddb00ac2da872c57c67b0c55e772c7c32dad4e",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-vietnamese-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-vietnamese-700-normal.woff",
+      "bytes": 6100,
+      "sha256": "0c5b83d883ce2e45aed6e1634002d1a19291f375ddfdb21bb3cd2820e5b354f1",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-cyrillic-ext-700-normal.woff2": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-cyrillic-ext-700-normal.woff2",
+      "bytes": 17620,
+      "sha256": "b64aec59c2342a732ec9a766e0846692dad652c571ca3bc7fd31bf53943887eb",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/roboto/files/roboto-cyrillic-ext-700-normal.woff": {
+      "url": "https://fonts.bunny.net/roboto/files/roboto-cyrillic-ext-700-normal.woff",
+      "bytes": 16096,
+      "sha256": "85a4aacb11b8fc214b3bca90cde1178085ac357a291a8bbb19cfa0d6b4175222",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "bunny/css-family-roboto-400-700.css": {
+      "url": "https://fonts.bunny.net/css?family=roboto:400,700",
+      "bytes": 10740,
+      "sha256": "8d6562dd33af63326d15e56e60d0ee7fef3d077d78ec95bbc75a2ee4d5167686",
+      "fecha": "2026-08-25",
+      "tipo": "css",
+      "binarios": 36,
+      "caras": 18
+    },
+    "gstatic/s/manrope/v20/xn7gYHE41ni1AdIRggqxSuXd.woff2": {
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSuXd.woff2",
+      "bytes": 2552,
+      "sha256": "de37de877dc17e4577341fa68bb5cb526b53d54cb29721e674208546a3c7849d",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "gstatic/s/manrope/v20/xn7gYHE41ni1AdIRggOxSuXd.woff2": {
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSuXd.woff2",
+      "bytes": 14500,
+      "sha256": "c268b459a9329e59fecf39a17618efd44c71735532048d60b12aab76a8c14914",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "gstatic/s/manrope/v20/xn7gYHE41ni1AdIRggSxSuXd.woff2": {
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggSxSuXd.woff2",
+      "bytes": 9444,
+      "sha256": "2fb2e8cbfd52ae46179a8b6024eb162f1f9c6de3d22d6e3a30d8f395de7220be",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "gstatic/s/manrope/v20/xn7gYHE41ni1AdIRggixSuXd.woff2": {
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggixSuXd.woff2",
+      "bytes": 8520,
+      "sha256": "6bbb044ab420e07edb0a3042d2eb314b85e83a0182e945a15ab3b9092668dfd5",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "gstatic/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2": {
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2",
+      "bytes": 15120,
+      "sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    },
+    "gstatic/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2": {
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+      "bytes": 24836,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "fecha": "2026-08-25",
+      "tipo": "binario"
+    }
+  },
+  "fallos": []
+}

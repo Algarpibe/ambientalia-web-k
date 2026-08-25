@@ -69,3 +69,4 @@ media/
 # Se cierra con un comodín anclado al prefijo, que es lo que las sondas usan.
 .next-*/
 scripts/publicar/estado*.json
+corpus/fuentes-neg-*/
