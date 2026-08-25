@@ -20963,8 +20963,30 @@ hace falta inventar mecanismo — hace falta decidir su ALCANCE.
 #### El denominador del mecanismo, que ninguna ficha tenía
 
 Censadas las clases `et_pb_*` que **discriminan entre HERMANOS DEL MISMO TIPO**
-—no del mismo nivel, que es lo que da el pleno—: **22 pares (clase × grupo)**, de
-los que el clon **no emite 14 clases distintas**. Las dos fichadas son **2 de 14**.
+—no del mismo nivel, que es lo que da el pleno—. El resultado se escribe **en las
+dos unidades, porque no dicen lo mismo** (corregido en la 109.ª: la v1 decía
+*«22 pares, de los que no emite 14 clases»*, que es un numerador en CLASES sobre
+un denominador en PARES):
+
+| unidad | discriminan | el clon NO emite |
+|---|---|---|
+| **PAR** (clase × grupo) — **la que manda para el modelo** | 22 | **16** |
+| **CLASE** distinta — para cruzar con las fichas, que están en clases | 17 | **14** |
+
+**Manda el PAR, y no por preferencia:** el mismo nombre en dos niveles puede ser
+**dos campos** —la alineación de un `text` y la de un `blurb` las escribe el
+editor por separado—, así que colapsarlos a «una clase» decidiría de antemano
+que comparten campo, que es justo lo que la decisión de alcance tiene que poder
+elegir. La diferencia entre las dos unidades son **2 clases** que discriminan en
+dos grupos: `et_pb_text_align_center` (`text` 8/151 · `blurb` 5/22) y
+`et_pb_section_video_on_hover` (`blurb` 5/22 · columna 7/179).
+
+> ⚠ **Y «las dos fichadas son 2 de 14» era una TERCERA unidad**, que hacía la
+> deuda mayor de lo que es: *«2 de 14»* mezcla **fichas** con **clases** y se lee
+> como que quedan 12. Derivado: las 2 fichas cubren **7 de las 14 clases**
+> (las seis `button_alignment_*` más `gutters2`), así que **quedan 7 sin fichar,
+> no 12** — `text_align_center` · `section_video_on_hover` · `column_empty` ·
+> `with_background` · `equal_columns` · `fullwidth_section` · `sticky_module`.
 
 | clase | grupo | n / total |
 |---|---|---|
@@ -20990,7 +21012,7 @@ los que el clon **no emite 14 clases distintas**. Las dos fichadas son **2 de 14
 > COTA INFERIOR**, no el total.
 
 **Decisión que sube al propietario, y es UNA:** ¿el modelo adopta *«preset del
-editor portado por clase»* como canal general, y con qué alcance de los 14+?
+editor portado por clase»* como canal general, y con qué alcance de las 14+ CLASES (16+ PARES, de las que 7 clases ya están fichadas y 7 no)?
 Decidir `gutters` y la alineación por separado es arreglar la instancia en vez de
 la CLASE — y es exactamente cómo se llega a la tercera tanda del mismo bug.
 

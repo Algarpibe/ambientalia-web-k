@@ -5688,7 +5688,7 @@ Faltan dos clases y **son de naturaleza distinta**:
 
 ---
 
-## ⛔ 7h · `CMS-BOTON-ALINEACION` y `CMS-GUTTERS` SON **UNA** DECISIÓN, Y SU DENOMINADOR NO ES 2 SINO **14+** (2026-08-25, 108.ª)
+## ⛔ 7h · `CMS-BOTON-ALINEACION` y `CMS-GUTTERS` SON **UNA** DECISIÓN, Y SU DENOMINADOR NO ES 2 FICHAS SINO **14+ CLASES** — o **16+ PARES** (2026-08-25, 108.ª · unidades corregidas en la 109.ª)
 
 La 108.ª puso las cuatro deudas de modelo de F3-3 en una mesa para contestar una
 pregunta: **¿comparten MECANISMO?** Dos se cerraron (abajo) y las dos que quedan
@@ -5707,8 +5707,21 @@ mecanismo: hace falta decidir su ALCANCE.**
 
 Derivado (`derivaciones/deudas-modelo-f33.{mjs,log}`) censando las clases
 `et_pb_*` que **discriminan entre HERMANOS DEL MISMO TIPO** —no del mismo nivel,
-que es lo que da el pleno de §sondas 4—: **22 pares (clase × grupo)**, de los que
-el clon **no emite 14 clases distintas**.
+que es lo que da el pleno de §sondas 4—. Se escribe **en las dos unidades**
+(corregido en la 109.ª: la v1 decía *«22 pares, de los que no emite 14 clases»*,
+o sea un numerador en CLASES sobre un denominador en PARES):
+
+| unidad | discriminan | el clon NO emite |
+|---|---|---|
+| **PAR** (clase × grupo) — **la que manda para el modelo** | 22 | **16** |
+| **CLASE** distinta — la de estas fichas | 17 | **14** |
+
+**Manda el PAR** porque el mismo nombre en dos niveles puede ser **dos campos**:
+la alineación de un `text` y la de un `blurb` las escribe el editor en módulos
+distintos. Colapsarlas a «una clase» decidiría de antemano que comparten campo —
+que es justo lo que la decisión de alcance de abajo tiene que poder elegir. Las
+2 clases que separan ambas unidades son `et_pb_text_align_center` y
+`et_pb_section_video_on_hover`, cada una discriminando en dos grupos.
 
 | clase | grupo | n / total | fichada |
 |---|---|---|---|
@@ -5723,9 +5736,22 @@ el clon **no emite 14 clases distintas**.
 | `et_pb_fullwidth_section` | sección | 2/86 | ⛔ **no** |
 | `et_pb_sticky_module` | columna | 2/179 | ⛔ **no** |
 
-**Las dos fichadas son 2 de 14.** Decidirlas por separado es arreglar la
-instancia en vez de la CLASE — que es exactamente cómo se llega a la tercera
-tanda del mismo bug.
+> ⚠ **«Las dos fichadas son 2 de 14» era una TERCERA unidad, y hacía la deuda
+> mayor de lo que es** (corregido en la 109.ª). Mezcla **fichas** con **clases**,
+> y se lee como que quedan 12 por decidir. Derivado: las 2 fichas
+> —`CMS-BOTON-ALINEACION` y `CMS-GUTTERS`— cubren **7 de las 14 clases** (las
+> seis `et_pb_button_alignment_*` más `et_pb_gutters2`), así que **quedan 7 sin
+> fichar, no 12**:
+>
+> `et_pb_text_align_center` · `et_pb_section_video_on_hover` ·
+> `et_pb_column_empty` · `et_pb_with_background` · `et_pb_equal_columns` ·
+> `et_pb_fullwidth_section` · `et_pb_sticky_module`
+>
+> O sea que la decisión de alcance reparte **mitad y mitad**, no 2 contra 12 —
+> y eso cambia lo que cuesta adoptarla entera.
+
+**Decidirlas por separado es arreglar la instancia en vez de la CLASE** — que es
+exactamente cómo se llega a la tercera tanda del mismo bug.
 
 > ⚠ **Los tres límites de este censo, declarados con su número (§regla 14):**
 >
@@ -5740,7 +5766,7 @@ tanda del mismo bug.
 ### La decisión que sube, y es UNA
 
 **¿Adopta el modelo «preset del editor portado por clase» como canal general, y
-con qué alcance de los 14+?** Las tres salidas, con su coste:
+con qué alcance de las 14+ CLASES (16+ PARES)?** Las tres salidas, con su coste:
 
 | | qué | coste |
 |---|---|---|

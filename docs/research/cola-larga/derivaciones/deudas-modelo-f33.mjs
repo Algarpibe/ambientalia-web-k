@@ -494,19 +494,59 @@ P("═══ 5 · EL MECANISMO — clases-preset que DISCRIMINAN entre HERMANOS 
 P(`  grupos (nivel · tipo) y su n:`);
 for (const [g, n] of Object.entries(porGrupoTotal).sort((a, b) => b[1] - a[1])) P(`      ${g.padEnd(28)} ${n}`);
 P("");
+/* ⚠⚠ ESTE CENSO PUBLICA DOS CARDINALES Y LA V1 MEZCLÓ SUS UNIDADES (corregido
+ * en la 109.ª, ESCALÓN 1). El titular decía `SIN EMITIR: 16 de 22` y la línea
+ * de debajo enumeraba **14 nombres**: los dos ciertos, contando cosas distintas.
+ *
+ *   · 16 y 22 son PARES  (clase × grupo)
+ *   · 14 son CLASES distintas
+ *
+ * La diferencia son exactamente dos clases que discriminan en DOS grupos:
+ * `et_pb_text_align_center` (en `text` 8/151 **y** en `blurb` 5/22) y
+ * `et_pb_section_video_on_hover` (en `blurb` 5/22 **y** en `columna` 7/179).
+ *
+ * Es §*dos lecturas pueden dar el mismo cardinal contando unidades distintas*,
+ * con el agravante de que aquí **las dos están en el MISMO fichero** y a dos
+ * líneas de distancia, así que se leían como si se confirmaran.
+ *
+ * ⇒ LA UNIDAD QUE MANDA PARA EL MODELO ES EL **PAR**, y no por preferencia:
+ *   el mismo nombre en dos niveles puede ser DOS CAMPOS —la alineación de un
+ *   `text` y la de un `blurb` las escribe el editor por separado, en módulos
+ *   distintos—, así que colapsarlas a «una clase» decidiría de antemano que
+ *   comparten campo. La unidad CLASE va al lado, para poder cruzarla con las
+ *   fichas del ESQUEMA, que están escritas en clases. */
 P(`  clases descartadas por UBICUAS (n = total de su grupo): ${ubicuas.length}`);
-P(`  clases que DISCRIMINAN: ${presets.length}`);
+P(`  DISCRIMINAN: ${presets.length} pares (clase × grupo) = ${new Set(presets.map((p) => p.clase)).size} clases distintas`);
 P("");
 P("  clase                                   grupo                        n/total   ¿el clon la emite?");
 for (const p of presets) P(`  ${p.clase.padEnd(40)}${p.grupo.padEnd(29)}${String(p.n).padStart(3)}/${String(p.total).padEnd(6)} ${p.emite ? "SÍ" : "NO"}`);
 const sinEmitir = presets.filter((p) => !p.emite);
 P("");
-P(`  ⇒ SIN EMITIR: ${sinEmitir.length} de ${presets.length}`);
-P(`     ${[...new Set(sinEmitir.map((p) => p.clase))].join(" · ")}`);
+const clasesSinEmitir = [...new Set(sinEmitir.map((p) => p.clase))];
+const enDosGrupos = clasesSinEmitir.filter((c) => sinEmitir.filter((p) => p.clase === c).length > 1);
+P(`  ⇒ SIN EMITIR, en LAS DOS UNIDADES (§un denominador se escribe CON SU UNIDAD):`);
+P(`       ${String(sinEmitir.length).padStart(3)} PARES  (clase × grupo)  de ${presets.length}   ← la unidad que MANDA para el modelo`);
+P(`       ${String(clasesSinEmitir.length).padStart(3)} CLASES distintas       de ${new Set(presets.map((p) => p.clase)).size}   ← para cruzar con las fichas del ESQUEMA`);
+P(`     la diferencia son ${enDosGrupos.length} clase(s) que discriminan en DOS grupos:`);
+for (const c of enDosGrupos) P(`       ${c} — ${sinEmitir.filter((p) => p.clase === c).map((p) => `${p.grupo} ${p.n}/${p.total}`).join(" · ")}`);
+P(`     lista (unidad CLASE): ${clasesSinEmitir.join(" · ")}`);
+P("");
+P("  ⚠ POR QUÉ MANDA EL PAR: el mismo nombre en dos niveles puede ser DOS");
+P("    CAMPOS. La alineación de un `text` y la de un `blurb` las escribe el");
+P("    editor por separado, en módulos distintos, así que colapsarlas a «una");
+P("    clase» decidiría de antemano que comparten campo — que es justo lo que");
+P("    la decisión de alcance tiene que poder elegir.");
 P("");
 P("  ⚠ Este censo contesta «¿escribe el clon esta CLASE?», NO «¿sirve el clon");
 P("    este EFECTO?» — un preset puede estar resuelto por otro canal. Un «NO»");
 P("    de aquí es una PREGUNTA para el dato, no un veredicto (§tipos-sin-emitir).");
 P("");
-P(`  Y contesta sobre las ${cargadas.size} rutas de F3-3 y sólo ésas: una clase que`);
-P("  no discrimine aquí puede discriminar en el primer documento nuevo.");
+P("  ⚠ Y LA COTA, CON SU DENOMINADOR — «14 es cota inferior» no dice DE QUÉ:");
+P(`       · universo de RUTAS: las ${cargadas.size} de F3-3 y sólo ésas. Una clase que no`);
+P("         discrimine aquí puede discriminar en el primer documento nuevo;");
+P("       · universo de CLASES: sólo se censa el prefijo `et_pb_*`. `boton-azul`");
+P("         —el precedente que el esquema YA implementa— es una clase DEL TEMA,");
+P("         sin ese prefijo, así que no puede salir de este censo por construcción.");
+P("     ⇒ lo que ABRIRÍA la cota, y son dos cosas distintas: censar más rutas");
+P("       (sube el `n` de cada clase) y censar más PREFIJOS (mete clases nuevas).");
+P("       Sólo la segunda puede cambiar el mecanismo; la primera sólo su alcance.");
