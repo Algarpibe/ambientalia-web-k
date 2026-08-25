@@ -1,0 +1,174 @@
+═══ doch-por-composicion — 105.ª tanda, 2026-08-25 · ESCALÓN 2
+    docH = TECHO + CUERPO + PIE, con las anclas que tienen LOS DOS lados.
+
+═══ 0 · CONTROLES
+  @1440  descompuestas 30 · sin ninguna sección con caja: 1 → /es/politica-de-seguridad-de-la-informacion/
+  @390  descompuestas 30 · sin ninguna sección con caja: 1 → /es/politica-de-seguridad-de-la-informacion/
+  identidad aritmética rota en: 0 caso(s)
+
+═══ 1 · @1440 — DÓNDE CAE EL Δ DE `docH`, por tramo
+  rutas con Δ ≠ 0 en TECHO 8/30 · CUERPO 30/30 · PIE 30/30
+  Δ acumulado:  techo -527.90 · cuerpo 21841.58 · pie -1210.68 · TOTAL 20103.00
+  valores distintos de TECHO — original: 340.16 · 193.72 · 407.42
+                              clon:     282.58 · 193.72
+  valores distintos de PIE   — original: 848.01 · 970.07 · 680.29 · 737.71 · 933.61 · 680.42 · 593.95 · 594.08 · 593.93 · 593.50 · 593.57 · 593.28 · 593.86 · 593.60 · 593.53 · 594.09 · 593.56 · 593.30 · 594.25 · 593.47 · 593.34 · 751.77 · 593.62 · 594.23
+                              clon:     652.36 · 652.57 · 652.54 · 651.92 · 652.32 · 652.11 · 594.94 · 595.23 · 594.34 · 595.07 · 594.58 · 594.73 · 595.06 · 594.40 · 594.27 · 594.51 · 594.55 · 594.50 · 594.28 · 594.89 · 652.01 · 594.62 · 594.33
+
+  ruta                                                    reg   ΔdocH    Δtecho   Δcuerpo     Δpie
+  /es/empresa/                                           B-   12642.00      0.00  12641.82      0.18
+  /es/sectores/                                          B-    7293.00      0.00   7291.85      1.15
+  /es/recursos/documentos-cientificos/                   B-   -4190.00      0.00  -4191.50      1.50
+  /es/soporte/centro-de-ayuda/                           BT    1829.00    -57.58   1971.97    -85.39
+  /es/centro-de-ayuda/kunak-air/video-tutoriales/        BT    1780.00    -57.58   1865.95    -28.37
+  /es/empresa/premios-y-reconocimientos/                 B-    1779.00      0.00   1778.05      0.95
+  /es/sistema-interno-de-informacion/                    BT   -1584.00   -124.84  -1359.40    -99.76
+  /es/politica-de-cookies/                               B-   -1513.00      0.00  -1514.55      1.55
+  /es/recursos/preguntas-frecuentes/                     B-    1258.00      0.00   1256.70      1.30
+  /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tuto BT    1148.00    -57.58   1233.89    -28.31
+  /es/centro-de-ayuda/kunak-air/                         BT     852.00    -57.58   1105.02   -195.44
+  /es/productos/                                         B-     732.00      0.00    731.01      0.99
+  /es/recursos/kunakpedia/                               B-    -548.00      0.00   -549.44      1.44
+  /es/centro-de-ayuda/kunak-air-cloud/                   BT     478.00    -57.58    731.23   -195.65
+  /es/aviso-legal/                                       B-    -369.00      0.00   -369.87      0.87
+  /es/recursos/                                          B-    -368.00      0.00   -368.41      0.41
+  /es/soporte/                                           B-    -213.00      0.00   -214.00      1.00
+  /es/contacto/                                          B-    -172.00      0.00   -173.46      1.46
+  /es/descarga-catalogo/                                 B-    -149.00      0.00   -149.87      0.87
+  /es/soporte/servicio-de-reparacion/                    B-     114.00      0.00    113.90      0.10
+  /es/newsletter/                                        B-    -108.00      0.00   -108.81      0.81
+  /es/suscribete/                                        B-    -108.00      0.00   -108.81      0.81
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-     -91.00      0.00    -92.25      1.25
+  /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/      BT     -82.00    -57.58    293.11   -317.53
+  /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos- BT     -82.00    -57.58    256.65   -281.07
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-     -73.00      0.00    -74.25      1.25
+  /es/politica-de-privacidad-y-de-proteccion-de-datos/   B-     -42.00      0.00    -43.20      1.20
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-     -37.00      0.00    -37.25      0.25
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-     -37.00      0.00    -37.25      0.25
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-     -36.00      0.00    -37.25      1.25
+
+═══ 1 · @390 — DÓNDE CAE EL Δ DE `docH`, por tramo
+  rutas con Δ ≠ 0 en TECHO 8/30 · CUERPO 30/30 · PIE 30/30
+  Δ acumulado:  techo -5068.05 · cuerpo 4918.62 · pie -653.57 · TOTAL -803.00
+  valores distintos de TECHO — original: 892.92 · 866.92 · 196.58 · 594.25
+                              clon:     215.58 · 196.58
+  valores distintos de PIE   — original: 1841.08 · 1840.52 · 1760.76 · 1760.80 · 1760.42 · 1760.73 · 1760.51 · 1760.58 · 1760.47 · 1760.87 · 1760.53 · 1760.95 · 1761.09 · 1760.28 · 1760.86 · 2331.44 · 1760.34 · 1760.90
+                              clon:     1812.87 · 1813.31 · 1813.65 · 1813.77 · 1813.17 · 1813.22 · 1813.73 · 1763.61 · 1763.49 · 1763.64 · 1762.86 · 1763.36 · 1763.58 · 1762.98 · 1762.92 · 1763.54 · 1763.23 · 1763.39 · 1763.33 · 1763.51 · 1763.67
+
+  ruta                                                    reg   ΔdocH    Δtecho   Δcuerpo     Δpie
+  /es/recursos/documentos-cientificos/                   B-  -15008.00      0.00 -15010.56      2.56
+  /es/empresa/                                           B-    5506.00      0.00   5503.30      2.70
+  /es/empresa/premios-y-reconocimientos/                 B-    4505.00      0.00   4502.56      2.44
+  /es/recursos/preguntas-frecuentes/                     B-    3498.00      0.00   3494.93      3.07
+  /es/sistema-interno-de-informacion/                    BT   -3191.00   -378.67  -2294.20   -518.13
+  /es/soporte/centro-de-ayuda/                           BT    2286.00   -651.34   2965.25    -27.91
+  /es/productos/                                         B-    2262.00      0.00   2259.15      2.85
+  /es/politica-de-cookies/                               B-   -1813.00      0.00  -1816.08      3.08
+  /es/centro-de-ayuda/kunak-air/video-tutoriales/        BT    1350.00   -677.34   2054.09    -26.75
+  /es/centro-de-ayuda/kunak-air/                         BT    1047.00   -651.34   1726.11    -27.77
+  /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tuto BT     760.00   -677.34   1464.13    -26.79
+  /es/sectores/                                          B-     757.00      0.00    754.31      2.69
+  /es/recursos/                                          B-    -748.00      0.00   -751.22      3.22
+  /es/soporte/                                           B-    -591.00      0.00   -593.52      2.52
+  /es/centro-de-ayuda/kunak-air-cloud/                   BT     515.00   -677.34   1220.55    -28.21
+  /es/aviso-legal/                                       B-    -510.00      0.00   -512.40      2.40
+  /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos- BT    -338.00   -677.34    367.20    -27.86
+  /es/contacto/                                          B-    -179.00      0.00   -181.45      2.45
+  /es/newsletter/                                        B-    -166.00      0.00   -169.00      3.00
+  /es/suscribete/                                        B-    -166.00      0.00   -169.00      3.00
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-    -113.00      0.00   -115.24      2.24
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-    -112.00      0.00   -114.24      2.24
+  /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/      BT    -104.00   -677.34    600.77    -27.43
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-     -94.00      0.00    -96.24      2.24
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-     -94.00      0.00    -96.24      2.24
+  /es/informe-tecnico-control-de-la-calidad-del-aire-en- B-     -94.00      0.00    -96.24      2.24
+  /es/descarga-catalogo/                                 B-     -78.00      0.00    -80.67      2.67
+  /es/politica-de-privacidad-y-de-proteccion-de-datos/   B-      52.00      0.00     49.19      2.81
+  /es/recursos/kunakpedia/                               B-      32.00      0.00     29.87      2.13
+  /es/soporte/servicio-de-reparacion/                    B-      26.00      0.00     23.51      2.49
+
+═══ 2 · LA BASE EN CRUDO — con sus DOS lados, y el caso que NO es un Δ
+    §Notas de método: cada arquetipo mide su base sin corregir UNA vez.
+  @1440  con Δ ≠ 0: 16 · SIN ANCLA en el original (`base` 0/null): 14
+     ℹ /es/centro-de-ayuda/kunak-air/video-tutoriales/ [BT]  orig 0 → clon 337.28  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/soporte/centro-de-ayuda/ [BT]  orig 0 → clon 337.28  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/ [BT]  orig 0 → clon 337.28  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/productos/ [B-]  orig 0 → clon 280.11  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/aviso-legal/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/descarga-catalogo/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/newsletter/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/politica-de-privacidad-y-de-proteccion-de-datos/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/suscribete/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     · /es/empresa/                                         [B-] orig   2620.31 → clon   6272.03  Δ3651.72
+     · /es/sistema-interno-de-informacion/                  [BT] orig    301.31 → clon     —  Δ-301.31
+     · /es/politica-de-seguridad-de-la-informacion/         [--] orig    251.72 → clon     —  Δ-251.72
+     · /es/contacto/                                        [B-] orig    227.52 → clon    280.11  Δ52.59
+     · /es/soporte/centro-de-ayuda/kunak-air-cloud/articulo [BT] orig    387.63 → clon    337.28  Δ-50.35
+     · /es/recursos/documentos-cientificos/                 [B-] orig    301.31 → clon    336.16  Δ34.85
+     · /es/soporte/                                         [B-] orig    301.31 → clon    336.16  Δ34.85
+     · /es/soporte/servicio-de-reparacion/                  [B-] orig    301.31 → clon    336.16  Δ34.85
+     · /es/centro-de-ayuda/kunak-air-cloud/                 [BT] orig    355.16 → clon    337.28  Δ-17.88
+     · /es/centro-de-ayuda/kunak-air/                       [BT] orig    355.16 → clon    337.28  Δ-17.88
+     · /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/    [BT] orig    351.16 → clon    337.28  Δ-13.88
+     · /es/sectores/                                        [B-] orig    330.11 → clon    336.16  Δ6.05
+
+  @390  con Δ ≠ 0: 16 · SIN ANCLA en el original (`base` 0/null): 14
+     ℹ /es/centro-de-ayuda/kunak-air/video-tutoriales/ [BT]  orig 0 → clon 295.58  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/soporte/centro-de-ayuda/ [BT]  orig 0 → clon 295.58  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/ [BT]  orig 0 → clon 295.58  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/productos/ [B-]  orig 0 → clon 276.58  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/aviso-legal/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/descarga-catalogo/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-industria/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-obras/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/newsletter/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/politica-de-privacidad-y-de-proteccion-de-datos/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     ℹ /es/suscribete/ [B-]  orig null → clon null  ← el `h1` del original vive en fila SIN CAJA: no hay ancla que comparar. NO es un Δ del clon
+     · /es/empresa/                                         [B-] orig   3803.63 → clon   5283.77  Δ1480.14
+     · /es/soporte/centro-de-ayuda/kunak-air-cloud/articulo [BT] orig    953.92 → clon    295.58  Δ-658.34
+     · /es/centro-de-ayuda/kunak-air-cloud/                 [BT] orig    907.92 → clon    295.58  Δ-612.34
+     · /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/    [BT] orig    903.92 → clon    295.58  Δ-608.34
+     · /es/centro-de-ayuda/kunak-air/                       [BT] orig    881.92 → clon    295.58  Δ-586.34
+     · /es/sistema-interno-de-informacion/                  [BT] orig    296.58 → clon     —  Δ-296.58
+     · /es/politica-de-seguridad-de-la-informacion/         [--] orig    254.58 → clon     —  Δ-254.58
+     · /es/contacto/                                        [B-] orig    231.58 → clon    307.58  Δ76.00
+     · /es/recursos/documentos-cientificos/                 [B-] orig    296.58 → clon    328.58  Δ32.00
+     · /es/soporte/                                         [B-] orig    296.58 → clon    328.58  Δ32.00
+     · /es/soporte/servicio-de-reparacion/                  [B-] orig    296.58 → clon    328.58  Δ32.00
+     · /es/sectores/                                        [B-] orig    326.58 → clon    328.58  Δ2.00
+
+═══ 3 · EL SUELO DE `#main-content` — por qué CINCO rutas dan `docH 1497` a 1440
+    Esto NO es un Δ: es atribución DENTRO del original (el clon no tiene estas anclas).
+  @1440  n = 8 rutas BT
+     docH − #main-content.h : 787.37 · 787.62 · 787.75 · 787.09   ⇐ el cascarón, CONSTANTE
+     #main-content.h        : 709.63 · 1293.38 · 1111.25 · 14451.91
+     barra lateral .h       : 493.66 · null
+     valores de #main-content.h con MÁS de una ruta: 709.63 ×5
+
+  @390  n = 8 rutas BT
+     docH − #main-content.h : 1957.66 · 1957.09 · 1956.86   ⇐ el cascarón, CONSTANTE
+     #main-content.h        : 1205.34 · 1179.34 · 1039.34 · 2298.91 · 1720.34 · 1089.34 · 2000.91 · 34346.14
+     barra lateral .h       : 461.16 · null
+     valores de #main-content.h con MÁS de una ruta: ninguno
+
+═══ 4 · ⚠ EL ARTEFACTO DE IMAGEN — los dos lados NO se miden igual
+  @1440  imágenes del original 71 · a EXACTAMENTE 16 px (alto de `<img>` roto): 65
+      suma de altos  orig 2310.04  ·  clon 15074.99  ·  Δ +12764.95
+      peticiones ABORTADAS en el lado del original: 1522 (en el del clon: 0 — no hay intercepción)
+      Δcuerpo acumulado: 21841.58  ⇒ el artefacto vale el 58 % de él
+  @390  imágenes del original 71 · a EXACTAMENTE 16 px (alto de `<img>` roto): 65
+      suma de altos  orig 1102.77  ·  clon 10964.06  ·  Δ +9861.29
+      peticiones ABORTADAS en el lado del original: 1490 (en el del clon: 0 — no hay intercepción)
+      Δcuerpo acumulado: 4918.62  ⇒ el artefacto vale el 200 % de él
+
+  ⇒ `docH`, `caja.*.h` y todo alto de módulo con imagen dentro quedan NO ADJUDICABLES.
+    A 390 el artefacto (+9861) es MAYOR que el Δcuerpo total (+4919): hay efectos de
+    signo contrario debajo, así que el total no se puede leer (§dos errores que se anulan).
+
