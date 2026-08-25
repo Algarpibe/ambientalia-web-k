@@ -164,10 +164,51 @@ function medir() {
   const h1 = $("h1");
   const secciones = $$(".et_pb_section, [data-seccion]").filter(propio);
   const filas = $$(".et_pb_row:not(.et_pb_row_inner), [data-fila]").filter(propio);
-  const modulos = $$("[class*='et_pb_module'], [data-modulo]").filter(propio);
+  /**
+   * ⚠⚠ **UN MÓDULO DENTRO DE UN MÓDULO NO ES UN MÓDULO — y `[class*=…]` no lo
+   * sabe** (104.ª tanda).
+   *
+   * El selector de subcadena casa DOS cosas de más, y en los DOS lados:
+   *
+   *   · `et_pb_module_header` — el `h1..h6` de un blurb. Es lo mismo que ya
+   *     tropezó `qa:pieles`: Divi compila la piel del titular contra esa clase,
+   *     que **contiene** `et_pb_module` sin serlo;
+   *   · **el marcado del CAMPO RICO**, que es HTML del original **verbatim** y
+   *     por tanto trae sus propias clases `et_pb_*` dentro.
+   *
+   * No daba error: daba **356 módulos** donde el censo del corpus cuenta
+   * **313**, y un tipo `?` con **312 pares** que invitaba a explicarlo. Es
+   * §*un heurístico que encuentra MÁS de lo que hay tampoco da error: da un
+   * número plausible de más*.
+   *
+   * La regla es de ANIDAMIENTO y vale igual para los dos lados: se queda el
+   * candidato **que no tiene otro candidato por encima**. Así el `h4` de un
+   * blurb y el `et_pb_row` que viaje dentro de un `texto-pagina` quedan fuera
+   * por la misma razón, sin lista de excepciones que envejezca.
+   */
+  const cand = $$("[class*='et_pb_module'], [data-modulo]").filter(propio);
+  const esCand = new Set(cand);
+  const modulos = cand.filter((m) => {
+    for (let p = m.parentElement; p; p = p.parentElement) if (esCand.has(p)) return false;
+    return true;
+  });
 
   const out = {
-    docH: +document.documentElement.getBoundingClientRect().height.toFixed(2),
+    /**
+     * ⚠⚠ **`scrollHeight`, NO `getBoundingClientRect().height`** (104.ª).
+     *
+     * La v1 medía la caja del `<html>`, y en el clon esa caja está
+     * **constreñida** por el layout (`flex` con altura de pantalla): devolvía
+     * **900 a 1440 y 844 a 390 — o sea el VIEWPORT — en las 31 rutas**,
+     * mientras el original daba valores reales. Resultado: `docH` distinto en
+     * **31 de 31**, todo artefacto.
+     *
+     * La señal era el 100 % redondo y el valor CONSTANTE: §*un dato del
+     * original casi nunca es unánime, y cuando lo es, la primera hipótesis es
+     * el instrumento*. `clon-base` ya medía `scrollHeight` — dos sondas del
+     * mismo repo midiendo «el alto del documento» de dos maneras distintas.
+     */
+    docH: +Number(document.documentElement.scrollHeight).toFixed(2),
     /* BASE EN CRUDO — la `y` absoluta del `h1`, SIN corregir. §Notas de método:
      * la regla del h1 resta la base antes de comparar, así que no puede
      * auditarse a sí misma; cada arquetipo mide su base cruda UNA vez. */
@@ -459,11 +500,35 @@ if (modPares.length === 0)
 for (const [t, v] of Object.entries(porTipoMod).sort((a, b) => b[1].n - a[1].n))
   console.log(`  ${String(t).padEnd(20)} ${String(v.n).padStart(5)} pares · ${String(v.dist).padStart(5)} distintos${v.dist ? "   ejes: " + Object.entries(v.ejes).map(([k, n]) => `${k}×${n}`).join(" · ") : ""}`);
 
-/* El CRUCE de tipo: la llave es posicional, así que si el clon emite un módulo
+/**
+ * El CRUCE de tipo: la llave es posicional, así que si el clon emite un módulo
  * de menos, el `tipo` de los siguientes deja de coincidir. Se publica porque es
- * la señal que distingue «ritmo mal» de «módulo perdido». */
+ * la señal que distingue «ritmo mal» de «módulo perdido».
+ *
+ * ⚠⚠ **PERO LOS DOS LADOS NOMBRAN EL MISMO TIPO DISTINTO, y la v1 de este cruce
+ * no lo sabía: daba `257 de 356 desalineados` — o sea el 72 %.** El original
+ * dice `et_pb_text` y el clon dice `texto-pagina`: son **el mismo tipo en dos
+ * sistemas de nombres**, no un desalineamiento. Un cruce que marca a casi todas
+ * está midiendo el instrumento (§*un patrón que casa en TODAS tampoco mide
+ * nada*, en su forma sobre-casada), y encima **invitaba a explicarlo**.
+ *
+ * La tabla traduce Divi → `kind` del esquema, y es la misma correspondencia que
+ * el extractor ya aplica en `aBloque`. Un tipo que no esté aquí sale **NOMBRADO**
+ * en vez de contarse como desalineado: no saber traducirlo es un hueco del
+ * instrumento, y decirlo «desalineado» sería atribuírselo al clon.
+ */
+const KIND_DE_DIVI = {
+  text: "texto-pagina", image: "imagen-pagina", button: "boton-pagina", code: "codigo",
+  toggle: "toggle", video: "video-pagina", blurb: "blurb", icon: "icono", map: "mapa",
+  slider: "slider", fullwidth_slider: "slider-completo",
+};
 const tipoCruz = pares.filter((p) => /^mod\d+\.w$/.test(p.eje));
-const desalineados = tipoCruz.filter((p) => p.tipoClon != null && p.tipo !== p.tipoClon);
+const sinTraducir = [...new Set(tipoCruz.map((p) => p.tipo).filter((t) => t && !KIND_DE_DIVI[t]))];
+const desalineados = tipoCruz.filter(
+  (p) => p.tipoClon != null && p.tipo != null && KIND_DE_DIVI[p.tipo] && KIND_DE_DIVI[p.tipo] !== p.tipoClon,
+);
+if (sinTraducir.length)
+  console.log(`\n  ⚠ tipos del ORIGINAL que esta sonda NO sabe traducir a \`kind\`: ${sinTraducir.join(" · ")}`);
 console.log(`\n  CRUCE DE TIPO en la llave posicional: ${desalineados.length} de ${tipoCruz.length} módulos emparejados con OTRO tipo`);
 if (desalineados.length)
   for (const p of desalineados.slice(0, 10))
