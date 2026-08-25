@@ -79,8 +79,21 @@ import { MENU_CENTRO_AYUDA, type ItemMenuAyuda } from "@/lib/menu-centro-ayuda";
  * el dato de 31 rutas en mitad de una tanda que mide (§regla 20). Fichado:
  * §F3-3-BT-DOS-FORMAS.
  */
+/**
+ * ⚠⚠ **Y LA RAÍZ CUENTA COMO SUYA, que es donde la primera versión se dejó una
+ * de las siete.** `startsWith("/soporte/centro-de-ayuda/")` —con barra— es
+ * FALSO para **`/soporte/centro-de-ayuda`**, que es una de las 7 y además un
+ * hub. El predicado se verificó contra las rutas de `f33-cmp`, que llevan
+ * **barra final** (`/es/soporte/centro-de-ayuda/`), y `rutaDePagina()` **no la
+ * lleva**: 31/31 contra la forma medida y **6 de 7** contra la forma servida.
+ *
+ * Es §*verificar contra la SALIDA SERVIDA, no contra la fuente que uno supone
+ * responsable* — aquí con la fuente cambiada por **la forma en que la ruta
+ * viaja**. Y no habría dado error: habría dejado un hub sin barra, en silencio.
+ */
+const RAICES_AYUDA = ["/centro-de-ayuda", "/soporte/centro-de-ayuda"];
 export function tieneBarraAyuda(ruta: string): boolean {
-  return ruta.startsWith("/centro-de-ayuda/") || ruta.startsWith("/soporte/centro-de-ayuda/");
+  return RAICES_AYUDA.some((r) => ruta === r || ruta.startsWith(`${r}/`));
 }
 
 /** ¿Es `href` la ruta actual, o un ancestro suyo? */
