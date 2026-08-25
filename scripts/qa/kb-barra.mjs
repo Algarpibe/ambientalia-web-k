@@ -97,9 +97,20 @@ import { readFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { pathToFileURL, fileURLToPath } from "node:url";
 
-import { Evaluadas, launch, w, hoy, Censo, gritaSiRevienta } from "./lib.mjs";
+import { Evaluadas, launch, iniciarClon, w, hoy, Censo, gritaSiRevienta } from "./lib.mjs";
 
-process.env.SIN_CLON = "1";
+/**
+ * ⚠ **EL LADO DEL CLON, añadido en la misma tanda (107.ª ESCALÓN 2).** Nació de
+ * un solo lado porque el clon no emitía nada; en cuanto emitió, medir sólo el
+ * original dejaba la adjudicación en manos de `f33-cmp`, que publica **una sola
+ * caja** (`cascaron.barra`) y por tanto **no puede decir DÓNDE está el defecto**.
+ * Y lo necesitó al momento: la primera emisión dio la barra a **691.31 contra
+ * 493.66**, o sea **+197.65**, y con una caja sola eso es un número sin causa.
+ *
+ * `CLON=0` vuelve al modo de un lado (para medir el original sin levantar nada).
+ */
+const CON_CLON = process.env.CLON !== "0";
+if (!CON_CLON) process.env.SIN_CLON = "1";
 gritaSiRevienta();
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
@@ -306,7 +317,14 @@ function medir(selBarra) {
   });
 
   /* El MENÚ: el árbol completo, con la geometría y la tipografía de cada nivel. */
-  const menu = $(`${selBarra} ul.menu`);
+  /**
+   * ⚠ El `ul` del menú: **los dos lados no escriben la misma clase** —el
+   * original `ul.menu`, el clon `ul.ayuda-menu`—, así que el selector lleva las
+   * dos. La primera versión sólo tenía la del original y el lado del clon salió
+   * `undefined` en los 18 ejes del menú: §sondas 4 dentro de la propia sonda, y
+   * un `undefined` se lee como *«el clon no lo emite»* cuando lo emitía.
+   */
+  const menu = $(`${selBarra} ul.menu`) || $(`${selBarra} ul.ayuda-menu`);
   let arbol = null;
   if (menu) {
     const lis = [...menu.querySelectorAll("li")];
@@ -345,6 +363,20 @@ function medir(selBarra) {
           conCaja: conCaja(li),
           liRect: r(li), liRitmo: ritmo(csLi), liDisplay: csLi.display,
           liListStyleType: csLi.listStyleType,
+          /**
+           * ⚠⚠ **LA TIPOGRAFÍA DEL `li`, QUE ES LA QUE MANDA EN EL ALTO — y no
+           * estaba medida.** La primera emisión del clon puso `font-size` y
+           * `line-height` **sólo en el `<a>`**, que es **enlínea**: el alto de
+           * una línea la fija el STRUT del bloque que la contiene, o sea el
+           * `li`. Con el `li` heredando el cuerpo del tema (18/30.6), las **15
+           * líneas** del menú pasaron de `2×20 + 4×18.75 + 9×16.25 = 261.25` a
+           * `15 × 30.6 = 459`: **+197.75**, que es el `+197.65` medido.
+           *
+           * Medir sólo el `<a>` no podía verlo — los dos lados daban 16/20 —,
+           * así que es §*la causa común: el NIVEL al que se mide* con el nivel
+           * puesto en **quién genera el strut**.
+           */
+          liTipo: tipo(csLi),
           aDisplay: csA ? csA.display : null,
           aRect: a ? r(a) : null, aTipo: csA ? tipo(csA) : null, aRitmo: csA ? ritmo(csA) : null,
         };
@@ -391,8 +423,14 @@ function medir(selBarra) {
 const SEL_BARRA = SABOTAJE === "selector-muerto"
   ? ".et_pb_sidebar_NO_EXISTE_tb_body"
   : "[class*='et_pb_sidebar_'][class*='_tb_body']";
+/** El mismo objeto en el clon. Son DOS selectores porque los dos lados no
+ *  escriben las mismas clases — lo que tiene que denotar el MISMO conjunto es
+ *  el elemento, no la cadena (§sondas 4: *dos selectores que no denotan el
+ *  mismo conjunto* fue lo que dio «31 de 31 distintas» en `c-cmp`). */
+const SEL_CLON = SABOTAJE === "selector-muerto" ? ".ayuda-barra-NO-EXISTE" : ".ayuda-barra";
 
 const { browser } = await launch();
+const baseClon = CON_CLON ? (await iniciarClon()).base : null;
 const salida = {
   meta: {
     sonda: "kb-barra", fecha: hoy(), ancho: ANCHO, movil: MOVIL,
@@ -428,10 +466,39 @@ for (const pg of PAGINAS) {
   if (!datos.hay) sinBarra.push(pg.ruta);
   if (datos.hay && datos.fuenteCargada === false) fuenteCero.push(pg.ruta);
 
+  /* ── (b) EL CLON ────────────────────────────────────────────────────────
+   * §regla 32: *a un comparador de dos lados se le hace a los dos todo lo que
+   * se le hace a uno, Y ESO INCLUYE LO QUE SE LE PROHÍBE.* La misma frase en
+   * los dos lados: **cada uno carga lo SUYO y nada externo** — para el original
+   * `file:`, para el clon su propio origen. */
+  let clon = null, httpClon = 0, bloqClon = 0;
+  if (CON_CLON) {
+    const cp = await browser.newPage();
+    await cp.setRequestInterception(true);
+    const propio = new URL(baseClon).origin;
+    cp.on("request", (q) => {
+      const u = q.url();
+      if (u.startsWith("data:") || u.startsWith("blob:") || u.startsWith(propio)) return void q.continue();
+      bloqClon++;
+      q.abort().catch(() => {});
+    });
+    await preparaViewport(cp);
+    try {
+      const resp = await cp.goto(baseClon + pg.ruta.replace(/^\/es/, "").replace(/\/$/, ""), { waitUntil: "networkidle0", timeout: 120_000 });
+      httpClon = resp ? resp.status() : 0;
+      /* El MISMO asentado que el original: si sólo se asentara un lado, el Δ
+       * mediría el asentado y no el clon. */
+      if (httpClon < 400 && httpClon !== 0) { await asienta(cp); clon = (await censo.medir(cp, medir, SEL_CLON)).datos; }
+    } catch { httpClon = -1; }
+    await cp.close();
+  }
+
   salida.paginas[pg.ruta] = {
     familia: pg.familia,
     hojas: { enlazadas, resueltas, sinResolver: sinResolver.length, faltan: sinResolver, aplicadas: datos.hojasAplicadas ?? null },
     media: img, fuentes, peticionesBloqueadas: bloqueadas,
+    httpClon, peticionesBloqueadasClon: bloqClon,
+    original: datos, clon,
     ...datos,
   };
   ev.ok(1);
@@ -555,6 +622,48 @@ if (existsSync(ESPEJO)) {
     console.log(`  ${fam.padEnd(14)} módulo  offline w ${String(ps[0].barra?.rect.w).padStart(7)} h ${String(ps[0].barra?.rect.h).padStart(7)} │ sin referencia VIVA: \`kb-spec\` no lo midió`);
   salida.cruceVivo.mal = cruceMal;
 } else console.log(`  ⚠ no existe ${ESPEJO} — el cruce NO se pudo hacer, y eso es un hueco, no un verde.`);
+
+/* ── 5b · LOS DOS LADOS, NIVEL A NIVEL ───────────────────────────────────── */
+const distintos = [];
+if (CON_CLON) {
+  console.log(`\n═══ 5b · LOS DOS LADOS — nivel a nivel, que es lo que dice DÓNDE está el defecto`);
+  /**
+   * §*la causa común: el NIVEL al que se mide*. `f33-cmp` publica **una sola
+   * caja** de la barra, así que un `+197.65` suyo es un número sin causa. Esto
+   * baja a los tres niveles del menú, al `ul` y a cada `li`.
+   */
+  const EJES2 = [
+    ["barra.h", (d) => d.barra?.rect.h], ["barra.w", (d) => d.barra?.rect.w],
+    ["barra.pr", (d) => d.barra?.ritmo.paddingRight], ["barra.borderRight", (d) => d.barra?.borde?.right],
+    ["widget0.h", (d) => d.widgets?.[0]?.rect.h], ["widget0.w", (d) => d.widgets?.[0]?.rect.w],
+    ["nWidgets", (d) => d.nWidgets],
+    ["menu.ul.h", (d) => d.menu?.ulRect.h], ["menu.nLi", (d) => d.menu?.nLi],
+    ["subMenu.ml", (d) => d.menu?.uls?.find((u) => u.nivel === 1)?.ritmo.marginLeft],
+  ];
+  for (let n = 0; n <= 2; n++) {
+    EJES2.push([`n${n}.li.h`, (d) => d.menu?.items.find((i) => i.nivel === n)?.liRect.h]);
+    EJES2.push([`n${n}.li.pt`, (d) => d.menu?.items.find((i) => i.nivel === n)?.liRitmo.paddingTop]);
+    EJES2.push([`n${n}.li.mt`, (d) => d.menu?.items.find((i) => i.nivel === n)?.liRitmo.marginTop]);
+    EJES2.push([`n${n}.a.fontSize`, (d) => d.menu?.items.find((i) => i.nivel === n)?.aTipo?.fontSize]);
+    EJES2.push([`n${n}.a.lineHeight`, (d) => d.menu?.items.find((i) => i.nivel === n)?.aTipo?.lineHeight]);
+    EJES2.push([`n${n}.a.h`, (d) => d.menu?.items.find((i) => i.nivel === n)?.aRect?.h]);
+  }
+  const conClon = filas.filter(([, p]) => p.clon);
+  console.log(`  páginas con los dos lados: ${conClon.length}/${filas.length}`);
+  if (conClon.length) {
+    const [ruta, p] = conClon[0];
+    console.log(`  muestra: ${ruta}`);
+    console.log(`  ${"eje".padEnd(18)} ${"original".padStart(14)} ${"clon".padStart(14)}   Δ`);
+    for (const [nom, f] of EJES2) {
+      const o = f(p.original), c = f(p.clon);
+      const num = typeof o === "number" && typeof c === "number";
+      const d = num ? +(c - o).toFixed(2) : (String(o) === String(c) ? 0 : "≠");
+      if (d !== 0) distintos.push({ eje: nom, o, c });
+      console.log(`  ${nom.padEnd(18)} ${String(o).padStart(14)} ${String(c).padStart(14)}   ${d === 0 ? "✓" : `⛔ ${d}`}`);
+    }
+  }
+  salida.dosLados = { paginasConClon: conClon.length, distintos };
+}
 
 console.log(`\n═══ 6 · LO QUE ESTA SONDA **NO** CONTESTA`);
 console.log(`  · el lado del CLON: hoy no emite nada ahí. Esto mide UN lado, el original`);

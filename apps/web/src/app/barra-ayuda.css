@@ -105,11 +105,29 @@
  * ⚠ El `line-height` es 1.25 × el cuerpo en los tres (20/16 · 18.75/15 ·
  * 16.25/13), pero se escribe **en px medidos**: la razón se observa, no se ha
  * probado que sea la declaración, y el `padding-top` NO la sigue (0.4em · 0.7em
- * · 0.7em). Un valor relativo se escribe con su base medida o no se escribe. */
+ * · 0.7em). Un valor relativo se escribe con su base medida o no se escribe.
+ *
+ * ⚠⚠ **Y LA TIPOGRAFÍA VA EN EL `li`, NO EN EL `<a>` — es lo que costó +197.65
+ * en la primera emisión.**
+ *
+ * El `<a>` computa `display: inline` (medido). El alto de una línea **no lo
+ * fija la caja enlínea: lo fija el STRUT del bloque que la contiene**, o sea el
+ * `li`. Poniendo 16/20 · 15/18.75 · 13/16.25 sólo en el `<a>`, el `li` seguía
+ * heredando el cuerpo del tema —18/30.6— y **cada línea del menú medía 30.6**:
+ *
+ *     original   2×20 + 4×18.75 + 9×16.25  =  261.25   (15 líneas)
+ *     clon       15 × 30.6                 =  459.00
+ *     Δ                                        +197.75   ← el +197.65 medido
+ *
+ * Y **el `<a>` no podía delatarlo**: los dos lados daban `font-size: 16px` y
+ * `line-height: 20px` idénticos. Es §*la causa común: el NIVEL al que se mide*
+ * con el nivel puesto en **quién genera el strut** — el valor estaba bien leído,
+ * bien transcrito y **escrito en el elemento que no manda**.
+ *
+ * Puesto en el `li`, el `<a>` lo hereda y computa lo mismo que antes, así que
+ * lo que el original sirve en el `<a>` se sigue reproduciendo. */
 .ayuda-menu > li {
   padding-top: 6.4px;
-}
-.ayuda-menu > li > a {
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -117,8 +135,6 @@
 
 .ayuda-menu > li > .sub-menu > li {
   padding-top: 10.5px;
-}
-.ayuda-menu > li > .sub-menu > li > a {
   font-size: 15px;
   font-weight: 700;
   line-height: 18.75px;
@@ -126,8 +142,6 @@
 
 .ayuda-menu > li > .sub-menu > li > .sub-menu > li {
   padding-top: 9.1px;
-}
-.ayuda-menu > li > .sub-menu > li > .sub-menu > li > a {
   font-size: 13px;
   font-weight: 400;
   line-height: 16.25px;
