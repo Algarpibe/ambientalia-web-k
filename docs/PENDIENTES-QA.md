@@ -20138,3 +20138,112 @@ mejor ilustra el método: 375 sólo cuadra emitiendo la página 1 y dejando siet
 no es una opinión de alcance: es `span.pages` en el corpus sin recortar.
 
 ---
+
+
+## 107.ª · PASO 0 — `hostsBloqueadosClon` leído: **13 peticiones EN CALIENTE a `kunakair.com`** (2026-08-25)
+
+El campo llevaba dos corridas congelado y sin leer. Cuesta un `grep` y sale un
+defecto de FIDELIDAD, no del comparador — el propio comentario de `f33-cmp.mjs`
+lo había anticipado (*«un cardinal sin su ejemplo manda a la tanda siguiente a
+averiguarlo otra vez»*), y por eso el campo guarda el host y no sólo el recuento.
+
+### El reparto por host, con su cardinal
+
+Derivado de `medidas/f33-cmp-{1440,390}-2026-08-25-2.json` (los más recientes por
+`mtime`; el canónico `f33-cmp-1440.json` es la PRIMERA foto y **no trae el
+campo** — §regla 5, el nombre obvio es el más viejo del montón).
+
+**Los dos anchos dan EXACTAMENTE lo mismo: 14 peticiones, 3 rutas, 2 hosts.** Que
+no varíe con el ancho es la firma de un defecto de dato, no de maquetación
+(§sondas 4, el hueco de los parciales).
+
+| host | peticiones | rutas |
+|---|---|---|
+| **`kunakair.com`** | **13** | 2 |
+| `upload.wikimedia.org` | 1 | 1 |
+
+| ruta | régimen | bloq. | host | `media.externas` del ORIGINAL | veredicto |
+|---|---|---|---|---|---|
+| `/es/sectores/` | `B-` | **12** | kunakair.com | **0** | ⛔ **ASIMÉTRICA — defecto** |
+| `/es/sistema-interno-de-informacion/` | **`BT`** | **1** | kunakair.com | **0** | ⛔ **ASIMÉTRICA — defecto** |
+| `/es/empresa/` | `B-` | 1 | upload.wikimedia.org | **1** | ✅ **SIMÉTRICA — no es defecto** |
+
+> **El discriminador es `media.externas` del lado del ORIGINAL, no el recuento
+> del lado del clon.** En `/es/empresa/` el original **también** pide a wikimedia
+> y **también** sale bloqueado: los dos lados cargan lo suyo y nada externo, que
+> es la política declarada. En las otras dos el original tiene `externas: 0` —
+> o sea que **pide el clon lo que el original no pide**.
+
+### Qué son las 13, nombradas
+
+Derivadas del dato sembrado (`paginas_blocks_texto_pagina.html`), no del HTML
+servido — y el recuento **cuadra al bit** con lo que el navegador pidió:
+
+| ruta | en el campo rico | peticiones | por qué |
+|---|---|---|---|
+| `/es/sectores/` | 6 `url(…)` de fondo + 6 `<img src>` `.svg` | **12** | 12 URLs distintas ⇒ 12 peticiones |
+| `/es/sistema-interno-de-informacion/` | 1 `src` **+** 1 `srcset` al **mismo** `.png` | **1** | el navegador deduplica ⇒ 1 petición |
+
+Los `href` a `kunakair.com` que conviven en esos mismos campos **no cuentan**: un
+ancla no pide nada, y la regla de rutas del repo los permite mientras el destino
+no esté clonado. Lo que la regla **no** permite es esto:
+
+> `CLAUDE.md` §Arquitectura: *«Assets: … **Nunca se enlaza a kunakair.com en
+> caliente**»*. Trece enlaces en caliente, en 2 páginas, servidos desde la DB.
+
+### El arreglo es una REESCRITURA, no una campaña de captura
+
+Las 13 **ya están capturadas**, derivado con `find` sobre `apps/web/public`,
+`media-corpus` y `media`:
+
+| dónde | n | qué falta |
+|---|---|---|
+| ya en `apps/web/public/images/uploads/…` | **12** | **sólo reescribir la URL** al importar |
+| en `media-corpus/fase-3/2025/02/` y **no** en `public` | **1** (`qr-compliance.png`) | reescribir **y** `cms:coloca-media` |
+
+O sea que es la familia T de transformaciones de importación —el campo rico se
+sembró con URLs absolutas del original— y **no** un canal de media sin capturar.
+El 13.º es además §*capturar no es COLOCAR* con su instancia: los bytes están,
+el fichero servido no.
+
+### Lo que esto NO cambia, y el encargo lo daba por sentado
+
+El encargo advertía que *«eso cambia lo que significan las medidas de
+`/es/sectores/` — que es un arquetipo verificado»*. **`/es/sectores/` no es ese
+arquetipo**, y conviene decirlo porque los dos se escriben casi igual:
+
+| | qué es | dónde vive | ¿en el universo de `f33-cmp`? |
+|---|---|---|---|
+| `/sectores/<slug>` | **SECTOR / MONOGRÁFICO**, el arquetipo verificado, 4+2 vivos | `apps/web/src/app/sectores/[slug]/page.tsx` | **NO** — ninguna de las 6 está en las 31 rutas |
+| `/es/sectores/` | el **LISTADO** de sectores, régimen `B-`, cola larga F3-3 | colección `paginas`, slug `sectores` — **no hay `sectores/page.tsx`** | sí |
+
+Derivado, no recordado: `ls apps/web/src/app/sectores/` devuelve **`[slug]` y
+nada más**, y las 31 rutas de la congelada no contienen ni una `/es/sectores/<algo>/`.
+
+**Ninguna medida del arquetipo verificado queda tocada por este hallazgo.**
+
+### Lo que sí cambia — y es menos de lo que parece
+
+`/es/sectores/` ya estaba **sin adjudicar por otro motivo, más grande**:
+
+| eje | original | clon | Δ |
+|---|---|---|---|
+| `docH` | 2091 | **9385** | **+7294** |
+| `nSecciones` | 3 | **2** | −1 |
+| `nModulos` | 6 | **5** | −1 |
+
+Con la estructura descuadrada (3→2 secciones) y `docH` a **más de 4×**, los 12
+assets rotos **no son la causa de ese Δ** — son un **segundo defecto
+independiente sobre la misma ruta**. Y los 6 `url(…)` de fondo ni siquiera
+mueven alto: un fondo que no carga no cambia la caja.
+
+En `/es/sistema-interno-de-informacion/` —que **sí** es una de las 8 `BT` que el
+ESCALÓN 2 va a tocar— el bloqueo es **1 `<img>`**, o sea del orden de los 16 px
+del `<img>` roto (§regla 32) contra un Δ de **−1942**. Se ficha, y **no explica
+nada de lo que la barra lateral tiene que explicar.**
+
+> **Veredicto de PASO 0: el clon bloquea 13 cosas que debería servir, es un
+> defecto real y nuevo, y NO contamina ninguna medida que esta tanda vaya a
+> leer.** Se ficha con su alcance —§`F3-3-CALIENTE-KUNAKAIR-13`— y no se
+> persigue aquí: arreglarlo es tocar el importador y re-sembrar, que mueve el
+> dato de 31 rutas en mitad de una tanda que mide otra cosa (§regla 20).
