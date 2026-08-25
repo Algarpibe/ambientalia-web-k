@@ -36,23 +36,66 @@ if (!fA || !fB) throw new Error("Uso: node f33-distancia.mjs <antes.json> <despu
 const A = JSON.parse(readFileSync(fA, "utf8"));
 const B = JSON.parse(readFileSync(fB, "utf8"));
 
+/**
+ * ⚠⚠ **UN RECT `{0,0,0,0}` NO ES UNA MEDIDA: ES UN ELEMENTO SIN CAJA — y la
+ * primera versión de esto lo metió en la suma como si fuera dato.**
+ *
+ * `CLAUDE.md` §*lo que no tiene caja no es que no se cuente, es que NO SE PUEDE
+ * MEDIR, y aun así devuelve números*: `getBoundingClientRect` sobre un elemento
+ * dentro de un desplegable cerrado devuelve ceros, y esos ceros **entran en una
+ * distribución como si fueran dato, fabricando un pico que el original no
+ * tiene**.
+ *
+ * Medido, y le dio la vuelta al veredicto: a 390 el original de
+ * `/es/centro-de-ayuda/kunak-air/` trae `nSecciones: 7` **y `sec1..sec6` a
+ * `{0,0,0,0}`** —secciones sin caja—, mientras el clon las emite con `h: 161`.
+ * Comparar el `y` real del clon contra un `0` inexistente daba **36 pares
+ * «ALEJA» de exactamente 504.35** —el alto de la barra— y un titular de
+ * **+12465.64 ALEJÁNDOSE**, cuando lo que la barra hizo en esa página fue
+ * **acercar `sec0.y` de |Δ| 650.34 a 146.00**.
+ *
+ * Se excluyen **los cuatro ejes del rect a la vez** (no sólo el `w`/`h`), porque
+ * el elemento entero es el que no tiene caja, y se publican **con su cardinal**.
+ */
+const sinCaja = (rect) => !rect || (rect.w === 0 && rect.h === 0);
+
 /** Aplana una página a `eje → {o, c}`, con el mismo criterio en los dos lados. */
-function aplana(p) {
+function aplana(p, fuera) {
   const out = {};
   if (!p.original) return out;
   const num = (v) => (typeof v === "number" ? v : null);
   const put = (k, o, c) => { out[k] = { o: num(o), c: num(c) }; };
 
-  for (const k of ["docH", "base", "nSecciones", "nFilas", "nModulos", "enlaces"])
+  for (const k of ["docH", "nSecciones", "nFilas", "nModulos", "enlaces"])
     put(k, p.original[k], p.clon?.[k]);
 
-  for (const k of Object.keys(p.original.cajas ?? {}))
-    for (const d of ["x", "y", "w", "h"])
-      put(`caja.${k}.${d}`, p.original.cajas[k]?.[d], p.clon?.cajas?.[k]?.[d]);
+  /**
+   * ⚠ **`base` (la `y` del `h1`) TIENE EL MISMO CENTINELA, y por eso va aparte.**
+   * `f33-cmp` escribe **0** cuando el `h1` no tiene caja, igual que escribe
+   * `{0,0,0,0}` en un rect. Y en esta familia pasa de verdad: `kb-spec` lo tiene
+   * medido por su cuenta —`h1Oculto: 6`— y el `<h1>` **está en el marcado** de
+   * las 3 rutas (grep: ×1 en cada una), o sea que existe y **está oculto**.
+   *
+   * Restar `799.92 − 0` daba **8 pares «ALEJA» de 504.34** —el alto de la
+   * barra— sobre un `h1` que el original no pinta. No es una distancia: es una
+   * DIFERENCIA DE PRESENCIA, y va a su cubo con su cardinal.
+   *
+   * ⚠ Que el clon SÍ pinte ahí un `h1` es un defecto real, pero **PRE-EXISTENTE**:
+   * §*el discriminador es el corte CREA / MUEVE* — el par ya difería (|Δ| 295.58)
+   * y la barra sólo le cambió la magnitud. **0 pares creados.**
+   */
+  if (p.original.base === 0 && (p.clon?.base ?? 0) !== 0) fuera?.push("base(h1 sin caja)");
+  else put("base", p.original.base, p.clon?.base);
 
-  for (const k of Object.keys(p.original.cascaron ?? {}))
-    for (const d of ["x", "y", "w", "h"])
-      put(`cascaron.${k}.${d}`, p.original.cascaron[k]?.[d], p.clon?.cascaron?.[k]?.[d]);
+  for (const grupo of ["cajas", "cascaron"]) {
+    const pre = grupo === "cajas" ? "caja" : "cascaron";
+    for (const k of Object.keys(p.original[grupo] ?? {})) {
+      const ro = p.original[grupo][k];
+      if (sinCaja(ro)) { fuera?.push(`${pre}.${k}`); continue; }
+      for (const d of ["x", "y", "w", "h"])
+        put(`${pre}.${k}.${d}`, ro?.[d], p.clon?.[grupo]?.[k]?.[d]);
+    }
+  }
 
   return out;
 }
@@ -64,9 +107,10 @@ const mixto = { aparecen: [], desaparecen: [], ambosNull: 0 };
 const porRuta = {};
 const mayores = [];
 
+const fueraA = [], fueraB = [];
 for (const r of rutas) {
-  const a = aplana(A.paginas[r] ?? {});
-  const b = aplana(B.paginas[r] ?? {});
+  const a = aplana(A.paginas[r] ?? {}, fueraA);
+  const b = aplana(B.paginas[r] ?? {}, fueraB);
   const ejes = [...new Set([...Object.keys(a), ...Object.keys(b)])];
   let rA = 0, rB = 0, rN = 0;
   for (const e of ejes) {
@@ -96,6 +140,23 @@ console.log(`  Σ|clon−orig| DESPUÉS   ${sumB.toFixed(2)}`);
 const gana = sumA - sumB;
 console.log(`  MOVIMIENTO             ${gana >= 0 ? "−" : "+"}${Math.abs(gana).toFixed(2)} px  ${gana >= 0 ? "← HACIA el original" : "← ALEJÁNDOSE"}`);
 console.log(`  reparto                ACERCAN ${acercan} · ALEJAN ${alejan} · iguales ${igual}`);
+
+/* §regla 14: una limitación sin su cardinal se lee como una nota al pie. Estos
+ * ejes se EXCLUYEN del total, así que su número va al lado del total o el total
+ * afirma más de lo que midió. */
+console.log(`\n═══ 1b · SIN CAJA EN EL ORIGINAL — excluidos del total, con su cardinal`);
+console.log(`  rects \`{0,0,0,0}\` en el ORIGINAL: ANTES ${fueraA.length} · DESPUÉS ${fueraB.length}  (×4 ejes cada uno)`);
+console.log(`  Un elemento sin caja NO devuelve geometría: devuelve ceros. Restarlos fabrica`);
+console.log(`  un pico que el original no tiene — aquí valían +12465.64 de «ALEJÁNDOSE» falso.`);
+{
+  const porGrupo = {};
+  for (const k of fueraB) {
+    const g = k.replace(/\.sec\d+$/, ".sec*");
+    porGrupo[g] = (porGrupo[g] || 0) + 1;
+  }
+  for (const [k, n] of Object.entries(porGrupo).sort((x, y) => y[1] - x[1]).slice(0, 8))
+    console.log(`     ${k.padEnd(20)} ×${n}`);
+}
 
 console.log(`\n═══ 2 · EL EJE MIXTO — sin distancia, FUERA del total y con su cardinal`);
 console.log(`  APARECEN (null → número): ${mixto.aparecen.length}   ← el clon NO emitía y ahora emite. NO es alejarse`);
