@@ -1,0 +1,71 @@
+=== INSUMOS RESUELTOS (por mtime, salvo el histórico, por fecha) ===
+  cobertura HOY            cobertura-2026-08-25.json   mtime 2026-08-25T20:41:59.457Z
+  f33-cmp @1440            f33-cmp-1440-2026-08-25.json   mtime 2026-08-25T19:11:59.439Z
+  cobertura 2026-08-01     cobertura-2026-08-01.json   mtime 2026-08-01T15:14:47.832Z
+
+=== CONTROL DE LLAVE (§regla 33) ===
+  F3-3 normalizadas ................. 31
+  de ésas, FUERA de la matriz ....... 0  ← la llave casa
+
+=== LOS TRES CONJUNTOS QUE SE LLAMAN «el eje comportamiento» ===
+
+  A · RUTAS EMITIDAS el 2026-08-01 ....... 0/31   (histórico: la sonda aún no existía)
+      de esas 31, HOY con O ............ 31/31   ← el «0/31» de A está MUERTO
+
+  B · RUTAS DE F3-3 (cola larga) ......... 0/31   ← el «0/31» de B es CIERTO HOY
+
+  C · RUTAS EMITIDAS hoy ................. 37/413   ← el «37» del registro
+
+=== ¿SE SOLAPAN? ===
+  A ∩ B ............................ 0   ← DISJUNTOS
+  C = A + 6 nuevas:
+      /centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision
+      /centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento
+      /centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire
+      /centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air
+      /centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air
+      /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud
+
+=== LAS 31 DE F3-3, NINGUNA MEDIDA EN ESTE EJE ===
+  ·  /aviso-legal
+  ·  /centro-de-ayuda/kunak-air
+  ·  /centro-de-ayuda/kunak-air-cloud
+  ·  /centro-de-ayuda/kunak-air/articulos-de-ayuda
+  ·  /centro-de-ayuda/kunak-air/video-tutoriales
+  ·  /contacto
+  ·  /descarga-catalogo
+  ·  /empresa
+  ·  /empresa/premios-y-reconocimientos
+  ·  /informe-tecnico-control-de-la-calidad-del-aire-en-ciudades
+  ·  /informe-tecnico-control-de-la-calidad-del-aire-en-industria
+  ·  /informe-tecnico-control-de-la-calidad-del-aire-en-las-minas
+  ·  /informe-tecnico-control-de-la-calidad-del-aire-en-obras
+  ·  /informe-tecnico-control-de-la-calidad-del-aire-en-puertos
+  ·  /newsletter
+  ·  /politica-de-cookies
+  ·  /politica-de-privacidad-y-de-proteccion-de-datos
+  ·  /politica-de-seguridad-de-la-informacion
+  ·  /productos
+  ·  /recursos
+  ·  /recursos/documentos-cientificos
+  ·  /recursos/kunakpedia
+  ·  /recursos/preguntas-frecuentes
+  ·  /sectores
+  ·  /sistema-interno-de-informacion
+  ·  /soporte
+  ·  /soporte/centro-de-ayuda
+  ·  /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda
+  ·  /soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales
+  ·  /soporte/servicio-de-reparacion
+  ·  /suscribete
+
+=== VEREDICTO ===
+  Las dos cifras del registro son CIERTAS y cuentan CONJUNTOS DISTINTOS.
+  Y la coincidencia que lo hace invisible es que A y B tienen el MISMO
+  denominador (31) y el MISMO numerador (0), siendo disjuntos.
+
+  · «0/31» en unidad RUTA EMITIDA-2026-08-01 .. cierto ENTONCES, hoy 31/31
+  · «0/31» en unidad RUTA DE F3-3 ............. cierto HOY
+  · «37/413» en unidad RUTA EMITIDA-HOY ......... cierto HOY
+
+  Ninguna se sustituye por otra: se escriben las TRES con su unidad.
