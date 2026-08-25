@@ -1,0 +1,184 @@
+═══ 0 · DOMINIO
+  F3-3 (colección `paginas`) ........ 31 de 31 rutas · sin captura 0
+  articulos-kb (otra colección) ..... 6 rutas
+
+═══ 1 · DEUDA de TIPO — módulos que el modelo no puede expresar
+  html del corpus barridos ....... 788
+  ¿existe el manifiesto? ......... sí · 416 rutas
+
+  ⚠ DOS CONJUNTOS, y la ficha de la 106.ª leyó el primero creyendo leer el segundo:
+     lo que la SONDA `f33-cmp` traduce (KIND_DE_DIVI) .... 11: text · image · button · code · toggle · video · blurb · icon · map · slider · fullwidth_slider
+     lo que el ESQUEMA expresa (slug de `bloques/*.ts`):
+        contenido       9: p · ul · claim · titular · titular · claim · texto · imagen · boton
+        kb              5: blurb · gallery · texto-kb · imagen-kb · boton-kb
+        monografico     4: serie · tabla · ctaDescarga · mapaProyectos
+        paginas        10: texto-pagina · imagen-pagina · boton-pagina · codigo · toggle · video-pagina · slider-completo · slider · mapa · icono
+        sector          5: ctaDescarga · beneficiosAplicaciones · claimConFoto · listaSimple2Col · mapaProyectos
+
+  comparadores de dos lados resueltos → f33-cmp-1440-2026-08-25.json   ·   kb-cmp-1440-2026-08-25-DESPUES-barra.json
+
+  ── gallery   ·   3 documentos · 2 EMITIDOS
+     ∈ KIND_DE_DIVI (la sonda) .... NO
+     ∈ el ESQUEMA ................. SÍ — en kb
+     (los NO emitidos son páginas sin clonar, no un hueco — «falta» y «esa página no existe» son cosas distintas)
+     /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud
+         módulos 1 · items 6
+         kb-cmp  (dos lados) .. 1408 pares · 0 distintos · items de galería vistos EN LOS DOS LADOS: 6
+         soloOriginal en TODA la corrida: 0   ← si el clon no lo sirviera, sus nodos estarían AQUÍ
+     /monitor-calidad-aire
+         módulos 1 · items 9
+         sin comparador de dos lados — se pregunta al FUENTE por imagen:
+             1 de 1 citadas en `src/`   p.ej. "co_mexico.webp"
+         ⚠ sólo vale para arquetipos ESCRITOS A MANO: lo que sirve el CMS vive en la DB.
+           Un «no lo cita» de ahí sobre una página del CMS es un FALSO NO.
+
+  ── dvmd_table_maker   ·   21 documentos · 2 EMITIDOS
+     ∈ KIND_DE_DIVI (la sonda) .... NO
+     ∈ el ESQUEMA ................. NO en ninguna colección
+     (los NO emitidos son páginas sin clonar, no un hueco — «falta» y «esa página no existe» son cosas distintas)
+     /politica-de-cookies
+         módulos 1
+         f33-cmp (dos lados) .. orig 9 mód → clon 8 · Δ docH -1512.00
+     /monitor-calidad-aire
+         módulos 1
+         sin comparador de dos lados — se pregunta al FUENTE por celdas:
+             13 de 31 citadas en `src/`   p.ej. "Dimensiones / Peso"
+         ⚠ sólo vale para arquetipos ESCRITOS A MANO: lo que sirve el CMS vive en la DB.
+           Un «no lo cita» de ahí sobre una página del CMS es un FALSO NO.
+
+═══ 2 · DEUDA alineación del botón — CAMPO por test B, tres ejes
+  envoltorios `et_pb_button_module_wrapper` .... 13
+  anclas `et_pb_button_<n>` (el otro nivel) .... 13   ✅ cuadran
+    escritorio  11 de 13   {"center":10,"right":1}
+    tablet       9 de 13   {"center":8,"right":1}
+    phone        9 de 13   {"center":8,"right":1}
+  botones con AL MENOS un eje ........ 11 de 13
+  rutas afectadas .................... 4 de 31
+
+═══ 3 · DEUDA `gutters` — campo de la FILA, con su sombra
+  filas de la capa propia (denominador) ... 113
+  et_pb_gutters3     {"otro:body.wp-singular.page-template-default":31,"et_builder_inner_content":100}
+  et_pb_gutters2     {"row":3}
+  las que llevan `gutters2`:
+      row      reparto 1_4                      /es/recursos/
+      row      reparto 1_5                      /es/soporte/servicio-de-reparacion/
+      row      reparto 1_5                      /es/soporte/servicio-de-reparacion/
+
+═══ 4 · DEUDA `button.pt` / `button.pb` — el veredicto que cambia de lado
+  cascada  → f33-clases.json
+  ⚠ `f33-geo.json` canónico existe: NO — LIBERADO (§regla 5bis)
+     ⇒ NO HAY MEDIDA VIGENTE DEL TEST A. Las 8 congeladas con veredicto son TODAS artefactos de §regla 7:
+        [CADUCADA] f33-geo-2026-08-22-SONDA-SIN-EAGER-DERIVA-1-IMAGEN.json
+        [NEGATIVO] f33-geo-neg-control.json
+        [NEGATIVO] f33-geo-neg-sin-hojas.json
+        [CADUCADA] f33-geo-SONDA-390-SIN-HOJAS-ENLAZADAS-alcance-modulos390-y-veredictosA-2026-08-24.json
+        [CADUCADA] f33-geo-SONDA-CONTABA-MODULOS-SIN-CAJA-Y-LEIA-EL-0-COMO-CAMPO.json
+        [CADUCADA] f33-geo-SONDA-SIN-DISPLAY-NI-CRUCE-MB-2026-08-22.json
+        [CADUCADA] f33-geo-SONDA-SIN-EAGER-DERIVA-1-IMAGEN.json
+        [CADUCADA] f33-geo-SONDA-SIN-SEPARADORAS-DE-MB-2026-08-22.json
+
+  ── padding-top
+     selector ganador ... .et_pb_button   ¿lleva ORDINAL `et_pb_<tipo>_<n>`? NO ⇒ PLANTILLA
+     hoja ............... KunakAir/style.css   !important true
+     n .................. 12 nodos
+     valor @1440 ........ {"0.5em !important":12}
+     valor @390  ........ {"0.5em !important":12}   ¿MISMA declaración a los dos anchos? SÍ
+     computado @1440 .... {"0":247,"20":10,"7.5":11,"7.49":1}
+  ── padding-bottom
+     selector ganador ... .et_pb_button   ¿lleva ORDINAL `et_pb_<tipo>_<n>`? NO ⇒ PLANTILLA
+     hoja ............... KunakAir/style.css   !important true
+     n .................. 12 nodos
+     valor @1440 ........ {"0.6em !important":12}
+     valor @390  ........ {"0.6em !important":12}   ¿MISMA declaración a los dos anchos? SÍ
+     computado @1440 .... {"0":225,"9":11,"20":10,"8.99":1}
+
+  ── lo que dice el test A en CADA artefacto (ninguno es medida vigente):
+     artefacto                          eje         valor@1440  A(mueve/igual)   veredicto
+     CADUCADA                           button.pt   ["7.5"]     11/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pb   ["9"]       11/0             plantilla (test A: se mueve)
+     NEG control                        button.pt   ["7.5"]     11/0             plantilla (test A: se mueve)
+     NEG control                        button.pb   ["9"]       11/0             plantilla (test A: se mueve)
+     NEG sin-hojas                      button.pt   ["4.5"]     0/11             CAMPO (test A: px absolutos)
+     NEG sin-hojas                      button.pb   ["4.5"]     0/11             CAMPO (test A: px absolutos)
+     CADUCADA                           button.pt   ["7.5"]     11/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pb   ["9"]       11/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pt   null        13/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pb   null        13/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pt   ["7.5"]     11/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pb   ["9"]       11/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pt   ["7.5"]     11/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pb   ["9"]       11/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pt   ["7.5"]     11/0             plantilla (test A: se mueve)
+     CADUCADA                           button.pb   ["9"]       11/0             plantilla (test A: se mueve)
+
+  ⇒ LA SEPARADORA YA ESTABA CONGELADA, y es el propio SABOTAJE (§regla 8b:
+    `medidas/` es una muestra que nadie interroga). `neg-sin-hojas` quita las
+    hojas enlazadas A LOS DOS ANCHOS, así que gana el `0.3em` del core de Divi
+    — que es PLANTILLA sin discusión — y el valor sale IGUAL a 1440 y a 390.
+    El test A lee eso como «px absolutos» y dicta **CAMPO**. O sea que el
+    sabotaje demuestra el modo de fallo: un valor en `em` NO se mueve con el
+    ancho, lo escriba quien lo escriba, y el test A lo lee al revés.
+
+  ── control cruzado AL ELEMENTO (§sondas 4, otro instrumento sobre el mismo objeto):
+     cascada 12 nodos   ==   test A 11 con caja + 1 sin caja = 12   ✅
+
+  ── ¿la BASE del `em` está SIN DERIVAR? — se comprueba en el árbol, no se recuerda
+     SectionRow.tsx · BlueButton (.boton-azul, arquetipo HOME ya verificado), acotado a su className:
+        padding-top 7.5 · padding-bottom 9 · font-size 15
+        0.5em × 15 = 7.5  vs transcrito 7.5  ✅
+        0.6em × 15 = 9  vs transcrito 9  ✅
+
+═══ 5 · EL MECANISMO — clases-preset que DISCRIMINAN entre HERMANOS DEL MISMO TIPO
+  grupos (nivel · tipo) y su n:
+      columna                      179
+      modulo:text                  151
+      fila                         113
+      seccion                      86
+      modulo:image                 71
+      modulo:video                 30
+      modulo:blurb                 22
+      modulo:sin-tipo              20
+      modulo:button·envoltorio     13
+      modulo:toggle                10
+      modulo:code                  9
+      modulo:icon                  3
+      modulo:fullwidth_slider      2
+      modulo:map                   1
+      modulo:slider                1
+
+  clases descartadas por UBICUAS (n = total de su grupo): 9
+  clases que DISCRIMINAN: 22
+
+  clase                                   grupo                        n/total   ¿el clon la emite?
+  et_pb_toggle_close                      modulo:sin-tipo               19/20     SÍ
+  et_pb_text_align_left                   modulo:text                  143/151    SÍ
+  et_pb_text_align_left                   modulo:blurb                  17/22     SÍ
+  et_pb_button_alignment_center           modulo:button·envoltorio      10/13     NO
+  et_pb_button_alignment_tablet_center    modulo:button·envoltorio       8/13     NO
+  et_pb_button_alignment_phone_center     modulo:button·envoltorio       8/13     NO
+  et_pb_text_align_center                 modulo:blurb                   5/22     NO
+  et_pb_section_video_on_hover            modulo:blurb                   5/22     NO
+  et_pb_with_border                       modulo:blurb                   5/22     SÍ
+  et_pb_column_empty                      columna                       21/179    NO
+  et_pb_button_alignment_right            modulo:button·envoltorio       1/13     NO
+  et_pb_button_alignment_tablet_right     modulo:button·envoltorio       1/13     NO
+  et_pb_button_alignment_phone_right      modulo:button·envoltorio       1/13     NO
+  et_pb_with_background                   seccion                        6/86     NO
+  et_pb_equal_columns                     fila                           6/113    NO
+  et_pb_text_align_center                 modulo:text                    8/151    NO
+  et_pb_section_video_on_hover            columna                        7/179    NO
+  et_pb_gutters2                          fila                           3/113    NO
+  et_pb_fullwidth_section                 seccion                        2/86     NO
+  et_pb_with_border                       fila                           2/113    SÍ
+  et_pb_sticky_module                     columna                        2/179    NO
+  et_pb_with_border                       columna                        2/179    SÍ
+
+  ⇒ SIN EMITIR: 16 de 22
+     et_pb_button_alignment_center · et_pb_button_alignment_tablet_center · et_pb_button_alignment_phone_center · et_pb_text_align_center · et_pb_section_video_on_hover · et_pb_column_empty · et_pb_button_alignment_right · et_pb_button_alignment_tablet_right · et_pb_button_alignment_phone_right · et_pb_with_background · et_pb_equal_columns · et_pb_gutters2 · et_pb_fullwidth_section · et_pb_sticky_module
+
+  ⚠ Este censo contesta «¿escribe el clon esta CLASE?», NO «¿sirve el clon
+    este EFECTO?» — un preset puede estar resuelto por otro canal. Un «NO»
+    de aquí es una PREGUNTA para el dato, no un veredicto (§tipos-sin-emitir).
+
+  Y contesta sobre las 31 rutas de F3-3 y sólo ésas: una clase que
+  no discrimine aquí puede discriminar en el primer documento nuevo.
