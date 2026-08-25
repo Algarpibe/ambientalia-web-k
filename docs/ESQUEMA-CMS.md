@@ -5821,5 +5821,51 @@ con qué alcance de las 14+ CLASES (16+ PARES)?** Las tres salidas, con su coste
 > ⚠ **Y una QUINTA que sí es hueco y no estaba en la mesa:** `dvmd_table_maker`
 > —módulo de TERCEROS, sin prefijo `et_pb_`, invisible a todos los censos de
 > tipos— **no está en ninguna colección** y emite **2 rutas**, no 1. La segunda es
-> `/politica-de-cookies`, de F3-3, con **Δ docH −1512.00** medido de dos lados.
-> Es §F3-3-MODULO-DE-TERCEROS, abierta desde la 105.ª.
+> `/politica-de-cookies`, de F3-3, con **Δ docH −1512.00** medido de dos lados
+> **a 1440**. Es §F3-3-MODULO-DE-TERCEROS, abierta desde la 105.ª.
+
+#### ⚠ Y LA PREGUNTA NO ERA LA QUE ESTABA ESCRITA — derivado en la 109.ª
+
+*«Sin bloque en ninguna colección»* es cierto **de `paginas`**. Pero
+`packages/cms-config/src/bloques/monografico.ts` **ya exporta `MODULO_TABLA`**
+(`slug: "tabla"`), tabla **genérica** —`cabeceras: array[{texto}]` +
+`filas[].celdas[]` con `CELDA = {texto, fuerte, resto}`—. Así que lo abierto no
+es *«¿hay que inventar un tipo?»* sino **«¿cabe lo que se sirve, y qué queda
+fuera?»**, y eso se contesta **recorriendo el DOCUMENTO, no los campos**
+(`derivaciones/tabla-cookies-109.{mjs,log}`).
+
+**Lo primero que aparece es que NO ES UNA TABLA HTML:** `<table>`, `<thead>`,
+`<tr>`, `<td>` salen **0 en el marcado**. Es una **rejilla de `<div>`** con la
+posición en las clases (`dvmd_tm_row_N` · `dvmd_tm_col_N`), UNA tabla de
+**11 × 5 = 55 celdas**. Cualquier extractor que buscara `<table>` daría cero y
+lo leería como *«no hay tabla»*.
+
+**Y las celdas tienen TRES papeles, no dos:**
+
+| papel | celdas | columna(s) | ¿lo expresa `MODULO_TABLA`? |
+|---|---|---|---|
+| `dvmd_tm_rhead` — cabecera de FILA | **11** | 0 | ⛔ **no**: `cabeceras` es una lista PLANA, o sea de columna |
+| `dvmd_tm_tdata` — dato | 33 | 1 · 2 · 3 | ✅ sí, en `celdas[]` |
+| `dvmd_tm_rfoot` — PIE de fila | **11** | 4 | ⛔ **no**: no hay `pies` ni papel por columna |
+
+> **⇒ 22 de las 55 celdas (40 %) llevan un papel que el modelo no expresa.**
+> El contenido *cabe* —las 55 son texto plano, **0 enlaces · 0 listas · 0
+> párrafos múltiples**, así que `{texto, fuerte, resto}` no pierde ni un
+> carácter—. Lo que no cabe es **la ESTRUCTURA**.
+
+**Y hay una cuarta cosa sin sitio que el marcado no marca:** la **fila 0** es
+una cabecera de columna por su CONTENIDO —`Cookie · Propia o de terceros · Tipo
+· Propósito · Más información`— y **ninguna clase lo dice**. `cabeceras` podría
+expresarla, pero entonces **se pierde el papel de la columna 0**: el modelo
+tiene UN sitio para cabeceras y el documento tiene DOS ejes.
+
+> **La decisión que sube, y ahora con su reparto:** adoptar `MODULO_TABLA` tal
+> cual conserva **33 de 55 celdas con su papel** y aplana las otras 22.
+> Expresarlo entero pide **un papel por columna** (o por celda), que es un campo
+> nuevo — no un tipo nuevo.
+
+⚠ **Dos unidades, siempre:** `dvmd_table_maker` aparece en **21 DOCUMENTOS** y
+emite **2 RUTAS**. Esta derivación mira **una ruta**. Y la otra emitida,
+`/monitor-calidad-aire`, es de arquetipo **escrito a mano** (13 de 31 celdas
+citadas en `src/`), así que lo que allí se sirva **no es un veredicto sobre el
+CMS** — el propio censo ya avisa de que es un FALSO NO sobre lo que sirve la DB.

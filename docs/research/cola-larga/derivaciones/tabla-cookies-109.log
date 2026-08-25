@@ -1,0 +1,101 @@
+══════════════════════════════════════════════════════════════════════
+  ¿CABE `/politica-de-cookies` EN `MODULO_TABLA`? — 109.ª · ESCALÓN 3
+══════════════════════════════════════════════════════════════════════
+  fuente: corpus/fase-3/sueltas/politica-de-cookies/index.html (278252 chars)
+
+── 0 · EL CANAL, separado del CSS (§sondas 4, el sobre-casado) ─────────
+   «dvmd_table_maker» en el documento entero .... 158
+   … y en el MARCADO (sin <style> ni <script>) .. 57
+
+   ⚠ Y EL PRIMER HALLAZGO ES QUE **NO ES UNA TABLA HTML**:
+       <table> en el marcado: 0
+       <thead> en el marcado: 0
+       <tbody> en el marcado: 0
+       <tr> en el marcado: 0
+       <th> en el marcado: 0
+       <td> en el marcado: 0
+   Es una REJILLA DE `<div>` con la posición codificada en las clases
+   (`dvmd_tm_row_N` · `dvmd_tm_col_N`). Cualquier extractor que buscara
+   `<table>` daría CERO y lo leería como «no hay tabla».
+
+── 1 · LA FORMA, derivada del marcado ─────────────────────────────────
+   CONTENEDORES `dvmd_table_maker` (la tabla) : 1
+   celdas `dvmd_tm_tcell`                     : 55
+   filas × columnas                           : 11 × 5  = 55
+   ¿`item_N` es la COLUMNA y no la tabla?      : SÍ, 1:1 en las 55
+
+   ⚠ Es UNA tabla de 11 × 5, no cinco de 11 × 1. La v1 de esta derivación
+     leyó `item_N` como el ordinal del módulo y publicó «5 módulos». Lo
+     delató la forma, no un error: cinco tablas de una columna en una
+     política de cookies no es una cosa que exista.
+
+── 2 · LOS PAPELES DE CELDA, censados (no dos: TRES) ──────────────────
+   rhead: 11  ·  tdata: 33  ·  rfoot: 11   (suma 55 de 55)
+     rhead  → columna(s) 0
+     tdata  → columna(s) 1, 2, 3
+     rfoot  → columna(s) 4
+
+   ⇒ la tabla tiene una columna de CABECERA (0) y una de PIE (4), y el
+     modelo no tiene dónde poner ninguna de las dos.
+
+── 2b · ⚠ EL PRIMER CONTENIDO SIN SITIO: LA CABECERA ES UNA **COLUMNA** 
+   celdas marcadas `dvmd_tm_rhead`: 11
+   repartidas por COLUMNA : col_0:11
+   repartidas por FILA    : fila_0:1 · fila_1:1 · fila_2:1 · fila_3:1 · fila_4:1 · fila_5:1 · fila_6:1 · fila_7:1 · fila_8:1 · fila_9:1 · fila_10:1
+
+   ⇒ TODAS las celdas `rhead` caen en UNA SOLA COLUMNA (la 0).
+
+   ⚠ Y LA FILA 0, que el marcado NO marca como cabecera, LO ES por su texto:
+       [0] "Cookie"  [1] "Propia o de terceros"  [2] "Tipo"  [3] "Propósito"  [4] "Más información"
+       papel de cada una  : [0] rhead  [1] tdata  [2] tdata  [3] tdata  [4] rfoot
+
+   ⇒ HAY DOS CABECERAS Y SÓLO UNA ESTÁ MARCADA:
+       · la COLUMNA 0 — marcada `dvmd_tm_rhead` en las 11 filas;
+       · la FILA 0    — cabecera por su CONTENIDO, sin clase que lo diga.
+     `MODULO_TABLA` declara `cabeceras: array[{texto}]`, una lista PLANA:
+     expresa UNA de las dos —la de columna— y la otra NO TIENE SITIO.
+
+── 3 · QUÉ HAY DENTRO — y el modelo sólo tiene {texto, fuerte, resto} ──
+   etiquetas HTML distintas dentro de las celdas: 1
+     div×55
+
+   celdas con ENLACE  (<a>)          : 0
+   celdas con LISTA   (<ul>/<ol>)    : 0
+   celdas con VARIOS PÁRRAFOS (<p>×n): 0
+
+══════════════════════════════════════════════════════════════════════
+  LO QUE QUEDA SIN SITIO, con su cardinal
+══════════════════════════════════════════════════════════════════════
+   ⛔ cabecera de FILA (columna 0)
+        cardinal: 11
+        por qué : `cabeceras` es una lista PLANA: expresa cabeceras de columna, no de fila
+   ⛔ columna de PIE (rfoot, columna 4)
+        cardinal: 11
+        por qué : `MODULO_TABLA` no tiene `pies` ni papel por columna: sólo `cabeceras` planas y celdas indiferenciadas
+   ⛔ fila 0 como CABECERA DE COLUMNA (sin clase que lo diga)
+        cardinal: 5
+        por qué : el marcado no la marca; su CONTENIDO sí. `cabeceras` podría expresarla, pero entonces se pierde el papel de columna
+
+   ⇒ CELDAS con un papel que el modelo NO expresa: 22 de 55 (40.0 %)
+
+── LO QUE SÍ CABE ─────────────────────────────────────────────────────
+   celdas totales ....................... 55  (11 × 5)
+   celdas de contenido plano (sin <a>, sin lista, sin <p> múltiple)
+     .................................... 55  (100.0 %)
+   Ésas caben en {texto, fuerte, resto} sin perder nada.
+
+══════════════════════════════════════════════════════════════════════
+  LO QUE ESTA DERIVACIÓN **NO** CONTESTA
+══════════════════════════════════════════════════════════════════════
+   · NO decide si se adopta `MODULO_TABLA` para `paginas`, ni con qué
+     cambios. Eso es del propietario, y ahora llega con su reparto;
+   · NO mide geometría. El Δ de esta página está medido aparte y va con
+     sus DOS lados y su ancho: `/politica-de-cookies`, orig 9 módulos →
+     clon 8, **Δ docH −1512.00 a 1440**;
+   · NO dice nada de las otras instancias de `dvmd_table_maker`. Las dos
+     unidades, siempre: **21 DOCUMENTOS** lo mencionan · **2 RUTAS**
+     emitidas. Esta derivación mira UNA ruta;
+   · y NO mira `/monitor-calidad-aire`, la otra emitida: es de arquetipo
+     ESCRITO A MANO, así que lo que allí se sirva **no es un veredicto
+     sobre el CMS** — el propio censo ya avisa de que es un FALSO NO sobre
+     lo que sirve la DB.
