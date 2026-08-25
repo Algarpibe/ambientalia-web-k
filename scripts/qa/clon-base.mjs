@@ -73,9 +73,35 @@ const mobile = width <= 500;
 const manifiesto = JSON.parse(
   readFileSync(join(RAIZ, ".next/prerender-manifest.json"), "utf8"),
 );
-const RUTAS = Object.keys(manifiesto.routes || {})
+const TODAS_RUTAS = Object.keys(manifiesto.routes || {})
   .filter((r) => !r.startsWith("/_") && !r.includes("."))
   .sort();
+
+/**
+ * `SOLO=/a,/b` — mide **sólo** esas rutas. Para re-medir un puñado sin repetir
+ * las 413, que a ~7 s cada una es una hora.
+ *
+ * ⚠⚠ **Una corrida filtrada NO puede llevarse el nombre CANÓNICO**, y la sonda
+ * lo impone ella —no quien la lanza—: es §regla 7 con el precedente de
+ * `f33-cmp`, *un fichero con nombre de medida y contenido de MUESTRA*. Quien
+ * abriera `clon-base-1440.json` con 2 rutas dentro leería «2 de 2, sin
+ * regresión» y lo citaría como la línea base.
+ *
+ * Y el `minimo` de `Evaluadas` se deriva del conjunto FILTRADO, que es lo
+ * correcto: el listón es «las que dije que iba a medir», no las del build.
+ */
+const SOLO = (env("SOLO") || "").split(",").map((s) => s.trim()).filter(Boolean);
+const RUTAS = SOLO.length ? TODAS_RUTAS.filter((r) => SOLO.includes(r)) : TODAS_RUTAS;
+if (SOLO.length) {
+  const sinCasar = SOLO.filter((r) => !TODAS_RUTAS.includes(r));
+  /* §sondas 4: un `SOLO=` que no casa con nada no es «0 rutas», es un filtro
+   * roto — y mediría CERO saliendo en verde si el mínimo también fuese 0. */
+  if (sinCasar.length) {
+    console.error(`\n❌ SOLO= nombra ${sinCasar.length} ruta(s) que el build NO emite: ${sinCasar.join(" · ")}`);
+    process.exit(2);
+  }
+  console.log(`⚠ CORRIDA FILTRADA: ${RUTAS.length} de ${TODAS_RUTAS.length} rutas. La salida NO puede ser la canónica.`);
+}
 if (RUTAS.length === 0) {
   console.error("No hay rutas en .next/prerender-manifest.json — ¿falta `npm run build`?");
   process.exit(2);
@@ -158,23 +184,60 @@ const ev = new Evaluadas({ nombre: `clon-base @${width}`, unidad: "rutas", minim
  * anterior (§regla 5bis), y el control es que las rutas medidas antes del
  * primer corte sigan dando lo mismo.
  * ════════════════════════════════════════════════════════════════════════ */
-const LOTE = Number(env("LOTE") || 100);
-let hechas = 0;
-for (const ruta of RUTAS) {
-  if (hechas > 0 && hechas % LOTE === 0) {
-    await browser.close();
-    ({ browser } = await launch());
-    console.log(`  ↻ navegador relanzado tras ${hechas} rutas (LOTE=${LOTE})`);
-  }
-  hechas++;
-  try {
-    const { page } = await openPage(browser, BASE + ruta, {
-      width,
-      height: mobile ? 844 : 900,
-      mobile,
-    });
-    await settle(page);
-    todo.paginas[ruta] = await page.evaluate(() => {
+const LOTE = Number(env("LOTE") || 50);
+
+/**
+ * ⚠⚠ **Y EL LOTE SOLO NO BASTA — hay que relanzar TAMBIÉN al MORIR.**
+ *
+ * Con `LOTE=100` la corrida pasó de 10 a **280 comparadas de 382**, o sea que
+ * el relanzamiento periódico recupera… **en el siguiente múltiplo de 100**. Los
+ * dos bloques de error que quedaron lo dicen sin lugar a duda: **70–99** y
+ * **120–199**, o sea que **terminan exactamente en la frontera del lote**. El
+ * navegador se muere a mitad y las rutas que van de ahí al corte se pierden
+ * enteras.
+ *
+ * Así que el contador es **profilaxis**, y lo que de verdad arregla es
+ * **detectar la muerte y relanzar en el acto**. La firma es reconocible y
+ * siempre la misma: la primera víctima da `Navigating frame was detached` y
+ * todas las siguientes `Connection closed` — o sea que a partir de ahí no se
+ * está midiendo NADA, sólo cobrando errores.
+ *
+ * ⚠ **La ruta que provocó la muerte se RE-MIDE, no se da por perdida.** Si tras
+ * relanzar sigue fallando, entonces sí es suya y se anota — pero eso hay que
+ * distinguirlo, y un `catch` que sólo apunta el error no puede.
+ */
+/**
+ * ⚠ **Y ESTE PATRÓN SE ESCRIBIÓ CORTO A LA PRIMERA, que es §sondas 4 cometida
+ * sobre mi propio regex.** La v1 decía `frame was detached`, y puppeteer emite
+ * **DOS** mensajes distintos para lo mismo:
+ *
+ *   · `Navigating frame was detached`              ← el que sí casaba
+ *   · `Attempted to use detached Frame '<id>'`     ← el que NO
+ *
+ * Resultado: 2 rutas se quedaron sin reintentar en una corrida por lo demás
+ * limpia. **No dio error: dio dos ausencias**, que es exactamente la salida que
+ * no se nota. El patrón casa ahora por la palabra `detach`, que es lo que las
+ * dos formas comparten, en vez de por la frase de una de ellas.
+ */
+const MUERTE = /Connection closed|detach|Target closed|Session closed|Protocol error/i;
+let relanzamientos = 0;
+
+async function relanza(porQue) {
+  try { await browser.close(); } catch { /* ya estaba muerto: es el caso normal aquí */ }
+  ({ browser } = await launch());
+  relanzamientos++;
+  console.log(`  ↻ navegador relanzado (${porQue})`);
+}
+
+/** Mide una ruta. Devuelve los datos o lanza. */
+async function mideRuta(ruta) {
+  const { page } = await openPage(browser, BASE + ruta, {
+    width,
+    height: mobile ? 844 : 900,
+    mobile,
+  });
+  await settle(page);
+  const datos = await page.evaluate(() => {
       const r = (n) => Math.round(n * 100) / 100;
       const t = (el, n = 60) => (el?.textContent || "").replace(/\s+/g, " ").trim().slice(0, n);
       const h1 = document.querySelector("h1");
@@ -203,17 +266,44 @@ for (const ruta of RUTAS) {
         nAnclas: document.querySelectorAll("a[href]").length,
         nImgs: document.querySelectorAll("img").length,
       };
-    });
-    await page.close();
+  });
+  await page.close();
+  return datos;
+}
+
+let hechas = 0;
+for (const ruta of RUTAS) {
+  if (hechas > 0 && hechas % LOTE === 0) await relanza(`profilaxis tras ${hechas} rutas, LOTE=${LOTE}`);
+  hechas++;
+  try {
+    todo.paginas[ruta] = await mideRuta(ruta);
     ev.ok();
   } catch (e) {
+    if (MUERTE.test(String(e))) {
+      /* El navegador se ha muerto: TODO lo que venga detrás daría «Connection
+       * closed» sin medir nada. Se relanza y se RE-MIDE esta misma ruta — si
+       * vuelve a fallar, entonces sí es de la ruta y se anota como tal. */
+      await relanza(`MUERTO en ${ruta}`);
+      try {
+        todo.paginas[ruta] = await mideRuta(ruta);
+        ev.ok();
+        continue;
+      } catch (e2) {
+        todo.paginas[ruta] = { error: `tras relanzar: ${String(e2).slice(0, 180)}` };
+        ev.fallo(ruta, e2);
+        continue;
+      }
+    }
     todo.paginas[ruta] = { error: String(e).slice(0, 200) };
     ev.fallo(ruta, e);
   }
 }
+console.log(`  ↻ relanzamientos del navegador en esta corrida: ${relanzamientos}`);
 await browser.close();
 
-const salida = `clon-base-${width}${etiqueta}.json`;
+/* ⚠ El filtro va EN EL NOMBRE y lo pone la SONDA, no quien la lanza: una
+ * corrida de 2 rutas con nombre de línea base se lee como la línea base. */
+const salida = `clon-base-${width}${etiqueta}${SOLO.length ? `-SOLO-${RUTAS.length}` : ""}.json`;
 w(env("SALIDA") || `medidas/${salida}`, todo);
 
 for (const [ruta, d] of Object.entries(todo.paginas)) {

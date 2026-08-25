@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "width": 1440,
+    "base": "http://127.0.0.1:<efímero>",
+    "rutas": 2
+  },
+  "paginas": {
+    "/empresa": {
+      "docH": 18988,
+      "h1": {
+        "x": 100.8,
+        "y": 6272.03,
+        "w": 367.38,
+        "h": 60,
+        "txt": "Misión"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 193.72,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": ""
+        },
+        {
+          "i": 1,
+          "h": 578.11,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "Sobre nosotrosFabricamos solucione"
+        },
+        {
+          "i": 2,
+          "h": 5242.58,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "¿Quiénes somos?Somos una empresa d"
+        },
+        {
+          "i": 3,
+          "h": 115.19,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": ""
+        },
+        {
+          "i": 4,
+          "h": 325.75,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "MisiónNuestro objetivo es ayudar a"
+        },
+        {
+          "i": 5,
+          "h": 288.83,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "VisiónAyudar a construir un mundo "
+        },
+        {
+          "i": 6,
+          "h": 417.53,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "Valores Excelencia tecnológica Inn"
+        },
+        {
+          "i": 7,
+          "h": 295.16,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "EquipoSomos un equipo joven con má"
+        },
+        {
+          "i": 8,
+          "h": 335.42,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "MarcaKunak significa “el que acons"
+        },
+        {
+          "i": 9,
+          "h": 7078.86,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "FortalezasInnovaciónEficienciaSegu"
+        },
+        {
+          "i": 10,
+          "h": 3522.59,
+          "mt": "0px",
+          "pt": "57.5938px",
+          "pb": "57.5938px",
+          "txt": "Esta entidad ha recibido una ayuda"
+        }
+      ],
+      "nAnclas": 117,
+      "nImgs": 48
+    },
+    "/kunak-oem-industrial-iot-en-el-basque-industry-4-0": {
+      "docH": 2188,
+      "h1": {
+        "x": 100.8,
+        "y": 332.58,
+        "w": 911.75,
+        "h": 105.84,
+        "txt": "Kunak OEM PCB para IoT Industrial en Basque Industry 4.0"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 225,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": ""
+        },
+        {
+          "i": 1,
+          "h": 1318.67,
+          "mt": "0px",
+          "pt": "57.59px",
+          "pb": "57.59px",
+          "txt": "Kunak OEM PCB para IoT Industrial "
+        }
+      ],
+      "nAnclas": 119,
+      "nImgs": 15
+    }
+  }
+}
