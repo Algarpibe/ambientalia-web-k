@@ -1,0 +1,156 @@
+═══ 1 · LAS DOS UNIDADES — término y ruta, las dos con su cardinal
+
+  ── categoria
+     TÉRMINOS declarados en LISTA-DERIVADA .... 6
+     RUTAS capturadas en disco (html) ......... 27
+     términos cuyo `fichero` NO EXISTE ........ 2  ⛔
+         ⛔ /es/categoría/eventos/   →   categoria/categoría/eventos/index.html
+         ⛔ /es/categoría/noticias/   →   categoria/categoría/noticias/index.html
+
+  ── autor
+     TÉRMINOS declarados en LISTA-DERIVADA .... 6
+     RUTAS capturadas en disco (html) ......... 34
+     términos cuyo `fichero` NO EXISTE ........ 0
+
+  ── taxonomia-sector
+     TÉRMINOS declarados en LISTA-DERIVADA .... 11
+     RUTAS capturadas en disco (html) ......... 13
+     términos cuyo `fichero` NO EXISTE ........ 5  ⛔
+         ⛔ /es/sector/industria/   →   taxonomia-sector/sector/industria/index.html
+         ⛔ /es/sector/investigacion-consultoria/   →   taxonomia-sector/sector/investigacion-consultoria/index.html
+         ⛔ /es/sector/mineria/   →   taxonomia-sector/sector/mineria/index.html
+         ⛔ /es/sector/obras/   →   taxonomia-sector/sector/obras/index.html
+         ⛔ /es/sector/urbano/   →   taxonomia-sector/sector/urbano/index.html
+
+═══ 2 · CADA TÉRMINO, CON SU PAGINACIÓN Y SU RÉGIMEN
+
+  ── categoria
+     término                              rutas  régimen  tarjetas  cuerpoB   título
+     /es/categoria/articulos/                16   -T           9    21405   Artículos sobre calidad del aire y conta
+     /es/categoria/eventos/                   4   -T           9    18271   Eventos archivos - Kunak
+     /es/categoría/eventos/                   0   ⛔ SIN CAPTURA EN DISCO
+     /es/categoria/noticias/                  6   -T           9    18847   Noticias archivos - Kunak
+     /es/categoría/noticias/                  0   ⛔ SIN CAPTURA EN DISCO
+     /es/categoria/podcast-es/                1   -T           2     7650   Podcast archivos - Kunak
+     TOTAL                                   27
+
+  ── autor
+     término                              rutas  régimen  tarjetas  cuerpoB   título
+     /es/author/admin/                        1   --           1     2897   admin, autor en Kunak
+     /es/author/edurne-ibarrola/              1   --           3     8982   Edurne Ibarrola-Ulzurrun, PhD, autor en 
+     /es/author/irene/                        1   --           2     6962   Irene Lara-Ibeas, PhD, autor en Kunak
+     /es/author/javier-fernandez/             1   --           3     6853   Fco. Javier Fernández Huerta, autor en K
+     /es/author/kunak/                       29   --           6    12978   Equipo de marketing y comunicación, auto
+     /es/author/mar_ramirez/                  1   --           0     1469   Mar Ramírez, autor en Kunak
+     TOTAL                                   34
+
+  ── taxonomia-sector
+     término                              rutas  régimen  tarjetas  cuerpoB   título
+     /es/sector/edar/                         1   -T           0     3351   EDAR / PTAR Archives - Kunak
+     /es/sector/industria/                    2   ⛔ SIN CAPTURA EN DISCO
+     /es/sector/investigacion-consultoria/    1   ⛔ SIN CAPTURA EN DISCO
+     /es/sector/metalurgia/                   1   -T           0     3350   Metalurgia Archives - Kunak
+     /es/sector/mineria/                      0   ⛔ SIN CAPTURA EN DISCO
+     /es/sector/obras/                        0   ⛔ SIN CAPTURA EN DISCO
+     /es/sector/oil-gas-es/                   1   -T           0     3353   Oil &amp; Gas Archives - Kunak
+     /es/sector/olores/                       1   -T           0     3346   Olores Archives - Kunak
+     /es/sector/puertos/                      2   -T           0     3361   Puertos y aeropuertos Archives - Kunak
+     /es/sector/sports/                       1   -T           0     3346   Sports Archives - Kunak
+     /es/sector/urbano/                       3   ⛔ SIN CAPTURA EN DISCO
+     TOTAL                                   13
+
+═══ 3 · CRUCE DE UNIDADES
+
+  familia            TÉRMINOS   RUTAS   ¿de dónde sale la diferencia?
+  categoria               6       27   23 son `/page/N` · 2 término(s) sin captura
+  autor                   6       34   28 son `/page/N` · 0 término(s) sin captura
+  taxonomia-sector       11       13   7 son `/page/N` · 5 término(s) sin captura
+
+  ⇒ `autor` es el caso que el plan nombra: **6 TÉRMINOS** y **34 RUTAS**, y las
+    dos cifras son ciertas. Las 28 de diferencia son la paginación de UN solo
+    término. Escribir «6» donde el plan dice «34» —o al revés— es §*corregir un
+    denominador no es sustituirlo en todas partes*.
+
+═══ 4 · ¿QUÉ TAXONOMÍA EXIGE LA TARJETA? — sobre los 35 listados capturados
+
+  listados capturados: 35
+     autor (`/author/`)                                   0 de 35
+     categoría (`/categoria/`)                           15 de 35
+     sector (`/sector/`)                                  1 de 35
+         /es/casos-de-exito/
+     sectores (`/sectores/`, la PÁGINA no la taxonomía)  29 de 35
+
+  ⚠ Esto contesta «¿ENLAZA la tarjeta a esa taxonomía?», NO «¿la necesita el
+    MODELO?». Un listado puede filtrar por una taxonomía sin enlazarla —el
+    filtro de 12 botones de `casos-de-exito` es justo eso—, así que un 0 aquí
+    es una PREGUNTA para el dato, no un veredicto.
+
+═══ 5 · LO QUE ESTE CENSO NO CIERRA, con su cardinal
+
+  · términos declarados SIN CAPTURA en disco: 7
+      /es/categoría/eventos/
+      /es/categoría/noticias/
+      /es/sector/industria/
+      /es/sector/investigacion-consultoria/
+      /es/sector/mineria/
+      /es/sector/obras/
+      /es/sector/urbano/
+  · **el código de estado NO se puede leer offline**: un corpus guarda el CUERPO,
+    no el 301. Así que este censo no puede confirmar ni refutar «X redirige».
+
+  ⚠ PERO LA AUSENCIA TIENE FORMA, Y LA FORMA CONSTRIÑE — se escribe lo que el
+    dato SÍ dice, sin convertirlo en el veredicto que no puede dar:
+      · de los 5 `/es/sector/*` sin página 1, **3 SÍ tienen `/page/N` capturado**:
+        industria · investigacion-consultoria · urbano
+      · y 2 no tienen nada: mineria · obras
+      · «el término entero redirige» NO explica el primer grupo: si la base 301,
+        su paginación tendría que faltar también. Lo que SÍ encaja es «la BASE
+        redirige y su paginación no» — y eso queda **SIN PROBAR** hasta que
+        alguien lea un código de estado. No se cablea ninguna de las dos.
+      · las 2 formas acentuadas de `categoria` no tienen NADA capturado, que es
+        compatible con el 301 que el plan midió y **no lo demuestra**.
+  · **el eje COMPORTAMIENTO**: el filtro de 12 botones de `casos-de-exito` —el
+    único consumidor conocido de la taxonomía `sector`— es interacción, y este
+    censo no la mide. Es la misma campaña que `/sistema-interno-de-informacion`.
+
+═══ 6 · CANDIDATOS DE MODELO, con su SEPARADORA (no se decide ninguno)
+
+  El régimen de cada familia, que es lo que decide QUÉ LECTURA vale (§CLAUDE.md):
+     categoria           {"-T":4}
+     autor               {"--":6}
+     taxonomia-sector    {"-T":6}
+
+
+  ¿QUÉ SIRVE CADA FAMILIA? — tarjetas por los TRES selectores, y bytes de cuerpo:
+     familia            términos   tarjetas (min–max)   cuerpo (min–max bytes)
+     categoria               4      2–9                  7650–21405
+     autor                   6      0–6                  1469–12978
+     taxonomia-sector        6      0–0                  3346–3361
+
+  ⇒ **LA TAXONOMÍA `sector` NO LISTA NADA: 6 de 6 capturados con 0 tarjetas por los
+    TRES selectores**, y su cuerpo son ~3.3 KB de MIGA + BARRA LATERAL. No es
+    que liste poco: no lista. Y su paginación tampoco (comprobado en `/page/N`).
+
+    Eso PARTE la pregunta de F3-4 en dos que se venían tratando como una:
+      (a) la RELACIÓN `caso → sector`, que SÍ tiene consumidor medido — el
+          filtro de 12 botones de `casos-de-exito`, y es la ÚNICA de las 35
+          formas de listado que enlaza a `/sector/`;
+      (b) el ARCHIVO `/es/sector/*`, que **no lo consume nadie y no sirve
+          contenido**. Replicarlo es emitir rutas de cascarón vacío — la misma
+          decisión que `D2.5 · REPLICAR TAL CUAL` tomó para las 55 que responden
+          200 sin listar, y por tanto con precedente, no sin él.
+
+    ⚠ (a) y (b) son SEPARABLES: se puede modelar la relación sin emitir el
+      archivo, y al revés. Tratarlas como una sola decisión es lo que hace que
+      «modelar la taxonomía sector» parezca una cosa cuando son dos.
+
+  Y la pregunta que separa un modelo de otro, familia a familia:
+     · ¿es una COLECCIÓN (el término tiene contenido propio: título, texto,
+       imagen) o es sólo una CONSULTA (§*un listado no tiene contenido propio*)?
+       SEPARADORA: un término con contenido que NO se derive de sus miembros.
+     · ¿la relación va en el MIEMBRO (entrada → término) o en el TÉRMINO
+       (término → entradas)? SEPARADORA: un miembro en DOS términos de la
+       misma taxonomía, o un término con orden propio distinto del de fecha.
+
+  ⚠ Si dos candidatos predicen lo mismo sobre TODO el dominio, son UNO SOLO y
+    se dice — no se ficha una indeterminación que no existe.
