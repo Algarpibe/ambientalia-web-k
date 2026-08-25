@@ -3839,6 +3839,45 @@ que **el fichero que se iba a escribir tenía que salir en esa lista y no salía
 o sea, **un caso conocido de antemano**, que es la forma más barata de auditar un
 cero que uno mismo acaba de producir.
 
+⚠⚠ **Y SU HERMANA, QUE ES LA QUE DEJA SONDAS MUERTAS DURANTE SEMANAS (2026-08-25):
+UN COMANDO REGISTRADO TAMPOCO PRUEBA QUE SU SONDA PUEDA TERMINAR.**
+
+La regla 26 persigue un `npm run` cuyo fichero **no existe**. Ésta persigue el
+caso en que el fichero existe, compila, arranca, hace todo su trabajo — **y
+muere antes de publicar**:
+
+> **«Liberar el canónico hace que el consumidor caducado falle EN VOZ ALTA»**
+> (§regla 9, 8.º caso) **sólo cobra si alguien lo corre.** Un consumidor que
+> CABLEA un nombre de `medidas/` y al que un renombre de §regla 5bis le quitó el
+> fichero **no avisa: espera**. Y si es una sonda registrada en `package.json`,
+> el registro sigue prometiéndola.
+
+**Medido:** el renombre de un canónico dejó **4 lectores muertos**, los cuatro
+**sin guarda** —`readFileSync` pelado— y uno de ellos una **sonda registrada**
+(`qa:f33-spec`), que levanta Chrome, mide 31 rutas y revienta con `ENOENT`
+**en su cruce**, o sea después de todo el trabajo.
+
+**Y las dos clases de defecto se arreglan AL REVÉS, que es lo que hay que
+recordar:**
+
+| clase | modo de fallo | arreglo |
+|---|---|---|
+| **resuelve por mtime** sin descartar marcadores | lee un artefacto de §regla 7 | pasarlo a `eligeCongeladaAnterior` |
+| **CABLEA un canónico** | §regla 5: lee la PRIMERA foto — o **nada**, si lo liberaron | `eligeCongeladaAnterior` **NO lo arregla**: hay que nombrar lo que exista **y declarar por qué es lícito** |
+
+**Operativamente, y son dos:**
+
+1. **al renombrar un canónico, DERIVA sus lectores** —`grep` del nombre— y
+   arréglalos en la misma tanda. Liberar el nombre sin barrer deja el grito
+   guardado para quien pase;
+2. **y todo cableado lleva guarda con diagnóstico**, no `readFileSync` pelado:
+   un `ENOENT` no dice *«esta familia no tiene canónico, mira si la
+   renombraron»* — y ésa es toda la diferencia entre diez minutos y una tanda.
+
+> **Y la señal para buscarlo, que cuesta un `grep`:** un literal `medidas/*.json`
+> cableado **que no resuelve hoy**. Es la comprobación más barata del catálogo y
+> no la corría nadie.
+
 **27 · UN PROCESO QUE ABORTA EN EL PRIMER FALLO CONTESTA «HAY AL MENOS UNO»,
 NUNCA «HAY N» — Y SU RESPUESTA SE LEE COMO UN INVENTARIO.** (2026-08-23)
 
@@ -4162,6 +4201,39 @@ después— gana en los dos.
 y si la tuya no la iguala, el arreglo sólo vale en un ancho. Es §*una regla en el
 NIVEL equivocado no da error* con el nivel puesto en la **especificidad** en vez
 de en el elemento.
+
+**36 · ATRIBUIR UNA PROPIEDAD A UNA CLASE EXIGE SABER SI LA CLASE ES EL SUJETO
+DEL SELECTOR O SU CONTEXTO — Y SI ES CONTEXTO, COMPARARLA EN SU NODO DA Δ0 CON
+EL DEFECTO PUESTO.** (2026-08-25)
+
+Buscar *«qué gana la clase X»* con un `grep` de `.X` sobre las hojas devuelve
+**dos cosas que no son la misma**, y las dos se leen igual:
+
+> **`.X { prop }` dice que la propiedad cae en el nodo que lleva la clase.
+> `.X .otra { prop }` dice que cae en un DESCENDIENTE.** El segundo también es
+> «efecto de X» —es real y cuenta— pero **no se puede comparar en el mismo
+> nodo**, y atribuírselo a X produce un enunciado falso con una medida de
+> coartada.
+
+**Medido:** un censo de presets concluyó que `et_pb_with_background` **gana
+`width`**. Una clase que se llama «con fondo» ganando `width` y **no**
+`background` es el número que hay que mirar dos veces — y detrás estaba
+`.et_pb_posts…article .et_pb_with_background .et_pb_row{width:80%}`, o sea la
+propiedad en un **descendiente**, y sólo bajo un ancestro que esos nodos pueden
+no tener. Separados los dos papeles, la clase pasó a **0 reglas como sujeto y 12
+como contexto**. Igual `et_pb_sticky_module`.
+
+**Se separa con una comprobación de una línea:** la clase es **SUJETO** si
+aparece en el **último compuesto** del selector (tras partir por combinadores);
+si no, es **CONTEXTO**. Con listas separadas por comas, cada alternativa tiene
+su propio papel.
+
+> **Y la consecuencia operativa es de DISEÑO DE SONDA, no de alcance:** para un
+> preset cuyo efecto vive en los descendientes, una comparación de dos lados
+> **sobre el nodo que lleva la clase daría Δ0 aunque el defecto esté puesto** —
+> el nodo no cambia, cambian sus hijos. Es §*una regla en el NIVEL equivocado no
+> da error* con el nivel puesto en **quién recibe la declaración**, y aquí se
+> sabe de antemano en qué nivel hay que mirar cada uno.
 
 ## Comandos
 

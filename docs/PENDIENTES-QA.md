@@ -21102,14 +21102,75 @@ instancias, no huella de px).
 - **7 términos declarados sin captura en disco**: 2 formas acentuadas de
   `categoria` + 5 de `sector` (`industria` · `investigacion-consultoria` ·
   `mineria` · `obras` · `urbano`);
+
+  > ⚠ **Y ese 7 depende de una pregunta abierta que cambia el denominador de
+  > `categoria` — derivada en la 109.ª, no cerrada.** Las 2 acentuadas son
+  > `/es/categoría/eventos/` y `/es/categoría/noticias/`, y sus gemelas **sin
+  > tilde están capturadas**. La tilde no está en el slug del término: está en
+  > el **segmento de la taxonomía**.
+  >
+  > **Lo derivado, con sus dos lados:**
+  >
+  > | canal | sin tilde | con tilde |
+  > |---|---|---|
+  > | `href` en el HTML servido del corpus | **967** | **0** (y 0 en `%C3%AD`) |
+  > | `fuentes` en `LISTA-DERIVADA.json` | `["corpus","clon"]` | `["corpus"]` |
+  > | `familia` que la lista les da | `categoria` | **`categoria-tilde`** |
+  >
+  > O sea que **nada del original navega a la forma con tilde**, y la propia
+  > lista ya las tiene en una familia aparte. A eso se añade una deducción —y se
+  > marca como tal—: **una taxonomía de WordPress tiene UNA sola base de
+  > reescritura**, así que `/categoria/` y `/categoría/` no pueden ser las dos
+  > canónicas; como mucho una es alias de la otra.
+  >
+  > **La separadora, nombrada: el código de estado de `/es/categoría/eventos/`.**
+  > 200 con contenido propio ⇒ son **6 términos**; 301 a la forma sin tilde ⇒
+  > son **4 + 2 duplicados de codificación**, y entonces «7 sin captura» pasa a
+  > ser **5** —los de `sector`— y el denominador de `categoria` baja de 6 a 4.
+  > Una petición, y **necesita red**: va en la tanda de F3-4.
+  >
+  > **Hasta entonces se escriben las dos lecturas con su unidad**, no se elige:
+  > *«6 URLs declaradas · 4 términos con captura y navegación»*.
 - **el código de estado no se puede leer offline** — un corpus guarda el CUERPO,
   no el 301. Así que este censo **no puede confirmar ni refutar** «X redirige».
 
-> ⚠ **Pero la ausencia tiene FORMA, y la forma constriñe.** De los 5 de `sector`
-> sin página 1, **3 SÍ tienen `/page/N` capturado**. Eso **refuta** «el término
-> entero redirige» —si la base 301, su paginación tendría que faltar también— y
-> deja **«la base redirige y su paginación no»** como hipótesis **SIN PROBAR**.
-> No se cablea ninguna de las dos.
+> ⚠ **Pero la ausencia tiene FORMA, y la forma CONSTRIÑE.** De los 5 de `sector`
+> sin página 1, **3 SÍ tienen `/page/N` capturado en disco** —verificado en la
+> 109.ª: `industria/page/{2,3}` · `investigacion-consultoria/page/2` ·
+> `urbano/page/{2,3,4}`, cuerpos reales de ~47 KB de marcado—.
+
+> ⚠⚠ **Y ESO ES UNA CONSTRICCIÓN, NO UNA REFUTACIÓN — corregido en la 109.ª.**
+> La v1 de esta ficha escribió *«eso REFUTA "el término entero redirige"»*, y no
+> puede:
+>
+> 1. **un cuerpo capturado no lleva su código de estado.** Es lo que esta misma
+>    ficha declara dos líneas más arriba (*«un corpus guarda el CUERPO, no el
+>    301»*), y vale igual para el `/page/N` que para la base;
+> 2. **y si la campaña siguió redirecciones, un cuerpo bajo la ruta pedida puede
+>    ser el del DESTINO.** Que la campaña las siguiera o no **no está
+>    determinado offline**, así que la presencia del fichero no distingue «esta
+>    URL responde 200» de «esta URL redirige y se guardó lo que devolvió»;
+> 3. el paso *«si la base 301, su paginación tendría que faltar también»* es una
+>    **deducción sobre el comportamiento de WordPress**, no una medición. Puede
+>    ser cierta y no está medida.
+>
+> **Lo que la forma SÍ constriñe, y es lo derivable:** los `<title>` de esos
+> `/page/N` declaran **«Página 2 de 3»**, **«Página 2 de 4»** y **«Página 2 de
+> 2»** — o sea que **el original afirma que existe una página 1** para esos tres
+> términos. Eso acota hacia «la base resuelve a algo», y **sigue sin decir 200
+> contra 301**.
+>
+> **La separadora, nombrada:** el **código de estado de `/es/sector/<term>/`**.
+> Es una petición por término y **necesita red** — va en la tanda de F3-4, no
+> aquí. Hasta entonces las dos hipótesis siguen **SIN PROBAR** y no se cablea
+> ninguna.
+
+> ✅ **Y lo que SÍ se cerró de paso en la 109.ª, cruzando contra la paginación:**
+> la afirmación *«su paginación tampoco lista»* estaba medida sobre la página 1.
+> Re-medida sobre las **7 capturas de `/page/N`** de `sector` —y sobre el
+> marcado sin `<style>`, que es donde falla el censo ingenuo— da **0 tarjetas
+> por los tres selectores en 7 de 7**. La ficha se sostiene, ahora con su
+> denominador.
 
 - **el eje COMPORTAMIENTO**: el filtro de 12 botones —el único consumidor
   conocido de `sector`— es interacción, y este censo no la mide. Es la misma
@@ -21144,3 +21205,136 @@ No construyó nada de F3-4 · no decidió ninguna deuda de modelo · no tocó
 `FilaTb`/`CascaronTb` ni la miga CASCARÓN ni `F3-3-CODE-SEGURIDAD` · no capturó
 las 14 hojas `et-cache` ni persiguió los 13 hot assets · no midió
 `/sistema-interno-de-informacion`.
+
+---
+
+## ⚠ SONDAS-SIN-CONTRATO · `qa:lib` lleva en rojo desde la 107.ª y no estaba fichado (2026-08-25, 109.ª tanda)
+
+Encontrado al verificar un cambio en `scripts/qa/f33-spec.mjs` durante el
+PASO 0 de la 109.ª. **No es de esta tanda**, y la atribución está derivada, no
+supuesta:
+
+```
+❌ las 211 sondas COMPILAN y declaran su mínimo — NO CONFORMES:
+     f33-distancia.mjs (sin declarar) · kb-barra.neg.mjs (sin declarar)   ESPERADO 0
+❌ 1 de 114 aserciones fallidas
+```
+
+| comprobación | resultado |
+|---|---|
+| ¿las tocó la 109.ª? | **no** — `git status` las da intactas |
+| último commit que tocó cada una | `331c2b0` y `1b577d6`, **las dos de la 107.ª** (2026-08-25) |
+| ¿estaba fichado? | **no** — `grep` sobre este documento daba 0 |
+| ¿está `f33-spec.mjs` entre las no conformes? | **no**, así que el cambio de la 109.ª no lo causó |
+
+**Por qué importa y no es cosmético:** el contrato de `Evaluadas` es lo que
+impide que *«0 comparado»* salga verde (§sondas 4bis, cinco instancias). Una
+sonda que no declara su mínimo **queda fuera de esa guarda**, que es exactamente
+el agujero que el contrato existe para cerrar — y encima `qa:lib` en rojo
+permanente entrena a leerlo como ruido de fondo.
+
+> ⚠ **Y es §regla 21 en su forma más barata: lo primero ante un negativo rojo no
+> es abrir el negativo, es correr su sonda sola.** Aquí ni siquiera hizo falta:
+> `qa:lib` **nombra** las dos no conformes en su propia salida. El rojo es
+> legítimo y se arregla **en las dos sondas**, no en la guarda.
+
+**Lo que NO se ha hecho aquí, y por qué:** declarar el mínimo de esas dos exige
+saber cuántas unidades debería evaluar cada una, y `minimo` **se deriva** (de
+`RUTAS.length` o equivalente), nunca se escribe (§sondas 4bis). Eso es trabajo
+sobre dos sondas de la 107.ª y cae fuera del encargo de la 109.ª, que es de
+derivación. Se ficha con su número para que la siguiente lo recoja.
+
+---
+
+## 109.ª · EL CIERRE — la clase no era el resolutor, y los tres «NO» siguen siendo preguntas (2026-08-25)
+
+Tanda de **derivación**: cero líneas de `src/`, sin Docker, sin clon servido,
+sin decidir ningún modelo. Cuatro cortes limpios.
+
+### Lo que cada escalón dejó, con su número
+
+| escalón | resultado |
+|---|---|
+| **PASO 0** | el «9 resuelven por mtime» del encargo era **léxico**: los resolutores reales son **3** y los **3 legítimos**, ⇒ **no se unifica nada**. El daño estaba en **otra clase que el encargo no nombra** — *cablear un canónico*: **4 lectores muertos** de `f33-geo.json`, uno de ellos la sonda registrada `qa:f33-spec`. Arreglados; censo después: **LIBERADO 0 · AUSENTE 0** |
+| **ESCALÓN 1** | el censo de presets tenía **tres** unidades, no dos: **16 pares · 14 clases**, y una tercera —«las dos fichadas son 2 de 14»— que mezclaba **fichas** con **clases**. Derivado: quedan **7 sin fichar, no 12** |
+| **ESCALÓN 2** | de los 16 pares, **0 se cierran offline**: **14 NO CONTESTABLE · 2 «otro canal?»**. `f33-cmp` compara **geometría** y **10 de 16 ganan `text-align`** |
+| **ESCALÓN 3** | `dvmd_table_maker` **no es una tabla HTML** (`<table>` = 0): rejilla de `<div>`, **11 × 5 = 55 celdas**, **tres** papeles. El **contenido cabe entero**; lo que no cabe es la **estructura**: **22 de 55 (40 %)** |
+
+### El pre-registro, contra el resultado — y sale partido en dos
+
+Se escribieron **dos** pre-registros y se commitearon **antes** de medir.
+
+| predicción | resultado |
+|---|---|
+| P1.a · `hoja-f33-derivable.mjs` revienta hoy | ✅ `ENOENT`, exit 1, **0 líneas** de stdout |
+| P1.b · su `.log` cita algo dentro del alcance caducado **y el «100 % a 390» es la firma de la captura sin hojas** | **½ ✅ ½ ❌** — estructuralmente sí; **el mecanismo, REFUTADO**: el camino bueno da el mismo 100 % |
+| P1.c · 1 bloque tocado, 2 intactos | ✅ exacto |
+| P2 · el defecto está **SIN EJERCITAR**, no ausente | ✅ |
+| P3 · el «9» es léxico y la mayoría legítimos | ✅ **3 · 3 legítimos · 0 defectos** |
+| presets · reparto por par (8 / 3 / 5) | ❌ **2 / 0 / 14** |
+| presets · **estructural**: ≥5 NO CONTESTABLE y **0 cerrados** | ✅ **14 y 0**, y su refutación escrita («≥3 cerrados») no se produjo |
+
+> **La lección es el reparto, no el acierto:** las apuestas GRANULARES fallaron
+> las dos veces y las ESTRUCTURALES acertaron las dos. Y las granulares fallaron
+> **por lo mismo**: una distinción que el pre-registro no tenía —SUJETO/CONTEXTO
+> en el escalón 2, y el mecanismo del 100 % en el PASO 0—. Un pre-registro no
+> mide lo que sabes: mide **qué distinciones te faltaban**, y por eso el que
+> falla informa más que el que acierta.
+
+### Seis defectos de instrumento, todos cazados por INVEROSÍMILES
+
+Ninguno dio error. Se listan porque **cinco son de la familia que este documento
+persigue** y el sexto es nuevo:
+
+1. **el detector de resolutores sobre-casó** (`corpus/INDICE.json` contado como
+   congelada de `medidas/`), **confundió LECTOR con ESCRITOR** (`w()` es el
+   productor) y **contó un COMENTARIO como lectura** — las tres inflando hacia
+   arriba, que es la dirección que se lee como hallazgo;
+2. **se colgó** por backtracking cuadrático: **0 bytes y el proceso vivo**;
+3. **no compiló** por meter el token de cierre de comentario **dentro de un
+   comentario** — la regla que este repo tiene escrita para CSS, cometida al
+   citar un regex;
+4. **`et_pb_with_background` "gana `width`"** — una clase «con fondo» ganando
+   `width` y no `background`. Era una regla sobre un **descendiente**: §regla 36,
+   nueva en `CLAUDE.md`;
+5. **«5 tablas de 11 filas × 1 columna»** en una política de cookies. Era **UNA**
+   tabla de 11 × 5: `dvmd_table_maker_item_N` es el ordinal de la **COLUMNA**;
+6. **«la fila 0 es mixta»** — no lo era: hay un **tercer** papel (`rfoot`) que un
+   binario `rhead`/resto **no puede devolver**.
+
+> ⚠⚠ **Y §regla 5ter EN DIRECTO, en la misma tanda que la cometió: ARREGLAR EL
+> OBJETO CADUCÓ EL DETECTOR.** Al reparar los 4 lectores muertos se les puso el
+> nombre en una **constante**, con lo que ninguna línea tiene ya `medidas/` y el
+> `.json` a la vez — **los 4 desaparecieron del censo**. El siguiente barrido
+> habría informado **0 muertos por estar CIEGO, no por estar limpio**. Lo dijo
+> **el control** (4/5); sin un caso conocido de antemano, ese cero se habría
+> leído como el arreglo.
+
+### El barrido de §regla 12, acotado y con su número
+
+Barridas las actas de esta tanda buscando enunciados con forma de **regla
+general** que no estuvieran en `CLAUDE.md`: **2 de 6 candidatos**, subidos —
+
+- **§regla 26, hermana** — *un comando REGISTRADO tampoco prueba que su sonda
+  pueda TERMINAR*, con la tabla de las **dos clases de defecto que se arreglan
+  al revés** y las dos mitades operativas;
+- **§regla 36** — *SUJETO contra CONTEXTO al atribuir una propiedad a una clase*,
+  con su consecuencia de **diseño de sonda**.
+
+Los otros 4 son **instancias** de reglas que ya están (§sondas 4 ×3, §regla 5ter)
+y se quedan aquí como evidencia.
+
+### Lo que esta tanda NO hizo, y sigue abierto
+
+- **nada de F3-4**: ni los 5 términos de `sector` sin captura, ni el código de
+  estado, ni la decisión relación/archivo. **Necesita red**;
+- **corregidas dos lecturas del registro que viajaban** (arriba, en sus fichas):
+  el `/page/N` de `sector` es una **CONSTRICCIÓN, no una refutación** —un cuerpo
+  capturado no lleva su código de estado—, y la pregunta de `categoria` **con
+  tilde** queda fichada con **su separadora nombrada** (967 enlaces sin tilde
+  contra **0** con tilde);
+- **fichado un rojo preexistente**: `qa:lib` lleva en rojo desde la **107.ª** con
+  2 sondas sin declarar mínimo, y no estaba en este documento (§SONDAS-SIN-CONTRATO);
+- **la sonda que cerraría el escalón 2 no existe** y queda nombrada: de dos
+  lados, sobre la **propiedad ganadora**, en el **nivel** que la §regla 36 dice
+  para cada par, y **a los dos anchos**.
