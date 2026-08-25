@@ -4022,6 +4022,65 @@ Corregido, el reparto pasó de **60 faltan / 13 sobran** a **47 / 0**.
    diferencia** — que es §*un cardinal es un contenedor* con el contenedor puesto
    en la resta.
 
+**34 · UN CANAL QUE NO ROMPE NADA NO TIENE DISPARADOR — Y EL ÚNICO QUE LO
+DELATA ES MEDIR POR ELEMENTO, PORQUE EL TOTAL LO ABSORBE.** (2026-08-25)
+
+§EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA lleva
+cuatro canales anotados, y de los cuatro **tres mataron un seed**. De ahí que la
+regla se lea con la forma *«el canal que falta aparece al sembrar»*. Hay una
+clase que no aparece nunca por ese camino:
+
+> **Un canal cuya ausencia no rompe nada —una FUENTE que no carga, una hoja de
+> icono, un `srcset` que cae— deja la página RENDERIZANDO.** No hay excepción,
+> no hay 404 visible y no hay seed que muera. Y si además su efecto se lee por
+> un TOTAL, el total lo absorbe y el canal sale **declarado despreciable con una
+> medida real de coartada**.
+
+**Medido, y las dos cifras son del mismo experimento:** con Manrope cargada
+frente a sin ella, **`docH` se mueve −1** y **944 de 1257 cajas (75.1 %) se
+mueven**, con `|Δh|` hasta 28.00 y `|Δw|` hasta 52.42. La primera versión de la
+derivación **sólo medía `docH`** e iba a fichar *«−1, se ficha con su número»*.
+
+**Las dos mitades operativas:**
+
+1. **el efecto de un canal se mide POR ELEMENTO, nunca por el total de la
+   página** — es §*la causa común* con el contenedor puesto en `docH`, y aquí el
+   total no es que esté inflado: es que **tiene el signo de «no pasa nada»**;
+2. **y el control de un canal sin síntoma no puede ser un número: es un
+   BOOLEANO de que el canal llegó** (`fuenteCargada`, `resueltas/enlazadas`).
+   Un umbral sobre una magnitud que el canal casi no mueve no puede dispararse.
+
+> **Y el corolario de diseño, que es lo que evita la quinta vez:** los canales se
+> enumeran **antes de necesitarlos** —recorriendo lo que el documento PIDE, no lo
+> que algún extractor ya sabe leer—, y **cada uno se publica con su cardinal**,
+> incluidos los que salen a cero. Un canal que sólo se descubre cuando algo se
+> rompe es un canal que sólo se descubre **si rompe**.
+
+**35 · UN ARREGLO DE CSS SE VERIFICA A LOS DOS ANCHOS PORQUE LA CASCADA NO ES
+LA MISMA — Y EL ANCHO DONDE LA REGLA NO COMPITE NO PUEDE VERLA.** (2026-08-25)
+
+§EL CONTRATO NO ES EL MISMO A TODOS LOS ANCHOS y §la regla espejo ya mandan medir
+a 1440 y 390. Le faltaba el caso en que **no es el CONTENIDO el que cambia con el
+ancho, sino QUIÉN GANA LA CASCADA**:
+
+> **Un `@media` mete en juego selectores que al otro ancho no existen, así que la
+> especificidad ganadora de una propiedad puede ser DISTINTA a 1440 y a 390.** Un
+> arreglo verificado en el ancho donde su regla no tiene rival sale perfecto — y
+> es el ancho donde **no se puede saber si gana**.
+
+**Medido:** `.f33-toggle { padding: 20px }` es **(0,1,0)**. A ≤980 hay un
+`@media` con `.f33-col-1_2 > .f33-modulo`, que es **(0,2,0)** y devuelve
+`padding-bottom: 0`. Resultado: a **1440** el arreglo daba `h` Δ0 en **10 de
+10**; a **390** el mismo código dejaba el módulo **peor que antes de tocarlo**
+(24 → 30 pares distintos). Con la clase en el mismo elemento —(0,2,0), declarada
+después— gana en los dos.
+
+**Operativamente, y cuesta una comprobación:** antes de escribir una regla nueva,
+**mira qué especificidad tiene la que ya toca esa propiedad en los `@media`** —
+y si la tuya no la iguala, el arreglo sólo vale en un ancho. Es §*una regla en el
+NIVEL equivocado no da error* con el nivel puesto en la **especificidad** en vez
+de en el elemento.
+
 ## Comandos
 
 ```bash

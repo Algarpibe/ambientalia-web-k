@@ -1,0 +1,112 @@
+═══ tipos-sin-emitir · qué sirve el original que el clon NO emite (OFFLINE)
+
+  HTML del corpus            788
+  familias de corpus         9   (casos · documentos-cientificos · entradas-blog · faqs · fase-3 · fase-3-sectores · productos · terminos-kunakpedia · transformado)
+  tipos distintos vistos     42
+  clases que el clon emite   98   (derivadas de apps/web/src/**.tsx, no de una lista)
+
+  ── B · FAMILIAS DE MÓDULO QUE NINGÚN ARQUETIPO EMITE: 4 ──
+     (30 clases distintas, que son 4 módulos: el resto es su marcado interno)
+
+     blog
+        documentos  55   ·   fase-3 55
+        clases      5   blog_item_0 · blog_item_1 · blog_item_2 · blog_item_3 · blog_item_4
+
+     dvmd_table_maker (plugin Divi Table Maker)
+        documentos  21   ·   fase-3 1 · productos 20
+        clases      22   dvmd_preload · dvmd_table_maker · dvmd_table_maker_item · dvmd_tm_cdata · dvmd_tm_col · dvmd_tm_col_even · dvmd_tm_col_first · dvmd_tm_col_last · dvmd_tm_col_odd · dvmd_tm_hover_enabled · dvmd_tm_rfoot · dvmd_tm_rhead · dvmd_tm_row · dvmd_tm_row_even · dvmd_tm_row_first · dvmd_tm_row_last · dvmd_tm_row_odd · dvmd_tm_table · dvmd_tm_tcell · dvmd_tm_tdata · dvmd_tm_trow · dvmd_tm_version_4_0
+
+     gallery
+        documentos  3   ·   fase-3 1 · productos 2
+        clases      2   gallery · gallery_item_0
+
+     cta
+        documentos  1   ·   productos 1
+        clases      1   cta
+
+  ── A · LOS DOCUMENTOS, NOMBRADOS y CRUZADOS CON LAS RUTAS QUE EL CLON EMITE ──
+     (universo de rutas: 416 del prerender-manifest, unidad RUTA)
+
+     blog · 55 documentos
+        el clon EMITE la ruta: 36  ·  NO la emite: 0  ·  sin canonical: 19
+        LAS QUE SÍ EMITE (las únicas que pueden ser defecto de un arquetipo construido):
+           /etiqueta/calidad-del-aire   ← fase-3/listados/etiqueta/calidad-del-aire/index.html
+           /etiqueta/calidad-del-aire/page/2   ← fase-3/listados/etiqueta/calidad-del-aire/page/2/index.html
+           /etiqueta/calidad-del-aire/page/3   ← fase-3/listados/etiqueta/calidad-del-aire/page/3/index.html
+           /etiqueta/calidad-del-aire/page/4   ← fase-3/listados/etiqueta/calidad-del-aire/page/4/index.html
+           /etiqueta/co2-es   ← fase-3/listados/etiqueta/co2-es/index.html
+           /etiqueta/contaminantes-atmosfericos   ← fase-3/listados/etiqueta/contaminantes-atmosfericos/index.html
+           /etiqueta/contaminantes-atmosfericos/page/2   ← fase-3/listados/etiqueta/contaminantes-atmosfericos/page/2/index.html
+           /etiqueta/contaminantes-atmosfericos/page/3   ← fase-3/listados/etiqueta/contaminantes-atmosfericos/page/3/index.html
+           /etiqueta/contaminantes-atmosfericos/page/4   ← fase-3/listados/etiqueta/contaminantes-atmosfericos/page/4/index.html
+           /etiqueta/cov   ← fase-3/listados/etiqueta/cov/index.html
+           /etiqueta/emisiones-industriales   ← fase-3/listados/etiqueta/emisiones-industriales/index.html
+           /etiqueta/emisiones-industriales/page/2   ← fase-3/listados/etiqueta/emisiones-industriales/page/2/index.html
+           /etiqueta/emisiones-industriales/page/3   ← fase-3/listados/etiqueta/emisiones-industriales/page/3/index.html
+           /etiqueta/gases-de-efecto-invernadero   ← fase-3/listados/etiqueta/gases-de-efecto-invernadero/index.html
+           /etiqueta/h2s-es   ← fase-3/listados/etiqueta/h2s-es/index.html
+           /etiqueta/malos-olores   ← fase-3/listados/etiqueta/malos-olores/index.html
+           /etiqueta/monitorizacion-ambiental   ← fase-3/listados/etiqueta/monitorizacion-ambiental/index.html
+           /etiqueta/monitorizacion-ambiental/page/10   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/10/index.html
+           /etiqueta/monitorizacion-ambiental/page/11   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/11/index.html
+           /etiqueta/monitorizacion-ambiental/page/2   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/2/index.html
+           /etiqueta/monitorizacion-ambiental/page/3   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/3/index.html
+           /etiqueta/monitorizacion-ambiental/page/4   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/4/index.html
+           /etiqueta/monitorizacion-ambiental/page/5   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/5/index.html
+           /etiqueta/monitorizacion-ambiental/page/6   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/6/index.html
+           /etiqueta/monitorizacion-ambiental/page/7   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/7/index.html
+           /etiqueta/monitorizacion-ambiental/page/8   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/8/index.html
+           /etiqueta/monitorizacion-ambiental/page/9   ← fase-3/listados/etiqueta/monitorizacion-ambiental/page/9/index.html
+           /etiqueta/normativa-de-calidad-del-aire   ← fase-3/listados/etiqueta/normativa-de-calidad-del-aire/index.html
+           /etiqueta/normativa-de-calidad-del-aire/page/2   ← fase-3/listados/etiqueta/normativa-de-calidad-del-aire/page/2/index.html
+           /etiqueta/normativa-de-calidad-del-aire/page/3   ← fase-3/listados/etiqueta/normativa-de-calidad-del-aire/page/3/index.html
+           /etiqueta/particulas-en-suspension   ← fase-3/listados/etiqueta/particulas-en-suspension/index.html
+           /etiqueta/particulas-en-suspension/page/2   ← fase-3/listados/etiqueta/particulas-en-suspension/page/2/index.html
+           /etiqueta/sensor-de-calidad-del-aire   ← fase-3/listados/etiqueta/sensor-de-calidad-del-aire/index.html
+           /etiqueta/sensor-de-calidad-del-aire/page/2   ← fase-3/listados/etiqueta/sensor-de-calidad-del-aire/page/2/index.html
+           /etiqueta/sensor-de-calidad-del-aire/page/3   ← fase-3/listados/etiqueta/sensor-de-calidad-del-aire/page/3/index.html
+           /etiqueta/sensor-de-calidad-del-aire/page/4   ← fase-3/listados/etiqueta/sensor-de-calidad-del-aire/page/4/index.html
+
+     dvmd_table_maker (plugin Divi Table Maker) · 21 documentos
+        el clon EMITE la ruta: 1  ·  NO la emite: 19  ·  sin canonical: 1
+        LAS QUE SÍ EMITE (las únicas que pueden ser defecto de un arquetipo construido):
+           /monitor-calidad-aire   ← productos/monitor-calidad-aire.html
+
+     gallery · 3 documentos
+        el clon EMITE la ruta: 2  ·  NO la emite: 1  ·  sin canonical: 0
+        LAS QUE SÍ EMITE (las únicas que pueden ser defecto de un arquetipo construido):
+           /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud   ← fase-3/articulos-kb/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/index.html
+           /monitor-calidad-aire   ← productos/monitor-calidad-aire.html
+
+     cta · 1 documentos
+        el clon EMITE la ruta: 1  ·  NO la emite: 0  ·  sin canonical: 0
+        LAS QUE SÍ EMITE (las únicas que pueden ser defecto de un arquetipo construido):
+           /monitor-calidad-aire   ← productos/monitor-calidad-aire.html
+
+  ── ⚠ LO QUE ESTE CENSO **NO** CONTESTA ──
+     Contesta «¿ESCRIBE el clon esta clase de Divi?», NO «¿SIRVE el clon este CONTENIDO?».
+     Son dos preguntas, y la segunda se contesta mirando el dato:
+       · `dvmd_table_maker` en `/monitor-calidad-aire` → el clon **SÍ sirve la tabla**,
+         por su propio canal (`lib/monitor.ts` §ESPECIFICACIONES: «257 x 270 x 225 mm»,
+         «PMMA, policarbonato y acero inoxidable», «Litio 26Ah»). NO es un hueco.
+       · `blog` en 55 documentos → los 36 con ruta emitida son archivos `/etiqueta/…`,
+         que el clon sirve con `TarjetaListado`. La CLASE de Divi no está; el CONTENIDO sí.
+     Un «no emite» de este censo es una PREGUNTA para el dato, no un veredicto.
+
+  ── LOS CUATRO, CON SU VEREDICTO TRAS MIRAR EL DATO ──
+     familia              rutas emitidas   veredicto
+     blog                            36    ✅ NO es hueco — `TarjetaListado` sirve el contenido
+     dvmd_table_maker                 1    ✅ NO es hueco — `/monitor-calidad-aire` sirve la tabla por
+                                           `lib/monitor.ts` §ESPECIFICACIONES (verificado al literal)
+     gallery                          2    ⛔ **HUECO REAL**, y una es de ARQUETIPO F3-3:
+                                           `/soporte/…/que-es-kunak-air-cloud` sirve un `et_pb_gallery`
+                                           con rótulo «Galería» y **11 `et_pb_gallery_item`**, y
+                                           `KIND_DE_DIVI` **no tiene `gallery`**: el esquema no lo expresa.
+                                           La otra es `/monitor-calidad-aire`. SIN COMPROBAR si el clon
+                                           la sirve por otro canal.
+     cta                              1    ⚠ SIN COMPROBAR — `/monitor-calidad-aire`. `KIND_DE_DIVI` no
+                                           lo tiene; el clon puede servirlo con su propio componente
+
+     ⚠ **NO se arregla nada aquí.** `gallery` es una decisión de ESQUEMA (un bloque
+        nuevo) y reabrir un arquetipo verificado es del propietario, con el número
+        delante. Fichas en PENDIENTES-QA.md.

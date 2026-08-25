@@ -1,4 +1,116 @@
-# HANDOFF — el `−47` no eran 47 módulos perdidos, y el `docH` no era un eje: los dos lados no se midieron en las mismas condiciones
+# HANDOFF — el artefacto no era «de imagen»: eran TRES canales, y el que más movía es el que no deja síntoma
+
+> ✅ **Tanda de la 106.ª, 2026-08-25. ESCALÓN 1 CERRADO (los tres canales) ·
+> ESCALÓN 2 en su primer defecto (el TOGGLE) · la derivación acotada CONTESTADA,
+> y en la dirección contraria a la que se encargó.**
+
+---
+
+## 0 · PASO 0 — los dos números del encargo anterior, con SU UNIDAD
+
+`prerender-manifest.routes` = **416 RUTAS** · filtrado del repo = **413
+PÁGINAS**. Las 3 son `/_global-error`, `/_not-found`, `/favicon.ico`. **Los dos
+son ciertos y se escriben los dos**: es la misma pareja que 385/382 en la 94.ª, y
+§*corregir un denominador no es sustituirlo en todas partes* dice exactamente que
+elegir uno rompe los sitios donde la unidad correcta era el otro.
+
+§regla 18 antes de tocar nada: `Get-CimInstance` → **31 `node.exe`, los 31
+servidores MCP**, y **0 chrome headless**. Ninguna sonda en vuelo.
+
+---
+
+## 1 · ESCALÓN 1 — el inventario que nadie había hecho
+
+La 105.ª tituló *«el artefacto de IMAGEN»*. §regla 32 no pide arreglar la imagen,
+pide **enumerar**. Derivado (`derivaciones/peticiones-f33.log`): **1516
+peticiones abortadas · image 1129 · stylesheet 265 · other 62 · document 60**, y
+de las 265 hojas **218 son inocuas** (el `goto` crudo que `setContent`
+sustituye). Las que importaban eran **las 47 de FUENTE**.
+
+> **Y el canal de fuentes es el que enseña, porque NO DEJA SÍNTOMA:** con Manrope
+> frente a sin ella, **`docH` se mueve −1** y **944 de 1257 cajas (75.1 %) se
+> mueven**. Leído por el total parece despreciable; leído por elemento mueve
+> tres cuartas partes de la página. **La primera versión de la derivación sólo
+> medía `docH`** e iba a cerrar en falso.
+
+Arreglo: `<img src>` + candidatos de `srcset` a copia local · las 4 hojas de
+fuente inyectadas · **intercepción en LOS DOS lados**. Control en las 31 y a los
+dos anchos: **hojas 7/7 · imágenes n/n · fuente ✓**. Antes/después por DISTANCIA:
+**Σ|clon−orig| −8599.95 @1440 y −11576.57 @390** — con el recuento en **113
+contra 112**, o sea mudo.
+
+Campaña nueva **`cms:captura-fuentes`** (el quinto canal): 4 familias por los DOS
+canales de entrada, 4 CSS + 46 binarios, índice vs disco **50 · 50 · 0 · 0**.
+
+---
+
+## 2 · ESCALÓN 2 — el TOGGLE, y la trampa fue la CASCADA
+
+El clon **ya emitía** `et_pb_toggle_close`: la clase estaba y era **inerte**.
+Derivada la geometría con `getComputedStyle` (29 instancias, **DOS poblaciones**
+separadas por el `display` del contenido) e implementada, `h` = **63 en 10 de
+10** a los dos anchos.
+
+> ⚠ **Pero la primera versión salió PEOR a 390** (24 → 30 pares), porque
+> `.f33-toggle` es (0,1,0) y el `@media (≤980)` lleva `.f33-col-1_2 >
+> .f33-modulo`, que es (0,2,0). **El ancho donde la regla no compite no puede
+> verla.** Regla nueva en `CLAUDE.md` §35.
+
+---
+
+## 3 · LO QUE QUEDA ABIERTO, con su número
+
+| # | qué | número | nota |
+|---|---|---|---|
+| 1 | **BARRA LATERAL `BT`** | `[id$='-sidebar']` **7 de 31 → 0** · Δtecho **−57.58** @1440 y **−677.34** @390 · enlaces −8 a −12 | **la de más leverage.** El `w×10` del toggle (−60.33 uniforme) y su `mb×4` cuelgan de aquí |
+| 2 | **el TECHO** | consecuencia de (1) | no se toca por separado hasta que (1) esté |
+| 3 | **el PIE** | **+1.59** en `footer-legal`, **sin mecanismo medido** · +0.21 en `links` | pide bajar un nivel DENTRO de `legal` |
+| 4 | **`hostsBloqueadosClon`** | `/es/sectores/` bloquea **12** peticiones del lado del CLON | añadido a la congelada y **SIN LEER**. Si fueran a kunakair.com sería defecto de fidelidad |
+| 5 | **F3-3-GALLERY-SIN-EXPRESAR** | `et_pb_gallery` de **11 items** en un `articulos-kb` | el esquema no tiene bloque. **Decisión de ESQUEMA** |
+| 6 | `cta` en `/monitor-calidad-aire` | 1 ruta | **SIN COMPROBAR** si el clon lo sirve por otro canal |
+
+**ESCALÓN 3 (cobertura) NO se registró**, y es CORTE LIMPIO 1 aplicado: `docH`
+sigue sin poder adjudicarse en las rutas `BT` mientras la barra lateral falte, así
+que registrar el eje sería acreditar un hueco conocido.
+
+---
+
+## 4 · LA DERIVACIÓN ACOTADA — contestada, y del revés
+
+El encargo decía *«20 documentos son del arquetipo PRODUCTO, ya clonado y dado
+por bueno»*. Cruzado contra `prerender-manifest`: **de esos 20 el clon EMITE
+UNO**. Los otros 19 son `/cartuchos-inteligentes/*` — **páginas sin clonar**, no
+una tabla que falte. Y la que sí emite, `/monitor-calidad-aire`, **sirve la tabla
+entera** por `lib/monitor.ts` §ESPECIFICACIONES (verificado al literal).
+
+> **No había nada que reabrir en PRODUCTO.** Lo que había que corregir era la
+> premisa — §*una comprobación retroactiva se enmarca en las DOS direcciones*,
+> encargada en una y contestada en la otra.
+
+Y en la otra dirección sí salió algo: de las 4 familias que ningún arquetipo
+emite, **`gallery` es hueco real** y una de sus dos rutas es de F3-3.
+
+⚠ **El censo se equivocó DOS veces antes de dar 4** —188 con un regex propio, 33
+sin traducir los dos sistemas de nombres— y las dos por sobre-contar. El log
+lleva declarado arriba que contesta *«¿escribe el clon esta clase?»* y **no**
+*«¿sirve el clon este contenido?»*.
+
+---
+
+## 5 · PARA LA SIGUIENTE
+
+1. **La barra lateral**, que es la causa común de (1), (2) y del `w×10` del
+   toggle. Y con ella se puede cerrar el **4.º caso del negativo**
+   (§F3-3-COMPARADOR-CIEGO): hoy «el clon no emite la barra» está sostenido por
+   tres ejes y **no probado por un selector**;
+2. **leer `hostsBloqueadosClon`** — ya está en la congelada, cuesta un `grep`;
+3. y **antes de acreditar ningún eje**: van **siete** defectos del propio
+   comparador en tres tandas. Comprobar que no es el octavo sigue siendo más
+   barato que fichar un Δ que no existe.
+
+---
+
+# (106.ª) Historial anterior — HANDOFF — el `−47` no eran 47 módulos perdidos, y el `docH` no era un eje: los dos lados no se midieron en las mismas condiciones
 
 > ✅ **Tanda de la 105.ª, 2026-08-25. ESCALÓN 1 CERRADO —47 de 47 adjudicados—
 > y ESCALÓN 2 cerrado en la única dirección honesta: REFUTANDO el eje.**

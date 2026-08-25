@@ -1,5 +1,252 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-3-CMP-ASIMETRIA · **el artefacto NO era «de imagen»: eran TRES canales, y el que más movía no deja síntoma** — 106.ª, 2026-08-25, CERRADO en la misma tanda
+
+La 105.ª fichó que `f33-cmp` ponía `setRequestInterception` **en un solo lado** y
+lo tituló *«el artefacto de IMAGEN»*, porque la imagen es lo que se vio: 65 de 71
+a 16 px. §regla 32 no dice *«arregla la imagen»*, dice **«la lista de lo que se
+aplica a un lado se aplica al otro, Y SE ENUMERA»** — y enumerar era justo lo que
+faltaba. Es §sondas 27 sobre la LECTURA: *un proceso que se para en el primer
+hallazgo contesta «hay al menos uno», nunca «hay N»*.
+
+### 1 · El inventario, derivado (`derivaciones/peticiones-f33.log`)
+
+31/31 páginas montadas · **1516 peticiones abortadas** en el lado del original:
+
+| resourceType | n | host | n |
+|---|---|---|---|
+| `image` | **1129** | kunakair.com | 1407 |
+| `stylesheet` | 265 | www.youtube.com | 60 |
+| `other` | 62 | **fonts.googleapis.com** | **31** |
+| `document` | 60 | **fonts.bunny.net** | **16** |
+
+De las 265 hojas, **218 son inocuas** —el `goto` al fichero crudo, que
+`setContent` sustituye acto seguido—. Las que importan son **las 47 de FUENTE**.
+
+### 2 · El número que decide, y por qué casi se lee al revés
+
+`derivaciones/fuente-f33.log` — dos brazos idénticos salvo dejar pasar
+`fonts.googleapis/gstatic` (kunakair.com abortado en los dos), 3 páginas, 1440:
+
+| ruta | docH A | docH B | Δ | cajas | **MOVIDAS** | \|Δh\| max | \|Δw\| max |
+|---|---|---|---|---|---|---|---|
+| `/aviso-legal/` | 5134.89 | 5133.89 | **−1** | 364 | **259** | 28.00 | 33.63 |
+| `/politica-de-cookies/` | 3432.41 | 3431.41 | **−1** | 439 | **334** | 28.00 | 52.42 |
+| `/recursos/kunakpedia/` | 4224.25 | 4223.25 | **−1** | 454 | **351** | 28.00 | 33.63 |
+| | | | | **1257** | **944 (75.1 %)** | | |
+
+> **`docH` se mueve −1 y se mueven 944 de 1257 cajas.** Leído por el total, el
+> canal de fuentes parece despreciable; leído por elemento mueve **tres cuartas
+> partes de la página**. El total era el contenedor (§*un Δ de cero puede ser dos
+> errores que se anulan*), y **la primera versión de la derivación sólo medía
+> `docH`**: iba a fichar «−1, se ficha con su número» y cerrar en falso.
+
+Y no valía con bloquear las fuentes en los dos lados, que era más barato: el clon
+sirve Manrope **auto-alojada** por `next/font/google`, que genera además una cara
+de respaldo con `size-adjust`. Bloquear dejaría al original con el `sans-serif`
+del sistema y al clon con la de Next: **la misma asimetría con otro nombre**.
+
+### 3 · El arreglo y su control
+
+`<img src>` + cada candidato de `srcset` → copia local (dos raíces:
+`media-corpus/fase-3` y `apps/web/public/images/uploads`, cruzadas por sha256,
+**305 de 306 iguales**); las 4 hojas de fuente **inyectadas**; e intercepción **en
+los dos lados** con la misma frase — *cada uno carga lo suyo y nada externo*.
+
+Control por página, en las 31 y a los dos anchos: **hojas 7/7 · imágenes n/n ·
+fuente ✓**. Las tres guardas cierran el código de salida por el mismo sitio (si
+sólo una lo cerrara, las otras dos serían §regla 14).
+
+**Antes/después por DISTANCIA** (`derivaciones/simetria-f33.log`):
+
+| | ACERCAN | ALEJAN | iguales | Σ\|clon−orig\| |
+|---|---|---|---|---|
+| 1440 | 113 | 112 | 1882 | 365362.63 → 356762.68 (**−8599.95**) |
+| 390 | 122 | 119 | 1866 | 322097.89 → 310521.32 (**−11576.57**) |
+
+> **Leído por el recuento, el arreglo no hace NADA: 113 contra 112.** Es §*el eje
+> que no lee como defecto esconde la mejora igual que esconde la deriva* con el
+> titular en el sitio malo.
+
+**23 pares por ancho salen DESDE Δ0**, y es lo correcto: eran Δ0 **por
+compensación**, con el artefacto anulando un defecto real del clon.
+
+**NO-OP y atribución:** movidos `ORIGINAL 245 · CLON 3` @1440 y `268 · 3` @390.
+Los 3 del clon están nombrados: `/es/empresa/`, `mod52.h` — el `<img>` de
+`upload.wikimedia.org`, ahora roto en los dos lados. En `/es/sectores/` (12
+peticiones bloqueadas) y `/es/sistema-interno-de-informacion/` (1) el clon **no se
+movió nada**: la intercepción es NO-OP en 29 de 31.
+
+⚠ **`hostsBloqueadosClon` añadido a la congelada y SIN LEER todavía**: «12
+bloqueadas» en `/es/sectores/` no dice si el clon le pide assets al ORIGINAL en
+caliente —que sería defecto de fidelidad— o a un tercero. Se lee en la próxima
+corrida.
+
+### 4 · Congeladas caducadas (§regla 5bis), con su defecto Y SU ALCANCE
+
+`f33-cmp-{1440,390}-CADUCADA-RED-CORTADA-EN-UN-SOLO-LADO-imagen-fuente-31-de-31.json`.
+Alcance del daño: **todo eje geométrico** (`docH`, cajas, módulos) en las 31;
+**NO** tocaba `nSecciones`, `nFilas`, `nModulos` ni `enlaces`, que son recuentos
+de marcado y siguen valiendo.
+
+### 5 · El quinto canal: `cms:captura-fuentes`
+
+Los cuatro canales de media anotados en la ley se descubrieron **chocando** (tres
+mataron un seed). Éste **no rompe nada** — por eso llevaba desde el principio.
+Inventario por **los DOS canales** por los que entra una fuente (`@import` en
+hoja capturada · `@import` en `<style>` EN LÍNEA): **4 familias**. Mirar sólo el
+primero habría dado **1**.
+
+**788 HTML · 108 hojas · 4 familias · 4 CSS + 46 binarios · 35 caras · 0 fallos ·
+índice vs disco 50 · 50 · sólo disco 0 · sólo índice 0.**
+
+Y **dos defectos propios**, los dos cazados por su negativo y su cruce:
+
+1. **el desvío de la corrida negativa cubría el ÍNDICE y no los ARTEFACTOS** —
+   `css-vacio` escribió 4 hojas de 0 bytes **encima de las capturadas** y salió en
+   verde. §regla 7 con la mitad que no estaba escrita: **se desvía todo lo que la
+   corrida ESCRIBE**. Y lo que lo habría hecho recuperable, y no estaba hecho, es
+   §regla 5 — congelar y COMMITEAR van en la misma tanda;
+2. **la reanudación saltaba la petición Y el asiento en el índice** — 40 binarios
+   en el índice con **50 en disco**. Lo cazó la **diferencia simétrica contra el
+   disco**; un recuento no podía verlo. Guarda puesta con sus dos lados.
+
+---
+
+## ✅ F3-3-TOGGLE-ABIERTO · **la clase estaba desde el principio y era INERTE — y el arreglo bueno salió MAL a 390** — 106.ª, 2026-08-25, ARREGLADO
+
+El clon **ya emitía** `et_pb_toggle_close`. La clase estaba en el HTML servido,
+el diff se leía correcto, y **no llegaba a ninguna propiedad**: el clon no
+reproduce el CSS que Divi compila. §*el HTML sirve una clase que no hace nada*.
+
+⚠ **Y no era cosmético**: con el desplegable abierto en el clon y cerrado en el
+original, los módulos de dentro **tienen caja en un lado y no en el otro**, así
+que cualquier eje geométrico de esas 5 rutas comparaba **dos estados distintos**.
+
+### La derivación (`derivaciones/toggle-f33-{1440,390}.log`)
+
+`getComputedStyle` sobre el original, **no `grep`** sobre la hoja. Y sacó **29
+instancias de `.et_pb_toggle`, no 10** — DOS poblaciones, separadas por el
+`display` de su contenido, que es el mecanismo y no una etiqueta:
+
+| población | n | caja |
+|---|---|---|
+| `display:none` — los `et_pb_toggle` del builder | **10** | `padding 20` los 4 lados · borde `1px solid #d9d9d9` · radio 10 · fondo `#f3f3f3` · `h5` 21/21/600 #666 · `pr 50` |
+| `display:block` — `/recursos/preguntas-frecuentes/` | **19** | OTRA caja entera (`pt/pb 17` · `pl/pr 8` · sin fondo · `h3` 19.2/26.88). **No son este módulo**: los pinta `FaqAcordeon` |
+
+**UNIFORMES en 17 de 18 ejes, a los DOS anchos.** El que varía es `mb`, ya
+modelado. ⚠ `n=10` con varianza cero **no prueba plantilla** (§test B); lo que
+compra la medición es la dirección contraria — nada VARÍA, luego nada es campo
+*con certeza*.
+
+⚠ **Corregido de paso un comentario de la 102.ª** que decía «`padding: 20px 0` en
+los 10»: **el horizontal nunca se midió** — `f33-clases` §reglas 32-33 mide
+`margin-left/right: 0px`, que es OTRA propiedad. Medido: 20 en los cuatro lados.
+
+### El arreglo salió MAL a 390, y es la lección
+
+`.f33-toggle` es **(0,1,0)** y el bloque `@media (max-width: 980px)` lleva
+`.f33-col-1_2 > .f33-modulo`, que es **(0,2,0)**: a ≤980 ganaba él y devolvía
+`padding-bottom: 0`.
+
+| | antes | 1.ª versión | con `.f33-modulo.f33-toggle` |
+|---|---|---|---|
+| 1440 | `w×10 h×10 mb×4` (24) | `w×10 mb×4` (14) | `w×10 mb×4` (**14**) |
+| 390 | `w×10 h×10 mb×4` (24) | `w×10 h×10 pb×10` (**30 — PEOR**) | `w×10` (**10**) |
+
+> §*una regla en el NIVEL equivocado no da error* y §la regla espejo a la vez:
+> **el ancho donde la regla no compite no puede verla.** Verificado sólo a 1440,
+> el arreglo habría entrado con una regresión medible a 390.
+
+**`h` = 63 en 10 de 10, Δ0 exacto, a los dos anchos.** Antes/después por
+distancia (`simetria-f33-toggle.log`): ACERCAN **36/48** · ALEJAN **0/2** ·
+Σ|Δ| **−8924.64** y **−14572.67**. Lado del ORIGINAL movido: **0 pares**.
+
+**Los 2 que se alejan, nombrados, y son lo correcto:** `docH` de
+`…/articulos-de-ayuda/` ×2 a 390, páginas cuyo cuerpo es prácticamente un
+toggle. El desplegable abierto **compensaba la barra lateral que el clon no
+emite**; cerrarlo destapa el otro (§*un Δ de cero puede ser dos errores que se
+anulan*). No es regresión.
+
+### Lo que queda, con UNA sola causa
+
+`w×10`: original **430.8**, clon **370.47**, Δ **−60.33 UNIFORME en los 10**. Y
+el `mb×4` de 1440 cuelga de ahí (el default es `2.75 %` **de la columna**). Es la
+familia de **F3-3-BARRA-LATERAL / el TECHO**, que siguen abiertos.
+
+⚠ **Sigue SIN CONTESTAR** si «abierto por defecto» es un CAMPO: los 10 están
+cerrados y **varianza cero no prueba plantilla**.
+
+---
+
+## ⛔ F3-3-GALLERY-SIN-EXPRESAR · **`articulos-kb` sirve un `et_pb_gallery` de 11 items y el esquema no tiene bloque para él** — 106.ª, 2026-08-25, FICHADO (no arreglado)
+
+Derivación `derivaciones/tipos-sin-emitir.log`, **offline y sin abrir el
+original**. El encargo pedía las dos direcciones y **la respuesta llegó por la
+contraria**.
+
+### Lo que se preguntó, y lo que salió
+
+El encargo decía: *«`dvmd_table_maker` aparece en 22 documentos, y **20 son del
+arquetipo PRODUCTO, ya clonado y dado por bueno**»*. Derivado:
+
+| familia | documentos | **rutas que el clon EMITE** | veredicto |
+|---|---|---|---|
+| `blog` | 55 | 36 (`/etiqueta/…`) | ✅ **no es hueco** — `TarjetaListado` sirve el contenido |
+| `dvmd_table_maker` | 21 | **1** | ✅ **no es hueco** — `/monitor-calidad-aire` sirve la tabla por `lib/monitor.ts` §ESPECIFICACIONES, verificado al literal («257 x 270 x 225 mm», «PMMA, policarbonato y acero inoxidable», «Litio 26Ah») |
+| **`gallery`** | 3 | **2** | ⛔ **HUECO REAL** |
+| `cta` | 1 | 1 | ⚠ **SIN COMPROBAR** |
+
+> **Los «20 del arquetipo PRODUCTO» son 1.** El 20 se leyó del DIRECTORIO
+> `corpus/productos/`; cruzado contra `prerender-manifest`, **19 de esos 20 son
+> rutas que el clon NO emite** (`/cartuchos-inteligentes/*` y hermanas): páginas
+> **sin clonar**, no una tabla que falte. «Falta una tabla en un arquetipo
+> verificado» y «esa página no existe todavía» son cosas distintas, y **sólo la
+> primera reabre algo**.
+
+Es §*una comprobación retroactiva se enmarca en las DOS direcciones*: se encargó
+en la dirección *«¿está mal lo viejo?»* y **se contestó en la contraria** — lo
+viejo está bien y lo que había que corregir era la premisa.
+
+### El hueco que sí existe
+
+`/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud`
+—**arquetipo `articulos-kb`, o sea F3-3**— sirve, tras un `<h3>Galería</h3>`, un
+`et_pb_gallery` con **11 `et_pb_gallery_item`**, cada uno con su `<a>` y su
+`<img>`. `KIND_DE_DIVI` **no tiene `gallery`**, así que el esquema **no lo
+expresa por ningún canal**. La otra ruta con `gallery` es
+`/monitor-calidad-aire`, **sin comprobar**.
+
+**NO se arregla aquí**: un bloque nuevo es decisión de ESQUEMA, y no se toma en
+una tanda de emisión.
+
+### ⚠ El límite del instrumento, declarado arriba y no en un comentario
+
+`tipos-sin-emitir` contesta **«¿ESCRIBE el clon esta clase de Divi?»**, NO
+**«¿SIRVE el clon este CONTENIDO?»**. Son dos preguntas y la segunda se contesta
+mirando el dato — que es lo que convirtió `blog` y `dvmd_table_maker` de
+«hueco» en «no es hueco». **Un «no emite» de este censo es una PREGUNTA para el
+dato, no un veredicto.**
+
+Y el censo se equivocó **dos veces antes de dar 4**, las dos por sobre-contar:
+**188** «tipos» con un regex propio (ordinales y clases estructurales), **33** al
+usar `tipoDe` pero sin traducir los dos sistemas de nombres (`et_pb_image` vs
+`imagen-pagina`), y **4** al colapsar el marcado interno (`dvmd_tm_*` son 22
+clases de **un** módulo; `blog_item_0..4`, los posts de **un** `et_pb_blog`).
+§*N valores de un total no son N familias*, tres veces en el mismo fichero.
+
+---
+
+## ⚠ PASO 0 · el denominador de rutas, con SU UNIDAD y los dos números — 106.ª
+
+`prerender-manifest.routes` da **416 RUTAS**; el filtro del repo deja **413
+PÁGINAS**. Las 3 de diferencia son `/_global-error`, `/_not-found` y
+`/favicon.ico`. **Los dos son ciertos y se escriben los dos con su unidad** — es
+la misma pareja que 385/382 en la 94.ª, y §*corregir un denominador no es
+sustituirlo en todas partes*.
+
+---
+
 ## ✅ F3-3-SIN-HOJA · **CERRADA por la 102.ª (2026-08-24): existe `qa:f33-clases`, existe `f33.css`, y el canal que hacía falta estaba SERVIDO** — el enunciado de la 101.ª se conserva entero debajo
 
 **El corte que la 101.ª derivó era correcto para la congelada que miró y falso
