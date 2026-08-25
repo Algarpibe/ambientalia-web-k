@@ -1,0 +1,186 @@
+══════════════════════════════════════════════════════════════════════
+  «NO EMITE LA CLASE» NO ES «NO SIRVE EL EFECTO» — 109.ª · ESCALÓN 2
+══════════════════════════════════════════════════════════════════════
+  pares SIN EMITIR, derivados de deudas-modelo-f33.log: 16
+  clases distintas: 14
+
+── 0 · COBERTURA DEL CANAL 1, delante del dato ────────────────────────
+   hojas del original DISTINTAS ...... 507
+   CAPTURADAS ........................ 108   (leídas aquí: 108)
+   SIN CAPTURAR ...................... 399
+   alcance declarado ................. corpus/fase-3/sueltas · 20 HTML
+
+   ⚠ CONSECUENCIA, y decide cómo se lee cada cero: con 399 hojas sin
+     capturar, «0 reglas» NO distingue «la clase no tiene regla» de «su hoja
+     no está». Todo cero de este canal sale NO CONTESTABLE, nunca AUSENTE.
+
+── 1 · EJES QUE `f33-cmp` COMPARA, derivados de su congelada ──────────
+   fuente: f33-cmp-1440.json
+   ejes  : docH · base · nSecciones · nFilas · nModulos · anchos · cajas · enlaces · cascaron · hojasAplicadas · cuerpoTieneEstilo · fuenteCargada · modulos
+   ⇒ son GEOMETRÍA y estructura. Una propiedad que no cambie ninguno de
+     éstos NO se puede adjudicar con esta congelada, por mucho que se mida.
+
+── 2 · PAR A PAR ──────────────────────────────────────────────────────
+
+   et_pb_button_alignment_center · modulo:button·envoltorio   10/13
+      reglas donde es SUJETO      : 38 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      propiedades                : text-align
+      ⇒ NO CONTESTABLE  — gana text-align — ninguna es geométrica, así que f33-cmp no puede verla
+
+   et_pb_button_alignment_tablet_center · modulo:button·envoltorio   8/13
+      reglas donde es SUJETO      : 37 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      propiedades                : text-align
+      ⇒ NO CONTESTABLE  — gana text-align — ninguna es geométrica, así que f33-cmp no puede verla
+
+   et_pb_button_alignment_phone_center · modulo:button·envoltorio   8/13
+      reglas donde es SUJETO      : 37 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      propiedades                : text-align
+      ⇒ NO CONTESTABLE  — gana text-align — ninguna es geométrica, así que f33-cmp no puede verla
+
+   et_pb_text_align_center · modulo:blurb   5/22
+      reglas donde es SUJETO      : 36 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 3 bloque(s) · 1 propiedad(es) sobre DESCENDIENTES
+      propiedades                : text-align
+      ⇒ NO CONTESTABLE  — gana text-align — ninguna es geométrica, así que f33-cmp no puede verla
+
+   et_pb_section_video_on_hover · modulo:blurb   5/22
+      reglas donde es SUJETO      : 0 bloque(s) · 0 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      ⇒ NO CONTESTABLE  — 0 reglas en 108 hojas — y con 399 sin capturar, el cero no es del original
+
+   et_pb_column_empty · columna   21/179
+      reglas donde es SUJETO      : 0 bloque(s) · 0 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      ⇒ NO CONTESTABLE  — 0 reglas en 108 hojas — y con 399 sin capturar, el cero no es del original
+
+   et_pb_button_alignment_right · modulo:button·envoltorio   1/13
+      reglas donde es SUJETO      : 38 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      propiedades                : text-align
+      ⇒ NO CONTESTABLE  — gana text-align — ninguna es geométrica, así que f33-cmp no puede verla
+
+   et_pb_button_alignment_tablet_right · modulo:button·envoltorio   1/13
+      reglas donde es SUJETO      : 37 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      propiedades                : text-align
+      ⇒ NO CONTESTABLE  — gana text-align — ninguna es geométrica, así que f33-cmp no puede verla
+
+   et_pb_button_alignment_phone_right · modulo:button·envoltorio   1/13
+      reglas donde es SUJETO      : 37 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      propiedades                : text-align
+      ⇒ NO CONTESTABLE  — gana text-align — ninguna es geométrica, así que f33-cmp no puede verla
+
+   et_pb_with_background · seccion   6/86
+      reglas donde es SUJETO      : 0 bloque(s) · 0 propiedad(es)
+      reglas donde es CONTEXTO    : 12 bloque(s) · 1 propiedad(es) sobre DESCENDIENTES
+      ⇒ NO CONTESTABLE  — 0 reglas donde la clase sea SUJETO (12 donde es CONTEXTO: width) — el preset cambia a sus hijos, no a su nodo
+
+   et_pb_equal_columns · fila   6/113
+      reglas donde es SUJETO      : 1 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      propiedades                : flex
+      ⇒ OTRO CANAL?  — gana flex (geométrica) · el fuente del clon SÍ menciona esa propiedad
+
+   et_pb_text_align_center · modulo:text   8/151
+      reglas donde es SUJETO      : 36 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 3 bloque(s) · 1 propiedad(es) sobre DESCENDIENTES
+      propiedades                : text-align
+      ⇒ NO CONTESTABLE  — gana text-align — ninguna es geométrica, así que f33-cmp no puede verla
+
+   et_pb_section_video_on_hover · columna   7/179
+      reglas donde es SUJETO      : 0 bloque(s) · 0 propiedad(es)
+      reglas donde es CONTEXTO    : 0 bloque(s) · 0 propiedad(es) sobre DESCENDIENTES
+      ⇒ NO CONTESTABLE  — 0 reglas en 108 hojas — y con 399 sin capturar, el cero no es del original
+
+   et_pb_gutters2 · fila   3/113
+      reglas donde es SUJETO      : 0 bloque(s) · 0 propiedad(es)
+      reglas donde es CONTEXTO    : 29 bloque(s) · 7 propiedad(es) sobre DESCENDIENTES
+      ⇒ NO CONTESTABLE  — 0 reglas donde la clase sea SUJETO (29 donde es CONTEXTO: width/padding-right/padding-left) — el preset cambia a sus hijos, no a su nodo
+
+   et_pb_fullwidth_section · seccion   2/86
+      reglas donde es SUJETO      : 2 bloque(s) · 1 propiedad(es)
+      reglas donde es CONTEXTO    : 14 bloque(s) · 10 propiedad(es) sobre DESCENDIENTES
+      propiedades                : padding
+      ⇒ OTRO CANAL?  — gana padding (geométrica) · el fuente del clon SÍ menciona esa propiedad
+
+   et_pb_sticky_module · columna   2/179
+      reglas donde es SUJETO      : 0 bloque(s) · 0 propiedad(es)
+      reglas donde es CONTEXTO    : 1 bloque(s) · 2 propiedad(es) sobre DESCENDIENTES
+      ⇒ NO CONTESTABLE  — 0 reglas donde la clase sea SUJETO (1 donde es CONTEXTO: width/max-width) — el preset cambia a sus hijos, no a su nodo
+
+── 3 · EL REPARTO ─────────────────────────────────────────────────────
+   NO CONTESTABLE   14 pares · 12 clases
+   OTRO CANAL?       2 pares · 2 clases
+
+   CERRADOS con un Δ de dos lados sobre su propiedad: 0 de 16
+   — y no por falta de ganas: ninguna congelada de este repo compara
+     `text-align`, `background` ni `position` en estos nodos.
+
+══════════════════════════════════════════════════════════════════════
+  LO QUE ESTO CONTESTA Y LO QUE NO
+══════════════════════════════════════════════════════════════════════
+   CONTESTA: qué propiedad gana cada clase en el original, con su cardinal
+   de bloques, y si esa propiedad cae dentro de lo que `f33-cmp` compara.
+
+   NO CONTESTA, y son tres cosas distintas:
+     · si el clon sirve el EFECTO en ESTOS nodos. El canal 3 mira el FUENTE
+       del clon, que es §*verificar contra la fuente que uno supone
+       responsable*. Dice «hay candidato», nunca «sirve». Por eso las dos
+       salidas llevan interrogante: `OTRO CANAL?` y `EFECTO AUSENTE?`;
+     · las INSTANCIAS SEPARADORAS. Saber que una clase gana `text-align`
+       no dice que cambie nada observable en las 31 rutas: para eso hay que
+       comparar los nodos CON y SIN la clase, y eso pide el original vivo;
+     · nada a 390. Si esto se midiera contra el original iría a LOS DOS
+       ANCHOS (§regla 35): un preset con `@media` puede tener ganador
+       distinto, y el ancho donde su regla no compite no puede verla.
+
+   ⇒ LO QUE HARÍA FALTA, nombrado: una sonda de DOS LADOS que compare la
+     PROPIEDAD ganadora sobre los nodos que llevan la clase, a 1440 y 390.
+     No existe — `f33-cmp` compara geometría de caja, no propiedades.
+
+══════════════════════════════════════════════════════════════════════
+  EL PRE-REGISTRO CONTRA EL RESULTADO (PRE-REGISTRO-PRESETS-109.md)
+══════════════════════════════════════════════════════════════════════
+   OTRO CANAL?       predicho  8 · real  2   ❌
+   EFECTO AUSENTE?   predicho  3 · real  0   ❌
+   NO CONTESTABLE    predicho  5 · real 14   ❌
+
+   ⇒ EL REPARTO POR PAR: FALLADO, y en la dirección optimista — predije
+     que la mayoría se resolvería por otro canal y casi todo es NO
+     CONTESTABLE. El motivo es una distinción que el pre-registro no tenía:
+     SUJETO contra CONTEXTO. Varias clases NO tienen ni una regla donde
+     ellas sean el sujeto.
+
+   ⇒ LA PREDICCIÓN ESTRUCTURAL —la que el pre-registro dice que más se
+     jugaba— CUMPLIDA, y por sus dos mitades:
+        «≥ 5 pares en NO CONTESTABLE»  →  14   ✅
+        «0 pares cerrados con Δ»       →  0    ✅
+     Su refutación estaba escrita —«≥3 pares cerrados con Δ de dos lados»—
+     y no se ha producido.
+
+══════════════════════════════════════════════════════════════════════
+  LO ACCIONABLE PARA QUIEN CONSTRUYA ESA SONDA
+══════════════════════════════════════════════════════════════════════
+   pares cuyo efecto está en el NODO (la clase es sujeto) ... 10
+   pares cuyo efecto está en los DESCENDIENTES .............. 3
+       et_pb_with_background · seccion → width
+       et_pb_gutters2 · fila → width/padding-right/padding-left/right
+       et_pb_sticky_module · columna → width/max-width
+   pares SIN NINGUNA regla en lo capturado ................. 3
+       et_pb_section_video_on_hover · modulo:blurb
+       et_pb_column_empty · columna
+       et_pb_section_video_on_hover · columna
+
+   ⚠ Y ESTO CAMBIA EL DISEÑO DE LA SONDA, no sólo su alcance: para los
+     pares de DESCENDIENTES, comparar la propiedad EN EL NODO QUE LLEVA LA
+     CLASE daría Δ0 con el defecto puesto — el nodo no cambia, cambian sus
+     hijos. Es §*una regla en el NIVEL equivocado no da error*, y aquí se
+     sabe de antemano en qué nivel mirar cada uno.
+
+   ⚠ Y los que no tienen ninguna regla NO son «sin efecto»: son la
+     COBERTURA (399 hojas sin capturar). Lo que los cerraría es
+     capturar sus hojas, no medir más — y eso necesita red.

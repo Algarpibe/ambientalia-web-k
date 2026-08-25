@@ -5753,6 +5753,43 @@ que es justo lo que la decisión de alcance de abajo tiene que poder elegir. Las
 **Decidirlas por separado es arreglar la instancia en vez de la CLASE** — que es
 exactamente cómo se llega a la tercera tanda del mismo bug.
 
+#### ⚠ Y LOS 16 «NO» SON PREGUNTAS, NO VEREDICTOS — derivado en la 109.ª
+
+El censo contesta *«¿ESCRIBE el clon esta CLASE?»*. La otra pregunta —*«¿SIRVE
+el clon este EFECTO?»*— se intentó contestar offline
+(`derivaciones/presets-efecto-109.{mjs,log}`) y **no se pudo cerrar ni un par**:
+
+| salida | pares | qué significa |
+|---|---|---|
+| **NO CONTESTABLE offline** | **14** | su propiedad no está entre los ejes de `f33-cmp`, o no hay regla capturada |
+| **OTRO CANAL?** (con interrogante) | **2** | `et_pb_equal_columns` (`flex`) y `et_pb_fullwidth_section` (`padding`): geométricas, y el fuente del clon menciona la propiedad — **candidato, no veredicto** |
+| **cerrados con Δ de dos lados** | **0 de 16** | ninguna congelada de este repo compara `text-align`, `background` ni `position` en estos nodos |
+
+**Por qué no se cierran, con su número:** `f33-cmp` compara **geometría**
+(`docH · base · nSecciones · nFilas · nModulos · anchos · cajas · enlaces ·
+cascaron`), y **10 de los 16 pares ganan `text-align`** — que no mueve ninguno
+de esos ejes salvo por envolvimiento.
+
+> **Y lo que esto le quita de delante al propietario:** los 16 «NO» **no son 16
+> deudas confirmadas**. Son 16 preguntas, de las que hoy **2** tienen candidato
+> a estar resueltas por otro canal y **14** ni siquiera se pueden formular con
+> los instrumentos que hay.
+
+**Tres cosas accionables para quien construya la sonda que sí las cierre:**
+
+1. **el efecto de 3 pares vive en los DESCENDIENTES, no en el nodo** —
+   `et_pb_with_background` (12 reglas de contexto), `et_pb_gutters2` (29) y
+   `et_pb_sticky_module` (1)—. Comparar la propiedad **en el nodo que lleva la
+   clase** daría **Δ0 con el defecto puesto**: §*una regla en el NIVEL
+   equivocado no da error*, sabido de antemano;
+2. **3 pares no tienen NINGUNA regla en lo capturado** —`et_pb_column_empty` y
+   `et_pb_section_video_on_hover` ×2— y eso **no es «sin efecto»: es la
+   COBERTURA** (108 hojas capturadas de 507). Lo que los cierra es capturar sus
+   hojas, y eso necesita red;
+3. **la sonda va a LOS DOS ANCHOS** (§regla 35): `gutters2` y `equal_columns`
+   son justo del tipo que vive en un `@media`, y el ancho donde su regla no
+   compite no puede verla.
+
 > ⚠ **Los tres límites de este censo, declarados con su número (§regla 14):**
 >
 > 1. contesta *«¿escribe el clon esta CLASE?»*, **no** *«¿sirve el clon este
