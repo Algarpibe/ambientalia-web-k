@@ -311,9 +311,25 @@ function medir(selBarra) {
   if (menu) {
     const lis = [...menu.querySelectorAll("li")];
     const nivelDe = (li) => { let n = 0, p = li.parentElement; while (p && p !== menu) { if (p.tagName === "UL") n++; p = p.parentElement; } return n; };
+    /**
+     * ⚠ Los `ul` ANIDADOS, uno a uno. La primera versión medía sólo `ul.menu`
+     * —el raíz— y con eso no se puede construir: la SANGRÍA de un submenú vive
+     * en el `padding-left` de SU `ul`, no en el del padre. Medir sólo la raíz
+     * habría dado «sangría 0» con toda la cara de un dato (§sondas 4).
+     */
+    const ulDe = (ul) => { let n = 0, p = ul.parentElement; while (p && p !== menu) { if (p.tagName === "UL") n++; p = p.parentElement; } return n; };
+    const uls = [menu, ...menu.querySelectorAll("ul")].map((ul) => {
+      const cs = getComputedStyle(ul);
+      return {
+        nivel: ul === menu ? 0 : ulDe(ul) + 1, clases: [...ul.classList],
+        rect: r(ul), ritmo: ritmo(cs),
+        listStyleType: cs.listStyleType, listStylePosition: cs.listStylePosition, display: cs.display,
+      };
+    });
     arbol = {
       nLi: lis.length,
       nNiveles: Math.max(0, ...lis.map(nivelDe)),
+      uls,
       ulRect: r(menu), ulRitmo: ritmo(getComputedStyle(menu)),
       items: lis.map((li) => {
         const a = li.querySelector(":scope > a");
@@ -328,6 +344,8 @@ function medir(selBarra) {
           hijos: li.querySelectorAll(":scope > ul > li").length,
           conCaja: conCaja(li),
           liRect: r(li), liRitmo: ritmo(csLi), liDisplay: csLi.display,
+          liListStyleType: csLi.listStyleType,
+          aDisplay: csA ? csA.display : null,
           aRect: a ? r(a) : null, aTipo: csA ? tipo(csA) : null, aRitmo: csA ? ritmo(csA) : null,
         };
       }),
@@ -336,7 +354,26 @@ function medir(selBarra) {
 
   return {
     hay: true,
-    barra: { clases: [...barra.classList], rect: r(barra), ritmo: ritmo(csB), display: csB.display, backgroundColor: csB.backgroundColor },
+    /**
+     * ⚠ El BORDE va medido, no deducido de la aritmética del ancho. `grep` sobre
+     * las hojas encuentra **cinco** reglas para `.et_pb_widget_area_left`, dos de
+     * ellas con `border-right: none`, así que la pregunta no es *«¿existe?»* sino
+     * **«¿cuál gana?»** — y ésa sólo la contesta el navegador
+     * (§*transcribir la declaración servida NO es transcribir la cascada*).
+     * Y se mide a los DOS anchos porque el ganador cambia con el `@media`
+     * (§regla 35): a 1440 gana `1px solid` + `pr 30`, a 390 gana `none` + `pr 0`.
+     */
+    barra: {
+      clases: [...barra.classList], rect: r(barra), ritmo: ritmo(csB), display: csB.display,
+      backgroundColor: csB.backgroundColor,
+      borde: {
+        right: `${csB.borderRightWidth} ${csB.borderRightStyle} ${csB.borderRightColor}`,
+        top: `${csB.borderTopWidth} ${csB.borderTopStyle}`,
+        bottom: `${csB.borderBottomWidth} ${csB.borderBottomStyle}`,
+        left: `${csB.borderLeftWidth} ${csB.borderLeftStyle}`,
+      },
+      boxSizing: csB.boxSizing,
+    },
     columna: (() => { const c = barra.closest(".et_pb_column"); return c ? { clases: [...c.classList], rect: r(c), ritmo: ritmo(getComputedStyle(c)) } : null; })(),
     nWidgets: widgets.length,
     nWidgetsVacios: widgets.filter((x) => x.vacio).length,
