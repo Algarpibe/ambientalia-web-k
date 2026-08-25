@@ -345,6 +345,49 @@ for (const f of fs.readdirSync(M).filter((x) => x.startsWith("offsets-") && x.en
 // 10 · enlaces — las 31 contra las rutas que emite el build.
 if (fuente("enlaces.json")) set("enlaces", J("enlaces.json").publicadas || RUTAS, "O", "enlaces", "enlaces");
 
+/* 10b · f33-cmp — LA COLA LARGA, de dos lados. Entra el 2026-08-25 (107.ª), y
+ * lo que lo tenía fuera NO era que no comparase: era un canal abierto.
+ *
+ * El motivo que lo excluía —§F3-3-CMP-IMAGENES-ROTAS— era que el comparador
+ * cortaba la red **del lado del original y no del clon**, así que 65 de 71
+ * imágenes del original medían 16 px y `docH` y todo alto con imagen dentro no
+ * eran acreditables. La 105.ª y la 106.ª cerraron los tres canales y la corrida
+ * de hoy lo dice en su propia salida: **«los TRES canales cerrados en las 31
+ * páginas»**, con `hojas 7/7`, `imágenes 16/16` y Manrope cargada en las 31.
+ *
+ * ⚠ **EL MAPEO ES SEMÁNTICO Y SE ESCRIBE MIRANDO `pares.push`**, no derivándolo
+ * del nombre de los ejes: los dos vocabularios no coinciden. Derivado de la
+ * fuente (`f33-cmp.mjs` §4), lo que compara es:
+ *
+ *   `docH` `base` `nSecciones` `nFilas` `nModulos` `enlaces`  (pares directos)
+ *   `ancho.filaN`                                             (ancho de fila)
+ *   `caja.secN.{y,h,w}`                                       (árbol de secciones)
+ *   `mod{i}.{w,h,mt,mb,pt,pb}`                                (nivel de módulo)
+ *
+ * ── Y LO QUE **NO** ACREDITA, cada uno con su razón (§regla 14) ───────────
+ *   · `filas`   — compara el RECUENTO (`nFilas`) y el ANCHO de cada fila, y
+ *                 **no su alto ni su ritmo**. El ancho ya lo acredita `anchos`;
+ *                 acreditar además `filas` diría que la geometría de la fila
+ *                 está comparada, y no lo está;
+ *   · `offsets` — no mide holgura por columna. Es otra sonda;
+ *   · `comport` — no hay interacción: es HTML servido, no comportamiento;
+ *   · `pie`     — su `cascaron` es `pagina · area · contenido · barra`. **No
+ *                 baja al pie**, que en Divi vive en la capa `tb_footer`.
+ */
+for (const f of [...congeladas("f33-cmp-1440"), ...congeladas("f33-cmp-390")]) {
+  if (!fuente(f)) continue;
+  const j = J(f);
+  /* ⚠ Sólo las corridas del arquetipo ENTERO. Una del piloto (6 de 31) no puede
+   * acreditar 31 rutas — sería §regla 7 en la matriz: un fichero con nombre de
+   * medida acreditando una cobertura que no midió. */
+  if ((j.meta?.dominio?.n ?? 0) < (j.meta?.dominio?.de ?? Infinity)) continue;
+  /* Y sólo las rutas con los DOS lados: si el clon no sirvió, no hay par. */
+  const rutas = Object.entries(j.paginas || {})
+    .filter(([, p]) => p.clon && p.httpClon >= 200 && p.httpClon < 400)
+    .map(([r]) => r.replace(/^\/es/, "").replace(/\/$/, "") || "/");
+  set(["docH", "base", "secciones", "modulos", "anchos", "enlaces"], rutas, "O", f.replace(".json", ""));
+}
+
 /* 11 · comportamiento — la celda deja de estar vacía (2026-08-10, P-LH-C6).
  *
  * `a-behaviors` y `c-behaviors` SOLO abren el original: son recon de fase 1, y
@@ -533,7 +576,7 @@ const NO_APORTAN = new Set([
   "cabecera-cmp", "html-cmp", "rsc-original", "t4b-bloque", "cmp-srcset", "solutions-campos",
   "solutions-seo", "corte-cuerpo", "enlaces-clases", "c-cascaron", "a-cascaron",
 ]);
-const DECLARADAS = new Set(["clon-base", "c-cabecera", "c-cmp", "mono-cmp", "lh-cmp", "pie-cmp", "tree-cmp", "cmp-sector", "a-miga", "c-banda", "offsets", "enlaces", "comportamiento", "ancho-cuerpo"]);
+const DECLARADAS = new Set(["f33-cmp", "clon-base", "c-cabecera", "c-cmp", "mono-cmp", "lh-cmp", "pie-cmp", "tree-cmp", "cmp-sector", "a-miga", "c-banda", "offsets", "enlaces", "comportamiento", "ancho-cuerpo"]);
 /**
  * ⚠ **El discriminador es que el prefijo sea UNA SONDA REAL, no que el nombre
  * parezca uno.** La primera versión partía el nombre del fichero por sufijos y

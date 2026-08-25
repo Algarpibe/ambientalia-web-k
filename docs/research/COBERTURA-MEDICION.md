@@ -1336,3 +1336,35 @@ Así que las celdas `base cruda` de `L2` acreditan **«se comparó»**, no
 respaldada. Ficha con su cardinal: `PENDIENTES-QA.md`
 §F3-LH-ANCLA-SIN-POST-ID.
 
+
+---
+
+## ✅ `f33-cmp` ENTRA EN LA MATRIZ — 31 rutas × 6 ejes (2026-08-25, 107.ª tanda)
+
+Lo que lo tenía fuera **no era que no comparase**: era **un canal abierto**.
+§F3-3-CMP-IMAGENES-ROTAS — el comparador cortaba la red del lado del ORIGINAL y
+no del clon, así que **65 de 71 imágenes del original medían 16 px** y `docH` y
+todo alto con imagen dentro no eran acreditables. La 105.ª y la 106.ª cerraron
+los tres canales, y la corrida de hoy lo dice en su propia salida: **«los TRES
+canales cerrados en las 31 páginas»**.
+
+**El mapeo se escribió MIRANDO `pares.push`, no derivándolo de los nombres** —
+los dos vocabularios no coinciden:
+
+| eje | ¿acredita? | por qué |
+|---|---|---|
+| `docH` · `base` · `secciones` · `modulos` · `anchos` · `enlaces` | **SÍ**, 31 rutas | pares directos + `caja.secN.{y,h,w}` + `ancho.filaN` + `mod{i}.{w,h,mt,mb,pt,pb}` |
+| `filas` | **NO** | compara el RECUENTO (`nFilas`) y el ANCHO de cada fila, **no su alto ni su ritmo**. El ancho ya lo acredita `anchos`; acreditar `filas` afirmaría que la geometría de la fila está comparada |
+| `offsets` | **NO** | no mide holgura por columna |
+| `comport` | **NO** | HTML servido, no interacción |
+| `pie` | **NO** | su `cascaron` es `pagina · area · contenido · barra` — **no baja al pie** |
+
+Verificado sobre la matriz congelada: **186 celdas** (31 × 6) con
+`sonda: f33-cmp-*`, y **`filas: null` en esas 31 rutas** — o sea que la
+exclusión declarada está puesta, no sólo escrita.
+
+**Y la guarda que lleva el bloque**: una corrida del **PILOTO** (6 de 31) **no
+acredita**, porque un fichero con nombre de medida no puede acreditar una
+cobertura que no midió (§regla 7 aplicada a la matriz). Se comprueba contra
+`meta.dominio.{n,de}`. Y sólo entran las rutas con los **dos lados**: si el clon
+no sirvió la ruta, no hay par que acreditar.
