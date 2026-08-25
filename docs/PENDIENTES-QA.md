@@ -20361,3 +20361,264 @@ el eje **MIXTO aparte con su cardinal**.
 - los **14 `et-cache`** que le faltan a `articulos-kb` siguen sin capturar, así
   que la geometría **offline** de esa familia sigue sin valer. Lo que sí vale es
   su cruce con el VIVO al nivel de la columna, que es lo que se usó.
+
+
+## ✅ F3-3-BARRA-LATERAL-MEDIDA · la deuda era de MEDICIÓN, y se pagó (2026-08-25, 107.ª tanda)
+
+`PaginaKb.tsx` lo declaraba desde F3-1: *«su contenido **no está medido**:
+`cascaron.spec.md` §2 midió la caja … inventarle contenido sería rellenar una
+medida que no se tomó»*. Correcto mientras no hubiera medida. `qa:kb-barra` la
+tomó: **13 instancias · 2 familias · 2 anchos · 1 solo lado (el original)**.
+
+### 1 · La precondición del encargo era FALSA en una de las dos familias
+
+El encargo decía *«el corpus está completo (32/32 con todas sus hojas) y
+`articulos-kb` tiene el suyo»*. El 32/32 es cierto **de la cola larga**, que es
+otra colección y otro corpus:
+
+| familia | páginas | hojas enlazadas | resueltas | faltan |
+|---|---|---|---|---|
+| hubs `BT` | 7 | 49 | **49** | **0** ✓ |
+| `articulos-kb` | 6 | 44 | **30** | **14** ⛔ |
+
+Las 14 son `et-cache` **por página**. Y no es una nota al pie: §F3-1-CSS-NO-CAPTURADO
+midió que sin sus hojas esta misma familia da `columna.width` **678.52 offline
+contra 430.80 en vivo**. Así que la familia incompleta sale marcada y **cuenta
+en rojo (exit 5), pero deja llegar al informe** — §regla 31: los números que
+produce son la evidencia que su negativo compara.
+
+**Y no bloqueó la tanda**, porque los hubs sí están completos y son justo las 7
+`BT` que había que arreglar.
+
+### 2 · Lo medido — y corrige el número que sostenía la decisión
+
+**«1 widget en 6/6» era el número equivocado: son 3 en 13/13.** Un
+`widget_nav_menu` con el menú del centro de ayuda y **dos `widget_custom_html`
+VACÍOS**. Las dos lecturas son ciertas y contestan preguntas distintas
+(§*un censo de NODOS y un censo de LO QUE SE VE*), pero **la que estaba escrita
+era la que no permitía construir**.
+
+| eje | 1440 | 390 |
+|---|---|---|
+| columna `1_4` `w` · `h` | 258.5 · **536.84** | 335.39 · **504.34** |
+| módulo `et_pb_sidebar_0_tb_body` `h` | **493.66** | **461.16** |
+| `menu ul` `h` · nº `<li>` | 493.66 · 12 | 461.16 · 12 |
+| módulo `padding-right` · `border-right` | 30px · **1px solid rgba(0,0,0,.1)** | **0px** · **none** |
+| widget `margin-bottom` | 32px (los 3) | 32px |
+| `ul.sub-menu` `margin-left` | 17.6px | 17.6px |
+
+| nivel | fuente | peso | interlínea | `li` `pt` | `li` `mt` | `li` `mb` |
+|---|---|---|---|---|---|---|
+| 0 | Manrope 16px | 700 | 20px | 6.4 | 11.2 | 3.2 |
+| 1 | Manrope 15px | 700 | 18.75px | 10.5 | 11.2 | 3.2 |
+| 2 | Manrope 13px | 400 | 16.25px | 9.1 | 11.2 | 3.2 |
+
+`current-menu-item` → `rgb(0,117,201)`. Todo lo demás, **ancestros incluidos**,
+`#333`: derivado del cruce estado × color en las 13 (4 firmas de estado, y sólo
+la del ítem EXACTO pinta azul).
+
+⚠ El `mt: 11.2` es **uniforme en los tres niveles** mientras el cuerpo varía, así
+que **no es un `em` del elemento**. Se escribe el px medido y no se deriva la
+unidad (§*un `em` citado sin su `font-size`*).
+
+### 3 · El cascarón compartido deja de ser hipótesis
+
+Las dos familias dan **el mismo valor en los 15 ejes**. Lo único que varía es
+`a.color` en los hubs, y es el estado `current-*`.
+
+Y el MARCADO igual: la estructura del menú —texto + `href`, en orden— tiene
+**UNA sola firma en 13/13**. Varianza cero entre instancias de la misma forma,
+que en la capa `_tb_` es **el** discriminador ⇒ **PLANTILLA**.
+
+Los `current-*`, en cambio: **14 firmas distintas de 14 instancias**. No son un
+campo — son *dónde está el lector*, y se derivan de la ruta.
+
+### 4 · El cruce con otro instrumento — y una §causa común cometida DENTRO del cruce
+
+`kb-spec` midió estas 6 páginas **en el sitio VIVO** con sus 19 hojas y congeló
+`cascaron.barraLateral` el 2026-08-10. Cruzado:
+
+| ancho | Δ`w` | Δ`h` | Δ`y` |
+|---|---|---|---|
+| 1440 | **0.00** | **0.00** | **−32.28** |
+| 390 | **0.00** | **0.00** | **+30.00** |
+
+`w` y `h` **exactos**, en las dos familias, con dos instrumentos y dos fechas.
+Y los dos Δ`y` caen **sobre el pico bimodal documentado de su ancho** —32.28 de
+C-QA6 y 30 de `cqa6-390`—, con el signo invertido entre uno y otro, que es la
+firma que la ley ya describe. Se leen **con su forma**: Δ≈0 limpio · Δ≈pico
+limpio · cualquier otro **DEFECTO**.
+
+> ⚠ **La primera versión del cruce publicó `Δh −43.18`**, un número plausible y
+> falso: comparaba `kb-spec.cascaron.barraLateral` —que es **la COLUMNA**—
+> contra mi `barra` —que es **el MÓDULO de dentro**—. Dos elementos distintos
+> con nombres parecidos. Es §*la causa común: el NIVEL al que se mide* cometida
+> **dentro del cruce escrito para cazar esa clase de error**, y lo que la
+> delató fue que el número no cuadraba con nada.
+
+### 5 · El negativo, 8/8 — y dos casos NO se atan al código de salida
+
+Porque **una captura sin hojas RENDERIZA**: lo que prueba que la precondición
+muerde es **que el número cambie** (§regla 28a — el sabotaje va en el DATO, no
+en el umbral). `sin-hojas` y `sin-fuentes` mueven la geometría y rompen el cruce
+con el vivo. `dominio-corto` cae por el contrato (2 < 13) **pese a que la
+varianza saldría 0** — §regla 22: con n=1 el veredicto lo pondría el dominio y
+no el dato, y el mínimo se **deriva del disco** para no compartir variable con
+lo que el sabotaje encoge (§regla 17).
+
+### 6 · Lo que sigue SIN medir, con su cardinal
+
+- las **14 hojas `et-cache`** de `articulos-kb`: mientras falten, su geometría
+  **offline** no vale. Lo que sí vale es su cruce con el VIVO al nivel de la
+  columna, que es lo que se usó aquí;
+- el **COMPORTAMIENTO**: si algún submenú se despliega por interacción, esta
+  sonda no lo ve. Sigue a **0 de 31**;
+- la **cabecera y el pie** de esta familia: `c-cabecera` cubre 17 rutas y
+  ninguna es de KB ni de la cola larga.
+
+
+## ⛔ F3-3-BT-DOS-FORMAS · el régimen `BT` tiene DOS formas y el clon las colapsa (2026-08-25, 107.ª tanda)
+
+Salió al emitir la barra lateral, y es un hueco de MODELADO — no de píxel.
+
+### Lo medido
+
+`regimen: BT` agrupa **8 páginas**, y no son una forma:
+
+| | n | plantilla de theme-builder | barra lateral | techo @1440 |
+|---|---|---|---|---|
+| centro de ayuda | **7** | `tb-140-tb-25181-tb-342` | `widget_nav_menu` con el menú (+2 vacíos) | **339.16** |
+| `/sistema-interno-de-informacion/` | **1** | `tb-61286-tb-61280-tb-342` | **OTRA**: `widget_custom_html.pages-content`, «Índice del artículo» + `<ul id="indice-contenido">` que **rellena un script** | **406.42** |
+
+Sólo comparten `tb-342` —el pie—. En régimen plantillado *lo que varía entre
+FORMAS distingue plantillas*, así que **son dos plantillas**, no una con el
+hueco vacío. Y los tres ejes concuerdan: plantilla, contenido de la barra y
+geometría.
+
+> ⚠ **Y por eso el `Δtecho` de esa página nunca fue el mismo defecto que el de
+> las otras siete.** Su Δ es **−123.84** contra los **−56.58** de sus hermanas,
+> y la ficha vigente lo presentaba como *«−57.58 en 7 y −124.84 en 1»*, o sea
+> como una anomalía de grado. **Es de CLASE**: son dos plantillas distintas.
+
+### Lo que se hizo, y lo que NO
+
+Se emite la barra en **7 de 8**, con el predicado sobre la RUTA. Y el eje
+elegido lleva su confusión declarada (§*un discriminador 1:1 puede ser la sombra
+de otro*):
+
+> `ruta bajo el centro de ayuda` y `plantilla tb-25181` van **1:1 en las 31
+> páginas**: este dominio **no puede separarlos**. Se elige la ruta porque es
+> **la que está SERVIDA en los dos lados**; la plantilla tiene el mecanismo y
+> **el clon no la tiene en su modelo**.
+
+Verificado contra el original, no supuesto: el predicado casa `cascaron.barra`
+de `f33-cmp` en **31 de 31 rutas, 0 discrepancias**.
+
+### El arreglo bueno, y por qué no se hace aquí
+
+Un **campo** que diga qué plantilla de theme-builder usa la página. No se hace
+en esta tanda porque exige migración y re-siembra, o sea **mover el dato de 31
+rutas en mitad de una tanda que mide** (§regla 20). Y hay una razón de método
+para no improvisarlo: **con `n = 1` de la segunda forma, nada de lo que ese
+campo haga estaría probado por variación.**
+
+### Y lo que su barra necesita, que NO es más CSS
+
+El `<ul id="indice-contenido">` se sirve **VACÍO** y lo rellena un script en
+cliente. Así que medirlo no es cuestión de otra sonda de HTML servido: **es el
+eje COMPORTAMIENTO**, que está a **0 de 31** y es el hueco mayor del proyecto.
+Es §*lo que no tiene caja no se puede medir* con el mecanismo cambiado: aquí no
+lo esconde el CSS, lo esconde **el tiempo**.
+
+**Hasta entonces la columna se queda vacía**, que es la misma decisión —y por la
+misma razón— que la 107.ª acaba de deshacer para las otras siete: *inventarle
+contenido sería rellenar una medida que no se tomó*.
+
+
+## ⚠ F3-3-TECHO-CIFRAS-CADUCADAS · la ficha del `Δtecho` cita una congelada que YA está marcada CADUCADA (2026-08-25, 107.ª tanda)
+
+El encargo avisó de que ese número *«llega con antecedentes»* y mandó derivarlo.
+Derivado, **ninguna de sus cifras es la de hoy** — y no por un error de cita:
+por **§regla 5bis**, *arreglar un instrumento no arregla sus medidas: las caduca*.
+
+### De dónde salen las cifras viejas
+
+| fichero | orig `caja.sec0.y` en `BT` |
+|---|---|
+| `f33-cmp-1440-CADUCADA-RED-CORTADA-EN-UN-SOLO-LADO-imagen-fuente-31-de-31.json` | **340.16 · 407.42** ← las de la ficha |
+| `f33-cmp-1440.json` (y las dos de hoy) | **339.16 · 406.42** |
+
+O sea que la ficha cita **la corrida que la 105.ª renombró como CADUCADA** por
+cortar la red de un solo lado. El instrumento se arregló, la congelada se
+renombró con su defecto… **y la ficha que consumía sus números no**. Exactamente
+el modo de fallo que §regla 5bis describe: *no se vuelven falsas ruidosamente,
+se quedan calladas diciendo lo de antes*.
+
+**El desplazamiento es de −1.00 exacto**, y tiene mecanismo: es el canal de la
+fuente, que la 106.ª midió moviendo `docH` **−1** con Manrope cargada.
+
+### Las cifras de hoy, derivadas
+
+| ancho | original | clon | Δ | n |
+|---|---|---|---|---|
+| 1440 | **339.16** | 282.58 | **−56.58** | 7 |
+| 1440 | **406.42** | 282.58 | **−123.84** | 1 (`sistema-interno`) |
+| 390 | **891.92** | 215.58 | **−676.34** | 5 |
+| 390 | **865.92** | 215.58 | **−650.34** | 2 |
+| 390 | **593.25** | 215.58 | **−377.67** | 1 |
+
+⚠⚠ **Y a 390 NO es un valor, son TRES.** La ficha publica *«−677.34»* en
+singular, y eso es §*un cardinal es un contenedor* aplicado a un Δ: dos rutas
+—`/centro-de-ayuda/kunak-air/` y `/soporte/centro-de-ayuda/`— valen **−650.34**,
+26.00 menos que sus cinco hermanas. Quien lea el singular y encuentre un −650
+lo leerá como defecto nuevo.
+
+### Y lo que la ficha ATRIBUYE mal, medido esta tanda
+
+Dice que la barra lateral *«es lo que explica el `Δtecho`»*. **A 1440 eso es
+falso**, y estaba pre-registrado antes de construir:
+
+> A 1440 las dos columnas van **lado a lado**. La barra entra en la columna
+> estrecha y `caja.sec0` vive en la ancha: meter contenido en una **no mueve el
+> techo de su hermana**.
+
+Medido con la barra ya emitida: `caja.sec0.y` = **282.58 en las 8 rutas, ANTES y
+DESPUÉS**. El techo **no se movió un píxel a 1440**, y el `Δ −56.58` sigue
+entero. Lo que la barra sí explica es el eje `enlaces` (+12 exactos) y, a 390,
+el apilado — que es otra medida y va con su ancho.
+
+---
+
+## ⚠ F3-3-COLUMNA-ESTRECHA-0.06 · `w-[20.87%]` da 258.44 contra 258.5, y lleva ahí desde siempre (2026-08-25, 107.ª tanda)
+
+**No lo creó esta tanda: lo hizo VISIBLE.** Hasta ahora la columna estrecha iba
+vacía, así que `f33-cmp` medía `cascaron.barra: null` y no había nada que
+comparar. Con la barra dentro, el primer comparador de dos lados la ve.
+
+| | 1440 | 390 |
+|---|---|---|
+| original | **258.5** | 335.39 |
+| clon | **258.44** | 335.39 |
+| Δ | **−0.06** | **0** ✓ |
+
+A 390 no aparece porque la columna apila a ancho completo y el porcentaje no
+interviene.
+
+**Es la misma clase que el `73.624 %` que `CascaronTb` ya documenta**: *el valor
+no es «el porcentaje de Divi», es el que reproduce el píxel medido*, y el ancho
+computado está cuantizado a **1/64 px**, así que un px no determina un
+porcentaje sino un intervalo.
+
+**Derivado, para que la tanda siguiente no tenga que calcularlo:**
+
+```
+20.87 %      × 1238.39 = 258.4520  →  ⌊×64⌋/64 = 258.4375   (lo medido: 258.44)
+20.874 %     × 1238.39 = 258.5019  →  ⌊×64⌋/64 = 258.5      ✓
+intervalo admisible: [20.873877 %, 20.875139 %)
+```
+
+**No se aplica aquí, y la razón es de alcance, no de duda.** `ColumnaEstrecha`
+la consumen **tres** arquetipos —derivado con `grep`, no recordado:
+`CascaronA` (grupo A, 209 páginas), `PaginaF33` y `PaginaKb`—, así que tocarla
+obliga a reconstruir y re-verificar grupo A entero en mitad de una tanda que
+mide otra cosa (§regla 20). Se ficha con el número hecho.
