@@ -343,7 +343,88 @@
   margin-left: auto;
   margin-right: auto;
 }
-.f33-toggle {
+/* ═══════════════════════════════════════════════════════════════════════════
+ * EL `toggle` — 106.ª tanda. LA CLASE ESTABA Y ERA INERTE.
+ *
+ * El clon **ya emitía** `et_pb_toggle_close` desde que se construyó el
+ * arquetipo. La clase estaba en el HTML servido, el diff se leía correcto… y
+ * **no llegaba a ninguna propiedad**, porque el clon no reproduce el CSS que
+ * Divi compila. Es §*el HTML sirve una clase que no hace nada*: el marcador de
+ * frescura da verde y **el cambio no existe** — sólo lo caza medir después.
+ *
+ * Coste medido por `f33-cmp`: el original sirve los 10 a **63 px, uniforme**;
+ * el clon los pintaba a `254.16 ×5 · 131.78 ×2 · 223.56 ×2 · 101.19 ×1`.
+ *
+ * ⚠ **Y no es cosmético.** Con el desplegable abierto en el clon y cerrado en
+ * el original, los módulos de dentro TIENEN caja en un lado y no en el otro,
+ * así que **cualquier eje geométrico de esas 5 rutas estaba comparando dos
+ * estados distintos**.
+ *
+ * ── De dónde salen los números: `derivaciones/toggle-f33-1440.log` ────────
+ * `getComputedStyle` sobre el original montado igual que lo monta el
+ * comparador. No `grep` sobre la hoja: §*transcribir la declaración servida no
+ * es transcribir la CASCADA* — `grep` contesta «¿existe?» y la pregunta es
+ * «¿cuál GANA?».
+ *
+ * **Varianza medida ANTES de escribir nada, y son DOS poblaciones**, separadas
+ * por el `display` de su contenido (que es el mecanismo, no una etiqueta):
+ *
+ *   · `display:none` — **los 10** `et_pb_toggle` del builder, los que cuenta el
+ *     censo. UNIFORMES en los 17 ejes mirados salvo `mb` (0 ×6 · 25.06 ×4, que
+ *     es el default de módulo + la regla del último, ya modeladas arriba);
+ *   · `display:block` — **19** en `/es/recursos/preguntas-frecuentes/`, con
+ *     OTRA caja entera (`pt/pb 17`, `pl/pr 8`, sin fondo, `h3` 19.2/26.88). **No
+ *     son este módulo** y no se tocan aquí: los pinta `FaqAcordeon`.
+ *
+ * ⚠ **`n = 10` con varianza cero NO prueba plantilla** (§test B, falso
+ * negativo: un campo que el editor puso uniforme en toda la página tampoco
+ * varía). Lo que la medición compra es la dirección contraria — nada de esto
+ * VARÍA, así que nada de esto es campo *con certeza*. Se escribe como plantilla
+ * porque el mecanismo es el mismo que ya se aceptó para `padding-top` (regla
+ * genérica del tema, no regla con ordinal), y queda dicho.
+ *
+ * ⚠ **CORREGIDO de paso: el comentario de arriba decía «`padding: 20px 0` en
+ * los 10» y el horizontal NUNCA se midió.** `f33-clases` §reglas 32-33 mide
+ * `margin-left/right: 0px`, que es OTRA propiedad; el `0` horizontal se dedujo
+ * de ahí. Medido: **`padding` 20 en los CUATRO lados, 10/10**.
+ * ═════════════════════════════════════════════════════════════════════════ */
+/* ⚠⚠ **`.f33-modulo.f33-toggle` Y NO `.f33-toggle` — y la primera versión lo
+ * escribió mal, con el ancho como único testigo.**
+ *
+ * `.f33-toggle` es (0,1,0) y el bloque `@media (max-width: 980px)` de arriba
+ * lleva `.f33-col-1_2 > .f33-modulo`, que es **(0,2,0)**: a ≤980 ganaba él y
+ * devolvía `padding-bottom: 0`. Medido — a **1440** el arreglo daba `h` Δ0 en
+ * 10 de 10; a **390** el mismo código dejaba el toggle en `w×10 · h×10 · pb×10`,
+ * **peor que antes de tocarlo** (24 → 30 pares distintos).
+ *
+ * Es §*una regla en el NIVEL equivocado no da error* y §la regla espejo a la
+ * vez: **el ancho donde la regla no compite no puede verlo**. Con la misma
+ * clase en el elemento —(0,2,0) y declarada después— gana en los dos. */
+.f33-modulo.f33-toggle {
+  padding: 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+}
+.f33-toggle .et_pb_toggle_title {
+  /* h5 · 21/21 · 600 · #666. El `padding-right` reserva el hueco del glifo. */
+  margin: 0;
+  padding: 0 50px 0 0;
+  position: relative;
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 600;
+  color: #666;
+}
+/* ⚠ **El GLIFO no se escribe, y no cuesta un píxel.** En el original es un
+ * `::before` de la fuente `ETmodules` con `position: absolute` (right 0 · top
+ * 10.5 · 16px · #ccc), o sea **fuera del flujo**: su ausencia no mueve la caja.
+ * El clon no declara `@font-face` de ETmodules por ningún sitio (derivado:
+ * `grep -rln "@font-face" apps/web/src` da 0), así que escribir el `content`
+ * pintaría el carácter de reemplazo — que SÍ se vería. Ficha aparte. */
+.f33-toggle.et_pb_toggle_close .et_pb_toggle_content {
+  display: none;
+}
+.f33-toggle .et_pb_toggle_content {
   padding-top: 20px;
-  padding-bottom: 20px;
 }

@@ -34,8 +34,17 @@ const RAIZ = join(AQUI, "../../../..");
 const MED = join(RAIZ, "scripts/qa/medidas");
 
 const ANCHOS = [1440, 390];
-const ANTES = (a) => join(MED, `f33-cmp-${a}-CADUCADA-RED-CORTADA-EN-UN-SOLO-LADO-imagen-fuente-31-de-31.json`);
-const AHORA = (a) => join(MED, `f33-cmp-${a}.json`);
+/**
+ * Los dos lados se NOMBRAN por parámetro. El defecto es el par del ESCALÓN 1
+ * —caducada contra canónica—; `ANTES=`/`AHORA=` sirven para leer cualquier otro
+ * par (p.ej. el del `toggle`, que compara dos corridas ya con los tres canales
+ * cerrados). Sin parámetro no hay fallback silencioso a «la más reciente»: el
+ * par se elige, no se adivina.
+ */
+const PLANTILLA_ANTES = process.env.ANTES || "f33-cmp-{A}-CADUCADA-RED-CORTADA-EN-UN-SOLO-LADO-imagen-fuente-31-de-31.json";
+const PLANTILLA_AHORA = process.env.AHORA || "f33-cmp-{A}.json";
+const ANTES = (a) => join(MED, PLANTILLA_ANTES.replace("{A}", a));
+const AHORA = (a) => join(MED, PLANTILLA_AHORA.replace("{A}", a));
 
 /** Los mismos pares que arma `f33-cmp`, reconstruidos desde la congelada. */
 function pares(j) {
@@ -57,8 +66,8 @@ function pares(j) {
 
 const l = [];
 l.push("═══ simetria-f33 · cerrar los TRES canales, leído por DISTANCIA\n");
-l.push("  ANTES = red cortada en UN lado (imagen y fuente sólo en el clon)");
-l.push("  AHORA = hojas + media + fuentes locales en el original · intercepción en LOS DOS\n");
+l.push(`  ANTES = ${PLANTILLA_ANTES}`);
+l.push(`  AHORA = ${PLANTILLA_AHORA}\n`);
 
 let corridas = 0;
 for (const a of ANCHOS) {
@@ -102,7 +111,19 @@ for (const a of ANCHOS) {
   l.push(`  iguales           ${iguales}`);
   l.push(`  Σ|clon−orig|      ${sumaAntes.toFixed(2)} → ${sumaAhora.toFixed(2)}   (${(sumaAhora - sumaAntes).toFixed(2)})`);
   l.push(`  se movió el lado  ORIGINAL ${movOrig} · CLON ${movClon}`);
-  l.push("     ↑ el arreglo tocaba el montaje del ORIGINAL. El clon sólo puede moverse donde pedía algo EXTERNO.");
+  l.push("     ↑ el reparto por LADO es el control de ATRIBUCIÓN: un arreglo del montaje del original");
+  l.push("       no puede mover el clon, y uno del clon no puede mover el original. Si los dos se mueven,");
+  l.push("       el par mezcla DOS cambios y su Δ no se puede atribuir (§la causa común, en el instrumento).");
+  /* Los que se ALEJAN van NOMBRADOS: un recuento de daño sin sus elementos no
+   * se puede auditar, y es el lado que decide si un arreglo se revierte. */
+  const seAlejan = mayores.filter((m) => m.delta > 0.01).sort((x, y) => y.delta - x.delta);
+  if (seAlejan.length) {
+    l.push(`  los que se ALEJAN, NOMBRADOS (${seAlejan.length}):`);
+    for (const m of seAlejan.slice(0, 12)) {
+      l.push(`     ↑ ${m.k.padEnd(62)} |Δ| ${m.dA.toFixed(2).padStart(10)} → ${m.dB.toFixed(2).padStart(10)}`);
+    }
+    if (seAlejan.length > 12) l.push(`     … y ${seAlejan.length - 12} más`);
+  } else l.push("  los que se ALEJAN: NINGUNO");
   const top = mayores.sort((x, y) => Math.abs(y.delta) - Math.abs(x.delta)).slice(0, 10);
   l.push("  los 10 que más se movieron:");
   for (const m of top) l.push(`     ${m.delta < 0 ? "↓" : "↑"} ${m.k.padEnd(62)} |Δ| ${m.dA.toFixed(2).padStart(10)} → ${m.dB.toFixed(2).padStart(10)}`);
@@ -112,5 +133,5 @@ for (const a of ANCHOS) {
 if (!corridas) { l.push("\n⛔ 0 anchos comparados: sin las dos congeladas esto no mide nada (§sondas 4)."); }
 const txt = l.join("\n") + "\n";
 console.log(txt);
-writeFileSync(join(AQUI, "simetria-f33.log"), txt);
+writeFileSync(join(AQUI, process.env.LOG || "simetria-f33.log"), txt);
 if (!corridas) process.exitCode = 2;

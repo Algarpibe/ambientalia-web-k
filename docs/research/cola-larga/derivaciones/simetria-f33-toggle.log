@@ -1,0 +1,55 @@
+═══ simetria-f33 · cerrar los TRES canales, leído por DISTANCIA
+
+  ANTES = f33-cmp-{A}.json
+  AHORA = f33-cmp-{A}-2026-08-25-2.json
+
+─── 1440 ────────────────────────────────────────────────────────────
+  llaves            antes 2441 · ahora 2441 · sólo antes 0 · sólo ahora 0
+  pares comparables 2107
+  ACERCAN           36   (de ellos, a Δ0 exacto: 10)
+  ALEJAN            0   (de ellos, desde Δ0: 0)
+  iguales           2071
+  Σ|clon−orig|      356762.68 → 347838.04   (-8924.64)
+  se movió el lado  ORIGINAL 0 · CLON 36
+     ↑ el reparto por LADO es el control de ATRIBUCIÓN: un arreglo del montaje del original
+       no puede mover el clon, y uno del clon no puede mover el original. Si los dos se mueven,
+       el par mezcla DOS cambios y su Δ no se puede atribuir (§la causa común, en el instrumento).
+  los que se ALEJAN: NINGUNO
+  los 10 que más se movieron:
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec7.y                       |Δ|    2232.05 →    1849.73
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec10.y                      |Δ|    2563.27 →    2180.95
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec2.y                       |Δ|    1680.02 →    1297.70
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec3.y                       |Δ|    1790.42 →    1408.11
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec0.h                       |Δ|     517.73 →     135.42
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec1.y                       |Δ|    1569.61 →    1187.30
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec4.y                       |Δ|    1900.83 →    1518.52
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec5.y                       |Δ|    2011.23 →    1628.92
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec6.y                       |Δ|    2121.64 →    1739.33
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec9.y                       |Δ|    2452.86 →    2070.55
+
+─── 390 ────────────────────────────────────────────────────────────
+  llaves            antes 2441 · ahora 2441 · sólo antes 0 · sólo ahora 0
+  pares comparables 2107
+  ACERCAN           48   (de ellos, a Δ0 exacto: 20)
+  ALEJAN            2   (de ellos, desde Δ0: 0)
+  iguales           2057
+  Σ|clon−orig|      310521.32 → 295948.65   (-14572.67)
+  se movió el lado  ORIGINAL 0 · CLON 50
+     ↑ el reparto por LADO es el control de ATRIBUCIÓN: un arreglo del montaje del original
+       no puede mover el clon, y uno del clon no puede mover el original. Si los dos se mueven,
+       el par mezcla DOS cambios y su Δ no se puede atribuir (§la causa común, en el instrumento).
+  los que se ALEJAN, NOMBRADOS (2):
+     ↑ /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/|docH         |Δ|     421.00 →     654.00
+     ↑ /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/|docH |Δ|     655.00 →     704.00
+  los 10 que más se movieron:
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec0.h                       |Δ|     817.09 →     163.06
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec1.y                       |Δ|    2540.83 →    1886.80
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec2.y                       |Δ|    2701.83 →    2047.80
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec3.y                       |Δ|    2862.83 →    2208.80
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec4.y                       |Δ|    3023.83 →    2369.80
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec5.y                       |Δ|    3184.83 →    2530.80
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec6.y                       |Δ|    3345.83 →    2691.80
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec7.y                       |Δ|    3506.83 →    2852.80
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec8.y                       |Δ|    3667.83 →    3013.80
+     ↓ /es/soporte/centro-de-ayuda/|caja.sec9.y                       |Δ|    3828.83 →    3174.80
+

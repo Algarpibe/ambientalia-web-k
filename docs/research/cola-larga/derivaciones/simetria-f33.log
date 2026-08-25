@@ -1,7 +1,7 @@
 ═══ simetria-f33 · cerrar los TRES canales, leído por DISTANCIA
 
-  ANTES = red cortada en UN lado (imagen y fuente sólo en el clon)
-  AHORA = hojas + media + fuentes locales en el original · intercepción en LOS DOS
+  ANTES = f33-cmp-{A}-CADUCADA-RED-CORTADA-EN-UN-SOLO-LADO-imagen-fuente-31-de-31.json
+  AHORA = f33-cmp-{A}.json
 
 ─── 1440 ────────────────────────────────────────────────────────────
   llaves            antes 2441 · ahora 2441 · sólo antes 0 · sólo ahora 0
@@ -11,7 +11,23 @@
   iguales           1882
   Σ|clon−orig|      365362.63 → 356762.68   (-8599.95)
   se movió el lado  ORIGINAL 245 · CLON 3
-     ↑ el arreglo tocaba el montaje del ORIGINAL. El clon sólo puede moverse donde pedía algo EXTERNO.
+     ↑ el reparto por LADO es el control de ATRIBUCIÓN: un arreglo del montaje del original
+       no puede mover el clon, y uno del clon no puede mover el original. Si los dos se mueven,
+       el par mezcla DOS cambios y su Δ no se puede atribuir (§la causa común, en el instrumento).
+  los que se ALEJAN, NOMBRADOS (112):
+     ↑ /es/empresa/premios-y-reconocimientos/|mod31.h                 |Δ|     130.78 →     678.81
+     ↑ /es/sistema-interno-de-informacion/|caja.sec0.h                |Δ|    1359.40 →    1717.93
+     ↑ /es/sistema-interno-de-informacion/|mod0.h                     |Δ|    1344.61 →    1703.14
+     ↑ /es/sistema-interno-de-informacion/|docH                       |Δ|    1584.00 →    1942.00
+     ↑ /es/empresa/premios-y-reconocimientos/|mod5.h                  |Δ|      23.25 →     338.81
+     ↑ /es/empresa/|mod5.h                                            |Δ|       6.00 →     319.31
+     ↑ /es/productos/|mod7.h                                          |Δ|      14.59 →     281.68
+     ↑ /es/productos/|mod10.h                                         |Δ|      14.59 →     281.68
+     ↑ /es/productos/|mod13.h                                         |Δ|      14.59 →     281.68
+     ↑ /es/productos/|mod16.h                                         |Δ|      14.59 →     281.68
+     ↑ /es/productos/|mod19.h                                         |Δ|      14.59 →     281.68
+     ↑ /es/productos/|mod22.h                                         |Δ|      14.59 →     281.68
+     … y 100 más
   los 10 que más se movieron:
      ↓ /es/centro-de-ayuda/kunak-air/video-tutoriales/|docH           |Δ|    1780.00 →     425.00
      ↓ /es/empresa/premios-y-reconocimientos/|docH                    |Δ|    1779.00 →     480.00
@@ -32,7 +48,23 @@
   iguales           1866
   Σ|clon−orig|      322097.89 → 310521.32   (-11576.57)
   se movió el lado  ORIGINAL 268 · CLON 3
-     ↑ el arreglo tocaba el montaje del ORIGINAL. El clon sólo puede moverse donde pedía algo EXTERNO.
+     ↑ el reparto por LADO es el control de ATRIBUCIÓN: un arreglo del montaje del original
+       no puede mover el clon, y uno del clon no puede mover el original. Si los dos se mueven,
+       el par mezcla DOS cambios y su Δ no se puede atribuir (§la causa común, en el instrumento).
+  los que se ALEJAN, NOMBRADOS (119):
+     ↑ /es/sistema-interno-de-informacion/|caja.sec0.h                |Δ|    2294.20 →    3203.42
+     ↑ /es/sistema-interno-de-informacion/|mod0.h                     |Δ|    2279.41 →    3188.62
+     ↑ /es/sistema-interno-de-informacion/|docH                       |Δ|    3191.00 →    4099.00
+     ↑ /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/|docH         |Δ|     104.00 →     421.00
+     ↑ /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/|docH |Δ|     338.00 →     655.00
+     ↑ /es/aviso-legal/|caja.sec0.h                                   |Δ|     512.40 →     818.34
+     ↑ /es/aviso-legal/|docH                                          |Δ|     510.00 →     815.00
+     ↑ /es/politica-de-seguridad-de-la-informacion/|docH              |Δ|    2686.00 →    2933.00
+     ↑ /es/productos/|mod7.h                                          |Δ|      14.59 →     254.49
+     ↑ /es/productos/|mod10.h                                         |Δ|      14.59 →     254.49
+     ↑ /es/productos/|mod13.h                                         |Δ|      14.59 →     254.49
+     ↑ /es/productos/|mod16.h                                         |Δ|      14.59 →     254.49
+     … y 107 más
   los 10 que más se movieron:
      ↓ /es/empresa/premios-y-reconocimientos/|docH                    |Δ|    4505.00 →    1555.00
      ↓ /es/productos/|docH                                            |Δ|    2262.00 →     444.00

@@ -1,0 +1,126 @@
+═══ toggle-f33 · la geometría del `toggle` CERRADO en el original · ancho 1440
+
+  instancias 29 · cerradas 29 · abiertas 0
+  alturas del módulo: 63 ×10 · 62.88 ×1 · 61.88 ×18
+  `display` del CONTENIDO: none ×10 · block ×19
+
+  la primera instancia, entera:
+    {
+      "ruta": "/es/centro-de-ayuda/kunak-air-cloud/",
+      "cerrado": true,
+      "h": 63,
+      "w": 430.8,
+      "caja": {
+        "pt": 20,
+        "pr": 20,
+        "pb": 20,
+        "pl": 20,
+        "mb": 25.06,
+        "borde": "1px solid rgb(217, 217, 217)",
+        "radio": "10px",
+        "bg": "rgb(243, 243, 243)"
+      },
+      "titulo": {
+        "tag": "h5",
+        "h": 21,
+        "fs": "21px",
+        "lh": "21px",
+        "fw": "600",
+        "color": "rgb(102, 102, 102)",
+        "pt": 0,
+        "pb": 0,
+        "pr": 50,
+        "pl": 0,
+        "m": "0/0",
+        "pos": "relative",
+        "cursor": "pointer"
+      },
+      "icono": {
+        "content": "\"\"",
+        "ff": "ETmodules",
+        "fs": "16px",
+        "pos": "absolute",
+        "right": "0px",
+        "top": "10.5px",
+        "color": "rgb(204, 204, 204)"
+      },
+      "contenido": {
+        "display": "none",
+        "h": 0,
+        "pt": 20,
+        "pb": 0
+      }
+    }
+
+  ── VARIANZA por población (mecanismo = `display` del contenido) ──
+
+  display:none (los 10 del censo) · n = 10
+     caja.pt        UNIFORME  20 ×10
+     caja.pb        UNIFORME  20 ×10
+     caja.pl        UNIFORME  20 ×10
+     caja.pr        UNIFORME  20 ×10
+     caja.borde     UNIFORME  1px solid rgb(217, 217, 217) ×10
+     caja.radio     UNIFORME  10px ×10
+     caja.bg        UNIFORME  rgb(243, 243, 243) ×10
+     caja.mb        ⚠ VARÍA (2)  0 ×6 · 25.06 ×4
+     tit.tag        UNIFORME  h5 ×10
+     tit.fs         UNIFORME  21px ×10
+     tit.lh         UNIFORME  21px ×10
+     tit.fw         UNIFORME  600 ×10
+     tit.color      UNIFORME  rgb(102, 102, 102) ×10
+     tit.pr         UNIFORME  50 ×10
+     icono.content  UNIFORME  "" ×10
+     icono.top      UNIFORME  10.5px ×10
+     icono.color    UNIFORME  rgb(204, 204, 204) ×10
+     cont.pt        UNIFORME  20 ×10
+
+  display:block (preguntas-frecuentes) · n = 19
+     caja.pt        UNIFORME  17 ×19
+     caja.pb        UNIFORME  17 ×19
+     caja.pl        UNIFORME  8 ×19
+     caja.pr        UNIFORME  8 ×19
+     caja.borde     ⚠ VARÍA (2)  1px solid rgb(217, 217, 217) ×1 · 0px none rgb(51, 51, 51) ×18
+     caja.radio     UNIFORME  0px ×19
+     caja.bg        UNIFORME  rgba(0, 0, 0, 0) ×19
+     caja.mb        UNIFORME  0 ×19
+     tit.tag        UNIFORME  h3 ×19
+     tit.fs         UNIFORME  19.2px ×19
+     tit.lh         UNIFORME  26.88px ×19
+     tit.fw         UNIFORME  400 ×19
+     tit.color      UNIFORME  rgb(51, 51, 51) ×19
+     tit.pr         UNIFORME  0 ×19
+     icono.content  UNIFORME  "" ×19
+     icono.top      UNIFORME  2px ×19
+     icono.color    UNIFORME  rgb(51, 51, 51) ×19
+     cont.pt        UNIFORME  0 ×19
+
+  todas, por ruta:
+    /es/centro-de-ayuda/kunak-air-cloud/                 h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/centro-de-ayuda/kunak-air-cloud/                 h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/centro-de-ayuda/kunak-air/                       h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/centro-de-ayuda/kunak-air/                       h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/centro-de-ayuda/kunak-air/articulos-de-ayuda/    h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/soporte/centro-de-ayuda/                         h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/soporte/centro-de-ayuda/                         h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/soporte/centro-de-ayuda/                         h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/soporte/centro-de-ayuda/                         h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/ h      63 · tit     21 (h5 21px/21px) · cont none 0
+    /es/recursos/preguntas-frecuentes/                   h   62.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
+    /es/recursos/preguntas-frecuentes/                   h   61.88 · tit  26.88 (h3 19.2px/26.88px) · cont block 0
