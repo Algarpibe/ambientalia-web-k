@@ -179,6 +179,47 @@ cerrados y **varianza cero no prueba plantilla**.
 
 ---
 
+## ✅ F3-3-GALLERY-SIN-EXPRESAR · **CERRADA por la 108.ª (2026-08-25): NO ES DEUDA. El bloque EXISTE, el clon lo sirve, y los items son 6 — no 11** — el enunciado de la 106.ª se conserva entero debajo
+
+**Se leyó la tabla de traducción de una SONDA creyendo leer el esquema.**
+`KIND_DE_DIVI` vive en `scripts/qa/f33-cmp.mjs`, es el diccionario Divi→`kind`
+**de ese comparador**, y ese comparador sólo cubre la colección `paginas`. De ahí
+salió *«el esquema no lo expresa por ningún canal»*. Derivado
+(`derivaciones/deudas-modelo-f33.{mjs,log}`), son **dos conjuntos**:
+
+| conjunto | qué es | ¿tiene `gallery`? |
+|---|---|---|
+| `KIND_DE_DIVI` | lo que **la sonda `f33-cmp`** sabe traducir — 11 tipos | **NO** |
+| los `slug` de `bloques/*.ts` | lo que **el ESQUEMA** expresa, colección a colección | **SÍ — `MODULO_GALLERY` en `bloques/kb.ts`** |
+
+**Y el clon lo sirve, medido de dos lados, no argumentado.** La ruta es
+`articulos-kb`, así que su comparador es `kb-cmp`, no `f33-cmp`:
+
+| | congelada | contra el original VIVO |
+|---|---|---|
+| pares en esa ruta | 1408 · **0 distintos** | 1549 · **0 distintos** |
+| items de galería vistos **en los dos lados** | **6** (`g0`…`g5`) | **6** |
+| `soloOriginal` en TODA la corrida | **0** | **0** |
+
+> **`soloOriginal: 0` es el control que decide:** si el clon no sirviera la
+> galería, sus nodos estarían ahí. No están.
+
+**Y los items son 6, no 11.** El literal `et_pb_gallery_item` aparece **13**
+veces porque el CONTENEDOR se llama `et_pb_gallery_item`**s** —en plural— y cada
+`<div>` de item lleva la clase desnuda **más** su ordinal. Contando ordinales
+distintos (`et_pb_gallery_item_0_0` … `_0_5`): **6**, que es exactamente lo que
+`MODULO_GALLERY` ya documenta en su cabecera. Es §*un cardinal es un contenedor*
+con el contenedor puesto en un `match()`.
+
+**Lo que sí queda, y es otra cosa:** la colección `paginas` **no** tiene bloque
+`gallery`. No es deuda hoy porque **ninguna de las 31 rutas de F3-3 trae una** —
+las dos rutas emitidas con galería son `que-es-kunak-air-cloud` (`articulos-kb`,
+resuelta) y `/monitor-calidad-aire` (arquetipo PRODUCTO, que la sirve a mano por
+`TRIALS_GALLERY` + `GaleriaEnsayos`, verificado por su testigo `co_mexico.webp`).
+
+<details>
+<summary>Enunciado original de la 106.ª (2026-08-25), conservado</summary>
+
 ## ⛔ F3-3-GALLERY-SIN-EXPRESAR · **`articulos-kb` sirve un `et_pb_gallery` de 11 items y el esquema no tiene bloque para él** — 106.ª, 2026-08-25, FICHADO (no arreglado)
 
 Derivación `derivaciones/tipos-sin-emitir.log`, **offline y sin abrir el
@@ -193,9 +234,32 @@ arquetipo PRODUCTO, ya clonado y dado por bueno**»*. Derivado:
 | familia | documentos | **rutas que el clon EMITE** | veredicto |
 |---|---|---|---|
 | `blog` | 55 | 36 (`/etiqueta/…`) | ✅ **no es hueco** — `TarjetaListado` sirve el contenido |
-| `dvmd_table_maker` | 21 | **1** | ✅ **no es hueco** — `/monitor-calidad-aire` sirve la tabla por `lib/monitor.ts` §ESPECIFICACIONES, verificado al literal («257 x 270 x 225 mm», «PMMA, policarbonato y acero inoxidable», «Litio 26Ah») |
+| `dvmd_table_maker` | 21 | ~~**1**~~ ⛔ **2, y la 2.ª es un hueco abierto** | ⛔ **CORREGIDO POR LA 108.ª** — ver debajo |
 | **`gallery`** | 3 | **2** | ⛔ **HUECO REAL** |
 | `cta` | 1 | 1 | ⚠ **SIN COMPROBAR** |
+
+> ⛔⛔ **LA FILA DE `dvmd_table_maker` CONTRADECÍA UN ⛔ ABIERTO DE ESTE MISMO
+> DOCUMENTO, y el empate lo producía un cardinal mal contado (108.ª, derivado).**
+>
+> Las rutas emitidas con `dvmd_table_maker` son **2, no 1**: `/monitor-calidad-aire`
+> **y `/politica-de-cookies`** — que es una de las 31 de F3-3 y es exactamente
+> §F3-3-MODULO-DE-TERCEROS, abierta desde la 105.ª. Medido de dos lados por
+> `f33-cmp`: **orig 9 módulos → clon 8 · Δ docH −1512.00.**
+>
+> | ficha | dice de `dvmd_table_maker` | cierto de |
+> |---|---|---|
+> | 105.ª §F3-3-MODULO-DE-TERCEROS | ⛔ *«el clon no la sirve por ningún canal»* | `/politica-de-cookies` |
+> | 106.ª (esta tabla) | ✅ *«no es hueco»* | `/monitor-calidad-aire` |
+>
+> **Las dos eran ciertas de UNA ruta cada una, y la tabla las presentaba como el
+> veredicto de la familia.** Es §*una regla derivada sobre un dominio donde el
+> caso NO SE DA no está probada para ese caso* — el censo miró la familia
+> `productos/` y concluyó sobre las 21.
+>
+> **Y por qué ningún censo lo cazó:** `dvmd_table_maker` es un módulo de
+> **TERCEROS**, o sea que su clase **no empieza por `et_pb_`**, y `tipoDe` sólo
+> reconoce `et_pb_<tipo>_<n>`. Los censos de 313 módulos lo cuentan como si no
+> existiera — §*un campo ausente en el 100 % de su tipo es el instrumento*.
 
 > **Los «20 del arquetipo PRODUCTO» son 1.** El 20 se leyó del DIRECTORIO
 > `corpus/productos/`; cruzado contra `prerender-manifest`, **19 de esos 20 son
@@ -234,6 +298,8 @@ usar `tipoDe` pero sin traducir los dos sistemas de nombres (`et_pb_image` vs
 `imagen-pagina`), y **4** al colapsar el marcado interno (`dvmd_tm_*` son 22
 clases de **un** módulo; `blog_item_0..4`, los posts de **un** `et_pb_blog`).
 §*N valores de un total no son N familias*, tres veces en el mismo fichero.
+
+</details>
 
 ---
 
@@ -493,8 +559,49 @@ mueve `padding-top`/`padding-bottom` de `.f33-modulo`, y sólo su valor en `em`
 
 | celda | @1440 | @390 camino VIEJO | @390 camino BUENO | veredicto congelado | veredicto real |
 |---|---|---|---|---|---|
-| `button.pt` | 7.5 | **4.5** | **7.5** | plantilla (se mueve) | ⚠⚠ **CAMPO (px absolutos)** |
-| `button.pb` | 9 | **4.5** | **9** | plantilla (se mueve) | ⚠⚠ **CAMPO (px absolutos)** |
+| `button.pt` | 7.5 | **4.5** | **7.5** | plantilla (se mueve) | ~~CAMPO (px absolutos)~~ ⛔ **NO — ver debajo** |
+| `button.pb` | 9 | **4.5** | **9** | plantilla (se mueve) | ~~CAMPO (px absolutos)~~ ⛔ **NO — ver debajo** |
+
+> ⛔⛔ **LA COLUMNA «veredicto real» ESTÁ MAL, Y LO CORRIGE LA 108.ª: LAS DOS SON
+> PLANTILLA. El test A da CAMPO porque el valor está en `em`, y un `em` no se
+> mueve con el ancho LO ESCRIBA QUIEN LO ESCRIBA** (regla nueva en `CLAUDE.md`,
+> §*el falso positivo del test A*). Derivado en
+> `derivaciones/deudas-modelo-f33.{mjs,log}` **por la CASCADA**, que es el canal
+> que dice quién escribe en vez de inferirlo:
+>
+> | | `padding-top` | `padding-bottom` |
+> |---|---|---|
+> | selector ganador | `.et_pb_button` — **GENÉRICO, sin ordinal ⇒ plantilla** | idem |
+> | hoja | **`KunakAir/style.css`** (el TEMA), `!important` | idem |
+> | declarado @1440 | `0.5em !important` ×12 | `0.6em !important` ×12 |
+> | declarado @390 | `0.5em !important` ×12 — **IDÉNTICO** | `0.6em !important` ×12 — **IDÉNTICO** |
+>
+> **Control cruzado al ELEMENTO** (§sondas 4): la cascada ve **12 nodos** y el
+> test A ve **11 con caja + 1 sin caja = 12**. ✅
+>
+> **Y la separadora estaba congelada desde antes, en un SABOTAJE de esta misma
+> sonda** (§regla 8b): `f33-geo-neg-sin-hojas` quita las hojas enlazadas **a los
+> dos anchos**, gana el `0.3em` del core de Divi —plantilla sin discusión— el
+> valor sale igual a 1440 y a 390, y el veredicto que imprime es
+> **«CAMPO (test A: px absolutos)»**. El negativo **demuestra el modo de fallo**
+> sin que hiciera falta medir nada nuevo.
+>
+> **Consecuencia:** re-medir el lado de 390 **no habría cambiado el veredicto de
+> «plantilla» a «campo»** — habría cambiado el MOTIVO por el que sale plantilla,
+> y con el enunciado literal del test A habría salido **campo**, o sea **dos
+> campos inventados en el esquema**. Las 2 celdas salen de la mesa de deudas de
+> modelo.
+>
+> ⚠ **Lo que sigue en pie de esta ficha:** la congelada de 390 sigue caducada y
+> `f33-geo.json` canónico sigue **liberado** — de las 9 congeladas de `f33-geo`,
+> **las 9 son artefactos de §regla 7** y **ninguna es medida vigente**. Lo que
+> cambia es que las 2 celdas ya no son razón para re-medirla con urgencia.
+>
+> **Y la transcripción tampoco está bloqueada por «falta la base del `em`»**
+> (§F3-3-BOTON-PADDING-EM): `SectionRow.BlueButton`, del arquetipo HOME ya
+> verificado, transcribe **`pt-[7.5px] pb-[9px] text-[15px]`** — y
+> `0.5 × 15 = 7.5` y `0.6 × 15 = 9` salen **al bit**. La base estaba derivada;
+> nadie la había buscado.
 
 > **Es §*la causa común* con el contenedor puesto en el INSTRUMENTO: un defecto
 > de 3 px por módulo no cambia una medida, cambia una DECISIÓN DE MODELO** —
@@ -2978,6 +3085,11 @@ después.
 > que lo respaldado es *«llegan el principio y el final a 230.016»*, no *«llega
 > entero»* — §*un cero de muestreo se publica como COTA*. Tras la 105.ª el
 > fichero queda en **233.733**.
+
+> ✅ **TERCERA LECTURA, 2026-08-25 (108.ª): los dos llegan a 242 258 chars.** La
+> cota sube de 230 016 a **242 258** (+5 %). Detalle y el aviso de método que
+> vino con ella —la cifra de referencia hay que derivarla, porque «156 426» está
+> escrito justo aquí arriba y se cita solo— en §108.ª.
 
 **CERRADA.** Las dos hipótesis están dirimidas y el instrumento retirado: el
 resultado, los cinco veredictos y lo que sigue sin medir viven al final, en
@@ -20792,3 +20904,221 @@ instrumento y uno es de lectura:
 - **el pie**, bajado un nivel y sin mecanismo ahí — pero con su **separadora**
   identificada (`L2-glosario`, la única a Δ0 y la única cuyo `legal` mide el
   doble), que refuta cualquier modelo «por línea» sin medir nada nuevo.
+
+
+## 108.ª · LA MESA — las deudas de modelo de F3-3 y el censo de F3-4, sin decidir ninguna (2026-08-25)
+
+**Tanda sin construcción.** Dos entregas: agrupar las deudas de MODELO que F3-3
+deja sueltas, y derivar el censo de F3-4 sin decidir su modelo.
+
+### 0 · PASO 0 — `comportamiento` nombra TRES conjuntos, y DOS se escriben `0/31`
+
+El parte de la 107.ª dice `0/31`; `COBERTURA-MEDICION.md` publica `37`. Derivado
+(`qa:cobertura` EXIT=0, *evaluadas 413/413* + `derivaciones/comportamiento-unidades.{mjs,log}`):
+
+| # | conjunto | unidad | valor | ¿vigente? |
+|---|---|---|---|---|
+| **A** | las rutas que el build emitía el **2026-08-01** | RUTA EMITIDA (entonces) | **0/31** | ❌ **muerto** — hoy esas 31 están a **31/31** |
+| **B** | las **31 rutas de F3-3** (cola larga) | RUTA DE F3-3 | **0/31** | ✅ cierto HOY |
+| **C** | las rutas que el build emite hoy | RUTA EMITIDA (hoy) | **37/413** | ✅ cierto HOY |
+
+**A ∩ B = 0: son DISJUNTOS.** Y lo que hace invisible la confusión es que **A y B
+comparten denominador (31) Y numerador (0) sin compartir un solo elemento** — el
+empate es lo único que impide ver que son dos conjuntos. Es la forma del
+*48 RUTAS / 32 páginas* y la del *13 páginas / 13 familias*.
+
+**C = A + 6, y las 6 son las de `articulos-kb`.** De las 31 de F3-3, **cero**
+tienen el eje: ahí está el bloqueo de la 8.ª `BT`, que es la lectura **B**, no la
+A. Ninguna se sustituye por otra (§*corregir un denominador no es sustituirlo en
+todas partes*): se escriben las tres con su unidad.
+
+> ⚠ **El cero llevó su control, y hacía falta.** `cobertura` indexa por ruta del
+> CLON y `f33-cmp` por URL del ORIGINAL (`/es/…/`). Cruzadas en crudo, la
+> intersección sale **0 por construcción** — §regla 33, *una llave que no casa
+> fabrica el hallazgo*. Normalizadas, el control «F3-3 fuera de la matriz» da
+> **0 de 31**: la llave casa y el cero es del dato.
+
+### 1 · ESCALÓN 1 — la mesa de deudas de modelo: eran cuatro y son DOS
+
+`derivaciones/deudas-modelo-f33.{mjs,log}`, offline, sin abrir el original.
+
+| deuda | cardinal derivado | ¿toca colección verificada? | veredicto de la mesa |
+|---|---|---|---|
+| **`gallery`** | 1 módulo · **6 items** (no 11) · 2 rutas emitidas | `articulos-kb` (verificada) | ✅ **CORTE LIMPIO 1 — no es deuda.** El bloque existe y el clon lo sirve |
+| **`button.pt` / `.pb`** | 12 nodos · 1 solo valor · 0 páginas que varían | `paginas` | ✅ **CORTE LIMPIO 1 — no es deuda.** Es PLANTILLA del tema |
+| **alineación del botón** | **11 de 13** botones · 3 ejes · **4 rutas de 31** | `paginas` (adjudicada 28/30 y 30/30) | ⛔ **DEUDA** |
+| **`gutters`** | **3 de 113** filas | `paginas` (idem) | ⛔ **DEUDA** |
+
+**Y la pregunta que decidía si son una o cuatro —¿comparten mecanismo?— tiene
+respuesta: las dos que quedan son la MISMA CLASE de cosa.**
+
+> **Un preset que el editor elige de un enum y que Divi transporta como CLASE**,
+> no como CSS con ordinal. `et_pb_button_alignment_*` en el envoltorio del
+> módulo; `et_pb_gutters2` en la fila.
+
+**Y el esquema YA implementa ese patrón una vez:** `piel` del botón
+(`boton-azul`, **4 de 13**) es exactamente eso, con `conDefecto`. O sea que no
+hace falta inventar mecanismo — hace falta decidir su ALCANCE.
+
+#### El denominador del mecanismo, que ninguna ficha tenía
+
+Censadas las clases `et_pb_*` que **discriminan entre HERMANOS DEL MISMO TIPO**
+—no del mismo nivel, que es lo que da el pleno—: **22 pares (clase × grupo)**, de
+los que el clon **no emite 14 clases distintas**. Las dos fichadas son **2 de 14**.
+
+| clase | grupo | n / total |
+|---|---|---|
+| `et_pb_button_alignment_center` · `_tablet_` · `_phone_` | `button·envoltorio` | 10/13 · 8/13 · 8/13 |
+| `et_pb_button_alignment_right` · `_tablet_` · `_phone_` | `button·envoltorio` | 1/13 ×3 |
+| `et_pb_column_empty` | columna | 21/179 |
+| `et_pb_text_align_center` | `text` · `blurb` | 8/151 · 5/22 |
+| `et_pb_section_video_on_hover` | `blurb` · columna | 5/22 · 7/179 |
+| `et_pb_with_background` | sección | 6/86 |
+| `et_pb_equal_columns` | fila | 6/113 |
+| **`et_pb_gutters2`** | **fila** | **3/113** |
+| `et_pb_fullwidth_section` | sección | 2/86 |
+| `et_pb_sticky_module` | columna | 2/179 |
+
+> ⚠ **Lo que este censo contesta y lo que no:** contesta *«¿escribe el clon esta
+> CLASE?»*, **no** *«¿sirve el clon este EFECTO?»* — un preset puede estar
+> resuelto por otro canal. Un «NO» de aquí es una **PREGUNTA para el dato**. Y su
+> alcance son **las 31 rutas de F3-3 y sólo ésas**: una clase que no discrimine
+> aquí puede discriminar en el primer documento nuevo.
+>
+> ⚠ **Y su límite de universo, declarado:** sólo censa `et_pb_*`. `boton-azul`
+> —el precedente— es una clase **del tema**, sin ese prefijo, así que **14 es una
+> COTA INFERIOR**, no el total.
+
+**Decisión que sube al propietario, y es UNA:** ¿el modelo adopta *«preset del
+editor portado por clase»* como canal general, y con qué alcance de los 14+?
+Decidir `gutters` y la alineación por separado es arreglar la instancia en vez de
+la CLASE — y es exactamente cómo se llega a la tercera tanda del mismo bug.
+
+#### Y una quinta que no estaba en la mesa: `dvmd_table_maker`
+
+Al generalizar la deuda de `gallery` a *«tipos de módulo fuera del modelo»*
+apareció que **`dvmd_table_maker` emite 2 rutas, no 1**, y la segunda
+—`/politica-de-cookies`— es de F3-3 y es §F3-3-MODULO-DE-TERCEROS, **abierta
+desde la 105.ª**, con **Δ docH −1512.00** medido de dos lados. Dos fichas de este
+documento decían lo contrario del mismo módulo; corregido arriba, en la propia
+tabla de la 106.ª.
+
+#### Cinco defectos de la sonda de esta tanda, cazados antes de publicar
+
+Se listan porque **cuatro son de la familia que este documento persigue**:
+
+1. el selector del botón pedía `et_pb_button` en el **ENVOLTORIO**, que no la
+   lleva (la lleva el `<a>` de dentro): **0 de 0** donde hay 13. §sondas 4 — lo
+   delató que el denominador tenía que ser 13;
+2. resolví `f33-geo` **por mtime con los artefactos dentro** y me tocó un
+   **SABOTAJE**, que publicó «CAMPO» con la autoridad de una congelada. §regla 7;
+3. el censo del mecanismo comparaba contra **los 333 módulos** en vez de contra
+   los del mismo tipo: **55** clases «discriminantes», casi todas basura
+   (`et_pb_text_inner` 191/333 sale porque no todos los módulos son de texto).
+   §sondas 4, el pleno;
+4. el regex de `BlueButton` cortaba en el `}` de la **lista de parámetros**:
+   tres `undefined` que se leían como *«no está transcrito»*;
+5. el testigo de contenido buscaba **20 000 chars hacia delante** y en
+   `/monitor-calidad-aire` cogió una imagen **de otro módulo**.
+
+### 2 · ESCALÓN 2 — el censo de F3-4, y cierra offline
+
+`derivaciones/censo-f34.{mjs,log}`, sin abrir el original.
+
+| familia | TÉRMINOS | RUTAS | régimen | tarjetas (min–max) | cuerpo (bytes) |
+|---|---|---|---|---|---|
+| `categoria` (LH-SP8) | **6** | **27** | `-T` en 4/4 | 2–9 | 7 650–21 405 |
+| `author` | **6** | **34** | **`--` en 6/6** | 0–6 | 1 469–12 978 |
+| taxonomía `sector` | **11** | **13** | `-T` en 6/6 | **0–0** | 3 346–3 361 |
+
+**Las dos unidades se escriben las dos.** `author` = **6 TÉRMINOS** y **34
+RUTAS**, las dos ciertas: las 28 de diferencia son la paginación de **un solo
+término** (`kunak`, `/page/2`…`/page/29`). El conjunto va **nombrado elemento a
+elemento** en el log, que es lo que hace que la unión y la intersección salgan
+solas.
+
+#### El hallazgo que parte la pregunta de F3-4 en dos
+
+> **La taxonomía `sector` NO LISTA NADA: 0 tarjetas en 6 de 6 capturados, por los
+> TRES selectores** (`<article>` · `et_pb_post` · `entry-title`), con un cuerpo de
+> **~3.3 KB** que es **miga + barra lateral y nada más**. Su paginación tampoco
+> lista (comprobado en `/page/N`).
+
+De ahí que *«modelar la taxonomía `sector`»* sean **dos decisiones separables**
+que se venían tratando como una:
+
+| | qué es | ¿tiene consumidor? |
+|---|---|---|
+| **(a)** | la **RELACIÓN** `caso → sector` | ✅ **sí** — el filtro de 12 botones de `casos-de-exito`, y es **la única de las 35 formas de listado que enlaza a `/sector/`** |
+| **(b)** | el **ARCHIVO** `/es/sector/*` | ❌ **no lo consume nadie y no sirve contenido**. Emitirlo es emitir cascarón vacío — con el precedente de `D2.5 · REPLICAR TAL CUAL`, que ya decidió eso para las 55 que responden 200 sin listar |
+
+Se puede modelar (a) sin emitir (b), y al revés.
+
+#### `author` cae en el CUARTO casillero
+
+Régimen **`--` en 6 de 6**: ni `et_pb_pagebuilder_layout` ni `et-tb-has-body`,
+o sea la **plantilla PHP del tema**. `CLAUDE.md` declara que la varianza entre
+instancias de `--` **no está medida** y se trata como SIN PROBAR; para estas 6 ya
+lo está, y la lectura que vale es la del **plantillado** (varianza entre
+instancias, no huella de px).
+
+#### LH-2 D3, confirmada offline y **por forma**
+
+| taxonomía enlazada desde el área de tarjetas | de 35 formas de listado |
+|---|---|
+| autor (`/author/`) | **0** |
+| categoría (`/categoria/`) | 15 |
+| **sector (`/sector/`)** | **1** — `/es/casos-de-exito/` |
+| `/sectores/` (la PÁGINA, no la taxonomía) | 29 |
+
+> ⚠ Contesta *«¿ENLAZA la tarjeta?»*, **no** *«¿lo necesita el MODELO?»*. Un
+> listado puede filtrar por una taxonomía sin enlazarla — el filtro de 12 botones
+> es justo eso. Un 0 aquí es una pregunta para el dato.
+
+#### Lo que el censo NO cierra, con su cardinal (§regla 14)
+
+- **7 términos declarados sin captura en disco**: 2 formas acentuadas de
+  `categoria` + 5 de `sector` (`industria` · `investigacion-consultoria` ·
+  `mineria` · `obras` · `urbano`);
+- **el código de estado no se puede leer offline** — un corpus guarda el CUERPO,
+  no el 301. Así que este censo **no puede confirmar ni refutar** «X redirige».
+
+> ⚠ **Pero la ausencia tiene FORMA, y la forma constriñe.** De los 5 de `sector`
+> sin página 1, **3 SÍ tienen `/page/N` capturado**. Eso **refuta** «el término
+> entero redirige» —si la base 301, su paginación tendría que faltar también— y
+> deja **«la base redirige y su paginación no»** como hipótesis **SIN PROBAR**.
+> No se cablea ninguna de las dos.
+
+- **el eje COMPORTAMIENTO**: el filtro de 12 botones —el único consumidor
+  conocido de `sector`— es interacción, y este censo no la mide. Es la misma
+  campaña que `/sistema-interno-de-informacion` (§PASO 0, lectura **B**).
+
+### 3 · El tripwire de carga, leído de paso — la cota sube de 230 016 a **242 258**
+
+`KV-01` (~30 % del fichero) y `KV-08` (a 16 chars del final) llegaron **los dos**
+a esta sesión, con su código (`7HQMPD` · `5ZMCFR`) y ubicados en la estructura
+del documento. Gratis, que es para lo que se dejaron puestos.
+
+| lectura | tamaño de entrada |
+|---|---|
+| 2026-08-18 (la que cerró §META-CANARIOS-DE-CARGA) | **156 426** chars |
+| 2026-08-25 · 105.ª | **230 016** chars |
+| **2026-08-25 · 108.ª (ésta)** | **242 258** chars |
+
+> ⚠ **La cifra de referencia se DERIVÓ antes de citarla, y menos mal**: el primer
+> borrador de esta acta escribió *«el techo sube de 156 426»*, que era el número
+> de la ficha que cierra la clase — pero la **105.ª ya lo había leído a 230 016**
+> tres días antes. Habría publicado un salto de 1.55× donde el real es **1.05×**.
+> §regla 9 sobre una cifra que se siente sabida porque está en el documento que
+> uno acaba de abrir.
+>
+> **Lo que respalda:** *«llegan el principio y el final a 242 258»*. **NO** *«llega
+> entero»* —el medio no se ha vuelto a muestrear desde la v2— ni *«no hay techo»*.
+> Es una **cota observada**, y se publica como tal.
+
+### 4 · Lo que esta tanda NO hizo, a propósito
+
+No construyó nada de F3-4 · no decidió ninguna deuda de modelo · no tocó
+`FilaTb`/`CascaronTb` ni la miga CASCARÓN ni `F3-3-CODE-SEGURIDAD` · no capturó
+las 14 hojas `et-cache` ni persiguió los 13 hot assets · no midió
+`/sistema-interno-de-informacion`.

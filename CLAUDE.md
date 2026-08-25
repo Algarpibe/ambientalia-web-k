@@ -192,6 +192,53 @@ en el builder, **es un campo**. Defaults medidos: sección `pt/pb` 4%
 > del claim. Aplicado ahí, el test A responde "plantilla" a cosas que son campo:
 > **da la respuesta al revés.**
 
+> ⚠⚠ **Y SU FALSO POSITIVO, QUE ES EL SIMÉTRICO Y CAE DENTRO DEL ALCANCE
+> DECLARADO —O SEA EN EL RITMO, DONDE EL TEST A SÍ VALE (2026-08-25):
+> UN VALOR EN `em` NO SE MUEVE CON EL ANCHO, LO ESCRIBA QUIEN LO ESCRIBA.**
+>
+> El aviso de arriba protege del **falso negativo** —un campo escrito en `%` que
+> parece plantilla—. Éste es el contrario, y es peor porque **no está fuera del
+> alcance**: es `padding` de módulo, justo donde el test A se derivó.
+>
+> > El test A supone que sólo hay dos unidades: **`%` (responsive, la plantilla)
+> > y `px` (absoluto, el editor)**. Hay una tercera. **Un `em` se resuelve contra
+> > el `font-size`, no contra el ancho**, así que sirve el MISMO px a 1440 y a
+> > 390 — y el test A lee eso como «px absolutos» y dicta **CAMPO** sobre algo
+> > que escribió la hoja del tema.
+>
+> **Medido:** `button.pt`/`button.pb` de la cola larga. La cascada
+> (`CSS.getMatchedStylesForNode`) dice `.et_pb_button` —**selector genérico, sin
+> ordinal**— en `KunakAir/style.css` con `!important`, **12 nodos**,
+> `0.5em`/`0.6em` **declarados IDÉNTICOS a los dos anchos**. Es plantilla del
+> TEMA. El test A, re-medido con las hojas puestas, habría dictado **CAMPO** —
+> y de ahí salen dos campos inventados en el esquema.
+>
+> **Y la separadora estaba congelada desde antes, en un SABOTAJE**
+> (§regla 8b: *`medidas/` es una muestra del original que nadie interroga*):
+> `f33-geo-neg-sin-hojas` quita las hojas enlazadas **a los dos anchos**, gana el
+> `0.3em` del core de Divi —plantilla sin discusión— y el valor sale igual a 1440
+> y a 390: veredicto **«CAMPO (test A: px absolutos)»**. El negativo demuestra el
+> modo de fallo sin que nadie tuviera que medir nada nuevo.
+>
+> **Operativamente, y son dos mitades:**
+>
+> 1. **antes de aplicar el test A, mira la UNIDAD DECLARADA, no el px computado.**
+>    Si es `em` —o `rem`, o `ch`, o cualquier unidad que no se resuelva contra el
+>    ancho— el test A **no tiene nada sobre lo que pronunciarse**, igual que
+>    cuando el único valor observado es el inicial de la propiedad;
+> 2. **y cuando el test A y la CASCADA discrepen, gana la cascada.** El test A
+>    infiere quién escribió a partir de cómo se comporta el número; la cascada
+>    **lo dice**: un selector con ordinal (`et_pb_<tipo>_<n>`) es el editor, uno
+>    genérico es la plantilla. Es §*el veredicto lo da la salida servida, y
+>    cuando haga falta saber POR QUÉ se le pregunta a la cascada*.
+>
+> **Y el corolario que ahorra la transcripción:** el `em` no impide escribir el
+> valor — impide escribirlo **sin su base**. Aquí la base ni siquiera estaba sin
+> derivar: `SectionRow.BlueButton` ya transcribe `pt-[7.5px] pb-[9px]
+> text-[15px]` en un arquetipo verificado, y `0.5 × 15 = 7.5` y `0.6 × 15 = 9`
+> salen al bit. Antes de fichar «no se puede escribir por falta de la base»,
+> **derívala** — §regla 9 sobre un hecho negativo.
+
 > ⚠⚠ **Y SU PREMISA, QUE NO ESTÁ ESCRITA Y ES DONDE MÁS BARATO SE ROMPE: EL
 > TEST A SUPONE QUE HAY ALGO ESCRITO. UN VALOR IGUAL AL INICIAL DE LA PROPIEDAD
 > NO ES «PX ABSOLUTOS», ES QUE NADIE TOCÓ NADA.**
@@ -940,6 +987,7 @@ proyecto costaron una tanda cada una:
 | «los enlaces a sectores los pinta `nav.ts`» | los pintaban **tres** ficheros, y dos ni se sospechaban |
 | «el tipo del módulo de texto se midió sobre el original» | se midió sobre **la TRANSCRIPCIÓN**, que ya había tirado lo que faltaba |
 | «si el editor tocó la tipografía, quedará rastro en el marcado» | **Divi no escribe marcado: COMPILA CSS**, y lo sirve en el mismo `<style>`. Los 10 ejes que se miraron eran atributos y estructura; **ninguno era CSS** |
+| «el esquema no expresa `gallery` por ningún canal» | se leyó **`KIND_DE_DIVI`, la tabla de traducción DE UNA SONDA** —`f33-cmp`, que sólo cubre una colección—. El esquema lo expresa: `MODULO_GALLERY` está en `bloques/kb.ts`, y el comparador de la OTRA colección ve sus **6 items con los dos lados** |
 
 ⚠ **La cuarta es de 2026-08-10 y merece nombre propio, porque el error no fue
 mirar poco: fue mirar EL CANAL EQUIVOCADO.**

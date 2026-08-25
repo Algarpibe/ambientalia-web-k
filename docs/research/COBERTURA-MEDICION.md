@@ -544,7 +544,8 @@ Tres estados, y la distinción entre los dos primeros es el punto entero:
 > sitio vivo (5453 y 5433). Los **90 y 110** restantes son **7 huecos declarados
 > con su número**, no residuo — y la sonda **falla si crecen o si se vacían**.
 >
-> ⚠ **Lo que esto NO mueve:** el eje de **comportamiento sigue a 0/31** y esta
+> ⚠ **Lo que esto NO mueve:** el eje de **comportamiento sigue a 0/31** *(unidad
+> RUTA EMITIDA a 2026-08-10 — lectura hoy MUERTA; ver §108.ª al final)* y esta
 > familia no lo estrena. Y estas 6 rutas **no tienen campaña de ruido propia**,
 > así que su columna de suelo queda en blanco: un residuo pequeño aquí es SIN
 > PROBAR, no limpio.
@@ -1316,7 +1317,7 @@ el mismo mérito prestado: **la respuesta existe porque las sondas congelan.**
 | eje | por qué sigue en `nunca` para las 8 rutas |
 |---|---|
 | `docH` · `enlaces` | los acredita `c-cmp` / `enlaces`, cuyo universo son **31 rutas** fijas |
-| `comportamiento` | **37 de 382**, y sigue siendo el hueco mayor del proyecto |
+| `comportamiento` | **37 de 382** *(unidad RUTA EMITIDA; hoy el denominador es **413** — §108.ª)*, y sigue siendo el hueco mayor del proyecto |
 | `offsets/holgura` | `0` de dos lados en todo el repo: **3 en `c`** y nada más |
 
 ### ⛔ Y una celda que sale ROJA por primera vez: `P-LH-C8` en `L2`
@@ -1368,3 +1369,45 @@ acredita**, porque un fichero con nombre de medida no puede acreditar una
 cobertura que no midió (§regla 7 aplicada a la matriz). Se comprueba contra
 `meta.dominio.{n,de}`. Y sólo entran las rutas con los **dos lados**: si el clon
 no sirvió la ruta, no hay par que acreditar.
+
+
+---
+
+## ⚠⚠ 2026-08-25 · 108.ª — **`comportamiento` NOMBRA TRES CONJUNTOS, Y DOS DE ELLOS SE ESCRIBEN `0/31`**
+
+Este documento publica **37**; el parte de la 107.ª escribe **`0/31`**. Las dos
+son ciertas y **cuentan conjuntos distintos** — lo que hace invisible la
+confusión es que **dos de los tres comparten denominador Y numerador sin
+compartir un solo elemento**.
+
+Derivado (`qa:cobertura` EXIT=0, *evaluadas 413/413* +
+`docs/research/cola-larga/derivaciones/comportamiento-unidades.{mjs,log}`):
+
+| # | conjunto | **unidad** | valor | ¿vigente? |
+|---|---|---|---|---|
+| **A** | las rutas que el build emitía el **2026-08-01** | RUTA EMITIDA *(entonces)* | **0 / 31** | ❌ **MUERTO** — hoy esas 31 están a **31/31** |
+| **B** | las **31 rutas de F3-3** (cola larga) | RUTA DE F3-3 | **0 / 31** | ✅ **cierto HOY** |
+| **C** | las rutas que el build emite hoy | RUTA EMITIDA *(hoy)* | **37 / 413** | ✅ **cierto HOY** |
+
+- **A ∩ B = 0.** Son **disjuntos**: ni una sola ruta en común.
+- **C = A + 6**, y las 6 son las de `articulos-kb`.
+
+> **Ninguna se sustituye por otra** (§*corregir un denominador no es sustituirlo
+> en todas partes*): un barrido que meta `37` donde la unidad correcta era la de
+> F3-3 rompe la lectura que sí está viva. **Se escriben las tres con su unidad.**
+
+**Lo único refutado es leer el `0/31` de A como vigente.** Cuando el registro
+diga *«el eje comportamiento a 0/31»* a propósito de la cola larga —por ejemplo
+la 8.ª `BT`, `/sistema-interno-de-informacion`— está usando la lectura **B**, que
+es correcta: **de las 31 de F3-3, cero tienen el eje**.
+
+> ⚠ **Y el cero de la intersección llevó su CONTROL, porque sin él no valía
+> nada.** `cobertura` indexa por **ruta del CLON** (`/sistema-interno-de-informacion`)
+> y `f33-cmp` por **URL del ORIGINAL** (`/es/sistema-interno-de-informacion/`).
+> Cruzadas en crudo, la intersección sale **0 por construcción** — §regla 33,
+> *una llave que no casa fabrica el hallazgo*. Normalizadas, el control
+> **«F3-3 fuera de la matriz de emitidas» da 0 de 31**: la llave casa, y sólo
+> entonces el cero es del dato.
+
+**Recuento vigente del eje, con su fecha y su fichero:** `O = 37 · c = 0 ·
+nunca = 376` sobre **413 rutas emitidas** — `medidas/cobertura-2026-08-25.json`.

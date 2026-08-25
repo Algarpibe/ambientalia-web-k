@@ -1073,7 +1073,32 @@ type: es una consulta; el contenido son los términos):
 | `etiquetas` | `post_tag` | 12 | `nombre` · `slug` · **`descripcion?` (rico)** |
 | `categoriasRecursos` | `resources`, **jerárquica** | 10 (2 padres + 8 hijas) | `nombre` · `slug` · `padre?` |
 | `categoriasCientificas` | `scientific-category` | 3 | `nombre` · `slug` |
-| `categorias` | `category` | **SIN CENSAR** (LH-SP8: viva y fuera de sitemap) | se censa antes de modelar |
+| `categorias` | `category` | ✅ **CENSADA 2026-08-25 (108.ª): 6 TÉRMINOS · 27 RUTAS** | modelo aún **sin decidir** — el censo ya no bloquea |
+
+> ✅ **EL CENSO DE LAS TRES FAMILIAS DE F3-4 ESTÁ HECHO (108.ª), offline y sin
+> abrir el original** — `docs/research/cola-larga/derivaciones/censo-f34.{mjs,log}`.
+> **Lo que falta es la DECISIÓN, que es del propietario.**
+>
+> | familia | TÉRMINOS | RUTAS | régimen | tarjetas | cuerpo (bytes) |
+> |---|---|---|---|---|---|
+> | `categorias` (`category`) | **6** *(4 términos + 2 formas acentuadas)* | **27** | `-T` | 2–9 | 7 650–21 405 |
+> | `author` | **6** | **34** | **`--`** | 0–6 | 1 469–12 978 |
+> | taxonomía `sector` | **11** | **13** | `-T` | **0** | 3 346–3 361 |
+>
+> **Las dos unidades se escriben las dos**: `author` = 6 TÉRMINOS **y** 34 RUTAS
+> — la diferencia es la paginación de un solo término.
+>
+> **Y esto CONFIRMA el «sin `autor`» de abajo, con el barrido por forma**: el
+> autor no aparece en **0 de 35** formas de listado. Lo que la nota de abajo dice
+> como *«0/9 formas»* hoy se puede escribir **0 de 35**, misma conclusión y mejor
+> denominador.
+>
+> ⚠ **Y lo que el censo CAMBIA para `sector`:** la taxonomía **no lista nada** —0
+> tarjetas en 6 de 6 capturados, cuerpo de ~3.3 KB de miga + barra lateral—, así
+> que la decisión son **DOS separables**: la **RELACIÓN** `caso → sector` (con
+> consumidor medido: el filtro de 12 botones de `casos-de-exito`, la única de las
+> 35 formas que enlaza a `/sector/`) y el **ARCHIVO** `/es/sector/*` (sin
+> consumidor y sin contenido). Se puede modelar la primera sin emitir el segundo.
 
 **El contrato de nacimiento del grupo A** (D3 — lo caro de re-migrar si
 falta): `fechaPublicacion` · `imagenDestacada` opcional con sizes
@@ -4892,8 +4917,8 @@ deshacer sólo arbitra **cuando ninguna medida arbitra**. Aquí una medida arbit
 |---|---|---|
 | ✅ **CMS-4 · ¿QUIÉN SIRVE LAS 31 DE LA COLA LARGA?** — **CERRADA el 2026-08-22 (95.ª): el propietario tomó `E1`, el PLANO EXISTENTE. Escrita con su razón, sus separadoras y su condición de reapertura en §2k.** Enunciado original de la 94.ª debajo | **`0 de 31` colisionan literalmente y `30 de 31` SOLAPAN el plano de otra familia** — dos afirmaciones distintas y sólo la primera estaba medida. Reparto: **19 → `/[slug]`** (el plano de raíz de grupo A) · **4 + 4 + 3 → los catch-all de `centro-de-ayuda`, `soporte` y `recursos`**, los tres con `dynamicParams = false` · **1 sin plano**. Tres salidas con su coste en `PENDIENTES-QA.md` §CMS-4: **E1** `/[slug]` sirve una tercera familia (0 URLs cambian, se tocan 3 rutas verificadas) · **E2** prefijo propio (no toca nada, **rompe 19 URLs vivas**) · **E3** emitir sólo las 12 prefijadas. ⚠ **El precedente de que un plano sirva dos formas existe** (`/sectores/[slug]`), así que la pregunta no es si se puede: es **cuál se toma**. Lo que ya NO espera: la guarda — `qa:slugs` deriva sus familias del registro y `paginas` entra sola el día que se siembre | **la EMISIÓN entera de F3-3** (31 páginas) y, con ella, los 9 ejes de cobertura de la cola larga |
 | ✅ **CMS-5 · ¿CÓMO SABE EL CLON QUÉ CASCARÓN LLEVA CADA PÁGINA DE LA COLA LARGA?** — **CERRADA el 2026-08-24 (100.ª): el propietario tomó `R1`, el CAMPO DERIVADO DEL `<body>`. Escrita con su razón, con por qué caen R2 y R3, y con la reversa probada en §2j.9.** Enunciado original de la 99.ª debajo | **`paginas` no lleva el RÉGIMEN, y sin él el clon no puede elegir.** Los dos cascarones **ya existen medidos y construidos** —`B-` = SECTOR/MONOGRÁFICO (fila **1238.39**), `BT` = `articulos-kb` (fila **911.75** con columna `1_4` de barra)—: lo que falta es **el campo que elige**. Y no es cosmético: el ancho de fila resuelve el **default de `mb`** de cada módulo (**34.05** contra **25.06**). Derivado (`derivaciones/f33-regimen-discriminador.{mjs,log}`): `cuerpoClasico` ⇒ `--` acierta **31/31** (o sea que el `--` **sí** es derivable), la RUTA acierta **30/31 y queda REFUTADA** por **2 separadoras, una por dirección** (`/sistema-interno-de-informacion` es **raíz y BT**; `/soporte/servicio-de-reparacion` es **prefijada y B-**), y **ningún** campo del documento los separa: **52 pares indistinguibles**. ⚠ **30 de 31 no es «casi bien»: es refutado.** Tres salidas con su coste en `PENDIENTES-QA.md` §F3-3-CASCARON-SIN-DISCRIMINADOR: **R1** campo derivado del `<body>` que el extractor **ya calcula** · **R2** emitir 23 y dejar 8 declaradas · **R3** cablear la ruta, que es **el arreglo falso** y se nombra para que conste | **la EMISIÓN de F3-3** (las 31), y con ella los 9 ejes de cobertura de la cola larga — o sea lo mismo que CMS-4 desbloqueó y esto vuelve a bloquear una capa más arriba |
-| ⛔ **CMS-BOTON-ALINEACION** *(abierta 2026-08-24, 102.ª — fichada, NO añadida)* | **`et_pb_button_alignment_*` es CAMPO por test B, con TRES ejes responsive, y el clon lo pierde ENTERO.** Derivado del HTML servido (capa propia, sin `<style>` ni `<script>`): **11 de 13 botones** en **4 rutas de 31** — escritorio `center`×10 · `right`×1 · tablet 9 · phone 9, y los tres ejes son **independientes**. Es geometría: la clase compila a `text-align` sobre el envoltorio, y `qa:f33-clases` cuenta **74 overrides ganadores de `text-align`** del editor. Estado derivado con `grep` sobre el fuente **sin comentarios** (la primera lectura dio falso positivo desde un comentario): `CuerpoPagina.tsx` **no lo emite** y `bloques/contenido.ts` **no tiene el campo**. ⚠ **Abre decisión de esquema, no es transcripción**: tres ejes responsive son un grupo de campos y una migración | **la fidelidad de 11 botones en 4 rutas** cuando se emitan. No bloquea la hoja |
-| ⛔ **CMS-GUTTERS** *(abierta 2026-08-24, 102.ª — fichada, NO añadida)* | **el canal de la retícula tiene DOS valores y la variable que manda no está en el modelo.** `margin-right` de la columna no-última da **`5.5%` ×55** y **`3%` ×11**, y lo sirve `.et_pb_gutters<n> .et_pb_column` — un ajuste **de la FILA** que el editor elige. Lo separan 1:1 **dos** ejes y están **CONFUNDIDOS**: las **3 únicas filas con `gutters2` de 113** son justo las que llevan `1_4`/`1_5`, así que `reparto` es la **SOMBRA** de `gutters`. `f33.css` escribe por reparto —lo único que el clon puede emitir—, **correcto para las 31 y falso para la primera página que meta un `1_2` en una fila `gutters2`**. Afecta también a los porcentajes de `margin-bottom` del módulo, que salen de la misma tabla. ⚠ **n = 3 filas no basta para modelarlo** | **nada hoy.** Es deuda declarada de la hoja, con su separadora nombrada |
+| ⛔ **CMS-BOTON-ALINEACION** *(abierta 2026-08-24, 102.ª — fichada, NO añadida)* ⚠ **SUBE JUNTO A `CMS-GUTTERS`: comparten MECANISMO — ver §7h**  | **`et_pb_button_alignment_*` es CAMPO por test B, con TRES ejes responsive, y el clon lo pierde ENTERO.** Derivado del HTML servido (capa propia, sin `<style>` ni `<script>`): **11 de 13 botones** en **4 rutas de 31** — escritorio `center`×10 · `right`×1 · tablet 9 · phone 9, y los tres ejes son **independientes**. Es geometría: la clase compila a `text-align` sobre el envoltorio, y `qa:f33-clases` cuenta **74 overrides ganadores de `text-align`** del editor. Estado derivado con `grep` sobre el fuente **sin comentarios** (la primera lectura dio falso positivo desde un comentario): `CuerpoPagina.tsx` **no lo emite** y `bloques/contenido.ts` **no tiene el campo**. ⚠ **Abre decisión de esquema, no es transcripción**: tres ejes responsive son un grupo de campos y una migración | **la fidelidad de 11 botones en 4 rutas** cuando se emitan. No bloquea la hoja |
+| ⛔ **CMS-GUTTERS** *(abierta 2026-08-24, 102.ª — fichada, NO añadida)* ⚠ **SUBE JUNTO A `CMS-BOTON-ALINEACION`: comparten MECANISMO — ver §7h** | **el canal de la retícula tiene DOS valores y la variable que manda no está en el modelo.** `margin-right` de la columna no-última da **`5.5%` ×55** y **`3%` ×11**, y lo sirve `.et_pb_gutters<n> .et_pb_column` — un ajuste **de la FILA** que el editor elige. Lo separan 1:1 **dos** ejes y están **CONFUNDIDOS**: las **3 únicas filas con `gutters2` de 113** son justo las que llevan `1_4`/`1_5`, así que `reparto` es la **SOMBRA** de `gutters`. `f33.css` escribe por reparto —lo único que el clon puede emitir—, **correcto para las 31 y falso para la primera página que meta un `1_2` en una fila `gutters2`**. Afecta también a los porcentajes de `margin-bottom` del módulo, que salen de la misma tabla. ⚠ **n = 3 filas no basta para modelarlo** | **nada hoy.** Es deuda declarada de la hoja, con su separadora nombrada |
 | ⛔ **CMS-TITULO-RICO** | **`titulo` es `type: "text"` y 8 de 288 documentos del corpus llevan MARCADO dentro del `<h1>`** — `<sub>` de fórmula química (`O<sub>2</sub>`, `H<sub>2</sub>S`, `PM<sub>10</sub>`). Un campo de texto plano **no puede contener su dato medido**, y el clon ya sirve esos 8 aplanados en rutas dadas por verificadas. Reparto: **término 6/37 · blog 1/152 · caso 1/57 · doc. científico 0/23 · faq 0/19**. Ver §7f | **`L2`** (`/glosario` es donde se concentra: 6 de sus 37 términos) y la fidelidad de **8 rutas ya emitidas** |
 | **CMS-ORDEN-L2** ✅ **DECIDIDA 2026-08-18 (81.ª) para sus DOS mitades con clave SERVIDA —se añade el campo de fecha a `casos` y `terminos-kunakpedia`—; la tercera (`documentos-cientificos`) queda DECLARADA y sin modelar. Ver §7g** ⚠ **ALCANCE AMPLIADO 2026-08-18 (80.ª): son TRES arquetipos, no uno, y uno de ellos BLOQUEA `L5` — ver §7g** | **¿cómo ordena el clon un ARCHIVO DE CPT?** El original ordena `/glosario` por **`datePublished` DESC (37/37)** y **ninguno de los dos tipos del clon tiene campo de fecha**. Dos mitades distintas, y **no se resuelven con la misma decisión** — ver §7e. ~~⚠ **AMPLIADA 2026-08-17 (75.ª): la pregunta no es sólo *«por qué campo»*, es también *«con qué DESEMPATE»*.**~~ ⛔⛔ **AMPLIACIÓN RETIRADA POR MEDIDA el 2026-08-18 (76.ª): su ÚNICA evidencia eran los «36 pares que oscilan entre builds del mismo código», y no eran builds del mismo código** — entre las corridas `-1` y `-2` se aplicó la salida `A` del 301 y entre la `-2` y la `-3` se revirtió; en la `-2` el clon sirve `/etiqueta/cov` con **`nTarjetas` 5 contra 6 del original**, o sea **un documento menos**, no un empate resuelto de otra forma. Sin esa evidencia **no hay ninguna medida que diga que el orden del clon sea inestable**, y hay 205 comparaciones de ruta a Δ0 contra el mismo build que dicen lo contrario. **La decisión vuelve a ser la de la 69.ª: sólo *«por qué campo ordena»*.** Un desempate total y estable sigue siendo sensato, pero entra **con esta decisión y con su antes/después**, no como reparación. Retirada y su prueba: `PENDIENTES-QA.md` §F3-AUDITORIA-76; la ficha original queda marcada `(RETIRADA)` en §F3-LH-LISTADO-QUE-OSCILA | **`L2` entera** (12 rutas) **y la estabilidad de los listados ya emitidos** |
 | ~~**§2e**~~ | ~~`productos`: ¿UNA colección o DOS?~~ **✅ CERRADA (2026-08-03): UNA**, frontera medida = 1 y opcional | **nada** — el cubo C queda **vacío** y F2-1 puede congelar |
@@ -5659,3 +5684,79 @@ Faltan dos clases y **son de naturaleza distinta**:
 > gancho de los overrides por post que Divi compila, así que **puede pintar**.
 > Se mide antes de modelar.
 
+
+
+---
+
+## ⛔ 7h · `CMS-BOTON-ALINEACION` y `CMS-GUTTERS` SON **UNA** DECISIÓN, Y SU DENOMINADOR NO ES 2 SINO **14+** (2026-08-25, 108.ª)
+
+La 108.ª puso las cuatro deudas de modelo de F3-3 en una mesa para contestar una
+pregunta: **¿comparten MECANISMO?** Dos se cerraron (abajo) y las dos que quedan
+**son la misma clase de cosa**:
+
+> **Un PRESET que el editor elige de un enum y que Divi transporta como CLASE**,
+> no como CSS con ordinal. `et_pb_button_alignment_*` va en el envoltorio del
+> módulo; `et_pb_gutters2` va en la fila.
+
+**Y el esquema YA implementa ese patrón una vez:** `piel` del botón
+(`MODULO_BOTON_PAGINA`, valores `defecto | azul` → clase `boton-azul`, **4 de
+13**) es exactamente eso, con `conDefecto`. Así que **no hace falta inventar
+mecanismo: hace falta decidir su ALCANCE.**
+
+### El denominador que ninguna de las dos fichas tenía
+
+Derivado (`derivaciones/deudas-modelo-f33.{mjs,log}`) censando las clases
+`et_pb_*` que **discriminan entre HERMANOS DEL MISMO TIPO** —no del mismo nivel,
+que es lo que da el pleno de §sondas 4—: **22 pares (clase × grupo)**, de los que
+el clon **no emite 14 clases distintas**.
+
+| clase | grupo | n / total | fichada |
+|---|---|---|---|
+| `et_pb_button_alignment_center` · `_tablet_center` · `_phone_center` | `button·envoltorio` | 10/13 · 8/13 · 8/13 | ✅ `CMS-BOTON-ALINEACION` |
+| `et_pb_button_alignment_right` · `_tablet_right` · `_phone_right` | `button·envoltorio` | 1/13 ×3 | ✅ idem |
+| **`et_pb_gutters2`** | **fila** | **3/113** | ✅ `CMS-GUTTERS` |
+| `et_pb_column_empty` | columna | 21/179 | ⛔ **no** |
+| `et_pb_text_align_center` | `text` · `blurb` | 8/151 · 5/22 | ⛔ **no** |
+| `et_pb_section_video_on_hover` | `blurb` · columna | 5/22 · 7/179 | ⛔ **no** |
+| `et_pb_with_background` | sección | 6/86 | ⛔ **no** |
+| `et_pb_equal_columns` | fila | 6/113 | ⛔ **no** |
+| `et_pb_fullwidth_section` | sección | 2/86 | ⛔ **no** |
+| `et_pb_sticky_module` | columna | 2/179 | ⛔ **no** |
+
+**Las dos fichadas son 2 de 14.** Decidirlas por separado es arreglar la
+instancia en vez de la CLASE — que es exactamente cómo se llega a la tercera
+tanda del mismo bug.
+
+> ⚠ **Los tres límites de este censo, declarados con su número (§regla 14):**
+>
+> 1. contesta *«¿escribe el clon esta CLASE?»*, **no** *«¿sirve el clon este
+>    EFECTO?»*. Un preset puede estar resuelto por otro canal, así que un «no
+>    emite» es una **PREGUNTA para el dato**, no un veredicto;
+> 2. su universo son **las 31 rutas de F3-3 y sólo ésas**. Una clase que no
+>    discrimine aquí puede discriminar en el primer documento nuevo;
+> 3. sólo censa `et_pb_*`. **`boton-azul` —el precedente— es una clase DEL TEMA**,
+>    sin ese prefijo, así que **14 es una COTA INFERIOR**, no el total.
+
+### La decisión que sube, y es UNA
+
+**¿Adopta el modelo «preset del editor portado por clase» como canal general, y
+con qué alcance de los 14+?** Las tres salidas, con su coste:
+
+| | qué | coste |
+|---|---|---|
+| **P1** | un campo `preset` por nivel (fila · columna · sección · módulo), enum abierto, `conDefecto` | una migración, y **cubre los 14 de golpe** — incluidos los que nadie ha fichado |
+| **P2** | un campo por preset fichado (`alineacion`, `gutters`) | dos migraciones y **12 sin cubrir**, que volverán de uno en uno |
+| **P3** | no modelar ninguno y dejar la hoja escribiendo por reparto | **0 migraciones**, y `f33.css` sigue siendo *correcto para las 31 y falso para la primera página nueva* |
+
+### Y las DOS que salen de la mesa, con su número
+
+| deuda | veredicto de la 108.ª |
+|---|---|
+| **`gallery`** | ✅ **NO ES DEUDA.** `MODULO_GALLERY` **existe** en `bloques/kb.ts` y el clon lo sirve: `kb-cmp` ve sus **6 items con los DOS lados** (1408 pares · 0 distintos · `soloOriginal: 0`), y lo mismo contra el original **vivo**. La ficha había leído `KIND_DE_DIVI` —la tabla de traducción **de una sonda**— creyendo leer el esquema. Y los items son **6**, no 11 |
+| **`button.pt` / `button.pb`** | ✅ **NO ES DEUDA: es PLANTILLA.** La cascada dice `.et_pb_button` —**selector genérico, sin ordinal**— en `KunakAir/style.css`, `!important`, **12 nodos**, `0.5em`/`0.6em` **declarados idénticos a 1440 y a 390**. El test A dictaba «CAMPO» porque **un `em` no se mueve con el ancho lo escriba quien lo escriba** (regla nueva en `CLAUDE.md`). Habrían sido **dos campos inventados** |
+
+> ⚠ **Y una QUINTA que sí es hueco y no estaba en la mesa:** `dvmd_table_maker`
+> —módulo de TERCEROS, sin prefijo `et_pb_`, invisible a todos los censos de
+> tipos— **no está en ninguna colección** y emite **2 rutas**, no 1. La segunda es
+> `/politica-de-cookies`, de F3-3, con **Δ docH −1512.00** medido de dos lados.
+> Es §F3-3-MODULO-DE-TERCEROS, abierta desde la 105.ª.

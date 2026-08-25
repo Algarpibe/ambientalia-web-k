@@ -1,4 +1,145 @@
-# HANDOFF — el artefacto no era «de imagen»: eran TRES canales, y el que más movía es el que no deja síntoma
+# HANDOFF — dos de las cuatro deudas de modelo no existían, y las dos que quedan son UNA con un denominador de 14
+
+> ✅ **Tanda de la 108.ª, 2026-08-25. PASO 0 CONTESTADO · ESCALÓN 1 con CORTE
+> LIMPIO 1 en dos de cuatro · ESCALÓN 2 (el censo de F3-4) CERRADO offline.**
+>
+> **Tanda sin construcción, y sin decidir nada:** lo que se entrega es la MESA.
+
+---
+
+## 0 · PASO 0 — `comportamiento` nombra TRES conjuntos, y DOS se escriben `0/31`
+
+Derivado (`qa:cobertura` EXIT=0, *evaluadas 413/413* +
+`derivaciones/comportamiento-unidades.{mjs,log}`):
+
+| # | conjunto | unidad | valor | ¿vigente? |
+|---|---|---|---|---|
+| **A** | rutas que el build emitía el **2026-08-01** | RUTA EMITIDA *(entonces)* | **0/31** | ❌ hoy **31/31** |
+| **B** | las **31 de F3-3** | RUTA DE F3-3 | **0/31** | ✅ |
+| **C** | rutas que el build emite hoy | RUTA EMITIDA *(hoy)* | **37/413** | ✅ |
+
+**A ∩ B = 0 — disjuntos.** Y lo que hace invisible la confusión es que **A y B
+comparten denominador Y numerador sin compartir un solo elemento**. `C = A + 6`,
+y las 6 son `articulos-kb`. Las tres se escriben con su unidad; ninguna sustituye
+a otra.
+
+> ⚠ **El cero llevó su control y hacía falta:** `cobertura` indexa por ruta del
+> CLON y `f33-cmp` por URL del ORIGINAL. En crudo la intersección sale 0 **por
+> construcción** (§regla 33). Normalizadas, «F3-3 fuera de la matriz» da **0 de
+> 31**: la llave casa.
+
+---
+
+## 1 · ESCALÓN 1 — eran cuatro deudas y son DOS
+
+| deuda | cardinal derivado | veredicto |
+|---|---|---|
+| `gallery` | 1 módulo · **6 items** (no 11) · 2 rutas emitidas | ✅ **no es deuda** |
+| `button.pt`/`.pb` | 12 nodos · 1 valor · 0 páginas que varían | ✅ **no es deuda: PLANTILLA** |
+| alineación del botón | **11 de 13** · 3 ejes · **4 rutas de 31** | ⛔ deuda |
+| `gutters` | **3 de 113** filas | ⛔ deuda |
+
+**`gallery` se cerró leyendo el ESQUEMA en vez de la tabla de un comparador.**
+`MODULO_GALLERY` está en `bloques/kb.ts`; la ficha había leído `KIND_DE_DIVI`, el
+diccionario **de la sonda `f33-cmp`**, que sólo cubre `paginas`. Y el clon lo
+sirve: `kb-cmp` ve **6 items con los dos lados**, `soloOriginal: 0`, igual contra
+el original **vivo**.
+
+**`button.pt`/`.pb` es PLANTILLA, y el test A daba «CAMPO» por la UNIDAD.**
+La cascada: `.et_pb_button` —genérico, sin ordinal— en `KunakAir/style.css`,
+`!important`, 12 nodos, `0.5em`/`0.6em` **declarados idénticos a los dos anchos**.
+
+> **Regla nueva en `CLAUDE.md`: un valor en `em` NO SE MUEVE CON EL ANCHO, lo
+> escriba quien lo escriba.** El test A supone dos unidades (`%` = plantilla,
+> `px` = editor) y hay una tercera. **Y la separadora estaba congelada en un
+> SABOTAJE**: `f33-geo-neg-sin-hojas` deja el `0.3em` del core —plantilla sin
+> discusión—, sale igual a los dos anchos, y el test A dicta **CAMPO**.
+
+**Las dos que quedan comparten MECANISMO**, así que suben como UNA: un *preset
+que el editor elige y Divi transporta como CLASE*. **El esquema ya lo implementa
+una vez** (`piel` del botón → `boton-azul`, 4/13, con `conDefecto`).
+
+**Y su denominador, que ninguna ficha tenía:** censadas las clases que
+discriminan **entre hermanos del mismo TIPO**, salen **22 pares** y **14 clases
+distintas que el clon no emite**. Las dos fichadas son **2 de 14** — y 14 es
+**cota inferior**, porque el censo sólo mira `et_pb_*` y `boton-azul` es del
+tema. Tres salidas en `ESQUEMA-CMS.md` §7h.
+
+**Y una quinta que sí es hueco:** `dvmd_table_maker` —módulo de TERCEROS, sin
+prefijo `et_pb_`, invisible a todo censo de tipos— emite **2 rutas, no 1**, y la
+segunda es `/politica-de-cookies` con **Δ docH −1512.00**. Dos fichas de
+`PENDIENTES-QA.md` decían lo contrario del mismo módulo; corregido.
+
+---
+
+## 2 · ESCALÓN 2 — el censo de F3-4 cierra offline
+
+| familia | TÉRMINOS | RUTAS | régimen | tarjetas | cuerpo (bytes) |
+|---|---|---|---|---|---|
+| `categoria` (LH-SP8) | **6** | **27** | `-T` | 2–9 | 7 650–21 405 |
+| `author` | **6** | **34** | **`--`** | 0–6 | 1 469–12 978 |
+| taxonomía `sector` | **11** | **13** | `-T` | **0** | 3 346–3 361 |
+
+**La incógnita declarada de F3-4 no era un conflicto:** `author` tiene **6
+TÉRMINOS** y **34 RUTAS**, las dos ciertas, y las 28 de diferencia son la
+paginación de **un solo término**.
+
+> **Y el hallazgo que parte F3-4 en una decisión menos: la taxonomía `sector` NO
+> LISTA NADA** —0 tarjetas en 6 de 6 por los TRES selectores, cuerpo de ~3.3 KB
+> de miga + barra lateral, su paginación tampoco—. Así que son **dos decisiones
+> separables**: **(a)** la RELACIÓN `caso → sector`, con consumidor medido (el
+> filtro de 12 botones, **la única de las 35 formas de listado que enlaza a
+> `/sector/`**), y **(b)** el ARCHIVO `/es/sector/*`, sin consumidor y sin
+> contenido.
+
+`author` cae en el **cuarto casillero** (`--` en 6/6: plantilla PHP del tema).
+LH-2 D3 confirmada offline y **por forma**: autor **0 de 35**.
+
+**Lo que no cierra, con su cardinal:** 7 términos sin captura (2 acentuados + 5
+de `sector`), y **offline no hay código de estado**. Pero de los 5 de `sector`,
+**3 tienen `/page/N` capturado**, lo que **refuta** «el término entero redirige»
+y deja «la base redirige y su paginación no» **SIN PROBAR**.
+
+---
+
+## 3 · CINCO DEFECTOS DE MI PROPIA SONDA, cazados antes de publicar
+
+1. el selector del botón pedía `et_pb_button` en el **envoltorio**, que no la
+   lleva: **0 de 0** donde hay 13 (§sondas 4);
+2. resolví `f33-geo` **por mtime con los artefactos dentro** y me tocó un
+   **SABOTAJE**, que publicó «CAMPO» con autoridad de congelada (§regla 7);
+3. el censo del mecanismo comparaba contra los **333 módulos** en vez de contra
+   los del mismo tipo: **55** clases «discriminantes», casi todas basura;
+4. el regex de `BlueButton` cortaba en la **lista de parámetros**: tres
+   `undefined` leídos como «no está transcrito»;
+5. el testigo de contenido buscaba 20 000 chars hacia delante y cogió una imagen
+   **de otro módulo**.
+
+---
+
+## 4 · PARA LA SIGUIENTE
+
+1. **Las dos decisiones que suben, y suben JUNTAS**: el mecanismo de preset por
+   clase (§7h del ESQUEMA, con sus 3 salidas y su denominador de 14+) y el modelo
+   de las tres familias de F3-4 (censo hecho, §2c del ESQUEMA);
+2. **`dvmd_table_maker`** sigue abierto con su −1512 y **sin bloque en ninguna
+   colección**;
+3. **el eje `comportamiento` en la lectura B** —**0 de las 31 de F3-3**— es lo
+   que bloquea la 8.ª `BT` (`/sistema-interno-de-informacion`) **y** el filtro de
+   12 botones de `casos-de-exito`, que es el único consumidor de `sector`. **Son
+   la misma campaña**, y eso no se sabía antes de esta tanda;
+4. ⚠ **el `HANDOFF` venía una tanda atrasado**: la 107.ª cerró en
+   `PENDIENTES-QA.md` y no aquí. Su acta está en §107.ª de ese fichero.
+
+**Y de paso, gratis:** el tripwire de `CLAUDE.md` (`KV-01` · `KV-08`) llegó
+**entero a 242 258 chars** — la cota sube desde los 230 016 de la 105.ª. ⚠ Y el
+primer borrador iba a citar **156 426**, que es el número que la ficha que cierra
+la clase tiene escrito y que la 105.ª ya había superado: **la cifra de referencia
+se deriva aunque esté a la vista** (§regla 9).
+
+---
+
+# (108.ª) Historial anterior — HANDOFF — el artefacto no era «de imagen»: eran TRES canales, y el que más movía es el que no deja síntoma
 
 > ✅ **Tanda de la 106.ª, 2026-08-25. ESCALÓN 1 CERRADO (los tres canales) ·
 > ESCALÓN 2 en su primer defecto (el TOGGLE) · la derivación acotada CONTESTADA,

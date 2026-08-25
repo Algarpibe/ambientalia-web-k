@@ -1002,6 +1002,50 @@ de su alternativa, no por lo que acierta*).
 | **incógnita** | **`author` no estaba en el plan de nadie.** LH-2 D3 midió que *«el autor no aparece en ninguna tarjeta y el sitemap de author tiene 0 URLs en `/es`»* y concluyó, correctamente para su alcance, que **los listados no lo exigen**. F3-0 midió otra cosa: **el archivo existe y tiene 34 rutas vivas.** Las dos son ciertas y contestan preguntas distintas |
 | **hecho** | cada familia con su decisión escrita en el ESQUEMA (colección o «no se replica», **con razón**), y el nº de rutas que añade contabilizado contra A-SP13 |
 
+> ✅ **EL CENSO ESTÁ HECHO (108.ª, 2026-08-25) — offline, sin abrir el original.**
+> `derivaciones/censo-f34.{mjs,log}`. **La entrega que falta es el MODELO, que es
+> decisión del propietario**; el censo ya no bloquea.
+>
+> | familia | TÉRMINOS | RUTAS | régimen | tarjetas (min–max) | cuerpo (bytes) |
+> |---|---|---|---|---|---|
+> | `categoria` (LH-SP8) | **6** | **27** | `-T` en 4/4 | 2–9 | 7 650–21 405 |
+> | `author` | **6** | **34** | **`--` en 6/6** | 0–6 | 1 469–12 978 |
+> | taxonomía `sector` | **11** | **13** | `-T` en 6/6 | **0–0** | 3 346–3 361 |
+>
+> **Las dos unidades se escriben las dos** (§*dos lecturas pueden dar el mismo
+> cardinal contando unidades distintas*): la incógnita de la fila de arriba
+> —«LH-2 D3 dice 6, F3-0 dice 34»— **no era un conflicto**: `author` tiene **6
+> TÉRMINOS** y **34 RUTAS**, y las 28 de diferencia son la paginación de **un solo
+> término** (`kunak`). Las dos afirmaciones eran ciertas y contestaban preguntas
+> distintas, exactamente como la fila decía.
+>
+> **Y el censo parte F3-4 en una decisión MENOS de las que parecía:**
+>
+> > **La taxonomía `sector` NO LISTA NADA** — 0 tarjetas en 6 de 6 capturados por
+> > los TRES selectores, cuerpo de ~3.3 KB que es miga + barra lateral, y su
+> > paginación tampoco.
+>
+> Así que *«modelar la taxonomía `sector`»* son **dos decisiones separables**:
+> **(a)** la RELACIÓN `caso → sector`, que **sí** tiene consumidor medido —el
+> filtro de 12 botones de `casos-de-exito`, **la única de las 35 formas de
+> listado que enlaza a `/sector/`**— y **(b)** el ARCHIVO `/es/sector/*`, que
+> **no lo consume nadie y no sirve contenido**. Se puede hacer (a) sin (b).
+>
+> **`author` cae en el CUARTO casillero** (`--` en 6/6: plantilla PHP del tema,
+> sin capa de builder), así que su lectura es la del **plantillado** — varianza
+> entre instancias, no huella de px.
+>
+> **LH-2 D3 confirmada offline y POR FORMA:** el autor no aparece en **0 de 35**
+> formas de listado; `categoria` en 15; `sector` en 1.
+>
+> ⚠ **Lo que el censo NO cierra, con su cardinal:** **7 términos** declarados sin
+> captura en disco (2 formas acentuadas de `categoria` + 5 de `sector`), y
+> **offline no hay código de estado**, así que «redirige» no se puede confirmar
+> ni refutar. Lo que el dato SÍ constriñe: de los 5 de `sector`, **3 tienen
+> `/page/N` capturado**, lo que **refuta** «el término entero redirige» y deja «la
+> base redirige y su paginación no» **SIN PROBAR**. Y el **filtro de 12 botones
+> necesita el eje COMPORTAMIENTO**, que este censo no mide.
+
 ## F3-5 · los content types de lo ya construido
 
 > ✅ **ALCANCE DECIDIDO POR EL PROPIETARIO, 2026-08-18 (81.ª tanda): F3-5 SON
