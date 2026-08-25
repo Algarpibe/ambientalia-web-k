@@ -17,7 +17,7 @@
  *   · lo emitido, del JSX de `CuerpoPagina.tsx` **sin sus comentarios**;
  *   · las hojas, de `apps/web/src/app/*.css` — todas, no una lista.
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -137,7 +137,25 @@ console.log(
 /* ── POR QUÉ siguen inertes las que siguen ─────────────────────────────────
  * Un inerte SIN RAZÓN es un descuido; uno CON razón derivada es una decisión.
  * La razón se cruza con las dos congeladas, no se escribe de memoria. */
-const geo = JSON.parse(readFileSync(join(RAIZ, "scripts/qa/medidas/f33-geo.json"), "utf8"));
+/* ⚠ EL CANÓNICO `f33-geo.json` YA NO EXISTE: la 104.ª lo RENOMBRÓ (§regla 5bis)
+ * declarando su defecto y su alcance —`modulos390` y `veredictosA`—, y las 10
+ * congeladas de esa familia llevan marcador (6 `SONDA-`, 4 `-neg-`), 0 sin
+ * marcar. Así que aquí NO hay un fichero limpio al que apuntar: hay que nombrar
+ * el marcado y declarar POR QUÉ es lícito.
+ *
+ * Lo es: esta derivación lee **`ejesSinEscribir`**, que la caducidad lista
+ * entre los bloques INTACTOS de 1440. El defecto no lo toca.
+ * Derivado en `resolutores-109.log` §2 y `caducidad-hoja-109.log`. */
+const GEO_F33 = "f33-geo-SONDA-390-SIN-HOJAS-ENLAZADAS-alcance-modulos390-y-veredictosA-2026-08-24.json";
+const geoRuta = join(RAIZ, "scripts/qa/medidas", GEO_F33);
+if (!existsSync(geoRuta))
+  throw new Error(
+    `no existe ${GEO_F33}.\n` +
+      `  Es la familia f33-geo, que NO tiene canónico: si la han vuelto a renombrar,\n` +
+      `  actualiza este nombre y comprueba que el campo que se lee (ejesSinEscribir)\n` +
+      `  siga fuera del alcance declarado en el nombre nuevo.`,
+  );
+const geo = JSON.parse(readFileSync(geoRuta, "utf8"));
 const cls = JSON.parse(readFileSync(join(RAIZ, "scripts/qa/medidas/f33-clases.json"), "utf8"));
 const sinEscribirPorTipo = {};
 for (const e of geo.ejesSinEscribir) {

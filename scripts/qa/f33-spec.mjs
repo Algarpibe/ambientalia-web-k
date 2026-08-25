@@ -453,7 +453,30 @@ for (const c of CONTROL)
  * prueba que ese conjunto sea el correcto: eso lo sostiene `arbol-f33`, que es
  * de donde salen los 313 y una derivación independiente.
  * ═════════════════════════════════════════════════════════════════════════ */
-const GEO = JSON.parse(readFileSync(join(RAIZ, "scripts/qa/medidas/f33-geo.json"), "utf8"));
+/* ⚠⚠ ESTA LECTURA ESTUVO MUERTA (109.ª, PASO 0): el canónico `f33-geo.json` ya
+ * no existe —la 104.ª lo RENOMBRÓ con su alcance (§regla 5bis)— y las 10
+ * congeladas de la familia llevan marcador, 0 sin marcar. Así que esta sonda
+ * levantaba Chrome, medía las 31 rutas, y **moría con ENOENT justo aquí, en su
+ * cruce**, después de todo el trabajo.
+ *
+ * Y es el caso caro de §regla 26: `qa:f33-spec` sigue declarada en
+ * `package.json`, así que el registro de comandos prometía una sonda que no
+ * podía terminar. Un `npm run` que existe se lee como que la sonda existe.
+ *
+ * Se nombra el fichero marcado y se declara por qué es lícito: de aquí sólo
+ * salen `criterioDeRecuento` y `porTipo`, que la caducidad lista entre los
+ * bloques INTACTOS de 1440. El defecto declarado —`modulos390`, `veredictosA`—
+ * no toca ninguno de los dos. Derivado en `resolutores-109.log` §2. */
+const GEO_F33 = "f33-geo-SONDA-390-SIN-HOJAS-ENLAZADAS-alcance-modulos390-y-veredictosA-2026-08-24.json";
+const GEO_RUTA = join(RAIZ, "scripts/qa/medidas", GEO_F33);
+if (!existsSync(GEO_RUTA))
+  throw new Error(
+    `no existe ${GEO_F33}.\n` +
+      `  Es la familia f33-geo, que NO tiene canónico. Si la han vuelto a renombrar,\n` +
+      `  actualiza este nombre y comprueba que \`criterioDeRecuento\` y \`porTipo\`\n` +
+      `  sigan fuera del alcance declarado en el nombre nuevo.`,
+  );
+const GEO = JSON.parse(readFileSync(GEO_RUTA, "utf8"));
 const geoTot = GEO.criterioDeRecuento.modulos;
 const geoTipos = Object.keys(GEO.porTipo).sort();
 const misTipos = Object.keys(informe).sort();

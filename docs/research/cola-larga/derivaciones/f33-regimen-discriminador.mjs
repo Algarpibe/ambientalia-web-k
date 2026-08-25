@@ -26,14 +26,32 @@
  * acierta*. Un candidato que acierta 30 de 31 no está «casi bien»: está
  * **refutado**, y lo que hay que publicar es **la instancia que lo refuta**.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 
 const REPO = new URL("../../../../", import.meta.url);
 const { construyeConfig } = await import(new URL("packages/cms-config/src/index.ts", REPO).href);
 const { getPayload } = await import("payload");
 
 /* ── El régimen MEDIDO, del lado del original (congelada de la 95.ª) ──────── */
-const geo = JSON.parse(readFileSync(new URL("scripts/qa/medidas/f33-geo.json", REPO), "utf8"));
+/* ⚠ EL CANÓNICO `f33-geo.json` YA NO EXISTE: la 104.ª lo RENOMBRÓ (§regla 5bis)
+ * con su defecto y su alcance —`modulos390` y `veredictosA`—, y las 10
+ * congeladas de la familia llevan marcador (6 `SONDA-`, 4 `-neg-`), 0 sin
+ * marcar. No hay fichero limpio al que apuntar: se nombra el marcado y se
+ * declara por qué es lícito.
+ *
+ * Lo es: de aquí sólo salen `paginas[].ruta` y `paginas[].regimen` — ni
+ * `modulos390` ni `veredictos`, que son los dos únicos sitios donde el defecto
+ * entra. Derivado en `resolutores-109.log` §2. */
+const GEO_F33 = "f33-geo-SONDA-390-SIN-HOJAS-ENLAZADAS-alcance-modulos390-y-veredictosA-2026-08-24.json";
+const geoURL = new URL(`scripts/qa/medidas/${GEO_F33}`, REPO);
+if (!existsSync(geoURL))
+  throw new Error(
+    `no existe ${GEO_F33}.\n` +
+      `  Es la familia f33-geo, que NO tiene canónico: si la han vuelto a renombrar,\n` +
+      `  actualiza este nombre y comprueba que \`paginas[].regimen\` siga fuera del\n` +
+      `  alcance declarado en el nombre nuevo.`,
+  );
+const geo = JSON.parse(readFileSync(geoURL, "utf8"));
 const regimenDe = new Map(geo.paginas.map((p) => [p.ruta.replace(/^\/es/, "").replace(/\/$/, "") || "/", p.regimen]));
 
 /* ── Lo que el CLON tiene: el documento de la DB, y nada más ──────────────── */

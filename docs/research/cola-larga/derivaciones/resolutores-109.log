@@ -1,0 +1,93 @@
+══════════════════════════════════════════════════════════════════════
+  LA CLASE DEL RESOLUTOR — 109.ª · PASO 0 · 2026-08-25
+══════════════════════════════════════════════════════════════════════
+  árbol barrido: 1351 ficheros de fuente (.mjs/.js/.ts, sin node_modules)
+  congeladas en medidas/: 1438  ·  marcadas §regla 7: 512
+
+── 0 · CONTROL DEL DETECTOR (§regla 8: sin control no significa nada) ──
+   Un caso conocido de antemano por cada una de las tres caras que la v1
+   de este detector cometió. Si alguno falla, sus ceros no son datos.
+
+  ✅ scripts/qa/lh-cmp.mjs                                          usa la librería
+  ✅ scripts/qa/lh-cubos.mjs                                        usa la librería
+  ✅ docs/research/cola-larga/derivaciones/hoja-f33-derivable.mjs   CABLEA y LEE — no resuelve
+  ✅ scripts/qa/f33-geo.mjs                                         es el ESCRITOR, no un consumidor
+  ✅ docs/research/cola-larga/derivaciones/caducidad-geo390.mjs     NOMBRA el canónico en un comentario; lee la renombrada
+  ⇒ 5/5 casos conocidos de antemano reencontrados
+
+── 1 · (b) ¿SE UNIFICA TODO CONTRA `eligeCongeladaAnterior`? ──────────
+   unidad: el FICHERO que resuelve. NO la llamada, NO la mención léxica.
+
+   USAN LA LIBRERÍA .................. 2
+      scripts/qa/lh-cmp.mjs
+      scripts/qa/lh-cubos.mjs
+
+   RESUELVEN POR MTIME por su cuenta . 3
+      ✅ legítimo docs/research/cola-larga/derivaciones/comportamiento-unidades.mjs descarta=sí  descarta marcadores POR SU CUENTA (§108.ª)
+      ✅ legítimo docs/research/cola-larga/derivaciones/deudas-modelo-f33.mjs descarta=sí  descarta marcadores POR SU CUENTA (§108.ª)
+      ✅ legítimo scripts/seed/coloca-media.mjs                            descarta=sí  SEED: consume corpus/media, no congeladas de sonda
+
+   ⇒ de 3 resolutores por mtime: LEGÍTIMOS 3 · DEFECTOS 0
+   ⇒ RESPUESTA: NO se unifica — no queda ninguno que unificar
+
+── 2 · LA OTRA CLASE, LA QUE EL ENCARGO NO NOMBRA: CABLEAR UN CANÓNICO ─
+   `eligeCongeladaAnterior` NO arregla esto. §regla 5: el nombre canónico
+   es la PRIMERA foto, no el estado de hoy. Y si un renombre de §regla 5bis
+   lo LIBERÓ, el consumidor está MUERTO — y sólo se entera quien lo corra.
+
+   LECTURAS de un canónico cableado, por estado del fichero:
+     VIVO y sin marcador ......... 90
+     VIVO pero MARCADO ........... 10   lee un artefacto de §regla 7 — ver el reparto abajo
+     LIBERADO (hay hermanas) ..... 0   ⛔ consumidor MUERTO
+     AUSENTE (ni hermanas) ....... 0
+
+   ⚠ Leer un MARCADO no es por sí solo un defecto, y el discriminador es
+     barato: **un nombre marcado se escribe entero o no se escribe**. Los de
+     esta familia miden 60–90 caracteres con su alcance dentro, así que
+     teclearlo es una DECISIÓN — es el patrón de `caducidad-geo390`, que
+     audita justamente lo renombrado. El defecto sería llegar a un marcado
+     por RESOLUCIÓN (lo que `eligeCongeladaAnterior` impide) o por un nombre
+     corto que no declare nada.
+   (ESCRITURAS, fuera del recuento: 76 — son el PRODUCTOR)
+   (pelados vía HELPER que no resuelven en medidas/: 0 — excluidos,
+    no contados como ausentes: casi todos son de `corpus/`)
+
+   detalle de lo que NO resuelve hoy:
+     VIVO-MARCADO → f33-geo-SONDA-390-SIN-HOJAS-ENLAZADAS-alcance-modulos390-y-veredictosA-2026-08-24.json   (6 lectores)
+                  · docs/research/cola-larga/derivaciones/caducidad-geo390.mjs
+                  · docs/research/cola-larga/derivaciones/caducidad-hoja-109.mjs
+                  · docs/research/cola-larga/derivaciones/clases-inertes-f33.mjs
+                  · docs/research/cola-larga/derivaciones/f33-regimen-discriminador.mjs
+                  · docs/research/cola-larga/derivaciones/hoja-f33-derivable.mjs
+                  · scripts/qa/f33-spec.mjs
+     VIVO-MARCADO → f33-clases-SONDA-MEDIA-390-CON-setViewport-QUE-RECARGA-Y-PIERDE-LAS-HOJAS-ENLAZADAS-2026-08-24.json   (1 lector)
+                  · docs/research/cola-larga/derivaciones/caducidad-geo390.mjs
+     VIVO-MARCADO → f33-cmp-390-neg-mismo-lado.json   (1 lector)
+                  · docs/research/cola-larga/derivaciones/caducidad-geo390.mjs
+     VIVO-MARCADO → f33-geo-neg-control.json   (1 lector)
+                  · docs/research/cola-larga/derivaciones/modulos-que-faltan.mjs
+     VIVO-MARCADO → cms-teaser-neg-derivable.json   (1 lector)
+                  · (negativo) scripts/qa/cms-teaser.neg.mjs
+
+── 3 · EL PATRÓN CORRECTO, para que no se lea «cablear es malo» ────────
+   lecturas de un cableado CON FECHA en el nombre: 8
+   Un nombre fechado NO tiene el modo de fallo de §regla 5: no promete ser
+   «el de hoy», así que no puede envejecer en silencio. Citar una congelada
+   concreta por su nombre fechado es lo CORRECTO, no un defecto.
+
+══════════════════════════════════════════════════════════════════════
+  LO QUE ESTA DERIVACIÓN **NO** CONTESTA
+══════════════════════════════════════════════════════════════════════
+   §*antes de construir sobre una medida, escribe qué preguntas NO contesta*
+
+   · si un cableado VIVO apunta a la congelada CORRECTA: existir no es ser
+     la buena. Eso exige leer la conclusión, y se hace caso a caso;
+   · nada de los `.log` ya congelados: un consumidor muerto NO invalida lo
+     que escribió cuando su fuente vivía. Eso es §regla 5bis y se adjudica
+     cruzando con otra medida del MISMO objeto — hecho aparte para
+     `hoja-f33-derivable.log`;
+   · los que resuelvan por GLOB de otra librería: el detector exige
+     `readdirSync`. Derivado, no supuesto: 0 de 1351 fuentes importan
+     glob/fast-glob/globby en este árbol, así que el hueco está VACÍO;
+   · los cableados en ficheros que no son fuente (`.md`, `.json`, scripts de
+     `package.json`): fuera del barrido por construcción.

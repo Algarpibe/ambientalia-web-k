@@ -7,22 +7,49 @@
  * memoria: se deriva de las congeladas.
  *
  * ⚠ **NO es una sonda** —no declara `Evaluadas` ni congela en `medidas/`—: es
- * una lectura de lo ya congelado. Su fuente es `f33-geo.json`, resuelta por
- * mtime y nombrada abajo (§regla 5: el nombre canónico puede ser la PRIMERA
- * foto, así que se dice cuál se leyó).
+ * una lectura de lo ya congelado.
+ *
+ * ⚠⚠ CORREGIDO EN LA 109.ª (PASO 0), Y LA CABECERA MENTÍA. Aquí decía: *«Su
+ * fuente es `f33-geo.json`, resuelta por MTIME y nombrada abajo»*. **No había
+ * ningún resolutor**: el nombre estaba CABLEADO y `statSync` sólo se imprimía.
+ * Es §regla 3 —*documentado no es conectado*— cometida sobre un MECANISMO: el
+ * comentario describía un resolutor que el código no tenía, y de ahí salió la
+ * clasificación equivocada del encargo de la 109.ª.
+ *
+ * Y el cableado estaba MUERTO: la 104.ª renombró el canónico (§regla 5bis)
+ * declarando su alcance, así que esto reventaba con ENOENT. Se nombra el
+ * marcado y se declara por qué es lícito — con el reparto por bloques, porque
+ * aquí NO es uniforme:
+ *
+ *   · §1 a 1440 ...... INTACTO
+ *   · §1 a 390 ....... ⚠ lee `paginas[].modulos390`, DENTRO del alcance
+ *                      caducado. Cruzado contra el camino bueno
+ *                      (`f33-clases.json`, el original CON sus hojas): los 6
+ *                      repartos dan el MISMO valor, así que el número se
+ *                      sostiene y lo que estaba mal era la PROCEDENCIA
+ *                      (`caducidad-hoja-109.log`);
+ *   · §2 y §3 ........ INTACTOS (`defaultMbPorAnchoDeFila`, `filas1440`).
  *
  * Lo que contesta: para cada valor que la hoja necesita, si está en la
  * congelada, con qué `n` y con qué varianza.
  * Lo que NO contesta: si el valor es PLANTILLA o CAMPO. Eso lo dicen los
  * veredictos de `f33-geo`, y aquí sólo se citan.
  */
-import { readFileSync, statSync } from "node:fs";
+import { readFileSync, statSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const RAIZ = join(AQUI, "..", "..", "..", "..");
-const F = join(RAIZ, "scripts/qa/medidas/f33-geo.json");
+const GEO_F33 = "f33-geo-SONDA-390-SIN-HOJAS-ENLAZADAS-alcance-modulos390-y-veredictosA-2026-08-24.json";
+const F = join(RAIZ, "scripts/qa/medidas", GEO_F33);
+if (!existsSync(F))
+  throw new Error(
+    `no existe ${GEO_F33}.\n` +
+      `  Es la familia f33-geo, que NO tiene canónico (10 congeladas, 10 marcadas).\n` +
+      `  Si la han vuelto a renombrar, actualiza este nombre Y re-lee el reparto por\n` +
+      `  bloques de la cabecera contra el alcance que declare el nombre nuevo.`,
+  );
 const geo = JSON.parse(readFileSync(F, "utf8"));
 
 console.log(`fuente : ${F.replace(RAIZ, ".")}`);

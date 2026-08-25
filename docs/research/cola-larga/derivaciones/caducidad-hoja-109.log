@@ -1,0 +1,88 @@
+══════════════════════════════════════════════════════════════════════
+  ¿CADUCÓ `hoja-f33-derivable.log`? — 109.ª · PASO 0 · (a) · 2026-08-25
+══════════════════════════════════════════════════════════════════════
+── 0 · EL CONSUMIDOR, HOY ─────────────────────────────────────────────
+   `medidas/f33-geo.json` existe: NO
+   ⇒ `hoja-f33-derivable.mjs` corrido hoy: ENOENT, exit 1, CERO líneas de
+     stdout (verificado). No lee un fichero marcado — no lee NADA.
+   Eso es §regla 9 8.º caso FUNCIONANDO: liberar el canónico hace que el
+   consumidor caducado falle EN VOZ ALTA en vez de leer lo caducado.
+
+── 1 · QUÉ BLOQUES DEL `.log` CAEN DENTRO DEL ALCANCE DECLARADO ───────
+   alcance, leído del NOMBRE de la renombrada: `modulos390` y `veredictosA`
+
+   ⚠ TOCADO  §1 · ancho de columna por reparto
+             lee: modulos1440 · modulos390
+             dentro del alcance: modulos390
+   ✅ intacto §2 · default de `mb` por ancho de fila
+             lee: defaultMbPorAnchoDeFila
+   ✅ intacto §3 · lo que la congelada NO tiene
+             lee: filas1440 · secciones1440 · filas390 · secciones390
+
+   ⇒ 1 de 3 bloques tocados por PROCEDENCIA.
+     «Tocado por procedencia» NO es «su número está mal»: eso lo dice el
+     cruce de abajo, no el nombre del fichero.
+
+── 2 · EL CRUCE CONTRA EL CAMINO BUENO ────────────────────────────────
+   caducada : f33-geo-SONDA-390-SIN-HOJAS-ENLAZADAS-alcance-…
+              31/31 rutas · 2026-08-22
+   bueno    : f33-clases.json · 31/31 rutas · 2026-08-24
+              lado: UNO — el original capturado con sus hojas. NO compara con …
+
+   ── 1440 ── (fuera del alcance)
+     1_2   ✅ MISMO valor  caducada 47.2493/47.2498 (n=69)   ·   bueno 47.2493/47.2498 (n=48)
+     1_3   ✅ MISMO valor  caducada 29.6659 (n=81)   ·   bueno 29.6659 (n=38)
+     1_4   ✅ MISMO valor  caducada 22.7489 (n=4)   ·   bueno 22.7489 (n=4)
+     1_5   ✅ MISMO valor  caducada 17.5995 (n=7)   ·   bueno 17.5995 (n=10)
+     2_3   ✅ MISMO valor  caducada 64.8326 (n=52)   ·   bueno 64.8326 (n=17)
+     4_4   ✅ MISMO valor  caducada 100 (n=64)   ·   bueno 100 (n=28)
+     ⇒ repartos con el MISMO valor: 6 · que DIFIEREN: 0
+
+   ── 390 ── (DENTRO del alcance caducado)
+     1_2   ✅ MISMO valor  caducada 100 (n=69)   ·   bueno 100 (n=33)
+     1_3   ✅ MISMO valor  caducada 100 (n=81)   ·   bueno 100 (n=37)
+     1_4   ✅ MISMO valor  caducada 100 (n=4)   ·   bueno 100 (n=4)
+     1_5   ✅ MISMO valor  caducada 100 (n=7)   ·   bueno 100 (n=6)
+     2_3   ✅ MISMO valor  caducada 100 (n=52)   ·   bueno 100 (n=16)
+     4_4   ✅ MISMO valor  caducada 100 (n=68)   ·   bueno 100 (n=28)
+     ⇒ repartos con el MISMO valor: 6 · que DIFIEREN: 0
+
+── 3 · ⚠ LAS `n` NO SON COMPARABLES: SON UNIDADES DISTINTAS ───────────
+   §*dos instrumentos que censan el mismo objeto tienen que compartir el
+   criterio de recuento, o su cruce INVENTA el desacuerdo*.
+
+   la CADUCADA cuenta por MÓDULO  : conCaja 277 (de 313 en el DOM)
+   el camino BUENO cuenta por COLUMNA: conCaja 145 (de 179 en el DOM)
+   suma de `n` en el camino bueno   : 145
+   ⇒ CUADRA con las columnas con caja
+
+   Publicar «n 69 contra 48» como discrepancia sería fabricar un desacuerdo
+   que no existe: son el mismo objeto contado en dos unidades. Lo que se
+   cruza es el VALOR, no el cardinal.
+
+══════════════════════════════════════════════════════════════════════
+  VEREDICTO
+══════════════════════════════════════════════════════════════════════
+   · el CONSUMIDOR está muerto: `hoja-f33-derivable.mjs` revienta con
+     ENOENT. Se arregla apuntándolo a la congelada que exista;
+   · su `.log` está TOCADO POR PROCEDENCIA en 1 de 3 bloques (§1, mitad
+     de 390) e INTACTO en 2 (§2 y §3 leen bloques que la caducidad declara
+     de 1440);
+   · ⚠ y el número NO cambia: cruzado contra el camino bueno, los 6
+     repartos dan el MISMO valor a 1440 y a 390. **La conclusión publicada
+     se sostiene** — lo que estaba mal era de dónde venía, no lo que decía;
+   · por tanto NO se renombra nada y NO se retracta nada. Lo que hace falta
+     es una NOTA DE PROCEDENCIA en el `.log` y arreglar el `.mjs`.
+
+   ⚠ ESTO REFUTA MEDIA PREDICCIÓN DEL PRE-REGISTRO (P1.b), y se deja
+     escrito: se predijo que el «100 % en los 6 a 390» era la FIRMA de la
+     captura sin hojas. NO lo es — el camino bueno, con las hojas puestas,
+     da el mismo 100 %. Las columnas apilan de verdad a 390. La mitad
+     estructural de P1.b (el bloque lee un campo caducado) sí se cumple.
+
+── LO QUE ESTA DERIVACIÓN **NO** CONTESTA ─────────────────────────────
+   · nada de los otros 3 lectores muertos de `f33-geo.json`
+     (`clases-inertes-f33` · `f33-regimen-discriminador` · `qa:f33-spec`):
+     cada uno lee campos distintos y su caducidad se adjudica por separado;
+   · nada del RITMO ni de los VEREDICTOS: aquí sólo se ha cruzado el ancho
+     de columna por reparto, que es lo que el `.log` publica en su §1.
