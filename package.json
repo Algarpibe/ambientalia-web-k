@@ -275,7 +275,9 @@
     "qa:pie-legal": "node scripts/qa/pie-legal.mjs",
     "qa:pie-legal-neg": "node scripts/qa/pie-legal.neg.mjs",
     "cms:captura-fuentes": "node scripts/seed/captura-fuentes.mjs",
-    "cms:captura-fuentes-neg": "node scripts/seed/captura-fuentes.neg.mjs"
+    "cms:captura-fuentes-neg": "node scripts/seed/captura-fuentes.neg.mjs",
+    "qa:kb-barra": "node scripts/qa/kb-barra.mjs",
+    "qa:kb-barra-neg": "node scripts/qa/kb-barra.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

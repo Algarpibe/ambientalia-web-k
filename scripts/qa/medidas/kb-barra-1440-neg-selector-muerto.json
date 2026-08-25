@@ -1,0 +1,573 @@
+{
+  "meta": {
+    "sonda": "kb-barra",
+    "fecha": "2026-08-25",
+    "ancho": 1440,
+    "movil": false,
+    "contrato": "FIDELIDAD (1440/390) · UN SOLO LADO (el original)",
+    "dominio": {
+      "que": "las 2 familias que sirven el cascarón `_tb_` de KB",
+      "n": 13,
+      "de": 13
+    },
+    "selector": ".et_pb_sidebar_NO_EXISTE_tb_body",
+    "sabotaje": "selector-muerto"
+  },
+  "paginas": {
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/": {
+      "familia": "articulos-kb",
+      "hojas": {
+        "enlazadas": 8,
+        "resueltas": 5,
+        "sinResolver": 3,
+        "faltan": [
+          "wp-content/et-cache/25912/et-divi-dynamic-tb-140-tb-25181-tb-342-25912-late.css",
+          "wp-content/et-cache/25912/et-divi-dynamic-tb-140-tb-25181-tb-342-25912.css",
+          "wp-content/et-cache/25912/et-core-unified-25912.min.css"
+        ],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 19,
+        "resueltas": 19
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 31,
+      "hay": false
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/": {
+      "familia": "articulos-kb",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 5,
+        "sinResolver": 2,
+        "faltan": [
+          "wp-content/et-cache/25889/et-divi-dynamic-tb-140-tb-25181-tb-342-25889.css",
+          "wp-content/et-cache/25889/et-core-unified-25889.min.css"
+        ],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 19,
+        "resueltas": 19
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 30,
+      "hay": false
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/": {
+      "familia": "articulos-kb",
+      "hojas": {
+        "enlazadas": 8,
+        "resueltas": 5,
+        "sinResolver": 3,
+        "faltan": [
+          "wp-content/et-cache/25902/et-divi-dynamic-tb-140-tb-25181-tb-342-25902-late.css",
+          "wp-content/et-cache/25902/et-divi-dynamic-tb-140-tb-25181-tb-342-25902.css",
+          "wp-content/et-cache/25902/et-core-unified-25902.min.css"
+        ],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 17,
+        "resueltas": 17
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 29,
+      "hay": false
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/": {
+      "familia": "articulos-kb",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 5,
+        "sinResolver": 2,
+        "faltan": [
+          "wp-content/et-cache/25859/et-divi-dynamic-tb-140-tb-25181-tb-342-25859.css",
+          "wp-content/et-cache/25859/et-core-unified-25859.min.css"
+        ],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 37,
+        "resueltas": 37
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 48,
+      "hay": false
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/": {
+      "familia": "articulos-kb",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 5,
+        "sinResolver": 2,
+        "faltan": [
+          "wp-content/et-cache/25881/et-divi-dynamic-tb-140-tb-25181-tb-342-25881.css",
+          "wp-content/et-cache/25881/et-core-unified-25881.min.css"
+        ],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 25,
+        "resueltas": 25
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 30,
+      "hay": false
+    },
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/": {
+      "familia": "articulos-kb",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 5,
+        "sinResolver": 2,
+        "faltan": [
+          "wp-content/et-cache/26017/et-divi-dynamic-tb-140-tb-25181-tb-342-26017.css",
+          "wp-content/et-cache/26017/et-core-unified-26017.min.css"
+        ],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 37,
+        "resueltas": 37
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 48,
+      "hay": false
+    },
+    "/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/": {
+      "familia": "hubs-BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "sinResolver": 0,
+        "faltan": [],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 16,
+        "resueltas": 16
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 27,
+      "hay": false
+    },
+    "/es/centro-de-ayuda/kunak-air/": {
+      "familia": "hubs-BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "sinResolver": 0,
+        "faltan": [],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 16,
+        "resueltas": 16
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 39,
+      "hay": false
+    },
+    "/es/centro-de-ayuda/kunak-air/video-tutoriales/": {
+      "familia": "hubs-BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "sinResolver": 0,
+        "faltan": [],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 21,
+        "resueltas": 21
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 44,
+      "hay": false
+    },
+    "/es/centro-de-ayuda/kunak-air-cloud/": {
+      "familia": "hubs-BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "sinResolver": 0,
+        "faltan": [],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 16,
+        "resueltas": 16
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 35,
+      "hay": false
+    },
+    "/es/soporte/centro-de-ayuda/": {
+      "familia": "hubs-BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "sinResolver": 0,
+        "faltan": [],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 17,
+        "resueltas": 17
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 47,
+      "hay": false
+    },
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/": {
+      "familia": "hubs-BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "sinResolver": 0,
+        "faltan": [],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 16,
+        "resueltas": 16
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 26,
+      "hay": false
+    },
+    "/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/": {
+      "familia": "hubs-BT",
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 7,
+        "sinResolver": 0,
+        "faltan": [],
+        "aplicadas": null
+      },
+      "media": {
+        "n": 19,
+        "resueltas": 19
+      },
+      "fuentes": 4,
+      "peticionesBloqueadas": 38,
+      "hay": false
+    }
+  },
+  "varianza": {
+    "articulos-kb": {
+      "n": 6,
+      "ejes": {
+        "barra.rect.w": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "barra.rect.h": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "barra.rect.x": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "barra.rect.y": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "barra.mb": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "barra.pt": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "columna.rect.w": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "menu.nLi": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "menu.ul.h": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "widget0.h": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "widget0.mb": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "a.fontSize": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "a.lineHeight": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "a.fontFamily": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        },
+        "a.color": {
+          "valores": [
+            null
+          ],
+          "n": 6
+        }
+      }
+    },
+    "hubs-BT": {
+      "n": 7,
+      "ejes": {
+        "barra.rect.w": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "barra.rect.h": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "barra.rect.x": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "barra.rect.y": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "barra.mb": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "barra.pt": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "columna.rect.w": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "menu.nLi": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "menu.ul.h": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "widget0.h": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "widget0.mb": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "a.fontSize": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "a.lineHeight": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "a.fontFamily": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        },
+        "a.color": {
+          "valores": [
+            null
+          ],
+          "n": 7
+        }
+      }
+    }
+  },
+  "entreFamilias": {
+    "barra.rect.w": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "barra.rect.h": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "barra.rect.x": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "barra.rect.y": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "barra.mb": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "barra.pt": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "columna.rect.w": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "menu.nLi": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "menu.ul.h": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "widget0.h": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "widget0.mb": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "a.fontSize": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "a.lineHeight": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "a.fontFamily": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    },
+    "a.color": {
+      "articulos-kb": null,
+      "hubs-BT": null,
+      "igual": true
+    }
+  },
+  "cruceVivo": {
+    "fuente": "medidas/kb-spec-1440.json",
+    "fecha": "2026-08-10",
+    "n": 6,
+    "nivel": "COLUMNA contra COLUMNA (`et_pb_column_1_4` · `et_pb_column_0_tb_body`)",
+    "picosY": [
+      0,
+      32.28
+    ],
+    "rects": [
+      {
+        "w": 258.5,
+        "h": 536.84,
+        "y": 311.39,
+        "x": 100.8
+      }
+    ],
+    "contra": {
+      "articulos-kb": {
+        "offline": null,
+        "vivo": {
+          "w": 258.5,
+          "h": 536.84,
+          "y": 311.39,
+          "x": 100.8
+        },
+        "delta": null,
+        "yEnUnPico": false,
+        "ok": null
+      },
+      "hubs-BT": {
+        "offline": null,
+        "vivo": {
+          "w": 258.5,
+          "h": 536.84,
+          "y": 311.39,
+          "x": 100.8
+        },
+        "delta": null,
+        "yEnUnPico": false,
+        "ok": null
+      }
+    },
+    "mal": 2
+  }
+}
