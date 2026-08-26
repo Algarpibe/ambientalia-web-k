@@ -49,6 +49,7 @@
     "qa:clase-censo": "node scripts/qa/clase-censo.mjs",
     "qa:arbol-todos": "node scripts/qa/tree-todos.mjs",
     "qa:lib": "node scripts/qa/lib.test.mjs",
+    "qa:lib-neg": "node scripts/qa/lib.test.neg.mjs",
     "qa:bases": "node scripts/qa/c-bases.mjs",
     "qa:banda": "node scripts/qa/c-banda.mjs",
     "qa:lh": "node scripts/qa/lh-censo.mjs",

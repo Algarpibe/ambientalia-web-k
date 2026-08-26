@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "fecha": "2026-08-26",
+    "sonda": "lib.test.neg",
+    "alcance": "el CONTRATO de qa:lib — no la corrección de sus aserciones"
+  },
+  "derivado": {
+    "casosDeclarados": 114,
+    "corteDelSabotaje": 14
+  },
+  "exits": {
+    "control": 0,
+    "dominioCorto": 2
+  },
+  "separadoras": {
+    "viejoRecorteAntes": 0,
+    "viejoRecorteDespues": 0,
+    "derivado": 2,
+    "n": 2
+  },
+  "casos": [
+    {
+      "nombre": "control · alcanza su dominio entero y sale VERDE",
+      "ok": true
+    },
+    {
+      "nombre": "control · el mínimo RESPONDE al fuente: un caso más sube el listón solo",
+      "ok": true
+    },
+    {
+      "nombre": "control · el mínimo DERIVADO cuadra con los casos que de verdad corrieron",
+      "ok": true
+    },
+    {
+      "nombre": "control · las DOS líneas de unidades se distinguen: el fixture sale NOMBRADO",
+      "ok": true
+    },
+    {
+      "nombre": "dominio-corto · la sonda imprime su VERDE plausible, que es el modo de fallo",
+      "ok": true
+    },
+    {
+      "nombre": "dominio-corto · …y AUN ASÍ sale rojo, porque el contrato no es su recuento",
+      "ok": true
+    },
+    {
+      "nombre": "dominio-corto · el grito nombra la unidad y el hueco, no un booleano",
+      "ok": true
+    },
+    {
+      "nombre": "dominio-corto · el sabotaje TIENE CON QUÉ MORDER: el corte es menor que el mínimo",
+      "ok": true
+    },
+    {
+      "nombre": "SEPARADORA · viejo, recorte ANTES del fixture: CERO `Evaluadas` ⇒ exit 0 y mudo",
+      "ok": true
+    },
+    {
+      "nombre": "SEPARADORA · viejo, recorte DESPUÉS: `minimo: 1` con 15 contadas ⇒ exit 0 igual",
+      "ok": true
+    },
+    {
+      "nombre": "SEPARADORA · derivado: el MISMO recuento contra el mínimo del fuente ⇒ ≠0",
+      "ok": true
+    }
+  ]
+}

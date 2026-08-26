@@ -70,3 +70,17 @@ media/
 .next-*/
 scripts/publicar/estado*.json
 corpus/fuentes-neg-*/
+
+# Estado del HARNESS del agente, no del proyecto (hoy: `.atl/skill-registry.md`,
+# el catálogo de skills instaladas en ESTA máquina).
+#
+# ⚠ La razón es la misma que la de `.next-*/` de arriba, y por eso va al lado:
+# lo que un fichero contiene NO decide si se versiona — lo decide QUIÉN lo
+# escribe y para quién. Este directorio lo escribe la herramienta con la que se
+# trabaja, así que su contenido cambia con la máquina y con la instalación, no
+# con el clon. Commitearlo hace que dos sesiones con distintas skills instaladas
+# se pisen un fichero que no describe el repo.
+#
+# Comodín anclado al prefijo por lo mismo que arriba: una lista a mano de la que
+# hay que acordarse es la clase que este repo tiene catalogada.
+.atl/

@@ -28,11 +28,18 @@
 import { mkdtempSync, readFileSync, readdirSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { auditarSondas, corridaNegativa, eligeCongeladaAnterior, LIBRERIAS, desMsys, env, envRuta, envRutas, Evaluadas, hoy, iniciarClon, nombreNeg, repartoDeDistancia, ruta, sello, sinLiterales, w } from "./lib.mjs";
 
-/* Este fichero NO es una sonda: no mide el sitio, prueba `lib.mjs`. Lo declara
- * él mismo —como `ruido` declara `SIN_CLON`— en vez de exigírselo a quien lo
- * lanza, que es como se llega a una bandera que nadie pone. */
+/* Este fichero NO congela ninguna medida del sitio, y lo declara él mismo
+ * —como `ruido` declara `SIN_CLON`— en vez de exigírselo a quien lo lanza, que
+ * es como se llega a una bandera que nadie pone.
+ *
+ * ⚠ `SIN_CONTRATO` y el contrato de más abajo son DOS EJES, no uno: el primero
+ * dice «no congelo medidas», el segundo dice «afirmo N casos». Sólo el primero
+ * estaba puesto, y por eso el segundo pudo quedarse en `minimo: 1` sin que nada
+ * chirriara. La bandera viaja además a los hijos por `process.env`: los dos
+ * subprocesos que prueban justamente esa rama la sobreescriben a mano. */
 process.env.SIN_CONTRATO = "1";
 
 /** Lo que Git Bash hace con un valor que empieza por `/`. */
@@ -47,18 +54,96 @@ let fallos = 0;
 let corridas = 0;
 const eq = (nombre, real, esperado) => {
   corridas++;
+  contrato.ok();
   const ok = JSON.stringify(real) === JSON.stringify(esperado);
   if (!ok) fallos++;
   console.log(
     `  ${ok ? "✓" : "❌"} ${nombre.padEnd(54)}${JSON.stringify(real)}` +
       (ok ? "" : `   ESPERADO ${JSON.stringify(esperado)}`),
   );
+  if (corridas >= CORTE) {
+    console.log(`\n  ⚠ SABOTAJE \`dominio-corto\`: la corrida se para en el caso ${corridas} de ${NCASOS}.`);
+    veredicto();
+  }
 };
 /** Pone la variable y la lee: el test es de la LECTURA, no de la función suelta. */
 const con = (nombre, valor, leer) => {
   if (valor === null) delete process.env[nombre];
   else process.env[nombre] = valor;
   return leer();
+};
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * EL CONTRATO DE ESTA SONDA — y era el GUARDIÁN el que peor lo declaraba
+ * (111.ª tanda, 2026-08-26)
+ *
+ * Este fichero AFIRMA 114 casos, CUENTA 10 llamadas a `ev.ok(`, y DECLARABA un
+ * mínimo de **1** en unidad **`filas`**. Tres cifras en tres unidades. Y la
+ * cuarta cosa es la que muerde: el único `Evaluadas` del fichero era **el del
+ * caso de prueba de `Evaluadas.ok()`** (más abajo, §`Evaluadas.ok()`), o sea el
+ * contrato de la sonda atado al OBJETO QUE EXAMINA. Es §regla 17 con
+ * instrumento y objeto colapsados —un sabotaje sobre `Evaluadas` movería la
+ * portería— y con `minimo: 1` un recorte del dominio salía **VERDE**: la clase
+ * «0 comparado = verde» una vuelta más arriba, porque `✅ 14/14` es un número
+ * perfectamente plausible y nadie sabe que el fuente declaraba 114.
+ *
+ * ⚠ EL MÍNIMO SE DERIVA DEL FUENTE QUE DECLARA LOS CASOS —cuenta las llamadas
+ * a `eq(` en cabeza de línea— y NO de `corridas`, que se construye sobre la
+ * marcha: usarlo de mínimo haría que 114 casos y 14 dieran los dos
+ * «suficiente», que es exactamente no comprobar nada. Mismo patrón que
+ * `kb-barra.neg` con `apunta(`, y por el mismo motivo: un literal `114`
+ * envejece CONTRA el fichero, en silencio (§regla 9) — añadir un `eq` sube el
+ * listón solo.
+ *
+ * La UNIDAD es `casos`, que es lo que la sonda afirma. `filas` era la unidad
+ * del fixture, y una unidad heredada del objeto examinado no expresa nada de
+ * quien la declara.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const FUENTE = readFileSync(fileURLToPath(import.meta.url), "utf8");
+const NCASOS = (FUENTE.match(/^\s*eq\(/gm) ?? []).length;
+const contrato = new Evaluadas({ nombre: "lib.test", unidad: "casos", minimo: NCASOS });
+
+/* ── EL SABOTAJE VA EN EL DATO, NO EN EL UMBRAL (§regla 28a) ────────────────
+ * `dominio-corto` recorta **el dominio** y deja que la sonda imprima su verde:
+ * es exactamente la corrida que se para a la mitad y se lee como completa. No
+ * toca el mínimo — bajar un umbral no muerde si el lado medido ya está por
+ * debajo, y ése es el sabotaje que sale verde por construcción.
+ *
+ * ⚠ Y el corte se DERIVA de una cantidad INDEPENDIENTE del mínimo —los `eq(` en
+ * columna 0, o sea los casos de raíz— y NO de `NCASOS`: un sabotaje que
+ * comparte variable con el mínimo MUEVE LA PORTERÍA (§regla 17). Los dos
+ * números se imprimen para que el negativo pueda comprobar que el sabotaje
+ * tiene con qué morder (`NRAIZ < NCASOS`) en vez de suponerlo. */
+const NRAIZ = (FUENTE.match(/^eq\(/gm) ?? []).length;
+const CORTE = process.env.SABOTAJE === "dominio-corto" ? NRAIZ : Infinity;
+
+/** El veredicto, en UNA función: el sabotaje tiene que reproducir el modo de
+ *  fallo EXACTO —la sonda creyendo que terminó bien— y no una aproximación
+ *  suya escrita al lado, que es como se fabrica un negativo que no prueba nada. */
+const veredicto = () => {
+  const total = corridas;
+  /* §sondas 4 sobre mi propio patrón: si corrieron MÁS casos de los que el
+   * fuente declara, el mínimo está subestimado y el contrato pide de menos.
+   * El caso contrario —menos casos que declarados— lo grita el contrato, y así
+   * cada mitad cae por SU motivo. */
+  const subestimado = total > NCASOS;
+  if (subestimado)
+    console.error(
+      `\n❌ EL MÍNIMO ESTÁ SUBESTIMADO: corrieron ${total} casos y el fuente sólo\n` +
+        `   declara ${NCASOS}. Hay una llamada que el patrón de cabeza de línea no ve\n` +
+        `   —¿en la misma línea que un \`if\`?—, así que el contrato pide menos de lo\n` +
+        `   que hay. Un patrón que no casa NO es un cero (§sondas 4).`,
+    );
+  console.log(
+    fallos
+      ? `\n❌ ${fallos} de ${total} aserciones fallidas — mira cuál: las cosas que\n` +
+          `   prueba esto fallan EN SILENCIO, con números plausibles y código 0.\n`
+      : `\n✅ ${total}/${total} — MSYS se deshace en la LECTURA (argumentos y entorno),\n` +
+          `        una salida congelada NO se descongela sola, una sonda contra un\n` +
+          `        puerto vacío FALLA en voz alta en vez de medir, y el barrido del\n` +
+          `        contrato tumba un fichero que no compila en vez de convivir con él.\n`,
+  );
+  process.exit(fallos || subestimado ? 1 : 0);
 };
 
 console.log("\n── `SOLO`: lista de rutas de página, la puerta de `c-cabecera` ──");
@@ -472,7 +557,11 @@ console.log("\n── `hoy()` / `sello()`: hora LOCAL, nunca UTC ──");
 /* `ok()` no puede traducir «no lo sé» a «está bien» (CLAUDE.md §sondas, 6). */
 console.log("\n── `Evaluadas.ok()`: un defecto no rescata un cálculo fallido ──");
 {
-  const ev = new Evaluadas({ unidad: "filas", minimo: 1 });
+  /* ⚠ Éste es el OBJETO EXAMINADO, no el contrato de esta sonda — y hasta la
+   * 111.ª era las dos cosas a la vez. Va con nombre para que su línea de
+   * unidades no se pueda leer como el veredicto del fichero: dos líneas de
+   * unidades sin nombre son dos canales de verdad para una sola pregunta. */
+  const ev = new Evaluadas({ nombre: "FIXTURE de ok() · NO es el contrato de esta sonda", unidad: "filas", minimo: 1 });
   eq("ok() sin argumento sigue sumando 1", ev.ok().n, 1);
   eq("ok(13) suma 13", ev.ok(13).n, 14);
   const tira = (fn) => { try { fn(); return false; } catch { return true; } };
@@ -481,7 +570,10 @@ console.log("\n── `Evaluadas.ok()`: un defecto no rescata un cálculo fallid
   eq("ok(NaN) TIRA", tira(() => ev.ok(NaN)), true);
   eq("ok(null) TIRA", tira(() => ev.ok(null)), true);
   eq("…y el contador no se movió con ninguno", ev.n, 14);
-  ev.ok(ev.minimo); // que no dispare el gancho al salir
+  /* El fixture sigue registrado en `_evaluaciones` —`Evaluadas` no tiene forma
+   * de no registrarse— así que hay que dejarlo por encima de su mínimo o el
+   * gancho gritaría por el objeto examinado en vez de por la sonda. */
+  ev.ok(ev.minimo);
 }
 
 console.log("\n── `sinLiterales()`: qué es código y qué es texto ──");
@@ -647,15 +739,10 @@ console.log("\n── el barrido del contrato: EJECUTAR, no casar texto ──")
   );
 }
 
-/* ── El canal de verdad: lo que imprime y lo que cuenta no discrepan ── */
-const total = corridas;
-console.log(
-  fallos
-    ? `\n❌ ${fallos} de ${total} aserciones fallidas — mira cuál: las cosas que\n` +
-        `   prueba esto fallan EN SILENCIO, con números plausibles y código 0.\n`
-    : `\n✅ ${total}/${total} — MSYS se deshace en la LECTURA (argumentos y entorno),\n` +
-        `        una salida congelada NO se descongela sola, una sonda contra un\n` +
-        `        puerto vacío FALLA en voz alta en vez de medir, y el barrido del\n` +
-        `        contrato tumba un fichero que no compila en vez de convivir con él.\n`,
-);
-process.exit(fallos ? 1 : 0);
+/* ── El canal de verdad: lo que imprime y lo que cuenta no discrepan ──
+ * El recuento de aserciones y el CONTRATO son dos afirmaciones distintas y las
+ * dos salen: `✅ n/n` dice cuántas pasaron, `✓ evaluadas n/NCASOS casos` dice si
+ * ese recuento vale (§regla 5ter). Y se imprimen los denominadores derivados
+ * para que la corrida los exhiba en vez de que haya que fiarse. */
+console.log(`  · derivado del fuente: ${NCASOS} casos declarados · ${NRAIZ} de ellos en columna 0 (el corte del sabotaje)`);
+veredicto();
