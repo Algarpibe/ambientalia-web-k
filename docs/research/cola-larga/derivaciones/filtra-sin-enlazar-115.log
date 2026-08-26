@@ -1,0 +1,148 @@
+═══ ¿FILTRA ALGÚN LISTADO SIN ENLAZAR? · 115.ª ESCALÓN 1 ═══
+
+0 · ALCANCE
+
+  documentos HTML del corpus fase-3: 256
+     articulos-kb            6
+     autor                  34
+     categoria              27
+     hubs-kb                 7
+     listados              149
+     sueltas                20
+     taxonomia-sector       13
+
+  NO entran: el corpus fuera de `fase-3` (casos · entradas-blog · faqs ·
+  productos · terminos-kunakpedia · documentos-cientificos), que son
+  DETALLES y no listados. La pregunta es sobre listados y archivos.
+
+2 · CONTROL · el filtro de 12 botones de `/es/casos-de-exito/`
+
+  C-1 · controles `data-filter` .......... 12
+        · con término `.sector-*` ........ 11
+        · comodín "*" (el «todos» de Isotope) 1
+  C-3 · clases de término en las tarjetas . 11 distintas
+  C-6 · enlaces a /sector/ ................ 11
+
+  CONTROL · coincidencia TRIPLE de cardinales:
+     filtro 11 = clases 11 = enlaces 11  →  ✅
+
+  ✅ EL DETECTOR ENCUENTRA EL CONSUMIDOR CONOCIDO, por tres canales
+
+  ⚠ Y AL VERIFICARLO SE CAE EL EJEMPLO QUE MOTIVABA LA PREGUNTA.
+     El aviso del censo dice que el filtro de 12 botones «filtra sin
+     enlazar». NO ES ASÍ: enlaza los 11 sectores (C-6), y el propio
+     censo lo dice en otro sitio —«la ÚNICA de las 35 formas que enlaza a
+     /sector/»—. O sea que filtra Y ADEMÁS enlaza.
+
+     La pregunta sigue siendo buena; su EJEMPLO no era de la clase que
+     motiva. Y eso importa: si el único caso citado de «consume sin
+     enlazar» resulta que enlaza, el conjunto de esa clase estaba SIN
+     COMPROBAR, no confirmado por un caso. §regla 8b sobre el ejemplo en
+     vez de sobre el número.
+
+     (Y los 12 botones son 11 sectores + 1 comodín: el «todos». Otro
+      cardinal citado con la unidad de al lado.)
+
+3 · POR FAMILIA, CON SU DENOMINADOR (nunca en total)
+
+  ── CATEGORIA ──
+     canal                    docs   ¿en qué grupos?
+     C-1 control de filtro     0/256   —
+     C-2 data-*                0/256   —
+     C-3 clase de término     63/256   categoria · listados
+     C-4 parámetro en href     0/256   —
+     C-5 body class           27/256   categoria
+     C-6 enlace al archivo   135/256   categoria · listados · sueltas · taxonomia-sector
+
+     ⇒ documentos que CONSUMEN `categoria` por algún canal:
+          SIN enlazarla ... 0/256   ← lo que el censo no podía ver
+          enlazándola ..... 71/256
+
+  ── AUTHOR ──
+     canal                    docs   ¿en qué grupos?
+     C-1 control de filtro     0/256   —
+     C-2 data-*                0/256   —
+     C-3 clase de término      0/256   —
+     C-4 parámetro en href     0/256   —
+     C-5 body class           34/256   autor
+     C-6 enlace al archivo    36/256   autor · sueltas
+
+     ⇒ documentos que CONSUMEN `author` por algún canal:
+          SIN enlazarla ... 0/256   ← lo que el censo no podía ver
+          enlazándola ..... 34/256
+
+  ── SECTOR ──
+     canal                    docs   ¿en qué grupos?
+     C-1 control de filtro     2/256   listados
+     C-2 data-*                2/256   listados
+     C-3 clase de término     29/256   categoria · listados
+     C-4 parámetro en href     0/256   —
+     C-5 body class           13/256   taxonomia-sector
+     C-6 enlace al archivo    15/256   listados · taxonomia-sector
+
+     ⇒ documentos que CONSUMEN `sector` por algún canal:
+          SIN enlazarla ... 27/256   ← lo que el censo no podía ver
+          enlazándola ..... 15/256
+
+     los 27, NOMBRADOS y con el canal por el que entran:
+        vía C-3  ×27
+           categoria/categoria/articulos/page/10/index.html
+           categoria/categoria/articulos/page/3/index.html
+           categoria/categoria/articulos/page/4/index.html
+           categoria/categoria/articulos/page/5/index.html
+           categoria/categoria/articulos/page/6/index.html
+           categoria/categoria/articulos/page/7/index.html
+           … y 21 más (todos en el .json)
+
+  ⚠ EXCLUIDOS DEL REPARTO, con su cardinal: 0/256 documentos traen
+    `term-<slug>` en el body SIN un `tax-<taxonomía>` que diga de cuál es.
+    NO se reparten entre las tres —eso es lo que hacía la v1 y fabricaba el
+    hallazgo por triplicado—: salen aquí, sin adjudicar.
+
+4 · TAXONOMÍAS FUERA DE LA SEMILLA — lo que el barrido encontró de paso
+
+  prefijo        términos distintos
+  tag              12   ← NO estaba en la semilla
+  sector           12   (de la mesa)
+  resources        10   ← NO estaba en la semilla
+  category          4   (de la mesa)
+  scientific        4   ← NO estaba en la semilla
+  case              1   ← NO estaba en la semilla
+
+5 · ¿SUBPRODUCTO DE `post_class()` O CONSUMO ACTIVO?
+
+  documento                              clase  mecanismo  enlace   lectura
+  categoria                                 63          0      63   SUBPRODUCTO — nadie la usa
+  author                                     0          0       0   SUBPRODUCTO — nadie la usa
+  sector                                    29          2       2   CONSUMO, y además enlaza
+
+  ⇒ La clase de término está en el HTML de muchos documentos porque
+    `post_class()` la emite siempre. Lo que decide es si hay MECANISMO:
+    sólo 2 documentos del corpus traen uno (`data-filter`), y son las
+    DOS páginas de `/es/casos-de-exito/` — que además enlazan.
+
+═══ VEREDICTO ═══
+
+  Canales mirados: 6 — controles de filtro · data-* · clases de
+  término · parámetros en href · body class · enlaces al archivo.
+  Documentos: 256. Control: ✅ verde (coincidencia triple 11=11=11).
+
+  POR FAMILIA — «¿hay algún mecanismo que la consuma sin enlazarla?»:
+
+     categoria  → NO   (clase en 63 docs · mecanismo en 0)
+     author     → NO   (clase en 0 docs · mecanismo en 0)
+     sector     → NO   (clase en 29 docs · mecanismo en 2)
+
+  Y las tres con su matiz, que es lo que la mesa necesita:
+     · categoria — se consume, pero SIEMPRE enlazando: 0 casos ocultos;
+     · author ... — 0 por los seis canales. Ni clase, ni filtro, ni
+                    parámetro. Su único rastro es el archivo propio y
+                    los enlaces A ese archivo;
+     · sector ... — el único mecanismo del corpus (el filtro de Isotope)
+                    vive en 2 documentos y ADEMÁS enlaza. Los 27 con
+                    clase y sin enlace no tienen quien las use: son
+                    subproducto de `post_class()`.
+
+  ⚠ Y lo que NO cubre, con su nombre: el eje COMPORTAMIENTO (un filtro
+  montado en JS tras una petición no deja rastro en el HTML servido) y el
+  CSS servido. Un cero de esta sonda acota EL HTML SERVIDO, no el original.

@@ -1,0 +1,5878 @@
+{
+  "alcance": {
+    "documentos": 256,
+    "porGrupo": {
+      "articulos-kb": 6,
+      "autor": 34,
+      "categoria": 27,
+      "hubs-kb": 7,
+      "listados": 149,
+      "sueltas": 20,
+      "taxonomia-sector": 13
+    }
+  },
+  "control": {
+    "botones": 12,
+    "conTermino": 11,
+    "comodines": 1,
+    "clasesSector": 11,
+    "enlazaSector": 11,
+    "coincidenciaTriple": true,
+    "ok": true
+  },
+  "filas": [
+    {
+      "rel": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/index.html",
+      "grupo": "articulos-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/index.html",
+      "grupo": "articulos-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/index.html",
+      "grupo": "articulos-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/index.html",
+      "grupo": "articulos-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "articulos-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/index.html",
+      "grupo": "articulos-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "articulos-kb/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/index.html",
+      "grupo": "articulos-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "autor/author/admin/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-admin",
+          "author-1"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/admin/",
+          "https://kunakair.com/es/author/admin/feed/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/edurne-ibarrola/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-edurne-ibarrola",
+          "author-4"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/edurne-ibarrola/",
+          "https://kunakair.com/es/author/edurne-ibarrola/feed/",
+          "https://kunakair.com/author/edurne-ibarrola/",
+          "https://kunakair.com/fr/author/edurne-ibarrola/",
+          "https://kunakair.com/ar/author/edurne-ibarrola/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/irene/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-irene",
+          "author-14"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/irene/",
+          "https://kunakair.com/es/author/irene/feed/",
+          "https://kunakair.com/author/irene/",
+          "https://kunakair.com/fr/author/irene/",
+          "https://kunakair.com/ar/author/irene/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/javier-fernandez/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-javier-fernandez",
+          "author-5"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/javier-fernandez/",
+          "https://kunakair.com/es/author/javier-fernandez/feed/",
+          "https://kunakair.com/author/javier-fernandez/",
+          "https://kunakair.com/ar/author/javier-fernandez/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/es/author/kunak/page/2/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/10/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-10"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/10/",
+          "https://kunakair.com/es/author/kunak/page/9/",
+          "https://kunakair.com/es/author/kunak/page/11/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/11/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-11"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/11/",
+          "https://kunakair.com/es/author/kunak/page/10/",
+          "https://kunakair.com/es/author/kunak/page/12/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/12/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-12"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/12/",
+          "https://kunakair.com/es/author/kunak/page/11/",
+          "https://kunakair.com/es/author/kunak/page/13/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/13/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-13"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/13/",
+          "https://kunakair.com/es/author/kunak/page/12/",
+          "https://kunakair.com/es/author/kunak/page/14/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/14/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-14"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/14/",
+          "https://kunakair.com/es/author/kunak/page/13/",
+          "https://kunakair.com/es/author/kunak/page/15/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/15/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-15"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/15/",
+          "https://kunakair.com/es/author/kunak/page/14/",
+          "https://kunakair.com/es/author/kunak/page/16/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/16/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-16"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/16/",
+          "https://kunakair.com/es/author/kunak/page/15/",
+          "https://kunakair.com/es/author/kunak/page/17/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/17/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-17"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/17/",
+          "https://kunakair.com/es/author/kunak/page/16/",
+          "https://kunakair.com/es/author/kunak/page/18/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/18/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-18"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/18/",
+          "https://kunakair.com/es/author/kunak/page/17/",
+          "https://kunakair.com/es/author/kunak/page/19/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/19/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-19"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/19/",
+          "https://kunakair.com/es/author/kunak/page/18/",
+          "https://kunakair.com/es/author/kunak/page/20/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/20/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-20"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/20/",
+          "https://kunakair.com/es/author/kunak/page/19/",
+          "https://kunakair.com/es/author/kunak/page/21/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/21/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-21"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/21/",
+          "https://kunakair.com/es/author/kunak/page/20/",
+          "https://kunakair.com/es/author/kunak/page/22/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/22/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-22"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/22/",
+          "https://kunakair.com/es/author/kunak/page/21/",
+          "https://kunakair.com/es/author/kunak/page/23/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/23/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-23"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/23/",
+          "https://kunakair.com/es/author/kunak/page/22/",
+          "https://kunakair.com/es/author/kunak/page/24/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/24/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-24"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/24/",
+          "https://kunakair.com/es/author/kunak/page/23/",
+          "https://kunakair.com/es/author/kunak/page/25/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/25/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-25"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/25/",
+          "https://kunakair.com/es/author/kunak/page/24/",
+          "https://kunakair.com/es/author/kunak/page/26/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/26/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-26"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/26/",
+          "https://kunakair.com/es/author/kunak/page/25/",
+          "https://kunakair.com/es/author/kunak/page/27/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/27/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-27"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/27/",
+          "https://kunakair.com/es/author/kunak/page/26/",
+          "https://kunakair.com/es/author/kunak/page/28/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/28/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-28"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/28/",
+          "https://kunakair.com/es/author/kunak/page/27/",
+          "https://kunakair.com/es/author/kunak/page/29/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/29/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-29"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/29/",
+          "https://kunakair.com/es/author/kunak/page/28/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/2/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-2"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/2/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/es/author/kunak/page/3/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/3/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-3"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/3/",
+          "https://kunakair.com/es/author/kunak/page/2/",
+          "https://kunakair.com/es/author/kunak/page/4/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/4/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-4"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/4/",
+          "https://kunakair.com/es/author/kunak/page/3/",
+          "https://kunakair.com/es/author/kunak/page/5/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/5/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-5"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/5/",
+          "https://kunakair.com/es/author/kunak/page/4/",
+          "https://kunakair.com/es/author/kunak/page/6/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/6/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-6"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/6/",
+          "https://kunakair.com/es/author/kunak/page/5/",
+          "https://kunakair.com/es/author/kunak/page/7/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/7/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-7"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/7/",
+          "https://kunakair.com/es/author/kunak/page/6/",
+          "https://kunakair.com/es/author/kunak/page/8/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/8/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-8"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/8/",
+          "https://kunakair.com/es/author/kunak/page/7/",
+          "https://kunakair.com/es/author/kunak/page/9/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/kunak/page/9/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-kunak",
+          "author-6",
+          "author-paged-9"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/kunak/page/9/",
+          "https://kunakair.com/es/author/kunak/page/8/",
+          "https://kunakair.com/es/author/kunak/page/10/",
+          "https://kunakair.com/es/author/kunak/feed/",
+          "https://kunakair.com/es/author/kunak/",
+          "https://kunakair.com/author/kunak/",
+          "https://kunakair.com/fr/author/kunak/",
+          "https://kunakair.com/ar/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "autor/author/mar_ramirez/index.html",
+      "grupo": "autor",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "author": [
+          "author",
+          "author-mar_ramirez",
+          "author-13"
+        ]
+      },
+      "c6": {
+        "author": [
+          "https://kunakair.com/es/author/mar_ramirez/feed/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/2/",
+          "https://kunakair.com/es/categoria/articulos/page/3/",
+          "https://kunakair.com/es/categoria/articulos/page/4/",
+          "https://kunakair.com/es/categoria/articulos/page/5/",
+          "https://kunakair.com/es/categoria/articulos/page/10/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/10/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-obras"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-10"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/9/",
+          "https://kunakair.com/es/categoria/articulos/page/7/",
+          "https://kunakair.com/es/categoria/articulos/page/8/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/11/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-11"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/10/",
+          "https://kunakair.com/es/categoria/articulos/page/7/",
+          "https://kunakair.com/es/categoria/articulos/page/8/",
+          "https://kunakair.com/es/categoria/articulos/page/9/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/12/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-12"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/13/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-13"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/14/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-14"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/15/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-15"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/16/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-16"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/2/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-2"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/3/",
+          "https://kunakair.com/es/categoria/articulos/page/4/",
+          "https://kunakair.com/es/categoria/articulos/page/5/",
+          "https://kunakair.com/es/categoria/articulos/page/10/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/3/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-urbano"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-3"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/2/",
+          "https://kunakair.com/es/categoria/articulos/page/4/",
+          "https://kunakair.com/es/categoria/articulos/page/5/",
+          "https://kunakair.com/es/categoria/articulos/page/10/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/4/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-investigacion-consultoria",
+          "sector-oil-gas-es"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-4"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/3/",
+          "https://kunakair.com/es/categoria/articulos/page/2/",
+          "https://kunakair.com/es/categoria/articulos/page/5/",
+          "https://kunakair.com/es/categoria/articulos/page/6/",
+          "https://kunakair.com/es/categoria/articulos/page/10/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/5/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-industria",
+          "sector-petroquimica",
+          "sector-puertos",
+          "sector-urbano",
+          "sector-obras"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-5"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/4/",
+          "https://kunakair.com/es/categoria/articulos/page/3/",
+          "https://kunakair.com/es/categoria/articulos/page/6/",
+          "https://kunakair.com/es/categoria/articulos/page/7/",
+          "https://kunakair.com/es/categoria/articulos/page/10/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/6/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-industria",
+          "sector-urbano",
+          "sector-petroquimica",
+          "sector-investigacion-consultoria"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-6"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/5/",
+          "https://kunakair.com/es/categoria/articulos/page/4/",
+          "https://kunakair.com/es/categoria/articulos/page/7/",
+          "https://kunakair.com/es/categoria/articulos/page/8/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/7/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-urbano",
+          "sector-industria"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-7"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/6/",
+          "https://kunakair.com/es/categoria/articulos/page/5/",
+          "https://kunakair.com/es/categoria/articulos/page/8/",
+          "https://kunakair.com/es/categoria/articulos/page/9/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/8/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-8"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/7/",
+          "https://kunakair.com/es/categoria/articulos/page/6/",
+          "https://kunakair.com/es/categoria/articulos/page/9/",
+          "https://kunakair.com/es/categoria/articulos/page/10/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/articulos/page/9/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-articulos",
+          "category-164",
+          "category-paged-9"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/feed/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/articulos/page/8/",
+          "https://kunakair.com/es/categoria/articulos/page/7/",
+          "https://kunakair.com/es/categoria/articulos/page/10/",
+          "https://kunakair.com/es/categoria/articulos/page/11/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/eventos/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-eventos",
+          "category-165"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/feed/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/eventos/page/2/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos",
+          "category-noticias"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-eventos",
+          "category-165",
+          "category-paged-2"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/feed/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/eventos/page/3/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-eventos",
+          "category-165",
+          "category-paged-3"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/feed/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/eventos/page/4/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-eventos",
+          "category-165",
+          "category-paged-4"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/feed/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/noticias/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-investigacion-consultoria"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-noticias",
+          "category-166"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/feed/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/noticias/page/2/",
+          "https://kunakair.com/es/categoria/noticias/page/3/",
+          "https://kunakair.com/es/categoria/noticias/page/4/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/noticias/page/2/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-noticias",
+          "category-166",
+          "category-paged-2"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/feed/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/noticias/page/3/",
+          "https://kunakair.com/es/categoria/noticias/page/4/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/noticias/page/3/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias",
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-noticias",
+          "category-166",
+          "category-paged-3"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/feed/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/page/2/",
+          "https://kunakair.com/es/categoria/noticias/page/4/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/noticias/page/4/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias",
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-noticias",
+          "category-166",
+          "category-paged-4"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/feed/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/page/3/",
+          "https://kunakair.com/es/categoria/noticias/page/2/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/noticias/page/5/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-noticias",
+          "category-166",
+          "category-paged-5"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/feed/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/noticias/page/6/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-noticias",
+          "category-166",
+          "category-paged-6"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/feed/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "categoria/categoria/podcast-es/index.html",
+      "grupo": "categoria",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-podcast-es"
+        ]
+      },
+      "c4": {},
+      "c5": {
+        "categoria": [
+          "category",
+          "category-podcast-es",
+          "category-383"
+        ]
+      },
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/podcast-es/feed/",
+          "https://kunakair.com/es/categoria/podcast-es/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "hubs-kb/centro-de-ayuda/kunak-air-cloud/index.html",
+      "grupo": "hubs-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "hubs-kb/centro-de-ayuda/kunak-air/articulos-de-ayuda/index.html",
+      "grupo": "hubs-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "hubs-kb/centro-de-ayuda/kunak-air/index.html",
+      "grupo": "hubs-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "hubs-kb/centro-de-ayuda/kunak-air/video-tutoriales/index.html",
+      "grupo": "hubs-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "hubs-kb/soporte/centro-de-ayuda/index.html",
+      "grupo": "hubs-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "hubs-kb/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/index.html",
+      "grupo": "hubs-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "hubs-kb/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/index.html",
+      "grupo": "hubs-kb",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/blog/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias",
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/10/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/11/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/12/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/13/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/14/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/15/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/16/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/17/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias",
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-investigacion-consultoria",
+          "sector-urbano"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos",
+          "category-articulos",
+          "category-noticias",
+          "category-podcast-es"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/podcast-es/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias",
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias",
+          "category-eventos",
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/articulos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/6/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos",
+          "category-noticias",
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/articulos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/7/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias",
+          "category-eventos",
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/articulos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/8/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos",
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/blog/page/9/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/casos-de-exito/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [
+          "*",
+          ".sector-edar",
+          ".sector-industria",
+          ".sector-investigacion-consultoria",
+          ".sector-metalurgia",
+          ".sector-mineria",
+          ".sector-obras",
+          ".sector-oil-gas-es",
+          ".sector-olores",
+          ".sector-puertos",
+          ".sector-sports",
+          ".sector-urbano"
+        ],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {
+        "sector": [
+          "data-filter=\".sector-edar\"",
+          "data-filter=\".sector-industria\"",
+          "data-filter=\".sector-investigacion-consultoria\"",
+          "data-filter=\".sector-metalurgia\"",
+          "data-filter=\".sector-mineria\"",
+          "data-filter=\".sector-obras\"",
+          "data-filter=\".sector-oil-gas-es\"",
+          "data-filter=\".sector-olores\"",
+          "data-filter=\".sector-puertos\"",
+          "data-filter=\".sector-sports\"",
+          "data-filter=\".sector-urbano\""
+        ]
+      },
+      "c3": {
+        "sector": [
+          "sector-edar",
+          "sector-olores",
+          "sector-industria",
+          "sector-sports",
+          "sector-investigacion-consultoria",
+          "sector-metalurgia",
+          "sector-urbano",
+          "sector-mineria",
+          "sector-puertos",
+          "sector-oil-gas-es",
+          "sector-obras"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/edar/",
+          "https://kunakair.com/es/sector/olores/",
+          "https://kunakair.com/es/sector/industria/",
+          "https://kunakair.com/es/sector/sports/",
+          "https://kunakair.com/es/sector/investigacion-consultoria/",
+          "https://kunakair.com/es/sector/metalurgia/",
+          "https://kunakair.com/es/sector/urbano/",
+          "https://kunakair.com/es/sector/mineria/",
+          "https://kunakair.com/es/sector/puertos/",
+          "https://kunakair.com/es/sector/oil-gas-es/",
+          "https://kunakair.com/es/sector/obras/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/casos-de-exito/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [
+          "*",
+          ".sector-edar",
+          ".sector-industria",
+          ".sector-investigacion-consultoria",
+          ".sector-metalurgia",
+          ".sector-mineria",
+          ".sector-obras",
+          ".sector-oil-gas-es",
+          ".sector-olores",
+          ".sector-puertos",
+          ".sector-sports",
+          ".sector-urbano"
+        ],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {
+        "sector": [
+          "data-filter=\".sector-edar\"",
+          "data-filter=\".sector-industria\"",
+          "data-filter=\".sector-investigacion-consultoria\"",
+          "data-filter=\".sector-metalurgia\"",
+          "data-filter=\".sector-mineria\"",
+          "data-filter=\".sector-obras\"",
+          "data-filter=\".sector-oil-gas-es\"",
+          "data-filter=\".sector-olores\"",
+          "data-filter=\".sector-puertos\"",
+          "data-filter=\".sector-sports\"",
+          "data-filter=\".sector-urbano\""
+        ]
+      },
+      "c3": {
+        "sector": [
+          "sector-edar",
+          "sector-olores",
+          "sector-industria",
+          "sector-sports",
+          "sector-investigacion-consultoria",
+          "sector-metalurgia",
+          "sector-urbano",
+          "sector-mineria",
+          "sector-puertos",
+          "sector-oil-gas-es",
+          "sector-obras"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/edar/",
+          "https://kunakair.com/es/sector/olores/",
+          "https://kunakair.com/es/sector/industria/",
+          "https://kunakair.com/es/sector/sports/",
+          "https://kunakair.com/es/sector/investigacion-consultoria/",
+          "https://kunakair.com/es/sector/metalurgia/",
+          "https://kunakair.com/es/sector/urbano/",
+          "https://kunakair.com/es/sector/mineria/",
+          "https://kunakair.com/es/sector/puertos/",
+          "https://kunakair.com/es/sector/oil-gas-es/",
+          "https://kunakair.com/es/sector/obras/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/calidad-del-aire/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-urbano"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/calidad-del-aire/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-puertos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/calidad-del-aire/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-urbano",
+          "sector-investigacion-consultoria"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/calidad-del-aire/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/calidad-del-aire/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/calidad-del-aire/page/6/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/calidad-del-aire/page/7/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/co2-es/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-investigacion-consultoria",
+          "sector-oil-gas-es",
+          "sector-industria"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/co2-es/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/contaminantes-atmosfericos/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/contaminantes-atmosfericos/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-eventos"
+        ],
+        "sector": [
+          "sector-urbano",
+          "sector-investigacion-consultoria"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/contaminantes-atmosfericos/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-petroquimica",
+          "sector-puertos",
+          "sector-urbano",
+          "sector-investigacion-consultoria"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/contaminantes-atmosfericos/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/contaminantes-atmosfericos/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/contaminantes-atmosfericos/page/6/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/contaminantes-atmosfericos/page/7/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/contaminantes-atmosfericos/page/8/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/cov/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-industria",
+          "sector-petroquimica"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/cov/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/emisiones-industriales/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/emisiones-industriales/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-oil-gas-es",
+          "sector-industria",
+          "sector-petroquimica"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/emisiones-industriales/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-industria",
+          "sector-petroquimica"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/emisiones-industriales/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/emisiones-industriales/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/gases-de-efecto-invernadero/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-investigacion-consultoria",
+          "sector-oil-gas-es",
+          "sector-industria",
+          "sector-petroquimica"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/gases-de-efecto-invernadero/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/h2s-es/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/malos-olores/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-eventos"
+        ],
+        "sector": [
+          "sector-industria"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/malos-olores/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/10/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos",
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/11/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/12/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/13/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/14/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/15/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/16/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/17/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/18/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/19/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos",
+          "category-articulos",
+          "category-noticias"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-urbano",
+          "sector-investigacion-consultoria"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-eventos",
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-industria"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/6/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias",
+          "category-articulos",
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/7/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-noticias",
+          "category-articulos",
+          "category-eventos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/8/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos",
+          "category-articulos",
+          "category-noticias"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/monitorizacion-ambiental/page/9/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-eventos",
+          "category-noticias",
+          "category-articulos"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/articulos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/normativa-de-calidad-del-aire/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-urbano"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/normativa-de-calidad-del-aire/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-urbano",
+          "sector-obras",
+          "sector-industria",
+          "sector-petroquimica",
+          "sector-investigacion-consultoria"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/normativa-de-calidad-del-aire/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos"
+        ],
+        "sector": [
+          "sector-obras"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/normativa-de-calidad-del-aire/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/particulas-en-suspension/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-puertos",
+          "sector-obras"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/particulas-en-suspension/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-obras"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/particulas-en-suspension/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/particulas-en-suspension/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/sensor-de-calidad-del-aire/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/sensor-de-calidad-del-aire/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ],
+        "sector": [
+          "sector-obras",
+          "sector-urbano"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/sensor-de-calidad-del-aire/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-podcast-es"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/podcast-es/",
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/sensor-de-calidad-del-aire/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {
+        "categoria": [
+          "category-articulos",
+          "category-noticias"
+        ]
+      },
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/",
+          "https://kunakair.com/es/categoria/noticias/",
+          "https://kunakair.com/es/categoria/eventos/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/sensor-de-calidad-del-aire/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/sensor-de-calidad-del-aire/page/6/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/etiqueta/sensor-de-calidad-del-aire/page/7/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/glosario/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/glosario/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/glosario/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/glosario/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/glosario/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/glosario/page/6/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/glosario/page/7/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/glosario/page/8/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/preguntas-frecuentes/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/preguntas-frecuentes/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/preguntas-frecuentes/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/preguntas-frecuentes/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "listados/productos/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/productos/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-en-la-construccion/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-minera/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-urbana/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-urbana/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-urbana/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-urbana/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-urbana/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-y-salud/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-y-salud/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-y-salud/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/contaminacion-y-salud/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/industria-y-contaminacion-por-olores/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/industria-y-contaminacion-por-olores/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/industria-y-contaminacion-por-olores/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/industria-y-contaminacion-por-olores/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/industria-y-contaminacion-por-olores/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/10/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/11/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/12/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/13/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/14/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/15/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/16/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/4/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/5/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/6/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/7/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/8/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/page/9/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/petroleo-y-gas/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/productos-kunak/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/articulos/productos-kunak/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/documentos-cientificos/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/documentos-cientificos/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/kunakpedia/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/kunakpedia/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/preguntas-frecuentes/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/preguntas-frecuentes/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/recursos/seminarios-web/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/scientific-category/articulos-cientificos-y-estudios/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/scientific-category/articulos-cientificos-y-estudios/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/scientific-category/articulos-cientificos-y-estudios/page/3/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/scientific-category/articulos-tecnicos/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/scientific-category/evaluaciones-independientes/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/scientific-category/evaluaciones-independientes/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/sectores/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "listados/sectores/page/2/index.html",
+      "grupo": "listados",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/aviso-legal/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/contacto/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 3,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/descarga-catalogo/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 2,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/empresa/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/empresa/premios-y-reconocimientos/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 1,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-industria/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 1,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 1,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-obras/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 1,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/informe-tecnico-control-de-la-calidad-del-aire-en-puertos/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 1,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/newsletter/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 2,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/politica-de-cookies/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/politica-de-privacidad-y-de-proteccion-de-datos/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/politica-de-seguridad-de-la-informacion/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "sueltas/redes-hibridas-de-calidad-del-aire-grabacion-webinar/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/"
+        ],
+        "author": [
+          "https://kunakair.com/es/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "sueltas/sistema-interno-de-informacion/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/soporte/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/soporte/servicio-de-reparacion/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/suscribete/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 2,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {}
+    },
+    {
+      "rel": "sueltas/webinar-control-de-la-contaminacion-del-aire-en-la-industria/index.html",
+      "grupo": "sueltas",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 0
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {},
+      "c6": {
+        "categoria": [
+          "https://kunakair.com/es/categoria/articulos/"
+        ],
+        "author": [
+          "https://kunakair.com/es/author/kunak/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/edar/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-edar",
+          "term-365"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/edar/feed/",
+          "https://kunakair.com/es/sector/edar/",
+          "https://kunakair.com/ar/sector/edar/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/industria/page/2/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-industria",
+          "term-218"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/industria/feed/",
+          "https://kunakair.com/es/sector/industria/",
+          "https://kunakair.com/sector/industry/",
+          "https://kunakair.com/ar/sector/industry/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/industria/page/3/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-industria",
+          "term-218"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/industria/feed/",
+          "https://kunakair.com/es/sector/industria/",
+          "https://kunakair.com/sector/industry/",
+          "https://kunakair.com/ar/sector/industry/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/investigacion-consultoria/page/2/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-investigacion-consultoria",
+          "term-335"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/investigacion-consultoria/feed/",
+          "https://kunakair.com/es/sector/investigacion-consultoria/",
+          "https://kunakair.com/sector/research-consultancy/",
+          "https://kunakair.com/ar/sector/research-consultancy/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/metalurgia/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-metalurgia",
+          "term-219"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/metalurgia/feed/",
+          "https://kunakair.com/es/sector/metalurgia/",
+          "https://kunakair.com/sector/metallurgy/",
+          "https://kunakair.com/ar/sector/metallurgy/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/oil-gas-es/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-oil-gas-es",
+          "term-368"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/oil-gas-es/feed/",
+          "https://kunakair.com/es/sector/oil-gas-es/",
+          "https://kunakair.com/sector/oil-gas/",
+          "https://kunakair.com/ar/sector/oil-gas/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/olores/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-olores",
+          "term-518"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/olores/feed/",
+          "https://kunakair.com/es/sector/olores/",
+          "https://kunakair.com/sector/odours/",
+          "https://kunakair.com/ar/sector/odor/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/puertos/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-puertos",
+          "term-222"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/puertos/feed/",
+          "https://kunakair.com/es/sector/puertos/",
+          "https://kunakair.com/sector/ports/",
+          "https://kunakair.com/ar/sector/ports/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/puertos/page/2/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-puertos",
+          "term-222"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/puertos/feed/",
+          "https://kunakair.com/es/sector/puertos/",
+          "https://kunakair.com/sector/ports/",
+          "https://kunakair.com/ar/sector/ports/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/sports/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-sports",
+          "term-606"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/sports/feed/",
+          "https://kunakair.com/es/sector/sports/",
+          "https://kunakair.com/sector/sports/",
+          "https://kunakair.com/ar/sector/sports/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/urbano/page/2/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-urbano",
+          "term-224"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/urbano/feed/",
+          "https://kunakair.com/es/sector/urbano/",
+          "https://kunakair.com/sector/urban/",
+          "https://kunakair.com/ar/sector/urban/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/urbano/page/3/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-urbano",
+          "term-224"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/urbano/feed/",
+          "https://kunakair.com/es/sector/urbano/",
+          "https://kunakair.com/sector/urban/",
+          "https://kunakair.com/ar/sector/urban/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    },
+    {
+      "rel": "taxonomia-sector/sector/urbano/page/4/index.html",
+      "grupo": "taxonomia-sector",
+      "c1": {
+        "dataFilter": [],
+        "selects": 0,
+        "forms": 1
+      },
+      "c2": {},
+      "c3": {},
+      "c4": {},
+      "c5": {
+        "sector": [
+          "tax-sector",
+          "term-urbano",
+          "term-224"
+        ]
+      },
+      "c6": {
+        "sector": [
+          "https://kunakair.com/es/sector/urbano/feed/",
+          "https://kunakair.com/es/sector/urbano/",
+          "https://kunakair.com/sector/urban/",
+          "https://kunakair.com/ar/sector/urban/"
+        ],
+        "categoria": [
+          "https://kunakair.com/es/categoria/eventos/",
+          "https://kunakair.com/es/categoria/noticias/"
+        ]
+      }
+    }
+  ]
+}

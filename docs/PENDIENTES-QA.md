@@ -21432,6 +21432,18 @@ instancias, no huella de px).
 > ⚠ Contesta *«¿ENLAZA la tarjeta?»*, **no** *«¿lo necesita el MODELO?»*. Un
 > listado puede filtrar por una taxonomía sin enlazarla — el filtro de 12 botones
 > es justo eso. Un 0 aquí es una pregunta para el dato.
+>
+> ✅ **CONTESTADA 2026-08-26** (115.ª, ESCALÓN 1): §F3-4-FILTRA-SIN-ENLAZAR.
+> **Ninguna de las tres se consume sin enlazarse**, medido por **SEIS canales**
+> sobre **256 documentos** — y `author` da **0 en los seis**, así que su 0 se
+> sostiene con seis canales detrás en vez de uno.
+>
+> ⚠ **Y el ejemplo de esta misma frase es FALSO: el filtro de 12 botones SÍ
+> enlaza** — los 11 sectores, como dice la tabla tres párrafos más arriba
+> (*«la ÚNICA de las 35 formas que enlaza a `/sector/`»*). Filtra **y además**
+> enlaza, así que no es un caso de «filtra sin enlazar»: la clase que motivaba
+> la pregunta **no tenía ningún ejemplo a favor**. (Y los 12 botones son **11
+> sectores + 1 comodín `"*"`**.)
 
 #### Lo que el censo NO cierra, con su cardinal (§regla 14)
 
@@ -22371,3 +22383,124 @@ chars**, o sea discrimina.
 - **NO** dice si el fichero llega entero. Eso lo dice que los dos marcadores se
   citen, y es una observación **de la sesión**, no de esta sonda. Hoy llegaron
   los dos, con sus códigos.
+
+---
+
+## ✅ F3-4-FILTRA-SIN-ENLAZAR · EL 0 DE `author` SE SOSTIENE POR SEIS CANALES — Y EL EJEMPLO QUE MOTIVABA LA PREGUNTA NO ERA DE SU CLASE · **CERRADA 2026-08-26** (115.ª, ESCALÓN 1)
+
+El censo de F3-4 (108.ª) dejó su propio aviso escrito: *«contesta ¿ENLAZA la
+tarjeta?, NO ¿lo necesita el MODELO?; un listado puede filtrar por una taxonomía
+sin enlazarla — el filtro de 12 botones es justo eso; un 0 aquí es una PREGUNTA
+para el dato»*. Ese 0 es el de `author`, y es el que decidiría «no se replica».
+
+Derivación offline, sobre el corpus capturado:
+`docs/research/cola-larga/derivaciones/filtra-sin-enlazar-115.{mjs,log,json}`
+— **256 documentos** de `corpus/fase-3`, `EXIT=0`.
+
+### 1 · LOS SEIS CANALES QUE SE MIRARON
+
+**La lista se publica, y no es decoración** (§*toda afirmación de que un
+discriminador NO EXISTE se escribe con la lista de canales que se miraron*):
+sin ella, un «no filtra nadie» es una afirmación sobre el canal, no sobre el
+dato — y llega a la mesa blindada, porque parece medida.
+
+| canal | qué busca |
+|---|---|
+| **C-1** controles de filtro | `data-filter` · `<select>` · `<form>` |
+| **C-2** atributos `data-*` | cualquiera cuyo nombre o valor nombre la taxonomía |
+| **C-3** clases de término | `post_class()` en el `<article>`: `<taxonomía>-<slug>` |
+| **C-4** parámetros en `href` | `?cat=` · `?author=` · `?_sft_…=` |
+| **C-5** `<body class>` | `category` · `author` · `tax-…` · `term-…` |
+| **C-6** enlaces al archivo | `/categoria/` · `/author/` · `/sector/` — el canal que el censo YA midió, para **cruzar** |
+
+El discriminador de la pregunta es **C-6 vacío con algún otro poblado**.
+
+### 2 · EL RESULTADO, POR FAMILIA Y CON SU DENOMINADOR
+
+| familia | C-1 | C-2 | C-3 | C-4 | C-5 | C-6 | ¿consume SIN enlazar? |
+|---|---|---|---|---|---|---|---|
+| `categoria` | 0 | 0 | **63** | 0 | 27 | **135** | **NO** |
+| `author` | **0** | **0** | **0** | **0** | 34 | 36 | **NO** |
+| `sector` | **2** | 2 | **29** | 0 | 13 | 15 | **NO** |
+
+*(denominador: 256 documentos)*
+
+**El matiz por familia, que es lo que la mesa necesita:**
+
+- **`categoria`** — se consume (clase de término en 63 documentos) **pero
+  siempre enlazando**: 0 casos ocultos;
+- **`author`** — **0 por los seis canales**. Ni clase de término, ni filtro, ni
+  parámetro, ni `data-*`. Su único rastro es **su archivo propio** (34 docs con
+  `body.author*`) y los **36 enlaces a ese archivo**. El 0 del censo **se
+  sostiene**, y ahora con seis canales detrás en vez de uno;
+- **`sector`** — el **único mecanismo del corpus** vive en **2 documentos**
+  (`/casos-de-exito/` y su `page/2`) y **además enlaza los 11**.
+
+### 3 · «TIENE LA CLASE» NO ES «ALGUIEN LA USA»
+
+`post_class()` emite `<taxonomía>-<slug>` en **toda** tarjeta de un CPT que
+tenga esa taxonomía, la use el listado o no. Leerlo como consumo es §*un patrón
+que casa en TODAS tampoco mide nada*: mediría que WordPress existe.
+
+**El discriminador es si el MISMO documento trae mecanismo**, y contestó limpio:
+
+| | clase en | mecanismo en | lectura |
+|---|---|---|---|
+| `categoria` | 63 | **0** | **subproducto** — nadie la usa |
+| `author` | 0 | 0 | ni siquiera se emite |
+| `sector` | 29 | **2** | consumo **y además enlaza** |
+
+Los **27** documentos con clase `sector-*` y sin enlace están **nombrados** en el
+log (7 en archivos de `categoria` · 20 en archivos de `etiqueta`) y **ninguno
+trae `data-filter` ni `<select>`**: son subproducto, no consumo oculto.
+
+### 4 · ⚠ Y EL EJEMPLO QUE MOTIVABA LA PREGUNTA NO ERA DE SU CLASE
+
+> El aviso del censo cita el filtro de 12 botones como *«justo eso»* —filtrar sin
+> enlazar—. **No lo es: enlaza los 11 sectores**, y el propio censo lo dice tres
+> párrafos más arriba (*«la ÚNICA de las 35 formas que enlaza a `/sector/`»*).
+> Filtra **y además** enlaza.
+
+**Y eso importa para leer el resultado.** Si el único caso citado de «consume sin
+enlazar» resulta que enlaza, esa clase estaba **SIN COMPROBAR** — no confirmada
+por un caso—, así que el 0 de hoy no contradice nada: **cierra una pregunta que
+nunca tuvo un ejemplo a favor.** §regla 8b sobre el ejemplo en vez de sobre el
+número.
+
+⚠ **Y otro cardinal con la unidad al lado:** los **12 botones** son **11 sectores
++ 1 comodín `"*"`** (el «todos» de Isotope). El control de la sonda falló a la
+primera exigiendo que los 12 apuntaran a `.sector-*` — el rojo era del
+instrumento, no del dato (§regla 21).
+
+### 5 · Dos defectos de la propia sonda, cazados antes de publicar
+
+1. **`term-<slug>` no dice de qué taxonomía es** —lo dice `tax-<taxonomía>`, que
+   va al lado—. La v1 contaba todo `term-*` para las tres, y por eso el mismo
+   documento salía consumiendo `categoria`, `author` y `sector` **a la vez**:
+   una condición laxa **fabricando el hallazgo por triplicado**. Con la
+   corrección, `author` pasa de **90 a 34** y `categoria` de **83 a 27** en C-5,
+   y los «sin enlazar» de `categoria`/`author` caen de **43 y 56 a 0**;
+2. **el control exigía que los 12 botones fueran de sector** (arriba). Sustituido
+   por una **coincidencia triple de cardinales** —filtro 11 = clases 11 =
+   enlaces 11—, que no sale por azar: si un canal fallara, se rompe.
+
+### 6 · Lo que esta ficha NO dice, con su nombre
+
+- **NO** mide **COMPORTAMIENTO**. Un filtro montado en JS tras una petición no
+  deja rastro en el HTML servido, y ese eje está a **0/31** en este repo. **Un
+  cero de esta sonda acota el HTML SERVIDO, no el original.**
+- **NO** mira el **CSS servido**. Una regla podría esconder tarjetas por clase de
+  término; sería un séptimo canal y no está en la lista.
+- **NO** dice si el modelo **necesita** el campo — dice si el original lo
+  **consume**. Que nadie lo consuma no obliga a tirarlo; que alguien lo consuma
+  sí obliga a tenerlo.
+- **NO** cubre el corpus fuera de `fase-3` (detalles: casos · entradas de blog ·
+  FAQ · productos · términos · documentos científicos). La pregunta era sobre
+  listados y archivos.
+
+### 7 · De paso: cuatro taxonomías fuera de la semilla
+
+El barrido de `post_class()` encontró prefijos que la mesa no nombra:
+**`tag` (12 términos)** · **`resources` (10)** · **`scientific` (4)** ·
+**`case` (1)**. No se investigan aquí — se **nombran con su cardinal**, porque
+un hallazgo lateral sin número es una nota al pie (§regla 14).
