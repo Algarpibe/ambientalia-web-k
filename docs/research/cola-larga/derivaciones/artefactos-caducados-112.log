@@ -1,0 +1,129 @@
+=== CENSO DE ARTEFACTOS CADUCADOS · rev=HEAD ===
+
+congeladas totales                 1444
+con marcador de §regla 7           518
+  − ya renombradas CADUCADA        4   (§regla 5bis: resultado, no entrada)
+UNIVERSO                           514
+
+SIN MAPEAR (ningún .mjs resuelve)  21   ← §sondas 4: fallo nombrado, NO resta
+    con canónico en medidas/       2   (existe la medida; falta su productor)
+    sin canónico tampoco           19
+    prefijos distintos             18: ancho · html-base-vacia · html-control · html-control-diana · html-diag · html-diag2 · html-f23-canario · html-filas-alteradas · html-filas-renumeradas · html-hash-alterado · html-inv-bytescarga · html-inv-nfilas · html-inv-nmascaras · html-ruta-fantasma · html-solo-bundle · html-solo-reparto · html-visible-alterado · lh-regimen
+
+mapeados                           493
+    vía escribe                    36
+    vía nombre                     457
+  sin fecha de commit              0
+  AL DÍA (no candidatos)           400
+  CANDIDATOS (eje A)               93
+    ├─ CADUCADOS      (A y B)      26   ← evidencia estructural
+    ├─ SOBRE-CASADOS  (A sin B)    40
+    └─ SIN CLASIFICAR (sin canón.) 27
+
+  eje C · INERCIA del cambio (sobre los 93 candidatos)
+    INERTE  (sólo comentario/vacío)  2   ← el eje A los marcó DE MÁS
+    tocó CÓDIGO                      91
+    no derivable                     0
+
+  clase del marcador, sobre los 26 caducados
+    SONDA-/SABOTAJE (evidencia)      15   ← NO se re-congelan: borraría la prueba
+    -neg- (congelada de negativo)    11   ← ÉSTA es la deuda real
+
+  VEREDICTO
+    CADUCADO FIRME (A · B · código)  26
+      de ésos, DEUDA REAL (-neg-)    11   ← hay que re-congelar
+      de ésos, evidencia (SONDA-)    15   ← se dejan como están
+    caducado con cambio inerte       0
+    NO caducado (cambio inerte)      2
+    SIN PROBAR sin correrlo          65   (§regla 14: limitación CON su número)
+
+cruce 2.º instrumento (mtime)      493 cruzados · 124 en desacuerdo
+
+── LIMITACIÓN · lib.mjs NO entra en la atribución ──
+   último cambio de scripts/qa/lib.mjs   2026-08-20
+   artefactos ANTERIORES a él            220 de 493
+   → si lib.mjs contara, ése sería el suelo de candidatos, no 93
+
+── CADUCADOS, nombrados con sus dos lados ──
+   a-extraido-SONDA-4-SELECTORES-MAL.json
+      artefacto 2026-08-12  <  instrumento 2026-08-18 (scripts/seed/extractor-a.mjs)
+   cms-teaser-SONDA-MAPA-INFLADO.json
+      artefacto 2026-08-04  <  instrumento 2026-08-18 (scripts/qa/cms-teaser.neg.mjs)
+   f33-cmp-1440-neg-inyecta-delta.json
+      artefacto 2026-08-24  <  instrumento 2026-08-25 (scripts/qa/f33-cmp.neg.mjs)
+   f33-cmp-1440-neg-mismo-lado.json
+      artefacto 2026-08-24  <  instrumento 2026-08-25 (scripts/qa/f33-cmp.neg.mjs)
+   f33-cmp-1440-neg-sin-hojas.json
+      artefacto 2026-08-24  <  instrumento 2026-08-25 (scripts/qa/f33-cmp.neg.mjs)
+   f33-cmp-1440-SONDA-CONTABA-et_pb_module_header-Y-EL-CAMPO-RICO-356-de-313.json
+      artefacto 2026-08-25  <  instrumento 2026-08-25 (scripts/qa/f33-cmp.neg.mjs)
+   f33-cmp-1440-SONDA-docH-ERA-EL-VIEWPORT-31-de-31.json
+      artefacto 2026-08-25  <  instrumento 2026-08-25 (scripts/qa/f33-cmp.neg.mjs)
+   f33-cmp-390-neg-mismo-lado.json
+      artefacto 2026-08-22  <  instrumento 2026-08-25 (scripts/qa/f33-cmp.neg.mjs)
+   f33-cmp-390-SONDA-docH-ERA-EL-VIEWPORT-31-de-31.json
+      artefacto 2026-08-25  <  instrumento 2026-08-25 (scripts/qa/f33-cmp.neg.mjs)
+   f33-extraido-SONDA-EMITIA-blockType-QUE-mapeo-NO-DISCRIMINA.json
+      artefacto 2026-08-23  <  instrumento 2026-08-24 (scripts/seed/extractor-f33.mjs)
+   f33-spec-SONDA-PERDIA-button-ENTERO-300-de-313-2026-08-24.json
+      artefacto 2026-08-24  <  instrumento 2026-08-25 (scripts/qa/f33-spec.mjs)
+   lh-canales-SONDA-CONFUNDIA-VACIA-CON-SIN-ARTICLE.json
+      artefacto 2026-08-14  <  instrumento 2026-08-14 (scripts/qa/lh-canales.neg.mjs)
+   lh-canales-SONDA-SIN-LA-RELACION.json
+      artefacto 2026-08-14  <  instrumento 2026-08-14 (scripts/qa/lh-canales.neg.mjs)
+   lh-cubos-1440-SONDA-NO-REPARTIA-LAS-MIXTAS.json
+      artefacto 2026-08-18  <  instrumento 2026-08-20 (scripts/qa/lh-cubos.mjs)
+   manifiesto-neg-base-vacia-entrada.json
+      artefacto 2026-08-05  <  instrumento 2026-08-18 (scripts/qa/manifiesto.neg.mjs)
+   media-canales-SONDA-CATALOGO-VIEJO.json
+      artefacto 2026-08-13  <  instrumento 2026-08-23 (scripts/qa/media-canales.mjs)
+   media-hueco-SONDA-MEDIA-EL-ANCHO-RENDERIZADO.json
+      artefacto 2026-08-05  <  instrumento 2026-08-18 (scripts/qa/media-hueco.neg.mjs)
+   pie-cmp-390-SONDA-USABA-EVALUATE-QUE-NO-EXISTE.json
+      artefacto 2026-08-20  <  instrumento 2026-08-20 (scripts/qa/pie-cmp.neg.mjs)
+   ruido-neg-control.json
+      artefacto 2026-08-02  <  instrumento 2026-08-03 (scripts/qa/ruido.mjs)
+   ruido-neg-detector.json
+      artefacto 2026-08-02  <  instrumento 2026-08-03 (scripts/qa/ruido.mjs)
+   ruido-neg-muerto.json
+      artefacto 2026-08-02  <  instrumento 2026-08-03 (scripts/qa/ruido.mjs)
+   solutions-seo-neg-control-solo-cartuchos-inteligentes.json
+      artefacto 2026-08-04  <  instrumento 2026-08-04 (scripts/qa/solutions-seo.neg.mjs)
+   solutions-seo-neg-derivable-solo-cartuchos-inteligentes.json
+      artefacto 2026-08-04  <  instrumento 2026-08-04 (scripts/qa/solutions-seo.neg.mjs)
+   solutions-seo-neg-muerto-solo-cartuchos-inteligentes.json
+      artefacto 2026-08-04  <  instrumento 2026-08-04 (scripts/qa/solutions-seo.neg.mjs)
+   sondeo-frontera-SONDA-ARRAY-TRANSPARENTE-INERTE.json
+      artefacto 2026-08-04  <  instrumento 2026-08-23 (scripts/seed/sondeo.neg.mjs)
+   texto-poblacion-SONDA-SOBRECASABA-ANFITRIONES.json
+      artefacto 2026-08-09  <  instrumento 2026-08-20 (scripts/qa/texto-poblacion.mjs)
+
+── reparto de CANDIDATOS por base (top 15) ──
+    14  clon-base
+     9  comportamiento
+     7  f33-cmp
+     6  f33-spec
+     6  ruido
+     4  lh-cubos
+     3  lh-censo
+     3  solutions-seo
+     2  a-miga
+     2  a-spec
+     2  html-cmp
+     2  lh-canales
+     2  lh-letra
+     2  manifiesto
+     2  media-hueco
+
+── CONTROL · los 4 de kb-barra ──
+   presentes en el universo: 4
+   kb-barra-1440-neg-dominio-corto.json
+      candidato=false  divergente=null  art=2026-08-26  instr=2026-08-26
+   kb-barra-1440-neg-selector-muerto.json
+      candidato=false  divergente=null  art=2026-08-26  instr=2026-08-26
+   kb-barra-1440-neg-sin-fuentes.json
+      candidato=false  divergente=null  art=2026-08-26  instr=2026-08-26
+   kb-barra-1440-neg-sin-hojas.json
+      candidato=false  divergente=null  art=2026-08-26  instr=2026-08-26
+   → CADUCADOS de los 4: 0
+   ESPERADO a HEAD: 0 de 4 (se re-congelaron en 8622a38)  ✓

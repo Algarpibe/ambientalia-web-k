@@ -1,5 +1,124 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⚠ PASO 0 · **NO fue uno, es una CLASE — pero la clase son 11, no 26: las otras 15 son EVIDENCIA que TIENE que diferir** — 112.ª, 2026-08-26
+
+Pre-registro commiteado antes de medir: `derivaciones/PRE-REGISTRO-ARTEFACTOS-CADUCADOS-112.md` (0d55138).
+Derivación: `derivaciones/artefactos-caducados-112.{mjs,log}` · control: `…-CONTROL-31a2aa0.log`.
+
+### 1 · El censo, con sus dos lados y sus ceros nombrados
+
+```
+UNIVERSO                           514   (518 con marcador − 4 ya renombradas CADUCADA)
+SIN MAPEAR                          21   ← §sondas 4: fallo NOMBRADO, no resta
+mapeados                           493   (457 vía nombre · 36 vía «quién escribe el canónico»)
+  AL DÍA (no candidatos)           400
+  CANDIDATOS (eje A · temporal)     93
+    ├─ CADUCADOS      (A y B)       26
+    ├─ SOBRE-CASADOS  (A sin B)     40
+    └─ SIN CLASIFICAR (sin canón.)  27
+  eje C · INERCIA: 2 inertes · 91 tocaron código · 0 no derivable
+```
+
+### 2 · **La corrección que cambia el número, y es la dirección (b) del encargo**
+
+> **`SONDA-<DEFECTO>` no es la congelada de un negativo: es EVIDENCIA de un
+> defecto que la sonda TUVO.** Su contenido reproduce el comportamiento VIEJO a
+> propósito, así que **diverge del canónico POR CONSTRUCCIÓN**. El eje B la marca
+> siempre — o sea **0 instancias separadoras sobre esa clase** — y re-congelarla
+> no la arreglaría: **BORRARÍA LA PRUEBA**, que es justo lo que §regla 5 existe
+> para impedir.
+
+| de los 26 «caducados» | n | qué se hace |
+|---|---|---|
+| `SONDA-`/`SABOTAJE` — **evidencia** | **15** | **NADA.** Re-congelarlas destruye lo que documentan |
+| `-neg-` — congelada de negativo | **11** | **ÉSTA es la deuda real: re-congelar** |
+
+**VEREDICTO:** deuda real **11** · evidencia que se deja **15** · no caducados
+por cambio inerte **2** · **SIN PROBAR sin correrlo 65**.
+
+### 3 · Control por los DOS lados — y la resta cuadra al elemento
+
+| lado | rev | exigido | medido |
+|---|---|---|---|
+| **positivo** | `31a2aa0` (antes del arreglo) | 4 de 4 | **4 de 4** ✓ |
+| **negativo** | `HEAD` (ya re-congelados) | 0 de 4 | **0 de 4** ✓ |
+
+Y el censo entero se mueve **exactamente** lo que dice el control: **30 caducados
+a `31a2aa0` → 26 a HEAD**, y los 4 de la diferencia son los 4 de `kb-barra`,
+nombrados. Lo único que cambió entre las dos revisiones fue ese arreglo.
+
+### 4 · Las predicciones, puntuadas — **3 de 6 falladas, las tres en la MISMA dirección**
+
+| # | magnitud | predije | rango | **real** | |
+|---|---|---|---|---|---|
+| P1 | CANDIDATOS | ≈330 | 220–430 | **93** | ✗ **fuera, 3.5× de más** |
+| P2 | CADUCADOS | ≈60 | 20–150 | **26** | ✓ |
+| P3 | SOBRE-CASADOS | ≈150 | 60–300 | **40** | ✗ fuera |
+| P4 | SIN CLASIFICAR | ≈120 | 60–220 | **27** | ✗ fuera |
+| P5 | SIN MAPEAR | ≈25 | 5–80 | **21** | ✓ |
+| P6 | desacuerdo `mtime` | ≈40 | 0–200 | **124** | ✓ |
+
+**Por qué fallé, y no es un error de cálculo sino de PREMISA.** El encargo parte
+de que *«un artefacto de negativo no tiene consumidor que lo relea: su caducidad
+es silenciosa»* — **mecánicamente cierto y empíricamente casi inoperante**:
+**400 de 493 están AL DÍA**, porque la tanda que toca una sonda re-corre y
+re-commitea sus negativos **en el MISMO commit**, así que artefacto e instrumento
+comparten fecha y el eje A no los marca. La práctica del repo es mejor que su
+propia premisa.
+
+⚠ **Y P6 justifica retroactivamente descartar `mtime`:** **124 de 493** en
+desacuerdo con la fecha de commit. Si el censo se hubiera apoyado en `mtime` —que
+es lo que el encargo pedía— una cuarta parte del dominio habría entrado con la
+fecha equivocada, **y el control positivo habría salido vacío por construcción**.
+
+### 5 · Limitación declarada CON SU NÚMERO (§regla 14)
+
+> El censo atribuye a cada artefacto **sólo `<base>.mjs` y `<base>.neg.mjs`**.
+> **`lib.mjs` no entra**, y es el instrumento de TODAS (`Evaluadas`, `w()`,
+> `Censo`, `gritaSiRevienta`, `openPage`).
+
+Último cambio de `lib.mjs`: **2026-08-20**. Artefactos anteriores a él: **220 de
+493**. Si `lib.mjs` contara, el **suelo** de candidatos sería 220, no 93.
+
+### 6 · Dos defectos del propio instrumento, cazados en la corrida
+
+1. **`ls medidas/` desde la raíz devuelve `0` totales y `0` con marcador.** Vive
+   en `scripts/qa/medidas`. §sondas 4 sobre una **ruta**, y el cero era plausible;
+2. **el informe imprimió `11 + 0 = 26`.** `filter(esEvidencia)` recibía el
+   **objeto** en vez de `r.f`, y el regex daba `false` sobre `"[object Object]"`.
+   No dio error: dio un cero plausible. **Lo cazó la ARITMÉTICA**, así que la
+   aritmética se queda **puesta como guarda** (`exitCode = 1` si no cuadra), no
+   como atención — §regla 4, la CLASE y no la instancia.
+
+Y uno de mapeo, que era el que más movía: el prefijo del artefacto **no es** el
+nombre de su sonda (`a-extraido.json` lo escribe `extractor-a.mjs`), y los
+instrumentos **no viven sólo en `scripts/qa/`**. Corregido, «sin mapear» pasó de
+**81 a 21**. Los 21 que quedan son 18 prefijos, **16 de ellos `html-*`** (fixtures)
+más `ancho` y `lh-regimen`.
+
+### 7 · ⛔ **EL CENSO AMPLÍA EL ESCALÓN 2 — SE CORTA AQUÍ**
+
+El encargo lo pre-autorizó: *«puede AMPLIAR lo que hay que re-congelar en el
+ESCALÓN 2. Si sale grande, se corta ahí»*. Sale grande, y por **dos** vías
+independientes:
+
+| vía | número | por qué corta |
+|---|---|---|
+| **las dos primeras bases del reparto de candidatos SON del ESCALÓN 2** | `clon-base` **14** · `f33-spec` **6** | §regla 21 la vuelta obliga a releer sus negativos preguntando qué separa cada caso HOY. Son **20 artefactos**, y el NO-OP de `clon-base` son **382 rutas × 2 anchos** |
+| **el ESCALÓN 1 propone cambiar `lib.mjs`** | **220 de 493** ya son anteriores a su último cambio | tocar el instrumento de TODAS es exactamente el cambio cuyo radio de caducidad este censo acaba de medir — y **no está dimensionado** |
+
+**Más la deuda nueva que el censo descubrió y que no estaba en ningún plan: 11
+artefactos a re-congelar + 65 SIN PROBAR.** Ninguno de los 11 pertenece a las
+tres sondas del ESCALÓN 2 — es trabajo **aparte**, no el mismo.
+
+> **El número es el resultado, no una excusa para alargar la tanda.** Un censo
+> que se recorta para caber en la tanda que lo encargó no mide el repo: mide la
+> tanda (§3 del pre-registro, escrito antes de conocerlo).
+
+**Lo que queda para su propia tanda:** ESCALÓN 1 (la guarda común en `lib.mjs`,
+con su radio ya medido) · ESCALÓN 2 (las 3 instancias) · las **11**
+re-congelaciones · los **65** SIN PROBAR · los **21** sin mapear.
+
 ## ✅ F3-3-CMP-ASIMETRIA · **el artefacto NO era «de imagen»: eran TRES canales, y el que más movía no deja síntoma** — 106.ª, 2026-08-25, CERRADO en la misma tanda
 
 La 105.ª fichó que `f33-cmp` ponía `setRequestInterception` **en un solo lado** y
