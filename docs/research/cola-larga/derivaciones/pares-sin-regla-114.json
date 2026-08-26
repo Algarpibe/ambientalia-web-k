@@ -1,0 +1,66 @@
+{
+  "fecha": "2026-08-26",
+  "htmlRecorridos": 788,
+  "canalHojasCss": 0,
+  "canalStyleEnLinea": 574,
+  "reglas": {
+    ".et_pb_section_video_on_hover:hover>.et_pb_section_video_bg {display:none}": 522,
+    ".et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover,.et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover_inherit {display:block}": 522,
+    ".et_pb_column.et_pb_column_empty {min-height:1px}": 522,
+    ".et_pb_column.et_pb_column_empty {display:none}": 522,
+    ".et-db #et-boc .et-l .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg {display:none}": 52,
+    ".et-db #et-boc .et-l .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover,.et-db #et-boc .et-l .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover_inherit {display:block}": 52,
+    ".et-db #et-boc .et-l .et_pb_column.et_pb_column_empty {min-height:1px}": 52,
+    ".et-db #et-boc .et-l .et_pb_column.et_pb_column_empty {display:none}": 52
+  },
+  "veredicto": [
+    {
+      "clase": "et_pb_column_empty",
+      "reglas": 4,
+      "papel": "SUJETO",
+      "soloEnHover": false,
+      "ejemplos": [
+        {
+          "regla": ".et_pb_column.et_pb_column_empty {min-height:1px}",
+          "paginas": 522
+        },
+        {
+          "regla": ".et_pb_column.et_pb_column_empty {display:none}",
+          "paginas": 522
+        },
+        {
+          "regla": ".et-db #et-boc .et-l .et_pb_column.et_pb_column_empty {min-height:1px}",
+          "paginas": 52
+        },
+        {
+          "regla": ".et-db #et-boc .et-l .et_pb_column.et_pb_column_empty {display:none}",
+          "paginas": 52
+        }
+      ]
+    },
+    {
+      "clase": "et_pb_section_video_on_hover",
+      "reglas": 4,
+      "papel": "CONTEXTO",
+      "soloEnHover": true,
+      "ejemplos": [
+        {
+          "regla": ".et_pb_section_video_on_hover:hover>.et_pb_section_video_bg {display:none}",
+          "paginas": 522
+        },
+        {
+          "regla": ".et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover,.et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover_inherit {display:block}",
+          "paginas": 522
+        },
+        {
+          "regla": ".et-db #et-boc .et-l .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg {display:none}",
+          "paginas": 52
+        },
+        {
+          "regla": ".et-db #et-boc .et-l .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover,.et-db #et-boc .et-l .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover_inherit {display:block}",
+          "paginas": 52
+        }
+      ]
+    }
+  ]
+}

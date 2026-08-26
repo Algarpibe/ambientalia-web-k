@@ -21277,6 +21277,76 @@ dos grupos: `et_pb_text_align_center` (`text` 8/151 · `blurb` 5/22) y
 > —el precedente— es una clase **del tema**, sin ese prefijo, así que **14 es una
 > COTA INFERIOR**, no el total.
 
+> ✅ **CERRADOS 2026-08-26 (114.ª, ESCALÓN 2) LOS 3 PARES «SIN NINGUNA REGLA
+> CAPTURADA» — Y NO HIZO FALTA RED: EL DIAGNÓSTICO ERA EL CANAL EQUIVOCADO.**
+>
+> La 109.ª los cerró así: *«NO son "sin efecto": son la COBERTURA (399 hojas sin
+> capturar). Lo que los cerraría es capturar sus hojas, no medir más — y eso
+> necesita red»*. **El dato llevaba capturado desde el principio:**
+>
+> | canal | páginas con alguna de las 2 clases |
+> |---|---|
+> | las **108 hojas `.css`** capturadas | **0** ← el que se miró |
+> | el **`<style>` EN LÍNEA** del HTML | **574 de 788** ← donde estaban |
+>
+> **Divi no sirve estas reglas por la hoja enlazada: las COMPILA al documento.**
+> Es §*«la salida servida» incluye el CSS que el documento se trae* — la misma
+> lección que `qa:kb-tipografia` ya pagó, donde diez ejes dieron cero y el
+> discriminador vivía en el `<style>` de la propia página. Congelada:
+> `docs/research/cola-larga/derivaciones/pares-sin-regla-114.{mjs,json,log}`,
+> con el **control de canal** exigiendo que el canal viejo dé **0** (si diera
+> ≠0 el hallazgo dejaría de ser «de canal» y la sonda cierra en rojo).
+>
+> **Las 8 reglas, con su denominador:**
+>
+> | ×n | regla |
+> |---|---|
+> | 522 · 52 | `.et_pb_column.et_pb_column_empty { min-height: 1px }` |
+> | 522 · 52 | `.et_pb_column.et_pb_column_empty { display: none }` |
+> | 522 · 52 | `.et_pb_section_video_on_hover:hover > .et_pb_section_video_bg { display: none }` |
+> | 522 · 52 | `…:hover > .et_pb_section_video_bg_hover(_inherit) { display: block }` |
+>
+> (las de `×52` van prefijadas por `.et-db #et-boc .et-l`; 522 + 52 = **574**.)
+>
+> **Y el veredicto por §regla 36 —papel de la clase en su selector— separa los
+> 3 pares en dos casos que NO se cierran igual:**
+>
+> | par | papel | qué hace falta para cerrarlo |
+> |---|---|---|
+> | `et_pb_column_empty · columna` | **SUJETO** | comparar **EN EL NODO**, a los dos anchos. Efecto conocido: `display:none` |
+> | `section_video_on_hover · blurb` | **CONTEXTO** + `:hover` | **INTERACCIÓN** |
+> | `section_video_on_hover · columna` | **CONTEXTO** + `:hover` | **INTERACCIÓN** |
+>
+> ⚠⚠ **Los dos de `section_video_on_hover` NO son cerrables con geometría
+> estática, ni a 1440 ni a 390 — y no por alcance, sino POR MECANISMO:** sus
+> **4 reglas van todas tras `:hover`**, así que su efecto **no existe hasta que
+> alguien pasa el ratón**. Es el eje COMPORTAMIENTO, que sigue a **0/31**. Una
+> sonda que los midiera en reposo daría Δ0 **con el defecto puesto**, dos veces:
+> por el `:hover` y por §regla 36 (la clase es contexto, el efecto vive en
+> `.et_pb_section_video_bg*`, que son sus **descendientes**).
+>
+> **Lo que queda, con su denominador (§regla 14):** de los 3 pares, **1 pasa a
+> medible en reposo** (`column_empty`) y **2 pasan de «cobertura» a
+> «INTERACCIÓN»** — que no es lo mismo: cobertura se arregla capturando, y esto
+> no. El clon **no emite ninguna de las 2 clases** (0 ocurrencias en `src/`), y
+> eso contesta *«¿escribe el clon la CLASE?»* — **no** *«¿sirve el EFECTO?»*, que
+> para `column_empty` sigue **SIN MEDIR** porque exige el clon renderizado.
+
+> ⚠ **Y POR QUÉ EL «SUBCONJUNTO MÍNIMO» DEL ESCALÓN 2 NO EXISTÍA — el cardinal
+> se publicó ANTES de pedir, y por eso no se pidió nada.** El encargo mandaba
+> derivar *«las hojas de las páginas donde viven esos 3 pares, y nada más»*.
+> Derivado (`hojas-3pares-114.{mjs,json,log}`): las clases están en **576 y 574
+> de 788 páginas**, así que esas páginas enlazan **508 hojas** de las que faltan
+> **399** — o sea **399 de las 399 sin capturar**, la campaña completa que el
+> encargo prohíbe, y encima con `et-cache` exigiendo calentar cada página antes
+> de pedir su hoja (~800 peticiones).
+>
+> > **Una clase presente en el 73 % de las páginas no acota un subconjunto: lo
+> > vuelve el universo.** El «mínimo» de un barrido por páginas sólo es pequeño
+> > si el criterio DISCRIMINA páginas — y eso se comprueba contando, antes de
+> > pedir. Es §*un patrón que casa en TODAS tampoco mide nada* aplicado al
+> > **alcance de una campaña** en vez de a un selector.
+
 **Decisión que sube al propietario, y es UNA:** ¿el modelo adopta *«preset del
 editor portado por clase»* como canal general, y con qué alcance de las 14+ CLASES (16+ PARES, de las que 7 clases ya están fichadas y 7 no)?
 Decidir `gutters` y la alineación por separado es arreglar la instancia en vez de

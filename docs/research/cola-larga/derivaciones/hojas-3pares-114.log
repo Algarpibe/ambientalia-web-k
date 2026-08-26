@@ -1,0 +1,45 @@
+
+════════ HOJAS PARA LOS 3 PARES · 114.ª ESCALÓN 2 (inventario) ════════
+
+  corpus     HTML recorridos .............  788
+  INDICE     hojas distintas del sitio ...  507
+             capturadas ..................  108
+             SIN capturar ................  399   ← lo que NO se va a pedir entero
+
+  ── las páginas donde viven los 3 pares ──
+     et_pb_column_empty .........  576 páginas
+     et_pb_section_video_on_hover .........  574 páginas
+     páginas DISTINTAS tocadas ...........  576
+
+  ── el SUBCONJUNTO MÍNIMO ──
+     hojas que esas páginas enlazan ......  508
+     de ésas, YA capturadas ..............  109
+     de ésas, HAY QUE PEDIR ..............  399   ← EL CARDINAL, publicado ANTES de pedir
+     por familia: et-cache 399
+
+  ── páginas por clase (para calentar antes de pedir su hoja) ──
+     et_pb_column_empty  (576)
+        casos/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica.html
+        casos/calidad-del-aire-en-planta-procesamiento-alimentos-singapur.html
+        casos/calle-30-natura-sensores-de-calidad-del-aire-kunak-air.html
+        casos/citytraq-calidad-del-aire-urbano.html
+        casos/clean-air-champions-league.html
+        casos/control-ambiental-actividades-portuarias-bahia-cadiz.html
+        casos/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez.html
+        casos/control-de-contaminacion-por-malos-olores-en-edar-arazuri.html
+        … y 568 más
+     et_pb_section_video_on_hover  (574)
+        casos/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica.html
+        casos/calidad-del-aire-en-planta-procesamiento-alimentos-singapur.html
+        casos/calle-30-natura-sensores-de-calidad-del-aire-kunak-air.html
+        casos/citytraq-calidad-del-aire-urbano.html
+        casos/clean-air-champions-league.html
+        casos/control-ambiental-actividades-portuarias-bahia-cadiz.html
+        casos/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez.html
+        casos/control-de-contaminacion-por-malos-olores-en-edar-arazuri.html
+        … y 566 más
+
+  congelado en derivaciones/hojas-3pares-114.json
+
+✅ evaluadas 576 páginas tocadas / 788 HTML del corpus
+

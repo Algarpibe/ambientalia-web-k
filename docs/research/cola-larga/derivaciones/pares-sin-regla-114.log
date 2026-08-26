@@ -1,0 +1,34 @@
+
+════════ LOS 3 PARES «SIN REGLA» · 114.ª ESCALÓN 2 ════════
+
+  corpus    HTML recorridos ................  788
+  canal A   ficheros .css CAPTURADOS con las clases     0   ← el que miró la 109.ª
+  canal B   HTML con las clases en <style> EN LÍNEA   574   ← donde estaban
+  reglas DISTINTAS halladas ................    8
+
+──────── LAS REGLAS, con su denominador ────────
+  × 522  .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg {display:none}
+  × 522  .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover,.et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover_inherit 
+  × 522  .et_pb_column.et_pb_column_empty {min-height:1px}
+  × 522  .et_pb_column.et_pb_column_empty {display:none}
+  ×  52  .et-db #et-boc .et-l .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg {display:none}
+  ×  52  .et-db #et-boc .et-l .et_pb_section_video_on_hover:hover>.et_pb_section_video_bg_hover,.et-db #et-boc .et-l .et_pb_section_video_on_hover:ho
+  ×  52  .et-db #et-boc .et-l .et_pb_column.et_pb_column_empty {min-height:1px}
+  ×  52  .et-db #et-boc .et-l .et_pb_column.et_pb_column_empty {display:none}
+
+──────── VEREDICTO POR CLASE (§regla 36) ────────
+
+  et_pb_column_empty
+    reglas ......... 4
+    papel .......... SUJETO   → medir EN EL NODO
+    ¿sólo en hover? no
+
+  et_pb_section_video_on_hover
+    reglas ......... 4
+    papel .......... CONTEXTO   ⚠ medir en los DESCENDIENTES, no en el nodo
+    ¿sólo en hover? SÍ   ⚠ su efecto NO existe sin INTERACCIÓN
+
+  congelado en derivaciones/pares-sin-regla-114.json
+
+✅ evaluadas 574 páginas con regla / 788 HTML del corpus
+
