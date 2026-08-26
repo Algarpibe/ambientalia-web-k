@@ -21411,6 +21411,91 @@ el neto** (§regla 20, tercera mitad):
 `-anterior`, `-t85-previo`, `-viejo`). Están todos en `.gitignore`, así que no
 ensucian el repo — pero son varios GB y ninguno es evidencia.
 
+### ✅ PAGADA 2026-08-26 (111.ª, ESCALÓN 2) — la deuda de §regla 5ter de la 110.ª
+
+**`f33-distancia` · NO-OP ADJUDICADO, no argumentado.** La versión anterior al
+cambio **no importaba `./lib.mjs`** (el `import` es lo que la 110.ª añadió), así
+que corre suelta: se sacó con `git show 1bed85b~1` y se difearon las **dos
+salidas sobre el mismo par legítimo** (`f33-cmp-1440-2026-08-25.json` →
+`…-2.json`). El diff entero:
+
+```
+56a57,58
+>
+>   ✓ evaluadas 31/31 rutas · f33-distancia
+```
+
+Dos líneas, y son la de unidades. **Nada más**, las dos exit 0.
+
+**§regla 21 la vuelta — qué separa el control HOY, no si pasa.** El control
+discriminante (31 rutas contra 6, `f33-cmp-1440-piloto.json`) corrido con las
+**dos** versiones:
+
+| versión | exit | qué publica |
+|---|---|---|
+| antes del contrato | **0** | el verde falso completo |
+| con el contrato | **1** | `NO SE PUDO EVALUAR · f33-distancia — 6 de 31 rutas` |
+
+Sigue separando: **1 instancia separadora**, medida hoy. Y **0 negativos**
+(derivado con `rg --files`: sólo existe `f33-distancia.mjs`), así que no hay
+ninguno que releer — el control de arriba es el que hay, y **sigue sin estar
+congelado como caso**.
+
+**`kb-barra.neg` · corrido por primera vez desde el cambio: 8/8 casos, exit 0**,
+y el contrato nuevo del orquestador publica `✓ evaluadas 8/8 casos ·
+kb-barra-neg`. Los cinco `spawn` caen cada uno por su motivo: control exit 5
+(`HOJAS INCOMPLETAS`), `selector-muerto` 2, `sin-fuentes` 6, `sin-hojas` 6,
+`dominio-corto` 5.
+
+**NO-OP sobre lo que MIDE**, y con los dos lados: el control corre con `PISAR=1`
+por diseño, así que re-congela la canónica y **git dice exactamente qué cambió**
+— `kb-barra-1440.json`, **2 líneas de 19 000**:
+
+| campo | antes → después | qué es |
+|---|---|---|
+| `meta.fecha` | `2026-08-25` → `2026-08-26` | volátil |
+| `peticionesBloqueadas` (1 página de 13) | **26 → 27** | contador de intercepción, no geometría |
+
+**Ni un `rect`, ni un `ritmo`, ni un `borde` se mueven.** Eso es el NO-OP.
+
+**§regla 21 la vuelta sobre sus 8 casos:** ninguno se murió en verde — los ocho
+siguen separando lo mismo, porque **los ocho ejercitan la sonda SPAWNEADA** y no
+el recuento del orquestador. El caso que ejercitaría el contrato nuevo —*el
+orquestador muere a la mitad*— **sigue sin existir: 0 de 8.** El MECANISMO está
+probado (`qa:lib` §3b, y esta tanda con `f33-distancia` al rojo y con
+`qa:lib-neg`); su **cableado en este fichero, no**. Es SIN PROBAR con su
+denominador, no verde.
+
+#### ⚠ Y LO QUE ESTA TANDA ENCONTRÓ SIN BUSCARLO: los 4 artefactos de sabotaje de `kb-barra` medían UN SOLO LADO
+
+Correr el negativo por primera vez desde la 107.ª hizo que sus cuatro
+`-neg-*.json` crecieran **+32 616 · +33 019 · +4 855 · +112 líneas**. La lectura
+fácil —*«el cambio de la 110.ª movió la medida»*— es **falsa**, y la atribución
+se derivó en vez de suponerse (§regla 16):
+
+| evidencia | derivación |
+|---|---|
+| la 110.ª tocó **3 ficheros** y `kb-barra.mjs` **no** está entre ellos | `git diff --stat 1bed85b~1 1bed85b` |
+| los 4 artefactos se congelaron en `1b577d6` = **107.ª ESCALÓN 1a** | `git log -1` por fichero |
+| el control se congeló en `41a92b3` = **107.ª ESCALÓN 2**, *«la barra ADJUDICADA de dos lados»* | ídem |
+| los 4 traían `httpClon` **AUSENTE**; el control, **200** | leído de la congelada de `HEAD` |
+
+> **El lado del clon se lo añadió a `kb-barra.mjs` el ESCALÓN 2, y el negativo no
+> se volvió a correr.** Sus artefactos se quedaron **un escalón atrás, midiendo
+> un solo lado** — §regla 5bis literal: *arreglar un instrumento no arregla sus
+> medidas, las CADUCA*. Y no gritó, porque **un artefacto caducado no avisa:
+> espera**.
+
+Las cuatro versiones de un solo lado quedan preservadas como
+`kb-barra-1440-neg-<caso>-CADUCADA-UN-SOLO-LADO-107a-ESCALON-1a.json` (§regla
+5bis: el nombre dice el defecto **y su alcance**), no borradas y no sólo en el
+historial de git. Las de hoy traen `httpClon: 200` en las cuatro.
+
+⚠ **Lo que NO se afirma:** que las nuevas sean *correctas*. Se afirma que son
+**de dos lados** y que las viejas no lo eran. Que el lado del clon esté bien es
+otra afirmación, y el propio negativo la declara: *«lo que este negativo NO
+prueba: que el lado del CLON esté bien»*.
+
 ### ⚠ `npm run check` NO SE PUDO COMPLETAR — y la causa es de ENTORNO, derivada
 
 El encargo pedía `check` al final por haberse tocado código de sonda. Las

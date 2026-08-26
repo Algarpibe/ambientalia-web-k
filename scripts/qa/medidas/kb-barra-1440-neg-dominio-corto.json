@@ -1,7 +1,7 @@
 {
   "meta": {
     "sonda": "kb-barra",
-    "fecha": "2026-08-25",
+    "fecha": "2026-08-26",
     "ancho": 1440,
     "movil": false,
     "contrato": "FIDELIDAD (1440/390) · UN SOLO LADO (el original)",
@@ -33,6 +33,2127 @@
       },
       "fuentes": 4,
       "peticionesBloqueadas": 31,
+      "httpClon": 200,
+      "peticionesBloqueadasClon": 0,
+      "original": {
+        "hay": true,
+        "barra": {
+          "clases": [
+            "et_pb_module",
+            "et_pb_sidebar_0_tb_body",
+            "et_pb_widget_area",
+            "clearfix",
+            "et_pb_widget_area_left",
+            "et_pb_bg_layout_light"
+          ],
+          "rect": {
+            "x": 100.8,
+            "y": 290.3,
+            "w": 258.5,
+            "h": 493.66
+          },
+          "ritmo": {
+            "paddingTop": "0px",
+            "paddingRight": "30px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          },
+          "display": "block",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borde": {
+            "right": "1px solid rgba(0, 0, 0, 0.1)",
+            "top": "0px none",
+            "bottom": "0px none",
+            "left": "0px none"
+          },
+          "boxSizing": "border-box"
+        },
+        "columna": {
+          "clases": [
+            "et_pb_column",
+            "et_pb_column_1_4",
+            "et_pb_column_0_tb_body",
+            "et_pb_sticky_module",
+            "et_pb_css_mix_blend_mode_passthrough"
+          ],
+          "rect": {
+            "x": 100.8,
+            "y": 279.11,
+            "w": 258.5,
+            "h": 536.84
+          },
+          "ritmo": {
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "68.1094px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          }
+        },
+        "nWidgets": 3,
+        "nWidgetsVacios": 1,
+        "nWidgetsSinCaja": 2,
+        "widgets": [
+          {
+            "i": 0,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "widget",
+              "widget_nav_menu"
+            ],
+            "vacio": false,
+            "conCaja": true,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 290.3,
+              "w": 227.5,
+              "h": 493.66
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          },
+          {
+            "i": 1,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "widget_text",
+              "widget",
+              "widget_custom_html"
+            ],
+            "vacio": true,
+            "conCaja": false,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 815.95,
+              "w": 227.5,
+              "h": 0
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "widget_text",
+              "widget",
+              "widget_custom_html"
+            ],
+            "vacio": false,
+            "conCaja": false,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 815.95,
+              "w": 227.5,
+              "h": 0
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          }
+        ],
+        "menu": {
+          "nLi": 12,
+          "nNiveles": 2,
+          "uls": [
+            {
+              "nivel": 0,
+              "clases": [
+                "menu"
+              ],
+              "rect": {
+                "x": 100.8,
+                "y": 290.3,
+                "w": 227.5,
+                "h": 493.66
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 1,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 118.39,
+                "y": 327.88,
+                "w": 209.91,
+                "h": 301.09
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 2,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 135.98,
+                "y": 368.31,
+                "w": 192.31,
+                "h": 220.22
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 1,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 118.39,
+                "y": 677.73,
+                "w": 209.91,
+                "h": 106.22
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 2,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 135.98,
+                "y": 718.17,
+                "w": 192.31,
+                "h": 25.34
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            }
+          ],
+          "ulRect": {
+            "x": 100.8,
+            "y": 290.3,
+            "w": 227.5,
+            "h": 493.66
+          },
+          "ulRitmo": {
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          },
+          "items": [
+            {
+              "nivel": 0,
+              "texto": "Kunak AIR",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/",
+              "estado": [
+                "current-menu-ancestor",
+                "current-page-ancestor",
+                "current_page_ancestor"
+              ],
+              "hijos": 2,
+              "conCaja": true,
+              "liRect": {
+                "x": 100.8,
+                "y": 290.3,
+                "w": 227.5,
+                "h": 338.67
+              },
+              "liRitmo": {
+                "paddingTop": "6.4px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 100.8,
+                "y": 295.69,
+                "w": 76.61,
+                "h": 22
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Artículos de ayuda",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+              "estado": [
+                "current-menu-ancestor",
+                "current-menu-parent",
+                "current-page-ancestor",
+                "current-page-parent",
+                "current_page_ancestor",
+                "current_page_parent"
+              ],
+              "hijos": 5,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 327.88,
+                "w": 209.91,
+                "h": 260.66
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 336.38,
+                "w": 134.33,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Qué es Kunak AIR?",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 368.31,
+                "w": 192.31,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 376.41,
+                "w": 116.41,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "Qué puedes hacer con Kunak AIR?",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 404.84,
+                "w": 192.31,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 412.94,
+                "w": 173.3,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "Evidencias de funcionamiento",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 457.63,
+                "w": 192.31,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 465.72,
+                "w": 178.92,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Por qué Kunak AIR es la mejor estación de calidad del aire?",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 494.16,
+                "w": 192.31,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 502.25,
+                "w": 180.36,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Cómo garantiza Kunak la mejor precisión?",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+              "estado": [
+                "current-menu-item",
+                "current_page_item"
+              ],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 546.94,
+                "w": 192.31,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 555.03,
+                "w": 189.97,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(0, 117, 201)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Video tutoriales",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 599.72,
+                "w": 209.91,
+                "h": 29.25
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 608.22,
+                "w": 115.5,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 0,
+              "texto": "Kunak Air Cloud",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air-cloud/",
+              "estado": [],
+              "hijos": 2,
+              "conCaja": true,
+              "liRect": {
+                "x": 100.8,
+                "y": 640.16,
+                "w": 227.5,
+                "h": 143.8
+              },
+              "liRitmo": {
+                "paddingTop": "6.4px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 100.8,
+                "y": 645.55,
+                "w": 121.72,
+                "h": 22
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Artículos de ayuda",
+              "href": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/",
+              "estado": [],
+              "hijos": 1,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 677.73,
+                "w": 209.91,
+                "h": 65.78
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 686.23,
+                "w": 134.33,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Qué es Kunak AIR Cloud?",
+              "href": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 718.17,
+                "w": 192.31,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 726.27,
+                "w": 154.45,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Video tutoriales",
+              "href": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 754.7,
+                "w": 209.91,
+                "h": 29.25
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 763.2,
+                "w": 115.5,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            }
+          ]
+        },
+        "hojasAplicadas": 18,
+        "fuenteCargada": true
+      },
+      "clon": {
+        "hay": true,
+        "barra": {
+          "clases": [
+            "ayuda-barra"
+          ],
+          "rect": {
+            "x": 100.8,
+            "y": 293.77,
+            "w": 258.44,
+            "h": 493.66
+          },
+          "ritmo": {
+            "paddingTop": "0px",
+            "paddingRight": "30px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          },
+          "display": "block",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borde": {
+            "right": "1px solid rgba(0, 0, 0, 0.1)",
+            "top": "0px solid",
+            "bottom": "0px solid",
+            "left": "0px solid"
+          },
+          "boxSizing": "border-box"
+        },
+        "columna": null,
+        "nWidgets": 3,
+        "nWidgetsVacios": 2,
+        "nWidgetsSinCaja": 2,
+        "widgets": [
+          {
+            "i": 0,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "ayuda-widget"
+            ],
+            "vacio": false,
+            "conCaja": true,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 293.77,
+              "w": 227.44,
+              "h": 493.66
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          },
+          {
+            "i": 1,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "ayuda-widget"
+            ],
+            "vacio": true,
+            "conCaja": false,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 819.42,
+              "w": 227.44,
+              "h": 0
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "ayuda-widget"
+            ],
+            "vacio": true,
+            "conCaja": false,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 819.42,
+              "w": 227.44,
+              "h": 0
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          }
+        ],
+        "menu": {
+          "nLi": 12,
+          "nNiveles": 2,
+          "uls": [
+            {
+              "nivel": 0,
+              "clases": [
+                "ayuda-menu"
+              ],
+              "rect": {
+                "x": 100.8,
+                "y": 293.77,
+                "w": 227.44,
+                "h": 493.66
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 1,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 118.39,
+                "y": 331.34,
+                "w": 209.84,
+                "h": 301.09
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 2,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 135.98,
+                "y": 371.78,
+                "w": 192.25,
+                "h": 220.22
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 1,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 118.39,
+                "y": 681.2,
+                "w": 209.84,
+                "h": 106.22
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 2,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 135.98,
+                "y": 721.64,
+                "w": 192.25,
+                "h": 25.34
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            }
+          ],
+          "ulRect": {
+            "x": 100.8,
+            "y": 293.77,
+            "w": 227.44,
+            "h": 493.66
+          },
+          "ulRitmo": {
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          },
+          "items": [
+            {
+              "nivel": 0,
+              "texto": "Kunak AIR",
+              "href": "/centro-de-ayuda/kunak-air",
+              "estado": [
+                "current-menu-ancestor",
+                "current-page-ancestor",
+                "current_page_ancestor"
+              ],
+              "hijos": 2,
+              "conCaja": true,
+              "liRect": {
+                "x": 100.8,
+                "y": 293.77,
+                "w": 227.44,
+                "h": 338.67
+              },
+              "liRitmo": {
+                "paddingTop": "6.4px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 100.8,
+                "y": 299.16,
+                "w": 76.61,
+                "h": 22
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Artículos de ayuda",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda",
+              "estado": [
+                "current-menu-ancestor",
+                "current-page-ancestor",
+                "current_page_ancestor"
+              ],
+              "hijos": 5,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 331.34,
+                "w": 209.84,
+                "h": 260.66
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 339.84,
+                "w": 134.33,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Qué es Kunak AIR?",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 371.78,
+                "w": 192.25,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 379.88,
+                "w": 116.41,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "Qué puedes hacer con Kunak AIR?",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 408.31,
+                "w": 192.25,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 416.41,
+                "w": 173.3,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "Evidencias de funcionamiento",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 461.09,
+                "w": 192.25,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 469.19,
+                "w": 178.92,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Por qué Kunak AIR es la mejor estación de calidad del aire?",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 497.63,
+                "w": 192.25,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 505.72,
+                "w": 180.36,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Cómo garantiza Kunak la mejor precisión?",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision",
+              "estado": [
+                "current-menu-item",
+                "current_page_item"
+              ],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 550.41,
+                "w": 192.25,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 558.5,
+                "w": 189.97,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(0, 117, 201)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Video tutoriales",
+              "href": "/centro-de-ayuda/kunak-air/video-tutoriales",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 603.19,
+                "w": 209.84,
+                "h": 29.25
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 611.69,
+                "w": 115.5,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 0,
+              "texto": "Kunak Air Cloud",
+              "href": "/centro-de-ayuda/kunak-air-cloud",
+              "estado": [],
+              "hijos": 2,
+              "conCaja": true,
+              "liRect": {
+                "x": 100.8,
+                "y": 643.63,
+                "w": 227.44,
+                "h": 143.8
+              },
+              "liRitmo": {
+                "paddingTop": "6.4px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 100.8,
+                "y": 649.02,
+                "w": 121.72,
+                "h": 22
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Artículos de ayuda",
+              "href": "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda",
+              "estado": [],
+              "hijos": 1,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 681.2,
+                "w": 209.84,
+                "h": 65.78
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 689.7,
+                "w": 134.33,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Qué es Kunak AIR Cloud?",
+              "href": "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 721.64,
+                "w": 192.25,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 729.73,
+                "w": 154.45,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Video tutoriales",
+              "href": "/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 758.17,
+                "w": 209.84,
+                "h": 29.25
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 766.67,
+                "w": 115.5,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            }
+          ]
+        },
+        "hojasAplicadas": 2,
+        "fuenteCargada": true
+      },
       "hay": true,
       "barra": {
         "clases": [
@@ -60,7 +2181,14 @@
           "marginLeft": "0px"
         },
         "display": "block",
-        "backgroundColor": "rgba(0, 0, 0, 0)"
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borde": {
+          "right": "1px solid rgba(0, 0, 0, 0.1)",
+          "top": "0px none",
+          "bottom": "0px none",
+          "left": "0px none"
+        },
+        "boxSizing": "border-box"
       },
       "columna": {
         "clases": [
@@ -184,6 +2312,133 @@
       "menu": {
         "nLi": 12,
         "nNiveles": 2,
+        "uls": [
+          {
+            "nivel": 0,
+            "clases": [
+              "menu"
+            ],
+            "rect": {
+              "x": 100.8,
+              "y": 290.3,
+              "w": 227.5,
+              "h": 493.66
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "0px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          },
+          {
+            "nivel": 1,
+            "clases": [
+              "sub-menu"
+            ],
+            "rect": {
+              "x": 118.39,
+              "y": 327.88,
+              "w": 209.91,
+              "h": 301.09
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "17.6px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          },
+          {
+            "nivel": 2,
+            "clases": [
+              "sub-menu"
+            ],
+            "rect": {
+              "x": 135.98,
+              "y": 368.31,
+              "w": 192.31,
+              "h": 220.22
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "17.6px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          },
+          {
+            "nivel": 1,
+            "clases": [
+              "sub-menu"
+            ],
+            "rect": {
+              "x": 118.39,
+              "y": 677.73,
+              "w": 209.91,
+              "h": 106.22
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "17.6px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          },
+          {
+            "nivel": 2,
+            "clases": [
+              "sub-menu"
+            ],
+            "rect": {
+              "x": 135.98,
+              "y": 718.17,
+              "w": 192.31,
+              "h": 25.34
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "17.6px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          }
+        ],
         "ulRect": {
           "x": 100.8,
           "y": 290.3,
@@ -229,6 +2484,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "16px",
+              "fontWeight": "700",
+              "lineHeight": "20px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 100.8,
               "y": 295.69,
@@ -287,6 +2554,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "15px",
+              "fontWeight": "700",
+              "lineHeight": "18.75px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 118.39,
               "y": 336.38,
@@ -338,6 +2617,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 376.41,
@@ -389,6 +2680,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 412.94,
@@ -440,6 +2743,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 465.72,
@@ -491,6 +2806,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 502.25,
@@ -545,6 +2872,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 555.03,
@@ -596,6 +2935,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "15px",
+              "fontWeight": "700",
+              "lineHeight": "18.75px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 118.39,
               "y": 608.22,
@@ -647,6 +2998,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "16px",
+              "fontWeight": "700",
+              "lineHeight": "20px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 100.8,
               "y": 645.55,
@@ -698,6 +3061,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "15px",
+              "fontWeight": "700",
+              "lineHeight": "18.75px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 118.39,
               "y": 686.23,
@@ -749,6 +3124,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 726.27,
@@ -800,6 +3187,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "15px",
+              "fontWeight": "700",
+              "lineHeight": "18.75px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 118.39,
               "y": 763.2,
@@ -847,6 +3246,2119 @@
       },
       "fuentes": 4,
       "peticionesBloqueadas": 27,
+      "httpClon": 200,
+      "peticionesBloqueadasClon": 0,
+      "original": {
+        "hay": true,
+        "barra": {
+          "clases": [
+            "et_pb_module",
+            "et_pb_sidebar_0_tb_body",
+            "et_pb_widget_area",
+            "clearfix",
+            "et_pb_widget_area_left",
+            "et_pb_bg_layout_light"
+          ],
+          "rect": {
+            "x": 100.8,
+            "y": 290.3,
+            "w": 258.5,
+            "h": 493.66
+          },
+          "ritmo": {
+            "paddingTop": "0px",
+            "paddingRight": "30px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          },
+          "display": "block",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borde": {
+            "right": "1px solid rgba(0, 0, 0, 0.1)",
+            "top": "0px none",
+            "bottom": "0px none",
+            "left": "0px none"
+          },
+          "boxSizing": "border-box"
+        },
+        "columna": {
+          "clases": [
+            "et_pb_column",
+            "et_pb_column_1_4",
+            "et_pb_column_0_tb_body",
+            "et_pb_sticky_module",
+            "et_pb_css_mix_blend_mode_passthrough"
+          ],
+          "rect": {
+            "x": 100.8,
+            "y": 279.11,
+            "w": 258.5,
+            "h": 536.84
+          },
+          "ritmo": {
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "68.1094px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          }
+        },
+        "nWidgets": 3,
+        "nWidgetsVacios": 1,
+        "nWidgetsSinCaja": 2,
+        "widgets": [
+          {
+            "i": 0,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "widget",
+              "widget_nav_menu"
+            ],
+            "vacio": false,
+            "conCaja": true,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 290.3,
+              "w": 227.5,
+              "h": 493.66
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          },
+          {
+            "i": 1,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "widget_text",
+              "widget",
+              "widget_custom_html"
+            ],
+            "vacio": true,
+            "conCaja": false,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 815.95,
+              "w": 227.5,
+              "h": 0
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "widget_text",
+              "widget",
+              "widget_custom_html"
+            ],
+            "vacio": false,
+            "conCaja": false,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 815.95,
+              "w": 227.5,
+              "h": 0
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          }
+        ],
+        "menu": {
+          "nLi": 12,
+          "nNiveles": 2,
+          "uls": [
+            {
+              "nivel": 0,
+              "clases": [
+                "menu"
+              ],
+              "rect": {
+                "x": 100.8,
+                "y": 290.3,
+                "w": 227.5,
+                "h": 493.66
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 1,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 118.39,
+                "y": 327.88,
+                "w": 209.91,
+                "h": 301.09
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 2,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 135.98,
+                "y": 368.31,
+                "w": 192.31,
+                "h": 220.22
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 1,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 118.39,
+                "y": 677.73,
+                "w": 209.91,
+                "h": 106.22
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 2,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 135.98,
+                "y": 718.17,
+                "w": 192.31,
+                "h": 25.34
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            }
+          ],
+          "ulRect": {
+            "x": 100.8,
+            "y": 290.3,
+            "w": 227.5,
+            "h": 493.66
+          },
+          "ulRitmo": {
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          },
+          "items": [
+            {
+              "nivel": 0,
+              "texto": "Kunak AIR",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/",
+              "estado": [
+                "current-menu-ancestor",
+                "current-menu-parent",
+                "current-page-ancestor",
+                "current-page-parent",
+                "current_page_ancestor",
+                "current_page_parent"
+              ],
+              "hijos": 2,
+              "conCaja": true,
+              "liRect": {
+                "x": 100.8,
+                "y": 290.3,
+                "w": 227.5,
+                "h": 338.67
+              },
+              "liRitmo": {
+                "paddingTop": "6.4px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 100.8,
+                "y": 295.69,
+                "w": 76.61,
+                "h": 22
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Artículos de ayuda",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/",
+              "estado": [
+                "current-menu-item",
+                "current_page_item"
+              ],
+              "hijos": 5,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 327.88,
+                "w": 209.91,
+                "h": 260.66
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 336.38,
+                "w": 134.33,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(0, 117, 201)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Qué es Kunak AIR?",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 368.31,
+                "w": 192.31,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 376.41,
+                "w": 116.41,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "Qué puedes hacer con Kunak AIR?",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 404.84,
+                "w": 192.31,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 412.94,
+                "w": 173.3,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "Evidencias de funcionamiento",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 457.63,
+                "w": 192.31,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 465.72,
+                "w": 178.92,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Por qué Kunak AIR es la mejor estación de calidad del aire?",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 494.16,
+                "w": 192.31,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 502.25,
+                "w": 180.36,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Cómo garantiza Kunak la mejor precisión?",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 546.94,
+                "w": 192.31,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 555.03,
+                "w": 189.97,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Video tutoriales",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air/video-tutoriales/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 599.72,
+                "w": 209.91,
+                "h": 29.25
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 608.22,
+                "w": 115.5,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 0,
+              "texto": "Kunak Air Cloud",
+              "href": "https://kunakair.com/es/centro-de-ayuda/kunak-air-cloud/",
+              "estado": [],
+              "hijos": 2,
+              "conCaja": true,
+              "liRect": {
+                "x": 100.8,
+                "y": 640.16,
+                "w": 227.5,
+                "h": 143.8
+              },
+              "liRitmo": {
+                "paddingTop": "6.4px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 100.8,
+                "y": 645.55,
+                "w": 121.72,
+                "h": 22
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Artículos de ayuda",
+              "href": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/",
+              "estado": [],
+              "hijos": 1,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 677.73,
+                "w": 209.91,
+                "h": 65.78
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 686.23,
+                "w": 134.33,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Qué es Kunak AIR Cloud?",
+              "href": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 718.17,
+                "w": 192.31,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 726.27,
+                "w": 154.45,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Video tutoriales",
+              "href": "https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales/",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 754.7,
+                "w": 209.91,
+                "h": 29.25
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 763.2,
+                "w": 115.5,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            }
+          ]
+        },
+        "hojasAplicadas": 19,
+        "fuenteCargada": true
+      },
+      "clon": {
+        "hay": true,
+        "barra": {
+          "clases": [
+            "ayuda-barra"
+          ],
+          "rect": {
+            "x": 100.8,
+            "y": 293.77,
+            "w": 258.44,
+            "h": 493.66
+          },
+          "ritmo": {
+            "paddingTop": "0px",
+            "paddingRight": "30px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          },
+          "display": "block",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borde": {
+            "right": "1px solid rgba(0, 0, 0, 0.1)",
+            "top": "0px solid",
+            "bottom": "0px solid",
+            "left": "0px solid"
+          },
+          "boxSizing": "border-box"
+        },
+        "columna": null,
+        "nWidgets": 3,
+        "nWidgetsVacios": 2,
+        "nWidgetsSinCaja": 2,
+        "widgets": [
+          {
+            "i": 0,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "ayuda-widget"
+            ],
+            "vacio": false,
+            "conCaja": true,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 293.77,
+              "w": 227.44,
+              "h": 493.66
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          },
+          {
+            "i": 1,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "ayuda-widget"
+            ],
+            "vacio": true,
+            "conCaja": false,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 819.42,
+              "w": 227.44,
+              "h": 0
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          },
+          {
+            "i": 2,
+            "tag": "section",
+            "id": "help-center-sidebar",
+            "clases": [
+              "ayuda-widget"
+            ],
+            "vacio": true,
+            "conCaja": false,
+            "display": "block",
+            "rect": {
+              "x": 100.8,
+              "y": 819.42,
+              "w": 227.44,
+              "h": 0
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "32px",
+              "marginLeft": "0px"
+            },
+            "hijos": 1
+          }
+        ],
+        "menu": {
+          "nLi": 12,
+          "nNiveles": 2,
+          "uls": [
+            {
+              "nivel": 0,
+              "clases": [
+                "ayuda-menu"
+              ],
+              "rect": {
+                "x": 100.8,
+                "y": 293.77,
+                "w": 227.44,
+                "h": 493.66
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 1,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 118.39,
+                "y": 331.34,
+                "w": 209.84,
+                "h": 301.09
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 2,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 135.98,
+                "y": 371.78,
+                "w": 192.25,
+                "h": 220.22
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 1,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 118.39,
+                "y": 681.2,
+                "w": 209.84,
+                "h": 106.22
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            },
+            {
+              "nivel": 2,
+              "clases": [
+                "sub-menu"
+              ],
+              "rect": {
+                "x": 135.98,
+                "y": 721.64,
+                "w": 192.25,
+                "h": 25.34
+              },
+              "ritmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "17.6px"
+              },
+              "listStyleType": "none",
+              "listStylePosition": "outside",
+              "display": "block"
+            }
+          ],
+          "ulRect": {
+            "x": 100.8,
+            "y": 293.77,
+            "w": 227.44,
+            "h": 493.66
+          },
+          "ulRitmo": {
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "marginTop": "0px",
+            "marginRight": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px"
+          },
+          "items": [
+            {
+              "nivel": 0,
+              "texto": "Kunak AIR",
+              "href": "/centro-de-ayuda/kunak-air",
+              "estado": [
+                "current-menu-ancestor",
+                "current-page-ancestor",
+                "current_page_ancestor"
+              ],
+              "hijos": 2,
+              "conCaja": true,
+              "liRect": {
+                "x": 100.8,
+                "y": 293.77,
+                "w": 227.44,
+                "h": 338.67
+              },
+              "liRitmo": {
+                "paddingTop": "6.4px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 100.8,
+                "y": 299.16,
+                "w": 76.61,
+                "h": 22
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Artículos de ayuda",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda",
+              "estado": [
+                "current-menu-item",
+                "current_page_item"
+              ],
+              "hijos": 5,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 331.34,
+                "w": 209.84,
+                "h": 260.66
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 339.84,
+                "w": 134.33,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(0, 117, 201)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Qué es Kunak AIR?",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 371.78,
+                "w": 192.25,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 379.88,
+                "w": 116.41,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "Qué puedes hacer con Kunak AIR?",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 408.31,
+                "w": 192.25,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 416.41,
+                "w": 173.3,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "Evidencias de funcionamiento",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 461.09,
+                "w": 192.25,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 469.19,
+                "w": 178.92,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Por qué Kunak AIR es la mejor estación de calidad del aire?",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 497.63,
+                "w": 192.25,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 505.72,
+                "w": 180.36,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Cómo garantiza Kunak la mejor precisión?",
+              "href": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 550.41,
+                "w": 192.25,
+                "h": 41.59
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 558.5,
+                "w": 189.97,
+                "h": 34.25
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Video tutoriales",
+              "href": "/centro-de-ayuda/kunak-air/video-tutoriales",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 603.19,
+                "w": 209.84,
+                "h": 29.25
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 611.69,
+                "w": 115.5,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 0,
+              "texto": "Kunak Air Cloud",
+              "href": "/centro-de-ayuda/kunak-air-cloud",
+              "estado": [],
+              "hijos": 2,
+              "conCaja": true,
+              "liRect": {
+                "x": 100.8,
+                "y": 643.63,
+                "w": 227.44,
+                "h": 143.8
+              },
+              "liRitmo": {
+                "paddingTop": "6.4px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 100.8,
+                "y": 649.02,
+                "w": 121.72,
+                "h": 22
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "16px",
+                "fontWeight": "700",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Artículos de ayuda",
+              "href": "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda",
+              "estado": [],
+              "hijos": 1,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 681.2,
+                "w": 209.84,
+                "h": 65.78
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 689.7,
+                "w": 134.33,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 2,
+              "texto": "¿Qué es Kunak AIR Cloud?",
+              "href": "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 135.98,
+                "y": 721.64,
+                "w": 192.25,
+                "h": 25.34
+              },
+              "liRitmo": {
+                "paddingTop": "9.1px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 135.98,
+                "y": 729.73,
+                "w": 154.45,
+                "h": 18
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "13px",
+                "fontWeight": "400",
+                "lineHeight": "16.25px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            },
+            {
+              "nivel": 1,
+              "texto": "Video tutoriales",
+              "href": "/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales",
+              "estado": [],
+              "hijos": 0,
+              "conCaja": true,
+              "liRect": {
+                "x": 118.39,
+                "y": 758.17,
+                "w": 209.84,
+                "h": 29.25
+              },
+              "liRitmo": {
+                "paddingTop": "10.5px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "11.2px",
+                "marginRight": "0px",
+                "marginBottom": "3.2px",
+                "marginLeft": "0px"
+              },
+              "liDisplay": "list-item",
+              "liListStyleType": "none",
+              "liTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aDisplay": "inline",
+              "aRect": {
+                "x": 118.39,
+                "y": 766.67,
+                "w": 115.5,
+                "h": 21
+              },
+              "aTipo": {
+                "fontFamily": "Manrope",
+                "fontSize": "15px",
+                "fontWeight": "700",
+                "lineHeight": "18.75px",
+                "color": "rgb(51, 51, 51)",
+                "textTransform": "none",
+                "letterSpacing": "normal",
+                "textDecorationLine": "none"
+              },
+              "aRitmo": {
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px"
+              }
+            }
+          ]
+        },
+        "hojasAplicadas": 2,
+        "fuenteCargada": true
+      },
       "hay": true,
       "barra": {
         "clases": [
@@ -874,7 +5386,14 @@
           "marginLeft": "0px"
         },
         "display": "block",
-        "backgroundColor": "rgba(0, 0, 0, 0)"
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borde": {
+          "right": "1px solid rgba(0, 0, 0, 0.1)",
+          "top": "0px none",
+          "bottom": "0px none",
+          "left": "0px none"
+        },
+        "boxSizing": "border-box"
       },
       "columna": {
         "clases": [
@@ -998,6 +5517,133 @@
       "menu": {
         "nLi": 12,
         "nNiveles": 2,
+        "uls": [
+          {
+            "nivel": 0,
+            "clases": [
+              "menu"
+            ],
+            "rect": {
+              "x": 100.8,
+              "y": 290.3,
+              "w": 227.5,
+              "h": 493.66
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "0px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          },
+          {
+            "nivel": 1,
+            "clases": [
+              "sub-menu"
+            ],
+            "rect": {
+              "x": 118.39,
+              "y": 327.88,
+              "w": 209.91,
+              "h": 301.09
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "17.6px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          },
+          {
+            "nivel": 2,
+            "clases": [
+              "sub-menu"
+            ],
+            "rect": {
+              "x": 135.98,
+              "y": 368.31,
+              "w": 192.31,
+              "h": 220.22
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "17.6px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          },
+          {
+            "nivel": 1,
+            "clases": [
+              "sub-menu"
+            ],
+            "rect": {
+              "x": 118.39,
+              "y": 677.73,
+              "w": 209.91,
+              "h": 106.22
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "17.6px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          },
+          {
+            "nivel": 2,
+            "clases": [
+              "sub-menu"
+            ],
+            "rect": {
+              "x": 135.98,
+              "y": 718.17,
+              "w": 192.31,
+              "h": 25.34
+            },
+            "ritmo": {
+              "paddingTop": "0px",
+              "paddingRight": "0px",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "marginTop": "0px",
+              "marginRight": "0px",
+              "marginBottom": "0px",
+              "marginLeft": "17.6px"
+            },
+            "listStyleType": "none",
+            "listStylePosition": "outside",
+            "display": "block"
+          }
+        ],
         "ulRect": {
           "x": 100.8,
           "y": 290.3,
@@ -1046,6 +5692,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "16px",
+              "fontWeight": "700",
+              "lineHeight": "20px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 100.8,
               "y": 295.69,
@@ -1100,6 +5758,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "15px",
+              "fontWeight": "700",
+              "lineHeight": "18.75px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 118.39,
               "y": 336.38,
@@ -1151,6 +5821,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 376.41,
@@ -1202,6 +5884,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 412.94,
@@ -1253,6 +5947,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 465.72,
@@ -1304,6 +6010,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 502.25,
@@ -1355,6 +6073,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 555.03,
@@ -1406,6 +6136,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "15px",
+              "fontWeight": "700",
+              "lineHeight": "18.75px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 118.39,
               "y": 608.22,
@@ -1457,6 +6199,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "16px",
+              "fontWeight": "700",
+              "lineHeight": "20px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 100.8,
               "y": 645.55,
@@ -1508,6 +6262,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "15px",
+              "fontWeight": "700",
+              "lineHeight": "18.75px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 118.39,
               "y": 686.23,
@@ -1559,6 +6325,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "13px",
+              "fontWeight": "400",
+              "lineHeight": "16.25px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 135.98,
               "y": 726.27,
@@ -1610,6 +6388,18 @@
               "marginLeft": "0px"
             },
             "liDisplay": "list-item",
+            "liListStyleType": "none",
+            "liTipo": {
+              "fontFamily": "Manrope",
+              "fontSize": "15px",
+              "fontWeight": "700",
+              "lineHeight": "18.75px",
+              "color": "rgb(51, 51, 51)",
+              "textTransform": "none",
+              "letterSpacing": "normal",
+              "textDecorationLine": "none"
+            },
+            "aDisplay": "inline",
             "aRect": {
               "x": 118.39,
               "y": 763.2,
@@ -1976,5 +6766,20 @@
       }
     },
     "mal": 0
+  },
+  "dosLados": {
+    "paginasConClon": 2,
+    "distintos": [
+      {
+        "eje": "barra.w",
+        "o": 258.5,
+        "c": 258.44
+      },
+      {
+        "eje": "widget0.w",
+        "o": 227.5,
+        "c": 227.44
+      }
+    ]
   }
 }

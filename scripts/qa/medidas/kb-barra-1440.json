@@ -1,7 +1,7 @@
 {
   "meta": {
     "sonda": "kb-barra",
-    "fecha": "2026-08-25",
+    "fecha": "2026-08-26",
     "ancho": 1440,
     "movil": false,
     "contrato": "FIDELIDAD (1440/390) · UN SOLO LADO (el original)",
@@ -19322,7 +19322,7 @@
         "resueltas": 16
       },
       "fuentes": 4,
-      "peticionesBloqueadas": 26,
+      "peticionesBloqueadas": 27,
       "httpClon": 200,
       "peticionesBloqueadasClon": 0,
       "original": {
