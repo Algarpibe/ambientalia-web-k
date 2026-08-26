@@ -1,0 +1,176 @@
+═══ LA MESA DE F3-4 · tres decisiones con su reparto · 115.ª ESCALÓN 2 ═══
+
+  NO se decide ninguna. Se dejan DECIDIBLES.
+
+1 · LAS DOS UNIDADES, SIEMPRE LAS DOS (§*cada denominador con su unidad*)
+
+  familia             TÉRMINOS  RUTAS   /page/N  sin captura
+  categoria                 6     27        23            2
+  autor                     6     34        28            0
+  taxonomia-sector         11     13         7            5
+
+  ⚠ Y LOS CÓDIGOS DE ESTADO CORRIGEN UNA DE LAS DOS UNIDADES, no las dos:
+
+     · `categoria`: las 2 formas acentuadas dan **301** a su gemela sin
+       tilde, o sea que son ALIAS DE CODIFICACIÓN y no términos.
+       En unidad TÉRMINO: 6 → **4**
+       En unidad URL declarada: **6**, y SIGUE SIENDO CIERTO.
+       No se sustituye una por la otra (§*corregir un denominador no es
+       sustituirlo en todas partes*): se escriben las dos.
+
+     · `sector`: 5 de 11 términos dan **301**.
+         /es/sector/industria/                      → /es/sectores/control-de-emisiones-industriales/
+         /es/sector/investigacion-consultoria/      → /es/sectores/estudio-de-la-contaminacion-atmosferica/
+         /es/sector/mineria/                        → /es/sector/mineria/   ⛔ BUCLE A SÍ MISMA
+         /es/sector/obras/                          → /es/sectores/contaminacion-por-construccion/
+         /es/sector/urbano/                         → /es/sectores/calidad-del-aire-en-las-ciudades/
+
+2 · QUIÉN CONSUME CADA UNA (ESCALÓN 1 · seis canales · 256 documentos)
+
+  categoria    clase de término en  63 docs · MECANISMO en  0 · enlaces en 135
+  author       clase de término en   0 docs · MECANISMO en  0 · enlaces en  36
+  sector       clase de término en  29 docs · MECANISMO en  2 · enlaces en  15
+
+  ⇒ Ninguna se consume SIN enlazarse. El único mecanismo del corpus es el
+    filtro de Isotope de `/casos-de-exito/`, vive en 2 documentos y ADEMÁS
+    enlaza los 11 sectores.
+
+2bis · LA SEPARADORA DE `author`, EJERCITADA (no fichada)
+
+  entradas de blog capturadas ............. 152
+  con `ficha-autor-revisor` en el cuerpo .. 152   (TODAS)
+  que enlazan a /author/ .................. 152
+
+  reparto por autor:
+     kunak                 143 entradas
+     edurne-ibarrola         4 entradas
+     irene                   3 entradas
+     javier-fernandez        3 entradas
+     admin                   1 entradas
+
+  ⇒ **LA SEPARADORA CONTESTA**: `author` NO se consume sólo desde su propio
+    archivo. Se consume desde el CUERPO de 152 de 152 entradas, con una
+    ficha «Escrito por…» / «Revisado y aprobado por…» que lleva enlace y foto.
+    El candidato «no se replica» queda **DESCARTADO POR EL DATO**: rompería
+    la firma de las 152 entradas.
+
+  ⇒ Y CONTESTA ADEMÁS LA SEGUNDA SEPARADORA, la del modelo — «¿un miembro
+    en DOS términos de la misma taxonomía?»:
+
+       entradas con MÁS DE UN autor: **2 de 152**, y con PAPELES DISTINTOS:
+          irene + kunak                  calidad-del-aire-en-las-comunidades.html
+          edurne-ibarrola + kunak        monitorizacion-near-reference.html
+
+    Los dos casos separan «Revisado y aprobado por» de «Escrito por», así
+    que la relación entrada→autor **no cabe en un campo simple**: es 1:N
+    CON PAPEL. Dominio barrido entero (152), positivos 2 — se publica la
+    fracción, no un «se comprobó» (§*el listón es todo el dominio alcanzable*).
+
+  ⚠ ALCANCE AMPLIADO: el ESCALÓN 1 midió `corpus/fase-3` (256 docs) y
+    declaró que NO cubría el corpus de detalles. El dato de `author` vivía
+    justo ahí. Su «0 en los seis canales» **sigue siendo cierto de los
+    listados y archivos**, y ahora se sabe que **no lo es del sitio**.
+
+3 · EL COSTE, DERIVADO DE A-SP13 (ESQUEMA-CMS.md §2.3): **0.2228 s/ruta**
+   lineal y sin codo, medido — no una estimación.
+
+4 · LOS CANDIDATOS · rutas que añade cada uno, y su SEPARADORA
+
+  ══ (a) CATEGORIA
+
+     UNIDADES: 4 términos + 2 alias de codificación (301) · 27 RUTAS en disco, de las que 23 son /page/N
+
+     LO MEDIDO:
+       · régimen -T en 4/4 → la lectura que vale es la PLANTILLADA: los valores los fijó quien construyó la plantilla, no un editor de instancia
+       · sirve contenido: 2–9 tarjetas, cuerpo 7 650–21 405 B
+       · enlazada desde 15 de 35 formas de listado
+       · consumo: clase de término en 63 docs, mecanismo en 0, enlaces en 135
+
+     CANDIDATOS · rutas que añade · coste de rebuild:
+       · COLECCIÓN (el término es contenido propio)      27 rutas     6.0 s
+       · RELACIÓN sin archivo (sólo entrada → término)    0 rutas     0.0 s
+       · «no se replica»                                  0 rutas     0.0 s
+
+     SEPARADORA: un término de categoria con contenido propio que NO se derive de sus miembros — un texto de cabecera, una imagen, un orden distinto del de fecha. Si lo hay ⇒ COLECCIÓN; si no lo hay en ninguno de los 4 ⇒ es una CONSULTA y basta la relación + el listado (§*un listado no tiene contenido propio: es una CONSULTA*).
+
+     SIN MEDIR: el cuerpo de los 4 términos no se ha comparado entre sí para ver si su cabecera es plantilla o campo. Cardinal: 4 de 4 sin comparar.
+
+  ══ (b) AUTHOR
+
+     UNIDADES: 6 términos · 34 RUTAS, de las que 28 son la paginación de UN SOLO término (`kunak`)
+
+     LO MEDIDO:
+       · régimen -- en 6/6 → CUARTO casillero: ni builder ni theme-builder, plantilla PHP del tema. No existe «quien editó la instancia»
+       · sirve contenido: 0–6 tarjetas, cuerpo 1 469–12 978 B. El de 0 tarjetas (`mar_ramirez`) sigue teniendo 1 469 B de cuerpo
+       · enlazada desde 0 de 35 formas de listado, y 0 en los seis canales dentro de `corpus/fase-3`
+       · ⚠ pero SÍ desde el CUERPO de las entradas: 152/152 traen `ficha-autor-revisor` con enlace y foto (§2bis). El 0 de arriba es de los LISTADOS, no del sitio
+       · y la relación es 1:N CON PAPEL: 2 de 152 entradas separan «Revisado y aprobado por» de «Escrito por»
+
+     CANDIDATOS · rutas que añade · coste de rebuild:
+       · COLECCIÓN de autores (con archivo)              34 rutas     7.6 s
+       · COLECCIÓN sin archivo (dato sí, URL no)          0 rutas     0.0 s
+       · «no se replica»                                  0 rutas     0.0 s
+
+     SEPARADORA: CONTESTADA en esta misma tanda (§2bis) y era un barrido offline, así que se ejercitó en vez de ficharse. De los 36 enlaces a /author/ dentro de fase-3, 34 son del propio archivo y 2 de páginas sueltas — pero ampliando a corpus/entradas-blog, 152 de 152 entradas lo enlazan desde el cuerpo. Lo que queda por separar es otra cosa: si el archivo /author/ tiene contenido propio (los 6 cuerpos van de 1 469 a 12 978 B) o es sólo la plantilla del tema con la lista dentro.
+
+     SIN MEDIR: la varianza entre instancias del régimen -- no está medida en ningún sitio del repo — CLAUDE.md lo declara SIN PROBAR. Estas 6 son la muestra que existe: 6 instancias sin comparar entre sí. Cardinal: 6 de 6. Es lo que decidiría la separadora que queda.
+
+  ══ (c) SECTOR  —  YA VIENE PARTIDA EN DOS DESDE LA 108.ª
+
+     UNIDADES: 11 términos · 13 RUTAS · 5 dan 301
+
+     LO MEDIDO:
+       · régimen -T en 6/6 (los capturados)
+       · 0 tarjetas en 6 de 6, por los TRES selectores. Cuerpo ~3.3 KB = miga + barra lateral. No lista NADA, y su paginación tampoco
+       · 5 de 11 términos redirigen: 4 al arquetipo SECTOR ya clonado, y `mineria` es un BUCLE a sí misma
+       · consumo: clase de término en 29 docs, mecanismo en 2 (el filtro de Isotope, que además enlaza)
+
+     CANDIDATOS · rutas que añade · coste de rebuild:
+       · (a) la RELACIÓN `caso → sector`                  0 rutas     0.0 s
+       · (b) el ARCHIVO `/es/sector/*`                   13 rutas     2.9 s
+
+     SEPARADORA: para (a): un caso de éxito en DOS sectores a la vez, o un sector con orden propio. Si no lo hay, la relación cabe como campo simple en el caso y no necesita entidad. Para (b): que alguna URL /sector/* esté enlazada desde fuera del filtro — hoy son 15 documentos, todos del propio filtro o del archivo.
+
+     SIN MEDIR: el mecanismo del bucle de mineria NO se explica aquí: se ficha con su número (5 saltos, redirect: manual) y lo dirimiría leer la cabecera Location de cada salto con el Host y el esquema completos — un bucle 301 a sí misma suele ser un canonical/redirect mal configurado que depende de la barra final o del idioma. Necesita red. Un mecanismo sin medir que entra en una mesa la contamina.
+
+5 · EL CRITERIO DE ASIMETRÍA, CON SU OPERACIÓN ESCRITA (§regla 23)
+
+  El enunciado solo —«entre dos opciones reversibles se toma la que se
+  deshace mejor»— es SIMÉTRICO y al releerlo el signo se invierte. Derivado
+  en la 114.ª: 11 citas en el repo, 2 invertidas. Así que se escribe con la
+  operación delante:
+
+     **se toma la que empieza SEPARADA, porque deshacerla es FUSIONAR, y
+      fusionar es el lado barato.**
+
+  Aplicado a las tres, con la operación de deshacer NOMBRADA en cada una:
+
+     · (a) categoria — la separada es **RELACIÓN sin archivo**.
+           deshacerla = **emitir las 27 rutas después** → barato (6.0 s);
+           deshacer la otra = **retirar URLs ya publicadas** → caro.
+
+     · (b) author .... — la separada es **COLECCIÓN sin archivo**.
+           deshacerla = **emitir las 34 rutas después** → barato (7.6 s);
+           deshacer la otra = **retirar URLs ya publicadas** → caro.
+           ⚠ «no se replica» NO es la opción separada: es la que PIERDE
+           dato, y deshacerla exige re-extraer las 152 fichas. No compite.
+
+     · (c) sector .... — ya viene partida, y la partición SE MANTIENE: es
+           lo que la hizo decidible. (a) y (b) son DOS decisiones, y en
+           las dos la separada es la que no emite: **modelar la relación
+           sin emitir el archivo**. Deshacerla = emitir las 13 rutas (2.9 s).
+
+  ⚠ Y si una decisión se toma CONTRA el criterio, se dice qué restricción
+    pesó más Y SE LE PONE CONDICIÓN DE REAPERTURA. Una decisión alineada
+    puede no llevarla; una que lo contradice, siempre.
+
+6 · LO QUE ESTA MESA NO TRAE, con su nombre
+
+  · el eje COMPORTAMIENTO (0/31 en el repo): un filtro montado en JS tras
+    una petición no deja rastro en el HTML servido. Las tres decisiones se
+    toman sobre el HTML SERVIDO, y eso se declara;
+  · el mecanismo del bucle de `mineria`: fichado con su número, no
+    explicado. Necesita red;
+  · la varianza entre instancias del régimen `--`, que `CLAUDE.md` declara
+    SIN PROBAR y que decide cómo se lee `author`. 6 instancias sin comparar.
+

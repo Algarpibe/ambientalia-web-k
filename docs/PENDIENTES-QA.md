@@ -22504,3 +22504,87 @@ El barrido de `post_class()` encontró prefijos que la mesa no nombra:
 **`tag` (12 términos)** · **`resources` (10)** · **`scientific` (4)** ·
 **`case` (1)**. No se investigan aquí — se **nombran con su cardinal**, porque
 un hallazgo lateral sin número es una nota al pie (§regla 14).
+
+> ⚠ **ALCANCE AMPLIADO EL MISMO DÍA (ESCALÓN 2), y corrige el §6 de arriba:**
+> el corpus de esta sonda era `corpus/fase-3` (listados y archivos), **que no
+> contiene las entradas de blog** — y el dato de `author` vivía justo ahí.
+> Ampliado el barrido, **152 de 152 entradas** enlazan a `/author/` desde el
+> cuerpo. **El «0 en los seis canales» sigue siendo cierto DE LOS LISTADOS y
+> resulta que no lo es del sitio.** Es §*la salida servida incluye el canal que
+> no estabas mirando*, con el canal puesto en **una carpeta del corpus**, y es
+> la razón por la que la limitación se declaró con su nombre en vez de darse
+> por cubierta. Detalle en §F3-4-MESA.
+
+---
+
+## ⛔ F3-4-MESA · TRES DECISIONES DE PROPIETARIO, DEJADAS DECIDIBLES — **ABIERTA 2026-08-26** (115.ª, ESCALÓN 2)
+
+**No se decide ninguna: se dejan decidibles.** Las seis decisiones de propietario
+de esta etapa se tomaron a la primera porque llegaron con su reparto delante; las
+dos que se subieron sin él tuvieron que volver.
+
+**La mesa completa, con las tres fichas, sus candidatos, sus costes y sus
+separadoras:** `docs/research/cola-larga/MESA-F3-4.md`.
+**Derivación:** `derivaciones/mesa-f34-115.{mjs,log,json}` — todas las cifras se
+derivan de tres congeladas y del ESQUEMA, y la sonda **tira en voz alta** si una
+se renombra, en vez de publicar el número de ayer.
+**En el registro de decisiones abiertas:** `ESQUEMA-CMS.md` §7, como
+`CMS-F34-CATEGORIA` · `CMS-F34-AUTHOR` · `CMS-F34-SECTOR`.
+
+### El resumen que decide dónde mirar
+
+| decisión | unidades | candidato separado | coste de deshacerlo | ¿«no se replica»? |
+|---|---|---|---|---|
+| **(a)** `categoria` | **4 términos + 2 alias** · **27 rutas** | RELACIÓN sin archivo | emitir 27 rutas · **6.0 s** | **descartado por el dato** (15 formas la enlazan) |
+| **(b)** `author` | **6 términos** · **34 rutas** (28 de un solo término) | COLECCIÓN sin archivo | emitir 34 rutas · **7.6 s** | **descartado por el dato** (152/152 entradas) |
+| **(c)** `sector` | **11 términos** · **13 rutas** · **5 dan 301** | **ya viene PARTIDA**: relación (0 rutas) / archivo (13 · 2.9 s) | emitir 13 rutas | — |
+
+Coste por ruta: **0.2228 s**, derivado de **A-SP13** (`ESQUEMA-CMS.md` §2.3),
+lineal y sin codo. **Medido, no estimado.**
+
+### Los tres hallazgos de la mesa que no estaban antes
+
+1. **`author` se consume desde el CUERPO de las 152 entradas de blog**, con una
+   `ficha-autor-revisor` («Escrito por…»). El 0 del censo era **de los
+   listados**;
+2. **la relación entrada→autor es 1:N CON PAPEL**: **2 de 152** entradas separan
+   *«Revisado y aprobado por»* de *«Escrito por»* (`irene + kunak` ·
+   `edurne-ibarrola + kunak`). **No cabe en un campo simple.** Dominio barrido
+   entero (152), positivos 2 — se publica la fracción, no un «se comprobó»;
+3. **los «12 botones» del filtro son 11 sectores + 1 comodín `"*"`.**
+
+> **Y la separadora de `author` se EJERCITÓ en vez de ficharse**, porque era un
+> barrido offline: ficharla habría sido mandar a la tanda siguiente a hacer lo
+> que ésta podía hacer.
+
+### Lo que la mesa declara SIN MEDIR, con su cardinal
+
+| qué | cardinal | qué haría falta |
+|---|---|---|
+| el cuerpo de los 4 términos de `categoria`, sin comparar entre sí | **4 de 4** | un barrido offline |
+| la **varianza entre instancias del régimen `--`** — `CLAUDE.md` la declara SIN PROBAR, y es lo que decidiría cómo se lee `author` | **6 de 6** | un barrido offline |
+| el **mecanismo del bucle de `mineria`** (5 saltos, 301 a sí misma) | **1** | **red**: leer la cabecera `Location` de cada salto con `Host` y esquema completos |
+| el eje **COMPORTAMIENTO** | **0/31** en el repo | interacción, no HTML servido |
+
+> ⚠ **El bucle de `mineria` se ficha con su número y NO se diagnostica.** *Un
+> mecanismo sin medir que entra en una mesa la contamina* — y lo que lo dirime
+> necesita red, que esta tanda no gasta.
+
+### §regla 23 aplicada con su OPERACIÓN, no con su conclusión
+
+El enunciado solo es **simétrico** y al releerlo el signo se invierte (derivado
+en la 114.ª: **11 citas, 2 invertidas**). Escrito con la operación delante:
+
+> **se toma la que empieza SEPARADA, porque deshacerla es FUSIONAR, y fusionar
+> es el lado barato.**
+
+En las tres, la separada es **la que no emite el archivo**: deshacerla es
+**emitir rutas** (6.0 · 7.6 · 2.9 s) y deshacer la otra es **retirar URLs
+publicadas**.
+
+⚠ **«No se replica» no es la opción separada en ninguna**: es la que **pierde
+dato**, y deshacerla exige re-extraer del original. No compite con las otras dos.
+
+⚠ **Y si el propietario decide CONTRA el criterio, se escribe qué restricción
+pesó más y se le pone CONDICIÓN DE REAPERTURA.** Una decisión alineada puede no
+llevarla; una que lo contradice, siempre.

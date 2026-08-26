@@ -1,0 +1,167 @@
+{
+  "fecha": "2026-08-26",
+  "costeSegPorRuta": 0.2228,
+  "cruce": {
+    "categoria": {
+      "terminos": 6,
+      "rutas": 27,
+      "pageN": 23,
+      "sinCaptura": 2
+    },
+    "autor": {
+      "terminos": 6,
+      "rutas": 34,
+      "pageN": 28,
+      "sinCaptura": 0
+    },
+    "taxonomia-sector": {
+      "terminos": 11,
+      "rutas": 13,
+      "pageN": 7,
+      "sinCaptura": 5
+    }
+  },
+  "consumo": {
+    "categoria": {
+      "clase": 63,
+      "mecanismo": 0,
+      "enlace": 135
+    },
+    "author": {
+      "clase": 0,
+      "mecanismo": 0,
+      "enlace": 36
+    },
+    "sector": {
+      "clase": 29,
+      "mecanismo": 2,
+      "enlace": 15
+    }
+  },
+  "redirecciones": [
+    {
+      "url": "https://kunakair.com/es/sector/industria/",
+      "location": "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
+      "bucle": false
+    },
+    {
+      "url": "https://kunakair.com/es/sector/investigacion-consultoria/",
+      "location": "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+      "bucle": false
+    },
+    {
+      "url": "https://kunakair.com/es/sector/mineria/",
+      "location": "https://kunakair.com/es/sector/mineria/",
+      "bucle": true
+    },
+    {
+      "url": "https://kunakair.com/es/sector/obras/",
+      "location": "https://kunakair.com/es/sectores/contaminacion-por-construccion/",
+      "bucle": false
+    },
+    {
+      "url": "https://kunakair.com/es/sector/urbano/",
+      "location": "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/",
+      "bucle": false
+    }
+  ],
+  "alias": [
+    {
+      "url": "https://kunakair.com/es/categor%C3%ADa/eventos/",
+      "location": "https://kunakair.com/es/categoria/eventos/"
+    },
+    {
+      "url": "https://kunakair.com/es/categor%C3%ADa/noticias/",
+      "location": "https://kunakair.com/es/categoria/noticias/"
+    }
+  ],
+  "mesa": [
+    {
+      "id": "a",
+      "familia": "categoria",
+      "unidades": "4 términos + 2 alias de codificación (301) · 27 RUTAS en disco, de las que 23 son /page/N",
+      "hechos": [
+        "régimen **-T** en 4/4 → la lectura que vale es la PLANTILLADA: los valores los fijó quien construyó la plantilla, no un editor de instancia",
+        "sirve contenido: **2–9 tarjetas**, cuerpo **7 650–21 405 B**",
+        "enlazada desde **15 de 35** formas de listado",
+        "consumo: clase de término en 63 docs, **mecanismo en 0**, enlaces en 135"
+      ],
+      "candidatos": [
+        {
+          "n": "COLECCIÓN (el término es contenido propio)",
+          "rutas": 27,
+          "nota": "emite término + paginación; exige campos propios (título, texto, imagen)"
+        },
+        {
+          "n": "RELACIÓN sin archivo (sólo entrada → término)",
+          "rutas": 0,
+          "nota": "el término existe como dato, no como URL; los enlaces de las 15 formas quedan rotos o se repuntan"
+        },
+        {
+          "n": "«no se replica»",
+          "rutas": 0,
+          "nota": "**descartado por el dato**: sirve contenido y lo enlazan 15 formas"
+        }
+      ],
+      "separadora": "un término de `categoria` con **contenido propio que NO se derive de sus miembros** — un texto de cabecera, una imagen, un orden distinto del de fecha. Si lo hay ⇒ COLECCIÓN; si no lo hay en ninguno de los 4 ⇒ es una CONSULTA y basta la relación + el listado (§*un listado no tiene contenido propio: es una CONSULTA*).",
+      "sinMedir": "el **cuerpo de los 4 términos no se ha comparado entre sí** para ver si su cabecera es plantilla o campo. Cardinal: 4 de 4 sin comparar."
+    },
+    {
+      "id": "b",
+      "familia": "author",
+      "unidades": "6 términos · 34 RUTAS, de las que 28 son la paginación de UN SOLO término (`kunak`)",
+      "hechos": [
+        "régimen **--** en 6/6 → CUARTO casillero: ni builder ni theme-builder, plantilla PHP del tema. No existe «quien editó la instancia»",
+        "sirve contenido: **0–6 tarjetas**, cuerpo **1 469–12 978 B**. El de 0 tarjetas (`mar_ramirez`) sigue teniendo 1 469 B de cuerpo",
+        "enlazada desde **0 de 35** formas de listado, y **0 en los seis canales** dentro de `corpus/fase-3`",
+        "⚠ **pero SÍ desde el CUERPO de las entradas**: 152/152 traen `ficha-autor-revisor` con enlace y foto (§2bis). El 0 de arriba es de los LISTADOS, no del sitio",
+        "y la relación es **1:N CON PAPEL**: 2 de 152 entradas separan «Revisado y aprobado por» de «Escrito por»"
+      ],
+      "candidatos": [
+        {
+          "n": "COLECCIÓN de autores (con archivo)",
+          "rutas": 34,
+          "nota": "emite las 34 rutas; 28 de ellas son paginación de un solo autor (`kunak`)"
+        },
+        {
+          "n": "COLECCIÓN sin archivo (dato sí, URL no)",
+          "rutas": 0,
+          "nota": "conserva la ficha de las 152 entradas y no emite URL de autor; los 36 enlaces del original quedan por repuntar"
+        },
+        {
+          "n": "«no se replica»",
+          "rutas": 0,
+          "nota": "**DESCARTADO POR EL DATO**: rompería la ficha de autor de las 152 entradas"
+        }
+      ],
+      "separadora": "**CONTESTADA en esta misma tanda (§2bis)** y era un barrido offline, así que se ejercitó en vez de ficharse. De los 36 enlaces a `/author/` dentro de `fase-3`, **34 son del propio archivo** y 2 de páginas sueltas — pero ampliando a `corpus/entradas-blog`, **152 de 152** entradas lo enlazan desde el cuerpo. **Lo que queda por separar es otra cosa**: si el archivo `/author/` tiene contenido propio (los 6 cuerpos van de 1 469 a 12 978 B) o es sólo la plantilla del tema con la lista dentro.",
+      "sinMedir": "**la varianza entre instancias del régimen `--` no está medida en ningún sitio del repo** — `CLAUDE.md` lo declara SIN PROBAR. Estas 6 son la muestra que existe: 6 instancias sin comparar entre sí. Cardinal: 6 de 6. Es lo que decidiría la separadora que queda."
+    },
+    {
+      "id": "c",
+      "familia": "sector",
+      "unidades": "11 términos · 13 RUTAS · 5 dan 301",
+      "hechos": [
+        "régimen **-T** en 6/6 (los capturados)",
+        "**0 tarjetas en 6 de 6**, por los TRES selectores. Cuerpo ~3.3 KB = miga + barra lateral. **No lista NADA**, y su paginación tampoco",
+        "5 de 11 términos **redirigen**: 4 al arquetipo SECTOR ya clonado, y **`mineria` es un BUCLE a sí misma**",
+        "consumo: clase de término en 29 docs, **mecanismo en 2** (el filtro de Isotope, que además enlaza)"
+      ],
+      "partida": true,
+      "candidatos": [
+        {
+          "n": "(a) la RELACIÓN `caso → sector`",
+          "rutas": 0,
+          "nota": "**tiene consumidor medido**: el filtro de 12 botones (11 sectores + 1 comodín) de `/casos-de-exito/`. Sin ella el filtro no puede existir"
+        },
+        {
+          "n": "(b) el ARCHIVO `/es/sector/*`",
+          "rutas": 13,
+          "nota": "**no lo consume nadie y no sirve contenido**. Emitirlo es emitir cascarón vacío — con precedente: `D2.5 · REPLICAR TAL CUAL` ya decidió eso para las 55 que responden 200 sin listar"
+        }
+      ],
+      "separadora": "para **(a)**: un caso de éxito en **DOS sectores a la vez**, o un sector con **orden propio**. Si no lo hay, la relación cabe como campo simple en el caso y no necesita entidad. Para **(b)**: que alguna URL `/sector/*` esté enlazada **desde fuera del filtro** — hoy son 15 documentos, todos del propio filtro o del archivo.",
+      "sinMedir": "**el mecanismo del bucle de `mineria` NO se explica aquí**: se ficha con su número (5 saltos, `redirect: manual`) y lo dirimiría **leer la cabecera `Location` de cada salto con el `Host` y el esquema completos** — un bucle 301 a sí misma suele ser un `canonical`/`redirect` mal configurado que depende de la barra final o del idioma. Necesita red. Un mecanismo sin medir que entra en una mesa la contamina."
+    }
+  ]
+}
