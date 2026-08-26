@@ -21338,3 +21338,109 @@ y se quedan aquí como evidencia.
 - **la sonda que cerraría el escalón 2 no existe** y queda nombrada: de dos
   lados, sobre la **propiedad ganadora**, en el **nivel** que la §regla 36 dice
   para cada par, y **a los dos anchos**.
+
+---
+
+## ⛔ F3-3-INSUMO-TARDIO · tres sondas comprueban su insumo DESPUÉS de gastar el trabajo (2026-08-26, cierre de verificación de la 109.ª)
+
+**De dónde sale, que importa porque nadie lo estaba buscando.** Verificando que
+los 4 consumidores repuntados en el PASO 0 quedaran vivos —§regla 10,
+*ejercitar en vez de releer*— uno de ellos destapó que **el arreglo había
+cambiado el NOMBRE y no la POSICIÓN**.
+
+> ⚠⚠ **`f33-spec.mjs` sigue con `launch()` en L275 y la comprobación de su
+> insumo en L472.** El commit que lo arregló (`a312305`) describe el daño con
+> estas palabras — *«levantaba Chrome, medía las 31 rutas y moría con ENOENT en
+> su cruce, **después de todo el trabajo**»*— y arregló **otra cosa**: le puso
+> el nombre bueno al fichero y dejó la comprobación donde estaba.
+>
+> **Hoy no se nota, y ése es el problema: sólo no se nota porque el fichero
+> existe.** El día que lo vuelvan a renombrar —exactamente lo que su propia
+> guarda anticipa, *«si la han vuelto a renombrar, actualiza este nombre»*—
+> vuelve a tirar 31 rutas antes de decirlo.
+>
+> Es **§regla 3 —*documentado no es conectado*— con el objeto cambiado**: allí
+> el comentario prometía una llamada que no existía; aquí **el mensaje de
+> commit afirma un arreglo que arregló otra cosa**. Y el mensaje de commit es,
+> como el comentario, **lo único del repo que nadie ejecuta ni verifica**.
+
+### La magnitud, que es lo único que hay que heredar de aquí
+
+La v1 del detector midió **distancia en líneas** entre el arranque y la
+comprobación, y publicó **11**. Estaba **sobre-casada** (§sondas 4, 3.ª cara:
+*no da error, da un número plausible de más*): un `launch()` en L65 y una
+lectura en L72 no gasta nada — son cabecera.
+
+> **Lo que hace caro un insumo tardío no es que su línea esté abajo, es que
+> ENTRE MEDIAS SE MIDA.** La magnitud es la **NAVEGACIÓN** entre el arranque y
+> la comprobación, no el número de línea. Es §*la causa común: el NIVEL al que
+> se mide* con el contenedor puesto en el número de línea.
+
+**Instancias separadoras entre v1 y v2: 5** —las tardías inocuas—, así que las
+dos versiones **no son la misma función escrita de dos maneras**.
+
+### El reparto, con su denominador (§regla 14)
+
+| | n |
+|---|---|
+| fuentes ejecutables bajo `scripts/` | **289** |
+| · no arrancan navegador ni clon — la pregunta no se les aplica | 222 |
+| · **CON arranque** (`launch`/`iniciarClon`) — el universo | **67** |
+| · · no leen ninguna congelada cableada | 46 |
+| · · **leen una congelada** | **21** |
+| · · · la comprueban **ANTES** de arrancar ✅ | 11 |
+| · · · la leen **DESPUÉS** | 10 |
+| · · · · sin navegar entre medias — tardía **inocua** | 5 |
+| · · · · **navegando entre medias** ⛔ | **5** |
+| · · · · · legítimas ✅ | 2 |
+| · · · · · **DEFECTOS** ⛔ | **3** |
+
+### Las CINCO filas nombradas — y las 2 legítimas NO son ruido que se descarta
+
+| sonda | posición | modo | veredicto |
+|---|---|---|---|
+| `clon-base.mjs` | L61 → **2 navegaciones** → L350 | precondición **PELADA** | ⛔ **el caro** |
+| `f33-spec.mjs` | L275 → 1 → L472 | guarda **tardía** | ⛔ el que originó esto |
+| `texto-poblacion.mjs` | L134 → 1 → L256 | precondición **PELADA** | ⛔ y es su **control** |
+| `kb-barra.mjs` | L440 → L602 | dentro de `if (existsSync)`, con `cruceVivo = null` | ✅ **extra opcional** |
+| `ruido.mjs` | L78 → L461 | lee las ráfagas **incluida la que ella misma escribe** | ✅ **no se puede adelantar** |
+
+> ⚠ **Las dos legítimas están escritas a propósito, porque son las que fijan el
+> LÍMITE de la regla.** `ruido` no puede comprobar antes **por construcción**
+> —el fichero no existe hasta que su corrida termina— y `kb-barra` tiene
+> **fallback**, así que su lectura no es una precondición sino un extra. **Sin
+> las dos escritas, la regla se relee como «toda lectura va antes del `launch`»
+> y produce 2 arreglos falsos.**
+
+**Por qué `clon-base` es el caro, con su número:** es **la guarda de regresión
+principal del repo**, **382 rutas**, y su lectura es un `readFileSync` **pelado**
+—cero `existsSync` en las 350 líneas anteriores—. Además comprueba
+`antes.meta.width !== width` con `exit 2` **después de medirlas todas**, que es
+algo sabible en el primer segundo. **El precio ya está escrito en un nombre de su
+propio directorio**: `clon-base-1440-t104-despues3-neg-corrida-rota-280-de-382.json`.
+
+### La deuda, con su COSTE REAL — no son «tres líneas»
+
+> **Subir la comprobación por delante del `launch` en las 3 exige correr su
+> NEGATIVO para adjudicar que el cambio es NO-OP**, y en `clon-base` eso es la
+> guarda de regresión principal a **dos anchos** (§regla 5ter: *arreglar el
+> objeto caduca el control del instrumento que lo midió*). Escrito de otra
+> forma, la tanda siguiente lo lee como un retoque y lo mete de propina en otra
+> cosa.
+
+**Y la clase no son 3 sondas.** Es que **no hay sitio común por el que pase la
+comprobación de precondiciones**, como sí lo hay para `Evaluadas`, `w()` y
+`gritaSiRevienta()` en `lib.mjs`. **Ése es el arreglo**; las 3 de arriba son sus
+instancias de hoy — arreglarlas una a una es §regla 4 otra vez (*la instancia y
+no la CLASE*).
+
+**Por qué se ficha y no se arregla, con la operación delante (§regla 23):**
+deshacer un fichaje es **borrar un párrafo**; deshacer un cambio en `clon-base`
+es **re-adjudicar 382 rutas a dos anchos**. Y los 3 son defectos de **COSTE** y
+de **EVIDENCIA**, no de número falso: **ninguno publica un dato erróneo mientras
+espera**.
+
+Derivación, con su control 3/3 —`f33-spec` sale por los dos detectores · `kb-cmp`
+sólo por v1, que es la separadora · `lib.mjs` no aparece porque **define**
+`launch`—: `docs/research/cola-larga/derivaciones/insumo-tardio-109.{mjs,log}`.
+El control **cierra el código de salida**: sin 3/3, `exit 2`.
