@@ -5864,6 +5864,80 @@ tiene UN sitio para cabeceras y el documento tiene DOS ejes.
 > Expresarlo entero pide **un papel por columna** (o por celda), que es un campo
 > nuevo — no un tipo nuevo.
 
+### ✅ T1 · APLICADO (113.ª, 2026-08-26) — y la condición de reapertura CON SU NÚMERO
+
+`MODULO_TABLA` se adoptó **tal cual**, sin modificarlo, importándolo desde
+`bloques/monografico.ts` a `MODULOS_PAGINA`. Migración
+`20260826_173354_f3_3_t1_tabla_cola_larga` (4 tablas, reversa probada antes de
+sembrar). En la DB: **1 tabla · 11 filas · 55 celdas · 0 cabeceras**.
+
+**PÉRDIDA DECLARADA, con su cardinal** (§regla 14):
+
+| qué se pierde | cardinal | coste en PÍXELES |
+|---|---|---|
+| papel `rhead` (cabecera de fila, col 0) | 11 | **0** |
+| papel `rfoot` (pie, col 4) | 11 | **0** |
+| fila 0 como cabecera de columna | 5 | **0** |
+| `ritmo` con unidad (bloque trae `moduloBase`) | 1 campo | **0** — inerte: el extractor escribe 0 claves de geometría |
+
+**Los 22 papeles cuestan CERO píxeles, y eso está medido, no supuesto:** papel y
+columna son **1:1 en las 55**, así que `f33.css` los recupera por POSICIÓN
+(`:first-child` → col 0 · `:nth-child(5)` → col 4). Lo que se pierde es la
+SEMÁNTICA —el original sirve `role="rowheader"` en las 11 de la columna 0 y el
+modelo no puede afirmarlo—, no la geometría.
+
+**EL RESIDUO, con sus dos lados y su ancho** (`f33-cmp`, corpus con sus hojas):
+
+| ancho | antes de T1 | **después** | tabla orig → clon |
+|---|---|---|---|
+| **1440** | `docH` Δ **−1512.00** (módulo AUSENTE) | **+45.00** | 1511 → 1542 |
+| **390** | `docH` Δ **−1952.00** (módulo AUSENTE) | **+770.00** | 1824.88 → 2697 |
+
+**ATRIBUCIÓN — y es lo que decide T2, porque un residuo sin atribuir no reabre
+nada ni cierra nada.** Ni un píxel del residuo es imputable a los 22 papeles
+aplanados. Todo lo medido cae en **transcripción de CSS**, y se cerró en dos
+pasos con su número:
+
+| término | @1440 | @390 |
+|---|---|---|
+| tipografía y `padding` leídos del `<style>` en vez de la CASCADA | +815 → **+45** | — |
+| `padding` de celda que cambia con el ancho (`8px 20px` → `8px 10px`) | — | +1547 → **+770** |
+
+> **T2 **NO** SE REABRE.** La separadora se escribió en el pre-registro antes de
+> medir: *«> 150 y atribuido AL PAPEL ⇒ T2 se reabre; > 150 y atribuido a otra
+> cosa ⇒ defecto de transcripción, se arregla en el componente»*. El residuo
+> está atribuido a transcripción en los dos anchos.
+
+**LO QUE SÍ REABRE T1**, y hoy no existe: **una SEGUNDA tabla `dvmd` con otra
+piel**. Todo el CSS de la tabla lleva ordinal (`.dvmd_table_maker_0`,
+`item_N`), o sea que por el discriminador de este repo **es campo, no
+plantilla**, y `MODULO_TABLA` no tiene campos de piel: los colores, el
+`padding` y la rejilla están cableados en `f33.css` con los valores **de la
+primera instancia**. Es literalmente el patrón del que avisa `CLAUDE.md`.
+`dvmd_table_maker` aparece en **21 documentos** y emite **2 rutas**, y la otra
+es de arquetipo escrito a mano: **n = 1**.
+
+⚠ **Y lo que queda SIN ATRIBUIR, con su número:** de los **+770** de 390 y los
+**+45** de 1440, la parte que no se explicó es **la celda que mide 81 contra
+54.38 a 390** con `font-size`, `line-height`, `padding`, ancho de columna y
+rejilla **ya idénticos**. El único eje que sigue difiriendo en lo medido es el
+`font-size` de la CELDA (orig 13px · clon 15px) mientras el del `cdata` casa
+(15/21 en los dos). No se cablea sin entender por qué: es **SIN PROBAR**, y lo
+dirime medir el envuelto renglón a renglón, no otro retoque de CSS.
+
+⚠ **El punto de corte del `@media` de 390 NO está derivado**: sólo se midieron
+1440 y 390, los `@media` de `dvmd` del documento usan 980 y 767 y **ninguno
+toca `padding`**. Se escribió en **767** para garantizar el ancho de contrato;
+**768–980 queda SIN PROBAR**, y es rango intermedio.
+
+⚠ **Y una consecuencia declarada de NO tocar `arbol-f33`:** su `tipoDe` exige
+`et_pb_<tipo>_<n>` y no puede ver el módulo de terceros, así que el cruce de
+`f33-cmp` publica `/es/politica-de-cookies/ · dom 9 · censo 8 ·
+tiposQueElCensoNoNombra: ["dvmd_table_maker"]` y **cuenta como rojo**. Es
+correcto e informativo —el hueco sale NOMBRADO— y conciliarlo obliga a tocar la
+definición compartida de **15 consumidores** (§regla 29 mitad 2), con el radio
+de caducidad que la 112.ª midió. Fuera del alcance de esta tanda.
+
 ⚠ **Dos unidades, siempre:** `dvmd_table_maker` aparece en **21 DOCUMENTOS** y
 emite **2 RUTAS**. Esta derivación mira **una ruta**. Y la otra emitida,
 `/monitor-calidad-aire`, es de arquetipo **escrito a mano** (13 de 31 celdas

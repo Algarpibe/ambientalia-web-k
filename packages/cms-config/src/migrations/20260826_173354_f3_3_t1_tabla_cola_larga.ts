@@ -1,4 +1,22 @@
-import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
+/**
+ * F3-3 · **T1 — `MODULO_TABLA` para `paginas`**. 113.ª tanda, 2026-08-26.
+ *
+ * Decisión del propietario: se adopta `MODULO_TABLA` **tal cual**, sin
+ * modificarlo, para `/politica-de-cookies` — un `dvmd_table_maker` (módulo de
+ * terceros) de 11 × 5 = 55 celdas de texto plano. Cuatro tablas nuevas y sus
+ * cuatro `DROP … CASCADE`.
+ *
+ * ⚠ La reversa se probó **ANTES de sembrar** (§regla 30), que es su única
+ * ventana: `up` 130→134 tablas, `down` 134→130, y el `diff` del censo tabla a
+ * tabla contra el estado previo salió **VACÍO**. Comprobado en
+ * `payload_migrations`, no en el log — que decía «rolling back batch 2
+ * consisting of 22 migration(s)» y revirtió UNA.
+ *
+ * El import va con `type` porque `verbatimModuleSyntax` está activo; el
+ * generador de Payload lo emite sin él y `npm run check` lo caza.
+ */
+import type { MigrateUpArgs, MigrateDownArgs } from '@payloadcms/db-postgres'
+import { sql } from '@payloadcms/db-postgres'
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`

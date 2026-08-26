@@ -1,5 +1,83 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ T1 · **la tabla entró, y el residuo NO es el aplanado: es la CASCADA leída por el canal equivocado** — 113.ª, 2026-08-26
+
+Pre-registro: `derivaciones/PRE-REGISTRO-T1-TABLA-113.md` (8de90d9), commiteado
+antes de tocar nada. Derivaciones: `tabla-canales-113.{mjs,log}` ·
+`tabla-residuo-113.{mjs,log}` (1440 y 390).
+
+### 1 · El residuo, con sus DOS lados y su ancho
+
+| ancho | antes de T1 | **después** | tabla orig → clon |
+|---|---|---|---|
+| **1440** | `docH` Δ **−1512.00** (módulo AUSENTE) | **+45.00** | 1511 → 1542 |
+| **390** | `docH` Δ **−1952.00** (módulo AUSENTE) | **+770.00** | 1824.88 → 2697 |
+
+### 2 · La ATRIBUCIÓN, que es lo que decide T2
+
+**Ni un píxel del residuo es de los 22 papeles aplanados.** Todo lo medido cae
+en transcripción de CSS, y se cerró en dos pasos:
+
+| término | @1440 | @390 |
+|---|---|---|
+| tipografía y `padding` leídos del `<style>` en vez de la CASCADA | **+815 → +45** | — |
+| `padding` de celda que cambia con el ancho (`8px 20px` → `8px 10px`) | — | **+1547 → +770** |
+
+> **T2 NO SE REABRE.** La separadora estaba escrita antes de medir: *«>150 y
+> atribuido AL PAPEL ⇒ se reabre; >150 y atribuido a otra cosa ⇒ transcripción»*.
+
+### 3 · Las predicciones, puntuadas — **P1 falló a los dos anchos, P2 y P3 acertaron**
+
+| # | predije | rango | real | |
+|---|---|---|---|---|
+| P1 @1440 | −60 | −150…+150 | **+45** | ✓ *(tras corregir la cascada; la v1 dio **+815**)* |
+| P1 @390 | −200 | −600…+200 | **+770** | ✗ **fuera** |
+| P2 | 413 · dif. simétrica 0 y 0 | — | **413 · 0 y 0** | ✓ |
+| P3 | el aplanado NO produce Δ | — | **0 px** | ✓ |
+
+**P3 acertó Y por el mecanismo que predijo:** papel y columna son 1:1 en las 55,
+así que `:first-child` / `:nth-child(5)` los recuperan exactos. Lo que se pierde
+es la SEMÁNTICA (`role="rowheader"` en 11 celdas), no la geometría.
+
+⚠ **Y la separadora sigue en pie: papel y posición son INDISTINGUIBLES en n=1.**
+Lo probado es *«la posición basta EN ESTA TABLA»*, nunca *«el papel es
+prescindible»*.
+
+**Dónde me equivoqué en P1, y declaré la dirección contraria:** dije que fallaría
+a 390 y no a 1440. Fallé en los **dos** — a 1440 por +875 antes de corregir. La
+causa es la misma y estaba escrita en la ley: **transcribí la DECLARACIÓN
+servida en vez de la CASCADA.**
+
+### 4 · Los tres defectos que salieron en verde
+
+| # | qué | cómo se vio |
+|---|---|---|
+| 1 | el seed sembró **0 tablas** con exit 0 y «383 documentos» | mirar la DB. `catalogos.mjs` L88 CABLEA `medidas/f33-extraido.json` y la guarda de `w()` había desviado mi corrida al fechado — §regla 5, el 8.º caso de §regla 9 |
+| 2 | el render sirvió **11 filas VACÍAS, altura 0, HTTP 200** | medir la CAJA. La VUELTA aplica **dos transparencias que se componen** y `filas` vuelve `string[][]`, no `[{celdas}]`. `f.celdas` era `undefined` y el `?? []` lo tapó |
+| 3 | mi propia derivación «refutó» a la 109.ª con 50 enlaces | el control de acotado. El corte iba hasta el siguiente `</section>` y se tragó el PIE: la 109.ª estaba bien, **0 enlaces** |
+
+Los tres son la misma familia: §regla 6 —*una ausencia traducida a valor
+benigno*— y ninguno daba error. El (2) lleva ahora guarda que **TIRA**.
+
+### 5 · Lo que queda fichado, con su número
+
+- **SIN ATRIBUIR:** la celda mide **81 contra 54.38** a 390 con `font-size`,
+  `line-height`, `padding`, columna y rejilla **ya idénticos**. El único eje que
+  difiere es el `font-size` de la CELDA (13 vs 15) mientras el del `cdata` casa.
+  No se cablea sin entenderlo;
+- **el corte del `@media` de 390 NO está derivado**: escrito en 767 para
+  garantizar el ancho de contrato; **768–980 SIN PROBAR** (rango intermedio);
+- **`f33-cmp` queda en rojo por 1 ruta**: `dom 9 · censo 8 ·
+  tiposQueElCensoNoNombra ["dvmd_table_maker"]`. Es correcto —`arbol-f33` no
+  puede ver módulos de terceros y **no se toca**: 15 consumidores, §regla 29
+  mitad 2—, y conciliarlo es tanda aparte;
+- **`tabla-residuo-113` NO carga las hojas del original** como sí hace
+  `f33-cmp`, así que **su eje de FONDOS no vale** y se declara: mide una
+  captura sin hojas. Sus ejes de geometría sí concuerdan con el comparador
+  (1511 y 1824.88 en los dos instrumentos).
+
+`npm run check` **exit 0**.
+
 ## ⚠ PASO 0 · **NO fue uno, es una CLASE — pero la clase son 11, no 26: las otras 15 son EVIDENCIA que TIENE que diferir** — 112.ª, 2026-08-26
 
 Pre-registro commiteado antes de medir: `derivaciones/PRE-REGISTRO-ARTEFACTOS-CADUCADOS-112.md` (0d55138).

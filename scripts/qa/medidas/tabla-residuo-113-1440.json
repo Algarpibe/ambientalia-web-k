@@ -1,0 +1,60 @@
+{
+  "original": {
+    "celda": {
+      "fontSize": "15px",
+      "lineHeight": "21px",
+      "fontFamily": "Manrope, sans-serif",
+      "padding": "8px 20px",
+      "display": "flex"
+    },
+    "cdata": {
+      "fontSize": "15px",
+      "lineHeight": "21px"
+    },
+    "rejilla": {
+      "display": "grid",
+      "cols": "176px 176px 176px 176px 176px",
+      "autoRows": "minmax(35px, auto)",
+      "gap": "0px/0px",
+      "overflow": "auto"
+    },
+    "cajaCelda": {
+      "w": 176,
+      "h": 60
+    },
+    "cajaRejilla": {
+      "w": 880,
+      "h": 1511
+    },
+    "nCeldas": 55
+  },
+  "clon": {
+    "celda": {
+      "fontSize": "18px",
+      "lineHeight": "30.6px",
+      "fontFamily": "Manrope, \"Manrope Fallback\", ui-sans-ser",
+      "padding": "10px",
+      "display": "flex"
+    },
+    "cdata": {
+      "fontSize": "18px",
+      "lineHeight": "30.6px"
+    },
+    "rejilla": {
+      "display": "grid",
+      "cols": "174.391px 174.391px 174.406px 174.406px 174.406px",
+      "autoRows": "minmax(60px, auto)",
+      "gap": "2px/2px",
+      "overflow": "auto"
+    },
+    "cajaCelda": {
+      "w": 174.39,
+      "h": 83.19
+    },
+    "cajaRejilla": {
+      "w": 880,
+      "h": 2311.78
+    },
+    "nCeldas": 55
+  }
+}

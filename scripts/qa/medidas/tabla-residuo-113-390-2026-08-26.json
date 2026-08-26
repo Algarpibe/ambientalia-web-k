@@ -1,0 +1,88 @@
+{
+  "original": {
+    "celda": {
+      "fontSize": "13px",
+      "lineHeight": "18.2px",
+      "fontFamily": "Manrope, sans-serif",
+      "padding": "8px 10px",
+      "display": "flex"
+    },
+    "cdata": {
+      "fontSize": "15px",
+      "lineHeight": "21px"
+    },
+    "papelPorPosicion": {
+      "col0": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(51, 51, 51)"
+      },
+      "col1": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(51, 51, 51)"
+      },
+      "col4": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(51, 51, 51)"
+      }
+    },
+    "rejilla": {
+      "display": "grid",
+      "cols": "100px 100px 100px 100px 100px",
+      "autoRows": "minmax(35px, auto)",
+      "gap": "0px/0px",
+      "overflow": "auto"
+    },
+    "cajaCelda": {
+      "w": 100,
+      "h": 54.38
+    },
+    "cajaRejilla": {
+      "w": 335.39,
+      "h": 1824.88
+    },
+    "nCeldas": 55
+  },
+  "clon": {
+    "celda": {
+      "fontSize": "15px",
+      "lineHeight": "21px",
+      "fontFamily": "Manrope, \"Manrope Fallback\", ui-sans-ser",
+      "padding": "8px 10px",
+      "display": "flex"
+    },
+    "cdata": {
+      "fontSize": "15px",
+      "lineHeight": "21px"
+    },
+    "papelPorPosicion": {
+      "col0": {
+        "bg": "rgb(0, 117, 201)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "col1": {
+        "bg": "rgb(246, 249, 251)",
+        "color": "rgb(51, 51, 51)"
+      },
+      "col4": {
+        "bg": "rgb(215, 226, 237)",
+        "color": "rgb(51, 51, 51)"
+      }
+    },
+    "rejilla": {
+      "display": "grid",
+      "cols": "100px 100px 100px 100px 100px",
+      "autoRows": "minmax(35px, auto)",
+      "gap": "0px/0px",
+      "overflow": "auto"
+    },
+    "cajaCelda": {
+      "w": 100,
+      "h": 81
+    },
+    "cajaRejilla": {
+      "w": 335.39,
+      "h": 2697
+    },
+    "nCeldas": 55
+  }
+}

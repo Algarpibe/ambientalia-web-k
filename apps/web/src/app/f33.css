@@ -472,28 +472,54 @@
  * que la colocación automática de la rejilla da el mismo reparto. Transcribir
  * 55 reglas para reproducir el orden natural sería copiar el mecanismo en vez
  * del resultado. */
+/* ⚠⚠ ESTOS NÚMEROS SON LOS **COMPUTADOS SOBRE EL ORIGINAL**, NO LOS DECLARADOS.
+ * La v1 transcribió lo que dice el `<style>` del documento —`grid-auto-rows:
+ * minmax(60px,auto)`, `gap:2px`, `padding:10px`— y **el ganador de la cascada
+ * era otro**. Es §*transcribir la DECLARACIÓN servida no es transcribir la
+ * CASCADA*: la regla estaba en el canal, se leyó bien y NO llegaba a la
+ * propiedad. Medido con `getComputedStyle` sobre el original
+ * (`derivaciones/tabla-residuo-113-1440.log`):
+ *
+ *   | eje              | declarado en <style> | COMPUTADO (el que manda) |
+ *   |------------------|----------------------|--------------------------|
+ *   | grid-auto-rows   | minmax(60px, auto)   | **minmax(35px, auto)**   |
+ *   | column/row-gap   | 2px                  | **0**                    |
+ *   | padding de celda | 10px                 | **8px 20px**             |
+ *   | font-size        | (no declarado)       | **15px**                 |
+ *   | line-height      | (no declarado)       | **21px**                 |
+ *
+ * Coste de la v1: la tabla midió **2311.78 contra 1511**, o sea +800.78, y el
+ * residuo de `docH` salió **+815** donde la predicción decía −60. */
 .f33-tabla-rejilla {
   display: grid;
   grid-template-columns:
     minmax(100px, 33%) minmax(100px, 67%) minmax(100px, 67%)
     minmax(100px, 67%) minmax(100px, 67%);
-  grid-auto-rows: minmax(60px, auto);
+  grid-auto-rows: minmax(35px, auto);
   overflow: auto;
-  column-gap: 2px;
-  row-gap: 2px;
+  column-gap: 0;
+  row-gap: 0;
 }
 
 /* `.dvmd_tm_tcell { display:flex; flex-direction:column; border-width:1px;
  *                   overflow:hidden; background:#f6f9fb; padding:10px }`
  * más `div.dvmd_table_maker_item_N.dvmd_tm_tcell { text-align:center }`, que
  * en el original son cinco selectores —uno por columna— con el MISMO valor. */
+/* `padding`, `font-size` y `line-height` COMPUTADOS sobre el original, no
+ * declarados: los dos últimos la celda del original los HEREDA —ninguna regla
+ * `dvmd` los declara— del cuerpo de Divi, que sirve 15/21. El clon heredaría
+ * 18/30.6 de `f33`, que es una razón 1.46× y es de donde salía casi todo el
+ * residuo. §*al transcribir tipografía se mide también el BLOQUE que la
+ * contiene*: aquí el strut lo pone la celda, así que se escribe en la celda. */
 .f33-tabla-celda {
   display: flex;
   flex-direction: column;
   border-width: 1px;
   overflow: hidden;
   background: #f6f9fb;
-  padding: 10px;
+  padding: 8px 20px;
+  font-size: 15px;
+  line-height: 21px;
   text-align: center;
 }
 
@@ -537,4 +563,35 @@
 /* `.dvmd_tm_tcell .dvmd_tm_cdata { white-space:normal }` */
 .f33-tabla-cdata {
   white-space: normal;
+}
+
+/* ⚠⚠ §regla 35 · EL `padding` DE LA CELDA CAMBIA CON EL ANCHO, Y EL ANCHO
+ * DONDE LA REGLA NO COMPITE NO PUEDE VERLO.
+ *
+ * Medido a los dos anchos (`derivaciones/tabla-residuo-113-{1440,390}.log`):
+ *
+ *   | eje            | orig @1440 | orig @390   |
+ *   |----------------|------------|-------------|
+ *   | padding celda  | 8px 20px   | **8px 10px**|
+ *   | cdata fs/lh    | 15/21      | 15/21       |
+ *   | columnas       | 176px ×5   | 100px ×5    |
+ *
+ * **La tipografía del TEXTO no cambia** —el `cdata` mide 15/21 a los dos
+ * anchos en el original—, así que lo único que mueve el alto a 390 es el
+ * `padding` horizontal: con `20px` por lado en una columna de **100px** el
+ * ancho útil cae de 80 a 60, o sea **un 25 % menos**, y el texto envuelve más.
+ * Coste medido: celda **102** contra **54.38**, tabla **3474** contra
+ * **1824.88**, `docH` **+1547**.
+ *
+ * ⚠ **EL PUNTO DE CORTE NO ESTÁ DERIVADO, Y SE DICE:** sólo se han medido
+ * 1440 y 390. Los `@media` de `dvmd` en el documento usan **980** y **767**,
+ * pero ninguno de los dos toca `padding` — esta declaración viene de las hojas
+ * del TEMA, que esta derivación no carga. Se escribe en **767** (el corte de
+ * teléfono de Divi, y 390 < 767) porque eso garantiza el ancho de CONTRATO;
+ * **768–980 queda SIN PROBAR**, y es rango intermedio, donde el contrato pide
+ * que el clon VARÍE como varía el original, no Δ0. */
+@media (max-width: 767px) {
+  .f33-tabla-celda {
+    padding: 8px 10px;
+  }
 }

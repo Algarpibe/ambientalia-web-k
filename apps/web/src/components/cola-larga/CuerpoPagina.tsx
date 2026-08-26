@@ -343,20 +343,39 @@ function Modulo({ m }: { m: ModuloPagina }) {
      */
     case "tabla": {
       const filas = m.filas ?? [];
+      /* ⚠ LA GUARDA QUE FALTABA, y la escribe quien acaba de pagarlo: una tabla
+       * con FILAS y CERO celdas se sirvió con HTTP 200, `data-modulo="tabla"`
+       * puesto y **altura 0**. No la vio el recuento de módulos —el módulo
+       * estaba—, sólo la caja. Un `?? []` sobre una forma mal tipada convierte
+       * «no sé leer esto» en «aquí no había nada» (§regla 6), así que el
+       * defecto se pone en la dirección que GRITA (§sondas 6). */
+      if (filas.length && !filas.some((c) => (c?.length ?? 0) > 0)) {
+        throw new Error(
+          `CuerpoPagina/tabla: ${filas.length} filas y CERO celdas. La forma medida es ` +
+            `string[][] (dos transparencias de la VUELTA: 'filas' tiene un solo campo propio ` +
+            `y la celda queda con una sola clave, la de custom.escalarA). Si esto salta, ` +
+            `el proyector cambió de forma — NO se tapa con un '?? []': eso sirve la página vacía.`,
+        );
+      }
       return (
         <div className={`f33-modulo f33-tabla${ancho}`} {...sonda} style={style}>
           <div className="f33-tabla-rejilla" role="table">
-            {filas.map((f, fi) => (
+            {filas.map((celdas, fi) => (
               /* La FILA existe y lleva `display: contents`, igual que en el
                * original (`.dvmd_tm_trow { display: contents }`). No es
                * decoración: `role="cell"` sin un `role="row"` que lo contenga
                * es ARIA INVÁLIDO, y una tabla accesible a medias es peor que
                * ninguna. `display: contents` la saca del flujo de la rejilla,
-               * así que la colocación automática sigue viendo las 5 celdas. */
+               * así que la colocación automática sigue viendo las 5 celdas.
+               *
+               * ⚠ `celdas` ES la fila: `string[]`, no `{celdas:[…]}`. La VUELTA
+               * aplica DOS transparencias que se componen — ver el tipo en
+               * `lib/cms/paginas.ts`. La v1 hacía `f.celdas.map(…)` y servía
+               * **11 filas VACÍAS con altura 0 y HTTP 200**. */
               <div key={fi} className="f33-tabla-fila" role="row">
-                {(f.celdas ?? []).map((c, ci) => (
+                {(celdas ?? []).map((texto, ci) => (
                   <div key={ci} className="f33-tabla-celda" role="cell">
-                    <div className="f33-tabla-cdata">{c.texto ?? ""}</div>
+                    <div className="f33-tabla-cdata">{texto ?? ""}</div>
                   </div>
                 ))}
               </div>

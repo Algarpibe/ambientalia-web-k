@@ -156,8 +156,32 @@ export type ModuloPagina =
    */
   | (Base & {
       kind: "tabla";
-      cabeceras?: { texto: string }[] | null;
-      filas?: { celdas?: { texto?: string | null }[] | null }[] | null;
+      /**
+       * ⚠⚠ **`string[][]`, NO `{celdas:{texto}[]}[]` — LA FORMA MEDIDA NO ES LA
+       * FORMA DEL BLOQUE, y componerlo mal no da error: RENDERIZA NADA.**
+       *
+       * En la VUELTA (`mapeo.mjs` §case "array") se aplican DOS
+       * transparencias, y se COMPONEN:
+       *
+       *   1 · `filas` tiene **un solo campo propio** (`celdas`), y *«un array de
+       *       UN campo propio es transparente»* (L584) ⇒ `filas` vuelve como
+       *       lista de los VALORES de `celdas`, no como `[{celdas}]`;
+       *   2 · cada celda es `{texto, fuerte: null, resto: null}`; los nulos no
+       *       llegan, así que queda **una sola clave** y ésa es la declarada en
+       *       `custom.escalarA` ⇒ `deEscalar` la devuelve **pelada**.
+       *
+       * Resultado medido, no deducido:
+       * `filas[0] === ["Cookie","Propia o de terceros","Tipo","Propósito","Más información"]`
+       *
+       * **Y el coste de tiparlo mal fue exactamente el modo de fallo de
+       * §regla 6 gemelo:** el render hacía `f.celdas.map(...)` sobre un ARRAY,
+       * `f.celdas` era `undefined`, el `?? []` lo convertía en cero celdas, y la
+       * página se sirvió con **11 filas vacías, HTTP 200 y altura 0** — con
+       * `data-modulo="tabla"` presente, así que hasta el comparador contaba el
+       * módulo. Lo cazó medir la CAJA (`h: 0` contra `1511`), no el recuento.
+       */
+      cabeceras?: string[] | null;
+      filas?: string[][] | null;
     });
 
 /** Los doce `kind`, derivados del tipo — para que el renderizador no los liste a mano. */

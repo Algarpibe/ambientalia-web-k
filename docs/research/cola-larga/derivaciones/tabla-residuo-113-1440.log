@@ -1,0 +1,45 @@
+· clon PROPIO en http://127.0.0.1:49292 (listo en 1.6s)
+══════════════════════════════════════════════════════════════════════
+  ATRIBUCIÓN DEL RESIDUO DE LA TABLA — 113.ª · ESCALÓN 4 · @1440
+══════════════════════════════════════════════════════════════════════
+
+  celdas encontradas   original 55  ·  clon 55
+
+── celda ──
+   fontSize       orig 15px                               clon 15px
+   lineHeight     orig 21px                               clon 21px
+   fontFamily     orig Manrope, sans-serif                clon Manrope, \Manrope Fallback\, ui-sans-ser   ← DIFIERE
+   padding        orig 8px 20px                           clon 8px 20px
+   display        orig flex                               clon flex
+
+── cdata ──
+   fontSize       orig 15px                               clon 15px
+   lineHeight     orig 21px                               clon 21px
+
+── papelPorPosicion ──
+   col0           orig {bg:rgb(255, 255, 255),color:rgb(51, 51, 51)} clon {bg:rgb(0, 117, 201),color:rgb(255, 255, 255)}   ← DIFIERE
+   col1           orig {bg:rgb(255, 255, 255),color:rgb(51, 51, 51)} clon {bg:rgb(246, 249, 251),color:rgb(51, 51, 51)}   ← DIFIERE
+   col4           orig {bg:rgb(255, 255, 255),color:rgb(51, 51, 51)} clon {bg:rgb(215, 226, 237),color:rgb(51, 51, 51)}   ← DIFIERE
+
+── rejilla ──
+   display        orig grid                               clon grid
+   cols           orig 176px 176px 176px 176px 176px      clon 176px 176px 176px 176px 176px
+   autoRows       orig minmax(35px, auto)                 clon minmax(35px, auto)
+   gap            orig 0px/0px                            clon 0px/0px
+   overflow       orig auto                               clon auto
+
+── cajaCelda ──
+   w              orig 176                                clon 176
+   h              orig 60                                 clon 60
+
+── cajaRejilla ──
+   w              orig 880                                clon 880
+   h              orig 1511                               clon 1542   ← DIFIERE
+
+
+⚠ medidas/tabla-residuo-113-1440.json ya existe y NO coincide: es una salida CONGELADA y no se pisa.
+   Esta corrida va a medidas/tabla-residuo-113-1440-2026-08-26.json.
+   Si de verdad quieres re-congelar: PISAR=1 npm run <la sonda>
+
+→ medidas/tabla-residuo-113-1440-2026-08-26.json
+  ✓ evaluadas 2/2 lados · tabla-residuo-113
