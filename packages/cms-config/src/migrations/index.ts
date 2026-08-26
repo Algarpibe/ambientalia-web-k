@@ -19,6 +19,7 @@ import * as migration_20260818_193649_f3_fecha_publicacion_orden from './2026081
 import * as migration_20260823_131718_f3_3_paginas_cola_larga from './20260823_131718_f3_3_paginas_cola_larga';
 import * as migration_20260823_190450_f3_3_ancho_quintos_y_media_externa from './20260823_190450_f3_3_ancho_quintos_y_media_externa';
 import * as migration_20260824_155444_f3_3_regimen_cms5 from './20260824_155444_f3_3_regimen_cms5';
+import * as migration_20260826_173354_f3_3_t1_tabla_cola_larga from './20260826_173354_f3_3_t1_tabla_cola_larga';
 
 export const migrations = [
   {
@@ -124,6 +125,11 @@ export const migrations = [
   {
     up: migration_20260824_155444_f3_3_regimen_cms5.up,
     down: migration_20260824_155444_f3_3_regimen_cms5.down,
-    name: '20260824_155444_f3_3_regimen_cms5'
+    name: '20260824_155444_f3_3_regimen_cms5',
+  },
+  {
+    up: migration_20260826_173354_f3_3_t1_tabla_cola_larga.up,
+    down: migration_20260826_173354_f3_3_t1_tabla_cola_larga.down,
+    name: '20260826_173354_f3_3_t1_tabla_cola_larga'
   },
 ];

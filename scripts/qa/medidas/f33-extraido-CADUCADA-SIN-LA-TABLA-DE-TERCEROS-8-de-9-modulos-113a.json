@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-26",
+    "fecha": "2026-08-24",
     "sonda": "extractor-f33",
     "pregunta": "¿qué documentos de `paginas` produce el corpus de las 31 de la cola larga?",
     "fuente": "corpus/fase-3/ (32/32 con sus hojas) + medidas/f33-rutas.json (el dominio)",
@@ -30,10 +30,9 @@
       "map": 1,
       "fullwidth_slider": 2,
       "slider": 1,
-      "dvmd_table_maker": 1,
       "icon": 3
     },
-    "modulos": 314,
+    "modulos": 313,
     "secciones": 86,
     "filas": 113,
     "columnas": 179,
@@ -45,7 +44,7 @@
     }
   },
   "emision": {
-    "modulos": 302,
+    "modulos": 301,
     "columnasColapsadas": 10,
     "filasColapsadas": 10,
     "seccionesColapsadas": 10
@@ -267,10 +266,9 @@
       "icon": 3,
       "fullwidth_slider": 2,
       "map": 1,
-      "slider": 1,
-      "dvmd_table_maker": 1
+      "slider": 1
     },
-    "totalEsperado": 314,
+    "totalEsperado": 313,
     "discrepancias": []
   },
   "geometria": {
@@ -333,9 +331,6 @@
         "anchoPct": 100
       },
       "slider": {
-        "anchoPct": 100
-      },
-      "tabla": {
         "anchoPct": 100
       },
       "texto-pagina": {
@@ -3404,220 +3399,6 @@
                       {
                         "kind": "texto-pagina",
                         "html": "Esta página web utiliza las cookies para una serie de finalidades, incluidas:</p>\n<ul>\n<li>Análisis: son aquellas cookies que bien, tratadas por nosotros o por terceros, nos permiten cuantificar el número de usuarios y así realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio. Para ello se analiza su navegación en nuestra página web con el fin de mejorar la experiencia del usuario.</li>\n<li>[Otras finalidades]</li>\n</ul>\n<p>El detalle de las cookies utilizadas en esta página web es el siguiente:"
-                      },
-                      {
-                        "kind": "tabla",
-                        "filas": [
-                          {
-                            "celdas": [
-                              {
-                                "texto": "Cookie"
-                              },
-                              {
-                                "texto": "Propia o de terceros"
-                              },
-                              {
-                                "texto": "Tipo"
-                              },
-                              {
-                                "texto": "Propósito"
-                              },
-                              {
-                                "texto": "Más información"
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "cookie_notice_accepted"
-                              },
-                              {
-                                "texto": "Propia"
-                              },
-                              {
-                                "texto": "Necesaria"
-                              },
-                              {
-                                "texto": "Persistente (1 año)"
-                              },
-                              {
-                                "texto": "Esta cookie recuerda si se ha aceptado el mensaje de aviso sobre cookies para dejar de mostrarlo durante el tiempo en que esté activa."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "wordpress_logged_in_[hash]"
-                              },
-                              {
-                                "texto": "Propia"
-                              },
-                              {
-                                "texto": "Necesaria"
-                              },
-                              {
-                                "texto": "De sesión"
-                              },
-                              {
-                                "texto": "Después del login, WordPress activa la cookie wordpress_logged_in [hash], que indica cuando te has conectado y quién eres, siendo usado para la interfaz de WordPress."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "wordpress_[hash]"
-                              },
-                              {
-                                "texto": "Propia"
-                              },
-                              {
-                                "texto": "Necesaria"
-                              },
-                              {
-                                "texto": "De sesión"
-                              },
-                              {
-                                "texto": "Esta cookie se activa durante el login y guarda los detalles de autentificación. Su uso está limitado al área de administración."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "_icl_current_language"
-                              },
-                              {
-                                "texto": "De terceros (WPML)"
-                              },
-                              {
-                                "texto": "Necesaria"
-                              },
-                              {
-                                "texto": "De sesión"
-                              },
-                              {
-                                "texto": "Indentifica el lenguaje del usuario."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "_icl_current_admin_language_[hash]"
-                              },
-                              {
-                                "texto": "De terceros (WPML)"
-                              },
-                              {
-                                "texto": "Necesaria"
-                              },
-                              {
-                                "texto": "De sesión"
-                              },
-                              {
-                                "texto": "Recuerda el idioma del usuario que visitó la pagina anteriormente. Mantiene la configuración del lenguaje de la página."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "_ga"
-                              },
-                              {
-                                "texto": "De terceros (Google Analytics)"
-                              },
-                              {
-                                "texto": "Estadística"
-                              },
-                              {
-                                "texto": "Persistente (2 años)"
-                              },
-                              {
-                                "texto": "Se usa para distinguir a los usuarios."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "_gat"
-                              },
-                              {
-                                "texto": "De terceros (Google Analytics)"
-                              },
-                              {
-                                "texto": "Estadística"
-                              },
-                              {
-                                "texto": "Persistente (1 minuto)"
-                              },
-                              {
-                                "texto": "Se usa para limitar el porcentaje de solicitudes. Si has implementado Google Analytics mediante Google Tag Manager, esta cookie se llamará _dc_gtm_."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "_gid"
-                              },
-                              {
-                                "texto": "De terceros (Google Analytics)"
-                              },
-                              {
-                                "texto": "Estadística"
-                              },
-                              {
-                                "texto": "Persistente (24 horas)"
-                              },
-                              {
-                                "texto": "Se usa para distinguir a los usuarios."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "NID"
-                              },
-                              {
-                                "texto": "De terceros (Google Analytics)"
-                              },
-                              {
-                                "texto": "Estadística"
-                              },
-                              {
-                                "texto": "Persistente (6 meses)"
-                              },
-                              {
-                                "texto": "Un identificador único utilizado por aplicaciones de Google para almacenar información sobre sus preferencias."
-                              }
-                            ]
-                          },
-                          {
-                            "celdas": [
-                              {
-                                "texto": "1P_JAR"
-                              },
-                              {
-                                "texto": "De terceros (Google Analytics)"
-                              },
-                              {
-                                "texto": "Estadística"
-                              },
-                              {
-                                "texto": "Persistente (1 semana)"
-                              },
-                              {
-                                "texto": "Transfiere datos a Google."
-                              }
-                            ]
-                          }
-                        ]
                       },
                       {
                         "kind": "texto-pagina",

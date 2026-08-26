@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "fecha": "2026-08-26",
+    "que": "siembra de los dos campos que viven en el listado + la jerarquía de `categorias-recursos` (D2.8)",
+    "fuente": "medidas/extractor-listados.json (2026-08-14)",
+    "sabotaje": null
+  },
+  "etiquetas": {
+    "sembradas": 12,
+    "slugsSinFilaEnLaDb": [],
+    "filasSinCorpus": []
+  },
+  "huecoDeCaptura": {
+    "declarado": [],
+    "huerfanosNuevos": [],
+    "declaradosYaSembrables": [],
+    "porQue": "§F3-LH-DOS-CONJUNTOS-DE-149 — el /blog del original los lista y no están en el corpus de 149"
+  },
+  "entradasBlog": {
+    "sembrados": 68,
+    "slugsSinFilaEnLaDb": [],
+    "entradasNoCubiertas": 84,
+    "deEllasConRecurso": 83
+  },
+  "categoriasRecursos": {
+    "filas": 10,
+    "altas": 1,
+    "padresApuntados": 8,
+    "padresDeclaradosPorElCorpus": 8,
+    "relacionesSinDestino": [],
+    "filasSinCorpus": []
+  }
+}
