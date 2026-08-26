@@ -21300,6 +21300,117 @@ línea de unidades añadida** (`✓ evaluadas 31/31 rutas`) y nada más.
   no se toca: cambiarlo exige derivar cuántas filas debería evaluar, y eso es
   su tanda.
 
+### ✅ CERRADA 2026-08-26 (111.ª, PASO 0) — y el suelo flojo NO era el hallazgo
+
+La ficha de arriba dice *«su propio mínimo es 1 contra 15 evaluadas»*. Es
+cierto y **se queda corta en una unidad**: derivado, eran **TRES cifras en TRES
+unidades**, y la cuarta cosa es la que muerde.
+
+| qué | cuánto | unidad |
+|---|---|---|
+| lo que la sonda **AFIRMA** | **114** | casos (`eq(`) |
+| lo que **CUENTA** | **10** | llamadas a `ev.ok(` |
+| lo que **DECLARA** | **1** | `filas` |
+| y el único `Evaluadas` del fichero | — | **el FIXTURE de `Evaluadas.ok()`** |
+
+> **El contrato de la sonda estaba atado al OBJETO QUE EXAMINA.** Es §regla 17
+> con instrumento y objeto colapsados: un sabotaje sobre `Evaluadas` movería la
+> portería. Y no era teórico — **medido, un recorte del dominio salía VERDE**.
+
+**Lo que cambia** (`scripts/qa/lib.test.mjs`):
+
+1. el contrato es **otro objeto** (`contrato`, unidad `casos`) y su mínimo se
+   **DERIVA** contando `eq(` en cabeza de línea del propio fuente — mismo idioma
+   que `kb-barra.neg` con `apunta(`. Un literal `114` envejecería CONTRA el
+   fichero en silencio (§regla 9); así, añadir un `eq` sube el listón solo;
+2. la unidad es **`casos`**, que es lo que la sonda afirma. `filas` era la del
+   fixture, y una unidad heredada del objeto examinado no expresa nada de quien
+   la declara;
+3. el fixture sigue registrado —`Evaluadas` **no sabe no registrarse**— pero va
+   **NOMBRADO**: dos líneas de unidades sin nombre son dos canales de verdad
+   para una sola pregunta (§sondas 1);
+4. guarda en la dirección contraria sobre el propio patrón: si corren **MÁS**
+   casos de los que el fuente declara, el mínimo está subestimado y sale ≠0.
+   Cada mitad cae por SU motivo — la de menos la grita el contrato.
+
+**EL NEGATIVO, POR LOS DOS LADOS** — `npm run qa:lib-neg`, nuevo
+(`medidas/lib-test-neg.json`):
+
+| corrida | exit | qué dice |
+|---|---|---|
+| control | **0** | `✅ 114/114` · `evaluadas 114/114 casos` |
+| `dominio-corto` | **2** | `✅ 14/14` **y** `NO SE PUDO EVALUAR — 14 de 114 casos` |
+
+El sabotaje va en el **DATO** —recorta el dominio— y no en el umbral (§regla
+28a). Su corte se deriva de una cantidad **INDEPENDIENTE** del mínimo (los `eq(`
+en columna 0, que son **14**), porque compartir variable con el mínimo mueve la
+portería (§regla 17). Y cae **por su motivo**: la sonda imprime su verde
+plausible y el contrato lo tumba — §regla 5ter en vivo.
+
+**LAS SEPARADORAS, que es lo que dice que el arreglo hace algo.** Verde y rojo
+no prueban que el CAMBIO sirva, sólo que hoy discrimina. Ejecutadas las **dos**
+posiciones posibles del recorte bajo el contrato viejo:
+
+| escenario | exit |
+|---|---|
+| viejo · recorte **ANTES** del fixture ⇒ cero `Evaluadas` registrados | **0**, y mudo |
+| viejo · recorte **DESPUÉS** ⇒ `minimo: 1` con 15 contadas | **0** igual |
+| derivado · el mismo recuento contra el mínimo del fuente | **2** |
+
+**2 instancias separadoras, no 0.** 11/11 casos.
+
+⚠ **Alcance, con su número** (§regla 14): el negativo **NO** prueba que las 114
+aserciones de `lib.test` sean correctas — prueba que **si dejan de correr, se
+nota**. Y `negativos.mjs` lo clasifica como `conNavegador` (su fuente efectiva
+incluye `lib.test.mjs`, que llama a `iniciarClon(`), así que queda **censado
+pero fuera del lote barato**.
+
+⚠ **Y lo que este cierre NO toca:** `Evaluadas` sigue sin poder no registrarse,
+así que **cualquier test que instancie la clase deja un segundo contrato en
+`_evaluaciones`**. Aquí se resuelve nombrándolo, que es paliativo. Arreglarlo de
+verdad es tocar `lib.mjs`, o sea las **212** sondas, y eso pide su propia
+adjudicación de NO-OP (§regla 5ter). Se ficha, no se hace.
+
+### ✅ ENTORNO RECONSTRUIDO 2026-08-26 (111.ª, ESCALÓN 1) — `0 y 0`
+
+El `.next` no estaba ausente sino **MUTILADO**: 18 entradas y **ninguno** de los
+cuatro testigos (`BUILD_ID`, `standalone`, `prerender-manifest.json`,
+`routes-manifest.json`). Un `existsSync` lo habría dado por bueno, y
+`iniciarClon()` lanza `npm run start` contra el `.next` que haya.
+
+**La precondición se comprobó ANTES de gastarla** (§regla 37, su primer
+ejercicio real), y no se cumplía: **Docker Desktop no estaba arrancado** — no
+era un contenedor parado, era que no había demonio. Arrancado el demonio y
+`docker start kunak-cms-pg` (nunca `compose up`), verificado **con una consulta
+real** —`kunak@kunak_cms`, 130 tablas— y no sólo con «Up». Comprobación de
+**PROCESOS** antes (§regla 18): 0 sondas en vuelo, puerto 3000 libre.
+
+Build **fuera** (`NEXT_DIST_DIR=.next-nuevo`), exit 0, promoción por rename.
+
+**La comprobación es la DIFERENCIA SIMÉTRICA con los dos lados nombrados, nunca
+el neto** (§regla 20, tercera mitad):
+
+| | rutas |
+|---|---|
+| línea base · `manifiesto-2026-08-25.json` | **413** |
+| hoy · `manifiesto-2026-08-26.json` | **413** |
+| en la base y **NO hoy** (desaparecidas) | **0** |
+| hoy y **NO en la base** (nuevas) | **0** |
+
+`npm run check` entero: **exit 0** — 0 errores de lint (67 avisos), 413 rutas ·
+23 familias · 0 vacías, 223 slugs sin colisión, 0 campos sin contraparte.
+
+> **Y una confirmación que no se buscaba:** `check` reconstruye `.next` **en
+> sitio**, o sea que hubo **dos** builds distintos. `w()` de-duplicó el
+> manifiesto —hay **un solo** `manifiesto-2026-08-26.json`—, así que los dos
+> builds emiten las mismas 413 rutas al elemento. Determinismo medido, no
+> supuesto.
+
+⚠ **Deuda de disco que esta tanda NO limpia, con su cardinal:** quedan **5**
+árboles `.next-*` en `apps/web` (`-105-previo`, `-111-mutilado-sin-testigos`,
+`-anterior`, `-t85-previo`, `-viejo`). Están todos en `.gitignore`, así que no
+ensucian el repo — pero son varios GB y ninguno es evidencia.
+
 ### ⚠ `npm run check` NO SE PUDO COMPLETAR — y la causa es de ENTORNO, derivada
 
 El encargo pedía `check` al final por haberse tocado código de sonda. Las
