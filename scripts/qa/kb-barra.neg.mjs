@@ -34,6 +34,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { Evaluadas } from "./lib.mjs";
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const SONDA = join(AQUI, "kb-barra.mjs");
@@ -61,7 +62,27 @@ const huella = (j) =>
   ).join("\n");
 
 const casos = [];
-const apunta = (nombre, ok, detalle) => { casos.push({ nombre, ok, detalle }); console.log(`   ${ok ? "✓" : "✗"} ${nombre}: ${detalle}`); };
+const apunta = (nombre, ok, detalle) => { casos.push({ nombre, ok, detalle }); console.log(`   ${ok ? "✓" : "✗"} ${nombre}: ${detalle}`); ev.ok(); };
+
+/* ── EL CONTRATO DE `Evaluadas` (§4bis) ────────────────────────────────────
+ * Aquí NO se exime con `SIN_CONTRATO` aunque este fichero sólo orqueste —mismo
+ * criterio que `clase-rango.neg.mjs`—, y el motivo es el modo de fallo que
+ * tiene delante: cada caso es un `spawnSync` con `timeout: 600_000`, así que
+ * una corrida que muere a la mitad deja los casos de abajo SIN CORRER. Y como
+ * el veredicto es `if (mal.length) process.exit(1)`, tres casos de ocho, todos
+ * pasando, saldrían **«3/3 casos» y exit 0**: la clase «0 comparado = verde»
+ * entera, dentro de un negativo.
+ *
+ * ⚠ EL MÍNIMO SE DERIVA DEL FUENTE QUE DECLARA LOS CASOS —cuenta las llamadas
+ * a `apunta(` en columna 0— y NO de `casos.length` (§regla 17: *un sabotaje que
+ * comparte variable con el mínimo MUEVE LA PORTERÍA*). `casos` se construye
+ * sobre la marcha: usarlo de mínimo haría que ocho casos y tres dieran los dos
+ * «suficiente», que es exactamente no comprobar nada.
+ *
+ * Se lee el fuente en vez de escribir un 8 porque un literal envejece CONTRA el
+ * fichero, en silencio (§regla 9): añadir un `apunta` sube el listón solo. */
+const NCASOS = (readFileSync(fileURLToPath(import.meta.url), "utf8").match(/^apunta\(/gm) ?? []).length;
+const ev = new Evaluadas({ nombre: "kb-barra-neg", unidad: "casos", minimo: NCASOS });
 
 console.log(`\n═══ kb-barra.neg @${ANCHO} ═══\n`);
 
@@ -137,4 +158,10 @@ const mal = casos.filter((c) => !c.ok);
 console.log(`\n═══ VEREDICTO · ${casos.length - mal.length}/${casos.length} casos`);
 for (const c of mal) console.log(`   ✗ ${c.nombre} — ${c.detalle}`);
 console.log(`\n  ⚠ lo que este negativo NO prueba: que el lado del CLON esté bien. Hoy no existe.`);
-if (mal.length) process.exit(1);
+console.log("");
+/* El contrato PRIMERO: si la lista no se recorrió entera, el veredicto de
+ * arriba no vale y decirlo es más importante que decir cuántos fallaron
+ * (§regla 5ter — *cuando una sonda imprima un recuento y su contrato imprima
+ * otro, no son dos opiniones*). Con la lista entera, manda `mal`. */
+const veredicto = ev.informe();
+process.exitCode = veredicto || (mal.length ? 1 : 0);

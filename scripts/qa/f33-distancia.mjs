@@ -29,6 +29,7 @@
  */
 import { readFileSync } from "node:fs";
 import { basename } from "node:path";
+import { Evaluadas } from "./lib.mjs";
 
 const [fA, fB] = process.argv.slice(2);
 if (!fA || !fB) throw new Error("Uso: node f33-distancia.mjs <antes.json> <despues.json>");
@@ -101,6 +102,25 @@ function aplana(p, fuera) {
 }
 
 const rutas = [...new Set([...Object.keys(A.paginas), ...Object.keys(B.paginas)])].sort();
+
+/* ── EL CONTRATO DE `Evaluadas` (§4bis) ────────────────────────────────────
+ * Esta sonda no abre navegador y no congela, pero **sí evalúa unidades**, así
+ * que no se exime con `SIN_CONTRATO` — mismo criterio que `kb-tests.mjs`.
+ *
+ * ⚠ EL MÍNIMO SE DERIVA DE LA UNIÓN DE LAS DOS FOTOS, no del recuento que la
+ * corrida produce (§4bis: *derivarlo es mejor que escribirlo, porque una ruta
+ * nueva sube el listón sola*). Y son DOS conjuntos distintos a propósito
+ * (§regla 17: *un sabotaje que comparte variable con el mínimo mueve la
+ * portería*):
+ *   · el MÍNIMO  = rutas de la unión ......... lo que habría que comparar;
+ *   · el CONTADOR = rutas con ≥1 par limpio ... lo que se comparó de verdad.
+ * Una ruta que está en una foto y no en la otra suma al primero y no al
+ * segundo, así que sale **en rojo** en vez de desaparecer del informe — que es
+ * justo la clase «0 comparado = verde» que este contrato existe para cerrar.
+ * Si la unión es 0, `Evaluadas` TIRA: una sonda que no sabe cuántas unidades
+ * debería evaluar no puede afirmar que las evaluó. */
+const ev = new Evaluadas({ nombre: "f33-distancia", unidad: "rutas", minimo: rutas.length });
+
 let sumA = 0, sumB = 0, nLimpio = 0;
 let acercan = 0, alejan = 0, igual = 0;
 const mixto = { aparecen: [], desaparecen: [], ambosNull: 0 };
@@ -129,7 +149,7 @@ for (const r of rutas) {
     else if (dB > dA + 0.005) { alejan++; mayores.push({ ruta: r, eje: e, dA, dB, gana: dA - dB }); }
     else igual++;
   }
-  if (rN) porRuta[r] = { n: rN, antes: +rA.toFixed(2), despues: +rB.toFixed(2), gana: +(rA - rB).toFixed(2) };
+  if (rN) { porRuta[r] = { n: rN, antes: +rA.toFixed(2), despues: +rB.toFixed(2), gana: +(rA - rB).toFixed(2) }; ev.ok(); }
 }
 
 console.log(`\n═══ DISTANCIA · ${basename(fA)}  →  ${basename(fB)} ═══`);
@@ -180,3 +200,9 @@ for (const [r, v] of movidas)
 console.log(`\n═══ 4 · LOS 20 PARES QUE MÁS SE MUEVEN`);
 for (const m of mayores.sort((a, b) => Math.abs(b.gana) - Math.abs(a.gana)).slice(0, 20))
   console.log(`     ${m.ruta.replace("/es/", "").padEnd(46)} ${m.eje.padEnd(20)} |Δ| ${m.dA.toFixed(2).padStart(9)} → ${m.dB.toFixed(2).padStart(9)}  ${m.gana >= 0 ? "acerca" : "ALEJA "} ${Math.abs(m.gana).toFixed(2)}`);
+
+/* La línea de unidades: `31/31 rutas`. El gancho de `exit` fuerza el veredicto
+ * aunque nadie llame aquí, pero se llama para que la línea salga UNA vez y en
+ * su sitio (§regla 1: lo que imprime y lo que cuenta no pueden discrepar). */
+console.log("");
+process.exitCode = ev.informe();

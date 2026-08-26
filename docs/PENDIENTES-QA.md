@@ -21244,6 +21244,92 @@ saber cuántas unidades debería evaluar cada una, y `minimo` **se deriva** (de
 sobre dos sondas de la 107.ª y cae fuera del encargo de la 109.ª, que es de
 derivación. Se ficha con su número para que la siguiente lo recoja.
 
+### ✅ CERRADA 2026-08-26 (110.ª, ESCALÓN 1) — `qa:lib` verde: **114/114, EXIT 0**
+
+**Las dos sondas eran casos DISTINTOS**, y la pregunta *«¿le aplica el contrato
+a un negativo?»* se contestó **derivando el precedente**, no decidiéndolo: el
+negativo hermano `clase-rango.neg.mjs` L73-79 **no se exime** aunque sólo
+orqueste, *«porque la unidad es el sabotaje y uno que no llegó a correr dejaría
+un eje sin probar»*. Y `SIN_CONTRATO` resultó estar **declarado en `lib.mjs` y
+usado por NADIE** —`grep` de la asignación: 0—, con dos ficheros que lo citan
+sólo para explicar por qué **no** se acogen a él.
+
+| sonda | ¿evalúa unidades? | unidad | mínimo, **derivado de** |
+|---|---|---|---|
+| `f33-distancia.mjs` | **sí** — no abre navegador ni congela, pero compara pares. Mismo criterio que `kb-tests.mjs` | `rutas` | la **unión** de rutas de las dos fotos de entrada |
+| `kb-barra.neg.mjs` | **sí** — es orquestador, y le aplica igual que a `clase-rango.neg` | `casos` | las llamadas a `apunta(` **en su propio fuente** (hoy **8**) |
+
+> ⚠ **En las dos, mínimo y contador son CONJUNTOS DISTINTOS a propósito**
+> (§regla 17: *un sabotaje que comparte variable con el mínimo MUEVE LA
+> PORTERÍA*). En `f33-distancia` el mínimo son las rutas de la unión y el
+> contador las que tienen ≥1 par limpio, así que una ruta presente en una foto
+> y no en la otra **sale en rojo en vez de desaparecer del informe**. En
+> `kb-barra.neg` el mínimo sale del **fuente** y el contador de la ejecución:
+> usar `casos.length` —que se construye sobre la marcha— habría hecho que ocho
+> casos y tres dieran los dos «suficiente», o sea no comprobar nada.
+
+**Y el mínimo se lee del fuente en vez de escribir un `8`** porque un literal
+envejece **contra** el fichero en silencio (§regla 9, 7.º caso): añadir un
+`apunta` sube el listón solo.
+
+**CONTROL de que la guarda nueva discrimina** (§regla 8), corrido en esta tanda
+sobre `f33-distancia` porque es offline: comparadas dos congeladas con
+conjuntos de rutas distintos (**31 contra 6**) sale **`6 de 31 rutas` · exit
+1 · «NO SE PUDO EVALUAR»**. Antes de la guarda ese mismo par publicaba **«6 de
+6 rutas se mueven» y exit 0** — el verde falso completo. Y sobre un par
+legítimo el cambio es **NO-OP**: el `diff` de la salida es **exactamente la
+línea de unidades añadida** (`✓ evaluadas 31/31 rutas`) y nada más.
+
+### Lo que queda, con su número — no se arregla aquí
+
+- **§regla 5ter · los negativos de las dos tocadas.** `f33-distancia` tiene
+  **0 negativos** (derivado: no existe `f33-distancia.neg.mjs`), así que no hay
+  ninguno que releer — el control de arriba es el que hay, y **no está
+  congelado como caso**. En `kb-barra.neg`, releídos sus **8** casos: ninguno
+  cambia lo que separa, porque los ocho ejercitan la sonda **spawneada** y no
+  el recuento del orquestador. El caso que sí ejercitaría el contrato nuevo
+  —*el orquestador muere a la mitad*— **no existe: 0 de 8**. El MECANISMO sí
+  está probado —`qa:lib` §3b y, en esta tanda, `f33-distancia` al rojo—; su
+  **cableado en este fichero, no**, y ejercitarlo pide Chrome y el original.
+- **§regla 26 · cruce registro↔disco:** **83** negativos registrados en
+  `package.json`, **0** nombran un fichero ausente. Limpio.
+- ⚠ **`qa:lib` publica `evaluadas 15/1 filas`** — su propio mínimo es **1**
+  contra 15 evaluadas, que es la firma del **suelo flojo** que su README
+  describe (*«`12/1` es la firma de un suelo flojo»*). **El guardián del
+  contrato es el que peor lo declara.** No sale rojo, así que se ficha aquí y
+  no se toca: cambiarlo exige derivar cuántas filas debería evaluar, y eso es
+  su tanda.
+
+### ⚠ `npm run check` NO SE PUDO COMPLETAR — y la causa es de ENTORNO, derivada
+
+El encargo pedía `check` al final por haberse tocado código de sonda. Las
+etapas que **validan este cambio pasaron las dos**; la que faltó no lo mira:
+
+| etapa | resultado |
+|---|---|
+| `eslint` | ✅ **0 errores** · 67 warnings, todos preexistentes |
+| `tsc --noEmit` | ✅ pasó |
+| `next build` · compile + TS | ✅ `Compiled successfully in 13.3s` · `Finished TypeScript in 8.6s` |
+| `next build` · *Collecting page data* | ❌ **`cannot connect to Postgres` · `ECONNREFUSED 127.0.0.1:55432`** |
+
+**La atribución está derivada, no supuesta:** `docker ps` devuelve *«failed to
+connect to the docker API … the daemon is running?»*, o sea que **el motor de
+Docker no estaba levantado antes de empezar**. Y esta tanda toca
+`scripts/qa/*.mjs` y `docs/`, **cero `src/`** — que es lo único que `next build`
+compila. El fallo no puede ser del cambio.
+
+> ⚠⚠ **Y SE COBRÓ §regla 12 EN EL ACTO: `.next` YA NO EXISTE.** *«Un `next
+> build` que falla no deja el build anterior: LO BORRA»*, y aquí no había
+> ninguna sonda en vuelo que lo notara —comprobado por PROCESOS, §regla 18: los
+> 32 `node` vivos son servidores MCP, cero `scripts/qa/*.mjs` y cero `next
+> start`—. **Lo que queda pendiente para la tanda que necesite el clon:**
+> levantar el contenedor y reconstruir, **fuera** (`NEXT_DIST_DIR=.next-nuevo`,
+> promoción por rename sólo con `exit 0`), que es lo que la propia regla manda
+> y que esta tanda no hizo.
+>
+> El defecto queda en la dirección que grita: sin `.next`, cualquier sonda que
+> arranque el clon **falla en voz alta** en vez de medir un build viejo.
+
 ---
 
 ## 109.ª · EL CIERRE — la clase no era el resolutor, y los tres «NO» siguen siendo preguntas (2026-08-25)
