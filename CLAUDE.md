@@ -4235,6 +4235,58 @@ su propio papel.
 > da error* con el nivel puesto en **quién recibe la declaración**, y aquí se
 > sabe de antemano en qué nivel hay que mirar cada uno.
 
+**37 · UNA PRECONDICIÓN QUE NO DEPENDE DE LA MEDICIÓN SE COMPRUEBA ANTES DE
+GASTARLA — Y LA MAGNITUD NO ES LA LÍNEA, ES LA NAVEGACIÓN.** (2026-08-26)
+
+La §regla 31 dice **dónde** tiene que estar una guarda para que su negativo
+pueda compararse. Ésta dice **cuándo tiene que correr**, y es el mismo eje una
+vuelta más arriba:
+
+> **Una sonda que levanta navegador y necesita una congelada para su cruce puede
+> comprobar que existe ANTES de medir o DESPUÉS.** Si lo hace después, una
+> ausencia le cuesta **la corrida entera** — y el modo de fallo no es un número
+> falso: es **trabajo tirado** y, si la matan a medias, **evidencia perdida**
+> (§regla 5). Toda precondición que **no dependa de lo que la corrida produce**
+> se comprueba **antes de gastarla**.
+
+**Y su forma más cara no es olvidar la guarda: es ARREGLARLE EL NOMBRE Y DEJARLE
+LA POSICIÓN.** Medido: un arreglo repuntó el fichero que una sonda leía y dejó
+la comprobación **197 líneas por detrás del `launch`**, con el mensaje de commit
+describiendo el daño que no arregló. Sólo no se nota **porque el fichero
+existe** — es §regla 3 con el objeto cambiado: un mensaje de commit es, como un
+comentario, **lo único del repo que nadie ejecuta ni verifica**.
+
+> ⚠ **LA MAGNITUD, Y SIN ELLA LA REGLA SE VUELVE A IMPLEMENTAR MAL: NO ES LA
+> DISTANCIA EN LÍNEAS.** Medirla así **sobre-casa** —un `launch()` en L65 y una
+> lectura en L72 no gasta nada, son cabecera— y publica un número plausible de
+> más: **11 contra 5** en el mismo árbol, con **5 instancias separadoras** entre
+> las dos lecturas. Lo que hace caro un insumo tardío no es que su línea esté
+> abajo, es que **ENTRE MEDIAS SE MIDA**: la magnitud es la **NAVEGACIÓN** entre
+> el arranque y la comprobación. Es §*la causa común: el NIVEL al que se mide*
+> con el contenedor puesto en el **número de línea**.
+
+**Y su LÍMITE, que hay que escribir o produce arreglos falsos** — son dos, y los
+dos se leen como el defecto:
+
+| no es un insumo tardío | por qué |
+|---|---|
+| la lectura de algo que **la propia corrida escribe** | no se puede adelantar **por construcción**: el fichero no existe hasta que termina |
+| la lectura **opcional** tras un `if (existsSync)` **con fallback** | si falta, la corrida sigue: es un extra, no una precondición |
+
+El discriminador es **derivable, no de criterio**: `if (!existsSync(X))` con
+`throw`/`exit` es precondición **con guarda**; `if (existsSync(X)) { …lectura… }`
+es **extra opcional**; un `readFileSync` sin `existsSync` es precondición
+**pelada**. Y una guarda **tardía** sigue siendo defecto: lo que se juzga es
+**cuándo corre**, no si existe.
+
+> **Y el corolario que convierte la deuda en trabajo con forma: la clase no son
+> N sondas.** Es que **no hay sitio común por el que pase la comprobación de
+> precondiciones**, como sí lo hay para `Evaluadas`, `w()` y `gritaSiRevienta()`.
+> Arreglarlas una a una es §regla 4 otra vez —*la instancia y no la CLASE*—, y
+> el coste de cada instancia **no es su línea**: subir la comprobación exige
+> correr su negativo para adjudicar **NO-OP** (§regla 5ter), que en la guarda de
+> regresión principal son **382 rutas a dos anchos**.
+
 ## Comandos
 
 ```bash
