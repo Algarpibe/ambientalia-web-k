@@ -4259,11 +4259,41 @@ comentario, **lo único del repo que nadie ejecuta ni verifica**.
 > ⚠ **LA MAGNITUD, Y SIN ELLA LA REGLA SE VUELVE A IMPLEMENTAR MAL: NO ES LA
 > DISTANCIA EN LÍNEAS.** Medirla así **sobre-casa** —un `launch()` en L65 y una
 > lectura en L72 no gasta nada, son cabecera— y publica un número plausible de
-> más: **11 contra 5** en el mismo árbol, con **5 instancias separadoras** entre
-> las dos lecturas. Lo que hace caro un insumo tardío no es que su línea esté
-> abajo, es que **ENTRE MEDIAS SE MIDA**: la magnitud es la **NAVEGACIÓN** entre
-> el arranque y la comprobación. Es §*la causa común: el NIVEL al que se mide*
-> con el contenedor puesto en el **número de línea**.
+> más: **11 contra 5** en el mismo árbol. Lo que hace caro un insumo tardío no
+> es que su línea esté abajo, es que **ENTRE MEDIAS SE MIDA**: la magnitud es la
+> **NAVEGACIÓN** entre el arranque y la comprobación. Es §*la causa común: el
+> NIVEL al que se mide* con el contenedor puesto en el **número de línea**.
+>
+> > ⚠⚠ **Y ESE «11 CONTRA 5» LLEVABA LA ARITMÉTICA INCOMPLETA, corregido en la
+> > 110.ª — porque «la v1» son DOS DETECTORES CON EL MISMO NOMBRE.** Los dos
+> > números son ciertos y cuentan objetos distintos, así que se escriben **los
+> > dos con su definición**:
+> >
+> > | «la v1» | qué es | n |
+> > |---|---|---|
+> > | **tal como CORRIÓ** | la distancia en líneas **más** el defecto lector≠escritor: contaba `lib.mjs`, que **DEFINE** `launch` y no lo llama | **11** |
+> > | **reconstruida HOY** | la distancia en líneas sobre el detector ya limpio | **10** |
+> >
+> > **Y la aritmética cierra en DOS restas, no en una:** `11 − 5 separadoras −
+> > 1 (lib.mjs) = 5`. Escrito con una sola —«11 contra 5, con 5 separadoras»—
+> > deja el otro lado en **6**, que no existe en ningún reparto, y **ese resto
+> > huérfano era el único síntoma** de que faltaba un término.
+> >
+> > **Y la atribución también estaba mal, con su barrido:** de los tres defectos
+> > que se le achacaban a esta v1, **sólo uno produce su número**. Barridas las
+> > **16** definiciones posibles (4 ejes binarios), sobre-casar un `.json` fuera
+> > de `medidas/` lleva a **12/13 —nunca a 11—** y contar comentarios como
+> > lectura es **NO-OP: 0 instancias separadoras en las 16**. Los tres están
+> > medidos, pero **en el detector de al lado** (`resolutores-109.mjs` L26-35),
+> > de donde se copiaron.
+> >
+> > **La moraleja, que es la reutilizable:** un número heredado se audita
+> > **reconstruyendo el detector que lo produjo**, no eligiendo entre las dos
+> > cifras que el fichero publica. Aquí la reconstrucción dijo que **ninguna de
+> > las dos sobraba** — §*una lectura se BORRA, nunca se concilia con una nota
+> > al pie* sólo aplica cuando las dos miden **lo mismo**. Derivación con su
+> > control y sus 16 filas:
+> > `docs/research/cola-larga/derivaciones/v1-reproducible-110.{mjs,log}`.
 
 **Y su LÍMITE, que hay que escribir o produce arreglos falsos** — son dos, y los
 dos se leen como el defecto:

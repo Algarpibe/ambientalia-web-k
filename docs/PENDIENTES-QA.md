@@ -21379,6 +21379,44 @@ lectura en L72 no gasta nada — son cabecera.
 **Instancias separadoras entre v1 y v2: 5** —las tardías inocuas—, así que las
 dos versiones **no son la misma función escrita de dos maneras**.
 
+> ⚠⚠ **CORREGIDO EN LA 110.ª: «la v1» son DOS DETECTORES, y este párrafo
+> mezclaba sus dos números.** El fichero publicaba **11** cableado (`say` de
+> L154) y **10** derivado (L221) para la misma cosa, y esta ficha heredaba la
+> mezcla: **«publicó 11»** arriba contra una tabla que dice **10** dos secciones
+> más abajo. Los dos son **CIERTOS** y cuentan objetos distintos:
+>
+> | «la v1» | qué es | n |
+> |---|---|---|
+> | **tal como CORRIÓ** | la línea **más** el defecto **lector≠escritor** — contaba `lib.mjs`, que DEFINE `launch` y no lo llama | **11** |
+> | **reconstruida HOY** | la línea sobre el detector ya limpio; es lo que el `.mjs` calcula, y lo que dice la tabla del reparto | **10** |
+>
+> **La aritmética cierra en DOS restas, no en una:** `11 − 5 separadoras −
+> 1 (lib.mjs) = 5`. Con una sola el otro lado queda en **6**, que no existe en
+> ningún reparto — y ese **resto huérfano era el único síntoma** de que faltaba
+> un término. Nadie lo miró porque los dos números estaban en el mismo fichero,
+> a cuatro renglones.
+>
+> **Y la atribución tampoco se sostiene, ahora con su barrido.** El párrafo de
+> arriba dice *«estaba sobre-casada»*; barridas las **16** definiciones posibles
+> del detector (4 ejes binarios), el sobre-casado lleva a **12/13 — nunca a
+> 11**, y contar comentarios como lectura es **NO-OP: 0 instancias separadoras
+> en las 16**. **Sólo uno de los tres defectos produce el 11**, y es el
+> lector≠escritor. Los tres están medidos — **en `resolutores-109.mjs` L26-35**,
+> que es de donde se copiaron: son defectos de AQUEL detector.
+>
+> **Lo reutilizable:** un número heredado se audita **reconstruyendo el detector
+> que lo produjo**, no eligiendo entre las dos cifras que el fichero publica.
+> Aquí la reconstrucción dijo que **ninguna de las dos sobraba** — §*una lectura
+> se BORRA, nunca se concilia con una nota al pie* sólo aplica cuando las dos
+> miden **lo mismo**, y éstas no.
+>
+> Los dos números salen ya **DERIVADOS** del propio `.mjs` (§regla 5ter: *el
+> valor que un control escribe se deriva de la fuente que lo declara, nunca se
+> cablea*); su `.log` regenerado difiere **exactamente en las 2 líneas del
+> número y en ninguna más** —reparto, 3 defectos, 5 filas y control 3/3
+> idénticos—. Barrido con su control 2/2:
+> `docs/research/cola-larga/derivaciones/v1-reproducible-110.{mjs,log}`.
+
 ### El reparto, con su denominador (§regla 14)
 
 | | n |

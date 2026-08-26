@@ -1,8 +1,10 @@
 ══════════════════════════════════════════════════════════════════════
   INSUMO TARDÍO — ¿instancia o clase?  ·  109.ª cierre  ·  2026-08-26
 ══════════════════════════════════════════════════════════════════════
-  magnitud: NAVEGACIÓN entre el arranque y la comprobación.
-            NO la distancia en líneas — eso es la v1, y dio 11 de más.
+  magnitud: NAVEGACIÓN entre el arranque y la comprobación,
+            NO la distancia en líneas.
+  «la v1» son DOS detectores (110.ª): tal como CORRIÓ dio 11
+  —línea + el defecto lector≠escritor—, reconstruida HOY da 10.
 
 ── EL REPARTO, CON SU DENOMINADOR ────────────────────────────────────
   fuentes ejecutables bajo scripts/ .................  289
@@ -67,7 +69,10 @@
   ⇒ instancias SEPARADORAS entre v1 y v2: 5
      Si fuera 0, v1 y v2 serían la MISMA función escrita de dos maneras y
      no habría dos hipótesis que separar — sólo una escrita dos veces.
-  ⇒ v1 habría publicado 10 · v2 publica 5 · defectos reales 3
+  ⇒ v1 reconstruida HOY 10 · v2 publica 5 · defectos reales 3
+  ⇒ v1 TAL COMO CORRIÓ 11 — y la aritmética cierra en DOS restas,
+     no en una: 11 − 5 separadoras − 1 (lib.mjs, que DEFINE launch) = 5.
+     Barrido de las 16 definiciones posibles: v1-reproducible-110.log.
 
   ⇒ CONTROL: 3/3
   ⇒ VEREDICTO: CLASE (3)

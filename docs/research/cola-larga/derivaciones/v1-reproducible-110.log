@@ -1,0 +1,58 @@
+══════════════════════════════════════════════════════════════════════
+  ¿ES EL «11» REPRODUCIBLE?  ·  110.ª PASO 0  ·  2026-08-26
+══════════════════════════════════════════════════════════════════════
+  El detector de la 109.ª publica 11 (cableado, L154) y 10 (derivado,
+  L221) para la misma cosa. Aquí se barre el espacio de definiciones y
+  se cuenta cuántas publican 11.
+
+── CONTROL 1 · ¿reconstruye la v2 congelada de la 109.ª? ──────────────
+  congelada : antes 11 · inocuas 5 · gastan 5 · después 10
+  reconstr. : antes 11 · inocuas 5 · gastan 5 · después 10
+  ✅ reproduce
+
+── EL BARRIDO · 4 ejes binarios ⇒ 16 detectores ───────────────────────
+   guardas RETIRADAS:  N=sin gate de navegación (la «v1»)  M=sin exigir
+   `medidas/`  L=sin excluir lib.mjs  C=sin saltar comentarios
+
+   guardas   antes  inocuas  gastan  DESPUÉS   ¿publica 11?
+   ····         11        5       5       10   SÍ → antes
+   N···         11        0      10       10   SÍ → antes
+   ·M··         21        8       4       12   no
+   NM··         21        0      12       12   no
+   ··L·         11        5       6       11   SÍ → antes, DESPUÉS
+   N·L·         11        0      11       11   SÍ → antes, gastan, DESPUÉS
+   ·ML·         21        8       5       13   no
+   NML·         21        0      13       13   no
+   ···C         11        5       5       10   SÍ → antes
+   N··C         11        0      10       10   SÍ → antes
+   ·M·C         21        8       4       12   no
+   NM·C         21        0      12       12   no
+   ··LC         11        5       6       11   SÍ → antes, DESPUÉS
+   N·LC         11        0      11       11   SÍ → antes, gastan, DESPUÉS
+   ·MLC         21        8       5       13   no
+   NMLC         21        0      13       13   no
+
+── CONTROL 2 · ¿el eje NAVEGA tiene instancias SEPARADORAS? ───────────
+  con gate (v2) : gastan 5
+  sin gate (v1) : gastan 10
+  separadoras   : 5   scripts/qa/barra-cmp.mjs, scripts/qa/html-cmp.mjs, scripts/qa/kb-cmp.mjs, scripts/qa/lh-cmp.mjs, scripts/qa/pie-cmp.mjs
+  ✅ separa: v1 y v2 NO son la misma función
+
+══════════════════════════════════════════════════════════════════════
+  VEREDICTO
+══════════════════════════════════════════════════════════════════════
+  detectores barridos ................................ 16
+  que publican 11 como «leen DESPUÉS» o «gastan» ..... 4   ← la magnitud que §37 cita
+  que publican 11 como «comprueban ANTES» ............ 8   ← otra magnitud, otro eje
+
+  ⇒ el 11 SÍ es reproducible, por 4 definición(es):
+      ··L·
+      N·L·
+      ··LC
+      N·LC
+    Se escribe CON SU DEFINICIÓN al lado, nunca a secas.
+
+  ⇒ el número que la congelada SÍ reproduce para «v1 habría publicado»
+    es 10, y cierra la aritmética: 10 − 5 separadoras = 5 que gastan.
+
+  ⇒ CONTROL: 2/2
