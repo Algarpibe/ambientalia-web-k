@@ -253,7 +253,17 @@ for (const [slug, lista] of [...apariciones.entries()].sort()) {
  * EL SEO — de la medida congelada de las 24 URLs, por slug
  * ═════════════════════════════════════════════════════════════════════════ */
 
-const SEO = JSON.parse(readFileSync(join(QA, "medidas/solutions-seo.json"), "utf8"));
+/* ⚠ GUARDA CON DIAGNÓSTICO (114.ª, PASO 0): un `ENOENT` pelado no dice QUIÉN
+ * produce esta congelada, y §regla 5bis puede haber LIBERADO el nombre canónico
+ * a propósito al renombrarla. */
+const F_SEO = join(QA, "medidas/solutions-seo.json");
+if (!existsSync(F_SEO))
+  throw new Error(
+    `CONGELADA AUSENTE: no existe medidas/solutions-seo.json.\n` +
+      `  La produce \`npm run qa:solutions-seo\`. Si la renombraron (§regla 5bis), el nombre\n` +
+      `  canónico quedó LIBRE a propósito: repunta este lector al nombre nuevo.`,
+  );
+const SEO = JSON.parse(readFileSync(F_SEO, "utf8"));
 const seoPorSlug = new Map();
 for (const f of SABOTAJE === "sin-seo" ? [] : SEO.filas) {
   const segs = f.url.replace(/^https?:\/\/[^/]+/, "").replace(/^\/es(?=\/|$)/, "").split("/").filter(Boolean);

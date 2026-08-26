@@ -1,0 +1,127 @@
+
+════════ CANÓNICOS CABLEADOS · 114.ª PASO 0 (v3 · AST) ════════
+
+  EXCLUIDO  scripts/qa/.tmp/ ..............   26 .mjs (bundles, .gitignore L56)
+  universo  fuentes .mjs ..................  264
+  PARSER    no parsean (excluidas) ........    0
+  eje A     ESCRITURAS (w) descartadas ....  154
+  eje A     CONSUMOS de medidas/ ..........  119   ← P1
+  eje B     CABLEA ........................  118   ← P2
+            RESUELVE ......................    1
+  eje C     DEFECTO (cablea sin guarda) ...   89   ← P3
+            ficheros con ≥1 defecto .......   64   ← P6
+  ACOTADO   CABLEA en la cadena ...........   21   ← P4
+            de ésos, SIN GUARDA ...........    8   ← P5 (unidad CADENA COMPLETA)
+              · en .neg.mjs (fixtura propia)    7   NO lo ejecuta ninguna campaña de red
+              · en PRODUCCIÓN .............    1   ← P5 (unidad CAMINO DE PRODUCCIÓN)
+  disco     cableados que NO resuelven ....    0   ← P7
+            de ausencia QUERIDA (excluidos)    1   (negativos y fixtures: que falten es lo que prueban)
+            dinámicos (no comprobables) ...   24
+  EXCLUIDO  literales en PROSA ............   58   (frases con espacios)
+  EXCLUIDO  METADATO (no lo lee nadie) ....  106   (campos `fuente:`, `canales:` — nombran sin leer)
+
+  cadena acotada = 18 comandos de package.json · 17 ficheros nombrados + scripts/seed/
+
+──────── CONTROL POR LOS DOS LADOS ────────
+  ✓ [+] f33-spec.mjs CABLEA ×2: esperado 2, obtenido 2
+  ✓ [+] catalogos.mjs CABLEA ×7: esperado 7, obtenido 7
+  ✓ [+] f33-spec `f33-rutas.json` SIN guarda: esperado sin guarda, obtenido sin guarda
+  ✓ [+] catalogos.mjs CON guarda ×7: esperado 7, obtenido 7
+  ✓ [−] lh-cubos `lh-cmp-…-todas` RESUELVE: esperado resuelve, obtenido L132 RESUELVE
+  ✓ [−] extractor-kb `kb-spec-*` son METADATO, no consumo: esperado 0 consumos · 2 metadatos, obtenido 0 consumos · 2 metadatos
+
+──────── LA CADENA ACOTADA · PRODUCCIÓN (lo que se arregla) ────────
+  ⚠ FALSO POSITIVO CONOCIDO — verificado a mano el 2026-08-26, NO se vuelve a mirar:
+    coloca-media.mjs:84 sale PELADA y NO lo está. Su guarda vive a DOS SALTOS de
+    variable —L146 `const LISTA = corridaVigente(LISTA_PEDIDA)` y L148 `if (!existsSync
+    (FUENTE)) throw`— y este detector sólo sigue UNO. Además L84 es el default de un
+    parámetro (`LISTA=`), que §regla 5bis declara legítimo: el parámetro elige la
+    DEFINICIÓN, y la CORRIDA la resuelve corridaVigente() por mtime. Está bien.
+  guarda  scripts/seed/captura-media.mjs:60  medidas/media-regenera.json   [directa sobre `F_REGENERA`]
+  guarda  scripts/seed/catalogos.mjs:78  medidas/p-extraido.json   [bucle de tabla]
+  guarda  scripts/seed/catalogos.mjs:88  medidas/f33-extraido.json   [bucle de tabla]
+  guarda  scripts/seed/catalogos.mjs:106  medidas/c-extraido.json   [bucle de tabla]
+  guarda  scripts/seed/catalogos.mjs:110  medidas/c-extraido.json   [bucle de tabla]
+  guarda  scripts/seed/catalogos.mjs:145  medidas/a-extraido.json   [bucle de tabla]
+  guarda  scripts/seed/catalogos.mjs:152  medidas/a-extraido.json   [bucle de tabla]
+  guarda  scripts/seed/catalogos.mjs:158  medidas/a-extraido.json   [bucle de tabla]
+  PELADA  scripts/seed/coloca-media.mjs:84  medidas/media-siembra.json
+  guarda  scripts/seed/coloca-media.mjs:262  medidas/coloca-media-BASE-capturadas.json   [directa sobre `BASE`]
+  guarda  scripts/seed/extractor-f33.mjs:93  medidas/f33-rutas.json   [directa sobre `F_RUTAS`]
+  guarda  scripts/seed/extractor-p.mjs:259  medidas/solutions-seo.json   [directa sobre `F_SEO`]
+  guarda  scripts/seed/seed-kb.mjs:37  medidas/kb-extraido.json   [directa sobre `EXTRAIDO`]
+  guarda  scripts/seed/seed-listados.mjs:33  medidas/extractor-listados.json   [directa sobre `F`]
+
+──────── LA CADENA ACOTADA · .neg.mjs (fixtura propia, NO se arregla) ────────
+  PELADA  scripts/seed/captura-f3-media.neg.mjs:53  medidas/media-siembra.json
+  PELADA  scripts/seed/captura-f3-media.neg.mjs:66  medidas/esta-lista-no-existe.json
+  PELADA  scripts/seed/captura-f3-media.neg.mjs:73  medidas/captura-f3-media-neg-lista-vacia-FIXTURE.json
+  PELADA  scripts/seed/captura-f3-media.neg.mjs:90  medidas/media-siembra.json
+  PELADA  scripts/seed/extractor-kb.neg.mjs:74  medidas/kb-extraido.json
+  PELADA  scripts/seed/extractor.neg.mjs:64  medidas/extractor-corpus.json
+  PELADA  scripts/seed/sondeo.neg.mjs:84  medidas/sondeo-neg-${}.json
+
+──────── DEFECTOS FUERA DE LA CADENA (se fichan, NO se arreglan) ────────
+  59 ficheros · 81 lecturas
+    scripts/download-grupo-a.mjs  (1)
+    scripts/download-grupo-c.mjs  (1)
+    scripts/gen-arquetipo-a.mjs  (1)
+    scripts/qa/a-cascaron.mjs  (1)
+    scripts/qa/a-embeds.mjs  (1)
+    scripts/qa/a-ids.mjs  (1)
+    scripts/qa/a-lexical.mjs  (2)
+    scripts/qa/a-muestra.mjs  (1)
+    scripts/qa/a-scripts.mjs  (1)
+    scripts/qa/artefacto.mjs  (2)
+    scripts/qa/artefacto.neg.mjs  (1)
+    scripts/qa/barra-cmp.mjs  (1)
+    scripts/qa/c-bases.mjs  (1)
+    scripts/qa/c-behaviors.mjs  (1)
+    scripts/qa/c-muestra.mjs  (1)
+    scripts/qa/c-rutas.mjs  (1)
+    scripts/qa/casos-nunca-vistos.neg.mjs  (1)
+    scripts/qa/clase-rango.neg.mjs  (1)
+    scripts/qa/cmp-srcset.neg.mjs  (1)
+    scripts/qa/cms-arquetipos.neg.mjs  (2)
+    scripts/qa/cms-campos.neg.mjs  (1)
+    scripts/qa/cms-decl.neg.mjs  (1)
+    scripts/qa/cms-lectura.neg.mjs  (1)
+    scripts/qa/cms-roundtrip.neg.mjs  (2)
+    scripts/qa/cms-slugs.neg.mjs  (1)
+    scripts/qa/cms-teaser.neg.mjs  (3)
+    scripts/qa/comportamiento.mjs  (2)
+    scripts/qa/escalon-etiquetas.neg.mjs  (2)
+    scripts/qa/f25-final.neg.mjs  (1)
+    scripts/qa/f33-clases.mjs  (1)
+    scripts/qa/f33-geo.mjs  (1)
+    scripts/qa/f33-membresia.mjs  (1)
+    scripts/qa/f33-spec.mjs  (1)
+    scripts/qa/hover-zonal.mjs  (2)
+    scripts/qa/kb-barra.mjs  (2)
+    scripts/qa/kb-cmp.mjs  (1)
+    scripts/qa/kb-tests.mjs  (1)
+    scripts/qa/lh-cmp.mjs  (1)
+    scripts/qa/lh-contenedores.mjs  (1)
+    scripts/qa/lh-huecos.mjs  (3)
+    scripts/qa/lh-paginas.mjs  (1)
+    scripts/qa/lh-pieles-css.mjs  (1)
+    scripts/qa/lh-poblacion.mjs  (1)
+    scripts/qa/lh-serie.mjs  (1)
+    scripts/qa/lh-spec.mjs  (2)
+    scripts/qa/manifiesto.neg.mjs  (1)
+    scripts/qa/media-colision.mjs  (1)
+    scripts/qa/media-colision.neg.mjs  (1)
+    scripts/qa/media-poblaciones.neg.mjs  (1)
+    scripts/qa/media-regenera.neg.mjs  (1)
+    scripts/qa/media-siembra.mjs  (5)
+    scripts/qa/media-srcset.neg.mjs  (2)
+    scripts/qa/pagina-propia.neg.mjs  (2)
+    scripts/qa/pie-familias.neg.mjs  (1)
+    scripts/qa/productos-hueco.mjs  (1)
+    scripts/qa/productos-hueco.neg.mjs  (2)
+    scripts/qa/solutions-campos.neg.mjs  (2)
+    scripts/qa/solutions-seo.neg.mjs  (2)
+    scripts/qa/texto-poblacion.mjs  (1)
+
+✅ control 6/6 · evaluadas 119 consumos / 264 fuentes
+

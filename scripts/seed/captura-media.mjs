@@ -53,7 +53,18 @@ const ESPACIADO_MS = 500;
 const PREFIJO = "https://kunakair.com/wp-content/uploads/";
 
 /* ── la lista, DERIVADA de la congelada (regla 9: no se escribe, se deriva) ── */
-const medida = JSON.parse(readFileSync(join(QA, "medidas", "media-regenera.json"), "utf8"));
+/* ⚠ GUARDA CON DIAGNÓSTICO (114.ª, PASO 0). Sin ella, un canónico que no existe
+ * —porque nadie lo ha corrido, o porque §regla 5bis lo renombró y LIBERÓ el
+ * nombre— tira un `ENOENT` pelado, que no dice QUIÉN lo produce. Es la clase que
+ * §regla 26-hermana ficha: la diferencia entre diez minutos y una tanda. */
+const F_REGENERA = join(QA, "medidas", "media-regenera.json");
+if (!existsSync(F_REGENERA))
+  throw new Error(
+    `CONGELADA AUSENTE: no existe medidas/media-regenera.json.\n` +
+      `  La produce \`npm run qa:media-regenera\`. Si acabas de renombrarla (§regla 5bis),\n` +
+      `  el nombre canónico quedó LIBRE a propósito: repunta este lector al nombre nuevo.`,
+  );
+const medida = JSON.parse(readFileSync(F_REGENERA, "utf8"));
 const lista = medida.listaACapturar ?? [];
 if (!lista.length)
   throw new Error(

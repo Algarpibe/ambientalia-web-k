@@ -87,7 +87,17 @@ const A = await import(pathToFileURL(join(RAIZ, "docs/research/cola-larga/deriva
  * `prefijo` calculados por segmentos, que es exactamente lo que el esquema pide
  * (`prefijo` es campo porque las rutas van de 1 a 5 segmentos).
  * ═════════════════════════════════════════════════════════════════════════ */
-const RUTAS = JSON.parse(readFileSync(join(QA, "medidas/f33-rutas.json"), "utf8"));
+/* ⚠ GUARDA CON DIAGNÓSTICO (114.ª, PASO 0): un `ENOENT` pelado no dice QUIÉN
+ * produce esta congelada, y §regla 5bis puede haber LIBERADO el nombre canónico
+ * a propósito al renombrarla. */
+const F_RUTAS = join(QA, "medidas/f33-rutas.json");
+if (!existsSync(F_RUTAS))
+  throw new Error(
+    `CONGELADA AUSENTE: no existe medidas/f33-rutas.json.\n` +
+      `  La produce \`npm run qa:f33-rutas\`. Si la renombraron (§regla 5bis), el nombre\n` +
+      `  canónico quedó LIBRE a propósito: repunta este lector al nombre nuevo.`,
+  );
+const RUTAS = JSON.parse(readFileSync(F_RUTAS, "utf8"));
 const INDICE = JSON.parse(readFileSync(join(CORPUS, "INDICE.json"), "utf8"));
 
 const CLAVES = Object.keys(INDICE.paginas);
