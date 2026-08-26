@@ -1,0 +1,49 @@
+
+════════ CÓDIGOS DE ESTADO · 114.ª ESCALÓN 1 ════════
+
+  12 peticiones · redirect: "manual" · sin cookies ni perfil
+
+    [a·sector] 301  https://kunakair.com/es/sector/industria/
+        → https://kunakair.com/es/sectores/control-de-emisiones-industriales/
+    [a·sector] 301  https://kunakair.com/es/sector/investigacion-consultoria/
+        → https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/
+    [a·sector] 301  https://kunakair.com/es/sector/mineria/
+        → https://kunakair.com/es/sector/mineria/
+    [a·sector] 301  https://kunakair.com/es/sector/obras/
+        → https://kunakair.com/es/sectores/contaminacion-por-construccion/
+    [a·sector] 301  https://kunakair.com/es/sector/urbano/
+        → https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/
+    [b·tilde] 301  https://kunakair.com/es/categor%C3%ADa/eventos/
+        → https://kunakair.com/es/categoria/eventos/
+    [b·tilde+] 301  https://kunakair.com/es/categor%C3%ADa/noticias/
+        → https://kunakair.com/es/categoria/noticias/
+    [a·pageN] 200  https://kunakair.com/es/sector/industria/page/2/
+    [a·pageN] 200  https://kunakair.com/es/sector/urbano/page/2/
+  ✓ [control+] 200  https://kunakair.com/es/sector/edar/
+  ✓ [control+] 200  https://kunakair.com/es/categoria/eventos/
+  ✓ [control−] 404  https://kunakair.com/es/sector/no-existe-este-sector-114/
+
+  ⚠ https://kunakair.com/es/sector/mineria/
+    BUCLE PROBADO: 5 saltos, todos 301 a sí misma
+
+──────── CONTROL POR LOS DOS LADOS ────────
+  ✓ https://kunakair.com/es/sector/edar/ → esperado 200, obtenido 200
+  ✓ https://kunakair.com/es/categoria/eventos/ → esperado 200, obtenido 200
+  ✓ https://kunakair.com/es/sector/no-existe-este-sector-114/ → esperado 404, obtenido 404
+
+──────── VEREDICTOS ────────
+  (a) sectores sin base capturada (5): 0 dan 200 · 4 redirigen a OTRA · 1 en BUCLE · 0 otro
+      301 → https://kunakair.com/es/sectores/control-de-emisiones-industriales/
+      301 → https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/
+      301 → https://kunakair.com/es/sectores/contaminacion-por-construccion/
+      301 → https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/
+      301 → SÍ MISMA · inalcanzable en navegador (ERR_TOO_MANY_REDIRECTS)
+  (a·seguimiento) las /page/N capturadas, con su base en 301: 200 · 200
+      ⇒ se sirven IGUAL (200): las capturas son reales, no artefactos
+  (b) «categoría» con tilde (eventos): 301 → https://kunakair.com/es/categoria/eventos/
+      ampliación (noticias):          301 → https://kunakair.com/es/categoria/noticias/
+
+  congelado en derivaciones/estados-114.json
+
+✅ control 3/3 · 12/12 peticiones con respuesta
+

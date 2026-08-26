@@ -1,0 +1,143 @@
+{
+  "fecha": "2026-08-26",
+  "instrumento": "fetch redirect:manual",
+  "peticiones": [
+    {
+      "grupo": "a·sector",
+      "url": "https://kunakair.com/es/sector/industria/",
+      "nota": "tiene page/2 y page/3 capturadas, base NO",
+      "status": 301,
+      "location": "https://kunakair.com/es/sectores/control-de-emisiones-industriales/",
+      "error": null
+    },
+    {
+      "grupo": "a·sector",
+      "url": "https://kunakair.com/es/sector/investigacion-consultoria/",
+      "nota": "tiene page/2 capturada, base NO",
+      "status": 301,
+      "location": "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/",
+      "error": null
+    },
+    {
+      "grupo": "a·sector",
+      "url": "https://kunakair.com/es/sector/mineria/",
+      "nota": "sin ninguna captura",
+      "status": 301,
+      "location": "https://kunakair.com/es/sector/mineria/",
+      "error": null
+    },
+    {
+      "grupo": "a·sector",
+      "url": "https://kunakair.com/es/sector/obras/",
+      "nota": "sin ninguna captura",
+      "status": 301,
+      "location": "https://kunakair.com/es/sectores/contaminacion-por-construccion/",
+      "error": null
+    },
+    {
+      "grupo": "a·sector",
+      "url": "https://kunakair.com/es/sector/urbano/",
+      "nota": "tiene page/2,3,4 capturadas, base NO",
+      "status": 301,
+      "location": "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/",
+      "error": null
+    },
+    {
+      "grupo": "b·tilde",
+      "url": "https://kunakair.com/es/categor%C3%ADa/eventos/",
+      "nota": "ENCARGADA · «categoría» con tilde",
+      "status": 301,
+      "location": "https://kunakair.com/es/categoria/eventos/",
+      "error": null
+    },
+    {
+      "grupo": "b·tilde+",
+      "url": "https://kunakair.com/es/categor%C3%ADa/noticias/",
+      "nota": "AMPLIACIÓN declarada · misma forma, no encargada",
+      "status": 301,
+      "location": "https://kunakair.com/es/categoria/noticias/",
+      "error": null
+    },
+    {
+      "grupo": "a·pageN",
+      "url": "https://kunakair.com/es/sector/industria/page/2/",
+      "nota": "capturada; su BASE da 301 — ¿se sirve igual?",
+      "status": 200,
+      "location": null,
+      "error": null
+    },
+    {
+      "grupo": "a·pageN",
+      "url": "https://kunakair.com/es/sector/urbano/page/2/",
+      "nota": "capturada; su BASE da 301 — ¿se sirve igual?",
+      "status": 200,
+      "location": null,
+      "error": null
+    },
+    {
+      "grupo": "control+",
+      "url": "https://kunakair.com/es/sector/edar/",
+      "nota": "capturado con http 200 ⇒ DEBE dar 200",
+      "espero": 200,
+      "status": 200,
+      "location": null,
+      "error": null
+    },
+    {
+      "grupo": "control+",
+      "url": "https://kunakair.com/es/categoria/eventos/",
+      "nota": "par SIN tilde de (b), capturado ⇒ DEBE dar 200",
+      "espero": 200,
+      "status": 200,
+      "location": null,
+      "error": null
+    },
+    {
+      "grupo": "control−",
+      "url": "https://kunakair.com/es/sector/no-existe-este-sector-114/",
+      "nota": "inventado ⇒ DEBE dar 404",
+      "espero": 404,
+      "status": 404,
+      "location": null,
+      "error": null
+    }
+  ],
+  "bucles": [
+    {
+      "url": "https://kunakair.com/es/sector/mineria/",
+      "esBucle": true,
+      "cadena": [
+        {
+          "salto": 1,
+          "url": "https://kunakair.com/es/sector/mineria/",
+          "status": 301,
+          "location": "https://kunakair.com/es/sector/mineria/"
+        },
+        {
+          "salto": 2,
+          "url": "https://kunakair.com/es/sector/mineria/",
+          "status": 301,
+          "location": "https://kunakair.com/es/sector/mineria/"
+        },
+        {
+          "salto": 3,
+          "url": "https://kunakair.com/es/sector/mineria/",
+          "status": 301,
+          "location": "https://kunakair.com/es/sector/mineria/"
+        },
+        {
+          "salto": 4,
+          "url": "https://kunakair.com/es/sector/mineria/",
+          "status": 301,
+          "location": "https://kunakair.com/es/sector/mineria/"
+        },
+        {
+          "salto": 5,
+          "url": "https://kunakair.com/es/sector/mineria/",
+          "status": 301,
+          "location": "https://kunakair.com/es/sector/mineria/"
+        }
+      ]
+    }
+  ]
+}

@@ -21369,6 +21369,19 @@ instancias, no huella de px).
   `categoria` + 5 de `sector` (`industria` · `investigacion-consultoria` ·
   `mineria` · `obras` · `urbano`);
 
+  > ✅ **MEDIDO 2026-08-26 (114.ª, ESCALÓN 1) — y el 7 se parte en dos unidades
+  > que NO se sustituyen la una a la otra** (§*corregir un denominador no es
+  > sustituirlo en todas partes*):
+  >
+  > | unidad | cardinal | quién |
+  > |---|---|---|
+  > | **URLs sin captura en disco** | **7** — sigue siendo cierto | las 2 acentuadas + las 5 de `sector` |
+  > | **TÉRMINOS sin captura** | **5** | sólo las de `sector`: las 2 acentuadas dan **301** y son alias de codificación, no términos |
+  >
+  > Y de las 5 de `sector`, ninguna es capturable tal cual: **4 redirigen** al
+  > arquetipo SECTOR y **1 (`mineria`) es un BUCLE** — inalcanzable en navegador.
+  > Detalle y congelada en el ✅ de más abajo.
+
   > ⚠ **Y ese 7 depende de una pregunta abierta que cambia el denominador de
   > `categoria` — derivada en la 109.ª, no cerrada.** Las 2 acentuadas son
   > `/es/categoría/eventos/` y `/es/categoría/noticias/`, y sus gemelas **sin
@@ -21397,6 +21410,32 @@ instancias, no huella de px).
   >
   > **Hasta entonces se escriben las dos lecturas con su unidad**, no se elige:
   > *«6 URLs declaradas · 4 términos con captura y navegación»*.
+  >
+  > ✅ **CERRADA 2026-08-26 (114.ª, ESCALÓN 1) — LA SEPARADORA SALIÓ 301, o sea
+  > la segunda rama de las dos que estaban escritas.** Congelada:
+  > `docs/research/cola-larga/derivaciones/estados-114.{mjs,json,log}`;
+  > instrumento `fetch` con `redirect: "manual"` —seguir la 301 habría traído el
+  > cuerpo del destino y no habría distinguido nada—, control **3/3** por los dos
+  > lados (`sector/edar/` 200 · `categoria/eventos/` 200 · slug inventado **404**).
+  >
+  > | URL pedida | status | `Location` |
+  > |---|---|---|
+  > | `/es/categor%C3%ADa/eventos/` | **301** | `/es/categoria/eventos/` |
+  > | `/es/categor%C3%ADa/noticias/` | **301** | `/es/categoria/noticias/` |
+  >
+  > **Y en las DOS unidades que esta ficha ya tenía, sin sustituir una por otra**
+  > (§*corregir un denominador no es sustituirlo en todas partes*):
+  >
+  > | unidad | antes | ahora |
+  > |---|---|---|
+  > | **URLs declaradas** de `categoria` | 6 | **6** — las 2 acentuadas existen y responden; no desaparecen, *redirigen* |
+  > | **TÉRMINOS** de `categoria` | «4 ó 6, sin dirimir» | **4** — las 2 acentuadas son **alias de codificación**, no términos |
+  > | **«sin captura»** | 7 | **5** — los de `sector`, y las 2 acentuadas salen del recuento |
+  >
+  > **La deducción que la ficha marcó COMO TAL queda confirmada por medición:**
+  > *«una taxonomía de WordPress tiene UNA sola base de reescritura, así que
+  > `/categoria/` y `/categoría/` no pueden ser las dos canónicas»*. Lo eran a
+  > medias: una es alias de la otra, y el servidor lo dice con un 301.
 - **el código de estado no se puede leer offline** — un corpus guarda el CUERPO,
   no el 301. Así que este censo **no puede confirmar ni refutar** «X redirige».
 
@@ -21430,6 +21469,63 @@ instancias, no huella de px).
 > Es una petición por término y **necesita red** — va en la tanda de F3-4, no
 > aquí. Hasta entonces las dos hipótesis siguen **SIN PROBAR** y no se cablea
 > ninguna.
+>
+> ✅ **CERRADA 2026-08-26 (114.ª, ESCALÓN 1) — LAS 5 REDIRIGEN, Y LA BASE Y SU
+> PAGINACIÓN NO SE COMPORTAN IGUAL.** Congelada:
+> `docs/research/cola-larga/derivaciones/estados-114.{mjs,json,log}`, `fetch` con
+> `redirect: "manual"`, control **3/3** (`sector/edar/` 200 · `categoria/eventos/`
+> 200 · slug inventado **404** — sin el 404 un servidor que respondiera 200 a
+> cualquier cosa habría dado el mismo informe).
+>
+> | `/es/sector/<term>/` | status | `Location` |
+> |---|---|---|
+> | `industria` | **301** | `/es/sectores/control-de-emisiones-industriales/` |
+> | `investigacion-consultoria` | **301** | `/es/sectores/estudio-de-la-contaminacion-atmosferica/` |
+> | `obras` | **301** | `/es/sectores/contaminacion-por-construccion/` |
+> | `urbano` | **301** | `/es/sectores/calidad-del-aire-en-las-ciudades/` |
+> | `mineria` | **301** | **`/es/sector/mineria/` — A SÍ MISMA** |
+>
+> **La 301 gana: el término redirige al arquetipo SECTOR.** Las tres dudas que
+> la ficha declaraba se resuelven así — (1) y (2) quedaban abiertas porque un
+> cuerpo capturado no lleva su código; ahora se pidió el código. (3) era una
+> deducción sobre WordPress y sale **refutada**, no confirmada: ⇩
+>
+> ⚠⚠ **LO QUE NO SE ESPERABA, Y ES LO QUE HACE FALTA SABER: LA BASE REDIRIGE Y
+> SU PAGINACIÓN NO.** El paso (3) de esta ficha decía *«si la base 301, su
+> paginación tendría que faltar también»*, marcado como deducción no medida.
+> Medido, es **falso**:
+>
+> | | status |
+> |---|---|
+> | `/es/sector/industria/page/2/` | **200** |
+> | `/es/sector/urbano/page/2/` | **200** |
+>
+> O sea que **los cuerpos de `/page/N` capturados son SUYOS, no del destino de
+> una 301** — que era exactamente la duda (2). La «página 1» que sus `<title>`
+> anuncian (*«Página 2 de 3»*) existe, pero **sólo como destino de la
+> redirección**, no en `/sector/<term>/`.
+>
+> ⚠ **Con su denominador (§regla 14): se midieron 2 de las 7 capturas de
+> `/page/N`.** Las otras 5 —`industria/page/3`, `investigacion-consultoria/page/2`,
+> `urbano/page/{3,4}`— **no se pidieron**, así que «las `/page/N` se sirven» está
+> probado en **2/7** y es una constricción fuerte, no un barrido.
+>
+> ⚠⚠ **Y UNA ANOMALÍA QUE NO ES UNA REDIRECCIÓN: `mineria` ES UN BUCLE.**
+> Devuelve `Location` **idéntica a la petición**, y la cadena se siguió a mano
+> **5 saltos**: 301 a sí misma las cinco veces. Eso **no es «redirige a su
+> arquetipo»** — es una URL **inalcanzable en un navegador**
+> (`ERR_TOO_MANY_REDIRECTS`), y contarla con las otras cuatro metería en el
+> recuento una que no llega a ninguna parte.
+>
+> > **Es §*un cardinal es un contenedor* con el contenedor puesto en el código de
+> > estado: «5 dan 301» es cierto y esconde que una de las cinco no resuelve.**
+> > El discriminador cuesta comparar `Location` con la URL pedida, y hay que
+> > hacerlo siempre que se cuenten redirecciones.
+>
+> **Lo que queda SIN PROBAR de `mineria`, declarado:** por qué. Un bucle puede
+> ser un alias mal configurado, un término borrado con su regla viva, o una
+> reescritura que se pisa. Nada de eso se mide con un código de estado, y **no se
+> cablea ninguna hipótesis**.
 
 > ✅ **Y lo que SÍ se cerró de paso en la 109.ª, cruzando contra la paginación:**
 > la afirmación *«su paginación tampoco lista»* estaba medida sobre la página 1.
