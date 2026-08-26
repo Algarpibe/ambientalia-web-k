@@ -1,5 +1,74 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ META-MTIME-EN-CLON-LIMPIO · **el orden NO se vuelve arbitrario: se vuelve REPRODUCIBLEMENTE EQUIVOCADO** — 113.ª, 2026-08-26, FICHADO (no arreglado)
+
+La 112.ª midió que **`mtime` no sobrevive a un checkout**: git no lo guarda. De
+ahí la pregunta que ninguna tanda había hecho — `eligeCongeladaAnterior`
+(`lib.mjs` L1281) ordena por `mtime`, y su cabecera argumenta que es mejor que
+el nombre *«porque el alfabético invierte el tiempo»*. **¿Qué devuelve en un
+árbol recién clonado, donde todos los ficheros tienen la MISMA hora?**
+
+**Las dos direcciones, contestadas con una corrida** (no se toca la función):
+
+**(a) ¿El orden se vuelve arbitrario y la sonda sigue dando algo plausible?**
+No se vuelve arbitrario, **y sí da algo plausible** — que es peor.
+
+**(b) ¿Hay algo que lo estabilice?** Sí, **dos cosas**, y ninguna está escrita:
+
+1. `todas.sort((a, b) => b.mtime - a.mtime)` con todos los `mtime` iguales
+   devuelve **0 en todas las comparaciones**, y `Array.prototype.sort` es
+   **ESTABLE** desde ES2019 → el array conserva su orden de entrada;
+2. ese orden de entrada es el de **`readdirSync`**, que en NTFS es por nombre.
+
+**O sea que el resultado es REPRODUCIBLE… y reproduce el orden ALFABÉTICO, que
+es exactamente contra lo que la función se escribió.**
+
+### Medido sobre una familia real de este repo
+
+```
+readdirSync:              …-26-2.json · …-26-3.json · …-26-4.json · …-26.json
+con mtimes IGUALES elige: …-26-2.json      ← el clon recién hecho
+por mtime REAL elige:     …-26-4.json      ← la corrida de verdad más nueva
+¿coinciden? NO
+control de estabilidad (sort con comparador 0): ESTABLE ✓
+```
+
+⚠ **Y el que elegiría no es basura: es una congelada BUENA de otra corrida.**
+`…-26-2.json` es la corrida cuyo residuo era **+815**; `…-26-4.json` es la de
+**+45**. Las dos son medidas reales del mismo día, así que un lector no tiene
+cómo distinguirlas — §*una sonda que no encuentra nada y una que no mira nada
+dan la misma salida*, aquí con el objeto cambiado: **da la salida de la corrida
+equivocada, con cara de dato.**
+
+### Alcance, con su cardinal
+
+- **consumidores vivos, derivados** (`grep -rln 'eligeCongeladaAnterior'`):
+  **2 sondas** — `lh-cmp.mjs` · `lh-cubos.mjs` — más `lib.test.mjs`, que es su
+  negativo;
+- **lo que caducaría si hay defecto son sus ADJUDICACIONES**, no sus sondas: en
+  un clon limpio las dos leerían una congelada distinta de la que leyeron el día
+  que se adjudicaron. **Cuántas adjudicaciones son NO está contado** — hace
+  falta cruzar sus actas, y esta tanda no lo hace;
+- **`ORDEN_POR_NOMBRE=1` ya existe como sabotaje** y sólo lo ejercita
+  `lib.test.mjs`. ⚠ Pero ese sabotaje prueba *«si ordenas por nombre, cambia»*,
+  **no** *«si todos los `mtime` son iguales, cae en alfabético»* — que es el
+  caso real. Es §regla 17 hermana: el sabotaje **no ejercita el caso que
+  importa**, así que este defecto **no lo puede cazar ningún negativo de hoy**.
+
+### Lo que NO se hizo, y por qué
+
+**No se toca `eligeCongeladaAnterior`.** El encargo lo excluye, y con razón: el
+arreglo natural —desempatar por nombre descendente cuando los `mtime` empatan—
+cambia el resultado de las 2 sondas y caduca lo que hayan adjudicado (§regla
+5bis). Eso es una tanda con su medición, no un parche al final de otra.
+
+> **Y la moraleja que sí es reutilizable ya: un desempate que nadie escribió
+> IGUAL EXISTE.** Aquí lo ponen la estabilidad de `sort` y el orden de
+> `readdirSync` — dos mecanismos que no están en el código ni en el comentario,
+> y que deciden el resultado cuando la clave de orden empata. **Toda ordenación
+> por una clave que puede empatar se escribe con su desempate explícito**, o el
+> lenguaje elige uno por ti y no lo dice.
+
 ## ✅ T1 · **la tabla entró, y el residuo NO es el aplanado: es la CASCADA leída por el canal equivocado** — 113.ª, 2026-08-26
 
 Pre-registro: `derivaciones/PRE-REGISTRO-T1-TABLA-113.md` (8de90d9), commiteado
