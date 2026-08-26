@@ -4317,6 +4317,68 @@ es **extra opcional**; un `readFileSync` sin `existsSync` es precondición
 > correr su negativo para adjudicar **NO-OP** (§regla 5ter), que en la guarda de
 > regresión principal son **382 rutas a dos anchos**.
 
+**38 · UN DESEMPATE QUE NADIE ESCRIBIÓ IGUAL EXISTE: LO ELIGE EL LENGUAJE, Y NO
+LO DICE.** (subida el 2026-08-26 por el barrido de §regla 12)
+
+> **Toda ordenación por una clave que PUEDE EMPATAR se escribe con su desempate
+> explícito.** Si no se escribe, no queda «sin orden» ni queda «arbitrario»:
+> queda **el que pongan la estabilidad de `sort` y el orden de `readdirSync`** —
+> reproducible, invisible y distinto del que uno creía.
+
+**Y su modo de fallo es el peor de los dos posibles: NO es que el resultado
+varíe.** Un orden que variase se notaría a la segunda corrida. Éste **no varía**:
+sale igual siempre, así que se lee como decidido — y lo decidió el sistema de
+ficheros.
+
+Medido: un desempate por `mtime` sobre congeladas con la misma marca de tiempo
+**no se vuelve arbitrario en un clon limpio: se vuelve reproduciblemente
+ALFABÉTICO**, que es justo lo contrario de lo que el documento afirmaba. Evento
+con su fecha y sus números en `PENDIENTES-QA.md`.
+
+**Operativamente, y cuesta un comparador:** si la clave puede repetirse
+—`mtime`, una fecha sin hora, una prioridad, un tamaño—, se ordena por
+`(clave, desempate)` con el desempate **nombrado**. Y la comprobación de que
+hacía falta es barata: **contar cuántos empates hay en la clave**. Si son cero
+hoy, se dice *«0 empates en n»* y se deja el desempate puesto igual — porque el
+día que aparezca el primero no habrá ninguna señal.
+
+---
+
+**39 · UN UMBRAL PRE-REGISTRADO SE EVALÚA CONTRA LA PRIMERA CORRIDA CON EL
+CONTROL EN VERDE — NUNCA CONTRA LA PRIMERA.** (2026-08-26)
+
+§regla 8 exige que todo negativo lleve control, y §regla 21 enseña a leer un
+control en rojo. Falta decir **qué pasa con los NÚMEROS mientras el control está
+rojo**, y no es que sean malos: es que **deciden**.
+
+> **Un criterio de parada pre-registrado es una guarda, y una guarda alimentada
+> por un instrumento sin adjudicar NO PROTEGE: BLOQUEA.** Mientras el control
+> esté en rojo, lo que el instrumento publica no es una medida del repo — es una
+> medida del instrumento — y aplicarle un umbral es **dejar que el defecto decida
+> el alcance de la tanda**.
+
+**Medido, y por eso es regla:** un PASO 0 fijó *«más de 15 ⇒ la tanda se corta y
+la red no se gasta»*. Lo que midió cada versión del detector:
+
+| versión | valor | ¿dispara el corte? |
+|---|---|---|
+| v1 · lexer sin regex literales | **19** | **SÍ** |
+| v2 · lexer con regex | **20** | **SÍ** |
+| v2 · con control de comentarios | **18** | **SÍ** |
+| v3 · AST sin filtro de metadatos | **23** | **SÍ** |
+| **v3 · AST completo, control 6/6** | **11** | **NO** |
+
+**Las cuatro primeras habrían cortado la tanda. El dato real no la corta.**
+
+**Y la mitad simétrica, que hay que decir o la regla se vuelve una excusa:** esto
+**no autoriza a re-correr hasta que el número guste**. El umbral se evalúa **una
+vez**, contra la corrida cuyo control pasa — y si el control ya pasaba y el
+número supera el umbral, **se corta**. Lo que la regla prohíbe es lo contrario:
+**tratar como veredicto el número de un instrumento que aún no ha demostrado que
+discrimina.**
+
+---
+
 ## Comandos
 
 ```bash
