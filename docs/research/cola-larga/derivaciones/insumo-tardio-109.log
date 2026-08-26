@@ -1,0 +1,78 @@
+══════════════════════════════════════════════════════════════════════
+  INSUMO TARDÍO — ¿instancia o clase?  ·  109.ª cierre  ·  2026-08-26
+══════════════════════════════════════════════════════════════════════
+  magnitud: NAVEGACIÓN entre el arranque y la comprobación.
+            NO la distancia en líneas — eso es la v1, y dio 11 de más.
+
+── EL REPARTO, CON SU DENOMINADOR ────────────────────────────────────
+  fuentes ejecutables bajo scripts/ .................  289
+    ├─ NO arrancan navegador ni clon ...............  222   la pregunta no se les aplica
+    └─ CON arranque (launch / iniciarClon) .........   67   ← el universo
+         ├─ no leen ninguna congelada cableada .....   46
+         └─ leen una congelada .....................   21
+              ├─ la comprueban ANTES de arrancar ...   11  ✅
+              └─ la leen DESPUÉS ..................   10
+                   ├─ sin navegar entre medias ....    5  ·  tardía INOCUA
+                   └─ NAVEGANDO entre medias ......    5  ⛔ gasta el trabajo
+                        ├─ legítimas ..............    2  ✅
+                        └─ DEFECTOS ...............    3  ⛔
+
+── ⛔ DEFECTOS: precondición obligatoria comprobada TARDE ── 3
+  ⛔ scripts/qa/clon-base.mjs
+       arranque L61 → 2 navegación(es) → comprueba L350   [precondición PELADA]
+  ⛔ scripts/qa/f33-spec.mjs
+       arranque L275 → 1 navegación(es) → comprueba L472   [precondición (guarda tardía)]
+  ⛔ scripts/qa/texto-poblacion.mjs
+       arranque L134 → 1 navegación(es) → comprueba L256   [precondición PELADA]
+
+── ✅ LEGÍTIMAS: leen tarde y hacen bien ── 2
+   Éstas NO son ruido que se descarta: son las que fijan el LÍMITE de la
+   regla. Sin ellas escritas, se relee como «toda lectura va antes del
+   launch» y produce dos arreglos falsos.
+  ✅ scripts/qa/kb-barra.mjs   L440 → L602
+       hay fallback: si no está, la corrida sigue
+  ✅ scripts/qa/ruido.mjs   L78 → L461
+       lee las ráfagas de la campaña, incluida la que ella misma acaba de escribir: no existe hasta que la corrida termina
+
+── · TARDÍAS INOCUAS: línea posterior, 0 navegación ── 5
+   Son las instancias SEPARADORAS entre v1 y v2: v1 las marcaba, v2 no.
+  ·  scripts/qa/barra-cmp.mjs   L71 → L110
+  ·  scripts/qa/html-cmp.mjs   L357 → L500
+  ·  scripts/qa/kb-cmp.mjs   L65 → L72
+  ·  scripts/qa/lh-cmp.mjs   L189 → L290
+  ·  scripts/qa/pie-cmp.mjs   L74 → L97
+
+── ✅ COMPRUEBAN ANTES DE ARRANCAR ── 11
+  ✅ scripts/qa/a-cascaron.mjs   lee L170 · arranca L179
+  ✅ scripts/qa/a-ids.mjs   lee L43 · arranca L101
+  ✅ scripts/qa/a-lexical.mjs   lee L71 · arranca L846
+  ✅ scripts/qa/c-behaviors.mjs   lee L29 · arranca L55
+  ✅ scripts/qa/f33-clases.mjs   lee L100 · arranca L505
+  ✅ scripts/qa/f33-geo.mjs   lee L89 · arranca L262
+  ✅ scripts/qa/kb-css.mjs   lee L73 · arranca L166
+  ✅ scripts/qa/kb-recon.mjs   lee L46 · arranca L58
+  ✅ scripts/qa/kb-spec.mjs   lee L64 · arranca L251
+  ✅ scripts/qa/lh-spec.mjs   lee L76 · arranca L118
+  ✅ scripts/qa/pie-mecanismo.mjs   lee L57 · arranca L174
+
+══════════════════════════════════════════════════════════════════════
+  CONTROL (§regla 8) — tres casos conocidos de antemano, uno por lado
+══════════════════════════════════════════════════════════════════════
+  ✅ f33-spec sale en v1 Y en v2 (el caso que originó la pregunta)
+       medido: arranque L275 · 1 navegación · comprueba L472
+  ✅ kb-cmp sale en v1 y NO en v2 — la instancia SEPARADORA
+       medido: L65 → L72, 0 navegaciones
+  ✅ lib.mjs NO aparece: DEFINE launch, no lo llama (lector≠escritor)
+
+  ⇒ instancias SEPARADORAS entre v1 y v2: 5
+     Si fuera 0, v1 y v2 serían la MISMA función escrita de dos maneras y
+     no habría dos hipótesis que separar — sólo una escrita dos veces.
+  ⇒ v1 habría publicado 10 · v2 publica 5 · defectos reales 3
+
+  ⇒ CONTROL: 3/3
+  ⇒ VEREDICTO: CLASE (3)
+
+  ⚠ Y LA CLASE NO SON N SONDAS: es que NO HAY SITIO COMÚN por el que pase
+    la comprobación de precondiciones, como sí lo hay para `Evaluadas`,
+    `w()` y `gritaSiRevienta()` en lib.mjs. Las de arriba son sus
+    instancias de hoy — arreglarlas una a una es §regla 4 otra vez.
