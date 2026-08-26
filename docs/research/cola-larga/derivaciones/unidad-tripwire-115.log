@@ -1,0 +1,189 @@
+═══ ¿EN QUÉ UNIDAD ESTÁ CADA LECTURA DEL TRIPWIRE? · 115.ª PASO 0 ═══
+
+1 · EL FICHERO DE HOY
+
+  chars (String.length · wc -m con locale UTF-8) ...... 254173
+  bytes (Buffer.length · wc -c · wc -m sin locale) .... 260699
+  bytes − chars ....................................... 6526
+  bytes / chars ....................................... 1.0257
+
+  ⚠ EL MECANISMO DE `wc -m`, DERIVADO (el encargo lo citaba mal):
+     LANG=en_US.UTF-8 (el de esta sesión)   →  254173  (CHARS)
+     LC_ALL=C.UTF-8                         →  254173  (CHARS)
+     LC_ALL=C  (POSIX)                      →  260699  (BYTES)
+     LANG y LC_ALL vaciados                 →  260699  (BYTES)
+
+     ⇒ NO es «sin LANG»: es SIN LOCALE UTF-8 EFECTIVO. Con un locale
+       UTF-8 puesto, `wc -m` sí cuenta caracteres. El enunciado del
+       encargo («wc -m sin LANG cae a bytes») es cierto sólo del caso
+       en que no hay ningún locale UTF-8 — que no es este shell.
+
+2 · LA SERIE DE LECTURAS DEL TRIPWIRE, ADJUDICADA POR COMMIT
+
+  commits que tocaron CLAUDE.md: 117  (barrido COMPLETO, no muestra)
+  estados medidos: 117
+
+  citas de tamaño en los mensajes de commit .......... 21
+  · DEL TRIPWIRE (el contexto nombra el fichero) ..... 19
+  · AJENAS (otro objeto medido) ...................... 2
+       eafea18 2026-08-10  «184015 bytes»   F3-1 PASO 0 · DONDE se miden las specs: la captura NO sirve,
+       09a7b73 2026-08-13  «576823 bytes»   T9: PASO 1 — la cuarta condición, PAGADA POR MECANISMO (y no
+     (el encargo nombraba 1 cita · §regla 9: el conjunto se deriva)
+
+  CONTROL C4 · el filtro de contexto recorta 2 citas,
+     de las que 0 casaban contra un estado de CLAUDE.md
+     ⇒ ✅ recorta, y sólo lo ajeno: ninguna recortada era del fichero.
+
+  citado     rotulado  es CHARS de          es BYTES de          VEREDICTO
+  ─────────  ────────  ───────────────────  ───────────────────  ─────────
+     156290  chars     b198711 2026-08-18   —                    CHARS
+     156426  chars     d2a392b 2026-08-18   —                    CHARS
+     156426  chars     d2a392b 2026-08-18   —                    CHARS
+     180510  chars     —                    b941499 2026-08-20   BYTES  ❌
+     188345  chars     —                    06b89c6 2026-08-21   BYTES  ❌
+     199301  chars     —                    21daf5e 2026-08-22   BYTES  ❌
+     202398  chars     —                    —                    sin casar
+     205918  chars     —                    cb5067f 2026-08-22   BYTES  ❌
+     209207  chars     —                    a24df5f 2026-08-22   BYTES  ❌
+     214834  chars     —                    4969360 2026-08-22   BYTES  ❌
+     223973  chars     —                    191bc17 2026-08-23   BYTES  ❌
+     227173  chars     1057ac5 2026-08-24   —                    CHARS
+     230016  chars     c57921c 2026-08-24   —                    CHARS
+     230016  chars     c57921c 2026-08-24   —                    CHARS
+     233030  bytes     —                    1057ac5 2026-08-24   BYTES
+     237111  chars     06d23b4 2026-08-25   —                    CHARS
+     242258  chars     a5a7988 2026-08-25   —                    CHARS
+     252476  chars     —                    136f47e 2026-08-25   BYTES  ❌
+     260699  chars     —                    336b8d7 2026-08-26   BYTES  ❌
+
+  REPARTO · 19 citas:
+     adjudicadas ............... 18
+       · bien rotuladas ........ 9
+       · ROTULADAS MAL ......... 9
+     indecidibles .............. 0
+     sin casar contra ningún commit ... 1
+
+  LAS ROTULADAS MAL — todas son BYTES con etiqueta de chars:
+     · 3da5ae2 2026-08-21  «180510 chars» → BYTES   registro: el canario a 180.510 y un evento de regla 13 que L
+     · 06b89c6 2026-08-21  «188345 chars» → BYTES   regla: para una propiedad TAPADA, «la primera y una intermed
+     · 21daf5e 2026-08-22  «199301 chars» → BYTES   registro: la refutacion al ESQUEMA y al PLAN, y DOS reglas —
+     · cb5067f 2026-08-22  «205918 chars» → BYTES   docs: la 93.a cierra — CORTE LIMPIO 3 pasado, la emision NO 
+     · a24df5f 2026-08-22  «209207 chars» → BYTES   CORTE LIMPIO 1: el enrutado abre decision de propietario (CM
+     · 4969360 2026-08-22  «214834 chars» → BYTES   regla 26 y la premisa callada del test A — barrido §regla 12
+     · 191bc17 2026-08-23  «223973 chars» → BYTES   reglas 27 y 28 — barrido §regla 12 de la 97.a, con su numero
+     · 136f47e 2026-08-25  «252476 chars» → BYTES   f3-3 cierre de la 109.a: la clase no era el resolutor sino e
+     · 336b8d7 2026-08-26  «260699 chars» → BYTES   f3-3 114.ª CIERRE · barrido de §regla 12: 8 enunciados en la
+
+  SIN CASAR contra ningún estado commiteado — se declaran con su
+  DISTANCIA a cada unidad, que NO es una adjudicación: un valor cercano
+  a los bytes de su commit es compatible con haberse medido sobre un
+  estado intermedio sin commitear, y eso no lo dirime esta sonda.
+     · 50fc963 2026-08-22  «202398 chars»
+         chars más próximo 203938 (Δ 1540)  ·  bytes más próximo 202794 (Δ 396)
+
+  CONTROL C2 · adjudicaciones ambiguas (casan por los dos lados): 0
+     ⇒ 0 ⇒ el método SEPARA: cada valor casa por un solo lado.
+
+2bis · ¿DESCUIDOS SUELTOS O UN INSTRUMENTO QUE CAMBIA? · las rachas
+
+  citas adjudicadas en orden cronológico: 18
+  rachas (bloques de citas consecutivas del mismo signo): 4
+
+     ✅ bien  × 3   2026-08-18 → 2026-08-20
+     ❌ MAL   × 7   2026-08-21 → 2026-08-23
+     ✅ bien  × 6   2026-08-24 → 2026-08-25
+     ❌ MAL   × 2   2026-08-25 → 2026-08-26
+
+  ⇒ 4 rachas para 18 citas. Nueve despistes independientes
+    darían ~17 alternancias posibles; hay 3. Es un BLOQUE, no ruido —
+    la firma de un INSTRUMENTO que cambia de unidad con el entorno,
+    que es exactamente lo que §1 midió del `wc -m`.
+
+3 · EL RATIO CONTRA LA REFERENCIA DE §regla 19 (156 426 CHARS)
+
+  bytes(hoy) / refCHARS = 260699/156426 = 1.6666  ← DOS UNIDADES (lo publicado: «1.67×»)
+  chars(hoy) / refCHARS = 254173/156426 = 1.6249  ← una sola unidad · CORRECTO
+
+  Y lo que la unidad cambiada infla en la SERIE, que es lo que decide:
+     salto publicado  242 258 → 260 699 = +18441  (+7.6 %)
+     salto real       242 258 → 254173 = +11915  (+4.9 %)
+     inflado ......................... 6526 chars, que es EXACTAMENTE bytes−chars
+
+4 · LOS DOS TRIPWIRES · MARCADOR vs MENCIÓN (§*un nombre citado no es un uso*)
+
+  kv      L      charPos    %fichero  colaChars  papel
+  KV-01    976      58316    22.94%     195857  MARCADOR
+  KV-01   3458     201799    79.39%      52374  mención
+  KV-08   3458     201829    79.41%      52344  mención
+  KV-08   4391     254157    99.99%         16  MARCADOR
+
+  CONTROL C1 · ¿discrimina el detector?
+     detector ingenuo (indexOf) sitúa KV-08 en ...... 79.41%  (cola 52344)
+     censo con papel sitúa el MARCADOR en ........... 99.99%  (cola 16)
+     ✅ SEPARA: difieren en 52328 chars
+
+  Lo que §regla 19 AFIRMA de los marcadores, contrastado con HOY:
+     «KV-01 (~30 % del fichero)» ..... hoy 22.94 %  → ENVEJECIÓ (el fichero creció por debajo de él)
+     «KV-08 (a 16 chars del final)» .. hoy 16 chars  → SIGUE EXACTO
+
+5 · EL INSTRUMENTO DEL TRIPWIRE · ¿existe alguna sonda que mida el tamaño?
+
+  sondas .mjs en scripts/qa .......................... 217
+  · que MIDAN el tamaño de CLAUDE.md ................. 0  (ninguna)
+  scripts npm con nombre de canario/tripwire ......... 0  (ninguno)
+
+  ⇒ EL INSTRUMENTO DEL TRIPWIRE NO EXISTE: es la SESIÓN citando los dos
+    marcadores a mano. Así que «que la sonda diga su unidad en la salida»
+    NO TIENE DESTINATARIO — el único sitio donde la unidad se escribe es
+    la FICHA, y es donde hay que ponerla. Es §sondas 4 con el cero puesto
+    en el instrumento en vez de en el selector: no hay sonda que rotule
+    mal, hay una lectura a mano que elige unidad cada vez.
+
+6 · EL PRECEDENTE AFIRMADO POR EL ENCARGO: «229.187 chars que eran bytes»
+
+  ocurrencias en docs/ · CLAUDE.md · scripts/ ........ 0
+  ocurrencias en mensajes de commit .................. 1
+  CONTROL C3 · el mismo grep sobre «156 426», que SÍ está: 19 ⇒ el filtro casa
+  ¿existe como BYTES de algún commit? ................ sí — 03f7276 (2026-08-23 15:00), chars=223423
+
+  ⇒ EL PRECEDENTE ES FALSO, y en la dirección CONTRARIA. Su única
+    ocurrencia es el cierre de la 100.ª (1057ac5, 2026-08-24), que
+    escribió:
+
+        «227.173 chars / 233.030 bytes (era 223.423 / 229.187)»
+
+    o sea LAS DOS UNIDADES, JUNTAS Y BIEN ROTULADAS — que es exactamente
+    la forma correcta. No es «un caso ya fichado del mismo error»: es la
+    ÚNICA cita del corpus que hace lo que hay que hacer.
+
+    Y eso cambia el diagnóstico: la práctica buena EXISTIÓ una vez y no
+    se convirtió en convención, así que las tandas siguientes volvieron
+    a publicar un número solo. §MENCIONADO NO ES DOCUMENTADO — vivía en
+    un mensaje de commit, que es lo único del repo que nadie relee.
+    §regla 8b: el hecho que el encargo afirmaba se comprobó al escribirlo
+    y salió falso, con su ocurrencia y su texto delante.
+
+═══ VEREDICTO ═══
+
+  · el fichero mide 254173 CHARS y 260699 BYTES (Δ 6526);
+
+  · NO ES UNA CIFRA SUELTA, ES UNA CLASE con su cardinal: de las
+    18 citas del tripwire adjudicables, 9 publican BYTES rotulados
+    «chars» — la MITAD. El encargo nombraba 1;
+
+  · Y EL MECANISMO ESTÁ MEDIDO, no supuesto: `wc -m` devuelve chars o
+    bytes SEGÚN EL LOCALE del shell (§1), y no lo dice en su salida. Una
+    sesión con locale UTF-8 publica chars; otra sin él, bytes. Es §regla 6
+    —una ausencia traducida a un valor benigno— con la ausencia puesta en
+    el LOCALE: no hay error, hay un número de la otra unidad;
+
+  · el ratio correcto contra §regla 19 es 1.625×, no 1.67×;
+
+  · el instrumento del tripwire NO EXISTE (0 sondas, 0 scripts npm), así
+    que la unidad sólo se puede fijar en la FICHA y en la forma de citar;
+
+  · el precedente que el encargo afirma es FALSO al revés: su única
+    ocurrencia (la 100.ª) publica LAS DOS UNIDADES BIEN.
+
+  CONTROLES: C1 ✅ el detector de marcadores discrimina · C2 ✅ la adjudicación separa (0 ambiguas)
+             C3 ✅ el grep casa el número conocido (19) · C4 ✅ el filtro de contexto recorta sólo lo ajeno (2/0)

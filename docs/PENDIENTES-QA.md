@@ -21620,6 +21620,12 @@ del documento. Gratis, que es para lo que se dejaron puestos.
 | 2026-08-25 · 105.ª | **230 016** chars |
 | **2026-08-25 · 108.ª (ésta)** | **242 258** chars |
 
+> ✅ **Las tres ADJUDICADAS como chars el 2026-08-26** (115.ª, PASO 0):
+> §META-UNIDAD-DEL-TRIPWIRE. Casan contra los chars de `d2a392b`, `c57921c` y
+> `a5a7988` y **contra los bytes de ninguno**, así que la unidad de esta tabla
+> está probada, no supuesta. **La serie NO sigue siendo homogénea**: la lectura
+> de la 114.ª (`260 699`) son **BYTES**, y es una de **9 de 18**.
+
 > ⚠ **La cifra de referencia se DERIVÓ antes de citarla, y menos mal**: el primer
 > borrador de esta acta escribió *«el techo sube de 156 426»*, que era el número
 > de la ficha que cierra la clase — pero la **105.ª ya lo había leído a 230 016**
@@ -22196,3 +22202,172 @@ Derivación, con su control 3/3 —`f33-spec` sale por los dos detectores · `kb
 sólo por v1, que es la separadora · `lib.mjs` no aparece porque **define**
 `launch`—: `docs/research/cola-larga/derivaciones/insumo-tardio-109.{mjs,log}`.
 El control **cierra el código de salida**: sin 3/3, `exit 2`.
+
+---
+
+## ✅ META-UNIDAD-DEL-TRIPWIRE · LA MITAD DE LAS LECTURAS DE §regla 19 ESTÁN EN BYTES CON ETIQUETA DE CHARS — **CERRADA 2026-08-26** (115.ª, PASO 0)
+
+**El encargo pedía corregir UNA cifra. El barrido dice que son NUEVE, y que no
+son descuidos: es un instrumento cuya unidad la elige el entorno.**
+
+Derivación con sus cuatro controles y su congelada:
+`docs/research/cola-larga/derivaciones/unidad-tripwire-115.{mjs,log}` — **117
+commits, barrido COMPLETO** (no muestra), `EXIT=0`.
+
+### 1 · El fichero de hoy, con las DOS unidades
+
+| unidad | valor | instrumentos que la dan |
+|---|---|---|
+| **chars** | **254 173** | `String.length` · `wc -m` **con locale UTF-8** |
+| **bytes** | **260 699** | `Buffer.length` · `wc -c` · `wc -m` **sin locale UTF-8** |
+| Δ | **6 526** | — |
+
+**Lo que la 114.ª publicó —«el fichero a 260 699 chars»— son BYTES.** Y su
+«1.67×» compara **bytes contra los 156 426 CHARS** de §regla 19, o sea **dos
+unidades**. Con chars a los dos lados: **1.625×**.
+
+> **Y lo que la unidad cambiada infla, que es lo que decide si importa:** el
+> salto publicado es `242 258 → 260 699 = +18 441` (**+7.6 %**); el real es
+> `242 258 → 254 173 = +11 915` (**+4.9 %**). Lo inflado son **6 526 chars**,
+> que es **exactamente `bytes − chars`**.
+
+### 2 · No es una cifra suelta: es una CLASE con su cardinal
+
+El conjunto de citas se **derivó** de los mensajes de commit (§regla 9), no se
+enumeró. El encargo nombraba **1**:
+
+| | n |
+|---|---|
+| citas de tamaño en mensajes de commit | **21** |
+| · **del tripwire** (el contexto nombra el fichero o sus marcadores) | **19** |
+| · ajenas (CSS en línea, hojas `et-cache`) — recortadas por el filtro | **2** |
+| adjudicables contra un estado commiteado | **18** |
+| · **bien rotuladas** | **9** |
+| · **BYTES con etiqueta de «chars»** | **9** |
+| indecidibles (casan por los dos lados) | **0** |
+| sin casar contra ningún estado commiteado | **1** |
+
+**Método de adjudicación, y por eso no hay ambigüedad:** para cada valor
+publicado se busca si existe un commit cuyo CLAUDE.md tenga ese número de chars,
+o ese número de bytes. **Ninguno casa por los dos lados** (`0` indecidibles), así
+que cada cita queda adjudicada sin criterio de nadie.
+
+Las nueve, con su commit: `3da5ae2` 180 510 · `06b89c6` 188 345 · `21daf5e`
+199 301 · `cb5067f` 205 918 · `a24df5f` 209 207 · `4969360` 214 834 · `191bc17`
+223 973 · `136f47e` 252 476 · `336b8d7` 260 699.
+
+**El sin casar se declara con su DISTANCIA, no se adjudica:** `50fc963`
+«202 398 chars» está a **Δ 396** de los bytes de su commit y a **Δ 1 540** de sus
+chars —12× más cerca de bytes— y eso es **compatible con** haberse medido sobre
+un estado intermedio sin commitear. Compatible no es probado: sale **SIN
+ADJUDICAR**.
+
+### 3 · Y no son nueve despistes: es un INSTRUMENTO, y su mecanismo está medido
+
+**Lo que separa «nueve descuidos» de «un instrumento que cambia» es la FORMA.**
+Despistes independientes se reparten al azar; un instrumento produce **bloques**:
+
+| racha | n | desde → hasta |
+|---|---|---|
+| ✅ bien | 3 | 2026-08-18 → 2026-08-20 |
+| ❌ **MAL** | **7** | 2026-08-21 → 2026-08-23 |
+| ✅ bien | 6 | 2026-08-24 → 2026-08-25 |
+| ❌ **MAL** | **2** | 2026-08-25 → 2026-08-26 |
+
+**4 rachas para 18 citas.** Y el mecanismo no es una hipótesis, está medido:
+
+| escenario | `wc -m` devuelve |
+|---|---|
+| `LANG=en_US.UTF-8` (el de esta sesión) | **254 173 · CHARS** |
+| `LC_ALL=C.UTF-8` | **254 173 · CHARS** |
+| `LC_ALL=C` (POSIX) | **260 699 · BYTES** |
+| `LANG` y `LC_ALL` vaciados | **260 699 · BYTES** |
+
+> **`wc -m` devuelve chars o bytes SEGÚN EL LOCALE, y no lo dice en su salida.**
+> Una sesión con locale UTF-8 publica chars; otra sin él, bytes — y las dos
+> salidas se escriben igual. Es §regla 6 —*una ausencia traducida a un valor
+> benigno*— con la ausencia puesta en **el LOCALE**: no hay error, hay un número
+> de la otra unidad con toda la cara de ser el bueno.
+
+⚠ **Y el enunciado del encargo estaba mal, derivado:** decía *«`wc -m` sin LANG
+cae a bytes»*. No es «sin LANG», es **sin locale UTF-8 efectivo** — con
+`LANG=en_US.UTF-8` puesto, `wc -m` **sí** cuenta caracteres.
+
+### 4 · El precedente que el encargo afirma es FALSO, y al revés
+
+El encargo decía *«es el mismo caso que el registro ya tiene fichado — 229.187
+chars que eran bytes»*. Comprobado (§regla 8b, con su **control C3**: el mismo
+`grep` sobre «156 426» casa **19** veces, así que el filtro funciona):
+
+| | n |
+|---|---|
+| ocurrencias de «229 187» en `docs/` · `CLAUDE.md` · `scripts/` | **0** |
+| ocurrencias en mensajes de commit | **1** |
+
+Y esa única ocurrencia es el cierre de la **100.ª** (`1057ac5`), que escribió:
+
+> `227.173 chars / 233.030 bytes (era 223.423 / 229.187)`
+
+**Las dos unidades, juntas y bien rotuladas** — o sea la **única** cita del
+corpus que hace exactamente lo que hay que hacer. No es un precedente del error:
+es el precedente del acierto.
+
+> **Y eso cambia el diagnóstico.** La práctica correcta **existió una vez** y no
+> se convirtió en convención, porque vivía en **un mensaje de commit** — lo único
+> del repo que nadie relee. §MENCIONADO NO ES DOCUMENTADO, cobrado sobre una
+> forma de citar en vez de sobre un hallazgo.
+
+### 5 · El instrumento del tripwire NO EXISTE — y por eso la unidad se elige cada vez
+
+El PASO 0 mandaba *«comprueba con qué unidad mide el instrumento del tripwire:
+si mide bytes, que lo DIGA en su salida»*. Derivado, la premisa es falsa:
+
+| | n |
+|---|---|
+| sondas `.mjs` en `scripts/qa` | **217** |
+| · que midan el tamaño de `CLAUDE.md` | **0** |
+| scripts npm con nombre de canario/tripwire | **0** |
+
+**El tripwire es la SESIÓN citando los dos marcadores a mano**, así que «que la
+sonda lo diga en su salida» **no tiene destinatario**. No hay una sonda que
+rotule mal: hay una lectura manual que **elige unidad cada vez**, y eso es lo
+que las rachas de §3 enseñan.
+
+**Consecuencia operativa, y es lo único que hay que recordar:** mientras no
+exista instrumento, la unidad sólo se puede fijar en **la forma de citar** — y la
+forma ya está probada por la 100.ª: **`N chars / M bytes`, las dos**. Un solo
+número no se puede auditar: las dos lecturas se escriben igual.
+
+### 6 · Los dos marcadores, censados — y uno de los dos envejeció
+
+⚠ **El censo distingue MARCADOR de MENCIÓN, y hace falta:** §regla 19 *nombra*
+`KV-01` y `KV-08` en su propio texto, así que un `indexOf` ingenuo sitúa `KV-08`
+al **79.41 %** del fichero. Es §*un nombre citado no es un uso*. **Control C1**:
+el detector con papel lo sitúa a **16 chars del final** — separan en **52 328
+chars**, o sea discrimina.
+
+| marcador | L | charPos | % fichero | cola | lo que §regla 19 afirma | hoy |
+|---|---|---|---|---|---|---|
+| `KV-01 · 7HQMPD` | 976 | 58 316 | **22.94 %** | 195 857 | «~30 %» | **ENVEJECIÓ** |
+| `KV-08 · 5ZMCFR` | 4 391 | 254 157 | 99.99 % | **16** | «a 16 chars del final» | **EXACTO** |
+
+> **`KV-01` no se ha movido: el fichero creció POR DEBAJO de él.** «~30 %» era
+> cierto a 156 426 chars (estaba en 47 855) y hoy es 22.94 % sin que nadie lo
+> tocara. Es §regla 9 sobre una posición RELATIVA: envejece contra el repo, en
+> silencio, y no hay lectura que la distinga de una derivada.
+>
+> **No se corrige §regla 19** —lo que dice es un EVENTO con su fecha y así se
+> queda—, pero **una posición relativa no se cita como si fuera de hoy**: o se
+> deriva, o se escribe con la fecha de su medición.
+
+### 7 · Lo que esta ficha NO dice
+
+- **NO** dice qué fichero leyó cada sesión: el barrido casa **valores** contra
+  estados del repo, no sesiones contra commits. Adjudica la **unidad**, no la
+  procedencia.
+- **NO** mide el contexto realmente inyectado, que es la concatenación del
+  `CLAUDE.md` **global** (46 268 chars hoy) con el del proyecto. Todas las cifras
+  de la serie son **del fichero de proyecto**, y así se publican.
+- **NO** dice si el fichero llega entero. Eso lo dice que los dos marcadores se
+  citen, y es una observación **de la sesión**, no de esta sonda. Hoy llegaron
+  los dos, con sus códigos.
