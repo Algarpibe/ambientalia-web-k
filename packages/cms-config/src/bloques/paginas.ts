@@ -72,6 +72,10 @@ import type { Block, Field } from "payload";
 
 import { anchoPct, campoHtml, conDefecto, medida, subida } from "../campos/comunes.ts";
 import { CAMPOS_MODULO_BOTON, ancho, nivelTitular } from "./contenido.ts";
+/* T1 · se IMPORTA, no se re-declara ni se modifica: es el mismo bloque que usa
+ * MONOGRÁFICO. Re-declararlo aquí sería la clase C7 (dos definiciones de lo
+ * mismo) y modificarlo, §regla 29 mitad 2. Ver la nota en `MODULOS_PAGINA`. */
+import { MODULO_TABLA } from "./monografico.ts";
 
 /* ══════════════════════════════════════════════════════════════════════════
  * EL RITMO — el de KB, con UNIDAD, y por la misma razón medida
@@ -630,6 +634,45 @@ export const MODULOS_PAGINA: Block[] = [
   MODULO_SLIDER,
   MODULO_MAPA,
   MODULO_ICONO,
+  /**
+   * ── T1 · `MODULO_TABLA` SE ADOPTA TAL CUAL, y lo que pierde va escrito ────
+   *
+   * Decisión del propietario (113.ª). `/politica-de-cookies` sirve un
+   * `dvmd_table_maker` —módulo de TERCEROS, plugin Divi Table Maker— de
+   * **11 × 5 = 55 celdas**. El bloque **NO se modifica**: está compartido con
+   * MONOGRÁFICO (la tabla de EDAR) y tocarlo para arreglar a `paginas` sería
+   * §regla 29 mitad 2 — cambiar la definición compartida para un consumidor.
+   *
+   * ── LO QUE CABE, medido (`derivaciones/tabla-canales-113.log`) ────────────
+   * **55 de 55 celdas son texto plano**: 0 `<a>`, 0 `<ul>/<ol>`, 0 `<br>`,
+   * 0 `<strong>`. Caben enteras en `CELDA = {texto, fuerte, resto}`.
+   *
+   * ── LO QUE SE PIERDE · PÉRDIDA DECLARADA CON SU CARDINAL (§regla 14) ──────
+   * | qué | cardinal | por qué el modelo no lo expresa |
+   * |---|---|---|
+   * | papel `rhead` (cabecera de FILA, col 0) | **11** | `cabeceras` es una lista PLANA: expresa cabeceras de COLUMNA |
+   * | papel `rfoot` (pie, col 4) | **11** | no hay `pies` ni papel por columna |
+   * | fila 0 como cabecera de COLUMNA | **5** | el marcado NO la marca; lo dice su contenido |
+   * | `ritmo` con UNIDAD | **1 campo** | el bloque trae `moduloBase` (px implícito), no `moduloBasePagina` |
+   *
+   * Las tres primeras suman **22 de 55 celdas (40 %)** con un papel sin sitio.
+   *
+   * ⚠ **La cuarta es INERTE hoy, y se declara igual.** El extractor no escribe
+   * ni una clave de geometría —lo exige su guarda, con sabotaje `geometria`—
+   * así que `ritmoModulo` vs `ritmoModuloPagina` no cuesta un píxel: sólo
+   * cambia lo que vería un editor en el admin. Inerte no es inexistente.
+   *
+   * ── LA CONDICIÓN DE REAPERTURA (T2) ──────────────────────────────────────
+   * Vive en `ESQUEMA-CMS.md` con el número medido, no con una frase. Y lo que
+   * la decide es si el papel perdido tiene efecto GEOMÉTRICO que la POSICIÓN
+   * no recupere — porque papel y columna son **1:1 en las 55**, así que una
+   * regla CSS posicional reproduce el aspecto sin que el modelo lo exprese.
+   *
+   * ⚠⚠ Y ese 1:1 se mide sobre **UNA** tabla: papel y posición son
+   * **INDISTINGUIBLES** en n = 1 (§*dos variables confundidas*). Fuera de esta
+   * tabla queda **SIN PROBAR**, no cerrado.
+   */
+  MODULO_TABLA,
 ];
 
 /* ══════════════════════════════════════════════════════════════════════════

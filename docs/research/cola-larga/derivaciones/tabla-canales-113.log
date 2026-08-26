@@ -1,0 +1,59 @@
+══════════════════════════════════════════════════════════════════════
+  LOS CANALES DE LA TABLA `dvmd` — 113.ª · ESCALÓN 1
+══════════════════════════════════════════════════════════════════════
+  fuente: corpus/fase-3/sueltas/politica-de-cookies/index.html
+  módulo acotado por profundidad de div: 15537 chars
+  (el documento entero mide 278252; el marcado sin CSS, 63494)
+
+── 0 · CONTROL DEL ACOTADO (si esto falla, todo lo demás sobra) ────────
+   celdas dvmd_tm_tcell dentro .......... 55   (esperado 55)
+   marcadores de PIE/NAV dentro ......... 0   (esperado 0)
+   ⇒ acotado CORRECTO
+
+── 1 · EL PAPEL SE EXPRESA EN DOS CANALES ─────────────────────────────
+   canal CLASE : {"rhead":11,"tdata":33,"rfoot":11}
+   canal ARIA  : {"rowheader":11,"cell":44}
+   cruce:
+      11  clase=rfoot  · aria=cell      · col=4
+      11  clase=rhead  · aria=rowheader · col=0
+      11  clase=tdata  · aria=cell      · col=1
+      11  clase=tdata  · aria=cell      · col=2
+      11  clase=tdata  · aria=cell      · col=3
+
+   ⚠ LOS DOS CANALES NO EXPRESAN LO MISMO:
+     · CLASE distingue TRES papeles (rhead · tdata · rfoot)
+     · ARIA  distingue DOS         (rowheader · cell) — rfoot NO tiene ARIA propio
+   ⇒ el papel de PIE existe SÓLO en el canal de la clase.
+
+── 2 · CONTENIDO REAL DE LAS CELDAS ───────────────────────────────────
+   <a> dentro del módulo ................ 0
+   role="link" .......................... 0
+   <ul>/<ol> ............................ 0
+   <br> ................................. 0
+   <strong>/<b> ......................... 0
+
+   CELDAS con al menos un <a> ........... 0 de 55
+
+   ⚠⚠ Y AQUÍ LA DERIVACIÓN REFUTA A QUIEN LA ENCARGÓ, QUE ERA YO:
+      La 109.ª censó «celdas con ENLACE (<a>): 0». Al escribir el extractor
+      apareció `role="link"` y pareció contradecirla. Bien acotado: 0.
+      La 109.ª estaba BIEN. La contradicción la fabricó un corte que iba
+      desde el módulo hasta el siguiente `</section>` y se tragó el PIE
+      entero — 50 <a> de menú y redes leídos como contenido de tabla.
+      §La causa común con el contenedor puesto en el SLICE: un corte con
+      holgura no da error, da un número plausible de más. Y el control que
+      lo caza es §0, que exige 55 celdas y CERO marcadores de pie dentro.
+
+── 3 · ¿CABE EN `CELDA = {texto, fuerte, resto}`? ─────────────────────
+   Los tres campos son `type: "text"` — texto PLANO, sin marcado.
+   celdas de texto plano ................ 55 de 55
+   celdas que PIERDEN marcado ........... 0
+
+
+══════════════════════════════════════════════════════════════════════
+  LO QUE ESTA DERIVACIÓN NO CONTESTA
+══════════════════════════════════════════════════════════════════════
+   · NO mide geometría. El residuo va en el ESCALÓN 4, a los dos anchos;
+   · NO decide T2. Decide qué PIERDE T1, que es su insumo;
+   · mira UNA tabla. Papel y columna son 1:1 aquí y son INDISTINGUIBLES
+     en n = 1 — §dos variables confundidas. Fuera de esta tabla, SIN PROBAR.

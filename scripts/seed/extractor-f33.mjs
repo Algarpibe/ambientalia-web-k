@@ -128,6 +128,106 @@ const nivelDe = (n, def) => {
 const oUndef = (v) => (v === undefined || v === null || v === "" ? undefined : v);
 
 /* ══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ EL MÓDULO DE TERCEROS NO LLEVA `et_pb_<tipo>_<n>` — Y NO DA ERROR: DA 8
+ *
+ * `/politica-de-cookies` sirve un `dvmd_table_maker` (plugin Divi Table Maker)
+ * cuyo envoltorio es:
+ *
+ *     class="et_pb_module dvmd_table_maker dvmd_table_maker_0 dvmd_tm_version_4_0_1"
+ *
+ * Lleva `et_pb_module` y **ningún `et_pb_<tipo>_<n>`**. `A.tipoDe` exige ese
+ * patrón, así que devuelve `null`; y como `A.modulosDe` sólo para en un nodo
+ * con tipo, **DESCIENDE dentro del módulo**, donde sólo hay `dvmd_tm_*`. La
+ * tabla entera es invisible y la página emite **8 módulos en vez de 9**.
+ *
+ * **No da error: da 8, que es un número perfectamente plausible.** §sondas 4
+ * cometida sobre el predicado de un caminante en vez de sobre un selector.
+ *
+ * ── POR QUÉ SE ARREGLA AQUÍ Y NO EN `arbol-f33.mjs` ───────────────────────
+ * `arbol-f33` tiene **15 consumidores** (`grep -rln 'arbol-f33'`), y entre
+ * ellos **`f33-spec`**, que es una de las 3 sondas de la deuda de §regla 37.
+ * Cambiar `tipoDe` allí movería el recuento de módulos de los 15 y caducaría
+ * sus congeladas — §regla 5bis, con el radio que la 112.ª midió. Es §regla 29
+ * mitad 2: **no se cambia la definición compartida para arreglar a UN
+ * consumidor.** El reconocimiento vive aquí, local, y `arbol-f33` queda igual.
+ *
+ * ── EL CRITERIO SE DERIVA, NO SE LISTAN VENDEDORES ────────────────────────
+ * Es el mismo que ya usa `f33-cmp` (L486-497), y por eso los dos lados del
+ * comparador nombran el módulo igual: **una clase `X_<n>` cuya base `X`
+ * también está presente en el elemento**. Así `dvmd_table_maker_0` +
+ * `dvmd_table_maker` → `dvmd_table_maker`, y `dvmd_tm_version_4_0_1` **no
+ * cuela** (su base `dvmd_tm_version_4_0` no está). Una lista de plugins
+ * envejecería contra el original en silencio (§regla 9 caso 7).
+ * ═════════════════════════════════════════════════════════════════════════ */
+const tipoTerceros = (n) => {
+  if (!tieneClase(n, "et_pb_module")) return null;
+  for (const c of n.clases) {
+    const m = /^(.+)_\d+$/.exec(c);
+    if (m && n.clases.includes(m[1])) return m[1];
+  }
+  return null;
+};
+/* ══════════════════════════════════════════════════════════════════════════
+ * LAS ENTIDADES HTML — y por qué esto NO va dentro de `texto()`
+ *
+ * `texto()` quita etiquetas y NO decodifica entidades, y para sus consumidores
+ * está bien: los `titulo`/`alt` del corpus vienen en UTF-8 directo
+ * (`"Artículos y Guías"`). La tabla `dvmd` NO: sirve `Prop&oacute;sito`,
+ * `M&aacute;s informaci&oacute;n`. Sin decodificar, React escapa el `&` y la
+ * página muestra **el literal `Prop&oacute;sito`** — un defecto que se ve.
+ *
+ * Va LOCAL y no en `texto()` porque tocar el ayudante compartido movería el
+ * dato de los otros once tipos para arreglar a uno (§regla 29 mitad 2), y esos
+ * once ya están adjudicados.
+ *
+ * ⚠ **Y la lista de entidades NO puede envejecer en silencio.** Un mapa de seis
+ * es §regla 9 caso 7 —una lista de literales cuyo productor las COMBINA—, así
+ * que lo que hay aquí es: numéricas por regla general, nombradas por tabla, y
+ * **cualquier entidad desconocida TIRA**. El defecto en la dirección que grita
+ * (§sondas 6): mejor reventar que servir `&foo;` a la página.
+ * Censo del dominio de hoy: 6 nombradas · 0 numéricas en las 55 celdas.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const ENTIDADES = {
+  amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ",
+  aacute: "á", eacute: "é", iacute: "í", oacute: "ó", uacute: "ú", ntilde: "ñ",
+  Aacute: "Á", Eacute: "É", Iacute: "Í", Oacute: "Ó", Uacute: "Ú", Ntilde: "Ñ",
+  uuml: "ü", Uuml: "Ü", ordf: "ª", ordm: "º", laquo: "«", raquo: "»",
+  hellip: "…", mdash: "—", ndash: "–", deg: "°", euro: "€", middot: "·",
+  lsquo: "‘", rsquo: "’", ldquo: "“", rdquo: "”",
+};
+const decodifica = (s, donde) =>
+  s.replace(/&(#x?[0-9a-fA-F]+|[a-zA-Z][a-zA-Z0-9]*);/g, (todo, cuerpo) => {
+    if (cuerpo[0] === "#") {
+      const n = cuerpo[1] === "x" || cuerpo[1] === "X" ? parseInt(cuerpo.slice(2), 16) : Number(cuerpo.slice(1));
+      if (Number.isFinite(n)) return String.fromCodePoint(n);
+    } else if (cuerpo in ENTIDADES) return ENTIDADES[cuerpo];
+    throw new Error(
+      `ENTIDAD DESCONOCIDA: '${todo}' en ${donde}.\n` +
+        `  No se sirve tal cual —React escaparía el '&' y se vería el literal—.\n` +
+        `  Añádela a ENTIDADES con su carácter, derivado del original.`,
+    );
+  });
+
+/** `A.tipoDe` + los módulos que no son de Divi. LOCAL a este extractor. */
+const tipoDe = (n) => A.tipoDe(n) ?? tipoTerceros(n);
+/** `A.modulosDe` con el mismo criterio ampliado: para también en terceros. */
+function modulosDe(nodo) {
+  const out = [];
+  const baja = (n) => {
+    for (const h of n.hijos) {
+      const t = tipoDe(h);
+      if (t && !A.esEstructura(t)) {
+        out.push(h);
+        continue;
+      }
+      baja(h);
+    }
+  };
+  baja(nodo);
+  return out;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
  * ⚠⚠ EL `<img>` NO ESTÁ EN EL ÁRBOL — §sondas 4, EL PLENO (2026-08-23)
  *
  * `parsea()` lleva `VACIOS = {img, br, hr, input, …}` y hace `continue` con
@@ -410,7 +510,7 @@ let inyectado = false;
 const aBloque = (html, n, donde) => omiteDefectos(aBloqueBruto(html, n, donde), donde);
 
 function aBloqueBruto(html, n, donde) {
-  let tipo = A.tipoDe(n);
+  let tipo = tipoDe(n);
   if (SABOTAJE === "tipo-fantasma" && !fantasmaInyectado) {
     fantasmaInyectado = true;
     tipo = "un_tipo_que_divi_no_sirve";
@@ -563,14 +663,118 @@ function aBloqueBruto(html, n, donde) {
       };
     }
 
+    /* ══════════════════════════════════════════════════════════════════════
+     * T1 · LA TABLA DE TERCEROS — y NO se busca un `<table>`
+     *
+     * Medido (`derivaciones/tabla-cookies-109.log` + `tabla-canales-113.log`):
+     * `<table>`, `<thead>`, `<tr>`, `<th>`, `<td>` salen **0 en el marcado**.
+     * Es una REJILLA DE `<div>` con la posición en las clases
+     * (`dvmd_tm_row_N` · `dvmd_tm_col_N`) y el texto en un `.dvmd_tm_cdata`
+     * INTERIOR — no en el `tcell`. Un extractor que buscara `<table>` daría
+     * cero y lo leería como «no hay tabla».
+     *
+     * ── LA DECISIÓN DEL APLANADO, ESCRITA (no tomada por defecto en el código)
+     * **Las 55 celdas van a `filas[].celdas[]` en orden de columna, y
+     * `cabeceras` se queda VACÍA.** Las 11 `rhead` y las 11 `rfoot` entran
+     * como columnas más: se pierde el PAPEL, no la celda.
+     *
+     * **Por qué NO se usa `cabeceras` para la fila 0**, que era la alternativa:
+     *   1 · el marcado **no marca** la fila 0 como cabecera — lo dice su
+     *       contenido ("Cookie · Tipo · Propósito"…). Escribirla en `cabeceras`
+     *       sería que el extractor AFIRME algo que el original no dice;
+     *   2 · dejaría fuera de `filas` esa fila, o sea 10 × 5 + 5, y el modelo
+     *       pasaría a tener una forma que la rejilla no tiene;
+     *   3 · y **no resolvería la columna 0**, que es la única que el original
+     *       SÍ marca (`dvmd_tm_rhead` + `role="rowheader"`). Quedaría promovido
+     *       lo que el marcado calla y perdido lo que el marcado afirma —
+     *       exactamente al revés.
+     * O sea que la pérdida se reparte UNIFORME: **22 papeles, 0 celdas**.
+     *
+     * ── EL PAPEL ESTÁ EN DOS CANALES Y NO DICEN LO MISMO ─────────────────
+     * clase → `rhead` 11 · `tdata` 33 · `rfoot` 11 (TRES papeles)
+     * ARIA  → `rowheader` 11 · `cell` 44           (DOS: `rfoot` no tiene)
+     * El papel de PIE existe **sólo en el canal de la clase**. Anotado porque
+     * §El principio: la salida servida incluye el canal que no mirabas.
+     * ═════════════════════════════════════════════════════════════════════ */
+    case "dvmd_table_maker": {
+      const celdas = todasClase(n, "dvmd_tm_tcell");
+      const pos = (c, eje) => {
+        const m = new RegExp(`^dvmd_tm_${eje}_(\\d+)$`);
+        for (const k of c.clases) {
+          const x = m.exec(k);
+          if (x) return Number(x[1]);
+        }
+        return undefined;
+      };
+
+      const rejilla = new Map();
+      let sinPosicion = 0;
+      let sinCdata = 0;
+      for (const c of celdas) {
+        const fila = pos(c, "row");
+        const col = pos(c, "col");
+        /* §regla 33: una LLAVE de emparejamiento nunca es opcional. Sin fila o
+         * columna la celda no se puede colocar, y un `undefined` en una llave
+         * es «no lo sé» disfrazado de valor. Se tira. */
+        if (fila === undefined || col === undefined) {
+          sinPosicion++;
+          continue;
+        }
+        const cdata = buscaClase(c, "dvmd_tm_cdata");
+        if (!cdata) sinCdata++;
+        if (!rejilla.has(fila)) rejilla.set(fila, new Map());
+        rejilla.get(fila).set(col, decodifica(texto(html, cdata ?? c), `${donde} celda ${fila}/${col}`));
+      }
+
+      if (sinPosicion) {
+        throw new Error(
+          `TABLA SIN POSICIÓN: ${sinPosicion} de ${celdas.length} celdas sin dvmd_tm_row_N/col_N en ${donde}.\n` +
+            `  La posición es la llave de la rejilla: sin ella la celda no se coloca.`,
+        );
+      }
+      /* §sondas 4, 5.ª cara — un campo ausente en el 100 % de su tipo NO es
+       * «el original no lo trae»: es el instrumento. El texto vive en un
+       * `.dvmd_tm_cdata` INTERIOR, así que si ninguno casa, lo que falla es el
+       * selector, no el corpus. Un 100 % redondo se mira dos veces. */
+      if (celdas.length && sinCdata === celdas.length) {
+        throw new Error(
+          `TABLA SIN TEXTO: 0 de ${celdas.length} celdas traen '.dvmd_tm_cdata' en ${donde}.\n` +
+            `  Ausente en el 100 % de su tipo ⇒ el selector, no el original.`,
+        );
+      }
+
+      const nFilas = Math.max(...rejilla.keys()) + 1;
+      const nCols = Math.max(...[...rejilla.values()].flatMap((f) => [...f.keys()])) + 1;
+      if (rejilla.size * nCols !== celdas.length) {
+        throw new Error(
+          `TABLA NO RECTANGULAR: ${celdas.length} celdas para ${rejilla.size} × ${nCols} en ${donde}.`,
+        );
+      }
+
+      const filas = [];
+      for (let f = 0; f < nFilas; f++) {
+        const r = rejilla.get(f);
+        if (!r) continue;
+        /* `escalarA: "texto"` lo declara `CELDA` al lado de su definición. */
+        filas.push({ celdas: [...Array(nCols).keys()].map((c) => ({ texto: r.get(c) ?? "" })) });
+      }
+      /* `cabeceras` OMITIDA, no vacía: el original no marca ninguna cabecera de
+       * columna, y un array vacío explícito afirmaría que la miró y no había. */
+      return { kind: "tabla", filas };
+    }
+
     default:
       /* §sondas 4 + §regla 6 gemelo: un tipo que no casa NO se omite. Omitirlo
        * daría un documento con menos módulos y CERO errores — que es como se
        * sirven seis páginas vacías en verde. */
       throw new Error(
         `TIPO SIN BLOQUE: '${tipo}' en ${donde}.\n` +
-          `  arbol-f33 censó ONCE tipos y el esquema declara once bloques. Un doceavo\n` +
-          `  no se omite ni se mete en el cajón de otro: se mide y se modela.`,
+          `  arbol-f33 censó once tipos de DIVI; T1 (113.ª) añadió el DOCEAVO, que no\n` +
+          `  es de Divi: 'dvmd_table_maker'. Un treceavo no se omite ni se mete en el\n` +
+          `  cajón de otro: se mide y se modela.\n` +
+          `  ⚠ Y si el tipo te suena a módulo de terceros, mira 'tipoTerceros' arriba:\n` +
+          `  el caminante ya para en ellos, así que llegar aquí significa que el bloque\n` +
+          `  falta en el esquema, no que el tipo sea invisible.`,
       );
   }
 }
@@ -736,10 +940,14 @@ for (const p of RUTAS.paginas) {
       censo.secciones++;
       const filas = filasDe(sec);
       const enFilas = new Set();
-      for (const fila of filas) for (const m of A.modulosDe(fila)) enFilas.add(m);
+      /* ⚠ El caminante LOCAL en los dos sitios, o la tabla se cuenta DOS veces:
+       * `enFilas` es lo que descuenta a `sueltos`, así que si aquí se usara
+       * `A.modulosDe` el módulo de terceros no entraría en el set y saldría
+       * además como suelto. Dos mitades del mismo criterio, nunca una. */
+      for (const fila of filas) for (const m of modulosDe(fila)) enFilas.add(m);
 
       /* Los `fullwidth` cuelgan de la sección SIN fila. 2 medidos en 32 páginas. */
-      const sueltos = A.modulosDe(sec).filter((m) => !enFilas.has(m));
+      const sueltos = modulosDe(sec).filter((m) => !enFilas.has(m));
       censo.sueltos += sueltos.length;
 
       const seccion = {};
@@ -747,7 +955,7 @@ for (const p of RUTAS.paginas) {
         const ms = sueltos
           .map((m) => {
             censo.modulos++;
-            const t = A.tipoDe(m);
+            const t = tipoDe(m);
             censo.porTipo[t] = (censo.porTipo[t] || 0) + 1;
             return aBloque(html, m, p.ruta);
           })
@@ -762,9 +970,9 @@ for (const p of RUTAS.paginas) {
         const columnas = [];
         for (const col of cols) {
           censo.columnas++;
-          const brutos = A.modulosDe(col).map((m) => {
+          const brutos = modulosDe(col).map((m) => {
             censo.modulos++;
-            const t = A.tipoDe(m);
+            const t = tipoDe(m);
             censo.porTipo[t] = (censo.porTipo[t] || 0) + 1;
             return aBloque(html, m, p.ruta);
           });
@@ -1062,7 +1270,25 @@ if (t11Mal.length)
  * `arbol-f33.log` contó 313 módulos en 11 tipos con el mismo parser pero por
  * otro camino. Si esto da otro número, el que está mal es esto.
  */
-const ESPERADO = { text: 151, image: 71, video: 30, blurb: 22, button: 13, toggle: 10, code: 9, icon: 3, fullwidth_slider: 2, map: 1, slider: 1 };
+/**
+ * ⚠⚠ T1 (113.ª) · A PARTIR DE AQUÍ LOS DOS CAMINOS **NO** SON EL MISMO PARSER,
+ * Y ESO SE DECLARA EN VEZ DE AJUSTAR EL NÚMERO EN SILENCIO.
+ *
+ * El cruce se escribió cuando extractor y `arbol-f33` recorrían con el MISMO
+ * predicado. Ya no: este extractor lleva `tipoTerceros`, que para en módulos
+ * que no son de Divi, y `arbol-f33` **no puede verlos** —su `tipoDe` exige
+ * `et_pb_<tipo>_<n>`— y se deja así a propósito (15 consumidores, §regla 29
+ * mitad 2, arriba).
+ *
+ * O sea que el cruce sigue valiendo para los **11 tipos de Divi**, que es lo
+ * que `arbol-f33` mide, y la fila de terceros es **la diferencia conocida y
+ * medida** entre los dos caminantes: 313 + 1 = 314.
+ *
+ * **La guarda NO se debilita:** cualquier tipo que no esté en esta tabla sigue
+ * saliendo por discrepancia. Lo que cambia es que la tabla ahora dice qué
+ * instrumento respalda cada fila.
+ */
+const ESPERADO = { text: 151, image: 71, video: 30, blurb: 22, button: 13, toggle: 10, code: 9, icon: 3, fullwidth_slider: 2, map: 1, slider: 1, dvmd_table_maker: 1 };
 const TOTAL_ESPERADO = Object.values(ESPERADO).reduce((a, b) => a + b, 0);
 const discrepancias = [];
 for (const [t, n] of Object.entries(ESPERADO)) if ((censo.porTipo[t] || 0) !== n) discrepancias.push(`${t}: ${censo.porTipo[t] || 0} ≠ ${n}`);

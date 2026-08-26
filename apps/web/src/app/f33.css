@@ -428,3 +428,113 @@
 .f33-toggle .et_pb_toggle_content {
   padding-top: 20px;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * T1 · LA TABLA (`dvmd_table_maker`) — 113.ª
+ *
+ * ⚠⚠ TODO LO DE AQUÍ ES CSS **DEL EDITOR**, NO DE LA PLANTILLA, Y SE
+ * TRANSCRIBE SABIÉNDOLO. Divi compila la piel de este módulo con su ORDINAL
+ * —`.dvmd_table_maker_0 …`, `div.dvmd_table_maker_item_N …`—, o sea que por el
+ * discriminador de este repo (§*un selector con ordinal es el editor, uno
+ * genérico es la plantilla*) **es campo, no plantilla**. `MODULO_TABLA` no
+ * tiene campos de piel, así que estos números son **los de la PRIMERA
+ * INSTANCIA** cableados en el componente.
+ *
+ * Se escribe así a propósito y con su razón: sin la piel, el residuo del
+ * ESCALÓN 4 mediría **el CSS que no transcribí**, no la pérdida del modelo —
+ * y el residuo es lo que decide T2. Pero es literalmente el patrón del que
+ * avisa CLAUDE.md (*cablear el valor de la primera instancia, que sigue
+ * funcionando hasta que llega la tercera*), así que:
+ *
+ *   **UNA SEGUNDA TABLA `dvmd` CON OTRA PIEL ES LA CONDICIÓN DE REAPERTURA.**
+ *   Hoy no existe: el corpus menciona `dvmd` en 21 documentos y emite 2 rutas,
+ *   y la otra es de arquetipo escrito a mano. n = 1.
+ *
+ * Origen de cada número: el `<style>` del propio documento servido
+ * (`derivaciones/tabla-canales-113.log` acota el módulo; las reglas salen de
+ * `corpus/fase-3/sueltas/politica-de-cookies/index.html`).
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* `.dvmd_table_maker_0 { margin-top:-1.5%!important; max-width:880px }`
+ * Especificidad (0,2,0) para ganarle a `.f33-modulo` (0,1,0) A LOS DOS ANCHOS
+ * — §regla 35: el `@media (max-width:980px)` mete selectores que a 1440 no
+ * compiten, y una regla que sólo gana en un ancho no se puede verificar en el
+ * otro. Es el mismo remedio que ya lleva `.f33-modulo.f33-toggle`. */
+.f33-modulo.f33-tabla {
+  max-width: 880px;
+  margin-top: -1.5%;
+}
+
+/* `.dvmd_tm_table { display:grid; grid-template-columns:…; grid-auto-rows:…;
+ *                   overflow:auto; column-gap:2px; row-gap:2px }`
+ * Los 55 `grid-area` explícitos del original NO se transcriben: colocan cada
+ * celda en su fila y columna, y el clon emite las celdas en ORDEN DE FILA, así
+ * que la colocación automática de la rejilla da el mismo reparto. Transcribir
+ * 55 reglas para reproducir el orden natural sería copiar el mecanismo en vez
+ * del resultado. */
+.f33-tabla-rejilla {
+  display: grid;
+  grid-template-columns:
+    minmax(100px, 33%) minmax(100px, 67%) minmax(100px, 67%)
+    minmax(100px, 67%) minmax(100px, 67%);
+  grid-auto-rows: minmax(60px, auto);
+  overflow: auto;
+  column-gap: 2px;
+  row-gap: 2px;
+}
+
+/* `.dvmd_tm_tcell { display:flex; flex-direction:column; border-width:1px;
+ *                   overflow:hidden; background:#f6f9fb; padding:10px }`
+ * más `div.dvmd_table_maker_item_N.dvmd_tm_tcell { text-align:center }`, que
+ * en el original son cinco selectores —uno por columna— con el MISMO valor. */
+.f33-tabla-celda {
+  display: flex;
+  flex-direction: column;
+  border-width: 1px;
+  overflow: hidden;
+  background: #f6f9fb;
+  padding: 10px;
+  text-align: center;
+}
+
+/* ── EL PAPEL, RECUPERADO POR POSICIÓN ─────────────────────────────────────
+ * Aquí es donde se paga T1. El original marca el papel con una CLASE
+ * (`dvmd_tm_rhead` · `dvmd_tm_rfoot`) y `MODULO_TABLA` no la expresa: se
+ * pierden 22 papeles de 55 celdas. Pero papel y columna son **1:1 en las 55**
+ * —`rhead`→col 0, `rfoot`→col 4—, así que `nth-child` los recupera EXACTOS.
+ *
+ * Lo que se pierde de verdad no es el píxel: es la SEMÁNTICA. El original
+ * también sirve `role="rowheader"` en las 11 de la columna 0, y por posición
+ * no se puede emitir un papel accesible sin AFIRMARLO — el modelo no lo dice.
+ *
+ * ⚠ Y el 1:1 se mide sobre UNA tabla, así que papel y posición son
+ * INDISTINGUIBLES en n = 1 (§*dos variables confundidas*). Una tabla con la
+ * cabecera en otra columna rompería esto y NO daría error: daría colores en el
+ * sitio equivocado. Fuera de esta tabla, SIN PROBAR. */
+/* ⚠ EL NIVEL DEL `nth-child` ES LA FILA, NO LA REJILLA — y eso hay que
+ * escribirlo porque las dos lecturas dan lo mismo AQUÍ y sólo una es cierta.
+ * Con `.f33-tabla-fila { display: contents }` la fila desaparece de la
+ * MAQUETACIÓN pero **sigue siendo el padre en el DOM**, así que `nth-child`
+ * cuenta entre las 5 celdas de su fila. `:first-child` es la columna 0 y
+ * `:nth-child(5)` la columna 4, exactos. Escribirlo como `5n+1` funcionaría
+ * por accidente —cada fila tiene 5— e induciría a leer que cuenta sobre las
+ * 55. §*al transcribir un `:first-*`, la pregunta no es «¿existe?» sino
+ * «¿SOBRE QUÉ?»*. */
+.f33-tabla-fila {
+  display: contents;
+}
+.f33-tabla-celda:first-child {
+  background: #0075c9;
+  color: #ffffff;
+  position: sticky;
+  left: 0;
+  z-index: 999;
+}
+.f33-tabla-celda:nth-child(5) {
+  background: #d7e2ed;
+}
+
+/* `.dvmd_tm_tcell .dvmd_tm_cdata { white-space:normal }` */
+.f33-tabla-cdata {
+  white-space: normal;
+}

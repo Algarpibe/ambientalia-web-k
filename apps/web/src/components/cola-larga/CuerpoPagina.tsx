@@ -319,6 +319,54 @@ function Modulo({ m }: { m: ModuloPagina }) {
       );
 
     /**
+     * `tabla` — T1 (113.ª). 1 instancia: `/politica-de-cookies`, 11 × 5 = 55
+     * celdas de texto plano (0 `<a>`, 0 listas, 0 `<br>`, 0 `<strong>`).
+     *
+     * ⚠ **En el original NO hay `<table>`**: `<table>`, `<thead>`, `<tr>`,
+     * `<th>` y `<td>` salen **0 en el marcado**. Es una CSS grid de `<div>`
+     * con `grid-template-columns` de cinco pistas y la posición codificada en
+     * las clases. El clon emite la misma rejilla, y por eso las celdas van
+     * **planas, en orden de fila** — sin `<tr>` intermedio, que rompería la
+     * colocación automática igual que la rompe en el original (allí lo evitan
+     * con `.dvmd_tm_trow { display: contents }`).
+     *
+     * ⚠⚠ **Y no se emite `<table>` «porque semánticamente sería mejor».** Lo
+     * sería, y el original NO lo hace: §El principio — se replica lo que el
+     * navegador hace con lo servido, no lo que el autor debería haber escrito.
+     * Emitir una tabla real cambiaría la caja y el residuo del ESCALÓN 4
+     * dejaría de medir la pérdida del modelo.
+     *
+     * El papel de celda (`rhead` col 0 · `rfoot` col 4) lo pone `f33.css` por
+     * `nth-child`, porque `MODULO_TABLA` no lo expresa — 22 papeles perdidos
+     * de 55 celdas, con su ficha en `bloques/paginas.ts` y su condición de
+     * reapertura en `ESQUEMA-CMS.md`.
+     */
+    case "tabla": {
+      const filas = m.filas ?? [];
+      return (
+        <div className={`f33-modulo f33-tabla${ancho}`} {...sonda} style={style}>
+          <div className="f33-tabla-rejilla" role="table">
+            {filas.map((f, fi) => (
+              /* La FILA existe y lleva `display: contents`, igual que en el
+               * original (`.dvmd_tm_trow { display: contents }`). No es
+               * decoración: `role="cell"` sin un `role="row"` que lo contenga
+               * es ARIA INVÁLIDO, y una tabla accesible a medias es peor que
+               * ninguna. `display: contents` la saca del flujo de la rejilla,
+               * así que la colocación automática sigue viendo las 5 celdas. */
+              <div key={fi} className="f33-tabla-fila" role="row">
+                {(f.celdas ?? []).map((c, ci) => (
+                  <div key={ci} className="f33-tabla-celda" role="cell">
+                    <div className="f33-tabla-cdata">{c.texto ?? ""}</div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    /**
      * `toggle` — 10 instancias en 5 páginas. `nivel` viaja con `conDefecto` a
      * **5** (`et_pb_toggle_title` sirve `h5` en 10/10), así que ausente ⇒ 5.
      *
@@ -426,9 +474,9 @@ function Modulo({ m }: { m: ModuloPagina }) {
     default: {
       const desconocido = m as { kind?: string };
       throw new Error(
-        `CuerpoPagina: módulo con \`kind\` desconocido ("${desconocido.kind}"). Los once de la unión son ` +
+        `CuerpoPagina: módulo con \`kind\` desconocido ("${desconocido.kind}"). Los DOCE de la unión son ` +
           `texto-pagina · imagen-pagina · boton-pagina · codigo · toggle · video-pagina · blurb · ` +
-          `slider-completo · slider · mapa · icono. Ojo: el discriminador del RENDER es \`kind\` ` +
+          `slider-completo · slider · mapa · icono · tabla. Ojo: el discriminador del RENDER es \`kind\` ` +
           `(lo pone la VUELTA), no el \`blockType\` que guarda Payload.`,
       );
     }

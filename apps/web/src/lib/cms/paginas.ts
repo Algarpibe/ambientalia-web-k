@@ -74,9 +74,9 @@ export type DiapositivaPagina = {
 };
 
 /**
- * LOS ONCE MÓDULOS. El `kind` es el `slug` del bloque — ver la cabecera.
+ * LOS DOCE MÓDULOS. El `kind` es el `slug` del bloque — ver la cabecera.
  *
- * ⚠ **Tres de los once NO se pintan en esta tanda, y salen NOMBRADOS**
+ * ⚠ **Tres de los doce NO se pintan en esta tanda, y salen NOMBRADOS**
  * (CORTE LIMPIO 2). Están en el tipo porque el DATO existe y el renderizador
  * tiene que poder recibirlos sin mentir; lo que no existe es la medida con la
  * que pintarlos. Ver `CuerpoPagina.tsx` §LOS TRES QUE NO SE PINTAN.
@@ -121,9 +121,46 @@ export type ModuloPagina =
       kind: "mapa";
       pines: { titulo: string; descripcion?: string | null; lat?: string | null; lng?: string | null }[];
     })
-  | (Base & { kind: "icono"; icono: string; texto?: string | null });
+  | (Base & { kind: "icono"; icono: string; texto?: string | null })
+  /**
+   * ── T1 (113.ª) · `tabla`, ADOPTADO TAL CUAL DESDE MONOGRÁFICO ────────────
+   *
+   * 1 instancia: `/politica-de-cookies`, 11 filas × 5 columnas = 55 celdas de
+   * texto plano. `CELDA = {texto, fuerte, resto}` y `escalarA: "texto"`.
+   *
+   * ⚠⚠ **LLEVA `Base` COMO SUS HERMANOS, Y EL BLOQUE NO — la divergencia se
+   * declara aquí porque el tipo no puede expresarla sin fabricar código
+   * muerto.** `MODULO_TABLA` trae `...moduloBase` (el COMPARTIDO,
+   * `ritmoModulo` con `number`), no `moduloBasePagina` (`ritmoModuloPagina`,
+   * con UNIDAD). Es la consecuencia directa de adoptarlo **sin modificarlo**,
+   * que es lo que T1 decidió.
+   *
+   * Tiparlo con su forma real obligaría a `estiloModulo` a ramificar sobre una
+   * segunda forma de ritmo **que ningún dato ejercita**, o sea a escribir un
+   * camino de render sin estrenar para cubrir un caso que no se da.
+   *
+   * **La divergencia es INERTE hoy, y por eso esto es lícito:** el extractor no
+   * escribe **ni una** clave de geometría —lo exige su guarda, con sabotaje
+   * `geometria`—, así que ni `ritmo` ni `anchoPct` llegan nunca aquí, para
+   * ninguno de los doce. Inerte no es inexistente (§regla 14).
+   *
+   * > **CONDICIÓN: el día que la geometría se pueble, estas dos formas hay que
+   * > conciliarlas ANTES**, o `estiloModulo` leerá un `number` donde espera una
+   * > `MedidaKb` y emitirá una variable CSS sin unidad — que **no da error: da
+   * > una declaración que el navegador tira** (§*una declaración inválida se
+   * > sirve como que no existe*).
+   *
+   * `cabeceras` existe en el bloque y el extractor **no lo escribe**: el
+   * original no marca ninguna cabecera de COLUMNA. Ver la decisión del
+   * aplanado en `extractor-f33.mjs` §T1.
+   */
+  | (Base & {
+      kind: "tabla";
+      cabeceras?: { texto: string }[] | null;
+      filas?: { celdas?: { texto?: string | null }[] | null }[] | null;
+    });
 
-/** Los once `kind`, derivados del tipo — para que el renderizador no los liste a mano. */
+/** Los doce `kind`, derivados del tipo — para que el renderizador no los liste a mano. */
 export type KindPagina = ModuloPagina["kind"];
 
 export type ColumnaPagina = { ancho: TipoColumnaPagina; modulos?: ModuloPagina[] | null };
