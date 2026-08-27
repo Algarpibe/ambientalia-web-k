@@ -1,5 +1,227 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 📋 §8-DEUDA · **la deuda abierta CLASIFICADA contra el listón — la lista, no la decisión** — 119.ª, 2026-08-27
+
+**Por qué existe esta ficha:** sin ella el proyecto no es estimable. La política
+implícita de hoy es **pagar toda deuda encontrada**, y por eso la fecha se mueve
+sola. Lo que esta tanda entrega no es la decisión —ésa es del propietario— es
+que **la pregunta se pueda contestar mirando una tabla**.
+
+Derivación: `docs/research/cola-larga/derivaciones/deuda-abierta-119.{mjs,log}`.
+
+### El censo, con su unidad y su alcance
+
+| | |
+|---|---|
+| **alcance** | **UN fichero** — `docs/PENDIENTES-QA.md` (23 545 líneas). NO cubre deuda que viva en código, `HANDOFF` o planes de fase |
+| **unidad** | **LA FICHA** (una cabecera `## `), **NO el defecto** — una ficha puede contener varios y dos fichas pueden hablar del mismo. Son dos cardinales ciertos a la vez, uno por unidad |
+| **total** | **314 fichas** — ⚠ ver la nota de abajo: el `.log` dice **315** |
+
+> ⚠ **El censo se cuenta a SÍ MISMO, y los dos números son ciertos.** La
+> derivación se corrió **antes** de escribir esta ficha (**314**) y se re-corrió
+> **después** (**315**), que es lo que hay congelado en el `.log`. La diferencia
+> es exactamente esta ficha. Se dice en vez de cuadrarlos, porque *«el `.log`
+> dice 315 y el acta 314»* es justo la clase de discrepancia que un lector lee
+> como error del instrumento (§regla 1 — *lo que imprime y lo que cuenta no
+> pueden discrepar*, cobrada sobre un censo cuyo objeto lo incluye).
+>
+> **Y el `⛔` NO se movió: 46 antes y 46 después**, porque esta ficha es `📋`.
+> Eso es el control de que el censo no infla su propio registro de deuda.
+
+| marcador | n | % |
+|---|---|---|
+| **⛔ bloqueo** | **46** | 14.6 % |
+| ⚠ tono | 102 | 32.5 % |
+| ✅ cerrada | 87 | 27.7 % |
+| RETIRADA | 16 | 5.1 % |
+| sin marcador | 63 | 20.1 % |
+| **suma** | **314** | ✓ cuadra |
+
+### ⚠ Lo que este censo NO puede clasificar, con su número (§regla 14)
+
+> **`⛔` es el marcador de BLOQUEO del repo; `⚠` es un TONO.** Los dos se
+> escriben igual de fácil y **sólo el primero declara estado**.
+
+**La v1 de esta derivación trató `⚠` como estado y publicó «147 abiertas de 314
+(46.8 %)».** Es el **sobre-casado** de §sondas 4: un número plausible de más,
+que invita a explicarlo. Muestreadas, las `⚠` mezclan deuda viva
+(*«el clon lo pierde ENTERO»*) con **actas de tanda**
+(*«las TRES predicciones salieron FALSAS, y se dicen»*), que no son deuda.
+
+**Se intentó leer el estado del CUERPO, y su CONTROL lo rechazó** (§regla 8 —
+*un negativo sin control no es un negativo*). El heurístico se aplicó primero al
+conjunto donde la cabecera ya da la respuesta:
+
+| control | acierto |
+|---|---|
+| sobre `⛔` (bloqueo ⇒ debería salir ABIERTA) | **22 / 46** |
+| sobre `✅` (cerrada ⇒ debería salir CERRADA) | **33 / 87** |
+| **conjunto** | **55 / 133 — 41.4 %** |
+
+⇒ **el heurístico NO se usa.** Un discriminador que no acierta sobre el conjunto
+conocido no se aplica al desconocido, y publicar su salida sobre las `⚠` habría
+sido dar 30 fichas por abiertas con un instrumento medido al 41 %.
+
+> **Consecuencia declarada: las 102 `⚠` quedan SIN CLASIFICAR POR CABECERA, y
+> las 63 `sin marcador` también.** Son **165 de 314 (52.5 %)** que este censo
+> **no** clasifica, y decirlo con el número es la diferencia entre una
+> limitación y una nota al pie. Clasificarlas exige leer sus cuerpos: es trabajo
+> con forma, no un olvido.
+
+---
+
+### La clasificación contra el listón — **las 46 `⛔`**
+
+**El criterio, escrito antes del reparto**, y contra el listón **reescrito** en
+esta misma tanda (§8), que sostiene DOS afirmaciones separables:
+**(1)** «la migración no movió el clon: Δ0 en 426 rutas × 2 anchos» ·
+**(2)** «la fidelidad no bajó donde estaba medida».
+
+| cubo | criterio, literal | n de 46 |
+|---|---|---|
+| **BLOQUEA** | impide un Δ0 a **1440/390** sobre las 426, **o** deja una de las sondas **del propio listón** sin poder pronunciarse | **11** |
+| **NO BLOQUEA** | fidelidad **fuera** de los dos anchos · higiene de instrumento · una ficha con su número que **no cambia ningún veredicto** · o deuda de **CONSTRUCCIÓN** de algo que aún no se emite | **33** |
+| **INDECIDIBLE hoy** | y se dice **qué lo decidiría** | **2** |
+| | **suma** | **46** ✓ |
+
+#### ⛔ BLOQUEA — 11
+
+| ficha | por qué bloquea, con su número |
+|---|---|
+| `F3-LH-ENLACES-105` (L20053) | **es una FILA del listón y su última corrida está ROJA** — ver abajo, tiene sección propia |
+| `DATOS-PIXEL` (L8778) | **8 de 37 rutas se movieron** al cambiar de fuente. El NO-OP pedido no se cumplió: es literalmente «impide un Δ0» |
+| `F3-4-CAJA-W-006` (L23151) | `caja.w` orig **258.5** → clon **258.44** en **9 de 9** a 1440 (**0 de 9** a 390). Un Δ ≠ 0 a un ancho del listón, **sin adjudicar** |
+| `DEFECTO-SUB-EDAR` (L10848) | el clon sirve `H2S` donde el original sirve `H₂S`, en **2 rutas dadas por verificadas desde julio** |
+| `F3-LH-PIE-UNO-CONTRA-CUATRO` (L19831) | el clon sirve **UN** pie donde el original sirve **CUATRO**, medido por `pie-cmp` a los dos anchos |
+| `LH-C6-LAZY-CLON` (L10171) | **28** `loading="lazy"` contra **265** del original, medido de dos lados en 13 rutas a 1440 |
+| `DATOS-MEDIA-HOTLINK` (L8712) | **3688** imágenes servidas desde `kunakair.com` en **169 de 209** documentos. Rompe la regla de assets **y** ata la medida al original vivo |
+| `F3-3-CMP-IMAGENES-ROTAS` (L3294) | el único comparador de dos lados de la cola larga mide los dos lados **con la red en distinto estado** ⇒ `docH` y todo alto con imagen **NO son acreditables**. Deja al instrumento de fidelidad sin poder pronunciarse |
+| `F3-LH-ALCANCE-PAGINA-1` (L6584) | `lh-cmp` compara **13 de 149**, y todas son la página 1 |
+| `F3-SONDAS-NEGATIVOS-PODRIDOS` (L20107) | **10 de 40** negativos ya no saben fallar. Un verde sin negativo probado no es un verde |
+| `QA-NEGATIVOS-ROJOS-97` (L2200) | **9 rojos** en el censo de negativos. Misma clase que la anterior |
+
+**Las cuatro últimas son de la MISMA forma y conviene verlas juntas:** ninguna
+es un defecto del clon — **son instrumentos que no pueden pronunciarse**. El
+listón se puede cumplir con ellas puestas, y su verde no significaría nada.
+
+#### ⚠ INDECIDIBLE hoy — 2, con lo que las decidiría
+
+| ficha | qué la decide |
+|---|---|
+| `§8-FIDELIDAD` (L106) | **el propietario, eligiendo cuál de las dos afirmaciones tiene que sostener §8.** Si aceptación = «la migración no movió nada», **no bloquea** y el listón ya es alcanzable. Si aceptación = «el clon es fiel al original», **bloquea**, y lo que falta es un comparador de dos lados sobre las 426 que **no existe** — el eje mejor cubierto llega al 33.7 % sumando cinco comparadores |
+| `F3-LH-DERIVA-DEL-ORIGINAL-AGOSTO` (L4815) | **una medición contra el original vivo.** El sitio se movió entre el 11 y el 19 de agosto; si el objetivo derivó, parte de lo medido antes describe un original que ya no existe. No se puede decidir offline **por construcción**: hace falta red |
+
+#### · NO BLOQUEA — 33, y el reparto por MOTIVO
+
+| motivo | n | cuáles |
+|---|---|---|
+| **deuda de CONSTRUCCIÓN** — bloquea **emitir** algo que hoy no se emite, no **aceptar** lo emitido | **24** | las 24 de la lista de abajo |
+| **higiene de instrumento** — cuesta corridas, no cambia veredictos | **5** | `F3-3-INSUMO-TARDIO` · `META-MTIME-EN-CLON-LIMPIO` · `F3-LH-ESPEJO-INVALIDADO-EN-EXTRACTO` · `F3-1-CSS-NO-CAPTURADO` · `F3-LH-PIELES-SIN-CAPTURAR` |
+| **ficha con su número que no mueve nada** | **3** | `T3-ALCANCE` · `T3B-NO-CANONICO` · `M-PDF-FB3D` |
+| **CADUCADA por evidencia posterior** | **1** | `F3-LH-GUARDA-DE-REGRESION-SIN-COMPLETAR` — ver abajo |
+
+**Las 24 de CONSTRUCCIÓN, nombradas** para que «casi toda» no sustituya a una
+clasificación: `F3-4-RUTAS-VACIAS` · `F3-4-CSS-DINAMICO` ·
+`F3-3-GALLERY-SIN-EXPRESAR` · `F3-3-CASCARON-SIN-DISCRIMINADOR` ·
+`F3-3-CONSULTAS-EMBEBIDAS` · `F3-3-CENSO-CAMPO-RICO` · `F3-3-MODULO-DE-TERCEROS`
+· `F3-LH-PIELB-GRANDES-SIN-EJERCITAR` · `F3-LH-ENTRADA-QUE-ES-UN-301` ·
+`F3-LH-VACIA-DOS-CAUSAS` · `F3-LH-ORDEN-DE-L2` · `DATOS-A` · `DATOS-C` ·
+`DATOS-MEDIA` · `DATOS-C-SOLUCIONES` · `DATOS-C-PIPELINE` ·
+`ESCALÓN F3-2 (4.º)` · `ESCALÓN F3-2 (3.º)` · `LH-C6-FILTRO-L5` ·
+`F3-3-BT-DOS-FORMAS` · `F3-4-MESA` · `F3-4-FICHA-FOTOS` ·
+`F3-4-FICHA-DOC-CIENTIFICO` · `F3-4-CMS-DECL-HUECO-PAGINAS`.
+
+> ⚠ **Y el corte que este cubo introduce es el que más le importa al
+> propietario, así que se dice aparte en vez de esconderlo dentro de «no
+> bloquea»:** las tres preguntas *«¿bloquea la ACEPTACIÓN?»*, *«¿bloquea la
+> CONSTRUCCIÓN?»* y *«¿bloquea la FIDELIDAD?»* son **tres**, y esta tabla sólo
+> contesta la primera. **24 de 46 fichas bloquean construcción y no
+> aceptación** — leerlas como «no bloquea» a secas invertiría su lectura.
+
+#### CONTROL del reparto (§regla 8, y §*un cardinal es un contenedor*)
+
+La partición se verificó por **diferencia simétrica**, no por recuento:
+
+| comprobación | resultado |
+|---|---|
+| `⛔` vivas en el fichero | **46** |
+| fichas nombradas a mano en los cubos | **22** (11 + 2 + 5 + 3 + 1), **0 duplicadas** |
+| nombradas que NO son una `⛔` viva (**fantasmas**) | **0** |
+| resto por diferencia = cubo CONSTRUCCIÓN | **24** |
+| **suma** | **46** ✓ |
+
+**Los 0 fantasmas son la mitad que importa:** un cubo escrito a mano puede
+nombrar una ficha que no existe o que ya está cerrada, y el total seguiría
+cuadrando. Sin ese lado, «46 = 11+2+33» sería un recuento, no una partición.
+
+> **`META-MTIME-EN-CLON-LIMPIO` está en «higiene» por una razón concreta y no
+> por indulgencia:** el listón invoca `clon-base --cmp <base>` con la base
+> **NOMBRADA**, así que `eligeCongeladaAnterior()` no participa. Bloquearía a
+> cualquier sonda que resuelva su base sola — y ésas no están en el listón.
+
+#### ✅ Y una de las 46 está CADUCADA — derivado, no supuesto
+
+`F3-LH-GUARDA-DE-REGRESION-SIN-COMPLETAR` (L5443) registra *«TRES INTENTOS,
+367 · 248 · 81»* del 2026-08-17. Contra la evidencia de hoy:
+
+| congelada | `meta.rutas` | claves | ¿completa? |
+|---|---|---|---|
+| `clon-base-1440-t118-tras-el-archivo.json` | 426 | 426 | **SÍ** |
+| `clon-base-390-t118-tras-el-archivo.json` | 426 | 426 | **SÍ** |
+
+**La guarda sí se completa hoy, a los dos anchos y con 0 errores.** La ficha
+describe un episodio de contención de máquina del 17 de agosto, no un estado.
+Se deja **nombrada como caducada** en vez de borrarla: su evento sigue siendo
+evidencia de que la corrida puede morir por contención.
+
+---
+
+### 🔴 LO QUE ESTE ESCALÓN DESTAPA Y NO ESTABA EN NINGUNA LISTA: **UNA FILA DEL LISTÓN ESTÁ ROJA HOY**
+
+El listón pide `npm run qa:enlaces` → *«limpia en las dos direcciones, código
+0»*. Derivado de la congelada más reciente que no es artefacto —
+`medidas/enlaces-2026-08-20-2.json`, del **2026-08-20** —:
+
+| magnitud | valor | unidad |
+|---|---|---|
+| páginas recorridas | **382** | página |
+| **fallos** | **1395** | **APARICIÓN** |
+| **fallos** | **105** | **HREF DISTINTO** |
+| rotos | **2** | href |
+| **rutas del build que la guarda NO ha visto** | **44** | ruta (426 − 382) |
+
+**Los dos cardinales de «fallos» son ciertos y se publican los dos**, porque
+1395 y 105 son el mismo conjunto contado en unidades distintas — citar sólo uno
+es §*un denominador sin unidad no se puede auditar*.
+
+**Tres lecturas, y la tercera es la que importa:**
+
+1. **la fila no está verde, y no lo está desde que el sitio creció.** Sus
+   verdes del 08-06 y el 08-08 eran de **31 páginas de ~300**;
+2. **está además CADUCADA por 7 días y 44 rutas.** La guarda deriva su universo
+   del `prerender-manifest`, así que **las 44 rutas nuevas entran solas** — y
+   nadie la ha corrido para que lo hagan;
+3. ⚠ **y NO se lee como «105 defectos».** §F3-LH-ENLACES-105 ya hizo esa
+   distinción y hay que respetarla: son **105 destinos que hay que
+   CLASIFICAR** en tres familias —navegación y pie · enlaces dentro del cuerpo
+   rico (transformación T7) · términos cuyo destino **no está clonado y DEBE
+   seguir apuntando fuera**—. **Ese reparto sigue sin hacer.** Contar los 105
+   como defectos sería el error contrario.
+
+---
+
+### Lo que esta ficha NO hace, dicho explícitamente
+
+- **NO decide qué se paga.** La lista sube al propietario;
+- **NO clasifica 165 de las 314** (102 `⚠` + 63 sin marcador) — declarado
+  arriba con su control en rojo;
+- **NO corre nada.** Tanda offline: el 1395 y el 105 salen de una congelada del
+  2026-08-20, no de una corrida de hoy, y por eso se citan **con su fecha y su
+  fichero**.
+
+---
+
+
 ## ✅ §8-DENOMINADOR · **el listón se reescribe con el denominador DERIVADO, y el barrido clasificó ANTES de sustituir** — 119.ª, 2026-08-27
 
 **Lo que había:** `ESQUEMA-CMS.md` §8 —el criterio de aceptación de la

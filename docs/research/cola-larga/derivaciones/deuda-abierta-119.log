@@ -1,0 +1,262 @@
+════════════════════════════════════════════════════════════════════════════════
+DEUDA ABIERTA · derivada de docs/PENDIENTES-QA.md — 119.ª, 2026-08-27
+════════════════════════════════════════════════════════════════════════════════
+
+ALCANCE  : UN fichero — docs/PENDIENTES-QA.md (23756 líneas)
+UNIDAD   : LA FICHA (cabecera `## `) — NO el defecto
+TOTAL    : 315 fichas
+
+────────────────────────────────────────────────────────────────────────────────
+EJE 1 · el MARCADOR de la cabecera (lo único que declara estado por sí solo)
+────────────────────────────────────────────────────────────────────────────────
+  ⛔ bloqueo          46  (14.6 %)
+  ⚠ tono            103  (32.7 %)
+  ✅ cerrada          87  (27.6 %)
+  RETIRADA           16  (5.1 %)
+  sin marcador       63  (20.0 %)
+  suma              315   ✓ cuadra
+
+────────────────────────────────────────────────────────────────────────────────
+CONTROL del heurístico de cuerpo (§regla 8)
+────────────────────────────────────────────────────────────────────────────────
+  sobre ⛔ (la cabecera dice BLOQUEO ⇒ debería salir ABIERTA)  : 22/46
+  sobre ✅ (la cabecera dice CERRADA ⇒ debería salir CERRADA)  : 33/87
+  acierto conjunto                                            : 55/133  (41.4 %)
+
+  ⇒ el heurístico NO SE USA sobre las ⚠, y su fracción va publicada al lado.
+
+────────────────────────────────────────────────────────────────────────────────
+EJE 2 · estado por cuerpo, SÓLO dentro de las ⚠ (103 fichas)
+────────────────────────────────────────────────────────────────────────────────
+  ABIERTA            30
+  CERRADA             1
+  INDETERMINADA      72
+
+════════════════════════════════════════════════════════════════════════════════
+LA DEUDA ABIERTA — ⛔ vivas, una a una
+════════════════════════════════════════════════════════════════════════════════
+  L  317 ·   93 líneas · ⛔ §8-FIDELIDAD · las CINCO comprobaciones del listón no miden fidelidad — ni una — 119.ª, 2026-08-27
+  L  501 ·   20 líneas · ⛔ F3-4-RUTAS-VACIAS · «27 rutas» de categoria no son 27 páginas: 8 sirven CERO tarjetas — 116.ª, 202
+  L  522 ·   25 líneas · ⛔ F3-4-CSS-DINAMICO · un <style> de 161 728 B falta en 2 de 484 documentos, y son exactamente los do
+  L  644 ·   68 líneas · ⛔ META-MTIME-EN-CLON-LIMPIO · el orden NO se vuelve arbitrario: se vuelve REPRODUCIBLEMENTE EQUIVOCA
+  L 1130 ·   82 líneas · ⛔ F3-3-GALLERY-SIN-EXPRESAR · articulos-kb sirve un et_pb_gallery de 11 items y el esquema no tiene 
+  L 1945 ·  133 líneas · ⛔ F3-3-CASCARON-SIN-DISCRIMINADOR · CORTE LIMPIO 2 disparó, y NO en un tipo de módulo: en el CASCARÓ
+  L 2411 ·  101 líneas · ⛔ QA-NEGATIVOS-ROJOS-97 · 3 rojos nuevos en el censo, y los 3 ATRIBUIDOS — 97.ª, 2026-08-23
+  L 2513 ·   32 líneas · ⛔ F3-3-CONSULTAS-EMBEBIDAS · 97.ª (2026-08-23) — 2 páginas se sirven INCOMPLETAS a propósito, y hay 
+  L 2606 ·   49 líneas · ⛔ F3-3-CENSO-CAMPO-RICO · CORTE LIMPIO 2 de la 96.ª (2026-08-23) — la siembra de paginas está BLOQUE
+  L 3505 ·   43 líneas · ⛔ F3-3-CMP-IMAGENES-ROTAS · el comparador mide los dos lados con la red en distinto estado — 105.ª, 
+  L 3549 ·   35 líneas · ⛔ F3-3-MODULO-DE-TERCEROS · dvmd_table_maker: una tabla de 11×5 que el clon no sirve por ningún cana
+  L 5026 ·  134 líneas · ⛔ F3-LH-DERIVA-DEL-ORIGINAL-AGOSTO · EL SITIO SE MOVIÓ ENTRE EL 11 Y EL 19 — Y NO ES DEL CLON (2026-
+  L 5202 ·   73 líneas · ⛔ F3-LH-ESPEJO-INVALIDADO-EN-EXTRACTO · ARREGLAR EL INSTRUMENTO CADUCA LA MEDIDA QUE TOMÓ (2026-08-1
+  L 5654 ·   39 líneas · ⛔ F3-LH-GUARDA-DE-REGRESION-SIN-COMPLETAR · TRES INTENTOS, 367 · 248 · 81 (2026-08-17, 75.ª tanda)
+  L 5981 ·   40 líneas · ⛔ F3-LH-PIELB-GRANDES-SIN-EJERCITAR · LOS TRAMOS DEL NÚMERO GRANDE QUE EL ORIGINAL NO SIRVE — Y POR 
+  L 6233 ·  114 líneas · ⛔ F3-LH-ENTRADA-QUE-ES-UN-301 · UNA ENTRADA DEL CORPUS NO ES UN DOCUMENTO SI SU CANONICAL APUNTA A O
+  L 6571 ·   95 líneas · ⛔ F3-LH-VACIA-DOS-CAUSAS · 10 DOCUMENTOS QUE SE VENÍAN CONTANDO COMO «VACÍOS» NO COMPARTEN LA FRONTE
+  L 6795 ·   83 líneas · ⛔ F3-LH-ALCANCE-PAGINA-1 · qa:lh-cmp COMPARA 13 PÁGINAS DE 149, Y TODAS SON LA PÁGINA 1 (2026-08-14,
+  L 7004 ·   54 líneas · ⛔ F3-LH-ORDEN-DE-L2 · /glosario ORDENA POR FECHA Y NO HAY CAMPO; /preguntas-frecuentes NO SIRVE ORDE
+  L 8051 ·   45 líneas · ⛔ F3-LH-PIELES-SIN-CAPTURAR · las 9 formas de listado SÍ enlazan el canal de pieles, y estaba a CERO
+  L 8346 ·   87 líneas · ⛔ DATOS-A · el catálogo del grupo A está EXTRAÍDO y verificado, y las tres colecciones se quedan sin
+  L 8434 ·  113 líneas · ⛔ DATOS-C · casos (57) y faqs (19) DIMENSIONADOS — el bloqueo que el informe anterior no nombró, con
+  L 8548 ·   89 líneas · ⛔ DATOS-MEDIA · el hueco de media de las CINCO colecciones, y el «90» se disuelve en 4 (2026-08-12)
+  L 8728 ·   48 líneas · ⛔ DATOS-C-SOLUCIONES · los 57 casos no entran porque referencian 10 productos que el clon no modela 
+  L 8923 ·   65 líneas · ⛔⛔ DATOS-MEDIA-HOTLINK · el clon SIRVE 3688 imágenes DESDE kunakair.com, y la premisa que lo justifi
+  L 8989 ·  106 líneas · ⛔ DATOS-PIXEL · §DATOS-C-PIPELINE se ve en píxeles: 8 de las 37 rutas se movieron al cambiar de fuen
+  L 9162 ·  198 líneas · ⛔ DATOS-C-PIPELINE · el PASO 6 se para: el cuerpo transformado y la transcripción a mano NO coincide
+  L 9361 ·   95 líneas · ⛔ ESCALÓN F3-2 (4.º) · POBLACIÓN — el clon no tiene documentos para emitir ni para verificar las 142
+  L 9658 ·   89 líneas · ⛔⛔ ESCALÓN F3-2 (3.º) · D4-H1 sale de CERRADA: su evidencia no podía sostener lo que afirma (2026-08
+  L10229 ·   30 líneas · ⛔ LH-C6-FILTRO-L5 · casos-de-exito tiene un FILTRO DE CLIENTE por sector, y LH-2 D1 dijo «cero campo
+  L10382 ·   77 líneas · ⛔ LH-C6-LAZY-CLON · el clon emite 28 loading="lazy" donde el original emite 265 (2026-08-10)
+  L10873 ·   57 líneas · ⛔ F3-1-CSS-NO-CAPTURADO · el original NO está fuera del camino crítico para MEDIR EL PÍXEL (2026-08-
+  L11059 ·   51 líneas · ⛔ DEFECTO-SUB-EDAR · el clon sirve H2S donde el original sirve H₂S — DEFECTO VIVO con dueño (2026-08
+  L12601 ·   32 líneas · ⛔ M-PDF-FB3D · 5 PDF que T4b referencia y la captura NUNCA PIDIÓ (2026-08-05)
+  L12634 ·   22 líneas · ⛔ T3B-NO-CANONICO · 2 bloques wp-caption que T3b deja sin tocar (2026-08-05)
+  L12657 ·   16 líneas · ⛔ T3-ALCANCE · marcadores del editor que §3.2 T3 NO nombra (2026-08-05)
+  L20042 ·   59 líneas · ⛔ F3-LH-PIE-UNO-CONTRA-CUATRO · el clon sirve UN pie donde el original sirve CUATRO — y es lo que bl
+  L20264 ·   53 líneas · ⛔ F3-LH-ENLACES-105 · la guarda de enlaces llevaba DOS TANDAS sin correrse, y su verde era del 8 % d
+  L20318 ·   66 líneas · ⛔ F3-SONDAS-NEGATIVOS-PODRIDOS · 10 de 40 negativos baratos ya no saben fallar (2026-08-18, 82.ª tan
+  L21508 ·   57 líneas · ⛔ F3-3-BT-DOS-FORMAS · el régimen BT tiene DOS formas y el clon las colapsa (2026-08-25, 107.ª tanda
+  L22726 ·  143 líneas · ⛔ F3-3-INSUMO-TARDIO · tres sondas comprueban su insumo DESPUÉS de gastar el trabajo (2026-08-26, ci
+  L23170 ·   73 líneas · ⛔ F3-4-MESA · TRES DECISIONES DE PROPIETARIO, DEJADAS DECIDIBLES — ABIERTA 2026-08-26 (115.ª, ESCALÓ
+  L23322 ·   23 líneas · ⛔ F3-4-FICHA-FOTOS · UN QUINTO CANAL DE MEDIA, ENUMERADO ANTES DE QUE MATARA UN SEED — ABIERTA 2026-
+  L23346 ·   15 líneas · ⛔ F3-4-FICHA-DOC-CIENTIFICO · EL DATO SÍ, EL RENDER NO — ABIERTA 2026-08-27 (117.ª)
+  L23362 ·   18 líneas · ⛔ F3-4-CAJA-W-006 · UN −0.06 UNIFORME A 1440 QUE NO ESTÁ ADJUDICADO — ABIERTA 2026-08-27 (117.ª)
+  L23381 ·   15 líneas · ⛔ F3-4-CMS-DECL-HUECO-PAGINAS · UN ROJO QUE NO ES DE ESTA TANDA, ATRIBUIDO MIDIENDO — ABIERTA 2026-0
+
+════════════════════════════════════════════════════════════════════════════════
+⚠ CON CUERPO QUE DICE ABIERTA — candidatas a deuda que el emoji no declara
+════════════════════════════════════════════════════════════════════════════════
+  L  584 ·   22 líneas · ⚠ F3-4-PRE-REGISTRO-116 · las TRES predicciones de la tanda salieron FALSAS, y se dicen — 116.ª, 202
+  L  791 ·  118 líneas · ⚠ PASO 0 · NO fue uno, es una CLASE — pero la clase son 11, no 26: las otras 15 son EVIDENCIA que TI
+  L 1384 ·  176 líneas · ⚠ F3-3-GEO-390-SIN-HOJAS-ENLAZADAS · el lado de 390 de qa:f33-geo se midió SIN las hojas enlazadas —
+  L 1769 ·   39 líneas · ⚠ F3-3-MARCADO-INTERIOR · MEDIDO por la 102.ª: de los siete huecos, DOS son omitibles con número y C
+  L 3275 ·  229 líneas · ⚠ F3-3-CMP-DELTAS · la cola larga se compara de dos lados — los MÓDULOS ya están adjudicados (47/47)
+  L 3585 ·   69 líneas · ⚠ F3-3-EMISION · el comparador EXISTE y su negativo está probado; la emisión NO está hecha — 93.ª ta
+  L 3822 ·   15 líneas · ⚠ F3-3-RETICULA-BLURB · el enum de retícula de KB no cubre la cola larga — 92.ª tanda
+  L 3838 ·   23 líneas · ⚠ F3-3-SIN-PROBAR · las cinco definiciones de n ≤ 2, con lo que NO se puede decidir — 92.ª tanda
+  L 3881 ·   54 líneas · ⚠ F3-SEED-SIN-GUARDA-DE-W · los scripts de scripts/seed/ PISAN sus congeladas — 91.ª tanda, 2026-08-
+  L 4653 ·   79 líneas · 📋 F3-LH-PIE-DECLARADO-NO-RECALIBRADO · EL DESFASE DEL PIE, CON SU NÚMERO — Y NO ES REGRESIÓN (2026-
+  L 5524 ·   77 líneas · 📋 F3-ESTADO-76 · LA FOTO DERIVADA DEL ÁRBOL, CADA LÍNEA CON SU DERIVACIÓN (2026-08-18, 76.ª tanda)
+  L 7277 ·   75 líneas · ⚠ F3-LH-TERCER-DOCUMENTO-SIN-CAPTURAR · SON 3, NO 2 — Y EL TERCERO ES LA PRIMERA TARJETA DE seminari
+  L 7864 ·   31 líneas · ⚠ F3-LH-TAXONOMIA-RECURSOS · LA COTA SUPERIOR DE lh-poblacion TAPA UN HUECO, Y ES OTRO CONTENEDOR DE
+  L 8097 ·   52 líneas · ⚠ F3-CSS-CANAL-PIELES · qa:pieles lee UN canal de CSS de los dos, y 573 de 782 páginas enlazan el ot
+  L 8184 ·   22 líneas · ⚠ F3-COLA-DESTINOS · SIGUE ABIERTA, y ahora se sabe con qué alcance (2026-08-13)
+  L 8777 ·  107 líneas · ⚠ DATOS-DOM-AJENO · el editor pegó DOM de otra aplicación, y la clase es 10× la instancia (2026-08-1
+  L 9522 ·  135 líneas · 🟠 LH-CONTENEDOR · el % de L1 NO se resuelve contra el número que parece, y la tabla de mbPorDefecto
+  L10931 ·   44 líneas · ⚠ F3-1-SIN-PROBAR-KB · lo que las specs de articulos-kb dejan sin probar, nombrado (2026-08-10)
+  L11185 ·   41 líneas · 🧨 CLASE-INLINE-PRESTADO · inline en campos cuyo tipo medido es RICO — 4 instancias, y una de ellas 
+  L11716 ·   45 líneas · ⚠ F2-4-CHUNK-CSS · la máscara del 2.º volátil cubre .js y NO .css (2026-08-08)
+  L11888 ·  107 líneas · 📐 F2-3-T4B-CRITERIO · el criterio de aceptación de /[slug], POR CLASE y al NIVEL DEL BLOQUE (2026-0
+  L18175 ·   27 líneas · 📅 PROGRAMADA · ráfaga 3 de cqa6-390 — fecha mínima 2026-08-04
+  L18779 ·  206 líneas · ⚠ F3-LH-INTERLINEA-RATIO-VS-LONGITUD · el clon hereda una RATIO donde el original hereda una LONGITU
+  L18986 ·  104 líneas · 🔒 PRE-REGISTRO · LA 85.ª — el +0.30 del pie a 390, y L2-glosario (2026-08-20)
+  L19313 ·   43 líneas · 📋 DEUDAS ABIERTAS AL CIERRE DE LA 87.ª — cada una con su número DERIVADO (2026-08-20)
+  L20102 ·   33 líneas · ⚠ F3-LH-PIE-390-SE-ALEJA-030 · el pie a 390 pierde 0.30 px por forma con el arreglo de la letra (202
+  L20479 ·   39 líneas · ⚠ MEDIA-HUECO-T10-EN-LA-CADENA · el veredicto que sostiene una decisión del ESQUEMA se midió con una
+  L20573 ·   23 líneas · ⚠ MEDIA-SIEMBRA-SIN-SEPARADORAS · el mensaje afirmaba más de lo que el dato soporta (2026-08-18, 83.
+  L20597 ·   19 líneas · ⚠ PRODUCTOS-HUECO-MODELADO-FUERA-DEL-CPT · 3 slugs que el clon modela y el corpus no tiene como URL 
+  L22311 ·  319 líneas · ⚠ SONDAS-SIN-CONTRATO · qa:lib lleva en rojo desde la 107.ª y no estaba fichado (2026-08-25, 109.ª t
+
+════════════════════════════════════════════════════════════════════════════════
+⚠ INDETERMINADAS — se publican con su cardinal, NO se reparten a ojo
+════════════════════════════════════════════════════════════════════════════════
+  L    3 · 📋 §8-DEUDA · la deuda abierta CLASIFICADA contra el listón — la lista, no la decisión — 119.ª, 2026
+  L  472 · ⚠ F3-4-REGIMEN-DOS-SEÑALES · el censo clasifica con UNA señal de las dos, y la segunda NO discrimina
+  L  607 · ⚠ F3-4-SONDAS-116 · nueve defectos de las dos sondas, cazados antes de publicar — 116.ª, 2026-08-26
+  L 1213 · ⚠ PASO 0 · el denominador de rutas, con SU UNIDAD y los dos números — 106.ª
+  L 1561 · ⚠ F3-3-GUTTERS-SIN-MODELAR · el canal de la retícula tiene DOS valores, y la variable que manda no e
+  L 1589 · ⚠ F3-3-BOTON-ALINEACION · campo por test B con TRES ejes, en 11 de 13 botones, y el clon lo pierde E
+  L 2079 · ⚠ F3-3-CUATRO-SIN-CABLEAR · los tipos que el renderizador NO pinta, con su cardinal — 99.ª, 2026-08-
+  L 2895 · ⚠ QA-NEGATIVOS-QUE-NO-EXISTEN · 3 npm run …-neg nombran un fichero ausente — 95.ª, 2026-08-22
+  L 2922 · ⚠ QA-LISTAS-A-MANO-BARRIDO · 25 candidatos, clasificados — 95.ª, 2026-08-22
+  L 2999 · ⚠ F3-3-REGISTRO-SOBRE-RECLAMA · el registro reserva 8 slugs de raíz que nadie sirve — 94.ª, 2026-08-
+  L 3059 · ⚠ F3-3-CAMINO-DE-SIEMBRA · qué se va a encontrar la tanda que emita — 94.ª, derivado
+  L 3655 · ⚠ QA-NEGATIVOS-ROJOS · tres negativos preexistentes en rojo — barrido del 2026-08-22
+  L 3751 · ⚠ F3-3-FECHA-SIN-CAMPO · las 32 capturadas sirven datePublished y paginas no tiene campo de fecha — 
+  L 3862 · ⚠ F3-3-REDIRECTS · los 13, repartidos — y cero canal en el repo para emitirlos — 92.ª tanda
+  L 3936 · ⚠ F3-LH-GLOSARIO-RESIDUO-2.00 · NO ATRIBUIBLE, y la medida que lo dirimía ya no se puede tomar — 90.
+  L 4551 · 📋 F3-LH-FECHA-DOS-FORMATOS · UN NOMBRE DE CAMPO, DOS MEDIOS, TRES COLECCIONES (2026-08-18, 81.ª tan
+  L 4636 · 📋 F3-LH-VARIANTE-724x1024 · LA FOTO DE LA TARJETA DE L3 USA UNA VARIANTE QUE EL CLON NO GENERA (202
+  L 5339 · ⚠ F3-TARJETAS-RECORTADAS-A-3 · EL COMPARADOR VE 236 DE 693 TARJETAS, Y ESO NO ESTABA EN NINGÚN noMid
+  L 6879 · ⚠ F3-LH-HUECOS-DE-ALCANCE · LAS SPECS DE L2·L3·L5 NO CONTESTABAN CINCO PREGUNTAS QUE DECIDEN LA CONS
+  L 6914 · ⚠ F3-LH-PIELB-VENTANA · LA PIEL B LLEVABA MAL 31 DE 38 INSTANCIAS, Y LAS 7 BUENAS SON LAS ÚNICAS QUE
+  L 7059 · ⚠ F3-LH-EXTRACTOR-T10-SIN-CABLEAR · cms:extractor LLEVABA UN DÍA SIN PODER CORRER (2026-08-14, 69.ª 
+  L 7103 · ⚠ F3-LH-ARTICLE-ETIQUETA-44 · EL DOCUMENTO 210 EJERCITA UNA ETIQUETA FUERA DEL CENSO DE 43 (2026-08-
+  L 7521 · ⚠ F3-LH-PUERTOS-1-DE-2 · UNA ENTRADA NOMBRA SU TÉRMINO Y EL ARCHIVO NO LA LISTA (2026-08-14, 67.ª ta
+  L 7545 · ⚠ F3-LH-SECTOR-SIN-ARCHIVO · 3 DE 9 ARCHIVOS DE sector NO ESTÁN CAPTURADOS (2026-08-14, 67.ª tanda)
+  L 7603 · 📐 F3-LH-ALCANCE-DECLARADO · EL DENOMINADOR, ESCRITO ANTES DE CONSTRUIR (2026-08-13, 66.ª tanda)
+  L 7686 · 🔎 F3-LH-VACIAS-NO-EMITIDAS · EL CLON SIRVE 43 RUTAS DE LISTADO Y EL ORIGINAL 142 (2026-08-13, 66.ª 
+  L 7757 · ⚠ F3-LH-DOS-CONJUNTOS-DE-149 · EL RECUENTO CASA Y EL CONJUNTO NO (2026-08-13, 65.ª tanda)
+  L 7793 · ⚠ F3-LH-DOS-FOTOS · EL CLON SE SIEMBRA DEL CORPUS Y SE MIDE CONTRA EL ESPEJO, Y NO SON LA MISMA FECH
+  L 7979 · ⚠ F3-LH-CONGELA-A-MEDIAS · una corrida INTERRUMPIDA congela igual, con 22 rutas a undefined y nombre
+  L 8309 · ⚠ CMS-PR4-TAGLINE-MARCADO · el subtítulo de la pestaña se sirve con marcado y el clon lo pinta como 
+  L 8326 · ⚠ C-SP14 · TERCER valor de bulletsTitulo, y el clon lleva pintando el defecto (2026-08-13, PASO 2)
+  L 8336 · ⚠ CPT-IDIOMAS · el CPT solutions mezcla idiomas y el modelo no tiene esa dimensión (2026-08-13, PASO
+  L 8700 · 📋 DATOS-COBERTURA-LEGAL · poblar ×5.2 las filas ejercitó 7 casos legales nuevos, no la mitad (2026-
+  L 8885 · ⚠ F3-COLA-DESTINOS · 830 enlaces del cuerpo apuntan al original porque el clon no clona su destino (
+  L 9875 · 🟡 F3-2-SEO-PAGINAS-VACIAS · las 55 páginas vacías, ¿son deuda de SEO del SITIO? — pregunta de PRODU
+  L 9921 · 🟡 F3-2-PRODUCTO-L3-NAVEGACION · a las páginas 2 y 3 de scientific-category no se llega pulsando nad
+  L10352 · ⚠ LH-C6-HOVER-ZONAL · el hover de una tarjeta NO ES UNO: depende de la zona (2026-08-10) — *cómo se 
+  L10460 · ⚠ LH-C6-CLON-SIRVE-OTRO-MARCADO · tres diferencias de marcado que ninguna sonda de alto puede ver (2
+  L10523 · ⚠ LH-C6-HOVER-SUBRAYADO · el clon SUBRAYA al hover y el original NUNCA (2026-08-10)
+  L10581 · ⚠ LH-C6-COBERTURA-DIVERGE · la matriz generada y COBERTURA-MEDICION.md llevan una semana divergiendo
+  L10664 · ⚠ MEDIDAS-BASE-VIEJA · dos congeladas canónicas se quedaron ANTES de F3-1, y cada npm run check derr
+  L10690 · ⚠ LH-C6-TIEMPO-BIMODAL · el tipo tiempo tiene DOS ESTADOS discretos, no ruido (2026-08-11)
+  L10976 · ⚠ F3-1-RITMO-SIN-UNIDAD · ritmoInline y ritmoModulo son number, o sea px IMPLÍCITOS (2026-08-10)
+  L11017 · ⚠ F3-1-SRCSET-KB · las imágenes de articulos-kb no modelan srcset, y es omisión DECLARADA (2026-08-1
+  L11042 · ⚠ F3-1-CASCARON-KB-SIN-COMPARAR · la cabecera y el pie de KB nunca se han comparado contra el clon (
+  L11111 · 📦 MIGRACION-DATO-MONOGRAFICO · las TRES improvisaciones dejan de ser irreparables al ensanchar el t
+  L11417 · 📋 CASOS LEGALES NUNCA OBSERVADOS · el inventario, con número (2026-08-08, F2-5 PASO 3)
+  L11526 · 🧨 CLASE · UN INSTRUMENTO ANCLADO AL SEED — el BARRIDO, 4.ª instancia (2026-08-08)
+  L11602 · 🧨 CLASE · UN SERVIDOR AJENO EN EL PUERTO NO SE DISTINGUE DEL TUYO (2026-08-07)
+  L11638 · 🧨 CLASE · UN NEGATIVO ANCLADO A ALGO QUE EL PROPIO TRABAJO MUEVE SE AUTO-INVALIDA (2026-08-06)
+  L11672 · 📐 F2-3-CHUNK · el SEGUNDO volátil declarado de html-cmp, y en qué se diferencia del primero (2026-0
+  L11996 · ⚠ F2-3-EXIT-FETCH · process.exit() después de un fetch NO devuelve el código elegido (2026-08-06)
+  L12170 · ⚠ F2-3-ASYNC-HIJO · un límite asíncrono NUEVO mueve el HTML sin mover un dato (2026-08-06)
+  L12265 · ⚠ F2-3-VARIANTE-PISA · 3 orígenes de media con el fichero pisado (2026-08-06)
+  L16718 · ⚠ C1 · SALDADO — 2 causas reales arregladas, 2 particiones fichadas (2026-08-02)
+  L18611 · ⚠ F3-1-PIEL-FUERA-DE-KB · 1272 overrides de titular medidos y NO extraídos (2026-08-10)
+  L18646 · ⚠ F3-1-PIEL-CUERPO-KB · el módulo de texto también tiene piel PROPIA, y no tiene campo (2026-08-10)
+  L18673 · ⚠ HTML-CMP-NO-REPRODUCIBLE · dos builds seguidos del mismo árbol dan 31/31 rutas distintas (2026-08-
+  L19091 · ⚠→✅ F3-LH-CONTROL-CADUCADO · el arreglo de la 84.ª caducó el CONTROL de la sonda que lo verificó — y
+  L19179 · 📋 BARRIDO §regla 12 · la 85.ª — 0 reglas que subir, y la que el encargo señalaba YA ESTABA (2026-08
+  L19357 · 🔒 VEREDICTO DEL PRE-REGISTRO DE LA 87.ª — 5 cumplidas, 1 a medias, 2 FALSADAS, 2 no ejercitadas (20
+  L19921 · 📋 BARRIDO §regla 12 · la 87.ª — 1 regla que sube a CLAUDE.md (2026-08-20)
+  L20136 · ⚠ SONDA-ENLACES-NO-ES-DUENA-DE-SU-SERVIDOR · muere muda con el puerto 3000 vacío (2026-08-19, 84.ª t
+  L20170 · ⚠ F3-LH-BOTON-VER-TODOS · el original ESCONDE «Ver todos», y el recuento publicado no lo distingue (
+  L20198 · ⚠ F3-LH-BANDA-FILTROS-SIN-INTERNOS · +4.99 px que NINGÚN par del comparador mira (2026-08-18, 82.ª t
+  L20231 · ⚠ F3-LH-ORDEN-BOTONES-SIN-SEPARADORAS · tres modelos aciertan 11/11 y NINGUNO está elegido (2026-08-
+  L20519 · ⚠ MEDIA-REGENERA-SUBIDOS-RECODIFICADOS · el fichero servido no conserva los bytes del fuente (2026-0
+  L20551 · ⚠ MEDIA-COLISION-DOMINIO-BAJO-EL-TESTIGO · 39 orígenes que el seed escribió y ningún upload referenc
+  L20617 · ⚠ COLOCA-MEDIA-28-SIN-ORIGEN · «son los 28 que el original 404» es una afirmación SIN FICHERO (2026-
+  L21566 · ⚠ F3-3-TECHO-CIFRAS-CADUCADAS · la ficha del Δtecho cita una congelada que YA está marcada CADUCADA 
+  L21620 · ⚠ F3-3-COLUMNA-ESTRECHA-0.06 · w-[20.87%] da 258.44 contra 258.5, y lleva ahí desde siempre (2026-08
+  L21655 · ⚠ F3-3-PIE-LEGAL-CIFRA-INEXISTENTE · el +1.59 no lo produjo ninguna medición (2026-08-25, 107.ª tand
+
+════════════════════════════════════════════════════════════════════════════════
+SIN MARCADOR — publicadas para que nadie las dé por clasificadas
+════════════════════════════════════════════════════════════════════════════════
+  L12674 · ABIERTO · /kunak-api — el <title> del clon NO es el del original (2026-08-04)
+  L12703 · /monitor-calidad-aire — QA visual final (2026-07-26)
+  L12857 · Prioridad ALTA
+  L12861 · Prioridad MEDIA
+  L12865 · Prioridad BAJA
+  L12871 · Resueltos
+  L12893 · Notas para retomar
+  L12916 · /accesorios — QA visual (2026-07-27)
+  L13154 · /software-de-medicion-calidad-del-aire — QA de construcción (2026-07-27)
+  L13267 · /kunak-api — QA de construcción (2026-07-27)
+  L13377 · /kunak-api — QA VISUAL (Fase 5) · 2026-07-28
+  L13526 · FAQ de las 4 páginas — contenido compartido, presentación por página (2026-07-28)
+  L13611 · Dos defectos transversales del recon de /sectores (2026-07-28)
+  L13720 · /sectores/[slug] — QA de construcción (2026-07-28)
+  L13840 · /sectores — lo que enseñó poblar el 2º sector (2026-07-28)
+  L13992 · /sectores — 3º y 4º sector, solo datos (2026-07-29)
+  L14129 · CLASE · S9, S10 y S11 son el mismo hallazgo cuatro veces
+  L14323 · MONOGRÁFICO TÉCNICO — construido (2026-07-29)
+  L14784 · EXPERIMENTO URBANO — corrido (2026-07-30)
+  L14968 · GRUPO C — la entrada de C-3, medida (2026-07-30)
+  L15091 · C-QA1 · DIAGNÓSTICO de la cabecera — y son DOS defectos, no uno (2026-07-30)
+  L15227 · C-QA4 · AUDITORÍA DE BASES — las 17 rutas, los dos anchos (2026-07-30)
+  L15290 · C-QA1 · CERRADA — la banda de cabecera de caso y FAQ (2026-07-30)
+  L15409 · C-QA6 · MEDIDA — la base de lectura NO es estable en 3 rutas (2026-07-30)
+  L15500 · C-QA2 vs C-QA3 · NO son la misma causa — medido (2026-07-30)
+  L15584 · C-QA2 · APLICADO — el espaciador, y lo que destapó (2026-07-30)
+  L15719 · C-QA7 · CERRADO — los dos residuos eran TRES defectos, y dos son el mismo (2026-07-31)
+  L15810 · A-QA1 · ~~CERRADO~~ → CERRADO DE VERDAD 2026-08-01 — era el TOPE DE 350 DEL TEMA, no el separador (2
+  L15949 · CLASE · la miga — CERRADA de verdad (A-QA1b, 2026-08-01)
+  L16093 · COBERTURA · lo que apareció al comparar 31 rutas contra el original (2026-08-01)
+  L16371 · Desviaciones deliberadas del grupo A (2026-07-31)
+  L16412 · D4 · EL PIE — arreglado en tres partes (2026-08-01)
+  L16498 · CLASE · LA FAMILIA DE CALIBRACIÓN (2026-08-01)
+  L16559 · D4 · CERRADO el «¡Suscríbete!», y con él footer-links (2026-08-02)
+  L16625 · D1 y D2 · NO EXISTEN — son PARTICIÓN (2026-08-02)
+  L16656 · D3 · CERRADO — es el margin-bottom del <article> del CPT (2026-08-02)
+  L16701 · ABIERTO · la cabecera del MONOGRÁFICO, −36.02 y solo a 1440 (2026-08-02)
+  L16789 · CLASE · el inventario al día — 5 instancias, y la 5.ª cambia la clase (2026-08-02)
+  L16827 · La cabecera de /sectores/* · CERRADA — era ANCHO DE MÓDULO (2026-08-02)
+  L16913 · Desviación deliberada · el botón «¡Suscríbete!» del pie (2026-08-02)
+  L16939 · Campaña de ruido · episodio del 2026-08-02 (registro, ráfaga 2 pendiente)
+  L16967 · CLASE · LA FAMILIA DE CALIBRACIÓN — la definición, corregida (2026-08-02)
+  L17045 · La sonda, dueña de su ciclo de servidor (2026-08-02)
+  L17098 · C-QA6 · RÁFAGA 2 de la campaña de ruido (2026-08-02, 12:33 local)
+  L17172 · HOME · la retícula del CUERPO — primera cosecha del eje horizontal (2026-08-02)
+  L17216 · CLASE MAYOR · el hueco de la barra de navegación, cableado en 31 rutas
+  L17264 · Eje horizontal · ADJUDICACIÓN de la cosecha completa (2026-08-02, 9.ª tanda)
+  L17367 · AUDITORÍA · ¿algún veredicto pasado de clon-base fue verde-sin-medir? (2026-08-02)
+  L17411 · VALIDACIÓN EN VIVO DE LAS 48 SONDAS — lo que el barrido estático no podía ver (2026-08-02, 11.ª tand
+  L17645 · C-QA6 · CIERRE — la campaña completa, el suelo fijado y el −15.72 disuelto (2026-08-03)
+  L17828 · C-QA6 · flecos — la regla bimodal, la predicción pre-registrada y la campaña de 390 (2026-08-03)
+  L17996 · C-QA6 · LA ESCALA DEL FENÓMENO — el protocolo mide en días y la cosa pasa en segundos (2026-08-03)
+  L18148 · cqa6-390 · ráfaga 2 de 3 (2026-08-03, 11:58 local)
+  L18203 · CLASE · el ancho de MÓDULO — CAMPO en SECTOR, y dos defectos con número (2026-08-03)
+  L20728 · 88.ª tanda · L2-glosario — PASO 0 y PRE-REGISTRO (2026-08-20)
+  L20818 · 88.ª · EL CIERRE — lo medido, lo arreglado y el ESCALÓN 2 (2026-08-20)
+  L21162 · 107.ª · PASO 0 — hostsBloqueadosClon leído: 13 peticiones EN CALIENTE a kunakair.com (2026-08-25)
+  L21271 · 107.ª · PRE-REGISTRO del ESCALÓN 2 — escrito ANTES de construir el .next (2026-08-25)
+  L21721 · 107.ª · EL CIERRE — la barra emitida y adjudicada, y CUATRO cifras del registro que no eran las de h
+  L21825 · 108.ª · LA MESA — las deudas de modelo de F3-3 y el censo de F3-4, sin decidir ninguna (2026-08-25)
+  L22631 · 109.ª · EL CIERRE — la clase no era el resolutor, y los tres «NO» siguen siendo preguntas (2026-08-2
+  L23429 · 118.ª · EL CIERRE — F3-4 con sus TRES decisiones implementadas, y las 5 predicciones adjudicadas (20
+  L23520 · 118.ª PASO 0b · PRE-REGISTRO — con su ancho, su premisa DERIVADA y su refutación (2026-08-27)
+
+✓ derivadas 315/315 fichas · unidad: FICHA
