@@ -137,7 +137,22 @@ la comparación, **la varianza NO es cero**. Por eso el veredicto se declara
 
 ---
 
-## ⛔ F3-4-FICHA-AUTOR-NO-PINTADA · **el original la enseña en 152 de 152 entradas y el clon no la emite** — 116.ª, 2026-08-26, FICHADO (no arreglado)
+## ✅ F3-4-FICHA-AUTOR-NO-PINTADA · **el original la enseña en 152 de 152 entradas y el clon no la emite** — 116.ª, 2026-08-26 · **CERRADA en la 117.ª, 2026-08-27**
+
+> ⚠ **Esta entrada estuvo ⛔ mientras su cierre ya estaba escrito más abajo**
+> (§`F3-4-FICHA-AUTOR · LA CONSTANTE ERA UN CAMPO`, CERRADA 2026-08-27). Dos
+> lecturas del mismo hecho conviviendo, que es exactamente lo que este repo
+> resuelve **borrando una, nunca conciliándolas con una nota al pie** — así
+> que el estado se corrige aquí y el diagnóstico vive **sólo** en la entrada
+> de cierre. Detectado en el barrido de la 117.ª.
+>
+> **Y la adjudicación geométrica del arreglo está medida a los DOS anchos**
+> (§ESCALÓN 2 de la 117.ª): a **390** se mueven **152 de 152** entradas; a
+> **1440**, **0 de 152**. No es que el arreglo no llegue a 1440 — es que la
+> ficha vive en una columna que a 1440 tapa su hermana más alta, o sea la
+> firma de una **pieza tapada**, y el ancho que la ejercita es el estrecho.
+
+*(texto original del fichaje, conservado como evidencia:)*
 
 `ficha-autor-revisor` («Escrito por…» / «Revisado y aprobado por…», con foto y
 enlace al autor) vive en un **módulo de la plantilla** del blog del original —
@@ -22959,3 +22974,130 @@ y 0 huecos**.
 Se deja **ROJA** (§regla 21): tocar `paginas` para poner verde un negativo sería
 resolver de paso una decisión de modelo, y un caso que pasa a verde ajustando su
 expectativa escribe el defecto DENTRO de la guarda.
+
+---
+
+## ✅ 117.ª · CIERRE — EL RESCATE TRAS EL CORTE, Y LAS CINCO PREDICCIONES ADJUDICADAS (2026-08-27)
+
+La terminal se cerró con una corrida en vuelo. **El encargo la daba por
+perdida y no lo estaba**, que es el hallazgo mayor de este escalón.
+
+### El reparto de las cinco predicciones
+
+Predicados literales del pre-registro `d023918`, no reescritos (§regla 8b).
+
+| # | predicado | veredicto |
+|---|---|---|
+| **P1** | rutas: diferencia simétrica 0 y 0 | ✅ **CONFIRMADA** — 0 y 0 a los dos anchos, 413 comunes |
+| **P2** | *«a 390 se mueven las 152 y NO se mueven las 261»* | ⚠ **PARTIDA**: LADO 1 ✅ **152 de 152** · LADO 2 ❗ **REFUTADO** (14 movidas, no 0) |
+| **P3** | *«a 1440 se moverán MENOS de 152»* | ✅ **CONFIRMADA como COTA** — se mueven **0 de 152** |
+| **P4** | la reversa, ANTES de sembrar, tabla a tabla | ✅ confirmada en el ESCALÓN 4 previo |
+| **P5** | — | ✅ confirmada en el ESCALÓN 4 previo |
+
+**P3 y P2 juntas son la firma de una PIEZA TAPADA, y por eso se leen juntas:**
+
+| ancho | entradas movidas | lectura |
+|---|---|---|
+| **1440** | **0 de 152** | la columna hermana, más alta, se lo come entero |
+| **390** | **152 de 152** | apilan: no hay dónde absorber |
+| sólo a 1440 | **0** | ningún movimiento que el ancho estrecho no vea |
+
+⚠ **La salvedad que hace válidas las dos, y NO se puede omitir:** la base es
+`clon-base-{1440,390}-t104-despues*.json` (2026-08-25) y entre medias
+corrieron las tandas **113-116**. Así que «quieta» es **«NI la ficha NI las
+tandas intermedias la movieron»** — una **COTA**, no una atribución limpia.
+La atribución limpia exigiría una base tomada justo antes de la ficha, y
+**esa base no existe**.
+
+### ⛔ LO QUE QUEDA ABIERTO DE P2 · las 8 no atribuidas
+
+De las 14 no-blog movidas a 390, el **ancho las parte** —una ruta que se
+mueve a los DOS anchos no puede ser la ficha, cuyo efecto está tapado a 1440—:
+
+- **6 se mueven a los dos anchos** ⇒ son las tandas intermedias, **no** la
+  ficha (`/centro-de-ayuda/*`, `/soporte/centro-de-ayuda/*`,
+  `/politica-de-cookies`);
+- **8 se mueven sólo a 390** ⇒ llevan la firma de pieza tapada.
+
+**Y esas 8 quedan SIN PROBAR, no cerradas como «la ficha llega a 8 páginas
+más».** Lo impide la magnitud:
+
+| eje | dice |
+|---|---|
+| firma de ancho | sólo a 390 → **compatible** con la ficha |
+| magnitud | **Δ≈+504 uniforme**, contra **Δ+4/+5 en 146 de 152** entradas — **dos órdenes** |
+
+Las dos hipótesis vivas —«la ficha se pinta distinto en el centro de ayuda» y
+«otro cambio de 113-116 TAMBIÉN tapado a 1440»— **son distintas** (§*antes de
+fichar una indeterminación, comprueba que las dos hipótesis sean DISTINTAS*):
+difieren sobre una entrada concreta, **una base tomada justo antes de la
+ficha**. Es medible y no existe. Derivación: `p2-adjudicacion-117.{mjs,log}`.
+
+### ⛔ Lo que sigue abierto de tandas anteriores
+
+- **`F3-4-FICHA-FOTOS`** — el QUINTO CANAL DE MEDIA: **0 de 5** fotos de la
+  ficha capturadas. **Lo cierra RED**, y este corpus no puede darlo;
+- **`F3-4-RUTAS-VACIAS`** (116.ª) — **8 de 27** rutas de `categoria` sirven
+  CERO tarjetas;
+- **`F3-4-CSS-DINAMICO`** (116.ª) — `divi-dynamic-critical-inline-css` de
+  **161 728 B** ausente en **2 de 484** documentos, y son exactamente los dos
+  autores sin bio. Sin diagnosticar;
+- **el tercer eje del `proemio`** — apoyado en **1** instancia (`kunak`, 1
+  solo proemio, 0 con dos papeles). **n = 1 no es un discriminador**, así que
+  no se cierra;
+- **la varianza entre instancias del régimen `--`** — **0 de 6** términos de
+  `author` barridos, y **0 de 131** documentos `--` del corpus. `CLAUDE.md` la
+  declara SIN PROBAR y es lo que decidiría cómo se lee `author`.
+
+⚠ **Y una cifra del encargo que NO reproduce, escrita con su derivación**
+(§regla 9, que vale también para las cifras que llegan de fuera): el encargo
+hablaba de *«el SIN PROBAR del régimen `--` (82 instancias)»*. **82 no sale de
+ningún sitio del repo.** Lo que sí sale, y son dos unidades distintas que
+conviene no fundir:
+
+| unidad | n | fuente |
+|---|---|---|
+| términos de `author` sin barrer | **6 de 6** | acta de la 117.ª, `F3-4` |
+| documentos en régimen `--` del corpus | **131 de 576** | `CLAUDE.md` §regímenes, `regimenes-corpus` |
+
+Ninguna de las dos es 82, y **no se sustituye una por otra**: la primera es el
+alcance de `author`, la segunda el del corpus.
+
+### Barrido de §regla 12 — acotado a las actas de esta tanda
+
+**2 enunciados con forma de regla general que no estaban en `CLAUDE.md`**, y
+los dos son **la mitad que le faltaba a una regla existente** (el número se
+escribe aunque fuera cero):
+
+1. **§regla 7 sólo cubría UNA dirección.** Tenía escrito *«un artefacto con
+   nombre de medida es una medida falsa con autoridad»* y **no** su vuelta:
+   **una medida con nombre de artefacto es una medida buena que nadie
+   encuentra**, porque el marcador no es una etiqueta sino un **FILTRO**
+   (`yaMarcado()` lo aplican `eligeCongeladaAnterior()` y todo censo). Medido
+   aquí: `NEG=` **exportado** desvió **los dos anchos**, y las dos congeladas
+   —413/413, 0 errores— quedaron invisibles entre **60 candidatas**;
+2. **§regla 18 mandaba mirar los PROCESOS y no decía cómo leerlos.** Una
+   sonda **no muere con su terminal**, y «¿sigue viva?» no lo contesta el CPU
+   de node —que se bloquea en CDP— sino que el CPU **AVANCE**, y el lado que
+   avanza es **Chrome**. Medido: chrome **+5.52 s** contra node **+0.30 s** en
+   25 s de reloj, en una corrida que llevaba 49 min huérfana y **terminó
+   sola**.
+
+### El tripwire de carga, disparado a un tamaño 70 % mayor del verificado
+
+`CLAUDE.md` mide hoy **266 068 chars**. La campaña que refutó el truncado
+(§META-CANARIOS-DE-CARGA, 2026-08-18) lo midió a **156 426** — o sea que su
+conclusión estaba probada en un dominio **109 642 chars más pequeño**, y una
+regla derivada donde el caso no se da está SIN PROBAR para ese caso.
+
+**Esta sesión lo ejercita y sale positivo:** `KV-01` (al **22.7 %**) y `KV-08`
+(a **2 chars del final**) **llegaron los dos** al contexto. El truncado sigue
+refutado, ahora **hasta 266 KB** — y sin volver a instrumentar nada, que es
+justo para lo que se dejaron los dos extremos.
+
+⚠ **Y de paso, un cero fabricado por mi propio script:** la primera medida de
+la posición dio *«KV-08 a 54 751 chars del final»* porque `indexOf` casó la
+**mención en prosa** del marcador, no el marcador. Es §sondas 4 cometida
+sobre un `indexOf` propio, y **lo delató contradecir una medida buena
+anterior** —«16 chars del final»—, que es el control que este repo exige
+cruzar antes de creerse un recuento nuevo.

@@ -1035,6 +1035,36 @@ de su alternativa, no por lo que acierta*).
 > sin capa de builder), así que su lectura es la del **plantillado** — varianza
 > entre instancias, no huella de px.
 >
+> ✅ **(b) `author` — IMPLEMENTADA (117.ª, 2026-08-27), Y LO QUE SIGUE SIN
+> MEDIR VA CON SU CARDINAL.**
+>
+> La **ficha** (`Escrito por…` / `Revisado y aprobado por…`) está transcrita,
+> sembrada y adjudicada contra el original. Lo entregado, con sus dos lados:
+>
+> | eje | medido |
+> |---|---|
+> | la ficha en el original | **152 de 152** entradas · 612 `href` a `/author/` |
+> | el clon antes | **0 de 228** ficheros la emitían |
+> | pares del comparador | **0 de 18 → 18 de 18** |
+> | la «constante» del clon | era un **CAMPO**: acertaba en 141 y fallaba en 11 |
+> | geometría @390 | **152 de 152** entradas se mueven |
+> | geometría @1440 | **0 de 152** — pieza tapada, no defecto |
+>
+> ⚠ **LO QUE NO SE MIDIÓ, con su cardinal — no se lee como cubierto:**
+>
+> | sin medir | cardinal | qué lo cerraría |
+> |---|---|---|
+> | las **fotos** de la ficha | **0 de 5** capturadas | RED. Este corpus no puede |
+> | el **ARCHIVO** `/es/author/*` | **0 de 34** rutas emitidas | es otra decisión, y sigue abierta |
+> | la varianza entre instancias del régimen `--` | **0 de 6** términos de `author` (y **0 de 131** documentos `--` del corpus) | un barrido offline; para el corpus entero, sus hojas enlazadas ⇒ RED |
+> | atribución de **8 rutas** no-blog movidas sólo a 390 | Δ≈+504 contra Δ+4/+5 | una base tomada JUSTO antes de la ficha |
+> | el `proemio`, tercer eje | **n = 1** | ≥2 instancias — n=1 no discrimina |
+>
+> **O sea: la FICHA está implementada; la familia `author` NO.** Emitir el
+> archivo `/es/author/*` sigue fuera —y explícitamente fuera del alcance de la
+> 117.ª—, así que *«author implementada»* a secas sería la cobertura declarada
+> al nivel de arriba absorbiendo lo que no se midió abajo.
+>
 > **LH-2 D3 confirmada offline y POR FORMA:** el autor no aparece en **0 de 35**
 > formas de listado; `categoria` en 15; `sector` en 1.
 >

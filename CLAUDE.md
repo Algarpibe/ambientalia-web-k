@@ -2897,6 +2897,43 @@ La convención ya existía de hecho —`ancho-neg-*`, `ruido-*neg-*`,
 no venía de un sabotaje deliberado. Que el fallo sea accidental no cambia lo que
 el fichero contiene.
 
+⚠⚠ **Y LA VUELTA, QUE FALTABA Y ES LA QUE NO DA NINGUNA SEÑAL: UNA MEDIDA CON
+NOMBRE DE ARTEFACTO ES UNA MEDIDA BUENA QUE NADIE ENCUENTRA.** (2026-08-27)
+
+Todo lo de arriba protege de un artefacto disfrazado de medida —«una medida
+falsa con la autoridad de una congelada»—. **El error simétrico existe, y no
+hay lectura que lo delate:**
+
+> **Un marcador de artefacto no es una etiqueta: es un FILTRO.** `yaMarcado()`
+> lo aplican `eligeCongeladaAnterior()` y todo censo del repo, así que una
+> medida real que lo lleve **no sale como sospechosa: NO SALE.** Y ningún
+> código de salida cambia, porque no encontrar nada y no mirar nada dan la
+> misma salida (§sondas 4, otra vez, con el cero puesto en un `readdirSync`).
+
+**Y el modo de llegar ahí es una palanca equivocada, no un descuido.** Cuando
+para *«no pisar la canónica»* hay DOS palancas —una que **nombra** la corrida
+(`SALIDA=`) y otra que la **marca como negativa** (`NEG=`)— las dos consiguen
+no pisar, así que **la equivocada funciona**; lo único que cambia es la
+SEMÁNTICA del nombre, que es justo lo que nadie mira al lanzar.
+
+**Medido:** una terminal con `NEG=` **exportado** desvió las corridas de
+**los DOS anchos** a `clon-base-{1440,390}-neg-117-tras-la-ficha.json`. Las
+dos eran medidas reales —413/413 páginas, 0 errores, 0 sin `docH`— y las dos
+estaban invisibles para la función que elige la congelada anterior, entre
+**60 candidatas**. Una variable exportada no marca la orden que la puso:
+**marca todo lo que venga detrás.**
+
+**Las dos mitades operativas:**
+
+1. **antes de renombrar, se DERIVA si es medida o artefacto** —cardinal de
+   páginas, de errores y de campos ausentes—, porque una corrida **rota** sí
+   debe CONSERVAR el marcador (`-neg-corrida-rota-N-de-M` es el nombre
+   correcto). Renombrar sin comprobar cambia un problema por el otro;
+2. **y el rename se verifica por EFECTO, no por frescura** (§*el marcador
+   prueba que el build es nuevo, no que el cambio tenga efecto*): que el
+   fichero se llame distinto no prueba que las guardas ya lo vean. Se
+   comprueba llamando a la que lo filtraba y mirando si ahora lo elige.
+
 **8 · UN NEGATIVO SIN CONTROL NO ES UN NEGATIVO — y `medidas/` ES UNA MUESTRA
 DEL ORIGINAL QUE NADIE INTERROGA.** (2026-08-04)
 
@@ -3515,6 +3552,47 @@ habrían entrado en la línea base indistinguibles de las 357 buenas.
 > sólo `git status`. Y si aparece una sonda ajena en vuelo, **se espera o se
 > construye fuera** (`NEXT_DIST_DIR`), que es lo que la §regla del build ya dice
 > hacer.
+
+⚠⚠ **Y LE FALTA LA MITAD QUE DECIDE QUÉ HACER CON LO QUE ENCUENTRES: UNA
+SONDA NO MUERE CON SU TERMINAL, Y «¿SIGUE VIVA?» NO LA CONTESTA EL CPU DE
+NODE.** (2026-08-27)
+
+La regla de arriba dice **mira los procesos**. No dice cómo se lee lo que
+salga, y ahí hay dos hechos que se pagan por separado:
+
+> **(a) Cerrar la terminal NO mata la corrida.** El proceso queda **huérfano**
+> y sigue midiendo, con su servidor de clon en su puerto. Así que una sesión
+> nueva puede encontrarse una sonda en vuelo **de una sesión que ya no
+> existe** — y darla por perdida es tirar la corrida y, peor, lanzar otra
+> encima.
+>
+> **(b) Y el CPU de node NO dice si está viva**, porque node **se bloquea en
+> CDP** mientras Chrome trabaja. El discriminador no es el valor del CPU: es
+> que el CPU **AVANCE**, y el lado que avanza es **CHROME**.
+
+**Medido:** una corrida de `clon-base 390` sobrevivió al cierre de su
+terminal, siguió 52 minutos y **terminó sola**, escribiendo su congelada
+completa (413/413, 0 errores). Muestreada dos veces con 25 s de separación:
+
+| lado | t0 | t1 | avance |
+|---|---|---|---|
+| chrome (12 procesos de sonda) | 27.33 s | 32.84 s | **+5.52 s** |
+| node (el proceso de la sonda) | 25.00 s | 25.30 s | +0.30 s |
+
+Leída sobre node, la corrida parecía muerta. **Ya se han matado tres corridas
+sanas por esta lectura.**
+
+**Las tres mitades operativas:**
+
+1. **se muestrea DOS veces** —un valor de CPU no es una tasa— **y se mira
+   Chrome**, no el proceso que lanzaste;
+2. **antes de esperarla, se comprueba que esté midiendo algo SANO**: si su
+   servidor no responde 200, o la DB está caída, lleva 50 minutos congelando
+   basura y esperarla es tirar el tiempo dos veces. Cuesta un `curl` y un
+   `docker ps`;
+3. **y mientras esperas, sólo LECTURA**: nada de `build`, `check` ni `dev`
+   —eso es lo que ya manda la regla de arriba—, pero sí se puede derivar
+   contra congeladas, manifiesto y DB sin tocar un solo píxel de la corrida.
 
 **19 · UN MARCADOR DE INSTRUMENTO NO PUEDE SER UN COMENTARIO HTML EN UN
 DOCUMENTO QUE SE INYECTA COMO CONTEXTO.** (2026-08-18)
