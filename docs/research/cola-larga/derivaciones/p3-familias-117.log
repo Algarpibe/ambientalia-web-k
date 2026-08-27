@@ -1,0 +1,44 @@
+═══ P3 · 117.ª — REPARTO EN UNIDAD FAMILIA ═══
+base : clon-base-1440-t104-despues4.json
+hoy  : clon-base-1440-t117-tras-la-ficha.json
+registro slugs : 219 filas
+
+── FAMILIAS DEL REGISTRO (derivadas, no escritas) ──
+   152  entradas-blog
+    37  terminos-kunakpedia
+    19  paginas
+     6  articulos-kb
+     5  productos
+
+── VEREDICTO P3, POR FAMILIA (docH, comunes a las dos fotos) ──
+
+  familia                                        quietas  movidas  aparec.  desap.
+  ─────────────────────────────────────────────  ───────  ───────  ───────  ──────
+  «sin fila en el registro» (estáticas / prefijadas)      197        5        0       0
+  entradas-blog                                      151        0        1       0
+  terminos-kunakpedia                                 37        0        0       0
+  paginas                                             17        1        1       0
+  productos                                            3        0        0       0
+
+  ── «sin fila en el registro» (estáticas / prefijadas) — las 5 que NO están quietas ──
+     MOVIDA     /centro-de-ayuda/kunak-air  2349 → 2077  Δ-272
+     MOVIDA     /centro-de-ayuda/kunak-air-cloud  1975 → 1856  Δ-119
+     MOVIDA     /centro-de-ayuda/kunak-air/articulos-de-ayuda  1415 → 1472  Δ+57
+     MOVIDA     /soporte/centro-de-ayuda  3326 → 2944  Δ-382
+     MOVIDA     /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda  1415 → 1472  Δ+57
+
+  ── entradas-blog — las 1 que NO están quietas ──
+     APARECIDA  /kunak-oem-industrial-iot-en-el-basque-industry-4-0  undefined → 2188
+
+  ── paginas — las 2 que NO están quietas ──
+     MOVIDA     /politica-de-cookies  1919 → 3476  Δ+1557
+     APARECIDA  /empresa  undefined → 18988
+
+── P3, LA AFIRMACIÓN QUE SE ENCARGÓ ──
+  entradas-blog medidas en las DOS fotos : 152  (registro: 152)
+  de ellas, docH IDÉNTICO                : 151
+  movidas / aparecidas / desaparecidas   : 0 / 1 / 0
+
+  ⚠ SALVEDAD (idéntica a la de `p3-cota-117`): la base es de la t104 y
+     entre medias corrieron 113-116. «Quieta» = «NI la ficha NI las tandas
+     intermedias la movieron». Es una COTA, no una atribución limpia.
