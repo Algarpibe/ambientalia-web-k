@@ -340,6 +340,46 @@ y el reparto medido dice que ninguno es raro:**
 > **plantilla de WordPress** es otro y **no coincide** con éste: 20 plantillas y
 > 23 celdas pobladas de 80.
 
+> ⚠⚠ **Y LA SEGUNDA SEÑAL DE `-T` NO DISCRIMINA SOLA — UNA CLASE SE PUEDE
+> COPIAR A MANO, Y ENTONCES ESTÁ SIN ESTAR (2026-08-26).**
+>
+> La fila de `-T` nombra dos señales, `et-tb-has-body` **y** las secciones
+> `…_tb_body`, como si fueran intercambiables. **No lo son**, y cuando
+> discrepan la segunda es la que se equivoca:
+>
+> > **Un marcador estructural puede estar ESCRITO A MANO por otra capa.** Una
+> > plantilla PHP del tema puede copiar la clase que emite el constructor, y
+> > entonces el marcador aparece **sin que el mecanismo esté presente** — que es
+> > §*un patrón que casa en TODAS tampoco mide nada* con el patrón copiado en
+> > vez de sobre-extendido.
+>
+> **Lo que sí discrimina es el INVARIANTE INTERNO del marcador, no su
+> presencia.** Aquí el invariante es el contador:
+>
+> > **El constructor numera cada sección UNA vez: N secciones ⇒ N ordinales
+> > DISTINTOS. Una plantilla que copia la clase repite EL MISMO literal.** Así
+> > que la pregunta no es *«¿hay secciones `…_tb_body`?»* sino **«¿están
+> > NUMERADAS?»** — o sea `ocurrencias == distintos`.
+>
+> **Medido:** 16 términos capturados de tres familias. `categoria` **4 de 4** y
+> `sector` **6 de 6** con `occ == dis`; `author` **0 de 6** — repite
+> `et_pb_section_1_tb_body` hasta 4 veces, **y el número de repeticiones crece
+> con el contenido**, que es la firma de un bucle escribiendo una clase a mano.
+> Leído por la presencia, `author` sale `-T`; leído por el invariante, sale
+> **`--`**, que es lo que decía el `<body>`.
+>
+> ⚠ **Y el test es DEGENERADO con una sola sección:** con `occ == 1` las dos
+> hipótesis predicen lo mismo — **0 instancias separadoras POR CONSTRUCCIÓN**,
+> no por pobreza del dominio. Sale **INDETERMINADO**, que no es ni sí ni no
+> (§*un discriminador hallado en una sola instancia tampoco es un
+> discriminador*). Medido: **1 de 6**.
+>
+> **La forma general, que vale para cualquier marcador futuro:** antes de leer
+> un marcador como prueba de que un mecanismo está presente, pregunta **qué
+> invariante deja ese mecanismo y sólo ese mecanismo**. La presencia la puede
+> falsificar una copia; el invariante, no. Derivación:
+> `derivaciones/separadora-author-116.{mjs,log,json}` §1.
+
 **En régimen de builder** —SECTOR, MONOGRÁFICO, artículo de KB— los dos tests
 valen tal como están escritos: existe una persona que editó esta página, y px
 absolutos son su huella.
@@ -4376,6 +4416,48 @@ vez**, contra la corrida cuyo control pasa — y si el control ya pasaba y el
 número supera el umbral, **se corta**. Lo que la regla prohíbe es lo contrario:
 **tratar como veredicto el número de un instrumento que aún no ha demostrado que
 discrimina.**
+
+---
+
+**40 · UN REFUTADOR ALIMENTADO CON LO QUE LA PREGUNTA EXCLUYE REFUTA SIEMPRE — Y
+SU ❗ SE LEE COMO DATO.** (2026-08-26)
+
+Las reglas de arriba persiguen instrumentos que **no ven**. Ésta persigue uno
+que ve **de más**, y es peor que el sobre-casado de §sondas 4 porque aquí el
+exceso **no es ruido: es exactamente la clase que la pregunta excluía**.
+
+> **Casi toda separadora tiene la forma «¿hay X que NO sea Y?»** —contenido
+> propio *que no se derive de sus miembros*, varianza *que no venga de la
+> plantilla*, un defecto *que no sea del original*—. **Si el instrumento que la
+> contesta no EXCLUYE Y, encuentra Y y lo reporta como X.** No falla, no avisa:
+> **refuta**, con una medición real de coartada.
+
+**Medido, y las tres veces en la misma tanda:**
+
+| dónde | qué se coló | qué publicó |
+|---|---|---|
+| el **extractor** de cabecera no terminaba nunca, así que se comía la lista | los titulares y las miniaturas de los MIEMBROS | *«4 textos de cabecera distintos»* y *«27 imágenes de cabecera»* — **❗ REFUTA** ×2 |
+| el **recuento** de varianza mezclaba ejes propios con ejes derivados | *qué* entradas firmó el autor | *«9 de 9 son CAMPO»* en vez de **7 de 7** |
+| la **pregunta** comparaba el cuerpo rico contra la página entera | una pieza que vive en la PLANTILLA, no en el cuerpo | *«612 → 0: la transformación perdió una pieza»* — y no había pérdida |
+
+**Las dos mitades operativas:**
+
+1. **la exclusión de la separadora se implementa en el instrumento, no se
+   confía a que el dato no aparezca** — sustituyendo la clase excluida por un
+   marcador visible (`«TARJETA»`, `«PAGINADOR»`), no borrándola: así el
+   recuento sigue a la vista y una lista vacía no se confunde con una quitada;
+2. **y lleva su control, que es de una línea: el objeto que contesta la
+   pregunta NO PUEDE CONTENER NI UNA INSTANCIA de lo excluido.** «La cabecera
+   contiene 0 tarjetas» habría cazado las dos primeras en el acto.
+
+> **Y la señal para sospecharlo, que es gratis: una refutación CÓMODA.** Si la
+> separadora se refuta *a la primera, por goleada y por varios ejes a la vez*,
+> lo primero que se mira no es el dato — es **con qué se alimentó al refutador**.
+> Aquí los tres ❗ se cayeron los tres.
+
+**Y su forma general:** es §*la causa común: el NIVEL al que se mide* con el
+contenedor puesto **en la definición de la pregunta**. El nivel de arriba aquí
+no es una fila ni un total: es *qué cuenta como respuesta*.
 
 ---
 

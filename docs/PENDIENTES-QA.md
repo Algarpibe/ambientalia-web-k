@@ -1,5 +1,223 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ F3-4-SEPARADORAS · **las dos que faltaban, EJERCITADAS en vez de fichadas** — 116.ª, 2026-08-26
+
+La 115.ª dejó la mesa con tres decisiones y dos separadoras sin contestar, y las
+dos eran **barridos OFFLINE**. Ficharlas habría sido mandar a la tanda siguiente
+a hacer lo que ésta podía hacer — que es justo lo que la 115.ª ya había
+demostrado con la de `author`.
+
+### (a) `categoria` ⇒ **es una CONSULTA**, 0 de 4 refutaciones
+
+`derivaciones/separadora-categoria-116.{mjs,log,json}` · 6 controles en verde.
+
+| refutación pre-registrada | medido |
+|---|---|
+| R1 · texto de cabecera propio que VARÍE | **0 de 4** términos · 1 valor distinto ⇒ varianza **CERO** |
+| R2 · imagen de cabecera | **0** distintas en 4 |
+| R3 · orden distinto del de fecha | **4 de 4** descendentes, **152 fechas en las 27 rutas** |
+| R4 · pieza en unos y no en otros | **0 de 6** tipos, quitado el contador de módulo |
+
+Lo único que varía: el nombre del término, **qué módulo de blog de la plantilla
+se sirvió** y las tarjetas. ⇒ **RELACIÓN sin archivo, sostenida POR EL DATO.**
+
+**El contador de módulo, y por qué no es contenido:** la firma estructural
+difería en los 6 pares y **toda** la diferencia era el ordinal
+(`et_pb_blog_{0,2,3,4}_tb_body`). **La miga —pieza compartida— conserva su
+ordinal 0 en los 4**, así que el contador numera la PLANTILLA, no la página.
+
+**Y la relación quedó medida por DOS canales** (tarjeta del archivo · enlace
+`/categoria/…` dentro de la entrada): cobertura **152 de 152**, cardinalidad
+**1:N con N ≤ 2**, positivos **2 de 152**, y los dos canales **nombran los
+mismos dos**, comparados por elemento.
+
+### (b) `author` ⇒ **SÍ tiene contenido propio**, 7 de 7 ejes son CAMPO
+
+`derivaciones/separadora-author-116.{mjs,log,json}` · 5 controles en verde.
+
+Los 6 comparados entre sí, con los ejes **PARTIDOS** entre lo propio y lo
+derivado: **foto (5 de 6) · foto-del-tema (2) · nombre (6) · cargo (5) · redes
+(4) · ¿tiene bio? (2) · cuerpo de la bio (5)**. Los 4 derivados —títulos y nº de
+listado, nº de tarjetas, encabezado de la bio— varían **4 de 4** y **no
+cuentan**.
+
+⇒ **`author` es una ENTIDAD CON CAMPOS**, no la plantilla del tema con la lista.
+
+⚠⚠ **Y cambia el ESQUEMA, no sólo el veredicto:** `foto`, `cargo`, `redes` y
+`bio` son **OPCIONALES**, y el original **ejercita** el caso — `admin` y
+`mar_ramirez` traen la foto del tema, el cargo vacío y ninguna bio: **2 de 6**.
+
+**El `href`, por TRES canales:** original **612 absolutos / 0 locales** en 152 de
+152 · cuerpo transformado **0** *(correcto: la ficha vive en un módulo de la
+PLANTILLA, no en el `post_content`)* · **código del clon 1 href ABSOLUTO, 0
+locales**, y el build emite **0** rutas `/author/`. ⇒ **«COLECCIÓN sin archivo»
+no crea ni un enlace roto.**
+
+### (c) `sector` ⇒ **DECIDIDA por el propietario**
+
+(c1) SÍ a la relación · (c2) REPLICAR TAL CUAL, **con las 5 de 301 como
+REDIRECCIÓN y no como página**. Razón y **condición de reapertura** —se toma
+CONTRA §regla 23, y pesó más la consistencia con D2.5— en `ESQUEMA-CMS.md` §7i.
+
+---
+
+## ⚠ F3-4-REGIMEN-DOS-SEÑALES · **el censo clasifica con UNA señal de las dos, y la segunda NO discrimina sola** — 116.ª, 2026-08-26
+
+`censo-f34.mjs` L96 decide el régimen con **un solo marcador**
+(`et-tb-has-body`). `CLAUDE.md` nombra **dos** para `-T`: ese marcador **y** las
+secciones `…_tb_body`. Derivadas las dos sobre los 16 términos capturados:
+
+| familia | de acuerdo | qué dice cada señal |
+|---|---|---|
+| `categoria` | **4 de 4** | las dos dicen `-T` |
+| `sector` | **6 de 6** | las dos dicen `-T` |
+| `author` | **0 de 6** | el censo dice `--`, las secciones dicen `-T` |
+
+**El desempate, y no estaba escrito en ningún sitio del repo:**
+
+> **Divi numera cada sección UNA vez: N secciones ⇒ N ordinales DISTINTOS. Una
+> plantilla PHP que copia la clase a mano repite EL MISMO literal.**
+
+`author` repite `et_pb_section_1_tb_body` **hasta 4 veces**, y el número de
+repeticiones **crece con el contenido**: firma de un bucle PHP, no de un
+contador de builder. **`--` confirmado**, con 5 de 6 decidibles y **1
+indeterminada** (`mar_ramirez`: una sola sección, el test no separa).
+
+**Y la comprobación retroactiva se contestó EN LAS DOS DIRECCIONES**, como pedía
+el pre-registro: lo viejo **no** está sobre-generalizado (categoria y sector son
+`-T` por las dos señales), y lo que falla es **la segunda señal de
+`CLAUDE.md`** — sube como regla, §regla 12.
+
+---
+
+## ⛔ F3-4-RUTAS-VACIAS · **«27 rutas» de `categoria` no son 27 páginas: 8 sirven CERO tarjetas** — 116.ª, 2026-08-26, FICHADO
+
+| término | rutas | con tarjetas | VACÍAS | con paginador | pagenavi p1 | máx «de M» |
+|---|---|---|---|---|---|---|
+| articulos | 16 | 11 | **5** | 11 | 11 | — |
+| eventos | 4 | 3 | **1** | 0 | — | 4 |
+| noticias | 6 | 4 | **2** | 4 | 4 | 6 |
+| podcast-es | 1 | 1 | 0 | 0 | — | — |
+
+**27 capturadas · 19 sirven ≥1 tarjeta · 8 VACÍAS.** El coste que la mesa
+publica (**27 rutas · 6.0 s**) se calculó sobre la unidad que las incluye. Es
+§*un cardinal es un contenedor* con el contenedor puesto en la palabra «ruta».
+
+**SIN DIRIMIR, y el hecho negativo se COMPROBÓ antes de ficharlo (§regla 8b):**
+una ruta vacía puede ser una página real vacía o una URL que ya no existe, y el
+código de estado no vive en un cuerpo capturado. `estados-114.json` mide 12
+peticiones, **1 de `categoria`** (200 en la página 1 de `eventos`, que sí sirve
+tarjetas) y **ninguna** de una `/page/N`: **1 de 27 cubiertas**. Necesita red.
+
+---
+
+## ⛔ F3-4-CSS-DINAMICO · **un `<style>` de 161 728 B falta en 2 de 484 documentos, y son exactamente los dos autores sin bio** — 116.ª, 2026-08-26, FICHADO (sin diagnosticar)
+
+`divi-dynamic-critical-inline-css`, **idéntico byte a byte donde está**:
+
+| corpus | con el bloque |
+|---|---|
+| `fase-3` | 254 de 256 |
+| `casos` | 57 de 57 |
+| `faqs` | 19 de 19 |
+| `entradas-blog` | 152 de 152 |
+| **TOTAL** | **482 de 484** |
+
+Los 2 que faltan son `admin` y `mar_ramirez`, **comparados por elemento y no por
+cardinal**, y son los mismos 2 que no tienen foto propia ni biografía.
+
+**Eso no prueba el mecanismo, pero DESCARTA uno:** un artefacto de la *sesión de
+captura* se repartiría por el corpus; éste se **concentra** en 2 de 484 que
+además forman una clase definida por otra cosa. Lo que queda —CSS dinámico,
+caché servida en frío— **no se dirime desde un cuerpo capturado**. Necesita red.
+
+⚠ **Consecuencia sobre la varianza del régimen `--`:** si el canal CSS entra en
+la comparación, **la varianza NO es cero**. Por eso el veredicto se declara
+**por canal** y no se resume en una palabra.
+
+---
+
+## ⛔ F3-4-FICHA-AUTOR-NO-PINTADA · **el original la enseña en 152 de 152 entradas y el clon no la emite** — 116.ª, 2026-08-26, FICHADO (no arreglado)
+
+`ficha-autor-revisor` («Escrito por…» / «Revisado y aprobado por…», con foto y
+enlace al autor) vive en un **módulo de la plantilla** del blog del original —
+`et_pb_text_N_tb_body`, **no** en el `post_content`.
+
+| lado | medido |
+|---|---|
+| original | **152 de 152** entradas · **612** href a `/author/`, los 612 dentro de la ficha |
+| clon (código) | **0 de 228** ficheros la emiten |
+
+**No es ninguna de las tres separadoras de F3-4** —que preguntan por el
+ARCHIVO, no por la ficha— pero es una pieza que el original enseña en 152
+páginas y el clon no. **No se arregla aquí**: tocaría `src/`, y el escalón era
+OFFLINE y sin implementar.
+
+**Derivado que NO estaba fichado**: `PENDIENTES-QA.md` y `ESQUEMA-CMS.md` citan
+la ficha como propiedad **del original** (115.ª), no su ausencia en el clon.
+
+---
+
+## ⚠ F3-4-PRE-REGISTRO-116 · **las TRES predicciones de la tanda salieron FALSAS, y se dicen** — 116.ª, 2026-08-26
+
+§regla 39 dice que un umbral pre-registrado se evalúa una vez, contra la corrida
+con el control en verde. Esta tanda no tenía umbral, tenía **apuestas**, y las
+tres cayeron:
+
+| # | apuesta del PASO 0 | medido |
+|---|---|---|
+| 1 | *«el desacuerdo de señales significa que el CENSO está mal, y estas 6 NO contestan el SIN PROBAR del `--`»* | **el censo acertó**: `author` ES `--`. Lo que falla es la **segunda** señal |
+| 2 | *«los ~170 KB son LA LISTA, y los 2 pequeños conservan la cabecera entera»* | **refutada por los dos lados**: el bulto es el `<style>`, y los 2 pequeños **no** conservan foto, cargo ni bio |
+| 3 | *«al menos una de las dos cifras de `CLAUDE.md` (57 casos · 19 FAQ) no casa»* | **casan las dos**: 57 de 57 y 19 de 19 |
+
+**Y la 1 es la que enseña**: el desacuerdo era **real**, y la inferencia
+*«luego el censo está mal»* **no se seguía** — apuntaba al otro lado. Un
+pre-registro protege de decidir por cansancio; no protege de una inferencia
+inválida sobre una observación buena.
+
+**Contaminación declarada en el PASO 0**, y por eso la apuesta de `author` no se
+cobró como acierto de predicción: **1 de 6** instancias abiertas antes de
+escribirlo (`irene`), 0 de 4 en `categoria`, 0 de 152 en los cuerpos del clon.
+
+---
+
+## ⚠ F3-4-SONDAS-116 · **nueve defectos de las dos sondas, cazados antes de publicar** — 116.ª, 2026-08-26
+
+Ninguno habría dado error: los nueve daban **números plausibles**.
+
+**`separadora-categoria-116` — seis:**
+
+1. `cabeceraDe` cortaba por el token `et_pb_section`, que cae **dentro del
+   atributo `class`**: el corte empezaba a media etiqueta y el resto del
+   atributo sobrevivía a `texto()`. R1 «refutaba» sobre basura;
+2. su veredicto contaba en **la unidad equivocada** (`restos` es un `Set`: 4
+   valores idénticos daban «1 de 4 términos»), y el test estaba mal planteado —
+   lo que refuta no es que HAYA texto, es que **VARÍE**;
+3. R4 buscaba `et_pb_(section|row|module)_\w+`, que **no casa**
+   `et_pb_blog_0_tb_body`: unión de 5 piezas y un 0 plausible, mientras la
+   comparación de firma —**al lado, en la misma salida**— enseñaba módulos
+   parciales (§regla 1);
+4. la marca de paginador exigía `class="…"` con **comillas dobles** y
+   `wp-pagenavi` viene con **simples**: nunca casó, y los enlaces del paginador
+   entraban como «diferencia estructural» siendo lo más derivado que hay;
+5. `cuerpoDe` cortaba en el índice de `et-l--footer`, que también cae dentro del
+   atributo, dejando media etiqueta pegada al cuerpo;
+6. **y el más caro**: el cruce del §7 usaba **un solo canal**.
+
+**`separadora-author-116` — tres:**
+
+7. el test de numeración daba «sí» al caso degenerado de **una sola sección**;
+8. los ejes de varianza mezclaban lo propio con **lo derivado de los miembros**,
+   y el veredicto salía «9 de 9 son CAMPO»;
+9. el §5 comparó original contra cuerpo transformado, vio **612 → 0** y
+   concluyó *«la transformación perdió una pieza»* — falso: la ficha no es del
+   `post_content`.
+
+**Los tres que comparten forma (1+5, 2+8, 6+9)** se recogen como regla en
+`CLAUDE.md`, §regla 12.
+
+---
+
 ## ⛔ META-MTIME-EN-CLON-LIMPIO · **el orden NO se vuelve arbitrario: se vuelve REPRODUCIBLEMENTE EQUIVOCADO** — 113.ª, 2026-08-26, FICHADO (no arreglado)
 
 La 112.ª midió que **`mtime` no sobrevive a un checkout**: git no lo guarda. De

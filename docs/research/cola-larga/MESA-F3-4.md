@@ -3,6 +3,22 @@
 **2026-08-26 · 115.ª tanda, ESCALÓN 2. No se decide ninguna: se dejan
 DECIDIBLES.**
 
+> ## ✅ ESTADO AL 2026-08-26 (116.ª) — las tres, resueltas o contestadas
+>
+> | | separadora | estado | fracción |
+> |---|---|---|---|
+> | **(a)** `categoria` | contenido propio no derivado de sus miembros | ✅ **CONTESTADA — es una CONSULTA** | **0 de 4** refutaciones · **4 de 4** términos |
+> | **(b)** `author` | ¿el archivo tiene contenido propio? | ✅ **CONTESTADA — SÍ lo tiene** | **7 de 7** ejes propios son CAMPO · **6 de 6** términos |
+> | **(c)** `sector` | *(ya venía partida)* | ✅ **DECIDIDA por el propietario** | (c1) SÍ a la relación · (c2) REPLICAR TAL CUAL |
+>
+> Derivaciones: `derivaciones/separadora-categoria-116.{mjs,log,json}` ·
+> `derivaciones/separadora-author-116.{mjs,log,json}`. Decisión de (c) con su
+> razón y su condición de reapertura: `ESQUEMA-CMS.md` §7i.
+>
+> **Y esta mesa NO se reescribe: se anota.** Lo de abajo es lo que la 115.ª
+> dejó, y sigue siendo el estado de conocimiento con el que se contestó. Las
+> correcciones van marcadas donde tocan.
+
 F3-4 lleva desde el plan de fase con la instrucción *«abre decisión de ESQUEMA:
 tómala ANTES de empezar»*, y ésta es la primera vez que su premisa está medida:
 el censo de la 108.ª, los códigos de estado de la 114.ª y el barrido de seis
@@ -69,8 +85,41 @@ Si lo hay ⇒ COLECCIÓN. Si no lo hay en ninguno de los 4 ⇒ es una CONSULTA, 
 basta la relación más el listado (§*un listado no tiene contenido propio: es
 una CONSULTA*).
 
-**SIN MEDIR, con su cardinal:** el cuerpo de los 4 términos **no se ha
-comparado entre sí** para ver si su cabecera es plantilla o campo. **4 de 4.**
+> ### ✅ CONTESTADA el 2026-08-26 (116.ª) — **es una CONSULTA**
+>
+> `derivaciones/separadora-categoria-116.{mjs,log,json}` · **0 de 4**
+> refutaciones disparan, sobre **4 de 4** términos:
+>
+> | refutación | medido |
+> |---|---|
+> | R1 · texto de cabecera propio que VARÍE | **0 de 4** términos lo traen · 1 valor distinto ⇒ varianza **CERO** |
+> | R2 · imagen de cabecera | **0** distintas en 4 |
+> | R3 · orden distinto del de fecha | **4 de 4** descendentes, con las fechas leídas en **las 27 rutas** |
+> | R4 · pieza en unos y no en otros | **0 de 6** tipos, quitado el contador de módulo |
+>
+> Lo único que varía entre las 4 instancias es el nombre del término (`h1` y
+> último eslabón de la miga), **qué módulo de blog de la plantilla se sirvió**
+> —`et_pb_blog_{0,2,3,4}_tb_body`, mientras la miga conserva su ordinal 0 en
+> los 4, así que el contador numera la PLANTILLA y no la página— y las
+> tarjetas con su paginador, que **son los miembros**.
+>
+> ⇒ **el candidato RELACIÓN sin archivo queda sostenido POR EL DATO**, no por
+> el criterio de asimetría.
+>
+> **Y la relación quedó medida de paso, por DOS canales** (la tarjeta del
+> archivo y el enlace `/categoria/…` dentro de la propia entrada): cobertura
+> **152 de 152** entradas · cardinalidad **1:N con N ≤ 2**, positivos **2 de
+> 152**, y los dos canales nombran **los mismos dos**, comparados por elemento.
+
+**~~SIN MEDIR~~ ✅ MEDIDO (116.ª):** el cuerpo de los 4 términos se comparó
+entre sí, **6 pares de 4 términos**. Queda **SIN DIRIMIR** otra cosa, y es
+nueva: **8 de las 27 rutas sirven 0 tarjetas**, y offline no se distingue una
+página real vacía de una URL que ya no existe. Comprobado contra el archivo
+antes de ficharlo: `estados-114.json` cubre **1 de esas 27**.
+
+> ⚠ **Y ESO CORRIGE UNA UNIDAD DE ESTA MISMA MESA:** «27 rutas» y «27 páginas
+> con contenido» no son lo mismo — son **19 con tarjetas + 8 vacías**, y el
+> coste de **6.0 s** está calculado sobre la primera.
 
 ---
 
@@ -130,10 +179,75 @@ Y de paso contestó **la segunda separadora, la del modelo**:
 contenido propio (los 6 cuerpos van de 1 469 a 12 978 B) o es sólo la plantilla
 del tema con la lista dentro.
 
-**SIN MEDIR, con su cardinal:** **la varianza entre instancias del régimen `--`
-no está medida en ningún sitio del repo** — `CLAUDE.md` la declara SIN PROBAR.
-Estas 6 son la muestra que existe, **sin comparar entre sí: 6 de 6**. Es
-exactamente lo que decidiría la separadora que queda.
+> ### ✅ CONTESTADA el 2026-08-26 (116.ª) — **SÍ tiene contenido propio**
+>
+> `derivaciones/separadora-author-116.{mjs,log,json}` · **6 de 6** términos
+> comparados entre sí, con los ejes **PARTIDOS** entre lo propio y lo derivado
+> de los miembros — porque contar lo derivado infla el veredicto con lo mismo
+> que la pregunta excluye:
+>
+> | GRUPO A · contenido PROPIO (decide) | valores distintos de 6 |
+> |---|---|
+> | foto (`src`) | **5** |
+> | foto ES la del tema (`user.svg`) | **2** |
+> | `h1` (nombre) | **6** |
+> | cargo | **5** |
+> | redes (conjunto) | **4** |
+> | ¿tiene bio? | **2** |
+> | cuerpo de la bio (chars) | **5** |
+>
+> **7 de 7 son CAMPO.** El GRUPO B —títulos y nº de listado, nº de tarjetas,
+> encabezado de la bio— varía **4 de 4** y **no cuenta**: se deriva de qué
+> entradas firmó el autor.
+>
+> ⇒ **`author` NO es «la plantilla del tema con la lista dentro»: es una
+> ENTIDAD CON CAMPOS** (foto · nombre · cargo · redes · biografía).
+>
+> ⚠⚠ **Y ESO CAMBIA EL ESQUEMA, NO SÓLO EL VEREDICTO:** `foto`, `cargo`,
+> `redes` y `bio` son **OPCIONALES**, y el original **EJERCITA** el caso —
+> `admin` y `mar_ramirez` traen la foto del TEMA, el cargo **vacío**
+> (`<p></p>`) y **ninguna bio**: **2 de 6**. §*un campo opcional no expresa un
+> caso: sólo permite que falte* — el camino de render hay que estrenarlo.
+>
+> ### ✅ Y el `href` a `/author/` que el clon sirve HOY, por TRES canales
+>
+> | canal | medido |
+> |---|---|
+> | original | `ficha-autor-revisor` en **152 de 152** · **612** href, **absolutos 612 · locales 0**, los 612 dentro de la ficha |
+> | cuerpo transformado | **0** — y es **CORRECTO**: la ficha vive en un módulo de la PLANTILLA, no en el `post_content` |
+> | **código del clon** | **228** ficheros barridos · **1** href a `/author/`, **ABSOLUTO**, **0 locales** · rutas `/author/` que el build emite: **0** |
+>
+> ⇒ **«COLECCIÓN sin archivo» no crea ni un enlace roto.** El candidato queda
+> limpio **por el dato**, no por el criterio.
+>
+> ⚠ **Y un hallazgo de fidelidad que NO es esta separadora**, fichado con su
+> cardinal y sin perseguirlo: el clon **no pinta la `ficha-autor-revisor`** —
+> **0 de 228** ficheros de código—, y el original la enseña en **152 de 152**
+> entradas.
+
+**~~SIN MEDIR~~ ⚠ MEDIDO A MEDIAS (116.ª), y hay que decir qué mitad:** las 6
+instancias se compararon entre sí **en el eje del MARCADO**, y de paso se
+barrieron **57 casos + 19 FAQ** (los dos cardinales de `CLAUDE.md`, derivados
+y **los dos casan**). **Lo que `CLAUDE.md` declara SIN PROBAR es otro eje** —
+ritmo, tipografía y retícula, o sea **geometría computada**— y ése **no se
+puede derivar de este corpus**: sin las hojas enlazadas, `getComputedStyle` da
+una medida plausible y falsa (§F3-1-CSS-NO-CAPTURADO). **Siguen sin medir
+6 + 57 + 19 = 82 instancias** en ese eje.
+
+> ⚠ **Y el régimen `--` de estas 6 hubo que DESEMPATARLO**, porque las dos
+> señales de `CLAUDE.md` discrepan en 6 de 6. El discriminador —que no estaba
+> escrito en ningún sitio— es que **Divi numera cada sección UNA vez**: si
+> `ocurrencias == distintos`, es builder; si repite el mismo literal, es una
+> plantilla PHP copiando la clase. `author` repite `et_pb_section_1_tb_body`
+> hasta 4 veces y **el número crece con el contenido**: **`--` confirmado**,
+> con 5 de 6 decidibles y **1 indeterminada** (`mar_ramirez`, una sola
+> sección: el test no separa).
+>
+> ⚠ **Y hay una varianza que SÍ apareció, en un canal que esta mesa no miraba:**
+> el `<style>` en línea. `divi-dynamic-critical-inline-css` (**161 728 B**,
+> idénticos donde está) falta en **2 de 484** documentos capturados, y esos 2
+> son **exactamente** `admin` y `mar_ramirez`, comparados por elemento. El
+> mecanismo se ficha **sin explicar** (necesita red).
 
 ---
 
@@ -170,6 +284,24 @@ esto para las 55 que responden 200 sin listar.
   y no necesita entidad.
 - **(c2)** — que alguna URL `/sector/*` esté enlazada **desde fuera del
   filtro**. Hoy son 15 documentos, todos del propio filtro o del archivo.
+
+> ### ✅ DECIDIDA POR EL PROPIETARIO el 2026-08-26 (116.ª), en sus dos mitades
+>
+> - **(c1) SÍ a la RELACIÓN `caso → sector`** — 0 rutas, y es la única pieza de
+>   las tres con **consumidor medido**;
+> - **(c2) REPLICAR TAL CUAL el archivo `/es/sector/*`** — 13 rutas · 2.9 s, por
+>   **precedente D2.5**. Las **5 que dan 301 se replican COMO REDIRECCIÓN, no
+>   como página**: replicar un 301 como página sería servir un 200 donde el
+>   original salta.
+>
+> ⚠ **(c2) se toma CONTRA §regla 23** —la separada era no emitir el archivo—
+> porque pesó más la **CONSISTENCIA con D2.5**, ya aplicada a 55 cascarones
+> vacíos. Por eso **lleva condición de reapertura**, escrita en
+> `ESQUEMA-CMS.md` §7i junto con la razón completa.
+>
+> **`mineria` queda fichada con sus 5 saltos y SIN diagnosticar**: necesita red.
+>
+> **NO se implementa en esta tanda.**
 
 **SIN MEDIR, y NO se explica aquí a propósito:** el **bucle de `mineria`** se
 ficha con su número (**5 saltos**, `redirect: manual`) y **no se diagnostica**.
@@ -208,12 +340,25 @@ criterio puede no llevarla; una que lo contradice, siempre.
 
 ## Lo que esta mesa NO trae, con su nombre
 
+*(actualizado el 2026-08-26 tras la 116.ª — lo tachado se midió, lo que queda
+lleva su cardinal)*
+
 - **el eje COMPORTAMIENTO** (0/31 en el repo): un filtro montado en JS tras una
   petición no deja rastro en el HTML servido. **Las tres decisiones se toman
   sobre el HTML SERVIDO**, y eso se declara en vez de suponerse cubierto;
 - **el mecanismo del bucle de `mineria`**: fichado con su número, no explicado.
   Necesita red;
-- **la varianza entre instancias del régimen `--`**, que `CLAUDE.md` declara SIN
-  PROBAR y que decide cómo se lee `author`. **6 instancias sin comparar**;
-- **el CSS servido**: una regla podría esconder tarjetas por clase de término.
-  Sería un séptimo canal y no está en la lista del ESCALÓN 1.
+- ~~la varianza entre instancias del régimen `--`~~ → **medida en el eje del
+  MARCADO** (6 author + 57 casos + 19 FAQ). **Sigue SIN PROBAR el eje que
+  `CLAUDE.md` nombra —ritmo, tipografía, retícula, o sea GEOMETRÍA
+  COMPUTADA—: 82 instancias**, y no por falta de tiempo: **este corpus no
+  puede contestarlo** (sin las hojas enlazadas la medida sale plausible y
+  falsa);
+- **el MECANISMO del `<style>` de 161 728 B** que falta en **2 de 484**
+  documentos: fichado con su cardinal, sin explicar;
+- **el CSS servido** como séptimo canal del ESCALÓN 1: una regla podría esconder
+  tarjetas por clase de término. Sigue fuera;
+- **las 8 rutas VACÍAS de `categoria`** (de 27): offline no se distingue una
+  página real vacía de una URL inexistente, y el archivo cubre **1 de 27**;
+- **la `ficha-autor-revisor` que el clon no pinta** — original **152 de 152**,
+  clon **0 de 228** ficheros de código. No es ninguna de las tres separadoras.
