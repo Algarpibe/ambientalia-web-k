@@ -7868,12 +7868,7 @@
       {
         "slug": "admin",
         "nombre": "admin",
-        "redes": [
-          {
-            "red": "website",
-            "href": "https://kunakair.com"
-          }
-        ]
+        "redes": []
       },
       {
         "slug": "edurne-ibarrola",

@@ -54,6 +54,81 @@ export const entradasBlog: CollectionConfig = {
      * `Inicio › Blog › título`. Medido en 7 instancias, 6 con y 1 sin.
      */
     { name: "recurso", type: "relationship", relationTo: "categorias-recursos", custom: { formaMedida: "objeto" } },
+    /**
+     * ⚠ **LA FIRMA — 117.ª. Es un ARRAY con PAPEL, y NO cabe en un campo
+     * simple. Lo dice el dato, no la comodidad.**
+     *
+     * La `ficha-autor-revisor` del original aparece en **152 de 152** entradas
+     * y el clon **no la pinta** (0 de 155 ficheros de código). De esas 152,
+     * **150 traen un solo firmante y 2 traen DOS**, separando «Revisado y
+     * aprobado por» de «Escrito por». Un `relationship` simple perdería el
+     * segundo, y un `hasMany` sin papel perdería CUÁL es cuál.
+     *
+     * ── El orden NO es decorativo: es el HUECO ────────────────────────────
+     * El primer elemento se pinta en el hueco `revisor` —que es **el que lleva
+     * la foto**, 152 de 152— y el segundo en `autor`, que **no la lleva**,
+     * 2 de 2. Así que el hueco se deriva de la POSICIÓN y no necesita campo.
+     *
+     * ── Y por qué `proemio` se GUARDA en vez de derivarse ─────────────────
+     * Se midieron los dos modelos en vez de elegir uno
+     * (§*un modelo se elige por lo que lo SEPARA, no por lo que acierta*):
+     *
+     *   proemio = f(autor, papel)          → **1** separadora · falla
+     *   proemio = f(autor, papel, hueco)   → **0** separadoras · 8 de 8 triples
+     *
+     * Lo probado es que **(autor, papel) NO basta**. Que el triple sea *la*
+     * función **no** lo está: se apoya en **UNA** instancia separadora, y
+     * §*un discriminador hallado en una sola instancia tampoco es un
+     * discriminador*. Así que el texto se guarda con su defecto derivado y se
+     * **omite cuando coincide**: si la función es correcta el dato queda vacío
+     * en las 152 y no cuesta nada; si es falsa, el original se replica igual.
+     *
+     * El defecto va **en la dirección que GRITA** (§sondas 6): derivarlo mal
+     * serviría «Escrito por el» donde el original dice «Escrito por», en 2
+     * páginas, y **ninguna guarda de este repo mira ese texto**.
+     *
+     * Evidencia: `ficha-autor-117.{mjs,log}` · `medidas/ficha-autor-117.json`.
+     */
+    {
+      name: "firmas",
+      type: "array",
+      minRows: 1,
+      required: true,
+      fields: [
+        /**
+         * ⚠ **SIN `formaMedida: "objeto"`, y es una medida:** el dato medido
+         * escribe aquí el **slug pelado** (`"kunak"`), no un término embebido
+         * `{slug, nombre}` como hacen `categorias` o `etiquetas`. Declararlo
+         * «objeto» haría que la VUELTA exigiera un poblado que nunca llega y
+         * tirara con «RELACIÓN EMBEBIDA SIN POBLAR». Lo comprueba
+         * `qa:cms-decl`, que deriva los mapas en LAS DOS DIRECCIONES.
+         */
+        { name: "autor", type: "relationship", relationTo: "autores", required: true },
+        /**
+         * Dos valores observados, los dos con su n: `escrito` **152** ·
+         * `revisado` **2**. No es una taxonomía abierta — es el verbo del
+         * proemio, y el barrido de las 152 no encontró un tercero.
+         */
+        {
+          name: "papel",
+          type: "select",
+          required: true,
+          defaultValue: "escrito",
+          options: [
+            { label: "Escrito por", value: "escrito" },
+            { label: "Revisado y aprobado por", value: "revisado" },
+          ],
+        },
+        /**
+         * El texto servido con el nombre enlazado sustituido por `‹NOMBRE›`.
+         * **Se omite cuando coincide con el derivado** — un valor por defecto
+         * explícito y ausente en el dato cuando no aporta, que es lo que
+         * `CLAUDE.md` §Consecuencia para el CMS pide para un campo de
+         * presentación editorial.
+         */
+        { name: "proemio", type: "text" },
+      ],
+    },
     // `CampoRico` = HTML del corpus ⇒ `campoHtml` (CMS-0e · §3.1d).
     campoHtml("cuerpo", { requerido: true }),
     /**

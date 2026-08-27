@@ -149,6 +149,10 @@ export const SEMBRADAS = [
   "taxonomia-sectores",
   "casos",
   "faqs",
+  /* ⚠ **ANTES de `entradas-blog`, y no es estilo: es una dependencia.** Las
+   * firmas de las entradas apuntan aquí, así que sembrar el referente después
+   * del referente dejaría las relaciones sin resolver. 5 autores (117.ª). */
+  "autores",
   "entradas-blog",
   "terminos-kunakpedia",
   "documentos-cientificos",

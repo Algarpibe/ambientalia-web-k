@@ -28,6 +28,7 @@ import {
   etiquetas,
 } from "./colecciones/taxonomias.ts";
 import { paginas } from "./colecciones/paginas.ts";
+import { autores } from "./colecciones/autores.ts";
 import { media } from "./colecciones/media.ts";
 import { slugs } from "./colecciones/slugs.ts";
 import { usuarios } from "./colecciones/usuarios.ts";
@@ -160,6 +161,8 @@ export const COLECCIONES: CollectionConfig[] = [
   etiquetas,
   categoriasRecursos,
   categoriasCientificas,
+  // Autores (117.ª) — COLECCIÓN SIN ARCHIVO: no emite `/author/*`
+  autores,
   // Media (CMS-0b)
   media,
   // Infraestructura — sin lado medido, y la comprobación lo dice
@@ -175,6 +178,7 @@ export const COLECCIONES: CollectionConfig[] = [
 
 export {
   articulosKb,
+  autores,
   casos,
   categorias,
   categoriasCientificas,

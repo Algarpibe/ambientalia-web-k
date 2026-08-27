@@ -82,6 +82,7 @@ export interface Config {
     etiquetas: Etiqueta;
     'categorias-recursos': CategoriasRecurso;
     'categorias-cientificas': CategoriasCientifica;
+    autores: Autore;
     media: Media;
     slugs: Slug;
     usuarios: Usuario;
@@ -107,6 +108,7 @@ export interface Config {
     etiquetas: EtiquetasSelect<false> | EtiquetasSelect<true>;
     'categorias-recursos': CategoriasRecursosSelect<false> | CategoriasRecursosSelect<true>;
     'categorias-cientificas': CategoriasCientificasSelect<false> | CategoriasCientificasSelect<true>;
+    autores: AutoresSelect<false> | AutoresSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     slugs: SlugsSelect<false> | SlugsSelect<true>;
     usuarios: UsuariosSelect<false> | UsuariosSelect<true>;
@@ -1449,6 +1451,12 @@ export interface EntradasBlog {
   categorias: (number | Categoria)[];
   etiquetas?: (number | Etiqueta)[] | null;
   recurso?: (number | null) | CategoriasRecurso;
+  firmas: {
+    autor: number | Autore;
+    papel: 'escrito' | 'revisado';
+    proemio?: string | null;
+    id?: string | null;
+  }[];
   /**
    * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
    */
@@ -1502,6 +1510,31 @@ export interface CategoriasRecurso {
   nombre: string;
   slug: string;
   padre?: (number | null) | CategoriasRecurso;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "autores".
+ */
+export interface Autore {
+  id: number;
+  slug: string;
+  nombre: string;
+  foto?: (number | null) | Media;
+  fotoOrigen?: string | null;
+  cargo?: string | null;
+  redes?:
+    | {
+        red: string;
+        href: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+   */
+  bio?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -2451,6 +2484,42 @@ export interface Pagina {
                   blockName?: string | null;
                   blockType: 'icono';
                 }
+              | {
+                  cabeceras?:
+                    | {
+                        texto: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  filas?:
+                    | {
+                        celdas?:
+                          | {
+                              texto?: string | null;
+                              fuerte?: string | null;
+                              resto?: string | null;
+                              id?: string | null;
+                            }[]
+                          | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  ritmo?: {
+                    mt?: number | null;
+                    mb?: number | null;
+                    pt?: number | null;
+                    pb?: number | null;
+                    pr?: number | null;
+                    mbAlterno?: boolean | null;
+                  };
+                  /**
+                   * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                   */
+                  anchoPct?: number | null;
+                  id?: string | null;
+                  blockName?: string | null;
+                  blockType: 'tabla';
+                }
             )[]
           | null;
         filas?:
@@ -3325,6 +3394,42 @@ export interface Pagina {
                           blockName?: string | null;
                           blockType: 'icono';
                         }
+                      | {
+                          cabeceras?:
+                            | {
+                                texto: string;
+                                id?: string | null;
+                              }[]
+                            | null;
+                          filas?:
+                            | {
+                                celdas?:
+                                  | {
+                                      texto?: string | null;
+                                      fuerte?: string | null;
+                                      resto?: string | null;
+                                      id?: string | null;
+                                    }[]
+                                  | null;
+                                id?: string | null;
+                              }[]
+                            | null;
+                          ritmo?: {
+                            mt?: number | null;
+                            mb?: number | null;
+                            pt?: number | null;
+                            pb?: number | null;
+                            pr?: number | null;
+                            mbAlterno?: boolean | null;
+                          };
+                          /**
+                           * Defecto 100 — §1.5 · §6c.1 · clase-rango-{1440,390}.json
+                           */
+                          anchoPct?: number | null;
+                          id?: string | null;
+                          blockName?: string | null;
+                          blockType: 'tabla';
+                        }
                     )[]
                   | null;
                 id?: string | null;
@@ -3998,6 +4103,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'categorias-cientificas';
         value: number | CategoriasCientifica;
+      } | null)
+    | ({
+        relationTo: 'autores';
+        value: number | Autore;
       } | null)
     | ({
         relationTo: 'media';
@@ -5099,6 +5208,14 @@ export interface EntradasBlogSelect<T extends boolean = true> {
   categorias?: T;
   etiquetas?: T;
   recurso?: T;
+  firmas?:
+    | T
+    | {
+        autor?: T;
+        papel?: T;
+        proemio?: T;
+        id?: T;
+      };
   cuerpo?: T;
   relacionados?: T;
   estado?: T;
@@ -5628,6 +5745,42 @@ export interface PaginasSelect<T extends boolean = true> {
                     id?: T;
                     blockName?: T;
                   };
+              tabla?:
+                | T
+                | {
+                    cabeceras?:
+                      | T
+                      | {
+                          texto?: T;
+                          id?: T;
+                        };
+                    filas?:
+                      | T
+                      | {
+                          celdas?:
+                            | T
+                            | {
+                                texto?: T;
+                                fuerte?: T;
+                                resto?: T;
+                                id?: T;
+                              };
+                          id?: T;
+                        };
+                    ritmo?:
+                      | T
+                      | {
+                          mt?: T;
+                          mb?: T;
+                          pt?: T;
+                          pb?: T;
+                          pr?: T;
+                          mbAlterno?: T;
+                        };
+                    anchoPct?: T;
+                    id?: T;
+                    blockName?: T;
+                  };
             };
         filas?:
           | T
@@ -6093,6 +6246,42 @@ export interface PaginasSelect<T extends boolean = true> {
                                 id?: T;
                                 blockName?: T;
                               };
+                          tabla?:
+                            | T
+                            | {
+                                cabeceras?:
+                                  | T
+                                  | {
+                                      texto?: T;
+                                      id?: T;
+                                    };
+                                filas?:
+                                  | T
+                                  | {
+                                      celdas?:
+                                        | T
+                                        | {
+                                            texto?: T;
+                                            fuerte?: T;
+                                            resto?: T;
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                    };
+                                ritmo?:
+                                  | T
+                                  | {
+                                      mt?: T;
+                                      mb?: T;
+                                      pt?: T;
+                                      pb?: T;
+                                      pr?: T;
+                                      mbAlterno?: T;
+                                    };
+                                anchoPct?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
                         };
                     id?: T;
                   };
@@ -6430,6 +6619,27 @@ export interface CategoriasRecursosSelect<T extends boolean = true> {
 export interface CategoriasCientificasSelect<T extends boolean = true> {
   nombre?: T;
   slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "autores_select".
+ */
+export interface AutoresSelect<T extends boolean = true> {
+  slug?: T;
+  nombre?: T;
+  foto?: T;
+  fotoOrigen?: T;
+  cargo?: T;
+  redes?:
+    | T
+    | {
+        red?: T;
+        href?: T;
+        id?: T;
+      };
+  bio?: T;
   updatedAt?: T;
   createdAt?: T;
 }

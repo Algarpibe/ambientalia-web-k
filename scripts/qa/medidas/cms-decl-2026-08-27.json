@@ -1,0 +1,506 @@
+{
+  "meta": {
+    "fecha": "2026-08-27",
+    "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
+    "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
+    "sabotaje": null
+  },
+  "derivado": {
+    "formaDeRel": {
+      "sectores.soluciones": "objeto",
+      "monograficos.soluciones": "objeto",
+      "casos.sectores": "objeto",
+      "casos.soluciones": "slug",
+      "entradas-blog.categorias": "objeto",
+      "entradas-blog.firmas.autor": "slug",
+      "entradas-blog.recurso": "objeto",
+      "entradas-blog.etiquetas": "objeto",
+      "documentos-cientificos.categoria": "objeto"
+    },
+    "conKind": [
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "texto-pagina"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "imagen-pagina"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "video-pagina"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "toggle"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "boton-pagina"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "blurb"
+      ],
+      [
+        "paginas.bloques.modulosSueltos",
+        "slider-completo"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "mapa"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "codigo"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "slider"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "tabla"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "icono"
+      ],
+      [
+        "sectores.body",
+        "ctaDescarga"
+      ],
+      [
+        "sectores.body",
+        "beneficiosAplicaciones"
+      ],
+      [
+        "sectores.body",
+        "claimConFoto"
+      ],
+      [
+        "sectores.body",
+        "listaSimple2Col"
+      ],
+      [
+        "sectores.body",
+        "mapaProyectos"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "titular"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "imagen"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "claim"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "ctaDescarga"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "texto"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "tabla"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "mapaProyectos"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "boton"
+      ],
+      [
+        "monograficos.cuerpo.filas.columnas.modulos",
+        "serie"
+      ]
+    ],
+    "centinelas": [
+      "productos.image"
+    ],
+    "listas": {
+      "autores.redes": {
+        "presente": 5,
+        "ausente": 0
+      },
+      "casos.galeria": {
+        "presente": 48,
+        "ausente": 9
+      },
+      "casos.sectores": {
+        "presente": 53,
+        "ausente": 4
+      },
+      "casos.soluciones": {
+        "presente": 53,
+        "ausente": 4
+      },
+      "entradas-blog.categorias": {
+        "presente": 152,
+        "ausente": 0
+      },
+      "entradas-blog.etiquetas": {
+        "presente": 152,
+        "ausente": 0
+      },
+      "entradas-blog.firmas": {
+        "presente": 152,
+        "ausente": 0
+      },
+      "monograficos.articulos.posts": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.breadcrumb": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.ctaSlides": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.cuerpo": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas": {
+        "presente": 6,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas": {
+        "presente": 19,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos": {
+        "presente": 31,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos.bloques": {
+        "presente": 17,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos.bloques.ul": {
+        "presente": 9,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos.body": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos.cabeceras": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos.filas": {
+        "presente": 9,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos.items": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos.pins": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "monograficos.cuerpo.filas.columnas.modulos.titulares": {
+        "presente": 0,
+        "ausente": 17
+      },
+      "monograficos.hero.ctas": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.hero.modulos": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.hero.modulos.paragraphs": {
+        "presente": 4,
+        "ausente": 2
+      },
+      "monograficos.proyectos.posts": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "monograficos.soluciones": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "paginas.bloques": {
+        "presente": 30,
+        "ausente": 1
+      },
+      "paginas.bloques.filas": {
+        "presente": 74,
+        "ausente": 2
+      },
+      "paginas.bloques.filas.columnas": {
+        "presente": 103,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos": {
+        "presente": 169,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos.cabeceras": {
+        "presente": 0,
+        "ausente": 1
+      },
+      "paginas.bloques.filas.columnas.modulos.diapositivas": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos.filas": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos.filas.celdas": {
+        "presente": 11,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos.pines": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "paginas.bloques.modulosSueltos": {
+        "presente": 2,
+        "ausente": 74
+      },
+      "paginas.bloques.modulosSueltos.diapositivas": {
+        "presente": 2,
+        "ausente": 0
+      },
+      "productos.bullets": {
+        "presente": 19,
+        "ausente": 0
+      },
+      "productos.cuerpo": {
+        "presente": 0,
+        "ausente": 19
+      },
+      "sectores.articulos.posts": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.body": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.body.body": {
+        "presente": 3,
+        "ausente": 0
+      },
+      "sectores.body.left": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "sectores.body.left.items": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.body.pins": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "sectores.body.right": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "sectores.body.right.items": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.breadcrumb": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.ctaSlides": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.hero.ctas": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.hero.paragraphs": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.proyectos.posts": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "sectores.soluciones": {
+        "presente": 4,
+        "ausente": 0
+      }
+    }
+  },
+  "declarado": {
+    "formaDeRel": {
+      "sectores.soluciones": "objeto",
+      "monograficos.soluciones": "objeto",
+      "casos.sectores": "objeto",
+      "entradas-blog.categorias": "objeto",
+      "entradas-blog.etiquetas": "objeto",
+      "entradas-blog.recurso": "objeto",
+      "documentos-cientificos.categoria": "objeto"
+    },
+    "conKind": {
+      "paginas.bloques.modulosSueltos": [
+        "texto-pagina",
+        "imagen-pagina",
+        "boton-pagina",
+        "codigo",
+        "toggle",
+        "video-pagina",
+        "blurb",
+        "slider-completo",
+        "slider",
+        "mapa",
+        "icono",
+        "tabla"
+      ],
+      "paginas.bloques.filas.columnas.modulos": [
+        "texto-pagina",
+        "imagen-pagina",
+        "boton-pagina",
+        "codigo",
+        "toggle",
+        "video-pagina",
+        "blurb",
+        "slider-completo",
+        "slider",
+        "mapa",
+        "icono",
+        "tabla"
+      ],
+      "sectores.body": [
+        "ctaDescarga",
+        "beneficiosAplicaciones",
+        "claimConFoto",
+        "listaSimple2Col",
+        "mapaProyectos"
+      ],
+      "monograficos.cuerpo.filas.columnas.modulos": [
+        "titular",
+        "claim",
+        "texto",
+        "imagen",
+        "boton",
+        "serie",
+        "tabla",
+        "ctaDescarga",
+        "mapaProyectos"
+      ]
+    },
+    "centinelas": [
+      "productos.image"
+    ],
+    "vaciaEsAusente": [
+      "casos.galeria",
+      "casos.sectores",
+      "casos.soluciones",
+      "monograficos.cuerpo.filas.columnas.modulos.titulares",
+      "monograficos.hero.modulos.paragraphs",
+      "paginas.bloques",
+      "paginas.bloques.filas",
+      "paginas.bloques.modulosSueltos",
+      "productos.cuerpo",
+      "productos.cuerpo.titulares"
+    ]
+  },
+  "contrato": {
+    "evaluadas": 90,
+    "minimo": 90,
+    "suficiente": true
+  },
+  "veredicto": {
+    "verificadas": 89,
+    "huecos": [
+      {
+        "tipo": "vaciaEsAusente",
+        "ruta": "paginas.bloques.filas.columnas.modulos.cabeceras",
+        "derivado": "ausente en 1 de 1",
+        "declarado": "(nada)"
+      }
+    ],
+    "muertas": [],
+    "sinEjercitar": [
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "texto-pagina"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "imagen-pagina"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "boton-pagina"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "codigo"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "toggle"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "video-pagina"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "blurb"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "slider"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "mapa"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "icono"
+      },
+      {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "tabla"
+      },
+      {
+        "ruta": "paginas.bloques.filas.columnas.modulos",
+        "slug": "slider-completo"
+      }
+    ],
+    "listasSinEjercitar": [
+      "productos.cuerpo.bloques",
+      "productos.cuerpo.bloques.ul",
+      "productos.cuerpo.titulares",
+      "productos.cuerpo.diapositivas",
+      "productos.cuerpo.imagenes",
+      "productos.cuerpo.body",
+      "productos.cuerpo.cabeceras",
+      "productos.cuerpo.filas",
+      "productos.cuerpo.filas.celdas",
+      "paginas.bloques.modulosSueltos.pines",
+      "paginas.bloques.modulosSueltos.cabeceras",
+      "paginas.bloques.modulosSueltos.filas",
+      "paginas.bloques.modulosSueltos.filas.celdas",
+      "monograficos.cuerpo.filas.columnas.modulos.filas.celdas"
+    ],
+    "ok": false
+  }
+}

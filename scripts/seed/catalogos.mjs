@@ -156,6 +156,23 @@ export const CATALOGOS = [
    * Escritos y verificados — el CONTROL sube de 95 a **111** comparaciones y
    * pasa entero, con negativo 4/4. */
   { coleccion: "documentos-cientificos", json: "medidas/a-extraido.json", en: "catalogo.documentos-cientificos" },
+  /**
+   * ✅ **`autores` — 117.ª · ESCALÓN 2.** Sale del MISMO fichero que las
+   * entradas y por la misma corrida, a propósito: los autores se DERIVAN de
+   * las firmas, así que dos derivaciones independientes podrían dar un Δ0 en
+   * falso con un mismo olvido (§regla 29, mitad 2 — *desde la MISMA derivación
+   * y en la misma llamada*).
+   *
+   * ⚠ Son **5**, no 6: `mar_ramirez` tiene archivo y firma **0 de 152**
+   * entradas. No se siembra un autor que ninguna firma referencia — y se dice
+   * con su cardinal en vez de dejarlo caer por omisión.
+   *
+   * ⚠ `foto` va **declarada y vacía**: las 5 fotos de la ficha están **0
+   * capturadas** (§PASO 0b). El origen se guarda en `fotoOrigen` para que la
+   * campaña que traiga los bytes sepa cuáles pedir — un canal enumerado ANTES
+   * de que mate un seed, que es lo que §EL INVENTARIO DE MEDIA pide.
+   */
+  { coleccion: "autores", json: "medidas/a-extraido.json", en: "catalogo.autores" },
 ];
 
 /**

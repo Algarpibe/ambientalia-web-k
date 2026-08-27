@@ -81,6 +81,69 @@ const cuenta = (id, v) => {
 const sinScriptNiStyle = (html) =>
   html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "").replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "");
 
+/* ══════════════════════════════════════════════════════════════════════════
+ * LA FIRMA — 117.ª · la `ficha-autor-revisor`, en 152 de 152 entradas
+ *
+ * ⚠ **SE LEE DEL DOCUMENTO, NO DEL CUERPO TRANSFORMADO, y eso es medida.**
+ * La ficha vive en un MÓDULO DE LA PLANTILLA (`et_pb_text_N_tb_body`), no en
+ * el `post_content`. Buscarla en el cuerpo rico daría **0 en las 152** y se
+ * leería como «la transformación la perdió» — que es exactamente el tercer
+ * defecto de la 116.ª: *comparar el cuerpo rico contra la página entera*
+ * (§regla 40, y §*la salida servida incluye el canal que no estabas mirando*).
+ *
+ * ⚠ **EXTRACCIÓN BALANCEADA, NO UNA VENTANA.** Una `slice` alrededor de la
+ * ficha se lleva las imágenes del cuerpo que vienen detrás: medido, una
+ * ventana de 2500 chars daba **17** fotos donde el bloque balanceado da **5**
+ * (§sondas 4, la cara del sobre-casado).
+ * ═════════════════════════════════════════════════════════════════════════ */
+function bloqueBalanceado(html, desde) {
+  const re = /<div\b[^>]*>|<\/div>/gi;
+  re.lastIndex = desde;
+  let prof = 0, m;
+  while ((m = re.exec(html))) {
+    prof += m[0][1] === "/" ? -1 : 1;
+    if (prof === 0) return html.slice(desde, re.lastIndex);
+  }
+  return null;
+}
+
+const soloTexto = (s) => s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+
+/**
+ * Devuelve `{ firmas, autores }` de un documento, o `null` si no hay ficha.
+ * El ORDEN importa: el elemento 0 se pinta en el hueco `revisor` —el que lleva
+ * la foto, 152 de 152— y el 1 en `autor`, que no la lleva (2 de 2).
+ */
+function firmasDe(html) {
+  const i = html.indexOf('<div class="ficha-autor-revisor"');
+  if (i < 0) return null;
+  const bloque = bloqueBalanceado(html, i);
+  if (!bloque) return null;
+
+  const firmas = [];
+  const autores = [];
+  const re = /<div class="(revisor|autor)">/gi;
+  let m;
+  while ((m = re.exec(bloque))) {
+    const b = bloqueBalanceado(bloque, m.index);
+    if (!b) continue;
+    const href = (b.match(/href="([^"]+)"/) || [])[1] || null;
+    const slug = href ? (href.match(/\/author\/([^/]+)/) || [])[1] || null : null;
+    if (!slug) continue; // una llave que no se puede derivar se TIRA (§regla 33)
+    const img = (b.match(/<img[^>]*\bsrc="([^"]+)"/) || [])[1] || null;
+    const p = (b.match(/<p>([\s\S]*?)<\/p>/) || [])[1] || "";
+    const nombre = soloTexto((p.match(/<a[^>]*>([\s\S]*?)<\/a>/) || [])[1] || "");
+    const proemio = soloTexto(p.replace(/<a[^>]*>[\s\S]*?<\/a>/g, "‹NOMBRE›"));
+    firmas.push({
+      autor: slug,
+      papel: /^Revisado y aprobado/i.test(proemio) ? "revisado" : "escrito",
+      proemio,
+    });
+    autores.push({ slug, nombre, foto: img });
+  }
+  return firmas.length ? { firmas, autores } : null;
+}
+
 const deco = (s) =>
   s === null || s === undefined
     ? s
@@ -290,6 +353,18 @@ const ev = new Evaluadas({ nombre: "extractor-a", unidad: "documentos del grupo 
 const salida = { "entradas-blog": [], "terminos-kunakpedia": [], "documentos-cientificos": [] };
 const sinCuerpo = [];
 
+/**
+ * LOS AUTORES (117.ª) — se acumulan desde las FIRMAS de las entradas, y sus
+ * campos propios se completan desde SU ARCHIVO.
+ *
+ * ⚠ **Un autor sin entradas NO entra**, y eso es deliberado: la colección
+ * existe para que las firmas apunten a algo. `mar_ramirez` tiene archivo y
+ * firma **0** entradas (medido: 0 de 152), así que no se siembra — sembrarlo
+ * sería añadir una fila que ninguna URL del clon alcanza. Se dice con su
+ * cardinal en vez de dejarlo pasar por omisión.
+ */
+const AUTORES = new Map();
+
 /* ══════════════════════════════════════════════════════════════════════════
  * EL DUPLICADO — SE DETECTA Y SE REPORTA; **NO SE EXCLUYE**
  *
@@ -414,6 +489,18 @@ for (const [clave, p] of trabajo) {
     const act = deco(uno(sin, SEL.act)); if (act) { cuenta("fechaActualizacion", act); doc.fechaActualizacion = act; }
     if (destacada) doc.imagenDestacada = destacada;
     if (recurso) doc.recurso = recurso;
+    /* LA FIRMA (117.ª) — `cuenta()` la mete en el censo, así que si el selector
+     * dejara de casar saldría por su CERO en vez de por un campo que
+     * desaparece en silencio (§sondas 4). */
+    const f = cuenta("firmas", SABOTAJE === "selector-muerto" ? null : firmasDe(sin));
+    if (f) {
+      doc.firmas = f.firmas.map((x) => ({ ...x, proemio: deco(x.proemio) }));
+      for (const a of f.autores) {
+        const ya = AUTORES.get(a.slug);
+        if (!ya) AUTORES.set(a.slug, { slug: a.slug, nombre: deco(a.nombre), fotos: new Set(a.foto ? [a.foto] : []) });
+        else if (a.foto) ya.fotos.add(a.foto);
+      }
+    }
     salida["entradas-blog"].push(doc);
   } else if (col === "terminos-kunakpedia") {
     const miga = cuenta("miga", SABOTAJE === "selector-muerto" ? null : migaDe(sin));
@@ -764,6 +851,65 @@ for (const [cl, { n, ficha }] of Object.entries(ABIERTOS)) {
       (ok ? "" : `\n     ⛔ EL NÚMERO SE MOVIÓ: la declaración caduca. Re-mídelo y re-decláralo, no lo subas.`),
   );
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+ * LOS AUTORES — completados desde SU ARCHIVO (117.ª · ESCALÓN 2)
+ *
+ * Las firmas dan `slug`, `nombre` y `foto`. `cargo`, `redes` y `bio` son
+ * contenido propio del término y viven en `/author/<slug>/`, así que se leen
+ * de ahí. Los tres son OPCIONALES **con su fracción medida** — el original
+ * ejercita el caso vacío, así que no son caminos sin estrenar.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const DIR_AUTOR = join(RAIZ, "corpus", "fase-3", "autor", "author");
+const autoresSalida = [];
+let sinArchivo = 0;
+for (const a of [...AUTORES.values()].sort((x, y) => x.slug.localeCompare(y.slug))) {
+  const idx = join(DIR_AUTOR, a.slug, "index.html");
+  const doc = { slug: a.slug, nombre: a.nombre };
+  /* La foto del TEMA (`user.svg`) NO es la foto de nadie: es el marcador por
+   * defecto. Guardarla como si fuera contenido sería transcribir un default
+   * del tema como si lo hubiera escrito una persona. */
+  const propias = [...a.fotos].filter((f) => !/\/themes\/[^/]+\/assets\/images\/user\.svg$/i.test(f));
+  if (propias.length) doc.fotoOrigen = propias[0];
+
+  if (!existsSync(idx)) { sinArchivo++; autoresSalida.push(doc); continue; }
+  const h = sinScriptNiStyle(readFileSync(idx, "utf8"));
+  const tras = (h.match(/<h1[^>]*>[\s\S]*?<\/h1>([\s\S]{0,900})/i) || [])[1] || "";
+  const cargo = deco(soloTexto((tras.match(/<p[^>]*>([\s\S]*?)<\/p>/) || [])[1] || ""));
+  if (cargo) doc.cargo = cargo;
+  /* ⚠ El nombre de la red se DERIVA DEL HOST, no de una lista de literales.
+   * La v1 llevaba un allowlist —linkedin/facebook/twitter/instagram— y daba
+   * **4 de 5** donde el censo del archivo dice 5: se comía el `website` de
+   * `admin`. Es §regla 9 caso 7 (*un conjunto enumerado a mano dentro de una
+   * sonda es un dato recordado*) con su modo de fallo típico: no dio error,
+   * dio un campo que desaparece. Derivado del host, lo nuevo entra solo. */
+  const redes = [];
+  for (const m of tras.matchAll(/<a[^>]*\bhref="([^"]+)"[^>]*>/g)) {
+    const href = m[1];
+    if (/^(#|mailto:|javascript:)/i.test(href)) continue;
+    let host;
+    try { host = new URL(href, "https://kunakair.com").hostname.replace(/^www\./, ""); } catch { continue; }
+    const red = host === "kunakair.com" ? "website" : host.split(".")[0];
+    if (!redes.some((x) => x.red === red)) redes.push({ red, href });
+  }
+  /* Vuelve `[]`, no ausente: el bloque de redes existe y simplemente puede no
+   * llevar enlaces (§F2-5-ESCALON-ETIQUETAS). */
+  doc.redes = redes;
+  autoresSalida.push(doc);
+}
+console.log(
+  `\n  AUTORES (117.ª): **${autoresSalida.length}** derivados de las firmas` +
+    ` · con cargo **${autoresSalida.filter((a) => a.cargo).length}**` +
+    ` · con foto propia **${autoresSalida.filter((a) => a.fotoOrigen).length}**` +
+    ` · con ≥1 red **${autoresSalida.filter((a) => a.redes?.length).length}**` +
+    ` · SIN archivo en el corpus **${sinArchivo}**`,
+);
+const conFirmas = salida["entradas-blog"].filter((d) => d.firmas?.length).length;
+console.log(
+  `  FIRMAS: **${conFirmas} de ${salida["entradas-blog"].length}** entradas` +
+    ` · con DOS papeles **${salida["entradas-blog"].filter((d) => d.firmas?.length >= 2).length}**`,
+);
+salida.autores = autoresSalida;
 
 censo.paginas = trabajo.length - sinCuerpo.length;
 const muertos = censo.informe("de campos");
