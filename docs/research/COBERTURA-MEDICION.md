@@ -474,6 +474,42 @@ recuento de «los dos lados» de §2 estaba mal en los dos sentidos — ver ahí
 > nueve ejes. Tener specs no es tener cobertura — la cobertura la da haber
 > comparado, y no se ha comparado nada del clon porque no hay clon.
 
+## ⚠ ARQUETIPO NUEVO SIN COMPARADOR DE GEOMETRÍA: el ARCHIVO DE `sector` (2026-08-27, 118.ª)
+
+**Se declara aquí porque es exactamente la pregunta que este documento
+contesta**, y porque §*UN ARQUETIPO NUEVO NO HEREDA COBERTURA* dice que
+construirle su sonda comparadora **es parte de la tanda, no un extra**. Esta
+tanda **no la construyó**, así que el hueco se escribe con su cardinal en vez
+de dejarlo en el silencio de una celda vacía.
+
+**Qué se emitió:** `L1-sector`, el archivo de taxonomía — **13 páginas**
+(`/sector/<slug>` y `/sector/<slug>/page/N`) más **5 redirecciones 301**.
+
+| eje | estado | con qué |
+|---|---|---|
+| **marcado / árbol** | ✅ **COMPARADO contra el original** | cotejo de la salida servida contra la captura: **12 de 12 ejes a Δ0** en `/sector/edar` (título · `h1` · secciones · filas · columnas · módulos · `tax-tap` · columna vacía · barra a la derecha · 0 `<article>` · 0 `role=navigation` · 1 eslabón de miga) |
+| **estado HTTP** | ✅ **COMPARADO** | 6 base **200** · 7 `/page/N` **200** · 5 **301** con su destino, medidos contra `estados-114` |
+| **regresión vertical** | ⚠ **solo CLON** | `clon-base` a los dos anchos: aditivo, 0 de 413 movidas. **No mide fidelidad** |
+| **GEOMETRÍA** (`docH`, ritmo, alturas, anchos) | ⛔ **NUNCA** | **0 de 13** capturas medidas con `getComputedStyle` |
+
+> **Lo que falta no es una medida, es un INSTRUMENTO.** El corpus de este
+> arquetipo da **marcado**, no geometría: un `index.html` congelado no trae
+> alturas. Comparar geometría exige medir el original **en vivo**, o capturarlo
+> **con sus hojas** (§*una captura sin sus hojas no es la página*) — y de las
+> hojas de esta familia hay **0 capturadas**.
+
+**Consecuencia declarada, y es la que evita el arreglo falso:** el componente
+**no cablea** clase de ritmo para la fila 2. Sin medición, cualquier valor que
+se escribiera sería el de una instancia inventada — que es justo el mecanismo
+del *arreglo falso* que §*Estructura que en realidad es contenido* describe.
+
+**Y lo que este hueco NO invalida:** el marcado y los códigos de estado sí están
+comparados contra el original, con **dos** instrumentos distintos. Lo que no
+está medido es **cuánto miden las cajas**, y eso se dice así en vez de dejar que
+un `clon-base` verde se lea como cobertura.
+
+---
+
 ## Por qué existe este documento
 
 En la tanda de la miga (A-QA1b) tres rutas —`/accesorios`, `/software-…`,

@@ -23018,6 +23018,97 @@ tandas intermedias la movieron»** — una **COTA**, no una atribución limpia.
 La atribución limpia exigiría una base tomada justo antes de la ficha, y
 **esa base no existe**.
 
+## 118.ª · EL CIERRE — F3-4 con sus TRES decisiones implementadas, y las 5 predicciones adjudicadas (2026-08-27)
+
+### 1 · El pre-registro, adjudicado — 5 de 5, ninguna reescrita
+
+| | predicción | veredicto |
+|---|---|---|
+| **P1** | `categoria` NO-OP absoluto | ✅ **0** claves `/categoria/` · **0** enlaces rotos (6 href de código, los 6 al original) |
+| **P2** | `caso → sector` NO-OP absoluto | ✅ ya existía y poblada: **11 términos · 57 relaciones** |
+| **P3** | +13 páginas exactas · 0 desaparecidas | ✅ **13 y 0** a los DOS anchos, y son las 13 nombradas en el 0b |
+| **P4** | las 5 redirecciones NO son páginas | ✅ **416 → 429** claves crudas, clavado. Ninguna de las 5 en el manifiesto |
+| **P5** | las 413 no se mueven, a los dos anchos | ✅ **0 movidas** de 413 · y **0** también en `h1.y`, secciones y anclas |
+
+**Que P5 salga igual a 1440 y a 390 pesa más que el número**: son dos
+maquetaciones distintas, así que un 0 en las dos no puede ser un contenedor
+tapando (§*reproducirse entre anchos pesa más que el tamaño*).
+
+**Fidelidad de lo nuevo, con otro instrumento** —porque `clon-base` es
+clon-contra-clon y **no mide fidelidad**—: `/sector/edar` servido contra su
+captura, **12 de 12 ejes a Δ0**.
+
+`npm run check` entero en verde, corrido **fuera** (`NEXT_DIST_DIR=.next-check`)
+para no llevarse el `.next` promovido: 0 errores de lint, `qa:manifiesto` **426
+rutas · 0 desaparecidas**, `qa:slugs` **LIMPIO, 223 slugs sin una colisión**.
+
+### 2 · La mesa `CMS-F34-*`, en sus tres decisiones
+
+| | qué era | estado |
+|---|---|---|
+| **(a)** `categoria` | relación SIN archivo, 0 rutas | ✅ **IMPLEMENTADA** — no había nada que construir, y **0** enlaces que repuntar |
+| **(c1)** `caso → sector` | la relación, 0 rutas | ✅ **IMPLEMENTADA** — ya existía; su consumidor (el filtro, 11 + 1) ya la lee |
+| **(c2)** el archivo `/es/sector/*` | 13 páginas + 5 redirecciones | ✅ **IMPLEMENTADA** — `ESQUEMA-CMS.md` §7i |
+
+### 3 · ⚠ LO QUE ESTA TANDA DEJA SIN MEDIR, cada cosa con su cardinal
+
+**De lo que ella misma construyó** — y es lo que hay que leer antes de dar el
+arquetipo por cubierto:
+
+- **el RITMO de la fila 2 del archivo — SIN MEDIR.** El corpus da marcado, no
+  geometría: **0 de 13** capturas medidas con `getComputedStyle`. El componente
+  **no cablea** clase de ritmo, porque cablear un valor sin medirlo es cómo se
+  fabrica un arreglo falso. Es el hueco de §*UN ARQUETIPO NUEVO NO HEREDA
+  COBERTURA*: hay guarda solo-clon y cotejo de MARCADO, y **no** comparador de
+  geometría de dos lados para esta forma;
+- **la LISTA DE RUTAS es MEDIDA, no derivada.** `ceil(casos/k)` barrido para
+  `k = 1..30` acierta como mucho **8 de 9** (`k = 5`) y falla en `industria`.
+  El archivo no pagina los casos. **Un término nuevo NO entra solo**;
+- **`industria` es la única anomalía y lo es DOS VECES** —falla la paginación y
+  trae título de archivo propio—. Con **n = 1** no es un discriminador: se
+  ficha, no se explica;
+- **`mineria` y `obras`: 2 de 11** términos sin ninguna captura, así que su
+  número de páginas es **DESCONOCIDO**, no 0;
+- **el REPUNTE de `hrefTermino()` — NO HECHO, y a propósito.** El archivo ya
+  está clonado, así que §Regla de rutas locales lo pediría. Alcance derivado:
+  **1 fichero + 2 consumidores**. No se hace porque el encargo scopea (c2) a
+  *emitir*, y porque **5 de los 11** términos redirigen (uno en bucle): un chip
+  local llevaría al visitante a un 301 propio. Fiel, pero es un cambio de
+  comportamiento en páginas ya verificadas y merece su propia adjudicación.
+
+**Y las fichas vivas que esta tanda NO cierra**, cada una con su número:
+
+- ~~las **8 rutas no atribuidas** de P2~~ ✅ **CERRADAS** en el PASO 0a;
+- **`F3-4-FICHA-FOTOS`** — **0 de 5** fotos de la ficha capturadas. Lo cierra
+  RED;
+- **`F3-4-RUTAS-VACIAS`** — **8 de 27** rutas de `categoria` sirven 0 tarjetas;
+- **`F3-4-CSS-DINAMICO`** — `divi-dynamic-critical-inline-css` ausente en **2 de
+  484** documentos, los dos autores sin bio. Sin diagnosticar;
+- **el tercer eje del `proemio`** — **n = 1**, no se cierra;
+- **`rutasEmitidas()` sin argumento devuelve 0 en silencio** — **0 de 17**
+  llamadas lo hacen hoy, y su arreglo vive en `lib.mjs`, bloqueado esta tanda;
+- **el bucle de `mineria`** — 5 saltos, necesita red;
+- **la varianza del régimen `--`** — intacta: **0 de 6** términos de `author`
+  y **0 de 131** documentos del corpus;
+- **8 slugs RECLAMADOS SIN RUTA** (§F3-3-REGISTRO-SOBRE-RECLAMA) — preexistente,
+  lo publica `qa:slugs`; se nombra para que no se lea como estrenado por esta
+  tanda.
+
+### 4 · El barrido de §regla 12 — 2 de 16, y los dos son MITAD QUE FALTA
+
+Acotado a las actas de F3-4: **16 enunciados con forma de regla · 14 son
+EVENTOS** y se quedan donde están. Los **2** que son regla van a `CLAUDE.md`
+**dentro de la regla que ya existía**, no como reglas nuevas:
+
+1. *«No hay separadora» se escribe con la lista de separadoras que se buscaron*
+   → mitad que faltaba a §*una afirmación de que un discriminador NO EXISTE se
+   escribe con la lista de canales que se miraron*;
+2. *una opción nombrada por la INTENCIÓN elige por ti el valor servido*
+   → tercera fila de la tabla de dos pasos (frescura · efecto), que sólo
+   contemplaba *no es mi build* y *no hace nada*.
+
+---
+
 ## 118.ª PASO 0b · PRE-REGISTRO — con su ancho, su premisa DERIVADA y su refutación (2026-08-27)
 
 **Escrito ANTES de tocar una línea de `src/`.** La premisa entera sale de
