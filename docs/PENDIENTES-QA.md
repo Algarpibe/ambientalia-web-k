@@ -1,5 +1,181 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 📋 §F3-5-CENSO · **el inventario RE-DERIVADO — no son 5, y el número depende de la unidad** — 119.ª, 2026-08-27
+
+**NO se decide ningún content type.** El censo es lo que hace decidible la
+fase, y tomarla antes de tenerlo es la lección más cara de esta etapa.
+
+Derivación: `docs/research/cola-larga/derivaciones/censo-f35-119.{mjs,log}` ·
+**26/26 `page.tsx` evaluados**, controles en verde.
+
+### ⚠⚠ La v1 midió al MÓDULO y dio la respuesta al revés
+
+> **Un módulo puede ser CONTENIDO y la página importarle sólo un HELPER.**
+> `lib/casos.ts` contiene el catálogo de casos —contenido sin discusión— y
+> `casos-de-exito/[slug]/page.tsx` le importa `{ metadataDeCaso, prefijoDe }`,
+> que son **dos funciones**: su contenido lo lee de `lib/cms/casos`, o sea que
+> **ya está migrada**.
+
+Medido al módulo el censo daba **9**; medido al **SÍMBOLO IMPORTADO**, que es la
+unidad que la pregunta usa, da **4**. La diferencia son exactamente las páginas
+híbridas —cascarón migrado, o helper de fichero con contenido de Payload—, y
+medirlas al módulo las habría metido enteras en F3-5.
+
+Es §*la causa común: el NIVEL al que se mide* con el contenedor puesto en el
+**módulo**: un fichero de 900 líneas absorbe la diferencia entre importar su
+catálogo entero e importarle una función de dos líneas.
+
+**Control del clasificador** (§regla 8), sobre conjuntos cuyo papel se conoce:
+
+| control | resultado |
+|---|---|
+| `lib/cms/**` NO debe salir CONTENIDO | **✓ 11 módulos · 0 mal** |
+| `lib/utils.ts` NO debe salir CONTENIDO | **✓ HELPER** |
+| partición de los 26 `page.tsx` | **4 + 13 + 9 = 26 ✓** |
+
+### El censo, y son TRES cardinales ciertos a la vez — uno por unidad
+
+**El encargo pedía «si sigue siendo 5, eso también se escribe». NO sigue siendo
+5, y tampoco es un solo número:**
+
+| unidad de la pregunta | n | cuáles |
+|---|---|---|
+| **importa contenido DIRECTAMENTE** en su `page.tsx` | **4** | `/accesorios` · `/kunak-api` · `/monitor-calidad-aire` · `/software-…` |
+| lee contenido **propio** de fichero (directo **o** vía componente, **sin** el cascarón compartido) | **10** | las 4 + `/` · `/sectores/[slug]` · `/sector/[slug]` · `/sector/[slug]/page/[n]` · `/casos-de-exito/[slug]` · `/case-studies/[slug]` |
+| **UNIÓN** — lee **algo** de `src/lib`, cascarón incluido | **13** | las 10 + `/[slug]` · `/faqs/[slug]` · `/recursos/[...ruta]` |
+
+> **Y el eje que hay que separar o todo parece una familia:** `lib/nav.ts` y
+> `lib/footer.ts` —el cascarón— los lee casi todo. Sumados a la firma, 13
+> páginas parecen «sin migrar»; descontados, **3 de esas 13 leen SÓLO el
+> cascarón** y su cuerpo ya está en Payload (§*un total puede confundir DOS
+> EJES*).
+
+**Qué se movió respecto al inventario de la 81.ª (`5 rutas · 4 arquetipos + 1
+variante`), y por qué:**
+
+| cambio | causa derivada |
+|---|---|
+| **`/` (HOME) SALE** del cubo directo | sólo importa `{ PRODUCTOS_HOME_IDS }` — una lista de ids, no contenido. Sus productos ya vienen de `lib/cms/productos`. **Sigue en el cubo de 10**: `clients` · `home-carrusel-sectores` · `testimonials` · `articles` · `projects` le llegan **por componente** |
+| **`/sector/[slug]` y su `/page/[n]` ENTRAN** | arquetipo nuevo de la **118.ª**: no existía cuando se escribió el inventario. Leen `lib/sector-archivo.ts` |
+| **`/sectores/[slug]` ENTRA** | `clients` · `projects` · `articles` por componente |
+| **`/casos-de-exito/[slug]` y `/case-studies/[slug]` ENTRAN** | `lib/grupo-c-plantilla.ts` por componente |
+
+### El RÉGIMEN, con los DOS marcadores y nombrando la combinación
+
+Derivado del `<body>` de la captura, **no supuesto**:
+
+| arquetipo | `et_pb_pagebuilder_layout` | `et-tb-has-body` | **régimen** | `…_tb_body` occ/dis |
+|---|---|---|---|---|
+| **HOME** | — | — | ⛔ **NO DERIVABLE** | sin captura |
+| **PRODUCTO** (`monitor-calidad-aire`) | ✓ | ✗ | **`B-` builder** | 0/0 |
+| **CATÁLOGO** (`accesorios`) | ✓ | ✗ | **`B-` builder** | 0/0 |
+| **SOFTWARE** | ✓ | ✗ | **`B-` builder** | 0/0 |
+| **variante API** (`kunak-api`) | ✓ | ✗ | **`B-` builder** | 0/0 |
+
+**Las cuatro capturadas son `B-` puro**, y eso decide qué tests valen: en
+régimen de builder **existe una persona que editó esta página**, así que los
+tests A y B se aplican **tal como están escritos**.
+
+> ⛔ **Y LA HOME NO ESTÁ CAPTURADA — 0 documentos con `url == /es/` en
+> `corpus/INDICE.json` (312 entradas).** Su régimen **no se puede derivar
+> offline**, y es §*una campaña se declara COMPLETA respecto a un USO*: la
+> captura está completa para sembrar la cola larga y **vacía para el arquetipo
+> más antiguo del proyecto**. Sale **SIN DERIVAR con su cardinal**, no se
+> supone «será `B-` como sus hermanas».
+>
+> ⚠ **Y el cero casi se publica mal:** la primera búsqueda usó `find -type d` y
+> dio **0 para las cuatro** — que sí están, como **ficheros**
+> `corpus/productos/*.html`. §sondas 4 dentro de esta misma derivación: un
+> filtro que no casa no es un cero. El **0 de la HOME sobrevivió** a rehacer la
+> búsqueda por fichero y por URL en el índice.
+
+### ⚠ La incógnita de la fase, y está más ACOTADA de lo que el encargo dice
+
+El encargo la enuncia así: *«cada uno es singleton o casi, HOME el caso puro.
+Una instancia no permite separar plantilla de campo»*. **La primera mitad está
+medida y la segunda no se sigue, en régimen `B-`:**
+
+| test | ¿necesita 2 instancias? | por qué |
+|---|---|---|
+| **A · el de Divi** (los dos anchos) | **NO** | se mide **una** instancia a **1440 y 390** y se mira si el número se mueve. Es INTRA-instancia |
+| **B · el general** (varianza intra-página) | **NO** | compara **hermanos del mismo hueco dentro de la misma página**. Es INTRA-instancia |
+| la varianza **entre instancias** | **SÍ** | pero es el discriminador del régimen **plantillado**, y estos son `B-` |
+
+> **Así que ser singleton NO impide separar plantilla de campo en `B-`: los dos
+> tests que valen ahí son intra-instancia.** Lo que un singleton pierde es el
+> tercer discriminador, que **en este régimen no aplica**.
+
+**Lo que sí queda SIN PROBAR, que es un residuo real y más pequeño:** una
+propiedad que caiga **fuera del alcance del test A** (o sea que no sea ritmo —
+caja, tipografía) **y** que aparezca **una sola vez en toda la página** (o sea
+sin hermano para el test B). Ahí no hay test que aplicar, y §CLAUDE.md ya dicta
+qué hacer: **no se cablea** — se anota como pendiente de medir en una segunda
+instancia. Su cardinal **no está derivado**: exige recorrer los módulos de cada
+arquetipo, y eso es trabajo de la fase, no de este censo.
+
+**Y las tres precauciones que el propio documento pone antes del test A**, que
+en `B-` son las que muerden: mirar la **UNIDAD DECLARADA** (un `em` no se mueve
+con el ancho y el test A dictaría CAMPO sobre plantilla del tema) · comprobar
+que el eje tenga **algún valor distinto del inicial** (24 de 49 celdas computan
+0 en un arquetipo de builder medido) · y **cuando el test A y la CASCADA
+discrepen, gana la cascada**.
+
+### La cobertura contra el original — **y aquí el encargo parte de una premisa vieja**
+
+El encargo dice: *«HOME · PRODUCTO · CATÁLOGO · SOFTWARE son los arquetipos más
+antiguos y la matriz los tiene en `c` —clon contra clon—»*.
+
+**Derivado de `cobertura-2026-08-25.json`, eso ya no es cierto.** Los cinco
+tienen **el mismo perfil exacto**, y no hay ni una celda en `c`:
+
+| eje | estado | sonda que lo acredita |
+|---|---|---|
+| `docH` | **O** | `c-cmp-1440-2026-08-01` |
+| `base` | **O** | `c-cabecera-1440` |
+| `secciones` | **O** | `c-cmp-1440-2026-08-01` |
+| `anchos` | **O** | `c-banda` (HOME) · `a-miga` (las otras 4) |
+| `comport` | **O** | `comportamiento-1440` |
+| `enlaces` | ⚠ **O** | `enlaces` — **la sonda de UN SOLO LADO** (§8-ENLACES-ACREDITA-UN-SOLO-LADO) |
+| **`filas`** | **·** | — |
+| **`modulos`** | **·** | — |
+| `pie` | **·** | — |
+| `offsets` | **·** | — |
+
+**Tres lecturas:**
+
+1. **el hueco no es «todo»: son 5 de 10 ejes acreditados de dos lados**, y hay
+   que decirlo así porque «están en `c`» mandaría a reconstruir lo que existe;
+2. ⚠ **el sexto `O` es el que fiché en el ESCALÓN 1**: los cinco lo tienen de
+   `enlaces`, que no lee el original. Descontado, son **5 de 10**;
+3. 🔴 **y los dos ejes que faltan son EXACTAMENTE los que F3-5 necesita.**
+   `filas` y `modulos` están a **`·` en los cinco** — y son el nivel donde vive
+   la separación plantilla/campo: `flujo`, `anchoPct`, `lh`, el `mb` por
+   defecto. **Sin ellos, F3-5 modelaría campos sin poder comprobar ninguno.**
+
+> **⇒ Falta un INSTRUMENTO, no una medida** — §*UN ARQUETIPO NUEVO NO HEREDA
+> COBERTURA* vale igual para uno viejo que nunca se comparó a ese nivel. Los
+> comparadores de fila y módulo **existen** (`mono-cmp`, `tree-cmp`, `lh-cmp`,
+> `f33-cmp`), y **ninguno tiene a estas 5 rutas en su universo**. Construir o
+> extender uno **es parte del trabajo de F3-5**, y se dice ahora, no al final.
+
+**Y `/sector/[slug]` (+ `/page/[n]`, 13 rutas emitidas) no está ni en la
+matriz**: entró con la 118.ª el 2026-08-27 y la congelada es del 08-25. Su
+estado ya está declarado en `COBERTURA-MEDICION.md`: **0 de 13** capturas con
+geometría medida.
+
+### Lo que este censo NO contesta
+
+- **NO decide ningún content type** — es el encargo entero de la fase;
+- **NO deriva el cardinal de propiedades SIN PROBAR** por arquetipo: exige
+  recorrer módulos, que es trabajo de F3-5;
+- **NO deriva el régimen de la HOME** — no hay captura, y offline no hay más
+  que hacer;
+- **NO mide importaciones más allá de `page.tsx → componente`**: una cadena de
+  dos saltos o más no entra. Su cardinal **no está derivado**.
+
+---
+
+
 ## 📋 §8-DEUDA · **la deuda abierta CLASIFICADA contra el listón — la lista, no la decisión** — 119.ª, 2026-08-27
 
 **Por qué existe esta ficha:** sin ella el proyecto no es estimable. La política
@@ -17,16 +193,24 @@ Derivación: `docs/research/cola-larga/derivaciones/deuda-abierta-119.{mjs,log}`
 | **unidad** | **LA FICHA** (una cabecera `## `), **NO el defecto** — una ficha puede contener varios y dos fichas pueden hablar del mismo. Son dos cardinales ciertos a la vez, uno por unidad |
 | **total** | **314 fichas** — ⚠ ver la nota de abajo: el `.log` dice **315** |
 
-> ⚠ **El censo se cuenta a SÍ MISMO, y los dos números son ciertos.** La
-> derivación se corrió **antes** de escribir esta ficha (**314**) y se re-corrió
-> **después** (**315**), que es lo que hay congelado en el `.log`. La diferencia
-> es exactamente esta ficha. Se dice en vez de cuadrarlos, porque *«el `.log`
-> dice 315 y el acta 314»* es justo la clase de discrepancia que un lector lee
-> como error del instrumento (§regla 1 — *lo que imprime y lo que cuenta no
-> pueden discrepar*, cobrada sobre un censo cuyo objeto lo incluye).
+> ⚠ **El censo se cuenta a SÍ MISMO, así que su total sube con cada acta que la
+> tanda escribe — y TODOS los números son ciertos, cada uno con su momento.**
 >
-> **Y el `⛔` NO se movió: 46 antes y 46 después**, porque esta ficha es `📋`.
-> Eso es el control de que el censo no infla su propio registro de deuda.
+> | momento | total |
+> |---|---|
+> | antes de escribir esta ficha (el número que usa este acta) | **314** |
+> | tras escribirla — es lo congelado en el `.log` | **315** |
+> | tras el acta de §F3-5-CENSO (ESCALÓN 2) | **316** |
+>
+> Se dice en vez de cuadrarlos, porque *«el `.log` dice 315 y el acta 314»* es
+> justo la clase de discrepancia que un lector lee como error del instrumento
+> (§regla 1 — *lo que imprime y lo que cuenta no pueden discrepar*, cobrada
+> sobre un censo cuyo objeto **lo incluye**).
+>
+> **Y el `⛔` NO se movió en ninguno de los tres momentos: 46 · 46 · 46**, porque
+> las dos fichas nuevas son `📋`. Ése es el control de que el censo **no infla su
+> propio registro de deuda** — el total sube y el registro no, que es lo que
+> tenía que pasar.
 
 | marcador | n | % |
 |---|---|---|

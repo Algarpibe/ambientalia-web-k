@@ -1,0 +1,117 @@
+══════════════════════════════════════════════════════════════════════════════════════
+CENSO DE F3-5 · qué arquetipos leen su contenido de `src/lib/` — 119.ª, 2026-08-27
+══════════════════════════════════════════════════════════════════════════════════════
+
+ALCANCE : apps/web/src — 26 `page.tsx` · 34 módulos en `src/lib`
+UNIDAD  : el `page.tsx` (una entrada del App Router), NO la ruta emitida
+
+──────────────────────────────────────────────────────────────────────────────────────
+CONTROL del clasificador de módulos (§regla 8)
+──────────────────────────────────────────────────────────────────────────────────────
+  lib/cms/** NO debe salir CONTENIDO : ✓  11 módulos · 0 mal
+  lib/utils.ts NO debe salir CONTENIDO: ✓  (HELPER)
+
+  reparto de `src/lib/*` (sin cms): CONTENIDO 22 · HELPER 1
+
+══════════════════════════════════════════════════════════════════════════════════════
+EL CENSO — page.tsx que importan CONTENIDO de src/lib (import DIRECTO)
+══════════════════════════════════════════════════════════════════════════════════════
+  app/accesorios/page.tsx                        ← lib/accesorios.ts:ACCESORIO_CATEGORIAS · lib/accesorios.ts:ACCESORIOS_ARTICLES · lib/accesorios.ts:BREADCRUMB · lib/accesorios.ts:INTRO_LEFT · lib/accesorios.ts:INTRO_RIGHT_ITEMS
+  app/kunak-api/page.tsx                         ← lib/api.ts:API_ARTICLES · lib/api.ts:BREADCRUMB
+  app/monitor-calidad-aire/page.tsx              ← lib/monitor.ts:MONITOR_ARTICLES
+  app/software-de-medicion-calidad-del-aire/page.tsx ← lib/software.ts:BREADCRUMB · lib/software.ts:CASOS · lib/software.ts:SOFTWARE_ARTICLES
+
+  TOTAL: 4 de 26 page.tsx
+
+──────────────────────────────────────────────────────────────────────────────────────
+LOS QUE YA LEEN DE PAYLOAD (lib/cms) y NO importan contenido de fichero
+──────────────────────────────────────────────────────────────────────────────────────
+  app/[slug]/page.tsx
+  app/case-studies/[slug]/page.tsx
+  app/casos-de-exito/[slug]/page.tsx
+  app/casos-de-exito/page.tsx
+  app/centro-de-ayuda/[...ruta]/page.tsx
+  app/empresa/[...ruta]/page.tsx
+  app/etiqueta/[slug]/page/[n]/page.tsx
+  app/faqs/[slug]/page.tsx
+  app/page.tsx
+  app/recursos/[...ruta]/page.tsx
+  app/sectores/[slug]/page.tsx
+  app/soporte/[...ruta]/page.tsx
+  app/vista-previa/[slug]/page.tsx
+  n = 13
+
+──────────────────────────────────────────────────────────────────────────────────────
+NI LO UNO NI LO OTRO — se publican para que no se lean como clasificados
+──────────────────────────────────────────────────────────────────────────────────────
+  app/blog/page.tsx                              otros: —
+  app/blog/page/[n]/page.tsx                     otros: —
+  app/etiqueta/[slug]/page.tsx                   otros: —
+  app/glosario/page.tsx                          otros: —
+  app/glosario/page/[n]/page.tsx                 otros: —
+  app/scientific-category/[slug]/page.tsx        otros: —
+  app/scientific-category/[slug]/page/[n]/page.tsx otros: —
+  app/sector/[slug]/page.tsx                     otros: —
+  app/sector/[slug]/page/[n]/page.tsx            otros: —
+  n = 9
+
+══════════════════════════════════════════════════════════════════════════════════════
+TRANSITIVAS — contenido que llega por un COMPONENTE, no por el page.tsx
+══════════════════════════════════════════════════════════════════════════════════════
+  app/[slug]/page.tsx                            vía componente ← lib/nav.ts · lib/footer.ts
+  app/accesorios/page.tsx                        vía componente ← lib/nav.ts · lib/footer.ts · lib/articles.ts · lib/monitor.ts
+  app/case-studies/[slug]/page.tsx               vía componente ← lib/grupo-c-plantilla.ts
+  app/casos-de-exito/[slug]/page.tsx             vía componente ← lib/grupo-c-plantilla.ts
+  app/faqs/[slug]/page.tsx                       vía componente ← lib/nav.ts · lib/footer.ts
+  app/kunak-api/page.tsx                         vía componente ← lib/nav.ts · lib/footer.ts · lib/articles.ts · lib/monitor.ts · lib/api.ts
+  app/monitor-calidad-aire/page.tsx              vía componente ← lib/nav.ts · lib/footer.ts · lib/projects.ts · lib/articles.ts · lib/monitor.ts
+  app/page.tsx                                   vía componente ← lib/nav.ts · lib/clients.ts · lib/home-carrusel-sectores.ts · lib/testimonials.ts · lib/articles.ts · lib/projects.ts · lib/footer.ts
+  app/recursos/[...ruta]/page.tsx                vía componente ← lib/nav.ts · lib/footer.ts
+  app/sector/[slug]/page.tsx                     vía componente ← lib/sector-archivo.ts
+  app/sector/[slug]/page/[n]/page.tsx            vía componente ← lib/sector-archivo.ts
+  app/sectores/[slug]/page.tsx                   vía componente ← lib/nav.ts · lib/footer.ts · lib/clients.ts · lib/projects.ts · lib/articles.ts
+  app/software-de-medicion-calidad-del-aire/page.tsx vía componente ← lib/nav.ts · lib/footer.ts · lib/articles.ts · lib/projects.ts · lib/monitor.ts · lib/software.ts
+  n = 13  ⚠ conjunto DISTINTO del de arriba: se publica aparte, no se suma
+
+══════════════════════════════════════════════════════════════════════════════════════
+LA UNIÓN — page.tsx que leen ALGO de contenido de src/lib (directo O vía componente)
+══════════════════════════════════════════════════════════════════════════════════════
+  app/[slug]/page.tsx                                2 mód · lib/nav.ts · lib/footer.ts
+  app/accesorios/page.tsx                            5 mód · lib/accesorios.ts · lib/nav.ts · lib/footer.ts · lib/articles.ts · lib/monitor.ts
+  app/case-studies/[slug]/page.tsx                   1 mód · lib/grupo-c-plantilla.ts
+  app/casos-de-exito/[slug]/page.tsx                 1 mód · lib/grupo-c-plantilla.ts
+  app/faqs/[slug]/page.tsx                           2 mód · lib/nav.ts · lib/footer.ts
+  app/kunak-api/page.tsx                             5 mód · lib/api.ts · lib/nav.ts · lib/footer.ts · lib/articles.ts · lib/monitor.ts
+  app/monitor-calidad-aire/page.tsx                  5 mód · lib/monitor.ts · lib/nav.ts · lib/footer.ts · lib/projects.ts · lib/articles.ts
+  app/page.tsx                                       7 mód · lib/nav.ts · lib/clients.ts · lib/home-carrusel-sectores.ts · lib/testimonials.ts · lib/articles.ts · lib/projects.ts · lib/footer.ts
+  app/recursos/[...ruta]/page.tsx                    2 mód · lib/nav.ts · lib/footer.ts
+  app/sector/[slug]/page.tsx                         1 mód · lib/sector-archivo.ts
+  app/sector/[slug]/page/[n]/page.tsx                1 mód · lib/sector-archivo.ts
+  app/sectores/[slug]/page.tsx                       5 mód · lib/nav.ts · lib/footer.ts · lib/clients.ts · lib/projects.ts · lib/articles.ts
+  app/software-de-medicion-calidad-del-aire/page.tsx 6 mód · lib/software.ts · lib/nav.ts · lib/footer.ts · lib/articles.ts · lib/projects.ts · lib/monitor.ts
+
+  UNIÓN = 13 de 26 page.tsx
+
+──────────────────────────────────────────────────────────────────────────────────────
+Y DESCOMPUESTO: fuera el CASCARÓN COMPARTIDO (lib/nav.ts · lib/footer.ts)
+──────────────────────────────────────────────────────────────────────────────────────
+  El cascarón lo lee casi todo, así que sumado a la firma hace que todo
+  parezca una sola familia (§un total puede confundir DOS EJES).
+
+  app/accesorios/page.tsx                            lib/accesorios.ts · lib/articles.ts · lib/monitor.ts
+  app/case-studies/[slug]/page.tsx                   lib/grupo-c-plantilla.ts
+  app/casos-de-exito/[slug]/page.tsx                 lib/grupo-c-plantilla.ts
+  app/kunak-api/page.tsx                             lib/api.ts · lib/articles.ts · lib/monitor.ts
+  app/monitor-calidad-aire/page.tsx                  lib/monitor.ts · lib/projects.ts · lib/articles.ts
+  app/page.tsx                                       lib/clients.ts · lib/home-carrusel-sectores.ts · lib/testimonials.ts · lib/articles.ts · lib/projects.ts
+  app/sector/[slug]/page.tsx                         lib/sector-archivo.ts
+  app/sector/[slug]/page/[n]/page.tsx                lib/sector-archivo.ts
+  app/sectores/[slug]/page.tsx                       lib/clients.ts · lib/projects.ts · lib/articles.ts
+  app/software-de-medicion-calidad-del-aire/page.tsx lib/software.ts · lib/articles.ts · lib/projects.ts · lib/monitor.ts
+
+  con contenido PROPIO de fichero : 10
+  SÓLO el cascarón compartido     : 3  app/[slug]/page.tsx · app/faqs/[slug]/page.tsx · app/recursos/[...ruta]/page.tsx
+
+  control de partición: 4 + 13 + 9 = 26 de 26  ✓
+
+✓ evaluadas 26/26 page.tsx · unidad: page.tsx
