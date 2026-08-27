@@ -59,6 +59,27 @@
     {
       "slug": "calidad-del-aire-en-las-comunidades",
       "ancho": 1440,
+      "eje": "caja.h",
+      "orig": 136,
+      "clon": 94
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Revisado y aprobado por la Jefa de producto ‹NOMBRE›",
+      "clon": "Revisado y aprobado por la Jefa de producto"
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/irene/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -76,6 +97,41 @@
     },
     {
       "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 1440,
+      "eje": "papel[1].proemio",
+      "orig": "Escrito por ‹NOMBRE›",
+      "clon": "Escrito por"
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 1440,
+      "eje": "papel[1].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 390,
+      "eje": "caja.h",
+      "orig": 115,
+      "clon": 94
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Revisado y aprobado por la Jefa de producto ‹NOMBRE›",
+      "clon": "Revisado y aprobado por la Jefa de producto"
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/irene/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
       "ancho": 390,
       "eje": "papel[0].img.w",
       "orig": 64
@@ -91,6 +147,20 @@
       "ancho": 390,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 390,
+      "eje": "papel[1].proemio",
+      "orig": "Escrito por ‹NOMBRE›",
+      "clon": "Escrito por"
+    },
+    {
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ancho": 390,
+      "eje": "papel[1].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "monitorizacion-near-reference",
@@ -102,6 +172,27 @@
     {
       "slug": "monitorizacion-near-reference",
       "ancho": 1440,
+      "eje": "caja.h",
+      "orig": 157,
+      "clon": 94
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›",
+      "clon": "Revisado y aprobado por la Directora Científica (CSO)"
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/edurne-ibarrola/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -119,6 +210,41 @@
     },
     {
       "slug": "monitorizacion-near-reference",
+      "ancho": 1440,
+      "eje": "papel[1].proemio",
+      "orig": "Escrito por ‹NOMBRE›",
+      "clon": "Escrito por"
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 1440,
+      "eje": "papel[1].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 390,
+      "eje": "caja.h",
+      "orig": 136,
+      "clon": 94
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›",
+      "clon": "Revisado y aprobado por la Directora Científica (CSO)"
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/edurne-ibarrola/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "monitorizacion-near-reference",
       "ancho": 390,
       "eje": "papel[0].img.w",
       "orig": 64
@@ -134,6 +260,20 @@
       "ancho": 390,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 390,
+      "eje": "papel[1].proemio",
+      "orig": "Escrito por ‹NOMBRE›",
+      "clon": "Escrito por"
+    },
+    {
+      "slug": "monitorizacion-near-reference",
+      "ancho": 390,
+      "eje": "papel[1].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
@@ -145,6 +285,27 @@
     {
       "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
       "ancho": 1440,
+      "eje": "caja.h",
+      "orig": 66,
+      "clon": 65
+    },
+    {
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por el ‹NOMBRE›",
+      "clon": "Escrito por el"
+    },
+    {
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -159,6 +320,27 @@
       "ancho": 1440,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ancho": 390,
+      "eje": "caja.h",
+      "orig": 66,
+      "clon": 65
+    },
+    {
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por el ‹NOMBRE›",
+      "clon": "Escrito por el"
+    },
+    {
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
@@ -188,6 +370,27 @@
     {
       "slug": "calibracion-de-sensores-de-calidad-del-aire",
       "ancho": 1440,
+      "eje": "caja.h",
+      "orig": 87,
+      "clon": 66
+    },
+    {
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por la Jefa de producto ‹NOMBRE›",
+      "clon": "Escrito por la Jefa de producto"
+    },
+    {
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/irene/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -202,6 +405,27 @@
       "ancho": 1440,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ancho": 390,
+      "eje": "caja.h",
+      "orig": 66,
+      "clon": 65
+    },
+    {
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por la Jefa de producto ‹NOMBRE›",
+      "clon": "Escrito por la Jefa de producto"
+    },
+    {
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/irene/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "calibracion-de-sensores-de-calidad-del-aire",
@@ -231,6 +455,27 @@
     {
       "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
       "ancho": 1440,
+      "eje": "caja.h",
+      "orig": 87,
+      "clon": 66
+    },
+    {
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por la Directora Científica (CSO) ‹NOMBRE›",
+      "clon": "Escrito por la Directora Científica (CSO)"
+    },
+    {
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/edurne-ibarrola/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -245,6 +490,27 @@
       "ancho": 1440,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ancho": 390,
+      "eje": "caja.h",
+      "orig": 66,
+      "clon": 65
+    },
+    {
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por la Directora Científica (CSO) ‹NOMBRE›",
+      "clon": "Escrito por la Directora Científica (CSO)"
+    },
+    {
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/edurne-ibarrola/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
@@ -274,6 +540,27 @@
     {
       "slug": "detectores-emisiones-coronavirus-contaminacion",
       "ancho": 1440,
+      "eje": "caja.h",
+      "orig": 87,
+      "clon": 66
+    },
+    {
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por el Director General y cofundador ‹NOMBRE›",
+      "clon": "Escrito por el Director General y cofundador"
+    },
+    {
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/javier-fernandez/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -288,6 +575,27 @@
       "ancho": 1440,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ancho": 390,
+      "eje": "caja.h",
+      "orig": 87,
+      "clon": 66
+    },
+    {
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por el Director General y cofundador ‹NOMBRE›",
+      "clon": "Escrito por el Director General y cofundador"
+    },
+    {
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/javier-fernandez/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "detectores-emisiones-coronavirus-contaminacion",
@@ -317,6 +625,20 @@
     {
       "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
       "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por ‹NOMBRE›",
+      "clon": "Escrito por"
+    },
+    {
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/admin/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -331,6 +653,20 @@
       "ancho": 1440,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por ‹NOMBRE›",
+      "clon": "Escrito por"
+    },
+    {
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/admin/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
@@ -360,6 +696,27 @@
     {
       "slug": "todas-nuestras-soluciones-en-el-iotswc",
       "ancho": 1440,
+      "eje": "caja.h",
+      "orig": 66,
+      "clon": 65
+    },
+    {
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por el ‹NOMBRE›",
+      "clon": "Escrito por el"
+    },
+    {
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -374,6 +731,27 @@
       "ancho": 1440,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ancho": 390,
+      "eje": "caja.h",
+      "orig": 66,
+      "clon": 65
+    },
+    {
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por el ‹NOMBRE›",
+      "clon": "Escrito por el"
+    },
+    {
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "todas-nuestras-soluciones-en-el-iotswc",
@@ -403,6 +781,27 @@
     {
       "slug": "contaminacion-por-metano",
       "ancho": 1440,
+      "eje": "caja.h",
+      "orig": 66,
+      "clon": 65
+    },
+    {
+      "slug": "contaminacion-por-metano",
+      "ancho": 1440,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por el ‹NOMBRE›",
+      "clon": "Escrito por el"
+    },
+    {
+      "slug": "contaminacion-por-metano",
+      "ancho": 1440,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
+    },
+    {
+      "slug": "contaminacion-por-metano",
+      "ancho": 1440,
       "eje": "papel[0].img.w",
       "orig": 64
     },
@@ -417,6 +816,27 @@
       "ancho": 1440,
       "eje": "papel[0].img.br",
       "orig": "50%"
+    },
+    {
+      "slug": "contaminacion-por-metano",
+      "ancho": 390,
+      "eje": "caja.h",
+      "orig": 66,
+      "clon": 65
+    },
+    {
+      "slug": "contaminacion-por-metano",
+      "ancho": 390,
+      "eje": "papel[0].proemio",
+      "orig": "Escrito por el ‹NOMBRE›",
+      "clon": "Escrito por el"
+    },
+    {
+      "slug": "contaminacion-por-metano",
+      "ancho": 390,
+      "eje": "papel[0].href",
+      "orig": "https://kunakair.com/es/author/kunak/",
+      "clon": "https://kunakair.com/es/author/undefined/"
     },
     {
       "slug": "contaminacion-por-metano",
@@ -455,7 +875,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 89,
+        "orig": 90,
         "clon": 4
       },
       "orig": {
@@ -516,7 +936,7 @@
         "modulo": null,
         "caja": {
           "w": 258.44,
-          "h": 136
+          "h": 94
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -528,9 +948,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Revisado y aprobado por la Jefa de producto Irene Lara-Ibeas, PhD",
-            "proemio": "Revisado y aprobado por la Jefa de producto ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/irene/",
+            "texto": "Revisado y aprobado por la Jefa de producto",
+            "proemio": "Revisado y aprobado por la Jefa de producto",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -543,9 +963,9 @@
             "ds": "block",
             "mis": "3px",
             "mt": "7px",
-            "texto": "Escrito por Equipo de marketing y comunicación",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por",
+            "proemio": "Escrito por",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -634,7 +1054,7 @@
         "modulo": null,
         "caja": {
           "w": 335.39,
-          "h": 115
+          "h": 94
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -646,9 +1066,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Revisado y aprobado por la Jefa de producto Irene Lara-Ibeas, PhD",
-            "proemio": "Revisado y aprobado por la Jefa de producto ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/irene/",
+            "texto": "Revisado y aprobado por la Jefa de producto",
+            "proemio": "Revisado y aprobado por la Jefa de producto",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -661,9 +1081,9 @@
             "ds": "block",
             "mis": "3px",
             "mt": "7px",
-            "texto": "Escrito por Equipo de marketing y comunicación",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por",
+            "proemio": "Escrito por",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -752,7 +1172,7 @@
         "modulo": null,
         "caja": {
           "w": 258.44,
-          "h": 157
+          "h": 94
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -764,9 +1184,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Revisado y aprobado por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
-            "proemio": "Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
+            "texto": "Revisado y aprobado por la Directora Científica (CSO)",
+            "proemio": "Revisado y aprobado por la Directora Científica (CSO)",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -779,9 +1199,9 @@
             "ds": "block",
             "mis": "3px",
             "mt": "7px",
-            "texto": "Escrito por Equipo de marketing y comunicación",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por",
+            "proemio": "Escrito por",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -870,7 +1290,7 @@
         "modulo": null,
         "caja": {
           "w": 335.39,
-          "h": 136
+          "h": 94
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -882,9 +1302,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Revisado y aprobado por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
-            "proemio": "Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
+            "texto": "Revisado y aprobado por la Directora Científica (CSO)",
+            "proemio": "Revisado y aprobado por la Directora Científica (CSO)",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -897,9 +1317,9 @@
             "ds": "block",
             "mis": "3px",
             "mt": "7px",
-            "texto": "Escrito por Equipo de marketing y comunicación",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por",
+            "proemio": "Escrito por",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -926,7 +1346,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 43,
+        "orig": 42,
         "clon": 0
       },
       "orig": {
@@ -972,7 +1392,7 @@
         "modulo": null,
         "caja": {
           "w": 258.44,
-          "h": 66
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -984,9 +1404,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por el",
+            "proemio": "Escrito por el",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1059,7 +1479,7 @@
         "modulo": null,
         "caja": {
           "w": 335.39,
-          "h": 66
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1071,9 +1491,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por el",
+            "proemio": "Escrito por el",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1100,7 +1520,7 @@
         "resueltas": 8
       },
       "bloqueadas": {
-        "orig": 75,
+        "orig": 74,
         "clon": 7
       },
       "orig": {
@@ -1146,7 +1566,7 @@
         "modulo": null,
         "caja": {
           "w": 258.44,
-          "h": 87
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1158,9 +1578,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por la Jefa de producto Irene Lara-Ibeas, PhD",
-            "proemio": "Escrito por la Jefa de producto ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/irene/",
+            "texto": "Escrito por la Jefa de producto",
+            "proemio": "Escrito por la Jefa de producto",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1233,7 +1653,7 @@
         "modulo": null,
         "caja": {
           "w": 335.39,
-          "h": 66
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1245,9 +1665,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por la Jefa de producto Irene Lara-Ibeas, PhD",
-            "proemio": "Escrito por la Jefa de producto ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/irene/",
+            "texto": "Escrito por la Jefa de producto",
+            "proemio": "Escrito por la Jefa de producto",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1320,7 +1740,7 @@
         "modulo": null,
         "caja": {
           "w": 258.44,
-          "h": 87
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1332,9 +1752,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
-            "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
+            "texto": "Escrito por la Directora Científica (CSO)",
+            "proemio": "Escrito por la Directora Científica (CSO)",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1407,7 +1827,7 @@
         "modulo": null,
         "caja": {
           "w": 335.39,
-          "h": 66
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1419,9 +1839,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
-            "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
+            "texto": "Escrito por la Directora Científica (CSO)",
+            "proemio": "Escrito por la Directora Científica (CSO)",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1448,7 +1868,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 65,
+        "orig": 66,
         "clon": 0
       },
       "orig": {
@@ -1494,7 +1914,7 @@
         "modulo": null,
         "caja": {
           "w": 258.44,
-          "h": 87
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1506,9 +1926,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por el Director General y cofundador Fco. Javier Fernández Huerta",
-            "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/javier-fernandez/",
+            "texto": "Escrito por el Director General y cofundador",
+            "proemio": "Escrito por el Director General y cofundador",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1581,7 +2001,7 @@
         "modulo": null,
         "caja": {
           "w": 335.39,
-          "h": 87
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1593,9 +2013,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por el Director General y cofundador Fco. Javier Fernández Huerta",
-            "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/javier-fernandez/",
+            "texto": "Escrito por el Director General y cofundador",
+            "proemio": "Escrito por el Director General y cofundador",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1680,9 +2100,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por admin",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/admin/",
+            "texto": "Escrito por",
+            "proemio": "Escrito por",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1767,9 +2187,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por admin",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/admin/",
+            "texto": "Escrito por",
+            "proemio": "Escrito por",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1842,7 +2262,7 @@
         "modulo": null,
         "caja": {
           "w": 258.44,
-          "h": 66
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1854,9 +2274,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por el",
+            "proemio": "Escrito por el",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1929,7 +2349,7 @@
         "modulo": null,
         "caja": {
           "w": 335.39,
-          "h": 66
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1941,9 +2361,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por el",
+            "proemio": "Escrito por el",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -1970,7 +2390,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 114,
+        "orig": 115,
         "clon": 17
       },
       "orig": {
@@ -2016,7 +2436,7 @@
         "modulo": null,
         "caja": {
           "w": 258.44,
-          "h": 66
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -2028,9 +2448,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por el",
+            "proemio": "Escrito por el",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",
@@ -2057,7 +2477,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 115,
+        "orig": 114,
         "clon": 17
       },
       "orig": {
@@ -2103,7 +2523,7 @@
         "modulo": null,
         "caja": {
           "w": 335.39,
-          "h": 66
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -2115,9 +2535,9 @@
             "ds": "flex",
             "mis": "-23px",
             "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
+            "texto": "Escrito por el",
+            "proemio": "Escrito por el",
+            "href": "https://kunakair.com/es/author/undefined/",
             "p": {
               "fs": "14px",
               "lh": "21px",

@@ -135,7 +135,12 @@ function firmasDe(html) {
     const nombre = soloTexto((p.match(/<a[^>]*>([\s\S]*?)<\/a>/) || [])[1] || "");
     const proemio = soloTexto(p.replace(/<a[^>]*>[\s\S]*?<\/a>/g, "‹NOMBRE›"));
     firmas.push({
-      autor: slug,
+      /* TERMINO EMBEBIDO {slug, nombre}, como categorias y etiquetas: el render
+       * necesita el NOMBRE para el texto del enlace, y una relacion dentro de
+       * un array queda un nivel por debajo de depth:1, o sea que llegaria como
+       * id. Subir el depth es la salida cara; el embebido es el patron que este
+       * repo ya usa. Se declara con formaMedida: objeto en la coleccion. */
+      autor: { slug, nombre: soloTexto(nombre) },
       papel: /^Revisado y aprobado/i.test(proemio) ? "revisado" : "escrito",
       proemio,
     });
@@ -591,6 +596,10 @@ const cmp = (slug, campo, leido, esperado) => {
   const a = JSON.stringify(leido ?? null), b = JSON.stringify(esperado ?? null);
   if (a !== b) control.push({ slug, campo, leido: leido ?? null, esperado: esperado ?? null, clases: ["valor"] });
 };
+/** Normaliza una firma a lo que la transcripcion a mano puede afirmar del HTML
+ * servido de ESA pagina: el slug del autor, el papel y el proemio. El resto del
+ * autor vive en SU archivo, o sea en otro documento. */
+const firma = (fs_) => (fs_ ?? []).map((f) => ({ autor: f.autor?.slug ?? f.autor, papel: f.papel, proemio: f.proemio }));
 const porSlug = (col) => new Map(salida[col].map((d) => [d.slug, d]));
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -824,7 +833,6 @@ for (const e of LIB.ENTRADAS_BLOG) {
    * resto del autor —cargo, redes, bio— vive en SU archivo, o sea en otro
    * documento, y compararlo aquí sería pedirle a esta página algo que no sirve.
    */
-  const firma = (fs_) => (fs_ ?? []).map((f) => ({ autor: f.autor?.slug ?? f.autor, papel: f.papel, proemio: f.proemio }));
   cmp(e.slug, "firmas", firma(d.firmas), firma(esp.firmas));
   cmpRico(e.slug, "cuerpo", SABOTAJE === "cuerpo-cambiado" ? `${d.cuerpo}<p>✂</p>` : d.cuerpo, esp.cuerpo);
 }
@@ -847,8 +855,7 @@ for (const e of LIB.DOCUMENTOS_CIENTIFICOS) {
   cmp(e.slug, "categoria", d.categoria, e.categoria);
   /* La firma, también aquí: 23 de 23 documentos la traen. Misma razón que en
    * blog — un campo transcrito que nadie compara no mide (§sondas 3). */
-  cmp(e.slug, "firmas", (d.firmas ?? []).map((f) => ({ autor: f.autor, papel: f.papel, proemio: f.proemio })),
-      (e.firmas ?? []).map((f) => ({ autor: f.autor?.slug ?? f.autor, papel: f.papel, proemio: f.proemio })));
+  cmp(e.slug, "firmas", firma(d.firmas), firma(e.firmas));
   cmp(e.slug, "prefijo", d.prefijo, e.prefijo);
   /* Los CINCO del PASO 5, contra los 4 transcritos a mano. */
   cmp(e.slug, "autores", d.autores, e.autores);

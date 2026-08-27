@@ -22806,3 +22806,156 @@ dato**, y deshacerla exige re-extraer del original. No compite con las otras dos
 ⚠ **Y si el propietario decide CONTRA el criterio, se escribe qué restricción
 pesó más y se le pone CONDICIÓN DE REAPERTURA.** Una decisión alineada puede no
 llevarla; una que lo contradice, siempre.
+
+---
+
+## ✅ F3-4-FICHA-AUTOR · LA CONSTANTE ERA UN CAMPO, Y EL DOMINIO QUE LA DECLARÓ PLANTILLA NO PODÍA VERLO — **CERRADA 2026-08-27** (117.ª)
+
+**Qué había.** `CascaronA.AUTORIA`, una constante de texto plano, con su
+justificación escrita al lado:
+
+> *«idéntica en las 11 instancias que la llevan, así que es PLANTILLA, no campo
+> — el discriminador del régimen plantillado es la varianza entre instancias, y
+> aquí es cero»*.
+
+**El discriminador es el correcto. El DOMINIO no lo soportaba:** las 11
+instancias transcritas a mano las firma **todas `kunak`**, así que la varianza
+no podía salir distinta de cero. Es §*una regla derivada sobre un dominio donde
+el caso NO SE DA no está probada para ese caso: está SIN PROBAR* — y llega
+blindada, porque la derivación era correcta y el dominio real.
+
+**Barridas las 152 del corpus** (`ficha-autor-117.{mjs,log}` ·
+`medidas/ficha-autor-117.json`):
+
+| | |
+|---|---|
+| proemios distintos | **8** |
+| firmantes distintos | **5** |
+| la constante ACIERTA en | **141 de 152** |
+| la constante es FALSA en | **11** — 3 `javier-fernandez` · 3 `edurne-ibarrola` · 2 `irene` · 1 `admin` · 2 con DOS firmantes |
+
+**Y además no se pintaba la FICHA, sólo su texto.** El original sirve caja con
+fondo, foto circular de 64, enlace al autor y su cargo; el clon servía un `div`
+de texto plano — en **152 + 23 = 175** páginas.
+
+### La forma, medida y no elegida
+
+**ARRAY con PAPEL.** 150 entradas traen un firmante y **2** traen dos, separando
+«Revisado y aprobado por» de «Escrito por». El **orden es el HUECO**: el
+elemento 0 se pinta en `revisor` —el que lleva la foto, 152 de 152— y el 1 en
+`autor`, que no la lleva (2 de 2).
+
+**El `proemio` se GUARDA en vez de derivarse**, y los dos modelos se midieron:
+
+| modelo | separadoras | acierto |
+|---|---|---|
+| `f(autor, papel)` | **1** | falla |
+| `f(autor, papel, hueco)` | **0** | 8 de 8 triples |
+
+Lo probado es que **(autor, papel) NO basta**. Que el triple sea *la* función
+**no** lo está: se apoya en **UNA** instancia separadora
+(§*un discriminador hallado en una sola instancia tampoco es un discriminador*).
+El defecto va en la dirección que GRITA.
+
+### DOS EMPLAZAMIENTOS, no uno
+
+El documento trae **2** `.ficha-autor-revisor` con el MISMO HTML y a cada ancho
+**una está `display:none`**: a **1440** se pinta `et_pb_text_5_tb_body`
+(caja 258.5 × 136) y a **390** `et_pb_text_4_tb_body` (335.39 × 115).
+
+### La adjudicación, con sus dos lados
+
+`qa:ficha-cmp`, 9 entradas × 2 anchos = **18 pares**, contra el build
+`dcaCkb5tNONVSYRVBt7Wf`:
+
+| | antes | después |
+|---|---|---|
+| pares con ficha en el clon | **0 de 18** | **18 de 18** |
+| diferencias | — | **123 → 63** |
+
+**El residuo, repartido y NO en total:**
+
+| eje | n | qué es |
+|---|---|---|
+| `papel[N].img.w/h/br` | **54** | la FOTO — 0 de 5 capturadas, canal declarado |
+| `caja.w` | **9** | `orig 258.5 → clon 258.44`, **sólo a 1440**, uniforme · **0 a 390** |
+
+⚠ **El `−0.06` NO está adjudicado a la ficha**, y decirlo importa: la ficha es
+un bloque que llena su columna, así que ese ancho es **el de la COLUMNA**, no el
+suyo. Eso es un MECANISMO, no una medida — el comparador no mide la columna. Se
+ficha abajo con su cardinal.
+
+---
+
+## ⛔ F3-4-FICHA-FOTOS · UN QUINTO CANAL DE MEDIA, ENUMERADO ANTES DE QUE MATARA UN SEED — **ABIERTA 2026-08-27** (117.ª)
+
+§EL INVENTARIO DE MEDIA lleva cuatro canales y **tres se descubrieron matando un
+seed**. Éste se enumeró **antes**, caminando lo que el documento PIDE:
+
+| foto | n | ¿capturada? |
+|---|---|---|
+| `Kunak_K_Logo_Cuadrado.png` | 141 | **NO** |
+| `edurne-ibarrola-kunak.jpeg` | 4 | **NO** |
+| `irene-lara-kunak.jpg` | 3 | **NO** |
+| `Javier_Fernandez_1.jpg` | 3 | **NO** |
+| `themes/KunakAir/assets/images/user.svg` | 1 | **NO** |
+
+**0 de 5.** El campo `autores.foto` se declara y se deja **vacío**, con el
+origen en `autores.fotoOrigen` para que la campaña que traiga los bytes sepa
+cuáles pedir. El hueco **conserva su caja de 64×64**: quitarla movería la
+maquetación por una razón que no es del original, y enlazar `kunakair.com` en
+caliente está prohibido.
+
+**Coste medido de no tenerlas: 54 de las 63 diferencias** de la adjudicación.
+Traerlas es RED, o sea una campaña con su encargo.
+
+---
+
+## ⛔ F3-4-FICHA-DOC-CIENTIFICO · EL DATO SÍ, EL RENDER NO — **ABIERTA 2026-08-27** (117.ª)
+
+**Medido:** **23 de 23** documentos científicos traen la ficha, las 23 firmadas
+por `kunak`, con **1** solo proemio y **0** con dos papeles. Modelado y sembrado
+(`documentos-cientificos.firmas`).
+
+**NO se pinta**, y la razón es que falta una medida, no tiempo: el blog sirve
+**2** fichas y esconde una por ancho; aquí sirve **1**, y **con una sola no se
+puede saber a qué ancho se ve** sin abrirla en el navegador. Pintarla con el
+`donde` del blog la escondería a 1440 — cablear un valor que nadie midió, que es
+exactamente el arreglo falso.
+
+**Qué la cierra:** una corrida del comparador con las 23 en el catálogo.
+
+---
+
+## ⛔ F3-4-CAJA-W-006 · UN `−0.06` UNIFORME A 1440 QUE NO ESTÁ ADJUDICADO — **ABIERTA 2026-08-27** (117.ª)
+
+`caja.w` da `orig 258.5 → clon 258.44` en **9 de 9** entradas a **1440** y
+**0 de 9** a 390.
+
+**Lo que se sabe:** es uniforme, no depende del contenido, y sólo aparece al
+ancho donde la columna lateral existe.
+
+**Lo que NO se sabe, y por eso está abierta:** si es de la ficha o **de la
+columna que la contiene**. La ficha es un bloque que llena su columna, así que
+su ancho ES el de la columna — pero eso es un mecanismo deducido, y
+`qa:ficha-cmp` **no mide la columna**. Es §*una regla en el NIVEL equivocado no
+da error* con el nivel puesto en quién impone el ancho.
+
+**Qué la cierra:** medir la COLUMNA lateral en los dos lados. Si difiere en
+0.06, el defecto es del cascarón y precede a esta tanda; si no, es de la ficha.
+
+---
+
+## ⛔ F3-4-CMS-DECL-HUECO-PAGINAS · UN ROJO QUE NO ES DE ESTA TANDA, ATRIBUIDO MIDIENDO — **ABIERTA 2026-08-27** (117.ª)
+
+`qa:cms-decl` sale en **2** con 1 HUECO en
+`paginas.bloques.filas.columnas.modulos.cabeceras`.
+
+**No se afirma por mecanismo: se midió.** Con el cambio de la 117.ª guardado
+aparte (`git stash`), la misma sonda da **86 verificadas y EL MISMO hueco**; con
+él, **89 y el mismo**. O sea que la 117.ª aporta **3 rutas de campo verificadas
+y 0 huecos**.
+
+Se deja **ROJA** (§regla 21): tocar `paginas` para poner verde un negativo sería
+resolver de paso una decisión de modelo, y un caso que pasa a verde ajustando su
+expectativa escribe el defecto DENTRO de la guarda.

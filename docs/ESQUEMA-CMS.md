@@ -6009,3 +6009,116 @@ emite **2 RUTAS**. Esta derivación mira **una ruta**. Y la otra emitida,
 `/monitor-calidad-aire`, es de arquetipo **escrito a mano** (13 de 31 celdas
 citadas en `src/`), así que lo que allí se sirva **no es un veredicto sobre el
 CMS** — el propio censo ya avisa de que es un FALSO NO sobre lo que sirve la DB.
+
+---
+
+# §2m · `autores` — LA COLECCIÓN SIN ARCHIVO, Y LA FIRMA CON PAPEL (117.ª, 2026-08-27)
+
+**Decisión del propietario, tomada y sostenida por el dato:** `author` es una
+ENTIDAD CON CAMPOS, no una plantilla con la lista dentro — **7 de 7** ejes de
+contenido propio varían entre sus 6 instancias. Se modela como COLECCIÓN.
+
+## §2m.1 · Colección SIN archivo, y por qué eso no es media colección
+
+El archivo `/author/*` **no se emite**. No es una renuncia, es lo que dice el
+dato:
+
+| | |
+|---|---|
+| formas de listado que lo enlazan | **0 de 35** |
+| `href` a `/author/` que el clon puede servir | **1**, y es **ABSOLUTO** |
+| `href` LOCALES a `/author/` | **0** |
+| rutas `/author/*` que el build emite | **0** |
+
+Así que no emitirlo **no crea ni un enlace roto** (§Regla de rutas locales: si
+el destino no está clonado, el `href` se queda apuntando al original).
+Verificado tras sembrar: diferencia simétrica de rutas **0 perdidas · 0 nuevas**
+sobre **416**.
+
+⚠ **Y NO llama a `registroDeSlug`** (§regla 25): el registro impone unicidad en
+el plano de un segmento de `/es/`, y estos términos **no tienen URL en ese
+plano**. Reclamarlo sólo podría **bloquear** 5 slugs de raíz que ninguna URL
+usa — una guarda cuyo dominio es más ancho que su invariante deja de proteger y
+pasa a rechazar cosas correctas.
+
+## §2m.2 · Campos, con la fracción que EJERCITA cada opcional
+
+    autores  slug · nombre · foto · fotoOrigen · cargo · redes[] · bio
+
+| campo | lo traen | lo dejan vacío |
+|---|---|---|
+| `nombre` | 6 de 6, **todos distintos** | — |
+| `foto` | 4 de 6 | 2 — sirven el `user.svg` del TEMA, que no es la foto de nadie |
+| `cargo` | 4 de 6 | 2 — y con `<p></p>`, vacío de verdad |
+| `bio` | 4 de 6 | 2 |
+| `redes` | 5 de 6 | 1 |
+
+§*un campo opcional no expresa un caso: sólo PERMITE que falte* — aquí el caso
+está **ejercitado por el original**, así que estos caminos de render **no son
+«sin estrenar»**.
+
+⚠ **`foto` va declarada y VACÍA**: las **5** fotos de la ficha están **0
+capturadas**. Canal enumerado ANTES de que matara un seed (§F3-4-FICHA-FOTOS).
+
+⚠ **Se siembran 5, no 6.** `mar_ramirez` tiene archivo y firma **0 de 152**
+entradas: no se siembra un autor que ninguna firma referencia.
+
+## §2m.3 · La relación: ARRAY con PAPEL, y el orden es el HUECO
+
+    entradas-blog.firmas[]         autor -> autores · papel · proemio
+    documentos-cientificos.firmas[]  idem
+
+**No cabe en un campo simple:** 150 entradas traen un firmante y **2** traen
+dos, separando «Revisado y aprobado por» de «Escrito por». Un `relationship`
+simple perdería el segundo; un `hasMany` sin papel perdería CUÁL es cuál.
+
+**El orden no es decorativo**: el elemento 0 se pinta en el hueco `revisor` —el
+que lleva la foto, 152 de 152— y el 1 en `autor`, sin foto (2 de 2). El hueco se
+DERIVA de la posición y no necesita campo.
+
+### `proemio` se guarda, y la elección se midió
+
+| modelo | instancias separadoras | acierto |
+|---|---|---|
+| `proemio = f(autor, papel)` | **1** | falla |
+| `proemio = f(autor, papel, hueco)` | **0** | 8 de 8 triples |
+
+Lo PROBADO es que **(autor, papel) NO basta**. Que el triple sea *la* función
+**no lo está**: se apoya en UNA instancia separadora. Así que el texto se guarda
+con su defecto derivado y se **omite cuando coincide** — si la función es
+correcta el dato queda vacío en las 152 y no cuesta nada; si es falsa, el
+original se replica igual (§sondas 6, el defecto en la dirección que grita).
+
+### `formaMedida: "objeto"` — y la v1 lo puso al revés
+
+`firmas[].autor` es un **término embebido `{slug, nombre}`**, como `categorias`
+y `etiquetas`. La v1 lo declaró como slug pelado —que es lo que el extractor
+emitía— y **el extractor era el que estaba mal**: con slug pelado el RENDER no
+tiene el `nombre`, que es el texto del enlace.
+
+Lo destapó **la adjudicación, no la lectura**: `href` salió `/author/undefined`
+y el proemio perdió su `‹NOMBRE›` en **22 pares**. Y no se arregla subiendo
+`depth`: una relación **dentro de un array** queda un nivel por debajo de
+`depth: 1`, y `proyector.ts` documenta por qué subirlo es la salida cara.
+
+## §2m.4 · Las dos migraciones, con su reversa PROBADA antes del dato
+
+`20260827_110011_f3_4_autores_y_firmas` · `20260827_114716_f3_4_firmas_doc_cientifico`
+
+⚠ **El `down` generado NO revertía.** Payload emite `DROP TABLE "autores"
+CASCADE` y **después** `DROP CONSTRAINT "…_autores_fk"` — que el CASCADE ya se
+llevó. Corregido con `IF EXISTS`. Verificado **tabla a tabla** (§regla 30), no
+con el total: `diff` sin salida, 134 y 137 líneas idénticas.
+
+**La ventana era ésa y sólo ésa**: una reversa que borra tablas sólo se puede
+comprobar mientras no haya filas que dependan de ellas.
+
+## §2m.5 · Lo que este modelo NO decide, con su cardinal
+
+- **el archivo `/author/*`**: no se emite. Si algún día se emitiera, `autores`
+  entraría en el registro de slugs — hoy no, y por eso no lo reclama;
+- **la foto**: declarada y vacía, **0 de 5** capturadas;
+- **el render en documento científico**: el dato está sembrado (23 de 23) y el
+  render NO lo pinta, porque su EMPLAZAMIENTO no está medido — allí hay **1**
+  ficha y en blog **2**, y con una sola no se sabe a qué ancho se ve
+  (§F3-4-FICHA-DOC-CIENTIFICO).

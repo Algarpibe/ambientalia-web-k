@@ -105,6 +105,15 @@ const RELACIONES = {
   BlogPost: "entradas-blog · §2c.1 — proyección de teaser",
   TerminoSector: "taxonomia-sectores · §2b — 11 términos, relación 0..n",
   TerminoA: "las 4 taxonomías del §2c — relación, y el término es su propia colección",
+  /**
+   * 117.ª — `firmas[].autor` es una RELACIÓN a la colección `autores`, igual
+   * que `categorias` lo es a la suya. Sus campos (`slug`, `nombre`, `cargo`,
+   * `foto`, `fotoOrigen`) viven **en `autores`**, no en `entradas-blog` ni en
+   * `documentos-cientificos`, así que pedirlos ahí sería exigir a la colección
+   * equivocada — 22 «campos sin contraparte» que no son un hueco del modelo,
+   * sino la comprobación mirando al otro lado de la relación.
+   */
+  AutorA: "autores · 117.ª — colección propia SIN archivo; la firma la referencia, no la copia",
 };
 
 /**

@@ -96,14 +96,25 @@ export const entradasBlog: CollectionConfig = {
       required: true,
       fields: [
         /**
-         * ⚠ **SIN `formaMedida: "objeto"`, y es una medida:** el dato medido
-         * escribe aquí el **slug pelado** (`"kunak"`), no un término embebido
-         * `{slug, nombre}` como hacen `categorias` o `etiquetas`. Declararlo
-         * «objeto» haría que la VUELTA exigiera un poblado que nunca llega y
-         * tirara con «RELACIÓN EMBEBIDA SIN POBLAR». Lo comprueba
-         * `qa:cms-decl`, que deriva los mapas en LAS DOS DIRECCIONES.
+         * ⚠⚠ **TÉRMINO EMBEBIDO `{slug, nombre}`, como `categorias` y
+         * `etiquetas` — y la primera versión lo puso al revés.**
+         *
+         * La v1 lo declaró SIN `formaMedida`, o sea slug pelado, razonando que
+         * era lo que el extractor emitía. Cierto — y **el extractor era el que
+         * estaba mal**, porque con slug pelado el RENDER no tiene el `nombre`,
+         * que es el texto del enlace de la ficha. Lo destapó la ADJUDICACIÓN,
+         * no la lectura: `href` salió `/author/undefined` y el proemio perdió
+         * su `‹NOMBRE›` en 22 pares.
+         *
+         * Y no se arregla subiendo `depth`: una relación **dentro de un array**
+         * queda un nivel por debajo de `depth: 1`, y `proyector.ts` documenta
+         * por qué subirlo es la salida cara. El embebido es el patrón que este
+         * repo ya usa para exactamente este caso.
+         *
+         * Lo comprueba `qa:cms-decl`, que deriva los mapas en LAS DOS
+         * DIRECCIONES: una declaración que la ida no ve es declaración muerta.
          */
-        { name: "autor", type: "relationship", relationTo: "autores", required: true },
+        { name: "autor", type: "relationship", relationTo: "autores", required: true, custom: { formaMedida: "objeto" } },
         /**
          * Dos valores observados, los dos con su n: `escrito` **152** ·
          * `revisado` **2**. No es una taxonomía abierta — es el verbo del
@@ -256,7 +267,7 @@ export const documentosCientificos: CollectionConfig = {
       minRows: 1,
       required: true,
       fields: [
-        { name: "autor", type: "relationship", relationTo: "autores", required: true },
+        { name: "autor", type: "relationship", relationTo: "autores", required: true, custom: { formaMedida: "objeto" } },
         {
           name: "papel",
           type: "select",

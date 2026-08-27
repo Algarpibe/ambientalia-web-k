@@ -142,6 +142,27 @@ export const CATALOGOS = [
    * **4** ficheros (`qa:media-siembra`). Capturados, colocados y remedidos: el
    * canal `upload` está a **0 pendientes**. Las otras dos siguen abajo con su
    * razón, que no es de media. */
+  /**
+   * ✅ **`autores` — 117.ª · ESCALÓN 2. Y va AQUÍ, ANTES de sus consumidores.**
+   *
+   * `CATALOGOS` es lo que fija el ORDEN de siembra (`SEMBRADAS` sólo dice
+   * cuáles entran), así que ponerlo al final —que es donde lo dejó la primera
+   * versión— hacía que `entradas-blog.firmas[0].autor` apuntara a una
+   * colección todavía vacía. **La guarda lo cazó en el acto**: *«RELACIÓN SIN
+   * DESTINO: 'javier-fernandez' … no está en [autores]»*, con exit ≠ 0 y sin
+   * sembrar nada — el defecto puesto en la dirección que GRITA (§sondas 6). Un
+   * `?? null` ahí habría sembrado 152 entradas sin firma y en verde.
+   *
+   * Sale del MISMO fichero que las entradas y por la misma corrida, a
+   * propósito: los autores se DERIVAN de las firmas, así que dos derivaciones
+   * independientes podrían dar un Δ0 en falso con un mismo olvido (§regla 29,
+   * mitad 2 — *desde la MISMA derivación y en la misma llamada*).
+   *
+   * ⚠ Son **5**, no 6: `mar_ramirez` tiene archivo y firma **0 de 152**
+   * entradas. No se siembra un autor que ninguna firma referencia — y se dice
+   * con su cardinal en vez de dejarlo caer por omisión.
+   */
+  { coleccion: "autores", json: "medidas/a-extraido.json", en: "catalogo.autores" },
   { coleccion: "entradas-blog", json: "medidas/a-extraido.json", en: "catalogo.entradas-blog" },
   /* ✅ **`terminos-kunakpedia` CAMBIA DE FUENTE (2026-08-12, PASO 4).** Su
    * precondición era `esmog` con el `<h1>` de plantilla VACÍO contra un
@@ -172,7 +193,6 @@ export const CATALOGOS = [
    * campaña que traiga los bytes sepa cuáles pedir — un canal enumerado ANTES
    * de que mate un seed, que es lo que §EL INVENTARIO DE MEDIA pide.
    */
-  { coleccion: "autores", json: "medidas/a-extraido.json", en: "catalogo.autores" },
 ];
 
 /**

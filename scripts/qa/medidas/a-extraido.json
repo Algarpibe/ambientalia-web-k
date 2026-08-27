@@ -226,7 +226,10 @@
         "fechaActualizacion": "20 enero 2023",
         "firmas": [
           {
-            "autor": "javier-fernandez",
+            "autor": {
+              "slug": "javier-fernandez",
+              "nombre": "Fco. Javier Fernández Huerta"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›"
           }
@@ -251,7 +254,10 @@
         "fechaActualizacion": "14 junio 2023",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -289,7 +295,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -323,7 +332,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -361,7 +373,10 @@
         },
         "firmas": [
           {
-            "autor": "javier-fernandez",
+            "autor": {
+              "slug": "javier-fernandez",
+              "nombre": "Fco. Javier Fernández Huerta"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›"
           }
@@ -396,7 +411,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -428,7 +446,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -454,7 +475,10 @@
         "fechaActualizacion": "13 mayo 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -494,7 +518,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -546,7 +573,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -598,7 +628,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -650,7 +683,10 @@
         },
         "firmas": [
           {
-            "autor": "edurne-ibarrola",
+            "autor": {
+              "slug": "edurne-ibarrola",
+              "nombre": "Edurne Ibarrola-Ulzurrun, PhD"
+            },
             "papel": "escrito",
             "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›"
           }
@@ -702,7 +738,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -754,7 +793,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -806,7 +848,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -858,7 +903,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -910,7 +958,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -962,7 +1013,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1014,7 +1068,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1066,7 +1123,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1118,7 +1178,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1174,7 +1237,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1225,7 +1291,10 @@
         },
         "firmas": [
           {
-            "autor": "irene",
+            "autor": {
+              "slug": "irene",
+              "nombre": "Irene Lara-Ibeas, PhD"
+            },
             "papel": "escrito",
             "proemio": "Escrito por la Jefa de producto ‹NOMBRE›"
           }
@@ -1273,7 +1342,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1325,7 +1397,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1377,7 +1452,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1425,7 +1503,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1481,7 +1562,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1537,7 +1621,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1584,7 +1671,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1636,7 +1726,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1688,7 +1781,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1740,7 +1836,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1792,7 +1891,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1844,7 +1946,10 @@
         },
         "firmas": [
           {
-            "autor": "irene",
+            "autor": {
+              "slug": "irene",
+              "nombre": "Irene Lara-Ibeas, PhD"
+            },
             "papel": "escrito",
             "proemio": "Escrito por la Jefa de producto ‹NOMBRE›"
           }
@@ -1896,7 +2001,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -1948,7 +2056,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2000,7 +2111,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2052,7 +2166,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2104,7 +2221,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2156,7 +2276,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2208,12 +2331,18 @@
         },
         "firmas": [
           {
-            "autor": "irene",
+            "autor": {
+              "slug": "irene",
+              "nombre": "Irene Lara-Ibeas, PhD"
+            },
             "papel": "revisado",
             "proemio": "Revisado y aprobado por la Jefa de producto ‹NOMBRE›"
           },
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por ‹NOMBRE›"
           }
@@ -2265,7 +2394,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2309,7 +2441,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2361,7 +2496,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2413,7 +2551,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2465,7 +2606,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2517,7 +2661,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2561,7 +2708,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2613,7 +2763,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2665,7 +2818,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2713,7 +2869,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2769,7 +2928,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2812,7 +2974,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2855,7 +3020,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2907,7 +3075,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2951,7 +3122,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -2999,7 +3173,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3051,7 +3228,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3099,7 +3279,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3155,7 +3338,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3195,7 +3381,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3239,7 +3428,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3283,7 +3475,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3331,7 +3526,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3383,7 +3581,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3430,7 +3631,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3470,7 +3674,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3522,7 +3729,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3561,7 +3771,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3609,7 +3822,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3648,7 +3864,10 @@
         },
         "firmas": [
           {
-            "autor": "edurne-ibarrola",
+            "autor": {
+              "slug": "edurne-ibarrola",
+              "nombre": "Edurne Ibarrola-Ulzurrun, PhD"
+            },
             "papel": "escrito",
             "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›"
           }
@@ -3695,7 +3914,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3739,7 +3961,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3787,7 +4012,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3834,7 +4062,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3881,7 +4112,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3924,7 +4158,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -3974,7 +4211,10 @@
         },
         "firmas": [
           {
-            "autor": "edurne-ibarrola",
+            "autor": {
+              "slug": "edurne-ibarrola",
+              "nombre": "Edurne Ibarrola-Ulzurrun, PhD"
+            },
             "papel": "escrito",
             "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›"
           }
@@ -4013,7 +4253,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4052,7 +4295,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4092,7 +4338,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4130,7 +4379,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4174,7 +4426,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4213,7 +4468,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4252,7 +4510,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4292,7 +4553,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4336,7 +4600,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4375,7 +4642,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4415,7 +4685,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4455,7 +4728,10 @@
         },
         "firmas": [
           {
-            "autor": "javier-fernandez",
+            "autor": {
+              "slug": "javier-fernandez",
+              "nombre": "Fco. Javier Fernández Huerta"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›"
           }
@@ -4495,7 +4771,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4539,7 +4818,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4578,7 +4860,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4609,7 +4894,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4652,7 +4940,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4683,7 +4974,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4717,7 +5011,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4763,7 +5060,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4806,7 +5106,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4848,7 +5151,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4882,7 +5188,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4916,7 +5225,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4955,7 +5267,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -4985,7 +5300,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5024,7 +5342,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5054,7 +5375,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5084,7 +5408,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5114,7 +5441,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5157,7 +5487,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5188,7 +5521,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5219,7 +5555,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5250,7 +5589,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5285,7 +5627,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5316,7 +5661,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5347,7 +5695,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5386,7 +5737,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5417,7 +5771,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5448,7 +5805,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5479,7 +5839,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5510,7 +5873,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5541,7 +5907,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5572,7 +5941,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "admin",
+            "autor": {
+              "slug": "admin",
+              "nombre": "admin"
+            },
             "papel": "escrito",
             "proemio": "Escrito por ‹NOMBRE›"
           }
@@ -5603,7 +5975,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5638,7 +6013,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5686,7 +6064,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5717,7 +6098,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5748,7 +6132,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5779,7 +6166,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5810,7 +6200,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5841,7 +6234,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5872,7 +6268,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5903,7 +6302,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5934,7 +6336,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5965,7 +6370,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -5996,7 +6404,10 @@
         "fechaActualizacion": "15 junio 2026",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6052,7 +6463,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6104,7 +6518,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6156,7 +6573,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6207,7 +6627,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6259,7 +6682,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6311,7 +6737,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6363,7 +6792,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6415,7 +6847,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6462,7 +6897,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6514,7 +6952,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6566,12 +7007,18 @@
         },
         "firmas": [
           {
-            "autor": "edurne-ibarrola",
+            "autor": {
+              "slug": "edurne-ibarrola",
+              "nombre": "Edurne Ibarrola-Ulzurrun, PhD"
+            },
             "papel": "revisado",
             "proemio": "Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›"
           },
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por ‹NOMBRE›"
           }
@@ -6622,7 +7069,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6672,7 +7122,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6710,7 +7163,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6749,7 +7205,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -6788,7 +7247,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7270,7 +7732,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7304,7 +7769,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7338,7 +7806,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7372,7 +7843,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7406,7 +7880,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7440,7 +7917,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7474,7 +7954,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7508,7 +7991,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7542,7 +8028,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7576,7 +8065,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7610,7 +8102,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7644,7 +8139,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7678,7 +8176,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7712,7 +8213,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7746,7 +8250,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7780,7 +8287,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7814,7 +8324,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7848,7 +8361,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7882,7 +8398,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7916,7 +8435,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7950,7 +8472,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -7984,7 +8509,10 @@
         "prefijo": "estudios-cientificos",
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }
@@ -8018,7 +8546,10 @@
         },
         "firmas": [
           {
-            "autor": "kunak",
+            "autor": {
+              "slug": "kunak",
+              "nombre": "Equipo de marketing y comunicación"
+            },
             "papel": "escrito",
             "proemio": "Escrito por el ‹NOMBRE›"
           }

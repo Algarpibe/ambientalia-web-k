@@ -1343,6 +1343,35 @@ aquí no es una fila ni un total, es *qué cuenta como «uno»*.
 > INTERACCIÓN** — abrir el desplegable—, o sea el eje que casi nunca está medido.
 > Un tipo cuyas instancias viven todas escondidas se declara **SIN DERIVAR con lo
 > que haría falta**, no se rellena con los ceros que el navegador devolvió.
+>
+> ⚠⚠ **Y SU MITAD DE SELECCIÓN, QUE ES LA QUE METE EL CERO EN LA MEDIDA
+> (2026-08-27): `querySelector` DEVUELVE EL PRIMERO DEL DOM, Y CUANDO EL
+> ORIGINAL DUPLICA EL MARCADO EL PRIMERO PUEDE SER EL ESCONDIDO.**
+>
+> La regla de arriba dice qué hacer con lo que no tiene caja **una vez que
+> sabes cuál es**. Le falta cómo se elige — y elegir por ORDEN es lo que uno
+> escribe sin pensarlo.
+>
+> > **Un constructor de páginas resuelve «esto sólo en móvil» DUPLICANDO el
+> > módulo y escondiendo uno por ancho.** Entonces hay N copias con el MISMO
+> > HTML, y **cuál se ve depende del ancho**: seleccionar por orden mide la
+> > buena a un ancho y **la escondida al otro**, sin dar error.
+>
+> **Medido:** una ficha servida **dos veces** —`et_pb_text_4` a 390 y
+> `et_pb_text_5` a 1440—. Un `querySelector` publicó `caja {w:0, h:0}` a 1440 y
+> un `border-radius` de **37.0577 %** que la hoja no declara en ningún sitio.
+> Los dos son lo que devuelve `getComputedStyle` sobre un elemento sin caja.
+>
+> **Operativamente, y son dos líneas:** se selecciona **por CAJA, no por
+> orden** —`filter(r => r.width > 0 && r.height > 0)`—, y se publican **los dos
+> cardinales por separado**, `en el DOM` y `CON CAJA`. Si a un ancho hay 0 con
+> caja, o más de 1, eso es un dato del original y no un detalle de selección.
+>
+> ⚠ **Y la señal para sospecharlo es gratis: un marcado que aparece N veces con
+> el mismo contenido.** Antes de leer «las N son idénticas» como *«da igual
+> cuál»*, comprueba **cuál tiene caja a cada ancho** — «idénticas» es cierto del
+> HTML y puede ser falso de la piel: aquí las dos copias tienen módulos
+> distintos, y por tanto CSS compilado distinto.
 
 **Y hay un contenedor hermano que no contiene elementos sino CAUSAS: EL RECUENTO
 DE PARES TOCADOS POR UNA DERIVA DEL OBJETIVO.**
@@ -3336,7 +3365,32 @@ bastar:
 |---|---|---|
 | 1 | ¿cambió el ÁRBOL entre las dos medidas? | `git log --format='%h %ad %s' --date=format:'%H:%M'` contra las **mtime de las congeladas**. Los commits llevan la hora |
 | 2 | ¿cambió el DATO? | el clon lee de una DB: sembrar, excluir o re-extraer **no toca `src/` y mueve el render**. Un `nTarjetas` que baja es un documento menos, **no un empate** |
-| 3 | ¿queda algo? | **entonces** sí: dos corridas contra el **mismo `.next`**. Y ojo, `iniciarClon()` **no construye** — lanza `npm run start` contra el `.next` que haya, así que dos sondas seguidas ya son mismo-build **por defecto** |
+| 3 | ¿cambió el MOMENTO de la lectura? | ver la fila nueva de abajo: una propiedad EN TRANSICIÓN devuelve un fotograma, y eso no es ruido del objeto |
+| 4 | ¿queda algo? | **entonces** sí: dos corridas contra el **mismo `.next`**. Y ojo, `iniciarClon()` **no construye** — lanza `npm run start` contra el `.next` que haya, así que dos sondas seguidas ya son mismo-build **por defecto** |
+
+> ⚠⚠ **LA TERCERA CAUSA, AÑADIDA 2026-08-27: `getComputedStyle` SOBRE UNA
+> PROPIEDAD ANIMADA DEVUELVE UN FOTOGRAMA, Y UN FOTOGRAMA TIENE CARA DE DATO.**
+>
+> Las dos primeras filas preguntan si cambió el ÁRBOL o el DATO. Falta la que no
+> cambia ninguno de los dos: **el instante**. Si la hoja declara `transition`
+> sobre la propiedad que estás leyendo, el valor computado **está interpolado**,
+> y cada corrida lo pilla en otro punto.
+>
+> **Medido:** el `<img>` de una ficha con `transition: all .3s` dio, sobre **el
+> mismo nodo, el mismo ancho y el mismo código**, `border-radius` = **0%**,
+> **50%** y **17.3042%** en tres corridas. Ninguno de los tres da error, y
+> `17.3042%` es exactamente la clase de número que invita a explicarlo — un
+> porcentaje que **la hoja no declara en ninguna parte**. Con `settle()` puesto
+> en LOS DOS lados, dos corridas independientes dan **50% y 3px idénticos**.
+>
+> **La regla, y es de orden:** *«no determinista»* es la ÚLTIMA hipótesis
+> (§regla 16), y antes de ella va **¿hay una `transition` sobre esta
+> propiedad?** — que se contesta con un `grep` de la hoja y se arregla
+> asentando, no midiendo más veces.
+>
+> **Y el corolario de diseño:** el asentado va **en los dos lados** (§regla 32).
+> Asentar sólo el original mediría la asimetría entre un lado quieto y otro en
+> movimiento, que es peor que no asentar ninguno: sale estable y sesgado.
 
 > **Y la firma que distingue las dos causas, que es gratis:** una EDICIÓN produce
 > un conjunto de diferencias **anidado** —arregla unas, rompe otras, y al
