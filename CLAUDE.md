@@ -3853,6 +3853,32 @@ verificó restaurándolo: la sonda vuelve a reproducir su control `kb-recon.json
 2. **un sabotaje no edita el fuente: corre una COPIA.** Si tiene que editar,
    registra además `process.on("exit")` y los manejadores de señal — un
    `finally` solo cubre la salida ordenada;
+
+   > ⚠⚠ **Y LA COPIA PROTEGE EL FUENTE, NO LA SALIDA (2026-08-27, 120.ª).**
+   >
+   > **Aislar el PROCESO no aísla la SALIDA.** Un sabotaje que corre en una
+   > copia sigue congelando con el nombre que la sonda **DECLARA**, porque
+   > `w()` resuelve por ahí y no por el fichero desde el que corre. Y lo que
+   > sale es lo peor de §regla 7: **un fichero con nombre de medida y contenido
+   > de control**, plausible y con la autoridad de una congelada.
+   >
+   > **Medido:** un sabotaje corrido como `clase-censo.SAB.mjs` —copia, con el
+   > fuente intacto— congeló `clase-censo-2026-08-27-2.json` con
+   > `candidatos: 0` y `rel: web/src/…`. Nombre de medida, contenido de
+   > control. Renombrado a `-neg-anclas-src-app-no-casan`.
+   >
+   > **Y el remedio NO es acordarse de renombrar: es que la corrida de sabotaje
+   > DESVÍE el nombre ella misma**, que es exactamente §regla 24 en su mitad de
+   > higiene —*la sonda comprueba sus propios sabotajes y, si hay alguno activo
+   > sin corrida de negativo, desvía y lo dice en voz alta*—. Lo que esta mitad
+   > añade es **el alcance**: aquello sólo alcanza al sabotaje **declarado** por
+   > variable de entorno, que la sonda puede ver; un `sed` sobre una copia **no
+   > lo puede saber**, así que ahí la comprobación es del que mide — mirar
+   > `medidas/` después y marcar lo que la corrida haya escrito.
+   >
+   > **Y la señal de que «más atención» no es el remedio:** mordió a quien
+   > acababa de aplicar el punto 2 de esta misma regla, en la misma tanda, y
+   > corriendo la copia **precisamente para no tocar el fuente**;
 3. **y el cardinal se declara**: hoy es **1 de 59** negativos (`texto-poblacion`),
    derivado con un `grep` de `writeFileSync(SONDA`. Que sea uno es lo que hace
    barato el arreglo, y saberlo es lo que impide creer que son todos.
