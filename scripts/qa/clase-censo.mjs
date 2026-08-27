@@ -41,13 +41,30 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join, relative } from "node:path";
-import { Evaluadas, QA, w } from "./lib.mjs";
+import { APP, enApp, Evaluadas, QA, w } from "./lib.mjs";
 
 /* Esta sonda LEE EL REPO, no abre ninguna página: ni clon ni original. */
 process.env.SIN_CLON = "1";
 
-const RAIZ = join(QA, "..", "..");
-const SRC = join(RAIZ, "src");
+/*
+ * ⚠ `src/` y `.next/` son de la APP DE RENDER, no del repo. Desde la conversión
+ * a monorepo (F2-1, 2026-08-03) `join(QA, "../..")` es la raíz del REPO, así que
+ * resolver ahí dejó esta sonda MUERTA con `ENOENT` en su primer `readdirSync`:
+ * registrada en `package.json` y sin poder llegar a su informe. Se resuelve con
+ * `enApp()`, que BUSCA la app y muere en voz alta si no la encuentra
+ * (`lib.mjs` §DÓNDE VIVE LA APP DE RENDER).
+ *
+ * ⚠⚠ Y ARREGLAR EL `ENOENT` NO BASTABA, porque debajo había un CERO CON FORMA
+ * DE DATO. Los `rel` se calculaban contra la raíz del REPO, así que pasaban a
+ * ser `apps/web/src/app/…` mientras TRES anclas seguían exigiendo `^src/app/`
+ * (el filtro de `paginas`, `rutaDe` y el de `c.paginas`). Un selector que no
+ * casa con nada no da error: dio `conAlcance2Rutas` **41 → 0** y
+ * `candidatos` **33 → 0**, o sea «no hay duplicación de clase que extraer»
+ * —§sondas 4—. Por eso `rel` se calcula contra **APP**: deja el vocabulario
+ * de la congelada de 2026-08-03 (`src/components/…`) intacto y las tres anclas
+ * siguen casando. `RAIZ` no existía para nada más: se borra.
+ */
+const SRC = enApp("src");
 
 const ficheros = [];
 (function walk(d) {
@@ -103,7 +120,7 @@ const ABSOLUTAS = [
 
 const censo = [];
 for (const f of componentes) {
-  const rel = relative(RAIZ, f).replace(/\\/g, "/");
+  const rel = relative(APP, f).replace(/\\/g, "/");
   const bruto = readFileSync(f, "utf8");
   const t = soloCodigo(bruto);
 
@@ -119,7 +136,7 @@ for (const f of componentes) {
 }
 
 /** Importadores DERIVADOS: quién lo importa de verdad, no quién dice el comentario. */
-const todos = ficheros.map((f) => ({ rel: relative(RAIZ, f).replace(/\\/g, "/"), txt: soloCodigo(readFileSync(f, "utf8")) }));
+const todos = ficheros.map((f) => ({ rel: relative(APP, f).replace(/\\/g, "/"), txt: soloCodigo(readFileSync(f, "utf8")) }));
 const importa = (o, c) => {
   const base = c.rel.replace(/^src\//, "").replace(/\.tsx?$/, "");
   return new RegExp(`from\\s+["'][^"']*(${base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}|/${c.nombre})["']`).test(o.txt);
@@ -144,7 +161,7 @@ for (const c of censo) {
  * calcula transitivamente: componente → quién lo importa → … → `page.tsx` →
  * cuántas rutas emite ese `page.tsx` en el build.
  */
-const manifiesto = JSON.parse(readFileSync(join(RAIZ, ".next", "prerender-manifest.json"), "utf8"));
+const manifiesto = JSON.parse(readFileSync(enApp(".next/prerender-manifest.json"), "utf8"));
 const RUTAS = Object.keys(manifiesto.routes || {}).filter((r) => !/^\/(_not-found|_global-error|favicon)/.test(r));
 
 /** A qué `page.tsx` pertenece cada ruta emitida. Lo más específico gana. */
@@ -214,6 +231,32 @@ console.log(
     `\n  (si fuera 0 el detector estaría muerto; si fuera ${censo.length} no discriminaría nada)`,
 );
 
+/*
+ * ── El control que FALTABA, y su ausencia costó un cero con forma de dato ────
+ *
+ * El de arriba vigila el detector de MARCADORES. El alcance en rutas no tenía
+ * ninguno, así que cuando sus tres anclas `^src/app/` dejaron de casar (monorepo)
+ * el censo publicó `conAlcance2Rutas: 0` y `candidatos: 0` **en verde** — que se
+ * lee como «no hay duplicación de clase que extraer». §sondas 4: no encontrar
+ * nada y no mirar nada dan la misma salida.
+ *
+ * El cero se cierra con código ≠ 0 porque es SIEMPRE del instrumento: mientras
+ * exista un solo `page.tsx` bajo `src/app/`, alguno tiene que emitir rutas.
+ */
+const conRutas = censo.filter((c) => c.alcanceRutas > 0).length;
+console.log(
+  `  control cero/pleno · componentes con alcance en RUTAS: ${conRutas}/${censo.length}` +
+    ` · páginas casadas: ${paginas.length} · rutas repartidas: ${Object.values(cuentaRutas).reduce((a, n) => a + n, 0)}/${RUTAS.length}`,
+);
+if (paginas.length === 0 || conRutas === 0) {
+  console.error(
+    `\n❌ el alcance en RUTAS salió CERO (páginas casadas: ${paginas.length}).` +
+      `\n   Eso no es un dato del repo: es que las anclas \`^src/app/\` no casan con` +
+      `\n   el vocabulario de \`rel\` (hoy «${censo[0]?.rel}»). Ver la cabecera.`,
+  );
+  process.exitCode = 1;
+}
+
 w("medidas/clase-censo.json", {
   meta: {
     que: "Censo DERIVADO de componentes compartidos que cablean medidas absolutas — los candidatos de la clase «componente calibrado con UNA instancia».",
@@ -235,4 +278,13 @@ w("medidas/clase-censo.json", {
   censo,
 });
 
-console.log(`\n✅ clase-censo · ${candidatos.length} candidato(s) derivado(s) de ${censo.length} componentes`);
+/*
+ * ⚠ El titular lee el MISMO estado que el código de salida: un `✅` impreso al
+ * lado de un `❌` es §sondas 1 —lo que imprime y lo que cuenta no pueden
+ * discrepar—, y el titular es lo que se cita.
+ */
+console.log(
+  process.exitCode
+    ? `\n❌ clase-censo · NO SE PUDO EVALUAR: el alcance en rutas salió cero (ver arriba)`
+    : `\n✅ clase-censo · ${candidatos.length} candidato(s) derivado(s) de ${censo.length} componentes`,
+);

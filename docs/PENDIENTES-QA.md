@@ -1,5 +1,127 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §120-PASO-0 · **el «no hay `.next`» era del instrumento — y debajo había una sonda MUERTA desde agosto y un cero con forma de dato** — 120.ª, 2026-08-27
+
+**Encargo:** derivar **por qué** la 119.ª dio `.next` por ausente, y **arreglarlo
+en la sonda, no en la cita**. Lo primero costó un `find`; lo segundo destapó dos
+defectos que nadie estaba buscando.
+
+### 1 · El mecanismo: se buscó en la raíz del REPO, y la app vive en `apps/web/`
+
+Desde la conversión a monorepo (F2-1, 2026-08-03) `.next`, `src/` y el
+`package.json` con `start` **no están en la raíz del repo**. `lib.mjs` ya lo
+tiene resuelto en un solo sitio —`buscaApp()`/`enApp()`, que **BUSCA** la app y
+**muere en voz alta** si no la encuentra, escrito exactamente contra este fallo—.
+La comprobación de la 119.ª no pasó por ahí.
+
+| | |
+|---|---|
+| se comprobó | `<repo>/.next` → **no existe** |
+| existe | `<repo>/apps/web/.next` — mtime **2026-08-27 11:19** |
+
+### 2 · El barrido de la CLASE, no de la instancia — y la clase tiene UN miembro
+
+§sondas 4 manda arreglar la clase. Derivado sobre las **219** sondas `.mjs` de
+`scripts/qa/`:
+
+| | n |
+|---|---|
+| sondas con `RAIZ` = raíz del **REPO** | **42** |
+| de ellas, con `join(RAIZ, <camino de la app>)` | **18** |
+| **de esas 18, que NO resuelven** | **2 — las dos en `clase-censo.mjs`** |
+
+Las otras **16 son correctas**: usan prefijo explícito (`apps/web/public`,
+`packages/cms-config/…`), que **sí** cuelga de la raíz del repo. El
+discriminador no es qué `RAIZ` se declara, sino **qué se le cuelga**.
+
+> **`qa:clase-censo` llevaba MUERTA desde el 2026-08-03**: `ENOENT` en su primer
+> `readdirSync`, exit 1, sin llegar nunca a su informe — **registrada en
+> `package.json`** todo ese tiempo. Es §regla 26 hermana: *un comando registrado
+> tampoco prueba que su sonda pueda terminar*. **No tiene negativo.**
+
+### 3 · ⚠ Y arreglar el `ENOENT` NO bastaba: debajo había un CERO CON FORMA DE DATO
+
+Con las rutas ya resueltas la sonda corría, salía **exit 0** y publicaba:
+
+| | 2026-08-03 (congelada) | tras arreglar sólo el `ENOENT` | tras arreglar el `rel` |
+|---|---|---|---|
+| `conAlcance2Rutas` | 41 | **0** | **63** |
+| `candidatos` | 33 | **0** | **35** |
+| `compartidosPorImportadores` | 27 | 43 | 43 |
+
+**El `0` no daba error: daba un dato.** Se lee como *«no hay duplicación de
+clase que extraer»* — el veredicto contrario al verdadero, en verde y con una
+sonda recién arreglada de coartada.
+
+**Causa:** los `rel` se calculaban contra la raíz del repo, así que pasaron a
+ser `apps/web/src/app/…` mientras **TRES anclas** seguían exigiendo `^src/app/`
+(el filtro de `paginas`, `rutaDe`, y el de `c.paginas`). Un selector que no casa
+con nada **no es un cero**. Arreglado calculando `rel` contra **APP**: devuelve
+el vocabulario de la congelada de agosto (`src/components/…`) intacto, así que
+las dos congeladas **vuelven a ser comparables** y las tres anclas casan.
+
+### 4 · El control que faltaba, con sus dos direcciones
+
+El único control cero/pleno de la sonda vigilaba el detector de **marcadores**
+—`36/97`, que pasó tan campante— y **nada** vigilaba el alcance en rutas. Por eso
+el cero navegó. Añadido, y **ejercitado en los dos sentidos** (§regla 8), con el
+sabotaje puesto **en el dato** y no en un umbral (§regla 28):
+
+| | exit | alcance en rutas | páginas | rutas repartidas | titular |
+|---|---|---|---|---|---|
+| **control** | **0** | 96/97 | 26 | **426/426** | ✅ |
+| **sabotaje** (restaura el `rel` roto) | **1** | 0/97 | 0 | 0/426 | ❌ ×2 |
+
+Y el titular se ató al mismo estado que el código de salida: antes imprimía
+**`✅` justo debajo del `❌`**, que es §sondas 1 —*lo que imprime y lo que cuenta
+no pueden discrepar*— y el titular es lo que se cita.
+
+> ✅ **De regalo, una derivación INDEPENDIENTE del 426**: la sonda reparte
+> **426/426 rutas** entre **26 `page.tsx`** por casado de patrón — otro mecanismo,
+> mismo número. Y `HeaderNav`, `Footer`, `SectionRow` y `ScrollToTop` salen a
+> **426** cada uno, que es lo que significa «cascarón».
+
+### 5 · ⚠ Un artefacto de negativo se coló con nombre de MEDIDA — §regla 7 en vivo
+
+El sabotaje se corrió **en una copia**, como manda §regla 20. **No basta:**
+
+> **`w()` resuelve por el nombre que la sonda DECLARA, no por el fichero desde el
+> que corre.** Así que una copia saboteada congela con **nombre de medida** — y
+> §regla 7 dice que eso es *«una medida falsa con la autoridad de una
+> congelada»*.
+
+Salió `clase-censo-2026-08-27-2.json` con `candidatos: 0` y `rel: web/src/…`.
+Renombrado a **`clase-censo-2026-08-27-neg-anclas-src-app-no-casan.json`**, y
+verificado **por efecto** (§*el marcador prueba que el build es nuevo, no que el
+cambio tenga efecto*): `yaMarcado()` ya lo filtra, y sólo quedan las dos medidas
+buenas.
+
+> 📋 **CANDIDATO a §regla 12, NO promovido — es del propietario.** El enunciado
+> aguanta sin fecha ni nombre propio: *«correr un sabotaje en una copia protege
+> el FUENTE, no la SALIDA; tras un sabotaje ad-hoc se mira `medidas/` y se marca
+> lo que haya escrito»*. §regla 24 sólo cubre el sabotaje **declarado** por
+> variable de entorno, que la sonda sí puede detectar; un `sed` sobre una copia
+> no lo puede saber. Se deja aquí con su evidencia porque el encargo acotó el
+> veredicto de §regla 12 de este paso al hallazgo del `.next`.
+
+### 6 · §regla 12 sobre el hallazgo encargado: **es EVENTO, no sube**
+
+El mecanismo ya es ley por dos vías —§sondas 4 (*un selector que no casa con
+nada no es un cero*) y §regla 9 sobre los **hechos negativos**, que ya manda
+comprobar *«no existe fichero»* contra `medidas/` y `git log`—. No hay regla
+nueva que escribir: hay una que **no se aplicó**. Se queda aquí con su número.
+
+### Lo que esto NO arregla, declarado
+
+- **`qa:clase-censo` sigue sin negativo** (`clase-censo.neg.mjs` no existe). El
+  control de arriba vive **dentro** de la sonda, que es mejor que nada y **no es**
+  un negativo registrado. Fichado.
+- **Los 35 candidatos de clase no se han tocado.** La sonda vuelve a producir su
+  inventario tras 24 días muerta; **qué hacer con él es otra tanda**.
+- El recuento de sondas de `CLAUDE.md` dice **113** (2026-08-08) y `qa:lib` deriva
+  hoy **214**. Es el envejecimiento que la propia nota de §sondas 9 predice —
+  evento, y el número se deriva, no se cita.
+
 ## ✅ §REGLA-12-BARRIDO-119 · **4 candidatos, 3 ya eran ley y 1 sube** — 119.ª, 2026-08-27
 
 **El número se escribe aunque sea cero** (§regla del cero: *«no encontré
@@ -551,12 +673,38 @@ familias de 1** = **426**.
 > correcto. Lo que respalda el 426 es la derivación; su guarda es
 > `qa:manifiesto` con su negativo.
 
-> ⚠ **Lo que NO se pudo derivar hoy, y por eso no se escribió en ninguna
-> parte:** el recuento de **claves crudas** del manifiesto (antes del filtro).
-> El encargo lo citaba como **429**; no hay `.next` en el árbol y la tanda es
-> offline, así que sale **SIN DERIVAR**. Es la propia nota de operación del
-> encargo —*toda cifra se DERIVA antes de usarse, también las que yo te pase*—
-> cobrada sobre el encargo.
+> ⚠ ~~**Lo que NO se pudo derivar hoy**: el recuento de **claves crudas** del
+> manifiesto. El encargo lo citaba como **429**; no hay `.next` en el árbol y la
+> tanda es offline, así que sale **SIN DERIVAR**.~~
+>
+> ✅ **DERIVADO en la 120.ª · PASO 0 — y el «no hay `.next`» era del
+> INSTRUMENTO, no del árbol.** Las dos mitades de la frase tachada eran falsas,
+> y cada una por su motivo:
+>
+> | lo que se afirmó | lo que hay |
+> |---|---|
+> | «no hay `.next` en el árbol» | **lo hay**: `apps/web/.next`, mtime **2026-08-27 11:19**, `prerender-manifest.json` de **311 704 B**. Se buscó en la **raíz del REPO**, y desde la conversión a monorepo (F2-1) la app vive en `apps/web/` |
+> | «sale SIN DERIVAR» | **ya estaba derivado y commiteado** desde la 118.ª — §P4: *«416 → 429 claves crudas, clavado»* |
+>
+> **El número, con su unidad y su reparto** (§*cada denominador se escribe CON
+> SU UNIDAD*):
+>
+> | unidad | n | qué es |
+> |---|---|---|
+> | **claves CRUDAS** | **429** | `Object.keys(manifiesto.routes)` sin filtrar |
+> | **descartadas** | **3** | `/_global-error` · `/_not-found` · `/favicon.ico` |
+> | **RUTAS (páginas)** | **426** | tras `!/^\/_/ && !includes(".")` |
+>
+> **Las 3 de diferencia son internas de Next: no son rutas sin medir.** Y el
+> `429` queda **cruzado por dos vías independientes** — la derivación de hoy y
+> la predicción pre-registrada de la 118.ª, que se escribió **antes** de mirar.
+>
+> ⚠ **Y la lección es §regla 9 sobre un HECHO NEGATIVO, que es la cara que más
+> engaña:** *«no hay fichero»* parece que no cuesta comprobarlo, y es justo el
+> que se afirma de memoria. La regla ya manda buscarlo **en `medidas/` Y en `git
+> log`**; aquí bastaba con un `find` — y con `grep 429 docs/`, que lo tenía
+> escrito. **Es la tercera vez en dos tandas que un cero sale de la comprobación
+> y no del objeto.**
 
 ### El barrido, clasificado ANTES de sustituir
 
