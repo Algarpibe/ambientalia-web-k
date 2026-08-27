@@ -205,6 +205,8 @@
     "qa:lh-spec-390": "node scripts/qa/lh-spec.mjs 390",
     "qa:barra-cmp": "node scripts/qa/barra-cmp.mjs",
     "qa:barra-cmp-neg": "node scripts/qa/barra-cmp.neg.mjs",
+    "qa:ficha-cmp": "node scripts/qa/ficha-cmp.mjs",
+    "qa:ficha-cmp-neg": "node scripts/qa/ficha-cmp.neg.mjs",
     "qa:lh-barra": "node scripts/qa/lh-barra.mjs",
     "qa:lh-h1": "node scripts/qa/lh-h1.mjs",
     "qa:lh-contenedores": "node scripts/qa/lh-contenedores.mjs",
