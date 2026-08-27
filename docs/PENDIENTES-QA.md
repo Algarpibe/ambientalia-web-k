@@ -23018,6 +23018,95 @@ tandas intermedias la movieron»** — una **COTA**, no una atribución limpia.
 La atribución limpia exigiría una base tomada justo antes de la ficha, y
 **esa base no existe**.
 
+## 118.ª PASO 0b · PRE-REGISTRO — con su ancho, su premisa DERIVADA y su refutación (2026-08-27)
+
+**Escrito ANTES de tocar una línea de `src/`.** La premisa entera sale de
+`estado-118.{mjs,log,json}`; ninguna cifra se cita de memoria (§regla 9, que el
+propio encargo invoca: *«la de tablas ya ha envejecido dos veces»*).
+
+### La premisa, DERIVADA
+
+| qué | valor | cómo |
+|---|---|---|
+| migraciones en fichero · aplicadas | **24 · 24** | `readdir` + `select count(*) from payload_migrations` |
+| tablas en `public` | **138** | consulta real |
+| `categorias` · sus relaciones | **4 · 154** | consulta real |
+| `taxonomia-sectores` · sus relaciones | **11 · 57** | consulta real |
+| manifiesto hoy | **416 claves crudas = 413 páginas + 3** | `/_global-error` · `/_not-found` · `/favicon.ico`, **nombradas** |
+| claves `/categoria/` · `/sector/` hoy | **0 · 0** | el manifiesto |
+| href `/categoria/` en **código** | **6, los 6 al ORIGINAL** | + **4** menciones en comentario, excluidas y publicadas |
+
+> ⚠ **LO PRIMERO QUE CAMBIA EL ENCARGO: ESTA TANDA NO NECESITA MIGRACIÓN.**
+> Las dos relaciones que la mesa decide **ya existen y ya están pobladas** —(a)
+> `entradas-blog → categorias` y (c1) `casos → taxonomia-sectores`, esta última
+> casando con su consumidor medido, los **11 + 1** del filtro—. Así que la
+> condición del ESCALÓN 1 sobre §regla 30 —*la reversa se prueba ANTES de
+> sembrar*— **NO APLICA**, y el defecto del generador de `down` que encontró la
+> 117.ª **no se puede volver a ejercitar en esta tanda**. Se dice en voz alta:
+> *«una condición omitida»* y *«una condición que no aplica»* se leen igual si
+> nadie las distingue.
+
+### ⚠ Y LA UNIDAD, porque el encargo mezcla dos lecturas de «13»
+
+*«13 RUTAS, 5 DE ELLAS REDIRECCIÓN»* son **dos conjuntos distintos que suman
+13 cada uno** — §*dos lecturas pueden dar el mismo cardinal contando unidades
+distintas*, y aquí el empate es lo único que impide verlo:
+
+| lectura | qué cuenta | n |
+|---|---|---|
+| **PÁGINAS** ← la que manda para el manifiesto | 6 base + **7** `/page/N` | **13** |
+| **TÉRMINOS** | 6 que sirven 200 + **5** que dan 301 | **11** |
+
+**Las 5 redirecciones NO están entre las 13 páginas: su intersección es 0** y
+la unión de la familia son **18 URLs**. El número FINAL del encargo —*«413 + 13
+páginas»*— **es el correcto**; lo que mezcla es la frase intermedia.
+
+### Las predicciones, a 1440 **y** a 390
+
+Cada una con su refutación escrita, y el ancho dentro del enunciado
+(§*una predicción sobre una propiedad tapada se escribe CON SU ANCHO*).
+
+| | predicción | refuta |
+|---|---|---|
+| **P1** | **(a) `categoria` es NO-OP ABSOLUTO**: ya existe y ya emite 0 rutas. **0 páginas nuevas · 0 movidas · 0 enlaces rotos** | cualquier clave `/categoria/` en el manifiesto nuevo, o un solo href de código apuntando a local |
+| **P2** | **(c1) `caso → sector` es NO-OP ABSOLUTO**: ídem, y su consumidor ya lo lee | ídem |
+| **P3** | **(c2) el archivo suma EXACTAMENTE 13 páginas**, las 13 nombradas en `estado-118.log`, **0 desaparecidas** | diferencia simétrica ≠ `13 y 0`, o una sola ruta no nombrada |
+| **P4** | **las 5 redirecciones NO son páginas**: manifiesto **416 → 429 crudas** y **413 → 426 páginas** | **431** crudas (serían las 5 emitidas como página), o cualquiera de las 5 en el manifiesto |
+| **P5** | **las 413 existentes NO se mueven**, a los **DOS** anchos: `Δ docH = 0` en **413 de 413** | cualquiera ≠ 0 — y se lee por `\|clon − original\|` ANTES/DESPUÉS par a par, no por el recuento |
+
+### Lo que se replica COMO MEDIDA, no como regla derivada — y por qué
+
+**Se barrió el parámetro en vez de razonarlo** (§*antes de escribir una regla
+ajustada, BARRE el parámetro*): `ceil(casos / k)` para `k = 1..30` contra las
+páginas que el original declara en su propio `<title>`.
+
+> **Mejor `k = 5`: acierta 8 de 9 y falla en UNA, nombrada — `industria`
+> (8 casos ⇒ predice 2, el original declara 3).**
+
+Publicar sólo *«no es derivable»* tiraría una regla que explica casi todo el
+dominio; publicar *«k = 5»* a secas cablearía un fallo. Van los dos números.
+
+⚠ **Y la excepción no es aleatoria: `industria` es también el ÚNICO término
+cuyo título de archivo no sale de su `nombre`** — sirve *«Articles about air
+quality monitoring in industries»*, medido en **2 de 2** de sus páginas. Dos
+anomalías sobre el mismo término son una señal; con **n = 1** no son un
+discriminador (§*un discriminador hallado en una sola instancia tampoco es un
+discriminador*). **Se ficha, no se explica.**
+
+**Consecuencia operativa:** el conjunto de rutas se replica **como la lista
+medida de 13**, no como regla. **Una alta futura de término NO entraría sola**,
+y eso se declara aquí en vez de descubrirse cuando pase.
+
+### Lo que este PASO 0b NO contesta, con su cardinal
+
+- el **mecanismo del bucle de `mineria`** — 5 saltos, necesita red;
+- el **total de páginas de `mineria` y `obras`**: **2 de 11** términos sin
+  ninguna captura, así que su `M` es **DESCONOCIDO**, no 0;
+- la **varianza del régimen `--`**: intacta — **0 de 6** términos de `author`
+  y **0 de 131** documentos del corpus.
+
+---
+
 ### ✅ CERRADA 2026-08-27 (118.ª PASO 0a) — ERAN LA BARRA LATERAL, Y ESTABA EN EL ARCHIVO
 
 **No hizo falta medir nada**: tres congeladas que ya estaban commiteadas y un

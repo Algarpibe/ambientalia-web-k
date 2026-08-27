@@ -1,0 +1,184 @@
+{
+  "migracion": {
+    "ficheros": 24,
+    "aplicadas": 24,
+    "sincronia": true,
+    "nTablas": 138
+  },
+  "relaciones": {
+    "categorias": 4,
+    "categoriasRels": 154,
+    "sectores": 11,
+    "sectoresRels": 57
+  },
+  "manifiesto": {
+    "crudas": 416,
+    "paginas": 413,
+    "internas": [
+      "/_global-error",
+      "/_not-found",
+      "/favicon.ico"
+    ],
+    "categoria": 0,
+    "sector": 0
+  },
+  "hrefsCategoria": {
+    "codigo": 6,
+    "alOriginal": 6,
+    "locales": [],
+    "enComentario": [
+      {
+        "f": "apps/web/src/components/listados/BarraLateral.tsx",
+        "v": "/categoria/<slug>/"
+      },
+      {
+        "f": "apps/web/src/components/listados/PaginaArchivoCpt.tsx",
+        "v": "/categoria/<slug>/"
+      },
+      {
+        "f": "apps/web/src/components/listados/PaginaBlog.tsx",
+        "v": "/categoria/<slug>/"
+      },
+      {
+        "f": "apps/web/src/components/listados/PaginaListado.tsx",
+        "v": "/categoria/<slug>/"
+      }
+    ]
+  },
+  "archivo": {
+    "paginas": [
+      {
+        "ruta": "/sector/edar/",
+        "titulo": "EDAR / PTAR Archives - Kunak",
+        "esPagina": false
+      },
+      {
+        "ruta": "/sector/industria/page/2/",
+        "titulo": "Articles about air quality monitoring in industries - Página 2 de 3 - Kunak",
+        "esPagina": true
+      },
+      {
+        "ruta": "/sector/industria/page/3/",
+        "titulo": "Articles about air quality monitoring in industries - Página 3 de 3 - Kunak",
+        "esPagina": true
+      },
+      {
+        "ruta": "/sector/investigacion-consultoria/page/2/",
+        "titulo": "Investigación y consultoría Archives - Página 2 de 2 - Kunak",
+        "esPagina": true
+      },
+      {
+        "ruta": "/sector/metalurgia/",
+        "titulo": "Metalurgia Archives - Kunak",
+        "esPagina": false
+      },
+      {
+        "ruta": "/sector/oil-gas-es/",
+        "titulo": "Oil &amp; Gas Archives - Kunak",
+        "esPagina": false
+      },
+      {
+        "ruta": "/sector/olores/",
+        "titulo": "Olores Archives - Kunak",
+        "esPagina": false
+      },
+      {
+        "ruta": "/sector/puertos/",
+        "titulo": "Puertos y aeropuertos Archives - Kunak",
+        "esPagina": false
+      },
+      {
+        "ruta": "/sector/puertos/page/2/",
+        "titulo": "Puertos y aeropuertos Archives - Página 2 de 2 - Kunak",
+        "esPagina": true
+      },
+      {
+        "ruta": "/sector/sports/",
+        "titulo": "Sports Archives - Kunak",
+        "esPagina": false
+      },
+      {
+        "ruta": "/sector/urbano/page/2/",
+        "titulo": "Urbano Archives - Página 2 de 4 - Kunak",
+        "esPagina": true
+      },
+      {
+        "ruta": "/sector/urbano/page/3/",
+        "titulo": "Urbano Archives - Página 3 de 4 - Kunak",
+        "esPagina": true
+      },
+      {
+        "ruta": "/sector/urbano/page/4/",
+        "titulo": "Urbano Archives - Página 4 de 4 - Kunak",
+        "esPagina": true
+      }
+    ],
+    "redirecciones": [
+      {
+        "de": "https://kunakair.com/es/sector/industria/",
+        "a": "https://kunakair.com/es/sectores/control-de-emisiones-industriales/"
+      },
+      {
+        "de": "https://kunakair.com/es/sector/investigacion-consultoria/",
+        "a": "https://kunakair.com/es/sectores/estudio-de-la-contaminacion-atmosferica/"
+      },
+      {
+        "de": "https://kunakair.com/es/sector/mineria/",
+        "a": "https://kunakair.com/es/sector/mineria/"
+      },
+      {
+        "de": "https://kunakair.com/es/sector/obras/",
+        "a": "https://kunakair.com/es/sectores/contaminacion-por-construccion/"
+      },
+      {
+        "de": "https://kunakair.com/es/sector/urbano/",
+        "a": "https://kunakair.com/es/sectores/calidad-del-aire-en-las-ciudades/"
+      }
+    ],
+    "nBase": 6,
+    "nPageN": 7
+  },
+  "paginacion": {
+    "casosPorSector": {
+      "obras": 1,
+      "urbano": 17,
+      "edar": 3,
+      "investigacion-consultoria": 7,
+      "mineria": 5,
+      "industria": 8,
+      "oil-gas-es": 1,
+      "puertos": 7,
+      "olores": 5,
+      "sports": 1,
+      "metalurgia": 2
+    },
+    "totalDeclarado": {
+      "edar": 1,
+      "industria": 3,
+      "investigacion-consultoria": 2,
+      "metalurgia": 1,
+      "oil-gas-es": 1,
+      "olores": 1,
+      "puertos": 2,
+      "sports": 1,
+      "urbano": 4
+    },
+    "mejorK": {
+      "k": 5,
+      "ok": 8
+    },
+    "derivable": false,
+    "titulosNoDerivables": [
+      {
+        "ruta": "/sector/industria/page/2/",
+        "esperado": "Industria Archives…",
+        "real": "Articles about air quality monitoring in industries - Página 2 de 3 - Kunak"
+      },
+      {
+        "ruta": "/sector/industria/page/3/",
+        "esperado": "Industria Archives…",
+        "real": "Articles about air quality monitoring in industries - Página 3 de 3 - Kunak"
+      }
+    ]
+  }
+}

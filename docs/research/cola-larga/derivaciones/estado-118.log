@@ -1,0 +1,175 @@
+══════════════════════════════════════════════════════════════════════════════
+PASO 0b · 118.ª — ESTADO DERIVADO (premisa de las predicciones)
+══════════════════════════════════════════════════════════════════════════════
+
+──────────────────────────────────────────────────────────────────────────────
+1 · ¿HACE FALTA MIGRACIÓN? — las dos relaciones de la mesa
+──────────────────────────────────────────────────────────────────────────────
+
+  migraciones en fichero ... 24
+  aplicadas en la DB ....... 24
+  ⇒ esquema en sincronía : SÍ
+
+  población MEDIDA (consulta real, no citada):
+  categorias · términos                          4
+  entradas-blog → categorias · relaciones      154
+  taxonomia-sectores · términos                 11
+  casos → taxonomia-sectores · relaciones       57
+  tablas en public (DERIVADO)                  138
+
+  ⇒ LAS DOS RELACIONES YA EXISTEN Y ESTÁN POBLADAS.
+    (c1) `caso → sector` casa con el consumidor medido: 11 sectores + 1
+    comodín en el filtro de `/casos-de-exito/`.
+
+  ⇒ **ESTA TANDA NO NECESITA MIGRACIÓN**, y por tanto §regla 30 —la
+    reversa se prueba ANTES del dato— NO APLICA. Se dice en voz alta en
+    vez de saltársela: una condición omitida y una condición que no
+    aplica se leen igual si nadie las distingue.
+
+──────────────────────────────────────────────────────────────────────────────
+2 · LO QUE EMITE EL CLON HOY — los dos números CON SU UNIDAD
+──────────────────────────────────────────────────────────────────────────────
+
+  claves CRUDAS en `prerender-manifest` ..... 416
+  PÁGINAS en `clon-base-390-t117-tras-la-ficha.json` ... 413
+  diferencia ................................ 3 y 0
+
+  Las de diferencia, NOMBRADAS — porque un cardinal solo no se audita:
+     sólo en manifiesto : /_global-error
+     sólo en manifiesto : /_not-found
+     sólo en manifiesto : /favicon.ico
+
+  ⇒ las 3 son INTERNAS de Next, no páginas. Los dos números son ciertos
+    y cuentan unidades distintas: **416 claves crudas = 413 páginas + 3**.
+
+  claves `/categoria/` hoy : 0
+  claves `/sector/`    hoy : 0
+
+──────────────────────────────────────────────────────────────────────────────
+3 · LOS `href` DE `categoria` — ¿al original, o a una ruta que no se emite?
+──────────────────────────────────────────────────────────────────────────────
+
+  La decisión (a) —relación SIN archivo— sólo es inocua si esos href ya
+  apuntan al original (§Regla de rutas locales). Si alguno apuntara a una
+  ruta local que el build no emite, eso es un defecto VIVO.
+
+  href `/categoria/` en CÓDIGO (comentarios fuera) ... 6
+  de ellos AL ORIGINAL (https://kunakair.com/...) ..... 6
+  de ellos a una ruta LOCAL .......................... 0
+     · apps/web/src/components/listados/PaginaArchivoCpt.tsx
+     · apps/web/src/components/listados/PaginaBlog.tsx
+     · apps/web/src/components/listados/PaginaEtiqueta.tsx
+     · apps/web/src/components/listados/PaginaListado.tsx
+     · apps/web/src/lib/grupo-c-plantilla.ts
+     · apps/web/src/lib/grupo-c-plantilla.ts
+
+  menciones en COMENTARIO, excluidas y publicadas ..... 4
+     (prosa) apps/web/src/components/listados/BarraLateral.tsx → /categoria/<slug>/
+     (prosa) apps/web/src/components/listados/PaginaArchivoCpt.tsx → /categoria/<slug>/
+     (prosa) apps/web/src/components/listados/PaginaBlog.tsx → /categoria/<slug>/
+     (prosa) apps/web/src/components/listados/PaginaListado.tsx → /categoria/<slug>/
+
+  ⇒ enlaces rotos que crearía la decisión (a): **0**
+     Los 6 href de código ya apuntan al ORIGINAL, que es lo que
+     §Regla de rutas locales manda cuando el destino no está clonado.
+     La decisión (a) —relación SIN archivo— es por tanto INOCUA aquí:
+     no hay nada que repuntar, y eso es un resultado, no una tarea
+     pendiente disfrazada de verde.
+
+──────────────────────────────────────────────────────────────────────────────
+4 · EL ARCHIVO DE `sector` — ⚠ DOS LECTURAS DE «13» QUE NO SON EL MISMO
+    CONJUNTO
+──────────────────────────────────────────────────────────────────────────────
+
+  (A) PÁGINAS con captura ... 13   = 6 base + 7 `/page/N`
+  (B) REDIRECCIONES 301 ..... 5   (sin captura: un 301 no tiene cuerpo)
+  (A ∪ B) URLs de la familia . 18
+
+  ⚠ El encargo escribe «13 RUTAS, 5 DE ELLAS REDIRECCIÓN». Son DOS
+    lecturas de 13 y NO el mismo conjunto (§*dos lecturas pueden dar el
+    mismo cardinal contando unidades distintas*):
+       · 13 PÁGINAS = 6 base + 7 `/page/N`   ← la que manda para el manifiesto
+       · 11 TÉRMINOS = 6 que sirven + 5 que redirigen
+    Las 5 NO están entre las 13. Su intersección es 0, y la unión son 18.
+    El número FINAL del encargo (413 + 13 páginas) es el correcto.
+
+  Las 13 PÁGINAS, nombradas:
+     /sector/edar/                                EDAR / PTAR Archives - Kunak
+     /sector/industria/page/2/                    Articles about air quality monitoring in industries - Página 2 de 3 - Kunak
+     /sector/industria/page/3/                    Articles about air quality monitoring in industries - Página 3 de 3 - Kunak
+     /sector/investigacion-consultoria/page/2/    Investigación y consultoría Archives - Página 2 de 2 - Kunak
+     /sector/metalurgia/                          Metalurgia Archives - Kunak
+     /sector/oil-gas-es/                          Oil &amp; Gas Archives - Kunak
+     /sector/olores/                              Olores Archives - Kunak
+     /sector/puertos/                             Puertos y aeropuertos Archives - Kunak
+     /sector/puertos/page/2/                      Puertos y aeropuertos Archives - Página 2 de 2 - Kunak
+     /sector/sports/                              Sports Archives - Kunak
+     /sector/urbano/page/2/                       Urbano Archives - Página 2 de 4 - Kunak
+     /sector/urbano/page/3/                       Urbano Archives - Página 3 de 4 - Kunak
+     /sector/urbano/page/4/                       Urbano Archives - Página 4 de 4 - Kunak
+
+  Las 5 REDIRECCIONES, con su destino:
+     /es/sector/industria/                        → /es/sectores/control-de-emisiones-industriales/
+     /es/sector/investigacion-consultoria/        → /es/sectores/estudio-de-la-contaminacion-atmosferica/
+     /es/sector/mineria/                          → /es/sector/mineria/   ⚠ BUCLE A SÍ MISMA (5 saltos, sin diagnosticar: necesita red)
+     /es/sector/obras/                            → /es/sectores/contaminacion-por-construccion/
+     /es/sector/urbano/                           → /es/sectores/calidad-del-aire-en-las-ciudades/
+
+──────────────────────────────────────────────────────────────────────────────
+5 · ¿LA PAGINACIÓN SE DERIVA DEL DATO DEL CLON? — la separadora del modelo
+──────────────────────────────────────────────────────────────────────────────
+
+  Si el nº de casos por término predijera el nº de páginas, el conjunto de
+  rutas sería DERIVADO y una alta futura entraría sola. Si no, es MEDIDO.
+
+  término                      casos   páginas declaradas por el ORIGINAL
+     edar                          3   1
+     industria                     8   3
+     investigacion-consultoria     7   2
+     metalurgia                    2   1
+     mineria                       5   — (sin captura)
+     obras                         1   — (sin captura)
+     oil-gas-es                    1   1
+     olores                        5   1
+     puertos                       7   2
+     sports                        1   1
+     urbano                       17   4
+
+  Barrido de `ceil(casos / k) === páginas` para k = 1..30, sobre 9 términos:
+     mejor k = 5 · acierta 8 de 9
+     ✗ industria: casos 8 ⇒ predice 2, el original declara 3
+  ⇒ ¿la paginación se DERIVA del dato del clon? NO
+
+     **NO, y el reparto importa más que el veredicto**: `ceil(casos/5)` acierta
+     8 de 9 y falla en 1, nombrada. Publicar sólo «NO derivable»
+     tiraría una regla que explica casi todo el dominio.
+
+     ⚠ Y la excepción NO es aleatoria: es el MISMO término que trae un
+     título de archivo que no sale de su `nombre`. Dos anomalías sobre
+     el mismo término son una señal, no dos casualidades — pero con
+     **n = 1** eso NO es un discriminador (§*un discriminador hallado en
+     una sola instancia tampoco es un discriminador*). Se ficha.
+
+     CONSECUENCIA PARA EL MODELO, que es lo operativo: el conjunto de
+     rutas se replica **como MEDIDA** —la lista de las 13—, no como
+     regla derivada. Una alta futura de término NO entraría sola, y eso
+     se declara aquí en vez de descubrirse cuando pase.
+
+  Títulos que NO empiezan por el `nombre` del término : 2 de 13
+     ⚠ /sector/industria/page/2/
+         esperado «Industria Archives…»
+         real     «Articles about air quality monitoring in industries - Página 2 de 3 - Kunak»
+     ⚠ /sector/industria/page/3/
+         esperado «Industria Archives…»
+         real     «Articles about air quality monitoring in industries - Página 3 de 3 - Kunak»
+
+══════════════════════════════════════════════════════════════════════════════
+LO QUE ESTA DERIVACIÓN NO CONTESTA (§regla 14, con su cardinal)
+══════════════════════════════════════════════════════════════════════════════
+
+  · el MECANISMO del bucle de `mineria` — 5 saltos, necesita red;
+  · el TOTAL de páginas de `mineria` y `obras`: **2 de 11** términos sin
+    ninguna captura, así que su M es DESCONOCIDO, no 0;
+  · la varianza entre instancias del régimen `--`: 0 de 6 términos de
+    `author` y 0 de 131 documentos del corpus. Intacta.
+
