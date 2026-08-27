@@ -1,0 +1,925 @@
+{
+  "fecha": "2026-08-26",
+  "tanda": "116.ª ESCALÓN 1",
+  "regimen": {
+    "categoria": [
+      {
+        "termino": "articulos",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "eventos",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "noticias",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "podcast-es",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      }
+    ],
+    "author": [
+      {
+        "termino": "admin",
+        "censoDice": "--",
+        "s2Dice": "-T",
+        "acuerdo": false,
+        "s1_marcadorBody": false,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 1,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "edurne-ibarrola",
+        "censoDice": "--",
+        "s2Dice": "-T",
+        "acuerdo": false,
+        "s1_marcadorBody": false,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 1,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "irene",
+        "censoDice": "--",
+        "s2Dice": "-T",
+        "acuerdo": false,
+        "s1_marcadorBody": false,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 1,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "javier-fernandez",
+        "censoDice": "--",
+        "s2Dice": "-T",
+        "acuerdo": false,
+        "s1_marcadorBody": false,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 1,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "kunak",
+        "censoDice": "--",
+        "s2Dice": "-T",
+        "acuerdo": false,
+        "s1_marcadorBody": false,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 1,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "mar_ramirez",
+        "censoDice": "--",
+        "s2Dice": "-T",
+        "acuerdo": false,
+        "s1_marcadorBody": false,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 1,
+        "postContent": 0,
+        "tbTemplate": true
+      }
+    ],
+    "sector": [
+      {
+        "termino": "edar",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "metalurgia",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "oil-gas-es",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "olores",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "puertos",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      },
+      {
+        "termino": "sports",
+        "censoDice": "-T",
+        "s2Dice": "-T",
+        "acuerdo": true,
+        "s1_marcadorBody": true,
+        "s1b_pagebuilder": false,
+        "s2_seccionesTbBody": 2,
+        "postContent": 0,
+        "tbTemplate": true
+      }
+    ]
+  },
+  "desacuerdos": [
+    {
+      "fam": "author",
+      "termino": "admin",
+      "censoDice": "--",
+      "s2Dice": "-T",
+      "secciones": 1
+    },
+    {
+      "fam": "author",
+      "termino": "edurne-ibarrola",
+      "censoDice": "--",
+      "s2Dice": "-T",
+      "secciones": 1
+    },
+    {
+      "fam": "author",
+      "termino": "irene",
+      "censoDice": "--",
+      "s2Dice": "-T",
+      "secciones": 1
+    },
+    {
+      "fam": "author",
+      "termino": "javier-fernandez",
+      "censoDice": "--",
+      "s2Dice": "-T",
+      "secciones": 1
+    },
+    {
+      "fam": "author",
+      "termino": "kunak",
+      "censoDice": "--",
+      "s2Dice": "-T",
+      "secciones": 1
+    },
+    {
+      "fam": "author",
+      "termino": "mar_ramirez",
+      "censoDice": "--",
+      "s2Dice": "-T",
+      "secciones": 1
+    }
+  ],
+  "terminos": [
+    "articulos",
+    "eventos",
+    "noticias",
+    "podcast-es"
+  ],
+  "cabeceras": {
+    "articulos": {
+      "h1": "Artículos",
+      "kicker": "Category",
+      "resto": "",
+      "imgs": [],
+      "bytes": 923
+    },
+    "eventos": {
+      "h1": "Eventos",
+      "kicker": "Category",
+      "resto": "",
+      "imgs": [],
+      "bytes": 921
+    },
+    "noticias": {
+      "h1": "Noticias",
+      "kicker": "Category",
+      "resto": "",
+      "imgs": [],
+      "bytes": 922
+    },
+    "podcast-es": {
+      "h1": "Podcast",
+      "kicker": "Category",
+      "resto": "",
+      "imgs": [],
+      "bytes": 921
+    }
+  },
+  "ordenes": {
+    "articulos": {
+      "n": 96,
+      "rutas": 16,
+      "descendente": true,
+      "primerFallo": null
+    },
+    "eventos": {
+      "n": 21,
+      "rutas": 4,
+      "descendente": true,
+      "primerFallo": null
+    },
+    "noticias": {
+      "n": 33,
+      "rutas": 6,
+      "descendente": true,
+      "primerFallo": null
+    },
+    "podcast-es": {
+      "n": 2,
+      "rutas": 1,
+      "descendente": true,
+      "primerFallo": null
+    }
+  },
+  "piezas": {
+    "articulos": [
+      "et_pb_blog_0_tb_body",
+      "et_pb_column_0_tb_body",
+      "et_pb_column_1_tb_body",
+      "et_pb_column_2_tb_body",
+      "et_pb_column_3_tb_body",
+      "et_pb_row_0_tb_body",
+      "et_pb_row_1_tb_body",
+      "et_pb_row_2_tb_body",
+      "et_pb_section_0_tb_body",
+      "et_pb_section_1_tb_body",
+      "et_pb_sidebar_0_tb_body",
+      "et_pb_text_0_tb_body",
+      "et_pb_text_1_tb_body",
+      "et_pb_text_5_tb_body"
+    ],
+    "eventos": [
+      "et_pb_blog_2_tb_body",
+      "et_pb_column_0_tb_body",
+      "et_pb_column_1_tb_body",
+      "et_pb_column_2_tb_body",
+      "et_pb_column_3_tb_body",
+      "et_pb_row_0_tb_body",
+      "et_pb_row_1_tb_body",
+      "et_pb_row_2_tb_body",
+      "et_pb_section_0_tb_body",
+      "et_pb_section_1_tb_body",
+      "et_pb_sidebar_0_tb_body",
+      "et_pb_text_0_tb_body",
+      "et_pb_text_1_tb_body"
+    ],
+    "noticias": [
+      "et_pb_blog_3_tb_body",
+      "et_pb_column_0_tb_body",
+      "et_pb_column_1_tb_body",
+      "et_pb_column_2_tb_body",
+      "et_pb_column_3_tb_body",
+      "et_pb_row_0_tb_body",
+      "et_pb_row_1_tb_body",
+      "et_pb_row_2_tb_body",
+      "et_pb_section_0_tb_body",
+      "et_pb_section_1_tb_body",
+      "et_pb_sidebar_0_tb_body",
+      "et_pb_text_0_tb_body",
+      "et_pb_text_1_tb_body",
+      "et_pb_text_7_tb_body"
+    ],
+    "podcast-es": [
+      "et_pb_blog_4_tb_body",
+      "et_pb_column_0_tb_body",
+      "et_pb_column_1_tb_body",
+      "et_pb_column_2_tb_body",
+      "et_pb_column_3_tb_body",
+      "et_pb_row_0_tb_body",
+      "et_pb_row_1_tb_body",
+      "et_pb_row_2_tb_body",
+      "et_pb_section_0_tb_body",
+      "et_pb_section_1_tb_body",
+      "et_pb_sidebar_0_tb_body",
+      "et_pb_text_0_tb_body",
+      "et_pb_text_1_tb_body",
+      "et_pb_text_8_tb_body"
+    ]
+  },
+  "piezasSinOrd": {
+    "articulos": [
+      "et_pb_blog_N",
+      "et_pb_column_N",
+      "et_pb_row_N",
+      "et_pb_section_N",
+      "et_pb_sidebar_N",
+      "et_pb_text_N"
+    ],
+    "eventos": [
+      "et_pb_blog_N",
+      "et_pb_column_N",
+      "et_pb_row_N",
+      "et_pb_section_N",
+      "et_pb_sidebar_N",
+      "et_pb_text_N"
+    ],
+    "noticias": [
+      "et_pb_blog_N",
+      "et_pb_column_N",
+      "et_pb_row_N",
+      "et_pb_section_N",
+      "et_pb_sidebar_N",
+      "et_pb_text_N"
+    ],
+    "podcast-es": [
+      "et_pb_blog_N",
+      "et_pb_column_N",
+      "et_pb_row_N",
+      "et_pb_section_N",
+      "et_pb_sidebar_N",
+      "et_pb_text_N"
+    ]
+  },
+  "ordMiga": {
+    "articulos": 0,
+    "eventos": 0,
+    "noticias": 0,
+    "podcast-es": 0
+  },
+  "ordBlog": {
+    "articulos": 0,
+    "eventos": 2,
+    "noticias": 3,
+    "podcast-es": 4
+  },
+  "PAGINAS": {
+    "articulos": {
+      "rutas": 16,
+      "conArt": 11,
+      "vacias": 5,
+      "conPag": 11,
+      "pagenaviP1": 11,
+      "maxTitulo": null,
+      "detalle": [
+        {
+          "ruta": "categoria\\categoria\\articulos\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\2\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\3\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\4\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\5\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\6\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\7\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\8\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\9\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\10\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\11\\index.html",
+          "articles": 6,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\12\\index.html",
+          "articles": 0,
+          "paginador": false,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\13\\index.html",
+          "articles": 0,
+          "paginador": false,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\14\\index.html",
+          "articles": 0,
+          "paginador": false,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\15\\index.html",
+          "articles": 0,
+          "paginador": false,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\articulos\\page\\16\\index.html",
+          "articles": 0,
+          "paginador": false,
+          "tituloDeM": null
+        }
+      ]
+    },
+    "eventos": {
+      "rutas": 4,
+      "conArt": 3,
+      "vacias": 1,
+      "conPag": 0,
+      "pagenaviP1": null,
+      "maxTitulo": 4,
+      "detalle": [
+        {
+          "ruta": "categoria\\categoria\\eventos\\index.html",
+          "articles": 9,
+          "paginador": false,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\eventos\\page\\2\\index.html",
+          "articles": 9,
+          "paginador": false,
+          "tituloDeM": 4
+        },
+        {
+          "ruta": "categoria\\categoria\\eventos\\page\\3\\index.html",
+          "articles": 3,
+          "paginador": false,
+          "tituloDeM": 4
+        },
+        {
+          "ruta": "categoria\\categoria\\eventos\\page\\4\\index.html",
+          "articles": 0,
+          "paginador": false,
+          "tituloDeM": 4
+        }
+      ]
+    },
+    "noticias": {
+      "rutas": 6,
+      "conArt": 4,
+      "vacias": 2,
+      "conPag": 4,
+      "pagenaviP1": 4,
+      "maxTitulo": 6,
+      "detalle": [
+        {
+          "ruta": "categoria\\categoria\\noticias\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": null
+        },
+        {
+          "ruta": "categoria\\categoria\\noticias\\page\\2\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": 6
+        },
+        {
+          "ruta": "categoria\\categoria\\noticias\\page\\3\\index.html",
+          "articles": 9,
+          "paginador": true,
+          "tituloDeM": 6
+        },
+        {
+          "ruta": "categoria\\categoria\\noticias\\page\\4\\index.html",
+          "articles": 6,
+          "paginador": true,
+          "tituloDeM": 6
+        },
+        {
+          "ruta": "categoria\\categoria\\noticias\\page\\5\\index.html",
+          "articles": 0,
+          "paginador": false,
+          "tituloDeM": 6
+        },
+        {
+          "ruta": "categoria\\categoria\\noticias\\page\\6\\index.html",
+          "articles": 0,
+          "paginador": false,
+          "tituloDeM": 6
+        }
+      ]
+    },
+    "podcast-es": {
+      "rutas": 1,
+      "conArt": 1,
+      "vacias": 0,
+      "conPag": 0,
+      "pagenaviP1": null,
+      "maxTitulo": null,
+      "detalle": [
+        {
+          "ruta": "categoria\\categoria\\podcast-es\\index.html",
+          "articles": 2,
+          "paginador": false,
+          "tituloDeM": null
+        }
+      ]
+    },
+    "__estados": {
+      "total": 12,
+      "deCategoria": 1,
+      "cubreVacia": false
+    }
+  },
+  "cruce": {
+    "hecho": true,
+    "corpus": 152,
+    "canalA": 150,
+    "canalB": 152,
+    "soloCorpus": [
+      "calidad-del-aire-en-puertos",
+      "webinar-como-controlar-las-emisiones-en-mineria-junio-2025"
+    ],
+    "soloArchivo": [],
+    "rescatadasPorCanalB": [
+      "calidad-del-aire-en-puertos",
+      "webinar-como-controlar-las-emisiones-en-mineria-junio-2025"
+    ],
+    "sinCategoria": [],
+    "enDosA": [
+      {
+        "slug": "todas-nuestras-soluciones-en-el-iotswc",
+        "terminos": [
+          "eventos",
+          "noticias"
+        ]
+      },
+      {
+        "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2",
+        "terminos": [
+          "eventos",
+          "noticias"
+        ]
+      }
+    ],
+    "enDosB": [
+      {
+        "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2",
+        "terminos": [
+          "eventos",
+          "noticias"
+        ]
+      },
+      {
+        "slug": "todas-nuestras-soluciones-en-el-iotswc",
+        "terminos": [
+          "eventos",
+          "noticias"
+        ]
+      }
+    ],
+    "mismosEnDos": true,
+    "maxN": 2
+  },
+  "igualCon": 0,
+  "igualSin": 1,
+  "totalPares": 6,
+  "difPorPar": {
+    "articulos vs eventos": {
+      "con": {
+        "soloA": [
+          "div.et_pb_text_inner ×1",
+          "div.et_pb_module et_pb_blog_0_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_5_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ],
+        "soloB": [
+          "div.et_pb_module et_pb_blog_2_tb_body et_pb_posts et_pb_bg_layout_light ×1"
+        ]
+      },
+      "sin": {
+        "soloA": [
+          "div.et_pb_text_inner ×1",
+          "div.et_pb_module et_pb_text et_pb_text_N_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ],
+        "soloB": []
+      },
+      "texto": {
+        "soloA": [
+          "Artículos ×2",
+          "«PAGINADOR» ×1"
+        ],
+        "soloB": [
+          "Eventos ×2"
+        ]
+      }
+    },
+    "articulos vs noticias": {
+      "con": {
+        "soloA": [
+          "div.et_pb_module et_pb_blog_0_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_5_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ],
+        "soloB": [
+          "div.et_pb_module et_pb_blog_3_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_7_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ]
+      },
+      "sin": {
+        "soloA": [],
+        "soloB": []
+      },
+      "texto": {
+        "soloA": [
+          "Artículos ×2"
+        ],
+        "soloB": [
+          "Noticias ×2"
+        ]
+      }
+    },
+    "articulos vs podcast-es": {
+      "con": {
+        "soloA": [
+          "div.et_pb_text_inner ×1",
+          "div.et_pb_module et_pb_blog_0_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_5_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ],
+        "soloB": [
+          "div.et_pb_module et_pb_blog_4_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_8_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ]
+      },
+      "sin": {
+        "soloA": [
+          "div.et_pb_text_inner ×1"
+        ],
+        "soloB": []
+      },
+      "texto": {
+        "soloA": [
+          "Artículos ×2",
+          "«TARJETA» ×7",
+          "«PAGINADOR» ×1"
+        ],
+        "soloB": [
+          "Podcast ×2"
+        ]
+      }
+    },
+    "eventos vs noticias": {
+      "con": {
+        "soloA": [
+          "div.et_pb_module et_pb_blog_2_tb_body et_pb_posts et_pb_bg_layout_light ×1"
+        ],
+        "soloB": [
+          "div.et_pb_text_inner ×1",
+          "div.et_pb_module et_pb_blog_3_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_7_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ]
+      },
+      "sin": {
+        "soloA": [],
+        "soloB": [
+          "div.et_pb_text_inner ×1",
+          "div.et_pb_module et_pb_text et_pb_text_N_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ]
+      },
+      "texto": {
+        "soloA": [
+          "Eventos ×2"
+        ],
+        "soloB": [
+          "Noticias ×2",
+          "«PAGINADOR» ×1"
+        ]
+      }
+    },
+    "eventos vs podcast-es": {
+      "con": {
+        "soloA": [
+          "div.et_pb_module et_pb_blog_2_tb_body et_pb_posts et_pb_bg_layout_light ×1"
+        ],
+        "soloB": [
+          "div.et_pb_module et_pb_blog_4_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_8_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ]
+      },
+      "sin": {
+        "soloA": [],
+        "soloB": [
+          "div.et_pb_module et_pb_text et_pb_text_N_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ]
+      },
+      "texto": {
+        "soloA": [
+          "Eventos ×2",
+          "«TARJETA» ×7"
+        ],
+        "soloB": [
+          "Podcast ×2"
+        ]
+      }
+    },
+    "noticias vs podcast-es": {
+      "con": {
+        "soloA": [
+          "div.et_pb_text_inner ×1",
+          "div.et_pb_module et_pb_blog_3_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_7_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ],
+        "soloB": [
+          "div.et_pb_module et_pb_blog_4_tb_body et_pb_posts et_pb_bg_layout_light ×1",
+          "div.et_pb_module et_pb_text et_pb_text_8_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1"
+        ]
+      },
+      "sin": {
+        "soloA": [
+          "div.et_pb_text_inner ×1"
+        ],
+        "soloB": []
+      },
+      "texto": {
+        "soloA": [
+          "Noticias ×2",
+          "«TARJETA» ×7",
+          "«PAGINADOR» ×1"
+        ],
+        "soloB": [
+          "Podcast ×2"
+        ]
+      }
+    }
+  },
+  "refutaciones": {
+    "R1": {
+      "terminosConTextoPropio": 0,
+      "denominador": 4,
+      "valoresDistintos": 1,
+      "hay": false
+    },
+    "R2": {
+      "hay": false,
+      "srcs": [],
+      "denominador": 4
+    },
+    "R3": {
+      "hay": false,
+      "ordenes": {
+        "articulos": {
+          "n": 96,
+          "rutas": 16,
+          "descendente": true,
+          "primerFallo": null
+        },
+        "eventos": {
+          "n": 21,
+          "rutas": 4,
+          "descendente": true,
+          "primerFallo": null
+        },
+        "noticias": {
+          "n": 33,
+          "rutas": 6,
+          "descendente": true,
+          "primerFallo": null
+        },
+        "podcast-es": {
+          "n": 2,
+          "rutas": 1,
+          "descendente": true,
+          "primerFallo": null
+        }
+      }
+    },
+    "R4": {
+      "unionCon": 19,
+      "unionSin": 6,
+      "parcialesCon": [
+        "et_pb_blog_0_tb_body",
+        "et_pb_blog_2_tb_body",
+        "et_pb_blog_3_tb_body",
+        "et_pb_blog_4_tb_body",
+        "et_pb_text_5_tb_body",
+        "et_pb_text_7_tb_body",
+        "et_pb_text_8_tb_body"
+      ],
+      "parcialesSin": [],
+      "hay": false
+    }
+  },
+  "controles": {
+    "C2": {
+      "ok": true,
+      "nota": "censo → {-T,--} · s2 → {-T}"
+    },
+    "C1": {
+      "ok": true,
+      "nota": "mismo-término 0 dif · articulos≠eventos true · cascarón 4255 B"
+    },
+    "C4": {
+      "ok": true,
+      "nota": "restos de paginador en las firmas: 0"
+    },
+    "C3": {
+      "ok": true,
+      "nota": "h1 no vacío en 4/4"
+    },
+    "C6": {
+      "ok": true,
+      "nota": "cabeceras con tarjeta dentro: 0/4"
+    },
+    "C8": {
+      "ok": true,
+      "nota": "canal B casa en 152/152"
+    },
+    "C7": {
+      "ok": true,
+      "nota": "slugs leídos de las tarjetas: 150"
+    },
+    "C5": {
+      "ok": true,
+      "nota": "todo cardinal publicado con unidad y denominador"
+    }
+  },
+  "veredicto": "CONSULTA"
+}

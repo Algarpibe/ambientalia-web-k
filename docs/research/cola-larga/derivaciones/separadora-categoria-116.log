@@ -1,0 +1,241 @@
+═══ SEPARADORA (a) · `categoria` — ¿CONSULTA o COLECCIÓN? · 116.ª ESCALÓN 1 ═══
+
+1 · LA PREMISA PRIMERO · el régimen, derivado con LAS DOS SEÑALES
+
+  `CLAUDE.md` nombra dos señales para `-T`: el marcador `et-tb-has-body` en
+  el `<body>` **y** las secciones `…_tb_body`. `censo-f34.mjs` L96 usa SÓLO
+  la primera. Si discrepan, el veredicto publicado es de UNA señal.
+
+  familia    término              censo(s1)  _tb_body(s2)  post_content  ¿DE ACUERDO?
+  categoria  articulos            -T                   2             0  sí
+  categoria  eventos              -T                   2             0  sí
+  categoria  noticias             -T                   2             0  sí
+  categoria  podcast-es           -T                   2             0  sí
+  author     admin                --                   1             0  ❌ NO
+  author     edurne-ibarrola      --                   1             0  ❌ NO
+  author     irene                --                   1             0  ❌ NO
+  author     javier-fernandez     --                   1             0  ❌ NO
+  author     kunak                --                   1             0  ❌ NO
+  author     mar_ramirez          --                   1             0  ❌ NO
+  sector     edar                 -T                   2             0  sí
+  sector     metalurgia           -T                   2             0  sí
+  sector     oil-gas-es           -T                   2             0  sí
+  sector     olores               -T                   2             0  sí
+  sector     puertos              -T                   2             0  sí
+  sector     sports               -T                   2             0  sí
+
+  C2 · el detector SEPARA: censo → {-T, --} · s2 → {-T}  ✅
+
+  ⇒ DESACUERDO ENTRE LAS DOS SEÑALES: **6 de 16** términos capturados.
+     · author: **6 de 6** — el censo dice `--`, las secciones dicen `-T`
+     · de acuerdo en las dos señales: categoria 4/4 · sector 6/6
+
+2 · EL CASCARÓN · todo menos lo que se DERIVA de los miembros
+
+  C1 · el extractor DISCRIMINA por los dos lados: mismo-término 0 dif · articulos≠eventos sí · 4255 B  ✅
+  C4 · la marca de PAGINADOR muerde: 0 restos en las 4 firmas  ✅
+
+  término        rutas  tarjetas  paginador  cuerpo B  cascarón B
+  articulos         16         9          1     21385        4255
+  eventos            4         9          0     18251        4064
+  noticias           6         9          1     18827        4253
+  podcast-es         1         2          0      7630        4062
+
+3 · LOS 4 CASCARONES, PAR A PAR (6 pares de 4 términos)
+
+  ⚠ Se publican LAS DOS firmas. El contador de módulo de Divi (`_N_tb_body`)
+    numera las piezas de la PLANTILLA, no del término: si sólo cambia él, lo
+    que difiere es qué pieza de la plantilla se sirvió, no qué trae el término.
+
+  par                            CON ordinal A/B    SIN ordinal A/B    texto A/B
+  articulos vs eventos                 3/1               2/0             2/1
+  articulos vs noticias                2/2               0/0             1/1
+  articulos vs podcast-es              3/2               1/0             3/1
+  eventos vs noticias                  1/3               0/2             1/2
+  eventos vs podcast-es                1/2               0/1             2/1
+  noticias vs podcast-es               3/2               1/0             3/1
+
+  ⇒ pares con firma idéntica CON ordinal: **0 de 6**
+  ⇒ pares con firma idéntica SIN ordinal: **1 de 6**
+
+  LO QUE DIFIERE SIN EL ORDINAL, NOMBRADO (§sondas 1 · no un recuento):
+     articulos vs eventos:
+        sólo en articulos: div.et_pb_text_inner ×1
+        sólo en articulos: div.et_pb_module et_pb_text et_pb_text_N_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1
+     articulos vs podcast-es:
+        sólo en articulos: div.et_pb_text_inner ×1
+     eventos vs noticias:
+        sólo en noticias: div.et_pb_text_inner ×1
+        sólo en noticias: div.et_pb_module et_pb_text et_pb_text_N_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1
+     eventos vs podcast-es:
+        sólo en podcast-es: div.et_pb_module et_pb_text et_pb_text_N_tb_body et_pb_text_align_left et_pb_bg_layout_light ×1
+     noticias vs podcast-es:
+        sólo en noticias: div.et_pb_text_inner ×1
+
+  LO QUE DIFIERE EN EL TEXTO, NOMBRADO:
+     articulos vs eventos:  sólo articulos → ["Artículos ×2","«PAGINADOR» ×1"]
+                           sólo eventos → ["Eventos ×2"]
+     articulos vs noticias:  sólo articulos → ["Artículos ×2"]
+                            sólo noticias → ["Noticias ×2"]
+     articulos vs podcast-es:  sólo articulos → ["Artículos ×2","«TARJETA» ×7","«PAGINADOR» ×1"]
+                              sólo podcast-es → ["Podcast ×2"]
+     eventos vs noticias:  sólo eventos → ["Eventos ×2"]
+                          sólo noticias → ["Noticias ×2","«PAGINADOR» ×1"]
+     eventos vs podcast-es:  sólo eventos → ["Eventos ×2","«TARJETA» ×7"]
+                            sólo podcast-es → ["Podcast ×2"]
+     noticias vs podcast-es:  sólo noticias → ["Noticias ×2","«TARJETA» ×7","«PAGINADOR» ×1"]
+                             sólo podcast-es → ["Podcast ×2"]
+
+  EL CONTADOR DE MÓDULO, por término:
+     término        miga (pieza COMPARTIDA)   módulo de blog
+     articulos                          0                0
+     eventos                            0                2
+     noticias                           0                3
+     podcast-es                         0                4
+     ⇒ la miga conserva su ordinal en los 4: **SÍ** · el módulo de blog: {0, 2, 3, 4}
+
+4 · LAS CUATRO REFUTACIONES PRE-REGISTRADAS, contestadas una a una
+
+  R1 · ¿un texto de descripción bajo el `h1`, DISTINTO por término?
+       (el test NO es «¿hay texto?» sino «¿VARÍA?» — en régimen plantillado
+        un texto idéntico en los 4 es PLANTILLA, no campo)
+     articulos      h1="Artículos"  kicker="Category"  resto=""  imgs=0
+     eventos        h1="Eventos"  kicker="Category"  resto=""  imgs=0
+     noticias       h1="Noticias"  kicker="Category"  resto=""  imgs=0
+     podcast-es     h1="Podcast"  kicker="Category"  resto=""  imgs=0
+     ⇒ términos con texto de cabecera además del h1/kicker: **0 de 4**
+       valores DISTINTOS de ese texto: **1** — varianza CERO
+       R1 NO refuta
+
+  C3 · el selector de cabecera casa el caso conocido: h1 en 4/4  ✅
+  C6 · la CABECERA no contiene ni una tarjeta: 4/4 limpias  ✅
+
+  R2 · ¿una imagen de cabecera con `src` DISTINTO por término?
+     imágenes en la cabecera: **0 distintas** en 4 términos
+     R2 NO refuta: 0 imágenes de cabecera en los 4
+
+  R3 · ¿un orden de tarjetas que NO sea por fecha descendente?
+       (se leen TODAS las rutas del término, no sólo la página 1 — el orden
+        de una serie no se afirma desde su primera página, §regla 14)
+     articulos       96 fechas en 16 rutas · ¿fecha desc?  sí
+     eventos         21 fechas en  4 rutas · ¿fecha desc?  sí
+     noticias        33 fechas en  6 rutas · ¿fecha desc?  sí
+     podcast-es       2 fechas en  1 rutas · ¿fecha desc?  sí
+     R3 NO refuta: los 4 de 4 van por fecha descendente
+
+  R4 · ¿una pieza presente en un término y ausente en otro?
+       (⚠ la v1 buscaba `et_pb_(section|row|module)_\w+`, que NO casa
+        `et_pb_blog_0_tb_body`: unión de 5 y un 0 plausible)
+     piezas distintas en la unión — CON ordinal: **19** · SIN ordinal: **6**
+     parciales CON ordinal: **7** de 19
+        et_pb_blog_0_tb_body               en: articulos
+        et_pb_blog_2_tb_body               en: eventos
+        et_pb_blog_3_tb_body               en: noticias
+        et_pb_blog_4_tb_body               en: podcast-es
+        et_pb_text_5_tb_body               en: articulos
+        et_pb_text_7_tb_body               en: noticias
+        et_pb_text_8_tb_body               en: podcast-es
+     parciales SIN ordinal: **0** de 6
+     R4 NO refuta: quitado el contador, las MISMAS piezas en los 4
+
+5 · VEREDICTO, con su denominador (§4 de 4, nunca «se comprobó»)
+
+  refutaciones que disparan: **0 de 4** — ninguna
+
+  ⇒ **NINGÚN término de los 4 trae contenido propio que no se derive de sus
+    miembros.** Lo único que varía entre las 4 instancias es (i) el nombre
+    del término en el `h1` y en el último eslabón de la miga, (ii) qué
+    módulo de blog de la plantilla se sirvió, y (iii) las tarjetas y su
+    paginador — que son EXACTAMENTE los miembros.
+
+  ⇒ **`categoria` es una CONSULTA** (§*un listado no tiene contenido propio:
+    es una CONSULTA*), y el candidato **RELACIÓN sin archivo** queda
+    sostenido POR EL DATO, no por el criterio de asimetría.
+
+    Denominador: **4 de 4 términos** · **27 de 27 rutas** para el orden.
+
+6 · LA UNIDAD «RUTA» DE LA MESA, RE-DERIVADA (§cada denominador con su unidad)
+
+  ⚠ Las dos declaraciones de «cuántas páginas hay» se publican POR SEPARADO:
+    el paginador de la página 1 y el `<title>` de cada ruta son DOS canales,
+    y mezclarlos en una columna con «gana el último» es una cifra que nadie
+    puede auditar (§regla 1: lo que imprime y lo que cuenta no discrepan).
+
+  término        rutas  con tarjetas  VACÍAS  con paginador  pagenavi p1  máx «de M»
+  articulos         16            11       5             11           11           —
+  eventos            4             3       1              0            —           4
+  noticias           6             4       2              4            4           6
+  podcast-es         1             1       0              0            —           —
+
+  ⇒ RUTAS capturadas: **27** · de ellas **VACÍAS (0 tarjetas): 8**
+  ⇒ RUTAS que sirven al menos una tarjeta: **19 de 27**
+
+  ⚠ Las rutas VACÍAS existen y responden: son la cola de una serie cuyo
+    paginador declara menos páginas de las que el corpus capturó. Es §*un
+    cardinal es un contenedor y absorbe la membresía* con el contenedor en la
+    palabra «ruta»: **«27 rutas» y «27 páginas con contenido» no son lo
+    mismo**, y el coste de la mesa se calculó sobre la primera.
+
+  ⚠⚠ Y hay una segunda lectura: una ruta vacía puede ser (i) una página real
+    que el original sirve vacía, o (ii) el corpus habiendo pedido una URL que
+    ya no existe. Los dos dan **el mismo cuerpo de 0 tarjetas** offline, y lo
+    que los separa —el código de estado— no vive en un cuerpo capturado.
+
+    ⚠ PERO ESO NO SE FICHA SIN MIRAR EL ARCHIVO PRIMERO (§regla 8b: *el suelo
+      de una ruta no vive sólo en la campaña que lo buscaba — vive en las
+      congeladas*). `estados-114.json` mide códigos de estado, así que la
+      pregunta es cuántas de estas 27 rutas ya cubre:
+
+      · `estados-114.json` mide **12 peticiones**, de ellas
+        **1 de `categoria`**: 200 /es/categoria/eventos/
+      · ¿cubre alguna ruta VACÍA (`/page/N`)? **NO**
+
+      ⇒ el archivo NO dirime éstas: **1 de 27 rutas** cubiertas, y la
+        cubierta es la página 1 de `eventos`, que sirve tarjetas. Las **8
+        vacías siguen SIN DIRIMIR** — pero ahora eso es un hecho negativo
+        COMPROBADO contra el archivo, no una suposición.
+
+7 · ¿LA RELACIÓN CUBRE EL CORPUS? — diferencia simétrica, no recuento
+
+  CANAL A · la TARJETA del archivo (lo que el listado publica)
+     corpus de entradas ................ **152 slugs**
+     slugs distintos en los 4 archivos . **150**
+     diferencia simétrica, con LOS DOS LADOS nombrados:
+        en el corpus y NO en ningún archivo: **2** — calidad-del-aire-en-puertos, webinar-como-controlar-las-emisiones-en-mineria-junio-2025
+        en un archivo y NO en el corpus ...: **0**
+
+  ⚠ Y AQUÍ EL RECUENTO ENGAÑABA POR PARTIDA DOBLE: las tarjetas suman **152
+    instancias** y el corpus trae **152 entradas**, y NO son el mismo
+    conjunto — son **150 slugs distintos + 2 contados dos veces**, contra
+    **150 + 2 que faltan**. Dos hechos compensándose hasta el dígito
+    (§*un cardinal es un contenedor y absorbe la membresía*).
+
+  CANAL B · el enlace `/categoria/…` DENTRO de la propia entrada
+     entradas que declaran su categoría en su propio cuerpo: **152 de 152**
+     entradas SIN ninguna: **0**
+     de las 2 que el CANAL A no veía, el CANAL B recupera: **2**
+        calidad-del-aire-en-puertos → articulos
+        webinar-como-controlar-las-emisiones-en-mineria-junio-2025 → eventos
+
+     ⇒ las 2 no estaban SIN CATEGORÍA: estaban sin la PÁGINA DE ARCHIVO que
+       las lista. El canal A mide **cobertura de la captura**, no membresía,
+       y leerlo como membresía habría fichado 2 entradas huérfanas que no
+       existen — con una diferencia simétrica real de coartada.
+
+  ¿UNA ENTRADA EN DOS CATEGORÍAS? — por los dos canales
+     canal A (tarjetas): **2 de 150**
+        todas-nuestras-soluciones-en-el-iotswc → eventos + noticias
+        red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2 → eventos + noticias
+     canal B (cuerpo)  : **2 de 152**
+        red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2 → eventos + noticias
+        todas-nuestras-soluciones-en-el-iotswc → eventos + noticias
+     ⇒ los dos canales nombran **los MISMOS** — y se compara por
+       elemento, no por cardinal.
+
+  ⇒ la relación entrada→categoría es **1:N con N ≤ 2**, positivos 2
+    sobre un dominio BARRIDO ENTERO de 152 — se publica la FRACCIÓN,
+    no un «se comprobó» (§*el listón es todo el dominio alcanzable*).
+
+  C8 · el canal B casa el caso conocido: 152/152 entradas  ✅
+  C7 · el selector de tarjeta casa: 150 slugs leídos  ✅
+
