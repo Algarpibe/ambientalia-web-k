@@ -1069,6 +1069,37 @@ módulos.
 > la frase lo dio por inexistente durante dos tandas. Es §sondas 4 —*un selector
 > que no casa con nada no es un cero*— cobrada sobre **la prosa** en vez de sobre
 > el código.
+>
+> ⚠⚠ **Y SU MITAD QUE FALTABA (2026-08-27): LO MISMO VALE PARA UNA SEPARADORA, Y
+> AHÍ EL ENUNCIADO FALSO SE ESCRIBE «ES MEDIBLE Y NO EXISTE».**
+>
+> Lo de arriba cubre *«el dato no lo separa»*. Le falta el caso en que lo
+> declarado inexistente **no es un canal sino la ENTRADA que dirimiría**, y ése
+> llega aún más blindado: viene acompañado de un análisis **correcto** de por
+> qué esa entrada haría falta, así que cuestionarlo parece cuestionar el
+> razonamiento.
+>
+> > **«No hay instancia separadora» es una afirmación sobre las separadoras que
+> > SE BUSCARON — y casi nunca se buscó más de una.** Se escribe con su lista, o
+> > es una afirmación sobre la imaginación de quien la escribió.
+>
+> **Medido:** una tanda dejó **8 rutas SIN ATRIBUIR** entre dos hipótesis y
+> razonó —bien— que las separaría *«una base tomada JUSTO antes del cambio»*,
+> para concluir **«es medible y NO EXISTE»**. Cierto de esa entrada. Había otras
+> dos, las dos ya en el repo y gratis:
+>
+> | separadora | qué costó | veredicto |
+> |---|---|---|
+> | la **MAGNITUD** — ¿predicen números distintos? | leer una congelada | una hipótesis clava `columna.h`, la otra queda **dos órdenes** por debajo |
+> | el **ORDEN** — ¿ya las separa la cronología? | `git merge-base --is-ancestor` | el commit que emite la pieza cae **entre** las dos medidas |
+>
+> Con las dos, las 8 se cerraron **sin medir nada nuevo**.
+>
+> **Operativamente:** antes de fichar una indeterminación, **enumera las
+> separadoras candidatas y di por qué cada una no sirve** — no sólo la primera
+> que se te ocurrió. Y prueba las dos más baratas del catálogo, que están casi
+> siempre disponibles: **¿predicen MAGNITUDES distintas?** y **¿el ORDEN de los
+> cambios ya las separa?**. Ninguna de las dos necesita instrumento nuevo.
 
 ⚠ **Y la quinta tiene una hermana pequeña que se paga al TRANSCRIBIR CSS, y son
 tres cosas que «la salida servida» incluye y nadie mira (2026-08-13):**
@@ -2503,6 +2534,37 @@ comentario prometía una llamada que no existía; aquí **el HTML sirve una clas
 que no hace nada**. En los dos casos lo servido es exactamente lo escrito, y en
 los dos casos lo escrito no llega a la propiedad. **Ningún arreglo se da por
 hecho sin su medición posterior**, ni siquiera cuando se ve en la salida.
+
+⚠⚠ **Y LA TERCERA SALIDA QUE ESTA TABLA NO CONTEMPLA, PAGADA EL 2026-08-27: EL
+CAMBIO TIENE EFECTO, Y ES OTRO — PORQUE LA OPCIÓN SE NOMBRA POR LA INTENCIÓN Y
+NO POR EL VALOR.**
+
+La tabla reparte en dos: *no es mi build* y *no hace nada*. Falta la tercera, y
+es la que más se parece a un acierto:
+
+> **Una API que toma una opción nombrada por la INTENCIÓN —`permanent`,
+> `secure`, `strict`, `temporary`— elige POR TI el valor concreto que sirve. Y
+> el valor que elige puede no ser el que tú entiendes por esa palabra.**
+> Entonces el cambio funciona, el diff se lee correcto, y lo servido es un valor
+> que el original nunca produce.
+
+**Medido:** replicando **5 redirecciones 301** del original se escribió
+`permanent: true` —la palabra correcta: el original es permanente— y el
+framework sirve **308**. Los dos son «redirección permanente» y **no son el
+mismo byte**: 301 permite al cliente cambiar el método a GET y 308 lo prohíbe.
+El comentario del código decía «301» y el servidor decía 308; el arreglo fue
+pasar a `statusCode: 301`, o sea **nombrar el valor en vez de la intención**.
+
+**Las dos mitades operativas:**
+
+1. **cuando lo que replicas es un VALOR SERVIDO, escribe el valor, no la
+   intención.** Si la API ofrece las dos formas, la que nombra el valor es la
+   única auditable — la otra depende de una tabla de traducción que no está a la
+   vista y que puede cambiar de versión;
+2. **y el paso 2 se mide SOBRE EL EJE QUE REPLICAS.** Aquí «el número se movió»
+   era cierto —las 5 redirigían, y a los destinos correctos—: lo que fallaba era
+   **el código de estado**, que ninguna comprobación de destino mira. §*la causa
+   común* con el contenedor puesto en **qué eje se comprueba**.
 
 **4bis · «0 COMPARADO = VERDE» APARECIÓ CINCO VECES. LA SEXTA LA IMPIDE EL
 CONTRATO, NO LA ATENCIÓN.**

@@ -5694,11 +5694,39 @@ Faltan dos clases y **son de naturaleza distinta**:
 
 ---
 
-## ✅ 7i · `CMS-F34-SECTOR` — **DECIDIDA POR EL PROPIETARIO (2026-08-26, 116.ª)**, en sus dos mitades
+## ✅ 7i · `CMS-F34-SECTOR` — **DECIDIDA (116.ª) e IMPLEMENTADA (118.ª, 2026-08-27)**, en sus dos mitades
 
-**No se implementa en esta tanda.** Lo que sigue es la decisión tomada, su
-razón y su condición de reapertura; la emisión es de la tanda siguiente, que
-necesita build y seed.
+> ### ✅ IMPLEMENTADA el 2026-08-27 (118.ª ESCALÓN 1+2)
+>
+> | mitad | qué se emitió | verificado |
+> |---|---|---|
+> | **(c1)** la relación `caso → sector` | **nada que construir**: ya existía y ya estaba poblada — **11 términos · 57 relaciones**, casando con su consumidor medido | consulta real a la DB |
+> | **(c2)** el archivo `/es/sector/*` | **13 páginas** (6 base + 7 `/page/N`) + **5 redirecciones 301** | manifiesto **416 → 429** claves crudas · dif. simétrica **13 y 0** |
+>
+> **Fidelidad: 12 de 12 ejes a Δ0** en `/sector/edar` servido contra su captura
+> —título, `h1`, secciones, filas, columnas, módulos, `tax-tap`, columna vacía,
+> barra a la derecha, 0 `<article>`, 0 `role="navigation"`, 1 eslabón de miga—.
+>
+> **Y las 5 se sirven como 301 con su destino**, `mineria` en bucle a sí misma
+> igual que el original.
+>
+> ⚠ **El defecto que sólo vio medir después: `permanent: true` sirve 308.** Es
+> la forma que uno escribe pensando «el original es permanente», y Next la
+> traduce a **308**, no a 301. Los dos son «permanente» y **no son el mismo
+> byte**. Corregido a `statusCode: 301` y re-medido. El diff se leía correcto —
+> el comentario decía «301»— y lo servido decía otra cosa.
+>
+> **Lo que NO se implementó, y es una decisión declarada:** `hrefTermino()`
+> sigue apuntando al ORIGINAL. Ahora que `/sector/*` está clonado, §Regla de
+> rutas locales pediría repuntarlo; el encargo scopea (c2) a **emitir** el
+> archivo, y repuntar cambia el destino de los chips en páginas ya verificadas.
+> **Se ficha en vez de hacerse en silencio** — abajo, en «lo que NO decide».
+>
+> Código: `lib/sector-archivo.ts` · `components/listados/PaginaSector.tsx` ·
+> `app/sector/[slug]/…` · `next.config.ts`. Derivación: `estado-118.{mjs,log,json}`.
+
+Lo que sigue es la decisión tal como se tomó, su razón y su condición de
+reapertura.
 
 ### La decisión, en sus dos mitades
 
@@ -5750,7 +5778,28 @@ y la diferencia entre ellas no está escrita en ningún sitio.
   dirimirlo exige leer la cabecera `Location` de cada salto con el `Host` y el
   esquema completos, y eso **necesita red**. *Un mecanismo sin medir que entra
   en una mesa la contamina*;
-- **la implementación de (c1) y (c2)**: no se toca código en esta tanda.
+- ~~**la implementación de (c1) y (c2)**: no se toca código en esta tanda.~~
+  ✅ **Hecha en la 118.ª** — ver el recuadro de arriba;
+- ⚠ **EL REPUNTE DE `hrefTermino()` (118.ª)** — el archivo ya está clonado, así
+  que §Regla de rutas locales pediría que los chips dejaran de apuntar al
+  original. **No se hace**, y por dos razones que conviene separar: el encargo
+  scopea (c2) a *emitir*, y repuntar cambia el destino de enlaces en páginas ya
+  verificadas. Alcance derivado: **1 fichero** (`lib/taxonomia-sectores.ts`) y
+  **2 consumidores** (`CasoCabecera`, `CasoDetalles`) más `casos-de-exito/page`.
+  ⚠ **Y no es un repunte trivial:** de los 11 términos, **5 redirigen** y uno
+  **en bucle**, así que un chip local llevaría al visitante a un 301 propio —
+  fiel, pero es un cambio de comportamiento que merece su propia adjudicación;
+- ⚠ **EL RITMO de la fila 2 del archivo — SIN MEDIR (118.ª).** El corpus da
+  marcado, no geometría: ninguna de las 13 capturas se ha medido con
+  `getComputedStyle`. El componente **no cablea** clase de ritmo, porque
+  cablear un valor sin medirlo es cómo se fabrica un arreglo falso;
+- ⚠ **LA LISTA DE RUTAS ES MEDIDA, NO DERIVADA (118.ª).** Barrido el parámetro
+  (`ceil(casos/k)`, k = 1..30) contra el total que el original declara en su
+  `<title>`: **mejor `k = 5`, acierta 8 de 9** y falla en `industria`. El
+  archivo no pagina los casos. **Consecuencia: un término nuevo NO entra solo**,
+  al revés que en `/etiqueta`. Y la excepción no es aleatoria — `industria` es
+  también el único con título de archivo propio—, pero con **n = 1** eso no es
+  un discriminador.
 
 ---
 
