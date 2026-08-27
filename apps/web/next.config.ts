@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 
+/* La lista de redirecciones vive con el resto del dato del archivo de
+ * `sector`, no aquí: una segunda copia sería una segunda fuente de verdad. */
+import { REDIRECCIONES_SECTOR } from "./src/lib/sector-archivo";
+
 /**
  * ⚠ **Este fichero cambia en F2-3 (2026-08-05), y es la primera vez.** Hasta la
  * fase anterior el artefacto verificado no dependía de nada del CMS; desde aquí
@@ -59,6 +63,44 @@ const nextConfig: NextConfig = {
    * runtime*.
    */
   serverExternalPackages: ["payload", "@payloadcms/db-postgres", "sharp"],
+
+  /**
+   * ── LAS 5 REDIRECCIONES DE `/sector/*` — F3-4, 118.ª ─────────────────────
+   *
+   * Decisión: `ESQUEMA-CMS.md` §7i (c2), **REPLICAR TAL CUAL**. De los 11
+   * términos de `taxonomia-sectores`, **5 dan 301 en el original** y se
+   * replican **como redirección, no como página**: servir un 200 donde el
+   * original sirve un salto sería cambiar el comportamiento con la excusa de
+   * copiarlo.
+   *
+   * Los destinos están **medidos en vivo** (`derivaciones/estados-114.*`, con
+   * `redirect: "manual"`, sin cookies ni perfil). Un corpus guarda el CUERPO,
+   * no el estado: ése es el único canal que puede darlos.
+   *
+   * ⚠⚠ **`statusCode: 301`, NO `permanent: true` — y esto se midió, no se
+   * dedujo.** `permanent: true` es la forma que uno escribe pensando «el
+   * original es permanente», y Next la traduce a **308**, no a 301. Medido
+   * contra el servidor: las 5 salían `308`.
+   *
+   * Los dos son «redirección permanente» y **no son el mismo byte**: 301
+   * permite que el cliente cambie el método a GET y 308 lo prohíbe. El
+   * original sirve **301** (`estados-114`, `redirect: "manual"`), así que 308
+   * es un valor que el original no produce.
+   *
+   * §*el veredicto lo da la salida servida*: el diff de este fichero se leía
+   * correcto —el comentario decía «301»— y lo servido decía otra cosa. Lo cazó
+   * **medir después**, que es el paso 2 que ningún marcador de frescura da.
+   *
+   * ⚠ **Y `/sector/mineria` redirige A SÍ MISMA**, 5 saltos medidos. Se
+   * replica igual: el visitante del original no llega a ninguna página, y un
+   * clon que sí llegue no replica, mejora. El MECANISMO del bucle **no se
+   * diagnostica** — necesita red (§7i).
+   *
+   * Las rutas **no** llevan barra final: `trailingSlash` no está activado.
+   */
+  async redirects() {
+    return REDIRECCIONES_SECTOR.map((r) => ({ source: r.de, destination: r.a, statusCode: 301 as const }));
+  },
 };
 
 export default nextConfig;

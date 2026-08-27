@@ -55,7 +55,11 @@
     ".next-113d/types/**/*.ts",
     ".next-113d/dev/types/**/*.ts",
     ".next-check/types/**/*.ts",
-    ".next-check/dev/types/**/*.ts"
+    ".next-check/dev/types/**/*.ts",
+    ".next-118/types/**/*.ts",
+    ".next-118/dev/types/**/*.ts",
+    ".next-118b/types/**/*.ts",
+    ".next-118b/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
