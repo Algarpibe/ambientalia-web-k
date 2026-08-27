@@ -5,8 +5,7 @@ import { HeaderNav } from "@/components/HeaderNav";
 import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import {
-  AutoriaA,
+import {
   ColumnaLateralA,
   ColumnaPrincipalA,
   FilaA,
@@ -15,6 +14,7 @@ import {
   TituloA,
 } from "@/components/arquetipo-a/CascaronA";
 import { CuerpoRicoA } from "@/components/arquetipo-a/CuerpoRicoA";
+import { FichaAutorA } from "@/components/arquetipo-a/FichaAutorA";
 import { IndiceArticulo } from "@/components/arquetipo-a/IndiceArticulo";
 import { RelacionadosA } from "@/components/arquetipo-a/RelacionadosA";
 import {
@@ -294,14 +294,14 @@ export default async function PaginaPlana({
                         />
                       </div>
                     )}
-                    <AutoriaA donde="principal" />
+                    <FichaAutorA firmas={p.datos.firmas} donde="principal" />
                     <IndiceArticulo cuerpo={cuerpo} donde="principal" />
                     {/* `post_content mb 72` — el valor que distingue la
                         plantilla de blog de las otras dos (0 en ambas). */}
                     <CuerpoRicoA cuerpo={cuerpo} className="mb-[72px]" />
                   </ColumnaPrincipalA>
                   <ColumnaLateralA>
-                    <AutoriaA donde="lateral" />
+                    <FichaAutorA firmas={p.datos.firmas} donde="lateral" />
                     <IndiceArticulo cuerpo={cuerpo} donde="lateral" />
                   </ColumnaLateralA>
                 </div>

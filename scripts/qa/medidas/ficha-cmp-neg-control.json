@@ -67,14 +67,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 86,
+        "orig": 90,
         "clon": 15
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 136
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -95,8 +98,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -119,7 +122,9 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -139,11 +144,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 86,
+        "orig": 89,
         "clon": 15
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 115
@@ -169,78 +177,6 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "23.4231%",
-              "bw": "1px"
-            }
-          },
-          {
-            "clase": "autor",
-            "ds": "block",
-            "mis": "3px",
-            "mt": "7px",
-            "texto": "Escrito por Equipo de marketing y comunicación",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "0px"
-            },
-            "img": null
-          }
-        ]
-      },
-      "clon": {
-        "presente": false
-      }
-    },
-    {
-      "fichero": "monitorizacion-near-reference.html",
-      "slug": "monitorizacion-near-reference",
-      "bytes": 437394,
-      "autores": [
-        "edurne-ibarrola",
-        "kunak"
-      ],
-      "nPapeles": 2,
-      "razon": "dos papeles (separadora del papel)",
-      "ancho": 1440,
-      "httpClon": 200,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 77,
-        "clon": 9
-      },
-      "orig": {
-        "presente": true,
-        "caja": {
-          "w": 0,
-          "h": 0
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 2,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Revisado y aprobado por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
-            "proemio": "Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 0,
-              "h": 0,
               "br": "50%",
               "bw": "3px"
             }
@@ -263,7 +199,86 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
+      }
+    },
+    {
+      "fichero": "monitorizacion-near-reference.html",
+      "slug": "monitorizacion-near-reference",
+      "bytes": 437394,
+      "autores": [
+        "edurne-ibarrola",
+        "kunak"
+      ],
+      "nPapeles": 2,
+      "razon": "dos papeles (separadora del papel)",
+      "ancho": 1440,
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 80,
+        "clon": 9
+      },
+      "orig": {
+        "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
+        "caja": {
+          "w": 258.5,
+          "h": 157
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 2,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Revisado y aprobado por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
+            "proemio": "Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "50%",
+              "bw": "3px"
+            }
+          },
+          {
+            "clase": "autor",
+            "ds": "block",
+            "mis": "3px",
+            "mt": "7px",
+            "texto": "Escrito por Equipo de marketing y comunicación",
+            "proemio": "Escrito por ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/kunak/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "0px"
+            },
+            "img": null
+          }
+        ]
+      },
+      "clon": {
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -283,11 +298,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 76,
+        "orig": 80,
         "clon": 9
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 136
@@ -313,8 +331,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "37.0645%",
-              "bw": "2px"
+              "br": "50%",
+              "bw": "3px"
             }
           },
           {
@@ -335,7 +353,9 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -354,69 +374,16 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 41,
+        "orig": 43,
         "clon": 0
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 0,
-              "h": 0,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false
-      }
-    },
-    {
-      "fichero": "additive-presenta-sistema-kunak-air-en-sensortest-2018.html",
-      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
-      "bytes": 297569,
-      "autores": [
-        "kunak"
-      ],
-      "nPapeles": 1,
-      "razon": "primer uso de kunak",
-      "ancho": 390,
-      "httpClon": 304,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 40,
-        "clon": 0
-      },
-      "orig": {
-        "presente": true,
-        "caja": {
-          "w": 335.39,
+          "w": 258.5,
           "h": 66
         },
         "pad": "10px 13px 14px 13px",
@@ -447,7 +414,70 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
+      }
+    },
+    {
+      "fichero": "additive-presenta-sistema-kunak-air-en-sensortest-2018.html",
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "bytes": 297569,
+      "autores": [
+        "kunak"
+      ],
+      "nPapeles": 1,
+      "razon": "primer uso de kunak",
+      "ancho": 390,
+      "httpClon": 304,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 42,
+        "clon": 0
+      },
+      "orig": {
+        "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
+        "caja": {
+          "w": 335.39,
+          "h": 66
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por el Equipo de marketing y comunicación",
+            "proemio": "Escrito por el ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/kunak/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "50%",
+              "bw": "3px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -467,13 +497,16 @@
       },
       "bloqueadas": {
         "orig": 72,
-        "clon": 5
+        "clon": 8
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -494,8 +527,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -503,7 +536,9 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -522,11 +557,14 @@
         "resueltas": 8
       },
       "bloqueadas": {
-        "orig": 72,
-        "clon": 5
+        "orig": 75,
+        "clon": 8
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -552,14 +590,16 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "42.6138%",
-              "bw": "2px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -578,14 +618,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 44,
+        "orig": 46,
         "clon": 1
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -606,8 +649,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -615,7 +658,9 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -634,11 +679,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 44,
+        "orig": 46,
         "clon": 1
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -664,14 +712,16 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "11.0214%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -690,14 +740,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 63,
+        "orig": 65,
         "clon": 2
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -718,8 +771,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -727,7 +780,9 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -746,11 +801,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 63,
+        "orig": 65,
         "clon": 2
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 87
@@ -776,14 +834,16 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "33.3196%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -802,14 +862,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 43,
+        "orig": 47,
         "clon": 2
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -830,8 +893,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -839,7 +902,9 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -858,11 +923,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 43,
+        "orig": 45,
         "clon": 2
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 65
@@ -888,14 +956,16 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "17.3144%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
@@ -914,69 +984,16 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 41,
+        "orig": 43,
         "clon": 0
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 0,
-              "h": 0,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false
-      }
-    },
-    {
-      "fichero": "todas-nuestras-soluciones-en-el-iotswc.html",
-      "slug": "todas-nuestras-soluciones-en-el-iotswc",
-      "bytes": 297044,
-      "autores": [
-        "kunak"
-      ],
-      "nPapeles": 1,
-      "razon": "la MÁS CORTA — donde la columna hermana puede mandar",
-      "ancho": 390,
-      "httpClon": 304,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 40,
-        "clon": 0
-      },
-      "orig": {
-        "presente": true,
-        "caja": {
-          "w": 335.39,
+          "w": 258.5,
           "h": 66
         },
         "pad": "10px 13px 14px 13px",
@@ -1000,62 +1017,6 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "5.63113%",
-              "bw": "1px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false
-      }
-    },
-    {
-      "fichero": "contaminacion-por-metano.html",
-      "slug": "contaminacion-por-metano",
-      "bytes": 473671,
-      "autores": [
-        "kunak"
-      ],
-      "nPapeles": 1,
-      "razon": "la más larga",
-      "ancho": 1440,
-      "httpClon": 200,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 112,
-        "clon": 27
-      },
-      "orig": {
-        "presente": true,
-        "caja": {
-          "w": 0,
-          "h": 0
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por el Equipo de marketing y comunicación",
-            "proemio": "Escrito por el ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/kunak/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 0,
-              "h": 0,
               "br": "50%",
               "bw": "3px"
             }
@@ -1063,18 +1024,20 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     },
     {
-      "fichero": "contaminacion-por-metano.html",
-      "slug": "contaminacion-por-metano",
-      "bytes": 473671,
+      "fichero": "todas-nuestras-soluciones-en-el-iotswc.html",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "bytes": 297044,
       "autores": [
         "kunak"
       ],
       "nPapeles": 1,
-      "razon": "la más larga",
+      "razon": "la MÁS CORTA — donde la columna hermana puede mandar",
       "ancho": 390,
       "httpClon": 304,
       "hojas": {
@@ -1082,11 +1045,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 112,
-        "clon": 27
+        "orig": 42,
+        "clon": 0
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1119,7 +1085,131 @@
         ]
       },
       "clon": {
-        "presente": false
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
+      }
+    },
+    {
+      "fichero": "contaminacion-por-metano.html",
+      "slug": "contaminacion-por-metano",
+      "bytes": 473671,
+      "autores": [
+        "kunak"
+      ],
+      "nPapeles": 1,
+      "razon": "la más larga",
+      "ancho": 1440,
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 114,
+        "clon": 27
+      },
+      "orig": {
+        "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
+        "caja": {
+          "w": 258.5,
+          "h": 66
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por el Equipo de marketing y comunicación",
+            "proemio": "Escrito por el ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/kunak/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "50%",
+              "bw": "3px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
+      }
+    },
+    {
+      "fichero": "contaminacion-por-metano.html",
+      "slug": "contaminacion-por-metano",
+      "bytes": 473671,
+      "autores": [
+        "kunak"
+      ],
+      "nPapeles": 1,
+      "razon": "la más larga",
+      "ancho": 390,
+      "httpClon": 304,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 115,
+        "clon": 27
+      },
+      "orig": {
+        "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
+        "caja": {
+          "w": 335.39,
+          "h": 66
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por el Equipo de marketing y comunicación",
+            "proemio": "Escrito por el ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/kunak/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "50%",
+              "bw": "3px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
       }
     }
   ]

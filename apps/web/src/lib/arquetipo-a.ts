@@ -18,8 +18,39 @@
 import type {
   DocumentoCientifico,
   EntradaBlog,
+  FirmaA,
   TerminoKunakpedia,
 } from "@/types/kunak";
+
+/**
+ * LA FIRMA DE LAS 11 INSTANCIAS TRANSCRITAS — 117.ª.
+ *
+ * Leída **a mano del HTML servido** de cada una de las 11 (7 de blog y 4 de
+ * documento científico), no copiada de la salida del extractor: si se copiara,
+ * el CONTROL compararía el extractor consigo mismo y §regla 15 —*un cruce entre
+ * dos instrumentos que comparten premisa no verifica la premisa*— lo dejaría
+ * sin valor. Las 11 sirven `revisor : kunak : «Escrito por el ‹NOMBRE›»`.
+ *
+ * ⚠⚠ **Y HAY QUE DECIR LO QUE ESTE CONTROL SIGUE SIN PODER VER.** Las 11 las
+ * firma **kunak**, así que el control gana un campo y **CERO instancias
+ * separadoras** en el eje del autor: no habría cazado —ni caza— el defecto que
+ * esta tanda encontró, que es justamente que la firma varía. El barrido de las
+ * **152** sí lo ve: **8 proemios y 5 firmantes**. Es §*el recuento de pares no
+ * es el denominador de nada*: lo que hay que publicar al lado de un verde es
+ * cuántas instancias DISTINGUÍAN, no cuántas se compararon.
+ */
+const FIRMA_KUNAK: FirmaA[] = [
+  {
+    autor: {
+      slug: "kunak",
+      nombre: "Equipo de marketing y comunicación",
+      cargo: "Marketing y comunicación",
+      fotoOrigen: "https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png",
+    },
+    papel: "escrito",
+    proemio: "Escrito por el ‹NOMBRE›",
+  },
+];
 
 /**
  * ARQUETIPO A — el mínimo adversario, 14 instancias de 209.
@@ -44,6 +75,7 @@ import type {
 export const ENTRADAS_BLOG: EntradaBlog[] = [
   {
     slug: "contaminacion-por-metano",
+    firmas: FIRMA_KUNAK,
     seo: { title: "Contaminación por metano: impacto en el medio ambiente, la salud y soluciones - Kunak", description: "Conocido como el asesino silencioso, el gas metano de la atmósfera es un contaminante que pone el riesgo la salud y un entorno saludable.", ogImage: "/images/uploads/2025/01/Ganaderia-extensiva-y-emisiones-de-metano-e1736247833869.jpg" },
     titulo: "Contaminación por metano: impacto en el medio ambiente, la salud y soluciones",
     fechaPublicacion: "7 enero 2025",
@@ -360,6 +392,7 @@ export const ENTRADAS_BLOG: EntradaBlog[] = [
   },
   {
     slug: "todas-nuestras-soluciones-en-el-iotswc",
+    firmas: FIRMA_KUNAK,
     seo: { title: "Kunak presenta sus soluciones en el IOTSWC 2018 | Kunak", description: "Ven a descubrir nuestras soluciones para Medioambiente, Smart Cities, Agua y Utilities, Industria 4.0 y Máquinas Inteligentes al stand de ICEX España E541." },
     titulo: "Todas nuestras soluciones en el IOTSWC",
     fechaPublicacion: "17 octubre 2018",
@@ -379,6 +412,7 @@ export const ENTRADAS_BLOG: EntradaBlog[] = [
   },
   {
     slug: "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+    firmas: FIRMA_KUNAK,
     seo: { title: "Monitorización de la calidad del aire en centros de datos - Kunak", description: "Monitorizar centros de datos: ozono interior, emisiones de generadores y impacto comunitario. Qué medir, por qué y con qué sensores.", ogImage: "/images/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-1024x631.png" },
     titulo: "Monitorización de la calidad del aire en centros de datos: aplicaciones, parámetros y sensores",
     fechaPublicacion: "25 mayo 2026",
@@ -819,6 +853,7 @@ export const ENTRADAS_BLOG: EntradaBlog[] = [
   },
   {
     slug: "contador-particulas-suspension-movilidad-sostenible",
+    firmas: FIRMA_KUNAK,
     seo: { title: "¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?", description: "La Semana Europea de la Movilidad ha permitido mostrar qué utilidad tiene un contador de partículas en suspensión cuando se usa para mejorar la movilidad", ogImage: "/images/uploads/2020/09/semana-movilidad-europea-particulas-y-gases.jpg" },
     titulo: "¿Cómo beneficia a la movilidad disponer de un contador de partículas en suspensión?",
     fechaPublicacion: "22 septiembre 2020",
@@ -1022,6 +1057,7 @@ export const ENTRADAS_BLOG: EntradaBlog[] = [
   },
   {
     slug: "monitorizacion-de-emisiones-del-trafico-urbano",
+    firmas: FIRMA_KUNAK,
     seo: { title: "Monitorización de emisiones del tráfico urbano - Kunak", description: "Descubre cómo el control avanzado de NO2 y PM2,5 con redes de sensores permite medir el impacto ambiental real del transporte urbano.", ogImage: "/images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak.jpg" },
     titulo: "Monitorización de emisiones del tráfico urbano: control avanzado de la calidad del aire para la movilidad sostenible",
     fechaPublicacion: "25 marzo 2026",
@@ -1298,6 +1334,7 @@ export const ENTRADAS_BLOG: EntradaBlog[] = [
   },
   {
     slug: "running-for-clean-air",
+    firmas: FIRMA_KUNAK,
     seo: { title: "Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte - Kunak", description: "La monitorización y control del aire es esencial para el deporte de alto rendimiento como demuestra el proyecto Clean Air de World Athletics.", ogImage: "/images/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg" },
     titulo: "Running for Clean Air: midiendo el impacto de la calidad del aire en el deporte",
     fechaPublicacion: "28 febrero 2025",
@@ -1455,6 +1492,7 @@ Más recientemente, en los <a target="_blank" href="https://kunakair.com/es/cont
   },
   {
     slug: "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+    firmas: FIRMA_KUNAK,
     seo: { title: "La contaminación del aire: el asesino silencioso de Europa - Kunak", description: "La contaminación del aire causa más de 240.000 muertes al año en Europa. Descubre cómo podemos construir un futuro más limpio y saludable.", ogImage: "/images/uploads/2024/12/Air-Pollution-Europes-Silent-Killer-and-the-Call-for-Cleaner-Air.jpg" },
     titulo: "La contaminación del aire: el asesino silencioso de Europa",
     fechaPublicacion: "13 diciembre 2024",
@@ -2286,6 +2324,7 @@ export const TERMINOS_KUNAKPEDIA: TerminoKunakpedia[] = [
 export const DOCUMENTOS_CIENTIFICOS: DocumentoCientifico[] = [
   {
     slug: "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+    firmas: FIRMA_KUNAK,
     categoria: { slug: "articulos-cientificos-y-estudios", nombre: "Artículos científicos y estudios" },
     seo: { title: "Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto - Kunak", ogImage: "/images/uploads/2025/02/Athletes-exposure-to-air-pollution-during-World-Athletics-Relays-A-Pilot-Study.jpg" },
     titulo: "Exposición de los atletas a la contaminación atmosférica durante los mundiales de atletismo: Un estudio piloto",
@@ -2325,6 +2364,7 @@ export const DOCUMENTOS_CIENTIFICOS: DocumentoCientifico[] = [
   },
   {
     slug: "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+    firmas: FIRMA_KUNAK,
     categoria: { slug: "articulos-cientificos-y-estudios", nombre: "Artículos científicos y estudios" },
     seo: { title: "Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución - Kunak", ogImage: "/images/uploads/2025/02/The-Suitability-of-a-Mobile-Communications-Network-to-Deliver-High-Resolution-Air-Quality-Measurements.jpg" },
     titulo: "Idoneidad de una red de comunicaciones móviles para realizar mediciones de la calidad del aire de alta resolución",
@@ -2344,6 +2384,7 @@ export const DOCUMENTOS_CIENTIFICOS: DocumentoCientifico[] = [
   },
   {
     slug: "desafio-airlab-de-microsensores-2023",
+    firmas: FIRMA_KUNAK,
     categoria: { slug: "evaluaciones-independientes", nombre: "Evaluaciones independientes" },
     seo: { title: "Desafío AIRLAB de microsensores 2023 - Kunak", ogImage: "/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg" },
     titulo: "Desafío AIRLAB de microsensores 2023",
@@ -2364,6 +2405,7 @@ export const DOCUMENTOS_CIENTIFICOS: DocumentoCientifico[] = [
   },
   {
     slug: "soluciones-avanzadas-de-monitorizacion",
+    firmas: FIRMA_KUNAK,
     prefijo: "estudios-cientificos",
     categoria: { slug: "articulos-tecnicos", nombre: "Artículos técnicos" },
     seo: { title: "Soluciones avanzadas de monitorización - Kunak", ogImage: "/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg" },

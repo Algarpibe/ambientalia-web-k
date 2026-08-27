@@ -54,7 +54,7 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { pathToFileURL, fileURLToPath } from "node:url";
 
-import { Evaluadas, gritaSiRevienta, hoy, iniciarClon, launch, w } from "./lib.mjs";
+import { Evaluadas, gritaSiRevienta, hoy, iniciarClon, launch, settle, w } from "./lib.mjs";
 
 gritaSiRevienta();
 
@@ -175,8 +175,41 @@ const ev = new Evaluadas({
  * 3 · LA MEDIDA — la misma función en los DOS lados
  * ═════════════════════════════════════════════════════════════════════════ */
 function medirEnPagina() {
-  const cont = document.querySelector(".ficha-autor-revisor");
-  if (!cont) return { presente: false };
+  /* ⚠⚠ **LA VISIBLE, NO LA PRIMERA — y esto se pagó en la v1 de esta sonda.**
+   *
+   * El documento trae **DOS** `.ficha-autor-revisor` con el MISMO HTML, y son
+   * dos módulos distintos de Divi con pieles distintas:
+   *
+   *   · `et_pb_text_4_tb_body` — se pinta a **390**: img circular (`50%`) con
+   *     borde de 3px, ficha 335.39×115;
+   *   · `et_pb_text_5_tb_body` — se pinta a **1440**: img SIN radio y SIN
+   *     borde, ficha 258.5×136.
+   *
+   * A cada ancho **una está `display:none`**. `querySelector` devuelve siempre
+   * la #0, así que a 1440 la v1 medía la ESCONDIDA y publicaba `caja {w:0,h:0}`
+   * e `img.borderRadius: 37.0577%` — un porcentaje que la hoja no declara en
+   * ninguna parte. No eran datos del original: es lo que devuelve
+   * `getComputedStyle` sobre un elemento **sin caja**, que §*lo que no tiene
+   * caja no es que no se cuente — es que no se puede medir, y aun así devuelve
+   * números* describe exactamente.
+   *
+   * Se cuentan las dos cosas por separado —**en el DOM** y **CON CAJA**— porque
+   * son dos medidas distintas y sólo una contesta la pregunta (§*un recuento de
+   * NODOS y un censo de LO QUE SE VE*). Si a un ancho hubiera 0 con caja o más
+   * de 1, eso es un dato y sale publicado, no un detalle de selección.
+   */
+  const todas = [...document.querySelectorAll(".ficha-autor-revisor")];
+  const conCaja = todas.filter((el) => {
+    const r = el.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  });
+  const cont = conCaja[0] ?? null;
+  if (!cont) return { presente: false, enDom: todas.length, conCaja: 0 };
+  const moduloDe = (el) => {
+    for (let n = el; n && n !== document.body; n = n.parentElement)
+      if (/\bet_pb_text_\d+/.test(n.className || "")) return (n.className.match(/et_pb_text_\d+(_tb_body)?/) || [])[0];
+    return null;
+  };
   const cs = getComputedStyle(cont);
   const r = cont.getBoundingClientRect();
   const papeles = [...cont.querySelectorAll(":scope > div")].map((d) => {
@@ -204,6 +237,9 @@ function medirEnPagina() {
   });
   return {
     presente: true,
+    enDom: todas.length,
+    conCaja: conCaja.length,
+    modulo: moduloDe(cont),
     caja: { w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
     pad: `${cs.paddingTop} ${cs.paddingRight} ${cs.paddingBottom} ${cs.paddingLeft}`,
     br: cs.borderRadius,
@@ -261,7 +297,7 @@ try {
       await pO.setViewport({ width: ancho, height: 900, deviceScaleFactor: 1, isMobile: ancho < 500 });
       await pO.goto(pathToFileURL(join(BLOG, item.fichero)).href, { waitUntil: "domcontentloaded", timeout: 120_000 });
       await pO.setContent(html, { waitUntil: "domcontentloaded", timeout: 120_000 });
-      await pO.evaluate(() => { for (const i of document.querySelectorAll("img[loading]")) i.loading = "eager"; });
+      await settle(pO);
       const orig = await pO.evaluate(medirEnPagina);
       const bloqO = nBloqO();
       await pO.close();
@@ -275,7 +311,7 @@ try {
         const resp = await pC.goto(`${base}/${item.slug}`, { waitUntil: "domcontentloaded", timeout: 120_000 });
         httpClon = resp ? resp.status() : null;
       } catch { httpClon = null; }
-      await pC.evaluate(() => { for (const i of document.querySelectorAll("img[loading]")) i.loading = "eager"; });
+      await settle(pC);
       let clon = await pC.evaluate(medirEnPagina);
       const bloqC = nBloqC();
       await pC.close();
@@ -304,6 +340,12 @@ try {
  * `orig X → clon Y`. Un número solo no se puede leer bien.
  * ═════════════════════════════════════════════════════════════════════════ */
 const EJES = [
+  /* `enDom` y `conCaja` SÍ se comparan: si el clon pinta una sola ficha donde
+   * el original tiene dos con una escondida, eso es un defecto de fidelidad y
+   * a un ancho se vería. `modulo` NO se compara —es el ordinal que compila
+   * Divi y el clon no lo emite— pero se CONGELA, porque es lo que dice cuál de
+   * las dos pieles está midiendo cada lado. */
+  ["enDom", (m) => m.enDom], ["conCaja", (m) => m.conCaja],
   ["caja.w", (m) => m.caja?.w], ["caja.h", (m) => m.caja?.h],
   ["pad", (m) => m.pad], ["br", (m) => m.br], ["bg", (m) => m.bg],
   ["nPapeles", (m) => m.nPapeles],

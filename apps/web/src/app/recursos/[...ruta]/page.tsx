@@ -208,6 +208,24 @@ export default async function PaginaDocumento({
           <FilaA className="pt-[3.89px] pb-[30px] min-[981px]:pt-[14.39px] min-[981px]:pb-[28.8px]">
             <div className="min-[981px]:flex">
               <ColumnaPrincipalA className="mb-[30px] min-[981px]:mb-0">
+                {/* ⚠ LA FICHA DE AUTOR **NO SE PINTA AQUÍ TODAVÍA, y es una decisión con su
+                    medida** (117.ª). El original la trae en **23 de 23**
+                    documentos y la firma **kunak** en las 23, con **1** solo
+                    proemio y **0** con dos papeles — o sea que el dato está
+                    medido y sembrado en `documentos-cientificos.firmas`.
+
+                    Lo que NO está medido es su EMPLAZAMIENTO: el blog sirve
+                    **2** fichas y esconde una por ancho; aquí sirve **1**, y
+                    con una sola no se puede saber a qué ancho se ve sin
+                    abrirla en el navegador. Pintarla con el `donde` del blog
+                    la escondería a 1440 — o sea cablear un valor que nadie
+                    midió, que es exactamente el arreglo falso. Ficha:
+                    `PENDIENTES-QA.md` §F3-4-FICHA-DOC-CIENTIFICO.
+
+                    ⚠ Y el hueco se escribió con `node -e`, así que el SHELL se
+                    comió tres trozos entre acentos graves y dejó el comentario
+                    afirmando menos de lo medido — §regla 13 cobrada en la
+                    misma tanda que la cita. Reparado con Edit. */}
                 <AutoriaA donde="principal" />
                 <IndiceArticulo cuerpo={doc.cuerpo} donde="principal" />
                 {/* `post_content mb 0` en los 6 documentos medidos. */}

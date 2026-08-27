@@ -487,6 +487,69 @@ export interface EntradaBlog {
    * un campo: es lo único que varía entre instancias de la misma forma.
    */
   relacionados: boolean;
+  /**
+   * ⚠⚠ **LA FIRMA — 117.ª. Y ES UN CAMPO, contra lo que el clon tenía escrito.**
+   *
+   * `CascaronA.AUTORIA` era una **constante**, con esta justificación:
+   * *«idéntica en las 11 instancias que la llevan, así que es plantilla, no
+   * campo — el discriminador del régimen plantillado es la varianza entre
+   * instancias, y aquí es cero»*. El razonamiento es correcto **y el dominio
+   * no lo soportaba**: las 11 instancias transcritas a mano las firma **todas
+   * `kunak`**, así que la varianza no podía salir distinta de cero.
+   *
+   * Barridas las **152** del corpus: **8 proemios distintos** y **5 firmantes**.
+   * La constante acierta en **141 de 152** y es FALSA en **11** — 3 de
+   * `javier-fernandez`, 3 de `edurne-ibarrola`, 2 de `irene`, 1 de `admin` y
+   * las **2** que traen DOS firmantes con papeles distintos.
+   *
+   * Es §*una regla derivada sobre un dominio donde el caso NO SE DA no está
+   * probada para ese caso: está SIN PROBAR* — y se leía como probada, porque
+   * la derivación era correcta y el dominio real.
+   *
+   * ── La forma: ARRAY con PAPEL, y el orden es el HUECO ─────────────────
+   * El elemento 0 se pinta en el hueco `revisor` (el que lleva la foto, 152 de
+   * 152) y el 1 en `autor` (sin foto, 2 de 2).
+   */
+  firmas: FirmaA[];
+}
+
+/**
+ * Un firmante de una entrada, con su papel.
+ *
+ * `proemio` es el texto servido con el nombre enlazado sustituido por
+ * `‹NOMBRE›`. **Se guarda en vez de derivarse** porque los dos modelos se
+ * midieron: `f(autor, papel)` deja **1** instancia separadora sin explicar y
+ * `f(autor, papel, hueco)` deja **0** — pero ese tercer eje se apoya en **UNA**
+ * instancia, y §*un discriminador hallado en una sola instancia tampoco es un
+ * discriminador*. Guardarlo cuesta nada si la función era correcta y salva la
+ * fidelidad si no lo era.
+ */
+export interface FirmaA {
+  autor: AutorA;
+  papel: "escrito" | "revisado";
+  proemio?: string;
+}
+
+/**
+ * AUTOR — la entidad que firma. **Colección SIN archivo**: `/author/*` no se
+ * emite, porque está enlazado desde **0 de 35 formas de listado** y el clon
+ * sirve **1 href absoluto y 0 locales**. Por eso `href` va al ORIGINAL
+ * (§Regla de rutas locales: si el destino no está clonado, el `href` se queda).
+ */
+export interface AutorA {
+  slug: string;
+  nombre: string;
+  /** 4 de 6 lo traen; 2 sirven `<p></p>` vacío. */
+  cargo?: string;
+  /**
+   * ⚠ **La foto está DECLARADA y VACÍA**: las 5 de la ficha están **0
+   * capturadas** (§PASO 0b). El origen viaja en `fotoOrigen` para que la
+   * campaña que traiga los bytes sepa cuáles pedir, y el hueco **conserva su
+   * caja de 64×64** — quitarla movería la maquetación por una razón que no es
+   * del original.
+   */
+  foto?: ImagenA;
+  fotoOrigen?: string;
 }
 
 /**
@@ -558,4 +621,19 @@ export interface DocumentoCientifico {
   /** El PDF o la publicación externa. El rótulo va **en inglés en el original**. */
   descarga: { href: string; label: string };
   cuerpo: CampoRico;
+  /**
+   * ⚠ **NO se confunde con `autores` de arriba.** Aquél es texto libre: los
+   * firmantes del PAPER. Éste es quién lo publica en el sitio, o sea la
+   * entidad de la colección `autores`. Dos cosas distintas con nombres
+   * parecidos, y por eso se dicen las dos.
+   *
+   * Medido: **23 de 23** documentos traen la ficha, las 23 firmadas por
+   * `kunak`, con **1** solo proemio y **0** con dos papeles.
+   *
+   * ⚠ **El dato está sembrado y el RENDER no lo pinta todavía**, con su razón
+   * en la página: el blog sirve **2** fichas y esconde una por ancho, aquí hay
+   * **1** y con una sola no se puede saber a qué ancho se ve sin abrirla en el
+   * navegador. Ficha: §F3-4-FICHA-DOC-CIENTIFICO.
+   */
+  firmas: FirmaA[];
 }

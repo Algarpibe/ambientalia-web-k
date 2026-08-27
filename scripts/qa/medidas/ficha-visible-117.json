@@ -1,0 +1,83 @@
+{
+  "fecha": "2026-08-27",
+  "fichero": "calidad-del-aire-en-las-comunidades.html",
+  "hojasResueltas": 6,
+  "porAncho": {
+    "390": [
+      {
+        "i": 0,
+        "modulo": "et_pb_text_4_tb_body",
+        "seccion": "et_pb_section_1_tb_body",
+        "w": 335.39,
+        "h": 115,
+        "display": "block",
+        "conCaja": true,
+        "img": {
+          "w": 64,
+          "h": 64,
+          "br": "50%",
+          "bw": "3px"
+        },
+        "sinCaja": []
+      },
+      {
+        "i": 1,
+        "modulo": "et_pb_text_5_tb_body",
+        "seccion": "et_pb_section_1_tb_body",
+        "w": 0,
+        "h": 0,
+        "display": "block",
+        "conCaja": false,
+        "img": {
+          "w": 0,
+          "h": 0,
+          "br": "50%",
+          "bw": "3px"
+        },
+        "sinCaja": [
+          "div.ficha-autor-revisor [display:block vis:visible 0x0]",
+          "div.et_pb_text_inner [display:block vis:visible 0x0]",
+          "div.et_pb_module.et_pb_text [display:none vis:visible 0x0]"
+        ]
+      }
+    ],
+    "1440": [
+      {
+        "i": 0,
+        "modulo": "et_pb_text_4_tb_body",
+        "seccion": "et_pb_section_1_tb_body",
+        "w": 0,
+        "h": 0,
+        "display": "block",
+        "conCaja": false,
+        "img": {
+          "w": 0,
+          "h": 0,
+          "br": "50%",
+          "bw": "3px"
+        },
+        "sinCaja": [
+          "div.ficha-autor-revisor [display:block vis:visible 0x0]",
+          "div.et_pb_text_inner [display:block vis:visible 0x0]",
+          "div.et_pb_module.et_pb_text [display:none vis:visible 0x0]"
+        ]
+      },
+      {
+        "i": 1,
+        "modulo": "et_pb_text_5_tb_body",
+        "seccion": "et_pb_section_1_tb_body",
+        "w": 258.5,
+        "h": 136,
+        "display": "block",
+        "conCaja": true,
+        "img": {
+          "w": 64,
+          "h": 64,
+          "br": "0%",
+          "bw": "0px"
+        },
+        "sinCaja": []
+      }
+    ]
+  }
+}

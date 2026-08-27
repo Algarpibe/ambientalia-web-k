@@ -67,7 +67,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 90,
+        "orig": 88,
         "clon": 15
       },
       "orig": {
@@ -144,7 +144,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 89,
+        "orig": 87,
         "clon": 15
       },
       "orig": {
@@ -221,7 +221,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 78,
+        "orig": 77,
         "clon": 9
       },
       "orig": {
@@ -254,8 +254,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "0%",
+              "bw": "0px"
             }
           },
           {
@@ -298,7 +298,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 79,
+        "orig": 77,
         "clon": 9
       },
       "orig": {
@@ -331,8 +331,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "33.3028%",
+              "bw": "1px"
             }
           },
           {
@@ -374,7 +374,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 43,
+        "orig": 41,
         "clon": 0
       },
       "orig": {
@@ -435,7 +435,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 42,
+        "orig": 40,
         "clon": 0
       },
       "orig": {
@@ -468,8 +468,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "5.65006%",
+              "bw": "1px"
             }
           }
         ]
@@ -496,7 +496,7 @@
         "resueltas": 8
       },
       "bloqueadas": {
-        "orig": 74,
+        "orig": 72,
         "clon": 8
       },
       "orig": {
@@ -557,8 +557,8 @@
         "resueltas": 8
       },
       "bloqueadas": {
-        "orig": 75,
-        "clon": 8
+        "orig": 72,
+        "clon": 5
       },
       "orig": {
         "presente": true,
@@ -590,8 +590,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "28.7931%",
+              "bw": "1px"
             }
           }
         ]
@@ -618,7 +618,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 46,
+        "orig": 44,
         "clon": 1
       },
       "orig": {
@@ -651,8 +651,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "0%",
+              "bw": "0px"
             }
           }
         ]
@@ -679,7 +679,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 46,
+        "orig": 44,
         "clon": 1
       },
       "orig": {
@@ -712,8 +712,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "11.0214%",
+              "bw": "1px"
             }
           }
         ]
@@ -740,7 +740,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 65,
+        "orig": 63,
         "clon": 2
       },
       "orig": {
@@ -801,7 +801,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 65,
+        "orig": 63,
         "clon": 2
       },
       "orig": {
@@ -862,7 +862,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 47,
+        "orig": 44,
         "clon": 2
       },
       "orig": {
@@ -895,8 +895,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "0%",
+              "bw": "0px"
             }
           }
         ]
@@ -918,73 +918,73 @@
       "razon": "primer uso de admin",
       "ancho": 390,
       "httpClon": 304,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 45,
-        "clon": 2
-      },
-      "orig": {
-        "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
-        "caja": {
-          "w": 335.39,
-          "h": 65
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por admin",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/admin/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
-      }
-    },
-    {
-      "fichero": "todas-nuestras-soluciones-en-el-iotswc.html",
-      "slug": "todas-nuestras-soluciones-en-el-iotswc",
-      "bytes": 297044,
-      "autores": [
-        "kunak"
-      ],
-      "nPapeles": 1,
-      "razon": "la MÁS CORTA — donde la columna hermana puede mandar",
-      "ancho": 1440,
-      "httpClon": 200,
       "hojas": {
         "enlazadas": 7,
         "resueltas": 6
       },
       "bloqueadas": {
         "orig": 43,
+        "clon": 2
+      },
+      "orig": {
+        "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
+        "caja": {
+          "w": 335.39,
+          "h": 65
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por admin",
+            "proemio": "Escrito por ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/admin/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "5.61278%",
+              "bw": "1px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false,
+        "enDom": 0,
+        "conCaja": 0
+      }
+    },
+    {
+      "fichero": "todas-nuestras-soluciones-en-el-iotswc.html",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "bytes": 297044,
+      "autores": [
+        "kunak"
+      ],
+      "nPapeles": 1,
+      "razon": "la MÁS CORTA — donde la columna hermana puede mandar",
+      "ancho": 1440,
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 40,
         "clon": 0
       },
       "orig": {
@@ -1017,8 +1017,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "0%",
+              "bw": "0px"
             }
           }
         ]
@@ -1045,7 +1045,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 42,
+        "orig": 40,
         "clon": 0
       },
       "orig": {
@@ -1078,8 +1078,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "5.64059%",
+              "bw": "1px"
             }
           }
         ]
@@ -1106,7 +1106,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 114,
+        "orig": 112,
         "clon": 27
       },
       "orig": {
@@ -1167,7 +1167,7 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 114,
+        "orig": 112,
         "clon": 27
       },
       "orig": {
@@ -1200,8 +1200,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "33.2949%",
+              "bw": "1px"
             }
           }
         ]

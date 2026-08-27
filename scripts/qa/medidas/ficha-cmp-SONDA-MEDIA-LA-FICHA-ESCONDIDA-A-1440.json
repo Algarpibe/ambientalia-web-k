@@ -67,17 +67,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 90,
+        "orig": 88,
         "clon": 15
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 258.5,
-          "h": 136
+          "w": 0,
+          "h": 0
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -98,8 +95,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 64,
-              "h": 64,
+              "w": 0,
+              "h": 0,
               "br": "50%",
               "bw": "3px"
             }
@@ -122,9 +119,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -144,14 +139,11 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 89,
+        "orig": 87,
         "clon": 15
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 115
@@ -177,8 +169,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "37.0577%",
+              "bw": "2px"
             }
           },
           {
@@ -199,9 +191,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -221,17 +211,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 78,
+        "orig": 76,
         "clon": 9
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 258.5,
-          "h": 157
+          "w": 0,
+          "h": 0
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -252,8 +239,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 64,
-              "h": 64,
+              "w": 0,
+              "h": 0,
               "br": "50%",
               "bw": "3px"
             }
@@ -276,9 +263,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -298,14 +283,11 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 79,
+        "orig": 77,
         "clon": 9
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 136
@@ -331,8 +313,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "40.1089%",
+              "bw": "2px"
             }
           },
           {
@@ -353,9 +335,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -374,17 +354,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 43,
+        "orig": 41,
         "clon": 0
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 258.5,
-          "h": 66
+          "w": 0,
+          "h": 0
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -405,8 +382,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 64,
-              "h": 64,
+              "w": 0,
+              "h": 0,
               "br": "50%",
               "bw": "3px"
             }
@@ -414,9 +391,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -435,14 +410,11 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 42,
+        "orig": 39,
         "clon": 0
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -468,16 +440,14 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "28.783%",
+              "bw": "1px"
             }
           }
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -496,17 +466,14 @@
         "resueltas": 8
       },
       "bloqueadas": {
-        "orig": 74,
+        "orig": 71,
         "clon": 8
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 258.5,
-          "h": 87
+          "w": 0,
+          "h": 0
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -527,8 +494,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 64,
-              "h": 64,
+              "w": 0,
+              "h": 0,
               "br": "50%",
               "bw": "3px"
             }
@@ -536,9 +503,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -557,14 +522,11 @@
         "resueltas": 8
       },
       "bloqueadas": {
-        "orig": 75,
-        "clon": 8
+        "orig": 72,
+        "clon": 5
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -590,16 +552,14 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "44.6374%",
+              "bw": "2px"
             }
           }
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -611,372 +571,6 @@
       ],
       "nPapeles": 1,
       "razon": "primer uso de edurne-ibarrola",
-      "ancho": 1440,
-      "httpClon": 200,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 46,
-        "clon": 1
-      },
-      "orig": {
-        "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
-        "caja": {
-          "w": 258.5,
-          "h": 87
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
-            "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
-      }
-    },
-    {
-      "fichero": "comparativa-de-los-informes-de-evaluacion-de-aqspec.html",
-      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
-      "bytes": 304714,
-      "autores": [
-        "edurne-ibarrola"
-      ],
-      "nPapeles": 1,
-      "razon": "primer uso de edurne-ibarrola",
-      "ancho": 390,
-      "httpClon": 304,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 46,
-        "clon": 1
-      },
-      "orig": {
-        "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
-        "caja": {
-          "w": 335.39,
-          "h": 66
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
-            "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
-      }
-    },
-    {
-      "fichero": "detectores-emisiones-coronavirus-contaminacion.html",
-      "slug": "detectores-emisiones-coronavirus-contaminacion",
-      "bytes": 318504,
-      "autores": [
-        "javier-fernandez"
-      ],
-      "nPapeles": 1,
-      "razon": "primer uso de javier-fernandez",
-      "ancho": 1440,
-      "httpClon": 200,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 65,
-        "clon": 2
-      },
-      "orig": {
-        "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
-        "caja": {
-          "w": 258.5,
-          "h": 87
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por el Director General y cofundador Fco. Javier Fernández Huerta",
-            "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/javier-fernandez/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
-      }
-    },
-    {
-      "fichero": "detectores-emisiones-coronavirus-contaminacion.html",
-      "slug": "detectores-emisiones-coronavirus-contaminacion",
-      "bytes": 318504,
-      "autores": [
-        "javier-fernandez"
-      ],
-      "nPapeles": 1,
-      "razon": "primer uso de javier-fernandez",
-      "ancho": 390,
-      "httpClon": 304,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 65,
-        "clon": 2
-      },
-      "orig": {
-        "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
-        "caja": {
-          "w": 335.39,
-          "h": 87
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por el Director General y cofundador Fco. Javier Fernández Huerta",
-            "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/javier-fernandez/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
-      }
-    },
-    {
-      "fichero": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018.html",
-      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
-      "bytes": 298969,
-      "autores": [
-        "admin"
-      ],
-      "nPapeles": 1,
-      "razon": "primer uso de admin",
-      "ancho": 1440,
-      "httpClon": 200,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 47,
-        "clon": 2
-      },
-      "orig": {
-        "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
-        "caja": {
-          "w": 258.5,
-          "h": 65
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por admin",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/admin/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
-      }
-    },
-    {
-      "fichero": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018.html",
-      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
-      "bytes": 298969,
-      "autores": [
-        "admin"
-      ],
-      "nPapeles": 1,
-      "razon": "primer uso de admin",
-      "ancho": 390,
-      "httpClon": 304,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 45,
-        "clon": 2
-      },
-      "orig": {
-        "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
-        "caja": {
-          "w": 335.39,
-          "h": 65
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por admin",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/admin/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "50%",
-              "bw": "3px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
-      }
-    },
-    {
-      "fichero": "todas-nuestras-soluciones-en-el-iotswc.html",
-      "slug": "todas-nuestras-soluciones-en-el-iotswc",
-      "bytes": 297044,
-      "autores": [
-        "kunak"
-      ],
-      "nPapeles": 1,
-      "razon": "la MÁS CORTA — donde la columna hermana puede mandar",
       "ancho": 1440,
       "httpClon": 200,
       "hojas": {
@@ -985,16 +579,349 @@
       },
       "bloqueadas": {
         "orig": 43,
+        "clon": 1
+      },
+      "orig": {
+        "presente": true,
+        "caja": {
+          "w": 0,
+          "h": 0
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
+            "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 0,
+              "h": 0,
+              "br": "50%",
+              "bw": "3px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false
+      }
+    },
+    {
+      "fichero": "comparativa-de-los-informes-de-evaluacion-de-aqspec.html",
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "bytes": 304714,
+      "autores": [
+        "edurne-ibarrola"
+      ],
+      "nPapeles": 1,
+      "razon": "primer uso de edurne-ibarrola",
+      "ancho": 390,
+      "httpClon": 304,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 44,
+        "clon": 1
+      },
+      "orig": {
+        "presente": true,
+        "caja": {
+          "w": 335.39,
+          "h": 66
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por la Directora Científica (CSO) Edurne Ibarrola-Ulzurrun, PhD",
+            "proemio": "Escrito por la Directora Científica (CSO) ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/edurne-ibarrola/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "37.0313%",
+              "bw": "2px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false
+      }
+    },
+    {
+      "fichero": "detectores-emisiones-coronavirus-contaminacion.html",
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "bytes": 318504,
+      "autores": [
+        "javier-fernandez"
+      ],
+      "nPapeles": 1,
+      "razon": "primer uso de javier-fernandez",
+      "ancho": 1440,
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 63,
+        "clon": 2
+      },
+      "orig": {
+        "presente": true,
+        "caja": {
+          "w": 0,
+          "h": 0
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por el Director General y cofundador Fco. Javier Fernández Huerta",
+            "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/javier-fernandez/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 0,
+              "h": 0,
+              "br": "50%",
+              "bw": "3px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false
+      }
+    },
+    {
+      "fichero": "detectores-emisiones-coronavirus-contaminacion.html",
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "bytes": 318504,
+      "autores": [
+        "javier-fernandez"
+      ],
+      "nPapeles": 1,
+      "razon": "primer uso de javier-fernandez",
+      "ancho": 390,
+      "httpClon": 304,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 63,
+        "clon": 2
+      },
+      "orig": {
+        "presente": true,
+        "caja": {
+          "w": 335.39,
+          "h": 87
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por el Director General y cofundador Fco. Javier Fernández Huerta",
+            "proemio": "Escrito por el Director General y cofundador ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/javier-fernandez/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "28.8026%",
+              "bw": "1px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false
+      }
+    },
+    {
+      "fichero": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018.html",
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "bytes": 298969,
+      "autores": [
+        "admin"
+      ],
+      "nPapeles": 1,
+      "razon": "primer uso de admin",
+      "ancho": 1440,
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 44,
+        "clon": 2
+      },
+      "orig": {
+        "presente": true,
+        "caja": {
+          "w": 0,
+          "h": 0
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por admin",
+            "proemio": "Escrito por ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/admin/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 0,
+              "h": 0,
+              "br": "50%",
+              "bw": "3px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false
+      }
+    },
+    {
+      "fichero": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018.html",
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "bytes": 298969,
+      "autores": [
+        "admin"
+      ],
+      "nPapeles": 1,
+      "razon": "primer uso de admin",
+      "ancho": 390,
+      "httpClon": 304,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 43,
+        "clon": 2
+      },
+      "orig": {
+        "presente": true,
+        "caja": {
+          "w": 335.39,
+          "h": 65
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por admin",
+            "proemio": "Escrito por ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/admin/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "28.783%",
+              "bw": "1px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": false
+      }
+    },
+    {
+      "fichero": "todas-nuestras-soluciones-en-el-iotswc.html",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "bytes": 297044,
+      "autores": [
+        "kunak"
+      ],
+      "nPapeles": 1,
+      "razon": "la MÁS CORTA — donde la columna hermana puede mandar",
+      "ancho": 1440,
+      "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 41,
         "clon": 0
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 258.5,
-          "h": 66
+          "w": 0,
+          "h": 0
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1015,8 +942,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 64,
-              "h": 64,
+              "w": 0,
+              "h": 0,
               "br": "50%",
               "bw": "3px"
             }
@@ -1024,9 +951,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -1045,14 +970,11 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 42,
+        "orig": 40,
         "clon": 0
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1078,16 +1000,14 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "50%",
-              "bw": "3px"
+              "br": "28.7729%",
+              "bw": "1px"
             }
           }
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -1111,12 +1031,9 @@
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 258.5,
-          "h": 66
+          "w": 0,
+          "h": 0
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1137,8 +1054,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 64,
-              "h": 64,
+              "w": 0,
+              "h": 0,
               "br": "50%",
               "bw": "3px"
             }
@@ -1146,9 +1063,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     },
     {
@@ -1167,14 +1082,11 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 114,
+        "orig": 112,
         "clon": 27
       },
       "orig": {
         "presente": true,
-        "enDom": 2,
-        "conCaja": 1,
-        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1207,9 +1119,7 @@
         ]
       },
       "clon": {
-        "presente": false,
-        "enDom": 0,
-        "conCaja": 0
+        "presente": false
       }
     }
   ]

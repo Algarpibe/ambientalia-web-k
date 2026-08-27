@@ -531,6 +531,27 @@ for (const [clave, p] of trabajo) {
      * daba «recursos» en las 23 sin dar error. */
     const pref = new URL(p.url).pathname.split("/").filter(Boolean)[2];
     if (pref && pref !== "documentos-cientificos") doc.prefijo = pref;
+    /**
+     * ⚠ **LA FIRMA TAMBIÉN AQUÍ — 23 de 23, y NO es la misma pregunta que
+     * `autores`.** El campo `autores` de arriba es texto libre: los firmantes
+     * del PAPER. `firmas` es quién lo publica en el sitio, que es la entidad
+     * de la colección `autores`. Dos cosas distintas con nombres parecidos.
+     *
+     * Barridas las 23: **todas `kunak`**, **un** solo proemio y **0** con dos
+     * papeles. O sea que aquí la constante del clon SÍ acertaba — y aun así se
+     * modela, porque lo que la hacía falsa en blog es el mismo mecanismo, y
+     * §*el test B no ve un campo que el editor puso UNIFORME*: varianza cero
+     * dentro de una forma no prueba plantilla cuando la forma hermana varía.
+     */
+    const fd = cuenta("firmas", SABOTAJE === "selector-muerto" ? null : firmasDe(sin));
+    if (fd) {
+      doc.firmas = fd.firmas.map((x) => ({ ...x, proemio: deco(x.proemio) }));
+      for (const a of fd.autores) {
+        const ya = AUTORES.get(a.slug);
+        if (!ya) AUTORES.set(a.slug, { slug: a.slug, nombre: deco(a.nombre), fotos: new Set(a.foto ? [a.foto] : []) });
+        else if (a.foto) ya.fotos.add(a.foto);
+      }
+    }
     salida["documentos-cientificos"].push(doc);
   }
   ev.ok();
@@ -551,7 +572,22 @@ await esbuild.build({
 const LIB = await import(`${pathToFileURL(bundle).href}?t=${Date.now()}`);
 
 const control = [];
+/**
+ * ⚠⚠ **EL CONTADOR ES REAL DESDE LA 117.ª — antes era una FÓRMULA A MANO.**
+ *
+ * `nControl` se calculaba como `ENTRADAS_BLOG.length * 12 + TERMINOS * 4 +
+ * DOCUMENTOS * 8`, o sea con un multiplicador ESCRITO por campo. Consecuencia:
+ * añadir una comparación **no movía el número**, y el titular seguía diciendo
+ * «128 comparaciones» mientras se hacían 139. Es §regla 9 caso 7 —*un conjunto
+ * enumerado a mano dentro de una sonda es un dato recordado*— cometido sobre
+ * el **denominador del propio control**, que es el sitio donde peor sienta:
+ * §sondas 1 dice que *lo que imprime y lo que cuenta no pueden discrepar*.
+ *
+ * Se cuenta aquí, que es por donde pasan todas.
+ */
+let nComparaciones = 0;
 const cmp = (slug, campo, leido, esperado) => {
+  nComparaciones++;
   const a = JSON.stringify(leido ?? null), b = JSON.stringify(esperado ?? null);
   if (a !== b) control.push({ slug, campo, leido: leido ?? null, esperado: esperado ?? null, clases: ["valor"] });
 };
@@ -740,7 +776,9 @@ const ABIERTOS = {};
 
 /** Los pares que son el MISMO documento con otra ortografía: dato, no defecto. */
 const serializacion = [];
+let nRicosComparados = 0;
 const cmpRico = (slug, campo, leido, esperado) => {
+  nRicosComparados++;
   const r = clasificaDiscrepancia(leido, esperado, PLIEGUES_PIPELINE);
   const defectos = r.clases.filter((c) => (CLASES[c]?.[0] ?? "DEFECTO") === "DEFECTO" && !(c in ABIERTOS));
   if (!defectos.length) {
@@ -775,6 +813,19 @@ for (const e of LIB.ENTRADAS_BLOG) {
   cmp(e.slug, "recurso", d.recurso, esp.recurso);
   cmp(e.slug, "relacionados", d.relacionados, esp.relacionados);
   cmp(e.slug, "imagenDestacada", d.imagenDestacada, esp.imagenDestacada);
+  /**
+   * ⚠ **LA FIRMA ENTRA EN EL CONTROL (117.ª) — y sin esta línea el campo de la
+   * transcripción a mano sería un campo SIN LECTOR**: estaría escrito, se
+   * leería como verificado y no lo compararía nadie (§sondas 3, *documentado no
+   * es conectado*).
+   *
+   * Se compara sólo `autor.slug` + `papel` + `proemio`, que es lo que la
+   * transcripción a mano puede afirmar del HTML servido de esa entrada. El
+   * resto del autor —cargo, redes, bio— vive en SU archivo, o sea en otro
+   * documento, y compararlo aquí sería pedirle a esta página algo que no sirve.
+   */
+  const firma = (fs_) => (fs_ ?? []).map((f) => ({ autor: f.autor?.slug ?? f.autor, papel: f.papel, proemio: f.proemio }));
+  cmp(e.slug, "firmas", firma(d.firmas), firma(esp.firmas));
   cmpRico(e.slug, "cuerpo", SABOTAJE === "cuerpo-cambiado" ? `${d.cuerpo}<p>✂</p>` : d.cuerpo, esp.cuerpo);
 }
 const term = porSlug("terminos-kunakpedia");
@@ -794,6 +845,10 @@ for (const e of LIB.DOCUMENTOS_CIENTIFICOS) {
   if (!d) { control.push({ slug: e.slug, campo: "—", leido: null, esperado: "existe" }); continue; }
   cmp(e.slug, "titulo", d.titulo, e.titulo);
   cmp(e.slug, "categoria", d.categoria, e.categoria);
+  /* La firma, también aquí: 23 de 23 documentos la traen. Misma razón que en
+   * blog — un campo transcrito que nadie compara no mide (§sondas 3). */
+  cmp(e.slug, "firmas", (d.firmas ?? []).map((f) => ({ autor: f.autor, papel: f.papel, proemio: f.proemio })),
+      (e.firmas ?? []).map((f) => ({ autor: f.autor?.slug ?? f.autor, papel: f.papel, proemio: f.proemio })));
   cmp(e.slug, "prefijo", d.prefijo, e.prefijo);
   /* Los CINCO del PASO 5, contra los 4 transcritos a mano. */
   cmp(e.slug, "autores", d.autores, e.autores);
@@ -811,11 +866,13 @@ console.log(`\n════════ extractor-a · el catálogo del grupo A 
 for (const col of GRUPO_A) console.log(`  ${col.padEnd(24)} ${String(salida[col].length).padStart(4)} documentos`);
 if (sinCuerpo.length) console.log(`\n  ⛔ ${sinCuerpo.length} sin cuerpo en corpus/transformado: ${sinCuerpo.slice(0, 4).join(" · ")}`);
 
-/* 12 · 3 · 8 campos por documento — el `+1` de cada uno es `cuerpo`. */
-const nControl = LIB.ENTRADAS_BLOG.length * 12 + LIB.TERMINOS_KUNAKPEDIA.length * 4 + LIB.DOCUMENTOS_CIENTIFICOS.length * 8;
+/* DERIVADO del número de comparaciones que se hicieron de verdad — ver el
+ * comentario de `cmp`. La fórmula a mano que había aquí no se movía al añadir
+ * una comparación, así que publicaba 128 mientras se hacían 139. */
+const nControl = nComparaciones + nRicosComparados;
 const nRicos = LIB.ENTRADAS_BLOG.length + LIB.TERMINOS_KUNAKPEDIA.length + LIB.DOCUMENTOS_CIENTIFICOS.length;
 console.log(`\n  CONTROL · ${nControl} comparaciones contra la transcripción a mano ` +
-  `(${nRicos} de ellas son el CUERPO RICO): ` +
+  `(${nRicosComparados} de ellas son el CUERPO RICO): ` +
   `${control.length === 0 ? "✅ TODAS" : `❌ ${control.length} discrepancia(s)`}`);
 for (const c of control.slice(0, 10))
   console.log(`     · ${c.slug} · ${c.campo}  [${(c.clases ?? []).join("+") || "—"}]\n         leído    ${JSON.stringify(c.leido)?.slice(0, 150)}\n         esperado ${JSON.stringify(c.esperado)?.slice(0, 150)}`);

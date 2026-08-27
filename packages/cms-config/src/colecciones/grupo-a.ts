@@ -238,6 +238,38 @@ export const documentosCientificos: CollectionConfig = {
     // («Reche et al.» | 2020), que varían en las 4 instancias ⇒ campos.
     { name: "autores", type: "text", required: true },
     { name: "anyo", type: "text", required: true },
+    /**
+     * ⚠ **LA FIRMA — 23 de 23, y NO se confunde con `autores` de arriba.**
+     * `autores` es texto libre: los firmantes del PAPER. `firmas` es quién lo
+     * publica en el sitio, o sea la entidad de la colección `autores`. Dos
+     * cosas distintas con nombres parecidos, y por eso se dicen las dos.
+     *
+     * Aquí el dominio es UNIFORME: las 23 las firma `kunak` con un solo
+     * proemio y **0** traen dos papeles. Se modela igual, y no por simetría:
+     * §*el test B no ve un campo que el editor puso UNIFORME en toda la
+     * página* — varianza cero dentro de una forma no prueba plantilla cuando
+     * la forma hermana (blog) sirve **8 proemios y 5 firmantes**.
+     */
+    {
+      name: "firmas",
+      type: "array",
+      minRows: 1,
+      required: true,
+      fields: [
+        { name: "autor", type: "relationship", relationTo: "autores", required: true },
+        {
+          name: "papel",
+          type: "select",
+          required: true,
+          defaultValue: "escrito",
+          options: [
+            { label: "Escrito por", value: "escrito" },
+            { label: "Revisado y aprobado por", value: "revisado" },
+          ],
+        },
+        { name: "proemio", type: "text" },
+      ],
+    },
     imagenA("portada", { requerida: true }),
     // El PDF o la publicación externa. El rótulo va EN INGLÉS en el original.
     {

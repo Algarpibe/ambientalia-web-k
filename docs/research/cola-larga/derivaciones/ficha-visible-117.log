@@ -1,0 +1,33 @@
+═══ ¿CUÁL DE LAS DOS FICHAS SE VE? · 117.ª ESCALÓN 3 ═══
+
+  fichero: calidad-del-aire-en-las-comunidades.html · hojas resueltas: 6
+     CRUCE @1440: imgs en la ficha visible = 1
+        vía ficha.querySelector: {"w":64,"br":"17.3042%","bw":"1px"}
+        vía hueco (comparador):  {"w":64,"br":"17.3042%","bw":"1px"}
+        · {"cls":"(sin clase)","w":64,"br":"17.3042%","bw":"1px"}
+
+  ── ancho 1440 ──  fichas en el DOM: **2** · CON CAJA: **1**
+     #0  sin caja  0x0  mod=et_pb_text_4_tb_body sec=et_pb_section_1_tb_body  img: 0x0 br=50% bw=3px
+         quién lo esconde: div.et_pb_module.et_pb_text [display:none vis:visible 0x0]
+     #1  CON CAJA  258.5x136  mod=et_pb_text_5_tb_body sec=et_pb_section_1_tb_body  img: 64x64 br=0% bw=0px
+     CRUCE @390: imgs en la ficha visible = 1
+        vía ficha.querySelector: {"w":64,"br":"50%","bw":"3px"}
+        vía hueco (comparador):  {"w":64,"br":"50%","bw":"3px"}
+        · {"cls":"(sin clase)","w":64,"br":"50%","bw":"3px"}
+
+  ── ancho 390 ──  fichas en el DOM: **2** · CON CAJA: **1**
+     #0  CON CAJA  335.39x115  mod=et_pb_text_4_tb_body sec=et_pb_section_1_tb_body  img: 64x64 br=50% bw=3px
+     #1  sin caja  0x0  mod=et_pb_text_5_tb_body sec=et_pb_section_1_tb_body  img: 0x0 br=50% bw=3px
+         quién lo esconde: div.et_pb_module.et_pb_text [display:none vis:visible 0x0]
+
+  ⇒ VEREDICTO
+     a 1440: se pinta la ficha #1 de 2
+     a 390: se pinta la ficha #0 de 2
+
+  ⇒ **DISTINTAS**: #1 a 1440 y #0 a 390. El clon necesita LOS DOS emplazamientos —
+     transcribir sólo uno deja un ancho sin pintar, y el otro ancho no lo vería.
+
+  ⚠ Y ESO EXPLICA LOS CEROS DEL COMPARADOR: medía `querySelector`, o sea
+    SIEMPRE la #0, que a uno de los dos anchos no tiene caja. Los `w:0 h:0`
+    y el `border-radius: 37.0577%` no eran datos del original: eran lo que
+    devuelve `getComputedStyle` sobre un elemento sin caja.

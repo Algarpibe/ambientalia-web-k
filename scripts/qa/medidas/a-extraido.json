@@ -3,7 +3,7 @@
     "fecha": "2026-08-27",
     "que": "el catálogo COMPLETO del grupo A, extraído del corpus congelado",
     "fuente": "corpus/ (metadatos) + corpus/transformado/ (cuerpo, T1–T8 + saneador)",
-    "control": "128 comparaciones contra src/lib/arquetipo-a.ts",
+    "control": "139 comparaciones contra src/lib/arquetipo-a.ts",
     "sabotaje": null,
     "noMide": [
       "no toca el original",
@@ -35,7 +35,7 @@
     ]
   },
   "control": {
-    "comparaciones": 128,
+    "comparaciones": 139,
     "documentos": 14,
     "cuerposComparados": 14,
     "poblacion": 217,
@@ -7267,7 +7267,14 @@
         "descarga": {
           "href": "https://www.cetjournal.it/index.php/cet/article/view/CET24112023",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal",
@@ -7294,7 +7301,14 @@
         "descarga": {
           "href": "https://www.frontiersin.org/journals/environmental-health/articles/10.3389/fenvh.2023.1232867/full",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
@@ -7321,7 +7335,14 @@
         "descarga": {
           "href": "https://www.envirotech-online.com/article/air-monitoring/6/vodafone/the-suitability-of-a-mobile-communications-network-to-deliver-high-resolution-air-quality-measurements/3344",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid",
@@ -7348,7 +7369,14 @@
         "descarga": {
           "href": "https://ojs.diffundit.com/index.php/rsa/article/view/1158/1455",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
@@ -7375,7 +7403,14 @@
         "descarga": {
           "href": "https://www.mdpi.com/1920830",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas",
@@ -7402,7 +7437,14 @@
         "descarga": {
           "href": "https://www.mdpi.com/2073-4433/13/6/944",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica",
@@ -7429,7 +7471,14 @@
         "descarga": {
           "href": "https://www.mdpi.com/2072-4292/14/11/2613",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo",
@@ -7456,7 +7505,14 @@
         "descarga": {
           "href": "https://www.mdpi.com/1660-4601/19/6/3561",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste",
@@ -7483,7 +7539,14 @@
         "descarga": {
           "href": "https://www.sciencedirect.com/science/article/abs/pii/S1364815222000123",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores",
@@ -7510,7 +7573,14 @@
         "descarga": {
           "href": "https://kunakair.com/doc/External/Scientific_Docs/Papers_and_studies/Estudio_en_la_EDAR_de_Arazuri-Kunak.pdf",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "desafio-de-sensores-contra-incendios-forestales-de-la-us-epa",
@@ -7537,7 +7607,14 @@
         "descarga": {
           "href": "https://www.sciencedirect.com/science/article/pii/S1352231020308955",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
@@ -7564,7 +7641,14 @@
         "descarga": {
           "href": "https://pubmed.ncbi.nlm.nih.gov/32065890/",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana",
@@ -7591,7 +7675,14 @@
         "descarga": {
           "href": "https://link.springer.com/article/10.5572/ajae.2018.12.3.232",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire",
@@ -7618,7 +7709,14 @@
         "descarga": {
           "href": "https://pubs.acs.org/doi/10.1021/acssensors.7b00620#",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "kunak-air-pro-informe-de-evaluacion-en-campo",
@@ -7645,7 +7743,14 @@
         "descarga": {
           "href": "https://www.aqmd.gov/docs/default-source/aq-spec/field-evaluations/kunak-air-pro---field-evaluation.pdf",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "kunak-air-lite-informe-de-evaluacion-en-campo",
@@ -7672,7 +7777,14 @@
         "descarga": {
           "href": "https://www.aqmd.gov/docs/default-source/aq-spec/field-evaluations/kunak-air-lite---field-evaluation.pdf",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones",
@@ -7699,7 +7811,14 @@
         "descarga": {
           "href": "https://pubmed.ncbi.nlm.nih.gov/38565357/",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite",
@@ -7726,7 +7845,14 @@
         "descarga": {
           "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/Ricardo_Glasgow_Kerbside_KUNAK_Air_Lite_2022.html",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro",
@@ -7753,7 +7879,14 @@
         "descarga": {
           "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/Ricardo_Glasgow_Kerbside_KUNAK_Air_Pro_2022.html",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "desafio-airlab-de-microsensores-2023",
@@ -7780,7 +7913,14 @@
         "descarga": {
           "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/AIRLAB_Microsensors_Challenge_%202023_Kunak_AIR.pdf",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19",
@@ -7807,7 +7947,14 @@
         "descarga": {
           "href": "https://kunakair.com/doc/External/Scientific_Docs/Independent_evaluations/USEPA_Wildland_Fire_Challenge_Kunak_AIR_Evaluation.pdf",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "soluciones-avanzadas-de-monitorizacion",
@@ -7834,7 +7981,14 @@
           "href": "https://kunakair.com/doc/External/Scientific_Docs/Technical_publications/February_2026_Kunak_Hydrocarbon_engineering.pdf",
           "label": "View document"
         },
-        "prefijo": "estudios-cientificos"
+        "prefijo": "estudios-cientificos",
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       },
       {
         "slug": "evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico",
@@ -7861,7 +8015,14 @@
         "descarga": {
           "href": "https://epr.atmosfera.unam.mx/Microsensores-2022/documentos/2b_Evaluacion_Sensores_CDMX_2022.pdf",
           "label": "View document"
-        }
+        },
+        "firmas": [
+          {
+            "autor": "kunak",
+            "papel": "escrito",
+            "proemio": "Escrito por el ‹NOMBRE›"
+          }
+        ]
       }
     ],
     "autores": [

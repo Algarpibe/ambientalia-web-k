@@ -1594,6 +1594,12 @@ export interface DocumentosCientifico {
   titulo: string;
   autores: string;
   anyo: string;
+  firmas: {
+    autor: number | Autore;
+    papel: 'escrito' | 'revisado';
+    proemio?: string | null;
+    id?: string | null;
+  }[];
   portada: {
     src: number | Media;
     srcset?: string | null;
@@ -5263,6 +5269,14 @@ export interface DocumentosCientificosSelect<T extends boolean = true> {
   titulo?: T;
   autores?: T;
   anyo?: T;
+  firmas?:
+    | T
+    | {
+        autor?: T;
+        papel?: T;
+        proemio?: T;
+        id?: T;
+      };
   portada?:
     | T
     | {

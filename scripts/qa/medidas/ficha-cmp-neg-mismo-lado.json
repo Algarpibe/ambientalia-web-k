@@ -69,14 +69,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 87,
+        "orig": 89,
         "clon": 15
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 136
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -97,8 +100,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -122,9 +125,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 136
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -145,8 +151,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -186,11 +192,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 87,
+        "orig": 89,
         "clon": 15
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 115
@@ -239,6 +248,9 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 115
@@ -303,14 +315,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 76,
+        "orig": 79,
         "clon": 9
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 157
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -331,8 +346,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -356,9 +371,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 157
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -379,8 +397,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -420,11 +438,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 77,
+        "orig": 79,
         "clon": 9
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 136
@@ -450,8 +471,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "40.1089%",
-              "bw": "2px"
+              "br": "50%",
+              "bw": "3px"
             }
           },
           {
@@ -473,6 +494,9 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 136
@@ -498,8 +522,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "40.1089%",
-              "bw": "2px"
+              "br": "50%",
+              "bw": "3px"
             }
           },
           {
@@ -536,14 +560,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 41,
+        "orig": 43,
         "clon": 0
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -564,8 +591,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -574,9 +601,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -597,8 +627,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -622,11 +652,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 40,
+        "orig": 42,
         "clon": 0
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -652,14 +685,17 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "11.0214%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -685,8 +721,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "11.0214%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
@@ -708,14 +744,17 @@
         "resueltas": 8
       },
       "bloqueadas": {
-        "orig": 72,
-        "clon": 5
+        "orig": 74,
+        "clon": 8
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -736,8 +775,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -746,9 +785,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -769,8 +811,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -794,11 +836,14 @@
         "resueltas": 8
       },
       "bloqueadas": {
-        "orig": 72,
-        "clon": 5
+        "orig": 74,
+        "clon": 8
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -824,14 +869,17 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "28.764%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -857,8 +905,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "28.764%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
@@ -880,14 +928,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 44,
+        "orig": 43,
         "clon": 1
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -908,8 +959,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -918,9 +969,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -941,8 +995,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -966,11 +1020,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 44,
+        "orig": 47,
         "clon": 1
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1004,6 +1061,9 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1052,14 +1112,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 63,
+        "orig": 65,
         "clon": 2
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1080,8 +1143,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -1090,9 +1153,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 87
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1113,8 +1179,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -1138,11 +1204,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 63,
+        "orig": 65,
         "clon": 2
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 87
@@ -1168,14 +1237,17 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "23.4231%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 87
@@ -1201,8 +1273,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "23.4231%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
@@ -1219,6 +1291,98 @@
       "razon": "primer uso de admin",
       "ancho": 1440,
       "httpClon": 200,
+      "hojas": {
+        "enlazadas": 7,
+        "resueltas": 6
+      },
+      "bloqueadas": {
+        "orig": 46,
+        "clon": 2
+      },
+      "orig": {
+        "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
+        "caja": {
+          "w": 258.5,
+          "h": 65
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por admin",
+            "proemio": "Escrito por ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/admin/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "50%",
+              "bw": "3px"
+            }
+          }
+        ]
+      },
+      "clon": {
+        "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
+        "caja": {
+          "w": 258.5,
+          "h": 65
+        },
+        "pad": "10px 13px 14px 13px",
+        "br": "10px",
+        "bg": "rgb(236, 237, 240)",
+        "nPapeles": 1,
+        "papeles": [
+          {
+            "clase": "revisor",
+            "ds": "flex",
+            "mis": "-23px",
+            "mt": "0px",
+            "texto": "Escrito por admin",
+            "proemio": "Escrito por ‹NOMBRE›",
+            "href": "https://kunakair.com/es/author/admin/",
+            "p": {
+              "fs": "14px",
+              "lh": "21px",
+              "mis": "8px"
+            },
+            "img": {
+              "w": 64,
+              "h": 64,
+              "br": "50%",
+              "bw": "3px"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fichero": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018.html",
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "bytes": 298969,
+      "autores": [
+        "admin"
+      ],
+      "nPapeles": 1,
+      "razon": "primer uso de admin",
+      "ancho": 390,
+      "httpClon": 304,
       "hojas": {
         "enlazadas": 7,
         "resueltas": 6
@@ -1229,9 +1393,12 @@
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 335.39,
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1252,8 +1419,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -1262,9 +1429,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 335.39,
+          "h": 65
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1285,8 +1455,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -1295,115 +1465,32 @@
       }
     },
     {
-      "fichero": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018.html",
-      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
-      "bytes": 298969,
+      "fichero": "todas-nuestras-soluciones-en-el-iotswc.html",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "bytes": 297044,
       "autores": [
-        "admin"
+        "kunak"
       ],
       "nPapeles": 1,
-      "razon": "primer uso de admin",
-      "ancho": 390,
-      "httpClon": 304,
+      "razon": "la MÁS CORTA — donde la columna hermana puede mandar",
+      "ancho": 1440,
+      "httpClon": 200,
       "hojas": {
         "enlazadas": 7,
         "resueltas": 6
       },
       "bloqueadas": {
         "orig": 43,
-        "clon": 2
-      },
-      "orig": {
-        "presente": true,
-        "caja": {
-          "w": 335.39,
-          "h": 65
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por admin",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/admin/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "11.0214%",
-              "bw": "1px"
-            }
-          }
-        ]
-      },
-      "clon": {
-        "presente": true,
-        "caja": {
-          "w": 335.39,
-          "h": 65
-        },
-        "pad": "10px 13px 14px 13px",
-        "br": "10px",
-        "bg": "rgb(236, 237, 240)",
-        "nPapeles": 1,
-        "papeles": [
-          {
-            "clase": "revisor",
-            "ds": "flex",
-            "mis": "-23px",
-            "mt": "0px",
-            "texto": "Escrito por admin",
-            "proemio": "Escrito por ‹NOMBRE›",
-            "href": "https://kunakair.com/es/author/admin/",
-            "p": {
-              "fs": "14px",
-              "lh": "21px",
-              "mis": "8px"
-            },
-            "img": {
-              "w": 64,
-              "h": 64,
-              "br": "11.0214%",
-              "bw": "1px"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fichero": "todas-nuestras-soluciones-en-el-iotswc.html",
-      "slug": "todas-nuestras-soluciones-en-el-iotswc",
-      "bytes": 297044,
-      "autores": [
-        "kunak"
-      ],
-      "nPapeles": 1,
-      "razon": "la MÁS CORTA — donde la columna hermana puede mandar",
-      "ancho": 1440,
-      "httpClon": 200,
-      "hojas": {
-        "enlazadas": 7,
-        "resueltas": 6
-      },
-      "bloqueadas": {
-        "orig": 40,
         "clon": 0
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1424,8 +1511,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -1434,9 +1521,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1457,8 +1547,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -1482,11 +1572,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 40,
+        "orig": 42,
         "clon": 0
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1512,14 +1605,17 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "1.91653%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1545,8 +1641,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "1.91653%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
@@ -1568,14 +1664,17 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 112,
+        "orig": 114,
         "clon": 27
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1596,8 +1695,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -1606,9 +1705,12 @@
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_5_tb_body",
         "caja": {
-          "w": 0,
-          "h": 0
+          "w": 258.5,
+          "h": 66
         },
         "pad": "10px 13px 14px 13px",
         "br": "10px",
@@ -1629,8 +1731,8 @@
               "mis": "8px"
             },
             "img": {
-              "w": 0,
-              "h": 0,
+              "w": 64,
+              "h": 64,
               "br": "50%",
               "bw": "3px"
             }
@@ -1654,11 +1756,14 @@
         "resueltas": 6
       },
       "bloqueadas": {
-        "orig": 112,
+        "orig": 115,
         "clon": 27
       },
       "orig": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1684,14 +1789,17 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "33.3275%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
       },
       "clon": {
         "presente": true,
+        "enDom": 2,
+        "conCaja": 1,
+        "modulo": "et_pb_text_4_tb_body",
         "caja": {
           "w": 335.39,
           "h": 66
@@ -1717,8 +1825,8 @@
             "img": {
               "w": 64,
               "h": 64,
-              "br": "33.3275%",
-              "bw": "1px"
+              "br": "50%",
+              "bw": "3px"
             }
           }
         ]
