@@ -1,0 +1,27 @@
+
+═══ EL UNIVERSO
+
+  fichas (secciones `## `) ....... 322
+    ✅  93
+    ⚠  92
+    ⛔  58
+    —  79
+  conjunto CONOCIDO (⛔ + ✅) ..... 151
+  conjunto DESCONOCIDO (⚠ + —) ... 171
+
+═══ CONTROL DE CADA CANAL, SOBRE EL CONOCIDO
+
+  canal                                     se moja  acierta   %
+  cabecera: palabra de estado                   46       44   95.7
+  cuerpo: ✅ CERRADA / ⛔ al inicio de línea      10        9   90.0
+
+═══ VEREDICTO — listón declarado antes de mirar: 90 %
+
+  ✅ 2 canal(es) por construcción superan el listón:
+     cabecera: palabra de estado — 44/46 (95.7 %) · clasificaría 17 del desconocido
+     cuerpo: ✅ CERRADA / ⛔ al inicio de línea — 9/10 (90 %) · clasificaría 8 del desconocido
+
+  ⚠ «clasificaría N» NO es «clasificadas»: aplicarlo es otra tanda,
+     y el listón se evalúa UNA vez (§regla 39).
+
+→ derivaciones/fichas-sin-clasificar-120.json

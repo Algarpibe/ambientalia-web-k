@@ -1,0 +1,31 @@
+{
+ "meta": {
+  "fecha": "2026-08-27",
+  "tanda": "120.ª ESCALÓN 3",
+  "liston": 90
+ },
+ "universo": {
+  "fichas": 322,
+  "porMarca": {
+   "✅": 93,
+   "⚠": 92,
+   "⛔": 58,
+   "—": 79
+  },
+  "conocido": 151,
+  "desconocido": 171
+ },
+ "canales": {
+  "cabecera: palabra de estado": {
+   "moja": 46,
+   "ok": 44,
+   "pct": 95.7
+  },
+  "cuerpo: ✅ CERRADA / ⛔ al inicio de línea": {
+   "moja": 10,
+   "ok": 9,
+   "pct": 90
+  }
+ },
+ "veredicto": "hay canal"
+}

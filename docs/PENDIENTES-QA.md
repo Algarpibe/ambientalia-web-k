@@ -1,5 +1,120 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 📋 §120-SIN-CLASIFICAR · **SÍ hay canal por construcción, y pasa su control — pero sólo alcanza a ~25 de 171** — 120.ª, 2026-08-27
+
+La 119.ª dejó **165 de 314** sin clasificar tras rechazar un heurístico sobre el
+cuerpo que **falló su control** (41.4 % sobre el conjunto conocido). El encargo
+prohibía arreglarlo con más heurístico y pedía derivar si existe un canal que
+clasifique **POR CONSTRUCCIÓN**.
+
+**Existe, y con el mismo control que hundió al heurístico** —medido sobre el
+conjunto CONOCIDO (⛔ + ✅) antes de tocar el desconocido, con el listón
+declarado **antes** de mirar (90 %):
+
+| canal | se moja | acierta | % | del desconocido clasificaría |
+|---|---|---|---|---|
+| **palabra de estado en la CABECERA** (`CERRADA`/`FICHADO`/`PENDIENTE`…) | 46 | 44 | **95.7 %** | **17** |
+| `✅ **CERRADA` / `⛔` a principio de línea en el cuerpo | 10 | 9 | **90.0 %** | **8** |
+| ~~heurístico de la 119.ª sobre el cuerpo~~ | 133 | 55 | **41.4 %** | *rechazado* |
+
+**La diferencia entre 95.7 % y 41.4 % es la diferencia entre un canal y un
+parecido.** Una palabra de estado escrita a propósito en la cabecera **sólo
+puede estar ahí si alguien decidió el estado**; el parecido del cuerpo sugiere.
+
+> ⚠⚠ **Y AQUÍ VA LA MITAD QUE IMPIDE LEER ESTO COMO UNA SOLUCIÓN: EL CANAL
+> ACIERTA MUCHO Y ALCANZA POCO.** Los dos canales juntos tocan **≈25 de 171**
+> (~15 %), y su solape no está derivado. **Las ~146 restantes siguen exigiendo
+> leer sus cuerpos** — que es exactamente lo que la 119.ª dijo: *«trabajo con
+> forma, no un olvido»*.
+>
+> **Un canal se publica con SU COBERTURA además de su acierto**, o un 95.7 % se
+> lee como si resolviera el problema. Es §regla 14 —*una limitación sin su
+> número se lee como nota al pie*— sobre el alcance de un discriminador en vez
+> de sobre el de una sonda.
+
+> ⚠ **Y el denominador de hoy NO es el de la 119.ª, ni la contradice.** Este
+> censo da **322 fichas · 151 conocidas · 171 desconocidas** contra las
+> **314 · 165** de la 119.ª. Las causas derivables son dos —esta tanda **añadió
+> 4 secciones**, y mi clasificador agrupa `📋` con `⚠` donde la 119.ª pudo
+> contarlo aparte— y **la reconciliación exacta no está derivada**. Se declara
+> así en vez de presentar 171 como corrección de 165: son **dos recuentos con
+> criterios distintos**, y §*antes de dar dos recuentos por concordantes o
+> discordantes, comprueba que cuenten la misma unidad*.
+
+**No se aplica en esta tanda** (§regla 39: el listón se evalúa una vez, y
+«clasificaría 17» no es «clasificadas»). Queda como trabajo con su número y su
+instrumento ya controlado:
+`derivaciones/fichas-sin-clasificar-120.{mjs,log,json}`.
+
+## ✅ §120-CIERRE · **la tanda, sus tres partes con sus cardinales, y el barrido de §regla 12 — 11 candidatos, 1 subió (en el PASO 0b) y 10 se quedan** — 120.ª, 2026-08-27
+
+### Las tres partes, con sus números
+
+| parte | qué salió | cardinal |
+|---|---|---|
+| **PASO 0** · el `.next` ausente | era del **instrumento**: se buscó en la raíz del repo y la app vive en `apps/web/` | **429** crudas · **3** internas · **426** rutas |
+| | y debajo, una sonda **MUERTA desde el 2026-08-03** registrada en `package.json` | `qa:clase-censo`, **1 de 219** sondas |
+| | y debajo de eso, un **cero con forma de dato** | `candidatos` **0 → 35** · `conAlcance2Rutas` **0 → 63** |
+| **PASO 0b** · §regla 20 pt. 2 | *aislar el PROCESO no aísla la SALIDA* | numeración intacta en **40** |
+| **ESCALÓN 1** · `qa:enlaces` | **ROJA y se queda roja** | **4** hrefs rotos / **5** páginas / **14** apariciones · **150** hrefs con ruta local / **9695** apariciones |
+| | la cifra citada estaba caducada | **7 días · 44 rutas** |
+| | la masa se concentra | **21** hrefs = **92.3 %** |
+| **ESCALÓN 2** · dimensionar | comparadores de dos lados | **32** (24 comandos `cmp`, 16 de comparador) |
+| | cobertura de fidelidad (cota superior) | **303/426 · 71.1 %** |
+| | el precio real | **4/426** con campaña de ruido |
+
+### El barrido de §regla 12, acotado a las actas de ESTA tanda
+
+**Alcance declarado:** las tres actas de la 120.ª en `PENDIENTES-QA.md`
+(§120-DIMENSION, §120-ENLACES, §120-PASO-0), buscando enunciados con forma de
+regla — `^> **MAYÚSCULA…**`, `^> > **…**` y `^> ⚠+ **…**`.
+
+**El número, aunque no sea cero: 11 candidatos · 1 subió · 10 se quedan.**
+
+El que subió lo hizo en el **PASO 0b** y no como ley nueva: es la mitad que le
+faltaba al **punto 2 de §regla 20**. Los otros 10 pasan el test —*quítale la
+fecha y el nombre propio*— pero **ya son ley**, y se mapean:
+
+| candidato | ya es |
+|---|---|
+| «el detector v1 dio dos falsos positivos, cazados por controles existentes» | §sondas 4 · *la contradicción con una medida buena anterior* |
+| «el 71.1 % es cota superior, no veredicto» | §*una cobertura declarada al nivel de arriba absorbe lo que no se midió abajo* + §COBERTURA-MEDICION |
+| «`docH` 15 % y ruta 71.1 % no se contradicen» | §*dos recuentos pueden coincidir contando unidades distintas* |
+| «sin campaña cerrada, un residuo pequeño es SIN PROBAR» | **verbatim** en §Notas de método |
+| «el criterio no es una típica por familia» | §*la instancia que hay que meter es aquélla donde la HOLGURA SE ACABA* |
+| «el extractor sacó dos ceros que eran suyos» | §sondas 4 · 5.ª cara (*el 100 % redondo es el instrumento*) |
+| «clasificar comparadores por su NOMBRE no discrimina» | §*para identificar un componente, el literal de `className` no discrimina* — mismo error, objeto cambiado |
+| «mencionar el original no es pedirlo» | §sondas 4 · 3.ª cara (el heurístico que sobre-casa) |
+| «la corrida sin clon no midió nada, y eso es dato» | §regla 4bis (`Evaluadas`) |
+| «el canónico `enlaces.json` es del 2026-08-01» | §regla 5 · *el nombre canónico guarda la PRIMERA foto* |
+
+> 📋 **Y un CANDIDATO DE DISEÑO que no es ley y es del propietario:** **88 de 960**
+> congeladas declaran su propio `lado`/`ladoOriginal`/`ladoClon` en `meta`. Donde
+> está, **gana a cualquier heurístico sobre el fuente** —fue lo que sacó
+> `f33-spec` de la lista de comparadores—. Si esa declaración fuera obligatoria,
+> **la matriz de comparadores sería DERIVABLE en vez de heurística**, y la
+> cobertura por eje —lo que hoy falta— saldría sola. No se propone como regla
+> porque cambiaría el contrato de todas las sondas.
+
+### `npm run check`: **NO se corre, y por qué**
+
+Derivado (`git diff --name-only a62a5c1..HEAD`), la tanda tocó **18 ficheros** y
+**CERO de código fuente de la app**:
+
+| qué | n |
+|---|---|
+| `CLAUDE.md` (ley) | 1 |
+| `docs/` (actas + derivaciones) | 13 |
+| **sondas** (`scripts/qa/clase-censo.mjs`) | **1** |
+| congeladas de `medidas/` | 3 |
+| **`apps/**` o `packages/**` (`.ts`/`.tsx`/`.css`)** | **0** |
+
+Lo que verifica una sonda es **`qa:lib`**, y está en verde: **214 sondas
+compilan y declaran su mínimo · 114/114 casos**. Correr `check` sólo
+construiría, y `next build` **vacía su directorio desde el primer segundo**:
+gastaría el `.next` bueno de hoy (429 claves / 426 rutas, mtime 11:19) a cambio
+de nada. **Se deja intacto.**
+
 ## 📋 §120-DIMENSION · **el comparador que falta, DIMENSIONADO — y media respuesta ya estaba en el archivo** — 120.ª, 2026-08-27
 
 **El encargo mandaba empezar por el archivo, no por el diseño. Acertó:** el
