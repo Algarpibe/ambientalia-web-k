@@ -1,0 +1,73 @@
+══════════════════════════════════════════════════════════════════════════════
+ESCALÓN 3 · 118.ª — ADJUDICACIÓN DE P5 @1440
+══════════════════════════════════════════════════════════════════════════════
+
+Predicado pre-registrado, LITERAL (PASO 0b, `24f87e9`):
+  «las 413 existentes NO se mueven, a los DOS anchos: Δ docH = 0 en 413/413»
+
+  ANTES : clon-base-1440-t117-tras-la-ficha.json  (413 rutas · 1440px)
+  HOY   : clon-base-1440-t118-tras-el-archivo.json  (426 rutas · 1440px)
+
+──────────────────────────────────────────────────────────────────────────────
+1 · MEMBRESÍA — diferencia simétrica, nunca el neto
+──────────────────────────────────────────────────────────────────────────────
+
+  comunes ....... 413
+  NUEVAS ........ 13   (esperado 13)
+  desaparecidas . 0   (esperado 0)
+
+     + /sector/edar
+     + /sector/industria/page/2
+     + /sector/industria/page/3
+     + /sector/investigacion-consultoria/page/2
+     + /sector/metalurgia
+     + /sector/oil-gas-es
+     + /sector/olores
+     + /sector/puertos
+     + /sector/puertos/page/2
+     + /sector/sports
+     + /sector/urbano/page/2
+     + /sector/urbano/page/3
+     + /sector/urbano/page/4
+
+──────────────────────────────────────────────────────────────────────────────
+2 · P5 — el Δ de las rutas COMUNES, par a par
+──────────────────────────────────────────────────────────────────────────────
+
+  comunes con dato ...... 413
+  SIN DATO (excluidas) .. 0
+
+  MOVIDAS ............... 0   (predicho 0)
+  quietas ............... 413
+
+──────────────────────────────────────────────────────────────────────────────
+3 · LOS OTROS EJES — porque `docH` solo es el nivel de arriba
+──────────────────────────────────────────────────────────────────────────────
+
+  §*la causa común*: un `docH` idéntico puede tapar dos cambios que se
+  anulan. Se comprueban también `h1.y`, nº de secciones y nº de anclas.
+
+  h1.y         movidas    0 de 413
+  secciones    movidas    0 de 413
+  anclas       movidas    0 de 413
+
+══════════════════════════════════════════════════════════════════════════════
+VEREDICTO
+══════════════════════════════════════════════════════════════════════════════
+
+  P3 · +13 nuevas y 0 desaparecidas ....... ✅ CONFIRMADO  (13 y 0)
+  P5 · las comunes no se mueven (docH) .... ✅ CONFIRMADO  (0 movidas)
+       y en los otros 3 ejes ............... ✅ 0 movidas
+
+  El archivo de `sector` es ADITIVO: suma 13 rutas y no toca ninguna de
+  las que ya había, en ninguno de los 4 ejes que esta guarda mira.
+
+  ⚠ Y lo que este verde NO dice, que hay que declarar:
+     · es una guarda CLON-CONTRA-CLON. **No mide fidelidad** — compara
+       el clon de hoy con el de ayer, y ayer podía estar mal;
+     · mide alto y estructura. Un defecto de ANCHO que no cambie el nº
+       de renglones no le mueve un píxel (§*la guarda también tiene un
+       NIVEL, y el suyo es vertical*);
+     · la fidelidad de las 13 nuevas la da el cotejo contra la CAPTURA,
+       que es otro instrumento: 12 de 12 ejes a Δ0 en `/sector/edar`.
+
