@@ -1,0 +1,54 @@
+═══ P3 · 117.ª — COTA DE MOVIMIENTO A 1440 ═══
+base : clon-base-1440-t104-despues4.json  (rutas meta 413)
+hoy  : clon-base-1440-t117-tras-la-ficha.json  (rutas meta 413)
+
+── MEMBRESÍA (diferencia simétrica, los dos lados) ──
+  en la base y NO hoy : 0
+  hoy y NO en la base : 0
+  comunes             : 413
+
+── REPARTO POR PROFUNDIDAD (derivado de apps/web/src/app; NO es el reparto por FAMILIA) ──
+  páginas con page.tsx propio : 8
+   208  PLANO DE RAÍZ (5 familias mezcladas — NO es «blog»)
+   107  prefijada (2 segmentos)
+    62  prefijada (4 segmentos)
+    24  prefijada (3 segmentos)
+     7  construida a mano
+     4  prefijada (5 segmentos)
+     1  home
+
+── EJE docH sobre los COMUNES ──
+  quietas       : 405
+  movidas       : 6
+  aparecidas    : 2   (undefined → número: NO es movimiento)
+  desaparecidas : 0
+
+  ── MOVIDAS (6) ──
+     [prefijada] /centro-de-ayuda/kunak-air  2349 → 2077  Δ-272
+     [prefijada] /centro-de-ayuda/kunak-air-cloud  1975 → 1856  Δ-119
+     [prefijada] /centro-de-ayuda/kunak-air/articulos-de-ayuda  1415 → 1472  Δ+57
+     [plano-raiz] /politica-de-cookies  1919 → 3476  Δ+1557
+     [prefijada] /soporte/centro-de-ayuda  3326 → 2944  Δ-382
+     [prefijada] /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda  1415 → 1472  Δ+57
+
+  ── APARECIDAS (2) ──
+     [plano-raiz] /empresa  undefined → 18988
+     [plano-raiz] /kunak-oem-industrial-iot-en-el-basque-industry-4-0  undefined → 2188
+
+── VEREDICTO P3 — EN UNIDAD «PLANO DE RAÍZ», NO EN UNIDAD «FAMILIA» ──
+  plano de raíz comunes a las 2 fotos : 208
+  de ellas, docH IDÉNTICO             : 205
+  de ellas, sin docH en algún lado    : 2  /empresa · /kunak-oem-industrial-iot-en-el-basque-industry-4-0
+  plano de raíz sólo en la foto de HOY: 0
+
+  ⚠ SIN DERIVAR AQUÍ: el reparto en unidad FAMILIA (`entradas-blog` = 152
+     según `slugs.mjs`) exige el registro `slugs` de la DB. 208 y 152 NO son
+     dos lecturas del mismo conjunto: 208 es EL PLANO, 152 es UNA de sus 5
+     familias. Cruce en `p3-familias-117.mjs`.
+
+  ⚠ SALVEDAD (lo que esta lectura NO dice):
+     la base es de la t104 y entre medias corrieron 113-116, así que
+     «quieta» = «NI la ficha NI las tandas intermedias la movieron».
+     Es una COTA sobre el movimiento, NO una atribución limpia a la ficha.
+     La atribución limpia exigiría una base tomada JUSTO antes de la ficha,
+     y esa base NO EXISTE — no se puede derivar de lo congelado.
