@@ -20914,8 +20914,17 @@ a la barra. **Predigo que a 1440 eso es falso**, por mecanismo:
 | 1440 | orig 339.16 · clon 282.58 · **Δ −56.58** | clon **282.58**, Δ **−56.58 SIN MOVER** |
 | 390 | orig 891.92/865.92 · clon 215.58 · **Δ −676.34/−650.34** | clon **~709–720**, residuo **~−172 a −182** |
 
-A **390** las columnas apilan y la barra sí empuja: `+493.66` (módulo) a
+A **390** las columnas apilan y la barra sí empuja: `+461.16` (módulo) a
 `+504.34` (columna) medidos en `kb-barra`.
+
+> ⚠ **CORREGIDO 2026-08-27 (118.ª PASO 0a): aquí ponía `+493.66` (módulo), que
+> es el módulo a 1440.** A 390 mide **461.16** — la tabla de §El dato que
+> permite construir lo tiene bien, con sus dos columnas. Derivado: la cadena
+> `493.66` **no aparece en `kb-barra-390.json`**. Es §*un valor relativo se
+> escribe CON SU BASE* con la base puesta en el **ANCHO**: el número se copió
+> de la columna de al lado y las dos lecturas se escriben igual. Barrido de las
+> **7** apariciones en este documento: **1 en unidad 390 y falsa** (ésta),
+> **6 en unidad 1440 y ciertas** — no se sustituyen.
 
 **Falsador de la mitad de 1440:** que el techo se mueva a 1440.
 **Falsador de la mitad de 390:** que el residuo sea ≈0 —o sea, que la barra sí
@@ -23009,7 +23018,60 @@ tandas intermedias la movieron»** — una **COTA**, no una atribución limpia.
 La atribución limpia exigiría una base tomada justo antes de la ficha, y
 **esa base no existe**.
 
-### ⛔ LO QUE QUEDA ABIERTO DE P2 · las 8 no atribuidas
+### ✅ CERRADA 2026-08-27 (118.ª PASO 0a) — ERAN LA BARRA LATERAL, Y ESTABA EN EL ARCHIVO
+
+**No hizo falta medir nada**: tres congeladas que ya estaban commiteadas y un
+`git merge-base`. Derivación: `ocho-no-atribuidas-118.{mjs,log}`.
+
+**La hipótesis que faltaba era una TERCERA**, y el registro la nombraba dos
+veces con su mecanismo: **la barra lateral `BT`, emitida en la 107.ª**. No es
+H2 reescrita —H2 nombra el intervalo 113-116; la 107.ª es anterior a él y
+posterior a la base—, así que sí hay entrada separadora.
+
+| pata | qué dice | n |
+|---|---|---|
+| **MAGNITUD** | `docH` es ENTERO y `columna.h` = **504.34**, así que sumarla admite **exactamente {504, 505}** y prohíbe todo lo demás. Observado: `504 ×6 · 505 ×2` | **8 de 8** |
+| **CONTROL** | el módulo (**461.16 @390**) admitiría {461, 462} y **no casa en ninguna** — discrimina | **0 de 8** |
+| **DOMINIO** | de las **413** rutas comparadas, las que exhiben esa magnitud son **8**, y las 8 están dentro del dominio de `kb-barra`. **0 fuera** | 8/413 |
+| **ORDEN** | base `c133fb6` 07:18 ≺ **barra `8886c3a` 13:04** ≺ hoy `2b9297c` (ancestría verificada) | — |
+| **ANCHO** | quietas a 1440, donde la columna es hermana y no empuja — y ahí mide **MÁS** (536.84) | **8 de 8** |
+
+**H1 («la ficha») queda REFUTADA para estas 8 por la magnitud**: la ficha mide
+Δ+4/+5 en 146 de 152 entradas, dos órdenes por debajo. El Δ se publica con sus
+dos lados —`7501 → 8005`, no `Δ+504`— en el log.
+
+**Y la dirección (b) impide leerlo como un pleno:** de las **13** rutas con
+barra, **5 no están entre las 8** y se mueven a los DOS anchos, así que su
+Δ@390 es una **suma** y la parte de la barra no se separa con estas congeladas
+(§*un Δ puede ser dos errores*). No son deuda nueva: la 117.ª ya las tenía
+atribuidas al bloque «tandas intermedias».
+
+**SIN MEDIR, con su cardinal:** cuál de los dos enteros admisibles toca a cada
+página. `clon-base` guarda `docH` entero y la fracción por página haría falta
+en subpíxel. **2 de 8** caen en 505 y no se sabe por qué esas dos.
+
+> **La lección, que es §*lo decisivo suele estar en el ARCHIVO* con un matiz
+> nuevo:** la 117.ª escribió que la entrada separadora «es medible y NO
+> EXISTE». Era cierto **de la entrada que había pensado** —una base justo
+> antes de la ficha—. Lo que no se hizo fue preguntar **si había OTRA
+> entrada**, y la había: el ORDEN de los commits, gratis y ya en el repo.
+> **«No existe la separadora» se escribe con la lista de separadoras que se
+> buscaron**, igual que §*una afirmación de que un discriminador NO EXISTE se
+> escribe con la lista de canales que se miraron*.
+
+⚠ **Y de paso, UNA CIFRA DEL REGISTRO CITADA SIN SU ANCHO** (§regla 9 sobre un
+número, §*un valor relativo se escribe CON SU BASE* sobre la unidad). L20917
+dice *«a 390 … `+493.66` (módulo) a `+504.34` (columna) medidos en `kb-barra`»*.
+**`493.66` es el módulo a 1440**; a 390 mide **461.16** — la tabla de L21015 lo
+tiene bien, con las dos columnas. Derivado: la cadena `493.66` **no aparece en
+`kb-barra-390.json`**. El rango correcto a 390 es **461.16 a 504.34**.
+No cambia este veredicto (con 493.66 el residuo sería +10.34, tampoco casa),
+pero es exactamente la forma en que un número viaja sin su base.
+
+<details>
+<summary>El texto original de la ficha, conservado</summary>
+
+### ⛔ LO QUE QUEDABA ABIERTO DE P2 · las 8 no atribuidas
 
 De las 14 no-blog movidas a 390, el **ancho las parte** —una ruta que se
 mueve a los DOS anchos no puede ser la ficha, cuyo efecto está tapado a 1440—:
@@ -23032,6 +23094,8 @@ Las dos hipótesis vivas —«la ficha se pinta distinto en el centro de ayuda»
 fichar una indeterminación, comprueba que las dos hipótesis sean DISTINTAS*):
 difieren sobre una entrada concreta, **una base tomada justo antes de la
 ficha**. Es medible y no existe. Derivación: `p2-adjudicacion-117.{mjs,log}`.
+
+</details>
 
 ### ⛔ Lo que sigue abierto de tandas anteriores
 

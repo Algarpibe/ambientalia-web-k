@@ -1,0 +1,139 @@
+══════════════════════════════════════════════════════════════════════════════
+PASO 0a · 118.ª — ¿LAS 8 NO ATRIBUIDAS SON LA BARRA LATERAL `BT`?
+══════════════════════════════════════════════════════════════════════════════
+
+Fuentes (§regla 5 · cada congelada con su fichero):
+  base  390 : clon-base-390-t104-despues.json
+  hoy   390 : clon-base-390-t117-tras-la-ficha.json
+  base 1440 : clon-base-1440-t104-despues4.json
+  hoy  1440 : clon-base-1440-t117-tras-la-ficha.json
+  barra 390 : kb-barra-390.json   (dominio 13/13)
+  barra1440 : kb-barra-1440.json  (dominio 13/13)
+
+──────────────────────────────────────────────────────────────────────────────
+1 · EL DOMINIO MEDIDO DE `kb-barra` — y sus dos alturas, CON SU ANCHO
+──────────────────────────────────────────────────────────────────────────────
+
+  rutas en el dominio ........... 13
+  con barra (original.hay) ...... 13
+
+  columna.h @390  : {"504.34":13}
+  barra.h   @390  : {"461.16":13}
+  columna.h @1440 : {"536.84":13}
+  barra.h   @1440 : {"493.66":13}
+
+  ⚠ Las dos son CONSTANTES en el dominio. Eso acota lo que pueden
+    predecir: una constante predice un valor, no una distribución.
+
+──────────────────────────────────────────────────────────────────────────────
+2 · EL Δ, DERIVADO DE LAS CONGELADAS
+──────────────────────────────────────────────────────────────────────────────
+
+  membresía base↔hoy @390 : comunes 413 · sólo base 0 · sólo hoy 0
+  movidas @390 166 · movidas @1440 8 · SÓLO a 390 159
+
+──────────────────────────────────────────────────────────────────────────────
+3 · DIRECCIÓN (a) — ¿su Δ casa con la COLUMNA, y NO con el módulo?
+──────────────────────────────────────────────────────────────────────────────
+
+  ruta                                          docH base →    hoy    Δ390   columna.h   barra.h  resid.col  resid.mod
+  /centro-de-ayuda/kunak-air/articulos-de-ayud    7501 →   8005     504      504.34    461.16     -0.34      42.84
+  /centro-de-ayuda/kunak-air/articulos-de-ayud    5003 →   5507     504      504.34    461.16     -0.34      42.84
+  /centro-de-ayuda/kunak-air/articulos-de-ayud    6956 →   7460     504      504.34    461.16     -0.34      42.84
+  /centro-de-ayuda/kunak-air/articulos-de-ayud    9298 →   9803     505      504.34    461.16      0.66      43.84
+  /centro-de-ayuda/kunak-air/articulos-de-ayud    8716 →   9220     504      504.34    461.16     -0.34      42.84
+  /centro-de-ayuda/kunak-air/video-tutoriales     5606 →   6110     504      504.34    461.16     -0.34      42.84
+  /soporte/centro-de-ayuda/kunak-air-cloud/art   13407 →  13912     505      504.34    461.16      0.66      43.84
+  /soporte/centro-de-ayuda/kunak-air-cloud/vid    4718 →   5222     504      504.34    461.16     -0.34      42.84
+
+  El modelo: docH es ENTERO y columna.h = 504.34 trae decimales.
+  ⇒ sumarla a una magnitud redondeada admite EXACTAMENTE {504, 505}
+    y PROHÍBE cualquier otro valor. La parte fraccionaria por página no
+    la guarda `clon-base`, así que CUÁL de los dos toca queda SIN MEDIR.
+
+  observados dentro de {504, 505} (columna) ... 8 de 8
+  observados dentro de {461, 462} (módulo) ..... 0 de 8
+  reparto observado : {"504":6,"505":2}
+
+  CONTROL · ¿discrimina columna frente a módulo? SÍ
+
+──────────────────────────────────────────────────────────────────────────────
+4 · DIRECCIÓN (b) — las dos mitades que un pleno se salta
+──────────────────────────────────────────────────────────────────────────────
+
+  (b1) rutas CON BARRA que NO están entre las 8
+
+  ruta                                                        Δ390  Δ1440  familia
+  /centro-de-ayuda/kunak-air                                    70   -272  hubs-BT
+  /centro-de-ayuda/kunak-air-cloud                             254   -119  hubs-BT
+  /centro-de-ayuda/kunak-air/articulos-de-ayuda                272     57  hubs-BT
+  /soporte/centro-de-ayuda                                    -150   -382  hubs-BT
+  /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayud   456     57  hubs-BT
+
+  con barra FUERA de las 8 ............ 5 de 13
+  de ellas, movidas TAMBIÉN a 1440 .... 5
+  ⇒ NO es un pleno: el dominio de la barra NO está contenido en las 8.
+    Estas 5 se mueven a los DOS anchos, así que su Δ@390 es una SUMA
+    (barra + cambio de contenido) y la parte de la barra NO se puede
+    separar con estas dos congeladas — §*un Δ puede ser dos errores*.
+    Ya estaban atribuidas por la 117.ª al bloque «tandas intermedias».
+
+  (b2) rutas del corpus entero con Δ390 ∈ {504, 505}
+
+  total en las 413 rutas comparadas ... 8
+  de ellas DENTRO del dominio de la barra ... 8
+  de ellas FUERA .......................... 0
+
+  ⇒ la magnitud es PRIVATIVA del dominio de la barra: SÍ
+
+──────────────────────────────────────────────────────────────────────────────
+5 · EL ESPEJO — a 1440 las columnas van lado a lado y NO deben empujar
+──────────────────────────────────────────────────────────────────────────────
+
+  de las 8: quietas a 1440 8 · movidas 0 · sin dato 0
+  columna.h @1440 = 536.84 (constante) — mide MÁS que a 390 y aun así
+  no empuja: es exactamente lo que predice «columna hermana, no apilan».
+
+──────────────────────────────────────────────────────────────────────────────
+6 · LA SEPARADORA DE ORDEN — ¿la barra cae ENTRE las dos congeladas?
+──────────────────────────────────────────────────────────────────────────────
+
+  La 117.ª escribió que la entrada que separa sus dos hipótesis «es
+  medible y NO EXISTE»: una base tomada justo antes de la ficha. Cierto
+  de ESA entrada. H3 se separa por otra, y sí existe — el ORDEN.
+
+  base 390 (alta)        c133fb6  2026-08-25 07:18  f3-3 ESCALÓN 2: la cola larga deja de esta
+  BARRA emitida          8886c3a  2026-08-25 13:04  f3-3 107.ª ESCALÓN 2 · la barra EMITIDA en
+  hoy 390 (alta)         2b9297c  2026-08-27 08:55  f3-4 117.ª ESCALÓN 1 · LA CORRIDA DE 390 N
+
+  ⇒ base ≺ BARRA ≺ hoy (ancestría verificada) : SÍ
+    El clon NO emitía barra cuando se congeló la base y SÍ la emite hoy.
+
+══════════════════════════════════════════════════════════════════════════════
+7 · VEREDICTO
+══════════════════════════════════════════════════════════════════════════════
+
+  ✅ ATRIBUIDAS · las 8 son la BARRA LATERAL `BT` de la 107.ª.
+
+  Tres patas independientes, ninguna suficiente sola:
+    1 · MAGNITUD  — las 8 caen en {504, 505}, el único conjunto que
+                    admite columna.h=504.34 sobre un docH entero. El módulo
+                    (461.16) NO casa en ninguna: el control discrimina.
+    2 · DOMINIO   — esa magnitud es PRIVATIVA: 8 rutas de 413 la
+                    exhiben y las 8 están todas dentro del dominio de la barra.
+    3 · ORDEN     — el commit que emite la barra es posterior a la base y
+                    anterior a hoy, verificado por ancestría.
+
+  Y el ANCHO cierra el mecanismo: 8/8 quietas a 1440, donde la columna
+  es hermana y no empuja, con columna.h@1440 MAYOR que a 390.
+
+  H1 («la ficha») queda REFUTADA para estas 8 por magnitud: la ficha
+  mide Δ+4/+5 en 146 de 152 entradas — dos órdenes por debajo.
+
+  LO QUE ESTO NO CIERRA, con su cardinal:
+    · CUÁL de los dos enteros admisibles toca cada página: SIN MEDIR
+      (`clon-base` guarda `docH` entero; haría falta el subpíxel).
+    · las 5 rutas con barra que se mueven a los DOS anchos: su Δ@390 es
+      una suma y la parte de la barra no se separa con estas congeladas.
+      No es deuda nueva — la 117.ª ya las atribuyó a tandas intermedias.
+
