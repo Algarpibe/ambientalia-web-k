@@ -1,0 +1,122 @@
+═══ LA FICHA DE AUTOR · 117.ª PASO 0 ═══
+
+0 · LAS CIFRAS DEL ENCARGO, DERIVADAS (§regla 9)
+
+  entradas de blog en disco: **152**
+  con `ficha-autor-revisor`: **152 de 152**  ✅ casa el 152/152 del encargo
+  bloques que NO cerraron (extracción incompleta): **0**  ✅
+
+  C4 · ¿CUÁNTAS fichas por fichero? (un cardinal se publica, no se asume)
+     2 ficha(s): 152 ficheros
+     de los que traen ≥2: **idénticas 152** · **distintas 0**
+     ⇒ las 2 son EL MISMO bloque repetido: el modelo tiene UNA ficha, no dos
+
+  C3 · §regla 40 — ¿se ha colado en la ficha algo que la pregunta EXCLUYE?
+     tarjeta de listado   dentro de la ficha: **0** ✅
+     módulo de Divi       dentro de la ficha: **0** ✅
+     paginador            dentro de la ficha: **0** ✅
+     ⇒ el bloque extraído ES la ficha, no la página: la separadora pregunta por lo que mira
+
+1 · EL PAPEL — ¿cabe en un campo simple?
+
+  nº de papeles por ficha (unidad = ENTRADA, primera ficha de cada una):
+     1 papel(es): **150** entradas
+     2 papel(es): **2** entradas
+  ⇒ entradas con MÁS DE UN papel: **2 de 152**  ✅ casa el 2/152 del encargo
+     · calidad-del-aire-en-las-comunidades.html
+     · monitorizacion-near-reference.html
+
+  C1 · casa el caso conocido de antemano (≥1 con dos papeles): ✅
+  C2 · DISCRIMINA por el otro lado (≥1 con un solo papel):     ✅
+
+  LOS PROEMIOS SERVIDOS (el texto del <p> con el nombre sustituido):
+
+  div      proemio                                                          n
+  revisor  Escrito por el ‹NOMBRE›                                          141
+  revisor  Escrito por la Directora Científica (CSO) ‹NOMBRE›               3
+  revisor  Escrito por el Director General y cofundador ‹NOMBRE›            3
+  revisor  Escrito por la Jefa de producto ‹NOMBRE›                         2
+  autor    Escrito por ‹NOMBRE›                                             2
+  revisor  Revisado y aprobado por la Jefa de producto ‹NOMBRE›             1
+  revisor  Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›   1
+  revisor  Escrito por ‹NOMBRE›                                             1
+  ⇒ proemios distintos: **8**
+
+2 · LA SEPARADORA · ¿el proemio se DERIVA del autor, o vive en la RELACIÓN?
+
+  archivos de autor leídos: **6**
+
+  autor                proemios distintos   cargo en su ARCHIVO               
+  admin                1                                                      
+  edurne-ibarrola      2                    Directora Científica (CSO)        
+  irene                2                    Jefa de producto                  
+  javier-fernandez     1                    Director General y cofundador     
+  kunak                2                    Marketing y comunicación          
+  ⇒ autores con MÁS DE UN proemio: **3 de 5**
+
+  ¿el proemio del REVISOR contiene, literal, el `cargo` de su archivo?
+     irene: proemio «Revisado y aprobado por la Jefa de producto ‹NOMBRE›»
+        cargo del archivo: «Jefa de producto» ⇒ SÍ contenido
+     edurne-ibarrola: proemio «Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›»
+        cargo del archivo: «Directora Científica (CSO)» ⇒ SÍ contenido
+
+2b · SEPARADORA FINA · ¿el proemio es función de (AUTOR, PAPEL)?
+
+  autor                papel      proemios distintos
+  admin                escrito    1
+  edurne-ibarrola      escrito    1
+  edurne-ibarrola      revisado   1
+  irene                escrito    1
+  irene                revisado   1
+  javier-fernandez     escrito    1
+  kunak                escrito    2   ⇐ SEPARADORA
+        · «Escrito por el ‹NOMBRE›»
+        · «Escrito por ‹NOMBRE›»
+
+  ⇒ pares (autor, papel) observados: **7**
+  ⇒ INSTANCIAS SEPARADORAS (mismo autor y papel, proemio distinto): **1**
+  ⇒ VEREDICTO: **modelo R** — hay un mismo (autor, papel) con textos distintos: el texto es
+     propio de la RELACIÓN y un enum no lo expresa.
+
+2c · LA MISMA SEPARADORA CON EL TERCER EJE · ¿proemio = f(autor, papel, HUECO)?
+
+  autor              papel     hueco    proemios
+  admin              escrito   revisor  1
+  edurne-ibarrola    escrito   revisor  1
+  edurne-ibarrola    revisado  revisor  1
+  irene              escrito   revisor  1
+  irene              revisado  revisor  1
+  javier-fernandez   escrito   revisor  1
+  kunak              escrito   autor    1
+  kunak              escrito   revisor  1
+
+  ⇒ triples observados: **8** · separadoras: **0**
+  ⇒ **modelo D con el hueco dentro**: el proemio se DERIVA de (autor, papel, hueco).
+     El texto NO hace falta guardarlo — pero la elección se apoya en **1 sola**
+     instancia separadora (la de 2b), así que lo que está probado es que
+     (autor,papel) NO basta, NO que el triple sea la función correcta.
+
+  ⚠ LO QUE ESTO **NO** PRUEBA, y decide el esquema del ESCALÓN 2:
+     el dominio tiene **1** instancia separadora en 152 entradas y **5**
+     autores que firman. Una función ajustada a 7 triples con 1 separadora
+     es §*una explicación con mecanismo y dos casos a favor se parece
+     muchísimo a una medida*. Así que el esquema **guarda el texto** con su
+     defecto derivado y lo omite cuando coincide: si la función es correcta,
+     el dato queda vacío en las 152 y no cuesta nada; si es falsa, el original
+     se replica igual. El defecto se pone en la dirección que GRITA (§sondas 6)
+     — derivarlo mal serviría «Escrito por el» donde el original dice
+     «Escrito por», en 2 páginas, y ninguna guarda del repo mira ese texto.
+
+3 · LA FOTO — ¿la trae el papel, o sólo uno de los dos?
+  papeles CON <img>: **152** · SIN <img>: **2**
+     autor · sin img          2
+     revisor · con img        152
+
+4 · EL CLON, HOY — ¿pinta la ficha? ¿enlaza a /author/?
+  ficheros de código barridos: **155**
+  que emiten `ficha-autor-revisor`: **0** ✅ casa: el clon NO la pinta
+  con un `href` a /author/: **1**
+     ABSOLUTO  https://kunakair.com/es/author/irene/   (/apps/web/src/lib/arquetipo-a.ts)
+  ⇒ ABSOLUTOS **1** · LOCALES **0**  ✅ «colección sin archivo» no crea ni un enlace roto
+
+✓ congelada en \scripts\qa\medidas\ficha-autor-117.json

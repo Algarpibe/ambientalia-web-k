@@ -1,0 +1,58 @@
+{
+  "fecha": "2026-08-27",
+  "tanda": "117.ª PASO 0",
+  "unidad": "entrada de blog",
+  "entradas": 152,
+  "conFicha": 152,
+  "fichasPorFichero": {
+    "2": 152
+  },
+  "fichasIdenticasEnFichero": {
+    "identicas": 152,
+    "distintas": 0
+  },
+  "controles": {
+    "C1": true,
+    "C2": true,
+    "C3_contaminantes": 0,
+    "C4_sinCerrar": 0
+  },
+  "papelesPorEntrada": {
+    "1": 150,
+    "2": 2
+  },
+  "entradasConDosPapeles": [
+    "calidad-del-aire-en-las-comunidades.html",
+    "monitorizacion-near-reference.html"
+  ],
+  "proemios": {
+    "revisor │ Escrito por el ‹NOMBRE›": 141,
+    "revisor │ Escrito por la Jefa de producto ‹NOMBRE›": 2,
+    "revisor │ Revisado y aprobado por la Jefa de producto ‹NOMBRE›": 1,
+    "autor │ Escrito por ‹NOMBRE›": 2,
+    "revisor │ Escrito por la Directora Científica (CSO) ‹NOMBRE›": 3,
+    "revisor │ Escrito por el Director General y cofundador ‹NOMBRE›": 3,
+    "revisor │ Revisado y aprobado por la Directora Científica (CSO) ‹NOMBRE›": 1,
+    "revisor │ Escrito por ‹NOMBRE›": 1
+  },
+  "autoresConVariosProemios": 3,
+  "cargosDeArchivo": {
+    "admin": "",
+    "edurne-ibarrola": "Directora Científica (CSO)",
+    "irene": "Jefa de producto",
+    "javier-fernandez": "Director General y cofundador",
+    "kunak": "Marketing y comunicación",
+    "mar_ramirez": ""
+  },
+  "clon": {
+    "ficherosCodigo": 155,
+    "emitenFicha": 0,
+    "hrefsAuthor": [
+      {
+        "p": "/apps/web/src/lib/arquetipo-a.ts",
+        "h": "https://kunakair.com/es/author/irene/"
+      }
+    ],
+    "locales": 0
+  }
+}
