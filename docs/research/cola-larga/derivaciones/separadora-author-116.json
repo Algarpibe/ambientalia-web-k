@@ -1,0 +1,752 @@
+{
+  "fecha": "2026-08-26",
+  "tanda": "116.ª ESCALÓN 2",
+  "numeracion": {
+    "categoria": [
+      {
+        "termino": "articulos",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "eventos",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "noticias",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "podcast-es",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      }
+    ],
+    "sector": [
+      {
+        "termino": "edar",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "metalurgia",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "oil-gas-es",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "olores",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "puertos",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "sports",
+        "secOcc": 2,
+        "secDis": 2,
+        "rowOcc": 3,
+        "rowDis": 3,
+        "numeradas": true,
+        "literales": [
+          "et_pb_section_0_tb_body",
+          "et_pb_section_1_tb_body"
+        ]
+      }
+    ],
+    "author": [
+      {
+        "termino": "admin",
+        "secOcc": 2,
+        "secDis": 1,
+        "rowOcc": 2,
+        "rowDis": 1,
+        "numeradas": false,
+        "literales": [
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "edurne-ibarrola",
+        "secOcc": 4,
+        "secDis": 1,
+        "rowOcc": 4,
+        "rowDis": 1,
+        "numeradas": false,
+        "literales": [
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "irene",
+        "secOcc": 3,
+        "secDis": 1,
+        "rowOcc": 3,
+        "rowDis": 1,
+        "numeradas": false,
+        "literales": [
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "javier-fernandez",
+        "secOcc": 4,
+        "secDis": 1,
+        "rowOcc": 4,
+        "rowDis": 1,
+        "numeradas": false,
+        "literales": [
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "kunak",
+        "secOcc": 4,
+        "secDis": 1,
+        "rowOcc": 4,
+        "rowDis": 1,
+        "numeradas": false,
+        "literales": [
+          "et_pb_section_1_tb_body"
+        ]
+      },
+      {
+        "termino": "mar_ramirez",
+        "secOcc": 1,
+        "secDis": 1,
+        "rowOcc": 1,
+        "rowDis": 1,
+        "numeradas": null,
+        "literales": [
+          "et_pb_section_1_tb_body"
+        ]
+      }
+    ]
+  },
+  "numPorFam": {
+    "categoria": {
+      "si": 4,
+      "no": 0,
+      "ind": 0
+    },
+    "sector": {
+      "si": 6,
+      "no": 0,
+      "ind": 0
+    },
+    "author": {
+      "si": 0,
+      "no": 5,
+      "ind": 1
+    }
+  },
+  "autores": {
+    "admin": {
+      "foto": "https://kunakair.com/wp-content/themes/KunakAir/assets/images/user.svg",
+      "fotoEsDefecto": true,
+      "h1": "admin",
+      "cargo": "",
+      "redes": [
+        "website"
+      ],
+      "bioH2": "",
+      "bioChars": 0,
+      "tieneBio": false,
+      "listados": [
+        "Últimas noticias"
+      ],
+      "nListados": 1,
+      "nArticulos": 1,
+      "miga": "Inicio admin",
+      "cascaronB": 2877
+    },
+    "edurne-ibarrola": {
+      "foto": "https://kunakair.com/wp-content/uploads/2024/04/edurne-ibarrola-kunak.jpeg",
+      "fotoEsDefecto": false,
+      "h1": "Edurne Ibarrola-Ulzurrun, PhD",
+      "cargo": "Directora Científica (CSO)",
+      "redes": [
+        "linkedin"
+      ],
+      "bioH2": "Sobre Edurne Ibarrola-Ulzurrun, PhD",
+      "bioChars": 1260,
+      "tieneBio": true,
+      "listados": [
+        "Últimos artículos",
+        "Últimas noticias"
+      ],
+      "nListados": 2,
+      "nArticulos": 3,
+      "miga": "Inicio Edurne Ibarrola-Ulzurrun, PhD",
+      "cascaronB": 8962
+    },
+    "irene": {
+      "foto": "https://kunakair.com/wp-content/uploads/2024/04/irene-lara-kunak.jpg",
+      "fotoEsDefecto": false,
+      "h1": "Irene Lara-Ibeas, PhD",
+      "cargo": "Jefa de producto",
+      "redes": [
+        "linkedin"
+      ],
+      "bioH2": "Sobre Irene Lara-Ibeas, PhD",
+      "bioChars": 1163,
+      "tieneBio": true,
+      "listados": [
+        "Últimos artículos"
+      ],
+      "nListados": 1,
+      "nArticulos": 2,
+      "miga": "Inicio Irene Lara-Ibeas, PhD",
+      "cascaronB": 6942
+    },
+    "javier-fernandez": {
+      "foto": "https://kunakair.com/wp-content/uploads/2024/04/Javier_Fernandez_1.jpg",
+      "fotoEsDefecto": false,
+      "h1": "Fco. Javier Fernández Huerta",
+      "cargo": "Director General y cofundador",
+      "redes": [
+        "linkedin"
+      ],
+      "bioH2": "Sobre Fco. Javier Fernández Huerta",
+      "bioChars": 382,
+      "tieneBio": true,
+      "listados": [
+        "Últimos artículos",
+        "Últimas noticias"
+      ],
+      "nListados": 2,
+      "nArticulos": 3,
+      "miga": "Inicio Fco. Javier Fernández Huerta",
+      "cascaronB": 6833
+    },
+    "kunak": {
+      "foto": "https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png",
+      "fotoEsDefecto": false,
+      "h1": "Equipo de marketing y comunicación",
+      "cargo": "Marketing y comunicación",
+      "redes": [
+        "linkedin",
+        "facebook",
+        "instagram",
+        "twitter"
+      ],
+      "bioH2": "Sobre Equipo de marketing y comunicación",
+      "bioChars": 870,
+      "tieneBio": true,
+      "listados": [
+        "Últimos artículos",
+        "Últimas noticias"
+      ],
+      "nListados": 2,
+      "nArticulos": 6,
+      "miga": "Inicio Equipo de marketing y comunicación",
+      "cascaronB": 12958
+    },
+    "mar_ramirez": {
+      "foto": "https://kunakair.com/wp-content/themes/KunakAir/assets/images/user.svg",
+      "fotoEsDefecto": true,
+      "h1": "Mar Ramírez",
+      "cargo": "",
+      "redes": [],
+      "bioH2": "",
+      "bioChars": 0,
+      "tieneBio": false,
+      "listados": [],
+      "nListados": 0,
+      "nArticulos": 0,
+      "miga": "Inicio Mar Ramírez",
+      "cascaronB": 1449
+    }
+  },
+  "varianza": {
+    "foto (src)": {
+      "grupo": "propio",
+      "distintos": 5,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "foto ES la del tema": {
+      "grupo": "propio",
+      "distintos": 2,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "h1 (nombre)": {
+      "grupo": "propio",
+      "distintos": 6,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "cargo": {
+      "grupo": "propio",
+      "distintos": 5,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "redes (conjunto)": {
+      "grupo": "propio",
+      "distintos": 4,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "¿tiene bio?": {
+      "grupo": "propio",
+      "distintos": 2,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "cuerpo de la bio (chars)": {
+      "grupo": "propio",
+      "distintos": 5,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "títulos de listado": {
+      "grupo": "derivado",
+      "distintos": 4,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "nº de listados": {
+      "grupo": "derivado",
+      "distintos": 3,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "nº de tarjetas": {
+      "grupo": "derivado",
+      "distintos": 5,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    },
+    "encabezado de la bio": {
+      "grupo": "derivado",
+      "distintos": 5,
+      "denominador": 6,
+      "veredicto": "VARÍA"
+    }
+  },
+  "style": {
+    "admin": {
+      "n": 7,
+      "total": 41206,
+      "bloques": [
+        {
+          "id": "wp-block-library-inline-css",
+          "bytes": 3696
+        },
+        {
+          "id": "global-styles-inline-css",
+          "bytes": 10381
+        },
+        {
+          "id": "css-divi-area-inline-css",
+          "bytes": 123
+        },
+        {
+          "id": "divi-style-parent-inline-inline-css",
+          "bytes": 26792
+        },
+        {
+          "id": "custom-background-css",
+          "bytes": 97
+        },
+        {
+          "id": "et-critical-inline-css",
+          "bytes": 43
+        },
+        {
+          "id": "(sin id)",
+          "bytes": 74
+        }
+      ]
+    },
+    "edurne-ibarrola": {
+      "n": 8,
+      "total": 202934,
+      "bloques": [
+        {
+          "id": "wp-block-library-inline-css",
+          "bytes": 3696
+        },
+        {
+          "id": "global-styles-inline-css",
+          "bytes": 10381
+        },
+        {
+          "id": "css-divi-area-inline-css",
+          "bytes": 123
+        },
+        {
+          "id": "divi-style-parent-inline-inline-css",
+          "bytes": 26792
+        },
+        {
+          "id": "divi-dynamic-critical-inline-css",
+          "bytes": 161728
+        },
+        {
+          "id": "custom-background-css",
+          "bytes": 97
+        },
+        {
+          "id": "et-critical-inline-css",
+          "bytes": 43
+        },
+        {
+          "id": "(sin id)",
+          "bytes": 74
+        }
+      ]
+    },
+    "irene": {
+      "n": 8,
+      "total": 202934,
+      "bloques": [
+        {
+          "id": "wp-block-library-inline-css",
+          "bytes": 3696
+        },
+        {
+          "id": "global-styles-inline-css",
+          "bytes": 10381
+        },
+        {
+          "id": "css-divi-area-inline-css",
+          "bytes": 123
+        },
+        {
+          "id": "divi-style-parent-inline-inline-css",
+          "bytes": 26792
+        },
+        {
+          "id": "divi-dynamic-critical-inline-css",
+          "bytes": 161728
+        },
+        {
+          "id": "custom-background-css",
+          "bytes": 97
+        },
+        {
+          "id": "et-critical-inline-css",
+          "bytes": 43
+        },
+        {
+          "id": "(sin id)",
+          "bytes": 74
+        }
+      ]
+    },
+    "javier-fernandez": {
+      "n": 8,
+      "total": 202934,
+      "bloques": [
+        {
+          "id": "wp-block-library-inline-css",
+          "bytes": 3696
+        },
+        {
+          "id": "global-styles-inline-css",
+          "bytes": 10381
+        },
+        {
+          "id": "css-divi-area-inline-css",
+          "bytes": 123
+        },
+        {
+          "id": "divi-style-parent-inline-inline-css",
+          "bytes": 26792
+        },
+        {
+          "id": "divi-dynamic-critical-inline-css",
+          "bytes": 161728
+        },
+        {
+          "id": "custom-background-css",
+          "bytes": 97
+        },
+        {
+          "id": "et-critical-inline-css",
+          "bytes": 43
+        },
+        {
+          "id": "(sin id)",
+          "bytes": 74
+        }
+      ]
+    },
+    "kunak": {
+      "n": 8,
+      "total": 202934,
+      "bloques": [
+        {
+          "id": "wp-block-library-inline-css",
+          "bytes": 3696
+        },
+        {
+          "id": "global-styles-inline-css",
+          "bytes": 10381
+        },
+        {
+          "id": "css-divi-area-inline-css",
+          "bytes": 123
+        },
+        {
+          "id": "divi-style-parent-inline-inline-css",
+          "bytes": 26792
+        },
+        {
+          "id": "divi-dynamic-critical-inline-css",
+          "bytes": 161728
+        },
+        {
+          "id": "custom-background-css",
+          "bytes": 97
+        },
+        {
+          "id": "et-critical-inline-css",
+          "bytes": 43
+        },
+        {
+          "id": "(sin id)",
+          "bytes": 74
+        }
+      ]
+    },
+    "mar_ramirez": {
+      "n": 7,
+      "total": 41206,
+      "bloques": [
+        {
+          "id": "wp-block-library-inline-css",
+          "bytes": 3696
+        },
+        {
+          "id": "global-styles-inline-css",
+          "bytes": 10381
+        },
+        {
+          "id": "css-divi-area-inline-css",
+          "bytes": 123
+        },
+        {
+          "id": "divi-style-parent-inline-inline-css",
+          "bytes": 26792
+        },
+        {
+          "id": "custom-background-css",
+          "bytes": 97
+        },
+        {
+          "id": "et-critical-inline-css",
+          "bytes": 43
+        },
+        {
+          "id": "(sin id)",
+          "bytes": 74
+        }
+      ]
+    }
+  },
+  "idsParciales": [
+    "divi-dynamic-critical-inline-css"
+  ],
+  "repartoCssDinamico": {
+    "fase-3": {
+      "con": 254,
+      "de": 256
+    },
+    "casos": {
+      "con": 57,
+      "de": 57
+    },
+    "faqs": {
+      "con": 19,
+      "de": 19
+    },
+    "entradas-blog": {
+      "con": 152,
+      "de": 152
+    }
+  },
+  "sinBloque": [
+    "corpus/fase-3/autor/author/admin/index.html",
+    "corpus/fase-3/autor/author/mar_ramirez/index.html"
+  ],
+  "mismosQueSinFoto": true,
+  "otras": {
+    "casos": 57,
+    "faqs": 19
+  },
+  "formas": {
+    "author": {
+      "n": 6,
+      "firmasDistintas": 5,
+      "esqueletosDistintos": 6
+    },
+    "casos": {
+      "n": 57,
+      "firmasDistintas": 57,
+      "esqueletosDistintos": 57
+    },
+    "faqs": {
+      "n": 19,
+      "firmasDistintas": 19,
+      "esqueletosDistintos": 19
+    }
+  },
+  "href": {
+    "original": {
+      "n": 152,
+      "conEnlace": 152,
+      "absolutos": 612,
+      "locales": 0,
+      "enFicha": 612,
+      "conFicha": 152,
+      "ejemplos": [
+        "https://kunakair.com/es/author/kunak/",
+        "https://kunakair.com/es/author/kunak/",
+        "https://kunakair.com/es/author/kunak/"
+      ],
+      "localesLista": []
+    },
+    "transformado": {
+      "n": 152,
+      "conEnlace": 0,
+      "absolutos": 0,
+      "locales": 0,
+      "enFicha": 0,
+      "conFicha": 0,
+      "ejemplos": [],
+      "localesLista": []
+    },
+    "rutasApp": [
+      "[slug]",
+      "accesorios",
+      "blog",
+      "case-studies",
+      "casos-de-exito",
+      "centro-de-ayuda",
+      "empresa",
+      "etiqueta",
+      "faqs",
+      "glosario",
+      "kunak-api",
+      "monitor-calidad-aire",
+      "recursos",
+      "scientific-category",
+      "sectores",
+      "software-de-medicion-calidad-del-aire",
+      "soporte",
+      "vista-previa"
+    ],
+    "hayAuthor": false,
+    "canalC": {
+      "ficherosBarridos": 228,
+      "emitenFicha": [],
+      "hrefs": [
+        {
+          "fichero": "apps/web/src/lib/arquetipo-a.ts",
+          "linea": 2382,
+          "href": "https://kunakair.com/es/author/irene/",
+          "absoluto": true
+        }
+      ],
+      "localesClon": 0
+    }
+  },
+  "controles": {
+    "C1": {
+      "ok": true,
+      "nota": "separa: categoria=4sí/0no/0ind sector=6sí/0no/0ind author=0sí/5no/1ind"
+    },
+    "C2": {
+      "ok": true,
+      "nota": "h1 en 6/6 · redes en 5/6"
+    },
+    "C3": {
+      "ok": true,
+      "nota": "mismo autor idéntico: true · dos autores distintos: true"
+    },
+    "C4": {
+      "ok": true,
+      "nota": "el buscador de href casa en el original: 152/152"
+    },
+    "C5": {
+      "ok": true,
+      "nota": "cardinales publicados con unidad y denominador, por alcance separado"
+    }
+  }
+}

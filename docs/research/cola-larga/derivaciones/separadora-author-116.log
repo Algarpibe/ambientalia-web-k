@@ -1,0 +1,258 @@
+═══ SEPARADORA (b) · `author` · 116.ª ESCALÓN 2 ═══
+
+1 · EL RÉGIMEN, DESEMPATADO (el ESCALÓN 1 dejó las dos señales en desacuerdo)
+
+  Divi numera cada sección UNA vez: N secciones ⇒ N ordinales DISTINTOS.
+  Una plantilla PHP que copia la clase a mano repite EL MISMO literal. Así
+  que la señal no es «¿hay secciones `_tb_body`?» sino **¿están NUMERADAS?**
+
+  familia    término              sec occ/dis   row occ/dis   ¿NUMERADAS por Divi?
+  categoria  articulos               2/2            3/3       sí
+  categoria  eventos                 2/2            3/3       sí
+  categoria  noticias                2/2            3/3       sí
+  categoria  podcast-es              2/2            3/3       sí
+  sector     edar                    2/2            3/3       sí
+  sector     metalurgia              2/2            3/3       sí
+  sector     oil-gas-es              2/2            3/3       sí
+  sector     olores                  2/2            3/3       sí
+  sector     puertos                 2/2            3/3       sí
+  sector     sports                  2/2            3/3       sí
+  author     admin                   2/1            2/1       ❌ NO — repite et_pb_section_1_tb_body
+  author     edurne-ibarrola         4/1            4/1       ❌ NO — repite et_pb_section_1_tb_body
+  author     irene                   3/1            3/1       ❌ NO — repite et_pb_section_1_tb_body
+  author     javier-fernandez        4/1            4/1       ❌ NO — repite et_pb_section_1_tb_body
+  author     kunak                   4/1            4/1       ❌ NO — repite et_pb_section_1_tb_body
+  author     mar_ramirez             1/1            1/1       — INDETERMINADO (1 sección: el test no separa)
+
+  ⇒ por familia, con su denominador y con los INDETERMINADOS aparte:
+     familia     numeradas   repetidas   indeterminadas   de
+     categoria           4           0                0   4
+     sector              6           0                0   6
+     author              0           5                1   6
+
+  C1 · el discriminador SEPARA (hay instancias a los dos lados)  ✅
+
+  ⚠ `mar_ramirez` sale INDETERMINADO, no «sí»: tiene UNA sección, y con una
+    sola «numeradas» y «repetidas» predicen lo mismo — **0 instancias
+    separadoras POR CONSTRUCCIÓN**, no por pobreza del dominio. Contarlo como
+    acierto sería el caso degenerado que §*un discriminador hallado en una
+    sola instancia tampoco es un discriminador* prohíbe.
+
+  ⇒ **`author` es régimen `--`**, con **5 de 6 decidibles y 1 indeterminada**:
+     sus secciones repiten el literal `et_pb_section_1_tb_body` hasta 4 veces, y el
+     número de repeticiones **crece con el contenido**, que es la firma de un
+     bucle PHP escribiendo una clase a mano, no de un contador de builder.
+
+  ⚠ ESO REFUTA LA PREDICCIÓN PRE-REGISTRADA DE ESTA TANDA, y se dice:
+     el PASO 0 apostó a que el desacuerdo significaba que **el censo estaba
+     mal** y que estas 6 NO contestarían el SIN PROBAR del régimen `--`.
+     Medido: **el censo acertó**, y lo que falla es la SEGUNDA señal — la de
+     `CLAUDE.md`, *«secciones `…_tb_body`»*, que **no discrimina sola**
+     porque una plantilla del tema puede copiar la clase. La apuesta era
+     falsable y salió falsa; el desacuerdo era real y apuntaba al otro lado.
+
+2 · LOS 6 ARCHIVOS DE AUTOR, COMPARADOS ENTRE SÍ (varianza entre instancias)
+
+  Régimen `--` ⇒ el discriminador es LA VARIANZA ENTRE INSTANCIAS, no el px
+  absoluto: varianza cero ⇒ PLANTILLA · varía ⇒ CAMPO.
+
+  C2 · el extractor casa el caso conocido: h1 en 6/6, redes en 5/6  ✅
+  C3 · el extractor DISCRIMINA por los dos lados  ✅
+
+  término            foto        h1                              cargo                  redes            bio    listados  arts
+  admin              user.svg*   admin                           —                      website              —         1     1
+  edurne-ibarrola    propia      Edurne Ibarrola-Ulzurrun, PhD   Directora Científica   linkedin          1260         2     3
+  irene              propia      Irene Lara-Ibeas, PhD           Jefa de producto       linkedin          1163         1     2
+  javier-fernandez   propia      Fco. Javier Fernández Huerta    Director General y co  linkedin           382         2     3
+  kunak              propia      Equipo de marketing y comunica  Marketing y comunicac  linkedin,facebo    870         2     6
+  mar_ramirez        user.svg*   Mar Ramírez                     —                      —                    —         0     0
+     * `user.svg` es el marcador de foto del TEMA, no una foto del autor.
+
+  VARIANZA EJE A EJE (§varianza cero ⇒ PLANTILLA · varía ⇒ CAMPO)
+
+  ⚠ Los ejes van PARTIDOS: la separadora pregunta por contenido que **no se
+    derive de los miembros**, así que lo que depende de qué entradas firmó el
+    autor varía y NO cuenta como contenido propio. Se publican los dos
+    grupos, y el veredicto se lee **sólo del primero**.
+
+  GRUPO A · CONTENIDO PROPIO del término (lo que decide la separadora)
+  eje                          valores distintos   veredicto
+  foto (src)                           5 de 6   **VARÍA**
+  foto ES la del tema                  2 de 6   **VARÍA**
+  h1 (nombre)                          6 de 6   **VARÍA**
+  cargo                                5 de 6   **VARÍA**
+  redes (conjunto)                     4 de 6   **VARÍA**
+  ¿tiene bio?                          2 de 6   **VARÍA**
+  cuerpo de la bio (chars)             5 de 6   **VARÍA**
+
+  GRUPO B · DERIVADO de los miembros (no decide — se publica para no colarlo)
+  eje                          valores distintos   veredicto
+  títulos de listado                   4 de 6   **VARÍA**
+  nº de listados                       3 de 6   **VARÍA**
+  nº de tarjetas                       5 de 6   **VARÍA**
+  encabezado de la bio                 5 de 6   **VARÍA**
+
+  ⇒ ejes de CONTENIDO PROPIO que varían ⇒ son CAMPO: **7 de 7**
+  ⇒ ejes DERIVADOS que varían (no cuentan): **4 de 4**
+
+  ⇒ **EL ARCHIVO `/author/` NO ES «la plantilla del tema con la lista dentro»**:
+    el término trae **foto, nombre, cargo, redes y biografía**, y ninguno de
+    los cinco se deriva de sus miembros. `author` es una ENTIDAD CON CAMPOS.
+
+  LA SUB-APUESTA CIEGA DEL PASO 0, contestada
+
+    Apuesta: «los ~170 KB que separan a los dos pequeños de los cuatro
+    grandes son LA LISTA, y los dos pequeños conservan la cabecera entera».
+
+    · con foto PROPIA: **4 de 6** — edurne-ibarrola, irene, javier-fernandez, kunak
+    · con la foto del TEMA: **2 de 6** — admin, mar_ramirez
+    · con cargo no vacío: **4 de 6**
+    · con biografía: **4 de 6**
+
+    ⇒ **REFUTADA por los dos lados.** Los dos pequeños NO conservan la
+      cabecera: traen la foto del tema, el cargo VACÍO (`<p></p>`) y NINGUNA
+      biografía. Y el bulto tampoco era la lista — es el `<style>` (§3).
+
+    ⇒ **Y eso cambia el esquema, no sólo el veredicto**: los campos `foto`,
+      `cargo`, `redes` y `bio` son **OPCIONALES**, con su fracción medida
+      arriba. §*un campo opcional no expresa un caso: sólo permite que
+      falte* — el caso hay que EJERCITARLO, y aquí el original lo ejercita
+      2 veces de 6.
+
+3 · EL CANAL CSS · el `<style>` en línea, que es donde la 114.ª encontró lo suyo
+
+  término            bloques  bytes de <style>   ids presentes
+  admin                    7             41206   wp-block-library global-styles css-divi-area divi-style-parent-inline custom-background-css et-critical (sin id)
+  edurne-ibarrola          8            202934   wp-block-library global-styles css-divi-area divi-style-parent-inline divi-dynamic-critical custom-background-css et-critical (sin id)
+  irene                    8            202934   wp-block-library global-styles css-divi-area divi-style-parent-inline divi-dynamic-critical custom-background-css et-critical (sin id)
+  javier-fernandez         8            202934   wp-block-library global-styles css-divi-area divi-style-parent-inline divi-dynamic-critical custom-background-css et-critical (sin id)
+  kunak                    8            202934   wp-block-library global-styles css-divi-area divi-style-parent-inline divi-dynamic-critical custom-background-css et-critical (sin id)
+  mar_ramirez              7             41206   wp-block-library global-styles css-divi-area divi-style-parent-inline custom-background-css et-critical (sin id)
+
+  ids distintos en la unión: **8** · presentes en unos y NO en otros: **1**
+     divi-dynamic-critical-inline-css       en 4/6: edurne-ibarrola, irene, javier-fernandez, kunak
+                                            bytes: 161728 (idénticos)
+
+  ¿ES DE ESTOS DOS DOCUMENTOS O DE LA SESIÓN DE CAPTURA? — se barre el corpus
+
+     fase-3          ** 254 de  256**
+     casos           **  57 de   57**
+     faqs            **  19 de   19**
+     entradas-blog   ** 152 de  152**
+     TOTAL           **482 de 484** — le faltan a **2**
+
+  ⇒ de 484 documentos capturados, el bloque falta en **2**:
+       corpus/fase-3/autor/author/admin/index.html
+       corpus/fase-3/autor/author/mar_ramirez/index.html
+  ⇒ ¿son EXACTAMENTE los 2 autores sin foto propia y sin bio (admin, mar_ramirez)?
+    **SÍ** — comparado por ELEMENTO, no por cardinal.
+
+  ⚠ ESO NO PRUEBA EL MECANISMO, PERO SÍ DESCARTA UNO: un artefacto de la
+    SESIÓN de captura se repartiría por el corpus, y aquí se **concentra** en
+    2 de 484 que además forman una clase definida por otra cosa. Lo que
+    queda —una función de CSS dinámico, una caché servida en frío— **no se
+    puede dirimir desde un cuerpo capturado**, y un mecanismo sin medir que
+    entra en una mesa la contamina. Se ficha con su cardinal y NO se explica.
+
+  ⚠⚠ Y TIENE CONSECUENCIA SOBRE LA VARIANZA DEL RÉGIMEN `--`: si el canal CSS
+     entra en la comparación, **la varianza NO es cero**. Así que el veredicto
+     del §4 se declara POR CANAL, y no se resume en una palabra.
+
+4 · CASOS y FAQ · el resto del régimen `--`, con sus cardinales DERIVADOS
+
+  `CLAUDE.md` dice «57 casos y 19 FAQ». No se cita: se deriva (§regla 9).
+
+  casos  ficheros en disco: **57**  ·  régimen por el <body>: --=57
+         secciones NUMERADAS por Divi: **0 de 57**
+  faqs   ficheros en disco: **19**  ·  régimen por el <body>: --=19
+         secciones NUMERADAS por Divi: **0 de 19**
+
+  ⇒ contra lo que `CLAUDE.md` escribe: casos **57 vs 57** ✅ casa ·
+    FAQ **19 vs 19** ✅ casa
+
+  ⚠ LA PREDICCIÓN PRE-REGISTRADA («al menos una de las dos cifras no casa»)
+     sale **REFUTADA**. Se dice, no se calla.
+
+  VARIANZA ENTRE INSTANCIAS, dentro de cada forma (lo que decide `--`)
+
+  author   n=  6  firmas de cascarón distintas: **  5 de 6**  ·  conjuntos de clase distintos: **  6 de 6**
+  casos    n= 57  firmas de cascarón distintas: ** 57 de 57**  ·  conjuntos de clase distintos: ** 57 de 57**
+  faqs     n= 19  firmas de cascarón distintas: ** 19 de 19**  ·  conjuntos de clase distintos: ** 19 de 19**
+
+  ⚠ ESTO NO CIERRA EL «SIN PROBAR» DEL RÉGIMEN `--`, Y HAY QUE DECIR POR QUÉ.
+    Lo que `CLAUDE.md` declara sin medir es la varianza de **ritmo,
+    tipografía y retícula** entre instancias — o sea GEOMETRÍA COMPUTADA. Lo
+    de arriba es **estructura de marcado**, que es otro eje: dos documentos
+    con la misma retícula pueden tener ritmos distintos, y dos con marcado
+    distinto pueden computar lo mismo.
+
+    Y la geometría **no se puede derivar de este corpus**: medir
+    `getComputedStyle` sin las hojas enlazadas da una medida PLAUSIBLE Y
+    FALSA (§F3-1-CSS-NO-CAPTURADO: 678.52 contra 430.80 en vivo). Se declara
+    lo que este barrido SÍ contesta y lo que NO, en vez de entregar una
+    palabra que se lea como las dos.
+
+5 · ¿QUÉ SIRVE EL CLON HOY EN EL `href` A `/author/`?
+
+  Las 152 entradas del ORIGINAL enlazan a `/author/`. La pregunta de
+  fidelidad es qué hay en ese `href` DESPUÉS de la transformación — porque T7
+  reescribe enlaces internos al importar, y si casó `/es/author/…` como
+  interno, el clon sirve rutas locales que el build no emite.
+
+  rutas de primer nivel en `apps/web/src/app`: **18**
+  ¿alguna es `author`? **NO** — [slug] · accesorios · blog · case-studies · casos-de-exito · centro-de-ayuda · empresa · etiqueta · faqs · glosario · kunak-api · monitor-calidad-aire · recursos · scientific-category · sectores · software-de-medicion-calidad-del-aire · soporte · vista-previa
+
+  original      ficheros **152** · con `ficha-autor-revisor` **152** · con enlace a /author/ **152**
+                href a /author/: ABSOLUTOS **612** · LOCALES **0** · de ellos DENTRO de la ficha **612**
+                ejemplo: https://kunakair.com/es/author/kunak/
+  transformado  ficheros **152** · con `ficha-autor-revisor` **0** · con enlace a /author/ **0**
+                href a /author/: ABSOLUTOS **0** · LOCALES **0** · de ellos DENTRO de la ficha **0**
+
+  C4 · el buscador de href casa un caso conocido: 152/152 en el original  ✅
+
+  ⚠ EL 0 DEL CUERPO TRANSFORMADO NO ES UNA PÉRDIDA — ES OTRO CANAL
+    La `ficha-autor-revisor` del original va dentro de un MÓDULO DE LA
+    PLANTILLA (`et_pb_text_N_tb_body`), no del `post_content`. Así que el
+    cuerpo rico no la lleva **y hace bien**: no es suya. Comparar el cuerpo
+    contra la página entera y leer 612 → 0 como «se perdió» es §*la salida
+    servida incluye el canal que no estabas mirando*, con el canal puesto en
+    qué parte del documento se está transformando.
+
+  CANAL C · qué emite la PLANTILLA del clon (que es lo que decide)
+
+  ficheros de código barridos: **228**
+  que emiten `ficha-autor-revisor`: **0**
+  con un `href` a `/author/`: **1**
+     apps/web/src/lib/arquetipo-a.ts:2382  ABSOLUTO  https://kunakair.com/es/author/irene/
+
+  ⇒ enlaces a `/author/` que el clon puede servir: **1**, de ellos LOCALES **0**.
+  ⇒ rutas `/author/` que el build emite: **0**.
+
+  ⇒ **«COLECCIÓN sin archivo» NO crea ni un enlace roto**: el clon no sirve
+    ni una ruta local a `/author/`. §*Regla de rutas locales* cumplida — el
+    destino no está clonado, así que el `href` se queda en el original.
+    El candidato queda limpio POR EL DATO, no por el criterio.
+
+  ⚠⚠ Y UN HALLAZGO DE FIDELIDAD QUE NO ES LA PREGUNTA DE ESTA TANDA, fichado
+     con su cardinal y sin perseguirlo:
+
+     El original trae `ficha-autor-revisor` en **152 de 152** entradas de blog.
+     El clon la emite en **0 de 228** ficheros de código: **no la pinta**.
+     No es la separadora de (b) —que pregunta por el ARCHIVO, no por la
+     ficha— pero es una pieza que el original enseña en 152 páginas y el
+     clon no. Se ficha; no se arregla aquí (tocaría `src/`, y el escalón es
+     OFFLINE y sin implementar).
+
+6 · LO QUE SIGUE SIN PROBAR DESPUÉS DE ESTO, con su cardinal
+
+  · la GEOMETRÍA COMPUTADA del régimen `--` (ritmo · tipografía · retícula)
+    — lo que `CLAUDE.md` declara SIN PROBAR: **6 + 57 + 19 = 82 instancias
+    sin medir**. Necesita navegador Y las hojas enlazadas: no es que falte
+    tiempo, es que este corpus **no puede contestarlo** (§regla 32);
+  · el MECANISMO del bloque `<style>` de ~161 KB presente en unos y no en
+    otros: **1 id parcial** — fichado con su cardinal, sin explicar;
+  · el eje COMPORTAMIENTO (0/31 en el repo): un orden o un filtro montado en
+    JS no deja rastro en el HTML servido;
+  · el CSS servido como SÉPTIMO CANAL del ESCALÓN 1 de la 115.ª: una regla
+    podría esconder tarjetas por clase de término. No entra aquí.
+
