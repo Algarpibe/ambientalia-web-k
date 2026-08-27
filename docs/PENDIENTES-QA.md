@@ -1,5 +1,111 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §REGLA-12-BARRIDO-119 · **4 candidatos, 3 ya eran ley y 1 sube** — 119.ª, 2026-08-27
+
+**El número se escribe aunque sea cero** (§regla del cero: *«no encontré
+ninguna»* y *«no barrí»* son la misma salida si no se dice). Aquí no es cero.
+
+**Alcance declarado:** las actas de **F3-4** en `PENDIENTES-QA.md` (tandas
+113–118, el bloque L606–L1105 en el momento del barrido), buscando enunciados
+con forma de regla — `^> **MAYÚSCULA…**` y `^> > **MAYÚSCULA…**`. **NO** barre
+`HANDOFF` entero: §regla 12 manda barrer **acotado**, porque 7 000 líneas
+producen ruido y ninguna decisión.
+
+| # | candidato | ¿ya estaba en `CLAUDE.md`? | veredicto |
+|---|---|---|---|
+| 1 | *«una separadora declarada INEXISTENTE lo es de la ENTRADA QUE SE PENSÓ»* — el que el encargo señalaba | **SÍ** | la escribió **la propia 118.ª**, y **como la mitad que falta** a §*una afirmación de que un discriminador NO EXISTE se escribe con la lista de canales* — exactamente el diagnóstico que el encargo pedía comprobar |
+| 2 | *«el constructor numera cada sección UNA vez: N secciones ⇒ N ordinales DISTINTOS»* | **SÍ** | subida por la 116.ª como la mitad que falta a la 2.ª señal de `-T` |
+| 3 | *«toda ordenación por una clave que puede empatar se escribe con su desempate explícito»* | **SÍ** | es **§regla 38** |
+| 4 | *«un censo que se recorta para caber en la tanda que lo encargó no mide el repo: mide la tanda»* | ⛔ **NO** | **SUBE** ⬆ |
+
+### Lo que sube, y dónde se pega
+
+**No es regla nueva: es la mitad que falta a §sondas 4 · cuarta cara** —*el tope
+de una sonda se lee como una ausencia del original*—, **con el recorte puesto en
+la TANDA en vez de en el código.**
+
+> La regla existente persigue un `slice(0, N)` **escrito en la sonda**. Le
+> faltaba el recorte que **no está en ninguna línea**: el que hace quien mide
+> cuando el número sale más grande de lo que la tanda tenía planeado.
+>
+> **El número es el RESULTADO, no una excusa para alargar la tanda — ni para
+> estrecharla.** Un censo que sale grande dice algo del repo; uno recortado para
+> caber en el calendario dice algo del calendario, **y las dos salidas se
+> escriben igual**.
+
+**Su forma operativa no es «mide de más»:** el censo publica su cardinal entero
+—incluidos los cubos que no supo clasificar, con su denominador (§regla 14)— y
+lo que no cabe sale **nombrado como trabajo de otra tanda**, nunca descontado.
+
+**Y la señal para sospecharlo es de redacción:** un encargo que dice *«si sale
+grande, se corta»* autoriza a **cortar el TRABAJO**, no a **encoger la MEDIDA**.
+Las dos lecturas caben en la misma frase y **la barata es la que encoge**.
+
+**Instancias, y las dos son de esta etapa:** el censo de artefactos de la 112.ª
+(pre-autorizado a cortar, salió con **11 + 65 + 21** que no estaban en ningún
+plan y se cortó **publicando los tres**) y el ESCALÓN 2 de hoy (un inventario
+escrito como **«5 rutas»** que dio **4 · 10 · 13** según la unidad, con **165 de
+314** fichas que su discriminador no podía clasificar — declaradas con su
+control en rojo en vez de repartidas a ojo).
+
+**Que 3 de 4 ya fueran ley es el resultado sano**, no un barrido pobre: significa
+que las tandas de esta fase estaban subiendo sus reglas **en su propia tanda**,
+que es lo que §regla 12 pide.
+
+---
+
+## ⚠ META-CANARIOS-DE-CARGA · **el fichero llega entero a 269 549 chars — y `KV-01` ya no está donde su propia frase dice** — 119.ª, 2026-08-27
+
+**El veredicto de carga se renueva con margen nuevo.** El `CLAUDE.md` **que se
+cargó en esta sesión** mide **269 549 chars** —**+72.3 %** sobre los **156 426**
+del 2026-08-18, y **1.80×** el aviso de 150 000— y **los dos marcadores
+llegaron**. El truncado sigue **REFUTADO**, ahora a casi el doble de tamaño, y
+§regla 12 conserva su premisa: `CLAUDE.md` se lee cada sesión, **entero**.
+
+> ⚠ **El número se mide sobre el fichero CARGADO, no sobre el del disco a mitad
+> de tanda.** La primera medición de hoy dio **271 422** porque se tomó cuando
+> esta sesión ya había escrito en él — eso mide **lo que cargará la sesión
+> SIGUIENTE**, no lo que probó ésta. Se deriva de
+> `git show 9060f59:CLAUDE.md`, el HEAD de arranque. Es §*el veredicto lo da la
+> salida servida* con «lo servido» puesto en **el fichero que el harness
+> inyectó**, y el error tiene la forma de §regla 16: la explicación aburrida
+> —*el árbol cambió entre medio*— antes que cualquier otra, y aquí **el árbol lo
+> cambié yo**.
+
+**Lo que sí se degradó es la COBERTURA del instrumento, y no por un fallo:**
+
+| marcador | dónde dice la frase de §regla 19 | **derivado hoy** |
+|---|---|---|
+| `KV-01` | «~30 % del fichero» | **79.8 %** |
+| `KV-08` | «a 16 chars del final» | **16 chars del final** ✓ |
+
+> **`KV-01` no se movió: se movió el fichero debajo.** Todo lo añadido desde
+> agosto entró **antes** que él, así que los dos tripwires viven ahora en el
+> **último quinto** — y un truncado que se comiera el **79 % inicial** dejaría
+> pasar a los dos. El instrumento **no da error: da verde con menos alcance**.
+>
+> **Un canario se coloca por PORCENTAJE, y su porcentaje se RE-DERIVA.** «~30 %»
+> es una coordenada, y una coordenada escrita en prosa deja de describir el
+> fichero en cuanto alguien escribe por encima — sin mover el marcador ni tocar
+> la frase. Es **§regla 9 dentro del instrumento que vigila la carga**.
+
+**Fichado, NO arreglado, y la razón importa:** mover `KV-01` invalidaría la
+comparación con las corridas anteriores, y la pregunta que el tripwire contesta
+—*«¿me llega entero?»*— **se sigue contestando hoy**. Lo que hace falta es un
+**tercer marcador en el primer tercio real**, no reubicar los dos que ya tienen
+historia.
+
+⚠ **Y el cero de esta derivación casi se publica al revés:** el primer
+`indexOf("KV-08")` dio **54 767 chars del final**, que se habría leído como *«el
+fichero creció por debajo del marcador»*. Falso: `indexOf` había casado con la
+**mención** de `KV-08` dentro de §regla 19, no con el marcador. Con
+`lastIndexOf`, **16 chars**. §sondas 4 cometida sobre la comprobación del propio
+canario — y la delató que **el marcador sí estaba al final del contexto
+recibido**, o sea **una medida buena anterior que la contradecía**.
+
+---
+
+
 ## 📋 §F3-5-CENSO · **el inventario RE-DERIVADO — no son 5, y el número depende de la unidad** — 119.ª, 2026-08-27
 
 **NO se decide ningún content type.** El censo es lo que hace decidible la

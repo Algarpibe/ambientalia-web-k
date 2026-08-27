@@ -995,6 +995,48 @@ de su alternativa, no por lo que acierta*).
 
 ## F3-4 · las tres familias de archivo sin censar
 
+> ## ✅✅ **F3-4 · FASE COMPLETA — cerrada el 2026-08-27 (118.ª), registrada aquí por la 119.ª**
+>
+> **Del plan de F3 sólo queda F3-5.** Se registra con lo que deja abierto **y su
+> cardinal**, porque una fase que se cierra sin nombrar su residuo manda a la
+> siguiente a redescubrirlo (§*una campaña se declara COMPLETA respecto a un
+> USO*, nunca en absoluto).
+>
+> | qué entregó | evidencia |
+> |---|---|
+> | el **censo** de las tres familias | `derivaciones/censo-f34.{mjs,log}` (108.ª), offline |
+> | el **modelo** de `sector` **implementado** | 13 páginas + 5 redirecciones **301** emitidas (118.ª) |
+> | `category` y `author` **decididos** | `author` sale `--` por el **invariante** del marcador, no por su presencia (116.ª) |
+> | la mesa de decisiones de propietario | 5 de 5 predicciones confirmadas (118.ª) |
+>
+> ### Lo que F3-4 deja ABIERTO — tres cosas, cada una con su cardinal
+>
+> | residuo | cardinal | qué hace falta |
+> |---|---|---|
+> | **la GEOMETRÍA de `/sector/*`** | **0 de 13** capturas medidas con `getComputedStyle` | ⛔ un **INSTRUMENTO**, no una medida: el corpus da marcado, no alturas. Exige el original **en vivo** o capturado **con sus hojas**, y de esta familia hay **0 hojas capturadas** |
+> | el **repunte de `hrefTermino()`** | **1** definición + **3** importadores | decisión de propietario; está fichado |
+> | el **bucle de `mineria`** | **5 saltos**, 301 a sí misma | **red**: leer la cabecera `Location` de cada salto. No diagnosticable offline |
+>
+> ⚠⚠ **Y el segundo residuo tiene una trampa que la 119.ª derivó y que un
+> repunte por `grep` pisaría: `hrefTermino` es DOS OBJETOS DISTINTOS con el
+> mismo nombre.**
+>
+> | qué es | dónde | n |
+> |---|---|---|
+> | la **función** exportada por `lib/taxonomia-sectores.ts:68` | `app/casos-de-exito/page.tsx` · `components/caso/CasoCabecera.tsx` · `components/caso/CasoDetalles.tsx` | **3 importadores** |
+> | una **prop homónima** de componentes de listado, que **no la importa** | `listados/PaginaCategoriaCientifica.tsx` · `listados/PaginaRecursos.tsx` · `listados/TarjetaCientifica.tsx` · `listados/TarjetaListado.tsx` | **4 ficheros** |
+>
+> > **`grep -rn hrefTermino` devuelve SIETE ficheros y sólo TRES son el objeto.**
+> > Repuntar por el literal tocaría 4 componentes que no tienen nada que ver —
+> > es §*el literal de `className` no discrimina* con el objeto cambiado: aquí
+> > lo que no identifica no es una clase de estilo, es **un identificador
+> > reutilizado como nombre de prop**. El discriminador es la **línea de
+> > `import`**, no la aparición.
+>
+> **Y el cardinal del encargo estaba corto:** venía escrito como *«1 fichero + 2
+> consumidores»* y derivado son **3**. Es la cuarta cifra recordada que esta
+> etapa corrige al derivarla — §regla 9.
+
 | | |
 |---|---|
 | **entrega** | el censo y el modelo de `category` (LH-SP8) · `author` · la taxonomía `sector` |

@@ -2401,6 +2401,38 @@ el clon **omitiera dos piezas en 2 de 11 páginas** creyendo que replicaba.
    por el `slice`, y que decía lo contrario. No hizo falta volver al original —
    hizo falta mirar el otro campo.
 
+> ⚠⚠ **Y SU MITAD QUE FALTA, CON EL RECORTE PUESTO EN LA TANDA EN VEZ DE EN EL
+> CÓDIGO: UN CENSO QUE SE RECORTA PARA CABER EN LA TANDA QUE LO ENCARGÓ NO MIDE
+> EL REPO — MIDE LA TANDA (2026-08-27).**
+>
+> Lo de arriba persigue un `slice(0, N)` **escrito en la sonda**. Le falta el
+> recorte que **no está en ninguna línea de código**: el que hace quien mide
+> cuando el número sale más grande de lo que la tanda tenía planeado.
+>
+> > **El número es el RESULTADO, no una excusa para alargar la tanda — ni para
+> > estrecharla.** Un censo que sale grande está diciendo algo sobre el repo;
+> > uno recortado para caber en el calendario dice algo sobre el calendario, y
+> > **las dos salidas se escriben igual**.
+>
+> **Y su forma no es «mide de más»: es publicar el número entero y CORTAR EL
+> TRABAJO**, que son dos decisiones distintas y sólo la segunda es del
+> propietario. El censo entrega su cardinal —incluidos los cubos que no supo
+> clasificar, con su denominador (§regla 14)— y lo que no cabe sale **nombrado
+> como trabajo de otra tanda**, nunca descontado del total.
+>
+> **Medido, y las dos veces el número creció al mirarlo bien:** un censo de
+> artefactos pre-autorizado a «cortar si sale grande» salió con **11
+> re-congelaciones + 65 SIN PROBAR + 21 sin mapear** que no estaban en ningún
+> plan, y se cortó **publicando los tres**. Y un inventario que llevaba escrito
+> **«5 rutas»** desde su tanda dio **4 · 10 · 13** según la unidad, con **165 de
+> 314** fichas que su discriminador no podía clasificar — declaradas con su
+> control en rojo en vez de repartidas a ojo.
+>
+> **La señal para sospecharlo, y es de redacción:** un encargo que dice *«si
+> sale grande, se corta»* está autorizando a **cortar el TRABAJO**, no a
+> **encoger la MEDIDA**. Cuando las dos lecturas caben en la misma frase, la
+> barata es la que encoge — y sale idéntica a haber medido.
+
 ⚠⚠ **Y SU QUINTA CARA, QUE NI EL RECUENTO NI EL CRUCE PUEDEN VER: UN CAMPO
 AUSENTE EN EL 100 % DE SU TIPO ES EL INSTRUMENTO, NO EL DATO (2026-08-23).**
 
@@ -3693,6 +3725,49 @@ cada sesión, **entero**—. El instrumento se retira salvo dos líneas sueltas,
 **tripwire permanente**: con los dos extremos, cualquier sesión futura contesta
 «¿me llega entero?» **sin volver a instrumentar**. Acta, los cinco veredictos y
 lo que sigue sin medir: `PENDIENTES-QA.md` §META-CANARIOS-DE-CARGA.
+
+> ⚠⚠ **LEÍDO ENTERO OTRA VEZ EL 2026-08-27 — Y LA POSICIÓN DE `KV-01` YA NO ES
+> LA QUE ESTA MISMA FRASE DICE: UN TRIPWIRE TIENE COORDENADAS, Y LAS COORDENADAS
+> ENVEJECEN CON EL FICHERO.**
+>
+> El veredicto de carga sigue en pie y con margen nuevo: el fichero **que se
+> cargó en esa sesión** mide **269 549 chars** —**+72.3 %** sobre los 156 426 del
+> 2026-08-18, y **1.80×** el aviso de 150 000— y **los dos marcadores llegaron**.
+> El truncado sigue **REFUTADO**, ahora a casi el doble de tamaño.
+>
+> > ⚠ **Y el número se mide sobre el fichero CARGADO, no sobre el del disco a
+> > mitad de tanda.** La primera medición dio **271 422** porque se tomó cuando
+> > la sesión ya había escrito en él: eso mide **lo que habrá cargado la sesión
+> > SIGUIENTE**, no lo que probó ésta. Se deriva de `git show <HEAD-de-arranque>`
+> > — §*el veredicto lo da la salida servida*, con «lo servido» puesto en **el
+> > fichero que el harness inyectó**.
+>
+> **Lo que sí se rompió es la COBERTURA del instrumento, y no por un fallo:**
+>
+> | marcador | dónde dice esta frase | **dónde está hoy** |
+> |---|---|---|
+> | `KV-01` | «~30 % del fichero» | **79.8 %** |
+> | `KV-08` | «a 16 chars del final» | **16 chars del final** ✓ |
+>
+> **`KV-01` no se movió: se movió el fichero debajo.** Todo lo añadido desde
+> agosto entró **antes** que él, así que los dos tripwires viven ahora en el
+> **último quinto** — y un truncado que se comiera el **79 % inicial** dejaría
+> pasar a los dos. El instrumento no da error: **da verde con menos alcance**,
+> que es §*la cobertura declarada al nivel de arriba absorbe lo que no se midió
+> abajo* con el contenedor puesto en **la posición de un marcador**.
+>
+> > **Un canario se coloca por PORCENTAJE y su porcentaje se RE-DERIVA, no se
+> > cita.** «~30 %» es una coordenada, y una coordenada escrita en prosa deja de
+> > describir el fichero en cuanto alguien escribe por encima de ella — sin
+> > mover el marcador ni tocar la frase (§regla 9 sobre el sitio donde menos se
+> > espera: **dentro del instrumento que vigila la carga**).
+>
+> **Y no se arregla moviendo `KV-01` en esta tanda:** mover un marcador invalida
+> la comparación con las corridas anteriores, y la pregunta que el tripwire
+> contesta —*«¿me llega entero?»*— **sigue contestándose hoy**. Se ficha con su
+> número para que la tanda que lo mueva sepa **hacia dónde**: hace falta un
+> tercer marcador **en el primer tercio real**, no reubicar los dos que ya
+> tienen historia.
 
 **20 · UNA SONDA QUE RESETEA EL ENTORNO NO ES SÓLO UNA MEDIDA: ES UNA MUTACIÓN,
 Y SU VERDE NO DICE QUE EL ENTORNO QUEDE COMO ESTABA.** (2026-08-18)
