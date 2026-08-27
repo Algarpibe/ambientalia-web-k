@@ -1,0 +1,117 @@
+═══ P2 · 117.ª — ADJUDICACIÓN A 390 ═══
+
+  PREDICADO PRE-REGISTRADO (d023918, literal):
+    «P2 a 390: se mueven las 152 y NO se mueven las 261.»
+
+  base : clon-base-390-t104-despues.json  (413 rutas · 390px)
+  hoy  : clon-base-390-t117-tras-la-ficha.json  (413 rutas · 390px)
+
+── MEMBRESÍA (diferencia simétrica, los DOS lados nombrados) ──
+  en la base y NO hoy : 0
+  hoy y NO en la base : 0
+  comunes             : 413
+
+── REPARTO POR FAMILIA (docH, comunes) ──
+
+  familia                        quietas  movidas  aparec.  desap.
+  ─────────────────────────────  ───────  ───────  ───────  ──────
+  «sin fila en el registro»          189       13        0       0
+  entradas-blog                        0      152        0       0
+  terminos-kunakpedia                 37        0        0       0
+  paginas                             18        1        0       0
+  productos                            3        0        0       0
+
+── VEREDICTO, LADO A LADO ──
+
+  LADO 1 · «se mueven las 152»
+     entradas-blog en el cruce : 152
+     MOVIDAS                   : 152
+     quietas                   : 0
+     aparecidas / desaparec.   : 0 / 0
+     ⇒ ✅ CONFIRMADO — se predijeron 152 movidas, hay 152
+
+  LADO 2 · «NO se mueven las 261»
+     no-blog en el cruce       : 261
+     quietas                   : 247
+     MOVIDAS                   : 14
+     aparecidas / desaparec.   : 0 / 0
+     ⇒ ❗ REFUTADO — se predijeron 0 movidas, hay 14
+
+  ── no-blog · «sin fila en el registro» — las 13 que NO están quietas ──
+     MOVIDA     /centro-de-ayuda/kunak-air  4184 → 4254  Δ+70
+     MOVIDA     /centro-de-ayuda/kunak-air-cloud  3678 → 3932  Δ+254
+     MOVIDA     /centro-de-ayuda/kunak-air/articulos-de-ayuda  2893 → 3165  Δ+272
+     MOVIDA     /centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision  7501 → 8005  Δ+504
+     MOVIDA     /centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento  5003 → 5507  Δ+504
+     MOVIDA     /centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire  6956 → 7460  Δ+504
+     MOVIDA     /centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air  9298 → 9803  Δ+505
+     MOVIDA     /centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air  8716 → 9220  Δ+504
+     MOVIDA     /centro-de-ayuda/kunak-air/video-tutoriales  5606 → 6110  Δ+504
+     MOVIDA     /soporte/centro-de-ayuda  5964 → 5814  Δ-150
+     MOVIDA     /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda  2709 → 3165  Δ+456
+     MOVIDA     /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud  13407 → 13912  Δ+505
+     MOVIDA     /soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales  4718 → 5222  Δ+504
+
+  ── no-blog · paginas — las 1 que NO están quietas ──
+     MOVIDA     /politica-de-cookies  4232 → 6954  Δ+2722
+
+── MAGNITUD del movimiento en entradas-blog (Δ docH) ──
+  valores distintos : 6
+  min / max         : 4 / 75
+  más frecuentes    : Δ+5 ×120 · Δ+4 ×26 · Δ+26 ×3 · Δ+54 ×1 · Δ+6 ×1 · Δ+75 ×1
+
+── ATRIBUCIÓN POR ANCHO (§regla espejo como discriminador) ──
+  movidas @1440 : 6     (base clon-base-1440-t104-despues4.json)
+  movidas @390  : 166
+
+  en LOS DOS anchos : 6  ⇒ NO es la ficha (su efecto está tapado a 1440)
+     /centro-de-ayuda/kunak-air
+     /centro-de-ayuda/kunak-air-cloud
+     /centro-de-ayuda/kunak-air/articulos-de-ayuda
+     /politica-de-cookies
+     /soporte/centro-de-ayuda
+     /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda
+
+  sólo a 390        : 160  ⇒ firma de PIEZA TAPADA = la ficha
+     de ellas, entradas-blog : 152
+     de ellas, NO blog       : 8
+        /centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision  Δ+504
+        /centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento  Δ+504
+        /centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire  Δ+504
+        /centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air  Δ+505
+        /centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air  Δ+504
+        /centro-de-ayuda/kunak-air/video-tutoriales  Δ+504
+        /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud  Δ+505
+        /soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales  Δ+504
+
+  sólo a 1440       : 0
+
+  ⇒ LECTURA DEL LADO 2, en dos mitades que NO se pueden fundir:
+
+     (a) EL HECHO — el pre-registro predijo 0 movidas no-blog y hay 14.
+         **REFUTADO**, sin matices. De ellas, 6 se mueven a los dos anchos
+         y por tanto NO son la ficha: son las tandas intermedias.
+
+     (b) LA ATRIBUCIÓN de las 8 restantes — **SIN PROBAR**, y no por
+         pereza: la firma de ancho y la MAGNITUD dicen cosas distintas.
+
+           firma de ancho : sólo a 390  → compatible con la ficha (tapada)
+           magnitud       : Δ≈+504 uniforme, contra Δ+4/+5 en 146 de las
+                            152 entradas — **dos órdenes de diferencia**
+
+         Un mismo mecanismo que produce +5 en una familia y +504 en otra
+         necesita explicación, y no la hay medida. Las dos hipótesis vivas
+         —«la ficha se pinta distinto en el centro de ayuda» y «otro cambio
+         de 113-116 que TAMBIÉN está tapado a 1440»— predicen lo mismo en
+         todo lo que esta corrida puede ver: **0 instancias separadoras**.
+
+         Y lo que las separaría es medible: una base tomada JUSTO antes de
+         la ficha. No existe, así que esto NO se cierra aquí (§*antes de
+         fichar una indeterminación, comprueba que las dos hipótesis sean
+         DISTINTAS* — aquí lo son, y difieren sobre esa base).
+
+── SALVEDAD (la misma que P3) ──
+  la base es de la t104 (clon-base-390-t104-despues.json) y entre medias corrieron 113-116, así
+  que «movida» aquí es «la movió la ficha O una tanda intermedia». Para el
+  LADO 1 eso no debilita nada —lo predicho era que se movieran—, pero el
+  LADO 2 sí queda como COTA: una quieta lo está frente a TODO lo intermedio.
