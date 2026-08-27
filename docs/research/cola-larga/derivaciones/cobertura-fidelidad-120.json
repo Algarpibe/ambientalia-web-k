@@ -1,0 +1,368 @@
+{
+ "meta": {
+  "fecha": "2026-08-27",
+  "tanda": "120.ª ESCALÓN 2",
+  "rutas": 426
+ },
+ "comparadores": {
+  "n": 31,
+  "excluidosUnLado": [
+   "f33-spec"
+  ]
+ },
+ "cobertura": {
+  "union": 303,
+  "nunca": 123,
+  "pct": 71.1
+ },
+ "porSonda": {
+  "a-miga": {
+   "lado": "vivo",
+   "congeladas": 12,
+   "rutas": 0
+  },
+  "ancho-cuerpo": {
+   "lado": "vivo",
+   "congeladas": 5,
+   "rutas": 31
+  },
+  "barra-cmp": {
+   "lado": "espejo+vivo",
+   "congeladas": 7,
+   "rutas": 7
+  },
+  "c-banda": {
+   "lado": "vivo",
+   "congeladas": 13,
+   "rutas": 8
+  },
+  "c-cabecera": {
+   "lado": "vivo",
+   "congeladas": 15,
+   "rutas": 31
+  },
+  "c-cmp": {
+   "lado": "vivo",
+   "congeladas": 21,
+   "rutas": 31
+  },
+  "c1-localiza": {
+   "lado": "vivo",
+   "congeladas": 0,
+   "rutas": 0
+  },
+  "cabecera-cmp": {
+   "lado": "vivo",
+   "congeladas": 13,
+   "rutas": 0
+  },
+  "clase-rango": {
+   "lado": "vivo",
+   "congeladas": 3,
+   "rutas": 12
+  },
+  "cmp-sector": {
+   "lado": "vivo",
+   "congeladas": 0,
+   "rutas": 0
+  },
+  "cmp-srcset": {
+   "lado": "corpus",
+   "congeladas": 1,
+   "rutas": 24
+  },
+  "comportamiento": {
+   "lado": "vivo",
+   "congeladas": 3,
+   "rutas": 45
+  },
+  "d123-flujo": {
+   "lado": "vivo",
+   "congeladas": 7,
+   "rutas": 0
+  },
+  "d4-pie": {
+   "lado": "vivo",
+   "congeladas": 16,
+   "rutas": 0
+  },
+  "d4-suscribete": {
+   "lado": "vivo",
+   "congeladas": 10,
+   "rutas": 0
+  },
+  "d4-tipografia": {
+   "lado": "vivo",
+   "congeladas": 7,
+   "rutas": 0
+  },
+  "f33-cmp": {
+   "lado": "corpus",
+   "congeladas": 20,
+   "rutas": 31
+  },
+  "f33-geo": {
+   "lado": "corpus",
+   "congeladas": 0,
+   "rutas": 0
+  },
+  "ficha-cmp": {
+   "lado": "corpus",
+   "congeladas": 2,
+   "rutas": 0
+  },
+  "kb-barra": {
+   "lado": "corpus+espejo",
+   "congeladas": 2,
+   "rutas": 13
+  },
+  "kb-cmp": {
+   "lado": "espejo+vivo",
+   "congeladas": 10,
+   "rutas": 6
+  },
+  "lh-cmp": {
+   "lado": "corpus+espejo+vivo",
+   "congeladas": 57,
+   "rutas": 244
+  },
+  "lh-cubos": {
+   "lado": "espejo",
+   "congeladas": 10,
+   "rutas": 0
+  },
+  "lh-h1": {
+   "lado": "corpus",
+   "congeladas": 1,
+   "rutas": 21
+  },
+  "lh-huecos": {
+   "lado": "corpus+espejo+vivo",
+   "congeladas": 5,
+   "rutas": 3
+  },
+  "lh-paginas": {
+   "lado": "vivo",
+   "congeladas": 7,
+   "rutas": 34
+  },
+  "media-poblaciones": {
+   "lado": "corpus",
+   "congeladas": 1,
+   "rutas": 0
+  },
+  "mono-cmp": {
+   "lado": "vivo",
+   "congeladas": 4,
+   "rutas": 0
+  },
+  "pie-cmp": {
+   "lado": "espejo+vivo",
+   "congeladas": 8,
+   "rutas": 8
+  },
+  "t4b-bloque": {
+   "lado": "corpus",
+   "congeladas": 5,
+   "rutas": 10
+  },
+  "tree-cmp": {
+   "lado": "vivo",
+   "congeladas": 12,
+   "rutas": 0
+  }
+ },
+ "familias": [
+  {
+   "familia": "/[slug]",
+   "rutas": 208,
+   "cubiertas": 186
+  },
+  {
+   "familia": "/casos-de-exito/[slug]",
+   "rutas": 53,
+   "cubiertas": 6
+  },
+  {
+   "familia": "/recursos/[...ruta]",
+   "rutas": 44,
+   "cubiertas": 30
+  },
+  {
+   "familia": "/etiqueta/[slug]/page/[n]",
+   "rutas": 24,
+   "cubiertas": 24
+  },
+  {
+   "familia": "/faqs/[slug]",
+   "rutas": 19,
+   "cubiertas": 2
+  },
+  {
+   "familia": "/etiqueta/[slug]",
+   "rutas": 12,
+   "cubiertas": 12
+  },
+  {
+   "familia": "/centro-de-ayuda/[...ruta]",
+   "rutas": 9,
+   "cubiertas": 9
+  },
+  {
+   "familia": "/blog/page/[n]",
+   "rutas": 7,
+   "cubiertas": 7
+  },
+  {
+   "familia": "/glosario/page/[n]",
+   "rutas": 7,
+   "cubiertas": 7
+  },
+  {
+   "familia": "/sector/[slug]/page/[n]",
+   "rutas": 7,
+   "cubiertas": 0
+  },
+  {
+   "familia": "/sector/[slug]",
+   "rutas": 6,
+   "cubiertas": 0
+  },
+  {
+   "familia": "/sectores/[slug]",
+   "rutas": 6,
+   "cubiertas": 6
+  },
+  {
+   "familia": "/soporte/[...ruta]",
+   "rutas": 5,
+   "cubiertas": 5
+  },
+  {
+   "familia": "/case-studies/[slug]",
+   "rutas": 4,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/scientific-category/[slug]",
+   "rutas": 3,
+   "cubiertas": 3
+  },
+  {
+   "familia": "/scientific-category/[slug]/page/[n]",
+   "rutas": 3,
+   "cubiertas": 3
+  },
+  {
+   "familia": "/",
+   "rutas": 1,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/accesorios",
+   "rutas": 1,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/blog",
+   "rutas": 1,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/casos-de-exito",
+   "rutas": 1,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/empresa/[...ruta]",
+   "rutas": 1,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/glosario",
+   "rutas": 1,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/kunak-api",
+   "rutas": 1,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/monitor-calidad-aire",
+   "rutas": 1,
+   "cubiertas": 1
+  },
+  {
+   "familia": "/software-de-medicion-calidad-del-aire",
+   "rutas": 1,
+   "cubiertas": 1
+  }
+ ],
+ "ruido": {
+  "congeladas": 7,
+  "rutasConCampana": 4
+ },
+ "rutasNuncaComparadas": [
+  "/amoniaco-nh3",
+  "/calidad-del-aire-en-los-aeropuertos",
+  "/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu",
+  "/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+  "/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco",
+  "/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica",
+  "/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+  "/casos-de-exito/calle-30-natura-sensores-de-calidad-del-aire-kunak-air",
+  "/casos-de-exito/citytraq-calidad-del-aire-urbano",
+  "/casos-de-exito/clean-air-champions-league",
+  "/casos-de-exito/control-ambiental-actividades-portuarias-bahia-cadiz",
+  "/casos-de-exito/control-de-contaminacion-por-malos-olores-en-edar-arazuri",
+  "/casos-de-exito/control-de-emisiones-plantas-ternium-en-mexico",
+  "/casos-de-exito/control-de-la-calidad-del-aire-en-el-volcan-turrialba",
+  "/casos-de-exito/control-de-la-calidad-del-aire-en-la-formula-e",
+  "/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb",
+  "/casos-de-exito/control-de-la-contaminacion-atmosferica-universidad-de-chipre",
+  "/casos-de-exito/control-de-la-contaminacion-en-bilbao",
+  "/casos-de-exito/control-emisiones-de-olor-en-ptar-en-israel",
+  "/casos-de-exito/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama",
+  "/casos-de-exito/control-quemas-controladas-cana-azucar",
+  "/casos-de-exito/cuantificacion-emisiones-particulas-difusas-puerto-bilbao",
+  "/casos-de-exito/demolicion-estadio-vicente-calderon",
+  "/casos-de-exito/estudio-de-la-contaminacion-atmosferica-gwadair",
+  "/casos-de-exito/medicion-contaminantes-ambientales-ciudad-cartagena-colombia",
+  "/casos-de-exito/monitorizacion-ambiental-aeropuerto-subic-bay",
+  "/casos-de-exito/monitorizacion-ambiental-instalacion-petroleo-gas",
+  "/casos-de-exito/monitorizacion-ambiental-mediante-boyas-en-neom",
+  "/casos-de-exito/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre",
+  "/casos-de-exito/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+  "/casos-de-exito/monitorizacion-de-gases-y-particulas-en-metro-valparaiso",
+  "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+  "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023",
+  "/casos-de-exito/monitorizacion-de-polvo-en-la-mina-northparkes-australia",
+  "/casos-de-exito/porto-alegre-red-de-control-de-la-calidad-del-aire",
+  "/casos-de-exito/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria",
+  "/casos-de-exito/pure-cities",
+  "/casos-de-exito/red-de-control-de-emisiones-en-planta-de-aluminio",
+  "/casos-de-exito/red-de-monitoreo-de-polvo-en-la-mina-de-oro-pueblo-viejo-barrick",
+  "/casos-de-exito/red-de-monitorizacion-ambiental-mades-paraguay",
+  "/casos-de-exito/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals",
+  "/casos-de-exito/red-hibrida-calidad-aire-atmo-france",
+  "/casos-de-exito/red-monitorizacion-polvo-particulas-minas-brasil-iron",
+  "/casos-de-exito/red-sensores-calidad-aire-alaquas",
+  "/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
+  "/casos-de-exito/running-for-clean-air-ciudades-saludables",
+  "/casos-de-exito/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid",
+  "/casos-de-exito/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas",
+  "/casos-de-exito/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian",
+  "/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia",
+  "/casos-de-exito/vigilancia-contaminacion-aire-albacete",
+  "/casos-de-exito/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey",
+  "/contaminacion-aire-deporte",
+  "/contaminacion-mal-olor-sensores",
+  "/despliegue-estaciones-kunak-air-pro-filipinas",
+  "/dioxido-de-carbono",
+  "/entrevista-agustin-torres-product-manager-suez",
+  "/entrevista-jelle-hofman-investigador-calidad-del-aire-imec",
+  "/estaciones-de-calidad-del-aire",
+  "/faqs/a-que-altura-debe-instalarse-el-equipo"
+ ]
+}

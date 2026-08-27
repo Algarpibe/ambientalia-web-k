@@ -1,0 +1,59 @@
+
+═══ CONTROL DEL DETECTOR
+
+  sondas auditadas ............... 144
+  con lado ORIGINAL .............. 105
+  con lado CLON .................. 48
+  con LOS DOS (comparadores) ..... 32
+  control · barra-cmp.mjs      vivo=true  esperado=true  ✓
+  control · mono-cmp.mjs       vivo=true  esperado=true  ✓
+  control · enlaces.mjs        vivo=false esperado=false ✓
+
+═══ LOS COMPARADORES DE DOS LADOS, CON LO QUE COMPARARON
+
+  sonda                     lado ORIGINAL   congelada más reciente                  unidad         n
+  a-miga                    vivo            a-miga-1440-2026-08-03.json             ?                  ·
+  ancho-cuerpo              vivo            ancho-cuerpo-1440-2026-08-03.json       ?                  ·
+  barra-cmp                 espejo+vivo     barra-cmp-390.json                      ?                  ·
+  c-banda                   vivo            c-banda-1440-2026-08-03.json            rutas              5
+  c-cabecera                vivo            c-cabecera-1440-2026-08-03.json         rutas             31
+  c-cmp                     vivo            c-cmp-1440-2026-08-03.json              ?                  ·
+  c1-localiza               vivo            — SIN CONGELADA —                       —                  ·
+  cabecera-cmp              vivo            cabecera-cmp-1440.json                  ?                  ·
+  clase-rango               vivo            clase-rango-390.json                    ?                  ·
+  cmp-sector                vivo            — SIN CONGELADA —                       —                  ·
+  cmp-srcset                corpus          cmp-srcset.json                         detalle          171
+  comportamiento            vivo            comportamiento-1440-emitidas-todas.json interacciones    518
+  d123-flujo                vivo            d123-flujo-1440-2026-08-03.json         ?                  ·
+  d4-pie                    vivo            d4-pie-1440-2026-08-03.json             ?                  ·
+  d4-suscribete             vivo            d4-suscribete-1440-2026-08-03.json      ?                  ·
+  d4-tipografia             vivo            d4-tipografia-1440-2026-08-03.json      ?                  ·
+  f33-cmp                   corpus          f33-cmp-390-2026-08-26-2.json           cruceModulos       1
+  f33-geo                   corpus          — SIN CONGELADA —                       —                  ·
+  f33-spec                  corpus          f33-spec.json                           paginas           31
+  ficha-cmp                 corpus          ficha-cmp.json                          catalogo           9
+  kb-barra                  corpus+espejo   kb-barra-1440.json                      ?                  ·
+  kb-cmp                    espejo+vivo     kb-cmp-390-2026-08-25-DESPUES-barra.jsonsoloClon         454
+  lh-cmp                    corpus+espejo+vivolh-cmp-390-todas-2026-08-20-4.json      basesQueNoCasan     8
+  lh-cubos                  espejo          lh-cubos-390-2026-08-20-2.json          ?                  ·
+  lh-h1                     corpus          lh-h1.json                              sinH1             12
+  lh-huecos                 corpus+espejo+vivolh-huecos-2026-08-20.json               ?                  ·
+  lh-paginas                vivo            lh-paginas-2026-08-17.json              rutas             35
+  media-poblaciones         corpus          media-poblaciones.json                  rutas             32
+  mono-cmp                  vivo            mono-cmp-edar-1440.json                 original           3
+  pie-cmp                   espejo+vivo     pie-cmp-390-2026-08-20-3.json           ausentes           2
+  t4b-bloque                corpus          t4b-bloque-antes-2026-08-06.json        ?                  ·
+  tree-cmp                  vivo            tree-cmp-urbano-1440-2026-08-03.json    original           2
+
+═══ SOLO-CLON — miden regresión, NO fidelidad (16)
+
+  admin-operacion · clon-base · clon-estados · corte-cuerpo · dos-rutas · enlaces · f25-final · html-cmp · lh-letra · lh-poblacion · negativos · offsets · programada · publica-e2e · publicar · roles
+
+═══ LAS DOS UNIDADES DEL RECUENTO
+
+  comandos `qa:*cmp*` ................... 24
+  de ellos, que llaman a un comparador .. 16
+  SONDAS comparadoras distintas ......... 32
+  (la diferencia son variantes -390/--vivo/--todas y los .neg)
+
+→ derivaciones/matriz-comparadores-120.json

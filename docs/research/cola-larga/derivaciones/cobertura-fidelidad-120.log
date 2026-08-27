@@ -1,0 +1,75 @@
+
+═══ 1 · COBERTURA DE FIDELIDAD SOBRE LAS 426 RUTAS DEL BUILD
+
+  comparadores de dos lados ............. 31
+  (excluidos por declararse de UN lado) . 1  f33-spec
+  RUTAS tocadas por alguno (unión) ...... 303 de 426  (71.1 %)
+  RUTAS que NUNCA se compararon ......... 123  (28.9 %)
+
+  sonda                     lado           congeladas   rutas tocadas
+  lh-cmp                    corpus+espejo+vivo        57             244
+  comportamiento            vivo                    3              45
+  lh-paginas                vivo                    7              34
+  ancho-cuerpo              vivo                    5              31
+  c-cabecera                vivo                   15              31
+  c-cmp                     vivo                   21              31
+  f33-cmp                   corpus                 20              31
+  cmp-srcset                corpus                  1              24
+  lh-h1                     corpus                  1              21
+  kb-barra                  corpus+espejo           2              13
+  clase-rango               vivo                    3              12
+  t4b-bloque                corpus                  5              10
+  c-banda                   vivo                   13               8
+  pie-cmp                   espejo+vivo             8               8
+  barra-cmp                 espejo+vivo             7               7
+  kb-cmp                    espejo+vivo            10               6
+  lh-huecos                 corpus+espejo+vivo         5               3
+  a-miga                    vivo                   12               0
+  c1-localiza               vivo                    0               0
+  cabecera-cmp              vivo                   13               0
+  cmp-sector                vivo                    0               0
+  d123-flujo                vivo                    7               0
+  d4-pie                    vivo                   16               0
+  d4-suscribete             vivo                   10               0
+  d4-tipografia             vivo                    7               0
+  f33-geo                   corpus                  0               0
+  ficha-cmp                 corpus                  2               0
+  lh-cubos                  espejo                 10               0
+  media-poblaciones         corpus                  1               0
+  mono-cmp                  vivo                    4               0
+  tree-cmp                  vivo                   12               0
+
+═══ 2 · EL REPARTO POR FAMILIA (misma `page.tsx` = misma plantilla)
+
+  fuente: manifiesto-2026-08-27-2.json · 25 familias
+
+  familia                              rutas   cubiertas
+  /[slug]                                208         186
+  /casos-de-exito/[slug]                  53           6
+  /recursos/[...ruta]                     44          30
+  /etiqueta/[slug]/page/[n]               24          24
+  /faqs/[slug]                            19           2
+  /etiqueta/[slug]                        12          12
+  /centro-de-ayuda/[...ruta]               9           9
+  /blog/page/[n]                           7           7
+  /glosario/page/[n]                       7           7
+  /sector/[slug]/page/[n]                  7           0
+  /sector/[slug]                           6           0
+  /sectores/[slug]                         6           6
+  /soporte/[...ruta]                       5           5
+  /case-studies/[slug]                     4           1
+
+  familias con CERO rutas cubiertas: 2 de 25
+   /sector/[slug]/page/[n](7) · /sector/[slug](6)
+
+═══ 3 · EL PRECIO — el original NO es un objetivo estable
+
+  congeladas de `ruido` .................. 7
+  rutas con campaña de ruido (alguna) .... 4 de 426  (0.9 %)
+  rutas SIN campaña ...................... 422
+
+  ⚠ Sin campaña cerrada, un residuo pequeño NO es «limpio»: es SIN PROBAR.
+     Y hay rutas con suelo BIMODAL (±32.28 a 1440, ±30 a 390), donde un
+     suelo NO acota: DISCRIMINA. Eso es parte del precio, no un detalle.
+
+→ derivaciones/cobertura-fidelidad-120.json

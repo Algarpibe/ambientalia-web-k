@@ -1,5 +1,133 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 📋 §120-DIMENSION · **el comparador que falta, DIMENSIONADO — y media respuesta ya estaba en el archivo** — 120.ª, 2026-08-27
+
+**El encargo mandaba empezar por el archivo, no por el diseño. Acertó:** el
+hueco es menor de lo que parecía, y el precio está en otro sitio.
+
+### 0 · El conjunto NO se deriva del nombre — 24 comandos, 32 comparadores
+
+Filtrar por el literal `cmp` es §sondas 4 esperando a pasar. Derivado por
+**mecanismo** —de dónde saca cada sonda el lado del ORIGINAL (corpus por
+`file://` · espejo congelado · `kunakair.com` vivo) y el del CLON— sobre **144
+sondas**:
+
+| unidad | n |
+|---|---|
+| comandos `qa:*cmp*` | **24** |
+| de ellos, que llaman a un comparador | **16** |
+| **SONDAS comparadoras de dos lados** | **32** |
+| de ellas, excluida por declararse de UN lado (`f33-spec`) | −1 → **31** |
+| sondas SOLO-CLON (regresión, **no** fidelidad) | **16** |
+
+> **17 de los 32 comparadores NO se llaman `cmp`** —`a-miga`, `ancho-cuerpo`,
+> `c-banda`, `c-cabecera`, `clase-rango`, `comportamiento`, `d123-flujo`,
+> `d4-*`, `f33-geo`, `kb-barra`, `lh-cubos`, `lh-h1`, `lh-huecos`, `lh-paginas`,
+> `media-poblaciones`, `mono-cmp`, `tree-cmp`—. Un barrido por nombre habría
+> declarado inexistente **la mayoría de lo que ya existe**. §regla 9, 8.º caso.
+
+> ⚠ **Y el detector v1 dio DOS falsos positivos, los dos cazados por controles
+> que ya existían** (§sondas 4, *la contradicción con una medida buena
+> anterior*):
+>
+> | falso positivo | por qué | quién lo cazó |
+> |---|---|---|
+> | `enlaces` como comparador de fidelidad | declara `const DOMINIO = "kunakair.com"` para **clasificar** hrefs; su único `fetch` va al clon | la 119.ª ya había establecido que sus dos lados son el clon |
+> | `f33-spec` como comparador | su congelada declara `"lado": "UNO — el original capturado. NO compara…"` | **la propia sonda**, en su `meta` |
+>
+> El discriminador que sí vale es **el PROTOCOLO**: una constante de
+> clasificación lleva el dominio pelado, una petición lleva `https://`.
+> Controlado contra 3 casos conocidos **de antemano** — 3/3.
+
+### 1 · LA TABLA — cobertura, hueco, precio
+
+| eje | n | de | % |
+|---|---|---|---|
+| **rutas tocadas** por algún comparador de dos lados | **303** | 426 | **71.1 %** |
+| **rutas NUNCA comparadas** contra el original | **123** | 426 | **28.9 %** |
+| **rutas con campaña de ruido** | **4** | 426 | **0.9 %** |
+| familias de ruta (misma `page.tsx`) | 25 | — | — |
+| familias con **cero** rutas cubiertas | **2** — `/sector/[slug]` (6) y `/sector/[slug]/page/[n]` (7) | 25 | 13 rutas |
+
+> ⚠⚠ **EL 71.1 % ES UNA COTA SUPERIOR, NO UN VEREDICTO — y confundirlo es
+> exactamente el error que §COBERTURA-MEDICION existe para evitar.** Significa
+> *«alguna sonda de dos lados tocó esta ruta, en algún eje, en algún momento»*.
+> **No** significa que esté verificada: `cmp-srcset` mira `srcset`, `lh-h1` mira
+> el `h1`, `barra-cmp` mira la barra lateral. El 15 % de `docH` que citaba la
+> 119.ª y este 71.1 % **no se contradicen: cuentan cosas distintas** —eje contra
+> ruta— y los dos son ciertos (§*dos recuentos concordantes pueden contar
+> unidades distintas*).
+
+**Los diez que más cubren** (de `cobertura-fidelidad-120.json`):
+
+| sonda | lado original | congeladas | rutas |
+|---|---|---|---|
+| `lh-cmp` | corpus+espejo+vivo | 57 | **244** |
+| `comportamiento` | vivo | 3 | 45 |
+| `lh-paginas` | vivo | 7 | 34 |
+| `ancho-cuerpo` · `c-cabecera` · `c-cmp` · `f33-cmp` | vivo / corpus | 5–21 | **31** cada uno |
+| `cmp-srcset` | corpus | 1 | 24 |
+| `lh-h1` | corpus | 1 | 21 |
+
+### 2 · EL PRECIO, y no es lineal en rutas
+
+**4 de 426 (0.9 %) tienen campaña de ruido.** Ése es el número que hace caro el
+nivel de ACEPTACIÓN, no el de rutas:
+
+> **Sin campaña cerrada para esa ruta, un residuo pequeño NO es «limpio»: es SIN
+> PROBAR.** Y en las rutas donde sí hay campaña, el suelo resultó **BIMODAL**
+> —±32.28 a 1440, ±30 a 390— donde **un suelo no acota: DISCRIMINA**. Un Δ de 12
+> o de 31 no es «ruido pequeño»: es un valor que el original nunca produce.
+
+Una campaña son **≥3 ráfagas separadas ≥2 h en ≥2 días distintos**, más el eje de
+**nº de cargas** que la §regla 4 añadió. Eso es lo que cuesta convertir «medido»
+en «medido contra un suelo conocido» — y **no se puede paralelizar contra un
+sitio vivo**.
+
+### 3 · ¿426 o un conjunto que las REPRESENTE? — planteada como pregunta
+
+El reparto por familia dice que **el conjunto representativo existe**: 25
+familias para 426 rutas, y `/[slug]` sola son **208** (48.8 %).
+
+| a favor de representar | en contra |
+|---|---|
+| misma `page.tsx` = misma plantilla, y el clon la sirve igual para todas | **el contenido cambia el resultado**: §*un ancho mal no cuesta un píxel hasta que el texto envuelve*, y ese defecto sólo apareció en el arquetipo con titulares largos |
+| 2 familias enteras están a cero (13 rutas) y se ven de un vistazo | el régimen `--` (131 de 576 documentos) tiene **la varianza entre instancias SIN MEDIR** |
+
+> **El criterio, si se escribe, NO es «una típica por familia».** §*la instancia
+> que hay que meter en el catálogo es aquélla DONDE LA HOLGURA SE ACABA* — la más
+> corta, la más vacía, la última de su serie. Un catálogo de típicas da **cero
+> instancias separadoras** y su verde es del muestreo, no del clon. Medido ya en
+> este repo: 6 páginas «representativas» dieron Δ0 y la que separaba era **la
+> última de una serie**.
+>
+> **Así que el conjunto mínimo son ≥2 por familia —la típica y la extrema— o sea
+> ≈50, no 25.** Y eso **sigue sin ser una decisión tomada**: es lo que costaría
+> si se elige representar. Con 426 no hace falta criterio, y por eso es la opción
+> que no puede equivocarse.
+
+### 4 · Lo que esta derivación NO puede decir — declarado con su cardinal
+
+- **11 de los 31 comparadores no mapean a ninguna ruta** con este extractor
+  —`a-miga`, `c1-localiza`, `cabecera-cmp`, `cmp-sector`, `d123-flujo`, `d4-pie`,
+  `d4-suscribete`, `d4-tipografia`, `f33-geo`, `ficha-cmp`, `lh-cubos`,
+  `media-poblaciones`, `mono-cmp`, `tree-cmp`—. Algunos congelan por **slug de
+  sector** (`mono-cmp-edar-1440`), no por ruta. **No se cuentan como cobertura
+  cero: se declaran sin mapear**, así que el 71.1 % es cota INFERIOR por este
+  lado y superior por el del eje.
+- **Ningún eje del listón está cruzado con la matriz.** Se sabe qué rutas tocó
+  cada sonda; **qué eje mide cada una no está derivado**, y sin eso la cobertura
+  por eje no se puede publicar. Es el trabajo que sigue.
+- **Nada de esto adjudica fidelidad.** Cobertura ≠ veredicto.
+
+> ⚠ **Y el extractor v1 sacó DOS ceros que eran suyos**, los dos cazados por
+> contradecir una medida buena: `c-cabecera` daba **0 rutas** declarando
+> `meta.rutas: 31` (las rutas están en las **CLAVES** del objeto, y el walker
+> sólo miraba valores), y las campañas de ruido daban **0** (las claves van
+> **truncadas a 16 caracteres** con el ancho pegado, `software-de-medi@1440`, y
+> no casan por igualdad). Corregidos: 31 y 4. **Publicar el 27.2 % de la v1
+> habría dimensionado el hueco al doble de grande.**
+
 ## ⛔ §120-ENLACES · **el rojo es REAL y se queda ROJO — la cifra que se citaba estaba caducada 7 días y 44 rutas, y el defecto ha CRECIDO** — 120.ª, 2026-08-27
 
 **Corrida sola, sin pipear, con el clon servido contra el `.next` de hoy.**

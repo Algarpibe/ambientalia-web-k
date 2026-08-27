@@ -1,0 +1,333 @@
+{
+ "meta": {
+  "fecha": "2026-08-27",
+  "tanda": "120.ª ESCALÓN 2",
+  "sondasAuditadas": 144
+ },
+ "control": {
+  "conLadoOriginal": 105,
+  "conLadoClon": 48,
+  "comparadores": 32
+ },
+ "recuento": {
+  "comandosCmp": 24,
+  "comandosDeComparador": 16,
+  "sondasComparadoras": 32
+ },
+ "comparadores": [
+  {
+   "sonda": "a-miga",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "a-miga-1440-2026-08-03.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "ancho-cuerpo",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "ancho-cuerpo-1440-2026-08-03.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "barra-cmp",
+   "ladoOriginal": [
+    "espejo",
+    "vivo"
+   ],
+   "congelada": "barra-cmp-390.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "c-banda",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "c-banda-1440-2026-08-03.json",
+   "unidad": "rutas",
+   "n": 5
+  },
+  {
+   "sonda": "c-cabecera",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "c-cabecera-1440-2026-08-03.json",
+   "unidad": "rutas",
+   "n": 31
+  },
+  {
+   "sonda": "c-cmp",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "c-cmp-1440-2026-08-03.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "c1-localiza",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": null,
+   "unidad": "—",
+   "n": null
+  },
+  {
+   "sonda": "cabecera-cmp",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "cabecera-cmp-1440.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "clase-rango",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "clase-rango-390.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "cmp-sector",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": null,
+   "unidad": "—",
+   "n": null
+  },
+  {
+   "sonda": "cmp-srcset",
+   "ladoOriginal": [
+    "corpus"
+   ],
+   "congelada": "cmp-srcset.json",
+   "unidad": "detalle",
+   "n": 171
+  },
+  {
+   "sonda": "comportamiento",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "comportamiento-1440-emitidas-todas.json",
+   "unidad": "interacciones",
+   "n": 518
+  },
+  {
+   "sonda": "d123-flujo",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "d123-flujo-1440-2026-08-03.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "d4-pie",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "d4-pie-1440-2026-08-03.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "d4-suscribete",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "d4-suscribete-1440-2026-08-03.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "d4-tipografia",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "d4-tipografia-1440-2026-08-03.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "f33-cmp",
+   "ladoOriginal": [
+    "corpus"
+   ],
+   "congelada": "f33-cmp-390-2026-08-26-2.json",
+   "unidad": "cruceModulos",
+   "n": 1
+  },
+  {
+   "sonda": "f33-geo",
+   "ladoOriginal": [
+    "corpus"
+   ],
+   "congelada": null,
+   "unidad": "—",
+   "n": null
+  },
+  {
+   "sonda": "f33-spec",
+   "ladoOriginal": [
+    "corpus"
+   ],
+   "congelada": "f33-spec.json",
+   "unidad": "paginas",
+   "n": 31
+  },
+  {
+   "sonda": "ficha-cmp",
+   "ladoOriginal": [
+    "corpus"
+   ],
+   "congelada": "ficha-cmp.json",
+   "unidad": "catalogo",
+   "n": 9
+  },
+  {
+   "sonda": "kb-barra",
+   "ladoOriginal": [
+    "corpus",
+    "espejo"
+   ],
+   "congelada": "kb-barra-1440.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "kb-cmp",
+   "ladoOriginal": [
+    "espejo",
+    "vivo"
+   ],
+   "congelada": "kb-cmp-390-2026-08-25-DESPUES-barra.json",
+   "unidad": "soloClon",
+   "n": 454
+  },
+  {
+   "sonda": "lh-cmp",
+   "ladoOriginal": [
+    "corpus",
+    "espejo",
+    "vivo"
+   ],
+   "congelada": "lh-cmp-390-todas-2026-08-20-4.json",
+   "unidad": "basesQueNoCasan",
+   "n": 8
+  },
+  {
+   "sonda": "lh-cubos",
+   "ladoOriginal": [
+    "espejo"
+   ],
+   "congelada": "lh-cubos-390-2026-08-20-2.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "lh-h1",
+   "ladoOriginal": [
+    "corpus"
+   ],
+   "congelada": "lh-h1.json",
+   "unidad": "sinH1",
+   "n": 12
+  },
+  {
+   "sonda": "lh-huecos",
+   "ladoOriginal": [
+    "corpus",
+    "espejo",
+    "vivo"
+   ],
+   "congelada": "lh-huecos-2026-08-20.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "lh-paginas",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "lh-paginas-2026-08-17.json",
+   "unidad": "rutas",
+   "n": 35
+  },
+  {
+   "sonda": "media-poblaciones",
+   "ladoOriginal": [
+    "corpus"
+   ],
+   "congelada": "media-poblaciones.json",
+   "unidad": "rutas",
+   "n": 32
+  },
+  {
+   "sonda": "mono-cmp",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "mono-cmp-edar-1440.json",
+   "unidad": "original",
+   "n": 3
+  },
+  {
+   "sonda": "pie-cmp",
+   "ladoOriginal": [
+    "espejo",
+    "vivo"
+   ],
+   "congelada": "pie-cmp-390-2026-08-20-3.json",
+   "unidad": "ausentes",
+   "n": 2
+  },
+  {
+   "sonda": "t4b-bloque",
+   "ladoOriginal": [
+    "corpus"
+   ],
+   "congelada": "t4b-bloque-antes-2026-08-06.json",
+   "unidad": "?",
+   "n": null
+  },
+  {
+   "sonda": "tree-cmp",
+   "ladoOriginal": [
+    "vivo"
+   ],
+   "congelada": "tree-cmp-urbano-1440-2026-08-03.json",
+   "unidad": "original",
+   "n": 2
+  }
+ ],
+ "soloClon": [
+  "admin-operacion",
+  "clon-base",
+  "clon-estados",
+  "corte-cuerpo",
+  "dos-rutas",
+  "enlaces",
+  "f25-final",
+  "html-cmp",
+  "lh-letra",
+  "lh-poblacion",
+  "negativos",
+  "offsets",
+  "programada",
+  "publica-e2e",
+  "publicar",
+  "roles"
+ ]
+}
