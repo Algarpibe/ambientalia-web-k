@@ -1,0 +1,50 @@
+═══ 1 · EL CARDINAL, POR UNIDAD ═══
+  congeladas .json                      : 1495
+  ficheros con la cadena "lado"         : 81  ← el «81» del encargo
+    · de ellos, con meta.lado (DECLARAN): 39
+    · de ellos, con lado en el DATO     : 42   (2630 ocurrencias)
+
+  valores de meta.lado (prosa libre, NO derivable):
+     15 × "UNO — el original capturado con sus hojas. NO compara con el clon: eso…"
+     17 × "UNO — el original capturado. NO compara con el clon: eso es `qa:f33-cm…"
+      5 × "SÓLO el original: geometría de `pie-mecanismo` + marcado y CSS del cor…"
+      2 × "SÓLO el original vivo (kunakair.com). El clon lo compara pie-cmp"
+  valores de lado EN EL DATO (qué lado es esa FILA — otro predicado):
+     932 × "despues"
+     888 × "orig"
+     694 × "clon"
+     107 × "sin bloques"
+       9 × "antes"
+
+═══ 2 · LA FORMA DE LAS CONGELADAS ═══
+  con objeto meta : 1444
+  SIN objeto meta : 51   ← no hay dónde inyectar sin reestructurar
+  por papel — artefactos 530 · fechadas 493 · CANÓNICAS 472
+
+═══ 3 · CONTROL + TRATAMIENTO A (el valor en el CUERPO) ═══
+  — CONTROL · w() tal cual, mismo dato. Tiene que ser NO-OP:
+    ficheros 1 → 1  ✓ NO-OP — el canal reproduce la realidad
+  — TRATAMIENTO A · w() inyectando meta.lado:
+    ficheros 1 → 2  ✗ NO ADITIVO — estrena fechado
+
+═══ 4 · TRATAMIENTO B (lado declarado VOLÁTIL) — por los DOS lados ═══
+  CAMPOS_VOLATILES = fecha · sello · lado
+  — B1 · añadir lado donde no lo había (¿aditivo?):
+    ficheros 3 → 3  ✓ ADITIVO — no estrena fechado
+  — B2 · CAMBIAR el lado de «clon» a «ambos» (la guarda DEBE gritar):
+    ficheros 3 → 3  ✗ NO GRITA: el cambio pasa en SILENCIO
+    lado que queda EN DISCO: "clon"  ← el disco conserva el valor CADUCADO
+
+═══ VEREDICTO ═══
+  A · valor en el cuerpo   → aditivo NO · registra su cambio SÍ
+  B · valor volátil        → aditivo SÍ · registra su cambio NO
+
+  Las dos colocaciones posibles del valor EN LA CONGELADA fallan una condición
+  cada una, y son condiciones distintas: A rompe la comparación al nombre
+  canónico de las 472 canónicas (152 sondas congelan), que es el radio de
+  §regla 5bis que esta tanda tiene declarado FUERA de alcance; B convierte el
+  campo en uno que NO PUEDE registrar el cambio que existe para registrar,
+  que es §regla 21: «una guarda que se acomoda al defecto que vigila deja de
+  vigilarlo, y encima en silencio».
+
+  ⇒ SE CUMPLE LA CONDICIÓN DE PARADA DEL ENCARGO. PASO 0 no se implementa.

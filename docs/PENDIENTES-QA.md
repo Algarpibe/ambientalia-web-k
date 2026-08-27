@@ -1,5 +1,89 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ §121-LADO-NO-ADITIVO · **el PASO 0 se para en su propia condición: las DOS colocaciones posibles fallan, y fallan condiciones distintas** — 121.ª, 2026-08-27
+
+El encargo de la 121.ª sube el candidato de diseño —*toda congelada declara su
+`lado`*— con una condición de parada explícita: *«se toca `lib.mjs` SÓLO para
+añadir el campo `lado` en `w()`, que es aditivo y no cambia ningún valor ya
+escrito. Si el cambio resulta no ser aditivo, PARA y dilo.»*
+
+**No es aditivo. Medido, con su control.**
+
+### 1 · El «81» eran DOS conjuntos disjuntos, y ninguno es el predicado
+
+Es §*dos lecturas pueden dar el mismo cardinal contando unidades distintas*, con
+el agravante de que aquí ni siquiera cuentan el mismo predicado:
+
+| lectura | n | qué es |
+|---|---|---|
+| ficheros con la cadena `"lado"` | **81** | la cifra del encargo |
+| · de ellos, con **`meta.lado`** | **39** | los que *declaran* qué mide la congelada |
+| · de ellos, con **`lado` en el DATO** | **42** | qué lado es esa **FILA** — **2630 ocurrencias** |
+
+**`lado` es un nombre YA OCUPADO en el plano del dato**, con otro significado y
+con dos órdenes de magnitud más de uso: `despues` 932 · `orig` 888 · `clon` 694
+· `sin bloques` 107 · `antes` 9. Y los 39 `meta.lado` que existen son **prosa
+libre** —cuatro literales distintos, frases de hasta 98 caracteres—, o sea que
+**no hay hoy ningún valor derivable del que partir**.
+
+### 2 · Las dos colocaciones, medidas por los dos lados
+
+Control primero (§*el tratamiento no prueba nada si escribir el valor de HOY por
+el mismo canal no es NO-OP*): `w()` tal cual, mismo dato ⇒ **`(idéntica a la
+congelada)`, 1 → 1 ficheros**. El canal reproduce la realidad.
+
+| opción | aditivo | ¿registra su propio cambio? |
+|---|---|---|
+| **A** · el valor en el CUERPO | ❌ **NO** — la guarda dispara y **estrena fechado** | ✅ sí |
+| **B** · el valor declarado VOLÁTIL | ✅ sí — `(idéntica salvo meta.lado)` | ❌ **NO** |
+
+**El B2 es el que decide, y es el lado que casi no se prueba:** cambiar el lado
+de `clon` a `ambos` —o sea *exactamente el suceso que el campo existe para
+registrar*— pasa **en silencio**, y el disco **conserva `clon`**. Eso es §regla
+21: *«una guarda que se acomoda al defecto que vigila deja de vigilarlo, y encima
+en silencio»*. Un `lado` volátil no es un campo débil: es un campo **caducado y
+con autoridad de congelada**, que es peor que no tenerlo.
+
+### 3 · El radio de A, dimensionado
+
+| congeladas, por papel | n |
+|---|---|
+| artefactos (§regla 7) | 530 |
+| fechadas (§regla 5) | 493 |
+| **CANÓNICAS** | **472** |
+| total | 1495 |
+
+Y **51 de 1495 no tienen objeto `meta`**: ahí no hay dónde inyectar sin
+reestructurar el fichero, que ya no es aditivo ni de lejos.
+
+La opción A rompe la comparación al **nombre canónico** de las **472**, con
+**152 sondas** que llaman a `w()`. Ése es el radio de §regla 5bis que la 112.ª
+midió en **≥220 de 493** y dejó **sin dimensionar**, y que este mismo encargo
+declara fuera de alcance (*«tocar `lib.mjs` está acotado a esto»*).
+
+> **Lo que NO se ha refutado es la DECISIÓN, sólo esta implementación.** Que toda
+> congelada declare su lado sigue siendo el candidato subido. Lo que la medición
+> dice es que **no cabe en un cambio aditivo a `w()`**, porque el valor tiene que
+> vivir en el cuerpo para poder guardarse y en el cuerpo caduca 472 canónicas.
+
+**Lo que la tanda que lo retome tiene ya derivado, y no hace falta volver a
+medir:**
+
+1. **el nombre `lado` está ocupado** (2630 ocurrencias en el dato). O se elige
+   otro nombre para el eje de la congelada, o se acepta que un mismo literal
+   signifique dos cosas según el nivel — y eso hay que decidirlo, no heredarlo;
+2. **hay una tercera colocación sin medir: FUERA del cuerpo** —un índice
+   lateral—. Es aditiva por construcción (el cuerpo no cambia) y puede guardar
+   (el índice sí registra el cambio), pero **cambia la semántica de la decisión**:
+   la congelada ya no *declara* su lado, lo declara un índice. Es una decisión
+   del propietario, no un detalle de implementación, y por eso no se ha tomado
+   aquí;
+3. **51 congeladas sin `meta`** son trabajo aparte cualquiera que sea la opción.
+
+**Derivación, con su control y las cuatro medidas:**
+`docs/research/cola-larga/derivaciones/lado-aditividad-121.{mjs,log}`.
+
+
 ## 📋 §120-SIN-CLASIFICAR · **SÍ hay canal por construcción, y pasa su control — pero sólo alcanza a ~25 de 171** — 120.ª, 2026-08-27
 
 La 119.ª dejó **165 de 314** sin clasificar tras rechazar un heurístico sobre el
