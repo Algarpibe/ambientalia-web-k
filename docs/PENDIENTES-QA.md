@@ -1,5 +1,202 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §8-DENOMINADOR · **el listón se reescribe con el denominador DERIVADO, y el barrido clasificó ANTES de sustituir** — 119.ª, 2026-08-27
+
+**Lo que había:** `ESQUEMA-CMS.md` §8 —el criterio de aceptación de la
+migración, o sea la definición de «terminado»— decía **«umbral CERO, 11
+páginas, 2 anchos»**. Derivado hoy, el clon compara **426 RUTAS**: el listón
+llevaba dentro el denominador **del día que se escribió**, ×38.7 por debajo.
+
+> **Un listón con un número congelado dentro no envejece ruidosamente: se
+> cumple con 11 y se lee como cumplido con 426.** Es §regla 9 —*un número
+> recordado envejece CONTRA el repo, en silencio*— cometida sobre el criterio
+> que decide cuándo para el proyecto.
+
+### El denominador de hoy, derivado y con su unidad
+
+**Unidad = RUTA**, y no es una elección: es la que las dos sondas declaran.
+`clon-base` construye `new Evaluadas({ unidad: "rutas", minimo: RUTAS.length })`
+y `RUTAS` sale de `rutasEmitidas()` (`lib.mjs` L621) sobre
+`.next/prerender-manifest.json`, filtrando `/_*` y lo que lleve punto.
+
+| derivación | fichero | valor |
+|---|---|---|
+| línea base @1440 | `medidas/clon-base-1440-t118-tras-el-archivo.json` | `meta.rutas` **426** · **426** claves en `.paginas` · **426** con `docH` numérico · **0** con `error` |
+| línea base @390 | `medidas/clon-base-390-t118-tras-el-archivo.json` | **426** / **426** / **426** / **0** |
+| auditoría del build | `medidas/manifiesto-2026-08-27-2.json` | `rutas` **426** · 25 familias · `vacias` **0** · `desaparecidas` **0** · 0 duplicadas · 0 con punto · 0 con `/_` |
+
+Reparto por familia, sumado y cuadrado: `/[slug]` 208 · `/casos-de-exito/[slug]`
+53 · `/recursos/[...ruta]` 44 · `/etiqueta/[slug]/page/[n]` 24 ·
+`/faqs/[slug]` 19 · `/etiqueta/[slug]` 12 · `/centro-de-ayuda/[...ruta]` 9 ·
+`/blog/page/[n]` · `/glosario/page/[n]` · `/sector/[slug]/page/[n]` 7 c/u ·
+`/sector/[slug]` · `/sectores/[slug]` 6 c/u · `/soporte/[...ruta]` 5 ·
+`/case-studies/[slug]` 4 · `/scientific-category/[slug]` ×2 3 c/u · **9
+familias de 1** = **426**.
+
+> ⚠ **El cruce de esas dos derivaciones NO verifica el 426** (§regla 15): las
+> dos leen el **mismo** `prerender-manifest` por la **misma** función. Su
+> concordancia prueba que **leen el mismo universo**, no que el universo sea
+> correcto. Lo que respalda el 426 es la derivación; su guarda es
+> `qa:manifiesto` con su negativo.
+
+> ⚠ **Lo que NO se pudo derivar hoy, y por eso no se escribió en ninguna
+> parte:** el recuento de **claves crudas** del manifiesto (antes del filtro).
+> El encargo lo citaba como **429**; no hay `.next` en el árbol y la tanda es
+> offline, así que sale **SIN DERIVAR**. Es la propia nota de operación del
+> encargo —*toda cifra se DERIVA antes de usarse, también las que yo te pase*—
+> cobrada sobre el encargo.
+
+### El barrido, clasificado ANTES de sustituir
+
+§*corregir un denominador no es sustituirlo en todas partes*: un mismo conjunto
+puede tener **dos cardinales ciertos a la vez, uno por unidad**, y sustituir a
+ciegas rompe los aciertos.
+
+**Denominadores del propio barrido, cada uno con su unidad** (y son distintos,
+que es la razón de publicarlos los dos): **29 LÍNEAS** con match ·
+**31 OCURRENCIAS**. La diferencia entera está en `PLAN-FASE-3.md:1661`, **una
+línea con 3 matches**. `grep -c` cuenta líneas, no matches — leer su salida
+como «31» habría sido §*un cardinal es un contenedor* dentro del propio barrido.
+
+| # | cubo | criterio | n de 31 | se toca |
+|---|---|---|---|---|
+| A | **LISTÓN VIVO** | el criterio de aceptación que un lector aplicaría HOY como objetivo | **4** | ✅ **REESCRITO** |
+| B | **OTRA UNIDAD — páginas de un PAGINADOR** | «11 páginas» de una serie paginada: otro objeto, nada que ver con el listón | **9** | ⛔ no |
+| C | **OTRO CONJUNTO — 11 páginas de CASO con `iframe`** | un censo pendiente sobre otro conjunto | **1** | ⛔ no |
+| D | **CONTEXTO HISTÓRICO, cierto en su fecha** | «las 11 páginas ya clonadas», «sin regresión: las 11 anteriores», una corrida pasada con su congelada | **15** | ⛔ no |
+| E | **CORRECCIÓN YA ESCRITA en un plan de fase** | ya dice que el criterio es el manifiesto | **1** | ⛔ no (ver abajo) |
+| F | **AFIRMACIÓN SIN FECHA en comentario de sonda** | envejecida, ni listón ni fechada | **1** | ⛔ no, fichada |
+
+**Cubo A — las 4 reescritas**, todas en `ESQUEMA-CMS.md`:
+L5553 (la frase del criterio) · L5557 y L5558 (las dos filas de `clon-base`) ·
+L5565 (§8.1 citando el criterio).
+
+**Cubo D — las 15 que se quedan, nombradas** para que no vuelvan a barrerse:
+`ESQUEMA-CMS.md` 99 · 319 · 320 · 5617 · `HANDOFF.md` 9151 · 12137 ·
+`PENDIENTES-QA.md` 14387 · 14578 · 14658 · `grupo-C/MEDICION.md` 118 · 269 ·
+306 · `EXPERIMENTO-URBANO.md` 409 · 410 · `scripts/qa/README.md` 551.
+**Las 15 son CIERTAS**: describen lo que se midió el día que se midió, y
+sustituirlas convertiría 15 aciertos en 15 fallos.
+
+**Cubo F — `scripts/qa/clase-censo.mjs` L143.** El comentario dice *«las rutas
+dinámicas, que son 6 de las 11 páginas del proyecto»*. **El código está bien**
+—deriva del `prerender-manifest`, así que las 426 entran solas—; lo envejecido
+es el comentario, que además **no lleva fecha**, así que no cae en el cubo D. Es
+§regla 3 (*un comentario es lo único del repo que nadie ejecuta ni verifica*).
+No se toca en una tanda que declara no tocar sondas; queda fichado aquí.
+
+### ⚠ Cubo E · LA CORRECCIÓN LLEVABA MESES ESCRITA — EN EL SITIO QUE NADIE RELEE
+
+`PLAN-FASE-2.md` L1204 dice, textual:
+
+> *«§8 dice «11 páginas» porque se escribió con 11; hoy son 17 y serán más — el
+> criterio es el `prerender-manifest`, no un número»*
+
+**Correcto, completo, razonado — y en un plan de fase.** El §8 siguió diciendo
+«11 páginas» y es §8 lo que se cita como el listón. Es **§regla 12** (*un
+enunciado con forma de regla escrito sólo en un acta o un plan de fase equivale
+a no haberlo escrito*) con su instancia más cara hasta hoy: lo corregido no era
+un hallazgo, era **la definición de terminado**.
+
+**Y su número mide cuánto envejeció el aviso mientras esperaba:** decía «hoy son
+17». Hoy son **426**.
+
+---
+
+## ⛔ §8-FIDELIDAD · **las CINCO comprobaciones del listón no miden fidelidad — ni una** — 119.ª, 2026-08-27
+
+Derivado del código de cada sonda, no de su nombre:
+
+| fila del listón | de dónde saca cada lado | ¿toca el original? |
+|---|---|---|
+| `qa:clon-base` @1440 | HTML servido hoy **contra una congelada del propio clon** | **NO** |
+| `qa:clon-base` @390 | ídem | **NO** |
+| `qa:enlaces` | HTML servido **contra `.next/prerender-manifest.json`** — los dos lados son el clon | **NO** |
+| `qa:corte` | el clon | **NO** |
+| `npm run check` | lint + typecheck + build | **NO** |
+
+**No es interpretación:** `cobertura.mjs` L18 declara
+`c = solo clon-contra-clon (clon-base, offsets)`, y `COBERTURA-MEDICION.md`
+escribe *«`clon-base` **no acredita ninguna celda de esta matriz** (es
+clon-contra-clon, no contra el original)»*.
+
+> **El listón de §8, tal como estaba, se podía cumplir ENTERO con el CMS
+> sirviendo una página que no se parece al original.** Δ0 contra la congelada
+> del clon significa *«la migración no movió nada»* — que es la pregunta
+> correcta **para la migración** y **no** es la pregunta de fidelidad.
+
+### Qué SÍ da fidelidad hoy, con su cobertura
+
+Derivado de `medidas/cobertura-2026-08-25.json` (`meta.rutas` **413**):
+
+| eje | `O` (dos lados) | `·` (nunca) | % de 413 | sondas |
+|---|---|---|---|---|
+| `base` | **139** | 274 | 33.7 % | `c-cabecera` · `f33-cmp-1440` · `lh-cmp` |
+| `secciones` | **139** | 274 | 33.7 % | `c-cmp` · `f33-cmp-1440` · `lh-cmp` |
+| `anchos` | **123** | 290 | 29.8 % | `c-banda` · `a-miga` · `f33-cmp-1440` · `lh-cmp` |
+| `modulos` | **110** | 303 | 26.6 % | `f33-cmp-1440` · `lh-cmp` · `mono-cmp` |
+| `filas` | **83** | 330 | 20.1 % | `lh-cmp` · `tree-cmp` · `mono-cmp` |
+| **`docH`** | **62** | 351 | **15.0 %** | `c-cmp` · `f33-cmp-1440` |
+| `enlaces` | 62 | 351 | 15.0 % | ⚠ **31 de esos 62 son de un solo lado** |
+| `comport` | **37** | 376 | 9.0 % | `comportamiento` |
+| `pie` | **7** | 406 | 1.7 % | `pie-cmp` |
+| `offsets` | **0** (`c` 3) | 410 | 0.0 % | solo clon por construcción |
+
+**Tres lecturas, y la primera es la que decide:**
+
+1. **el eje que el listón vigila —`docH`— es de los peor cubiertos contra el
+   original: 62 de 413 (15.0 %).** `clon-base` mide `docH` en las 426 y
+   **ninguna** cuenta como fidelidad;
+2. **la matriz está 13 rutas por detrás del build** (413 congeladas · 426
+   emitidas). Las 13 son `L1-sector` de la 118.ª, ya declaradas con **0 de 13**
+   en geometría. Los porcentajes de arriba son **el techo**, no el estado;
+3. **no existe ninguna sonda de dos lados cuyo universo sean las 426.** El eje
+   mejor cubierto llega al 33.7 % **sumando cinco comparadores**, cada uno con
+   su universo.
+
+### 🐞 §8-ENLACES-ACREDITA-UN-SOLO-LADO · fichado, **NO** arreglado
+
+`cobertura.mjs` L346:
+
+```js
+if (fuente("enlaces.json")) set("enlaces", J("enlaces.json").publicadas || RUTAS, "O", "enlaces", "enlaces");
+```
+
+marca nivel **`"O"` (dos lados)** desde `enlaces.json`, y `enlaces.mjs` **no lee
+el original en ningún momento**: su propia cabecera dice *«se leen del
+`prerender-manifest.json` que emite el build»*.
+
+**Derivado celda a celda sobre las 413:** el eje `enlaces` tiene **62 `O`**, de
+los que **31 los acredita `enlaces`** (un solo lado) y **31 `f33-cmp-1440`**
+(dos lados). **Retirando `enlaces`, el eje queda en 31.**
+
+Es §*acreditar un eje que la sonda no COMPARA*, con el contenedor puesto en **el
+nombre de la sonda** — el mismo mecanismo que el repo ya declaró para `lh-cmp`
+(`cobertura.mjs` L223-224 distingue explícitamente las dos preguntas) y que aquí
+no se aplicó.
+
+**Por qué NO se arregla en esta tanda, y es la razón buena:** mover
+`cobertura.mjs` obliga a re-correr su negativo para adjudicar el cambio
+(§regla 5ter — *arreglar el objeto caduca el control del instrumento*), y esta
+tanda es offline y declara no tocar sondas. **Fichado con su número es lo que
+permite que la siguiente lo pague sin volver a derivarlo.**
+
+⚠ **Y lo que este hallazgo NO dice:** que `qa:enlaces` esté mal. Hace
+exactamente lo que promete —vigilar la regla de rutas locales— y su verde es
+legítimo. Lo que está mal es **la celda de la matriz de fidelidad que se apoya
+en él**.
+
+### Redacción obligatoria del cierre de la migración
+
+| se puede escribir | respaldado por |
+|---|---|
+| «la migración no movió el clon: **Δ0 en 426 rutas × 2 anchos**» | `clon-base --cmp` contra su congelada **nombrada** |
+| «la fidelidad no bajó **donde estaba medida**» + la matriz | `qa:cobertura` re-derivada DESPUÉS de migrar |
+| ~~«el clon es fiel al original»~~ | **nada** — 0 sondas de dos lados sobre las 426 |
+
+---
+
+
 ## ✅ F3-4-SEPARADORAS · **las dos que faltaban, EJERCITADAS en vez de fichadas** — 116.ª, 2026-08-26
 
 La 115.ª dejó la mesa con tres decisiones y dos separadoras sin contestar, y las

@@ -5550,21 +5550,144 @@ omite. Entran en el inventario de §F2-5 · CASOS LEGALES NUNCA OBSERVADOS.
 que es determinista:
 
 > Con el sitio leyendo de Payload, **las mismas sondas contra el clon actual,
-> umbral CERO, 11 páginas, 2 anchos.**
+> umbral CERO, TODAS las rutas que el build emite, 2 anchos.**
 
-| comprobación | criterio |
+> ⚠⚠ **EL DENOMINADOR NO ES UN NÚMERO ESCRITO AQUÍ: ES EL `prerender-manifest`,
+> Y SE CITA CON SU FICHERO (reescrito 2026-08-27, 119.ª).**
+>
+> Hasta hoy el listón decía **«11 páginas»**, que es el denominador **del día
+> que se escribió**. Derivado hoy: **426 RUTAS**, o sea **×38.7**. Un listón con
+> un número congelado dentro no envejece ruidosamente — **se cumple con 11 y se
+> lee como cumplido con 426**, que es §regla 9 (*un número recordado envejece
+> CONTRA el repo, en silencio*) cometida sobre el criterio de aceptación.
+>
+> **La unidad es la RUTA, no la «página» ni la clave**, y es la que las dos
+> sondas declaran: `clon-base` construye su `Evaluadas` con
+> `unidad: "rutas", minimo: RUTAS.length`, y `RUTAS` sale de
+> `.next/prerender-manifest.json` filtrando `/_*` y lo que lleve punto
+> (`rutasEmitidas()` en `lib.mjs`).
+>
+> | derivación | fichero | valor |
+> |---|---|---|
+> | línea base del clon @1440 | `medidas/clon-base-1440-t118-tras-el-archivo.json` | `meta.rutas` **426** · 426 claves en `.paginas` · **0** con `error` |
+> | línea base del clon @390 | `medidas/clon-base-390-t118-tras-el-archivo.json` | `meta.rutas` **426** · 426 claves · **0** con `error` |
+> | auditoría del manifiesto | `medidas/manifiesto-2026-08-27-2.json` | `rutas` **426** · 25 familias · 0 vacías · 0 duplicadas |
+>
+> ⚠ **Y el cruce de esas dos NO verifica el 426** (§regla 15): las dos leen el
+> **mismo** `prerender-manifest` por la **misma** función, así que su
+> concordancia prueba que leen el mismo universo — no que el universo sea
+> correcto. Lo que respalda el 426 es la derivación, y su guarda es
+> `qa:manifiesto` con su negativo.
+>
+> ⚠ **Lo que hoy NO se puede derivar, y por eso no se escribe:** el recuento de
+> **claves crudas** del manifiesto —antes del filtro de `/_*` y del punto—. No
+> hay `.next` en el árbol, y esta tanda es offline. Se deja **SIN DERIVAR**, no
+> se rellena con un número recordado.
+
+| comprobación | criterio | qué lado mide |
+|---|---|---|
+| `npm run qa:clon-base -- 1440 --cmp <base>` | **Δ0** · las **426 rutas** del manifiesto · 0 regresiones | ⚠ **clon contra clon** |
+| `npm run qa:clon-base -- 390 --cmp <base>` | **Δ0** · las **426 rutas** del manifiesto · 0 regresiones | ⚠ **clon contra clon** |
+| `npm run qa:enlaces` | limpia en las dos direcciones, código 0 | ⚠ **clon contra el BUILD** |
+| `npm run qa:corte` | 12/12 | clon |
+| `npm run check` | verde | clon |
+
+> **El `<base>` se nombra, no se resuelve al canónico** (§regla 5): el fichero
+> `clon-base-{1440,390}.json` conserva la PRIMERA foto —**17 rutas**, de
+> julio—, así que un listón que dijera «la línea base de `clon-base`» mandaría a
+> comparar contra 17.
+
+### 8.0 · ⛔ LAS CINCO COMPROBACIONES DE ARRIBA NO MIDEN FIDELIDAD — NI UNA (2026-08-27, 119.ª)
+
+**Es la comprobación que §8 pedía y no tenía**, y sale del mismo sitio que la
+118.ª acaba de escribir: *una guarda solo-clon se lee como verde y no mide
+fidelidad — compara el clon con el clon de ayer, y ayer podía estar mal*.
+
+Las cinco filas de la tabla, derivadas de su código:
+
+| sonda | de dónde saca cada lado | ¿toca el original? |
+|---|---|---|
+| `clon-base` ×2 | el HTML servido **hoy** contra una congelada **del propio clon** | **NO** |
+| `enlaces` | el HTML servido contra `.next/prerender-manifest.json` — **los dos lados son el clon** | **NO** |
+| `corte` | el clon | **NO** |
+| `check` | lint + typecheck + build | **NO** |
+
+**Y no es una lectura mía: `cobertura.mjs` lo dice en su leyenda** —
+`c = solo clon-contra-clon (clon-base, offsets)`— y `COBERTURA-MEDICION.md` lo
+escribe con todas las letras: *«`clon-base` **no acredita ninguna celda de esta
+matriz** (es clon-contra-clon, no contra el original)»*.
+
+> **Consecuencia: el listón de §8, tal como estaba, se podía cumplir ENTERO con
+> el CMS sirviendo una página que no se parece al original.** Δ0 contra la
+> congelada del clon significa *«la migración no movió nada»*, que es la
+> pregunta correcta **para la migración** y **no** es la pregunta de fidelidad.
+
+**Qué instrumento del repo SÍ da fidelidad hoy, y con cuánta cobertura.**
+Derivado de `medidas/cobertura-2026-08-25.json` (`meta.rutas` **413**, `O` = dos
+lados, `c` = solo clon, `·` = nunca):
+
+| eje | `O` | `·` | % sobre 413 | sondas que lo acreditan |
+|---|---|---|---|---|
+| `base` (h1.y crudo) | **139** | 274 | 33.7 % | `c-cabecera` · `f33-cmp-1440` · `lh-cmp` |
+| `secciones` (árbol) | **139** | 274 | 33.7 % | `c-cmp` · `f33-cmp-1440` · `lh-cmp` |
+| `anchos` | **123** | 290 | 29.8 % | `c-banda` · `a-miga` · `f33-cmp-1440` · `lh-cmp` |
+| `modulos` | **110** | 303 | 26.6 % | `f33-cmp-1440` · `lh-cmp` · `mono-cmp` |
+| `filas` | **83** | 330 | 20.1 % | `lh-cmp` · `tree-cmp` · `mono-cmp` |
+| **`docH`** | **62** | 351 | **15.0 %** | `c-cmp` · `f33-cmp-1440` |
+| `enlaces` | 62 | 351 | 15.0 % | ⚠ ver abajo |
+| `comport` | **37** | 376 | 9.0 % | `comportamiento` |
+| `pie` | **7** | 406 | 1.7 % | `pie-cmp` |
+| `offsets` | **0** (`c` 3) | 410 | 0.0 % | `offsets` — solo clon por construcción |
+
+**Las tres cosas que esta tabla dice y el listón viejo no dejaba ver:**
+
+1. **el eje que el listón vigila —el alto del documento— es el SEGUNDO PEOR
+   cubierto contra el original: 62 de 413, un 15 %.** `clon-base` mide `docH` en
+   las 426 y **ninguna** de esas 426 cuenta como fidelidad;
+2. **el denominador de la matriz está 13 rutas por detrás del build.** La matriz
+   se congeló con **413** y hoy el manifiesto emite **426**: las 13 que entran
+   son `L1-sector` (118.ª), declaradas con **0 de 13** en geometría. O sea que
+   los porcentajes de arriba son **el techo**, no el estado;
+3. ⚠ **y hay un `O` que no debería serlo — 31 de los 62 del eje `enlaces`.**
+   `cobertura.mjs` L346 marca `enlaces` con nivel `"O"` (dos lados) desde
+   `enlaces.json`, y `enlaces.mjs` **no lee el original en ningún momento**:
+   compara el HTML servido contra las rutas del build. Derivado celda a celda:
+   **31 rutas las acredita `enlaces`** (un lado) y **31 `f33-cmp-1440`** (dos
+   lados). Es §*acreditar un eje que la sonda no COMPARA*, con el contenedor
+   puesto en **el nombre de la sonda**. Retirando `enlaces`, el eje queda en
+   **31**. Fichado en `PENDIENTES-QA.md`; **no se toca aquí** porque mover
+   `cobertura.mjs` exige re-correr su negativo (§regla 5ter).
+
+**Lo que el listón necesita y NO existe, que es el hallazgo:**
+
+> **No hay ninguna sonda de dos lados cuyo universo sean las 426.** El eje mejor
+> cubierto llega al 33.7 %, y lo hace **sumando cinco comparadores distintos**,
+> cada uno con su universo. Así que «el CMS está puesto» **no se puede afirmar
+> hoy en la unidad en la que el listón está escrito**: se afirma
+> **«no movió nada»** (que sí es alcanzable, y es lo que las 5 filas compran) y
+> por separado **«sigue siendo fiel en los N ejes × M rutas que alguien
+> comparó»**, con la matriz al lado.
+
+**Redacción obligatoria del cierre de la migración**, para que no vuelva a
+leerse una cosa por la otra:
+
+| se puede escribir | respaldado por |
 |---|---|
-| `npm run qa:clon-base -- 1440 --cmp <base>` | **Δ0** · 11 páginas · 0 regresiones |
-| `npm run qa:clon-base -- 390 --cmp <base>` | **Δ0** · 11 páginas · 0 regresiones |
-| `npm run qa:enlaces` | limpia en las dos direcciones, código 0 |
-| `npm run qa:corte` | 12/12 |
-| `npm run check` | verde |
+| «la migración no movió el clon: **Δ0 en 426 rutas × 2 anchos**» | `clon-base --cmp` contra su congelada nombrada |
+| «la fidelidad no bajó **donde estaba medida**: `docH` 62 · `base` 139 · …» | `qa:cobertura`, re-derivada **después** de migrar |
+| ~~«el clon es fiel al original»~~ | **nada** — 0 sondas de dos lados sobre las 426 |
 
 ### 8.1 · ⚠ El contrato NO es el mismo a todos los anchos (2026-08-02)
 
-El listón de arriba dice **«umbral CERO, 11 páginas, 2 anchos»**, y hay que leer
-las tres palabras juntas: **el umbral cero vale EN esos dos anchos**. Fuera de
-ellos el contrato es otro, y confundirlos genera trabajo sin final.
+El listón de arriba dice **«umbral CERO, todas las rutas del manifiesto, 2
+anchos»** —y hasta el 2026-08-27 decía «11 páginas»—, y hay que leer
+**el umbral y los anchos juntos: el umbral cero vale EN esos dos anchos**. Fuera
+de ellos el contrato es otro, y confundirlos genera trabajo sin final.
+
+> **Y el cambio de denominador NO toca este §:** el umbral cero se aplicaba a 11
+> rutas y ahora a 426, pero **a los mismos dos anchos**. Lo que §8.1 declara es
+> *dónde* vale el umbral, no *sobre cuántas*. Los dos ejes son ortogonales
+> (§*N valores de un total no son N familias*).
 
 | dónde | contrato | qué es un defecto |
 |---|---|---|
