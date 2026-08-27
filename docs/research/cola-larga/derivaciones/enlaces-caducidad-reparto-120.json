@@ -1,0 +1,141 @@
+{
+ "meta": {
+  "fecha": "2026-08-27",
+  "tanda": "120.ª ESCALÓN 1",
+  "congeladas": 17
+ },
+ "canonica": {
+  "fichero": "enlaces.json",
+  "fecha": "2026-08-01",
+  "paginas": 31
+ },
+ "citado": {
+  "fichero": "enlaces-2026-08-20-2.json",
+  "fecha": "2026-08-20",
+  "paginas": 382
+ },
+ "hoy": {
+  "fichero": "enlaces-2026-08-27.json",
+  "fecha": "2026-08-27",
+  "paginas": 426,
+  "hrefs": 150,
+  "apariciones": 9695,
+  "rotos": 4
+ },
+ "cascaron": {
+  "nHrefs": 21,
+  "apariciones": 8946,
+  "pct": 92.3,
+  "hrefs": [
+   {
+    "href": "https://kunakair.com/es/soporte/",
+    "n": 426,
+    "origen": "src/components/HeaderNav.tsx:563 · src/lib/nav.ts:28"
+   },
+   {
+    "href": "https://kunakair.com/es/soporte/centro-de-ayuda/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:64 · src/lib/nav.ts:30 · src/lib/nav.ts:162"
+   },
+   {
+    "href": "https://kunakair.com/es/soporte/servicio-de-reparacion/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:65 · src/lib/nav.ts:31"
+   },
+   {
+    "href": "https://kunakair.com/es/blog/",
+    "n": 426,
+    "origen": "src/components/HeaderNav.tsx:573 · src/components/listados/Paginador.tsx:99 · src/lib/footer.ts:60 · src/lib/nav.ts:35"
+   },
+   {
+    "href": "https://kunakair.com/es/contacto/",
+    "n": 426,
+    "origen": "src/components/Beneficios.tsx:55 · src/components/CtaInmerso.tsx:13 · src/components/CtaPreocupa.tsx:14 · src/components/HeaderNav.tsx:474 · src/components/HeaderNav.tsx:574 · src/components/PresenciaMundial.tsx:34 · src/components/ProductosTabs.tsx:142 · src/components/SolucionProfesional.tsx:166 · src/lib/accesorios.ts:346 · src/lib/api.ts:34 · src/lib/footer.ts:50 · src/lib/monitor.ts:147 · src/lib/monografico.ts:377 · src/lib/monografico.ts:386 · src/lib/monografico.ts:394 · src/lib/monografico.ts:499 · src/lib/monografico.ts:708 · src/lib/monografico.ts:830 · src/lib/monografico.ts:1013 · src/lib/monografico.ts:1113 · src/lib/monografico.ts:1211 · src/lib/monografico.ts:1269 · src/lib/monografico.ts:1323 · src/lib/nav.ts:36 · src/lib/sectores.ts:283 · src/lib/sectores.ts:363 · src/lib/sectores.ts:371 · src/lib/sectores.ts:380 · src/lib/sectores.ts:520 · src/lib/sectores.ts:674 · src/lib/sectores.ts:680 · src/lib/sectores.ts:686 · src/lib/sectores.ts:818 · src/lib/sectores.ts:894 · src/lib/sectores.ts:899 · src/lib/sectores.ts:904 · src/lib/sectores.ts:1012 · src/lib/sectores.ts:1075 · src/lib/sectores.ts:1080 · src/lib/sectores.ts:1086 · src/lib/software.ts:27"
+   },
+   {
+    "href": "https://kunakair.com/es/productos/",
+    "n": 426,
+    "origen": "src/components/HeaderNav.tsx:353 · src/components/HeaderNav.tsx:533 · src/lib/accesorios.ts:404 · src/lib/api.ts:59 · src/lib/monitor.ts:15 · src/lib/software.ts:76"
+   },
+   {
+    "href": "https://kunakair.com/es/sectores/",
+    "n": 426,
+    "origen": "src/components/HeaderNav.tsx:433 · src/components/HeaderNav.tsx:542 · src/lib/monografico.ts:453 · src/lib/sectores.ts:267 · src/lib/sectores.ts:507 · src/lib/sectores.ts:802 · src/lib/sectores.ts:996"
+   },
+   {
+    "href": "https://kunakair.com/es/empresa/",
+    "n": 426,
+    "origen": "src/components/HeaderNav.tsx:158 · src/components/HeaderNav.tsx:547 · src/lib/footer.ts:48 · src/lib/nav.ts:154"
+   },
+   {
+    "href": "https://kunakair.com/es/empresa/premios-y-reconocimientos/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:49 · src/lib/nav.ts:155"
+   },
+   {
+    "href": "https://kunakair.com/es/casos-de-exito/",
+    "n": 426,
+    "origen": "src/app/casos-de-exito/page.tsx:62 · src/components/caso/CasoPagina.tsx:96 · src/components/HeaderNav.tsx:164 · src/components/HeaderNav.tsx:550 · src/components/UltimosProyectos.tsx:24 · src/lib/footer.ts:59 · src/lib/software.ts:29"
+   },
+   {
+    "href": "https://kunakair.com/es/recursos/",
+    "n": 426,
+    "origen": "src/components/HeaderNav.tsx:169 · src/components/HeaderNav.tsx:553 · src/components/listados/PaginaRecursos.tsx:178"
+   },
+   {
+    "href": "https://kunakair.com/es/recursos/documentos-cientificos/",
+    "n": 426,
+    "origen": "src/components/listados/PaginaCategoriaCientifica.tsx:43 · src/lib/footer.ts:61 · src/lib/nav.ts:160"
+   },
+   {
+    "href": "https://kunakair.com/es/recursos/kunakpedia/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:62 · src/lib/nav.ts:161"
+   },
+   {
+    "href": "https://kunakair.com/es/recursos/preguntas-frecuentes/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:63 · src/lib/nav.ts:163"
+   },
+   {
+    "href": "https://kunakair.com/es/descarga-catalogo/",
+    "n": 426,
+    "origen": "src/components/HazVisible.tsx:29 · src/components/HeaderNav.tsx:492 · src/components/HeaderNav.tsx:558 · src/components/HeroSection.tsx:100 · src/components/SolucionProfesional.tsx:35 · src/lib/arquetipo-a.ts:335 · src/lib/faqs.ts:68 · src/lib/monitor.ts:148 · src/lib/monografico.ts:503 · src/lib/monografico.ts:1017 · src/lib/sectores.ts:286 · src/lib/sectores.ts:521 · src/lib/sectores.ts:819 · src/lib/sectores.ts:1013 · src/lib/software.ts:28"
+   },
+   {
+    "href": "https://kunakair.com/es/suscribete/",
+    "n": 426,
+    "origen": "src/components/CtaNewsletter.tsx:42 · src/lib/footer.ts:74 · src/lib/grupo-c-plantilla.ts:69"
+   },
+   {
+    "href": "https://kunakair.com/es/politica-de-seguridad-de-la-informacion/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:51"
+   },
+   {
+    "href": "https://kunakair.com/es/sistema-interno-de-informacion/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:52"
+   },
+   {
+    "href": "https://kunakair.com/es/aviso-legal/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:82"
+   },
+   {
+    "href": "https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:83"
+   },
+   {
+    "href": "https://kunakair.com/es/politica-de-cookies/",
+    "n": 426,
+    "origen": "src/lib/footer.ts:84"
+   }
+  ]
+ },
+ "cola": {
+  "nHrefs": 129,
+  "apariciones": 749
+ }
+}

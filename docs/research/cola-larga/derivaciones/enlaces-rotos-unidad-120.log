@@ -1,0 +1,17 @@
+
+═══ EL OFUSCADOR DE CLOUDFLARE, EN SUS TRES UNIDADES
+
+  rutas servidas y recorridas ....... 426/426
+  PÁGINAS que lo sirven ............. 5
+  HREFS distintos ................... 4   ← la unidad de `qa:enlaces`
+  APARICIONES totales ............... 14
+  de esas páginas, CON descifrador .. 0   ← si no es 0, no todas son media unidad
+
+  página                                              hrefs  aparic  decoder
+  /politica-de-privacidad-y-de-proteccion-de-datos        1       4        0
+  /sistema-interno-de-informacion                         2       4        0
+  /aviso-legal                                            1       2        0
+  /estamos-listos-para-ayudarle                           1       2        0
+  /fourth-session-of-the-united-nations-environment-assembly-2    1       2        0
+
+→ derivaciones/enlaces-rotos-unidad-120.json

@@ -1,0 +1,68 @@
+
+═══ 1 · LA SERIE, Y LO QUE EL NOMBRE CANÓNICO GUARDA
+
+  fichero                              fecha        páginas  hrefs  aparic  rotos
+  enlaces-2026-08-01.json             2026-08-01        31      0       0      0
+  enlaces.json                        2026-08-01        31      0       0      0
+  enlaces-2026-08-02-2.json           2026-08-02        31      0       0      0
+  enlaces-2026-08-02-3.json           2026-08-02        31      0       0      0
+  enlaces-2026-08-02-4.json           2026-08-02        31      0       0      0
+  enlaces-2026-08-02-5.json           2026-08-02        31      0       0      0
+  enlaces-2026-08-02.json             2026-08-02        31      0       0      0
+  enlaces-2026-08-03.json             2026-08-03        31      0       0      0
+  enlaces-2026-08-05.json             2026-08-05        31      0       0      0
+  enlaces-2026-08-06-2.json           2026-08-06        31      0       0      0
+  enlaces-2026-08-06.json             2026-08-06        31      0       0      0
+  enlaces-2026-08-08.json             2026-08-08        31      0       0      0
+  enlaces-2026-08-18.json             2026-08-18       374    105    1379      2
+  enlaces-2026-08-19.json             2026-08-19       374    105    1379      2
+  enlaces-2026-08-20-2.json           2026-08-20       382    105    1395      2
+  enlaces-2026-08-20.json             2026-08-20       374    105    1379      2
+  enlaces-2026-08-27.json             2026-08-27       426    150    9695      4
+
+  ⚠ el nombre CANÓNICO `enlaces.json` es de 2026-08-01 y dice 31 páginas (§regla 5: guarda la PRIMERA foto, no el estado de hoy).
+
+═══ 2 · LA CIFRA CITADA POR LA 119.ª, LOCALIZADA
+
+  «105 hrefs · 1395 apariciones · 2 rotos» sale de enlaces-2026-08-20-2.json (2026-08-20).
+  hrefs distintos en ese fichero, derivado: 105
+
+  caducidad: 7 días · 44 rutas de diferencia
+
+  eje                 citado (2026-08-20)   HOY (2026-08-27)
+  páginas                           382           426
+  hrefs distintos                   105           150
+  apariciones                      1395          9695
+  rotos (unidad: href)                2             4
+  densidad por página              3.65         22.76
+
+═══ 3 · DÓNDE ESTÁ LA MASA — 21 hrefs o 150 arreglos
+
+  hrefs del CASCARÓN (en las 426) : 21
+  apariciones que suman ................. 8946  (92.3 %)
+  el resto ............................. 749 en 129 hrefs
+
+  aparic  destino (ya emitido por el build)          origen
+     426  /soporte/                                     src/components/HeaderNav.tsx:563 · src/lib/nav.ts:28
+     426  /soporte/centro-de-ayuda/                     src/lib/footer.ts:64 · src/lib/nav.ts:30
+     426  /soporte/servicio-de-reparacion/              src/lib/footer.ts:65 · src/lib/nav.ts:31
+     426  /blog/                                        src/components/HeaderNav.tsx:573 · src/components/listados/Paginad
+     426  /contacto/                                    src/components/Beneficios.tsx:55 · src/components/CtaInmerso.tsx:1
+     426  /productos/                                   src/components/HeaderNav.tsx:353 · src/components/HeaderNav.tsx:53
+     426  /sectores/                                    src/components/HeaderNav.tsx:433 · src/components/HeaderNav.tsx:54
+     426  /empresa/                                     src/components/HeaderNav.tsx:158 · src/components/HeaderNav.tsx:54
+     426  /empresa/premios-y-reconocimientos/           src/lib/footer.ts:49 · src/lib/nav.ts:155
+     426  /casos-de-exito/                              src/app/casos-de-exito/page.tsx:62 · src/components/caso/CasoPagin
+     426  /recursos/                                    src/components/HeaderNav.tsx:169 · src/components/HeaderNav.tsx:55
+     426  /recursos/documentos-cientificos/             src/components/listados/PaginaCategoriaCientifica.tsx:43 · src/lib
+     426  /recursos/kunakpedia/                         src/lib/footer.ts:62 · src/lib/nav.ts:161
+     426  /recursos/preguntas-frecuentes/               src/lib/footer.ts:63 · src/lib/nav.ts:163
+     426  /descarga-catalogo/                           src/components/HazVisible.tsx:29 · src/components/HeaderNav.tsx:49
+     426  /suscribete/                                  src/components/CtaNewsletter.tsx:42 · src/lib/footer.ts:74
+     426  /politica-de-seguridad-de-la-informacion/     src/lib/footer.ts:51
+     426  /sistema-interno-de-informacion/              src/lib/footer.ts:52
+     426  /aviso-legal/                                 src/lib/footer.ts:82
+     426  /politica-de-privacidad-y-de-proteccion-de-datos/src/lib/footer.ts:83
+     426  /politica-de-cookies/                         src/lib/footer.ts:84
+
+→ derivaciones/enlaces-caducidad-reparto-120.json

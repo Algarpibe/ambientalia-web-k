@@ -1,5 +1,140 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ §120-ENLACES · **el rojo es REAL y se queda ROJO — la cifra que se citaba estaba caducada 7 días y 44 rutas, y el defecto ha CRECIDO** — 120.ª, 2026-08-27
+
+**Corrida sola, sin pipear, con el clon servido contra el `.next` de hoy.**
+Última línea entera, que es la de unidades:
+
+```
+  ✓ evaluadas 426/426 páginas servidas · enlaces
+```
+
+**EXIT=1 · dominio completo, 426 de 426.** No es un verde vacío ni un alcance
+recortado: la sonda vio todo lo que dice ver.
+
+> ⚠ **Y la primera corrida no midió nada, y eso también es dato:** sin el clon
+> servido dio **`❌ NO SE PUDO EVALUAR · 0 de 426 páginas servidas`** con exit 1.
+> El contrato de §regla 4bis hizo exactamente su trabajo — *«esto NO es "no hay
+> diferencias"»*— en vez de publicar un cero.
+
+### 1 · Los DOS números, separados con su unidad y su denominador
+
+Iban juntos y son cosas distintas. Y el primero **tiene tres unidades**, no una:
+
+| eje | unidad | n | denominador |
+|---|---|---|---|
+| **ROTOS** (404 de verdad) | **href distinto** | **4** | ← la que publica `qa:enlaces` |
+| | **PÁGINA que lo sirve** | **5** | de 426 |
+| | **aparición** | **14** | — |
+| **apuntan al original teniendo ruta local** | **href distinto** | **150** | — |
+| | **aparición** | **9695** | de 37 243 hrefs totales |
+
+> ⚠ **`qa:enlaces` publica `rotos: 4` SIN SU UNIDAD, y la lectura natural —«4
+> páginas rotas»— es falsa.** Deduplica con `vistosRotos.has(href)`
+> (`enlaces.mjs:207`), así que su unidad es **href** y el campo `pagina` guarda
+> sólo **la primera** que lo sirvió. `/politica-de-privacidad-y-de-proteccion-de-datos`
+> sirve **4 apariciones con 0 descifrador** y **no sale en la lista**, porque su
+> `href` sin fragmento ya se había visto en `/aviso-legal`.
+>
+> Es §*un cardinal es un contenedor y absorbe la membresía* con el contenedor
+> puesto en el `Set` de deduplicación, y §regla 14 sobre la unidad. **Fichado —
+> no se toca la sonda en esta tanda.** Derivación:
+> `derivaciones/enlaces-rotos-unidad-120.{mjs,log,json}`.
+
+### 2 · La caducidad, DERIVADA antes de leer ningún veredicto
+
+La 119.ª citaba **«105 hrefs · 1395 apariciones · 2 rotos»**. Buscada **por su
+valor** en la serie de congeladas, sale de **`enlaces-2026-08-20-2.json`**:
+
+| eje | citado (2026-08-20) | **HOY (2026-08-27)** |
+|---|---|---|
+| páginas | 382 | **426** |
+| hrefs distintos | 105 | **150** |
+| apariciones | 1395 | **9695** |
+| rotos (unidad href) | 2 | **4** |
+| **densidad por página** | 3.65 | **22.76** |
+
+**Caducidad: 7 días · 44 rutas.** Ninguno de los tres números citados es de hoy
+— una sonda citada desde una congelada vieja **mide el artefacto, no el clon**.
+
+> ⚠ **Y §regla 5 en vivo, otra vez:** el nombre **canónico** `enlaces.json` es
+> del **2026-08-01** y dice **31 páginas**. Quien lo abra para «saber cómo está
+> la cosa» lee un clon de hace 26 días y 395 rutas. La línea base vigente vive
+> en su fichero fechado, y **se nombra**.
+
+### 3 · Los ROTOS: son UN mecanismo, ya fichado — y la predicción de la 83.ª se ha CUMPLIDO
+
+Los 4 hrefs son **el ofuscador de correo de Cloudflare**. Medido en los dos
+lados sobre el clon servido:
+
+| | |
+|---|---|
+| marcado ofuscado (`class="__cf_email__" data-cfemail=…`) | **presente** |
+| `<script>` descifrador (`email-decode`) | **0 en las 5 páginas** |
+
+Es la **media unidad** que `CLAUDE.md` ya nombra —*un marcado ofuscado más su
+descifrador son UNA unidad*—: la cadena quita el script y deja el `href` que ese
+script existía para reparar.
+
+**Y lo que hay que leer es el crecimiento.** La 83.ª (2026-08-18) fichó *«5
+páginas distintas: **2 clonadas** que sirven el enlace roto + **3 sueltas** aún
+sin clonar»*. Derivado hoy contra el corpus y contra el clon servido:
+
+| página | corpus | ¿clonada? | sirve el roto |
+|---|---|---|---|
+| `/estamos-listos-para-ayudarle` | `entradas-blog/` | ya lo estaba | **sí** |
+| `/fourth-session-…-assembly-2` | `entradas-blog/` | ya lo estaba | **sí** |
+| `/aviso-legal` | `fase-3/sueltas/` | **desde entonces** | **sí** |
+| `/sistema-interno-de-informacion` | `fase-3/sueltas/` | **desde entonces** | **sí** |
+| `/politica-de-privacidad-y-de-proteccion-de-datos` | `fase-3/sueltas/` | **desde entonces** | **sí** (y la sonda no lo lista) |
+
+> **La predicción acertó la POBLACIÓN (5) y el mecanismo: las 3 «sueltas» se han
+> clonado y cada una ha traído su enlace muerto.** O sea que esto **no crece por
+> azar: crece por construcción**, una página por cada clonado, y seguirá
+> creciendo mientras la cadena siga quitando el descifrador.
+
+### 4 · Los 150: el 92.3 % de la masa está en **21 hrefs**, no en 150
+
+| | hrefs | apariciones | % |
+|---|---|---|---|
+| **del CASCARÓN** (en las 426 páginas) | **21** | **8946** | **92.3 %** |
+| cola | 129 | 749 | 7.7 % |
+
+Los 21 destinos **los emite el build — 16 de 16 comprobados contra el
+manifiesto**, y sus orígenes son exactamente los ficheros que `CLAUDE.md` nombra
+como aplicantes de la **Regla de rutas locales**: `src/lib/nav.ts` (28–31, 155,
+161–163), `src/lib/footer.ts` (49, 51, 52, 62–65, 74, 82–84) y
+`src/components/HeaderNav.tsx`.
+
+> **La regla está escrita y no se cumple en 21 destinos** —*si el destino de un
+> enlace ya está clonado, el `href` va a la ruta local*—. Y como viven en el
+> cascarón, **se multiplican por las 426**: de ahí la densidad ×6.2 (3.65 →
+> 22.76), que **no** es proporcional a las 44 rutas nuevas.
+
+Derivación: `derivaciones/enlaces-caducidad-reparto-120.{mjs,log,json}`.
+
+### 5 · §regla 21 la vuelta: **se queda ROJA**
+
+Para ponerla verde habría que **ajustar lo que espera** —dar por buenos 150
+hrefs al original con ruta local emitida, o los 4 `cdn-cgi`—. Eso es escribir el
+defecto **dentro** de la guarda, y esta misma tanda acaba de medir lo que cuesta:
+`clase-censo` no estaba rota por accidente, estaba **verde publicando el
+veredicto contrario al verdadero** (`candidatos: 0` cuando eran 63 y 35).
+
+**No se toca la sonda, no se ajusta el umbral, no se arregla el clon en esta
+tanda.** Queda fichado con sus dos lados y su reparto, que es lo que el encargo
+pedía.
+
+### Lo que esto NO hace, declarado
+
+- **NO arregla los 21 del cascarón** ni los 129 de la cola. El trabajo está
+  dimensionado —21 hrefs en 3 ficheros compran el 92.3 %— pero es otra tanda.
+- **NO arregla la media unidad de Cloudflare.** Y ojo: la salida no es sólo
+  «devolver el script» — §*un marcado y el `<script>` que lo REPARA son una
+  unidad*, así que deshacer la ofuscación a mano es igual de válido y
+  probablemente mejor. Sin decidir.
+- **NO añade la unidad al informe de `qa:enlaces`.** Fichado en §1.
+
 ## ✅ §120-PASO-0 · **el «no hay `.next`» era del instrumento — y debajo había una sonda MUERTA desde agosto y un cero con forma de dato** — 120.ª, 2026-08-27
 
 **Encargo:** derivar **por qué** la 119.ª dio `.next` por ausente, y **arreglarlo

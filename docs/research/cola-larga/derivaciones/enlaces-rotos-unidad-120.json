@@ -1,0 +1,57 @@
+{
+ "meta": {
+  "fecha": "2026-08-27",
+  "tanda": "120.ª ESCALÓN 1",
+  "rutas": 426,
+  "servidas": 426
+ },
+ "unidades": {
+  "paginas": 5,
+  "hrefsDistintos": 4,
+  "apariciones": 14,
+  "paginasConDescifrador": 0
+ },
+ "porPagina": [
+  {
+   "ruta": "/politica-de-privacidad-y-de-proteccion-de-datos",
+   "hrefs": [
+    "/cdn-cgi/l/email-protection"
+   ],
+   "nApariciones": 4,
+   "decoder": 0
+  },
+  {
+   "ruta": "/sistema-interno-de-informacion",
+   "hrefs": [
+    "/cdn-cgi/l/email-protection#3d5e52504d51545c535e587d5648535c5613584e",
+    "/cdn-cgi/l/email-protection"
+   ],
+   "nApariciones": 4,
+   "decoder": 0
+  },
+  {
+   "ruta": "/aviso-legal",
+   "hrefs": [
+    "/cdn-cgi/l/email-protection"
+   ],
+   "nApariciones": 2,
+   "decoder": 0
+  },
+  {
+   "ruta": "/estamos-listos-para-ayudarle",
+   "hrefs": [
+    "/cdn-cgi/l/email-protection#20535550504f5254604b554e414b0e4553"
+   ],
+   "nApariciones": 2,
+   "decoder": 0
+  },
+  {
+   "ruta": "/fourth-session-of-the-united-nations-environment-assembly-2",
+   "hrefs": [
+    "/cdn-cgi/l/email-protection#57773e393138173c2239363c793224"
+   ],
+   "nApariciones": 2,
+   "decoder": 0
+  }
+ ]
+}
