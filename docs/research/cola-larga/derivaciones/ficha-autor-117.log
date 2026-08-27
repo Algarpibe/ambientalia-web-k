@@ -119,4 +119,18 @@
      ABSOLUTO  https://kunakair.com/es/author/irene/   (/apps/web/src/lib/arquetipo-a.ts)
   ⇒ ABSOLUTOS **1** · LOCALES **0**  ✅ «colección sin archivo» no crea ni un enlace roto
 
+5 · EL CANAL DE MEDIA DE LA FICHA (enumerado ANTES de que mate un seed)
+  fotos DISTINTAS en la ficha (bloque balanceado): **5**
+     FALTA n=141 kunak              wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png
+     FALTA n=  4 edurne-ibarrola    p-content/uploads/2024/04/edurne-ibarrola-kunak.jpeg
+     FALTA n=  3 irene              wp-content/uploads/2024/04/irene-lara-kunak.jpg
+     FALTA n=  3 javier-fernandez   wp-content/uploads/2024/04/Javier_Fernandez_1.jpg
+     FALTA n=  1 admin              wp-content/themes/KunakAir/assets/images/user.svg
+  ⇒ RESUELTAS localmente: **0 de 5**
+  ⇒ **el canal NO está capturado**. Se ficha con su cardinal AHORA, que es lo
+     que §EL INVENTARIO pide: los tres canales anteriores se descubrieron
+     MATANDO UN SEED, y éste se descubre antes de escribir el esquema.
+     Consecuencia para el ESCALÓN 4: sembrar `autores.foto` necesita estos
+     5 bytes, o el campo se declara y se deja vacío CON SU FRACCIÓN.
+
 ✓ congelada en \scripts\qa\medidas\ficha-autor-117.json

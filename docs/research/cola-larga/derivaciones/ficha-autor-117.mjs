@@ -384,6 +384,39 @@ const locales = conAuthor.filter((a) => !/^https?:/.test(a.h)).length;
 say(`  ⇒ ABSOLUTOS **${conAuthor.length - locales}** · LOCALES **${locales}**` +
     `  ${locales === 0 ? "✅ «colección sin archivo» no crea ni un enlace roto" : "❌ hay enlace local a una ruta que el build no emite"}`);
 
+/* ── 5 · EL CANAL DE MEDIA DE LA FICHA ───────────────────────────────────
+ * §EL INVENTARIO DE MEDIA SE DERIVA DE LOS CANALES QUE EL ESQUEMA DECLARA:
+ * el canal se enumera **antes de necesitarlo**, no cuando mate un seed. La
+ * `foto` del autor es un canal `upload` que el ESCALÓN 2 va a declarar, así
+ * que su cardinal —incluido el CERO— se publica aquí.
+ *
+ * ⚠ Se cuenta sobre el bloque BALANCEADO, no sobre una ventana: una `slice`
+ * alrededor de la ficha se lleva las imágenes del cuerpo que vienen detrás y
+ * publica un conjunto inflado (§sondas 4, tercera cara — comprobado: una
+ * ventana de 2500 chars daba **17** fotos, y de ellas la mayoría son del
+ * cuerpo del artículo, no de la ficha). */
+say("");
+say("5 · EL CANAL DE MEDIA DE LA FICHA (enumerado ANTES de que mate un seed)");
+const fotos = new Map();
+for (const fi of todasFichas) for (const p of fi.papeles) {
+  if (!p.img) continue;
+  if (!fotos.has(p.img)) fotos.set(p.img, { n: 0, slugs: new Set() });
+  const e = fotos.get(p.img); e.n++; if (p.slug) e.slugs.add(p.slug);
+}
+const CANDIDATOS = ["media-corpus", join("apps", "web", "public"), join("corpus", "media")];
+let resueltas = 0;
+say(`  fotos DISTINTAS en la ficha (bloque balanceado): **${fotos.size}**`);
+for (const [src, e] of [...fotos].sort((a, b) => b[1].n - a[1].n)) {
+  const rel = src.replace(/^https?:\/\/[^/]+\//, "");
+  const donde = CANDIDATOS.filter((c) => existsSync(join(RAIZ, c, rel)));
+  if (donde.length) resueltas++;
+  say(`     ${donde.length ? "OK   " : "FALTA"} n=${String(e.n).padStart(3)} ${[...e.slugs].join(",").padEnd(18)} ${rel.slice(-52)}`);
+}
+say(`  ⇒ RESUELTAS localmente: **${resueltas} de ${fotos.size}**`);
+say(`  ⇒ ${resueltas === fotos.size
+  ? "el canal está cubierto"
+  : `**el canal NO está capturado**. Se ficha con su cardinal AHORA, que es lo\n     que §EL INVENTARIO pide: los tres canales anteriores se descubrieron\n     MATANDO UN SEED, y éste se descubre antes de escribir el esquema.\n     Consecuencia para el ESCALÓN 4: sembrar \`autores.foto\` necesita estos\n     ${fotos.size - resueltas} bytes, o el campo se declara y se deja vacío CON SU FRACCIÓN.`}`);
+
 /* ── SALIDA ───────────────────────────────────────────────────────────── */
 const MED = join(RAIZ, "scripts", "qa", "medidas");
 const dest = join(MED, "ficha-autor-117.json");
@@ -402,6 +435,7 @@ const payload = {
   autoresConVariosProemios: autoresVarios,
   cargosDeArchivo: cargos,
   clon: { ficherosCodigo: codigo.length, emitenFicha: emiteFicha, hrefsAuthor: conAuthor, locales },
+  media: { distintas: fotos.size, resueltas, fotos: [...fotos].map(([src, e]) => ({ src, n: e.n, slugs: [...e.slugs] })) },
 };
 if (existsSync(dest) && readFileSync(dest, "utf8") !== JSON.stringify(payload, null, 2) && !process.env.PISAR) {
   const alt = dest.replace(/\.json$/, `-${new Date().toISOString().slice(0, 10)}.json`);

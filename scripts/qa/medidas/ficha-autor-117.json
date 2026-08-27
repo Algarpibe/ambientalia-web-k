@@ -54,5 +54,46 @@
       }
     ],
     "locales": 0
+  },
+  "media": {
+    "distintas": 5,
+    "resueltas": 0,
+    "fotos": [
+      {
+        "src": "https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png",
+        "n": 141,
+        "slugs": [
+          "kunak"
+        ]
+      },
+      {
+        "src": "https://kunakair.com/wp-content/uploads/2024/04/irene-lara-kunak.jpg",
+        "n": 3,
+        "slugs": [
+          "irene"
+        ]
+      },
+      {
+        "src": "https://kunakair.com/wp-content/uploads/2024/04/edurne-ibarrola-kunak.jpeg",
+        "n": 4,
+        "slugs": [
+          "edurne-ibarrola"
+        ]
+      },
+      {
+        "src": "https://kunakair.com/wp-content/uploads/2024/04/Javier_Fernandez_1.jpg",
+        "n": 3,
+        "slugs": [
+          "javier-fernandez"
+        ]
+      },
+      {
+        "src": "https://kunakair.com/wp-content/themes/KunakAir/assets/images/user.svg",
+        "n": 1,
+        "slugs": [
+          "admin"
+        ]
+      }
+    ]
   }
 }
