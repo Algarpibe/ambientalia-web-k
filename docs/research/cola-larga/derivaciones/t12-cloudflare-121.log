@@ -1,0 +1,37 @@
+═══ 0 · EL CORPUS AFECTADO (leído de la DB, no supuesto) ═══
+  filas con marcado ofuscado: 5
+    entradas_blog.cuerpo               estamos-listos-para-ayudarle
+    entradas_blog.cuerpo               fourth-session-of-the-united-nations-environment-assembly-2
+    paginas_blocks_texto_pagina.html   aviso-legal
+    paginas_blocks_texto_pagina.html   politica-de-privacidad-y-de-proteccion-de-datos
+    paginas_blocks_texto_pagina.html   sistema-interno-de-informacion
+
+═══ 1+2 · DIANA · n · post() ═══
+  estamos-listos-para-ayudarle                           diana=2 n=2 ✓ post=vacío ✓
+  fourth-session-of-the-united-nations-environment-ass   diana=1 n=1 ✓ post=vacío ✓
+  aviso-legal                                            diana=1 n=1 ✓ post=vacío ✓
+  politica-de-privacidad-y-de-proteccion-de-datos        diana=2 n=2 ✓ post=vacío ✓
+  sistema-interno-de-informacion                         diana=3 n=3 ✓ post=vacío ✓
+  ── totales: diana 9 · n 9 · quejas 0
+
+  correos restituidos (lo que el autor escribió, antes de que el CDN lo tapara):
+     1 × mailto:" info@kunak.es"
+     1 × mailto:"compliance@kunak.es"
+     2 × mailto:"contact@kunakair.com"
+     1 × mailto:"info@kunak.es"
+     1 × mailto:"jfernandez@kunak.es"
+     1 × mailto:"support@kunak.es"
+
+═══ 3 · CONTROL · segunda pasada tiene que ser NO-OP ═══
+  segunda pasada: n=0 · filas que cambian=0  ✓ NO-OP — la primera terminó el trabajo
+
+═══ 4 · NEGATIVO (§regla 8) ═══
+  (a) fila SIN marcado (3110 chars): n=0 · intacta=true  ✓ no toca lo que no es suyo
+  (b) descifra a "hello" (no es correo): n=0 · intacto=true  ✓ rechaza en vez de inventar un mailto
+      y post() SÍ se queja (3 quejas) ✓ el rastro sigue siendo visible
+      CONTROL de (b): el mismo marcado con hex de correo → n=2 ✓ (b) mide el rechazo, no la inercia
+
+═══ GUARDA DE DOMINIO (§regla 22) ═══
+  filas 5 (mínimo 5) · diana 9 (mínimo 9)  ✓
+
+═══ VEREDICTO: T12 CORRECTA sobre el corpus real ═══

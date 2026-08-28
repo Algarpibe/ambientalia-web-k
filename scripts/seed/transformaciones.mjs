@@ -1063,6 +1063,115 @@ export const T10 = {
  *   recoge después. Al revés, T7 vería un `/images/uploads/…` y tendría que
  *   opinar sobre una ruta que no es de página.
  */
+/* ══════════ T12 · el descifrador de correo de Cloudflare ══════════════════ */
+/**
+ * T12 · **el marcado ofuscado LLEGÓ SIN SU DESCIFRADOR, y eso son 404.**
+ *
+ * Cloudflare ofusca los `mailto:` del autor antes de servirlos: reescribe el
+ * `href` a `/cdn-cgi/l/email-protection#<hex>`, sustituye el texto por
+ * `[email protected]`, y **sirve `email-decode.min.js`, que lo deshace en el
+ * cliente**. O sea que lo que el visitante ve NUNCA es el marcado ofuscado.
+ *
+ * El clon transcribió el marcado y **no** el descifrador. `CLAUDE.md` lo tiene
+ * escrito con su precedente —*«quitar el script y dejar el marcado convirtió 2
+ * enlaces vivos en 404 permanentes»*— y con su enunciado: **un marcado ofuscado
+ * más su descifrador son UNA UNIDAD; media unidad no es una versión más limpia,
+ * es un defecto que el original no tiene.** Aquí costó **4 hrefs · 5 páginas ·
+ * 6 apariciones**, todos 404 (121.ª, `qa:enlaces`).
+ *
+ * **Es la MISMA familia que T8** y por la misma razón de fondo: ese `href` *no
+ * lo escribió nadie*, lo inyecta la capa de entrega — migrarlo verbatim importa
+ * un artefacto del CDN como si fuera contenido. Lo que el autor escribió es un
+ * `mailto:`, y es lo que se restituye. No es «limpiar»: es **deshacer a mano la
+ * reparación que hacía el script que no transcribimos**.
+ *
+ * ── Las TRES formas, censadas en el corpus (no supuestas) ─────────────────
+ *   A · `<a href="…#hex"><span class="__cf_email__" data-cfemail="hex2">…</span></a>`
+ *       el href Y el texto ofuscados, con DOS claves distintas (CF sortea una
+ *       por ocurrencia);
+ *   B · `<a href="…#hex">Texto normal</a>` — sólo el href; el texto es del autor
+ *       y **no se toca**;
+ *   C · `<a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+ *       data-cfemail="hex">…</a>` — **sin `#`**: la clase va en el propio `<a>`
+ *       y el href es un señuelo. Ésta es la que el rótulo «4 hrefs» escondía,
+ *       porque las 4 apariciones comparten literal.
+ *
+ * El cifrado es XOR con clave de un byte: los dos primeros dígitos hex son la
+ * clave, y cada par siguiente es un carácter.
+ */
+const descifraCf = (hex) => {
+  if (typeof hex !== "string" || hex.length < 4 || hex.length % 2 || !/^[0-9a-f]+$/i.test(hex)) return null;
+  const k = parseInt(hex.slice(0, 2), 16);
+  let s = "";
+  for (let i = 2; i < hex.length; i += 2) s += String.fromCharCode(parseInt(hex.slice(i, i + 2), 16) ^ k);
+  /* Un descifrado que no parece un correo NO se escribe: es §regla 6 —una
+   * ausencia se rechaza, no se sustituye—. Mejor el 404 visible, que la sonda
+   * caza, que un `mailto:` inventado, que nadie vuelve a mirar. */
+  return /^\s*[^\s@]+@[^\s@]+\.[^\s@]+\s*$/.test(s) ? s : null;
+};
+const RE_CF_A = /<a\b([^>]*)>([\s\S]*?)<\/a>/gi;
+const RE_CF_SPAN = /<span\b([^>]*)>([\s\S]*?)<\/span>/gi;
+const RE_CF_HREF = /href="\/cdn-cgi\/l\/email-protection#([0-9a-fA-F]+)"/gi;
+const hexDe = (attrs) => /\bdata-cfemail\s*=\s*"([0-9a-fA-F]+)"/i.exec(attrs)?.[1];
+const esCf = (attrs) => /\b__cf_email__\b/.test(attrs);
+
+export const T12 = {
+  id: "t12",
+  titulo: "T12 · descifrador de correo de Cloudflare → `mailto:` (el marcado llegaba sin su script)",
+  aplica(html) {
+    let n = 0;
+    let salida = String(html);
+
+    /* 1 · forma C — la clase en el propio `<a>`: href señuelo + texto señuelo */
+    salida = salida.replace(RE_CF_A, (todo, attrs) => {
+      if (!esCf(attrs)) return todo;
+      const correo = descifraCf(hexDe(attrs));
+      if (!correo) return todo;
+      n++;
+      let t = conClase(`<a${attrs}>`, (c) => c !== "__cf_email__");
+      t = sinAtributo(t, "data-cfemail");
+      t = /\bhref\s*=/i.test(t)
+        ? t.replace(/\bhref\s*=\s*"[^"]*"/i, `href="mailto:${correo}"`)
+        : t.replace(/>$/, ` href="mailto:${correo}">`);
+      return `${t}${correo}</a>`;
+    });
+
+    /* 2 · forma A — el `<span>` de dentro: el descifrador lo SUSTITUYE por el
+     *     correo, así que el envoltorio tampoco sobrevive. */
+    salida = salida.replace(RE_CF_SPAN, (todo, attrs) => {
+      if (!esCf(attrs)) return todo;
+      const correo = descifraCf(hexDe(attrs));
+      if (!correo) return todo;
+      n++;
+      return correo;
+    });
+
+    /* 3 · formas A y B — el href con `#hex`. Va el ÚLTIMO: la forma C ya se
+     *     resolvió arriba y su href no lleva `#`, así que no se pisan. */
+    salida = salida.replace(RE_CF_HREF, (todo, hex) => {
+      const correo = descifraCf(hex);
+      if (!correo) return todo;
+      n++;
+      return `href="mailto:${correo}"`;
+    });
+
+    return { html: salida, n };
+  },
+  /** Muerde si queda UN SOLO rastro del CDN: los tres canales, no sólo el href. */
+  post: (html) => {
+    const q = [];
+    const s = String(html);
+    if (/\/cdn-cgi\/l\/email-protection/i.test(s)) q.push("queda un href `/cdn-cgi/l/email-protection` (404 servido)");
+    if (/__cf_email__/.test(s)) q.push("queda la clase `__cf_email__` sin descifrar");
+    if (/\bdata-cfemail\s*=/i.test(s)) q.push("queda `data-cfemail` sin descifrar");
+    return q;
+  },
+  diana: (html) => {
+    const s = String(html);
+    return (s.match(/\bdata-cfemail\s*=\s*"/gi) || []).length + [...s.matchAll(RE_CF_HREF)].length;
+  },
+};
+
 /**
  * ⚠ **T9B va DESPUÉS de T9 y ANTES de T5, y el orden no es de estilo.**
  *
@@ -1072,7 +1181,19 @@ export const T10 = {
  * · **antes de T5** porque T5 deshace envoltorios buscando su cierre con
  *   `cierreDe`, y un cierre huérfano por medio le desplaza el emparejado.
  */
-export const TRANSFORMACIONES = [T8, T1, T2, T3, T3B, T4B, T9, T9B, T4, T5, T6, T7, T10];
+/**
+ * ⚠ **T12 va junto a T8 —las dos primeras— y ANTES de T5, y tampoco es estilo.**
+ *
+ * · **junto a T8** porque son la misma familia: artefactos que inyecta la capa
+ *   de entrega (Cloudflare) y que no escribió ningún autor. Deshacerlos antes
+ *   que nada deja al resto de la cadena viendo el contenido, no el CDN;
+ * · **antes de T5** porque T5 desenvuelve `<span>` sueltos del editor clásico,
+ *   y el `<span class="__cf_email__">` de la forma A **es** un span suelto a sus
+ *   ojos: desenvuelto primero, T12 se queda sin el `data-cfemail` y el correo
+ *   ya no se puede descifrar — el 404 se convertiría en un `[email protected]`
+ *   literal, que es peor porque ninguna sonda lo caza.
+ */
+export const TRANSFORMACIONES = [T8, T12, T1, T2, T3, T3B, T4B, T9, T9B, T4, T5, T6, T7, T10];
 
 /* ══════════════════════════════════════════════════════════════════════════
  * T11 · `data-teams` — el residuo de PEGAR DESDE TEAMS en el editor
@@ -1151,4 +1272,13 @@ export const T11 = {
  * arquetipo **está SIN MEDIR** —cada una tendría que derivar su diana contra
  * `corpus/fase-3/`— y sale nombrado en vez de resuelto de paso.
  */
-export const TRANSFORMACIONES_F33 = [T11];
+/**
+ * ⚠ **T12 entra aquí POR MEDICIÓN, no por simetría con la otra cadena.** El
+ * aviso de arriba dice que cuál de las otras le toca a este arquetipo está SIN
+ * MEDIR; ésta sí se midió: `paginas_blocks_texto_pagina.html` —el campo rico que
+ * produce `extractor-f33`— trae el marcado ofuscado en **3 filas** (`aviso-legal`
+ * · `politica-de-privacidad-y-de-proteccion-de-datos` · `sistema-interno-de-
+ * informacion`), o sea **diana > 0 derivada del corpus**. Las otras siguen sin
+ * derivar y siguen fuera.
+ */
+export const TRANSFORMACIONES_F33 = [T11, T12];

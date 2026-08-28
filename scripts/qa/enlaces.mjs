@@ -150,7 +150,6 @@ const PAGINAS = ["/", ...[...PUBLICADAS].filter((r) => r !== "/")].sort();
 const fallos = [];
 const rotos = [];
 const avisos = [];
-const vistosRotos = new Set();
 const vistosAvisos = new Set();
 let totalHrefs = 0;
 let externosOk = 0;
@@ -191,6 +190,15 @@ for (const ruta of PAGINAS) {
   }
 
   /* ── dirección 2: hrefs INTERNOS que no corresponden a ruta emitida ────── */
+  /* ⚠ La deduplicación es POR PÁGINA, igual que `vistos` en la dirección 1.
+   * Hasta la 121.ª este `Set` vivía FUERA del bucle y se indexaba sólo por
+   * `href`: la primera página en que aparecía un roto se quedaba el registro y
+   * **las demás se tiraban**. `rotos.length` publicaba entonces el número de
+   * HREFS DISTINTOS bajo un rótulo sin unidad, y una página entera podía estar
+   * rota sin salir en la lista — pasó con `/politica-de-privacidad…`. Es §*un
+   * cardinal es un contenedor y absorbe la membresía* cometido DENTRO del
+   * instrumento, y la dirección 1 ya lo hacía bien al lado. */
+  const vistosRotosPag = new Set();
   for (const m of html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)) {
     const href = m[1];
     const r = clasificaInterno(href);
@@ -204,8 +212,8 @@ for (const ruta of PAGINAS) {
       vistosAvisos.add(href);
       avisos.push({ href, ruta: r.ruta, motivo: r.aviso, origen: origen(href) });
     }
-    if (r.roto && !vistosRotos.has(href)) {
-      vistosRotos.add(href);
+    if (r.roto && !vistosRotosPag.has(href)) {
+      vistosRotosPag.add(href);
       rotos.push({ pagina: ruta, href, ruta: r.ruta, origen: origen(href) });
     }
   }
@@ -222,12 +230,28 @@ console.log(
 
 /* ── dirección 2 primero: un interno roto es un 404, más grave que un href
       que va al original teniendo copia ────────────────────────────────────── */
+/* Las TRES unidades, y ninguna sustituye a las otras: un href se arregla una
+ * vez, una página se ve rota una vez, y la aparición es el par (página, href)
+ * que es lo que de verdad recorre la sonda. Publicar sólo la primera —lo que
+ * hacía hasta la 121.ª— deja «4» sin unidad y esconde 1 de las 5 páginas. */
+const rotosPorHref = new Map();
+for (const r of rotos) {
+  if (!rotosPorHref.has(r.href)) rotosPorHref.set(r.href, { ...r, paginas: new Set() });
+  rotosPorHref.get(r.href).paginas.add(r.pagina);
+}
+const rotosPaginas = new Set(rotos.map((r) => r.pagina));
+
 if (rotos.length) {
-  console.log(`\n❌ ${rotos.length} href interno(s) NO corresponden a ruta emitida (404):\n`);
-  for (const r of rotos) {
-    console.log(`  ${r.href}`);
+  console.log(
+    `\n❌ ROTOS (404) — ${rotosPorHref.size} href distinto(s) · ` +
+      `${rotosPaginas.size} de ${PAGINAS.length} páginas · ${rotos.length} apariciones:\n`,
+  );
+  for (const [href, r] of [...rotosPorHref].sort()) {
+    console.log(`  ${href}`);
     console.log(`      normaliza a  : ${r.ruta}`);
     console.log(`      origen       : ${r.origen}`);
+    console.log(`      aparece en   : ${r.paginas.size} de ${PAGINAS.length} páginas`);
+    console.log(`                     ${[...r.paginas].sort().join(" · ")}`);
     console.log();
   }
 }
@@ -254,7 +278,11 @@ w("medidas/enlaces.json", {
     externosOk,
     ficheros,
     fallos: fallos.length,
-    rotos: rotos.length,
+    /* ⚠ `rotos` se publica CON SU UNIDAD desde la 121.ª. Antes era un escalar
+     * sin rótulo que valía «hrefs distintos» y se leía como «páginas rotas». */
+    rotosHrefs: rotosPorHref.size,
+    rotosPaginas: rotosPaginas.size,
+    rotosApariciones: rotos.length,
     avisos: avisos.length,
   },
   // las rutas que la sonda considera emitidas: si el build cambia, se ve aquí
