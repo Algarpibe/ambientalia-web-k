@@ -165,8 +165,10 @@ export default async function PaginaDocumento({
   const O = "https://kunakair.com/es";
   const migas = [
     { label: "Inicio", href: "/" }, // ruta local: esta página ya está clonada (src/app/page.tsx)
-    { label: "Recursos", href: `${O}/recursos/` },
-    { label: "Documentos científicos", href: `${O}/recursos/documentos-cientificos/` },
+    // ruta local: esta página ya está clonada — original: ${O}/recursos/
+    { label: "Recursos", href: "/recursos" },
+    // ruta local: esta página ya está clonada — original: ${O}/recursos/documentos-cientificos/
+    { label: "Documentos científicos", href: "/recursos/documentos-cientificos" },
     { label: doc.categoria.nombre, href: `${O}/scientific-category/${doc.categoria.slug}/` },
     { label: doc.titulo },
   ];

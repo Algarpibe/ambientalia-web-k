@@ -163,8 +163,6 @@ export async function PaginaRecursos({ rutaCompleta }: { rutaCompleta: string[] 
   /* Índice por slug, para resolver el término de cada tarjeta sin re-consultar. */
   const porSlug = new Map(terminos.map((x) => [x.slug, x]));
 
-  const O = "https://kunakair.com/es";
-
   return (
     <PaginaListado
       variante="resources"
@@ -172,11 +170,17 @@ export async function PaginaRecursos({ rutaCompleta }: { rutaCompleta: string[] 
       hrefAnterior={p.n > 1 ? href(p.n - 1) : undefined}
       miga={[
         { label: "Inicio", href: "/" },
-        /* `/recursos/` es `L4-listado-embebido` y **no está clonada** (va en la
-           cola de F3-2), así que el eslabón se queda apuntando al original —
-           §Regla de rutas locales.
+        /* ⚠ CADUCADO Y CORREGIDO EN LA 121.ª. Este comentario decía que
+           `/recursos/` **no está clonada** (que iba «en la cola de F3-2») y
+           por eso el eslabón apuntaba al original. El build la emite y sirve
+           **200 con 91 735 bytes** y `<title>Recursos - Kunak</title>`, así
+           que el hecho que sostenía la excepción es falso desde que se clonó.
+           Es §regla 3 en su forma más cara: **un comentario es lo único del
+           repo que nadie ejecuta ni verifica**, así que afirmaba una ausencia
+           que ninguna guarda podía contradecir — y `qa:enlaces` sí la
+           contradecía, en 162 páginas, desde el otro lado.
            href original: `https://kunakair.com/es/recursos/` */
-        { label: "Recursos", href: `${O}/recursos/` },
+        { label: "Recursos", href: "/recursos" },
         /* El eslabón del padre sólo existe en las hijas: `class="taxonomia
            padre"` en 8 de 10 archivos, ausente en los 2 de primer nivel. */
         ...(t.padre && padre

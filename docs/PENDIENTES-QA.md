@@ -1,5 +1,394 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §121-CIERRE · **las tres partes con sus cardinales, y el ESCALÓN 3 con un hallazgo: a 390 se mueven 2 rutas y a 1440 ninguna — y no las movió el escalón que se estaba midiendo** — 121.ª, 2026-08-28
+
+La tanda se cerró en dos sesiones. La primera dejó la corrida de `clon-base`
+@390 **en vuelo** al cerrar la terminal; ésta la recogió y la leyó.
+
+### 0 · La corrida huérfana: TERMINÓ SOLA, y no hubo que relanzar nada
+
+`CLAUDE.md` §regla 18 lo dice y aquí se cobró a favor: **una sonda no muere con
+su terminal**. La congelada estaba en disco, completa y sin marcador de §regla 7:
+
+| | |
+|---|---|
+| fichero | `medidas/clon-base-390-t121-tras-escalon2.json` |
+| sello | 2026-08-27 **21:42** (la sesión se cerró por ~350/426) |
+| contenido | **426/426 páginas · 0 con error · 0 sin `docH`** |
+| `NEG=` en el entorno nuevo | **no definida** — ninguna congelada se desvió |
+| procesos tocando el repo | **0** (`Win32_Process` filtrado por `CommandLine`) |
+
+Relanzarla habría costado ~50 minutos y habría tirado la que ya existía.
+
+### 1 · Las tres partes, con sus cardinales
+
+| parte | qué hizo | cardinales |
+|---|---|---|
+| **PASO 0** | ⛔ **PARADO en su propia condición** — `lado` en `w()` no es aditivo | el «81» eran **39 + 42** conjuntos **disjuntos**; §121-LADO-NO-ADITIVO |
+| **ESCALÓN 1** | T12: el `mailto:` que Cloudflare ofusca, restituido en la entrada | **5 filas · 9 dianas · 6 correos** · rotos **4 hrefs · 5 páginas · 6 apariciones → 0 · 0 · 0** |
+| **ESCALÓN 2** | los hrefs del cascarón a ruta local | **22 hrefs · 28 ficheros** (25 + 3) · **118 ocurrencias** (112 + 6 de la tercera sintaxis) · apariciones **9695 → 729** (−92.5 %) · hrefs **150 → 136** · **0 nuevos** |
+| **ESCALÓN 3** | la guarda de regresión, a los dos anchos | **426 comparadas** a cada ancho · **0** con regresión @1440 · **2** @390 |
+
+⚠ **Las tres primeras están commiteadas; la tercera sintaxis NO lo estaba.**
+Los 6 hrefs de `${O}/blog/` en 3 ficheros (`[slug]/page.tsx`,
+`recursos/[...ruta]/page.tsx`, `PaginaRecursos.tsx`) más las 4 entradas de
+`.next-121*` en el `tsconfig` llegaron a esta sesión **en el árbol sucio**. Se
+editaron a las **20:32–20:33** y el build es de las **20:34**, así que **las dos
+corridas t121 sí los midieron** — derivado del `mtime`, no supuesto.
+
+### 2 · EL HALLAZGO · a 390 se mueven 2 rutas, a 1440 ninguna
+
+El veredicto se re-derivó de las congeladas con **los mismos ejes de la sonda**
+(`docH` · `h1.y` · nº de secciones · `S_i.h` · `S_i` ritmo · `nAnclas`) más la
+**diferencia simétrica de dos lados** sobre el conjunto de rutas:
+
+| ancho | rutas ANTES → DESPUÉS | dif. simétrica | comparadas | **con regresión** |
+|---|---|---|---|---|
+| **1440** | 426 → 426 | **0 y 0** | 426 | **0** ✅ |
+| **390** | 426 → 426 | **0 y 0** | 426 | **2** ❌ |
+
+```
+❌ /aviso-legal
+     docH  −30    (13384 → 13354)
+     S1 h  −30.6  (11424.44 → 11393.84)
+❌ /politica-de-privacidad-y-de-proteccion-de-datos
+     docH  +30    (3594 → 3624)
+     S1 h  +30.59 (1633.75 → 1664.34)
+```
+
+**±30.6 es UN RENGLÓN** a `line-height: 30.6px`, y el Δ vive entero en `S1`, que
+es la sección del cuerpo. Es la firma exacta de §*la regla espejo*: un residuo
+que **aparece sólo en un ancho** es un contenedor que en el otro lo tapaba —
+aquí, una línea tres veces más ancha que no llega a cruzar el corte.
+
+> ⚠ **Y el control es de dos lados, no de uno.** El comparador offline se probó
+> antes de creerse su salida: **mismo fichero en los dos lados → 0 distintos**, y
+> con un Δ inyectado a mano (`docH +37.5 · S1 h −12.25 · S1 `pt`→999px · anclas
+> −3`) **los cuatro ejes cazados y nombrados con sus dos lados**, exit 1. Sin el
+> segundo, el «0 regresiones» de 1440 no valdría: el primer control disponible
+> —t117 vs t118— tiene **0 instancias separadoras** en los ejes de geometría
+> (sólo mueve membresía, +13 rutas), así que su verde no dice nada de ellos.
+
+### 3 · Y no las movió el escalón que se estaba midiendo
+
+El fichero se llama `-tras-escalon2` y **el hallazgo es del ESCALÓN 1**.
+§regla 16 en su orden: antes de «no determinista» va *¿cambió el ÁRBOL?* y
+*¿cambió el DATO?*. Cambió el dato:
+
+- las dos congeladas t121 son de las **21:07 y 21:42**, o sea **posteriores a los
+  dos escalones** (`f69c4ad` 19:06 · `7b71385` 19:14). Cubren **los dos**;
+- `cms:aplica-t12` escribió **5 filas en la DB**, y las 2 rutas movidas **son 2
+  de esas 5**;
+- ESCALÓN 2 sólo tocó hrefs del cascarón, que se pinta en **las 426**. Si hubiera
+  movido geometría, habría movido las 426. Movió **0**.
+
+**Y el mecanismo se verificó contra la salida servida**, no se dedujo: el
+marcado de Cloudflare pinta `[email protected]` (**17 chars**) y T12 lo
+sustituye por el correo real, así que **cambia el ancho del texto**.
+
+| slug (fila de T12) | texto visible después | Δ chars vs los 17 | **@390** | **@1440** |
+|---|---|---|---|---|
+| `aviso-legal` | `info@kunak.es` | **−4** | **−30.6** | 0 |
+| `politica-de-privacidad-…` | `contact@kunakair.com` ×2 | **+3** cada uno | **+30.59** | 0 |
+| `sistema-interno-de-informacion` | `compliance@` · `jfernandez@kunak.es` | +2 cada uno | 0 | 0 |
+| `estamos-listos-para-ayudarle` | `support@kunak.es` | −1 | 0 | 0 |
+| **`fourth-session-…-assembly-2`** | **`Contacta con nuestro equipo ahora.`** | — **el texto NO es el correo** | **0** | 0 |
+
+> **La última fila es la SEPARADORA, y es la que hace que esto sea una medida y
+> no una historia.** Ahí Cloudflare ofusca **sólo el `href`** —el ancla ya tenía
+> rótulo—, así que T12 le cambió el destino y **no una letra del texto**: mueve
+> **0**. Es el caso que demuestra que el mecanismo es **el ANCHO DEL TEXTO** y no
+> el href, y de paso es la evidencia independiente de que **un href no mueve
+> geometría**, que es justo lo que el ESCALÓN 2 necesitaba probar.
+
+**Las 5 están en el conjunto medido a los dos anchos** (comprobado: 1 ruta cada
+una en las 426, a 390 y a 1440), así que el «0» de las otras tres es un cero del
+ORIGINAL y no del instrumento (§sondas 4).
+
+> ⚠⚠ **LO QUE ESTO NO DICE, Y HAY QUE DECIRLO: `clon-base` NO MIDE FIDELIDAD.**
+> Es una guarda **clon contra clon**, así que sabe que 2 rutas se movieron y
+> **no sabe hacia dónde**. Que el original sirva el correo descifrado —lleva su
+> `email-decode.min.js`, que es justamente la media unidad que el clon no
+> transcribió— hace **deducible** que el movimiento es HACIA el original, pero
+> **nadie lo ha medido**: haría falta un comparador de dos lados sobre estas
+> páginas, y el arquetipo A **no tiene ninguno** (`COBERTURA-MEDICION.md`: `docH`
+> y árbol en `c`). Queda **SIN MEDIR con su instrumento nombrado**, no en verde.
+
+### 4 · `npm run check`: **CORRIDO ENTERO Y EN VERDE**, y el build FUERA DE SITIO
+
+⚠ **La precondición se comprobó ANTES de gastarla** (§regla 37): el demonio de
+Docker estaba caído, así que `next build` habría muerto en la DB **y `next build`
+vacía su directorio desde el primer segundo**. Se levantó `kunak-cms-pg`
+(`pg_isready` ✓) y se construyó **fuera de sitio**, en `.next-121b` —ya previsto
+en el `tsconfig`—, sin tocar el `.next` bueno de las 20:34.
+
+| paso | resultado |
+|---|---|
+| `lint -w web` | **exit 0** · 0 errores · **67 avisos** (66 `no-img-element` + 1 `no-unused-vars`) |
+| `typecheck -w web` · `-w @kunak/cms-config` · `-w cms` | **exit 0** los tres |
+| `build -w web` (en `.next-121b`) | **exit 0** · 429 rutas · 428 HTML |
+| `qa:manifiesto` | ✅ **426 rutas · 25 familias · 0 vacías · 0 desaparecidas** |
+| `qa:slugs` | ✅ **223 slugs de 6 familias · 0 colisiones** (A, B y C) |
+| `qa:cms-campos` | ✅ **0 campos sin contraparte · 10/10 tipos** |
+
+> **Los tres denominadores de esta tabla no son el mismo conjunto, y se escriben
+> con su unidad** (§*cada denominador se escribe CON SU UNIDAD*): **429 RUTAS**
+> en el `prerender-manifest`, **428 ficheros HTML**, **426 PÁGINAS** medidas por
+> `clon-base` y contadas por `qa:manifiesto`. La diferencia simétrica está
+> derivada: las 3 que sobran son **`/_global-error` · `/_not-found` ·
+> `/favicon.ico`** —ninguna es una página— y **0 medidas quedan fuera del
+> manifiesto**.
+
+> ⚠ **El primer build FALLÓ, y no por lo que parecía.** Murió bajando **Manrope
+> de Google Fonts**, con la red buena (`curl` da **200** a la misma URL): un
+> directorio de build nuevo arranca **sin caché de fuentes** y tiene que ir a por
+> ella. Copiada `.next/cache` (606 K) al nuevo, **exit 0**. Y el `.next` bueno
+> siguió intacto **porque se construyó fuera** — que es exactamente para lo que
+> está la regla.
+
+**El aviso 68.º se adjudicó por EFECTO, no por frescura.** El reparto por regla
+—derivado, no recordado— daba **66 `<img>` + 2 `no-unused-vars`**, no los «67 de
+`<img>`» que decía el mensaje de commit del ESCALÓN 2: **ni el número ni la
+clase**. Y el segundo `no-unused-vars` era **de esta tanda**: `'O' is assigned a
+value but never used` en `PaginaRecursos.tsx:166`, la constante base que se
+quedó **muerta** al sustituir su última uso por la ruta local. Quitada; lint
+vuelve a **67**, con `no-unused-vars` **2 → 1**. El que queda
+(`RegimenPagina` en `PaginaF33.tsx`) es preexistente.
+
+**NO-OP del build, probado en la unidad que se afirma.** El HTML servido de los
+dos builds difiere en **184 de 428** páginas con el `BUILD_ID` normalizado — un
+número que **no es un hallazgo**: son IDs de módulo (`27201` vs `83105`) y el
+**orden** de las etiquetas del `<head>`, o sea no-determinismo del empaquetador,
+la misma familia que `html-cmp` ya clasifica (`sólo el BUILD_ID` · `sólo el
+reparto del stream RSC` · `renumeración RSC` · `nombre de chunk`). Comparado en
+lo que se ve:
+
+| eje | distintas |
+|---|---|
+| conjunto ordenado de `href` de anclas | **0 de 428** ✅ |
+| conjunto de etiquetas del `<head>`, ordenado | **0 de 428** ✅ |
+| texto visible del `<body>` | **0 de 428** ✅ |
+
+Y la diferencia simétrica de rutas entre los dos builds: **0 y 0**.
+
+### 5 · Lo que se FICHA sin arreglar
+
+#### `minimo: 1` en el SEGUNDO contrato de los comparadores — y son DOS, no uno
+
+`clon-base.mjs` deriva su mínimo del build en **L164**
+(`minimo: RUTAS.length`, «una ruta nueva sube el listón sola») y en **L415**, el
+contrato de la comparación, declara **`minimo: 1`**. El comentario justifica no
+usar `RUTAS.length` —*«el listón aquí lo pone el fichero de comparación, no el
+build»*— y **eso es cierto**; lo que no justifica es **el 1**. Con él, el lado
+comparador **sale verde habiendo comparado 1 ruta de 426**, que es §sondas 4bis
+—*«0 comparado = verde»*— con el cero subido a uno.
+
+**Y el listón correcto es derivable antes de comparar**: la intersección
+`rutasAntes ∩ RUTAS`, que la propia sonda ya calcula tres líneas más abajo para
+el recuento de `comparadas`. Hoy vale **426**.
+
+⚠ **Es la CLASE, no la instancia** (§sondas 4, *arreglar la instancia es cómo se
+llega a la tercera tanda del mismo bug*). Derivado con `grep`, **36 declaraciones
+con literal frente a 218 derivadas**, y el gemelo exacto es
+**`html-cmp.mjs:644`** — mismo `unidad: "rutas comparadas"`, mismo `minimo: 1`,
+mismo comentario citando §sondas 4bis, y mismo L359 derivando de `RUTAS.length`
+en el primer nivel. Las otras tres con `minimo: 1` —`a-behaviors:20`,
+`cms-lectura:168`, `d4-cta:94`— son de otras unidades y **NO están adjudicadas**:
+un `minimo: 1` puede ser legítimo si la sonda mide una sola cosa.
+
+> **Arreglarlo pide su propio negativo**, y no es barato: el caso tiene que
+> separar *«comparó pocas»* de *«comparó todas»* sin compartir variable con el
+> mínimo (§regla 17), y el control de NO-OP de la guarda de regresión son **382+
+> rutas a dos anchos**. Es otra tanda.
+
+### 6 · Lo que esta tanda NO hace, declarado
+
+- **la dirección del ±30.6 contra el ORIGINAL** — SIN MEDIR, y el instrumento que
+  haría falta no existe para el arquetipo A (§3);
+- **`enlaces.mjs` sigue sin negativo registrado** — ya fichado en §121-ENLACES §5,
+  y esta tanda no lo tocó;
+- **el camino de RE-EXTRACCIÓN con T12 dentro sigue SIN CORRER** — ídem;
+- **los 136 hrefs · 729 apariciones que quedan**: se comprobó contra el HTML
+  servido que los 4 destinos de la tercera sintaxis llegan a **426/426** páginas
+  y que el literal original sólo sobrevive en **`<link rel="canonical">`** —que
+  no es navegación y `qa:enlaces` correctamente no cuenta— más **2 anclas en
+  `/recursos`** con `origen: (no está en src/ literal)`, o sea **cuerpo rico en la
+  DB, territorio de T7**. Sin pendiente nuevo;
+- **`.next-121b` se queda en disco** y no se promociona: el `.next` de las 20:34
+  es el build que midieron todas las congeladas de la tanda, y el nuevo es NO-OP
+  sobre todo lo que se ve.
+
+> ⚠ **Un aviso de método que se cobró TRES veces en esta sesión, siempre igual:
+> un `grep` propio es una sonda, y su cero o su pleno se leen como dato.** (1) un
+> patrón por prefijo, `kunakair.com/es/recursos/`, **sobre-casó** `…/recursos/guias/`
+> y dio «426 páginas todavía con el literal»; (2) un barrido no recursivo vio
+> **218 de 426** ficheros y sus ausencias parecían ceros; (3) el patrón
+> `minimo: 1[,)]` **se dejó fuera al propio `clon-base`**, que escribe `minimo: 1 }`.
+> Las tres se cazaron por lo mismo: **el resultado contradecía una medida buena
+> anterior**.
+
+## ✅ §121-ENLACES · **`qa:enlaces` sale de ROJA en su mitad de 404: los 4 rotos eran UNO, y las apariciones caen de 9695 a 729** — 121.ª, 2026-08-27
+
+La 120.ª dejó la fila del listón en rojo con la cifra caducada corregida. Ésta
+la cierra por el lado de los **rotos** y la baja del 92.5 % por el lado de los
+**hrefs al original**, con tres cifras del encargo re-derivadas y movidas.
+
+### 0 · Las cifras que se movieron al derivarlas (§regla 9, también las del encargo)
+
+| | encargo | **derivado** | por qué |
+|---|---|---|---|
+| congeladas que declaran `lado` | 81 | **39 + 42** | dos conjuntos disjuntos, ver §121-LADO-NO-ADITIVO |
+| apariciones de los rotos | 14 | **6** apariciones · **7** etiquetas | 14 son OCURRENCIAS de la cadena = 7 nodos × 2 canales (DOM + carga RSC) |
+| hrefs del cascarón | 21 | **22** | dos literales distintos caen en `/contacto`: con barra final y sin ella |
+| masa del cascarón | 92.3 % | **92.9 %** | 9005 de 9695 |
+| destinos | 16 de 16 | **21 destinos · 21 de 21 emitidos** | los 22 hrefs apuntan a 21 destinos |
+| ficheros a tocar | 3 | **28** = 25 + 3 | el 92.9 % es de las APARICIONES; los LITERALES viven en 28 sitios. **25** en la pasada por literal y plantilla `${BASE}`, **3** más en la segunda, al aparecer la tercera sintaxis (§4) |
+
+> **La última es la que cambió el trabajo.** «El 92.9 % está en el cascarón» es
+> cierto de dónde **se ve** —header y footer se pintan en las 426 páginas— y
+> falso de dónde **se escribe**: `/contacto` sale de 42 sitios distintos de
+> `src/`. Tocar sólo los tres ficheros habría dejado los mismos 22 hrefs
+> marcados, con menos páginas cada uno. Es §*la causa común* con el contenedor
+> puesto en la unidad del reparto.
+
+### 1 · Los 4 rotos eran UN mecanismo, y se cierra en la entrada
+
+Los 4 hrefs son **la ofuscación de correo de Cloudflare**: reescribe el
+`mailto:` del autor a `/cdn-cgi/l/email-protection#hex`, pone
+`[email protected]` de texto, y sirve `email-decode.min.js` que **lo deshace en
+el cliente**. El visitante nunca ve el marcado ofuscado. El clon transcribió el
+marcado y **no** el script — la **media unidad** que `CLAUDE.md` ya nombra.
+
+**T12**, en `TRANSFORMACIONES` y `TRANSFORMACIONES_F33`, misma familia que T8 y
+por la misma razón: lo inyecta la capa de entrega, no el autor. Tres formas
+censadas, y la tercera es la que el rótulo escondía:
+
+| forma | qué trae | dónde |
+|---|---|---|
+| A | `href="…#hex"` + `<span class="__cf_email__">` ofuscado | 2 |
+| B | `href="…#hex"` con texto del autor | 1 |
+| **C** | **`__cf_email__` en el propio `<a>`, SIN `#`** | **4** — sus 4 apariciones comparten literal |
+
+Va **junto a T8 y antes de T5**, porque T5 desenvuelve `<span>` sueltos y se
+comería el `data-cfemail` antes de descifrarlo: el 404 se volvería un
+`[email protected]` literal, que es **peor porque ninguna sonda lo caza**.
+
+Un hex que no descifra a un correo **se deja intacto** (§regla 6): mejor el 404
+que la sonda caza que un `mailto:` inventado que nadie vuelve a mirar.
+
+**Verificación** (`derivaciones/t12-cloudflare-121.{mjs,log}`): diana **9** = n
+**9** en las 5 filas reales · `post()` vacío · idempotente (2.ª pasada `n = 0`)
+· negativo por los dos lados **con su control**. Restituye **7 `mailto:`** — 6
+correos distintos, uno con su espacio inicial verbatim.
+
+> ⚠ **Y la v1 de esa derivación salió en VERDE con `diana = 0` en las cinco.**
+> Partía la salida de `psql` por `\n` y el HTML lleva saltos, así que sólo
+> sobrevivía **el primer renglón** de cada fila. El veredicto no exigía
+> `diana > 0`: §regla 22 cometida en el propio control, y §*el tope de una sonda
+> se lee como una ausencia del original* con el tope puesto en un `split`.
+> Arreglado con `json_agg` y **guarda de dominio explícita** (filas ≥ 5,
+> diana ≥ 9).
+
+**Aplicado** con `cms:aplica-t12`: 5 filas escritas, 9 transformaciones, **0
+rastros en los tres canales** —verificado re-preguntando a la DB, no por el
+código de retorno del `update`—. No pasa por reset: §regla 20 caducaría el
+entorno entero por 5 filas.
+
+### 2 · La salida de la sonda: `rotos: 4` no tenía unidad y escondía una página
+
+`vistosRotos` vivía **fuera** del bucle de páginas y se indexaba sólo por
+`href`: la primera página que traía un roto se quedaba el registro y **las
+demás se tiraban**. Así que «4» eran hrefs distintos bajo un rótulo mudo, y
+`/politica-de-privacidad…` estaba rota **sin salir en la lista**. La dirección 1
+(`fallos`) ya lo hacía bien tres líneas más arriba — §*un cardinal es un
+contenedor y absorbe la membresía*, cometido **dentro del instrumento**.
+
+Ahora deduplica por página y publica las tres unidades, también en el congelado
+(`rotosHrefs` · `rotosPaginas` · `rotosApariciones`). Verificado **por efecto**:
+`/politica-de-privacidad…` aparece hoy en la lista y antes no.
+
+### 3 · El resultado, medido de punta a punta
+
+| | antes | **después** |
+|---|---|---|
+| páginas evaluadas | 426/426 | **426/426** |
+| **ROTOS** | 4 hrefs · 5 páginas · 6 apariciones | **0 · 0 · 0** ✅ |
+| hrefs al original teniendo ruta local | 150 | **136** |
+| **apariciones** | 9695 | **729**  (**−92.5 %**) |
+| de los 22 del cascarón | — | **14 resueltos · 8 siguen** (aportan 39) |
+| hrefs NUEVOS | — | **0** |
+
+Los **8** que siguen vienen todos del canal `(no está en src/ literal)`, o sea
+**cuerpo rico en la DB**: ésos no se arreglan editando `src/` sino por **T7 al
+importar**. Otra tanda y otro mecanismo.
+
+### 4 · Lo que costó una vuelta entera: la TERCERA sintaxis del mismo literal
+
+El barrido del cascarón cubrió dos formas —la cadena entera y la plantilla
+`${BASE}/es/X/`— y publicó **112 ocurrencias, 0 restantes**. Y `qa:enlaces`
+siguió marcando **10 de los 22**. Había una tercera forma: `${O}/blog/`, con
+**otra constante base** (`O`, que ya incluye `/es`), en **6 ocurrencias de 3
+ficheros**, todas migas de pan — y una sola valía **162 páginas**.
+
+**Los dos instrumentos compartían la premisa** (§regla 15): el campo `origen` de
+`qa:enlaces` busca el literal en `src/` y tampoco conocía la tercera forma, así
+que decía *«no está en `src/` literal»* — y por eso concordaban. Subido a
+`CLAUDE.md` como la mitad que faltaba a §regla 9, 7.º caso.
+
+> ⚠ **Y dentro salió un comentario caducado que sostenía una excepción.**
+> `PaginaRecursos.tsx` justificaba apuntar al original con *«`/recursos/` … **no
+> está clonada** (va en la cola de F3-2)»*. El build la emite y sirve **200 con
+> 91 735 bytes** y `<title>Recursos - Kunak</title>`. El comentario costó **162
+> páginas**, y lo que impidió verlo no fue falta de instrumento —`qa:enlaces`
+> llevaba marcándolo— sino que **una explicación al lado de un rojo lo convierte
+> en «conocido»**. Subido también a `CLAUDE.md`, como cuarta hermana de
+> §regla 3.
+
+### 5 · Lo que NO se toca, con su cardinal y su criterio (§regla 14)
+
+**128 hrefs · 690 apariciones** quedaban fuera del cascarón por el criterio
+declarado —su `origen` no incluye ninguno de los tres ficheros del cascarón, o
+sea que no se pintan en las 426 páginas—. Tras la tanda quedan **136 hrefs ·
+729 apariciones**, de los que:
+
+| origen | hrefs |
+|---|---|
+| **cuerpo rico en la DB** (`no está en src/ literal`) | ~59 + los 8 del cascarón — **son de T7, no de `src/`** |
+| `src/lib/sectores.ts` | 22 |
+| `src/lib/arquetipo-a.ts` | 24 (en varias combinaciones) |
+| `src/lib/projects.ts` | 4 |
+| cola larga | el resto |
+
+⚠ **Y `enlaces.mjs` no tiene negativo registrado.** Derivado: **85 comandos
+`*-neg` en `package.json`, 0 con fichero ausente** —o sea que §regla 26 está
+cerrada— pero esta sonda **nunca tuvo uno**. Es la guarda que `CLAUDE.md` cita
+como automática, y su capacidad de fallar no está probada desde que se le
+cambió la salida.
+
+⚠ **Y el camino de RE-EXTRACCIÓN con T12 dentro está SIN CORRER.**
+`cms:extractor-a` y `cms:extractor-f33` no se han lanzado en esta tanda: la
+equivalencia con `cms:aplica-t12` se apoya en dos verificaciones —T12
+idempotente, y el `__cf_email__` **sigue entero en la DB tras pasar por T5**—
+no en una corrida del extractor. La tanda que re-extraiga lo comprueba gratis:
+T12 tiene que salir con **`n = 0`** sobre estas 5 filas.
+
+### 6 · La ficha de la 83.ª: CERRADA, y lo que queda es una CONDICIÓN
+
+La 83.ª predijo *«5 páginas: 2 clonadas + 3 sueltas»* y la 120.ª verificó que se
+cumplió entera —las 3 sueltas se clonaron y **cada una trajo su enlace
+muerto**—. Con T12 en las dos cadenas, el mecanismo de crecimiento se corta en
+la entrada.
+
+> **Lo que sustituye a la ficha no es un cierre, es una CONDICIÓN que toda tanda
+> que clone tiene que mirar:** este defecto **crecía por construcción, una
+> página por clonado**, porque la cadena de importación quitaba el descifrador y
+> dejaba el marcado. Cualquier arquetipo nuevo que entre por `extractor-a` o
+> `extractor-f33` pasa hoy por T12; **uno que entre por una cadena TERCERA no**,
+> y volverá a traer sus 404 sin que nada avise. La comprobación cuesta un
+> `grep` de `cdn-cgi` sobre el corpus nuevo, y `T12.diana()` la contesta con un
+> número.
+
+
 ## ⛔ §121-LADO-NO-ADITIVO · **el PASO 0 se para en su propia condición: las DOS colocaciones posibles fallan, y fallan condiciones distintas** — 121.ª, 2026-08-27
 
 El encargo de la 121.ª sube el candidato de diseño —*toda congelada declara su

@@ -5,7 +5,7 @@ import { HeaderNav } from "@/components/HeaderNav";
 import { BANDA, BandaCabecera } from "@/components/BandaCabecera";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import {
+import {
   ColumnaLateralA,
   ColumnaPrincipalA,
   FilaA,
@@ -141,21 +141,24 @@ function migasDe(p: Pagina) {
   const O = "https://kunakair.com/es";
   const base = [
     { label: "Inicio", href: "/" }, // ruta local: esta página ya está clonada (src/app/page.tsx)
-    { label: "Recursos", href: `${O}/recursos/` },
+    // ruta local: esta página ya está clonada — original: ${O}/recursos/
+    { label: "Recursos", href: "/recursos" },
   ];
   if (p.forma === "termino")
     // ⚠ El rótulo de la miga **no es el `h1`** en esta forma (3 de 3 medidos):
     // es el nombre corto del término. Campo opcional con defecto «el título».
     return [
       ...base,
-      { label: "Kunakpedia", href: `${O}/recursos/kunakpedia/` },
+      // ruta local: esta página ya está clonada — original: ${O}/recursos/kunakpedia/
+      { label: "Kunakpedia", href: "/recursos/kunakpedia" },
       { label: p.datos.tituloMiga ?? p.datos.titulo },
     ];
   const { recurso, titulo } = p.datos;
   if (!recurso)
     return [
       { label: "Inicio", href: "/" },
-      { label: "Blog", href: `${O}/blog/` },
+      // ruta local: esta página ya está clonada — original: ${O}/blog/
+      { label: "Blog", href: "/blog" },
       { label: titulo },
     ];
   return [

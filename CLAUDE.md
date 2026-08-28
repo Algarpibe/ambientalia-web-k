@@ -2224,6 +2224,42 @@ test en negativo que solo cubra lo que acabas de tocar no lo habría visto: por 
 se corre entero, y por eso cada sabotaje tiene que caer **por su propio
 invariante** y no por otro.
 
+⚠⚠ **Y SU CUARTA HERMANA, QUE ES LA MÁS BARATA DE EVITAR Y LA QUE MÁS DURA: UN
+COMENTARIO QUE AFIRMA UN HECHO DEL BUILD SE CADUCA SOLO, Y NADIE LO VE
+(2026-08-27, 121.ª).**
+
+La tercera dice que un comentario que afirma **consumidores** es un dato sin
+fuente. Ésta es la misma raíz con el objeto cambiado, y llega más lejos porque
+el comentario **justifica una excepción**:
+
+> **Un comentario que afirma «esta página NO está clonada» —o «esa ruta no se
+> emite», o «ese campo todavía no existe»— es un dato DERIVABLE escrito a
+> mano.** El `prerender-manifest` lo contesta en un `grep`. Y como nadie
+> ejecuta un comentario, el día que la página se clona **la afirmación no se
+> vuelve falsa ruidosamente: se queda ahí sosteniendo una excepción que ya no
+> tiene motivo**.
+
+**Medido:** un eslabón de miga apuntaba al original con esta justificación —
+*«`/recursos/` es `L4-listado-embebido` y **no está clonada** (va en la cola de
+F3-2), así que el eslabón se queda apuntando al original — §Regla de rutas
+locales»*—. Razonamiento correcto, regla bien citada, y **premisa falsa**: el
+build emite `/recursos` y sirve **200 con 91 735 bytes** y
+`<title>Recursos - Kunak</title>`. El comentario costó **162 páginas** con el
+enlace fuera.
+
+**Y lo que lo hace peor que la tercera hermana es que el defecto TENÍA guarda:**
+`qa:enlaces` llevaba marcándolo desde el otro lado todo el tiempo. Lo que
+impidió leerlo no fue la falta de instrumento, sino que **el comentario
+explicaba el fallo** — y una explicación al lado de un rojo lo convierte en
+«conocido» sin que nadie compruebe la explicación.
+
+> **Operativamente, y cuesta un `grep`: todo comentario que justifique una
+> excepción con un HECHO se escribe con su derivación al lado** —*«no está en
+> `prerender-manifest.json` a fecha X»*— **o no se escribe.** Y cuando una
+> guarda marque algo que un comentario ya explica, se comprueba **la
+> explicación**, no sólo el síntoma: es §*documentado no es conectado* aplicado
+> a la coartada en vez de al arreglo.
+
 **4 · UN SELECTOR QUE NO CASA CON NADA NO ES UN CERO: ES UN DEFECTO.**
 
 > **`querySelector` devuelve `null` cuando el selector está mal exactamente
@@ -3146,6 +3182,54 @@ las rutas del build: **lo nuevo entra solo**.
 > nombres puede combinarlos, **la lista está incompleta desde el día que se
 > escribió**; y si el consumidor no falla cuando no casa, no te vas a enterar.
 
+> ⚠⚠ **Y SU MITAD QUE NO ES UNA LISTA SINO UNA GRAMÁTICA: LAS FORMAS DE
+> ESCRIBIR UN MISMO VALOR TAMBIÉN SON UN CONJUNTO ENUMERADO A MANO — Y EL
+> BARRIDO QUE CUBRE DOS DE TRES INFORMA «0 RESTANTES» (2026-08-27, 121.ª).**
+>
+> El 7.º caso persigue una lista de *nombres*. Le falta el caso en que lo
+> enumerado a mano no son los valores sino **su SINTAXIS**, y ése engaña más
+> porque el barrido **sí** termina y **sí** publica un cero:
+>
+> > **Un mismo destino se puede escribir de N maneras** —la cadena entera, una
+> > plantilla sobre una constante base, una concatenación, un `join`— **y un
+> > barrido por literal sólo ve las formas que enumeró.** Su «0 ocurrencias
+> > restantes» es cierto **de las formas que conoce** y se lee como cierto del
+> > valor. Es §sondas 4 con el cero puesto en la GRAMÁTICA en vez de en el
+> > selector.
+>
+> **Medido:** repuntar 21 destinos a ruta local cubrió dos formas —la cadena
+> `"https://…/es/blog/"` y la plantilla `${BASE}/es/blog/`, ésta descubierta
+> porque un fichero con 17 hrefs no salía en el barrido—. Publicó **112
+> ocurrencias y 0 restantes**. Había una tercera: `${O}/blog/`, con **otra
+> constante base** (`O`, que ya incluye `/es`), en **6 ocurrencias de 3
+> ficheros**. Las 6 eran migas de pan, y una sola valía **162 páginas**.
+>
+> **Lo que lo destapó no fue releer el barrido: fue el COMPARADOR DE DOS
+> LADOS.** `qa:enlaces` siguió marcando **10 de los 22** hrefs que el barrido
+> daba por resueltos — y su campo `origen`, que busca el literal en `src/`,
+> decía **«no está en `src/` literal»** justamente porque tampoco conocía la
+> tercera forma. **Los dos instrumentos compartían la premisa**, así que
+> concordaban (§regla 15) y ninguno podía delatarla solo.
+>
+> **Las dos mitades operativas:**
+>
+> 1. **antes de barrer por literal, DERIVA las formas** — un `grep` de las
+>    constantes base declaradas (`const X = "https://…"`) contesta en una línea
+>    cuántas hay, y aquí habría dado **2 constantes con 3 sintaxis** antes de
+>    escribir nada;
+> 2. **y el cero de un barrido por literal no cierra: lo cierra la sonda que
+>    mira la SALIDA.** «0 ocurrencias en el fuente» y «0 apariciones en lo
+>    servido» son dos afirmaciones, y sólo la segunda es sobre el sitio.
+>
+> ⚠ **Y su falso positivo, del mismo día y gratis de evitar: un barrido por
+> literal casa dentro de COMENTARIOS.** Tres ficheros del repo llevan el
+> literal original dentro de un `// href original: …` que documenta un enlace
+> **ya localizado**; reescribirlo habría borrado justo la anotación que existe
+> para rehacer el A/B. Se comprueba antes de escribir —*de las N líneas que
+> casan, ¿cuántas son comentario?*—, y el mismo defecto tiene la otra cara: el
+> `origen` de `qa:enlaces` señalaba una línea de comentario como emisor,
+> atribuyendo 68 páginas a un fichero que no las emite.
+
 ⚠ **Y EL 8.º CASO, QUE ES EL QUE CIERRA LA REGLA POR ARRIBA (2026-08-19, 79.ª
 tanda): CUANDO HAY QUE TOCAR UN CONJUNTO, LA ELECCIÓN ENTRE «RENOMBRAR EL
 ORIGEN» Y «REPUNTAR A LOS CONSUMIDORES» SE DECIDE CONTÁNDOLOS — Y EL RECUENTO SE
@@ -3768,6 +3852,49 @@ lo que sigue sin medir: `PENDIENTES-QA.md` §META-CANARIOS-DE-CARGA.
 > número para que la tanda que lo mueva sepa **hacia dónde**: hace falta un
 > tercer marcador **en el primer tercio real**, no reubicar los dos que ya
 > tienen historia.
+>
+> > ⚠⚠ **REFUTADO AL DÍA SIGUIENTE (2026-08-27, 121.ª): `KV-01` NUNCA SE MOVIÓ
+> > AL 79.8 %. LO QUE ESTABA AL 79 % ERA LA PROSA QUE LO DESCRIBE — Y ESA PROSA
+> > ES ESTE MISMO BLOQUE.**
+> >
+> > La medición de arriba buscó `KV-01` **por su prefijo** y se quedó con la
+> > primera aparición… que no es el marcador. Derivado sobre el fichero que la
+> > sesión cargó de verdad —`git show <HEAD-de-arranque>:CLAUDE.md`, **275 470
+> > chars**— el prefijo sale **6 veces**:
+> >
+> > | ocurrencia | posición | qué es |
+> > |---|---|---|
+> > | `KV-01 · 7HQMPD` | **22.0 %** | **el MARCADOR** |
+> > | `` `KV-01` (~30 % del fich…`` | 78.6 % | cita en prosa |
+> > | otras 4 | 78.8 – 79.5 % | citas en prosa |
+> >
+> > Y `KV-08` igual: **3 ocurrencias**, dos citas al 78.6 % y 79.2 %, y el
+> > marcador a **16 chars del final** — eso sí estaba bien medido.
+> >
+> > **Consecuencias, y son dos:**
+> >
+> > 1. **la cobertura del tripwire NO está rota.** El marcador vive en el
+> >    **primer cuarto** y el otro al final, que es exactamente el reparto que
+> >    se quería. **El tercer marcador fichado arriba NO hace falta**, y
+> >    ponerlo habría sido trabajo nacido de una medición mala;
+> > 2. **y el veredicto de carga sube otra vez**: los dos marcadores llegaron
+> >    con **275 470 chars**, o sea **1.84×** el aviso de 150 000. El truncado
+> >    sigue **REFUTADO**.
+> >
+> > **La regla, que es lo reutilizable y vale para cualquier canario futuro:**
+> >
+> > > **Un marcador se localiza por su FORMA COMPLETA —`KV-nn · XXXXXX`—, nunca
+> > > por su prefijo.** El prefijo aparece también en la prosa que lo explica, y
+> > > esa prosa está **estructuralmente cerca del final**, porque es donde vive
+> > > la regla que lo describe. Buscar por prefijo no da error: **da la posición
+> > > de su propia documentación**, que es §sondas 4 en su cara de
+> > > *sobre-casado* cometida **dentro del instrumento que vigila la carga**.
+> >
+> > **Y la señal para sospecharlo era gratis y estaba escrita:** el número
+> > contradecía a una medida buena anterior —«~30 %»— y §sondas 4 manda que
+> > *cuando exista otra medición del mismo objeto, cruzarla es obligatorio antes
+> > de creerse un recuento nuevo*. Aquí las dos mediciones eran del mismo
+> > documento y la vieja tenía razón.
 
 **20 · UNA SONDA QUE RESETEA EL ENTORNO NO ES SÓLO UNA MEDIDA: ES UNA MUTACIÓN,
 Y SU VERDE NO DICE QUE EL ENTORNO QUEDE COMO ESTABA.** (2026-08-18)
