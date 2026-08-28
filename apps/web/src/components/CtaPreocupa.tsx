@@ -11,7 +11,7 @@ export function CtaPreocupa() {
       image="/images/uploads/2023/02/ship-pollution-monitoring-2.jpg"
       heading="¿Te preocupa la calidad del aire que respiras?"
       buttonLabel="Sí, quiero saber más"
-      buttonHref="https://kunakair.com/es/contacto/"
+      buttonHref="/contacto"
     />
   );
 }

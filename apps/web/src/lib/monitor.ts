@@ -12,7 +12,8 @@ import type { AccesorioItem, BlogPost } from "@/types/kunak";
 export const BREADCRUMB: { label: string; href?: string }[] = [
   // ruta local: la home ya está clonada — original: https://kunakair.com/es/
   { label: "Inicio", href: "/" },
-  { label: "Productos", href: "https://kunakair.com/es/productos/" },
+  // original: https://kunakair.com/es/productos/
+  { label: "Productos", href: "/productos" },
   { label: "AIR Pro" },
 ];
 
@@ -144,8 +145,8 @@ export const ANCHOR_LINKS: AnchorLink[] = [
 
 /* Enlaces reutilizados en varios CTAs de la página */
 export const DATASHEET_PDF = "https://kunakair.com/doc/External/Kunak_AIR_Datasheet_ES.pdf";
-export const CONTACT_HREF = "https://kunakair.com/es/contacto/";
-export const CATALOG_HREF = "https://kunakair.com/es/descarga-catalogo/";
+export const CONTACT_HREF = "/contacto";
+export const CATALOG_HREF = "/descarga-catalogo";
 
 /* =========================================================================
  * GRUPO B — datos de las 3 secciones nuevas de S3

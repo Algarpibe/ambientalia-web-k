@@ -52,7 +52,7 @@ export function Beneficios() {
       </div>
 
       <div className="mb-[30px] mt-[30px] flex justify-center md:mb-0 md:mt-8">
-        <BlueButton href="https://kunakair.com/es/contacto/">Solicita más información</BlueButton>
+        <BlueButton href="/contacto">Solicita más información</BlueButton>
       </div>
     </div>
   );

@@ -28,7 +28,8 @@ export const CASO_CTA_PIE: SectorCtaSlide[] = [
     heading: "¿Necesitas información fiable para tu proyecto de calidad del aire?",
     cta: {
       label: "Podemos ayudarte",
-      href: "https://kunakair.com/es/contacto",
+      // original: https://kunakair.com/es/contacto
+      href: "/contacto",
     },
     image: "/images/uploads/2023/03/air-pollution-control.jpg",
   },
@@ -66,6 +67,7 @@ export const FAQ_SIDEBAR = {
      * lo que `qa:enlaces` puede auditar. Desviación deliberada, anotada en
      * `docs/PENDIENTES-QA.md`.
      */
-    href: "https://kunakair.com/es/suscribete/",
+    // original: https://kunakair.com/es/suscribete/
+    href: "/suscribete",
   },
 } as const;

@@ -45,24 +45,36 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "EMPRESA",
     links: [
-      { label: "Sobre Kunak", href: `${BASE}/es/empresa/` },
-      { label: "Premios y reconocimientos", href: `${BASE}/es/empresa/premios-y-reconocimientos/` },
-      { label: "Contacto", href: `${BASE}/es/contacto/` },
-      { label: "Política de seguridad", href: `${BASE}/es/politica-de-seguridad-de-la-informacion/` },
-      { label: "Sistema interno de información", href: `${BASE}/es/sistema-interno-de-informacion/` },
+      // original: https://kunakair.com/es/empresa/
+      { label: "Sobre Kunak", href: "/empresa" },
+      // original: https://kunakair.com/es/empresa/premios-y-reconocimientos/
+      { label: "Premios y reconocimientos", href: "/empresa/premios-y-reconocimientos" },
+      // original: https://kunakair.com/es/contacto/
+      { label: "Contacto", href: "/contacto" },
+      // original: https://kunakair.com/es/politica-de-seguridad-de-la-informacion/
+      { label: "Política de seguridad", href: "/politica-de-seguridad-de-la-informacion" },
+      // original: https://kunakair.com/es/sistema-interno-de-informacion/
+      { label: "Sistema interno de información", href: "/sistema-interno-de-informacion" },
     ],
   },
   {
     title: "RECURSOS",
     links: [
       { label: "Artículos y guías", href: `${BASE}/es/recursos/guias/` },
-      { label: "Casos de éxito", href: `${BASE}/es/casos-de-exito/` },
-      { label: "Blog", href: `${BASE}/es/blog/` },
-      { label: "Documentos científicos", href: `${BASE}/es/recursos/documentos-cientificos/` },
-      { label: "Kunakpedia", href: `${BASE}/es/recursos/kunakpedia/` },
-      { label: "Preguntas frecuentes", href: `${BASE}/es/recursos/preguntas-frecuentes/` },
-      { label: "Centro de ayuda", href: `${BASE}/es/soporte/centro-de-ayuda/` },
-      { label: "Servicio de reparación (RMA)", href: `${BASE}/es/soporte/servicio-de-reparacion/` },
+      // original: https://kunakair.com/es/casos-de-exito/
+      { label: "Casos de éxito", href: "/casos-de-exito" },
+      // original: https://kunakair.com/es/blog/
+      { label: "Blog", href: "/blog" },
+      // original: https://kunakair.com/es/recursos/documentos-cientificos/
+      { label: "Documentos científicos", href: "/recursos/documentos-cientificos" },
+      // original: https://kunakair.com/es/recursos/kunakpedia/
+      { label: "Kunakpedia", href: "/recursos/kunakpedia" },
+      // original: https://kunakair.com/es/recursos/preguntas-frecuentes/
+      { label: "Preguntas frecuentes", href: "/recursos/preguntas-frecuentes" },
+      // original: https://kunakair.com/es/soporte/centro-de-ayuda/
+      { label: "Centro de ayuda", href: "/soporte/centro-de-ayuda" },
+      // original: https://kunakair.com/es/soporte/servicio-de-reparacion/
+      { label: "Servicio de reparación (RMA)", href: "/soporte/servicio-de-reparacion" },
       {
         label: "Soporte técnico",
         href: "https://kunaksensing.atlassian.net/servicedesk/customer/portal/1/group/6/create/50",
@@ -71,7 +83,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   },
 ];
 
-export const SUBSCRIBE_HREF = `${BASE}/es/suscribete/`;
+export const SUBSCRIBE_HREF = "/suscribete";
 
 export const ENS_CERT = {
   image: "/images/uploads/2026/07/certificacion-ens.png",
@@ -79,9 +91,12 @@ export const ENS_CERT = {
 };
 
 export const LEGAL_LINKS: { label: string; href?: string }[] = [
-  { label: "Aviso legal", href: `${BASE}/es/aviso-legal/` },
-  { label: "Política de privacidad", href: `${BASE}/es/politica-de-privacidad-y-de-proteccion-de-datos/` },
-  { label: "Política de cookies", href: `${BASE}/es/politica-de-cookies/` },
+  // original: https://kunakair.com/es/aviso-legal/
+  { label: "Aviso legal", href: "/aviso-legal" },
+  // original: https://kunakair.com/es/politica-de-privacidad-y-de-proteccion-de-datos/
+  { label: "Política de privacidad", href: "/politica-de-privacidad-y-de-proteccion-de-datos" },
+  // original: https://kunakair.com/es/politica-de-cookies/
+  { label: "Política de cookies", href: "/politica-de-cookies" },
   { label: "Editar preferencias de cookies" }, // GDPR plugin button — no href
 ];
 
@@ -115,5 +130,6 @@ export const PIE_CTA_CASO = {
   image: "/images/uploads/2023/03/air-pollution-control.jpg",
   heading: "¿Necesitas información fiable para tu proyecto de calidad del aire?",
   buttonLabel: "Podemos ayudarte",
-  href: `${BASE}/es/contacto`,
+  // original: https://kunakair.com/es/contacto
+  href: "/contacto",
 };

@@ -31,9 +31,9 @@ const U23_03 = "/images/uploads/2023/03";
 const U23_04 = "/images/uploads/2023/04";
 const U25_01 = "/images/uploads/2025/01";
 
-export const CONTACT_HREF = "https://kunakair.com/es/contacto/";
+export const CONTACT_HREF = "/contacto";
 /** sic: el CTA de ancho completo enlaza SIN la barra final. */
-export const CONTACT_HREF_CTA = "https://kunakair.com/es/contacto";
+export const CONTACT_HREF_CTA = "/contacto";
 
 /* --------------------------------------------------------------------------
  * Tipos de contenido — un solo bloque repetible
@@ -56,7 +56,8 @@ export interface ApiImage {
 export const BREADCRUMB: { label: string; href?: string }[] = [
   // ruta local: la home ya está clonada — original: https://kunakair.com/es/
   { label: "Inicio", href: "/" },
-  { label: "Productos", href: "https://kunakair.com/es/productos/" },
+  // original: https://kunakair.com/es/productos/
+  { label: "Productos", href: "/productos" },
   { label: "Kunak API" },
 ];
 

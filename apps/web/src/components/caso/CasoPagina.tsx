@@ -93,7 +93,8 @@ export function CasoPagina({
             { label: "Inicio", href: "/" },
             // el índice /es/casos-de-exito/ NO está clonado (es una consulta,
             // no un content type: D4). Sigue apuntando al original.
-            { label: "Casos de éxito", href: "https://kunakair.com/es/casos-de-exito/" },
+            // original: https://kunakair.com/es/casos-de-exito/
+            { label: "Casos de éxito", href: "/casos-de-exito" },
             { label: caso.titulo },
           ]}
           rowClassName="mx-auto w-[86%] max-w-[1380px]"

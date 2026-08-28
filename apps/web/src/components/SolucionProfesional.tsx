@@ -32,7 +32,7 @@ export function SolucionProfesional() {
             >
               Descargar ficha técnica
             </OutlineButton>
-            <BlueButton href="https://kunakair.com/es/descarga-catalogo/">
+            <BlueButton href="/descarga-catalogo">
               Descargar catálogo
             </BlueButton>
           </div>
@@ -163,7 +163,7 @@ export function SolucionProfesional() {
         </div>
 
         <div className="mb-[30px] mt-[34px]">
-          <BlueButton href="https://kunakair.com/es/contacto/">Quiero saber más</BlueButton>
+          <BlueButton href="/contacto">Quiero saber más</BlueButton>
         </div>
       </SectionRow>
 

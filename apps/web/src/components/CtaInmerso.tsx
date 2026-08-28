@@ -10,7 +10,7 @@ export function CtaInmerso() {
       image="/images/uploads/2023/02/people-city-urban.jpg"
       heading="¿Estás inmerso en un proyecto de calidad del aire y necesitas información fiable?"
       buttonLabel="Podemos ayudarte"
-      buttonHref="https://kunakair.com/es/contacto/"
+      buttonHref="/contacto"
       bottomGapClassName="pb-[20px] md:pb-[71px]"
     />
   );

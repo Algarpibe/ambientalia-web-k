@@ -374,7 +374,8 @@ export interface MonograficoPage {
 const CTA_SLIDES_INDUSTRIA: SectorCtaSlide[] = [
   {
     heading: "Reduce el impacto ambiental midiendo las inmisiones industriales",
-    cta: { label: "Podemos ayudarte", href: "https://kunakair.com/es/contacto/" },
+    // original: https://kunakair.com/es/contacto/
+    cta: { label: "Podemos ayudarte", href: "/contacto" },
     image:
       "/images/uploads/2023/02/Limitation-of-the-environmental-impact-of-industrial-activity.jpg",
   },
@@ -383,7 +384,8 @@ const CTA_SLIDES_INDUSTRIA: SectorCtaSlide[] = [
       "Mejora la calidad del aire y la salud de tus trabajadores con la monitorización ambiental",
     cta: {
       label: "Protege a tus trabajadores",
-      href: "https://kunakair.com/es/contacto/",
+      // original: https://kunakair.com/es/contacto/
+      href: "/contacto",
     },
     image: "/images/uploads/2023/02/industry-worker.jpg",
   },
@@ -391,7 +393,8 @@ const CTA_SLIDES_INDUSTRIA: SectorCtaSlide[] = [
     heading: "Mide el impacto de tu actividad industrial en la calidad del aire",
     cta: {
       label: "Obtén información fiable",
-      href: "https://kunakair.com/es/contacto/",
+      // original: https://kunakair.com/es/contacto/
+      href: "/contacto",
     },
     image: "/images/uploads/2023/02/inudstry-operator.jpg",
   },
@@ -450,7 +453,8 @@ const BREADCRUMB_BASE: SectorBreadcrumbItem[] = [
   // original: https://kunakair.com/es/
   { label: "Inicio", href: "/" },
   // el índice /es/sectores/ NO está clonado todavía
-  { label: "Sectores", href: "https://kunakair.com/es/sectores/" },
+  // original: https://kunakair.com/es/sectores/
+  { label: "Sectores", href: "/sectores" },
 ];
 
 /* ──────────────────────────── datos: EDAR ──────────────────────────────── */
@@ -496,11 +500,13 @@ export const MONOGRAFICO_EDAR: MonograficoPage = {
     ctas: [
       {
         label: "Solicita una demo técnica",
-        href: "https://kunakair.com/es/contacto/",
+        // original: https://kunakair.com/es/contacto/
+        href: "/contacto",
       },
       {
         label: "Descargar catálogo",
-        href: "https://kunakair.com/es/descarga-catalogo/",
+        // original: https://kunakair.com/es/descarga-catalogo/
+        href: "/descarga-catalogo",
       },
     ],
     modulos: [
@@ -705,7 +711,8 @@ export const MONOGRAFICO_EDAR: MonograficoPage = {
                   ],
                  lh: 36,
                 },
-                { kind: "boton", label: "Solicita una demo técnica", href: "https://kunakair.com/es/contacto/" },
+                // original: https://kunakair.com/es/contacto/
+                { kind: "boton", label: "Solicita una demo técnica", href: "/contacto" },
               ],
             },
           ],
@@ -827,7 +834,8 @@ export const MONOGRAFICO_EDAR: MonograficoPage = {
                     { p: ["Descubre cómo la monitorización ambiental continua puede ayudarte a ", { b: "controlar emisiones" }, ", ", { b: "reducir olores" }, " y tomar mejores ", { b: "decisiones operativas" }, " en tu EDAR."] },
                   ],
                 },
-                { kind: "boton", label: "Solicita una demo técnica", href: "https://kunakair.com/es/contacto/" },
+                // original: https://kunakair.com/es/contacto/
+                { kind: "boton", label: "Solicita una demo técnica", href: "/contacto" },
               ],
             },
             {
@@ -1010,11 +1018,13 @@ export const MONOGRAFICO_PETROLEO: MonograficoPage = {
     ctas: [
       {
         label: "Solicita una demo técnica",
-        href: "https://kunakair.com/es/contacto/",
+        // original: https://kunakair.com/es/contacto/
+        href: "/contacto",
       },
       {
         label: "Descargar catálogo",
-        href: "https://kunakair.com/es/descarga-catalogo/",
+        // original: https://kunakair.com/es/descarga-catalogo/
+        href: "/descarga-catalogo",
       },
     ],
     modulos: [
@@ -1110,7 +1120,8 @@ export const MONOGRAFICO_PETROLEO: MonograficoPage = {
                  lh: 36,
                 },
                 { kind: "claim", texto: "Actúa antes de que el problema sea una realidad", anchoPct: 80 },
-                { kind: "boton", label: "Saber más", href: "https://kunakair.com/es/contacto/" },
+                // original: https://kunakair.com/es/contacto/
+                { kind: "boton", label: "Saber más", href: "/contacto" },
               ],
             },
             {
@@ -1208,7 +1219,8 @@ export const MONOGRAFICO_PETROLEO: MonograficoPage = {
               ancho: "1_3", punteado: true,
               modulos: [
                 { kind: "imagen", src: "/images/uploads/2026/04/METHANE-REFINERY-2-2.jpg", alt: "Monitorización continua diseñada para instalaciones Oil & Gas complejas - Kunak" },
-                { kind: "boton", label: "Solicita una demo técnica", href: "https://kunakair.com/es/contacto/" },
+                // original: https://kunakair.com/es/contacto/
+                { kind: "boton", label: "Solicita una demo técnica", href: "/contacto" },
               ],
             },
             {
@@ -1266,7 +1278,8 @@ export const MONOGRAFICO_PETROLEO: MonograficoPage = {
                   ],
                  ritmo: { mb: 41 },
                 },
-                { kind: "boton", label: "¿Quieres más información?", href: "https://kunakair.com/es/contacto/" },
+                // original: https://kunakair.com/es/contacto/
+                { kind: "boton", label: "¿Quieres más información?", href: "/contacto" },
               ],
             },
             {
@@ -1320,7 +1333,8 @@ export const MONOGRAFICO_PETROLEO: MonograficoPage = {
                     { p: "Convierte la monitorización ambiental en una herramienta de control real de tus operaciones." },
                   ],
                 },
-                { kind: "boton", label: "Solicita una demo técnica", href: "https://kunakair.com/es/contacto/" },
+                // original: https://kunakair.com/es/contacto/
+                { kind: "boton", label: "Solicita una demo técnica", href: "/contacto" },
               ],
             },
             {

@@ -39,7 +39,8 @@ export function CtaNewsletter() {
             </div>
 
             <a
-              href="https://kunakair.com/es/suscribete/"
+              // original: https://kunakair.com/es/suscribete/
+              href="/suscribete"
               className="group mb-[10px] inline-flex items-center gap-2 rounded-[30px] border border-white px-6 pb-[9px] pt-[7.5px] text-[15px] font-bold text-white transition-colors duration-200 hover:border-[#7F8798] hover:bg-[#7F8798]"
               style={{ backgroundColor: "rgba(0, 0, 0, 0.15)" }}
             >

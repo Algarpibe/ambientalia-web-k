@@ -332,7 +332,7 @@ export const ENTRADAS_BLOG: EntradaBlog[] = [
                 <div class="calls-text"><p>Accede al catálogo completo con nuestra solución para la monitorización ambiental y descubre cómo mejorar tu operativa diaria.</p>
 </div>
                 	                <div class="calls-buttons">
-	                    	                        <a href="https://kunakair.com/es/descarga-catalogo/" class="et_pb_button calls-button"  target="_blank" rel="nofollow">
+	                    	                        <a href="/descarga-catalogo" class="et_pb_button calls-button" rel="nofollow">
 	                            Descargar	                        </a>
 	                    	                </div>
 	                        </div>   

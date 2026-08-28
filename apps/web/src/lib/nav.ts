@@ -25,15 +25,20 @@ export interface UtilityMenuItem extends NavLink {
 export const UTILITY_MENU: UtilityMenuItem[] = [
   {
     label: "Soporte",
-    href: "https://kunakair.com/es/soporte/",
+    // original: https://kunakair.com/es/soporte/
+    href: "/soporte",
     children: [
-      { label: "Centro de ayuda", href: "https://kunakair.com/es/soporte/centro-de-ayuda/" },
-      { label: "Servicio de reparación (RMA)", href: "https://kunakair.com/es/soporte/servicio-de-reparacion/" },
+      // original: https://kunakair.com/es/soporte/centro-de-ayuda/
+      { label: "Centro de ayuda", href: "/soporte/centro-de-ayuda" },
+      // original: https://kunakair.com/es/soporte/servicio-de-reparacion/
+      { label: "Servicio de reparación (RMA)", href: "/soporte/servicio-de-reparacion" },
       { label: "Soporte técnico", href: "https://kunaksensing.atlassian.net/servicedesk/customer/portal/1/group" },
     ],
   },
-  { label: "Blog", href: "https://kunakair.com/es/blog/" },
-  { label: "Contacto", href: "https://kunakair.com/es/contacto/" },
+  // original: https://kunakair.com/es/blog/
+  { label: "Blog", href: "/blog" },
+  // original: https://kunakair.com/es/contacto/
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export const LANGUAGES: NavLink[] = [
@@ -151,14 +156,20 @@ export const SECTORS: NavSectorItem[] = [
 ];
 
 export const COMPANY: NavLink[] = [
-  { label: "Sobre nosotros", href: "https://kunakair.com/es/empresa/" },
-  { label: "Premios y reconocimientos", href: "https://kunakair.com/es/empresa/premios-y-reconocimientos/" },
+  // original: https://kunakair.com/es/empresa/
+  { label: "Sobre nosotros", href: "/empresa" },
+  // original: https://kunakair.com/es/empresa/premios-y-reconocimientos/
+  { label: "Premios y reconocimientos", href: "/empresa/premios-y-reconocimientos" },
 ];
 
 export const RESOURCES: NavLink[] = [
   { label: "Artículos", href: "https://kunakair.com/es/recursos/guias/" },
-  { label: "Documentos científicos", href: "https://kunakair.com/es/recursos/documentos-cientificos/" },
-  { label: "Kunakpedia", href: "https://kunakair.com/es/recursos/kunakpedia/" },
-  { label: "Centro de ayuda", href: "https://kunakair.com/es/soporte/centro-de-ayuda/" },
-  { label: "Preguntas frecuentes", href: "https://kunakair.com/es/recursos/preguntas-frecuentes/" },
+  // original: https://kunakair.com/es/recursos/documentos-cientificos/
+  { label: "Documentos científicos", href: "/recursos/documentos-cientificos" },
+  // original: https://kunakair.com/es/recursos/kunakpedia/
+  { label: "Kunakpedia", href: "/recursos/kunakpedia" },
+  // original: https://kunakair.com/es/soporte/centro-de-ayuda/
+  { label: "Centro de ayuda", href: "/soporte/centro-de-ayuda" },
+  // original: https://kunakair.com/es/recursos/preguntas-frecuentes/
+  { label: "Preguntas frecuentes", href: "/recursos/preguntas-frecuentes" },
 ];

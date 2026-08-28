@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   title: "Proyectos de monitorización ambiental con sensores Kunak AIR",
   description:
     "Descubre los proyectos de monitorización ambiental y control de la contaminación llevados a cabo con la tecnología de Kunak.",
-  alternates: { canonical: "https://kunakair.com/es/casos-de-exito/" },
+  alternates: { canonical: "/casos-de-exito" },
 };
 
 /**

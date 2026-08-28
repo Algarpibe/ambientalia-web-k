@@ -21,7 +21,7 @@ import { SectionTitle, BlockTitle, OutlineButton } from "./SectionRow";
 export function UltimosProyectos({
   title = "Últimos proyectos",
   ctaLabel = "Ver todos los casos de éxito",
-  ctaHref = "https://kunakair.com/es/casos-de-exito/",
+  ctaHref = "/casos-de-exito",
   ctaExternal = false,
   embedded = false,
   bare = false,

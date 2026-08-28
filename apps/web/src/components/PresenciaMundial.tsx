@@ -31,7 +31,7 @@ export function PresenciaMundial() {
         belowTitle={
           /* Móvil: mb 30 del módulo de texto antes del botón + mb 30 del botón */
           <div className="mb-[30px] mt-[30px] md:my-0">
-            <BlueButton href="https://kunakair.com/es/contacto/">¿Cómo podemos ayudarte?</BlueButton>
+            <BlueButton href="/contacto">¿Cómo podemos ayudarte?</BlueButton>
           </div>
         }
       >

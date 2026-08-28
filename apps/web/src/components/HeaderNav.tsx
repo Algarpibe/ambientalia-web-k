@@ -155,18 +155,21 @@ export function HeaderNav() {
                 <SectorsDropdown sticky={sticky} />
                 <MainDropdown
                   label="Empresa"
-                  href="https://kunakair.com/es/empresa/"
+                  // original: https://kunakair.com/es/empresa/
+                  href="/empresa"
                   items={COMPANY}
                   sticky={sticky}
                 />
                 <MainLink
                   label="Casos de éxito"
-                  href="https://kunakair.com/es/casos-de-exito/"
+                  // original: https://kunakair.com/es/casos-de-exito/
+                  href="/casos-de-exito"
                   sticky={sticky}
                 />
                 <MainDropdown
                   label="Recursos"
-                  href="https://kunakair.com/es/recursos/"
+                  // original: https://kunakair.com/es/recursos/
+                  href="/recursos"
                   items={RESOURCES}
                   sticky={sticky}
                 />
@@ -350,7 +353,8 @@ function MegaMenuProducts({ sticky }: { sticky: boolean }) {
   return (
     <div className="group static">
       <Link
-        href="https://kunakair.com/es/productos/"
+        // original: https://kunakair.com/es/productos/
+        href="/productos"
         className={
           "inline-flex items-center gap-1 px-2 text-[14px] font-medium transition-colors duration-400 " +
           (sticky ? "text-[#333] hover:text-[#0075C9]" : "text-white hover:opacity-70")
@@ -430,7 +434,8 @@ function SectorsDropdown({ sticky }: { sticky: boolean }) {
   return (
     <div className="group relative">
       <Link
-        href="https://kunakair.com/es/sectores/"
+        // original: https://kunakair.com/es/sectores/
+        href="/sectores"
         className={
           "inline-flex items-center gap-1 px-2 text-[14px] font-medium transition-colors duration-400 " +
           (sticky ? "text-[#333] hover:text-[#0075C9]" : "text-white hover:opacity-70")
@@ -471,7 +476,8 @@ function SectorsDropdown({ sticky }: { sticky: boolean }) {
 function SecondaryPill({ sticky }: { sticky: boolean }) {
   return (
     <Link
-      href="https://kunakair.com/es/contacto/"
+      // original: https://kunakair.com/es/contacto/
+      href="/contacto"
       className={
         "inline-flex items-center gap-2 rounded-[10px] border px-3 py-[10px] text-[14px] font-semibold transition-colors " +
         (sticky
@@ -489,7 +495,8 @@ function SecondaryPill({ sticky }: { sticky: boolean }) {
 function CatalogPill() {
   return (
     <Link
-      href="https://kunakair.com/es/descarga-catalogo/"
+      // original: https://kunakair.com/es/descarga-catalogo/
+      href="/descarga-catalogo"
       className="inline-flex items-center rounded-[10px] bg-[#0075C9] px-4 py-[10px] text-[14px] font-semibold text-white transition-colors hover:bg-[#005ea3]"
       style={{ borderTop: "6px solid #0075C9" }}
     >
@@ -530,7 +537,8 @@ const MOBILE_MENU: MobileNavItemData[] = [
   { label: "Inicio", href: "/", current: true },
   {
     label: "Productos",
-    href: "https://kunakair.com/es/productos/",
+    // original: https://kunakair.com/es/productos/
+    href: "/productos",
     children: PRODUCTS.map((p) => ({
       label: p.label,
       href: p.href,
@@ -539,28 +547,34 @@ const MOBILE_MENU: MobileNavItemData[] = [
   },
   {
     label: "Sectores",
-    href: "https://kunakair.com/es/sectores/",
+    // original: https://kunakair.com/es/sectores/
+    href: "/sectores",
     children: SECTORS.map((s) => ({ label: s.label, href: s.href })),
   },
   {
     label: "Empresa",
-    href: "https://kunakair.com/es/empresa/",
+    // original: https://kunakair.com/es/empresa/
+    href: "/empresa",
     children: COMPANY,
   },
-  { label: "Casos de éxito", href: "https://kunakair.com/es/casos-de-exito/" },
+  // original: https://kunakair.com/es/casos-de-exito/
+  { label: "Casos de éxito", href: "/casos-de-exito" },
   {
     label: "Recursos",
-    href: "https://kunakair.com/es/recursos/",
+    // original: https://kunakair.com/es/recursos/
+    href: "/recursos",
     children: RESOURCES,
   },
   {
     label: "Descargar catálogo",
-    href: "https://kunakair.com/es/descarga-catalogo/",
+    // original: https://kunakair.com/es/descarga-catalogo/
+    href: "/descarga-catalogo",
     pill: true,
   },
   {
     label: "Soporte",
-    href: "https://kunakair.com/es/soporte/",
+    // original: https://kunakair.com/es/soporte/
+    href: "/soporte",
     small: true,
     graySub: true,
     // Orden móvil del original (distinto al utility bar de escritorio)
@@ -570,8 +584,10 @@ const MOBILE_MENU: MobileNavItemData[] = [
       soporteLink("Servicio de reparación (RMA)"),
     ],
   },
-  { label: "Blog", href: "https://kunakair.com/es/blog/", small: true },
-  { label: "Contacto", href: "https://kunakair.com/es/contacto/", small: true },
+  // original: https://kunakair.com/es/blog/
+  { label: "Blog", href: "/blog", small: true },
+  // original: https://kunakair.com/es/contacto/
+  { label: "Contacto", href: "/contacto", small: true },
 ];
 
 /** 3 barras 28×2 → ✕ al abrir. Blancas sobre el hero, #333 en sticky. */

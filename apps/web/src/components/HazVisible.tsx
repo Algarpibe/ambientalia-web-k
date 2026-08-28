@@ -26,7 +26,7 @@ export function HazVisible() {
         belowTitle={
           /* Móvil: pb20 del módulo del título + mb30 del botón Divi */
           <div className="mb-[30px] mt-[20px] md:my-0">
-            <BlueButton href="https://kunakair.com/es/descarga-catalogo/">Descargar catálogo</BlueButton>
+            <BlueButton href="/descarga-catalogo">Descargar catálogo</BlueButton>
           </div>
         }
       >

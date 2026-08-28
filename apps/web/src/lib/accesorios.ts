@@ -343,7 +343,7 @@ export const HERO = {
   h2: "¿Quieres obtener el máximo rendimiento de tu red de monitorización?",
   h2Id: "quieres-obtener-el-maximo-rendimiento-de-tu-red-de-monitorizacion",
   ctaLabel: "Conoce cómo es el aire que respiras",
-  ctaHref: "https://kunakair.com/es/contacto/",
+  ctaHref: "/contacto",
   image: {
     src: "/images/uploads/2023/03/kunak-air-accessories.jpg",
     width: 1000,
@@ -401,6 +401,7 @@ export const ACCESORIOS_ARTICLES: BlogPost[] = [
 export const BREADCRUMB: { label: string; href?: string }[] = [
   // ruta local: la home ya está clonada — original: https://kunakair.com/es/
   { label: "Inicio", href: "/" },
-  { label: "Productos", href: "https://kunakair.com/es/productos/" },
+  // original: https://kunakair.com/es/productos/
+  { label: "Productos", href: "/productos" },
   { label: "Accesorios" },
 ];

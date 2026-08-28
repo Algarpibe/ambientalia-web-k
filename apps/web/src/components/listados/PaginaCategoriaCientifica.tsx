@@ -40,7 +40,7 @@ import {
 const TITULO_TAXONOMIA = "Documentos científicos";
 
 /** El hub del que cuelga la miga. **NO está clonado** ⇒ se queda en el original. */
-const HREF_HUB = "https://kunakair.com/es/recursos/documentos-cientificos/";
+const HREF_HUB = "/recursos/documentos-cientificos";
 
 type Params = { slug: string; n: number };
 

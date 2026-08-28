@@ -65,7 +65,7 @@ export const FAQS_PUBLICADAS: Faq[] = [
     <li>La corrección modifica la respuesta del sensor sin referencia externa para reducir errores y compensar la deriva natural, aunque no permite calcular la incertidumbre con precisión.</li>
     </ul>
     <p>En síntesis, la calibración usa una referencia externa y la corrección es un ajuste interno para mantener la fiabilidad del sensor.</p>
-    <p>Más info en la página 35 del <a target="_blank" href="https://kunakair.com/es/descarga-catalogo/">catálogo</a>.</p>`,
+    <p>Más info en la página 35 del <a href="/descarga-catalogo">catálogo</a>.</p>`,
   },
 ];
 

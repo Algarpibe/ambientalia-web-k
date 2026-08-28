@@ -97,7 +97,8 @@ export function HeroSection() {
             </VideoLightbox>
 
             <Link
-              href="https://kunakair.com/es/descarga-catalogo/"
+              // original: https://kunakair.com/es/descarga-catalogo/
+              href="/descarga-catalogo"
               target="_blank"
               rel="noopener"
               className="banner-home-button group inline-flex h-[50px] items-center text-white"

@@ -139,7 +139,7 @@ export function ProductosTabs({
             solo lleva punteado + h2 + la lista (verificado en el DOM). */}
         {sinTitulo ? null : (
           <div className="mt-[34px] flex justify-center md:mt-[70px] md:pl-[33%]">
-            <BlueButton href="https://kunakair.com/es/contacto/">
+            <BlueButton href="/contacto">
               Cuéntanos tus necesidades
             </BlueButton>
           </div>

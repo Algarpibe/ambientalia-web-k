@@ -264,7 +264,8 @@ export const SECTOR_URBANO: SectorPage = {
     // original: https://kunakair.com/es/
     { label: "Inicio", href: "/" },
     // el índice /es/sectores/ NO está clonado todavía
-    { label: "Sectores", href: "https://kunakair.com/es/sectores/" },
+    // original: https://kunakair.com/es/sectores/
+    { label: "Sectores", href: "/sectores" },
     { label: "Calidad del aire en las ciudades" },
   ],
 
@@ -280,10 +281,12 @@ export const SECTOR_URBANO: SectorPage = {
       alt: "calidad del aire en las ciudades",
     },
     ctas: [
-      { label: "Quiero saber más", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      { label: "Quiero saber más", href: "/contacto" },
       {
         label: "Descargar catálogo",
-        href: "https://kunakair.com/es/descarga-catalogo/",
+        // original: https://kunakair.com/es/descarga-catalogo/
+        href: "/descarga-catalogo",
       },
     ],
     heading:
@@ -360,7 +363,8 @@ export const SECTOR_URBANO: SectorPage = {
         "Obtén datos fiables y precisos sobre la contaminación calle a calle",
       cta: {
         label: "Protege la salud de tus ciudadanos",
-        href: "https://kunakair.com/es/contacto/",
+        // original: https://kunakair.com/es/contacto/
+        href: "/contacto",
       },
       image: "/images/uploads/2023/02/street-by-street-data.jpg",
     },
@@ -368,7 +372,8 @@ export const SECTOR_URBANO: SectorPage = {
       heading: "Mejora del nivel de vida protegiendo el medio ambiente",
       cta: {
         label: "Podemos ayudarte",
-        href: "https://kunakair.com/es/contacto/",
+        // original: https://kunakair.com/es/contacto/
+        href: "/contacto",
       },
       image: "/images/uploads/2023/02/improve-the-life-quality.jpg",
     },
@@ -377,7 +382,8 @@ export const SECTOR_URBANO: SectorPage = {
         "Complementa las redes oficiales con información fiable a escala hiperlocal",
       cta: {
         label: "Descubre cómo",
-        href: "https://kunakair.com/es/contacto/",
+        // original: https://kunakair.com/es/contacto/
+        href: "/contacto",
       },
       image: "/images/uploads/2023/02/hyper-local-scale-data.jpg",
     },
@@ -504,7 +510,8 @@ export const SECTOR_INDUSTRIA: SectorPage = {
   breadcrumb: [
     // ruta local: esta página ya está clonada (src/app/page.tsx)
     { label: "Inicio", href: "/" },
-    { label: "Sectores", href: "https://kunakair.com/es/sectores/" },
+    // original: https://kunakair.com/es/sectores/
+    { label: "Sectores", href: "/sectores" },
     { label: "Control de emisiones industriales" },
   ],
 
@@ -517,8 +524,10 @@ export const SECTOR_INDUSTRIA: SectorPage = {
   hero: {
     image: { src: "/images/uploads/2023/02/industry-perimeter.jpg", alt: "control de emisiones industriales" },
     ctas: [
-      { label: "¿Quieres saber más?", href: "https://kunakair.com/es/contacto/" },
-      { label: "Descargar catálogo", href: "https://kunakair.com/es/descarga-catalogo/" },
+      // original: https://kunakair.com/es/contacto/
+      { label: "¿Quieres saber más?", href: "/contacto" },
+      // original: https://kunakair.com/es/descarga-catalogo/
+      { label: "Descargar catálogo", href: "/descarga-catalogo" },
     ],
     heading:
       "Mide el impacto de las emisiones industriales con datos fiables sobre múltiples contaminantes.",
@@ -671,19 +680,22 @@ export const SECTOR_INDUSTRIA: SectorPage = {
     {
       heading:
         "Reduce el impacto ambiental midiendo las inisiones industriales",
-      cta: { label: "Podemos ayudarte", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Podemos ayudarte", href: "/contacto" },
       image: "/images/uploads/2023/02/Limitation-of-the-environmental-impact-of-industrial-activity.jpg",
     },
     {
       heading:
         "Mejora la calidad del aire y la salud de tus trabajadores con la monitorización ambiental",
-      cta: { label: "Protege a tus trabajadores", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Protege a tus trabajadores", href: "/contacto" },
       image: "/images/uploads/2023/02/industry-worker.jpg",
     },
     {
       heading:
         "Mide el impacto de tu actividad industrial en la calidad del aire",
-      cta: { label: "Obtén información fiable", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Obtén información fiable", href: "/contacto" },
       image: "/images/uploads/2023/02/inudstry-operator.jpg",
     },
   ],
@@ -799,7 +811,8 @@ export const SECTOR_CONSTRUCCION: SectorPage = {
   breadcrumb: [
     // ruta local: esta página ya está clonada (src/app/page.tsx)
     { label: "Inicio", href: "/" },
-    { label: "Sectores", href: "https://kunakair.com/es/sectores/" },
+    // original: https://kunakair.com/es/sectores/
+    { label: "Sectores", href: "/sectores" },
     { label: "Contaminación por construcción" },
   ],
 
@@ -815,8 +828,10 @@ export const SECTOR_CONSTRUCCION: SectorPage = {
       alt: "contaminación por construcción",
     },
     ctas: [
-      { label: "¿Quieres saber más?", href: "https://kunakair.com/es/contacto/" },
-      { label: "Descargar catálogo", href: "https://kunakair.com/es/descarga-catalogo/" },
+      // original: https://kunakair.com/es/contacto/
+      { label: "¿Quieres saber más?", href: "/contacto" },
+      // original: https://kunakair.com/es/descarga-catalogo/
+      { label: "Descargar catálogo", href: "/descarga-catalogo" },
     ],
     heading:
       "Controla la calidad del aire en obras de construcción y demolición con datos de alta precisión.",
@@ -891,17 +906,20 @@ export const SECTOR_CONSTRUCCION: SectorPage = {
     {
       heading:
         "Controla la calidad del aire en las obras y contribuye al bienestar de las personas",
-      cta: { label: "Cuéntanos tu caso", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Cuéntanos tu caso", href: "/contacto" },
       image: "/images/uploads/2023/02/air-quality-at-construction-sites.jpg",
     },
     {
       heading: "Minimiza los riesgos desplegando una red de control del polvo en suspensión",
-      cta: { label: "Mide tus emisiones", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Mide tus emisiones", href: "/contacto" },
       image: "/images/uploads/2023/02/road-works.jpg",
     },
     {
       heading: "Controla tus obras con datos precisos en tiempo real",
-      cta: { label: "Optimiza tus operaciones", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Optimiza tus operaciones", href: "/contacto" },
       image: "/images/uploads/2023/02/Control-the-impact-of-your-operations.jpg",
     },
   ],
@@ -993,7 +1011,8 @@ export const SECTOR_INVESTIGACION: SectorPage = {
   breadcrumb: [
     // ruta local: esta página ya está clonada (src/app/page.tsx)
     { label: "Inicio", href: "/" },
-    { label: "Sectores", href: "https://kunakair.com/es/sectores/" },
+    // original: https://kunakair.com/es/sectores/
+    { label: "Sectores", href: "/sectores" },
     { label: "Estudio de la contaminación atmosférica" },
   ],
 
@@ -1009,8 +1028,10 @@ export const SECTOR_INVESTIGACION: SectorPage = {
       alt: "tecnología para el estudio de la contaminación atmosférica",
     },
     ctas: [
-      { label: "¿Quieres saber más?", href: "https://kunakair.com/es/contacto/" },
-      { label: "Descargar catálogo", href: "https://kunakair.com/es/descarga-catalogo/" },
+      // original: https://kunakair.com/es/contacto/
+      { label: "¿Quieres saber más?", href: "/contacto" },
+      // original: https://kunakair.com/es/descarga-catalogo/
+      { label: "Descargar catálogo", href: "/descarga-catalogo" },
     ],
     heading:
       "Realiza mediciones útiles y precisas para investigaciones con la mejor tecnología disponible.",
@@ -1072,18 +1093,21 @@ export const SECTOR_INVESTIGACION: SectorPage = {
     {
       heading:
         "Haz que tus estudios ambientales sean más completos gracias a las nuevas fuentes de datos",
-      cta: { label: "Descubre cómo", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Descubre cómo", href: "/contacto" },
       image: "/images/uploads/2023/02/environmental-studies-with-new-data-sources.jpg",
     },
     {
       heading: "Integra múltiples fuentes de datos y realiza análisis avanzados",
-      cta: { label: "Realiza análisis avanzados", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Realiza análisis avanzados", href: "/contacto" },
       image: "/images/uploads/2023/02/Perform-advanced-analysis.jpg",
     },
     {
       heading:
         "Añade valor a tus estudios científicos gracias a los nuevos sensores de calidad del aire homologados",
-      cta: { label: "Accede a datos de referencia", href: "https://kunakair.com/es/contacto/" },
+      // original: https://kunakair.com/es/contacto/
+      cta: { label: "Accede a datos de referencia", href: "/contacto" },
       image: "/images/uploads/2023/02/near-reference-data-1.jpg",
     },
   ],

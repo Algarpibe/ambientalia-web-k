@@ -24,9 +24,9 @@ const U23_02 = "/images/uploads/2023/02";
 const U23_03 = "/images/uploads/2023/03";
 const U23_04 = "/images/uploads/2023/04";
 
-export const CONTACT_HREF = "https://kunakair.com/es/contacto/";
-export const CATALOG_HREF = "https://kunakair.com/es/descarga-catalogo/";
-export const CASES_HREF = "https://kunakair.com/es/casos-de-exito/";
+export const CONTACT_HREF = "/contacto";
+export const CATALOG_HREF = "/descarga-catalogo";
+export const CASES_HREF = "/casos-de-exito";
 
 /* --------------------------------------------------------------------------
  * Tipos de contenido (los 4 bloques repetibles del CMS)
@@ -73,7 +73,8 @@ export interface Herramienta {
 export const BREADCRUMB: { label: string; href?: string }[] = [
   // ruta local: la home ya está clonada — original: https://kunakair.com/es/
   { label: "Inicio", href: "/" },
-  { label: "Productos", href: "https://kunakair.com/es/productos/" },
+  // original: https://kunakair.com/es/productos/
+  { label: "Productos", href: "/productos" },
   { label: "AIR Cloud" },
 ];
 
