@@ -1,0 +1,57 @@
+
+════════ ESCALÓN 1 · hacia dónde se movieron (122.ª) ════════
+
+@390
+   ANTES   f33-cmp-390-2026-08-26-2.json
+   DESPUÉS f33-cmp-390-2026-08-29.json   (2026-08-29 14:58)
+   CONTROL · el lado ORIGINAL (captura `file://`) idéntico en 3 de 3 rutas  ✅
+
+   /es/aviso-legal/
+      docH   orig 14199  ·  clon 13384 → 13354   Δ -815 → -845   |Δ| 815 → 845
+      m9  orig 3081  ·  clon 2937 → 2906.41   |Δ| 144.00 → 174.59  ALEJA
+      Σ|Δ| por módulo: 977.34 → 1007.93  (30.59)  ·  módulos que ACERCAN 0 · ALEJAN 1
+
+   /es/politica-de-privacidad-y-de-proteccion-de-datos/
+      docH   orig 3602  ·  clon 3594 → 3624   Δ -8 → 22   |Δ| 8 → 22
+      m1  orig 1295.75  ·  clon 1223.75 → 1254.34   |Δ| 72.00 → 41.41  ACERCA
+      Σ|Δ| por módulo: 102.00 → 71.41  (-30.59)  ·  módulos que ACERCAN 1 · ALEJAN 0
+
+   /es/sistema-interno-de-informacion/
+      docH   orig 37211  ·  clon 33112 → 33112   Δ -4099 → -4099   |Δ| 4099 → 4099
+      (ningún módulo movió su alto)
+      Σ|Δ| por módulo: 3188.62 → 3188.62  (0.00)  ·  módulos que ACERCAN 0 · ALEJAN 0
+
+@1440
+   ANTES   f33-cmp-1440-2026-08-26-4.json
+   DESPUÉS f33-cmp-1440-2026-08-29.json   (2026-08-29 15:05)
+   CONTROL · el lado ORIGINAL (captura `file://`) idéntico en 3 de 3 rutas  ✅
+
+   /es/aviso-legal/
+      docH   orig 5134  ·  clon 4766 → 4766   Δ -368 → -368   |Δ| 368 → 368
+      (ningún módulo movió su alto)
+      Σ|Δ| por módulo: 556.00 → 556.00  (0.00)  ·  módulos que ACERCAN 0 · ALEJAN 0
+
+   /es/politica-de-privacidad-y-de-proteccion-de-datos/
+      docH   orig 1489  ·  clon 1448 → 1448   Δ -41 → -41   |Δ| 41 → 41
+      (ningún módulo movió su alto)
+      Σ|Δ| por módulo: 72.00 → 72.00  (0.00)  ·  módulos que ACERCAN 0 · ALEJAN 0
+
+   /es/sistema-interno-de-informacion/
+      docH   orig 15597  ·  clon 13655 → 13655   Δ -1942 → -1942   |Δ| 1942 → 1942
+      (ningún módulo movió su alto)
+      Σ|Δ| por módulo: 1703.14 → 1703.14  (0.00)  ·  módulos que ACERCAN 0 · ALEJAN 0
+
+── MODELO DEL SIGNO · longitud descifrada vs marcador de posición (17) ──
+   (el descifrador NO está en el corpus: 0 ficheros `email-decode*`, 0 `cdn-cgi/`)
+   /es/aviso-legal/
+      "info@kunak.es" (13) − 17 = -4  ⇒ el clon ACORTA su texto respecto de la referencia
+   /es/politica-de-privacidad-y-de-proteccion-de-datos/
+      "contact@kunakair.com" (20) − 17 = +3  ⇒ el clon ALARGA su texto respecto de la referencia
+   /es/sistema-interno-de-informacion/
+      "compliance@kunak.es" (19) − 17 = +2  ⇒ el clon ALARGA su texto respecto de la referencia
+
+   ⚠ El modelo sólo se puede ejercitar donde el texto REENVUELVE: una diferencia
+     de ancho no cuesta un píxel hasta que cambia el nº de renglones (§el no-wrap).
+     Instancias que lo ejercitan: las que movieron su alto arriba. Las que no se
+     movieron salen INDETERMINADAS — ni confirman ni refutan.
+
