@@ -1985,6 +1985,7 @@ un número, y se ha pagado CUATRO veces con la misma moneda.**
 | 2 | la DESTACADA y el `og:image` | el seed murió otra vez | 93 → 4 |
 | 3 | **la foto del PANEL de producto** | el seed murió otra vez | **5** |
 | 4 | **las HOJAS CSS ENLAZADAS** | ⚠ **no mató un seed: dejó una condición de T9 sin pagar durante dos tandas** | **505 distintas · 0 capturadas** |
+| 5 | **los SCRIPTS QUE REPARAN EL MARCADO** | ⚠ **no mató nada: dejó un eje INADJUDICABLE contra la referencia** | **3 rutas ofuscadas · 0 descifradores capturados** |
 
 Las cuatro veces el inventario se derivó **de lo que el extractor de turno ya
 sabía leer**, y las cuatro veces el canal que faltaba apareció **chocando** con
@@ -2090,6 +2091,50 @@ eso vivió más:
 > **Y lo que costaba creérselo:** el informe iba a declarar «35 de 50, y 8
 > páginas sin hojas recuperables» — un pendiente **inventado**, sobre páginas que
 > incluían una de las dos separadoras que deciden un campo del esquema.
+
+#### ⚠⚠ Y el QUINTO canal no rompe NI FALSEA: deja la REFERENCIA a medias, y el defecto sale con el signo cambiado (2026-08-29)
+
+Los tres primeros canales mataron un seed; el cuarto dio una medida **plausible**
+y falsa. El quinto no hace ninguna de las dos cosas — y por eso es el que más
+tarda en verse:
+
+> **Un HTML servido puede traer marcado que un SCRIPT REPARA en cliente**
+> —ofuscación de correo, `data-src` perezosos, plantillas que se hidratan—. Ese
+> script es un CANAL de captura igual que un `<img src>` o un `<link
+> rel=stylesheet>`. Sin él, la captura **no está rota: está a medias**, y sigue
+> midiendo perfectamente… **el estado sin reparar**.
+
+**Y lo que produce no es un error, es un ROJO CON EL SIGNO INVERTIDO.** El clon
+correcto —el que sí repara, como el original vivo— sale **alejándose** de la
+referencia, así que el defecto se le atribuye a él. El documento ya avisa de
+esto al TRANSCRIBIR (*«un marcado y el `<script>` que lo REPARA son una unidad;
+media unidad es un defecto que el original no tiene»*); lo que faltaba es **la
+misma regla en la CAPTURA**, donde la media unidad la tiene el corpus.
+
+**Medido:** Cloudflare ofusca el `mailto` en **3 rutas** del corpus de la cola
+larga y su descifrador —`/cdn-cgi/scripts/…/email-decode.min.js`, script
+**externo**— **no está capturado** (0 ficheros `email-decode*`, 0 directorios
+`cdn-cgi/`). El comparador renderiza por `file://` abortando todo lo que no sea
+`file:`, así que su «original» pinta el marcador `[email protected]` (17
+caracteres) donde el sitio vivo pinta la dirección. Arreglado el clon, el eje da
+**ACERCA en una ruta y ALEJA en otra**, y el signo lo predice una resta de
+longitudes: `13 − 17 = −4` acorta, `20 − 17 = +3` alarga.
+
+**Las dos mitades operativas:**
+
+1. **una campaña que congele HTML enumera los SCRIPTS que ese HTML necesita para
+   quedar como se ve**, igual que ya enumera hojas e imágenes — y publica su cero
+   cuando no los tenga;
+2. **y un eje que dependa de un canal no capturado se declara INADJUDICABLE
+   contra esa referencia, con su cardinal** —aquí 3 rutas, 0 descifradores—. No
+   se le exige Δ0 al clon en un eje donde la referencia no puede exhibir el valor
+   bueno: eso es recalibrar contra media unidad, o sea fabricar una FAMILIA DE
+   CALIBRACIÓN con el original de coartada.
+
+> **Y la señal para buscarlo, que es barata: un `<script src>` a ruta ABSOLUTA
+> del propio sitio.** Bajo `file://` no resuelve contra nada, así que su ausencia
+> es silenciosa por partida doble — ni error de red, ni fichero que falte en el
+> corpus, porque nadie lo pidió nunca.
 
 ### Reglas sobre las sondas mismas
 
@@ -2781,6 +2826,34 @@ nombre de una congelada es un dato recordado, no derivado.**
 > reciente de una familia puede ser el sabotaje que acaba de correr el negativo.
 > Y la sonda **dice en voz alta qué fichero resolvió, con su fecha**.
 
+> ⚠⚠ **Y LAS DOS FUGAS QUE LA GUARDA DE `w()` NO TAPA, PORQUE NO PASAN POR ELLA
+> (2026-08-29): LAS DERIVACIONES Y LOS LOGS.**
+>
+> Toda esta regla vive en `w()`, así que protege **a las sondas**. Hay dos
+> familias de artefacto que no la atraviesan y se comportan exactamente como la
+> congelada de julio:
+>
+> 1. **un script de `derivaciones/` escribe con `writeFileSync` pelado.** No hay
+>    guarda, así que **la corrida que VERIFICA un arreglo pisa a la que lo
+>    DIAGNOSTICÓ** — el defecto original de la §regla 5, en un directorio donde
+>    nadie lo esperaba. Se paga a los diez minutos: la evidencia del «antes»
+>    desaparece en el acto de arreglarlo. Salida: **el nombre de la congelada se
+>    DERIVA DEL ESTADO** que describe (`-ANTES` mientras el defecto viva), no de
+>    la sonda que la escribe;
+> 2. **un log de corrida —`/tmp/x.log`, `salida.txt`— es un nombre canónico sin
+>    guarda ninguna**, y sobrevive entre sesiones. Leerlo por su nombre da **la
+>    corrida de otro día con toda la cara de ser la tuya**: medido, un
+>    `f33-1440.log` de hacía **4 días** con su `✓ evaluadas 31/31` al final, leído
+>    como el resultado de una corrida que aún estaba arrancando. Antes de leer un
+>    log, **se mira su `mtime`** — es la misma comprobación de frescura que ya se
+>    le exige al HTML servido, aplicada al sitio donde nadie la hace.
+>
+> **Y la guarda que se deriva de las dos, para cualquier comparación
+> antes/después: se EXIGE que el DESPUÉS sea POSTERIOR al ANTES.** Sin esa línea,
+> un resolutor por `mtime` al que le falte el después **cae en la congelada de al
+> lado** y compara dos fotos del mismo día llamándolas antes y después — que
+> publica un «no se movió nada» perfectamente plausible.
+
 ⚠ **Y su moraleja es la de la regla 4, otra vez:** `c-cabecera` se parcheó a mano
 primero. Eso es arreglar **la instancia y no la CLASE**, que es exactamente cómo
 se llega a la tercera tanda del mismo bug. La guarda solo cuenta cuando está en
@@ -3401,7 +3474,18 @@ propio.** Si sigue diciendo qué hacer, es regla y va aquí.
 >    en vuelo, nada de `build`, `check` ni `dev`»*): no es que el build
 >    *desincronice* el `.next`, es que **se lo lleva por delante**. Se construye
 >    fuera (`NEXT_DIST_DIR=.next-nuevo`) y se promociona por rename **sólo con
->    `exit 0`**;
+>    `exit 0`**.
+>
+>    > ⚠ **Y CONSTRUIR FUERA TIENE UN COSTE QUE PARECE UN FALLO DE RED: UN
+>    > DIRECTORIO NUEVO ARRANCA SIN CACHÉ DE FUENTES (2026-08-28, 121.ª).** El
+>    > `.next` de siempre trae la caché de `next/font` ya poblada; uno recién
+>    > creado **no**, así que el primer `next build` fuera de sitio **sale a
+>    > descargar las fuentes** y puede morir ahí con la red perfectamente sana.
+>    >
+>    > No es un defecto del build ni del proveedor: es **el precio de
+>    > `NEXT_DIST_DIR`**, y se paga una vez por directorio nuevo. Saberlo evita
+>    > la tarde de diagnosticar la red — que es exactamente lo que cuesta un
+>    > coste no escrito: **se investiga como si fuera un fallo**;
 > 2. **Un listado no tiene contenido propio: es una CONSULTA.** El contenido son
 >    los términos y las colecciones; el listado es una proyección sobre ellos. Por
 >    eso no hay colección «blog» ni «recursos» en el esquema. Vale para cualquier

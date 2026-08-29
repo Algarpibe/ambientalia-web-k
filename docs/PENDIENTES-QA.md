@@ -1,5 +1,128 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §122-CIERRE · **el `minimo: 1` era una clase de DOS y se cierra entera; y las 2 rutas se movieron en direcciones OPUESTAS — la que se aleja tiene razón** — 122.ª, 2026-08-29
+
+Escalón mixto. Las dos partes cerraron; nada quedó a medias.
+
+### PASO 0 · el listón del segundo contrato
+
+| magnitud | valor | cómo se derivó |
+|---|---|---|
+| sondas con `minimo` LITERAL | **13 de 219** declaraciones | `sinLiterales()` sobre 216 ficheros |
+| **la clase**: literal en contrato SECUNDARIO | **2 de 6** sondas con ≥2 contratos | ídem |
+| las otras 4 multi-contrato | derivan su 2.º listón | ídem |
+| literales en contrato ÚNICO (fuera de la clase) | **11**, nombrados uno a uno | ídem |
+| rechazos legítimos que añade la guarda (§regla 25) | **0, demostrado** | del propio `exit` de las dos sondas |
+
+Instrumento: `derivaciones/minimo-1-122.{mjs,log}` — con **su control** (un
+fixture con el mismo texto en código, comentario de línea, comentario de bloque
+y cadena: ve 2 de 5, que es lo correcto) y con la corrida de ANTES conservada
+aparte (`minimo-1-122-ANTES.log`, B = 2) porque **la de después la pisó**.
+
+**El comentario que justificaba el `1` tenía razón en su mitad** —*el listón lo
+pone el fichero de comparación, no el build*, luego no vale `RUTAS.length`— y se
+leyó como si justificara el `1`. La otra mitad: el fichero de comparación
+**también dice CUÁNTAS**, y las dos sondas ya calculaban esa intersección dentro
+del `for`, sin nombre. Hoy es `comunes`, y el listón `Math.max(1, comunes.length)`.
+
+Con `minimo: 1` el nivel de comparación salía **verde habiendo comparado 1 ruta
+de 426** — y, lo caro, dejaba **inerte** la protección estructural de §sondas
+4bis en ese nivel: el gancho de salida no podía forzar nada.
+
+### PASO 0 · los negativos, y cuál de los dos casos mide el arreglo
+
+**`clon-base` NO TENÍA NEGATIVO.** Derivado: **0** ocurrencias en `negativos.mjs`
+y ningún `clon-base.neg.mjs`. La guarda de regresión principal del repo —426
+rutas × 2 anchos, umbral cero— llevaba tandas citándose sin que nadie hubiera
+probado que sabe fallar. Creado: **3/3**. `html-cmp.neg`: **14/14**.
+
+Y el reparto de separadoras, **medido sobre la clase real en procesos reales**
+(`derivaciones/separadora-minimo-122.{mjs,log}`), no razonado:
+
+| caso | qué separa | separadoras |
+|---|---|---|
+| `casi-toda-sin-comparar` (1 de 426) | **el listón derivado**: con `minimo: 1` daba exit **0**, mudo y «suficiente true» | **1** |
+| `base-ajena` (0 de 0) | el **suelo** `Math.max(1, …)`; con `minimo: 1` también gritaba | **0** |
+
+> **El caso que el encargo nombraba es el que NO mide el arreglo.** Se conserva
+> porque prueba la otra mitad —sin suelo, el listón valdría 0—, y se dice en el
+> fichero que no prueba la primera.
+
+### ESCALÓN 1 · hacia dónde se movieron
+
+**No faltaba comparador: `f33-cmp` ya mide `h` por módulo en los dos lados**, y
+las 31 de F3-3 incluyen las tres rutas ofuscadas. El ANTES ya estaba congelado y
+es válido — comprobado por el **ORDEN**: congeladas del 2026-08-26 13:20/13:23,
+arreglo del mailto `f69c4ad` del 2026-08-27 19:06.
+
+CONTROL: el lado ORIGINAL es la captura servida por `file://` —el mismo fichero
+en las dos corridas— e **idéntico en 3 de 3 rutas a los dos anchos**.
+
+**@390**, leído como `|clon − original|` antes y después, módulo a módulo:
+
+| ruta | módulo | original | clon antes → después | \|Δ\| | |
+|---|---|---|---|---|---|
+| `/es/aviso-legal/` | m9 | 3081 | 2937 → **2906.41** | 144.00 → 174.59 | **ALEJA** |
+| `/es/politica-de-privacidad-…/` | m1 | 1295.75 | 1223.75 → **1254.34** | 72.00 → 41.41 | **ACERCA** |
+| `/es/sistema-interno-de-informacion/` | — | — | 33112 → 33112 | 3188.62 → 3188.62 | sin mover |
+
+**±30.59 exactos**: un renglón. **@1440: 0 de 3 movidas**, Σ|Δ| idéntica — a ese
+ancho la propiedad está **tapada** (§regla 35 / la regla espejo), así que no
+puede refutar nada; se mide donde la enseña y se publican los dos.
+
+⚠ **Cruce con otro instrumento** (§sondas 4): `clon-base` dijo **2 rutas a 390 y
+0 a 1440**; `f33-cmp`, de dos lados y por módulo, da la misma partición.
+
+**Lo esperado era «se acerca» y el dato dice «se parte»**, y el signo lo predice
+una resta de longitudes contra el marcador `[email protected]` (17):
+`info@kunak.es` (13) acorta ⇒ ALEJA · `contact@kunakair.com` (20) alarga ⇒
+ACERCA · `compliance@kunak.es` (19) alarga pero **no reenvuelve** ⇒
+INDETERMINADA. **2 instancias lo ejercitan, 2 aciertan**; la tercera no separa.
+
+> ⚠ **El «ALEJA» no es defecto del clon: la REFERENCIA está a medias.** El
+> descifrador de Cloudflare **no está capturado** —0 ficheros `email-decode*`, 0
+> `cdn-cgi/`— así que la captura pinta el marcador donde el sitio vivo pinta la
+> dirección. Subido a `CLAUDE.md` como **quinto canal de captura**.
+
+⚠ **Y el `docH` no sirve para leerlo:** en `politica` va de −8 a **+22**
+(empeora) mientras su módulo va de 72 a **41.41** (mejora). El −8 era residuo de
+errores que se compensaban. La unidad que responde es **el módulo**.
+
+### SIN MEDIR, con su denominador
+
+- **`clon-base.neg` cubre SÓLO el segundo contrato.** El primero y **los 4 ejes
+  de regresión** (`docH`, `h1.y`, secciones, anclas) siguen **sin negativo**:
+  4 ejes, 0 casos. Declarado en la cabecera del fichero, no sólo aquí;
+- el modelo del signo queda **INDETERMINADO en 1 de 3** rutas;
+- la adjudicación de ese eje contra la captura: **no disponible** mientras el
+  corpus no traiga el descifrador (**0 de 3** rutas ofuscadas lo tienen);
+- `/es/sistema-interno-de-informacion/` arrastra **|Δ| 3188.62** por módulo a 390,
+  de otra causa y **sin adjudicar**.
+
+### De paso · el tripwire de carga, y un residuo de su propia regla
+
+`CLAUDE.md` cargó **287 752 chars** tras las tres subidas de esta tanda —**1.92×**
+el aviso de 150 000— con los dos marcadores presentes: el truncado sigue
+**REFUTADO**, ahora al doble largo. `KV-01 · 7HQMPD` está al **21.0 %** (la 121.ª
+lo midió al 22.0 %; el fichero creció por delante y por detrás), o sea que **el
+reparto sigue siendo bueno y NO hace falta el tercer marcador**.
+
+⚠ Y el residuo, que conviene saber antes de re-medirlo: la regla de la 121.ª dice
+*«un marcador se localiza por su FORMA COMPLETA, nunca por su prefijo»* — y **la
+forma completa aparece 2 veces**, porque la tabla que estableció la regla la
+cita entera. Localizar por forma completa **reduce** el problema pero no lo
+elimina: lo que dirime es tomar la **PRIMERA** ocurrencia, que es la que
+`indexOf` devuelve y la que da el 21.0 % concordante con la medida anterior.
+
+### Barrido de §regla 12 (acotado a las actas de ESTA tanda)
+
+**3 enunciados con forma de regla que no estaban en `CLAUDE.md`**, los tres
+subidos: el **quinto canal de captura** (los scripts que reparan el marcado); las
+**dos fugas de la guarda de `w()`** (las derivaciones y los logs, más la
+exigencia de que el DESPUÉS sea posterior al ANTES); y el coste de
+**`NEXT_DIST_DIR` sin caché de fuentes**. Los demás enunciados de los dos
+mensajes de commit son **eventos** con su fecha y su número, y se quedan aquí.
+
 ## ✅ §121-CIERRE · **las tres partes con sus cardinales, y el ESCALÓN 3 con un hallazgo: a 390 se mueven 2 rutas y a 1440 ninguna — y no las movió el escalón que se estaba midiendo** — 121.ª, 2026-08-28
 
 La tanda se cerró en dos sesiones. La primera dejó la corrida de `clon-base`
