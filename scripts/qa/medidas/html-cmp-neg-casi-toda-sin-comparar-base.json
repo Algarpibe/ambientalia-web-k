@@ -1,7 +1,7 @@
 {
   "meta": {
     "fecha": "2026-08-29",
-    "etiqueta": "solo-reparto",
+    "etiqueta": "control-diana",
     "rutas": 426,
     "buildId": "QWh9iJBZe-oVSga2SVY-s"
   },
@@ -18,7 +18,8 @@
       "nMascaras": 139,
       "bytesCarga": 86326,
       "nTrozos": 37,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/aaqms-estaciones-de-calidad-del-aire": {
       "bytes": 185006,
@@ -46,7 +47,8 @@
       "nMascaras": 140,
       "bytesCarga": 74283,
       "nTrozos": 33,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/additive-presenta-sistema-kunak-air-en-sensortest-2018": {
       "bytes": 93722,
@@ -60,7 +62,8 @@
       "nMascaras": 71,
       "bytesCarga": 31988,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/amoniaco-nh3": {
       "bytes": 176679,
@@ -74,7 +77,8 @@
       "nMascaras": 80,
       "bytesCarga": 70050,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/aviso-legal": {
       "bytes": 108716,
@@ -88,7 +92,8 @@
       "nMascaras": 82,
       "bytesCarga": 39087,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/biometano-y-biogas": {
       "bytes": 248633,
@@ -102,7 +107,8 @@
       "nMascaras": 94,
       "bytesCarga": 103968,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/blog": {
       "bytes": 128846,
@@ -116,7 +122,8 @@
       "nMascaras": 88,
       "bytesCarga": 50476,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/blog/page/2": {
       "bytes": 129867,
@@ -130,7 +137,8 @@
       "nMascaras": 101,
       "bytesCarga": 51424,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/blog/page/3": {
       "bytes": 124020,
@@ -144,7 +152,8 @@
       "nMascaras": 102,
       "bytesCarga": 48518,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/blog/page/4": {
       "bytes": 114076,
@@ -158,7 +167,8 @@
       "nMascaras": 103,
       "bytesCarga": 43620,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/blog/page/5": {
       "bytes": 113738,
@@ -172,7 +182,8 @@
       "nMascaras": 97,
       "bytesCarga": 43441,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/blog/page/6": {
       "bytes": 112360,
@@ -186,7 +197,8 @@
       "nMascaras": 96,
       "bytesCarga": 42740,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/blog/page/7": {
       "bytes": 108951,
@@ -200,7 +212,8 @@
       "nMascaras": 97,
       "bytesCarga": 40995,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/blog/page/8": {
       "bytes": 99972,
@@ -214,7 +227,8 @@
       "nMascaras": 86,
       "bytesCarga": 36155,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calibracion-de-sensores-de-calidad-del-aire": {
       "bytes": 182469,
@@ -228,7 +242,8 @@
       "nMascaras": 102,
       "bytesCarga": 74134,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-aire-paises-sanos": {
       "bytes": 114189,
@@ -242,7 +257,8 @@
       "nMascaras": 78,
       "bytesCarga": 42047,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-aire-tiempo-real-kunak-air-lite": {
       "bytes": 140155,
@@ -256,7 +272,8 @@
       "nMascaras": 78,
       "bytesCarga": 54306,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-del-aire": {
       "bytes": 130637,
@@ -270,7 +287,8 @@
       "nMascaras": 84,
       "bytesCarga": 49471,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-del-aire-alrededor-de-los-colegios": {
       "bytes": 163350,
@@ -284,7 +302,8 @@
       "nMascaras": 84,
       "bytesCarga": 65921,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-del-aire-en-islas": {
       "bytes": 233703,
@@ -298,7 +317,8 @@
       "nMascaras": 94,
       "bytesCarga": 97185,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-del-aire-en-las-comunidades": {
       "bytes": 213862,
@@ -312,7 +332,8 @@
       "nMascaras": 100,
       "bytesCarga": 89105,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-del-aire-en-los-aeropuertos": {
       "bytes": 158748,
@@ -326,7 +347,8 @@
       "nMascaras": 86,
       "bytesCarga": 62655,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-del-aire-en-los-asentamientos-informales": {
       "bytes": 130185,
@@ -340,7 +362,8 @@
       "nMascaras": 78,
       "bytesCarga": 49742,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/calidad-del-aire-en-puertos": {
       "bytes": 233973,
@@ -354,7 +377,8 @@
       "nMascaras": 110,
       "bytesCarga": 97893,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/case-studies/distrito-baja-emision-rio-de-janeiro": {
       "bytes": 149288,
@@ -368,7 +392,8 @@
       "nMascaras": 99,
       "bytesCarga": 53806,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu": {
       "bytes": 136130,
@@ -382,7 +407,8 @@
       "nMascaras": 97,
       "bytesCarga": 49615,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario": {
       "bytes": 125045,
@@ -396,7 +422,8 @@
       "nMascaras": 95,
       "bytesCarga": 45089,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco": {
       "bytes": 146083,
@@ -410,7 +437,8 @@
       "nMascaras": 99,
       "bytesCarga": 54735,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito": {
       "bytes": 225974,
@@ -424,7 +452,8 @@
       "nMascaras": 248,
       "bytesCarga": 105436,
       "nTrozos": 51,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica": {
       "bytes": 118017,
@@ -438,7 +467,8 @@
       "nMascaras": 94,
       "bytesCarga": 41840,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur": {
       "bytes": 124559,
@@ -452,7 +482,8 @@
       "nMascaras": 92,
       "bytesCarga": 45664,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/calle-30-natura-sensores-de-calidad-del-aire-kunak-air": {
       "bytes": 128387,
@@ -466,7 +497,8 @@
       "nMascaras": 96,
       "bytesCarga": 46559,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/citytraq-calidad-del-aire-urbano": {
       "bytes": 136421,
@@ -480,7 +512,8 @@
       "nMascaras": 99,
       "bytesCarga": 49050,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/clean-air-champions-league": {
       "bytes": 133071,
@@ -494,7 +527,8 @@
       "nMascaras": 99,
       "bytesCarga": 47886,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-ambiental-actividades-portuarias-bahia-cadiz": {
       "bytes": 127282,
@@ -508,7 +542,8 @@
       "nMascaras": 93,
       "bytesCarga": 46674,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez": {
       "bytes": 130560,
@@ -522,7 +557,8 @@
       "nMascaras": 97,
       "bytesCarga": 47438,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-de-contaminacion-por-malos-olores-en-edar-arazuri": {
       "bytes": 115622,
@@ -536,7 +572,8 @@
       "nMascaras": 90,
       "bytesCarga": 40957,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-de-emisiones-plantas-ternium-en-mexico": {
       "bytes": 138665,
@@ -550,7 +587,8 @@
       "nMascaras": 99,
       "bytesCarga": 50381,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-de-la-calidad-del-aire-en-el-volcan-turrialba": {
       "bytes": 140217,
@@ -564,7 +602,8 @@
       "nMascaras": 99,
       "bytesCarga": 51763,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-de-la-calidad-del-aire-en-la-formula-e": {
       "bytes": 126428,
@@ -578,7 +617,8 @@
       "nMascaras": 96,
       "bytesCarga": 45440,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb": {
       "bytes": 125198,
@@ -592,7 +632,8 @@
       "nMascaras": 95,
       "bytesCarga": 44943,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-de-la-contaminacion-atmosferica-universidad-de-chipre": {
       "bytes": 119162,
@@ -606,7 +647,8 @@
       "nMascaras": 95,
       "bytesCarga": 41851,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-de-la-contaminacion-en-bilbao": {
       "bytes": 137043,
@@ -620,7 +662,8 @@
       "nMascaras": 99,
       "bytesCarga": 50206,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa": {
       "bytes": 129266,
@@ -634,7 +677,8 @@
       "nMascaras": 97,
       "bytesCarga": 46719,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-emisiones-de-olor-en-ptar-en-israel": {
       "bytes": 121078,
@@ -648,7 +692,8 @@
       "nMascaras": 95,
       "bytesCarga": 42811,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama": {
       "bytes": 128436,
@@ -662,7 +707,8 @@
       "nMascaras": 97,
       "bytesCarga": 46655,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/control-quemas-controladas-cana-azucar": {
       "bytes": 121599,
@@ -676,7 +722,8 @@
       "nMascaras": 94,
       "bytesCarga": 43109,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/cuantificacion-emisiones-particulas-difusas-puerto-bilbao": {
       "bytes": 121512,
@@ -690,7 +737,8 @@
       "nMascaras": 94,
       "bytesCarga": 43617,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/demolicion-estadio-vicente-calderon": {
       "bytes": 101988,
@@ -704,7 +752,8 @@
       "nMascaras": 84,
       "bytesCarga": 35988,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/estudio-de-la-contaminacion-atmosferica-gwadair": {
       "bytes": 130540,
@@ -718,7 +767,8 @@
       "nMascaras": 97,
       "bytesCarga": 46419,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/medicion-contaminantes-ambientales-ciudad-cartagena-colombia": {
       "bytes": 118373,
@@ -732,7 +782,8 @@
       "nMascaras": 95,
       "bytesCarga": 41823,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-ambiental-aeropuerto-subic-bay": {
       "bytes": 139014,
@@ -746,7 +797,8 @@
       "nMascaras": 97,
       "bytesCarga": 50465,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-ambiental-instalacion-petroleo-gas": {
       "bytes": 124479,
@@ -760,7 +812,8 @@
       "nMascaras": 96,
       "bytesCarga": 45107,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-ambiental-mediante-boyas-en-neom": {
       "bytes": 131449,
@@ -774,7 +827,8 @@
       "nMascaras": 96,
       "bytesCarga": 48021,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre": {
       "bytes": 137409,
@@ -788,7 +842,8 @@
       "nMascaras": 99,
       "bytesCarga": 49861,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe": {
       "bytes": 130622,
@@ -802,7 +857,8 @@
       "nMascaras": 97,
       "bytesCarga": 47383,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-de-gases-y-particulas-en-metro-valparaiso": {
       "bytes": 122449,
@@ -816,7 +872,8 @@
       "nMascaras": 94,
       "bytesCarga": 43897,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
       "bytes": 146505,
@@ -830,7 +887,8 @@
       "nMascaras": 99,
       "bytesCarga": 53273,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania": {
       "bytes": 137909,
@@ -844,7 +902,8 @@
       "nMascaras": 97,
       "bytesCarga": 50678,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023": {
       "bytes": 126756,
@@ -858,7 +917,8 @@
       "nMascaras": 95,
       "bytesCarga": 45953,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman": {
       "bytes": 118246,
@@ -872,7 +932,8 @@
       "nMascaras": 93,
       "bytesCarga": 42241,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/monitorizacion-de-polvo-en-la-mina-northparkes-australia": {
       "bytes": 129092,
@@ -886,7 +947,8 @@
       "nMascaras": 99,
       "bytesCarga": 46120,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/porto-alegre-red-de-control-de-la-calidad-del-aire": {
       "bytes": 138605,
@@ -900,7 +962,8 @@
       "nMascaras": 100,
       "bytesCarga": 49939,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria": {
       "bytes": 125510,
@@ -914,7 +977,8 @@
       "nMascaras": 93,
       "bytesCarga": 44995,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/pure-cities": {
       "bytes": 134911,
@@ -928,7 +992,8 @@
       "nMascaras": 99,
       "bytesCarga": 48432,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/red-calidad-de-aire-para-world-athletics": {
       "bytes": 114760,
@@ -942,7 +1007,8 @@
       "nMascaras": 91,
       "bytesCarga": 40332,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/red-de-control-de-emisiones-en-planta-de-aluminio": {
       "bytes": 137964,
@@ -956,7 +1022,8 @@
       "nMascaras": 97,
       "bytesCarga": 50331,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/red-de-monitoreo-de-polvo-en-la-mina-de-oro-pueblo-viejo-barrick": {
       "bytes": 119656,
@@ -970,7 +1037,8 @@
       "nMascaras": 96,
       "bytesCarga": 42519,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/red-de-monitorizacion-ambiental-mades-paraguay": {
       "bytes": 135225,
@@ -984,7 +1052,8 @@
       "nMascaras": 99,
       "bytesCarga": 49515,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals": {
       "bytes": 136928,
@@ -998,7 +1067,8 @@
       "nMascaras": 97,
       "bytesCarga": 49852,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/red-hibrida-calidad-aire-atmo-france": {
       "bytes": 116710,
@@ -1012,7 +1082,8 @@
       "nMascaras": 89,
       "bytesCarga": 41473,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/red-monitorizacion-polvo-particulas-minas-brasil-iron": {
       "bytes": 119932,
@@ -1026,7 +1097,8 @@
       "nMascaras": 96,
       "bytesCarga": 42528,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/red-sensores-calidad-aire-alaquas": {
       "bytes": 121890,
@@ -1040,7 +1112,8 @@
       "nMascaras": 92,
       "bytesCarga": 44125,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas": {
       "bytes": 129304,
@@ -1054,7 +1127,8 @@
       "nMascaras": 97,
       "bytesCarga": 45742,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/running-for-clean-air-ciudades-saludables": {
       "bytes": 145908,
@@ -1068,7 +1142,8 @@
       "nMascaras": 99,
       "bytesCarga": 53987,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano": {
       "bytes": 100765,
@@ -1082,7 +1157,8 @@
       "nMascaras": 84,
       "bytesCarga": 35459,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid": {
       "bytes": 106576,
@@ -1096,7 +1172,8 @@
       "nMascaras": 88,
       "bytesCarga": 37458,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas": {
       "bytes": 132062,
@@ -1110,7 +1187,8 @@
       "nMascaras": 97,
       "bytesCarga": 47937,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian": {
       "bytes": 130195,
@@ -1124,7 +1202,8 @@
       "nMascaras": 93,
       "bytesCarga": 47064,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia": {
       "bytes": 124377,
@@ -1138,7 +1217,8 @@
       "nMascaras": 95,
       "bytesCarga": 43609,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/vigilancia-contaminacion-aire-albacete": {
       "bytes": 136347,
@@ -1152,7 +1232,8 @@
       "nMascaras": 98,
       "bytesCarga": 49301,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/casos-de-exito/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey": {
       "bytes": 122844,
@@ -1166,7 +1247,8 @@
       "nMascaras": 95,
       "bytesCarga": 43878,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air": {
       "bytes": 96761,
@@ -1180,7 +1262,8 @@
       "nMascaras": 86,
       "bytesCarga": 34226,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air-cloud": {
       "bytes": 93634,
@@ -1194,7 +1277,8 @@
       "nMascaras": 78,
       "bytesCarga": 32767,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air/articulos-de-ayuda": {
       "bytes": 91295,
@@ -1208,7 +1292,8 @@
       "nMascaras": 74,
       "bytesCarga": 31430,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision": {
       "bytes": 105646,
@@ -1222,7 +1307,8 @@
       "nMascaras": 83,
       "bytesCarga": 38681,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento": {
       "bytes": 102335,
@@ -1236,7 +1322,8 @@
       "nMascaras": 84,
       "bytesCarga": 37269,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire": {
       "bytes": 103680,
@@ -1250,7 +1337,8 @@
       "nMascaras": 88,
       "bytesCarga": 37751,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air": {
       "bytes": 127204,
@@ -1264,7 +1352,8 @@
       "nMascaras": 108,
       "bytesCarga": 49967,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air": {
       "bytes": 112446,
@@ -1278,7 +1367,8 @@
       "nMascaras": 93,
       "bytesCarga": 42493,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/centro-de-ayuda/kunak-air/video-tutoriales": {
       "bytes": 103242,
@@ -1292,7 +1382,8 @@
       "nMascaras": 94,
       "bytesCarga": 37822,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/cianuro-de-hidrogeno-hcn": {
       "bytes": 197461,
@@ -1306,7 +1397,8 @@
       "nMascaras": 82,
       "bytesCarga": 79677,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/cloro-cl2-dioxido-de-cloro-clo2": {
       "bytes": 192261,
@@ -1320,7 +1412,8 @@
       "nMascaras": 80,
       "bytesCarga": 77245,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/cloruro-de-hidrogeno-hcl": {
       "bytes": 263643,
@@ -1334,7 +1427,8 @@
       "nMascaras": 90,
       "bytesCarga": 109169,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/comparativa-de-los-informes-de-evaluacion-de-aqspec": {
       "bytes": 105120,
@@ -1348,7 +1442,8 @@
       "nMascaras": 68,
       "bytesCarga": 37327,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell": {
       "bytes": 94768,
@@ -1362,7 +1457,8 @@
       "nMascaras": 71,
       "bytesCarga": 32474,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/compuestos-organicos-volatiles": {
       "bytes": 178280,
@@ -1376,7 +1472,8 @@
       "nMascaras": 84,
       "bytesCarga": 71040,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/conferencia-partes-cop26-incendios": {
       "bytes": 134008,
@@ -1390,7 +1487,8 @@
       "nMascaras": 76,
       "bytesCarga": 51451,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contacto": {
       "bytes": 134307,
@@ -1404,7 +1502,8 @@
       "nMascaras": 70,
       "bytesCarga": 47690,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contador-particulas-suspension-movilidad-sostenible": {
       "bytes": 136904,
@@ -1418,7 +1517,8 @@
       "nMascaras": 74,
       "bytesCarga": 51864,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-acustica": {
       "bytes": 230109,
@@ -1432,7 +1532,8 @@
       "nMascaras": 102,
       "bytesCarga": 95644,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-aire-deporte": {
       "bytes": 143282,
@@ -1446,7 +1547,8 @@
       "nMascaras": 74,
       "bytesCarga": 56076,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-aire-obras-demoliciones-derribos": {
       "bytes": 153743,
@@ -1460,7 +1562,8 @@
       "nMascaras": 86,
       "bytesCarga": 61143,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire": {
       "bytes": 185437,
@@ -1474,7 +1577,8 @@
       "nMascaras": 88,
       "bytesCarga": 76175,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-del-aire-en-madrid": {
       "bytes": 156766,
@@ -1488,7 +1592,8 @@
       "nMascaras": 86,
       "bytesCarga": 62217,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-del-aire-en-nueva-york": {
       "bytes": 220187,
@@ -1502,7 +1607,8 @@
       "nMascaras": 96,
       "bytesCarga": 90742,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-del-aire-en-vertederos": {
       "bytes": 258474,
@@ -1516,7 +1622,8 @@
       "nMascaras": 110,
       "bytesCarga": 107196,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-del-aire-por-obras": {
       "bytes": 206970,
@@ -1530,7 +1637,8 @@
       "nMascaras": 96,
       "bytesCarga": 86009,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-del-aire-urbano": {
       "bytes": 212944,
@@ -1544,7 +1652,8 @@
       "nMascaras": 110,
       "bytesCarga": 88949,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-del-transporte-urbano": {
       "bytes": 220050,
@@ -1558,7 +1667,8 @@
       "nMascaras": 116,
       "bytesCarga": 93836,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-incendios-forestales-aire": {
       "bytes": 196716,
@@ -1572,7 +1682,8 @@
       "nMascaras": 116,
       "bytesCarga": 81645,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-juegos-olimpicos-de-paris-2024": {
       "bytes": 149725,
@@ -1586,7 +1697,8 @@
       "nMascaras": 84,
       "bytesCarga": 59346,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-mal-olor-sensores": {
       "bytes": 195186,
@@ -1600,7 +1712,8 @@
       "nMascaras": 88,
       "bytesCarga": 80076,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-por-metano": {
       "bytes": 327086,
@@ -1614,7 +1727,8 @@
       "nMascaras": 124,
       "bytesCarga": 141688,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminacion-por-produccion-de-energia": {
       "bytes": 227598,
@@ -1628,7 +1742,8 @@
       "nMascaras": 98,
       "bytesCarga": 94814,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/contaminantes-atmosfericos": {
       "bytes": 227525,
@@ -1642,7 +1757,8 @@
       "nMascaras": 82,
       "bytesCarga": 92570,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web": {
       "bytes": 127892,
@@ -1656,7 +1772,8 @@
       "nMascaras": 74,
       "bytesCarga": 48568,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/control-emisiones-industriales": {
       "bytes": 190033,
@@ -1670,7 +1787,8 @@
       "nMascaras": 94,
       "bytesCarga": 77084,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/corrosion-ambiental-causas-factores-y-como-prevenirla": {
       "bytes": 231534,
@@ -1684,7 +1802,8 @@
       "nMascaras": 106,
       "bytesCarga": 97217,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/covid-19-calidad-del-aire": {
       "bytes": 104569,
@@ -1698,7 +1817,8 @@
       "nMascaras": 72,
       "bytesCarga": 36906,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/descarga-catalogo": {
       "bytes": 138994,
@@ -1712,7 +1832,8 @@
       "nMascaras": 66,
       "bytesCarga": 50228,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/descarga-catalogo-kunak": {
       "bytes": 97625,
@@ -1726,7 +1847,8 @@
       "nMascaras": 72,
       "bytesCarga": 33833,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/despliegue-estaciones-kunak-air-pro-filipinas": {
       "bytes": 105080,
@@ -1740,7 +1862,8 @@
       "nMascaras": 68,
       "bytesCarga": 37355,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/detectores-calidad-aire-movilidad": {
       "bytes": 141626,
@@ -1754,7 +1877,8 @@
       "nMascaras": 80,
       "bytesCarga": 55370,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/detectores-emisiones-coronavirus-contaminacion": {
       "bytes": 124547,
@@ -1768,7 +1892,8 @@
       "nMascaras": 74,
       "bytesCarga": 47261,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/detectores-emisiones-proyecto-trafair": {
       "bytes": 113550,
@@ -1782,7 +1907,8 @@
       "nMascaras": 68,
       "bytesCarga": 41266,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/dioxido-de-azufre": {
       "bytes": 138704,
@@ -1796,7 +1922,8 @@
       "nMascaras": 74,
       "bytesCarga": 51531,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/dioxido-de-carbono": {
       "bytes": 163827,
@@ -1810,7 +1937,8 @@
       "nMascaras": 82,
       "bytesCarga": 64097,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/dioxido-de-nitrogeno": {
       "bytes": 145519,
@@ -1824,7 +1952,8 @@
       "nMascaras": 76,
       "bytesCarga": 55137,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/directrices-oms-calidad-aire-innovacion": {
       "bytes": 110973,
@@ -1838,7 +1967,8 @@
       "nMascaras": 68,
       "bytesCarga": 40259,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/efectos-de-la-contaminacion-en-la-salud": {
       "bytes": 126846,
@@ -1852,7 +1982,8 @@
       "nMascaras": 80,
       "bytesCarga": 48601,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/ehs-industrial": {
       "bytes": 173557,
@@ -1866,7 +1997,8 @@
       "nMascaras": 104,
       "bytesCarga": 70362,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/el-sensor-de-calidad-del-aire-mas-preciso": {
       "bytes": 116867,
@@ -1880,7 +2012,8 @@
       "nMascaras": 74,
       "bytesCarga": 43289,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/emisiones-atmosfericas": {
       "bytes": 112611,
@@ -1894,7 +2027,8 @@
       "nMascaras": 72,
       "bytesCarga": 40597,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/emisiones-de-las-refinerias-de-petroleo": {
       "bytes": 231937,
@@ -1908,7 +2042,8 @@
       "nMascaras": 112,
       "bytesCarga": 98109,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/emisiones-ganaderas-y-calidad-del-aire": {
       "bytes": 250445,
@@ -1922,7 +2057,8 @@
       "nMascaras": 106,
       "bytesCarga": 106086,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/emisiones-por-chimenea": {
       "bytes": 274711,
@@ -1936,7 +2072,8 @@
       "nMascaras": 94,
       "bytesCarga": 117676,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/empresa": {
       "bytes": 123826,
@@ -1950,7 +2087,8 @@
       "nMascaras": 103,
       "bytesCarga": 47714,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/empresa/premios-y-reconocimientos": {
       "bytes": 105348,
@@ -1964,7 +2102,8 @@
       "nMascaras": 76,
       "bytesCarga": 37665,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco": {
       "bytes": 110111,
@@ -1978,7 +2117,8 @@
       "nMascaras": 68,
       "bytesCarga": 39577,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/entrevista-agustin-torres-product-manager-suez": {
       "bytes": 121914,
@@ -1992,7 +2132,8 @@
       "nMascaras": 68,
       "bytesCarga": 44958,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/entrevista-jelle-hofman-investigador-calidad-del-aire-imec": {
       "bytes": 115324,
@@ -2006,7 +2147,8 @@
       "nMascaras": 70,
       "bytesCarga": 41881,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/esmog": {
       "bytes": 155129,
@@ -2020,7 +2162,8 @@
       "nMascaras": 78,
       "bytesCarga": 58892,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/estaciones-de-calidad-del-aire": {
       "bytes": 135856,
@@ -2034,7 +2177,8 @@
       "nMascaras": 82,
       "bytesCarga": 51277,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/estamos-listos-para-ayudarle": {
       "bytes": 104752,
@@ -2048,7 +2192,8 @@
       "nMascaras": 74,
       "bytesCarga": 37248,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/estres-por-calor-bienestar": {
       "bytes": 139660,
@@ -2062,7 +2207,8 @@
       "nMascaras": 80,
       "bytesCarga": 54458,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair": {
       "bytes": 107084,
@@ -2076,7 +2222,8 @@
       "nMascaras": 70,
       "bytesCarga": 38208,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/calidad-del-aire": {
       "bytes": 139618,
@@ -2090,7 +2237,8 @@
       "nMascaras": 92,
       "bytesCarga": 56293,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/calidad-del-aire/page/2": {
       "bytes": 141349,
@@ -2104,7 +2252,8 @@
       "nMascaras": 98,
       "bytesCarga": 57486,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/calidad-del-aire/page/3": {
       "bytes": 132572,
@@ -2118,7 +2267,8 @@
       "nMascaras": 98,
       "bytesCarga": 53077,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/calidad-del-aire/page/4": {
       "bytes": 119347,
@@ -2132,7 +2282,8 @@
       "nMascaras": 86,
       "bytesCarga": 46141,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/co2-es": {
       "bytes": 123721,
@@ -2146,7 +2297,8 @@
       "nMascaras": 88,
       "bytesCarga": 48055,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/contaminantes-atmosfericos": {
       "bytes": 137059,
@@ -2160,7 +2312,8 @@
       "nMascaras": 92,
       "bytesCarga": 54969,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/contaminantes-atmosfericos/page/2": {
       "bytes": 138038,
@@ -2174,7 +2327,8 @@
       "nMascaras": 98,
       "bytesCarga": 55785,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/contaminantes-atmosfericos/page/3": {
       "bytes": 135860,
@@ -2188,7 +2342,8 @@
       "nMascaras": 96,
       "bytesCarga": 54712,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/contaminantes-atmosfericos/page/4": {
       "bytes": 132979,
@@ -2202,7 +2357,8 @@
       "nMascaras": 94,
       "bytesCarga": 53320,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/cov": {
       "bytes": 115360,
@@ -2216,7 +2372,8 @@
       "nMascaras": 82,
       "bytesCarga": 43755,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/emisiones-industriales": {
       "bytes": 139156,
@@ -2230,7 +2387,8 @@
       "nMascaras": 92,
       "bytesCarga": 56054,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/emisiones-industriales/page/2": {
       "bytes": 134956,
@@ -2244,7 +2402,8 @@
       "nMascaras": 96,
       "bytesCarga": 54229,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/emisiones-industriales/page/3": {
       "bytes": 115936,
@@ -2258,7 +2417,8 @@
       "nMascaras": 88,
       "bytesCarga": 44412,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/gases-de-efecto-invernadero": {
       "bytes": 133849,
@@ -2272,7 +2432,8 @@
       "nMascaras": 92,
       "bytesCarga": 53340,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/h2s-es": {
       "bytes": 110522,
@@ -2286,7 +2447,8 @@
       "nMascaras": 78,
       "bytesCarga": 41232,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/malos-olores": {
       "bytes": 124621,
@@ -2300,7 +2462,8 @@
       "nMascaras": 90,
       "bytesCarga": 48567,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental": {
       "bytes": 140401,
@@ -2314,7 +2477,8 @@
       "nMascaras": 92,
       "bytesCarga": 56686,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/10": {
       "bytes": 113165,
@@ -2328,7 +2492,8 @@
       "nMascaras": 94,
       "bytesCarga": 43403,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/11": {
       "bytes": 96042,
@@ -2342,7 +2507,8 @@
       "nMascaras": 78,
       "bytesCarga": 34110,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/2": {
       "bytes": 142318,
@@ -2356,7 +2522,8 @@
       "nMascaras": 96,
       "bytesCarga": 58013,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/3": {
       "bytes": 138480,
@@ -2370,7 +2537,8 @@
       "nMascaras": 98,
       "bytesCarga": 56042,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/4": {
       "bytes": 137140,
@@ -2384,7 +2552,8 @@
       "nMascaras": 96,
       "bytesCarga": 55447,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/5": {
       "bytes": 131647,
@@ -2398,7 +2567,8 @@
       "nMascaras": 92,
       "bytesCarga": 52608,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/6": {
       "bytes": 129267,
@@ -2412,7 +2582,8 @@
       "nMascaras": 94,
       "bytesCarga": 51539,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/7": {
       "bytes": 125894,
@@ -2426,7 +2597,8 @@
       "nMascaras": 96,
       "bytesCarga": 49826,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/8": {
       "bytes": 119927,
@@ -2440,7 +2612,8 @@
       "nMascaras": 96,
       "bytesCarga": 46919,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/monitorizacion-ambiental/page/9": {
       "bytes": 113194,
@@ -2454,7 +2627,8 @@
       "nMascaras": 94,
       "bytesCarga": 43425,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/normativa-de-calidad-del-aire": {
       "bytes": 139812,
@@ -2468,7 +2642,8 @@
       "nMascaras": 92,
       "bytesCarga": 56419,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/normativa-de-calidad-del-aire/page/2": {
       "bytes": 135234,
@@ -2482,7 +2657,8 @@
       "nMascaras": 98,
       "bytesCarga": 54433,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/normativa-de-calidad-del-aire/page/3": {
       "bytes": 103413,
@@ -2496,7 +2672,8 @@
       "nMascaras": 84,
       "bytesCarga": 37867,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/particulas-en-suspension": {
       "bytes": 139299,
@@ -2510,7 +2687,8 @@
       "nMascaras": 92,
       "bytesCarga": 56137,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/particulas-en-suspension/page/2": {
       "bytes": 123691,
@@ -2524,7 +2702,8 @@
       "nMascaras": 90,
       "bytesCarga": 48473,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/sensor-de-calidad-del-aire": {
       "bytes": 141298,
@@ -2538,7 +2717,8 @@
       "nMascaras": 92,
       "bytesCarga": 57140,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/sensor-de-calidad-del-aire/page/2": {
       "bytes": 133820,
@@ -2552,7 +2732,8 @@
       "nMascaras": 92,
       "bytesCarga": 53694,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/sensor-de-calidad-del-aire/page/3": {
       "bytes": 131466,
@@ -2566,7 +2747,8 @@
       "nMascaras": 92,
       "bytesCarga": 52564,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/etiqueta/sensor-de-calidad-del-aire/page/4": {
       "bytes": 118560,
@@ -2580,7 +2762,8 @@
       "nMascaras": 90,
       "bytesCarga": 45958,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/eugreenweek-we-have-gone-green": {
       "bytes": 98171,
@@ -2594,7 +2777,8 @@
       "nMascaras": 72,
       "bytesCarga": 33935,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/exponemos-en-greencities-malaga-2018": {
       "bytes": 96469,
@@ -2608,7 +2792,8 @@
       "nMascaras": 72,
       "bytesCarga": 33220,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/exponemos-en-la-feria-sensortest-2017-con-alphasense": {
       "bytes": 94803,
@@ -2622,7 +2807,8 @@
       "nMascaras": 71,
       "bytesCarga": 32470,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/exponemos-en-la-smart-city-expo-world-congress-2017": {
       "bytes": 99936,
@@ -2636,7 +2822,8 @@
       "nMascaras": 72,
       "bytesCarga": 34794,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo": {
       "bytes": 127435,
@@ -2650,7 +2837,8 @@
       "nMascaras": 80,
       "bytesCarga": 48729,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/a-que-altura-debe-instalarse-el-equipo": {
       "bytes": 83270,
@@ -2664,7 +2852,8 @@
       "nMascaras": 72,
       "bytesCarga": 27015,
       "nTrozos": 15,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/cada-cuanto-se-calibra-el-equipo": {
       "bytes": 83475,
@@ -2678,7 +2867,8 @@
       "nMascaras": 74,
       "bytesCarga": 27105,
       "nTrozos": 15,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software": {
       "bytes": 84070,
@@ -2692,7 +2882,8 @@
       "nMascaras": 76,
       "bytesCarga": 27402,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/como-se-comunica-el-equipo": {
       "bytes": 83221,
@@ -2706,7 +2897,8 @@
       "nMascaras": 72,
       "bytesCarga": 26957,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/como-se-integran-los-datos-a-una-tercera-plataforma": {
       "bytes": 83437,
@@ -2720,7 +2912,8 @@
       "nMascaras": 72,
       "bytesCarga": 27090,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion": {
       "bytes": 84541,
@@ -2734,7 +2927,8 @@
       "nMascaras": 66,
       "bytesCarga": 27559,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/cual-es-la-diferencia-entre-el-sensor-de-particulas-del-air-pro-y-el-air-lite": {
       "bytes": 84031,
@@ -2748,7 +2942,8 @@
       "nMascaras": 74,
       "bytesCarga": 27355,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/cual-es-la-duracion-de-la-bateria": {
       "bytes": 83218,
@@ -2762,7 +2957,8 @@
       "nMascaras": 72,
       "bytesCarga": 26984,
       "nTrozos": 15,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/cuenta-esta-tecnologia-con-certificaciones": {
       "bytes": 83675,
@@ -2776,7 +2972,8 @@
       "nMascaras": 74,
       "bytesCarga": 27172,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/el-equipo-es-portatil-o-fijo": {
       "bytes": 83480,
@@ -2790,7 +2987,8 @@
       "nMascaras": 74,
       "bytesCarga": 27071,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/el-equipo-tiene-memoria-interna": {
       "bytes": 83245,
@@ -2804,7 +3002,8 @@
       "nMascaras": 72,
       "bytesCarga": 26974,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/es-obligatorio-el-uso-de-la-plataforma-kunak-air-cloud": {
       "bytes": 83629,
@@ -2818,7 +3017,8 @@
       "nMascaras": 74,
       "bytesCarga": 27171,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/los-equipos-kunak-son-certificados-atex": {
       "bytes": 83642,
@@ -2832,7 +3032,8 @@
       "nMascaras": 74,
       "bytesCarga": 27174,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/pueden-utilizarse-los-equipos-en-interiores": {
       "bytes": 83349,
@@ -2846,7 +3047,8 @@
       "nMascaras": 72,
       "bytesCarga": 27038,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento": {
       "bytes": 83608,
@@ -2860,7 +3062,8 @@
       "nMascaras": 72,
       "bytesCarga": 27176,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/que-area-cubre-cada-dispositivo": {
       "bytes": 83801,
@@ -2874,7 +3077,8 @@
       "nMascaras": 76,
       "bytesCarga": 27259,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/que-opciones-de-calibracion-existen": {
       "bytes": 83735,
@@ -2888,7 +3092,8 @@
       "nMascaras": 74,
       "bytesCarga": 27198,
       "nTrozos": 15,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/se-pueden-conectar-sondas-meteorologicas": {
       "bytes": 83411,
@@ -2902,7 +3107,8 @@
       "nMascaras": 74,
       "bytesCarga": 27086,
       "nTrozos": 15,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/faqs/se-pueden-obtener-los-datos-en-local-modbus": {
       "bytes": 83392,
@@ -2916,7 +3122,8 @@
       "nMascaras": 72,
       "bytesCarga": 27038,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/fluoruro-de-hidrogeno-hf": {
       "bytes": 194236,
@@ -2930,7 +3137,8 @@
       "nMascaras": 84,
       "bytesCarga": 78425,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/fondos-nextgen-eu-zonas-bajas-emisiones": {
       "bytes": 123238,
@@ -2944,7 +3152,8 @@
       "nMascaras": 74,
       "bytesCarga": 45700,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/fourth-session-of-the-united-nations-environment-assembly-2": {
       "bytes": 99273,
@@ -2958,7 +3167,8 @@
       "nMascaras": 72,
       "bytesCarga": 34534,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea": {
       "bytes": 99860,
@@ -2972,7 +3182,8 @@
       "nMascaras": 72,
       "bytesCarga": 34900,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/gases-de-efecto-invernadero": {
       "bytes": 197513,
@@ -2986,7 +3197,8 @@
       "nMascaras": 80,
       "bytesCarga": 79575,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/gases-de-efecto-invernadero-y-accion-climatica": {
       "bytes": 250719,
@@ -3000,7 +3212,8 @@
       "nMascaras": 108,
       "bytesCarga": 105372,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/glosario": {
       "bytes": 89478,
@@ -3014,7 +3227,8 @@
       "nMascaras": 71,
       "bytesCarga": 30117,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/glosario/page/2": {
       "bytes": 91004,
@@ -3028,7 +3242,8 @@
       "nMascaras": 85,
       "bytesCarga": 31252,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/glosario/page/3": {
       "bytes": 90965,
@@ -3042,7 +3257,8 @@
       "nMascaras": 83,
       "bytesCarga": 31224,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/glosario/page/4": {
       "bytes": 91362,
@@ -3056,7 +3272,8 @@
       "nMascaras": 89,
       "bytesCarga": 31476,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/glosario/page/5": {
       "bytes": 91102,
@@ -3070,7 +3287,8 @@
       "nMascaras": 85,
       "bytesCarga": 31313,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/glosario/page/6": {
       "bytes": 90993,
@@ -3084,7 +3302,8 @@
       "nMascaras": 83,
       "bytesCarga": 31238,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/glosario/page/7": {
       "bytes": 90973,
@@ -3098,7 +3317,8 @@
       "nMascaras": 83,
       "bytesCarga": 31226,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/glosario/page/8": {
       "bytes": 87355,
@@ -3112,7 +3332,8 @@
       "nMascaras": 69,
       "bytesCarga": 29318,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/guia-sobre-la-contaminacion-urbana": {
       "bytes": 155383,
@@ -3126,7 +3347,8 @@
       "nMascaras": 80,
       "bytesCarga": 61389,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas": {
       "bytes": 126320,
@@ -3140,7 +3362,8 @@
       "nMascaras": 76,
       "bytesCarga": 47941,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/hidrocarburos-no-metanicos-nmhc": {
       "bytes": 241874,
@@ -3154,7 +3377,8 @@
       "nMascaras": 86,
       "bytesCarga": 99691,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/huella-de-carbono": {
       "bytes": 168663,
@@ -3168,7 +3392,8 @@
       "nMascaras": 78,
       "bytesCarga": 65669,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/impacto-ambiental-de-la-industria-petroquimica": {
       "bytes": 217825,
@@ -3182,7 +3407,8 @@
       "nMascaras": 108,
       "bytesCarga": 91802,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/impacto-ambiental-del-acero-en-la-calidad-del-aire": {
       "bytes": 206695,
@@ -3196,7 +3422,8 @@
       "nMascaras": 94,
       "bytesCarga": 83714,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/impacto-ambiental-industria-cementera": {
       "bytes": 207026,
@@ -3210,7 +3437,8 @@
       "nMascaras": 104,
       "bytesCarga": 85828,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/impacto-ambiental-industria-papelera": {
       "bytes": 219298,
@@ -3224,7 +3452,8 @@
       "nMascaras": 90,
       "bytesCarga": 89978,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/impacto-ambiental-mineria-calidad-aire": {
       "bytes": 169645,
@@ -3238,7 +3467,8 @@
       "nMascaras": 88,
       "bytesCarga": 68522,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/indice-de-calidad-del-aire": {
       "bytes": 130677,
@@ -3252,7 +3482,8 @@
       "nMascaras": 74,
       "bytesCarga": 48750,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades": {
       "bytes": 136007,
@@ -3266,7 +3497,8 @@
       "nMascaras": 64,
       "bytesCarga": 48939,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/informe-tecnico-control-de-la-calidad-del-aire-en-industria": {
       "bytes": 135994,
@@ -3280,7 +3512,8 @@
       "nMascaras": 64,
       "bytesCarga": 48955,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas": {
       "bytes": 136263,
@@ -3294,7 +3527,8 @@
       "nMascaras": 64,
       "bytesCarga": 49090,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/informe-tecnico-control-de-la-calidad-del-aire-en-obras": {
       "bytes": 136064,
@@ -3308,7 +3542,8 @@
       "nMascaras": 64,
       "bytesCarga": 48964,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/informe-tecnico-control-de-la-calidad-del-aire-en-puertos": {
       "bytes": 136208,
@@ -3322,7 +3557,8 @@
       "nMascaras": 64,
       "bytesCarga": 49060,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/inmisiones-atmosfericas": {
       "bytes": 119043,
@@ -3336,7 +3572,8 @@
       "nMascaras": 72,
       "bytesCarga": 43467,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia": {
       "bytes": 105091,
@@ -3350,7 +3587,8 @@
       "nMascaras": 68,
       "bytesCarga": 37271,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/justicia-ambiental": {
       "bytes": 132051,
@@ -3364,7 +3602,8 @@
       "nMascaras": 76,
       "bytesCarga": 49628,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/justicia-ambiental-el-derecho-a-respirar-aire-limpio": {
       "bytes": 205963,
@@ -3378,7 +3617,8 @@
       "nMascaras": 94,
       "bytesCarga": 85477,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/justicia-climatica-financiacion-climatica-y-seguridad-climatica": {
       "bytes": 252235,
@@ -3392,7 +3632,8 @@
       "nMascaras": 96,
       "bytesCarga": 107026,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur": {
       "bytes": 127635,
@@ -3406,7 +3647,8 @@
       "nMascaras": 78,
       "bytesCarga": 47668,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-air-pro-certificado-mcerts": {
       "bytes": 105940,
@@ -3420,7 +3662,8 @@
       "nMascaras": 68,
       "bytesCarga": 37768,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-air-pro-sensor-multi-contaminante-preciso-airlab": {
       "bytes": 107889,
@@ -3434,7 +3677,8 @@
       "nMascaras": 74,
       "bytesCarga": 38367,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-api": {
       "bytes": 146363,
@@ -3448,7 +3692,8 @@
       "nMascaras": 93,
       "bytesCarga": 45279,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-cloud-plataforma-web-calidad-aire": {
       "bytes": 178823,
@@ -3462,7 +3707,8 @@
       "nMascaras": 84,
       "bytesCarga": 72696,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra": {
       "bytes": 116672,
@@ -3476,7 +3722,8 @@
       "nMascaras": 74,
       "bytesCarga": 42795,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna": {
       "bytes": 95629,
@@ -3490,7 +3737,8 @@
       "nMascaras": 72,
       "bytesCarga": 32897,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares": {
       "bytes": 104560,
@@ -3504,7 +3752,8 @@
       "nMascaras": 68,
       "bytesCarga": 37021,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024": {
       "bytes": 105033,
@@ -3518,7 +3767,8 @@
       "nMascaras": 74,
       "bytesCarga": 37405,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-obtiene-el-sello-reconcilia": {
       "bytes": 112637,
@@ -3532,7 +3782,8 @@
       "nMascaras": 68,
       "bytesCarga": 41233,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-oem-industrial-iot-en-el-basque-industry-4-0": {
       "bytes": 97954,
@@ -3546,7 +3797,8 @@
       "nMascaras": 72,
       "bytesCarga": 33911,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-participa-en-aqemission-monitoring-2017-con-alphasense": {
       "bytes": 95642,
@@ -3560,7 +3812,8 @@
       "nMascaras": 72,
       "bytesCarga": 32861,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex": {
       "bytes": 94643,
@@ -3574,7 +3827,8 @@
       "nMascaras": 71,
       "bytesCarga": 32438,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente": {
       "bytes": 100927,
@@ -3588,7 +3842,8 @@
       "nMascaras": 68,
       "bytesCarga": 35284,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0": {
       "bytes": 99864,
@@ -3602,7 +3857,8 @@
       "nMascaras": 72,
       "bytesCarga": 34806,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-proveedor-sensores-calidad-aire-brightsites-signify": {
       "bytes": 105726,
@@ -3616,7 +3872,8 @@
       "nMascaras": 68,
       "bytesCarga": 37534,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-referente-en-medicion-de-calidad-del-aire": {
       "bytes": 122511,
@@ -3630,7 +3887,8 @@
       "nMascaras": 74,
       "bytesCarga": 45855,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona": {
       "bytes": 98028,
@@ -3644,7 +3902,8 @@
       "nMascaras": 72,
       "bytesCarga": 34107,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future": {
       "bytes": 98195,
@@ -3658,7 +3917,8 @@
       "nMascaras": 72,
       "bytesCarga": 34052,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa": {
       "bytes": 164614,
@@ -3672,7 +3932,8 @@
       "nMascaras": 96,
       "bytesCarga": 66127,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo": {
       "bytes": 107039,
@@ -3686,7 +3947,8 @@
       "nMascaras": 68,
       "bytesCarga": 38251,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire": {
       "bytes": 95175,
@@ -3700,7 +3962,8 @@
       "nMascaras": 69,
       "bytesCarga": 32761,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti": {
       "bytes": 99563,
@@ -3714,7 +3977,8 @@
       "nMascaras": 72,
       "bytesCarga": 34572,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/lanzamiento-kunak-air-pro": {
       "bytes": 107370,
@@ -3728,7 +3992,8 @@
       "nMascaras": 72,
       "bytesCarga": 38068,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/ldar": {
       "bytes": 167929,
@@ -3742,7 +4007,8 @@
       "nMascaras": 76,
       "bytesCarga": 65431,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales": {
       "bytes": 273458,
@@ -3756,7 +4022,8 @@
       "nMascaras": 100,
       "bytesCarga": 116098,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton": {
       "bytes": 100215,
@@ -3770,7 +4037,8 @@
       "nMascaras": 68,
       "bytesCarga": 35071,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/medicion-de-gases-en-los-vertederos-de-basura": {
       "bytes": 258510,
@@ -3784,7 +4052,8 @@
       "nMascaras": 110,
       "bytesCarga": 107223,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/medicion-de-la-calidad-del-aire-en-puertos-maritimos": {
       "bytes": 127878,
@@ -3798,7 +4067,8 @@
       "nMascaras": 70,
       "bytesCarga": 48210,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas": {
       "bytes": 200445,
@@ -3812,7 +4082,8 @@
       "nMascaras": 84,
       "bytesCarga": 79844,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/medidores-de-calidad-del-aire-mediciones-indicativas": {
       "bytes": 129534,
@@ -3826,7 +4097,8 @@
       "nMascaras": 76,
       "bytesCarga": 49476,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/medir-calidad-aire-asic-2022": {
       "bytes": 121392,
@@ -3840,7 +4112,8 @@
       "nMascaras": 68,
       "bytesCarga": 44976,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge": {
       "bytes": 105742,
@@ -3854,7 +4127,8 @@
       "nMascaras": 68,
       "bytesCarga": 37617,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/metano": {
       "bytes": 147514,
@@ -3868,7 +4142,8 @@
       "nMascaras": 78,
       "bytesCarga": 56439,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/microsensores-de-calidad-del-aire": {
       "bytes": 138614,
@@ -3882,7 +4157,8 @@
       "nMascaras": 84,
       "bytesCarga": 54287,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitor-calidad-aire": {
       "bytes": 286154,
@@ -3896,7 +4172,8 @@
       "nMascaras": 224,
       "bytesCarga": 101908,
       "nTrozos": 41,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitores-calidad-aire-moviles": {
       "bytes": 147990,
@@ -3910,7 +4187,8 @@
       "nMascaras": 78,
       "bytesCarga": 57962,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-aire-remediacion-suelos-contaminados": {
       "bytes": 293504,
@@ -3924,7 +4202,8 @@
       "nMascaras": 104,
       "bytesCarga": 125453,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-de-emisiones-del-trafico-urbano": {
       "bytes": 309821,
@@ -3938,7 +4217,8 @@
       "nMascaras": 108,
       "bytesCarga": 133011,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-de-emisiones-en-refinerias": {
       "bytes": 256932,
@@ -3952,7 +4232,8 @@
       "nMascaras": 118,
       "bytesCarga": 108705,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-de-emisiones-fugitivas": {
       "bytes": 231579,
@@ -3966,7 +4247,8 @@
       "nMascaras": 76,
       "bytesCarga": 96552,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-de-la-calidad-del-aire": {
       "bytes": 135209,
@@ -3980,7 +4262,8 @@
       "nMascaras": 76,
       "bytesCarga": 51020,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos": {
       "bytes": 302438,
@@ -3994,7 +4277,8 @@
       "nMascaras": 100,
       "bytesCarga": 128031,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-de-olores-en-edar": {
       "bytes": 289054,
@@ -4008,7 +4292,8 @@
       "nMascaras": 100,
       "bytesCarga": 121720,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-mal-olor-industrial": {
       "bytes": 195098,
@@ -4022,7 +4307,8 @@
       "nMascaras": 96,
       "bytesCarga": 80877,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-near-reference": {
       "bytes": 266297,
@@ -4036,7 +4322,8 @@
       "nMascaras": 94,
       "bytesCarga": 113906,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monitorizacion-perimetral": {
       "bytes": 231213,
@@ -4050,7 +4337,8 @@
       "nMascaras": 96,
       "bytesCarga": 96973,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/monoxido-de-carbono": {
       "bytes": 164769,
@@ -4064,7 +4352,8 @@
       "nMascaras": 96,
       "bytesCarga": 65303,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/necesidad-estandares-y-programas-certificacion": {
       "bytes": 107863,
@@ -4078,7 +4367,8 @@
       "nMascaras": 74,
       "bytesCarga": 39299,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/newsletter": {
       "bytes": 137764,
@@ -4092,7 +4382,8 @@
       "nMascaras": 64,
       "bytesCarga": 49696,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas": {
       "bytes": 205480,
@@ -4106,7 +4397,8 @@
       "nMascaras": 90,
       "bytesCarga": 83395,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/nos-hemos-mudado": {
       "bytes": 95896,
@@ -4120,7 +4412,8 @@
       "nMascaras": 74,
       "bytesCarga": 32787,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/nueva-directiva-de-calidad-del-aire-ue-2024-2881": {
       "bytes": 168417,
@@ -4134,7 +4427,8 @@
       "nMascaras": 96,
       "bytesCarga": 66784,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/oxido-nitrico-no": {
       "bytes": 248141,
@@ -4148,7 +4442,8 @@
       "nMascaras": 86,
       "bytesCarga": 101251,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/oxidos-de-nitrogeno-nox": {
       "bytes": 246843,
@@ -4162,7 +4457,8 @@
       "nMascaras": 82,
       "bytesCarga": 102378,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/oxigeno": {
       "bytes": 197019,
@@ -4176,7 +4472,8 @@
       "nMascaras": 80,
       "bytesCarga": 78996,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/ozono-troposferico": {
       "bytes": 149126,
@@ -4190,7 +4487,8 @@
       "nMascaras": 76,
       "bytesCarga": 56365,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/participamos-con-suez-en-el-4yfn-del-mobile-world-congress": {
       "bytes": 95219,
@@ -4204,7 +4502,8 @@
       "nMascaras": 72,
       "bytesCarga": 32672,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/particulas-en-suspension": {
       "bytes": 138471,
@@ -4218,7 +4517,8 @@
       "nMascaras": 76,
       "bytesCarga": 52163,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/particulas-ultrafinas": {
       "bytes": 182411,
@@ -4232,7 +4532,8 @@
       "nMascaras": 82,
       "bytesCarga": 72659,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/particulas-ultrafinas-puf": {
       "bytes": 246361,
@@ -4246,7 +4547,8 @@
       "nMascaras": 98,
       "bytesCarga": 103412,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/plan-recuperacion-transformacion-resiliencia-zbe": {
       "bytes": 124813,
@@ -4260,7 +4562,8 @@
       "nMascaras": 68,
       "bytesCarga": 46820,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/politica-de-cookies": {
       "bytes": 105287,
@@ -4274,7 +4577,8 @@
       "nMascaras": 88,
       "bytesCarga": 38236,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/politica-de-privacidad-y-de-proteccion-de-datos": {
       "bytes": 82378,
@@ -4288,7 +4592,8 @@
       "nMascaras": 68,
       "bytesCarga": 26170,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/politica-de-seguridad-de-la-informacion": {
       "bytes": 98528,
@@ -4302,7 +4607,8 @@
       "nMascaras": 64,
       "bytesCarga": 33300,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/por-que-es-importante-monitorizar-en-tiempo-real": {
       "bytes": 117431,
@@ -4316,7 +4622,8 @@
       "nMascaras": 78,
       "bytesCarga": 43790,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/premios-aqe-2024": {
       "bytes": 116163,
@@ -4330,7 +4637,8 @@
       "nMascaras": 72,
       "bytesCarga": 42055,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/premios-pyme-2024-kunak": {
       "bytes": 121576,
@@ -4344,7 +4652,8 @@
       "nMascaras": 74,
       "bytesCarga": 45673,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades": {
       "bytes": 95431,
@@ -4358,7 +4667,8 @@
       "nMascaras": 72,
       "bytesCarga": 32825,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16": {
       "bytes": 95414,
@@ -4372,7 +4682,8 @@
       "nMascaras": 72,
       "bytesCarga": 32887,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/productos": {
       "bytes": 91264,
@@ -4386,7 +4697,8 @@
       "nMascaras": 69,
       "bytesCarga": 30961,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018": {
       "bytes": 97986,
@@ -4400,7 +4712,8 @@
       "nMascaras": 72,
       "bytesCarga": 33910,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire": {
       "bytes": 103799,
@@ -4414,7 +4727,8 @@
       "nMascaras": 68,
       "bytesCarga": 36787,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/proyecto-pure-cities": {
       "bytes": 190963,
@@ -4428,7 +4742,8 @@
       "nMascaras": 100,
       "bytesCarga": 78144,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/proyecto-simgo": {
       "bytes": 97609,
@@ -4442,7 +4757,8 @@
       "nMascaras": 74,
       "bytesCarga": 33471,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico": {
       "bytes": 111787,
@@ -4456,7 +4772,8 @@
       "nMascaras": 76,
       "bytesCarga": 40973,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/quemas-prescritas-agricolas-calidad-aire": {
       "bytes": 126319,
@@ -4470,7 +4787,8 @@
       "nMascaras": 74,
       "bytesCarga": 48019,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos": {
       "bytes": 91778,
@@ -4484,7 +4802,8 @@
       "nMascaras": 69,
       "bytesCarga": 31079,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos": {
       "bytes": 152288,
@@ -4498,7 +4817,8 @@
       "nMascaras": 119,
       "bytesCarga": 63097,
       "nTrozos": 33,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/contaminacion-en-la-construccion": {
       "bytes": 105937,
@@ -4512,7 +4832,8 @@
       "nMascaras": 82,
       "bytesCarga": 38977,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/contaminacion-en-puertos-y-aeropuertos": {
       "bytes": 98863,
@@ -4526,7 +4847,8 @@
       "nMascaras": 70,
       "bytesCarga": 35289,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/contaminacion-minera": {
       "bytes": 94674,
@@ -4540,7 +4862,8 @@
       "nMascaras": 70,
       "bytesCarga": 33110,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/contaminacion-urbana": {
       "bytes": 151157,
@@ -4554,7 +4877,8 @@
       "nMascaras": 100,
       "bytesCarga": 62534,
       "nTrozos": 32,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/contaminacion-urbana/page/2": {
       "bytes": 121772,
@@ -4568,7 +4892,8 @@
       "nMascaras": 90,
       "bytesCarga": 47372,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/contaminacion-y-salud": {
       "bytes": 147384,
@@ -4582,7 +4907,8 @@
       "nMascaras": 106,
       "bytesCarga": 60653,
       "nTrozos": 30,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/contaminacion-y-salud/page/2": {
       "bytes": 107311,
@@ -4596,7 +4922,8 @@
       "nMascaras": 78,
       "bytesCarga": 39834,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/industria-y-contaminacion-por-olores": {
       "bytes": 149367,
@@ -4610,7 +4937,8 @@
       "nMascaras": 104,
       "bytesCarga": 61535,
       "nTrozos": 35,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/industria-y-contaminacion-por-olores/page/2": {
       "bytes": 109486,
@@ -4624,7 +4952,8 @@
       "nMascaras": 86,
       "bytesCarga": 40991,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/page/2": {
       "bytes": 152523,
@@ -4638,7 +4967,8 @@
       "nMascaras": 122,
       "bytesCarga": 63264,
       "nTrozos": 34,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/page/3": {
       "bytes": 148714,
@@ -4652,7 +4982,8 @@
       "nMascaras": 120,
       "bytesCarga": 61311,
       "nTrozos": 32,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/page/4": {
       "bytes": 141174,
@@ -4666,7 +4997,8 @@
       "nMascaras": 122,
       "bytesCarga": 57781,
       "nTrozos": 26,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/page/5": {
       "bytes": 139874,
@@ -4680,7 +5012,8 @@
       "nMascaras": 118,
       "bytesCarga": 57021,
       "nTrozos": 29,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/page/6": {
       "bytes": 113283,
@@ -4694,7 +5027,8 @@
       "nMascaras": 101,
       "bytesCarga": 43051,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/petroleo-y-gas": {
       "bytes": 102287,
@@ -4708,7 +5042,8 @@
       "nMascaras": 74,
       "bytesCarga": 37064,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/articulos/productos-kunak": {
       "bytes": 112567,
@@ -4722,7 +5057,8 @@
       "nMascaras": 86,
       "bytesCarga": 42646,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos": {
       "bytes": 83647,
@@ -4736,7 +5072,8 @@
       "nMascaras": 72,
       "bytesCarga": 27085,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica": {
       "bytes": 104061,
@@ -4750,7 +5087,8 @@
       "nMascaras": 75,
       "bytesCarga": 37548,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal": {
       "bytes": 102813,
@@ -4764,7 +5102,8 @@
       "nMascaras": 75,
       "bytesCarga": 36842,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor": {
       "bytes": 103950,
@@ -4778,7 +5117,8 @@
       "nMascaras": 75,
       "bytesCarga": 37407,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/desafio-de-sensores-contra-incendios-forestales-de-la-us-epa": {
       "bytes": 104326,
@@ -4792,7 +5132,8 @@
       "nMascaras": 75,
       "bytesCarga": 37617,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores": {
       "bytes": 101254,
@@ -4806,7 +5147,8 @@
       "nMascaras": 81,
       "bytesCarga": 36208,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana": {
       "bytes": 105455,
@@ -4820,7 +5162,8 @@
       "nMascaras": 75,
       "bytesCarga": 38270,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo": {
       "bytes": 103401,
@@ -4834,7 +5177,8 @@
       "nMascaras": 75,
       "bytesCarga": 37156,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion": {
       "bytes": 100101,
@@ -4848,7 +5192,8 @@
       "nMascaras": 76,
       "bytesCarga": 35659,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste": {
       "bytes": 102515,
@@ -4862,7 +5207,8 @@
       "nMascaras": 77,
       "bytesCarga": 36645,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid": {
       "bytes": 100971,
@@ -4876,7 +5222,8 @@
       "nMascaras": 75,
       "bytesCarga": 35934,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas": {
       "bytes": 103571,
@@ -4890,7 +5237,8 @@
       "nMascaras": 77,
       "bytesCarga": 37156,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire": {
       "bytes": 102487,
@@ -4904,7 +5252,8 @@
       "nMascaras": 75,
       "bytesCarga": 36835,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo": {
       "bytes": 102812,
@@ -4918,7 +5267,8 @@
       "nMascaras": 75,
       "bytesCarga": 36919,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones": {
       "bytes": 105814,
@@ -4932,7 +5282,8 @@
       "nMascaras": 75,
       "bytesCarga": 38079,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023": {
       "bytes": 95720,
@@ -4946,7 +5297,8 @@
       "nMascaras": 73,
       "bytesCarga": 33054,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19": {
       "bytes": 97636,
@@ -4960,7 +5312,8 @@
       "nMascaras": 77,
       "bytesCarga": 34156,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico": {
       "bytes": 96574,
@@ -4974,7 +5327,8 @@
       "nMascaras": 77,
       "bytesCarga": 33695,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite": {
       "bytes": 95275,
@@ -4988,7 +5342,8 @@
       "nMascaras": 72,
       "bytesCarga": 32972,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro": {
       "bytes": 94985,
@@ -5002,7 +5357,8 @@
       "nMascaras": 72,
       "bytesCarga": 32840,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-lite-informe-de-evaluacion-en-campo": {
       "bytes": 95976,
@@ -5016,7 +5372,8 @@
       "nMascaras": 75,
       "bytesCarga": 33306,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-pro-informe-de-evaluacion-en-campo": {
       "bytes": 95983,
@@ -5030,7 +5387,8 @@
       "nMascaras": 75,
       "bytesCarga": 33286,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/documentos-cientificos/evaluaciones-independientes/vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones": {
       "bytes": 103222,
@@ -5044,7 +5402,8 @@
       "nMascaras": 75,
       "bytesCarga": 37058,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion": {
       "bytes": 97081,
@@ -5058,7 +5417,8 @@
       "nMascaras": 71,
       "bytesCarga": 33757,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/kunakpedia": {
       "bytes": 101028,
@@ -5072,7 +5432,8 @@
       "nMascaras": 71,
       "bytesCarga": 33384,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/preguntas-frecuentes": {
       "bytes": 102671,
@@ -5086,7 +5447,8 @@
       "nMascaras": 69,
       "bytesCarga": 35536,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/recursos/seminarios-web": {
       "bytes": 97758,
@@ -5100,7 +5462,8 @@
       "nMascaras": 74,
       "bytesCarga": 34645,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid": {
       "bytes": 94672,
@@ -5114,7 +5477,8 @@
       "nMascaras": 71,
       "bytesCarga": 32450,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2": {
       "bytes": 98032,
@@ -5128,7 +5492,8 @@
       "nMascaras": 68,
       "bytesCarga": 33943,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/redes-de-vigilancia-de-calidad-del-aire": {
       "bytes": 140065,
@@ -5142,7 +5507,8 @@
       "nMascaras": 80,
       "bytesCarga": 53025,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/redes-hibridas-vigilancia-calidad-aire": {
       "bytes": 141278,
@@ -5156,7 +5522,8 @@
       "nMascaras": 76,
       "bytesCarga": 55029,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/ruido": {
       "bytes": 181641,
@@ -5170,7 +5537,8 @@
       "nMascaras": 88,
       "bytesCarga": 73192,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/running-for-clean-air": {
       "bytes": 205558,
@@ -5184,7 +5552,8 @@
       "nMascaras": 90,
       "bytesCarga": 85339,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sargazo-problemas-ambientales-y-monitorizacion-del-impacto": {
       "bytes": 213539,
@@ -5198,7 +5567,8 @@
       "nMascaras": 90,
       "bytesCarga": 88419,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/scientific-category/articulos-cientificos-y-estudios": {
       "bytes": 173876,
@@ -5212,7 +5582,8 @@
       "nMascaras": 116,
       "bytesCarga": 73778,
       "nTrozos": 44,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/scientific-category/articulos-cientificos-y-estudios/page/2": {
       "bytes": 175016,
@@ -5226,7 +5597,8 @@
       "nMascaras": 120,
       "bytesCarga": 74674,
       "nTrozos": 44,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/scientific-category/articulos-cientificos-y-estudios/page/3": {
       "bytes": 174847,
@@ -5240,7 +5612,8 @@
       "nMascaras": 122,
       "bytesCarga": 74593,
       "nTrozos": 44,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/scientific-category/articulos-tecnicos": {
       "bytes": 91065,
@@ -5254,7 +5627,8 @@
       "nMascaras": 75,
       "bytesCarga": 31092,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/scientific-category/evaluaciones-independientes": {
       "bytes": 134112,
@@ -5268,7 +5642,8 @@
       "nMascaras": 98,
       "bytesCarga": 53164,
       "nTrozos": 31,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/scientific-category/evaluaciones-independientes/page/2": {
       "bytes": 135112,
@@ -5282,7 +5657,8 @@
       "nMascaras": 104,
       "bytesCarga": 53972,
       "nTrozos": 32,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades": {
       "bytes": 123002,
@@ -5296,7 +5672,8 @@
       "nMascaras": 78,
       "bytesCarga": 46215,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/edar": {
       "bytes": 86793,
@@ -5310,7 +5687,8 @@
       "nMascaras": 68,
       "bytesCarga": 28913,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/industria/page/2": {
       "bytes": 87818,
@@ -5324,7 +5702,8 @@
       "nMascaras": 74,
       "bytesCarga": 29760,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/industria/page/3": {
       "bytes": 87818,
@@ -5338,7 +5717,8 @@
       "nMascaras": 74,
       "bytesCarga": 29760,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/investigacion-consultoria/page/2": {
       "bytes": 87877,
@@ -5352,7 +5732,8 @@
       "nMascaras": 76,
       "bytesCarga": 29809,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/metalurgia": {
       "bytes": 86801,
@@ -5366,7 +5747,8 @@
       "nMascaras": 68,
       "bytesCarga": 28923,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/oil-gas-es": {
       "bytes": 86815,
@@ -5380,7 +5762,8 @@
       "nMascaras": 68,
       "bytesCarga": 28921,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/olores": {
       "bytes": 86777,
@@ -5394,7 +5777,8 @@
       "nMascaras": 68,
       "bytesCarga": 28907,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/puertos": {
       "bytes": 86839,
@@ -5408,7 +5792,8 @@
       "nMascaras": 68,
       "bytesCarga": 28939,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/puertos/page/2": {
       "bytes": 87796,
@@ -5422,7 +5807,8 @@
       "nMascaras": 74,
       "bytesCarga": 29747,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/sports": {
       "bytes": 86777,
@@ -5436,7 +5822,8 @@
       "nMascaras": 68,
       "bytesCarga": 28907,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/urbano/page/2": {
       "bytes": 87734,
@@ -5450,7 +5837,8 @@
       "nMascaras": 74,
       "bytesCarga": 29715,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/urbano/page/3": {
       "bytes": 87734,
@@ -5464,7 +5852,8 @@
       "nMascaras": 74,
       "bytesCarga": 29715,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sector/urbano/page/4": {
       "bytes": 87734,
@@ -5478,7 +5867,8 @@
       "nMascaras": 74,
       "bytesCarga": 29715,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sectores": {
       "bytes": 92314,
@@ -5492,7 +5882,8 @@
       "nMascaras": 64,
       "bytesCarga": 30634,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sectores/calidad-del-aire-en-las-ciudades": {
       "bytes": 160571,
@@ -5506,7 +5897,8 @@
       "nMascaras": 116,
       "bytesCarga": 57686,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sectores/contaminacion-por-construccion": {
       "bytes": 153635,
@@ -5520,7 +5912,8 @@
       "nMascaras": 106,
       "bytesCarga": 53932,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sectores/control-de-emisiones-industriales": {
       "bytes": 175885,
@@ -5534,7 +5927,8 @@
       "nMascaras": 126,
       "bytesCarga": 66676,
       "nTrozos": 31,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sectores/estudio-de-la-contaminacion-atmosferica": {
       "bytes": 158215,
@@ -5548,7 +5942,8 @@
       "nMascaras": 104,
       "bytesCarga": 56614,
       "nTrozos": 27,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar": {
       "bytes": 226053,
@@ -5562,7 +5957,8 @@
       "nMascaras": 213,
       "bytesCarga": 93915,
       "nTrozos": 38,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas": {
       "bytes": 210471,
@@ -5576,7 +5972,8 @@
       "nMascaras": 187,
       "bytesCarga": 84549,
       "nTrozos": 36,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sensor-calidad-aire": {
       "bytes": 151943,
@@ -5590,7 +5987,8 @@
       "nMascaras": 76,
       "bytesCarga": 58289,
       "nTrozos": 20,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sensores-calidad-aire-exterior-pamplona": {
       "bytes": 132778,
@@ -5604,7 +6002,8 @@
       "nMascaras": 68,
       "bytesCarga": 50265,
       "nTrozos": 23,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sensores-calidad-aire-exterior-rendimiento-uso": {
       "bytes": 124928,
@@ -5618,7 +6017,8 @@
       "nMascaras": 76,
       "bytesCarga": 47318,
       "nTrozos": 24,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sensores-calidad-aire-urbano-donostia": {
       "bytes": 146548,
@@ -5632,7 +6032,8 @@
       "nMascaras": 76,
       "bytesCarga": 57257,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sensores-calidad-aire-volcanes": {
       "bytes": 167992,
@@ -5646,7 +6047,8 @@
       "nMascaras": 90,
       "bytesCarga": 67157,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018": {
       "bytes": 95099,
@@ -5660,7 +6062,8 @@
       "nMascaras": 67,
       "bytesCarga": 32633,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sistema-interno-de-informacion": {
       "bytes": 144867,
@@ -5674,7 +6077,8 @@
       "nMascaras": 64,
       "bytesCarga": 55836,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/software-de-medicion-calidad-del-aire": {
       "bytes": 211424,
@@ -5688,7 +6092,8 @@
       "nMascaras": 167,
       "bytesCarga": 74266,
       "nTrozos": 28,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/soporte": {
       "bytes": 81715,
@@ -5702,7 +6107,8 @@
       "nMascaras": 63,
       "bytesCarga": 26022,
       "nTrozos": 16,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/soporte/centro-de-ayuda": {
       "bytes": 104593,
@@ -5716,7 +6122,8 @@
       "nMascaras": 106,
       "bytesCarga": 38355,
       "nTrozos": 19,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda": {
       "bytes": 89396,
@@ -5730,7 +6137,8 @@
       "nMascaras": 78,
       "bytesCarga": 30671,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud": {
       "bytes": 138114,
@@ -5744,7 +6152,8 @@
       "nMascaras": 117,
       "bytesCarga": 54205,
       "nTrozos": 31,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales": {
       "bytes": 99016,
@@ -5758,7 +6167,8 @@
       "nMascaras": 90,
       "bytesCarga": 35667,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/soporte/servicio-de-reparacion": {
       "bytes": 87721,
@@ -5772,7 +6182,8 @@
       "nMascaras": 70,
       "bytesCarga": 29390,
       "nTrozos": 17,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/sulfuro-de-hidrogeno": {
       "bytes": 197916,
@@ -5786,7 +6197,8 @@
       "nMascaras": 80,
       "bytesCarga": 78258,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/suscribete": {
       "bytes": 137764,
@@ -5800,7 +6212,8 @@
       "nMascaras": 64,
       "bytesCarga": 49696,
       "nTrozos": 18,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/todas-nuestras-soluciones-en-el-iotswc": {
       "bytes": 93665,
@@ -5814,7 +6227,8 @@
       "nMascaras": 71,
       "bytesCarga": 31941,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/vigilancia-calidad-aire-maraton-valencia-2019": {
       "bytes": 108438,
@@ -5828,7 +6242,8 @@
       "nMascaras": 68,
       "bytesCarga": 38899,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/vigilancia-perimetral-industrial": {
       "bytes": 129053,
@@ -5842,7 +6257,8 @@
       "nMascaras": 74,
       "bytesCarga": 48712,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/webinar-calidad-del-aire-en-europa": {
       "bytes": 103861,
@@ -5856,7 +6272,8 @@
       "nMascaras": 68,
       "bytesCarga": 36657,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/webinar-como-controlar-las-emisiones-en-mineria-junio-2025": {
       "bytes": 130331,
@@ -5870,7 +6287,8 @@
       "nMascaras": 72,
       "bytesCarga": 49162,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/webinar-control-de-la-contaminacion-del-aire-en-la-industria": {
       "bytes": 118013,
@@ -5884,7 +6302,8 @@
       "nMascaras": 74,
       "bytesCarga": 43728,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/webinar-control-de-olores-en-vertederos-y-edar": {
       "bytes": 103868,
@@ -5898,7 +6317,8 @@
       "nMascaras": 68,
       "bytesCarga": 36695,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar": {
       "bytes": 109376,
@@ -5912,7 +6332,8 @@
       "nMascaras": 74,
       "bytesCarga": 39612,
       "nTrozos": 22,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/webinar-redes-hibridas-monitorizacion-ambiental": {
       "bytes": 109355,
@@ -5926,7 +6347,8 @@
       "nMascaras": 72,
       "bytesCarga": 39282,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/workshop-sensores-ambientales-bajo-coste": {
       "bytes": 101436,
@@ -5940,7 +6362,8 @@
       "nMascaras": 74,
       "bytesCarga": 35505,
       "nTrozos": 21,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/zonas-bajas-emisiones-monitorizacion": {
       "bytes": 205917,
@@ -5954,7 +6377,8 @@
       "nMascaras": 94,
       "bytesCarga": 85292,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     },
     "/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire": {
       "bytes": 241964,
@@ -5968,7 +6392,8 @@
       "nMascaras": 108,
       "bytesCarga": 101992,
       "nTrozos": 25,
-      "nBuildId": 1
+      "nBuildId": 1,
+      "error": "SABOTAJE 122.ª: esta página no se midió"
     }
   }
 }

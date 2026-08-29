@@ -1,0 +1,21 @@
+
+════════ SEPARADORA · el listón del 2.º contrato (122.ª) ════════
+
+  dato IDÉNTICO en los dos lados: 1 comparada, 426 en común
+  lo único que cambia es el LISTÓN
+
+  LISTÓN VIEJO   minimo: 1                       → exit 0 · grita false · suficiente true
+  LISTÓN NUEVO   minimo: Math.max(1, 426)       → exit 2 · grita true · suficiente false
+
+  ✅ SEPARA · 1 instancia separadora. Con el listón viejo el contrato daba el mismo dato
+     por SUFICIENTE y salía con 0; con el derivado grita y sale ≠0. El caso del
+     negativo mide el arreglo, no la aritmética.
+
+  ── Contraste: la base AJENA (0 comparadas de 0 en común) ──
+  LISTÓN VIEJO   minimo: 1              → exit 2 · grita true
+  LISTÓN NUEVO   minimo: Math.max(1, 0) → exit 2 · grita true
+  ⚠ NO SEPARA, y está bien que se diga: `base-ajena` es el caso que primero se le
+    ocurre a cualquiera y tiene **0 instancias separadoras** para este arreglo —
+    pasaba antes y pasa después. Lo que prueba es el SUELO `Math.max(1, …)`, sin
+    el cual el listón valdría 0 y no habría veredicto que dar.
+

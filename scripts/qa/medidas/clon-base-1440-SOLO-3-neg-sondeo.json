@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "width": 1440,
+    "base": "http://127.0.0.1:<efímero>",
+    "rutas": 3
+  },
+  "paginas": {
+    "/": {
+      "docH": 11875,
+      "h1": {
+        "x": 623.52,
+        "y": 289.91,
+        "w": 1,
+        "h": 1,
+        "txt": "Monitoreo de la calidad del aire"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 900,
+          "mt": "0px",
+          "pt": "180px",
+          "pb": "0px",
+          "txt": "Monitoreo de la calidad del aireLa"
+        },
+        {
+          "i": 1,
+          "h": 153,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "Con la confianza de empresas líder"
+        },
+        {
+          "i": 2,
+          "h": 2410.28,
+          "mt": "0px",
+          "pt": "57px",
+          "pb": "59px",
+          "txt": "La solución profesional para la mo"
+        },
+        {
+          "i": 3,
+          "h": 534.25,
+          "mt": "0px",
+          "pt": "85px",
+          "pb": "74px",
+          "txt": "SectoresDescargar catálogo→Control"
+        },
+        {
+          "i": 4,
+          "h": 619,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "40px",
+          "txt": "MineríaContribuye a una extracción"
+        },
+        {
+          "i": 5,
+          "h": 56,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": ""
+        },
+        {
+          "i": 6,
+          "h": 470.5,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "71px",
+          "txt": "¿Estás inmerso en un proyecto de c"
+        },
+        {
+          "i": 7,
+          "h": 3141.91,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "Presencia mundialLas estaciones Ku"
+        },
+        {
+          "i": 8,
+          "h": 415.88,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "Innovación en calidad del aire a 1"
+        },
+        {
+          "i": 9,
+          "h": 799.33,
+          "mt": "0px",
+          "pt": "84px",
+          "pb": "101px",
+          "txt": "Últimos artículosMonitorización de"
+        },
+        {
+          "i": 10,
+          "h": 822.08,
+          "mt": "0px",
+          "pt": "84px",
+          "pb": "71px",
+          "txt": "Últimos proyectosSector: EDAR / PT"
+        },
+        {
+          "i": 11,
+          "h": 341,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "¿Te preocupa la calidad del aire q"
+        },
+        {
+          "i": 12,
+          "h": 566.31,
+          "mt": "0px",
+          "pt": "57px",
+          "pb": "59px",
+          "txt": "Comprometidos con la sostenibilida"
+        }
+      ],
+      "nAnclas": 176,
+      "nImgs": 106
+    },
+    "/aaqms-estaciones-de-calidad-del-aire": {
+      "docH": 17947,
+      "h1": {
+        "x": 100.8,
+        "y": 346.95,
+        "w": 911.75,
+        "h": 158.39,
+        "txt": "AAQMS (Estaciones de monitorización de calidad del aire ambi"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 225,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": ""
+        },
+        {
+          "i": 1,
+          "h": 17077.16,
+          "mt": "0px",
+          "pt": "57.59px",
+          "pb": "57.59px",
+          "txt": "AAQMS (Estaciones de monitorizació"
+        }
+      ],
+      "nAnclas": 149,
+      "nImgs": 18
+    },
+    "/accesorios": {
+      "docH": 11291,
+      "h1": {
+        "x": 144,
+        "y": 392.59,
+        "w": 665.27,
+        "h": 56,
+        "txt": "Accesorios para sensores de calidad del aire, más datos para"
+      },
+      "secciones": [
+        {
+          "i": 0,
+          "h": 225,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": ""
+        },
+        {
+          "i": 1,
+          "h": 7671.73,
+          "mt": "0px",
+          "pt": "57.6px",
+          "pb": "0px",
+          "txt": "AccesoriosAccesorios para sensores"
+        },
+        {
+          "i": 2,
+          "h": 878.13,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "Artículos y GuíasEHS industrial, t"
+        },
+        {
+          "i": 3,
+          "h": 1375.81,
+          "mt": "0px",
+          "pt": "0px",
+          "pb": "0px",
+          "txt": "Preguntas frecuentes¿Los equipos K"
+        }
+      ],
+      "nAnclas": 137,
+      "nImgs": 37
+    }
+  }
+}

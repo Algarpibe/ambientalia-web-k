@@ -360,9 +360,17 @@ const idas = rutasAntes.filter((r) => !RUTAS.includes(r));
 if (nuevas.length) console.log(`  NUEVAS (no había línea base): ${nuevas.join(" · ")}`);
 if (idas.length) console.log(`  ❌ DESAPARECIDAS del build: ${idas.join(" · ")}`);
 
+/**
+ * La INTERSECCIÓN build ∩ fichero-base: **todo lo que esta comparación puede
+ * llegar a mirar**, y se conoce ANTES de comparar. Estaba calculada en línea
+ * dentro del `for` y sin nombre, así que el segundo contrato no podía usarla
+ * de listón aunque la tenía delante (ver `evCmp`, abajo).
+ */
+const comunes = rutasAntes.filter((r) => RUTAS.includes(r));
+
 let regresiones = 0;
 let sinComparar = 0;
-for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
+for (const ruta of comunes) {
   const a = antes.paginas[ruta];
   const b = todo.paginas[ruta];
   if (a.error || b.error) {
@@ -401,21 +409,50 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
 /* `páginas comparadas` es ahora las que SE COMPARARON, no las que se
  * intentaron: contar las que fallaron como comparadas es la misma mentira que
  * darles verde, solo que en la cifra del titular. */
-const comparadas = rutasAntes.length - idas.length - sinComparar;
+const comparadas = comunes.length - sinComparar;
 /**
  * ⚠ **Y la comparación tiene su propio «verde por vaciado», distinto del de la
- * medida.** Se puede medir las 31 rutas perfectamente y comparar CERO — basta
+ * medida.** Se puede medir las 426 rutas perfectamente y comparar CERO — basta
  * con una línea base cuyas rutas ya no existan. Antes eso imprimía
  * «0 páginas comparadas · 0 con regresión» y salía con **0**.
  *
- * El contrato se aplica al segundo nivel con su propio mínimo: **al menos una
- * ruta en común**. No se deriva del build porque el listón aquí lo pone el
- * fichero de comparación, no el build.
+ * ── EL LISTÓN TIENE DOS MITADES Y AQUÍ SÓLO ESTABA LA PRIMERA (122.ª) ──────
+ * El comentario que vivía aquí decía —y decía bien— que *el listón lo pone el
+ * fichero de comparación, no el build*. Eso justifica **no** usar
+ * `RUTAS.length`. **No justifica el `1`**, y durante siete tandas se leyó como
+ * si lo justificara: la otra mitad es que el fichero de comparación **también
+ * dice CUÁNTAS**, y la sonda ya lo tenía calculado —`comunes`— antes de entrar
+ * al bucle.
+ *
+ * Con `minimo: 1` este contrato salía **verde habiendo comparado 1 ruta de
+ * 426**: 425 errores de medida y una sola comparación bastaban para que
+ * `suficiente()` dijera que sí. Ésa es la séptima instancia de «0 comparado =
+ * verde» (`CLAUDE.md` §sondas 4bis), y en la guarda de regresión principal —
+ * el sitio donde más caro sale, porque §4bis existe precisamente para que el
+ * veredicto lo fuerce el gancho de salida **aunque la sonda no mire su propio
+ * contador**, y con el 1 esa protección estructural estaba vacía en este nivel.
+ *
+ * ⚠ El `Math.max(1, …)` NO es cosmético: es lo que impide que el sabotaje
+ * MUEVA LA PORTERÍA (§regla 17). Una base de otro conjunto de rutas lleva
+ * `comunes` a 0, y un listón de 0 daría «0 de 0 ⇒ suficiente» —o, con la guarda
+ * de `Evaluadas`, un `throw` en vez de un veredicto—. Con el suelo en 1, esa
+ * base sale por donde tiene que salir: **NO SE PUDO EVALUAR, 0 de 1**.
+ *
+ * ⚠ Y su cardinal de §regla 25 —*cuántos rechazos legítimos añade una guarda
+ * más ancha que su invariante*— es **0, y se demuestra**: este proceso sale con
+ * 0 sólo si `idas.length === 0 && sinComparar === 0`, y entonces
+ * `comparadas === comunes.length === minimo`. O sea que el contrato nuevo no
+ * puede enrojecer ninguna corrida que hoy salga verde: sólo pone el rojo en su
+ * sitio —el contrato— en las que ya salían rojas por el camino de al lado.
  */
-const evCmp = new Evaluadas({ nombre: `clon-base cmp @${width}`, unidad: "rutas comparadas", minimo: 1 });
+const evCmp = new Evaluadas({
+  nombre: `clon-base cmp @${width}`,
+  unidad: "rutas comparadas",
+  minimo: Math.max(1, comunes.length),
+});
 evCmp.ok(comparadas);
 console.log(
-  `\n${regresiones === 0 && sinComparar === 0 && comparadas > 0 ? "✅" : "❌"} ${comparadas} páginas comparadas · ` +
+  `\n${regresiones === 0 && sinComparar === 0 && comparadas > 0 ? "✅" : "❌"} ${comparadas} de ${comunes.length} páginas comparadas · ` +
     `${regresiones} con regresión · umbral CERO (clon contra clon)` +
     (sinComparar ? `\n   ⚠ ${sinComparar} NO comparada(s) por error: no son «sin regresión», son SIN MEDIR.` : ""),
 );

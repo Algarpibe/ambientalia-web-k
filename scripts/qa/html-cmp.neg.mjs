@@ -332,6 +332,41 @@ const casos = [
     env: { BUILD_ID: ubicua.c },
     salidaTiene: /VOLÁTIL UBICUO/,
   },
+  {
+    /* ── EL LISTÓN DEL SEGUNDO CONTRATO (122.ª) ──────────────────────────────
+     * Hasta hoy el contrato del nivel de comparación declaraba `minimo: 1`, así
+     * que **comparar 1 ruta de 426 salía «suficiente»**. Este caso es el que lo
+     * separa, y hay que ver POR QUÉ es éste y no el evidente:
+     *
+     *   · una base de otro conjunto de rutas —`ruta-fantasma` llevado al
+     *     extremo— tiene **0 instancias separadoras** para este arreglo: con
+     *     `minimo: 1` y 0 comparadas, `0 < 1` ya gritaba. El caso obvio pasaba
+     *     ANTES y DESPUÉS (§regla 17, 2.ª cara: un sabotaje que anula media
+     *     hipótesis no falsea nada);
+     *   · lo que sólo el listón derivado ve es el caso **PARCIAL**: la base y el
+     *     build comparten las 426, y aun así se compara UNA. Ahí `1 ≥ 1` daba
+     *     verde en el contrato y `426 ≥ 1` no lo da.
+     *
+     * ⚠ Y el sabotaje va EN EL DATO, no en el umbral (§regla 28a): se marcan
+     * con `error` todas las páginas de la base menos la diana, que es el modo de
+     * fallo real del que la guarda protege —una corrida en la que la medida no
+     * llegó—, no un `minimo` bajado a mano.
+     *
+     * ⚠ El caso NO se ancla en el código de salida: `sinComparar > 0` ya ponía
+     * exit 1 antes del arreglo, así que el exit **no separa nada** (§regla 21,
+     * la vuelta). Lo que separa es la frase del contrato y sus dos cifras. */
+    etiqueta: "casi-toda-sin-comparar",
+    exit: 1,
+    porQue: `base con todas las páginas en error salvo la diana ⇒ 1 comparada de ${rutasBase.length}: NO SE PUDO EVALUAR`,
+    base: () =>
+      fabricaBase("casi-toda-sin-comparar", (b) => {
+        for (const r of Object.keys(b.paginas))
+          if (r !== rutaDiana) b.paginas[r].error = "SABOTAJE 122.ª: esta página no se midió";
+      }),
+    salidaTiene: new RegExp(
+      `NO SE PUDO EVALUAR · html-cmp vs casi-toda-sin-comparar — 1 de ${rutasBase.length} rutas comparadas`,
+    ),
+  },
 ];
 
 console.log(`\n════════ TEST EN NEGATIVO · html-cmp ════════\n`);
@@ -372,11 +407,31 @@ borra("control");
 const ctl = corridaNegativa({ etiqueta: "control", args: [join(QA, "html-cmp.mjs"), "control", "--cmp", BASE] });
 const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");
 let malCtl = null;
+/**
+ * ⚠ **ACTUALIZADO EN LA 122.ª, y no por relajar: por ESTRECHAR.** El titular
+ * pasó de «N rutas comparadas» a «N **de N** rutas comparadas» al derivar el
+ * listón del segundo contrato, así que la expectativa vieja dejó de casar. Es
+ * §regla 5ter —*arreglar el objeto caduca el control que lo lee*— y la salida
+ * correcta es escribir la afirmación NUEVA, que además dice más: el control ya
+ * no sólo exige que se comparen todas, exige que el **denominador** sea el que
+ * la sonda publica.
+ *
+ * Y la tercera línea es la que hace que el control separe de verdad: sin
+ * sabotaje **NO puede aparecer** la frase del contrato. Un control que sólo
+ * mirase el exit 0 no distinguiría «comparó todas» de «gritó y alguien se comió
+ * el código de salida».
+ */
+const RE_CTL = new RegExp(`${rutasBase.length} de ${rutasBase.length} rutas comparadas · 0 con CONTENIDO distinto`);
 if (ctl.status !== 0) malCtl = `exit ${ctl.status} — sin sabotaje tiene que salir 0`;
-else if (!new RegExp(`${rutasBase.length} rutas comparadas · 0 con CONTENIDO distinto`).test(ctlOut))
-  malCtl = `no dice «${rutasBase.length} rutas comparadas · 0 con CONTENIDO distinto»`;
+else if (!RE_CTL.test(ctlOut))
+  malCtl = `no dice «${rutasBase.length} de ${rutasBase.length} rutas comparadas · 0 con CONTENIDO distinto»`;
+else if (/NO SE PUDO EVALUAR · html-cmp vs/.test(ctlOut))
+  malCtl = `sin sabotaje NO puede gritar el contrato de comparación`;
 if (malCtl) { fallos++; console.log(`  ❌ CONTROL          ${malCtl}`); }
-else console.log(`  ✓  CONTROL          exit 0 · ${rutasBase.length} rutas comparadas · 0 con contenido distinto`);
+else
+  console.log(
+    `  ✓  CONTROL          exit 0 · ${rutasBase.length} de ${rutasBase.length} rutas comparadas · 0 distintas · el contrato NO grita`,
+  );
 
 console.log(
   `\n${fallos === 0 ? "✅" : "❌"} html-cmp · test en negativo: ${casos.length + 1 - fallos}/${casos.length + 1}\n` +

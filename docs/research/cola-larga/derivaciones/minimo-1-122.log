@@ -1,0 +1,45 @@
+CONTROL · declaraciones vistas en el fixture: 2 (esperadas 2: código y el derivado)
+CONTROL · literales vistos: 1 (esperado 1)
+CONTROL · ✅ el censo separa código de comentario y cadena
+
+DOMINIO · 216 ficheros censados · 3 excluidos por ser el instrumento (lib.mjs · lib.test.mjs · lib.test.neg.mjs)
+         219 declaraciones de `Evaluadas` en total
+
+A · con `minimo` LITERAL: 11 de 219
+      1/1  a-behaviors.mjs  → minimo: 1
+      1/1  a-inventario.mjs  → minimo: 200
+      1/1  cms-lectura.mjs  → minimo: 1
+      1/1  cms-slugs.mjs  → minimo: 5
+      1/1  d4-cta.mjs  → minimo: 1
+      1/1  dos-rutas.mjs  → minimo: 2
+      1/1  hotlink-recuento.mjs  → minimo: 3
+      1/1  lh-huecos.mjs  → minimo: 5
+      1/1  lh-selectores.mjs  → minimo: 149
+      1/1  mono-cmp.mjs  → minimo: 2
+      1/1  tree-cmp.mjs  → minimo: 2
+
+B · LITERAL en un contrato SECUNDARIO (la clase de la 122.ª): 0
+
+   · literales en contrato ÚNICO (fuera de la clase, se nombran igual): 11
+      a-behaviors.mjs  → minimo: 1
+      a-inventario.mjs  → minimo: 200
+      cms-lectura.mjs  → minimo: 1
+      cms-slugs.mjs  → minimo: 5
+      d4-cta.mjs  → minimo: 1
+      dos-rutas.mjs  → minimo: 2
+      hotlink-recuento.mjs  → minimo: 3
+      lh-huecos.mjs  → minimo: 5
+      lh-selectores.mjs  → minimo: 149
+      mono-cmp.mjs  → minimo: 2
+      tree-cmp.mjs  → minimo: 2
+
+DENOMINADOR de B · sondas con ≥2 contratos: 6
+      clon-base.mjs  → RUTAS.length  |  Math.max(1
+      html-cmp.mjs  → RUTAS.length  |  Math.max(1
+      lh-barra.mjs  → SAB === "" ? F.length + 1 : F.length  |  conBarra.length
+      manifiesto.mjs  → rutasBase.length  |  Math.max(1
+      productos-hueco.mjs  → rutasCpt.length  |  casos.length
+      tipo-hoja.mjs  → censo.size  |  filas.length
+
+VEREDICTO · instancias de la clase VIVAS hoy: 0
+           0 = la clase está CERRADA. La evidencia de que existió es la corrida ANTES (`minimo-1-122-ANTES.log`: 2).

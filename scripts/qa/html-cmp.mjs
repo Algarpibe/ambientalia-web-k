@@ -553,7 +553,15 @@ const baseConNiveles = Object.values(antes.paginas).some((p) => p.visible);
 if (!baseConNiveles)
   console.log(`  ⚠ la base no trae \`visible\`/\`filas\`: sólo se puede comparar el documento entero\n`);
 
-for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
+/**
+ * La INTERSECCIÓN build ∩ fichero-base: **todo lo que esta comparación puede
+ * llegar a mirar**, y se conoce ANTES de comparar. Estaba calculada en línea
+ * dentro del `for` y sin nombre, así que el segundo contrato no podía usarla de
+ * listón aunque la tenía delante (ver `evCmp`, abajo).
+ */
+const comunes = rutasAntes.filter((r) => RUTAS.includes(r));
+
+for (const ruta of comunes) {
   const a = antes.paginas[ruta];
   const b = todo.paginas[ruta];
   if (a.error || b.error) {
@@ -631,23 +639,52 @@ for (const ruta of rutasAntes.filter((r) => RUTAS.includes(r))) {
         : `\n       (base sin niveles: no se puede decir si es contenido o reparto)`),
   );
 }
-const iguales =
-  rutasAntes.length - idas.length - sinComparar - distintas - soloReparto - renumeradas - bundle;
+/* Lo que SE COMPARÓ, no lo que se intentó: `comunes` menos las que erraron. Se
+ * nombra una vez y la usan el contrato Y el titular, para que no puedan
+ * discrepar (`CLAUDE.md` §sondas 1: un solo canal de verdad). */
+const comparadas = comunes.length - sinComparar;
+const iguales = comparadas - distintas - soloReparto - renumeradas - bundle;
 console.log(
   `\n  ${iguales - soloVolatil} idénticas byte a byte · ${soloVolatil} sólo el BUILD_ID · ` +
     `${soloReparto} sólo el reparto del stream RSC · ${renumeradas} sólo renumeración RSC · ` +
     `${bundle} sólo el NOMBRE DE CHUNK (otro bundle cliente) · ${distintas} DISTINTAS`,
 );
 
-/* Segundo contrato, con su propio mínimo: se puede medir las 31 y comparar
- * CERO si la base es de otro conjunto de rutas (`CLAUDE.md` §sondas 4bis). */
-const evCmp = new Evaluadas({ nombre: `html-cmp vs ${etiqueta}`, unidad: "rutas comparadas", minimo: 1 });
-evCmp.ok(rutasAntes.length - idas.length - sinComparar);
+/**
+ * Segundo contrato, con su propio mínimo: se puede medir las 426 y comparar
+ * CERO si la base es de otro conjunto de rutas (`CLAUDE.md` §sondas 4bis).
+ *
+ * ── EL LISTÓN TIENE DOS MITADES Y AQUÍ SÓLO ESTABA LA PRIMERA (122.ª) ──────
+ * Que el listón lo ponga **el fichero de comparación y no el build** es cierto,
+ * y es lo que justifica no usar `RUTAS.length`. **No justifica el `1`**: el
+ * fichero de comparación también dice CUÁNTAS, y es `comunes` —calculado unas
+ * líneas más arriba, antes de comparar nada—.
+ *
+ * Con `minimo: 1`, este contrato salía **verde habiendo comparado 1 ruta de
+ * 426**: bastaban 425 errores de medida y una sola comparación. Y el `1` no
+ * sólo no protegía: **hacía inerte** la protección estructural de §4bis, que es
+ * que el gancho de salida fuerce el veredicto aunque la sonda no mire su propio
+ * contador.
+ *
+ * ⚠ El `Math.max(1, …)` impide que el sabotaje MUEVA LA PORTERÍA (§regla 17):
+ * una base de otro conjunto de rutas lleva `comunes` a 0, y con el listón a 0
+ * «0 de 0» sería suficiente. Con el suelo en 1 sale **NO SE PUDO EVALUAR**.
+ *
+ * ⚠ Cardinal de §regla 25 —rechazos legítimos que añade— **0, demostrado**:
+ * `mal` es falso sólo si `idas.length === 0 && sinComparar === 0`, y entonces
+ * `comparadas === comunes.length === minimo`.
+ */
+const evCmp = new Evaluadas({
+  nombre: `html-cmp vs ${etiqueta}`,
+  unidad: "rutas comparadas",
+  minimo: Math.max(1, comunes.length),
+});
+evCmp.ok(comparadas);
 const fallosCmp = evCmp.informe();
 
 const mal = distintas > 0 || idas.length > 0 || sinComparar > 0 || fallosEv > 0 || fallosCmp > 0;
 console.log(
-  `\n${mal ? "❌" : "✅"} ${rutasAntes.length - idas.length - sinComparar} rutas comparadas · ` +
+  `\n${mal ? "❌" : "✅"} ${comparadas} de ${comunes.length} rutas comparadas · ` +
     `${distintas} con CONTENIDO distinto · umbral CERO en el marcado VISIBLE (la puerta)` +
     (soloReparto
       ? `\n   (${soloReparto} con el mismo contenido y otro reparto del stream — contadas aparte, no son Δ0)`
