@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "tanda": "124.ª · PASO 0",
+    "fecha": "2026-08-30",
+    "fuente": "docs/research/cola-larga/derivaciones/tests-ab-123.json (congelada, 48 celdas)",
+    "lado": "NINGUNO — no mide el original ni el clon: RECLASIFICA una congelada",
+    "contesta": [
+      "que familia son los 27 «al reves», con denominador por familia",
+      "cuantos ejes de ritmo habria clasificado BIEN el test A",
+      "si el «87 % al reves» y la premisa callada son dos lecturas del mismo dato"
+    ],
+    "noContesta": [
+      "si el test A acierta POR NODO — la congelada agrega con `.some()` a nivel de CELDA y no guarda los nodos. Eso lo mide paso0-nodos-124",
+      "la unidad DECLARADA (un `em` no se mueve con el ancho): haria falta la cascada"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "el reparto por familia SUMA el total de celdas",
+      "ok": true,
+      "visto": "ritmo=48 · caja=0 · tipografia=0 · SIN CLASIFICAR=0 vs filas=48"
+    },
+    {
+      "nombre": "ningun eje queda SIN CLASIFICAR (el clasificador cubre el dominio)",
+      "ok": true,
+      "visto": "sin clasificar = 0"
+    },
+    {
+      "nombre": "el 0 de CAJA/TIPOGRAFIA es POR CONSTRUCCION, no un hallazgo",
+      "ok": true,
+      "visto": "la 123.ª declaro su alcance «SOLO ejes de RITMO (margin/padding). La caja y la tipografia quedan fuera: ahi el test A responde AL REVES» y midio marginTop,marginBottom,paddingTop,paddingBottom — 0 ejes de caja y 0 de tipografia ENTRARON, asi que su 0 dice «no se miro», NO «no hay»"
+    },
+    {
+      "nombre": "SIN ESCRIBIR y CAMPO son DISJUNTOS (no dos lecturas del mismo dato)",
+      "ok": true,
+      "visto": "celdas escritas con un solo valor = 0: 0 · SIN ESCRIBIR = 17"
+    }
+  ],
+  "porFamilia": {
+    "ritmo": {
+      "celdas": 48,
+      "sinEscribir": 17,
+      "varia+seMueve": 27,
+      "varia+noSeMueve": 4,
+      "noVaria+seMueve": 0,
+      "noVaria+noSeMueve": 0,
+      "ejes": [
+        "marginTop",
+        "marginBottom",
+        "paddingTop",
+        "paddingBottom"
+      ]
+    },
+    "caja": {
+      "celdas": 0,
+      "sinEscribir": 0,
+      "varia+seMueve": 0,
+      "varia+noSeMueve": 0,
+      "noVaria+seMueve": 0,
+      "noVaria+noSeMueve": 0,
+      "ejes": []
+    },
+    "tipografia": {
+      "celdas": 0,
+      "sinEscribir": 0,
+      "varia+seMueve": 0,
+      "varia+noSeMueve": 0,
+      "noVaria+seMueve": 0,
+      "noVaria+noSeMueve": 0,
+      "ejes": []
+    },
+    "SIN CLASIFICAR": {
+      "celdas": 0,
+      "sinEscribir": 0,
+      "varia+seMueve": 0,
+      "varia+noSeMueve": 0,
+      "noVaria+seMueve": 0,
+      "noVaria+noSeMueve": 0,
+      "ejes": []
+    }
+  },
+  "testAsolo": {
+    "escritos": 31,
+    "acierta": 4,
+    "falla": 27,
+    "pctFalla": 87.1
+  },
+  "premisaCallada": {
+    "celdasConUnSoloValor": 17,
+    "deEsasElValorEsElInicial": 17,
+    "solapanConLosEscritos": 0
+  },
+  "diagnosticoDeNivel": {
+    "unidadDeLa123": "celda = documento × tipo × eje",
+    "comoSeAgrega": "seMueve = v1440.some((x,k) => x !== v390[k]) — basta UN nodo",
+    "porQueImporta": "una celda con defaults Y valores de editor sale «al reves» aunque el test A acierte en cada nodo",
+    "celdasQueMezclanDefaultConEditor": [
+      {
+        "celda": "PRODUCTO seccion paddingTop",
+        "valores": [
+          0,
+          57.5938
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "PRODUCTO seccion paddingBottom",
+        "valores": [
+          0,
+          57.5938
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "PRODUCTO fila paddingTop",
+        "valores": [
+          0,
+          12,
+          20,
+          28.7969,
+          57.5938,
+          140
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "PRODUCTO fila paddingBottom",
+        "valores": [
+          12,
+          14.3906,
+          28.7969,
+          72
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "PRODUCTO modulo marginTop",
+        "valores": [
+          -64,
+          0,
+          10,
+          20
+        ],
+        "contieneDefaultConocido": false
+      },
+      {
+        "celda": "PRODUCTO modulo marginBottom",
+        "valores": [
+          0,
+          20,
+          31.6719
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "PRODUCTO modulo paddingBottom",
+        "valores": [
+          0,
+          10,
+          10.875,
+          25,
+          40
+        ],
+        "contieneDefaultConocido": false
+      },
+      {
+        "celda": "CATALOGO seccion paddingTop",
+        "valores": [
+          0,
+          57.5938
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "CATALOGO seccion paddingBottom",
+        "valores": [
+          0,
+          57.5938
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "CATALOGO fila paddingBottom",
+        "valores": [
+          8,
+          12,
+          14.3906,
+          28.7969,
+          32,
+          72
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "CATALOGO modulo marginBottom",
+        "valores": [
+          0,
+          20,
+          31.6719,
+          50
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "CATALOGO modulo paddingBottom",
+        "valores": [
+          0,
+          13.3125
+        ],
+        "contieneDefaultConocido": false
+      },
+      {
+        "celda": "SOFTWARE seccion paddingTop",
+        "valores": [
+          0,
+          57.5938
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE seccion paddingBottom",
+        "valores": [
+          0,
+          57.5938,
+          72
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE fila marginBottom",
+        "valores": [
+          0,
+          28.7969
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE fila paddingTop",
+        "valores": [
+          0,
+          12,
+          20,
+          28.7969,
+          57.5938,
+          140
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE fila paddingBottom",
+        "valores": [
+          12,
+          14.3906,
+          28.7969,
+          72
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE modulo marginTop",
+        "valores": [
+          0,
+          10,
+          20,
+          32,
+          37.3438
+        ],
+        "contieneDefaultConocido": false
+      },
+      {
+        "celda": "SOFTWARE modulo marginBottom",
+        "valores": [
+          0,
+          7.0625,
+          20,
+          31.6719,
+          37.3438,
+          40
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE modulo paddingBottom",
+        "valores": [
+          0,
+          10.875,
+          20,
+          27.2031
+        ],
+        "contieneDefaultConocido": false
+      },
+      {
+        "celda": "SOFTWARE-corta seccion paddingTop",
+        "valores": [
+          0,
+          57.5938
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE-corta seccion paddingBottom",
+        "valores": [
+          0,
+          57.5938
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE-corta fila paddingTop",
+        "valores": [
+          0,
+          12,
+          20,
+          28.7969
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE-corta fila paddingBottom",
+        "valores": [
+          12,
+          14.3906,
+          72
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE-corta modulo marginTop",
+        "valores": [
+          -54.4219,
+          0,
+          10,
+          20
+        ],
+        "contieneDefaultConocido": false
+      },
+      {
+        "celda": "SOFTWARE-corta modulo marginBottom",
+        "valores": [
+          -1,
+          0,
+          20,
+          31.6719
+        ],
+        "contieneDefaultConocido": true
+      },
+      {
+        "celda": "SOFTWARE-corta modulo paddingBottom",
+        "valores": [
+          0,
+          10.875,
+          20
+        ],
+        "contieneDefaultConocido": false
+      }
+    ]
+  },
+  "preRegistro": {
+    "hipotesis": "el «87 % al reves» es un artefacto de la UNIDAD, no una propiedad del test A",
+    "prediccion": [
+      "P1 · en las celdas que mezclan, los nodos que SE MUEVEN son los que llevan un valor DEFAULT, y los que NO se mueven son los que llevan un valor del editor",
+      "P2 · medido POR NODO, el test A acierta en la GRAN MAYORIA de los pares (nodo,eje) escritos — muy por encima del 13 % que da la lectura por celda",
+      "P3 · debe existir al menos UNA celda separadora: «varia+seMueve» a nivel de celda y con 0 nodos mal clasificados"
+    ],
+    "comoSeRefuta": [
+      "si los nodos con valor default NO se mueven, o los nodos con valor de editor SI se mueven, P1 es falsa",
+      "si al medir por nodo el acierto sigue por debajo del 50 %, P2 es falsa y el alcance del test A queda REFUTADO de verdad"
+    ]
+  },
+  "veredicto": "valida"
+}

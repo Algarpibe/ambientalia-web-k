@@ -1,0 +1,57 @@
+=== CONTROLES ===
+  OK  el reparto por familia SUMA el total de celdas
+      ritmo=48 · caja=0 · tipografia=0 · SIN CLASIFICAR=0 vs filas=48
+  OK  ningun eje queda SIN CLASIFICAR (el clasificador cubre el dominio)
+      sin clasificar = 0
+  OK  el 0 de CAJA/TIPOGRAFIA es POR CONSTRUCCION, no un hallazgo
+      la 123.ª declaro su alcance «SOLO ejes de RITMO (margin/padding). La caja y la tipografia quedan fuera: ahi el test A responde AL REVES» y midio marginTop,marginBottom,paddingTop,paddingBottom — 0 ejes de caja y 0 de tipografia ENTRARON, asi que su 0 dice «no se miro», NO «no hay»
+  OK  SIN ESCRIBIR y CAMPO son DISJUNTOS (no dos lecturas del mismo dato)
+      celdas escritas con un solo valor = 0: 0 · SIN ESCRIBIR = 17
+
+=== 1 · REPARTO POR FAMILIA (denominador por familia, no en total) ===
+  ritmo           celdas=48  ejes=[marginTop,marginBottom,paddingTop,paddingBottom]
+                    varia+seMueve=27 · varia+noSeMueve=4 · noVaria+seMueve=0 · noVaria+noSeMueve=0 · sinEscribir=17
+  caja            celdas=0  ⇒ NO SE MIDIO (cero por construccion, no hallazgo)
+  tipografia      celdas=0  ⇒ NO SE MIDIO (cero por construccion, no hallazgo)
+  SIN CLASIFICAR  celdas=0  ⇒ NO SE MIDIO (cero por construccion, no hallazgo)
+
+=== 2 · EL TEST A APLICADO SOLO, SOBRE LOS EJES ESCRITOS ===
+  escritos 31 · acierta 4 · falla 27  (87.1 % al reves)
+
+=== 3 · LA PREMISA CALLADA ===
+  celdas con UN SOLO valor observado: 17
+  de esas, el valor es el INICIAL (0): 17
+  solapan con los 31 escritos: 0  ⇒ DISJUNTOS: son dos particiones, NO dos lecturas del mismo dato
+
+=== DIAGNOSTICO DE NIVEL ===
+  celdas «varia+seMueve»: 27
+  de esas, con un DEFAULT conocido entre sus valores: 20
+    DEF  PRODUCTO seccion paddingTop        [0,57.5938]
+    DEF  PRODUCTO seccion paddingBottom     [0,57.5938]
+    DEF  PRODUCTO fila paddingTop           [0,12,20,28.7969,57.5938,140]
+    DEF  PRODUCTO fila paddingBottom        [12,14.3906,28.7969,72]
+         PRODUCTO modulo marginTop          [-64,0,10,20]
+    DEF  PRODUCTO modulo marginBottom       [0,20,31.6719]
+         PRODUCTO modulo paddingBottom      [0,10,10.875,25,40]
+    DEF  CATALOGO seccion paddingTop        [0,57.5938]
+    DEF  CATALOGO seccion paddingBottom     [0,57.5938]
+    DEF  CATALOGO fila paddingBottom        [8,12,14.3906,28.7969,32,72]
+    DEF  CATALOGO modulo marginBottom       [0,20,31.6719,50]
+         CATALOGO modulo paddingBottom      [0,13.3125]
+    DEF  SOFTWARE seccion paddingTop        [0,57.5938]
+    DEF  SOFTWARE seccion paddingBottom     [0,57.5938,72]
+    DEF  SOFTWARE fila marginBottom         [0,28.7969]
+    DEF  SOFTWARE fila paddingTop           [0,12,20,28.7969,57.5938,140]
+    DEF  SOFTWARE fila paddingBottom        [12,14.3906,28.7969,72]
+         SOFTWARE modulo marginTop          [0,10,20,32,37.3438]
+    DEF  SOFTWARE modulo marginBottom       [0,7.0625,20,31.6719,37.3438,40]
+         SOFTWARE modulo paddingBottom      [0,10.875,20,27.2031]
+    DEF  SOFTWARE-corta seccion paddingTop  [0,57.5938]
+    DEF  SOFTWARE-corta seccion paddingBottom [0,57.5938]
+    DEF  SOFTWARE-corta fila paddingTop     [0,12,20,28.7969]
+    DEF  SOFTWARE-corta fila paddingBottom  [12,14.3906,72]
+         SOFTWARE-corta modulo marginTop    [-54.4219,0,10,20]
+    DEF  SOFTWARE-corta modulo marginBottom [-1,0,20,31.6719]
+         SOFTWARE-corta modulo paddingBottom [0,10.875,20]
+
+VEREDICTO: valida
