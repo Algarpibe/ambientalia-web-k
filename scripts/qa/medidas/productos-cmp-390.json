@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "sonda": "productos-cmp",
+    "tanda": "123.ª",
+    "fecha": "2026-08-30",
+    "ancho": 390,
+    "lado": "DOS — ORIGINAL: captura de corpus/productos por file:// con sus hojas de corpus/css, red cortada. CLON: next start. La intercepción se instala en LOS DOS lados (§regla 32).",
+    "saboteada": null,
+    "acredita": true,
+    "porQueNoAcredita": null
+  },
+  "precondiciones": {
+    "documentos": {
+      "presentes": 4,
+      "total": 4,
+      "faltan": []
+    },
+    "hojas": {
+      "pedidas": 30,
+      "resueltas": 30,
+      "sinResolver": []
+    },
+    "media": {
+      "pedidas": 162,
+      "resueltas": 162,
+      "externas": 0,
+      "porNombreNormalizado": [
+        "https://kunakair.com/wp-content/uploads/2023/09/PM2.5_belgium.webp"
+      ],
+      "sinResolver": []
+    }
+  },
+  "resumen": {
+    "pares": 4,
+    "ejesComparados": 130,
+    "distintos": 49,
+    "huerfanasO": 4,
+    "huerfanasC": 0,
+    "subpixel": 1,
+    "ejesExcluidos": {
+      "modulos": "el clon no emite marcador de MODULO — SIN COMPARAR, ver modulosSinComparar por ruta"
+    }
+  },
+  "informe": [
+    {
+      "ruta": "/monitor-calidad-aire",
+      "arquetipo": "PRODUCTO",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 9,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 19,
+      "httpClon": null,
+      "nDifs": 8,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 1396.47,
+          "clon": 1328.69,
+          "delta": -67.78
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 5094.59,
+          "clon": 4734.89,
+          "delta": -359.7
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 9617.13,
+          "clon": 9482.25,
+          "delta": -134.88
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 1494.44,
+          "clon": 1500.8,
+          "delta": 6.36
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 3.89,
+          "clon": 49,
+          "delta": 45.11
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 119,
+          "clon": 1969.13,
+          "delta": 1850.13
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 70,
+          "delta": 70
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 19.5,
+          "clon": 70,
+          "delta": 50.5
+        }
+      ],
+      "subpixel": {
+        "n": 1,
+        "casos": [
+          {
+            "fila": 3,
+            "eje": "pt",
+            "orig": 15.59,
+            "clon": 15.6,
+            "delta": 0.01
+          }
+        ]
+      },
+      "modulosSinComparar": {
+        "motivo": "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 14,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 27,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 34,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    },
+    {
+      "ruta": "/accesorios",
+      "arquetipo": "CATALOGO",
+      "filas": {
+        "orig": 9,
+        "clon": 8,
+        "origEnElDOM": 9,
+        "clonEnElDOM": 8
+      },
+      "hojasAplicadas": 17,
+      "httpClon": null,
+      "nDifs": 19,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 899.23,
+          "clon": 867,
+          "delta": -32.23
+        },
+        {
+          "fila": 1,
+          "eje": "pb",
+          "orig": 8,
+          "clon": 0,
+          "delta": -8
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 345.5,
+          "clon": 161.5,
+          "delta": -184
+        },
+        {
+          "fila": 2,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 2,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 1143.39,
+          "clon": 1118.41,
+          "delta": -24.98
+        },
+        {
+          "fila": 3,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 32,
+          "delta": 32
+        },
+        {
+          "fila": 3,
+          "eje": "pb",
+          "orig": 7.8,
+          "clon": 0,
+          "delta": -7.8
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 3398.84,
+          "clon": 3713.66,
+          "delta": 314.82
+        },
+        {
+          "fila": 4,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 8731.28,
+          "clon": 9512.69,
+          "delta": 781.41
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 6,
+          "eje": "h",
+          "orig": 1440.44,
+          "clon": 1500.8,
+          "delta": 60.36
+        },
+        {
+          "fila": 6,
+          "eje": "pb",
+          "orig": 3.89,
+          "clon": 49,
+          "delta": 45.11
+        },
+        {
+          "fila": 7,
+          "eje": "h",
+          "orig": 119,
+          "clon": 1917.13,
+          "delta": 1798.13
+        },
+        {
+          "fila": 7,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 70,
+          "delta": 70
+        },
+        {
+          "fila": 7,
+          "eje": "pb",
+          "orig": 19.5,
+          "clon": 70,
+          "delta": 50.5
+        }
+      ],
+      "subpixel": {
+        "n": 0,
+        "casos": []
+      },
+      "modulosSinComparar": {
+        "motivo": "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 5,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 2,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 2,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 6,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 5,
+            "orig": 10,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 6,
+            "orig": 4,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 7,
+            "orig": 1,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "arquetipo": "SOFTWARE",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 8,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 10,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 950.2,
+          "clon": 917.69,
+          "delta": -32.51
+        },
+        {
+          "fila": 1,
+          "eje": "mb",
+          "orig": 7.8,
+          "clon": 30,
+          "delta": 22.2
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 3314.64,
+          "clon": 3360.47,
+          "delta": 45.83
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 7607.92,
+          "clon": 10373.28,
+          "delta": 2765.36
+        },
+        {
+          "fila": 3,
+          "eje": "pt",
+          "orig": 15.59,
+          "clon": 50,
+          "delta": 34.41
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 1501.19,
+          "clon": 1500.8,
+          "delta": -0.39
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 3.89,
+          "clon": 49,
+          "delta": 45.11
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 99,
+          "clon": 2021.63,
+          "delta": 1922.63
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 70,
+          "delta": 70
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 19.5,
+          "clon": 70,
+          "delta": 50.5
+        }
+      ],
+      "subpixel": {
+        "n": 0,
+        "casos": []
+      },
+      "modulosSinComparar": {
+        "motivo": "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 7,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 18,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 33,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    },
+    {
+      "ruta": "/kunak-api",
+      "arquetipo": "SOFTWARE (variante corta)",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 7,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 12,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 859.13,
+          "clon": 854.17,
+          "delta": -4.96
+        },
+        {
+          "fila": 1,
+          "eje": "pb",
+          "orig": 3.89,
+          "clon": 0,
+          "delta": -3.89
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 1293.13,
+          "clon": 1301.52,
+          "delta": 8.39
+        },
+        {
+          "fila": 2,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 23.9,
+          "delta": 3.9
+        },
+        {
+          "fila": 2,
+          "eje": "pb",
+          "orig": 19.5,
+          "clon": 30,
+          "delta": 10.5
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 960.61,
+          "clon": 965.11,
+          "delta": 4.5
+        },
+        {
+          "fila": 3,
+          "eje": "pb",
+          "orig": 19.5,
+          "clon": 30,
+          "delta": 10.5
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 1364.19,
+          "clon": 1417.8,
+          "delta": 53.61
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 3.89,
+          "clon": 49,
+          "delta": 45.11
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 99,
+          "clon": 2021.63,
+          "delta": 1922.63
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 70,
+          "delta": 70
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 19.5,
+          "clon": 70,
+          "delta": 50.5
+        }
+      ],
+      "subpixel": {
+        "n": 0,
+        "casos": []
+      },
+      "modulosSinComparar": {
+        "motivo": "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 6,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 12,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 9,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    }
+  ]
+}

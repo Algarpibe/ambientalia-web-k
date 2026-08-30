@@ -1261,6 +1261,93 @@ separa**: los tres tienen los dos ejes a `·`.
 - **`countries` y `faqs` son módulos de contenido que NINGUNA `page.tsx`
   alcanza** (2 de 22). Ni son de esta fase ni se tocan aquí: se fichan.
 
+### ✅ ESCALÓN 1 de la 123.ª (2026-08-30) · `productos-cmp`, y el eje `filas` deja de estar a `·`
+
+**Empezando por el archivo, como manda el encargo.** Barridas las **218**
+sondas: **ninguna** medía filas/módulos del cuerpo de estas 4 rutas —66
+mencionan el nivel por selector, 21 nombran una ruta del lote, y las **5** del
+cruce son cascarón o matriz (`cobertura`, `ruido`, `d4-pie`, `d4-tipografia`,
+`c-banda`)—. Los dos lados del cruce se publican por separado para poder
+auditar el cero: **53** miden nivel sin ver mis rutas, **13** ven mis rutas sin
+medir nivel. Instrumento: `derivaciones/archivo-sondas-123.*`.
+
+> ⚠ El detector llegó **sobre-casado**: `/\bfilas?\b/` casa en cualquier
+> comentario y daba **119 de 218** (54 %), con `ruido.mjs` y `slugs.mjs` entre
+> las «que sirven». Apretado a **selectores de Divi** baja a 66 y a 5,
+> conservando el control del caso conocido (`mono-cmp` mide módulos, `tree-cmp`
+> filas). Evidencia: `archivo-sondas-123-SONDA-NIVEL-POR-PALABRA-119-DE-218.json`.
+
+**Construido `qa:productos-cmp`** —original por `file://` con sus hojas contra
+`next start`— **con su negativo probado ANTES de la primera corrida real**
+(§regla 24), **3/3**, y tres códigos de salida distintos para que un rojo futuro
+se pueda atribuir: `mismo-lado` **0** · `inyecta-delta` **4** · `sin-insumos`
+**3**. Declara `meta.lado` (§encargo), aplica la intercepción de red **a los dos
+lados** (§regla 32) y comprueba sus tres precondiciones **antes del `launch`**,
+sin ninguna navegación entre medias (§regla 37).
+
+**LOS TRES CANALES CERRADOS EN LA MISMA TANDA** — hojas **30/30**, media
+**162/162**, documentos **4/4**—, que es lo que hace que la corrida **ACREDITE**
+en vez de sólo medir:
+
+- **10 hojas `et-cache` capturadas** (las que le faltaban al lote de las 51 del
+  directorio). ⚠ Y **no hizo falta calentar**: una sola petición comprobó que
+  estas `et-cache` dan **200 en frío**, así que el mecanismo del 404-en-frío
+  existe pero hoy no se da aquí. La campaña `cms:captura-css` **no implementa el
+  calentamiento** que este documento manda desde el 2026-08-22 — se ficha, no se
+  arregló aquí;
+- **1 imagen** que parecía hueco (`PM2.5_belgium.webp`) **estaba capturada con
+  el nombre normalizado** (`pm25_belgium.webp`). Se resuelve por una segunda vía
+  **declarada y publicada con su cardinal** (`via: "nombre-normalizado"`, 1 de
+  162); las variantes `-WxH` **siguen sin colapsarse**.
+
+**EL RESULTADO, a los dos anchos:**
+
+| ancho | ejes | distintos | subpíxel (<1/64) | huérfanas orig |
+|---|---|---|---|---|
+| **1440** | 130 | **43** | 3 | 4 |
+| **390** | 130 | **49** | 1 | 4 |
+
+| eje | @1440 | @390 |
+|---|---|---|
+| `h` | 22 · \|Δ\| 1.20 … **1671.60** | 22 · \|Δ\| 0.39 … **2765.36** |
+| `pb` | 13 · 8.00 … 79.61 | 16 · 3.89 … 50.50 |
+| `pt` | 8 · 32.00 … 77.60 | 10 · 3.90 … 70.00 |
+| `mb` | 0 | 1 · 22.20 |
+| **`w`** | **0 — el ancho de fila cuadra EXACTO en las 4** | **0** |
+
+> **El `w` a 0 es el control que sostiene todo lo demás.** Si los dos selectores
+> no denotaran el mismo conjunto, el ancho tampoco cuadraría — y a la primera no
+> cuadraba.
+
+**⚠⚠ Y ESO ES LO QUE MÁS COSTÓ: EL COMPARADOR LLEGÓ CON DOS VERSIONES QUE NO
+COMPARABAN LO MISMO, Y LAS DOS PUBLICARON NÚMEROS PLAUSIBLES.**
+
+| v | qué publicaba | qué era |
+|---|---|---|
+| 1 | **103 de 156 distintos (66 %)**, `w` valiendo `1440` en todas, **24 huérfanas de un solo lado** | `.et_pb_row` casa también la CABECERA y el PIE del theme builder —medido: 14 filas, **5 del cascarón**— y el clon no las marca. Es el mismo defecto que la v1 del árbol de `c-cmp` |
+| 2 | `nModulos` **14→2 · 7→2 · 6→2** | el clon **no emite marcador de MÓDULO**: los hijos directos de `[data-fila]` no son los `.et_pb_module` anidados en columnas |
+
+Las dos son §*31 de 31 rutas distintas no es un hallazgo: es el instrumento*, y
+en las dos la firma estaba a la vista —un porcentaje altísimo, un eje constante,
+huérfanas de un solo lado—. Congeladas conservadas con su defecto en el nombre:
+`productos-cmp-1440-SONDA-MEZCLABA-CASCARON-Y-CUERPO.json` y
+`-SONDA-MODULOS-NO-DENOTAN-LO-MISMO.json`.
+
+**LO QUE ESTE ESCALÓN NO CIERRA, con su cardinal (§regla 14):**
+
+- **el eje `módulos` sigue SIN COMPARAR** —no «0 defectos»—, y cerrarlo pide
+  **emitir `data-modulo` en los componentes**, que es trabajo de otra tanda. La
+  congelada lo publica por ruta en `modulosSinComparar`;
+- **4 filas huérfanas del original** (1 por ruta), sin adjudicar entre «el clon
+  no la emite» y «el recorte de cascarón se deja una»;
+- **el negativo tiene 0 instancias separadoras para el selector del lado del
+  CLON**, porque sus 3 casos usan `NEG_MISMO_LADO`. Falta un 4.º caso que sólo
+  se puede escribir con el clon servido: *«`[data-fila]` casa >0 en las 4»*.
+  Hoy se sabe que casa —la corrida real da 6 · 8 · 6 · 6— pero eso es una
+  corrida, no una guarda;
+- **los 43 y 49 distintos NO están adjudicados**: son la primera medida de dos
+  lados de este nivel, no un diagnóstico. Adjudicarlos es la tanda siguiente.
+
 ## El orden, y por qué
 
 | # | por qué va aquí |

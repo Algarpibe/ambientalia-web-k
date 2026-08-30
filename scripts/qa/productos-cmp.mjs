@@ -110,7 +110,20 @@ function mediaLocal(url0) {
    * clon lo sirve absoluto también, así que con la red cortada en los dos lados
    * los dos lo pintan roto. No comparte contador con «local sin capturar». */
   if (/^https?:/i.test(rel) || rel.startsWith("/")) return { url: null, motivo: "externo" };
-  for (const r of MEDIA_RAICES) if (existsSync(join(r.dir, rel))) return { url: pathToFileURL(join(r.dir, rel)).href, motivo: null };
+  for (const r of MEDIA_RAICES) if (existsSync(join(r.dir, rel))) return { url: pathToFileURL(join(r.dir, rel)).href, motivo: null, via: "exacta" };
+  /* ⚠ SEGUNDO INTENTO, y va DECLARADO con su vía porque no es gratis: el
+   * pipeline del clon NORMALIZA el nombre del fichero —minúsculas y sin el
+   * punto—, así que `PM2.5_belgium.webp` está capturada como `pm25_belgium.webp`.
+   * Eso NO es «colapsar variantes»: las variantes `-WxH` servirían otras
+   * dimensiones intrínsecas y siguen SIN colapsarse (f33-cmp L149-152). Aquí es
+   * el MISMO fichero con el nombre normalizado, y por eso la vía se publica:
+   * un resolutor que acierta «de alguna manera» sin decir cuál es un heurístico
+   * disfrazado de identidad (§sondas 4, tercera cara). */
+  const dir = rel.slice(0, rel.lastIndexOf("/") + 1);
+  const base = rel.slice(rel.lastIndexOf("/") + 1);
+  const ext = base.slice(base.lastIndexOf("."));
+  const norm = dir + base.slice(0, base.lastIndexOf(".")).toLowerCase().replace(/\./g, "") + ext;
+  if (norm !== rel) for (const r of MEDIA_RAICES) if (existsSync(join(r.dir, norm))) return { url: pathToFileURL(join(r.dir, norm)).href, motivo: null, via: "nombre-normalizado" };
   return { url: null, motivo: "sin-capturar" };
 }
 
@@ -135,7 +148,7 @@ for (const it of LOTE) {
     if (!src) continue;
     precondiciones.media.pedidas++;
     const r = mediaLocal(src);
-    if (r.url) precondiciones.media.resueltas++;
+    if (r.url) { precondiciones.media.resueltas++; if (r.via === "nombre-normalizado") (precondiciones.media.porNombreNormalizado ??= []).push(src.slice(0, 110)); }
     else if (r.motivo === "externo") precondiciones.media.externas++;
     else precondiciones.media.sinResolver.push(src.slice(0, 110));
   }
@@ -148,7 +161,7 @@ const docsFaltan = precondiciones.documentos.faltan.length;
 console.log("═══ PRECONDICIONES (comprobadas ANTES del launch, §regla 37) ═══");
 console.log(`  documentos   : ${LOTE.length - docsFaltan}/${LOTE.length} presentes`);
 console.log(`  hojas        : ${precondiciones.hojas.resueltas}/${precondiciones.hojas.pedidas} resueltas · sin resolver ${hojasFaltan}`);
-console.log(`  media (<img>): ${precondiciones.media.resueltas}/${precondiciones.media.pedidas} resueltas · sin resolver ${mediaFaltan} · externas ${precondiciones.media.externas}`);
+console.log(`  media (<img>): ${precondiciones.media.resueltas}/${precondiciones.media.pedidas} resueltas · sin resolver ${mediaFaltan} · externas ${precondiciones.media.externas} · por nombre normalizado ${(precondiciones.media.porNombreNormalizado ?? []).length}`);
 
 /* Sin documentos no hay nada que medir: corrida NULA, y se dice por qué. */
 if (docsFaltan === LOTE.length) {
@@ -216,15 +229,33 @@ const extraer = (esOriginal) => {
     const b = el.getBoundingClientRect();
     return b.width > 0 && b.height > 0;
   };
-  const filaSel = esOriginal ? ".et_pb_row" : "[data-fila]";
-  const todas = [...document.querySelectorAll(filaSel)];
+  /* ⚠⚠ LOS DOS SELECTORES TIENEN QUE DENOTAR EL MISMO CONJUNTO — y a la primera
+   * NO lo hacían. `.et_pb_row` a secas casa también las filas de la CABECERA y
+   * el PIE del theme builder, que Divi mete dentro de `.et_pb_section`, y el
+   * clon no las marca con `data-fila`. Medido en monitor-calidad-aire: 14 filas
+   * totales, **5 del cascarón** (1 `_tb_header` + 3 `_tb_footer` y sus filas).
+   *
+   * La firma de que era el instrumento y no el clon estaba a la vista y este
+   * repo la tiene escrita: **103 de 156 ejes distintos (66 %)**, `w` valiendo
+   * `1440` —el viewport entero, que es lo que mide una fila de cascarón y no
+   * una de cuerpo— en TODAS las filas, y **24 huérfanas de un solo lado**.
+   * §*31 de 31 rutas distintas no es un hallazgo: es el instrumento*, y es
+   * literalmente el mismo defecto que tuvo la v1 del árbol de `c-cmp`.
+   *
+   * Se acota a CUERPO en los dos lados: en el original, fuera las filas que
+   * cuelgan de una sección `_tb_header`/`_tb_footer`; en el clon, sólo las de
+   * `main`. */
+  const enCascaron = (el) => !!el.closest("[class*='_tb_header'], [class*='_tb_footer']");
+  const todas = esOriginal
+    ? [...document.querySelectorAll(".et_pb_row")].filter((el) => !enCascaron(el))
+    : [...document.querySelectorAll("main [data-fila]")];
   const vivas = todas.filter(conCaja);
   return {
     nFilasEnElDOM: todas.length,
     nFilasConCaja: vivas.length,
     filas: vivas.map((f, j) => {
       const cs = getComputedStyle(f);
-      const mods = [...f.querySelectorAll(esOriginal ? ".et_pb_module" : "[data-fila] > div, [data-fila] > *")]
+      const mods = [...f.querySelectorAll(esOriginal ? ".et_pb_module" : ":scope > div, :scope > *")]
         .filter(conCaja)
         .slice(0, 60);
       return {
@@ -234,7 +265,7 @@ const extraer = (esOriginal) => {
         mb: px(cs.marginBottom),
         pt: px(cs.paddingTop),
         pb: px(cs.paddingBottom),
-        nModulosEnElDOM: f.querySelectorAll(esOriginal ? ".et_pb_module" : "[data-fila] > div, [data-fila] > *").length,
+        nModulosEnElDOM: f.querySelectorAll(esOriginal ? ".et_pb_module" : ":scope > div, :scope > *").length,
         nModulosConCaja: mods.length,
         mods: mods.map((m, k) => {
           const ms = getComputedStyle(m);
@@ -314,17 +345,42 @@ await browser.close();
  * separado — `faltan` y `sobran` creciendo juntos es la firma de una llave que
  * no casa, no un hallazgo. */
 const informe = [];
-let distintos = 0, comparados = 0, huerfanasO = 0, huerfanasC = 0;
+let distintos = 0, comparados = 0, huerfanasO = 0, huerfanasC = 0, nSubpixel = 0;
 for (const p of pares) {
   const n = Math.min(p.O.filas.length, p.C.filas.length);
   huerfanasO += Math.max(0, p.O.filas.length - n);
   huerfanasC += Math.max(0, p.C.filas.length - n);
+  /* ⚠⚠ EL EJE `nModulos` SE EXCLUYE, Y SE PUBLICA CON SU CARDINAL — no se
+   * cuenta como defecto ni se calla (§regla 14: *una limitación declarada sin su
+   * número se lee como una nota al pie*).
+   *
+   * Motivo, y es el mismo de las filas una vuelta más abajo: **el clon no emite
+   * marcador de MÓDULO**. En el original `.et_pb_module` casa los módulos
+   * anidados dentro de cada columna; en el clon lo único disponible son los
+   * hijos directos de `[data-fila]`, que es otro conjunto. Medido: `14 → 2`,
+   * `7 → 2`, `6 → 2` — la firma de dos selectores que no denotan lo mismo, no la
+   * de un clon al que le falten 12 módulos.
+   *
+   * ⇒ El eje `módulos` de este arquetipo sigue **SIN COMPARAR**, y cerrarlo pide
+   * emitir `data-modulo` en los componentes, que es trabajo de otra tanda. */
+  const EJES_FILA = ["h", "w", "mb", "pt", "pb"];
+  /* La rejilla de `LayoutUnit`: Chrome guarda la maquetación en 1/64 de px. Dos
+   * valores que caen en el mismo 1/64 sirven EL MISMO píxel, así que un Δ por
+   * debajo de 1/64 es una diferencia de lo DECLARADO que no llega a la
+   * geometría. Se publica aparte —es real como transcripción— pero no se suma a
+   * `distintos`, o el eje se llena de ruido de redondeo. */
+  const REJILLA = 1 / 64;
   const difs = [];
+  const subpixel = [];
   for (let j = 0; j < n; j++) {
-    for (const eje of ["h", "w", "mb", "pt", "pb", "nModulosConCaja"]) {
+    for (const eje of EJES_FILA) {
       const o = p.O.filas[j][eje], c = p.C.filas[j][eje];
       comparados++;
-      if (o !== c) { distintos++; difs.push({ fila: j, eje, orig: o, clon: c, delta: Math.round((c - o) * 100) / 100 }); }
+      if (o === c) continue;
+      const d = Math.round((c - o) * 10000) / 10000;
+      if (Math.abs(d) < REJILLA) { subpixel.push({ fila: j, eje, orig: o, clon: c, delta: d }); continue; }
+      distintos++;
+      difs.push({ fila: j, eje, orig: o, clon: c, delta: Math.round(d * 100) / 100 });
     }
   }
   informe.push({
@@ -332,7 +388,14 @@ for (const p of pares) {
     filas: { orig: p.O.filas.length, clon: p.C.filas.length, origEnElDOM: p.O.nFilasEnElDOM, clonEnElDOM: p.C.nFilasEnElDOM },
     hojasAplicadas: p.O.hojasAplicadas, httpClon: p.C.http ?? null,
     nDifs: difs.length, difs: difs.slice(0, 40),
+    subpixel: { n: subpixel.length, casos: subpixel.slice(0, 12) },
+    /* SIN COMPARAR, con su cardinal y su motivo (§regla 14) */
+    modulosSinComparar: {
+      motivo: "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
+      porFila: p.O.filas.slice(0, n).map((f, j) => ({ fila: j, orig: f.nModulosConCaja, clonHijosDirectos: p.C.filas[j].nModulosConCaja })),
+    },
   });
+  nSubpixel += subpixel.length;
   ev.ok(1);
 }
 
@@ -350,9 +413,13 @@ const salida = {
   precondiciones: {
     documentos: { presentes: LOTE.length - docsFaltan, total: LOTE.length, faltan: precondiciones.documentos.faltan },
     hojas: { pedidas: precondiciones.hojas.pedidas, resueltas: precondiciones.hojas.resueltas, sinResolver: [...new Set(precondiciones.hojas.sinResolver)] },
-    media: { pedidas: precondiciones.media.pedidas, resueltas: precondiciones.media.resueltas, externas: precondiciones.media.externas, sinResolver: [...new Set(precondiciones.media.sinResolver)].slice(0, 40) },
+    media: { pedidas: precondiciones.media.pedidas, resueltas: precondiciones.media.resueltas, externas: precondiciones.media.externas, porNombreNormalizado: precondiciones.media.porNombreNormalizado ?? [], sinResolver: [...new Set(precondiciones.media.sinResolver)].slice(0, 40) },
   },
-  resumen: { pares: pares.length, ejesComparados: comparados, distintos, huerfanasO, huerfanasC },
+  resumen: {
+    pares: pares.length, ejesComparados: comparados, distintos, huerfanasO, huerfanasC,
+    subpixel: nSubpixel,
+    ejesExcluidos: { modulos: "el clon no emite marcador de MODULO — SIN COMPARAR, ver modulosSinComparar por ruta" },
+  },
   informe,
 };
 w(`medidas/productos-cmp-${ANCHO}.json`, salida);
@@ -360,7 +427,8 @@ w(`medidas/productos-cmp-${ANCHO}.json`, salida);
 console.log("");
 console.log("═══ RESULTADO ═══");
 console.log(`  pares comparados : ${pares.length} de ${LOTE.length}`);
-console.log(`  ejes comparados  : ${comparados}   distintos: ${distintos}`);
+console.log(`  ejes comparados  : ${comparados}   distintos: ${distintos}   subpixel (<1/64, no cuentan): ${nSubpixel}`);
+console.log(`  eje EXCLUIDO     : modulos — el clon no emite marcador de MODULO (SIN COMPARAR, no 0 defectos)`);
 console.log(`  filas huérfanas  : original ${huerfanasO} · clon ${huerfanasC}`);
 for (const i of informe) {
   console.log(`  ${i.ruta.padEnd(40)} filas orig=${i.filas.orig} clon=${i.filas.clon}  hojas=${i.hojasAplicadas}  http=${i.httpClon}  difs=${i.nDifs}`);

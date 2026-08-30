@@ -1,0 +1,563 @@
+{
+  "meta": {
+    "sonda": "productos-cmp",
+    "tanda": "123.ª",
+    "fecha": "2026-08-30",
+    "ancho": 1440,
+    "lado": "DOS — ORIGINAL: captura de corpus/productos por file:// con sus hojas de corpus/css, red cortada. CLON: next start. La intercepción se instala en LOS DOS lados (§regla 32).",
+    "saboteada": null,
+    "acredita": false,
+    "porQueNoAcredita": "canales sin cerrar: hojas 0, media 1"
+  },
+  "precondiciones": {
+    "documentos": {
+      "presentes": 4,
+      "total": 4,
+      "faltan": []
+    },
+    "hojas": {
+      "pedidas": 30,
+      "resueltas": 30,
+      "sinResolver": []
+    },
+    "media": {
+      "pedidas": 162,
+      "resueltas": 161,
+      "externas": 0,
+      "sinResolver": [
+        "https://kunakair.com/wp-content/uploads/2023/09/PM2.5_belgium.webp"
+      ]
+    }
+  },
+  "resumen": {
+    "pares": 4,
+    "ejesComparados": 156,
+    "distintos": 66,
+    "huerfanasO": 4,
+    "huerfanasC": 0
+  },
+  "informe": [
+    {
+      "ruta": "/monitor-calidad-aire",
+      "arquetipo": "PRODUCTO",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 9,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 19,
+      "httpClon": null,
+      "nDifs": 14,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 646.63,
+          "clon": 715.11,
+          "delta": 68.48
+        },
+        {
+          "fila": 1,
+          "eje": "nModulosConCaja",
+          "orig": 14,
+          "clon": 2,
+          "delta": -12
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 2487.75,
+          "clon": 2289.97,
+          "delta": -197.78
+        },
+        {
+          "fila": 2,
+          "eje": "nModulosConCaja",
+          "orig": 28,
+          "clon": 2,
+          "delta": -26
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 5079.38,
+          "clon": 5656.16,
+          "delta": 576.78
+        },
+        {
+          "fila": 3,
+          "eje": "pt",
+          "orig": 57.59,
+          "clon": 57.6,
+          "delta": 0.01
+        },
+        {
+          "fila": 3,
+          "eje": "nModulosConCaja",
+          "orig": 35,
+          "clon": 2,
+          "delta": -33
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 697.14,
+          "clon": 878.11,
+          "delta": 180.97
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 94,
+          "delta": 79.61
+        },
+        {
+          "fila": 4,
+          "eje": "nModulosConCaja",
+          "orig": 4,
+          "clon": 3,
+          "delta": -1
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 146,
+          "clon": 1375.81,
+          "delta": 1229.81
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 77.6,
+          "delta": 77.6
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 72,
+          "clon": 121.6,
+          "delta": 49.6
+        },
+        {
+          "fila": 5,
+          "eje": "nModulosConCaja",
+          "orig": 1,
+          "clon": 2,
+          "delta": 1
+        }
+      ]
+    },
+    {
+      "ruta": "/accesorios",
+      "arquetipo": "CATALOGO",
+      "filas": {
+        "orig": 9,
+        "clon": 8,
+        "origEnElDOM": 9,
+        "clonEnElDOM": 8
+      },
+      "hojasAplicadas": 17,
+      "httpClon": null,
+      "nDifs": 24,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 437.98,
+          "clon": 423.36,
+          "delta": -14.62
+        },
+        {
+          "fila": 1,
+          "eje": "pb",
+          "orig": 8,
+          "clon": 0,
+          "delta": -8
+        },
+        {
+          "fila": 1,
+          "eje": "nModulosConCaja",
+          "orig": 5,
+          "clon": 2,
+          "delta": -3
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 313,
+          "clon": 129,
+          "delta": -184
+        },
+        {
+          "fila": 2,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 2,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 360.14,
+          "clon": 361.34,
+          "delta": 1.2
+        },
+        {
+          "fila": 3,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 32,
+          "delta": 32
+        },
+        {
+          "fila": 3,
+          "eje": "pb",
+          "orig": 28.8,
+          "clon": 0,
+          "delta": -28.8
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 1476.47,
+          "clon": 1504.47,
+          "delta": 28
+        },
+        {
+          "fila": 4,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 4,
+          "eje": "nModulosConCaja",
+          "orig": 7,
+          "clon": 2,
+          "delta": -5
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 4835.06,
+          "clon": 5138.38,
+          "delta": 303.32
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 5,
+          "eje": "nModulosConCaja",
+          "orig": 11,
+          "clon": 2,
+          "delta": -9
+        },
+        {
+          "fila": 6,
+          "eje": "h",
+          "orig": 697.14,
+          "clon": 878.13,
+          "delta": 180.99
+        },
+        {
+          "fila": 6,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 94,
+          "delta": 79.61
+        },
+        {
+          "fila": 6,
+          "eje": "nModulosConCaja",
+          "orig": 4,
+          "clon": 3,
+          "delta": -1
+        },
+        {
+          "fila": 7,
+          "eje": "h",
+          "orig": 146,
+          "clon": 1375.81,
+          "delta": 1229.81
+        },
+        {
+          "fila": 7,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 77.6,
+          "delta": 77.6
+        },
+        {
+          "fila": 7,
+          "eje": "pb",
+          "orig": 72,
+          "clon": 121.6,
+          "delta": 49.6
+        },
+        {
+          "fila": 7,
+          "eje": "nModulosConCaja",
+          "orig": 1,
+          "clon": 2,
+          "delta": 1
+        }
+      ]
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "arquetipo": "SOFTWARE",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 8,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 14,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 656.53,
+          "clon": 642.84,
+          "delta": -13.69
+        },
+        {
+          "fila": 1,
+          "eje": "nModulosConCaja",
+          "orig": 7,
+          "clon": 2,
+          "delta": -5
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 1801.52,
+          "clon": 1776.72,
+          "delta": -24.8
+        },
+        {
+          "fila": 2,
+          "eje": "nModulosConCaja",
+          "orig": 19,
+          "clon": 2,
+          "delta": -17
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 3871.56,
+          "clon": 5543.16,
+          "delta": 1671.6
+        },
+        {
+          "fila": 3,
+          "eje": "pt",
+          "orig": 57.59,
+          "clon": 57.6,
+          "delta": 0.01
+        },
+        {
+          "fila": 3,
+          "eje": "nModulosConCaja",
+          "orig": 34,
+          "clon": 2,
+          "delta": -32
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 715.14,
+          "clon": 878.13,
+          "delta": 162.99
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 94,
+          "delta": 79.61
+        },
+        {
+          "fila": 4,
+          "eje": "nModulosConCaja",
+          "orig": 4,
+          "clon": 3,
+          "delta": -1
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 146,
+          "clon": 1425.81,
+          "delta": 1279.81
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 77.6,
+          "delta": 77.6
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 72,
+          "clon": 121.6,
+          "delta": 49.6
+        },
+        {
+          "fila": 5,
+          "eje": "nModulosConCaja",
+          "orig": 1,
+          "clon": 2,
+          "delta": 1
+        }
+      ]
+    },
+    {
+      "ruta": "/kunak-api",
+      "arquetipo": "SOFTWARE (variante corta)",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 7,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 14,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 544.2,
+          "clon": 535.17,
+          "delta": -9.03
+        },
+        {
+          "fila": 1,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 14.4,
+          "delta": 0.01
+        },
+        {
+          "fila": 1,
+          "eje": "nModulosConCaja",
+          "orig": 6,
+          "clon": 2,
+          "delta": -4
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 775.36,
+          "clon": 757.78,
+          "delta": -17.58
+        },
+        {
+          "fila": 2,
+          "eje": "nModulosConCaja",
+          "orig": 12,
+          "clon": 2,
+          "delta": -10
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 570.5,
+          "clon": 578.38,
+          "delta": 7.88
+        },
+        {
+          "fila": 3,
+          "eje": "nModulosConCaja",
+          "orig": 9,
+          "clon": 2,
+          "delta": -7
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 603.94,
+          "clon": 735.31,
+          "delta": 131.37
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 94,
+          "delta": 79.61
+        },
+        {
+          "fila": 4,
+          "eje": "nModulosConCaja",
+          "orig": 4,
+          "clon": 3,
+          "delta": -1
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 146,
+          "clon": 1425.81,
+          "delta": 1279.81
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 77.6,
+          "delta": 77.6
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 72,
+          "clon": 121.6,
+          "delta": 49.6
+        },
+        {
+          "fila": 5,
+          "eje": "nModulosConCaja",
+          "orig": 1,
+          "clon": 2,
+          "delta": 1
+        }
+      ]
+    }
+  ]
+}

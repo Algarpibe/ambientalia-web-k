@@ -46,7 +46,17 @@ const casos = [
     etiqueta: "mismo-lado",
     porQue: "los dos lados IDÉNTICOS: tiene que dar 0 distintos, o el comparador inventa diferencias",
     env: { NEG_MISMO_LADO: "1" },
-    exit: 2, /* 2 y no 0: los canales del lote siguen abiertos (51 hojas et-cache) */
+    /* ⚠ ESTE EXIT CAMBIÓ DE 2 A 0 EN LA MISMA TANDA, y no es acomodar la guarda
+     * al defecto (§regla 21): es §regla 5ter — *arreglar el OBJETO caduca el
+     * control del instrumento que lo midió*. Cuando se escribió, al lote le
+     * faltaban 10 hojas `et-cache` y 1 imagen, así que la corrida MEDÍA pero NO
+     * ACREDITABA y salía por 2. Capturadas las hojas y resuelta la imagen, los
+     * tres canales cierran y el control pasa a salir por 0.
+     *
+     * Y el cambio MEJORA el poder discriminante en vez de rebajarlo: con los
+     * canales abiertos los tres casos salían por 2, 2 y 3 —dos indistinguibles—;
+     * ahora son **0 · 4 · 3**, tres códigos que sí atribuyen. */
+    exit: 0,
     salidaTiene: /distintos: 0/,
     comprueba: (j) => {
       if (j.resumen.pares < 2) return `sólo ${j.resumen.pares} par(es): un comparador de un par no separa nada`;
@@ -62,7 +72,9 @@ const casos = [
     etiqueta: "inyecta-delta",
     porQue: `Δ CONOCIDO de ${DELTA} en el alto de una fila: tiene que cazarlo Y NOMBRARLO con sus dos lados`,
     env: { NEG_MISMO_LADO: "1", NEG_DELTA: DELTA },
-    exit: 2, /* el canal abierto manda sobre el 4: se comprueba el Δ en el dato */
+    /* 4 = «hay ejes distintos», que es lo que un Δ inyectado TIENE que producir.
+     * Antes era 2 por la misma razón que el caso de arriba (§regla 5ter). */
+    exit: 4,
     /* No basta con que el exit cambie: se exige que el informe DIGA qué se movió
      * y con qué valores (§sondas 1 · un número de un par se cita con sus dos
      * lados). Un rojo mudo no adjudica nada. */
@@ -143,8 +155,9 @@ console.log(`    mientras el comparador publicaría «filas clon = 0» con el re
 console.log(`    correcto. Es §regla 15 con lo compartido puesto en el MARCADO.`);
 console.log(`    ⇒ FALTA un 4.º caso, y sólo se puede escribir CON el clon servido:`);
 console.log(`      «\`[data-fila]\` casa >0 en las 4 rutas del lote».`);
-console.log(`  · y las 51 hojas \`et-cache\` sin capturar hacen que la corrida MIDA`);
-console.log(`    pero NO ACREDITE: por eso dos de los tres casos esperan exit 2.`);
+console.log(`  · los tres canales del lote quedaron CERRADOS en esta misma tanda`);
+console.log(`    (hojas 30/30, media 162/162), asi que los tres casos salen por`);
+console.log(`    codigos distintos —0 · 4 · 3— y un rojo futuro se puede atribuir.`);
 console.log(`  ✓ evaluadas ${casos.length}/${casos.length} casos`);
 ev.informe();
 process.exit(fallos === 0 ? 0 : 1);
