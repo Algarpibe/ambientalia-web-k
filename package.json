@@ -77,6 +77,8 @@
     "qa:a-spec": "node scripts/qa/a-spec.mjs",
     "qa:a-miga": "node scripts/qa/a-miga.mjs",
     "qa:cobertura": "node scripts/qa/cobertura.mjs",
+    "qa:productos-cmp": "node scripts/qa/productos-cmp.mjs",
+    "qa:productos-cmp-neg": "node scripts/qa/productos-cmp.neg.mjs",
     "qa:f33-cmp": "node scripts/qa/f33-cmp.mjs",
     "qa:f33-cmp-390": "node scripts/qa/f33-cmp.mjs 390",
     "qa:f33-cmp-neg": "node scripts/qa/f33-cmp.neg.mjs",

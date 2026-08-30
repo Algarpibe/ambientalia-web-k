@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "sonda": "productos-cmp",
+    "tanda": "123.ª",
+    "fecha": "2026-08-30",
+    "ancho": 1440,
+    "lado": "DOS — ORIGINAL: captura de corpus/productos por file:// con sus hojas de corpus/css, red cortada. CLON: next start. La intercepción se instala en LOS DOS lados (§regla 32).",
+    "saboteada": "inyecta-delta",
+    "acredita": false,
+    "porQueNoAcredita": "canales sin cerrar: hojas 10, media 1"
+  },
+  "precondiciones": {
+    "documentos": {
+      "presentes": 4,
+      "total": 4,
+      "faltan": []
+    },
+    "hojas": {
+      "pedidas": 30,
+      "resueltas": 20,
+      "sinResolver": [
+        "wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768-late.css",
+        "wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768.css",
+        "wp-content/et-cache/768/et-core-unified-768.min.css",
+        "wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481-late.css",
+        "wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481.css",
+        "wp-content/et-cache/26481/et-core-unified-26481.min.css",
+        "wp-content/et-cache/27164/et-divi-dynamic-tb-32430-tb-342-27164.css",
+        "wp-content/et-cache/27164/et-core-unified-27164.min.css",
+        "wp-content/et-cache/27049/et-divi-dynamic-tb-32430-tb-342-27049.css",
+        "wp-content/et-cache/27049/et-core-unified-27049.min.css"
+      ]
+    },
+    "media": {
+      "pedidas": 162,
+      "resueltas": 161,
+      "externas": 0,
+      "sinResolver": [
+        "https://kunakair.com/wp-content/uploads/2023/09/PM2.5_belgium.webp"
+      ]
+    }
+  },
+  "resumen": {
+    "pares": 4,
+    "ejesComparados": 300,
+    "distintos": 4,
+    "huerfanasO": 0,
+    "huerfanasC": 0
+  },
+  "informe": [
+    {
+      "ruta": "/monitor-calidad-aire",
+      "arquetipo": "PRODUCTO",
+      "filas": {
+        "orig": 12,
+        "clon": 12,
+        "origEnElDOM": 14,
+        "clonEnElDOM": 14
+      },
+      "hojasAplicadas": 19,
+      "httpClon": null,
+      "nDifs": 1,
+      "difs": [
+        {
+          "fila": 0,
+          "eje": "h",
+          "orig": 41,
+          "clon": 78.5,
+          "delta": 37.5
+        }
+      ]
+    },
+    {
+      "ruta": "/accesorios",
+      "arquetipo": "CATALOGO",
+      "filas": {
+        "orig": 14,
+        "clon": 14,
+        "origEnElDOM": 14,
+        "clonEnElDOM": 14
+      },
+      "hojasAplicadas": 17,
+      "httpClon": null,
+      "nDifs": 1,
+      "difs": [
+        {
+          "fila": 0,
+          "eje": "h",
+          "orig": 41,
+          "clon": 78.5,
+          "delta": 37.5
+        }
+      ]
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "arquetipo": "SOFTWARE",
+      "filas": {
+        "orig": 12,
+        "clon": 12,
+        "origEnElDOM": 13,
+        "clonEnElDOM": 13
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 1,
+      "difs": [
+        {
+          "fila": 0,
+          "eje": "h",
+          "orig": 41,
+          "clon": 78.5,
+          "delta": 37.5
+        }
+      ]
+    },
+    {
+      "ruta": "/kunak-api",
+      "arquetipo": "SOFTWARE (variante corta)",
+      "filas": {
+        "orig": 12,
+        "clon": 12,
+        "origEnElDOM": 12,
+        "clonEnElDOM": 12
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 1,
+      "difs": [
+        {
+          "fila": 0,
+          "eje": "h",
+          "orig": 41,
+          "clon": 78.5,
+          "delta": 37.5
+        }
+      ]
+    }
+  ]
+}
