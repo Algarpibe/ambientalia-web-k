@@ -1410,6 +1410,35 @@ dos lados publicados sueltos. Evidencia del defecto:
   modelar sobre una sola instancia por arquetipo, que es el arreglo falso que
   esta fase tiene como incógnita declarada desde que se abrió.
 
+### 🔻 ESCALÓN 3 de la 123.ª · NO APLICA, y se dice en vez de saltárselo
+
+El escalón está condicionado —*«si el content type llega a escribirse»*— y **no
+se escribió**, por la decisión fundada de arriba. Así que no hay seed, ni
+migración, ni reversa que probar: **el escalón no tiene objeto**, que no es lo
+mismo que haberlo omitido.
+
+**Lo que sí se verificó, y lo que no se pudo:**
+
+| | resultado |
+|---|---|
+| `typecheck -w web` | **exit 0** |
+| `lint -w web` | **exit 0** (67 avisos, 0 errores) |
+| `qa:manifiesto` | **426 rutas · 25 familias · 0 vacías · 0 desaparecidas** |
+| `qa:slugs` | **rojo por POSTGRES CAÍDO**, no por la tanda |
+| `npm run check` entero | **NO SE CORRIÓ, a propósito** |
+
+> ⚠⚠ **Y no correr el `check` entero fue la decisión correcta, no una omisión.**
+> Docker se comprobó **en tres pasos y ANTES de gastar nada** (§regla 37) y el
+> demonio **no está levantado**. `npm run check` construye, y **`next build`
+> vacía su directorio desde el primer segundo**: sin DB habría muerto a mitad y
+> se habría llevado por delante el `.next` con el que esta misma tanda acababa de
+> medir las 4 rutas. Comprobar el entorno antes es lo que lo evitó.
+>
+> El rojo de `qa:slugs` es del **entorno** y no de la tanda: es
+> `ECONNREFUSED` contra Postgres, y esta tanda **no tocó `src/`** — sus cambios
+> son `scripts/qa/*.mjs`, `docs/` y `package.json`. §regla 21: antes de tocar
+> nada, se mira si el rojo es del instrumento, del objeto o de debajo.
+
 ## El orden, y por qué
 
 | # | por qué va aquí |
