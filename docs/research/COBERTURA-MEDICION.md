@@ -849,12 +849,12 @@ sus rutas.
 | **HOME** ||||||||||
 | `/` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
 | **PRODUCTO** ||||||||||
-| `/monitor-calidad-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/monitor-calidad-aire` | **O** | **O** | **O** | **O** | · | · | **O** | **O** | **O** |
 | **CATÁLOGO** ||||||||||
-| `/accesorios` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/accesorios` | **O** | **O** | **O** | **O** | · | · | **O** | **O** | **O** |
 | **SOFTWARE** ||||||||||
-| `/kunak-api` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
-| `/software-de-medicion-calidad-del-aire` | **O** | **O** | **O** | · | · | · | **O** | **O** | **O** |
+| `/kunak-api` | **O** | **O** | **O** | **O** | · | · | **O** | **O** | **O** |
+| `/software-de-medicion-calidad-del-aire` | **O** | **O** | **O** | **O** | · | · | **O** | **O** | **O** |
 | **MONOGRÁFICO** ||||||||||
 | `/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` | **O** | **O** | **O** | **O** | **O** | c | · | **O** | **O** |
 | `/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas` | **O** | **O** | **O** | **O** | **O** | c | **O** | **O** | **O** |

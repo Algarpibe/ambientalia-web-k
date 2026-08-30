@@ -1,0 +1,1464 @@
+{
+  "meta": {
+    "tanda": "123.ª · ESCALON 2",
+    "fecha": "2026-08-30",
+    "lado": "UNO — el ORIGINAL capturado con sus hojas. NO compara con el clon: eso es qa:productos-cmp",
+    "regimen": "B- (builder puro) en los 4, derivado en candidatos-f35-123.json ⇒ los tests A y B valen tal como estan escritos, y son INTRA-INSTANCIA",
+    "alcance": "SOLO ejes de RITMO (margin/padding). La caja y la tipografia quedan fuera: ahi el test A responde AL REVES",
+    "noContesta": [
+      "la UNIDAD DECLARADA de cada valor: un `em` no se mueve con el ancho y el test A lo lee como campo. Haria falta la CASCADA (CSS.getMatchedStylesForNode)",
+      "la varianza INTER-instancia: estos 4 documentos son 4 arquetipos distintos, no 4 instancias de uno"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "se midio algo (nodos con caja > 0)",
+      "ok": true,
+      "visto": "357 nodos con caja a 1440"
+    },
+    {
+      "nombre": "el emparejamiento por ORDINAL alcanza (comunes > sueltos) y publica sus dos lados",
+      "ok": true,
+      "visto": "comunes 984 · solo-1440 24 · solo-390 0 · sin llave 420/420"
+    },
+    {
+      "nombre": "los tests DISCRIMINAN (>1 veredicto distinto)",
+      "ok": true,
+      "visto": "SIN ESCRIBIR=17 · CAMPO=31"
+    }
+  ],
+  "reparto": {
+    "SIN ESCRIBIR": 17,
+    "CAMPO": 31
+  },
+  "cruce2x2": {
+    "varia+seMueve": 27,
+    "varia+noSeMueve": 4,
+    "noVaria+seMueve": 0,
+    "noVaria+noSeMueve": 0,
+    "sinEscribir": 17
+  },
+  "filas": [
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "seccion",
+      "eje": "marginTop",
+      "n": 6,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 8,
+        "conCaja": 6
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 6,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "seccion",
+      "eje": "marginBottom",
+      "n": 6,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 8,
+        "conCaja": 6
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 6,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "seccion",
+      "eje": "paddingTop",
+      "n": 6,
+      "valores1440": [
+        0,
+        57.5938
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 8,
+        "conCaja": 6
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 6,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "seccion",
+      "eje": "paddingBottom",
+      "n": 6,
+      "valores1440": [
+        0,
+        57.5938
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 8,
+        "conCaja": 6
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 6,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "fila",
+      "eje": "marginTop",
+      "n": 7,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 9,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "fila",
+      "eje": "marginBottom",
+      "n": 7,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 9,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "fila",
+      "eje": "paddingTop",
+      "n": 7,
+      "valores1440": [
+        0,
+        12,
+        20,
+        28.7969,
+        57.5938,
+        140
+      ],
+      "nDistintos": 6,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 6 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 9,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "fila",
+      "eje": "paddingBottom",
+      "n": 7,
+      "valores1440": [
+        12,
+        14.3906,
+        28.7969,
+        72
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 9,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "modulo",
+      "eje": "marginTop",
+      "n": 70,
+      "valores1440": [
+        -64,
+        0,
+        10,
+        20
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 110,
+        "conCaja": 106
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 70,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 34,
+        "sinLlave390": 34
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "modulo",
+      "eje": "marginBottom",
+      "n": 70,
+      "valores1440": [
+        0,
+        20,
+        31.6719
+      ],
+      "nDistintos": 3,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 3 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 110,
+        "conCaja": 106
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 70,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 34,
+        "sinLlave390": 34
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "modulo",
+      "eje": "paddingTop",
+      "n": 70,
+      "valores1440": [
+        0,
+        25,
+        40
+      ],
+      "nDistintos": 3,
+      "hayAlgoEscrito": true,
+      "seMueve": false,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 3 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 110,
+        "conCaja": 106
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 70,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 34,
+        "sinLlave390": 34
+      }
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "doc": "monitor-calidad-aire.html",
+      "tipo": "modulo",
+      "eje": "paddingBottom",
+      "n": 70,
+      "valores1440": [
+        0,
+        10,
+        10.875,
+        25,
+        40
+      ],
+      "nDistintos": 5,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 5 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 110,
+        "conCaja": 106
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 70,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 34,
+        "sinLlave390": 34
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "seccion",
+      "eje": "marginTop",
+      "n": 4,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 4,
+        "conCaja": 4
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 4,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "seccion",
+      "eje": "marginBottom",
+      "n": 4,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 4,
+        "conCaja": 4
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 4,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "seccion",
+      "eje": "paddingTop",
+      "n": 4,
+      "valores1440": [
+        0,
+        57.5938
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 4,
+        "conCaja": 4
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 4,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "seccion",
+      "eje": "paddingBottom",
+      "n": 4,
+      "valores1440": [
+        0,
+        57.5938
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 4,
+        "conCaja": 4
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 4,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "fila",
+      "eje": "marginTop",
+      "n": 9,
+      "valores1440": [
+        -224,
+        0,
+        64
+      ],
+      "nDistintos": 3,
+      "hayAlgoEscrito": true,
+      "seMueve": false,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 3 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 9,
+        "conCaja": 9
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 9,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "fila",
+      "eje": "marginBottom",
+      "n": 9,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 9,
+        "conCaja": 9
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 9,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "fila",
+      "eje": "paddingTop",
+      "n": 9,
+      "valores1440": [
+        0,
+        12,
+        20,
+        140
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": false,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 9,
+        "conCaja": 9
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 9,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "fila",
+      "eje": "paddingBottom",
+      "n": 9,
+      "valores1440": [
+        8,
+        12,
+        14.3906,
+        28.7969,
+        32,
+        72
+      ],
+      "nDistintos": 6,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 6 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 9,
+        "conCaja": 9
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 9,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "modulo",
+      "eje": "marginTop",
+      "n": 31,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 55,
+        "conCaja": 55
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 31,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 22,
+        "sinLlave390": 22
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "modulo",
+      "eje": "marginBottom",
+      "n": 31,
+      "valores1440": [
+        0,
+        20,
+        31.6719,
+        50
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 55,
+        "conCaja": 55
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 31,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 22,
+        "sinLlave390": 22
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "modulo",
+      "eje": "paddingTop",
+      "n": 31,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 55,
+        "conCaja": 55
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 31,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 22,
+        "sinLlave390": 22
+      }
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "doc": "accesorios.html",
+      "tipo": "modulo",
+      "eje": "paddingBottom",
+      "n": 31,
+      "valores1440": [
+        0,
+        13.3125
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 55,
+        "conCaja": 55
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 31,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 22,
+        "sinLlave390": 22
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "seccion",
+      "eje": "marginTop",
+      "n": 6,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 7,
+        "conCaja": 6
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 6,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "seccion",
+      "eje": "marginBottom",
+      "n": 6,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 7,
+        "conCaja": 6
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 6,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "seccion",
+      "eje": "paddingTop",
+      "n": 6,
+      "valores1440": [
+        0,
+        57.5938
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 7,
+        "conCaja": 6
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 6,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "seccion",
+      "eje": "paddingBottom",
+      "n": 6,
+      "valores1440": [
+        0,
+        57.5938,
+        72
+      ],
+      "nDistintos": 3,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 3 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 7,
+        "conCaja": 6
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 6,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "fila",
+      "eje": "marginTop",
+      "n": 7,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 8,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "fila",
+      "eje": "marginBottom",
+      "n": 7,
+      "valores1440": [
+        0,
+        28.7969
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 8,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "fila",
+      "eje": "paddingTop",
+      "n": 7,
+      "valores1440": [
+        0,
+        12,
+        20,
+        28.7969,
+        57.5938,
+        140
+      ],
+      "nDistintos": 6,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 6 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 8,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "fila",
+      "eje": "paddingBottom",
+      "n": 7,
+      "valores1440": [
+        12,
+        14.3906,
+        28.7969,
+        72
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 8,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "modulo",
+      "eje": "marginTop",
+      "n": 60,
+      "valores1440": [
+        0,
+        10,
+        20,
+        32,
+        37.3438
+      ],
+      "nDistintos": 5,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 5 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 90,
+        "conCaja": 89
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 60,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 27,
+        "sinLlave390": 27
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "modulo",
+      "eje": "marginBottom",
+      "n": 60,
+      "valores1440": [
+        0,
+        7.0625,
+        20,
+        31.6719,
+        37.3438,
+        40
+      ],
+      "nDistintos": 6,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 6 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 90,
+        "conCaja": 89
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 60,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 27,
+        "sinLlave390": 27
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "modulo",
+      "eje": "paddingTop",
+      "n": 60,
+      "valores1440": [
+        0,
+        32
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": false,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 90,
+        "conCaja": 89
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 60,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 27,
+        "sinLlave390": 27
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "tipo": "modulo",
+      "eje": "paddingBottom",
+      "n": 60,
+      "valores1440": [
+        0,
+        10.875,
+        20,
+        27.2031
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 90,
+        "conCaja": 89
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 60,
+        "soloEn1440": 2,
+        "soloEn390": 0,
+        "sinLlave1440": 27,
+        "sinLlave390": 27
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "seccion",
+      "eje": "marginTop",
+      "n": 5,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 5,
+        "conCaja": 5
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 5,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "seccion",
+      "eje": "marginBottom",
+      "n": 5,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 5,
+        "conCaja": 5
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 5,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "seccion",
+      "eje": "paddingTop",
+      "n": 5,
+      "valores1440": [
+        0,
+        57.5938
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 5,
+        "conCaja": 5
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 5,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "seccion",
+      "eje": "paddingBottom",
+      "n": 5,
+      "valores1440": [
+        0,
+        57.5938
+      ],
+      "nDistintos": 2,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 2 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 5,
+        "conCaja": 5
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 5,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "fila",
+      "eje": "marginTop",
+      "n": 7,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 7,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "fila",
+      "eje": "marginBottom",
+      "n": 7,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 7,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "fila",
+      "eje": "paddingTop",
+      "n": 7,
+      "valores1440": [
+        0,
+        12,
+        20,
+        28.7969
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 7,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "fila",
+      "eje": "paddingBottom",
+      "n": 7,
+      "valores1440": [
+        12,
+        14.3906,
+        72
+      ],
+      "nDistintos": 3,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 3 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 7,
+        "conCaja": 7
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 7,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 0,
+        "sinLlave390": 0
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "modulo",
+      "eje": "marginTop",
+      "n": 34,
+      "valores1440": [
+        -54.4219,
+        0,
+        10,
+        20
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 56,
+        "conCaja": 56
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 34,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 22,
+        "sinLlave390": 22
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "modulo",
+      "eje": "marginBottom",
+      "n": 34,
+      "valores1440": [
+        -1,
+        0,
+        20,
+        31.6719
+      ],
+      "nDistintos": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 4 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 56,
+        "conCaja": 56
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 34,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 22,
+        "sinLlave390": 22
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "modulo",
+      "eje": "paddingTop",
+      "n": 34,
+      "valores1440": [
+        0
+      ],
+      "nDistintos": 1,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "veredicto": "SIN ESCRIBIR",
+      "porQue": "unico valor observado = 0, el INICIAL de la propiedad: la premisa del test A no se cumple",
+      "censoDelTipo": {
+        "enElDOM": 56,
+        "conCaja": 56
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 34,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 22,
+        "sinLlave390": 22
+      }
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "doc": "kunak-api.html",
+      "tipo": "modulo",
+      "eje": "paddingBottom",
+      "n": 34,
+      "valores1440": [
+        0,
+        10.875,
+        20
+      ],
+      "nDistintos": 3,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "veredicto": "CAMPO",
+      "porQue": "test B: 3 valores distintos entre hermanos de la misma pagina",
+      "censoDelTipo": {
+        "enElDOM": 56,
+        "conCaja": 56
+      },
+      "emparejamiento": {
+        "llave": "ordinal de la clase",
+        "comunes": 34,
+        "soloEn1440": 0,
+        "soloEn390": 0,
+        "sinLlave1440": 22,
+        "sinLlave390": 22
+      }
+    }
+  ]
+}

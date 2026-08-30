@@ -1,0 +1,70 @@
+=== CONTROLES ===
+  OK  se midio algo (nodos con caja > 0)
+      357 nodos con caja a 1440
+  OK  el emparejamiento por ORDINAL alcanza (comunes > sueltos) y publica sus dos lados
+      comunes 984 · solo-1440 24 · solo-390 0 · sin llave 420/420
+  OK  los tests DISCRIMINAN (>1 veredicto distinto)
+      SIN ESCRIBIR=17 · CAMPO=31
+
+=== REPARTO DE VEREDICTOS (documento × tipo × eje) ===
+   31  CAMPO
+   17  SIN ESCRIBIR
+
+=== EL CRUCE 2x2 (lo que el veredicto unico esconde) ===
+   27  varia+seMueve
+    4  varia+noSeMueve
+    0  noVaria+seMueve
+    0  noVaria+noSeMueve
+   17  sinEscribir
+
+=== DETALLE ===
+  PRODUCTO        seccion  marginTop       n= 6 vals=[0]  ⇒ SIN ESCRIBIR
+  PRODUCTO        seccion  marginBottom    n= 6 vals=[0]  ⇒ SIN ESCRIBIR
+  PRODUCTO        seccion  paddingTop      n= 6 vals=[0,57.5938]  ⇒ CAMPO
+  PRODUCTO        seccion  paddingBottom   n= 6 vals=[0,57.5938]  ⇒ CAMPO
+  PRODUCTO        fila     marginTop       n= 7 vals=[0]  ⇒ SIN ESCRIBIR
+  PRODUCTO        fila     marginBottom    n= 7 vals=[0]  ⇒ SIN ESCRIBIR
+  PRODUCTO        fila     paddingTop      n= 7 vals=[0,12,20,28.7969,57.5938,140]  ⇒ CAMPO
+  PRODUCTO        fila     paddingBottom   n= 7 vals=[12,14.3906,28.7969,72]  ⇒ CAMPO
+  PRODUCTO        modulo   marginTop       n=70 vals=[-64,0,10,20]  ⇒ CAMPO
+  PRODUCTO        modulo   marginBottom    n=70 vals=[0,20,31.6719]  ⇒ CAMPO
+  PRODUCTO        modulo   paddingTop      n=70 vals=[0,25,40]  ⇒ CAMPO
+  PRODUCTO        modulo   paddingBottom   n=70 vals=[0,10,10.875,25,40]  ⇒ CAMPO
+  CATALOGO        seccion  marginTop       n= 4 vals=[0]  ⇒ SIN ESCRIBIR
+  CATALOGO        seccion  marginBottom    n= 4 vals=[0]  ⇒ SIN ESCRIBIR
+  CATALOGO        seccion  paddingTop      n= 4 vals=[0,57.5938]  ⇒ CAMPO
+  CATALOGO        seccion  paddingBottom   n= 4 vals=[0,57.5938]  ⇒ CAMPO
+  CATALOGO        fila     marginTop       n= 9 vals=[-224,0,64]  ⇒ CAMPO
+  CATALOGO        fila     marginBottom    n= 9 vals=[0]  ⇒ SIN ESCRIBIR
+  CATALOGO        fila     paddingTop      n= 9 vals=[0,12,20,140]  ⇒ CAMPO
+  CATALOGO        fila     paddingBottom   n= 9 vals=[8,12,14.3906,28.7969,32,72]  ⇒ CAMPO
+  CATALOGO        modulo   marginTop       n=31 vals=[0]  ⇒ SIN ESCRIBIR
+  CATALOGO        modulo   marginBottom    n=31 vals=[0,20,31.6719,50]  ⇒ CAMPO
+  CATALOGO        modulo   paddingTop      n=31 vals=[0]  ⇒ SIN ESCRIBIR
+  CATALOGO        modulo   paddingBottom   n=31 vals=[0,13.3125]  ⇒ CAMPO
+  SOFTWARE        seccion  marginTop       n= 6 vals=[0]  ⇒ SIN ESCRIBIR
+  SOFTWARE        seccion  marginBottom    n= 6 vals=[0]  ⇒ SIN ESCRIBIR
+  SOFTWARE        seccion  paddingTop      n= 6 vals=[0,57.5938]  ⇒ CAMPO
+  SOFTWARE        seccion  paddingBottom   n= 6 vals=[0,57.5938,72]  ⇒ CAMPO
+  SOFTWARE        fila     marginTop       n= 7 vals=[0]  ⇒ SIN ESCRIBIR
+  SOFTWARE        fila     marginBottom    n= 7 vals=[0,28.7969]  ⇒ CAMPO
+  SOFTWARE        fila     paddingTop      n= 7 vals=[0,12,20,28.7969,57.5938,140]  ⇒ CAMPO
+  SOFTWARE        fila     paddingBottom   n= 7 vals=[12,14.3906,28.7969,72]  ⇒ CAMPO
+  SOFTWARE        modulo   marginTop       n=60 vals=[0,10,20,32,37.3438]  ⇒ CAMPO
+  SOFTWARE        modulo   marginBottom    n=60 vals=[0,7.0625,20,31.6719,37.3438,40]  ⇒ CAMPO
+  SOFTWARE        modulo   paddingTop      n=60 vals=[0,32]  ⇒ CAMPO
+  SOFTWARE        modulo   paddingBottom   n=60 vals=[0,10.875,20,27.2031]  ⇒ CAMPO
+  SOFTWARE-corta  seccion  marginTop       n= 5 vals=[0]  ⇒ SIN ESCRIBIR
+  SOFTWARE-corta  seccion  marginBottom    n= 5 vals=[0]  ⇒ SIN ESCRIBIR
+  SOFTWARE-corta  seccion  paddingTop      n= 5 vals=[0,57.5938]  ⇒ CAMPO
+  SOFTWARE-corta  seccion  paddingBottom   n= 5 vals=[0,57.5938]  ⇒ CAMPO
+  SOFTWARE-corta  fila     marginTop       n= 7 vals=[0]  ⇒ SIN ESCRIBIR
+  SOFTWARE-corta  fila     marginBottom    n= 7 vals=[0]  ⇒ SIN ESCRIBIR
+  SOFTWARE-corta  fila     paddingTop      n= 7 vals=[0,12,20,28.7969]  ⇒ CAMPO
+  SOFTWARE-corta  fila     paddingBottom   n= 7 vals=[12,14.3906,72]  ⇒ CAMPO
+  SOFTWARE-corta  modulo   marginTop       n=34 vals=[-54.4219,0,10,20]  ⇒ CAMPO
+  SOFTWARE-corta  modulo   marginBottom    n=34 vals=[-1,0,20,31.6719]  ⇒ CAMPO
+  SOFTWARE-corta  modulo   paddingTop      n=34 vals=[0]  ⇒ SIN ESCRIBIR
+  SOFTWARE-corta  modulo   paddingBottom   n=34 vals=[0,10.875,20]  ⇒ CAMPO
+
+VEREDICTO: valida

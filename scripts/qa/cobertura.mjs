@@ -293,6 +293,19 @@ for (const f of congeladasDe("pie-cmp")) {
 for (const f of fs.readdirSync(M).filter((x) => /^tree-cmp-.*\.json$/.test(x)))
   set(["secciones", "filas"], J(f).meta.clon.replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, ""), "O", "tree-cmp", f.replace(".json", ""));
 
+// 5bis · productos-cmp — filas del CUERPO de PRODUCTO · CATÁLOGO · SOFTWARE
+// (123.ª). Acredita SÓLO `filas`: el eje `modulos` está **SIN COMPARAR** porque
+// el clon no emite marcador de módulo, y acreditarlo sería §*acreditar un eje
+// que la sonda no COMPARA*. Los artefactos de §regla 7 —`-neg-`, `-SONDA-`— se
+// descartan: una congelada de control no acredita nada.
+for (const f of fs.readdirSync(M).filter((x) => /^productos-cmp-\d+\.json$/.test(x) && !/-neg-|-SONDA-/.test(x))) {
+  const j = J(f);
+  /* Una corrida que NO ACREDITA —canales sin cerrar— tampoco entra: mide, pero
+   * su medida es plausible y falsa (§regla 32). */
+  if (j.meta?.acredita === false) continue;
+  for (const i of j.informe ?? []) set(["filas"], i.ruta, "O", "productos-cmp", f.replace(".json", ""));
+}
+
 // 6 · cmp-sector — sector ancla a ancla contra el original.
 for (const f of fs.readdirSync(M).filter((x) => /^cmp-sector-.*\.json$/.test(x))) {
   const r = J(f).meta?.clon?.replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, "");

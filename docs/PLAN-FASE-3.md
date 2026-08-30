@@ -1348,6 +1348,68 @@ huérfanas de un solo lado—. Congeladas conservadas con su defecto en el nombr
 - **los 43 y 49 distintos NO están adjudicados**: son la primera medida de dos
   lados de este nivel, no un diagnóstico. Adjudicarlos es la tanda siguiente.
 
+### ✅ ESCALÓN 2 de la 123.ª (2026-08-30) · los dos tests, y el A habría respondido al revés en 27 de 31
+
+**El régimen primero**, que es lo que decide qué lectura toca: los 4 son **`B-`**
+—builder puro—, así que A y B valen tal como están escritos y son
+**intra-instancia**. Instrumento: `derivaciones/tests-ab-123.*`, 3 controles en
+verde, **357 nodos con caja** a 1440, alcance **sólo ejes de RITMO**
+(`margin`/`padding` de sección, fila y módulo), que es el alcance declarado del
+test A. La caja y la tipografía quedan **fuera a propósito**: ahí el test A
+responde al revés.
+
+**EL CRUCE 2×2, que es lo que el veredicto único esconde** (48 celdas =
+4 documentos × 3 tipos × 4 ejes):
+
+| | `seMueve` → test A dice **plantilla** | `noSeMueve` → test A dice **campo** |
+|---|---|---|
+| **varía** → test B dice **campo** | **27** | **4** |
+| **no varía** | **0** | **0** |
+| *(sin nada escrito)* | | **17** |
+
+**Las tres lecturas, y la primera es la que vale la tanda:**
+
+1. **El test A, aplicado solo, habría dado la respuesta INVERTIDA en 27 de los
+   31 ejes escritos — el 87 %.** El falso negativo que este documento describe
+   —*un campo escrito en % igual que su default se mueve con el ancho y parece
+   plantilla*— **no es marginal en este arquetipo: es la mayoría**. Quien aplique
+   aquí el test A sin el B se lleva 27 plantillas inventadas;
+2. **ningún eje de ritmo sale probado como plantilla**: las dos celdas
+   `noVaria` están a **0**. Así que no hay ni uno que se pueda cablear;
+3. **17 de 48 celdas salen SIN ESCRIBIR** —su único valor observado es **0**, el
+   inicial de la propiedad—. Eso **no es «px absolutos»**: es que nadie tocó
+   nada, y pesa lo mismo que SIN PROBAR. Leídas por el enunciado literal del
+   test A habrían sido **17 campos inventados**, que es exactamente el modo de
+   fallo que la premisa callada viene a evitar.
+
+> ⚠ **Y los 31 «CAMPO» salen CON RESERVA, no como conclusión**: esta derivación
+> **no mira la unidad DECLARADA**, y un `em` no se mueve con el ancho lo escriba
+> quien lo escriba. Para los 4 de la celda `varia+noSeMueve` —los únicos donde el
+> test A por sí solo dictaría campo— **haría falta la CASCADA**
+> (`CSS.getMatchedStylesForNode`), que es lo que dice *quién* escribió en vez de
+> inferirlo del comportamiento del número. Los 27 restantes no dependen de eso:
+> los dicta el test B, que no tiene esa reserva.
+
+**⚠ Y el emparejamiento entre anchos NO podía ser por orden** — lo cazó un
+control en rojo: el n.º de nodos con caja **difiere entre anchos** (119/117 ·
+68/66 · 102/100) porque el constructor **duplica el módulo y esconde uno por
+ancho**. Emparejado por el **ordinal de la clase** (§regla 33, la llave no es
+opcional): **984 comunes · 24 sólo-1440 · 0 sólo-390 · 420/420 sin llave**, los
+dos lados publicados sueltos. Evidencia del defecto:
+`tests-ab-123-SONDA-EMPAREJABA-POR-ORDEN.log`.
+
+**LA DECISIÓN DE ESQUEMA QUE ESTO SOPORTA, y lo que NO:**
+
+- **soporta** que el content type de estos arquetipos **necesita campos de ritmo
+  por bloque** —igual que SECTOR con su `flujo`—, porque 31 de 31 ejes escritos
+  son campo y **cero** son plantilla;
+- **NO soporta escribir el content type todavía**, y ésa es la decisión
+  explícita que el §hecho de esta fase admite. Faltan tres cosas con su cardinal:
+  el eje **`módulos` sin comparar** (ESCALÓN 1), los **420 nodos sin llave** de
+  esta derivación, y la **cascada** de los 4 con reserva. Escribirlo ahora sería
+  modelar sobre una sola instancia por arquetipo, que es el arreglo falso que
+  esta fase tiene como incógnita declarada desde que se abrió.
+
 ## El orden, y por qué
 
 | # | por qué va aquí |

@@ -6295,3 +6295,52 @@ comprobar mientras no haya filas que dependan de ellas.
   render NO lo pinta, porque su EMPLAZAMIENTO no está medido — allí hay **1**
   ficha y en blog **2**, y con una sola no se sabe a qué ancho se ve
   (§F3-4-FICHA-DOC-CIENTIFICO).
+
+---
+
+## ⏳ 2026-08-30 · 123.ª tanda — `CMS-F35-RITMO`: los arquetipos de `src/lib` NECESITAN campos de ritmo, y todavía NO se escriben
+
+**Medido, no supuesto** (`docs/research/cola-larga/derivaciones/tests-ab-123.*`,
+3 controles en verde · 357 nodos con caja · régimen `B-` derivado antes de
+aplicar ningún test):
+
+Aplicados los **dos** tests a los ejes de RITMO —`margin`/`padding` de sección,
+fila y módulo— de los 4 documentos del lote **PRODUCTO · CATÁLOGO · SOFTWARE**,
+sobre 48 celdas (4 documentos × 3 tipos × 4 ejes):
+
+| | `seMueve` → test A dice **plantilla** | `noSeMueve` → test A dice **campo** |
+|---|---|---|
+| **varía** → test B dice **campo** | **27** | **4** |
+| **no varía** | **0** | **0** |
+| *(sin nada escrito: único valor = 0, el inicial)* | | **17** |
+
+**Lo que la tabla decide, y es una sola cosa:** el content type de estos
+arquetipos **necesita campos de ritmo por bloque**, como `flujo` en SECTOR —
+porque **31 de 31** ejes escritos son campo y **cero** son plantilla. No hay
+ninguno que se pueda cablear en el componente.
+
+**Lo que la tabla NO decide, con su cardinal — y por eso esto queda `⏳` y no
+`✅`:**
+
+- **el eje `módulos` está SIN COMPARAR** contra el original, no a «0 defectos»:
+  el clon no emite marcador de módulo, así que los dos selectores no denotan el
+  mismo conjunto (medido: `14 → 2`, `7 → 2`, `6 → 2`). Cerrarlo pide emitir
+  `data-modulo` en los componentes;
+- **420 de los nodos medidos no tienen llave** de emparejamiento entre anchos
+  (ordinal de clase), y quedan fuera del cruce;
+- **los 4 de la celda `varia+noSeMueve` salen CON RESERVA**: son los únicos donde
+  el test A por sí solo dictaría campo, y esta derivación **no mira la unidad
+  declarada** — un `em` no se mueve con el ancho lo escriba quien lo escriba.
+  Hace falta la **cascada** (`CSS.getMatchedStylesForNode`);
+- **la varianza INTER-instancia no está medida**: los 4 documentos son 4
+  arquetipos distintos, no 4 instancias de uno. Escribir el modelo hoy sería
+  modelar desde una única instancia por arquetipo, que es el arreglo falso que
+  §F3-5 tiene como incógnita declarada desde que se abrió.
+
+> **Y el hallazgo de método que esta tanda deja, porque vale para cualquier
+> arquetipo de builder que venga después: aquí el test A, aplicado SOLO, habría
+> respondido AL REVÉS en 27 de los 31 ejes escritos — el 87 %.** El falso
+> negativo que `CLAUDE.md` describe —*un campo escrito en % igual que su default
+> se mueve con el ancho y parece plantilla*— **no es un caso marginal en este
+> arquetipo: es la mayoría**. Y las 17 celdas SIN ESCRIBIR, leídas por el
+> enunciado literal, habrían sido **17 campos inventados** más.
