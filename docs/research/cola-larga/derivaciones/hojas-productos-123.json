@@ -1,0 +1,391 @@
+{
+  "meta": {
+    "tanda": "123.ª · ESCALON 1 (2)",
+    "fecha": "2026-08-30",
+    "pregunta": "¿estan capturadas las hojas de corpus/productos? Decide si el ESCALON 1 es OFFLINE o necesita red.",
+    "noContesta": [
+      "si las hojas capturadas son las CORRECTAS para cada documento (esto cruza por nombre de fichero, como f33-cmp)",
+      "si los otros canales (imagenes, fuentes, descifradores) estan capturados"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "hay hojas capturadas en corpus/css (si no, el cero seria del resolutor)",
+      "ok": true,
+      "visto": "108 ficheros .css en corpus/css"
+    },
+    {
+      "nombre": "el resolutor casa en el CONTRASTE (corpus/fase-3, que f33-cmp ya usa)",
+      "ok": true,
+      "visto": "fase-3: 2814 de 2908 hojas resueltas en 256 docs"
+    },
+    {
+      "nombre": "el detector de <link rel=stylesheet> no da cero en el lote",
+      "ok": true,
+      "visto": "productos: 171 hojas pedidas en 24 docs"
+    }
+  ],
+  "lote": {
+    "dir": "corpus/productos",
+    "docs": 24,
+    "pedidas": 171,
+    "capturadas": 120,
+    "docsSinNingunaHoja": 0
+  },
+  "todasLasQueFaltanSonEtCache": true,
+  "faltanDistintas": [
+    "wp-content/et-cache/18251/et-core-unified-18251.min.css",
+    "wp-content/et-cache/18251/et-divi-dynamic-tb-32430-tb-342-18251.css",
+    "wp-content/et-cache/24086/et-core-unified-24086.min.css",
+    "wp-content/et-cache/24086/et-divi-dynamic-tb-32430-tb-342-24086.css",
+    "wp-content/et-cache/24108/et-core-unified-24108.min.css",
+    "wp-content/et-cache/24108/et-divi-dynamic-tb-32430-tb-342-24108.css",
+    "wp-content/et-cache/24155/et-core-unified-24155.min.css",
+    "wp-content/et-cache/24155/et-divi-dynamic-tb-32430-tb-342-24155.css",
+    "wp-content/et-cache/24183/et-core-unified-24183.min.css",
+    "wp-content/et-cache/24183/et-divi-dynamic-tb-32430-tb-342-24183.css",
+    "wp-content/et-cache/24217/et-core-unified-24217.min.css",
+    "wp-content/et-cache/24217/et-divi-dynamic-tb-32430-tb-342-24217.css",
+    "wp-content/et-cache/24239/et-core-unified-24239.min.css",
+    "wp-content/et-cache/24239/et-divi-dynamic-tb-32430-tb-342-24239.css",
+    "wp-content/et-cache/24254/et-core-unified-24254.min.css",
+    "wp-content/et-cache/24254/et-divi-dynamic-tb-32430-tb-342-24254.css",
+    "wp-content/et-cache/24268/et-core-unified-24268.min.css",
+    "wp-content/et-cache/24268/et-divi-dynamic-tb-32430-tb-342-24268.css",
+    "wp-content/et-cache/24273/et-core-unified-24273.min.css",
+    "wp-content/et-cache/24273/et-divi-dynamic-tb-32430-tb-342-24273.css",
+    "wp-content/et-cache/26481/et-core-unified-26481.min.css",
+    "wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481-late.css",
+    "wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481.css",
+    "wp-content/et-cache/26643/et-core-unified-26643.min.css",
+    "wp-content/et-cache/26643/et-divi-dynamic-tb-32430-tb-342-26643.css",
+    "wp-content/et-cache/26768/et-core-unified-26768.min.css",
+    "wp-content/et-cache/26768/et-divi-dynamic-tb-32430-tb-342-26768.css",
+    "wp-content/et-cache/27049/et-core-unified-27049.min.css",
+    "wp-content/et-cache/27049/et-divi-dynamic-tb-32430-tb-342-27049.css",
+    "wp-content/et-cache/27164/et-core-unified-27164.min.css",
+    "wp-content/et-cache/27164/et-divi-dynamic-tb-32430-tb-342-27164.css",
+    "wp-content/et-cache/32322/et-core-unified-32322.min.css",
+    "wp-content/et-cache/32322/et-divi-dynamic-tb-32430-tb-342-32322.css",
+    "wp-content/et-cache/62934/et-core-unified-62934.min.css",
+    "wp-content/et-cache/62934/et-divi-dynamic-tb-32430-tb-342-62934.css",
+    "wp-content/et-cache/64123/et-core-unified-64123.min.css",
+    "wp-content/et-cache/64123/et-divi-dynamic-tb-32430-tb-342-64123.css",
+    "wp-content/et-cache/64587/et-core-unified-64587.min.css",
+    "wp-content/et-cache/64587/et-divi-dynamic-tb-32430-tb-342-64587.css",
+    "wp-content/et-cache/64958/et-core-unified-64958.min.css",
+    "wp-content/et-cache/64958/et-divi-dynamic-tb-32430-tb-342-64958.css",
+    "wp-content/et-cache/65253/et-core-unified-65253.min.css",
+    "wp-content/et-cache/65253/et-divi-dynamic-tb-32430-tb-342-65253.css",
+    "wp-content/et-cache/65375/et-core-unified-65375.min.css",
+    "wp-content/et-cache/65375/et-divi-dynamic-tb-32430-tb-342-65375.css",
+    "wp-content/et-cache/768/et-core-unified-768.min.css",
+    "wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768-late.css",
+    "wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768.css",
+    "wp-content/et-cache/772/et-core-unified-772.min.css",
+    "wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772-late.css",
+    "wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772.css"
+  ],
+  "paginasACalentar": [
+    "corpus/productos/accesorios.html",
+    "corpus/productos/cartuchos-inteligentes/amoniaco.html",
+    "corpus/productos/cartuchos-inteligentes/cianuro-de-hidrogeno.html",
+    "corpus/productos/cartuchos-inteligentes/cloro-dioxido-de-cloro.html",
+    "corpus/productos/cartuchos-inteligentes/cloruro-de-hidrogeno.html",
+    "corpus/productos/cartuchos-inteligentes/compuestos-organicos-volatiles.html",
+    "corpus/productos/cartuchos-inteligentes/dioxido-de-azufre.html",
+    "corpus/productos/cartuchos-inteligentes/dioxido-de-carbono.html",
+    "corpus/productos/cartuchos-inteligentes/dioxido-de-nitrogeno.html",
+    "corpus/productos/cartuchos-inteligentes/fluoruro-de-hidrogeno.html",
+    "corpus/productos/cartuchos-inteligentes/hidrocarburos-no-metanicos.html",
+    "corpus/productos/cartuchos-inteligentes/monoxido-de-carbono.html",
+    "corpus/productos/cartuchos-inteligentes/oxido-nitrico.html",
+    "corpus/productos/cartuchos-inteligentes/oxigeno.html",
+    "corpus/productos/cartuchos-inteligentes/ozono.html",
+    "corpus/productos/cartuchos-inteligentes/particulas-en-suspension.html",
+    "corpus/productos/cartuchos-inteligentes/sensor-particulas-ultrafinas.html",
+    "corpus/productos/cartuchos-inteligentes/sulfuro-de-hidrogeno.html",
+    "corpus/productos/estacion-de-monitoreo-de-calidad-del-aire.html",
+    "corpus/productos/kunak-api.html",
+    "corpus/productos/monitor-calidad-aire.html",
+    "corpus/productos/sensor-de-calidad-del-aire/metano.html",
+    "corpus/productos/sensor-de-calidad-del-aire.html",
+    "corpus/productos/software-de-medicion-calidad-del-aire.html"
+  ],
+  "contraste": {
+    "dir": "corpus/fase-3",
+    "docs": 256,
+    "pedidas": 2908,
+    "capturadas": 2814,
+    "docsSinNingunaHoja": 0
+  },
+  "detallePorDoc": [
+    {
+      "doc": "corpus/productos/accesorios.html",
+      "pedidas": 8,
+      "locales": 8,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481-late.css",
+        "wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481.css",
+        "wp-content/et-cache/26481/et-core-unified-26481.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/amoniaco.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24268/et-divi-dynamic-tb-32430-tb-342-24268.css",
+        "wp-content/et-cache/24268/et-core-unified-24268.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/cianuro-de-hidrogeno.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/64123/et-divi-dynamic-tb-32430-tb-342-64123.css",
+        "wp-content/et-cache/64123/et-core-unified-64123.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/cloro-dioxido-de-cloro.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/65253/et-divi-dynamic-tb-32430-tb-342-65253.css",
+        "wp-content/et-cache/65253/et-core-unified-65253.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/cloruro-de-hidrogeno.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/32322/et-divi-dynamic-tb-32430-tb-342-32322.css",
+        "wp-content/et-cache/32322/et-core-unified-32322.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/compuestos-organicos-volatiles.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24273/et-divi-dynamic-tb-32430-tb-342-24273.css",
+        "wp-content/et-cache/24273/et-core-unified-24273.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/dioxido-de-azufre.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24254/et-divi-dynamic-tb-32430-tb-342-24254.css",
+        "wp-content/et-cache/24254/et-core-unified-24254.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/dioxido-de-carbono.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24108/et-divi-dynamic-tb-32430-tb-342-24108.css",
+        "wp-content/et-cache/24108/et-core-unified-24108.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/dioxido-de-nitrogeno.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24183/et-divi-dynamic-tb-32430-tb-342-24183.css",
+        "wp-content/et-cache/24183/et-core-unified-24183.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/fluoruro-de-hidrogeno.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/64587/et-divi-dynamic-tb-32430-tb-342-64587.css",
+        "wp-content/et-cache/64587/et-core-unified-64587.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/hidrocarburos-no-metanicos.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/65375/et-divi-dynamic-tb-32430-tb-342-65375.css",
+        "wp-content/et-cache/65375/et-core-unified-65375.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/monoxido-de-carbono.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24086/et-divi-dynamic-tb-32430-tb-342-24086.css",
+        "wp-content/et-cache/24086/et-core-unified-24086.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/oxido-nitrico.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24155/et-divi-dynamic-tb-32430-tb-342-24155.css",
+        "wp-content/et-cache/24155/et-core-unified-24155.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/oxigeno.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/62934/et-divi-dynamic-tb-32430-tb-342-62934.css",
+        "wp-content/et-cache/62934/et-core-unified-62934.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/ozono.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24217/et-divi-dynamic-tb-32430-tb-342-24217.css",
+        "wp-content/et-cache/24217/et-core-unified-24217.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/particulas-en-suspension.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/26768/et-divi-dynamic-tb-32430-tb-342-26768.css",
+        "wp-content/et-cache/26768/et-core-unified-26768.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/sensor-particulas-ultrafinas.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/64958/et-divi-dynamic-tb-32430-tb-342-64958.css",
+        "wp-content/et-cache/64958/et-core-unified-64958.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/cartuchos-inteligentes/sulfuro-de-hidrogeno.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/24239/et-divi-dynamic-tb-32430-tb-342-24239.css",
+        "wp-content/et-cache/24239/et-core-unified-24239.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/estacion-de-monitoreo-de-calidad-del-aire.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/18251/et-divi-dynamic-tb-32430-tb-342-18251.css",
+        "wp-content/et-cache/18251/et-core-unified-18251.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/kunak-api.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/27049/et-divi-dynamic-tb-32430-tb-342-27049.css",
+        "wp-content/et-cache/27049/et-core-unified-27049.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/monitor-calidad-aire.html",
+      "pedidas": 8,
+      "locales": 8,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768-late.css",
+        "wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768.css",
+        "wp-content/et-cache/768/et-core-unified-768.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/sensor-de-calidad-del-aire/metano.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/26643/et-divi-dynamic-tb-32430-tb-342-26643.css",
+        "wp-content/et-cache/26643/et-core-unified-26643.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/sensor-de-calidad-del-aire.html",
+      "pedidas": 8,
+      "locales": 8,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772-late.css",
+        "wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772.css",
+        "wp-content/et-cache/772/et-core-unified-772.min.css"
+      ]
+    },
+    {
+      "doc": "corpus/productos/software-de-medicion-calidad-del-aire.html",
+      "pedidas": 7,
+      "locales": 7,
+      "externas": 0,
+      "capturadas": 5,
+      "faltan": [
+        "wp-content/et-cache/27164/et-divi-dynamic-tb-32430-tb-342-27164.css",
+        "wp-content/et-cache/27164/et-core-unified-27164.min.css"
+      ]
+    }
+  ]
+}

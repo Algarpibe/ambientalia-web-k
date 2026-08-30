@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "tanda": "123.ª · ESCALON 1 (1)",
+    "fecha": "2026-08-30",
+    "pregunta": "¿existe ya una sonda que compare FILAS o MODULOS de las 4 rutas del lote contra el original?",
+    "noContesta": [
+      "si esa sonda MIDE BIEN (esto es un barrido del fuente, no una corrida)",
+      "si su lado original esta capturado con sus hojas"
+    ],
+    "lote": [
+      "/monitor-calidad-aire",
+      "/accesorios",
+      "/software-de-medicion-calidad-del-aire",
+      "/kunak-api"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "el detector de NIVEL no es un cero ni un pleno",
+      "ok": true,
+      "visto": "119 de 218 sondas mencionan fila o modulo"
+    },
+    {
+      "nombre": "el detector de NIVEL ve los casos CONOCIDOS (mono-cmp mide modulos, tree-cmp filas)",
+      "ok": true,
+      "visto": "mono-cmp.mjs,tree-cmp.mjs de mono-cmp.mjs,tree-cmp.mjs"
+    },
+    {
+      "nombre": "el detector de UNIVERSO no es un cero ni un pleno",
+      "ok": true,
+      "visto": "21 de 218 sondas nombran alguna ruta del lote"
+    }
+  ],
+  "cardinales": {
+    "sondas": 218,
+    "mencionanNivel": 119,
+    "nombranRutaDelLote": 21,
+    "cruceQueSIRVE": 11
+  },
+  "sirven": [
+    {
+      "sonda": "a-miga.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/software-de-medicion-calidad-del-aire",
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "c-banda.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "cobertura.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": true,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/software-de-medicion-calidad-del-aire",
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "comportamiento.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "d4-pie.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": true,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "d4-suscribete.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "d4-tipografia.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "media-colision.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "rsc-original.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "ruido.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/software-de-medicion-calidad-del-aire",
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    },
+    {
+      "sonda": "slugs.mjs",
+      "negativo": false,
+      "mideFila": true,
+      "mideModulo": false,
+      "mideNivel": true,
+      "rutasDelLote": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/kunak-api"
+      ],
+      "dosLados": true,
+      "sirve": true
+    }
+  ],
+  "soloNivel": [
+    "a-cascaron.mjs",
+    "a-censo.mjs",
+    "a-lexical.mjs",
+    "a-sp13.mjs",
+    "a-spec.mjs",
+    "admin-operacion.mjs",
+    "ancho-cuerpo.mjs",
+    "artefacto.mjs",
+    "atributos-censo.mjs",
+    "barra-cmp.mjs",
+    "c-bases.mjs",
+    "c-cascaron.mjs",
+    "c-spec.mjs",
+    "cabecera-cmp.mjs",
+    "casos-nunca-vistos.mjs",
+    "clase-rango.mjs",
+    "cmp-sector.mjs",
+    "cmp-srcset.mjs",
+    "cms-arquetipos.mjs",
+    "cms-decl.mjs",
+    "cms-lectura.mjs",
+    "cms-roundtrip.mjs",
+    "cms-teaser.mjs",
+    "corte-cuerpo.mjs",
+    "css-compilado.mjs",
+    "d4-cta.mjs",
+    "dos-rutas.mjs",
+    "enlaces-clases.mjs",
+    "esqueleto.mjs",
+    "f25-final.mjs",
+    "f33-clases.mjs",
+    "f33-cmp.mjs",
+    "f33-distancia.mjs",
+    "f33-geo.mjs",
+    "f33-membresia.mjs",
+    "f33-spec.mjs",
+    "ficha-cmp.mjs",
+    "hotlink-recuento.mjs",
+    "html-cmp.mjs",
+    "kb-barra.mjs",
+    "kb-clases.mjs",
+    "kb-cmp.mjs",
+    "kb-css.mjs",
+    "kb-recon.mjs",
+    "kb-spec.mjs",
+    "kb-tests.mjs",
+    "kb-tipografia.mjs",
+    "lh-alcance.mjs",
+    "lh-barra.mjs",
+    "lh-barrido.mjs",
+    "lh-canales.mjs",
+    "lh-contenedores.mjs",
+    "lh-ejes.mjs",
+    "lh-extracto-unidad.mjs",
+    "lh-extracto.mjs",
+    "lh-fecha-orden.mjs",
+    "lh-huecos.mjs",
+    "lh-jerarquia.mjs",
+    "lh-paginas.mjs",
+    "lh-pieles-css.mjs",
+    "lh-poblacion.mjs",
+    "lh-rol.mjs",
+    "lh-serie.mjs",
+    "lh-spec.mjs",
+    "media-canales.mjs",
+    "media-hueco.mjs",
+    "mono-cabecera.mjs",
+    "mono-cmp.mjs",
+    "mono-detalle.mjs",
+    "mono-modulos.mjs",
+    "negativos.mjs",
+    "offsets.mjs",
+    "pie-cmp.mjs",
+    "pie-legal.mjs",
+    "pie-mecanismo.mjs",
+    "pieles-modulo.mjs",
+    "productos-hueco.mjs",
+    "roles.mjs",
+    "solutions-campos.mjs",
+    "solutions-seo.mjs",
+    "t4b-bloque.mjs",
+    "t9-css.mjs",
+    "texto-poblacion.mjs",
+    "tipo-hoja.mjs",
+    "tree-cmp.mjs",
+    "tree-todos.mjs"
+  ],
+  "soloUniverso": [
+    "c-cabecera.mjs",
+    "c-cmp.mjs",
+    "c1-localiza.mjs",
+    "cms-campos.mjs",
+    "d123-flujo.mjs",
+    "estados-390.mjs",
+    "pagina-propia.mjs"
+  ],
+  "nivelYUniversoSinDosLados": [
+    "mono-inline.mjs"
+  ]
+}

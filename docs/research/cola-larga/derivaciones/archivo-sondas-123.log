@@ -1,0 +1,27 @@
+=== CONTROLES ===
+  OK  el detector de NIVEL no es un cero ni un pleno
+      66 de 218 sondas mencionan fila o modulo
+  OK  el detector de NIVEL ve los casos CONOCIDOS (mono-cmp mide modulos, tree-cmp filas)
+      mono-cmp.mjs,tree-cmp.mjs de mono-cmp.mjs,tree-cmp.mjs
+  OK  el detector de UNIVERSO no es un cero ni un pleno
+      21 de 218 sondas nombran alguna ruta del lote
+
+=== CARDINALES ===
+  sondas                   218
+  mencionanNivel           66
+  nombranRutaDelLote       21
+  cruceQueSIRVE            5
+
+=== SONDAS QUE SIRVEN (nivel + ruta del lote + dos lados) ===
+  c-banda.mjs            fila=si modulo=no  rutas: /kunak-api
+  cobertura.mjs          fila=si modulo=si  rutas: /monitor-calidad-aire /accesorios /software-de-medicion-calidad-del-aire /kunak-api
+  d4-pie.mjs             fila=si modulo=si  rutas: /monitor-calidad-aire /accesorios /kunak-api
+  d4-tipografia.mjs      fila=si modulo=no  rutas: /monitor-calidad-aire /accesorios /kunak-api
+  ruido.mjs              fila=si modulo=no  rutas: /monitor-calidad-aire /accesorios /software-de-medicion-calidad-del-aire /kunak-api
+
+=== y los dos lados por separado, para auditar el cero ===
+  miden NIVEL pero NO ven mis rutas (53): a-cascaron.mjs a-censo.mjs ancho-cuerpo.mjs atributos-censo.mjs c-cascaron.mjs clase-rango.mjs cmp-sector.mjs cms-arquetipos.mjs cms-roundtrip.mjs css-compilado.mjs d4-cta.mjs dos-rutas.mjs esqueleto.mjs f33-clases.mjs …
+  ven mis rutas pero NO miden nivel (13): a-miga.mjs c-cabecera.mjs c-cmp.mjs c1-localiza.mjs cms-campos.mjs comportamiento.mjs d123-flujo.mjs d4-suscribete.mjs estados-390.mjs media-colision.mjs pagina-propia.mjs rsc-original.mjs slugs.mjs
+  nivel + rutas pero NO dos lados (1): mono-inline.mjs
+
+VEREDICTO: valida

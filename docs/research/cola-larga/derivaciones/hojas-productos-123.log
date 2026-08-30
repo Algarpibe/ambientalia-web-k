@@ -1,0 +1,41 @@
+=== CONTROLES ===
+  OK  hay hojas capturadas en corpus/css (si no, el cero seria del resolutor)
+      108 ficheros .css en corpus/css
+  OK  el resolutor casa en el CONTRASTE (corpus/fase-3, que f33-cmp ya usa)
+      fase-3: 2814 de 2908 hojas resueltas en 256 docs
+  OK  el detector de <link rel=stylesheet> no da cero en el lote
+      productos: 171 hojas pedidas en 24 docs
+
+=== HOJAS: el LOTE contra el CONTRASTE ===
+  directorio           docs  pedidas  capturadas  docs-con-0
+  corpus/productos       24      171         120           0   ext=0
+  corpus/fase-3         256     2908        2814           0   ext=0
+
+=== DETALLE del lote ===
+  5/8  accesorios.html   faltan: wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481-late.css wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481.css wp-content/et-cache/26481/et-core-unified-26481.min.css
+  5/7  cartuchos-inteligentes/amoniaco.html   faltan: wp-content/et-cache/24268/et-divi-dynamic-tb-32430-tb-342-24268.css wp-content/et-cache/24268/et-core-unified-24268.min.css
+  5/7  cartuchos-inteligentes/cianuro-de-hidrogeno.html   faltan: wp-content/et-cache/64123/et-divi-dynamic-tb-32430-tb-342-64123.css wp-content/et-cache/64123/et-core-unified-64123.min.css
+  5/7  cartuchos-inteligentes/cloro-dioxido-de-cloro.html   faltan: wp-content/et-cache/65253/et-divi-dynamic-tb-32430-tb-342-65253.css wp-content/et-cache/65253/et-core-unified-65253.min.css
+  5/7  cartuchos-inteligentes/cloruro-de-hidrogeno.html   faltan: wp-content/et-cache/32322/et-divi-dynamic-tb-32430-tb-342-32322.css wp-content/et-cache/32322/et-core-unified-32322.min.css
+  5/7  cartuchos-inteligentes/compuestos-organicos-volatiles.html   faltan: wp-content/et-cache/24273/et-divi-dynamic-tb-32430-tb-342-24273.css wp-content/et-cache/24273/et-core-unified-24273.min.css
+  5/7  cartuchos-inteligentes/dioxido-de-azufre.html   faltan: wp-content/et-cache/24254/et-divi-dynamic-tb-32430-tb-342-24254.css wp-content/et-cache/24254/et-core-unified-24254.min.css
+  5/7  cartuchos-inteligentes/dioxido-de-carbono.html   faltan: wp-content/et-cache/24108/et-divi-dynamic-tb-32430-tb-342-24108.css wp-content/et-cache/24108/et-core-unified-24108.min.css
+  5/7  cartuchos-inteligentes/dioxido-de-nitrogeno.html   faltan: wp-content/et-cache/24183/et-divi-dynamic-tb-32430-tb-342-24183.css wp-content/et-cache/24183/et-core-unified-24183.min.css
+  5/7  cartuchos-inteligentes/fluoruro-de-hidrogeno.html   faltan: wp-content/et-cache/64587/et-divi-dynamic-tb-32430-tb-342-64587.css wp-content/et-cache/64587/et-core-unified-64587.min.css
+  5/7  cartuchos-inteligentes/hidrocarburos-no-metanicos.html   faltan: wp-content/et-cache/65375/et-divi-dynamic-tb-32430-tb-342-65375.css wp-content/et-cache/65375/et-core-unified-65375.min.css
+  5/7  cartuchos-inteligentes/monoxido-de-carbono.html   faltan: wp-content/et-cache/24086/et-divi-dynamic-tb-32430-tb-342-24086.css wp-content/et-cache/24086/et-core-unified-24086.min.css
+  5/7  cartuchos-inteligentes/oxido-nitrico.html   faltan: wp-content/et-cache/24155/et-divi-dynamic-tb-32430-tb-342-24155.css wp-content/et-cache/24155/et-core-unified-24155.min.css
+  5/7  cartuchos-inteligentes/oxigeno.html   faltan: wp-content/et-cache/62934/et-divi-dynamic-tb-32430-tb-342-62934.css wp-content/et-cache/62934/et-core-unified-62934.min.css
+  5/7  cartuchos-inteligentes/ozono.html   faltan: wp-content/et-cache/24217/et-divi-dynamic-tb-32430-tb-342-24217.css wp-content/et-cache/24217/et-core-unified-24217.min.css
+  5/7  cartuchos-inteligentes/particulas-en-suspension.html   faltan: wp-content/et-cache/26768/et-divi-dynamic-tb-32430-tb-342-26768.css wp-content/et-cache/26768/et-core-unified-26768.min.css
+  5/7  cartuchos-inteligentes/sensor-particulas-ultrafinas.html   faltan: wp-content/et-cache/64958/et-divi-dynamic-tb-32430-tb-342-64958.css wp-content/et-cache/64958/et-core-unified-64958.min.css
+  5/7  cartuchos-inteligentes/sulfuro-de-hidrogeno.html   faltan: wp-content/et-cache/24239/et-divi-dynamic-tb-32430-tb-342-24239.css wp-content/et-cache/24239/et-core-unified-24239.min.css
+  5/7  estacion-de-monitoreo-de-calidad-del-aire.html   faltan: wp-content/et-cache/18251/et-divi-dynamic-tb-32430-tb-342-18251.css wp-content/et-cache/18251/et-core-unified-18251.min.css
+  5/7  kunak-api.html   faltan: wp-content/et-cache/27049/et-divi-dynamic-tb-32430-tb-342-27049.css wp-content/et-cache/27049/et-core-unified-27049.min.css
+  5/8  monitor-calidad-aire.html   faltan: wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768-late.css wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768.css wp-content/et-cache/768/et-core-unified-768.min.css
+  5/7  sensor-de-calidad-del-aire/metano.html   faltan: wp-content/et-cache/26643/et-divi-dynamic-tb-32430-tb-342-26643.css wp-content/et-cache/26643/et-core-unified-26643.min.css
+  5/8  sensor-de-calidad-del-aire.html   faltan: wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772-late.css wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772.css wp-content/et-cache/772/et-core-unified-772.min.css
+  5/7  software-de-medicion-calidad-del-aire.html   faltan: wp-content/et-cache/27164/et-divi-dynamic-tb-32430-tb-342-27164.css wp-content/et-cache/27164/et-core-unified-27164.min.css
+
+VEREDICTO DEL INSTRUMENTO: valida
+PRECONDICION DEL ESCALON 1: NO CUMPLE — faltan 51 de 171 hojas, hace falta RED
