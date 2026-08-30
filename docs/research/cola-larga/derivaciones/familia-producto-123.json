@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "tanda": "123.ª · PASO 0 (4)",
+    "fecha": "2026-08-30",
+    "pregunta": "¿cuantas instancias CAPTURADAS tiene cada arquetipo de corpus/productos?",
+    "noContesta": [
+      "que arquetipo es cada documento no clonado (eso lo dice un recon, no una metrica de similitud)",
+      "si dos documentos parecidos comparten CONTENIDO (la firma mira el repertorio de tipos, no los valores)"
+    ],
+    "aviso": "la similitud ORDENA vecinos; no adjudica arquetipo por si sola"
+  },
+  "controles": [
+    {
+      "nombre": "la firma no esta vacia en ningun documento",
+      "ok": true,
+      "visto": "accesorios:3 estacion-de-mo:8 kunak-api:6 monitor-calida:10 sensor-de-cali:7 software-de-me:8"
+    },
+    {
+      "nombre": "la similitud NO es plana (si lo fuera, la firma no discrimina)",
+      "ok": true,
+      "visto": "min=0.3 max=0.875 rango=0.575"
+    }
+  ],
+  "matriz": [
+    {
+      "doc": "accesorios",
+      "nTipos": 3,
+      "vecinos": [
+        {
+          "doc": "kunak-api",
+          "j": 0.5
+        },
+        {
+          "doc": "sensor-de-calidad-del-aire",
+          "j": 0.429
+        },
+        {
+          "doc": "estacion-de-monitoreo-de-calidad-del-aire",
+          "j": 0.375
+        },
+        {
+          "doc": "software-de-medicion-calidad-del-aire",
+          "j": 0.375
+        },
+        {
+          "doc": "monitor-calidad-aire",
+          "j": 0.3
+        }
+      ]
+    },
+    {
+      "doc": "estacion-de-monitoreo-de-calidad-del-aire",
+      "nTipos": 8,
+      "vecinos": [
+        {
+          "doc": "sensor-de-calidad-del-aire",
+          "j": 0.875
+        },
+        {
+          "doc": "monitor-calidad-aire",
+          "j": 0.8
+        },
+        {
+          "doc": "software-de-medicion-calidad-del-aire",
+          "j": 0.778
+        },
+        {
+          "doc": "kunak-api",
+          "j": 0.75
+        },
+        {
+          "doc": "accesorios",
+          "j": 0.375
+        }
+      ]
+    },
+    {
+      "doc": "kunak-api",
+      "nTipos": 6,
+      "vecinos": [
+        {
+          "doc": "sensor-de-calidad-del-aire",
+          "j": 0.857
+        },
+        {
+          "doc": "estacion-de-monitoreo-de-calidad-del-aire",
+          "j": 0.75
+        },
+        {
+          "doc": "software-de-medicion-calidad-del-aire",
+          "j": 0.75
+        },
+        {
+          "doc": "monitor-calidad-aire",
+          "j": 0.6
+        },
+        {
+          "doc": "accesorios",
+          "j": 0.5
+        }
+      ]
+    },
+    {
+      "doc": "monitor-calidad-aire",
+      "nTipos": 10,
+      "vecinos": [
+        {
+          "doc": "estacion-de-monitoreo-de-calidad-del-aire",
+          "j": 0.8
+        },
+        {
+          "doc": "sensor-de-calidad-del-aire",
+          "j": 0.7
+        },
+        {
+          "doc": "software-de-medicion-calidad-del-aire",
+          "j": 0.636
+        },
+        {
+          "doc": "kunak-api",
+          "j": 0.6
+        },
+        {
+          "doc": "accesorios",
+          "j": 0.3
+        }
+      ]
+    },
+    {
+      "doc": "sensor-de-calidad-del-aire",
+      "nTipos": 7,
+      "vecinos": [
+        {
+          "doc": "estacion-de-monitoreo-de-calidad-del-aire",
+          "j": 0.875
+        },
+        {
+          "doc": "software-de-medicion-calidad-del-aire",
+          "j": 0.875
+        },
+        {
+          "doc": "kunak-api",
+          "j": 0.857
+        },
+        {
+          "doc": "monitor-calidad-aire",
+          "j": 0.7
+        },
+        {
+          "doc": "accesorios",
+          "j": 0.429
+        }
+      ]
+    },
+    {
+      "doc": "software-de-medicion-calidad-del-aire",
+      "nTipos": 8,
+      "vecinos": [
+        {
+          "doc": "sensor-de-calidad-del-aire",
+          "j": 0.875
+        },
+        {
+          "doc": "estacion-de-monitoreo-de-calidad-del-aire",
+          "j": 0.778
+        },
+        {
+          "doc": "kunak-api",
+          "j": 0.75
+        },
+        {
+          "doc": "monitor-calidad-aire",
+          "j": 0.636
+        },
+        {
+          "doc": "accesorios",
+          "j": 0.375
+        }
+      ]
+    }
+  ],
+  "firmasPorDoc": {
+    "accesorios": {
+      "text": 26,
+      "image": 7,
+      "button": 2
+    },
+    "estacion-de-monitoreo-de-calidad-del-aire": {
+      "text": 35,
+      "blurb": 25,
+      "button": 13,
+      "image": 9,
+      "slide": 2,
+      "fullwidth_slider": 1,
+      "gallery": 1,
+      "video": 1
+    },
+    "kunak-api": {
+      "text": 15,
+      "blurb": 12,
+      "image": 6,
+      "button": 2,
+      "slide": 2,
+      "fullwidth_slider": 1
+    },
+    "monitor-calidad-aire": {
+      "text": 37,
+      "blurb": 27,
+      "button": 13,
+      "image": 7,
+      "slide": 2,
+      "fullwidth_slider": 1,
+      "cta": 1,
+      "gallery": 1,
+      "video": 1,
+      "code": 1
+    },
+    "sensor-de-calidad-del-aire": {
+      "blurb": 34,
+      "text": 33,
+      "image": 9,
+      "button": 4,
+      "slide": 2,
+      "video": 1,
+      "fullwidth_slider": 1
+    },
+    "software-de-medicion-calidad-del-aire": {
+      "blurb": 31,
+      "text": 22,
+      "slide": 20,
+      "image": 7,
+      "button": 7,
+      "slider": 1,
+      "fullwidth_slider": 1,
+      "video": 1
+    }
+  }
+}

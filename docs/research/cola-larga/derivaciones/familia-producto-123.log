@@ -1,0 +1,15 @@
+=== CONTROLES ===
+  OK  la firma no esta vacia en ningun documento
+      accesorios:3 estacion-de-mo:8 kunak-api:6 monitor-calida:10 sensor-de-cali:7 software-de-me:8
+  OK  la similitud NO es plana (si lo fuera, la firma no discrimina)
+      min=0.3 max=0.875 rango=0.575
+
+=== VECINO MAS PARECIDO (Jaccard sobre el repertorio de tipos de modulo) ===
+  accesorios                                   tipos= 3  kunak-api=0.5  sensor-de-calidad-del-=0.429  estacion-de-monitoreo-=0.375  software-de-medicion-c=0.375  monitor-calidad-aire=0.3
+  estacion-de-monitoreo-de-calidad-del-aire    tipos= 8  sensor-de-calidad-del-=0.875  monitor-calidad-aire=0.8  software-de-medicion-c=0.778  kunak-api=0.75  accesorios=0.375
+  kunak-api                                    tipos= 6  sensor-de-calidad-del-=0.857  estacion-de-monitoreo-=0.75  software-de-medicion-c=0.75  monitor-calidad-aire=0.6  accesorios=0.5
+  monitor-calidad-aire                         tipos=10  estacion-de-monitoreo-=0.8  sensor-de-calidad-del-=0.7  software-de-medicion-c=0.636  kunak-api=0.6  accesorios=0.3
+  sensor-de-calidad-del-aire                   tipos= 7  estacion-de-monitoreo-=0.875  software-de-medicion-c=0.875  kunak-api=0.857  monitor-calidad-aire=0.7  accesorios=0.429
+  software-de-medicion-calidad-del-aire        tipos= 8  sensor-de-calidad-del-=0.875  estacion-de-monitoreo-=0.778  kunak-api=0.75  monitor-calidad-aire=0.636  accesorios=0.375
+
+VEREDICTO: valida

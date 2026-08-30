@@ -1,0 +1,40 @@
+=== CONTROLES ===
+  OK  utils.ts clasifica HELPER :: nDatos=0 nFuncs=1
+  OK  monitor.ts clasifica CONTENIDO :: nDatos=29
+  OK  transitivo ⊇ directo en las N pages :: 26 pages
+  OK  el resolutor de @/ casa (aristas > 0) :: 356 aristas locales
+
+=== LAS TRES UNIDADES (la C se deriva del build, aparte) ===
+  A · MODULO de contenido       : 22 de 23 ficheros de src/lib
+  B · PAGE (import DIRECTO)     : 9 de 26 page.tsx
+  B · PAGE (alcance TRANSITIVO) : 25 de 26 page.tsx
+
+=== PAGES, por nº de modulos de contenido alcanzados ===
+   8 /                                          dir=1 fija  [+trans: articles,clients,footer,home-carrusel-sectores,nav,projects,testimonials]
+   7 /sectores/[slug]                           dir=0 DIN  [+trans: articles,clients,footer,monografico,nav,projects,sectores]
+   6 /monitor-calidad-aire                      dir=1 fija  [+trans: articles,footer,home-carrusel-sectores,nav,projects]
+   6 /software-de-medicion-calidad-del-aire     dir=1 fija  [+trans: articles,footer,monitor,nav,projects]
+   5 /accesorios                                dir=1 fija  [+trans: articles,footer,monitor,nav]
+   5 /case-studies/[slug]                       dir=1 DIN  [+trans: footer,grupo-c-plantilla,nav,sectores]
+   5 /casos-de-exito/[slug]                     dir=1 DIN  [+trans: footer,grupo-c-plantilla,nav,sectores]
+   5 /kunak-api                                 dir=1 fija  [+trans: articles,footer,monitor,nav]
+   4 /casos-de-exito                            dir=2 fija  [+trans: footer,nav]
+   4 /recursos/[...ruta]                        dir=1 DIN  [+trans: footer,menu-centro-ayuda,nav]
+   4 /sector/[slug]/page/[n]                    dir=0 DIN  [+trans: footer,nav,sector-archivo,taxonomia-sectores]
+   4 /sector/[slug]                             dir=0 DIN  [+trans: footer,nav,sector-archivo,taxonomia-sectores]
+   4 /[slug]                                    dir=0 DIN  [+trans: arquetipo-a,footer,menu-centro-ayuda,nav]
+   3 /centro-de-ayuda/[...ruta]                 dir=0 DIN  [+trans: footer,menu-centro-ayuda,nav]
+   3 /empresa/[...ruta]                         dir=0 DIN  [+trans: footer,menu-centro-ayuda,nav]
+   3 /faqs/[slug]                               dir=0 DIN  [+trans: footer,grupo-c-plantilla,nav]
+   3 /scientific-category/[slug]/page/[n]       dir=0 DIN  [+trans: arquetipo-a,footer,nav]
+   3 /scientific-category/[slug]                dir=0 DIN  [+trans: arquetipo-a,footer,nav]
+   3 /soporte/[...ruta]                         dir=0 DIN  [+trans: footer,menu-centro-ayuda,nav]
+   2 /blog/page/[n]                             dir=0 DIN  [+trans: footer,nav]
+   2 /blog                                      dir=0 fija  [+trans: footer,nav]
+   2 /etiqueta/[slug]/page/[n]                  dir=0 DIN  [+trans: footer,nav]
+   2 /etiqueta/[slug]                           dir=0 DIN  [+trans: footer,nav]
+   2 /glosario/page/[n]                         dir=0 DIN  [+trans: footer,nav]
+   2 /glosario                                  dir=0 fija  [+trans: footer,nav]
+
+congelado: docs/research/cola-larga/derivaciones/censo-lib-123.json
+VEREDICTO: valida

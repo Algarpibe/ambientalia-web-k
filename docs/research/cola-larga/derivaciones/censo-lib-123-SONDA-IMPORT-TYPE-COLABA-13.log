@@ -1,0 +1,47 @@
+=== CONTROLES ===
+  OK  utils.ts clasifica HELPER :: nDatos=0 nFuncs=1
+  OK  monitor.ts clasifica CONTENIDO :: nDatos=29
+  OK  transitivo ⊇ directo en las N pages :: 26 pages
+  OK  el resolutor de @/ casa (aristas > 0) :: 356 aristas locales
+  OK  el cascaron derivado no se come el censo (0 < |cascaron| < |contenido|) :: cascaron=2 contenido=22
+  OK  la lectura PROPIO discrimina (no es pleno ni cero) :: 19 de 26
+
+=== LAS TRES UNIDADES (la C se deriva del build, aparte) ===
+  A · MODULO de contenido       : 22 de 23 ficheros de src/lib
+  B · PAGE (import DIRECTO)     : 9 de 26 page.tsx
+  B · PAGE (alcance TRANSITIVO) : 25 de 26 page.tsx  <- PLENO, no discrimina
+  B · PAGE (contenido PROPIO)   : 19 de 26 page.tsx
+      cascaron derivado         : footer, nav (alcanzado por >= 24/26)
+
+=== PAGES, por nº de modulos de contenido alcanzados ===
+   6 /                                          fija :: articles, clients, home-carrusel-sectores, products, projects, testimonials
+   5 /sectores/[slug]                           DIN  :: articles, clients, monografico, projects, sectores
+   4 /monitor-calidad-aire                      fija :: articles, home-carrusel-sectores, monitor, projects
+   4 /software-de-medicion-calidad-del-aire     fija :: articles, monitor, projects, software
+   3 /accesorios                                fija :: accesorios, articles, monitor
+   3 /case-studies/[slug]                       DIN  :: casos, grupo-c-plantilla, sectores
+   3 /casos-de-exito/[slug]                     DIN  :: casos, grupo-c-plantilla, sectores
+   3 /kunak-api                                 fija :: api, articles, monitor
+   2 /casos-de-exito                            fija :: casos, taxonomia-sectores
+   2 /recursos/[...ruta]                        DIN  :: arquetipo-a, menu-centro-ayuda
+   2 /sector/[slug]/page/[n]                    DIN  :: sector-archivo, taxonomia-sectores
+   2 /sector/[slug]                             DIN  :: sector-archivo, taxonomia-sectores
+   2 /[slug]                                    DIN  :: arquetipo-a, menu-centro-ayuda
+   1 /centro-de-ayuda/[...ruta]                 DIN  :: menu-centro-ayuda
+   1 /empresa/[...ruta]                         DIN  :: menu-centro-ayuda
+   1 /faqs/[slug]                               DIN  :: grupo-c-plantilla
+   1 /scientific-category/[slug]/page/[n]       DIN  :: arquetipo-a
+   1 /scientific-category/[slug]                DIN  :: arquetipo-a
+   1 /soporte/[...ruta]                         DIN  :: menu-centro-ayuda
+
+=== PAGES SIN contenido propio de lib (ya leen de la DB) ===
+     /blog/page/[n]
+     /blog
+     /etiqueta/[slug]/page/[n]
+     /etiqueta/[slug]
+     /glosario/page/[n]
+     /glosario
+     /vista-previa/[slug]
+
+congelado: docs/research/cola-larga/derivaciones/censo-lib-123.json
+VEREDICTO: valida

@@ -1,0 +1,652 @@
+{
+  "meta": {
+    "tanda": "123.ª · PASO 0",
+    "fecha": "2026-08-30",
+    "pregunta": "¿qué page.tsx leen CONTENIDO de src/lib, y en qué unidad se cuenta?",
+    "noContesta": [
+      "el RÉGIMEN de cada arquetipo (se deriva del <body> capturado, no del árbol)",
+      "si el corpus tiene la captura (se deriva de corpus/, no de src/)",
+      "cuántas INSTANCIAS existe de cada arquetipo en el original"
+    ],
+    "veredicto": "valida"
+  },
+  "controles": [
+    {
+      "nombre": "utils.ts clasifica HELPER",
+      "ok": true,
+      "visto": "nDatos=0 nFuncs=1"
+    },
+    {
+      "nombre": "monitor.ts clasifica CONTENIDO",
+      "ok": true,
+      "visto": "nDatos=29"
+    },
+    {
+      "nombre": "transitivo ⊇ directo en las N pages",
+      "ok": true,
+      "visto": "26 pages"
+    },
+    {
+      "nombre": "el resolutor de @/ casa (aristas > 0)",
+      "ok": true,
+      "visto": "356 aristas locales"
+    },
+    {
+      "nombre": "el descuento de `import type` funciona (0 ficheros leen sectores/monografico como VALOR)",
+      "ok": true,
+      "visto": "0 ficheros — concuerda con PLAN-FASE-3 §F3-5"
+    },
+    {
+      "nombre": "el descuento no se come todos los imports (queda >0 lectura de valor)",
+      "ok": true,
+      "visto": "46 ficheros importan algun modulo de contenido como VALOR"
+    },
+    {
+      "nombre": "el cascaron derivado no se come el censo (0 < |cascaron| < |contenido|)",
+      "ok": true,
+      "visto": "cascaron=2 contenido=22"
+    },
+    {
+      "nombre": "la lectura PROPIO discrimina (no es pleno ni cero)",
+      "ok": true,
+      "visto": "19 de 26"
+    }
+  ],
+  "unidadA_MODULO": {
+    "definicion": "ficheros de src/lib clasificados CONTENIDO (exportan >=1 constante de datos)",
+    "n": 22,
+    "total": 23,
+    "lista": [
+      "accesorios",
+      "api",
+      "arquetipo-a",
+      "articles",
+      "casos",
+      "clients",
+      "countries",
+      "faqs",
+      "footer",
+      "grupo-c-plantilla",
+      "home-carrusel-sectores",
+      "menu-centro-ayuda",
+      "monitor",
+      "monografico",
+      "nav",
+      "products",
+      "projects",
+      "sector-archivo",
+      "sectores",
+      "software",
+      "taxonomia-sectores",
+      "testimonials"
+    ],
+    "descartados": [
+      "utils.ts (fn=1 tipos=0)"
+    ]
+  },
+  "unidadB_PAGE": {
+    "definicion": "page.tsx que ALCANZAN un modulo de contenido",
+    "directo": {
+      "definicion": "import @/lib/x en el propio page.tsx",
+      "n": 9
+    },
+    "transitivo": {
+      "definicion": "page.tsx -> componentes -> @/lib/x",
+      "n": 25,
+      "aviso": "PLENO: no discrimina, el cascaron lo alcanza todo"
+    },
+    "propio": {
+      "definicion": "transitivo MENOS el cascaron derivado",
+      "n": 19,
+      "cascaronDerivado": [
+        "footer",
+        "nav"
+      ],
+      "umbral": "alcanzado por >= 24 de 26 pages"
+    },
+    "totalPages": 26
+  },
+  "filas": [
+    {
+      "page": "page.tsx",
+      "ruta": "/",
+      "dinamica": false,
+      "directo": [
+        "products"
+      ],
+      "transitivo": [
+        "articles",
+        "clients",
+        "footer",
+        "home-carrusel-sectores",
+        "nav",
+        "products",
+        "projects",
+        "testimonials"
+      ],
+      "soloTransitivo": [
+        "articles",
+        "clients",
+        "footer",
+        "home-carrusel-sectores",
+        "nav",
+        "projects",
+        "testimonials"
+      ],
+      "propio": [
+        "articles",
+        "clients",
+        "home-carrusel-sectores",
+        "products",
+        "projects",
+        "testimonials"
+      ]
+    },
+    {
+      "page": "monitor-calidad-aire/page.tsx",
+      "ruta": "/monitor-calidad-aire",
+      "dinamica": false,
+      "directo": [
+        "monitor"
+      ],
+      "transitivo": [
+        "articles",
+        "footer",
+        "home-carrusel-sectores",
+        "monitor",
+        "nav",
+        "projects"
+      ],
+      "soloTransitivo": [
+        "articles",
+        "footer",
+        "home-carrusel-sectores",
+        "nav",
+        "projects"
+      ],
+      "propio": [
+        "articles",
+        "home-carrusel-sectores",
+        "monitor",
+        "projects"
+      ]
+    },
+    {
+      "page": "software-de-medicion-calidad-del-aire/page.tsx",
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "dinamica": false,
+      "directo": [
+        "software"
+      ],
+      "transitivo": [
+        "articles",
+        "footer",
+        "monitor",
+        "nav",
+        "projects",
+        "software"
+      ],
+      "soloTransitivo": [
+        "articles",
+        "footer",
+        "monitor",
+        "nav",
+        "projects"
+      ],
+      "propio": [
+        "articles",
+        "monitor",
+        "projects",
+        "software"
+      ]
+    },
+    {
+      "page": "accesorios/page.tsx",
+      "ruta": "/accesorios",
+      "dinamica": false,
+      "directo": [
+        "accesorios"
+      ],
+      "transitivo": [
+        "accesorios",
+        "articles",
+        "footer",
+        "monitor",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "articles",
+        "footer",
+        "monitor",
+        "nav"
+      ],
+      "propio": [
+        "accesorios",
+        "articles",
+        "monitor"
+      ]
+    },
+    {
+      "page": "kunak-api/page.tsx",
+      "ruta": "/kunak-api",
+      "dinamica": false,
+      "directo": [
+        "api"
+      ],
+      "transitivo": [
+        "api",
+        "articles",
+        "footer",
+        "monitor",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "articles",
+        "footer",
+        "monitor",
+        "nav"
+      ],
+      "propio": [
+        "api",
+        "articles",
+        "monitor"
+      ]
+    },
+    {
+      "page": "sectores/[slug]/page.tsx",
+      "ruta": "/sectores/[slug]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "articles",
+        "clients",
+        "footer",
+        "nav",
+        "projects"
+      ],
+      "soloTransitivo": [
+        "articles",
+        "clients",
+        "footer",
+        "nav",
+        "projects"
+      ],
+      "propio": [
+        "articles",
+        "clients",
+        "projects"
+      ]
+    },
+    {
+      "page": "case-studies/[slug]/page.tsx",
+      "ruta": "/case-studies/[slug]",
+      "dinamica": true,
+      "directo": [
+        "casos"
+      ],
+      "transitivo": [
+        "casos",
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "propio": [
+        "casos",
+        "grupo-c-plantilla"
+      ]
+    },
+    {
+      "page": "casos-de-exito/page.tsx",
+      "ruta": "/casos-de-exito",
+      "dinamica": false,
+      "directo": [
+        "casos",
+        "taxonomia-sectores"
+      ],
+      "transitivo": [
+        "casos",
+        "footer",
+        "nav",
+        "taxonomia-sectores"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "casos",
+        "taxonomia-sectores"
+      ]
+    },
+    {
+      "page": "casos-de-exito/[slug]/page.tsx",
+      "ruta": "/casos-de-exito/[slug]",
+      "dinamica": true,
+      "directo": [
+        "casos"
+      ],
+      "transitivo": [
+        "casos",
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "propio": [
+        "casos",
+        "grupo-c-plantilla"
+      ]
+    },
+    {
+      "page": "recursos/[...ruta]/page.tsx",
+      "ruta": "/recursos/[...ruta]",
+      "dinamica": true,
+      "directo": [
+        "arquetipo-a"
+      ],
+      "transitivo": [
+        "arquetipo-a",
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "arquetipo-a",
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "sector/[slug]/page/[n]/page.tsx",
+      "ruta": "/sector/[slug]/page/[n]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "nav",
+        "sector-archivo",
+        "taxonomia-sectores"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav",
+        "sector-archivo",
+        "taxonomia-sectores"
+      ],
+      "propio": [
+        "sector-archivo",
+        "taxonomia-sectores"
+      ]
+    },
+    {
+      "page": "sector/[slug]/page.tsx",
+      "ruta": "/sector/[slug]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "nav",
+        "sector-archivo",
+        "taxonomia-sectores"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav",
+        "sector-archivo",
+        "taxonomia-sectores"
+      ],
+      "propio": [
+        "sector-archivo",
+        "taxonomia-sectores"
+      ]
+    },
+    {
+      "page": "[slug]/page.tsx",
+      "ruta": "/[slug]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "arquetipo-a",
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "arquetipo-a",
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "arquetipo-a",
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "centro-de-ayuda/[...ruta]/page.tsx",
+      "ruta": "/centro-de-ayuda/[...ruta]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "empresa/[...ruta]/page.tsx",
+      "ruta": "/empresa/[...ruta]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "faqs/[slug]/page.tsx",
+      "ruta": "/faqs/[slug]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "propio": [
+        "grupo-c-plantilla"
+      ]
+    },
+    {
+      "page": "scientific-category/[slug]/page/[n]/page.tsx",
+      "ruta": "/scientific-category/[slug]/page/[n]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "arquetipo-a",
+        "footer",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "arquetipo-a",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "arquetipo-a"
+      ]
+    },
+    {
+      "page": "scientific-category/[slug]/page.tsx",
+      "ruta": "/scientific-category/[slug]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "arquetipo-a",
+        "footer",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "arquetipo-a",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "arquetipo-a"
+      ]
+    },
+    {
+      "page": "soporte/[...ruta]/page.tsx",
+      "ruta": "/soporte/[...ruta]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "blog/page/[n]/page.tsx",
+      "ruta": "/blog/page/[n]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav"
+      ],
+      "propio": []
+    },
+    {
+      "page": "blog/page.tsx",
+      "ruta": "/blog",
+      "dinamica": false,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav"
+      ],
+      "propio": []
+    },
+    {
+      "page": "etiqueta/[slug]/page/[n]/page.tsx",
+      "ruta": "/etiqueta/[slug]/page/[n]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav"
+      ],
+      "propio": []
+    },
+    {
+      "page": "etiqueta/[slug]/page.tsx",
+      "ruta": "/etiqueta/[slug]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav"
+      ],
+      "propio": []
+    },
+    {
+      "page": "glosario/page/[n]/page.tsx",
+      "ruta": "/glosario/page/[n]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav"
+      ],
+      "propio": []
+    },
+    {
+      "page": "glosario/page.tsx",
+      "ruta": "/glosario",
+      "dinamica": false,
+      "directo": [],
+      "transitivo": [
+        "footer",
+        "nav"
+      ],
+      "soloTransitivo": [
+        "footer",
+        "nav"
+      ],
+      "propio": []
+    },
+    {
+      "page": "vista-previa/[slug]/page.tsx",
+      "ruta": "/vista-previa/[slug]",
+      "dinamica": true,
+      "directo": [],
+      "transitivo": [],
+      "soloTransitivo": [],
+      "propio": []
+    }
+  ]
+}

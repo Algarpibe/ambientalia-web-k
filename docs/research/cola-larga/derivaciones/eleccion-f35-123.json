@@ -1,0 +1,274 @@
+{
+  "meta": {
+    "tanda": "123.ª · PASO 0 (3)",
+    "fecha": "2026-08-30",
+    "criterio": "menos SIN PROBAR IRREDUCIBLE; a igualdad, mas ejes que cerrar; a igualdad, mas instancias",
+    "noContesta": [
+      "si el content type se puede escribir (eso lo dice el ESCALON 2)"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "la tabla de cobertura se LEE (no es un cero de regex)",
+      "ok": true,
+      "visto": "HOME:1/1 PRODUCTO:1/1 CATALOGO:1/1 SOFTWARE:2/2"
+    },
+    {
+      "nombre": "toda ruta pedida existe en la tabla (si no, el candidato se lee con menos ejes de los que tiene)",
+      "ok": true,
+      "visto": "todas"
+    },
+    {
+      "nombre": "el criterio PRINCIPAL separa, y se publica cuanto (no se tapa con el desempate)",
+      "ok": true,
+      "visto": "principal 3/6 · desempate 0/6 · sin ordenar 3"
+    }
+  ],
+  "separadoras": {
+    "principal": [
+      "HOME|PRODUCTO",
+      "HOME|CATALOGO",
+      "HOME|SOFTWARE"
+    ],
+    "desempate": [],
+    "nPares": 6
+  },
+  "nivelF35": [
+    "filas",
+    "modulos"
+  ],
+  "orden": [
+    "PRODUCTO",
+    "CATALOGO",
+    "SOFTWARE",
+    "HOME"
+  ],
+  "filas": [
+    {
+      "arquetipo": "PRODUCTO",
+      "page": "/monitor-calidad-aire",
+      "lib": [
+        "monitor"
+      ],
+      "rutasEnLaTabla": 1,
+      "rutasPedidas": 1,
+      "modulosPropiosDelCenso": [
+        "articles",
+        "home-carrusel-sectores",
+        "monitor",
+        "projects"
+      ],
+      "instanciasCapturadas": 6,
+      "puedeSepararInter": true,
+      "ejesCubiertos": [
+        "docH",
+        "base",
+        "arbol",
+        "anchos",
+        "enlaces",
+        "comportamiento"
+      ],
+      "ejesQueFaltan": [
+        "filas",
+        "modulos",
+        "offsets"
+      ],
+      "nFaltan": 3,
+      "sinProbarIrreducible": 0,
+      "detallePorRuta": [
+        {
+          "ruta": "/monitor-calidad-aire",
+          "ejes": {
+            "docH": "O",
+            "base": "O",
+            "arbol": "O",
+            "filas": "·",
+            "modulos": "·",
+            "offsets": "·",
+            "anchos": "O",
+            "enlaces": "O",
+            "comportamiento": "O"
+          }
+        }
+      ],
+      "ejesDelNivelQueFaltan": [
+        "filas",
+        "modulos"
+      ]
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "page": "/accesorios",
+      "lib": [
+        "accesorios"
+      ],
+      "rutasEnLaTabla": 1,
+      "rutasPedidas": 1,
+      "modulosPropiosDelCenso": [
+        "accesorios",
+        "articles",
+        "monitor"
+      ],
+      "instanciasCapturadas": 6,
+      "puedeSepararInter": true,
+      "ejesCubiertos": [
+        "docH",
+        "base",
+        "arbol",
+        "anchos",
+        "enlaces",
+        "comportamiento"
+      ],
+      "ejesQueFaltan": [
+        "filas",
+        "modulos",
+        "offsets"
+      ],
+      "nFaltan": 3,
+      "sinProbarIrreducible": 0,
+      "detallePorRuta": [
+        {
+          "ruta": "/accesorios",
+          "ejes": {
+            "docH": "O",
+            "base": "O",
+            "arbol": "O",
+            "filas": "·",
+            "modulos": "·",
+            "offsets": "·",
+            "anchos": "O",
+            "enlaces": "O",
+            "comportamiento": "O"
+          }
+        }
+      ],
+      "ejesDelNivelQueFaltan": [
+        "filas",
+        "modulos"
+      ]
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "page": "/software-de-medicion-calidad-del-aire",
+      "lib": [
+        "software"
+      ],
+      "rutasEnLaTabla": 2,
+      "rutasPedidas": 2,
+      "modulosPropiosDelCenso": [
+        "articles",
+        "monitor",
+        "projects",
+        "software"
+      ],
+      "instanciasCapturadas": 6,
+      "puedeSepararInter": true,
+      "ejesCubiertos": [
+        "docH",
+        "base",
+        "arbol",
+        "anchos",
+        "enlaces",
+        "comportamiento"
+      ],
+      "ejesQueFaltan": [
+        "filas",
+        "modulos",
+        "offsets"
+      ],
+      "nFaltan": 3,
+      "sinProbarIrreducible": 0,
+      "detallePorRuta": [
+        {
+          "ruta": "/software-de-medicion-calidad-del-aire",
+          "ejes": {
+            "docH": "O",
+            "base": "O",
+            "arbol": "O",
+            "filas": "·",
+            "modulos": "·",
+            "offsets": "·",
+            "anchos": "O",
+            "enlaces": "O",
+            "comportamiento": "O"
+          }
+        },
+        {
+          "ruta": "/kunak-api",
+          "ejes": {
+            "docH": "O",
+            "base": "O",
+            "arbol": "O",
+            "filas": "·",
+            "modulos": "·",
+            "offsets": "·",
+            "anchos": "O",
+            "enlaces": "O",
+            "comportamiento": "O"
+          }
+        }
+      ],
+      "ejesDelNivelQueFaltan": [
+        "filas",
+        "modulos"
+      ]
+    },
+    {
+      "arquetipo": "HOME",
+      "page": "/",
+      "lib": [
+        "products",
+        "testimonials",
+        "clients",
+        "home-carrusel-sectores"
+      ],
+      "rutasEnLaTabla": 1,
+      "rutasPedidas": 1,
+      "modulosPropiosDelCenso": [
+        "articles",
+        "clients",
+        "home-carrusel-sectores",
+        "products",
+        "projects",
+        "testimonials"
+      ],
+      "instanciasCapturadas": 0,
+      "puedeSepararInter": false,
+      "ejesCubiertos": [
+        "docH",
+        "base",
+        "arbol",
+        "anchos",
+        "enlaces",
+        "comportamiento"
+      ],
+      "ejesQueFaltan": [
+        "filas",
+        "modulos",
+        "offsets"
+      ],
+      "nFaltan": 3,
+      "sinProbarIrreducible": 3,
+      "detallePorRuta": [
+        {
+          "ruta": "/",
+          "ejes": {
+            "docH": "O",
+            "base": "O",
+            "arbol": "O",
+            "filas": "·",
+            "modulos": "·",
+            "offsets": "·",
+            "anchos": "O",
+            "enlaces": "O",
+            "comportamiento": "O"
+          }
+        }
+      ],
+      "ejesDelNivelQueFaltan": [
+        "filas",
+        "modulos"
+      ]
+    }
+  ]
+}

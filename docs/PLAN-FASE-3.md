@@ -1164,6 +1164,103 @@ GRUPO A (`cms/arquetipo-a`) · CASO (`cms/casos`) · FAQ (`cms/faqs`) ·
 > (§regla 9). Si «seis» contaba SECTOR y MONOGRÁFICO, la derivación de arriba
 > dice por qué **ya están fuera**.
 
+### ✅ PASO 0 de la 123.ª (2026-08-30) · el censo RE-DERIVADO, y el elegido
+
+**El inventario de arriba se re-derivó contra el árbol de hoy —las tandas
+113–122 tocaron `src/`— y REPRODUCE**: 5 rutas · 4 arquetipos + 1 variante.
+Instrumento: `derivaciones/censo-lib-123.{mjs,json,log}`, 8 controles en verde.
+
+**Las TRES unidades, cada una con su definición** (§*corregir un denominador no
+es sustituirlo en todas partes* — un denominador sin unidad no se puede
+auditar). El censo de la 119.ª dio «4 · 10 · 13»; **estos números no lo
+reproducen y no lo pretenden**: son otras definiciones, publicadas con ellas.
+
+| unidad | definición | n |
+|---|---|---|
+| **A · MÓDULO** | ficheros de `src/lib` que exportan ≥1 constante de datos | **22 de 23** |
+| **B · PAGE, directo** | `import @/lib/x` en el propio `page.tsx` | **9 de 26** |
+| **B · PAGE, transitivo** | `page.tsx` → componentes → `@/lib/x` | **25 de 26** ⚠ |
+| **B · PAGE, propio** | el transitivo MENOS el cascarón derivado | **19 de 26** |
+
+> ⚠ **El transitivo a secas es un PLENO y no mide lo que dice.** `nav` y `footer`
+> son el cascarón y los alcanzan **24 de 26** pages, así que «25 de 26» describe
+> el cascarón, no el arquetipo — §*un patrón que casa en TODAS tampoco mide
+> nada*. El cascarón **se deriva** (módulo alcanzado por ≥90 % de las pages), no
+> se escribe a mano. Evidencia del pleno, conservada:
+> `censo-lib-123-SONDA-TRANSITIVO-ES-PLENO-25-DE-26.json`.
+
+**⚠ Y el censo llegó con un SOBRE-CASADO propio que metía SECTOR y MONOGRÁFICO
+en el alcance.** El descuento de `import type` miraba 200 caracteres hacia atrás
+y fallaba en los dos casos frecuentes —el `}` de cierre antes de `from`, y el
+import **multilínea**—, así que colaba **13 imports de sólo tipos** como lectura
+de contenido. **Lo delató contradecir a este mismo §F3-5**, que ya tenía a los
+dos fuera (§sondas 4, *la contradicción con una medida buena anterior*, que es
+el único control que este defecto tenía). Con el descuento arreglado, los dos
+inventarios **concuerdan**. Evidencia: `censo-lib-123-SONDA-IMPORT-TYPE-COLABA-13.json`.
+
+**Por candidato** (`derivaciones/candidatos-f35-123.*` y `eleccion-f35-123.*`):
+
+| arquetipo | régimen | capturado | ejes de dos lados que faltan | del nivel F3-5 |
+|---|---|---|---|---|
+| **PRODUCTO** `/monitor-calidad-aire` | **`B-`** | sí | filas · módulos · offsets | **filas · módulos** |
+| **CATÁLOGO** `/accesorios` | **`B-`** | sí | filas · módulos · offsets | **filas · módulos** |
+| **SOFTWARE** `/software-…` + `/kunak-api` | **`B-`** | sí | filas · módulos · offsets | **filas · módulos** |
+| **HOME** `/` | **sin derivar** | **NO** | filas · módulos · offsets | filas · módulos |
+
+El régimen se leyó con **los DOS marcadores**, nombrando la combinación: los 32
+documentos de `corpus/productos` y `corpus/fase-3-sectores` son **`B-`**, y el
+detector **discrimina** —fuera de los candidatos ve `--`×112, `-T`×275,
+`BT`×13—, así que ese `B-` es dato y no pleno del instrumento.
+
+> ⚠ **«HOME no está capturada» es un hecho NEGATIVO y se comprobó contra el
+> archivo, no de memoria** (§regla 8b) — **0 de 788** documentos del corpus
+> traen el canonical de la raíz, con su control al lado: **517 de 788** traen
+> *algún* canonical, o sea que el cero no es del filtro.
+>
+> **Y la primera versión de ese detector dijo lo CONTRARIO.** Filtraba por
+> nombre de fichero —`(index|home|inicio|kunakair)\.html$`— y casaba **256**
+> documentos: todos los `index.html` de listado. Corregir el sobre-casado
+> **invirtió la respuesta**, que es §sondas 4 en su tercera cara.
+
+**EL ELEGIDO: el lote PRODUCTO · CATÁLOGO · SOFTWARE, con PRODUCTO de cabeza.**
+
+**Y el criterio se publica con lo que NO decide.** «Menos SIN PROBAR» separa
+**3 de 6** pares —todos contra HOME— y deja **3 pares SIN ORDENAR**: los tres
+empatan en ejes que faltan, régimen y captura. El desempate no se inventa, lo
+nombra el encargo (*filas y módulos, el nivel donde F3-5 mide*) y **tampoco los
+separa**: los tres tienen los dos ejes a `·`.
+
+> **Ese empate es el resultado, no un fallo del criterio: dice que los tres son
+> UN LOTE y no tres candidatos.** Comparten régimen (`B-`), comparten los dos
+> ejes que faltan, y comparten `lib/monitor` —que alcanzan **4** de las
+> `page.tsx`—. Así que el ESCALÓN 1 construye **un comparador para las 4 rutas**,
+> que es lo que el empate está diciendo; romperlo para elegir «uno» habría
+> costado tres comparadores del mismo nivel.
+
+**Lo que esta fase NO puede cerrar, declarado por delante (punto 4 del encargo):**
+
+- **HOME queda fuera y su captura es precondición** — sin ella su régimen no es
+  derivable offline y su SIN PROBAR es **irreducible = 3**, el único candidato
+  con ese valor;
+- **el reparto por arquetipo de los 6 documentos de `corpus/productos` está SIN
+  DERIVAR**, y con el instrumento de esta tanda no se cierra. La firma por
+  repertorio de tipos de módulo (`familia-producto-123.*`, 2 controles en verde,
+  rango 0.575) **ordena vecinos pero no adjudica arquetipo**: da un continuo de
+  **0.6 a 0.875** entre los cinco no-`accesorios`, sin corte. Lo único que separa
+  nítido es `accesorios` (**0.3–0.5**), que es CATÁLOGO. Lo que haría falta es un
+  recon, no otra métrica de similitud;
+- **por tanto «PRODUCTO tiene 6 instancias» es FALSO como leído: 6 es el
+  CARDINAL DEL DIRECTORIO**, y el directorio no es el arquetipo — §*un cardinal
+  es un contenedor y absorbe la membresía*, con el contenedor puesto en la
+  carpeta. Lo establecido es más débil y basta para no bloquear: `monitor` tiene
+  **2 vecinos a ≥0.7 que no están clonados** (`estacion-de-monitoreo…`,
+  `sensor-de-calidad-del-aire`), así que **no es un singleton irremediable** —
+  hay con qué medir varianza inter-instancia **en cuanto un recon adjudique**.
+  Mientras no lo haga, lo que no separen los tests A y B sale **SIN PROBAR y no
+  se cablea**;
+- **`countries` y `faqs` son módulos de contenido que NINGUNA `page.tsx`
+  alcanza** (2 de 22). Ni son de esta fase ni se tocan aquí: se fichan.
+
 ## El orden, y por qué
 
 | # | por qué va aquí |

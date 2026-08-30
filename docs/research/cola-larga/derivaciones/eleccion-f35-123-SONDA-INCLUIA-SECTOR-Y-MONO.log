@@ -1,0 +1,23 @@
+=== CONTROLES ===
+  OK  la tabla de cobertura se LEE (no es un cero de regex)
+      HOME:1/1 PRODUCTO:1/1 CATALOGO:1/1 SOFTWARE:2/2 SECTOR:4/4 MONOGRAFICO:2/2
+  OK  toda ruta pedida existe en la tabla (si no, el candidato se lee con menos ejes de los que tiene)
+      todas
+  OK  el criterio PRINCIPAL separa, y se publica cuanto (no se tapa con el desempate)
+      principal 5/15 · desempate 7/15 · sin ordenar 3
+
+=== CANDIDATOS, ordenados por el criterio ===
+  arq          lib                inst  ejesFaltan             irred  nivelF35-falta
+  PRODUCTO     monitor               6  filas,modulos,offsets      0  filas,modulos
+  CATALOGO     accesorios            6  filas,modulos,offsets      0  filas,modulos
+  SOFTWARE     software              6  filas,modulos,offsets      0  filas,modulos
+  SECTOR       sectores              8  modulos,offsets,anchos     0  modulos
+  MONOGRAFICO  monografico           8  offsets,anchos             0  -
+  HOME         products,testimoni    0  filas,modulos,offsets      3  filas,modulos
+
+ELEGIDO: PRODUCTO  (page /monitor-calidad-aire, lib monitor)
+  ejes que cierra      : filas, modulos, offsets
+  de ellos, nivel F3-5 : filas, modulos
+  instancias      : 6 capturadas -> SI hay varianza INTER-instancia
+
+VEREDICTO: valida

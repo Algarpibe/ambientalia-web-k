@@ -1,0 +1,55 @@
+=== CONTROLES ===
+  OK  el detector LEE algo (>=1 documento con marcador)
+      32 documentos, combinaciones: B-
+  OK  el detector DISCRIMINA (>=2 combinaciones en el corpus)
+      en candidatos: B- | fuera (400 docs): --×112 -T×275 BT×13
+  OK  el detector de HOME no es un cero de filtro ni un pleno
+      517 de 788 docs traen canonical; casan la RAIZ: 0
+
+=== REGIMEN POR CANDIDATO (los DOS marcadores) ===
+
+  -- PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)
+  B-  accesorios                                     secc.propias= 4  hojas= 8  sin secciones _tb_body
+  B-  amoniaco                                       secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  cianuro-de-hidrogeno                           secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  cloro-dioxido-de-cloro                         secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  cloruro-de-hidrogeno                           secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  compuestos-organicos-volatiles                 secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  dioxido-de-azufre                              secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  dioxido-de-carbono                             secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  dioxido-de-nitrogeno                           secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  fluoruro-de-hidrogeno                          secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  hidrocarburos-no-metanicos                     secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  monoxido-de-carbono                            secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  oxido-nitrico                                  secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  oxigeno                                        secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  ozono                                          secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  particulas-en-suspension                       secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  sensor-particulas-ultrafinas                   secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  sulfuro-de-hidrogeno                           secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  estacion-de-monitoreo-de-calidad-del-aire      secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  kunak-api                                      secc.propias= 5  hojas= 7  sin secciones _tb_body
+  B-  monitor-calidad-aire                           secc.propias= 8  hojas= 8  sin secciones _tb_body
+  B-  metano                                         secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  sensor-de-calidad-del-aire                     secc.propias= 6  hojas= 8  sin secciones _tb_body
+  B-  software-de-medicion-calidad-del-aire          secc.propias= 7  hojas= 7  sin secciones _tb_body
+
+  -- SECTOR + MONOGRAFICO (corpus/fase-3-sectores)
+  B-  calidad-del-aire-en-las-ciudades               secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  contaminacion-del-aire-por-la-mineria          secc.propias= 6  hojas= 7  sin secciones _tb_body
+  B-  contaminacion-del-transporte-maritimo          secc.propias= 6  hojas= 7  sin secciones _tb_body
+  B-  contaminacion-por-construccion                 secc.propias= 7  hojas= 7  sin secciones _tb_body
+  B-  control-de-emisiones-industriales              secc.propias= 6  hojas= 7  sin secciones _tb_body
+  B-  estudio-de-la-contaminacion-atmosferica        secc.propias= 6  hojas= 7  sin secciones _tb_body
+  B-  monitorizacion-ambiental-y-control-de-olores-en-edar secc.propias= 8  hojas= 7  sin secciones _tb_body
+  B-  monitorizacion-de-emisiones-en-petroleo-y-gas  secc.propias= 8  hojas= 7  sin secciones _tb_body
+
+=== HOME capturada: NO — casan la RAIZ 0 de 788 docs (517 traen canonical) ===
+
+=== INSTANCIAS CAPTURADAS por arquetipo ===
+  17  corpus/productos/cartuchos-inteligentes
+   8  corpus/fase-3-sectores
+   6  corpus/productos
+   1  corpus/productos/sensor-de-calidad-del-aire
+
+VEREDICTO: valida

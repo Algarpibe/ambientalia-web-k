@@ -1,0 +1,564 @@
+{
+  "meta": {
+    "tanda": "123.ª · PASO 0 (2)",
+    "fecha": "2026-08-30",
+    "contesta": [
+      "regimen por los DOS marcadores",
+      "captura si/no",
+      "n.º de instancias capturadas por arquetipo"
+    ],
+    "noContesta": [
+      "que ejes de dos lados tiene cada uno (se deriva de COBERTURA-MEDICION.md y de medidas/)",
+      "si el contenido de lib es plantilla o campo (eso es el ESCALON 2)"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "el detector LEE algo (>=1 documento con marcador)",
+      "ok": true,
+      "visto": "32 documentos, combinaciones: B-"
+    },
+    {
+      "nombre": "el detector DISCRIMINA (>=2 combinaciones en el corpus)",
+      "ok": true,
+      "visto": "en candidatos: B- | fuera (400 docs): --×112 -T×275 BT×13"
+    },
+    {
+      "nombre": "el detector de HOME no es un cero de filtro ni un pleno",
+      "ok": true,
+      "visto": "517 de 788 docs traen canonical; casan la RAIZ: 0"
+    }
+  ],
+  "home": {
+    "capturada": false,
+    "candidatosVistos": [],
+    "docsConCanonical": 517,
+    "docsTotales": 788,
+    "nota": "hecho NEGATIVO comprobado contra el archivo, no de memoria (§regla 8b)"
+  },
+  "combinacionesFueraDeCandidatos": {
+    "--": 112,
+    "-T": 275,
+    "BT": 13
+  },
+  "instanciasPorSubfamilia": {
+    "corpus/productos/cartuchos-inteligentes": 17,
+    "corpus/fase-3-sectores": 8,
+    "corpus/productos": 6,
+    "corpus/productos/sensor-de-calidad-del-aire": 1
+  },
+  "filas": [
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/accesorios.html",
+      "doc": "accesorios",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 4,
+      "bytes": 380297,
+      "hojasEnlazadas": 8
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/amoniaco.html",
+      "doc": "amoniaco",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 384223,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/cianuro-de-hidrogeno.html",
+      "doc": "cianuro-de-hidrogeno",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383405,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/cloro-dioxido-de-cloro.html",
+      "doc": "cloro-dioxido-de-cloro",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 384333,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/cloruro-de-hidrogeno.html",
+      "doc": "cloruro-de-hidrogeno",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383773,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/compuestos-organicos-volatiles.html",
+      "doc": "compuestos-organicos-volatiles",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 384462,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/dioxido-de-azufre.html",
+      "doc": "dioxido-de-azufre",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 384176,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/dioxido-de-carbono.html",
+      "doc": "dioxido-de-carbono",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383910,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/dioxido-de-nitrogeno.html",
+      "doc": "dioxido-de-nitrogeno",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383503,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/fluoruro-de-hidrogeno.html",
+      "doc": "fluoruro-de-hidrogeno",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383651,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/hidrocarburos-no-metanicos.html",
+      "doc": "hidrocarburos-no-metanicos",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383718,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/monoxido-de-carbono.html",
+      "doc": "monoxido-de-carbono",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 384621,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/oxido-nitrico.html",
+      "doc": "oxido-nitrico",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383904,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/oxigeno.html",
+      "doc": "oxigeno",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383253,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/ozono.html",
+      "doc": "ozono",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 383674,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/particulas-en-suspension.html",
+      "doc": "particulas-en-suspension",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 407342,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/sensor-particulas-ultrafinas.html",
+      "doc": "sensor-particulas-ultrafinas",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 391430,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/cartuchos-inteligentes/sulfuro-de-hidrogeno.html",
+      "doc": "sulfuro-de-hidrogeno",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 384135,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/estacion-de-monitoreo-de-calidad-del-aire.html",
+      "doc": "estacion-de-monitoreo-de-calidad-del-aire",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 487856,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/kunak-api.html",
+      "doc": "kunak-api",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 5,
+      "bytes": 390116,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/monitor-calidad-aire.html",
+      "doc": "monitor-calidad-aire",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 8,
+      "bytes": 573051,
+      "hojasEnlazadas": 8
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/sensor-de-calidad-del-aire/metano.html",
+      "doc": "metano",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 388024,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/sensor-de-calidad-del-aire.html",
+      "doc": "sensor-de-calidad-del-aire",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 6,
+      "bytes": 435449,
+      "hojasEnlazadas": 8
+    },
+    {
+      "grupo": "PRODUCTO / CATALOGO / SOFTWARE (corpus/productos)",
+      "fichero": "corpus/productos/software-de-medicion-calidad-del-aire.html",
+      "doc": "software-de-medicion-calidad-del-aire",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 468240,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "SECTOR + MONOGRAFICO (corpus/fase-3-sectores)",
+      "fichero": "corpus/fase-3-sectores/calidad-del-aire-en-las-ciudades.html",
+      "doc": "calidad-del-aire-en-las-ciudades",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 297251,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "SECTOR + MONOGRAFICO (corpus/fase-3-sectores)",
+      "fichero": "corpus/fase-3-sectores/contaminacion-del-aire-por-la-mineria.html",
+      "doc": "contaminacion-del-aire-por-la-mineria",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 6,
+      "bytes": 302281,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "SECTOR + MONOGRAFICO (corpus/fase-3-sectores)",
+      "fichero": "corpus/fase-3-sectores/contaminacion-del-transporte-maritimo.html",
+      "doc": "contaminacion-del-transporte-maritimo",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 6,
+      "bytes": 303573,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "SECTOR + MONOGRAFICO (corpus/fase-3-sectores)",
+      "fichero": "corpus/fase-3-sectores/contaminacion-por-construccion.html",
+      "doc": "contaminacion-por-construccion",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 7,
+      "bytes": 293986,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "SECTOR + MONOGRAFICO (corpus/fase-3-sectores)",
+      "fichero": "corpus/fase-3-sectores/control-de-emisiones-industriales.html",
+      "doc": "control-de-emisiones-industriales",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 6,
+      "bytes": 311000,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "SECTOR + MONOGRAFICO (corpus/fase-3-sectores)",
+      "fichero": "corpus/fase-3-sectores/estudio-de-la-contaminacion-atmosferica.html",
+      "doc": "estudio-de-la-contaminacion-atmosferica",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 6,
+      "bytes": 295789,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "SECTOR + MONOGRAFICO (corpus/fase-3-sectores)",
+      "fichero": "corpus/fase-3-sectores/monitorizacion-ambiental-y-control-de-olores-en-edar.html",
+      "doc": "monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 8,
+      "bytes": 326020,
+      "hojasEnlazadas": 7
+    },
+    {
+      "grupo": "SECTOR + MONOGRAFICO (corpus/fase-3-sectores)",
+      "fichero": "corpus/fase-3-sectores/monitorizacion-de-emisiones-en-petroleo-y-gas.html",
+      "doc": "monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "combinacion": "B-",
+      "marcadorBuilder": true,
+      "marcadorPlantilla": false,
+      "seccionesTbBody": {
+        "ocurrencias": 0,
+        "distintos": 0,
+        "invariante": "sin secciones _tb_body"
+      },
+      "seccionesPropias": 8,
+      "bytes": 321329,
+      "hojasEnlazadas": 7
+    }
+  ]
+}
