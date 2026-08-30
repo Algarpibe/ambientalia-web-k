@@ -1,10 +1,10 @@
 {
   "meta": {
-    "fecha": "2026-08-22",
+    "fecha": "2026-08-30",
     "fuente": "hojas CSS que el HTML del corpus enlaza (bytes servidos, sin re-codificar)",
     "derivacion": "los <link> de los HTML de corpus/ — inventario completo; se PIDE sólo la lista nombrada",
     "etiqueta": "secuencial · 500 ms entre peticiones · sha256 · reanudable",
-    "alcance": "corpus/fase-3/sueltas · 20 HTML"
+    "alcance": "corpus/productos/kunak-api.html · 1 HTML"
   },
   "resumen": {
     "htmlLeidos": 788,
@@ -17,8 +17,8 @@
       "themes": 1,
       "wp-includes": 2
     },
-    "capturadas": 108,
-    "sinCapturar": 399,
+    "capturadas": 118,
+    "sinCapturar": 389,
     "fallos": 0
   },
   "inventario": {
@@ -2115,17 +2115,17 @@
     "https://kunakair.com/wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481-late.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/26481/et-core-unified-26481.min.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/24268/et-divi-dynamic-tb-32430-tb-342-24268.css": {
       "familia": "et-cache",
@@ -2310,27 +2310,27 @@
     "https://kunakair.com/wp-content/et-cache/27049/et-divi-dynamic-tb-32430-tb-342-27049.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/27049/et-core-unified-27049.min.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768-late.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/768/et-core-unified-768.min.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/26643/et-divi-dynamic-tb-32430-tb-342-26643.css": {
       "familia": "et-cache",
@@ -2360,12 +2360,12 @@
     "https://kunakair.com/wp-content/et-cache/27164/et-divi-dynamic-tb-32430-tb-342-27164.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/27164/et-core-unified-27164.min.css": {
       "familia": "et-cache",
       "paginas": 1,
-      "capturada": false
+      "capturada": true
     },
     "https://kunakair.com/wp-content/et-cache/64036/et-divi-dynamic-tb-50120-tb-50121-tb-342-64036.css": {
       "familia": "et-cache",
@@ -3206,6 +3206,66 @@
       "bytes": 1541,
       "sha256": "f1cbaf3fb24904271bc1efb5b017bec1a49b2e65ae8201d75ea2948fd3ae1680",
       "fecha": "2026-08-22"
+    },
+    "wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768-late.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768-late.css?ver=1785224548",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/768/et-divi-dynamic-tb-32430-tb-342-768.css?ver=1785224548",
+      "bytes": 7320,
+      "sha256": "32159801300293db9210d20bb6341b4e0ae2ab3415b37f2149fe65770362e88c",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/768/et-core-unified-768.min.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/768/et-core-unified-768.min.css?ver=1785224550",
+      "bytes": 4865,
+      "sha256": "a65ee0e4950fd186671f225b08c0489e4abe149c1524e9a6c273c5175ef94f03",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481-late.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481-late.css?ver=1785224548",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/26481/et-divi-dynamic-tb-32430-tb-342-26481.css?ver=1785224548",
+      "bytes": 7311,
+      "sha256": "6e0365ce76d74fe6fd516e210854f78a037f2fd4236655f0ca517b8f38e03779",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/26481/et-core-unified-26481.min.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/26481/et-core-unified-26481.min.css?ver=1785224549",
+      "bytes": 4865,
+      "sha256": "a65ee0e4950fd186671f225b08c0489e4abe149c1524e9a6c273c5175ef94f03",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/27164/et-divi-dynamic-tb-32430-tb-342-27164.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/27164/et-divi-dynamic-tb-32430-tb-342-27164.css?ver=1785224504",
+      "bytes": 33164,
+      "sha256": "fe2fa0248aadc420f984a6fc6284cefd293efc455a836c76464fcfe0587f384c",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/27164/et-core-unified-27164.min.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/27164/et-core-unified-27164.min.css?ver=1785224504",
+      "bytes": 4865,
+      "sha256": "a65ee0e4950fd186671f225b08c0489e4abe149c1524e9a6c273c5175ef94f03",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/27049/et-divi-dynamic-tb-32430-tb-342-27049.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/27049/et-divi-dynamic-tb-32430-tb-342-27049.css?ver=1785231013",
+      "bytes": 33155,
+      "sha256": "13dd49288bc316c6fec148875dd1c12f4c582a50626d2cce66080d160dd3840d",
+      "fecha": "2026-08-30"
+    },
+    "wp-content/et-cache/27049/et-core-unified-27049.min.css": {
+      "url": "https://kunakair.com/wp-content/et-cache/27049/et-core-unified-27049.min.css?ver=1785231014",
+      "bytes": 4865,
+      "sha256": "a65ee0e4950fd186671f225b08c0489e4abe149c1524e9a6c273c5175ef94f03",
+      "fecha": "2026-08-30"
     }
   },
   "fallos": []
