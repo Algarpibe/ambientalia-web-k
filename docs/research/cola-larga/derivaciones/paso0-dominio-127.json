@@ -1,0 +1,602 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": 127,
+ "escalon": "PASO 0",
+ "pregunta": "¿reproducen las cifras de ayer, cuál es el techo de la tanda, y qué régimen tienen los documentos?",
+ "alcance": {
+  "docsFamilia": [
+   "monitor-calidad-aire.html",
+   "estacion-de-monitoreo-de-calidad-del-aire.html",
+   "sensor-de-calidad-del-aire.html"
+  ],
+  "docsLote": [
+   "monitor-calidad-aire.html",
+   "accesorios.html",
+   "software-de-medicion-calidad-del-aire.html",
+   "kunak-api.html"
+  ],
+  "modo": "OFFLINE (sin navegador, sin red)"
+ },
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "los 2 vecinos se DERIVAN del Jaccard congelado y RESUELVEN contra el corpus",
+   "detalle": "estacion-de-monitoreo-=0.8 -> estacion-de-monitoreo-de-calidad-del-aire.html · sensor-de-calidad-del-=0.7 -> sensor-de-calidad-del-aire.html"
+  },
+  {
+   "ok": true,
+   "nombre": "REPRODUCE el censo de la familia PRODUCTO (mismo instrumento: OFFLINE)",
+   "detalle": "hoy 21 · 18 · 3   ayer 21 · 18 · 3"
+  },
+  {
+   "ok": true,
+   "nombre": "el censo OFFLINE del lote DISCRIMINA (ni cero compartidos ni pleno)",
+   "detalle": "hoy(offline) 20 · 8 · 12   ayer(navegador+caja) 18 · 7 · 11   ¿al par? NO — criterio de recuento distinto, no dato"
+  },
+  {
+   "ok": true,
+   "nombre": "REPRODUCE el reparto de la 125.ª leído de su congelada (52 = 6 + 46)",
+   "detalle": "pares 52 · CAMPO 6 · SIN VARIANZA 46"
+  },
+  {
+   "ok": true,
+   "nombre": "HAY TECHO: pares de los 46 cuyo marcador está en >=2 documentos de la familia",
+   "detalle": "alcanzables 46 de 46 · fuera de alcance 0"
+  },
+  {
+   "ok": true,
+   "nombre": "el corte SIN ESCRIBIR / con valor DISCRIMINA (ni cero ni pleno)",
+   "detalle": "SIN ESCRIBIR 40 · con valor no-inicial 6 · suma 46 de 46"
+  },
+  {
+   "ok": true,
+   "nombre": "PRECONDICIÓN DE LECTURA: los 3 documentos de la familia son régimen BUILDER (`B-`/`BT`) — si no, el test se INVIERTE",
+   "detalle": "monitor-calidad-aire=B- · estacion-de-monitoreo-=B- · sensor-de-calidad-del-=B-"
+  }
+ ],
+ "reproduccion": {
+  "familia": {
+   "hoy": {
+    "total": 21,
+    "compartidos": 18,
+    "singleton": 3
+   },
+   "ayer": {
+    "total": 21,
+    "compartidos": 18,
+    "singleton": 3,
+    "instrumento": "OFFLINE (regex sobre el HTML) — 126.ª"
+   },
+   "reproduce": true
+  },
+  "lote": {
+   "hoyOffline": {
+    "total": 20,
+    "compartidos": 8,
+    "singleton": 12
+   },
+   "ayer": {
+    "total": 18,
+    "compartidos": 7,
+    "singleton": 11,
+    "instrumento": "NAVEGADOR con filtro CON CAJA — 125.ª"
+   },
+   "alPar": false,
+   "nota": "criterios de recuento distintos (caja vs HTML): los dos ciertos, ninguno corrige al otro"
+  }
+ },
+ "censoFamilia": {
+  "porDoc": {
+   "monitor-calidad-aire": [
+    "breadcrumbs",
+    "bucle-entradas",
+    "clear",
+    "clear-both",
+    "dark",
+    "dvmd_table_maker",
+    "dvmd_table_maker_0",
+    "dvmd_tm_version_4_0_1",
+    "galeria",
+    "iconos-certificicados",
+    "iconos-md-3",
+    "iconos-md-6",
+    "iconos-xs-2",
+    "kunak-faq-item",
+    "lista-resultados",
+    "menu-anclas",
+    "modulo-beneficios",
+    "parametros",
+    "popup"
+   ],
+   "estacion-de-monitoreo-": [
+    "breadcrumbs",
+    "bucle-entradas",
+    "clear",
+    "clear-both",
+    "dvmd_table_maker",
+    "dvmd_table_maker_0",
+    "dvmd_tm_version_4_0_1",
+    "galeria",
+    "iconos-certificicados",
+    "iconos-md-3",
+    "iconos-md-6",
+    "iconos-xs-2",
+    "kunak-faq-item",
+    "lista-resultados",
+    "menu-anclas",
+    "modulo-beneficios",
+    "parametros",
+    "popup"
+   ],
+   "sensor-de-calidad-del-": [
+    "breadcrumbs",
+    "bucle-entradas",
+    "clear-both",
+    "iconos-md-4",
+    "iconos-md-6",
+    "iconos-xs-2",
+    "kunak-faq-item",
+    "menu-anclas",
+    "modulo-beneficios",
+    "modulo-cartuchos",
+    "parametros"
+   ]
+  },
+  "compartidos": [
+   {
+    "marcador": "breadcrumbs",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "iconos-xs-2",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "iconos-md-6",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "parametros",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "clear-both",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "menu-anclas",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "modulo-beneficios",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "bucle-entradas",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "kunak-faq-item",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-",
+     "sensor-de-calidad-del-"
+    ]
+   },
+   {
+    "marcador": "iconos-md-3",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   },
+   {
+    "marcador": "dvmd_table_maker",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   },
+   {
+    "marcador": "dvmd_table_maker_0",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   },
+   {
+    "marcador": "dvmd_tm_version_4_0_1",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   },
+   {
+    "marcador": "iconos-certificicados",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   },
+   {
+    "marcador": "clear",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   },
+   {
+    "marcador": "galeria",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   },
+   {
+    "marcador": "lista-resultados",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   },
+   {
+    "marcador": "popup",
+    "docs": [
+     "monitor-calidad-aire",
+     "estacion-de-monitoreo-"
+    ]
+   }
+  ],
+  "singleton": [
+   "dark",
+   "iconos-md-4",
+   "modulo-cartuchos"
+  ]
+ },
+ "censoLoteOffline": {
+  "compartidos": [
+   {
+    "marcador": "breadcrumbs",
+    "docs": [
+     "PRODUCTO",
+     "CATALOGO",
+     "SOFTWARE",
+     "SOFTWARE-corta"
+    ]
+   },
+   {
+    "marcador": "bucle-entradas",
+    "docs": [
+     "PRODUCTO",
+     "CATALOGO",
+     "SOFTWARE",
+     "SOFTWARE-corta"
+    ]
+   },
+   {
+    "marcador": "kunak-faq-item",
+    "docs": [
+     "PRODUCTO",
+     "CATALOGO",
+     "SOFTWARE",
+     "SOFTWARE-corta"
+    ]
+   },
+   {
+    "marcador": "menu-anclas",
+    "docs": [
+     "PRODUCTO",
+     "CATALOGO",
+     "SOFTWARE"
+    ]
+   },
+   {
+    "marcador": "iconos-xs-2",
+    "docs": [
+     "PRODUCTO",
+     "SOFTWARE-corta"
+    ]
+   },
+   {
+    "marcador": "iconos-md-3",
+    "docs": [
+     "PRODUCTO",
+     "SOFTWARE-corta"
+    ]
+   },
+   {
+    "marcador": "modulo-beneficios",
+    "docs": [
+     "PRODUCTO",
+     "SOFTWARE"
+    ]
+   },
+   {
+    "marcador": "popup",
+    "docs": [
+     "PRODUCTO",
+     "SOFTWARE"
+    ]
+   }
+  ],
+  "singleton": [
+   "iconos-md-6",
+   "parametros",
+   "clear-both",
+   "dvmd_table_maker",
+   "dvmd_table_maker_0",
+   "dvmd_tm_version_4_0_1",
+   "iconos-certificicados",
+   "clear",
+   "galeria",
+   "lista-resultados",
+   "dark",
+   "iconos-md-2"
+  ]
+ },
+ "losCuarentaYSeis": {
+  "total": 46,
+  "alcanzables": 46,
+  "fueraDeAlcance": 0,
+  "sinEscribir": 40,
+  "conValor": 6,
+  "detalleConValor": [
+   {
+    "marcador": "modulo-beneficios",
+    "ancho": 1440,
+    "eje": "marginBottom",
+    "porDoc": {
+     "PRODUCTO": [
+      31.6719
+     ],
+     "SOFTWARE": [
+      31.6719
+     ]
+    }
+   },
+   {
+    "marcador": "modulo-beneficios",
+    "ancho": 390,
+    "eje": "marginBottom",
+    "porDoc": {
+     "PRODUCTO": [
+      30
+     ],
+     "SOFTWARE": [
+      30
+     ]
+    }
+   },
+   {
+    "marcador": "kunak-faq-item",
+    "ancho": 1440,
+    "eje": "paddingTop",
+    "porDoc": {
+     "PRODUCTO": [
+      17
+     ],
+     "CATALOGO": [
+      17
+     ],
+     "SOFTWARE": [
+      17
+     ],
+     "SOFTWARE-corta": [
+      17
+     ]
+    }
+   },
+   {
+    "marcador": "kunak-faq-item",
+    "ancho": 1440,
+    "eje": "paddingBottom",
+    "porDoc": {
+     "PRODUCTO": [
+      17
+     ],
+     "CATALOGO": [
+      17
+     ],
+     "SOFTWARE": [
+      17
+     ],
+     "SOFTWARE-corta": [
+      17
+     ]
+    }
+   },
+   {
+    "marcador": "kunak-faq-item",
+    "ancho": 390,
+    "eje": "paddingTop",
+    "porDoc": {
+     "PRODUCTO": [
+      17
+     ],
+     "CATALOGO": [
+      17
+     ],
+     "SOFTWARE": [
+      17
+     ],
+     "SOFTWARE-corta": [
+      17
+     ]
+    }
+   },
+   {
+    "marcador": "kunak-faq-item",
+    "ancho": 390,
+    "eje": "paddingBottom",
+    "porDoc": {
+     "PRODUCTO": [
+      17
+     ],
+     "CATALOGO": [
+      17
+     ],
+     "SOFTWARE": [
+      17
+     ],
+     "SOFTWARE-corta": [
+      17
+     ]
+    }
+   }
+  ],
+  "porMarcador": [
+   {
+    "marcador": "breadcrumbs",
+    "pares": 8,
+    "alcanzable": true,
+    "sinEscribir": 8
+   },
+   {
+    "marcador": "iconos-xs-2",
+    "pares": 6,
+    "alcanzable": true,
+    "sinEscribir": 6
+   },
+   {
+    "marcador": "iconos-md-3",
+    "pares": 6,
+    "alcanzable": true,
+    "sinEscribir": 6
+   },
+   {
+    "marcador": "menu-anclas",
+    "pares": 2,
+    "alcanzable": true,
+    "sinEscribir": 2
+   },
+   {
+    "marcador": "modulo-beneficios",
+    "pares": 8,
+    "alcanzable": true,
+    "sinEscribir": 6
+   },
+   {
+    "marcador": "bucle-entradas",
+    "pares": 8,
+    "alcanzable": true,
+    "sinEscribir": 8
+   },
+   {
+    "marcador": "kunak-faq-item",
+    "pares": 8,
+    "alcanzable": true,
+    "sinEscribir": 4
+   }
+  ]
+ },
+ "regimenes": {
+  "monitor-calidad-aire": {
+   "marcadorB": true,
+   "marcadorT": false,
+   "casillero": "B-",
+   "seccionesTbBody": {
+    "ocurrencias": 0,
+    "distintos": 0
+   },
+   "invarianteNumerado": "no-aplica",
+   "clasesBody": [
+    "wp-singular",
+    "solutions-template-default",
+    "single",
+    "single-solutions",
+    "postid-768",
+    "custom-background",
+    "wp-theme-Divi",
+    "wp-child-theme-KunakAir",
+    "et-tb-has-template",
+    "et-tb-has-header",
+    "et-tb-has-footer",
+    "es"
+   ]
+  },
+  "estacion-de-monitoreo-": {
+   "marcadorB": true,
+   "marcadorT": false,
+   "casillero": "B-",
+   "seccionesTbBody": {
+    "ocurrencias": 0,
+    "distintos": 0
+   },
+   "invarianteNumerado": "no-aplica",
+   "clasesBody": [
+    "wp-singular",
+    "solutions-template-default",
+    "single",
+    "single-solutions",
+    "postid-18251",
+    "custom-background",
+    "wp-theme-Divi",
+    "wp-child-theme-KunakAir",
+    "et-tb-has-template",
+    "et-tb-has-header",
+    "et-tb-has-footer",
+    "es"
+   ]
+  },
+  "sensor-de-calidad-del-": {
+   "marcadorB": true,
+   "marcadorT": false,
+   "casillero": "B-",
+   "seccionesTbBody": {
+    "ocurrencias": 0,
+    "distintos": 0
+   },
+   "invarianteNumerado": "no-aplica",
+   "clasesBody": [
+    "wp-singular",
+    "solutions-template-default",
+    "single",
+    "single-solutions",
+    "postid-772",
+    "custom-background",
+    "wp-theme-Divi",
+    "wp-child-theme-KunakAir",
+    "et-tb-has-template",
+    "et-tb-has-header",
+    "et-tb-has-footer",
+    "es"
+   ]
+  }
+ },
+ "noContesta": [
+  "NO mide varianza en la familia: eso es el ESCALON 1",
+  "NO dice si un eje es CAMPO o PLANTILLA — sólo cuántos pueden llegar a tener veredicto"
+ ]
+}

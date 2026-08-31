@@ -1,0 +1,78 @@
+=== CONTROLES ===
+  OK  los 2 vecinos se DERIVAN del Jaccard congelado y RESUELVEN contra el corpus
+      estacion-de-monitoreo-=0.8 -> estacion-de-monitoreo-de-calidad-del-aire.html · sensor-de-calidad-del-=0.7 -> sensor-de-calidad-del-aire.html
+  OK  REPRODUCE el censo de la familia PRODUCTO (mismo instrumento: OFFLINE)
+      hoy 21 · 18 · 3   ayer 21 · 18 · 3
+  OK  el censo OFFLINE del lote DISCRIMINA (ni cero compartidos ni pleno)
+      hoy(offline) 20 · 8 · 12   ayer(navegador+caja) 18 · 7 · 11   ¿al par? NO — criterio de recuento distinto, no dato
+  OK  REPRODUCE el reparto de la 125.ª leído de su congelada (52 = 6 + 46)
+      pares 52 · CAMPO 6 · SIN VARIANZA 46
+  OK  HAY TECHO: pares de los 46 cuyo marcador está en >=2 documentos de la familia
+      alcanzables 46 de 46 · fuera de alcance 0
+  OK  el corte SIN ESCRIBIR / con valor DISCRIMINA (ni cero ni pleno)
+      SIN ESCRIBIR 40 · con valor no-inicial 6 · suma 46 de 46
+  OK  PRECONDICIÓN DE LECTURA: los 3 documentos de la familia son régimen BUILDER (`B-`/`BT`) — si no, el test se INVIERTE
+      monitor-calidad-aire=B- · estacion-de-monitoreo-=B- · sensor-de-calidad-del-=B-
+
+=== 1 · LAS CIFRAS DE AYER, DERIVADAS HOY (§regla 9, también con las propias) ===
+  familia PRODUCTO  (offline, 3 docs)   hoy 21 · 18 en >=2 · 3 singleton
+                                        ayer 21 · 18 · 3   ⇒ REPRODUCE
+  lote 4 arquetipos (offline, 4 docs)   hoy 20 · 8 en >=2 · 12 singleton
+                    (navegador+caja)    ayer 18 · 7 · 11   ⇒ DISTINTO — y es de CRITERIO DE RECUENTO, no del dato
+  ⚠ los dos censos del lote son CIERTOS y cuentan cosas distintas: el de ayer exige CAJA (w>0 y h>0),
+    el de hoy lee el HTML. Se publican los dos con su criterio; ninguno corrige al otro.
+
+=== 2 · DOMINIO DE LA FAMILIA PRODUCTO ===
+  documentos: monitor-calidad-aire · estacion-de-monitoreo- · sensor-de-calidad-del-
+    3 doc(s)  breadcrumbs
+    3 doc(s)  iconos-xs-2
+    3 doc(s)  iconos-md-6
+    3 doc(s)  parametros
+    3 doc(s)  clear-both
+    3 doc(s)  menu-anclas
+    3 doc(s)  modulo-beneficios
+    3 doc(s)  bucle-entradas
+    3 doc(s)  kunak-faq-item
+    2 doc(s)  iconos-md-3
+    2 doc(s)  dvmd_table_maker
+    2 doc(s)  dvmd_table_maker_0
+    2 doc(s)  dvmd_tm_version_4_0_1
+    2 doc(s)  iconos-certificicados
+    2 doc(s)  clear
+    2 doc(s)  galeria
+    2 doc(s)  lista-resultados
+    2 doc(s)  popup
+  singleton (3): dark · iconos-md-4 · modulo-cartuchos
+
+=== 3 · EL TECHO — cuántos de los 46 pueden siquiera MOVERSE ===
+  alcanzables (su marcador está en >=2 docs de la familia): 46 de 46
+  fuera de alcance:                                          0 de 46
+    breadcrumbs           8 pares · ALCANZABLE · 8 SIN ESCRIBIR
+    iconos-xs-2           6 pares · ALCANZABLE · 6 SIN ESCRIBIR
+    iconos-md-3           6 pares · ALCANZABLE · 6 SIN ESCRIBIR
+    menu-anclas           2 pares · ALCANZABLE · 2 SIN ESCRIBIR
+    modulo-beneficios     8 pares · ALCANZABLE · 6 SIN ESCRIBIR
+    bucle-entradas        8 pares · ALCANZABLE · 8 SIN ESCRIBIR
+    kunak-faq-item        8 pares · ALCANZABLE · 4 SIN ESCRIBIR
+
+=== 4 · LOS 46, PARTIDOS POR LA PREMISA CALLADA DEL TEST A ===
+  SIN ESCRIBIR (único valor observado = 0, el inicial):  40 de 46
+  con valor no-inicial y sin varianza:                   6 de 46
+    · modulo-beneficios @1440 marginBottom → {"PRODUCTO":[31.6719],"SOFTWARE":[31.6719]}
+    · modulo-beneficios @390 marginBottom → {"PRODUCTO":[30],"SOFTWARE":[30]}
+    · kunak-faq-item @1440 paddingTop → {"PRODUCTO":[17],"CATALOGO":[17],"SOFTWARE":[17],"SOFTWARE-corta":[17]}
+    · kunak-faq-item @1440 paddingBottom → {"PRODUCTO":[17],"CATALOGO":[17],"SOFTWARE":[17],"SOFTWARE-corta":[17]}
+    · kunak-faq-item @390 paddingTop → {"PRODUCTO":[17],"CATALOGO":[17],"SOFTWARE":[17],"SOFTWARE-corta":[17]}
+    · kunak-faq-item @390 paddingBottom → {"PRODUCTO":[17],"CATALOGO":[17],"SOFTWARE":[17],"SOFTWARE-corta":[17]}
+
+=== 5 · RÉGIMEN (precondición: en `B-` la varianza la escribió el editor; en `-T`/`--` NO existe ese editor) ===
+  monitor-calidad-aire       casillero B-  ·  secciones _tb_body 0 occ / 0 dis  ·  no-aplica
+  estacion-de-monitoreo-     casillero B-  ·  secciones _tb_body 0 occ / 0 dis  ·  no-aplica
+  sensor-de-calidad-del-     casillero B-  ·  secciones _tb_body 0 occ / 0 dis  ·  no-aplica
+
+=== VEREDICTO DEL PASO 0 ===
+  · las cifras de la familia REPRODUCEN: SÍ (21 · 18 · 3)
+  · el lote NO se cruza al par y no debe: dos criterios de recuento, los dos publicados
+  · techo de la tanda: 46 de los 46 pares son alcanzables por el dominio nuevo
+  · de los 46, 40 son SIN ESCRIBIR — sin declaración no hay cascada a la que preguntar
+  · régimen: los 3 son BUILDER, la lectura del test NO se invierte
