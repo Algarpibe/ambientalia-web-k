@@ -1,0 +1,252 @@
+{
+  "fecha": "2026-08-31",
+  "tanda": 125,
+  "escalon": 1,
+  "alcance": {
+    "docs": [
+      "monitor-calidad-aire.html",
+      "accesorios.html",
+      "software-de-medicion-calidad-del-aire.html",
+      "kunak-api.html"
+    ],
+    "nota": "propiedad de estos 4 documentos, no del sitio"
+  },
+  "controles": [
+    {
+      "ok": true,
+      "nombre": "se censo algo (hay .et_pb_module en el cuerpo)",
+      "detalle": "311 modulos"
+    },
+    {
+      "ok": true,
+      "nombre": "el censo alcanza LOS 4 documentos (ni cero ni pleno de uno)",
+      "detalle": "PRODUCTO=110 · CATALOGO=55 · SOFTWARE=90 · SOFTWARE-corta=56"
+    },
+    {
+      "ok": true,
+      "nombre": "CONTROL: el descuento de cascaron MUERDE",
+      "detalle": "crudo(menciones)=316 > cuerpo=110"
+    },
+    {
+      "ok": true,
+      "nombre": "las 4 rutas de la congelada cruzan con el censo",
+      "detalle": "PRODUCTO · CATALOGO · SOFTWARE · SOFTWARE-corta"
+    },
+    {
+      "ok": true,
+      "nombre": "el cierre de componentes DISCRIMINA (ni cero ni todos)",
+      "detalle": "35 de 97 .tsx de components/"
+    }
+  ],
+  "q1": {
+    "PRODUCTO": {
+      "total": 110,
+      "primerNivel": 90,
+      "anidados": 20,
+      "porProfundidad": {
+        "0": 90,
+        "1": 20
+      },
+      "hijoDirectoDeColumna": 89,
+      "sinColumna": 1,
+      "sinOrdinal": 34,
+      "tiposAnidados": [
+        "et_pb_posts",
+        "et_pb_toggle"
+      ]
+    },
+    "CATALOGO": {
+      "total": 55,
+      "primerNivel": 35,
+      "anidados": 20,
+      "porProfundidad": {
+        "0": 35,
+        "1": 20
+      },
+      "hijoDirectoDeColumna": 35,
+      "sinColumna": 0,
+      "sinOrdinal": 22,
+      "tiposAnidados": [
+        "et_pb_posts",
+        "et_pb_toggle"
+      ]
+    },
+    "SOFTWARE": {
+      "total": 90,
+      "primerNivel": 70,
+      "anidados": 20,
+      "porProfundidad": {
+        "0": 70,
+        "1": 20
+      },
+      "hijoDirectoDeColumna": 69,
+      "sinColumna": 1,
+      "sinOrdinal": 27,
+      "tiposAnidados": [
+        "et_pb_posts",
+        "et_pb_toggle"
+      ]
+    },
+    "SOFTWARE-corta": {
+      "total": 56,
+      "primerNivel": 36,
+      "anidados": 20,
+      "porProfundidad": {
+        "0": 36,
+        "1": 20
+      },
+      "hijoDirectoDeColumna": 35,
+      "sinColumna": 1,
+      "sinOrdinal": 22,
+      "tiposAnidados": [
+        "et_pb_posts",
+        "et_pb_toggle"
+      ]
+    }
+  },
+  "q1b": {
+    "PRODUCTO": {
+      "sumaOrigCongelada": 83,
+      "censoTotal": 110,
+      "censoPrimerNivel": 90,
+      "delta": -27
+    },
+    "CATALOGO": {
+      "sumaOrigCongelada": 33,
+      "censoTotal": 55,
+      "censoPrimerNivel": 35,
+      "delta": -22
+    },
+    "SOFTWARE": {
+      "sumaOrigCongelada": 66,
+      "censoTotal": 90,
+      "censoPrimerNivel": 70,
+      "delta": -24
+    },
+    "SOFTWARE-corta": {
+      "sumaOrigCongelada": 33,
+      "censoTotal": 56,
+      "censoPrimerNivel": 36,
+      "delta": -23
+    }
+  },
+  "q2": {
+    "porArquetipo": {
+      "PRODUCTO": [
+        "components/HeaderNav.tsx",
+        "components/BandaCabecera.tsx",
+        "components/Footer.tsx",
+        "components/ScrollToTop.tsx",
+        "components/CtaBanner.tsx",
+        "components/UltimosProyectos.tsx",
+        "components/UltimosArticulos.tsx",
+        "components/monitor/Aplicaciones.tsx",
+        "components/SectoresCarousel.tsx",
+        "components/SectionRow.tsx",
+        "components/monitor/PaquetesEnergia.tsx",
+        "components/ListaContenido.tsx",
+        "components/monitor/HeroProducto.tsx",
+        "components/Breadcrumb.tsx",
+        "components/Product360Viewer.tsx",
+        "components/VideoLightbox.tsx",
+        "components/monitor/InformacionProducto.tsx",
+        "components/monitor/SubNavAnclas.tsx",
+        "components/AnchorNav.tsx",
+        "components/monitor/Beneficios.tsx",
+        "components/monitor/Especificaciones.tsx",
+        "components/monitor/GaleriaEnsayos.tsx",
+        "components/monitor/Software.tsx",
+        "components/monitor/SondasMeteorologicas.tsx",
+        "components/monitor/FaqAcordeon.tsx"
+      ],
+      "CATALOGO": [
+        "components/HeaderNav.tsx",
+        "components/BandaCabecera.tsx",
+        "components/Breadcrumb.tsx",
+        "components/Footer.tsx",
+        "components/ScrollToTop.tsx",
+        "components/UltimosArticulos.tsx",
+        "components/monitor/FaqAcordeon.tsx",
+        "components/SectionRow.tsx",
+        "components/AnchorNav.tsx",
+        "components/AccesorioCard.tsx"
+      ],
+      "SOFTWARE": [
+        "components/HeaderNav.tsx",
+        "components/BandaCabecera.tsx",
+        "components/Breadcrumb.tsx",
+        "components/Footer.tsx",
+        "components/ScrollToTop.tsx",
+        "components/CtaBanner.tsx",
+        "components/UltimosArticulos.tsx",
+        "components/UltimosProyectos.tsx",
+        "components/monitor/FaqAcordeon.tsx",
+        "components/SectionRow.tsx",
+        "components/AnchorNav.tsx",
+        "components/software/HeroSoftware.tsx",
+        "components/software/InfoProductoSoftware.tsx",
+        "components/BlurbsIconos.tsx",
+        "components/VideoLightbox.tsx",
+        "components/software/CarruselCapturas.tsx",
+        "components/software/ListaBeneficios.tsx",
+        "components/software/RejillaHerramientas.tsx"
+      ],
+      "SOFTWARE-corta": [
+        "components/HeaderNav.tsx",
+        "components/BandaCabecera.tsx",
+        "components/Breadcrumb.tsx",
+        "components/Footer.tsx",
+        "components/ScrollToTop.tsx",
+        "components/CtaBanner.tsx",
+        "components/UltimosArticulos.tsx",
+        "components/monitor/FaqAcordeon.tsx",
+        "components/SectionRow.tsx",
+        "components/api/HeroApi.tsx",
+        "components/api/InfoProductoApi.tsx",
+        "components/BlurbsIconos.tsx",
+        "components/api/BeneficiosApi.tsx"
+      ]
+    },
+    "union": [
+      "components/HeaderNav.tsx",
+      "components/BandaCabecera.tsx",
+      "components/Footer.tsx",
+      "components/ScrollToTop.tsx",
+      "components/CtaBanner.tsx",
+      "components/UltimosProyectos.tsx",
+      "components/UltimosArticulos.tsx",
+      "components/monitor/Aplicaciones.tsx",
+      "components/SectoresCarousel.tsx",
+      "components/SectionRow.tsx",
+      "components/monitor/PaquetesEnergia.tsx",
+      "components/ListaContenido.tsx",
+      "components/monitor/HeroProducto.tsx",
+      "components/Breadcrumb.tsx",
+      "components/Product360Viewer.tsx",
+      "components/VideoLightbox.tsx",
+      "components/monitor/InformacionProducto.tsx",
+      "components/monitor/SubNavAnclas.tsx",
+      "components/AnchorNav.tsx",
+      "components/monitor/Beneficios.tsx",
+      "components/monitor/Especificaciones.tsx",
+      "components/monitor/GaleriaEnsayos.tsx",
+      "components/monitor/Software.tsx",
+      "components/monitor/SondasMeteorologicas.tsx",
+      "components/monitor/FaqAcordeon.tsx",
+      "components/AccesorioCard.tsx",
+      "components/software/HeroSoftware.tsx",
+      "components/software/InfoProductoSoftware.tsx",
+      "components/BlurbsIconos.tsx",
+      "components/software/CarruselCapturas.tsx",
+      "components/software/ListaBeneficios.tsx",
+      "components/software/RejillaHerramientas.tsx",
+      "components/api/HeroApi.tsx",
+      "components/api/InfoProductoApi.tsx",
+      "components/api/BeneficiosApi.tsx"
+    ],
+    "totalFicherosComponents": 97
+  },
+  "q3": {
+    "todosHijoDirectoDeColumna": false
+  }
+}

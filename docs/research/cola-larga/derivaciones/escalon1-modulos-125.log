@@ -1,0 +1,48 @@
+=== CONTROLES ===
+  OK  se censo algo (hay .et_pb_module en el cuerpo)
+      311 modulos
+  OK  el censo alcanza LOS 4 documentos (ni cero ni pleno de uno)
+      PRODUCTO=110 · CATALOGO=55 · SOFTWARE=90 · SOFTWARE-corta=56
+  OK  CONTROL: el descuento de cascaron MUERDE
+      crudo(menciones)=316 > cuerpo=110
+  OK  las 4 rutas de la congelada cruzan con el censo
+      PRODUCTO · CATALOGO · SOFTWARE · SOFTWARE-corta
+  OK  el cierre de componentes DISCRIMINA (ni cero ni todos)
+      35 de 97 .tsx de components/
+
+=== Q1 · ¿QUE ES «UN MODULO»? (cuerpo, cascaron descontado) ===
+  PRODUCTO        total=110  1er-nivel= 90  ANIDADOS= 20
+      profundidades: {"0":90,"1":20}
+      hijo directo de columna: 89/110 · sin columna: 1 · sin ordinal: 34
+      tipos que anidan: et_pb_posts · et_pb_toggle
+  CATALOGO        total= 55  1er-nivel= 35  ANIDADOS= 20
+      profundidades: {"0":35,"1":20}
+      hijo directo de columna: 35/55 · sin columna: 0 · sin ordinal: 22
+      tipos que anidan: et_pb_posts · et_pb_toggle
+  SOFTWARE        total= 90  1er-nivel= 70  ANIDADOS= 20
+      profundidades: {"0":70,"1":20}
+      hijo directo de columna: 69/90 · sin columna: 1 · sin ordinal: 27
+      tipos que anidan: et_pb_posts · et_pb_toggle
+  SOFTWARE-corta  total= 56  1er-nivel= 36  ANIDADOS= 20
+      profundidades: {"0":36,"1":20}
+      hijo directo de columna: 35/56 · sin columna: 1 · sin ordinal: 22
+      tipos que anidan: et_pb_posts · et_pb_toggle
+
+  TOTAL 4 docs: 311 modulos, de los que ANIDADOS = 80 (25.7 %)
+
+=== Q1b · CRUCE con `productos-cmp-1440.json` (§sondas 4: otra medida del mismo objeto) ===
+  PRODUCTO        congelada(suma orig)= 83  censo(total)=110  Δ=-27   censo(1er nivel)=90
+  CATALOGO        congelada(suma orig)= 33  censo(total)= 55  Δ=-22   censo(1er nivel)=35
+  SOFTWARE        congelada(suma orig)= 66  censo(total)= 90  Δ=-24   censo(1er nivel)=70
+  SOFTWARE-corta  congelada(suma orig)= 33  censo(total)= 56  Δ=-23   censo(1er nivel)=36
+
+=== Q2 · COSTE de emitir `data-modulo` — componentes alcanzados ===
+  PRODUCTO        25 componentes
+  CATALOGO        10 componentes
+  SOFTWARE        18 componentes
+  SOFTWARE-corta  13 componentes
+  UNION de los 4: 35 ficheros, de 97 .tsx en components/
+
+=== Q3 · ¿VIA SIN MARCADOR? ===
+  ¿todos los modulos son hijo DIRECTO de su columna? NO
+  ⇒ NO: hay modulos a otra profundidad, asi que ningun selector estructural del clon los denota sin marcador

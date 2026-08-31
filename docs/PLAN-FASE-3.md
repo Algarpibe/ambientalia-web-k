@@ -1580,6 +1580,86 @@ ya cabe como `pct`), pero inflarían cualquier lectura de «cuánto porcentaje h
 Instrumento: `derivaciones/paso0-125.{mjs,json,log}`, **9 controles en verde**,
 incluido el negativo del papel del selector.
 
+### 🔻 ESCALÓN 1 de la 125.ª (2026-08-30) · el eje `módulos` sigue SIN COMPARAR, y ahora se sabe POR QUÉ y A QUÉ COSTE
+
+El acta de la 123.ª dice que cerrarlo *«pide emitir `data-modulo` en los
+componentes, que es trabajo de otra tanda»*. Eso es **una** vía, y §regla 9
+(8.º caso) manda **derivar el conjunto antes de elegir**, con el número
+delante. Derivado —offline, sin clon servido:
+`derivaciones/escalon1-modulos-125.{mjs,json,log}`, **5 controles en verde**,
+incluido el negativo del descuento de cascarón (crudo 316 → cuerpo 110).
+
+**LO PRIMERO, Y NO ESTABA PLANTEADO: «UN MÓDULO» TIENE TRES CARDINALES CIERTOS
+POR DOCUMENTO, Y LA CONGELADA PUBLICA UN CUARTO.**
+
+`.et_pb_module` casa **a cualquier profundidad**, así que un acordeón cuenta él
+y sus toggles. Censado el cuerpo de los 4 (cascarón descontado):
+
+| criterio | PRODUCTO | CATÁLOGO | SOFTWARE | S-corta |
+|---|---|---|---|---|
+| **todos** los `.et_pb_module` del cuerpo (en el DOM) | **110** | **55** | **90** | **56** |
+| de **primer nivel** (sin módulo por encima) | **90** | **35** | **70** | **36** |
+| lo que `productos-cmp` suma en `orig` (con caja + `slice(0,60)`) | **83** | **33** | **66** | **33** |
+
+**Los tres son ciertos y ninguno es «el» número.** Es §*un censo de NODOS y un
+censo de LO QUE SE VE son dos medidas distintas* más §*un cardinal es un
+contenedor*, las dos a la vez — y la consecuencia es operativa: **una tanda que
+emita `data-modulo` sin fijar antes el criterio compararía contra un cardinal
+inflado y leería la diferencia como defecto del clon.**
+
+**Y EL ANIDAMIENTO TIENE MECANISMO, QUE ES LO QUE LO CONVIERTE EN DATO:**
+**20 anidados, EXACTOS EN LOS CUATRO documentos.** Un número idéntico en cuatro
+documentos distintos es la firma de §*un 100 % redondo: la primera hipótesis es
+el instrumento* — así que se persiguió, y no lo era. El desglose es
+**`et_pb_toggle` 19 + `et_pb_posts` 1** en los cuatro, o sea **el acordeón de
+FAQs compartido**, que este repo ya tenía medido por otro instrumento:
+`research/accesorios/PAGE_TOPOLOGY.md` §3 dice **19 toggles idénticos 19/19 a
+`FAQ_ITEMS` de `src/lib/monitor.ts`**. Cruce al elemento, no al cardinal.
+
+> **Y eso ata el PASO 0 de esta misma tanda:** el acordeón compartido es
+> exactamente **por qué** `/accesorios` y `/kunak-api` alcanzan `lib/monitor`
+> **transitivamente** sin importarlo en directo. Las dos derivaciones se
+> explican la una a la otra.
+>
+> **Consecuencia de modelo, que hay que decidir antes de emitir nada:** los
+> **80 anidados de 311 (25.7 %)** no son módulos de maquetación de la página —
+> son **hijos de un módulo compuesto**. Marcar los 19 toggles como «módulo»
+> mediría el interior del acordeón; marcar sólo el acordeón mediría la página.
+> Son dos content types distintos, y hoy la decisión no está tomada.
+
+**EL COSTE, DERIVADO Y NO ESTIMADO (Q2):** emitir el marcador toca el cierre
+transitivo de componentes de las 4 rutas — **35 ficheros de los 97** de
+`src/components` (PRODUCTO 25 · CATÁLOGO 10 · SOFTWARE 18 · S-corta 13). O sea
+que toca `src/`, y por tanto **exige build y clon servido para adjudicar el
+NO-OP** (§regla 5ter): con Docker caído no hay ni una cosa ni la otra.
+
+**Y NO HAY VÍA SIN MARCADOR (Q3), medido en vez de supuesto:** los módulos **no
+son todos hijo directo de su columna** —89/110 · 35/55 · 69/90 · 35/56—, así
+que **ningún selector estructural del clon denota el mismo conjunto**. La vía
+del marcador no es una preferencia: es la única que queda.
+
+**VEREDICTO DEL ESCALÓN, con lo que NO hace y por qué:**
+
+> **El eje se queda en `·` — SIN COMPARAR, que no es «a 0»** (§regla 14: la
+> limitación va con su cardinal). **No se amplió el comparador, y no por falta
+> de tiempo: por dos bloqueos derivados**, uno de entorno (35 componentes → build
+> → Docker caído) y **uno de modelo, que es el que esta tanda destapa** — el
+> criterio de «qué cuenta como un módulo» no está fijado, y ampliarlo sin
+> fijarlo escribiría el criterio por accidente, en el marcador.
+
+**Tampoco se tocó `productos-cmp.mjs`.** Modificar una sonda que hoy **no se
+puede correr** —necesita `httpClon` y no hay clon— es escribir un cambio sin su
+paso 2 (§*el marcador prueba que el build es nuevo, no que el cambio tenga
+efecto*). Lo que la tanda siguiente necesita queda **derivado y congelado**, no
+a medio aplicar en el instrumento.
+
+> ⚠ **Punto 4 del encargo, comprobado y NEGATIVO:** el `nModulos: orig 2 →
+> clon 0` que una vez destapó 6 páginas servidas vacías **no se da aquí** — el
+> clon devuelve 1–3 hijos directos por fila, y el eje `w` cuadra **exacto en las
+> 4**, que es el control que dice que los dos lados denotan la misma fila. Lo
+> que hay no es un cero: son **dos conjuntos distintos** (módulos contra
+> columnas), y por eso se excluye en vez de contarse.
+
 ## El orden, y por qué
 
 | # | por qué va aquí |
