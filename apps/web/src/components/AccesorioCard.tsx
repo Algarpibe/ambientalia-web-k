@@ -16,7 +16,12 @@ import type { Accesorio } from "@/lib/accesorios";
  */
 export function AccesorioCard({ item }: { item: Accesorio }) {
   return (
+    /* MARCADOR DE SONDA (130.ª) — ATRIBUTO sobre el div raíz, que ya existe: el
+       original sirve cada ficha como UN `.et_pb_text` (`et_pb_text_9..11` en la
+       fila de alimentación, `_14..21` en la de sondas), no como varios módulos.
+       Lo consume `productos-cmp` (`[data-modulo]`). */
     <div
+      data-modulo="text"
       id={item.slug}
       // scroll-mt: el original aterriza el bloque a 80px del viewport al saltar
       // por ancla (BEHAVIORS §5); AnchorNav ya descuenta ese offset, esto cubre

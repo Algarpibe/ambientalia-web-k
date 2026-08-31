@@ -1,0 +1,238 @@
+═══════ @1440 · EJES EXCLUIDOS Y NO COMPARADOS (van ANTES del titular) ═══════
+  /monitor-calidad-aire                    filas: huérfanas 1 · SIN MARCADOR 5 · PARCIALES 1
+      módulos NO comparados: 48 por falta de marcador · 35 por recuento descuadrado
+      · fila 3: orig 35 → clon 4 — el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)
+  /accesorios                              filas: huérfanas 1 · SIN MARCADOR 6 · PARCIALES 2
+      módulos NO comparados: 15 por falta de marcador · 18 por recuento descuadrado
+      · fila 4: orig 7 → clon 1 — el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)
+      · fila 5: orig 11 → clon 1 — el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)
+  /software-de-medicion-calidad-del-aire   filas: huérfanas 1 · SIN MARCADOR 4 · PARCIALES 1
+      módulos NO comparados: 13 por falta de marcador · 19 por recuento descuadrado
+      · fila 2: orig 19 → clon 6 — el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)
+  /kunak-api                               filas: huérfanas 1 · SIN MARCADOR 3 · PARCIALES 0
+      módulos NO comparados: 6 por falta de marcador · 0 por recuento descuadrado
+  ⇒ TOTAL fuera del recuento: 18 filas sin marcador · 4 parciales · 154 módulos del original no comparados
+
+  ── ⚠ y APARTE: el desalineamiento de la ÚLTIMA fila, que NO es defecto del clon ──
+     /monitor-calidad-aire                    fila 5 h: orig 146 → clon 1375.81 @1440  Δ+1229.81
+     /accesorios                              fila 7 h: orig 146 → clon 1375.81 @1440  Δ+1229.81
+     /software-de-medicion-calidad-del-aire   fila 5 h: orig 146 → clon 1425.81 @1440  Δ+1279.81
+     /kunak-api                               fila 5 h: orig 146 → clon 1425.81 @1440  Δ+1279.81
+     ⇒ 4 de 4 rutas, y las 4 con el MISMO `orig` (146): el original sirve una fila propia para el botón
+       «Amplia tus conocimientos con nuestras guías» que el clon no marca con `data-fila`, así que el
+       índice desliza y la FAQ del clon se empareja con ese botón. 4 de 4 = el instrumento, no el clon.
+
+═══════ @1440 · LÍNEA BASE del eje MÓDULOS — |clon − original| PAR A PAR ═══════
+  /software-de-medicion-calidad-del-aire   f3 m15 blurb   h    orig   179.78 → clon   423.53 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m16 blurb   h    orig   179.78 → clon   423.53 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m17 blurb   h    orig   149.19 → clon   392.94 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m18 blurb   h    orig   149.19 → clon   392.94 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m19 blurb   h    orig   149.19 → clon   392.94 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m20 blurb   h    orig   149.19 → clon   392.94 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m21 blurb   h    orig   179.78 → clon   423.53 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m22 blurb   h    orig   179.78 → clon   423.53 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m23 blurb   h    orig   179.78 → clon   423.53 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m24 blurb   h    orig   179.78 → clon   423.53 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m25 blurb   h    orig   210.38 → clon   454.13 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m26 blurb   h    orig   210.38 → clon   454.13 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m29 blurb   h    orig   179.78 → clon   423.53 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m30 blurb   h    orig   179.78 → clon   423.53 @1440  Δ+243.75
+  /software-de-medicion-calidad-del-aire   f3 m32 text    h    orig   430.86 → clon    366.5 @1440  Δ-64.36
+  /software-de-medicion-calidad-del-aire   f3 m 4 text    h    orig       79 → clon       47 @1440  Δ-32
+  /software-de-medicion-calidad-del-aire   f3 m14 text    h    orig       79 → clon       47 @1440  Δ-32
+  /software-de-medicion-calidad-del-aire   f3 m31 text    h    orig       79 → clon       47 @1440  Δ-32
+  /software-de-medicion-calidad-del-aire   f3 m 0 image   mb   orig    31.67 → clon        0 @1440  Δ-31.67
+  /kunak-api                               f1 m 0 image   mb   orig    31.67 → clon        0 @1440  Δ-31.67
+  /kunak-api                               f1 m 1 text    mb   orig    31.67 → clon        0 @1440  Δ-31.67
+  /kunak-api                               f2 m 0 image   mb   orig    31.67 → clon        0 @1440  Δ-31.67
+  /kunak-api                               f3 m 0 image   mb   orig    31.67 → clon        0 @1440  Δ-31.67
+  /software-de-medicion-calidad-del-aire   f3 m 2 —       h    orig     99.5 → clon     69.5 @1440  Δ-30
+  /software-de-medicion-calidad-del-aire   f3 m 3 —       h    orig       74 → clon       44 @1440  Δ-30
+  /software-de-medicion-calidad-del-aire   f3 m33 —       mb   orig        0 → clon       30 @1440  Δ+30
+  /kunak-api                               f1 m 4 —       h    orig       74 → clon       44 @1440  Δ-30
+  /kunak-api                               f1 m 4 —       mb   orig       60 → clon       90 @1440  Δ+30
+  /kunak-api                               f2 m11 blurb   mb   orig        0 → clon    27.82 @1440  Δ+27.82
+  /kunak-api                               f3 m 8 blurb   mb   orig        0 → clon    27.82 @1440  Δ+27.82
+  /kunak-api                               f3 m 3 blurb   h    orig   107.59 → clon   129.19 @1440  Δ+21.6
+  /kunak-api                               f3 m 6 blurb   h    orig   107.59 → clon   129.19 @1440  Δ+21.6
+  /kunak-api                               f3 m 7 blurb   h    orig   107.59 → clon   129.19 @1440  Δ+21.6
+  /kunak-api                               f2 m 2 text    mb   orig       -1 → clon       19 @1440  Δ+20
+  /software-de-medicion-calidad-del-aire   f3 m 2 —       mb   orig     14.4 → clon        0 @1440  Δ-14.4
+  /kunak-api                               f2 m 5 text    mb   orig    31.67 → clon       20 @1440  Δ-11.67
+  /kunak-api                               f1 m 1 text    h    orig   126.88 → clon      116 @1440  Δ-10.88
+  /kunak-api                               f1 m 1 text    pb   orig    10.88 → clon        0 @1440  Δ-10.88
+  /software-de-medicion-calidad-del-aire   f3 m 4 text    pb   orig        0 → clon       10 @1440  Δ+10
+  /software-de-medicion-calidad-del-aire   f3 m14 text    pb   orig        0 → clon       10 @1440  Δ+10
+  /software-de-medicion-calidad-del-aire   f3 m31 text    pb   orig        0 → clon       10 @1440  Δ+10
+  /kunak-api                               f1 m 2 text    pb   orig        0 → clon       10 @1440  Δ+10
+  /kunak-api                               f2 m 1 text    pb   orig        0 → clon       10 @1440  Δ+10
+  /kunak-api                               f2 m 3 text    pb   orig        0 → clon       10 @1440  Δ+10
+  /kunak-api                               f3 m 1 text    pb   orig        0 → clon       10 @1440  Δ+10
+  /kunak-api                               f2 m 5 text    h    orig    30.59 → clon    38.41 @1440  Δ+7.82
+  /kunak-api                               f2 m 5 text    pb   orig        0 → clon     7.82 @1440  Δ+7.82
+  /software-de-medicion-calidad-del-aire   f3 m 4 text    mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m 5 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m 6 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m 7 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m 8 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m 9 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m10 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m11 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m12 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m13 blurb   mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /software-de-medicion-calidad-del-aire   f3 m14 text    mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /kunak-api                               f1 m 3 text    mb   orig    31.67 → clon    27.81 @1440  Δ-3.86
+  /kunak-api                               f2 m 6 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f2 m 7 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f2 m 8 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f2 m 9 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f2 m10 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f3 m 3 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f3 m 4 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f3 m 5 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f3 m 6 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /kunak-api                               f3 m 7 blurb   mb   orig    31.67 → clon    27.82 @1440  Δ-3.85
+  /software-de-medicion-calidad-del-aire   f3 m31 text    mb   orig    31.67 → clon       28 @1440  Δ-3.67
+  /software-de-medicion-calidad-del-aire   f3 m 1 text    h    orig      156 → clon      155 @1440  Δ-1
+  ⇒ 71 pares con distancia ≠ 0 · Σ|clon−orig| = 4244.61 px  (unidad: el PAR módulo×eje)
+  reparto por eje: h 27 pares / 3747.36 px · mb 35 pares / 408.55 px · pb 9 pares / 88.7 px
+  reparto por ruta: /software-de-medicion-calidad-del-aire 39/3786.06px · /kunak-api 32/458.55px
+
+═══════ @390 · EJES EXCLUIDOS Y NO COMPARADOS (van ANTES del titular) ═══════
+  /monitor-calidad-aire                    filas: huérfanas 1 · SIN MARCADOR 5 · PARCIALES 1
+      módulos NO comparados: 47 por falta de marcador · 34 por recuento descuadrado
+      · fila 3: orig 34 → clon 3 — el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)
+  /accesorios                              filas: huérfanas 1 · SIN MARCADOR 8 · PARCIALES 0
+      módulos NO comparados: 31 por falta de marcador · 0 por recuento descuadrado
+  /software-de-medicion-calidad-del-aire   filas: huérfanas 1 · SIN MARCADOR 4 · PARCIALES 1
+      módulos NO comparados: 13 por falta de marcador · 18 por recuento descuadrado
+      · fila 2: orig 18 → clon 6 — el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)
+  /kunak-api                               filas: huérfanas 1 · SIN MARCADOR 3 · PARCIALES 0
+      módulos NO comparados: 6 por falta de marcador · 0 por recuento descuadrado
+  ⇒ TOTAL fuera del recuento: 20 filas sin marcador · 2 parciales · 149 módulos del original no comparados
+
+  ── ⚠ y APARTE: el desalineamiento de la ÚLTIMA fila, que NO es defecto del clon ──
+     /monitor-calidad-aire                    fila 5 h: orig 119 → clon 1969.13 @390  Δ+1850.13
+     /accesorios                              fila 7 h: orig 119 → clon 1917.13 @390  Δ+1798.13
+     /software-de-medicion-calidad-del-aire   fila 5 h: orig 99 → clon 2021.63 @390  Δ+1922.63
+     /kunak-api                               fila 5 h: orig 99 → clon 2021.63 @390  Δ+1922.63
+     ⇒ 4 de 4 rutas, y las 4 con el MISMO `orig` (119 · 99): el original sirve una fila propia para el botón
+       «Amplia tus conocimientos con nuestras guías» que el clon no marca con `data-fila`, así que el
+       índice desliza y la FAQ del clon se empareja con ese botón. 4 de 4 = el instrumento, no el clon.
+
+═══════ @390 · LÍNEA BASE del eje MÓDULOS — |clon − original| PAR A PAR ═══════
+  /software-de-medicion-calidad-del-aire   f3 m14 blurb   h    orig   210.38 → clon   396.38 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m15 blurb   h    orig   179.78 → clon   365.78 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m16 blurb   h    orig   179.78 → clon   365.78 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m17 blurb   h    orig   179.78 → clon   365.78 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m18 blurb   h    orig   179.78 → clon   365.78 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m19 blurb   h    orig   149.19 → clon   335.19 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m20 blurb   h    orig   210.38 → clon   396.38 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m21 blurb   h    orig   210.38 → clon   396.38 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m22 blurb   h    orig   210.38 → clon   396.38 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m23 blurb   h    orig   210.38 → clon   396.38 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m24 blurb   h    orig   240.97 → clon   426.97 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m25 blurb   h    orig   179.78 → clon   365.78 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m26 blurb   h    orig   179.78 → clon   365.78 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m28 blurb   h    orig   210.38 → clon   396.38 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m29 blurb   h    orig   210.38 → clon   396.38 @390  Δ+186
+  /software-de-medicion-calidad-del-aire   f3 m31 text    h    orig  1218.83 → clon  1140.02 @390  Δ-78.81
+  /software-de-medicion-calidad-del-aire   f3 m 3 text    h    orig       79 → clon       47 @390  Δ-32
+  /software-de-medicion-calidad-del-aire   f3 m13 text    h    orig       79 → clon       47 @390  Δ-32
+  /software-de-medicion-calidad-del-aire   f3 m30 text    h    orig       79 → clon       47 @390  Δ-32
+  /software-de-medicion-calidad-del-aire   f3 m 0 image   mb   orig       30 → clon        0 @390  Δ-30
+  /software-de-medicion-calidad-del-aire   f3 m 1 —       h    orig       74 → clon       44 @390  Δ-30
+  /software-de-medicion-calidad-del-aire   f3 m 2 —       h    orig       74 → clon       44 @390  Δ-30
+  /software-de-medicion-calidad-del-aire   f3 m32 —       mb   orig        0 → clon       30 @390  Δ+30
+  /kunak-api                               f1 m 0 image   mb   orig       30 → clon        0 @390  Δ-30
+  /kunak-api                               f1 m 1 text    mb   orig       30 → clon        0 @390  Δ-30
+  /kunak-api                               f1 m 4 —       h    orig       74 → clon       44 @390  Δ-30
+  /kunak-api                               f2 m 0 image   mb   orig       30 → clon        0 @390  Δ-30
+  /kunak-api                               f2 m11 blurb   mb   orig        0 → clon       30 @390  Δ+30
+  /kunak-api                               f3 m 0 image   mb   orig       30 → clon        0 @390  Δ-30
+  /kunak-api                               f3 m 8 blurb   mb   orig        0 → clon       30 @390  Δ+30
+  /kunak-api                               f3 m 2 text    mb   orig       20 → clon       43 @390  Δ+23
+  /kunak-api                               f3 m 2 text    h    orig   325.94 → clon   305.94 @390  Δ-20
+  /kunak-api                               f3 m 2 text    pb   orig       20 → clon        0 @390  Δ-20
+  /kunak-api                               f2 m 9 blurb   h    orig    105.2 → clon   124.41 @390  Δ+19.21
+  /kunak-api                               f3 m 6 blurb   h    orig   124.41 → clon   143.61 @390  Δ+19.2
+  /software-de-medicion-calidad-del-aire   f3 m 1 —       mb   orig     14.4 → clon        0 @390  Δ-14.4
+  /software-de-medicion-calidad-del-aire   f3 m 3 text    pb   orig        0 → clon       10 @390  Δ+10
+  /software-de-medicion-calidad-del-aire   f3 m13 text    pb   orig        0 → clon       10 @390  Δ+10
+  /software-de-medicion-calidad-del-aire   f3 m30 text    pb   orig        0 → clon       10 @390  Δ+10
+  /kunak-api                               f1 m 2 text    pb   orig        0 → clon       10 @390  Δ+10
+  /kunak-api                               f2 m 1 text    pb   orig        0 → clon       10 @390  Δ+10
+  /kunak-api                               f2 m 3 text    pb   orig        0 → clon       10 @390  Δ+10
+  /kunak-api                               f3 m 1 text    pb   orig        0 → clon       10 @390  Δ+10
+  /kunak-api                               f1 m 1 text    h    orig   104.23 → clon       98 @390  Δ-6.23
+  /kunak-api                               f1 m 1 text    pb   orig     6.23 → clon        0 @390  Δ-6.23
+  /kunak-api                               f2 m 5 text    mb   orig       30 → clon       33 @390  Δ+3
+  /software-de-medicion-calidad-del-aire   f3 m 3 text    mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m 4 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m 5 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m 6 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m 7 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m 8 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m 9 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m10 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m11 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m12 blurb   mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m13 text    mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /kunak-api                               f1 m 3 text    mb   orig       30 → clon    27.81 @390  Δ-2.19
+  /software-de-medicion-calidad-del-aire   f3 m30 text    mb   orig       30 → clon       28 @390  Δ-2
+  /kunak-api                               f1 m 4 —       mb   orig       60 → clon     58.8 @390  Δ-1.2
+  ⇒ 60 pares con distancia ≠ 0 · Σ|clon−orig| = 3525.56 px  (unidad: el PAR módulo×eje)
+  reparto por eje: h 26 pares / 3119.45 px · mb 25 pares / 309.88 px · pb 9 pares / 96.23 px
+  reparto por ruta: /software-de-medicion-calidad-del-aire 39/3155.3px · /kunak-api 21/370.26px
+
+═══ los pares que aparecen a 1440 Y a 390 (dos maquetaciones distintas: no puede ser ruido) ═══
+  /software-de-medicion-calidad-del-aire::f3::m15::h         @1440 orig 179.78 → clon 423.53 (Δ243.75)   @390 orig 179.78 → clon 365.78 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m16::h         @1440 orig 179.78 → clon 423.53 (Δ243.75)   @390 orig 179.78 → clon 365.78 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m17::h         @1440 orig 149.19 → clon 392.94 (Δ243.75)   @390 orig 179.78 → clon 365.78 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m18::h         @1440 orig 149.19 → clon 392.94 (Δ243.75)   @390 orig 179.78 → clon 365.78 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m19::h         @1440 orig 149.19 → clon 392.94 (Δ243.75)   @390 orig 149.19 → clon 335.19 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m20::h         @1440 orig 149.19 → clon 392.94 (Δ243.75)   @390 orig 210.38 → clon 396.38 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m21::h         @1440 orig 179.78 → clon 423.53 (Δ243.75)   @390 orig 210.38 → clon 396.38 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m22::h         @1440 orig 179.78 → clon 423.53 (Δ243.75)   @390 orig 210.38 → clon 396.38 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m23::h         @1440 orig 179.78 → clon 423.53 (Δ243.75)   @390 orig 210.38 → clon 396.38 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m24::h         @1440 orig 179.78 → clon 423.53 (Δ243.75)   @390 orig 240.97 → clon 426.97 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m25::h         @1440 orig 210.38 → clon 454.13 (Δ243.75)   @390 orig 179.78 → clon 365.78 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m26::h         @1440 orig 210.38 → clon 454.13 (Δ243.75)   @390 orig 179.78 → clon 365.78 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m29::h         @1440 orig 179.78 → clon 423.53 (Δ243.75)   @390 orig 210.38 → clon 396.38 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m14::h         @1440 orig 79 → clon 47 (Δ-32)   @390 orig 210.38 → clon 396.38 (Δ186)
+  /software-de-medicion-calidad-del-aire::f3::m31::h         @1440 orig 79 → clon 47 (Δ-32)   @390 orig 1218.83 → clon 1140.02 (Δ-78.81)
+  /software-de-medicion-calidad-del-aire::f3::m30::h         @1440 orig 179.78 → clon 423.53 (Δ243.75)   @390 orig 79 → clon 47 (Δ-32)
+  /software-de-medicion-calidad-del-aire::f3::m3::h          @1440 orig 74 → clon 44 (Δ-30)   @390 orig 79 → clon 47 (Δ-32)
+  /software-de-medicion-calidad-del-aire::f3::m0::mb         @1440 orig 31.67 → clon 0 (Δ-31.67)   @390 orig 30 → clon 0 (Δ-30)
+  /kunak-api::f1::m0::mb                                     @1440 orig 31.67 → clon 0 (Δ-31.67)   @390 orig 30 → clon 0 (Δ-30)
+  /kunak-api::f1::m1::mb                                     @1440 orig 31.67 → clon 0 (Δ-31.67)   @390 orig 30 → clon 0 (Δ-30)
+  /kunak-api::f2::m0::mb                                     @1440 orig 31.67 → clon 0 (Δ-31.67)   @390 orig 30 → clon 0 (Δ-30)
+  /kunak-api::f3::m0::mb                                     @1440 orig 31.67 → clon 0 (Δ-31.67)   @390 orig 30 → clon 0 (Δ-30)
+  /software-de-medicion-calidad-del-aire::f3::m2::h          @1440 orig 99.5 → clon 69.5 (Δ-30)   @390 orig 74 → clon 44 (Δ-30)
+  /kunak-api::f1::m4::h                                      @1440 orig 74 → clon 44 (Δ-30)   @390 orig 74 → clon 44 (Δ-30)
+  /kunak-api::f2::m11::mb                                    @1440 orig 0 → clon 27.82 (Δ27.82)   @390 orig 0 → clon 30 (Δ30)
+  /kunak-api::f3::m8::mb                                     @1440 orig 0 → clon 27.82 (Δ27.82)   @390 orig 0 → clon 30 (Δ30)
+  /software-de-medicion-calidad-del-aire::f3::m1::h          @1440 orig 156 → clon 155 (Δ-1)   @390 orig 74 → clon 44 (Δ-30)
+  /kunak-api::f3::m6::h                                      @1440 orig 107.59 → clon 129.19 (Δ21.6)   @390 orig 124.41 → clon 143.61 (Δ19.2)
+  /kunak-api::f1::m2::pb                                     @1440 orig 0 → clon 10 (Δ10)   @390 orig 0 → clon 10 (Δ10)
+  /kunak-api::f2::m1::pb                                     @1440 orig 0 → clon 10 (Δ10)   @390 orig 0 → clon 10 (Δ10)
+  /kunak-api::f2::m3::pb                                     @1440 orig 0 → clon 10 (Δ10)   @390 orig 0 → clon 10 (Δ10)
+  /kunak-api::f3::m1::pb                                     @1440 orig 0 → clon 10 (Δ10)   @390 orig 0 → clon 10 (Δ10)
+  /kunak-api::f1::m1::h                                      @1440 orig 126.88 → clon 116 (Δ-10.88)   @390 orig 104.23 → clon 98 (Δ-6.23)
+  /kunak-api::f1::m1::pb                                     @1440 orig 10.88 → clon 0 (Δ-10.88)   @390 orig 6.23 → clon 0 (Δ-6.23)
+  /kunak-api::f2::m5::mb                                     @1440 orig 31.67 → clon 20 (Δ-11.67)   @390 orig 30 → clon 33 (Δ3)
+  /software-de-medicion-calidad-del-aire::f3::m4::mb         @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m5::mb         @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m6::mb         @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m7::mb         @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m8::mb         @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m9::mb         @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m10::mb        @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m11::mb        @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m12::mb        @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /software-de-medicion-calidad-del-aire::f3::m13::mb        @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /kunak-api::f1::m3::mb                                     @1440 orig 31.67 → clon 27.81 (Δ-3.86)   @390 orig 30 → clon 27.81 (Δ-2.19)
+  /kunak-api::f1::m4::mb                                     @1440 orig 60 → clon 90 (Δ30)   @390 orig 60 → clon 58.8 (Δ-1.2)
+  ⇒ 47 de 71 (@1440) y 60 (@390) — sólo a 1440: 24 · sólo a 390: 13
+
+→ escalon3-linea-base-130.json

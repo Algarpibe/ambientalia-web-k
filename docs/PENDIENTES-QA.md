@@ -26032,3 +26032,262 @@ en vez de a secas.
 > **La comprobación cuesta un `grep` del nombre viejo sobre la copia, y hay que
 > hacerla ANTES de la primera corrida**: un `writeFileSync` con el nombre de la
 > tanda anterior no da error — **escribe**.
+
+## 2026-08-31 · 130.ª — EL MARCADOR DONDE ESTÁN LOS CAMPO, Y UN CANAL QUE SE CERRABA CON EL ATRIBUTO EQUIVOCADO
+
+**Encargo:** poner `data-modulo` en `/accesorios` y `/software-…`, que son las
+dos rutas donde F3-5 tiene sus 6 filas-CAMPO. **Entregado: las dos acreditan**,
+así que el eje `módulos` pasa de **1 a 3 de las 4** rutas del lote — y por el
+camino salieron **tres defectos del INSTRUMENTO**, uno de ellos falseando la
+línea base con el signo invertido y otro dando VERDE a una corrida sin comparar
+nada.
+
+---
+
+### PASO 0 · las dos preguntas, y las dos direcciones
+
+**P3 — las dos hipótesis del encargo eran FALSAS, y la tercera es la buena.**
+El encargo daba dos lecturas para `productos-cmp-1440-2026-08-31-tras-marcador.json`
+—«es la de ANTES, mal nombrada» o «es posterior con un build viejo»— y ninguna
+se sostiene:
+
+| evidencia | valor |
+|---|---|
+| `kunak-api.html` del build vivo | **13:02:20**, con **27** `data-modulo="` |
+| la corrida | **13:05:07** — o sea POSTERIOR al build |
+| el fuente de los componentes | **12:56–12:58** — anterior al build |
+| CONTROL: `.next-128-previo` (anterior a la 129.ª) | `data-modulo=0` ✓ |
+
+⇒ es la corrida **posterior** al marcador, con el build **bueno**, medida por la
+sonda cuyo selector del lado clon **todavía no era `[data-modulo]`**. Su
+`ejesExcluidos.modulos` —*«el clon no emite marcador de MODULO»*— es una
+afirmación **sobre la SONDA** publicada como si fuera del clon. §sondas 4 en el
+lado clon de un comparador. Promovida a **§regla 45**.
+
+**Y NO se renombra**, que es lo contrario de lo que el encargo suponía: es
+**IDÉNTICA AL BIT** a `productos-cmp-1440.json` del 30-ago salvo `meta.fecha`
+—6022 bytes las dos—, o sea que **ella misma es la prueba del NO-OP de la
+129.ª**. Marcarla como artefacto de §regla 7 la volvería invisible a
+`eligeCongeladaAnterior` y a los censos. Se corrige el acta, no el fichero.
+Verificado POR EFECTO: `eligeCongeladaAnterior` resuelve a la de 13:19.
+
+**P4a — `/software-…` YA emitía marcador, y nadie lo había declarado.** 6
+`data-modulo="` de kind `blurb`, puestos por la 129.ª al marcar `BlurbsIconos`,
+que es **COMPARTIDO** (`git grep`: lo importa `software/InfoProductoSoftware`).
+La 129.ª tituló «el clon EMITE `data-modulo` en /kunak-api» y emitía en dos
+rutas. Su NO-OP cubre las dos porque midió sobre las 4; lo que faltaba era el
+alcance.
+
+**P4b — el «3 de 6» de `/kunak-api` se REPRODUCE**, no está sobre-generalizado.
+Las 3 sin marcador son la fila 0 (miga), la 4 (artículos) y la 5 (la
+desalineada, ver abajo).
+
+**Y un campo mal nombrado, de propina:** `rutasSinNingunMarcador` se deriva de
+`filasComparadas === 0`, que es *«ninguna fila COMPARABLE»*, y listaba
+`/software-…`, que sirve 6 marcadores. Las dos frases se escriben igual y sólo
+una es cierta.
+
+---
+
+### ESCALÓN 1 · la fila 3 de `/software-…`, que es donde viven los CAMPO
+
+**Derivado, no elegido:** el ESQUEMA §2o nombra los CAMPO de este arquetipo por
+su marcador, y **los dos están en la misma fila** — `menu-anclas`
+(`.et_pb_text_14/15`) e `iconos-md-2` (`.et_pb_blurb_15/16`), los dos con
+selector ORDINAL.
+
+**Reparto publicado porque es donde el NO-OP puede romperse: 32 atributos · 2
+envoltorios.** Los dos envoltorios son los `BlueButton` de `ANCLAS_CTAS`, que
+cuelgan directos de un flex sin wrapper propio. `BlockTitle` recibe el marcador
+por **prop**, no por envoltorio: el `<h2>` ya existe.
+
+**⚠ El NO-OP no lo puede firmar la guarda de `w()` en esta tanda** —y la 129.ª
+sí la usó, así que hay que decirlo—: `w()` compara el fichero ENTERO y el
+fichero cambia por el propio eje que la tanda enciende (85 → 191 ejes de
+módulo). Firmaría un rojo garantizado. La pregunta correcta es si se movió la
+**geometría de FILAS**, en la unidad EJE DE FILA y por **diferencia simétrica**:
+
+| ancho | sólo ANTES | sólo DESPUÉS | valor distinto | veredicto |
+|---|---|---|---|---|
+| 1440 | 0 | 0 | 0 | **NO-OP al bit** |
+| 390 | 0 | 0 | 0 | **NO-OP al bit** |
+
+Con su CONTROL, o el 0·0·0 no probaría nada: Δ+37.5 inyectado, **cazado y
+NOMBRADO** con sus dos lados.
+
+---
+
+### ⚠⚠ EL DEFECTO DEL INSTRUMENTO QUE FALSEABA LA LÍNEA BASE **CON EL SIGNO INVERTIDO**
+
+La línea base publicó **`Δ+243.75` EXACTO y CONSTANTE en 14 tarjetas** de
+`RejillaHerramientas` —`orig 179.78 → clon 423.53`—. Un Δ grande, constante y
+repetido no es un defecto de maquetación: es **algo que a un lado le falta
+entero**.
+
+**El mecanismo:** `productos-cmp` reescribe a copia local el `src` de cada
+`<img>` **y no su `srcset`**. Cuando hay `srcset`, el navegador elige de ahí y
+el `src` es sólo el respaldo — así que los candidatos `https://kunakair.com/…`
+los aborta la intercepción de §regla 32 y **la imagen no carga EN EL ORIGINAL**.
+Medido: **22 de 56 `<img>`** del corpus de software con `srcset` remoto, y **las
+16 capturas de la rejilla entre ellos**.
+
+**Descartado antes de creérselo** (§regla 40, no fiarse de una explicación
+cómoda): la primera hipótesis era el `loading="lazy"`, y `settle()` **sí** fuerza
+`eager` en los dos lados (L96-99 de `lib.mjs`). Refutada por lectura del código,
+no por opinión.
+
+**Arreglado:** el `srcset` (y su `sizes`) se **neutraliza** al localizar el
+`src` — se quita en vez de reescribirse candidato a candidato porque el clon no
+emite `srcset`, y reescribirlo dejaría un original con selección por densidad
+contra un clon sin ella, que es **otra asimetría** de la misma regla. Y el canal
+publica ahora su cardinal (`conSrcset`), porque **la marca de que un canal está
+cerrado es su número, no la ausencia de error**. Promovido a **§regla 43**.
+
+**Y la magnitud de lo que habría tapado, que es lo que lo hace grave: los 14
+pares falsos aportaban 3412.5 px de una Σ de 4244.61 — el 80.4 %.** O sea que el
+titular de la primera línea base **estaba dominado por el instrumento**, no por
+el clon. La firma estaba a la vista y es la que hay que aprender a leer:
+
+| \|Δ\| | ×n | qué es |
+|---|---|---|
+| **243.75** | **14** | ⚠ el artefacto del `srcset` |
+| 3.86 · 3.85 | 12 · 10 | el `mb` de módulo, defecto real y pequeño |
+| 10 | 7 | el `pb` del módulo de texto |
+| 30 · 31.67 · 32 · 21.6 | 5 · 5 · 3 · 3 | ídem |
+
+**Un Δ dos órdenes por encima de todos sus vecinos, constante al céntimo y
+repetido 14 veces, no es un defecto de maquetación**: la maquetación varía con
+el contenido. Es la firma de que a un lado le falta algo entero.
+
+**Y lo que el arreglo cambió no es la magnitud: es DÓNDE dice la línea base que
+está el defecto** — que es lo que la tanda siguiente iba a leer:
+
+| | con el artefacto | tras cerrar el `srcset` |
+|---|---|---|
+| pares @1440 | 71 · Σ **4244.61** px | 80 · Σ **1344.83** px |
+| **eje dominante** | **`h` — 3747.36 px en 27 pares** | **`mb` — 755.27 px en 52 pares** |
+| `/software-…` difs de módulo | 40 | **26** (−14, los del `srcset`, al par) |
+
+**Sin el arreglo la línea base decía «el problema está en los ALTOS»; con él
+dice `mb`, que es exactamente el ritmo que el content type de F3-5 modela.** El
+−14 exacto en `/software-…` es además la prueba de que el arreglo hizo lo que
+dice y sólo eso.
+
+**Línea base limpia, con su alcance:** @1440 **80 pares · Σ 1344.83 px**; @390
+**75 · Σ 2116.38**; **52 pares aparecen en LOS DOS anchos** —dos maquetaciones
+distintas, así que no pueden ser ruido—. Fuera del recuento y publicados aparte:
+18 filas SIN MARCADOR, 2 PARCIALES y **136 módulos del original no comparados**
+@1440 (133 @390). Congeladas:
+`derivaciones/escalon3-linea-base-130.{json,log}`, y la primera —la del
+artefacto— renombrada con su defecto a
+`-SONDA-SRCSET-SIN-NEUTRALIZAR.{json,log}` en vez de borrada (§regla 5bis).
+
+> ⚠ **Y un tercer defecto del instrumento, pequeño y de la misma familia:
+> `SALIDA=` estaba DOCUMENTADO en la cabecera de `productos-cmp` y NO
+> CONECTADO.** `w()` no implementa esa palanca — la implementa cada sonda
+> (`clon-base.mjs` L307) — así que las dos corridas limpias se fueron al fechado
+> de la guarda con un nombre que **no dice el estado que describen**, que es
+> justo lo que `SALIDA=` existe para evitar. Es §regla 3 sobre la LÍNEA DE USO y
+> el **segundo caso en esa misma cabecera**: la 129.ª ya corrigió allí el
+> `[ancho]` que el programa nunca leyó. **Cardinal derivado antes de decidir
+> dónde arreglarlo — de las 224 sondas, 28 la implementan, 5 la documentan y 1
+> sola la documentaba sin implementarla: es instancia, no clase**, así que se
+> arregló en la sonda y no en `w()` (meterla en el sitio común mandaría al mismo
+> fichero todas las salidas de una sonda que congele varias).
+
+**Y la guarda global, que es lo que cubre el alcance colateral de los tres
+componentes COMPARTIDOS:** `clon-base` @1440 sobre **426 rutas**, contra la
+línea base anterior — **426 idénticas, 0 movidas, diferencia simétrica de rutas
+0/0**. El marcador es NO-OP en todo el build, no sólo en las 4 que
+`productos-cmp` mira.
+
+> **`/accesorios` no necesita una segunda corrida de `clon-base`, y la razón se
+> DERIVA:** sus dos ficheros propios —`AccesorioCard.tsx` y su `page.tsx`— no
+> los importa nadie más (`git grep`), y esa ruta **sí** está en `productos-cmp`,
+> cuyo eje de FILA sale idéntico (130 · 43 · 3 @1440 y 130 · 49 · 1 @390) con el
+> marcador puesto. Los compartidos ya los cubrió la corrida de 426.
+
+---
+
+### ESCALÓN 2 · el 5.º sabotaje — y la guarda que destapó
+
+La 129.ª cerró nombrando lo que faltaba: **el equivalente de
+`NEG_SELECTOR_CLON_FALSO` para `[data-fila]`**. Escrito
+(`NEG_SELECTOR_FILA_FALSO`), y al escribirlo salió que **el modo de fallo daba
+VERDE**:
+
+> con 0 filas del lado clon, `n = min(orig, clon)` vale 0, así que `comparados`
+> y `distintos` valen 0 **por vacío** y la sonda publicaba `EXIT 0 — sin
+> diferencias`. El contrato de `Evaluadas` no podía verlo: **su unidad es el PAR
+> y las 4 rutas se recorrieron**.
+
+Es la **sexta instancia** de «0 COMPARADO = VERDE», y por un camino que el
+contrato no podía ver — igual que la de §4bis-sexta. Guarda nueva con **código
+de salida propio (6)**, para que un rojo futuro se pueda atribuir. Promovido a
+**§regla 44**.
+
+---
+
+### ⛔ LO QUE SE FICHA Y NO SE ARREGLA AQUÍ · el eje `filas` está DESALINEADO en las 4 rutas
+
+El original sirve una `et_pb_row` propia —**1 módulo**— para el botón «Amplia
+tus conocimientos con nuestras guías», y **el clon no la marca con `data-fila`**.
+El índice desliza y la FAQ del clon se empareja con ese botón:
+
+| ruta | @1440 | @390 |
+|---|---|---|
+| `/monitor-calidad-aire` | orig **146** → clon 1375.81 | orig **119** → clon 1969.13 |
+| `/accesorios` | orig **146** → clon 1375.81 | orig **119** → clon 1917.13 |
+| `/software-…` | orig **146** → clon 1425.81 | orig **99** → clon 2021.63 |
+| `/kunak-api` | orig **146** → clon 1425.81 | orig **99** → clon 2021.63 |
+
+**4 de 4 con el mismo `orig` = el instrumento, no el clon.** Arreglarlo cambia
+el cardinal de filas del clon (6 → 7) y **caduca la línea base del eje `filas`
+de las 4 rutas** (§regla 5bis): es una tanda con su propio NO-OP.
+
+**Y decide el alcance de ésta, publicado sin descontar nada:** de los **90**
+módulos de `/software-…` sólo **65** están en filas alineadas. Esta tanda marca
+**34 de esos 65**.
+
+---
+
+### ✅ `/accesorios` TAMBIÉN acredita — sus 2 filas de categoría comparan
+
+Orden de valor 3 del encargo, entregado. **`.et_pb_text_7` —uno de los 2 CAMPO
+de CATÁLOGO— está en la fila 4**, y esa fila y la 5 pasan a COMPARADAS: `2
+comparadas / 6 sin marcador`, con **23 difs de módulo @1440 y 30 @390**.
+
+**18 marcadores, todos ATRIBUTO** sobre elementos que ya existían — el punteado
+(`et_pb_image_3/4`), el `<h2>` de categoría (`et_pb_text_6/12`), la entradilla
+(`et_pb_text_8`, que es UN módulo y no uno por párrafo) y cada `AccesorioCard`
+(`et_pb_text_9..11` y `_14..21`). **Cero envoltorios en esta ruta.**
+
+**Estado del eje `módulos` en el lote, en la unidad de la sonda:**
+
+| | @1440 | @390 |
+|---|---|---|
+| ejes de módulo | 85 → **245** | 85 → **236** |
+| filas CON marcador | 3 → **6** | 3 → **6** |
+| rutas que acreditan | 1 → **3 de 4** | 1 → **3 de 4** |
+
+`/monitor-calidad-aire` es la única que sigue sin ninguna fila comparada: recibe
+marcador de los compartidos (4 nodos) pero ninguna fila suya queda completa, así
+que sale **PARCIAL** en una y SIN MARCADOR en cinco. **PARCIAL no es cobertura**
+(§regla 46) y por eso su celda se queda en `·`.
+
+---
+
+### Reglas promovidas: 4 de 6 candidatos
+
+| id | enunciado | dónde |
+|---|---|---|
+| R1 | el `srcset` gana al `src`: un canal no se cierra con un atributo | **§regla 43** |
+| R2 | `Evaluadas` sólo cierra «0 comparado = verde» si su unidad es la que se compara | **§regla 44** |
+| R3 | un «el clon no emite X» se lee con la versión de la SONDA que lo escribió | **§regla 45** |
+| R4 | marcar parcialmente una fila no aporta: es por fila y todo-o-nada | **§regla 46** |
+
+Los dos EVENTOS que se quedan: el desalineamiento (ya cubierto por §*31 de 31
+rutas no es un hallazgo*) y el comentario JSX dentro de un `map` (sintaxis, no
+método). Cruces publicados al lado: el **laxo** dice «ya escrito» en **4 de 6** y
+el **endurecido** en **1 de 6**, discrepando en 5 — el laxo sobre-casa 3 de las
+4 promovidas, consistente con lo que midió la 128.ª.

@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "tanda": "130.ª",
+    "fecha": "2026-08-31",
+    "offline": true
+  },
+  "candidatos": [
+    {
+      "id": "R1",
+      "tipo": "REGLA",
+      "enunciado": "Un canal de media no se cierra con el `src`: dentro del MISMO `<img>` el `srcset` GANA, y reescribir sólo el `src` deja media unidad. No da error — da un rojo CON EL SIGNO INVERTIDO, porque el lado que no carga es el ORIGINAL.",
+      "porQue": "§regla 32 ya dice «reescribir un canal a copias locales y otro no es cerrar MEDIO canal», pero su ejemplo son DOS canales (hojas vs imágenes). Aquí el canal es UNO y lo que falta es un ATRIBUTO suyo, así que la comprobación de «¿está cerrado?» no es por canal sino por ATRIBUTO. Medido: 22 de 56 `<img>` del corpus con `srcset` remoto, y las 16 capturas de RejillaHerramientas entre ellos, produciendo un Δ+243.75 EXACTO y constante en 14 tarjetas que se lee como defecto del clon.",
+      "vocabulario": [
+        "srcset",
+        "medio canal"
+      ],
+      "enunciadoClave": "el `srcset` GANA",
+      "destino": "CLAUDE.md, §regla 32 (la mitad del atributo)"
+    },
+    {
+      "id": "R2",
+      "tipo": "REGLA",
+      "enunciado": "El contrato de `Evaluadas` sólo cierra la clase «0 comparado = verde» si su UNIDAD es la que la sonda compara. Declarado un nivel por encima —pares cuando se comparan ejes— no ve un 0 de ejes: las 4 rutas se recorrieron, así que el contrato está satisfecho y la sonda publica «sin diferencias».",
+      "porQue": "§sondas 4bis da la clase por cerrada con `Evaluadas`, y §regla 14 dice que la cobertura se declara en la unidad que la sonda compara — pero nadie las cruza. Medido: romper `[data-fila]` daba `0 ejes comparados · 0 distintos · EXIT 0` con `✓ evaluadas 4/4 pares`. La sexta instancia de la clase, y por un camino que el contrato NO PODÍA ver.",
+      "vocabulario": [
+        "Evaluadas",
+        "unidad que la sonda compara"
+      ],
+      "enunciadoClave": "sólo cierra la clase",
+      "destino": "CLAUDE.md, §sondas 4bis (el límite del contrato)"
+    },
+    {
+      "id": "R3",
+      "tipo": "REGLA",
+      "enunciado": "Antes de leer un `ejesExcluidos` —o cualquier «el clon no emite X»— como propiedad del CLON, comprueba con qué versión de la SONDA se tomó. El mtime del HTML servido contra el de la congelada lo dirime en dos `stat`.",
+      "porQue": "§sondas 4 cubre el cero de un selector, y §regla 5bis que arreglar un instrumento CADUCA sus medidas. Lo que falta es la lectura: una congelada acreditada, con `saboteada: null`, publica una frase sobre el clon que era de la sonda — y sobrevive intacta a la corrección del instrumento. Medido: las DOS hipótesis del encargo eran falsas y la tercera («la sonda no leía») la dirimió el build, no la prosa.",
+      "vocabulario": [
+        "ejesExcluidos",
+        "mtime"
+      ],
+      "enunciadoClave": "con qué versión de la SONDA se tomó",
+      "destino": "CLAUDE.md, §sondas 4 / §regla 5bis"
+    },
+    {
+      "id": "R4",
+      "tipo": "REGLA",
+      "enunciado": "Marcar PARCIALMENTE una fila no aporta cobertura: con el recuento descuadrado la sonda la declara PARCIAL y no compara ninguno de sus módulos. El trabajo de marcado es por FILA y es todo-o-nada.",
+      "porQue": "Se sigue de §regla 33 (emparejar por orden dos listas de distinto tamaño da PAREJAS FALSAS, no huecos) pero no está dicho como criterio de PLANIFICACIÓN, que es donde decide. Medido: 6 de 19 marcados en la fila 2 de software la dejan igual de sin comparar que 0 de 19 — y de paso la sacan de SIN MARCADOR a PARCIAL, que suma al recuento de distintos.",
+      "vocabulario": [
+        "PARCIAL",
+        "todo-o-nada"
+      ],
+      "enunciadoClave": "es por FILA y es todo-o-nada",
+      "destino": "CLAUDE.md, junto a §regla 33"
+    },
+    {
+      "id": "E1",
+      "tipo": "EVENTO",
+      "enunciado": "El emparejamiento por índice de las filas está desalineado en las 4 rutas: el original sirve una fila propia de 146 px para el botón «Amplia tus conocimientos» que el clon no marca, y la FAQ del clon se compara contra ella.",
+      "porQue": "§*31 de 31 rutas distintas no es un hallazgo: es el instrumento* ya lo cubre entero, con su firma (4 de 4 con el MISMO `orig`). Lo específico —qué botón, qué 146 px, qué 4 rutas— es un evento con su fecha y su número.",
+      "vocabulario": [
+        "desalineamiento",
+        "el instrumento"
+      ],
+      "enunciadoClave": "31 de 31 rutas distintas no es un hallazgo",
+      "destino": "el acta y PENDIENTES-QA"
+    },
+    {
+      "id": "E2",
+      "tipo": "EVENTO",
+      "enunciado": "Un comentario JSX `{/* */}` dentro del retorno implícito de un `map` no compila, y el error apunta al `<ul>` de arriba.",
+      "porQue": "Es sintaxis del lenguaje, no método: lo caza el typecheck en el acto y no hay veredicto que pueda salir falso por él. Quitarle la fecha no deja ninguna regla útil.",
+      "vocabulario": [
+        "JSX",
+        "map"
+      ],
+      "enunciadoClave": "comentario JSX",
+      "destino": "el acta"
+    }
+  ],
+  "cruceA": [
+    {
+      "id": "R1",
+      "yaEscrito": true
+    },
+    {
+      "id": "R2",
+      "yaEscrito": true
+    },
+    {
+      "id": "R3",
+      "yaEscrito": true
+    },
+    {
+      "id": "R4",
+      "yaEscrito": false
+    },
+    {
+      "id": "E1",
+      "yaEscrito": false
+    },
+    {
+      "id": "E2",
+      "yaEscrito": true
+    }
+  ],
+  "cruceB": [
+    {
+      "id": "R1",
+      "yaEscrito": false
+    },
+    {
+      "id": "R2",
+      "yaEscrito": false
+    },
+    {
+      "id": "R3",
+      "yaEscrito": false
+    },
+    {
+      "id": "R4",
+      "yaEscrito": false
+    },
+    {
+      "id": "E1",
+      "yaEscrito": true
+    },
+    {
+      "id": "E2",
+      "yaEscrito": false
+    }
+  ],
+  "resumen": {
+    "candidatos": 6,
+    "promovidas": 4,
+    "aYa": 4,
+    "bYa": 1
+  }
+}

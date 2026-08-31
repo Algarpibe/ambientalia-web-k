@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "sonda": "productos-cmp",
+    "tanda": "123.ª",
+    "fecha": "2026-08-31",
+    "ancho": 1440,
+    "lado": "DOS — ORIGINAL: captura de corpus/productos por file:// con sus hojas de corpus/css, red cortada. CLON: next start. La intercepción se instala en LOS DOS lados (§regla 32).",
+    "saboteada": "selector-fila-falso",
+    "acredita": true,
+    "porQueNoAcredita": null
+  },
+  "precondiciones": {
+    "documentos": {
+      "presentes": 4,
+      "total": 4,
+      "faltan": []
+    },
+    "hojas": {
+      "pedidas": 30,
+      "resueltas": 30,
+      "sinResolver": []
+    },
+    "media": {
+      "pedidas": 162,
+      "resueltas": 162,
+      "externas": 0,
+      "porNombreNormalizado": [
+        "https://kunakair.com/wp-content/uploads/2023/09/PM2.5_belgium.webp"
+      ],
+      "sinResolver": []
+    }
+  },
+  "resumen": {
+    "pares": 4,
+    "ejesComparados": 0,
+    "distintos": 0,
+    "huerfanasO": 30,
+    "huerfanasC": 0,
+    "subpixel": 0,
+    "modulos": {
+      "ejesComparados": 0,
+      "distintos": 0,
+      "huerfanosO": 0,
+      "huerfanosC": 0,
+      "filasComparadas": 0,
+      "filasSinMarcador": 0,
+      "filasParciales": 0,
+      "rutasSinNingunMarcador": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/software-de-medicion-calidad-del-aire",
+        "/kunak-api"
+      ]
+    },
+    "ejesExcluidos": {
+      "modulos": "el clon no emite marcador de MODULO en NINGUNA ruta — SIN COMPARAR"
+    }
+  },
+  "informe": [
+    {
+      "ruta": "/monitor-calidad-aire",
+      "arquetipo": "PRODUCTO",
+      "filas": {
+        "orig": 7,
+        "clon": 0,
+        "origEnElDOM": 9,
+        "clonEnElDOM": 0
+      },
+      "hojasAplicadas": 19,
+      "httpClon": null,
+      "nDifs": 0,
+      "difs": [],
+      "subpixel": {
+        "n": 0,
+        "casos": []
+      },
+      "modulos": {
+        "filasComparadas": 0,
+        "filasSinMarcador": 0,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": []
+      },
+      "modulosSinMarcador": null
+    },
+    {
+      "ruta": "/accesorios",
+      "arquetipo": "CATALOGO",
+      "filas": {
+        "orig": 9,
+        "clon": 0,
+        "origEnElDOM": 9,
+        "clonEnElDOM": 0
+      },
+      "hojasAplicadas": 17,
+      "httpClon": null,
+      "nDifs": 0,
+      "difs": [],
+      "subpixel": {
+        "n": 0,
+        "casos": []
+      },
+      "modulos": {
+        "filasComparadas": 0,
+        "filasSinMarcador": 0,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": []
+      },
+      "modulosSinMarcador": null
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "arquetipo": "SOFTWARE",
+      "filas": {
+        "orig": 7,
+        "clon": 0,
+        "origEnElDOM": 8,
+        "clonEnElDOM": 0
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 0,
+      "difs": [],
+      "subpixel": {
+        "n": 0,
+        "casos": []
+      },
+      "modulos": {
+        "filasComparadas": 0,
+        "filasSinMarcador": 0,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": []
+      },
+      "modulosSinMarcador": null
+    },
+    {
+      "ruta": "/kunak-api",
+      "arquetipo": "SOFTWARE (variante corta)",
+      "filas": {
+        "orig": 7,
+        "clon": 0,
+        "origEnElDOM": 7,
+        "clonEnElDOM": 0
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 0,
+      "difs": [],
+      "subpixel": {
+        "n": 0,
+        "casos": []
+      },
+      "modulos": {
+        "filasComparadas": 0,
+        "filasSinMarcador": 0,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": []
+      },
+      "modulosSinMarcador": null
+    }
+  ]
+}

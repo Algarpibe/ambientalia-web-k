@@ -867,6 +867,84 @@ todo lo que no se midió abajo*).
 > fueron `-vivo` y `-todas` de `lh-cmp`. Corregido con `congeladasDe`, que
 > **deriva** el conjunto en vez de enumerarlo.
 
+## ✅ 2026-08-31 · 130.ª — el eje `módulos` pasa a **3 de las 4**, y el titular se escribe con lo que queda fuera
+
+Misma unidad que la 129.ª —la **FILA**, y dentro de ella el **MÓDULO**— porque
+la celda de la matriz es la RUTA y las dos no coinciden. El reparto va al lado,
+no absorbido en el titular.
+
+| ruta | filas del clon | **CON marcador** | SIN marcador | PARCIAL | celda `módulos` |
+|---|---|---|---|---|---|
+| `/kunak-api` | 6 | 3 | 3 | 0 | **O** (129.ª) |
+| `/software-de-medicion-calidad-del-aire` | 6 | **1** | 4 | 1 | **O** ← nuevo |
+| `/accesorios` | 8 | **2** | 6 | 0 | **O** ← nuevo |
+| `/monitor-calidad-aire` | 6 | 0 | 5 | **1** | `·` |
+
+**Lo que compró la tanda, en la unidad de la sonda:**
+
+| | @1440 | @390 |
+|---|---|---|
+| ejes de módulo comparados | 85 → **245** | 85 → **236** |
+| filas CON marcador | 3 → **6** | 3 → **6** |
+| filas SIN marcador | 22 → **18** | 22 → **18** |
+
+**La fila 3 de `/software-…` compara 34 → 34** a los dos anchos, y es la que
+importa: los **dos CAMPO** que el ESQUEMA nombra para este arquetipo viven ahí
+(`menu-anclas` sobre `.et_pb_text_14/15` e `iconos-md-2` sobre
+`.et_pb_blurb_15/16`, los dos con selector ordinal).
+
+> ⚠ **Y lo que esto NO acredita, con su cardinal y sin descontar nada del
+> objetivo:**
+>
+> - de los **90** módulos de `/software-…` (cota DOM), sólo **65** están en
+>   filas ALINEADAS (0–4). Los otros 25 son la fila 5 desalineada (1) y las
+>   filas 6–7 que el clon no empareja (22 de FAQ + 1 de vídeo). Esta tanda marca
+>   **34 de esos 65**; en `/accesorios`, **18 de los 55** (cota DOM), que son las
+>   filas 4 y 5 enteras;
+> - **`/accesorios` acredita con sus 2 filas de categoría** —donde vive
+>   `.et_pb_text_7`, uno de sus 2 CAMPO— pero sus otras 6 filas siguen sin
+>   marcador;
+> - **`/monitor-calidad-aire` sigue a `·`**: recibe 4 marcadores de los
+>   compartidos y ninguna fila suya queda completa, así que sale **PARCIAL** en
+>   una y SIN MARCADOR en cinco. **PARCIAL no es cobertura** (§regla 46);
+> - **136 módulos del original quedan sin comparar** @1440 (133 @390), repartidos
+>   con su motivo en `derivaciones/escalon3-linea-base-130.log`.
+
+> ⚠⚠ **Y UN DEFECTO DEL INSTRUMENTO QUE ESTA TANDA CIERRA, PORQUE FALSEABA LA
+> LÍNEA BASE CON EL SIGNO INVERTIDO:** `productos-cmp` reescribía a copia local
+> el `src` de cada `<img>` **y no su `srcset`**, que es quien gana. Con los
+> candidatos remotos abortados por la intercepción, **el ORIGINAL no pintaba
+> esas imágenes** — 22 de 56 `<img>` del corpus de software, incluidas las 16
+> capturas de la rejilla de herramientas. Publicaba `Δ+243.75` **exacto y
+> constante en 14 tarjetas**, que se lee como defecto del clon. Es §regla 43, y
+> la marca de que el canal está cerrado es su **cardinal** (`conSrcset`), no la
+> ausencia de error.
+
+> ⚠⚠ **Y EL DESALINEAMIENTO DEL EJE `filas`, QUE ES DE LAS 4 RUTAS Y NO SE
+> ARREGLA AQUÍ:** el original sirve una `et_pb_row` propia —**146 px, 1
+> módulo**— para el botón «Amplia tus conocimientos con nuestras guías», y el
+> clon **no la marca con `data-fila`**. El índice desliza y la FAQ del clon
+> (~1400 px) se empareja con ese botón:
+>
+> | ruta | @1440 | @390 |
+> |---|---|---|
+> | `/monitor-calidad-aire` | orig 146 → clon 1375.81 | orig 119 → clon 1969.13 |
+> | `/accesorios` | orig 146 → clon 1375.81 | orig 119 → clon 1917.13 |
+> | `/software-…` | orig 146 → clon 1425.81 | orig 99 → clon 2021.63 |
+> | `/kunak-api` | orig 146 → clon 1425.81 | orig 99 → clon 2021.63 |
+>
+> **4 de 4 con el mismo `orig` = el instrumento, no el clon** (§*31 de 31 rutas
+> distintas no es un hallazgo*). Arreglarlo cambia el cardinal de filas del clon
+> (6 → 7) y por tanto **caduca la línea base del eje `filas` de las 4 rutas**
+> (§regla 5bis): es una tanda con su propio NO-OP, no un extra de ésta.
+
+**Recuento del eje en el repo: 111 → 113 rutas.** Derivado por `qa:cobertura`
+—*«`módulos  O=113  c=0  nunca=313  ← productos-cmp · f33-cmp-1440 · lh-cmp ·
+mono-cmp`»*, evaluadas 426/426—, no citado de memoria. **El +2 son
+`/software-…` y `/accesorios`**, y es +2 y no +52: la unidad de la MATRIZ es la
+ruta y la de la sonda es la fila, así que el titular de la matriz **no puede**
+expresar lo que esta tanda midió. Por eso el reparto por fila va arriba.
+
 ## La matriz · 31 rutas × 9 ejes
 
 > Generada por `npm run qa:cobertura` · congelada en `medidas/cobertura.json`.

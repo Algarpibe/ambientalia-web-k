@@ -175,7 +175,10 @@ export default function AccesoriosPage() {
                   altura de la fila, el sticky nunca llega a pegarse. */}
               <aside className="columna-lista-anclas w-full md:w-[20.875%] md:shrink-0 md:self-start md:sticky md:top-[70px] md:pt-[32px]">
                 <div className="relative">
+                  {/* MARCADOR DE SONDA (130.ª) — ATRIBUTO: `et_pb_image_3/4`
+                      del original, con el que arranca cada fila de categoría. */}
                   <img
+                    data-modulo="image"
                     src="/images/uploads/2022/12/punteado.svg"
                     alt=""
                     aria-hidden
@@ -190,7 +193,11 @@ export default function AccesoriosPage() {
                       anclas, que en móvil no existe (allí el h2 va a mb 0).
                       35px en móvil / 32 en desktop: el h2 de Divi es MAYOR en
                       móvil, no menor. */}
-                  <h2 className="pb-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:mb-[27.9px] md:text-[32px]">
+                  {/* MARCADOR DE SONDA (130.ª) — `et_pb_text_6/12` del original. */}
+                  <h2
+                    data-modulo="text"
+                    className="pb-[10px] text-[35px] font-light leading-[1.25] text-[#333] md:mb-[27.9px] md:text-[32px]"
+                  >
                     {cat.heading}
                   </h2>
                 </div>
@@ -205,8 +212,11 @@ export default function AccesoriosPage() {
                   `min-w-0`: sin él, el min-width:auto del flex item impide
                   encoger por debajo del min-content de las tablas. */}
               <div className="w-full min-w-0 md:flex-1">
+                {/* MARCADOR DE SONDA (130.ª) — la entradilla es UN módulo de
+                    texto en el original (`et_pb_text_8`), no un módulo por
+                    párrafo: el marcador va en el contenedor. */}
                 {cat.intro?.length ? (
-                  <div className="text-[18px] leading-[30.6px] text-[#333]">
+                  <div data-modulo="text" className="text-[18px] leading-[30.6px] text-[#333]">
                     {cat.intro.map((p) => (
                       <p key={p.slice(0, 40)} className="pb-[18px]">
                         {p}

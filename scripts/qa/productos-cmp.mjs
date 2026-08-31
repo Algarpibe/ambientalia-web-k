@@ -55,6 +55,7 @@
  * programa sino una intención.
  *
  * Sabotajes (negativo):  NEG_MISMO_LADO=1 · NEG_DELTA=<px> · NEG_SIN_INSUMOS=1
+ *                         NEG_SELECTOR_CLON_FALSO=1 · NEG_SELECTOR_FILA_FALSO=1
  * Nombrar la corrida sin marcarla como negativa:  SALIDA=<ruta.json>
  *   (⚠ `NEG=` NO es la palanca para eso: MARCA la salida como artefacto de
  *    §regla 7 y la vuelve invisible a `eligeCongeladaAnterior` y a los censos.)
@@ -85,6 +86,22 @@ const MEDIA_RAICES = [
  * DATO —un marcador que no casa, el modo de fallo real— y no de un umbral
  * (§regla 28a). */
 const SEL_CLON_MOD = process.env.NEG_SELECTOR_CLON_FALSO ? "[data-modulo-QUE-NO-EXISTE]" : "[data-modulo]";
+/* ⚠⚠ Y EL SELECTOR DE **FILA** DEL LADO CLON, QUE ES EL 5.º SABOTAJE (130.ª).
+ *
+ * El 4.º rompe `[data-modulo]`; éste rompe `[data-fila]`, que es el nivel de
+ * ARRIBA y el que la 129.ª dejó nombrado como pendiente. No es simetría
+ * decorativa: sin él, el eje de FILA —donde viven los 43 ejes que esta sonda
+ * publica como titular— **no tiene ninguna instancia separadora**, porque los
+ * tres primeros casos del negativo usan `NEG_MISMO_LADO` y el 4.º sólo toca los
+ * módulos.
+ *
+ * Y lo que destapa al escribirlo es que el modo de fallo daba VERDE: con 0
+ * filas del lado clon, `n = min(orig, clon)` vale 0, así que `comparados` es 0,
+ * `distintos` es 0 y el contrato de `Evaluadas` —cuya unidad es el PAR, no el
+ * eje— sigue viendo sus 4 pares. Salida: `EXIT 0 — sin diferencias`. Es §sondas
+ * 4 con el cero puesto en el selector de fila, y §regla 6 con el «0 distintos»
+ * haciendo de valor benigno. La guarda de abajo lo cierra. */
+const SEL_CLON_FILA = process.env.NEG_SELECTOR_FILA_FALSO ? "[data-fila-QUE-NO-EXISTE]" : "[data-fila]";
 const ANCHO = Number(env("ANCHO", "1440"));
 const MOVIL = ANCHO <= 480;
 
@@ -110,9 +127,10 @@ const SIN_INSUMOS = !!env("NEG_SIN_INSUMOS");
  * publicando filas y módulos comparados con él puesto, es que no los estaba
  * leyendo del clon. */
 const SELECTOR_FALSO = !!env("NEG_SELECTOR_CLON_FALSO");
-const SABOTEADA = MISMO_LADO || DELTA || SIN_INSUMOS || SELECTOR_FALSO;
+const SELECTOR_FILA_FALSO = !!env("NEG_SELECTOR_FILA_FALSO");
+const SABOTEADA = MISMO_LADO || DELTA || SIN_INSUMOS || SELECTOR_FALSO || SELECTOR_FILA_FALSO;
 if (SABOTEADA && !process.env.NEG) {
-  process.env.NEG = MISMO_LADO ? "mismo-lado" : DELTA ? `delta-${DELTA}` : SIN_INSUMOS ? "sin-insumos" : "selector-clon-falso";
+  process.env.NEG = MISMO_LADO ? "mismo-lado" : DELTA ? `delta-${DELTA}` : SIN_INSUMOS ? "sin-insumos" : SELECTOR_FALSO ? "selector-clon-falso" : "selector-fila-falso";
   console.log(`⚠ sabotaje ACTIVO sin NEG=: la sonda desvía su salida a «${process.env.NEG}» ella misma (§regla 24)`);
 }
 
@@ -162,7 +180,7 @@ function mediaLocal(url0) {
   return { url: null, motivo: "sin-capturar" };
 }
 
-const precondiciones = { documentos: { faltan: [] }, hojas: { pedidas: 0, resueltas: 0, sinResolver: [] }, media: { pedidas: 0, resueltas: 0, sinResolver: [], externas: 0 } };
+const precondiciones = { documentos: { faltan: [] }, hojas: { pedidas: 0, resueltas: 0, sinResolver: [] }, media: { pedidas: 0, resueltas: 0, sinResolver: [], externas: 0, conSrcset: 0, srcsetNeutralizados: 0 } };
 
 for (const it of LOTE) {
   const f = join(CORPUS, SIN_INSUMOS ? it.doc.replace(/\.html$/, "-QUE-NO-EXISTE.html") : it.doc);
@@ -186,6 +204,26 @@ for (const it of LOTE) {
     if (r.url) { precondiciones.media.resueltas++; if (r.via === "nombre-normalizado") (precondiciones.media.porNombreNormalizado ??= []).push(src.slice(0, 110)); }
     else if (r.motivo === "externo") precondiciones.media.externas++;
     else precondiciones.media.sinResolver.push(src.slice(0, 110));
+    /* ⚠⚠ EL CANAL DE `<img>` NO SE CIERRA CON EL `src`: EL `srcset` GANA, Y
+     * ESTABA SIN REESCRIBIR (130.ª).
+     *
+     * Cuando un `<img>` trae `srcset`, el navegador elige de AHÍ y el `src` es
+     * sólo el respaldo. Los `srcset` del original apuntan a `https://kunakair.com`
+     * y la intercepción de §regla 32 aborta todo lo que no sea `file:`/`data:`,
+     * así que **la imagen NO CARGA en el lado original** — y la que sí carga es
+     * la del clon, que no emite `srcset`.
+     *
+     * No da error: da un rojo CON EL SIGNO INVERTIDO. Medido en la línea base de
+     * esta tanda: 14 tarjetas de `RejillaHerramientas` con `Δ+243.75` EXACTO y
+     * constante —`orig 179.78 → clon 423.53`—, que se lee como *«el clon pinta
+     * las tarjetas 244 px más altas»* cuando lo que pasa es que el ORIGINAL no
+     * pinta su captura. Recalibrar el clon contra eso es fabricar una FAMILIA DE
+     * CALIBRACIÓN con el original de coartada.
+     *
+     * Es §regla 32 en su mitad de canal: *reescribir un canal a copias locales y
+     * otro no es cerrar MEDIO canal*, y la marca de que está cerrado es **su
+     * cardinal**, no la ausencia de error. Por eso se cuenta aquí. */
+    if (/\bsrcset=/i.test(m[0])) precondiciones.media.conSrcset++;
   }
 }
 
@@ -196,7 +234,7 @@ const docsFaltan = precondiciones.documentos.faltan.length;
 console.log("═══ PRECONDICIONES (comprobadas ANTES del launch, §regla 37) ═══");
 console.log(`  documentos   : ${LOTE.length - docsFaltan}/${LOTE.length} presentes`);
 console.log(`  hojas        : ${precondiciones.hojas.resueltas}/${precondiciones.hojas.pedidas} resueltas · sin resolver ${hojasFaltan}`);
-console.log(`  media (<img>): ${precondiciones.media.resueltas}/${precondiciones.media.pedidas} resueltas · sin resolver ${mediaFaltan} · externas ${precondiciones.media.externas} · por nombre normalizado ${(precondiciones.media.porNombreNormalizado ?? []).length}`);
+console.log(`  media (<img>): ${precondiciones.media.resueltas}/${precondiciones.media.pedidas} resueltas · sin resolver ${mediaFaltan} · externas ${precondiciones.media.externas} · por nombre normalizado ${(precondiciones.media.porNombreNormalizado ?? []).length} · con srcset remoto ${precondiciones.media.conSrcset} (se neutralizan al reescribir)`);
 
 /* Sin documentos no hay nada que medir: corrida NULA, y se dice por qué. */
 if (docsFaltan === LOTE.length) {
@@ -242,7 +280,20 @@ function conAssetsLocales(html) {
     if (!src || /^data:/i.test(src)) return tag;
     const f = mediaLocal(src);
     if (!f.url || f.url === "data") return tag;
-    return tag.replace(/src=["'][^"']*["']/i, `src="${f.url}"`);
+    let t = tag.replace(/src=["'][^"']*["']/i, `src="${f.url}"`);
+    /* Y se NEUTRALIZA el `srcset` (con su `sizes`), o el navegador elegiría de
+     * ahí y el `src` local que acabamos de poner NO se usaría — ver la nota
+     * larga en el bloque de precondiciones. Se QUITA en vez de reescribirse
+     * candidato a candidato porque el clon no emite `srcset`: reescribirlo
+     * dejaría un original con selección por densidad contra un clon sin ella,
+     * que es otra asimetría (§regla 32 — lo que se le hace a un lado se le hace
+     * al otro). Sin `srcset`, los dos lados resuelven por `src` a la MISMA
+     * copia local. */
+    if (/\bsrcset=/i.test(t)) {
+      t = t.replace(/\ssrcset=["'][^"']*["']/i, "").replace(/\ssizes=["'][^"']*["']/i, "");
+      precondiciones.media.srcsetNeutralizados++;
+    }
+    return t;
   });
   return out;
 }
@@ -257,7 +308,7 @@ function conAssetsLocales(html) {
  * primero del DOM puede ser el escondido — y `getComputedStyle` sobre un
  * elemento sin caja no resuelve los porcentajes contra nada: devuelve ceros que
  * entran en la distribución como si fueran dato. */
-const extraer = (esOriginal, selClonMod) => {
+const extraer = (esOriginal, selClonMod, selClonFila) => {
   const r = (n) => Math.round(n * 100) / 100;
   const px = (v) => r(parseFloat(v) || 0);
   const conCaja = (el) => {
@@ -283,7 +334,7 @@ const extraer = (esOriginal, selClonMod) => {
   const enCascaron = (el) => !!el.closest("[class*='_tb_header'], [class*='_tb_footer']");
   const todas = esOriginal
     ? [...document.querySelectorAll(".et_pb_row")].filter((el) => !enCascaron(el))
-    : [...document.querySelectorAll("main [data-fila]")];
+    : [...document.querySelectorAll(`main ${selClonFila}`)];
   const vivas = todas.filter(conCaja);
   return {
     nFilasEnElDOM: todas.length,
@@ -361,7 +412,7 @@ async function medirOriginal(doc) {
    * que nada este mal. El asentado lo hace `settle()`, en los DOS lados. */
   await page.setContent(conAssetsLocales(readFileSync(f, "utf8")), { waitUntil: "domcontentloaded" });
   await settle(page);
-  const out = await page.evaluate(extraer, true, SEL_CLON_MOD);
+  const out = await page.evaluate(extraer, true, SEL_CLON_MOD, SEL_CLON_FILA);
   out.hojasAplicadas = await page.evaluate(() => document.styleSheets.length);
   await page.close();
   return out;
@@ -370,7 +421,7 @@ async function medirOriginal(doc) {
 async function medirClon(base, ruta) {
   const { page, res } = await openPage(browser, base + ruta, { width: ANCHO, height: MOVIL ? 844 : 900, mobile: MOVIL });
   await settle(page);
-  const out = await page.evaluate(extraer, false, SEL_CLON_MOD);
+  const out = await page.evaluate(extraer, false, SEL_CLON_MOD, SEL_CLON_FILA);
   out.http = res?.status?.() ?? null;
   await page.close();
   return out;
@@ -576,7 +627,24 @@ const salida = {
   },
   informe,
 };
-w(`medidas/productos-cmp-${ANCHO}.json`, salida);
+/* ⚠ `SALIDA=` ESTABA DOCUMENTADO EN LA CABECERA Y NO CONECTADO (130.ª).
+ *
+ * `w()` NO implementa esa palanca: la implementa CADA SONDA —`clon-base.mjs`
+ * L307 lo hace explícito con `env("SALIDA") || …`— así que documentarla sin
+ * escribirla la deja muda. Y no falla: la corrida se va al fechado de la guarda
+ * de §regla 5, con un nombre que **no dice el estado que describe**, que es
+ * justo lo que `SALIDA=` existe para evitar.
+ *
+ * Es §regla 3 —*documentado no es conectado*— sobre la LÍNEA DE USO, y es el
+ * SEGUNDO caso en esta misma cabecera: la 129.ª ya corrigió aquí el `[ancho]`
+ * que el programa nunca leyó.
+ *
+ * Cardinal derivado, para saber si es instancia o clase: de las **224** sondas,
+ * **28 la implementan**, **5 la documentan** y **1 sola la documentaba sin
+ * implementarla** — ésta. Es instancia, así que se arregla aquí y no en `w()`:
+ * meterla en el sitio común mandaría al mismo fichero TODAS las salidas de una
+ * sonda que congele varias. */
+w(env("SALIDA") || `medidas/productos-cmp-${ANCHO}.json`, salida);
 
 console.log("");
 console.log("═══ RESULTADO ═══");
@@ -603,6 +671,32 @@ console.log(`✓ evaluadas ${pares.length}/${LOTE.length - docsFaltan} pares · 
  * (§regla 24). El eje `módulos` estrena el suyo —5— en vez de sumarse a `4`:
  * si compartieran código, un rojo no diría cuál de los dos ejes lo produjo, y
  * ése es justo el trabajo que un código de salida hace. */
+/* ⚠⚠ LA GUARDA DEL NIVEL DE ARRIBA (130.ª) — SIN ELLA, ROMPER `[data-fila]`
+ * SALE EN VERDE, Y ES EL MISMO MODO DE FALLO QUE EL EJE `módulos` YA TENÍA
+ * CERRADO UN NIVEL MÁS ABAJO.
+ *
+ * Con 0 filas del lado clon, `n = min(orig, clon)` vale 0: `comparados` es 0,
+ * `distintos` es 0, y el contrato de `Evaluadas` no lo ve porque su unidad es
+ * el PAR —4 rutas— y las 4 se recorrieron. La sonda llegaba aquí con
+ * `distintos = 0` y publicaba `EXIT 0 — sin diferencias`.
+ *
+ * Es la clase «0 COMPARADO = VERDE» (§sondas 4bis) en su sexta instancia, y la
+ * razón por la que no la tapa el contrato es exactamente la de §regla 14: la
+ * cobertura se declara en la unidad que la sonda COMPARA —el eje— y aquí el
+ * contrato la declaraba en la de arriba —el par—, que la absorbe.
+ *
+ * El mínimo se DERIVA del otro lado y no se escribe: si el ORIGINAL aporta
+ * filas y el clon no aporta ninguna, no hay nada que comparar y eso no es
+ * «sin diferencias». Derivarlo es además lo que impide que el sabotaje mueva
+ * la portería (§regla 17): el lado original no lo toca ningún sabotaje. */
+if (comparados === 0) {
+  console.log("");
+  console.log("❌ CORRIDA NULA — 0 ejes de FILA comparados.");
+  console.log(`   El original aporta ${informe.reduce((s, i) => s + i.filas.orig, 0)} filas y el clon ${informe.reduce((s, i) => s + i.filas.clon, 0)}.`);
+  console.log("   NO es «sin diferencias»: es que el selector del lado CLON no casa con nada");
+  console.log("   (§sondas 4 — un selector que no casa con nada no es un cero).");
+  process.exit(6);
+}
 if (CANAL_ABIERTO) { console.log("EXIT 2 — la corrida MIDE pero NO ACREDITA: hay canales sin cerrar."); process.exit(2); }
 if (distintos) { console.log(`EXIT 4 — ${distintos} ejes de FILA distintos entre original y clon.`); process.exit(4); }
 if (distintosMod) { console.log(`EXIT 5 — ${distintosMod} ejes de MÓDULO distintos entre original y clon.`); process.exit(5); }

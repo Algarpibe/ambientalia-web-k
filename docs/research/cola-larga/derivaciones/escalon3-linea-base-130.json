@@ -1,0 +1,2017 @@
+{
+ "meta": {
+  "tanda": "130.ª",
+  "escalon": "3",
+  "fecha": "2026-08-31",
+  "unidad": "el PAR módulo×eje (`ruta::fila::modulo::eje`) — no la ruta, no el recuento",
+  "lectura": "COBERTURA NUEVA, no regresión: estas filas nunca se habían comparado en módulos contra el original",
+  "noContesta": "no dice cuál Δ es CAMPO y cuál PLANTILLA (eso lo dice la cascada, §regla 41), y no mide nada nuevo: lee congeladas"
+ },
+ "informe": [
+  {
+   "ancho": 1440,
+   "fuente": "productos-cmp-1440-2026-08-31-srcset-cerrado.json",
+   "excluidos": [
+    {
+     "ruta": "/monitor-calidad-aire",
+     "filasHuerfanas": 1,
+     "filasSinMarcador": 5,
+     "filasParciales": 1,
+     "modulosNoComparadosPorSinMarcador": 48,
+     "modulosNoComparadosPorParcial": 35,
+     "parciales": [
+      {
+       "fila": 3,
+       "orig": 35,
+       "clon": 4,
+       "motivo": "el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)"
+      }
+     ]
+    },
+    {
+     "ruta": "/accesorios",
+     "filasHuerfanas": 1,
+     "filasSinMarcador": 6,
+     "filasParciales": 0,
+     "modulosNoComparadosPorSinMarcador": 15,
+     "modulosNoComparadosPorParcial": 0,
+     "parciales": []
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "filasHuerfanas": 1,
+     "filasSinMarcador": 4,
+     "filasParciales": 1,
+     "modulosNoComparadosPorSinMarcador": 13,
+     "modulosNoComparadosPorParcial": 19,
+     "parciales": [
+      {
+       "fila": 2,
+       "orig": 19,
+       "clon": 6,
+       "motivo": "el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)"
+      }
+     ]
+    },
+    {
+     "ruta": "/kunak-api",
+     "filasHuerfanas": 1,
+     "filasSinMarcador": 3,
+     "filasParciales": 0,
+     "modulosNoComparadosPorSinMarcador": 6,
+     "modulosNoComparadosPorParcial": 0,
+     "parciales": []
+    }
+   ],
+   "totalesExcluidos": {
+    "sinMarcador": 18,
+    "parciales": 2,
+    "modsSin": 82,
+    "modsParc": 54
+   },
+   "desalineamiento": [
+    {
+     "ruta": "/monitor-calidad-aire",
+     "fila": 5,
+     "orig": 146,
+     "clon": 1375.81,
+     "delta": 1229.81
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 7,
+     "orig": 146,
+     "clon": 1375.81,
+     "delta": 1229.81
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 5,
+     "orig": 146,
+     "clon": 1425.81,
+     "delta": 1279.81
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 5,
+     "orig": 146,
+     "clon": 1425.81,
+     "delta": 1279.81
+    }
+   ],
+   "pares": [
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "h",
+     "orig": 389,
+     "clon": 459,
+     "delta": 70,
+     "dist": 70
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 32,
+     "kind": "text",
+     "eje": "h",
+     "orig": 430.86,
+     "clon": 366.5,
+     "delta": -64.36,
+     "dist": 64.36
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "h",
+     "orig": 33,
+     "clon": 90,
+     "delta": 57,
+     "dist": 57
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 6,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 48,
+     "delta": 48,
+     "dist": 48
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 10,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 48,
+     "delta": 48,
+     "dist": 48
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "h",
+     "orig": 79,
+     "clon": 47,
+     "delta": -32,
+     "dist": 32
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 14,
+     "kind": "text",
+     "eje": "h",
+     "orig": 79,
+     "clon": 47,
+     "delta": -32,
+     "dist": 32
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 31,
+     "kind": "text",
+     "eje": "h",
+     "orig": 79,
+     "clon": 47,
+     "delta": -32,
+     "dist": 32
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 0,
+     "delta": -31.67,
+     "dist": 31.67
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 0,
+     "delta": -31.67,
+     "dist": 31.67
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 0,
+     "delta": -31.67,
+     "dist": 31.67
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 0,
+     "delta": -31.67,
+     "dist": 31.67
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 0,
+     "delta": -31.67,
+     "dist": 31.67
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 0,
+     "delta": -31.67,
+     "dist": 31.67
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 0,
+     "delta": -31.67,
+     "dist": 31.67
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 2,
+     "kind": null,
+     "eje": "h",
+     "orig": 99.5,
+     "clon": 69.5,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 3,
+     "kind": null,
+     "eje": "h",
+     "orig": 74,
+     "clon": 44,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 33,
+     "kind": null,
+     "eje": "mb",
+     "orig": 0,
+     "clon": 30,
+     "delta": 30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 4,
+     "kind": null,
+     "eje": "h",
+     "orig": 74,
+     "clon": 44,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 4,
+     "kind": null,
+     "eje": "mb",
+     "orig": 60,
+     "clon": 90,
+     "delta": 30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 11,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 27.82,
+     "delta": 27.82,
+     "dist": 27.82
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 8,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 27.82,
+     "delta": 27.82,
+     "dist": 27.82
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 27.2,
+     "delta": 27.2,
+     "dist": 27.2
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 3,
+     "kind": "blurb",
+     "eje": "h",
+     "orig": 107.59,
+     "clon": 129.19,
+     "delta": 21.6,
+     "dist": 21.6
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 6,
+     "kind": "blurb",
+     "eje": "h",
+     "orig": 107.59,
+     "clon": 129.19,
+     "delta": 21.6,
+     "dist": 21.6
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 7,
+     "kind": "blurb",
+     "eje": "h",
+     "orig": 107.59,
+     "clon": 129.19,
+     "delta": 21.6,
+     "dist": 21.6
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 20,
+     "clon": 0,
+     "delta": -20,
+     "dist": 20
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "mb",
+     "orig": -1,
+     "clon": 19,
+     "delta": 20,
+     "dist": 20
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "h",
+     "orig": 140.38,
+     "clon": 158.38,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 48,
+     "delta": 16.33,
+     "dist": 16.33
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 48,
+     "delta": 16.33,
+     "dist": 16.33
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 48,
+     "delta": 16.33,
+     "dist": 16.33
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 48,
+     "delta": 16.33,
+     "dist": 16.33
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 6,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 48,
+     "delta": 16.33,
+     "dist": 16.33
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 7,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 48,
+     "delta": 16.33,
+     "dist": 16.33
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 8,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 48,
+     "delta": 16.33,
+     "dist": 16.33
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 9,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 48,
+     "delta": 16.33,
+     "dist": 16.33
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 2,
+     "kind": null,
+     "eje": "mb",
+     "orig": 14.4,
+     "clon": 0,
+     "delta": -14.4,
+     "dist": 14.4
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 20,
+     "delta": -11.67,
+     "dist": 11.67
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "h",
+     "orig": 126.88,
+     "clon": 116,
+     "delta": -10.88,
+     "dist": 10.88
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 10.88,
+     "clon": 0,
+     "delta": -10.88,
+     "dist": 10.88
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 14,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 31,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "h",
+     "orig": 30.59,
+     "clon": 38.41,
+     "delta": 7.82,
+     "dist": 7.82
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 7.82,
+     "delta": 7.82,
+     "dist": 7.82
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 5,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 6,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 7,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 8,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 9,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 10,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 11,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 12,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 13,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 14,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.81,
+     "delta": -3.86,
+     "dist": 3.86
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 6,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 7,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 8,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 9,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 10,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 3,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 4,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 5,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 6,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 7,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.82,
+     "delta": -3.85,
+     "dist": 3.85
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.9,
+     "delta": -3.77,
+     "dist": 3.77
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 27.9,
+     "delta": -3.77,
+     "dist": 3.77
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 31,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 31.67,
+     "clon": 28,
+     "delta": -3.67,
+     "dist": 3.67
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 50,
+     "clon": 48,
+     "delta": -2,
+     "dist": 2
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "h",
+     "orig": 208,
+     "clon": 207,
+     "delta": -1,
+     "dist": 1
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "h",
+     "orig": 156,
+     "clon": 155,
+     "delta": -1,
+     "dist": 1
+    }
+   ],
+   "suma": 1344.83,
+   "porEje": {
+    "h": {
+     "n": 17,
+     "suma": 480.86000000000007
+    },
+    "mb": {
+     "n": 52,
+     "suma": 755.2700000000006
+    },
+    "pb": {
+     "n": 11,
+     "suma": 108.69999999999999
+    }
+   },
+   "porRuta": {
+    "/accesorios": {
+     "n": 23,
+     "suma": 512.7199999999998
+    },
+    "/software-de-medicion-calidad-del-aire": {
+     "n": 25,
+     "suma": 373.5600000000002
+    },
+    "/kunak-api": {
+     "n": 32,
+     "suma": 458.5500000000003
+    }
+   }
+  },
+  {
+   "ancho": 390,
+   "fuente": "productos-cmp-390-2026-08-31-srcset-cerrado.json",
+   "excluidos": [
+    {
+     "ruta": "/monitor-calidad-aire",
+     "filasHuerfanas": 1,
+     "filasSinMarcador": 5,
+     "filasParciales": 1,
+     "modulosNoComparadosPorSinMarcador": 47,
+     "modulosNoComparadosPorParcial": 34,
+     "parciales": [
+      {
+       "fila": 3,
+       "orig": 34,
+       "clon": 3,
+       "motivo": "el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)"
+      }
+     ]
+    },
+    {
+     "ruta": "/accesorios",
+     "filasHuerfanas": 1,
+     "filasSinMarcador": 6,
+     "filasParciales": 0,
+     "modulosNoComparadosPorSinMarcador": 15,
+     "modulosNoComparadosPorParcial": 0,
+     "parciales": []
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "filasHuerfanas": 1,
+     "filasSinMarcador": 4,
+     "filasParciales": 1,
+     "modulosNoComparadosPorSinMarcador": 13,
+     "modulosNoComparadosPorParcial": 18,
+     "parciales": [
+      {
+       "fila": 2,
+       "orig": 18,
+       "clon": 6,
+       "motivo": "el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)"
+      }
+     ]
+    },
+    {
+     "ruta": "/kunak-api",
+     "filasHuerfanas": 1,
+     "filasSinMarcador": 3,
+     "filasParciales": 0,
+     "modulosNoComparadosPorSinMarcador": 6,
+     "modulosNoComparadosPorParcial": 0,
+     "parciales": []
+    }
+   ],
+   "totalesExcluidos": {
+    "sinMarcador": 18,
+    "parciales": 2,
+    "modsSin": 81,
+    "modsParc": 52
+   },
+   "desalineamiento": [
+    {
+     "ruta": "/monitor-calidad-aire",
+     "fila": 5,
+     "orig": 119,
+     "clon": 1969.13,
+     "delta": 1850.13
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 7,
+     "orig": 119,
+     "clon": 1917.13,
+     "delta": 1798.13
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 5,
+     "orig": 99,
+     "clon": 2021.63,
+     "delta": 1922.63
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 5,
+     "orig": 99,
+     "clon": 2021.63,
+     "delta": 1922.63
+    }
+   ],
+   "pares": [
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "h",
+     "orig": 920.06,
+     "clon": 1038.88,
+     "delta": 118.82,
+     "dist": 118.82
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "h",
+     "orig": 1274.78,
+     "clon": 1393.59,
+     "delta": 118.81,
+     "dist": 118.81
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "h",
+     "orig": 944.66,
+     "clon": 1032.88,
+     "delta": 88.22,
+     "dist": 88.22
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 6,
+     "kind": "text",
+     "eje": "h",
+     "orig": 1024.84,
+     "clon": 1113.06,
+     "delta": 88.22,
+     "dist": 88.22
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "h",
+     "orig": 751.91,
+     "clon": 835.91,
+     "delta": 84,
+     "dist": 84
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "h",
+     "orig": 690.72,
+     "clon": 774.72,
+     "delta": 84,
+     "dist": 84
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "h",
+     "orig": 1086.06,
+     "clon": 1170.06,
+     "delta": 84,
+     "dist": 84
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "h",
+     "orig": 1304.44,
+     "clon": 1388.44,
+     "delta": 84,
+     "dist": 84
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 8,
+     "kind": "text",
+     "eje": "h",
+     "orig": 1123.66,
+     "clon": 1207.66,
+     "delta": 84,
+     "dist": 84
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 9,
+     "kind": "text",
+     "eje": "h",
+     "orig": 745.72,
+     "clon": 829.72,
+     "delta": 84,
+     "dist": 84
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 31,
+     "kind": "text",
+     "eje": "h",
+     "orig": 1218.83,
+     "clon": 1140.02,
+     "delta": -78.81,
+     "dist": 78.81
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 7,
+     "kind": "text",
+     "eje": "h",
+     "orig": 1116.25,
+     "clon": 1168.25,
+     "delta": 52,
+     "dist": 52
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 48,
+     "delta": 48,
+     "dist": 48
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 9,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 48,
+     "delta": 48,
+     "dist": 48
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "h",
+     "orig": 79,
+     "clon": 47,
+     "delta": -32,
+     "dist": 32
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 13,
+     "kind": "text",
+     "eje": "h",
+     "orig": 79,
+     "clon": 47,
+     "delta": -32,
+     "dist": 32
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 30,
+     "kind": "text",
+     "eje": "h",
+     "orig": 79,
+     "clon": 47,
+     "delta": -32,
+     "dist": 32
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 0,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 0,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 0,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 0,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 1,
+     "kind": null,
+     "eje": "h",
+     "orig": 74,
+     "clon": 44,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 2,
+     "kind": null,
+     "eje": "h",
+     "orig": 74,
+     "clon": 44,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 32,
+     "kind": null,
+     "eje": "mb",
+     "orig": 0,
+     "clon": 30,
+     "delta": 30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 0,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 0,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 4,
+     "kind": null,
+     "eje": "h",
+     "orig": 74,
+     "clon": 44,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 0,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 11,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 30,
+     "delta": 30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 0,
+     "kind": "image",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 0,
+     "delta": -30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 8,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 0,
+     "clon": 30,
+     "delta": 30,
+     "dist": 30
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 20,
+     "clon": 43,
+     "delta": 23,
+     "dist": 23
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "h",
+     "orig": 33,
+     "clon": 53.75,
+     "delta": 20.75,
+     "dist": 20.75
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 20,
+     "clon": 0,
+     "delta": -20,
+     "dist": 20
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "h",
+     "orig": 325.94,
+     "clon": 305.94,
+     "delta": -20,
+     "dist": 20
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 20,
+     "clon": 0,
+     "delta": -20,
+     "dist": 20
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 9,
+     "kind": "blurb",
+     "eje": "h",
+     "orig": 105.2,
+     "clon": 124.41,
+     "delta": 19.21,
+     "dist": 19.21
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 6,
+     "kind": "blurb",
+     "eje": "h",
+     "orig": 124.41,
+     "clon": 143.61,
+     "delta": 19.2,
+     "dist": 19.2
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "h",
+     "orig": 323.94,
+     "clon": 341.94,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 48,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 48,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 48,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 4,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 48,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 48,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 6,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 48,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 7,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 48,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 8,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 48,
+     "delta": 18,
+     "dist": 18
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 1,
+     "kind": null,
+     "eje": "mb",
+     "orig": 14.4,
+     "clon": 0,
+     "delta": -14.4,
+     "dist": 14.4
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 5,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 13,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 30,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 2,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 3,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 0,
+     "clon": 10,
+     "delta": 10,
+     "dist": 10
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "h",
+     "orig": 104.23,
+     "clon": 98,
+     "delta": -6.23,
+     "dist": 6.23
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 1,
+     "kind": "text",
+     "eje": "pb",
+     "orig": 6.23,
+     "clon": 0,
+     "delta": -6.23,
+     "dist": 6.23
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 2,
+     "modulo": 5,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 33,
+     "delta": 3,
+     "dist": 3
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 4,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 5,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 6,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 7,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 8,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 9,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 10,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 11,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 12,
+     "kind": "blurb",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 13,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 27.81,
+     "delta": -2.19,
+     "dist": 2.19
+    },
+    {
+     "ruta": "/accesorios",
+     "fila": 4,
+     "modulo": 3,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 50,
+     "clon": 48,
+     "delta": -2,
+     "dist": 2
+    },
+    {
+     "ruta": "/software-de-medicion-calidad-del-aire",
+     "fila": 3,
+     "modulo": 30,
+     "kind": "text",
+     "eje": "mb",
+     "orig": 30,
+     "clon": 28,
+     "delta": -2,
+     "dist": 2
+    },
+    {
+     "ruta": "/kunak-api",
+     "fila": 1,
+     "modulo": 4,
+     "kind": null,
+     "eje": "mb",
+     "orig": 60,
+     "clon": 58.8,
+     "delta": -1.2,
+     "dist": 1.2
+    }
+   ],
+   "suma": 2116.38,
+   "porEje": {
+    "h": {
+     "n": 24,
+     "suma": 1338.2700000000002
+    },
+    "mb": {
+     "n": 40,
+     "suma": 661.8800000000007
+    },
+    "pb": {
+     "n": 11,
+     "suma": 116.23
+    }
+   },
+   "porRuta": {
+    "/accesorios": {
+     "n": 30,
+     "suma": 1380.8200000000002
+    },
+    "/software-de-medicion-calidad-del-aire": {
+     "n": 24,
+     "suma": 365.29999999999995
+    },
+    "/kunak-api": {
+     "n": 21,
+     "suma": 370.26
+    }
+   }
+  }
+ ],
+ "enLosDosAnchos": [
+  "/accesorios::f4::m3::h",
+  "/accesorios::f5::m2::h",
+  "/software-de-medicion-calidad-del-aire::f3::m31::h",
+  "/accesorios::f4::m5::mb",
+  "/accesorios::f5::m9::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m3::h",
+  "/accesorios::f4::m0::mb",
+  "/accesorios::f5::m0::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m0::mb",
+  "/kunak-api::f1::m0::mb",
+  "/kunak-api::f1::m1::mb",
+  "/kunak-api::f2::m0::mb",
+  "/kunak-api::f3::m0::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m2::h",
+  "/kunak-api::f1::m4::h",
+  "/kunak-api::f2::m11::mb",
+  "/kunak-api::f3::m8::mb",
+  "/accesorios::f5::m1::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m1::h",
+  "/accesorios::f5::m1::h",
+  "/kunak-api::f3::m6::h",
+  "/accesorios::f5::m2::mb",
+  "/accesorios::f5::m3::mb",
+  "/accesorios::f5::m4::mb",
+  "/accesorios::f5::m5::mb",
+  "/accesorios::f5::m6::mb",
+  "/accesorios::f5::m7::mb",
+  "/accesorios::f5::m8::mb",
+  "/accesorios::f4::m4::mb",
+  "/accesorios::f4::m2::h",
+  "/accesorios::f4::m1::pb",
+  "/accesorios::f5::m1::pb",
+  "/kunak-api::f1::m2::pb",
+  "/kunak-api::f2::m1::pb",
+  "/kunak-api::f2::m3::pb",
+  "/kunak-api::f3::m1::pb",
+  "/kunak-api::f1::m1::h",
+  "/kunak-api::f1::m1::pb",
+  "/kunak-api::f2::m5::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m4::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m5::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m6::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m7::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m8::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m9::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m10::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m11::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m12::mb",
+  "/software-de-medicion-calidad-del-aire::f3::m13::mb",
+  "/kunak-api::f1::m3::mb",
+  "/accesorios::f4::m3::mb",
+  "/kunak-api::f1::m4::mb"
+ ]
+}

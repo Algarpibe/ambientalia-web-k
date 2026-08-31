@@ -5458,6 +5458,122 @@ contenedor*).
 
 ---
 
+**43 · UN CANAL NO SE CIERRA CON UN ATRIBUTO: DENTRO DEL MISMO `<img>` EL
+`srcset` LE GANA AL `src`, Y REESCRIBIR SÓLO EL `src` DEJA MEDIA UNIDAD — CON EL
+SIGNO INVERTIDO.** (2026-08-31)
+
+§regla 32 ya dice que *reescribir un canal a copias locales y otro no es cerrar
+MEDIO canal*, y su ejemplo son **dos canales** —las hojas y las imágenes—. Le
+falta el caso en que el canal es **uno** y lo que queda a medias es **un
+atributo suyo**:
+
+> **Cuando un `<img>` trae `srcset`, el navegador elige de AHÍ y el `src` es
+> sólo el respaldo.** Así que una reescritura a copia local que toque el `src` y
+> no el `srcset` **no localiza nada**: los candidatos remotos los aborta la
+> intercepción y **la imagen no carga EN EL LADO DEL ORIGINAL**.
+
+**Y lo que produce no es un error: es un rojo con el signo al revés.** El clon
+—que sí pinta su imagen— sale «más alto», así que el defecto se le atribuye a
+él. Medido: **22 de 56 `<img>`** del corpus de un arquetipo traen `srcset`
+remoto, y entre ellos **las 16 capturas** de una rejilla; el comparador publicó
+**`Δ+243.75` EXACTO y constante en 14 tarjetas** —`orig 179.78 → clon 423.53`—
+que se lee como *«el clon las pinta 244 px más altas»* cuando lo que pasa es que
+el original no pinta las suyas. Recalibrar contra eso es fabricar una **FAMILIA
+DE CALIBRACIÓN** con el original de coartada.
+
+**Las dos mitades operativas:**
+
+1. **la comprobación de «¿está cerrado el canal?» es por ATRIBUTO, no por
+   canal** — y se publica **su cardinal**, como ya se hace con las hojas: un
+   `conSrcset: 22` al lado de `resueltas 162/162` es lo que distingue un canal
+   cerrado de uno que lo parece;
+2. **y se NEUTRALIZA en vez de reescribirse candidato a candidato**, porque el
+   clon no emite `srcset`: reescribirlo dejaría un original con selección por
+   densidad contra un clon sin ella, que es **otra asimetría** de la misma
+   §regla 32.
+
+> **Y la señal para buscarlo es gratis: un Δ grande, CONSTANTE y repetido.**
+> Un defecto de maquetación varía con el contenido; `+243.75` idéntico en 14
+> instancias es la firma de **algo que a un lado le falta entero**.
+
+---
+
+**44 · EL CONTRATO DE `Evaluadas` SÓLO CIERRA «0 COMPARADO = VERDE» SI SU UNIDAD
+ES LA QUE LA SONDA COMPARA.** (2026-08-31)
+
+§sondas 4bis da esa clase por cerrada —*«toda sonda declara su mínimo de
+unidades evaluadas, y por debajo el resultado es NO SE PUDO EVALUAR»*— y §regla
+14 dice que la cobertura se declara **en la unidad que la sonda compara**. Nadie
+las había cruzado, y cruzarlas deja un hueco:
+
+> **Un contrato declarado un nivel POR ENCIMA de lo que se compara no puede ver
+> un cero de abajo.** Si la unidad del contrato es el PAR y lo que se compara
+> son EJES, recorrer las 4 rutas satisface el contrato **aunque se hayan
+> comparado 0 ejes** — y entonces `distintos` vale 0 por vacío y la sonda
+> publica «sin diferencias».
+
+**Medido:** romper el selector de fila del lado clon dejaba `0 ejes comparados ·
+0 distintos · EXIT 0` junto a un `✓ evaluadas 4/4 pares` perfectamente cierto.
+Es la **sexta instancia** de la clase, y por un camino que el contrato **no
+podía** ver — igual que la de §4bis-sexta, donde el proceso moría antes de
+construir su contador.
+
+**Operativamente:** el mínimo de la sonda se declara en la unidad de su
+comparación, o —cuando el par siga siendo la unidad natural del contrato— se le
+añade **una guarda propia sobre el recuento de ejes**, derivada del OTRO lado.
+Derivarla del lado que ningún sabotaje toca es lo que impide que el sabotaje
+mueva la portería (§regla 17).
+
+---
+
+**45 · ANTES DE LEER UN «EL CLON NO EMITE X» COMO PROPIEDAD DEL CLON, MIRA CON
+QUÉ VERSIÓN DE LA SONDA SE TOMÓ.** (2026-08-31)
+
+§sondas 4 protege del cero **al medirlo**; §regla 5bis, de la medida **caducada
+por un instrumento que se arregló**. Falta la lectura, que es donde se cobra:
+
+> **Una congelada acreditada —`saboteada: null`, `acredita: true`— puede
+> publicar una frase sobre el CLON que era de la SONDA.** «El clon no emite
+> marcador de MÓDULO» es un `ejesExcluidos` derivado de un `querySelectorAll`
+> del lado clon: si el selector cambió después, la frase sigue ahí, con toda la
+> autoridad de una medida, y **no vuelve a ser falsa ruidosamente**.
+
+**Y el discriminador no es la prosa: es el BUILD.** Cuesta dos `stat` —el mtime
+del HTML servido contra el de la congelada— más un `grep` del marcador en el
+HTML. Medido: de dos congeladas del mismo par, un encargo propuso dos lecturas
+—«es la de antes, mal nombrada» y «midió un build viejo»— **y las dos eran
+falsas**: el build tenía el marcador, era anterior a la corrida, y lo que no lo
+leía era el selector de la sonda de ese momento.
+
+> **Y el corolario de nombres: esa congelada NO se renombra.** Era idéntica al
+> bit a la de antes del cambio, o sea que **ella misma es la prueba del NO-OP**;
+> marcarla como artefacto la volvería invisible a `eligeCongeladaAnterior` y a
+> los censos (§regla 7, la vuelta). Lo que se corrige es **el acta**, no el
+> fichero.
+
+---
+
+**46 · MARCAR PARCIALMENTE UNA FILA NO APORTA COBERTURA: EL TRABAJO DE MARCADO
+ES POR FILA Y ES TODO-O-NADA.** (2026-08-31)
+
+Se sigue de §regla 33 —*emparejar por orden dos listas de distinto tamaño
+produce PAREJAS FALSAS, no huecos*— pero no estaba dicho como criterio de
+**planificación**, que es donde decide qué se hace en una tanda:
+
+> **Con el recuento descuadrado, un comparador declara la fila PARCIAL y no
+> compara NINGUNO de sus módulos.** Así que marcar 6 de 19 deja la fila
+> exactamente igual de sin comparar que marcar 0 — y encima la saca de SIN
+> MARCADOR, que es limpio, para meterla en PARCIAL, que suma al recuento de
+> distintos.
+
+**Operativamente:** el alcance de una tanda de marcado se planifica **en filas
+enteras**, no en módulos sueltos, y una fila que no se pueda completar **se deja
+sin marcar y se nombra** — es más barato de leer y no ensucia el titular. El
+cardinal de lo que queda fuera se publica igual (§regla 14): *«34 de los 65
+alcanzables»*, nunca un objetivo encogido.
+
+---
+
 ## Comandos
 
 ```bash

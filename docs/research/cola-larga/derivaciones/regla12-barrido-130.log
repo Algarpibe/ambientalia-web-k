@@ -1,0 +1,53 @@
+══════════════════════════════════════════════════════════════════════════════
+130.ª · BARRIDO DE §regla 12 — los DOS cruces, al lado
+══════════════════════════════════════════════════════════════════════════════
+
+   candidatos enumerados de las actas de la tanda: 6
+
+   | id | tipo | cruce A (laxo, heredado) | cruce B (endurecido) |
+   |---|---|---|---|
+   | R1 | REGLA | ya escrito | NO escrito |
+   | R2 | REGLA | ya escrito | NO escrito |
+   | R3 | REGLA | ya escrito | NO escrito |
+   | R4 | REGLA | NO escrito | NO escrito |
+   | E1 | EVENTO | NO escrito | ya escrito |
+   | E2 | EVENTO | ya escrito | NO escrito |
+
+   cruce A dice «ya escrito» en 4 de 6
+   cruce B dice «ya escrito» en 1 de 6
+   ⇒ discrepan en 5
+
+   ⚠ NINGUNO DE LOS DOS ADJUDICA SOLO. El laxo sobre-casa —le basta que las
+     palabras existan en algún sitio del documento— y el endurecido sub-casa
+     —una regla puede estar escrita con otras palabras—. La adjudicación va
+     A MANO, y los dos números se publican para que se pueda auditar.
+
+══════════════════════════════════════════════════════════════════════════════
+ADJUDICACIÓN A MANO
+
+  REGLA · promovida  [R1] Un canal de media no se cierra con el `src`: dentro del MISMO `<img>` el `srcset` GANA, y reescr…
+      porque: §regla 32 ya dice «reescribir un canal a copias locales y otro no es cerrar MEDIO canal», pero su ejemplo son DOS canales (hojas vs imágenes). Aquí el canal es UNO y lo que falta es un ATRIBUTO suyo, así que la comprobación de «¿está cerrado?» no es por canal sino por ATRIBUTO. Medido: 22 de 56 `<img>` del corpus con `srcset` remoto, y las 16 capturas de RejillaHerramientas entre ellos, produciendo un Δ+243.75 EXACTO y constante en 14 tarjetas que se lee como defecto del clon.
+      → CLAUDE.md, §regla 32 (la mitad del atributo)
+
+  REGLA · promovida  [R2] El contrato de `Evaluadas` sólo cierra la clase «0 comparado = verde» si su UNIDAD es la que la …
+      porque: §sondas 4bis da la clase por cerrada con `Evaluadas`, y §regla 14 dice que la cobertura se declara en la unidad que la sonda compara — pero nadie las cruza. Medido: romper `[data-fila]` daba `0 ejes comparados · 0 distintos · EXIT 0` con `✓ evaluadas 4/4 pares`. La sexta instancia de la clase, y por un camino que el contrato NO PODÍA ver.
+      → CLAUDE.md, §sondas 4bis (el límite del contrato)
+
+  REGLA · promovida  [R3] Antes de leer un `ejesExcluidos` —o cualquier «el clon no emite X»— como propiedad del CLON, com…
+      porque: §sondas 4 cubre el cero de un selector, y §regla 5bis que arreglar un instrumento CADUCA sus medidas. Lo que falta es la lectura: una congelada acreditada, con `saboteada: null`, publica una frase sobre el clon que era de la sonda — y sobrevive intacta a la corrección del instrumento. Medido: las DOS hipótesis del encargo eran falsas y la tercera («la sonda no leía») la dirimió el build, no la prosa.
+      → CLAUDE.md, §sondas 4 / §regla 5bis
+
+  REGLA · promovida  [R4] Marcar PARCIALMENTE una fila no aporta cobertura: con el recuento descuadrado la sonda la declar…
+      porque: Se sigue de §regla 33 (emparejar por orden dos listas de distinto tamaño da PAREJAS FALSAS, no huecos) pero no está dicho como criterio de PLANIFICACIÓN, que es donde decide. Medido: 6 de 19 marcados en la fila 2 de software la dejan igual de sin comparar que 0 de 19 — y de paso la sacan de SIN MARCADOR a PARCIAL, que suma al recuento de distintos.
+      → CLAUDE.md, junto a §regla 33
+
+  EVENTO · se queda   [E1] El emparejamiento por índice de las filas está desalineado en las 4 rutas: el original sirve una…
+      porque: §*31 de 31 rutas distintas no es un hallazgo: es el instrumento* ya lo cubre entero, con su firma (4 de 4 con el MISMO `orig`). Lo específico —qué botón, qué 146 px, qué 4 rutas— es un evento con su fecha y su número.
+      → el acta y PENDIENTES-QA
+
+  EVENTO · se queda   [E2] Un comentario JSX `{/* */}` dentro del retorno implícito de un `map` no compila, y el error apun…
+      porque: Es sintaxis del lenguaje, no método: lo caza el typecheck en el acto y no hay veredicto que pueda salir falso por él. Quitarle la fecha no deja ninguna regla útil.
+      → el acta
+
+  promovidas a CLAUDE.md: 4 de 6  ·  eventos que se quedan: 2
+══════════════════════════════════════════════════════════════════════════════

@@ -6732,6 +6732,30 @@ editor. El marcador es la **LLAVE** de emparejamiento, no el portador (§regla 3
 > sabotaje `-neg-sin-ordinal-por-documento-lote` (CAMPO 6 → 0, 18/18) · **NO-OP
 > verde en los dos caminos existentes, con salida byte-idéntica**.
 
+> ✅ **2026-08-31 (130.ª) — LOS DOS CAMPO DE SOFTWARE PASAN A ESTAR BAJO
+> COMPARACIÓN DE DOS LADOS. NINGUNA DEFINICIÓN CAMBIA; lo que cambia es que
+> ahora se pueden VERIFICAR contra el original.**
+>
+> Los dos —`menu-anclas` sobre `.et_pb_text_14/15` e `iconos-md-2` sobre
+> `.et_pb_blurb_15/16`— viven en **la misma fila** del original (la 3), y ésa es
+> la que el clon pasó a marcar con `data-modulo`: `productos-cmp` la compara
+> **34 → 34** a los dos anchos. Hasta hoy el eje `módulos` de esta ruta estaba a
+> `·`, o sea que los valores del ESQUEMA salían del ORIGINAL y **nadie había
+> comprobado que el clon los sirviera**.
+>
+> **Y la primera comparación ya cosecha en el `mb` que estos campos modelan:**
+> `mb 31.67 → 27.81` en los 9 blurbs de beneficios y en el texto de la fila,
+> `mb 31.67 → 0` en las imágenes. Son **defectos del clon que llevaban ahí desde
+> que se construyó**, no regresión: es cobertura nueva.
+>
+> ⚠ **Y su reverso, que hay que leer antes de tocar nada:** la primera línea
+> base publicó además `Δ+243.75` constante en 14 tarjetas de `iconos-md-2`, y
+> **eso NO era del clon**: era el `srcset` remoto del original ganándole al
+> `src` localizado (§regla 43), así que el original no pintaba sus capturas.
+> Corregido en la sonda. **Un Δ grande y CONSTANTE sobre el marcador de un CAMPO
+> es exactamente la forma de un dato que invita a recalibrar el esquema** — y
+> aquí habría recalibrado contra media unidad.
+
 ### Los 46, reescritos con su reparto y los dos números con su unidad
 
 | de los 46 pares SIN VARIANZA del lote | n | vía |

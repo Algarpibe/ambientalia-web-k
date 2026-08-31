@@ -134,6 +134,62 @@ const casos = [
     },
   },
   {
+    /* ⚠⚠ EL 5.º CASO (130.ª) — EL NIVEL DE ARRIBA, QUE LA 129.ª DEJÓ NOMBRADO.
+     *
+     * El 4.º rompe `[data-modulo]`. Éste rompe `[data-fila]`, y no es simetría
+     * decorativa: el eje de FILA es el que da el TITULAR de esta sonda —los 43
+     * ejes distintos que se citan— y hasta hoy **no tenía ni una instancia
+     * separadora**. Los tres primeros casos usan `NEG_MISMO_LADO`, que copia el
+     * original sobre el clon y por tanto nunca aplica el selector del clon a
+     * marcado del clon; el 4.º sólo toca los módulos.
+     *
+     * Y escribirlo destapó que el modo de fallo daba VERDE: con 0 filas del
+     * lado clon, `n = min(orig, clon)` vale 0, así que `comparados` y
+     * `distintos` valen 0 y la sonda publicaba `EXIT 0 — sin diferencias`. El
+     * contrato de `Evaluadas` no podía verlo porque su unidad es el PAR y las 4
+     * rutas se recorrieron — §regla 14 con el nivel de arriba absorbiendo lo
+     * que no se midió abajo. La guarda nueva sale por 6.
+     *
+     * El sabotaje es DEL DATO —un marcador que no casa, el modo de fallo real—
+     * y no de un umbral (§regla 28a). Y antes de creérselo: hoy el lado medido
+     * vale 27 filas de clon, así que romperlo tiene con qué morder. */
+    etiqueta: "selector-fila-falso",
+    porQue: "el marcador de FILA del clon no casa: la corrida tiene que declararse NULA, no publicar «sin diferencias»",
+    env: { NEG_SELECTOR_FILA_FALSO: "1" },
+    conControl: true,
+    /* Atado al exit PROPIO de la guarda —6, no 4— porque el caso afirma
+     * exactamente eso: que el motivo se puede ATRIBUIR (§regla 24). Un exit
+     * compartido no diría cuál de los dos ejes cayó. */
+    exit: 6,
+    salidaTiene: /CORRIDA NULA — 0 ejes de FILA comparados/,
+    /* La aserción que de verdad separa este caso del control: que NO se declare
+     * limpio. Con 0 filas el recuento de distintos también es 0 —correctamente—
+     * así que lo único que los separa es la guarda. */
+    salidaNoTiene: /EXIT 0 — sin diferencias/,
+    comprueba: (j, ctrl) => {
+      if (!ctrl) return "sin corrida de CONTROL: el sabotaje solo no prueba nada (§regla 8a)";
+      /* El control tiene que APORTAR, o el sabotaje no ejercita nada: si el
+       * clon no aportara filas ya sin sabotear, el caso estaría SIN PROBAR — y
+       * un SIN PROBAR en verde se lee como probado (§regla 21, tercer caso). */
+      const filasCtrl = ctrl.informe.reduce((s, i) => s + i.filas.clon, 0);
+      if (filasCtrl === 0)
+        return `el CONTROL aporta 0 filas de clon: 0 instancias separadoras, caso SIN PROBAR (denominador ${ctrl.resumen.pares} pares)`;
+      if (ctrl.resumen.ejesComparados === 0) return "el CONTROL no compara ejes de fila: nada que tumbar";
+      /* Y el sabotaje tiene que caer POR SU MOTIVO: 0 filas de clon y 0 ejes.
+       * Si cayera con filas > 0 estaría cayendo por otra cosa. */
+      const filasSab = j.informe.reduce((s, i) => s + i.filas.clon, 0);
+      if (filasSab !== 0) return `con el selector de fila roto el clon sigue aportando ${filasSab} filas: no las estaba leyendo de él`;
+      if (j.resumen.ejesComparados !== 0) return `ejes de fila ${j.resumen.ejesComparados} != 0 con el selector roto`;
+      /* Y es ESPECÍFICO del lado clon: el original no lo toca ningún sabotaje,
+       * así que sus filas tienen que seguir intactas. Sin esto, un sabotaje que
+       * tumbara los DOS lados pasaría igual y no diría nada del marcador. */
+      const origCtrl = ctrl.informe.reduce((s, i) => s + i.filas.orig, 0);
+      const origSab = j.informe.reduce((s, i) => s + i.filas.orig, 0);
+      if (origSab !== origCtrl) return `el sabotaje movió también el lado ORIGINAL (${origCtrl} -> ${origSab} filas): no es específico del clon`;
+      return null;
+    },
+  },
+  {
     etiqueta: "sin-insumos",
     porQue: "los documentos del corpus ausentes: corrida NULA, no números plausibles de la nada",
     env: { NEG_MISMO_LADO: "1", NEG_SIN_INSUMOS: "1" },
@@ -223,10 +279,23 @@ console.log(`  · ✅ y ${conClonReal.length} caso(s) SÍ lo ejercitan contra el
 console.log(`    ${conClonReal.join(", ")} — añadido en la 129.ª, que es cuando el clon`);
 console.log(`    empezó a emitir \`data-modulo\`. Su aserción es la DIFERENCIA`);
 console.log(`    control/sabotaje, no el exit: el exit lo fija el eje de FILA.`);
-console.log(`  · ⇒ SIGUE FALTANDO el equivalente para \`[data-fila]\`: el 4.º sabotaje`);
-console.log(`    rompe el selector de MÓDULO, no el de fila. Si \`data-fila\` dejara`);
-console.log(`    de casar, estos ${casos.length} casos seguirían en verde.`);
-console.log(`  · los canales del lote están CERRADOS (hojas 30/30, media 162/162),`);
+/* ⚠ EL ESTADO DEL EQUIVALENTE PARA `[data-fila]` SE DERIVA DE `casos`, NO SE
+ * ESCRIBE — es la misma lección que el bloque de arriba, y es la que lo hizo
+ * falso: hasta la 130.ª aquí decía «SIGUE FALTANDO», y esa frase se volvió
+ * mentira el día que el caso se añadió, sin dar error (§regla 5ter). */
+const rompenFila = casos.filter((c) => c.env?.NEG_SELECTOR_FILA_FALSO).map((c) => c.etiqueta);
+const rompenModulo = casos.filter((c) => c.env?.NEG_SELECTOR_CLON_FALSO).map((c) => c.etiqueta);
+if (rompenFila.length) {
+  console.log(`  · ✅ y el equivalente para \`[data-fila]\` YA EXISTE (130.ª): ${rompenFila.join(", ")}`);
+  console.log(`    — el de MÓDULO es ${rompenModulo.join(", ")}. Los dos niveles del lado`);
+  console.log(`    clon quedan ejercitados, cada uno con su código de salida propio.`);
+} else {
+  console.log(`  · ⇒ FALTA el equivalente para \`[data-fila]\`: los sabotajes de selector`);
+  console.log(`    (${rompenModulo.join(", ") || "ninguno"}) rompen el de MÓDULO, no el de fila. Si`);
+  console.log(`    \`data-fila\` dejara de casar, estos ${casos.length} casos seguirían en verde.`);
+}
+console.log(`  · los canales del lote están CERRADOS (hojas 30/30, media 162/162,`);
+console.log(`    y desde la 130.ª también los \`srcset\` remotos, que ganaban al \`src\`),`);
 console.log(`    así que los casos salen por códigos distintos y un rojo se atribuye.`);
 console.log(`  ✓ evaluadas ${casos.length}/${casos.length} casos`);
 ev.informe();
