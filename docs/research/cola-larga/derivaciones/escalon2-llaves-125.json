@@ -1,0 +1,230 @@
+{
+  "fecha": "2026-08-31",
+  "tanda": 125,
+  "escalon": 2,
+  "alcance": {
+    "docs": [
+      "monitor-calidad-aire.html",
+      "accesorios.html",
+      "software-de-medicion-calidad-del-aire.html",
+      "kunak-api.html"
+    ],
+    "unidad": "NODO con caja @1440",
+    "nota": "propiedad de estos 4 documentos"
+  },
+  "controles": [
+    {
+      "ok": true,
+      "nombre": "se recorrio algo (hay nodos con caja)",
+      "detalle": "357 nodos @1440"
+    },
+    {
+      "ok": true,
+      "nombre": "el detector de sin-llave DISCRIMINA (ni cero ni pleno)",
+      "detalle": "105 de 357"
+    },
+    {
+      "ok": true,
+      "nombre": "CRUCE con la 124.ª: el n.º de NODOS sin llave REPRODUCE",
+      "detalle": "124.ª=105 · 125.ª=105"
+    },
+    {
+      "ok": true,
+      "nombre": "CRUCE con la 124.ª: los RESCATABLES reproducen",
+      "detalle": "124.ª=24 · 125.ª=24"
+    },
+    {
+      "ok": true,
+      "nombre": "la clasificacion por causa DISCRIMINA (mas de un cubo)",
+      "detalle": "3 cubos"
+    },
+    {
+      "ok": true,
+      "nombre": "§regla 6: ningun nodo cae en `SIN CAUSA`",
+      "detalle": "SIN CAUSA = 0"
+    },
+    {
+      "ok": true,
+      "nombre": "el reparto por llave SUMA el total (ningun nodo en dos cubos ni fuera)",
+      "detalle": "24 + 4 + 77 = 105"
+    },
+    {
+      "ok": true,
+      "nombre": "§regla 32: las hojas se resolvieron TODAS",
+      "detalle": "60/60"
+    }
+  ],
+  "totales": {
+    "nodos": 357,
+    "sinLlave": 105,
+    "rescatables": 24,
+    "rescatablesTbBody": 4,
+    "irrecuperables": 77,
+    "sinCausa": 0
+  },
+  "porCausa": {
+    "SUFIJO-TRAS-ORDINAL": 24,
+    "SIN-ORDINAL-EN-EL-MARCADO": 77,
+    "ORDINAL-DE-OTRA-CAPA-tb_body": 4
+  },
+  "porCausaTipo": {
+    "SUFIJO-TRAS-ORDINAL|modulo": 24,
+    "SIN-ORDINAL-EN-EL-MARCADO|modulo": 77,
+    "ORDINAL-DE-OTRA-CAPA-tb_body|modulo": 4
+  },
+  "muestras": {
+    "SUFIJO-TRAS-ORDINAL": [
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_module",
+        "detalle": "et_pb_button_0_wrapper"
+      },
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_center et_pb_button_alignment_tablet_center et_pb_button_alignment_phone_center",
+        "detalle": "et_pb_button_1_wrapper"
+      },
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_button_alignment_left et_pb_button_alignment_tablet_center et_pb_button_alignment_phone_center",
+        "detalle": "et_pb_button_2_wrapper"
+      },
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_button_alignment_left et_pb_module",
+        "detalle": "et_pb_button_3_wrapper"
+      }
+    ],
+    "SIN-ORDINAL-EN-EL-MARCADO": [
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_module dvmd_table_maker dvmd_table_maker_0 dvmd_tm_version_4_0_1",
+        "detalle": "et_pb_module"
+      },
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_module et_pb_toggle et_pb_toggle_close kunak-faq-item",
+        "detalle": "et_pb_toggle"
+      },
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_module et_pb_toggle et_pb_toggle_close kunak-faq-item",
+        "detalle": "et_pb_toggle"
+      },
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_module et_pb_toggle et_pb_toggle_close kunak-faq-item",
+        "detalle": "et_pb_toggle"
+      }
+    ],
+    "ORDINAL-DE-OTRA-CAPA-tb_body": [
+      {
+        "doc": "PRODUCTO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light",
+        "detalle": "et_pb_blog_0_tb_body"
+      },
+      {
+        "doc": "CATALOGO",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light",
+        "detalle": "et_pb_blog_0_tb_body"
+      },
+      {
+        "doc": "SOFTWARE",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light",
+        "detalle": "et_pb_blog_0_tb_body"
+      },
+      {
+        "doc": "SOFTWARE-corta",
+        "tipo": "modulo",
+        "etiqueta": "div",
+        "clases": "et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light",
+        "detalle": "et_pb_blog_0_tb_body"
+      }
+    ]
+  },
+  "regla33": {
+    "soloA": 6,
+    "soloB": 0,
+    "nota": "los dos lados sueltos; su diferencia NO se publica"
+  },
+  "porDoc": {
+    "PRODUCTO": {
+      "nodosConCaja1440": 119,
+      "nodosConCaja390": 117,
+      "sinLlave1440": 34,
+      "rescatables": 13,
+      "porCausa": {
+        "SUFIJO-TRAS-ORDINAL": 13,
+        "SIN-ORDINAL-EN-EL-MARCADO": 20,
+        "ORDINAL-DE-OTRA-CAPA-tb_body": 1
+      },
+      "soloA": 2,
+      "soloB": 0
+    },
+    "CATALOGO": {
+      "nodosConCaja1440": 68,
+      "nodosConCaja390": 66,
+      "sinLlave1440": 22,
+      "rescatables": 2,
+      "porCausa": {
+        "SUFIJO-TRAS-ORDINAL": 2,
+        "ORDINAL-DE-OTRA-CAPA-tb_body": 1,
+        "SIN-ORDINAL-EN-EL-MARCADO": 19
+      },
+      "soloA": 2,
+      "soloB": 0
+    },
+    "SOFTWARE": {
+      "nodosConCaja1440": 102,
+      "nodosConCaja390": 100,
+      "sinLlave1440": 27,
+      "rescatables": 7,
+      "porCausa": {
+        "SUFIJO-TRAS-ORDINAL": 7,
+        "ORDINAL-DE-OTRA-CAPA-tb_body": 1,
+        "SIN-ORDINAL-EN-EL-MARCADO": 19
+      },
+      "soloA": 2,
+      "soloB": 0
+    },
+    "SOFTWARE-corta": {
+      "nodosConCaja1440": 68,
+      "nodosConCaja390": 68,
+      "sinLlave1440": 22,
+      "rescatables": 2,
+      "porCausa": {
+        "SUFIJO-TRAS-ORDINAL": 2,
+        "ORDINAL-DE-OTRA-CAPA-tb_body": 1,
+        "SIN-ORDINAL-EN-EL-MARCADO": 19
+      },
+      "soloA": 0,
+      "soloB": 0
+    }
+  },
+  "hojas": {
+    "enlazadas": 60,
+    "resueltas": 60
+  }
+}

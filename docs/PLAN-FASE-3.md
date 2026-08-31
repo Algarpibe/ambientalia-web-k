@@ -1660,6 +1660,68 @@ a medio aplicar en el instrumento.
 > que hay no es un cero: son **dos conjuntos distintos** (módulos contra
 > columnas), y por eso se excluye en vez de contarse.
 
+### ✅ ESCALÓN 2 de la 125.ª (2026-08-30) · los 105 sin llave se reparten en TRES causas, y la aritmética cierra
+
+La 123.ª publicó **420 sin llave** (pares nodo×eje); la 124.ª corrigió la unidad
+—**105 NODOS**— y midió **24 rescatables**. Quedaban **81 sin explicar**, y «81»
+es un total: no dice si son un mecanismo o cinco. Esta derivación los reparte
+**por causa**, con el **mismo montaje** que la 124.ª copiado sin tocar — así lo
+que difiera no puede venir de ahí. `derivaciones/escalon2-llaves-125.*`,
+**8 controles en verde**, y los dos cruces con la 124.ª **reproducen exactos**
+(`105` y `24`), que es lo que acredita el instrumento antes de leer nada nuevo.
+
+| causa | n | mecanismo |
+|---|---|---|
+| **SIN-ORDINAL-EN-EL-MARCADO** | **77** | **76 `et_pb_toggle`** (19 × 4 documentos) **+ 1 `dvmd_table_maker`**. Divi **no numera** los toggles de un acordeón: son hijos de un módulo compuesto |
+| **SUFIJO-TRAS-ORDINAL** | **24** | `et_pb_button_0_wrapper` — el `\b` de la llave vieja **no casa antes de `_`**. Es el que la 124.ª ya había derivado |
+| **ORDINAL-DE-OTRA-CAPA (`_tb_body`)** | **4** | `et_pb_blog_0_tb_body`, 1 por documento |
+| | **105** | **24 + 4 + 77 = 105**, con su control de suma |
+
+**LA TERCERA CAUSA ES UN HALLAZGO Y NO UNA RELAJACIÓN DEL CUBO, y la diferencia
+importa:** la primera corrida dejó esos 4 en **`SIN CAUSA`** y **cerró en rojo**
+—§regla 6: una llave que no se puede derivar se tira, no se sustituye por un
+valor benigno—. La congelada de ese rojo se conserva
+(`escalon2-llaves-125-SONDA-TB-BODY-CAIA-EN-SIN-CAUSA-4.*`), porque las
+derivaciones **no pasan por la guarda de `w()`** y una corrida de verificación
+pisaría a la del diagnóstico. Lo que los saca del cubo no es bajar el listón: es
+que **su causa se derivó**, y tiene nombre —
+
+> **El descarte de `_tb_` en la llave es §regla 25: una guarda cuyo dominio es
+> más ancho que su invariante.** Existe para dejar fuera el **cascarón**
+> (`_tb_header` · `_tb_footer`) y se lleva por delante **`_tb_body`**, que no es
+> cascarón sino **el CUERPO de la plantilla del theme builder** — la capa `-T`
+> del régimen híbrido `BT`, cuyos nodos **sí** están numerados. La guarda no
+> falló en voz alta: **rechazó 4 nodos correctos**.
+
+Y se arregló **añadiendo una tercera llave, no cambiando la que ya tiene
+consumidores** (§regla 29, punto 2): tocar `ordMej` habría roto el cruce con la
+124.ª, que es justamente lo que acredita esta corrida.
+
+**EL HALLAZGO QUE ATA LOS DOS ESCALONES, y ninguno de los dos lo veía solo:**
+
+> **Los 105 nodos sin llave son, casi exactamente, los módulos que el ESCALÓN 1
+> midió como ANIDADOS.** 80 anidados (76 toggles + 4 posts) + 24 wrappers de
+> botón + 1 `dvmd_table_maker` = **105**. Dicho al revés: **el constructor sólo
+> numera los módulos que el editor colocó**, y lo que queda sin llave es lo que
+> **no** colocó él — el interior de un módulo compuesto, el envoltorio que Divi
+> añade, y el módulo que pone otra capa.
+
+**Consecuencia para el content type, que es lo que esta fase necesita:** «sin
+llave» **no es ruido de la medición** — es un **discriminador servido** entre lo
+que el editor compuso y lo que compuso el constructor. Los 77 del acordeón son
+**contenido de un solo campo** (`FAQ_ITEMS`, que el clon ya modela así), no 19
+bloques del flexible content. Esto **refuerza** la decisión de no escribir el
+content type todavía y a la vez **la informa**: la frontera de modelado cae
+donde cae el ordinal.
+
+> ⚠ **§regla 33 comprobada, y NO se da:** la señal de una llave que no casa es
+> que **los dos lados crezcan JUNTOS con el mismo cardinal**. Medido y publicado
+> **suelto, nunca su diferencia**: **solo-1440 = 6 · solo-390 = 0**. Un lado a
+> cero **no es esa firma** — son nodos que a 390 pierden la caja porque el
+> constructor duplica el módulo y esconde uno por ancho, que es lo que la 124.ª
+> ya había medido. Cruza al bit: **6 nodos × 4 ejes = los 24 pares sólo-1440**
+> de aquella corrida.
+
 ## El orden, y por qué
 
 | # | por qué va aquí |

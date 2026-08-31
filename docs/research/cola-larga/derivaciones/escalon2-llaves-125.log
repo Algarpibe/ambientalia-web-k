@@ -1,0 +1,62 @@
+=== CONTROLES ===
+  OK  se recorrio algo (hay nodos con caja)
+      357 nodos @1440
+  OK  el detector de sin-llave DISCRIMINA (ni cero ni pleno)
+      105 de 357
+  OK  CRUCE con la 124.ª: el n.º de NODOS sin llave REPRODUCE
+      124.ª=105 · 125.ª=105
+  OK  CRUCE con la 124.ª: los RESCATABLES reproducen
+      124.ª=24 · 125.ª=24
+  OK  la clasificacion por causa DISCRIMINA (mas de un cubo)
+      3 cubos
+  OK  §regla 6: ningun nodo cae en `SIN CAUSA`
+      SIN CAUSA = 0
+  OK  el reparto por llave SUMA el total (ningun nodo en dos cubos ni fuera)
+      24 + 4 + 77 = 105
+  OK  §regla 32: las hojas se resolvieron TODAS
+      60/60
+
+=== EL REPARTO POR CAUSA (unidad: NODO con caja @1440) ===
+  nodos totales: 357 · sin llave: 105
+  RESCATE, por llave y SIN RESTAR NADA (§regla 33: los lados sueltos):
+      con la llave depurada de la 124.ª (sufijo tras ordinal):  24
+      con la TERCERA llave (`_tb_body` deja de descartarse):    4
+      IRRECUPERABLES — sin ordinal en el marcado:               77
+      24 + 4 + 77 = 105  (tiene que dar 105)
+
+    77  SIN-ORDINAL-EN-EL-MARCADO
+        por tipo: modulo=77
+        · [PRODUCTO/modulo] <div> et_pb_module dvmd_table_maker dvmd_table_maker_0 dvmd_tm_version_4_0_1   → et_pb_module
+        · [PRODUCTO/modulo] <div> et_pb_module et_pb_toggle et_pb_toggle_close kunak-faq-item   → et_pb_toggle
+        · [PRODUCTO/modulo] <div> et_pb_module et_pb_toggle et_pb_toggle_close kunak-faq-item   → et_pb_toggle
+        · [PRODUCTO/modulo] <div> et_pb_module et_pb_toggle et_pb_toggle_close kunak-faq-item   → et_pb_toggle
+    24  SUFIJO-TRAS-ORDINAL
+        por tipo: modulo=24
+        · [PRODUCTO/modulo] <div> et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_module   → et_pb_button_0_wrapper
+        · [PRODUCTO/modulo] <div> et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_center et_pb_button_alignment_tablet_center et_pb_button_alignment_phone_center   → et_pb_button_1_wrapper
+        · [PRODUCTO/modulo] <div> et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_button_alignment_left et_pb_button_alignment_tablet_center et_pb_button_alignment_phone_center   → et_pb_button_2_wrapper
+        · [PRODUCTO/modulo] <div> et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_button_alignment_left et_pb_module   → et_pb_button_3_wrapper
+     4  ORDINAL-DE-OTRA-CAPA-tb_body
+        por tipo: modulo=4
+        · [PRODUCTO/modulo] <div> et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light   → et_pb_blog_0_tb_body
+        · [CATALOGO/modulo] <div> et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light   → et_pb_blog_0_tb_body
+        · [SOFTWARE/modulo] <div> et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light   → et_pb_blog_0_tb_body
+        · [SOFTWARE-corta/modulo] <div> et_pb_module et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light   → et_pb_blog_0_tb_body
+
+=== §regla 33 · LOS DOS LADOS SUELTOS (emparejamiento entre anchos, por llave) ===
+  (nunca su diferencia: si los dos crecen JUNTOS con el mismo cardinal, la llave no casa)
+  solo-1440: 6   ·   solo-390: 0
+
+=== POR DOCUMENTO ===
+  PRODUCTO        conCaja 1440=119 390=117 · sinLlave=34 (rescatables 13)
+      SUFIJO-TRAS-ORDINAL=13 · SIN-ORDINAL-EN-EL-MARCADO=20 · ORDINAL-DE-OTRA-CAPA-tb_body=1
+      solo-1440=2 · solo-390=0
+  CATALOGO        conCaja 1440=68 390=66 · sinLlave=22 (rescatables 2)
+      SUFIJO-TRAS-ORDINAL=2 · ORDINAL-DE-OTRA-CAPA-tb_body=1 · SIN-ORDINAL-EN-EL-MARCADO=19
+      solo-1440=2 · solo-390=0
+  SOFTWARE        conCaja 1440=102 390=100 · sinLlave=27 (rescatables 7)
+      SUFIJO-TRAS-ORDINAL=7 · ORDINAL-DE-OTRA-CAPA-tb_body=1 · SIN-ORDINAL-EN-EL-MARCADO=19
+      solo-1440=2 · solo-390=0
+  SOFTWARE-corta  conCaja 1440=68 390=68 · sinLlave=22 (rescatables 2)
+      SUFIJO-TRAS-ORDINAL=2 · ORDINAL-DE-OTRA-CAPA-tb_body=1 · SIN-ORDINAL-EN-EL-MARCADO=19
+      solo-1440=0 · solo-390=0
