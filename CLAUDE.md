@@ -4961,6 +4961,19 @@ y si la tuya no la iguala, el arreglo sólo vale en un ancho. Es §*una regla en
 NIVEL equivocado no da error* con el nivel puesto en la **especificidad** en vez
 de en el elemento.
 
+> ⚠ **Y NO ES SÓLO PARA ARREGLOS: LA CASCADA SE **LEE** TAMBIÉN A LOS DOS
+> ANCHOS** (2026-08-31). El enunciado de arriba dice *«un arreglo se verifica»*,
+> y por eso se lee como una guarda de escritura. Vale igual para **medir**: si
+> derivas quién escribió un valor preguntándole a la cascada, **el ganador puede
+> ser otro al otro ancho**, y con él el veredicto.
+>
+> **Medido:** el ganador de `margin-bottom` de un módulo es, a **1440**, un
+> **`%` de reparto** por tipo de columna (`5.82 % · 4.242 % · 3.735 %`); a
+> **390** es `.et_pb_column .et_pb_module{margin-bottom:30px}`. Los dos son
+> genéricos y los dos son PLANTILLA — pero el test A a 390 leería **«px
+> absolutos ⇒ campo»** sobre plantilla pura. Tomar la cascada a un solo ancho es
+> tomarla **donde la regla no compite**.
+
 **36 · ATRIBUIR UNA PROPIEDAD A UNA CLASE EXIGE SABER SI LA CLASE ES EL SUJETO
 DEL SELECTOR O SU CONTEXTO — Y SI ES CONTEXTO, COMPARARLA EN SU NODO DA Δ0 CON
 EL DEFECTO PUESTO.** (2026-08-25)
@@ -5177,6 +5190,122 @@ exceso **no es ruido: es exactamente la clase que la pregunta excluía**.
 **Y su forma general:** es §*la causa común: el NIVEL al que se mide* con el
 contenedor puesto **en la definición de la pregunta**. El nivel de arriba aquí
 no es una fila ni un total: es *qué cuenta como respuesta*.
+
+---
+
+**41 · LA VARIANZA DE ESTRUCTURA NO ES VARIANZA DE CAMPO — Y COMPARAR CONJUNTOS
+DE VALORES CONFUNDE LAS DOS SIN DAR ERROR.** (2026-08-31)
+
+El test B —*si dos instancias de la misma pieza traen valores distintos, lo
+escribió una persona*— se aplica comparando **el conjunto de valores** que la
+pieza toma en cada documento. Ahí se cuela una tercera causa que no es ni el
+editor ni un valor distinto:
+
+> **Una pseudo-clase ESTRUCTURAL —`:last-child`, `:first-child`, `:nth-*`—
+> mete un valor extra en el conjunto SIN QUE NADIE ESCRIBA NADA.** Así que dos
+> conjuntos pueden diferir porque **la misma regla se aplicó a otro número de
+> hermanos**, no porque alguien escribiera otra cosa. Y el resultado no se
+> distingue de una varianza real: sale como CAMPO, con su medición de coartada.
+
+**Medido:** `iconos-xs-2` `mb` daba `[31.6719]` en un arquetipo y
+`[0, 31.6719]` en otro. El `0` lo declara
+`.et_pb_module:last-child{margin-bottom:0}` del constructor: los conjuntos no
+difieren en un valor, difieren en **cuántos módulos hay en la columna**. De **6
+«CAMPO»** publicados así, **4 no lo eran** — y llevaban dos tandas escritos en
+un content type.
+
+**El discriminador, y es la CASCADA, no más instancias:**
+
+> **Si quitando los valores que declaran las reglas con pseudo-clase estructural
+> todos los documentos coinciden, Y ningún selector ganador lleva ORDINAL
+> (`et_pb_<tipo>_<n>`), no hubo editor.** El ordinal lo emite el constructor por
+> módulo: es la firma de quien editó. Sin él, la varianza es de estructura.
+
+**Las dos mitades operativas:**
+
+1. **la varianza dice QUÉ pasó; sólo la cascada dice QUIÉN lo escribió.** Un
+   veredicto de CAMPO se publica con **las dos patas** —los valores y el
+   selector ganador—, y cuando discrepan gana la cascada (§*el veredicto lo da
+   la salida servida*);
+2. **y el control es POR CASO CONOCIDO**: el discriminador tiene que separar una
+   pieza estructural de una editada, nombradas de antemano. Si no las separa, su
+   reparto no vale.
+
+> ⚠ **Y su corolario de DOMINIO, que decide dónde se puede medir esto:** la
+> varianza entre **arquetipos distintos** no prueba campo —§*lo que varía entre
+> FORMAS distingue plantillas, no campos*—. El dominio que decide es **varias
+> instancias del MISMO arquetipo**; el lote de arquetipos distintos sólo puede
+> refutar, no confirmar. Medido: los mismos 4 pares salen CAMPO en un lote de 4
+> arquetipos y PLANTILLA en 3 instancias de uno.
+
+> ⚠⚠ **Y SU COROLARIO DE INSTRUMENTO, DEL MISMO DÍA Y DE LA MISMA FAMILIA: UN
+> ATRIBUTO DE SONDA QUE PUEDE LLEVAR N VALORES Y SE ESCRIBE EN BUCLE CONSERVA
+> SÓLO EL ÚLTIMO — Y LO QUE NUNCA VA EL ÚLTIMO SALE «SIN PROBAR».**
+>
+> `for (const s of sem) n.setAttribute("data-sem", s)` **pisa el atributo cada
+> vuelta**. No da error: deja el nodo marcado con uno de sus N marcadores, y los
+> otros N−1 **no reciben ningún dato** de la consulta que lee ese atributo. La
+> salida no es un cero ruidoso — es **«sin declaración ganadora»**, o sea un SIN
+> PROBAR que se lee como propiedad del original.
+>
+> Medido: los 6 SIN PROBAR de una corrida eran **exactamente** los tres
+> marcadores que co-ocurren siempre con otro que va detrás. Puestos como
+> conjunto (`sem.join(" ")`), quedan **0**.
+>
+> **Es §regla 9 en su cara de *rama `else`*, con el objeto cambiado**: allí un
+> mapeo de dos bautiza lo nuevo con el nombre de lo viejo; aquí una escritura en
+> bucle **se queda con uno de N y descarta el resto en silencio**. La señal es
+> la misma: **un 100 % redondo** —6 de 6 SIN PROBAR concentrados en las piezas
+> que comparten nodo— y §sondas 4 manda sospechar del instrumento primero.
+
+> ⚠ **Y LA MITAD QUE DECIDE SI UNA CORRIDA CON PRECONDICIÓN INCUMPLIDA VALE: SE
+> MIDE, NO SE OPINA.** Cuando falte un insumo —unas hojas, un asset, un canal—
+> la pregunta *«¿invalida esto la medida?»* **es una hipótesis**, y §*cuando el
+> cambio se pueda aplicar, aplícalo y mide* la contesta: **quita ese insumo en
+> el dominio donde SÍ está** y cuenta qué se mueve. Con su control, que es
+> quitarlo TODO — si eso tampoco mueve nada, el instrumento no ejercita el canal
+> y el NO-OP no prueba nada (§regla 28a).
+>
+> Medido: 5 hojas ausentes parecían invalidar una corrida entera. Soltarlas
+> donde estaban movió **0 de 52 pares**; soltarlas TODAS movió **3 de 4
+> documentos**. La corrida valía **para esos ejes**, que es una afirmación más
+> estrecha que «valía».
+>
+> **Y la validez se cablea a la CONGELADA, no al criterio de quien mide:** la
+> sonda lee ese fichero y, si no está, la corrida no vale. Un juicio escrito en
+> prosa envejece; una condición que resuelve contra una medida, no.
+
+---
+
+**42 · UN GENERADOR DE MIGRACIONES PUEDE EMITIR EL `DROP CONSTRAINT` DESPUÉS DEL
+`DROP TABLE … CASCADE` QUE YA SE LO LLEVÓ — Y LA REVERSA NO REVIERTE NADA.**
+(2026-08-27 · 2026-08-31 — **dos instancias, luego es una clase**)
+
+§regla 30 ya manda probar la reversa **antes de que entre el dato**, que es la
+única ventana en que tiene respuesta. Le faltaba **qué buscar** cuando la
+reversa es GENERADA:
+
+> **`payload migrate:create` emite, para una colección nueva con relación a
+> `payload_locked_documents_rels`:**
+>
+> ```sql
+> DROP TABLE "<coleccion>" CASCADE;
+> ALTER TABLE "payload_locked_documents_rels" DROP CONSTRAINT "…_<coleccion>_fk";
+> ```
+>
+> **y el `CASCADE` ya se llevó esa FK**, así que la sentencia siguiente falla con
+> *«constraint … does not exist»* y **la transacción entera hace rollback**:
+> `exit 1` y **cero revertido**.
+
+**Dos instancias con el mismo mecanismo** —`autores` el 2026-08-27 y
+`arquetipos` el 2026-08-31—, así que **no son dos eventos: es una clase**, y
+toda migración que cree una colección nueva con esa relación **la hereda**.
+
+**Operativamente:** las sentencias de desmontaje llevan **`IF EXISTS`**
+—idempotente, no cambia lo que la reversa deja— y la reversa se **revisa a
+mano** antes de sembrar. Y se verifica **tabla a tabla con `diff`**, no con el
+total: dos tablas compensándose dan el mismo número (§*un cardinal es un
+contenedor*).
 
 ---
 

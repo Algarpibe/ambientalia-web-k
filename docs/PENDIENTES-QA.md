@@ -25358,3 +25358,234 @@ afirmaciones.
   regresión de `clon-base` sin negativo;
 - **no replanteó `lado`**, ni tocó `lib.mjs`, ni la deuda de §regla 37, ni los
   11 + 65 del censo de artefactos, ni las 89 lecturas fuera de la cadena.
+
+---
+
+## 2026-08-31 · 127.ª — LA VARIANZA DE PRODUCTO: 4 «CAMPO» ERAN LA REGLA `:last-child`
+
+**Tanda OFFLINE**: sin red, sin Docker, sin build, sin `check`. Lo único
+compilado es `typecheck:cms` (exit 0), porque se tocó un `.ts` — sólo
+comentarios y `description`, así que **no hay migración**: el esquema generado
+no se mueve.
+
+### El resultado en una tabla, con las unidades puestas
+
+| dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | estructural |
+|---|---|---|---|---|---|
+| **LOTE** — 4 arquetipos distintos, hojas 30/30 | 52 | **2** | 10 | 40 | 4 |
+| **FAMILIA PRODUCTO** — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 |
+
+**Los 46 SIN PROBAR de la 125.ª, reescritos con los dos números y su unidad:**
+
+| de los 46 pares | n | vía |
+|---|---|---|
+| **RESUELTOS a PLANTILLA** | **6** | pata 2 · cascada · selector GENÉRICO |
+| **SIGUEN ABIERTOS** | **40** | `SIN ESCRIBIR` — el único valor observado es el inicial |
+| resueltos a CAMPO por varianza | **0** | — |
+
+### El pre-registro, contestado por los dos lados
+
+| predicho | medido | |
+|---|---|---|
+| mitad A · varianza resuelve **6** (2–14) | **0** | **REFUTADA** |
+| mitad B · cascada resuelve **6** (4–10) | **6** | al punto central |
+| resueltos **12** (6–22) | **6** | por debajo del rango |
+| siguen abiertos **34** (≥25) | **40** | dentro del rango |
+| pares evaluables **≥100** | **132** | confirmada |
+
+**La mitad A queda refutada CON EL INSTRUMENTO ADJUDICADO**, que es la única
+forma en que una refutación dice algo del original: el mismo código sobre el
+LOTE reproduce la medida de la 125.ª al conjunto en los 6 pares, con 13/13
+controles y exit 0.
+
+⚠ **Y el control que pre-registré para eso NO servía**: los 6 CAMPO comparan
+PRODUCTO contra CATÁLOGO / SOFTWARE / SOFTWARE-corta, documentos que la familia
+no tiene, así que era **DEGENERADO POR CONSTRUCCIÓN** — 0 separadoras, 6 de 6.
+Lo que adjudica es el dominio `lote`, no ese control.
+
+### El hallazgo: la varianza de ESTRUCTURA no es varianza de CAMPO
+
+`iconos-xs-2` `mb` daba PRODUCTO `[31.6719]` contra SOFTWARE-corta
+`[0, 31.6719]`. Los conjuntos **no difieren en un valor: difieren en cuántos
+módulos hay en la columna.** El `0` lo declara
+`.et_pb_module:last-child{margin-bottom:0}` del constructor, y **ningún selector
+ganador de ese par lleva ORDINAL**.
+
+⇒ **De los 6 «CAMPO» de la 125.ª sobreviven 2.** Los 4 de `iconos-xs-2` e
+`iconos-md-3` pasan a PLANTILLA. Los 2 de `menu-anclas` aguantan porque su valor
+sí difiere (27.2 contra 31.6719) y su ganador es `.et_pb_text_15` con
+`1.7rem !important` — ordinal, o sea el editor.
+
+**Los 8 CAMPO de la familia llevan `ordinal: true` los ocho**: la varianza dice
+QUÉ pasó y la cascada dice QUIÉN lo escribió, y coinciden.
+
+### Dos defectos de la sonda, los dos cazados por la medida
+
+1. **`data-sem` en bucle dejaba sólo EL ÚLTIMO marcador** (heredado de la
+   125.ª). Un marcador que nunca va el último no recibe **ningún** dato de
+   cascada, y eso no sale como error: sale como «sin declaración ganadora», o
+   sea **SIN PROBAR**. Los 6 SIN PROBAR eran exactamente `iconos-xs-2`,
+   `dvmd_table_maker` y `dvmd_table_maker_0`, los tres que co-ocurren siempre
+   con otro que va detrás. Corregidos, quedan **0 SIN PROBAR**;
+2. **la varianza estructural leída como campo** (arriba). Discriminador
+   implementado con su **control por caso conocido**, que exige separar
+   `iconos-xs-2` (estructural) de `menu-anclas` (editor).
+
+Las 6 corridas defectuosas se conservan con su defecto en el nombre:
+`-SONDA-DATA-SEM-SOLO-EL-ULTIMO` · `-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO`.
+
+### El susto de las hojas, dirimido midiendo en vez de argumentando
+
+La corrida de la familia salió con **hojas 18/23**, y las 5 ausentes son **todas
+`et-cache`**. La primera lectura fue «la corrida no vale» — y eso es una
+hipótesis. §*cuando el cambio se pueda aplicar, aplícalo y mide*:
+
+| | resultado |
+|---|---|
+| **TRATAMIENTO** · soltar sólo `et-cache` donde SÍ están | **0 de 52 pares movidos** · ΔdocH 0 en 4/4 |
+| **CONTROL** · soltar **TODAS** las hojas | mueve en **3/4** · ΔdocH −10 · −10 · **−64** |
+| **CANAL** · ritmo ORDINAL | **149 reglas INLINE** · 8 en hojas capturadas · **0 en las 85 `et-cache` hermanas** |
+
+⇒ **las 5 ausentes NO invalidan estos 4 ejes**: el canal del ritmo por módulo es
+el `<style>` del propio documento, capturado en los 3. Y **la validez de la
+corrida la decide esa congelada, no el criterio de quien mide**: la sonda lee
+`hojas-etcache-127.json` y si no está, no vale.
+
+### Precondición que nadie había pagado: el RÉGIMEN de los 2 vecinos
+
+Los 3 documentos son **`B-`**, mirando **los DOS marcadores del `<body>`** y
+nombrando la combinación. Importa porque en `B-` existe la persona que editó
+cada página y varianza = campo; en `-T` o `--` esa persona **no existe** y la
+lectura **se invierte**.
+
+⚠ **Y por eso el punto 2 del encargo no se aplicó tal cual**: decía *«varianza
+CERO ⇒ PLANTILLA»*, que es la lectura del régimen PLANTILLADO. En `B-` varianza
+cero es el falso negativo declarado del test B. Aquí varianza cero es
+**NECESARIA pero no suficiente**, y quien dicta PLANTILLA es la cascada — con su
+selector, su unidad declarada y su estado de `@media` al lado, que es lo que el
+punto 3 exige.
+
+### Las cifras de ayer, derivadas hoy (§regla 9, también con las propias)
+
+| censo | instrumento | hoy | ayer | |
+|---|---|---|---|---|
+| familia PRODUCTO | OFFLINE | **21 · 18 · 3** | 21 · 18 · 3 | **reproduce** |
+| lote | OFFLINE | **20 · 8 · 12** | — | — |
+| lote | navegador + caja | — | 18 · 7 · 11 | **no, y no debe** |
+
+Diferencia simétrica **2 y 0**: `popup` y `dark`, sin caja. Criterio de
+recuento, no dato — los dos son ciertos.
+
+## ⛔ F3-5 · EL ESTADO REAL, QUE NO ES «CERRADA»
+
+**La primera mitad está hecha; la fase la cierra la segunda, y no es ésta.**
+
+| | |
+|---|---|
+| content type escrito con sus SIN PROBAR declarados y no cableados | ✅ |
+| **filas sembradas** | **0** |
+| **lectores en el render** | **0** — las 4 rutas siguen sirviéndose de `src/lib/` |
+| camino de render de `arquetipos` | **SIN ESTRENAR** |
+| eje `módulos` contra el original | **`·` SIN COMPARAR**, que no es «a 0» — 35 componentes de 97 |
+
+## ⛔ F3-5-VALOR767-SIN-CONSUMIDOR — sigue abierta, ahora con denominador
+
+De los **132 pares** medidos, **37** tienen declaración ganadora dentro de un
+`@media`, y **ninguna a 767**: sólo `(min-width: 981px)` ×16,
+`(max-width: 980px)` ×15 y `all` ×6. **Esta medición no le da consumidor**, así
+que sigue fichada con su cero.
+
+## ⛔ MIGRACIONES · EL `down` GENERADO NO REVIERTE — ES UNA CLASE, NO DOS EVENTOS
+
+**Dos instancias, mismo generador, mismo mecanismo:**
+
+| tanda | fecha | tabla | qué pasó |
+|---|---|---|---|
+| **117.ª** | 2026-08-27 | `autores` | `DROP TABLE … CASCADE` **antes** del `ALTER TABLE … DROP CONSTRAINT …_autores_fk` |
+| **126.ª** | 2026-08-31 | `arquetipos` | idéntico, con `…_arquetipos_fk` |
+
+En los dos, el `CASCADE` ya se lleva la FK, así que la sentencia explícita
+aborta la transacción entera: **exit 1 y CERO revertido**. Los dos se
+corrigieron a mano con `IF EXISTS`, que es idempotente y no cambia lo que la
+reversa deja.
+
+> **Se ficha como CLASE: `payload migrate:create` emite el `DROP CONSTRAINT`
+> explícito DESPUÉS del `DROP TABLE … CASCADE` que ya se lo llevó.** Toda
+> migración que cree una colección nueva con relación a
+> `payload_locked_documents_rels` **hereda el defecto**, así que la reversa se
+> revisa **a mano y antes de sembrar** (§regla 30), y las sentencias de
+> desmontaje llevan `IF EXISTS`.
+
+### Lo que esta tanda NO hizo, dicho en vez de omitido
+
+- **no sembró ni cableó lectores**: es la segunda mitad de F3-5;
+- **no clonó los 2 vecinos** — y quedó demostrado que **no hacía falta**;
+- **no tocó HOME**, ni el eje `módulos`, ni las 11 de 14 entradas muertas del
+  `include` del tsconfig, ni los 3 descifradores de Cloudflare;
+- **no tocó `lib.mjs`**, y ahí sigue abierto el hallazgo de la 126.ª:
+  `iniciarClon()` arranca con `next start` teniendo `output: standalone`, y con
+  `stdio: "ignore"` el aviso de Next no se ve nunca;
+- **no tocó la deuda de §regla 37**, ni los 11 + 65 del censo de artefactos, ni
+  las 89 lecturas fuera de la cadena;
+- **no capturó las 5 `et-cache` ausentes** — se midió que no hacen falta **para
+  estos 4 ejes**, que es una afirmación más estrecha que «no hacen falta».
+
+### El barrido de §regla 12, con su número — y el instrumento tuvo que crecer DOS veces
+
+| cardinal | n |
+|---|---|
+| enunciados destacados en el ámbito | **4** |
+| por el detector **heredado** (una línea) | **1** |
+| por el **complemento multilínea** añadido hoy | **3** |
+| «ya en CLAUDE.md» según el cruce **heredado** | 3 |
+| «ya en CLAUDE.md» según el cruce **endurecido** (n-grama de 4) | 0 |
+| **SOBRE-CASADOS por el heredado** | **3** |
+| **promovidas a `CLAUDE.md`** | **3 de 4** |
+
+**Dos defectos del propio barrido, los dos declarados en vez de tapados:**
+
+1. **el detector heredado SUBDETECTA**: `FORMA` es por línea y exige que el
+   `**…**` abra y cierre en la misma, así que **no ve la negrita multilínea** —
+   que es como está escrita casi toda la prosa de esta tanda. **No se cambió**
+   (rompería la comparabilidad con la 125.ª y la 126.ª, §regla 5bis): se añadió
+   un complemento y se publican **los dos cardinales**;
+2. **el cruce heredado SOBRE-CASA**: preguntaba si **6 palabras sueltas**
+   aparecen en algún sitio de un documento de 307 457 caracteres, y eso lo
+   cumple casi cualquier frase en castellano técnico. Marcó `[ya en CLAUDE]` el
+   **hallazgo principal de la tanda**, que no estaba. Endurecido a **n-grama
+   contiguo de 4**, con su control: el endurecido tiene que **aportar**, y
+   aporta 3.
+
+> ⚠ **Y ninguno de los dos cruces adjudica, así que la decisión se registra a
+> mano.** El heredado sobre-casa; el endurecido **sub-casa POR CONSTRUCCIÓN**,
+> porque **promover una regla exige parafrasearla** —el ESQUEMA guarda la
+> instancia medida y `CLAUDE.md` la forma general—, así que el n-grama no puede
+> casar ni cuando la promoción ya está hecha. La disposición de los 4 candidatos
+> queda escrita en `regla12-barrido-127.json` §`adjudicacionAMano`.
+
+**Lo promovido:**
+
+| enunciado | destino |
+|---|---|
+| la varianza de ESTRUCTURA no es varianza de CAMPO (+ sus dos corolarios: el atributo de sonda escrito en bucle, y la validez de una corrida se MIDE) | **§regla 41** |
+| el `down` generado emite el `DROP CONSTRAINT` tras el `DROP TABLE … CASCADE` | **§regla 42** |
+| la cascada se **lee** también a los dos anchos, no sólo se verifica | **§regla 35**, mitad que faltaba |
+
+Se queda como EVENTO el *«los 40 que quedan son SIN ESCRIBIR»*: su regla general
+ya está en `CLAUDE.md`; lo nuevo aquí es **el cardinal 40**, que lleva fecha y
+ruta.
+
+### El tripwire de carga, re-derivado (§regla 19)
+
+Medido **por línea completa**, que es el método que la 121.ª estableció después
+de que buscar por prefijo diera la posición de la propia documentación:
+
+| marcador | anclado a línea | posición | ocurrencias libres |
+|---|---|---|---|
+| `KV-01 · 7HQMPD` | **1** | **21.8 %** | 3 (incluye su documentación) |
+| `KV-08 · 5ZMCFR` | **1** | **100 %** | 2 (íd.) |
+
+`CLAUDE.md` queda en **307 457 caracteres**, o sea **2.05×** el aviso de 150 000.
+Los dos marcadores siguen en el primer cuarto y al final, que es el reparto que
+se quería — **el tercer marcador que la 120.ª llegó a fichar sigue sin hacer
+falta.**

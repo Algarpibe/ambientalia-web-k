@@ -1,0 +1,43 @@
+=== CONTROLES ===
+  OK  el barrido alcanzó su ámbito (encontró enunciados con la forma)
+      4 enunciados (heredado 1 + complemento multilínea 3) en 2 ficheros
+  OK  el COMPLEMENTO multilínea APORTA (si no, el heredado no subdetectaba y este añadido sobra)
+      3 enunciados que el detector por línea NO ve
+  OK  el cruce ENDURECIDO (n-grama de 4) manda; el heredado (6 palabras sueltas) se publica al lado
+      heredado: 3 de 4 «ya en CLAUDE» · endurecido: 0 de 4  ⚠ SOBRE-CASADOS 3: el heredado los daba por escritos y la frase NO está
+  OK  el ENDURECIDO aporta — hay al menos un sobre-casado que el heredado daba por escrito
+      Comparar CONJUNTOS de valores entre instancias confunde «el editor esc | Y LOS 40 QUE QUEDAN NO SON «PLANTILLA»: SON `SIN ESCRIBIR`, Y NO SE >  | Se ficha como CLASE: `payload migrate:create` emite el `DROP CONSTRAIN
+
+=== CARDINALES (se escriben AUNQUE SEAN CERO) ===
+     4  enunciadosDestacados
+     1  porDetectorHeredado
+     3  porComplementoMultilinea
+     3  yaEnClaudeMd_heredado
+     0  yaEnClaudeMd_endurecido
+     3  sobreCasadosPorElHeredado
+     0  conFechaOTanda_eventos
+     4  candidatosARegla
+
+=== CANDIDATOS A REGLA (sin fecha, no cruzados en CLAUDE.md) ===
+  docs/ESQUEMA-CMS.md
+    Y la cascada se toma a LOS DOS ANCHOS
+  docs/ESQUEMA-CMS.md
+    Comparar CONJUNTOS de valores entre instancias confunde «el editor escribió > otro valor» con «la MISMA regla se aplicó a otro número de hermanos».
+  docs/ESQUEMA-CMS.md
+    Y LOS 40 QUE QUEDAN NO SON «PLANTILLA»: SON `SIN ESCRIBIR`, Y NO SE > CABLEAN.
+  docs/PENDIENTES-QA.md
+    Se ficha como CLASE: `payload migrate:create` emite el `DROP CONSTRAINT` > explícito DESPUÉS del `DROP TABLE … CASCADE` que ya se lo llevó.
+
+=== ADJUDICACIÓN A MANO (ningún cruce automático puede darla: uno sobre-casa, el otro sub-casa) ===
+  REGLA · promovida                      Comparar CONJUNTOS de valores entre instancias confunde…
+      → CLAUDE.md §regla 41
+  REGLA · promovida                      Se ficha como CLASE: `payload migrate:create` emite el `DROP CONSTRAINT`…
+      → CLAUDE.md §regla 42
+  REGLA · promovida como MITAD que faltaba Y la cascada se toma a LOS DOS ANCHOS
+      → CLAUDE.md §regla 35, rider
+  EVENTO · se queda                      Y LOS 40 QUE QUEDAN NO SON «PLANTILLA»: SON `SIN ESCRIBIR`…
+      → su regla general ya está en CLAUDE.md (§*el test A supone que hay algo escrito*); lo que aquí es nuevo es el CARDINAL 40, que lleva fecha y ruta
+
+  promovidas a CLAUDE.md: 3 de 4
+
+VEREDICTO: valida

@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "tanda": "127.ª · CIERRE — barrido §regla 12",
+    "fecha": "2026-08-31",
+    "alcance": [
+      "docs/ESQUEMA-CMS.md (la sección que esta tanda reescribió entera)",
+      "docs/PENDIENTES-QA.md (el acta de esta tanda)"
+    ],
+    "noContesta": [
+      "el archivo entero: el barrido es ACOTADO por diseño, y eso es una limitación declarada, no un descuido",
+      "los enunciados que esta tanda escribió en MENSAJES DE COMMIT y no en un documento",
+      "las reglas que viven en el CÓDIGO y no en prosa destacada — un ternario, un `slice`, una rama `else`: este detector no las ve, y su cero es cierto de la prosa, no del repo"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "el barrido alcanzó su ámbito (encontró enunciados con la forma)",
+      "ok": true,
+      "visto": "4 enunciados (heredado 1 + complemento multilínea 3) en 2 ficheros"
+    },
+    {
+      "nombre": "el COMPLEMENTO multilínea APORTA (si no, el heredado no subdetectaba y este añadido sobra)",
+      "ok": true,
+      "visto": "3 enunciados que el detector por línea NO ve"
+    },
+    {
+      "nombre": "el cruce ENDURECIDO (n-grama de 4) manda; el heredado (6 palabras sueltas) se publica al lado",
+      "ok": true,
+      "visto": "heredado: 3 de 4 «ya en CLAUDE» · endurecido: 0 de 4  ⚠ SOBRE-CASADOS 3: el heredado los daba por escritos y la frase NO está"
+    },
+    {
+      "nombre": "el ENDURECIDO aporta — hay al menos un sobre-casado que el heredado daba por escrito",
+      "ok": true,
+      "visto": "Comparar CONJUNTOS de valores entre instancias confunde «el editor esc | Y LOS 40 QUE QUEDAN NO SON «PLANTILLA»: SON `SIN ESCRIBIR`, Y NO SE >  | Se ficha como CLASE: `payload migrate:create` emite el `DROP CONSTRAIN"
+    }
+  ],
+  "cardinales": {
+    "enunciadosDestacados": 4,
+    "porDetectorHeredado": 1,
+    "porComplementoMultilinea": 3,
+    "yaEnClaudeMd_heredado": 3,
+    "yaEnClaudeMd_endurecido": 0,
+    "sobreCasadosPorElHeredado": 3,
+    "conFechaOTanda_eventos": 0,
+    "candidatosARegla": 4
+  },
+  "adjudicacionAMano": [
+    {
+      "enunciado": "Comparar CONJUNTOS de valores entre instancias confunde…",
+      "disposicion": "REGLA · promovida",
+      "destino": "CLAUDE.md §regla 41"
+    },
+    {
+      "enunciado": "Se ficha como CLASE: `payload migrate:create` emite el `DROP CONSTRAINT`…",
+      "disposicion": "REGLA · promovida",
+      "destino": "CLAUDE.md §regla 42"
+    },
+    {
+      "enunciado": "Y la cascada se toma a LOS DOS ANCHOS",
+      "disposicion": "REGLA · promovida como MITAD que faltaba",
+      "destino": "CLAUDE.md §regla 35, rider"
+    },
+    {
+      "enunciado": "Y LOS 40 QUE QUEDAN NO SON «PLANTILLA»: SON `SIN ESCRIBIR`…",
+      "disposicion": "EVENTO · se queda",
+      "destino": "su regla general ya está en CLAUDE.md (§*el test A supone que hay algo escrito*); lo que aquí es nuevo es el CARDINAL 40, que lleva fecha y ruta"
+    }
+  ],
+  "candidatosARegla": [
+    {
+      "fichero": "docs/ESQUEMA-CMS.md",
+      "via": "heredado (una línea)",
+      "enunciado": "Y la cascada se toma a LOS DOS ANCHOS"
+    },
+    {
+      "fichero": "docs/ESQUEMA-CMS.md",
+      "via": "complemento (multilínea)",
+      "enunciado": "Comparar CONJUNTOS de valores entre instancias confunde «el editor escribió > otro valor» con «la MISMA regla se aplicó a otro número de hermanos»."
+    },
+    {
+      "fichero": "docs/ESQUEMA-CMS.md",
+      "via": "complemento (multilínea)",
+      "enunciado": "Y LOS 40 QUE QUEDAN NO SON «PLANTILLA»: SON `SIN ESCRIBIR`, Y NO SE > CABLEAN."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enunciado": "Se ficha como CLASE: `payload migrate:create` emite el `DROP CONSTRAINT` > explícito DESPUÉS del `DROP TABLE … CASCADE` que ya se lo llevó."
+    }
+  ],
+  "todos": [
+    {
+      "fichero": "docs/ESQUEMA-CMS.md",
+      "via": "heredado (una línea)",
+      "enClaude": false,
+      "enClaudeFrase": false,
+      "enunciado": "Y la cascada se toma a LOS DOS ANCHOS"
+    },
+    {
+      "fichero": "docs/ESQUEMA-CMS.md",
+      "via": "complemento (multilínea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "Comparar CONJUNTOS de valores entre instancias confunde «el editor escribió > otro valor» con «la MISMA regla se aplicó a otro número de hermanos»."
+    },
+    {
+      "fichero": "docs/ESQUEMA-CMS.md",
+      "via": "complemento (multilínea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "Y LOS 40 QUE QUEDAN NO SON «PLANTILLA»: SON `SIN ESCRIBIR`, Y NO SE > CABLEAN."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "Se ficha como CLASE: `payload migrate:create` emite el `DROP CONSTRAINT` > explícito DESPUÉS del `DROP TABLE … CASCADE` que ya se lo llevó."
+    }
+  ],
+  "veredicto": "valida"
+}
