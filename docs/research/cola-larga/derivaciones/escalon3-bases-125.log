@@ -1,0 +1,99 @@
+=== CONTROLES ===
+  OK  se hallaron declaraciones ganadoras en unidad relativa
+      28 pares
+  OK  el detector DISCRIMINA (ni cero ni pleno sobre los 984 pares)
+      {"rem":26,"em":2}
+  OK  CONTROL ARITMETICO: `declarado × base == computado` en TODOS
+      28/28 cuadran · 0 no
+  OK  CRUCE: la 124.ª declaraba ciegos relativos al font (el dominio existe)
+      10 en la 124.ª · 10 reencontrados @1440
+  OK  §regla 32: las hojas se resolvieron TODAS
+      60/60
+
+=== LA BASE DEL `rem` — medida, no supuesta ===
+  PRODUCTO        @1440 = 16px   @390 = 16px   IGUAL
+  CATALOGO        @1440 = 16px   @390 = 16px   IGUAL
+  SOFTWARE        @1440 = 16px   @390 = 16px   IGUAL
+  SOFTWARE-corta  @1440 = 16px   @390 = 16px   IGUAL
+  ⇒ base del `rem` CONSTANTE entre anchos: SI
+
+  bases de `em` (font-size del propio elemento) que CAMBIAN entre anchos: 12
+      PRODUCTO|modulo|et_pb_text_1: 50 → 35
+      PRODUCTO|modulo|et_pb_text_5: 44 → 35
+      CATALOGO|modulo|et_pb_text_1: 50 → 35
+      CATALOGO|modulo|et_pb_text_3: 15 → 13
+      CATALOGO|modulo|et_pb_text_6: 15 → 13
+      SOFTWARE|modulo|et_pb_text_1: 50 → 35
+
+=== LOS PARES CON DECLARACION GANADORA EN UNIDAD RELATIVA ===
+  total 28 · por unidad {"rem":26,"em":2}
+  CONTROL ARITMETICO: 28/28 cuadran al bit
+
+  CADA UNO CON SU BASE MEDIDA (§«0.5em de un cuerpo de 15» o no se escribe):
+      [PRODUCTO] modulo|et_pb_text_4 marginTop
+          -4rem !important  =  -4 rem de una base de 16px  =  -64px   (observado -64)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_4
+      [CATALOGO] fila|et_pb_row_2 marginTop
+          -14rem !important  =  -14 rem de una base de 16px  =  -224px   (observado -224)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_row_2.et_pb_row
+      [CATALOGO] fila|et_pb_row_2 paddingBottom
+          2rem !important  =  2 rem de una base de 16px  =  32px   (observado 32)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_row_2.et_pb_row
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_row = 2% esp=(1,3,0)
+      [CATALOGO] fila|et_pb_row_4 marginTop
+          4rem !important  =  4 rem de una base de 16px  =  64px   (observado 64)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_row_4.et_pb_row
+      [CATALOGO] fila|et_pb_row_4 paddingBottom
+          2rem !important  =  2 rem de una base de 16px  =  32px   (observado 32)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_row_4.et_pb_row
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_row = 2% esp=(1,3,0)
+      [CATALOGO] fila|et_pb_row_5 paddingBottom
+          2rem  =  2 rem de una base de 16px  =  32px   (observado 32)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_row_5.et_pb_row
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_row = 2% esp=(1,3,0)
+      [CATALOGO] modulo|et_pb_image_1 marginTop
+          0rem !important  =  0 rem de una base de 16px  =  0px   (observado 0)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_image_1
+      [CATALOGO] modulo|et_pb_text_7 marginBottom
+          1.7rem !important  =  1.7 rem de una base de 16px  =  27.2px   (observado 27.2)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_7
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gut = 13.174% esp=(1,6,0)
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gut = 13.174% esp=(1,6,0)
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_p = 0 esp=(1,9,1)
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_p = 0px esp=(1,9,1)
+      [CATALOGO] modulo|et_pb_text_7 paddingTop
+          1em !important  =  1 em de una base de 17px  =  17px   (observado 17)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_7
+      [SOFTWARE] modulo|et_pb_image_1 marginTop
+          2rem !important  =  2 rem de una base de 16px  =  32px   (observado 32)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_image_1
+      [SOFTWARE] modulo|et_pb_text_14 marginBottom
+          1.7rem !important  =  1.7 rem de una base de 16px  =  27.2px   (observado 27.2)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_14
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gut = 13.174% esp=(1,6,0)
+          §regla 35 · rival en @media (min-width: 981px): .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gut = 13.174% esp=(1,6,0)
+      [SOFTWARE] modulo|et_pb_text_14 paddingTop
+          1em !important  =  1 em de una base de 17px  =  17px   (observado 17)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_14
+      [SOFTWARE] modulo|et_pb_text_15 paddingTop
+          2rem !important  =  2 rem de una base de 16px  =  32px   (observado 32)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_15, .et-db #et-boc .et-l .et_pb_text_17
+      [SOFTWARE] modulo|et_pb_text_16 paddingTop
+          2rem !important  =  2 rem de una base de 16px  =  32px   (observado 32)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_16
+      [SOFTWARE] modulo|et_pb_text_17 paddingTop
+          2rem !important  =  2 rem de una base de 16px  =  32px   (observado 32)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_15, .et-db #et-boc .et-l .et_pb_text_17
+      [SOFTWARE] modulo|et_pb_text_18 paddingTop
+          0rem !important  =  0 rem de una base de 16px  =  0px   (observado 0)
+          quien: EDITOR (ordinal/inline)   ·   selector: .et-db #et-boc .et-l .et_pb_text_18
+
+=== §regla 35 · COMPETENCIA DENTRO DE `@media` ===
+  pares relativos con al menos una regla rival dentro de un @media: 11
+
+=== VEREDICTO ===
+  1 · ¿la base del `rem` es CONSTANTE entre 1440 y 390? → SI
+      ⇒ un `rem` sirve el MISMO px a los dos anchos en estos 4 documentos: guardarlo en px es FIEL,
+        asi que `medida()` NO necesita un valor de unidad para `rem` — POR ESTE DOMINIO
+  2 · bases de `em` que cambian entre anchos: 12
+  3 · el control aritmetico CIERRA: sin el, la base medida no seria la que el navegador uso

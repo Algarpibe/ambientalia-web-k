@@ -1556,6 +1556,14 @@ control en negativo (`generico=1238 · sujeto=125 · contexto=9 · cascarón=36`
    que el **ESCALÓN 3** de esta tanda va a medir. Hasta entonces: **SIN PROBAR,
    con su cardinal —32— y no cableado.**
 
+> ✅ **CERRADO POR EL ESCALÓN 3 DE ESTA MISMA TANDA, y en la dirección de «NO
+> hace falta»:** la base del `rem` es **16px y la misma a 1440 y a 390** en los
+> 4 documentos, con el control aritmético cerrando **28/28 al bit**. Así que el
+> px computado es fiel y **`medida()` no necesita un valor de unidad para
+> `rem`**. **El hueco de tipo se encoge a UNO: la posición de breakpoint** — que
+> el escalón 3 mide además con su número (`-4rem` = −64 a 1440 contra `0rem` = 0
+> a 390, misma unidad y misma base).
+
 > ⚠ **Y el `em` no es el del tema.** Este documento avisa de un falso positivo
 > conocido: `.et_pb_button{padding:0.5em}` es **genérico**, o sea plantilla, y el
 > test A dictaría campo sobre él. Los 2 `em` de aquí llevan **ordinal**
@@ -1721,6 +1729,73 @@ donde cae el ordinal.
 > constructor duplica el módulo y esconde uno por ancho, que es lo que la 124.ª
 > ya había medido. Cruza al bit: **6 nodos × 4 ejes = los 24 pares sólo-1440**
 > de aquella corrida.
+
+### ✅ ESCALÓN 3 de la 125.ª (2026-08-30) · la base del `rem` es 16 y NO se mueve, así que el hueco de `medida()` es SÓLO el breakpoint
+
+**Lo primero es acotar la pregunta, porque la mitad ya estaba cerrada.** La
+124.ª corrió la cascada sobre los 984 pares y adjudicó **269 · 0 sin declaración
+ganadora**: **QUIÉN** escribió cada valor está **dicho** por el selector, no
+inferido, y los 10 «ciegos relativos al font» salen **CAMPO en los 10** por su
+ordinal. Lo que quedaba abierto es otra cosa — **CON QUÉ BASE** —, y es lo que
+el PASO 0 de esta tanda dejó *SIN PROBAR con su cardinal (32)*.
+
+> ⚠ **Y de paso corrige el enunciado del encargo, que hablaba de «reserva de
+> `em`»: los 10 ciegos son `rem`, NO `em`.** El aviso de este documento sobre
+> el `em` del tema es real y aquí **no es el caso que muerde**.
+
+**Instrumento:** `derivaciones/escalon3-bases-125.*`, **5 controles en verde**,
+con el que sostiene todo lo demás:
+
+> **CONTROL ARITMÉTICO — `declarado × base == computado`, y cierra 28/28 AL
+> BIT.** Sin él, una base mal medida daría un número plausible y falso, que es
+> exactamente el modo de fallo de esta familia: se predijo **22 px donde eran
+> 16.5** por usar el `font-size` de la hoja en vez del del elemento.
+
+**LO MEDIDO, con la base puesta al lado de cada valor (§«0.5em de un cuerpo de
+15» o no se escribe):**
+
+| | resultado |
+|---|---|
+| base del `rem` (`font-size` del `html`) | **16px** — y **la misma a 1440 y a 390 en los 4 documentos** |
+| base de los `em` con ritmo ganador | **17px**, medida **en el elemento**; **constante** entre anchos |
+| pares con declaración ganadora en unidad relativa | **28** (`rem` 26 · `em` 2) |
+| pares con una regla rival dentro de un `@media` (§regla 35) | **11** |
+
+**EL VEREDICTO, Y SEPARA LAS DOS MITADES DEL HUECO DEL PASO 0:**
+
+> **1 · La UNIDAD `rem` NO hace falta en `medida()`.** Un `rem` se resuelve
+> contra el `html`, cuya base **no se mueve con el ancho** en estos 4
+> documentos, así que **el px computado es fiel** y guardarlo no pierde nada. La
+> reserva que el PASO 0 dejó abierta queda **cerrada en la dirección de «no hace
+> falta»** — medida, no supuesta.
+>
+> **2 · El BREAKPOINT sí hace falta, y ahora tiene número propio.** La misma
+> corrida lo enseña con la unidad quieta:
+>
+> | nodo · eje | @1440 | @390 |
+> |---|---|---|
+> | `PRODUCTO et_pb_text_4 · marginTop` | `-4rem` = **−64px** | `0rem` = **0px** |
+> | `SOFTWARE et_pb_image_1 · marginTop` | `2rem` = **32px** | `1rem` = **16px** |
+>
+> **Misma unidad, misma base 16, VALOR distinto** — o sea `FN-bp` puro. Un campo
+> con una sola posición serviría **−64 a los dos anchos**, donde el original
+> sirve **0** a 390.
+
+**LA AMBIGÜEDAD QUE QUEDA ES LATENTE, NO REALIZADA — y se declara en vez de
+cablearse:** **12 bases de `em` SÍ cambian con el ancho** (`et_pb_text_1`
+50 → 35 · `et_pb_text_3` 15 → 13, y 10 más). **Ninguna de las 12 tiene hoy una
+declaración de ritmo ganadora en `em`**, así que no muerde. Pero el mecanismo
+está servido: el día que un editor escriba un `padding` en `em` sobre uno de
+esos nodos, su px cambiará **sin que nadie lo haya declarado por breakpoint**.
+Es la misma forma que el comentario de `ritmoInline` ya describe para el `%` —
+*«un `number` no puede expresar el `%` que aparecería en una cuarta instancia, y
+lo guardaría como px sin dar error»*— con la unidad cambiada.
+
+> ⚠ **Y el alcance se declara, porque «16» invita a darlo por universal:** la
+> base del `rem` es 16 **en estos 4 documentos**. No es una propiedad del sitio,
+> y **el customizer de este mismo tema ya ha bajado un tamaño antes** (los 20
+> del core servidos como 15). Un quinto arquetipo **re-mide su base**, no la
+> hereda de aquí.
 
 ## El orden, y por qué
 

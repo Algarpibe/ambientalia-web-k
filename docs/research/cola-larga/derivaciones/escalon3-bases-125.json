@@ -1,0 +1,1017 @@
+{
+  "fecha": "2026-08-31",
+  "tanda": 125,
+  "escalon": 3,
+  "alcance": {
+    "docs": [
+      "monitor-calidad-aire.html",
+      "accesorios.html",
+      "software-de-medicion-calidad-del-aire.html",
+      "kunak-api.html"
+    ],
+    "nota": "propiedad de estos 4 documentos, no del sitio"
+  },
+  "controles": [
+    {
+      "ok": true,
+      "nombre": "se hallaron declaraciones ganadoras en unidad relativa",
+      "detalle": "28 pares"
+    },
+    {
+      "ok": true,
+      "nombre": "el detector DISCRIMINA (ni cero ni pleno sobre los 984 pares)",
+      "detalle": "{\"rem\":26,\"em\":2}"
+    },
+    {
+      "ok": true,
+      "nombre": "CONTROL ARITMETICO: `declarado × base == computado` en TODOS",
+      "detalle": "28/28 cuadran · 0 no"
+    },
+    {
+      "ok": true,
+      "nombre": "CRUCE: la 124.ª declaraba ciegos relativos al font (el dominio existe)",
+      "detalle": "10 en la 124.ª · 10 reencontrados @1440"
+    },
+    {
+      "ok": true,
+      "nombre": "§regla 32: las hojas se resolvieron TODAS",
+      "detalle": "60/60"
+    }
+  ],
+  "basesRem": {
+    "PRODUCTO": {
+      "390": 16,
+      "1440": 16
+    },
+    "CATALOGO": {
+      "390": 16,
+      "1440": 16
+    },
+    "SOFTWARE": {
+      "390": 16,
+      "1440": 16
+    },
+    "SOFTWARE-corta": {
+      "390": 16,
+      "1440": 16
+    }
+  },
+  "baseRemConstante": true,
+  "basesEmQueCambian": {
+    "PRODUCTO|modulo|et_pb_text_1": {
+      "390": 35,
+      "1440": 50
+    },
+    "PRODUCTO|modulo|et_pb_text_5": {
+      "390": 35,
+      "1440": 44
+    },
+    "CATALOGO|modulo|et_pb_text_1": {
+      "390": 35,
+      "1440": 50
+    },
+    "CATALOGO|modulo|et_pb_text_3": {
+      "390": 13,
+      "1440": 15
+    },
+    "CATALOGO|modulo|et_pb_text_6": {
+      "390": 13,
+      "1440": 15
+    },
+    "SOFTWARE|modulo|et_pb_text_1": {
+      "390": 35,
+      "1440": 50
+    },
+    "SOFTWARE|modulo|et_pb_text_5": {
+      "390": 35,
+      "1440": 44
+    },
+    "SOFTWARE|modulo|et_pb_text_21": {
+      "390": 13,
+      "1440": 15
+    },
+    "SOFTWARE-corta|modulo|et_pb_text_1": {
+      "390": 35,
+      "1440": 50
+    },
+    "SOFTWARE-corta|modulo|et_pb_text_4": {
+      "390": 13,
+      "1440": 15
+    },
+    "SOFTWARE-corta|modulo|et_pb_text_9": {
+      "390": 13,
+      "1440": 15
+    },
+    "SOFTWARE-corta|modulo|et_pb_text_13": {
+      "390": 13,
+      "1440": 15
+    }
+  },
+  "relativos": [
+    {
+      "doc": "PRODUCTO",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_4",
+      "eje": "marginTop",
+      "declarado": "-4rem !important",
+      "unidad": "rem",
+      "num": -4,
+      "base": 16,
+      "predicho": -64,
+      "observado": -64,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_4",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "PRODUCTO",
+      "ancho": 390,
+      "clave": "modulo|et_pb_text_4",
+      "eje": "marginTop",
+      "declarado": "0rem !important",
+      "unidad": "rem",
+      "num": 0,
+      "base": 16,
+      "predicho": 0,
+      "observado": 0,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_4",
+      "media": "only screen and (max-width: 767px)",
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_text_4",
+          "valor": "0rem!important",
+          "media": "only screen and (max-width: 980px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_text_4",
+          "valor": "0rem !important",
+          "media": "only screen and (max-width: 980px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_text_4",
+          "valor": "0rem!important",
+          "media": "only screen and (max-width: 767px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_text_4",
+          "valor": "0rem !important",
+          "media": "only screen and (max-width: 767px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        }
+      ]
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 1440,
+      "clave": "fila|et_pb_row_2",
+      "eje": "marginTop",
+      "declarado": "-14rem !important",
+      "unidad": "rem",
+      "num": -14,
+      "base": 16,
+      "predicho": -224,
+      "observado": -224,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 1440,
+      "clave": "fila|et_pb_row_2",
+      "eje": "paddingBottom",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_row",
+          "valor": "2%",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": false
+        }
+      ]
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 1440,
+      "clave": "fila|et_pb_row_4",
+      "eje": "marginTop",
+      "declarado": "4rem !important",
+      "unidad": "rem",
+      "num": 4,
+      "base": 16,
+      "predicho": 64,
+      "observado": 64,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 1440,
+      "clave": "fila|et_pb_row_4",
+      "eje": "paddingBottom",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_row",
+          "valor": "2%",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": false
+        }
+      ]
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 1440,
+      "clave": "fila|et_pb_row_5",
+      "eje": "paddingBottom",
+      "declarado": "2rem",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_5.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_row",
+          "valor": "2%",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": false
+        }
+      ]
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_image_1",
+      "eje": "marginTop",
+      "declarado": "0rem !important",
+      "unidad": "rem",
+      "num": 0,
+      "base": 16,
+      "predicho": 0,
+      "observado": 0,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_image_1",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_7",
+      "eje": "marginBottom",
+      "declarado": "1.7rem !important",
+      "unidad": "rem",
+      "num": 1.7,
+      "base": 16,
+      "predicho": 27.2,
+      "observado": 27.2,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_7",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gut",
+          "valor": "13.174%",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            6,
+            0
+          ],
+          "imp": false
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gut",
+          "valor": "13.174%",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            6,
+            0
+          ],
+          "imp": false
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_p",
+          "valor": "0",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            9,
+            1
+          ],
+          "imp": false
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_p",
+          "valor": "0px",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            9,
+            1
+          ],
+          "imp": false
+        }
+      ]
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_7",
+      "eje": "paddingTop",
+      "declarado": "1em !important",
+      "unidad": "em",
+      "num": 1,
+      "base": 17,
+      "predicho": 17,
+      "observado": 17,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_7",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 390,
+      "clave": "fila|et_pb_row_2",
+      "eje": "marginTop",
+      "declarado": "-14rem !important",
+      "unidad": "rem",
+      "num": -14,
+      "base": 16,
+      "predicho": -224,
+      "observado": -224,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 390,
+      "clave": "fila|et_pb_row_2",
+      "eje": "paddingBottom",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_column .et_pb_row_inner, .et-db #et-boc .et-l .et_pb_row",
+          "valor": "30px",
+          "media": "(max-width: 980px)",
+          "esp": [
+            1,
+            4,
+            0
+          ],
+          "imp": false
+        }
+      ]
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 390,
+      "clave": "fila|et_pb_row_4",
+      "eje": "marginTop",
+      "declarado": "4rem !important",
+      "unidad": "rem",
+      "num": 4,
+      "base": 16,
+      "predicho": 64,
+      "observado": 64,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 390,
+      "clave": "fila|et_pb_row_4",
+      "eje": "paddingBottom",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_column .et_pb_row_inner, .et-db #et-boc .et-l .et_pb_row",
+          "valor": "30px",
+          "media": "(max-width: 980px)",
+          "esp": [
+            1,
+            4,
+            0
+          ],
+          "imp": false
+        }
+      ]
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 390,
+      "clave": "fila|et_pb_row_5",
+      "eje": "paddingBottom",
+      "declarado": "2rem",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_row_5.et_pb_row",
+      "media": null,
+      "espGanador": [
+        1,
+        4,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_column .et_pb_row_inner, .et-db #et-boc .et-l .et_pb_row",
+          "valor": "30px",
+          "media": "(max-width: 980px)",
+          "esp": [
+            1,
+            4,
+            0
+          ],
+          "imp": false
+        }
+      ]
+    },
+    {
+      "doc": "CATALOGO",
+      "ancho": 390,
+      "clave": "modulo|et_pb_image_1",
+      "eje": "marginTop",
+      "declarado": "0rem !important",
+      "unidad": "rem",
+      "num": 0,
+      "base": 16,
+      "predicho": 0,
+      "observado": 0,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_image_1",
+      "media": "only screen and (max-width: 767px)",
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "valor": "0rem!important",
+          "media": "only screen and (max-width: 980px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "valor": "0rem !important",
+          "media": "only screen and (max-width: 980px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "valor": "0rem!important",
+          "media": "only screen and (max-width: 767px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "valor": "0rem !important",
+          "media": "only screen and (max-width: 767px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        }
+      ]
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_image_1",
+      "eje": "marginTop",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_image_1",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_14",
+      "eje": "marginBottom",
+      "declarado": "1.7rem !important",
+      "unidad": "rem",
+      "num": 1.7,
+      "base": 16,
+      "predicho": 27.2,
+      "observado": 27.2,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_14",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gut",
+          "valor": "13.174%",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            6,
+            0
+          ],
+          "imp": false
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gut",
+          "valor": "13.174%",
+          "media": "(min-width: 981px)",
+          "esp": [
+            1,
+            6,
+            0
+          ],
+          "imp": false
+        }
+      ]
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_14",
+      "eje": "paddingTop",
+      "declarado": "1em !important",
+      "unidad": "em",
+      "num": 1,
+      "base": 17,
+      "predicho": 17,
+      "observado": 17,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_14",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_15",
+      "eje": "paddingTop",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_15, .et-db #et-boc .et-l .et_pb_text_17",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_16",
+      "eje": "paddingTop",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_16",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_17",
+      "eje": "paddingTop",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_15, .et-db #et-boc .et-l .et_pb_text_17",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 1440,
+      "clave": "modulo|et_pb_text_18",
+      "eje": "paddingTop",
+      "declarado": "0rem !important",
+      "unidad": "rem",
+      "num": 0,
+      "base": 16,
+      "predicho": 0,
+      "observado": 0,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_18",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 390,
+      "clave": "modulo|et_pb_image_1",
+      "eje": "marginTop",
+      "declarado": "1rem !important",
+      "unidad": "rem",
+      "num": 1,
+      "base": 16,
+      "predicho": 16,
+      "observado": 16,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_image_1",
+      "media": "only screen and (max-width: 767px)",
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": [
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "valor": "1rem!important",
+          "media": "only screen and (max-width: 980px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "valor": "1rem !important",
+          "media": "only screen and (max-width: 980px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "valor": "1rem!important",
+          "media": "only screen and (max-width: 767px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        },
+        {
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "valor": "1rem !important",
+          "media": "only screen and (max-width: 767px)",
+          "esp": [
+            1,
+            3,
+            0
+          ],
+          "imp": true
+        }
+      ]
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 390,
+      "clave": "modulo|et_pb_text_15",
+      "eje": "paddingTop",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_15, .et-db #et-boc .et-l .et_pb_text_17",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 390,
+      "clave": "modulo|et_pb_text_16",
+      "eje": "paddingTop",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_16",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 390,
+      "clave": "modulo|et_pb_text_17",
+      "eje": "paddingTop",
+      "declarado": "2rem !important",
+      "unidad": "rem",
+      "num": 2,
+      "base": 16,
+      "predicho": 32,
+      "observado": 32,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_15, .et-db #et-boc .et-l .et_pb_text_17",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    },
+    {
+      "doc": "SOFTWARE",
+      "ancho": 390,
+      "clave": "modulo|et_pb_text_18",
+      "eje": "paddingTop",
+      "declarado": "0rem !important",
+      "unidad": "rem",
+      "num": 0,
+      "base": 16,
+      "predicho": 0,
+      "observado": 0,
+      "cuadra": true,
+      "quien": "EDITOR (ordinal/inline)",
+      "selector": ".et-db #et-boc .et-l .et_pb_text_18",
+      "media": null,
+      "espGanador": [
+        1,
+        3,
+        0
+      ],
+      "rivalesEnMedia": []
+    }
+  ],
+  "resumen": {
+    "pares": 28,
+    "porUnidad": {
+      "rem": 26,
+      "em": 2
+    },
+    "cuadran": 28,
+    "noCuadran": 0,
+    "conCompetenciaMedia": 11
+  },
+  "hojas": {
+    "enlazadas": 60,
+    "resueltas": 60
+  }
+}
