@@ -1,0 +1,56 @@
+==============================================================================
+131.ª · los BLOQUEOS del lote F3-5, con su ALCANCE
+==============================================================================
+
+## 1 · REPARTO POR EJE — los 4, y los ceros con su denominador
+   script       0 de 199 campos HTML
+   etiqueta    11 de 199 campos HTML
+   host         0 de 199 campos HTML
+   atributo    11 de 199 campos HTML
+   TOTAL       22
+
+## 2 · LOS TOKENS DISTINTOS (no las ocurrencias)
+   etiqueta: 9 distintos → article, button, fieldset, form, header, input, label, legend, meta
+   atributo: 21 distintos → action, aria-colcount, aria-colindex, aria-rowcount, aria-rowindex, content, data-auto-rotate, data-autofill, data-image-url-format, data-inertia, data-main-holder-id, data-main-image-id, data-main-image-url, data-sitekey, data-slide-id, data-styles-version, for, itemprop, itemscope, itemtype, method
+
+## 3 · ¿SOBRE QUÉ DOMINIO se derivó el censo que bloquea?
+   citado en comunes.ts: «8 páginas»
+   citado en comunes.ts: «35 páginas»
+   citado en comunes.ts: «291 páginas»
+   citado en comunes.ts: «76 páginas»
+   citado en comunes.ts: «291 páginas»
+   citado en comunes.ts: «23 documentos»
+   citado en comunes.ts: «4 documentos»
+   citado en comunes.ts: «0 documentos»
+   citado en comunes.ts: «3 páginas»
+   citado en comunes.ts: «3 páginas»
+   citado en comunes.ts: «573 páginas»
+   citado en comunes.ts: «63 documentos»
+   ETIQUETAS_CENSADAS ... 43
+   ATRIBUTOS_CENSADOS ... 81
+   HOSTS_PERMITIDOS ..... 21
+
+## 4 · DÓNDE VIVEN — por documento y por kind
+   monitor-calidad-aire                       9
+   software-de-medicion-calidad-del-aire      6
+   kunak-api                                  4
+   accesorios                                 3
+   ──
+   texto-arq                                  15
+   slider-ancho-arq                           3
+   codigo-arq                                 2
+   tabla-arq                                  1
+   slider-arq                                 1
+
+## 5 · CLASIFICADOS — y cada clase manda un trabajo DISTINTO
+   data-* del constructor     10 → data-auto-rotate (atributo), data-autofill (atributo), data-image-url-format (atributo), data-inertia (atributo), data-main-holder-id (atributo), data-main-image-id (atributo), data-main-image-url (atributo), data-sitekey (atributo), data-slide-id (atributo), data-styles-version (atributo)
+   formulario                  9 → button (etiqueta), fieldset (etiqueta), form (etiqueta), input (etiqueta), label (etiqueta), legend (etiqueta), action (atributo), for (atributo), method (atributo)
+   schema.org                  5 → meta (etiqueta), content (atributo), itemprop (atributo), itemscope (atributo), itemtype (atributo)
+   aria de tabla               4 → aria-colcount (atributo), aria-colindex (atributo), aria-rowcount (atributo), aria-rowindex (atributo)
+   estructura HTML5            2 → article (etiqueta), header (etiqueta)
+
+   ✅ SIN CLASIFICAR: 0 (un cubo de sobras es donde se pierden las clases que nadie nombró)
+
+==============================================================================
+VEREDICTO · 22 bloqueos · 30 tokens distintos · 5 clases
+==============================================================================

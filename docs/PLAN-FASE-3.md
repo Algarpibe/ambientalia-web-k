@@ -2077,6 +2077,38 @@ filas y 0 lectores** · el eje `módulos` en `·` (**35 componentes de 97**) ·
 **11 de 14** entradas muertas en el `tsconfig` · **HOME** (3 SIN PROBAR
 irreducibles, 0 de 788 capturados).
 
+> ✏️ **ACTUALIZADO 2026-08-31 (131.ª) — y el estado de `arquetipos` sigue siendo
+> «0 filas · 0 lectores», con un motivo NUEVO y medido.**
+>
+> La 131.ª escribió el **extractor** (`cms:extractor-f35`, negativo **5/5 +
+> control**), que produce las **4 filas con sus 231 módulos** reproduciendo el
+> `porDoc` de la 126.ª al bit (90 · 35 · 70 · 36). Lo que **no** se hizo es
+> sembrarlas, y no por alcance: **el censo del campo rico las bloquea**.
+>
+> **El denominador se derivó recorriendo LOS CUATRO ejes de `validaHtmlCorpus`
+> en UNA corrida**, en vez de re-correr el sembrador hasta que dejara de morir
+> (§regla 27) — y los ceros van con su denominador:
+>
+> | eje | bloqueos | denominador |
+> |---|---|---|
+> | `script` | **0** | 199 campos HTML |
+> | `etiqueta` | **11** | 199 |
+> | `host` | **0** | 199 |
+> | `atributo` | **11** | 199 |
+>
+> **22 bloqueos · 30 tokens distintos · 5 clases · 0 SIN CLASIFICAR**, y la
+> clase mayor es **formulario (9 tokens)** — que es exactamente la que
+> `CLAUDE.md` declara **ausente** en el dominio del censo (*«código, `dl`,
+> formularios: ausentes en las 209»*). O sea §*una regla derivada sobre un
+> dominio donde el caso NO SE DA está SIN PROBAR para ese caso*, con el censo de
+> **43 etiquetas / 81 atributos** ejercitado fuera de donde se midió.
+>
+> **Ampliar una whitelist de seguridad con `<form action method>` y
+> `data-sitekey` es una DECISIÓN DE ESQUEMA con su propio análisis**, y el censo
+> mismo lo dice: *«se admite AÑADIÉNDOLA al censo con su evidencia, no
+> colándola»*. Es la precondición de la siembra, fichada en `ESQUEMA-CMS.md`
+> §2o.5. Derivación: `derivaciones/bloqueos-f35-131.{mjs,log}`.
+
 > ⚠⚠ **LA CONDICIÓN DE REAPERTURA NO EXIGE CLONAR, y eso salió de enumerar las
 > separadoras en vez de copiar la primera.** El encargo la enunció *«si se
 > clonan los 2 vecinos de `monitor` a ≥0.7…»*. Derivado

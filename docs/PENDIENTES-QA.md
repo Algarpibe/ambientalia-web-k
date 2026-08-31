@@ -1,5 +1,171 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ §131.ª · **EL EXTRACTOR DE F3-5 EXISTE Y PRODUCE SUS 4 FILAS — Y LO QUE PARA LA SIEMBRA ES EL CENSO DEL CAMPO RICO, EJERCITADO FUERA DE DONDE SE MIDIÓ** — 2026-08-31
+
+**Encargo:** sembrar las filas de `arquetipos` y verificarlas contra sí mismas.
+**Entregado:** el PASO 0, el ESCALÓN 1 y el ESCALÓN 2 completos, con **su corte
+declarado** en el sitio que el encargo nombra. **No se sembró**, y el motivo está
+medido, no estimado.
+
+---
+
+### El corte, y por qué es el del encargo y no una rebaja
+
+§DÓNDE CORTAR LIMPIO daba tres sitios. Se cortó en el tercero —*«tras el ESCALÓN
+2 con el sembrador escrito y su negativo verde: ya vale solo»*— porque el ESCALÓN
+2 destapó una **precondición de esquema** que el encargo no preveía:
+
+> **`validaHtmlCorpus` rechaza 22 campos HTML del lote**, y su censo —43
+> etiquetas · 81 atributos— se derivó de la cola larga y del arquetipo A. La
+> clase mayor de los rechazos es **formulario (9 tokens)**, que es exactamente
+> la que `CLAUDE.md` declara **ausente** en aquel dominio: *«código, `dl`,
+> formularios: ausentes en las 209»*.
+
+Es §*una regla derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR
+para ese caso*. Ampliar una whitelist de seguridad con `<form action method>` y
+`data-sitekey` es una decisión con su propio análisis de riesgo, y el censo lo
+dice él mismo: *«se admite AÑADIÉNDOLA al censo con su evidencia, no colándola»*.
+**Se ficha; no se cuela.** Ficha completa: `ESQUEMA-CMS.md` §2o.8.
+
+---
+
+### PASO 0 · los canales de media, que es lo que ha matado TRES siembras
+
+| | derivado |
+|---|---|
+| canales declarados | **12** (4 `upload` + 7 ricos + 1 texto-URL) |
+| rutas distintas | **121** |
+| variantes de `srcset`, fuera del recuento | **154** |
+| **AUSENTE** (necesita captura) | **0** |
+| **RENOMBRE** (resoluble sin red) | **6** |
+
+**No se cortó tras el PASO 0** porque `AUSENTE = 0`: las 6 tienen el fichero en
+el repo con otro nombre, y eso no es una campaña de captura — es la distinción
+que este repo ya pagó en la 129.ª (*«de esas 5, 3 eran resolubles SIN RED»*).
+
+#### ⚠⚠ El hallazgo de método: `existsSync` en Windows es CASE-INSENSITIVE
+
+> **La guarda que PARA da un veredicto distinto aquí y en el despliegue: 1
+> contra 6, factor 6.** Y las 5 que sólo Linux ve están en un campo `required`.
+
+Un `cms:seed` verde en esta máquina habría muerto con 5 `MEDIA AUSENTE` más al
+desplegar. **Ninguna sonda del repo lo miraba.** Promovido a `CLAUDE.md` §regla
+47; la comprobación pasa a ser byte a byte contra `readdirSync`.
+
+#### ⚠⚠ El inventario costó CUATRO versiones, y las tres primeras eran plausibles
+
+| versión | qué publicó | qué fallaba |
+|---|---|---|
+| v1 | `galeria-arq · instancias 0` | el nombre del canal no casaba (anidamiento en `array`) |
+| v2 | «5 canales · **0 AUSENTE**» | caminaba **sólo los `subida()`** |
+| v3 | **3 AUSENTE** que existen | colapsaba `-\d+x\d+`, y el `-300X300` **es parte del nombre** |
+| v4 | **90 AUSENTE** | metía los candidatos del `srcset` en el recuento |
+| **v5** | **0 AUSENTE · 6 RENOMBRE** | — |
+
+> **La señal para desconfiar de las cuatro era la misma y estaba a la vista: el
+> veredicto pasó de 0 a 3 a 90 y volvió a 0 sin que el repo cambiara un byte.**
+
+Colapsar variantes era §regla 3 **en mi propio script**: el comentario decía
+*«la MISMA de `transformaciones.mjs`»* y `transformaciones.mjs` dice **«la cola
+viaja VERBATIM»**. Un comentario es lo único que nadie ejecuta.
+
+#### §regla 5bis · la línea base de la 129.ª: alcance 3 y 4, no 52 y 59
+
+El titular **no discrimina**: las dos congeladas publican `distintos: 43` antes y
+después de cerrar el `srcset`. Par a par y con el corte **CREA / MUEVE**:
+
+| ancho | pares | tocados | CREA (cobertura nueva) | **MUEVE (daño real)** |
+|---|---|---|---|---|
+| 1440 | 128 | 52 | 49 | **3** — los 3 ACERCAN |
+| 390 | 127 | 59 | 55 | **4** — 2 acercan, 2 alejan |
+
+**NO se renombra**, y la razón se verificó **por efecto**: el resolutor por
+`mtime` ya elige `-srcset-cerrado` en los dos anchos · renombrarla la volvería
+invisible a `cobertura.mjs` (que recorre la familia entera) · sigue siendo el
+«antes» correcto del NO-OP de la 130.ª. Con 3 y 4 pares de 128 y 127, renombrar
+tiraría una medida buena al 97 %.
+
+#### Y la nota del encargo sobre los valores explícitos es FALSA
+
+Decía *«viven en `/software-…` y `/accesorios`»*. Los **8 CAMPO** de la 127.ª son
+los 8 del **MISMO documento** —`estacion-de-monitoreo-…`, que **no es del
+lote**—, y el único del lote en esa familia lleva el **default en las 5 piezas**.
+**Ningún documento del lote tiene un valor de ritmo medido como no-default**, así
+que el `ritmo` de los 231 módulos se OMITE.
+
+---
+
+### ESCALÓN 1 · `arquetipos` EXPRESA el corpus
+
+**SIN SITIO = 0 sobre 1389 trozos** en 4 documentos (N1 0 · N2 0 · N3 0).
+
+**Y su negativo NO separaba nada en la v1, saliendo verde:** `sin-comprobacion`
+apagaba la comprobación sobre el objeto **limpio**, que ya da 0 — predecía
+exactamente lo mismo que no sabotear (§regla 21, la vuelta). Ahora **inyecta el
+defecto y DESPUÉS apaga**:
+
+| caso | defecto | comprobación | SIN SITIO |
+|---|---|---|---|
+| limpio | no | activa | **0** |
+| `bloque-fuera` | sí | activa | **1** |
+| `sin-comprobacion` | **el MISMO** | **apagada** | **0** ← verde falso |
+| `campo-fuera` | sí | activa | **79** |
+
+> **`bloque-fuera` y `sin-comprobacion` comparten objeto y difieren en
+> veredicto.** Ésa es la instancia separadora, y es lo único que demuestra que el
+> 0 viene de la comprobación y no del vacío.
+
+**Los dos falsos rojos del instrumento, conservados:** v1 dio 29 (N2 = 21 tipos
+«sin bloque» porque la tabla tipo→slug se derivaba de la **prosa de la cabecera**
+del fichero; N1 = 8, los 8 el mismo `<!-- Google Tag Manager -->`) y v2 dio 52
+(exigía `subida` para un `<img>` dentro de un campo **rico**).
+
+> ⚠⚠ **Pero el 52 destapó el canal del CUERPO RICO**, que el PASO 0 se había
+> dejado — y es **el #1 de los tres que mataron el seed** en este repo. Con él,
+> el inventario pasa de 5 canales a 12 y de 71 rutas a 121.
+> Promovido a `CLAUDE.md` §regla 48.
+
+---
+
+### ESCALÓN 2 · el extractor, y el denominador derivado de una vez
+
+`cms:extractor-f35` · negativo **5/5 + control** · **231 bloques en 4 filas**,
+reproduciendo el `porDoc` de la 126.ª al bit.
+
+**Los 6 controles verdes:** cruce con la 126.ª (90=90 · 35=35 · 70=70 · 36=36) ·
+231 bloques emitidos · **0 tipos sin `kind`** · **0 rutas de media sin resolver**
+(T-nombre-media aplicada 12 veces) · **los 4 ejes recorridos** · **0 módulos con
+ritmo escrito**.
+
+**El punto 1 del ESCALÓN 2, pagado:** el denominador de los bloqueos se derivó
+recorriendo los **cuatro** ejes contra el mismo dato, **en una corrida** — no
+re-corriendo el sembrador hasta que dejara de morir. Con el proceso que aborta al
+primero, esos 22 habrían costado ~22 corridas con su reset por delante. Y los
+ceros van **con su denominador**: `script` **0 de 199**, `host` **0 de 199**.
+
+**Clasificación sin cubo de sobras: 30 tokens · 5 clases · 0 SIN CLASIFICAR.**
+
+#### ⚠ Un caso del negativo cayó POR EL MOTIVO EQUIVOCADO, y no lo vio el exit
+
+`media-ausente` daba **exit 2 correcto** y `MEDIA_SIN_RESOLVER = 0`: el sabotaje
+hacía `return` **antes** de comprobar, así que la ruta salía sin resolver **y sin
+anotarse**, y el rojo venía de los 22 bloqueos de HTML. **Lo cazó
+`prohibidoEnSalida`**, no el código de salida — §regla 17, 2.ª cara. Corregido:
+el sabotaje ahora rompe **el dato** (§28a).
+
+---
+
+### Lo que queda abierto, con su cardinal
+
+- **`arquetipos` sigue a 0 filas · 0 lectores.** La precondición es la decisión
+  sobre el censo (§2o.8), no el extractor;
+- **22 bloqueos · 30 tokens · 5 clases** esperando esa decisión;
+- **6 rutas de `T-nombre-media`**: el clon sirve nombres que el original no
+  tiene. La transformación las cubre para el CMS; **la desviación del clon sigue
+  en pie** y no se tocó;
+- **el ESCALÓN 3 entero** (sembrar · diferencia simétrica · `clon-base` a dos
+  anchos) — no se ejecutó, y por tanto **no hay línea base nueva**.
+
 ## ✅ §129-CIERRE · **el comparador que la tanda iba a construir YA EXISTÍA, y su eje estaba ciego por falta de un insumo del CLON** — 129.ª, 2026-08-31
 
 **La premisa del encargo era falsa en su punto más caro, y el PASO 0 estaba

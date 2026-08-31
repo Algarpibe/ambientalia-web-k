@@ -6877,7 +6877,89 @@ distingue las dos afirmaciones es el comparador de dos lados, no el manifiesto.
   §F3-5 «hecho» es *el content type escrito con sus SIN PROBAR declarados y no
   cableados* — eso es lo que hay. El sitio servido desde Payload es la segunda
   mitad, y otra tanda;
-- **0 filas sembradas**: el extractor del lote no existe. Camino de render **SIN
-  ESTRENAR**, declarado en vez de supuesto;
+- **0 filas sembradas**: ~~el extractor del lote no existe~~. Camino de render
+  **SIN ESTRENAR**, declarado en vez de supuesto;
 - **el eje `módulos` sigue SIN COMPARAR** (`·`, no «a 0»). El criterio ya no lo
   bloquea (§2n); el coste sí: **35 componentes de 97**.
+
+---
+
+## ✅ §2o.8 · `CMS-F35-SIEMBRA` — el extractor EXISTE, y lo que bloquea la siembra es el CENSO DEL CAMPO RICO (131.ª, 2026-08-31)
+
+**`cms:extractor-f35` produce las 4 filas** con sus **231 módulos de primer
+nivel**, reproduciendo el `porDoc` de la 126.ª al bit (90 · 35 · 70 · 36).
+Negativo **5/5 + control**, con los cinco casos cayendo **por su motivo**.
+Congelada: `medidas/f35-extraido.json`.
+
+### El `ritmo` se OMITE en los 231, y está DERIVADO
+
+`arquetipos` declara `ritmo.mb` y `ritmo.pt` como CAMPO, pero los valores
+medidos los publica `escalon1-varianza-127.json` y **su alcance es la familia
+PRODUCTO** (monitor · estación · sensor), **no el lote**.
+
+**Y los 8 CAMPO son los 8 del MISMO documento** (§*un veredicto producido sobre
+un agregado no se puede atribuir a sus miembros*): el valor no-default está
+siempre en `estacion-de-monitoreo-…`, que no es del lote. El único del lote en
+esa familia lleva **el default en las 5 piezas** —`parametros`·mb 0 ·
+`clear-both`·mb 0 · `menu-anclas`·mb 31.6719 (= 2.75 % de su fila) ·
+`menu-anclas`·pt 0 · `clear`·pt 0—.
+
+> **Ningún documento del lote tiene un valor de ritmo medido como no-default.**
+> Los otros 226 módulos ni siquiera entraron en el denominador de la 127.ª: son
+> **SIN MEDIR por alcance**, que no es «default confirmado». Se omite; el
+> sabotaje `ritmo-cableado` impide relajarlo en silencio.
+
+### ⚠ `T-nombre-media` — la transformación de nombre, con su cardinal
+
+El clon transcribió a mano en julio los nombres de la galería de PRODUCTO
+normalizándolos a minúsculas, y `PM2.5` perdió además el punto
+(`monitor.ts:227-228`). El corpus pide `PM2.5_belgium.webp`; el repo tiene
+`pm25_belgium.webp`. **6 rutas distintas, todas del canal
+`galeria-arq.items.imagen`, que es `required`.**
+
+El candidato **se DERIVA** (normalizando y exigiendo que sea **único** en su
+directorio) y un candidato ambiguo **TIRA** (§regla 6: la ausencia se rechaza,
+no se sustituye).
+
+> ⚠⚠ **Y no basta con `existsSync`: en Windows es CASE-INSENSITIVE y encuentra
+> 5 de las 6.** La comprobación es **byte a byte** contra `readdirSync`, que es
+> la que corre en el despliegue. Es `CLAUDE.md` §regla 47.
+
+### ⛔ LA PRECONDICIÓN DE LA SIEMBRA: 22 bloqueos del censo del campo rico
+
+`arquetipos` **NO entra en `CATALOGOS` ni en `SEMBRADAS` todavía**, y el motivo
+está medido. El denominador se derivó recorriendo **los CUATRO ejes** de
+`validaHtmlCorpus` en **una** corrida (§regla 27), no re-corriendo el sembrador:
+
+| eje | bloqueos | denominador |
+|---|---|---|
+| `script` | **0** | 199 campos HTML |
+| `etiqueta` | **11** | 199 |
+| `host` | **0** | 199 |
+| `atributo` | **11** | 199 |
+
+**22 bloqueos · 30 tokens distintos · 5 clases · 0 SIN CLASIFICAR:**
+
+| clase | n | tokens |
+|---|---|---|
+| `data-*` del constructor | 10 | `data-auto-rotate` · `data-inertia` · `data-sitekey` · `data-slide-id` … |
+| **formulario** | **9** | `form` · `input` · `label` · `button` · `fieldset` · `legend` · `action` · `method` · `for` |
+| schema.org | 5 | `meta` · `itemprop` · `itemscope` · `itemtype` · `content` |
+| aria de tabla | 4 | `aria-colcount` · `aria-colindex` · `aria-rowcount` · `aria-rowindex` |
+| estructura HTML5 | 2 | `article` · `header` |
+
+> **La clase mayor es la que este documento ya declaraba AUSENTE en el dominio
+> del censo:** *«código, `dl`, formularios: ausentes en las 209»*. O sea §*una
+> regla derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para
+> ese caso*, con el censo de **43 etiquetas / 81 atributos** ejercitado fuera de
+> donde se midió.
+
+**Ampliar la whitelist con `<form action method>` y `data-sitekey` (reCAPTCHA)
+es una decisión de esquema con su propio análisis de riesgo**, y el censo lo
+dice él mismo: *«se admite AÑADIÉNDOLA al censo con su evidencia, no
+colándola»*. **Se ficha; no se cuela.**
+
+Reparto por documento: `monitor-calidad-aire` 9 · `software-…` 6 · `kunak-api`
+4 · `accesorios` 3. Por bloque: `texto-arq` 15 · `slider-ancho-arq` 3 ·
+`codigo-arq` 2 · `tabla-arq` 1 · `slider-arq` 1.
+Derivación: `derivaciones/bloqueos-f35-131.{mjs,log}`.

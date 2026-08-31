@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "fecha": "2026-08-31",
+    "tanda": "131.ª",
+    "sonda": "cms:extractor-f35",
+    "saboteada": "sin-modulos"
+  },
+  "alcance": {
+    "docs": [
+      "monitor-calidad-aire.html",
+      "accesorios.html",
+      "software-de-medicion-calidad-del-aire.html",
+      "kunak-api.html"
+    ],
+    "unidad": "fila de `arquetipos` · módulo de PRIMER NIVEL del cuerpo"
+  },
+  "noContesta": [
+    "NO mide geometría: el `ritmo` sale del análisis de la 127.ª, no de este recorrido",
+    "NO abre el original ni siembra",
+    "NO decide modelo: el content type ya estaba escrito (126.ª)"
+  ],
+  "controles": [
+    {
+      "ok": true,
+      "nombre": "CRUCE · el recorrido REPRODUCE el porDoc de la 126.ª",
+      "detalle": "monitor-calidad-aire 90=90 · accesorios 35=35 · software-de-medicion-calidad-del-aire 70=70 · kunak-api 36=36"
+    },
+    {
+      "ok": false,
+      "nombre": "§sondas 4bis · se emitieron bloques (0 emitido no puede salir verde)",
+      "detalle": "0 bloques"
+    },
+    {
+      "ok": true,
+      "nombre": "todo tipo del corpus casa un `kind` — lo que no case sale NOMBRADO",
+      "detalle": "0 tipos sin kind"
+    },
+    {
+      "ok": true,
+      "nombre": "toda ruta de media resuelve BYTE A BYTE (la guarda de Linux, no la de Windows)",
+      "detalle": "0 sin resolver · T-nombre-media aplicada 0 veces"
+    },
+    {
+      "ok": true,
+      "nombre": "los CUATRO ejes de `validaHtmlCorpus` se recorren (no el primero que falle)",
+      "detalle": "4 ejes · 0 campos HTML comprobados"
+    },
+    {
+      "ok": true,
+      "nombre": "el `ritmo` se OMITE en los 231 (ningún valor del lote está medido como no-default)",
+      "detalle": "0 módulos con ritmo escrito"
+    }
+  ],
+  "porDoc": {
+    "monitor-calidad-aire": {
+      "modulosN1": 90,
+      "bloques": 0
+    },
+    "accesorios": {
+      "modulosN1": 35,
+      "bloques": 0
+    },
+    "software-de-medicion-calidad-del-aire": {
+      "modulosN1": 70,
+      "bloques": 0
+    },
+    "kunak-api": {
+      "modulosN1": 36,
+      "bloques": 0
+    }
+  },
+  "bloqueos": {
+    "porEje": {
+      "script": [],
+      "etiqueta": [],
+      "host": [],
+      "atributo": []
+    },
+    "camposHtml": 0,
+    "total": 0
+  },
+  "transformaciones": {
+    "T-nombre-media": []
+  },
+  "mediaSinResolver": [],
+  "catalogo": {
+    "arquetipos": [
+      {
+        "slug": "monitor-calidad-aire",
+        "titulo": "Monitor de calidad del aire profesional | Kunak AIR Pro",
+        "arquetipo": "producto",
+        "bloques": [],
+        "seo": {
+          "title": "Monitor de calidad del aire profesional | Kunak AIR Pro",
+          "description": "El monitor de calidad del aire exterior multi-contaminante más preciso y fiable del mercado. Validado por la US EPA, Airparif, AQ Spec y más.",
+          "ogImage": "/images/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      },
+      {
+        "slug": "accesorios",
+        "titulo": "Accesorios para sensores de calidad del aire",
+        "arquetipo": "catalogo",
+        "bloques": [],
+        "seo": {
+          "title": "Accesorios para sensores de calidad del aire | Kunak",
+          "description": "Accesorios para sensores de calidad del aire destinados a sistemas de monitorización profesionales. Descubre kits de montaje, paneles solares, herramientas de calibración y accesorios compatibles con los sensores de calidad del aire de Kunak.",
+          "ogImage": "/images/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      },
+      {
+        "slug": "software-de-medicion-calidad-del-aire",
+        "titulo": "Software para el análisis de la calidad del aire | Kunak AIR Cloud",
+        "arquetipo": "software",
+        "bloques": [],
+        "seo": {
+          "title": "Software para el análisis de la calidad del aire | Kunak AIR Cloud",
+          "description": "Software de análisis de la calidad del aire y ayudar a los profesionales a utilizar y explotar los datos para tomar decisiones informadas.",
+          "ogImage": "/images/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      },
+      {
+        "slug": "kunak-api",
+        "titulo": "Kunak API",
+        "arquetipo": "software",
+        "varianteCorta": true,
+        "bloques": [],
+        "seo": {
+          "title": "Kunak API - Kunak",
+          "ogImage": "/images/uploads/2022/12/cabecera-puerto-1.jpg"
+        }
+      }
+    ]
+  }
+}

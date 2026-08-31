@@ -5574,6 +5574,77 @@ alcanzables»*, nunca un objetivo encogido.
 
 ---
 
+**47 · UNA GUARDA DE EXISTENCIA DE FICHERO DA UN VEREDICTO DISTINTO EN LA
+MÁQUINA DE DESARROLLO Y EN EL DESPLIEGUE — Y EL QUE MANDA ES EL DEL
+DESPLIEGUE.** (2026-08-31)
+
+§El principio dice *verificar contra la salida servida*. Le faltaba el caso en
+que lo que cambia no es el canal ni el nivel, sino **el sistema de ficheros
+debajo**:
+
+> **`existsSync` en Windows es CASE-INSENSITIVE.** Así que una guarda de la
+> forma *«¿está este asset?»* contesta **que sí** a `NO2_UK.webp` teniendo
+> `no2_uk.webp`, y en Linux contesta que no. **La guarda no falla: cambia de
+> opinión al desplegar**, y del lado bueno para quien la corre.
+
+**Medido:** el inventario de media de un lote dio **1 sin capturar con la guarda
+de Windows y 6 con la de Linux** — un factor de **6**, y las 5 que sólo Linux ve
+están en un campo `required`. Un `cms:seed` verde en la máquina de desarrollo
+habría muerto con 5 `MEDIA AUSENTE` más en el despliegue.
+
+**Las dos mitades operativas:**
+
+1. **la comprobación se hace BYTE A BYTE** —`readdirSync(dir).includes(basename)`—,
+   no con `existsSync`. Es una línea y no depende de dónde corra;
+2. **y se publican LOS DOS cardinales**, con el de Linux marcado como el que
+   manda. Publicar sólo el de Windows es §regla 14 con el contenedor puesto en
+   **el sistema operativo**: una limitación que no se puede sopesar porque no
+   trae su número.
+
+> **Y la señal para buscarlo es gratis: dos rutas que difieren SÓLO en
+> mayúsculas o en un separador** (`PM2.5` contra `pm25`). En Windows las dos
+> «existen»; en Linux, una.
+
+---
+
+**48 · UN CANAL DE MEDIA SE ENUMERA POR LO QUE PUEDE PORTAR UN FICHERO, NO POR
+SU TIPO DE CAMPO — Y UN CAMPO RICO ES UN CANAL IMPLÍCITO.** (2026-08-31)
+
+§EL INVENTARIO DE MEDIA manda enumerar los canales **caminando la CONFIG** en vez
+de esperar a que el seed muera. Correcto — y su implementación obvia se deja la
+mitad:
+
+> **Caminar la config buscando los campos `upload` enumera los canales
+> EXPLÍCITOS.** Un `campoHtml` guarda HTML, y ese HTML **trae `<img>` dentro**:
+> es un canal igual de real, y es **el #1 de la tabla de los tres que mataron el
+> seed** en este repo («el CUERPO rico | el seed murió al sembrar
+> `entradas-blog` | 1889 → 28»).
+
+**Medido:** un inventario que caminó sólo los `subida()` publicó «5 canales · 71
+rutas · 0 sin capturar». Con los campos ricos dentro: **12 canales · 121 rutas**,
+y `texto-arq.contenido` aportando **50** sobre 100 instancias. Los otros 6 ricos
+salen a **cero**, y también se publican — que es lo que convierte un canal en un
+hueco futuro visible en vez de en la próxima sorpresa.
+
+**Y lo destapó una comprobación DISTINTA**: el «¿queda contenido sin sitio?» del
+content type marcó 52 `<img>` dentro de módulos de texto. Aquella exigencia
+estaba **mal** —un campo rico sí los expresa— **y el rojo era útil igualmente**,
+que es el caso simétrico de §*el eje que no lee como defecto esconde la mejora*:
+un falso positivo puede señalar un objeto real.
+
+> ⚠ **Y su mitad de recuento, que evita el número inflado: los candidatos del
+> `srcset` NO son canal.** Un `upload` guarda **UN** fichero y Payload regenera
+> los tamaños (`IMAGE_SIZES`). Meterlos en el recuento dio **90 «sin capturar»**
+> con forma `-1280x853` / `-480x320` — una campaña de captura de 90 ficheros que
+> no hay que capturar. Se cuentan **en su propio cubo**, fuera del recuento de lo
+> que hay que sembrar, y su cardinal se publica igual (§regla 43).
+>
+> **Y la señal para desconfiar de todo esto era gratis: el veredicto pasó de 0 a
+> 3 a 90 y volvió a 0 sin que el repo cambiara un byte.** Lo que se movía era el
+> instrumento.
+
+---
+
 ## Comandos
 
 ```bash
