@@ -1491,6 +1491,11 @@ cambia el titular sin cambiar la decisión.
 
 **LOS CUATRO HUECOS, con su estado tras esta tanda:**
 
+> ⚠ **Esta tabla es el estado TRAS LA 124.ª y la 125.ª la reemplaza.** El estado
+> vigente es el del §CIERRE de la 125.ª, más abajo: dos huecos cerrados, uno
+> encogido a la mitad y el cuarto reducido. Se deja porque es el punto de
+> partida contra el que se lee lo que la 125.ª movió, no como estado actual.
+
 | hueco | estado |
 |---|---|
 | eje **`módulos` sin comparar** (no a 0) | **abierto, sin cambio.** Sigue en `·`, que es lo correcto |
@@ -1871,6 +1876,55 @@ default**.
 > arquetipos, no 4 instancias de uno— pero **la reduce a su tamaño real**: lo
 > que comparten sí tiene instancias, y **6 ejes de ritmo ya salen CAMPO por
 > varianza medida entre ellas.**
+
+### 🔁 125.ª · CIERRE — los cuatro huecos, con su cardinal, y la decisión que SUBE
+
+**Tanda OFFLINE.** No toca `src/`, no escribe content type, no sale a la red.
+Docker se comprobó **antes de gastar nada** (§regla 37) y **está caído**, así
+que no hubo `check` — construir no verificaría nada de esta tanda y `next build`
+vacía su directorio desde el primer segundo.
+
+| # | hueco | estado al entrar | estado al salir |
+|---|---|---|---|
+| **1** | eje **`módulos`** | «sin comparar» | **sigue en `·`, y ahora con sus DOS bloqueos derivados**: 35 componentes de 97 (entorno) **y** el criterio de «qué cuenta como un módulo», que no está fijado — **110 · 90 · 83**, tres cardinales ciertos por documento |
+| **2** | **105 nodos sin llave** | 24 rescatables, **81 sin explicar** | **CERRADO como reparto**: `24 + 4 + 77`, los tres con mecanismo, con control de suma. Y **atan con el hueco 1**: son casi exactamente los módulos anidados |
+| **3** | **las bases** de las unidades relativas | «SIN PROBAR, cardinal 32» | **CERRADO**: base del `rem` = **16px, constante** a los dos anchos, control aritmético **28/28 al bit**. **El hueco de tipo se encoge de dos ejes a UNO** |
+| **4** | **varianza inter-instancia** | «no hay con qué medir» | **ABIERTO PERO REDUCIDO**: **7 piezas con ≥2 instancias** y **6 ejes que ya salen CAMPO**. Lo que faltaba no era dominio: era **la llave** |
+
+**LO QUE ESO DEJA PARA LA DECISIÓN, y es lo único que sube:**
+
+> **Los cuatro huecos tienen número. Dos están cerrados, uno se encogió a la
+> mitad y el cuarto pasó de imposible a medido en 7 piezas.** La decisión de
+> **ESCRIBIR o no el content type** no se toma dentro de la tanda: sube al
+> propietario con este reparto delante.
+
+**Las tres salidas, con lo que cada una cuesta:**
+
+1. **escribirlo ya**, con los 6 ejes medidos como campo, los 46 sin varianza
+   declarados **SIN PROBAR y no cableados**, y `medida()` ampliada con **una
+   posición de breakpoint**;
+2. **cerrar antes el hueco 1** —fijar el criterio de módulo y emitir
+   `data-modulo` en 35 componentes—, que exige Docker y una tanda que toque
+   `src/`;
+3. **ampliar antes el dominio del hueco 4**: los 2 vecinos de `monitor` a ≥0.7
+   que no están clonados darían varianza inter-instancia **del mismo
+   arquetipo**, no sólo de piezas compartidas.
+
+**Lo que esta tanda NO hizo, dicho en vez de omitido:** no tocó HOME (sigue con
+su SIN PROBAR irreducible de 3 y **0 de 788** documentos capturados), no capturó
+los 3 descifradores de Cloudflare, no abrió los 4 ejes de regresión de
+`clon-base` sin negativo, y **no modificó `productos-cmp.mjs`** — una sonda que
+hoy no se puede correr no se cambia, porque el cambio se quedaría sin su paso 2.
+
+**Barrido de §regla 12, acotado y con su número** (`derivaciones/regla12-barrido-125.*`,
+2 controles en verde): **34 enunciados destacados · 12 ya en `CLAUDE.md` · 19
+candidatos por forma**. Aplicado el discriminador real —quitarle la fecha y el
+nombre propio— **18 son EVENTOS** y se quedan aquí. **Uno era regla, y es la
+mitad que le faltaba a §regla 29**: allí una llave mala **empareja mal** y
+produce un dato falso; en su otra cara **no empareja nada**, y ese cero se lee
+como una propiedad del objeto — que es como se ficha un **pendiente inventado**
+y se para una fase. Escrita en `CLAUDE.md` §regla 29, con esta tanda de
+evidencia.
 
 ## El orden, y por qué
 

@@ -4691,6 +4691,51 @@ habría empezado por las falsas.
 > repite.** Pisarla en silencio es exactamente el defecto original una vuelta más
 > abajo.
 
+⚠⚠ **Y LA MITAD QUE FALTABA, QUE NO PRODUCE UN DATO FALSO SINO UN PENDIENTE
+INVENTADO: CUANDO LA LLAVE NO EMPAREJA **NADA**, EL CERO NO SE LEE COMO UN
+DEFECTO DEL INSTRUMENTO — SE LEE COMO UNA PROPIEDAD DEL OBJETO (2026-08-30).**
+
+La regla de arriba persigue una llave que empareja **mal**: devuelve la fila
+equivocada y las diferencias «parecen del dato». Falta el caso en que no
+devuelve ninguna, y es peor porque **no hay diferencias que mirar**:
+
+> **Un emparejamiento que sale vacío se escribe igual que un objeto sin
+> instancias.** «0 pares» y «esto es un singleton» son la misma salida — y la
+> segunda es una afirmación sobre el ORIGINAL que nadie ha medido. De ahí no
+> sale un número falso: sale **una incógnita fichada**, que es peor, porque
+> viaja a las tandas siguientes como una propiedad conocida del dominio y
+> **nadie vuelve a comprobarla**.
+
+**Medido:** una fase llevaba abierta con la incógnita *«cada arquetipo es
+singleton, así que no se sabe qué es plantilla y qué es campo»* — y con ella
+la decisión de no escribir su content type. La llave que se estaba usando era
+**el ordinal del constructor**, que numera **por documento**: `et_pb_text_4` en
+dos páginas distintas no son dos instancias de una pieza, así que el
+emparejamiento entre documentos daba **0 por construcción**. Cambiada la llave
+por el **marcador semántico** —la clase que el editor pone en el módulo—
+aparecen **7 piezas con ≥2 instancias** y **6 ejes de ritmo que salen CAMPO por
+varianza medida entre ellas**. El dominio siempre estuvo ahí.
+
+**Las dos mitades operativas:**
+
+1. **antes de fichar «no hay instancias», comprueba QUÉ LLAVE lo dice** — y si
+   la llave la emite el constructor, pregúntate **en qué ámbito es única**. Una
+   llave con ámbito de documento **no puede** cruzar documentos, y su cero es
+   del ámbito, no del objeto. Es §sondas 4 —*un selector que no casa con nada no
+   es un cero*— con el cero puesto en un **emparejamiento** en vez de en un
+   `querySelector`, y con la consecuencia subida un nivel: allí se pierde una
+   medida, aquí **se para una fase**;
+2. **y la llave que cruza instancias casi nunca es la del constructor: es la
+   SEMÁNTICA** (§*el literal de `className` no discrimina; lo que identifica un
+   módulo es el marcador semántico*). El ordinal dice *dónde está* dentro de su
+   página; el marcador dice *qué es*, y sólo el segundo sobrevive al cambio de
+   página.
+
+> **Y la señal para sospecharlo es gratis: una incógnita que nadie ha vuelto a
+> tocar en varias tandas.** Un pendiente real se estrecha cuando se le mira;
+> uno fabricado por el ámbito de una llave **no se mueve**, porque cada tanda
+> reproduce el mismo cero con el mismo instrumento y lo lee como confirmación.
+
 **30 · UNA MIGRACIÓN QUE RELAJA UNA RESTRICCIÓN TIENE UNA REVERSA CON FECHA DE
 CADUCIDAD: SE PRUEBA ANTES DE QUE ENTRE EL DATO.** (2026-08-23)
 
