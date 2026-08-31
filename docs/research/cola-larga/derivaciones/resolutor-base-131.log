@@ -1,0 +1,43 @@
+==============================================================================
+131.ª · ¿RENOMBRAR la línea base de la 129.ª? — verificado POR EFECTO
+==============================================================================
+
+## exportaciones de lib.mjs relacionadas con resolver congeladas
+   eligeCongeladaAnterior
+
+## @1440 · candidatos de la familia productos-cmp-1440, por mtime
+   artefacto  2026-08-31T20:03:31.998Z  productos-cmp-1440-neg-selector-fila-falso-control.json
+   artefacto  2026-08-31T20:02:28.659Z  productos-cmp-1440-neg-selector-fila-falso.json
+   artefacto  2026-08-31T20:01:26.494Z  productos-cmp-1440-neg-selector-clon-falso-control.json
+   artefacto  2026-08-31T20:00:23.863Z  productos-cmp-1440-neg-selector-clon-falso.json
+   artefacto  2026-08-31T19:59:22.996Z  productos-cmp-1440-neg-inyecta-delta.json
+   artefacto  2026-08-31T19:59:02.367Z  productos-cmp-1440-neg-mismo-lado.json
+     MEDIDA   2026-08-31T19:56:17.150Z  productos-cmp-1440-2026-08-31-srcset-cerrado.json
+     MEDIDA   2026-08-31T19:15:28.242Z  productos-cmp-1440-2026-08-31-tras-marcador-software.json
+     MEDIDA   2026-08-31T18:19:26.786Z  productos-cmp-1440-2026-08-31.json
+   artefacto  2026-08-31T18:14:39.807Z  productos-cmp-1440-SONDA-EMPAREJABA-MODULOS-POR-ORDEN.json
+     MEDIDA   2026-08-31T18:05:07.881Z  productos-cmp-1440-2026-08-31-tras-marcador.json
+     MEDIDA   2026-08-30T23:29:28.320Z  productos-cmp-1440.json
+   artefacto  2026-08-30T23:25:41.538Z  productos-cmp-1440-SONDA-1-IMAGEN-SIN-NORMALIZAR.json
+   artefacto  2026-08-30T23:23:33.761Z  productos-cmp-1440-SONDA-MODULOS-NO-DENOTAN-LO-MISMO.json
+   artefacto  2026-08-30T23:21:36.754Z  productos-cmp-1440-SONDA-MEZCLABA-CASCARON-Y-CUERPO.json
+   ➜ un resolutor por mtime que descarte artefactos elige: productos-cmp-1440-2026-08-31-srcset-cerrado.json
+   ➜ eligeCongeladaAnterior(...) no acepta esa firma: eligeCongeladaAnterior: `patron` tiene que ser una RegExp
+
+## @390 · candidatos de la familia productos-cmp-390, por mtime
+     MEDIDA   2026-08-31T19:58:09.626Z  productos-cmp-390-2026-08-31-srcset-cerrado.json
+     MEDIDA   2026-08-31T19:17:44.406Z  productos-cmp-390-2026-08-31-tras-marcador-software.json
+     MEDIDA   2026-08-31T18:31:15.333Z  productos-cmp-390-2026-08-31.json
+     MEDIDA   2026-08-30T23:30:58.724Z  productos-cmp-390.json
+   artefacto  2026-08-30T23:27:40.690Z  productos-cmp-390-SONDA-1-IMAGEN-SIN-NORMALIZAR.json
+   ➜ un resolutor por mtime que descarte artefactos elige: productos-cmp-390-2026-08-31-srcset-cerrado.json
+   ➜ eligeCongeladaAnterior(...) no acepta esa firma: eligeCongeladaAnterior: `patron` tiene que ser una RegExp
+
+## consumidores de la familia (derivado, no recordado)
+   scripts/qa/cobertura.mjs L309 · congeladasDe("productos-cmp") — recorre TODAS
+      ¿recorre la familia entera? SI
+   derivaciones/escalon1-noop-130.mjs · la usa como ANTES de su NO-OP
+      para ESE uso sigue siendo CORRECTA: los dos lados de aquel NO-OP se
+      tomaron con el MISMO instrumento (sin srcset cerrado en ninguno).
+
+==============================================================================

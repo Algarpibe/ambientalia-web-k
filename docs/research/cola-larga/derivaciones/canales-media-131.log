@@ -1,0 +1,57 @@
+==============================================================================
+131.ª · PASO 0 punto 3 — CANALES DE MEDIA de `arquetipos`  (v2)
+==============================================================================
+
+## (a) CANALES DECLARADOS — caminando la CONFIG
+   arquetipos.bloques.icono-arq.imagen              upload→media       opcional
+   arquetipos.bloques.imagen-arq.imagen             upload→media       REQUERIDO
+   arquetipos.bloques.video-arq.portada             upload→media       opcional
+   arquetipos.bloques.galeria-arq.items.imagen      upload→media       REQUERIDO  [en array]
+   arquetipos.seo.ogImage                           text→URL de asset  opcional
+
+## (b) CARDINAL POR CANAL — cruzado contra LAS DOS guardas
+   win = existsSync (case-INsensitive, lo que corre aquí) · linux = byte a byte (el que manda)
+   ✅ arquetipos.bloques.icono-arq.imagen              inst  70 | rutas  55 | faltan win  0 | faltan LINUX  0 | conSrcset 16
+   ✅ arquetipos.bloques.imagen-arq.imagen             inst  27 | rutas   7 | faltan win  0 | faltan LINUX  0 | conSrcset 5
+   — arquetipos.bloques.video-arq.portada             inst   2 | rutas   0 | faltan win  0 | faltan LINUX  0
+   ❗ arquetipos.bloques.galeria-arq.items.imagen      inst   1 | rutas   9 | faltan win  1 | faltan LINUX  6 | conSrcset 9
+   — arquetipos.seo.ogImage                           inst   0 | rutas   0 | faltan win  0 | faltan LINUX  0
+
+## (c) AUSENCIAS CLASIFICADAS — y mandan trabajos DISTINTOS
+   RENOMBRE  REQ  /images/uploads/2023/09/H2S_spain.webp
+              canal arquetipos.bloques.galeria-arq.items.imagen
+              candidato en el repo: h2s_spain.webp
+   RENOMBRE  REQ  /images/uploads/2023/09/NO2_UK.webp
+              canal arquetipos.bloques.galeria-arq.items.imagen
+              candidato en el repo: no2_uk.webp
+   RENOMBRE  REQ  /images/uploads/2023/09/O3_spain.webp
+              canal arquetipos.bloques.galeria-arq.items.imagen
+              candidato en el repo: o3_spain.webp
+   RENOMBRE  REQ  /images/uploads/2023/09/PM10_belgium.webp
+              canal arquetipos.bloques.galeria-arq.items.imagen
+              candidato en el repo: pm10_belgium.webp
+   RENOMBRE  REQ  /images/uploads/2023/09/PM2.5_belgium.webp
+              canal arquetipos.bloques.galeria-arq.items.imagen
+              candidato en el repo: pm25_belgium.webp
+   RENOMBRE  REQ  /images/uploads/2023/09/SO2_france.webp
+              canal arquetipos.bloques.galeria-arq.items.imagen
+              candidato en el repo: so2_france.webp
+
+## (d) CONTROLES
+   ✅ los canales se DERIVAN del fuente de la config (no de una lista a mano)
+        5 canales
+   ✅ CONTROL · toda entrada de PORTAN_MEDIA casa con un canal DECLARADO (el defecto de la v1)
+        4 de 4 casan
+   ✅ CONTROL · el recorrido REPRODUCE el porDoc de la 126.ª
+        PRODUCTO 90=90 · CATALOGO 35=35 · SOFTWARE 70=70 · SOFTWARE-corta 36=36
+   ✅ el recorrido encuentra <img> dentro de los módulos (ni cero ni pleno)
+        106 <img>
+
+==============================================================================
+VEREDICTO · 5 canales · 71 rutas distintas
+   sin capturar con la guarda de WINDOWS ... 1
+   sin capturar con la guarda de LINUX ..... 6   ← el que manda
+   de ellas RENOMBRE (sin red) 6 · AUSENTE (necesita captura) 0
+==============================================================================
+
+congelado: docs/research/cola-larga/derivaciones/canales-media-131.json

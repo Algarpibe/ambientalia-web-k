@@ -1,0 +1,26 @@
+==============================================================================
+131.ª · PASO 0 punto 4 — el ALCANCE del daño en la línea base de la 129.ª
+==============================================================================
+
+## @1440
+   antes:   productos-cmp-1440-2026-08-31.json   distintos=43
+   después: productos-cmp-1440-2026-08-31-srcset-cerrado.json   distintos=43
+   ⚠ el TITULAR no discrimina: 43 → 43
+   pares comparables: 0 | ACERCA 0 · ALEJA 0 · igual 0 · sólo-antes 0 · sólo-después 0
+   ➜ ALCANCE del daño = 0 pares (ruta×eje) de 0 = NaN %
+
+## @390
+   antes:   productos-cmp-390-2026-08-31.json   distintos=49
+   después: productos-cmp-390-2026-08-31-srcset-cerrado.json   distintos=49
+   ⚠ el TITULAR no discrimina: 49 → 49
+   pares comparables: 0 | ACERCA 0 · ALEJA 0 · igual 0 · sólo-antes 0 · sólo-después 0
+   ➜ ALCANCE del daño = 0 pares (ruta×eje) de 0 = NaN %
+
+## CONTROLES
+   ✅ @1440 · el DESPUÉS es POSTERIOR al ANTES
+        2026-08-31T18:19:26.786Z → 2026-08-31T19:56:17.150Z
+   ✅ @390 · el DESPUÉS es POSTERIOR al ANTES
+        2026-08-31T18:31:15.333Z → 2026-08-31T19:58:09.626Z
+
+congelado: docs/research/cola-larga/derivaciones/base-129-caducada-131.json
+==============================================================================

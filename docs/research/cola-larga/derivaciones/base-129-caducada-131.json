@@ -1,0 +1,890 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": "131.ª",
+ "regla": "5bis",
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "@1440 · el DESPUÉS es POSTERIOR al ANTES",
+   "detalle": "2026-08-31T18:19:26.786Z → 2026-08-31T19:56:17.150Z"
+  },
+  {
+   "ok": true,
+   "nombre": "@390 · el DESPUÉS es POSTERIOR al ANTES",
+   "detalle": "2026-08-31T18:31:15.333Z → 2026-08-31T19:58:09.626Z"
+  },
+  {
+   "ok": true,
+   "nombre": "§sondas 4bis · pares COMPARADOS > 0 (0 comparado no puede salir verde)",
+   "detalle": "255 pares"
+  }
+ ],
+ "informe": [
+  {
+   "ancho": 1440,
+   "antes": "productos-cmp-1440-2026-08-31.json",
+   "despues": "productos-cmp-1440-2026-08-31-srcset-cerrado.json",
+   "pares": 128,
+   "acerca": 3,
+   "aleja": 49,
+   "igual": 76,
+   "soloA": 0,
+   "soloD": 49,
+   "tocados": 52,
+   "crea": 49,
+   "mueve": 3,
+   "mueveAcerca": 3,
+   "mueveAleja": 0,
+   "losQueMueven": [
+    {
+     "k": "/monitor-calidad-aire|fila|fila3|-|h",
+     "distAntes": 576.78,
+     "distDespues": 50.63,
+     "origAntes": 5079.38,
+     "origDespues": 5605.53
+    },
+    {
+     "k": "/accesorios|fila|fila5|-|h",
+     "distAntes": 303.32,
+     "distDespues": 12,
+     "origAntes": 4835.06,
+     "origDespues": 5126.38
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|fila|fila3|-|h",
+     "distAntes": 1671.6,
+     "distDespues": 34.65,
+     "origAntes": 3871.56,
+     "origDespues": 5577.81
+    }
+   ],
+   "movidos": [
+    {
+     "k": "/software-de-medicion-calidad-del-aire|fila|fila3|-|h",
+     "distAntes": 1671.6,
+     "distDespues": 34.65,
+     "origAntes": 3871.56,
+     "origDespues": 5577.81
+    },
+    {
+     "k": "/monitor-calidad-aire|fila|fila3|-|h",
+     "distAntes": 576.78,
+     "distDespues": 50.63,
+     "origAntes": 5079.38,
+     "origDespues": 5605.53
+    },
+    {
+     "k": "/accesorios|fila|fila5|-|h",
+     "distAntes": 303.32,
+     "distDespues": 12,
+     "origAntes": 4835.06,
+     "origDespues": 5126.38
+    },
+    {
+     "k": "/accesorios|modulo|fila5|2|h",
+     "distAntes": 0,
+     "distDespues": 70,
+     "origAntes": null,
+     "origDespues": 389
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|32|h",
+     "distAntes": 0,
+     "distDespues": 64.36,
+     "origAntes": null,
+     "origDespues": 430.86
+    },
+    {
+     "k": "/accesorios|modulo|fila5|1|h",
+     "distAntes": 0,
+     "distDespues": 57,
+     "origAntes": null,
+     "origDespues": 33
+    },
+    {
+     "k": "/accesorios|modulo|fila4|6|mb",
+     "distAntes": 0,
+     "distDespues": 48,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/accesorios|modulo|fila5|10|mb",
+     "distAntes": 0,
+     "distDespues": 48,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|4|h",
+     "distAntes": 0,
+     "distDespues": 32,
+     "origAntes": null,
+     "origDespues": 79
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|14|h",
+     "distAntes": 0,
+     "distDespues": 32,
+     "origAntes": null,
+     "origDespues": 79
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|31|h",
+     "distAntes": 0,
+     "distDespues": 32,
+     "origAntes": null,
+     "origDespues": 79
+    },
+    {
+     "k": "/accesorios|modulo|fila4|0|mb",
+     "distAntes": 0,
+     "distDespues": 31.67,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|0|mb",
+     "distAntes": 0,
+     "distDespues": 31.67,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|0|mb",
+     "distAntes": 0,
+     "distDespues": 31.67,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/monitor-calidad-aire|modulo|fila3|-|nModulos",
+     "distAntes": 0,
+     "distDespues": 31,
+     "origAntes": null,
+     "origDespues": 35
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|2|h",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 99.5
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|3|h",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 74
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|33|mb",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/accesorios|modulo|fila5|2|mb",
+     "distAntes": 0,
+     "distDespues": 27.2,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/accesorios|modulo|fila4|3|mb",
+     "distAntes": 0,
+     "distDespues": 20,
+     "origAntes": null,
+     "origDespues": 20
+    },
+    {
+     "k": "/accesorios|modulo|fila4|3|h",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 140.38
+    },
+    {
+     "k": "/accesorios|modulo|fila4|5|mb",
+     "distAntes": 0,
+     "distDespues": 16.33,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|3|mb",
+     "distAntes": 0,
+     "distDespues": 16.33,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|4|mb",
+     "distAntes": 0,
+     "distDespues": 16.33,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|5|mb",
+     "distAntes": 0,
+     "distDespues": 16.33,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|6|mb",
+     "distAntes": 0,
+     "distDespues": 16.33,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|7|mb",
+     "distAntes": 0,
+     "distDespues": 16.33,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|8|mb",
+     "distAntes": 0,
+     "distDespues": 16.33,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|9|mb",
+     "distAntes": 0,
+     "distDespues": 16.33,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|2|mb",
+     "distAntes": 0,
+     "distDespues": 14.4,
+     "origAntes": null,
+     "origDespues": 14.4
+    },
+    {
+     "k": "/accesorios|modulo|fila4|1|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/accesorios|modulo|fila5|1|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|4|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|14|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|31|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|4|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|5|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|6|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|7|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|8|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|9|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|10|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|11|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|12|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|13|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|14|mb",
+     "distAntes": 0,
+     "distDespues": 3.86,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila4|1|mb",
+     "distAntes": 0,
+     "distDespues": 3.77,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila5|1|mb",
+     "distAntes": 0,
+     "distDespues": 3.77,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|31|mb",
+     "distAntes": 0,
+     "distDespues": 3.67,
+     "origAntes": null,
+     "origDespues": 31.67
+    },
+    {
+     "k": "/accesorios|modulo|fila4|4|mb",
+     "distAntes": 0,
+     "distDespues": 2,
+     "origAntes": null,
+     "origDespues": 50
+    },
+    {
+     "k": "/accesorios|modulo|fila4|2|h",
+     "distAntes": 0,
+     "distDespues": 1,
+     "origAntes": null,
+     "origDespues": 208
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|1|h",
+     "distAntes": 0,
+     "distDespues": 1,
+     "origAntes": null,
+     "origDespues": 156
+    }
+   ]
+  },
+  {
+   "ancho": 390,
+   "antes": "productos-cmp-390-2026-08-31.json",
+   "despues": "productos-cmp-390-2026-08-31-srcset-cerrado.json",
+   "pares": 127,
+   "acerca": 2,
+   "aleja": 57,
+   "igual": 68,
+   "soloA": 0,
+   "soloD": 55,
+   "tocados": 59,
+   "crea": 55,
+   "mueve": 4,
+   "mueveAcerca": 2,
+   "mueveAleja": 2,
+   "losQueMueven": [
+    {
+     "k": "/monitor-calidad-aire|fila|fila3|-|h",
+     "distAntes": 134.88,
+     "distDespues": 324.88,
+     "origAntes": 9617.13,
+     "origDespues": 9807.13
+    },
+    {
+     "k": "/accesorios|fila|fila5|-|h",
+     "distAntes": 781.41,
+     "distDespues": 634,
+     "origAntes": 8731.28,
+     "origDespues": 8878.69
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|fila|fila1|-|h",
+     "distAntes": 32.51,
+     "distDespues": 32.61,
+     "origAntes": 950.2,
+     "origDespues": 950.3
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|fila|fila3|-|h",
+     "distAntes": 2765.36,
+     "distDespues": 24.64,
+     "origAntes": 7607.92,
+     "origDespues": 10397.92
+    }
+   ],
+   "movidos": [
+    {
+     "k": "/software-de-medicion-calidad-del-aire|fila|fila3|-|h",
+     "distAntes": 2765.36,
+     "distDespues": 24.64,
+     "origAntes": 7607.92,
+     "origDespues": 10397.92
+    },
+    {
+     "k": "/monitor-calidad-aire|fila|fila3|-|h",
+     "distAntes": 134.88,
+     "distDespues": 324.88,
+     "origAntes": 9617.13,
+     "origDespues": 9807.13
+    },
+    {
+     "k": "/accesorios|fila|fila5|-|h",
+     "distAntes": 781.41,
+     "distDespues": 634,
+     "origAntes": 8731.28,
+     "origDespues": 8878.69
+    },
+    {
+     "k": "/accesorios|modulo|fila5|4|h",
+     "distAntes": 0,
+     "distDespues": 118.82,
+     "origAntes": null,
+     "origDespues": 920.06
+    },
+    {
+     "k": "/accesorios|modulo|fila4|3|h",
+     "distAntes": 0,
+     "distDespues": 118.81,
+     "origAntes": null,
+     "origDespues": 1274.78
+    },
+    {
+     "k": "/accesorios|modulo|fila5|5|h",
+     "distAntes": 0,
+     "distDespues": 88.22,
+     "origAntes": null,
+     "origDespues": 944.66
+    },
+    {
+     "k": "/accesorios|modulo|fila5|6|h",
+     "distAntes": 0,
+     "distDespues": 88.22,
+     "origAntes": null,
+     "origDespues": 1024.84
+    },
+    {
+     "k": "/accesorios|modulo|fila4|4|h",
+     "distAntes": 0,
+     "distDespues": 84,
+     "origAntes": null,
+     "origDespues": 751.91
+    },
+    {
+     "k": "/accesorios|modulo|fila4|5|h",
+     "distAntes": 0,
+     "distDespues": 84,
+     "origAntes": null,
+     "origDespues": 690.72
+    },
+    {
+     "k": "/accesorios|modulo|fila5|2|h",
+     "distAntes": 0,
+     "distDespues": 84,
+     "origAntes": null,
+     "origDespues": 1086.06
+    },
+    {
+     "k": "/accesorios|modulo|fila5|3|h",
+     "distAntes": 0,
+     "distDespues": 84,
+     "origAntes": null,
+     "origDespues": 1304.44
+    },
+    {
+     "k": "/accesorios|modulo|fila5|8|h",
+     "distAntes": 0,
+     "distDespues": 84,
+     "origAntes": null,
+     "origDespues": 1123.66
+    },
+    {
+     "k": "/accesorios|modulo|fila5|9|h",
+     "distAntes": 0,
+     "distDespues": 84,
+     "origAntes": null,
+     "origDespues": 745.72
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|31|h",
+     "distAntes": 0,
+     "distDespues": 78.81,
+     "origAntes": null,
+     "origDespues": 1218.83
+    },
+    {
+     "k": "/accesorios|modulo|fila5|7|h",
+     "distAntes": 0,
+     "distDespues": 52,
+     "origAntes": null,
+     "origDespues": 1116.25
+    },
+    {
+     "k": "/accesorios|modulo|fila4|5|mb",
+     "distAntes": 0,
+     "distDespues": 48,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/accesorios|modulo|fila5|9|mb",
+     "distAntes": 0,
+     "distDespues": 48,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|3|h",
+     "distAntes": 0,
+     "distDespues": 32,
+     "origAntes": null,
+     "origDespues": 79
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|13|h",
+     "distAntes": 0,
+     "distDespues": 32,
+     "origAntes": null,
+     "origDespues": 79
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|30|h",
+     "distAntes": 0,
+     "distDespues": 32,
+     "origAntes": null,
+     "origDespues": 79
+    },
+    {
+     "k": "/monitor-calidad-aire|modulo|fila3|-|nModulos",
+     "distAntes": 0,
+     "distDespues": 31,
+     "origAntes": null,
+     "origDespues": 34
+    },
+    {
+     "k": "/accesorios|modulo|fila4|0|mb",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|0|mb",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|1|mb",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|0|mb",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|1|h",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 74
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|2|h",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 74
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|32|mb",
+     "distAntes": 0,
+     "distDespues": 30,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/accesorios|modulo|fila5|1|h",
+     "distAntes": 0,
+     "distDespues": 20.75,
+     "origAntes": null,
+     "origDespues": 33
+    },
+    {
+     "k": "/accesorios|modulo|fila4|2|mb",
+     "distAntes": 0,
+     "distDespues": 20,
+     "origAntes": null,
+     "origDespues": 20
+    },
+    {
+     "k": "/accesorios|modulo|fila4|2|h",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 323.94
+    },
+    {
+     "k": "/accesorios|modulo|fila4|4|mb",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|2|mb",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|3|mb",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|4|mb",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|5|mb",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|6|mb",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|7|mb",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila5|8|mb",
+     "distAntes": 0,
+     "distDespues": 18,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|1|mb",
+     "distAntes": 0,
+     "distDespues": 14.4,
+     "origAntes": null,
+     "origDespues": 14.4
+    },
+    {
+     "k": "/accesorios|modulo|fila4|1|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/accesorios|modulo|fila5|1|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|3|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|13|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|30|pb",
+     "distAntes": 0,
+     "distDespues": 10,
+     "origAntes": null,
+     "origDespues": 0
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|3|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|4|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|5|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|6|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|7|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|8|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|9|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|10|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|11|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|12|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|13|mb",
+     "distAntes": 0,
+     "distDespues": 2.19,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/accesorios|modulo|fila4|3|mb",
+     "distAntes": 0,
+     "distDespues": 2,
+     "origAntes": null,
+     "origDespues": 50
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|modulo|fila3|30|mb",
+     "distAntes": 0,
+     "distDespues": 2,
+     "origAntes": null,
+     "origDespues": 30
+    },
+    {
+     "k": "/software-de-medicion-calidad-del-aire|fila|fila1|-|h",
+     "distAntes": 32.51,
+     "distDespues": 32.61,
+     "origAntes": 950.2,
+     "origDespues": 950.3
+    }
+   ]
+  }
+ ]
+}

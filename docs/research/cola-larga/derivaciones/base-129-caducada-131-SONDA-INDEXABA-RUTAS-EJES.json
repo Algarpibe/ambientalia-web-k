@@ -1,0 +1,45 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": "131.ª",
+ "regla": "5bis",
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "@1440 · el DESPUÉS es POSTERIOR al ANTES",
+   "detalle": "2026-08-31T18:19:26.786Z → 2026-08-31T19:56:17.150Z"
+  },
+  {
+   "ok": true,
+   "nombre": "@390 · el DESPUÉS es POSTERIOR al ANTES",
+   "detalle": "2026-08-31T18:31:15.333Z → 2026-08-31T19:58:09.626Z"
+  }
+ ],
+ "informe": [
+  {
+   "ancho": 1440,
+   "antes": "productos-cmp-1440-2026-08-31.json",
+   "despues": "productos-cmp-1440-2026-08-31-srcset-cerrado.json",
+   "pares": 0,
+   "acerca": 0,
+   "aleja": 0,
+   "igual": 0,
+   "soloA": 0,
+   "soloD": 0,
+   "tocados": 0,
+   "movidos": []
+  },
+  {
+   "ancho": 390,
+   "antes": "productos-cmp-390-2026-08-31.json",
+   "despues": "productos-cmp-390-2026-08-31-srcset-cerrado.json",
+   "pares": 0,
+   "acerca": 0,
+   "aleja": 0,
+   "igual": 0,
+   "soloA": 0,
+   "soloD": 0,
+   "tocados": 0,
+   "movidos": []
+  }
+ ]
+}

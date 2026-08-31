@@ -1,0 +1,131 @@
+==============================================================================
+PASO 0 · 131.a — DERIVA. fecha del sistema: 2026-08-31
+==============================================================================
+
+## 1 · TRIPWIRE DE CARGA (§regla 19: forma completa Y ANCLADA A LINEA)
+   HEAD de arranque ....................... 259f987b00c4da2e2c5cb258a2b32e1d8fe3fce4
+   chars del fichero que la sesion CARGO .. 322186
+   ratio contra el aviso de 150000 ........ 2.15x
+   KV-01 · 7HQMPD | libres 3 | ANCLADAS 1 | pos 22.4%
+   KV-08 · 5ZMCFR | libres 2 | ANCLADAS 1 | pos 100.0%
+
+## 2 · CENSO (congeladas y sondas) — cada cifra CON SU UNIDAD
+   scripts/qa/medidas/*.json .............. 1544 FICHEROS
+   de ellos ARTEFACTOS (§regla 7) ......... 554 FICHEROS
+   negativos en disco (*.neg.mjs) ......... 73 FICHEROS  <- v1 dijo 554: sobre-casado
+   comandos npm *-neg en package.json ..... 88 COMANDOS
+   §regla 26 · comandos *-neg cuyo fichero NO existe: 0
+
+## 3 · MANIFIESTO (citado CON SU FICHERO, §regla 5)
+   apps/web/.next/prerender-manifest.json ... 429 RUTAS | mtime 2026-08-31T19:54:40.592Z
+   apps/web/.next-130/prerender-manifest.json ... AUSENTE
+   apps/web/.next-131/prerender-manifest.json ... AUSENTE
+
+## 4 · EL CONTENT TYPE `arquetipos` — que campos declara
+   packages/cms-config/src/colecciones/arquetipos.ts .... 4916 chars
+   packages/cms-config/src/bloques/arquetipos.ts .... 23684 chars
+   -- ¿esta registrada en colecciones.ts? --
+31:import { arquetipos } from "./colecciones/arquetipos.ts";
+159:  arquetipos,
+
+   -- migracion de la tabla --
+20260831_015813_f3_5_arquetipos.json
+20260831_015813_f3_5_arquetipos.ts
+
+
+## 5 · LAS CONGELADAS QUE DICEN QUE SEMBRAR (128.a y 130.a)
+   medidas/*tipos-f35* -> 0 ficheros
+   medidas/*f35* -> 0 ficheros
+   medidas/*arquetipo* -> 4 ficheros
+      cms-arquetipos-neg-control.json  | mtime 2026-08-23T15:13:20.371Z
+      cms-arquetipos-neg-nada-construido.json  | mtime 2026-08-23T15:13:20.375Z
+      cms-arquetipos-neg-todo-construido.json  | mtime 2026-08-23T15:13:20.376Z
+      cms-arquetipos.json  | mtime 2026-08-04T19:04:48.357Z
+
+## 6 · §regla 5bis — la linea base de la 129.a y el artefacto del `srcset`
+   productos-cmp-1440-2026-08-31-srcset-cerrado.json | distintos=43 pares=4
+      mtime 2026-08-31T19:56:17.150Z | 30915 bytes
+   productos-cmp-1440-2026-08-31-tras-marcador-software.json | distintos=43 pares=4
+      mtime 2026-08-31T19:15:28.242Z | 29761 bytes
+   productos-cmp-1440-2026-08-31-tras-marcador.json | distintos=43 pares=4
+      mtime 2026-08-31T18:05:07.881Z | 12415 bytes
+   productos-cmp-1440-2026-08-31.json | distintos=43 pares=4
+      mtime 2026-08-31T18:19:26.786Z | 20964 bytes
+   productos-cmp-1440-SONDA-1-IMAGEN-SIN-NORMALIZAR.json | distintos=43 pares=4
+      mtime 2026-08-30T23:25:41.538Z | 12416 bytes
+   productos-cmp-1440-SONDA-EMPAREJABA-MODULOS-POR-ORDEN.json | distintos=43 pares=4
+      mtime 2026-08-31T18:14:39.807Z | 24656 bytes
+   productos-cmp-1440-SONDA-MEZCLABA-CASCARON-Y-CUERPO.json | distintos=103 pares=4
+      mtime 2026-08-30T23:21:36.754Z | 16221 bytes
+   productos-cmp-1440-SONDA-MODULOS-NO-DENOTAN-LO-MISMO.json | distintos=66 pares=4
+      mtime 2026-08-30T23:23:33.761Z | 11325 bytes
+   productos-cmp-1440-neg-inyecta-delta.json | distintos=4 pares=4
+      mtime 2026-08-31T19:59:22.996Z | 8109 bytes
+   productos-cmp-1440-neg-mismo-lado.json | distintos=0 pares=4
+      mtime 2026-08-31T19:59:02.367Z | 7546 bytes
+   productos-cmp-1440-neg-selector-clon-falso-control.json | distintos=43 pares=4
+      mtime 2026-08-31T20:01:26.494Z | 30915 bytes
+   productos-cmp-1440-neg-selector-clon-falso.json | distintos=43 pares=4
+      mtime 2026-08-31T20:00:23.863Z | 14261 bytes
+   productos-cmp-1440-neg-selector-fila-falso-control.json | distintos=43 pares=4
+      mtime 2026-08-31T20:03:31.998Z | 30915 bytes
+   productos-cmp-1440-neg-selector-fila-falso.json | distintos=0 pares=4
+      mtime 2026-08-31T20:02:28.659Z | 3854 bytes
+   productos-cmp-1440.json | distintos=43 pares=4
+      mtime 2026-08-30T23:29:28.320Z | 12415 bytes
+   productos-cmp-390-2026-08-31-srcset-cerrado.json | distintos=49 pares=4
+      mtime 2026-08-31T19:58:09.626Z | 30225 bytes
+   productos-cmp-390-2026-08-31-tras-marcador-software.json | distintos=49 pares=4
+      mtime 2026-08-31T19:17:44.406Z | 27298 bytes
+   productos-cmp-390-2026-08-31.json | distintos=49 pares=4
+      mtime 2026-08-31T18:31:15.333Z | 19103 bytes
+   productos-cmp-390-SONDA-1-IMAGEN-SIN-NORMALIZAR.json | distintos=49 pares=4
+      mtime 2026-08-30T23:27:40.690Z | 12893 bytes
+   productos-cmp-390.json | distintos=49 pares=4
+      mtime 2026-08-30T23:30:58.724Z | 12892 bytes
+
+## 7 · QUE HAY YA EN EL REPO — sembradores, extractores, proyecciones
+   -- ficheros de scripts/cms --
+
+   -- comandos npm cms:* --
+      cms:dev
+      cms:types
+      cms:reset
+      cms:seed
+      cms:sondeo
+      cms:sondeo-neg
+      cms:captura
+      cms:captura-media
+      cms:aplica-t12
+      cms:extractor
+      cms:extractor-neg
+      cms:captura-f3
+      cms:captura-f3-neg
+      cms:captura-f3-media
+      cms:captura-f3-media-neg
+      cms:captura-datos
+      cms:captura-css
+      cms:coloca-media
+      cms:coloca-media-neg
+      cms:captura-sectores
+      cms:captura-sectores-neg
+      cms:extractor-listados
+      cms:extractor-listados-neg
+      cms:seed-listados
+      cms:seed-listados-neg
+      cms:extractor-kb
+      cms:extractor-kb-neg
+      cms:seed-kb
+      cms:extractor-a
+      cms:extractor-a-neg
+      cms:extractor-c
+      cms:extractor-c-neg
+      cms:extractor-f33
+      cms:extractor-f33-neg
+      cms:extractor-p
+      cms:extractor-p-neg
+      cms:captura-fuentes
+      cms:captura-fuentes-neg
+   total comandos cms:* = 38
+
+==============================================================================

@@ -1,0 +1,36 @@
+==============================================================================
+131.a · PASO 0 punto 3 — CANALES DE MEDIA de `arquetipos`
+==============================================================================
+
+## (a) CANALES DECLARADOS — caminando la CONFIG
+   arquetipos.bloques.icono-arq.imagen          upload→media       opcional
+   arquetipos.bloques.imagen-arq.imagen         upload→media       REQUERIDO
+   arquetipos.bloques.video-arq.portada         upload→media       opcional
+   arquetipos.bloques.galeria-arq.imagen        upload→media       REQUERIDO
+   arquetipos.seo.ogImage                       text→URL de asset  opcional
+
+## (b) CARDINAL POR CANAL — cruzado contra `existsSync(apps/web/public + ruta)`
+   (la MISMA guarda de creaContexto().media en seed.mjs L258-286)
+   ✅ arquetipos.bloques.icono-arq.imagen          instancias  70 | rutas  55 | EN public  55 | FALTAN 0 | conSrcset 16
+   ✅ arquetipos.bloques.imagen-arq.imagen         instancias  27 | rutas   7 | EN public   7 | FALTAN 0 | conSrcset 5
+   — sin dato arquetipos.bloques.video-arq.portada         instancias   2 | rutas   0 | EN public   0 | FALTAN 0
+   — sin dato arquetipos.bloques.galeria-arq.imagen        instancias   0 | rutas   0 | EN public   0 | FALTAN 0
+   — sin dato arquetipos.seo.ogImage                       instancias   0 | rutas   0 | EN public   0 | FALTAN 0
+
+## (c) URLs QUE NO TRADUCEN (fuera de /wp-content/uploads/)
+   ×1  canal arquetipos.bloques.galeria-arq.items.imagen NO declarado
+
+## (d) CONTROLES
+   ✅ los canales se DERIVAN del fuente de la config (no de una lista escrita a mano)
+        5 canales declarados
+   ✅ CONTROL · el recorrido REPRODUCE el porDoc de la 126.ª (si no, el recuento de media no vale)
+        PRODUCTO 90=90 · CATALOGO 35=35 · SOFTWARE 70=70 · SOFTWARE-corta 36=36
+   ✅ el recorrido encuentra <img> dentro de los módulos (ni cero ni pleno)
+        97 <img> en módulos que portan media
+
+==============================================================================
+VEREDICTO · 5 canales declarados · 62 rutas distintas · 0 SIN CAPTURAR
+  ✅ ningún canal sin capturar: sembrar NO muere por media.
+==============================================================================
+
+congelado: docs/research/cola-larga/derivaciones/canales-media-131.json

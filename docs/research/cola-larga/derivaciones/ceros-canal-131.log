@@ -1,0 +1,39 @@
+==============================================================================
+AUDITORIA DE LOS DOS CEROS · galeria y video
+==============================================================================
+
+── PRODUCTO · et_pb_gallery → 1 nodos con la clase
+   <img> en los primeros 9000 chars tras el modulo: 9
+      src=https://kunakair.com/wp-content/uploads/2023/09/co_mexico.webp  [+srcset]
+      src=https://kunakair.com/wp-content/uploads/2023/09/NO_sweden.webp  [+srcset]
+      src=https://kunakair.com/wp-content/uploads/2023/09/NO2_UK.webp  [+srcset]
+      src=https://kunakair.com/wp-content/uploads/2023/09/O3_spain.webp  [+srcset]
+      src=https://kunakair.com/wp-content/uploads/2023/09/SO2_france.webp  [+srcset]
+      src=https://kunakair.com/wp-content/uploads/2023/09/H2S_spain.webp  [+srcset]
+      src=https://kunakair.com/wp-content/uploads/2023/09/PM10_belgium.webp  [+srcset]
+      src=https://kunakair.com/wp-content/uploads/2023/09/PM2.5_belgium.webp  [+srcset]
+   href: 9
+      https://kunakair.com/wp-content/uploads/2023/09/co_mexico.webp
+      https://kunakair.com/wp-content/uploads/2023/09/NO_sweden.webp
+      https://kunakair.com/wp-content/uploads/2023/09/NO2_UK.webp
+      https://kunakair.com/wp-content/uploads/2023/09/O3_spain.webp
+      https://kunakair.com/wp-content/uploads/2023/09/SO2_france.webp
+
+── PRODUCTO · et_pb_video → 1 nodos con la clase
+   <img> en los primeros 9000 chars tras el modulo: 0
+
+── SOFTWARE · et_pb_video → 1 nodos con la clase
+   <img> en los primeros 9000 chars tras el modulo: 1
+      src=https://kunakair.com/wp-content/uploads/2026/07/certificacion-ens.png  [+srcset]
+
+==============================================================================
+TODAS las URLs de /wp-content/uploads/ de los 4 documentos, contra la guarda
+   URLs distintas (tras colapsar variantes): 137
+   NO estan en apps/web/public ............ 6
+      ❗ /images/uploads/2022/12/kunak_IMG_0061-copia.jpg
+      ❗ /images/uploads/2023/01/mining-1920x1024-1.jpg
+      ❗ /images/uploads/2023/02/cropped-favicon.png
+      ❗ /images/uploads/2023/03/ports-1920.jpg
+      ❗ /images/uploads/2023/09/PM2.5_belgium.webp
+      ❗ /images/uploads/3d-flip-book/cache/
+==============================================================================

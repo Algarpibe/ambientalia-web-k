@@ -1,0 +1,306 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": "131.ª",
+ "alcance": {
+  "docs": [
+   "monitor-calidad-aire.html",
+   "accesorios.html",
+   "software-de-medicion-calidad-del-aire.html",
+   "kunak-api.html"
+  ],
+  "unidad": "canal de media declarado por `arquetipos`"
+ },
+ "guardas": {
+  "win": "existsSync(apps/web/public + ruta) — case-INsensitive en Windows",
+  "linux": "basename byte a byte contra readdirSync — el que corre en el despliegue"
+ },
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "los canales se DERIVAN del fuente de la config (no de una lista a mano)",
+   "detalle": "5 canales"
+  },
+  {
+   "ok": true,
+   "nombre": "CONTROL · toda entrada de PORTAN_MEDIA casa con un canal DECLARADO (el defecto de la v1)",
+   "detalle": "4 de 4 casan"
+  },
+  {
+   "ok": true,
+   "nombre": "CONTROL · el recorrido REPRODUCE el porDoc de la 126.ª",
+   "detalle": "PRODUCTO 90=90 · CATALOGO 35=35 · SOFTWARE 70=70 · SOFTWARE-corta 36=36"
+  },
+  {
+   "ok": true,
+   "nombre": "el recorrido encuentra <img> dentro de los módulos (ni cero ni pleno)",
+   "detalle": "106 <img>"
+  }
+ ],
+ "porDoc": {
+  "PRODUCTO": {
+   "primerNivel": 90,
+   "tipos": {
+    "et_pb_text": 37,
+    "et_pb_image": 7,
+    "et_pb_blurb": 27,
+    "et_pb_button": 13,
+    "et_pb_fullwidth_slider": 1,
+    "et_pb_cta": 1,
+    "dvmd_table_maker": 1,
+    "et_pb_gallery": 1,
+    "et_pb_video": 1,
+    "et_pb_code": 1
+   }
+  },
+  "CATALOGO": {
+   "primerNivel": 35,
+   "tipos": {
+    "et_pb_text": 26,
+    "et_pb_image": 7,
+    "et_pb_button": 2
+   }
+  },
+  "SOFTWARE": {
+   "primerNivel": 70,
+   "tipos": {
+    "et_pb_text": 22,
+    "et_pb_image": 7,
+    "et_pb_button": 7,
+    "et_pb_blurb": 31,
+    "et_pb_slider": 1,
+    "et_pb_fullwidth_slider": 1,
+    "et_pb_video": 1
+   }
+  },
+  "SOFTWARE-corta": {
+   "primerNivel": 36,
+   "tipos": {
+    "et_pb_text": 15,
+    "et_pb_image": 6,
+    "et_pb_button": 2,
+    "et_pb_blurb": 12,
+    "et_pb_fullwidth_slider": 1
+   }
+  }
+ },
+ "canales": [
+  {
+   "canal": "arquetipos.bloques.icono-arq.imagen",
+   "bloque": "icono-arq",
+   "campo": "imagen",
+   "anidado": false,
+   "tipo": "upload→media",
+   "requerido": false,
+   "rutas": [
+    "/images/uploads/2023/01/AQ-SPEC.svg",
+    "/images/uploads/2023/01/IconosAirLite_Mesa-de-trabajo-1-copia-4.svg",
+    "/images/uploads/2023/01/Mcerts.svg",
+    "/images/uploads/2023/01/airparif.svg",
+    "/images/uploads/2023/02/US-EPA-united-states-environmental-protection-agency-1.svg",
+    "/images/uploads/2023/02/accuracy.svg",
+    "/images/uploads/2023/02/additional-probes.svg",
+    "/images/uploads/2023/02/advanced-tools.svg",
+    "/images/uploads/2023/02/automatic-supervision-1.svg",
+    "/images/uploads/2023/02/cartridge-system.svg",
+    "/images/uploads/2023/02/cloud-based-1.svg",
+    "/images/uploads/2023/02/cloud-platform.svg",
+    "/images/uploads/2023/02/continuous-updates.svg",
+    "/images/uploads/2023/02/data-integration.svg",
+    "/images/uploads/2023/02/data-sharing.svg",
+    "/images/uploads/2023/02/easy-calibration.svg",
+    "/images/uploads/2023/02/easy-fast-installation.svg",
+    "/images/uploads/2023/02/flexible-scalable-1.svg",
+    "/images/uploads/2023/02/high-reliability.svg",
+    "/images/uploads/2023/02/hotspots-detection.jpg",
+    "/images/uploads/2023/02/multi-pollutant-1.svg",
+    "/images/uploads/2023/02/multiple-users.svg",
+    "/images/uploads/2023/02/pollution-sources.svg",
+    "/images/uploads/2023/02/public-aq-data.svg",
+    "/images/uploads/2023/02/real-time.svg",
+    "/images/uploads/2023/02/reliable-data.svg",
+    "/images/uploads/2023/02/remote-troubleshooting.svg",
+    "/images/uploads/2023/02/reports.svg",
+    "/images/uploads/2023/02/secure-confidential.svg",
+    "/images/uploads/2023/03/AQI.jpg",
+    "/images/uploads/2023/03/Advanced-data-analytics.jpg",
+    "/images/uploads/2023/03/Alert-system.jpg",
+    "/images/uploads/2023/03/Automatic-data-invalidation.jpg",
+    "/images/uploads/2023/03/Basic-data-analytics.jpg",
+    "/images/uploads/2023/03/CMMS.jpg",
+    "/images/uploads/2023/03/Control-panel.jpg",
+    "/images/uploads/2023/03/Custom-reports.jpg",
+    "/images/uploads/2023/03/Dashboard.jpg",
+    "/images/uploads/2023/03/Data-invalidation-tool.jpg",
+    "/images/uploads/2023/03/Error-detection.jpg",
+    "/images/uploads/2023/03/External-data-integration.jpg",
+    "/images/uploads/2023/03/Locations-log.jpg",
+    "/images/uploads/2023/03/Particle-count.jpg",
+    "/images/uploads/2023/03/Pollution-source-detection.jpg",
+    "/images/uploads/2023/03/data-analytics.svg",
+    "/images/uploads/2023/03/external-data-integration.svg",
+    "/images/uploads/2023/03/new-tools.svg",
+    "/images/uploads/2023/03/process-automation.svg",
+    "/images/uploads/2023/04/Ricardo_logo.svg",
+    "/images/uploads/2023/04/api-rest.svg",
+    "/images/uploads/2023/04/call-limit.svg",
+    "/images/uploads/2023/04/data-export.svg",
+    "/images/uploads/2023/04/json-format.svg",
+    "/images/uploads/2023/04/size-limit.svg",
+    "/images/uploads/2023/05/SEDEMA_CDMX.svg"
+   ],
+   "instancias": 70,
+   "conSrcset": 16,
+   "nRutas": 55,
+   "faltanWin": [],
+   "faltanLinux": []
+  },
+  {
+   "canal": "arquetipos.bloques.imagen-arq.imagen",
+   "bloque": "imagen-arq",
+   "campo": "imagen",
+   "anidado": false,
+   "tipo": "upload→media",
+   "requerido": true,
+   "rutas": [
+    "/images/uploads/2022/12/kunak_air_pro_completo-isolated-2.png",
+    "/images/uploads/2022/12/punteado.svg",
+    "/images/uploads/2023/02/industrial-woman-engineer-using-the-cloud.jpg",
+    "/images/uploads/2023/02/kunak-api.jpg",
+    "/images/uploads/2023/03/kunak-air-accessories.jpg",
+    "/images/uploads/2023/04/kunak-cloud-dispositivos.png",
+    "/images/uploads/2024/01/ganador-airlab-2021-2023-2.svg"
+   ],
+   "instancias": 27,
+   "conSrcset": 5,
+   "nRutas": 7,
+   "faltanWin": [],
+   "faltanLinux": []
+  },
+  {
+   "canal": "arquetipos.bloques.video-arq.portada",
+   "bloque": "video-arq",
+   "campo": "portada",
+   "anidado": false,
+   "tipo": "upload→media",
+   "requerido": false,
+   "rutas": [],
+   "instancias": 2,
+   "conSrcset": 0,
+   "nRutas": 0,
+   "faltanWin": [],
+   "faltanLinux": []
+  },
+  {
+   "canal": "arquetipos.bloques.galeria-arq.items.imagen",
+   "bloque": "galeria-arq",
+   "campo": "items.imagen",
+   "anidado": true,
+   "tipo": "upload→media",
+   "requerido": true,
+   "rutas": [
+    "/images/uploads/2023/01/co2_glasgow.jpg",
+    "/images/uploads/2023/09/H2S_spain.webp",
+    "/images/uploads/2023/09/NO2_UK.webp",
+    "/images/uploads/2023/09/NO_sweden.webp",
+    "/images/uploads/2023/09/O3_spain.webp",
+    "/images/uploads/2023/09/PM10_belgium.webp",
+    "/images/uploads/2023/09/PM2.5_belgium.webp",
+    "/images/uploads/2023/09/SO2_france.webp",
+    "/images/uploads/2023/09/co_mexico.webp"
+   ],
+   "instancias": 1,
+   "conSrcset": 9,
+   "nRutas": 9,
+   "faltanWin": [
+    "/images/uploads/2023/09/PM2.5_belgium.webp"
+   ],
+   "faltanLinux": [
+    "/images/uploads/2023/09/H2S_spain.webp",
+    "/images/uploads/2023/09/NO2_UK.webp",
+    "/images/uploads/2023/09/O3_spain.webp",
+    "/images/uploads/2023/09/PM10_belgium.webp",
+    "/images/uploads/2023/09/PM2.5_belgium.webp",
+    "/images/uploads/2023/09/SO2_france.webp"
+   ]
+  },
+  {
+   "canal": "arquetipos.seo.ogImage",
+   "bloque": "(raíz)",
+   "campo": "seo.ogImage",
+   "anidado": false,
+   "tipo": "text→URL de asset",
+   "requerido": false,
+   "rutas": [],
+   "instancias": 0,
+   "conSrcset": 0,
+   "nRutas": 0,
+   "faltanWin": [],
+   "faltanLinux": []
+  }
+ ],
+ "ausencias": [
+  {
+   "canal": "arquetipos.bloques.galeria-arq.items.imagen",
+   "requerido": true,
+   "ruta": "/images/uploads/2023/09/H2S_spain.webp",
+   "clase": "RENOMBRE",
+   "candidatos": [
+    "h2s_spain.webp"
+   ]
+  },
+  {
+   "canal": "arquetipos.bloques.galeria-arq.items.imagen",
+   "requerido": true,
+   "ruta": "/images/uploads/2023/09/NO2_UK.webp",
+   "clase": "RENOMBRE",
+   "candidatos": [
+    "no2_uk.webp"
+   ]
+  },
+  {
+   "canal": "arquetipos.bloques.galeria-arq.items.imagen",
+   "requerido": true,
+   "ruta": "/images/uploads/2023/09/O3_spain.webp",
+   "clase": "RENOMBRE",
+   "candidatos": [
+    "o3_spain.webp"
+   ]
+  },
+  {
+   "canal": "arquetipos.bloques.galeria-arq.items.imagen",
+   "requerido": true,
+   "ruta": "/images/uploads/2023/09/PM10_belgium.webp",
+   "clase": "RENOMBRE",
+   "candidatos": [
+    "pm10_belgium.webp"
+   ]
+  },
+  {
+   "canal": "arquetipos.bloques.galeria-arq.items.imagen",
+   "requerido": true,
+   "ruta": "/images/uploads/2023/09/PM2.5_belgium.webp",
+   "clase": "RENOMBRE",
+   "candidatos": [
+    "pm25_belgium.webp"
+   ]
+  },
+  {
+   "canal": "arquetipos.bloques.galeria-arq.items.imagen",
+   "requerido": true,
+   "ruta": "/images/uploads/2023/09/SO2_france.webp",
+   "clase": "RENOMBRE",
+   "candidatos": [
+    "so2_france.webp"
+   ]
+  }
+ ],
+ "sinTraducir": 0,
+ "resumen": {
+  "canalesDeclarados": 5,
+  "rutasDistintas": 71,
+  "sinCapturarWin": 1,
+  "sinCapturarLinux": 6,
+  "renombre": 6,
+  "ausente": 0
+ }
+}
