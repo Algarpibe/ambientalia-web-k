@@ -1,0 +1,52 @@
+=== CONTROLES ===
+  OK  hay `et-cache` hermanas capturadas que leer
+      85 ficheros · 9 generadores
+  OK  se encontró ritmo ORDINAL en ALGÚN canal (si fuera 0, el detector no casa y no es un cero)
+      inline 149 · hojas capturadas 8
+  OK  CONTROL (§regla 8) · soltar TODAS las hojas SÍ mueve ⇒ el instrumento ejercita el canal del CSS externo
+      monitor ΔdocH -10 Δaltos -30 Δcaja 0 · estacion ΔdocH -10 Δaltos -30 Δcaja 0 · sensor ΔdocH -64 Δaltos -191.4 Δcaja 0
+  OK  TRATAMIENTO · soltar sólo las `et-cache` mueve en 0/4 — NO-OP: no aportan geometría a estas páginas
+      monitor ΔdocH 0 · estacion ΔdocH 0 · sensor ΔdocH 0 · accesorios ΔdocH 0
+  OK  los 4 documentos traen CSS en línea
+      monitor=337202B · estacion=300538B · sensor=275197B · accesorios=249592B
+
+=== 1 · ¿EN QUÉ CANAL VIVE EL RITMO ORDINAL DEL EDITOR? ===
+  (una regla de ritmo cuyo selector lleva `et_pb_<tipo>_<n>` es lo que escribió el editor)
+  documento    inline: ritmo/ordinal    hojas cap.: ritmo/ordinal  hojas ausentes
+  monitor      253 / 39                 268 / 2                    0
+  estacion     233 / 51                 250 / 2                    2
+  sensor       208 / 27                 250 / 2                    3
+  accesorios   207 / 32                 269 / 2                    0
+
+  estacion · AUSENTES: wp-content/et-cache/18251/et-divi-dynamic-tb-32430-tb-342-18251.css · wp-content/et-cache/18251/et-core-unified-18251.min.css
+  sensor · AUSENTES: wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772-late.css · wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772.css · wp-content/et-cache/772/et-core-unified-772.min.css
+
+=== 2 · QUÉ HAY DENTRO DE LAS `et-cache` (leído en las HERMANAS capturadas) ===
+  ⚠ inferencia POR GENERADOR: no son las 5 hojas concretas que faltan, son sus hermanas
+  generador                                    n     bytes   ritmo  c/ordinal
+  et-core-unified                             33    160545     396          0
+  et-divi-dynamic-tb-N-tb-N                   31    204735     181          0
+  et-divi-dynamic-tb-N-tb-N-tb-N              10     25262      28          0
+  et-core-unified-cpt-deferred                 4     23473      23          0
+  et-core-unified-cpt                          3     12441      17          0
+  et-divi-dynamic-tb-N-tb                      1       343       0          0
+  et-divi-customizer-cpt-global.min.css        1      9140       1          0
+  et-divi-customizer-global.min.css            1     10722      13          0
+  et-divi-dynamic-tb-N-tb-N-tb                 1      1541       0          0
+
+=== 3 · TRATAMIENTO Y CONTROL — ¿qué mueve soltar hojas? ===
+  documento     docH todas  Δ sin-etcache   Δ ninguna    Δaltos sin-et  Δaltos ninguna
+  monitor            12861              0         -10                0             -30
+  estacion           13230              0         -10                0             -30
+  sensor             13357              0         -64                0          -191.4
+  accesorios         10995              0           0                0               0
+
+=== VEREDICTO ===
+  · CONTROL: soltar TODAS las hojas mueve en 3/4 ⇒ el instrumento SÍ ejercita el canal del CSS externo
+  · TRATAMIENTO: soltar sólo las `et-cache` mueve en 0/4
+  · el ritmo ORDINAL del editor vive INLINE (149 reglas) contra 8 en hojas capturadas
+  · y las 85 `et-cache` hermanas traen 0 reglas de ritmo CON ORDINAL
+
+  ⇒ LAS 5 HOJAS AUSENTES NO INVALIDAN LA MEDICIÓN DE RITMO. El canal del ritmo por módulo
+    es el <style> del propio documento, que ESTÁ CAPTURADO en los 3. Las `et-cache` de
+    estas páginas llevan cascarón y CSS del core, y sobre estos 4 ejes son NO-OP medido.

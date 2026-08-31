@@ -1,0 +1,324 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": 127,
+ "escalon": "1b",
+ "pregunta": "¿invalidan las 5 `et-cache` ausentes la medición de ritmo de los 2 vecinos?",
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "hay `et-cache` hermanas capturadas que leer",
+   "detalle": "85 ficheros · 9 generadores"
+  },
+  {
+   "ok": true,
+   "nombre": "se encontró ritmo ORDINAL en ALGÚN canal (si fuera 0, el detector no casa y no es un cero)",
+   "detalle": "inline 149 · hojas capturadas 8"
+  },
+  {
+   "ok": true,
+   "nombre": "CONTROL (§regla 8) · soltar TODAS las hojas SÍ mueve ⇒ el instrumento ejercita el canal del CSS externo",
+   "detalle": "monitor ΔdocH -10 Δaltos -30 Δcaja 0 · estacion ΔdocH -10 Δaltos -30 Δcaja 0 · sensor ΔdocH -64 Δaltos -191.4 Δcaja 0"
+  },
+  {
+   "ok": true,
+   "nombre": "TRATAMIENTO · soltar sólo las `et-cache` mueve en 0/4 — NO-OP: no aportan geometría a estas páginas",
+   "detalle": "monitor ΔdocH 0 · estacion ΔdocH 0 · sensor ΔdocH 0 · accesorios ΔdocH 0"
+  },
+  {
+   "ok": true,
+   "nombre": "los 4 documentos traen CSS en línea",
+   "detalle": "monitor=337202B · estacion=300538B · sensor=275197B · accesorios=249592B"
+  }
+ ],
+ "canales": {
+  "monitor": {
+   "inline": {
+    "bytes": 337202,
+    "reglasRitmo": 253,
+    "conOrdinal": 39
+   },
+   "hojas": {
+    "capturadas": 8,
+    "ausentes": 0,
+    "listaAusentes": [],
+    "reglasRitmo": 268,
+    "conOrdinal": 2
+   }
+  },
+  "estacion": {
+   "inline": {
+    "bytes": 300538,
+    "reglasRitmo": 233,
+    "conOrdinal": 51
+   },
+   "hojas": {
+    "capturadas": 5,
+    "ausentes": 2,
+    "listaAusentes": [
+     "wp-content/et-cache/18251/et-divi-dynamic-tb-32430-tb-342-18251.css",
+     "wp-content/et-cache/18251/et-core-unified-18251.min.css"
+    ],
+    "reglasRitmo": 250,
+    "conOrdinal": 2
+   }
+  },
+  "sensor": {
+   "inline": {
+    "bytes": 275197,
+    "reglasRitmo": 208,
+    "conOrdinal": 27
+   },
+   "hojas": {
+    "capturadas": 5,
+    "ausentes": 3,
+    "listaAusentes": [
+     "wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772-late.css",
+     "wp-content/et-cache/772/et-divi-dynamic-tb-32430-tb-342-772.css",
+     "wp-content/et-cache/772/et-core-unified-772.min.css"
+    ],
+    "reglasRitmo": 250,
+    "conOrdinal": 2
+   }
+  },
+  "accesorios": {
+   "inline": {
+    "bytes": 249592,
+    "reglasRitmo": 207,
+    "conOrdinal": 32
+   },
+   "hojas": {
+    "capturadas": 8,
+    "ausentes": 0,
+    "listaAusentes": [],
+    "reglasRitmo": 269,
+    "conOrdinal": 2
+   }
+  }
+ },
+ "etCacheHermanas": {
+  "ficheros": 85,
+  "porGenerador": {
+   "et-core-unified-cpt": {
+    "n": 3,
+    "ritmo": 17,
+    "ordinal": 0,
+    "bytes": 12441
+   },
+   "et-core-unified-cpt-deferred": {
+    "n": 4,
+    "ritmo": 23,
+    "ordinal": 0,
+    "bytes": 23473
+   },
+   "et-core-unified": {
+    "n": 33,
+    "ritmo": 396,
+    "ordinal": 0,
+    "bytes": 160545
+   },
+   "et-divi-dynamic-tb-N-tb-N": {
+    "n": 31,
+    "ritmo": 181,
+    "ordinal": 0,
+    "bytes": 204735
+   },
+   "et-divi-dynamic-tb-N-tb-N-tb-N": {
+    "n": 10,
+    "ritmo": 28,
+    "ordinal": 0,
+    "bytes": 25262
+   },
+   "et-divi-dynamic-tb-N-tb": {
+    "n": 1,
+    "ritmo": 0,
+    "ordinal": 0,
+    "bytes": 343
+   },
+   "et-divi-customizer-cpt-global.min.css": {
+    "n": 1,
+    "ritmo": 1,
+    "ordinal": 0,
+    "bytes": 9140
+   },
+   "et-divi-customizer-global.min.css": {
+    "n": 1,
+    "ritmo": 13,
+    "ordinal": 0,
+    "bytes": 10722
+   },
+   "et-divi-dynamic-tb-N-tb-N-tb": {
+    "n": 1,
+    "ritmo": 0,
+    "ordinal": 0,
+    "bytes": 1541
+   }
+  }
+ },
+ "efectoDelTratamiento": {
+  "monitor": {
+   "todas": {
+    "docH": 12861,
+    "nodos": 154,
+    "conCaja": 144,
+    "sumaAltos": 43888.66,
+    "resueltas": 8,
+    "soltadas": 0
+   },
+   "sin-etcache": {
+    "docH": 12861,
+    "nodos": 154,
+    "conCaja": 144,
+    "sumaAltos": 43888.66,
+    "resueltas": 5,
+    "soltadas": 3
+   },
+   "ninguna": {
+    "docH": 12851,
+    "nodos": 154,
+    "conCaja": 144,
+    "sumaAltos": 43858.66,
+    "resueltas": 0,
+    "soltadas": 8
+   },
+   "tratamiento": {
+    "docH": 0,
+    "sumaAltos": 0,
+    "conCaja": 0,
+    "mueve": false
+   },
+   "control": {
+    "docH": -10,
+    "sumaAltos": -30,
+    "conCaja": 0,
+    "mueve": true
+   }
+  },
+  "estacion": {
+   "todas": {
+    "docH": 13230,
+    "nodos": 148,
+    "conCaja": 142,
+    "sumaAltos": 44219.8,
+    "resueltas": 5,
+    "soltadas": 0
+   },
+   "sin-etcache": {
+    "docH": 13230,
+    "nodos": 148,
+    "conCaja": 142,
+    "sumaAltos": 44219.8,
+    "resueltas": 5,
+    "soltadas": 2
+   },
+   "ninguna": {
+    "docH": 13220,
+    "nodos": 148,
+    "conCaja": 142,
+    "sumaAltos": 44189.8,
+    "resueltas": 0,
+    "soltadas": 7
+   },
+   "tratamiento": {
+    "docH": 0,
+    "sumaAltos": 0,
+    "conCaja": 0,
+    "mueve": false
+   },
+   "control": {
+    "docH": -10,
+    "sumaAltos": -30,
+    "conCaja": 0,
+    "mueve": true
+   }
+  },
+  "sensor": {
+   "todas": {
+    "docH": 13357,
+    "nodos": 143,
+    "conCaja": 141,
+    "sumaAltos": 44122.13,
+    "resueltas": 5,
+    "soltadas": 0
+   },
+   "sin-etcache": {
+    "docH": 13357,
+    "nodos": 143,
+    "conCaja": 141,
+    "sumaAltos": 44122.13,
+    "resueltas": 5,
+    "soltadas": 3
+   },
+   "ninguna": {
+    "docH": 13293,
+    "nodos": 143,
+    "conCaja": 141,
+    "sumaAltos": 43930.73,
+    "resueltas": 0,
+    "soltadas": 8
+   },
+   "tratamiento": {
+    "docH": 0,
+    "sumaAltos": 0,
+    "conCaja": 0,
+    "mueve": false
+   },
+   "control": {
+    "docH": -64,
+    "sumaAltos": -191.4,
+    "conCaja": 0,
+    "mueve": true
+   }
+  },
+  "accesorios": {
+   "todas": {
+    "docH": 10995,
+    "nodos": 95,
+    "conCaja": 93,
+    "sumaAltos": 34970.8,
+    "resueltas": 8,
+    "soltadas": 0
+   },
+   "sin-etcache": {
+    "docH": 10995,
+    "nodos": 95,
+    "conCaja": 93,
+    "sumaAltos": 34970.8,
+    "resueltas": 5,
+    "soltadas": 3
+   },
+   "ninguna": {
+    "docH": 10995,
+    "nodos": 95,
+    "conCaja": 93,
+    "sumaAltos": 34970.8,
+    "resueltas": 0,
+    "soltadas": 8
+   },
+   "tratamiento": {
+    "docH": 0,
+    "sumaAltos": 0,
+    "conCaja": 0,
+    "mueve": false
+   },
+   "control": {
+    "docH": 0,
+    "sumaAltos": 0,
+    "conCaja": 0,
+    "mueve": false
+   }
+  }
+ },
+ "veredicto": {
+  "controlMueve": 3,
+  "tratamientoMueve": 0,
+  "deDocumentos": 4,
+  "ritmoOrdinalInline": 149,
+  "ritmoOrdinalEnHojas": 8,
+  "ritmoOrdinalEnEtCacheHermanas": 0,
+  "conclusion": "las 5 hojas ausentes NO invalidan la medición de ritmo: el canal del ritmo por módulo es el <style> del propio documento, capturado en los 3"
+ },
+ "alcance": [
+  "OFFLINE para los canales; navegador local a 1440 para el control del tratamiento",
+  "las 5 hojas ausentes NO se leen: se infiere por generador desde sus hermanas capturadas"
+ ]
+}

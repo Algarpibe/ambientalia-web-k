@@ -1,0 +1,271 @@
+=== CONTROLES ===
+  OK  CONTROL EN NEGATIVO · el detector de ORDINAL distingue ordinal de tipo-de-columna y de gutters
+      .et_pb_text_4⇒true(esperado true) · .et_pb_button_0_wrapper⇒true(esperado true) · .et_pb_section_0⇒true(esperado true) · .et_pb_column_1_2⇒false(esperado false) · .et_pb_gutters3 .et_pb_module⇒false(esperado false) · .kunak-faq-item⇒false(esperado false)
+  OK  CONTROL EN NEGATIVO §regla 36 · sujeto/contexto/no-aparece se distinguen
+      3 selectores conocidos
+  OK  §regla 32 · FALTAN hojas — y la ausencia está ADJUDICADA POR MEDICIÓN, no por criterio (`hojas-etcache-127`)
+      18/23 · las ausentes son TODAS et-cache; soltarlas donde SÍ están es NO-OP en 4/4 documentos, el control (soltar TODAS) mueve en 3/4, y las 85 et-cache hermanas traen 0 reglas de ritmo con ordinal ⇒ VÁLIDA PARA ESTOS 4 EJES
+  OK  §regla 32 · reparto de assets POR DOCUMENTO (asimetría fabricaría varianza)
+      monitor-calidad-aire hojas 8/8 img 75/75 · estacion-de-monitoreo-de-calidad-del-aire hojas 5/7 img 63/75 · sensor-de-calidad-del-aire hojas 5/8 img 26/47
+  OK  PRECONDICIÓN DE LECTURA · los 3 documentos son BUILDER (si no, el veredicto de varianza se invierte)
+      3/3 `B-`
+  OK  el censo DISCRIMINA (ni cero compartidos ni pleno)
+      17 compartidos · 2 singleton de 19
+  OK  el clasificador DISCRIMINA (>=3 veredictos distintos, ni cero ni pleno)
+      CAMPO 8 · PLANTILLA 26 · SIN ESCRIBIR 98 · SIN PROBAR 0 de 132
+  ❌  PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza
+      0 de 46
+  OK  PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)
+      0 de 46
+  OK  PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)
+      6 de 46
+  OK  CONTROL (a) LA MEDIDA · DEGENERADO POR CONSTRUCCIÓN en este dominio — 0 separadoras, NO adjudica
+      rehacibles 0 de 6 · misma medida 0 · degenerados 6
+  OK  CONTROL (b) EL VEREDICTO · de los 6 CAMPO de la 125.ª, 0 siguen CAMPO y 0 se RECLASIFICAN
+      ninguno cambia
+  OK  §regla 1 · la cascada es COHERENTE con el computado en la mayoría de los pares que la tienen
+      132/132 coherentes
+
+=== ALCANCE Y MODO ===
+  dominio: familia
+  documentos: monitor-calidad-aire · estacion-de-monitoreo-de-calidad-del-aire · sensor-de-calidad-del-aire
+  anchos: 1440 · 390   ·   ejes: marginTop · marginBottom · paddingTop · paddingBottom
+  criterio de recuento: nodos CON CAJA (w>0 y h>0) — el mismo de la 125.ª
+  hojas: 18/23
+  ⇒ CORRIDA VÁLIDA
+
+=== CENSO CON SU DENOMINADOR (§punto 4: en cuántos de los 3 aparece) ===
+  3/3  breadcrumbs              instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=1
+  3/3  iconos-xs-2              instancias: monitor-calida=18 estacion-de-mo=16 sensor-de-cali=10
+  3/3  iconos-md-6              instancias: monitor-calida=12 estacion-de-mo=10 sensor-de-cali=6
+  3/3  parametros               instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=1
+  3/3  clear-both               instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=1
+  3/3  menu-anclas              instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=1
+  3/3  modulo-beneficios        instancias: monitor-calida=9 estacion-de-mo=9 sensor-de-cali=24
+  3/3  bucle-entradas           instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=1
+  3/3  kunak-faq-item           instancias: monitor-calida=19 estacion-de-mo=19 sensor-de-cali=19
+  2/3  iconos-md-3              instancias: monitor-calida=6 estacion-de-mo=6 sensor-de-cali=0
+  2/3  dvmd_table_maker         instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=0
+  2/3  dvmd_table_maker_0       instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=0
+  2/3  dvmd_tm_version_4_0_1    instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=0
+  2/3  iconos-certificicados    instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=0
+  2/3  clear                    instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=0
+  2/3  galeria                  instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=0
+  2/3  lista-resultados         instancias: monitor-calida=1 estacion-de-mo=1 sensor-de-cali=0
+  1/3  iconos-md-4              instancias: monitor-calida=0 estacion-de-mo=0 sensor-de-cali=4
+  1/3  modulo-cartuchos         instancias: monitor-calida=0 estacion-de-mo=0 sensor-de-cali=18
+  compartidos 17 · singleton 2 · total 19
+
+=== REPARTO DE VEREDICTOS (unidad: par marcador × ancho × eje) ===
+  pares evaluables: 132
+    CAMPO         8
+    PLANTILLA     26
+    SIN ESCRIBIR  98
+    SIN PROBAR    0
+
+=== LOS CAMPO, con la varianza o la cascada que los sostiene ===
+  ★ parametros @1440 marginBottom  (3/3 docs) — pata 1 · varianza inter-instancia
+        monitor-calidad-aire                       [0]
+        estacion-de-monitoreo-de-calidad-del-aire  [9]
+        sensor-de-calidad-del-aire                 [0]
+        selector: .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module:last-child, .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_row_inner .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_row_inner .et_pb_column .et_pb_module:last-child, .et-db #et-boc .et-l .et_pb_section div.et_pb_row .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_pb_section div.et_pb_row .et_pb_column .et_pb_module:last-child | .et-db #et-boc .et-l .et_pb_text_14  ·  0px,0.5em !important  ·  @media: (min-width: 981px)
+  ★ parametros @390 marginBottom  (3/3 docs) — pata 1 · varianza inter-instancia
+        monitor-calidad-aire                       [0]
+        estacion-de-monitoreo-de-calidad-del-aire  [9]
+        sensor-de-calidad-del-aire                 [0]
+        selector: .et-db #et-boc .et-l .et_pb_row .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_pb_row .et_pb_column .et_pb_module:last-child, .et-db #et-boc .et-l .et_section_specialty .et_pb_row .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_section_specialty .et_pb_row .et_pb_column .et_pb_module:last-child | .et-db #et-boc .et-l .et_pb_text_14  ·  0px,0.5em !important  ·  @media: (max-width: 980px)
+  ★ clear-both @1440 marginBottom  (3/3 docs) — pata 1 · varianza inter-instancia
+        monitor-calidad-aire                       [0]
+        estacion-de-monitoreo-de-calidad-del-aire  [9]
+        sensor-de-calidad-del-aire                 [0]
+        selector: .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_column .et_pb_module:last-child, .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_row_inner .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_pb_section.et_section_specialty div.et_pb_row .et_pb_column .et_pb_row_inner .et_pb_column .et_pb_module:last-child, .et-db #et-boc .et-l .et_pb_section div.et_pb_row .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_pb_section div.et_pb_row .et_pb_column .et_pb_module:last-child | .et-db #et-boc .et-l .et_pb_text_14  ·  0px,0.5em !important  ·  @media: (min-width: 981px)
+  ★ clear-both @390 marginBottom  (3/3 docs) — pata 1 · varianza inter-instancia
+        monitor-calidad-aire                       [0]
+        estacion-de-monitoreo-de-calidad-del-aire  [9]
+        sensor-de-calidad-del-aire                 [0]
+        selector: .et-db #et-boc .et-l .et_pb_row .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_pb_row .et_pb_column .et_pb_module:last-child, .et-db #et-boc .et-l .et_section_specialty .et_pb_row .et_pb_column .et_pb_module.et-last-child, .et-db #et-boc .et-l .et_section_specialty .et_pb_row .et_pb_column .et_pb_module:last-child | .et-db #et-boc .et-l .et_pb_text_14  ·  0px,0.5em !important  ·  @media: (max-width: 980px)
+  ★ menu-anclas @1440 marginBottom  (3/3 docs) — pata 1 · varianza inter-instancia
+        monitor-calidad-aire                       [31.6719]
+        estacion-de-monitoreo-de-calidad-del-aire  [27.2]
+        sensor-de-calidad-del-aire                 [31.6719]
+        selector: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_1_4 .et_pb_module | .et-db #et-boc .et-l .et_pb_text_15  ·  13.174%,1.7rem !important  ·  @media: (min-width: 981px)
+  ★ menu-anclas @1440 paddingTop  (3/3 docs) — pata 1 · varianza inter-instancia
+        monitor-calidad-aire                       [0]
+        estacion-de-monitoreo-de-calidad-del-aire  [17]
+        sensor-de-calidad-del-aire                 [0]
+        selector: a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, u, ul, var | .et-db #et-boc .et-l .et_pb_text_15  ·  0px,1em !important  ·  @media: no
+  ★ clear @1440 paddingTop  (2/3 docs) — pata 1 · varianza inter-instancia
+        monitor-calidad-aire                       [0]
+        estacion-de-monitoreo-de-calidad-del-aire  [32]
+        selector: a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, u, ul, var | .et-db #et-boc .et-l .et_pb_text_16, .et-db #et-boc .et-l .et_pb_text_17, .et-db #et-boc .et-l .et_pb_text_19, .et-db #et-boc .et-l .et_pb_text_20, .et-db #et-boc .et-l .et_pb_text_22, .et-db #et-boc .et-l .et_pb_text_25, .et-db #et-boc .et-l .et_pb_text_27, .et-db #et-boc .et-l .et_pb_text_29  ·  0px,2rem !important  ·  @media: no
+  ★ clear @390 paddingTop  (2/3 docs) — pata 1 · varianza inter-instancia
+        monitor-calidad-aire                       [0]
+        estacion-de-monitoreo-de-calidad-del-aire  [32]
+        selector: a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, u, ul, var | .et-db #et-boc .et-l .et_pb_text_16, .et-db #et-boc .et-l .et_pb_text_17, .et-db #et-boc .et-l .et_pb_text_19, .et-db #et-boc .et-l .et_pb_text_20, .et-db #et-boc .et-l .et_pb_text_22, .et-db #et-boc .et-l .et_pb_text_25, .et-db #et-boc .et-l .et_pb_text_27, .et-db #et-boc .et-l .et_pb_text_29  ·  0px,2rem !important  ·  @media: no
+
+=== VARIANZA ESTRUCTURAL — existe y NO la escribió nadie (el hallazgo de la 127.ª) ===
+  0 pares de 132: los conjuntos difieren SÓLO en el valor que declara
+  una pseudo-clase estructural, y NINGÚN selector ganador lleva ordinal ⇒ no es campo.
+  (ninguno)
+
+=== LOS PLANTILLA, cada uno CON SU SEGUNDA PATA (§punto 3) ===
+  ▣ iconos-xs-2 @1440 marginBottom  (3/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719],"sensor-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_1_2 .et_pb_module | .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_2_3 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_2_3 .et_pb_module
+        unidad declarada: %  ·  valor: 5.82%,4.242%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ iconos-xs-2 @390 marginBottom  (3/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30],"sensor-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ iconos-md-6 @1440 marginBottom  (3/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719],"sensor-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_1_2 .et_pb_module | .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_2_3 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_2_3 .et_pb_module
+        unidad declarada: %  ·  valor: 5.82%,4.242%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ iconos-md-6 @390 marginBottom  (3/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30],"sensor-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ iconos-md-3 @1440 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_2_3 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_2_3 .et_pb_module
+        unidad declarada: %  ·  valor: 4.242%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ iconos-md-3 @390 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ modulo-beneficios @1440 marginBottom  (3/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719],"sensor-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_3_4 .et_pb_module
+        unidad declarada: %  ·  valor: 3.735%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ modulo-beneficios @390 marginBottom  (3/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30],"sensor-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ dvmd_table_maker @1440 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_3_4 .et_pb_module
+        unidad declarada: %  ·  valor: 3.735%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ dvmd_table_maker @390 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ dvmd_table_maker_0 @1440 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_3_4 .et_pb_module
+        unidad declarada: %  ·  valor: 3.735%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ dvmd_table_maker_0 @390 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ dvmd_tm_version_4_0_1 @1440 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_3_4 .et_pb_module
+        unidad declarada: %  ·  valor: 3.735%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ dvmd_tm_version_4_0_1 @390 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ iconos-certificicados @1440 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_3_4 .et_pb_module
+        unidad declarada: %  ·  valor: 3.735%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ iconos-certificicados @390 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ clear @1440 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_3_4 .et_pb_module
+        unidad declarada: %  ·  valor: 3.735%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ clear @390 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ galeria @1440 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_3_4 .et_pb_module
+        unidad declarada: %  ·  valor: 3.735%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ galeria @390 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ lista-resultados @1440 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[31.6719],"estacion-de-monitoreo-de-calidad-del-aire":[31.6719]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_gutters3.et_pb_row .et_pb_column_3_4 .et_pb_module, .et_pb_gutters3.et-db #et-boc .et-l .et_pb_column_3_4 .et_pb_module
+        unidad declarada: %  ·  valor: 3.735%
+        @media: (min-width: 981px)  ·  origen: regular
+  ▣ lista-resultados @390 marginBottom  (2/3 docs)
+        valores: {"monitor-calidad-aire":[30],"estacion-de-monitoreo-de-calidad-del-aire":[30]}
+        selector GENÉRICO: .et-db #et-boc .et-l .et_pb_column .et_pb_module
+        unidad declarada: px  ·  valor: 30px
+        @media: (max-width: 980px)  ·  origen: regular
+  ▣ kunak-faq-item @1440 paddingTop  (3/3 docs)
+        valores: {"monitor-calidad-aire":[17],"estacion-de-monitoreo-de-calidad-del-aire":[17],"sensor-de-calidad-del-aire":[17]}
+        selector GENÉRICO: .kunak-faq-item
+        unidad declarada: px  ·  valor: 17px
+        @media: all  ·  origen: regular
+  ▣ kunak-faq-item @1440 paddingBottom  (3/3 docs)
+        valores: {"monitor-calidad-aire":[17],"estacion-de-monitoreo-de-calidad-del-aire":[17],"sensor-de-calidad-del-aire":[17]}
+        selector GENÉRICO: .kunak-faq-item
+        unidad declarada: px  ·  valor: 17px
+        @media: all  ·  origen: regular
+  ▣ kunak-faq-item @390 paddingTop  (3/3 docs)
+        valores: {"monitor-calidad-aire":[17],"estacion-de-monitoreo-de-calidad-del-aire":[17],"sensor-de-calidad-del-aire":[17]}
+        selector GENÉRICO: .kunak-faq-item
+        unidad declarada: px  ·  valor: 17px
+        @media: all  ·  origen: regular
+  ▣ kunak-faq-item @390 paddingBottom  (3/3 docs)
+        valores: {"monitor-calidad-aire":[17],"estacion-de-monitoreo-de-calidad-del-aire":[17],"sensor-de-calidad-del-aire":[17]}
+        selector GENÉRICO: .kunak-faq-item
+        unidad declarada: px  ·  valor: 17px
+        @media: all  ·  origen: regular
+
+=== CRUCE CONTRA LOS 46 SIN PROBAR DEL LOTE ===
+  resueltos aquí (CAMPO o PLANTILLA): 6 de 46
+  siguen abiertos:                    40 de 46
+     40  SIN ESCRIBIR · único valor observado = el inicial de la propiedad
+      6  PLANTILLA · pata 2 · cascada · selector GENÉRICO
+
+    ✔ modulo-beneficios|1440|marginBottom  → PLANTILLA  (pata 2 · cascada · selector GENÉRICO)
+    ✔ modulo-beneficios|390|marginBottom  → PLANTILLA  (pata 2 · cascada · selector GENÉRICO)
+    ✔ kunak-faq-item|1440|paddingTop  → PLANTILLA  (pata 2 · cascada · selector GENÉRICO)
+    ✔ kunak-faq-item|1440|paddingBottom  → PLANTILLA  (pata 2 · cascada · selector GENÉRICO)
+    ✔ kunak-faq-item|390|paddingTop  → PLANTILLA  (pata 2 · cascada · selector GENÉRICO)
+    ✔ kunak-faq-item|390|paddingBottom  → PLANTILLA  (pata 2 · cascada · selector GENÉRICO)
+
+=== CONTROL · ¿reproducen los 6 CAMPO de la 125.ª? ===
+  ··  iconos-xs-2|1440|marginBottom  → PLANTILLA
+  ··  iconos-xs-2|390|marginBottom  → PLANTILLA
+  ··  iconos-md-3|1440|marginBottom  → PLANTILLA
+  ··  iconos-md-3|390|marginBottom  → PLANTILLA
+  OK  menu-anclas|1440|marginBottom  → CAMPO
+  OK  menu-anclas|1440|paddingTop  → CAMPO
+
+=== DOMINIO NUEVO — pares que el lote NO tenía ===
+  80 pares nuevos de 132 evaluables
+     58  SIN ESCRIBIR
+     16  PLANTILLA
+      6  CAMPO
+
+=== SIN PROBAR — con su cardinal, y NO se cablean (§punto 5) ===
+  0 pares SIN PROBAR · 98 SIN ESCRIBIR · 2 marcadores singleton (no establecidos, denominador 19)
