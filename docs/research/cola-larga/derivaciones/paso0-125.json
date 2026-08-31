@@ -1,0 +1,964 @@
+{
+  "fecha": "2026-08-31",
+  "tanda": 125,
+  "alcance": {
+    "docs": [
+      "monitor-calidad-aire.html",
+      "accesorios.html",
+      "software-de-medicion-calidad-del-aire.html",
+      "kunak-api.html"
+    ],
+    "pages": 26,
+    "nota": "propiedad de estos 4 documentos, no del sitio"
+  },
+  "controles": [
+    {
+      "ok": true,
+      "nombre": "se recorrio algo (hay page.tsx)",
+      "detalle": "26 pages"
+    },
+    {
+      "ok": true,
+      "nombre": "CASO CONOCIDO: /monitor-calidad-aire importa `lib/monitor` en DIRECTO",
+      "detalle": "si fallara, el detector no lee imports"
+    },
+    {
+      "ok": true,
+      "nombre": "`monitor` NO es cascaron (el transitivo discrimina, ni cero ni pleno)",
+      "detalle": "transitivo 4/26"
+    },
+    {
+      "ok": true,
+      "nombre": "el cascaron se derivo y no esta vacio",
+      "detalle": "footer · nav"
+    },
+    {
+      "ok": true,
+      "nombre": "las 4 pages del lote se resolvieron",
+      "detalle": "/monitor-calidad-aire · /accesorios · /software-de-medicion-calidad-del-aire · /kunak-api"
+    },
+    {
+      "ok": true,
+      "nombre": "§regla 36 DISCRIMINA: hay reglas de ritmo con ordinal-sujeto y genericas",
+      "detalle": "generico=1238 · sujeto=125 · cascaron=36 · contexto=9"
+    },
+    {
+      "ok": true,
+      "nombre": "el detector de UNIDAD no es un pleno (ve mas de una)",
+      "detalle": "rem=30 · px=115 · %=35 · em=2"
+    },
+    {
+      "ok": true,
+      "nombre": "el detector de BREAKPOINT no es un pleno (ve mas de uno)",
+      "detalle": "3 distintos"
+    },
+    {
+      "ok": true,
+      "nombre": "CONTROL EN NEGATIVO del papel: generico/sujeto/contexto se distinguen",
+      "detalle": "3 selectores conocidos"
+    }
+  ],
+  "p1": {
+    "cascaron": [
+      "footer",
+      "nav"
+    ],
+    "monitorDirecto": [
+      "apps/web/src/app/monitor-calidad-aire/page.tsx"
+    ],
+    "monitorTransitivo": [
+      "apps/web/src/app/accesorios/page.tsx",
+      "apps/web/src/app/kunak-api/page.tsx",
+      "apps/web/src/app/monitor-calidad-aire/page.tsx",
+      "apps/web/src/app/software-de-medicion-calidad-del-aire/page.tsx"
+    ],
+    "lote": [
+      {
+        "ruta": "/monitor-calidad-aire",
+        "page": "apps/web/src/app/monitor-calidad-aire/page.tsx",
+        "directo": [
+          "monitor"
+        ],
+        "soloTipos": [],
+        "transitivo": [
+          "articles",
+          "footer",
+          "home-carrusel-sectores",
+          "monitor",
+          "nav",
+          "projects",
+          "utils"
+        ],
+        "propio": [
+          "articles",
+          "home-carrusel-sectores",
+          "monitor",
+          "projects",
+          "utils"
+        ]
+      },
+      {
+        "ruta": "/accesorios",
+        "page": "apps/web/src/app/accesorios/page.tsx",
+        "directo": [
+          "accesorios"
+        ],
+        "soloTipos": [],
+        "transitivo": [
+          "accesorios",
+          "articles",
+          "footer",
+          "monitor",
+          "nav"
+        ],
+        "propio": [
+          "accesorios",
+          "articles",
+          "monitor"
+        ]
+      },
+      {
+        "ruta": "/software-de-medicion-calidad-del-aire",
+        "page": "apps/web/src/app/software-de-medicion-calidad-del-aire/page.tsx",
+        "directo": [
+          "software"
+        ],
+        "soloTipos": [],
+        "transitivo": [
+          "articles",
+          "footer",
+          "monitor",
+          "nav",
+          "projects",
+          "software",
+          "utils"
+        ],
+        "propio": [
+          "articles",
+          "monitor",
+          "projects",
+          "software",
+          "utils"
+        ]
+      },
+      {
+        "ruta": "/kunak-api",
+        "page": "apps/web/src/app/kunak-api/page.tsx",
+        "directo": [
+          "api"
+        ],
+        "soloTipos": [],
+        "transitivo": [
+          "api",
+          "articles",
+          "footer",
+          "monitor",
+          "nav"
+        ],
+        "propio": [
+          "api",
+          "articles",
+          "monitor"
+        ]
+      }
+    ],
+    "interseccionPropio": [
+      "articles",
+      "monitor"
+    ],
+    "unionDirecto": [
+      "accesorios",
+      "api",
+      "monitor",
+      "software"
+    ]
+  },
+  "p2": {
+    "papeles": {
+      "generico": 1238,
+      "sujeto": 125,
+      "cascaron": 36,
+      "contexto": 9
+    },
+    "unidades": {
+      "rem": 30,
+      "px": 115,
+      "%": 35,
+      "em": 2
+    },
+    "breakpoints": {
+      "only screen and (max-width:980px)": 20,
+      "only screen and (max-width:767px)": 20,
+      "(base)": 85
+    },
+    "porArquetipo": {
+      "PRODUCTO": {
+        "unidades": {
+          "px": 25,
+          "rem": 10,
+          "%": 9
+        },
+        "breakpoints": {
+          "(base)": 21,
+          "only screen and (max-width:980px)": 5,
+          "only screen and (max-width:767px)": 5
+        },
+        "papeles": {
+          "generico": 381,
+          "sujeto": 31,
+          "cascaron": 7,
+          "contexto": 2
+        },
+        "muestras": [
+          {
+            "bp": "only screen and (max-width:980px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_4",
+            "decl": "margin-top: 0rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:980px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_button_1_wrapper",
+            "decl": "margin-top: -3rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:980px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_button_1_wrapper",
+            "decl": "margin-bottom: 1rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:767px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_4",
+            "decl": "margin-top: 0rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:767px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_button_1_wrapper",
+            "decl": "margin-top: -2rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:767px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_button_1_wrapper",
+            "decl": "margin-bottom: 2rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_1.et_pb_row",
+            "decl": "padding-bottom: 5%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_1",
+            "decl": "padding-bottom: 2%",
+            "unidad": "%"
+          }
+        ]
+      },
+      "CATALOGO": {
+        "unidades": {
+          "px": 25,
+          "rem": 9,
+          "%": 6,
+          "em": 1
+        },
+        "breakpoints": {
+          "(base)": 18,
+          "only screen and (max-width:980px)": 4,
+          "only screen and (max-width:767px)": 4
+        },
+        "papeles": {
+          "generico": 278,
+          "sujeto": 26,
+          "cascaron": 7
+        },
+        "muestras": [
+          {
+            "bp": "only screen and (max-width:980px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+            "decl": "margin-top: 0rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:767px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+            "decl": "margin-top: 0rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_1",
+            "decl": "padding-bottom: 2%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+            "decl": "margin-top: 0rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row",
+            "decl": "margin-top: -14rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row",
+            "decl": "padding-bottom: 2rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_3,.et-db #et-boc .et-l .et_pb_text_6",
+            "decl": "padding-bottom: 0%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_3.et_pb_row",
+            "decl": "padding-bottom: 2%",
+            "unidad": "%"
+          }
+        ]
+      },
+      "SOFTWARE": {
+        "unidades": {
+          "px": 36,
+          "%": 13,
+          "rem": 11,
+          "em": 1
+        },
+        "breakpoints": {
+          "(base)": 28,
+          "only screen and (max-width:980px)": 7,
+          "only screen and (max-width:767px)": 7
+        },
+        "papeles": {
+          "generico": 297,
+          "sujeto": 42,
+          "cascaron": 11,
+          "contexto": 4
+        },
+        "muestras": [
+          {
+            "bp": "only screen and (max-width:980px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+            "decl": "margin-top: 1rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:980px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_column_5",
+            "decl": "padding-top: 2rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:767px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+            "decl": "margin-top: 1rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "only screen and (max-width:767px)",
+            "sel": ".et-db #et-boc .et-l .et_pb_column_5",
+            "decl": "padding-top: 2rem",
+            "unidad": "rem"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_1.et_pb_row",
+            "decl": "margin-bottom: 2%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_1",
+            "decl": "padding-bottom: 2%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_2",
+            "decl": "margin-bottom: 1.3%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_button_1_wrapper,.et-db #et-boc .et-l .et_pb_button_2_wrapper,.et-db #et-boc .et-l",
+            "decl": "margin-bottom: 0.9rem",
+            "unidad": "rem"
+          }
+        ]
+      },
+      "SOFTWARE-corta": {
+        "unidades": {
+          "px": 29,
+          "%": 7
+        },
+        "breakpoints": {
+          "(base)": 18,
+          "only screen and (max-width:980px)": 4,
+          "only screen and (max-width:767px)": 4
+        },
+        "papeles": {
+          "generico": 282,
+          "sujeto": 26,
+          "cascaron": 11,
+          "contexto": 3
+        },
+        "muestras": [
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_1.et_pb_row",
+            "decl": "padding-bottom: 1%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_1",
+            "decl": "padding-bottom: 2%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+            "decl": "margin-top: -10%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row,.et-db #et-boc .et-l .et_pb_row_3.et_pb_row,.et-db #et-boc .et-l .",
+            "decl": "padding-bottom: 5%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_text_4,.et-db #et-boc .et-l .et_pb_text_9,.et-db #et-boc .et-l .et_pb_text_13",
+            "decl": "padding-bottom: 0%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row",
+            "decl": "padding-bottom: 1%",
+            "unidad": "%"
+          },
+          {
+            "bp": "(base)",
+            "sel": ".et-db #et-boc .et-l .et_pb_row_5.et_pb_row",
+            "decl": "padding-bottom: 5%",
+            "unidad": "%"
+          }
+        ]
+      }
+    },
+    "veredicto": {
+      "unidadesReales": [
+        "rem",
+        "px",
+        "%",
+        "em"
+      ],
+      "noCaben": [
+        "rem",
+        "em"
+      ],
+      "nBreakpoints": 3,
+      "expresaMedida": {
+        "unidades": [
+          "px",
+          "pct"
+        ],
+        "posiciones": 2
+      }
+    }
+  },
+  "porPage": [
+    {
+      "page": "apps/web/src/app/accesorios/page.tsx",
+      "directo": [
+        "accesorios"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "accesorios",
+        "articles",
+        "footer",
+        "monitor",
+        "nav"
+      ],
+      "propio": [
+        "accesorios",
+        "articles",
+        "monitor"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/blog/page/[n]/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/listados",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "cms/listados"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/blog/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/listados",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "cms/listados"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/case-studies/[slug]/page.tsx",
+      "directo": [
+        "casos",
+        "cms/casos",
+        "cms/productos"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "casos",
+        "cms/casos",
+        "cms/productos",
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "propio": [
+        "casos",
+        "cms/casos",
+        "cms/productos",
+        "grupo-c-plantilla"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/casos-de-exito/page.tsx",
+      "directo": [
+        "casos",
+        "cms/casos",
+        "taxonomia-sectores"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "casos",
+        "cms/casos",
+        "footer",
+        "nav",
+        "taxonomia-sectores"
+      ],
+      "propio": [
+        "casos",
+        "cms/casos",
+        "taxonomia-sectores"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/casos-de-exito/[slug]/page.tsx",
+      "directo": [
+        "casos",
+        "cms/casos",
+        "cms/productos"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "casos",
+        "cms/casos",
+        "cms/productos",
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "propio": [
+        "casos",
+        "cms/casos",
+        "cms/productos",
+        "grupo-c-plantilla"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/centro-de-ayuda/[...ruta]/page.tsx",
+      "directo": [
+        "cms/paginas"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/articulos-kb",
+        "cms/paginas",
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "cms/articulos-kb",
+        "cms/paginas",
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/empresa/[...ruta]/page.tsx",
+      "directo": [
+        "cms/paginas"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/paginas",
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "cms/paginas",
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/etiqueta/[slug]/page/[n]/page.tsx",
+      "directo": [
+        "cms/listados"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/listados",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "cms/listados"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/etiqueta/[slug]/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/listados",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "cms/listados"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/faqs/[slug]/page.tsx",
+      "directo": [
+        "cms/faqs"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/faqs",
+        "footer",
+        "grupo-c-plantilla",
+        "nav"
+      ],
+      "propio": [
+        "cms/faqs",
+        "grupo-c-plantilla"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/glosario/page/[n]/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/arquetipo-a",
+        "cms/listados",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "cms/arquetipo-a",
+        "cms/listados"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/glosario/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/arquetipo-a",
+        "cms/listados",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "cms/arquetipo-a",
+        "cms/listados"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/kunak-api/page.tsx",
+      "directo": [
+        "api"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "api",
+        "articles",
+        "footer",
+        "monitor",
+        "nav"
+      ],
+      "propio": [
+        "api",
+        "articles",
+        "monitor"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/monitor-calidad-aire/page.tsx",
+      "directo": [
+        "monitor"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "articles",
+        "footer",
+        "home-carrusel-sectores",
+        "monitor",
+        "nav",
+        "projects",
+        "utils"
+      ],
+      "propio": [
+        "articles",
+        "home-carrusel-sectores",
+        "monitor",
+        "projects",
+        "utils"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/page.tsx",
+      "directo": [
+        "cms/productos",
+        "products"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "articles",
+        "clients",
+        "cms/productos",
+        "footer",
+        "home-carrusel-sectores",
+        "nav",
+        "products",
+        "projects",
+        "testimonials"
+      ],
+      "propio": [
+        "articles",
+        "clients",
+        "cms/productos",
+        "home-carrusel-sectores",
+        "products",
+        "projects",
+        "testimonials"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/recursos/[...ruta]/page.tsx",
+      "directo": [
+        "arquetipo-a",
+        "cms/arquetipo-a",
+        "cms/paginas"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "arquetipo-a",
+        "cms/arquetipo-a",
+        "cms/listados",
+        "cms/paginas",
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "arquetipo-a",
+        "cms/arquetipo-a",
+        "cms/listados",
+        "cms/paginas",
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/scientific-category/[slug]/page/[n]/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "arquetipo-a",
+        "cms/documentos",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "arquetipo-a",
+        "cms/documentos"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/scientific-category/[slug]/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "arquetipo-a",
+        "cms/documentos",
+        "footer",
+        "nav"
+      ],
+      "propio": [
+        "arquetipo-a",
+        "cms/documentos"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/sector/[slug]/page/[n]/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "footer",
+        "nav",
+        "sector-archivo",
+        "taxonomia-sectores"
+      ],
+      "propio": [
+        "sector-archivo",
+        "taxonomia-sectores"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/sector/[slug]/page.tsx",
+      "directo": [],
+      "soloTipos": [],
+      "transitivo": [
+        "footer",
+        "nav",
+        "sector-archivo",
+        "taxonomia-sectores"
+      ],
+      "propio": [
+        "sector-archivo",
+        "taxonomia-sectores"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/sectores/[slug]/page.tsx",
+      "directo": [
+        "cms/sectores"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "articles",
+        "clients",
+        "cms/sectores",
+        "footer",
+        "nav",
+        "projects"
+      ],
+      "propio": [
+        "articles",
+        "clients",
+        "cms/sectores",
+        "projects"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/software-de-medicion-calidad-del-aire/page.tsx",
+      "directo": [
+        "software"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "articles",
+        "footer",
+        "monitor",
+        "nav",
+        "projects",
+        "software",
+        "utils"
+      ],
+      "propio": [
+        "articles",
+        "monitor",
+        "projects",
+        "software",
+        "utils"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/soporte/[...ruta]/page.tsx",
+      "directo": [
+        "cms/paginas"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/articulos-kb",
+        "cms/paginas",
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "cms/articulos-kb",
+        "cms/paginas",
+        "menu-centro-ayuda"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/vista-previa/[slug]/page.tsx",
+      "directo": [
+        "cms/arquetipo-a",
+        "cms/local"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "cms/arquetipo-a",
+        "cms/local"
+      ],
+      "propio": [
+        "cms/arquetipo-a",
+        "cms/local"
+      ]
+    },
+    {
+      "page": "apps/web/src/app/[slug]/page.tsx",
+      "directo": [
+        "cms/arquetipo-a",
+        "cms/paginas"
+      ],
+      "soloTipos": [],
+      "transitivo": [
+        "arquetipo-a",
+        "cms/arquetipo-a",
+        "cms/paginas",
+        "footer",
+        "menu-centro-ayuda",
+        "nav"
+      ],
+      "propio": [
+        "arquetipo-a",
+        "cms/arquetipo-a",
+        "cms/paginas",
+        "menu-centro-ayuda"
+      ]
+    }
+  ]
+}

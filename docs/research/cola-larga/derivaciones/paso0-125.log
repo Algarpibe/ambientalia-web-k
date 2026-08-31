@@ -1,0 +1,116 @@
+=== CONTROLES ===
+  OK  se recorrio algo (hay page.tsx)
+      26 pages
+  OK  CASO CONOCIDO: /monitor-calidad-aire importa `lib/monitor` en DIRECTO
+      si fallara, el detector no lee imports
+  OK  `monitor` NO es cascaron (el transitivo discrimina, ni cero ni pleno)
+      transitivo 4/26
+  OK  el cascaron se derivo y no esta vacio
+      footer · nav
+  OK  las 4 pages del lote se resolvieron
+      /monitor-calidad-aire · /accesorios · /software-de-medicion-calidad-del-aire · /kunak-api
+  OK  §regla 36 DISCRIMINA: hay reglas de ritmo con ordinal-sujeto y genericas
+      generico=1238 · sujeto=125 · cascaron=36 · contexto=9
+  OK  el detector de UNIDAD no es un pleno (ve mas de una)
+      rem=30 · px=115 · %=35 · em=2
+  OK  el detector de BREAKPOINT no es un pleno (ve mas de uno)
+      3 distintos
+  OK  CONTROL EN NEGATIVO del papel: generico/sujeto/contexto se distinguen
+      3 selectores conocidos
+
+=== P1 · QUE IMPORTA CADA page.tsx (unidad: PAGE.TSX) ===
+  pages totales: 26
+  CASCARON derivado (>=90% de las pages): footer · nav
+
+  `lib/monitor` en DIRECTO:    1 de 26
+      apps/web/src/app/monitor-calidad-aire/page.tsx
+  `lib/monitor` TRANSITIVO:    4 de 26
+      apps/web/src/app/accesorios/page.tsx
+      apps/web/src/app/kunak-api/page.tsx
+      apps/web/src/app/monitor-calidad-aire/page.tsx
+      apps/web/src/app/software-de-medicion-calidad-del-aire/page.tsx
+
+  EL LOTE, ruta a ruta:
+      /monitor-calidad-aire
+          directo:    monitor
+          propio:     articles · home-carrusel-sectores · monitor · projects · utils
+      /accesorios
+          directo:    accesorios
+          propio:     accesorios · articles · monitor
+      /software-de-medicion-calidad-del-aire
+          directo:    software
+          propio:     articles · monitor · projects · software · utils
+      /kunak-api
+          directo:    api
+          propio:     api · articles · monitor
+
+  INTERSECCION de `propio` en las 4: articles · monitor
+  UNION de `directo` en las 4:       accesorios · api · monitor · software
+
+=== P2 · UNIDADES Y BREAKPOINTS QUE ESCRIBE EL EDITOR ===
+  (solo reglas de ritmo con el ordinal como SUJETO — §regla 36)
+
+  PAPEL de las reglas de ritmo (los 4 docs): generico=1238 · sujeto=125 · cascaron=36 · contexto=9
+
+  2a · UNIDADES declaradas (los 4 docs):
+      px                 115
+      %                  35
+      rem                30
+      em                 2
+
+  2b · BREAKPOINTS con ritmo del editor (los 4 docs):
+        85  (base)
+        20  only screen and (max-width:980px)
+        20  only screen and (max-width:767px)
+
+  PRODUCTO
+      unidades:    px=25 · rem=10 · %=9
+      breakpoints: 3
+      · [only screen and (max-width:980px)] margin-top: 0rem   (rem)
+      · [only screen and (max-width:980px)] margin-top: -3rem   (rem)
+      · [only screen and (max-width:980px)] margin-bottom: 1rem   (rem)
+      · [only screen and (max-width:767px)] margin-top: 0rem   (rem)
+      · [only screen and (max-width:767px)] margin-top: -2rem   (rem)
+      · [only screen and (max-width:767px)] margin-bottom: 2rem   (rem)
+      · [(base)] padding-bottom: 5%   (%)
+      · [(base)] padding-bottom: 2%   (%)
+  CATALOGO
+      unidades:    px=25 · rem=9 · %=6 · em=1
+      breakpoints: 3
+      · [only screen and (max-width:980px)] margin-top: 0rem   (rem)
+      · [only screen and (max-width:767px)] margin-top: 0rem   (rem)
+      · [(base)] padding-bottom: 2%   (%)
+      · [(base)] margin-top: 0rem   (rem)
+      · [(base)] margin-top: -14rem   (rem)
+      · [(base)] padding-bottom: 2rem   (rem)
+      · [(base)] padding-bottom: 0%   (%)
+      · [(base)] padding-bottom: 2%   (%)
+  SOFTWARE
+      unidades:    px=36 · %=13 · rem=11 · em=1
+      breakpoints: 3
+      · [only screen and (max-width:980px)] margin-top: 1rem   (rem)
+      · [only screen and (max-width:980px)] padding-top: 2rem   (rem)
+      · [only screen and (max-width:767px)] margin-top: 1rem   (rem)
+      · [only screen and (max-width:767px)] padding-top: 2rem   (rem)
+      · [(base)] margin-bottom: 2%   (%)
+      · [(base)] padding-bottom: 2%   (%)
+      · [(base)] margin-bottom: 1.3%   (%)
+      · [(base)] margin-bottom: 0.9rem   (rem)
+  SOFTWARE-corta
+      unidades:    px=29 · %=7
+      breakpoints: 3
+      · [(base)] padding-bottom: 1%   (%)
+      · [(base)] padding-bottom: 2%   (%)
+      · [(base)] margin-top: -10%   (%)
+      · [(base)] padding-bottom: 5%   (%)
+      · [(base)] padding-bottom: 0%   (%)
+      · [(base)] padding-bottom: 1%   (%)
+      · [(base)] padding-bottom: 5%   (%)
+
+=== VEREDICTO ===
+  2a · unidades que el editor escribe: rem · px · % · em
+       `medida()` expresa: px · pct
+       NO CABEN: rem · em  ⇒ LE FALTA UN EJE
+  2b · posiciones de breakpoint que el editor usa: 3
+       `medida()` expresa: 2 (base + movil)
+       ⇒ LE FALTA UNA POSICION

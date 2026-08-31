@@ -1231,11 +1231,42 @@ nombra el encargo (*filas y módulos, el nivel donde F3-5 mide*) y **tampoco los
 separa**: los tres tienen los dos ejes a `·`.
 
 > **Ese empate es el resultado, no un fallo del criterio: dice que los tres son
-> UN LOTE y no tres candidatos.** Comparten régimen (`B-`), comparten los dos
-> ejes que faltan, y comparten `lib/monitor` —que alcanzan **4** de las
-> `page.tsx`—. Así que el ESCALÓN 1 construye **un comparador para las 4 rutas**,
-> que es lo que el empate está diciendo; romperlo para elegir «uno» habría
-> costado tres comparadores del mismo nivel.
+> UN LOTE y no tres candidatos.** Comparten régimen (`B-`) y comparten los dos
+> ejes que faltan. Así que el ESCALÓN 1 construye **un comparador para las 4
+> rutas**, que es lo que el empate está diciendo; romperlo para elegir «uno»
+> habría costado tres comparadores del mismo nivel.
+
+> ⚠⚠ **Y LA TERCERA RAZÓN QUE ESTA FRASE DABA —«comparten `lib/monitor`, que
+> alcanzan 4 de las `page.tsx`»— SE REESCRIBE CON SU UNIDAD, PORQUE SIN ELLA
+> ADMITÍA DOS LECTURAS Y LAS DOS SON CIERTAS DE COSAS DISTINTAS (2026-08-30,
+> 125.ª PASO 0).** Derivado sobre las **26** `page.tsx` del árbol
+> (`derivaciones/paso0-125.*`, 9 controles en verde, cascarón derivado y no
+> escrito a mano: `nav · footer`):
+>
+> | unidad | qué cuenta | n |
+> |---|---|---|
+> | `lib/monitor` en **DIRECTO** (`import` en la propia `page.tsx`) | **sólo `/monitor-calidad-aire`** | **1 de 26** |
+> | `lib/monitor` **TRANSITIVO** (`page.tsx` → componentes → `@/lib`) | las **4** del lote, exactamente | **4 de 26** |
+>
+> **El «4» era cierto —en unidad TRANSITIVO— y la frase lo leía como si las
+> cuatro rutas importaran ese módulo.** No lo hacen: en directo cada una trae
+> **el suyo** —`monitor · accesorios · software · api`, cuatro módulos de
+> contenido distintos, que es justo lo que la tabla del inventario dice tres
+> párrafos más arriba. Lo que comparten es que **sus componentes** llegan a
+> `lib/monitor`; el `FAQ_ITEMS` de `/accesorios` ya estaba documentado así
+> (`research/accesorios/PAGE_TOPOLOGY.md` §3).
+>
+> **Y la frase además estaba INCOMPLETA: la intersección de lo propio en las 4
+> no es un módulo, son DOS** — `articles` **y** `monitor`. Citar uno solo
+> sugiere un canal compartido donde hay dos.
+>
+> **La forma general, que es §*un denominador sin unidad no se puede auditar*
+> con el objeto puesto en un GRAFO:** en un árbol de imports, «alcanza» tiene al
+> menos tres unidades —directo, transitivo, y transitivo menos el cascarón— y
+> **las tres se escriben igual**. Un recuento de alcance se publica con la suya,
+> o el lector elige la que le convenga. Aquí la diferencia entre 1 y 4 es
+> exactamente el trabajo que separa «un content type con cuatro instancias» de
+> «cuatro content types», que es la decisión de esta fase.
 
 **Lo que esta fase NO puede cerrar, declarado por delante (punto 4 del encargo):**
 
@@ -1484,6 +1515,70 @@ puede guardar. Regla y números en `CLAUDE.md` §Alcance; derivaciones en
 **Verificado en esta tanda:** ningún `check` — **la tanda no toca `src/`**, así
 que construir no verificaría nada suyo y Docker sigue caído. Se dice en vez de
 correrlo por costumbre.
+
+### ✅ PASO 0 de la 125.ª (2026-08-30) · el hueco del tipo NO es de tipo, y `medida()` se queda a DOS ejes de expresarlo
+
+La 124.ª cierra diciendo que hay *«dos modos medidos por los que un `number`
+guardaría mal el ritmo»* y que *«la primitiva que los expresa (`medida()`)
+existe pero estos bloques no la usan»*. **La segunda mitad es la que había que
+comprobar antes de diseñar nada** — porque si `medida()` ya los expresa, el
+hueco no es de tipo: es de dato, y eso es trabajo de otra clase.
+
+**Lo que `medida()` expresa hoy** (`packages/cms-config/src/campos/comunes.ts`):
+un `group` con `valor` + `unidad ∈ {px, pct}` y su override `movilValor` +
+`movilUnidad`. O sea **dos ejes**: la UNIDAD, con dos valores; y el
+BREAKPOINT, con **dos posiciones** (base y móvil).
+
+**Lo que el editor escribe de verdad**, censado sobre los 4 documentos del lote
+—sólo reglas de ritmo cuyo ordinal es **SUJETO** del selector, §regla 36, con su
+control en negativo (`generico=1238 · sujeto=125 · contexto=9 · cascarón=36`)—:
+
+| eje | `medida()` expresa | el editor escribe | ¿cabe? |
+|---|---|---|---|
+| **unidad** | `px` · `pct` | `px` **115** · `%` **35** · **`rem` 30** · **`em` 2** | ❌ **32 declaraciones fuera** |
+| **breakpoint** | base · móvil (**2**) | base **85** · `≤980` **20** · `≤767` **20** (**3**) | ❌ **falta una posición** |
+
+**Los dos huecos son de naturaleza distinta y sólo uno está cerrado:**
+
+1. **El BREAKPOINT es firme y no depende de nada más.** Divi da **tres**
+   pestañas por campo de espaciado —escritorio, tablet, móvil— y las compila en
+   dos `@media` (`≤980` y `≤767`). `medida()` tiene **dos** posiciones, así que
+   **un valor de tablet no tiene dónde ir**, y guardarlo en `movilValor` lo
+   serviría también a 390, donde el original sirve otro. Es el mismo modo de
+   fallo que `FN-bp` en el test A, con el objeto puesto en el esquema;
+2. **La UNIDAD sale CON RESERVA, y la reserva es su base.** `rem` se resuelve
+   contra el `font-size` del **`html`**, no contra el ancho — así que si esa base
+   es constante, `-3rem` y su px computado son el mismo número a 1440 y a 390 y
+   `px` bastaría. **Esa base no está medida**: el HTML sirve `body{font-size:14px}`
+   y **no declara `html`** en línea, así que el ganador vive en una hoja enlazada
+   y **lo dice `getComputedStyle`, no un `grep`**. Es exactamente §*un `em` citado
+   sin su `font-size` es la misma trampa que un `%` sin su contenedor*, y es lo
+   que el **ESCALÓN 3** de esta tanda va a medir. Hasta entonces: **SIN PROBAR,
+   con su cardinal —32— y no cableado.**
+
+> ⚠ **Y el `em` no es el del tema.** Este documento avisa de un falso positivo
+> conocido: `.et_pb_button{padding:0.5em}` es **genérico**, o sea plantilla, y el
+> test A dictaría campo sobre él. Los 2 `em` de aquí llevan **ordinal**
+> (`.et_pb_text_7{padding-top:1em!important}`) y por tanto son del editor — el
+> filtro de §regla 36 es lo que separa un caso del otro, y el aviso viejo sigue
+> valiendo para los que no lo pasan.
+
+**LA RESPUESTA A LA PREGUNTA DEL ENCARGO, que es lo que decide el trabajo:**
+
+> **No caben, así que el hueco SÍ es de tipo — pero es MENOS de lo que parecía:
+> `medida()` no hay que reemplazarla, hay que darle una posición más de
+> breakpoint (y, si la base del `rem` no es constante, dos valores más de
+> unidad).** Lo que NO hace falta es diseñar una primitiva nueva: la forma
+> —grupo con valor y unidad inseparables, y la unidad rechazada en vez de
+> supuesta— ya es la correcta, y su `validate` ya dice por qué.
+
+**Y el matiz de recuento, publicado para que nadie lo lea de más:** los **35**
+`%` incluyen los de valor **cero**, que son inocuos —`0% == 0px` a todo ancho—
+igual que en el barrido de la 124.ª. No cambian el veredicto de este eje (el `%`
+ya cabe como `pct`), pero inflarían cualquier lectura de «cuánto porcentaje hay».
+
+Instrumento: `derivaciones/paso0-125.{mjs,json,log}`, **9 controles en verde**,
+incluido el negativo del papel del selector.
 
 ## El orden, y por qué
 
