@@ -77,6 +77,36 @@ const DOMINIO = process.env.DOMINIO === "lote" ? "lote" : "familia";
    documentos (§regla 32: lo que se le hace a un lado se le hace al otro). */
 const SIN_ETCACHE = !!process.env.SIN_ETCACHE;
 
+/* ⚠ MODO AÑADIDO POR LA 128.ª · SIN EMPAREJAR — LA CASCADA SOLA.
+ *
+ * El camino de arriba EMPAREJA: recorre `compartidos` (marcadores en >=2
+ * documentos) y descarta con `docs.length < 2`. Con un arquetipo a n = 1 eso da
+ * **0 pares POR CONSTRUCCIÓN**, y ese cero se lee como una propiedad del
+ * original en vez de como el ÁMBITO de la llave (§regla 29, su mitad de 2026-08-30:
+ * *un emparejamiento que sale vacío se escribe igual que un objeto sin
+ * instancias*).
+ *
+ * El modo nuevo NO empareja: su unidad es **documento × marcador × ancho × eje**
+ * y el veredicto lo dicta la CASCADA sola —ordinal ⇒ el editor, genérico ⇒ la
+ * plantilla, único valor = el inicial ⇒ sin escribir—, que es la pata que NO
+ * necesita segunda instancia.
+ *
+ * SE AÑADE DETRÁS DE SU BANDERA Y NO TOCA LOS DOS CAMINOS EXISTENTES: con la
+ * bandera apagada la salida es BYTE-IDÉNTICA, y la guarda de §regla 5 de más
+ * abajo es entonces el propio NO-OP (si el fichero difiere, no se pisa y sale
+ * con exit 1). §regla 5bis: tocar el instrumento CADUCA sus congeladas, y el
+ * NO-OP es lo único que demuestra que no las caducó.
+ *
+ * ⚠ NO confundir con la clave `dominioNuevo` que este mismo fichero ya emite:
+ * aquélla es «pares NUEVOS respecto de la 125.ª», no un modo sin emparejar. El
+ * nombre engaña y es congelado, así que éste se llama `porDocumento`. */
+const SIN_EMPAREJAR = !!process.env.SIN_EMPAREJAR;
+
+/* SABOTAJE NUEVO (§regla 28a — puesto en el DATO, no en el umbral): quita el
+   ordinal de los selectores ganadores. Si el reparto del modo nuevo no se
+   mueve, el detector de ordinal no está midiendo lo que dice medir. */
+const NEG_SIN_ORDINAL = !!process.env.NEG_SIN_ORDINAL;
+
 /* Los documentos se DERIVAN del PASO 0, no se escriben aqui: si el Jaccard
    cambia, esta sonda lo recoge sola (§regla 9, 7.º caso). */
 const DOCS = (DOMINIO === "lote" ? paso0.alcance.docsLote : paso0.alcance.docsFamilia)
@@ -284,6 +314,36 @@ for (const d of DOCS)
 const compartidos = [...docsPorMarcador].filter(([, s]) => s.size >= 2);
 const singleton = [...docsPorMarcador].filter(([, s]) => s.size < 2);
 
+/* ── EL VEREDICTO, UNA SOLA VEZ PARA LOS DOS CAMINOS (128.ª) ─────────────
+ * En el modo SIN EMPAREJAR no hay `hayVarianza` ni `varianzaEstructural` —no
+ * hay con qué compararlas—, así que entran a `false` y el veredicto lo dicta
+ * la cascada sola. El orden de las ramas NO cambia: `todoInicial` se sigue
+ * evaluando ANTES que la cascada, que es lo que hace que la predicción P1 del
+ * pre-registro valga 0 POR ÁLGEBRA y no por medición. */
+function veredictoDe({ varianzaEstructural, valoresEstructurales, hayVarianza, todoInicial, ganadores, conOrdinal, genericos, enMedia, coherente }) {
+  if (varianzaEstructural) {
+    /* La varianza existe y NO la escribió nadie: es una regla estructural
+       sobre otro número de hermanos. Cae al lado de la cascada. */
+    return {
+      veredicto: genericos.length ? "PLANTILLA" : "SIN PROBAR",
+      via: `varianza ESTRUCTURAL (${[...valoresEstructurales].join(",")} de una pseudo-clase), sin ordinal ⇒ no es campo` +
+        (genericos.length ? " · pata 2 · cascada · selector GENÉRICO" : " · y sin genérico legible"),
+    };
+  }
+  if (hayVarianza) return { veredicto: "CAMPO", via: "pata 1 · varianza inter-instancia" };
+  if (todoInicial) return { veredicto: "SIN ESCRIBIR", via: "único valor observado = el inicial de la propiedad" };
+  if (!ganadores.length) return { veredicto: "SIN PROBAR", via: "sin varianza y sin declaración ganadora legible" };
+  if (!coherente) return { veredicto: "SIN PROBAR", via: "cascada INCOHERENTE con el computado — no se usa" };
+  if (conOrdinal.length) {
+    return {
+      veredicto: "CAMPO",
+      via: enMedia.some((g) => g.ordinal) ? "pata 2 · cascada · ordinal DENTRO de @media (FN-bp)" : "pata 2 · cascada · selector ORDINAL",
+    };
+  }
+  if (genericos.length) return { veredicto: "PLANTILLA", via: "pata 2 · cascada · selector GENÉRICO" };
+  return { veredicto: "SIN PROBAR", via: "sin separar" };
+}
+
 /* ── LOS PARES, con las dos patas ───────────────────────────────────────── */
 const pares = [];
 for (const [marc, docsSet] of compartidos) {
@@ -343,23 +403,16 @@ for (const [marc, docsSet] of compartidos) {
       const declaradosPx = ganadores.filter((g) => /px$/.test(g.valorDeclarado)).map((g) => Math.round(parseFloat(g.valorDeclarado) * 10000) / 10000);
       const coherente = declaradosPx.length === 0 || declaradosPx.some((x) => computados.has(x));
 
-      /* VEREDICTO — en cascada, y el orden importa. */
-      let veredicto, via;
-      if (varianzaEstructural) {
-        /* La varianza existe y NO la escribió nadie: es una regla estructural
-           sobre otro número de hermanos. Cae al lado de la cascada. */
-        veredicto = genericos.length ? "PLANTILLA" : "SIN PROBAR";
-        via = `varianza ESTRUCTURAL (${[...valoresEstructurales].join(",")} de una pseudo-clase), sin ordinal ⇒ no es campo` +
-          (genericos.length ? " · pata 2 · cascada · selector GENÉRICO" : " · y sin genérico legible");
-      } else if (hayVarianza) { veredicto = "CAMPO"; via = "pata 1 · varianza inter-instancia"; }
-      else if (todoInicial) { veredicto = "SIN ESCRIBIR"; via = "único valor observado = el inicial de la propiedad"; }
-      else if (!ganadores.length) { veredicto = "SIN PROBAR"; via = "sin varianza y sin declaración ganadora legible"; }
-      else if (!coherente) { veredicto = "SIN PROBAR"; via = "cascada INCOHERENTE con el computado — no se usa"; }
-      else if (conOrdinal.length) {
-        veredicto = "CAMPO";
-        via = enMedia.some((g) => g.ordinal) ? "pata 2 · cascada · ordinal DENTRO de @media (FN-bp)" : "pata 2 · cascada · selector ORDINAL";
-      } else if (genericos.length) { veredicto = "PLANTILLA"; via = "pata 2 · cascada · selector GENÉRICO"; }
-      else { veredicto = "SIN PROBAR"; via = "sin separar"; }
+      /* VEREDICTO — en cascada, y el orden importa. Extraído a `veredictoDe`
+         por la 128.ª para que el modo SIN EMPAREJAR use LA MISMA función y no
+         una copia: si se duplicara, los dos caminos podrían divergir sin que
+         el NO-OP lo viera (§regla 15 — dos instrumentos que comparten premisa
+         concuerdan igual sobre una premisa falsa; aquí ni siquiera la
+         comparten, la MISMA función lo garantiza). */
+      const { veredicto, via } = veredictoDe({
+        varianzaEstructural, valoresEstructurales, hayVarianza, todoInicial,
+        ganadores, conOrdinal, genericos, enMedia, coherente,
+      });
 
       pares.push({
         marcador: marc, ancho, eje, prop,
@@ -381,6 +434,78 @@ for (const [marc, docsSet] of compartidos) {
           }
           : null,
       });
+    }
+  }
+}
+
+/* ═══ MODO SIN EMPAREJAR (128.ª) — LA CASCADA SOLA, POR DOCUMENTO ═══════════
+ * Bloque HERMANO del de arriba, no una rama dentro: así el camino existente no
+ * cambia ni una línea de ejecución con la bandera apagada.
+ * Unidad: documento × marcador × ancho × eje. TODOS los marcadores, incluidos
+ * los que aparecen en UN solo documento — que es justo lo que el emparejamiento
+ * descarta con `docs.length < 2` y lo que deja a un singleton en 0 pares. */
+const filas = [];
+if (SIN_EMPAREJAR) {
+  for (const d of DOCS) {
+    for (const ancho of ANCHOS) {
+      for (const eje of EJES) {
+        const prop = PROPS_CSS[EJES.indexOf(eje)];
+        /* los marcadores que ESTE documento sirve, no los compartidos */
+        const suyos = new Set();
+        for (const n of medidas[d.etiqueta][ancho].nodos) for (const s of n.semanticas) suyos.add(s);
+        for (const marc of [...suyos].sort()) {
+          const vals = medidas[d.etiqueta][ancho].nodos.filter((n) => n.semanticas.includes(marc)).map((n) => n.v[eje]);
+          if (!vals.length) continue;
+          const observados = [...new Set(vals)].sort((a, b) => a - b);
+          const todoInicial = observados.every((x) => x === INICIAL);
+
+          /* PATA 2 SOLA — los ganadores de ESTE documento, sin unir con otros.
+             Ahí está toda la diferencia: el agregado hace UNIÓN sobre los
+             documentos del par, así que un ordinal de UNO se lo lleva el par
+             entero. Por documento, cada uno responde de lo suyo. */
+          const ganadores = [];
+          for (const g of medidas[d.etiqueta][ancho].casc.get(marc) ?? []) {
+            const gg = g[prop];
+            if (!gg) continue;
+            const papelDel = gg.inline ? "inline" : papel(gg.selector, marc);
+            /* SABOTAJE (§regla 28a, en el DATO): se le quita el ordinal. */
+            ganadores.push({ doc: d.etiqueta, ...gg, ordinal: NEG_SIN_ORDINAL ? false : gg.ordinal, papelDelMarcador: papelDel });
+          }
+          const conOrdinal = ganadores.filter((g) => g.ordinal);
+          const genericos = ganadores.filter((g) => !g.ordinal);
+          const enMedia = ganadores.filter((g) => g.enMedia);
+          const computados = new Set(observados);
+          const declaradosPx = ganadores.filter((g) => /px$/.test(g.valorDeclarado)).map((g) => Math.round(parseFloat(g.valorDeclarado) * 10000) / 10000);
+          const coherente = declaradosPx.length === 0 || declaradosPx.some((x) => computados.has(x));
+
+          /* Sin segunda instancia no hay varianza NI varianza estructural: las
+             dos entran a `false` y el veredicto lo dicta la cascada sola.
+             MISMA función que el camino de arriba, no una copia. */
+          const { veredicto, via } = veredictoDe({
+            varianzaEstructural: false, valoresEstructurales: new Set(),
+            hayVarianza: false, todoInicial,
+            ganadores, conOrdinal, genericos, enMedia, coherente,
+          });
+
+          filas.push({
+            doc: d.etiqueta, marcador: marc, ancho, eje, prop,
+            instancias: vals.length, observados, todoInicial,
+            veredicto, via,
+            segundaPata: ganadores.length
+              ? {
+                selectorGanador: [...new Set(ganadores.map((g) => g.selector))].slice(0, 4),
+                unidadDeclarada: [...new Set(ganadores.map((g) => g.unidad))],
+                valorDeclarado: [...new Set(ganadores.map((g) => g.valorDeclarado))].slice(0, 4),
+                enMedia: [...new Set(ganadores.map((g) => g.enMedia).filter(Boolean))],
+                origen: [...new Set(ganadores.map((g) => g.origen))],
+                ordinal: conOrdinal.length > 0,
+                papelDelMarcador: [...new Set(ganadores.map((g) => g.papelDelMarcador))],
+                coherenteConComputado: coherente,
+              }
+              : null,
+          });
+        }
+      }
     }
   }
 }
@@ -646,6 +771,127 @@ say();
 say("=== SIN PROBAR — con su cardinal, y NO se cablean (§punto 5) ===");
 say(`  ${SINPROB.length} pares SIN PROBAR · ${SINESCR.length} SIN ESCRIBIR · ${singleton.length} marcadores singleton (no establecidos, denominador ${docsPorMarcador.size})`);
 
+/* ═══ ANÁLISIS DEL MODO SIN EMPAREJAR (128.ª), con sus controles ═════════ */
+let analisisPorDocumento = null;
+if (SIN_EMPAREJAR) {
+  const rep = (xs) => {
+    const m = new Map();
+    for (const f of xs) m.set(f.veredicto, (m.get(f.veredicto) ?? 0) + 1);
+    return Object.fromEntries([...m].sort());
+  };
+  const porDoc = Object.fromEntries(DOCS.map((d) => [d.etiqueta, rep(filas.filter((f) => f.doc === d.etiqueta))]));
+
+  /* ── el cruce contra el camino que EMPAREJA, par a par y fila a fila ──
+     Es lo que convierte «el modo nuevo dice X» en «el modo nuevo dice X DONDE
+     el otro decía Y», que es la única forma de leer si algo se movió. */
+  const vPar = new Map();
+  for (const p of pares) for (const d of Object.keys(p.porDoc)) vPar.set(`${d}|${p.marcador}|${p.ancho}|${p.eje}`, p.veredicto);
+  const cruce = new Map();
+  for (const f of filas) {
+    const antes = vPar.get(`${f.doc}|${f.marcador}|${f.ancho}|${f.eje}`) ?? "SIN MEDIR (no entraba en ningún par)";
+    const k = `${antes} → ${f.veredicto}`;
+    cruce.set(k, (cruce.get(k) ?? 0) + 1);
+  }
+  const movidas = filas.filter((f) => {
+    const antes = vPar.get(`${f.doc}|${f.marcador}|${f.ancho}|${f.eje}`);
+    return antes && antes !== f.veredicto;
+  });
+  const nuevasFilas = filas.filter((f) => !vPar.has(`${f.doc}|${f.marcador}|${f.ancho}|${f.eje}`));
+
+  /* CONTROL 1 · el modo nuevo tiene que ALCANZAR más filas que pares hay. Si
+     no, no está haciendo lo que dice y su cero sería del instrumento. */
+  ctl(filas.length > pares.length,
+    "MODO NUEVO · alcanza MÁS filas que pares tiene el emparejamiento (si no, no está midiendo lo que dice)",
+    `${filas.length} filas (documento × marcador × ancho × eje) contra ${pares.length} pares · ${nuevasFilas.length} filas que ningún par cubría`);
+
+  /* CONTROL 2 · §regla 22 — el reparto no puede ser un pleno ni un cero: si
+     todo cae en un veredicto, el discriminador no discrimina. Se cierra con el
+     CARDINAL, no con un booleano. */
+  const repTot = rep(filas);
+  const clases = Object.keys(repTot).length;
+  ctl(clases >= 2,
+    `MODO NUEVO · el veredicto DISCRIMINA (>=2 clases pobladas), n=${filas.length}`,
+    Object.entries(repTot).map(([k, v]) => `${k}=${v}`).join(" · "));
+
+  /* CONTROL 3 · la P1 del pre-registro es ÁLGEBRA, y aquí se comprueba: ningún
+     `SIN ESCRIBIR` del emparejamiento puede resolverse por documento, porque
+     `todoInicial` se evalúa antes que la cascada. Si sale >0, no es hallazgo
+     del original: es que el modo nuevo movió el orden del veredicto. */
+  const seResueltas = filas.filter((f) => vPar.get(`${f.doc}|${f.marcador}|${f.ancho}|${f.eje}`) === "SIN ESCRIBIR" && f.veredicto !== "SIN ESCRIBIR");
+  ctl(seResueltas.length === 0,
+    "MODO NUEVO · P1 · ningún `SIN ESCRIBIR` del par se resuelve por documento (es ÁLGEBRA: `todoInicial` va antes que la cascada)",
+    `${seResueltas.length} de ${filas.filter((f) => vPar.get(`${f.doc}|${f.marcador}|${f.ancho}|${f.eje}`) === "SIN ESCRIBIR").length} · si fuera >0 sería un defecto del instrumento, no del original`);
+
+  /* CONTROL 4 · P2 · ningún PLANTILLA del par puede volverse CAMPO por
+     documento: el agregado hace UNIÓN de ganadores, así que `PLANTILLA ⟺ ningún
+     documento tiene ordinal`. 0 instancias separadoras POR CONSTRUCCIÓN. */
+  const plAcampo = filas.filter((f) => vPar.get(`${f.doc}|${f.marcador}|${f.ancho}|${f.eje}`) === "PLANTILLA" && f.veredicto === "CAMPO");
+  ctl(plAcampo.length === 0,
+    "MODO NUEVO · P2 · ningún PLANTILLA del par pasa a CAMPO (ÁLGEBRA: el agregado es una UNIÓN de ganadores)",
+    `${plAcampo.length} de ${filas.filter((f) => vPar.get(`${f.doc}|${f.marcador}|${f.ancho}|${f.eje}`) === "PLANTILLA").length}`);
+
+  /* CONTROL 5 · el SABOTAJE tiene que MOVER. Con el ordinal quitado en el DATO,
+     no puede quedar ni un CAMPO por cascada (§regla 28a). */
+  if (NEG_SIN_ORDINAL) {
+    const campos = filas.filter((f) => f.veredicto === "CAMPO");
+    ctl(campos.length === 0,
+      "SABOTAJE `NEG_SIN_ORDINAL` · sin ordinal en el DATO no puede quedar ni un CAMPO por cascada",
+      `${campos.length} CAMPO de ${filas.length} filas · si no se mueve, el detector de ordinal no mide lo que dice`);
+  }
+
+  /* P2b — los CAMPO por PATA 1 (varianza entre arquetipos), re-adjudicados. */
+  const camposPata1 = pares.filter((p) => p.veredicto === "CAMPO" && /pata 1/.test(p.via));
+  const p2b = [];
+  for (const p of camposPata1) for (const d of Object.keys(p.porDoc)) {
+    const f = filas.find((x) => x.doc === d && x.marcador === p.marcador && x.ancho === p.ancho && x.eje === p.eje);
+    p2b.push({ doc: d, marcador: p.marcador, ancho: p.ancho, eje: p.eje, antes: "CAMPO (pata 1)", ahora: f?.veredicto ?? "SIN FILA", via: f?.via ?? null, ordinalPropio: f?.segundaPata?.ordinal ?? null });
+  }
+
+  analisisPorDocumento = {
+    unidad: "documento × marcador × ancho × eje",
+    filas: filas.length,
+    reparto: repTot,
+    porDocumento: porDoc,
+    filasNuevas: { n: nuevasFilas.length, reparto: rep(nuevasFilas) },
+    cruceContraElEmparejamiento: Object.fromEntries([...cruce].sort()),
+    movidas: { n: movidas.length, detalle: movidas.slice(0, 40) },
+    p2b_camposPorPata1ReAdjudicados: p2b,
+    sabotaje: NEG_SIN_ORDINAL ? "NEG_SIN_ORDINAL activo" : null,
+    /* El alcance del modo nuevo va DENTRO de su propia clave, no en el
+       `noContesta` compartido: si tocara el compartido, cambiaría el JSON de
+       los dos caminos existentes y rompería el NO-OP que este modo necesita
+       para adjudicarse. */
+    noContesta: [
+      "NO mide varianza: por construcción no empareja, así que la pata 1 no existe aquí",
+      "NO rescata un `SIN ESCRIBIR`: `todoInicial` se evalúa ANTES que la cascada, y eso es ÁLGEBRA",
+      "NO dice si un CAMPO se debe cablear — dice QUIÉN escribió el valor, con su selector",
+      "NO alcanza a los módulos SIN CAJA: hereda el criterio de recuento de la 125.ª",
+      "NO mide el clon ni la caja ni la tipografía: sólo los 4 ejes de ritmo del ORIGINAL",
+    ],
+    detalle: filas,
+  };
+
+  /* ── INFORME DEL MODO NUEVO ── */
+  say("");
+  say(`=== MODO SIN EMPAREJAR (128.ª) · unidad = documento × marcador × ancho × eje ===`);
+  say(`  ${filas.length} filas · reparto ${Object.entries(repTot).map(([k, v]) => `${k}=${v}`).join(" · ")}`);
+  say(`  filas que NINGÚN par cubría: ${nuevasFilas.length} · ${Object.entries(rep(nuevasFilas)).map(([k, v]) => `${k}=${v}`).join(" · ") || "(ninguna)"}`);
+  say("");
+  say("  por documento:");
+  for (const [d, r] of Object.entries(porDoc)) say(`    ${d.padEnd(42)} ${Object.entries(r).map(([k, v]) => `${k}=${v}`).join(" · ")}`);
+  say("");
+  say("  cruce contra el emparejamiento (antes → ahora):");
+  for (const [k, v] of [...cruce].sort()) say(`    ${k.padEnd(52)} ${v}`);
+  say("");
+  say(`  MOVIDAS (el par decía otra cosa): ${movidas.length}`);
+  for (const f of movidas.slice(0, 20))
+    say(`    ${f.doc.slice(0, 22).padEnd(23)} ${f.marcador.padEnd(20)} ${String(f.ancho).padEnd(5)} ${f.eje.padEnd(14)} → ${f.veredicto}  (${f.via})`);
+  say("");
+  say(`  P2b · los CAMPO por PATA 1 (varianza ENTRE ARQUETIPOS), re-adjudicados por cascada sola: ${p2b.length} filas`);
+  for (const x of p2b)
+    say(`    ${x.doc.slice(0, 22).padEnd(23)} ${x.marcador.padEnd(14)} ${String(x.ancho).padEnd(5)} ${x.eje.padEnd(14)} ${x.antes} → ${x.ahora}  ordinalPropio=${x.ordinalPropio}`);
+}
+
 const salida = {
   fecha: new Date().toISOString().slice(0, 10), tanda: 127, escalon: 1,
   modo: { dominio: DOMINIO, sinEtCache: SIN_ETCACHE, corridaValida },
@@ -679,14 +925,24 @@ const salida = {
     "NO alcanza a los marcadores singleton — NO ESTABLECIDOS con su denominador",
     "NO mide caja ni tipografía: sólo los 4 ejes de ritmo",
   ],
+  /* ⚠ SÓLO con la bandera puesta, para que los dos caminos existentes emitan
+     un JSON BYTE-IDÉNTICO y la guarda de §regla 5 sirva de NO-OP (128.ª). */
+  ...(SIN_EMPAREJAR ? { porDocumento: analisisPorDocumento } : {}),
 };
 
 /* ═══ EL NOMBRE LO DESVÍA LA SONDA, no quien la lanza (§regla 24 higiene) ══
  * Si el modo no es el canónico —otro dominio, tratamiento activo, o corrida
  * inválida— el nombre canónico NO se toca. Lo peor de §regla 7 es un fichero
  * con nombre de medida y contenido de control. */
+/* El desvío lo hace LA SONDA, no quien la lanza (§regla 24, mitad de higiene):
+   si hay un sabotaje activo y nadie nombró la corrida, el nombre CANÓNICO
+   quedaría al alcance de un control, y lo que sale es un fichero con nombre de
+   medida y contenido de sabotaje. Se comprueban TODAS las banderas, incluidas
+   las que añadió la 128.ª. */
 let sufijo = "";
-if (SIN_ETCACHE) sufijo = "-neg-sin-etcache";
+if (NEG_SIN_ORDINAL) sufijo = `-neg-sin-ordinal${SIN_EMPAREJAR ? "-por-documento" : ""}${DOMINIO === "lote" ? "-lote" : ""}`;
+else if (SIN_EMPAREJAR) sufijo = `-por-documento${DOMINIO === "lote" ? "-lote" : "-familia"}`;
+else if (SIN_ETCACHE) sufijo = "-neg-sin-etcache";
 else if (DOMINIO === "lote") sufijo = "-control-lote";
 else if (!corridaValida) sufijo = "-neg-sin-et-cache-de-los-2-vecinos";
 if (sufijo) console.log(`⚠ MODO NO CANÓNICO (dominio=${DOMINIO}${SIN_ETCACHE ? " · SIN_ETCACHE" : ""}${corridaValida ? "" : " · CORRIDA INVÁLIDA"}) — la salida se DESVÍA a «escalon1-varianza-127${sufijo}»`);
