@@ -151,7 +151,6 @@
    "instancias": 70,
    "conSrcset": 16,
    "nRutas": 55,
-   "nVariantes": 64,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -174,7 +173,6 @@
    "instancias": 27,
    "conSrcset": 5,
    "nRutas": 7,
-   "nVariantes": 13,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -189,7 +187,6 @@
    "instancias": 2,
    "conSrcset": 0,
    "nRutas": 0,
-   "nVariantes": 0,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -214,7 +211,6 @@
    "instancias": 1,
    "conSrcset": 9,
    "nRutas": 9,
-   "nVariantes": 27,
    "faltanWin": [
     "/images/uploads/2023/09/PM2.5_belgium.webp"
    ],
@@ -235,63 +231,62 @@
    "tipo": "html RICO→<img> dentro",
    "requerido": false,
    "rutas": [
-    "/images/uploads/2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430-1024x576.jpg",
-    "/images/uploads/2020/08/donostia-urban-air-quality-1-1024x683.jpg",
+    "/images/uploads/2020/06/efectos-de-la-contaminacion-en-la-salud-e1592810048430.jpg",
+    "/images/uploads/2020/08/donostia-urban-air-quality-1.jpg",
     "/images/uploads/2020/09/contaminacion-del-aire-en-el-deporte_.jpg",
     "/images/uploads/2020/09/semana-movilidad-europea-particulas-y-gases.jpg",
     "/images/uploads/2020/11/detectores-de-calidad-del-aire-trafico-coronavirus.jpg",
     "/images/uploads/2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg",
-    "/images/uploads/2022/12/WBGT-300x300-1-300x300.jpg",
     "/images/uploads/2022/12/WBGT-300x300-1.jpg",
-    "/images/uploads/2022/12/apogee-su-202-ultraviolet-A-sensor-300x163.jpg",
     "/images/uploads/2022/12/apogee-su-202-ultraviolet-A-sensor.jpg",
-    "/images/uploads/2022/12/kunak-air-indoor-charger-300x300.jpg",
     "/images/uploads/2022/12/kunak-air-indoor-charger.jpg",
-    "/images/uploads/2022/12/kunak_IMG_0015-300x300-1-300x300.jpg",
     "/images/uploads/2022/12/kunak_IMG_0015-300x300-1.jpg",
-    "/images/uploads/2022/12/kunak_IMG_0017-300x300-2-300x300.jpg",
     "/images/uploads/2022/12/kunak_IMG_0017-300x300-2.jpg",
-    "/images/uploads/2022/12/kunak_IMG_0047-copia-300x300-1-300x300.jpg",
     "/images/uploads/2022/12/kunak_IMG_0047-copia-300x300-1.jpg",
-    "/images/uploads/2022/12/kunak_IMG_0061-copia-300X300-300x300.jpg",
     "/images/uploads/2022/12/kunak_IMG_0061-copia-300X300.jpg",
-    "/images/uploads/2022/12/pyranometer-300x300.jpg",
+    "/images/uploads/2022/12/kunak_IMG_0061-copia.jpg",
     "/images/uploads/2022/12/pyranometer.jpg",
-    "/images/uploads/2022/12/rain-gauge-300x300.jpg",
     "/images/uploads/2022/12/rain-gauge.jpg",
     "/images/uploads/2023/01/Sound-level-meter.jpg",
     "/images/uploads/2023/01/certificate-CE-1.svg",
     "/images/uploads/2023/01/certificate-FCC-1.svg",
     "/images/uploads/2023/01/certificate-rohs.svg",
-    "/images/uploads/2023/01/construction-1920x1024-1-1024x546.jpg",
+    "/images/uploads/2023/01/construction-1920x1024-1.jpg",
     "/images/uploads/2023/01/construction.svg",
-    "/images/uploads/2023/01/industry-1920x1024-1-1024x546.jpg",
+    "/images/uploads/2023/01/industry-1920x1024-1.jpg",
     "/images/uploads/2023/01/industry.svg",
-    "/images/uploads/2023/01/mining-1920x1024-1-1024x546.jpg",
+    "/images/uploads/2023/01/mining-1920x1024-1.jpg",
     "/images/uploads/2023/01/mining.svg",
-    "/images/uploads/2023/01/research-1920-1024x546.jpg",
+    "/images/uploads/2023/01/research-1920.jpg",
     "/images/uploads/2023/01/research.svg",
-    "/images/uploads/2023/01/urban-1920-1024x546.jpg",
+    "/images/uploads/2023/01/urban-1920.jpg",
     "/images/uploads/2023/01/urban-2.svg",
     "/images/uploads/2023/02/ports-airports-2.svg",
     "/images/uploads/2023/03/kunak360_IMG_01.jpg",
-    "/images/uploads/2023/03/ports-1920-1024x546.jpg",
+    "/images/uploads/2023/03/ports-1920.jpg",
     "/images/uploads/2024/07/gashood-air-pro-lite.jpg",
     "/images/uploads/2024/07/gashood-air-pro.jpg",
-    "/images/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-1024x683.jpg",
-    "/images/uploads/2025/03/Industria-petroquimica-1024x686.jpg",
-    "/images/uploads/2025/05/contaminacion_acustica-1024x683.jpg",
-    "/images/uploads/2025/07/litoral-con-sargazo-y-vida-marina-1024x683.jpg",
+    "/images/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak.jpg",
+    "/images/uploads/2025/03/Industria-petroquimica.jpg",
+    "/images/uploads/2025/05/contaminacion_acustica.jpg",
+    "/images/uploads/2025/07/litoral-con-sargazo-y-vida-marina.jpg",
     "/images/uploads/2026/05/639130508516830000.jpg",
-    "/images/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1-1024x683.jpg",
-    "/images/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1-1024x683.jpg"
+    "/images/uploads/2026/05/Control-avanzado-de-gases-y-olores-en-el-vertedero-de-Valdemingomez-1.jpg",
+    "/images/uploads/2026/05/Odour-monitoring-in-wastewater-treatment-plants-in-Oman-NAMA-Kunak-1.jpg"
    ],
    "instancias": 100,
    "conSrcset": 34,
-   "nRutas": 50,
-   "nVariantes": 50,
-   "faltanWin": [],
-   "faltanLinux": []
+   "nRutas": 42,
+   "faltanWin": [
+    "/images/uploads/2022/12/kunak_IMG_0061-copia.jpg",
+    "/images/uploads/2023/01/mining-1920x1024-1.jpg",
+    "/images/uploads/2023/03/ports-1920.jpg"
+   ],
+   "faltanLinux": [
+    "/images/uploads/2022/12/kunak_IMG_0061-copia.jpg",
+    "/images/uploads/2023/01/mining-1920x1024-1.jpg",
+    "/images/uploads/2023/03/ports-1920.jpg"
+   ]
   },
   {
    "canal": "arquetipos.bloques.icono-arq.contenido",
@@ -304,7 +299,6 @@
    "instancias": 0,
    "conSrcset": 0,
    "nRutas": 0,
-   "nVariantes": 0,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -319,7 +313,6 @@
    "instancias": 3,
    "conSrcset": 0,
    "nRutas": 0,
-   "nVariantes": 0,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -334,7 +327,6 @@
    "instancias": 1,
    "conSrcset": 0,
    "nRutas": 0,
-   "nVariantes": 0,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -349,7 +341,6 @@
    "instancias": 1,
    "conSrcset": 0,
    "nRutas": 0,
-   "nVariantes": 0,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -364,7 +355,6 @@
    "instancias": 1,
    "conSrcset": 0,
    "nRutas": 0,
-   "nVariantes": 0,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -379,7 +369,6 @@
    "instancias": 1,
    "conSrcset": 0,
    "nRutas": 0,
-   "nVariantes": 0,
    "faltanWin": [],
    "faltanLinux": []
   },
@@ -394,7 +383,6 @@
    "instancias": 0,
    "conSrcset": 0,
    "nRutas": 0,
-   "nVariantes": 0,
    "faltanWin": [],
    "faltanLinux": []
   }
@@ -453,15 +441,36 @@
    "candidatos": [
     "so2_france.webp"
    ]
+  },
+  {
+   "canal": "arquetipos.bloques.texto-arq.contenido",
+   "requerido": false,
+   "ruta": "/images/uploads/2022/12/kunak_IMG_0061-copia.jpg",
+   "clase": "AUSENTE",
+   "candidatos": []
+  },
+  {
+   "canal": "arquetipos.bloques.texto-arq.contenido",
+   "requerido": false,
+   "ruta": "/images/uploads/2023/01/mining-1920x1024-1.jpg",
+   "clase": "AUSENTE",
+   "candidatos": []
+  },
+  {
+   "canal": "arquetipos.bloques.texto-arq.contenido",
+   "requerido": false,
+   "ruta": "/images/uploads/2023/03/ports-1920.jpg",
+   "clase": "AUSENTE",
+   "candidatos": []
   }
  ],
  "sinTraducir": 0,
  "resumen": {
   "canalesDeclarados": 12,
-  "rutasDistintas": 121,
-  "sinCapturarWin": 1,
-  "sinCapturarLinux": 6,
+  "rutasDistintas": 113,
+  "sinCapturarWin": 4,
+  "sinCapturarLinux": 9,
   "renombre": 6,
-  "ausente": 0
+  "ausente": 3
  }
 }

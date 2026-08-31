@@ -18,11 +18,11 @@
 
 ## (b) CARDINAL POR CANAL — cruzado contra LAS DOS guardas
    win = existsSync (case-INsensitive, lo que corre aquí) · linux = byte a byte (el que manda)
-   ✅ arquetipos.bloques.icono-arq.imagen              inst  70 | rutas  55 | faltan win  0 | faltan LINUX  0 | conSrcset 16 · variantes(fuera del recuento) 64
-   ✅ arquetipos.bloques.imagen-arq.imagen             inst  27 | rutas   7 | faltan win  0 | faltan LINUX  0 | conSrcset 5 · variantes(fuera del recuento) 13
+   ✅ arquetipos.bloques.icono-arq.imagen              inst  70 | rutas  55 | faltan win  0 | faltan LINUX  0 | conSrcset 16
+   ✅ arquetipos.bloques.imagen-arq.imagen             inst  27 | rutas   7 | faltan win  0 | faltan LINUX  0 | conSrcset 5
    — arquetipos.bloques.video-arq.portada             inst   2 | rutas   0 | faltan win  0 | faltan LINUX  0
-   ❗ arquetipos.bloques.galeria-arq.items.imagen      inst   1 | rutas   9 | faltan win  1 | faltan LINUX  6 | conSrcset 9 · variantes(fuera del recuento) 27
-   ✅ arquetipos.bloques.texto-arq.contenido           inst 100 | rutas  50 | faltan win  0 | faltan LINUX  0 | conSrcset 34 · variantes(fuera del recuento) 50
+   ❗ arquetipos.bloques.galeria-arq.items.imagen      inst   1 | rutas   9 | faltan win  1 | faltan LINUX  6 | conSrcset 9
+   ❗ arquetipos.bloques.texto-arq.contenido           inst 100 | rutas  42 | faltan win  3 | faltan LINUX  3 | conSrcset 34
    — arquetipos.bloques.icono-arq.contenido           inst   0 | rutas   0 | faltan win  0 | faltan LINUX  0
    — arquetipos.bloques.slider-ancho-arq.contenido    inst   3 | rutas   0 | faltan win  0 | faltan LINUX  0
    — arquetipos.bloques.slider-arq.contenido          inst   1 | rutas   0 | faltan win  0 | faltan LINUX  0
@@ -50,6 +50,12 @@
    RENOMBRE  REQ  /images/uploads/2023/09/SO2_france.webp
               canal arquetipos.bloques.galeria-arq.items.imagen
               candidato en el repo: so2_france.webp
+   AUSENTE   opt  /images/uploads/2022/12/kunak_IMG_0061-copia.jpg
+              canal arquetipos.bloques.texto-arq.contenido
+   AUSENTE   opt  /images/uploads/2023/01/mining-1920x1024-1.jpg
+              canal arquetipos.bloques.texto-arq.contenido
+   AUSENTE   opt  /images/uploads/2023/03/ports-1920.jpg
+              canal arquetipos.bloques.texto-arq.contenido
 
 ## (d) CONTROLES
    ✅ los canales se DERIVAN del fuente de la config (no de una lista a mano)
@@ -62,10 +68,10 @@
         158 <img>
 
 ==============================================================================
-VEREDICTO · 12 canales · 121 rutas distintas
-   sin capturar con la guarda de WINDOWS ... 1
-   sin capturar con la guarda de LINUX ..... 6   ← el que manda
-   de ellas RENOMBRE (sin red) 6 · AUSENTE (necesita captura) 0
+VEREDICTO · 12 canales · 113 rutas distintas
+   sin capturar con la guarda de WINDOWS ... 4
+   sin capturar con la guarda de LINUX ..... 9   ← el que manda
+   de ellas RENOMBRE (sin red) 6 · AUSENTE (necesita captura) 3
 ==============================================================================
 
 congelado: docs/research/cola-larga/derivaciones/canales-media-131.json

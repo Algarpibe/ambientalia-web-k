@@ -1,0 +1,44 @@
+==============================================================================
+131.ª · ESCALÓN 1 — ¿queda contenido SIN SITIO en `arquetipos`?
+==============================================================================
+
+## PRODUCTO
+   trozos de contenido: 761 | módulos de primer nivel: 90
+   N1 · fuera de todo módulo ...... 0 trozos (0 chars de texto)
+   N2 · tipos SIN bloque .......... 0
+   N3 · canales SIN campo ......... 0
+
+## CATALOGO
+   trozos de contenido: 279 | módulos de primer nivel: 35
+   N1 · fuera de todo módulo ...... 0 trozos (0 chars de texto)
+   N2 · tipos SIN bloque .......... 0
+   N3 · canales SIN campo ......... 0
+
+## SOFTWARE
+   trozos de contenido: 225 | módulos de primer nivel: 70
+   N1 · fuera de todo módulo ...... 0 trozos (0 chars de texto)
+   N2 · tipos SIN bloque .......... 0
+   N3 · canales SIN campo ......... 0
+
+## SOFTWARE-corta
+   trozos de contenido: 124 | módulos de primer nivel: 36
+   N1 · fuera de todo módulo ...... 0 trozos (0 chars de texto)
+   N2 · tipos SIN bloque .......... 0
+   N3 · canales SIN campo ......... 0
+
+## CONTROLES
+   ✅ el MODELO se deriva del fuente, y los destinos de A_SLUG EXISTEN en la unión
+        11 bloques · 11 tipos mapeados · 0 destinos muertos
+   ✅ los campos RICOS se derivan del fuente (`campoHtml`), no se listan
+        7 bloques con campo rico: texto-arq · icono-arq · slider-ancho-arq · slider-arq · codigo-arq · cta-arq · tabla-arq
+   ✅ §sondas 4bis · la comprobación RECORRIÓ trozos (0 recorrido no puede salir verde)
+        1389 trozos en 4 documentos
+   ✅ cada documento aporta módulos de primer nivel (el recorrido no está mudo)
+        PRODUCTO 90 · CATALOGO 35 · SOFTWARE 70 · SOFTWARE-corta 36
+
+==============================================================================
+VEREDICTO · contenido SIN SITIO = 0   (N1 0 · N2 0 · N3 0)
+  ✅ el content type EXPRESA el corpus: nada del documento queda fuera.
+==============================================================================
+
+congelado: docs/research/cola-larga/derivaciones/sin-sitio-131.json

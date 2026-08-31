@@ -1,0 +1,274 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": "131.ª",
+ "escalon": 1,
+ "saboteada": null,
+ "pregunta": "¿queda contenido SIN SITIO? — recorre el DOCUMENTO, no los campos",
+ "alcance": {
+  "docs": [
+   "monitor-calidad-aire.html",
+   "accesorios.html",
+   "software-de-medicion-calidad-del-aire.html",
+   "kunak-api.html"
+  ],
+  "unidad": "trozo de contenido del cuerpo (texto no vacío · img · iframe · video)"
+ },
+ "noContesta": [
+  "NO mide el clon: es una propiedad del CORPUS contra el ESQUEMA",
+  "NO mide geometría ni ritmo: sólo si cada trozo tiene destino",
+  "NO abre el original"
+ ],
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "el MODELO se deriva del fuente, y los destinos de A_SLUG EXISTEN en la unión",
+   "detalle": "11 bloques · 11 tipos mapeados · 0 destinos muertos"
+  },
+  {
+   "ok": true,
+   "nombre": "§sondas 4bis · la comprobación RECORRIÓ trozos (0 recorrido no puede salir verde)",
+   "detalle": "1389 trozos en 4 documentos"
+  },
+  {
+   "ok": true,
+   "nombre": "cada documento aporta módulos de primer nivel (el recorrido no está mudo)",
+   "detalle": "PRODUCTO 90 · CATALOGO 35 · SOFTWARE 70 · SOFTWARE-corta 36"
+  }
+ ],
+ "informe": [
+  {
+   "arquetipo": "PRODUCTO",
+   "trozos": 761,
+   "modulosN1": 90,
+   "N1_fueraDeTodoModulo": 0,
+   "N1_chars": 0,
+   "N1_muestra": [],
+   "N2_tiposSinBloque": [],
+   "N3_canalesSinCampo": [
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/03/kunak360_IMG_01.jpg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/urban-2.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/industry.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/02/ports-airports-2.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/construction.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/mining.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/research.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/certificate-FCC-1.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/certificate-CE-1.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/certificate-rohs.svg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0017-300x300"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0015-300x300"
+    }
+   ],
+   "N3_n": 31
+  },
+  {
+   "arquetipo": "CATALOGO",
+   "trozos": 279,
+   "modulosN1": 35,
+   "N1_fueraDeTodoModulo": 0,
+   "N1_chars": 0,
+   "N1_muestra": [],
+   "N2_tiposSinBloque": [],
+   "N3_canalesSinCampo": [
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0017-300x300"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0015-300x300"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/kunak-air-indoor-charg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0047-copia-3"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0061-copia-3"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/rain-gauge.jpg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2023/01/Sound-level-meter.jpg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/pyranometer.jpg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/apogee-su-202-ultravio"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2022/12/WBGT-300x300-1.jpg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2024/07/gashood-air-pro.jpg"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2024/07/gashood-air-pro-lite.j"
+    }
+   ],
+   "N3_n": 15
+  },
+  {
+   "arquetipo": "SOFTWARE",
+   "trozos": 225,
+   "modulosN1": 70,
+   "N1_fueraDeTodoModulo": 0,
+   "N1_chars": 0,
+   "N1_muestra": [],
+   "N2_tiposSinBloque": [],
+   "N3_canalesSinCampo": [
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2021/09/conferencia-de-las-par"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2020/09/contaminacion-del-aire"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2025/02/Control-de-la-contamin"
+    }
+   ],
+   "N3_n": 3
+  },
+  {
+   "arquetipo": "SOFTWARE-corta",
+   "trozos": 124,
+   "modulosN1": 36,
+   "N1_fueraDeTodoModulo": 0,
+   "N1_chars": 0,
+   "N1_muestra": [],
+   "N2_tiposSinBloque": [],
+   "N3_canalesSinCampo": [
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2025/03/Industria-petroquimica"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2020/08/donostia-urban-air-qua"
+    },
+    {
+     "tipo": "et_pb_text",
+     "slug": "texto-arq",
+     "clase": "img",
+     "muestra": "https://kunakair.com/wp-content/uploads/2020/09/semana-movilidad-europ"
+    }
+   ],
+   "N3_n": 3
+  }
+ ],
+ "resumen": {
+  "N1": 0,
+  "N2": 0,
+  "N3": 52,
+  "sinSitio": 52
+ }
+}

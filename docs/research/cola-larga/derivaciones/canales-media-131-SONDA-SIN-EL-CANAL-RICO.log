@@ -7,28 +7,14 @@
    arquetipos.bloques.imagen-arq.imagen             upload→media       REQUERIDO
    arquetipos.bloques.video-arq.portada             upload→media       opcional
    arquetipos.bloques.galeria-arq.items.imagen      upload→media       REQUERIDO  [en array]
-   arquetipos.bloques.texto-arq.contenido           html RICO→<img> dentro opcional
-   arquetipos.bloques.icono-arq.contenido           html RICO→<img> dentro opcional
-   arquetipos.bloques.slider-ancho-arq.contenido    html RICO→<img> dentro opcional
-   arquetipos.bloques.slider-arq.contenido          html RICO→<img> dentro opcional
-   arquetipos.bloques.codigo-arq.contenido          html RICO→<img> dentro opcional
-   arquetipos.bloques.cta-arq.contenido             html RICO→<img> dentro opcional
-   arquetipos.bloques.tabla-arq.contenido           html RICO→<img> dentro opcional
    arquetipos.seo.ogImage                           text→URL de asset  opcional
 
 ## (b) CARDINAL POR CANAL — cruzado contra LAS DOS guardas
    win = existsSync (case-INsensitive, lo que corre aquí) · linux = byte a byte (el que manda)
-   ✅ arquetipos.bloques.icono-arq.imagen              inst  70 | rutas  55 | faltan win  0 | faltan LINUX  0 | conSrcset 16 · variantes(fuera del recuento) 64
-   ✅ arquetipos.bloques.imagen-arq.imagen             inst  27 | rutas   7 | faltan win  0 | faltan LINUX  0 | conSrcset 5 · variantes(fuera del recuento) 13
+   ✅ arquetipos.bloques.icono-arq.imagen              inst  70 | rutas  55 | faltan win  0 | faltan LINUX  0 | conSrcset 16
+   ✅ arquetipos.bloques.imagen-arq.imagen             inst  27 | rutas   7 | faltan win  0 | faltan LINUX  0 | conSrcset 5
    — arquetipos.bloques.video-arq.portada             inst   2 | rutas   0 | faltan win  0 | faltan LINUX  0
-   ❗ arquetipos.bloques.galeria-arq.items.imagen      inst   1 | rutas   9 | faltan win  1 | faltan LINUX  6 | conSrcset 9 · variantes(fuera del recuento) 27
-   ✅ arquetipos.bloques.texto-arq.contenido           inst 100 | rutas  50 | faltan win  0 | faltan LINUX  0 | conSrcset 34 · variantes(fuera del recuento) 50
-   — arquetipos.bloques.icono-arq.contenido           inst   0 | rutas   0 | faltan win  0 | faltan LINUX  0
-   — arquetipos.bloques.slider-ancho-arq.contenido    inst   3 | rutas   0 | faltan win  0 | faltan LINUX  0
-   — arquetipos.bloques.slider-arq.contenido          inst   1 | rutas   0 | faltan win  0 | faltan LINUX  0
-   — arquetipos.bloques.codigo-arq.contenido          inst   1 | rutas   0 | faltan win  0 | faltan LINUX  0
-   — arquetipos.bloques.cta-arq.contenido             inst   1 | rutas   0 | faltan win  0 | faltan LINUX  0
-   — arquetipos.bloques.tabla-arq.contenido           inst   1 | rutas   0 | faltan win  0 | faltan LINUX  0
+   ❗ arquetipos.bloques.galeria-arq.items.imagen      inst   1 | rutas   9 | faltan win  1 | faltan LINUX  6 | conSrcset 9
    — arquetipos.seo.ogImage                           inst   0 | rutas   0 | faltan win  0 | faltan LINUX  0
 
 ## (c) AUSENCIAS CLASIFICADAS — y mandan trabajos DISTINTOS
@@ -53,16 +39,16 @@
 
 ## (d) CONTROLES
    ✅ los canales se DERIVAN del fuente de la config (no de una lista a mano)
-        12 canales
+        5 canales
    ✅ CONTROL · toda entrada de PORTAN_MEDIA casa con un canal DECLARADO (el defecto de la v1)
-        10 de 10 casan
+        4 de 4 casan
    ✅ CONTROL · el recorrido REPRODUCE el porDoc de la 126.ª
         PRODUCTO 90=90 · CATALOGO 35=35 · SOFTWARE 70=70 · SOFTWARE-corta 36=36
    ✅ el recorrido encuentra <img> dentro de los módulos (ni cero ni pleno)
-        158 <img>
+        106 <img>
 
 ==============================================================================
-VEREDICTO · 12 canales · 121 rutas distintas
+VEREDICTO · 5 canales · 71 rutas distintas
    sin capturar con la guarda de WINDOWS ... 1
    sin capturar con la guarda de LINUX ..... 6   ← el que manda
    de ellas RENOMBRE (sin red) 6 · AUSENTE (necesita captura) 0

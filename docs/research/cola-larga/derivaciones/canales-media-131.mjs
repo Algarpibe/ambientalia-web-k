@@ -115,6 +115,30 @@ for (const t of trozos) {
     });
   }
 }
+/* ⚠⚠ v3 · EL CANAL QUE LA v2 SE DEJO, Y ES EL #1 DE LOS QUE MATARON EL SEED:
+   **EL CUERPO RICO**. La v2 camino solo los `subida()`, o sea los canales
+   EXPLICITOS. Pero un `campoHtml` guarda HTML, y ese HTML puede traer `<img>`
+   dentro — que es literalmente la primera fila de la tabla de §EL INVENTARIO DE
+   MEDIA («el CUERPO rico | el seed murio al sembrar entradas-blog | 1889→28»).
+
+   Lo destapo el ESCALON 1: su N3 marco 52 `<img>` dentro de modulos
+   `et_pb_text`. Aquella exigencia estaba mal —un campo rico SI los expresa—
+   pero el rojo era util: esas 52 imagenes son media que NADIE habia contado.
+
+   > Un canal declarado se enumera por lo que PUEDE PORTAR UN FICHERO, no por
+   > su tipo de campo. `upload` es el canal explicito; un campo rico es un canal
+   > IMPLICITO, y su cero tambien se publica. */
+for (const t of trozos) {
+  for (const m of t.cuerpo.matchAll(/campoHtml\(\s*"([a-zA-Z]+)"/g))
+    canalesDeclarados.push({
+      canal: `arquetipos.bloques.${t.slug}.${m[1]}`,
+      bloque: t.slug,
+      campo: m[1],
+      anidado: false,
+      tipo: "html RICO→<img> dentro",
+      requerido: false,
+    });
+}
 if (/seoA/.test(fuenteColeccion))
   canalesDeclarados.push({
     canal: "arquetipos.seo.ogImage",
@@ -188,24 +212,55 @@ function censaModulos(html) {
 /* ═══════════════════════════════════════════════════════════════════════════
    (c) LAS RUTAS — traduccion URL→local, la MISMA de transformaciones.mjs
    ═══════════════════════════════════════════════════════════════════════════ */
+/* ⚠⚠ LA COLA VIAJA **VERBATIM** — y la v2/v3 se lo inventó.
+ *
+ * `transformaciones.mjs` L995-1003 lo dice con todas las letras: *«La cola viaja
+ * VERBATIM —con su `%`-encoding y su query si la trae—: lo único que cambia es
+ * el origen. Decodificar aquí cambiaría el `src` servido por uno equivalente
+ * pero distinto, y eso ya no sería un NO-OP»*. **El repo NO colapsa variantes.**
+ *
+ * Mi versión hacía `.replace(/-\d+x\d+(\.\w+)$/i, "$1")` «para colapsar la
+ * variante generada por WordPress», y eso convierte rutas que EXISTEN en rutas
+ * que no:
+ *
+ *   · `kunak_IMG_0061-copia-300X300.jpg`  → el `-300X300` es parte del NOMBRE
+ *   · `mining-1920x1024-1-1024x546.jpg`   → el fichero se llama así, entero
+ *   · `ports-1920-1024x546.jpg`           → idem
+ *
+ * Los tres salían como **AUSENTE** —«necesita campaña de captura»— y los tres
+ * están en `apps/web/public`. Era la §regla 3 cometida en MI PROPIO script: el
+ * comentario decía «la MISMA de transformaciones.mjs» y el código hacía otra
+ * cosa. Un comentario es lo único que nadie ejecuta.
+ * Evidencia: `canales-media-131-SONDA-COLAPSABA-VARIANTES.{json,log}`.
+ */
 const RE_SUBIDAS = /^https?:\/\/(?:www\.)?kunakair\.com\/wp-content\/uploads\/(.+)$/i;
 function aRutaLocal(url) {
   const m = RE_SUBIDAS.exec(url.trim());
   if (!m) return null;
-  return `/images/uploads/${m[1].replace(/-\d+x\d+(\.[a-z0-9]+)$/i, "$1")}`;
+  return `/images/uploads/${m[1]}`;
 }
 
-/** Los tipos de Divi que portan media, y a que canal declarado van. */
+/**
+ * Los tipos de Divi que portan media, y a que canal declarado van.
+ * ⚠ v3: los tipos cuyo contenido es un campo RICO tambien portan — sus `<img>`
+ * viajan DENTRO del HTML. Sin esta mitad el inventario se deja 52 imagenes.
+ */
 const PORTAN_MEDIA = {
   et_pb_image: "arquetipos.bloques.imagen-arq.imagen",
   et_pb_blurb: "arquetipos.bloques.icono-arq.imagen",
   et_pb_video: "arquetipos.bloques.video-arq.portada",
   et_pb_gallery: "arquetipos.bloques.galeria-arq.items.imagen",
+  et_pb_text: "arquetipos.bloques.texto-arq.contenido",
+  et_pb_code: "arquetipos.bloques.codigo-arq.contenido",
+  et_pb_cta: "arquetipos.bloques.cta-arq.contenido",
+  dvmd_table_maker: "arquetipos.bloques.tabla-arq.contenido",
+  et_pb_slider: "arquetipos.bloques.slider-arq.contenido",
+  et_pb_fullwidth_slider: "arquetipos.bloques.slider-ancho-arq.contenido",
 };
 
 const porDoc = {};
 const porCanal = new Map(
-  canalesDeclarados.map((c) => [c.canal, { ...c, rutas: new Set(), instancias: 0, conSrcset: 0 }]),
+  canalesDeclarados.map((c) => [c.canal, { ...c, rutas: new Set(), variantes: new Set(), instancias: 0, conSrcset: 0 }]),
 );
 /* ⚠ CONTROL DURO: toda entrada de PORTAN_MEDIA tiene que apuntar a un canal
    DECLARADO. Es exactamente lo que la v1 no comprobaba, y por eso su cero paso
@@ -214,7 +269,7 @@ const noCasan = Object.entries(PORTAN_MEDIA).filter(([, c]) => !porCanal.has(c))
 ctl(
   noCasan.length === 0,
   "CONTROL · toda entrada de PORTAN_MEDIA casa con un canal DECLARADO (el defecto de la v1)",
-  noCasan.length ? noCasan.map(([t, c]) => `${t} → ${c} NO DECLARADO`).join(" · ") : "4 de 4 casan",
+  noCasan.length ? noCasan.map(([t, c]) => `${t} → ${c} NO DECLARADO`).join(" · ") : `${Object.keys(PORTAN_MEDIA).length} de ${Object.keys(PORTAN_MEDIA).length} casan`,
 );
 
 const sinTraducir = [];
@@ -233,12 +288,31 @@ for (const d of DOCS) {
       imgsTotal++;
       const a = im[1];
       if (/\bsrcset\s*=/.test(a)) c.conSrcset++;
+      /* ⚠⚠ EL CANAL SE SIEMBRA CON EL `src`, NO CON LOS CANDIDATOS DEL `srcset`.
+       *
+       * La v3 metía los dos en el mismo `Set` y publicó **90 AUSENTE**, casi
+       * todos con forma `-1280x853` / `-480x320` / `-980x653`: las VARIANTES que
+       * WordPress genera. Eso invitaba a fichar una campaña de captura de 90
+       * ficheros que NO hay que capturar — un `upload` de Payload guarda **UN**
+       * fichero y regenera sus tamaños con `IMAGE_SIZES` (§CMS-0b).
+       *
+       * Es §sondas 4 en su cara de SOBRE-CASADO: no da error, da un número
+       * plausible DE MÁS, y el número grande se lee como hallazgo.
+       * Evidencia: `canales-media-131-SONDA-SRCSET-COMO-CANAL.{json,log}`.
+       *
+       * Los candidatos se siguen contando —§regla 43 exige publicar su cardinal
+       * porque dentro del `<img>` el `srcset` le GANA al `src`— pero **en su
+       * propio cubo**, fuera del recuento de lo que hay que sembrar. */
       const src = a.match(/\bsrc\s*=\s*["']([^"']+)["']/i)?.[1];
       const ss = a.match(/\bsrcset\s*=\s*["']([^"']+)["']/i)?.[1];
-      for (const u of [src, ...(ss ? ss.split(",").map((x) => x.trim().split(/\s+/)[0]) : [])].filter(Boolean)) {
-        const r = aRutaLocal(u);
+      if (src) {
+        const r = aRutaLocal(src);
         if (r) c.rutas.add(r);
-        else if (/^https?:/i.test(u)) sinTraducir.push({ doc: d.arquetipo, url: u.slice(0, 90) });
+        else if (/^https?:/i.test(src)) sinTraducir.push({ doc: d.arquetipo, url: src.slice(0, 90) });
+      }
+      for (const u of ss ? ss.split(",").map((x) => x.trim().split(/\s+/)[0]) : []) {
+        const r = aRutaLocal(u);
+        if (r) c.variantes.add(r);
       }
     }
     for (const po of m.html.matchAll(/\b(?:poster|data-src)\s*=\s*["']([^"']+)["']/gi)) {
@@ -285,10 +359,10 @@ for (const c of porCanal.values()) {
   const rutas = [...c.rutas].sort();
   const faltanWin = rutas.filter((r) => !existsSync(join(PUBLICO, decodeURIComponent(r))));
   const faltanLinux = rutas.filter((r) => !existeCaseSensitive(r));
-  salida.push({ ...c, rutas, nRutas: rutas.length, faltanWin, faltanLinux });
+  salida.push({ ...c, rutas, nRutas: rutas.length, nVariantes: c.variantes.size, faltanWin, faltanLinux, variantes: undefined });
   const sello = rutas.length === 0 ? "—" : faltanLinux.length === 0 ? "✅" : "❗";
   P(
-    `   ${sello} ${c.canal.padEnd(48)} inst ${String(c.instancias).padStart(3)} | rutas ${String(rutas.length).padStart(3)} | faltan win ${String(faltanWin.length).padStart(2)} | faltan LINUX ${String(faltanLinux.length).padStart(2)}${c.conSrcset ? ` | conSrcset ${c.conSrcset}` : ""}`,
+    `   ${sello} ${c.canal.padEnd(48)} inst ${String(c.instancias).padStart(3)} | rutas ${String(rutas.length).padStart(3)} | faltan win ${String(faltanWin.length).padStart(2)} | faltan LINUX ${String(faltanLinux.length).padStart(2)}${c.conSrcset ? ` | conSrcset ${c.conSrcset} · variantes(fuera del recuento) ${c.variantes.size}` : ""}`,
   );
 }
 

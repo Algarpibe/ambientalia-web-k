@@ -93,15 +93,25 @@ Enumerados **caminando la CONFIG**, cruzados contra **la guarda que PARA**
 (`existsSync(apps/web/public + ruta)`, la misma de `creaContexto().media`,
 `seed.mjs` L258-286). Derivación: `canales-media-131.{mjs,json,log}`.
 
-| canal | inst | rutas | faltan (win) | faltan (LINUX) | |
-|---|---|---|---|---|---|
-| `bloques.icono-arq.imagen` | 70 | 55 | 0 | **0** | opcional |
-| `bloques.imagen-arq.imagen` | 27 | 7 | 0 | **0** | REQUERIDO |
-| `bloques.video-arq.portada` | 2 | **0** | 0 | 0 | opcional — cero DECLARADO |
-| `bloques.galeria-arq.items.imagen` | 1 | 9 | 1 | **6** | REQUERIDO |
-| `seo.ogImage` | 0 | **0** | 0 | 0 | opcional — cero DECLARADO |
+| canal | tipo | inst | rutas | faltan win | faltan LINUX | variantes |
+|---|---|---|---|---|---|---|
+| `icono-arq.imagen` | upload | 70 | 55 | 0 | **0** | 64 |
+| `imagen-arq.imagen` | upload **REQ** | 27 | 7 | 0 | **0** | 13 |
+| `video-arq.portada` | upload | 2 | **0** | 0 | 0 | — |
+| `galeria-arq.items.imagen` | upload **REQ** | 1 | 9 | 1 | **6** | 27 |
+| **`texto-arq.contenido`** | **html RICO** | 100 | **50** | 0 | **0** | 50 |
+| `icono-arq.contenido` | html RICO | 0 | **0** | 0 | 0 | — |
+| `slider-ancho-arq.contenido` | html RICO | 3 | **0** | 0 | 0 | — |
+| `slider-arq.contenido` | html RICO | 1 | **0** | 0 | 0 | — |
+| `codigo-arq.contenido` | html RICO | 1 | **0** | 0 | 0 | — |
+| `cta-arq.contenido` | html RICO | 1 | **0** | 0 | 0 | — |
+| `tabla-arq.contenido` | html RICO | 1 | **0** | 0 | 0 | — |
+| `seo.ogImage` | text→URL | 0 | **0** | 0 | 0 | — |
 
-**Total: 5 canales · 71 rutas distintas.**
+**Total: 12 canales · 121 rutas distintas · 154 variantes de `srcset` publicadas
+FUERA del recuento** (§regla 43: dentro del `<img>` el `srcset` le gana al `src`,
+así que su cardinal se publica — pero lo que se SIEMBRA es un fichero por
+instancia, y Payload regenera los tamaños con `IMAGE_SIZES`).
 
 **Las 6 ausencias, CLASIFICADAS (§regla 27, sin cubo de sobras):**
 
@@ -125,6 +135,22 @@ Un `cms:seed` verde en esta máquina puede morir con 5 `MEDIA AUSENTE` más en u
 despliegue. Es §*el veredicto lo da la salida servida* con el contenedor puesto
 en **el sistema de ficheros**, y ninguna sonda del repo lo miraba.
 
+### ⚠⚠ El canal del CUERPO RICO lo destapó el ESCALÓN 1, no el PASO 0
+
+La v2 de este derivador caminó **sólo los `subida()`** — los canales
+*explícitos*— y publicó «5 canales · 0 AUSENTE». Lo que faltaba es el canal
+**#1 de la tabla de los tres que mataron el seed**: el CUERPO RICO. Un
+`campoHtml` guarda HTML, y ese HTML trae `<img>` dentro — **50 rutas** en
+`texto-arq.contenido`, sobre 100 instancias.
+
+Lo destapó el N3 del ESCALÓN 1 marcando 52 `<img>` dentro de módulos
+`et_pb_text`. Aquella exigencia estaba mal —un campo rico SÍ los expresa— **y el
+rojo era útil igualmente**: esas imágenes eran media que nadie había contado.
+
+> **Un canal se enumera por lo que PUEDE PORTAR UN FICHERO, no por su tipo de
+> campo.** `upload` es el canal explícito; un campo rico es un canal
+> **IMPLÍCITO**, y su cero también se publica — aquí 6 de los 7 ricos salen a 0.
+
 ### ⚠ Y el cero de la galería era del INSTRUMENTO — conservado
 
 La v1 de `canales-media-131.mjs` publicó **`galeria-arq · instancias 0`**. Su
@@ -140,9 +166,40 @@ convierte en **control duro** —toda entrada de `PORTAN_MEDIA` tiene que casar 
 canal declarado, y un no-casado es ROJO—. Evidencia:
 `canales-media-131-SONDA-CANAL-GALERIA-SIN-CASAR.{json,log}`.
 
-**Control de la v2, verde:** el recorrido REPRODUCE el `porDoc` de la 126.ª —
-**PRODUCTO 90 · CATÁLOGO 35 · SOFTWARE 70 · SOFTWARE-corta 36**. Sin eso, el
-recuento de media no valdría.
+**Control, verde en todas las versiones:** el recorrido REPRODUCE el `porDoc` de
+la 126.ª — **PRODUCTO 90 · CATÁLOGO 35 · SOFTWARE 70 · SOFTWARE-corta 36**. Sin
+eso, el recuento de media no valdría.
+
+### ⚠ Y las otras DOS versiones del instrumento, con lo que cada una publicó
+
+El inventario costó **cuatro versiones**, y las tres primeras publicaron números
+plausibles y falsos. Se conservan las tres:
+
+| versión | qué hacía mal | qué publicó |
+|---|---|---|
+| `-SONDA-CANAL-GALERIA-SIN-CASAR` | el canal de galería no casaba su nombre | `galeria-arq · instancias 0` |
+| `-SONDA-SIN-EL-CANAL-RICO` | caminaba sólo los `subida()` | «5 canales · **0 AUSENTE**» |
+| `-SONDA-COLAPSABA-VARIANTES` | `aRutaLocal` colapsaba `-\d+x\d+` | **3 AUSENTE** que existen en el repo |
+| `-SONDA-SRCSET-COMO-CANAL` | metía los candidatos del `srcset` en el recuento | **90 AUSENTE** |
+
+**Las dos últimas son la misma familia con el signo cambiado**, y por eso van
+juntas:
+
+1. **colapsar variantes** convertía rutas que EXISTEN en rutas que no
+   (`kunak_IMG_0061-copia-300X300.jpg` → el `-300X300` **es parte del nombre**).
+   Y era §regla 3 en mi propio script: el comentario decía *«la MISMA de
+   `transformaciones.mjs`»* y `transformaciones.mjs` dice literalmente **«la cola
+   viaja VERBATIM»**. Un comentario es lo único que nadie ejecuta;
+2. **contar el `srcset` como canal** daba **90 AUSENTE**, casi todos con forma
+   `-1280x853` / `-480x320`: las variantes que WordPress genera. Eso invitaba a
+   fichar una campaña de captura de 90 ficheros que **no hay que capturar** — un
+   `upload` guarda UN fichero y Payload regenera los tamaños (§CMS-0b). Es
+   §sondas 4 en su cara de **sobre-casado**: un número grande se lee como
+   hallazgo.
+
+> **Y la señal para desconfiar de los cuatro era la misma y estaba a la vista:
+> el veredicto cambió de 0 a 3 a 90 y volvió a 0 sin que el repo se moviera un
+> byte.** Lo que se movía era el instrumento.
 
 ---
 

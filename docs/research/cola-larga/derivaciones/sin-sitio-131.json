@@ -1,0 +1,95 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": "131.ª",
+ "escalon": 1,
+ "saboteada": null,
+ "pregunta": "¿queda contenido SIN SITIO? — recorre el DOCUMENTO, no los campos",
+ "alcance": {
+  "docs": [
+   "monitor-calidad-aire.html",
+   "accesorios.html",
+   "software-de-medicion-calidad-del-aire.html",
+   "kunak-api.html"
+  ],
+  "unidad": "trozo de contenido del cuerpo (texto no vacío · img · iframe · video)"
+ },
+ "noContesta": [
+  "NO mide el clon: es una propiedad del CORPUS contra el ESQUEMA",
+  "NO mide geometría ni ritmo: sólo si cada trozo tiene destino",
+  "NO abre el original"
+ ],
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "el MODELO se deriva del fuente, y los destinos de A_SLUG EXISTEN en la unión",
+   "detalle": "11 bloques · 11 tipos mapeados · 0 destinos muertos"
+  },
+  {
+   "ok": true,
+   "nombre": "los campos RICOS se derivan del fuente (`campoHtml`), no se listan",
+   "detalle": "7 bloques con campo rico: texto-arq · icono-arq · slider-ancho-arq · slider-arq · codigo-arq · cta-arq · tabla-arq"
+  },
+  {
+   "ok": true,
+   "nombre": "§sondas 4bis · la comprobación RECORRIÓ trozos (0 recorrido no puede salir verde)",
+   "detalle": "1389 trozos en 4 documentos"
+  },
+  {
+   "ok": true,
+   "nombre": "cada documento aporta módulos de primer nivel (el recorrido no está mudo)",
+   "detalle": "PRODUCTO 90 · CATALOGO 35 · SOFTWARE 70 · SOFTWARE-corta 36"
+  }
+ ],
+ "informe": [
+  {
+   "arquetipo": "PRODUCTO",
+   "trozos": 761,
+   "modulosN1": 90,
+   "N1_fueraDeTodoModulo": 0,
+   "N1_chars": 0,
+   "N1_muestra": [],
+   "N2_tiposSinBloque": [],
+   "N3_canalesSinCampo": [],
+   "N3_n": 0
+  },
+  {
+   "arquetipo": "CATALOGO",
+   "trozos": 279,
+   "modulosN1": 35,
+   "N1_fueraDeTodoModulo": 0,
+   "N1_chars": 0,
+   "N1_muestra": [],
+   "N2_tiposSinBloque": [],
+   "N3_canalesSinCampo": [],
+   "N3_n": 0
+  },
+  {
+   "arquetipo": "SOFTWARE",
+   "trozos": 225,
+   "modulosN1": 70,
+   "N1_fueraDeTodoModulo": 0,
+   "N1_chars": 0,
+   "N1_muestra": [],
+   "N2_tiposSinBloque": [],
+   "N3_canalesSinCampo": [],
+   "N3_n": 0
+  },
+  {
+   "arquetipo": "SOFTWARE-corta",
+   "trozos": 124,
+   "modulosN1": 36,
+   "N1_fueraDeTodoModulo": 0,
+   "N1_chars": 0,
+   "N1_muestra": [],
+   "N2_tiposSinBloque": [],
+   "N3_canalesSinCampo": [],
+   "N3_n": 0
+  }
+ ],
+ "resumen": {
+  "N1": 0,
+  "N2": 0,
+  "N3": 0,
+  "sinSitio": 0
+ }
+}
