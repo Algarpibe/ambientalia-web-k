@@ -1,0 +1,59 @@
+═══ PRECONDICIONES (comprobadas ANTES del launch, §regla 37) ═══
+  documentos   : 4/4 presentes
+  hojas        : 30/30 resueltas · sin resolver 0
+  media (<img>): 162/162 resueltas · sin resolver 0 · externas 0 · por nombre normalizado 1
+· clon PROPIO en http://127.0.0.1:57227 (listo en 1.3s)
+
+⚠ medidas/productos-cmp-1440.json ya existe y NO coincide: es una salida CONGELADA y no se pisa.
+   Esta corrida es IDÉNTICA a medidas/productos-cmp-1440-2026-08-31-2.json, que ya está: no se duplica.
+   Si de verdad quieres re-congelar: PISAR=1 npm run <la sonda>
+
+→ medidas/productos-cmp-1440-2026-08-31-2.json
+
+═══ RESULTADO ═══
+  pares comparados : 4 de 4
+  ejes comparados  : 130   distintos: 43   subpixel (<1/64, no cuentan): 3
+  filas huérfanas  : original 4 · clon 0
+  eje MÓDULOS      : 85 ejes comparados · distintos 33 · huérfanos orig 13 / clon 0
+                     filas CON marcador 3 · SIN marcador 22 (su 0 es del marcador que falta, NO del clon)
+  /monitor-calidad-aire                    filas orig=7 clon=6  hojas=19  http=null  difs=8  mods: 0 comparadas / 6 sin marcador, difs 0
+      fila 1 h                orig 646.63 → clon 715.11  Δ+68.48
+      fila 2 h                orig 2487.75 → clon 2289.97  Δ-197.78
+      fila 3 h                orig 5079.38 → clon 5656.16  Δ+576.78
+      fila 4 h                orig 697.14 → clon 878.11  Δ+180.97
+      fila 4 pb               orig 14.39 → clon 94  Δ+79.61
+      fila 5 h                orig 146 → clon 1375.81  Δ+1229.81
+  /accesorios                              filas orig=9 clon=8  hojas=17  http=null  difs=19  mods: 0 comparadas / 8 sin marcador, difs 0
+      fila 1 h                orig 437.98 → clon 423.36  Δ-14.62
+      fila 1 pb               orig 8 → clon 0  Δ-8
+      fila 2 h                orig 313 → clon 129  Δ-184
+      fila 2 pt               orig 20 → clon 64  Δ+44
+      fila 2 pb               orig 32 → clon 0  Δ-32
+      fila 3 h                orig 360.14 → clon 361.34  Δ+1.2
+  /software-de-medicion-calidad-del-aire   filas orig=7 clon=6  hojas=16  http=null  difs=8  mods: 0 comparadas / 5 sin marcador, difs 1
+      fila 1 h                orig 656.53 → clon 642.84  Δ-13.69
+      fila 2 h                orig 1801.52 → clon 1776.72  Δ-24.8
+      fila 3 h                orig 3871.56 → clon 5543.16  Δ+1671.6
+      fila 4 h                orig 715.14 → clon 878.13  Δ+162.99
+      fila 4 pb               orig 14.39 → clon 94  Δ+79.61
+      fila 5 h                orig 146 → clon 1425.81  Δ+1279.81
+      MOD fila 2 nModulos     orig 19 → clon 6  Δ-13
+  /kunak-api                               filas orig=7 clon=6  hojas=16  http=null  difs=8  mods: 3 comparadas / 3 sin marcador, difs 32
+      fila 1 h                orig 544.2 → clon 535.17  Δ-9.03
+      fila 2 h                orig 775.36 → clon 757.78  Δ-17.58
+      fila 3 h                orig 570.5 → clon 578.38  Δ+7.88
+      fila 4 h                orig 603.94 → clon 735.31  Δ+131.37
+      fila 4 pb               orig 14.39 → clon 94  Δ+79.61
+      fila 5 h                orig 146 → clon 1425.81  Δ+1279.81
+      MOD fila 1 m0 mb           orig 31.67 → clon 0  Δ-31.67
+      MOD fila 1 m1 h            orig 126.88 → clon 116  Δ-10.88
+      MOD fila 1 m1 mb           orig 31.67 → clon 0  Δ-31.67
+      MOD fila 1 m1 pb           orig 10.88 → clon 0  Δ-10.88
+      MOD fila 1 m2 pb           orig 0 → clon 10  Δ+10
+      MOD fila 1 m3 mb           orig 31.67 → clon 27.81  Δ-3.86
+      MOD fila 1 m4 h            orig 74 → clon 44  Δ-30
+      MOD fila 1 m4 mb           orig 60 → clon 90  Δ+30
+
+✓ evaluadas 4/4 pares · 130 ejes de fila · 85 de módulo
+EXIT 4 — 43 ejes de FILA distintos entre original y clon.
+  ✓ evaluadas 4/4 pares ruta×ancho · productos-cmp

@@ -1,0 +1,971 @@
+{
+  "meta": {
+    "sonda": "productos-cmp",
+    "tanda": "123.ª",
+    "fecha": "2026-08-31",
+    "ancho": 1440,
+    "lado": "DOS — ORIGINAL: captura de corpus/productos por file:// con sus hojas de corpus/css, red cortada. CLON: next start. La intercepción se instala en LOS DOS lados (§regla 32).",
+    "saboteada": null,
+    "acredita": true,
+    "porQueNoAcredita": null
+  },
+  "precondiciones": {
+    "documentos": {
+      "presentes": 4,
+      "total": 4,
+      "faltan": []
+    },
+    "hojas": {
+      "pedidas": 30,
+      "resueltas": 30,
+      "sinResolver": []
+    },
+    "media": {
+      "pedidas": 162,
+      "resueltas": 162,
+      "externas": 0,
+      "porNombreNormalizado": [
+        "https://kunakair.com/wp-content/uploads/2023/09/PM2.5_belgium.webp"
+      ],
+      "sinResolver": []
+    }
+  },
+  "resumen": {
+    "pares": 4,
+    "ejesComparados": 130,
+    "distintos": 43,
+    "huerfanasO": 4,
+    "huerfanasC": 0,
+    "subpixel": 3,
+    "modulos": {
+      "ejesComparados": 85,
+      "distintos": 33,
+      "huerfanosO": 13,
+      "huerfanosC": 0,
+      "filasComparadas": 3,
+      "filasSinMarcador": 22,
+      "filasParciales": 1,
+      "rutasSinNingunMarcador": [
+        "/monitor-calidad-aire",
+        "/accesorios",
+        "/software-de-medicion-calidad-del-aire"
+      ]
+    },
+    "ejesExcluidos": {}
+  },
+  "informe": [
+    {
+      "ruta": "/monitor-calidad-aire",
+      "arquetipo": "PRODUCTO",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 9,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 19,
+      "httpClon": null,
+      "nDifs": 8,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 646.63,
+          "clon": 715.11,
+          "delta": 68.48
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 2487.75,
+          "clon": 2289.97,
+          "delta": -197.78
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 5079.38,
+          "clon": 5656.16,
+          "delta": 576.78
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 697.14,
+          "clon": 878.11,
+          "delta": 180.97
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 94,
+          "delta": 79.61
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 146,
+          "clon": 1375.81,
+          "delta": 1229.81
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 77.6,
+          "delta": 77.6
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 72,
+          "clon": 121.6,
+          "delta": 49.6
+        }
+      ],
+      "subpixel": {
+        "n": 1,
+        "casos": [
+          {
+            "fila": 3,
+            "eje": "pt",
+            "orig": 57.59,
+            "clon": 57.6,
+            "delta": 0.01
+          }
+        ]
+      },
+      "modulos": {
+        "filasComparadas": 0,
+        "filasSinMarcador": 6,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": []
+      },
+      "modulosSinMarcador": {
+        "motivo": "el clon todavía no emite `data-modulo` en estas filas: su 0 es del marcador que falta, NO del clon",
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clon": 0,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 14,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 28,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 35,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clon": 0,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    },
+    {
+      "ruta": "/accesorios",
+      "arquetipo": "CATALOGO",
+      "filas": {
+        "orig": 9,
+        "clon": 8,
+        "origEnElDOM": 9,
+        "clonEnElDOM": 8
+      },
+      "hojasAplicadas": 17,
+      "httpClon": null,
+      "nDifs": 19,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 437.98,
+          "clon": 423.36,
+          "delta": -14.62
+        },
+        {
+          "fila": 1,
+          "eje": "pb",
+          "orig": 8,
+          "clon": 0,
+          "delta": -8
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 313,
+          "clon": 129,
+          "delta": -184
+        },
+        {
+          "fila": 2,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 2,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 360.14,
+          "clon": 361.34,
+          "delta": 1.2
+        },
+        {
+          "fila": 3,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 32,
+          "delta": 32
+        },
+        {
+          "fila": 3,
+          "eje": "pb",
+          "orig": 28.8,
+          "clon": 0,
+          "delta": -28.8
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 1476.47,
+          "clon": 1504.47,
+          "delta": 28
+        },
+        {
+          "fila": 4,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 4835.06,
+          "clon": 5138.38,
+          "delta": 303.32
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 20,
+          "clon": 64,
+          "delta": 44
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 32,
+          "clon": 0,
+          "delta": -32
+        },
+        {
+          "fila": 6,
+          "eje": "h",
+          "orig": 697.14,
+          "clon": 878.13,
+          "delta": 180.99
+        },
+        {
+          "fila": 6,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 94,
+          "delta": 79.61
+        },
+        {
+          "fila": 7,
+          "eje": "h",
+          "orig": 146,
+          "clon": 1375.81,
+          "delta": 1229.81
+        },
+        {
+          "fila": 7,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 77.6,
+          "delta": 77.6
+        },
+        {
+          "fila": 7,
+          "eje": "pb",
+          "orig": 72,
+          "clon": 121.6,
+          "delta": 49.6
+        }
+      ],
+      "subpixel": {
+        "n": 0,
+        "casos": []
+      },
+      "modulos": {
+        "filasComparadas": 0,
+        "filasSinMarcador": 8,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": []
+      },
+      "modulosSinMarcador": {
+        "motivo": "el clon todavía no emite `data-modulo` en estas filas: su 0 es del marcador que falta, NO del clon",
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clon": 0,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 5,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 2,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 2,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 7,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 5,
+            "orig": 11,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 6,
+            "orig": 4,
+            "clon": 0,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 7,
+            "orig": 1,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "arquetipo": "SOFTWARE",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 8,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 8,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 656.53,
+          "clon": 642.84,
+          "delta": -13.69
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 1801.52,
+          "clon": 1776.72,
+          "delta": -24.8
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 3871.56,
+          "clon": 5543.16,
+          "delta": 1671.6
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 715.14,
+          "clon": 878.13,
+          "delta": 162.99
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 94,
+          "delta": 79.61
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 146,
+          "clon": 1425.81,
+          "delta": 1279.81
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 77.6,
+          "delta": 77.6
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 72,
+          "clon": 121.6,
+          "delta": 49.6
+        }
+      ],
+      "subpixel": {
+        "n": 1,
+        "casos": [
+          {
+            "fila": 3,
+            "eje": "pt",
+            "orig": 57.59,
+            "clon": 57.6,
+            "delta": 0.01
+          }
+        ]
+      },
+      "modulos": {
+        "filasComparadas": 0,
+        "filasSinMarcador": 5,
+        "filasParciales": 1,
+        "parciales": [
+          {
+            "fila": 2,
+            "orig": 19,
+            "clon": 6,
+            "clonHijosDirectos": 2,
+            "motivo": "el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)"
+          }
+        ],
+        "nDifs": 1,
+        "difs": [
+          {
+            "fila": 2,
+            "eje": "nModulos",
+            "orig": 19,
+            "clon": 6,
+            "delta": -13
+          }
+        ],
+        "detalle": []
+      },
+      "modulosSinMarcador": {
+        "motivo": "el clon todavía no emite `data-modulo` en estas filas: su 0 es del marcador que falta, NO del clon",
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clon": 0,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 7,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 34,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clon": 0,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    },
+    {
+      "ruta": "/kunak-api",
+      "arquetipo": "SOFTWARE (variante corta)",
+      "filas": {
+        "orig": 7,
+        "clon": 6,
+        "origEnElDOM": 7,
+        "clonEnElDOM": 6
+      },
+      "hojasAplicadas": 16,
+      "httpClon": null,
+      "nDifs": 8,
+      "difs": [
+        {
+          "fila": 1,
+          "eje": "h",
+          "orig": 544.2,
+          "clon": 535.17,
+          "delta": -9.03
+        },
+        {
+          "fila": 2,
+          "eje": "h",
+          "orig": 775.36,
+          "clon": 757.78,
+          "delta": -17.58
+        },
+        {
+          "fila": 3,
+          "eje": "h",
+          "orig": 570.5,
+          "clon": 578.38,
+          "delta": 7.88
+        },
+        {
+          "fila": 4,
+          "eje": "h",
+          "orig": 603.94,
+          "clon": 735.31,
+          "delta": 131.37
+        },
+        {
+          "fila": 4,
+          "eje": "pb",
+          "orig": 14.39,
+          "clon": 94,
+          "delta": 79.61
+        },
+        {
+          "fila": 5,
+          "eje": "h",
+          "orig": 146,
+          "clon": 1425.81,
+          "delta": 1279.81
+        },
+        {
+          "fila": 5,
+          "eje": "pt",
+          "orig": 0,
+          "clon": 77.6,
+          "delta": 77.6
+        },
+        {
+          "fila": 5,
+          "eje": "pb",
+          "orig": 72,
+          "clon": 121.6,
+          "delta": 49.6
+        }
+      ],
+      "subpixel": {
+        "n": 1,
+        "casos": [
+          {
+            "fila": 1,
+            "eje": "pb",
+            "orig": 14.39,
+            "clon": 14.4,
+            "delta": 0.01
+          }
+        ]
+      },
+      "modulos": {
+        "filasComparadas": 3,
+        "filasSinMarcador": 3,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 32,
+        "difs": [
+          {
+            "fila": 1,
+            "modulo": 0,
+            "kind": "image",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 0,
+            "delta": -31.67
+          },
+          {
+            "fila": 1,
+            "modulo": 1,
+            "kind": "text",
+            "eje": "h",
+            "orig": 126.88,
+            "clon": 116,
+            "delta": -10.88
+          },
+          {
+            "fila": 1,
+            "modulo": 1,
+            "kind": "text",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 0,
+            "delta": -31.67
+          },
+          {
+            "fila": 1,
+            "modulo": 1,
+            "kind": "text",
+            "eje": "pb",
+            "orig": 10.88,
+            "clon": 0,
+            "delta": -10.88
+          },
+          {
+            "fila": 1,
+            "modulo": 2,
+            "kind": "text",
+            "eje": "pb",
+            "orig": 0,
+            "clon": 10,
+            "delta": 10
+          },
+          {
+            "fila": 1,
+            "modulo": 3,
+            "kind": "text",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.81,
+            "delta": -3.86
+          },
+          {
+            "fila": 1,
+            "modulo": 4,
+            "kind": null,
+            "eje": "h",
+            "orig": 74,
+            "clon": 44,
+            "delta": -30
+          },
+          {
+            "fila": 1,
+            "modulo": 4,
+            "kind": null,
+            "eje": "mb",
+            "orig": 60,
+            "clon": 90,
+            "delta": 30
+          },
+          {
+            "fila": 2,
+            "modulo": 0,
+            "kind": "image",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 0,
+            "delta": -31.67
+          },
+          {
+            "fila": 2,
+            "modulo": 1,
+            "kind": "text",
+            "eje": "pb",
+            "orig": 0,
+            "clon": 10,
+            "delta": 10
+          },
+          {
+            "fila": 2,
+            "modulo": 2,
+            "kind": "text",
+            "eje": "mb",
+            "orig": -1,
+            "clon": 19,
+            "delta": 20
+          },
+          {
+            "fila": 2,
+            "modulo": 3,
+            "kind": "text",
+            "eje": "pb",
+            "orig": 0,
+            "clon": 10,
+            "delta": 10
+          },
+          {
+            "fila": 2,
+            "modulo": 5,
+            "kind": "text",
+            "eje": "h",
+            "orig": 30.59,
+            "clon": 38.41,
+            "delta": 7.82
+          },
+          {
+            "fila": 2,
+            "modulo": 5,
+            "kind": "text",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 20,
+            "delta": -11.67
+          },
+          {
+            "fila": 2,
+            "modulo": 5,
+            "kind": "text",
+            "eje": "pb",
+            "orig": 0,
+            "clon": 7.82,
+            "delta": 7.82
+          },
+          {
+            "fila": 2,
+            "modulo": 6,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 2,
+            "modulo": 7,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 2,
+            "modulo": 8,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 2,
+            "modulo": 9,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 2,
+            "modulo": 10,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 2,
+            "modulo": 11,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 0,
+            "clon": 27.82,
+            "delta": 27.82
+          },
+          {
+            "fila": 3,
+            "modulo": 0,
+            "kind": "image",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 0,
+            "delta": -31.67
+          },
+          {
+            "fila": 3,
+            "modulo": 1,
+            "kind": "text",
+            "eje": "pb",
+            "orig": 0,
+            "clon": 10,
+            "delta": 10
+          },
+          {
+            "fila": 3,
+            "modulo": 3,
+            "kind": "blurb",
+            "eje": "h",
+            "orig": 107.59,
+            "clon": 129.19,
+            "delta": 21.6
+          },
+          {
+            "fila": 3,
+            "modulo": 3,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 3,
+            "modulo": 4,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 3,
+            "modulo": 5,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 3,
+            "modulo": 6,
+            "kind": "blurb",
+            "eje": "h",
+            "orig": 107.59,
+            "clon": 129.19,
+            "delta": 21.6
+          },
+          {
+            "fila": 3,
+            "modulo": 6,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 3,
+            "modulo": 7,
+            "kind": "blurb",
+            "eje": "h",
+            "orig": 107.59,
+            "clon": 129.19,
+            "delta": 21.6
+          },
+          {
+            "fila": 3,
+            "modulo": 7,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 31.67,
+            "clon": 27.82,
+            "delta": -3.85
+          },
+          {
+            "fila": 3,
+            "modulo": 8,
+            "kind": "blurb",
+            "eje": "mb",
+            "orig": 0,
+            "clon": 27.82,
+            "delta": 27.82
+          }
+        ],
+        "detalle": [
+          {
+            "fila": 1,
+            "orig": 6,
+            "clon": 6,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 12,
+            "clon": 12,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 9,
+            "clon": 9,
+            "clonHijosDirectos": 2
+          }
+        ]
+      },
+      "modulosSinMarcador": {
+        "motivo": "el clon todavía no emite `data-modulo` en estas filas: su 0 es del marcador que falta, NO del clon",
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clon": 0,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clon": 0,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clon": 0,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    }
+  ]
+}

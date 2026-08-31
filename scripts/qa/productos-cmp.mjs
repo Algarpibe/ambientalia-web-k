@@ -80,6 +80,11 @@ const MEDIA_RAICES = [
   { nombre: "media-corpus", dir: join(RAIZ, "media-corpus") },
 ];
 
+/* El selector del lado CLON vive en UNA constante: es lo que el 4.º sabotaje
+ * rompe, y tenerlo en un solo sitio es lo que hace que el sabotaje sea del
+ * DATO —un marcador que no casa, el modo de fallo real— y no de un umbral
+ * (§regla 28a). */
+const SEL_CLON_MOD = process.env.NEG_SELECTOR_CLON_FALSO ? "[data-modulo-QUE-NO-EXISTE]" : "[data-modulo]";
 const ANCHO = Number(env("ANCHO", "1440"));
 const MOVIL = ANCHO <= 480;
 
@@ -92,9 +97,22 @@ const MOVIL = ANCHO <= 480;
 const MISMO_LADO = !!env("NEG_MISMO_LADO");
 const DELTA = Number(env("NEG_DELTA", "0"));
 const SIN_INSUMOS = !!env("NEG_SIN_INSUMOS");
-const SABOTEADA = MISMO_LADO || DELTA || SIN_INSUMOS;
+/* ⚠⚠ EL 4.º SABOTAJE (129.ª) — el que los otros tres NO PUEDEN hacer.
+ *
+ * `NEG_MISMO_LADO` copia el lado del original sobre el del clon, así que el
+ * selector del LADO CLON —`[data-fila]`, y desde la 129.ª `[data-modulo]`—
+ * **nunca se ejercita contra marcado del clon**: 0 instancias separadoras para
+ * él (§regla 15, con lo compartido puesto en el MARCADO). El propio negativo lo
+ * tenía declarado y pedía este caso.
+ *
+ * Éste rompe el selector del clon **EN EL DATO** —no en un umbral (§regla 28a)—
+ * y reproduce el modo de fallo real: un marcador que no casa. Si la sonda sigue
+ * publicando filas y módulos comparados con él puesto, es que no los estaba
+ * leyendo del clon. */
+const SELECTOR_FALSO = !!env("NEG_SELECTOR_CLON_FALSO");
+const SABOTEADA = MISMO_LADO || DELTA || SIN_INSUMOS || SELECTOR_FALSO;
 if (SABOTEADA && !process.env.NEG) {
-  process.env.NEG = MISMO_LADO ? "mismo-lado" : DELTA ? `delta-${DELTA}` : "sin-insumos";
+  process.env.NEG = MISMO_LADO ? "mismo-lado" : DELTA ? `delta-${DELTA}` : SIN_INSUMOS ? "sin-insumos" : "selector-clon-falso";
   console.log(`⚠ sabotaje ACTIVO sin NEG=: la sonda desvía su salida a «${process.env.NEG}» ella misma (§regla 24)`);
 }
 
@@ -239,7 +257,7 @@ function conAssetsLocales(html) {
  * primero del DOM puede ser el escondido — y `getComputedStyle` sobre un
  * elemento sin caja no resuelve los porcentajes contra nada: devuelve ceros que
  * entran en la distribución como si fueran dato. */
-const extraer = (esOriginal) => {
+const extraer = (esOriginal, selClonMod) => {
   const r = (n) => Math.round(n * 100) / 100;
   const px = (v) => r(parseFloat(v) || 0);
   const conCaja = (el) => {
@@ -272,9 +290,20 @@ const extraer = (esOriginal) => {
     nFilasConCaja: vivas.length,
     filas: vivas.map((f, j) => {
       const cs = getComputedStyle(f);
-      const mods = [...f.querySelectorAll(esOriginal ? ".et_pb_module" : ":scope > div, :scope > *")]
-        .filter(conCaja)
-        .slice(0, 60);
+      /* ⚠⚠ EL SELECTOR DEL LADO CLON CAMBIÓ EN LA 129.ª: `[data-modulo]`.
+       *
+       * Hasta aquí era `:scope > div, :scope > *` —los hijos directos de la
+       * fila, que son las COLUMNAS— y por eso los dos lados NO denotaban el
+       * mismo conjunto: `14 → 2`, `12 → 2`. Con el clon emitiendo su marcador
+       * de sonda, el conjunto del clon pasa a ser el mismo que el del original.
+       *
+       * Los hijos directos se SIGUEN contando, como diagnóstico: es el número
+       * con el que se compararon todas las congeladas anteriores, y sin él una
+       * corrida nueva y una vieja no se pueden cruzar (§regla 5bis — arreglar
+       * un instrumento no arregla sus medidas: las CADUCA, y el cruce es lo
+       * único que dice cuánto). */
+      const selMod = esOriginal ? ".et_pb_module" : selClonMod;
+      const mods = [...f.querySelectorAll(selMod)].filter(conCaja).slice(0, 60);
       return {
         j,
         h: r(f.getBoundingClientRect().height),
@@ -282,11 +311,24 @@ const extraer = (esOriginal) => {
         mb: px(cs.marginBottom),
         pt: px(cs.paddingTop),
         pb: px(cs.paddingBottom),
-        nModulosEnElDOM: f.querySelectorAll(esOriginal ? ".et_pb_module" : ":scope > div, :scope > *").length,
+        nModulosEnElDOM: f.querySelectorAll(selMod).length,
         nModulosConCaja: mods.length,
+        /* diagnóstico, no comparación: lo que este mismo campo medía antes. */
+        nHijosDirectos: f.querySelectorAll(":scope > div, :scope > *").length,
         mods: mods.map((m, k) => {
           const ms = getComputedStyle(m);
-          return { k, h: r(m.getBoundingClientRect().height), mb: px(ms.marginBottom), pb: px(ms.paddingBottom) };
+          return {
+            k,
+            /* El `kind` que el clon escribe en el marcador, para que un hueco
+             * sea LOCALIZABLE y no sólo contable. En el original se deriva de
+             * la clase `et_pb_<tipo>_<n>`, que es lo que Divi emite. */
+            kind: esOriginal
+              ? (m.className.match(/\bet_pb_([a-z_]+?)_\d+\b/) || [, null])[1]
+              : m.getAttribute("data-modulo"),
+            h: r(m.getBoundingClientRect().height),
+            mb: px(ms.marginBottom),
+            pb: px(ms.paddingBottom),
+          };
         }),
       };
     }),
@@ -319,7 +361,7 @@ async function medirOriginal(doc) {
    * que nada este mal. El asentado lo hace `settle()`, en los DOS lados. */
   await page.setContent(conAssetsLocales(readFileSync(f, "utf8")), { waitUntil: "domcontentloaded" });
   await settle(page);
-  const out = await page.evaluate(extraer, true);
+  const out = await page.evaluate(extraer, true, SEL_CLON_MOD);
   out.hojasAplicadas = await page.evaluate(() => document.styleSheets.length);
   await page.close();
   return out;
@@ -328,7 +370,7 @@ async function medirOriginal(doc) {
 async function medirClon(base, ruta) {
   const { page, res } = await openPage(browser, base + ruta, { width: ANCHO, height: MOVIL ? 844 : 900, mobile: MOVIL });
   await settle(page);
-  const out = await page.evaluate(extraer, false);
+  const out = await page.evaluate(extraer, false, SEL_CLON_MOD);
   out.http = res?.status?.() ?? null;
   await page.close();
   return out;
@@ -363,24 +405,33 @@ await browser.close();
  * no casa, no un hallazgo. */
 const informe = [];
 let distintos = 0, comparados = 0, huerfanasO = 0, huerfanasC = 0, nSubpixel = 0;
+/* El eje `módulos` lleva SUS PROPIOS contadores: mezclarlos con los de fila
+ * haría que un eje absorbiera al otro y ninguno de los dos sería auditable. */
+let distintosMod = 0, comparadosMod = 0, huerfanosModO = 0, huerfanosModC = 0;
 for (const p of pares) {
   const n = Math.min(p.O.filas.length, p.C.filas.length);
   huerfanasO += Math.max(0, p.O.filas.length - n);
   huerfanasC += Math.max(0, p.C.filas.length - n);
-  /* ⚠⚠ EL EJE `nModulos` SE EXCLUYE, Y SE PUBLICA CON SU CARDINAL — no se
-   * cuenta como defecto ni se calla (§regla 14: *una limitación declarada sin su
-   * número se lee como una nota al pie*).
+  /* ⚠⚠ EL EJE `módulos` SE COMPARA DESDE LA 129.ª — PERO SÓLO DONDE EL CLON
+   * EMITE MARCADOR, Y ESA DISTINCIÓN ES LA QUE EVITA UN FALSO ROJO ENORME.
    *
-   * Motivo, y es el mismo de las filas una vuelta más abajo: **el clon no emite
-   * marcador de MÓDULO**. En el original `.et_pb_module` casa los módulos
-   * anidados dentro de cada columna; en el clon lo único disponible son los
-   * hijos directos de `[data-fila]`, que es otro conjunto. Medido: `14 → 2`,
-   * `7 → 2`, `6 → 2` — la firma de dos selectores que no denotan lo mismo, no la
-   * de un clon al que le falten 12 módulos.
+   * Hasta la 128.ª el eje estaba excluido EN BLOQUE porque el clon no emitía
+   * `data-modulo` y los dos selectores no denotaban el mismo conjunto. Ahora lo
+   * emite —en las rutas que se han marcado— así que el eje pasa a comparable
+   * **ahí**, y en el resto sigue SIN MARCADOR con su cardinal.
    *
-   * ⇒ El eje `módulos` de este arquetipo sigue **SIN COMPARAR**, y cerrarlo pide
-   * emitir `data-modulo` en los componentes, que es trabajo de otra tanda. */
+   * La guarda es por FILA, no por sonda, y es obligatoria: si una fila del clon
+   * trae **0** `[data-modulo]` y la del original trae 14, compararlas
+   * publicaría `orig 14 → clon 0` catorce veces. Eso NO es *«al clon le faltan
+   * 14 módulos»*: es §sondas 4 —un selector que no casa con nada no es un
+   * cero— con el cero puesto en un marcador que todavía nadie ha escrito. Y
+   * llegaría con la peor cara posible, la de un defecto grande y creíble.
+   *
+   * ⇒ 0 marcadores en la fila ⇒ **SIN MARCADOR**, se declara con su cardinal y
+   *   NO entra en `distintos` (§regla 14).
+   * ⇒ >0 ⇒ se compara el recuento y, fila a fila, `h · mb · pb` de cada módulo. */
   const EJES_FILA = ["h", "w", "mb", "pt", "pb"];
+  const EJES_MODULO = ["h", "mb", "pb"];
   /* La rejilla de `LayoutUnit`: Chrome guarda la maquetación en 1/64 de px. Dos
    * valores que caen en el mismo 1/64 sirven EL MISMO píxel, así que un Δ por
    * debajo de 1/64 es una diferencia de lo DECLARADO que no llega a la
@@ -389,6 +440,10 @@ for (const p of pares) {
   const REJILLA = 1 / 64;
   const difs = [];
   const subpixel = [];
+  const difsMod = [];
+  const filasSinMarcador = [];
+  const filasParciales = [];
+  const filasConMarcador = [];
   for (let j = 0; j < n; j++) {
     for (const eje of EJES_FILA) {
       const o = p.O.filas[j][eje], c = p.C.filas[j][eje];
@@ -399,6 +454,58 @@ for (const p of pares) {
       distintos++;
       difs.push({ fila: j, eje, orig: o, clon: c, delta: Math.round(d * 100) / 100 });
     }
+
+    /* ── el eje `módulos`, con su guarda por fila ─────────────────────────── */
+    const fo = p.O.filas[j], fc = p.C.filas[j];
+    const detalle = { fila: j, orig: fo.nModulosConCaja, clon: fc.nModulosConCaja, clonHijosDirectos: fc.nHijosDirectos };
+    if (fc.nModulosConCaja === 0 && fo.nModulosConCaja > 0) {
+      filasSinMarcador.push(detalle);
+      continue; /* no se compara: el cero es del marcador que falta, no del clon */
+    }
+    /* ⚠⚠ EL RECUENTO SE COMPARA SIEMPRE; LOS EJES DE CADA MÓDULO, SÓLO SI EL
+     * RECUENTO CUADRA — Y ESA GUARDA NO ES PRUDENCIA, ES §regla 33/29.
+     *
+     * Emparejar por ÍNDICE dos listas de distinto tamaño no produce un hueco:
+     * produce PAREJAS FALSAS, y cada una publica un Δ enorme con toda la cara
+     * de un defecto. Medido al estrenar este eje: `/software-…` fila 2 tiene
+     * **6** marcados de **19**, y el emparejamiento por orden casó
+     * `[image→blurb]` con `Δ+83.2` y `[image→blurb]` con `Δ-331.53`. Ninguno es
+     * un defecto del clon: son dos conjuntos distintos puestos en fila.
+     *
+     * ⇒ recuento distinto ⇒ se publica **el descuadre del recuento**, y los
+     *   módulos de esa fila salen PARCIALES: nombrados, contados y NO
+     *   comparados. Y se comprueba además que el `kind` case, porque dos listas
+     *   del mismo tamaño tampoco garantizan que denoten lo mismo. */
+    comparadosMod++;
+    if (fo.nModulosConCaja !== fc.nModulosConCaja) {
+      distintosMod++;
+      difsMod.push({ fila: j, eje: "nModulos", orig: fo.nModulosConCaja, clon: fc.nModulosConCaja, delta: fc.nModulosConCaja - fo.nModulosConCaja });
+      huerfanosModO += Math.max(0, fo.mods.length - fc.mods.length);
+      huerfanosModC += Math.max(0, fc.mods.length - fo.mods.length);
+      filasParciales.push({ ...detalle, motivo: "el recuento no cuadra: emparejar por orden daría parejas falsas (§regla 33)" });
+      continue;
+    }
+    const kindsDiscrepan = fo.mods.some((m, k) => m.kind && fc.mods[k].kind && m.kind !== fc.mods[k].kind);
+    if (kindsDiscrepan) {
+      filasParciales.push({
+        ...detalle,
+        motivo: "el recuento cuadra pero los `kind` no: los dos lados no denotan el mismo conjunto",
+        kinds: { orig: fo.mods.map((m) => m.kind), clon: fc.mods.map((m) => m.kind) },
+      });
+      continue;
+    }
+    filasConMarcador.push(detalle);
+    for (let k = 0; k < fo.mods.length; k++) {
+      for (const eje of EJES_MODULO) {
+        const o = fo.mods[k][eje], c = fc.mods[k][eje];
+        comparadosMod++;
+        if (o === c) continue;
+        const d = Math.round((c - o) * 10000) / 10000;
+        if (Math.abs(d) < REJILLA) { subpixel.push({ fila: j, modulo: k, eje, orig: o, clon: c, delta: d }); continue; }
+        distintosMod++;
+        difsMod.push({ fila: j, modulo: k, kind: fo.mods[k].kind, eje, orig: o, clon: c, delta: Math.round(d * 100) / 100 });
+      }
+    }
   }
   informe.push({
     ruta: p.ruta, arquetipo: p.arquetipo,
@@ -406,11 +513,28 @@ for (const p of pares) {
     hojasAplicadas: p.O.hojasAplicadas, httpClon: p.C.http ?? null,
     nDifs: difs.length, difs: difs.slice(0, 40),
     subpixel: { n: subpixel.length, casos: subpixel.slice(0, 12) },
-    /* SIN COMPARAR, con su cardinal y su motivo (§regla 14) */
-    modulosSinComparar: {
-      motivo: "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
-      porFila: p.O.filas.slice(0, n).map((f, j) => ({ fila: j, orig: f.nModulosConCaja, clonHijosDirectos: p.C.filas[j].nModulosConCaja })),
+    /* El eje `módulos`, con SUS DOS MITADES publicadas por separado: lo que se
+     * comparó y lo que no se pudo, cada una con su cardinal (§regla 14). Un
+     * recuento único aquí sería el séptimo contenedor: absorbería la membresía. */
+    modulos: {
+      filasComparadas: filasConMarcador.length,
+      filasSinMarcador: filasSinMarcador.length,
+      /* PARCIAL es un TERCER estado y se publica aparte: hay marcador, pero los
+       * dos lados no denotan el mismo conjunto. Meterlo en cualquiera de los
+       * otros dos lo haría desaparecer — en «comparadas» inventaría cobertura,
+       * en «sin marcador» escondería que el marcador SÍ está y no basta. */
+      filasParciales: filasParciales.length,
+      parciales: filasParciales,
+      nDifs: difsMod.length,
+      difs: difsMod.slice(0, 40),
+      detalle: filasConMarcador,
     },
+    modulosSinMarcador: filasSinMarcador.length
+      ? {
+          motivo: "el clon todavía no emite `data-modulo` en estas filas: su 0 es del marcador que falta, NO del clon",
+          porFila: filasSinMarcador,
+        }
+      : null,
   });
   nSubpixel += subpixel.length;
   ev.ok(1);
@@ -435,7 +559,20 @@ const salida = {
   resumen: {
     pares: pares.length, ejesComparados: comparados, distintos, huerfanasO, huerfanasC,
     subpixel: nSubpixel,
-    ejesExcluidos: { modulos: "el clon no emite marcador de MODULO — SIN COMPARAR, ver modulosSinComparar por ruta" },
+    /* El eje `módulos` publica SUS DOS MITADES por separado y con su unidad —
+     * lo comparado y lo que no tiene marcador todavía—. Un solo número aquí
+     * absorbería la segunda y el eje parecería cerrado (§regla 14). */
+    modulos: {
+      ejesComparados: comparadosMod,
+      distintos: distintosMod,
+      huerfanosO: huerfanosModO,
+      huerfanosC: huerfanosModC,
+      filasComparadas: informe.reduce((s, i) => s + i.modulos.filasComparadas, 0),
+      filasSinMarcador: informe.reduce((s, i) => s + i.modulos.filasSinMarcador, 0),
+      filasParciales: informe.reduce((s, i) => s + i.modulos.filasParciales, 0),
+      rutasSinNingunMarcador: informe.filter((i) => i.modulos.filasComparadas === 0).map((i) => i.ruta),
+    },
+    ejesExcluidos: comparadosMod === 0 ? { modulos: "el clon no emite marcador de MODULO en NINGUNA ruta — SIN COMPARAR" } : {},
   },
   informe,
 };
@@ -445,17 +582,28 @@ console.log("");
 console.log("═══ RESULTADO ═══");
 console.log(`  pares comparados : ${pares.length} de ${LOTE.length}`);
 console.log(`  ejes comparados  : ${comparados}   distintos: ${distintos}   subpixel (<1/64, no cuentan): ${nSubpixel}`);
-console.log(`  eje EXCLUIDO     : modulos — el clon no emite marcador de MODULO (SIN COMPARAR, no 0 defectos)`);
 console.log(`  filas huérfanas  : original ${huerfanasO} · clon ${huerfanasC}`);
+/* El eje `módulos` con SUS DOS MITADES a la vista: lo que se comparó y lo que
+ * no tiene marcador. Publicar sólo la primera daría un eje que parece cerrado. */
+const sinMarcador = informe.reduce((s, i) => s + i.modulos.filasSinMarcador, 0);
+const conMarcador = informe.reduce((s, i) => s + i.modulos.filasComparadas, 0);
+console.log(`  eje MÓDULOS      : ${comparadosMod} ejes comparados · distintos ${distintosMod} · huérfanos orig ${huerfanosModO} / clon ${huerfanosModC}`);
+console.log(`                     filas CON marcador ${conMarcador} · SIN marcador ${sinMarcador} (su 0 es del marcador que falta, NO del clon)`);
 for (const i of informe) {
-  console.log(`  ${i.ruta.padEnd(40)} filas orig=${i.filas.orig} clon=${i.filas.clon}  hojas=${i.hojasAplicadas}  http=${i.httpClon}  difs=${i.nDifs}`);
+  console.log(`  ${i.ruta.padEnd(40)} filas orig=${i.filas.orig} clon=${i.filas.clon}  hojas=${i.hojasAplicadas}  http=${i.httpClon}  difs=${i.nDifs}  mods: ${i.modulos.filasComparadas} comparadas / ${i.modulos.filasSinMarcador} sin marcador, difs ${i.modulos.nDifs}`);
   for (const d of i.difs.slice(0, 6)) console.log(`      fila ${d.fila} ${d.eje.padEnd(16)} orig ${d.orig} → clon ${d.clon}  Δ${d.delta > 0 ? "+" : ""}${d.delta}`);
+  for (const d of i.modulos.difs.slice(0, 8))
+    console.log(`      MOD fila ${d.fila}${d.modulo !== undefined ? ` m${d.modulo}` : ""} ${String(d.eje).padEnd(12)} orig ${d.orig} → clon ${d.clon}  Δ${d.delta > 0 ? "+" : ""}${d.delta}${d.kindOrig ? `  [${d.kindOrig}→${d.kindClon}]` : ""}`);
 }
 console.log("");
-console.log(`✓ evaluadas ${pares.length}/${LOTE.length - docsFaltan} pares · ${comparados} ejes`);
+console.log(`✓ evaluadas ${pares.length}/${LOTE.length - docsFaltan} pares · ${comparados} ejes de fila · ${comparadosMod} de módulo`);
 
 /* ── el código de salida, con un valor por MOTIVO ──────────────────────────
- * Tres motivos, tres códigos: así un rojo futuro se puede ATRIBUIR (§regla 24). */
+ * Cuatro motivos, cuatro códigos: así un rojo futuro se puede ATRIBUIR
+ * (§regla 24). El eje `módulos` estrena el suyo —5— en vez de sumarse a `4`:
+ * si compartieran código, un rojo no diría cuál de los dos ejes lo produjo, y
+ * ése es justo el trabajo que un código de salida hace. */
 if (CANAL_ABIERTO) { console.log("EXIT 2 — la corrida MIDE pero NO ACREDITA: hay canales sin cerrar."); process.exit(2); }
-if (distintos) { console.log(`EXIT 4 — ${distintos} ejes distintos entre original y clon.`); process.exit(4); }
+if (distintos) { console.log(`EXIT 4 — ${distintos} ejes de FILA distintos entre original y clon.`); process.exit(4); }
+if (distintosMod) { console.log(`EXIT 5 — ${distintosMod} ejes de MÓDULO distintos entre original y clon.`); process.exit(5); }
 console.log("EXIT 0 — sin diferencias en los ejes comparados.");

@@ -1,0 +1,30 @@
+═══ NEGATIVO de productos-cmp — 123.ª · ESCALÓN 1 (§regla 24)
+
+  ✅ mismo-lado     los dos lados IDÉNTICOS: tiene que dar 0 distintos, o el comparador inventa diferencias
+  ✅ inyecta-delta  Δ CONOCIDO de 37.5 en el alto de una fila: tiene que cazarlo Y NOMBRARLO con sus dos lados
+  ✅ selector-clon-falso el marcador del CLON no casa: el eje de modulos tiene que caer a 0 comparados, no seguir publicando
+  ✅ sin-insumos    los documentos del corpus ausentes: corrida NULA, no números plausibles de la nada
+
+✅ 4/4 — la conclusión BARATA («0 distintos») no se puede
+   producir sin haber comparado: la tumban el Δ inyectado y la guarda de insumos.
+
+⚠ LO QUE ESTE NEGATIVO **NO** PRUEBA, con su cardinal (§regla 14):
+  · no prueba que el clon esté bien — no hay lado de clon en estos 4 casos.
+    Prueba que el INSTRUMENTO discrimina, que es otra afirmación;
+  · los 4 corren a 1440. El contrato de fidelidad es a los DOS anchos;
+  · ⚠ el límite de §regla 24, con su cardinal DERIVADO: 3 de 4 usan
+    NEG_MISMO_LADO, que COPIA el lado del original sobre el del clon,
+    así que en ellos el selector del LADO CLON no se aplica nunca a
+    marcado del clon: 0 instancias separadoras para él (§regla 15,
+    con lo compartido puesto en el MARCADO).
+  · ✅ y 1 caso(s) SÍ lo ejercitan contra el clon servido:
+    selector-clon-falso — añadido en la 129.ª, que es cuando el clon
+    empezó a emitir `data-modulo`. Su aserción es la DIFERENCIA
+    control/sabotaje, no el exit: el exit lo fija el eje de FILA.
+  · ⇒ SIGUE FALTANDO el equivalente para `[data-fila]`: el 4.º sabotaje
+    rompe el selector de MÓDULO, no el de fila. Si `data-fila` dejara
+    de casar, estos 4 casos seguirían en verde.
+  · los canales del lote están CERRADOS (hojas 30/30, media 162/162),
+    así que los casos salen por códigos distintos y un rojo se atribuye.
+  ✓ evaluadas 4/4 casos
+  ✓ evaluadas 4/4 casos · productos-cmp-neg

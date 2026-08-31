@@ -2,7 +2,7 @@
   "meta": {
     "sonda": "productos-cmp",
     "tanda": "123.ª",
-    "fecha": "2026-08-30",
+    "fecha": "2026-08-31",
     "ancho": 1440,
     "lado": "DOS — ORIGINAL: captura de corpus/productos por file:// con sus hojas de corpus/css, red cortada. CLON: next start. La intercepción se instala en LOS DOS lados (§regla 32).",
     "saboteada": "mismo-lado",
@@ -37,9 +37,17 @@
     "huerfanasO": 0,
     "huerfanasC": 0,
     "subpixel": 0,
-    "ejesExcluidos": {
-      "modulos": "el clon no emite marcador de MODULO — SIN COMPARAR, ver modulosSinComparar por ruta"
-    }
+    "modulos": {
+      "ejesComparados": 939,
+      "distintos": 0,
+      "huerfanosO": 0,
+      "huerfanosC": 0,
+      "filasComparadas": 30,
+      "filasSinMarcador": 0,
+      "filasParciales": 0,
+      "rutasSinNingunMarcador": []
+    },
+    "ejesExcluidos": {}
   },
   "informe": [
     {
@@ -59,46 +67,59 @@
         "n": 0,
         "casos": []
       },
-      "modulosSinComparar": {
-        "motivo": "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
-        "porFila": [
+      "modulos": {
+        "filasComparadas": 7,
+        "filasSinMarcador": 0,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": [
           {
             "fila": 0,
             "orig": 1,
+            "clon": 1,
             "clonHijosDirectos": 1
           },
           {
             "fila": 1,
             "orig": 14,
-            "clonHijosDirectos": 14
+            "clon": 14,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 2,
             "orig": 28,
-            "clonHijosDirectos": 28
+            "clon": 28,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 3,
             "orig": 35,
-            "clonHijosDirectos": 35
+            "clon": 35,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 4,
             "orig": 4,
-            "clonHijosDirectos": 4
+            "clon": 4,
+            "clonHijosDirectos": 1
           },
           {
             "fila": 5,
             "orig": 1,
-            "clonHijosDirectos": 1
+            "clon": 1,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 6,
             "orig": 22,
-            "clonHijosDirectos": 22
+            "clon": 22,
+            "clonHijosDirectos": 2
           }
         ]
-      }
+      },
+      "modulosSinMarcador": null
     },
     {
       "ruta": "/accesorios",
@@ -117,56 +138,71 @@
         "n": 0,
         "casos": []
       },
-      "modulosSinComparar": {
-        "motivo": "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
-        "porFila": [
+      "modulos": {
+        "filasComparadas": 9,
+        "filasSinMarcador": 0,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": [
           {
             "fila": 0,
             "orig": 1,
+            "clon": 1,
             "clonHijosDirectos": 1
           },
           {
             "fila": 1,
             "orig": 5,
-            "clonHijosDirectos": 5
+            "clon": 5,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 2,
             "orig": 2,
-            "clonHijosDirectos": 2
+            "clon": 2,
+            "clonHijosDirectos": 1
           },
           {
             "fila": 3,
             "orig": 2,
+            "clon": 2,
             "clonHijosDirectos": 2
           },
           {
             "fila": 4,
             "orig": 7,
-            "clonHijosDirectos": 7
+            "clon": 7,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 5,
             "orig": 11,
-            "clonHijosDirectos": 11
+            "clon": 11,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 6,
             "orig": 4,
-            "clonHijosDirectos": 4
+            "clon": 4,
+            "clonHijosDirectos": 1
           },
           {
             "fila": 7,
             "orig": 1,
-            "clonHijosDirectos": 1
+            "clon": 1,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 8,
             "orig": 22,
-            "clonHijosDirectos": 22
+            "clon": 22,
+            "clonHijosDirectos": 2
           }
         ]
-      }
+      },
+      "modulosSinMarcador": null
     },
     {
       "ruta": "/software-de-medicion-calidad-del-aire",
@@ -185,46 +221,59 @@
         "n": 0,
         "casos": []
       },
-      "modulosSinComparar": {
-        "motivo": "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
-        "porFila": [
+      "modulos": {
+        "filasComparadas": 7,
+        "filasSinMarcador": 0,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": [
           {
             "fila": 0,
             "orig": 1,
+            "clon": 1,
             "clonHijosDirectos": 1
           },
           {
             "fila": 1,
             "orig": 7,
-            "clonHijosDirectos": 7
+            "clon": 7,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 2,
             "orig": 19,
-            "clonHijosDirectos": 19
+            "clon": 19,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 3,
             "orig": 34,
-            "clonHijosDirectos": 34
+            "clon": 34,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 4,
             "orig": 4,
-            "clonHijosDirectos": 4
+            "clon": 4,
+            "clonHijosDirectos": 1
           },
           {
             "fila": 5,
             "orig": 1,
-            "clonHijosDirectos": 1
+            "clon": 1,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 6,
             "orig": 22,
-            "clonHijosDirectos": 22
+            "clon": 22,
+            "clonHijosDirectos": 2
           }
         ]
-      }
+      },
+      "modulosSinMarcador": null
     },
     {
       "ruta": "/kunak-api",
@@ -243,46 +292,59 @@
         "n": 0,
         "casos": []
       },
-      "modulosSinComparar": {
-        "motivo": "el clon no emite marcador de MODULO: los dos selectores no denotan el mismo conjunto",
-        "porFila": [
+      "modulos": {
+        "filasComparadas": 7,
+        "filasSinMarcador": 0,
+        "filasParciales": 0,
+        "parciales": [],
+        "nDifs": 0,
+        "difs": [],
+        "detalle": [
           {
             "fila": 0,
             "orig": 1,
+            "clon": 1,
             "clonHijosDirectos": 1
           },
           {
             "fila": 1,
             "orig": 6,
-            "clonHijosDirectos": 6
+            "clon": 6,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 2,
             "orig": 12,
-            "clonHijosDirectos": 12
+            "clon": 12,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 3,
             "orig": 9,
-            "clonHijosDirectos": 9
+            "clon": 9,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 4,
             "orig": 4,
-            "clonHijosDirectos": 4
+            "clon": 4,
+            "clonHijosDirectos": 1
           },
           {
             "fila": 5,
             "orig": 1,
-            "clonHijosDirectos": 1
+            "clon": 1,
+            "clonHijosDirectos": 2
           },
           {
             "fila": 6,
             "orig": 22,
-            "clonHijosDirectos": 22
+            "clon": 22,
+            "clonHijosDirectos": 2
           }
         ]
-      }
+      },
+      "modulosSinMarcador": null
     }
   ]
 }

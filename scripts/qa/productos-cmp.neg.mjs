@@ -91,6 +91,49 @@ const casos = [
     },
   },
   {
+    /* ⚠⚠ EL 4.º CASO (129.ª) — EL QUE ESTE MISMO NEGATIVO PEDÍA, Y EL ÚNICO
+     * QUE EJERCITA EL SELECTOR DEL LADO CLON.
+     *
+     * Los tres de arriba usan NEG_MISMO_LADO, que COPIA el original sobre el
+     * clon: el selector del clon —[data-fila], y desde la 129.ª [data-modulo]—
+     * nunca se aplica a marcado del clon, así que tiene 0 instancias
+     * separadoras en ellos (§regla 15, con lo compartido puesto en el MARCADO).
+     * El bloque de límites de abajo lo declaraba y pedía exactamente este caso.
+     *
+     * Va CON SU CONTROL en la misma corrida, no contra una congelada previa: un
+     * sabotaje sin control no prueba que la guarda pare, prueba que el
+     * instrumento no la ejercita (§regla 8a).
+     *
+     * Y lo que se exige es la DIFERENCIA control/sabotaje, NO el código de
+     * salida: aquí el exit es 4 en los dos lados —lo fija el eje de FILA, que
+     * este sabotaje no toca— así que atarlo al exit sería atarlo a algo que no
+     * mide lo que el caso afirma (§regla 21, la vuelta).
+     *
+     * ⚠ NECESITA EL CLON SERVIDO. `productos-cmp` lo levanta él mismo. */
+    etiqueta: "selector-clon-falso",
+    porQue: "el marcador del CLON no casa: el eje de modulos tiene que caer a 0 comparados, no seguir publicando",
+    env: { NEG_SELECTOR_CLON_FALSO: "1" },
+    conControl: true,
+    exit: 4,
+    comprueba: (j, ctrl) => {
+      if (!ctrl) return "sin corrida de CONTROL: el sabotaje solo no prueba nada (§regla 8a)";
+      const nCtrl = ctrl.resumen.modulos?.filasComparadas ?? 0;
+      const nSab = j.resumen.modulos?.filasComparadas ?? 0;
+      /* Si el control no compara ninguna fila, el caso está SIN PROBAR — y eso
+       * cuenta como FALLO, no como verde: un SIN PROBAR en verde se lee como
+       * probado (§regla 21, tercer caso). Se reporta con su denominador. */
+      if (nCtrl === 0)
+        return `el CONTROL compara 0 filas con marcador: 0 instancias separadoras, caso SIN PROBAR (denominador ${ctrl.resumen.pares} pares)`;
+      if (nSab !== 0) return `con el selector roto sigue comparando ${nSab} filas: no las estaba leyendo del clon`;
+      if ((j.resumen.modulos?.ejesComparados ?? 0) !== 0) return `ejes de modulo ${j.resumen.modulos.ejesComparados} != 0 con el selector roto`;
+      /* Y el sabotaje tiene que ser ESPECÍFICO: si además tumbara el eje de
+       * fila estaría midiendo otra cosa, y su caída no diría nada del marcador. */
+      if (j.resumen.ejesComparados !== ctrl.resumen.ejesComparados)
+        return `el sabotaje movió también el eje de FILA (${ctrl.resumen.ejesComparados} -> ${j.resumen.ejesComparados}): no es específico`;
+      return null;
+    },
+  },
+  {
     etiqueta: "sin-insumos",
     porQue: "los documentos del corpus ausentes: corrida NULA, no números plausibles de la nada",
     env: { NEG_MISMO_LADO: "1", NEG_SIN_INSUMOS: "1" },
@@ -123,7 +166,24 @@ for (const c of casos) {
     const ruta = join(QA, nombreNeg(CANONICA, c.etiqueta));
     if (!existsSync(ruta)) problemas.push(`no congeló ${nombreNeg(CANONICA, c.etiqueta)}`);
     else {
-      const m = c.comprueba(JSON.parse(readFileSync(ruta, "utf8")));
+      /* ── el CONTROL, para los casos que lo necesitan ──────────────────────
+       * Un caso cuya aserción es la DIFERENCIA entre control y sabotaje no
+       * puede leerse sin las dos corridas (§regla 8a). Se corre la sonda SIN
+       * sabotaje y se le pasa su congelada a `comprueba` como segundo
+       * argumento. Los casos que no lo declaran no pagan esta corrida. */
+      let ctrl = null;
+      if (c.conControl) {
+        /* El control es una corrida negativa etiquetada `-control` y SIN
+         * sabotaje: `corridaNegativa` borra `SALIDA` a propósito —el desvío lo
+         * pone `NEG`, no la disciplina de quien llama— así que ésta es la vía
+         * sancionada para que el control tampoco pueda tocar una canónica. */
+        const etCtrl = `${c.etiqueta}-control`;
+        const rc = corridaNegativa({ etiqueta: etCtrl, args: [SONDA], env: {} });
+        const rutaCtrl = join(QA, nombreNeg(CANONICA, etCtrl));
+        if (!existsSync(rutaCtrl)) problemas.push(`el CONTROL de ${c.etiqueta} no congeló nada (exit ${rc.status}): sin él el sabotaje no prueba nada`);
+        else ctrl = JSON.parse(readFileSync(rutaCtrl, "utf8"));
+      }
+      const m = c.comprueba(JSON.parse(readFileSync(ruta, "utf8")), ctrl);
       if (m) problemas.push(m);
     }
   }
@@ -146,18 +206,28 @@ console.log(`\n⚠ LO QUE ESTE NEGATIVO **NO** PRUEBA, con su cardinal (§regla 
 console.log(`  · no prueba que el clon esté bien — no hay lado de clon en estos ${casos.length} casos.`);
 console.log(`    Prueba que el INSTRUMENTO discrimina, que es otra afirmación;`);
 console.log(`  · los ${casos.length} corren a 1440. El contrato de fidelidad es a los DOS anchos;`);
-console.log(`  · ⚠⚠ y el límite que §regla 24 tiene y hay que decir: los ${casos.length} usan`);
-console.log(`    NEG_MISMO_LADO, que COPIA el lado del original sobre el del clon.`);
-console.log(`    Así que el selector del LADO DEL CLON —\`[data-fila]\`— NO se aplica`);
-console.log(`    nunca a marcado del clon: **0 instancias separadoras** para él.`);
-console.log(`    Si \`data-fila\` no casara en las 4 rutas, este negativo saldría 3/3`);
-console.log(`    mientras el comparador publicaría «filas clon = 0» con el render`);
-console.log(`    correcto. Es §regla 15 con lo compartido puesto en el MARCADO.`);
-console.log(`    ⇒ FALTA un 4.º caso, y sólo se puede escribir CON el clon servido:`);
-console.log(`      «\`[data-fila]\` casa >0 en las 4 rutas del lote».`);
-console.log(`  · los tres canales del lote quedaron CERRADOS en esta misma tanda`);
-console.log(`    (hojas 30/30, media 162/162), asi que los tres casos salen por`);
-console.log(`    codigos distintos —0 · 4 · 3— y un rojo futuro se puede atribuir.`);
+/* ⚠ ESTE BLOQUE SE RE-DERIVA DE `casos`, NO SE ESCRIBE. Hasta la 129.ª decía
+ * «los 4 usan NEG_MISMO_LADO» y «FALTA un 4.º caso» — las dos frases eran
+ * ciertas cuando se escribieron y las dos se volvieron FALSAS el día que ese
+ * caso se añadió, sin dar error (§regla 5ter: arreglar el objeto caduca la
+ * declaración del instrumento; §regla 9: un número escrito a mano envejece
+ * CONTRA el repo, en silencio). */
+const conMismoLado = casos.filter((c) => c.env?.NEG_MISMO_LADO).length;
+const conClonReal = casos.filter((c) => !c.env?.NEG_MISMO_LADO).map((c) => c.etiqueta);
+console.log(`  · ⚠ el límite de §regla 24, con su cardinal DERIVADO: ${conMismoLado} de ${casos.length} usan`);
+console.log(`    NEG_MISMO_LADO, que COPIA el lado del original sobre el del clon,`);
+console.log(`    así que en ellos el selector del LADO CLON no se aplica nunca a`);
+console.log(`    marcado del clon: 0 instancias separadoras para él (§regla 15,`);
+console.log(`    con lo compartido puesto en el MARCADO).`);
+console.log(`  · ✅ y ${conClonReal.length} caso(s) SÍ lo ejercitan contra el clon servido:`);
+console.log(`    ${conClonReal.join(", ")} — añadido en la 129.ª, que es cuando el clon`);
+console.log(`    empezó a emitir \`data-modulo\`. Su aserción es la DIFERENCIA`);
+console.log(`    control/sabotaje, no el exit: el exit lo fija el eje de FILA.`);
+console.log(`  · ⇒ SIGUE FALTANDO el equivalente para \`[data-fila]\`: el 4.º sabotaje`);
+console.log(`    rompe el selector de MÓDULO, no el de fila. Si \`data-fila\` dejara`);
+console.log(`    de casar, estos ${casos.length} casos seguirían en verde.`);
+console.log(`  · los canales del lote están CERRADOS (hojas 30/30, media 162/162),`);
+console.log(`    así que los casos salen por códigos distintos y un rojo se atribuye.`);
 console.log(`  ✓ evaluadas ${casos.length}/${casos.length} casos`);
 ev.informe();
 process.exit(fallos === 0 ? 0 : 1);
