@@ -1,0 +1,2471 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": 128,
+ "escalon": "PASO 0",
+ "pregunta": "¿tienen familia CATÁLOGO · SOFTWARE · SOFTWARE-corta, o están a n=1 por construcción?",
+ "alcance": {
+  "documentosRecorridos": 788,
+  "unidad": "documento HTML del corpus",
+  "umbralJaccard": 0.7,
+  "firmaVeredicto": "B (marcadores semánticos, criterio de paso0-dominio-127.mjs) — la llave con la que la sonda de varianza empareja",
+  "firmaControl": "A (tipos de módulo, criterio de familia-producto-123.mjs) — sólo reproducción",
+  "noContesta": [
+   "no mide varianza",
+   "no mide cascada",
+   "no toca red ni clon ni DB",
+   "no dice si el umbral 0.7 es el correcto: hereda el criterio"
+  ]
+ },
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "el corpus tiene documentos que recorrer",
+   "detalle": "788 ficheros .html"
+  },
+  {
+   "ok": true,
+   "nombre": "el censo de régimen DISCRIMINA (un solo casillero sería el detector — §sondas 4, el pleno)",
+   "detalle": "-T=371 · --=343 · B-=60 · BT=14"
+  },
+  {
+   "ok": true,
+   "nombre": "el log de la 123.ª se puede PARSEAR (si diera 0 filas, el regex no casa — §sondas 4)",
+   "detalle": "6 filas leídas"
+  },
+  {
+   "ok": true,
+   "nombre": "CONTROL DE REPRODUCCIÓN · la firma A reproduce Jaccard y cardinales de la 123.ª",
+   "detalle": "pares 30/30 · cardinales 6/6"
+  },
+  {
+   "ok": true,
+   "nombre": "la firma B no está vacía en TODOS (si lo estuviera, el predicado no casa — §sondas 4)",
+   "detalle": "534/788 con marcador · 254 sin ninguno"
+  },
+  {
+   "ok": true,
+   "nombre": "MEDIDA SECUNDARIA · ¿mueve la firma B quitar `<style>`/`<script>`? (informativa, no cierra)",
+   "detalle": "0/788 documentos cambian de cardinal · B es INMUNE al canal que contaminaba a A"
+  },
+  {
+   "ok": true,
+   "nombre": "el umbral B DISCRIMINA sobre las 4 anclas (ni pleno ni cero), n=788 por ancla",
+   "detalle": "hermanas por ancla: PRODUCTO:1 · CATALOGO:0 · SOFTWARE:0 · SOFTWARE-corta:0"
+  },
+  {
+   "ok": true,
+   "nombre": "AUDITORÍA DEL CERO · toda ancla conserva >=2 marcadores DISTINTIVOS (con 1 o 0 ninguna métrica de conjunto puede hallar familia, y el cero sería del instrumento)",
+   "detalle": "PRODUCTO: 18/19 distintivos {bucle-entradas,clear,clear-both,dark,dvmd_table_maker,dvmd_table_maker_0,dvmd_tm_version_4_0_1,galeria,iconos-certificicados,iconos-md-3,iconos-md-6,iconos-xs-2,kunak-faq-item,lista-resultados,menu-anclas,modulo-beneficios,parametros,popup} · CATALOGO: 3/4 distintivos {bucle-entradas,kunak-faq-item,menu-anclas} · SOFTWARE: 6/7 distintivos {bucle-entradas,iconos-md-2,kunak-faq-item,menu-anclas,modulo-beneficios,popup} · SOFTWARE-corta: 4/5 distintivos {bucle-entradas,iconos-md-3,iconos-xs-2,kunak-faq-item}"
+  },
+  {
+   "ok": true,
+   "nombre": "hay CSS capturado que cruzar (si diera 0, el cruce no mide — §sondas 4)",
+   "detalle": "95 ficheros .css"
+  },
+  {
+   "ok": true,
+   "nombre": "el detector de hojas enlazadas casa en alguna (0 en todas sería el selector — §sondas 4)",
+   "detalle": "PRODUCTO=8 · CATALOGO=8 · SOFTWARE=7 · SOFTWARE-corta=7"
+  }
+ ],
+ "censoRegimen": {
+  "total": 788,
+  "porCodigo": {
+   "-T": 371,
+   "--": 343,
+   "B-": 60,
+   "BT": 14
+  },
+  "porDirectorio": {
+   "casos": {
+    "--": 57
+   },
+   "documentos-cientificos": {
+    "-T": 23
+   },
+   "entradas-blog": {
+    "-T": 152
+   },
+   "faqs": {
+    "--": 19
+   },
+   "fase-3-sectores": {
+    "B-": 8
+   },
+   "fase-3": {
+    "BT": 14,
+    "--": 55,
+    "-T": 159,
+    "B-": 28
+   },
+   "productos": {
+    "B-": 24
+   },
+   "terminos-kunakpedia": {
+    "-T": 37
+   },
+   "transformado": {
+    "--": 212
+   }
+  }
+ },
+ "reproduccion123": {
+  "pares": "30/30",
+  "cardinales": "6/6",
+  "detalle": [
+   {
+    "doc": "accesorios",
+    "tiposAyer": 3,
+    "tiposHoy": 3,
+    "tiposOk": true,
+    "pares": [
+     {
+      "otro": "kunak-api",
+      "ayer": 0.5,
+      "hoy": 0.5,
+      "casa": true
+     },
+     {
+      "otro": "sensor-de-calidad-del-aire",
+      "ayer": 0.429,
+      "hoy": 0.429,
+      "casa": true
+     },
+     {
+      "otro": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ayer": 0.375,
+      "hoy": 0.375,
+      "casa": true
+     },
+     {
+      "otro": "software-de-medicion-calidad-del-aire",
+      "ayer": 0.375,
+      "hoy": 0.375,
+      "casa": true
+     },
+     {
+      "otro": "monitor-calidad-aire",
+      "ayer": 0.3,
+      "hoy": 0.3,
+      "casa": true
+     }
+    ]
+   },
+   {
+    "doc": "estacion-de-monitoreo-de-calidad-del-aire",
+    "tiposAyer": 8,
+    "tiposHoy": 8,
+    "tiposOk": true,
+    "pares": [
+     {
+      "otro": "sensor-de-calidad-del-aire",
+      "ayer": 0.875,
+      "hoy": 0.875,
+      "casa": true
+     },
+     {
+      "otro": "monitor-calidad-aire",
+      "ayer": 0.8,
+      "hoy": 0.8,
+      "casa": true
+     },
+     {
+      "otro": "software-de-medicion-calidad-del-aire",
+      "ayer": 0.778,
+      "hoy": 0.778,
+      "casa": true
+     },
+     {
+      "otro": "kunak-api",
+      "ayer": 0.75,
+      "hoy": 0.75,
+      "casa": true
+     },
+     {
+      "otro": "accesorios",
+      "ayer": 0.375,
+      "hoy": 0.375,
+      "casa": true
+     }
+    ]
+   },
+   {
+    "doc": "kunak-api",
+    "tiposAyer": 6,
+    "tiposHoy": 6,
+    "tiposOk": true,
+    "pares": [
+     {
+      "otro": "sensor-de-calidad-del-aire",
+      "ayer": 0.857,
+      "hoy": 0.857,
+      "casa": true
+     },
+     {
+      "otro": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ayer": 0.75,
+      "hoy": 0.75,
+      "casa": true
+     },
+     {
+      "otro": "software-de-medicion-calidad-del-aire",
+      "ayer": 0.75,
+      "hoy": 0.75,
+      "casa": true
+     },
+     {
+      "otro": "monitor-calidad-aire",
+      "ayer": 0.6,
+      "hoy": 0.6,
+      "casa": true
+     },
+     {
+      "otro": "accesorios",
+      "ayer": 0.5,
+      "hoy": 0.5,
+      "casa": true
+     }
+    ]
+   },
+   {
+    "doc": "monitor-calidad-aire",
+    "tiposAyer": 10,
+    "tiposHoy": 10,
+    "tiposOk": true,
+    "pares": [
+     {
+      "otro": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ayer": 0.8,
+      "hoy": 0.8,
+      "casa": true
+     },
+     {
+      "otro": "sensor-de-calidad-del-aire",
+      "ayer": 0.7,
+      "hoy": 0.7,
+      "casa": true
+     },
+     {
+      "otro": "software-de-medicion-calidad-del-aire",
+      "ayer": 0.636,
+      "hoy": 0.636,
+      "casa": true
+     },
+     {
+      "otro": "kunak-api",
+      "ayer": 0.6,
+      "hoy": 0.6,
+      "casa": true
+     },
+     {
+      "otro": "accesorios",
+      "ayer": 0.3,
+      "hoy": 0.3,
+      "casa": true
+     }
+    ]
+   },
+   {
+    "doc": "sensor-de-calidad-del-aire",
+    "tiposAyer": 7,
+    "tiposHoy": 7,
+    "tiposOk": true,
+    "pares": [
+     {
+      "otro": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ayer": 0.875,
+      "hoy": 0.875,
+      "casa": true
+     },
+     {
+      "otro": "software-de-medicion-calidad-del-aire",
+      "ayer": 0.875,
+      "hoy": 0.875,
+      "casa": true
+     },
+     {
+      "otro": "kunak-api",
+      "ayer": 0.857,
+      "hoy": 0.857,
+      "casa": true
+     },
+     {
+      "otro": "monitor-calidad-aire",
+      "ayer": 0.7,
+      "hoy": 0.7,
+      "casa": true
+     },
+     {
+      "otro": "accesorios",
+      "ayer": 0.429,
+      "hoy": 0.429,
+      "casa": true
+     }
+    ]
+   },
+   {
+    "doc": "software-de-medicion-calidad-del-aire",
+    "tiposAyer": 8,
+    "tiposHoy": 8,
+    "tiposOk": true,
+    "pares": [
+     {
+      "otro": "sensor-de-calidad-del-aire",
+      "ayer": 0.875,
+      "hoy": 0.875,
+      "casa": true
+     },
+     {
+      "otro": "estacion-de-monitoreo-de-calidad-del-aire",
+      "ayer": 0.778,
+      "hoy": 0.778,
+      "casa": true
+     },
+     {
+      "otro": "kunak-api",
+      "ayer": 0.75,
+      "hoy": 0.75,
+      "casa": true
+     },
+     {
+      "otro": "monitor-calidad-aire",
+      "ayer": 0.636,
+      "hoy": 0.636,
+      "casa": true
+     },
+     {
+      "otro": "accesorios",
+      "ayer": 0.375,
+      "hoy": 0.375,
+      "casa": true
+     }
+    ]
+   }
+  ]
+ },
+ "medidaSecundariaFirmaB": {
+  "documentosQueCambian": 0,
+  "de": 788,
+  "lectura": "B es inmune a `<style>`/`<script>`"
+ },
+ "familias": {
+  "PRODUCTO": {
+   "ancla": "productos/monitor-calidad-aire.html",
+   "marcadoresB": 19,
+   "elementosB": [
+    "breadcrumbs",
+    "bucle-entradas",
+    "clear",
+    "clear-both",
+    "dark",
+    "dvmd_table_maker",
+    "dvmd_table_maker_0",
+    "dvmd_tm_version_4_0_1",
+    "galeria",
+    "iconos-certificicados",
+    "iconos-md-3",
+    "iconos-md-6",
+    "iconos-xs-2",
+    "kunak-faq-item",
+    "lista-resultados",
+    "menu-anclas",
+    "modulo-beneficios",
+    "parametros",
+    "popup"
+   ],
+   "tiposA": 10,
+   "cardinalAlcanzableB": 27,
+   "hermanasB": 1,
+   "hermanasA": 2,
+   "n_por_B": 2,
+   "candidatos": [
+    {
+     "doc": "productos/estacion-de-monitoreo-de-calidad-del-aire.html",
+     "jaccardB": 0.9474,
+     "jaccardA": 0.8,
+     "solapeB": 1,
+     "superaB": true,
+     "superaA": true
+    },
+    {
+     "doc": "productos/sensor-de-calidad-del-aire.html",
+     "jaccardB": 0.4286,
+     "jaccardA": 0.7,
+     "solapeB": 0.8182,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/amoniaco.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/cianuro-de-hidrogeno.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/cloro-dioxido-de-cloro.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/cloruro-de-hidrogeno.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/compuestos-organicos-volatiles.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/dioxido-de-azufre.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/dioxido-de-carbono.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/dioxido-de-nitrogeno.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/fluoruro-de-hidrogeno.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/hidrocarburos-no-metanicos.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/monoxido-de-carbono.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/oxido-nitrico.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/oxigeno.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/ozono.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/sulfuro-de-hidrogeno.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/sensor-de-calidad-del-aire/metano.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/kunak-api.html",
+     "jaccardB": 0.2632,
+     "jaccardA": 0.6,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/accesorios.html",
+     "jaccardB": 0.2105,
+     "jaccardA": 0.3,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/sueltas/politica-de-cookies/index.html",
+     "jaccardB": 0.1579,
+     "jaccardA": 0.1,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-en-la-construccion/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-minera/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-urbana/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-urbana/page/2/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-y-salud/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-y-salud/page/2/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/industria-y-contaminacion-por-olores/index.html",
+     "jaccardB": 0.1053,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    }
+   ],
+   "ubicuidadPorMarcador": {
+    "breadcrumbs": "532/534",
+    "bucle-entradas": "171/534",
+    "clear": "2/534",
+    "clear-both": "3/534",
+    "dark": "1/534",
+    "dvmd_table_maker": "21/534",
+    "dvmd_table_maker_0": "21/534",
+    "dvmd_tm_version_4_0_1": "21/534",
+    "galeria": "2/534",
+    "iconos-certificicados": "2/534",
+    "iconos-md-3": "6/534",
+    "iconos-md-6": "3/534",
+    "iconos-xs-2": "7/534",
+    "kunak-faq-item": "26/534",
+    "lista-resultados": "2/534",
+    "menu-anclas": "5/534",
+    "modulo-beneficios": "4/534",
+    "parametros": "3/534",
+    "popup": "8/534"
+   },
+   "marcadoresDistintivos": 18,
+   "elementosDistintivos": [
+    "bucle-entradas",
+    "clear",
+    "clear-both",
+    "dark",
+    "dvmd_table_maker",
+    "dvmd_table_maker_0",
+    "dvmd_tm_version_4_0_1",
+    "galeria",
+    "iconos-certificicados",
+    "iconos-md-3",
+    "iconos-md-6",
+    "iconos-xs-2",
+    "kunak-faq-item",
+    "lista-resultados",
+    "menu-anclas",
+    "modulo-beneficios",
+    "parametros",
+    "popup"
+   ]
+  },
+  "CATALOGO": {
+   "ancla": "productos/accesorios.html",
+   "marcadoresB": 4,
+   "elementosB": [
+    "breadcrumbs",
+    "bucle-entradas",
+    "kunak-faq-item",
+    "menu-anclas"
+   ],
+   "tiposA": 3,
+   "cardinalAlcanzableB": 5,
+   "hermanasB": 0,
+   "hermanasA": 9,
+   "n_por_B": 1,
+   "candidatos": [
+    {
+     "doc": "productos/software-de-medicion-calidad-del-aire.html",
+     "jaccardB": 0.5714,
+     "jaccardA": 0.375,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-en-la-construccion/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-minera/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-urbana/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-urbana/page/2/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-y-salud/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-y-salud/page/2/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/industria-y-contaminacion-por-olores/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/industria-y-contaminacion-por-olores/page/2/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/2/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/3/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/4/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/5/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/6/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/petroleo-y-gas/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/productos-kunak/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/preguntas-frecuentes/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 1,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "fase-3/listados/recursos/preguntas-frecuentes/page/2/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 1,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "fase-3/listados/recursos/seminarios-web/index.html",
+     "jaccardB": 0.5,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0.75,
+     "solapeB": 0.6667,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "fase-3/listados/recursos/page/2/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0.75,
+     "solapeB": 0.6667,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/sensor-de-calidad-del-aire.html",
+     "jaccardB": 0.3636,
+     "jaccardA": 0.4286,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/index.html",
+     "jaccardB": 0.25,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/10/index.html",
+     "jaccardB": 0.25,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/11/index.html",
+     "jaccardB": 0.25,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/12/index.html",
+     "jaccardB": 0.25,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/13/index.html",
+     "jaccardB": 0.25,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/14/index.html",
+     "jaccardB": 0.25,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    }
+   ],
+   "ubicuidadPorMarcador": {
+    "breadcrumbs": "532/534",
+    "bucle-entradas": "171/534",
+    "kunak-faq-item": "26/534",
+    "menu-anclas": "5/534"
+   },
+   "marcadoresDistintivos": 3,
+   "elementosDistintivos": [
+    "bucle-entradas",
+    "kunak-faq-item",
+    "menu-anclas"
+   ]
+  },
+  "SOFTWARE": {
+   "ancla": "productos/software-de-medicion-calidad-del-aire.html",
+   "marcadoresB": 7,
+   "elementosB": [
+    "breadcrumbs",
+    "bucle-entradas",
+    "iconos-md-2",
+    "kunak-faq-item",
+    "menu-anclas",
+    "modulo-beneficios",
+    "popup"
+   ],
+   "tiposA": 8,
+   "cardinalAlcanzableB": 10,
+   "hermanasB": 0,
+   "hermanasA": 4,
+   "n_por_B": 1,
+   "candidatos": [
+    {
+     "doc": "productos/accesorios.html",
+     "jaccardB": 0.5714,
+     "jaccardA": 0.375,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/sensor-de-calidad-del-aire.html",
+     "jaccardB": 0.3846,
+     "jaccardA": 0.875,
+     "solapeB": 0.7143,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/kunak-api.html",
+     "jaccardB": 0.3333,
+     "jaccardA": 0.75,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/estacion-de-monitoreo-de-calidad-del-aire.html",
+     "jaccardB": 0.3158,
+     "jaccardA": 0.7778,
+     "solapeB": 0.8571,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-en-la-construccion/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-minera/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-urbana/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-urbana/page/2/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-y-salud/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-y-salud/page/2/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/industria-y-contaminacion-por-olores/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/industria-y-contaminacion-por-olores/page/2/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/2/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/3/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/4/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/5/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/6/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/petroleo-y-gas/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/productos-kunak/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/preguntas-frecuentes/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0.375,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/preguntas-frecuentes/page/2/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0.375,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/seminarios-web/index.html",
+     "jaccardB": 0.2857,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/index.html",
+     "jaccardB": 0.1429,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/10/index.html",
+     "jaccardB": 0.1429,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/11/index.html",
+     "jaccardB": 0.1429,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/12/index.html",
+     "jaccardB": 0.1429,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/13/index.html",
+     "jaccardB": 0.1429,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/categoria/categoria/articulos/page/14/index.html",
+     "jaccardB": 0.1429,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    }
+   ],
+   "ubicuidadPorMarcador": {
+    "breadcrumbs": "532/534",
+    "bucle-entradas": "171/534",
+    "iconos-md-2": "1/534",
+    "kunak-faq-item": "26/534",
+    "menu-anclas": "5/534",
+    "modulo-beneficios": "4/534",
+    "popup": "8/534"
+   },
+   "marcadoresDistintivos": 6,
+   "elementosDistintivos": [
+    "bucle-entradas",
+    "iconos-md-2",
+    "kunak-faq-item",
+    "menu-anclas",
+    "modulo-beneficios",
+    "popup"
+   ]
+  },
+  "SOFTWARE-corta": {
+   "ancla": "productos/kunak-api.html",
+   "marcadoresB": 5,
+   "elementosB": [
+    "breadcrumbs",
+    "bucle-entradas",
+    "iconos-md-3",
+    "iconos-xs-2",
+    "kunak-faq-item"
+   ],
+   "tiposA": 6,
+   "cardinalAlcanzableB": 7,
+   "hermanasB": 0,
+   "hermanasA": 26,
+   "n_por_B": 1,
+   "candidatos": [
+    {
+     "doc": "fase-3/sueltas/empresa/index.html",
+     "jaccardB": 0.4286,
+     "jaccardA": 0.8571,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-en-la-construccion/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-minera/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-urbana/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-urbana/page/2/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-y-salud/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/contaminacion-y-salud/page/2/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/industria-y-contaminacion-por-olores/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/industria-y-contaminacion-por-olores/page/2/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/2/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/3/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/4/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/5/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/page/6/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/petroleo-y-gas/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/articulos/productos-kunak/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/preguntas-frecuentes/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/preguntas-frecuentes/page/2/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0.5,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "fase-3/listados/recursos/seminarios-web/index.html",
+     "jaccardB": 0.4,
+     "jaccardA": 0,
+     "solapeB": 1,
+     "superaB": false,
+     "superaA": false
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/amoniaco.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/cianuro-de-hidrogeno.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/cloro-dioxido-de-cloro.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/cloruro-de-hidrogeno.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/compuestos-organicos-volatiles.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/dioxido-de-azufre.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/dioxido-de-carbono.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/dioxido-de-nitrogeno.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    },
+    {
+     "doc": "productos/cartuchos-inteligentes/fluoruro-de-hidrogeno.html",
+     "jaccardB": 0.375,
+     "jaccardA": 0.8333,
+     "solapeB": 0.6,
+     "superaB": false,
+     "superaA": true
+    }
+   ],
+   "ubicuidadPorMarcador": {
+    "breadcrumbs": "532/534",
+    "bucle-entradas": "171/534",
+    "iconos-md-3": "6/534",
+    "iconos-xs-2": "7/534",
+    "kunak-faq-item": "26/534"
+   },
+   "marcadoresDistintivos": 4,
+   "elementosDistintivos": [
+    "bucle-entradas",
+    "iconos-md-3",
+    "iconos-xs-2",
+    "kunak-faq-item"
+   ]
+  }
+ },
+ "auditoriaDelCero": {
+  "criterioUbicuo": "presente en >=50 % de los 534 documentos CON marcador",
+  "ubicuosDelCorpus": [
+   "breadcrumbs=532/534"
+  ],
+  "familiasSoloConDistintivos": {
+   "PRODUCTO": {
+    "marcadores": 18,
+    "elementos": [
+     "bucle-entradas",
+     "clear",
+     "clear-both",
+     "dark",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "galeria",
+     "iconos-certificicados",
+     "iconos-md-3",
+     "iconos-md-6",
+     "iconos-xs-2",
+     "kunak-faq-item",
+     "lista-resultados",
+     "menu-anclas",
+     "modulo-beneficios",
+     "parametros",
+     "popup"
+    ],
+    "hermanas": 1,
+    "n": 2,
+    "lista": [
+     {
+      "doc": "productos/estacion-de-monitoreo-de-calidad-del-aire.html",
+      "j": 0.9444
+     }
+    ]
+   },
+   "CATALOGO": {
+    "marcadores": 3,
+    "elementos": [
+     "bucle-entradas",
+     "kunak-faq-item",
+     "menu-anclas"
+    ],
+    "hermanas": 0,
+    "n": 1,
+    "lista": []
+   },
+   "SOFTWARE": {
+    "marcadores": 6,
+    "elementos": [
+     "bucle-entradas",
+     "iconos-md-2",
+     "kunak-faq-item",
+     "menu-anclas",
+     "modulo-beneficios",
+     "popup"
+    ],
+    "hermanas": 0,
+    "n": 1,
+    "lista": []
+   },
+   "SOFTWARE-corta": {
+    "marcadores": 4,
+    "elementos": [
+     "bucle-entradas",
+     "iconos-md-3",
+     "iconos-xs-2",
+     "kunak-faq-item"
+    ],
+    "hermanas": 0,
+    "n": 1,
+    "lista": []
+   }
+  }
+ },
+ "cartuchos": {
+  "n": 18,
+  "veredicto": "CATÁLOGO NO tiene familia por firma B: 0 de 18 superan J_B>=0.7",
+  "superanCatalogo": 0,
+  "paresEntreSi": 153,
+  "paresHomogeneos": 153,
+  "detalle": [
+   {
+    "doc": "productos/cartuchos-inteligentes/amoniaco.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/cianuro-de-hidrogeno.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/cloro-dioxido-de-cloro.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/cloruro-de-hidrogeno.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/compuestos-organicos-volatiles.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/dioxido-de-azufre.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/dioxido-de-carbono.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/dioxido-de-nitrogeno.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/fluoruro-de-hidrogeno.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/hidrocarburos-no-metanicos.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/monoxido-de-carbono.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/oxido-nitrico.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/oxigeno.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/ozono.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/particulas-en-suspension.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 7,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_table_maker_1",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 6,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3,
+      "A": 0.6,
+      "solapeB": 0.8571
+     },
+     "CATALOGO": {
+      "B": 0.375,
+      "A": 0.5,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.2727,
+      "A": 0.5556,
+      "solapeB": 0.4286
+     },
+     "SOFTWARE-corta": {
+      "B": 0.3333,
+      "A": 0.7143,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.375
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/sensor-particulas-ultrafinas.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 7,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_table_maker_1",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3,
+      "A": 0.5,
+      "solapeB": 0.8571
+     },
+     "CATALOGO": {
+      "B": 0.375,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.2727,
+      "A": 0.625,
+      "solapeB": 0.4286
+     },
+     "SOFTWARE-corta": {
+      "B": 0.3333,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.375
+   },
+   {
+    "doc": "productos/cartuchos-inteligentes/sulfuro-de-hidrogeno.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   },
+   {
+    "doc": "productos/sensor-de-calidad-del-aire/metano.html",
+    "regimen": "B-",
+    "cpt": "solutions",
+    "plantilla": "solutions-template-default",
+    "marcadoresB": 6,
+    "elementosB": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "dvmd_table_maker",
+     "dvmd_table_maker_0",
+     "dvmd_tm_version_4_0_1",
+     "kunak-faq-item"
+    ],
+    "tiposA": 5,
+    "compartidosConCatalogo": [
+     "breadcrumbs",
+     "bucle-entradas",
+     "kunak-faq-item"
+    ],
+    "soloEnCatalogo": [
+     "menu-anclas"
+    ],
+    "contra": {
+     "PRODUCTO": {
+      "B": 0.3158,
+      "A": 0.5,
+      "solapeB": 1
+     },
+     "CATALOGO": {
+      "B": 0.4286,
+      "A": 0.6,
+      "solapeB": 0.75
+     },
+     "SOFTWARE": {
+      "B": 0.3,
+      "A": 0.625,
+      "solapeB": 0.5
+     },
+     "SOFTWARE-corta": {
+      "B": 0.375,
+      "A": 0.8333,
+      "solapeB": 0.6
+     }
+    },
+    "mejorArquetipoB": "CATALOGO",
+    "mejorJaccardB": 0.4286
+   }
+  ]
+ },
+ "etCache": {
+  "PRODUCTO": {
+   "enlazadas": 8,
+   "capturadas": 8,
+   "ausentes": [],
+   "etCacheEnlazadas": 3,
+   "etCacheAusentes": [],
+   "bytesInline": 337192
+  },
+  "CATALOGO": {
+   "enlazadas": 8,
+   "capturadas": 8,
+   "ausentes": [],
+   "etCacheEnlazadas": 3,
+   "etCacheAusentes": [],
+   "bytesInline": 249584
+  },
+  "SOFTWARE": {
+   "enlazadas": 7,
+   "capturadas": 7,
+   "ausentes": [],
+   "etCacheEnlazadas": 2,
+   "etCacheAusentes": [],
+   "bytesInline": 316085
+  },
+  "SOFTWARE-corta": {
+   "enlazadas": 7,
+   "capturadas": 7,
+   "ausentes": [],
+   "etCacheEnlazadas": 2,
+   "etCacheAusentes": [],
+   "bytesInline": 278771
+  }
+ }
+}

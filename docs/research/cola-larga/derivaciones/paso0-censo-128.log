@@ -1,0 +1,157 @@
+=== 128.ª · PASO 0 · CENSO Y FAMILIAS — 2026-08-31 ===
+
+=== CONTROLES ===
+  OK  el corpus tiene documentos que recorrer
+      788 ficheros .html
+  OK  el censo de régimen DISCRIMINA (un solo casillero sería el detector — §sondas 4, el pleno)
+      -T=371 · --=343 · B-=60 · BT=14
+  OK  el log de la 123.ª se puede PARSEAR (si diera 0 filas, el regex no casa — §sondas 4)
+      6 filas leídas
+  OK  CONTROL DE REPRODUCCIÓN · la firma A reproduce Jaccard y cardinales de la 123.ª
+      pares 30/30 · cardinales 6/6
+  OK  la firma B no está vacía en TODOS (si lo estuviera, el predicado no casa — §sondas 4)
+      534/788 con marcador · 254 sin ninguno
+  OK  MEDIDA SECUNDARIA · ¿mueve la firma B quitar `<style>`/`<script>`? (informativa, no cierra)
+      0/788 documentos cambian de cardinal · B es INMUNE al canal que contaminaba a A
+  OK  el umbral B DISCRIMINA sobre las 4 anclas (ni pleno ni cero), n=788 por ancla
+      hermanas por ancla: PRODUCTO:1 · CATALOGO:0 · SOFTWARE:0 · SOFTWARE-corta:0
+  OK  AUDITORÍA DEL CERO · toda ancla conserva >=2 marcadores DISTINTIVOS (con 1 o 0 ninguna métrica de conjunto puede hallar familia, y el cero sería del instrumento)
+      PRODUCTO: 18/19 distintivos {bucle-entradas,clear,clear-both,dark,dvmd_table_maker,dvmd_table_maker_0,dvmd_tm_version_4_0_1,galeria,iconos-certificicados,iconos-md-3,iconos-md-6,iconos-xs-2,kunak-faq-item,lista-resultados,menu-anclas,modulo-beneficios,parametros,popup} · CATALOGO: 3/4 distintivos {bucle-entradas,kunak-faq-item,menu-anclas} · SOFTWARE: 6/7 distintivos {bucle-entradas,iconos-md-2,kunak-faq-item,menu-anclas,modulo-beneficios,popup} · SOFTWARE-corta: 4/5 distintivos {bucle-entradas,iconos-md-3,iconos-xs-2,kunak-faq-item}
+  OK  hay CSS capturado que cruzar (si diera 0, el cruce no mide — §sondas 4)
+      95 ficheros .css
+  OK  el detector de hojas enlazadas casa en alguna (0 en todas sería el selector — §sondas 4)
+      PRODUCTO=8 · CATALOGO=8 · SOFTWARE=7 · SOFTWARE-corta=7
+
+=== 1 · RÉGIMEN · 788 documentos, unidad = documento ===
+  -T   371
+  --   343
+  B-    60
+  BT    14
+
+  por directorio de primer nivel:
+    casos                    --=57
+    documentos-cientificos   -T=23
+    entradas-blog            -T=152
+    faqs                     --=19
+    fase-3                   --=55 -T=159 B-=28 BT=14
+    fase-3-sectores          B-=8
+    productos                B-=24
+    terminos-kunakpedia      -T=37
+    transformado             --=212
+
+=== 2 · REPRODUCCIÓN DE LA 123.ª (firma A) · pares 30/30 · cardinales 6/6 ===
+  accesorios                                 tipos ayer=3 hoy=3 OK
+      kunak-api                                  ayer=0.5 hoy=0.5 OK
+      sensor-de-calidad-del-aire                 ayer=0.429 hoy=0.429 OK
+      estacion-de-monitoreo-de-calidad-del-aire  ayer=0.375 hoy=0.375 OK
+      software-de-medicion-calidad-del-aire      ayer=0.375 hoy=0.375 OK
+      monitor-calidad-aire                       ayer=0.3 hoy=0.3 OK
+  estacion-de-monitoreo-de-calidad-del-aire  tipos ayer=8 hoy=8 OK
+      sensor-de-calidad-del-aire                 ayer=0.875 hoy=0.875 OK
+      monitor-calidad-aire                       ayer=0.8 hoy=0.8 OK
+      software-de-medicion-calidad-del-aire      ayer=0.778 hoy=0.778 OK
+      kunak-api                                  ayer=0.75 hoy=0.75 OK
+      accesorios                                 ayer=0.375 hoy=0.375 OK
+  kunak-api                                  tipos ayer=6 hoy=6 OK
+      sensor-de-calidad-del-aire                 ayer=0.857 hoy=0.857 OK
+      estacion-de-monitoreo-de-calidad-del-aire  ayer=0.75 hoy=0.75 OK
+      software-de-medicion-calidad-del-aire      ayer=0.75 hoy=0.75 OK
+      monitor-calidad-aire                       ayer=0.6 hoy=0.6 OK
+      accesorios                                 ayer=0.5 hoy=0.5 OK
+  monitor-calidad-aire                       tipos ayer=10 hoy=10 OK
+      estacion-de-monitoreo-de-calidad-del-aire  ayer=0.8 hoy=0.8 OK
+      sensor-de-calidad-del-aire                 ayer=0.7 hoy=0.7 OK
+      software-de-medicion-calidad-del-aire      ayer=0.636 hoy=0.636 OK
+      kunak-api                                  ayer=0.6 hoy=0.6 OK
+      accesorios                                 ayer=0.3 hoy=0.3 OK
+  sensor-de-calidad-del-aire                 tipos ayer=7 hoy=7 OK
+      estacion-de-monitoreo-de-calidad-del-aire  ayer=0.875 hoy=0.875 OK
+      software-de-medicion-calidad-del-aire      ayer=0.875 hoy=0.875 OK
+      kunak-api                                  ayer=0.857 hoy=0.857 OK
+      monitor-calidad-aire                       ayer=0.7 hoy=0.7 OK
+      accesorios                                 ayer=0.429 hoy=0.429 OK
+  software-de-medicion-calidad-del-aire      tipos ayer=8 hoy=8 OK
+      sensor-de-calidad-del-aire                 ayer=0.875 hoy=0.875 OK
+      estacion-de-monitoreo-de-calidad-del-aire  ayer=0.778 hoy=0.778 OK
+      kunak-api                                  ayer=0.75 hoy=0.75 OK
+      monitor-calidad-aire                       ayer=0.636 hoy=0.636 OK
+      accesorios                                 ayer=0.375 hoy=0.375 OK
+
+=== 3 · FAMILIAS · J_B>=0.7 sobre los 788 documentos ===
+  PRODUCTO         ancla=productos/monitor-calidad-aire.html
+      firma B: 19 marcadores → hermanas 1  ⇒  n = 2   (|B| alcanzable <= 27)
+        {breadcrumbs, bucle-entradas, clear, clear-both, dark, dvmd_table_maker, dvmd_table_maker_0, dvmd_tm_version_4_0_1, galeria, iconos-certificicados, iconos-md-3, iconos-md-6, iconos-xs-2, kunak-faq-item, lista-resultados, menu-anclas, modulo-beneficios, parametros, popup}
+      firma A: 10 tipos      → hermanas 2
+        productos/estacion-de-monitoreo-de-calidad-del-aire.html B=0.9474 solB=1 A=0.8
+        productos/sensor-de-calidad-del-aire.html                B=0.4286 solB=0.8182 A=0.7
+        productos/cartuchos-inteligentes/amoniaco.html           B=0.3158 solB=1 A=0.5
+        productos/cartuchos-inteligentes/cianuro-de-hidrogeno.html B=0.3158 solB=1 A=0.5
+        productos/cartuchos-inteligentes/cloro-dioxido-de-cloro.html B=0.3158 solB=1 A=0.5
+        productos/cartuchos-inteligentes/cloruro-de-hidrogeno.html B=0.3158 solB=1 A=0.5
+        … y 24 candidatos más
+  CATALOGO         ancla=productos/accesorios.html
+      firma B: 4 marcadores → hermanas 0  ⇒  n = 1   (|B| alcanzable <= 5)
+        {breadcrumbs, bucle-entradas, kunak-faq-item, menu-anclas}
+      firma A: 3 tipos      → hermanas 9
+        productos/software-de-medicion-calidad-del-aire.html     B=0.5714 solB=1 A=0.375
+        fase-3/listados/recursos/articulos/contaminacion-en-la-construccion/index.html B=0.5 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html B=0.5 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-minera/index.html B=0.5 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-urbana/index.html B=0.5 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-urbana/page/2/index.html B=0.5 solB=1 A=0
+        … y 24 candidatos más
+  SOFTWARE         ancla=productos/software-de-medicion-calidad-del-aire.html
+      firma B: 7 marcadores → hermanas 0  ⇒  n = 1   (|B| alcanzable <= 10)
+        {breadcrumbs, bucle-entradas, iconos-md-2, kunak-faq-item, menu-anclas, modulo-beneficios, popup}
+      firma A: 8 tipos      → hermanas 4
+        productos/accesorios.html                                B=0.5714 solB=1 A=0.375
+        productos/sensor-de-calidad-del-aire.html                B=0.3846 solB=0.7143 A=0.875
+        productos/kunak-api.html                                 B=0.3333 solB=0.6 A=0.75
+        productos/estacion-de-monitoreo-de-calidad-del-aire.html B=0.3158 solB=0.8571 A=0.7778
+        fase-3/listados/recursos/articulos/contaminacion-en-la-construccion/index.html B=0.2857 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html B=0.2857 solB=1 A=0
+        … y 24 candidatos más
+  SOFTWARE-corta   ancla=productos/kunak-api.html
+      firma B: 5 marcadores → hermanas 0  ⇒  n = 1   (|B| alcanzable <= 7)
+        {breadcrumbs, bucle-entradas, iconos-md-3, iconos-xs-2, kunak-faq-item}
+      firma A: 6 tipos      → hermanas 26
+        fase-3/sueltas/empresa/index.html                        B=0.4286 solB=0.6 A=0.8571
+        fase-3/listados/recursos/articulos/contaminacion-en-la-construccion/index.html B=0.4 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-en-puertos-y-aeropuertos/index.html B=0.4 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-minera/index.html B=0.4 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-urbana/index.html B=0.4 solB=1 A=0
+        fase-3/listados/recursos/articulos/contaminacion-urbana/page/2/index.html B=0.4 solB=1 A=0
+        … y 24 candidatos más
+
+=== 3b · AUDITORÍA DEL CERO · ubicuidad (>=50 % de los 534 con marcador) ===
+  ubicuos del corpus: breadcrumbs=532
+  PRODUCTO         18/19 distintivos {bucle-entradas, clear, clear-both, dark, dvmd_table_maker, dvmd_table_maker_0, dvmd_tm_version_4_0_1, galeria, iconos-certificicados, iconos-md-3, iconos-md-6, iconos-xs-2, kunak-faq-item, lista-resultados, menu-anclas, modulo-beneficios, parametros, popup}
+      sólo con distintivos → hermanas 1 ⇒ n = 2  ej: productos/estacion-de-monitoreo-de-calidad-del-aire.html=0.9444
+  CATALOGO         3/4 distintivos {bucle-entradas, kunak-faq-item, menu-anclas}
+      sólo con distintivos → hermanas 0 ⇒ n = 1
+  SOFTWARE         6/7 distintivos {bucle-entradas, iconos-md-2, kunak-faq-item, menu-anclas, modulo-beneficios, popup}
+      sólo con distintivos → hermanas 0 ⇒ n = 1
+  SOFTWARE-corta   4/5 distintivos {bucle-entradas, iconos-md-3, iconos-xs-2, kunak-faq-item}
+      sólo con distintivos → hermanas 0 ⇒ n = 1
+
+=== 4 · LOS 18 CARTUCHOS/SENSOR CONTRA CATÁLOGO ===
+  VEREDICTO: CATÁLOGO NO tiene familia por firma B: 0 de 18 superan J_B>=0.7
+  homogeneidad interna: 153/153 pares entre ellos con J_B>=0.7
+  2 firma(s) distinta(s) entre los 18:
+    n=16  marcadores=6  J_B(CATALOGO)=0.4286  solape=0.75
+      {breadcrumbs,bucle-entradas,dvmd_table_maker,dvmd_table_maker_0,dvmd_tm_version_4_0_1,kunak-faq-item}
+      amoniaco.html cianuro-de-hidrogeno.html cloro-dioxido-de-cloro.html cloruro-de-hidrogeno.html compuestos-organicos-volatiles.html dioxido-de-azufre.html dioxido-de-carbono.html dioxido-de-nitrogeno.html fluoruro-de-hidrogeno.html hidrocarburos-no-metanicos.html monoxido-de-carbono.html oxido-nitrico.html oxigeno.html ozono.html sulfuro-de-hidrogeno.html metano.html
+    n=2  marcadores=7  J_B(CATALOGO)=0.375  solape=0.75
+      {breadcrumbs,bucle-entradas,dvmd_table_maker,dvmd_table_maker_0,dvmd_table_maker_1,dvmd_tm_version_4_0_1,kunak-faq-item}
+      particulas-en-suspension.html sensor-particulas-ultrafinas.html
+  CATÁLOGO tiene {breadcrumbs, bucle-entradas, kunak-faq-item, menu-anclas}
+  compartidos con el 1.º cartucho: {breadcrumbs, bucle-entradas, kunak-faq-item} · sólo en CATÁLOGO: {menu-anclas}
+
+=== 5 · HOJAS `et-cache` DE LAS 4 ANCLAS (re-derivado, no heredado) ===
+  PRODUCTO         enlazadas=8 capturadas=8 ausentes=0 · et-cache 3 (ausentes 0) · inline=337192B
+  CATALOGO         enlazadas=8 capturadas=8 ausentes=0 · et-cache 3 (ausentes 0) · inline=249584B
+  SOFTWARE         enlazadas=7 capturadas=7 ausentes=0 · et-cache 2 (ausentes 0) · inline=316085B
+  SOFTWARE-corta   enlazadas=7 capturadas=7 ausentes=0 · et-cache 2 (ausentes 0) · inline=278771B
+
+VEREDICTO: controles en verde
+✓ evaluadas 788/788 documentos · régimen y firma
