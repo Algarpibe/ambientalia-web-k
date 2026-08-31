@@ -1,0 +1,236 @@
+{
+ "meta": {
+  "tanda": "130.ª",
+  "paso": "PASO 0",
+  "fecha": "2026-08-31",
+  "derivadoDe": [
+   "scripts/qa/medidas/productos-cmp-1440*.json",
+   "apps/web/.next*/server/app/*.html",
+   "apps/web/src/components/**"
+  ],
+  "unidad": "P4a: NODO en el DOM servido (cota superior del CON CAJA) · P4b: FILA emparejada",
+  "noContesta": "no dice si el marcador que falta es NO-OP (eso lo dice una corrida), ni mide un píxel"
+ },
+ "p3": {
+  "congeladas": {
+   "base30": {
+    "fichero": "productos-cmp-1440.json",
+    "mtime": "2026-08-30 23:29:28 UTC"
+   },
+   "tras": {
+    "fichero": "productos-cmp-1440-2026-08-31-tras-marcador.json",
+    "mtime": "2026-08-31 18:05:07 UTC"
+   },
+   "hoy": {
+    "fichero": "productos-cmp-1440-2026-08-31.json",
+    "mtime": "2026-08-31 18:19:26 UTC"
+   }
+  },
+  "identicasAlBit": true,
+  "buildMedido": {
+   "build": ".next",
+   "kunakApiHtml": "2026-08-31 18:02:20 UTC",
+   "dataModulo": 27
+  },
+  "controlBuildPrevio": {
+   "build": ".next-128-previo",
+   "kunakApiHtml": "2026-08-31 02:06:27 UTC",
+   "dataModulo": 0
+  },
+  "veredicto": "c — POSTERIOR al marcador, con el build bueno, y la SONDA no leía el selector. NO se renombra."
+ },
+ "ef": {
+  "elige": {
+   "fichero": "productos-cmp-1440-2026-08-31.json",
+   "ruta": "C:\\Users\\algar\\OneDrive\\Documentos\\Ambientalia_2026_K\\kunak-web-clone\\scripts\\qa\\medidas\\productos-cmp-1440-2026-08-31.json",
+   "fecha": "2026-08-31 18:19 UTC",
+   "candidatas": 3,
+   "ordenadoPor": "mtime"
+  },
+  "eligeLaBuena": true
+ },
+ "p4a": {
+  "marcadores": [
+   {
+    "ruta": "/monitor-calidad-aire",
+    "mtime": "2026-08-31 18:02:20 UTC",
+    "dataModulo": {
+     "enHtml": 0,
+     "sinScriptNiStyle": 0
+    },
+    "dataFila": {
+     "enHtml": 11,
+     "sinScriptNiStyle": 6
+    },
+    "kinds": []
+   },
+   {
+    "ruta": "/accesorios",
+    "mtime": "2026-08-31 18:02:25 UTC",
+    "dataModulo": {
+     "enHtml": 0,
+     "sinScriptNiStyle": 0
+    },
+    "dataFila": {
+     "enHtml": 15,
+     "sinScriptNiStyle": 8
+    },
+    "kinds": []
+   },
+   {
+    "ruta": "/software-de-medicion-calidad-del-aire",
+    "mtime": "2026-08-31 18:02:29 UTC",
+    "dataModulo": {
+     "enHtml": 6,
+     "sinScriptNiStyle": 6
+    },
+    "dataFila": {
+     "enHtml": 11,
+     "sinScriptNiStyle": 6
+    },
+    "kinds": [
+     "blurb"
+    ]
+   },
+   {
+    "ruta": "/kunak-api",
+    "mtime": "2026-08-31 18:02:20 UTC",
+    "dataModulo": {
+     "enHtml": 27,
+     "sinScriptNiStyle": 27
+    },
+    "dataFila": {
+     "enHtml": 11,
+     "sinScriptNiStyle": 6
+    },
+    "kinds": [
+     "blurb",
+     "button",
+     "image",
+     "text"
+    ]
+   }
+  ],
+  "emisores": [
+   {
+    "fichero": "apps/web/src/components/api/BeneficiosApi.tsx",
+    "codigo": 3,
+    "comentario": 0
+   },
+   {
+    "fichero": "apps/web/src/components/api/HeroApi.tsx",
+    "codigo": 6,
+    "comentario": 0
+   },
+   {
+    "fichero": "apps/web/src/components/api/InfoProductoApi.tsx",
+    "codigo": 6,
+    "comentario": 0
+   },
+   {
+    "fichero": "apps/web/src/components/BlurbsIconos.tsx",
+    "codigo": 1,
+    "comentario": 2
+   },
+   {
+    "fichero": "apps/web/src/components/cola-larga/CuerpoPagina.tsx",
+    "codigo": 0,
+    "comentario": 5
+   }
+  ],
+  "consumidores": {
+   "apps/web/src/components/api/BeneficiosApi.tsx": [
+    "apps/web/src/app/kunak-api/page.tsx",
+    "apps/web/src/lib/api.ts"
+   ],
+   "apps/web/src/components/api/HeroApi.tsx": [
+    "apps/web/src/app/accesorios/page.tsx",
+    "apps/web/src/app/kunak-api/page.tsx",
+    "apps/web/src/components/api/InfoProductoApi.tsx",
+    "apps/web/src/components/monitor/HeroProducto.tsx",
+    "apps/web/src/lib/api.ts"
+   ],
+   "apps/web/src/components/api/InfoProductoApi.tsx": [
+    "apps/web/src/app/kunak-api/page.tsx",
+    "apps/web/src/components/api/HeroApi.tsx",
+    "apps/web/src/components/monitor/Software.tsx",
+    "apps/web/src/lib/api.ts"
+   ],
+   "apps/web/src/components/BlurbsIconos.tsx": [
+    "apps/web/src/app/kunak-api/page.tsx",
+    "apps/web/src/components/api/BeneficiosApi.tsx",
+    "apps/web/src/components/api/InfoProductoApi.tsx",
+    "apps/web/src/components/software/InfoProductoSoftware.tsx",
+    "apps/web/src/lib/api.ts"
+   ]
+  }
+ },
+ "p4b": {
+  "porRuta": [
+   {
+    "ruta": "/monitor-calidad-aire",
+    "objetivoModulos": 110,
+    "objetivoFilas": 9,
+    "filasEmparejadas": 6,
+    "comparadas": 0,
+    "sinMarcador": 6,
+    "parciales": 0,
+    "ejes": 0,
+    "difs": 0,
+    "huerfanosO": 0,
+    "marcadoresServidos": 0
+   },
+   {
+    "ruta": "/accesorios",
+    "objetivoModulos": 55,
+    "objetivoFilas": 9,
+    "filasEmparejadas": 8,
+    "comparadas": 0,
+    "sinMarcador": 8,
+    "parciales": 0,
+    "ejes": 0,
+    "difs": 0,
+    "huerfanosO": 0,
+    "marcadoresServidos": 0
+   },
+   {
+    "ruta": "/software-de-medicion-calidad-del-aire",
+    "objetivoModulos": 90,
+    "objetivoFilas": 8,
+    "filasEmparejadas": 6,
+    "comparadas": 0,
+    "sinMarcador": 5,
+    "parciales": 1,
+    "ejes": 0,
+    "difs": 1,
+    "huerfanosO": 0,
+    "marcadoresServidos": 6
+   },
+   {
+    "ruta": "/kunak-api",
+    "objetivoModulos": 56,
+    "objetivoFilas": 7,
+    "filasEmparejadas": 6,
+    "comparadas": 3,
+    "sinMarcador": 3,
+    "parciales": 0,
+    "ejes": 0,
+    "difs": 32,
+    "huerfanosO": 0,
+    "marcadoresServidos": 27
+   }
+  ],
+  "campoMalNombrado": {
+   "campo": "rutasSinNingunMarcador",
+   "derivadoDe": "filasComparadas === 0",
+   "contradicen": [
+    "/software-de-medicion-calidad-del-aire"
+   ]
+  }
+ },
+ "controles": {
+  "buildPrevioSinMarcador": true,
+  "comentariosDescontados": true,
+  "consumidoresDerivados": true
+ }
+}

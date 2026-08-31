@@ -1,0 +1,76 @@
+═══ P3 · dos congeladas acreditadas para el mismo par (1440) ═══
+  productos-cmp-1440.json                            mtime 2026-08-30 23:29:28 UTC  acredita=true saboteada=null
+  productos-cmp-1440-2026-08-31-tras-marcador.json   mtime 2026-08-31 18:05:07 UTC  acredita=true saboteada=null
+  productos-cmp-1440-2026-08-31.json                 mtime 2026-08-31 18:19:26 UTC  acredita=true saboteada=null
+  · «tras-marcador» vs la del 30-ago : IDÉNTICAS al bit salvo meta.fecha
+  · ejesExcluidos de «tras-marcador» : {"modulos":"el clon no emite marcador de MODULO — SIN COMPARAR, ver modulosSinComparar por ruta"}
+  · ejesExcluidos de la de 13:19     : {}
+
+  ── el BUILD que se midió (§*el marcador prueba que el build es nuevo*) ──
+     .next                            kunak-api.html 2026-08-31 18:02:20 UTC  data-modulo=27
+     · builds con marcador: 1 de 14
+     · CONTROL .next-128-previo (anterior a la 129.ª): data-modulo=0 ✓
+
+  ── VEREDICTO de las tres salidas ──
+   (a) «es la de ANTES del marcador, mal nombrada»           → FALSO  (el build medido ya traía 27 marcadores, y es ANTERIOR a la corrida)
+   (b) «es POSTERIOR al marcador pero midió un build viejo»   → FALSO  (el build es de 2026-08-31 18:02:20 UTC, posterior a la edición del fuente)
+   (c) «es POSTERIOR, con el build BUENO, y la SONDA no leía» → CIERTA
+       El nombre «-tras-marcador» es CORRECTO. Lo falso es su
+       ejesExcluidos.modulos: afirma del CLON algo que era de la SONDA
+       (§sondas 4 — un selector que no casa con nada no es un cero).
+   ⇒ NO se renombra: es idéntica al bit a la del 30-ago, o sea que ELLA
+     MISMA es la prueba del NO-OP de la 129.ª. Marcarla como artefacto la
+     volvería invisible a los censos (§regla 7, la vuelta).
+
+═══ EF · verificación POR EFECTO, no por nombre ═══
+  eligeCongeladaAnterior(/productos-cmp-1440/) → productos-cmp-1440-2026-08-31.json
+     candidatas 3 · ordenadoPor mtime · fecha 2026-08-31 18:19 UTC
+  · ¿elige la que trae el eje modulos comparado? SÍ ✓
+
+═══ P4a · marcador de sonda YA emitido — la SALIDA SERVIDA ═══
+  /monitor-calidad-aire                    data-modulo=  0  data-fila=  6  kinds=[]
+  /accesorios                              data-modulo=  0  data-fila=  8  kinds=[]
+  /software-de-medicion-calidad-del-aire   data-modulo=  6  data-fila=  6  kinds=[blurb]
+  /kunak-api                               data-modulo= 27  data-fila=  6  kinds=[blurb,button,image,text]
+  · cardinal SIN <script>/<style> (§sondas 4: ahí viven los selectores que se hacen pasar por marcado)
+  · los dos cardinales coinciden en las 4: sí
+
+  ── quién EMITE, derivado del fuente (código ≠ comentario) ──
+     apps/web/src/components/api/BeneficiosApi.tsx              código=3  comentario=0
+     apps/web/src/components/api/HeroApi.tsx                    código=6  comentario=0
+     apps/web/src/components/api/InfoProductoApi.tsx            código=6  comentario=0
+     apps/web/src/components/BlurbsIconos.tsx                   código=1  comentario=2
+     apps/web/src/components/cola-larga/CuerpoPagina.tsx        código=0  comentario=5
+     · si se contaran los comentarios saldrían 23 en vez de 16 — el falso positivo del barrido por literal
+
+  ── consumidores DERIVADOS (git grep), no recordados ──
+     BeneficiosApi.tsx        → apps/web/src/app/kunak-api/page.tsx · apps/web/src/lib/api.ts
+     HeroApi.tsx              → apps/web/src/app/accesorios/page.tsx · apps/web/src/app/kunak-api/page.tsx · apps/web/src/components/api/InfoProductoApi.tsx · apps/web/src/components/monitor/HeroProducto.tsx · apps/web/src/lib/api.ts
+     InfoProductoApi.tsx      → apps/web/src/app/kunak-api/page.tsx · apps/web/src/components/api/HeroApi.tsx · apps/web/src/components/monitor/Software.tsx · apps/web/src/lib/api.ts
+     BlurbsIconos.tsx         → apps/web/src/app/kunak-api/page.tsx · apps/web/src/components/api/BeneficiosApi.tsx · apps/web/src/components/api/InfoProductoApi.tsx · apps/web/src/components/software/InfoProductoSoftware.tsx · apps/web/src/lib/api.ts
+
+═══ P4b · ¿está sobre-generalizado el «3 de 6» de /kunak-api? ═══
+  ruta                                     obj.mód  filas  CON  SIN  PARC  ejes  difs  servidos
+  /monitor-calidad-aire                       110      6    0    6     0     0     0         0
+  /accesorios                                  55      8    0    8     0     0     0         0
+  /software-de-medicion-calidad-del-aire       90      6    0    5     1     0     1         6
+  /kunak-api                                   56      6    3    3     0     0    32        27
+
+  · /kunak-api : 3 filas CON marcador de 6 emparejadas — el «3 de 6» del acta se REPRODUCE
+  · pero las 3 SIN marcador no están nombradas en la congelada: sólo su cardinal
+  · sus módulos, por refPorFila: [1,6,12,9,4,1]
+
+  ── ⚠ el campo `rutasSinNingunMarcador` NO mide lo que su nombre dice ──
+     lo publicado : ["/monitor-calidad-aire","/accesorios","/software-de-medicion-calidad-del-aire"]
+     ✗ /software-de-medicion-calidad-del-aire está en la lista y SIRVE 6 data-modulo
+     el campo se deriva de `filasComparadas === 0` (L573), que es
+     «ninguna fila COMPARABLE», no «ningún marcador». Las dos se escriben
+     igual y sólo una es cierta (§sondas 4, sobre el nombre de un campo).
+
+═══ trabajo restante, por ruta y en la unidad que la sonda compara ═══
+  /monitor-calidad-aire                    filas por marcar: 6 de 6  ·  módulos objetivo (cota DOM): 110  ·  ya servidos: 0
+  /accesorios                              filas por marcar: 8 de 8  ·  módulos objetivo (cota DOM): 55  ·  ya servidos: 0
+  /software-de-medicion-calidad-del-aire   filas por marcar: 6 de 6  ·  módulos objetivo (cota DOM): 90  ·  ya servidos: 6
+  /kunak-api                               filas por marcar: 3 de 6  ·  módulos objetivo (cota DOM): 56  ·  ya servidos: 27
+
+→ paso0-130.json
