@@ -1,0 +1,254 @@
+=== 128.ª · ESCALÓN 1 · LECTURAS Y REPARTO — 2026-08-31 ===
+
+=== CONTROLES ===
+  OK  el `detalle` de las dos congeladas se puede recorrer (si no, no se puede derivar nada)
+      lote 52 pares · familia 132 pares
+  OK  LOS VEREDICTOS SON UNA PARTICIÓN de los pares en las dos congeladas
+      lote 52/52 CIERRA · familia 132/132 CIERRA
+  OK  SUB-RECUENTO · dónde caen los pares con marca de varianza estructural (informativo)
+      lote: PLANTILLA=4 · familia: (ninguno)
+  OK  el barrido del 46 CASA en algo (0 sería el filtro y no el repo — §sondas 4)
+      104 líneas en 20 ficheros · 21 son comentario/cita
+  OK  las dos filas «pendiente» EXISTEN y su propia sección las contradice (si no, no hay nada que borrar)
+      F3-3: fila L2646 · 2 cierres en su § · F3-4: fila L2647 · 1 cierres en su §
+
+=== (b) EL REPARTO, DERIVADO DEL `detalle` ===
+  LOTE (4 arquetipos) · 52 pares
+      veredictos: CAMPO=2 · PLANTILLA=10 · SIN ESCRIBIR=40
+      suma 52 vs pares 52 ⇒ PARTICIÓN
+      con marca estructural: 4
+        CAMPO | estructural=false → 2
+        PLANTILLA | estructural=false → 6
+        PLANTILLA | estructural=true → 4
+        SIN ESCRIBIR | estructural=false → 40
+      resumen PUBLICADO: {"pares":52,"CAMPO":2,"PLANTILLA":10,"SIN_ESCRIBIR":40,"SIN_PROBAR":0,"varianzaEstructural":4}
+  FAMILIA PRODUCTO (3 instancias) · 132 pares
+      veredictos: CAMPO=8 · PLANTILLA=26 · SIN ESCRIBIR=98
+      suma 132 vs pares 132 ⇒ PARTICIÓN
+      con marca estructural: 0
+        CAMPO | estructural=false → 8
+        PLANTILLA | estructural=false → 26
+        SIN ESCRIBIR | estructural=false → 98
+      resumen PUBLICADO: {"pares":132,"CAMPO":8,"PLANTILLA":26,"SIN_ESCRIBIR":98,"SIN_PROBAR":0,"varianzaEstructural":0}
+
+=== (a) BARRIDO DEL 46 · 104 líneas · 21 comentario/cita ===
+  docs/ESQUEMA-CMS.md:2188 [texto] (de 46 / los 46)
+      | **eje real** | **volumen de contenido, no forma**: 18 páginas de 46–50 módulos sin `blurb` y 5 de 56–106 con `blurb` — **mismo nº de secciones y misma plantilla** |
+  docs/ESQUEMA-CMS.md:6670 [cita] (de 46 / los 46)
+      ### Los 46, reescritos con su reparto y los dos números con su unidad
+  docs/ESQUEMA-CMS.md:6672 [texto] (46 + pares/ejes+de 46 / los 46)
+      | de los 46 pares SIN VARIANZA del lote | n | vía |
+  docs/HANDOFF.md:7855 [texto] (de 46 / los 46)
+      | **15** | `[]` contra clave ausente | Payload **no puede** distinguir «lista vacía» de «campo ausente» | la vuelta omite; derivado: **0 arrays vacíos explícitos en las 46 filas**, y el comparador se auto-vigila si eso c
+  docs/HANDOFF.md:8144 [texto] (de 46 / los 46)
+      documentos de 46; el alcance viaja en `SEMBRADAS` y en `FUERA_DE_BLOQUE_1`.
+  docs/HANDOFF.md:8633 [texto] (de 46 / los 46)
+      páginas de 46–50 módulos sin `blurb` contra 5 de 56–106 con él, **mismo nº de
+  docs/PENDIENTES-QA.md:1459 [cita] (de 46 / los 46)
+      ### La clasificación contra el listón — **las 46 `⛔`**
+  docs/PENDIENTES-QA.md:1466 [texto] (de 46 / los 46)
+      | cubo | criterio, literal | n de 46 |
+  docs/PENDIENTES-QA.md:1524 [cita] (de 46 / los 46)
+      > contesta la primera. **24 de 46 fichas bloquean construcción y no
+  docs/PENDIENTES-QA.md:1548 [cita] (de 46 / los 46)
+      #### ✅ Y una de las 46 está CADUCADA — derivado, no supuesto
+  docs/PENDIENTES-QA.md:12864 [texto] (de 46 / los 46)
+      | ejercitados por las 46 filas sembradas | **88** |
+  docs/PENDIENTES-QA.md:25319 [texto] (46 + SIN PROBAR+46 + pares/ejes+de 46 / los 46)
+      | 2 | **los 46 ejes SIN PROBAR** | **46** de 52 (marcador × ancho × eje) · **24** de 28 (marcador × eje) · **2** de 4 (por eje: `mt`, `pb`) | sin varianza en 2–4 instancias **no prueba plantilla**, y el test A no los res
+  docs/PENDIENTES-QA.md:25378 [cita] (46 + SIN PROBAR+de 46 / los 46)
+      **Los 46 SIN PROBAR de la 125.ª, reescritos con los dos números y su unidad:**
+  docs/PENDIENTES-QA.md:25380 [texto] (46 + pares/ejes+de 46 / los 46)
+      | de los 46 pares | n | vía |
+  docs/PLAN-FASE-3.md:1856 [texto] (46 + pares/ejes+de 46 / los 46)
+      1. **los 46 pares SIN VARIANZA no son «plantilla probada»**: son **sin varianza
+  docs/PLAN-FASE-3.md:1903 [texto] (46 + pares/ejes+de 46 / los 46)
+      1. **escribirlo ya**, con los 6 ejes medidos como campo, los 46 sin varianza
+  docs/PLAN-FASE-3.md:2014 [texto] (46 + SIN PROBAR+de 46 / los 46)
+      —pieza, ancho, eje, n y valores—; los 46 salen **SIN PROBAR y no cableados**, en
+  docs/PLAN-FASE-3.md:2075 [texto] (46 + SIN PROBAR)
+      cablear (**0 consumidores**) · los **46** SIN PROBAR · `arquetipos` con **0
+  docs/PLAN-FASE-3.md:2648 [texto] (46 + SIN PROBAR)
+      | **F3-5** · los content types de lo ya construido | 🔶 **PRIMERA MITAD HECHA (126.ª, 2026-08-31): el content type ESCRITO** para **4 de las 5 rutas** —colección `arquetipos`, ESQUEMA §2o, con sus **46 SIN PROBAR declara
+  docs/research/cola-larga/derivaciones/escalon1-lecturas-128.mjs:123 [texto] (46 + SIN PROBAR)
+      { nombre: "46 + SIN PROBAR", re: /46[^\n]{0,40}SIN PROBAR|SIN PROBAR[^\n]{0,40}\b46\b/i },
+  docs/research/cola-larga/derivaciones/escalon1-lecturas-128.mjs:124 [texto] (46 + pares/ejes)
+      { nombre: "46 + pares/ejes", re: /\b46\b[^\n]{0,30}(pares|ejes)|\b(pares|ejes)\b[^\n]{0,30}\b46\b/i },
+  docs/research/cola-larga/derivaciones/escalon1-lecturas-128.mjs:125 [texto] (de 46 / los 46)
+      { nombre: "de 46 / los 46", re: /\b(de|los|las)\s+46\b/i },
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:147 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A · TAUTOLÓGICA en el lote (los 46 se definen aquí) — 0 separadoras por construcción, no adjudica",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:148 [texto] (de 46 / los 46)
+      "detalle": "0 de 46, que es el único valor posible en este dominio"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:152 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:153 [texto] (de 46 / los 46)
+      "detalle": "6 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:147 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A · TAUTOLÓGICA en el lote (los 46 se definen aquí) — 0 separadoras por construcción, no adjudica",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:148 [texto] (de 46 / los 46)
+      "detalle": "0 de 46, que es el único valor posible en este dominio"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:152 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:153 [texto] (de 46 / los 46)
+      "detalle": "6 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json:152 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A · TAUTOLÓGICA en el lote (los 46 se definen aquí) — 0 separadoras por construcción, no adjudica",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json:153 [texto] (de 46 / los 46)
+      "detalle": "0 de 46, que es el único valor posible en este dominio"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json:157 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json:158 [texto] (de 46 / los 46)
+      "detalle": "6 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:146 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:147 [texto] (de 46 / los 46)
+      "detalle": "0 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:151 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:152 [texto] (de 46 / los 46)
+      "detalle": "0 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:156 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json:157 [texto] (de 46 / los 46)
+      "detalle": "6 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:146 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:147 [texto] (de 46 / los 46)
+      "detalle": "0 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:151 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:152 [texto] (de 46 / los 46)
+      "detalle": "0 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:156 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json:157 [texto] (de 46 / los 46)
+      "detalle": "6 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.json:146 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.json:147 [texto] (de 46 / los 46)
+      "detalle": "0 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.json:151 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.json:152 [texto] (de 46 / los 46)
+      "detalle": "0 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.json:156 [texto] (de 46 / los 46)
+      "nombre": "PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.json:157 [texto] (de 46 / los 46)
+      "detalle": "6 de 46"
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:35 [cita] (de 46 / los 46)
+      // los 46 y eso seria el PLENO de §sondas 4.
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:394 [cita] (de 46 / los 46)
+      /* ── CRUCE CONTRA LOS 46 DEL LOTE — la unidad es el PAR, y se nombra ────── */
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:516 [cita] (de 46 / los 46)
+      /* ⚠ EN EL LOTE ESTA REFUTACIÓN ES TAUTOLÓGICA, no verde ni roja: los 46 SE
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:523 [texto] (de 46 / los 46)
+      "PRE-REGISTRO · mitad A · TAUTOLÓGICA en el lote (los 46 se definen aquí) — 0 separadoras por construcción, no adjudica",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:524 [texto] (de 46 / los 46)
+      `${varianzaEn46} de 46, que es el único valor posible en este dominio`);
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:526 [texto] (de 46 / los 46)
+      "PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:527 [texto] (de 46 / los 46)
+      `${plantillaEn46} de 46`);
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:530 [texto] (de 46 / los 46)
+      "PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:531 [texto] (de 46 / los 46)
+      `${varianzaEn46} de 46`);
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:533 [texto] (de 46 / los 46)
+      "PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:534 [texto] (de 46 / los 46)
+      `${varianzaEn46} de 46`);
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:536 [texto] (de 46 / los 46)
+      "PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)",
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:537 [texto] (de 46 / los 46)
+      `${plantillaEn46} de 46`);
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:625 [texto] (46 + SIN PROBAR+de 46 / los 46)
+      say("=== CRUCE CONTRA LOS 46 SIN PROBAR DEL LOTE ===");
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:626 [texto] (de 46 / los 46)
+      say(`  resueltos aquí (CAMPO o PLANTILLA): ${resueltos46.length} de 46`);
+  docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs:627 [texto] (de 46 / los 46)
+      say(`  siguen abiertos:                    ${abiertos46.length} de 46`);
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.json:39 [texto] (46 + pares/ejes)
+      "detalle": "pares 52 · CAMPO 6 · SIN VARIANZA 46"
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.json:43 [texto] (46 + pares/ejes+de 46 / los 46)
+      "nombre": "HAY TECHO: pares de los 46 cuyo marcador está en >=2 documentos de la familia",
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.json:44 [texto] (de 46 / los 46)
+      "detalle": "alcanzables 46 de 46 · fuera de alcance 0"
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.json:49 [texto] (de 46 / los 46)
+      "detalle": "SIN ESCRIBIR 40 · con valor no-inicial 6 · suma 46 de 46"
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:18 [cita] (46 + SIN PROBAR+de 46 / los 46)
+      //   3 · ¿cuántos de los 46 SIN PROBAR pueden siquiera MOVERSE? Sólo los pares
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:21 [cita] (de 46 / los 46)
+      //   4 · de los 46, ¿cuántos son SIN ESCRIBIR —único valor observado = el
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:135 [cita] (de 46 / los 46)
+      /* ═══ LOS 46: intersección y SIN ESCRIBIR ════════════════════════════════ */
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:145 [cita] (de 46 / los 46)
+      /* ¿Cuántos de los 46 tienen su marcador también en la familia? Es el TECHO. */
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:150 [texto] (46 + pares/ejes+de 46 / los 46)
+      "HAY TECHO: pares de los 46 cuyo marcador está en >=2 documentos de la familia",
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:151 [texto] (de 46 / los 46)
+      `alcanzables ${alcanzables.length} de 46 · fuera de alcance ${fueraDeAlcance.length}`);
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:162 [texto] (de 46 / los 46)
+      `SIN ESCRIBIR ${sinEscribir.length} · con valor no-inicial ${conValor.length} · suma ${sinEscribir.length + conValor.length} de 46`);
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:215 [texto] (de 46 / los 46)
+      say("=== 3 · EL TECHO — cuántos de los 46 pueden siquiera MOVERSE ===");
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:216 [texto] (de 46 / los 46)
+      say(`  alcanzables (su marcador está en >=2 docs de la familia): ${alcanzables.length} de 46`);
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:217 [texto] (de 46 / los 46)
+      say(`  fuera de alcance:                                          ${fueraDeAlcance.length} de 46`);
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:229 [texto] (de 46 / los 46)
+      say("=== 4 · LOS 46, PARTIDOS POR LA PREMISA CALLADA DEL TEST A ===");
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:230 [texto] (de 46 / los 46)
+      say(`  SIN ESCRIBIR (único valor observado = 0, el inicial):  ${sinEscribir.length} de 46`);
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:231 [texto] (de 46 / los 46)
+      say(`  con valor no-inicial y sin varianza:                   ${conValor.length} de 46`);
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:243 [texto] (46 + pares/ejes+de 46 / los 46)
+      say(`  · techo de la tanda: ${alcanzables.length} de los 46 pares son alcanzables por el dominio nuevo`);
+  docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs:244 [texto] (de 46 / los 46)
+      say(`  · de los 46, ${sinEscribir.length} son SIN ESCRIBIR — sin declaración no hay cascada a la que preguntar`);
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:77 [texto] (46 + pares/ejes+de 46 / los 46)
+      | pares de los 46 cuyo marcador está en ≥2 docs de la familia — **alcanzables** | **46 de 46** |
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:81 [texto] (de 46 / los 46)
+      familia. O sea que el dominio nuevo **puede** pronunciarse sobre los 46 enteros;
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:87 [texto] (de 46 / los 46)
+      | de los 46 | n |
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:116 [texto] (de 46 / los 46)
+      2 dictaría PLANTILLA en casi los 46 y eso sería el **pleno** de §sondas 4 —
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:130 [texto] (46 + pares/ejes+de 46 / los 46)
+      | **A** · varianza inter-instancia | pares de los 46 que pasan a **CAMPO** | **6** | 2 – 14 |
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:131 [texto] (46 + pares/ejes+de 46 / los 46)
+      | **B** · cascada, sobre los que tienen valor no-inicial | pares de los 46 que pasan a **PLANTILLA** o a **CAMPO por ordinal** | **6** | 4 – 10 |
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:143 [cita] (de 46 / los 46)
+      **52** del lote. Esto **no resuelve** ninguno de los 46 — es dominio nuevo, y se
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:152 [cita] (de 46 / los 46)
+      > **Refutada si 0 de los 46 muestran varianza en la familia.** Entonces el
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:153 [cita] (de 46 / los 46)
+      > dominio mayor no aportó nada y los 46 se quedan exactamente donde estaban.
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:163 [cita] (de 46 / los 46)
+      > **Refutada también si ≥ 40 de los 46 muestran varianza.** Un pleno en 3
+  docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md:180 [cita] (de 46 / los 46)
+      > **Refutada también si la cascada dicta PLANTILLA en ≥ 90 % de los 46.** Es el
+  packages/cms-config/src/bloques/arquetipos.ts:111 [cita] (de 46 / los 46)
+      * CABLEAN.** De los 46 de la 125.ª, **6 se resuelven a PLANTILLA por la
+  packages/cms-config/src/colecciones/productos.ts:138 [cita] (de 46 / los 46)
+      * **volumen** (18 páginas de 46–50 módulos sin `blurb` y 5 de 56–106 con él,
+  packages/cms-config/src/mapeo.mjs:54 [cita] (de 46 / los 46)
+      * `sonInversas()` corre `DEVUELVE(PREPARA(fila)) === fila` sobre las 46 filas y
+  packages/cms-config/src/vuelta.mjs:17 [cita] (de 46 / los 46)
+      * (`sonInversas()` en `seed.mjs`, `DEVUELVE(PREPARA(fila))` sobre las 46 filas).
+  scripts/qa/lh-alcance.mjs:128 [texto] (46 + pares/ejes)
+      console.log(`  ${"forma".padEnd(46)} ${"pares".padStart(6)} ${"verif.".padStart(7)} ${"MIXTOS".padStart(7)}  ${"%mixto".padStart(7)}  ruta en app/`);
+  scripts/qa/lh-alcance.mjs:155 [texto] (46 + pares/ejes)
+      `  ${F.clave.padEnd(46)} ${String(pares).padStart(6)} ${String(verificables).padStart(7)} ${String(censo.mixta).padStart(7)}  ` +
+
+=== (a) LAS DOS FILAS «pendiente» CONTRADICHAS POR SU PROPIA SECCIÓN ===
+  F3-3  fila de estado L2646: | **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |
+      su § empieza en L718 y trae 2 marcador(es) de cierre:
+        L988: | **incógnita** | ✅ **DECIDIDA POR EL PROPIETARIO, 2026-08-22 (91.ª): C3** — una colección `paginas` con **unión PROPIA** de bloques, por el camino de `articulos-kb`. `MonoSeccion[
+        L994: | **lo que queda** | ✅✅ **LA EMISIÓN ESTÁ HECHA (104.ª, 2026-08-24): 382 → 413 rutas, reparto EXACTO** —19 · 4 · 4 · 3 · 1— y leído por **diferencia simétrica: 31 nuevas · 0 desapa
+  F3-4  fila de estado L2647: | **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |
+      su § empieza en L996 y trae 1 marcador(es) de cierre:
+        L998: > ## ✅✅ **F3-4 · FASE COMPLETA — cerrada el 2026-08-27 (118.ª), registrada aquí por la 119.ª**
+
+VEREDICTO: controles en verde
+✓ evaluadas 2234/2234 ficheros barridos · 2/2 congeladas leídas

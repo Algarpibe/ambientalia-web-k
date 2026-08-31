@@ -81,10 +81,24 @@
  * **Los cardinales, cada uno con SU UNIDAD** (§regla 14, y los dos dominios son
  * ciertos: son DOS conjuntos de documentos, no dos lecturas de uno):
  *
- * | dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | estructural |
- * |---|---|---|---|---|---|
- * | LOTE — 4 arquetipos distintos | 52 | **2** | 10 | 40 | 4 |
- * | FAMILIA PRODUCTO — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 |
+ * ⚠ LAS CUATRO COLUMNAS DE VEREDICTO SON UNA PARTICIÓN Y SUMAN LOS PARES. La
+ * varianza ESTRUCTURAL no es una quinta categoría: es un SUB-RECUENTO de
+ * `PLANTILLA` — 4 de los 10 del lote, 0 de los 26 de la familia (corregido
+ * 2026-08-31, 128.ª). Escritas las cinco al mismo nivel, la fila del lote
+ * sumaba 56 sobre 52 pares; el número siempre fue correcto y la FORMA
+ * presentaba un sub-recuento como hermano de su contenedor (§regla 14 con el
+ * contenedor puesto en el juego de claves). Derivado del `detalle` par a par:
+ * `escalon1-lecturas-128.{mjs,json,log}`.
+ *
+ * | dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | SIN PROBAR | Σ |
+ * |---|---|---|---|---|---|---|
+ * | LOTE — 4 arquetipos distintos | 52 | **2** | 10 | 40 | 0 | **52 ✓** |
+ * | FAMILIA PRODUCTO — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 | **132 ✓** |
+ *
+ * | dominio | de sus PLANTILLA, por varianza ESTRUCTURAL |
+ * |---|---|
+ * | LOTE | **4 de 10** |
+ * | FAMILIA PRODUCTO | **0 de 26** |
  *
  * | unidad | CAMPO (familia) | de |
  * |---|---|---|

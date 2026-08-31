@@ -6638,10 +6638,34 @@ lecturas pueden dar el mismo cardinal contando unidades distintas* — los dos
 dominios son ciertos y son **dos conjuntos de documentos**, no dos lecturas de
 uno):
 
-| dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | estructural |
-|---|---|---|---|---|---|
-| **LOTE** — 4 arquetipos distintos | 52 | **2** | 10 | 40 | 4 |
-| **FAMILIA PRODUCTO** — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 |
+| dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | SIN PROBAR | Σ |
+|---|---|---|---|---|---|---|
+| **LOTE** — 4 arquetipos distintos | 52 | **2** | 10 | 40 | 0 | **52 ✓** |
+| **FAMILIA PRODUCTO** — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 | **132 ✓** |
+
+> ⚠ **LAS CUATRO COLUMNAS DE VEREDICTO SON UNA PARTICIÓN Y SUMAN LOS PARES. LA
+> VARIANZA ESTRUCTURAL NO ES UNA QUINTA CATEGORÍA: ES UN SUB-RECUENTO DE
+> `PLANTILLA`** (corregido 2026-08-31, 128.ª, §regla 14 con el contenedor
+> puesto en **el juego de claves**).
+>
+> | dominio | de sus `PLANTILLA`, por varianza ESTRUCTURAL |
+> |---|---|
+> | **LOTE** | **4 de 10** |
+> | **FAMILIA PRODUCTO** | **0 de 26** |
+>
+> **Escritas las cinco al mismo nivel, la fila del LOTE sumaba 56 sobre 52
+> pares** — el número siempre fue correcto y la FORMA presentaba un
+> sub-recuento como hermano de sus contenedores. **Y la del LOTE era la única
+> que podía delatarlo**: la de la FAMILIA cierra exacta (132 = 132) porque sus
+> dos claves extra valen 0, o sea que el instrumento que teníamos delante para
+> comprobarlo era **ciego por construcción** (§*0 instancias separadoras*).
+>
+> Derivado del `detalle` par a par, no del resumen —§*se compara en la unidad
+> que se afirma*—: `escalon1-lecturas-128.{mjs,json,log}`, que cruza veredicto ×
+> marca estructural y da **`PLANTILLA|estructural=true → 4`** en el lote y **0**
+> en la familia. **Los JSON de la 127.ª conservan la forma vieja a propósito**:
+> el arreglo es de redacción y no de dato, así que re-congelarlos sólo movería
+> la evidencia de sitio (§regla 5 · §regla 8b: un pre-registro no se reescribe).
 
 | unidad (familia) | CAMPO | de |
 |---|---|---|

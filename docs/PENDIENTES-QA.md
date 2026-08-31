@@ -25370,10 +25370,16 @@ no se mueve.
 
 ### El resultado en una tabla, con las unidades puestas
 
-| dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | estructural |
-|---|---|---|---|---|---|
-| **LOTE** — 4 arquetipos distintos, hojas 30/30 | 52 | **2** | 10 | 40 | 4 |
-| **FAMILIA PRODUCTO** — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 |
+| dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | SIN PROBAR | Σ |
+|---|---|---|---|---|---|---|
+| **LOTE** — 4 arquetipos distintos, hojas 30/30 | 52 | **2** | 10 | 40 | 0 | **52 ✓** |
+| **FAMILIA PRODUCTO** — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 | **132 ✓** |
+
+> ⚠ **FORMA CORREGIDA POR LA 128.ª (2026-08-31), sin mover un número: la
+> varianza ESTRUCTURAL es un SUB-RECUENTO de `PLANTILLA`** —**4 de los 10** del
+> lote, **0 de los 26** de la familia—, **no una quinta categoría**. Escrita
+> como columna hermana, la fila del lote sumaba **56 sobre 52 pares**.
+> Derivación par a par: `escalon1-lecturas-128.{mjs,json,log}`.
 
 **Los 46 SIN PROBAR de la 125.ª, reescritos con los dos números y su unidad:**
 

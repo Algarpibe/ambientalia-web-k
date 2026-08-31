@@ -1,0 +1,1158 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": 128,
+ "escalon": 1,
+ "pregunta": "¿cierra el reparto del LOTE, y dónde vive el 46 con su unidad?",
+ "alcance": {
+  "congeladasLeidas": [
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json",
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127.json"
+  ],
+  "ficherosBarridos": 2234,
+  "ambito": [
+   "docs",
+   "packages",
+   "scripts"
+  ],
+  "noContesta": [
+   "no mide nada nuevo del original",
+   "no dice si el 46 es correcto: dice dónde vive y en qué unidad"
+  ]
+ },
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "el `detalle` de las dos congeladas se puede recorrer (si no, no se puede derivar nada)",
+   "detalle": "lote 52 pares · familia 132 pares"
+  },
+  {
+   "ok": true,
+   "nombre": "LOS VEREDICTOS SON UNA PARTICIÓN de los pares en las dos congeladas",
+   "detalle": "lote 52/52 CIERRA · familia 132/132 CIERRA"
+  },
+  {
+   "ok": true,
+   "nombre": "SUB-RECUENTO · dónde caen los pares con marca de varianza estructural (informativo)",
+   "detalle": "lote: PLANTILLA=4 · familia: (ninguno)"
+  },
+  {
+   "ok": true,
+   "nombre": "el barrido del 46 CASA en algo (0 sería el filtro y no el repo — §sondas 4)",
+   "detalle": "104 líneas en 20 ficheros · 21 son comentario/cita"
+  },
+  {
+   "ok": true,
+   "nombre": "las dos filas «pendiente» EXISTEN y su propia sección las contradice (si no, no hay nada que borrar)",
+   "detalle": "F3-3: fila L2646 · 2 cierres en su § · F3-4: fila L2647 · 1 cierres en su §"
+  }
+ ],
+ "reparto": {
+  "lote": {
+   "etiqueta": "LOTE (4 arquetipos)",
+   "pares": 52,
+   "porVeredicto": {
+    "CAMPO": 2,
+    "PLANTILLA": 10,
+    "SIN ESCRIBIR": 40
+   },
+   "conMarcaEstructural": 4,
+   "cruce": {
+    "CAMPO | estructural=false": 2,
+    "PLANTILLA | estructural=false": 6,
+    "PLANTILLA | estructural=true": 4,
+    "SIN ESCRIBIR | estructural=false": 40
+   },
+   "resumenPublicado": {
+    "pares": 52,
+    "CAMPO": 2,
+    "PLANTILLA": 10,
+    "SIN_ESCRIBIR": 40,
+    "SIN_PROBAR": 0,
+    "varianzaEstructural": 4
+   },
+   "clavesDelJson": [
+    "fecha",
+    "tanda",
+    "escalon",
+    "modo",
+    "alcance",
+    "discrepanciaConElEncargo",
+    "controles",
+    "censo",
+    "reparto",
+    "pares",
+    "cruceContraLos46",
+    "controlLos6DeLa125",
+    "dominioNuevo",
+    "assets",
+    "noContesta"
+   ],
+   "cierre": {
+    "suma": 52,
+    "pares": 52,
+    "cierra": true,
+    "exceso": 0
+   }
+  },
+  "familia": {
+   "etiqueta": "FAMILIA PRODUCTO (3 instancias)",
+   "pares": 132,
+   "porVeredicto": {
+    "CAMPO": 8,
+    "PLANTILLA": 26,
+    "SIN ESCRIBIR": 98
+   },
+   "conMarcaEstructural": 0,
+   "cruce": {
+    "CAMPO | estructural=false": 8,
+    "PLANTILLA | estructural=false": 26,
+    "SIN ESCRIBIR | estructural=false": 98
+   },
+   "resumenPublicado": {
+    "pares": 132,
+    "CAMPO": 8,
+    "PLANTILLA": 26,
+    "SIN_ESCRIBIR": 98,
+    "SIN_PROBAR": 0,
+    "varianzaEstructural": 0
+   },
+   "clavesDelJson": [
+    "fecha",
+    "tanda",
+    "escalon",
+    "modo",
+    "alcance",
+    "discrepanciaConElEncargo",
+    "controles",
+    "censo",
+    "reparto",
+    "pares",
+    "cruceContraLos46",
+    "controlLos6DeLa125",
+    "dominioNuevo",
+    "assets",
+    "noContesta"
+   ],
+   "cierre": {
+    "suma": 132,
+    "pares": 132,
+    "cierra": true,
+    "exceso": 0
+   }
+  }
+ },
+ "barrido46": {
+  "lineas": 104,
+  "ficheros": [
+   "docs/ESQUEMA-CMS.md",
+   "docs/HANDOFF.md",
+   "docs/PENDIENTES-QA.md",
+   "docs/PLAN-FASE-3.md",
+   "docs/research/cola-larga/derivaciones/escalon1-lecturas-128.mjs",
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json",
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127.json",
+   "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+   "docs/research/cola-larga/derivaciones/paso0-dominio-127.json",
+   "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+   "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+   "packages/cms-config/src/bloques/arquetipos.ts",
+   "packages/cms-config/src/colecciones/productos.ts",
+   "packages/cms-config/src/mapeo.mjs",
+   "packages/cms-config/src/vuelta.mjs",
+   "scripts/qa/lh-alcance.mjs"
+  ],
+  "comentarios": 21,
+  "detalle": [
+   {
+    "fichero": "docs/ESQUEMA-CMS.md",
+    "linea": 2188,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| **eje real** | **volumen de contenido, no forma**: 18 páginas de 46–50 módulos sin `blurb` y 5 de 56–106 con `blurb` — **mismo nº de secciones y misma plantilla** |"
+   },
+   {
+    "fichero": "docs/ESQUEMA-CMS.md",
+    "linea": 6670,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "### Los 46, reescritos con su reparto y los dos números con su unidad"
+   },
+   {
+    "fichero": "docs/ESQUEMA-CMS.md",
+    "linea": 6672,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| de los 46 pares SIN VARIANZA del lote | n | vía |"
+   },
+   {
+    "fichero": "docs/HANDOFF.md",
+    "linea": 7855,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| **15** | `[]` contra clave ausente | Payload **no puede** distinguir «lista vacía» de «campo ausente» | la vuelta omite; derivado: **0 arrays vacíos explícitos en las 46 filas**, y el comparador se auto-vigila si eso c"
+   },
+   {
+    "fichero": "docs/HANDOFF.md",
+    "linea": 8144,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "documentos de 46; el alcance viaja en `SEMBRADAS` y en `FUERA_DE_BLOQUE_1`."
+   },
+   {
+    "fichero": "docs/HANDOFF.md",
+    "linea": 8633,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "páginas de 46–50 módulos sin `blurb` contra 5 de 56–106 con él, **mismo nº de"
+   },
+   {
+    "fichero": "docs/PENDIENTES-QA.md",
+    "linea": 1459,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "### La clasificación contra el listón — **las 46 `⛔`**"
+   },
+   {
+    "fichero": "docs/PENDIENTES-QA.md",
+    "linea": 1466,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| cubo | criterio, literal | n de 46 |"
+   },
+   {
+    "fichero": "docs/PENDIENTES-QA.md",
+    "linea": 1524,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "> contesta la primera. **24 de 46 fichas bloquean construcción y no"
+   },
+   {
+    "fichero": "docs/PENDIENTES-QA.md",
+    "linea": 1548,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "#### ✅ Y una de las 46 está CADUCADA — derivado, no supuesto"
+   },
+   {
+    "fichero": "docs/PENDIENTES-QA.md",
+    "linea": 12864,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| ejercitados por las 46 filas sembradas | **88** |"
+   },
+   {
+    "fichero": "docs/PENDIENTES-QA.md",
+    "linea": 25319,
+    "patrones": [
+     "46 + SIN PROBAR",
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| 2 | **los 46 ejes SIN PROBAR** | **46** de 52 (marcador × ancho × eje) · **24** de 28 (marcador × eje) · **2** de 4 (por eje: `mt`, `pb`) | sin varianza en 2–4 instancias **no prueba plantilla**, y el test A no los res"
+   },
+   {
+    "fichero": "docs/PENDIENTES-QA.md",
+    "linea": 25378,
+    "patrones": [
+     "46 + SIN PROBAR",
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "**Los 46 SIN PROBAR de la 125.ª, reescritos con los dos números y su unidad:**"
+   },
+   {
+    "fichero": "docs/PENDIENTES-QA.md",
+    "linea": 25380,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| de los 46 pares | n | vía |"
+   },
+   {
+    "fichero": "docs/PLAN-FASE-3.md",
+    "linea": 1856,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "1. **los 46 pares SIN VARIANZA no son «plantilla probada»**: son **sin varianza"
+   },
+   {
+    "fichero": "docs/PLAN-FASE-3.md",
+    "linea": 1903,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "1. **escribirlo ya**, con los 6 ejes medidos como campo, los 46 sin varianza"
+   },
+   {
+    "fichero": "docs/PLAN-FASE-3.md",
+    "linea": 2014,
+    "patrones": [
+     "46 + SIN PROBAR",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "—pieza, ancho, eje, n y valores—; los 46 salen **SIN PROBAR y no cableados**, en"
+   },
+   {
+    "fichero": "docs/PLAN-FASE-3.md",
+    "linea": 2075,
+    "patrones": [
+     "46 + SIN PROBAR"
+    ],
+    "esComentario": false,
+    "texto": "cablear (**0 consumidores**) · los **46** SIN PROBAR · `arquetipos` con **0"
+   },
+   {
+    "fichero": "docs/PLAN-FASE-3.md",
+    "linea": 2648,
+    "patrones": [
+     "46 + SIN PROBAR"
+    ],
+    "esComentario": false,
+    "texto": "| **F3-5** · los content types de lo ya construido | 🔶 **PRIMERA MITAD HECHA (126.ª, 2026-08-31): el content type ESCRITO** para **4 de las 5 rutas** —colección `arquetipos`, ESQUEMA §2o, con sus **46 SIN PROBAR declara"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-lecturas-128.mjs",
+    "linea": 123,
+    "patrones": [
+     "46 + SIN PROBAR"
+    ],
+    "esComentario": false,
+    "texto": "{ nombre: \"46 + SIN PROBAR\", re: /46[^\\n]{0,40}SIN PROBAR|SIN PROBAR[^\\n]{0,40}\\b46\\b/i },"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-lecturas-128.mjs",
+    "linea": 124,
+    "patrones": [
+     "46 + pares/ejes"
+    ],
+    "esComentario": false,
+    "texto": "{ nombre: \"46 + pares/ejes\", re: /\\b46\\b[^\\n]{0,30}(pares|ejes)|\\b(pares|ejes)\\b[^\\n]{0,30}\\b46\\b/i },"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-lecturas-128.mjs",
+    "linea": 125,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "{ nombre: \"de 46 / los 46\", re: /\\b(de|los|las)\\s+46\\b/i },"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 147,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A · TAUTOLÓGICA en el lote (los 46 se definen aquí) — 0 separadoras por construcción, no adjudica\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 148,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46, que es el único valor posible en este dominio\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 152,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 153,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"6 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 147,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A · TAUTOLÓGICA en el lote (los 46 se definen aquí) — 0 separadoras por construcción, no adjudica\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 148,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46, que es el único valor posible en este dominio\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 152,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 153,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"6 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json",
+    "linea": 152,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A · TAUTOLÓGICA en el lote (los 46 se definen aquí) — 0 separadoras por construcción, no adjudica\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json",
+    "linea": 153,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46, que es el único valor posible en este dominio\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json",
+    "linea": 157,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-control-lote.json",
+    "linea": 158,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"6 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 146,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 147,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 151,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 152,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 156,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-DATA-SEM-SOLO-EL-ULTIMO.json",
+    "linea": 157,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"6 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 146,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 147,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 151,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 152,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 156,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO.json",
+    "linea": 157,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"6 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.json",
+    "linea": 146,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.json",
+    "linea": 147,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.json",
+    "linea": 151,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.json",
+    "linea": 152,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"0 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.json",
+    "linea": 156,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.json",
+    "linea": 157,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"6 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 35,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "// los 46 y eso seria el PLENO de §sondas 4."
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 394,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "/* ── CRUCE CONTRA LOS 46 DEL LOTE — la unidad es el PAR, y se nombra ────── */"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 516,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "/* ⚠ EN EL LOTE ESTA REFUTACIÓN ES TAUTOLÓGICA, no verde ni roja: los 46 SE"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 523,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"PRE-REGISTRO · mitad A · TAUTOLÓGICA en el lote (los 46 se definen aquí) — 0 separadoras por construcción, no adjudica\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 524,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "`${varianzaEn46} de 46, que es el único valor posible en este dominio`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 526,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 527,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "`${plantillaEn46} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 530,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"PRE-REGISTRO · mitad A por DEFECTO: >0 de los 46 muestran varianza\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 531,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "`${varianzaEn46} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 533,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"PRE-REGISTRO · mitad A por EXCESO: <40 de los 46 (un pleno sería emparejamiento roto, §regla 29)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 534,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "`${varianzaEn46} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 536,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"PRE-REGISTRO · mitad B por EXCESO: PLANTILLA en <90 % de los 46 (un pleno sería el reset genérico, §sondas 4)\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 537,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "`${plantillaEn46} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 625,
+    "patrones": [
+     "46 + SIN PROBAR",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(\"=== CRUCE CONTRA LOS 46 SIN PROBAR DEL LOTE ===\");"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 626,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(`  resueltos aquí (CAMPO o PLANTILLA): ${resueltos46.length} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/escalon1-varianza-127.mjs",
+    "linea": 627,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(`  siguen abiertos:                    ${abiertos46.length} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.json",
+    "linea": 39,
+    "patrones": [
+     "46 + pares/ejes"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"pares 52 · CAMPO 6 · SIN VARIANZA 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.json",
+    "linea": 43,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"nombre\": \"HAY TECHO: pares de los 46 cuyo marcador está en >=2 documentos de la familia\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.json",
+    "linea": 44,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"alcanzables 46 de 46 · fuera de alcance 0\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.json",
+    "linea": 49,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"detalle\": \"SIN ESCRIBIR 40 · con valor no-inicial 6 · suma 46 de 46\""
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 18,
+    "patrones": [
+     "46 + SIN PROBAR",
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "//   3 · ¿cuántos de los 46 SIN PROBAR pueden siquiera MOVERSE? Sólo los pares"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 21,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "//   4 · de los 46, ¿cuántos son SIN ESCRIBIR —único valor observado = el"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 135,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "/* ═══ LOS 46: intersección y SIN ESCRIBIR ════════════════════════════════ */"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 145,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "/* ¿Cuántos de los 46 tienen su marcador también en la familia? Es el TECHO. */"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 150,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "\"HAY TECHO: pares de los 46 cuyo marcador está en >=2 documentos de la familia\","
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 151,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "`alcanzables ${alcanzables.length} de 46 · fuera de alcance ${fueraDeAlcance.length}`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 162,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "`SIN ESCRIBIR ${sinEscribir.length} · con valor no-inicial ${conValor.length} · suma ${sinEscribir.length + conValor.length} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 215,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(\"=== 3 · EL TECHO — cuántos de los 46 pueden siquiera MOVERSE ===\");"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 216,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(`  alcanzables (su marcador está en >=2 docs de la familia): ${alcanzables.length} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 217,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(`  fuera de alcance:                                          ${fueraDeAlcance.length} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 229,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(\"=== 4 · LOS 46, PARTIDOS POR LA PREMISA CALLADA DEL TEST A ===\");"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 230,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(`  SIN ESCRIBIR (único valor observado = 0, el inicial):  ${sinEscribir.length} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 231,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(`  con valor no-inicial y sin varianza:                   ${conValor.length} de 46`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 243,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(`  · techo de la tanda: ${alcanzables.length} de los 46 pares son alcanzables por el dominio nuevo`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/paso0-dominio-127.mjs",
+    "linea": 244,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "say(`  · de los 46, ${sinEscribir.length} son SIN ESCRIBIR — sin declaración no hay cascada a la que preguntar`);"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 77,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| pares de los 46 cuyo marcador está en ≥2 docs de la familia — **alcanzables** | **46 de 46** |"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 81,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "familia. O sea que el dominio nuevo **puede** pronunciarse sobre los 46 enteros;"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 87,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| de los 46 | n |"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 116,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "2 dictaría PLANTILLA en casi los 46 y eso sería el **pleno** de §sondas 4 —"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 130,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| **A** · varianza inter-instancia | pares de los 46 que pasan a **CAMPO** | **6** | 2 – 14 |"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 131,
+    "patrones": [
+     "46 + pares/ejes",
+     "de 46 / los 46"
+    ],
+    "esComentario": false,
+    "texto": "| **B** · cascada, sobre los que tienen valor no-inicial | pares de los 46 que pasan a **PLANTILLA** o a **CAMPO por ordinal** | **6** | 4 – 10 |"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 143,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "**52** del lote. Esto **no resuelve** ninguno de los 46 — es dominio nuevo, y se"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 152,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "> **Refutada si 0 de los 46 muestran varianza en la familia.** Entonces el"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 153,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "> dominio mayor no aportó nada y los 46 se quedan exactamente donde estaban."
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 163,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "> **Refutada también si ≥ 40 de los 46 muestran varianza.** Un pleno en 3"
+   },
+   {
+    "fichero": "docs/research/cola-larga/derivaciones/PRE-REGISTRO-VARIANZA-PRODUCTO-127.md",
+    "linea": 180,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "> **Refutada también si la cascada dicta PLANTILLA en ≥ 90 % de los 46.** Es el"
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/arquetipos.ts",
+    "linea": 111,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "* CABLEAN.** De los 46 de la 125.ª, **6 se resuelven a PLANTILLA por la"
+   },
+   {
+    "fichero": "packages/cms-config/src/colecciones/productos.ts",
+    "linea": 138,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "* **volumen** (18 páginas de 46–50 módulos sin `blurb` y 5 de 56–106 con él,"
+   },
+   {
+    "fichero": "packages/cms-config/src/mapeo.mjs",
+    "linea": 54,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "* `sonInversas()` corre `DEVUELVE(PREPARA(fila)) === fila` sobre las 46 filas y"
+   },
+   {
+    "fichero": "packages/cms-config/src/vuelta.mjs",
+    "linea": 17,
+    "patrones": [
+     "de 46 / los 46"
+    ],
+    "esComentario": true,
+    "texto": "* (`sonInversas()` en `seed.mjs`, `DEVUELVE(PREPARA(fila))` sobre las 46 filas)."
+   },
+   {
+    "fichero": "scripts/qa/lh-alcance.mjs",
+    "linea": 128,
+    "patrones": [
+     "46 + pares/ejes"
+    ],
+    "esComentario": false,
+    "texto": "console.log(`  ${\"forma\".padEnd(46)} ${\"pares\".padStart(6)} ${\"verif.\".padStart(7)} ${\"MIXTOS\".padStart(7)}  ${\"%mixto\".padStart(7)}  ruta en app/`);"
+   },
+   {
+    "fichero": "scripts/qa/lh-alcance.mjs",
+    "linea": 155,
+    "patrones": [
+     "46 + pares/ejes"
+    ],
+    "esComentario": false,
+    "texto": "`  ${F.clave.padEnd(46)} ${String(pares).padStart(6)} ${String(verificables).padStart(7)} ${String(censo.mixta).padStart(7)}  ` +"
+   }
+  ]
+ },
+ "lecturasContradichas": {
+  "F3-3": {
+   "filaDeEstado": {
+    "linea": 2646,
+    "texto": "| **F3-3** · cola larga | pendiente · abre decisión de ESQUEMA |"
+   },
+   "seccionEmpiezaEn": 718,
+   "cierresEnSuSeccion": 2,
+   "ejemplos": [
+    {
+     "linea": 988,
+     "texto": "| **incógnita** | ✅ **DECIDIDA POR EL PROPIETARIO, 2026-08-22 (91.ª): C3** — una colección `paginas` con **unión PROPIA** de bloques, por el camino de `articulos-kb`. `MonoSeccion["
+    },
+    {
+     "linea": 994,
+     "texto": "| **lo que queda** | ✅✅ **LA EMISIÓN ESTÁ HECHA (104.ª, 2026-08-24): 382 → 413 rutas, reparto EXACTO** —19 · 4 · 4 · 3 · 1— y leído por **diferencia simétrica: 31 nuevas · 0 desapa"
+    }
+   ]
+  },
+  "F3-4": {
+   "filaDeEstado": {
+    "linea": 2647,
+    "texto": "| **F3-4** · familias de archivo | pendiente · abre decisión de ESQUEMA |"
+   },
+   "seccionEmpiezaEn": 996,
+   "cierresEnSuSeccion": 1,
+   "ejemplos": [
+    {
+     "linea": 998,
+     "texto": "> ## ✅✅ **F3-4 · FASE COMPLETA — cerrada el 2026-08-27 (118.ª), registrada aquí por la 119.ª**"
+    }
+   ]
+  }
+ }
+}
