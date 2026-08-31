@@ -55,47 +55,71 @@
  * colección es §*la salida servida incluye el canal que no estabas mirando*.
  *
  * ══════════════════════════════════════════════════════════════════════════
- * §2 · EL RITMO — LOS 6 EJES QUE SON CAMPO, Y LOS 46 QUE ESTÁN SIN PROBAR
+ * §2 · EL RITMO — CORREGIDO EN LA 127.ª: 4 DE LOS 6 «CAMPO» NO ERAN CAMPO
  *
  * La 125.ª midió la varianza INTER-INSTANCIA emparejando por **marcador
  * semántico** —no por el ordinal del constructor, que es único por documento y
- * daba 0 pares por construcción (§regla 29, la mitad que faltaba)—.
+ * daba 0 pares por construcción (§regla 29, la mitad que faltaba)—. La llave
+ * era correcta. Lo que estaba mal era **leer una diferencia de CONJUNTOS como
+ * una diferencia de VALOR**.
  *
- * **Los cardinales, cada uno con SU UNIDAD** (§regla 14: sin unidad no se
- * pueden auditar, y los tres son ciertos):
+ * ⚠⚠ **LA VARIANZA DE ESTRUCTURA NO ES VARIANZA DE CAMPO** (127.ª,
+ * `derivaciones/escalon1-varianza-127.*`, instrumento adjudicado sobre el lote
+ * con 13/13 controles):
  *
- * | unidad | CON varianza | SIN varianza | total |
- * |---|---|---|---|
- * | marcador × ancho × eje | **6** | **46** | 52 |
- * | marcador × eje | **4** | **24** | 28 |
- * | eje (`mt`·`mb`·`pt`·`pb`) | **2** (`mb`·`pt`) | **2** (`mt`·`pb`) | 4 |
+ *   `iconos-xs-2` mb → PRODUCTO `[31.6719]` · SOFTWARE-corta `[0, 31.6719]`
  *
- * **LOS 6, con la varianza que los sostiene — para que nadie tenga que fiarse:**
+ * Los dos conjuntos no difieren en un valor: difieren en **cuántos módulos hay
+ * en la columna**. El `0` lo declara `.et_pb_module:last-child{margin-bottom:0}`
+ * del constructor, y **ningún selector ganador de ese par lleva ORDINAL**, o
+ * sea que ahí no escribió nadie. Lo mismo `iconos-md-3`.
  *
- * | pieza | ancho | eje | n | valores por documento |
+ * **De los 6 «CAMPO» de la 125.ª sobreviven DOS.** Los 4 de `iconos-xs-2` e
+ * `iconos-md-3` pasan a **PLANTILLA** (ganador genérico: el reparto de Divi
+ * `5.82% · 4.242% · 3.735%` a 1440 y `.et_pb_column .et_pb_module{30px}` a 390).
+ *
+ * **Los cardinales, cada uno con SU UNIDAD** (§regla 14, y los dos dominios son
+ * ciertos: son DOS conjuntos de documentos, no dos lecturas de uno):
+ *
+ * | dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | estructural |
+ * |---|---|---|---|---|---|
+ * | LOTE — 4 arquetipos distintos | 52 | **2** | 10 | 40 | 4 |
+ * | FAMILIA PRODUCTO — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 |
+ *
+ * | unidad | CAMPO (familia) | de |
+ * |---|---|---|
+ * | par (marcador × ancho × eje) | **8** | 132 |
+ * | marcador × eje | **5** | 68 |
+ * | eje (`mt`·`mb`·`pt`·`pb`) | **2** (`mb`·`pt`) | 4 |
+ *
+ * **LOS 8, con la varianza Y la cascada que los sostienen — las dos patas
+ * concuerdan en los ocho, que es la evidencia más fuerte que se puede dar:**
+ *
+ * | pieza | ancho | eje | valores por documento | selector ganador |
  * |---|---|---|---|---|
- * | `iconos-xs-2` | 1440 | `marginBottom` | 2 | PRODUCTO `31.6719` · SOFTWARE-corta `0, 31.6719` |
- * | `iconos-xs-2` | 390 | `marginBottom` | 2 | PRODUCTO `30` · SOFTWARE-corta `0, 30` |
- * | `iconos-md-3` | 1440 | `marginBottom` | 2 | PRODUCTO `31.6719` · SOFTWARE-corta `0, 31.6719` |
- * | `iconos-md-3` | 390 | `marginBottom` | 2 | PRODUCTO `30` · SOFTWARE-corta `0, 30` |
- * | `menu-anclas` | 1440 | `marginBottom` | 3 | PRODUCTO `31.6719` · CATÁLOGO `0, 27.2` · SOFTWARE `27.2` |
- * | `menu-anclas` | 1440 | `paddingTop` | 3 | PRODUCTO `0` · CATÁLOGO `0, 17` · SOFTWARE `17` |
+ * | `parametros` | 1440·390 | `mb` | monitor `0` · estacion `9` · sensor `0` | `.et_pb_text_14` `0.5em !important` |
+ * | `clear-both` | 1440·390 | `mb` | monitor `0` · estacion `9` · sensor `0` | `.et_pb_text_14` `0.5em !important` |
+ * | `menu-anclas` | 1440 | `mb` | monitor `31.6719` · estacion `27.2` · sensor `31.6719` | `.et_pb_text_15` `1.7rem !important` |
+ * | `menu-anclas` | 1440 | `pt` | monitor `0` · estacion `17` · sensor `0` | `.et_pb_text_15` `1em !important` |
+ * | `clear` | 1440·390 | `pt` | monitor `0` · estacion `32` | `.et_pb_text_16..29` `2rem !important` |
  *
- * Tres piezas, dos ejes, valores distintos entre instancias de **la misma
- * pieza**: lo escribió quien editó cada página ⇒ **CAMPO**. Y el papel del
- * marcador en el selector ganador es `no-aparece` en todos (§regla 36): el
- * valor lo trae el selector ORDINAL, o sea el editor — el marcador es la
- * LLAVE de emparejamiento, no el portador del valor.
+ * Los 8 llevan **`ordinal: true`**: el valor lo trae un selector
+ * `et_pb_<tipo>_<n>`, que el constructor emite por módulo ⇒ lo escribió el
+ * editor. El marcador es la LLAVE de emparejamiento, no el portador (§regla 36).
  *
- * ⚠⚠ **LOS 46 SIN VARIANZA SALEN `SIN PROBAR`, NO «PLANTILLA», Y NO SE
- * CABLEAN.** Un eje sin varianza en 2–4 instancias **no está probado como
- * plantilla**: puede ser un campo que el editor puso uniforme (el falso
- * negativo declarado del test B). Y **el test A no puede rescatarlos solo**: la
- * 124.ª midió que su premisa central es falsa en régimen `B-` por `FN-bp` —el
- * editor escribe POR PUNTO DE RUPTURA y compila `@media` con ordinal, así que
- * **su** valor también se mueve con el ancho— con **45 · 32 · 20** casos en los
- * tres arquetipos `B-` medidos. Por eso los 46 se declaran y se dejan al
- * DEFAULT, que es lo contrario de cablearlos.
+ * ⚠⚠ **LOS 40 QUE SIGUEN ABIERTOS SON `SIN ESCRIBIR`, NO «PLANTILLA», Y NO SE
+ * CABLEAN.** De los 46 de la 125.ª, **6 se resuelven a PLANTILLA por la
+ * cascada** y **40 siguen abiertos**: su único valor observado es `0`, el
+ * INICIAL de la propiedad, así que no hay declaración a la que preguntar
+ * (§*el test A supone que hay algo escrito*). Y el test A no los rescata solo:
+ * la 124.ª midió que su premisa es falsa en `B-` por `FN-bp` —el editor escribe
+ * POR PUNTO DE RUPTURA y compila `@media` con ordinal— con **45 · 32 · 20**
+ * casos. Se declaran y se dejan al DEFAULT, que es lo contrario de cablearlos.
+ *
+ * ⚠ **Y por qué la cascada se toma a LOS DOS ANCHOS** (la 125.ª sólo a 1440):
+ * el ganador de `mb` a 1440 es un `%` de reparto por tipo de columna y a 390 es
+ * `.et_pb_column .et_pb_module{margin-bottom:30px}`. El test A a 390 leería
+ * «px absolutos ⇒ campo» sobre plantilla pura.
  *
  * ══════════════════════════════════════════════════════════════════════════
  * §3 · LOS DEFAULTS DE RITMO SE ESCRIBEN CON SU CONTENEDOR
@@ -140,14 +164,29 @@ import { campoHtml, conDefecto, enlace, htmlLinea, medida, subida } from "../cam
    ═══════════════════════════════════════════════════════════════════════════
    Es la clase que el editor escribe en el builder (`menu-anclas`,
    `iconos-md-3`, `breadcrumbs`…). **No es adorno ni un dato de sonda:** es la
-   LLAVE con la que la varianza inter-instancia pasó de «inmedible» a 7 piezas
-   con ≥2 instancias y 6 ejes CAMPO. Sin ella, dos instancias de la misma pieza
-   en dos páginas no se pueden emparejar — el ordinal del constructor es único
-   POR DOCUMENTO, así que empareja 0 por construcción.
+   LLAVE con la que la varianza inter-instancia pasó de «inmedible» a medible.
+   Sin ella, dos instancias de la misma pieza en dos páginas no se pueden
+   emparejar — el ordinal del constructor es único POR DOCUMENTO, así que
+   empareja 0 por construcción.
 
-   Censo derivado: **18 marcadores · 7 con ≥2 instancias · 11 singleton**
-   (`derivaciones/escalon4-varianza-125.*`). Opcional porque
-   la mayoría de los módulos no lleva ninguno. */
+   Censo derivado, **con su dominio al lado porque son DOS y cuentan cosas
+   distintas** (§*dos lecturas pueden dar el mismo cardinal contando unidades
+   distintas*):
+
+     LOTE, 4 arquetipos distintos   18 marcadores ·  7 en ≥2 · 11 singleton
+     FAMILIA PRODUCTO, 3 del mismo  19 marcadores · 17 en ≥2 ·  2 singleton
+
+   El dominio que decide qué es CAMPO es **la familia**: allí las instancias son
+   del MISMO arquetipo, así que un valor distinto sólo puede haberlo escrito
+   quien editó esa página. En el lote, un valor distinto puede ser otra
+   PLANTILLA —§*lo que varía entre FORMAS distingue plantillas, no campos*—, y
+   ahí es donde la 125.ª se pasó de largo con 4 pares.
+
+   ⚠ Y el censo OFFLINE del mismo lote da **20 · 8 · 12**, que también es cierto:
+   cuenta el HTML, no la geometría, así que incluye `popup` y `dark`, sin caja.
+   Diferencia simétrica **2 y 0** — un solo lado, y con mecanismo.
+   (`derivaciones/escalon1-varianza-127.*` · `paso0-dominio-127.*`.) Opcional
+   porque la mayoría de los módulos no lleva ninguno. */
 const pieza: Field = {
   name: "pieza",
   type: "text",
@@ -163,17 +202,29 @@ const pieza: Field = {
    EL RITMO — dos ejes MEDIDOS y dos SIN PROBAR, y se distinguen en el campo
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/** Los dos ejes con varianza inter-instancia medida ⇒ **CAMPO**. */
+/**
+ * Los dos ejes con varianza inter-instancia medida **dentro del mismo
+ * arquetipo** ⇒ **CAMPO**. El veredicto por eje es el MISMO que escribió la
+ * 126.ª (`mb` y `pt` sí; `mt` y `pb` no) — lo que cambió es la evidencia: su
+ * denominador pasa de 52 pares a **132**, y las piezas que lo sostienen son
+ * otras.
+ */
 const RITMO_MEDIDO: Field[] = [
   medida(
     "mb",
-    "CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; " +
-      "30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). " +
+    "CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA " +
+      "de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador " +
+      "`.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador " +
+      "`.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. " +
+      "⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la " +
+      "regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. " +
       "Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.",
   ),
   medida(
     "pt",
-    "CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). " +
+    "CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` " +
+      "(monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` " +
+      "(monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. " +
       "Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.",
   ),
 ];
@@ -182,13 +233,18 @@ const RITMO_MEDIDO: Field[] = [
 const RITMO_SIN_PROBAR: Field[] = [
   medida(
     "mt",
-    "⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo " +
-      "que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo " +
-      "(`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.",
+    "⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN " +
+      "ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que " +
+      "preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo " +
+      "declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). " +
+      "El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. " +
+      "Se deja al default; no se cablea.",
   ),
   medida(
     "pb",
-    "⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.",
+    "⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, " +
+      "ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. " +
+      "Se deja al default; no se cablea.",
   ),
 ];
 

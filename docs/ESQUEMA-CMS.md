@@ -6614,48 +6614,120 @@ sola colección es §*la salida servida incluye el canal que no estabas mirando*
 > Evidencia conservada:
 > `tipos-f35-126-SONDA-TIPO-POR-CLASE-DESNUDA-MODIFICADORES.json`.
 
-## §2o.3 · El ritmo — 6 ejes CAMPO **y 46 SIN PROBAR**, y los 46 van en esta misma frase
+## ⚠⚠ §2o.3 · El ritmo — **CORREGIDO EN LA 127.ª: 4 de los 6 «CAMPO» no eran campo, eran la regla `:last-child`**
 
-**Los cardinales, cada uno CON SU UNIDAD** (§regla 14 · §*corregir un
-denominador no es sustituirlo en todas partes*):
+**Lo primero, porque es lo que cambia el modelo:**
 
-| unidad | CON varianza | SIN varianza | total |
-|---|---|---|---|
-| marcador x ancho x eje | **6** | **46** | 52 |
-| marcador x eje | **4** | **24** | 28 |
-| eje (`mt`·`mb`·`pt`·`pb`) | **2** (`mb`·`pt`) | **2** (`mt`·`pb`) | 4 |
+> **Comparar CONJUNTOS de valores entre instancias confunde «el editor escribió
+> otro valor» con «la MISMA regla se aplicó a otro número de hermanos».** Una
+> pseudo-clase estructural —`:last-child`, `:first-child`, `:nth-*`— mete un
+> valor extra en el conjunto **sin que nadie escriba nada**.
 
-**LOS 6, con la varianza que los sostiene — para que nadie tenga que fiarse:**
+Medido: `iconos-xs-2` `mb` daba PRODUCTO `[31.6719]` contra SOFTWARE-corta
+`[0, 31.6719]`, y la 125.ª lo leyó como varianza de campo. El `0` lo declara
+`.et_pb_module:last-child{margin-bottom:0}` del constructor, y **ningún selector
+ganador de ese par lleva ORDINAL**. Los conjuntos no difieren en un valor:
+difieren en **cuántos módulos hay en la columna**.
 
-| pieza | ancho | eje | n | valores por documento |
+**⇒ De los 6 «CAMPO» de la 125.ª sobreviven DOS.** Los 4 de `iconos-xs-2` e
+`iconos-md-3` pasan a **PLANTILLA** (ganador genérico: el reparto de Divi
+`5.82 % · 4.242 % · 3.735 %` a 1440, `.et_pb_column .et_pb_module{30px}` a 390).
+
+**Los cardinales, cada uno CON SU UNIDAD Y SU DOMINIO** (§regla 14 · §*dos
+lecturas pueden dar el mismo cardinal contando unidades distintas* — los dos
+dominios son ciertos y son **dos conjuntos de documentos**, no dos lecturas de
+uno):
+
+| dominio | pares | CAMPO | PLANTILLA | SIN ESCRIBIR | estructural |
+|---|---|---|---|---|---|
+| **LOTE** — 4 arquetipos distintos | 52 | **2** | 10 | 40 | 4 |
+| **FAMILIA PRODUCTO** — 3 instancias del MISMO | 132 | **8** | 26 | 98 | 0 |
+
+| unidad (familia) | CAMPO | de |
+|---|---|---|
+| par (marcador × ancho × eje) | **8** | 132 |
+| marcador × eje | **5** | 68 |
+| eje (`mt`·`mb`·`pt`·`pb`) | **2** (`mb`·`pt`) | 4 |
+
+**El veredicto POR EJE es el mismo que escribió la 126.ª.** Lo que cambió es la
+evidencia: el denominador pasa de 52 a **132** y las piezas que lo sostienen son
+otras.
+
+**LOS 8, con la varianza Y la cascada — las dos patas concuerdan en los ocho:**
+
+| pieza | ancho | eje | valores por documento | selector ganador |
 |---|---|---|---|---|
-| `iconos-xs-2` | 1440 | `marginBottom` | 2 | PRODUCTO `31.6719` · SOFTWARE-corta `0, 31.6719` |
-| `iconos-xs-2` | 390 | `marginBottom` | 2 | PRODUCTO `30` · SOFTWARE-corta `0, 30` |
-| `iconos-md-3` | 1440 | `marginBottom` | 2 | PRODUCTO `31.6719` · SOFTWARE-corta `0, 31.6719` |
-| `iconos-md-3` | 390 | `marginBottom` | 2 | PRODUCTO `30` · SOFTWARE-corta `0, 30` |
-| `menu-anclas` | 1440 | `marginBottom` | 3 | PRODUCTO `31.6719` · CATÁLOGO `0, 27.2` · SOFTWARE `27.2` |
-| `menu-anclas` | 1440 | `paddingTop` | 3 | PRODUCTO `0` · CATÁLOGO `0, 17` · SOFTWARE `17` |
+| `parametros` | 1440·390 | `mb` | monitor `0` · estacion `9` · sensor `0` | `.et_pb_text_14` `0.5em !important` |
+| `clear-both` | 1440·390 | `mb` | monitor `0` · estacion `9` · sensor `0` | `.et_pb_text_14` `0.5em !important` |
+| `menu-anclas` | 1440 | `mb` | monitor `31.6719` · estacion `27.2` · sensor `31.6719` | `.et_pb_text_15` `1.7rem !important` |
+| `menu-anclas` | 1440 | `pt` | monitor `0` · estacion `17` · sensor `0` | `.et_pb_text_15` `1em !important` |
+| `clear` | 1440·390 | `pt` | monitor `0` · estacion `32` | `.et_pb_text_16..29` `2rem !important` |
 
-Tres piezas, dos ejes, valores distintos entre instancias de **la misma pieza**
-⇒ lo escribió quien editó cada página ⇒ **CAMPO**. Y en los 6 el papel del
-marcador en el selector ganador es `no-aparece` (§regla 36): el valor lo trae el
-selector **ORDINAL**, o sea el editor. El marcador es la **LLAVE**, no el
-portador.
+Los 8 llevan **`ordinal: true`** — el valor lo trae un selector
+`et_pb_<tipo>_<n>`, que el constructor emite **por módulo** ⇒ lo escribió el
+editor. El marcador es la **LLAVE** de emparejamiento, no el portador (§regla 36).
 
-> ⚠⚠ **Y LOS 46 NO SON «PLANTILLA»: SON `SIN PROBAR`, Y NO SE CABLEAN.** Un eje
-> sin varianza en 2–4 instancias no está probado como plantilla —puede ser un
-> campo que el editor puso uniforme, que es el falso negativo declarado del test
-> B—. **Y el test A no los rescata solo**: la 124.ª midió que su premisa central
-> es falsa en régimen `B-` por `FN-bp` —el editor escribe POR PUNTO DE RUPTURA y
-> lo compila en `@media` con ordinal, así que **su** valor también se mueve con
-> el ancho—, con **45 · 32 · 20** casos en los tres arquetipos `B-`. Los campos
-> `mt` y `pb` existen y quedan **al default**, que es lo contrario de cablearlos.
+### Los 46, reescritos con su reparto y los dos números con su unidad
 
-**`pieza` es un campo, y es el hallazgo que hizo medible todo esto.** Es el
-marcador semántico que el editor escribe en el builder. Sin él, dos instancias
-de la misma pieza en dos páginas **no se pueden emparejar**: el ordinal del
-constructor es único por documento y da 0 pares por construcción (§regla 29, la
-mitad que faltaba). Censo: **18 marcadores · 7 con ≥2 instancias · 11 singleton**.
+| de los 46 pares SIN VARIANZA del lote | n | vía |
+|---|---|---|
+| **RESUELTOS a PLANTILLA** | **6** | pata 2 · cascada · selector GENÉRICO |
+| **SIGUEN ABIERTOS** | **40** | `SIN ESCRIBIR` — el único valor observado es el inicial |
+| resueltos a CAMPO por varianza en la familia | **0** | — |
+
+**Los 6 resueltos**: `modulo-beneficios` `mb` ×2 anchos (ganador: el reparto de
+Divi por tipo de columna) y `kunak-faq-item` `pt`·`pb` ×2 anchos (ganador
+`.kunak-faq-item{padding:17px}`, del tema, genérico y sin ordinal).
+
+> ⚠⚠ **Y LOS 40 QUE QUEDAN NO SON «PLANTILLA»: SON `SIN ESCRIBIR`, Y NO SE
+> CABLEAN.** Su único valor observado es `0`, el **inicial** de la propiedad, así
+> que no hay declaración a la que preguntar (§*el test A supone que hay algo
+> escrito*). Y el test A no los rescata solo: la 124.ª midió que su premisa es
+> falsa en `B-` por `FN-bp` —el editor escribe POR PUNTO DE RUPTURA y lo compila
+> en `@media` con ordinal, así que **su** valor también se mueve con el ancho—,
+> con **45 · 32 · 20** casos. `mt` y `pb` quedan **al default**.
+
+> ⚠ **Y la cascada se toma a LOS DOS ANCHOS** (la 125.ª sólo a 1440). El ganador
+> de `mb` a 1440 es un **`%` de reparto** por tipo de columna; a 390 es
+> `.et_pb_column .et_pb_module{margin-bottom:30px}`. El test A a 390 leería «px
+> absolutos ⇒ campo» sobre **plantilla pura**.
+
+### El dominio, y por qué la familia decide y el lote no
+
+**`pieza` es un campo, y es el hallazgo que hizo medible todo esto.** Sin él, el
+ordinal del constructor es único por documento y empareja 0 por construcción
+(§regla 29). Censo derivado, **con su dominio al lado**:
+
+| dominio | marcadores | en ≥2 docs | singleton |
+|---|---|---|---|
+| LOTE (4 arquetipos), navegador con caja | 18 | 7 | 11 |
+| LOTE, censo OFFLINE del HTML | 20 | 8 | 12 |
+| **FAMILIA PRODUCTO** (3 del mismo), navegador con caja | **19** | **17** | **2** |
+
+Los dos censos del lote son **ciertos** y ninguno corrige al otro: la diferencia
+simétrica es **2 y 0** —`popup` y `dark`, sin caja—, o sea el criterio de
+recuento (§regla 31 hermana). El `18 · 7` es el denominador para **medir
+geometría**; el `20 · 8`, para **inventariar el HTML**.
+
+**Y el dominio que decide qué es CAMPO es la FAMILIA**, no el lote: allí las 3
+instancias son del MISMO arquetipo, así que un valor distinto sólo puede haberlo
+escrito quien editó esa página. En el lote un valor distinto puede ser **otra
+plantilla** —§*lo que varía entre FORMAS distingue plantillas, no campos*—, y
+ahí es exactamente donde la 125.ª se pasó de largo con 4 pares.
+
+**Régimen, derivado y no supuesto**: los 3 documentos de la familia son **`B-`**
+(builder) mirando **los DOS marcadores del `<body>`**. En `-T` o `--` la lectura
+se invertiría y esta tabla no valdría.
+
+> ⚠ **`valor767` sigue SIN CONSUMIDOR, y ahora con su denominador**: la cascada
+> de los 132 pares devolvió **37 declaraciones ganadoras dentro de un `@media`**
+> y **ninguna a 767** — sólo `(min-width: 981px)` ×16, `(max-width: 980px)` ×15 y
+> `all` ×6. O sea que esta medición **no le da consumidor**; sigue fichado con su
+> cero en `PENDIENTES-QA.md`.
+
+Derivaciones: `cola-larga/derivaciones/paso0-dominio-127.*` ·
+`escalon1-varianza-127.*` (+ `-control-lote`, `-neg-sin-etcache`) ·
+`hojas-etcache-127.*`.
 
 ## §2o.4 · Los defaults, con su contenedor — y `mbPorDefecto()` no se sustituye
 
