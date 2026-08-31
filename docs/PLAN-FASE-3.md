@@ -1797,6 +1797,81 @@ lo guardaría como px sin dar error»*— con la unidad cambiada.
 > del core servidos como 15). Un quinto arquetipo **re-mide su base**, no la
 > hereda de aquí.
 
+### ✅ ESCALÓN 4 de la 125.ª (2026-08-30) · la varianza inter-instancia SÍ es medible, y hay 6 ejes que salen CAMPO por ella
+
+**La incógnita declarada de F3-5 es que «cada uno es singleton o casi»**, de
+donde no se sabe qué es plantilla y qué es campo. **Antes de darlo por
+imposible** (punto 1 del encargo) se deriva lo que el lote comparte de verdad —
+y la respuesta cambia el estado del hueco.
+
+**LA LLAVE NO PODÍA SER EL ORDINAL**, y ahí estaba el bloqueo: `et_pb_text_4` en
+PRODUCTO y en CATÁLOGO **no son dos instancias de una pieza**, son dos módulos
+distintos. Lo que identifica una pieza es el **marcador SEMÁNTICO** —la clase
+CSS personalizada que el editor pone en el módulo—, que es §*el literal de
+`className` no discrimina; lo que identifica un módulo es el marcador
+semántico*. Y el conjunto **se censa, no se escribe de memoria**.
+
+**Censados: 18 marcadores, de los que 7 tienen ≥2 instancias.**
+
+| marcador | instancias |
+|---|---|
+| `breadcrumbs` · `bucle-entradas` · `kunak-faq-item` | **4** |
+| `menu-anclas` | **3** |
+| `iconos-xs-2` · `iconos-md-3` · `modulo-beneficios` | **2** |
+| 11 más | **1** — singleton, con su denominador |
+
+> **Así que la varianza inter-instancia NO era inmedible: era inmedible CON LA
+> LLAVE QUE SE ESTABA USANDO.** Es §regla 33 en su cara de diseño —una llave
+> que no identifica— y §regla 29: el índice construido para una pregunta (cruzar
+> anchos) no contesta otra (cruzar documentos).
+
+**EL RESULTADO — 52 pares evaluables (marcador × ancho × eje), 6 con varianza:**
+
+| pieza · eje | PRODUCTO | CATÁLOGO | SOFTWARE | S-corta |
+|---|---|---|---|---|
+| `menu-anclas` · `marginBottom` @1440 | **31.6719** | `{0, 27.2}` | **27.2** | — |
+| `menu-anclas` · `paddingTop` @1440 | **0** | `{0, 17}` | **17** | — |
+| `iconos-xs-2` · `marginBottom` @1440 | **31.6719** | — | — | `{0, 31.6719}` |
+| `iconos-md-3` · `marginBottom` @1440 | **31.6719** | — | — | `{0, 31.6719}` |
+
+**Y ESTO ATA LOS TRES ESCALONES, que es lo que le da peso:** el `27.2` es
+`1.7rem × 16` y el `17` es `1em × 17` — **exactamente los valores que el ESCALÓN
+3 midió** sobre `et_pb_text_7` y `et_pb_text_14`. Cruzado **al elemento** y no
+al cardinal: `menu-anclas` **es** `et_pb_text_7`+`_13` en CATÁLOGO y
+`et_pb_text_14` en SOFTWARE, y en PRODUCTO es `et_pb_text_16`, que trae **el
+default**.
+
+> **Leído como decisión de modelo: el editor tocó `menu-anclas` en 2 de sus 3
+> instancias y en la tercera lo dejó por defecto.** Eso es **CAMPO** por el test
+> B inter-instancia — no por inferencia sobre una sola página, que es
+> precisamente lo que la incógnita de esta fase prohibía.
+
+**LO QUE NO SE PUEDE LEER DE MÁS, y son dos:**
+
+1. **los 46 pares SIN VARIANZA no son «plantilla probada»**: son **sin varianza
+   en el dominio alcanzable**, que pesa lo mismo que SIN PROBAR y **no se
+   cablea**. El listón no es «≥2» (§*ese «≥2» está mal puesto como listón*) sino
+   todo el dominio, y aquí el dominio son 4 documentos;
+2. **§regla 36 medida y publicada:** el papel del marcador en el selector
+   ganador es **`no-aparece` 21 · `sujeto` 3**. O sea que el marcador semántico
+   **casi nunca gana la cascada** — el editor lo pone para su propio CSS y Divi
+   compila por ordinal. La varianza se mide bien porque se mide **sobre el
+   nodo**, no sobre quién declara.
+
+> ⚠ **Y una limitación DEL INSTRUMENTO, con su cardinal (§regla 14):** el
+> marcado `data-sem` guarda **una** clase por nodo, así que un nodo con dos
+> semánticas pierde la primera. Medido: afecta a **1 marcador de 7
+> (`iconos-xs-2`) y a 4 pares de 28** @1440, y **sólo al eje de §regla 36** — la
+> varianza no lo usa. No se tapa: se declara.
+
+**VEREDICTO DEL ESCALÓN, que es el que el hueco 4 necesitaba:**
+
+> **El hueco pasa de «no hay con qué medir» a «hay con qué, y ya se midió en 7
+> piezas».** No cierra la incógnita de la fase —los 4 documentos siguen siendo 4
+> arquetipos, no 4 instancias de uno— pero **la reduce a su tamaño real**: lo
+> que comparten sí tiene instancias, y **6 ejes de ritmo ya salen CAMPO por
+> varianza medida entre ellas.**
+
 ## El orden, y por qué
 
 | # | por qué va aquí |

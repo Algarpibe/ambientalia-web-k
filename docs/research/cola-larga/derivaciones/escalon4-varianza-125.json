@@ -1,0 +1,1346 @@
+{
+  "fecha": "2026-08-31",
+  "tanda": 125,
+  "escalon": 4,
+  "alcance": {
+    "docs": [
+      "monitor-calidad-aire.html",
+      "accesorios.html",
+      "software-de-medicion-calidad-del-aire.html",
+      "kunak-api.html"
+    ],
+    "anchos": [
+      1440,
+      390
+    ],
+    "nota": "propiedad de estos 4 documentos; el liston es el dominio alcanzable, no «>=2»"
+  },
+  "controles": [
+    {
+      "ok": true,
+      "nombre": "se censo algo (hay marcadores semanticos)",
+      "detalle": "18 marcadores"
+    },
+    {
+      "ok": true,
+      "nombre": "HAY piezas con >=2 instancias (la varianza inter-instancia ES medible)",
+      "detalle": "breadcrumbs=4 · iconos-xs-2=2 · iconos-md-3=2 · menu-anclas=3 · modulo-beneficios=2 · bucle-entradas=4 · kunak-faq-item=4"
+    },
+    {
+      "ok": true,
+      "nombre": "el detector de varianza DISCRIMINA (ni cero ni pleno)",
+      "detalle": "6 con varianza · 46 sin"
+    },
+    {
+      "ok": true,
+      "nombre": "CONTROL EN NEGATIVO §regla 36: sujeto/contexto/no-aparece se distinguen",
+      "detalle": "3 selectores conocidos"
+    },
+    {
+      "ok": true,
+      "nombre": "§regla 32: las hojas se resolvieron TODAS",
+      "detalle": "60/60"
+    }
+  ],
+  "censoMarcadores": {
+    "breadcrumbs": [
+      "PRODUCTO",
+      "CATALOGO",
+      "SOFTWARE",
+      "SOFTWARE-corta"
+    ],
+    "iconos-xs-2": [
+      "PRODUCTO",
+      "SOFTWARE-corta"
+    ],
+    "iconos-md-6": [
+      "PRODUCTO"
+    ],
+    "iconos-md-3": [
+      "PRODUCTO",
+      "SOFTWARE-corta"
+    ],
+    "parametros": [
+      "PRODUCTO"
+    ],
+    "clear-both": [
+      "PRODUCTO"
+    ],
+    "menu-anclas": [
+      "PRODUCTO",
+      "CATALOGO",
+      "SOFTWARE"
+    ],
+    "modulo-beneficios": [
+      "PRODUCTO",
+      "SOFTWARE"
+    ],
+    "dvmd_table_maker": [
+      "PRODUCTO"
+    ],
+    "dvmd_table_maker_0": [
+      "PRODUCTO"
+    ],
+    "dvmd_tm_version_4_0_1": [
+      "PRODUCTO"
+    ],
+    "iconos-certificicados": [
+      "PRODUCTO"
+    ],
+    "clear": [
+      "PRODUCTO"
+    ],
+    "galeria": [
+      "PRODUCTO"
+    ],
+    "lista-resultados": [
+      "PRODUCTO"
+    ],
+    "bucle-entradas": [
+      "PRODUCTO",
+      "CATALOGO",
+      "SOFTWARE",
+      "SOFTWARE-corta"
+    ],
+    "kunak-faq-item": [
+      "PRODUCTO",
+      "CATALOGO",
+      "SOFTWARE",
+      "SOFTWARE-corta"
+    ],
+    "iconos-md-2": [
+      "SOFTWARE"
+    ]
+  },
+  "conVariasInstancias": [
+    {
+      "marcador": "breadcrumbs",
+      "docs": [
+        "PRODUCTO",
+        "CATALOGO",
+        "SOFTWARE",
+        "SOFTWARE-corta"
+      ]
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "docs": [
+        "PRODUCTO",
+        "SOFTWARE-corta"
+      ]
+    },
+    {
+      "marcador": "iconos-md-3",
+      "docs": [
+        "PRODUCTO",
+        "SOFTWARE-corta"
+      ]
+    },
+    {
+      "marcador": "menu-anclas",
+      "docs": [
+        "PRODUCTO",
+        "CATALOGO",
+        "SOFTWARE"
+      ]
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "docs": [
+        "PRODUCTO",
+        "SOFTWARE"
+      ]
+    },
+    {
+      "marcador": "bucle-entradas",
+      "docs": [
+        "PRODUCTO",
+        "CATALOGO",
+        "SOFTWARE",
+        "SOFTWARE-corta"
+      ]
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "docs": [
+        "PRODUCTO",
+        "CATALOGO",
+        "SOFTWARE",
+        "SOFTWARE-corta"
+      ]
+    }
+  ],
+  "singleton": [
+    {
+      "marcador": "iconos-md-6",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "parametros",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "clear-both",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "dvmd_table_maker",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "dvmd_table_maker_0",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "dvmd_tm_version_4_0_1",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "iconos-certificicados",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "clear",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "galeria",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "lista-resultados",
+      "docs": [
+        "PRODUCTO"
+      ]
+    },
+    {
+      "marcador": "iconos-md-2",
+      "docs": [
+        "SOFTWARE"
+      ]
+    }
+  ],
+  "varianza": [
+    {
+      "marcador": "breadcrumbs",
+      "ancho": 1440,
+      "eje": "marginTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "breadcrumbs",
+      "ancho": 1440,
+      "eje": "marginBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "breadcrumbs",
+      "ancho": 1440,
+      "eje": "paddingTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "breadcrumbs",
+      "ancho": 1440,
+      "eje": "paddingBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "breadcrumbs",
+      "ancho": 390,
+      "eje": "marginTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "breadcrumbs",
+      "ancho": 390,
+      "eje": "marginBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "breadcrumbs",
+      "ancho": 390,
+      "eje": "paddingTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "breadcrumbs",
+      "ancho": 390,
+      "eje": "paddingBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "ancho": 1440,
+      "eje": "marginTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "ancho": 1440,
+      "eje": "marginBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          31.6719
+        ],
+        "SOFTWARE-corta": [
+          0,
+          31.6719
+        ]
+      },
+      "firmasDistintas": 2,
+      "veredicto": "CAMPO (varia entre instancias)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "ancho": 1440,
+      "eje": "paddingTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "ancho": 1440,
+      "eje": "paddingBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "ancho": 390,
+      "eje": "marginTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "ancho": 390,
+      "eje": "marginBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          30
+        ],
+        "SOFTWARE-corta": [
+          0,
+          30
+        ]
+      },
+      "firmasDistintas": 2,
+      "veredicto": "CAMPO (varia entre instancias)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "ancho": 390,
+      "eje": "paddingTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-xs-2",
+      "ancho": 390,
+      "eje": "paddingBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-md-3",
+      "ancho": 1440,
+      "eje": "marginTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "iconos-md-3",
+      "ancho": 1440,
+      "eje": "marginBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          31.6719
+        ],
+        "SOFTWARE-corta": [
+          0,
+          31.6719
+        ]
+      },
+      "firmasDistintas": 2,
+      "veredicto": "CAMPO (varia entre instancias)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "iconos-md-3",
+      "ancho": 1440,
+      "eje": "paddingTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "iconos-md-3",
+      "ancho": 1440,
+      "eje": "paddingBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "iconos-md-3",
+      "ancho": 390,
+      "eje": "marginTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-md-3",
+      "ancho": 390,
+      "eje": "marginBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          30
+        ],
+        "SOFTWARE-corta": [
+          0,
+          30
+        ]
+      },
+      "firmasDistintas": 2,
+      "veredicto": "CAMPO (varia entre instancias)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-md-3",
+      "ancho": 390,
+      "eje": "paddingTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "iconos-md-3",
+      "ancho": 390,
+      "eje": "paddingBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "menu-anclas",
+      "ancho": 1440,
+      "eje": "marginTop",
+      "instancias": 3,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "menu-anclas",
+      "ancho": 1440,
+      "eje": "marginBottom",
+      "instancias": 3,
+      "porDoc": {
+        "PRODUCTO": [
+          31.6719
+        ],
+        "CATALOGO": [
+          0,
+          27.2
+        ],
+        "SOFTWARE": [
+          27.2
+        ]
+      },
+      "firmasDistintas": 3,
+      "veredicto": "CAMPO (varia entre instancias)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "menu-anclas",
+      "ancho": 1440,
+      "eje": "paddingTop",
+      "instancias": 3,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0,
+          17
+        ],
+        "SOFTWARE": [
+          17
+        ]
+      },
+      "firmasDistintas": 3,
+      "veredicto": "CAMPO (varia entre instancias)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "menu-anclas",
+      "ancho": 1440,
+      "eje": "paddingBottom",
+      "instancias": 3,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "ancho": 1440,
+      "eje": "marginTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "ancho": 1440,
+      "eje": "marginBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          31.6719
+        ],
+        "SOFTWARE": [
+          31.6719
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "ancho": 1440,
+      "eje": "paddingTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "ancho": 1440,
+      "eje": "paddingBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "ancho": 390,
+      "eje": "marginTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "ancho": 390,
+      "eje": "marginBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          30
+        ],
+        "SOFTWARE": [
+          30
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "ancho": 390,
+      "eje": "paddingTop",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "modulo-beneficios",
+      "ancho": 390,
+      "eje": "paddingBottom",
+      "instancias": 2,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "bucle-entradas",
+      "ancho": 1440,
+      "eje": "marginTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "bucle-entradas",
+      "ancho": 1440,
+      "eje": "marginBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "bucle-entradas",
+      "ancho": 1440,
+      "eje": "paddingTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "bucle-entradas",
+      "ancho": 1440,
+      "eje": "paddingBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "bucle-entradas",
+      "ancho": 390,
+      "eje": "marginTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "bucle-entradas",
+      "ancho": 390,
+      "eje": "marginBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "bucle-entradas",
+      "ancho": 390,
+      "eje": "paddingTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "bucle-entradas",
+      "ancho": 390,
+      "eje": "paddingBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "ancho": 1440,
+      "eje": "marginTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "no-aparece"
+      ]
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "ancho": 1440,
+      "eje": "marginBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "sujeto"
+      ]
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "ancho": 1440,
+      "eje": "paddingTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          17
+        ],
+        "CATALOGO": [
+          17
+        ],
+        "SOFTWARE": [
+          17
+        ],
+        "SOFTWARE-corta": [
+          17
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "sujeto"
+      ]
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "ancho": 1440,
+      "eje": "paddingBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          17
+        ],
+        "CATALOGO": [
+          17
+        ],
+        "SOFTWARE": [
+          17
+        ],
+        "SOFTWARE-corta": [
+          17
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": [
+        "sujeto"
+      ]
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "ancho": 390,
+      "eje": "marginTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "ancho": 390,
+      "eje": "marginBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          0
+        ],
+        "CATALOGO": [
+          0
+        ],
+        "SOFTWARE": [
+          0
+        ],
+        "SOFTWARE-corta": [
+          0
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "ancho": 390,
+      "eje": "paddingTop",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          17
+        ],
+        "CATALOGO": [
+          17
+        ],
+        "SOFTWARE": [
+          17
+        ],
+        "SOFTWARE-corta": [
+          17
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    },
+    {
+      "marcador": "kunak-faq-item",
+      "ancho": 390,
+      "eje": "paddingBottom",
+      "instancias": 4,
+      "porDoc": {
+        "PRODUCTO": [
+          17
+        ],
+        "CATALOGO": [
+          17
+        ],
+        "SOFTWARE": [
+          17
+        ],
+        "SOFTWARE-corta": [
+          17
+        ]
+      },
+      "firmasDistintas": 1,
+      "veredicto": "SIN VARIANZA (no distingue)",
+      "papelDelMarcador": []
+    }
+  ],
+  "resumen": {
+    "pares": 52,
+    "conVarianza": 6,
+    "sinVarianza": 46
+  },
+  "hojas": {
+    "enlazadas": 60,
+    "resueltas": 60
+  }
+}

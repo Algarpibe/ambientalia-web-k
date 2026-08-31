@@ -1,0 +1,276 @@
+=== CONTROLES ===
+  OK  se censo algo (hay marcadores semanticos)
+      18 marcadores
+  OK  HAY piezas con >=2 instancias (la varianza inter-instancia ES medible)
+      breadcrumbs=4 · iconos-xs-2=2 · iconos-md-3=2 · menu-anclas=3 · modulo-beneficios=2 · bucle-entradas=4 · kunak-faq-item=4
+  OK  el detector de varianza DISCRIMINA (ni cero ni pleno)
+      6 con varianza · 46 sin
+  OK  CONTROL EN NEGATIVO §regla 36: sujeto/contexto/no-aparece se distinguen
+      3 selectores conocidos
+  OK  §regla 32: las hojas se resolvieron TODAS
+      60/60
+
+=== CENSO DE MARCADORES SEMANTICOS (derivado, no escrito de memoria) ===
+  4 doc(s)  breadcrumbs              PRODUCTO · CATALOGO · SOFTWARE · SOFTWARE-corta
+  4 doc(s)  bucle-entradas           PRODUCTO · CATALOGO · SOFTWARE · SOFTWARE-corta
+  4 doc(s)  kunak-faq-item           PRODUCTO · CATALOGO · SOFTWARE · SOFTWARE-corta
+  3 doc(s)  menu-anclas              PRODUCTO · CATALOGO · SOFTWARE
+  2 doc(s)  iconos-xs-2              PRODUCTO · SOFTWARE-corta
+  2 doc(s)  iconos-md-3              PRODUCTO · SOFTWARE-corta
+  2 doc(s)  modulo-beneficios        PRODUCTO · SOFTWARE
+  1 doc(s)  iconos-md-6              PRODUCTO
+  1 doc(s)  parametros               PRODUCTO
+  1 doc(s)  clear-both               PRODUCTO
+  1 doc(s)  dvmd_table_maker         PRODUCTO
+  1 doc(s)  dvmd_table_maker_0       PRODUCTO
+  1 doc(s)  dvmd_tm_version_4_0_1    PRODUCTO
+  1 doc(s)  iconos-certificicados    PRODUCTO
+  1 doc(s)  clear                    PRODUCTO
+  1 doc(s)  galeria                  PRODUCTO
+  1 doc(s)  lista-resultados         PRODUCTO
+  1 doc(s)  iconos-md-2              SOFTWARE
+
+  con >=2 instancias: 7   ·   singleton: 11
+
+=== VARIANZA INTER-INSTANCIA (unidad: marcador × ancho × eje) ===
+  pares evaluables: 52  ·  CON varianza: 6  ·  SIN varianza: 46
+
+    breadcrumbs @1440 marginTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    breadcrumbs @1440 marginBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    breadcrumbs @1440 paddingTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    breadcrumbs @1440 paddingBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    breadcrumbs @390 marginTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    breadcrumbs @390 marginBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    breadcrumbs @390 paddingTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    breadcrumbs @390 paddingBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    iconos-xs-2 @1440 marginTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+  ★ iconos-xs-2 @1440 marginBottom  → CAMPO (varia entre instancias)  (n=2 instancias)
+        PRODUCTO         [31.6719]
+        SOFTWARE-corta   [0,31.6719]
+    iconos-xs-2 @1440 paddingTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+    iconos-xs-2 @1440 paddingBottom  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+    iconos-xs-2 @390 marginTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+  ★ iconos-xs-2 @390 marginBottom  → CAMPO (varia entre instancias)  (n=2 instancias)
+        PRODUCTO         [30]
+        SOFTWARE-corta   [0,30]
+    iconos-xs-2 @390 paddingTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+    iconos-xs-2 @390 paddingBottom  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+    iconos-md-3 @1440 marginTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+  ★ iconos-md-3 @1440 marginBottom  → CAMPO (varia entre instancias)  (n=2 instancias)
+        PRODUCTO         [31.6719]
+        SOFTWARE-corta   [0,31.6719]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    iconos-md-3 @1440 paddingTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    iconos-md-3 @1440 paddingBottom  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    iconos-md-3 @390 marginTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+  ★ iconos-md-3 @390 marginBottom  → CAMPO (varia entre instancias)  (n=2 instancias)
+        PRODUCTO         [30]
+        SOFTWARE-corta   [0,30]
+    iconos-md-3 @390 paddingTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+    iconos-md-3 @390 paddingBottom  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE-corta   [0]
+    menu-anclas @1440 marginTop  → SIN VARIANZA (no distingue)  (n=3 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+  ★ menu-anclas @1440 marginBottom  → CAMPO (varia entre instancias)  (n=3 instancias)
+        PRODUCTO         [31.6719]
+        CATALOGO         [0,27.2]
+        SOFTWARE         [27.2]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+  ★ menu-anclas @1440 paddingTop  → CAMPO (varia entre instancias)  (n=3 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0,17]
+        SOFTWARE         [17]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    menu-anclas @1440 paddingBottom  → SIN VARIANZA (no distingue)  (n=3 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    modulo-beneficios @1440 marginTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE         [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    modulo-beneficios @1440 marginBottom  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [31.6719]
+        SOFTWARE         [31.6719]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    modulo-beneficios @1440 paddingTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE         [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    modulo-beneficios @1440 paddingBottom  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE         [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    modulo-beneficios @390 marginTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE         [0]
+    modulo-beneficios @390 marginBottom  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [30]
+        SOFTWARE         [30]
+    modulo-beneficios @390 paddingTop  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE         [0]
+    modulo-beneficios @390 paddingBottom  → SIN VARIANZA (no distingue)  (n=2 instancias)
+        PRODUCTO         [0]
+        SOFTWARE         [0]
+    bucle-entradas @1440 marginTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    bucle-entradas @1440 marginBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    bucle-entradas @1440 paddingTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    bucle-entradas @1440 paddingBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    bucle-entradas @390 marginTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    bucle-entradas @390 marginBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    bucle-entradas @390 paddingTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    bucle-entradas @390 paddingBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    kunak-faq-item @1440 marginTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: no-aparece
+    kunak-faq-item @1440 marginBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+        §regla 36 · papel del marcador en el selector ganador: sujeto
+    kunak-faq-item @1440 paddingTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [17]
+        CATALOGO         [17]
+        SOFTWARE         [17]
+        SOFTWARE-corta   [17]
+        §regla 36 · papel del marcador en el selector ganador: sujeto
+    kunak-faq-item @1440 paddingBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [17]
+        CATALOGO         [17]
+        SOFTWARE         [17]
+        SOFTWARE-corta   [17]
+        §regla 36 · papel del marcador en el selector ganador: sujeto
+    kunak-faq-item @390 marginTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    kunak-faq-item @390 marginBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [0]
+        CATALOGO         [0]
+        SOFTWARE         [0]
+        SOFTWARE-corta   [0]
+    kunak-faq-item @390 paddingTop  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [17]
+        CATALOGO         [17]
+        SOFTWARE         [17]
+        SOFTWARE-corta   [17]
+    kunak-faq-item @390 paddingBottom  → SIN VARIANZA (no distingue)  (n=4 instancias)
+        PRODUCTO         [17]
+        CATALOGO         [17]
+        SOFTWARE         [17]
+        SOFTWARE-corta   [17]
+
+=== VEREDICTO ===
+  1 · ¿es medible la varianza inter-instancia en el lote? SI
+      piezas con >=2 instancias: breadcrumbs (4) · iconos-xs-2 (2) · iconos-md-3 (2) · menu-anclas (3) · modulo-beneficios (2) · bucle-entradas (4) · kunak-faq-item (4)
+  2 · ejes que salen CAMPO por varianza inter-instancia: 6 de 52
+  3 · ejes SIN VARIANZA: 46 — NO son «plantilla probada», son SIN VARIANZA en el dominio alcanzable
+  4 · marcadores singleton (no establecido, con su denominador): 11 de 18
