@@ -84,7 +84,16 @@ export function AnchorNav({
   return (
     <div className={className}>
       {/* Caja `menu-anclas` — oculta en móvil (regla ≤980 del tema) */}
+      {/* MARCADOR DE SONDA (130.ª) — ATRIBUTO sobre el div que ya existe: el
+          original sirve esta caja como UN `.et_pb_text` (`.et_pb_text_14` en
+          software, y el ESQUEMA mide sobre él `menu-anclas · mb 31.6719 · pt 0`
+          con selector ORDINAL, o sea CAMPO del editor).
+          ⚠ Es `hidden … md:block`, así que a 390 NO TIENE CAJA y la sonda no lo
+          cuenta. Si el original lo oculta igual, los dos lados pierden el mismo
+          módulo; si no, la fila sale PARCIAL — y eso es dato del original, no
+          del marcador. */}
       <div
+        data-modulo="text"
         className={
           "mb-[27.2px] hidden w-full rounded-[10px] border border-[#333] px-4 pb-0 pt-4 md:block " +
           boxClassName

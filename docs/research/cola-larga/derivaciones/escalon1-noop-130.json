@@ -1,0 +1,112 @@
+{
+ "meta": {
+  "tanda": "130.ª",
+  "escalon": "1",
+  "fecha": "2026-08-31",
+  "pregunta": "¿mueve el marcador la geometría de FILAS? — la unidad es el EJE DE FILA (ruta::fila::eje), no el total",
+  "porQueNoLaFirmaW": "la guarda de w() compara el fichero entero, y el fichero cambia por el bloque `modulos` que esta tanda enciende: no puede firmar este NO-OP",
+  "noContesta": "no dice si los Δ del eje `modulos` son defectos del clon — eso es la línea base, y es cobertura nueva"
+ },
+ "informe": [
+  {
+   "ancho": 1440,
+   "antes": "productos-cmp-1440-2026-08-31.json",
+   "despues": "productos-cmp-1440-2026-08-31-tras-marcador-software.json",
+   "noOpEjeFilas": true,
+   "soloAntes": [],
+   "soloDespues": [],
+   "cambiados": [],
+   "totales": {
+    "antes": {
+     "ejes": 130,
+     "distintos": 43,
+     "subpixel": 3
+    },
+    "despues": {
+     "ejes": 130,
+     "distintos": 43,
+     "subpixel": 3
+    }
+   },
+   "modulos": {
+    "antes": {
+     "ejesComparados": 85,
+     "distintos": 33,
+     "huerfanosO": 13,
+     "huerfanosC": 0,
+     "filasComparadas": 3,
+     "filasSinMarcador": 22,
+     "filasParciales": 1,
+     "rutasSinNingunMarcador": [
+      "/monitor-calidad-aire",
+      "/accesorios",
+      "/software-de-medicion-calidad-del-aire"
+     ]
+    },
+    "despues": {
+     "ejesComparados": 191,
+     "distintos": 75,
+     "huerfanosO": 60,
+     "huerfanosC": 0,
+     "filasComparadas": 4,
+     "filasSinMarcador": 18,
+     "filasParciales": 4,
+     "rutasSinNingunMarcador": [
+      "/monitor-calidad-aire",
+      "/accesorios"
+     ]
+    }
+   }
+  },
+  {
+   "ancho": 390,
+   "antes": "productos-cmp-390-2026-08-31.json",
+   "despues": "productos-cmp-390-2026-08-31-tras-marcador-software.json",
+   "noOpEjeFilas": true,
+   "soloAntes": [],
+   "soloDespues": [],
+   "cambiados": [],
+   "totales": {
+    "antes": {
+     "ejes": 130,
+     "distintos": 49,
+     "subpixel": 1
+    },
+    "despues": {
+     "ejes": 130,
+     "distintos": 49,
+     "subpixel": 1
+    }
+   },
+   "modulos": {
+    "antes": {
+     "ejesComparados": 85,
+     "distintos": 22,
+     "huerfanosO": 12,
+     "huerfanosC": 0,
+     "filasComparadas": 3,
+     "filasSinMarcador": 22,
+     "filasParciales": 1,
+     "rutasSinNingunMarcador": [
+      "/monitor-calidad-aire",
+      "/accesorios",
+      "/software-de-medicion-calidad-del-aire"
+     ]
+    },
+    "despues": {
+     "ejesComparados": 186,
+     "distintos": 62,
+     "huerfanosO": 43,
+     "huerfanosC": 0,
+     "filasComparadas": 4,
+     "filasSinMarcador": 20,
+     "filasParciales": 2,
+     "rutasSinNingunMarcador": [
+      "/monitor-calidad-aire",
+      "/accesorios"
+     ]
+    }
+   }
+  }
+ ]
+}

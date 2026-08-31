@@ -20,9 +20,16 @@ import { HERRAMIENTAS, type Herramienta } from "@/lib/software";
 export function RejillaHerramientas({ items = HERRAMIENTAS }: { items?: Herramienta[] } = {}) {
   return (
     <ul className="m-0 flex list-none flex-col p-0 min-[480px]:flex-row min-[480px]:flex-wrap">
+      {/* MARCADOR DE SONDA (130.ª) — `data-modulo` como ATRIBUTO sobre el
+          `<li>`, que es el 1:1 del `.et_pb_blurb` con clase `iconos-md-2` del
+          original. Es el marcador que lleva uno de los CAMPO de este arquetipo:
+          el ESQUEMA mide `iconos-md-2 · mb · 40px !important` sobre
+          `.et_pb_blurb_15/16` con selector ORDINAL, o sea escrito por el
+          editor. Lo consume `productos-cmp` (`[data-modulo]`). */}
       {items.map((h) => (
         <li
           key={h.titulo}
+          data-modulo="blurb"
           className="mb-[40px] w-full min-[480px]:mr-[5.5%] min-[480px]:w-[47%] min-[480px]:[&:nth-child(2n)]:mr-0"
         >
           <img

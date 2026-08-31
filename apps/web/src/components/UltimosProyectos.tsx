@@ -49,7 +49,12 @@ export function UltimosProyectos({
 } = {}) {
   const cards = (
     <>
+      {/* MARCADOR DE SONDA (130.ª) — ATRIBUTO sobre la rejilla, que ya existe.
+          En el original las 3 fichas son UN solo módulo de texto
+          (`.et_pb_text_18` en software), no tres: el marcador va en el
+          contenedor, no en cada `<article>`. */}
       <div
+        data-modulo="text"
         className={
           "grid gap-x-[40px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3 " +
           // sector: el `margin-bottom: 40` de la ficha del original cuenta
@@ -95,7 +100,11 @@ export function UltimosProyectos({
 
       {/* El CTA va centrado a la derecha en la home; en la columna 3/4 del
           monitor el wrapper del original no lleva clase de alineación → izda. */}
+      {/* MARCADOR DE SONDA (130.ª) — este div hace de
+          `et_pb_button_module_wrapper`, que es el módulo que el original mide
+          (el `<a>` de dentro es el `.et_pb_button`, un nivel por debajo). */}
       <div
+        data-modulo="button"
         className={
           "flex " +
           // sector: el original deja 25px justos entre la rejilla y el CTA
@@ -119,7 +128,10 @@ export function UltimosProyectos({
   if (embedded) {
     return (
       <div>
-        <BlockTitle className="mb-[28px]">{title}</BlockTitle>
+        {/* MARCADOR DE SONDA (130.ª) — `.et_pb_text_17` del original. */}
+        <BlockTitle dataModulo="text" className="mb-[28px]">
+          {title}
+        </BlockTitle>
         {cards}
       </div>
     );

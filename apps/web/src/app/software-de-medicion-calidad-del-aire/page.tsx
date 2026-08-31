@@ -107,7 +107,11 @@ export default function SoftwareMedicionCalidadDelAirePage() {
                 estira a la altura de la fila, el sticky nunca llega a pegarse. */}
             <aside className="columna-lista-anclas w-full pt-[32px] md:w-[20.875%] md:shrink-0 md:self-start md:sticky md:top-[70px]">
               <div className="relative">
+                {/* MARCADOR DE SONDA (130.ª) — ATRIBUTO sobre el `<img>` que ya
+                    existe: es el `.et_pb_image_4` con el que arranca la fila 3
+                    del original. */}
                 <img
+                  data-modulo="image"
                   src="/images/uploads/2022/12/punteado.svg"
                   alt=""
                   aria-hidden
@@ -122,10 +126,20 @@ export default function SoftwareMedicionCalidadDelAirePage() {
                 {/* Apilados en ambos anchos; en móvil el original los separa
                     44.4px (medido a 390: 4927 → 5015.4, botón de 44). */}
                 <div className="flex flex-col items-start gap-[44.4px] md:w-full md:gap-[14px]">
+                  {/* MARCADOR DE SONDA (130.ª) — ⚠ LOS DOS ÚNICOS ENVOLTORIOS
+                      de esta tanda, y por eso se nombran: el original mide cada
+                      botón por su `et_pb_button_module_wrapper` y aquí los dos
+                      `<a>` cuelgan directos del flex, sin wrapper propio. Un
+                      atributo sobre el `<a>` marcaría el `.et_pb_button`, que
+                      es un nivel POR DEBAJO del módulo. El `<div>` no lleva
+                      clase: con `items-start` toma el ancho de su contenido y
+                      el `gap` sigue actuando entre hermanos — pero que sea
+                      NO-OP es una PREDICCIÓN y la cierra la medida, no este
+                      comentario. */}
                   {ANCLAS_CTAS.map((c) => (
-                    <BlueButton key={c.label} href={c.href}>
-                      {c.label}
-                    </BlueButton>
+                    <div key={c.label} data-modulo="button">
+                      <BlueButton href={c.href}>{c.label}</BlueButton>
+                    </div>
                   ))}
                 </div>
               </AnchorNav>
@@ -136,7 +150,11 @@ export default function SoftwareMedicionCalidadDelAirePage() {
             <div className="w-full min-w-0 md:flex-1">
               {/* #beneficios — 9 blurbs a ancho completo */}
               <div id="beneficios" className="scroll-mt-[80px] pt-[32px]">
-                <h2 className="mb-[27.81px] pb-[10px] text-[37px] font-light leading-[37px] tracking-[-0.5px] text-[#333]">
+                {/* MARCADOR DE SONDA (130.ª) — `.et_pb_text_15` del original. */}
+                <h2
+                  data-modulo="text"
+                  className="mb-[27.81px] pb-[10px] text-[37px] font-light leading-[37px] tracking-[-0.5px] text-[#333]"
+                >
                   Beneficios
                 </h2>
                 <ListaBeneficios />
@@ -144,7 +162,11 @@ export default function SoftwareMedicionCalidadDelAirePage() {
 
               {/* #herramientas — 16 tarjetas de 47% con captura 1800×1200 */}
               <div id="herramientas" className="scroll-mt-[80px] pt-[32px]">
-                <h2 className="mb-[27.81px] pb-[10px] text-[37px] font-light leading-[37px] tracking-[-0.5px] text-[#333]">
+                {/* MARCADOR DE SONDA (130.ª) — `.et_pb_text_16` del original. */}
+                <h2
+                  data-modulo="text"
+                  className="mb-[27.81px] pb-[10px] text-[37px] font-light leading-[37px] tracking-[-0.5px] text-[#333]"
+                >
                   Herramientas
                 </h2>
                 <RejillaHerramientas />

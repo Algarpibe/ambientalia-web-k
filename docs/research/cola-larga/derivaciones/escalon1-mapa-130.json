@@ -1,0 +1,1777 @@
+{
+ "meta": {
+  "tanda": "130.ª",
+  "escalon": "1",
+  "fecha": "2026-08-31",
+  "criterio": "replicado de productos-cmp.mjs L246-330: fila = et_pb_row fuera de _tb_header/_tb_footer · módulo = descendiente con et_pb_module · kind del et_pb_<tipo>_<n>",
+  "unidad": "NODO en el DOM del corpus — SIN CAJA, cota superior del CON CAJA",
+  "controlCruzado": {
+   "contra": "escalon1-objetivo-129.json",
+   "rutasIdenticas": 3,
+   "deTotal": 3
+  },
+  "noContesta": "no dice dónde va el marcador en el clon ni mide un píxel"
+ },
+ "informe": [
+  {
+   "ruta": "/software-de-medicion-calidad-del-aire",
+   "doc": "software-de-medicion-calidad-del-aire.html",
+   "nFilas": 8,
+   "nModulos": 89,
+   "porFila": [
+    {
+     "fila": 0,
+     "n": 1,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "text",
+       "clase": "et_pb_text_0",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Inicio Productos AIR Cloud"
+      }
+     ]
+    },
+    {
+     "fila": 1,
+     "n": 7,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_0",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_1",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Kunak AIR Cloud Software de medición de la calidad del aire"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_2",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Analiza datos de forma sencilla y obtén información útil para la toma "
+      },
+      {
+       "k": 3,
+       "kind": "text",
+       "clase": "et_pb_text_4",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "DATOS EN TIEMPO REAL | SIEMPRE ACTUALIZADO"
+      },
+      {
+       "k": 4,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+       "src": null,
+       "texto": "Solicita una demo gratuita"
+      },
+      {
+       "k": 5,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left et_pb_button_alignment_tablet_left et_pb_button_alignment_phone_left",
+       "src": null,
+       "texto": "Descargar app (Android)"
+      },
+      {
+       "k": 6,
+       "kind": "image",
+       "clase": "et_pb_image_1",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/industrial-woman-engineer-using-the-cloud.jpg",
+       "texto": ""
+      }
+     ]
+    },
+    {
+     "fila": 2,
+     "n": 19,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_2",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_5",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Información del producto"
+      },
+      {
+       "k": 2,
+       "kind": "image",
+       "clase": "et_pb_image_3",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/04/kunak-cloud-dispositivos.png",
+       "texto": ""
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_button_alignment_center et_pb_button_alignment_tablet_left et_pb_button_alignment_phone_left",
+       "src": null,
+       "texto": "Ver vídeo del producto"
+      },
+      {
+       "k": 4,
+       "kind": "text",
+       "clase": "et_pb_text_6",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Software de control de calidad del aire Visualiza y analiza los datos "
+      },
+      {
+       "k": 5,
+       "kind": "text",
+       "clase": "et_pb_text_7",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Kunak AIR Cloud es un software de medición de calidad del aire con un "
+      },
+      {
+       "k": 6,
+       "kind": "text",
+       "clase": "et_pb_text_8",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Elige las herramientas que necesites para tu proyecto."
+      },
+      {
+       "k": 7,
+       "kind": "text",
+       "clase": "et_pb_text_9",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Kunak AIR Cloud es un software modular y flexible diseñado para facili"
+      },
+      {
+       "k": 8,
+       "kind": "text",
+       "clase": "et_pb_text_10",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Características:"
+      },
+      {
+       "k": 9,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_0",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/cloud-based-1.svg",
+       "texto": "Basado en la nube"
+      },
+      {
+       "k": 10,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_1",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/reliable-data.svg",
+       "texto": "Datos fiables garantizados"
+      },
+      {
+       "k": 11,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_2",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/flexible-scalable-1.svg",
+       "texto": "Flexible y escalable"
+      },
+      {
+       "k": 12,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_3",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/multiple-users.svg",
+       "texto": "Múltiples usuarios"
+      },
+      {
+       "k": 13,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_4",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/data-integration.svg",
+       "texto": "Integración de datos de fuentes externas"
+      },
+      {
+       "k": 14,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_5",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/advanced-tools.svg",
+       "texto": "Herramientas avanzadas"
+      },
+      {
+       "k": 15,
+       "kind": "text",
+       "clase": "et_pb_text_11",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Software de contaminación atmosférica Analiza y entiende cómo se compo"
+      },
+      {
+       "k": 16,
+       "kind": "text",
+       "clase": "et_pb_text_12",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Gracias a nuestro software de medición de calidad del aire, podrás:"
+      },
+      {
+       "k": 17,
+       "kind": "slider",
+       "clase": "et_pb_slider_0",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Identificar los puntos conflictivos Caracterizar las fuentes de contam"
+      },
+      {
+       "k": 18,
+       "kind": "text",
+       "clase": "et_pb_text_13",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Nuestro software de monitorización de la calidad del aire es el comple"
+      }
+     ]
+    },
+    {
+     "fila": 3,
+     "n": 34,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_4",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_14",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Beneficios Herramientas Casos de éxito"
+      },
+      {
+       "k": 2,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_button_alignment_left",
+       "src": null,
+       "texto": "Solicita más información"
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_4_wrapper et_pb_button_alignment_left",
+       "src": null,
+       "texto": "Descarga el catálogo"
+      },
+      {
+       "k": 4,
+       "kind": "text",
+       "clase": "et_pb_text_15",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Beneficios"
+      },
+      {
+       "k": 5,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_6",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/secure-confidential.svg",
+       "texto": "Seguro y confidencial Fortalece la seguridad gracias a los protocolos "
+      },
+      {
+       "k": 6,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_7",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/continuous-updates.svg",
+       "texto": "Actualizaciones continuas gratuitas Disfruta de actualizaciones contin"
+      },
+      {
+       "k": 7,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_8",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/reports.svg",
+       "texto": "Informes de calidad del aire Genera informes personalizados para mostr"
+      },
+      {
+       "k": 8,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_9",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/automatic-supervision-1.svg",
+       "texto": "Supervisión automática Supervisa el estado de sus estaciones y sensore"
+      },
+      {
+       "k": 9,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_10",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/reliable-data.svg",
+       "texto": "Datos fiables garantizados Asegura disponer de datos fiables gracias a"
+      },
+      {
+       "k": 10,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_11",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/pollution-sources.svg",
+       "texto": "Identificación de fuentes de contaminación y puntos calientes Accede a"
+      },
+      {
+       "k": 11,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_12",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/remote-troubleshooting.svg",
+       "texto": "Asistencia remota Mantén, diagnóstica y resuelve problemas a distancia"
+      },
+      {
+       "k": 12,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_13",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/data-sharing.svg",
+       "texto": "Simple intercambio e integración de datos Comparte los datos recogidos"
+      },
+      {
+       "k": 13,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_14",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/public-aq-data.svg",
+       "texto": "Datos sobre la calidad del aire públicos Crea páginas web públicas y w"
+      },
+      {
+       "k": 14,
+       "kind": "text",
+       "clase": "et_pb_text_16",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Herramientas"
+      },
+      {
+       "k": 15,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_15",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Control-panel.jpg",
+       "texto": "Panel de control Revisa el estado de tus dispositivos y visualiza fáci"
+      },
+      {
+       "k": 16,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_16",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Dashboard.jpg",
+       "texto": "Dashboard Consulta tus dispositivos en un mapa, su estado y las última"
+      },
+      {
+       "k": 17,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_17",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Basic-data-analytics.jpg",
+       "texto": "Análíticas básicas Visualización de datos estándar, cálculos de medias"
+      },
+      {
+       "k": 18,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_18",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/AQI.jpg",
+       "texto": "Índice de calidad del aire Herramienta de ICA según diferentes escalas"
+      },
+      {
+       "k": 19,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_19",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Automatic-data-invalidation.jpg",
+       "texto": "Invalidación automática Preinvalidación automática de los datos en cas"
+      },
+      {
+       "k": 20,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_20",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Alert-system.jpg",
+       "texto": "Sistema de alertas Configuración remota de avisos por superación de um"
+      },
+      {
+       "k": 21,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_21",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Error-detection.jpg",
+       "texto": "Detección de errores Detección automática de errores, anomalías y desc"
+      },
+      {
+       "k": 22,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_22",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/CMMS.jpg",
+       "texto": "GMAO Un sistema informatizado de gestión del mantenimiento que central"
+      },
+      {
+       "k": 23,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_23",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Locations-log.jpg",
+       "texto": "Ubicaciones Gestione los datos de calidad del aire mediante la asignac"
+      },
+      {
+       "k": 24,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_24",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Data-invalidation-tool.jpg",
+       "texto": "Validación de datos Validación de datos manual y sencilla para limpiar"
+      },
+      {
+       "k": 25,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_25",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Advanced-data-analytics.jpg",
+       "texto": "Analíticas avanzadas Análisis avanzado de la suite OpenAir como cálcul"
+      },
+      {
+       "k": 26,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_26",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/External-data-integration.jpg",
+       "texto": "Fuentes externas Integración de otras fuentes de datos en tiempo real "
+      },
+      {
+       "k": 27,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_27",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Custom-reports.jpg",
+       "texto": "Informes personalizados Creación sencilla de informes de calidad del a"
+      },
+      {
+       "k": 28,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_28",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/hotspots-detection.jpg",
+       "texto": "Mapas de calor Identificar los puntos calientes (hotspots) en una zona"
+      },
+      {
+       "k": 29,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_29",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Pollution-source-detection.jpg",
+       "texto": "Origen de la contaminación Detección de fuentes de contaminación media"
+      },
+      {
+       "k": 30,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_30",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/Particle-count.jpg",
+       "texto": "Recuento de partículas Herramienta de análisis del tamaño de las partí"
+      },
+      {
+       "k": 31,
+       "kind": "text",
+       "clase": "et_pb_text_17",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Casos de éxito"
+      },
+      {
+       "k": 32,
+       "kind": "text",
+       "clase": "et_pb_text_18",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Sector: EDAR / PTAR Nama Water Services (NWS) Monitorización de olores"
+      },
+      {
+       "k": 33,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_5_wrapper",
+       "src": null,
+       "texto": "Ver todos los casos"
+      }
+     ]
+    },
+    {
+     "fila": 4,
+     "n": 4,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_5",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_19",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Artículos y Guías"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_20",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg",
+       "texto": "Conferencia sobre el Cambio Climático COP26, una cita ineludible para "
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light",
+       "src": "https://kunakair.com/wp-content/uploads/2021/09/conferencia-de-las-partes-cop26-cita-ineludible.jpg",
+       "texto": "Conferencia sobre el Cambio Climático COP26, una cita ineludible para "
+      }
+     ]
+    },
+    {
+     "fila": 5,
+     "n": 1,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_6_wrapper et_pb_button_alignment_right et_pb_button_alignment_tablet_right et_pb_button_alignment_phone_right",
+       "src": null,
+       "texto": "Amplia tus conocimientos con nuestras guías"
+      }
+     ]
+    },
+    {
+     "fila": 6,
+     "n": 22,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_6",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_21",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Preguntas frecuentes"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_22",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "¿Los equipos Kunak son certificados ATEX? Los equipos Kunak están dise"
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Los equipos Kunak son certificados ATEX? Los equipos Kunak están dise"
+      },
+      {
+       "k": 4,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Qué área cubre cada dispositivo? En cuanto al alcance del dispositivo"
+      },
+      {
+       "k": 5,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva el softwa"
+      },
+      {
+       "k": 6,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿El equipo es portátil o fijo? Los equipos Kunak pueden instalarse en "
+      },
+      {
+       "k": 7,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cada cuánto se calibra el equipo? Los sensores se entregan calibrados"
+      },
+      {
+       "k": 8,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Qué opciones de calibración existen? La calibración puede hacerse med"
+      },
+      {
+       "k": 9,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Se pueden obtener los datos en local (Modbus)? Sí. Todos los equipos "
+      },
+      {
+       "k": 10,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cómo se comunica el equipo? El sistema puede enviar datos mediante co"
+      },
+      {
+       "k": 11,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la duración de la batería? Los equipos incluyen una batería i"
+      },
+      {
+       "k": 12,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿A qué altura debe instalarse el equipo? Se recomienda una altura de i"
+      },
+      {
+       "k": 13,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿El equipo tiene memoria interna? Sí. Dispone de memoria interna de al"
+      },
+      {
+       "k": 14,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Se pueden conectar sondas meteorológicas? Sí. Kunak AIR Pro admite ha"
+      },
+      {
+       "k": 15,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Puedo instalarlo en un vehículo o en un dron para monitoreo en movimi"
+      },
+      {
+       "k": 16,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuenta esta tecnología con certificaciones? Los equipos basados en se"
+      },
+      {
+       "k": 17,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Es obligatorio el uso de la plataforma Kunak AIR Cloud? Sí. Kunak AIR"
+      },
+      {
+       "k": 18,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Pueden utilizarse los equipos en interiores? Sí. Los equipos pueden u"
+      },
+      {
+       "k": 19,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la diferencia entre el sensor de partículas del AIR Pro y el "
+      },
+      {
+       "k": 20,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cómo se integran los datos a una tercera plataforma? Los datos pueden"
+      },
+      {
+       "k": 21,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la diferencia entre calibración y corrección? La calibración "
+      }
+     ]
+    },
+    {
+     "fila": 7,
+     "n": 1,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "video",
+       "clase": "et_pb_video_0",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ruta": "/accesorios",
+   "doc": "accesorios.html",
+   "nFilas": 9,
+   "nModulos": 55,
+   "porFila": [
+    {
+     "fila": 0,
+     "n": 1,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "text",
+       "clase": "et_pb_text_0",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Inicio Productos Accesorios"
+      }
+     ]
+    },
+    {
+     "fila": 1,
+     "n": 5,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_0",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_1",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Accesorios Accesorios para sensores de calidad del aire, más datos par"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_2",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "¿Quieres obtener el máximo rendimiento de tu red de monitorización?"
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+       "src": null,
+       "texto": "Conoce cómo es el aire que respiras"
+      },
+      {
+       "k": 4,
+       "kind": "image",
+       "clase": "et_pb_image_1",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/kunak-air-accessories.jpg",
+       "texto": ""
+      }
+     ]
+    },
+    {
+     "fila": 2,
+     "n": 2,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_2",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_3",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Información sobre el producto"
+      }
+     ]
+    },
+    {
+     "fila": 3,
+     "n": 2,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "text",
+       "clase": "et_pb_text_4",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Los accesorios para sensores de calidad del aire maximizan el rendimie"
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_5",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Acoplados externamente al dispositivo, recopilan y aportan: Informació"
+      }
+     ]
+    },
+    {
+     "fila": 4,
+     "n": 7,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_3",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_6",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Opciones de alimentación"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_7",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Panel solar Cargador para exteriores Cargador para interiores"
+      },
+      {
+       "k": 3,
+       "kind": "text",
+       "clase": "et_pb_text_8",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Las estaciones Kunak AIR están equipadas con una batería de litio reca"
+      },
+      {
+       "k": 4,
+       "kind": "text",
+       "clase": "et_pb_text_9",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0017-300x300-2.jpg",
+       "texto": "Panel solar El panel solar monocristalino de alta eficiencia es robust"
+      },
+      {
+       "k": 5,
+       "kind": "text",
+       "clase": "et_pb_text_10",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0015-300x300-1.jpg",
+       "texto": "Cargadores para exteriores Debe utilizarse un cargador de exterior cua"
+      },
+      {
+       "k": 6,
+       "kind": "text",
+       "clase": "et_pb_text_11",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/kunak-air-indoor-charger.jpg",
+       "texto": "Cargador para interiores Hay disponible un cargador de interior con en"
+      }
+     ]
+    },
+    {
+     "fila": 5,
+     "n": 11,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_4",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_12",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Sondas adicionales"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_13",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Anemómetro mecánico Anemómetro ultrasónico Pluviómetro Sonómetro Piran"
+      },
+      {
+       "k": 3,
+       "kind": "text",
+       "clase": "et_pb_text_14",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0047-copia-300x300-1.jpg",
+       "texto": "Anemómetro Mecánico Incluye sensores de velocidad y de dirección del v"
+      },
+      {
+       "k": 4,
+       "kind": "text",
+       "clase": "et_pb_text_15",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/kunak_IMG_0061-copia-300X300.jpg",
+       "texto": "Anenómetro Ultrasónico Incluye sensores de velocidad y de dirección de"
+      },
+      {
+       "k": 5,
+       "kind": "text",
+       "clase": "et_pb_text_16",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/rain-gauge.jpg",
+       "texto": "Pluviómetro Gracias a su gran fiabilidad, fácil mantenimiento y limpie"
+      },
+      {
+       "k": 6,
+       "kind": "text",
+       "clase": "et_pb_text_17",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/01/Sound-level-meter.jpg",
+       "texto": "Sonómetro Sistema inalámbrico de bajo coste para la monitorización del"
+      },
+      {
+       "k": 7,
+       "kind": "text",
+       "clase": "et_pb_text_18",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/pyranometer.jpg",
+       "texto": "Piranómetro El piranómetro mide la radiación solar mediante una termop"
+      },
+      {
+       "k": 8,
+       "kind": "text",
+       "clase": "et_pb_text_19",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/apogee-su-202-ultraviolet-A-sensor.jpg",
+       "texto": "Sensor Ultravioleta-A Este sensor detecta la radiación UV de 280 a 400"
+      },
+      {
+       "k": 9,
+       "kind": "text",
+       "clase": "et_pb_text_20",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/WBGT-300x300-1.jpg",
+       "texto": "Termómetro de globo y de bulbo húmedo (WBGT) El termómetro de globo y "
+      },
+      {
+       "k": 10,
+       "kind": "text",
+       "clase": "et_pb_text_21",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2024/07/gashood-air-pro.jpg",
+       "texto": "Micro-cámara de calibración (Gashood) Para realizar una calibración pr"
+      }
+     ]
+    },
+    {
+     "fila": 6,
+     "n": 4,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_5",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_22",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Artículos y Guías"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_23",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2020/08/donostia-urban-air-quality-1-1024x683.jpg",
+       "texto": "Sensores de calidad del aire urbano: más información, mejor calidad de"
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light",
+       "src": "https://kunakair.com/wp-content/uploads/2020/08/donostia-urban-air-quality-1-1024x683.jpg",
+       "texto": "Sensores de calidad del aire urbano: más información, mejor calidad de"
+      }
+     ]
+    },
+    {
+     "fila": 7,
+     "n": 1,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_right et_pb_button_alignment_tablet_right et_pb_button_alignment_phone_right",
+       "src": null,
+       "texto": "Amplia tus conocimientos con nuestras guías"
+      }
+     ]
+    },
+    {
+     "fila": 8,
+     "n": 22,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_6",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_24",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Preguntas frecuentes"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_25",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "¿Los equipos Kunak son certificados ATEX? Los equipos Kunak están dise"
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Los equipos Kunak son certificados ATEX? Los equipos Kunak están dise"
+      },
+      {
+       "k": 4,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Qué área cubre cada dispositivo? En cuanto al alcance del dispositivo"
+      },
+      {
+       "k": 5,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva el softwa"
+      },
+      {
+       "k": 6,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿El equipo es portátil o fijo? Los equipos Kunak pueden instalarse en "
+      },
+      {
+       "k": 7,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cada cuánto se calibra el equipo? Los sensores se entregan calibrados"
+      },
+      {
+       "k": 8,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Qué opciones de calibración existen? La calibración puede hacerse med"
+      },
+      {
+       "k": 9,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Se pueden obtener los datos en local (Modbus)? Sí. Todos los equipos "
+      },
+      {
+       "k": 10,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cómo se comunica el equipo? El sistema puede enviar datos mediante co"
+      },
+      {
+       "k": 11,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la duración de la batería? Los equipos incluyen una batería i"
+      },
+      {
+       "k": 12,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿A qué altura debe instalarse el equipo? Se recomienda una altura de i"
+      },
+      {
+       "k": 13,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿El equipo tiene memoria interna? Sí. Dispone de memoria interna de al"
+      },
+      {
+       "k": 14,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Se pueden conectar sondas meteorológicas? Sí. Kunak AIR Pro admite ha"
+      },
+      {
+       "k": 15,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Puedo instalarlo en un vehículo o en un dron para monitoreo en movimi"
+      },
+      {
+       "k": 16,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuenta esta tecnología con certificaciones? Los equipos basados en se"
+      },
+      {
+       "k": 17,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Es obligatorio el uso de la plataforma Kunak AIR Cloud? Sí. Kunak AIR"
+      },
+      {
+       "k": 18,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Pueden utilizarse los equipos en interiores? Sí. Los equipos pueden u"
+      },
+      {
+       "k": 19,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la diferencia entre el sensor de partículas del AIR Pro y el "
+      },
+      {
+       "k": 20,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cómo se integran los datos a una tercera plataforma? Los datos pueden"
+      },
+      {
+       "k": 21,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la diferencia entre calibración y corrección? La calibración "
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "ruta": "/kunak-api",
+   "doc": "kunak-api.html",
+   "nFilas": 7,
+   "nModulos": 55,
+   "porFila": [
+    {
+     "fila": 0,
+     "n": 1,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "text",
+       "clase": "et_pb_text_0",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Inicio Productos Kunak API"
+      }
+     ]
+    },
+    {
+     "fila": 1,
+     "n": 6,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_0",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_1",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Kunak API Integración de datos más allá de la solución Kunak AIR Cloud"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_2",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Extrae información y utilízala en tu software o sistema de gestión"
+      },
+      {
+       "k": 3,
+       "kind": "text",
+       "clase": "et_pb_text_3",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "DISPONIBILIDAD DE DATOS | COPIAS DE SEGURIDAD AUTOMÁTICAS"
+      },
+      {
+       "k": 4,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_0_wrapper",
+       "src": null,
+       "texto": "Solicita más información"
+      },
+      {
+       "k": 5,
+       "kind": "image",
+       "clase": "et_pb_image_1",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/kunak-api.jpg",
+       "texto": ""
+      }
+     ]
+    },
+    {
+     "fila": 2,
+     "n": 12,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_2",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_4",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Información del producto"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_5",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Kunak API es un potente sistema de interconexión con el software Kunak"
+      },
+      {
+       "k": 3,
+       "kind": "text",
+       "clase": "et_pb_text_6",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Integra datos de fuentes externas y toma mejores decisiones informadas"
+      },
+      {
+       "k": 4,
+       "kind": "text",
+       "clase": "et_pb_text_7",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Diseña tus propias soluciones, herramientas y aplicaciones de visualiz"
+      },
+      {
+       "k": 5,
+       "kind": "text",
+       "clase": "et_pb_text_8",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Características:"
+      },
+      {
+       "k": 6,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_0",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/04/api-rest.svg",
+       "texto": "Interfaz API Rest"
+      },
+      {
+       "k": 7,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_1",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/04/json-format.svg",
+       "texto": "Formato JSON"
+      },
+      {
+       "k": 8,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_2",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/04/call-limit.svg",
+       "texto": "Nº llamadas para cada caso"
+      },
+      {
+       "k": 9,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_3",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/04/size-limit.svg",
+       "texto": "Tamaño adaptado"
+      },
+      {
+       "k": 10,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_4",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/04/data-export.svg",
+       "texto": "Exportación de datos"
+      },
+      {
+       "k": 11,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_5",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/cloud-based-1.svg",
+       "texto": "Copias de seguridad"
+      }
+     ]
+    },
+    {
+     "fila": 3,
+     "n": 9,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_3",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_9",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Beneficios"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_10",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Automatiza procesos como la extracción de lecturas, alertas o la confi"
+      },
+      {
+       "k": 3,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_6",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/easy-fast-installation.svg",
+       "texto": "Gestiona la red de forma remota"
+      },
+      {
+       "k": 4,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_7",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/02/cloud-platform.svg",
+       "texto": "Visualiza y gestiona los datos recogidos"
+      },
+      {
+       "k": 5,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_8",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/process-automation.svg",
+       "texto": "Automatiza los procesos más frecuentes"
+      },
+      {
+       "k": 6,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_9",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/new-tools.svg",
+       "texto": "Desarrolla nuevas herramientas"
+      },
+      {
+       "k": 7,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_10",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/data-analytics.svg",
+       "texto": "Realiza el análisis de los datos"
+      },
+      {
+       "k": 8,
+       "kind": "blurb",
+       "clase": "et_pb_blurb_11",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2023/03/external-data-integration.svg",
+       "texto": "Integra datos de sistemas de terceros"
+      }
+     ]
+    },
+    {
+     "fila": 4,
+     "n": 4,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_4",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_11",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Artículos y Guías"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_12",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2025/03/Industria-petroquimica-1024x686.jpg",
+       "texto": "Impacto ambiental de la industria petroquímica, el coste invisible del"
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_blog_0_tb_body bucle-entradas et_pb_posts et_pb_bg_layout_light",
+       "src": "https://kunakair.com/wp-content/uploads/2025/03/Industria-petroquimica-1024x686.jpg",
+       "texto": "Impacto ambiental de la industria petroquímica, el coste invisible del"
+      }
+     ]
+    },
+    {
+     "fila": 5,
+     "n": 1,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_right et_pb_button_alignment_tablet_right et_pb_button_alignment_phone_right",
+       "src": null,
+       "texto": "Amplia tus conocimientos con nuestras guías"
+      }
+     ]
+    },
+    {
+     "fila": 6,
+     "n": 22,
+     "modulos": [
+      {
+       "k": 0,
+       "kind": "image",
+       "clase": "et_pb_image_5",
+       "clasesSiSinKind": null,
+       "src": "https://kunakair.com/wp-content/uploads/2022/12/punteado.svg",
+       "texto": ""
+      },
+      {
+       "k": 1,
+       "kind": "text",
+       "clase": "et_pb_text_13",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "Preguntas frecuentes"
+      },
+      {
+       "k": 2,
+       "kind": "text",
+       "clase": "et_pb_text_14",
+       "clasesSiSinKind": null,
+       "src": null,
+       "texto": "¿Los equipos Kunak son certificados ATEX? Los equipos Kunak están dise"
+      },
+      {
+       "k": 3,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Los equipos Kunak son certificados ATEX? Los equipos Kunak están dise"
+      },
+      {
+       "k": 4,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Qué área cubre cada dispositivo? En cuanto al alcance del dispositivo"
+      },
+      {
+       "k": 5,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cada cuánto tiempo se reemplazan los cartuchos y se renueva el softwa"
+      },
+      {
+       "k": 6,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿El equipo es portátil o fijo? Los equipos Kunak pueden instalarse en "
+      },
+      {
+       "k": 7,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cada cuánto se calibra el equipo? Los sensores se entregan calibrados"
+      },
+      {
+       "k": 8,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Qué opciones de calibración existen? La calibración puede hacerse med"
+      },
+      {
+       "k": 9,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Se pueden obtener los datos en local (Modbus)? Sí. Todos los equipos "
+      },
+      {
+       "k": 10,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cómo se comunica el equipo? El sistema puede enviar datos mediante co"
+      },
+      {
+       "k": 11,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la duración de la batería? Los equipos incluyen una batería i"
+      },
+      {
+       "k": 12,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿A qué altura debe instalarse el equipo? Se recomienda una altura de i"
+      },
+      {
+       "k": 13,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿El equipo tiene memoria interna? Sí. Dispone de memoria interna de al"
+      },
+      {
+       "k": 14,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Se pueden conectar sondas meteorológicas? Sí. Kunak AIR Pro admite ha"
+      },
+      {
+       "k": 15,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Puedo instalarlo en un vehículo o en un dron para monitoreo en movimi"
+      },
+      {
+       "k": 16,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuenta esta tecnología con certificaciones? Los equipos basados en se"
+      },
+      {
+       "k": 17,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Es obligatorio el uso de la plataforma Kunak AIR Cloud? Sí. Kunak AIR"
+      },
+      {
+       "k": 18,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Pueden utilizarse los equipos en interiores? Sí. Los equipos pueden u"
+      },
+      {
+       "k": 19,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la diferencia entre el sensor de partículas del AIR Pro y el "
+      },
+      {
+       "k": 20,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cómo se integran los datos a una tercera plataforma? Los datos pueden"
+      },
+      {
+       "k": 21,
+       "kind": null,
+       "clase": null,
+       "clasesSiSinKind": "et_pb_toggle et_pb_toggle_close kunak-faq-item",
+       "src": null,
+       "texto": "¿Cuál es la diferencia entre calibración y corrección? La calibración "
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -81,12 +81,19 @@ export function SectionTitle({ children }: { children: ReactNode }) {
 export function BlockTitle({
   children,
   className = "",
+  dataModulo,
 }: {
   children: ReactNode;
   className?: string;
+  /* MARCADOR DE SONDA (130.ª) — se pasa como PROP en vez de envolver el `<h2>`:
+     el elemento que el original mide como módulo ya existe, así que el marcador
+     va como ATRIBUTO sobre él y no puede mover un píxel por construcción.
+     Omitido, el render es byte a byte el de antes. */
+  dataModulo?: string;
 }) {
   return (
     <h2
+      data-modulo={dataModulo}
       className={"pb-[10px] " + className}
       style={{
         fontSize: 37,

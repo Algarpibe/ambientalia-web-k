@@ -1,0 +1,25 @@
+═══ 1440 · productos-cmp-1440-2026-08-31.json  →  productos-cmp-1440-2026-08-31-tras-marcador-software.json ═══
+  totales (resumen, NO prueba): antes {"ejes":130,"distintos":43,"subpixel":3}  después {"ejes":130,"distintos":43,"subpixel":3}
+  diferencia simétrica de los ejes de FILA que difieren:
+     sólo ANTES   : 0
+     sólo DESPUÉS : 0
+     con VALOR distinto : 0
+  ⇒ eje FILAS NO-OP al bit ✓
+  eje MÓDULOS (cobertura nueva): antes {"ejesComparados":85,"distintos":33,"huerfanosO":13,"huerfanosC":0,"filasComparadas":3,"filasSinMarcador":22,"filasParciales":1,"rutasSinNingunMarcador":["/monitor-calidad-aire","/accesorios","/software-de-medicion-calidad-del-aire"]}
+                                 después {"ejesComparados":191,"distintos":75,"huerfanosO":60,"huerfanosC":0,"filasComparadas":4,"filasSinMarcador":18,"filasParciales":4,"rutasSinNingunMarcador":["/monitor-calidad-aire","/accesorios"]}
+
+═══ 390 · productos-cmp-390-2026-08-31.json  →  productos-cmp-390-2026-08-31-tras-marcador-software.json ═══
+  totales (resumen, NO prueba): antes {"ejes":130,"distintos":49,"subpixel":1}  después {"ejes":130,"distintos":49,"subpixel":1}
+  diferencia simétrica de los ejes de FILA que difieren:
+     sólo ANTES   : 0
+     sólo DESPUÉS : 0
+     con VALOR distinto : 0
+  ⇒ eje FILAS NO-OP al bit ✓
+  eje MÓDULOS (cobertura nueva): antes {"ejesComparados":85,"distintos":22,"huerfanosO":12,"huerfanosC":0,"filasComparadas":3,"filasSinMarcador":22,"filasParciales":1,"rutasSinNingunMarcador":["/monitor-calidad-aire","/accesorios","/software-de-medicion-calidad-del-aire"]}
+                                 después {"ejesComparados":186,"distintos":62,"huerfanosO":43,"huerfanosC":0,"filasComparadas":4,"filasSinMarcador":20,"filasParciales":2,"rutasSinNingunMarcador":["/monitor-calidad-aire","/accesorios"]}
+
+═══ CONTROL — ¿sabe GRITAR? (§regla 24: un caso atado sólo al exit caduca) ═══
+  Δ inyectado de +37.5 en /monitor-calidad-aire → cazado: SÍ ✓ (1 cambios)
+     nombrado: /monitor-calidad-aire::f1::h · orig 646.63 → clon 715.11 ⇒ orig 646.63 → clon 752.61
+
+→ escalon1-noop-130.json

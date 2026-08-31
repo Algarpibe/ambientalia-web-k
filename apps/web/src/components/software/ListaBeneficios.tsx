@@ -16,8 +16,12 @@ import { BENEFICIOS, type Beneficio } from "@/lib/software";
 export function ListaBeneficios({ items = BENEFICIOS }: { items?: Beneficio[] } = {}) {
   return (
     <ul className="m-0 flex list-none flex-col p-0">
+      {/* MARCADOR DE SONDA (130.ª) — `data-modulo` sobre el `<li>`, que ya
+          existe: el original sirve aquí un `.et_pb_blurb` por beneficio y el
+          `<li>` es su 1:1, así que va como ATRIBUTO y no puede mover un píxel
+          por construcción. Lo consume `productos-cmp` (`[data-modulo]`). */}
       {items.map((b) => (
-        <li key={b.titulo} className="mb-[27.81px]">
+        <li key={b.titulo} data-modulo="blurb" className="mb-[27.81px]">
           <div className="flex items-start gap-[15px]">
             <img
               src={b.icono}
