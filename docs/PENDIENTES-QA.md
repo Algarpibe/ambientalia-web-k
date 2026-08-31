@@ -25302,3 +25302,59 @@ son eventos con su número, o instancias de reglas que ya están escritas.
   el encargo;
 - **HOME sin tocar**, los 3 descifradores de Cloudflare sin capturar, los 4 ejes
   de `clon-base` sin negativo sin abrir.
+
+---
+
+## 2026-08-31 · 126.ª — F3-5: EL CONTENT TYPE ESCRITO, Y LO QUE QUEDA ABIERTO CON SU CARDINAL
+
+**Tanda de CONSTRUCCIÓN.** Docker en tres pasos antes de gastar nada · build
+FUERA con `NEXT_DIST_DIR` y promoción por rename · dos migraciones con su
+reversa probada ANTES de sembrar.
+
+### Lo que queda ABIERTO, cada cosa con su número
+
+| # | qué | cardinal | por qué no se cerró aquí |
+|---|---|---|---|
+| 1 | **`valor767` sin cablear en el render** | **0 consumidores** | ni `f33.css` ni `kb.css` tienen tramo `≤767` para el ritmo, y `vars()` no emite `--*-767`. Cablearlo cambia la salida servida y **lleva su NO-OP por delante**: es otra tanda. `qa:medida-bp` lo publica en cada corrida y **no lo cuenta como fallo** |
+| 2 | **los 46 ejes SIN PROBAR** | **46** de 52 (marcador × ancho × eje) · **24** de 28 (marcador × eje) · **2** de 4 (por eje: `mt`, `pb`) | sin varianza en 2–4 instancias **no prueba plantilla**, y el test A no los rescata solo (`FN-bp`: 45·32·20 en los tres `B-`). Los campos existen y quedan **al default** |
+| 3 | **`arquetipos` sin dato y sin lector** | **0 filas · 0 lectores** | el extractor del lote no existe y las 4 rutas siguen sirviéndose de `src/lib/`. §F3-5 «hecho» es *el content type escrito con sus SIN PROBAR declarados y no cableados*; el sitio servido desde Payload es la **segunda mitad** |
+| 4 | **eje `módulos` SIN COMPARAR** (`·`, no «a 0») | **35 componentes de 97** | el criterio ya **no** lo bloquea (§2n del ESQUEMA lo fija). Lo que queda es el coste: emitir `data-modulo` toca `src/` y exige build + clon servido para adjudicar el NO-OP |
+| 5 | **`tsconfig.json` acumula entradas muertas** | **11 de 14** directorios `.next-*` del `include` **no existen** | es un efecto secundario de la convención `NEXT_DIST_DIR`, que el build escribe y **nadie limpia**. Inocuo hoy —TypeScript tolera un glob que no resuelve— pero es una lista que crece sola, y el día que alguien recree uno de esos nombres sus tipos entran solos |
+| 6 | **HOME** | **3** SIN PROBAR irreducibles · **0 de 788** documentos capturados | fuera del alcance de esta tanda por decisión del encargo, no por criterio |
+
+### La CONDICIÓN DE REAPERTURA, con su nombre — y **no exige clonar**
+
+El encargo la enunció como *«si se clonan los 2 vecinos de `monitor` a ≥0.7,
+darían varianza inter-instancia del MISMO arquetipo»*. Derivada
+(`derivaciones/reapertura-f35-126.*`, 6 controles), la entrada que dirime **ya
+está en el repo**:
+
+| vecino | Jaccard | clonado | **capturado** |
+|---|---|---|---|
+| `estacion-de-monitoreo-de-calidad-del-aire` | **0.8** | no | **sí** |
+| `sensor-de-calidad-del-aire` | **0.7** | no | **sí** |
+
+> **La varianza inter-instancia es una propiedad DEL ORIGINAL, no del clon.** Los
+> dos vecinos están **sin clonar y con su HTML capturado**, así que la condición
+> **no es un si-condicional: es una MEDICIÓN pendiente**, y se puede correr hoy.
+
+**Y el dominio es mayor que el que tuvo el lote:** **21 marcadores semánticos**
+en los 3 documentos de la familia PRODUCTO, de los que **18 aparecen en ≥2** y
+**9 en los tres** — contra **7 con ≥2 instancias** en el lote de 4 arquetipos
+*distintos*. Eso es lo que convierte la reapertura en trabajo con forma.
+
+⚠ **ALCANCE DECLARADO:** esa derivación **no mide la varianza** —eso exige
+navegador y geometría— ni dice si los marcadores compartidos traen valores
+distintos. Contesta si el dominio **existe** y cuánto mide, que son otras dos
+afirmaciones.
+
+### Lo que esta tanda NO hizo, dicho en vez de omitido
+
+- **no emitió `data-modulo`** ni tocó los 35 componentes: es instrumento, y su
+  tanda es otra;
+- **no tocó HOME**;
+- **no clonó los 2 vecinos**: es la condición de reapertura, no esta tanda;
+- **no capturó los 3 descifradores de Cloudflare**, ni abrió los 4 ejes de
+  regresión de `clon-base` sin negativo;
+- **no replanteó `lado`**, ni tocó `lib.mjs`, ni la deuda de §regla 37, ni los
+  11 + 65 del censo de artefactos, ni las 89 lecturas fuera de la cadena.
