@@ -183,22 +183,124 @@ en el builder, **es un campo**. Defaults medidos: sección `pt/pb` 4%
 > > una coincidencia: sin cascarón, la fila mide 1238.39 **siempre**, así que las
 > > dos lecturas dan el mismo número y ninguna medición podía separarlas.
 
-> **⚠ Alcance: vale para el RITMO, que es donde se descubrió — `margin` y
-> `padding` de sección, fila y módulo. NO vale para la caja ni para la
-> tipografía.** En Divi el **ancho de módulo** se escribe en % igual que su
-> default, así que el número se mueve con el ancho **lo escriba quien lo
-> escriba**; y sin embargo es un campo — 70 · 80 · 90 · 100 % en la misma
-> página. Igual el `line-height` de los párrafos (30.6 · 36 · 45) y el tamaño
-> del claim. Aplicado ahí, el test A responde "plantilla" a cosas que son campo:
-> **da la respuesta al revés.**
+> **⚠⚠ ALCANCE — REESCRITO 2026-08-30 (124.ª), PORQUE LO QUE DECÍA AQUÍ ESTÁ
+> MEDIDO Y ES FALSO: EL TEST A NO «VALE PARA EL RITMO». FALLA EN EL RITMO, EN
+> LOS TRES ARQUETIPOS `B-` MEDIDOS.**
+>
+> **La consecuencia operativa va delante, porque es lo único que hay que hacer:**
+>
+> > **El test A NO se aplica solo. Nunca.** Antes de usarlo se mira **la unidad
+> > DECLARADA** del valor —no el px computado— y **si la declaración vive dentro
+> > de un `@media`**. Si es `%`, si es `em`/`rem`, si es `auto`, o si hay un
+> > `@media` con ordinal, el test A **no tiene nada que decir** y hay que ir a la
+> > **cascada**, que es la que lo dice en vez de inferirlo. La segunda pata no es
+> > opcional: es el instrumento.
+>
+> **Los números, con su denominador y su unidad** (`derivaciones/paso0-nodos-124.*`,
+> 4 documentos, 984 pares nodo×eje, adjudicados contra `CSS.getMatchedStylesForNode`):
+>
+> | | acierta el test A |
+> |---|---|
+> | de los 269 pares (nodo × eje) ADJUDICABLES | **216 · 80.3 %** |
+> | de los 53 que falla | 31 `FN-%` · 20 `FN-bp` · 2 `FP-px` |
+> | y aparte, CIEGOS —el test A no puede pronunciarse— | **66** (56 `auto` · 10 `em`) |
+>
+> **Los tres modos de fallo, con su mecanismo:**
+>
+> 1. **`FN-%` — el editor escribe PORCENTAJES de `padding`/`margin`.** Es el
+>    mismo falso negativo que este documento ya describía… **atribuido a la caja
+>    y a la tipografía**. También está en el ritmo:
+>    `.et_pb_row_1.et_pb_row{padding-bottom:5%!important}` sirve **72 a 1440 y
+>    19.5 a 390**, y el test A lo lee como plantilla. Barrido de los tres
+>    arquetipos `B-` (`derivaciones/escalon1-ab-124.*`), sólo reglas donde el
+>    ordinal es **sujeto** (§regla 36) y descontando los `%` de valor **cero**,
+>    que son inocuos porque `0% == 0px` a todo ancho: **LOTE F3-5 41 · KB 9 ·
+>    SECTOR+MONOGRÁFICO 1**. Concentrado en el lote, **no exclusivo suyo**;
+> 2. **`FN-bp` — el editor escribe POR PUNTO DE RUPTURA, y esto rompe la premisa
+>    central del test A.** Divi da pestañas escritorio/tablet/móvil en **cada**
+>    campo de espaciado y las compila con **selector ordinal dentro de un
+>    `@media`** — `@media (max-width:980px){.et_pb_text_6{margin-top:0px!important}}`.
+>    O sea que **un valor DEL EDITOR sí se mueve con el ancho**, que es
+>    exactamente lo que el test A supone que sólo hace la plantilla. Medido en
+>    los tres: **45 · 32 · 20**. Éste **sí se generaliza a `B-`**;
+> 3. **`FP-px` — la plantilla escribe un px ABSOLUTO** (`.et_pb_promo{padding:40px}`).
+>    Es el falso positivo del `em` de más abajo con la unidad cambiada, y por eso
+>    el aviso de aquel no basta: **no hay que buscar `em`, hay que mirar la
+>    cascada.**
+>
+> **Lo que del enunciado viejo SIGUE EN PIE, y es su mitad útil:** en la caja y
+> en la tipografía el test A da la respuesta **al revés** de forma sistemática —
+> el **ancho de módulo** se escribe en % igual que su default, así que se mueve
+> con el ancho **lo escriba quien lo escriba**, y sin embargo es campo (70 · 80 ·
+> 90 · 100 % en la misma página). Igual el `line-height` (30.6 · 36 · 45) y el
+> tamaño del claim. Lo que cambia es que **el ritmo no era la excepción segura**:
+> es el mismo mecanismo, menos frecuente.
 
-> ⚠⚠ **Y SU FALSO POSITIVO, QUE ES EL SIMÉTRICO Y CAE DENTRO DEL ALCANCE
-> DECLARADO —O SEA EN EL RITMO, DONDE EL TEST A SÍ VALE (2026-08-25):
-> UN VALOR EN `em` NO SE MUEVE CON EL ANCHO, LO ESCRIBA QUIEN LO ESCRIBA.**
+> ⚠⚠ **Y LA LECCIÓN DE MÉTODO ES MÁS GRANDE QUE EL TEST, PORQUE EXPLICA CÓMO SE
+> LLEGÓ A UN 87 % QUE NO EXISTÍA: UN TEST SE EVALÚA EN LA UNIDAD EN LA QUE SE
+> PRONUNCIA, Y AGREGAR CON `.some()` LO SUBE UN NIVEL SIN AVISAR (2026-08-30).**
+>
+> La 123.ª midió los mismos 4 documentos y publicó **«el test A habría respondido
+> al revés en 27 de 31 — el 87 %»**. El número es correcto **de lo que midió**, y
+> lo que midió no era el test:
+>
+> > **`seMueve = v1440.some((x,k) => x !== v390[k])` sobre todos los nodos de una
+> > CELDA (documento × tipo × eje) contesta «¿se mueve ALGUNO?». El test A se
+> > pronuncia sobre UN VALOR.** Así que una celda que mezcle el default del
+> > constructor (responsive, se mueve) con el valor del editor (px, no se mueve)
+> > sale «al revés» **aunque el test A haya clasificado BIEN cada uno de sus
+> > nodos** — y eso pasa en cuanto el editor toca uno solo de los hermanos.
+>
+> **Medido, con el control que lo sostiene:** re-agregando los nodos de la 124.ª
+> con el `.some()` de la 123.ª sale su 2×2 **exacto** —27 · 4 · 0 · 0 · 17, las
+> cinco celdas al par—, así que la diferencia **no es de instrumento, es de
+> nivel**. Y **11 de las 27** celdas «al revés» son **separadoras**: lo son por
+> celda y tienen **CERO** nodos mal clasificados dentro.
+>
+> | unidad | acierto del test A |
+> |---|---|
+> | CELDA (`.some()`) | 4 de 31 · **12.9 %** |
+> | NODO (donde el test se pronuncia) | 216 de 269 · **80.3 %** |
+>
+> **La forma general, que es §*la causa común: el NIVEL al que se mide* con el
+> contenedor puesto en el TEST en vez de en el dato:** antes de publicar la tasa
+> de acierto de un discriminador, **comprueba que la unidad en la que lo evalúas
+> sea aquélla sobre la que se pronuncia**. Un `.some()`, un `any`, un «al menos
+> uno» **suben la unidad un nivel** — y el nivel de arriba no da error: da un
+> porcentaje plausible, y con el signo alarmante.
+>
+> ⚠ **Y su corolario de lectura, que es el que ahorra la tanda:** una tasa de
+> fallo **muy alta** en un discriminador que llevaba meses funcionando es la
+> misma señal que un pleno o un cero (§sondas 4) — **la primera hipótesis es el
+> instrumento, no el objeto.** Aquí el 87 % se leyó como una propiedad del test;
+> era la unidad.
+
+> ⚠ **Y LA PREMISA CALLADA NO LOS EXPLICA — SON PARTICIONES DISJUNTAS, Y
+> COMPROBARLO CUESTA UNA LÍNEA (2026-08-30).** Era tentador leer «87 % al revés»
+> y «el test A no tenía nada sobre lo que pronunciarse» como dos lecturas del
+> mismo dato. **No lo son:** el veredicto se asigna en cascada y `SIN ESCRIBIR`
+> se evalúa **antes**, así que las 17 celdas sin escribir y las 31 escritas son
+> disjuntas **por construcción** — medido, **0 solapan**. La premisa callada
+> cubre las 17; de las 27 no explica ninguna.
+>
+> **Lo que sí aporta, y sólo se ve por nodo, es una SEGUNDA FAMILIA DE CIEGOS:**
+> `margin-top: auto` **computa 0**, así que sale igual a los dos anchos y **no
+> porque nadie lo tocara ni porque sea un px absoluto**. Es la misma forma que el
+> `em` con la unidad cambiada, y son **56 de los 66 ciegos**. O sea que la
+> premisa callada no es sólo *«¿hay algo escrito?»* sino **«¿el valor observado
+> informa de quién lo escribió?»** — y `auto`, `inherit` y `em` no informan.
+
+> ⚠⚠ **Y SU FALSO POSITIVO, QUE ES EL SIMÉTRICO Y CAE EN EL RITMO —O SEA JUSTO
+> DONDE EL TEST A SE DERIVÓ (2026-08-25): UN VALOR EN `em` NO SE MUEVE CON EL
+> ANCHO, LO ESCRIBA QUIEN LO ESCRIBA.**
+>
+> *(Decía «donde el test A SÍ vale». **Borrado, no anotado**, el 2026-08-30: la
+> 124.ª midió que el test A falla en el ritmo el 19.7 % por nodo, y mientras las
+> dos lecturas estuvieran escritas cada lector elegía la suya.)*
 >
 > El aviso de arriba protege del **falso negativo** —un campo escrito en `%` que
-> parece plantilla—. Éste es el contrario, y es peor porque **no está fuera del
-> alcance**: es `padding` de módulo, justo donde el test A se derivó.
+> parece plantilla—. Éste es el contrario, y es `padding` de módulo, justo donde
+> el test A se derivó.
 >
 > > El test A supone que sólo hay dos unidades: **`%` (responsive, la plantilla)
 > > y `px` (absoluto, el editor)**. Hay una tercera. **Un `em` se resuelve contra
@@ -275,7 +377,8 @@ cualquier otra propiedad.
 
 | test | no ve | ejemplo medido |
 |---|---|---|
-| A (Divi) | un campo **escrito en % igual que su default** — se mueve con el ancho y parece plantilla | `anchoPct` 70/80/90/100; `lh` 30.6/36/45 |
+| A (Divi) | un campo **escrito en % igual que su default** — se mueve con el ancho y parece plantilla | `anchoPct` 70/80/90/100; `lh` 30.6/36/45; **y en el RITMO: `.et_pb_row_1{padding-bottom:5%}` = 72 a 1440 y 19.5 a 390 — 41 · 9 · 1 en los tres arquetipos `B-`** |
+| A (Divi) | un campo escrito **POR PUNTO DE RUPTURA** — el editor lo compila en un `@media` con ordinal, así que **su** valor también se mueve | `@media (max-width:980px){.et_pb_text_6{margin-top:0px!important}}` — **45 · 32 · 20**, presente en los tres `B-` |
 | B (general) | un campo que el editor puso **uniforme en toda la página** — no varía y parece plantilla | `mb 3%` de imagen: uniforme en la primera página, lo lleva **una** imagen en la segunda |
 
 De donde la conclusión operativa, que es lo único que hay que recordar:
