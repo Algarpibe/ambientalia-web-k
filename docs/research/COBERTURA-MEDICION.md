@@ -824,6 +824,49 @@ nadie miró. Ficha con su número: `PENDIENTES-QA.md` §LH-C6-COBERTURA-DIVERGE.
 **Y el denominador ya no es 31: son 37** — las 6 de `articulos-kb` entraron con
 sus rutas.
 
+## ✅ 2026-08-31 · 129.ª — el eje `módulos` deja de estar a `·` en el lote F3-5, **en 1 de las 4 y no en las 4**
+
+**El encargo pedía escribirlo «en la unidad que la sonda compara». Escrito en
+esa unidad, el titular es más estrecho que el que se esperaba** — y ésa es la
+razón de escribirlo así (§*la cobertura declarada al nivel de arriba absorbe
+todo lo que no se midió abajo*).
+
+| ruta | filas del clon | **CON marcador** | SIN marcador | PARCIAL | celda `módulos` |
+|---|---|---|---|---|---|
+| `/kunak-api` | 6 | **3** | 3 | 0 | **O** |
+| `/software-de-medicion-calidad-del-aire` | 6 | 0 | 5 | **1** | `·` |
+| `/monitor-calidad-aire` | 6 | 0 | 6 | 0 | `·` |
+| `/accesorios` | 8 | 0 | 8 | 0 | `·` |
+
+- **unidad de la sonda: la FILA** (y dentro de ella, el MÓDULO). La celda de la
+  matriz es la RUTA, así que las dos no coinciden y el reparto va aquí al lado;
+- **`O` sólo donde `filasComparadas > 0`**, y lo impone `cobertura.mjs`, no el
+  criterio de quien escribe: acreditar la ruta entera porque «la sonda ya mira
+  módulos» sería el séptimo contenedor con la RUTA dentro;
+- **PARCIAL es un tercer estado**, no un sinónimo de «sin marcador»:
+  `/software-…` fila 2 **tiene** marcador —6 blurbs de `BlurbsIconos`— y aun así
+  no se compara, porque el original trae 19 y emparejar por orden daría parejas
+  falsas (medido: `[image→blurb] Δ+83.2`).
+
+**Recuento del eje en el repo: 110 → 111 rutas** (`f33-cmp` · `lh-cmp` ·
+`mono-cmp` · **`productos-cmp`**). Derivado por `qa:cobertura`, *evaluadas
+426/426*, congelada `cobertura-2026-08-31*.json`.
+
+> ⚠ **Y lo que esto NO acredita, con su número:** el objetivo del lote son
+> **215 módulos con caja** (cota DOM 311, `derivaciones/escalon1-objetivo-129.json`).
+> Esta tanda deja marcados los de 3 filas de 1 ruta. **El resto no se descuenta
+> del total: se nombra** — §*un censo que se recorta para caber en la tanda mide
+> la tanda*.
+
+> ⚠ **Y el filtro que leía esta fuente estaba roto y no daba error.**
+> `cobertura.mjs` casaba `^productos-cmp-\d+\.json$`, que **no casa las
+> congeladas fechadas** — y `w()` desvía a `<base>-<fecha>.json` toda corrida
+> cuyo contenido difiera (§regla 5). O sea que en cuanto la sonda midiera algo
+> nuevo, la matriz se quedaría leyendo la primera foto **en silencio**. Es
+> §regla 9, 7.º caso, y es la tercera vez en este fichero: las dos anteriores
+> fueron `-vivo` y `-todas` de `lh-cmp`. Corregido con `congeladasDe`, que
+> **deriva** el conjunto en vez de enumerarlo.
+
 ## La matriz · 31 rutas × 9 ejes
 
 > Generada por `npm run qa:cobertura` · congelada en `medidas/cobertura.json`.
@@ -853,7 +896,7 @@ sus rutas.
 | **CATÁLOGO** ||||||||||
 | `/accesorios` | **O** | **O** | **O** | **O** | · | · | **O** | **O** | **O** |
 | **SOFTWARE** ||||||||||
-| `/kunak-api` | **O** | **O** | **O** | **O** | · | · | **O** | **O** | **O** |
+| `/kunak-api` | **O** | **O** | **O** | **O** | **O** | · | **O** | **O** | **O** |
 | `/software-de-medicion-calidad-del-aire` | **O** | **O** | **O** | **O** | · | · | **O** | **O** | **O** |
 | **MONOGRÁFICO** ||||||||||
 | `/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar` | **O** | **O** | **O** | **O** | **O** | c | · | **O** | **O** |

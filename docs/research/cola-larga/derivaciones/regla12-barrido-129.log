@@ -1,0 +1,53 @@
+══════════════════════════════════════════════════════════════════════════════
+129.ª · BARRIDO DE §regla 12 — los DOS cruces, al lado
+══════════════════════════════════════════════════════════════════════════════
+
+   candidatos enumerados de las actas de la tanda: 6
+
+   | id | tipo | cruce A (laxo, heredado) | cruce B (endurecido) |
+   |---|---|---|---|
+   | R1 | REGLA | ya escrito | NO escrito |
+   | R2 | REGLA | NO escrito | NO escrito |
+   | R3 | REGLA | ya escrito | ya escrito |
+   | E1 | EVENTO | NO escrito | NO escrito |
+   | E2 | EVENTO | NO escrito | ya escrito |
+   | E3 | EVENTO | ya escrito | ya escrito |
+
+   cruce A dice «ya escrito» en 3 de 6
+   cruce B dice «ya escrito» en 3 de 6
+   ⇒ discrepan en 2
+
+   ⚠ NINGUNO DE LOS DOS ADJUDICA SOLO. El laxo sobre-casa —le basta que las
+     palabras existan en algún sitio del documento— y el endurecido sub-casa
+     —una regla puede estar escrita con otras palabras—. La adjudicación va
+     A MANO, y los dos números se publican para que se pueda auditar.
+
+══════════════════════════════════════════════════════════════════════════════
+ADJUDICACIÓN A MANO
+
+  REGLA · promovida  [R1] Un desempate escrito SÓLO en el documento que nadie relee pierde contra la frase que vive en el …
+      porque: la 108.ª dirimió bien las tres lecturas de `comportamiento` y lo escribió en COBERTURA-MEDICION.md; la lectura MUERTA siguió 6 días en CLAUDE.md, que se lee cada sesión, y ganó.
+      → CLAUDE.md §regla 12, como rider
+
+  REGLA · promovida  [R2] Un instrumento puede EXISTIR y tener su eje CIEGO por falta de un INSUMO, no de código. Ante «¿e…
+      porque: el encargo declaraba un corte con dos salidas; la real era la tercera, y de ella salía un trabajo distinto (poner el insumo) del que las dos contemplaban (construir o correr).
+      → CLAUDE.md §UN ARQUETIPO NUEVO NO HEREDA COBERTURA, como rider
+
+  REGLA · promovida  [R3] Un marcador de sonda se pone como ATRIBUTO sobre un elemento que ya existe siempre que se pueda;…
+      porque: 15 de 16 marcadores fueron atributo puro —no pueden mover un píxel por construcción— y sólo 1 envoltorio. Separarlos concentra el riesgo en un sitio nombrado en vez de repartirlo.
+      → CLAUDE.md §sondas 4, tercera cara (donde vive `data-fila`)
+
+  EVENTO · se queda   [E1] `productos-cmp` ya existía y su eje `modulos` estaba declarado SIN COMPARAR con su cardinal por …
+      porque: es un hallazgo sobre ESTE repo con su fecha y su ruta, no algo que hacer la próxima vez.
+      → el acta, con su cardinal
+
+  EVENTO · se queda   [E2] La línea de uso de `productos-cmp` decía `[ancho]` y el código lee `ANCHO=`.
+      porque: su regla general ya está en CLAUDE.md (§regla 3: documentado no es conectado). Lo nuevo es el OBJETO —la línea de uso— y eso lleva fecha.
+      → el acta; la regla ya está
+
+  EVENTO · se queda   [E3] Usé `NEG=` donde tocaba `SALIDA=` y la medida quedó invisible a los censos.
+      porque: §regla 7 (la vuelta) ya lo describe ENTERO, incluida la parte de que «la palanca equivocada funciona». No hay nada que promover.
+      → el acta
+
+  promovidas a CLAUDE.md: 3 de 6  ·  eventos que se quedan: 3
+══════════════════════════════════════════════════════════════════════════════

@@ -298,12 +298,32 @@ for (const f of fs.readdirSync(M).filter((x) => /^tree-cmp-.*\.json$/.test(x)))
 // el clon no emite marcador de módulo, y acreditarlo sería §*acreditar un eje
 // que la sonda no COMPARA*. Los artefactos de §regla 7 —`-neg-`, `-SONDA-`— se
 // descartan: una congelada de control no acredita nada.
-for (const f of fs.readdirSync(M).filter((x) => /^productos-cmp-\d+\.json$/.test(x) && !/-neg-|-SONDA-/.test(x))) {
+/* ⚠ EL PATRÓN ERA `^productos-cmp-\d+\.json$` Y NO CASABA LAS FECHADAS.
+ * `w()` desvía toda corrida cuyo contenido difiera a `<base>-<fecha>.json`
+ * (§regla 5), así que en cuanto la sonda mide algo nuevo su congelada deja de
+ * casar — y la matriz se queda leyendo la primera foto SIN DAR ERROR. Es §regla
+ * 9, 7.º caso: un conjunto enumerado a mano dentro de una sonda, y es
+ * exactamente lo que ya pasó dos veces con los sufijos de `lh-cmp`. Se deriva
+ * con `congeladasDe`, que descarta los artefactos de la §regla 7 y deja entrar
+ * solo lo nuevo. */
+for (const f of congeladasDe("productos-cmp")) {
   const j = J(f);
   /* Una corrida que NO ACREDITA —canales sin cerrar— tampoco entra: mide, pero
    * su medida es plausible y falsa (§regla 32). */
   if (j.meta?.acredita === false) continue;
-  for (const i of j.informe ?? []) set(["filas"], i.ruta, "O", "productos-cmp", f.replace(".json", ""));
+  for (const i of j.informe ?? []) {
+    set(["filas"], i.ruta, "O", "productos-cmp", f.replace(".json", ""));
+    /* ⚠⚠ Y `modulos` SÓLO donde la sonda comparó DE VERDAD ≥1 fila.
+     *
+     * Desde la 129.ª el clon emite `data-modulo`, pero **sólo en parte del
+     * lote**: acreditar la ruta entera porque la sonda «ya mira módulos» sería
+     * §*la cobertura declarada al nivel de arriba absorbe todo lo que no se
+     * midió abajo*, con el contenedor puesto en la RUTA. Una ruta cuyas filas
+     * salen todas `SIN MARCADOR` no tiene su eje comparado: lo tiene pendiente.
+     *
+     * La condición es `filasComparadas > 0`, no «la sonda soporta el eje». */
+    if ((i.modulos?.filasComparadas ?? 0) > 0) set(["modulos"], i.ruta, "O", "productos-cmp", f.replace(".json", ""));
+  }
 }
 
 // 6 · cmp-sector — sector ancla a ancla contra el original.

@@ -1,5 +1,148 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §129-CIERRE · **el comparador que la tanda iba a construir YA EXISTÍA, y su eje estaba ciego por falta de un insumo del CLON** — 129.ª, 2026-08-31
+
+**La premisa del encargo era falsa en su punto más caro, y el PASO 0 estaba
+escrito para descubrirlo.** El encargo decía *«el eje `módulos` nunca se ha
+comparado, así que construir la sonda es parte de la tanda»* y contemplaba dos
+salidas —existe / no existe—. La derivada es una **TERCERA**: `productos-cmp.mjs`
+(123.ª, 2026-08-30) ya era el comparador de dos lados de filas y módulos para
+esas 4 rutas exactas, con §regla 32 aplicada, precondiciones antes del `launch`,
+3 sabotajes y 2 congeladas de negativo. Lo que faltaba **no era código**.
+
+### PASO 0 · las dos preguntas, en las dos direcciones
+
+| | derivado | de |
+|---|---|---|
+| `módulos` a `·` en el lote | **4 de 4** | `cobertura-2026-08-30.json`, resuelta por `mtime` |
+| sondas que acreditan `modulos` | `lh-cmp` 77 · `f33-cmp` 31 · `mono-cmp` 2 — **del lote NINGUNA** | ídem |
+| barrido de `scripts/qa/`, predicado LAXO | **3** candidatas | 151 sondas |
+| barrido, predicado **ENDURECIDO** | **2** | ídem |
+| veredicto | **B · EXISTE Y SU EJE ESTÁ CIEGO** | `productos-cmp-1440.json` §`ejesExcluidos` |
+
+**El veredicto llegó primero INVERTIDO, por una refutación cómoda (§regla 40).**
+El predicado laxo `\bmodulos?\b` casa el **nombre de un eje en una tabla**, así
+que metía `cobertura.mjs` —que sólo TABULA— y publicaba «SÍ EXISTE — CORTE
+DECLARADO». La vía de la congelada decía lo contrario **desde el principio**, y
+ésa es la señal: *si se refuta a la primera y por varias candidatas a la vez, lo
+primero que se mira no es el dato sino con qué se alimentó al refutador*. Los dos
+predicados se publican **al lado**, porque la diferencia es el hallazgo.
+
+**El cardinal del eje ciego, con sus dos lados** (por qué no era «al clon le
+faltan módulos»):
+
+| ruta | filas o→c | módulos ORIG | lo que el CLON exponía |
+|---|---|---|---|
+| `/monitor-calidad-aire` | 7→6 | 1·14·28·35·4·1 (Σ83) | 1·2·2·2·3·2 (Σ12) |
+| `/accesorios` | 9→8 | Σ33 | Σ16 |
+| `/software-…` | 7→6 | Σ66 | Σ12 |
+| `/kunak-api` | 7→6 | Σ33 | Σ12 |
+
+### Y la SEGUNDA pregunta: las dos lecturas de `comportamiento`, DIRIMIDAS
+
+Gana **la matriz**: `comport` = O en **37 rutas**, las 4 del lote entre ellas. El
+`0/31` que el registro seguía afirmando es la lectura **A** —*las rutas que el
+build emitía el 2026-08-01*—, **MUERTA** desde el 2026-08-11 (esas 31 llevan a
+31/31). La 108.ª ya lo había derivado; lo que faltaba es que **seguía escrita
+como vigente en `CLAUDE.md:765`, el fichero que se lee CADA SESIÓN**.
+
+Clasificadas **las 46 ocurrencias antes de sustituir** (§*corregir un denominador
+no es sustituirlo en todas partes*): **1 sola** era A-vigente. Las demás llevan
+su unidad, son histórico, o son de la lectura **B** (las 31 de F3-3, cierta hoy).
+**Borrada esa una**, no conciliada con una nota.
+
+> ⚠ **Y la lección es §regla 12 AL REVÉS, que no estaba escrita:** la 108.ª
+> dirimió esto bien y lo escribió en `COBERTURA-MEDICION.md`, que se lee cuando
+> alguien lo abre. La lectura muerta vivía en `CLAUDE.md`, que se lee siempre. Un
+> desempate escrito sólo en el documento que nadie relee **pierde contra la frase
+> que está en el que sí**.
+
+### Los dos lados del pre-registro (`PRE-REGISTRO-MARCADOR-MODULO-129.md`)
+
+| predicción | resultado |
+|---|---|
+| **P1 · NO-OP a 1440 Y a 390** | ✅ **CUMPLIDA, y no la firma quien mide: la firma la guarda de `w()`** — *«idéntica a la congelada salvo meta.fecha — no se reescribe»* en los dos anchos. `w()` compara el CONTENIDO, así que es la comparación par a par al bit, no un recuento que pueda absorber dos errores que se anulen |
+| **P2 · las no afectadas no se mueven** | ✅ el cierre transitivo dio **2 de 26** pages, y el eje de fila salió **43 @1440 · 49 @390**, los mismos del 08-30 |
+| **P3 · el marcador llega, 27 de 33** | ✅ el HTML servido trae el marcador y la sonda compara **3 filas** de `/kunak-api` con sus `kind` casando en los dos lados |
+
+**El único riesgo declarado —el `<div data-modulo="text">` que envuelve kicker y
+`<h1>` en `HeroApi`, porque en el original son UN `et_pb_text`— no movió nada.**
+
+### El desbloqueo, y la guarda que impide el falso rojo
+
+La v1 del eje **inventó defectos** y su congelada se conserva
+(`productos-cmp-1440-SONDA-EMPAREJABA-MODULOS-POR-ORDEN.json`): emparejaba por
+ÍNDICE, y en `/software-…` fila 2 —6 marcados de 19— casó `[image→blurb] Δ+83.2`
+y `[image→blurb] Δ-331.53`. **No son defectos: son dos conjuntos distintos
+puestos en fila** (§regla 33/29). Con la guarda, 45 distintos → **33**.
+
+Tres estados, y **PARCIAL es el tercero**: `0 marcadores ⇒ SIN MARCADOR` ·
+`recuento o kinds que no casan ⇒ PARCIAL, nombrado y no comparado` · `iguales ⇒
+comparado`.
+
+### La línea base — primera comparación del eje contra el original en estas rutas
+
+| ancho | ejes | distintos | filas CON marcador | SIN | PARCIAL |
+|---|---|---|---|---|---|
+| 1440 | 85 | 33 | 3 | 22 | 1 |
+| 390 | 85 | 22 | 3 | 22 | 1 |
+
+Y la cosecha es **el ritmo por módulo, que es lo que el content type de F3-5
+modela** (`/kunak-api` @1440): `m0 mb 31.67→0` · `m1 h 126.88→116` ·
+`m1 mb 31.67→0` · `m1 pb 10.88→0` · `m2 pb 0→10` · `m3 mb 31.67→27.81` ·
+`m4 h 74→44` · `m4 mb 60→90`.
+
+### El 4.º sabotaje — el que el propio negativo llevaba PIDIENDO por escrito
+
+| | eje MÓDULOS | filas CON marcador | eje de FILA |
+|---|---|---|---|
+| CONTROL | 85 · 33 distintos | **3** | 130 |
+| `NEG_SELECTOR_CLON_FALSO` | **0** · 0 | **0** | 130 (intacto) |
+
+Los otros tres usan `NEG_MISMO_LADO`, que copia el original sobre el clon: el
+selector del lado clon **nunca se ejercita contra marcado del clon** — 0
+instancias separadoras (§regla 15). Va con su control en la misma corrida (§8a),
+su aserción es la **DIFERENCIA y no el exit** —que es 4 en los dos lados, lo fija
+el eje de FILA (§regla 21, la vuelta)—, comprueba que el sabotaje sea
+**específico**, y si el control comparase 0 filas **sale FALLO por SIN PROBAR**,
+no verde. `qa:productos-cmp-neg` → **4/4**.
+
+### ⚠ Tres defectos de operación PROPIOS, los tres descritos en `CLAUDE.md`
+
+1. **la palanca equivocada** (§regla 7, la vuelta): usé `NEG=` —que MARCA como
+   artefacto— donde tocaba `SALIDA=` —que NOMBRA—. La medida era real (derivado
+   antes de renombrar: `saboteada: null`, 30/30 hojas, 162/162 media, 0 errores)
+   y quedaba invisible para `eligeCongeladaAnterior`. Renombrada y verificada
+   **por EFECTO**;
+2. **la línea de uso mentía** y costó una corrida entera: decía `node
+   productos-cmp.mjs [ancho]` y el código lee `ANCHO=`, así que *dos corridas «a
+   1440 y a 390» fueron las dos a 1440*, sin error. Sólo lo delató que las dos
+   publicaran `distintos: 43` cuando la congelada de 390 dice 49 — §sondas 4, la
+   contradicción con una medida buena anterior, **otra vez el único control que
+   el defecto tenía**;
+3. **mi detector auxiliar de «import directo» sobre-casaba dentro de un
+   COMENTARIO** (`/accesorios` menciona `HeroApi` y no lo importa), y puso su
+   propio control L4 en rojo. El rojo era legítimo y era del detector.
+
+### Lo que queda, con su cardinal — NOMBRADO, no descontado del total
+
+- **objetivo del lote: 215 módulos con caja** (cota DOM 311). Marcados: los de 3
+  filas de 1 ruta;
+- `/monitor-calidad-aire` (Σ83) · `/accesorios` (Σ33) · `/software-…` (Σ66) **sin
+  marcador propio**; `/software-…` tiene además **1 fila PARCIAL** —gana los
+  blurbs de `BlurbsIconos`, que es compartido— y ésa es la que enseña que
+  marcador ≠ comparable;
+- `/kunak-api` queda a **27 de sus 33**: faltan las filas 0 (1), 4 (4) y 5 (1);
+- **sigue faltando el sabotaje equivalente para `[data-fila]`**: el 4.º rompe el
+  selector de MÓDULO. Si `data-fila` dejara de casar, los 4 casos seguirían en
+  verde. Declarado en la salida del propio negativo;
+- **el eje `offsets/holgura` sigue a `·` en las 4**, y esta tanda no lo toca;
+- ⚠ **coste no escrito de `NEXT_DIST_DIR`, anotado aquí porque se paga solo:**
+  `next build` **añade las rutas de tipos del directorio nuevo a
+  `apps/web/tsconfig.json`**. Entra en el commit sin que nadie lo toque y
+  acumula (ya había `.next-126`, ahora `.next-129`). Es inocuo, pero un fichero
+  que la tanda no tocó y aparece en su `git status` merece su línea.
+
 ## ✅ §122-CIERRE · **el `minimo: 1` era una clase de DOS y se cierra entera; y las 2 rutas se movieron en direcciones OPUESTAS — la que se aleja tiene razón** — 122.ª, 2026-08-29
 
 Escalón mixto. Las dos partes cerraron; nada quedó a medias.

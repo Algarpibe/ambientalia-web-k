@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "tanda": "129.ª",
+    "fecha": "2026-08-31",
+    "offline": true
+  },
+  "candidatos": [
+    {
+      "id": "R1",
+      "tipo": "REGLA",
+      "enunciado": "Un desempate escrito SÓLO en el documento que nadie relee pierde contra la frase que vive en el que se lee siempre. §regla 12 AL REVÉS: no es que falte escribirlo, es que se escribió donde no gana.",
+      "porQue": "la 108.ª dirimió bien las tres lecturas de `comportamiento` y lo escribió en COBERTURA-MEDICION.md; la lectura MUERTA siguió 6 días en CLAUDE.md, que se lee cada sesión, y ganó.",
+      "vocabulario": [
+        "desempate",
+        "documento que nadie relee",
+        "regla 12"
+      ],
+      "enunciadoClave": "pierde contra la frase que está en el que sí",
+      "destino": "CLAUDE.md §regla 12, como rider"
+    },
+    {
+      "id": "R2",
+      "tipo": "REGLA",
+      "enunciado": "Un instrumento puede EXISTIR y tener su eje CIEGO por falta de un INSUMO, no de código. Ante «¿existe la sonda que mide X?» las dos salidas binarias son falsas, y la tercera es la que decide el trabajo.",
+      "porQue": "el encargo declaraba un corte con dos salidas; la real era la tercera, y de ella salía un trabajo distinto (poner el insumo) del que las dos contemplaban (construir o correr).",
+      "vocabulario": [
+        "insumo",
+        "eje ciego",
+        "binario"
+      ],
+      "enunciadoClave": "EXISTE Y SU EJE ESTÁ CIEGO",
+      "destino": "CLAUDE.md §UN ARQUETIPO NUEVO NO HEREDA COBERTURA, como rider"
+    },
+    {
+      "id": "R3",
+      "tipo": "REGLA",
+      "enunciado": "Un marcador de sonda se pone como ATRIBUTO sobre un elemento que ya existe siempre que se pueda; un ENVOLTORIO nuevo es la excepción, se cuenta aparte y es el único punto donde el NO-OP puede romperse.",
+      "porQue": "15 de 16 marcadores fueron atributo puro —no pueden mover un píxel por construcción— y sólo 1 envoltorio. Separarlos concentra el riesgo en un sitio nombrado en vez de repartirlo.",
+      "vocabulario": [
+        "marcador de sonda",
+        "atributo",
+        "envoltorio"
+      ],
+      "enunciadoClave": "marcador de sonda, no estilo",
+      "destino": "CLAUDE.md §sondas 4, tercera cara (donde vive `data-fila`)"
+    },
+    {
+      "id": "E1",
+      "tipo": "EVENTO",
+      "enunciado": "`productos-cmp` ya existía y su eje `modulos` estaba declarado SIN COMPARAR con su cardinal por fila.",
+      "porQue": "es un hallazgo sobre ESTE repo con su fecha y su ruta, no algo que hacer la próxima vez.",
+      "vocabulario": [],
+      "enunciadoClave": null,
+      "destino": "el acta, con su cardinal"
+    },
+    {
+      "id": "E2",
+      "tipo": "EVENTO",
+      "enunciado": "La línea de uso de `productos-cmp` decía `[ancho]` y el código lee `ANCHO=`.",
+      "porQue": "su regla general ya está en CLAUDE.md (§regla 3: documentado no es conectado). Lo nuevo es el OBJETO —la línea de uso— y eso lleva fecha.",
+      "vocabulario": [
+        "línea de uso"
+      ],
+      "enunciadoClave": "documentado no es conectado",
+      "destino": "el acta; la regla ya está"
+    },
+    {
+      "id": "E3",
+      "tipo": "EVENTO",
+      "enunciado": "Usé `NEG=` donde tocaba `SALIDA=` y la medida quedó invisible a los censos.",
+      "porQue": "§regla 7 (la vuelta) ya lo describe ENTERO, incluida la parte de que «la palanca equivocada funciona». No hay nada que promover.",
+      "vocabulario": [
+        "palanca",
+        "NEG"
+      ],
+      "enunciadoClave": "una medida con nombre de artefacto",
+      "destino": "el acta"
+    }
+  ],
+  "cruceA": [
+    {
+      "id": "R1",
+      "yaEscrito": true
+    },
+    {
+      "id": "R2",
+      "yaEscrito": false
+    },
+    {
+      "id": "R3",
+      "yaEscrito": true
+    },
+    {
+      "id": "E1",
+      "yaEscrito": false
+    },
+    {
+      "id": "E2",
+      "yaEscrito": false
+    },
+    {
+      "id": "E3",
+      "yaEscrito": true
+    }
+  ],
+  "cruceB": [
+    {
+      "id": "R1",
+      "yaEscrito": false
+    },
+    {
+      "id": "R2",
+      "yaEscrito": false
+    },
+    {
+      "id": "R3",
+      "yaEscrito": true
+    },
+    {
+      "id": "E1",
+      "yaEscrito": false
+    },
+    {
+      "id": "E2",
+      "yaEscrito": true
+    },
+    {
+      "id": "E3",
+      "yaEscrito": true
+    }
+  ],
+  "resumen": {
+    "candidatos": 6,
+    "promovidas": 3,
+    "aYa": 3,
+    "bYa": 3
+  }
+}

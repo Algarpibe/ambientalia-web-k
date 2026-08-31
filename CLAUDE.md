@@ -751,6 +751,37 @@ solo-clon. Registro en `PENDIENTES-QA.md` §COBERTURA.
 Una tanda de construcción no está cerrada mientras su arquetipo tenga celdas en
 `c` o en `·` en los ejes que esa página sí tiene.
 
+> ⚠⚠ **Y ANTES DE CONSTRUIR LA SONDA, LA PREGUNTA NO ES BINARIA: UN COMPARADOR
+> PUEDE EXISTIR Y TENER SU EJE CIEGO POR FALTA DE UN INSUMO, NO DE CÓDIGO
+> (2026-08-31, 129.ª).**
+>
+> *«¿Existe la sonda que mide X?»* admite dos respuestas obvias —sí y no— y las
+> dos pueden ser falsas a la vez:
+>
+> > **Un comparador construido, adjudicado y con su negativo puede declarar un
+> > eje SIN COMPARAR porque le falta un INSUMO DEL OTRO LADO.** No le falta
+> > código: le falta que el clon EMITA lo que el selector busca. Y esa tercera
+> > salida manda un trabajo **distinto** de las otras dos — ni construir ni
+> > correr, sino **poner el insumo**.
+>
+> **Medido:** el eje `módulos` estaba a `·` en las 4 rutas de F3-5 y
+> `productos-cmp` ya era su comparador de dos lados. Su congelada lo decía con
+> su cardinal: *«el clon no emite marcador de MODULO: los dos selectores no
+> denotan el mismo conjunto»*, con `14 → 2`, `12 → 2` — **la firma de dos
+> selectores distintos, no la de un clon al que le falten 12 módulos**.
+>
+> **Cómo se distingue, y es barato:** un comparador que no existe deja el eje
+> **sin nombrar**; uno con el eje ciego lo declara **con su motivo y su
+> cardinal**. Así que la pregunta operativa no es *«¿hay sonda?»* sino
+> **«¿qué dice la congelada sobre ese eje?»** — y la respuesta está en
+> `ejesExcluidos`, que es justo lo que §regla 14 obliga a publicar.
+>
+> ⚠ **Y el corolario de lectura: un `0` del lado del clon en un eje recién
+> encendido casi nunca es un defecto del clon.** Antes de leerlo como *«faltan N
+> módulos»*, se comprueba **si el marcador existe** — es §sondas 4 con el cero
+> puesto en un atributo que nadie ha escrito todavía, y llega con la peor cara
+> posible: la de un defecto grande, creíble y con su número.
+
 `docs/PLAN-CLONADO.md` tiene el detalle de fases y qué modelo conviene en cada
 una. `docs/PENDIENTES-QA.md` es el registro vivo de QA — **léelo antes de tocar
 una página ya clonada**: incluye objetivos numéricos por sección y hallazgos
@@ -2589,6 +2620,27 @@ original lo dice con `.et_pb_row`; el clon no tenía equivalente y ahora lleva
 `data-fila` — **marcador de sonda, no estilo**, con su antes/después a umbral
 cero para probar que no mueve un píxel. Un heurístico se queda de respaldo
 **declarado** (`via` en la salida), nunca como identidad.
+
+> ⚠ **Y CÓMO SE PONE ESE MARCADOR, que decide dónde puede romperse el NO-OP
+> (2026-08-31, 129.ª):**
+>
+> > **Un marcador de sonda va como ATRIBUTO sobre un elemento que YA EXISTE
+> > siempre que se pueda** —un atributo no añade nodo ni clase, así que **no
+> > puede mover un píxel por construcción**—. **Un ENVOLTORIO nuevo es la
+> > excepción**, hace falta sólo cuando el original agrupa en UNA unidad lo que
+> > el clon pinta con varios hermanos, y **se cuenta aparte**: es el único punto
+> > donde el NO-OP puede romperse, así que se nombra en el pre-registro en vez
+> > de repartir el riesgo por todo el cambio.
+>
+> Medido al marcar `data-modulo` en `/kunak-api`: **15 de 16 atributo puro · 1
+> envoltorio** (kicker + `<h1>`, que en el original son un solo `et_pb_text`).
+> NO-OP al bit a 1440 y a 390, y quien lo firma no es quien mide — es la guarda
+> de `w()`: *«idéntica a la congelada salvo meta.fecha»*, que compara el
+> CONTENIDO y no un recuento que pueda absorber dos errores que se anulen.
+>
+> **Y cuál de los dos toca se DERIVA del original, no se elige:** se mira qué
+> emite la fila —aquí `image · text · text · text · button · image`— y se cuenta
+> cuántos elementos del clon corresponden a cada unidad. Si son 1:1, atributo.
 
 Medido en el recon de listados: `post_content` daba **«sí» en las 35** porque
 buscaba `et_pb_post_content` en el HTML entero y lo encontraba **dentro de
