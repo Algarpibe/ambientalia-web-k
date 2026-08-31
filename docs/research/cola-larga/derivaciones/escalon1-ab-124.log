@@ -1,0 +1,83 @@
+=== CONTROLES ===
+  OK  se recorrieron los 3 arquetipos declarados
+      LOTE-F3-5=4p · SECTOR+MONOGRAFICO=8p · ARTICULOS-KB=6p
+  OK  todo arquetipo resolvio hojas (si no, su 0 es del INSTRUMENTO, no del original)
+      LOTE-F3-5 30/30 · SECTOR+MONOGRAFICO 40/56 · ARTICULOS-KB 30/44
+  OK  el ordinal DISCRIMINA (no casa con todo ni con nada)
+      LOTE-F3-5=295 · SECTOR+MONOGRAFICO=408 · ARTICULOS-KB=171
+  OK  SUJETO y CONTEXTO se separan de verdad (§regla 36)
+      LOTE-F3-5 sujeto=259/ctx=36 · SECTOR+MONOGRAFICO sujeto=328/ctx=80 · ARTICULOS-KB sujeto=141/ctx=30
+  OK  el esquema declara campos de ritmo y se hallaron sus consumidores
+      10 campos · consumidores de moduloBase, ritmoModulo, anchoPct, ritmoInline
+
+=== EL BARRIDO — reglas de RITMO con selector del EDITOR, por arquetipo ===
+  arquetipo             pag   hojas   suj   ctx nivel-mod  FN-%  FN-bp  ct
+  LOTE-F3-5               4   30/30   259    36       259    41     45  NO
+                       unidades={"px":167,"%":41,"relativa-al-font":46,"%-cero (inocuo)":5} canales={"style":259}
+                       niveles con %: {"fila":31,"modulo:text":7,"modulo:image":2,"seccion":1}
+      %  monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5%!important }
+      %  monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5% }
+      %  monitor-calidad-aire.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_1 { padding-bottom: 2%!important }
+      %  monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2%!important }
+      %  monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2% }
+      bp monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:text] .et-db #et-boc .et-l .et_pb_text_4 { margin-top: 0rem!important }
+      bp monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:button] .et-db #et-boc .et-l .et_pb_button_1_wrapper { margin-top: -3rem!important }
+      bp monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:button] .et-db #et-boc .et-l .et_pb_button_1_wrapper { margin-bottom: 1rem!important }
+      bp monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:text] .et-db #et-boc .et-l .et_pb_text_5 { margin-bottom: 0px!important }
+      bp monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:text] .et-db #et-boc .et-l .et_pb_text_6,.et-db #et-boc .et-l .et_pb_text_7,.et-db #et-boc .et-l .et_pb_text_8,.et-db #et-boc  { margin-top: 0px!important }
+  SECTOR+MONOGRAFICO      8   40/56   328    80       328     1     32  SI
+                       unidades={"px":311,"relativa-al-font":8,"no-numerica":8,"%":1} canales={"style":328}
+                       niveles con %: {"modulo:image":1}
+      %  monitorizacion-ambiental-y-control-de-olores-en-edar.html · [modulo:image] .et_pb_image_6 { margin-bottom: 3%!important }
+      bp calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:980px) · [seccion] .et_pb_section_2.et_pb_section { padding-bottom: 50px }
+      bp calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:980px) · [modulo:button] .et_pb_button_2_wrapper,.et_pb_button_3_wrapper { margin-top: -20px!important }
+      bp calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:767px) · [seccion] .et_pb_section_2.et_pb_section { padding-bottom: 20px }
+      bp calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:767px) · [modulo:button] .et_pb_button_2_wrapper,.et_pb_button_3_wrapper { margin-top: -20px!important }
+      bp contaminacion-del-aire-por-la-mineria.html · @media only screen and (max-width:980px) · [seccion] .et_pb_section_2.et_pb_section { padding-bottom: 50px }
+  ARTICULOS-KB            6   30/44   141    30       141     9     20  SI
+                       unidades={"px":125,"%-cero (inocuo)":7,"%":9} canales={"style":141}
+                       niveles con %: {"fila":9}
+      %  centro-de-ayuda\kunak-air\articulos-de-ayuda\como-garantiza-kunak-la-mejor-precision\index.html · [fila] .et_pb_row_4.et_pb_row { margin-top: 2%!important }
+      %  centro-de-ayuda\kunak-air\articulos-de-ayuda\evidencias-de-funcionamiento\index.html · [fila] .et_pb_row_3.et_pb_row { margin-top: 5%!important }
+      %  centro-de-ayuda\kunak-air\articulos-de-ayuda\que-es-kunak-air\index.html · [fila] .et_pb_row_2.et_pb_row,.et_pb_row_4.et_pb_row { padding-bottom: 0.8%!important }
+      %  centro-de-ayuda\kunak-air\articulos-de-ayuda\que-es-kunak-air\index.html · [fila] .et_pb_row_2.et_pb_row,.et_pb_row_4.et_pb_row { padding-bottom: 0.8% }
+      %  centro-de-ayuda\kunak-air\articulos-de-ayuda\que-puedes-hacer-con-kunak-air\index.html · [fila] .et_pb_row_2.et_pb_row { padding-bottom: 0.8%!important }
+      bp centro-de-ayuda\kunak-air\articulos-de-ayuda\como-garantiza-kunak-la-mejor-precision\index.html · @media only screen and (max-width:980px) · [modulo:text] .et_pb_text_5,.et_pb_text_9 { margin-bottom: 0px!important }
+      bp centro-de-ayuda\kunak-air\articulos-de-ayuda\como-garantiza-kunak-la-mejor-precision\index.html · @media only screen and (max-width:980px) · [modulo:text] .et_pb_text_10,.et_pb_text_11,.et_pb_text_12,.et_pb_text_13 { margin-top: 0px!important }
+      bp centro-de-ayuda\kunak-air\articulos-de-ayuda\como-garantiza-kunak-la-mejor-precision\index.html · @media only screen and (max-width:767px) · [modulo:text] .et_pb_text_5,.et_pb_text_9 { margin-bottom: 0px!important }
+      bp centro-de-ayuda\kunak-air\articulos-de-ayuda\como-garantiza-kunak-la-mejor-precision\index.html · @media only screen and (max-width:767px) · [modulo:text] .et_pb_text_10,.et_pb_text_11,.et_pb_text_12,.et_pb_text_13 { margin-top: 0px!important }
+      bp centro-de-ayuda\kunak-air\articulos-de-ayuda\evidencias-de-funcionamiento\index.html · @media only screen and (max-width:980px) · [modulo:text] .et_pb_text_3,.et_pb_text_4,.et_pb_text_13,.et_pb_text_14 { margin-top: 0px!important }
+
+=== (a) ¿LO VIEJO ESTA MAL? ===
+  arquetipos con content type YA ESCRITO: SECTOR+MONOGRAFICO · ARTICULOS-KB
+  de esos, con % de ritmo escrito por el editor: SECTOR+MONOGRAFICO (1) · ARTICULOS-KB (9)
+  ⇒ HAY campos en riesgo: `type:number` no expresa esos %
+
+=== (b) ¿LO NUEVO ESTA SOBRE-GENERALIZADO? ===
+  el LOTE: FN-% 41 · FN-bp 45
+  SECTOR+MONOGRAFICO   FN-%    1 · FN-bp   32
+  ARTICULOS-KB         FN-%    9 · FN-bp   20
+  ⇒ el hallazgo NO es solo del lote: aparece tambien en arquetipos ya escritos
+
+=== CAMPOS DE RITMO EN EL ESQUEMA (type:number no expresa %) ===
+  ritmoInline    mt           type=number
+  ritmoInline    pt           type=number
+  ritmoInline    pb           type=number
+  ritmoModulo    ritmo        type=group
+  ritmoModulo    mt           type=number
+  ritmoModulo    mb           type=number
+  ritmoModulo    pt           type=number
+  ritmoModulo    pb           type=number
+  ritmoModulo    pr           type=number
+  ritmoModulo    mbAlterno    type=checkbox
+  consumidores derivados: {"moduloBase":["bloques/contenido.ts","bloques/kb.ts","bloques/monografico.ts","bloques/paginas.ts"],"ritmoModulo":["bloques/kb.ts","bloques/paginas.ts"],"anchoPct":["bloques/kb.ts","bloques/paginas.ts","bloques/sector.ts"],"ritmoInline":["bloques/monografico.ts"]}
+
+=== LA DEFENSA QUE YA EXISTE — `medida()` (la otra direccion) ===
+  existe=true · subcampos=[valor, movilValor]
+  expresa el %            : true
+  expresa el punto de rupt: true
+  la usan: {"bloques/kb.ts":["mt","mb","pb","pt","pb","mt","mb"],"bloques/paginas.ts":["mt","mb","pb","pt","pb","mt","mb","pt","pb"]}
+  ⇒ los DOS modos que rompen el test A YA son expresables donde se use `medida()`.
+    El riesgo se reduce a los campos `number` que NO la usan.
+
+VEREDICTO: valida

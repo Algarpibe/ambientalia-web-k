@@ -1,0 +1,370 @@
+{
+  "meta": {
+    "tanda": "124.ª · ESCALON 1",
+    "fecha": "2026-08-31",
+    "lado": "UNO — el CSS SERVIDO del original capturado (dos canales: `<style>` y hojas enlazadas)",
+    "unidad": "LA REGLA CSS (selector × propiedad), no el nodo ni la pagina",
+    "dosPreguntas": [
+      "(a) ¿lo VIEJO esta mal? — content types ya escritos con ritmo en `type:number`, que no expresa `%`",
+      "(b) ¿lo NUEVO esta sobre-generalizado? — ¿el hallazgo es del LOTE o de todos los `B-`?"
+    ],
+    "noContesta": [
+      "cuantos NODOS toca cada regla — eso lo mide paso0-nodos-124 con la cascada, y solo para el lote",
+      "si la regla GANA la cascada: aqui se cuenta que EXISTE, no que se aplique",
+      "la varianza INTER-instancia dentro de cada arquetipo"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "se recorrieron los 3 arquetipos declarados",
+      "ok": true,
+      "visto": "LOTE-F3-5=4p · SECTOR+MONOGRAFICO=8p · ARTICULOS-KB=6p"
+    },
+    {
+      "nombre": "todo arquetipo resolvio hojas (si no, su 0 es del INSTRUMENTO, no del original)",
+      "ok": true,
+      "visto": "LOTE-F3-5 30/30 · SECTOR+MONOGRAFICO 40/56 · ARTICULOS-KB 30/44"
+    },
+    {
+      "nombre": "el ordinal DISCRIMINA (no casa con todo ni con nada)",
+      "ok": true,
+      "visto": "LOTE-F3-5=295 · SECTOR+MONOGRAFICO=408 · ARTICULOS-KB=171"
+    },
+    {
+      "nombre": "SUJETO y CONTEXTO se separan de verdad (§regla 36)",
+      "ok": true,
+      "visto": "LOTE-F3-5 sujeto=259/ctx=36 · SECTOR+MONOGRAFICO sujeto=328/ctx=80 · ARTICULOS-KB sujeto=141/ctx=30"
+    },
+    {
+      "nombre": "el esquema declara campos de ritmo y se hallaron sus consumidores",
+      "ok": true,
+      "visto": "10 campos · consumidores de moduloBase, ritmoModulo, anchoPct, ritmoInline"
+    }
+  ],
+  "porArquetipo": {
+    "LOTE-F3-5": {
+      "contentTypeYaEscrito": false,
+      "paginas": 4,
+      "hojas": {
+        "enlazadas": 30,
+        "resueltas": 30,
+        "sinResolver": 0,
+        "paginasSinNingunaHoja": 0
+      },
+      "reglas": {
+        "total": 295,
+        "sujeto": 259,
+        "contexto": 36,
+        "sujetoEnNivelModelado": 259
+      },
+      "porUnidad": {
+        "px": 167,
+        "%": 41,
+        "relativa-al-font": 46,
+        "%-cero (inocuo)": 5
+      },
+      "FN_pct": 41,
+      "FN_pct_cero_inocuo": 5,
+      "FN_bp": 45,
+      "nivelesConPct": {
+        "fila": 31,
+        "modulo:text": 7,
+        "modulo:image": 2,
+        "seccion": 1
+      },
+      "pctRiesgoEnteros": [
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5%!important }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5% }",
+        "monitor-calidad-aire.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_1 { padding-bottom: 2%!important }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2%!important }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2% }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_3.et_pb_row { padding-top: 4% }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_4.et_pb_row { padding-bottom: 1% }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_5.et_pb_row { padding-bottom: 5% }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_6.et_pb_row { padding-bottom: 5% }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_1:hover { padding-bottom: 5%!important }",
+        "accesorios.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_1 { padding-bottom: 2%!important }",
+        "accesorios.html · [fila] .et-db #et-boc .et-l .et_pb_row_3.et_pb_row { padding-bottom: 2%!important }",
+        "accesorios.html · [fila] .et-db #et-boc .et-l .et_pb_row_3.et_pb_row { padding-bottom: 2% }",
+        "accesorios.html · [fila] .et-db #et-boc .et-l .et_pb_row_6.et_pb_row { padding-bottom: 1% }",
+        "accesorios.html · [fila] .et-db #et-boc .et-l .et_pb_row_7.et_pb_row { padding-bottom: 5% }",
+        "accesorios.html · [fila] .et-db #et-boc .et-l .et_pb_row_8.et_pb_row { padding-bottom: 5% }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { margin-bottom: 2%!important }",
+        "software-de-medicion-calidad-del-aire.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_1 { padding-bottom: 2%!important }",
+        "software-de-medicion-calidad-del-aire.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_2 { margin-bottom: 1.3%!important }",
+        "software-de-medicion-calidad-del-aire.html · [modulo:image] .et-db #et-boc .et-l .et_pb_image_1 { padding-bottom: 5% }",
+        "software-de-medicion-calidad-del-aire.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_13 { margin-top: 5%!important }",
+        "software-de-medicion-calidad-del-aire.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_13 { margin-bottom: 5%!important }",
+        "software-de-medicion-calidad-del-aire.html · [seccion] .et-db #et-boc .et-l .et_pb_section_3.et_pb_section { padding-bottom: 5% }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_3.et_pb_row { padding-top: 4%!important }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_3.et_pb_row { padding-top: 4% }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_4.et_pb_row { padding-bottom: 1%!important }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_4.et_pb_row { padding-bottom: 1% }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_5.et_pb_row { padding-bottom: 5%!important }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_5.et_pb_row { padding-bottom: 5% }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_6.et_pb_row { padding-bottom: 5%!important }",
+        "software-de-medicion-calidad-del-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_6.et_pb_row { padding-bottom: 5% }",
+        "kunak-api.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 1%!important }",
+        "kunak-api.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 1% }",
+        "kunak-api.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_1 { padding-bottom: 2%!important }",
+        "kunak-api.html · [modulo:image] .et-db #et-boc .et-l .et_pb_image_1 { margin-top: -10%!important }",
+        "kunak-api.html · [fila] .et-db #et-boc .et-l .et_pb_row_2.et_pb_row,.et-db #et-boc .et-l .et_pb_row_3.et_pb_row,.et-db #et-boc .et-l .et_pb_row_ { padding-bottom: 5%!important }",
+        "kunak-api.html · [fila] .et-db #et-boc .et-l .et_pb_row_2.et_pb_row,.et-db #et-boc .et-l .et_pb_row_3.et_pb_row,.et-db #et-boc .et-l .et_pb_row_ { padding-bottom: 5% }",
+        "kunak-api.html · [fila] .et-db #et-boc .et-l .et_pb_row_4.et_pb_row { padding-bottom: 1%!important }",
+        "kunak-api.html · [fila] .et-db #et-boc .et-l .et_pb_row_4.et_pb_row { padding-bottom: 1% }",
+        "kunak-api.html · [fila] .et-db #et-boc .et-l .et_pb_row_5.et_pb_row { padding-bottom: 5%!important }",
+        "kunak-api.html · [fila] .et-db #et-boc .et-l .et_pb_row_5.et_pb_row { padding-bottom: 5% }"
+      ],
+      "porCanal": {
+        "style": 259
+      },
+      "muestraPct": [
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5%!important }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5% }",
+        "monitor-calidad-aire.html · [modulo:text] .et-db #et-boc .et-l .et_pb_text_1 { padding-bottom: 2%!important }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2%!important }",
+        "monitor-calidad-aire.html · [fila] .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2% }"
+      ],
+      "muestraBp": [
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:text] .et-db #et-boc .et-l .et_pb_text_4 { margin-top: 0rem!important }",
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:button] .et-db #et-boc .et-l .et_pb_button_1_wrapper { margin-top: -3rem!important }",
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:button] .et-db #et-boc .et-l .et_pb_button_1_wrapper { margin-bottom: 1rem!important }",
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:text] .et-db #et-boc .et-l .et_pb_text_5 { margin-bottom: 0px!important }",
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · [modulo:text] .et-db #et-boc .et-l .et_pb_text_6,.et-db #et-boc .et-l .et_pb_text_7,.et-db #et-boc .et-l .et_pb_text_8,.et-db #et-boc  { margin-top: 0px!important }"
+      ]
+    },
+    "SECTOR+MONOGRAFICO": {
+      "contentTypeYaEscrito": true,
+      "paginas": 8,
+      "hojas": {
+        "enlazadas": 56,
+        "resueltas": 40,
+        "sinResolver": 16,
+        "paginasSinNingunaHoja": 0
+      },
+      "reglas": {
+        "total": 408,
+        "sujeto": 328,
+        "contexto": 80,
+        "sujetoEnNivelModelado": 328
+      },
+      "porUnidad": {
+        "px": 311,
+        "relativa-al-font": 8,
+        "no-numerica": 8,
+        "%": 1
+      },
+      "FN_pct": 1,
+      "FN_pct_cero_inocuo": 0,
+      "FN_bp": 32,
+      "nivelesConPct": {
+        "modulo:image": 1
+      },
+      "pctRiesgoEnteros": [
+        "monitorizacion-ambiental-y-control-de-olores-en-edar.html · [modulo:image] .et_pb_image_6 { margin-bottom: 3%!important }"
+      ],
+      "porCanal": {
+        "style": 328
+      },
+      "muestraPct": [
+        "monitorizacion-ambiental-y-control-de-olores-en-edar.html · [modulo:image] .et_pb_image_6 { margin-bottom: 3%!important }"
+      ],
+      "muestraBp": [
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:980px) · [seccion] .et_pb_section_2.et_pb_section { padding-bottom: 50px }",
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:980px) · [modulo:button] .et_pb_button_2_wrapper,.et_pb_button_3_wrapper { margin-top: -20px!important }",
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:767px) · [seccion] .et_pb_section_2.et_pb_section { padding-bottom: 20px }",
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:767px) · [modulo:button] .et_pb_button_2_wrapper,.et_pb_button_3_wrapper { margin-top: -20px!important }",
+        "contaminacion-del-aire-por-la-mineria.html · @media only screen and (max-width:980px) · [seccion] .et_pb_section_2.et_pb_section { padding-bottom: 50px }"
+      ]
+    },
+    "ARTICULOS-KB": {
+      "contentTypeYaEscrito": true,
+      "paginas": 6,
+      "hojas": {
+        "enlazadas": 44,
+        "resueltas": 30,
+        "sinResolver": 14,
+        "paginasSinNingunaHoja": 0
+      },
+      "reglas": {
+        "total": 171,
+        "sujeto": 141,
+        "contexto": 30,
+        "sujetoEnNivelModelado": 141
+      },
+      "porUnidad": {
+        "px": 125,
+        "%-cero (inocuo)": 7,
+        "%": 9
+      },
+      "FN_pct": 9,
+      "FN_pct_cero_inocuo": 7,
+      "FN_bp": 20,
+      "nivelesConPct": {
+        "fila": 9
+      },
+      "pctRiesgoEnteros": [
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\como-garantiza-kunak-la-mejor-precision\\index.html · [fila] .et_pb_row_4.et_pb_row { margin-top: 2%!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\evidencias-de-funcionamiento\\index.html · [fila] .et_pb_row_3.et_pb_row { margin-top: 5%!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\que-es-kunak-air\\index.html · [fila] .et_pb_row_2.et_pb_row,.et_pb_row_4.et_pb_row { padding-bottom: 0.8%!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\que-es-kunak-air\\index.html · [fila] .et_pb_row_2.et_pb_row,.et_pb_row_4.et_pb_row { padding-bottom: 0.8% }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\que-puedes-hacer-con-kunak-air\\index.html · [fila] .et_pb_row_2.et_pb_row { padding-bottom: 0.8%!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\que-puedes-hacer-con-kunak-air\\index.html · [fila] .et_pb_row_2.et_pb_row { padding-bottom: 0.8% }",
+        "soporte\\centro-de-ayuda\\kunak-air-cloud\\articulos-de-ayuda\\que-es-kunak-air-cloud\\index.html · [fila] .et_pb_row_9.et_pb_row,.et_pb_row_10.et_pb_row { margin-top: 2%!important }",
+        "soporte\\centro-de-ayuda\\kunak-air-cloud\\articulos-de-ayuda\\que-es-kunak-air-cloud\\index.html · [fila] .et_pb_row_11.et_pb_row { margin-top: 5%!important }",
+        "soporte\\centro-de-ayuda\\kunak-air-cloud\\articulos-de-ayuda\\que-es-kunak-air-cloud\\index.html · [fila] .et_pb_row_12.et_pb_row { margin-top: 0.4%!important }"
+      ],
+      "porCanal": {
+        "style": 141
+      },
+      "muestraPct": [
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\como-garantiza-kunak-la-mejor-precision\\index.html · [fila] .et_pb_row_4.et_pb_row { margin-top: 2%!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\evidencias-de-funcionamiento\\index.html · [fila] .et_pb_row_3.et_pb_row { margin-top: 5%!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\que-es-kunak-air\\index.html · [fila] .et_pb_row_2.et_pb_row,.et_pb_row_4.et_pb_row { padding-bottom: 0.8%!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\que-es-kunak-air\\index.html · [fila] .et_pb_row_2.et_pb_row,.et_pb_row_4.et_pb_row { padding-bottom: 0.8% }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\que-puedes-hacer-con-kunak-air\\index.html · [fila] .et_pb_row_2.et_pb_row { padding-bottom: 0.8%!important }"
+      ],
+      "muestraBp": [
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\como-garantiza-kunak-la-mejor-precision\\index.html · @media only screen and (max-width:980px) · [modulo:text] .et_pb_text_5,.et_pb_text_9 { margin-bottom: 0px!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\como-garantiza-kunak-la-mejor-precision\\index.html · @media only screen and (max-width:980px) · [modulo:text] .et_pb_text_10,.et_pb_text_11,.et_pb_text_12,.et_pb_text_13 { margin-top: 0px!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\como-garantiza-kunak-la-mejor-precision\\index.html · @media only screen and (max-width:767px) · [modulo:text] .et_pb_text_5,.et_pb_text_9 { margin-bottom: 0px!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\como-garantiza-kunak-la-mejor-precision\\index.html · @media only screen and (max-width:767px) · [modulo:text] .et_pb_text_10,.et_pb_text_11,.et_pb_text_12,.et_pb_text_13 { margin-top: 0px!important }",
+        "centro-de-ayuda\\kunak-air\\articulos-de-ayuda\\evidencias-de-funcionamiento\\index.html · @media only screen and (max-width:980px) · [modulo:text] .et_pb_text_3,.et_pb_text_4,.et_pb_text_13,.et_pb_text_14 { margin-top: 0px!important }"
+      ]
+    }
+  },
+  "camposEnRiesgo": {
+    "porQue": "`type: \"number\"` no puede expresar un porcentaje: guardaria el px de 1440 y lo serviria a 390",
+    "campos": [
+      {
+        "grupo": "ritmoInline",
+        "campo": "mt",
+        "tipo": "number"
+      },
+      {
+        "grupo": "ritmoInline",
+        "campo": "pt",
+        "tipo": "number"
+      },
+      {
+        "grupo": "ritmoInline",
+        "campo": "pb",
+        "tipo": "number"
+      },
+      {
+        "grupo": "ritmoModulo",
+        "campo": "ritmo",
+        "tipo": "group"
+      },
+      {
+        "grupo": "ritmoModulo",
+        "campo": "mt",
+        "tipo": "number"
+      },
+      {
+        "grupo": "ritmoModulo",
+        "campo": "mb",
+        "tipo": "number"
+      },
+      {
+        "grupo": "ritmoModulo",
+        "campo": "pt",
+        "tipo": "number"
+      },
+      {
+        "grupo": "ritmoModulo",
+        "campo": "pb",
+        "tipo": "number"
+      },
+      {
+        "grupo": "ritmoModulo",
+        "campo": "pr",
+        "tipo": "number"
+      },
+      {
+        "grupo": "ritmoModulo",
+        "campo": "mbAlterno",
+        "tipo": "checkbox"
+      }
+    ],
+    "consumidores": {
+      "moduloBase": [
+        "bloques/contenido.ts",
+        "bloques/kb.ts",
+        "bloques/monografico.ts",
+        "bloques/paginas.ts"
+      ],
+      "ritmoModulo": [
+        "bloques/kb.ts",
+        "bloques/paginas.ts"
+      ],
+      "anchoPct": [
+        "bloques/kb.ts",
+        "bloques/paginas.ts",
+        "bloques/sector.ts"
+      ],
+      "ritmoInline": [
+        "bloques/monografico.ts"
+      ]
+    },
+    "laPrimitivaQueSiLoExpresa": {
+      "nombre": "medida()",
+      "existe": true,
+      "subcampos": [
+        "valor",
+        "movilValor"
+      ],
+      "expresaPct": true,
+      "expresaPuntoDeRuptura": true,
+      "laUsan": {
+        "bloques/kb.ts": [
+          "mt",
+          "mb",
+          "pb",
+          "pt",
+          "pb",
+          "mt",
+          "mb"
+        ],
+        "bloques/paginas.ts": [
+          "mt",
+          "mb",
+          "pb",
+          "pt",
+          "pb",
+          "mt",
+          "mb",
+          "pt",
+          "pb"
+        ]
+      }
+    }
+  },
+  "segundaPata": {
+    "anchoPct": {
+      "testA": "NO vale — se escribe en % igual que su default",
+      "testB": "SI — 70·80·90·100 en la misma pagina",
+      "sostenidoPor": "test B",
+      "enRiesgo": false
+    },
+    "lh": {
+      "testA": "NO vale — es tipografia, fuera del alcance",
+      "testB": "SI — 30.6·36·45 por modulo",
+      "sostenidoPor": "test B",
+      "enRiesgo": false
+    },
+    "flujo": {
+      "testA": "no se uso — sale de barrer los 8 sectores con tree-todos",
+      "testB": "SI — dos formas de seccion y dos de fila entre instancias",
+      "sostenidoPor": "barrido inter-instancia",
+      "enRiesgo": false
+    },
+    "ritmoInline/ritmoModulo (mt·mb·pt·pb)": {
+      "testA": "SI, y es el unico apoyo del NUMERO",
+      "testB": "parcial: varia entre modulos, pero eso da «es campo», NO da su UNIDAD",
+      "sostenidoPor": "test A para la unidad",
+      "enRiesgo": true
+    }
+  },
+  "veredicto": "valida"
+}

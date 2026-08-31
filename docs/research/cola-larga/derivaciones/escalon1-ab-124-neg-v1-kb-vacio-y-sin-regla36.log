@@ -1,0 +1,44 @@
+=== CONTROLES ===
+  OK  se recorrieron los 3 arquetipos declarados
+      LOTE-F3-5=4p · SECTOR+MONOGRAFICO=8p · ARTICULOS-KB=0p
+  RED todo arquetipo resolvio hojas (si no, su 0 es del INSTRUMENTO, no del original)
+      SIN NINGUNA HOJA: ARTICULOS-KB ⇒ su cero NO se puede leer
+  OK  `esOrdinal` DISCRIMINA (no casa con todo ni con nada)
+      LOTE-F3-5=295 · SECTOR+MONOGRAFICO=408 · ARTICULOS-KB=0
+  RED el esquema declara campos de ritmo y se hallaron sus consumidores
+      0 campos · consumidores de moduloBase, ritmoModulo, anchoPct, ritmoInline
+
+=== EL BARRIDO — reglas de RITMO con selector del EDITOR, por arquetipo ===
+  arquetipo             pag     hojas  reglas   FN-%  FN-bp  ct escrito
+  LOTE-F3-5               4     30/30     295     58     57  NO
+                       unidades={"px":175,"%":58,"relativa-al-font":46,"otra":16} canales={"style":279,"hoja":16}
+      %  monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5%!important }
+      %  monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5% }
+      %  monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_text_1 { padding-bottom: 2%!important }
+      %  monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2%!important }
+      %  monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2% }
+  SECTOR+MONOGRAFICO      8     40/56     408     49     64  SI
+                       unidades={"px":311,"relativa-al-font":8,"no-numerica":8,"%":49,"otra":32} canales={"style":376,"hoja":32}
+      %  calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-top: 6%!important }
+      %  calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-bottom: 6%!important }
+      %  calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-top: 10%!important }
+      %  calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-bottom: 15%!important }
+      %  calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-top: 10%!important }
+  ARTICULOS-KB            0       0/0       0      0      0  SI
+                       unidades={} canales={}
+
+=== (a) ¿LO VIEJO ESTA MAL? ===
+  arquetipos con content type YA ESCRITO: SECTOR+MONOGRAFICO · ARTICULOS-KB
+  de esos, con % de ritmo escrito por el editor: SECTOR+MONOGRAFICO (49)
+  ⇒ HAY campos en riesgo: `type:number` no expresa esos %
+
+=== (b) ¿LO NUEVO ESTA SOBRE-GENERALIZADO? ===
+  el LOTE: FN-% 58 · FN-bp 57
+  SECTOR+MONOGRAFICO   FN-%   49 · FN-bp   64
+  ARTICULOS-KB         FN-%    0 · FN-bp    0
+  ⇒ el hallazgo NO es solo del lote: aparece tambien en arquetipos ya escritos
+
+=== CAMPOS DE RITMO EN EL ESQUEMA (type:number no expresa %) ===
+  consumidores derivados: {"moduloBase":["bloques/contenido.ts","bloques/kb.ts","bloques/monografico.ts","bloques/paginas.ts"],"ritmoModulo":["bloques/kb.ts","bloques/paginas.ts"],"anchoPct":["bloques/kb.ts","bloques/paginas.ts","bloques/sector.ts"],"ritmoInline":["bloques/monografico.ts"]}
+
+VEREDICTO: NULA — control en rojo

@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "tanda": "124.ª · ESCALON 1",
+    "fecha": "2026-08-31",
+    "lado": "UNO — el CSS SERVIDO del original capturado (dos canales: `<style>` y hojas enlazadas)",
+    "unidad": "LA REGLA CSS (selector × propiedad), no el nodo ni la pagina",
+    "dosPreguntas": [
+      "(a) ¿lo VIEJO esta mal? — content types ya escritos con ritmo en `type:number`, que no expresa `%`",
+      "(b) ¿lo NUEVO esta sobre-generalizado? — ¿el hallazgo es del LOTE o de todos los `B-`?"
+    ],
+    "noContesta": [
+      "cuantos NODOS toca cada regla — eso lo mide paso0-nodos-124 con la cascada, y solo para el lote",
+      "si la regla GANA la cascada: aqui se cuenta que EXISTE, no que se aplique",
+      "la varianza INTER-instancia dentro de cada arquetipo"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "se recorrieron los 3 arquetipos declarados",
+      "ok": true,
+      "visto": "LOTE-F3-5=4p · SECTOR+MONOGRAFICO=8p · ARTICULOS-KB=0p"
+    },
+    {
+      "nombre": "todo arquetipo resolvio hojas (si no, su 0 es del INSTRUMENTO, no del original)",
+      "ok": false,
+      "visto": "SIN NINGUNA HOJA: ARTICULOS-KB ⇒ su cero NO se puede leer"
+    },
+    {
+      "nombre": "`esOrdinal` DISCRIMINA (no casa con todo ni con nada)",
+      "ok": true,
+      "visto": "LOTE-F3-5=295 · SECTOR+MONOGRAFICO=408 · ARTICULOS-KB=0"
+    },
+    {
+      "nombre": "el esquema declara campos de ritmo y se hallaron sus consumidores",
+      "ok": false,
+      "visto": "0 campos · consumidores de moduloBase, ritmoModulo, anchoPct, ritmoInline"
+    }
+  ],
+  "porArquetipo": {
+    "LOTE-F3-5": {
+      "contentTypeYaEscrito": false,
+      "paginas": 4,
+      "hojas": {
+        "enlazadas": 30,
+        "resueltas": 30,
+        "sinResolver": 0,
+        "paginasSinNingunaHoja": 0
+      },
+      "reglasDeRitmoDelEditor": 295,
+      "porUnidad": {
+        "px": 175,
+        "%": 58,
+        "relativa-al-font": 46,
+        "otra": 16
+      },
+      "FN_pct": 58,
+      "FN_bp": 57,
+      "porCanal": {
+        "style": 279,
+        "hoja": 16
+      },
+      "muestraPct": [
+        "monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5%!important }",
+        "monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_row_1.et_pb_row { padding-bottom: 5% }",
+        "monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_text_1 { padding-bottom: 2%!important }",
+        "monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2%!important }",
+        "monitor-calidad-aire.html · .et-db #et-boc .et-l .et_pb_row_2.et_pb_row { padding-bottom: 2% }"
+      ],
+      "muestraBp": [
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · .et-db #et-boc .et-l .et_pb_text_4 { margin-top: 0rem!important }",
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · .et-db #et-boc .et-l .et_pb_button_1_wrapper { margin-top: -3rem!important }",
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · .et-db #et-boc .et-l .et_pb_button_1_wrapper { margin-bottom: 1rem!important }",
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · .et-db #et-boc .et-l .et_pb_text_5 { margin-bottom: 0px!important }",
+        "monitor-calidad-aire.html · @media only screen and (max-width:980px) · .et-db #et-boc .et-l .et_pb_text_6,.et-db #et-boc .et-l .et_pb_text_7,.et-db #et-boc .et-l .et_pb_text_8,.et-db #et-boc  { margin-top: 0px!important }"
+      ]
+    },
+    "SECTOR+MONOGRAFICO": {
+      "contentTypeYaEscrito": true,
+      "paginas": 8,
+      "hojas": {
+        "enlazadas": 56,
+        "resueltas": 40,
+        "sinResolver": 16,
+        "paginasSinNingunaHoja": 0
+      },
+      "reglasDeRitmoDelEditor": 408,
+      "porUnidad": {
+        "px": 311,
+        "relativa-al-font": 8,
+        "no-numerica": 8,
+        "%": 49,
+        "otra": 32
+      },
+      "FN_pct": 49,
+      "FN_bp": 64,
+      "porCanal": {
+        "style": 376,
+        "hoja": 32
+      },
+      "muestraPct": [
+        "calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-top: 6%!important }",
+        "calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-bottom: 6%!important }",
+        "calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-top: 10%!important }",
+        "calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-bottom: 15%!important }",
+        "calidad-del-aire-en-las-ciudades.html · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-top: 10%!important }"
+      ],
+      "muestraBp": [
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:980px) · .et_pb_section_2.et_pb_section { padding-bottom: 50px }",
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:980px) · .et_pb_button_2_wrapper,.et_pb_button_3_wrapper { margin-top: -20px!important }",
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:767px) · .et_pb_section_2.et_pb_section { padding-bottom: 20px }",
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:767px) · .et_pb_button_2_wrapper,.et_pb_button_3_wrapper { margin-top: -20px!important }",
+        "calidad-del-aire-en-las-ciudades.html · @media only screen and (max-width:767px) · .et_pb_slider .et_pb_slide_0 .et_pb_slide_description,.et_pb_slider_fullwidth_off .et_pb_slide_0 .et_pb_slide_descriptio { padding-top: 10%!important }"
+      ]
+    },
+    "ARTICULOS-KB": {
+      "contentTypeYaEscrito": true,
+      "paginas": 0,
+      "hojas": {
+        "enlazadas": 0,
+        "resueltas": 0,
+        "sinResolver": 0,
+        "paginasSinNingunaHoja": 0
+      },
+      "reglasDeRitmoDelEditor": 0,
+      "porUnidad": {},
+      "FN_pct": 0,
+      "FN_bp": 0,
+      "porCanal": {},
+      "muestraPct": [],
+      "muestraBp": []
+    }
+  },
+  "camposEnRiesgo": {
+    "porQue": "`type: \"number\"` no puede expresar un porcentaje: guardaria el px de 1440 y lo serviria a 390",
+    "campos": [],
+    "consumidores": {
+      "moduloBase": [
+        "bloques/contenido.ts",
+        "bloques/kb.ts",
+        "bloques/monografico.ts",
+        "bloques/paginas.ts"
+      ],
+      "ritmoModulo": [
+        "bloques/kb.ts",
+        "bloques/paginas.ts"
+      ],
+      "anchoPct": [
+        "bloques/kb.ts",
+        "bloques/paginas.ts",
+        "bloques/sector.ts"
+      ],
+      "ritmoInline": [
+        "bloques/monografico.ts"
+      ]
+    }
+  },
+  "segundaPata": {
+    "anchoPct": {
+      "testA": "NO vale — se escribe en % igual que su default",
+      "testB": "SI — 70·80·90·100 en la misma pagina",
+      "sostenidoPor": "test B",
+      "enRiesgo": false
+    },
+    "lh": {
+      "testA": "NO vale — es tipografia, fuera del alcance",
+      "testB": "SI — 30.6·36·45 por modulo",
+      "sostenidoPor": "test B",
+      "enRiesgo": false
+    },
+    "flujo": {
+      "testA": "no se uso — sale de barrer los 8 sectores con tree-todos",
+      "testB": "SI — dos formas de seccion y dos de fila entre instancias",
+      "sostenidoPor": "barrido inter-instancia",
+      "enRiesgo": false
+    },
+    "ritmoInline/ritmoModulo (mt·mb·pt·pb)": {
+      "testA": "SI, y es el unico apoyo del NUMERO",
+      "testB": "parcial: varia entre modulos, pero eso da «es campo», NO da su UNIDAD",
+      "sostenidoPor": "test A para la unidad",
+      "enRiesgo": true
+    }
+  },
+  "veredicto": "NULA — control en rojo"
+}
