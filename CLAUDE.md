@@ -4082,6 +4082,36 @@ lo que sigue sin medir: `PENDIENTES-QA.md` §META-CANARIOS-DE-CARGA.
 > > *cuando exista otra medición del mismo objeto, cruzarla es obligatorio antes
 > > de creerse un recuento nuevo*. Aquí las dos mediciones eran del mismo
 > > documento y la vieja tenía razón.
+> >
+> > ⚠⚠ **Y LA MITAD QUE LE FALTA A ESA REGLA, MEDIDA EL 2026-08-30 (124.ª): LA
+> > FORMA COMPLETA TAMPOCO ES ÚNICA, PORQUE LA PROSA QUE LA DOCUMENTA LA CITA
+> > ENTERA.**
+> >
+> > La regla de arriba manda buscar `KV-nn · XXXXXX` en vez del prefijo. Bien —
+> > y **no basta**: la tabla que acabas de leer, cuatro párrafos más arriba,
+> > **escribe la forma completa dentro de una celda**. Al entrar la 124.ª el
+> > fichero cargado ya traía **2** ocurrencias de `KV-01 · 7HQMPD` —el marcador
+> > al 22.8 % y su documentación al 80.4 %— contra **1** de `KV-08 · 5ZMCFR`.
+> >
+> > > **Toda regla que diga «localiza X por su forma completa» se rompe en cuanto
+> > > alguien DOCUMENTA X, porque documentarlo es escribirlo.** El instrumento se
+> > > vuelve a auto-casar, un nivel más abajo.
+> >
+> > **Y este párrafo es su propia prueba:** escribir esta regla subió el recuento
+> > libre a **3 y 2**. Un instrumento cuya cuenta cambia porque alguien explica
+> > el instrumento no está midiendo el documento.
+> >
+> > **Lo que sí discrimina es la POSICIÓN ESTRUCTURAL, no la cadena:** el
+> > marcador está **solo en su línea** y entrecomillado; la cita vive dentro de
+> > una tabla o de un párrafo. Anclado a línea completa —`/^\`KV-nn · XXXXXX\`$/m`—
+> > da **1 y 1**, derivado hoy con las dos cuentas al lado. Se **publica el
+> > cardinal**: si sale distinto de 1, lo hallado incluye documentación.
+> >
+> > ⚠ Y el corolario general, que es el de siempre con el objeto cambiado: **un
+> > instrumento que vive DENTRO del documento que mide se contamina con lo que
+> > se escriba sobre él.** No es un defecto de este canario — es la propiedad de
+> > cualquier marcador auto-documentado, y por eso su búsqueda se ancla a la
+> > ESTRUCTURA y lleva su recuento al lado.
 
 **20 · UNA SONDA QUE RESETEA EL ENTORNO NO ES SÓLO UNA MEDIDA: ES UNA MUTACIÓN,
 Y SU VERDE NO DICE QUE EL ENTORNO QUEDE COMO ESTABA.** (2026-08-18)

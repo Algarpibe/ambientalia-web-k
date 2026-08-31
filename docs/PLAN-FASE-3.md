@@ -1405,8 +1405,10 @@ dos lados publicados sueltos. Evidencia del defecto:
   son campo y **cero** son plantilla;
 - **NO soporta escribir el content type todavía**, y ésa es la decisión
   explícita que el §hecho de esta fase admite. Faltan tres cosas con su cardinal:
-  el eje **`módulos` sin comparar** (ESCALÓN 1), los **420 nodos sin llave** de
-  esta derivación, y la **cascada** de los 4 con reserva. Escribirlo ahora sería
+  el eje **`módulos` sin comparar** (ESCALÓN 1), los **105 NODOS sin llave** de
+  esta derivación —el `420/420` de arriba está en pares nodo×eje y es correcto
+  EN ESA UNIDAD; escrito como «420 nodos» no lo era, corregido por la 124.ª— y
+  la **cascada** de los 4 con reserva, **que la 124.ª cerró**. Escribirlo ahora sería
   modelar sobre una sola instancia por arquetipo, que es el arreglo falso que
   esta fase tiene como incógnita declarada desde que se abrió.
 
@@ -1438,6 +1440,50 @@ mismo que haberlo omitido.
 > `ECONNREFUSED` contra Postgres, y esta tanda **no tocó `src/`** — sus cambios
 > son `scripts/qa/*.mjs`, `docs/` y `package.json`. §regla 21: antes de tocar
 > nada, se mira si el rojo es del instrumento, del objeto o de debajo.
+
+### 🔁 124.ª · EL REGISTRO DE F3-5 TRAS AUDITAR EL DISCRIMINADOR
+
+**Tanda OFFLINE. No toca `src/`, no escribe content type, no sale a la red.** Lo
+que audita es **el instrumento con el que la 123.ª decidió**, y el resultado
+cambia el titular sin cambiar la decisión.
+
+**LO QUE SIGUE EN PIE, y es lo que importa para la fase:**
+
+- **el LOTE está identificado** — PRODUCTO · CATÁLOGO · SOFTWARE ·
+  SOFTWARE-corta, los cuatro en régimen `B-` derivado;
+- **el comparador está construido y adjudicado con su negativo 3/3**, ANTES de
+  que exista el lado que mide (§regla 24);
+- **el content type NO se escribe, y sigue siendo una decisión fundada.** El
+  motivo se robustece: ahora hay **dos** modos medidos por los que un `number`
+  guardaría mal el ritmo del lote —`%` (41 casos) y punto de ruptura (45)—, y la
+  primitiva que los expresa (`medida()`) existe pero **estos bloques no la usan**.
+
+**LOS CUATRO HUECOS, con su estado tras esta tanda:**
+
+| hueco | estado |
+|---|---|
+| eje **`módulos` sin comparar** (no a 0) | **abierto, sin cambio.** Sigue en `·`, que es lo correcto |
+| **420 nodos sin llave** | ⚠ **corregido de UNIDAD, no cerrado.** Son **420 pares nodo×eje = 105 NODOS** (420 / 4 ejes). Y **24 de los 105 son rescatables** con la llave depurada de `f33-clases` — el `\b` no casa antes de `_`, así que `et_pb_button_1_wrapper` se queda fuera. §*cada denominador se escribe CON SU UNIDAD* |
+| la **cascada** de los 4 con reserva de `em` | ✅ **CERRADO.** Corrida sobre los 984 pares: **269 adjudicables · 66 ciegos** (56 `auto` · 10 `em`) · **0 sin declaración ganadora**. La reserva deja de ser una nota y pasa a ser un cardinal |
+| la **varianza inter-instancia** | **abierto, sin cambio.** Los 4 documentos son 4 arquetipos, no 4 instancias de uno |
+
+**Y LA CORRECCIÓN QUE OBLIGA A REESCRIBIR EL TITULAR DE LA 123.ª:**
+
+> El «**87 % al revés**» y el «**31 de 31 son campo, cero son plantilla**» salen
+> los dos de agregar con `.some()` a nivel de **CELDA**, y el test A se pronuncia
+> sobre **UN VALOR**. Medido por NODO contra la cascada: **216 de 269 · 80.3 %**,
+> y **11 de las 27** celdas «al revés» tienen **CERO** nodos mal clasificados.
+
+**Lo que eso NO cambia:** la decisión de no escribir el content type. Al
+contrario — la refuerza, porque los 53 fallos que quedan **tienen mecanismo** y
+dos de ellos (`FN-%` y `FN-bp`) son exactamente lo que un campo `number` no
+puede guardar. Regla y números en `CLAUDE.md` §Alcance; derivaciones en
+`docs/research/cola-larga/derivaciones/paso0-*-124.*`, `escalon1-ab-124.*` y
+`fn-bp-mecanismo-124.*`.
+
+**Verificado en esta tanda:** ningún `check` — **la tanda no toca `src/`**, así
+que construir no verificaría nada suyo y Docker sigue caído. Se dice en vez de
+correrlo por costumbre.
 
 ## El orden, y por qué
 

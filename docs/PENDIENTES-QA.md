@@ -25176,3 +25176,129 @@ la posición dio *«KV-08 a 54 751 chars del final»* porque `indexOf` casó la
 sobre un `indexOf` propio, y **lo delató contradecir una medida buena
 anterior** —«16 chars del final»—, que es el control que este repo exige
 cruzar antes de creerse un recuento nuevo.
+
+## ✅ 124.ª · EL TEST A HACIA ATRÁS — el 87 % era la UNIDAD, y lo que queda tiene MECANISMO (2026-08-30)
+
+**Tanda OFFLINE.** No sale a la red, no toca `src/`, no toca `lib.mjs`, no
+escribe ningún content type. Audita **el discriminador con el que la 123.ª
+decidió**, y el resultado cambia el titular sin cambiar la decisión.
+
+### PASO 0 · ¿qué parte del 87 % es ritmo?
+
+| pregunta | respuesta derivada |
+|---|---|
+| ¿qué familia son los 27 «al revés»? | **48 de 48 celdas son RITMO.** caja **0**, tipografía **0** — y ese 0 es **POR CONSTRUCCIÓN**: la 123.ª declaró su alcance y no metió ni un eje de esas dos familias. Su cero dice «no se miró», no «no hay» (§sondas 4), y lleva su propio control |
+| ¿cuántos habría clasificado bien el test A? | por **CELDA** 4 de 31 · **12.9 %** — por **NODO** 216 de 269 · **80.3 %** |
+| ¿lo explica la premisa callada? | **NO.** 17 celdas sin escribir, las 17 con el inicial, **0 solapan** con las 31 escritas. `SIN ESCRIBIR` se evalúa antes en la cascada, así que son **particiones disjuntas por construcción** — no dos lecturas del mismo dato |
+
+**⚠⚠ El diagnóstico, y es lo que decide la tanda: LA UNIDAD.** `seMueve` de la
+123.ª es `v1440.some((x,k) => x !== v390[k])` **sobre todos los nodos de la
+celda**, y el test A se pronuncia **sobre un valor**. Una celda que mezcle el
+default del constructor (responsive, se mueve) con el del editor (px, no se
+mueve) cae en «al revés» aunque el test A acierte en cada nodo. **20 de las 27
+celdas contienen un default publicado entre sus valores.**
+
+**EL CONTROL QUE LO SOSTIENE:** re-agregando los nodos de la 124.ª con el
+`.some()` de la 123.ª sale su 2×2 **exacto** —27 · 4 · 0 · 0 · 17, las cinco
+celdas al par—, con el mismo montaje y **60/60 hojas resueltas**. Así que la
+diferencia **es de nivel, no de instrumento**. Las tres predicciones
+pre-registradas cumplen: P1 80.1 % · P2 80.3 % · **P3 11 celdas separadoras**
+(«al revés» por celda y **cero** nodos mal clasificados dentro).
+
+**Los 53 fallos reales, con taxonomía —porque «53» es el nivel de arriba:**
+
+| n | clase | ¿estaba en CLAUDE.md? |
+|---|---|---|
+| **31** | `FN-%` · el editor escribió un **porcentaje** (`padding-bottom:5%` = 72 a 1440 y 19.5 a 390) | **sí, pero atribuido a la CAJA y la TIPOGRAFÍA** — no al ritmo |
+| **20** | `FN-bp` · el editor escribió **por punto de ruptura** | **NO** |
+| **2** | `FP-px` · la plantilla escribió un **px absoluto** (`.et_pb_promo{padding:40px}`) | parcial: documentado con `em`, aquí es `px` |
+
+**`FN-bp` no es inferencia:** `fn-bp-mecanismo-124` recorre el CSS servido y
+halla **42 reglas de ritmo con selector ORDINAL dentro de `@media`**, en los 4
+documentos, a 980 y a 767. Divi da pestañas escritorio/tablet/móvil en cada
+campo de espaciado, así que **un valor DEL EDITOR se mueve con el ancho** — que
+es la premisa central del test A, falsa por construcción ahí.
+
+**Y una segunda familia de CIEGOS que la 123.ª no podía ver: 66** — 56 `auto` +
+10 `em`. Un `margin-top: auto` **computa 0** y sale igual a los dos anchos sin
+que nadie lo tocara. La primera corrida los contaba como escritos: renombrada
+`paso0-nodos-124-SONDA-CONTABA-AUTO-COMO-ESCRITO.*` (§regla 5bis), 325
+adjudicables y 66.5 % contra los 269 y 80.3 % de hoy, **mismos 216 aciertos**.
+
+### ESCALÓN 1 · hacia atrás, y en las dos direcciones
+
+Un solo barrido del CSS servido de los tres arquetipos `B-`, contando reglas de
+ritmo con selector del editor por unidad y por `@media`:
+
+| arquetipo | pág | hojas | sujeto | ctx | FN-% | FN-bp | ct escrito |
+|---|---|---|---|---|---|---|---|
+| LOTE-F3-5 | 4 | 30/30 | 259 | 36 | **41** | **45** | NO |
+| SECTOR+MONOGRÁFICO | 8 | 40/56 | 328 | 80 | **1** | **32** | SÍ |
+| ARTICULOS-KB | 6 | 30/44 | 141 | 30 | **9** | **20** | SÍ |
+
+**(a) ¿lo viejo está mal? — NO, y hacía falta preguntar las dos mitades.**
+Preguntar sólo «¿qué campos son `number`?» encuentra el riesgo y **no encuentra
+la defensa**. Derivadas las dos: **`medida()` ya existe** y guarda
+`{valor, unidad, movilValor, unidadMovil}`, o sea que expresa **los dos** modos
+que rompen el test A. La usan `bloques/kb.ts` (7 ejes) y `bloques/paginas.ts`
+(9). Y encaja **al valor**: `CAMPOS_FILA_KB` describe `mt` como «`2 %·5 %·0.4 %`»
+y `pb` como «`0.8 %`», que son exactamente los 9 porcentajes que el barrido mide
+en KB. El único `%` de SECTOR es el `mb 3%` de imagen de EDAR, que `mbAlterno`
+expresa por diseño. Queda el hueco **ya fichado** §F3-1-RITMO-SIN-UNIDAD
+(`ritmoInline` 3 campos + `ritmoModulo` 5, todos `number`) — y lo que esta tanda
+aporta es que su ambigüedad **ya no es «latente, no realizada»**: está realizada
+**41 veces**, en el lote.
+
+**(b) ¿lo nuevo está sobre-generalizado? — uno sí y otro no, y por eso se
+escriben separados.** `FN-%` se concentra en el LOTE (41 · 9 · 1) pero **no es
+exclusivo**; `FN-bp` está en los tres (45 · 32 · 20) y **sí se generaliza a `B-`**.
+
+**Tres defectos del instrumento, los tres cazados por sus propios controles y
+renombrados con su defecto:** `readdirSync` plano dejaba KB en 0 páginas (sus
+html cuelgan de subdirectorios) · **§regla 36 sin aplicar** —contaba
+`.et_pb_slider .et_pb_slide_0 .et_pb_slide_description{padding-top:6%}` como
+ritmo del editor, y ahí el ordinal es **contexto**: separado, SECTOR pasa de
+**49 a 1**— · el fuente en **CRLF** contra un regex con `\n];`, «0 campos» con el
+esquema delante.
+
+**Y una corrección de aritmética que baja el riesgo sin pedir permiso:** un `%`
+de valor **cero** es inocuo —`0%` y `0px` computan igual a todo ancho—, así que
+va aparte con su cardinal (5 en el lote, 7 en KB).
+
+### ESCALÓN 2 · lo que CLAUDE.md dice después
+
+El alcance está **refutado**, así que la sección se reescribe con lo medido y su
+denominador, y el enunciado viejo **se borra en sus dos sitios** en vez de
+conciliarse con una nota. Entra la consecuencia operativa **delante** (*el test A
+no se aplica solo: se mira la unidad declarada y el `@media`, y si no, a la
+cascada*), la fila de `FN-bp` en la tabla de falsos negativos, y la regla nueva:
+
+> **UN TEST SE EVALÚA EN LA UNIDAD EN LA QUE SE PRONUNCIA, Y AGREGAR CON
+> `.some()` LO SUBE UN NIVEL SIN AVISAR.**
+
+### CIERRE · barrido de §regla 12, con su número
+
+**26 enunciados destacados** en el ámbito acotado (`PLAN-FASE-3.md` §F3-5 y la
+cola de `PENDIENTES-QA.md`) · **8 ya en CLAUDE.md** · **15 candidatos** por el
+filtro automático. Leídos con el discriminador real —*quítale la fecha y el
+nombre propio: ¿sigue diciendo qué hacer?*— **0 son regla general no cubierta**:
+son eventos con su número, o instancias de reglas que ya están escritas.
+
+**La que sí faltaba se encontró a mano, y es la mitad que le falta a §regla 19:**
+
+> **La FORMA COMPLETA de un marcador tampoco es única, porque la prosa que lo
+> documenta la cita entera.** `KV-01 · 7HQMPD` salía **2 veces** al entrar la
+> tanda —el marcador al 22.8 % y su documentación al 80.4 %—, y escribir esta
+> misma regla lo subió a **3**. Lo que discrimina es la **posición estructural**:
+> anclado a línea completa da **1 y 1**, derivado y congelado en
+> `derivaciones/kv-ancla-124.*`.
+
+### Lo que esta tanda NO hizo, y por qué
+
+- **ningún `check`** — no toca `src/`, así que construir no verificaría nada
+  suyo, y Docker sigue caído. Se dice en vez de correrlo por costumbre;
+- **ningún content type**: la razón de la 123.ª sigue en pie y sale **reforzada**;
+- **ningún campo en riesgo arreglado**: se fichan con su cardinal, como mandaba
+  el encargo;
+- **HOME sin tocar**, los 3 descifradores de Cloudflare sin capturar, los 4 ejes
+  de `clon-base` sin negativo sin abrir.

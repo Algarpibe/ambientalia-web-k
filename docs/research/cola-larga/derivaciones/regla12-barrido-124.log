@@ -1,0 +1,45 @@
+=== CONTROLES ===
+  OK  el barrido alcanzo su ambito (encontro enunciados con la forma)
+      26 enunciados destacados en 2 ficheros
+  OK  el cruce contra CLAUDE.md DISCRIMINA
+      ya en CLAUDE 8 · no 18
+
+=== CARDINALES (se escriben AUNQUE SEAN CERO) ===
+    26  enunciadosDestacados
+     8  yaEnClaudeMd
+     3  conFechaOTanda_eventos
+    15  candidatosARegla
+
+=== CANDIDATOS A REGLA (sin fecha, no cruzados en CLAUDE.md) ===
+  docs/PLAN-FASE-3.md
+    El transitivo a secas es un PLENO y no mide lo que dice.
+  docs/PLAN-FASE-3.md
+    El `w` a 0 es el control que sostiene todo lo demás.
+  docs/PLAN-FASE-3.md
+    Y los 31 «CAMPO» salen CON RESERVA, no como conclusión
+  docs/PLAN-FASE-3.md
+    El 1 es el que justifica que el PASO 0 exista
+  docs/PLAN-FASE-3.md
+    Sube al propietario con sus tres salidas
+  docs/PLAN-FASE-3.md
+    Los invariantes 3 y 4 no estaban fallando: estaban SIN EJERCITAR
+  docs/PLAN-FASE-3.md
+    Rutas 382, sin cambio: esta tanda siembra, NO emite.
+  docs/PLAN-FASE-3.md
+    Resultado: 383/383 IDÉNTICOS.
+  docs/PLAN-FASE-3.md
+    Diferencia simétrica 0 y 0 sobre 31
+  docs/PLAN-FASE-3.md
+    Y la corrección de alcance que sale de aquí, que sí toca al plan:
+  docs/PLAN-FASE-3.md
+    Tres aplazamientos, y éste no es como los dos anteriores.
+  docs/PLAN-FASE-3.md
+    Cuerpo del icono: 96 px en la piel B, 25 px en A y C
+  docs/PLAN-FASE-3.md
+    Para construir NO hace falta el porqué.
+  docs/PLAN-FASE-3.md
+    Lo único abierto es el TEXTO de la regla
+  docs/PLAN-FASE-3.md
+    Y lo que ya NO hace falta volver a medir:
+
+VEREDICTO: valida
