@@ -26177,7 +26177,15 @@ dice y sólo eso.
 **75 · Σ 2116.38**; **52 pares aparecen en LOS DOS anchos** —dos maquetaciones
 distintas, así que no pueden ser ruido—. Fuera del recuento y publicados aparte:
 18 filas SIN MARCADOR, 2 PARCIALES y **136 módulos del original no comparados**
-@1440 (133 @390). Congeladas:
+@1440 (133 @390).
+
+> ⚠ **El mensaje del commit `d2ea8d2` cita ahí «154 (149 @390)»: son los del
+> pase ANTERIOR al arreglo del `srcset`.** Los buenos son **136 y 133** — los de
+> este acta y los de la congelada. Se anota aquí y no se concilia en dos sitios,
+> porque un mensaje de commit es de los documentos que nadie relee y el acta sí
+> (§regla 12 al revés).
+
+Congeladas:
 `derivaciones/escalon3-linea-base-130.{json,log}`, y la primera —la del
 artefacto— renombrada con su defecto a
 `-SONDA-SRCSET-SIN-NEUTRALIZAR.{json,log}` en vez de borrada (§regla 5bis).
