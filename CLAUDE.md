@@ -762,8 +762,25 @@ original · solo clon-contra-clon · nunca. **Consúltalo antes de leer un verde
 como una verificación**, porque la diferencia entre «no hay defecto conocido» y
 «no se ha mirado» no está en ningún otro sitio del repo. Hoy (2026-08-02): el
 ancho del **cuerpo** ya no está a 0 —se midió, **164 de 181 filas**, y su unidad
-es la FILA, no la ruta— y el **comportamiento sigue a 0/31**, que es el hueco
-mayor que queda.
+es la FILA, no la ruta—.
+
+> ⚠ **Aquí decía además «el comportamiento sigue a 0/31, que es el hueco mayor
+> que queda». BORRADO el 2026-08-31 (129.ª), no anotado**, porque mientras las
+> dos lecturas estuvieran escritas cada lector elegía la suya — y ésta se leía
+> **cada sesión**. `comportamiento` **nombra TRES conjuntos y dos se escriben
+> `0/31`** (108.ª, `COBERTURA-MEDICION.md` §108.ª, con su tabla): el de esta
+> frase era **A · las rutas que el build emitía el 2026-08-01**, y **está
+> MUERTO** — esas 31 llevan a **31/31** desde el 2026-08-11. Vigentes: **B ·
+> las 31 rutas de F3-3** (`0/31`, cierto hoy) y **C · las que el build emite
+> hoy** (**37 de 413**). Derivado, no recordado:
+> `derivaciones/paso0-129.{mjs,json,log}` — la congelada resuelta por `mtime`
+> da `comport` **O en 37 rutas**, y las **4 de F3-5 entre ellas**.
+>
+> **Y la lección de ubicación es §regla 12 al revés:** la 108.ª dirimió esto
+> bien y lo escribió **en `COBERTURA-MEDICION.md`**, que se lee cuando alguien
+> lo abre; la lectura muerta vivía **aquí**, que se lee siempre. Un desempate
+> escrito sólo en el documento que nadie relee **pierde contra la frase que
+> está en el que sí**.
 
 > ⚠ **El recuento de sondas se DERIVA, no se cita de memoria** (§sondas 9): el
 > número exacto lo dice `npm run qa:lib` en su última línea (*«las N sondas

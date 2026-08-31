@@ -1,0 +1,767 @@
+{
+  "meta": {
+    "tanda": "129.ª",
+    "fecha": "2026-08-31",
+    "congeladaResuelta": {
+      "fichero": "cobertura-2026-08-30.json",
+      "mtime": "2026-08-30 23:44"
+    },
+    "offline": true,
+    "noContesta": "no mide un píxel; no abre navegador; no toca red, clon, Postgres ni construye"
+  },
+  "p1a": {
+    "lote": [
+      {
+        "ruta": "/monitor-calidad-aire",
+        "arquetipo": "PRODUCTO",
+        "enMatriz": true,
+        "modulos": null,
+        "offsets": null,
+        "comport": {
+          "nivel": "O",
+          "sonda": "comportamiento",
+          "fichero": "comportamiento-1440"
+        }
+      },
+      {
+        "ruta": "/accesorios",
+        "arquetipo": "CATÁLOGO",
+        "enMatriz": true,
+        "modulos": null,
+        "offsets": null,
+        "comport": {
+          "nivel": "O",
+          "sonda": "comportamiento",
+          "fichero": "comportamiento-1440"
+        }
+      },
+      {
+        "ruta": "/software-de-medicion-calidad-del-aire",
+        "arquetipo": "SOFTWARE",
+        "enMatriz": true,
+        "modulos": null,
+        "offsets": null,
+        "comport": {
+          "nivel": "O",
+          "sonda": "comportamiento",
+          "fichero": "comportamiento-1440"
+        }
+      },
+      {
+        "ruta": "/kunak-api",
+        "arquetipo": "SOFTWARE-corta",
+        "enMatriz": true,
+        "modulos": null,
+        "offsets": null,
+        "comport": {
+          "nivel": "O",
+          "sonda": "comportamiento",
+          "fichero": "comportamiento-1440"
+        }
+      }
+    ],
+    "modulosAPunto": 4,
+    "de": 4
+  },
+  "p1b": {
+    "porCongelada": {
+      "f33-cmp-1440": [
+        "/aviso-legal",
+        "/centro-de-ayuda/kunak-air",
+        "/centro-de-ayuda/kunak-air-cloud",
+        "/centro-de-ayuda/kunak-air/articulos-de-ayuda",
+        "/centro-de-ayuda/kunak-air/video-tutoriales",
+        "/contacto",
+        "/descarga-catalogo",
+        "/empresa",
+        "/empresa/premios-y-reconocimientos",
+        "/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
+        "/informe-tecnico-control-de-la-calidad-del-aire-en-industria",
+        "/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
+        "/informe-tecnico-control-de-la-calidad-del-aire-en-obras",
+        "/informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
+        "/newsletter",
+        "/politica-de-cookies",
+        "/politica-de-privacidad-y-de-proteccion-de-datos",
+        "/politica-de-seguridad-de-la-informacion",
+        "/productos",
+        "/recursos",
+        "/recursos/documentos-cientificos",
+        "/recursos/kunakpedia",
+        "/recursos/preguntas-frecuentes",
+        "/sectores",
+        "/sistema-interno-de-informacion",
+        "/soporte",
+        "/soporte/centro-de-ayuda",
+        "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda",
+        "/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales",
+        "/soporte/servicio-de-reparacion",
+        "/suscribete"
+      ],
+      "lh-cmp": [
+        "/blog",
+        "/blog/page/2",
+        "/blog/page/3",
+        "/blog/page/4",
+        "/blog/page/5",
+        "/blog/page/6",
+        "/blog/page/7",
+        "/blog/page/8",
+        "/casos-de-exito",
+        "/etiqueta/calidad-del-aire",
+        "/etiqueta/calidad-del-aire/page/2",
+        "/etiqueta/calidad-del-aire/page/3",
+        "/etiqueta/calidad-del-aire/page/4",
+        "/etiqueta/co2-es",
+        "/etiqueta/contaminantes-atmosfericos",
+        "/etiqueta/contaminantes-atmosfericos/page/2",
+        "/etiqueta/contaminantes-atmosfericos/page/3",
+        "/etiqueta/contaminantes-atmosfericos/page/4",
+        "/etiqueta/cov",
+        "/etiqueta/emisiones-industriales",
+        "/etiqueta/emisiones-industriales/page/2",
+        "/etiqueta/emisiones-industriales/page/3",
+        "/etiqueta/gases-de-efecto-invernadero",
+        "/etiqueta/h2s-es",
+        "/etiqueta/malos-olores",
+        "/etiqueta/monitorizacion-ambiental",
+        "/etiqueta/monitorizacion-ambiental/page/10",
+        "/etiqueta/monitorizacion-ambiental/page/11",
+        "/etiqueta/monitorizacion-ambiental/page/2",
+        "/etiqueta/monitorizacion-ambiental/page/3",
+        "/etiqueta/monitorizacion-ambiental/page/4",
+        "/etiqueta/monitorizacion-ambiental/page/5",
+        "/etiqueta/monitorizacion-ambiental/page/6",
+        "/etiqueta/monitorizacion-ambiental/page/7",
+        "/etiqueta/monitorizacion-ambiental/page/8",
+        "/etiqueta/monitorizacion-ambiental/page/9",
+        "/etiqueta/normativa-de-calidad-del-aire",
+        "/etiqueta/normativa-de-calidad-del-aire/page/2",
+        "/etiqueta/normativa-de-calidad-del-aire/page/3",
+        "/etiqueta/particulas-en-suspension",
+        "/etiqueta/particulas-en-suspension/page/2",
+        "/etiqueta/sensor-de-calidad-del-aire",
+        "/etiqueta/sensor-de-calidad-del-aire/page/2",
+        "/etiqueta/sensor-de-calidad-del-aire/page/3",
+        "/etiqueta/sensor-de-calidad-del-aire/page/4",
+        "/glosario",
+        "/glosario/page/2",
+        "/glosario/page/3",
+        "/glosario/page/4",
+        "/glosario/page/5",
+        "/glosario/page/6",
+        "/glosario/page/7",
+        "/glosario/page/8",
+        "/recursos/articulos",
+        "/recursos/articulos/contaminacion-en-la-construccion",
+        "/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+        "/recursos/articulos/contaminacion-minera",
+        "/recursos/articulos/contaminacion-urbana",
+        "/recursos/articulos/contaminacion-urbana/page/2",
+        "/recursos/articulos/contaminacion-y-salud",
+        "/recursos/articulos/contaminacion-y-salud/page/2",
+        "/recursos/articulos/industria-y-contaminacion-por-olores",
+        "/recursos/articulos/industria-y-contaminacion-por-olores/page/2",
+        "/recursos/articulos/page/2",
+        "/recursos/articulos/page/3",
+        "/recursos/articulos/page/4",
+        "/recursos/articulos/page/5",
+        "/recursos/articulos/page/6",
+        "/recursos/articulos/petroleo-y-gas",
+        "/recursos/articulos/productos-kunak",
+        "/recursos/seminarios-web",
+        "/scientific-category/articulos-cientificos-y-estudios",
+        "/scientific-category/articulos-cientificos-y-estudios/page/2",
+        "/scientific-category/articulos-cientificos-y-estudios/page/3",
+        "/scientific-category/articulos-tecnicos",
+        "/scientific-category/evaluaciones-independientes",
+        "/scientific-category/evaluaciones-independientes/page/2"
+      ],
+      "mono-cmp": [
+        "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+        "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas"
+      ]
+    },
+    "barrido": {
+      "sondas": 151,
+      "A": 112,
+      "Bl": 33,
+      "Bd": 20,
+      "C": 18,
+      "conjuncionLaxo": [
+        {
+          "sonda": "cobertura.mjs",
+          "dosLados": true,
+          "laxo": true,
+          "duro": false,
+          "alcanza": [
+            "/monitor-calidad-aire",
+            "/accesorios",
+            "/software-de-medicion-calidad-del-aire",
+            "/kunak-api"
+          ]
+        },
+        {
+          "sonda": "d4-pie.mjs",
+          "dosLados": true,
+          "laxo": true,
+          "duro": true,
+          "alcanza": [
+            "/monitor-calidad-aire",
+            "/accesorios",
+            "/kunak-api"
+          ]
+        },
+        {
+          "sonda": "productos-cmp.mjs",
+          "dosLados": true,
+          "laxo": true,
+          "duro": true,
+          "alcanza": [
+            "/monitor-calidad-aire",
+            "/accesorios",
+            "/software-de-medicion-calidad-del-aire",
+            "/kunak-api"
+          ]
+        }
+      ],
+      "conjuncionEndurecida": [
+        {
+          "sonda": "d4-pie.mjs",
+          "dosLados": true,
+          "laxo": true,
+          "duro": true,
+          "alcanza": [
+            "/monitor-calidad-aire",
+            "/accesorios",
+            "/kunak-api"
+          ]
+        },
+        {
+          "sonda": "productos-cmp.mjs",
+          "dosLados": true,
+          "laxo": true,
+          "duro": true,
+          "alcanza": [
+            "/monitor-calidad-aire",
+            "/accesorios",
+            "/software-de-medicion-calidad-del-aire",
+            "/kunak-api"
+          ]
+        }
+      ]
+    }
+  },
+  "p1c": {
+    "veredicto": "B · EXISTE Y SU EJE ESTÁ CIEGO — construido y adjudicado, declara `modulos` SIN COMPARAR con su motivo y su cardinal",
+    "acreditaModulos": false,
+    "existeComparador": true,
+    "comparador": "productos-cmp",
+    "ejeCiego": "el clon no emite marcador de MODULO — SIN COMPARAR, ver modulosSinComparar por ruta",
+    "negativo": {
+      "fichero": true,
+      "congeladasDeNegativo": [
+        "productos-cmp-1440-neg-inyecta-delta.json",
+        "productos-cmp-1440-neg-mismo-lado.json"
+      ]
+    },
+    "porRuta": [
+      {
+        "ruta": "/monitor-calidad-aire",
+        "filas": {
+          "orig": 7,
+          "clon": 6,
+          "origEnElDOM": 9,
+          "clonEnElDOM": 6
+        },
+        "modulosOrig": 83,
+        "clonHijosDirectos": 12,
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 14,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 28,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 35,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clonHijosDirectos": 2
+          }
+        ]
+      },
+      {
+        "ruta": "/accesorios",
+        "filas": {
+          "orig": 9,
+          "clon": 8,
+          "origEnElDOM": 9,
+          "clonEnElDOM": 8
+        },
+        "modulosOrig": 33,
+        "clonHijosDirectos": 16,
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 5,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 2,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 2,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 7,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 5,
+            "orig": 11,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 6,
+            "orig": 4,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 7,
+            "orig": 1,
+            "clonHijosDirectos": 2
+          }
+        ]
+      },
+      {
+        "ruta": "/software-de-medicion-calidad-del-aire",
+        "filas": {
+          "orig": 7,
+          "clon": 6,
+          "origEnElDOM": 8,
+          "clonEnElDOM": 6
+        },
+        "modulosOrig": 66,
+        "clonHijosDirectos": 12,
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 7,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 19,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 34,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clonHijosDirectos": 2
+          }
+        ]
+      },
+      {
+        "ruta": "/kunak-api",
+        "filas": {
+          "orig": 7,
+          "clon": 6,
+          "origEnElDOM": 7,
+          "clonEnElDOM": 6
+        },
+        "modulosOrig": 33,
+        "clonHijosDirectos": 12,
+        "porFila": [
+          {
+            "fila": 0,
+            "orig": 1,
+            "clonHijosDirectos": 1
+          },
+          {
+            "fila": 1,
+            "orig": 6,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 2,
+            "orig": 12,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 3,
+            "orig": 9,
+            "clonHijosDirectos": 2
+          },
+          {
+            "fila": 4,
+            "orig": 4,
+            "clonHijosDirectos": 3
+          },
+          {
+            "fila": 5,
+            "orig": 1,
+            "clonHijosDirectos": 2
+          }
+        ]
+      }
+    ]
+  },
+  "p2": {
+    "matrizO": 37,
+    "recuento": {
+      "eje": "comport",
+      "nombre": "comportamiento",
+      "O": 37,
+      "c": 0,
+      "nunca": 389,
+      "sondas": [
+        "comportamiento"
+      ]
+    },
+    "loteConO": [
+      "/monitor-calidad-aire",
+      "/accesorios",
+      "/software-de-medicion-calidad-del-aire",
+      "/kunak-api"
+    ],
+    "ocurrencias0de31": [
+      {
+        "fichero": "CLAUDE.md",
+        "linea": 765,
+        "texto": "es la FILA, no la ruta— y el **comportamiento sigue a 0/31**, que es el hueco"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 3213,
+        "texto": "| `div.et_pb_video_box` | 30 | **SIN CAJA** | — | ⛔ **no medible** — desplegables cerrados, exige INTERACCIÓN (eje a 0/31) |"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 3351,
+        "texto": "> | geometría de los **SIN CAJA** | **36 de 313** (`video` 30 · `text` 5 · `button` 1) | **INTERACCIÓN** — abrir el desplegable (eje `comportamiento`,"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 3400,
+        "texto": "| **2 · la RUTA (`centro-de-ayuda` ⇒ BT)** | 30/31 | ❌ **REFUTADO**, y por las dos direcciones |"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 3510,
+        "texto": "| `video-pagina` | **30** | **0** | **NO MEDIBLE**: las 30 viven en desplegables **cerrados**. `getComputedStyle` sobre un elemento sin caja no resuel"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 4571,
+        "texto": "| `video` | 30 inst · **0 con caja** | desplegables cerrados | **INTERACCIÓN** — eje `comportamiento`, **0/31** |"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 4880,
+        "texto": "| `toggle` | **63 × 10** — uniforme: los diez **CERRADOS** | 254.16×5 · 131.78×2 · 223.56×2 · 101.19×1 | ⛔ **el clon los pinta ABIERTOS**. Es el eje C"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 5170,
+        "texto": "mensaje exacto de la 92.ª: 30/31, exit 3. Es §regla 21, la vuelta."
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 11536,
+        "texto": "`0/31` el 08-10 por la mañana · `13/37` esa tarde · `18/37` al cerrar"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 11603,
+        "texto": "## ✅ P-LH-C6 · el eje COMPORTAMIENTO deja de estar vacío — 0/31 → 13/37 (2026-08-10) → 18/37 → **37/37** (2026-08-11, §LH-C6-EJE-COMPLETO)"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 11632,
+        "texto": "entero saldría verde midiendo nada — que es exactamente cómo llevaba 0/31 sin"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 17976,
+        "texto": "ese eje está a **0/31** en `COBERTURA-MEDICION.md` — nunca se ha comparado—, así"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 18605,
+        "texto": "**0/31 de verdad**."
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 20124,
+        "texto": "suelo es del build; si salen 0/31, lo de hoy sí era la edición y esta ficha se"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 21918,
+        "texto": "| hoy | «el CUERPO no lo conserva: hay que reponerlo» | **0/311** |"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 21920,
+        "texto": "### El `0/311` está MEDIDO como artefacto de T10, no supuesto"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 21933,
+        "texto": "coincide al par con el `0/311` de la sonda.**"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 22809,
+        "texto": "Medirla necesita el eje **COMPORTAMIENTO**, que está a **0/31**;"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 23253,
+        "texto": "### 0 · PASO 0 — `comportamiento` nombra TRES conjuntos, y DOS se escriben `0/31`"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 23255,
+        "texto": "El parte de la 107.ª dice `0/31`; `COBERTURA-MEDICION.md` publica `37`. Derivado"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 23260,
+        "texto": "| **A** | las rutas que el build emitía el **2026-08-01** | RUTA EMITIDA (entonces) | **0/31** | ❌ **muerto** — hoy esas 31 están a **31/31** |"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 23261,
+        "texto": "| **B** | las **31 rutas de F3-3** (cola larga) | RUTA DE F3-3 | **0/31** | ✅ cierto HOY |"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 23396,
+        "texto": "> alguien pasa el ratón**. Es el eje COMPORTAMIENTO, que sigue a **0/31**. Una"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 24563,
+        "texto": "deja rastro en el HTML servido, y ese eje está a **0/31** en este repo. **Un"
+      },
+      {
+        "fichero": "PENDIENTES-QA.md",
+        "linea": 24640,
+        "texto": "| el eje **COMPORTAMIENTO** | **0/31** en el repo | interacción, no HTML servido |"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 583,
+        "texto": "> ⚠ **Lo que esto NO mueve:** el eje de **comportamiento sigue a 0/31** *(unidad"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 724,
+        "texto": "dos días: `0/31` → `13/37` → `18/37` → **`37/37`**."
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 745,
+        "texto": "## ✅✅ Cómo llegó hasta aquí — 0/31 → **13/37** (2026-08-10, `P-LH-C6`) → **18/37** (2026-08-11)"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 768,
+        "texto": "> exactamente cómo se llega a 0/31 sin que nadie lo note."
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 1100,
+        "texto": "| 7 | **existencia del recurso servido** | **0/31** — NOMBRADO 2026-08-05, ver abajo | sonda nueva + su negativo |"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 1162,
+        "texto": "contra el original en las 31 rutas y los dos anchos.** El eje pasa de **0/31 de"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 1412,
+        "texto": "## ⚠⚠ 2026-08-25 · 108.ª — **`comportamiento` NOMBRA TRES CONJUNTOS, Y DOS DE ELLOS SE ESCRIBEN `0/31`**"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 1414,
+        "texto": "Este documento publica **37**; el parte de la 107.ª escribe **`0/31`**. Las dos"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 1424,
+        "texto": "| **A** | las rutas que el build emitía el **2026-08-01** | RUTA EMITIDA *(entonces)* | **0 / 31** | ❌ **MUERTO** — hoy esas 31 están a **31/31** |"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 1425,
+        "texto": "| **B** | las **31 rutas de F3-3** (cola larga) | RUTA DE F3-3 | **0 / 31** | ✅ **cierto HOY** |"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 1435,
+        "texto": "**Lo único refutado es leer el `0/31` de A como vigente.** Cuando el registro"
+      },
+      {
+        "fichero": "research/COBERTURA-MEDICION.md",
+        "linea": 1436,
+        "texto": "diga *«el eje comportamiento a 0/31»* a propósito de la cola larga —por ejemplo"
+      },
+      {
+        "fichero": "PLAN-FASE-3.md",
+        "linea": 649,
+        "texto": "> **0/31** en `COBERTURA-MEDICION.md` y es el hueco mayor del proyecto."
+      },
+      {
+        "fichero": "PLAN-FASE-3.md",
+        "linea": 654,
+        "texto": "> `docs/research/listados-hubs/BEHAVIORS.md`. El eje pasa de **0/31 a 13/37**."
+      },
+      {
+        "fichero": "PLAN-FASE-3.md",
+        "linea": 2129,
+        "texto": "- ~~**No arregla el eje `comportamiento` 0/31.**~~ **Lo mordió el 2026-08-10 y"
+      },
+      {
+        "fichero": "PLAN-FASE-3.md",
+        "linea": 2130,
+        "texto": "el mordisco fue mayor de lo previsto: 0/31 → 13/37 con sonda de dos lados y su"
+      },
+      {
+        "fichero": "PLAN-FASE-3.md",
+        "linea": 2263,
+        "texto": "> | la RUTA (`centro-de-ayuda` ⇒ BT) | 30/31 | ❌ **REFUTADO** por 2 separadoras, una por dirección |"
+      },
+      {
+        "fichero": "ESQUEMA-CMS.md",
+        "linea": 4333,
+        "texto": "| **`video`** | 30 inst · **0 con caja** | viven en desplegables **cerrados** | medir con **INTERACCIÓN** — eje `comportamiento`, hoy **0/31** |"
+      },
+      {
+        "fichero": "ESQUEMA-CMS.md",
+        "linea": 4590,
+        "texto": "| la **RUTA** (`centro-de-ayuda` ⇒ BT) | 30/31 | ❌ **REFUTADO** |"
+      },
+      {
+        "fichero": "ESQUEMA-CMS.md",
+        "linea": 4685,
+        "texto": "R3 (cablear la ruta) acierta **30/31**, y **30 de 31 no es «casi bien»: es"
+      },
+      {
+        "fichero": "ESQUEMA-CMS.md",
+        "linea": 4920,
+        "texto": "| ✅ **CMS-5 · ¿CÓMO SABE EL CLON QUÉ CASCARÓN LLEVA CADA PÁGINA DE LA COLA LARGA?** — **CERRADA el 2026-08-24 (100.ª): el propietario tomó `R1`, el CA"
+      }
+    ],
+    "porFichero": {
+      "CLAUDE.md": [
+        765
+      ],
+      "PENDIENTES-QA.md": [
+        3213,
+        3351,
+        3400,
+        3510,
+        4571,
+        4880,
+        5170,
+        11536,
+        11603,
+        11632,
+        17976,
+        18605,
+        20124,
+        21918,
+        21920,
+        21933,
+        22809,
+        23253,
+        23255,
+        23260,
+        23261,
+        23396,
+        24563,
+        24640
+      ],
+      "research/COBERTURA-MEDICION.md": [
+        583,
+        724,
+        745,
+        768,
+        1100,
+        1162,
+        1412,
+        1414,
+        1424,
+        1425,
+        1435,
+        1436
+      ],
+      "PLAN-FASE-3.md": [
+        649,
+        654,
+        2129,
+        2130,
+        2263
+      ],
+      "ESQUEMA-CMS.md": [
+        4333,
+        4590,
+        4685,
+        4920
+      ]
+    },
+    "documentosNoResueltos": []
+  },
+  "controles": {
+    "fallos": [],
+    "verde": true
+  }
+}

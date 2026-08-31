@@ -1,0 +1,92 @@
+══════════════════════════════════════════════════════════════════════════════
+129.ª · PASO 0 — las dos preguntas, en las dos direcciones
+══════════════════════════════════════════════════════════════════════════════
+
+── P1a · el eje `módulos` en las 4 rutas del lote ──────────────────────
+   congelada resuelta por mtime: cobertura-2026-08-30.json  (mtime 2026-08-30 23:44)
+   meta: fecha=2026-08-30 · rutas=426 · sabotaje=false
+
+   | ruta | arquetipo | módulos | offsets | comport |
+   |---|---|---|---|---|
+   | `/monitor-calidad-aire` | PRODUCTO | · | · | O (comportamiento) |
+   | `/accesorios` | CATÁLOGO | · | · | O (comportamiento) |
+   | `/software-de-medicion-calidad-del-aire` | SOFTWARE | · | · | O (comportamiento) |
+   | `/kunak-api` | SOFTWARE-corta | · | · | O (comportamiento) |
+
+   → `módulos` a `·`: 4 de 4 rutas del lote
+
+── controles de P1a ────────────────────────────────────────────────────
+   ✓ C1 · resolutor · eligió `cobertura-2026-08-30.json`, ni el canónico (2026-08-17) ni un artefacto
+   ✓ C2 · el eje no está muerto · `modulos` acreditado en 110 de 426 rutas del repo · sondas: f33-cmp-1440 · lh-cmp · mono-cmp
+   ✓ C3 · las 4 casan · 4 de 4 rutas del lote presentes en la matriz
+
+── P1b · ¿está sobre-generalizado? ¿hay ya comparador de módulos? ──────
+
+   (i) por la CONGELADA — qué sondas acreditan `modulos` y sobre qué rutas
+     · lh-cmp: 77 rutas — del lote: NINGUNA
+     · f33-cmp-1440: 31 rutas — del lote: NINGUNA
+     · mono-cmp: 2 rutas — del lote: NINGUNA
+
+   (ii) por el BARRIDO de `scripts/qa/` — tres condiciones, cada una con su n
+     A  · carga el ORIGINAL (dos lados) ............... 112 de 151
+     Bl · NOMBRA el módulo (laxo) ..................... 33 de 151
+     Bd · SELECCIONA el módulo en el DOM (endurecido) . 20 de 151
+     C  · alcanza ≥1 ruta del lote ................... 18 de 151
+
+     A∧Bl∧C · candidatas (LAXO) ...... 3 de 151
+         → cobertura.mjs — alcanza 4/4
+         → d4-pie.mjs — alcanza 3/4
+         → productos-cmp.mjs — alcanza 4/4
+     A∧Bd∧C · candidatas (ENDURECIDO)  2 de 151
+         → d4-pie.mjs — alcanza 3/4
+         → productos-cmp.mjs — alcanza 4/4
+
+── controles de P1b ────────────────────────────────────────────────────
+   ✓ C4 · el barrido no está muerto · A=112 · Bd=20 · C=18, ninguna condición a cero
+   ✓ C4b · el barrido no es un pleno · A=112/151 · Bd=20/151 · C=18/151, ninguna casa en todas
+   ✓ C4c · el endurecido SEPARA · laxo 3 → duro 2: descarta cobertura.mjs
+
+── P1c · la tercera salida: ¿el comparador existe con el eje CIEGO? ─────
+   productos-cmp-1440.json (mtime 2026-08-30 23:29) · acredita=true
+   productos-cmp-390.json (mtime 2026-08-30 23:30) · acredita=true
+   resumen: pares=4 · ejesComparados=130 · distintos=43
+   ejesExcluidos.modulos: el clon no emite marcador de MODULO — SIN COMPARAR, ver modulosSinComparar por ruta
+
+   el cardinal del eje ciego, POR FILA y con sus dos lados (§regla 14):
+   | ruta | filas orig→clon | módulos orig (por fila) | lo que el clon expone |
+   |---|---|---|---|
+   | `/monitor-calidad-aire` | 7→6 | 1·14·28·35·4·1 (Σ83) | 1·2·2·2·3·2 (Σ12) |
+   | `/accesorios` | 9→8 | 1·5·2·2·7·11·4·1 (Σ33) | 1·2·2·2·2·2·3·2 (Σ16) |
+   | `/software-de-medicion-calidad-del-aire` | 7→6 | 1·7·19·34·4·1 (Σ66) | 1·2·2·2·3·2 (Σ12) |
+   | `/kunak-api` | 7→6 | 1·6·12·9·4·1 (Σ33) | 1·2·2·2·3·2 (Σ12) |
+
+   negativo: fichero `productos-cmp.neg.mjs` EXISTE · congeladas de negativo: 2 — productos-cmp-1440-neg-inyecta-delta.json, productos-cmp-1440-neg-mismo-lado.json
+
+── P2 · las dos lecturas de `comportamiento` ───────────────────────────
+   lectura A · la MATRIZ (congelada cobertura-2026-08-30.json):
+     · `comport` = O en 37 de 426 rutas
+     · recuento propio de la sonda: O=37 · c=0 · nunca=389 · sondas: comportamiento
+     · de las 4 del lote: 4 con O — /monitor-calidad-aire, /accesorios, /software-de-medicion-calidad-del-aire, /kunak-api
+
+   lectura B · el «0/31» — dónde vive HOY:
+     · CLAUDE.md: 1 ocurrencias — líneas 765
+     · PENDIENTES-QA.md: 24 ocurrencias — líneas 3213, 3351, 3400, 3510, 4571, 4880, 5170, 11536, 11603, 11632, 17976, 18605 …
+     · research/COBERTURA-MEDICION.md: 12 ocurrencias — líneas 583, 724, 745, 768, 1100, 1162, 1412, 1414, 1424, 1425, 1435, 1436
+     · PLAN-FASE-3.md: 5 ocurrencias — líneas 649, 654, 2129, 2130, 2263
+     · ESQUEMA-CMS.md: 4 ocurrencias — líneas 4333, 4590, 4685, 4920
+
+── controles de P2 ─────────────────────────────────────────────────────
+   ✓ C5 · el barrido RESUELVE sus documentos · 6 de 6 resueltos
+   ✓ C5b · hay dos lecturas que dirimir · 46 ocurrencias del «0/31» en 5 ficheros
+   ✓ C5c · la matriz no está muerta en ese eje · `comport` acreditado en 37 rutas — el O no es del instrumento
+
+══════════════════════════════════════════════════════════════════════════════
+VEREDICTO
+
+  P1a · `módulos` a `·` en 4 de 4 rutas del lote.
+  P1b · barrido: 3 candidatas con el predicado LAXO · 2 con el ENDURECIDO.
+  P1c · B · EXISTE Y SU EJE ESTÁ CIEGO — construido y adjudicado, declara `modulos` SIN COMPARAR con su motivo y su cardinal
+  P2  · matriz dice O en 4/4 · el «0/31» vive en 46 sitios de 5 ficheros.
+
+  controles: todos en verde
+══════════════════════════════════════════════════════════════════════════════
