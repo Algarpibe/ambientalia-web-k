@@ -1,0 +1,36 @@
+=== CONTROLES ===
+  OK  las DOS vías de tipo (ordinal vs clase desnuda) DISCREPAN — o el arreglo de la v1 no habría cambiado nada
+      et_pb_button_module_wrapper → et_pb_button ×24 · et_pb_with_border → et_pb_text ×3 · et_pb_slider → et_pb_fullwidth_slider ×3 · et_pb_promo → et_pb_cta ×1 · et_pb_with_border → et_pb_slider ×1
+  OK  la vía CLASE-DESNUDA se usa donde el constructor no numeró, y se publica con su cardinal
+      1 módulos de primer nivel sin ordinal (§escalón 2 de la 125.ª: lo que el editor no colocó)
+  OK  CRUCE con el criterio del PASO 0: el cardinal de primer nivel REPRODUCE en 4/4
+      PRODUCTO 90=90 · CATALOGO 35=35 · SOFTWARE 70=70 · SOFTWARE-corta 36=36
+  OK  el censo de TIPOS discrimina (ni cero ni un solo tipo)
+      11 tipos distintos
+  OK  los bloques de `paginas` se DERIVAN de su fuente (no se recuerdan)
+      10: texto-pagina · imagen-pagina · boton-pagina · codigo · toggle · video-pagina · slider-completo · slider · mapa · icono
+  OK  el cruce DISCRIMINA: ni el lote cabe entero ni estrena todo (si no, no habría decisión que tomar)
+      expresados=8 tipos · estrena=3 tipos
+  OK  el reparto es una PARTICIÓN (ningún tipo en dos cubos ni fuera)
+      8+3=11 tipos · 228+3=231 instancias
+
+=== TIPOS DE MÓDULO DEL LOTE (primer nivel) ===
+  tipo                        inst  docs                              ¿lo expresa `paginas`?
+  et_pb_text                  100  CATALOGO,PRODUCTO,SOFTWARE,SOFTWARE-corta SI (texto-pagina)
+  et_pb_blurb                  70  PRODUCTO,SOFTWARE,SOFTWARE-corta SI (icono)
+  et_pb_image                  27  CATALOGO,PRODUCTO,SOFTWARE,SOFTWARE-corta SI (imagen-pagina)
+  et_pb_button                 24  CATALOGO,PRODUCTO,SOFTWARE,SOFTWARE-corta SI (boton-pagina)
+  et_pb_fullwidth_slider        3  PRODUCTO,SOFTWARE,SOFTWARE-corta SI (slider-completo)
+  et_pb_video                   2  PRODUCTO,SOFTWARE                SI (video-pagina)
+  et_pb_cta                     1  PRODUCTO                         NO — lo ESTRENA
+  dvmd_table_maker              1  PRODUCTO                         NO — lo ESTRENA
+  et_pb_gallery                 1  PRODUCTO                         NO — lo ESTRENA
+  et_pb_code                    1  PRODUCTO                         SI (codigo)
+  et_pb_slider                  1  SOFTWARE                         SI (slider)
+
+  11 tipos · 228 instancias expresadas · 3 instancias que estrenan
+  cobertura: 72.7 % de los tipos · 98.7 % de las instancias
+
+⇒ REUTILIZAR `paginas`: la unión ya expresa casi todas las instancias del lote.
+
+✓ evaluados 4/4 documentos · controles 7/7

@@ -6556,3 +6556,167 @@ incluido**, cada uno cayendo por su motivo:
 > ritmo, y `vars()` no emite `--*-767`: **0 consumidores**. La sonda lo publica
 > en cada corrida y **no lo cuenta como fallo** — es un hecho, no un rojo.
 > Cablearlo es trabajo de otra tanda y lleva su NO-OP por delante.
+
+---
+
+# ✅ §2o · `CMS-F35` — **EL CONTENT TYPE DEL LOTE F3-5**, escrito con sus SIN PROBAR delante (126.ª, 2026-08-31)
+
+**Colección `arquetipos`**, registrada en `COLECCIONES`, con migración
+`20260831_015813_f3_5_arquetipos` y su reversa probada. Fuente:
+`packages/cms-config/src/{bloques,colecciones}/arquetipos.ts`.
+
+## §2o.1 · La membresía, y `/kunak-api` no estrena arquetipo
+
+| ruta | discriminante |
+|---|---|
+| `/monitor-calidad-aire` | `producto` |
+| `/accesorios` | `catalogo` |
+| `/software-de-medicion-calidad-del-aire` | `software` |
+| `/kunak-api` | `software` + `varianteCorta` |
+
+El discriminante tiene **TRES** valores, no cuatro: el recon de `/kunak-api`
+concluyó que *«el arquetipo API/desarrollador no existe»*, así que modelarlo
+como un cuarto habría creado un arquetipo que la medición niega. **HOME queda
+fuera de esta tanda por alcance, no por criterio.**
+
+## §2o.2 · Colección propia y no `paginas` — decidido CONTANDO, y con su operación
+
+Derivado antes de decidir (`derivaciones/tipos-f35-126.*`, 7 controles): la
+unión de `paginas` ya expresa **8 de los 11 tipos** y **228 de las 231
+instancias — el 98.7 %**. Con ese número reutilizar era una opción viva, y aun
+así se separa, por dos razones **con la operación escrita** (§regla 23):
+
+1. **§1.5b Razón 3** — deshacer «dos colecciones» es **FUSIONAR**, el lado
+   barato; deshacer «una» es SEPARAR, el caro;
+2. **`paginas` es la COLA LARGA**, con membresía enumerada (48 rutas / 32
+   páginas). Estas 4 son arquetipos **nombrados**, con recon, specs y
+   componentes propios: meterlos ahí haría falsa la definición de esa colección.
+
+> ⚠ **CONDICIÓN DE REAPERTURA** —la decisión se toma con dominio corto, así que
+> la lleva: si las dos uniones llegan a coincidir al **100 % de los TIPOS**
+> (hoy 72.7 %) o si desaparece del corpus alguno de los 3 que estrena, **se
+> re-evalúa fusionar**, que es el lado barato.
+
+**Los 3 que ESTRENA:** `et_pb_cta` · `dvmd_table_maker` · `et_pb_gallery`, **1
+instancia cada uno**, las tres en PRODUCTO. Y `gallery` **sí lo expresa el
+esquema por otro canal** (`MODULO_GALLERY` en `bloques/kb.ts`): lo que no lo
+expresa es la unión de `paginas`. Decir *«el esquema no lo expresa»* leyendo una
+sola colección es §*la salida servida incluye el canal que no estabas mirando*.
+
+> ⚠⚠ **Y EL CENSO DE TIPOS LLEGÓ CON UN SOBRE-CASADO QUE HABRÍA INVERTIDO EL
+> VEREDICTO.** La v1 derivaba el tipo de *la primera clase desnuda*, y eso toma
+> **MODIFICADORES por tipos** sin dar error: `et_pb_with_border` sobre un
+> `et_pb_text` (x3), `et_pb_promo` donde el ordinal dice `et_pb_cta`,
+> `et_pb_button_module_wrapper` donde dice `et_pb_button` (x24). Publicaba
+> **86.6 %** y *«colección propia»*; derivando el tipo **del ORDINAL** sale
+> **98.7 %** y *«reutilizar»*. Lo delató que *«con borde»* no es un tipo de
+> módulo — §*un tipo implausible: la primera hipótesis es el instrumento*.
+> Evidencia conservada:
+> `tipos-f35-126-SONDA-TIPO-POR-CLASE-DESNUDA-MODIFICADORES.json`.
+
+## §2o.3 · El ritmo — 6 ejes CAMPO **y 46 SIN PROBAR**, y los 46 van en esta misma frase
+
+**Los cardinales, cada uno CON SU UNIDAD** (§regla 14 · §*corregir un
+denominador no es sustituirlo en todas partes*):
+
+| unidad | CON varianza | SIN varianza | total |
+|---|---|---|---|
+| marcador x ancho x eje | **6** | **46** | 52 |
+| marcador x eje | **4** | **24** | 28 |
+| eje (`mt`·`mb`·`pt`·`pb`) | **2** (`mb`·`pt`) | **2** (`mt`·`pb`) | 4 |
+
+**LOS 6, con la varianza que los sostiene — para que nadie tenga que fiarse:**
+
+| pieza | ancho | eje | n | valores por documento |
+|---|---|---|---|---|
+| `iconos-xs-2` | 1440 | `marginBottom` | 2 | PRODUCTO `31.6719` · SOFTWARE-corta `0, 31.6719` |
+| `iconos-xs-2` | 390 | `marginBottom` | 2 | PRODUCTO `30` · SOFTWARE-corta `0, 30` |
+| `iconos-md-3` | 1440 | `marginBottom` | 2 | PRODUCTO `31.6719` · SOFTWARE-corta `0, 31.6719` |
+| `iconos-md-3` | 390 | `marginBottom` | 2 | PRODUCTO `30` · SOFTWARE-corta `0, 30` |
+| `menu-anclas` | 1440 | `marginBottom` | 3 | PRODUCTO `31.6719` · CATÁLOGO `0, 27.2` · SOFTWARE `27.2` |
+| `menu-anclas` | 1440 | `paddingTop` | 3 | PRODUCTO `0` · CATÁLOGO `0, 17` · SOFTWARE `17` |
+
+Tres piezas, dos ejes, valores distintos entre instancias de **la misma pieza**
+⇒ lo escribió quien editó cada página ⇒ **CAMPO**. Y en los 6 el papel del
+marcador en el selector ganador es `no-aparece` (§regla 36): el valor lo trae el
+selector **ORDINAL**, o sea el editor. El marcador es la **LLAVE**, no el
+portador.
+
+> ⚠⚠ **Y LOS 46 NO SON «PLANTILLA»: SON `SIN PROBAR`, Y NO SE CABLEAN.** Un eje
+> sin varianza en 2–4 instancias no está probado como plantilla —puede ser un
+> campo que el editor puso uniforme, que es el falso negativo declarado del test
+> B—. **Y el test A no los rescata solo**: la 124.ª midió que su premisa central
+> es falsa en régimen `B-` por `FN-bp` —el editor escribe POR PUNTO DE RUPTURA y
+> lo compila en `@media` con ordinal, así que **su** valor también se mueve con
+> el ancho—, con **45 · 32 · 20** casos en los tres arquetipos `B-`. Los campos
+> `mt` y `pb` existen y quedan **al default**, que es lo contrario de cablearlos.
+
+**`pieza` es un campo, y es el hallazgo que hizo medible todo esto.** Es el
+marcador semántico que el editor escribe en el builder. Sin él, dos instancias
+de la misma pieza en dos páginas **no se pueden emparejar**: el ordinal del
+constructor es único por documento y da 0 pares por construcción (§regla 29, la
+mitad que faltaba). Censo: **18 marcadores · 7 con ≥2 instancias · 11 singleton**.
+
+## §2o.4 · Los defaults, con su contenedor — y `mbPorDefecto()` no se sustituye
+
+Vacío en un `medida()` = **el default responsive de Divi**, que no es una
+constante: sección `pt`/`pb` = **4 % DE LA SECCIÓN** · fila = **2 % DE LA FILA**
+· módulo `mb` = **2.75 % DE LA FILA**. Escribir `57.5938 · 28.7969 · 34.0469`
+los convierte en constantes de una página cuyo contenedor medía 1440.
+
+⚠ **`mbPorDefecto()` NO se sustituye por la fórmula del porcentaje**: ésta
+acierta 55 de 114 al bit y falla en **59 módulos de un solo grupo**
+(`articulos-kb · 4_4`), donde pondría `25.0625` contra `34.0469` medido. La
+tabla acierta **118 de 118**.
+
+## §2o.5 · La migración — y el `down` generado NO REVERTÍA
+
+§regla 30 se cobró **otra vez**, y en la única ventana en que se puede ver:
+
+> El `down` emitía `DROP TABLE "arquetipos" CASCADE` **antes** de
+> `ALTER TABLE "payload_locked_documents_rels" DROP CONSTRAINT ..._arquetipos_fk`.
+> El CASCADE ya se lleva esa FK, así que la sentencia explícita aborta la
+> transacción entera: **exit 1 y CERO revertido** — 13 tablas y 134 tipos
+> quedándose puestos.
+
+Corregido a mano con `IF EXISTS` (idempotente, no cambia lo que la reversa
+deja). Verificación **TABLA A TABLA con `diff`**:
+
+| comprobación | resultado |
+|---|---|
+| simetría | **13 CREATE TABLE / 13 DROP TABLE · 134 CREATE TYPE / 134 DROP TYPE** |
+| `up` | 138 a **151** tablas (13 nuevas) + 1 columna en `payload_locked_documents_rels` |
+| `down` **antes** del arreglo | **exit 1, 0 revertido** |
+| `down` **tras** el arreglo | `diff` **VACÍO** contra el censo previo · 25 migraciones · **0 tipos huérfanos** · `entradas_blog` 152 intactas |
+
+> ⚠ **Y un límite de modelado que se derivó, no se sufrió: el slug de un bloque
+> tiene un presupuesto de 18 caracteres.** Postgres corta identificadores a 63 y
+> el nombre más largo que Payload genera es
+> `enum_arquetipos_blocks_<slug>_ritmo_mb_movil_unidad` (23 + 22 fijos).
+> `slider-completo-arq` son 19 y el `migrate:create` **falla en voz alta** — que
+> es lo bueno: no hay truncado silencioso que colisione dos enums. De ahí
+> `slider-ancho-arq`. La posición nueva de la 126.ª (`unidad767`) es **más
+> corta** que `movil_unidad`, así que no estrecha el presupuesto.
+
+## §2o.6 · El render — `default` que TIRA, ya verificado
+
+§regla 6 en el render: **los dos renderizadores existentes ya tienen `default`
+que lanza** —`CuerpoPagina.tsx` L493 y `CuerpoKb.tsx` L268, los dos con el
+`kind` recibido en el mensaje—. Se **verificó** en esta tanda en vez de darse
+por hecho: en React `undefined` es un valor de retorno legal que renderiza
+NADA, y así se sirvieron 6 páginas con 0 módulos y todo lo verde siguió verde.
+
+⚠ **Y una ruta que responde 200 no prueba que sirva contenido.** Ninguna guarda
+de este repo mira dentro —cuentan rutas, slugs, familias y bytes—: lo que
+distingue las dos afirmaciones es el comparador de dos lados, no el manifiesto.
+
+## §2o.7 · Lo que esta colección NO hace todavía, con su cardinal
+
+- **0 lectores en el render**: las 4 rutas siguen sirviéndose de `src/lib/`.
+  §F3-5 «hecho» es *el content type escrito con sus SIN PROBAR declarados y no
+  cableados* — eso es lo que hay. El sitio servido desde Payload es la segunda
+  mitad, y otra tanda;
+- **0 filas sembradas**: el extractor del lote no existe. Camino de render **SIN
+  ESTRENAR**, declarado en vez de supuesto;
+- **el eje `módulos` sigue SIN COMPARAR** (`·`, no «a 0»). El criterio ya no lo
+  bloquea (§2n); el coste sí: **35 componentes de 97**.

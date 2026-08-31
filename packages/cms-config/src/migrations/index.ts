@@ -23,6 +23,7 @@ import * as migration_20260826_173354_f3_3_t1_tabla_cola_larga from './20260826_
 import * as migration_20260827_110011_f3_4_autores_y_firmas from './20260827_110011_f3_4_autores_y_firmas';
 import * as migration_20260827_114716_f3_4_firmas_doc_cientifico from './20260827_114716_f3_4_firmas_doc_cientifico';
 import * as migration_20260831_014031_f3_5_medida_breakpoint_767 from './20260831_014031_f3_5_medida_breakpoint_767';
+import * as migration_20260831_015813_f3_5_arquetipos from './20260831_015813_f3_5_arquetipos';
 
 export const migrations = [
   {
@@ -148,6 +149,11 @@ export const migrations = [
   {
     up: migration_20260831_014031_f3_5_medida_breakpoint_767.up,
     down: migration_20260831_014031_f3_5_medida_breakpoint_767.down,
-    name: '20260831_014031_f3_5_medida_breakpoint_767'
+    name: '20260831_014031_f3_5_medida_breakpoint_767',
+  },
+  {
+    up: migration_20260831_015813_f3_5_arquetipos.up,
+    down: migration_20260831_015813_f3_5_arquetipos.down,
+    name: '20260831_015813_f3_5_arquetipos'
   },
 ];

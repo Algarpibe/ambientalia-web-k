@@ -1,0 +1,230 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": 126,
+ "escalon": 2,
+ "alcance": {
+  "docs": [
+   "monitor-calidad-aire.html",
+   "accesorios.html",
+   "software-de-medicion-calidad-del-aire.html",
+   "kunak-api.html"
+  ],
+  "unidad": "módulo de PRIMER NIVEL del cuerpo (§2n del ESQUEMA)",
+  "nota": "propiedad de estos 4 documentos"
+ },
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "CRUCE con el criterio del PASO 0: el cardinal de primer nivel REPRODUCE en 4/4",
+   "detalle": "PRODUCTO 90=90 · CATALOGO 35=35 · SOFTWARE 70=70 · SOFTWARE-corta 36=36"
+  },
+  {
+   "ok": true,
+   "nombre": "el censo de TIPOS discrimina (ni cero ni un solo tipo)",
+   "detalle": "11 tipos distintos"
+  },
+  {
+   "ok": true,
+   "nombre": "los bloques de `paginas` se DERIVAN de su fuente (no se recuerdan)",
+   "detalle": "10: texto-pagina · imagen-pagina · boton-pagina · codigo · toggle · video-pagina · slider-completo · slider · mapa · icono"
+  },
+  {
+   "ok": true,
+   "nombre": "el cruce DISCRIMINA: ni el lote cabe entero ni estrena todo (si no, no habría decisión que tomar)",
+   "detalle": "expresados=6 tipos · estrena=5 tipos"
+  },
+  {
+   "ok": true,
+   "nombre": "el reparto es una PARTICIÓN (ningún tipo en dos cubos ni fuera)",
+   "detalle": "6+5=11 tipos · 200+31=231 instancias"
+  }
+ ],
+ "porDoc": {
+  "PRODUCTO": {
+   "primerNivel": 90,
+   "tipos": {
+    "et_pb_text": 36,
+    "et_pb_image": 7,
+    "et_pb_blurb": 27,
+    "et_pb_button_module_wrapper": 13,
+    "et_pb_with_border": 1,
+    "et_pb_slider": 1,
+    "et_pb_promo": 1,
+    "dvmd_table_maker": 1,
+    "et_pb_gallery": 1,
+    "et_pb_video": 1,
+    "et_pb_code": 1
+   }
+  },
+  "CATALOGO": {
+   "primerNivel": 35,
+   "tipos": {
+    "et_pb_text": 25,
+    "et_pb_image": 7,
+    "et_pb_button_module_wrapper": 2,
+    "et_pb_with_border": 1
+   }
+  },
+  "SOFTWARE": {
+   "primerNivel": 70,
+   "tipos": {
+    "et_pb_text": 21,
+    "et_pb_image": 7,
+    "et_pb_button_module_wrapper": 7,
+    "et_pb_blurb": 31,
+    "et_pb_with_border": 2,
+    "et_pb_slider": 1,
+    "et_pb_video": 1
+   }
+  },
+  "SOFTWARE-corta": {
+   "primerNivel": 36,
+   "tipos": {
+    "et_pb_text": 15,
+    "et_pb_image": 6,
+    "et_pb_button_module_wrapper": 2,
+    "et_pb_blurb": 12,
+    "et_pb_slider": 1
+   }
+  }
+ },
+ "tipos": [
+  {
+   "tipo": "et_pb_text",
+   "instancias": 97,
+   "docs": [
+    "CATALOGO",
+    "PRODUCTO",
+    "SOFTWARE",
+    "SOFTWARE-corta"
+   ],
+   "slug": "texto-pagina",
+   "expresado": true
+  },
+  {
+   "tipo": "et_pb_blurb",
+   "instancias": 70,
+   "docs": [
+    "PRODUCTO",
+    "SOFTWARE",
+    "SOFTWARE-corta"
+   ],
+   "slug": "icono",
+   "expresado": true
+  },
+  {
+   "tipo": "et_pb_image",
+   "instancias": 27,
+   "docs": [
+    "CATALOGO",
+    "PRODUCTO",
+    "SOFTWARE",
+    "SOFTWARE-corta"
+   ],
+   "slug": "imagen-pagina",
+   "expresado": true
+  },
+  {
+   "tipo": "et_pb_button_module_wrapper",
+   "instancias": 24,
+   "docs": [
+    "CATALOGO",
+    "PRODUCTO",
+    "SOFTWARE",
+    "SOFTWARE-corta"
+   ],
+   "slug": null,
+   "expresado": false
+  },
+  {
+   "tipo": "et_pb_with_border",
+   "instancias": 4,
+   "docs": [
+    "CATALOGO",
+    "PRODUCTO",
+    "SOFTWARE"
+   ],
+   "slug": null,
+   "expresado": false
+  },
+  {
+   "tipo": "et_pb_slider",
+   "instancias": 3,
+   "docs": [
+    "PRODUCTO",
+    "SOFTWARE",
+    "SOFTWARE-corta"
+   ],
+   "slug": "slider",
+   "expresado": true
+  },
+  {
+   "tipo": "et_pb_video",
+   "instancias": 2,
+   "docs": [
+    "PRODUCTO",
+    "SOFTWARE"
+   ],
+   "slug": "video-pagina",
+   "expresado": true
+  },
+  {
+   "tipo": "et_pb_promo",
+   "instancias": 1,
+   "docs": [
+    "PRODUCTO"
+   ],
+   "slug": null,
+   "expresado": false
+  },
+  {
+   "tipo": "dvmd_table_maker",
+   "instancias": 1,
+   "docs": [
+    "PRODUCTO"
+   ],
+   "slug": null,
+   "expresado": false
+  },
+  {
+   "tipo": "et_pb_gallery",
+   "instancias": 1,
+   "docs": [
+    "PRODUCTO"
+   ],
+   "slug": null,
+   "expresado": false
+  },
+  {
+   "tipo": "et_pb_code",
+   "instancias": 1,
+   "docs": [
+    "PRODUCTO"
+   ],
+   "slug": "codigo",
+   "expresado": true
+  }
+ ],
+ "slugsPaginas": [
+  "texto-pagina",
+  "imagen-pagina",
+  "boton-pagina",
+  "codigo",
+  "toggle",
+  "video-pagina",
+  "slider-completo",
+  "slider",
+  "mapa",
+  "icono"
+ ],
+ "resumen": {
+  "tiposLote": 11,
+  "tiposExpresadosPorPaginas": 6,
+  "tiposQueEstrena": 5,
+  "instanciasExpresadas": 200,
+  "instanciasQueEstrenan": 31,
+  "pctTipos": 54.5,
+  "pctInstancias": 86.6
+ },
+ "veredicto": "COLECCIÓN PROPIA: el lote estrena bastante como para que meterlo en `paginas` fuera ampliar una unión derivada de otro corpus."
+}

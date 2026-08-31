@@ -1,0 +1,32 @@
+=== CONTROLES ===
+  OK  CRUCE con el criterio del PASO 0: el cardinal de primer nivel REPRODUCE en 4/4
+      PRODUCTO 90=90 · CATALOGO 35=35 · SOFTWARE 70=70 · SOFTWARE-corta 36=36
+  OK  el censo de TIPOS discrimina (ni cero ni un solo tipo)
+      11 tipos distintos
+  OK  los bloques de `paginas` se DERIVAN de su fuente (no se recuerdan)
+      10: texto-pagina · imagen-pagina · boton-pagina · codigo · toggle · video-pagina · slider-completo · slider · mapa · icono
+  OK  el cruce DISCRIMINA: ni el lote cabe entero ni estrena todo (si no, no habría decisión que tomar)
+      expresados=6 tipos · estrena=5 tipos
+  OK  el reparto es una PARTICIÓN (ningún tipo en dos cubos ni fuera)
+      6+5=11 tipos · 200+31=231 instancias
+
+=== TIPOS DE MÓDULO DEL LOTE (primer nivel) ===
+  tipo                        inst  docs                              ¿lo expresa `paginas`?
+  et_pb_text                   97  CATALOGO,PRODUCTO,SOFTWARE,SOFTWARE-corta SI (texto-pagina)
+  et_pb_blurb                  70  PRODUCTO,SOFTWARE,SOFTWARE-corta SI (icono)
+  et_pb_image                  27  CATALOGO,PRODUCTO,SOFTWARE,SOFTWARE-corta SI (imagen-pagina)
+  et_pb_button_module_wrapper   24  CATALOGO,PRODUCTO,SOFTWARE,SOFTWARE-corta NO — lo ESTRENA
+  et_pb_with_border             4  CATALOGO,PRODUCTO,SOFTWARE       NO — lo ESTRENA
+  et_pb_slider                  3  PRODUCTO,SOFTWARE,SOFTWARE-corta SI (slider)
+  et_pb_video                   2  PRODUCTO,SOFTWARE                SI (video-pagina)
+  et_pb_promo                   1  PRODUCTO                         NO — lo ESTRENA
+  dvmd_table_maker              1  PRODUCTO                         NO — lo ESTRENA
+  et_pb_gallery                 1  PRODUCTO                         NO — lo ESTRENA
+  et_pb_code                    1  PRODUCTO                         SI (codigo)
+
+  11 tipos · 200 instancias expresadas · 31 instancias que estrenan
+  cobertura: 54.5 % de los tipos · 86.6 % de las instancias
+
+⇒ COLECCIÓN PROPIA: el lote estrena bastante como para que meterlo en `paginas` fuera ampliar una unión derivada de otro corpus.
+
+✓ evaluados 4/4 documentos · controles 5/5

@@ -28,6 +28,7 @@ import {
   etiquetas,
 } from "./colecciones/taxonomias.ts";
 import { paginas } from "./colecciones/paginas.ts";
+import { arquetipos } from "./colecciones/arquetipos.ts";
 import { autores } from "./colecciones/autores.ts";
 import { media } from "./colecciones/media.ts";
 import { slugs } from "./colecciones/slugs.ts";
@@ -154,6 +155,8 @@ export const COLECCIONES: CollectionConfig[] = [
   documentosCientificos,
   // Cola larga F3-3 (§2j) — 31 páginas, 11 tipos de módulo, 313 módulos
   paginas,
+  // Lote F3-5 (§2o) — PRODUCTO · CATÁLOGO · SOFTWARE (+ la variante corta)
+  arquetipos,
   // Grupo D (§2d.1)
   articulosKb,
   // Taxonomías (§2c)

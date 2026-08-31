@@ -77,6 +77,7 @@ export interface Config {
     'terminos-kunakpedia': TerminosKunakpedia;
     'documentos-cientificos': DocumentosCientifico;
     paginas: Pagina;
+    arquetipos: Arquetipo;
     'articulos-kb': ArticulosKb;
     categorias: Categoria;
     etiquetas: Etiqueta;
@@ -103,6 +104,7 @@ export interface Config {
     'terminos-kunakpedia': TerminosKunakpediaSelect<false> | TerminosKunakpediaSelect<true>;
     'documentos-cientificos': DocumentosCientificosSelect<false> | DocumentosCientificosSelect<true>;
     paginas: PaginasSelect<false> | PaginasSelect<true>;
+    arquetipos: ArquetiposSelect<false> | ArquetiposSelect<true>;
     'articulos-kb': ArticulosKbSelect<false> | ArticulosKbSelect<true>;
     categorias: CategoriasSelect<false> | CategoriasSelect<true>;
     etiquetas: EtiquetasSelect<false> | EtiquetasSelect<true>;
@@ -3991,6 +3993,1409 @@ export interface Pagina {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "arquetipos".
+ */
+export interface Arquetipo {
+  id: number;
+  /**
+   * El segmento de la URL. Las 4 rutas del lote son de UN segmento (derivado de `apps/web/src/app/`), así que `unique` sobre el slug SÍ coincide con el invariante aquí — a diferencia de `paginas`, donde la identidad es el par `(prefijo, slug)`.
+   */
+  slug: string;
+  titulo: string;
+  /**
+   * El discriminante del lote. TRES valores, derivados del inventario de §F3-5: `/kunak-api` NO es un cuarto — el recon concluyó que el arquetipo «API/desarrollador» no existe. Se distingue con `varianteCorta`.
+   */
+  arquetipo: 'producto' | 'catalogo' | 'software';
+  /**
+   * Defecto false — recon de `/kunak-api`: variante CORTA de SOFTWARE, no arquetipo nuevo. 1 de las 4 rutas del lote.
+   */
+  varianteCorta?: boolean | null;
+  /**
+   * Los módulos de PRIMER NIVEL del cuerpo (§2n): 90 · 35 · 70 · 36 = 231 medidos, 0 documentos vacíos. Un acordeón cuenta como UN módulo: sus 19 toggles son contenido de un campo, no 19 bloques.
+   */
+  bloques: (
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        /**
+         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+         */
+        contenido: string;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'texto-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        /**
+         * HTML de LÍNEA (`CampoRicoEnLinea`): strong · b · i · br · sub · sup · a. Sin bloques ni `<p>` propio.
+         */
+        titulo?: string | null;
+        /**
+         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+         */
+        contenido?: string | null;
+        imagen?: (number | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'icono-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        imagen: number | Media;
+        alt?: string | null;
+        enlace: {
+          label: string;
+          href: string;
+          external?: boolean | null;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'imagen-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        texto: string;
+        destino: {
+          label: string;
+          href: string;
+          external?: boolean | null;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'boton-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        /**
+         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+         */
+        contenido?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'slider-ancho-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        url: string;
+        portada?: (number | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'video-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        /**
+         * HTML de LÍNEA (`CampoRicoEnLinea`): strong · b · i · br · sub · sup · a. Sin bloques ni `<p>` propio.
+         */
+        titulo?: string | null;
+        /**
+         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+         */
+        contenido?: string | null;
+        textoBoton?: string | null;
+        destino: {
+          label: string;
+          href: string;
+          external?: boolean | null;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'cta-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        /**
+         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+         */
+        contenido: string;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'tabla-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        items?:
+          | {
+              imagen: number | Media;
+              alt?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'galeria-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        /**
+         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+         */
+        contenido: string;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'codigo-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        /**
+         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+         */
+        contenido?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'slider-arq';
+      }
+  )[];
+  seo: {
+    title: string;
+    description?: string | null;
+    ogImage?: string | null;
+  };
+  /**
+   * Sólo «Publicado» sale en el sitio. Un borrador se ve en la preview con credencial.
+   */
+  estado: 'borrador' | 'publicado';
+  /**
+   * Si está en Borrador y esta hora pasa, el cron lo publica y reconstruye. Vacío = manual.
+   */
+  publicarEn?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "articulos-kb".
  */
 export interface ArticulosKb {
@@ -4769,6 +6174,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'paginas';
         value: number | Pagina;
+      } | null)
+    | ({
+        relationTo: 'arquetipos';
+        value: number | Arquetipo;
       } | null)
     | ({
         relationTo: 'articulos-kb';
@@ -7116,6 +8525,636 @@ export interface PaginasSelect<T extends boolean = true> {
         id?: T;
       };
   cuerpoClasico?: T;
+  estado?: T;
+  publicarEn?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "arquetipos_select".
+ */
+export interface ArquetiposSelect<T extends boolean = true> {
+  slug?: T;
+  titulo?: T;
+  arquetipo?: T;
+  varianteCorta?: T;
+  bloques?:
+    | T
+    | {
+        'texto-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              contenido?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'icono-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              titulo?: T;
+              contenido?: T;
+              imagen?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'imagen-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              imagen?: T;
+              alt?: T;
+              enlace?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    external?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'boton-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              texto?: T;
+              destino?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    external?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'slider-ancho-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              contenido?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'video-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              url?: T;
+              portada?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'cta-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              titulo?: T;
+              contenido?: T;
+              textoBoton?: T;
+              destino?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    external?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'tabla-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              contenido?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'galeria-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              items?:
+                | T
+                | {
+                    imagen?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'codigo-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              contenido?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'slider-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              contenido?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        ogImage?: T;
+      };
   estado?: T;
   publicarEn?: T;
   updatedAt?: T;
