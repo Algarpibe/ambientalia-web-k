@@ -6691,6 +6691,47 @@ Los 8 llevan **`ordinal: true`** — el valor lo trae un selector
 `et_pb_<tipo>_<n>`, que el constructor emite **por módulo** ⇒ lo escribió el
 editor. El marcador es la **LLAVE** de emparejamiento, no el portador (§regla 36).
 
+> ⚠⚠ **Y SU ALCANCE ES MENOR DEL QUE ESTA TABLA SUGIERE — CORREGIDO POR LA
+> 128.ª (2026-08-31). NO CAMBIA NINGUNA DEFINICIÓN DE CAMPO: cambia DE CUÁNTAS
+> INSTANCIAS SALIÓ LA EVIDENCIA, que es lo que lo hace auditable.**
+>
+> El comparador decide «lo escribió el editor» con
+> `ganadores.filter(g => g.ordinal).length > 0` sobre **todos** los documentos
+> del par. Es una **UNIÓN**, así que el ordinal de **uno** adjudica CAMPO para
+> sus hermanos — que pueden no haber escrito nada.
+>
+> Re-adjudicado **por documento** (`SIN_EMPAREJAR=1`, unidad *documento ×
+> marcador × ancho × eje*):
+>
+> | dominio | filas | lo que sale |
+> |---|---|---|
+> | **FAMILIA** | 348 | los 8 CAMPO son los **mismos** (`CAMPO → CAMPO` 8 de 8) **y los 8 son de UN documento**, `estacion-de-monitoreo`. `monitor` y `sensor` → **cero** CAMPO, y **12 de sus 14** filas movidas caen a `SIN ESCRIBIR` |
+> | **LOTE** | 244 | de las 6 filas-CAMPO del par sobreviven **4**: CATÁLOGO (`.et_pb_text_7`) y SOFTWARE (`.et_pb_text_14`) tienen ordinal **propio**; PRODUCTO no, y cae a PLANTILLA (`mb`) y SIN ESCRIBIR (`pt`) |
+>
+> **Los campos siguen siendo campos** —la cascada los confirma con su selector
+> ordinal— **pero su evidencia es de UNA instancia, no de tres.**
+>
+> **Y LA CASCADA SOLA ADJUDICA A LOS SINGLETON**, que es lo que el
+> emparejamiento no podía por construcción (`docs.length < 2` ⇒ 0 pares):
+>
+> | arquetipo | CAMPO | PLANTILLA | SIN ESCRIBIR | resueltas |
+> |---|---|---|---|---|
+> | CATÁLOGO | **2** | 4 | 22 | 6 de 28 |
+> | SOFTWARE | **4** | 6 | 34 | 10 de 44 |
+> | SOFTWARE-corta | 0 | 8 | 32 | 8 de 40 |
+> | PRODUCTO | 0 | 27 | 105 | 27 de 132 |
+>
+> ⚠ **Y APARECE UN CAMPO QUE NINGÚN PAR PODÍA VER:** `SOFTWARE · iconos-md-2 ·
+> mb · 1440 y 390 · 40px !important` sobre `.et_pb_blurb_15/16` — **ordinal, o
+> sea el editor**. `iconos-md-2` sólo está en SOFTWARE dentro del lote, así que
+> el emparejamiento lo descartaba: **el cero era del ámbito de la llave**, no
+> del original (§regla 29). No necesita definición nueva —`pieza` es texto
+> libre— pero **sí cambia qué instancias ejercitan `mb`**. Fichado, no cableado.
+>
+> Congeladas: `escalon1-varianza-127-por-documento-{lote,familia}.{json,log}` ·
+> sabotaje `-neg-sin-ordinal-por-documento-lote` (CAMPO 6 → 0, 18/18) · **NO-OP
+> verde en los dos caminos existentes, con salida byte-idéntica**.
+
 ### Los 46, reescritos con su reparto y los dos números con su unidad
 
 | de los 46 pares SIN VARIANZA del lote | n | vía |

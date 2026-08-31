@@ -25595,3 +25595,297 @@ de que buscar por prefijo diera la posición de la propia documentación:
 Los dos marcadores siguen en el primer cuarto y al final, que es el reparto que
 se quería — **el tercer marcador que la 120.ª llegó a fichar sigue sin hacer
 falta.**
+
+---
+
+## 2026-08-31 · 128.ª — LA CASCADA SOLA: LOS SINGLETON SE ADJUDICAN, Y LOS «CAMPO POR VARIANZA» SE PRESTABAN EL ORDINAL ENTRE DOCUMENTOS
+
+**Tanda OFFLINE.** Sin red, sin clon, sin Postgres, sin `build` ni `check`. El
+navegador sólo renderiza el corpus ya capturado por `file://`.
+
+### PASO 0 · el corte declarado NO dispara, y la premisa queda CONFIRMADA por medición
+
+El encargo pedía cortar si los 17 `cartuchos-inteligentes` + 1 `sensor` dieran
+familia a CATÁLOGO. **No la dan**, y el discriminador está **nombrado**:
+
+| | CATÁLOGO tiene | los 18 traen | J_B contra CATÁLOGO |
+|---|---|---|---|
+| marcadores | `{breadcrumbs, bucle-entradas, kunak-faq-item, menu-anclas}` | los 3 primeros **+ `dvmd_table_maker*` ×3**, y **sin `menu-anclas`** | **0.4286** (×16) · **0.375** (×2) |
+
+Ni el directorio, ni el CPT, ni el régimen podían contestar: los 18 y
+`accesorios` sirven **el mismo `<body class>`** — mismo CPT `single-solutions`,
+misma plantilla `solutions-template-default`, mismo régimen `B-`. Lo que cruza
+instancias es el marcador **semántico** (§regla 29).
+
+**La dirección contraria también, y sobre los 788 documentos y no sobre
+`corpus/productos`:** CATÁLOGO **0** hermanas · SOFTWARE **0** · SOFTWARE-corta
+**0** · PRODUCTO **1**. Ninguno de los 3 estaba sobre-generalizado.
+
+> ⚠ **EL CERO ESTÁ AUDITADO Y SOBREVIVE, porque un «0 hermanas» de un ancla con
+> 4 marcadores puede ser del UMBRAL y no del corpus.** Jaccard **no es
+> invariante de escala**: con `|A| = 4`, alcanzar `J ≥ 0.7` exige un hermano de
+> a lo sumo **5** marcadores con 4 compartidos, y los cartuchos tienen 6-7. Así
+> que se publica al lado (a) el **cardinal alcanzable** `⌊|A|/U⌋`, (b) el
+> **solape** `|A∩B|/min`, que sí escala, (c) los **elementos nombrados**, y (d)
+> se **re-mide sólo sobre marcadores DISTINTIVOS**. Un solo marcador es ubicuo
+> en el corpus —`breadcrumbs`, **532/534**— y quitarlo **no mueve el reparto**:
+> 1 · 0 · 0 · 0 igual. Las 4 anclas conservan **≥ 3** distintivos.
+
+**HALLAZGO NO PEDIDO, y es de tamaño:** los 18 cartuchos **sí** son una familia
+homogénea **entre sí** — **153/153 pares** con `J_B ≥ 0.7`. Es un **QUINTO
+arquetipo con n = 18** dentro de `corpus/productos` que el lote de F3-5 no
+cubre. Y sus «2 firmas» difieren en **un solo ordinal** (`dvmd_table_maker_1`):
+varianza de ESTRUCTURA (§regla 41), no dos arquetipos. **Fichado, no medido.**
+
+**EL CONTROL DE REPRODUCCIÓN CAZÓ UN DEFECTO PROPIO**, que es para lo que está:
+la v1 **adivinó** el predicado de tipos de la 123.ª en vez de derivarlo y salió
+**0/30 pares · 0/6 cardinales**, con +4/+5 tipos por documento. La 123.ª **quita
+`<style>` y `<script>`** antes de censar y la v1 no. Con el predicado exacto
+copiado del congelado: **30/30 · 6/6**.
+
+Y como los dos criterios congelados difieren justo en eso, se publica la
+**medida secundaria** en vez de unificar a ojo: quitar `<style>`/`<script>`
+mueve la firma B en **0/788** documentos. **B es inmune** al canal que
+contaminaba a A (§regla 31 hermana).
+
+**EL CENSO DE RÉGIMEN CRUZA CON `CLAUDE.md` AL ELEMENTO, con sus DOS unidades:**
+
+| código | `CLAUDE.md` (576) | hoy (788) | hoy (576) |
+|---|---|---|---|
+| `-T` | 371 | 371 | **371** ✓ |
+| `--` | 131 | 343 | **131** ✓ |
+| `B-` | 60 | 60 | **60** ✓ |
+| `BT` | 14 | 14 | **14** ✓ |
+
+`788 − 576 = 212` = exactamente `corpus/transformado/`, que es la
+**transformación** de 212 de esos mismos documentos (23 científicos + 152 blog +
+37 kunakpedia), **no documentos nuevos**. Dos cardinales ciertos, dos unidades:
+**788 ficheros** del árbol `corpus/`, **576 documentos originales** capturados.
+
+**HOJAS `et-cache` (punto 4), re-derivado y no heredado:** las 4 anclas a **0
+ausentes** —PRODUCTO 8/8 · CATÁLOGO 8/8 · SOFTWARE 7/7 · SOFTWARE-corta 7/7—.
+Las 5 ausentes de la 127.ª eran de `estacion` (2) y `sensor` (3), o sea de la
+**familia de PRODUCTO**: la precondición **no toca a los 3 singleton**.
+
+Congelada: `paso0-censo-128.{mjs,json,log}` · 788/788 documentos · 9 controles.
+
+### ESCALÓN 1 · tres lecturas borradas y el reparto cerrado
+
+**El reparto del LOTE, derivado del `detalle` par a par y no del resumen:**
+
+| dominio | CAMPO | PLANTILLA | SIN ESCRIBIR | SIN PROBAR | Σ |
+|---|---|---|---|---|---|
+| LOTE | 2 | 10 | 40 | 0 | **52 ✓** |
+| FAMILIA | 8 | 26 | 98 | 0 | **132 ✓** |
+
+Los veredictos **sí** son una partición. Lo que no cerraba no era el dato: era
+el **juego de claves**. Cruzado veredicto × marca estructural, `PLANTILLA |
+estructural=true → 4` en el lote y **0** en la familia, o sea que
+`varianzaEstructural` es un **SUB-RECUENTO de `PLANTILLA`**, no una quinta
+categoría hermana. Escritas las cinco al mismo nivel, la fila del lote sumaba
+**56 sobre 52**.
+
+> **Y por qué nadie lo vio: la congelada de la FAMILIA cierra exacta porque sus
+> DOS claves extra valen 0**, así que el único instrumento que había delante
+> para comprobarlo era **ciego por construcción** — 0 instancias separadoras, no
+> pobreza del dominio.
+
+Forma corregida en los **tres** sitios donde vivía el mismo texto —ESQUEMA §2o,
+`arquetipos.ts` y el acta de la 127.ª—, **sin mover un número**. Los JSON de la
+127.ª **conservan la forma vieja a propósito**: el arreglo es de redacción y no
+de dato, así que re-congelarlos sólo movería la evidencia de sitio (§regla 5 ·
+§regla 8b).
+
+**Las tres lecturas contradichas por su propio documento**, derivadas anclando a
+estructura y no citando la coordenada del encargo (§regla 19):
+
+| fila | decía | su propia § dice |
+|---|---|---|
+| **F3-3** L2646 | «pendiente · abre decisión de ESQUEMA» | decisión tomada por el propietario el 2026-08-22 (91.ª, CMS-3) **y emisión hecha** (104.ª): 382 → 413 rutas, simétrica 31 · 0 |
+| **F3-4** L2647 | «pendiente · abre decisión de ESQUEMA» | «✅✅ FASE COMPLETA — cerrada el 2026-08-27 (118.ª)», y hasta *«del plan de F3 sólo queda F3-5»* |
+| **F3-5** L2648 | «con sus **46 SIN PROBAR**», citando la 126.ª | la 127.ª los reescribió a **6 + 40** |
+
+**El 46, clasificado POR UNIDAD antes de sustituir** (§*corregir un denominador
+no es sustituirlo en todas partes*). Barrido de `docs/` `packages/` `scripts/`,
+**2234 ficheros**, **104 líneas**. El clasificador automático dio **14**
+candidatos y **leyéndolos** quedan **11** — el `grep` enumera, la clasificación
+hay que leerla:
+
+| papel | n | ¿se toca? |
+|---|---|---|
+| **estado VIGENTE y FALSO** | **1** | **sí — corregido** |
+| acta de la 126.ª, historia | 5 | no, ciertas de su fecha |
+| ya reescritas por la 127.ª | 5 | no, ya correctas |
+| otro 46 (falso positivo) | 13 | no |
+| congelada / instrumento | 68 | no (§regla 8b) |
+| pre-registro de la 127.ª | 11 | no (§regla 8b) |
+
+Sustituir a ciegas habría roto **las 5 históricas y las 5 ya correctas**.
+
+Congelada: `escalon1-lecturas-128.{mjs,json,log}` · 5 controles.
+
+### ESCALÓN 3 · el modo SIN EMPAREJAR, con su NO-OP delante
+
+**El NO-OP es lo que adjudica el cambio** (§regla 5bis). El propio instrumento
+lo es: se niega a pisar una congelada que difiera, y con la bandera apagada la
+salida es **byte-idéntica**.
+
+| | `DOMINIO=lote` | `DOMINIO=familia` |
+|---|---|---|
+| **antes** del cambio | exit 0 · 52 pares · 13/13 · idéntica | exit 1 · 132 pares · 12/13 · idéntica |
+| **tras** el cambio | exit 0 · 52 pares · 13/13 · **idéntica** | exit 1 · 132 pares · 12/13 · **idéntica** |
+
+El `exit 1` de `familia` **no es una regresión**: es el pre-registro de la 127.ª
+refutado —«>0 de los 46 muestran varianza» → **0 de 46**— y viene congelado así.
+Comprobado corriendo la sonda sola **antes** de tocar nada (§regla 21).
+
+**El resultado, unidad = documento × marcador × ancho × eje:**
+
+| dominio | filas | CAMPO | PLANTILLA | SIN ESCRIBIR | controles |
+|---|---|---|---|---|---|
+| LOTE | 244 | 6 | 45 | 193 | 17/17 |
+| FAMILIA | 348 | 8 | 68 | 272 | 16/17 |
+
+**LA PREGUNTA CENTRAL, CONTESTADA — los singleton SÍ se adjudican:**
+
+| arquetipo | CAMPO | PLANTILLA | SIN ESCRIBIR | resueltas |
+|---|---|---|---|---|
+| CATÁLOGO | **2** | 4 | 22 | 6 de 28 |
+| SOFTWARE | **4** | 6 | 34 | 10 de 44 |
+| SOFTWARE-corta | 0 | 8 | 32 | 8 de 40 |
+| PRODUCTO | 0 | 27 | 105 | 27 de 132 |
+
+Con `n = 1` el emparejamiento daba **0 pares POR CONSTRUCCIÓN**. La cascada no
+necesita segunda instancia: **dice** quién escribió en vez de inferirlo.
+
+> ⚠⚠ **EL HALLAZGO, Y ES LA PREDICCIÓN QUE SALIÓ REFUTADA: LOS «CAMPO POR
+> VARIANZA» SE PRESTAN EL ORDINAL ENTRE DOCUMENTOS.**
+>
+> El agregado construye `ganadores` recorriendo **todos** los documentos del par
+> y luego pregunta `¿alguno lleva ordinal?`. Es una **UNIÓN** — así que el
+> ordinal de **un** documento adjudica CAMPO **para sus hermanos**, que pueden
+> no haber escrito nada.
+>
+> Los 2 CAMPO del lote (`menu-anclas` 1440 `mb` y `pt`), por documento:
+>
+> | documento | ordinal PROPIO | veredicto por cascada |
+> |---|---|---|
+> | CATÁLOGO | `.et_pb_text_7` `1.7rem`/`1em !important` | **CAMPO** |
+> | SOFTWARE | `.et_pb_text_14` `1.7rem`/`1em !important` | **CAMPO** |
+> | PRODUCTO | **ninguno** | **PLANTILLA** (`mb`) y **SIN ESCRIBIR** (`pt`) |
+>
+> **Y en la FAMILIA el mismo mecanismo es MAYOR:** los 8 CAMPO son los 8 mismos
+> que el emparejamiento halló —`CAMPO → CAMPO` **8 de 8**— pero **todos son de
+> UN documento, `estacion-de-monitoreo`**. `monitor` y `sensor` salen con **cero
+> CAMPO**, y **12 de sus 14** filas movidas caen a `SIN ESCRIBIR`: allí **nadie
+> escribió nada**.
+>
+> **El campo sigue siendo campo; lo que estaba mal era su ALCANCE.**
+
+**Y UN CAMPO QUE NINGÚN PAR PODÍA VER**, que es §regla 29 (2026-08-30)
+cobrándose: `SOFTWARE · iconos-md-2 · mb · 1440 y 390 · 40px !important` sobre
+`.et_pb_blurb_15/16` — **ordinal, o sea el editor**. `iconos-md-2` sólo aparece
+en SOFTWARE dentro del lote, así que el emparejamiento lo descartaba con
+`docs.length < 2`. **El cero era del ámbito de la llave, no del original.**
+
+**EL PRE-REGISTRO, CONTESTADO POR LOS DOS LADOS:**
+
+| | predicho | medido | |
+|---|---|---|---|
+| **P1** · `SIN ESCRIBIR` resueltas por cascada | 0 (por ÁLGEBRA) | **0 de 122** | ✅ |
+| **P2** · `PLANTILLA` → `CAMPO` por documento | 0 (por ÁLGEBRA) | **0 de 28** | ✅ |
+| **P2b** · sobreviven los 2 CAMPO | **6** (0–6) | **4** | ❌ **REFUTADA** |
+| **P2c** · `PLANTILLA` → `SIN PROBAR` | 0 (0–8) | **0** | ✅ |
+| **P1b** · filas nuevas de los 3 singleton | C 0 · P 2 · SE 14 | **C 2 · P 0 · SE 6** | ❌ parcial |
+| **P3** · reparto del lote | SE 200 (190–215) · P 46 (30–50) · C 10 (2–12) · SP 0 | **SE 193 · P 45 · C 6 · SP 0** | ✅ las 4 en rango |
+
+> ⚠ **Y EL DENOMINADOR DE P3 ERA 256 Y ES 244.** La cota se derivó del censo por
+> documento (marcador con instancias > 0 en **cualquier** ancho); las filas se
+> construyen por (documento, ancho), así que un marcador con caja a 1440 y sin
+> caja a 390 aporta menos. Estaba escrita como **COTA SUPERIOR** y lo era: 244
+> de 256. Las 4 predicciones eran absolutas, así que se leen tal cual.
+
+**EL SABOTAJE NUEVO MUERDE**, y está puesto **en el DATO y no en el umbral**
+(§regla 28a): `NEG_SIN_ORDINAL` quita el ordinal de los selectores ganadores y
+el reparto pasa de `CAMPO 6 · PLANTILLA 45` a **`CAMPO 0 · PLANTILLA 51`**.
+18/18. Si no se hubiera movido, el detector de ordinal no mediría lo que dice.
+
+> ⚠ **CORRECCIÓN A LA PREMISA DEL ENCARGO SOBRE LOS SABOTAJES:**
+> `-SONDA-DATA-SEM-SOLO-EL-ULTIMO` y
+> `-SONDA-VARIANZA-ESTRUCTURAL-LEIDA-COMO-CAMPO` **no son sabotajes** que puedan
+> morder ni morir verdes — son **corridas defectuosas conservadas con su defecto
+> en el nombre** (§regla 7), como la propia acta de la 127.ª declara. **No había
+> caso que sustituir por su simétrico porque no había caso.**
+
+**CONTROL DE §regla 8b SOBRE EL PROPIO PRE-REGISTRO, y salió con dos fallos que
+se escriben porque para eso está:** la tabla de símbolos estaba **incompleta en
+2** —los 4 controles nuevos del modo y la variable `analisisPorDocumento`— y
+**prometía 1 que no se hizo**, `noContesta`. Los 4 controles no rompieron el
+NO-OP **porque viven dentro de la bandera, y eso fue diseño y no predicción**.
+El `noContesta` prometido se añadió **dentro** de `porDocumento`: en el
+compartido habría cambiado el JSON de los dos caminos y roto el NO-OP que este
+modo necesita para adjudicarse.
+
+Congeladas: `escalon1-varianza-127-por-documento-{lote,familia}.{json,log}` ·
+`escalon1-varianza-127-neg-sin-ordinal-por-documento-lote.{json,log}`.
+
+### Lo que queda ABIERTO, cada cosa con su número
+
+| # | qué | cardinal | por qué no se cerró aquí |
+|---|---|---|---|
+| 1 | **el QUINTO arquetipo** — los 18 `cartuchos-inteligentes`/`sensor` | **18 documentos · 153/153 pares homogéneos** | hallado en el PASO 0, **fuera del alcance** de esta tanda. Tiene familia de sobra, así que su varianza **sí** se puede medir |
+| 2 | **el ALCANCE de los 8 CAMPO de la familia** en el content type | **8 filas, las 8 de UN documento de 3** | el modelo dice «campo»; lo que falta es decir **de qué instancia salió la evidencia**. No se toca aquí: mover campos es la tanda siguiente (§regla 42) |
+| 3 | **los 193 `SIN ESCRIBIR` del lote** | **193 de 244** | siguen sin declaración a la que preguntar (§*el test A supone que hay algo escrito*). **No se cablean** |
+| 4 | `arquetipos` **sin dato y sin lector** | **0 filas · 0 lectores** | heredado de la 126.ª, sin cambios |
+| 5 | la varianza del régimen `--` | **57 casos + 19 FAQ, 0 medidos** | heredado, sin cambios |
+
+### El barrido de §regla 12
+
+Acotado a lo que **esta** tanda escribió, con su número y su limitación
+declarada. Detector **conservado tal cual** el de la 125/126/127.ª, para que
+los cuatro barridos sigan siendo comparables (§regla 5bis).
+
+| cardinal | n |
+|---|---|
+| enunciados destacados en el ámbito | **9** |
+| «ya en `CLAUDE.md`» según el cruce **heredado** (6 palabras sueltas) | **6 de 9** |
+| «ya en `CLAUDE.md`» según el cruce **endurecido** (n-grama de 4) | **0 de 9** |
+| **sobre-casados por el heredado** | **6** |
+| promovidos a `CLAUDE.md` | **2** |
+| eventos que se quedan | **2** |
+
+Los cardinales son del acta **tal como queda commiteada**, y hay que decirlo
+porque el instrumento vive dentro del documento que mide: escribir en el acta
+sobre el barrido **cambia lo que el barrido cuenta**. La primera corrida dio
+**7**; añadir el párrafo de §regla 5 de más abajo lo subió a **9**. Es la misma
+propiedad que ya lleva anotada el canario de carga —*un instrumento
+auto-documentado se contamina con lo que se escriba sobre él*— con el objeto
+cambiado, y por eso el número se cita **con su corrida** (`regla12-barrido-128.json`)
+en vez de a secas.
+
+> **Y el encargo tenía razón al avisar:** el cruce heredado marcó como «ya
+> está» **el hallazgo principal de la tanda** —*«los CAMPO por varianza se
+> prestan el ordinal entre documentos»*—. El endurecido dice **0 de 7**. La
+> adjudicación se hace **a mano y con su motivo escrito**, porque ninguno de
+> los dos cruces puede darla: el heredado sobre-casa y el endurecido sub-casa
+> **por construcción** —promover una regla exige **parafrasearla**, así que el
+> n-grama contiguo no casa ni cuando la promoción ya está hecha—.
+
+**Los 2 promovidos, y el segundo con su cruce en cero:**
+
+| enunciado | destino | por qué no es la que ya está |
+|---|---|---|
+| *un veredicto producido sobre un AGREGADO no se puede atribuir a sus miembros* | §*un test se evalúa en la unidad en la que se pronuncia* (el `.some()`, 2026-08-30), **como mitad que faltaba** | mismo mecanismo, **instrucción distinta**: aquélla dice cómo EVALUAR un discriminador (daño = un porcentaje falso); ésta, que un veredicto de grupo no se PROPAGA hacia abajo (daño = **un campo del esquema con el alcance mal**) |
+| *una métrica de similitud entre conjuntos no es invariante de escala* | §sondas 4, **sexta cara** | cruce manual: **0** ocurrencias de `jaccard`, `invariante de escala`, `similitud` y `umbral.*conjunto` en `CLAUDE.md` |
+
+> ⚠ **Y ESTA TANDA SE COBRÓ UNA §regla 5 AL COPIAR EL DETECTOR, que es la misma
+> forma de §regla 9 sobre la GRAMÁTICA con el objeto cambiado:** copiar una
+> sonda **copia el nombre de su salida**, y ese nombre vive en **dos** sitios
+> —`.json` y `.log`—. El renombrado cubrió uno, así que la primera corrida de
+> la 128.ª **pisó `regla12-barrido-127.log`**. Recuperada con `git checkout`
+> **porque estaba commiteada** —que es exactamente la protección que §regla 5
+> compra y aquí era la única que había—, y el escape arreglado.
+>
+> **La comprobación cuesta un `grep` del nombre viejo sobre la copia, y hay que
+> hacerla ANTES de la primera corrida**: un `writeFileSync` con el nombre de la
+> tanda anterior no da error — **escribe**.

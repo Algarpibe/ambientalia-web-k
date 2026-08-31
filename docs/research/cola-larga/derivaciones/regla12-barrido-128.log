@@ -1,0 +1,53 @@
+=== CONTROLES ===
+  OK  el barrido alcanzó su ámbito (encontró enunciados con la forma)
+      9 enunciados (heredado 5 + complemento multilínea 4) en 1 ficheros
+  OK  el COMPLEMENTO multilínea APORTA (si no, el heredado no subdetectaba y este añadido sobra)
+      4 enunciados que el detector por línea NO ve
+  OK  el cruce ENDURECIDO (n-grama de 4) manda; el heredado (6 palabras sueltas) se publica al lado
+      heredado: 6 de 9 «ya en CLAUDE» · endurecido: 0 de 9  ⚠ SOBRE-CASADOS 6: el heredado los daba por escritos y la frase NO está
+  OK  el ENDURECIDO aporta — hay al menos un sobre-casado que el heredado daba por escrito
+      El campo sigue siendo campo; lo que estaba mal era su ALCANCE. | CORRECCIÓN A LA PREMISA DEL ENCARGO SOBRE LOS SABOTAJES: | EL CERO ESTÁ AUDITADO Y SOBREVIVE, porque un «0 hermanas» de un ancla  | Y por qué nadie lo vio: la congelada de la FAMILIA cierra exacta porqu | EL HALLAZGO, Y ES LA PREDICCIÓN QUE SALIÓ REFUTADA: LOS «CAMPO POR > V | Y ESTA TANDA SE COBRÓ UNA §regla 5 AL COPIAR EL DETECTOR, que es la mi
+
+=== CARDINALES (se escriben AUNQUE SEAN CERO) ===
+     9  enunciadosDestacados
+     5  porDetectorHeredado
+     4  porComplementoMultilinea
+     6  yaEnClaudeMd_heredado
+     0  yaEnClaudeMd_endurecido
+     6  sobreCasadosPorElHeredado
+     0  conFechaOTanda_eventos
+     9  candidatosARegla
+
+=== CANDIDATOS A REGLA (sin fecha, no cruzados en CLAUDE.md) ===
+  docs/PENDIENTES-QA.md
+    Y en la FAMILIA el mismo mecanismo es MAYOR:
+  docs/PENDIENTES-QA.md
+    El campo sigue siendo campo; lo que estaba mal era su ALCANCE.
+  docs/PENDIENTES-QA.md
+    Y EL DENOMINADOR DE P3 ERA 256 Y ES 244.
+  docs/PENDIENTES-QA.md
+    CORRECCIÓN A LA PREMISA DEL ENCARGO SOBRE LOS SABOTAJES:
+  docs/PENDIENTES-QA.md
+    Y el encargo tenía razón al avisar:
+  docs/PENDIENTES-QA.md
+    EL CERO ESTÁ AUDITADO Y SOBREVIVE, porque un «0 hermanas» de un ancla con > 4 marcadores puede ser del UMBRAL y no del corpus.
+  docs/PENDIENTES-QA.md
+    Y por qué nadie lo vio: la congelada de la FAMILIA cierra exacta porque sus > DOS claves extra valen 0
+  docs/PENDIENTES-QA.md
+    EL HALLAZGO, Y ES LA PREDICCIÓN QUE SALIÓ REFUTADA: LOS «CAMPO POR > VARIANZA» SE PRESTAN EL ORDINAL ENTRE DOCUMENTOS.
+  docs/PENDIENTES-QA.md
+    Y ESTA TANDA SE COBRÓ UNA §regla 5 AL COPIAR EL DETECTOR, que es la misma > forma de §regla 9 sobre la GRAMÁTICA con el objeto cambiado:
+
+=== ADJUDICACIÓN A MANO (ningún cruce automático puede darla: uno sobre-casa, el otro sub-casa) ===
+  REGLA · promovida como MITAD QUE FALTABA LOS «CAMPO POR VARIANZA» SE PRESTAN EL ORDINAL ENTRE DOCUMENTOS — un veredicto producido sobre un AGREGADO no se puede atribuir a sus miembros
+      → CLAUDE.md §*un test se evalúa en la unidad en la que se pronuncia* (2026-08-30, el `.some()`), como rider
+  REGLA · promovida                      UNA MÉTRICA DE SIMILITUD ENTRE CONJUNTOS NO ES INVARIANTE DE ESCALA: «0 hermanas» puede ser del UMBRAL y no del corpus
+      → CLAUDE.md §sondas 4, sexta cara
+  EVENTO · se queda                      Los 18 cartuchos son una familia homogénea entre sí — 153/153 pares
+      → el acta, con su cardinal y su ruta. Es un hallazgo sobre ESTE corpus, no una regla
+  EVENTO · se queda                      Los dos `-SONDA-*` no son sabotajes sino corridas defectuosas archivadas
+      → su regla general ya está en CLAUDE.md (§regla 7); lo que aquí es nuevo es que el ENCARGO los leyó mal, y eso lleva fecha
+
+  promovidas a CLAUDE.md: 2 de 4
+
+VEREDICTO: valida

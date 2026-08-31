@@ -274,6 +274,46 @@ en el builder, **es un campo**. Defaults medidos: sección `pt/pb` 4%
 > misma señal que un pleno o un cero (§sondas 4) — **la primera hipótesis es el
 > instrumento, no el objeto.** Aquí el 87 % se leyó como una propiedad del test;
 > era la unidad.
+>
+> ⚠⚠ **Y LA MITAD QUE LE FALTA, QUE NO ES DE LECTURA SINO DE PROPAGACIÓN, Y
+> ACABA ESCRITA EN EL MODELO: UN VEREDICTO PRODUCIDO SOBRE UN AGREGADO NO SE
+> PUEDE ATRIBUIR A SUS MIEMBROS (2026-08-31).**
+>
+> Todo lo de arriba protege de **evaluar** un discriminador al nivel
+> equivocado: el daño es un porcentaje falso. Falta el caso en que el `.some()`
+> no está en la evaluación sino **en la producción del veredicto**, y entonces
+> el daño no es una cifra — es que **el veredicto baja a miembros que no lo
+> ganaron**, y baja en silencio porque el agregado es cierto.
+>
+> > **`hay = miembros.some(m => m.tiene)` responde «alguno», y el consumidor lo
+> > lee como «éste».** Así que la evidencia de UN miembro adjudica a TODOS sus
+> > hermanos del grupo — y los hermanos pueden no tener nada. El agregado no
+> > miente: mienten sus miembros heredando.
+>
+> **Medido:** un comparador decidía si un valor lo escribió el editor
+> preguntando `conOrdinal = ganadores.filter(g => g.ordinal).length > 0`, donde
+> `ganadores` se construye **recorriendo todos los documentos del par**. El
+> veredicto «CAMPO» era cierto **del par** y falso de 2 de sus 3 miembros: en
+> la familia, **los 8 CAMPO resultaron ser los 8 del MISMO documento**, y los
+> otros dos salían con **cero** — con 12 de sus 14 filas movidas cayendo a *«el
+> único valor observado es el inicial»*, o sea **allí nadie escribió nada**.
+>
+> **Y por qué es peor que el porcentaje falso: el consumidor es el ESQUEMA.** Un
+> campo cuyo alcance real es una instancia queda escrito como si lo fuera de
+> tres, y eso no da error nunca — da un content type que parece mejor
+> sostenido de lo que está.
+>
+> **Operativamente, y son dos mitades:**
+>
+> 1. **antes de escribir en el modelo el veredicto de un grupo, RE-ADJUDÍCALO
+>    POR MIEMBRO** — y publica **de cuántos miembros salió la evidencia**, no
+>    sólo el veredicto. `CAMPO (3 documentos)` y `CAMPO (1 de 3 documentos)` se
+>    escriben casi igual y sólo el segundo es auditable;
+> 2. **y la señal para sospecharlo es gratis: un veredicto de grupo cuya vía
+>    dice «varianza» o «alguno».** Si la vía nombra una propiedad del CONJUNTO,
+>    el veredicto es del conjunto — para bajarlo a un miembro hace falta una vía
+>    que se pronuncie sobre ese miembro, y aquí ésa es **la cascada**, que dice
+>    quién escribió en vez de inferirlo.
 
 > ⚠ **Y LA PREMISA CALLADA NO LOS EXPLICA — SON PARTICIONES DISJUNTAS, Y
 > COMPROBARLO CUESTA UNA LÍNEA (2026-08-30).** Era tentador leer «87 % al revés»
@@ -2654,6 +2694,46 @@ lo demás salía bien — que es lo que lo hace invisible.
 > **Y la señal para buscarlo, que es gratis: un 100 % redondo.** `71 de 71`,
 > `0 de N` — un dato del original casi nunca es unánime, y cuando lo es, la
 > primera hipótesis es el instrumento.
+
+⚠⚠ **Y SU SEXTA CARA, QUE NO ES DEL SELECTOR NI DEL CAMPO SINO DEL UMBRAL: UNA
+MÉTRICA DE SIMILITUD ENTRE CONJUNTOS NO ES INVARIANTE DE ESCALA, ASÍ QUE «0
+HERMANAS» PUEDE SER DEL UMBRAL Y NO DEL CORPUS (2026-08-31).**
+
+Las cinco de arriba son sobre **qué se encuentra**. Ésta es sobre **con qué se
+compara lo encontrado**, y su cero es el más convincente de todos porque viene
+de una métrica con nombre y de un umbral que llevaba tandas funcionando.
+
+> **Jaccard —`|A∩B| / |A∪B|`— castiga a los conjuntos PEQUEÑOS.** Con `|A| = 4`
+> y umbral `0.7`, el mejor caso `A ⊆ B` exige `|B| ≤ ⌊|A|/U⌋ = 5`: **cualquier
+> hermano con dos elementos de más cae por debajo, aunque comparta los cuatro.**
+> Con `|A| = 19` el mismo umbral es holgado. Así que el mismo número **no
+> significa lo mismo en dos anclas**, y un «0 hermanas» de la pequeña puede ser
+> del instrumento.
+
+**Medido:** un ancla de **4** marcadores dio **0 hermanas en 788 documentos** y
+sus candidatos más próximos tenían **solape 1.0** —o sea `A ⊆ B`, contención
+perfecta— con Jaccard **0.5**. Los dos números son ciertos y sólo uno contesta
+la pregunta que se estaba haciendo.
+
+**Las tres mitades operativas, y ninguna cuesta una corrida:**
+
+1. **se publica el CARDINAL ALCANZABLE al lado del umbral** —`⌊|A|/U⌋`—, que
+   dice de antemano si el ancla puede siquiera tener hermanas;
+2. **se publica una métrica que SÍ escale** —el **solape** `|A∩B| / min(|A|,|B|)`—
+   junto a la que no. Contención y semejanza son preguntas distintas y sólo el
+   solape contesta la primera;
+3. **y el cero se AUDITA re-midiendo sin los elementos UBICUOS**, porque un
+   ancla pequeña cuya firma sea casi toda ubicua tiene **un solo marcador
+   distintivo**, y con uno ninguna métrica de conjunto puede hallar familia. Si
+   el reparto **no se mueve** al quitarlos, el cero sobrevive a su propia
+   crítica y **entonces sí** es del corpus. Medido: 1 ubicuo (`breadcrumbs`,
+   532/534), reparto idéntico, **≥ 3 distintivos** en las 4 anclas.
+
+> **Y la forma general, que vale para cualquier umbral futuro: un umbral se
+> publica CON EL RANGO EN QUE SU DENOMINADOR LO HACE ALCANZABLE.** Un umbral sin
+> eso es §regla 22 con el booleano cambiado por un número: `0.7` sale igual de
+> plausible sobre un conjunto de 4 que sobre uno de 19, y sólo en uno de los dos
+> está midiendo.
 
 ⚠ **Y EL LADO DEL LECTOR, que ninguna guarda de la sonda puede cubrir: UNA REGLA
 INCOMPLETA SE LEE EXACTAMENTE IGUAL QUE UNA COMPLETA (2026-08-14).**

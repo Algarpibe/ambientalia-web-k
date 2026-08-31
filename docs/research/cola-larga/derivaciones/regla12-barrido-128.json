@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "tanda": "128.ª · CIERRE — barrido §regla 12",
+    "fecha": "2026-08-31",
+    "alcance": [
+      "docs/PENDIENTES-QA.md (el acta de esta tanda)"
+    ],
+    "noContesta": [
+      "el archivo entero: el barrido es ACOTADO por diseño, y eso es una limitación declarada, no un descuido",
+      "los enunciados que esta tanda escribió en MENSAJES DE COMMIT y no en un documento",
+      "las reglas que viven en el CÓDIGO y no en prosa destacada — un ternario, un `slice`, una rama `else`: este detector no las ve, y su cero es cierto de la prosa, no del repo"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "el barrido alcanzó su ámbito (encontró enunciados con la forma)",
+      "ok": true,
+      "visto": "9 enunciados (heredado 5 + complemento multilínea 4) en 1 ficheros"
+    },
+    {
+      "nombre": "el COMPLEMENTO multilínea APORTA (si no, el heredado no subdetectaba y este añadido sobra)",
+      "ok": true,
+      "visto": "4 enunciados que el detector por línea NO ve"
+    },
+    {
+      "nombre": "el cruce ENDURECIDO (n-grama de 4) manda; el heredado (6 palabras sueltas) se publica al lado",
+      "ok": true,
+      "visto": "heredado: 6 de 9 «ya en CLAUDE» · endurecido: 0 de 9  ⚠ SOBRE-CASADOS 6: el heredado los daba por escritos y la frase NO está"
+    },
+    {
+      "nombre": "el ENDURECIDO aporta — hay al menos un sobre-casado que el heredado daba por escrito",
+      "ok": true,
+      "visto": "El campo sigue siendo campo; lo que estaba mal era su ALCANCE. | CORRECCIÓN A LA PREMISA DEL ENCARGO SOBRE LOS SABOTAJES: | EL CERO ESTÁ AUDITADO Y SOBREVIVE, porque un «0 hermanas» de un ancla  | Y por qué nadie lo vio: la congelada de la FAMILIA cierra exacta porqu | EL HALLAZGO, Y ES LA PREDICCIÓN QUE SALIÓ REFUTADA: LOS «CAMPO POR > V | Y ESTA TANDA SE COBRÓ UNA §regla 5 AL COPIAR EL DETECTOR, que es la mi"
+    }
+  ],
+  "cardinales": {
+    "enunciadosDestacados": 9,
+    "porDetectorHeredado": 5,
+    "porComplementoMultilinea": 4,
+    "yaEnClaudeMd_heredado": 6,
+    "yaEnClaudeMd_endurecido": 0,
+    "sobreCasadosPorElHeredado": 6,
+    "conFechaOTanda_eventos": 0,
+    "candidatosARegla": 9
+  },
+  "adjudicacionAMano": [
+    {
+      "enunciado": "LOS «CAMPO POR VARIANZA» SE PRESTAN EL ORDINAL ENTRE DOCUMENTOS — un veredicto producido sobre un AGREGADO no se puede atribuir a sus miembros",
+      "disposicion": "REGLA · promovida como MITAD QUE FALTABA",
+      "destino": "CLAUDE.md §*un test se evalúa en la unidad en la que se pronuncia* (2026-08-30, el `.some()`), como rider",
+      "porQueNoEsLaMisma": "el cruce marca la del `.some()` como «ya está», y es el mismo MECANISMO con INSTRUCCIÓN distinta: aquélla dice cómo EVALUAR un discriminador (daño = un porcentaje falso); ésta dice que un veredicto de grupo no se PROPAGA a sus miembros (daño = un campo del esquema con el alcance mal). Discriminador de CLAUDE.md: quítale la fecha y el nombre propio — las dos siguen diciendo qué hacer, y no lo mismo"
+    },
+    {
+      "enunciado": "UNA MÉTRICA DE SIMILITUD ENTRE CONJUNTOS NO ES INVARIANTE DE ESCALA: «0 hermanas» puede ser del UMBRAL y no del corpus",
+      "disposicion": "REGLA · promovida",
+      "destino": "CLAUDE.md §sondas 4, sexta cara",
+      "porQueNoEsLaMisma": "cruce manual contra CLAUDE.md: 0 ocurrencias de `jaccard`, `invariante de escala`, `similitud` y `umbral.*conjunto`"
+    },
+    {
+      "enunciado": "Los 18 cartuchos son una familia homogénea entre sí — 153/153 pares",
+      "disposicion": "EVENTO · se queda",
+      "destino": "el acta, con su cardinal y su ruta. Es un hallazgo sobre ESTE corpus, no una regla"
+    },
+    {
+      "enunciado": "Los dos `-SONDA-*` no son sabotajes sino corridas defectuosas archivadas",
+      "disposicion": "EVENTO · se queda",
+      "destino": "su regla general ya está en CLAUDE.md (§regla 7); lo que aquí es nuevo es que el ENCARGO los leyó mal, y eso lleva fecha"
+    }
+  ],
+  "candidatosARegla": [
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enunciado": "Y en la FAMILIA el mismo mecanismo es MAYOR:"
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enunciado": "El campo sigue siendo campo; lo que estaba mal era su ALCANCE."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enunciado": "Y EL DENOMINADOR DE P3 ERA 256 Y ES 244."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enunciado": "CORRECCIÓN A LA PREMISA DEL ENCARGO SOBRE LOS SABOTAJES:"
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enunciado": "Y el encargo tenía razón al avisar:"
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enunciado": "EL CERO ESTÁ AUDITADO Y SOBREVIVE, porque un «0 hermanas» de un ancla con > 4 marcadores puede ser del UMBRAL y no del corpus."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enunciado": "Y por qué nadie lo vio: la congelada de la FAMILIA cierra exacta porque sus > DOS claves extra valen 0"
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enunciado": "EL HALLAZGO, Y ES LA PREDICCIÓN QUE SALIÓ REFUTADA: LOS «CAMPO POR > VARIANZA» SE PRESTAN EL ORDINAL ENTRE DOCUMENTOS."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enunciado": "Y ESTA TANDA SE COBRÓ UNA §regla 5 AL COPIAR EL DETECTOR, que es la misma > forma de §regla 9 sobre la GRAMÁTICA con el objeto cambiado:"
+    }
+  ],
+  "todos": [
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enClaude": false,
+      "enClaudeFrase": false,
+      "enunciado": "Y en la FAMILIA el mismo mecanismo es MAYOR:"
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "El campo sigue siendo campo; lo que estaba mal era su ALCANCE."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enClaude": false,
+      "enClaudeFrase": false,
+      "enunciado": "Y EL DENOMINADOR DE P3 ERA 256 Y ES 244."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "CORRECCIÓN A LA PREMISA DEL ENCARGO SOBRE LOS SABOTAJES:"
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "heredado (una línea)",
+      "enClaude": false,
+      "enClaudeFrase": false,
+      "enunciado": "Y el encargo tenía razón al avisar:"
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "EL CERO ESTÁ AUDITADO Y SOBREVIVE, porque un «0 hermanas» de un ancla con > 4 marcadores puede ser del UMBRAL y no del corpus."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "Y por qué nadie lo vio: la congelada de la FAMILIA cierra exacta porque sus > DOS claves extra valen 0"
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "EL HALLAZGO, Y ES LA PREDICCIÓN QUE SALIÓ REFUTADA: LOS «CAMPO POR > VARIANZA» SE PRESTAN EL ORDINAL ENTRE DOCUMENTOS."
+    },
+    {
+      "fichero": "docs/PENDIENTES-QA.md",
+      "via": "complemento (multilínea)",
+      "enClaude": true,
+      "enClaudeFrase": false,
+      "enunciado": "Y ESTA TANDA SE COBRÓ UNA §regla 5 AL COPIAR EL DETECTOR, que es la misma > forma de §regla 9 sobre la GRAMÁTICA con el objeto cambiado:"
+    }
+  ],
+  "veredicto": "valida"
+}
