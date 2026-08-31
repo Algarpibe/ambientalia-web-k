@@ -1,0 +1,35 @@
+=== CONTROLES ===
+  OK  CANAL 1 · el barrido del esquema encuentra llamadas (ni cero)
+      16 llamadas en 2 ficheros
+  OK  CANAL 1 · discrimina (ni cero ni pleno de `packages/`)
+      2 de 50 ficheros .ts
+  OK  CANAL 2 · hay lectores A MANO además del `payload-types` generado
+      apps/web/src/lib/cms/articulos-kb.ts (2) · apps/web/src/components/kb/CuerpoKb.tsx (5) · apps/web/src/components/cola-larga/CuerpoPagina.tsx (5) · packages/cms-config/src/campos/comunes.ts (9)
+  OK  CANAL 2 · CONTROL: el generado sale IDENTIFICADO, no mezclado con los de a mano
+      packages/cms-config/src/payload-types.ts (425)
+  OK  CANAL 3 · la base tiene columnas de `medida()`
+      18 tablas · 165 columnas · 55 grupos
+  OK  CRUCE: hay al menos tantos GRUPOS en la base como LLAMADAS en el esquema
+      55 grupos ≥ 16 llamadas
+  OK  CANAL 3 · las colecciones alcanzadas están POBLADAS (por eso se amplía y no se renombra)
+      articulos_kb=6 · paginas=31 · paginas_bloques_filas=103 · paginas_bloques=76
+
+=== CANAL 1 · ESQUEMA (quién llama a `medida(`) ===
+  packages/cms-config/src/bloques/kb.ts — 7 llamadas
+  packages/cms-config/src/bloques/paginas.ts — 9 llamadas
+  TOTAL 16 llamadas en 2 ficheros
+
+=== CANAL 2 · RENDER (quién lee `movilValor`/`movilUnidad`) ===
+  [a mano]  apps/web/src/lib/cms/articulos-kb.ts — 2
+  [a mano]  apps/web/src/components/kb/CuerpoKb.tsx — 5
+  [a mano]  apps/web/src/components/cola-larga/CuerpoPagina.tsx — 5
+  [generado] packages/cms-config/src/payload-types.ts — 425
+  [a mano]  packages/cms-config/src/campos/comunes.ts — 9
+
+=== CANAL 3 · BASE ===
+  18 tablas · 165 columnas · 55 grupos `medida()`
+  filas por colección: articulos_kb=6 · paginas=31 · paginas_bloques_filas=103 · paginas_bloques=76
+
+⇒ SE AMPLÍA. Las dos colecciones alcanzadas están pobladas y el grupo tiene consumidores en los tres canales, así que renombrar `movilValor` rompería a todos para arreglar a uno (§regla 29 punto 2).
+
+✓ evaluadas 3/3 canales · controles 7/7

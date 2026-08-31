@@ -891,7 +891,12 @@ export const colaComercial: Field[] = [
  * · `valor` presente ⇒ `unidad` es **obligatoria**. Se rechaza en vez de
  *   suponerse `px`: suponerla es exactamente el defecto que este campo corrige;
  * · `movilValor` ausente = **hereda** el de escritorio (la cascada de Divi);
- *   presente = override de móvil, y entonces `movilUnidad` es obligatoria.
+ *   presente = override a **≤980** (la pestaña TABLET), y entonces
+ *   `movilUnidad` es obligatoria. El nombre dice «móvil» y el ancho al que se
+ *   sirve es 980 — ver el bloque de `medida()`, que lo deriva del render;
+ * · `valor767` ausente = hereda el de ≤980, y ése el de escritorio; presente =
+ *   override a **≤767** (la pestaña MÓVIL), y entonces `unidad767` es
+ *   obligatoria. **SIN ESTRENAR: el render no emite este tramo todavía.**
  *
  * ⚠ **Alcance de lo EJERCITADO, declarado (§regla del caso no ejercitado):** la
  * rama `movil*` la ejercitan **4 pares del nivel de MÓDULO** en KB
@@ -904,10 +909,31 @@ export const colaComercial: Field[] = [
 /** Las dos unidades que el dato medido usa. `pct` y no `%`: es un valor de enum. */
 export const UNIDADES_MEDIDA = ["px", "pct"] as const;
 
-/** `unidad` es obligatoria en cuanto hay `valor`, y no se sustituye por `px`. */
+/**
+ * `unidad` es obligatoria en cuanto hay `valor`, y no se sustituye por `px`.
+ *
+ * ⚠ **El nombre del campo de unidad se DERIVA del de valor, no se mapea a
+ * mano.** La versión anterior era `nombreValor === "valor" ? "unidad" :
+ * "movilUnidad"` — un ternario de dos ramas que es §regla 9, 7.º caso: *un
+ * conjunto enumerado a mano dentro de una sonda es un dato recordado*, y **está
+ * incompleto desde el día que se escribe** en cuanto el productor puede
+ * combinar más nombres. Con la tercera posición de breakpoint, la rama `else`
+ * habría bautizado `unidad767` como `movilUnidad` y **habría colisionado con la
+ * que ya existe** — sin dar error, porque dos campos con el mismo `name` en un
+ * grupo no son un fallo de tipos.
+ *
+ * Y no devuelve un valor benigno si no puede derivar: **tira** (§regla 6 — *una
+ * ausencia se rechaza, no se sustituye*).
+ */
 function unidadDe(nombreValor: string, etiqueta: string): Field {
+  const nombreUnidad = nombreValor.replace(/([Vv])alor/, (_m, v: string) => (v === "V" ? "Unidad" : "unidad"));
+  if (nombreUnidad === nombreValor)
+    throw new Error(
+      `unidadDe: no se puede derivar el nombre de la unidad de «${nombreValor}». ` +
+        `Un nombre de valor tiene que contener \`valor\`/\`Valor\`; se rechaza en vez de inventar uno.`,
+    );
   return {
-    name: nombreValor === "valor" ? "unidad" : "movilUnidad",
+    name: nombreUnidad,
     type: "select",
     options: [...UNIDADES_MEDIDA],
     admin: { description: `Obligatoria si hay ${etiqueta}. Sin ella el dato es ambiguo a 1440.` },
@@ -926,10 +952,56 @@ function unidadDe(nombreValor: string, etiqueta: string): Field {
 }
 
 /**
- * Una medida de ritmo con su unidad y su override de móvil. **Grupo**, para que
- * valor y unidad no puedan separarse: son una sola magnitud.
+ * Una medida de ritmo con su unidad y sus overrides por punto de ruptura.
+ * **Grupo**, para que valor y unidad no puedan separarse: son una sola
+ * magnitud.
  *
  * `fuente` no es adorno — es la evidencia, igual que en `conDefecto`.
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
+ * ⚠⚠ **TERCERA POSICIÓN DE BREAKPOINT — AÑADIDA EN LA 126.ª (2026-08-31), Y EL
+ * HALLAZGO NO ES QUE FALTARA UNA: ES QUE LA QUE HABÍA ESTÁ NOMBRADA POR LA
+ * INTENCIÓN Y SIRVE OTRO VALOR.**
+ *
+ * **Lo que el editor escribe**, censado por la 125.ª sobre los 4 documentos del
+ * lote —sólo reglas de ritmo cuyo ordinal es SUJETO del selector, §regla 36—:
+ *
+ * | posición | declaraciones |
+ * |---|---|
+ * | base (escritorio) | **85** |
+ * | `@media (max-width: 980px)` — pestaña TABLET de Divi | **20** |
+ * | `@media (max-width: 767px)` — pestaña MÓVIL de Divi | **20** |
+ *
+ * Divi da **tres** pestañas por campo de espaciado y las compila en esos dos
+ * `@media`. `medida()` tenía **dos** posiciones, así que una de las tres no
+ * tenía dónde ir.
+ *
+ * **Y CUÁL FALTABA SE DERIVA DEL RENDER, no del nombre del campo.** Los dos
+ * consumidores de este grupo aplican `--*-movil` dentro de
+ * `@media (max-width: 980px)` —`apps/web/src/app/f33.css` L144/185/243/303 y
+ * `kb.css` L96/178—, así que **`movilValor` ocupa la posición de TABLET**. La
+ * que faltaba es la de **≤767**, que es la que de verdad se sirve a 390.
+ *
+ * Es §*cuando lo que replicas es un VALOR SERVIDO, escribe el valor, no la
+ * intención*: `movil` es una intención y `980` es el valor. Por eso la posición
+ * nueva se llama **`valor767`/`unidad767`** — por su punto de ruptura— y no
+ * `movil2` ni nada que haya que volver a interpretar.
+ *
+ * **`movilValor` NO se renombra** (§regla 29 punto 2: no se toca lo que ya
+ * tiene consumidores para arreglar a otro). Son **18 tablas · 110 columnas
+ * `*_valor` · 55 grupos** en dos colecciones pobladas —`articulos_kb` 6 filas ·
+ * `paginas` 31—. Lo que sí cambia es su descripción, que decía «móvil» sin
+ * decir a qué ancho: una descripción falsa es §*documentado no es conectado*
+ * con el objeto puesto en la coartada.
+ *
+ * ⚠ **LO QUE ESTA TANDA NO HACE, con su cardinal (§regla 14):** el lado del
+ * RENDER de la posición nueva **NO está cableado**. Ni `f33.css` ni `kb.css`
+ * tienen un tramo `≤767` para el ritmo (`f33.css` sólo lo usa para `dvmd`,
+ * L593), y `vars()` no emite `--*-767`. O sea que **`valor767` es hoy un camino
+ * de render SIN ESTRENAR, 0 de 0 documentos** — se declara aquí en vez de
+ * suponerse soportado, igual que ya se declara la rama `movil*` a nivel de
+ * fila. Escribirlo es trabajo de otra tanda, y lleva su NO-OP por delante.
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 export function medida(name: string, fuente: string): Field {
   return {
@@ -939,8 +1011,24 @@ export function medida(name: string, fuente: string): Field {
     fields: [
       { name: "valor", type: "number" },
       unidadDe("valor", "`valor`"),
-      { name: "movilValor", type: "number", admin: { description: "Vacío = hereda el de escritorio." } },
+      {
+        name: "movilValor",
+        type: "number",
+        admin: {
+          description:
+            "Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.",
+        },
+      },
       unidadDe("movilValor", "`movilValor`"),
+      {
+        name: "valor767",
+        type: "number",
+        admin: {
+          description:
+            "Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.",
+        },
+      },
+      unidadDe("valor767", "`valor767`"),
     ],
   } as Field;
 }

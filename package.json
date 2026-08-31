@@ -284,7 +284,9 @@
     "cms:captura-fuentes": "node scripts/seed/captura-fuentes.mjs",
     "cms:captura-fuentes-neg": "node scripts/seed/captura-fuentes.neg.mjs",
     "qa:kb-barra": "node scripts/qa/kb-barra.mjs",
-    "qa:kb-barra-neg": "node scripts/qa/kb-barra.neg.mjs"
+    "qa:kb-barra-neg": "node scripts/qa/kb-barra.neg.mjs",
+    "qa:medida-bp": "node scripts/qa/medida-bp.mjs",
+    "qa:medida-bp-neg": "node scripts/qa/medida-bp.neg.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.4.0"

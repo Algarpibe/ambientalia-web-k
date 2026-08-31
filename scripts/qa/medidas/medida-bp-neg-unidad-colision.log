@@ -1,0 +1,27 @@
+=== CONTROLES ===
+  OK  POSICIONES: el grupo tiene una por cada punto de ruptura que el editor escribe
+      esquema=3 (valor · movilValor · valor767) · medidas por la 125.ª=3 (base (escritorio) · ≤980 (pestaña TABLET de Divi) · ≤767 (pestaña MÓVIL de Divi))
+  OK  NOMBRES: cada posición trae su unidad
+      valores=3 · unidades=3
+  FALLA NOMBRES: los nombres de unidad son DISTINTOS (una colisión se come un campo en silencio)
+      COLISIONAN: movilUnidad
+  OK  NOMBRES: los nombres de valor son DISTINTOS
+      3 distintos
+  OK  VALIDATE: la unidad se rechaza en cuanto hay valor, en las 3 posiciones
+      valor · movilValor · valor767
+  OK  VALIDATE · CONTROL: con la unidad puesta PASA (o su rojo no significa nada)
+      3/3 aceptan
+  OK  CRUCE: la variable `-movil` aparece en LOS DOS consumidores (ni cero ni uno)
+      f33.css=980 · kb.css=980
+  OK  CRUCE: `movilValor` se sirve al ancho que el esquema dice — y es 980, no 767
+      anchos donde el render aplica `-movil`: 980
+
+=== POSICIONES DEL GRUPO ===
+  valor        → unidad `unidad`
+  movilValor   → unidad `movilUnidad`
+  valor767     → unidad `movilUnidad`
+
+=== SIN ESTRENAR (declarado, no es fallo) ===
+  valor767: cableado en el render = NO · consumidores con tramo 767: ninguno
+
+✓ evaluadas 3/3 posiciones de breakpoint · controles 7/8

@@ -1,0 +1,179 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": 126,
+ "escalon": 1,
+ "pregunta": "¿quién consume `medida()` hoy, y por tanto se puede AMPLIAR o hay que renombrar?",
+ "veredicto": "SE AMPLÍA. Las dos colecciones alcanzadas están pobladas y el grupo tiene consumidores en los tres canales, así que renombrar `movilValor` rompería a todos para arreglar a uno (§regla 29 punto 2).",
+ "canal1Esquema": {
+  "llamadas": 16,
+  "ficheros": [
+   "packages/cms-config/src/bloques/kb.ts",
+   "packages/cms-config/src/bloques/paginas.ts"
+  ],
+  "detalle": [
+   {
+    "fichero": "packages/cms-config/src/bloques/kb.ts",
+    "linea": 84
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/kb.ts",
+    "linea": 85
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/kb.ts",
+    "linea": 86
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/kb.ts",
+    "linea": 417
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/kb.ts",
+    "linea": 418
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/kb.ts",
+    "linea": 419
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/kb.ts",
+    "linea": 420
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 115
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 116
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 117
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 775
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 776
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 777
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 778
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 827
+   },
+   {
+    "fichero": "packages/cms-config/src/bloques/paginas.ts",
+    "linea": 828
+   }
+  ]
+ },
+ "canal2Render": {
+  "aMano": [
+   {
+    "fichero": "apps/web/src/lib/cms/articulos-kb.ts",
+    "ocurrencias": 2,
+    "generado": false
+   },
+   {
+    "fichero": "apps/web/src/components/kb/CuerpoKb.tsx",
+    "ocurrencias": 5,
+    "generado": false
+   },
+   {
+    "fichero": "apps/web/src/components/cola-larga/CuerpoPagina.tsx",
+    "ocurrencias": 5,
+    "generado": false
+   },
+   {
+    "fichero": "packages/cms-config/src/campos/comunes.ts",
+    "ocurrencias": 9,
+    "generado": false
+   }
+  ],
+  "generado": [
+   {
+    "fichero": "packages/cms-config/src/payload-types.ts",
+    "ocurrencias": 425,
+    "generado": true
+   }
+  ]
+ },
+ "canal3Base": {
+  "tablas": 18,
+  "columnas": 165,
+  "grupos": 55,
+  "listaTablas": [
+   "articulos_kb_blocks_blurb",
+   "articulos_kb_blocks_boton_kb",
+   "articulos_kb_blocks_gallery",
+   "articulos_kb_blocks_imagen_kb",
+   "articulos_kb_blocks_texto_kb",
+   "articulos_kb_cuerpo",
+   "paginas_blocks_blurb",
+   "paginas_blocks_boton_pagina",
+   "paginas_blocks_codigo",
+   "paginas_blocks_icono",
+   "paginas_blocks_imagen_pagina",
+   "paginas_blocks_mapa",
+   "paginas_blocks_slider",
+   "paginas_blocks_texto_pagina",
+   "paginas_blocks_toggle",
+   "paginas_blocks_video_pagina",
+   "paginas_bloques_filas",
+   "paginas_bloques"
+  ],
+  "filasPorColeccion": {
+   "articulos_kb": 6,
+   "paginas": 31,
+   "paginas_bloques_filas": 103,
+   "paginas_bloques": 76
+  }
+ },
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "CANAL 1 · el barrido del esquema encuentra llamadas (ni cero)",
+   "detalle": "16 llamadas en 2 ficheros"
+  },
+  {
+   "ok": true,
+   "nombre": "CANAL 1 · discrimina (ni cero ni pleno de `packages/`)",
+   "detalle": "2 de 50 ficheros .ts"
+  },
+  {
+   "ok": true,
+   "nombre": "CANAL 2 · hay lectores A MANO además del `payload-types` generado",
+   "detalle": "apps/web/src/lib/cms/articulos-kb.ts (2) · apps/web/src/components/kb/CuerpoKb.tsx (5) · apps/web/src/components/cola-larga/CuerpoPagina.tsx (5) · packages/cms-config/src/campos/comunes.ts (9)"
+  },
+  {
+   "ok": true,
+   "nombre": "CANAL 2 · CONTROL: el generado sale IDENTIFICADO, no mezclado con los de a mano",
+   "detalle": "packages/cms-config/src/payload-types.ts (425)"
+  },
+  {
+   "ok": true,
+   "nombre": "CANAL 3 · la base tiene columnas de `medida()`",
+   "detalle": "18 tablas · 165 columnas · 55 grupos"
+  },
+  {
+   "ok": true,
+   "nombre": "CRUCE: hay al menos tantos GRUPOS en la base como LLAMADAS en el esquema",
+   "detalle": "55 grupos ≥ 16 llamadas"
+  },
+  {
+   "ok": true,
+   "nombre": "CANAL 3 · las colecciones alcanzadas están POBLADAS (por eso se amplía y no se renombra)",
+   "detalle": "articulos_kb=6 · paginas=31 · paginas_bloques_filas=103 · paginas_bloques=76"
+  }
+ ]
+}

@@ -6465,3 +6465,94 @@ exacto contra las dos congeladas de la 125.ª — **34 · 22 · 27 · 22** en 4 
   correcto —el editor lo colocó igual—, pero **no se puede usar este cardinal
   para leer geometría**;
 - **es propiedad de estos 4 documentos**, no del sitio.
+
+---
+
+# §2ñ · `CMS-F35-BREAKPOINT` — **la tercera posición de `medida()`**, y el hallazgo es que la segunda estaba mal nombrada (126.ª, 2026-08-31)
+
+## §2ñ.1 · El hueco, con su censo
+
+La 125.ª dejó **un** hueco de tipo en `medida()` (el de unidad se cerró: la base
+del `rem` es 16px constante). Censado sobre los 4 documentos del lote —sólo
+reglas de ritmo cuyo ordinal es **SUJETO** del selector, §regla 36—:
+
+| posición | declaraciones del editor |
+|---|---|
+| base (escritorio) | **85** |
+| `@media (max-width: 980px)` — pestaña **TABLET** de Divi | **20** |
+| `@media (max-width: 767px)` — pestaña **MÓVIL** de Divi | **20** |
+
+Divi da **tres** pestañas por campo de espaciado; `medida()` tenía **dos**
+posiciones. Un valor de tablet guardado en la de móvil se serviría **también a
+390**, donde el original sirve otro.
+
+## §2ñ.2 · ⚠⚠ CUÁL FALTABA SE DERIVA DEL RENDER, NO DEL NOMBRE DEL CAMPO
+
+Parecía que faltaba la de tablet. **No:** los dos consumidores del grupo aplican
+`--*-movil` dentro de `@media (max-width: 980px)` —`f33.css` L144/185/243/303 y
+`kb.css` L96/178, derivado y cruzado en `qa:medida-bp`—. O sea que
+
+> **`movilValor` ocupa la posición de TABLET (≤980). La que faltaba es la de
+> ≤767, que es la que de verdad se sirve a 390.**
+
+Es una instancia más de §*cuando lo que replicas es un VALOR SERVIDO, escribe el
+valor, no la intención*: `movil` es una intención, `980` es el valor. Por eso la
+posición nueva se llama **`valor767`/`unidad767`**, por su punto de ruptura.
+
+**`movilValor` NO se renombra** (§regla 29 punto 2). El recuento que lo decide se
+**derivó** antes de tocar nada, por los tres canales
+(`derivaciones/consumidores-medida-126.*`, 7 controles):
+
+| canal | cardinal |
+|---|---|
+| ESQUEMA · llamadas a `medida(` | **16** en 2 ficheros (`kb.ts` 7 · `paginas.ts` 9) |
+| RENDER · lectores a mano | **4** (+ `payload-types.ts` generado, 425 ocurrencias, identificado aparte) |
+| BASE · tablas · columnas · grupos | **18 · 165 · 55** |
+| colecciones POBLADAS alcanzadas | `articulos_kb` **6** · `paginas` **31** |
+
+Con 55 grupos vivos en dos colecciones pobladas, renombrar rompería a todos para
+arreglar a uno. Se **amplía**.
+
+## §2ñ.3 · La migración, con su reversa probada ANTES de sembrar
+
+`20260831_014031_f3_5_medida_breakpoint_767`. §regla 30: la ventana en la que la
+reversa tiene respuesta es **antes de que entre el dato**, y se verificó
+**TABLA A TABLA con `diff`**, no con el total:
+
+| comprobación | resultado |
+|---|---|
+| simetría del fichero | **110 ADD COLUMN / 110 DROP COLUMN · 55 CREATE TYPE / 55 DROP TYPE** |
+| `up` → censo de columnas | **18 tablas** cambian — exactamente las 18 derivadas |
+| `down` → censo de columnas | **`diff` VACÍO** contra el de antes, en las **138** tablas |
+| filas tras la reversa | `entradas_blog` 152 · `articulos_kb` 6 · `casos` 57 · `paginas` 31 — intactas |
+| tipos huérfanos tras la reversa | **0** |
+| registro de migraciones | **25 → 24, y se fue UNA**: la creada |
+
+> ⚠ **Y el aviso de §regla 30 se cobró en vivo:** `payload migrate:down` imprimió
+> **«Rolling back batch 2 consisting of 25 migration(s)»** y revirtió **una**.
+> El veredicto lo dio la tabla `payload_migrations`, no la consola — §*el LOG de
+> la herramienta no es lo que la herramienta hizo*.
+
+Cruce que cierra el recuento: **55 `CREATE TYPE` = 55 grupos** derivados de la
+DB, y tras aplicarla `pg_type` trae **55 enums (`e`) + 55 arrays (`b`)** — los
+arrays los crea Postgres solo, derivado por `typtype` y no supuesto.
+
+## §2ñ.4 · La guarda que `medida()` no tenía — y lo que declara SIN ESTRENAR
+
+`medida()` llevaba desde que existe **sin ninguna sonda que leyera su forma**
+(derivado: 0 de las de `scripts/qa/`). La 126.ª le añade
+**`npm run qa:medida-bp`**, con 8 controles y **5 casos de negativo, control
+incluido**, cada uno cayendo por su motivo:
+
+| invariante | qué pasa si falta |
+|---|---|
+| POSICIONES | vuelve el hueco: 2 posiciones para 3 breakpoints medidos |
+| NOMBRES DISTINTOS | la versión vieja de `unidadDe` mapeaba a mano con un ternario de **dos ramas**, así que la tercera unidad se habría llamado `movilUnidad` y **colisionado en silencio** — dos campos con el mismo `name` no son un error de tipos (§regla 9, 7.º caso) |
+| VALIDATE muerde, y su control acepta | la unidad **supuesta** en vez de rechazada, o sea el defecto que `medida()` existe para corregir |
+| CRUCE con el render | el esquema nombra un ancho y el render aplica otro — el hallazgo de §2ñ.2 con el signo cambiado |
+
+> ⚠ **DECLARADO CON SU CARDINAL (§regla 14): `valor767` es hoy un camino de
+> render SIN ESTRENAR.** Ni `f33.css` ni `kb.css` tienen tramo `≤767` para el
+> ritmo, y `vars()` no emite `--*-767`: **0 consumidores**. La sonda lo publica
+> en cada corrida y **no lo cuenta como fallo** — es un hecho, no un rojo.
+> Cablearlo es trabajo de otra tanda y lleva su NO-OP por delante.

@@ -1,0 +1,115 @@
+{
+  "fecha": "2026-08-31",
+  "sonda": "medida-bp",
+  "sabotaje": "posicion-fuera",
+  "alcance": {
+    "unidad": "posiciones de breakpoint de UN grupo `medida()`",
+    "nota": "el grupo es una primitiva: lo que vale para él vale para las 55 instancias de la DB"
+  },
+  "breakpointsMedidos": [
+    {
+      "ancho": null,
+      "etiqueta": "base (escritorio)",
+      "declaraciones": 85
+    },
+    {
+      "ancho": 980,
+      "etiqueta": "≤980 (pestaña TABLET de Divi)",
+      "declaraciones": 20
+    },
+    {
+      "ancho": 767,
+      "etiqueta": "≤767 (pestaña MÓVIL de Divi)",
+      "declaraciones": 20
+    }
+  ],
+  "esquema": {
+    "valores": [
+      "valor",
+      "movilValor"
+    ],
+    "unidades": [
+      "unidad",
+      "movilUnidad",
+      "unidad767"
+    ]
+  },
+  "validate": [
+    {
+      "posicion": "valor",
+      "muerde": true,
+      "acepta": true,
+      "porQue": "ok"
+    },
+    {
+      "posicion": "movilValor",
+      "muerde": true,
+      "acepta": true,
+      "porQue": "ok"
+    }
+  ],
+  "render": {
+    "movil": [
+      {
+        "fichero": "f33.css",
+        "anchos": [
+          980
+        ]
+      },
+      {
+        "fichero": "kb.css",
+        "anchos": [
+          980
+        ]
+      }
+    ]
+  },
+  "sinEstrenar": {
+    "campo": "valor767",
+    "cableadoEnElRender": false,
+    "consumidoresConTramo767": []
+  },
+  "controles": [
+    {
+      "ok": false,
+      "nombre": "POSICIONES: el grupo tiene una por cada punto de ruptura que el editor escribe",
+      "detalle": "esquema=2 (valor · movilValor) · medidas por la 125.ª=3 (base (escritorio) · ≤980 (pestaña TABLET de Divi) · ≤767 (pestaña MÓVIL de Divi))"
+    },
+    {
+      "ok": false,
+      "nombre": "NOMBRES: cada posición trae su unidad",
+      "detalle": "valores=2 · unidades=3"
+    },
+    {
+      "ok": true,
+      "nombre": "NOMBRES: los nombres de unidad son DISTINTOS (una colisión se come un campo en silencio)",
+      "detalle": "3 distintos: unidad · movilUnidad · unidad767"
+    },
+    {
+      "ok": true,
+      "nombre": "NOMBRES: los nombres de valor son DISTINTOS",
+      "detalle": "2 distintos"
+    },
+    {
+      "ok": true,
+      "nombre": "VALIDATE: la unidad se rechaza en cuanto hay valor, en las 3 posiciones",
+      "detalle": "valor · movilValor"
+    },
+    {
+      "ok": true,
+      "nombre": "VALIDATE · CONTROL: con la unidad puesta PASA (o su rojo no significa nada)",
+      "detalle": "3/3 aceptan"
+    },
+    {
+      "ok": true,
+      "nombre": "CRUCE: la variable `-movil` aparece en LOS DOS consumidores (ni cero ni uno)",
+      "detalle": "f33.css=980 · kb.css=980"
+    },
+    {
+      "ok": true,
+      "nombre": "CRUCE: `movilValor` se sirve al ancho que el esquema dice — y es 980, no 767",
+      "detalle": "anchos donde el render aplica `-movil`: 980"
+    }
+  ],
+  "nFallos": 2
+}

@@ -1665,13 +1665,21 @@ export interface Pagina {
            */
           unidad?: ('px' | 'pct') | null;
           /**
-           * Vacío = hereda el de escritorio.
+           * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
            */
           movilValor?: number | null;
           /**
            * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
            */
           movilUnidad?: ('px' | 'pct') | null;
+          /**
+           * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+           */
+          valor767?: number | null;
+          /**
+           * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+           */
+          unidad767?: ('px' | 'pct') | null;
         };
         /**
          * Vacío = el default responsive de Divi. SIN PROBAR — ídem
@@ -1683,13 +1691,21 @@ export interface Pagina {
            */
           unidad?: ('px' | 'pct') | null;
           /**
-           * Vacío = hereda el de escritorio.
+           * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
            */
           movilValor?: number | null;
           /**
            * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
            */
           movilUnidad?: ('px' | 'pct') | null;
+          /**
+           * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+           */
+          valor767?: number | null;
+          /**
+           * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+           */
+          unidad767?: ('px' | 'pct') | null;
         };
         /**
          * Módulos *fullwidth* que cuelgan de la sección sin fila. 2 medidos en 32 páginas.
@@ -1712,13 +1728,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -1730,13 +1754,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -1748,13 +1780,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -1788,13 +1828,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -1806,13 +1854,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -1824,13 +1880,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -1860,13 +1924,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -1878,13 +1950,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -1896,13 +1976,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -1929,13 +2017,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -1947,13 +2043,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -1965,13 +2069,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -2003,13 +2115,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2021,13 +2141,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2039,13 +2167,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -2076,13 +2212,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2094,13 +2238,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2112,13 +2264,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -2186,13 +2346,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2204,13 +2372,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
@@ -2222,13 +2398,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -2289,13 +2473,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2307,13 +2499,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2325,13 +2525,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -2367,13 +2575,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2385,13 +2601,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2403,13 +2627,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -2437,13 +2669,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2455,13 +2695,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                     /**
                      * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2473,13 +2721,21 @@ export interface Pagina {
                        */
                       unidad?: ('px' | 'pct') | null;
                       /**
-                       * Vacío = hereda el de escritorio.
+                       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                        */
                       movilValor?: number | null;
                       /**
                        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                        */
                       movilUnidad?: ('px' | 'pct') | null;
+                      /**
+                       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                       */
+                      valor767?: number | null;
+                      /**
+                       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                       */
+                      unidad767?: ('px' | 'pct') | null;
                     };
                   };
                   /**
@@ -2540,13 +2796,21 @@ export interface Pagina {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. SIN PROBAR — ídem
@@ -2558,13 +2822,21 @@ export interface Pagina {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. SIN PROBAR — ídem
@@ -2576,13 +2848,21 @@ export interface Pagina {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. SIN PROBAR — ídem
@@ -2594,13 +2874,21 @@ export interface Pagina {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               columnas: {
                 ancho: '1_6' | '1_5' | '1_4' | '1_3' | '2_5' | '1_2' | '3_5' | '2_3' | '3_4' | '4_4';
@@ -2622,13 +2910,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2640,13 +2936,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2658,13 +2962,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -2698,13 +3010,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2716,13 +3036,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2734,13 +3062,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -2770,13 +3106,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2788,13 +3132,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2806,13 +3158,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -2839,13 +3199,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2857,13 +3225,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2875,13 +3251,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -2913,13 +3297,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -2931,13 +3323,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -2949,13 +3349,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -2986,13 +3394,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3004,13 +3420,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -3022,13 +3446,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -3096,13 +3528,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3114,13 +3554,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
@@ -3132,13 +3580,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -3199,13 +3655,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3217,13 +3681,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -3235,13 +3707,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -3277,13 +3757,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3295,13 +3783,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -3313,13 +3809,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -3347,13 +3851,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3365,13 +3877,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                             /**
                              * Vacío = el default responsive de Divi. SIN PROBAR — 0 ejes COMPARADOS en las 31 (el original sí está derivado: `qa:f33-geo`)
@@ -3383,13 +3903,21 @@ export interface Pagina {
                                */
                               unidad?: ('px' | 'pct') | null;
                               /**
-                               * Vacío = hereda el de escritorio.
+                               * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                                */
                               movilValor?: number | null;
                               /**
                                * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                                */
                               movilUnidad?: ('px' | 'pct') | null;
+                              /**
+                               * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                               */
+                              valor767?: number | null;
+                              /**
+                               * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                               */
+                              unidad767?: ('px' | 'pct') | null;
                             };
                           };
                           /**
@@ -3486,13 +4014,21 @@ export interface ArticulosKb {
        */
       unidad?: ('px' | 'pct') | null;
       /**
-       * Vacío = hereda el de escritorio.
+       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
        */
       movilValor?: number | null;
       /**
        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
        */
       movilUnidad?: ('px' | 'pct') | null;
+      /**
+       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+       */
+      valor767?: number | null;
+      /**
+       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+       */
+      unidad767?: ('px' | 'pct') | null;
     };
     /**
      * Vacío = el default responsive de Divi. cuerpo.spec.md §2 — default 2 %; `0·1·14·17` px y `0.8 %`
@@ -3504,13 +4040,21 @@ export interface ArticulosKb {
        */
       unidad?: ('px' | 'pct') | null;
       /**
-       * Vacío = hereda el de escritorio.
+       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
        */
       movilValor?: number | null;
       /**
        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
        */
       movilUnidad?: ('px' | 'pct') | null;
+      /**
+       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+       */
+      valor767?: number | null;
+      /**
+       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+       */
+      unidad767?: ('px' | 'pct') | null;
     };
     /**
      * Vacío = el default responsive de Divi. cuerpo.spec.md §2 — default 0; `25·−2` px y `2 %·5 %·0.4 %`
@@ -3522,13 +4066,21 @@ export interface ArticulosKb {
        */
       unidad?: ('px' | 'pct') | null;
       /**
-       * Vacío = hereda el de escritorio.
+       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
        */
       movilValor?: number | null;
       /**
        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
        */
       movilUnidad?: ('px' | 'pct') | null;
+      /**
+       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+       */
+      valor767?: number | null;
+      /**
+       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+       */
+      unidad767?: ('px' | 'pct') | null;
     };
     /**
      * Vacío = el default responsive de Divi. cuerpo.spec.md §2 — default 0; `−21` px
@@ -3540,13 +4092,21 @@ export interface ArticulosKb {
        */
       unidad?: ('px' | 'pct') | null;
       /**
-       * Vacío = hereda el de escritorio.
+       * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
        */
       movilValor?: number | null;
       /**
        * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
        */
       movilUnidad?: ('px' | 'pct') | null;
+      /**
+       * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+       */
+      valor767?: number | null;
+      /**
+       * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+       */
+      unidad767?: ('px' | 'pct') | null;
     };
     columnas: {
       ancho: '1_6' | '1_5' | '1_4' | '1_3' | '2_5' | '1_2' | '3_5' | '2_3' | '3_4' | '4_4';
@@ -3597,13 +4157,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3615,13 +4183,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
@@ -3633,13 +4209,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
             };
             /**
@@ -3664,13 +4248,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3682,13 +4274,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
@@ -3700,13 +4300,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
             };
             /**
@@ -3732,13 +4340,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3750,13 +4366,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
@@ -3768,13 +4392,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
             };
             /**
@@ -3842,13 +4474,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3860,13 +4500,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
@@ -3878,13 +4526,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
             };
             /**
@@ -3913,13 +4569,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — 9 pares; el defecto lo da `mbPorDefecto(anchoFila, tipoColumna)`
@@ -3931,13 +4595,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
               /**
                * Vacío = el default responsive de Divi. modulos.spec.md §1.3 — `0`×141 · `35`×2
@@ -3949,13 +4621,21 @@ export interface ArticulosKb {
                  */
                 unidad?: ('px' | 'pct') | null;
                 /**
-                 * Vacío = hereda el de escritorio.
+                 * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
                  */
                 movilValor?: number | null;
                 /**
                  * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
                  */
                 movilUnidad?: ('px' | 'pct') | null;
+                /**
+                 * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+                 */
+                valor767?: number | null;
+                /**
+                 * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+                 */
+                unidad767?: ('px' | 'pct') | null;
               };
             };
             /**
@@ -5325,6 +6005,8 @@ export interface PaginasSelect<T extends boolean = true> {
               unidad?: T;
               movilValor?: T;
               movilUnidad?: T;
+              valor767?: T;
+              unidad767?: T;
             };
         pb?:
           | T
@@ -5333,6 +6015,8 @@ export interface PaginasSelect<T extends boolean = true> {
               unidad?: T;
               movilValor?: T;
               movilUnidad?: T;
+              valor767?: T;
+              unidad767?: T;
             };
         modulosSueltos?:
           | T
@@ -5351,6 +6035,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5359,6 +6045,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5367,6 +6055,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5391,6 +6081,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5399,6 +6091,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5407,6 +6101,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5430,6 +6126,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5438,6 +6136,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5446,6 +6146,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5466,6 +6168,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5474,6 +6178,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5482,6 +6188,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5504,6 +6212,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5512,6 +6222,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5520,6 +6232,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5541,6 +6255,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5549,6 +6265,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5557,6 +6275,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5593,6 +6313,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5601,6 +6323,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5609,6 +6333,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5656,6 +6382,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5664,6 +6392,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5672,6 +6402,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5700,6 +6432,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5708,6 +6442,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5716,6 +6452,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5737,6 +6475,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           mb?:
                             | T
@@ -5745,6 +6485,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                           pb?:
                             | T
@@ -5753,6 +6495,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                 unidad?: T;
                                 movilValor?: T;
                                 movilUnidad?: T;
+                                valor767?: T;
+                                unidad767?: T;
                               };
                         };
                     anchoPct?: T;
@@ -5806,6 +6550,8 @@ export interface PaginasSelect<T extends boolean = true> {
                     unidad?: T;
                     movilValor?: T;
                     movilUnidad?: T;
+                    valor767?: T;
+                    unidad767?: T;
                   };
               pb?:
                 | T
@@ -5814,6 +6560,8 @@ export interface PaginasSelect<T extends boolean = true> {
                     unidad?: T;
                     movilValor?: T;
                     movilUnidad?: T;
+                    valor767?: T;
+                    unidad767?: T;
                   };
               mt?:
                 | T
@@ -5822,6 +6570,8 @@ export interface PaginasSelect<T extends boolean = true> {
                     unidad?: T;
                     movilValor?: T;
                     movilUnidad?: T;
+                    valor767?: T;
+                    unidad767?: T;
                   };
               mb?:
                 | T
@@ -5830,6 +6580,8 @@ export interface PaginasSelect<T extends boolean = true> {
                     unidad?: T;
                     movilValor?: T;
                     movilUnidad?: T;
+                    valor767?: T;
+                    unidad767?: T;
                   };
               columnas?:
                 | T
@@ -5852,6 +6604,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -5860,6 +6614,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -5868,6 +6624,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -5892,6 +6650,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -5900,6 +6660,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -5908,6 +6670,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -5931,6 +6695,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -5939,6 +6705,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -5947,6 +6715,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -5967,6 +6737,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -5975,6 +6747,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -5983,6 +6757,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -6005,6 +6781,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -6013,6 +6791,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -6021,6 +6801,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -6042,6 +6824,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -6050,6 +6834,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -6058,6 +6844,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -6094,6 +6882,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -6102,6 +6892,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -6110,6 +6902,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -6157,6 +6951,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -6165,6 +6961,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -6173,6 +6971,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -6201,6 +7001,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -6209,6 +7011,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -6217,6 +7021,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -6238,6 +7044,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       mb?:
                                         | T
@@ -6246,6 +7054,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                       pb?:
                                         | T
@@ -6254,6 +7064,8 @@ export interface PaginasSelect<T extends boolean = true> {
                                             unidad?: T;
                                             movilValor?: T;
                                             movilUnidad?: T;
+                                            valor767?: T;
+                                            unidad767?: T;
                                           };
                                     };
                                 anchoPct?: T;
@@ -6334,6 +7146,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
               unidad?: T;
               movilValor?: T;
               movilUnidad?: T;
+              valor767?: T;
+              unidad767?: T;
             };
         pb?:
           | T
@@ -6342,6 +7156,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
               unidad?: T;
               movilValor?: T;
               movilUnidad?: T;
+              valor767?: T;
+              unidad767?: T;
             };
         mt?:
           | T
@@ -6350,6 +7166,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
               unidad?: T;
               movilValor?: T;
               movilUnidad?: T;
+              valor767?: T;
+              unidad767?: T;
             };
         mb?:
           | T
@@ -6358,6 +7176,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
               unidad?: T;
               movilValor?: T;
               movilUnidad?: T;
+              valor767?: T;
+              unidad767?: T;
             };
         columnas?:
           | T
@@ -6392,6 +7212,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 mb?:
                                   | T
@@ -6400,6 +7222,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 pb?:
                                   | T
@@ -6408,6 +7232,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                               };
                           anchoPct?: T;
@@ -6429,6 +7255,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 mb?:
                                   | T
@@ -6437,6 +7265,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 pb?:
                                   | T
@@ -6445,6 +7275,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                               };
                           anchoPct?: T;
@@ -6467,6 +7299,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 mb?:
                                   | T
@@ -6475,6 +7309,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 pb?:
                                   | T
@@ -6483,6 +7319,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                               };
                           anchoPct?: T;
@@ -6519,6 +7357,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 mb?:
                                   | T
@@ -6527,6 +7367,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 pb?:
                                   | T
@@ -6535,6 +7377,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                               };
                           anchoPct?: T;
@@ -6562,6 +7406,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 mb?:
                                   | T
@@ -6570,6 +7416,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                                 pb?:
                                   | T
@@ -6578,6 +7426,8 @@ export interface ArticulosKbSelect<T extends boolean = true> {
                                       unidad?: T;
                                       movilValor?: T;
                                       movilUnidad?: T;
+                                      valor767?: T;
+                                      unidad767?: T;
                                     };
                               };
                           anchoPct?: T;
