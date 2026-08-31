@@ -6326,8 +6326,11 @@ ninguno que se pueda cablear en el componente.
   el clon no emite marcador de módulo, así que los dos selectores no denotan el
   mismo conjunto (medido: `14 → 2`, `7 → 2`, `6 → 2`). Cerrarlo pide emitir
   `data-modulo` en los componentes;
-- **420 de los nodos medidos no tienen llave** de emparejamiento entre anchos
-  (ordinal de clase), y quedan fuera del cruce;
+- **420 PARES (nodo × eje) no tienen llave** de emparejamiento entre anchos
+  (ordinal de clase), y quedan fuera del cruce. ⚠ **La unidad estaba mal escrita
+  aquí** —decía «420 nodos»— y son **105 NODOS × 4 ejes de ritmo**. Los dos
+  cardinales son ciertos, cada uno en su unidad, y **ninguno sustituye al otro**;
+  reconciliado y derivado en §2n;
 - **los 4 de la celda `varia+noSeMueve` salen CON RESERVA**: son los únicos donde
   el test A por sí solo dictaría campo, y esta derivación **no mira la unidad
   declarada** — un `em` no se mueve con el ancho lo escriba quien lo escriba.
@@ -6344,3 +6347,121 @@ ninguno que se pueda cablear en el componente.
 > se mueve con el ancho y parece plantilla*— **no es un caso marginal en este
 > arquetipo: es la mayoría**. Y las 17 celdas SIN ESCRIBIR, leídas por el
 > enunciado literal, habrían sido **17 campos inventados** más.
+
+---
+
+# §2n · `CMS-F35-MODULO` — **QUÉ CUENTA COMO «UN MÓDULO»**, fijado antes de escribir el content type (126.ª, 2026-08-31)
+
+**Por qué esto va delante y no al pie.** El content type de F3-5 lleva un array
+de módulos. Un array cuyo elemento no está definido **no se puede auditar
+después**: cualquier comparación futura leería la diferencia entre dos
+definiciones como defecto del clon. La 125.ª publicó **tres cardinales ciertos
+por documento —110 · 90 · 83— y ninguno es «el» número**, así que fijarlo es
+una precondición del escalón 2, no una nota.
+
+Derivación con sus **14 controles en verde** y sus **dos cruces al elemento**:
+`docs/research/cola-larga/derivaciones/paso0-criterio-126.{mjs,json,log}`.
+
+## §2n.1 · El criterio ELEGIDO, y por qué
+
+> **UN MÓDULO = un nodo `.et_pb_module` del CUERPO que NO cuelga de otro
+> `.et_pb_module`.** Cascarón descontado (`_tb_header` · `_tb_footer`).
+> **Unidad: módulo de primer nivel.**
+
+| documento | módulos de primer nivel |
+|---|---|
+| PRODUCTO | **90** |
+| CATÁLOGO | **35** |
+| SOFTWARE | **70** |
+| SOFTWARE-corta | **36** |
+| **total 4 docs** | **231** |
+
+**La razón no es de comodidad: es que el original la SIRVE.** El escalón 2 de la
+125.ª estableció que *«sin llave» es un discriminador servido entre lo que
+compuso el EDITOR y lo que compuso el CONSTRUCTOR* — el constructor sólo numera
+los módulos que el editor colocó. Cruzado **profundidad × llave** sobre los 311
+módulos del cuerpo, la partición sale así (los cuatro cubos suman el total en
+4/4 documentos):
+
+| | con llave | sin llave |
+|---|---|---|
+| **primer nivel** | **230** | **1** |
+| anidado | 4 | **76** |
+
+**230 de 231 módulos de primer nivel llevan ordinal del constructor — el
+99.6 %.** Y los **76 sin llave son los 19 `et_pb_toggle` × 4 documentos**: el
+acordeón de FAQs, que **no son 19 bloques del flexible content sino el contenido
+de UN campo** — `FAQ_ITEMS`, que el clon ya modela así. Los dos discriminadores,
+uno estructural y otro servido, dicen lo mismo.
+
+> ⚠ **Y las dos excepciones se declaran, porque no son ruido:**
+>
+> - **1 de primer nivel SIN llave**: `dvmd_table_maker` en PRODUCTO — módulo de
+>   un tercero, que el constructor no numera. **Es módulo** por el criterio y
+>   entra en el array;
+> - **4 anidados CON llave**: `et_pb_posts`, 1 por documento. O sea que
+>   «anidado» y «sin llave» **no son la misma partición**, y por eso el criterio
+>   se escribe sobre la PROFUNDIDAD —que es lo que define el elemento del
+>   array— y no sobre la llave, que es sólo la evidencia que lo respalda.
+
+## §2n.2 · Los otros dos, NOMBRADOS CON SU UNIDAD — no se sustituyen
+
+§*corregir un denominador no es sustituirlo en todas partes*: los tres son
+ciertos y dicen cosas distintas. Citar uno sin su unidad es lo que los hace
+indistinguibles.
+
+| cardinal | unidad | qué es |
+|---|---|---|
+| **231** (90·35·70·36) | **módulo de primer nivel** | ✅ **EL CRITERIO.** El elemento del array del content type |
+| **311** (110·55·90·56) | **nodo `.et_pb_module` del cuerpo EN EL DOM**, a cualquier profundidad | cierto. Es el censo del DOM, y cuenta un acordeón de 19 toggles como **20** |
+| **215** (83·33·66·33) | **módulo con caja @1440 dentro de las `min(orig,clon)` primeras filas con caja** | cierto, y ⚠ **NO es un criterio de módulo** — ver abajo |
+
+> ⚠⚠ **EL 83 NO DICE QUÉ CUENTA COMO UN MÓDULO: DICE CUÁNTOS CABEN EN LAS FILAS
+> QUE EL EMPAREJAMIENTO DEJÓ VIVAS.** `productos-cmp` publica `porFila` como
+> `p.O.filas.slice(0, n)` con `n = min(nO, nC)`, así que **deja fuera la última
+> fila del original**. Medido en la congelada: **1 fila huérfana por documento,
+> 4 de 4** (7→6 · 9→8 · 7→6 · 7→6), y el control cruzado cuadra con el
+> `huerfanasO: 4` que la propia congelada publica.
+>
+> **Es §*la causa común: el NIVEL al que se mide* con el contenedor puesto en el
+> EMPAREJAMIENTO**, y mezcla además un segundo eje —el filtro de CAJA— con el
+> primero. Un cardinal que confunde dos ejes no puede ser el criterio de ninguno.
+>
+> **Lo que queda SIN DERIVAR, con lo que haría falta:** cuántos módulos tiene esa
+> fila huérfana en cada documento **no está en la congelada** (va recortada). Lo
+> daría una corrida de `productos-cmp` con el clon servido; hasta entonces se
+> declara con su cardinal —**4 filas, 1 por documento**— y no se rellena.
+
+## §2n.3 · La reconciliación 420 / 105 — DOS UNIDADES, no una corrección
+
+La 123.ª escribió **«420 sin llave»** y la 125.ª **«105»**. No se corrigen entre
+sí: **son el mismo conjunto en dos unidades**, y los dos son ciertos.
+
+Derivado, no recordado — el número de ejes se **lee del fuente** de la 123.ª
+(`tests-ab-123.mjs`, `const EJES = [...]`):
+
+> **4 ejes de ritmo** —`marginTop` · `marginBottom` · `paddingTop` ·
+> `paddingBottom`— **× 105 NODOS = 420 PARES (nodo × eje).**
+
+Y el cruce se hace **al elemento, no por el total** (§*un cardinal es un
+contenedor y absorbe la membresía*): `sinLlave` **por documento** reproduce
+exacto contra las dos congeladas de la 125.ª — **34 · 22 · 27 · 22** en 4 de 4.
+
+> ⚠ **Y los dos censos de la 125.ª NO cuentan la misma unidad**, así que
+> cruzarlos por el total daría un desacuerdo inventado: el escalón 1 cuenta
+> **311 módulos del cuerpo**; el escalón 2, **357 nodos con caja** que incluyen
+> **secciones y filas** además de módulos. Los dos son correctos; sólo coinciden
+> al nivel del elemento, que es donde se cruzaron.
+
+## §2n.4 · Lo que este criterio NO decide
+
+- **no decide el eje `módulos` del comparador.** Sigue **SIN COMPARAR** (`·`),
+  y con los dos bloqueos que la 125.ª derivó: 35 componentes de 97 que habría
+  que tocar para emitir `data-modulo`, y este criterio —que ya no bloquea—.
+  Fijarlo era la precondición, no el cierre;
+- **no mide el eje CAJA.** El censo es offline y del DOM; un módulo escondido
+  cuenta aquí y no tiene geometría (§*lo que no tiene caja no es que no se
+  cuente: es que no se puede medir*). Para el ARRAY del content type eso es lo
+  correcto —el editor lo colocó igual—, pero **no se puede usar este cardinal
+  para leer geometría**;
+- **es propiedad de estos 4 documentos**, no del sitio.

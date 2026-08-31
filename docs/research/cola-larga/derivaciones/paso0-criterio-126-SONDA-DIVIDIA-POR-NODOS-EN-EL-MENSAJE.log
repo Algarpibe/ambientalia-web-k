@@ -1,0 +1,71 @@
+=== CONTROLES ===
+  OK  se censo algo (hay .et_pb_module en el cuerpo)
+      311 modulos
+  OK  el censo alcanza LOS 4 documentos (ni cero ni pleno de uno)
+      PRODUCTO=110 · CATALOGO=55 · SOFTWARE=90 · SOFTWARE-corta=56
+  OK  CONTROL: el descuento de cascaron MUERDE
+      crudo(menciones)=316 > cuerpo=110
+  OK  el eje PROFUNDIDAD discrimina (ni cero ni pleno)
+      1er nivel=231 · anidados=80
+  OK  el eje LLAVE discrimina (ni cero ni pleno)
+      sin llave (depurada)=77 de 311
+  OK  el reparto PROFUNDIDAD x LLAVE es una PARTICION (suma el total en 4/4)
+      230 + 1 + 4 + 76 = 311
+  OK  CRUCE con el escalon 1 (125.ª): total, 1er nivel y sin-ordinal REPRODUCEN en 4/4
+      PRODUCTO 110/90/34 · CATALOGO 55/35/22 · SOFTWARE 90/70/27 · SOFTWARE-corta 56/36/22
+  OK  CRUCE con el escalon 2 (125.ª): `sinLlave` POR DOCUMENTO reproduce en 4/4
+      PRODUCTO 34=34 · CATALOGO 22=22 · SOFTWARE 27=27 · SOFTWARE-corta 22=22
+  OK  el `83` esta TRUNCADO por el emparejamiento: `porFila` = min(orig,clon) y sobra >=1 fila en 4/4
+      PRODUCTO 6/7 filas (huerfanas 1) suma=83 · CATALOGO 8/9 filas (huerfanas 1) suma=33 · SOFTWARE 6/7 filas (huerfanas 1) suma=66 · SOFTWARE (variante corta) 6/7 filas (huerfanas 1) suma=33
+  OK  CONTROL: las huerfanas derivadas cuadran con el `huerfanasO` que publica la congelada
+      derivadas=4 · publicado=4
+  OK  los EJES de la 123.ª se DERIVAN de su fuente (no se recuerdan)
+      4 ejes: marginTop · marginBottom · paddingTop · paddingBottom
+  OK  la reconciliacion CIERRA: nodos sin llave x ejes de la 123.ª = los pares que publico
+      105 nodos x 4 ejes = 420 pares
+  OK  NO es una correccion: 420 y 105 son el MISMO conjunto en dos unidades
+      420 PARES (nodo x eje) / 4 ejes = 4 NODOS
+  OK  los DOS censos de la 125.ª NO cuentan la misma unidad — y por eso no se cruzan por el total
+      escalon 1 = 311 modulos · escalon 2 = 357 nodos (seccion+fila+modulo)
+
+=== Q1 · PROFUNDIDAD x LLAVE (nodos, cuerpo, cascaron descontado) ===
+  documento        DOM  1erNiv  anid | 1N+llave 1N-llave  An+llave An-llave
+  PRODUCTO         110     90     20 |       89        1         1       19
+  CATALOGO          55     35     20 |       35        0         1       19
+  SOFTWARE          90     70     20 |       70        0         1       19
+  SOFTWARE-corta    56     36     20 |       36        0         1       19
+  TOTAL            311    231     80 |      230        1         4       76
+
+  tipos SIN LLAVE (depurada), por documento:
+  PRODUCTO        {"et_pb_toggle":19,"dvmd_table_maker":1}
+  CATALOGO        {"et_pb_toggle":19}
+  SOFTWARE        {"et_pb_toggle":19}
+  SOFTWARE-corta  {"et_pb_toggle":19}
+
+=== Q1b · ¿ES EL 83 UN CRITERIO DE MODULO? ===
+  PRODUCTO        filas con caja orig=7 clon=6 · LISTADAS=6 · HUERFANAS=1 · suma=83
+  CATALOGO        filas con caja orig=9 clon=8 · LISTADAS=8 · HUERFANAS=1 · suma=33
+  SOFTWARE        filas con caja orig=7 clon=6 · LISTADAS=6 · HUERFANAS=1 · suma=66
+  SOFTWARE (variante corta) filas con caja orig=7 clon=6 · LISTADAS=6 · HUERFANAS=1 · suma=33
+  ⇒ el cardinal 83/33/66/33 esta TRUNCADO: no dice que cuenta como modulo,
+    dice cuantos caben en las filas que el emparejamiento dejo vivas.
+
+=== Q2 · 420 CONTRA 105 ===
+  EJES de la 123.ª, leidos de su fuente: 4 — marginTop · marginBottom · paddingTop · paddingBottom
+  nodos sin llave (llave de la 123.ª), derivados aqui: 105
+  105 nodos x 4 ejes = 420 pares
+  ⇒ NO es una correccion: 420 PARES (nodo x eje) y 105 NODOS son ciertos a la vez.
+  cruce POR DOCUMENTO (no por total) con las dos congeladas de la 125.ª:
+    PRODUCTO        yo=34  escalon2=34  OK
+    CATALOGO        yo=22  escalon2=22  OK
+    SOFTWARE        yo=27  escalon2=27  OK
+    SOFTWARE-corta  yo=22  escalon2=22  OK
+
+=== CRITERIO FIJADO ===
+  ELEGIDO   : MODULO DE PRIMER NIVEL DEL CUERPO — 231 en los 4 docs
+              {"PRODUCTO":90,"CATALOGO":35,"SOFTWARE":70,"SOFTWARE-corta":36}
+  NO elegido: TODOS LOS MODULOS DEL CUERPO — 311 · unidad: nodo `.et_pb_module` del cuerpo EN EL DOM, a cualquier profundidad
+  NO elegido: MODULOS CON CAJA EN LAS FILAS EMPAREJADAS — 215 · unidad: modulo con caja @1440, dentro de las min(orig,clon) primeras filas con caja
+              ⚠ NO es un criterio de modulo: mezcla el filtro de CAJA con el TRUNCADO del emparejamiento (1 fila huerfana por documento, 4/4)
+
+✓ evaluadas 4/4 documentos · controles 14/14

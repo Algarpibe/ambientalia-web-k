@@ -1,0 +1,367 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": 126,
+ "escalon": "PASO 0",
+ "alcance": {
+  "docs": [
+   "monitor-calidad-aire.html",
+   "accesorios.html",
+   "software-de-medicion-calidad-del-aire.html",
+   "kunak-api.html"
+  ],
+  "unidad": "modulo del CUERPO (cascaron descontado)",
+  "nota": "propiedad de estos 4 documentos, no del sitio"
+ },
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "se censo algo (hay .et_pb_module en el cuerpo)",
+   "detalle": "311 modulos"
+  },
+  {
+   "ok": true,
+   "nombre": "el censo alcanza LOS 4 documentos (ni cero ni pleno de uno)",
+   "detalle": "PRODUCTO=110 · CATALOGO=55 · SOFTWARE=90 · SOFTWARE-corta=56"
+  },
+  {
+   "ok": true,
+   "nombre": "CONTROL: el descuento de cascaron MUERDE",
+   "detalle": "crudo(menciones)=316 > cuerpo=110"
+  },
+  {
+   "ok": true,
+   "nombre": "el eje PROFUNDIDAD discrimina (ni cero ni pleno)",
+   "detalle": "1er nivel=231 · anidados=80"
+  },
+  {
+   "ok": true,
+   "nombre": "el eje LLAVE discrimina (ni cero ni pleno)",
+   "detalle": "sin llave (depurada)=77 de 311"
+  },
+  {
+   "ok": true,
+   "nombre": "el reparto PROFUNDIDAD x LLAVE es una PARTICION (suma el total en 4/4)",
+   "detalle": "230 + 1 + 4 + 76 = 311"
+  },
+  {
+   "ok": true,
+   "nombre": "CRUCE con el escalon 1 (125.ª): total, 1er nivel y sin-ordinal REPRODUCEN en 4/4",
+   "detalle": "PRODUCTO 110/90/34 · CATALOGO 55/35/22 · SOFTWARE 90/70/27 · SOFTWARE-corta 56/36/22"
+  },
+  {
+   "ok": true,
+   "nombre": "CRUCE con el escalon 2 (125.ª): `sinLlave` POR DOCUMENTO reproduce en 4/4",
+   "detalle": "PRODUCTO 34=34 · CATALOGO 22=22 · SOFTWARE 27=27 · SOFTWARE-corta 22=22"
+  },
+  {
+   "ok": true,
+   "nombre": "el `83` esta TRUNCADO por el emparejamiento: `porFila` = min(orig,clon) y sobra >=1 fila en 4/4",
+   "detalle": "PRODUCTO 6/7 filas (huerfanas 1) suma=83 · CATALOGO 8/9 filas (huerfanas 1) suma=33 · SOFTWARE 6/7 filas (huerfanas 1) suma=66 · SOFTWARE (variante corta) 6/7 filas (huerfanas 1) suma=33"
+  },
+  {
+   "ok": true,
+   "nombre": "CONTROL: las huerfanas derivadas cuadran con el `huerfanasO` que publica la congelada",
+   "detalle": "derivadas=4 · publicado=4"
+  },
+  {
+   "ok": true,
+   "nombre": "los EJES de la 123.ª se DERIVAN de su fuente (no se recuerdan)",
+   "detalle": "4 ejes: marginTop · marginBottom · paddingTop · paddingBottom"
+  },
+  {
+   "ok": true,
+   "nombre": "la reconciliacion CIERRA: nodos sin llave x ejes de la 123.ª = los pares que publico",
+   "detalle": "105 nodos x 4 ejes = 420 pares"
+  },
+  {
+   "ok": true,
+   "nombre": "NO es una correccion: 420 y 105 son el MISMO conjunto en dos unidades",
+   "detalle": "420 PARES (nodo x eje) / 4 ejes = 4 NODOS"
+  },
+  {
+   "ok": true,
+   "nombre": "los DOS censos de la 125.ª NO cuentan la misma unidad — y por eso no se cruzan por el total",
+   "detalle": "escalon 1 = 311 modulos · escalon 2 = 357 nodos (seccion+fila+modulo)"
+  }
+ ],
+ "criterio": {
+  "elegido": {
+   "nombre": "MODULO DE PRIMER NIVEL DEL CUERPO",
+   "definicion": "nodo `.et_pb_module` que NO cuelga de otro `.et_pb_module`, con el cascaron (`_tb_header`/`_tb_footer`) descontado",
+   "unidad": "modulo de primer nivel",
+   "cardinal": {
+    "PRODUCTO": 90,
+    "CATALOGO": 35,
+    "SOFTWARE": 70,
+    "SOFTWARE-corta": 36
+   },
+   "total": 231
+  },
+  "noElegidos": [
+   {
+    "nombre": "TODOS LOS MODULOS DEL CUERPO",
+    "unidad": "nodo `.et_pb_module` del cuerpo EN EL DOM, a cualquier profundidad",
+    "cardinal": {
+     "PRODUCTO": 110,
+     "CATALOGO": 55,
+     "SOFTWARE": 90,
+     "SOFTWARE-corta": 56
+    },
+    "total": 311,
+    "cierto": true
+   },
+   {
+    "nombre": "MODULOS CON CAJA EN LAS FILAS EMPAREJADAS",
+    "unidad": "modulo con caja @1440, dentro de las min(orig,clon) primeras filas con caja",
+    "cardinal": {
+     "PRODUCTO": 83,
+     "CATALOGO": 33,
+     "SOFTWARE": 66,
+     "SOFTWARE (variante corta)": 33
+    },
+    "total": 215,
+    "cierto": true,
+    "advertencia": "NO es un criterio de modulo: mezcla el filtro de CAJA con el TRUNCADO del emparejamiento (1 fila huerfana por documento, 4/4)"
+   }
+  ]
+ },
+ "q1": {
+  "PRODUCTO": {
+   "enElDOM": 110,
+   "primerNivel": 90,
+   "anidados": 20,
+   "n0ConLlave": 89,
+   "n0SinLlave": 1,
+   "nAConLlave": 1,
+   "nASinLlave": 19,
+   "sinLlaveVieja": 34,
+   "sinLlaveDepurada": 20,
+   "tiposAnidados": [
+    "et_pb_posts",
+    "et_pb_toggle"
+   ],
+   "tiposSinLlaveDepurada": {
+    "et_pb_toggle": 19,
+    "dvmd_table_maker": 1
+   }
+  },
+  "CATALOGO": {
+   "enElDOM": 55,
+   "primerNivel": 35,
+   "anidados": 20,
+   "n0ConLlave": 35,
+   "n0SinLlave": 0,
+   "nAConLlave": 1,
+   "nASinLlave": 19,
+   "sinLlaveVieja": 22,
+   "sinLlaveDepurada": 19,
+   "tiposAnidados": [
+    "et_pb_posts",
+    "et_pb_toggle"
+   ],
+   "tiposSinLlaveDepurada": {
+    "et_pb_toggle": 19
+   }
+  },
+  "SOFTWARE": {
+   "enElDOM": 90,
+   "primerNivel": 70,
+   "anidados": 20,
+   "n0ConLlave": 70,
+   "n0SinLlave": 0,
+   "nAConLlave": 1,
+   "nASinLlave": 19,
+   "sinLlaveVieja": 27,
+   "sinLlaveDepurada": 19,
+   "tiposAnidados": [
+    "et_pb_posts",
+    "et_pb_toggle"
+   ],
+   "tiposSinLlaveDepurada": {
+    "et_pb_toggle": 19
+   }
+  },
+  "SOFTWARE-corta": {
+   "enElDOM": 56,
+   "primerNivel": 36,
+   "anidados": 20,
+   "n0ConLlave": 36,
+   "n0SinLlave": 0,
+   "nAConLlave": 1,
+   "nASinLlave": 19,
+   "sinLlaveVieja": 22,
+   "sinLlaveDepurada": 19,
+   "tiposAnidados": [
+    "et_pb_posts",
+    "et_pb_toggle"
+   ],
+   "tiposSinLlaveDepurada": {
+    "et_pb_toggle": 19
+   }
+  }
+ },
+ "q1b": [
+  {
+   "arquetipo": "PRODUCTO",
+   "filasConCajaOrig": 7,
+   "filasConCajaClon": 6,
+   "filasListadas": 6,
+   "filasHuerfanas": 1,
+   "sumaOrig": 83
+  },
+  {
+   "arquetipo": "CATALOGO",
+   "filasConCajaOrig": 9,
+   "filasConCajaClon": 8,
+   "filasListadas": 8,
+   "filasHuerfanas": 1,
+   "sumaOrig": 33
+  },
+  {
+   "arquetipo": "SOFTWARE",
+   "filasConCajaOrig": 7,
+   "filasConCajaClon": 6,
+   "filasListadas": 6,
+   "filasHuerfanas": 1,
+   "sumaOrig": 66
+  },
+  {
+   "arquetipo": "SOFTWARE (variante corta)",
+   "filasConCajaOrig": 7,
+   "filasConCajaClon": 6,
+   "filasListadas": 6,
+   "filasHuerfanas": 1,
+   "sumaOrig": 33
+  }
+ ],
+ "q2": {
+  "pregunta": "¿420 y 105 son una correccion, o dos unidades del mismo conjunto?",
+  "veredicto": "DOS UNIDADES. Ninguno sustituye al otro.",
+  "ejes123": [
+   "marginTop",
+   "marginBottom",
+   "paddingTop",
+   "paddingBottom"
+  ],
+  "nodos": 105,
+  "pares": 420,
+  "cruce1": [
+   {
+    "arquetipo": "PRODUCTO",
+    "total": {
+     "mio": 110,
+     "suyo": 110,
+     "ok": true
+    },
+    "primerNivel": {
+     "mio": 90,
+     "suyo": 90,
+     "ok": true
+    },
+    "sinOrdinal": {
+     "mio": 34,
+     "suyo": 34,
+     "ok": true
+    }
+   },
+   {
+    "arquetipo": "CATALOGO",
+    "total": {
+     "mio": 55,
+     "suyo": 55,
+     "ok": true
+    },
+    "primerNivel": {
+     "mio": 35,
+     "suyo": 35,
+     "ok": true
+    },
+    "sinOrdinal": {
+     "mio": 22,
+     "suyo": 22,
+     "ok": true
+    }
+   },
+   {
+    "arquetipo": "SOFTWARE",
+    "total": {
+     "mio": 90,
+     "suyo": 90,
+     "ok": true
+    },
+    "primerNivel": {
+     "mio": 70,
+     "suyo": 70,
+     "ok": true
+    },
+    "sinOrdinal": {
+     "mio": 27,
+     "suyo": 27,
+     "ok": true
+    }
+   },
+   {
+    "arquetipo": "SOFTWARE-corta",
+    "total": {
+     "mio": 56,
+     "suyo": 56,
+     "ok": true
+    },
+    "primerNivel": {
+     "mio": 36,
+     "suyo": 36,
+     "ok": true
+    },
+    "sinOrdinal": {
+     "mio": 22,
+     "suyo": 22,
+     "ok": true
+    }
+   }
+  ],
+  "cruce2": [
+   {
+    "arquetipo": "PRODUCTO",
+    "mio": 34,
+    "suyo": 34,
+    "ok": true
+   },
+   {
+    "arquetipo": "CATALOGO",
+    "mio": 22,
+    "suyo": 22,
+    "ok": true
+   },
+   {
+    "arquetipo": "SOFTWARE",
+    "mio": 27,
+    "suyo": 27,
+    "ok": true
+   },
+   {
+    "arquetipo": "SOFTWARE-corta",
+    "mio": 22,
+    "suyo": 22,
+    "ok": true
+   }
+  ]
+ },
+ "universos": {
+  "escalon 1 (125.ª)": {
+   "unidad": "modulo del CUERPO en el DOM",
+   "n": 311,
+   "tipos": [
+    ".et_pb_module"
+   ]
+  },
+  "escalon 2 (125.ª)": {
+   "unidad": "nodo CON CAJA @1440",
+   "n": 357,
+   "tipos": [
+    ".et_pb_section",
+    ".et_pb_row",
+    ".et_pb_module"
+   ]
+  }
+ }
+}
