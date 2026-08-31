@@ -1,0 +1,36 @@
+══════════════════════════════════════════════════════════════════════════════
+129.ª · ESCALÓN 1 — el ALCANCE del cambio, derivado del grafo de imports
+══════════════════════════════════════════════════════════════════════════════
+
+   ficheros TOCADOS (del `git diff`, no de memoria): 4
+     · apps/web/src/components/BlurbsIconos.tsx
+     · apps/web/src/components/api/BeneficiosApi.tsx
+     · apps/web/src/components/api/HeroApi.tsx
+     · apps/web/src/components/api/InfoProductoApi.tsx
+
+   RUTAS AFECTADAS (transitivo): 2 de 26 pages
+   | ruta | por qué fichero |
+   |---|---|
+   | `/kunak-api` | BlurbsIconos.tsx, BeneficiosApi.tsx, HeroApi.tsx, InfoProductoApi.tsx |
+   | `/software-de-medicion-calidad-del-aire` | BlurbsIconos.tsx |
+
+   por import DIRECTO en la page: 1 — /kunak-api
+   por TRANSITIVO:                2 — /kunak-api, /software-de-medicion-calidad-del-aire
+
+   del LOTE F3-5 ....... 2 de 4 — /kunak-api, /software-de-medicion-calidad-del-aire
+   FUERA del lote ...... 0 — ninguna
+
+── controles ───────────────────────────────────────────────────────────
+   ✓ L1 · hay cambios que analizar · 4 ficheros en el diff
+   ✓ L2 · el grafo no está muerto · 26 pages · 160 ficheros indexados
+   ✓ L3 · el transitivo NO es un pleno · 2 de 26 pages — si fueran todas, estaría midiendo el cascarón
+   ✓ L4 · el transitivo ⊇ el directo · directo 1 ⊆ transitivo 2
+
+══════════════════════════════════════════════════════════════════════════════
+PREDICCIÓN QUE ESTE ALCANCE HABILITA
+
+  · NO-OP exigible en las 2 rutas afectadas, a 1440 Y a 390.
+  · Y en las 24 NO afectadas el cambio no puede llegar: si alguna se mueve, el defecto no es el marcador.
+
+  controles: todos en verde
+══════════════════════════════════════════════════════════════════════════════

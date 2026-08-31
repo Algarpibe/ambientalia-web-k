@@ -28,7 +28,10 @@ export function InfoProductoApi() {
     <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[23.9px] md:flex-row md:items-start md:gap-[5.5%] md:pb-[5vw] md:pt-[20px]">
       {/* ---------- Columna 1/3 ---------- */}
       <div className="relative w-full md:w-[29.6667%] md:shrink-0">
+        {/* MARCADOR DE SONDA (129.ª) — atributo sobre el elemento que ya
+            existe: no añade nodo ni clase, así que no puede mover un píxel. */}
         <img
+          data-modulo="image"
           src="/images/uploads/2022/12/punteado.svg"
           alt=""
           aria-hidden
@@ -40,6 +43,7 @@ export function InfoProductoApi() {
         {/* 44px/55 en desktop y 35/43.75 en móvil, como todos los titulares de
             sección. Módulo sin `margin-bottom`: el h2 solo lleva su pb de 10. */}
         <h2
+          data-modulo="text"
           className="pb-[10px] text-[35px] leading-[43.75px] md:text-[44px] md:leading-[55px]"
           style={{ fontWeight: 300, letterSpacing: "-0.5px", color: "#333" }}
         >
@@ -59,7 +63,7 @@ export function InfoProductoApi() {
         {/* En MÓVIL el hueco medido hasta el titular azul es **−1**: los 20 de
             `space-y` no llegan a aplicarse porque el módulo del original solo
             arrastra su `margin-bottom: -1px` (QA Fase 5, 2026-07-28). */}
-        <p className="-mb-px text-[18px] leading-[30.6px] text-[#333] md:mb-[19px]">
+        <p data-modulo="text" className="-mb-px text-[18px] leading-[30.6px] text-[#333] md:mb-[19px]">
           {INFO.parrafoIntro.antes}
           {/* ruta LOCAL: /software-de-medicion-calidad-del-aire ya está clonada.
               El original abre en pestaña nueva (`target="_blank"`); dentro del
@@ -76,6 +80,7 @@ export function InfoProductoApi() {
         {/* Titular azul de 37px. Aquí NO lleva la bajada de 17pt que sí tienen
             los dos bloques azules de /software. */}
         <h2
+          data-modulo="text"
           className="pb-[10px]"
           style={{
             fontSize: 37,
@@ -88,14 +93,14 @@ export function InfoProductoApi() {
           {INFO.h2Azul}
         </h2>
 
-        <p className="text-[18px] leading-[30.6px] text-[#333]">{INFO.parrafo}</p>
+        <p data-modulo="text" className="text-[18px] leading-[30.6px] text-[#333]">{INFO.parrafo}</p>
 
         {/* `pb-[7.82px]` (padding, no margin): el módulo cierra con 27.82 y el
             `space-y` ya pone 20 — un margen se colaparía con él y perderíamos
             los 7.82; el padding se suma. */}
         {/* Móvil: la caja va sin `pb` (30.6 limpios, como el original) y el
             hueco hasta los blurbs es **33**, no los 20 de `space-y`. */}
-        <p className="mb-[33px] pb-0 text-[18px] leading-[30.6px] text-[#333] md:mb-[20px] md:pb-[7.82px]">
+        <p data-modulo="text" className="mb-[33px] pb-0 text-[18px] leading-[30.6px] text-[#333] md:mb-[20px] md:pb-[7.82px]">
           {INFO.caracteristicasLabel}
         </p>
 

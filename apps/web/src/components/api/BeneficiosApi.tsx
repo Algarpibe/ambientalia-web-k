@@ -22,7 +22,9 @@ export function BeneficiosApi() {
     <div data-fila="" className="mx-auto flex w-[80%] max-w-[1380px] flex-col gap-[30px] pb-[30px] pt-[20px] md:flex-row md:items-start md:gap-[5.5%] md:pb-[5vw]">
       {/* ---------- Columna 1/4 — solo el titular ---------- */}
       <div className="relative w-full md:w-[20.875%] md:shrink-0">
+        {/* MARCADOR DE SONDA (129.ª) — atributo, no nodo. */}
         <img
+          data-modulo="image"
           src="/images/uploads/2022/12/punteado.svg"
           alt=""
           aria-hidden
@@ -32,6 +34,7 @@ export function BeneficiosApi() {
           style={{ width: 60, height: 22 }}
         />
         <h2
+          data-modulo="text"
           className="pb-[10px] text-[35px] leading-[43.75px] md:text-[44px] md:leading-[55px]"
           style={{ fontWeight: 300, letterSpacing: "-0.5px", color: "#333" }}
         >
@@ -47,7 +50,7 @@ export function BeneficiosApi() {
             20 de `margin-bottom` (medido: módulo 142.4 = 122.4 del `<p>` + 20).
             En MÓVIL no hay `pb` y el hueco hasta los blurbs es **43**
             (QA Fase 5, 2026-07-28). */}
-        <p className="mb-[43px] pb-0 text-[18px] leading-[30.6px] text-[#333] md:mb-[20px] md:pb-[20px]">
+        <p data-modulo="text" className="mb-[43px] pb-0 text-[18px] leading-[30.6px] text-[#333] md:mb-[20px] md:pb-[20px]">
           {BENEFICIOS_INTRO}
         </p>
 

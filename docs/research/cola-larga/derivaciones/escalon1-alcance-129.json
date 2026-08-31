@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "tanda": "129.ª",
+    "fecha": "2026-08-31",
+    "offline": true,
+    "criterio": "cierre transitivo de imports de VALOR desde cada page.tsx; `import type` descontado"
+  },
+  "tocados": [
+    "apps/web/src/components/BlurbsIconos.tsx",
+    "apps/web/src/components/api/BeneficiosApi.tsx",
+    "apps/web/src/components/api/HeroApi.tsx",
+    "apps/web/src/components/api/InfoProductoApi.tsx"
+  ],
+  "afectadas": [
+    {
+      "ruta": "/kunak-api",
+      "page": "apps/web/src/app/kunak-api/page.tsx",
+      "por": [
+        "apps/web/src/components/BlurbsIconos.tsx",
+        "apps/web/src/components/api/BeneficiosApi.tsx",
+        "apps/web/src/components/api/HeroApi.tsx",
+        "apps/web/src/components/api/InfoProductoApi.tsx"
+      ]
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "page": "apps/web/src/app/software-de-medicion-calidad-del-aire/page.tsx",
+      "por": [
+        "apps/web/src/components/BlurbsIconos.tsx"
+      ]
+    }
+  ],
+  "directas": [
+    "/kunak-api"
+  ],
+  "delLote": [
+    "/kunak-api",
+    "/software-de-medicion-calidad-del-aire"
+  ],
+  "fueraDelLote": [],
+  "nPages": 26,
+  "controles": {
+    "fallos": [],
+    "verde": true
+  }
+}

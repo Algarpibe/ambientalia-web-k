@@ -1,0 +1,75 @@
+══════════════════════════════════════════════════════════════════════════════
+129.ª · ESCALÓN 1 — el OBJETIVO del marcador `data-modulo`
+══════════════════════════════════════════════════════════════════════════════
+
+   control cruzado contra: productos-cmp-1440.json (mtime 2026-08-30 23:29)
+
+── /monitor-calidad-aire
+   filas fuera del cascarón: 9 · módulos: 110
+   | fila | módulos (censo DOM) | productos-cmp (CON CAJA) | tipos |
+   |---|---|---|---|
+   | 0 | 1 | 1 | text×1 |
+   | 1 | 14 | 14 | blurb×6 · text×4 · image×2 · ?×2 |
+   | 2 | 28 | 28 | blurb×12 · text×11 · ?×3 · image×2 |
+   | 3 | 36 | 35 | text×16 · blurb×9 · ?×8 · image×1 · cta×1 · gallery×1 |
+   | 4 | 4 | 4 | text×2 · image×1 · ?×1 |
+   | 5 | 1 | 1 | ?×1 |
+   | 6 | 22 | — | toggle×19 · text×2 · image×1 |
+   | 7 | 1 | — | video×1 |
+   | 8 | 2 | — | text×1 · code×1 |
+
+── /accesorios
+   filas fuera del cascarón: 9 · módulos: 55
+   | fila | módulos (censo DOM) | productos-cmp (CON CAJA) | tipos |
+   |---|---|---|---|
+   | 0 | 1 | 1 | text×1 |
+   | 1 | 5 | 5 | image×2 · text×2 · ?×1 |
+   | 2 | 2 | 2 | image×1 · text×1 |
+   | 3 | 2 | 2 | text×2 |
+   | 4 | 7 | 7 | text×6 · image×1 |
+   | 5 | 11 | 11 | text×10 · image×1 |
+   | 6 | 4 | 4 | text×2 · image×1 · ?×1 |
+   | 7 | 1 | 1 | ?×1 |
+   | 8 | 22 | — | toggle×19 · text×2 · image×1 |
+
+── /software-de-medicion-calidad-del-aire
+   filas fuera del cascarón: 8 · módulos: 90
+   | fila | módulos (censo DOM) | productos-cmp (CON CAJA) | tipos |
+   |---|---|---|---|
+   | 0 | 1 | 1 | text×1 |
+   | 1 | 7 | 7 | text×3 · image×2 · ?×2 |
+   | 2 | 19 | 19 | text×9 · blurb×6 · image×2 · ?×1 · slider×1 |
+   | 3 | 34 | 34 | blurb×25 · text×5 · ?×3 · image×1 |
+   | 4 | 4 | 4 | text×2 · image×1 · ?×1 |
+   | 5 | 1 | 1 | ?×1 |
+   | 6 | 22 | — | toggle×19 · text×2 · image×1 |
+   | 7 | 1 | — | video×1 |
+
+── /kunak-api
+   filas fuera del cascarón: 7 · módulos: 56
+   | fila | módulos (censo DOM) | productos-cmp (CON CAJA) | tipos |
+   |---|---|---|---|
+   | 0 | 1 | 1 | text×1 |
+   | 1 | 6 | 6 | text×3 · image×2 · ?×1 |
+   | 2 | 12 | 12 | blurb×6 · text×5 · image×1 |
+   | 3 | 9 | 9 | blurb×6 · text×2 · image×1 |
+   | 4 | 4 | 4 | text×2 · image×1 · ?×1 |
+   | 5 | 1 | 1 | ?×1 |
+   | 6 | 22 | — | toggle×19 · text×2 · image×1 |
+
+── controles ───────────────────────────────────────────────────────────
+   ✓ K1 · el censo no está muerto · 311 módulos en los 4 documentos
+   ✓ K2 · las filas concuerdan con el comparador · monitor-calidad-aire: 9 vs 9 · accesorios: 9 vs 9 · software-de-medicion-calidad-del-aire: 8 vs 8 · kunak-api: 7 vs 7
+   ✓ K3 · el censo es COTA SUPERIOR del que tiene caja · DOM 311 ≥ con-caja 215 en todas las filas
+   ✓ K4 · el troceador clasifica · tipos reconocidos en las 4 rutas
+
+══════════════════════════════════════════════════════════════════════════════
+OBJETIVO DEL MARCADOR
+
+  /monitor-calidad-aire: el clon debe emitir ~83 `[data-modulo]` con caja (cota DOM 110), hoy expone 12 hijos directos.
+  /accesorios: el clon debe emitir ~33 `[data-modulo]` con caja (cota DOM 55), hoy expone 16 hijos directos.
+  /software-de-medicion-calidad-del-aire: el clon debe emitir ~66 `[data-modulo]` con caja (cota DOM 90), hoy expone 12 hijos directos.
+  /kunak-api: el clon debe emitir ~33 `[data-modulo]` con caja (cota DOM 56), hoy expone 12 hijos directos.
+
+  controles: todos en verde
+══════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,466 @@
+{
+  "meta": {
+    "tanda": "129.ª",
+    "fecha": "2026-08-31",
+    "criterio": "replicado de productos-cmp.mjs L246-268: fila = .et_pb_row fuera de _tb_header/_tb_footer; módulo = .et_pb_module descendiente",
+    "unidad": "NODO en el DOM — cota superior del censo CON CAJA, que lo da productos-cmp",
+    "controlCruzado": "productos-cmp-1440.json",
+    "offline": true,
+    "noContesta": "no dice dónde va el marcador en el clon, ni mide un píxel"
+  },
+  "informe": [
+    {
+      "ruta": "/monitor-calidad-aire",
+      "doc": "monitor-calidad-aire.html",
+      "nFilas": 9,
+      "nModulos": 110,
+      "porFila": [
+        {
+          "fila": 0,
+          "n": 1,
+          "tipos": {
+            "text": 1
+          }
+        },
+        {
+          "fila": 1,
+          "n": 14,
+          "tipos": {
+            "image": 2,
+            "text": 4,
+            "blurb": 6,
+            "?": 2
+          }
+        },
+        {
+          "fila": 2,
+          "n": 28,
+          "tipos": {
+            "image": 2,
+            "text": 11,
+            "?": 3,
+            "blurb": 12
+          }
+        },
+        {
+          "fila": 3,
+          "n": 36,
+          "tipos": {
+            "image": 1,
+            "text": 16,
+            "?": 8,
+            "blurb": 9,
+            "cta": 1,
+            "gallery": 1
+          }
+        },
+        {
+          "fila": 4,
+          "n": 4,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "?": 1
+          }
+        },
+        {
+          "fila": 5,
+          "n": 1,
+          "tipos": {
+            "?": 1
+          }
+        },
+        {
+          "fila": 6,
+          "n": 22,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "toggle": 19
+          }
+        },
+        {
+          "fila": 7,
+          "n": 1,
+          "tipos": {
+            "video": 1
+          }
+        },
+        {
+          "fila": 8,
+          "n": 2,
+          "tipos": {
+            "text": 1,
+            "code": 1
+          }
+        }
+      ],
+      "refPorFila": [
+        {
+          "fila": 0,
+          "orig": 1,
+          "clonHijosDirectos": 1
+        },
+        {
+          "fila": 1,
+          "orig": 14,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 2,
+          "orig": 28,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 3,
+          "orig": 35,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 4,
+          "orig": 4,
+          "clonHijosDirectos": 3
+        },
+        {
+          "fila": 5,
+          "orig": 1,
+          "clonHijosDirectos": 2
+        }
+      ]
+    },
+    {
+      "ruta": "/accesorios",
+      "doc": "accesorios.html",
+      "nFilas": 9,
+      "nModulos": 55,
+      "porFila": [
+        {
+          "fila": 0,
+          "n": 1,
+          "tipos": {
+            "text": 1
+          }
+        },
+        {
+          "fila": 1,
+          "n": 5,
+          "tipos": {
+            "image": 2,
+            "text": 2,
+            "?": 1
+          }
+        },
+        {
+          "fila": 2,
+          "n": 2,
+          "tipos": {
+            "image": 1,
+            "text": 1
+          }
+        },
+        {
+          "fila": 3,
+          "n": 2,
+          "tipos": {
+            "text": 2
+          }
+        },
+        {
+          "fila": 4,
+          "n": 7,
+          "tipos": {
+            "image": 1,
+            "text": 6
+          }
+        },
+        {
+          "fila": 5,
+          "n": 11,
+          "tipos": {
+            "image": 1,
+            "text": 10
+          }
+        },
+        {
+          "fila": 6,
+          "n": 4,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "?": 1
+          }
+        },
+        {
+          "fila": 7,
+          "n": 1,
+          "tipos": {
+            "?": 1
+          }
+        },
+        {
+          "fila": 8,
+          "n": 22,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "toggle": 19
+          }
+        }
+      ],
+      "refPorFila": [
+        {
+          "fila": 0,
+          "orig": 1,
+          "clonHijosDirectos": 1
+        },
+        {
+          "fila": 1,
+          "orig": 5,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 2,
+          "orig": 2,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 3,
+          "orig": 2,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 4,
+          "orig": 7,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 5,
+          "orig": 11,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 6,
+          "orig": 4,
+          "clonHijosDirectos": 3
+        },
+        {
+          "fila": 7,
+          "orig": 1,
+          "clonHijosDirectos": 2
+        }
+      ]
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "doc": "software-de-medicion-calidad-del-aire.html",
+      "nFilas": 8,
+      "nModulos": 90,
+      "porFila": [
+        {
+          "fila": 0,
+          "n": 1,
+          "tipos": {
+            "text": 1
+          }
+        },
+        {
+          "fila": 1,
+          "n": 7,
+          "tipos": {
+            "image": 2,
+            "text": 3,
+            "?": 2
+          }
+        },
+        {
+          "fila": 2,
+          "n": 19,
+          "tipos": {
+            "image": 2,
+            "text": 9,
+            "?": 1,
+            "blurb": 6,
+            "slider": 1
+          }
+        },
+        {
+          "fila": 3,
+          "n": 34,
+          "tipos": {
+            "image": 1,
+            "text": 5,
+            "?": 3,
+            "blurb": 25
+          }
+        },
+        {
+          "fila": 4,
+          "n": 4,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "?": 1
+          }
+        },
+        {
+          "fila": 5,
+          "n": 1,
+          "tipos": {
+            "?": 1
+          }
+        },
+        {
+          "fila": 6,
+          "n": 22,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "toggle": 19
+          }
+        },
+        {
+          "fila": 7,
+          "n": 1,
+          "tipos": {
+            "video": 1
+          }
+        }
+      ],
+      "refPorFila": [
+        {
+          "fila": 0,
+          "orig": 1,
+          "clonHijosDirectos": 1
+        },
+        {
+          "fila": 1,
+          "orig": 7,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 2,
+          "orig": 19,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 3,
+          "orig": 34,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 4,
+          "orig": 4,
+          "clonHijosDirectos": 3
+        },
+        {
+          "fila": 5,
+          "orig": 1,
+          "clonHijosDirectos": 2
+        }
+      ]
+    },
+    {
+      "ruta": "/kunak-api",
+      "doc": "kunak-api.html",
+      "nFilas": 7,
+      "nModulos": 56,
+      "porFila": [
+        {
+          "fila": 0,
+          "n": 1,
+          "tipos": {
+            "text": 1
+          }
+        },
+        {
+          "fila": 1,
+          "n": 6,
+          "tipos": {
+            "image": 2,
+            "text": 3,
+            "?": 1
+          }
+        },
+        {
+          "fila": 2,
+          "n": 12,
+          "tipos": {
+            "image": 1,
+            "text": 5,
+            "blurb": 6
+          }
+        },
+        {
+          "fila": 3,
+          "n": 9,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "blurb": 6
+          }
+        },
+        {
+          "fila": 4,
+          "n": 4,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "?": 1
+          }
+        },
+        {
+          "fila": 5,
+          "n": 1,
+          "tipos": {
+            "?": 1
+          }
+        },
+        {
+          "fila": 6,
+          "n": 22,
+          "tipos": {
+            "image": 1,
+            "text": 2,
+            "toggle": 19
+          }
+        }
+      ],
+      "refPorFila": [
+        {
+          "fila": 0,
+          "orig": 1,
+          "clonHijosDirectos": 1
+        },
+        {
+          "fila": 1,
+          "orig": 6,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 2,
+          "orig": 12,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 3,
+          "orig": 9,
+          "clonHijosDirectos": 2
+        },
+        {
+          "fila": 4,
+          "orig": 4,
+          "clonHijosDirectos": 3
+        },
+        {
+          "fila": 5,
+          "orig": 1,
+          "clonHijosDirectos": 2
+        }
+      ]
+    }
+  ],
+  "controles": {
+    "fallos": [],
+    "verde": true
+  }
+}

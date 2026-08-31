@@ -1,0 +1,44 @@
+═══ PRECONDICIONES (comprobadas ANTES del launch, §regla 37) ═══
+  documentos   : 4/4 presentes
+  hojas        : 30/30 resueltas · sin resolver 0
+  media (<img>): 162/162 resueltas · sin resolver 0 · externas 0 · por nombre normalizado 1
+· clon PROPIO en http://127.0.0.1:55769 (listo en 1.2s)
+→ medidas/productos-cmp-390.json (idéntica a la congelada salvo meta.fecha — no se reescribe)
+
+═══ RESULTADO ═══
+  pares comparados : 4 de 4
+  ejes comparados  : 130   distintos: 49   subpixel (<1/64, no cuentan): 1
+  eje EXCLUIDO     : modulos — el clon no emite marcador de MODULO (SIN COMPARAR, no 0 defectos)
+  filas huérfanas  : original 4 · clon 0
+  /monitor-calidad-aire                    filas orig=7 clon=6  hojas=19  http=null  difs=8
+      fila 1 h                orig 1396.47 → clon 1328.69  Δ-67.78
+      fila 2 h                orig 5094.59 → clon 4734.89  Δ-359.7
+      fila 3 h                orig 9617.13 → clon 9482.25  Δ-134.88
+      fila 4 h                orig 1494.44 → clon 1500.8  Δ+6.36
+      fila 4 pb               orig 3.89 → clon 49  Δ+45.11
+      fila 5 h                orig 119 → clon 1969.13  Δ+1850.13
+  /accesorios                              filas orig=9 clon=8  hojas=17  http=null  difs=19
+      fila 1 h                orig 899.23 → clon 867  Δ-32.23
+      fila 1 pb               orig 8 → clon 0  Δ-8
+      fila 2 h                orig 345.5 → clon 161.5  Δ-184
+      fila 2 pt               orig 20 → clon 64  Δ+44
+      fila 2 pb               orig 32 → clon 0  Δ-32
+      fila 3 h                orig 1143.39 → clon 1118.41  Δ-24.98
+  /software-de-medicion-calidad-del-aire   filas orig=7 clon=6  hojas=16  http=null  difs=10
+      fila 1 h                orig 950.2 → clon 917.69  Δ-32.51
+      fila 1 mb               orig 7.8 → clon 30  Δ+22.2
+      fila 2 h                orig 3314.64 → clon 3360.47  Δ+45.83
+      fila 3 h                orig 7607.92 → clon 10373.28  Δ+2765.36
+      fila 3 pt               orig 15.59 → clon 50  Δ+34.41
+      fila 4 h                orig 1501.19 → clon 1500.8  Δ-0.39
+  /kunak-api                               filas orig=7 clon=6  hojas=16  http=null  difs=12
+      fila 1 h                orig 859.13 → clon 854.17  Δ-4.96
+      fila 1 pb               orig 3.89 → clon 0  Δ-3.89
+      fila 2 h                orig 1293.13 → clon 1301.52  Δ+8.39
+      fila 2 pt               orig 20 → clon 23.9  Δ+3.9
+      fila 2 pb               orig 19.5 → clon 30  Δ+10.5
+      fila 3 h                orig 960.61 → clon 965.11  Δ+4.5
+
+✓ evaluadas 4/4 pares · 130 ejes
+EXIT 4 — 49 ejes distintos entre original y clon.
+  ✓ evaluadas 4/4 pares ruta×ancho · productos-cmp

@@ -39,8 +39,25 @@
  * cardinal de «sin resolver» de CADA canal se publica y **una corrida con
  * alguno ≠ 0 NO VALE** (§regla 32).
  *
- * Uso:  node productos-cmp.mjs [ancho]         (con el clon servido)
+ * Uso:  ANCHO=1440 node productos-cmp.mjs      (con el clon servido)
+ *       ANCHO=390  node productos-cmp.mjs
+ *
+ * ⚠ **EL ANCHO VA POR `ANCHO=`, NO POR ARGUMENTO.** Aquí decía `node
+ * productos-cmp.mjs [ancho]` y el código lee `env("ANCHO", "1440")` (L66), así
+ * que un `node productos-cmp.mjs 390` **corre a 1440 sin dar error**: mismo
+ * fichero de salida, mismo `pares 4/4`, misma línea de unidades. Cobrado en la
+ * 129.ª — dos corridas seguidas «a 1440 y a 390» que fueron **las dos a 1440**,
+ * y sólo lo delató que las dos publicaran `distintos: 43` cuando la congelada
+ * de 390 dice 49.
+ *
+ * Es §regla 3 —*documentado no es conectado*— sobre la LÍNEA DE USO: lo único
+ * del fichero que nadie ejecuta ni verifica, y que aquí no describía el
+ * programa sino una intención.
+ *
  * Sabotajes (negativo):  NEG_MISMO_LADO=1 · NEG_DELTA=<px> · NEG_SIN_INSUMOS=1
+ * Nombrar la corrida sin marcarla como negativa:  SALIDA=<ruta.json>
+ *   (⚠ `NEG=` NO es la palanca para eso: MARCA la salida como artefacto de
+ *    §regla 7 y la vuelve invisible a `eligeCongeladaAnterior` y a los censos.)
  */
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";

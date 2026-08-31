@@ -73,6 +73,21 @@ export function BlurbsIconos({
       {items.map((b) => (
         <li
           key={b.titulo}
+          /**
+           * MARCADOR DE SONDA, NO ESTILO (129.ª) — mismo precedente que
+           * `data-fila` y que el `data-modulo` de `cola-larga/CuerpoPagina`.
+           *
+           * `qa:productos-cmp` cuenta el lado del original con `.et_pb_module`
+           * y el del clon con `[data-modulo]`. Sin esto los dos selectores **no
+           * denotan el mismo conjunto** y el eje `módulos` sale SIN COMPARAR —
+           * medido: `12 → 2`, `9 → 2`, que es la firma de dos selectores
+           * distintos y no la de un clon al que le falten módulos.
+           *
+           * En el original cada blurb es UN `.et_pb_module`, y aquí es UN
+           * `<li>`: el marcador va como ATRIBUTO sobre el elemento que ya
+           * existe, así que no puede mover un píxel — no añade nodo ni clase.
+           */
+          data-modulo="blurb"
           // pt 6 = el `padding-top` del `et_pb_only_image_mode_wrap`.
           // mb 30 en móvil / 27.82 desde md (medido en ambos anchos).
           className={"mb-[30px] pt-[6px] md:mb-[27.82px] " + v.caja}
