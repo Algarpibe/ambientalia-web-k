@@ -1,0 +1,1770 @@
+{
+  "meta": {
+    "tanda": "124.ª · PASO 0 (2.ª mitad)",
+    "fecha": "2026-08-31",
+    "lado": "UNO — el ORIGINAL capturado con sus hojas. No compara con el clon",
+    "unidad": "EL NODO (par nodo×eje), no la celda. Es la correccion de nivel que motiva la derivacion",
+    "adjudicador": "LA CASCADA (CSS.getMatchedStylesForNode): selector con ordinal = editor = CAMPO; generico = plantilla = PLANTILLA",
+    "contesta": [
+      "si el «87 % al reves» de la 123.ª es un artefacto de la UNIDAD",
+      "la RESERVA del `em` que la 123.ª dejo abierta en sus 4 veredictos"
+    ],
+    "noContesta": [
+      "la varianza INTER-instancia: los 4 documentos son 4 arquetipos, no 4 instancias de uno",
+      "los nodos SIN LLAVE, que no se emparejan entre anchos y salen contados aparte",
+      "el test B por nodo: el test B es un test de GRUPO y no tiene lectura por nodo"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "las HOJAS ENLAZADAS se resolvieron (sin ellas la medida es PLAUSIBLE y falsa)",
+      "ok": true,
+      "visto": "enlazadas 60 · resueltas 60 · sin resolver 0"
+    },
+    {
+      "nombre": "se midio algo (nodos emparejados > 0)",
+      "ok": true,
+      "visto": "984 pares (nodo,eje) emparejados"
+    },
+    {
+      "nombre": "REPRODUCE el 2x2 de la 123.ª al re-agregar por celda (§sondas 4: cruce con medida buena anterior)",
+      "ok": true,
+      "visto": "123.ª {\"varia+seMueve\":27,\"varia+noSeMueve\":4,\"noVaria+seMueve\":0,\"noVaria+noSeMueve\":0,\"sinEscribir\":17}\n      124.ª {\"varia+seMueve\":27,\"varia+noSeMueve\":4,\"noVaria+seMueve\":0,\"noVaria+noSeMueve\":0,\"sinEscribir\":17}"
+    },
+    {
+      "nombre": "la CASCADA alcanza (adjudica a la mayoria de los escritos)",
+      "ok": true,
+      "visto": "escritos 335 · adjudicables 269 · ciegos por unidad relativa 66 · sin declaracion ganadora 0"
+    },
+    {
+      "nombre": "la CASCADA DISCRIMINA (no publica un veredicto unico, §regla 22)",
+      "ok": true,
+      "visto": "veredictos de la cascada: PLANTILLA · CAMPO — PLANTILLA 155 · CAMPO 114"
+    }
+  ],
+  "reproduccionDelCruce123": {
+    "referencia": {
+      "varia+seMueve": 27,
+      "varia+noSeMueve": 4,
+      "noVaria+seMueve": 0,
+      "noVaria+noSeMueve": 0,
+      "sinEscribir": 17
+    },
+    "obtenido": {
+      "varia+seMueve": 27,
+      "varia+noSeMueve": 4,
+      "noVaria+seMueve": 0,
+      "noVaria+noSeMueve": 0,
+      "sinEscribir": 17
+    },
+    "identico": true
+  },
+  "porNodo": {
+    "paresTotales": 984,
+    "escritos": 335,
+    "sinEscribir": 649,
+    "adjudicables": 269,
+    "ciegosPorUnidadRelativa": 66,
+    "sinDeclaracionGanadora": 0,
+    "acierta": 216,
+    "falla": 53,
+    "pctAcierto": 80.3
+  },
+  "predicciones": {
+    "P1 · en las celdas que mezclan, los que SE MUEVEN llevan valor de PLANTILLA y los que NO, de EDITOR": {
+      "total": 261,
+      "concuerdan": 209,
+      "pct": 80.1,
+      "cumple": true
+    },
+    "P2 · por NODO el test A acierta muy por encima del 12.9 % que da la lectura por celda": {
+      "total": 269,
+      "acierta": 216,
+      "pct": 80.3,
+      "cumple": true
+    },
+    "P3 · existe al menos UNA celda separadora: «al reves» por celda y 0 nodos mal clasificados": {
+      "celdasAlReves": 27,
+      "separadoras": 11,
+      "cumple": true,
+      "cuales": [
+        "PRODUCTO seccion paddingTop (n=4)",
+        "PRODUCTO seccion paddingBottom (n=4)",
+        "PRODUCTO modulo marginBottom (n=62)",
+        "CATALOGO seccion paddingTop (n=3)",
+        "CATALOGO seccion paddingBottom (n=2)",
+        "CATALOGO modulo marginBottom (n=23)",
+        "SOFTWARE seccion paddingTop (n=2)",
+        "SOFTWARE-corta seccion paddingTop (n=2)",
+        "SOFTWARE-corta seccion paddingBottom (n=1)",
+        "SOFTWARE-corta fila paddingTop (n=5)",
+        "SOFTWARE-corta modulo marginBottom (n=24)"
+      ]
+    }
+  },
+  "taxonomiaDeFallos": {
+    "FN-% · el EDITOR escribio un PORCENTAJE (se mueve con el ancho y parece plantilla)": {
+      "n": 31,
+      "yaEnClaudeMd": "SI, pero atribuido a la CAJA y la TIPOGRAFIA — no al ritmo",
+      "nodos": [
+        {
+          "nodo": "PRODUCTO fila et_pb_row_3 paddingTop",
+          "v1440": 57.5938,
+          "v390": 15.5938,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "4%",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_3.et_pb_row"
+        },
+        {
+          "nodo": "PRODUCTO fila et_pb_row_1 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_1.et_pb_row"
+        },
+        {
+          "nodo": "PRODUCTO fila et_pb_row_2 paddingBottom",
+          "v1440": 28.7969,
+          "v390": 7.7969,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "2% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row"
+        },
+        {
+          "nodo": "PRODUCTO fila et_pb_row_4 paddingBottom",
+          "v1440": 14.3906,
+          "v390": 3.8906,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "1%",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row"
+        },
+        {
+          "nodo": "PRODUCTO fila et_pb_row_5 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5%",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_5.et_pb_row"
+        },
+        {
+          "nodo": "PRODUCTO fila et_pb_row_6 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5%",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_6.et_pb_row"
+        },
+        {
+          "nodo": "PRODUCTO modulo et_pb_text_1 paddingBottom",
+          "v1440": 10.875,
+          "v390": 6.2344,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "2% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_1"
+        },
+        {
+          "nodo": "CATALOGO fila et_pb_row_3 paddingBottom",
+          "v1440": 28.7969,
+          "v390": 7.7969,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "2% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_3.et_pb_row"
+        },
+        {
+          "nodo": "CATALOGO fila et_pb_row_6 paddingBottom",
+          "v1440": 14.3906,
+          "v390": 3.8906,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "1%",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_6.et_pb_row"
+        },
+        {
+          "nodo": "CATALOGO fila et_pb_row_7 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5%",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_7.et_pb_row"
+        },
+        {
+          "nodo": "CATALOGO fila et_pb_row_8 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5%",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_8.et_pb_row"
+        },
+        {
+          "nodo": "CATALOGO modulo et_pb_text_1 paddingBottom",
+          "v1440": 13.3125,
+          "v390": 6.2344,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "2% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_1"
+        },
+        {
+          "nodo": "SOFTWARE seccion et_pb_section_3 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5%",
+          "selector": ".et-db #et-boc .et-l .et_pb_section_3.et_pb_section"
+        },
+        {
+          "nodo": "SOFTWARE fila et_pb_row_1 marginBottom",
+          "v1440": 28.7969,
+          "v390": 7.7969,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "2% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_1.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE fila et_pb_row_3 paddingTop",
+          "v1440": 57.5938,
+          "v390": 15.5938,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "4% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_3.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE fila et_pb_row_4 paddingBottom",
+          "v1440": 14.3906,
+          "v390": 3.8906,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "1% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE fila et_pb_row_5 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_5.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE fila et_pb_row_6 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_6.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_13 marginTop",
+          "v1440": 37.3438,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_13"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_2 marginBottom",
+          "v1440": 7.0625,
+          "v390": 4.0469,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "1.3% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_2"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_13 marginBottom",
+          "v1440": 37.3438,
+          "v390": 15.5938,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_13"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_1 paddingBottom",
+          "v1440": 10.875,
+          "v390": 6.2344,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "2% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_1"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_image_1 paddingBottom",
+          "v1440": 27.2031,
+          "v390": 15.5938,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5%",
+          "selector": ".et-db #et-boc .et-l .et_pb_image_1"
+        },
+        {
+          "nodo": "SOFTWARE-corta fila et_pb_row_1 paddingBottom",
+          "v1440": 14.3906,
+          "v390": 3.8906,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "1% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_1.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE-corta fila et_pb_row_2 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row, .et-db #et-boc .et-l .et_pb_row_3.et_pb_row, .et-db #et-boc .et-l .et_pb_row_6.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE-corta fila et_pb_row_3 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row, .et-db #et-boc .et-l .et_pb_row_3.et_pb_row, .et-db #et-boc .et-l .et_pb_row_6.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE-corta fila et_pb_row_4 paddingBottom",
+          "v1440": 14.3906,
+          "v390": 3.8906,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "1% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE-corta fila et_pb_row_5 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_5.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE-corta fila et_pb_row_6 paddingBottom",
+          "v1440": 72,
+          "v390": 19.5,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "5% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row, .et-db #et-boc .et-l .et_pb_row_3.et_pb_row, .et-db #et-boc .et-l .et_pb_row_6.et_pb_row"
+        },
+        {
+          "nodo": "SOFTWARE-corta modulo et_pb_image_1 marginTop",
+          "v1440": -54.4219,
+          "v390": -31.1875,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "-10% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_image_1"
+        },
+        {
+          "nodo": "SOFTWARE-corta modulo et_pb_text_1 paddingBottom",
+          "v1440": 10.875,
+          "v390": 6.2344,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "2% !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_1"
+        }
+      ]
+    },
+    "FN-bp · el EDITOR escribio un px POR PUNTO DE RUPTURA (@media lo cambia, asi que se mueve)": {
+      "n": 20,
+      "yaEnClaudeMd": "NO",
+      "nodos": [
+        {
+          "nodo": "PRODUCTO modulo et_pb_text_6 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6"
+        },
+        {
+          "nodo": "PRODUCTO modulo et_pb_text_7 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_13, .et-db #et-boc .et-l .et_pb_text_14"
+        },
+        {
+          "nodo": "PRODUCTO modulo et_pb_text_8 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_8"
+        },
+        {
+          "nodo": "PRODUCTO modulo et_pb_text_9 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_9"
+        },
+        {
+          "nodo": "PRODUCTO modulo et_pb_text_13 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_13, .et-db #et-boc .et-l .et_pb_text_14"
+        },
+        {
+          "nodo": "PRODUCTO modulo et_pb_text_14 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_13, .et-db #et-boc .et-l .et_pb_text_14"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_6 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6, .et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_8, .et-db #et-boc .et-l .et_pb_text_9, .et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_11, .et-db #et-boc .et-l .et_pb_text_12"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_7 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6, .et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_8, .et-db #et-boc .et-l .et_pb_text_9, .et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_11, .et-db #et-boc .et-l .et_pb_text_12"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_8 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6, .et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_8, .et-db #et-boc .et-l .et_pb_text_9, .et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_11, .et-db #et-boc .et-l .et_pb_text_12"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_9 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6, .et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_8, .et-db #et-boc .et-l .et_pb_text_9, .et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_11, .et-db #et-boc .et-l .et_pb_text_12"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_10 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6, .et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_8, .et-db #et-boc .et-l .et_pb_text_9, .et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_11, .et-db #et-boc .et-l .et_pb_text_12"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_11 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6, .et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_8, .et-db #et-boc .et-l .et_pb_text_9, .et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_11, .et-db #et-boc .et-l .et_pb_text_12"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_12 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6, .et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_8, .et-db #et-boc .et-l .et_pb_text_9, .et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_11, .et-db #et-boc .et-l .et_pb_text_12"
+        },
+        {
+          "nodo": "SOFTWARE modulo et_pb_text_22 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_22"
+        },
+        {
+          "nodo": "SOFTWARE-corta modulo et_pb_text_5 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_5"
+        },
+        {
+          "nodo": "SOFTWARE-corta modulo et_pb_text_6 marginTop",
+          "v1440": 20,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "20px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_6"
+        },
+        {
+          "nodo": "SOFTWARE-corta modulo et_pb_text_7 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_7"
+        },
+        {
+          "nodo": "SOFTWARE-corta modulo et_pb_text_8 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_8"
+        },
+        {
+          "nodo": "SOFTWARE-corta modulo et_pb_text_10 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_14"
+        },
+        {
+          "nodo": "SOFTWARE-corta modulo et_pb_text_14 marginTop",
+          "v1440": 10,
+          "v390": 0,
+          "testA": "PLANTILLA",
+          "cascada": "CAMPO",
+          "declarado": "10px !important",
+          "selector": ".et-db #et-boc .et-l .et_pb_text_10, .et-db #et-boc .et-l .et_pb_text_14"
+        }
+      ]
+    },
+    "FP-px · la PLANTILLA escribio un px ABSOLUTO (no se mueve y parece del editor)": {
+      "n": 2,
+      "yaEnClaudeMd": "PARCIAL: CLAUDE.md documenta el falso positivo con `em`; aqui la unidad es `px`",
+      "nodos": [
+        {
+          "nodo": "PRODUCTO modulo et_pb_cta_0 paddingTop",
+          "v1440": 40,
+          "v390": 40,
+          "testA": "CAMPO",
+          "cascada": "PLANTILLA",
+          "declarado": "40px",
+          "selector": ".et-db #et-boc .et-l .et_pb_promo"
+        },
+        {
+          "nodo": "PRODUCTO modulo et_pb_cta_0 paddingBottom",
+          "v1440": 40,
+          "v390": 40,
+          "testA": "CAMPO",
+          "cascada": "PLANTILLA",
+          "declarado": "40px",
+          "selector": ".et-db #et-boc .et-l .et_pb_promo"
+        }
+      ]
+    }
+  },
+  "ciegos": {
+    "n": 66,
+    "porUnidad": {
+      "no-numerica": 56,
+      "relativa-al-font": 10
+    },
+    "nodos": [
+      {
+        "nodo": "PRODUCTO fila et_pb_row_0 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_1 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_2 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_3 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_4 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_5 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_6 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_0 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_1 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_2 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_3 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_4 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_5 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO fila et_pb_row_6 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "PRODUCTO modulo et_pb_text_4 marginTop",
+        "declarado": "-4rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_text_4",
+        "unidad": "relativa-al-font",
+        "testA": "PLANTILLA",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_0 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_1 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_2 marginTop",
+        "declarado": "-14rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row",
+        "unidad": "relativa-al-font",
+        "testA": "CAMPO",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_4 marginTop",
+        "declarado": "4rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row",
+        "unidad": "relativa-al-font",
+        "testA": "CAMPO",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_5 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_6 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_7 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_8 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_0 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_1 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_2 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_3 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_4 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_5 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_6 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_7 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_8 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_2 paddingBottom",
+        "declarado": "2rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_row_2.et_pb_row",
+        "unidad": "relativa-al-font",
+        "testA": "CAMPO",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_4 paddingBottom",
+        "declarado": "2rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_row_4.et_pb_row",
+        "unidad": "relativa-al-font",
+        "testA": "CAMPO",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "CATALOGO fila et_pb_row_5 paddingBottom",
+        "declarado": "2rem",
+        "selector": ".et-db #et-boc .et-l .et_pb_row_5.et_pb_row",
+        "unidad": "relativa-al-font",
+        "testA": "CAMPO",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_0 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_1 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_2 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_3 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_4 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_5 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_6 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_0 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_2 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_3 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_4 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_5 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE fila et_pb_row_6 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE modulo et_pb_image_1 marginTop",
+        "declarado": "2rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_image_1",
+        "unidad": "relativa-al-font",
+        "testA": "PLANTILLA",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "SOFTWARE modulo et_pb_text_15 paddingTop",
+        "declarado": "2rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_text_15, .et-db #et-boc .et-l .et_pb_text_17",
+        "unidad": "relativa-al-font",
+        "testA": "CAMPO",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "SOFTWARE modulo et_pb_text_16 paddingTop",
+        "declarado": "2rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_text_16",
+        "unidad": "relativa-al-font",
+        "testA": "CAMPO",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "SOFTWARE modulo et_pb_text_17 paddingTop",
+        "declarado": "2rem !important",
+        "selector": ".et-db #et-boc .et-l .et_pb_text_15, .et-db #et-boc .et-l .et_pb_text_17",
+        "unidad": "relativa-al-font",
+        "testA": "CAMPO",
+        "cascada": "CAMPO"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_0 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_1 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_2 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_3 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_4 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_5 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_6 marginTop",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_0 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_1 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_2 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_3 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_4 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_5 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      },
+      {
+        "nodo": "SOFTWARE-corta fila et_pb_row_6 marginBottom",
+        "declarado": "auto",
+        "selector": ".et-db #et-boc .et-l .et_pb_row",
+        "unidad": "no-numerica",
+        "testA": "CAMPO",
+        "cascada": "PLANTILLA"
+      }
+    ]
+  },
+  "llaves": {
+    "sinLlaveTotal": 105,
+    "rescatablesConLlaveMejorada": 24
+  },
+  "celdas": [
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "seccion",
+      "eje": "marginTop",
+      "n": 6,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "seccion",
+      "eje": "marginBottom",
+      "n": 6,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "seccion",
+      "eje": "paddingTop",
+      "n": 6,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 4,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "seccion",
+      "eje": "paddingBottom",
+      "n": 6,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 4,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "fila",
+      "eje": "marginTop",
+      "n": 7,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 7,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "fila",
+      "eje": "marginBottom",
+      "n": 7,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 7,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "fila",
+      "eje": "paddingTop",
+      "n": 7,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 1,
+      "nodosAdjudicados": 6,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "fila",
+      "eje": "paddingBottom",
+      "n": 7,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 5,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "modulo",
+      "eje": "marginTop",
+      "n": 70,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 7,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 34,
+      "rescatablesConLlaveMejorada": 13
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "modulo",
+      "eje": "marginBottom",
+      "n": 70,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 62,
+      "sinLlave1440": 34,
+      "rescatablesConLlaveMejorada": 13
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "modulo",
+      "eje": "paddingTop",
+      "n": 70,
+      "hayAlgoEscrito": true,
+      "seMueve": false,
+      "varia": true,
+      "nodosMalClasificados": 1,
+      "nodosAdjudicados": 2,
+      "sinLlave1440": 34,
+      "rescatablesConLlaveMejorada": 13
+    },
+    {
+      "arquetipo": "PRODUCTO",
+      "tipo": "modulo",
+      "eje": "paddingBottom",
+      "n": 70,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 2,
+      "nodosAdjudicados": 4,
+      "sinLlave1440": 34,
+      "rescatablesConLlaveMejorada": 13
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "seccion",
+      "eje": "marginTop",
+      "n": 4,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "seccion",
+      "eje": "marginBottom",
+      "n": 4,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "seccion",
+      "eje": "paddingTop",
+      "n": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 3,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "seccion",
+      "eje": "paddingBottom",
+      "n": 4,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 2,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "fila",
+      "eje": "marginTop",
+      "n": 9,
+      "hayAlgoEscrito": true,
+      "seMueve": false,
+      "varia": true,
+      "nodosMalClasificados": 6,
+      "nodosAdjudicados": 8,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "fila",
+      "eje": "marginBottom",
+      "n": 9,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 9,
+      "nodosAdjudicados": 9,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "fila",
+      "eje": "paddingTop",
+      "n": 9,
+      "hayAlgoEscrito": true,
+      "seMueve": false,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 6,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "fila",
+      "eje": "paddingBottom",
+      "n": 9,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 4,
+      "nodosAdjudicados": 9,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "modulo",
+      "eje": "marginTop",
+      "n": 31,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 22,
+      "rescatablesConLlaveMejorada": 2
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "modulo",
+      "eje": "marginBottom",
+      "n": 31,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 23,
+      "sinLlave1440": 22,
+      "rescatablesConLlaveMejorada": 2
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "modulo",
+      "eje": "paddingTop",
+      "n": 31,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 22,
+      "rescatablesConLlaveMejorada": 2
+    },
+    {
+      "arquetipo": "CATALOGO",
+      "tipo": "modulo",
+      "eje": "paddingBottom",
+      "n": 31,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 1,
+      "nodosAdjudicados": 1,
+      "sinLlave1440": 22,
+      "rescatablesConLlaveMejorada": 2
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "seccion",
+      "eje": "marginTop",
+      "n": 6,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "seccion",
+      "eje": "marginBottom",
+      "n": 6,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "seccion",
+      "eje": "paddingTop",
+      "n": 6,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 2,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "seccion",
+      "eje": "paddingBottom",
+      "n": 6,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 1,
+      "nodosAdjudicados": 2,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "fila",
+      "eje": "marginTop",
+      "n": 7,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 7,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "fila",
+      "eje": "marginBottom",
+      "n": 7,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 7,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "fila",
+      "eje": "paddingTop",
+      "n": 7,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 1,
+      "nodosAdjudicados": 6,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "fila",
+      "eje": "paddingBottom",
+      "n": 7,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 3,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "modulo",
+      "eje": "marginTop",
+      "n": 60,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 10,
+      "nodosAdjudicados": 10,
+      "sinLlave1440": 27,
+      "rescatablesConLlaveMejorada": 7
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "modulo",
+      "eje": "marginBottom",
+      "n": 60,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 2,
+      "nodosAdjudicados": 54,
+      "sinLlave1440": 27,
+      "rescatablesConLlaveMejorada": 7
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "modulo",
+      "eje": "paddingTop",
+      "n": 60,
+      "hayAlgoEscrito": true,
+      "seMueve": false,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 3,
+      "sinLlave1440": 27,
+      "rescatablesConLlaveMejorada": 7
+    },
+    {
+      "arquetipo": "SOFTWARE",
+      "tipo": "modulo",
+      "eje": "paddingBottom",
+      "n": 60,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 2,
+      "nodosAdjudicados": 3,
+      "sinLlave1440": 27,
+      "rescatablesConLlaveMejorada": 7
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "seccion",
+      "eje": "marginTop",
+      "n": 5,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "seccion",
+      "eje": "marginBottom",
+      "n": 5,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "seccion",
+      "eje": "paddingTop",
+      "n": 5,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 2,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "seccion",
+      "eje": "paddingBottom",
+      "n": 5,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 1,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "fila",
+      "eje": "marginTop",
+      "n": 7,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 7,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "fila",
+      "eje": "marginBottom",
+      "n": 7,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 7,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "fila",
+      "eje": "paddingTop",
+      "n": 7,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 5,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "fila",
+      "eje": "paddingBottom",
+      "n": 7,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 6,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 0,
+      "rescatablesConLlaveMejorada": 0
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "modulo",
+      "eje": "marginTop",
+      "n": 34,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 7,
+      "nodosAdjudicados": 7,
+      "sinLlave1440": 22,
+      "rescatablesConLlaveMejorada": 2
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "modulo",
+      "eje": "marginBottom",
+      "n": 34,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 24,
+      "sinLlave1440": 22,
+      "rescatablesConLlaveMejorada": 2
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "modulo",
+      "eje": "paddingTop",
+      "n": 34,
+      "hayAlgoEscrito": false,
+      "seMueve": false,
+      "varia": false,
+      "nodosMalClasificados": 0,
+      "nodosAdjudicados": 0,
+      "sinLlave1440": 22,
+      "rescatablesConLlaveMejorada": 2
+    },
+    {
+      "arquetipo": "SOFTWARE-corta",
+      "tipo": "modulo",
+      "eje": "paddingBottom",
+      "n": 34,
+      "hayAlgoEscrito": true,
+      "seMueve": true,
+      "varia": true,
+      "nodosMalClasificados": 1,
+      "nodosAdjudicados": 3,
+      "sinLlave1440": 22,
+      "rescatablesConLlaveMejorada": 2
+    }
+  ],
+  "veredicto": "valida"
+}

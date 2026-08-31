@@ -1,0 +1,104 @@
+=== CONTROLES ===
+  OK  las HOJAS ENLAZADAS se resolvieron (sin ellas la medida es PLAUSIBLE y falsa)
+      enlazadas 60 · resueltas 60 · sin resolver 0
+  OK  se midio algo (nodos emparejados > 0)
+      984 pares (nodo,eje) emparejados
+  OK  REPRODUCE el 2x2 de la 123.ª al re-agregar por celda (§sondas 4: cruce con medida buena anterior)
+      123.ª {"varia+seMueve":27,"varia+noSeMueve":4,"noVaria+seMueve":0,"noVaria+noSeMueve":0,"sinEscribir":17}
+      124.ª {"varia+seMueve":27,"varia+noSeMueve":4,"noVaria+seMueve":0,"noVaria+noSeMueve":0,"sinEscribir":17}
+  OK  la CASCADA alcanza (adjudica a la mayoria de los escritos)
+      escritos 335 · adjudicables 325 · ciegos por unidad relativa 10 · sin declaracion ganadora 0
+  OK  la CASCADA DISCRIMINA (no publica un veredicto unico, §regla 22)
+      veredictos de la cascada: PLANTILLA · CAMPO — PLANTILLA 211 · CAMPO 114
+
+=== EL TEST A POR NODO, CONTRA LA CASCADA ===
+  pares (nodo,eje)          984
+  con algo escrito          335
+  ADJUDICABLES              325   (cascada con ganador y unidad NO relativa)
+    acierta el test A       216   (66.5 %)
+    falla el test A         109
+  ciegos (unidad em/rem)    10   ⇒ el test A no tiene nada sobre lo que pronunciarse
+  sin declaracion ganadora  0
+
+=== LAS TRES PREDICCIONES PRE-REGISTRADAS ===
+  CUMPLE   P1 · en las celdas que mezclan, los que SE MUEVEN llevan valor de PLANTILLA y los que NO, de EDITOR
+           {"total":267,"concuerdan":209,"pct":78.3,"cumple":true}
+  CUMPLE   P2 · por NODO el test A acierta muy por encima del 12.9 % que da la lectura por celda
+           {"total":325,"acierta":216,"pct":66.5,"cumple":true}
+  CUMPLE   P3 · existe al menos UNA celda separadora: «al reves» por celda y 0 nodos mal clasificados
+           {"celdasAlReves":27,"separadoras":11,"cumple":true}
+
+=== CELDAS «AL REVES» POR CELDA, MIRADAS POR NODO ===
+  PRODUCTO        seccion  paddingTop      adjudicados=  4 malClasificados=0   ⇐ SEPARADORA
+  PRODUCTO        seccion  paddingBottom   adjudicados=  4 malClasificados=0   ⇐ SEPARADORA
+  PRODUCTO        fila     paddingTop      adjudicados=  6 malClasificados=1
+  PRODUCTO        fila     paddingBottom   adjudicados=  7 malClasificados=5
+  PRODUCTO        modulo   marginTop       adjudicados=  7 malClasificados=7
+  PRODUCTO        modulo   marginBottom    adjudicados= 62 malClasificados=0   ⇐ SEPARADORA
+  PRODUCTO        modulo   paddingBottom   adjudicados=  4 malClasificados=2
+  CATALOGO        seccion  paddingTop      adjudicados=  3 malClasificados=0   ⇐ SEPARADORA
+  CATALOGO        seccion  paddingBottom   adjudicados=  2 malClasificados=0   ⇐ SEPARADORA
+  CATALOGO        fila     paddingBottom   adjudicados=  9 malClasificados=4
+  CATALOGO        modulo   marginBottom    adjudicados= 23 malClasificados=0   ⇐ SEPARADORA
+  CATALOGO        modulo   paddingBottom   adjudicados=  1 malClasificados=1
+  SOFTWARE        seccion  paddingTop      adjudicados=  2 malClasificados=0   ⇐ SEPARADORA
+  SOFTWARE        seccion  paddingBottom   adjudicados=  2 malClasificados=1
+  SOFTWARE        fila     marginBottom    adjudicados=  7 malClasificados=7
+  SOFTWARE        fila     paddingTop      adjudicados=  6 malClasificados=1
+  SOFTWARE        fila     paddingBottom   adjudicados=  7 malClasificados=3
+  SOFTWARE        modulo   marginTop       adjudicados= 10 malClasificados=10
+  SOFTWARE        modulo   marginBottom    adjudicados= 54 malClasificados=2
+  SOFTWARE        modulo   paddingBottom   adjudicados=  3 malClasificados=2
+  SOFTWARE-corta  seccion  paddingTop      adjudicados=  2 malClasificados=0   ⇐ SEPARADORA
+  SOFTWARE-corta  seccion  paddingBottom   adjudicados=  1 malClasificados=0   ⇐ SEPARADORA
+  SOFTWARE-corta  fila     paddingTop      adjudicados=  5 malClasificados=0   ⇐ SEPARADORA
+  SOFTWARE-corta  fila     paddingBottom   adjudicados=  7 malClasificados=6
+  SOFTWARE-corta  modulo   marginTop       adjudicados=  7 malClasificados=7
+  SOFTWARE-corta  modulo   marginBottom    adjudicados= 24 malClasificados=0   ⇐ SEPARADORA
+  SOFTWARE-corta  modulo   paddingBottom   adjudicados=  3 malClasificados=1
+
+=== LOS FALLOS REALES DEL TEST A (nombrados) ===
+  PRODUCTO fila et_pb_row_0 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_1 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_2 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_3 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_4 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_5 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_6 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_0 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_1 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_2 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_3 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_4 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_5 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_6 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  PRODUCTO fila et_pb_row_3 paddingTop             57.5938→  15.5938 testA=PLANTILLA cascada=CAMPO     decl=4% [.et-db #et-boc .et-l .et_pb_row_3.et_pb_row]
+  PRODUCTO fila et_pb_row_1 paddingBottom               72→     19.5 testA=PLANTILLA cascada=CAMPO     decl=5% !important [.et-db #et-boc .et-l .et_pb_row_1.et_pb_row]
+  PRODUCTO fila et_pb_row_2 paddingBottom          28.7969→   7.7969 testA=PLANTILLA cascada=CAMPO     decl=2% !important [.et-db #et-boc .et-l .et_pb_row_2.et_pb_row]
+  PRODUCTO fila et_pb_row_4 paddingBottom          14.3906→   3.8906 testA=PLANTILLA cascada=CAMPO     decl=1% [.et-db #et-boc .et-l .et_pb_row_4.et_pb_row]
+  PRODUCTO fila et_pb_row_5 paddingBottom               72→     19.5 testA=PLANTILLA cascada=CAMPO     decl=5% [.et-db #et-boc .et-l .et_pb_row_5.et_pb_row]
+  PRODUCTO fila et_pb_row_6 paddingBottom               72→     19.5 testA=PLANTILLA cascada=CAMPO     decl=5% [.et-db #et-boc .et-l .et_pb_row_6.et_pb_row]
+  PRODUCTO modulo et_pb_text_6 marginTop                20→        0 testA=PLANTILLA cascada=CAMPO     decl=20px !important [.et-db #et-boc .et-l .et_pb_text_6]
+  PRODUCTO modulo et_pb_text_7 marginTop                10→        0 testA=PLANTILLA cascada=CAMPO     decl=10px !important [.et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_13, .et-db #et-boc .et-l .et_pb_text_14]
+  PRODUCTO modulo et_pb_text_8 marginTop                10→        0 testA=PLANTILLA cascada=CAMPO     decl=10px !important [.et-db #et-boc .et-l .et_pb_text_8]
+  PRODUCTO modulo et_pb_text_9 marginTop                20→        0 testA=PLANTILLA cascada=CAMPO     decl=20px !important [.et-db #et-boc .et-l .et_pb_text_9]
+  PRODUCTO modulo et_pb_text_13 marginTop               10→        0 testA=PLANTILLA cascada=CAMPO     decl=10px !important [.et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_13, .et-db #et-boc .et-l .et_pb_text_14]
+  PRODUCTO modulo et_pb_text_14 marginTop               10→        0 testA=PLANTILLA cascada=CAMPO     decl=10px !important [.et-db #et-boc .et-l .et_pb_text_7, .et-db #et-boc .et-l .et_pb_text_13, .et-db #et-boc .et-l .et_pb_text_14]
+  PRODUCTO modulo et_pb_cta_0 paddingTop                40→       40 testA=CAMPO     cascada=PLANTILLA decl=40px [.et-db #et-boc .et-l .et_pb_promo]
+  PRODUCTO modulo et_pb_text_1 paddingBottom        10.875→   6.2344 testA=PLANTILLA cascada=CAMPO     decl=2% !important [.et-db #et-boc .et-l .et_pb_text_1]
+  PRODUCTO modulo et_pb_cta_0 paddingBottom             40→       40 testA=CAMPO     cascada=PLANTILLA decl=40px [.et-db #et-boc .et-l .et_pb_promo]
+  CATALOGO fila et_pb_row_0 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_1 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_5 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_6 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_7 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_8 marginTop                    0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_0 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_1 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_2 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_3 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+  CATALOGO fila et_pb_row_4 marginBottom                 0→        0 testA=CAMPO     cascada=PLANTILLA decl=auto [.et-db #et-boc .et-l .et_pb_row]
+
+LLAVES: sin llave (123.ª) 105 · rescatables con la llave depurada de f33-clases 24
+
+VEREDICTO: valida

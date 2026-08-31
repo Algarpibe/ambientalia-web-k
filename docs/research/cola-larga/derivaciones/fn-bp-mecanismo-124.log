@@ -1,0 +1,43 @@
+=== CONTROLES ===
+  OK  se recorrio algo (hay reglas de ritmo dentro de @media)
+      con ordinal 42 · genericas 543
+  OK  `esOrdinal` DISCRIMINA dentro de @media (no casa con todas)
+      con ordinal 42 · genericas 543
+
+=== REGLAS DE RITMO DENTRO DE @media, POR QUIEN LAS ESCRIBIO ===
+  con ORDINAL (el editor):   42
+  con selector generico:     543
+
+  PRODUCTO        editor=  10 generico= 142  breakpoints=[@media only screen and (max-width:980px) · @media only screen and (max-width:767px)]
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_text_4 { margin-top:0rem!important }
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_button_1_wrapper { margin-top:-3rem!important;margin-bottom:1rem!important }
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_text_5 { font-size:35px;margin-bottom:0px!important }
+  CATALOGO        editor=   8 generico= 132  breakpoints=[@media only screen and (max-width:980px) · @media only screen and (max-width:767px)]
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_image_1 { margin-top:0rem!important }
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_text_3,.et-db #et-boc .et-l .et_pb_text_6 { font-size:13px;margin-bottom:0px!important }
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_text_4,.et-db #et-boc .et-l .et_pb_text_5,.et-db #et-boc .et-l .et_pb_text_8 { margin-top:0px!important }
+  SOFTWARE        editor=  15 generico= 137  breakpoints=[@media only screen and (max-width:980px) · @media only screen and (max-width:767px)]
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_image_1 { margin-top:1rem!important;max-width:100% }
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_text_6,.et-db #et-boc .et-l .et_pb_text_7,.et-db #et-boc .et-l .et_pb_text_8,.et-db #et-boc .et-l .et_pb_text_9,.et-db #et-boc .et-l { margin-top:0px!important }
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_button_6_wrapper { margin-top:-20px!important }
+  SOFTWARE-corta  editor=   9 generico= 132  breakpoints=[@media only screen and (max-width:980px) · @media only screen and (max-width:767px)]
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_text_4,.et-db #et-boc .et-l .et_pb_text_9,.et-db #et-boc .et-l .et_pb_text_13 { font-size:13px;margin-bottom:0px!important }
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_text_5,.et-db #et-boc .et-l .et_pb_text_6,.et-db #et-boc .et-l .et_pb_text_7,.et-db #et-boc .et-l .et_pb_text_8,.et-db #et-boc .et-l { margin-top:0px!important }
+      @media only screen and (max-width:980px)
+        .et-db #et-boc .et-l .et_pb_button_1_wrapper { margin-top:-20px!important }
+
+⇒ MEDIDO: el editor SI escribe ritmo por punto de ruptura (42 reglas). La premisa del test A
+  —«lo que el editor toca queda en px absolutos, IGUALES a 1440 y a 390»— es FALSA en esos casos.
+
+VEREDICTO: valida

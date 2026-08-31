@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "tanda": "124.ª · PASO 0 — mecanismo de FN-bp",
+    "fecha": "2026-08-31",
+    "lado": "UNO — el HTML capturado del original. No mide geometria: recorre el CSS servido",
+    "pregunta": "¿el EDITOR escribe valores de ritmo que dependen del ancho?",
+    "porQue": "si los escribe, la premisa del test A —«lo que el editor toca queda en px absolutos, IGUALES a 1440 y a 390»— es falsa, y su falso negativo en RITMO tiene mecanismo",
+    "noContesta": [
+      "cuantos NODOS toca cada regla: eso lo mide paso0-nodos-124 con la cascada"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "se recorrio algo (hay reglas de ritmo dentro de @media)",
+      "ok": true,
+      "visto": "con ordinal 42 · genericas 543"
+    },
+    {
+      "nombre": "`esOrdinal` DISCRIMINA dentro de @media (no casa con todas)",
+      "ok": true,
+      "visto": "con ordinal 42 · genericas 543"
+    }
+  ],
+  "reglasDeRitmoDentroDeMedia": {
+    "conOrdinalDelEditor": 42,
+    "conSelectorGenerico": 543
+  },
+  "porDoc": {
+    "PRODUCTO": {
+      "conOrdinal": 10,
+      "sinOrdinal": 142,
+      "breakpoints": [
+        "@media only screen and (max-width:980px)",
+        "@media only screen and (max-width:767px)"
+      ],
+      "muestra": [
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_text_4",
+          "ejes": [
+            "margin-top"
+          ],
+          "cuerpo": "margin-top:0rem!important"
+        },
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_button_1_wrapper",
+          "ejes": [
+            "margin-top",
+            "margin-bottom"
+          ],
+          "cuerpo": "margin-top:-3rem!important;margin-bottom:1rem!important"
+        },
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_text_5",
+          "ejes": [
+            "margin-bottom"
+          ],
+          "cuerpo": "font-size:35px;margin-bottom:0px!important"
+        }
+      ]
+    },
+    "CATALOGO": {
+      "conOrdinal": 8,
+      "sinOrdinal": 132,
+      "breakpoints": [
+        "@media only screen and (max-width:980px)",
+        "@media only screen and (max-width:767px)"
+      ],
+      "muestra": [
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "ejes": [
+            "margin-top"
+          ],
+          "cuerpo": "margin-top:0rem!important"
+        },
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_text_3,.et-db #et-boc .et-l .et_pb_text_6",
+          "ejes": [
+            "margin-bottom"
+          ],
+          "cuerpo": "font-size:13px;margin-bottom:0px!important"
+        },
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_text_4,.et-db #et-boc .et-l .et_pb_text_5,.et-db #et-boc .et-l .et_pb_text_8",
+          "ejes": [
+            "margin-top"
+          ],
+          "cuerpo": "margin-top:0px!important"
+        }
+      ]
+    },
+    "SOFTWARE": {
+      "conOrdinal": 15,
+      "sinOrdinal": 137,
+      "breakpoints": [
+        "@media only screen and (max-width:980px)",
+        "@media only screen and (max-width:767px)"
+      ],
+      "muestra": [
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_image_1",
+          "ejes": [
+            "margin-top"
+          ],
+          "cuerpo": "margin-top:1rem!important;max-width:100%"
+        },
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_text_6,.et-db #et-boc .et-l .et_pb_text_7,.et-db #et-boc .et-l .et_pb_text_8,.et-db #et-boc .et-l .et_pb_text_9,.et-db #et-boc .et-l",
+          "ejes": [
+            "margin-top"
+          ],
+          "cuerpo": "margin-top:0px!important"
+        },
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_button_6_wrapper",
+          "ejes": [
+            "margin-top"
+          ],
+          "cuerpo": "margin-top:-20px!important"
+        }
+      ]
+    },
+    "SOFTWARE-corta": {
+      "conOrdinal": 9,
+      "sinOrdinal": 132,
+      "breakpoints": [
+        "@media only screen and (max-width:980px)",
+        "@media only screen and (max-width:767px)"
+      ],
+      "muestra": [
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_text_4,.et-db #et-boc .et-l .et_pb_text_9,.et-db #et-boc .et-l .et_pb_text_13",
+          "ejes": [
+            "margin-bottom"
+          ],
+          "cuerpo": "font-size:13px;margin-bottom:0px!important"
+        },
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_text_5,.et-db #et-boc .et-l .et_pb_text_6,.et-db #et-boc .et-l .et_pb_text_7,.et-db #et-boc .et-l .et_pb_text_8,.et-db #et-boc .et-l",
+          "ejes": [
+            "margin-top"
+          ],
+          "cuerpo": "margin-top:0px!important"
+        },
+        {
+          "cab": "@media only screen and (max-width:980px)",
+          "sel": ".et-db #et-boc .et-l .et_pb_button_1_wrapper",
+          "ejes": [
+            "margin-top"
+          ],
+          "cuerpo": "margin-top:-20px!important"
+        }
+      ]
+    }
+  },
+  "veredicto": "valida"
+}
