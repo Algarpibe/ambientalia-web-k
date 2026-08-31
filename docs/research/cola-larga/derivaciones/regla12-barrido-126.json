@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "tanda": "126.ª · CIERRE — barrido §regla 12",
+    "fecha": "2026-08-31",
+    "alcance": [
+      "docs/ESQUEMA-CMS.md (las tres secciones que escribió la 126.ª)",
+      "docs/PLAN-FASE-3.md (la fase en curso)"
+    ],
+    "noContesta": [
+      "el archivo entero: el barrido es ACOTADO por diseño, y eso es una limitación declarada, no un descuido",
+      "los enunciados que esta tanda escribió en MENSAJES DE COMMIT y no en un documento: no los alcanza este detector"
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "el barrido alcanzó su ámbito (encontró enunciados con la forma)",
+      "ok": true,
+      "visto": "41 enunciados destacados en 2 ficheros"
+    },
+    {
+      "nombre": "el cruce contra CLAUDE.md DISCRIMINA",
+      "ok": true,
+      "visto": "ya en CLAUDE 15 · no 26"
+    }
+  ],
+  "cardinales": {
+    "enunciadosDestacados": 41,
+    "yaEnClaudeMd": 15,
+    "conFechaOTanda_eventos": 4,
+    "candidatosARegla": 22
+  },
+  "candidatosARegla": [
+    {
+      "fichero": "docs/ESQUEMA-CMS.md",
+      "enunciado": "Lo que queda SIN DERIVAR, con lo que haría falta:"
+    },
+    {
+      "fichero": "docs/ESQUEMA-CMS.md",
+      "enunciado": "Y el aviso de §regla 30 se cobró en vivo:"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "El transitivo a secas es un PLENO y no mide lo que dice."
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "El `w` a 0 es el control que sostiene todo lo demás."
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Y los 31 «CAMPO» salen CON RESERVA, no como conclusión"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Y el `em` no es el del tema."
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Y eso ata el PASO 0 de esta misma tanda:"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "El eje se queda en `·` — SIN COMPARAR, que no es «a 0»"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Misma unidad, misma base 16, VALOR distinto"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "ESCRIBIR o no el content type"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "El 1 es el que justifica que el PASO 0 exista"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Sube al propietario con sus tres salidas"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Los invariantes 3 y 4 no estaban fallando: estaban SIN EJERCITAR"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Rutas 382, sin cambio: esta tanda siembra, NO emite."
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Resultado: 383/383 IDÉNTICOS."
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Diferencia simétrica 0 y 0 sobre 31"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Y la corrección de alcance que sale de aquí, que sí toca al plan:"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Tres aplazamientos, y éste no es como los dos anteriores."
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Cuerpo del icono: 96 px en la piel B, 25 px en A y C"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Para construir NO hace falta el porqué."
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Lo único abierto es el TEXTO de la regla"
+    },
+    {
+      "fichero": "docs/PLAN-FASE-3.md",
+      "enunciado": "Y lo que ya NO hace falta volver a medir:"
+    }
+  ],
+  "veredicto": "valida"
+}

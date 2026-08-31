@@ -1,0 +1,44 @@
+=== CONTROLES ===
+  OK  los vecinos de `monitor-calidad-aire` a >=0.7 se DERIVAN (no se recuerdan)
+      tipos=10 · estacion-de-monitoreo-=0.8 · sensor-de-calidad-del-=0.7
+  FALLA los nombres recortados del log RESUELVEN contra el corpus
+      tipos -> SIN RESOLVER · estacion-de-monitoreo- -> estacion-de-monitoreo-de-calidad-del-aire.html · sensor-de-calidad-del- -> sensor-de-calidad-del-aire.html
+  FALLA LA PRECONDICION YA ESTA PAGADA: el HTML de los 2 vecinos esta CAPTURADO
+      tipos: capturado=false clonado=false · estacion-de-monitoreo-: capturado=true clonado=false · sensor-de-calidad-del-: capturado=true clonado=false
+  OK  se censo algo (hay marcadores semanticos en la familia)
+      21 marcadores en 3 documentos
+  OK  HAY DOMINIO: marcadores en >=2 documentos de la MISMA familia (si fuera 0, 0 pares por construccion)
+      18 compartidos · 3 singleton
+  OK  el censo DISCRIMINA (ni cero compartidos ni pleno)
+      compartidos 18 de 21
+
+=== LOS 2 VECINOS ===
+  tipos                      jaccard=10  capturado=NO  clonado=NO
+  estacion-de-monitoreo-     jaccard=0.8  capturado=SI  clonado=NO
+  sensor-de-calidad-del-     jaccard=0.7  capturado=SI  clonado=NO
+
+=== DOMINIO (marcadores semanticos de la familia PRODUCTO) ===
+  documentos: monitor-calidad-aire · estacion-de-monitoreo- · sensor-de-calidad-del-
+  21 marcadores · 18 en >=2 documentos · 3 singleton
+    3 doc(s)  breadcrumbs
+    3 doc(s)  iconos-xs-2
+    3 doc(s)  iconos-md-6
+    3 doc(s)  parametros
+    3 doc(s)  clear-both
+    3 doc(s)  menu-anclas
+    3 doc(s)  modulo-beneficios
+    3 doc(s)  bucle-entradas
+    3 doc(s)  kunak-faq-item
+    2 doc(s)  iconos-md-3
+    2 doc(s)  dvmd_table_maker
+    2 doc(s)  dvmd_table_maker_0
+    2 doc(s)  dvmd_tm_version_4_0_1
+    2 doc(s)  iconos-certificicados
+    2 doc(s)  clear
+    2 doc(s)  galeria
+    2 doc(s)  lista-resultados
+    2 doc(s)  popup
+
+⇒ EXIGE CAPTURAR primero: falta el HTML de algun vecino.
+
+✓ evaluados 3/3 documentos de la familia · controles 4/6

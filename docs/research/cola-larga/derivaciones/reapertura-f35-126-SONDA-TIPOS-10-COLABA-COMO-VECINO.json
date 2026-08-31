@@ -1,0 +1,205 @@
+{
+ "fecha": "2026-08-31",
+ "tanda": 126,
+ "escalon": "CIERRE",
+ "pregunta": "la condicion de reapertura de F3-5, ¿exige CLONAR, o el dominio ya esta en el repo?",
+ "veredicto": "EXIGE CAPTURAR primero: falta el HTML de algun vecino.",
+ "ancla": "monitor-calidad-aire",
+ "umbral": 0.7,
+ "vecinos": [
+  {
+   "vecino": "tipos",
+   "jaccard": 10,
+   "capturado": false,
+   "clonado": false
+  },
+  {
+   "vecino": "estacion-de-monitoreo-",
+   "jaccard": 0.8,
+   "capturado": true,
+   "clonado": false
+  },
+  {
+   "vecino": "sensor-de-calidad-del-",
+   "jaccard": 0.7,
+   "capturado": true,
+   "clonado": false
+  }
+ ],
+ "dominio": {
+  "documentos": [
+   "monitor-calidad-aire",
+   "estacion-de-monitoreo-",
+   "sensor-de-calidad-del-"
+  ],
+  "marcadores": 21,
+  "compartidosEnDosOMas": 18,
+  "singleton": 3,
+  "listaCompartidos": [
+   {
+    "marcador": "breadcrumbs",
+    "documentos": 3
+   },
+   {
+    "marcador": "iconos-xs-2",
+    "documentos": 3
+   },
+   {
+    "marcador": "iconos-md-6",
+    "documentos": 3
+   },
+   {
+    "marcador": "parametros",
+    "documentos": 3
+   },
+   {
+    "marcador": "clear-both",
+    "documentos": 3
+   },
+   {
+    "marcador": "menu-anclas",
+    "documentos": 3
+   },
+   {
+    "marcador": "modulo-beneficios",
+    "documentos": 3
+   },
+   {
+    "marcador": "bucle-entradas",
+    "documentos": 3
+   },
+   {
+    "marcador": "kunak-faq-item",
+    "documentos": 3
+   },
+   {
+    "marcador": "iconos-md-3",
+    "documentos": 2
+   },
+   {
+    "marcador": "dvmd_table_maker",
+    "documentos": 2
+   },
+   {
+    "marcador": "dvmd_table_maker_0",
+    "documentos": 2
+   },
+   {
+    "marcador": "dvmd_tm_version_4_0_1",
+    "documentos": 2
+   },
+   {
+    "marcador": "iconos-certificicados",
+    "documentos": 2
+   },
+   {
+    "marcador": "clear",
+    "documentos": 2
+   },
+   {
+    "marcador": "galeria",
+    "documentos": 2
+   },
+   {
+    "marcador": "lista-resultados",
+    "documentos": 2
+   },
+   {
+    "marcador": "popup",
+    "documentos": 2
+   }
+  ]
+ },
+ "porDoc": {
+  "monitor-calidad-aire": [
+   "breadcrumbs",
+   "bucle-entradas",
+   "clear",
+   "clear-both",
+   "dark",
+   "dvmd_table_maker",
+   "dvmd_table_maker_0",
+   "dvmd_tm_version_4_0_1",
+   "galeria",
+   "iconos-certificicados",
+   "iconos-md-3",
+   "iconos-md-6",
+   "iconos-xs-2",
+   "kunak-faq-item",
+   "lista-resultados",
+   "menu-anclas",
+   "modulo-beneficios",
+   "parametros",
+   "popup"
+  ],
+  "estacion-de-monitoreo-": [
+   "breadcrumbs",
+   "bucle-entradas",
+   "clear",
+   "clear-both",
+   "dvmd_table_maker",
+   "dvmd_table_maker_0",
+   "dvmd_tm_version_4_0_1",
+   "galeria",
+   "iconos-certificicados",
+   "iconos-md-3",
+   "iconos-md-6",
+   "iconos-xs-2",
+   "kunak-faq-item",
+   "lista-resultados",
+   "menu-anclas",
+   "modulo-beneficios",
+   "parametros",
+   "popup"
+  ],
+  "sensor-de-calidad-del-": [
+   "breadcrumbs",
+   "bucle-entradas",
+   "clear-both",
+   "iconos-md-4",
+   "iconos-md-6",
+   "iconos-xs-2",
+   "kunak-faq-item",
+   "menu-anclas",
+   "modulo-beneficios",
+   "modulo-cartuchos",
+   "parametros"
+  ]
+ },
+ "noContesta": [
+  "NO mide la varianza: eso exige navegador y geometria, y es trabajo de otra tanda",
+  "NO dice si los marcadores compartidos tienen valores distintos — solo que hay con que emparejar"
+ ],
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "los vecinos de `monitor-calidad-aire` a >=0.7 se DERIVAN (no se recuerdan)",
+   "detalle": "tipos=10 · estacion-de-monitoreo-=0.8 · sensor-de-calidad-del-=0.7"
+  },
+  {
+   "ok": false,
+   "nombre": "los nombres recortados del log RESUELVEN contra el corpus",
+   "detalle": "tipos -> SIN RESOLVER · estacion-de-monitoreo- -> estacion-de-monitoreo-de-calidad-del-aire.html · sensor-de-calidad-del- -> sensor-de-calidad-del-aire.html"
+  },
+  {
+   "ok": false,
+   "nombre": "LA PRECONDICION YA ESTA PAGADA: el HTML de los 2 vecinos esta CAPTURADO",
+   "detalle": "tipos: capturado=false clonado=false · estacion-de-monitoreo-: capturado=true clonado=false · sensor-de-calidad-del-: capturado=true clonado=false"
+  },
+  {
+   "ok": true,
+   "nombre": "se censo algo (hay marcadores semanticos en la familia)",
+   "detalle": "21 marcadores en 3 documentos"
+  },
+  {
+   "ok": true,
+   "nombre": "HAY DOMINIO: marcadores en >=2 documentos de la MISMA familia (si fuera 0, 0 pares por construccion)",
+   "detalle": "18 compartidos · 3 singleton"
+  },
+  {
+   "ok": true,
+   "nombre": "el censo DISCRIMINA (ni cero compartidos ni pleno)",
+   "detalle": "compartidos 18 de 21"
+  }
+ ]
+}

@@ -3358,6 +3358,41 @@ las rutas del build: **lo nuevo entra solo**.
 > nombres puede combinarlos, **la lista está incompleta desde el día que se
 > escribió**; y si el consumidor no falla cuando no casa, no te vas a enterar.
 
+> ⚠⚠ **Y LA FORMA QUE ESA SEÑAL NO VE, PORQUE NO PARECE UNA LISTA: UN MAPEO CON
+> RAMA `else` ES UN CONJUNTO ENUMERADO DE DOS — Y AL LLEGAR EL TERCERO, EL
+> `else` LE PONE EL NOMBRE DEL SEGUNDO, EN SILENCIO (2026-08-31).**
+>
+> La señal de arriba busca **un array**. Un ternario no lo es: `x === "a" ?
+> "p" : "q"` **parece una condición**, y es exactamente el mismo conjunto
+> enumerado a mano con `n = 2`. La diferencia está en el modo de fallo, y es
+> peor —
+>
+> > **Una lista que no casa produce un CERO, que al menos se puede contar. Una
+> > rama `else` no produce nada: BAUTIZA lo nuevo con el nombre de lo viejo**,
+> > y dos cosas distintas pasan a llamarse igual.
+>
+> **Medido:** el nombre del campo de unidad de una primitiva de ritmo se derivaba
+> con `nombreValor === "valor" ? "unidad" : "movilUnidad"`. Al añadir una tercera
+> posición, la rama `else` habría bautizado su unidad **`movilUnidad`**, o sea
+> **la que ya existía** — y eso **no es un error de tipos**: dos campos con el
+> mismo `name` dentro de un grupo compilan, se guardan y **uno se come al otro**.
+>
+> **Operativamente, y son dos mitades:**
+>
+> 1. **un mapeo de N ramas se sustituye por una DERIVACIÓN** —aquí, transformar
+>    el nombre en vez de elegirlo— **y la derivación TIRA si no puede** (§regla 6:
+>    la ausencia se rechaza, no se sustituye por un valor benigno);
+> 2. **y el invariante que hay que vigilar no es «¿está el tercero?» sino
+>    «¿son TODOS DISTINTOS?»**. Lo primero lo ve cualquiera al escribir el
+>    tercero; lo segundo es lo único que caza la colisión, y cuesta un
+>    `filter((n, i) => arr.indexOf(n) !== i)`.
+>
+> **Y la lección sobre el barrido, que es la que generaliza:** el instrumento de
+> §regla 12 sólo ve enunciados **ya escritos en prosa destacada**. Una regla que
+> vive **en el código** —un ternario, un `??`, un `slice`— es invisible para él,
+> así que su «0 candidatos» es cierto de la prosa y **no del repo**. El barrido
+> se declara con esa limitación o se lee como si hubiera mirado las dos.
+
 > ⚠⚠ **Y SU MITAD QUE NO ES UNA LISTA SINO UNA GRAMÁTICA: LAS FORMAS DE
 > ESCRIBIR UN MISMO VALOR TAMBIÉN SON UN CONJUNTO ENUMERADO A MANO — Y EL
 > BARRIDO QUE CUBRE DOS DE TRES INFORMA «0 RESTANTES» (2026-08-27, 121.ª).**

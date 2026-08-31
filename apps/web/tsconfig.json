@@ -63,7 +63,9 @@
     ".next-121/types/**/*.ts",
     ".next-121/dev/types/**/*.ts",
     ".next-121b/types/**/*.ts",
-    ".next-121b/dev/types/**/*.ts"
+    ".next-121b/dev/types/**/*.ts",
+    ".next-126/types/**/*.ts",
+    ".next-126/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
