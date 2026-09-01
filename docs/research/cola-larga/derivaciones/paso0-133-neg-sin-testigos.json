@@ -1,0 +1,90 @@
+{
+ "meta": {
+  "tanda": "133.ª",
+  "paso": "PASO 0",
+  "fecha": "2026-09-01T13:46:03.032Z",
+  "head": "74dabc3cc40d5674f71d4b3517335dbc356a686d",
+  "rama": "main",
+  "saboteada": "sin-testigos"
+ },
+ "entorno": {
+  "manifiesto": {
+   "fichero": "apps/web/.next/prerender-manifest.json",
+   "rutas": 429,
+   "dinamicas": 17,
+   "mtime": "2026-08-31T19:54:40.592Z"
+  },
+  "congeladas": 1552,
+  "artefactos": 568
+ },
+ "reparto": {
+  "bloqueos": 22,
+  "llavesDistintas": 22,
+  "porEje": {
+   "etiqueta": 11,
+   "atributo": 11
+  },
+  "congelada132": {
+   "bloqueos": 22,
+   "clases": null
+  }
+ },
+ "hallazgo": {
+  "pregunta": "¿qué hay ya en el repo que haga parte de este trabajo?",
+  "respuesta": "MODULO_CODIGO (slug 'codigo') modela el mismo et_pb_code y NO valida contra el censo",
+  "bloques": {
+   "codigo": {
+    "campo": "html",
+    "valida": false,
+    "tipo": "code"
+   },
+   "codigo-arq": {
+    "campo": "contenido",
+    "valida": true,
+    "tipo": "code"
+   }
+  },
+  "instancias": {
+   "codigo": {
+    "n": 9,
+    "conForm": 9,
+    "aActiveCampaign": 9,
+    "ids": [
+     "_form_69_",
+     "_form_80_",
+     "_form_125_",
+     "_form_121_",
+     "_form_119_",
+     "_form_129_",
+     "_form_123_",
+     "_form_84_"
+    ]
+   },
+   "codigo-arq": {
+    "n": 1,
+    "conForm": 1,
+    "aActiveCampaign": 1,
+    "ids": [
+     "_form_106_"
+    ]
+   }
+  },
+  "siSeValidara": {
+   "codigo": {
+    "total": 9,
+    "bloquean": 9
+   },
+   "codigo-arq": {
+    "total": 1,
+    "bloquean": 1
+   }
+  },
+  "loSeparaElValidador": true
+ },
+ "controles": {
+  "testigosVivos": 0,
+  "testigosTotal": 0,
+  "recorridos": 10,
+  "ok": false
+ }
+}
