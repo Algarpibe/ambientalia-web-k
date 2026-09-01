@@ -1,5 +1,123 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §137.ª · **CMS-7 CERRADO EN `A · NO UNIFICAR`, Y LA FICHA NO LA CIERRA LA FRASE SINO EL CERO: LOS DOS MODELOS NO COMPARTEN UN SOLO CAMPO DE CONTENIDO** — 2026-09-01
+
+**Estado: PASO 0 completo · ESCALÓN 1 hecho.** Tanda **OFFLINE**: no siembra, no
+cablea, no construye. El socket sigue `ECONNREFUSED`, así que esta tanda —y no
+la 135.ª— sigue siendo la buena.
+
+### PASO 0 punto 2 · el socket — SIN CAMBIO, y es el ÚNICO canal que se miró
+
+`127.0.0.1:55432` → **`ECONNREFUSED`** (15:23). **No se re-midieron los otros
+cuatro canales** —`docker ps`, `pg_isready` dentro, `PortBindings` declarado,
+`NetworkSettings.Ports` publicado—: la 134.ª y la 135.ª ya dirimieron que el
+defecto es del *publish* de Docker Desktop y es del propietario. Repetirlo sería
+gastar el mismo negativo por **cuarta** vez. Lo que decide si la tanda es la
+buena es **abrir el socket**, y sólo eso (§*lo DECLARADO y lo PUBLICADO son dos
+canales distintos*).
+
+### PASO 0 puntos 1 y 3 · la deriva, y los CUATRO heredados reproducen
+
+HEAD `1efd406`, árbol limpio y en sync con `origin/main`. **1560** congeladas en
+`scripts/qa/medidas/`. `qa:lib` **EXIT 0 · las 219 sondas COMPILAN y declaran su
+mínimo** (derivado de su última línea, no citado — §sondas 9).
+
+**Procesos, no el árbol** (§regla 18): 29 `node.exe` y 26 `chrome.exe` vivos, y
+**ninguno es una sonda**. Derivado por línea de orden, **con su control del
+cero**: el canal devuelve **188** cmdlines de `node` y **0** casan
+`scripts/qa`/`.mjs`/`next` — son servidores MCP. Un `0` con el canal muerto y
+uno con el canal vivo se escriben igual (§sondas 4).
+
+| afirmación heredada | esperado | medido | ¿reproduce? |
+|---|---|---|---|
+| instancias de `codigo` en `paginas` | 9 | **9** | sí |
+| `codigo.html` es `type:code` SIN `validate` | code/false | **code/false** | sí |
+| tokens fuera del censo en los 9 | 21 | **21** | sí |
+| bloquearían con el validador puesto | 9 | **9** | sí |
+| campos de CONTENIDO `codigo` · `formulario-arq` · comunes | 1 · 11 · 0 | **1 · 11 · 0** | sí |
+| pieza PERDIDA EN SILENCIO | 1 (`<textarea name=field[23]>`, `contacto`) | **1, la misma** | sí |
+| `textarea` en `scripts/seed/extractor-f35.mjs` | 0 | **0** | sí |
+
+**Reproduce AL BIT**, y quien lo firma no es un recuento: es la guarda de
+§regla 5 que la propia derivación de la 136.ª lleva puesta — re-corrida imprimió
+`congelada:` y **no** `ya existía y DIFIERE`, con `git status` de
+`derivaciones/` **vacío**.
+
+⚠ **Y el `textarea 0` llegó con su control, porque un 0 solo no vale:** el
+recorrido del extractor da `input 9 · select 3 · fieldset 4 · button 3 ·
+textarea 0`. El canal está vivo; el cero es del objeto.
+
+⚠ **Dos ceros de instrumento cazados en el propio PASO 0**, los dos de §sondas 4
+sobre un filtro propio: (1) un `grep -c textarea scripts/qa/extractor-f35.mjs`
+dio **0 porque el fichero no está ahí** —vive en `scripts/seed/`—, y (2) un
+`node -e` con regex se comió los escapes en el shell (§regla 13). El primero
+sólo se vio porque `grep` imprimió su `No such file`; **un `|| true` lo habría
+convertido en dato.**
+
+### ESCALÓN 1 · CMS-7 queda cerrado — `A · NO UNIFICAR`
+
+Decisión del propietario sobre el expediente de la 136.ª. `codigo` (HTML crudo)
+se queda en `paginas`; `formulario-arq` (tipado) en `arquetipos`. **Ninguna
+migración.**
+
+**La razón va con su OPERACIÓN, no con su conclusión** (§regla 23: la
+conclusión sola es simétrica y al releerla el signo se invierte):
+
+> **se elige la que empieza SEPARADA porque deshacerla es FUSIONAR, que es el
+> lado barato.** C exigía **SEPARAR** dos modelos fusionados —el lado caro y **no
+> reversible al bit**— sobre `paginas`, que **tiene dato**: la ventana de
+> §regla 30 está **CERRADA** y su migración es una de las **dos EXPUESTAS** de
+> §regla 42. **B y D** iban **contra CMS-6·C**, decidida el día antes.
+
+**A está alineada con el criterio**, así que **no lleva condición de reapertura
+obligatoria**. Lo que sí lleva escrito es su **coste latente con su
+disparador** —dos definiciones del mismo `et_pb_code` conviviendo, y un editor
+que no sabrá cuál usar; se activa con **el primer alta desde el admin** (F2-5)—.
+Los tres costes están hoy **inactivos**: `arquetipos` no tiene tabla y no hay
+admin.
+
+### ⚠ Y lo que la 136.ª añadió cambia cómo se lee la ficha, así que va en el cierre
+
+`F3-5-CODE-DIVERGE` pasa a **cerrada por CMS-7·A**, y **el número que la cierra
+no es la frase sino el CERO**:
+
+| | campos de CONTENIDO |
+|---|---|
+| `codigo` (paginas) | **1** — `html` |
+| `formulario-arq` | **11** |
+| **comunes** | **0** |
+
+> La clase C7 supone **dos definiciones del mismo objeto**. Con las rutas
+> cualificadas y la base de ritmo separada, aquí hay **dos modelos con
+> intersección VACÍA** en lo que modela el `et_pb_code`. Esto **nunca fue «dos
+> versiones del mismo modelo»** — medirlo sin separar la base publicaba
+> `comunes (22)`, con `valor` tres veces dentro.
+
+**Lo que SÍ sigue siendo divergencia real es la VALIDACIÓN** —uno valida, el
+otro no—, y es exactamente lo que CMS-6·C resolvió no tocar. Cerrar CMS-7 no
+cierra eso; cierra **dónde vive cada modelo**.
+
+### Y lo que queda VIVO se ficha con su cardinal, no se descuenta
+
+**`formulario-arq.metodo: "GET"` está SIN EJERCER sobre n = 10.** El enum
+declara `["POST","GET"]` y los 10 formularios medidos traen sólo `POST`
+(derivado de `escalon1-136-SIN-DB.json` §`direccionB`, no recordado). Es §*un
+campo que ADMITE un caso y que ningún dato de calibración EJERCITA es un camino
+de render sin estrenar*: **se declara con su alcance, no se da por soportado.**
+CMS-7 decide dónde vive el modelo, no qué caminos suyos están probados.
+
+### El tripwire de carga, re-derivado (§regla 19)
+
+`CLAUDE.md` en el HEAD de arranque mide **347 640 chars · 356 597 bytes** —las
+dos cifras son ciertas y en unidades distintas, así que se publican las dos— o
+sea **2.32× / 2.38×** el aviso de 150 000. **Los dos marcadores llegaron**:
+anclados a **línea completa** dan `1` y `1`; leídos por su forma libre dan **3 y
+2**, que es su propia documentación contaminando la cuenta. Posiciones: `KV-01`
+al **20.7 %**, `KV-08` al **100 %**. Truncado **sigue REFUTADO**, y a más tamaño
+que nunca.
+
+---
+
 ## ⛔ §136.ª · **LOS DOS MODELOS DE `et_pb_code` NO COMPARTEN NI UN CAMPO DE CONTENIDO, Y UNIFICARLOS HACIA LO TIPADO PIERDE UN CONTROL EN SILENCIO** — 2026-09-01
 
 **Estado: PASO 0 completo · ESCALONES 1 y 2 HECHOS, OFFLINE.** El socket sigue
@@ -105,6 +223,11 @@ Congelada renombrada con el defecto **y su alcance** —sólo la fila `campos`�
 `llaves distintas === elementos`, o el cardinal no se publica.
 
 ### ESCALÓN 2 · en `ESQUEMA-CMS.md` como **CMS-7 · PENDIENTE DEL PROPIETARIO**
+
+> ✅ **Estado de HOY: RESUELTO `A · NO UNIFICAR` (137.ª, 2026-09-01).** Lo de
+> abajo es el **evento de la 136.ª** y era cierto ese día — se conserva como
+> evidencia de cómo se levantó el expediente. El estado vigente lo dice
+> `ESQUEMA-CMS.md` §CMS-7, que es el registro, no un acta.
 
 Cuatro opciones con su **operación de deshacer NOMBRADA** (§regla 23), no sólo
 su conclusión. Los dos costes de migración, derivados: la ventana de §regla 30

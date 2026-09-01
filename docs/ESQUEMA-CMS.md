@@ -7050,6 +7050,21 @@ sembradas) y tipado en `arquetipos` (1). Eso es la forma de la **clase C7**
 repo la vigila en otros sitios. **La decisión de unificarlas es del propietario
 y no de una tanda**; queda fichada como `F3-5-CODE-DIVERGE` con estos números.
 
+> ✅ **CERRADA 2026-09-01 (137.ª) por `CMS-7 = A · NO UNIFICAR`.** El propietario
+> resuelve que **no se unifican**: `codigo` se queda en `paginas` y
+> `formulario-arq` en `arquetipos`, sin migración.
+>
+> **Y el número que la cierra no es la frase «son dos definiciones de lo mismo»
+> — es que NO LO SON:** con las rutas cualificadas y la base de ritmo separada,
+> los dos modelos tienen **intersección de contenido CERO** (`codigo` **1**
+> campo · `formulario-arq` **11** · **comunes 0**). La clase C7 supone *dos
+> definiciones del mismo objeto*; lo que hay aquí son **dos modelos que no
+> comparten un solo campo** de lo que modela el `et_pb_code`.
+>
+> Lo que **sí** sigue siendo divergencia real es la **VALIDACIÓN** —uno valida y
+> el otro no—, y eso es exactamente lo que CMS-6·C resolvió no tocar. El coste
+> latente de A y su disparador, en §CMS-7.
+
 ⚠ **Y por qué esto NO reabre CMS-6:** la decisión A+C se sostiene tal cual —
 desbloquea 22 de 22, la pérdida visible es 0 y su reversa sigue siendo el lado
 barato—. Lo que el hallazgo añade es **una pregunta nueva sobre `paginas`**, no
@@ -7084,11 +7099,51 @@ un defecto en la resolución de `arquetipos`.
 > este eje. La divergencia C7 sigue abierta y sigue siendo del propietario; lo
 > que se cierra es la duda sobre si era seguro re-sembrar.
 
-## CMS-7 · QUÉ SE HACE CON `F3-5-CODE-DIVERGE` — ⏳ **PENDIENTE DEL PROPIETARIO**
+## CMS-7 · QUÉ SE HACE CON `F3-5-CODE-DIVERGE` — ✅ **RESUELTO: A · NO UNIFICAR** (2026-09-01)
 
-> **Levantado por la 136.ª (2026-09-01), OFFLINE.** El expediente **DESCRIBE y
-> no elige.** Derivación con sus 3 sabotajes y sus 2 testigos:
-> `derivaciones/escalon1-136.{mjs}` · congelada `escalon1-136-SIN-DB.json`.
+> **DECIDIDO POR EL PROPIETARIO el 2026-09-01 (137.ª), sobre el expediente que
+> la 136.ª levantó.** `codigo` (HTML crudo) se queda en `paginas`;
+> `formulario-arq` (tipado) se queda en `arquetipos`. **Ninguna migración.**
+> El expediente entero se conserva más abajo: **es la evidencia de la decisión,
+> no material caducado.**
+
+### La razón, escrita CON SU OPERACIÓN (§regla 23)
+
+Un criterio de asimetría citado sólo por su conclusión **es simétrico**, y al
+releerlo el signo se invierte. Así que se escribe la operación:
+
+> **Se elige la que empieza SEPARADA porque deshacerla es FUSIONAR, y fusionar
+> es el lado BARATO.** C exigía lo contrario —**SEPARAR** dos modelos ya
+> fusionados—, que es el lado caro **y no reversible al bit**.
+
+**Qué se descartó y por qué, con el número que lo descarta:**
+
+| | por qué NO |
+|---|---|
+| **B** · poner `validate` a `MODULO_CODIGO.html` | va **contra CMS-6·C**, decidida **el día antes** (2026-09-01): exige admitir la clase `formulario` —21 tokens— en el censo, que es justo lo que CMS-6·C resolvió no hacer |
+| **C** · unificar hacia lo tipado | la operación de deshacer es **SEPARAR** = el lado caro. Y sobre `paginas`, que **TIENE dato**: la ventana de §regla 30 está **CERRADA** y su migración es una de las **dos EXPUESTAS** de §regla 42. Además pierde el `<textarea>` de `contacto` |
+| **D** · unificar hacia el HTML crudo | va **contra CMS-6·C** igual que B, y tira los **11** campos de contenido tipado |
+
+⚠ **Y lo que la 136.ª añadió cambia cómo se lee la ficha, así que va aquí y no
+sólo en el expediente: los dos modelos tienen intersección de contenido VACÍA**
+—`codigo` **1** campo, `formulario-arq` **11**, **comunes 0**—. Esto **nunca fue
+«dos versiones del mismo modelo»**. Medirlo sin separar la base de ritmo
+publicaba `comunes (22)`, con `valor` tres veces dentro.
+
+### El coste LATENTE de A, con su disparador
+
+A no lleva condición de reapertura **obligatoria** —está alineada con el
+criterio—, pero sí tiene coste, y un coste sin disparador escrito no se vigila:
+
+| el coste | **qué lo ACTIVARÍA** |
+|---|---|
+| **dos definiciones del mismo `et_pb_code` conviviendo**, y quien edite en el CMS no sabrá cuál usar | que un editor **dé de alta un formulario** y tenga que elegir entre `codigo` y `formulario-arq` sin criterio escrito — o sea, **el primer alta desde el admin** (F2-5) |
+| la divergencia de validación sigue: uno valida, el otro no | que se quiera **un solo validador** para el módulo, que es exactamente lo que B pedía y CMS-6·C cerró |
+| `formulario-arq` sigue en `arquetipos` y `codigo` en `paginas` | que un documento **necesite los dos** en la misma colección |
+
+**Ninguno de los tres está activo hoy** —`arquetipos` no tiene tabla y no hay
+admin—, y por eso A no cuesta trabajo. El día que uno se active, **fusionar
+sigue siendo el lado barato**: ésa es toda la razón de haber elegido A.
 
 ### Lo medido primero, porque cambia el marco
 
@@ -7161,13 +7216,14 @@ conclusión sola es simétrica y al releerla el signo se invierte.
 - `formulario-arq` **no tiene migración**: 26 en el proyecto, **0** la nombran.
   Crearla hereda la clase §regla 42 y **necesita la DB** para probar su reversa.
 
-### Condición de reapertura — sólo B y D la necesitan
+### Condición de reapertura — ✅ **no aplica: la elegida fue A**
 
 A está alineada con el criterio de asimetría (empieza separada, deshacerla es
-fusionar). **B y D se tomarían CONTRA una decisión ya escrita** —CMS-6·C— así
-que, si se eligen, llevan escrito qué restricción pesó más y qué tendría que
-pasar para revisarlas. Una decisión que contradice el criterio **siempre** lleva
-salvaguarda; una alineada puede no llevarla.
+fusionar), así que **no lleva salvaguarda obligatoria** — lo que lleva es su
+**coste latente con disparador**, escrito arriba. B y D sí la habrían
+necesitado, porque se tomaban **CONTRA** una decisión ya escrita (CMS-6·C):
+una decisión que contradice el criterio **siempre** lleva salvaguarda; una
+alineada puede no llevarla.
 
 ### ⚠ Y hay trabajo ORTOGONAL que no decide nada — no es una quinta opción
 
@@ -7178,9 +7234,28 @@ negativo, y afecta a **0 filas** —`arquetipos` no tiene tabla—. Ficha
 `F3-5-TEXTAREA-MUDO`. Meterlo en el menú de arriba haría elegir entre cosas
 que no compiten.
 
+> ✅ **Y con A elegida sigue haciendo falta, por OTRO motivo — que es el que lo
+> hace independiente de la decisión.** Ya no es *«C lo necesita para migrar»*:
+> es que **la guarda AFIRMA DE MÁS** (§regla 25). Su enunciado —*«todo control
+> del `<form>` tiene sitio; lo que no lo tenga sale NOMBRADO»*— es más ancho que
+> su dominio, y una guarda así no falla en voz alta. Se arregla en la 137.ª
+> §ESCALÓN 2, **nombrando** la pieza, no modelándola: con A ningún documento va
+> a usar `formulario-arq` para las 9, así que ampliar el enum `campos.tipo`
+> sería inventar un camino de render que nadie recorre.
+
+### ⚠ Y lo que queda VIVO se ficha con su cardinal, no se descuenta
+
+**`formulario-arq.metodo: "GET"` está SIN EJERCER sobre n = 10.** El enum
+declara `["POST","GET"]` y el dato de calibración sólo trae `POST` en los 10
+formularios medidos. Es §*un campo que ADMITE un caso y que ningún dato de
+calibración EJERCITA es un camino de render sin estrenar*: **se declara con su
+alcance, no se da por soportado.** Cerrar CMS-7 no lo cierra — CMS-7 decide
+dónde vive el modelo, no qué caminos suyos están probados.
+
 ### Qué NO contesta este expediente
 
-- **no elige**: la decisión es del propietario;
+- ~~**no elige**: la decisión es del propietario~~ → ✅ **elegida: A**, arriba.
+  El resto de esta lista sigue en pie tal cual;
 - el nº de **FILAS sembradas** queda **SIN COMPROBAR** —es DB y el socket da
   `ECONNREFUSED`—, no «0» ni «9». Lo derivable sí se publica: `paginas` y
   `arquetipos` están las dos cableadas al sembrador;
