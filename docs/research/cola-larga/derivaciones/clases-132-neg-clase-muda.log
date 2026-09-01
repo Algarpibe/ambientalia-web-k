@@ -1,0 +1,88 @@
+
+⚠ SABOTAJE=clase-muda — esta corrida DEBE fallar.
+
+==============================================================================
+132.ª · ESCALÓN 1 — los BLOQUEOS por clase, y qué desbloquea admitir las inertes
+==============================================================================
+
+## 0 · CRUCE contra la congelada de la 131.ª — antes de usar nada de esto
+   ⚠ la llave FLOJA (sin ordinal) colapsaría 22 bloqueos en 15 — 7 hermanos del mismo campo
+   campos HTML .......... míos 199  ·  suyos 199
+   bloqueos ............. míos 22  ·  suyos 22
+   llaves distintas ..... míos 22  ·  suyos 22  (= bloqueos ⇒ la llave identifica)
+   diferencia simétrica . sólo míos 0  ·  sólo suyos 0
+   ✅ REPLICACIÓN FIEL
+   ⚠ y con la llave floja la simétrica habría salido 0/0 IGUAL, colapsando en los dos lados
+     — un cardinal correcto (22=22) al lado de una membresía ciega (§regla 29)
+
+## 1 · EL TOPE DE LA CONGELADA — `hit.slice(0, 6)`, con su margen
+   bloqueos EN el tope (6 hits congelados) ....... 3 de 22
+   bloqueos que el tope RECORTÓ de verdad ........ 3
+      ⚠ monitor-calidad-aire · texto-arq.contenido (atributo) — 11 tokens, congelados 6, OCULTOS 5: data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification, data-reverse, data-speed, data-total-frames, data-zoom
+      ⚠ monitor-calidad-aire · codigo-arq.contenido (etiqueta) — 8 tokens, congelados 6, OCULTOS 2: option, select
+      ⚠ monitor-calidad-aire · codigo-arq.contenido (atributo) — 12 tokens, congelados 6, OCULTOS 6: name, novalidate, placeholder, required, selected, value
+
+   tokens distintos · congelada 30  ·  SIN recortar 43  ·  ocultos 13
+   los que la 131.ª no podía ver: data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification, data-reverse, data-speed, data-total-frames, data-zoom, name, novalidate, option, placeholder, required, select, selected, value
+
+## 2 · REPARTO POR CLASE — con su unidad y su denominador
+   denominadores: 22 bloqueos · 199 campos HTML · 4 documentos · 5 kinds tocados
+
+   ── A · clase por SINTAXIS (la de la 131.ª: prefijo `data-`) ──
+   clase                      tok bloq excl camp doc kind
+   data-* del constructor      43   22   22   10   4    5
+   (suma)                           22 ← = 22
+
+   ── B · clase por FUNCIÓN (los 3 `data-` del widget van con su formulario) ──
+   clase                      tok bloq excl camp doc kind
+   data-* del constructor      40   22   21   10   4    5
+   formulario                   3    1    0    1   1    1
+   (suma)                           23 ← > 22: un bloqueo con tokens de DOS clases cuenta en las dos
+
+   ✅ SIN CLASIFICAR: 0 de 43
+
+   ── los ceros, con su denominador ──
+   eje script     0 de 199 campos HTML — medido, no «no lo miré»
+   eje host       0 de 199 campos HTML — medido, no «no lo miré»
+   clase schema.org               0 de 22 bloqueos
+   clase aria de tabla            0 de 22 bloqueos
+   clase estructura HTML5         0 de 22 bloqueos
+   clase formulario               0 de 22 bloqueos
+
+## 3 · ¿ADMITIR LAS CUATRO INERTES DESBLOQUEA LA SIEMBRA?
+
+   ── A · por sintaxis ──
+   bloqueos HOY ................................. 22
+   bloqueos si se admiten las 4 inertes ......... 0
+   diferencia simétrica: DESAPARECEN 22  ·  APARECEN 0
+   los que QUEDARÍAN, nombrados uno a uno:
+      (ninguno)
+   → residuo: 0 bloqueos · 0 campo(s) de 199 · 0 documento(s) de 4
+
+   ── B · por función ──
+   bloqueos HOY ................................. 22
+   bloqueos si se admiten las 4 inertes ......... 1
+   diferencia simétrica: DESAPARECEN 21  ·  APARECEN 0
+   los que QUEDARÍAN, nombrados uno a uno:
+      ❗ monitor-calidad-aire · codigo-arq.contenido (atributo) → data-autofill, data-sitekey, data-styles-version  [clase: formulario]
+   → residuo: 1 bloqueos · 1 campo(s) de 199 · 1 documento(s) de 4
+
+## 4 · CONTROLES
+   ✅ §sondas 4 · la replicación REPRODUCE la congelada de la 131.ª al par
+        22=22 bloqueos · 199=199 campos · simétrica 0/0 · llave identifica (22=22)
+   ✅ §regla 27 · 0 SIN CLASIFICAR sobre los tokens SIN RECORTAR
+        43 tokens, 0 sin cubo
+   ✅ el margen del tope se MIDE: los hits guardados son los completos, re-leídos del validador
+        completos 22 · truncos 0 · congelada 30 → real 43 (ocultos 13)
+   ❌ §regla 28a · la clasificación DISCRIMINA: el residuo ES el conjunto con token de formulario, y no está vacío
+        residuo 1 · con-formulario 2 · CONJUNTOS DISTINTOS
+   ✅ §regla 22 · el residuo va con su CARDINAL, no con un booleano
+        1 bloqueos en 1 documento(s) · 1 campo(s)
+   ✅ §sondas 4bis · 0 comparado NO puede salir verde
+        199 campos recorridos · 22 bloqueos
+
+==============================================================================
+VEREDICTO · HAY CONTROLES EN ROJO · residuo tras admitir las 4 inertes: 1 bloqueos
+==============================================================================
+
+congelada → derivaciones/clases-132-neg-clase-muda.json

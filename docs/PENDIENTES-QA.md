@@ -65,6 +65,127 @@ razonada (`googletagmanager.com`, fuera con su evidencia).
 
 ---
 
+### ESCALÓN 1 · **LA DECISIÓN SE ENCOGE A UN CAMPO: admitir las cuatro inertes deja 2 bloqueos, y los dos son del MISMO `codigo-arq`**
+
+Derivación: `derivaciones/clases-132.{mjs,log,json}` · negativo **2/2 + control**.
+
+#### La respuesta, por DIFERENCIA SIMÉTRICA con los dos lados nombrados
+
+| | |
+|---|---|
+| bloqueos HOY | **22** |
+| bloqueos si se admiten las 4 inertes | **2** |
+| diferencia simétrica | **DESAPARECEN 20 · APARECEN 0** |
+| residuo | **2 bloqueos · 1 campo de 199 · 1 documento de 4 · 1 `kind` de 5** |
+
+Los dos que quedarían, nombrados:
+
+```
+❗ monitor-calidad-aire · codigo-arq.contenido (etiqueta)
+     → button, fieldset, form, input, label, legend, option, select
+❗ monitor-calidad-aire · codigo-arq.contenido (atributo)
+     → action, for, method, name, novalidate, placeholder, required, selected, value
+       (+ data-autofill, data-sitekey, data-styles-version si se cuentan por función)
+```
+
+> **FORMULARIO no está repartido por el lote: está en UN documento, UN campo, UN
+> bloque.** Los otros tres documentos —`accesorios`, `software-…`, `kunak-api`—
+> **quedan a cero bloqueos** admitiendo sólo las inertes.
+
+#### El reparto por clase, en las CUATRO unidades y con su denominador
+
+Denominadores: **22 bloqueos · 199 campos HTML · 4 documentos · 5 `kind` tocados**.
+
+**A · clase por SINTAXIS** (la de la 131.ª: prefijo `data-`):
+
+| clase | tokens | bloqueos | **exclusivos** | campos | docs | kinds |
+|---|---|---|---|---|---|---|
+| schema.org | 5 | 8 | 8 | 4 | 4 | 1 |
+| `data-*` del constructor | 15 | 6 | 5 | 6 | 3 | 4 |
+| estructura HTML5 | 2 | 6 | 6 | 4 | 4 | 1 |
+| **formulario** | **17** | **2** | **1** | **1** | **1** | **1** |
+| aria de tabla | 4 | 1 | 1 | 1 | 1 | 1 |
+| **(suma)** | | **23** | | | | |
+
+**B · clase por FUNCIÓN** (los 3 `data-` del widget van con su formulario):
+
+| clase | tokens | bloqueos | **exclusivos** | campos | docs | kinds |
+|---|---|---|---|---|---|---|
+| schema.org | 5 | 8 | 8 | 4 | 4 | 1 |
+| estructura HTML5 | 2 | 6 | 6 | 4 | 4 | 1 |
+| `data-*` del constructor | 12 | 5 | 5 | 5 | 3 | 3 |
+| **formulario** | **20** | **2** | **2** | **1** | **1** | **1** |
+| aria de tabla | 4 | 1 | 1 | 1 | 1 | 1 |
+| **(suma)** | | **22** | | | | |
+
+> ⚠ **La suma por SINTAXIS da 23 sobre 22 y la de FUNCIÓN da 22 exactos, y ésa
+> es la diferencia que importa: sólo la segunda es una PARTICIÓN.** El bloqueo de
+> atributo de `codigo-arq` lleva tokens de dos clases —`action`/`method`/`for` de
+> formulario y `data-sitekey`/`data-autofill`/`data-styles-version` del mismo
+> widget— así que por sintaxis cuenta dos veces. **`data-sitekey` es la clave
+> pública de reCAPTCHA**: sintácticamente `data-*`, funcionalmente del
+> formulario. Se publican las dos lecturas porque **cambian el reparto** y sólo
+> una se puede sumar.
+
+**Ninguna clase sale a cero bloqueos** (5 de 5 pobladas). Los ceros que sí hay
+son de EJE, y van con su denominador: `script` **0 de 199** · `host` **0 de 199**.
+
+#### ⚠⚠ EL TOPE DE LA 131.ª ESCONDÍA 13 TOKENS DE 43 — Y 8 SON DE FORMULARIO
+
+`extractor-f35` congela `hit.slice(0, 6)`. **Tres bloqueos traen exactamente 6**,
+o sea que estaban EN el tope: §*una sonda que congela `lista.slice(0,N)` está
+afirmando «hay N» a todo el que la lea después*.
+
+| bloqueo | tokens reales | congelados | **ocultos** |
+|---|---|---|---|
+| `monitor` · `texto-arq` (atributo) | 11 | 6 | **5** — `data-reverse` · `data-speed` · `data-total-frames` · `data-zoom` · `data-notification-config_…` |
+| `monitor` · `codigo-arq` (etiqueta) | 8 | 6 | **2** — `option` · `select` |
+| `monitor` · `codigo-arq` (atributo) | 12 | 6 | **6** — `name` · `novalidate` · `placeholder` · `required` · `selected` · `value` |
+
+> **Tokens distintos: 43, no 30.** Y **8 de los 13 ocultos son de FORMULARIO**,
+> así que la clase mayor era aún mayor de lo que su propia ficha decía: **17
+> tokens por sintaxis y 20 por función, no 9.** El reparto de clases no cambia
+> —siguen siendo 5, y 0 SIN CLASIFICAR sobre los 43— pero **el cardinal de la
+> clase que decide estaba subestimado en más del doble**.
+
+#### ⚠⚠ Y EL DEFECTO DE MÉTODO DE ESTA MISMA TANDA: LA LLAVE DEL CRUCE COLAPSABA 22 EN 15, Y LA SIMÉTRICA SALÍA 0/0 IGUAL
+
+La v1 de la derivación cruzó contra la congelada con la llave
+`eje|slug|kind|campo`. **Tres módulos distintos del mismo documento son los tres
+`texto-arq.contenido`**, así que esa llave colapsa los 22 bloqueos en **15** —y
+la diferencia simétrica sobre CONJUNTOS no puede verlo, porque colapsa igual en
+los dos lados y sale **0/0**—.
+
+> **El control publicó `✅ REPLICACIÓN FIEL` con un cardinal correcto (22 = 22)
+> al lado de una membresía ciega.** Es §regla 29 —*una llave que deja de
+> identificar no da error: empareja mal*— con el daño puesto **en el control que
+> iba a adjudicar**, no en el dato.
+
+**Lo delató la aritmética, no el veredicto:** la tabla imprimía `(suma) 21 ← >
+22`, y **21 no es mayor que 22**. §regla 1 —*lo que imprime y lo que cuenta no
+pueden discrepar*— cazando un defecto que ningún código de salida iba a dar.
+
+Arreglado por las dos mitades: la llave lleva el **ordinal de emisión** y hay
+**guarda de que identifica** (si se repite, TIRA). Con ella, `22 = 22` llaves
+distintas y la simétrica sigue en 0/0 — ahora significando algo.
+
+#### Los dos negativos, cayendo por su MOTIVO
+
+| caso | qué anula | qué publica | control que cae |
+|---|---|---|---|
+| `sin-tope` | recorta los hits a 6, o sea **reproduce el modo de fallo de la 131.ª** | `ocultos 0` con `congelada 30 → real 30` — el verde falso entero | `truncos 3` |
+| `clase-muda` | mete todos los tokens en un cubo inerte | **residuo 0** — «admitir las inertes desbloquea del todo» | residuo ≠ conjunto-con-formulario |
+
+> **Los dos controles primeros que escribí NO mordían**, y por la misma razón:
+> `real >= congelada` lo cumple `30 >= 30`, y `docs <= 1` lo cumple un residuo
+> **vacío**. Es §regla 28a —*el sabotaje reproduce el modo de fallo, no la
+> aritmética de la condición*— con la mitad simétrica: **el control tampoco puede
+> ser aritmética de la condición.** Los que sí muerden re-leen el validador sobre
+> el mismo campo y exigen que el residuo **sea** el conjunto con token de
+> formulario y **no esté vacío**.
+
+---
+
 ## ⛔ §131.ª · **EL EXTRACTOR DE F3-5 EXISTE Y PRODUCE SUS 4 FILAS — Y LO QUE PARA LA SIEMBRA ES EL CENSO DEL CAMPO RICO, EJERCITADO FUERA DE DONDE SE MIDIÓ** — 2026-08-31
 
 **Encargo:** sembrar las filas de `arquetipos` y verificarlas contra sí mismas.

@@ -1,0 +1,544 @@
+{
+ "meta": {
+  "fecha": "2026-09-01",
+  "tanda": "132.ª",
+  "derivacion": "clases-132",
+  "saboteada": "clase-muda"
+ },
+ "noContesta": [
+  "NO decide: el expediente describe, el propietario decide",
+  "NO mide riesgo de ejecución en el navegador del visitante — eso es la ficha del ESCALÓN 2",
+  "NO abre el original vivo: lee el corpus congelado de `corpus/productos`"
+ ],
+ "denominadores": {
+  "bloqueos": 22,
+  "camposHtml": 199,
+  "documentos": 4,
+  "kindsTocados": [
+   "texto-arq",
+   "slider-ancho-arq",
+   "tabla-arq",
+   "codigo-arq",
+   "slider-arq"
+  ]
+ },
+ "tope": {
+  "congeladoPorSonda": 6,
+  "bloqueosEnTope": 3,
+  "bloqueosRecortados": 3,
+  "tokensOcultos": [
+   "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+   "data-reverse",
+   "data-speed",
+   "data-total-frames",
+   "data-zoom",
+   "name",
+   "novalidate",
+   "option",
+   "placeholder",
+   "required",
+   "select",
+   "selected",
+   "value"
+  ]
+ },
+ "bloqueos": [
+  {
+   "eje": "etiqueta",
+   "slug": "monitor-calidad-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "meta"
+   ],
+   "nHit": 1,
+   "orden": 0
+  },
+  {
+   "eje": "atributo",
+   "slug": "monitor-calidad-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "content",
+    "itemprop",
+    "itemscope",
+    "itemtype"
+   ],
+   "nHit": 4,
+   "orden": 0
+  },
+  {
+   "eje": "atributo",
+   "slug": "monitor-calidad-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "data-auto-rotate",
+    "data-image-url-format",
+    "data-inertia",
+    "data-main-holder-id",
+    "data-main-image-id",
+    "data-main-image-url",
+    "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+    "data-reverse",
+    "data-speed",
+    "data-total-frames",
+    "data-zoom"
+   ],
+   "nHit": 11,
+   "orden": 1
+  },
+  {
+   "eje": "atributo",
+   "slug": "monitor-calidad-aire",
+   "kind": "slider-ancho-arq",
+   "campo": "contenido",
+   "hit": [
+    "data-slide-id"
+   ],
+   "nHit": 1,
+   "orden": 2
+  },
+  {
+   "eje": "atributo",
+   "slug": "monitor-calidad-aire",
+   "kind": "tabla-arq",
+   "campo": "contenido",
+   "hit": [
+    "aria-colcount",
+    "aria-colindex",
+    "aria-rowcount",
+    "aria-rowindex"
+   ],
+   "nHit": 4,
+   "orden": 3
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "monitor-calidad-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "article",
+    "header"
+   ],
+   "nHit": 2,
+   "orden": 1
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "monitor-calidad-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "article"
+   ],
+   "nHit": 1,
+   "orden": 2
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "monitor-calidad-aire",
+   "kind": "codigo-arq",
+   "campo": "contenido",
+   "hit": [
+    "button",
+    "fieldset",
+    "form",
+    "input",
+    "label",
+    "legend",
+    "option",
+    "select"
+   ],
+   "nHit": 8,
+   "orden": 3
+  },
+  {
+   "eje": "atributo",
+   "slug": "monitor-calidad-aire",
+   "kind": "codigo-arq",
+   "campo": "contenido",
+   "hit": [
+    "action",
+    "data-autofill",
+    "data-sitekey",
+    "data-styles-version",
+    "for",
+    "method",
+    "name",
+    "novalidate",
+    "placeholder",
+    "required",
+    "selected",
+    "value"
+   ],
+   "nHit": 12,
+   "orden": 4
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "accesorios",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "meta"
+   ],
+   "nHit": 1,
+   "orden": 4
+  },
+  {
+   "eje": "atributo",
+   "slug": "accesorios",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "content",
+    "itemprop",
+    "itemscope",
+    "itemtype"
+   ],
+   "nHit": 4,
+   "orden": 5
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "accesorios",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "article"
+   ],
+   "nHit": 1,
+   "orden": 5
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "software-de-medicion-calidad-del-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "meta"
+   ],
+   "nHit": 1,
+   "orden": 6
+  },
+  {
+   "eje": "atributo",
+   "slug": "software-de-medicion-calidad-del-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "content",
+    "itemprop",
+    "itemscope",
+    "itemtype"
+   ],
+   "nHit": 4,
+   "orden": 6
+  },
+  {
+   "eje": "atributo",
+   "slug": "software-de-medicion-calidad-del-aire",
+   "kind": "slider-arq",
+   "campo": "contenido",
+   "hit": [
+    "data-slide-id"
+   ],
+   "nHit": 1,
+   "orden": 7
+  },
+  {
+   "eje": "atributo",
+   "slug": "software-de-medicion-calidad-del-aire",
+   "kind": "slider-ancho-arq",
+   "campo": "contenido",
+   "hit": [
+    "data-slide-id"
+   ],
+   "nHit": 1,
+   "orden": 8
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "software-de-medicion-calidad-del-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "article",
+    "header"
+   ],
+   "nHit": 2,
+   "orden": 7
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "software-de-medicion-calidad-del-aire",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "article"
+   ],
+   "nHit": 1,
+   "orden": 8
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "kunak-api",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "meta"
+   ],
+   "nHit": 1,
+   "orden": 9
+  },
+  {
+   "eje": "atributo",
+   "slug": "kunak-api",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "content",
+    "itemprop",
+    "itemscope",
+    "itemtype"
+   ],
+   "nHit": 4,
+   "orden": 9
+  },
+  {
+   "eje": "etiqueta",
+   "slug": "kunak-api",
+   "kind": "texto-arq",
+   "campo": "contenido",
+   "hit": [
+    "article"
+   ],
+   "nHit": 1,
+   "orden": 10
+  },
+  {
+   "eje": "atributo",
+   "slug": "kunak-api",
+   "kind": "slider-ancho-arq",
+   "campo": "contenido",
+   "hit": [
+    "data-slide-id"
+   ],
+   "nHit": 1,
+   "orden": 10
+  }
+ ],
+ "porClase": {
+  "sintaxis": {
+   "data-* del constructor": {
+    "tokens": [
+     "action",
+     "aria-colcount",
+     "aria-colindex",
+     "aria-rowcount",
+     "aria-rowindex",
+     "article",
+     "button",
+     "content",
+     "data-auto-rotate",
+     "data-autofill",
+     "data-image-url-format",
+     "data-inertia",
+     "data-main-holder-id",
+     "data-main-image-id",
+     "data-main-image-url",
+     "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+     "data-reverse",
+     "data-sitekey",
+     "data-slide-id",
+     "data-speed",
+     "data-styles-version",
+     "data-total-frames",
+     "data-zoom",
+     "fieldset",
+     "for",
+     "form",
+     "header",
+     "input",
+     "itemprop",
+     "itemscope",
+     "itemtype",
+     "label",
+     "legend",
+     "meta",
+     "method",
+     "name",
+     "novalidate",
+     "option",
+     "placeholder",
+     "required",
+     "select",
+     "selected",
+     "value"
+    ],
+    "bloqueos": 22,
+    "exclusivos": 22,
+    "campos": 10,
+    "documentos": [
+     "monitor-calidad-aire",
+     "accesorios",
+     "software-de-medicion-calidad-del-aire",
+     "kunak-api"
+    ],
+    "kinds": [
+     "texto-arq",
+     "slider-ancho-arq",
+     "tabla-arq",
+     "codigo-arq",
+     "slider-arq"
+    ]
+   }
+  },
+  "funcion": {
+   "data-* del constructor": {
+    "tokens": [
+     "action",
+     "aria-colcount",
+     "aria-colindex",
+     "aria-rowcount",
+     "aria-rowindex",
+     "article",
+     "button",
+     "content",
+     "data-auto-rotate",
+     "data-image-url-format",
+     "data-inertia",
+     "data-main-holder-id",
+     "data-main-image-id",
+     "data-main-image-url",
+     "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+     "data-reverse",
+     "data-slide-id",
+     "data-speed",
+     "data-total-frames",
+     "data-zoom",
+     "fieldset",
+     "for",
+     "form",
+     "header",
+     "input",
+     "itemprop",
+     "itemscope",
+     "itemtype",
+     "label",
+     "legend",
+     "meta",
+     "method",
+     "name",
+     "novalidate",
+     "option",
+     "placeholder",
+     "required",
+     "select",
+     "selected",
+     "value"
+    ],
+    "bloqueos": 22,
+    "exclusivos": 21,
+    "campos": 10,
+    "documentos": [
+     "monitor-calidad-aire",
+     "accesorios",
+     "software-de-medicion-calidad-del-aire",
+     "kunak-api"
+    ],
+    "kinds": [
+     "texto-arq",
+     "slider-ancho-arq",
+     "tabla-arq",
+     "codigo-arq",
+     "slider-arq"
+    ]
+   },
+   "formulario": {
+    "tokens": [
+     "data-autofill",
+     "data-sitekey",
+     "data-styles-version"
+    ],
+    "bloqueos": 1,
+    "exclusivos": 0,
+    "campos": 1,
+    "documentos": [
+     "monitor-calidad-aire"
+    ],
+    "kinds": [
+     "codigo-arq"
+    ]
+   }
+  }
+ },
+ "residuoTrasInertes": {
+  "sintaxis": [],
+  "funcion": [
+   {
+    "eje": "atributo",
+    "slug": "monitor-calidad-aire",
+    "kind": "codigo-arq",
+    "campo": "contenido",
+    "hit": [
+     "action",
+     "data-autofill",
+     "data-sitekey",
+     "data-styles-version",
+     "for",
+     "method",
+     "name",
+     "novalidate",
+     "placeholder",
+     "required",
+     "selected",
+     "value"
+    ],
+    "nHit": 12,
+    "html": "<form method=\"POST\" action=\"https://kunak.activehosted.com/proc.php\" id=\"_form_106_\" class=\"_form _form_106 _inline-form  _dark\" novalidate data-styles-version=\"3\">\n  <input type=\"hidden\" name=\"u\" value=\"106\" />\n  <input type=\"hidden\" name=\"f\" value=\"106\" />\n  <input type=\"hidden\" name=\"s\" />\n  <input type=\"hidden\" name=\"c\" value=\"0\" />\n  <input type=\"hidden\" name=\"m\" value=\"0\" />\n  <input type=\"hidden\" name=\"act\" value=\"sub\" />\n  <input type=\"hidden\" name=\"v\" value=\"2\" />\n  <input type=\"hidden\" name=\"or\" value=\"3898163d1495aca8c8346e0fc40de428\" />\n  <div class=\"_form-content\">\n    <div class=\"_form_element _x63442167 _full_width \" >\n      <label for=\"fullname\" class=\"_form-label\">\n        Nombre y Apellidos*\n      </label>\n      <div class=\"_field-wrapper\">\n        <input type=\"text\" id=\"fullname\" name=\"fullname\" placeholder=\"\" required/>\n      </div>\n    </div>\n    <div class=\"_form_element _x83651812 _full_width \" >\n      <label for=\"email\" class=\"_form-label\">\n        Email de trabajo*\n      </label>\n      <div class=\"_field-wrapper\">\n        <input type=\"text\" id=\"email\" name=\"email\" placeholder=\"\" required/>\n      </div>\n    </div>\n    <div class=\"_form_element _x39189745 _full_width \" >\n      <label for=\"field[2]\" class=\"_form-label\">\n        Empresa*\n      </label>\n      <div class=\"_field-wrapper\">\n        <input type=\"text\" id=\"field[2]\" name=\"field[2]\" value=\"\" placeholder=\"\" required/>\n      </div>\n    </div>\n    <div class=\"_form_element _field27 _full_width \" >\n      <label for=\"field[27]\" class=\"_form-label\">\n        País*\n      </label>\n      <div class=\"_field-wrapper\">\n        <select name=\"field[27]\" id=\"field[27]\" required>\n<option selected>\n          </option>\n<option value=\"Afghanistan\" >\n            Afghanistan\n          </option>\n<option value=\"Albania\" >\n            Albania\n          </option>\n<option value=\"Algeria\" >\n            Algeria\n          </option>\n<option value=\"American Samoa\" >\n            American Samoa\n          </option>\n<option value=\"Andorra\" >\n            Andorra\n          </option>\n<option value=\"Angola\" >\n            Angola\n          </option>\n<option value=\"Anguilla\" >\n            Anguilla\n          </option>\n<option value=\"Antarctica\" >\n            Antarctica\n          </option>\n<option value=\"Antigua and Barbuda\" >\n            Antigua and Barbuda\n          </option>\n<option value=\"Argentina\" >\n            Argentina\n          </option>\n<option value=\"Armenia\" >\n            Armenia\n          </option>\n<option value=\"Aruba\" >\n            Aruba\n          </option>\n<option value=\"Australia\" >\n            Australia\n          </option>\n<option value=\"Austria\" >\n            Austria\n          </option>\n<option value=\"Azerbaijan\" >\n            Azerbaijan\n          </option>\n<option value=\"Bahamas\" >\n            Bahamas\n          </option>\n<option value=\"Bahrain\" >\n            Bahrain\n          </option>\n<option value=\"Bangladesh\" >\n            Bangladesh\n          </option>\n<option value=\"Barbados\" >\n            Barbados\n          </option>\n<option value=\"Belarus\" >\n            Belarus\n          </option>\n<option value=\"Belgium\" >\n            Belgium\n          </option>\n<option value=\"Belize\" >\n            Belize\n          </option>\n<option value=\"Benin\" >\n            Benin\n          </option>\n<option value=\"Bermuda\" >\n            Bermuda\n          </option>\n<option value=\"Bhutan\" >\n            Bhutan\n          </option>\n<option value=\"Bolivia\" >\n            Bolivia\n          </option>\n<option value=\"Bosnia and Herzegovina\" >\n            Bosnia and Herzegovina\n          </option>\n<option value=\"Botswana\" >\n            Botswana\n          </option>\n<option value=\"Bouvet Island\" >\n            Bouvet Island\n          </option>\n<option value=\"Brazil\" >\n            Brazil\n          </option>\n<option value=\"British Indian Ocean Territory\" >\n            British Indian Ocean Territory\n          </option>\n<option value=\"Brunei Darussalam\" >\n            Brunei Darussalam\n          </option>\n<option value=\"Bulgaria\" >\n            Bulgaria\n          </option>\n<option value=\"Burkina Faso\" >\n            Burkina Faso\n          </option>\n<option value=\"Burundi\" >\n            Burundi\n          </option>\n<option value=\"Cambodia\" >\n            Cambodia\n          </option>\n<option value=\"Cameroon\" >\n            Cameroon\n          </option>\n<option value=\"Canada\" >\n            Canada\n          </option>\n<option value=\"Cape Verde\" >\n            Cape Verde\n          </option>\n<option value=\"Cayman Islands\" >\n            Cayman Islands\n          </option>\n<option value=\"Central African Republic\" >\n            Central African Republic\n          </option>\n<option value=\"Chad\" >\n            Chad\n          </option>\n<option value=\"Chile\" >\n            Chile\n          </option>\n<option value=\"China\" >\n            China\n          </option>\n<option value=\"Christmas Island\" >\n            Christmas Island\n          </option>\n<option value=\"Cocos (Keeling) Islands\" >\n            Cocos (Keeling) Islands\n          </option>\n<option value=\"Colombia\" >\n            Colombia\n          </option>\n<option value=\"Comoros\" >\n            Comoros\n          </option>\n<option value=\"Congo\" >\n            Congo\n          </option>\n<option value=\"Congo, the Democratic Republic of the\" >\n            Congo, the Democratic Republic of the\n          </option>\n<option value=\"Cook Islands\" >\n            Cook Islands\n          </option>\n<option value=\"Costa Rica\" >\n            Costa Rica\n          </option>\n<option value=\"Cote D&#039;Ivoire\" >\n            Cote D&#039;Ivoire\n          </option>\n<option value=\"Croatia\" >\n            Croatia\n          </option>\n<option value=\"Cuba\" >\n            Cuba\n          </option>\n<option value=\"Cyprus\" >\n            Cyprus\n          </option>\n<option value=\"Czech Republic\" >\n            Czech Republic\n          </option>\n<option value=\"Denmark\" >\n            Denmark\n          </option>\n<option value=\"Djibouti\" >\n            Djibouti\n          </option>\n<option value=\"Dominica\" >\n            Dominica\n          </option>\n<option value=\"Dominican Republic\" >\n            Dominican Republic\n          </option>\n<option value=\"Ecuador\" >\n            Ecuador\n          </option>\n<option value=\"Egypt\" >\n            Egypt\n          </option>\n<option value=\"El Salvador\" >\n            El Salvador\n          </option>\n<option value=\"Equatorial Guinea\" >\n            Equatorial Guinea\n          </option>\n<option value=\"Eritrea\" >\n            Eritrea\n          </option>\n<option value=\"Estonia\" >\n            Estonia\n          </option>\n<option value=\"Ethiopia\" >\n            Ethiopia\n          </option>\n<option value=\"Falkland Islands (Malvinas)\" >\n            Falkland Islands (Malvinas)\n          </option>\n<option value=\"Faroe Islands\" >\n            Faroe Islands\n          </option>\n<option value=\"Fiji\" >\n            Fiji\n          </option>\n<option value=\"Finland\" >\n            Finland\n          </option>\n<option value=\"France\" >\n            France\n          </option>\n<option value=\"French Guiana\" >\n            French Guiana\n          </option>\n<option value=\"French Polynesia\" >\n            French Polynesia\n          </option>\n<option value=\"French Southern Territories\" >\n            French Southern Territories\n          </option>\n<option value=\"Gabon\" >\n            Gabon\n          </option>\n<option value=\"Gambia\" >\n            Gambia\n          </option>\n<option value=\"Georgia\" >\n            Georgia\n          </option>\n<option value=\"Germany\" >\n            Germany\n          </option>\n<option value=\"Ghana\" >\n            Ghana\n          </option>\n<option value=\"Gibraltar\" >\n            Gibraltar\n          </option>\n<option value=\"Greece\" >\n            Greece\n          </option>\n<option value=\"Greenland\" >\n            Greenland\n          </option>\n<option value=\"Grenada\" >\n            Grenada\n          </option>\n<option value=\"Guadeloupe\" >\n            Guadeloupe\n          </option>\n<option value=\"Guam\" >\n            Guam\n          </option>\n<option value=\"Guatemala\" >\n            Guatemala\n          </option>\n<option value=\"Guinea\" >\n            Guinea\n          </option>\n<option value=\"Guinea-Bissau\" >\n            Guinea-Bissau\n          </option>\n<option value=\"Guyana\" >\n            Guyana\n          </option>\n<option value=\"Haiti\" >\n            Haiti\n          </option>\n<option value=\"Heard Island and Mcdonald Islands\" >\n            Heard Island and Mcdonald Islands\n          </option>\n<option value=\"Holy See (Vatican City State)\" >\n            Holy See (Vatican City State)\n          </option>\n<option value=\"Honduras\" >\n            Honduras\n          </option>\n<option value=\"Hong Kong\" >\n            Hong Kong\n          </option>\n<option value=\"Hungary\" >\n            Hungary\n          </option>\n<option value=\"Iceland\" >\n            Iceland\n          </option>\n<option value=\"India\" >\n            India\n          </option>\n<option value=\"Indonesia\" >\n            Indonesia\n          </option>\n<option value=\"Iran, Islamic Republic of\" >\n            Iran, Islamic Republic of\n          </option>\n<option value=\"Iraq\" >\n            Iraq\n          </option>\n<option value=\"Ireland\" >\n            Ireland\n          </option>\n<option value=\"Israel\" >\n            Israel\n          </option>\n<option value=\"Italy\" >\n            Italy\n          </option>\n<option value=\"Jamaica\" >\n            Jamaica\n          </option>\n<option value=\"Japan\" >\n            Japan\n          </option>\n<option value=\"Jordan\" >\n            Jordan\n          </option>\n<option value=\"Kazakhstan\" >\n            Kazakhstan\n          </option>\n<option value=\"Kenya\" >\n            Kenya\n          </option>\n<option value=\"Kiribati\" >\n            Kiribati\n          </option>\n<option value=\"Korea, Democratic People&#039;s Republic of\" >\n            Korea, Democratic People&#039;s Republic of\n          </option>\n<option value=\"Korea, Republic of\" >\n            Korea, Republic of\n          </option>\n<option value=\"Kuwait\" >\n            Kuwait\n          </option>\n<option value=\"Kyrgyzstan\" >\n            Kyrgyzstan\n          </option>\n<option value=\"Lao People&#039;s Democratic Republic\" >\n            Lao People&#039;s Democratic Republic\n          </option>\n<option value=\"Latvia\" >\n            Latvia\n          </option>\n<option value=\"Lebanon\" >\n            Lebanon\n          </option>\n<option value=\"Lesotho\" >\n            Lesotho\n          </option>\n<option value=\"Liberia\" >\n            Liberia\n          </option>\n<option value=\"Libyan Arab Jamahiriya\" >\n            Libyan Arab Jamahiriya\n          </option>\n<option value=\"Liechtenstein\" >\n            Liechtenstein\n          </option>\n<option value=\"Lithuania\" >\n            Lithuania\n          </option>\n<option value=\"Luxembourg\" >\n            Luxembourg\n          </option>\n<option value=\"Macao\" >\n            Macao\n          </option>\n<option value=\"Macedonia, the Former Yugoslav Republic of\" >\n            Macedonia, the Former Yugoslav Republic of\n          </option>\n<option value=\"Madagascar\" >\n            Madagascar\n          </option>\n<option value=\"Malawi\" >\n            Malawi\n          </option>\n<option value=\"Malaysia\" >\n            Malaysia\n          </option>\n<option value=\"Maldives\" >\n            Maldives\n          </option>\n<option value=\"Mali\" >\n            Mali\n          </option>\n<option value=\"Malta\" >\n            Malta\n          </option>\n<option value=\"Marshall Islands\" >\n            Marshall Islands\n          </option>\n<option value=\"Martinique\" >\n            Martinique\n          </option>\n<option value=\"Mauritania\" >\n            Mauritania\n          </option>\n<option value=\"Mauritius\" >\n            Mauritius\n          </option>\n<option value=\"Mayotte\" >\n            Mayotte\n          </option>\n<option value=\"Mexico\" >\n            Mexico\n          </option>\n<option value=\"Micronesia, Federated States of\" >\n            Micronesia, Federated States of\n          </option>\n<option value=\"Moldova, Republic of\" >\n            Moldova, Republic of\n          </option>\n<option value=\"Monaco\" >\n            Monaco\n          </option>\n<option value=\"Mongolia\" >\n            Mongolia\n          </option>\n<option value=\"Montserrat\" >\n            Montserrat\n          </option>\n<option value=\"Morocco\" >\n            Morocco\n          </option>\n<option value=\"Mozambique\" >\n            Mozambique\n          </option>\n<option value=\"Myanmar\" >\n            Myanmar\n          </option>\n<option value=\"Namibia\" >\n            Namibia\n          </option>\n<option value=\"Nauru\" >\n            Nauru\n          </option>\n<option value=\"Nepal\" >\n            Nepal\n          </option>\n<option value=\"Netherlands\" >\n            Netherlands\n          </option>\n<option value=\"Netherlands Antilles\" >\n            Netherlands Antilles\n          </option>\n<option value=\"New Caledonia\" >\n            New Caledonia\n          </option>\n<option value=\"New Zealand\" >\n            New Zealand\n          </option>\n<option value=\"Nicaragua\" >\n            Nicaragua\n          </option>\n<option value=\"Niger\" >\n            Niger\n          </option>\n<option value=\"Nigeria\" >\n            Nigeria\n          </option>\n<option value=\"Niue\" >\n            Niue\n          </option>\n<option value=\"Norfolk Island\" >\n            Norfolk Island\n          </option>\n<option value=\"Northern Mariana Islands\" >\n            Northern Mariana Islands\n          </option>\n<option value=\"Norway\" >\n            Norway\n          </option>\n<option value=\"Oman\" >\n            Oman\n          </option>\n<option value=\"Pakistan\" >\n            Pakistan\n          </option>\n<option value=\"Palau\" >\n            Palau\n          </option>\n<option value=\"Palestinian Territory, Occupied\" >\n            Palestinian Territory, Occupied\n          </option>\n<option value=\"Panama\" >\n            Panama\n          </option>\n<option value=\"Papua New Guinea\" >\n            Papua New Guinea\n          </option>\n<option value=\"Paraguay\" >\n            Paraguay\n          </option>\n<option value=\"Peru\" >\n            Peru\n          </option>\n<option value=\"Philippines\" >\n            Philippines\n          </option>\n<option value=\"Pitcairn\" >\n            Pitcairn\n          </option>\n<option value=\"Poland\" >\n            Poland\n          </option>\n<option value=\"Portugal\" >\n            Portugal\n          </option>\n<option value=\"Puerto Rico\" >\n            Puerto Rico\n          </option>\n<option value=\"Qatar\" >\n            Qatar\n          </option>\n<option value=\"Reunion\" >\n            Reunion\n          </option>\n<option value=\"Romania\" >\n            Romania\n          </option>\n<option value=\"Russian Federation\" >\n            Russian Federation\n          </option>\n<option value=\"Rwanda\" >\n            Rwanda\n          </option>\n<option value=\"Saint Helena\" >\n            Saint Helena\n          </option>\n<option value=\"Saint Kitts and Nevis\" >\n            Saint Kitts and Nevis\n          </option>\n<option value=\"Saint Lucia\" >\n            Saint Lucia\n          </option>\n<option value=\"Saint Pierre and Miquelon\" >\n            Saint Pierre and Miquelon\n          </option>\n<option value=\"Saint Vincent and the Grenadines\" >\n            Saint Vincent and the Grenadines\n          </option>\n<option value=\"Samoa\" >\n            Samoa\n          </option>\n<option value=\"San Marino\" >\n            San Marino\n          </option>\n<option value=\"Sao Tome and Principe\" >\n            Sao Tome and Principe\n          </option>\n<option value=\"Saudi Arabia\" >\n            Saudi Arabia\n          </option>\n<option value=\"Senegal\" >\n            Senegal\n          </option>\n<option value=\"Serbia and Montenegro\" >\n            Serbia and Montenegro\n          </option>\n<option value=\"Seychelles\" >\n            Seychelles\n          </option>\n<option value=\"Sierra Leone\" >\n            Sierra Leone\n          </option>\n<option value=\"Singapore\" >\n            Singapore\n          </option>\n<option value=\"Slovakia\" >\n            Slovakia\n          </option>\n<option value=\"Slovenia\" >\n            Slovenia\n          </option>\n<option value=\"Solomon Islands\" >\n            Solomon Islands\n          </option>\n<option value=\"Somalia\" >\n            Somalia\n          </option>\n<option value=\"South Africa\" >\n            South Africa\n          </option>\n<option value=\"South Georgia and the South Sandwich Islands\" >\n            South Georgia and the South Sandwich Islands\n          </option>\n<option value=\"Spain\" >\n            Spain\n          </option>\n<option value=\"Sri Lanka\" >\n            Sri Lanka\n          </option>\n<option value=\"Sudan\" >\n            Sudan\n          </option>\n<option value=\"Suriname\" >\n            Suriname\n          </option>\n<option value=\"Svalbard and Jan Mayen\" >\n            Svalbard and Jan Mayen\n          </option>\n<option value=\"Swaziland\" >\n            Swaziland\n          </option>\n<option value=\"Sweden\" >\n            Sweden\n          </option>\n<option value=\"Switzerland\" >\n            Switzerland\n          </option>\n<option value=\"Syrian Arab Republic\" >\n            Syrian Arab Republic\n          </option>\n<option value=\"Taiwan, Province of China\" >\n            Taiwan, Province of China\n          </option>\n<option value=\"Tajikistan\" >\n            Tajikistan\n          </option>\n<option value=\"Tanzania, United Republic of\" >\n            Tanzania, United Republic of\n          </option>\n<option value=\"Thailand\" >\n            Thailand\n          </option>\n<option value=\"Timor-Leste\" >\n            Timor-Leste\n          </option>\n<option value=\"Togo\" >\n            Togo\n          </option>\n<option value=\"Tokelau\" >\n            Tokelau\n          </option>\n<option value=\"Tonga\" >\n            Tonga\n          </option>\n<option value=\"Trinidad and Tobago\" >\n            Trinidad and Tobago\n          </option>\n<option value=\"Tunisia\" >\n            Tunisia\n          </option>\n<option value=\"Turkey\" >\n            Turkey\n          </option>\n<option value=\"Turkmenistan\" >\n            Turkmenistan\n          </option>\n<option value=\"Turks and Caicos Islands\" >\n            Turks and Caicos Islands\n          </option>\n<option value=\"Tuvalu\" >\n            Tuvalu\n          </option>\n<option value=\"Uganda\" >\n            Uganda\n          </option>\n<option value=\"Ukraine\" >\n            Ukraine\n          </option>\n<option value=\"United Arab Emirates\" >\n            United Arab Emirates\n          </option>\n<option value=\"United Kingdom\" >\n            United Kingdom\n          </option>\n<option value=\"United States\" >\n            United States\n          </option>\n<option value=\"United States Minor Outlying Islands\" >\n            United States Minor Outlying Islands\n          </option>\n<option value=\"Uruguay\" >\n            Uruguay\n          </option>\n<option value=\"Uzbekistan\" >\n            Uzbekistan\n          </option>\n<option value=\"Vanuatu\" >\n            Vanuatu\n          </option>\n<option value=\"Venezuela\" >\n            Venezuela\n          </option>\n<option value=\"Viet Nam\" >\n            Viet Nam\n          </option>\n<option value=\"Virgin Islands, British\" >\n            Virgin Islands, British\n          </option>\n<option value=\"Virgin Islands, U.s.\" >\n            Virgin Islands, U.s.\n          </option>\n<option value=\"Wallis and Futuna\" >\n            Wallis and Futuna\n          </option>\n<option value=\"Western Sahara\" >\n            Western Sahara\n          </option>\n<option value=\"Yemen\" >\n            Yemen\n          </option>\n<option value=\"Zambia\" >\n            Zambia\n          </option>\n<option value=\"Zimbabwe\" >\n            Zimbabwe\n          </option>\n<option value=\"Noruega\" >\n            Noruega\n          </option>\n<option value=\"\" >\n          </option>\n<option value=\"Macedonia\" >\n            Macedonia\n          </option>\n<option value=\"Russia\" >\n            Russia\n          </option>\n<option value=\"Iran\" >\n            Iran\n          </option>\n<option value=\"Taiwan\" >\n            Taiwan\n          </option>\n<option value=\"País (desde IP)\" >\n            País (desde IP)\n          </option>\n<option value=\"Country name\" >\n            Country name\n          </option>\n<option value=\"Pais\" >\n            Pais\n          </option>\n<option value=\"ES\" >\n            ES\n          </option>\n<option value=\"UY\" >\n            UY\n          </option>\n<option value=\"AR\" >\n            AR\n          </option>\n<option value=\"PE\" >\n            PE\n          </option>\n<option value=\"Serbia\" >\n            Serbia\n          </option>\n<option value=\"South Korea\" >\n            South Korea\n          </option>\n<option value=\"Phillippines\" >\n            Phillippines\n          </option>\n<option value=\"Benelux\" >\n            Benelux\n          </option>\n<option value=\"Latam\" >\n            Latam\n          </option>\n<option value=\"Europe\" >\n            Europe\n          </option>\n<option value=\"United States of America\" >\n            United States of America\n          </option>\n<option value=\"Kingdom of Saudi Arabia\" >\n            Kingdom of Saudi Arabia\n          </option>\n<option value=\"UK\" >\n            UK\n          </option>\n<option value=\"USA\" >\n            USA\n          </option>\n<option value=\"Alemania\" >\n            Alemania\n          </option>\n<option value=\"Lituania\" >\n            Lituania\n          </option>\n<option value=\"España\" >\n            España\n          </option>\n<option value=\"The Netherlands\" >\n            The Netherlands\n          </option>\n<option value=\"Korea\" >\n            Korea\n          </option>\n<option value=\"Kazajstan\" >\n            Kazajstan\n          </option>\n        </select>\n      </div>\n    </div>\n    <div class=\"_form_element _x62210023 _full_width \" >\n      <label for=\"field[51]\" class=\"_form-label\">\n        Sector*\n      </label>\n      <div class=\"_field-wrapper\">\n        <select name=\"field[51]\" id=\"field[51]\" required>\n<option selected>\n          </option>\n<option value=\"Urbano\" >\n            Urbano\n          </option>\n<option value=\"Minería\" >\n            Minería\n          </option>\n<option value=\"Petróleo y Gas\" >\n            Petróleo y Gas\n          </option>\n<option value=\"Aguas residuales\" >\n            Aguas residuales\n          </option>\n<option value=\"Otras industrias\" >\n            Otras industrias\n          </option>\n<option value=\"Puertos y Aeropuertos\" >\n            Puertos y Aeropuertos\n          </option>\n<option value=\"Construcción\" >\n            Construcción\n          </option>\n<option value=\"Investigación y consultoría\" >\n            Investigación y consultoría\n          </option>\n<option value=\"Obras y Demoliciones\" >\n            Obras y Demoliciones\n          </option>\n<option value=\"Otros\" >\n            Otros\n          </option>\n        </select>\n      </div>\n    </div>\n    <div class=\"_form_element _x91740538 _full_width \" >\n      <label for=\"ls\" class=\"_form-label\">\n      </label>\n      <div class=\"g-recaptcha\" data-sitekey=\"6LcwIw8TAAAAACP1ysM08EhCgzd6q5JAOUR1a0Go\">\n      </div>\n    </div>\n    <div class=\"_form_element _x94343471 _full_width \" >\n      <fieldset class=\"_form-fieldset\">\n        <div class=\"_row\">\n          <legend for=\"field[15][]\" class=\"_form-label\">\n            Política de Privacidad y Suscripción\n          </legend>\n        </div>\n        <input data-autofill=\"false\" type=\"hidden\" id=\"field[15][]\" name=\"field[15][]\" value=\"~|\">\n        <div class=\"_row _checkbox-radio\">\n          <input id=\"field_15Acepto los términos y condiciones\" type=\"checkbox\" name=\"field[15][]\" value=\"Acepto los términos y condiciones\"   >\n          <span>\n            <label for=\"field_15Acepto los términos y condiciones\">\n              Acepto los términos y condiciones\n            </label>\n          </span>\n        </div>\n        <div class=\"_row _checkbox-radio\">\n          <input id=\"field_15Acepto recibir correos con contenido de Kunak\" type=\"checkbox\" name=\"field[15][]\" value=\"Acepto recibir correos con contenido de Kunak\"   >\n          <span>\n            <label for=\"field_15Acepto recibir correos con contenido de Kunak\">\n              Acepto recibir correos con contenido de Kunak\n            </label>\n          </span>\n        </div>\n      </fieldset>\n    </div>\n    <div class=\"_form_element _field44 _full_width \" >\n      <input type=\"hidden\" name=\"field[44]\" value=\"\" class=\"utm_campaign\" />\n    </div>\n    <div class=\"_form_element _field45 _full_width \" >\n      <input type=\"hidden\" name=\"field[45]\" value=\"\"class=\"utm_source\"  />\n    </div>\n    <div class=\"_form_element _field46 _full_width \" >\n      <input type=\"hidden\" name=\"field[46]\" value=\"\"class=\"utm_medium\" />\n    </div>\n    <div class=\"_button-wrapper _full_width\">\n      <button id=\"_form_106_submit\" class=\"_submit\" type=\"submit\">\n        DESCARGAR\n      </button>\n    </div>\n    <div class=\"_clear-element\">\n    </div>\n  </div>\n  <div class=\"_form-thank-you\" style=\"display:none;\">\n  </div>\n</form>",
+    "orden": 4,
+    "culpables": [
+     "data-autofill",
+     "data-sitekey",
+     "data-styles-version"
+    ]
+   }
+  ]
+ },
+ "controles": [
+  {
+   "ok": true,
+   "nombre": "§sondas 4 · la replicación REPRODUCE la congelada de la 131.ª al par",
+   "detalle": "22=22 bloqueos · 199=199 campos · simétrica 0/0 · llave identifica (22=22)"
+  },
+  {
+   "ok": true,
+   "nombre": "§regla 27 · 0 SIN CLASIFICAR sobre los tokens SIN RECORTAR",
+   "detalle": "43 tokens, 0 sin cubo"
+  },
+  {
+   "ok": true,
+   "nombre": "el margen del tope se MIDE: los hits guardados son los completos, re-leídos del validador",
+   "detalle": "completos 22 · truncos 0 · congelada 30 → real 43 (ocultos 13)"
+  },
+  {
+   "ok": false,
+   "nombre": "§regla 28a · la clasificación DISCRIMINA: el residuo ES el conjunto con token de formulario, y no está vacío",
+   "detalle": "residuo 1 · con-formulario 2 · CONJUNTOS DISTINTOS"
+  },
+  {
+   "ok": true,
+   "nombre": "§regla 22 · el residuo va con su CARDINAL, no con un booleano",
+   "detalle": "1 bloqueos en 1 documento(s) · 1 campo(s)"
+  },
+  {
+   "ok": true,
+   "nombre": "§sondas 4bis · 0 comparado NO puede salir verde",
+   "detalle": "199 campos recorridos · 22 bloqueos"
+  }
+ ]
+}
