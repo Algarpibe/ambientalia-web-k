@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "tanda": "137.ª",
+    "fecha": "2026-09-01",
+    "offline": true,
+    "adjudica": true
+  },
+  "limite": "sólo ve enunciados YA ESCRITOS EN PROSA; una regla que viva en el código es invisible",
+  "testigos": [
+    {
+      "id": "T+",
+      "espera": true,
+      "clave": "Una medición tomada a un nivel que puede absorber el error no es una medición",
+      "que": "un enunciado que SE SABE escrito en CLAUDE.md",
+      "hallado": true
+    },
+    {
+      "id": "T-",
+      "espera": false,
+      "clave": "Antes de medir un color se calibra el monitor contra una carta de grises",
+      "que": "un enunciado INVENTADO que no puede estar",
+      "hallado": false
+    },
+    {
+      "id": "T±",
+      "espera": true,
+      "clave": "UN SELECTOR QUE NO CASA CON NADA NO ES UN CERO: ES UN DEFECTO",
+      "que": "un TITULAR EN MAYÚSCULAS que lleva meses escrito",
+      "hallado": true
+    }
+  ],
+  "candidatos": [
+    {
+      "id": "R1",
+      "tipo": "REGLA",
+      "enunciado": "La verificación de un arreglo se toma DONDE EL CASO EXISTE, no donde el código corre. Si el dominio que ejecuta la rama arreglada no ejercita el caso, el arreglo es NO-OP allí — y un control atado a esa corrida no puede distinguir «la rama funciona» de «la rama está muerta»: los dos dan el mismo verde.",
+      "porQue": "Medido hoy: el arreglo del `<textarea>` vive en `formularioDe` de `extractor-f35.mjs`, que recorre los 4 documentos del lote F3-5 — y ésos traen `textarea` 0 veces (censo `controles-form-137.json`: `arquetipos` 0 · `paginas` 1). La prueba: `f35-extraido.json` no cambió un byte tras el arreglo. El caso existe en `contacto`, que es de OTRA colección, así que el testigo positivo hay que ir a buscarlo allí — se corre `formularioDe` cortada por estructura sobre su html y se exige que el `<textarea name=field[23]>` salga NOMBRADO. Es §*una regla derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese caso* con el objeto puesto en LA VERIFICACIÓN en vez de en la regla, y §regla 28c con el caso conocido de antemano viviendo fuera del dominio de la sonda.",
+      "vocabulario": [
+        "donde el caso existe",
+        "no-op",
+        "dominio"
+      ],
+      "enunciadoClave": "La verificación de un arreglo se toma DONDE EL CASO EXISTE, no donde el código corre",
+      "destino": "CLAUDE.md, §regla 28c / §*el marcador prueba que el build es nuevo, no que el cambio tenga efecto*",
+      "laxo": false,
+      "endurecido": false,
+      "enHead": false
+    },
+    {
+      "id": "R2",
+      "tipo": "REGLA",
+      "enunciado": "Al RE-DECLARAR el alcance de una guarda que afirmaba de más, se publican DOS cardinales y no uno: lo que ahora CUBRE y lo que sigue SIN PROBAR — derivado del dominio, nombrando las clases que el dominio no ejercita. Publicar sólo «0 perdidos» dice que la guarda es completa, y lo que dice el dato es que es completa PARA LO QUE SE MIDIÓ.",
+      "porQue": "Medido: tras el arreglo, `PERDIDOS EN SILENCIO` pasa de 1 a 0 sobre 9 etiquetas censadas — y `optgroup` · `datalist` · `output` · `progress` · `meter` salen a 0 ocurrencias en las 13 instancias, así que la guarda NO está probada para ellas: si entran, caerán por la rama del `<select>` o por ninguna. El 0 de perdidos y el 5 de sin-probar son cubos distintos y sólo publicándolos juntos es auditable. Es §regla 25 (una guarda que afirma de más) más §regla 14 (una limitación sin su número se lee como nota al pie), unidas en el momento en que la guarda se reescribe.",
+      "vocabulario": [
+        "re-declarar",
+        "sin probar",
+        "cardinal"
+      ],
+      "enunciadoClave": "se publican DOS cardinales y no uno: lo que ahora CUBRE y lo que sigue SIN PROBAR",
+      "destino": "CLAUDE.md, §regla 25 / §regla 14",
+      "laxo": false,
+      "endurecido": false,
+      "enHead": false
+    },
+    {
+      "id": "E1",
+      "tipo": "EVENTO",
+      "enunciado": "CMS-7 resuelto en `A · NO UNIFICAR` por el propietario, con su operación de deshacer NOMBRADA (empieza separada, deshacerla es fusionar, el lado barato) y su coste latente con disparador. `F3-5-CODE-DIVERGE` cerrada, y la cierra el CERO: intersección de contenido 0 entre `codigo` (1 campo) y `formulario-arq` (11).",
+      "porQue": "Tiene fecha, opción elegida y cardinales: es una decisión sobre ESTE repo. La regla que lo gobierna —§regla 23, se cita el criterio CON SU OPERACIÓN— ya está escrita y se aplicó.",
+      "vocabulario": [
+        "CMS-7"
+      ],
+      "enunciadoClave": "F3-5-CODE-DIVERGE",
+      "destino": "ESQUEMA-CMS.md §CMS-7 + PENDIENTES-QA.md §137.ª + PLAN-FASE-3.md",
+      "laxo": false,
+      "endurecido": false,
+      "enHead": false
+    },
+    {
+      "id": "E2",
+      "tipo": "EVENTO",
+      "enunciado": "El testigo del censo llegó con la POLARIDAD cableada al defecto —exigía `textarea` NO enumerado— y se habría muerto en rojo el día del arreglo, describiéndolo como avería. Re-atado a lo cierto en los DOS estados (que el censo VEA la etiqueta), los dos sabotajes siguen mordiendo tras el arreglo.",
+      "porQue": "La REGLA ya está escrita —§regla 5ter (arreglar el objeto caduca el control) y §regla 28d (un control cuyo testigo es un defecto conocido no puede leer su propia ausencia)—. Lo de hoy es una instancia suya, cazada dentro de la misma tanda que escribió el testigo.",
+      "vocabulario": [
+        "polaridad",
+        "testigo"
+      ],
+      "enunciadoClave": "El testigo se ata a un estado POSITIVO que separe las dos causas",
+      "destino": "PENDIENTES-QA.md §137.ª (instancia de una regla ya escrita)",
+      "laxo": true,
+      "endurecido": true,
+      "enHead": true
+    },
+    {
+      "id": "E3",
+      "tipo": "EVENTO",
+      "enunciado": "El sabotaje `ciega-el-censo` publica `PERDIDOS EN SILENCIO: 0`, el MISMO número que la corrida buena: el veredicto no separa, lo que separa es el testigo. Y la primera corrida del censo dio `instancias: 0` por un lector que no casaba — un cero que sin testigos se habría leído como «no se pierde nada», en verde.",
+      "porQue": "Las dos son instancias de reglas escritas: §regla 28c (el control de un cero no es que el resultado separe, es el caso conocido de antemano) y §sondas 4 (un selector que no casa con nada no es un cero). Tienen número y fecha, no enunciado nuevo.",
+      "vocabulario": [
+        "ciega",
+        "separadoras"
+      ],
+      "enunciadoClave": "el control de un cero NO es que el resultado separe",
+      "destino": "PENDIENTES-QA.md §137.ª",
+      "laxo": true,
+      "endurecido": true,
+      "enHead": true
+    }
+  ],
+  "veredicto": {
+    "reglas": 2,
+    "yaEstaban": [],
+    "suben": [
+      "R1",
+      "R2"
+    ]
+  }
+}

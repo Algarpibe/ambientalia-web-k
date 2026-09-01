@@ -69,7 +69,7 @@ const PUBLICO = join(RAIZ, "apps/web/public");
 const DERIV = join(RAIZ, "docs/research/cola-larga/derivaciones");
 
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["tipo-fantasma", "media-ausente", "ritmo-cableado", "sin-modulos", "bloqueo-mudo", "control-sin-sitio"];
+const VALIDOS = ["tipo-fantasma", "media-ausente", "ritmo-cableado", "sin-modulos", "bloqueo-mudo", "control-sin-sitio", "textarea-mudo"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
@@ -230,6 +230,31 @@ const A_KIND = {
    contenido SIN SITIO?»*). Lo que no case sale NOMBRADO en `SIN_SITIO_FORM` y
    cierra el código de salida — nunca descontado en silencio.
 
+   ⚠⚠ EL ALCANCE DE ESTA GUARDA, RE-DECLARADO 2026-09-01 (137.ª) — porque el
+   enunciado de arriba era MÁS ANCHO QUE SU DOMINIO y una guarda así no falla en
+   voz alta: RECHAZA de menos, en silencio (§regla 25).
+
+   Lo que la guarda promete es exhaustividad, y sólo puede entregar la de SU
+   ENUMERACIÓN: un control que este recorrido no enumere no cae, no se nombra y
+   no se emite — y entonces el informe publica «0 piezas sin sitio», que se lee
+   como «todo cabe» (§regla 49).
+
+   La enumeración está ahora DERIVADA del dominio que se recorre, no del que la
+   calibró (`derivaciones/controles-form-137.{mjs,json}`, 13 instancias: los 9
+   htmls de `paginas·codigo` MÁS los 4 documentos del corpus de `arquetipos`):
+
+     · CUBIERTO — controles enumerados ...... `input` · `select` · `textarea`
+       (y `button`, para el texto del botón);
+     · CONSUMIDO como estructura ............ `label` · `legend` · `option` ·
+       `fieldset` · `form` — cuelgan de un campo, no son piezas sueltas;
+     · PERDIDOS EN SILENCIO tras el arreglo .. **0** de 9 etiquetas censadas.
+
+   ⚠ Y SIGUE SIN PROBAR, con su cardinal: `optgroup` · `datalist` · `output` ·
+   `progress` · `meter` **no aparecen en el dominio medido** (0 ocurrencias en
+   las 13 instancias), así que esta guarda **no está probada para ellos**. Si
+   entran, caerán por la rama del `<select>` o por ninguna. No se cablea nada
+   por ellos: se declara que no se han visto.
+
    ⚠ Los `name` van VERBATIM (`field[27]`, no `pais`): son la llave que el
    destino espera, y normalizarlos sería criterio propio sobre dato medido. */
 const SIN_SITIO_FORM = [];
@@ -244,6 +269,19 @@ function formularioDe(html, donde) {
   /* El sabotaje entra EN EL DATO: un control real que el modelo no expresa. */
   if (SABOTAJE === "control-sin-sitio")
     html = html.replace(/<\/form>/i, '<input type="file" name="adjunto"></form>');
+  /**
+   * ⚠ `textarea-mudo` inyecta EL CONTROL REAL, verbatim del `<form>` de
+   * `contacto` (`paginas·codigo`), porque los 4 documentos de este lote no
+   * traen ninguno —censo: `arquetipos` 0, `paginas` 1— y sin dato el caso no
+   * podría morder: 0 instancias separadoras POR CONSTRUCCIÓN (§regla 28a).
+   *
+   * Y ejercita una rama DISTINTA de la de `control-sin-sitio`: aquél inyecta un
+   * `<input type=file>`, que cae por el filtro de tipos del `<input>`. Éste
+   * cae por la rama del `<textarea>`, que sin arreglo no existe — y sin ella el
+   * control no se pierde: se GUARDA MAL, como `tipo: "seleccion"`.
+   */
+  if (SABOTAJE === "textarea-mudo")
+    html = html.replace(/<\/form>/i, '<textarea id="field[23]" name="field[23]" placeholder=""  required></textarea></form>');
   const abre = /<form\b[^>]*>/i.exec(html);
   if (!abre) { SIN_SITIO_FORM.push({ donde, que: "no hay <form> en el módulo" }); return null; }
 
@@ -286,15 +324,39 @@ function formularioDe(html, donde) {
   }
   const enFieldset = (i) => rangosFieldset.some(([a, b]) => i >= a && i < b);
 
-  /* Los `<input>` y `<select>` de primer nivel, en ORDEN de documento. */
+  /* Los `<input>`, `<select>` y `<textarea>` de primer nivel, en ORDEN de
+     documento.
+     ⚠ El `<textarea>` va SIN el filtro `enFieldset` a propósito, y no es un
+     descuido: el bucle del `<fieldset>` de arriba sólo consume `<input>`, así
+     que un `<textarea>` dentro de un fieldset no lo cogería NADIE — se caería
+     entre los dos recorridos, que es justo el modo de fallo que esta rama viene
+     a cerrar. No puede duplicar porque allí no se consume. */
   const sueltos = [];
   for (const m of html.matchAll(/<input\b([^>]*)>/gi)) if (!enFieldset(m.index)) sueltos.push({ i: m.index, tag: "input", a: m[1] });
   for (const m of html.matchAll(/<select\b([^>]*)>([\s\S]*?)<\/select>/gi)) if (!enFieldset(m.index)) sueltos.push({ i: m.index, tag: "select", a: m[1], inner: m[2] });
+  for (const m of html.matchAll(/<textarea\b([^>]*)>([\s\S]*?)<\/textarea>/gi)) sueltos.push({ i: m.index, tag: "textarea", a: m[1] });
   sueltos.sort((x, y) => x.i - y.i);
 
   for (const s of sueltos) {
     const nombre = atrib(s.a, "name");
     if (!nombre) { SIN_SITIO_FORM.push({ donde, que: `<${s.tag}> sin name` }); continue; }
+    /**
+     * ⚠ EL `<textarea>` SE NOMBRA, NO SE MAPEA — y la rama va ANTES del bloque
+     * del `<select>` por una razón medible: sin ella, un `<textarea>` cae en el
+     * camino del `<select>` y sale modelado como `tipo: "seleccion"` con
+     * `opciones: []`. Eso no es perderlo: es **guardarlo mal**, que es peor,
+     * porque el dato se guarda y el render miente (§regla 6, la del
+     * renderizador que devuelve `undefined` y no pinta, con el signo cambiado).
+     *
+     * Y no se tipa porque `CMS-7 = A` (no unificar, 2026-09-01): ningún
+     * documento va a usar `formulario-arq` para las 9 instancias de `codigo`,
+     * así que ampliar el enum `campos.tipo` inventaría un camino de render que
+     * nadie recorre. Lo mínimo y lo correcto es que salga NOMBRADO.
+     */
+    if (s.tag === "textarea") {
+      SIN_SITIO_FORM.push({ donde, que: `<textarea name=${nombre}> — el modelo expresa texto · seleccion · casillas` });
+      continue;
+    }
     if (s.tag === "input") {
       const tipo = (atrib(s.a, "type") ?? "text").toLowerCase();
       if (tipo === "hidden") { ocultos.push({ nombre, valor: atrib(s.a, "value") ?? "" }); continue; }

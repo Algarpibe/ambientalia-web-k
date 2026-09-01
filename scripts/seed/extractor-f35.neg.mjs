@@ -43,6 +43,66 @@ const nT = cat.transformaciones["T-nombre-media"].length;
 const nEjes = Object.keys(cat.bloqueos.porEje).length;
 const conRitmo = cat.catalogo.arquetipos.some((p) => p.bloques.some((b) => b.ritmo !== undefined));
 
+/**
+ * ⚠ EL CASO CONOCIDO DE ANTEMANO para la rama del `<textarea>` (§regla 28c), y
+ * hace falta porque el dominio de ESTA sonda no lo ejercita: los 4 documentos
+ * del lote traen `textarea` **0 veces** (censo `controles-form-137.json`:
+ * `paginas` 1 · `arquetipos` 0). O sea que sobre lo que hoy corre el arreglo es
+ * **NO-OP**, y un control atado sólo a esta corrida no podría distinguir «la
+ * rama funciona» de «la rama está muerta».
+ *
+ * Así que el testigo se toma donde el caso EXISTE: se corre `formularioDe`
+ * —cortada del fuente por ESTRUCTURA, casando llaves, no por un comentario
+ * (§regla 8b, 3.ª mitad)— sobre el html real de `contacto`, y se exige que su
+ * `<textarea name=field[23]>` salga NOMBRADO. Es el testigo de polaridad
+ * POSITIVA: separa «sabe verlo» de «no sé buscarlo» (§regla 28d).
+ */
+const fF33 = join(MED, "f33-extraido.json");
+let textareaNombrado = null;
+let textareaDetalle = "";
+if (!existsSync(fF33)) {
+  textareaDetalle = "falta `f33-extraido.json` — no se puede tomar el testigo";
+} else {
+  const j33 = JSON.parse(readFileSync(fF33, "utf8"));
+  let htmlContacto = "";
+  const anda = (n, doc) => {
+    if (Array.isArray(n)) { for (const x of n) anda(x, doc); return; }
+    if (!n || typeof n !== "object") return;
+    const d = n.slug ?? doc;
+    if ((n.kind ?? n.blockType) === "codigo" && d === "contacto") htmlContacto = n.html ?? "";
+    for (const v of Object.values(n)) anda(v, d);
+  };
+  anda(j33.catalogo ?? {}, "?");
+
+  const fuente = readFileSync(SONDA, "utf8");
+  const iFn = fuente.indexOf("function formularioDe(");
+  let prof = 0, fin = -1, visto = false;
+  for (let k = iFn; iFn >= 0 && k < fuente.length; k++) {
+    if (fuente[k] === "{") { prof++; visto = true; }
+    else if (fuente[k] === "}") { prof--; if (visto && prof === 0) { fin = k + 1; break; } }
+  }
+  if (!htmlContacto || iFn < 0 || fin < 0) {
+    textareaDetalle = `no se pudo cortar: html ${htmlContacto.length} chars · fn ${iFn}..${fin}`;
+  } else {
+    /* Las ayudas que la función usa se toman VERBATIM del fuente, para que el
+       testigo mida LA FUNCIÓN y no una reimplementación. El corte va POR
+       POSICIÓN —las tres son contiguas, de `const txt =` a `function
+       formularioDe(`— y no por un regex con escapes: un patrón así se rompe en
+       silencio y devuelve cadena vacía, que es §sondas 4 sobre el preludio. */
+    const iTxt = fuente.indexOf("const txt = ");
+    const preludio = iTxt >= 0 && iTxt < iFn ? fuente.slice(iTxt, iFn) : "";
+    if (!preludio) throw new Error("no se pudo cortar el preludio de ayudas (`const txt = ` no está antes de `formularioDe`)");
+    const cuerpo = `${preludio}\nconst SIN_SITIO_FORM = [];\nconst SABOTAJE = null;\n${fuente.slice(iFn, fin)}\nformularioDe(HTML, "contacto");\nreturn SIN_SITIO_FORM;`;
+    try {
+      const lista = new Function("HTML", cuerpo)(htmlContacto);
+      textareaNombrado = lista.some((s) => /textarea/i.test(s.que ?? ""));
+      textareaDetalle = lista.length ? lista.map((s) => s.que).join(" · ") : "0 controles sin sitio";
+    } catch (e) {
+      textareaDetalle = `el corte no evalúa: ${e.message}`;
+    }
+  }
+}
+
 /* Cada aporte se comprueba POR SEPARADO: si uno no aporta, el sabotaje que lo
    anula no prueba nada de él y su código puede estar muerto (§regla 17, 2.ª cara). */
 const aportes = [
@@ -50,6 +110,11 @@ const aportes = [
   { ok: nT === 12, q: "el limpio aplica T-nombre-media", d: `${nT} veces` },
   { ok: nEjes === 4, q: "el limpio recorre los 4 ejes de bloqueo", d: `${nEjes} ejes` },
   { ok: !conRitmo, q: "el limpio NO escribe ritmo", d: conRitmo ? "hay ritmo" : "0 con ritmo" },
+  {
+    ok: textareaNombrado === true,
+    q: "TESTIGO (+) · el `<textarea>` de `contacto` sale NOMBRADO — caso conocido de antemano",
+    d: textareaDetalle,
+  },
 ];
 for (const a of aportes) P(`   ${a.ok ? "✅" : "❌"} ${a.q} — ${a.d}`);
 if (!aportes.every((a) => a.ok)) {
@@ -93,6 +158,25 @@ const CASOS = [
     que: "un control del <form> que el modelo NO expresa sale NOMBRADO y en rojo, no se pierde",
     exit: 2,
     exigeEnSalida: /controles sin sitio|input type=file/,
+    prohibidoEnSalida: /✅ todo control del `<form>` tiene sitio/,
+  },
+  {
+    /**
+     * ⚠ NO duplica a `control-sin-sitio`, y la diferencia es la RAMA: aquél
+     * inyecta un `<input type=file>` y cae por el filtro de tipos del
+     * `<input>`; éste cae por la rama del `<textarea>`, que hasta la 137.ª no
+     * existía. Re-leído `control-sin-sitio` preguntando *qué separa AHORA*
+     * (§regla 21, la vuelta): sigue discriminando lo suyo, así que se queda —
+     * lo que no hacía era cubrir esto.
+     *
+     * El dato inyectado es el `<textarea>` REAL de `contacto`, verbatim: los 4
+     * documentos de este lote traen `textarea` 0 veces, así que sin inyectarlo
+     * el caso tendría 0 instancias separadoras por construcción (§regla 28a).
+     */
+    sab: "textarea-mudo",
+    que: "un <textarea> del <form> sale NOMBRADO y en rojo — no se pierde NI se guarda como `seleccion`",
+    exit: 2,
+    exigeEnSalida: /controles sin sitio|textarea name=/,
     prohibidoEnSalida: /✅ todo control del `<form>` tiene sitio/,
   },
   {

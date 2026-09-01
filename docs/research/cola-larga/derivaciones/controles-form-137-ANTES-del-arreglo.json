@@ -1,0 +1,310 @@
+{
+ "meta": {
+  "tanda": "137.ª · ESCALÓN 2 · censo de controles del `<form>`",
+  "fecha": "2026-09-01",
+  "estado": "socket 55432 ECONNREFUSED — corrida OFFLINE, sin DB",
+  "sabotaje": null,
+  "contesta": [
+   "qué etiquetas de control hay dentro del `<form>` en el dominio a recorrer",
+   "cuáles enumera hoy `formularioDe` y cuáles no",
+   "qué se pierde EN SILENCIO, con su cardinal y su reparto por LADO"
+  ],
+  "noContesta": [
+   "si el modelo DEBE expresarlos — con CMS-7 = A ninguno se tipa",
+   "nada de la DB: el socket está cerrado",
+   "nada del render ni de la geometría",
+   "no dice si un control perdido CAMBIA la página; dice que el modelo no lo nombra"
+  ]
+ },
+ "unidad": "ETIQUETA de control × instancia de módulo/documento",
+ "dominio": {
+  "paginas": 9,
+  "arquetipos": 4,
+  "docsArqDerivados": [
+   "monitor-calidad-aire.html",
+   "accesorios.html",
+   "software-de-medicion-calidad-del-aire.html",
+   "kunak-api.html"
+  ],
+  "nota": "`codigo-arq` da 0 en f35-extraido.json: el extractor mapea et_pb_code a `formulario-arq`, ya tipado, sin HTML crudo"
+ },
+ "censo": [
+  {
+   "etiqueta": "option",
+   "paginas": 2528,
+   "arquetipos": 280,
+   "documentos": 10,
+   "loEnumera": true
+  },
+  {
+   "etiqueta": "input",
+   "paginas": 160,
+   "arquetipos": 17,
+   "documentos": 10,
+   "loEnumera": true
+  },
+  {
+   "etiqueta": "label",
+   "paginas": 76,
+   "arquetipos": 8,
+   "documentos": 10,
+   "loEnumera": true
+  },
+  {
+   "etiqueta": "select",
+   "paginas": 14,
+   "arquetipos": 2,
+   "documentos": 10,
+   "loEnumera": true
+  },
+  {
+   "etiqueta": "form",
+   "paginas": 9,
+   "arquetipos": 3,
+   "documentos": 10,
+   "loEnumera": true
+  },
+  {
+   "etiqueta": "fieldset",
+   "paginas": 9,
+   "arquetipos": 1,
+   "documentos": 10,
+   "loEnumera": true
+  },
+  {
+   "etiqueta": "legend",
+   "paginas": 9,
+   "arquetipos": 1,
+   "documentos": 10,
+   "loEnumera": true
+  },
+  {
+   "etiqueta": "button",
+   "paginas": 9,
+   "arquetipos": 1,
+   "documentos": 10,
+   "loEnumera": true
+  },
+  {
+   "etiqueta": "textarea",
+   "paginas": 1,
+   "arquetipos": 0,
+   "documentos": 1,
+   "loEnumera": false
+  }
+ ],
+ "porDocumento": [
+  {
+   "lado": "paginas",
+   "doc": "contacto",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 18,
+    "label": 11,
+    "select": 3,
+    "option": 295,
+    "textarea": 1,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "paginas",
+   "doc": "descarga-catalogo",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 18,
+    "label": 9,
+    "select": 2,
+    "option": 286,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "paginas",
+   "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 18,
+    "label": 8,
+    "select": 1,
+    "option": 275,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "paginas",
+   "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-industria",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 18,
+    "label": 8,
+    "select": 1,
+    "option": 275,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "paginas",
+   "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 18,
+    "label": 8,
+    "select": 1,
+    "option": 275,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "paginas",
+   "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-obras",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 18,
+    "label": 8,
+    "select": 1,
+    "option": 275,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "paginas",
+   "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 18,
+    "label": 8,
+    "select": 1,
+    "option": 275,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "paginas",
+   "doc": "newsletter",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 17,
+    "label": 8,
+    "select": 2,
+    "option": 286,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "paginas",
+   "doc": "suscribete",
+   "forms": 1,
+   "etiquetas": {
+    "form": 1,
+    "input": 17,
+    "label": 8,
+    "select": 2,
+    "option": 286,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "arquetipos",
+   "doc": "monitor-calidad-aire",
+   "forms": 2,
+   "etiquetas": {
+    "form": 3,
+    "input": 17,
+    "label": 8,
+    "select": 2,
+    "option": 280,
+    "fieldset": 1,
+    "legend": 1,
+    "button": 1
+   }
+  },
+  {
+   "lado": "arquetipos",
+   "doc": "accesorios",
+   "forms": 0,
+   "etiquetas": {}
+  },
+  {
+   "lado": "arquetipos",
+   "doc": "software-de-medicion-calidad-del-aire",
+   "forms": 0,
+   "etiquetas": {}
+  },
+  {
+   "lado": "arquetipos",
+   "doc": "kunak-api",
+   "forms": 0,
+   "etiquetas": {}
+  }
+ ],
+ "testigos": {
+  "vivos": [
+   {
+    "testigo": "input",
+    "ocurrencias": 177,
+    "enumerado": true,
+    "ok": true
+   },
+   {
+    "testigo": "select",
+    "ocurrencias": 16,
+    "enumerado": true,
+    "ok": true
+   }
+  ],
+  "mudo": {
+   "testigo": "textarea",
+   "ocurrencias": 1,
+   "enumerado": false,
+   "ok": true
+  }
+ },
+ "estructura": [
+  "label",
+  "legend",
+  "option",
+  "optgroup",
+  "form",
+  "fieldset"
+ ],
+ "perdidosEnSilencio": [
+  {
+   "etiqueta": "textarea",
+   "paginas": 1,
+   "arquetipos": 0,
+   "documentos": 1,
+   "loEnumera": false
+  }
+ ],
+ "soloEnPaginas": [
+  "textarea"
+ ],
+ "veredicto": "MEDIDO"
+}

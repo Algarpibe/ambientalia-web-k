@@ -7238,10 +7238,24 @@ que no compiten.
 > hace independiente de la decisión.** Ya no es *«C lo necesita para migrar»*:
 > es que **la guarda AFIRMA DE MÁS** (§regla 25). Su enunciado —*«todo control
 > del `<form>` tiene sitio; lo que no lo tenga sale NOMBRADO»*— es más ancho que
-> su dominio, y una guarda así no falla en voz alta. Se arregla en la 137.ª
-> §ESCALÓN 2, **nombrando** la pieza, no modelándola: con A ningún documento va
-> a usar `formulario-arq` para las 9, así que ampliar el enum `campos.tipo`
-> sería inventar un camino de render que nadie recorre.
+> su dominio, y una guarda así no falla en voz alta.
+>
+> ✅ **HECHO en la 137.ª §ESCALÓN 2 (2026-09-01): `F3-5-TEXTAREA-MUDO` CERRADA.**
+> Se **nombra**, no se modela — con A ningún documento va a usar
+> `formulario-arq` para las 9, así que ampliar el enum `campos.tipo` inventaría
+> un camino de render que nadie recorre. Y la clase se **derivó** en vez de
+> parchear la instancia: censadas **9 etiquetas de control** en las **13**
+> instancias del dominio (9 htmls de `paginas` + 4 documentos del corpus de
+> `arquetipos`), **`textarea` es el único** perdido en silencio — **1 en
+> `paginas`, 0 en `arquetipos`**, o sea sólo fuera del dominio que calibró la
+> guarda. `PERDIDOS EN SILENCIO` pasa de **1 a 0**.
+>
+> **Alcance re-declarado con sus DOS cardinales** (§regla 25): cubre `input ·
+> select · textarea`; **sigue SIN PROBAR** para `optgroup · datalist · output ·
+> progress · meter` — **0 ocurrencias en las 13 instancias**, así que si entran
+> caerán por la rama vecina o por ninguna. Derivación:
+> `derivaciones/controles-form-137.{mjs,json}` con sus 2 sabotajes y sus 3
+> testigos; negativo del extractor **7/7 + control**.
 
 ### ⚠ Y lo que queda VIVO se ficha con su cardinal, no se descuenta
 

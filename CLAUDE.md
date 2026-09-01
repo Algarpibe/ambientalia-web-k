@@ -4791,6 +4791,41 @@ reserva sólo puede estorbar.
 > token «inerte» por su nombre puede no serlo por su valor, y los que llevan URL
 > son justo los que hay que mirar.
 
+⚠⚠ **Y AL RE-DECLARAR EL ALCANCE DE UNA GUARDA QUE AFIRMABA DE MÁS SON DOS
+CARDINALES, NO UNO — Y EL QUE SE OLVIDA ES EL QUE IMPORTA (2026-09-01).**
+
+Lo de arriba cubre una guarda que **rechaza** y una que **admite**. Falta el
+momento en que una guarda **se reescribe** porque su enunciado era más ancho que
+su dominio, y ahí el arreglo trae su propia trampa:
+
+> **Reparado el hueco, la guarda publica «0 perdidos» — y ese 0 se lee como
+> «la guarda es completa».** Lo que el dato dice es que es completa **PARA LO
+> QUE SE MIDIÓ**. Las clases que el dominio **no ejercita** siguen SIN PROBAR, y
+> no salen en ningún recuento porque, por definición, no aparecieron.
+
+**Así que al re-declarar el alcance de una guarda que afirmaba de más se
+publican DOS cardinales y no uno: lo que ahora CUBRE y lo que sigue SIN PROBAR
+—derivado del dominio, nombrando las clases que el dominio no ejercita—.** Son
+dos cubos distintos:
+
+| cubo | qué contesta |
+|---|---|
+| lo que ahora **CUBRE** | cuántas piezas dejan de perderse — el 0 de la reparación |
+| lo que sigue **SIN PROBAR** | qué clases el dominio **no trae**, nombradas y con su cardinal |
+
+**Medido:** una guarda de exhaustividad pasó de **1 pieza perdida en silencio a
+0** sobre **9 etiquetas censadas** — y en el mismo censo, **5 clases más**
+(`optgroup` · `datalist` · `output` · `progress` · `meter`) salen a **0
+ocurrencias en las 13 instancias**. La guarda **no está probada para ellas**: si
+entran, caerán por la rama vecina o por ninguna. `0 perdidos` y `5 sin probar`
+son dos números y sólo publicándolos juntos el verde es auditable.
+
+> **Operativamente, y cuesta una línea del censo que ya corriste: la
+> re-declaración de una guarda enumera lo que cubre Y lo que su dominio no pudo
+> ejercitar.** Es §regla 14 —*una limitación sin su número se lee como nota al
+> pie*— cobrada en el único momento en que nadie la busca: **justo después de
+> arreglar**, cuando el 0 recién ganado ocupa toda la atención.
+
 **Y SU MITAD DE CONJUNTOS, del mismo día: UN CONJUNTO DEFINIDO POR COMPLEMENTO
 DEJA DE SER DISJUNTO EN CUANTO EL ENUMERADO CRECE.**
 
@@ -5053,6 +5088,42 @@ selector.
 de defecto salga en rojo, **la primera hipótesis no es el instrumento NI el
 objeto — es que el defecto ya se arregló**. Se dirime mirando el fuente del
 testigo, que cuesta un `grep`, antes de tocar una línea del barrido.
+
+⚠⚠ **(e) Y DÓNDE SE TOMA EL TESTIGO, QUE ES LA PREGUNTA ANTERIOR A SU POLARIDAD:
+LA VERIFICACIÓN DE UN ARREGLO SE TOMA DONDE EL CASO EXISTE, NO DONDE EL CÓDIGO
+CORRE (2026-09-01).**
+
+Las mitades (c) y (d) dicen **a qué** se ata el control y **de qué signo** tiene
+que ser. Falta la de **dónde**, y se cuela porque el sitio obvio es el que ya
+está a mano: la sonda que contiene el código arreglado.
+
+> **El dominio que EJECUTA una rama y el dominio donde el CASO existe pueden
+> ser distintos.** Si el que ejecuta no ejercita el caso, el arreglo es **NO-OP
+> allí** — y entonces un control atado a esa corrida **no distingue «la rama
+> funciona» de «la rama está muerta»**: las dos dan el mismo verde, y el verde
+> es cierto.
+
+**Medido:** un arreglo entró en una función de un extractor que recorre **4
+documentos**, y esos 4 traen la etiqueta arreglada **0 veces** (censo: 0 en ese
+lado, **1** en otra colección). La prueba de que era NO-OP es que **su congelada
+no cambió un byte**. El testigo hubo que ir a buscarlo **a la otra colección**,
+corriendo la función cortada por estructura sobre el documento donde el caso sí
+está.
+
+**Las dos mitades operativas:**
+
+1. **antes de escribir el control, DERIVA si el dominio de la sonda ejercita el
+   caso** —un censo de la clase arreglada, por lado, con su cardinal—. Si sale
+   0, el control **no puede vivir ahí**;
+2. **y el NO-OP en el dominio propio se publica como resultado, no se omite.**
+   «La congelada no cambió» es la prueba de que el arreglo no tocó lo que no
+   debía, y va al lado del testigo que prueba que sí toca lo que debe. Los dos:
+   uno solo deja el verde sin adjudicar.
+
+> **Y la señal para sospecharlo es gratis: un arreglo cuya sonda sigue dando
+> exactamente el mismo verde.** Es §*el marcador prueba que el build es nuevo,
+> no que el cambio tenga efecto* con el contenedor puesto en **el dominio**: ahí
+> no falta medición, falta **medir en otro sitio**.
 
 **29 · UN ÍNDICE CONSTRUIDO PARA UNA PREGUNTA NO CONTESTA OTRA — Y CUANDO SU
 LLAVE DEJA DE IDENTIFICAR NO DA ERROR: EMPAREJA MAL.** (2026-08-23)

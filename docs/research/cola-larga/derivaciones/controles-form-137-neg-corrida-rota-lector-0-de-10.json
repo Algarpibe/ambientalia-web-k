@@ -1,0 +1,51 @@
+{
+ "meta": {
+  "tanda": "137.ª · ESCALÓN 2 · censo de controles del `<form>`",
+  "fecha": "2026-09-01",
+  "estado": "socket 55432 ECONNREFUSED — corrida OFFLINE, sin DB",
+  "sabotaje": null,
+  "contesta": [
+   "qué etiquetas de control hay dentro del `<form>` en el dominio a recorrer",
+   "cuáles enumera hoy `formularioDe` y cuáles no",
+   "qué se pierde EN SILENCIO, con su cardinal y su reparto por documento"
+  ],
+  "noContesta": [
+   "si el modelo DEBE expresarlos — con CMS-7 = A ninguno se tipa",
+   "nada de la DB: el socket está cerrado",
+   "nada del render ni de la geometría"
+  ]
+ },
+ "unidad": "ETIQUETA de control × instancia de módulo (no documento: un doc puede traer varias)",
+ "dominio": {
+  "instancias": 0,
+  "paginas": 0,
+  "arquetipos": 0
+ },
+ "censo": [],
+ "porDocumento": [],
+ "testigos": {
+  "vivos": [
+   {
+    "testigo": "input",
+    "presente": false,
+    "enumerado": false,
+    "ok": false
+   },
+   {
+    "testigo": "select",
+    "presente": false,
+    "enumerado": false,
+    "ok": false
+   }
+  ],
+  "mudo": {
+   "testigo": "textarea",
+   "presente": false,
+   "enumerado": false,
+   "ok": false
+  }
+ },
+ "estructura": [],
+ "perdidosEnSilencio": [],
+ "veredicto": "NO SE PUDO EVALUAR"
+}

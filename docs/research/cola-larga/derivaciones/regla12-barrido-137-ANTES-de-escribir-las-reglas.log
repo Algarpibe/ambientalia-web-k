@@ -1,0 +1,64 @@
+==============================================================================
+137.ª · BARRIDO DE §regla 12 — REGLA vs EVENTO, con los DOS cruces y su NEGATIVO
+==============================================================================
+
+── TESTIGOS DEL CRUCE (antes de creerse ningún número) ──
+  T+ · un enunciado que SE SABE escrito en CLAUDE.md
+      espera «ya escrito» → «ya escrito» ✓
+  T- · un enunciado INVENTADO que no puede estar
+      espera «NO está» → «NO está» ✓
+  T± · un TITULAR EN MAYÚSCULAS que lleva meses escrito
+      espera «ya escrito» → «ya escrito» ✓
+  HEAD legible para el antes/después: SÍ ✓
+
+── CANDIDATOS ──
+
+  R1 · REGLA
+      La verificación de un arreglo se toma DONDE EL CASO EXISTE, no donde el código corre. Si el dominio que ejecuta la rama arreglada no ejercita el caso, el arreglo es NO-OP allí — y un control atado a esa corrida no puede distinguir «la rama funciona» de «la rama está muerta»: los dos dan el mismo verde.
+      POR QUÉ: Medido hoy: el arreglo del `<textarea>` vive en `formularioDe` de `extractor-f35.mjs`, que recorre los 4 documentos del lote F3-5 — y ésos traen `textarea` 0 veces (censo `controles-form-137.json`: `arquetipos` 0 · `paginas` 1). La prueba: `f35-extraido.json` no cambió un byte tras el arreglo. El caso existe en `contacto`, que es de OTRA colección, así que el testigo positivo hay que ir a buscarlo allí — se corre `formularioDe` cortada por estructura sobre su html y se exige que el `<textarea name=field[23]>` salga NOMBRADO. Es §*una regla derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese caso* con el objeto puesto en LA VERIFICACIÓN en vez de en la regla, y §regla 28c con el caso conocido de antemano viviendo fuera del dominio de la sonda.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §regla 28c / §*el marcador prueba que el build es nuevo, no que el cambio tenga efecto*
+
+  R2 · REGLA
+      Al RE-DECLARAR el alcance de una guarda que afirmaba de más, se publican DOS cardinales y no uno: lo que ahora CUBRE y lo que sigue SIN PROBAR — derivado del dominio, nombrando las clases que el dominio no ejercita. Publicar sólo «0 perdidos» dice que la guarda es completa, y lo que dice el dato es que es completa PARA LO QUE SE MIDIÓ.
+      POR QUÉ: Medido: tras el arreglo, `PERDIDOS EN SILENCIO` pasa de 1 a 0 sobre 9 etiquetas censadas — y `optgroup` · `datalist` · `output` · `progress` · `meter` salen a 0 ocurrencias en las 13 instancias, así que la guarda NO está probada para ellas: si entran, caerán por la rama del `<select>` o por ninguna. El 0 de perdidos y el 5 de sin-probar son cubos distintos y sólo publicándolos juntos es auditable. Es §regla 25 (una guarda que afirma de más) más §regla 14 (una limitación sin su número se lee como nota al pie), unidas en el momento en que la guarda se reescribe.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §regla 25 / §regla 14
+
+  E1 · EVENTO
+      CMS-7 resuelto en `A · NO UNIFICAR` por el propietario, con su operación de deshacer NOMBRADA (empieza separada, deshacerla es fusionar, el lado barato) y su coste latente con disparador. `F3-5-CODE-DIVERGE` cerrada, y la cierra el CERO: intersección de contenido 0 entre `codigo` (1 campo) y `formulario-arq` (11).
+      POR QUÉ: Tiene fecha, opción elegida y cardinales: es una decisión sobre ESTE repo. La regla que lo gobierna —§regla 23, se cita el criterio CON SU OPERACIÓN— ya está escrita y se aplicó.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: ESQUEMA-CMS.md §CMS-7 + PENDIENTES-QA.md §137.ª + PLAN-FASE-3.md
+
+  E2 · EVENTO
+      El testigo del censo llegó con la POLARIDAD cableada al defecto —exigía `textarea` NO enumerado— y se habría muerto en rojo el día del arreglo, describiéndolo como avería. Re-atado a lo cierto en los DOS estados (que el censo VEA la etiqueta), los dos sabotajes siguen mordiendo tras el arreglo.
+      POR QUÉ: La REGLA ya está escrita —§regla 5ter (arreglar el objeto caduca el control) y §regla 28d (un control cuyo testigo es un defecto conocido no puede leer su propia ausencia)—. Lo de hoy es una instancia suya, cazada dentro de la misma tanda que escribió el testigo.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. ya estaba
+      DESTINO: PENDIENTES-QA.md §137.ª (instancia de una regla ya escrita)
+
+  E3 · EVENTO
+      El sabotaje `ciega-el-censo` publica `PERDIDOS EN SILENCIO: 0`, el MISMO número que la corrida buena: el veredicto no separa, lo que separa es el testigo. Y la primera corrida del censo dio `instancias: 0` por un lector que no casaba — un cero que sin testigos se habría leído como «no se pierde nada», en verde.
+      POR QUÉ: Las dos son instancias de reglas escritas: §regla 28c (el control de un cero no es que el resultado separe, es el caso conocido de antemano) y §sondas 4 (un selector que no casa con nada no es un cero). Tienen número y fecha, no enunciado nuevo.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. ya estaba
+      DESTINO: PENDIENTES-QA.md §137.ª
+
+── VEREDICTO ──
+  candidatos ................ 5
+  · REGLA ................... 2
+      · YA escritas ......... 0
+      · SUBEN a CLAUDE.md ... 2 :: R1, R2
+  · EVENTO (se quedan) ...... 3
+  (el número se escribe aunque sea cero: «no encontré» y «no barrí» son la misma salida)
+
+  ✅ los tres testigos pasan y HEAD es legible — el cruce ADJUDICA

@@ -1,8 +1,8 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ✅ §137.ª · **CMS-7 CERRADO EN `A · NO UNIFICAR`, Y LA FICHA NO LA CIERRA LA FRASE SINO EL CERO: LOS DOS MODELOS NO COMPARTEN UN SOLO CAMPO DE CONTENIDO** — 2026-09-01
+## ✅ §137.ª · **CMS-7 CERRADO EN `A · NO UNIFICAR`, Y LA GUARDA QUE AFIRMABA DE MÁS YA NOMBRA — PERO SU CONTROL NO PODÍA VIVIR DONDE EL CÓDIGO CORRE** — 2026-09-01
 
-**Estado: PASO 0 completo · ESCALÓN 1 hecho.** Tanda **OFFLINE**: no siembra, no
+**Estado: PASO 0 completo · ESCALONES 1 y 2 hechos.** Tanda **OFFLINE**: no siembra, no
 cablea, no construye. El socket sigue `ECONNREFUSED`, así que esta tanda —y no
 la 135.ª— sigue siendo la buena.
 
@@ -105,6 +105,123 @@ declara `["POST","GET"]` y los 10 formularios medidos traen sólo `POST`
 campo que ADMITE un caso y que ningún dato de calibración EJERCITA es un camino
 de render sin estrenar*: **se declara con su alcance, no se da por soportado.**
 CMS-7 decide dónde vive el modelo, no qué caminos suyos están probados.
+
+### ESCALÓN 2 · `F3-5-TEXTAREA-MUDO` — ✅ **CERRADA**, y el censo dijo que la clase entera es UNA
+
+**Antes de tocar el extractor se midió**, porque añadir `textarea` a mano sería
+arreglar **la instancia y no la CLASE** —cómo se llega a la tercera tanda del
+mismo defecto—. La enumeración se **derivó del dominio que se recorre**
+(§regla 49), no del que la calibró:
+
+| etiqueta | `paginas` (9) | `arquetipos` (4) | ¿la enumera? |
+|---|---|---|---|
+| `option` | 2528 | 280 | estructura |
+| `input` | 160 | 17 | **sí** |
+| `label` | 76 | 8 | estructura |
+| `select` | 14 | 2 | **sí** |
+| `form` · `fieldset` · `legend` | 9 c/u | 1-3 | estructura |
+| `button` | 9 | 1 | **sí** |
+| **`textarea`** | **1** | **0** | ❌ **NO** |
+
+> **`textarea` es el ÚNICO perdido en silencio, y el número que explica la
+> guarda que afirma de más es su reparto: 1 en `paginas` y 0 en `arquetipos`.**
+> Sólo existe **fuera del dominio donde la guarda se calibró** — §*una regla
+> derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese
+> caso*, cometida sobre la propia guarda.
+
+**El arreglo NOMBRA, no modela.** Con `CMS-7 = A` ningún documento va a usar
+`formulario-arq` para las 9, así que ampliar el enum `campos.tipo` inventaría un
+camino de render que nadie recorre. El `<textarea>` entra en `sueltos` y cae por
+una rama propia a `SIN_SITIO_FORM`.
+
+⚠ **Y la rama va ANTES del bloque del `<select>` por una razón medible:** sin
+ella, un `<textarea>` en `sueltos` cae en el camino del `<select>` y sale como
+`tipo: "seleccion"` con `opciones: []`. Eso **no es perderlo, es guardarlo
+mal** — el dato se guarda y el render miente. Y va **sin** el filtro
+`enFieldset`, porque el bucle del `<fieldset>` sólo consume `<input>`: un
+`<textarea>` ahí dentro se caería **entre los dos recorridos**.
+
+**La guarda RE-DECLARADA con su alcance**, y son dos cardinales (§regla 25, la
+mitad nueva): **cubre** `input · select · textarea` (+`button`), **consume como
+estructura** `label · legend · option · fieldset · form`, **pierde en silencio
+0 de 9** — y sigue **SIN PROBAR** para `optgroup · datalist · output · progress
+· meter`, **0 ocurrencias en las 13 instancias**. Si entran, caerán por la rama
+vecina o por ninguna.
+
+### El instrumento — y el control cazó DOS ceros propios antes de adjudicar nada
+
+**El censo llegó roto y lo dijo:** la v1 publicó `instancias: 0` y
+`PERDIDOS EN SILENCIO: 0` con **EXIT 2**, porque su lector no casaba la
+estructura de `f33-extraido.json`. **Sin los testigos, ese `0` habría salido en
+verde leyéndose como *«no se pierde nada»*.** Congelada marcada
+`-neg-corrida-rota-lector-0-de-10.json` (§regla 7: una corrida rota **conserva**
+el marcador).
+
+**Y el testigo llegó con la POLARIDAD cableada al defecto** (§regla 5ter · 28d):
+exigía `textarea` **NO enumerado**, o sea el estado **con** defecto — se habría
+muerto en rojo el día del arreglo, **describiéndolo como avería**. Re-atado a lo
+cierto en los dos estados —que el censo **VEA** la etiqueta—, los dos sabotajes
+siguen mordiendo después.
+
+| sabotaje | qué reproduce | antes | después |
+|---|---|---|---|
+| `ciega-el-censo` | un censo que sólo ve lo que ya sabía | EXIT 2 | **EXIT 2** |
+| `extractor-sin-input` | el extractor deja de enumerar un control | EXIT 2 | **EXIT 2** |
+
+⚠ **Y `ciega-el-censo` publica `PERDIDOS EN SILENCIO: 0` — el MISMO número que
+la corrida buena.** El veredicto **no separa**; lo que separa es el testigo. Es
+§regla 28c literal: *el control de un cero no es que el resultado separe, es el
+caso conocido de antemano*.
+
+### El negativo del extractor · 7/7 + control, y el testigo vive en OTRA colección
+
+`control-sin-sitio` se re-leyó preguntando **qué separa AHORA** (§regla 21, la
+vuelta): **sigue discriminando** —inyecta un `<input type=file>`, que cae por el
+filtro de tipos del `<input>`, rama que este arreglo no toca— así que **no se
+toca**. Lo que no hacía era cubrir la rama nueva; para eso entra `textarea-mudo`,
+que inyecta el `<textarea>` **real de `contacto`, verbatim**, porque los 4
+documentos del lote traen `textarea` **0 veces** y sin dato el caso tendría **0
+instancias separadoras por construcción** (§regla 28a).
+
+⚠⚠ **Y el CONTROL no podía vivir en la corrida de la sonda, que es el hallazgo
+de método de esta tanda.** El arreglo es **NO-OP donde el código corre** —
+prueba: `f35-extraido.json` **no cambió un byte**—, así que un control atado a
+esa corrida no distingue *«la rama funciona»* de *«la rama está muerta»*. El
+testigo se toma **donde el caso existe**: `formularioDe` cortada del fuente por
+ESTRUCTURA y corrida sobre el html de `contacto`, exigiendo que su
+`<textarea name=field[23]>` salga **NOMBRADO**. Sale.
+
+**Negativo entero, no sólo el caso nuevo: 7/7 casos + control, EXIT 0.** Y el
+censo, con el arreglo puesto, pasa de **1 perdido a 0** con los testigos vivos,
+en su propia congelada `-DESPUES-` **posterior** a la `-ANTES-` (§regla 5).
+
+⚠ El preludio del testigo llegó con **su** cero: un regex construido con
+escapes devolvía cadena vacía y el corte no evaluaba (`atrib is not defined`).
+Sustituido por un corte **por posición**. §sondas 4 sobre el propio instrumento,
+tercera vez en esta tanda.
+
+**Tras los negativos: `git status` sin BORRADOS y sin fuentes de sonda ajenas**
+—las dos modificadas son las que la tanda tocó—. `typecheck` y `typecheck:cms`
+**EXIT 0**; `qa:lib` **EXIT 0 · 219 sondas**.
+
+### Barrido de §regla 12 — 5 candidatos · 2 REGLA · 3 EVENTO
+
+Cruce **ENDURECIDO** mandando, el laxo al lado, **3 testigos** y el
+**antes/después contra HEAD**, que es lo único que prueba que una regla LLEGÓ.
+
+| | destino |
+|---|---|
+| **R1** · la verificación de un arreglo se toma DONDE EL CASO EXISTE, no donde el código corre | **CLAUDE.md** §regla 28(e) |
+| **R2** · al re-declarar el alcance de una guarda se publican DOS cardinales: lo que CUBRE y lo que sigue SIN PROBAR | **CLAUDE.md** §regla 25 |
+| E1 · CMS-7 = A · `F3-5-CODE-DIVERGE` cerrada | ESQUEMA §CMS-7 · aquí · PLAN |
+| E2 · el testigo con la polaridad cableada al defecto | aquí (instancia de §5ter/§28d) |
+| E3 · el sabotaje que publica el mismo 0 que la corrida buena | aquí (instancia de §28c) |
+
+⚠ **Y R2 salió «NO está» con la regla ya escrita**, igual que en la 135.ª: el
+cruce tenía razón —el enunciado literal no estaba en el documento—. Se arregló
+**el documento**, no la expectativa: acomodar la guarda al defecto que vigila la
+deja de vigilar (§regla 21). Verificado corriendo: las dos dan **`ya escrito` +
+`NO estaba en HEAD`**, y **suben 0**.
 
 ### El tripwire de carga, re-derivado (§regla 19)
 
