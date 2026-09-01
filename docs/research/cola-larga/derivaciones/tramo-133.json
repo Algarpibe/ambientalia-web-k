@@ -1,0 +1,342 @@
+{
+ "meta": {
+  "tanda": "133.ª",
+  "escalon": "ESCALÓN 1",
+  "fecha": "2026-09-01T13:56:34.206Z",
+  "saboteada": null
+ },
+ "tramo": {
+  "etiquetas": [
+   "article",
+   "header",
+   "meta"
+  ],
+  "atributos": [
+   "aria-colcount",
+   "aria-colindex",
+   "aria-rowcount",
+   "aria-rowindex",
+   "content",
+   "data-auto-rotate",
+   "data-image-url-format",
+   "data-inertia",
+   "data-main-holder-id",
+   "data-main-image-id",
+   "data-main-image-url",
+   "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+   "data-reverse",
+   "data-slide-id",
+   "data-speed",
+   "data-total-frames",
+   "data-zoom",
+   "itemprop",
+   "itemscope",
+   "itemtype"
+  ],
+  "total": 23,
+  "porClase": {
+   "schema.org": {
+    "etiquetas": [
+     "meta"
+    ],
+    "atributos": [
+     "content",
+     "itemprop",
+     "itemscope",
+     "itemtype"
+    ],
+    "tokens": [
+     "content",
+     "itemprop",
+     "itemscope",
+     "itemtype",
+     "meta"
+    ],
+    "bloqueos": 8,
+    "exclusivos": 8,
+    "campos": 4,
+    "documentos": [
+     "monitor-calidad-aire",
+     "accesorios",
+     "software-de-medicion-calidad-del-aire",
+     "kunak-api"
+    ],
+    "kinds": [
+     "texto-arq"
+    ]
+   },
+   "estructura HTML5": {
+    "etiquetas": [
+     "article",
+     "header"
+    ],
+    "atributos": [],
+    "tokens": [
+     "article",
+     "header"
+    ],
+    "bloqueos": 6,
+    "exclusivos": 6,
+    "campos": 4,
+    "documentos": [
+     "monitor-calidad-aire",
+     "accesorios",
+     "software-de-medicion-calidad-del-aire",
+     "kunak-api"
+    ],
+    "kinds": [
+     "texto-arq"
+    ]
+   },
+   "data-* del constructor": {
+    "etiquetas": [],
+    "atributos": [
+     "data-auto-rotate",
+     "data-image-url-format",
+     "data-inertia",
+     "data-main-holder-id",
+     "data-main-image-id",
+     "data-main-image-url",
+     "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+     "data-reverse",
+     "data-slide-id",
+     "data-speed",
+     "data-total-frames",
+     "data-zoom"
+    ],
+    "tokens": [
+     "data-auto-rotate",
+     "data-image-url-format",
+     "data-inertia",
+     "data-main-holder-id",
+     "data-main-image-id",
+     "data-main-image-url",
+     "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+     "data-reverse",
+     "data-slide-id",
+     "data-speed",
+     "data-total-frames",
+     "data-zoom"
+    ],
+    "bloqueos": 5,
+    "exclusivos": 5,
+    "campos": 5,
+    "documentos": [
+     "monitor-calidad-aire",
+     "software-de-medicion-calidad-del-aire",
+     "kunak-api"
+    ],
+    "kinds": [
+     "texto-arq",
+     "slider-ancho-arq",
+     "slider-arq"
+    ]
+   },
+   "aria de tabla": {
+    "etiquetas": [],
+    "atributos": [
+     "aria-colcount",
+     "aria-colindex",
+     "aria-rowcount",
+     "aria-rowindex"
+    ],
+    "tokens": [
+     "aria-colcount",
+     "aria-colindex",
+     "aria-rowcount",
+     "aria-rowindex"
+    ],
+    "bloqueos": 1,
+    "exclusivos": 1,
+    "campos": 1,
+    "documentos": [
+     "monitor-calidad-aire"
+    ],
+    "kinds": [
+     "tabla-arq"
+    ]
+   }
+  }
+ },
+ "alta": {
+  "enElCenso": 23,
+  "de": 23,
+  "aplicada": true,
+  "formularioColado": []
+ },
+ "dominio": {
+  "documentos": [
+   "monitor-calidad-aire.html",
+   "accesorios.html",
+   "software-de-medicion-calidad-del-aire.html",
+   "kunak-api.html"
+  ],
+  "camposHtml": 199,
+  "bloqueos": 22,
+  "unidad": "fila de `arquetipos` · módulo de PRIMER NIVEL del cuerpo",
+  "regimen": "B- · builder puro",
+  "arquetipos": [
+   "PRODUCTO",
+   "CATALOGO",
+   "SOFTWARE",
+   "SOFTWARE-corta"
+  ]
+ },
+ "invariante": {
+  "familias": {
+   "on* (manejador)": [],
+   "javascript: en valor": [],
+   "data: en valor": [],
+   "srcdoc": []
+  },
+  "total": 0,
+  "paresLeidos": 2244,
+  "valoresObservados": {
+   "itemtype": [
+    "http://schema.org/BreadcrumbList",
+    "http://schema.org/ListItem"
+   ],
+   "itemprop": [
+    "itemListElement",
+    "item",
+    "name",
+    "position"
+   ],
+   "content": [
+    "1",
+    "2",
+    "3"
+   ],
+   "data-total-frames": [
+    "35"
+   ],
+   "data-main-image-url": [
+    "https://kunakair.com/wp-content/uploads/2023/03/kunak360_IMG_01.jpg"
+   ],
+   "data-image-url-format": [
+    "kunak360_IMG_xx.jpg"
+   ],
+   "data-speed": [
+    "90"
+   ],
+   "data-inertia": [
+    "12"
+   ],
+   "data-zoom": [
+    "true"
+   ],
+   "data-reverse": [
+    "true"
+   ],
+   "data-auto-rotate": [
+    "1"
+   ],
+   "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification": [
+    "true"
+   ],
+   "data-main-holder-id": [
+    "jsv-holder-acxzlspbmf"
+   ],
+   "data-main-image-id": [
+    "jsv-img-fzwgnqdihe"
+   ],
+   "data-slide-id": [
+    "et_pb_slide_0",
+    "et_pb_slide_1",
+    "et_pb_slide_2",
+    "et_pb_slide_3"
+   ],
+   "aria-rowcount": [
+    "15"
+   ],
+   "aria-colcount": [
+    "2"
+   ],
+   "aria-rowindex": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "aria-colindex": [
+    "1",
+    "2"
+   ]
+  }
+ },
+ "regla25": {
+  "alcanceGuarda": 25,
+  "ficheros": [
+   "packages/cms-config/src/bloques/arquetipos.ts",
+   "packages/cms-config/src/bloques/kb.ts",
+   "packages/cms-config/src/bloques/paginas.ts",
+   "packages/cms-config/src/colecciones/autores.ts",
+   "packages/cms-config/src/colecciones/grupo-a.ts",
+   "packages/cms-config/src/colecciones/grupo-c.ts",
+   "packages/cms-config/src/colecciones/paginas.ts",
+   "packages/cms-config/src/colecciones/productos.ts",
+   "packages/cms-config/src/colecciones/taxonomias.ts"
+  ],
+  "dominioInvariante": 4,
+  "apareceFuera": {
+   "etiquetas": [],
+   "atributos": [],
+   "invA": 43,
+   "invAt": 81
+  }
+ },
+ "fuera": {
+  "formulario": {
+   "tokens": [
+    "action",
+    "button",
+    "data-autofill",
+    "data-sitekey",
+    "data-styles-version",
+    "fieldset",
+    "for",
+    "form",
+    "input",
+    "label",
+    "legend",
+    "method",
+    "name",
+    "novalidate",
+    "option",
+    "placeholder",
+    "required",
+    "select",
+    "selected",
+    "value"
+   ],
+   "bloqueos": 2,
+   "exclusivos": 2,
+   "campos": 1,
+   "documentos": [
+    "monitor-calidad-aire"
+   ],
+   "kinds": [
+    "codigo-arq"
+   ]
+  }
+ },
+ "fichaMedia": {
+  "canalImplicito": [
+   {
+    "token": "itemtype",
+    "url": "http://schema.org/BreadcrumbList"
+   },
+   {
+    "token": "itemtype",
+    "url": "http://schema.org/ListItem"
+   },
+   {
+    "token": "data-main-image-url",
+    "url": "https://kunakair.com/wp-content/uploads/2023/03/kunak360_IMG_01.jpg"
+   }
+  ]
+ },
+ "controles": {
+  "ok": true
+ }
+}

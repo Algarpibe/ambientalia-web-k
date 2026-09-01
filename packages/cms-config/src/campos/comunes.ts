@@ -292,11 +292,56 @@ export const editorRico: EditorLexical = lexicalEditor({
  * rico» no sea la excusa de no haber mirado; la única prohibición está abajo.
  */
 export const ETIQUETAS_CENSADAS = [
+  // ── Tramo A · grupo A (censo 209/209, `medidas/a-censo.json`, §3.1) ───────
   "p", "span", "a", "div", "br", "h2", "sub", "strong", "li", "ul", "img",
   "h3", "em", "blockquote", "iframe", "b", "h4", "sup", "i", "table", "tbody",
   "tr", "td", "thead", "th", "ol", "script", "figure", "video", "source",
   "figcaption", "hr", "u", "section", "h1", "h5", "embed", "style", "center",
   "small", "noscript", "mark", "tfoot",
+
+  /* ── Tramo F3-5 · el lote de `arquetipos` ────────────────────────────────
+   * AMPLIACIÓN firmada por el propietario el 2026-09-01 (CMS-6 = A + C), con
+   * el mismo criterio del Tramo A y del Tramo C de `HOSTS_PERMITIDOS`.
+   * Derivación: `derivaciones/tramo-133.{mjs,json,log}` + sus 3 negativos.
+   *
+   * ⚠⚠ **SU DOMINIO, QUE ES LO QUE HACE AUDITABLE EL ALTA Y LO QUE FALTABA.**
+   * El Tramo A salió de `a-censo` —el `post_content` SERVIDO de 209 páginas—.
+   * Éste NO: sale de **4 documentos** del lote F3-5 (`monitor-calidad-aire` ·
+   * `accesorios` · `software-de-medicion-calidad-del-aire` · `kunak-api`),
+   * régimen `B-`, unidad *módulo de primer nivel del cuerpo*, **199 campos
+   * HTML**. Un dominio de 4 documentos, no de 209.
+   *
+   * Y hace falta decirlo porque el defecto que este tramo repara es
+   * exactamente ése: los 43 tokens del lote tienen **cero apariciones** en el
+   * dominio donde el censo original se derivó (132.ª, auditado con 8
+   * testigos), así que el censo no los excluyó — **no los conocía**. Escribir
+   * el tramo sin su dominio repetiría el defecto en el arreglo.
+   *
+   * ── LOS TRES, CON SU CLASE Y SU CARDINAL ────────────────────────────────
+   * | etiqueta | clase | bloqueos | documentos | kind |
+   * |---|---|---|---|---|
+   * | `meta` | schema.org | 8 de 22 | 4 de 4 | `texto-arq` |
+   * | `article`, `header` | estructura HTML5 | 6 de 22 | 4 de 4 | `texto-arq` |
+   *
+   * ── EL INVARIANTE, MEDIDO Y NO SUPUESTO ─────────────────────────────────
+   * El Tramo A se firmó sobre *«las cuatro familias peligrosas salen a CERO»*.
+   * Aquí también, medido sobre **2244 pares `atributo=valor`** del lote:
+   * `on*` **0** · `javascript:` **0** · `data:` **0** · `srcdoc` **0**.
+   * Ninguna de las tres etiqueta ejecuta ni transporta URL.
+   *
+   * ── §regla 25 · EL ALCANCE, CON SU NÚMERO ───────────────────────────────
+   * La guarda es GLOBAL: `validaHtmlCorpus` cubre **25 campos `campoHtml`** en
+   * 9 ficheros del esquema. El invariante de este tramo se midió en **1** de
+   * ellos, así que **alcanza 24 campos que su invariante no cubre**. Lo que
+   * admite DE MÁS hoy es **0**: los 3 tokens no aparecen ni una vez en
+   * `a-censo` (43 etiquetas, 209 páginas). O sea, ampliación **inerte fuera de
+   * su dominio** — no ajustada, pero con su número publicado.
+   *
+   * ⚠ `form`, `input`, `select`, `option`, `button`, `label`, `fieldset` y
+   * `legend` quedan FUERA con su evidencia: son la clase `formulario` (20
+   * tokens · 2 bloqueos · 1 documento) y el propietario decidió que NO entra
+   * en la whitelist (CMS-6 opción C). Ver §2o.9 del ESQUEMA. */
+  "meta", "article", "header",
 ] as const;
 
 /**
@@ -358,6 +403,43 @@ export const ATRIBUTOS_CENSADOS = [
   "fetchpriority", "frameborder", "height", "href", "id", "lang", "loading", "loop", "muted", "preload",
   "referrerpolicy", "rel", "role", "rowspan", "sandbox", "scrolling", "sizes", "src",
   "srcset", "start", "style", "tabindex", "target", "title", "type", "width",
+
+  /* ── Tramo F3-5 · el lote de `arquetipos` ────────────────────────────────
+   * AMPLIACIÓN firmada por el propietario el 2026-09-01 (CMS-6 = A + C).
+   * Mismo dominio, mismo invariante y mismo alcance que el tramo de
+   * `ETIQUETAS_CENSADAS` de arriba — se lee allí y no se repite aquí, porque
+   * dos copias de la misma justificación divergen (clase C7).
+   *
+   * ── LOS VEINTE, POR CLASE ───────────────────────────────────────────────
+   * | clase | n | bloqueos | documentos | kinds |
+   * |---|---|---|---|---|
+   * | schema.org | 4 | 8 de 22 | 4 de 4 | `texto-arq` |
+   * | `data-*` del constructor | 12 | 5 de 22 | 3 de 4 | `texto-arq` · `slider-ancho-arq` · `slider-arq` |
+   * | aria de tabla | 4 | 1 de 22 | 1 de 4 | `tabla-arq` |
+   *
+   * ⚠ **Los `data-*` van UNO A UNO, no por comodín.** El Tramo A ya lo dejó
+   * escrito —*«son estos 81, exactos y no por patrón: un `data-*` comodín
+   * admitiría cualquier cosa, que es lo contrario de censar»*— y aquí pesa más,
+   * porque son 12 de los 20.
+   *
+   * ⚠⚠ **Y DOS DE ELLOS LLEVAN URL, leída y no supuesta** — que es donde un
+   * «inerte» por nombre puede no serlo por valor:
+   *   · `data-main-image-url` → `https://kunakair.com/wp-content/uploads/2023/03/kunak360_IMG_01.jpg`
+   *   · `data-image-url-format` → `kunak360_IMG_xx.jpg`
+   * Ninguna es `javascript:` ni `data:`, así que el invariante aguanta. Pero
+   * la primera es **un CANAL DE MEDIA implícito** (§regla 48) que ningún campo
+   * `upload` declara: el visor 360° del monitor tira de ahí. Ficha
+   * `F3-5-MEDIA-360`, y NO se resuelve en este tramo.
+   *
+   * ⚠ `action`, `method`, `for`, `name`, `value`, `placeholder`, `required`,
+   * `novalidate`, `selected`, `data-autofill` y `data-sitekey` quedan FUERA:
+   * son la clase `formulario` (CMS-6 opción C). Ver §2o.9 del ESQUEMA. */
+  "content", "itemprop", "itemscope", "itemtype",
+  "data-auto-rotate", "data-image-url-format", "data-inertia",
+  "data-main-holder-id", "data-main-image-id", "data-main-image-url",
+  "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+  "data-reverse", "data-slide-id", "data-speed", "data-total-frames", "data-zoom",
+  "aria-colcount", "aria-colindex", "aria-rowcount", "aria-rowindex",
 ] as const;
 
 /**
@@ -494,7 +576,10 @@ export function validaHtmlCorpus(valor: unknown): true | string {
     return "§3.3 · T4: `<script>` no entra en el contenido. Los 17 del corpus van a nodo-embed tipado (7) o a eliminación con sustitución (10).";
   const etiquetas = etiquetasFueraDelCenso(valor);
   if (etiquetas.length)
-    return `§3.1: etiqueta(s) fuera del censo de 43 — ${etiquetas.map((t) => `<${t}>`).join(", ")}. Lo que no está en el censo no entra; si es legítima, se admite AÑADIÉNDOLA al censo con su evidencia, no colándola.`;
+    /* El cardinal se DERIVA (§regla 9): estaba cableado a «43» y el Tramo F3-5
+       lo dejó en 46 sin que nada protestara — un número recordado dentro del
+       mensaje de la propia guarda. El de atributos ya se derivaba. */
+    return `§3.1: etiqueta(s) fuera del censo de ${ETIQUETAS_CENSADAS.length} — ${etiquetas.map((t) => `<${t}>`).join(", ")}. Lo que no está en el censo no entra; si es legítima, se admite AÑADIÉNDOLA al censo con su evidencia, no colándola.`;
   const hosts = hostsFueraDeAllowlist(valor);
   if (hosts.length)
     return `§3.3b: host(s) de iframe fuera de la allowlist firmada — ${hosts.join(", ")}. Un host nuevo entra por el procedimiento de alta (HOSTS_PERMITIDOS), no en silencio.`;
