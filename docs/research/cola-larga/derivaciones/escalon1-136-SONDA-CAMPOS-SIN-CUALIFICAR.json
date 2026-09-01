@@ -1,0 +1,485 @@
+{
+ "meta": {
+  "tanda": "136.ª · PASO 0 punto 3 + ESCALÓN 1",
+  "fecha": "2026-09-01",
+  "estado": "socket 55432 ECONNREFUSED — corrida OFFLINE, sin DB",
+  "sabotaje": null,
+  "contesta": [
+   "los 4 heredados reproducen o no",
+   "los dos modelos en la MISMA unidad: bloques · campos · instancias",
+   "¿queda contenido SIN SITIO al llevar las 9 de `paginas` a `formulario-arq`?",
+   "¿está `formulario-arq` sobre-generalizado?"
+  ],
+  "noContesta": [
+   "NO decide: el expediente es del propietario",
+   "el nº de FILAS sembradas — es DB, y el socket está cerrado: SIN COMPROBAR",
+   "la geometría ni el render de ninguno de los dos modelos",
+   "si el extractor DEBE tratar lo que se pierda: dice si hoy lo nombra o lo pierde"
+  ]
+ },
+ "unidad": {
+  "nota": "bloque, campo e instancia son TRES cosas: sus cardinales no se comparan entre sí",
+  "codigo": {
+   "bloques": 1,
+   "campos": 24,
+   "instanciasCatalogo": 9,
+   "nombres": [
+    "html",
+    "ritmo",
+    "mt",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "mb",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "pb",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "anchoPct"
+   ]
+  },
+  "formularioArq": {
+   "bloques": 1,
+   "campos": 44,
+   "instanciasCatalogo": 1,
+   "nombres": [
+    "pieza",
+    "ritmo",
+    "mb",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "pt",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "mt",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "pb",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "destino",
+    "metodo",
+    "textoBoton",
+    "campos",
+    "nombre",
+    "tipo",
+    "etiqueta",
+    "requerido",
+    "opciones",
+    "valor",
+    "texto",
+    "ocultos",
+    "nombre",
+    "valor"
+   ]
+  },
+  "codigoArq": {
+   "bloques": 1,
+   "campos": 31,
+   "instanciasCatalogo": 0,
+   "nombres": [
+    "pieza",
+    "ritmo",
+    "mb",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "pt",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "mt",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "pb",
+    "valor",
+    "unidad",
+    "movilValor",
+    "movilUnidad",
+    "valor767",
+    "unidad767",
+    "contenido"
+   ]
+  }
+ },
+ "paso0Punto3": {
+  "heredado": [
+   {
+    "que": "instancias de `codigo` en `paginas`",
+    "esperado": 9,
+    "medido": 9,
+    "reproduce": true
+   },
+   {
+    "que": "`codigo.html` es `type:code` SIN validate",
+    "esperado": "code/false",
+    "medido": "code/false",
+    "reproduce": true
+   },
+   {
+    "que": "tokens fuera del censo en los 9",
+    "esperado": 21,
+    "medido": 21,
+    "reproduce": true
+   },
+   {
+    "que": "bloquearían si se les pusiera el validador",
+    "esperado": 9,
+    "medido": 9,
+    "reproduce": true
+   }
+  ],
+  "censo": {
+   "etiquetas": 46,
+   "atributos": 101
+  },
+  "tokensFueraDelCenso": [
+   "<button>",
+   "<fieldset>",
+   "<form>",
+   "<input>",
+   "<label>",
+   "<legend>",
+   "<option>",
+   "<select>",
+   "<textarea>",
+   "action",
+   "data-autofill",
+   "data-sitekey",
+   "data-styles-version",
+   "for",
+   "method",
+   "name",
+   "novalidate",
+   "placeholder",
+   "required",
+   "selected",
+   "value"
+  ],
+  "listaDelComentario": {
+   "declarados": 20,
+   "hallados": 20,
+   "soloEnDato": [
+    "textarea"
+   ],
+   "soloEnComentario": [],
+   "nota": "el 21 es DERIVADO de los 9 htmls; el 20 del comentario es la clase `formulario` enumerada a mano. Dos conjuntos, no dos lecturas del mismo"
+  }
+ },
+ "validacion": {
+  "codigo": {
+   "campo": "html",
+   "tipo": "code",
+   "valida": false,
+   "via": "type:code"
+  },
+  "codigoArq": {
+   "campo": "contenido",
+   "tipo": "code",
+   "valida": true,
+   "via": "campoHtml"
+  },
+  "formularioArq": {
+   "campo": "(tipado)",
+   "tipo": "array/select/text",
+   "valida": "por TIPO, no por censo HTML"
+  },
+  "bloqueanSiSeLesPusieraElValidador": "9 de 9"
+ },
+ "testigos": {
+  "T1_sabeVerLoQueCabe": {
+   "ok": true,
+   "detalle": {
+    "campos": [
+     6,
+     6
+    ],
+    "ocultos": [
+     12,
+     12
+    ],
+    "opciones": [
+     282,
+     282
+    ],
+    "textoBoton": [
+     "DESCARGAR",
+     "DESCARGAR"
+    ],
+    "destino": [
+     "https://kunak.activehosted.com/proc.php",
+     "https://kunak.activehosted.com/proc.php"
+    ],
+    "metodo": [
+     "POST",
+     "POST"
+    ]
+   }
+  },
+  "T2_sabeVerLoQueNoCabe": {
+   "ok": true,
+   "nombrados": [
+    "<input type=file> — el modelo expresa texto · seleccion · casillas"
+   ]
+  }
+ },
+ "contenido": {
+  "formEntero": "9 de 9",
+  "nombrados": 0,
+  "perdidosEnSilencio": 1,
+  "instanciasConPerdida": [
+   0
+  ],
+  "porInstancia": [
+   {
+    "i": 0,
+    "chars": 20410,
+    "esFormEntero": true,
+    "controlesEnDoc": 23,
+    "camposEmitidos": 8,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Enviar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [
+     "<textarea name=field[23]>"
+    ],
+    "silenciosos": [
+     "<textarea name=field[23]>"
+    ]
+   },
+   {
+    "i": 1,
+    "chars": 25591,
+    "esFormEntero": true,
+    "controlesEnDoc": 21,
+    "camposEmitidos": 7,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Descargar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [],
+    "silenciosos": []
+   },
+   {
+    "i": 2,
+    "chars": 24253,
+    "esFormEntero": true,
+    "controlesEnDoc": 20,
+    "camposEmitidos": 6,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Enviar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [],
+    "silenciosos": []
+   },
+   {
+    "i": 3,
+    "chars": 24253,
+    "esFormEntero": true,
+    "controlesEnDoc": 20,
+    "camposEmitidos": 6,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Enviar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [],
+    "silenciosos": []
+   },
+   {
+    "i": 4,
+    "chars": 24250,
+    "esFormEntero": true,
+    "controlesEnDoc": 20,
+    "camposEmitidos": 6,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Enviar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [],
+    "silenciosos": []
+   },
+   {
+    "i": 5,
+    "chars": 24254,
+    "esFormEntero": true,
+    "controlesEnDoc": 20,
+    "camposEmitidos": 6,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Enviar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [],
+    "silenciosos": []
+   },
+   {
+    "i": 6,
+    "chars": 24234,
+    "esFormEntero": true,
+    "controlesEnDoc": 20,
+    "camposEmitidos": 6,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Enviar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [],
+    "silenciosos": []
+   },
+   {
+    "i": 7,
+    "chars": 25046,
+    "esFormEntero": true,
+    "controlesEnDoc": 20,
+    "camposEmitidos": 6,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Enviar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [],
+    "silenciosos": []
+   },
+   {
+    "i": 8,
+    "chars": 25046,
+    "esFormEntero": true,
+    "controlesEnDoc": 20,
+    "camposEmitidos": 6,
+    "ocultosEmitidos": 12,
+    "textoBoton": "Enviar",
+    "destino": "https://kunak.activehosted.com/proc.php",
+    "metodo": "POST",
+    "nombrados": [],
+    "perdidos": [],
+    "silenciosos": []
+   }
+  ]
+ },
+ "direccionB": {
+  "metodo": {
+   "enum": [
+    "POST",
+    "GET"
+   ],
+   "visto": [
+    "POST"
+   ],
+   "sinEjercer": [
+    "GET"
+   ]
+  },
+  "tipo": {
+   "enum": [
+    "texto",
+    "seleccion",
+    "casillas"
+   ],
+   "visto": [
+    "seleccion",
+    "texto",
+    "casillas"
+   ],
+   "sinEjercer": []
+  },
+  "n": 10
+ },
+ "campos": {
+  "comunes": [
+   "ritmo",
+   "mt",
+   "valor",
+   "unidad",
+   "movilValor",
+   "movilUnidad",
+   "valor767",
+   "unidad767",
+   "mb",
+   "valor",
+   "unidad",
+   "movilValor",
+   "movilUnidad",
+   "valor767",
+   "unidad767",
+   "pb",
+   "valor",
+   "unidad",
+   "movilValor",
+   "movilUnidad",
+   "valor767",
+   "unidad767"
+  ],
+  "soloCodigo": [
+   "html",
+   "anchoPct"
+  ],
+  "soloFormularioArq": [
+   "pieza",
+   "pt",
+   "destino",
+   "metodo",
+   "textoBoton",
+   "campos",
+   "nombre",
+   "tipo",
+   "etiqueta",
+   "requerido",
+   "opciones",
+   "texto",
+   "ocultos",
+   "nombre"
+  ]
+ },
+ "sembradas": {
+  "paginas": true,
+  "arquetipos": true,
+  "via": "grep sobre scripts/seed/seed.mjs",
+  "filas": "SIN COMPROBAR — socket 55432 ECONNREFUSED"
+ },
+ "veredicto": "MEDIDO"
+}
