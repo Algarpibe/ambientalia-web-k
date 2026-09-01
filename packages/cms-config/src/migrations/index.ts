@@ -24,6 +24,7 @@ import * as migration_20260827_110011_f3_4_autores_y_firmas from './20260827_110
 import * as migration_20260827_114716_f3_4_firmas_doc_cientifico from './20260827_114716_f3_4_firmas_doc_cientifico';
 import * as migration_20260831_014031_f3_5_medida_breakpoint_767 from './20260831_014031_f3_5_medida_breakpoint_767';
 import * as migration_20260831_015813_f3_5_arquetipos from './20260831_015813_f3_5_arquetipos';
+import * as migration_20260901_230502_f3_5_formulario_arq from './20260901_230502_f3_5_formulario_arq';
 
 export const migrations = [
   {
@@ -154,6 +155,11 @@ export const migrations = [
   {
     up: migration_20260831_015813_f3_5_arquetipos.up,
     down: migration_20260831_015813_f3_5_arquetipos.down,
-    name: '20260831_015813_f3_5_arquetipos'
+    name: '20260831_015813_f3_5_arquetipos',
+  },
+  {
+    up: migration_20260901_230502_f3_5_formulario_arq.up,
+    down: migration_20260901_230502_f3_5_formulario_arq.down,
+    name: '20260901_230502_f3_5_formulario_arq'
   },
 ];

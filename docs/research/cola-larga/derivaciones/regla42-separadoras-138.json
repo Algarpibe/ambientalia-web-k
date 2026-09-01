@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "fecha": "2026-09-01T23:09:55.642Z",
+    "sonda": "regla42-separadoras-138",
+    "migracion": "20260901_230502_f3_5_formulario_arq"
+  },
+  "sentencias": {
+    "dropTableConIf": 4,
+    "dropTypeConIf": 14,
+    "dropTableSinIf": 4,
+    "dropTypeSinIf": 14
+  },
+  "precondicion": {
+    "tablasFormulario": 4,
+    "adjudica": true
+  },
+  "casos": {
+    "control": {
+      "etiqueta": "CONTROL · con IF EXISTS",
+      "falla": false,
+      "error": null
+    },
+    "sabotaje": {
+      "etiqueta": "SABOTAJE · sin IF EXISTS",
+      "falla": false,
+      "error": null
+    },
+    "dobleConIf": {
+      "etiqueta": "DOBLE · con IF EXISTS",
+      "falla": false,
+      "error": null
+    },
+    "dobleSinIf": {
+      "etiqueta": "DOBLE · sin IF EXISTS",
+      "falla": true,
+      "error": "42P01 table \"arquetipos_blocks_formulario_arq_campos_opciones\" does not exist"
+    }
+  },
+  "veredicto": {
+    "separadorasPrimeraPasada": 0,
+    "separadorasSegundaPasada": 1,
+    "denominador": 1,
+    "emitePatronRegla42": false,
+    "esInstanciaDeRegla42": false,
+    "controlCorreLimpio": true,
+    "lecturaRegla42": "NO emite el patrón `DROP TABLE … CASCADE` + `DROP CONSTRAINT`: esta migración NO es instancia de §regla 42, y el cardinal de la clase SIGUE EN 4",
+    "lecturaIfExists": "el IF EXISTS SÍ compra algo, y es IDEMPOTENCIA: sin él una segunda pasada falla con 42P01. No es un arreglo de §regla 42 — es una guarda distinta, y la separadora está en la segunda pasada, no en la primera"
+  }
+}
