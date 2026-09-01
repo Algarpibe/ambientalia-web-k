@@ -1,0 +1,66 @@
+==============================================================================
+135.ª · BARRIDO DE §regla 12 — REGLA vs EVENTO, con los DOS cruces y su NEGATIVO
+==============================================================================
+
+── TESTIGOS DEL CRUCE (antes de creerse ningún número) ──
+  T+ · un enunciado que SE SABE escrito en CLAUDE.md
+      espera «ya escrito» → «ya escrito» ✓
+  T- · un enunciado INVENTADO que no puede estar
+      espera «NO está» → «NO está» ✓
+  T± · un TITULAR EN MAYÚSCULAS que lleva meses escrito
+      espera «ya escrito» → «ya escrito» ✓
+  HEAD legible para el antes/después: SÍ ✓
+
+── CANDIDATOS ──
+
+  R1 · REGLA
+      Cuando una tanda ascienda un defecto de EVENTO a CLASE, el cardinal de la clase se DERIVA barriendo el repo EN ESE MOMENTO — no se hereda de las instancias que la descubrieron. Las instancias que descubren una clase son las que alguien tenía delante, no las que hay.
+      POR QUÉ: Medido hoy: §regla 42 se fichó como CLASE con 2 instancias (`autores` 2026-08-27 · `arquetipos` 2026-08-31) y el barrido da 4. Las otras 2 —`registro_slugs` 2026-08-04 y `f3_3_paginas_cola_larga` 2026-08-23— son ANTERIORES a las dos que la descubrieron, o sea que llevaban meses expuestas mientras la clase ya estaba escrita. Es §regla 9 —un recuento afirmado de memoria— aplicada al CARDINAL DE UNA CLASE, y el sitio donde más engaña: el documento dice «es una clase, luego toda migración futura la hereda» y nadie mira las pasadas.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §regla 9 (un recuento afirmado de memoria se barre) / §regla 42
+      ⚠ el laxo SOBRE-CASA: sus palabras están, el enunciado no.
+
+  R2 · REGLA
+      Un control cuyo testigo es un DEFECTO CONOCIDO no puede leer su propia ausencia: «no lo encuentro porque el objeto se arregló» y «no lo encuentro porque no sé buscarlo» son la MISMA salida, y las dos caen en rojo. El testigo se ata a un estado POSITIVO que las separa — «EN ALCANCE y protegido», no «expuesto».
+      POR QUÉ: Medido en esta tanda, sobre el barrido que la tanda escribió: los dos testigos de §regla 42 salieron NO DETECTADOS y las dos causas estaban vivas a la vez —el regex podía no casar, y de hecho los dos ya llevaban `IF EXISTS`—. Atado a «EN ALCANCE y PROTEGIDO», el testigo distingue «fuera del patrón» de «arreglado» y el control adjudica. Es §sondas 4 —un selector que no casa con nada no es un cero— con el cero puesto en el TESTIGO DE UN CONTROL, y §regla 5ter con la polaridad puesta en vez del valor.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §regla 5ter / §regla 28c (el control por caso conocido de antemano)
+      ⚠ el laxo SOBRE-CASA: sus palabras están, el enunciado no.
+
+  E1 · EVENTO
+      §regla 42 tiene 4 instancias, no 2: 2 arregladas (`autores` L9 · `arquetipos` L660, con IF EXISTS) y 2 EXPUESTAS (`20260804_122225_registro_slugs.ts` · `20260823_131718_f3_3_paginas_cola_larga.ts`). Denominador: 12 migraciones en alcance de 26.
+      POR QUÉ: Tiene fecha, cardinal y nombre propio de fichero: es un hallazgo sobre ESTE repo.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: PENDIENTES-QA.md §135.ª + PLAN-FASE-3.md
+
+  E2 · EVENTO
+      La premisa de F3-5-CODE-DIVERGE contestada por config: `MODULO_CODIGO.html` de `paginas` es `{type:'code'}` SIN `validate` (0 campos de contenido validados, 18 de ritmo); `codigo-arq.contenido` SÍ lo lleva (1 de contenido, 12 de ritmo). Denominador entero: 448 campos con `validate` en 20 colecciones.
+      POR QUÉ: Cardinales de este esquema con su fecha: evento. La regla que lo gobierna ya está escrita.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: PENDIENTES-QA.md §135.ª + ESQUEMA-CMS.md §2o.9
+
+  E3 · EVENTO
+      El socket 127.0.0.1:55432 sigue en ECONNREFUSED con el binding declarado (`55432`) y NO publicado (`{"5432/tcp":[]}`), nadie escuchando en el puerto y el volumen ANÓNIMO `2ebbe245…`. Tripwires: KV-01 al 21.2 % y KV-08 al 100 % de 339 658 chars = 2.26× el aviso. 219 sondas.
+      POR QUÉ: Estado de la instalación y del árbol de hoy: evento. Los cinco canales ya son regla escrita.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. ya estaba
+      DESTINO: PENDIENTES-QA.md §135.ª
+
+── VEREDICTO ──
+  candidatos ................ 5
+  · REGLA ................... 2
+      · YA escritas ......... 0
+      · SUBEN a CLAUDE.md ... 2 :: R1, R2
+  · EVENTO (se quedan) ...... 3
+  (el número se escribe aunque sea cero: «no encontré» y «no barrí» son la misma salida)
+
+  ✅ los tres testigos pasan y HEAD es legible — el cruce ADJUDICA

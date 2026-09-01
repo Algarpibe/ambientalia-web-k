@@ -7055,6 +7055,35 @@ desbloquea 22 de 22, la pérdida visible es 0 y su reversa sigue siendo el lado
 barato—. Lo que el hallazgo añade es **una pregunta nueva sobre `paginas`**, no
 un defecto en la resolución de `arquetipos`.
 
+> ✏️ **AMPLIADO 2026-09-01 (135.ª) — el esquema NO cambia, cambia lo que se SABE
+> de él: POR QUÉ los 9 pudieron sembrarse, contestado CAMINANDO LA CONFIG.**
+>
+> El expediente dice que los 9 *«bloquearían 9 de 9»* y que están **sembrados**,
+> y esas dos frases juntas admiten dos lecturas que se escriben igual. Dirimidas
+> las dos direcciones (`derivaciones/premisa-code-135.{mjs,json}`, offline):
+>
+> | dirección | veredicto |
+> |---|---|
+> | ¿el campo NO lleva validador, o lo lleva y algo los deja pasar? | **NO lo lleva.** `MODULO_CODIGO.html` es `{type:"code", required:true}` **sin `validate`** (`bloques/paginas.ts`). |
+> | ¿está SOBRE-GENERALIZADO el «9 de 9»? | **No lo está — pero es un CONTRAFÁCTICO**: mide qué pasaría *si* a `paginas` se le pusiera `validaHtmlCorpus`. No es una afirmación sobre la siembra. |
+>
+> **Denominador entero, recorriendo todos los ejes en una corrida** (§regla 27):
+> **448 campos con `validate` en 20 colecciones** — `paginas` 214 · `arquetipos`
+> 153 · `articulos-kb` 61 · **7 colecciones a CERO, nombradas**.
+>
+> **Y la separadora se publica con LOS DOS CUBOS**, porque medida al nivel del
+> BLOQUE la pregunta queda absorbida por los campos de ritmo:
+>
+> | bloque | ritmo con `validate` | **CONTENIDO con `validate`** |
+> |---|---|---|
+> | `paginas · [codigo]` | 18 | **0** |
+> | `arquetipos · [codigo-arq]` | 12 | **1** (`contenido`) |
+>
+> **Consecuencia operativa, y es la que decidía una tanda:** restaurar el
+> entorno con el **pipeline completo** tras un reset **NO rompe `paginas`** por
+> este eje. La divergencia C7 sigue abierta y sigue siendo del propietario; lo
+> que se cierra es la duda sobre si era seguro re-sembrar.
+
 ---
 
 **La decisión ORIGINAL, conservada como expediente:** qué se hace con las 5

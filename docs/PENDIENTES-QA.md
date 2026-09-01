@@ -1,5 +1,158 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ §135.ª · **EL SOCKET SIGUE CERRADO — Y LA CLASE QUE EL ESCALÓN 1 IBA A HEREDAR TENÍA EL DOBLE DE INSTANCIAS DE LAS QUE DECÍA, DOS DE ELLAS ANTERIORES A SU PROPIO DESCUBRIMIENTO** — 2026-09-01
+
+**Estado: PASO 0 completo (puntos 1, 2 y 3) · ESCALONES 1, 2 y 3 BLOQUEADOS por
+el entorno, igual que en la 134.ª.** Lo que esta tanda añade es el trabajo
+OFFLINE de los escalones bloqueados: la premisa que decide el ESCALÓN 3 y el
+barrido de la clase que el ESCALÓN 1 iba a heredar.
+
+### PASO 0 punto 2 · el socket, con sus cinco canales — SIN CAMBIO
+
+| canal | dice |
+|---|---|
+| `docker ps` | `Up 35 minutes` · `Ports: 5432/tcp` **sin binding al host** |
+| `pg_isready` **dentro** | *accepting connections* |
+| `HostConfig.PortBindings` (**declarado**) | `{"5432/tcp":[{"HostPort":"55432"}]}` |
+| `NetworkSettings.Ports` (**publicado**) | `{"5432/tcp":[]}` ← **vacío** |
+| **el socket a `127.0.0.1:55432`** | **`ECONNREFUSED`** |
+
+Añadido a lo que ya midió la 134.ª: **nadie escucha en 55432** (`netstat`, cero
+`LISTENING`), que confirma por el otro lado que no es «puerto ocupado» — es que
+no hay publish. Volumen **ANÓNIMO** `2ebbe245…`: sobrevive a
+`stop`/`start`/`restart` y **muere con una recreación**, así que
+`compose up --force-recreate` **no** es la salida. Sigue siendo del proxy de
+puertos de Docker Desktop, y **es del propietario**.
+
+**No se intentó `restart`**: la 134.ª ya midió que no republica, y repetirlo
+sería gastar el mismo negativo dos veces.
+
+### PASO 0 punto 3 · LA PREMISA DE `F3-5-CODE-DIVERGE`, contestada por CONFIG
+
+`derivaciones/premisa-code-135.{mjs,json}` — offline, no toca DB. **Las dos
+direcciones**, porque con el marco de una sola el hallazgo cabe en «no hay nada»:
+
+| dirección | veredicto |
+|---|---|
+| **(a)** ¿el campo lleva validador, o algo lo deja pasar? | **NO lo lleva.** `MODULO_CODIGO.html` es `{type:"code", required:true}` **sin `validate`**. Por eso sembraron. |
+| **(b)** ¿está sobre-generalizado el «9 de 9»? | **No lo está — pero es un CONTRAFÁCTICO.** Mide *«si a `paginas` se le pusiera el validador de `arquetipos`, bloquearía 9 de 9»*. Cierto de esa hipótesis, y **no** una afirmación sobre la siembra. |
+
+**Denominador entero** (§regla 27, recorriendo todos los ejes en una corrida):
+**448 campos con `validate` en 20 colecciones** — `paginas` 214 · `arquetipos`
+153 · `articulos-kb` 61 · y **7 colecciones a CERO, nombradas**.
+
+> **CONSECUENCIA PARA EL ESCALÓN 3: el pipeline completo es SEGURO por este
+> eje.** `paginas` no valida su `codigo`, así que restaurar el entorno tras un
+> reset **no lo rompe** y **no hace falta camino alternativo**.
+
+⚠ **Y la sonda que lo contestó llegó con un defecto que sólo cazó su control**
+(congelada `premisa-code-135-SONDA-MIDIO-AL-NIVEL-DEL-BLOQUE.json`): la v1
+preguntaba *«¿tiene el BLOQUE algún campo con `validate`?»* y publicó **18 en
+`paginas.[codigo]`** — los 18 son campos de **RITMO** (`ritmo.mt.unidad`,
+`movilUnidad`, `unidad767`…), que llevan validador por otro motivo y **absorben
+la pregunta**. Es §*la causa común: el NIVEL al que se mide* con el contenedor
+puesto en el BLOQUE. Estrechada al **campo de contenido**, que es donde vive la
+pregunta, el reparto sale con **los dos cubos publicados**:
+
+| bloque | ritmo con `validate` | **CONTENIDO con `validate`** |
+|---|---|---|
+| `paginas · [codigo]` | 18 | **0** |
+| `arquetipos · [codigo-arq]` | 12 | **1** (`contenido`) |
+
+### ESCALÓN 1 · lo que se pudo hacer sin socket, y lo que apareció
+
+`migrate:create` introspecciona la DB, así que **la migración de
+`formulario-arq` no se pudo crear**. Confirmada su premisa desde el fuente:
+última migración `20260831_015813_f3_5_arquetipos.ts`, `formulario-arq` en
+`bloques/arquetipos.ts:496`, y **cero migraciones lo mencionan**.
+
+Lo que sí es fuente pura es **barrer la clase que esa migración iba a heredar**
+—`derivaciones/regla42-barrido-135.{mjs,json}`—, y ahí está el hallazgo:
+
+> **§regla 42 decía «dos instancias, luego es una clase». Son CUATRO.**
+
+| estado | migración | fecha |
+|---|---|---|
+| ✅ arreglada (`IF EXISTS`) | `…_f3_4_autores_y_firmas.ts` L9 | 2026-08-27 |
+| ✅ arreglada (`IF EXISTS`) | `…_f3_5_arquetipos.ts` L660 | 2026-08-31 |
+| ❌ **EXPUESTA** | `20260804_122225_registro_slugs.ts` L31 | **2026-08-04** |
+| ❌ **EXPUESTA** | `20260823_131718_f3_3_paginas_cola_larga.ts` L543 | **2026-08-23** |
+
+**Denominador con sus cubos**: 26 ficheros · 12 **en alcance** · 14 **fuera de
+alcance** (su `down` no tiene `DROP TABLE`, declarados aparte porque *«fuera de
+alcance» no es «limpia»*) · 0 sin `down`.
+
+**Y el orden es lo que lo convierte en regla: las dos expuestas son ANTERIORES
+a las dos que descubrieron la clase.** El enunciado *«toda migración FUTURA la
+hereda»* apuntaba hacia adelante y **nadie leyó hacia atrás**.
+
+**Las dos se FICHAN, no se arreglan** (§regla 30): *«¿revierte limpia?»* sólo
+tiene respuesta **antes de que entre el dato**, y las dos ya lo tienen encima.
+Con el socket cerrado el arreglo no se podría verificar — sería escribir una
+reversa sin poder probarla, que es justo lo que §regla 30 prohíbe.
+
+⚠ **Este barrido también llegó con su control caído, y en la dirección
+interesante** (congelada
+`regla42-barrido-135-SONDA-CONTROL-ESPERABA-EL-ESTADO-CON-DEFECTO.json`): la v1
+exigía que los dos testigos salieran **EXPUESTOS** y salieron los dos «NO
+DETECTADO». No era el patrón — **ya estaban arreglados**. Es §regla 5ter
+literal, y de ahí sale la regla R2 de abajo.
+
+### Los tripwires de carga, re-derivados
+
+| | valor |
+|---|---|
+| `CLAUDE.md` **cargado** (`git show HEAD:CLAUDE.md`) | **339 658 chars** = **2.26×** el aviso de 150 000 |
+| `KV-01 · 7HQMPD` | anclado **1** · libre 3 · **21.2 %** |
+| `KV-08 · 5ZMCFR` | anclado **1** · libre 2 · **100 %** |
+
+Truncado **REFUTADO** otra vez, ahora a 2.26× (antes 1.84×). Y la búsqueda por
+`indexOf` volvió a devolver **la posición de la documentación** (75.2 % para
+KV-08) — §regla 19 cobrándose sobre quien la estaba aplicando; el ancla a línea
+completa da 1 y 1.
+
+**Otros números del PASO 0, derivados y no citados:** **219 sondas** compilan y
+declaran su mínimo (`qa:lib`, EXIT 0) · **1560 congeladas** en
+`scripts/qa/medidas/` · manifiesto `apps/web/.next/prerender-manifest.json`
+(mtime 31-ago 14:54) con **429 rutas** · **0 sondas en vuelo** y 0 servidores de
+este repo (comprobado por PROCESOS, §regla 18, no por `git status`).
+
+### Barrido de §regla 12 — 2 reglas suben, y se verificó que LLEGARON
+
+`derivaciones/regla12-barrido-135.{mjs,json,log}` · **5 candidatos · 2 REGLA ·
+3 EVENTO**. Cruce **ENDURECIDO mandando** y el laxo al lado —que **sobre-casó en
+3 de 5**—, con los **tres testigos** (T+ prosa · T− inventado · T± titular en
+CAPS) y el **antes/después contra HEAD**:
+
+| | en HEAD | tras escribir |
+|---|---|---|
+| **R1** · el cardinal de una clase se DERIVA al ascenderla | NO estaba | **ya escrito** ✓ |
+| **R2** · un control cuyo testigo es un defecto conocido no puede leer su ausencia | NO estaba | **ya escrito** ✓ |
+
+⚠ **Y R2 no llegó a la primera: el cruce dijo «NO está» con la regla ya
+escrita.** Tenía razón — el titular decía *«UN TESTIGO QUE ES un defecto
+conocido»* y el pre-registro declaraba *«UN CONTROL CUYO TESTIGO ES un defecto
+conocido»*. **La salida fue redactar como se pre-registró, no aflojar el
+cruce**: ajustar el `enunciadoClave` al texto de hoy habría sido §regla 21
+—escribir el defecto dentro de la guarda— y habría dejado «la escribí» y «aflojé
+el cruce» indistinguibles.
+
+### QUÉ QUEDA FUERA Y POR QUÉ
+
+| bloqueado | por |
+|---|---|
+| **ESCALÓN 1** — crear la migración y probar su reversa | `migrate:create` introspecciona la DB · socket ECONNREFUSED |
+| **ESCALÓN 2** — cablear `arquetipos` en `SEMBRADAS` | el efecto se mide CORRIENDO el sembrador, que necesita DB |
+| **ESCALÓN 3** — sembrar, diferencia simétrica, `clon-base` | DB |
+| el nº de tablas y que `arquetipos` siga a **0 filas** | DB — **la ventana de §regla 30 no se ha podido comprobar ni gastar** |
+
+> **La ventana de §regla 30 sigue abierta mientras `arquetipos` tenga 0 filas, y
+> esta tanda NO la ha cerrado** — no sembró nada. Pero **tampoco puede
+> afirmar que siga a 0**: eso es DB. Se declara **SIN COMPROBAR**, no «sigue
+> abierta».
+
+---
+
 ## ⛔ §134.ª · **EL SOCKET NO ABRE Y LOS TRES ESCALONES SE QUEDAN FUERA — PERO EL PUNTO 3 SÍ SE CONTESTA, Y LA SONDA QUE LO CONTESTÓ LLEGÓ CON DOS DEFECTOS** — 2026-09-01
 
 **Estado: PASO 0 completo · ESCALONES 1, 2 y 3 BLOQUEADOS por el entorno.**

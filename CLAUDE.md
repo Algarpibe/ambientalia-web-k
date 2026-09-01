@@ -5019,6 +5019,41 @@ dato real ES unánime —y a veces lo es— ese control **cae describiendo el
 resultado como si fuera una avería**, y manda a la tanda siguiente a arreglar un
 instrumento que funciona.
 
+⚠⚠ **(d) Y LA POLARIDAD DEL TESTIGO, QUE ES DONDE SE ROMPE EL «CASO CONOCIDO DE
+ANTEMANO» SIN QUE NADIE LO NOTE: UN CONTROL CUYO TESTIGO ES UN DEFECTO CONOCIDO
+NO PUEDE LEER SU PROPIA AUSENCIA (2026-09-01).**
+
+La mitad (c) dice que el control se ata a un **caso conocido de antemano** en
+vez de a la aritmética. Correcto — y **no dice de qué SIGNO tiene que ser ese
+caso**, que es la mitad que falta:
+
+> **Si el testigo es «este defecto está aquí», su ausencia tiene DOS causas y
+> las dos se escriben igual:** *«no lo encuentro porque el objeto se
+> ARREGLÓ»* y *«no lo encuentro porque NO SÉ BUSCARLO»*. Las dos caen en rojo,
+> las dos parecen una avería del instrumento, y **ninguna comprobación sobre el
+> resultado las separa** — porque el resultado es el mismo.
+
+**Medido, y en la misma corrida que lo produjo:** un barrido de §regla 42
+declaró como testigos las **dos instancias que la regla nombra**, esperando
+hallarlas EXPUESTAS. Salieron las dos **NO DETECTADAS**, y las dos causas
+estaban vivas a la vez: el regex podía no casar, y de hecho **las dos ya
+llevaban `IF EXISTS`** desde que se arreglaron. Es §regla 5ter —*arreglar el
+objeto caduca el control*— con **la polaridad** puesta en vez del valor, y
+§sondas 4 con el cero puesto en **el testigo de un control** en vez de en un
+selector.
+
+> **El testigo se ata a un estado POSITIVO que separe las dos causas.** Aquí:
+> **«EN ALCANCE y protegido»**, no «expuesto» — porque si el patrón no casara,
+> el testigo saldría *fuera de alcance*, que es una tercera salida distinta de
+> las otras dos. Y va **por partida doble, un testigo por estado**: uno que
+> demuestre que sabe ver lo ARREGLADO y otro que sabe ver lo EXPUESTO. Con uno
+> solo, un barrido que únicamente supiera decir «todo protegido» pasaría igual.
+
+**Y el corolario de lectura, que es el que ahorra la tanda:** cuando un testigo
+de defecto salga en rojo, **la primera hipótesis no es el instrumento NI el
+objeto — es que el defecto ya se arregló**. Se dirime mirando el fuente del
+testigo, que cuesta un `grep`, antes de tocar una línea del barrido.
+
 **29 · UN ÍNDICE CONSTRUIDO PARA UNA PREGUNTA NO CONTESTA OTRA — Y CUANDO SU
 LLAVE DEJA DE IDENTIFICAR NO DA ERROR: EMPAREJA MAL.** (2026-08-23)
 
@@ -5705,6 +5740,44 @@ toda migración que cree una colección nueva con esa relación **la hereda**.
 mano** antes de sembrar. Y se verifica **tabla a tabla con `diff`**, no con el
 total: dos tablas compensándose dan el mismo número (§*un cardinal es un
 contenedor*).
+
+> ⚠⚠ **Y LAS «DOS INSTANCIAS» DE ARRIBA SON CUATRO — CORREGIDO 2026-09-01, Y LA
+> LECCIÓN ES MÁS GRANDE QUE EL NÚMERO: CUANDO UNA TANDA ASCIENDA UN DEFECTO DE
+> EVENTO A CLASE, EL CARDINAL DE LA CLASE SE DERIVA BARRIENDO EL REPO EN ESE
+> MOMENTO.**
+>
+> > **Las instancias que descubren una clase son las que alguien tenía delante,
+> > no las que hay.** Así que un enunciado de la forma *«dos instancias, luego
+> > es una clase»* trae un cardinal **heredado del descubrimiento**, y se lee
+> > como si fuera el censo. Es §regla 9 —*un recuento afirmado de memoria se
+> > barre antes de usarse*— aplicada al **cardinal de una CLASE**, que es donde
+> > más engaña: el documento dice *«toda migración FUTURA la hereda»* y con eso
+> > **nadie mira las pasadas**.
+>
+> **Medido** (`derivaciones/regla42-barrido-135.{mjs,json}`, 26 migraciones ·
+> 12 en alcance · 14 fuera, declaradas): la clase tiene **4** instancias.
+>
+> | estado | migración | fecha |
+> |---|---|---|
+> | ✅ arreglada, con `IF EXISTS` | `…_f3_4_autores_y_firmas.ts` L9 | 2026-08-27 |
+> | ✅ arreglada, con `IF EXISTS` | `…_f3_5_arquetipos.ts` L660 | 2026-08-31 |
+> | ❌ **EXPUESTA** | `20260804_122225_registro_slugs.ts` L31 | **2026-08-04** |
+> | ❌ **EXPUESTA** | `20260823_131718_f3_3_paginas_cola_larga.ts` L543 | **2026-08-23** |
+>
+> **Y el orden es lo que lo hace regla: las dos expuestas son ANTERIORES a las
+> dos que descubrieron la clase.** Llevaban meses así mientras la clase ya
+> estaba escrita — o sea que el barrido nunca se hizo, porque el enunciado
+> *«toda migración futura»* apuntaba hacia adelante y nadie leyó hacia atrás.
+>
+> **Las dos se FICHAN, no se arreglan sobre la marcha** (§regla 30): *«¿revierte
+> limpia?»* sólo tiene respuesta **antes de que entre el dato**, y las dos ya lo
+> tienen encima. Arreglarlas sin poder correr su reversa es escribir un arreglo
+> que no se puede verificar.
+>
+> **Operativamente, y cuesta un barrido:** al escribir *«esto es una clase»*,
+> **deriva su cardinal en la misma tanda y publícalo con su denominador** — y
+> di explícitamente **cuántas instancias son ANTERIORES al descubrimiento**, que
+> es el número que dice si el barrido hacía falta.
 
 ---
 
