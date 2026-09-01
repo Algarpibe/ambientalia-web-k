@@ -6966,10 +6966,100 @@ Derivación: `derivaciones/bloqueos-f35-131.{mjs,log}`.
 
 ---
 
-## ⏸ §2o.9 · `CMS-6` · **EL CENSO DEL CAMPO RICO ANTE EL LOTE F3-5** — ⛔ **PENDIENTE DEL PROPIETARIO** (132.ª, 2026-09-01)
+## ✅ §2o.9 · `CMS-6` · **EL CENSO DEL CAMPO RICO ANTE EL LOTE F3-5** — **RESUELTO: A + C** (propietario, 2026-09-01; aplicado en la 133.ª)
 
-**La decisión:** qué se hace con las 5 clases de token que `validaHtmlCorpus`
-rechaza del lote F3-5. **El expediente DESCRIBE; la elección no es de la tanda.**
+> **LA RESOLUCIÓN, y va delante porque es lo único que hay que hacer:**
+>
+> · **A** — las **4 clases inertes** entran al censo como **Tramo F3-5**, con su
+>   dominio declarado: **23 tokens** (3 etiquetas · 20 atributos),
+>   `ETIQUETAS_CENSADAS` 43 → 46 y `ATRIBUTOS_CENSADOS` 81 → 101;
+> · **C** — `formulario` **NO entra**: sus 20 tokens quedan fuera y el contenido
+>   va **modelado**, en el bloque `formulario-arq` (`bloques/arquetipos.ts`).
+>
+> **Efecto medido**, no sólo escrito: 425 campos recorridos, **22 bloqueos → 1
+> campo** (`monitor-calidad-aire · codigo-arq.contenido`), que es el residuo que
+> la 132.ª predijo y el que C se lleva.
+
+### La CONDICIÓN DE CIERRE, pagada — la pérdida medida POR ELEMENTO
+
+El Tramo C de `HOSTS_PERMITIDOS` se firmó con *«cero pérdida medida»* y este
+expediente declaraba esa medición **sin hacer** (punto 3 de abajo). Hecha:
+`derivaciones/perdida-133.{mjs,json,log}` + 2 negativos.
+
+| qué | cardinal | lectura |
+|---|---|---|
+| **texto VISIBLE perdido** | **0 de 286** trozos | la unidad en la que §regla 1 se pronuncia. El clon ya los sirve verbatim |
+| contenido **VECINO** en el campo | **0 caracteres** | el campo **ES** el `<form>`: empieza en 0 y acaba en 24 681. Frontera limpia |
+| `div.g-recaptcha` + `data-sitekey` | 1 | desviación **YA ACEPTADA** antes de C (spec §2d: *«omitir en el clon»*) |
+| clases `_form*` del plugin | 26 | presentación; el clon pinta la suya (spec §2d) |
+| **`novalidate`** | **1** | atributo del plugin, **sin render** — lo introduce C |
+| **`data-styles-version="3"`** | **1** | metadato del plugin, **sin render** — lo introduce C |
+
+**Las dos referencias dan números distintos y se escriben las dos** (§*un
+denominador se escribe con su unidad*): contra el **CLON**, pérdida **0**;
+contra el **ORIGINAL**, **29 piezas** no expresadas, de las que **27 ya estaban
+perdidas antes de C** y **2 las introduce C**, ninguna con render.
+
+⚠ **Y el `id="_form_106_"` NO se pierde: se RECUPERA.** Los ocultos `u` y `f`
+valen los dos `106`, así que el render lo reconstruye como `_form_${u}_`. Antes
+de fichar una pérdida se comprueba si otra pieza del modelo ya la porta.
+
+### ⚠ Y lo que la comprobación reutilizada NO contesta — con su número
+
+El «¿queda contenido SIN SITIO?» de la 131.ª se reutilizó y **su veredicto no
+cambia: 0 en los dos mapeos**. Ese empate **no es evidencia a favor de C**:
+
+> Corrida con `et_pb_code → codigo-arq` y con `et_pb_code → formulario-arq`, las
+> dos congeladas salen **idénticas al bit**. **Instancias separadoras: 0.**
+
+Y el mecanismo, medido: N3 pregunta *«¿tiene el bloque un campo de la lista
+`contenido|titulo|texto|alt`?»* y **casa por NOMBRE**. `formulario-arq` trae un
+campo `texto` —el rótulo de una `<option>`, anidado en `opciones[]`—, así que
+pasa por coincidencia de nombre, no porque exprese el canal del módulo. **El
+verde es cierto de lo que mide y no adjudica C**; lo que adjudica C es el
+reparto por elemento de arriba (§*un verde vale lo que valen sus instancias
+separadoras, no lo que vale su recuento*).
+
+### ⚠⚠ Y LO QUE EL EXPEDIENTE DECLARABA SIN CONTESTAR, CONTESTADO: `F3-5-CODE-DIVERGE`
+
+El punto 2 de abajo —*«si otros arquetipos ya sembrados traen estas clases»*—
+tiene respuesta, y **cambia el marco de la decisión sin invalidarla**:
+
+| | `paginas` (F3-3, cola larga) | `arquetipos` (F3-5) |
+|---|---|---|
+| bloque del `et_pb_code` de Divi | `MODULO_CODIGO` (`slug: codigo`) | `CODIGO` (`slug: codigo-arq`) |
+| campo | `{type:"code"}` — **NO valida** | `campoHtml` — **SÍ valida** |
+| instancias | **9** | 1 |
+| ¿traen `<form>`? | **9 de 9**, todas a `kunak.activehosted.com` | 1 de 1 |
+| ¿bloquean? | **no** | **sí — los 2 bloqueos de CMS-6** |
+| ¿sembrado? | **sí** (`SEMBRADAS` + `CATALOGOS`) | pendiente |
+
+`MODULO_CODIGO` lleva su razón escrita: *«este módulo existe **precisamente**
+para meter lo que ese censo prohíbe —formularios, `<script>`, embebidos de
+terceros—»*. Y no se cree el comentario (§regla 3): corrido el MISMO validador
+sobre los 9 htmls ya modelados, **bloquean 9 de 9**.
+
+> **Lo que separa a las dos colecciones NO es su contenido: es qué validador se
+> les puso.** Los 2 bloqueos de CMS-6 son esa divergencia.
+
+**Consecuencia para el modelo, declarada y NO resuelta aquí:** con C aplicado,
+el mismo objeto —un formulario de ActiveCampaign dentro de un `et_pb_code`—
+queda modelado de **dos maneras**: HTML crudo en `paginas` (9 instancias,
+sembradas) y tipado en `arquetipos` (1). Eso es la forma de la **clase C7**
+(*dos definiciones de «lo mismo», las dos verdes mientras divergen*), y este
+repo la vigila en otros sitios. **La decisión de unificarlas es del propietario
+y no de una tanda**; queda fichada como `F3-5-CODE-DIVERGE` con estos números.
+
+⚠ **Y por qué esto NO reabre CMS-6:** la decisión A+C se sostiene tal cual —
+desbloquea 22 de 22, la pérdida visible es 0 y su reversa sigue siendo el lado
+barato—. Lo que el hallazgo añade es **una pregunta nueva sobre `paginas`**, no
+un defecto en la resolución de `arquetipos`.
+
+---
+
+**La decisión ORIGINAL, conservada como expediente:** qué se hace con las 5
+clases de token que `validaHtmlCorpus` rechaza del lote F3-5. **El expediente
+DESCRIBE; la elección no es de la tanda.**
 
 Acta con las cinco fichas: `PENDIENTES-QA.md` §132.ª.
 Derivaciones: `derivaciones/{paso0,clases,fichas}-132.{mjs,log,json}`.

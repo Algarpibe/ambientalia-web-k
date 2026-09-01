@@ -403,11 +403,149 @@ const VIDEO: Block = {
   fields: [...COMUNES_MODULO, { name: "url", type: "text", required: true }, subida("portada")],
 };
 
+/**
+ * ⚠⚠ **0 INSTANCIAS TRAS CMS-6 · C (133.ª, 2026-09-01), y se queda con su cero
+ * declarado en vez de borrarse.**
+ *
+ * Tenía 1 instancia en PRODUCTO y **esa instancia era un FORMULARIO entero** —
+ * el campo empieza en `<form` y acaba en `</form>`, 0 caracteres antes y 0
+ * después—. El propietario decidió que el formulario va por bloque TIPADO
+ * (`FORMULARIO`, abajo), así que este tipo se queda sin dato en el lote.
+ *
+ * **No se borra**, por dos razones y ninguna es inercia:
+ *   · el módulo `et_pb_code` de Divi existe y puede traer contenido que NO sea
+ *     un formulario; que el lote de 4 documentos no lo ejercite es un **SIN
+ *     PROBAR**, no una prueba de que el caso no exista;
+ *   · borrarlo cuesta una migración cuyo `down` está fichado como CLASE
+ *     (§regla 42: el generador emite el `DROP CONSTRAINT` detrás del
+ *     `DROP TABLE … CASCADE` que ya se lo llevó), y el encargo manda no tocar
+ *     definiciones de campo más allá de lo que C exija.
+ *
+ * ⚠ Y su `campoHtml` **sigue puesto**, que es lo que lo diferencia de
+ * `MODULO_CODIGO` (`bloques/paginas.ts`): aquél NO valida contra el censo del
+ * cuerpo rico —deliberadamente, *«este módulo existe precisamente para meter lo
+ * que ese censo prohíbe»*— y tiene **9 instancias, 9 de 9 formularios de
+ * ActiveCampaign, ya sembradas**. Los dos bloques modelan el MISMO módulo de
+ * Divi con validadores distintos, y eso está fichado como `F3-5-CODE-DIVERGE`
+ * (`ESQUEMA` §2o.9): no se resuelve aquí porque la decisión es del propietario.
+ */
 const CODIGO: Block = {
   slug: "codigo-arq",
   labels: { singular: "Código", plural: "Códigos" },
-  /* 1 instancia, en PRODUCTO. Contenedor de contenido ⇒ HTML crudo. */
   fields: [...COMUNES_MODULO, campoHtml("contenido", { requerido: true })],
+};
+
+/**
+ * ⚠⚠ **EL FORMULARIO — CMS-6 opción C, decisión del propietario (2026-09-01).**
+ *
+ * `formulario` **NO entra en la whitelist del cuerpo rico**: sus 20 tokens
+ * (`form` · `input` · `select` · `option` · `button` · `label` · `fieldset` ·
+ * `legend` · `action` · `method` · `for` · `name` · `value` · `placeholder` ·
+ * `required` · `novalidate` · `selected` · `data-autofill` · `data-sitekey` ·
+ * `data-styles-version`) quedan fuera con su evidencia, y el contenido entra
+ * **modelado**. Es lo que §3.3·T4 ya hace con los `<script>`: nodo tipado en
+ * vez de HTML crudo.
+ *
+ * **1 instancia**, `monitor-calidad-aire` (`et_pb_code_0`, dentro del popup
+ * `disenar-proyecto-form-esp`). El clon ya la sirve:
+ * `components/monitor/CtaGuiaProyecto.tsx`, spec §2c–2d de
+ * `monitor-calidad-aire/components/reutilizables.spec.md`.
+ *
+ * ── LA FORMA SE DERIVA DEL DATO, no se inventa ────────────────────────────
+ * | pieza servida | n | campo |
+ * |---|---|---|
+ * | `action` | 1 | `destino` |
+ * | `method` | 1 | `metodo` |
+ * | `<input>` visibles + `<select>` + `<fieldset>` | 5 + 2 + 1 | `campos[]` |
+ * | `<option>` | 280 | `campos[].opciones[]` |
+ * | `<label>` con texto | 7 | `campos[].etiqueta` |
+ * | `<input type=hidden>` | 12 | `ocultos[]` |
+ * | `<button>` | 1 | `textoBoton` |
+ *
+ * ── LO QUE SE PIERDE · PÉRDIDA DECLARADA CON SU CARDINAL (§regla 14) ──────
+ * Medida POR ELEMENTO, nunca por el total (§regla 34) —
+ * `derivaciones/perdida-133.{mjs,json,log}`:
+ *
+ * | qué | cardinal | por qué |
+ * |---|---|---|
+ * | texto VISIBLE | **0 de 286** | el clon ya sirve los 286 trozos, verbatim |
+ * | contenido VECINO en el campo | **0 caracteres** | el campo ES el `<form>`, de 0 a 24 681 |
+ * | `div.g-recaptcha` + `data-sitekey` | 1 | desviación **ya aceptada** antes de C (spec §2d, *«omitir en el clon»*) |
+ * | clases `_form*` del plugin | 26 | presentación; el clon pinta la suya (spec §2d) |
+ * | `novalidate` | **1** | atributo del plugin, **sin render** — lo introduce C |
+ * | `data-styles-version="3"` | **1** | metadato del plugin, **sin render** — lo introduce C |
+ *
+ * ⚠ **El `id="_form_106_"` NO se pierde: se RECUPERA** — los ocultos `u` y `f`
+ * valen los dos `106`, así que el render lo reconstruye como `_form_${u}_`.
+ * Antes de fichar una pérdida se comprueba si otra pieza del modelo ya la
+ * porta; si no, se ficha una pérdida que no existe.
+ *
+ * ⚠⚠ **Y `destino` GUARDA el endpoint de ActiveCampaign, que es un TERCERO.**
+ * Guardarlo no es postear a él: el clon manda el submit a `CONTACT_HREF`
+ * (spec §2d, decisión anterior a esta tanda). El campo existe para que el dato
+ * del original no se pierda, no para que el clon lo use — y esa diferencia
+ * entre *lo que el modelo guarda* y *lo que el render hace* se declara aquí
+ * porque desde el esquema no se ve.
+ *
+ * ⚠ **`n = 1`, y eso se declara** (§*un campo que ningún dato ejercita es un
+ * camino de render sin estrenar*): con una sola instancia, nada de lo que este
+ * bloque haga está probado por variación. Lo que sí está probado es que el dato
+ * CABE — medido pieza a pieza arriba, no inspeccionado.
+ */
+const FORMULARIO: Block = {
+  slug: "formulario-arq",
+  labels: { singular: "Formulario", plural: "Formularios" },
+  fields: [
+    ...COMUNES_MODULO,
+    { name: "destino", type: "text", required: true },
+    /* ⚠ SIN `conDefecto`, y es deliberado: con **n = 1** el único valor medido
+       es `POST`, y escribirlo como defecto convertiría una muestra en regla —
+       el mismo criterio con el que `MonoAncho` no cierra su rango al enum de lo
+       visto. Cuando haya una segunda instancia se sabrá si hay defecto. */
+    { name: "metodo", type: "select", required: true, options: ["POST", "GET"] },
+    { name: "textoBoton", type: "text", required: true },
+    {
+      name: "campos",
+      type: "array",
+      minRows: 1,
+      fields: [
+        /* El `name` SERVIDO, verbatim: `field[27]` no se normaliza a `pais`
+           porque es la llave que el destino espera (§fidelidad al dato). */
+        { name: "nombre", type: "text", required: true },
+        {
+          name: "tipo",
+          type: "select",
+          required: true,
+          /* El enum es el de los tipos OBSERVADOS, no el de HTML entero: una
+             cota es una muestra convertida en regla (§*el RANGO no es el enum
+             de lo visto*, al revés — aquí se declara que son los medidos). */
+          options: ["texto", "seleccion", "casillas"],
+        },
+        { name: "etiqueta", type: "text" },
+        { name: "requerido", type: "checkbox" },
+        {
+          name: "opciones",
+          type: "array",
+          fields: [
+            { name: "valor", type: "text" },
+            { name: "texto", type: "text", required: true },
+          ],
+        },
+      ],
+    },
+    {
+      /* Los 12 ocultos van con su `name` y su `value` verbatim: son el estado
+         de ActiveCampaign (`u` · `f` · `act=sub` · `or=<hash>` · 3 de UTM …).
+         Sin ellos el `<form>` del original no es reproducible, y §regla 1 se
+         pronuncia sobre lo servido, no sobre lo que se ve. */
+      name: "ocultos",
+      type: "array",
+      fields: [
+        { name: "nombre", type: "text", required: true },
+        { name: "valor", type: "text" },
+      ],
+    },
+  ],
 };
 
 /* ── Los TRES que el lote ESTRENA sobre la unión de `paginas` ─────────────── */
@@ -463,6 +601,10 @@ export const bloquesArquetipo: Block[] = [
   CTA,
   TABLA,
   GALERIA,
+  /* `FORMULARIO` va donde estaba el dato de `CODIGO`: es su instancia la que
+     pasa aquí (CMS-6 · C). `CODIGO` se queda detrás, con 0 instancias
+     declaradas y su razón escrita arriba. */
+  FORMULARIO,
   CODIGO,
   SLIDER,
 ];

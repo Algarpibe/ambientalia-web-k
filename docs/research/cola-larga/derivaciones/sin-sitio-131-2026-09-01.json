@@ -2,7 +2,7 @@
  "fecha": "2026-09-01",
  "tanda": "131.ª",
  "escalon": 1,
- "saboteada": "bloque-fuera",
+ "saboteada": null,
  "pregunta": "¿queda contenido SIN SITIO? — recorre el DOCUMENTO, no los campos",
  "alcance": {
   "docs": [
@@ -22,7 +22,7 @@
   {
    "ok": true,
    "nombre": "el MODELO se deriva del fuente, y los destinos de A_SLUG EXISTEN en la unión",
-   "detalle": "11 bloques · 11 tipos mapeados · 0 destinos muertos"
+   "detalle": "12 bloques · 11 tipos mapeados · 0 destinos muertos"
   },
   {
    "ok": true,
@@ -48,9 +48,7 @@
    "N1_fueraDeTodoModulo": 0,
    "N1_chars": 0,
    "N1_muestra": [],
-   "N2_tiposSinBloque": [
-    "et_pb_gallery"
-   ],
+   "N2_tiposSinBloque": [],
    "N3_canalesSinCampo": [],
    "N3_n": 0
   },
@@ -90,8 +88,8 @@
  ],
  "resumen": {
   "N1": 0,
-  "N2": 1,
+  "N2": 0,
   "N3": 0,
-  "sinSitio": 1
+  "sinSitio": 0
  }
 }

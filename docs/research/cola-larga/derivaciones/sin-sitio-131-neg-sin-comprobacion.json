@@ -1,5 +1,5 @@
 {
- "fecha": "2026-08-31",
+ "fecha": "2026-09-01",
  "tanda": "131.ª",
  "escalon": 1,
  "saboteada": "sin-comprobacion",
@@ -22,7 +22,7 @@
   {
    "ok": true,
    "nombre": "el MODELO se deriva del fuente, y los destinos de A_SLUG EXISTEN en la unión",
-   "detalle": "10 bloques · 11 tipos mapeados · 0 destinos muertos"
+   "detalle": "11 bloques · 11 tipos mapeados · 0 destinos muertos"
   },
   {
    "ok": true,

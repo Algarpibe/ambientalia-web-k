@@ -1,0 +1,135 @@
+{
+ "meta": {
+  "tanda": "133.ª",
+  "escalon": "ESCALÓN 2",
+  "fecha": "2026-09-01T14:13:14.801Z",
+  "saboteada": "solo-el-total"
+ },
+ "frontera": {
+  "campo": 24681,
+  "nForms": 1,
+  "antes": 0,
+  "despues": 0,
+  "vecino": 0
+ },
+ "cobertura": {
+  "piezas": [
+   {
+    "que": "`action` (destino)",
+    "n": 1,
+    "destino": "destino",
+    "nota": "https://kunak.activehosted.com/proc.php"
+   },
+   {
+    "que": "`method`",
+    "n": 1,
+    "destino": "metodo",
+    "nota": "POST"
+   },
+   {
+    "que": "`<label>` con texto",
+    "n": 7,
+    "destino": "campos[].etiqueta",
+    "nota": ""
+   },
+   {
+    "que": "`<input>` visibles",
+    "n": 5,
+    "destino": "campos[]",
+    "nota": ""
+   },
+   {
+    "que": "`<select>`",
+    "n": 2,
+    "destino": "campos[] tipo select",
+    "nota": ""
+   },
+   {
+    "que": "`<option>`",
+    "n": 280,
+    "destino": "campos[].opciones[]",
+    "nota": ""
+   },
+   {
+    "que": "`<input type=hidden>`",
+    "n": 12,
+    "destino": "ocultos[]",
+    "nota": "u f s c m act v or field[15][] field[44] field[45] field[46]"
+   },
+   {
+    "que": "`<button>` (texto)",
+    "n": 1,
+    "destino": "textoBoton",
+    "nota": "DESCARGAR"
+   },
+   {
+    "que": "`<fieldset>`+`<legend>`",
+    "n": 1,
+    "destino": "campos[] tipo casillas",
+    "nota": "Política de Privacidad y Suscripción"
+   },
+   {
+    "que": "`div.g-recaptcha` + `data-sitekey`",
+    "n": 1,
+    "destino": "PÉRDIDA",
+    "nota": "desviación YA aceptada: spec §2d «omitir en el clon»"
+   },
+   {
+    "que": "clases `_form*` (andamiaje)",
+    "n": 26,
+    "destino": "PÉRDIDA",
+    "nota": "presentación del plugin; el clon pinta la suya (spec §2d)"
+   },
+   {
+    "que": "`novalidate`",
+    "n": 1,
+    "destino": "PÉRDIDA",
+    "nota": "atributo del plugin"
+   },
+   {
+    "que": "`data-styles-version`",
+    "n": 1,
+    "destino": "PÉRDIDA",
+    "nota": "valor 3"
+   },
+   {
+    "que": "`id` del form",
+    "n": 1,
+    "destino": "RECUPERABLE de ocultos[]",
+    "nota": "_form_106_ = `_form_${u}_` con u=f=106"
+   }
+  ],
+  "expresadas": 311,
+  "perdidas": 29
+ },
+ "textoVisible": {
+  "trozos": 286,
+  "caracteres": 3205,
+  "fueraDelClon": []
+ },
+ "perdida": {
+  "contraElClon": {
+   "textoVisible": 0,
+   "funcional": 0
+  },
+  "contraElOriginal": {
+   "total": 29,
+   "yaAceptadaAntesDeC": 27,
+   "introduceC": 2
+  }
+ },
+ "sinSitioReutilizada": {
+  "veredictoPreC": 0,
+  "veredictoPostC": 0,
+  "separadoras": 0,
+  "pasaPor": [
+   "texto"
+  ],
+  "nota": "N3 casa por NOMBRE de campo; `formulario-arq` trae `texto` (rótulo de <option>). El verde no adjudica C."
+ },
+ "controles": {
+  "testigosVivos": 5,
+  "testigosTotal": 5,
+  "ok": false
+ }
+}

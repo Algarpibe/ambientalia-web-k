@@ -123,6 +123,24 @@ const A_SLUG = {
   dvmd_table_maker: "tabla-arq",
   et_pb_gallery: "galeria-arq",
 };
+/**
+ * ⚠⚠ OVERRIDE NOMBRADO, añadido en la 133.ª — el DEFECTO no cambia.
+ *
+ * CMS-6 · C mueve la instancia de `et_pb_code` a un bloque TIPADO
+ * (`formulario-arq`). Esta tabla sigue apuntando a `codigo-arq`, así que sin
+ * override esta sonda mide **el modelo PRE-C** y su verde no dice nada del
+ * post-C — §*una medida contesta las preguntas que se le hicieron, y su fichero
+ * no lleva escrito cuáles NO*.
+ *
+ * `MAPEO=post-c` la re-apunta y desvía la congelada, para que la corrida de la
+ * 131.ª se pueda seguir reproduciendo al bit (§regla 5).
+ */
+const MAPEO = process.env.MAPEO ?? null;
+if (MAPEO && MAPEO !== "post-c") throw new Error(`MAPEO desconocido: '${MAPEO}' (post-c)`);
+if (MAPEO === "post-c") {
+  A_SLUG.et_pb_code = "formulario-arq";
+  console.log("\n⚠ MAPEO=post-c — `et_pb_code` → `formulario-arq` (CMS-6 · C)\n");
+}
 const aSlug = new Map(Object.entries(A_SLUG));
 /* La guarda de la tabla: sus destinos tienen que EXISTIR en la union. */
 const destinosMuertos = Object.entries(A_SLUG).filter(([, s]) => !bloques.has(s) && !(/bloque-fuera|sin-comprobacion/.test(SABOTAJE ?? "") && s === "galeria-arq"));
@@ -313,10 +331,34 @@ P(
 );
 P("=".repeat(78));
 
-const out = join(DERIV, SABOTAJE ? `sin-sitio-131-neg-${SABOTAJE}.json` : "sin-sitio-131.json");
-writeFileSync(
-  out,
-  JSON.stringify(
+/**
+ * ⚠⚠ LA GUARDA DE §REGLA 5, QUE ESTA SONDA NO TENÍA — y se pagó en la 133.ª.
+ *
+ * `derivaciones/` es una de las DOS FUGAS que `w()` no tapa: aquí había un
+ * `writeFileSync` pelado, así que **la corrida que VERIFICA pisó a la que
+ * DIAGNOSTICÓ**. Al añadir `formulario-arq` esta sonda reescribió
+ * `sin-sitio-131.json` con `12 bloques` donde la 131.ª midió `11`, sin decir
+ * nada. Se recuperó con `git checkout` **porque estaba commiteada**, que es
+ * exactamente la protección que esa regla compra.
+ *
+ * Ahora no se pisa una congelada que difiera: se escribe al lado con su fecha y
+ * se dice en voz alta. Idéntica se reescribe. Para re-congelar, `PISAR=1`.
+ */
+const base = SABOTAJE ? `sin-sitio-131-neg-${SABOTAJE}`
+  : MAPEO === "post-c" ? "sin-sitio-133-POST-C"
+    : "sin-sitio-131";
+let out = join(DERIV, `${base}.json`);
+const sinFechaSS = (s) => s.replace(/"fecha":\s*"[^"]*"/, '"fecha":"—"');
+const preparaSalida = (cuerpo) => {
+  if (SABOTAJE || process.env.PISAR || !existsSync(out)) return;
+  if (sinFechaSS(readFileSync(out, "utf8")) === sinFechaSS(cuerpo)) return;
+  const hoy = new Date().toISOString().slice(0, 10);
+  let n = `${base}-${hoy}.json`, i = 1;
+  while (existsSync(join(DERIV, n))) n = `${base}-${hoy}-${++i}.json`;
+  console.log(`\n⚠ la congelada existente DIFIERE y no se pisa (§regla 5) → ${n}`);
+  out = join(DERIV, n);
+};
+const cuerpoSalida = JSON.stringify(
     {
       fecha: new Date().toISOString().slice(0, 10),
       tanda: "131.ª",
@@ -335,8 +377,9 @@ writeFileSync(
     },
     null,
     1,
-  ) + "\n",
-);
+  ) + "\n";
+preparaSalida(cuerpoSalida);
+writeFileSync(out, cuerpoSalida);
 P(`\ncongelado: ${out.slice(RAIZ.length + 1).replace(/\\/g, "/")}`);
 if (!controles.every((c) => c.ok)) process.exit(3);
 process.exit(sinSitio === 0 ? 0 : 2);
