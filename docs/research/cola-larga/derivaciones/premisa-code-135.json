@@ -1,0 +1,2399 @@
+{
+  "meta": {
+    "tanda": "135.ª",
+    "paso": "PASO 0 punto 3 — la premisa de F3-5-CODE-DIVERGE",
+    "fecha": "2026-09-01",
+    "offline": true,
+    "tocaDb": false
+  },
+  "control": {
+    "paginasCodigoSinValidate": true,
+    "arquetiposCodigoArqConValidate": true,
+    "adjudica": true
+  },
+  "eje1_camposValidados": {
+    "total": 448,
+    "nColecciones": 20,
+    "porColeccion": [
+      {
+        "coleccion": "sectores",
+        "nValidados": 0,
+        "validados": []
+      },
+      {
+        "coleccion": "monograficos",
+        "nValidados": 1,
+        "validados": [
+          {
+            "ruta": "monograficos.cuerpo.filas.columnas.modulos[texto].titulares",
+            "tipo": "array",
+            "required": false
+          }
+        ]
+      },
+      {
+        "coleccion": "productos",
+        "nValidados": 7,
+        "validados": [
+          {
+            "ruta": "productos.hrefServido",
+            "tipo": "text",
+            "required": false
+          },
+          {
+            "ruta": "productos.seo.title",
+            "tipo": "text",
+            "required": false
+          },
+          {
+            "ruta": "productos.bullets.texto",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "productos.cuerpo[texto].titulares",
+            "tipo": "array",
+            "required": false
+          },
+          {
+            "ruta": "productos.cuerpo[toggle].contenido",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "productos.cuerpo[blurb].texto",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "productos.cuerpo[slider].diapositivas.texto",
+            "tipo": "code",
+            "required": false
+          }
+        ]
+      },
+      {
+        "coleccion": "casos",
+        "nValidados": 5,
+        "validados": [
+          {
+            "ruta": "casos.necesidad",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "casos.solucion",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "casos.resultados",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "casos.destacado",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "casos.detalles.parametros",
+            "tipo": "code",
+            "required": false
+          }
+        ]
+      },
+      {
+        "coleccion": "faqs",
+        "nValidados": 1,
+        "validados": [
+          {
+            "ruta": "faqs.cuerpo",
+            "tipo": "code",
+            "required": true
+          }
+        ]
+      },
+      {
+        "coleccion": "taxonomia-sectores",
+        "nValidados": 0,
+        "validados": []
+      },
+      {
+        "coleccion": "entradas-blog",
+        "nValidados": 1,
+        "validados": [
+          {
+            "ruta": "entradas-blog.cuerpo",
+            "tipo": "code",
+            "required": true
+          }
+        ]
+      },
+      {
+        "coleccion": "terminos-kunakpedia",
+        "nValidados": 2,
+        "validados": [
+          {
+            "ruta": "terminos-kunakpedia.titulo",
+            "tipo": "text",
+            "required": false
+          },
+          {
+            "ruta": "terminos-kunakpedia.cuerpo",
+            "tipo": "code",
+            "required": true
+          }
+        ]
+      },
+      {
+        "coleccion": "documentos-cientificos",
+        "nValidados": 1,
+        "validados": [
+          {
+            "ruta": "documentos-cientificos.cuerpo",
+            "tipo": "code",
+            "required": true
+          }
+        ]
+      },
+      {
+        "coleccion": "paginas",
+        "nValidados": 214,
+        "validados": [
+          {
+            "ruta": "paginas.bloques",
+            "tipo": "array",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].html",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[texto-pagina].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].src",
+            "tipo": "upload",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[imagen-pagina].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[boton-pagina].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[codigo].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].cuerpo",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[toggle].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[video-pagina].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].descripcion",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[blurb].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider-completo].diapositivas.cuerpo",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].diapositivas.cuerpo",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[slider].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].pines.descripcion",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[mapa].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.modulosSueltos[icono].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].html",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[texto-pagina].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].src",
+            "tipo": "upload",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[imagen-pagina].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[boton-pagina].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[codigo].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].cuerpo",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[toggle].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[video-pagina].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].descripcion",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[blurb].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider-completo].diapositivas.cuerpo",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].diapositivas.cuerpo",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[slider].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].pines.descripcion",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[mapa].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.bloques.filas.columnas.modulos[icono].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "paginas.cuerpoClasico",
+            "tipo": "code",
+            "required": false
+          }
+        ]
+      },
+      {
+        "coleccion": "arquetipos",
+        "nValidados": 153,
+        "validados": [
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[texto-arq].contenido",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].titulo",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[icono-arq].contenido",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[imagen-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[boton-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-ancho-arq].contenido",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[video-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].titulo",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[cta-arq].contenido",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[tabla-arq].contenido",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[galeria-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[formulario-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[codigo-arq].contenido",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "arquetipos.bloques[slider-arq].contenido",
+            "tipo": "code",
+            "required": false
+          }
+        ]
+      },
+      {
+        "coleccion": "articulos-kb",
+        "nValidados": 61,
+        "validados": [
+          {
+            "ruta": "articulos-kb.cuerpo",
+            "tipo": "array",
+            "required": true
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.pt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.pt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.pt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].html",
+            "tipo": "code",
+            "required": true
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].titulares",
+            "tipo": "array",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[texto-kb].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[imagen-kb].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[boton-kb].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].descripcion",
+            "tipo": "code",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[blurb].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.mt.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.mt.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.mt.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.mb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.mb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.mb.unidad767",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.pb.unidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.pb.movilUnidad",
+            "tipo": "select",
+            "required": false
+          },
+          {
+            "ruta": "articulos-kb.cuerpo.columnas.modulos[gallery].ritmo.pb.unidad767",
+            "tipo": "select",
+            "required": false
+          }
+        ]
+      },
+      {
+        "coleccion": "categorias",
+        "nValidados": 0,
+        "validados": []
+      },
+      {
+        "coleccion": "etiquetas",
+        "nValidados": 1,
+        "validados": [
+          {
+            "ruta": "etiquetas.descripcion",
+            "tipo": "code",
+            "required": false
+          }
+        ]
+      },
+      {
+        "coleccion": "categorias-recursos",
+        "nValidados": 0,
+        "validados": []
+      },
+      {
+        "coleccion": "categorias-cientificas",
+        "nValidados": 0,
+        "validados": []
+      },
+      {
+        "coleccion": "autores",
+        "nValidados": 1,
+        "validados": [
+          {
+            "ruta": "autores.bio",
+            "tipo": "code",
+            "required": false
+          }
+        ]
+      },
+      {
+        "coleccion": "media",
+        "nValidados": 0,
+        "validados": []
+      },
+      {
+        "coleccion": "slugs",
+        "nValidados": 0,
+        "validados": []
+      },
+      {
+        "coleccion": "usuarios",
+        "nValidados": 0,
+        "validados": []
+      }
+    ]
+  },
+  "eje2_separadora": {
+    "nivelBloque": {
+      "paginasCodigo": 18,
+      "arquetiposCodigoArq": 13,
+      "nota": "ABSORBE la pregunta: casi todo es ritmo.*.unidad. No adjudica."
+    },
+    "nivelContenido": {
+      "enPaginasCodigo": [],
+      "enArqCodigo": [
+        "arquetipos.bloques[codigo-arq].contenido"
+      ]
+    },
+    "ritmoDescontado": {
+      "paginas": 18,
+      "arquetipos": 12
+    }
+  },
+  "veredicto": {
+    "a": "MODULO_CODIGO.html NO lleva `validate` — por eso sembraron",
+    "b": "el «9 de 9» es un contrafáctico correcto, no una afirmación sobre la siembra",
+    "escalon3": "el pipeline completo es SEGURO para `paginas` por este eje"
+  },
+  "noContesta": [
+    "si las filas están HOY en la DB — eso es DB, y el socket está cerrado (ECONNREFUSED)",
+    "si algún OTRO campo validado de `paginas` bloquearía con dato NUEVO: este censo dice CUÁNTOS validan, no qué admiten",
+    "si el validador cambió desde que se sembró: se compara la config de HOY consigo misma"
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "tanda": "135.ª",
+    "regla": "42",
+    "fecha": "2026-09-01",
+    "offline": true,
+    "tocaDb": false,
+    "porQueNoSeCreaLaMigracion": "socket 127.0.0.1:55432 -> ECONNREFUSED (binding declarado, no publicado)"
+  },
+  "control": {
+    "testigos": [
+      "autores",
+      "arquetipos"
+    ],
+    "hallados": [],
+    "adjudica": false
+  },
+  "reparto": {
+    "ficheros": 26,
+    "sinDown": 0,
+    "fueraDeAlcance": 14,
+    "enAlcance": 12,
+    "expuestas": 2,
+    "protegidas": 10
+  },
+  "expuestas": [
+    {
+      "fichero": "20260804_122225_registro_slugs.ts",
+      "nDropTable": 1,
+      "expuestos": 1,
+      "tablasExpuestas": [
+        "payload_locked_documents_rels"
+      ]
+    },
+    {
+      "fichero": "20260823_131718_f3_3_paginas_cola_larga.ts",
+      "nDropTable": 18,
+      "expuestos": 1,
+      "tablasExpuestas": [
+        "payload_locked_documents_rels"
+      ]
+    }
+  ],
+  "todas": [
+    {
+      "fichero": "20260804_120654_inicial.ts",
+      "tieneDown": true,
+      "nDropTable": 106,
+      "nDropTableSinIfExists": 106,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260804_122225_registro_slugs.ts",
+      "tieneDown": true,
+      "nDropTable": 1,
+      "nDropTableSinIfExists": 1,
+      "nDropConstraint": 1,
+      "nDropConstraintSinIfExists": 1,
+      "expuestos": 1,
+      "tablasExpuestas": [
+        "payload_locked_documents_rels"
+      ]
+    },
+    {
+      "fichero": "20260804_151246_teaser_dato_propio.ts",
+      "tieneDown": true,
+      "nDropTable": 4,
+      "nDropTableSinIfExists": 4,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260804_182349_nivel_titular_por_defecto_3.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260805_011925_image_sizes_censados.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260806_124532_ruta_origen_media.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260808_023851_publicacion_f24.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260808_232710_roles_f25.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260809_125718_f3_articulos_kb.ts",
+      "tieneDown": true,
+      "nDropTable": 3,
+      "nDropTableSinIfExists": 3,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260809_135819_f3_texto_kb_rico.ts",
+      "tieneDown": true,
+      "nDropTable": 1,
+      "nDropTableSinIfExists": 1,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260809_135857_f3_kb_retira_compartidos.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260810_140630_f3_kb_reticula_filas_columnas.ts",
+      "tieneDown": true,
+      "nDropTable": 4,
+      "nDropTableSinIfExists": 4,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260810_164348_f3_kb_piel_titular.ts",
+      "tieneDown": true,
+      "nDropTable": 3,
+      "nDropTableSinIfExists": 3,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260810_171434_f3_kb_piel_blurb.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260813_140606_f3_pr3_documento_sin_pagina.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260813_211316_f3_etiqueta_descripcion.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260818_193649_f3_fecha_publicacion_orden.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260823_131718_f3_3_paginas_cola_larga.ts",
+      "tieneDown": true,
+      "nDropTable": 18,
+      "nDropTableSinIfExists": 18,
+      "nDropConstraint": 1,
+      "nDropConstraintSinIfExists": 1,
+      "expuestos": 1,
+      "tablasExpuestas": [
+        "payload_locked_documents_rels"
+      ]
+    },
+    {
+      "fichero": "20260823_190450_f3_3_ancho_quintos_y_media_externa.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260824_155444_f3_3_regimen_cms5.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260826_173354_f3_3_t1_tabla_cola_larga.ts",
+      "tieneDown": true,
+      "nDropTable": 4,
+      "nDropTableSinIfExists": 4,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260827_110011_f3_4_autores_y_firmas.ts",
+      "tieneDown": true,
+      "nDropTable": 3,
+      "nDropTableSinIfExists": 3,
+      "nDropConstraint": 1,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260827_114716_f3_4_firmas_doc_cientifico.ts",
+      "tieneDown": true,
+      "nDropTable": 1,
+      "nDropTableSinIfExists": 1,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260831_014031_f3_5_medida_breakpoint_767.ts",
+      "tieneDown": true,
+      "nDropTable": 0,
+      "nDropTableSinIfExists": 0,
+      "nDropConstraint": 0,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    },
+    {
+      "fichero": "20260831_015813_f3_5_arquetipos.ts",
+      "tieneDown": true,
+      "nDropTable": 14,
+      "nDropTableSinIfExists": 14,
+      "nDropConstraint": 1,
+      "nDropConstraintSinIfExists": 0,
+      "expuestos": 0,
+      "tablasExpuestas": []
+    }
+  ]
+}
