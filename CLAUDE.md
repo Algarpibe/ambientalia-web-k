@@ -5968,6 +5968,76 @@ un falso positivo puede señalar un objeto real.
 
 ---
 
+**49 · UNA GUARDA DE EXHAUSTIVIDAD SÓLO PUEDE NOMBRAR LAS CLASES QUE SU
+RECORRIDO ENUMERA — LO QUE NO ESTÉ EN LA ENUMERACIÓN NO SALE NOMBRADO:
+DESAPARECE.** (2026-09-01)
+
+§regla 6 dice que un renderizador que devuelve `undefined` no falla, no pinta.
+Ésta es lo mismo en el sitio donde más caro sale, porque el código que se come
+el dato es **el que existe para que eso no pase**:
+
+> **Una guarda de la forma «lo que no tenga sitio sale NOMBRADO» promete
+> exhaustividad y entrega la de SU ENUMERACIÓN.** Un elemento que su recorrido
+> no enumera no cae, no se nombra y no se emite — así que el informe publica
+> **0 piezas sin sitio** y eso se lee como **«todo cabe»**. Y las dos frases se
+> escriben igual.
+
+**Medido:** `formularioDe` de un extractor declara que todo control del
+`<form>` que no tenga sitio sale en `SIN_SITIO_FORM`, y su recorrido enumera
+`input · select · fieldset · button`. **`textarea` aparece 0 veces en el
+fichero**, así que un `<textarea name="field[23]" required>` con su `<label>`
+—un campo real del formulario— no cae, no se nombra y no se emite. La guarda es
+**cierta de su dominio** (4 documentos que no traen `<textarea>`) y **SIN
+PROBAR fuera de él**: es §*una regla derivada sobre un dominio donde el caso NO
+SE DA*, cometida sobre la propia guarda.
+
+**Las dos mitades operativas:**
+
+1. **la enumeración se DERIVA del dominio que se va a RECORRER, no del que la
+   calibró** (§regla 9, 7.º caso: un conjunto enumerado a mano dentro del
+   código es un dato recordado, y envejece **contra** el corpus en silencio);
+2. **y el 0 se AUDITA con un testigo que ejercite el canal.** Si el sabotaje
+   que el propio recorrido declara —«mete un control que no expreso»— **sí**
+   hace crecer la lista, el canal está vivo y el 0 es del objeto; si no, el 0 es
+   del instrumento (§regla 28c). Los dos números se publican al lado: **piezas
+   NOMBRADAS** y **piezas PERDIDAS EN SILENCIO** son cubos distintos, y sólo el
+   segundo es un defecto de la guarda.
+
+> **Y la señal para buscarlo es gratis: un `0 sin sitio` junto a un recuento de
+> controles que no cuadra con los campos emitidos.** «23 controles → 8 campos +
+> 12 ocultos» deja uno fuera, y ese uno no está en ninguna lista.
+
+---
+
+**50 · EL CARDINAL DE UN CONJUNTO DE CAMPOS ANIDADOS SÓLO ES EL DE UN CONJUNTO
+SI LAS RUTAS VAN CUALIFICADAS.** (2026-09-01)
+
+Es §*un cardinal es un contenedor y absorbe la membresía* con el contenedor
+puesto en **el nombre corto**, y por eso no la ve ninguna guarda de recuento:
+
+> **Los grupos hermanos de un esquema repiten los MISMOS subcampos.** Así que
+> acumular el `name` PELADO cuenta el mismo nombre N veces, y la intersección
+> de dos modelos sale poblada **con repetidos dentro**. El número es plausible,
+> viene con su lista al lado, y no es el cardinal de un conjunto.
+
+**Medido:** comparando dos bloques del mismo módulo por `name` pelado salía
+`comunes (22)` con `valor`, `unidad` y `movilValor` **tres veces cada uno**,
+porque `mt`, `mb` y `pb` son grupos con los mismos subcampos. Con rutas
+cualificadas (`mt.valor`) y separando la **BASE compartida del grupo** —que no
+modela el objeto— del **CONTENIDO**, la intersección real es **CERO**: no eran
+dos versiones del mismo modelo, eran dos modelos que no comparten un campo.
+
+**Las dos mitades operativas:**
+
+1. **las rutas se cualifican y la BASE se DERIVA** —lo que comparten TODOS los
+   bloques del grupo—, porque la coincidencia en la base **absorbe la
+   pregunta**: comparar sin separarla mide el ritmo compartido, no el modelo;
+2. **y la guarda cuesta un `filter`: `llaves distintas === elementos`, o el
+   cardinal no se publica** (§regla 29). Un conjunto con repetidos no puede
+   sostener ni una intersección ni una diferencia simétrica.
+
+---
+
 ## Comandos
 
 ```bash

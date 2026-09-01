@@ -1,0 +1,64 @@
+==============================================================================
+136.ª · BARRIDO DE §regla 12 — REGLA vs EVENTO, con los DOS cruces y su NEGATIVO
+==============================================================================
+
+── TESTIGOS DEL CRUCE (antes de creerse ningún número) ──
+  T+ · un enunciado que SE SABE escrito en CLAUDE.md
+      espera «ya escrito» → «ya escrito» ✓
+  T- · un enunciado INVENTADO que no puede estar
+      espera «NO está» → «NO está» ✓
+  T± · un TITULAR EN MAYÚSCULAS que lleva meses escrito
+      espera «ya escrito» → «ya escrito» ✓
+  HEAD legible para el antes/después: SÍ ✓
+
+── CANDIDATOS ──
+
+  R1 · REGLA
+      Una guarda de exhaustividad —«lo que no tenga sitio sale NOMBRADO»— sólo puede nombrar las clases que su recorrido ENUMERA. Lo que no esté en esa enumeración no sale nombrado: DESAPARECE, y su 0 de «piezas sin sitio» se lee como «todo cabe». Así que la enumeración se DERIVA del dominio que se va a recorrer, no del que la calibró.
+      POR QUÉ: Medido hoy: `formularioDe` de `extractor-f35.mjs` declara que todo control del `<form>` que no tenga sitio sale en `SIN_SITIO_FORM`, y enumera `input` · `select` · `fieldset` · `button`. `textarea` aparece 0 veces en el fichero, así que el `<textarea name="field[23]" required>` de `contacto` no cae, no se nombra y no se emite: el informe publica 0 NOMBRADOS y 1 PERDIDA EN SILENCIO. La guarda es cierta de su dominio (4 documentos de `arquetipos`, sin `<textarea>`) y SIN PROBAR fuera de él. Es §regla 6 —un renderizador que devuelve undefined no falla, no pinta— con el objeto puesto en una GUARDA DE EXHAUSTIVIDAD, y §regla 9 7.º caso con la lista enumerada a mano dentro del recorrido.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §regla 6 / §regla 9 (un conjunto enumerado a mano es un dato recordado)
+
+  R2 · REGLA
+      El cardinal de un conjunto de campos ANIDADOS sólo es el de un conjunto si las rutas van CUALIFICADAS. Los grupos hermanos repiten los mismos subcampos, así que el nombre PELADO cuenta el mismo nombre N veces y publica una intersección que no existe — y el número sale plausible, con su lista al lado.
+      POR QUÉ: Medido en esta tanda, sobre la propia sonda: comparando `codigo` con `formulario-arq` por `name` pelado salía «comunes (22)» con `valor`, `unidad` y `movilValor` repetidos tres veces cada uno, porque `mt`, `mb` y `pb` son grupos con los mismos subcampos. Con rutas cualificadas (`mt.valor`) y separando la BASE de módulo del CONTENIDO, la intersección real es CERO. Es §*un cardinal es un contenedor y absorbe la membresía* con el contenedor puesto en el NOMBRE CORTO, y la guarda que lo caza cuesta un `filter`: `llaves distintas === elementos`, o el cardinal no se publica.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §La causa común (un cardinal es un contenedor) / §regla 29
+
+  E1 · EVENTO
+      `F3-5-CODE-DIVERGE` levantada a decisión numerada CMS-7 con sus cuatro opciones: los dos modelos no comparten NI UN campo de contenido (0 comunes), las 9 son `<form>` entero 9 de 9 en 9 documentos, y unificar hacia lo tipado pierde el `<textarea>` de `contacto`.
+      POR QUÉ: Tiene fecha, cardinales y nombres propios: es un hallazgo sobre ESTE repo. Vive en `ESQUEMA-CMS.md` §CMS-7 y en el acta.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: ESQUEMA-CMS.md §CMS-7 + PENDIENTES-QA.md §136.ª + PLAN-FASE-3.md
+
+  E2 · EVENTO
+      El sabotaje `extractor-mudo` llegó apuntando a la mitad del blanco: anulaba la §4 pero no T1, que es lo que su condición de fallo mira, así que salía VERDE con 0 instancias separadoras.
+      POR QUÉ: La REGLA ya está escrita —§regla 17, 2.ª cara: «si el arreglo que estás probando tiene DOS mitades, el sabotaje tiene que anular LAS DOS»—. Lo de hoy es una instancia suya con su fecha, no un enunciado nuevo.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. ya estaba
+      DESTINO: PENDIENTES-QA.md §136.ª (instancia de una regla ya escrita)
+
+  E3 · EVENTO
+      Los cuatro heredados de `F3-5-CODE-DIVERGE` reproducen: 9 instancias · `{type:"code"}` sin `validate` · 21 tokens fuera del censo · 9 de 9 bloquearían. Y el «21 contra 20» son dos conjuntos, no dos lecturas: el 20 del comentario de `arquetipos.ts` está enumerado a mano y no trae `<textarea>`.
+      POR QUÉ: Es una re-derivación con sus números, no un enunciado general. La regla que lo cubre —§regla 9, un conjunto enumerado a mano dentro del fuente es un dato recordado— ya está escrita.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. ya estaba
+      DESTINO: PENDIENTES-QA.md §136.ª
+
+── VEREDICTO ──
+  candidatos ................ 5
+  · REGLA ................... 2
+      · YA escritas ......... 0
+      · SUBEN a CLAUDE.md ... 2 :: R1, R2
+  · EVENTO (se quedan) ...... 3
+  (el número se escribe aunque sea cero: «no encontré» y «no barrí» son la misma salida)
+
+  ✅ los tres testigos pasan y HEAD es legible — el cruce ADJUDICA

@@ -7084,6 +7084,111 @@ un defecto en la resolución de `arquetipos`.
 > este eje. La divergencia C7 sigue abierta y sigue siendo del propietario; lo
 > que se cierra es la duda sobre si era seguro re-sembrar.
 
+## CMS-7 · QUÉ SE HACE CON `F3-5-CODE-DIVERGE` — ⏳ **PENDIENTE DEL PROPIETARIO**
+
+> **Levantado por la 136.ª (2026-09-01), OFFLINE.** El expediente **DESCRIBE y
+> no elige.** Derivación con sus 3 sabotajes y sus 2 testigos:
+> `derivaciones/escalon1-136.{mjs}` · congelada `escalon1-136-SIN-DB.json`.
+
+### Lo medido primero, porque cambia el marco
+
+**Los cuatro heredados reproducen** (9 instancias · `{type:"code"}` sin
+`validate` · 21 tokens fuera del censo · 9 de 9 bloquearían). Lo que la 136.ª
+añade son tres cosas que la ficha no tenía:
+
+**1 · Los dos modelos NO comparten ni un campo de contenido.** Con las rutas
+CUALIFICADAS y separando la BASE de módulo —derivada, 19 en `paginas` y 25 en
+`arquetipos`— del CONTENIDO:
+
+| | campos de CONTENIDO |
+|---|---|
+| `codigo` (paginas) | **1** — `html` |
+| `formulario-arq` | **11** — `destino` · `metodo` · `textoBoton` · `campos.{nombre,tipo,etiqueta,requerido,opciones.{valor,texto}}` · `ocultos.{nombre,valor}` |
+| **comunes** | **0** |
+
+> **Toda la coincidencia entre los dos vivía en la base de ritmo.** No son dos
+> versiones del mismo modelo: son dos modelos con **intersección vacía** en la
+> parte que modela el `et_pb_code`. Medirlo sin separar la base publicaba
+> `comunes (22)` — §*la causa común*, con el contenedor puesto en la BASE.
+
+**2 · Las 9 son `<form>` ENTERO, 9 de 9**, una por documento: `contacto` ·
+`descarga-catalogo` · los **5** informes técnicos · `newsletter` · `suscribete`.
+
+**3 · Y llevarlas a `formulario-arq` pierde UN CONTROL EN SILENCIO.** Medido
+corriendo **el extractor real** —`formularioDe` cortada del fuente de
+`extractor-f35.mjs` por ESTRUCTURA, no por comentario— sobre los 9:
+
+| | |
+|---|---|
+| piezas que el modelo **NOMBRA** como sin sitio | **0** |
+| piezas **PERDIDAS EN SILENCIO** | **1**, en `contacto`: `<textarea name="field[23]" required>` con su `<label>` |
+
+`textarea` aparece **0 veces** en `extractor-f35.mjs`: ni lo mapea a campo, ni
+lo mete en `SIN_SITIO_FORM`, ni `formulario-arq.campos.tipo` lo admite (enum
+`texto · seleccion · casillas`). Su guarda —*«todo control del `<form>` tiene
+sitio; lo que no lo tenga sale NOMBRADO»*— es **cierta de su dominio** (4
+documentos de `arquetipos`, sin `<textarea>`) y **SIN PROBAR fuera de él**.
+
+> **Y el 0 es del extractor, no del instrumento:** el testigo T2 —el sabotaje
+> `control-sin-sitio` que el propio extractor declara— **sí** hace crecer
+> `SIN_SITIO_FORM`. El canal está vivo y aun así el `<textarea>` no sale.
+
+**4 · Dirección B, con el mismo barrido:** `formulario-arq` **no** está
+sobre-generalizado en `tipo` (los 3 valores ejercidos) y **sí** tiene
+`metodo: "GET"` **SIN EJERCER** sobre n = 10.
+
+### Las opciones, con su reversa NOMBRADA
+
+§regla 23: se escribe **la operación de deshacer**, no sólo la conclusión — su
+conclusión sola es simétrica y al releerla el signo se invierte.
+
+| | qué resuelve | qué cuesta | **cómo se deshace (operación)** | migración |
+|---|---|---|---|---|
+| **A · no unificar** (estado de hoy) | nada: la divergencia C7 sigue | 0 trabajo. Coste latente: dos definiciones del mismo `et_pb_code` y un editor que no sabe cuál usar | **FUSIONAR** después — el lado **BARATO**. Empieza SEPARADA | ninguna |
+| **B · poner `validate` a `MODULO_CODIGO.html`** | unifica la VALIDACIÓN sin unificar el modelo | **9 de 9 bloquean**: exige admitir la clase `formulario` (21 tokens) en el censo, que es lo que **CMS-6·C decidió NO hacer** | **QUITAR el `validate`** — barato, y **no toca SQL** | ninguna |
+| **C · unificar hacia lo TIPADO** (las 9 a `formulario-arq`) | un solo modelo del formulario | 8 de 9 caben; **`contacto` pierde su `<textarea>`** (hoy en silencio). Y ×9 la pérdida ya declarada en la 133.ª: `novalidate` · `data-styles-version`. `formulario-arq` vive en `arquetipos`: hay que duplicar el bloque en `paginas` o mover documentos de colección | **SEPARAR** dos modelos fusionados — el lado **CARO**, y **no reversible al bit**: reconstruir el HTML crudo exige que el tipado lo porte entero, y hoy no lo porta | **sí, sobre `paginas`, que TIENE dato** |
+| **D · unificar hacia el HTML CRUDO** (quitar `formulario-arq`) | un solo modelo | tira **CMS-6·C** entera (decisión del propietario del 2026-09-01) y los 11 campos de contenido tipado | **volver a TIPAR** = re-extraer. Barato en dato, caro en decisión | sobre `arquetipos`, que **no tiene tabla** |
+
+### ⚠ El coste de migración de C, derivado y no supuesto
+
+- **la ventana de §regla 30 está CERRADA para `paginas`**: *«¿revierte limpia?»*
+  sólo tiene respuesta **antes de que entre la primera fila**, y `paginas` está
+  sembrada. Después, lo único medible es que falla;
+- **y la migración que creó `paginas_blocks_codigo` es una de las DOS instancias
+  EXPUESTAS de §regla 42** — `20260823_131718_f3_3_paginas_cola_larga.ts` L543:
+  `DROP TABLE "paginas" CASCADE;` seguido del `DROP CONSTRAINT` que el `CASCADE`
+  ya se llevó, **sin `IF EXISTS`**. Su `down` hace rollback entero;
+- `formulario-arq` **no tiene migración**: 26 en el proyecto, **0** la nombran.
+  Crearla hereda la clase §regla 42 y **necesita la DB** para probar su reversa.
+
+### Condición de reapertura — sólo B y D la necesitan
+
+A está alineada con el criterio de asimetría (empieza separada, deshacerla es
+fusionar). **B y D se tomarían CONTRA una decisión ya escrita** —CMS-6·C— así
+que, si se eligen, llevan escrito qué restricción pesó más y qué tendría que
+pasar para revisarlas. Una decisión que contradice el criterio **siempre** lleva
+salvaguarda; una alineada puede no llevarla.
+
+### ⚠ Y hay trabajo ORTOGONAL que no decide nada — no es una quinta opción
+
+**El `<textarea>` que se pierde en silencio se arregla en el extractor**, y
+hace falta **en C** y **no estorba en A · B · D**: cuesta una rama en
+`formularioDe` (o nombrarlo en `SIN_SITIO_FORM`, que es lo mínimo) más su
+negativo, y afecta a **0 filas** —`arquetipos` no tiene tabla—. Ficha
+`F3-5-TEXTAREA-MUDO`. Meterlo en el menú de arriba haría elegir entre cosas
+que no compiten.
+
+### Qué NO contesta este expediente
+
+- **no elige**: la decisión es del propietario;
+- el nº de **FILAS sembradas** queda **SIN COMPROBAR** —es DB y el socket da
+  `ECONNREFUSED`—, no «0» ni «9». Lo derivable sí se publica: `paginas` y
+  `arquetipos` están las dos cableadas al sembrador;
+- **no mide el render ni la geometría** de ninguno de los dos modelos: sólo el
+  MODELO y el DATO que cada uno tiene que portar;
+- **no dice si el extractor DEBE tratar el `<textarea>`**: dice que hoy no lo
+  nombra y que su guarda no lo ve.
+
 ---
 
 **La decisión ORIGINAL, conservada como expediente:** qué se hace con las 5

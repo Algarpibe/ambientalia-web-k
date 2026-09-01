@@ -173,6 +173,18 @@ const f35 = JSON.parse(readFileSync(F35, "utf8"));
 const bloquesF33 = rec(f33);
 const bloquesF35 = rec(f35.catalogo?.arquetipos ?? f35);
 const instCodigo = bloquesF33.filter((m) => (m.kind ?? m.blockType) === "codigo");
+/* El DOCUMENTO de cada instancia: un cardinal sin sus nombres no se puede
+   sopesar (§regla 14) — «9 instancias» y «9 documentos, uno cada uno» son dos
+   afirmaciones, y el expediente necesita la segunda. */
+const docsCodigo = [];
+(function walk(n, doc) {
+  if (Array.isArray(n)) return n.forEach((x) => walk(x, doc));
+  if (n && typeof n === "object") {
+    const d = n.slug ?? n.ruta ?? n.doc ?? doc;
+    if ((n.kind ?? n.blockType) === "codigo") docsCodigo.push(d);
+    for (const k of Object.keys(n)) walk(n[k], d);
+  }
+})(f33, null);
 const instCodigoArq = bloquesF35.filter((m) => (m.kind ?? m.blockType) === "codigo-arq");
 const instFormArq = bloquesF35.filter((m) => (m.kind ?? m.blockType) === "formulario-arq");
 const htmlsCodigo = instCodigo.map((m) => m.html ?? m.contenido ?? "");
@@ -374,6 +386,7 @@ for (let i = 0; i < htmlsCodigo.length; i++) {
   const silenciosos = perdidos.filter((c) => !nombrados.some((n) => n.includes(`<${c.tag}`) || (c.tipo && n.includes(c.tipo))));
 
   porInstancia.push({
+    doc: docsCodigo[i] ?? null,
     i,
     chars: h.length,
     esFormEntero: /^\s*<form\b/i.test(h) && /<\/form>\s*$/i.test(h),
@@ -389,9 +402,9 @@ for (let i = 0; i < htmlsCodigo.length; i++) {
   });
 }
 
-P("   #  chars  form?  ctrl  campos  ocultos  botón        NOMBRADOS  PERDIDOS-EN-SILENCIO");
+P("   #  documento                              chars form ctrl cmp ocl NOM  PERDIDO-EN-SILENCIO");
 for (const r of porInstancia)
-  P(`   ${String(r.i).padStart(2)} ${String(r.chars).padStart(6)}  ${r.esFormEntero ? " sí " : " NO "}  ${String(r.controlesEnDoc).padStart(4)}  ${String(r.camposEmitidos).padStart(6)}  ${String(r.ocultosEmitidos).padStart(7)}  ${String(r.textoBoton).slice(0, 11).padEnd(11)}  ${String(r.nombrados.length).padStart(9)}  ${r.silenciosos.join(" · ") || "—"}`);
+  P(`   ${String(r.i).padStart(2)} ${String(r.doc).slice(0, 38).padEnd(38)} ${String(r.chars).padStart(6)} ${r.esFormEntero ? " sí " : " NO "} ${String(r.controlesEnDoc).padStart(4)} ${String(r.camposEmitidos).padStart(3)} ${String(r.ocultosEmitidos).padStart(3)} ${String(r.nombrados.length).padStart(3)}  ${r.silenciosos.join(" · ") || "—"}`);
 
 const nFormEntero = porInstancia.filter((r) => r.esFormEntero).length;
 const conSilencio = porInstancia.filter((r) => r.silenciosos.length > 0);

@@ -1,5 +1,132 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ §136.ª · **LOS DOS MODELOS DE `et_pb_code` NO COMPARTEN NI UN CAMPO DE CONTENIDO, Y UNIFICARLOS HACIA LO TIPADO PIERDE UN CONTROL EN SILENCIO** — 2026-09-01
+
+**Estado: PASO 0 completo · ESCALONES 1 y 2 HECHOS, OFFLINE.** El socket sigue
+`ECONNREFUSED`, así que la tanda existe. Lo que trae es el expediente de
+`F3-5-CODE-DIVERGE` levantado entero para que el propietario decida a la
+primera: **CMS-7** en `ESQUEMA-CMS.md`.
+
+### PASO 0 punto 2 · el socket — SIN CAMBIO
+
+`127.0.0.1:55432` → **`ECONNREFUSED`** (`connect ECONNREFUSED`, 4 s de timeout,
+14:03:55). **No se re-midieron los otros cuatro canales**: la 134.ª y la 135.ª
+ya dirimieron que el defecto es del *publish* de Docker Desktop y es del
+propietario, y repetirlo sería gastar el mismo negativo por tercera vez.
+
+### PASO 0 puntos 1 y 3 · la deriva, y los CUATRO heredados reproducen
+
+HEAD `55a86dd`, árbol limpio y en sync. **1560** congeladas en
+`scripts/qa/medidas/`, de ellas **572** con marcador de artefacto (§regla 7).
+`qa:lib` **EXIT 0 · las 219 sondas COMPILAN y declaran su mínimo**. Procesos:
+**ninguna sonda en vuelo** —0 `node.exe` con `next`/`scripts` en su línea de
+orden, nada escuchando en 3000— y de todas formas la tanda es OFFLINE.
+
+| afirmación heredada | esperado | medido | ¿reproduce? |
+|---|---|---|---|
+| instancias de `codigo` en `paginas` | 9 | **9** | sí |
+| `codigo.html` es `type:code` SIN `validate` | code/false | **code/false** | sí |
+| tokens fuera del censo en los 9 | 21 | **21** | sí |
+| bloquearían con el validador puesto | 9 | **9** | sí |
+
+⚠ **Y el «21 contra 20» no es una contradicción, son dos conjuntos.** El 21 es
+**derivado** de los 9 htmls; el 20 que `arquetipos.ts` enumera en prosa es la
+clase `formulario` **escrita a mano** y no trae `<textarea>` — que es
+exactamente el token que decide el ESCALÓN 1. Es §regla 9 (*un conjunto
+enumerado a mano dentro del fuente es un dato recordado*) cobrada en el sitio
+donde el conjunto se usa para justificar una decisión.
+
+### PASO 0 punto 4 · lo que ya había en el repo, y se reutilizó
+
+`paso0-134.mjs` ya lee `f33-extraido.json` / `f35-extraido.json` e importa
+`validaHtmlCorpus`: de ahí sale la re-deriva sin instrumento nuevo. **Y lo que
+sí faltaba era el otro lado** — la pregunta «¿cabe?» no la contesta ningún
+comparador existente. **No se re-corrió `paso0-134.mjs`**: escribe con
+`writeFileSync` pelado (la fuga de §regla 5 en `derivaciones/`) y pisaría la
+evidencia de la 134.ª.
+
+### ESCALÓN 1 · los dos modelos, en la misma unidad
+
+| | BLOQUES | CAMPOS (rutas cualificadas) | INSTANCIAS (catálogo) |
+|---|---|---|---|
+| `codigo` (paginas) | 1 | 20 | **9** |
+| `formulario-arq` | 1 | 36 | 1 |
+| `codigo-arq` | 1 | 26 | 0 |
+
+Y separando la BASE de módulo —derivada, no enumerada: `moduloBasePagina`
+exportado (19) e intersección de `bloquesArquetipo` (25)— del CONTENIDO:
+**`codigo` 1 campo · `formulario-arq` 11 · comunes 0.**
+
+> **Toda la coincidencia vivía en la base de ritmo.** No son dos versiones del
+> mismo modelo: son dos modelos con **intersección vacía** en la parte que
+> modela el `et_pb_code`.
+
+**Contenido**, medido corriendo **el extractor real** —`formularioDe` cortada
+del fuente por ESTRUCTURA, casando llaves— sobre los 9: **`<form>` entero 9 de
+9**, uno por documento (`contacto` · `descarga-catalogo` · 5 informes técnicos ·
+`newsletter` · `suscribete`); **0 piezas NOMBRADAS** como sin sitio y **1
+PERDIDA EN SILENCIO**: el `<textarea name="field[23]" required>` de `contacto`.
+
+`textarea` aparece **0 veces** en `extractor-f35.mjs`. Su guarda —*«todo control
+del `<form>` tiene sitio; lo que no lo tenga sale NOMBRADO»*— es cierta de su
+dominio (4 documentos sin `<textarea>`) y **SIN PROBAR fuera de él**. Ficha
+`F3-5-TEXTAREA-MUDO`.
+
+**Dirección B**, con el mismo barrido: `tipo` **no** está sobre-generalizado
+(3 de 3 ejercidos); `metodo: "GET"` **SIN EJERCER** con n = 10.
+
+### DÓNDE CORTAR LIMPIO · la condición se evaluó y NO se cumple como está escrita
+
+El encargo mandaba parar *«si el contenido de las 9 NO cabe en
+`formulario-arq`»*, porque entonces serían dos objetos distintos. **Medido, es
+un caso intermedio: 8 de 9 caben enteras y 1 pierde un control.** No son dos
+objetos —son 9 de 9 formularios de ActiveCampaign, el mismo objeto— así que la
+ficha **no** cambia de nombre y la tanda sigue al ESCALÓN 2, llevándose la
+pérdida como coste de la opción que la produce.
+
+### El instrumento — y `extractor-mudo` llegó apuntando a la mitad del blanco
+
+3 sabotajes; los tres muerden **tras un arreglo**. `extractor-mudo` anulaba la
+§4 pero **no T1**, que es lo que su condición de fallo mira: **0 instancias
+separadoras y VERDE** (§regla 17, 2.ª cara). Puesto en la única puerta por la
+que pasa la función cortada, caen los dos testigos.
+
+Los testigos van **por POLARIDAD, uno por estado** (§regla 28d): **T1 «sabe ver
+lo que CABE»** —el corte reproduce la congelada `formulario-arq` al bit: 6
+campos · 12 ocultos · 282 opciones · «DESCARGAR»— y **T2 «sabe ver lo que NO
+cabe»** —con `control-sin-sitio`, `SIN_SITIO_FORM` crece—. **Con T2 vivo, el 0
+de `<textarea>` es del extractor y no del instrumento.**
+
+⚠ **Y la v1 de la sonda contaba los campos en la unidad equivocada:** publicaba
+`comunes (22)` con `valor` tres veces dentro, porque `mt`/`mb`/`pb` son grupos
+con los mismos subcampos y el `name` pelado no es el cardinal de un conjunto.
+Congelada renombrada con el defecto **y su alcance** —sólo la fila `campos`—:
+`escalon1-136-SONDA-CAMPOS-SIN-CUALIFICAR.json`. Guarda añadida:
+`llaves distintas === elementos`, o el cardinal no se publica.
+
+### ESCALÓN 2 · en `ESQUEMA-CMS.md` como **CMS-7 · PENDIENTE DEL PROPIETARIO**
+
+Cuatro opciones con su **operación de deshacer NOMBRADA** (§regla 23), no sólo
+su conclusión. Los dos costes de migración, derivados: la ventana de §regla 30
+está **CERRADA** para `paginas` (tiene dato), y la migración que creó
+`paginas_blocks_codigo` —`20260823_131718_f3_3_paginas_cola_larga.ts` L543— es
+**una de las dos instancias EXPUESTAS de §regla 42**, con su `down` haciendo
+rollback entero. `formulario-arq` **no tiene migración**: 26 en el proyecto, 0
+la nombran.
+
+⚠ **El arreglo del `<textarea>` NO es una quinta opción**: es ORTOGONAL —hace
+falta en C, no estorba en A · B · D, y afecta a 0 filas—. Meterlo en el menú
+haría elegir entre cosas que no compiten.
+
+**Lo que el expediente NO contesta**, declarado: no elige; el nº de FILAS
+sembradas es **SIN COMPROBAR** (DB, socket cerrado), no «0» ni «9»; no mide
+render ni geometría; y no dice si el extractor DEBE tratar el `<textarea>`.
+
+Derivación: `derivaciones/escalon1-136.mjs` · congelada
+`escalon1-136-SIN-DB.json` · 2 artefactos con su defecto en el nombre.
+
+---
+
 ## ⛔ §135.ª · **EL SOCKET SIGUE CERRADO — Y LA CLASE QUE EL ESCALÓN 1 IBA A HEREDAR TENÍA EL DOBLE DE INSTANCIAS DE LAS QUE DECÍA, DOS DE ELLAS ANTERIORES A SU PROPIO DESCUBRIMIENTO** — 2026-09-01
 
 **Estado: PASO 0 completo (puntos 1, 2 y 3) · ESCALONES 1, 2 y 3 BLOQUEADOS por

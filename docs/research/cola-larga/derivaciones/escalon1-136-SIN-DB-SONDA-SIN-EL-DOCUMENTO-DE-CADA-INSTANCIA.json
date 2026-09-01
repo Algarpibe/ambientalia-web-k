@@ -253,7 +253,6 @@
   ],
   "porInstancia": [
    {
-    "doc": "contacto",
     "i": 0,
     "chars": 20410,
     "esFormEntero": true,
@@ -272,7 +271,6 @@
     ]
    },
    {
-    "doc": "descarga-catalogo",
     "i": 1,
     "chars": 25591,
     "esFormEntero": true,
@@ -287,7 +285,6 @@
     "silenciosos": []
    },
    {
-    "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
     "i": 2,
     "chars": 24253,
     "esFormEntero": true,
@@ -302,7 +299,6 @@
     "silenciosos": []
    },
    {
-    "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-industria",
     "i": 3,
     "chars": 24253,
     "esFormEntero": true,
@@ -317,7 +313,6 @@
     "silenciosos": []
    },
    {
-    "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
     "i": 4,
     "chars": 24250,
     "esFormEntero": true,
@@ -332,7 +327,6 @@
     "silenciosos": []
    },
    {
-    "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-obras",
     "i": 5,
     "chars": 24254,
     "esFormEntero": true,
@@ -347,7 +341,6 @@
     "silenciosos": []
    },
    {
-    "doc": "informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
     "i": 6,
     "chars": 24234,
     "esFormEntero": true,
@@ -362,7 +355,6 @@
     "silenciosos": []
    },
    {
-    "doc": "newsletter",
     "i": 7,
     "chars": 25046,
     "esFormEntero": true,
@@ -377,7 +369,6 @@
     "silenciosos": []
    },
    {
-    "doc": "suscribete",
     "i": 8,
     "chars": 25046,
     "esFormEntero": true,
