@@ -81,6 +81,21 @@ const CASOS = [
     prohibidoEnSalida: /✅ el `ritmo` se OMITE/,
   },
   {
+    /**
+     * ⚠ EL SABOTAJE VA EN EL DATO, NO EN LA ARITMÉTICA (§regla 28a): la guarda
+     * de `formulario-arq` vigila *«un control del `<form>` que el modelo no
+     * expresa se pierde en silencio»*, así que el sabotaje INYECTA uno —un
+     * `<input type="file">`, que ninguno de los tres tipos del enum cubre— en
+     * vez de tocar el contador. Sin él, apagar la comprobación predeciría lo
+     * mismo que no apagarla: 0 instancias separadoras por construcción.
+     */
+    sab: "control-sin-sitio",
+    que: "un control del <form> que el modelo NO expresa sale NOMBRADO y en rojo, no se pierde",
+    exit: 2,
+    exigeEnSalida: /controles sin sitio|input type=file/,
+    prohibidoEnSalida: /✅ todo control del `<form>` tiene sitio/,
+  },
+  {
     sab: "sin-modulos",
     que: "0 bloques emitidos NO puede salir verde (§sondas 4bis)",
     exit: 2,

@@ -3,7 +3,7 @@
     "fecha": "2026-09-01",
     "tanda": "131.ª",
     "sonda": "cms:extractor-f35",
-    "saboteada": null
+    "saboteada": "bloqueo-mudo"
   },
   "alcance": {
     "docs": [
@@ -46,9 +46,9 @@
       "detalle": "0 sin resolver · T-nombre-media aplicada 12 veces"
     },
     {
-      "ok": true,
+      "ok": false,
       "nombre": "los CUATRO ejes de `validaHtmlCorpus` se recorren (no el primero que falle)",
-      "detalle": "4 ejes · 198 campos HTML comprobados"
+      "detalle": "0 ejes · 198 campos HTML comprobados"
     },
     {
       "ok": true,
@@ -75,12 +75,7 @@
     }
   },
   "bloqueos": {
-    "porEje": {
-      "script": [],
-      "etiqueta": [],
-      "host": [],
-      "atributo": []
-    },
+    "porEje": {},
     "camposHtml": 198,
     "total": 0
   },

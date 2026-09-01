@@ -3,7 +3,7 @@
     "fecha": "2026-09-01",
     "tanda": "131.ª",
     "sonda": "cms:extractor-f35",
-    "saboteada": null
+    "saboteada": "media-ausente"
   },
   "alcance": {
     "docs": [
@@ -41,9 +41,9 @@
       "detalle": "0 controles sin sitio"
     },
     {
-      "ok": true,
+      "ok": false,
       "nombre": "toda ruta de media resuelve BYTE A BYTE (la guarda de Linux, no la de Windows)",
-      "detalle": "0 sin resolver · T-nombre-media aplicada 12 veces"
+      "detalle": "16 sin resolver"
     },
     {
       "ok": true,
@@ -85,70 +85,90 @@
     "total": 0
   },
   "transformaciones": {
-    "T-nombre-media": [
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/NO2_UK.webp",
-        "a": "/images/uploads/2023/09/no2_uk.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/NO2_UK.webp",
-        "a": "/images/uploads/2023/09/no2_uk.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/O3_spain.webp",
-        "a": "/images/uploads/2023/09/o3_spain.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/O3_spain.webp",
-        "a": "/images/uploads/2023/09/o3_spain.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/SO2_france.webp",
-        "a": "/images/uploads/2023/09/so2_france.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/SO2_france.webp",
-        "a": "/images/uploads/2023/09/so2_france.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/H2S_spain.webp",
-        "a": "/images/uploads/2023/09/h2s_spain.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/H2S_spain.webp",
-        "a": "/images/uploads/2023/09/h2s_spain.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/PM10_belgium.webp",
-        "a": "/images/uploads/2023/09/pm10_belgium.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/PM10_belgium.webp",
-        "a": "/images/uploads/2023/09/pm10_belgium.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/PM2.5_belgium.webp",
-        "a": "/images/uploads/2023/09/pm25_belgium.webp"
-      },
-      {
-        "donde": "monitor-calidad-aire·galeria",
-        "de": "/images/uploads/2023/09/PM2.5_belgium.webp",
-        "a": "/images/uploads/2023/09/pm25_belgium.webp"
-      }
-    ]
+    "T-nombre-media": []
   },
-  "mediaSinResolver": [],
+  "mediaSinResolver": [
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/co_mexico-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/co_mexico-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/NO_sweden-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/NO_sweden-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/NO2_UK-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/NO2_UK-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/O3_spain-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/O3_spain-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/SO2_france-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/SO2_france-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/H2S_spain-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/H2S_spain-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/PM10_belgium-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/PM10_belgium-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/PM2.5_belgium-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    },
+    {
+      "donde": "monitor-calidad-aire·galeria",
+      "ruta": "/images/uploads/2023/09/PM2.5_belgium-QUE-NO-EXISTE.webp",
+      "candidatos": 0
+    }
+  ],
   "catalogo": {
     "arquetipos": [
       {
@@ -544,28 +564,28 @@
             "pieza": "galeria",
             "items": [
               {
-                "imagen": "/images/uploads/2023/09/co_mexico.webp"
+                "imagen": "/images/uploads/2023/09/co_mexico-QUE-NO-EXISTE.webp"
               },
               {
-                "imagen": "/images/uploads/2023/09/NO_sweden.webp"
+                "imagen": "/images/uploads/2023/09/NO_sweden-QUE-NO-EXISTE.webp"
               },
               {
-                "imagen": "/images/uploads/2023/09/no2_uk.webp"
+                "imagen": "/images/uploads/2023/09/NO2_UK-QUE-NO-EXISTE.webp"
               },
               {
-                "imagen": "/images/uploads/2023/09/o3_spain.webp"
+                "imagen": "/images/uploads/2023/09/O3_spain-QUE-NO-EXISTE.webp"
               },
               {
-                "imagen": "/images/uploads/2023/09/so2_france.webp"
+                "imagen": "/images/uploads/2023/09/SO2_france-QUE-NO-EXISTE.webp"
               },
               {
-                "imagen": "/images/uploads/2023/09/h2s_spain.webp"
+                "imagen": "/images/uploads/2023/09/H2S_spain-QUE-NO-EXISTE.webp"
               },
               {
-                "imagen": "/images/uploads/2023/09/pm10_belgium.webp"
+                "imagen": "/images/uploads/2023/09/PM10_belgium-QUE-NO-EXISTE.webp"
               },
               {
-                "imagen": "/images/uploads/2023/09/pm25_belgium.webp"
+                "imagen": "/images/uploads/2023/09/PM2.5_belgium-QUE-NO-EXISTE.webp"
               },
               {
                 "imagen": "/images/uploads/2023/01/co2_glasgow.jpg"

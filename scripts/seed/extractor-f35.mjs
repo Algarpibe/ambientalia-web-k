@@ -69,7 +69,7 @@ const PUBLICO = join(RAIZ, "apps/web/public");
 const DERIV = join(RAIZ, "docs/research/cola-larga/derivaciones");
 
 const SABOTAJE = process.env.SABOTAJE || null;
-const VALIDOS = ["tipo-fantasma", "media-ausente", "ritmo-cableado", "sin-modulos", "bloqueo-mudo"];
+const VALIDOS = ["tipo-fantasma", "media-ausente", "ritmo-cableado", "sin-modulos", "bloqueo-mudo", "control-sin-sitio"];
 if (SABOTAJE && !VALIDOS.includes(SABOTAJE))
   throw new Error(`SABOTAJE desconocido: '${SABOTAJE}' (${VALIDOS.join(" | ")})`);
 if (SABOTAJE) console.log(`\n⚠ SABOTAJE=${SABOTAJE} — esta corrida DEBE fallar.\n`);
@@ -210,11 +210,147 @@ const A_KIND = {
   et_pb_fullwidth_slider: "slider-ancho-arq",
   et_pb_slider: "slider-arq",
   et_pb_video: "video-arq",
-  et_pb_code: "codigo-arq",
+  /* CMS-6 · C (133.ª): el único `et_pb_code` del lote es un FORMULARIO entero
+     —el campo empieza en `<form` y acaba en `</form>`, 0 caracteres a cada
+     lado—, y el propietario decidió que va TIPADO en vez de como HTML crudo.
+     `codigo-arq` sigue existiendo con 0 instancias declaradas: un `et_pb_code`
+     que NO traiga formulario es un caso que este lote no ejercita. */
+  et_pb_code: "formulario-arq",
   et_pb_cta: "cta-arq",
   dvmd_table_maker: "tabla-arq",
   et_pb_gallery: "galeria-arq",
 };
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EL FORMULARIO — de HTML servido a `formulario-arq` (CMS-6 · C)
+   ═══════════════════════════════════════════════════════════════════════════
+   Se recorre EL DOCUMENTO en orden, no una lista de campos esperados: un
+   recorrido que sólo mira lo que el modelo sabe leer no puede ver lo que no
+   sabe leer (§*la prueba de que un modelo expresa un corpus es «¿queda
+   contenido SIN SITIO?»*). Lo que no case sale NOMBRADO en `SIN_SITIO_FORM` y
+   cierra el código de salida — nunca descontado en silencio.
+
+   ⚠ Los `name` van VERBATIM (`field[27]`, no `pais`): son la llave que el
+   destino espera, y normalizarlos sería criterio propio sobre dato medido. */
+const SIN_SITIO_FORM = [];
+
+/** El texto de un nodo, sin marcado y con los espacios colapsados. */
+const txt = (s) => (s ?? "").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+const atrib = (etiqueta, nombre) =>
+  new RegExp(`\\b${nombre}\\s*=\\s*"([^"]*)"`, "i").exec(etiqueta)?.[1] ?? null;
+const tieneAtrib = (etiqueta, nombre) => new RegExp(`\\b${nombre}\\b`, "i").test(etiqueta);
+
+function formularioDe(html, donde) {
+  /* El sabotaje entra EN EL DATO: un control real que el modelo no expresa. */
+  if (SABOTAJE === "control-sin-sitio")
+    html = html.replace(/<\/form>/i, '<input type="file" name="adjunto"></form>');
+  const abre = /<form\b[^>]*>/i.exec(html);
+  if (!abre) { SIN_SITIO_FORM.push({ donde, que: "no hay <form> en el módulo" }); return null; }
+
+  /* Las etiquetas `<label for=…>` se indexan por su destino, para colgarlas del
+     campo al que apuntan en vez de por proximidad — que es lo que se rompe en
+     cuanto el plugin cambia un `<div>` de sitio. */
+  const etiquetaDe = new Map();
+  for (const m of html.matchAll(/<label\b([^>]*)>([\s\S]*?)<\/label>/gi)) {
+    const f = atrib(m[1], "for");
+    if (f && txt(m[2])) etiquetaDe.set(f, txt(m[2]));
+  }
+
+  const campos = [];
+  const ocultos = [];
+  const casillasPorNombre = new Map();
+
+  /* El `<fieldset>` se resuelve ENTERO y antes que sus hijos, para que sus
+     casillas no salgan además como campos sueltos (§*un cardinal absorbe la
+     membresía*: contarlas dos veces daría el mismo total con otro conjunto). */
+  const rangosFieldset = [];
+  for (const fs of html.matchAll(/<fieldset\b[\s\S]*?<\/fieldset>/gi)) {
+    rangosFieldset.push([fs.index, fs.index + fs[0].length]);
+    const bloque = fs[0];
+    const leyenda = txt(/<legend\b[^>]*>([\s\S]*?)<\/legend>/i.exec(bloque)?.[1] ?? "");
+    for (const inp of bloque.matchAll(/<input\b([^>]*)>/gi)) {
+      const tipo = (atrib(inp[1], "type") ?? "text").toLowerCase();
+      const nombre = atrib(inp[1], "name");
+      if (!nombre) continue;
+      if (tipo === "hidden") { ocultos.push({ nombre, valor: atrib(inp[1], "value") ?? "" }); continue; }
+      if (tipo !== "checkbox" && tipo !== "radio") {
+        SIN_SITIO_FORM.push({ donde, que: `<input type=${tipo}> dentro de <fieldset>` });
+        continue;
+      }
+      const grupo = casillasPorNombre.get(nombre)
+        ?? { i: fs.index, nombre, tipo: "casillas", etiqueta: leyenda, requerido: false, opciones: [] };
+      const valor = atrib(inp[1], "value") ?? "";
+      grupo.opciones.push({ valor, texto: etiquetaDe.get(atrib(inp[1], "id") ?? "") ?? valor });
+      if (!casillasPorNombre.has(nombre)) { casillasPorNombre.set(nombre, grupo); campos.push(grupo); }
+    }
+  }
+  const enFieldset = (i) => rangosFieldset.some(([a, b]) => i >= a && i < b);
+
+  /* Los `<input>` y `<select>` de primer nivel, en ORDEN de documento. */
+  const sueltos = [];
+  for (const m of html.matchAll(/<input\b([^>]*)>/gi)) if (!enFieldset(m.index)) sueltos.push({ i: m.index, tag: "input", a: m[1] });
+  for (const m of html.matchAll(/<select\b([^>]*)>([\s\S]*?)<\/select>/gi)) if (!enFieldset(m.index)) sueltos.push({ i: m.index, tag: "select", a: m[1], inner: m[2] });
+  sueltos.sort((x, y) => x.i - y.i);
+
+  for (const s of sueltos) {
+    const nombre = atrib(s.a, "name");
+    if (!nombre) { SIN_SITIO_FORM.push({ donde, que: `<${s.tag}> sin name` }); continue; }
+    if (s.tag === "input") {
+      const tipo = (atrib(s.a, "type") ?? "text").toLowerCase();
+      if (tipo === "hidden") { ocultos.push({ nombre, valor: atrib(s.a, "value") ?? "" }); continue; }
+      /**
+       * ⚠ La lista es la de los tipos SERVIDOS —derivada, no inventada: el
+       * corpus da `hidden` 12 · `text` 3 · `checkbox` 2 y nada más— y lo que no
+       * esté sale NOMBRADO. Mapear cualquier `<input>` a `texto` haría que un
+       * `type="file"` o un `type="date"` entrara como caja de texto: el dato se
+       * guardaría y el render mentiría, que es peor que caer.
+       */
+      if (tipo !== "text") { SIN_SITIO_FORM.push({ donde, que: `<input type=${tipo}> — el modelo expresa texto · seleccion · casillas` }); continue; }
+      campos.push({
+        i: s.i,
+        nombre,
+        tipo: "texto",
+        etiqueta: etiquetaDe.get(atrib(s.a, "id") ?? "") ?? "",
+        requerido: tieneAtrib(s.a, "required"),
+        opciones: [],
+      });
+      continue;
+    }
+    const opciones = [...s.inner.matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option>|<option\b([^>]*)\/?>/gi)].map((o) => ({
+      valor: atrib(o[1] ?? o[3] ?? "", "value") ?? "",
+      texto: txt(o[2] ?? ""),
+    }));
+    campos.push({
+      i: s.i,
+      nombre,
+      tipo: "seleccion",
+      etiqueta: etiquetaDe.get(atrib(s.a, "id") ?? "") ?? "",
+      requerido: tieneAtrib(s.a, "required"),
+      opciones,
+    });
+  }
+
+  /**
+   * ⚠ EL ORDEN ES FIDELIDAD, no cosmética: el `<fieldset>` se resuelve ENTERO y
+   * antes que los controles sueltos —para que sus casillas no salgan además
+   * como campos sueltos—, y eso lo deja el PRIMERO de la lista aunque en el
+   * documento vaya el ÚLTIMO. Se re-ordena por su índice en el HTML servido, y
+   * el índice se quita después: es un dato del instrumento, no del modelo.
+   */
+  campos.sort((a, b) => a.i - b.i);
+  for (const c of campos) delete c.i;
+
+  const textoBoton = txt(/<button\b[^>]*>([\s\S]*?)<\/button>/i.exec(html)?.[1] ?? "");
+  if (!textoBoton) SIN_SITIO_FORM.push({ donde, que: "el <form> no trae texto de botón" });
+
+  return {
+    destino: atrib(abre[0], "action") ?? "",
+    metodo: (atrib(abre[0], "method") ?? "POST").toUpperCase(),
+    textoBoton,
+    campos,
+    ocultos,
+  };
+}
 
 let fantasmaInyectado = false;
 function aBloque(html, n, donde) {
@@ -240,8 +376,10 @@ function aBloque(html, n, donde) {
   switch (tipo) {
     case "et_pb_text":
       return { ...base, contenido: innerDe("et_pb_text_inner") };
-    case "et_pb_code":
-      return { ...base, contenido: innerDe("et_pb_code_inner") };
+    case "et_pb_code": {
+      const f = formularioDe(innerDe("et_pb_code_inner"), donde);
+      return f ? { ...base, ...f } : null;
+    }
     case "dvmd_table_maker":
       return { ...base, contenido: dentro(html, n) };
     case "et_pb_slider":
@@ -397,6 +535,18 @@ ctl(cruce.every((c) => c.mio === c.ref), "CRUCE · el recorrido REPRODUCE el por
 const totalBloques = catalogo.reduce((a, p) => a + p.bloques.length, 0);
 ctl(totalBloques > 0, "§sondas 4bis · se emitieron bloques (0 emitido no puede salir verde)", `${totalBloques} bloques`);
 ctl(TIPOS_SIN_KIND.length === 0, "todo tipo del corpus casa un `kind` — lo que no case sale NOMBRADO", TIPOS_SIN_KIND.length ? [...new Set(TIPOS_SIN_KIND.map((t) => t.tipo))].join(", ") : "0 tipos sin kind");
+
+/**
+ * ⚠ La misma exigencia DENTRO del formulario (CMS-6 · C): un `<input>` de un
+ * tipo que el modelo no expresa, un control sin `name` o un `<form>` sin botón
+ * son contenido que la siembra perdería en silencio — Payload no se queja de lo
+ * que no le pasas. Sale NOMBRADO y cierra el código de salida.
+ */
+ctl(
+  SIN_SITIO_FORM.length === 0,
+  "todo control del `<form>` tiene sitio en `formulario-arq` — lo que no lo tenga sale NOMBRADO",
+  SIN_SITIO_FORM.length ? SIN_SITIO_FORM.map((s) => `${s.donde}: ${s.que}`).join(" · ") : "0 controles sin sitio",
+);
 ctl(MEDIA_SIN_RESOLVER.length === 0, "toda ruta de media resuelve BYTE A BYTE (la guarda de Linux, no la de Windows)", MEDIA_SIN_RESOLVER.length ? `${MEDIA_SIN_RESOLVER.length} sin resolver` : `0 sin resolver · T-nombre-media aplicada ${T_NOMBRE.length} veces`);
 /* §regla 22: el booleano va con su CARDINAL, y el código de salida con el n. */
 ctl(EJES.length === 4, "los CUATRO ejes de `validaHtmlCorpus` se recorren (no el primero que falle)", `${EJES.length} ejes · ${camposHtml} campos HTML comprobados`);

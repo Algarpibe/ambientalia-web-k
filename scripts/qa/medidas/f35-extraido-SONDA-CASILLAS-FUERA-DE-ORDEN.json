@@ -670,6 +670,22 @@
             "textoBoton": "DESCARGAR",
             "campos": [
               {
+                "nombre": "field[15][]",
+                "tipo": "casillas",
+                "etiqueta": "Política de Privacidad y Suscripción",
+                "requerido": false,
+                "opciones": [
+                  {
+                    "valor": "Acepto los términos y condiciones",
+                    "texto": "Acepto los términos y condiciones"
+                  },
+                  {
+                    "valor": "Acepto recibir correos con contenido de Kunak",
+                    "texto": "Acepto recibir correos con contenido de Kunak"
+                  }
+                ]
+              },
+              {
                 "nombre": "fullname",
                 "tipo": "texto",
                 "etiqueta": "Nombre y Apellidos*",
@@ -1823,22 +1839,6 @@
                   {
                     "valor": "Otros",
                     "texto": "Otros"
-                  }
-                ]
-              },
-              {
-                "nombre": "field[15][]",
-                "tipo": "casillas",
-                "etiqueta": "Política de Privacidad y Suscripción",
-                "requerido": false,
-                "opciones": [
-                  {
-                    "valor": "Acepto los términos y condiciones",
-                    "texto": "Acepto los términos y condiciones"
-                  },
-                  {
-                    "valor": "Acepto recibir correos con contenido de Kunak",
-                    "texto": "Acepto recibir correos con contenido de Kunak"
                   }
                 ]
               }

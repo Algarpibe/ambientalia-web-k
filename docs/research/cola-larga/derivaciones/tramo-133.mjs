@@ -55,7 +55,16 @@ if (SAB) P(`\n⚠ SABOTAJE=${SAB} — esta corrida DEBE fallar.\n`);
 
 /* ── PRECONDICIONES ANTES DE GASTAR NADA (§regla 37) ─────────────────────── */
 const CLASES = join(DERIV, "clases-132.json");
-const F35 = join(MED, "f35-extraido.json");
+/**
+ * ⚠ Lee la extracción **ANTES de CMS-6 · C**, no la canónica, y es deliberado:
+ * esta derivación se pronuncia sobre el estado en que `codigo-arq` llevaba el
+ * formulario como HTML crudo. Tras C la canónica es la post-C —`formulario-arq`,
+ * 0 bloqueos— y leerla aquí no daría un error: daría OTRA MEDIDA con la misma
+ * cara (§regla 5bis: arreglar el objeto no arregla sus medidas, las CADUCA).
+ *
+ * El nombre deriva del ESTADO, así que no se mueve con la siguiente corrida.
+ */
+const F35 = join(MED, "f35-extraido-ANTES-DE-CMS6-C.json");
 const COMUNES = join(CFG, "campos/comunes.ts");
 const faltan = [CLASES, F35, COMUNES].filter((p) => !existsSync(p));
 if (faltan.length) { console.error(`PRECONDICION: faltan ${faltan.length}:\n  ${faltan.join("\n  ")}`); process.exit(1); }

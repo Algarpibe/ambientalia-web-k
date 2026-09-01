@@ -41,7 +41,16 @@ if (SAB && !VALIDOS.includes(SAB)) throw new Error(`SABOTAJE desconocido: '${SAB
 if (SAB) P(`\n⚠ SABOTAJE=${SAB} — esta corrida DEBE fallar.\n`);
 
 /* ── PRECONDICIONES ANTES DE GASTAR NADA (§regla 37) ─────────────────────── */
-const F35 = join(MED, "f35-extraido.json");
+/**
+ * ⚠ Lee la extracción **ANTES de CMS-6 · C**, no la canónica, y es deliberado:
+ * esta derivación se pronuncia sobre el estado en que `codigo-arq` llevaba el
+ * formulario como HTML crudo. Tras C la canónica es la post-C —`formulario-arq`,
+ * 0 bloqueos— y leerla aquí no daría un error: daría OTRA MEDIDA con la misma
+ * cara (§regla 5bis: arreglar el objeto no arregla sus medidas, las CADUCA).
+ *
+ * El nombre deriva del ESTADO, así que no se mueve con la siguiente corrida.
+ */
+const F35 = join(MED, "f35-extraido-ANTES-DE-CMS6-C.json");
 const SPEC = join(RAIZ, "docs/research/monitor-calidad-aire/components/reutilizables.spec.md");
 const CLON = join(RAIZ, "apps/web/src/components/monitor/CtaGuiaProyecto.tsx");
 const faltan = [F35, SPEC, CLON].filter((p) => !existsSync(p));
@@ -234,11 +243,24 @@ const SS_PRE = join(DERIV, "sin-sitio-131.json");
 const SS_POST = join(DERIV, "sin-sitio-133-POST-C.json");
 let separadoras = null;
 if (existsSync(SS_PRE) && existsSync(SS_POST)) {
-  const strip = (p) => { const o = JSON.parse(readFileSync(p, "utf8")); delete o.fecha; return JSON.stringify(o); };
-  separadoras = strip(SS_PRE) === strip(SS_POST) ? 0 : 1;
+  /**
+   * ⚠ Se comparan EL VEREDICTO Y SU REPARTO, no el fichero entero — §*la causa
+   * común: el NIVEL al que se mide*, con el contenedor puesto en el JSON.
+   *
+   * La v1 comparaba todo el documento y publicó `separadoras: 0` y luego `1`
+   * **sin que el mapeo cambiara**: lo que se movió fue el detalle de un control
+   * (`11 bloques` → `12`, por el alta de `formulario-arq`), que es del ESQUEMA
+   * y no de la pregunta. Un detector que absorbe diferencias ajenas da un
+   * número que parece del objeto.
+   */
+  const veredicto = (p) => {
+    const o = JSON.parse(readFileSync(p, "utf8"));
+    return JSON.stringify({ resumen: o.resumen, informe: o.informe });
+  };
+  separadoras = veredicto(SS_PRE) === veredicto(SS_POST) ? 0 : 1;
   P(`   veredicto con \`et_pb_code → codigo-arq\`   (PRE-C) .... SIN SITIO = 0`);
   P(`   veredicto con \`et_pb_code → formulario-arq\` (POST-C) .. SIN SITIO = 0`);
-  P(`   congeladas idénticas al bit (sin fecha) ............... ${separadoras === 0 ? "SÍ" : "no"}`);
+  P(`   veredicto + reparto por documento idénticos .......... ${separadoras === 0 ? "SÍ" : "no"}`);
   P(`   ⇒ **instancias SEPARADORAS entre los dos modelos: ${separadoras}**`);
 }
 
