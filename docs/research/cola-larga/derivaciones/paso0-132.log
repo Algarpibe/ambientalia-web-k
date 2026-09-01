@@ -1,0 +1,48 @@
+==============================================================================
+132.ª · PASO 0 — el reparto de la 131.ª, re-derivado, y el ALCANCE del censo
+==============================================================================
+
+## 1 · ¿REPRODUCE EL REPARTO DE LA 131.ª?
+   ✅ bloqueos         131.ª  22  ·  hoy  22
+   ✅ tokens           131.ª  30  ·  hoy  30
+   ✅ clases           131.ª   5  ·  hoy   5
+   ✅ sinClasificar    131.ª   0  ·  hoy   0
+
+   ✅ REPRODUCE
+
+## 2 · ¿EL CENSO QUE BLOQUEA INCLUYE EL LOTE? — por el dato
+   los 4 documentos del lote: accesorios · kunak-api · monitor-calidad-aire · software-de-medicion-calidad-del-aire
+
+   congelada resuelta por mtime: atributos-censo-2026-08-23.json  (2026-08-23T14:37:17)
+   su alcance DECLARADO: 294 páginas · 610 regiones ricas (grupo A desde corpus/transformado, grupo C desde c-extraido)
+   su recuento: {"paginas":294,"regiones":610,"aperturas":47635,"atributosDistintos":81}
+
+   ¿aparece cada documento del lote DENTRO de esa congelada?
+     AUSENTE   accesorios
+     AUSENTE   kunak-api
+     AUSENTE   monitor-calidad-aire
+     AUSENTE   software-de-medicion-calidad-del-aire
+
+   → dentro 0 de 4  ·  FUERA 4 de 4
+
+   páginas CITADAS en la cabecera del censo de atributos: 35 · 291 · 76 · 3 · 3 · 573
+   páginas MEDIDAS en la congelada .................... 294
+   ⚠ la prosa cita un número que la congelada no da (§regla 9)
+
+   ETIQUETAS_CENSADAS 43 · ATRIBUTOS_CENSADOS 81 · HOSTS_PERMITIDOS 21
+
+## 3 · QUÉ HAY YA EN EL REPO QUE CONTESTE PARTE DE ESTO
+   censo de ATRIBUTOS (congeladas)          6 congeladas (3 artefactos)
+   censo de ETIQUETAS del arquetipo A       1 congeladas (0 artefactos)
+   censo de HOSTS de iframe · grupo A       1 congeladas (0 artefactos)
+   censo de HOSTS de iframe · grupo C       2 congeladas (0 artefactos)
+   extraído del lote F3-5                   8 congeladas (7 artefactos)
+
+   PRECEDENTE de ampliación — tramos declarados en las listas:
+     ── Tramo A · grupo A (censo 209/209, `medidas/a-embeds.json`, firma 2026-08-04)
+     ── Tramo C · grupo C (censo 76/76, `medidas/c-embeds.json`, C-SP6) ────────
+
+==============================================================================
+VEREDICTO · reparto REPRODUCE (22·30·5·0)
+           · el lote está FUERA del censo en 4 de 4 documentos
+==============================================================================

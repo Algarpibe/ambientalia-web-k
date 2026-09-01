@@ -1,5 +1,70 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🔎 §132.ª · **EL EXPEDIENTE DE LAS 5 CLASES** — 2026-09-01 · EN CURSO
+
+**Encargo:** levantar el expediente para que la decisión de esquema de §2o.8 se
+tome con su reparto delante. **OFFLINE**: no siembra, no cablea, no construye.
+
+---
+
+### PASO 0 · el reparto de la 131.ª REPRODUCE, y el alcance está medido POR EL DATO
+
+Derivación: `derivaciones/paso0-132.{mjs,log}` (2026-09-01 06:22).
+
+| | 131.ª | hoy |
+|---|---|---|
+| bloqueos | 22 | **22** ✅ |
+| tokens distintos | 30 | **30** ✅ |
+| clases | 5 | **5** ✅ |
+| SIN CLASIFICAR | 0 | **0** ✅ |
+
+#### La separadora que el encargo pedía, contestada por el DATO y no por la prosa
+
+`comunes.ts` declara el alcance del censo de atributos en su cabecera —*«grupo A
++ grupo C + `articulos-kb`»*—. Eso es prosa, o sea **lo único del repo que nadie
+ejecuta** (§regla 3). Comprobado contra la congelada, buscando los cuatro slugs
+del lote dentro de ella:
+
+| slug del lote | ¿en `atributos-censo-2026-08-23.json`? |
+|---|---|
+| `accesorios` | **AUSENTE** |
+| `kunak-api` | **AUSENTE** |
+| `monitor-calidad-aire` | **AUSENTE** |
+| `software-de-medicion-calidad-del-aire` | **AUSENTE** |
+
+> **FUERA en 4 de 4.** El censo que bloquea midió **294 páginas · 610 regiones
+> ricas · 47 635 aperturas**, y **ninguna** de ellas es del lote. Es §*una regla
+> derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese
+> caso*, ahora con su cardinal en las dos direcciones: **294 de 294 fuera del
+> lote · 4 de 4 del lote fuera del censo.**
+
+#### ⚠ Y de paso, §regla 9 dentro del propio censo: la prosa cita 291, la congelada da 294
+
+La cabecera de `ATRIBUTOS_CENSADOS` escribe *«291 páginas · 47 524 aperturas»*;
+la congelada resuelta por `mtime` dice **294 · 47 635**. No cambia ningún
+veredicto —los 81 atributos son los mismos— pero es un número **recordado** al
+lado de uno **derivable**, y los dos se escriben igual. Fichado abajo.
+
+#### Qué había ya en el repo — con su cardinal, los ceros incluidos
+
+| lo que contesta | congeladas | artefactos |
+|---|---|---|
+| censo de ATRIBUTOS | 6 | 3 |
+| censo de ETIQUETAS del arquetipo A | 1 | 0 |
+| hosts de iframe · grupo A | 1 | 0 |
+| hosts de iframe · grupo C | 2 | 0 |
+| extraído del lote F3-5 | 8 | 7 |
+
+**Y el hallazgo que cambia el marco del ESCALÓN 3: el procedimiento de alta YA SE
+EJERCITÓ UNA VEZ.** `HOSTS_PERMITIDOS` lleva **dos tramos declarados** —Tramo A
+(18 hosts, firma 2026-08-04, censo 209/209) y **Tramo C (3 hosts, AMPLIACIÓN
+firmada 2026-08-05, censo 76/76)**—. O sea que *«ampliar un censo cuando entra un
+dominio nuevo»* no es un camino sin recorrer: tiene precedente, con su criterio
+escrito —*«los hosts CENSADOS, cero pérdida medida»*— y con su exclusión
+razonada (`googletagmanager.com`, fuera con su evidencia).
+
+---
+
 ## ⛔ §131.ª · **EL EXTRACTOR DE F3-5 EXISTE Y PRODUCE SUS 4 FILAS — Y LO QUE PARA LA SIEMBRA ES EL CENSO DEL CAMPO RICO, EJERCITADO FUERA DE DONDE SE MIDIÓ** — 2026-08-31
 
 **Encargo:** sembrar las filas de `arquetipos` y verificarlas contra sí mismas.
