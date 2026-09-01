@@ -6963,3 +6963,93 @@ Reparto por documento: `monitor-calidad-aire` 9 · `software-…` 6 · `kunak-ap
 4 · `accesorios` 3. Por bloque: `texto-arq` 15 · `slider-ancho-arq` 3 ·
 `codigo-arq` 2 · `tabla-arq` 1 · `slider-arq` 1.
 Derivación: `derivaciones/bloqueos-f35-131.{mjs,log}`.
+
+---
+
+## ⏸ §2o.9 · `CMS-6` · **EL CENSO DEL CAMPO RICO ANTE EL LOTE F3-5** — ⛔ **PENDIENTE DEL PROPIETARIO** (132.ª, 2026-09-01)
+
+**La decisión:** qué se hace con las 5 clases de token que `validaHtmlCorpus`
+rechaza del lote F3-5. **El expediente DESCRIBE; la elección no es de la tanda.**
+
+Acta con las cinco fichas: `PENDIENTES-QA.md` §132.ª.
+Derivaciones: `derivaciones/{paso0,clases,fichas}-132.{mjs,log,json}`.
+
+### El reparto, en la unidad que decide
+
+Denominadores: **22 bloqueos · 199 campos HTML · 4 documentos · 5 `kind`**.
+
+| clase | tokens | bloqueos | campos | docs | `kind` |
+|---|---|---|---|---|---|
+| schema.org | 5 | **8** | 4 | **4** | `texto-arq` |
+| estructura HTML5 | 2 | **6** | 4 | **4** | `texto-arq` |
+| `data-*` del constructor | 12 | **5** | 5 | 3 | 3 |
+| **formulario** | **20** | **2** | **1** | **1** | `codigo-arq` |
+| aria de tabla | 4 | **1** | 1 | 1 | `tabla-arq` |
+
+> **Admitir las cuatro inertes deja 2 bloqueos** —diferencia simétrica
+> **DESAPARECEN 20 · APARECEN 0**— y los dos son del **mismo campo**:
+> `monitor-calidad-aire · codigo-arq.contenido`. Los otros tres documentos entran
+> limpios.
+
+### Y el alcance del censo, medido: no vio NINGUNA de las cinco
+
+**43 de 43 tokens con cero apariciones en el dominio donde la regla se derivó** —
+cada eje contra SU censo: las 11 etiquetas contra el inventario de `a-censo`
+(post_content servido de 209 páginas), los 32 atributos contra el corpus de
+`atributos-censo` (610 regiones · 294 páginas). **Auditado con 8 testigos vivos**,
+porque un 100 % redondo es antes sospecha del instrumento que dato.
+
+O sea que el censo **no excluyó estas clases: no las conocía**. Es §*una regla
+derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese caso*,
+aplicada al bloqueo entero y no sólo a `formulario` como decía §2o.8.
+
+### ⚠ Corrección a §2o.8: eran **43 tokens**, no 30
+
+`extractor-f35` congela `hit.slice(0, 6)` y **tres bloqueos estaban EN el tope**.
+Sin recortar son **43**, y **8 de los 13 ocultos son de formulario** (`option` ·
+`select` · `name` · `novalidate` · `placeholder` · `required` · `selected` ·
+`value`). Las 5 clases y el `0 SIN CLASIFICAR` aguantan; lo que estaba
+subestimado en más del doble es **el cardinal de la clase que decide**.
+
+### La superficie de `formulario`, que es la única con ella
+
+| | |
+|---|---|
+| destino | `https://kunak.activehosted.com/proc.php` — **host de TERCERO** |
+| método | **POST** |
+| ¿lo alcanza `HOSTS_PERMITIDOS`? | **NO** — esa allowlist mira `<iframe>`, no `<form>` |
+| `<input>` | 17 — 5 visibles, **12 ocultos** (`act=sub` · `or=<hash>` · 3 de UTM …) |
+| `<select>` | 2, con **280 `<option>`** |
+| reCAPTCHA | `data-sitekey` en un `<div class="g-recaptcha">`; clave **pública por diseño** |
+| **qué hace sin backend** | **nada**: lo inicializa un `<script>` inline que `A.limpia()` retira. **52 `<script>` en el documento, 0 en el campo** |
+
+### Las opciones, con su REVERSA nombrada (§regla 23)
+
+| | desbloquea | **cómo se deshace** | reapertura |
+|---|---|---|---|
+| **A** · admitir las 4 inertes | **20 de 22** · 3 docs limpios | deshacer es **RESTRINGIR** = el lado **caro** (mata siembra ya hecha) | no va contra ningún criterio |
+| **B** · admitir las 5 | **22 de 22** | igual: **restringir**, el lado caro | ⚠ **CONTRA** el criterio del propio censo (*«las cuatro familias peligrosas salen a CERO»*) — **exige condición de reapertura explícita** |
+| **C** · `formulario` como BLOQUE TIPADO | los 2 de formulario, **sin tocar la whitelist** | deshacer es **AMPLIAR** = el lado **barato** | **a favor**: es lo que §3.3·T4 hace con los `<script>` |
+| **D** · excluir el campo | los 2 | deshacer es replantear esto entero (NO-OP) | ⚠ contra la **regla 1** (fidelidad): pierde contenido servido |
+| **E** · no hacer nada | 0 | trivial | F3-5 queda parada |
+
+**A + C** desbloquea 22 de 22 sin ampliar la whitelist con formulario. **El clon
+ya tiene C hecho**: `CtaGuiaProyecto.tsx` sirve ese mismo formulario reconstruido
+en TSX, sin ActiveCampaign y sin reCAPTCHA.
+
+**Y hay precedente del procedimiento de alta**, ejercitado una vez:
+`HOSTS_PERMITIDOS` lleva **dos tramos** —Tramo A (18 hosts, firma 2026-08-04,
+censo 209/209) y **Tramo C (3 hosts, AMPLIACIÓN firmada 2026-08-05, censo
+76/76)**—, con su criterio escrito (*«los hosts CENSADOS, cero pérdida medida»*)
+y su exclusión razonada (`googletagmanager.com`).
+
+### Lo que el expediente NO contesta
+
+1. si alguna clase es **peligrosa en ejecución** — mide qué entra y de dónde, no
+   qué hace el navegador del visitante;
+2. si **otros arquetipos ya sembrados** traen estas clases: el barrido es de los
+   4 documentos del lote;
+3. **cuánta pérdida de contenido servido** tiene cada opción — el Tramo C se
+   firmó con *«cero pérdida medida»* y **esa medición no está hecha aquí**;
+4. si el `<form>` **sin sus `<script>`** sigue funcionando — necesita render, y
+   la 132.ª es OFFLINE.

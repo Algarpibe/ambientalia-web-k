@@ -2109,6 +2109,40 @@ irreducibles, 0 de 788 capturados).
 > colándola»*. Es la precondición de la siembra, fichada en `ESQUEMA-CMS.md`
 > §2o.5. Derivación: `derivaciones/bloqueos-f35-131.{mjs,log}`.
 
+> ✏️ **ACTUALIZADO 2026-09-01 (132.ª) — el estado de F3-5 sigue siendo el mismo,
+> y ahora la precondición está DECIDIBLE en vez de sólo fichada.**
+>
+> **Lo que NO cambia:** `arquetipos` a **0 filas · 0 lectores**; el sembrador
+> escrito y su negativo verde; la siembra parada. **No se sembró, no se cableó y
+> no se construyó**: la 132.ª es OFFLINE por encargo.
+>
+> **Lo que cambia, y son tres cosas medidas:**
+>
+> 1. **el bloqueo se encoge a UN campo.** Admitir las cuatro clases inertes deja
+>    **2 bloqueos de 22** —diferencia simétrica **DESAPARECEN 20 · APARECEN 0**—
+>    y los dos son del **mismo** `monitor-calidad-aire · codigo-arq.contenido`.
+>    Los otros **3 documentos de 4 entran limpios**;
+> 2. **el alcance del censo está medido, y vale para las CINCO clases**, no sólo
+>    para `formulario`: **43 de 43 tokens con cero apariciones** en el dominio
+>    donde la regla se derivó, cada eje contra SU censo y **auditado con 8
+>    testigos vivos** (§sondas 4: un 100 % redondo es antes sospecha del
+>    instrumento que dato). El censo **no excluyó estas clases: no las conocía**;
+> 3. **eran 43 tokens, no 30.** `extractor-f35` congela `hit.slice(0, 6)` y tres
+>    bloqueos estaban **EN el tope**; **8 de los 13 ocultos son de formulario**.
+>    El reparto de 5 clases y el `0 SIN CLASIFICAR` aguantan — lo que estaba
+>    subestimado en más del doble es el cardinal de la clase que decide.
+>
+> **La decisión queda planteada como `CMS-6`** en `ESQUEMA-CMS.md` §2o.9, con sus
+> cinco opciones, su coste, **su reversa NOMBRADA** (§regla 23: *ampliar es
+> barato, restringir es caro*) y lo que el expediente no contesta. **PENDIENTE
+> DEL PROPIETARIO**: la tanda describe, no elige.
+>
+> ⚠ **Y la referencia de arriba a `ESQUEMA-CMS.md` §2o.5 es la que la 131.ª
+> escribió; la ficha vive en §2o.8**, y la decisión nueva en **§2o.9**.
+>
+> Acta: `PENDIENTES-QA.md` §132.ª. Derivaciones:
+> `derivaciones/{paso0,clases,fichas}-132.{mjs,log,json}`.
+
 > ⚠⚠ **LA CONDICIÓN DE REAPERTURA NO EXIGE CLONAR, y eso salió de enumerar las
 > separadoras en vez de copiar la primera.** El encargo la enunció *«si se
 > clonan los 2 vecinos de `monitor` a ≥0.7…»*. Derivado

@@ -1,9 +1,19 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## 🔎 §132.ª · **EL EXPEDIENTE DE LAS 5 CLASES** — 2026-09-01 · EN CURSO
+## ✅ §132.ª · **EL EXPEDIENTE DE LAS 5 CLASES — LA DECISIÓN SE ENCOGE A UN CAMPO, Y EL CENSO QUE BLOQUEA NO VIO NINGUNA DE LAS CINCO** — 2026-09-01
 
 **Encargo:** levantar el expediente para que la decisión de esquema de §2o.8 se
 tome con su reparto delante. **OFFLINE**: no siembra, no cablea, no construye.
+**Entregado:** PASO 0, ESCALONES 1, 2 y 3, y el cierre. Decisión planteada como
+**`CMS-6`** (`ESQUEMA-CMS.md` §2o.9), **PENDIENTE DEL PROPIETARIO**.
+
+**Los tres números que la hacen decidible:**
+
+| | |
+|---|---|
+| admitir las 4 clases inertes deja | **2 bloqueos · 1 campo de 199 · 1 documento de 4** |
+| tokens que el censo que bloquea nunca vio | **43 de 43** |
+| tokens que el tope de la 131.ª escondía | **13**, de los que **8 son de formulario** |
 
 ---
 
@@ -344,6 +354,121 @@ unidad es un defecto que el original no tiene*.
 > **`dominio-mudo` es el caso que enseña**: sin el control de testigos habría
 > salido **verde con el mismo 43 de 43**, porque el veredicto de alcance no
 > distingue un corpus que no trae el token de un instrumento que no lo ve.
+
+---
+
+### ESCALÓN 3 · LAS OPCIONES, con su coste y su REVERSA NOMBRADA
+
+**Se escriben, no se eligen.** La decisión es del propietario y está planteada en
+`ESQUEMA-CMS.md` §2o.9 como **`CMS-6`** (CMS-4 y CMS-5 están tomados; derivado,
+no recordado).
+
+> ⚠ **Antes de la tabla: «admitir las 4 inertes» significa dos cosas distintas.**
+> Por **sintaxis** son **26 tokens** (3 etiquetas + 23 atributos) e incluye
+> `data-sitekey` · `data-autofill` · `data-styles-version`, que son **del widget
+> de formulario**. Por **función** son **23** (3 + 20) y esos tres se van con su
+> formulario. **La diferencia son exactamente esos 3 tokens**, y elegir lectura
+> es parte de la decisión, no un detalle de redacción.
+
+| | qué desbloquea | qué cuesta | **cómo se deshace** | reapertura |
+|---|---|---|---|---|
+| **A · admitir las 4 inertes** | **20 de 22 bloqueos** · 3 de 4 documentos entran limpios · quedan 2 bloqueos en 1 campo | alta de **23 o 26 tokens** en `ETIQUETAS_CENSADAS` (3) y `ATRIBUTOS_CENSADOS` (20 o 23), con su evidencia · re-correr los negativos de las colecciones que usan `campoHtml` | **la operación de deshacer es RESTRINGIR**, y ése es el lado CARO: en cuanto haya contenido sembrado con esos tokens, restringir mata la siembra. Ampliar más tarde es el lado barato | no va contra ningún criterio escrito |
+| **B · admitir las 5 clases** | **22 de 22** · la siembra de F3-5 arranca sin más cambios | lo de A **más** el alta de `<form action method>` y del resto de formulario (8 etiquetas + 9 o 12 atributos) | igual que A: **deshacer es restringir**, el lado caro | ⚠ **VA CONTRA el criterio del propio censo**, que se escribió sobre *«las cuatro familias peligrosas salen a CERO … por eso el rechazo puede ir en la dirección que grita»*. `<form action>` **es** una vía de envío a un host arbitrario, y `HOSTS_PERMITIDOS` no la alcanza. **Necesita condición de reapertura explícita** |
+| **C · `formulario` como BLOQUE TIPADO** | **los 2 bloqueos de formulario, sin tocar la whitelist** | un `kind` nuevo en `arquetipos` con sus campos (destino · método · campos visibles · ocultos) y su render. **El clon ya lo tiene hecho**: `CtaGuiaProyecto.tsx` | **deshacer es AMPLIAR la whitelist**, o sea caer en B — el lado barato | va **a favor** del criterio: es lo que §3.3·T4 ya hace con los `<script>` (nodo-embed tipado o eliminación con sustitución) |
+| **D · excluir el campo del lote** | los 2 bloqueos | poco trabajo | deshacer es **volver a plantear esto entero**: ni barato ni caro, NO-OP | ⚠ va contra la **regla 1** del proyecto (fidelidad; los textos verbatim): pierde contenido servido |
+| **E · no hacer nada** | 0 | 0 — y **F3-5 queda parada** | trivial | — |
+
+**A + C es una combinación, no una tercera opción**: desbloquea **22 de 22** sin
+ampliar la whitelist con formulario, y deja la lectura por FUNCIÓN como la
+natural —los 3 `data-` del widget se van con el bloque tipado—.
+
+> **La operación de deshacer va escrita en cada fila a propósito** (§regla 23):
+> *«entre dos opciones reversibles se toma la que se deshace mejor»* **no dice
+> cuál es**, y al releerlo de memoria el signo se invierte la mitad de las veces.
+> Aquí la asimetría es: **ampliar es barato, restringir es caro** — porque
+> restringir después de sembrar mata contenido que ya existe.
+
+#### Lo que este expediente NO contesta
+
+1. **si alguna de las 5 clases es peligrosa en ejecución.** Mide **qué entra y de
+   dónde viene**, no qué hace el navegador del visitante con ello. Para
+   `formulario` la superficie está descrita —destino, método, campos ocultos— y
+   **la valoración es del propietario**;
+2. **si los otros arquetipos ya sembrados traen estas clases.** El barrido es de
+   los **4 documentos del lote F3-5**. Que `entradas-blog` o `articulos-kb` no
+   las traigan está medido *del dominio del censo*, no de todo el corpus;
+3. **cuánto contenido servido se pierde con cada opción.** El precedente de la
+   ampliación del Tramo C se firmó con *«cero pérdida medida»*; **esa medición no
+   se ha hecho para estas cinco clases**;
+4. **si el `<form>` sin sus `<script>` sigue funcionando.** Está medido que los
+   scripts **no entran** (0 de 199), no qué pasa al renderizarlo así. Esa
+   pregunta necesita render, y esta tanda es OFFLINE;
+5. **el ESCALÓN 3 de la 131.ª** —sembrar, diferencia simétrica, `clon-base` a dos
+   anchos— **sigue sin ejecutarse**, así que no hay línea base nueva.
+
+---
+
+### CIERRE · barrido de §regla 12, tripwire y typechecks
+
+#### Barrido de §regla 12, acotado al acta de esta tanda — **con su número**
+
+Instrumento: blockquote con negrita al principio de línea. **Cruce ENDURECIDO
+mandando** (abre con mayúscula, comilla angular o backtick) y **el laxo publicado
+al lado**, como pide la regla:
+
+| cruce | n |
+|---|---|
+| **endurecido** (manda) | **10** |
+| laxo (todo `> **`) | 13 |
+| **son REGLA y no estaban** | **2** |
+| eventos (fecha, número y ruta: se quedan donde están) | 8 |
+
+Las dos promovidas a `CLAUDE.md`:
+
+1. **§regla 29, tercera cara** — *una diferencia simétrica sobre CONJUNTOS no ve
+   una llave que colapsa: sale `0/0` con los dos lados igual de mal*. Es la que
+   ciega **al instrumento que este repo usa precisamente para no cegarse**, así
+   que sin ella §*un cardinal es un contenedor* se lee como si la simétrica
+   siempre discriminara;
+2. **§regla 28, mitad (c)** — *el CONTROL tampoco puede ser la aritmética de la
+   condición*, con su corolario: **el control de un cero es el TESTIGO, no que el
+   resultado separe**. Y con el aviso de que «que el resultado separe» es
+   activamente malo, porque cuando el dato real ES unánime cae describiendo el
+   resultado como una avería.
+
+Los otros 8 llevan fecha, cardinal y ruta —«FUERA en 4 de 4», «43, no 30», «la
+clase con MÁS bloqueos»— y son eventos: se quedan aquí.
+
+#### Tripwire de carga (§regla 19) — re-derivado porque esta tanda escribió en `CLAUDE.md`
+
+| | chars | vs. aviso | `KV-01` | `KV-08` |
+|---|---|---|---|---|
+| **cargado** por esta sesión (HEAD de arranque) | **325 791** | **2.17×** | 22.1 % | 100 % |
+| en disco (lo que cargará la 133.ª) | 330 145 | 2.20× | 21.8 % | 100 % |
+
+**Truncado sigue REFUTADO**, ahora a más del doble del aviso. Y la regla de la
+124.ª se confirma otra vez: **anclado a línea completa da 1 y 1; por cadena libre
+da 3 y 2** — el marcador y su documentación se escriben igual.
+
+#### Verificación
+
+`npm run typecheck` **EXIT=0** · `npm run typecheck:cms` **EXIT=0**.
+Negativos: `clases-132` **2/2 + control** · `fichas-132` **2/2 + control**.
+`git status` tras los negativos: **0 borrados · 0 fuentes de sonda tocadas**.
+
+#### ⚠ Incidente de método de esta tanda: escribí un bloque del ESQUEMA con HEREDOC
+
+§regla 13 lo prohíbe y lo hice igual. El delimitador iba entrecomillado
+(`<< 'FIN'`), que es la forma que **no** interpola, así que el contenido llegó
+íntegro —verificado: **96 backticks · 0 huecos vacíos · 8 de 8 tokens críticos
+presentes**—. Se deja escrito **porque el modo de fallo es silencioso** y esta
+tanda es justo la evidencia de lo que la regla avisa: *«un heredoc que funciona
+veinte veces enseña que los heredocs funcionan»*.
+
+**Y se cobró diez minutos después, en la orden siguiente**: un `node -e` con un
+regex se comió el escape de `[\]\\]` y murió con `Unterminated regexp literal` —
+esta vez ruidosamente, que es la mitad afortunada. Rehecho con `Write` a un
+fichero.
 
 ---
 

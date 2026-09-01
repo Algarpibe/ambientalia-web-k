@@ -4833,6 +4833,46 @@ su número se lee como nota al pie.
 > de alcance, y las limitaciones de alcance se declaran arriba, no en un
 > comentario junto a la línea que las causa.
 
+⚠⚠ **(c) Y LA MITAD SIMÉTRICA, QUE FALTABA Y ES LA QUE SE ESCRIBE SOLA: EL
+CONTROL TAMPOCO PUEDE SER LA ARITMÉTICA DE LA CONDICIÓN.** (2026-09-01)
+
+La mitad (a) dice que **el sabotaje** reproduce el modo de fallo y no la
+aritmética de la condición. Le falta decir lo mismo del otro lado, y ahí el error
+es más fácil porque el control se escribe **mirando el resultado que acabas de
+obtener**:
+
+> **Un control de la forma `medido ≥ referencia` o `n ≤ 1` lo cumple también el
+> caso degenerado que la guarda existe para cazar.** `real >= congelada` lo
+> cumple `30 >= 30` —o sea una corrida que recorta—; `documentos <= 1` lo cumple
+> un residuo **VACÍO**, que es justo lo que produce una clasificación que mete la
+> clase peligrosa en un cubo inerte. **El control pasa, el sabotaje muerde, y
+> nadie se entera.**
+
+**Medido, y los dos en la misma tanda:** los dos primeros controles de una
+derivación no mordían ninguno de sus dos sabotajes. Los que sí muerden **no
+comparan magnitudes: re-derivan el hecho** — re-leer el validador sobre el mismo
+campo y exigir que los hits guardados sean los completos; exigir que el residuo
+**SEA** el conjunto con el token de la clase peligrosa **y no esté vacío**.
+
+⚠ **Y su caso peor, que es cuando el veredicto se construye CONTANDO
+AUSENCIAS:** ahí un instrumento que no ve produce **exactamente el mismo
+veredicto** que un corpus que no trae. Medido: un sabotaje que ponía todas las
+apariciones a 0 publicaba el **mismo** «43 de 43 SIN PROBAR» que la corrida
+buena. **Cero instancias separadoras**, y ninguna comprobación sobre el
+resultado podía tenerlas.
+
+> **El control de un cero NO es que el resultado separe: es el CASO CONOCIDO DE
+> ANTEMANO.** Se miden TESTIGOS —elementos que sabes que están, con la MISMA
+> función— y se exige que salgan vivos. Con los testigos vivos, el cero es del
+> objeto; sin ellos, la corrida no adjudica. Es §regla 26 (*el fichero que iba a
+> escribir tenía que salir en la lista y no salía*) convertida en control
+> permanente en vez de en anécdota de depuración.
+
+**Y por qué el control «que el resultado separe» es activamente malo:** cuando el
+dato real ES unánime —y a veces lo es— ese control **cae describiendo el
+resultado como si fuera una avería**, y manda a la tanda siguiente a arreglar un
+instrumento que funciona.
+
 **29 · UN ÍNDICE CONSTRUIDO PARA UNA PREGUNTA NO CONTESTA OTRA — Y CUANDO SU
 LLAVE DEJA DE IDENTIFICAR NO DA ERROR: EMPAREJA MAL.** (2026-08-23)
 
@@ -4919,6 +4959,42 @@ varianza medida entre ellas**. El dominio siempre estuvo ahí.
 > tocar en varias tandas.** Un pendiente real se estrecha cuando se le mira;
 > uno fabricado por el ámbito de una llave **no se mueve**, porque cada tanda
 > reproduce el mismo cero con el mismo instrumento y lo lee como confirmación.
+
+⚠⚠ **Y LA TERCERA CARA, QUE ES LA QUE CIEGA AL INSTRUMENTO QUE ESTE REPO USA
+PARA NO CEGARSE: UNA DIFERENCIA SIMÉTRICA SOBRE CONJUNTOS NO VE UNA LLAVE QUE
+COLAPSA — SALE `0/0` CON LOS DOS LADOS IGUAL DE MAL (2026-09-01).**
+
+Las dos de arriba son sobre una llave que empareja **mal** o que no empareja
+**nada**. Falta el caso en que la llave está **dentro del control**, y entonces
+el daño no es un dato falso: es que **la comprobación que este documento manda
+hacer deja de comprobar**.
+
+> **§*un cardinal es un contenedor y absorbe la membresía* manda comparar por
+> DIFERENCIA SIMÉTRICA en vez de por recuento. Pero una diferencia simétrica se
+> calcula sobre CONJUNTOS, y un conjunto colapsa las llaves repetidas.** Si la
+> llave no identifica, colapsa **en los dos lados por igual** y la simétrica sale
+> **0/0** — o sea el veredicto de «son los mismos» sobre una membresía que nadie
+> ha mirado.
+
+**Medido:** un cruce entre una replicación y su congelada usó
+`eje|slug|kind|campo` como llave. Tres módulos **distintos** del mismo documento
+son los tres `texto-arq.contenido`, así que la llave colapsaba **22 bloqueos en
+15**. El control publicó `✅ REPLICACIÓN FIEL` con un cardinal correcto —`22 =
+22`— al lado de una simétrica ciega.
+
+**Y lo delató la ARITMÉTICA, no el veredicto:** una tabla imprimía `(suma) 21 ←
+> 22`, y **21 no es mayor que 22**. §regla 1 —*lo que imprime y lo que cuenta no
+pueden discrepar*— cazando lo que ningún código de salida iba a dar.
+
+**Las dos mitades operativas, y la segunda es la barata:**
+
+1. **la llave de un control de membresía lleva lo que DISTINGUE a dos hermanos**
+   —casi siempre un ORDINAL de emisión—, porque las coordenadas semánticas
+   (documento, tipo, campo) se repiten por diseño;
+2. **y se le pone GUARDA de que identifica: `llaves distintas === elementos`, y
+   si no, TIRA.** Cuesta un `filter` y es lo único que distingue una simétrica
+   que compara de una que colapsa. Publicar las dos cifras al lado —`22
+   bloqueos · 22 llaves distintas`— hace el verde auditable; `0/0` a secas, no.
 
 **30 · UNA MIGRACIÓN QUE RELAJA UNA RESTRICCIÓN TIENE UNA REVERSA CON FECHA DE
 CADUCIDAD: SE PRUEBA ANTES DE QUE ENTRE EL DATO.** (2026-08-23)
