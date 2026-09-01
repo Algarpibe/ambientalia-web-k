@@ -1,0 +1,103 @@
+{
+ "meta": {
+  "tanda": "133.ª",
+  "fecha": "2026-09-01"
+ },
+ "candidatos": [
+  {
+   "id": "R1",
+   "tipo": "REGLA",
+   "enunciado": "Antes de fichar una PÉRDIDA, comprueba si OTRA PIEZA del modelo ya la porta. Un dato que el modelo no tiene como campo propio puede ser derivable de los que sí tiene — y ficharlo produce una pérdida que no existe, con su cardinal y todo.",
+   "porQue": "Medido: el `id=\"_form_106_\"` del formulario iba a la tabla de pérdidas por no tener campo. Los ocultos `u` y `f` valen los dos `106`, así que el render lo reconstruye como `_form_${u}_`. La tabla pasó de 3 pérdidas a 2 sin cambiar el modelo — sólo mirando si el dato ya estaba dentro por otra puerta.",
+   "vocabulario": [
+    "pérdida",
+    "otra pieza",
+    "porta"
+   ],
+   "enunciadoClave": "MIRA SI OTRA PIEZA DEL MODELO YA LA PORTA",
+   "destino": "CLAUDE.md, §regla 14 (la mitad de la pérdida declarada)",
+   "laxo": true,
+   "endurecido": true
+  },
+  {
+   "id": "R2",
+   "tipo": "REGLA",
+   "enunciado": "Cuando DOS definiciones del esquema modelan el MISMO objeto con validadores distintos, los bloqueos que salen NO son del contenido: son de la divergencia. Se dirime corriendo el MISMO validador sobre el dato de la OTRA definición — si bloquea igual, lo que separa a las dos no es su dato.",
+   "porQue": "Medido: `codigo-arq` (valida) y `codigo` (no valida) modelan el mismo `et_pb_code` de Divi. Corrido `validaHtmlCorpus` sobre los 9 htmls ya modelados de `paginas`, bloquean 9 de 9. Los 2 bloqueos que quedaban de CMS-6 no los producía el formulario: los producía qué validador se le puso a cada bloque. Sin esa medición, el diagnóstico habría sido «este contenido es especial».",
+   "vocabulario": [
+    "dos definiciones",
+    "validadores distintos",
+    "divergencia"
+   ],
+   "enunciadoClave": "el MISMO validador sobre el dato de la OTRA definición",
+   "destino": "CLAUDE.md, §regla 29 mitad 2 / clase C7",
+   "laxo": true,
+   "endurecido": true
+  },
+  {
+   "id": "R3",
+   "tipo": "REGLA",
+   "enunciado": "Un detector de INSTANCIAS SEPARADORAS se compara al NIVEL de la pregunta —el veredicto—, no sobre el artefacto entero. Comparar dos ficheros completos absorbe diferencias ajenas, y entonces el número de separadoras se mueve sin que la pregunta haya cambiado.",
+   "porQue": "Medido: el detector publicó `separadoras: 0` y después `1` sin que el mapeo que comparaba cambiara — lo que se movió fue el detalle de un control (`11 bloques` → `12`, por un alta en el esquema). Estrechado a `resumen` + reparto por documento, vuelve a 0. Es §*la causa común: el NIVEL al que se mide* con el contenedor puesto en el JSON.",
+   "vocabulario": [
+    "separadoras",
+    "nivel",
+    "veredicto"
+   ],
+   "enunciadoClave": "SE COMPARA EL VEREDICTO, NO EL ARTEFACTO ENTERO",
+   "destino": "CLAUDE.md, §*un verde vale lo que valen sus instancias separadoras*",
+   "laxo": true,
+   "endurecido": true
+  },
+  {
+   "id": "R4",
+   "tipo": "REGLA",
+   "enunciado": "Una whitelist ampliada publica DOS cardinales, no uno: lo que ALCANZA y su invariante no cubre, y lo que ADMITE DE MÁS hoy. El primero casi nunca es cero y no es un riesgo por sí solo; el segundo es el que se puede medir contra el corpus.",
+   "porQue": "§regla 25 pide «el cardinal de lo que la guarda alcanza y el invariante no cubre. Si sale 0 está ajustada». Medido aquí: alcanza 24 campos de 25 que su invariante no cubre —o sea NO ajustada— y admite de más 0, porque ninguno de los 23 tokens aparece en los censos de las otras colecciones. Publicar sólo el primero habría parado un alta inerte; sólo el segundo, habría escondido que el dominio se ensanchó.",
+   "vocabulario": [
+    "whitelist ampliada",
+    "alcanza",
+    "admite de más"
+   ],
+   "enunciadoClave": "lo que ADMITE DE MÁS hoy",
+   "destino": "CLAUDE.md, §regla 25 (la mitad del alcance)",
+   "laxo": false,
+   "endurecido": true
+  },
+  {
+   "id": "E1",
+   "tipo": "EVENTO",
+   "enunciado": "El repo modela el mismo formulario de ActiveCampaign de dos maneras: HTML crudo en `paginas` (9 instancias, sembradas) y tipado en `arquetipos` (1).",
+   "porQue": "Tiene fecha, cardinal y nombre propio: es un hallazgo sobre ESTE repo, no una regla. Vive en `ESQUEMA-CMS.md` §2o.9 como ficha `F3-5-CODE-DIVERGE`.",
+   "vocabulario": [
+    "ActiveCampaign"
+   ],
+   "enunciadoClave": "F3-5-CODE-DIVERGE",
+   "destino": "ESQUEMA-CMS.md §2o.9 (se queda ahí)",
+   "laxo": false,
+   "endurecido": false
+  },
+  {
+   "id": "E2",
+   "tipo": "EVENTO",
+   "enunciado": "§regla 13 se pagó TRES veces en una sesión: un `sed` dejó `\"0001\"` donde iba `\\u0001`, y un `node -e` dejó `\\x60` literal en tres comentarios.",
+   "porQue": "La regla YA está escrita y con su mecanismo. Lo que esta tanda añade es una instancia más, no un enunciado nuevo — y §regla 12 dice que un evento se queda en su acta.",
+   "vocabulario": [
+    "heredoc",
+    "intérprete"
+   ],
+   "enunciadoClave": "Write/Edit escriben el fichero sin intérprete en medio",
+   "destino": "PENDIENTES-QA.md §133.ª (se queda ahí)",
+   "laxo": true,
+   "endurecido": false
+  }
+ ],
+ "resumen": {
+  "total": 6,
+  "reglas": 4,
+  "eventos": 2,
+  "laxoSi": 4,
+  "endSi": 4
+ },
+ "limite": "sólo ve enunciados en prosa; una regla escrita en código es invisible para este barrido"
+}

@@ -1,0 +1,50 @@
+==============================================================================
+133.ª · BARRIDO DE §regla 12 — REGLA vs EVENTO, con los DOS cruces
+==============================================================================
+
+   | id | tipo   | cruce A (laxo, heredado) | cruce B (ENDURECIDO, manda) |
+   |----|--------|--------------------------|------------------------------|
+   | R1 | REGLA  | ya escrito               | ya escrito                   |
+   | R2 | REGLA  | ya escrito               | ya escrito                   |
+   | R3 | REGLA  | ya escrito               | ya escrito                   |
+   | R4 | REGLA  | NO está                  | ya escrito                   |
+   | E1 | EVENTO | NO está                  | NO está                      |
+   | E2 | EVENTO | ya escrito               | NO está                      |
+
+   laxo «ya escrito» ......... 4 de 6
+   ENDURECIDO «ya escrito» ... 4 de 6   ← el que manda
+   ⚠ el laxo SOBRE-CASA (basta con que el vocabulario exista en algún sitio) y el
+     endurecido SUB-CASA (exige el literal). Ninguno adjudica solo.
+
+   candidatos: 6  ·  REGLA 4  ·  EVENTO 2
+
+── LAS REGLAS, con su destino ──
+
+   R1 · Antes de fichar una PÉRDIDA, comprueba si OTRA PIEZA del modelo ya la porta. Un dato que el modelo no tiene como campo propio puede ser derivable de los que sí tiene — y ficharlo produce una pérdida que no existe, con su cardinal y todo.
+      por qué: Medido: el `id="_form_106_"` del formulario iba a la tabla de pérdidas por no tener campo. Los ocultos `u` y `f` valen los dos `106`, así que el render lo reconstruye como `_form_${u}_`. La tabla pasó de 3 pérdidas a 2 sin cambiar el modelo — sólo mirando si el dato ya estaba dentro por otra puerta.
+      destino: CLAUDE.md, §regla 14 (la mitad de la pérdida declarada)
+
+   R2 · Cuando DOS definiciones del esquema modelan el MISMO objeto con validadores distintos, los bloqueos que salen NO son del contenido: son de la divergencia. Se dirime corriendo el MISMO validador sobre el dato de la OTRA definición — si bloquea igual, lo que separa a las dos no es su dato.
+      por qué: Medido: `codigo-arq` (valida) y `codigo` (no valida) modelan el mismo `et_pb_code` de Divi. Corrido `validaHtmlCorpus` sobre los 9 htmls ya modelados de `paginas`, bloquean 9 de 9. Los 2 bloqueos que quedaban de CMS-6 no los producía el formulario: los producía qué validador se le puso a cada bloque. Sin esa medición, el diagnóstico habría sido «este contenido es especial».
+      destino: CLAUDE.md, §regla 29 mitad 2 / clase C7
+
+   R3 · Un detector de INSTANCIAS SEPARADORAS se compara al NIVEL de la pregunta —el veredicto—, no sobre el artefacto entero. Comparar dos ficheros completos absorbe diferencias ajenas, y entonces el número de separadoras se mueve sin que la pregunta haya cambiado.
+      por qué: Medido: el detector publicó `separadoras: 0` y después `1` sin que el mapeo que comparaba cambiara — lo que se movió fue el detalle de un control (`11 bloques` → `12`, por un alta en el esquema). Estrechado a `resumen` + reparto por documento, vuelve a 0. Es §*la causa común: el NIVEL al que se mide* con el contenedor puesto en el JSON.
+      destino: CLAUDE.md, §*un verde vale lo que valen sus instancias separadoras*
+
+   R4 · Una whitelist ampliada publica DOS cardinales, no uno: lo que ALCANZA y su invariante no cubre, y lo que ADMITE DE MÁS hoy. El primero casi nunca es cero y no es un riesgo por sí solo; el segundo es el que se puede medir contra el corpus.
+      por qué: §regla 25 pide «el cardinal de lo que la guarda alcanza y el invariante no cubre. Si sale 0 está ajustada». Medido aquí: alcanza 24 campos de 25 que su invariante no cubre —o sea NO ajustada— y admite de más 0, porque ninguno de los 23 tokens aparece en los censos de las otras colecciones. Publicar sólo el primero habría parado un alta inerte; sólo el segundo, habría escondido que el dominio se ensanchó.
+      destino: CLAUDE.md, §regla 25 (la mitad del alcance)
+
+── LOS EVENTOS, que se quedan donde están ──
+   E1 · ESQUEMA-CMS.md §2o.9 (se queda ahí)
+   E2 · PENDIENTES-QA.md §133.ª (se queda ahí)
+
+── LÍMITE DECLARADO (§regla 14) ──
+   este barrido sólo ve enunciados YA ESCRITOS EN PROSA de las actas de la tanda.
+   Una regla que viva EN EL CÓDIGO —un ternario, un `??`, un `slice`— es invisible
+   para él: su cero es cierto de la prosa y NO del repo.
+
+==============================================================================
+VEREDICTO · 4 reglas para CLAUDE.md · 2 eventos que se quedan · endurecido 4/6
+==============================================================================

@@ -2041,6 +2041,28 @@ comparada tenía `total = 4`, donde los dos modelos emiten lo mismo. O sea
 > estrecho no produce por sí solo un falso verde: lo produce que **lo que cayó
 > dentro no distinguiera nada**.
 
+> ⚠⚠ **Y EL DETECTOR DE SEPARADORAS TIENE SU PROPIO NIVEL: SE COMPARA EL
+> VEREDICTO, NO EL ARTEFACTO ENTERO (2026-09-01).**
+>
+> Contar separadoras exige comparar dos corridas, y lo que se compara casi
+> siempre son sus congeladas. Ahí se cuela §*la causa común* una vuelta más
+> arriba:
+>
+> > **Comparar los dos FICHEROS completos absorbe diferencias ajenas a la
+> > pregunta.** Un control que imprime un cardinal, un contador de entorno, una
+> > lista de bloques del esquema: nada de eso es el veredicto, y todo mueve el
+> > número de separadoras **sin que la pregunta haya cambiado**.
+>
+> **Medido:** un detector publicó `separadoras: 0` y después **`1` sin que el
+> mapeo que comparaba se tocara** — lo que se movió fue el detalle de un control
+> (`11 bloques` → `12`, por un alta en el esquema). Estrechado a `resumen` más el
+> reparto por documento, vuelve a **0**.
+>
+> **Operativamente: el detector compara EL VEREDICTO y su reparto**, nombrados,
+> y no el JSON entero. Y la señal para sospecharlo es gratis — **un número de
+> separadoras que cambia sin que la pregunta cambie es del detector**, igual que
+> un 100 % redondo es del instrumento.
+
 **Y su mitad de ALCANCE, que es la otra cara y se declara aparte:** cuando el
 arquetipo tenga **más de una página por ruta** —paginación, series, pestañas—, la
 cobertura **no se puede declarar en rutas**: se declara en la unidad que la
@@ -3880,6 +3902,29 @@ Es §*la cobertura declarada al nivel de arriba absorbe todo lo que no se midió
 abajo* con el contenedor movido: aquí el que absorbe **no es la unidad del
 informe, sino el propio campo que declara la limitación.**
 
+⚠⚠ **Y SU MITAD QUE FABRICA PÉRDIDAS QUE NO EXISTEN: ANTES DE FICHAR UNA, MIRA
+SI OTRA PIEZA DEL MODELO YA LA PORTA (2026-09-01).**
+
+§regla 14 manda declarar la pérdida **con su cardinal**, y eso protege de
+esconderla. Falta la dirección contraria, que es igual de cara porque el número
+llega con su tabla y su evidencia:
+
+> **Un dato que el modelo no tiene como CAMPO PROPIO puede ser DERIVABLE de los
+> que sí tiene.** Ficharlo como pérdida no da error: da una tabla de pérdidas
+> con una fila de más, y esa fila viaja a la decisión siguiente como si fuera
+> contenido perdido.
+
+**Medido:** el `id="_form_106_"` de un formulario iba a la tabla por no tener
+campo. Los ocultos `u` y `f` valen los dos **106**, así que el render lo
+reconstruye —`_form_${u}_`— sin campo propio. La pérdida pasó de **3 piezas a
+2** sin tocar el modelo: sólo mirando si el dato ya estaba dentro por otra
+puerta.
+
+**Operativamente, y cuesta una comprobación por fila:** para cada pieza que vayas
+a declarar perdida, pregunta **«¿la puedo reconstruir con lo que el modelo sí
+guarda?»**. Si sí, no es pérdida — es una **derivación**, y se escribe como tal
+con su fórmula al lado.
+
 **15 · UN CRUCE ENTRE DOS INSTRUMENTOS QUE COMPARTEN PREMISA NO VERIFICA LA
 PREMISA.** (2026-08-14)
 
@@ -4645,6 +4690,39 @@ reserva sólo puede estorbar.
 > sale 0, la guarda está ajustada; si no, ése es el número de rechazos falsos
 > que espera.
 
+> ⚠⚠ **Y AL AMPLIARLA SON DOS CARDINALES, NO UNO — Y PUBLICAR SÓLO UNO DECIDE
+> MAL EN LAS DOS DIRECCIONES (2026-09-01).**
+>
+> Lo de arriba está escrito para una guarda que **rechaza**. Una **ampliación**
+> —un tramo nuevo en una whitelist, un host más en una allowlist— no rechaza de
+> más: **admite**. Y entonces hacen falta dos números que casi nunca coinciden:
+>
+> | cardinal | qué contesta | cómo se lee |
+> |---|---|---|
+> | lo que la guarda **ALCANZA** y el invariante no cubre | cuánto se ensanchó el dominio | casi nunca es 0, y **por sí solo no es un riesgo** |
+> | **lo que ADMITE DE MÁS hoy** | cuántas instancias reales entran que antes no | se mide contra el corpus, y **es el que se puede sopesar** |
+>
+> **Medido:** un tramo nuevo alcanzaba **24 campos de 25** que su invariante no
+> cubría —o sea NO ajustada— y admitía de más **0**, porque ninguno de sus 23
+> tokens aparece en los censos de las otras colecciones. **Publicar sólo el
+> primero habría parado un alta inerte; sólo el segundo, habría escondido que el
+> dominio se ensanchó.** Los dos, o ninguno.
+>
+> **Y SU HERMANA DE PROCEDIMIENTO: UN TRAMO NUEVO SE ESCRIBE CON SU DOMINIO, O
+> REPITE EL DEFECTO QUE VIENE A ARREGLAR.**
+>
+> > **Una whitelist se amplía porque el censo original NO CONOCÍA un caso.** Si
+> > el tramo nuevo se escribe sin declarar **de qué dominio salió**, queda una
+> > regla derivada de N documentos aplicada a todo el sitio — que es §*una regla
+> > derivada sobre un dominio donde el caso NO SE DA está SIN PROBAR para ese
+> > caso* **cometida en el arreglo** en vez de en el defecto.
+>
+> Un tramo declara **cuatro cosas y ninguna sobra**: qué tokens · de qué
+> **dominio** salieron con su cardinal · qué queda **fuera con su razón** · y el
+> invariante, **medido sobre los VALORES servidos y no sobre el nombre** — un
+> token «inerte» por su nombre puede no serlo por su valor, y los que llevan URL
+> son justo los que hay que mirar.
+
 **Y SU MITAD DE CONJUNTOS, del mismo día: UN CONJUNTO DEFINIDO POR COMPLEMENTO
 DEJA DE SER DISJUNTO EN CUANTO EL ENUMERADO CRECE.**
 
@@ -4995,6 +5073,34 @@ pueden discrepar*— cazando lo que ningún código de salida iba a dar.
    si no, TIRA.** Cuesta un `filter` y es lo único que distingue una simétrica
    que compara de una que colapsa. Publicar las dos cifras al lado —`22
    bloqueos · 22 llaves distintas`— hace el verde auditable; `0/0` a secas, no.
+
+⚠⚠ **Y SU TERCERA CARA, QUE ATRIBUYE AL CONTENIDO LO QUE ES DEL MODELO: CUANDO
+DOS DEFINICIONES DEL ESQUEMA MODELAN EL MISMO OBJETO CON VALIDADORES DISTINTOS,
+EL BLOQUEO NO ES DEL DATO (2026-09-01).**
+
+Las dos de arriba son sobre una llave que empareja mal o no empareja. Ésta es
+sobre **dos definiciones que emparejan bien cada una con su dato** y difieren en
+lo que le exigen:
+
+> **Un bloqueo que sólo aparece en UNA de las dos se lee como *«este contenido es
+> especial»*.** Y puede ser que el contenido sea idéntico y lo único distinto sea
+> **qué validador se le puso**. Las dos definiciones están verdes por separado, y
+> la diferencia sólo existe en el sitio donde nadie la mira: el esquema.
+
+**Cómo se dirime, y es una corrida:** se corre **el MISMO validador sobre el dato
+de la OTRA definición**. Si bloquea igual, lo que las separa no es su dato.
+
+**Medido:** `codigo-arq` (con `campoHtml`, o sea validando) y `codigo` (con
+`{type:"code"}`, sin validar) modelan el mismo módulo `et_pb_code` del
+constructor. Corrido el validador sobre los **9** htmls ya modelados y sembrados
+de la otra colección, **bloquean 9 de 9**. Los bloqueos que quedaban no los
+producía el contenido: los producía la divergencia — y sin esa medición el
+diagnóstico habría sido *«este contenido es especial»*, con su tabla y todo.
+
+⚠ **Y el comentario que justifica la divergencia NO cuenta como medición**
+(§regla 3): aquí uno decía *«este módulo existe precisamente para meter lo que
+ese censo prohíbe»* —y era cierto—, pero cierto **no es medido**: lo que
+convierte la frase en dato es correr el validador.
 
 **30 · UNA MIGRACIÓN QUE RELAJA UNA RESTRICCIÓN TIENE UNA REVERSA CON FECHA DE
 CADUCIDAD: SE PRUEBA ANTES DE QUE ENTRE EL DATO.** (2026-08-23)

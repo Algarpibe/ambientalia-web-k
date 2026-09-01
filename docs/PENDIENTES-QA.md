@@ -1,5 +1,76 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §133.ª · **CMS-6 RESUELTO A+C — LA PÉRDIDA VISIBLE ES 0 DE 286, Y EL REPO YA MODELABA ESE MISMO FORMULARIO 9 VECES SIN VALIDADOR** — 2026-09-01
+
+**Encargo:** aplicar la decisión del propietario (CMS-6 = A + C), medir la
+pérdida que la cierra, y sembrar. **Entregado:** PASO 0, ESCALONES 1 y 2 enteros
+y el ESCALÓN 3 hasta donde el entorno lo permitió. **CMS-6 queda CERRADO** —
+`ESQUEMA-CMS.md` §2o.9.
+
+### Lo predicho y lo medido, con los dos lados
+
+| | predicho | medido |
+|---|---|---|
+| el reparto de la 132.ª reproduce | 22 bloqueos · 43 tokens · 5 clases · 0 sin clasificar | **reproduce**, y la re-corrida reescribió su congelada **idéntica al bit** |
+| admitir las 4 inertes deja 2 bloqueos | 2 | **1 campo** (los 2 son sus dos ejes; `validaHtmlCorpus` devuelve el primero que falla, §regla 27) |
+| el tramo entra entero | 23 tokens | **23**: `ETIQUETAS_CENSADAS` 43→46 · `ATRIBUTOS_CENSADOS` 81→101 |
+| efecto del alta | menos bloqueos | **425 campos recorridos, 22 → 1** |
+| tras C, la siembra deja de estar bloqueada | 0 | **0 en los 4 ejes, de 198 campos HTML** |
+| la pérdida de C | *sin medir* (el expediente lo declaraba) | **texto visible 0 de 286 · vecino 0 car · 2 piezas sin render que C introduce** |
+
+### ⚠ Lo que el PASO 0 encontró y el expediente declaraba SIN CONTESTAR
+
+`MODULO_CODIGO` (`slug: codigo`, `bloques/paginas.ts`) modela el mismo
+`et_pb_code` de Divi, tiene **9 instancias**, **9 de 9 son el mismo tipo de
+formulario de ActiveCampaign**, su campo **NO pasa por `validaHtmlCorpus`**, y
+**está sembrado**. Corrido el mismo validador sobre esos 9 htmls: **bloquean 9 de
+9**. O sea que los 2 bloqueos de CMS-6 no los producía el contenido — los
+producía que dos bloques del mismo módulo usen validadores distintos. Ficha
+`F3-5-CODE-DIVERGE` en `ESQUEMA-CMS.md` §2o.9, con sus números. **No reabre
+CMS-6**: añade una pregunta sobre `paginas`, no un defecto en `arquetipos`.
+
+### Los defectos de INSTRUMENTO que esta tanda pagó, con su evidencia
+
+| # | qué | cómo se cazó |
+|---|---|---|
+| 1 | el lector de `a-censo` usaba `inventario ?? etiquetas ?? global` y esa congelada las llama `inventarioGlobal` → **0 etiquetas**, un cero con cara de dato | su propio control de inventario muerto (`tramo-133-SONDA-LECTOR-DE-A-CENSO-MUERTO.json`) |
+| 2 | el sabotaje `invariante-ciego` **no muerde**: con 0 peligrosos en el dato, cegar el detector predice lo mismo — **0 separadoras por construcción** (§regla 28a) | conservado como `-neg-invariante-ciego-NO-MUERDE-0-separadoras.json` |
+| 3 | `sin-sitio-131.mjs` escribía con `writeFileSync` pelado: la corrida que VERIFICA pisó a la que DIAGNOSTICÓ (`11 bloques` → `12`) | `git status`; recuperada con `git checkout` **porque estaba commiteada**. Guarda puesta y verificada por efecto |
+| 4 | el `<fieldset>` salía el PRIMERO de `campos[]` y en el documento va el ÚLTIMO | `f35-extraido-SONDA-CASILLAS-FUERA-DE-ORDEN.json` |
+| 5 | el parser mapeaba **cualquier** `<input>` a `texto`: un `type="file"` habría entrado como caja de texto | el sabotaje `control-sin-sitio`, escrito para probar la guarda **y que destapó el hueco** |
+| 6 | el detector de separadoras comparaba el JSON entero y publicó `0` y luego `1` **sin que el mapeo cambiara** | la aritmética: el cambio venía de `11 bloques → 12`, ajeno a la pregunta |
+| 7 | **§regla 13, TRES veces en una sesión**: un `sed` dejó `"0001"` donde iba el escape de U+0001 (corrida **EXIT 0** con 3 trozos en vez de 286) y un `node -e` dejó `\x60` literal en tres comentarios | leer la salida; arreglado con `Edit`, la única forma sin intérprete en medio |
+
+### ⚠ Y el verde que NO hay que citar como aval
+
+El «¿queda contenido SIN SITIO?» de la 131.ª se reutilizó: **veredicto 0 en los
+dos mapeos**, y las dos congeladas dan **el mismo veredicto y el mismo reparto
+por documento** ⇒ **0 instancias separadoras**. El mecanismo, medido: N3 casa por
+**nombre** de campo, y `formulario-arq` trae un campo `texto` —el rótulo de una
+`<option>`—, así que pasa por coincidencia. Lo que adjudica C es el reparto por
+elemento, no ese 0.
+
+### ⛔ Lo que queda abierto, con su cardinal
+
+1. **La siembra no se corrió**: `arquetipos` **NO está cableada al sembrador** —
+   no aparece ni en `CATALOGOS` ni en `SEMBRADAS` (11 colecciones)—, así que
+   «correr el sembrador» no era posible: hay que cablearla primero;
+2. **el entorno no lo permitió**: el contenedor `kunak-cms-pg` **no arranca**
+   porque otro proyecto (`salestracker-postgres-e2e`, *Up 14 minutes (healthy)*)
+   ocupa el puerto **55432**. No se para un contenedor ajeno en uso: es decisión
+   del propietario. Sin Postgres quedan sin correr **`qa:media-canales`** (los 12
+   canales · 121 rutas de §regla 48), la siembra, la diferencia simétrica del
+   entorno y `clon-base`;
+3. **`F3-5-MEDIA-360`**: `data-main-image-url` trae
+   `https://kunakair.com/…/kunak360_IMG_01.jpg` — un **canal de media implícito**
+   (§regla 48) que ningún campo `upload` declara. Fichado, no resuelto;
+4. **`codigo-arq` queda con 0 instancias declaradas**: un `et_pb_code` que no
+   traiga formulario es un caso que este lote no ejercita. **SIN PROBAR**, no
+   borrado.
+
+**Derivaciones:** `paso0-133` · `tramo-133` (+ `-ANTES-DEL-ALTA`) · `perdida-133`
+· `sin-sitio-133-POST-C` · `regla12-barrido-133`, cada una con sus negativos.
+
 ## ✅ §132.ª · **EL EXPEDIENTE DE LAS 5 CLASES — LA DECISIÓN SE ENCOGE A UN CAMPO, Y EL CENSO QUE BLOQUEA NO VIO NINGUNA DE LAS CINCO** — 2026-09-01
 
 **Encargo:** levantar el expediente para que la decisión de esquema de §2o.8 se
