@@ -1,0 +1,209 @@
+{
+ "meta": {
+  "tanda": "134.ª · PASO 0 punto 3",
+  "fecha": "2026-09-01",
+  "estado": "CON el Tramo F3-5 aplicado (ETIQUETAS 46 · ATRIBUTOS 101)",
+  "sabotaje": "censo-mudo",
+  "contesta": "¿siguen bloqueando los 9 de `paginas`? ¿y el tramo admite de más allí?",
+  "noContesta": [
+   "si las dos colecciones deben unificarse — es del propietario",
+   "el estado de lo SEMBRADO: mide el catálogo congelado, no la tabla",
+   "el `apareceFuera` contra el arquetipo A, que la 133.ª ya midió aparte"
+  ]
+ },
+ "tramo": {
+  "etiquetas": [
+   "meta",
+   "article",
+   "header"
+  ],
+  "atributos": [
+   "content",
+   "itemprop",
+   "itemscope",
+   "itemtype",
+   "data-auto-rotate",
+   "data-image-url-format",
+   "data-inertia",
+   "data-main-holder-id",
+   "data-main-image-id",
+   "data-main-image-url",
+   "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+   "data-reverse",
+   "data-slide-id",
+   "data-speed",
+   "data-total-frames",
+   "data-zoom",
+   "aria-colcount",
+   "aria-colindex",
+   "aria-rowcount",
+   "aria-rowindex"
+  ],
+  "n": 23,
+  "etiquetasCensadas": 46,
+  "atributosCensados": 101,
+  "preTramo": {
+   "etiquetas": 43,
+   "atributos": 81,
+   "commit": "d4174a4"
+  }
+ },
+ "divergencia": {
+  "codigo": {
+   "campo": "html",
+   "tipo": "code",
+   "valida": false,
+   "via": "type:code"
+  },
+  "codigo-arq": {
+   "campo": "contenido",
+   "tipo": "code",
+   "valida": true,
+   "via": "campoHtml"
+  },
+  "sigueEnPie": true,
+  "instancias": {
+   "codigo": 9,
+   "codigo-arq": 0,
+   "formulario-arq": 1
+  }
+ },
+ "direccionA": {
+  "instancias": 9,
+  "bloqueanHoy": 0,
+  "bloqueaban133": 9,
+  "elTramoMueveElVeredicto": true,
+  "tokensFueraDelCenso": [],
+  "porInstancia": [
+   {
+    "i": 0,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   },
+   {
+    "i": 1,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   },
+   {
+    "i": 2,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   },
+   {
+    "i": 3,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   },
+   {
+    "i": 4,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   },
+   {
+    "i": 5,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   },
+   {
+    "i": 6,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   },
+   {
+    "i": 7,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   },
+   {
+    "i": 8,
+    "bloquea": false,
+    "motivo": null,
+    "etiquetasFuera": [],
+    "atributosFuera": []
+   }
+  ],
+  "codigoArq": {
+   "instancias": 0,
+   "bloquean": 0
+  }
+ },
+ "direccionB": {
+  "regla25": {
+   "alcanza": {
+    "campos": [
+     "html",
+     "cuerpo",
+     "descripcion"
+    ],
+    "n": 3
+   },
+   "admiteDeMas": {
+    "estrecho": {
+     "etiquetas": [],
+     "atributos": []
+    },
+    "nEstrecho": 0,
+    "ancho": {
+     "etiquetas": [],
+     "atributos": []
+    },
+    "nAncho": 0
+   }
+  },
+  "corpus": {
+   "paginasEstrecho": 167,
+   "paginasAncho": 1170,
+   "loteF35": 140
+  },
+  "testigo": {
+   "enLote": {
+    "etiquetas": [
+     "meta",
+     "article",
+     "header"
+    ],
+    "atributos": [
+     "content",
+     "itemprop",
+     "itemscope",
+     "itemtype",
+     "data-auto-rotate",
+     "data-image-url-format",
+     "data-inertia",
+     "data-main-holder-id",
+     "data-main-image-id",
+     "data-main-image-url",
+     "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+     "data-reverse",
+     "data-slide-id",
+     "data-speed",
+     "data-total-frames",
+     "data-zoom",
+     "aria-colcount",
+     "aria-colindex",
+     "aria-rowcount",
+     "aria-rowindex"
+    ]
+   },
+   "n": 23
+  }
+ },
+ "ok": false
+}
