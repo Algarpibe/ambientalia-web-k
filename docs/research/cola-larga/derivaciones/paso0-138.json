@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "fecha": "2026-09-01T22:59:10.340Z",
+    "sonda": "paso0-138"
+  },
+  "socket": {
+    "abre": true,
+    "ms": 77,
+    "db": "kunak_cms",
+    "usuario": "kunak",
+    "servidor": "PostgreSQL 17.10 on x86_64-pc-linux-musl"
+  },
+  "tablas": {
+    "n": 151,
+    "nombres": [
+      "arquetipos",
+      "arquetipos_blocks_boton_arq",
+      "arquetipos_blocks_codigo_arq",
+      "arquetipos_blocks_cta_arq",
+      "arquetipos_blocks_galeria_arq",
+      "arquetipos_blocks_galeria_arq_items",
+      "arquetipos_blocks_icono_arq",
+      "arquetipos_blocks_imagen_arq",
+      "arquetipos_blocks_slider_ancho_arq",
+      "arquetipos_blocks_slider_arq",
+      "arquetipos_blocks_tabla_arq",
+      "arquetipos_blocks_texto_arq",
+      "arquetipos_blocks_video_arq",
+      "articulos_kb",
+      "articulos_kb_blocks_blurb",
+      "articulos_kb_blocks_boton_kb",
+      "articulos_kb_blocks_gallery",
+      "articulos_kb_blocks_gallery_items",
+      "articulos_kb_blocks_imagen_kb",
+      "articulos_kb_blocks_texto_kb",
+      "articulos_kb_blocks_texto_kb_titulares",
+      "articulos_kb_cuerpo",
+      "articulos_kb_cuerpo_columnas",
+      "autores",
+      "autores_redes",
+      "casos",
+      "casos_galeria",
+      "casos_rels",
+      "categorias",
+      "categorias_cientificas",
+      "categorias_recursos",
+      "documentos_cientificos",
+      "documentos_cientificos_firmas",
+      "entradas_blog",
+      "entradas_blog_firmas",
+      "entradas_blog_rels",
+      "etiquetas",
+      "faqs",
+      "media",
+      "monograficos",
+      "monograficos_articulos_posts",
+      "monograficos_blocks_boton",
+      "monograficos_blocks_claim",
+      "monograficos_blocks_claim_2",
+      "monograficos_blocks_cta_descarga",
+      "monograficos_blocks_cta_descarga_body",
+      "monograficos_blocks_imagen",
+      "monograficos_blocks_mapa_proyectos",
+      "monograficos_blocks_mapa_proyectos_pins",
+      "monograficos_blocks_p",
+      "monograficos_blocks_serie",
+      "monograficos_blocks_serie_items",
+      "monograficos_blocks_tabla",
+      "monograficos_blocks_tabla_cabeceras",
+      "monograficos_blocks_tabla_filas",
+      "monograficos_blocks_tabla_filas_celdas",
+      "monograficos_blocks_texto",
+      "monograficos_blocks_texto_titulares",
+      "monograficos_blocks_titular",
+      "monograficos_blocks_titular_2",
+      "monograficos_blocks_ul",
+      "monograficos_blocks_ul_ul",
+      "monograficos_breadcrumb",
+      "monograficos_cta_slides",
+      "monograficos_cuerpo",
+      "monograficos_cuerpo_filas",
+      "monograficos_cuerpo_filas_columnas",
+      "monograficos_hero_ctas",
+      "monograficos_hero_modulos",
+      "monograficos_hero_modulos_paragraphs",
+      "monograficos_proyectos_posts",
+      "monograficos_rels",
+      "paginas",
+      "paginas_blocks_blurb",
+      "paginas_blocks_boton_pagina",
+      "paginas_blocks_codigo",
+      "paginas_blocks_icono",
+      "paginas_blocks_imagen_pagina",
+      "paginas_blocks_mapa",
+      "paginas_blocks_mapa_pines",
+      "paginas_blocks_slider",
+      "paginas_blocks_slider_completo",
+      "paginas_blocks_slider_completo_diapositivas",
+      "paginas_blocks_slider_diapositivas",
+      "paginas_blocks_tabla",
+      "paginas_blocks_tabla_cabeceras",
+      "paginas_blocks_tabla_filas",
+      "paginas_blocks_tabla_filas_celdas",
+      "paginas_blocks_texto_pagina",
+      "paginas_blocks_toggle",
+      "paginas_blocks_video_pagina",
+      "paginas_bloques",
+      "paginas_bloques_filas",
+      "paginas_bloques_filas_columnas",
+      "payload_kv",
+      "payload_locked_documents",
+      "payload_locked_documents_rels",
+      "payload_migrations",
+      "payload_preferences",
+      "payload_preferences_rels",
+      "productos",
+      "productos_blocks_blurb",
+      "productos_blocks_boton",
+      "productos_blocks_claim",
+      "productos_blocks_claim_2",
+      "productos_blocks_cta",
+      "productos_blocks_cta_body",
+      "productos_blocks_gallery",
+      "productos_blocks_gallery_imagenes",
+      "productos_blocks_imagen",
+      "productos_blocks_p",
+      "productos_blocks_slider",
+      "productos_blocks_slider_diapositivas",
+      "productos_blocks_table",
+      "productos_blocks_table_cabeceras",
+      "productos_blocks_table_filas",
+      "productos_blocks_table_filas_celdas",
+      "productos_blocks_texto",
+      "productos_blocks_texto_titulares",
+      "productos_blocks_titular",
+      "productos_blocks_titular_2",
+      "productos_blocks_toggle",
+      "productos_blocks_ul",
+      "productos_blocks_ul_ul",
+      "productos_blocks_video",
+      "productos_bullets",
+      "sectores",
+      "sectores_articulos_posts",
+      "sectores_blocks_beneficios_aplicaciones",
+      "sectores_blocks_beneficios_aplicaciones_left_items",
+      "sectores_blocks_beneficios_aplicaciones_right_items",
+      "sectores_blocks_claim_con_foto",
+      "sectores_blocks_cta_descarga",
+      "sectores_blocks_cta_descarga_body",
+      "sectores_blocks_lista_simple2_col",
+      "sectores_blocks_lista_simple2_col_left",
+      "sectores_blocks_lista_simple2_col_right",
+      "sectores_blocks_mapa_proyectos",
+      "sectores_blocks_mapa_proyectos_pins",
+      "sectores_breadcrumb",
+      "sectores_cta_slides",
+      "sectores_hero_ctas",
+      "sectores_hero_paragraphs",
+      "sectores_proyectos_posts",
+      "sectores_rels",
+      "slugs",
+      "taxonomia_sectores",
+      "taxonomia_sectores_rels",
+      "terminos_kunakpedia",
+      "usuarios",
+      "usuarios_sessions"
+    ]
+  },
+  "ventana": {
+    "tabla": "arquetipos",
+    "existe": true,
+    "filas": 0,
+    "abierta": true
+  },
+  "migraciones": {
+    "aplicadas": [
+      {
+        "name": "20260804_120654_inicial",
+        "batch": "1"
+      },
+      {
+        "name": "20260804_122225_registro_slugs",
+        "batch": "1"
+      },
+      {
+        "name": "20260804_151246_teaser_dato_propio",
+        "batch": "1"
+      },
+      {
+        "name": "20260804_182349_nivel_titular_por_defecto_3",
+        "batch": "1"
+      },
+      {
+        "name": "20260805_011925_image_sizes_censados",
+        "batch": "1"
+      },
+      {
+        "name": "20260806_124532_ruta_origen_media",
+        "batch": "1"
+      },
+      {
+        "name": "20260808_023851_publicacion_f24",
+        "batch": "1"
+      },
+      {
+        "name": "20260808_232710_roles_f25",
+        "batch": "1"
+      },
+      {
+        "name": "20260809_125718_f3_articulos_kb",
+        "batch": "1"
+      },
+      {
+        "name": "20260809_135819_f3_texto_kb_rico",
+        "batch": "1"
+      },
+      {
+        "name": "20260809_135857_f3_kb_retira_compartidos",
+        "batch": "1"
+      },
+      {
+        "name": "20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos",
+        "batch": "1"
+      },
+      {
+        "name": "20260810_140630_f3_kb_reticula_filas_columnas",
+        "batch": "1"
+      },
+      {
+        "name": "20260810_164348_f3_kb_piel_titular",
+        "batch": "1"
+      },
+      {
+        "name": "20260810_171434_f3_kb_piel_blurb",
+        "batch": "1"
+      },
+      {
+        "name": "20260813_140606_f3_pr3_documento_sin_pagina",
+        "batch": "1"
+      },
+      {
+        "name": "20260813_211316_f3_etiqueta_descripcion",
+        "batch": "1"
+      },
+      {
+        "name": "20260818_193649_f3_fecha_publicacion_orden",
+        "batch": "1"
+      },
+      {
+        "name": "20260823_131718_f3_3_paginas_cola_larga",
+        "batch": "1"
+      },
+      {
+        "name": "20260823_190450_f3_3_ancho_quintos_y_media_externa",
+        "batch": "1"
+      },
+      {
+        "name": "20260824_155444_f3_3_regimen_cms5",
+        "batch": "1"
+      },
+      {
+        "name": "20260826_173354_f3_3_t1_tabla_cola_larga",
+        "batch": "1"
+      },
+      {
+        "name": "20260827_110011_f3_4_autores_y_firmas",
+        "batch": "1"
+      },
+      {
+        "name": "20260827_114716_f3_4_firmas_doc_cientifico",
+        "batch": "1"
+      },
+      {
+        "name": "20260831_014031_f3_5_medida_breakpoint_767",
+        "batch": "2"
+      },
+      {
+        "name": "20260831_015813_f3_5_arquetipos",
+        "batch": "3"
+      }
+    ],
+    "nAplicadas": 26,
+    "enDisco": [
+      "20260804_120654_inicial",
+      "20260804_122225_registro_slugs",
+      "20260804_151246_teaser_dato_propio",
+      "20260804_182349_nivel_titular_por_defecto_3",
+      "20260805_011925_image_sizes_censados",
+      "20260806_124532_ruta_origen_media",
+      "20260808_023851_publicacion_f24",
+      "20260808_232710_roles_f25",
+      "20260809_125718_f3_articulos_kb",
+      "20260809_135819_f3_texto_kb_rico",
+      "20260809_135857_f3_kb_retira_compartidos",
+      "20260810_140505_f3_kb_suelta_modulos_y_ritmo_compartidos",
+      "20260810_140630_f3_kb_reticula_filas_columnas",
+      "20260810_164348_f3_kb_piel_titular",
+      "20260810_171434_f3_kb_piel_blurb",
+      "20260813_140606_f3_pr3_documento_sin_pagina",
+      "20260813_211316_f3_etiqueta_descripcion",
+      "20260818_193649_f3_fecha_publicacion_orden",
+      "20260823_131718_f3_3_paginas_cola_larga",
+      "20260823_190450_f3_3_ancho_quintos_y_media_externa",
+      "20260824_155444_f3_3_regimen_cms5",
+      "20260826_173354_f3_3_t1_tabla_cola_larga",
+      "20260827_110011_f3_4_autores_y_firmas",
+      "20260827_114716_f3_4_firmas_doc_cientifico",
+      "20260831_014031_f3_5_medida_breakpoint_767",
+      "20260831_015813_f3_5_arquetipos"
+    ],
+    "nEnDisco": 26,
+    "enDiscoSinAplicar": [],
+    "aplicadasSinDisco": [],
+    "ultimaAplicada": "20260831_015813_f3_5_arquetipos",
+    "ultimoBatch": "3"
+  },
+  "testigos": {
+    "paginas": {
+      "existe": true,
+      "filas": 31
+    },
+    "productos": {
+      "existe": true,
+      "filas": 19
+    },
+    "entradas_blog": {
+      "existe": true,
+      "filas": 152
+    }
+  },
+  "veredicto": {
+    "testigosVivos": 3,
+    "de": 3,
+    "adjudica": true
+  }
+}

@@ -1,5 +1,90 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §138.ª · **EL SOCKET ABRE, LA VENTANA SIGUE ABIERTA — Y UNA PREMISA DE LA 137.ª ERA UNA INFERENCIA SIN DB QUE HOY SE PUEDE MEDIR** — 2026-09-01
+
+**Estado: PASO 0 completo.** Primera tanda **CON DB** desde la 133.ª. El encargo
+llega rotulado «135.ª (RETOMADA)» y el árbol ya tiene la 135.ª CIERRE, la 136.ª
+y la 137.ª commiteadas, así que **sus premisas son recordadas, no derivadas**
+(§regla 9) y se re-midieron todas antes de tocar nada.
+
+### PASO 0 punto 2 · el socket — **ABIERTO**, y con el quinto canal, no con los cuatro
+
+`docker ps` dice `Up About an hour` con `0.0.0.0:55432->5432/tcp`;
+`HostConfig.PortBindings` **y** `NetworkSettings.Ports` traen los dos su
+binding, y `NetworkSettings.Networks` ya no está vacío (`bridge`,
+`172.17.0.2`). Los cuatro canales dicen que sí — y **el veredicto lo da el
+quinto**: consulta real, `select current_database()`, **77 ms**,
+`kunak_cms` como `kunak`, PostgreSQL 17.10.
+
+### ⚠⚠ Y AHÍ SE CORRIGE UNA PREMISA DE LA 137.ª — ERA CIERTA DE SU CANAL Y FALSA DEL OBJETO
+
+La 137.ª cerró CMS-7 escribiendo que los costes latentes están inactivos porque
+**«`arquetipos` no tiene tabla y no hay admin»**. Fue una tanda **OFFLINE**
+—socket `ECONNREFUSED`—, así que esa mitad no es una medida: es lo que el
+mecanismo implicaba. Con el socket abierto:
+
+| lo que la 137.ª afirmó | lo medido hoy |
+|---|---|
+| `arquetipos` **no tiene tabla** | **13 tablas** `arquetipos*`, la colección entre ellas |
+| — | la migración `20260831_015813_f3_5_arquetipos` está **APLICADA** (batch 3) |
+| — | y **0 filas**, que es la mitad que sí sigue en pie |
+
+**Lo que la 137.ª quería decir sigue siendo cierto por otra razón**: el coste
+latente está inactivo porque **no hay dato**, no porque no haya tabla. La
+conclusión no cambia; la premisa sí, y §regla 9 vale igual para los hechos
+negativos —*«no hay»* parece que no cuesta comprobarlo y es justo el que más
+engaña—.
+
+⚠ **Y esto NO reabre CMS-7.** `A · NO UNIFICAR` se eligió por la asimetría
+—*se toma la que empieza SEPARADA porque deshacerla es FUSIONAR, que es el lado
+barato*— y la existencia de la tabla no toca ese razonamiento. Lo que sí toca
+es **cuánta ventana queda**, y por eso este PASO 0 la mide antes que nada.
+
+### La ventana de §regla 30 — **ABIERTA**, y es lo único que decide el orden de la tanda
+
+`arquetipos` existe y tiene **0 filas**. Así que *«¿revierte limpia?»* todavía
+tiene respuesta, y **la primera fila la cierra**. Es la razón por la que la
+migración va antes de cablear y de sembrar, y no un orden estético.
+
+### PASO 0 punto 3 · lo que ya está en el repo, derivado
+
+| pregunta | derivación | resultado |
+|---|---|---|
+| ¿existe la migración de `formulario-arq`? | `ls` de `packages/cms-config/src/migrations` | **no** — 26 `.ts`, la última `f3_5_arquetipos` |
+| ¿está aplicada esa última? | `payload_migrations` | **sí**, batch 3 |
+| ¿desfase disco↔DB? | diferencia **simétrica**, los dos lados | **0 y 0** |
+| ¿bloques que el esquema declara? | `grep '^  slug:'` en `bloques/arquetipos.ts` | **12** |
+| ¿bloques con tabla en la DB? | censo `arquetipos_blocks_*` | **11** |
+| ¿cuál falta? | el complemento, nombrado | **`formulario-arq`**, con sus 4 tablas sin crear |
+| ¿está `arquetipos` en `SEMBRADAS`? | `scripts/seed/seed.mjs:68` | **no** — 11 colecciones |
+
+`FORMULARIO` está en `bloquesArquetipo` (`arquetipos.ts:604`), o sea que el
+esquema ya lo emite y la DB no lo tiene: **el desfase es real y es de UNA
+pieza**, no de la colección.
+
+### PASO 0 punto 1 · la deriva
+
+HEAD `c1a0a16`, árbol limpio y en sync con `origin/main`. **1561** congeladas en
+`scripts/qa/medidas/`. `qa:lib` **EXIT 0 · las 219 sondas COMPILAN y declaran su
+mínimo** (derivado de su última línea, no citado — §sondas 9).
+
+**Manifiesto citado con su fichero** (§regla 5: el nombre canónico es un dato
+recordado): `apps/web/.next/prerender-manifest.json`, mtime **2026-08-31
+14:54:40** → **429 rutas estáticas · 17 dinámicas**.
+
+**Procesos, no el árbol** (§regla 18): **0 sondas en vuelo**, y con su control
+del cero (§sondas 4) — el canal devuelve **65 de 65** líneas de orden de
+`node.exe` legibles y **0** casan `kunak`. Un cero con el canal muerto y uno con
+el canal vivo se escriben igual.
+
+**La corrida ADJUDICA** por caso conocido de antemano (§regla 28c): los tres
+testigos vivos — `paginas=31 · productos=19 · entradas_blog=152`. Si alguno
+saliera a 0, el cero sería del instrumento y no del objeto.
+
+Derivación con su congelada:
+`docs/research/cola-larga/derivaciones/paso0-138.{mjs,json}`.
+
+
 ## ✅ §137.ª · **CMS-7 CERRADO EN `A · NO UNIFICAR`, Y LA GUARDA QUE AFIRMABA DE MÁS YA NOMBRA — PERO SU CONTROL NO PODÍA VIVIR DONDE EL CÓDIGO CORRE** — 2026-09-01
 
 **Estado: PASO 0 completo · ESCALONES 1 y 2 hechos.** Tanda **OFFLINE**: no siembra, no
@@ -75,6 +160,18 @@ disparador** —dos definiciones del mismo `et_pb_code` conviviendo, y un editor
 que no sabrá cuál usar; se activa con **el primer alta desde el admin** (F2-5)—.
 Los tres costes están hoy **inactivos**: `arquetipos` no tiene tabla y no hay
 admin.
+
+> ⚠ **CORREGIDA LA MITAD DE LA IZQUIERDA el 2026-09-01 (138.ª), con el socket
+> abierto: `arquetipos` SÍ TIENE TABLA** —13 tablas `arquetipos*` y la
+> migración `20260831_015813_f3_5_arquetipos` aplicada en batch 3—. Esta tanda
+> fue **OFFLINE**, así que la frase no era una medida: era lo que el mecanismo
+> implicaba, y §regla 9 vale igual para los hechos negativos.
+>
+> **La conclusión no cambia, cambia su razón:** los costes siguen inactivos
+> porque la tabla tiene **0 filas**, no porque no exista. Y eso **no reabre
+> CMS-7** —la asimetría que eligió `A` no depende de si hay tabla—, pero sí
+> dice cuánta ventana de §regla 30 queda: la primera fila la cierra.
+> Medición: `derivaciones/paso0-138.json`.
 
 ### ⚠ Y lo que la 136.ª añadió cambia cómo se lee la ficha, así que va en el cierre
 
