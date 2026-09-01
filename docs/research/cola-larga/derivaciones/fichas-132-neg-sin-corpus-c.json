@@ -1,0 +1,1114 @@
+{
+ "meta": {
+  "fecha": "2026-09-01",
+  "tanda": "132.ª",
+  "derivacion": "fichas-132",
+  "saboteada": "sin-corpus-c"
+ },
+ "noContesta": [
+  "NO recomienda: el expediente describe y el propietario decide",
+  "NO mide el riesgo de ejecución en el navegador del visitante — mide qué entra y de dónde",
+  "NO abre el original vivo: lee el corpus congelado"
+ ],
+ "dominioCenso": {
+  "regiones": 315,
+  "paginas": 218,
+  "porGrupo": {
+   "A": 212,
+   "C": 0,
+   "KB": 103
+  },
+  "testigos": [
+   {
+    "token": "href",
+    "eje": "atributo",
+    "n": 3337,
+    "paginas": 187
+   },
+   {
+    "token": "style",
+    "eje": "atributo",
+    "n": 3632,
+    "paginas": 176
+   },
+   {
+    "token": "class",
+    "eje": "atributo",
+    "n": 4188,
+    "paginas": 190
+   },
+   {
+    "token": "data-start",
+    "eje": "atributo",
+    "n": 26,
+    "paginas": 8
+   },
+   {
+    "token": "p",
+    "eje": "etiqueta",
+    "n": 15452,
+    "paginas": 215
+   },
+   {
+    "token": "a",
+    "eje": "etiqueta",
+    "n": 6672,
+    "paginas": 188
+   },
+   {
+    "token": "img",
+    "eje": "etiqueta",
+    "n": 614,
+    "paginas": 125
+   },
+   {
+    "token": "strong",
+    "eje": "etiqueta",
+    "n": 17530,
+    "paginas": 142
+   }
+  ]
+ },
+ "fichas": [
+  {
+   "clase": "formulario",
+   "cardinal": {
+    "tokens": 20,
+    "bloqueos": 2,
+    "exclusivos": 2,
+    "campos": 1,
+    "documentos": [
+     "monitor-calidad-aire"
+    ],
+    "kinds": [
+     "codigo-arq"
+    ]
+   },
+   "tokens": [
+    "action",
+    "button",
+    "data-autofill",
+    "data-sitekey",
+    "data-styles-version",
+    "fieldset",
+    "for",
+    "form",
+    "input",
+    "label",
+    "legend",
+    "method",
+    "name",
+    "novalidate",
+    "option",
+    "placeholder",
+    "required",
+    "select",
+    "selected",
+    "value"
+   ],
+   "original": [
+    {
+     "token": "action",
+     "eje": "atributo",
+     "portadores": [
+      "form"
+     ]
+    },
+    {
+     "token": "button",
+     "eje": "etiqueta",
+     "portadores": [
+      "button"
+     ]
+    },
+    {
+     "token": "data-autofill",
+     "eje": "atributo",
+     "portadores": [
+      "input"
+     ]
+    },
+    {
+     "token": "data-sitekey",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-styles-version",
+     "eje": "atributo",
+     "portadores": [
+      "form"
+     ]
+    },
+    {
+     "token": "fieldset",
+     "eje": "etiqueta",
+     "portadores": [
+      "fieldset"
+     ]
+    },
+    {
+     "token": "for",
+     "eje": "atributo",
+     "portadores": [
+      "label",
+      "legend"
+     ]
+    },
+    {
+     "token": "form",
+     "eje": "etiqueta",
+     "portadores": [
+      "form"
+     ]
+    },
+    {
+     "token": "input",
+     "eje": "etiqueta",
+     "portadores": [
+      "input"
+     ]
+    },
+    {
+     "token": "label",
+     "eje": "etiqueta",
+     "portadores": [
+      "label"
+     ]
+    },
+    {
+     "token": "legend",
+     "eje": "etiqueta",
+     "portadores": [
+      "legend"
+     ]
+    },
+    {
+     "token": "method",
+     "eje": "atributo",
+     "portadores": [
+      "form"
+     ]
+    },
+    {
+     "token": "name",
+     "eje": "atributo",
+     "portadores": [
+      "input",
+      "meta",
+      "select"
+     ]
+    },
+    {
+     "token": "novalidate",
+     "eje": "atributo",
+     "portadores": [
+      "form"
+     ]
+    },
+    {
+     "token": "option",
+     "eje": "etiqueta",
+     "portadores": [
+      "option"
+     ]
+    },
+    {
+     "token": "placeholder",
+     "eje": "atributo",
+     "portadores": [
+      "input"
+     ]
+    },
+    {
+     "token": "required",
+     "eje": "atributo",
+     "portadores": [
+      "input",
+      "select"
+     ]
+    },
+    {
+     "token": "select",
+     "eje": "etiqueta",
+     "portadores": [
+      "select"
+     ]
+    },
+    {
+     "token": "selected",
+     "eje": "atributo",
+     "portadores": [
+      "option"
+     ]
+    },
+    {
+     "token": "value",
+     "eje": "atributo",
+     "portadores": [
+      "input",
+      "option"
+     ]
+    }
+   ],
+   "clon": [
+    {
+     "token": "action",
+     "ficheros": [
+      "apps/web/src/components/faq/FaqSidebar.tsx",
+      "apps/web/src/components/listados/BarraLateral.tsx"
+     ]
+    },
+    {
+     "token": "button",
+     "ficheros": [
+      "apps/web/src/components/CookiePreferencesButton.tsx",
+      "apps/web/src/components/CtaBannerSlider.tsx",
+      "apps/web/src/components/Footer.tsx",
+      "apps/web/src/components/HeaderNav.tsx",
+      "apps/web/src/components/ListaContenido.tsx",
+      "apps/web/src/components/listados/BandaFiltros.tsx",
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx",
+      "apps/web/src/components/monitor/FaqAcordeon.tsx",
+      "apps/web/src/components/monitor/GaleriaEnsayos.tsx",
+      "apps/web/src/components/ProductosTabs.tsx",
+      "apps/web/src/components/SectionRow.tsx",
+      "apps/web/src/components/software/CarruselCapturas.tsx",
+      "apps/web/src/components/Testimonios.tsx",
+      "apps/web/src/components/VideoLightbox.tsx"
+     ]
+    },
+    {
+     "token": "fieldset",
+     "ficheros": [
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx"
+     ]
+    },
+    {
+     "token": "form",
+     "ficheros": [
+      "apps/web/src/components/faq/FaqSidebar.tsx",
+      "apps/web/src/components/listados/BandaFiltros.tsx",
+      "apps/web/src/components/listados/BarraLateral.tsx",
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx"
+     ]
+    },
+    {
+     "token": "input",
+     "ficheros": [
+      "apps/web/src/components/faq/FaqSidebar.tsx",
+      "apps/web/src/components/listados/BarraLateral.tsx",
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx"
+     ]
+    },
+    {
+     "token": "label",
+     "ficheros": [
+      "apps/web/src/components/faq/FaqSidebar.tsx",
+      "apps/web/src/components/listados/BarraLateral.tsx",
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx"
+     ]
+    },
+    {
+     "token": "legend",
+     "ficheros": [
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx"
+     ]
+    },
+    {
+     "token": "method",
+     "ficheros": [
+      "apps/web/src/components/faq/FaqSidebar.tsx",
+      "apps/web/src/components/listados/BarraLateral.tsx"
+     ]
+    },
+    {
+     "token": "name",
+     "ficheros": [
+      "apps/web/src/components/faq/FaqSidebar.tsx",
+      "apps/web/src/components/listados/BarraLateral.tsx",
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx",
+      "apps/web/src/lib/countries.ts",
+      "apps/web/src/lib/monitor.ts",
+      "apps/web/src/lib/products.ts",
+      "apps/web/src/lib/testimonials.ts",
+      "apps/web/src/types/kunak.ts"
+     ]
+    },
+    {
+     "token": "option",
+     "ficheros": [
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx"
+     ]
+    },
+    {
+     "token": "select",
+     "ficheros": [
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx",
+      "apps/web/src/lib/countries.ts",
+      "apps/web/src/lib/monitor.ts"
+     ]
+    },
+    {
+     "token": "value",
+     "ficheros": [
+      "apps/web/src/components/faq/FaqSidebar.tsx",
+      "apps/web/src/components/monitor/CtaGuiaProyecto.tsx",
+      "apps/web/src/components/SpecTable.tsx",
+      "apps/web/src/lib/monitor.ts"
+     ]
+    }
+   ],
+   "dominio": [
+    {
+     "token": "action",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "button",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "data-autofill",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-sitekey",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-styles-version",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "fieldset",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "for",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "form",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "input",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "label",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "legend",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "method",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "name",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "novalidate",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "option",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "placeholder",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "required",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "select",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "selected",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "value",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    }
+   ],
+   "sinProbar": [
+    "action",
+    "button",
+    "data-autofill",
+    "data-sitekey",
+    "data-styles-version",
+    "fieldset",
+    "for",
+    "form",
+    "input",
+    "label",
+    "legend",
+    "method",
+    "name",
+    "novalidate",
+    "option",
+    "placeholder",
+    "required",
+    "select",
+    "selected",
+    "value"
+   ]
+  },
+  {
+   "clase": "data-* del constructor",
+   "cardinal": {
+    "tokens": 12,
+    "bloqueos": 5,
+    "exclusivos": 5,
+    "campos": 5,
+    "documentos": [
+     "monitor-calidad-aire",
+     "software-de-medicion-calidad-del-aire",
+     "kunak-api"
+    ],
+    "kinds": [
+     "texto-arq",
+     "slider-ancho-arq",
+     "slider-arq"
+    ]
+   },
+   "tokens": [
+    "data-auto-rotate",
+    "data-image-url-format",
+    "data-inertia",
+    "data-main-holder-id",
+    "data-main-image-id",
+    "data-main-image-url",
+    "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+    "data-reverse",
+    "data-slide-id",
+    "data-speed",
+    "data-total-frames",
+    "data-zoom"
+   ],
+   "original": [
+    {
+     "token": "data-auto-rotate",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-image-url-format",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-inertia",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-main-holder-id",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-main-image-id",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-main-image-url",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-reverse",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-slide-id",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-speed",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-total-frames",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "data-zoom",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    }
+   ],
+   "clon": [
+    {
+     "token": "data-auto-rotate",
+     "ficheros": [
+      "apps/web/src/components/Product360Viewer.tsx"
+     ]
+    },
+    {
+     "token": "data-inertia",
+     "ficheros": [
+      "apps/web/src/components/Product360Viewer.tsx"
+     ]
+    },
+    {
+     "token": "data-reverse",
+     "ficheros": [
+      "apps/web/src/components/Product360Viewer.tsx"
+     ]
+    },
+    {
+     "token": "data-speed",
+     "ficheros": [
+      "apps/web/src/components/Product360Viewer.tsx"
+     ]
+    },
+    {
+     "token": "data-total-frames",
+     "ficheros": [
+      "apps/web/src/components/Product360Viewer.tsx"
+     ]
+    }
+   ],
+   "dominio": [
+    {
+     "token": "data-auto-rotate",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-image-url-format",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-inertia",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-main-holder-id",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-main-image-id",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-main-image-url",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-reverse",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-slide-id",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-speed",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-total-frames",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "data-zoom",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    }
+   ],
+   "sinProbar": [
+    "data-auto-rotate",
+    "data-image-url-format",
+    "data-inertia",
+    "data-main-holder-id",
+    "data-main-image-id",
+    "data-main-image-url",
+    "data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification",
+    "data-reverse",
+    "data-slide-id",
+    "data-speed",
+    "data-total-frames",
+    "data-zoom"
+   ]
+  },
+  {
+   "clase": "schema.org",
+   "cardinal": {
+    "tokens": 5,
+    "bloqueos": 8,
+    "exclusivos": 8,
+    "campos": 4,
+    "documentos": [
+     "monitor-calidad-aire",
+     "accesorios",
+     "software-de-medicion-calidad-del-aire",
+     "kunak-api"
+    ],
+    "kinds": [
+     "texto-arq"
+    ]
+   },
+   "tokens": [
+    "content",
+    "itemprop",
+    "itemscope",
+    "itemtype",
+    "meta"
+   ],
+   "original": [
+    {
+     "token": "content",
+     "eje": "atributo",
+     "portadores": [
+      "meta"
+     ]
+    },
+    {
+     "token": "itemprop",
+     "eje": "atributo",
+     "portadores": [
+      "a",
+      "li",
+      "meta",
+      "span"
+     ]
+    },
+    {
+     "token": "itemscope",
+     "eje": "atributo",
+     "portadores": [
+      "li",
+      "ol"
+     ]
+    },
+    {
+     "token": "itemtype",
+     "eje": "atributo",
+     "portadores": [
+      "li",
+      "ol"
+     ]
+    },
+    {
+     "token": "meta",
+     "eje": "etiqueta",
+     "portadores": [
+      "meta"
+     ]
+    }
+   ],
+   "clon": [
+    {
+     "token": "content",
+     "ficheros": [
+      "apps/web/src/app/f33.css",
+      "apps/web/src/app/kb.css",
+      "apps/web/src/app/listados.css",
+      "apps/web/src/app/tema.css",
+      "apps/web/src/components/Breadcrumb.tsx",
+      "apps/web/src/components/monitor/FaqAcordeon.tsx"
+     ]
+    },
+    {
+     "token": "meta",
+     "ficheros": [
+      "apps/web/src/components/Breadcrumb.tsx"
+     ]
+    }
+   ],
+   "dominio": [
+    {
+     "token": "content",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "itemprop",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "itemscope",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "itemtype",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "meta",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    }
+   ],
+   "sinProbar": [
+    "content",
+    "itemprop",
+    "itemscope",
+    "itemtype",
+    "meta"
+   ]
+  },
+  {
+   "clase": "aria de tabla",
+   "cardinal": {
+    "tokens": 4,
+    "bloqueos": 1,
+    "exclusivos": 1,
+    "campos": 1,
+    "documentos": [
+     "monitor-calidad-aire"
+    ],
+    "kinds": [
+     "tabla-arq"
+    ]
+   },
+   "tokens": [
+    "aria-colcount",
+    "aria-colindex",
+    "aria-rowcount",
+    "aria-rowindex"
+   ],
+   "original": [
+    {
+     "token": "aria-colcount",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "aria-colindex",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "aria-rowcount",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    },
+    {
+     "token": "aria-rowindex",
+     "eje": "atributo",
+     "portadores": [
+      "div"
+     ]
+    }
+   ],
+   "clon": [],
+   "dominio": [
+    {
+     "token": "aria-colcount",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "aria-colindex",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "aria-rowcount",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    },
+    {
+     "token": "aria-rowindex",
+     "eje": "atributo",
+     "n": 0,
+     "paginas": 0
+    }
+   ],
+   "sinProbar": [
+    "aria-colcount",
+    "aria-colindex",
+    "aria-rowcount",
+    "aria-rowindex"
+   ]
+  },
+  {
+   "clase": "estructura HTML5",
+   "cardinal": {
+    "tokens": 2,
+    "bloqueos": 6,
+    "exclusivos": 6,
+    "campos": 4,
+    "documentos": [
+     "monitor-calidad-aire",
+     "accesorios",
+     "software-de-medicion-calidad-del-aire",
+     "kunak-api"
+    ],
+    "kinds": [
+     "texto-arq"
+    ]
+   },
+   "tokens": [
+    "article",
+    "header"
+   ],
+   "original": [
+    {
+     "token": "article",
+     "eje": "etiqueta",
+     "portadores": [
+      "article"
+     ]
+    },
+    {
+     "token": "header",
+     "eje": "etiqueta",
+     "portadores": [
+      "header"
+     ]
+    }
+   ],
+   "clon": [
+    {
+     "token": "article",
+     "ficheros": [
+      "apps/web/src/app/faqs/[slug]/page.tsx",
+      "apps/web/src/app/tema.css",
+      "apps/web/src/components/caso/CasoPagina.tsx",
+      "apps/web/src/components/Footer.tsx",
+      "apps/web/src/components/listados/PaginaArchivoCpt.tsx",
+      "apps/web/src/components/listados/PaginaGlosario.tsx",
+      "apps/web/src/components/listados/PaginaSector.tsx",
+      "apps/web/src/components/listados/TarjetaCaso.tsx",
+      "apps/web/src/components/listados/TarjetaCientifica.tsx",
+      "apps/web/src/components/listados/TarjetaListado.tsx",
+      "apps/web/src/components/UltimosArticulos.tsx",
+      "apps/web/src/lib/cms/listados.ts"
+     ]
+    },
+    {
+     "token": "header",
+     "ficheros": [
+      "apps/web/src/components/HeaderNav.tsx",
+      "apps/web/src/components/listados/TarjetaCaso.tsx",
+      "apps/web/src/components/UltimosProyectos.tsx"
+     ]
+    }
+   ],
+   "dominio": [
+    {
+     "token": "article",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    },
+    {
+     "token": "header",
+     "eje": "etiqueta",
+     "n": 0,
+     "paginas": 0,
+     "enCensoDeEtiquetas": null
+    }
+   ],
+   "sinProbar": [
+    "article",
+    "header"
+   ]
+  }
+ ],
+ "formulario": {
+  "formTag": "<form method=\"POST\" action=\"https://kunak.activehosted.com/proc.php\" id=\"_form_106_\" class=\"_form _form_106 _inline-form  _dark\" novalidate data-styles-version=\"3\">",
+  "action": "https://kunak.activehosted.com/proc.php",
+  "metodo": "POST",
+  "host": "kunak.activehosted.com",
+  "inputs": 17,
+  "visibles": 5,
+  "ocultos": 12,
+  "nombresOcultos": [
+   "u",
+   "f",
+   "s",
+   "c",
+   "m",
+   "act",
+   "v",
+   "or",
+   "field[15][]",
+   "field[44]",
+   "field[45]",
+   "field[46]"
+  ],
+  "selects": [
+   "field[27]",
+   "field[51]"
+  ],
+  "opciones": 280,
+  "recaptcha": true,
+  "scriptsDelDocumento": 52
+ },
+ "controles": [
+  {
+   "ok": false,
+   "nombre": "§regla 22 · el dominio del censo va con su CARDINAL, no con un booleano",
+   "detalle": "315 regiones · 218 páginas (el censo declaró 294)"
+  },
+  {
+   "ok": true,
+   "nombre": "las CINCO clases tienen ficha, con los mismos campos",
+   "detalle": "5 fichas"
+  },
+  {
+   "ok": true,
+   "nombre": "§sondas 4 · el CERO está auditado con casos conocidos: los testigos VEN el corpus",
+   "detalle": "8/8 testigos vivos (href=3337 style=3632 class=4188 data-start=26 p=15452 a=6672 img=614 strong=17530) · tokens bloqueados vistos 0 · no vistos 43 de 43"
+  },
+  {
+   "ok": true,
+   "nombre": "§sondas 4 · el censo de ETIQUETAS se cruza contra SU congelada, y está viva",
+   "detalle": "a-censo: 43 etiquetas en el inventario global (declara 43)"
+  },
+  {
+   "ok": true,
+   "nombre": "la superficie de `formulario` está MEDIDA: el destino es un tercero, nombrado",
+   "detalle": "kunak.activehosted.com"
+  },
+  {
+   "ok": true,
+   "nombre": "§regla 14 · los campos OCULTOS van con su cardinal (son los que un lector no ve)",
+   "detalle": "12 hidden de 17 input"
+  }
+ ]
+}

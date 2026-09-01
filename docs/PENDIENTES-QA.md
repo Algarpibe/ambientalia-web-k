@@ -186,6 +186,167 @@ distintas y la simétrica sigue en 0/0 — ahora significando algo.
 
 ---
 
+### ESCALÓN 2 · **LAS CINCO FICHAS — Y EL VEREDICTO DE ALCANCE ES EL MISMO PARA LAS CINCO: 43 DE 43 TOKENS SIN PROBAR**
+
+Derivación: `derivaciones/fichas-132.{mjs,log,json}` · negativo **2/2 + control**.
+
+#### El hallazgo que el encargo pedía sólo para `formulario`, y vale para las cinco
+
+> **El censo que bloquea no vio NINGUNA de las cinco clases.** No las excluyó:
+> **no las conocía.** 43 de 43 tokens con cero apariciones en el dominio donde la
+> regla se derivó — y eso es §*una regla derivada sobre un dominio donde el caso
+> NO SE DA está SIN PROBAR para ese caso* aplicada a **todo el bloqueo**, no sólo
+> a la clase mayor.
+
+#### ⚠⚠ Un 100 % REDONDO — y por eso lo primero fue auditar el instrumento
+
+§sondas 4, 5.ª cara: *«un dato del original casi nunca es unánime, y cuando lo
+es, la primera hipótesis es el instrumento»*. **La v1 del control era el
+equivocado** —exigía que el dominio SEPARARA, o sea que hubiera tokens de los dos
+lados— y por eso salió en rojo **describiendo el resultado como si fuera una
+avería**.
+
+El control que sí separa *«el corpus no lo trae»* de *«mi regex no casa»* es el
+**caso conocido de antemano**: testigos tomados de las propias listas censadas,
+medidos con la MISMA función.
+
+| testigo | eje | apariciones | páginas |
+|---|---|---|---|
+| `href` | atributo | 3 649 | 242 de 294 |
+| `style` | atributo | 3 735 | 196 |
+| `class` | atributo | 4 278 | 211 |
+| `data-start` | atributo | 72 | 11 |
+| `p` | etiqueta | 16 744 | 291 |
+| `strong` | etiqueta | 18 758 | 182 |
+| `a` · `img` | etiqueta | 7 296 · 624 | 243 · 135 |
+
+**8 de 8 vivos.** El instrumento ve el corpus, luego el cero es **del corpus**.
+
+#### ⚠ Y los DOS censos tienen dominios distintos — medir las etiquetas contra el del otro habría contestado otra pregunta
+
+| lista | n | dominio | congelada |
+|---|---|---|---|
+| `ETIQUETAS_CENSADAS` | 43 | `post_content` **SERVIDO** de las 209 del arquetipo A | `a-censo.json` |
+| `ATRIBUTOS_CENSADOS` | 81 | corpus **TRANSFORMADO** + grupo C + `articulos-kb` | `atributos-censo-2026-08-23.json` |
+
+Cada eje se cruza contra **su** censo. El de etiquetas publica su inventario con
+cardinal por etiqueta, así que la pregunta se contesta al elemento: de las **11
+etiquetas bloqueadas** —`article` `header` `meta` `form` `input` `label` `button`
+`fieldset` `legend` `select` `option`—, **ninguna está en el inventario global de
+las 209**.
+
+Dominio reconstruido: **610 regiones ricas · 294 páginas** (A 212 · C 295 · KB 103).
+
+---
+
+#### FICHA 1 · `formulario` — 20 tokens · **2 bloqueos** · 1 campo de 199 · 1 doc de 4
+
+| campo | evidencia |
+|---|---|
+| **cardinal** | 20 tokens de 43 · **2 bloqueos de 22** (los 2 exclusivos) · **1 campo de 199** · **1 documento de 4** (`monitor-calidad-aire`) · **1 `kind` de 5** (`codigo-arq`) |
+| **el ORIGINAL** | `<form method="POST" action="https://kunak.activehosted.com/proc.php" id="_form_106_" novalidate data-styles-version="3">` — **el destino es un TERCERO**, ActiveCampaign |
+| **el CLON hoy** | `CtaGuiaProyecto.tsx` **ya sirve este formulario**, reconstruido en TSX: **NO postea a ActiveCampaign · NO carga reCAPTCHA**, el submit va a `CONTACT_HREF` |
+| **el EDITOR** | ver la superficie de abajo |
+| **el DOMINIO** | **20 de 20 SIN PROBAR** — 9 etiquetas ausentes del inventario de 209, 11 atributos con 0 apariciones en 294 páginas |
+
+**La superficie, medida y no supuesta:**
+
+| | |
+|---|---|
+| destino | `https://kunak.activehosted.com/proc.php` — **host de tercero** |
+| método | **POST** |
+| ¿lo cubre `HOSTS_PERMITIDOS`? | **NO**: esa allowlist sólo mira `<iframe>`, no `<form>` |
+| `<input>` | **17** — 5 visibles, **12 OCULTOS** |
+| visibles | `fullname` · `email` · `field[2]` · 2 checkbox `field[15][]` (términos · marketing) |
+| **ocultos** | `u=106` · `f=106` · `s` · `c=0` · `m=0` · `act=sub` · `v=2` · **`or=3898163d…`** · `field[15][]=~\|` · `field[44/45/46]` (UTM campaign/source/medium) |
+| `<select>` | 2 (`field[27]` · `field[51]`) con **280 `<option>`** |
+| reCAPTCHA | `<div class="g-recaptcha" data-sitekey="6LcwIw8T…">` — la clave es **pública por diseño** |
+
+**Qué hace `data-sitekey` sin backend: nada.** Quien inicializa el widget es un
+`<script>` inline (`window['recaptcha_callback']`) que **`A.limpia()` retira antes
+de que el campo se forme** — el eje `script` da **0 de 199** justamente por eso.
+Lo que entraría al CMS es el `<div>` vacío y el `<form>` **sin su validación, sin
+su reCAPTCHA y sin su envío AJAX**: 52 `<script>` en el documento, **0 en el
+campo**. Es §*un marcado y el `<script>` que lo REPARA son una unidad; media
+unidad es un defecto que el original no tiene*.
+
+> **Y lo que eso significa para un editor, en concreto:** un `<form action method>`
+> admitido en el campo rico es **un POST a un host arbitrario desde una página del
+> sitio**, con los campos que el editor escriba —incluidos los **ocultos**, que
+> son 12 de 17 en la única instancia medida y son justo los que un lector no ve—.
+> La allowlist de hosts **no lo alcanza**: está escrita para `<iframe>`.
+
+---
+
+#### FICHA 2 · `data-*` del constructor — 12 tokens · 5 bloqueos · 5 campos · 3 docs
+
+| campo | evidencia |
+|---|---|
+| **cardinal** | 12 tokens · **5 bloqueos** (5 exclusivos) · 5 campos de 199 · **3 documentos de 4** · 3 `kind` (`texto-arq` · `slider-arq` · `slider-ancho-arq`) |
+| **el ORIGINAL** | los 12 en `<div>`. Configuración del visor 360° (`data-total-frames` · `data-auto-rotate` · `data-speed` · `data-zoom` · `data-inertia` · `data-reverse` · `data-main-image-url`…) y del slider (`data-slide-id`) |
+| **el CLON hoy** | **5 de 12** en `Product360Viewer.tsx` — el clon ya reimplementó el visor y lee esos mismos nombres |
+| **el EDITOR** | un `data-*` no ejecuta por sí solo; lo que amplía es **la superficie que un script del tema puede leer**. El censo ya admite 30 `data-*` concretos «exactos y no por patrón: un `data-*` comodín admitiría cualquier cosa, que es lo contrario de censar» |
+| **el DOMINIO** | **12 de 12 SIN PROBAR** |
+
+---
+
+#### FICHA 3 · schema.org — 5 tokens · **8 bloqueos** (el mayor) · 4 campos · **4 docs**
+
+| campo | evidencia |
+|---|---|
+| **cardinal** | 5 tokens · **8 bloqueos de 22** (8 exclusivos) · 4 campos de 199 · **4 documentos de 4** · 1 `kind` (`texto-arq`) |
+| **el ORIGINAL** | `itemscope`/`itemtype` en `<ol>` y `<li>`; `itemprop` en `<a>` `<li>` `<meta>` `<span>`; `<meta content>` — es el **BreadcrumbList** de datos estructurados, la miga marcada para buscadores |
+| **el CLON hoy** | `Breadcrumb.tsx` emite `<meta>`; los hits de `content` en `.css` son **falsos positivos de mi detector** (la propiedad CSS `content:`) y se declaran como tales |
+| **el EDITOR** | `<meta itemprop content>` es **inerte en pantalla**: no pinta, no ejecuta, no navega. Lo que amplía es lo que un buscador lee de la página |
+| **el DOMINIO** | **5 de 5 SIN PROBAR** |
+
+> **Es la clase con MÁS bloqueos —8 de 22— y está en los 4 documentos**, o sea la
+> que más siembra para y la única presente en todo el lote.
+
+---
+
+#### FICHA 4 · aria de tabla — 4 tokens · 1 bloqueo · 1 campo · 1 doc
+
+| campo | evidencia |
+|---|---|
+| **cardinal** | 4 tokens · **1 bloqueo** (exclusivo) · 1 campo de 199 · 1 documento · 1 `kind` (`tabla-arq`) |
+| **el ORIGINAL** | los 4 en `<div>` — coherente con lo ya medido en la 120.ª: `dvmd_table_maker` **no es una tabla HTML** (`<table>` = 0), es una rejilla de `<div>` que declara su geometría con `aria-rowcount`/`aria-colcount` |
+| **el CLON hoy** | **0 de 4** — el clon no los emite |
+| **el EDITOR** | son atributos de accesibilidad **sin efecto visual ni de ejecución**; el censo ya admite `aria-describedby`, `aria-description` y `aria-level` |
+| **el DOMINIO** | **4 de 4 SIN PROBAR** |
+
+---
+
+#### FICHA 5 · estructura HTML5 — 2 tokens · 6 bloqueos · 4 campos · **4 docs**
+
+| campo | evidencia |
+|---|---|
+| **cardinal** | 2 tokens · **6 bloqueos** (6 exclusivos) · 4 campos de 199 · **4 documentos de 4** · 1 `kind` (`texto-arq`) |
+| **el ORIGINAL** | `<article>` y `<header>` |
+| **el CLON hoy** | los emite en **12 y 3** ficheros de `apps/web/src` |
+| **el EDITOR** | son elementos de **agrupación semántica**: no ejecutan, no navegan. El censo ya admite `<section>`, que es de la misma familia |
+| **el DOMINIO** | **2 de 2 SIN PROBAR** — ninguna en el inventario de 209 |
+
+> ⚠ **Y un matiz que hay que decir, porque la cabecera de `comunes.ts` lo cita al
+> revés de como se lee:** el `<article>` de ChatGPT que aquel comentario menciona
+> *«saltó por la etiqueta»* — o sea que **el saneador lo rechazó**, y la
+> transformación lo retiró. En el corpus **crudo** de blog `<article` aparece en
+> 84 de 152 ficheros (el del cascarón de WordPress) y en el **transformado**, 0.
+> Que el censo no lo tenga es coherente con las dos cosas.
+
+#### Los dos negativos, cayendo por su MOTIVO
+
+| caso | qué anula | control que cae |
+|---|---|---|
+| `dominio-mudo` | pone todas las apariciones a 0, **testigos incluidos** | 0/8 testigos vivos — y el veredicto de las fichas sale **idéntico** al bueno, que es la instancia separadora |
+| `sin-corpus-c` | quita el grupo C del dominio | 315 regiones · 218 páginas contra las 294 declaradas |
+
+> **`dominio-mudo` es el caso que enseña**: sin el control de testigos habría
+> salido **verde con el mismo 43 de 43**, porque el veredicto de alcance no
+> distingue un corpus que no trae el token de un instrumento que no lo ve.
+
+---
+
 ## ⛔ §131.ª · **EL EXTRACTOR DE F3-5 EXISTE Y PRODUCE SUS 4 FILAS — Y LO QUE PARA LA SIEMBRA ES EL CENSO DEL CAMPO RICO, EJERCITADO FUERA DE DONDE SE MIDIÓ** — 2026-08-31
 
 **Encargo:** sembrar las filas de `arquetipos` y verificarlas contra sí mismas.

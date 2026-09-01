@@ -1,0 +1,308 @@
+
+⚠ SABOTAJE=dominio-mudo — esta corrida DEBE fallar.
+
+==============================================================================
+132.ª · ESCALÓN 2 — la ficha de cada clase, con los mismos cinco campos
+==============================================================================
+
+## 1 · EL DOMINIO DEL CENSO, reconstruido
+   610 regiones ricas · 294 páginas
+     grupo A    212 regiones · 212 páginas
+     grupo C    295 regiones · 76 páginas
+     grupo KB   103 regiones · 6 páginas
+
+## 1a · EL CENSO DE ETIQUETAS tiene OTRO dominio: `a-censo`, post_content servido de 209 páginas
+   inventario global: 43 etiquetas distintas
+
+## 1b · TESTIGOS — el control que decide si un 0 es del corpus o de mi regex
+   href         (atributo)      0 apariciones en   0 de 294 páginas
+   style        (atributo)      0 apariciones en   0 de 294 páginas
+   class        (atributo)      0 apariciones en   0 de 294 páginas
+   data-start   (atributo)      0 apariciones en   0 de 294 páginas
+   p            (etiqueta)      0 apariciones en   0 de 294 páginas
+   a            (etiqueta)      0 apariciones en   0 de 294 páginas
+   img          (etiqueta)      0 apariciones en   0 de 294 páginas
+   strong       (etiqueta)      0 apariciones en   0 de 294 páginas
+   → 0 de 8 testigos vivos · ❌ el instrumento NO ve: ningún 0 de abajo adjudica
+
+══════════════════════════════════════════════════════════════════════════════
+## FICHA · FORMULARIO
+══════════════════════════════════════════════════════════════════════════════
+
+### cardinal
+   tokens .....  20 de 43
+   bloqueos ...   2 de 22   (exclusivos 2)
+   campos .....   1 de 199
+   documentos .   1 de 4  → monitor-calidad-aire
+   kinds ......   1 de 5  → codigo-arq
+
+### qué hace el ORIGINAL con ella (leído de la salida servida)
+   action                             (atributo) → <form>
+   button                             (etiqueta) → <button>
+   data-autofill                      (atributo) → <input>
+   data-sitekey                       (atributo) → <div>
+   data-styles-version                (atributo) → <form>
+   fieldset                           (etiqueta) → <fieldset>
+   for                                (atributo) → <label> <legend>
+   form                               (etiqueta) → <form>
+   input                              (etiqueta) → <input>
+   label                              (etiqueta) → <label>
+   legend                             (etiqueta) → <legend>
+   method                             (atributo) → <form>
+   name                               (atributo) → <input> <meta> <select>
+   novalidate                         (atributo) → <form>
+   option                             (etiqueta) → <option>
+   placeholder                        (atributo) → <input>
+   required                           (atributo) → <input> <select>
+   select                             (etiqueta) → <select>
+   selected                           (atributo) → <option>
+   value                              (atributo) → <input> <option>
+
+### qué hace el CLON hoy
+   action                             → apps/web/src/components/faq/FaqSidebar.tsx · apps/web/src/components/listados/BarraLateral.tsx
+   button                             → apps/web/src/components/CookiePreferencesButton.tsx · apps/web/src/components/CtaBannerSlider.tsx · apps/web/src/components/Footer.tsx (+11)
+   fieldset                           → apps/web/src/components/monitor/CtaGuiaProyecto.tsx
+   form                               → apps/web/src/components/faq/FaqSidebar.tsx · apps/web/src/components/listados/BandaFiltros.tsx · apps/web/src/components/listados/BarraLateral.tsx (+1)
+   input                              → apps/web/src/components/faq/FaqSidebar.tsx · apps/web/src/components/listados/BarraLateral.tsx · apps/web/src/components/monitor/CtaGuiaProyecto.tsx
+   label                              → apps/web/src/components/faq/FaqSidebar.tsx · apps/web/src/components/listados/BarraLateral.tsx · apps/web/src/components/monitor/CtaGuiaProyecto.tsx
+   legend                             → apps/web/src/components/monitor/CtaGuiaProyecto.tsx
+   method                             → apps/web/src/components/faq/FaqSidebar.tsx · apps/web/src/components/listados/BarraLateral.tsx
+   name                               → apps/web/src/components/faq/FaqSidebar.tsx · apps/web/src/components/listados/BarraLateral.tsx · apps/web/src/components/monitor/CtaGuiaProyecto.tsx (+5)
+   option                             → apps/web/src/components/monitor/CtaGuiaProyecto.tsx
+   select                             → apps/web/src/components/monitor/CtaGuiaProyecto.tsx · apps/web/src/lib/countries.ts · apps/web/src/lib/monitor.ts
+   value                              → apps/web/src/components/faq/FaqSidebar.tsx · apps/web/src/components/monitor/CtaGuiaProyecto.tsx · apps/web/src/components/SpecTable.tsx (+1)
+
+### el DOMINIO del censo, ¿EJERCITA el caso?
+   action                             0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   button                             a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   data-autofill                      0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-sitekey                       0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-styles-version                0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   fieldset                           a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   for                                0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   form                               a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   input                              a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   label                              a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   legend                             a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   method                             0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   name                               0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   novalidate                         0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   option                             a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   placeholder                        0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   required                           0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   select                             a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   selected                           0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   value                              0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+
+   → 20 de 20 tokens NO aparecen ni una vez en el dominio del censo
+   → veredicto de alcance: **SIN PROBAR ENTERA** — la regla nunca vio esta clase
+
+══════════════════════════════════════════════════════════════════════════════
+## FICHA · DATA-* DEL CONSTRUCTOR
+══════════════════════════════════════════════════════════════════════════════
+
+### cardinal
+   tokens .....  12 de 43
+   bloqueos ...   5 de 22   (exclusivos 5)
+   campos .....   5 de 199
+   documentos .   3 de 4  → monitor-calidad-aire, software-de-medicion-calidad-del-aire, kunak-api
+   kinds ......   3 de 5  → texto-arq, slider-ancho-arq, slider-arq
+
+### qué hace el ORIGINAL con ella (leído de la salida servida)
+   data-auto-rotate                   (atributo) → <div>
+   data-image-url-format              (atributo) → <div>
+   data-inertia                       (atributo) → <div>
+   data-main-holder-id                (atributo) → <div>
+   data-main-image-id                 (atributo) → <div>
+   data-main-image-url                (atributo) → <div>
+   data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification (atributo) → <div>
+   data-reverse                       (atributo) → <div>
+   data-slide-id                      (atributo) → <div>
+   data-speed                         (atributo) → <div>
+   data-total-frames                  (atributo) → <div>
+   data-zoom                          (atributo) → <div>
+
+### qué hace el CLON hoy
+   data-auto-rotate                   → apps/web/src/components/Product360Viewer.tsx
+   data-inertia                       → apps/web/src/components/Product360Viewer.tsx
+   data-reverse                       → apps/web/src/components/Product360Viewer.tsx
+   data-speed                         → apps/web/src/components/Product360Viewer.tsx
+   data-total-frames                  → apps/web/src/components/Product360Viewer.tsx
+
+### el DOMINIO del censo, ¿EJERCITA el caso?
+   data-auto-rotate                   0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-image-url-format              0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-inertia                       0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-main-holder-id                0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-main-image-id                 0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-main-image-url                0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-notification-config_drag-to-rotate_show-start-to-rotate-default-notification 0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-reverse                       0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-slide-id                      0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-speed                         0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-total-frames                  0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   data-zoom                          0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+
+   → 12 de 12 tokens NO aparecen ni una vez en el dominio del censo
+   → veredicto de alcance: **SIN PROBAR ENTERA** — la regla nunca vio esta clase
+
+══════════════════════════════════════════════════════════════════════════════
+## FICHA · SCHEMA.ORG
+══════════════════════════════════════════════════════════════════════════════
+
+### cardinal
+   tokens .....   5 de 43
+   bloqueos ...   8 de 22   (exclusivos 8)
+   campos .....   4 de 199
+   documentos .   4 de 4  → monitor-calidad-aire, accesorios, software-de-medicion-calidad-del-aire, kunak-api
+   kinds ......   1 de 5  → texto-arq
+
+### qué hace el ORIGINAL con ella (leído de la salida servida)
+   content                            (atributo) → <meta>
+   itemprop                           (atributo) → <a> <li> <meta> <span>
+   itemscope                          (atributo) → <li> <ol>
+   itemtype                           (atributo) → <li> <ol>
+   meta                               (etiqueta) → <meta>
+
+### qué hace el CLON hoy
+   content                            → apps/web/src/app/f33.css · apps/web/src/app/kb.css · apps/web/src/app/listados.css (+3)
+   meta                               → apps/web/src/components/Breadcrumb.tsx
+
+### el DOMINIO del censo, ¿EJERCITA el caso?
+   content                            0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   itemprop                           0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   itemscope                          0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   itemtype                           0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   meta                               a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+
+   → 5 de 5 tokens NO aparecen ni una vez en el dominio del censo
+   → veredicto de alcance: **SIN PROBAR ENTERA** — la regla nunca vio esta clase
+
+══════════════════════════════════════════════════════════════════════════════
+## FICHA · ARIA DE TABLA
+══════════════════════════════════════════════════════════════════════════════
+
+### cardinal
+   tokens .....   4 de 43
+   bloqueos ...   1 de 22   (exclusivos 1)
+   campos .....   1 de 199
+   documentos .   1 de 4  → monitor-calidad-aire
+   kinds ......   1 de 5  → tabla-arq
+
+### qué hace el ORIGINAL con ella (leído de la salida servida)
+   aria-colcount                      (atributo) → <div>
+   aria-colindex                      (atributo) → <div>
+   aria-rowcount                      (atributo) → <div>
+   aria-rowindex                      (atributo) → <div>
+
+### qué hace el CLON hoy
+   0 de 4 tokens aparecen en apps/web/src — el clon NO los emite
+
+### el DOMINIO del censo, ¿EJERCITA el caso?
+   aria-colcount                      0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   aria-colindex                      0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   aria-rowcount                      0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+   aria-rowindex                      0 apariciones en 0 de 294 páginas            ← SIN PROBAR (el censo no lo vio)
+
+   → 4 de 4 tokens NO aparecen ni una vez en el dominio del censo
+   → veredicto de alcance: **SIN PROBAR ENTERA** — la regla nunca vio esta clase
+
+══════════════════════════════════════════════════════════════════════════════
+## FICHA · ESTRUCTURA HTML5
+══════════════════════════════════════════════════════════════════════════════
+
+### cardinal
+   tokens .....   2 de 43
+   bloqueos ...   6 de 22   (exclusivos 6)
+   campos .....   4 de 199
+   documentos .   4 de 4  → monitor-calidad-aire, accesorios, software-de-medicion-calidad-del-aire, kunak-api
+   kinds ......   1 de 5  → texto-arq
+
+### qué hace el ORIGINAL con ella (leído de la salida servida)
+   article                            (etiqueta) → <article>
+   header                             (etiqueta) → <header>
+
+### qué hace el CLON hoy
+   article                            → apps/web/src/app/faqs/[slug]/page.tsx · apps/web/src/app/tema.css · apps/web/src/components/caso/CasoPagina.tsx (+9)
+   header                             → apps/web/src/components/HeaderNav.tsx · apps/web/src/components/listados/TarjetaCaso.tsx · apps/web/src/components/UltimosProyectos.tsx
+
+### el DOMINIO del censo, ¿EJERCITA el caso?
+   article                            a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+   header                             a-censo: NO está en el inventario de 209     ← SIN PROBAR (el censo no lo vio)
+
+   → 2 de 2 tokens NO aparecen ni una vez en el dominio del censo
+   → veredicto de alcance: **SIN PROBAR ENTERA** — la regla nunca vio esta clase
+
+══════════════════════════════════════════════════════════════════════════════
+## LA SUPERFICIE DE `formulario` — qué pasa exactamente si un editor lo escribe
+══════════════════════════════════════════════════════════════════════════════
+
+### el <form> del original, verbatim
+   <form method="POST" action="https://kunak.activehosted.com/proc.php" id="_form_106_" class="_form _form_106 _inline-form  _dark" novalidate data-styles-version="3">
+   destino ..... https://kunak.activehosted.com/proc.php
+   host ........ kunak.activehosted.com  ← TERCERO
+   método ...... POST
+   ¿el host está en HOSTS_PERMITIDOS? — esa allowlist SÓLO mira <iframe>, no <form>
+
+### qué se envía — los campos, uno a uno
+   17 <input> · 5 visibles · 12 OCULTOS
+     visible  text      name=fullname
+     visible  text      name=email
+     visible  text      name=field[2]
+     visible  checkbox  name=field[15][]
+     visible  checkbox  name=field[15][]
+     oculto   hidden    name=u  value=106
+     oculto   hidden    name=f  value=106
+     oculto   hidden    name=s  value=
+     oculto   hidden    name=c  value=0
+     oculto   hidden    name=m  value=0
+     oculto   hidden    name=act  value=sub
+     oculto   hidden    name=v  value=2
+     oculto   hidden    name=or  value=3898163d1495aca8c8346e0fc40de428
+     oculto   hidden    name=field[15][]  value=~|
+     oculto   hidden    name=field[44]  value=
+     oculto   hidden    name=field[45]  value=
+     oculto   hidden    name=field[46]  value=
+   2 <select>: field[27] · field[51] · 280 <option>
+
+### reCAPTCHA — qué hace `data-sitekey` sin backend
+   portador ...... <div class="g-recaptcha" data-sitekey="6LcwIw8T…">
+   la clave es PÚBLICA por diseño (va en el HTML servido de cualquier sitio con reCAPTCHA)
+   <script> de reCAPTCHA en el documento ... 0
+
+### ⚠ EL CAMPO QUE ENTRARÍA AL CMS NO ES ESE HTML: `A.limpia()` YA QUITÓ LOS <script>
+   <script> en el documento entero ......... 52
+   <script> que sobreviven al campo ........ 0  (eje `script`: 0 de 199 campos)
+   → el HTML que entraría es el <form> SIN sus scripts: validación, reCAPTCHA
+     y envío AJAX se quedan fuera. Es §*un marcado y el <script> que lo REPARA
+     son una unidad; media unidad es un defecto que el original no tiene*.
+
+### qué hace el CLON hoy con este mismo formulario
+   apps/web/src/components/monitor/CtaGuiaProyecto.tsx — EXISTE
+     <form> reconstruido en TSX ......... sí
+     postea a ActiveCampaign ........... NO
+     carga reCAPTCHA ................... sí
+     destino del submit ................ CONTACT_HREF (contacto propio)
+   → el clon YA resolvió este caso: BLOQUE TIPADO, no HTML de campo rico.
+     Es el mismo camino que §3.3·T4 aplica a los <script>: nodo-embed tipado
+     o eliminación con sustitución. Existe como precedente, no como propuesta.
+
+## CONTROLES
+   ✅ §regla 22 · el dominio del censo va con su CARDINAL, no con un booleano
+        610 regiones · 294 páginas (el censo declaró 294)
+   ✅ las CINCO clases tienen ficha, con los mismos campos
+        5 fichas
+   ❌ §sondas 4 · el CERO está auditado con casos conocidos: los testigos VEN el corpus
+        0/8 testigos vivos (href=0 style=0 class=0 data-start=0 p=0 a=0 img=0 strong=0) · tokens bloqueados vistos 0 · no vistos 43 de 43
+   ✅ §sondas 4 · el censo de ETIQUETAS se cruza contra SU congelada, y está viva
+        a-censo: 43 etiquetas en el inventario global (declara 43)
+   ✅ la superficie de `formulario` está MEDIDA: el destino es un tercero, nombrado
+        kunak.activehosted.com
+   ✅ §regla 14 · los campos OCULTOS van con su cardinal (son los que un lector no ve)
+        12 hidden de 17 input
+
+==============================================================================
+VEREDICTO · HAY CONTROLES EN ROJO · 5 fichas · el expediente DESCRIBE, no decide
+==============================================================================
+
+congelada → derivaciones/fichas-132-neg-dominio-mudo.json
