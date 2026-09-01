@@ -1,8 +1,8 @@
 # Pendientes de QA — clon kunakair.com/es
 
-## ✅ §138.ª · **EL SOCKET ABRE, LA VENTANA SIGUE ABIERTA — Y UNA PREMISA DE LA 137.ª ERA UNA INFERENCIA SIN DB QUE HOY SE PUEDE MEDIR** — 2026-09-01
+## ✅ §138.ª · **LA REVERSA PROBADA EN SU ÚNICA VENTANA, `arquetipos` CABLEADA — Y LA SIEMBRA PARA EN 5 `required` QUE SON DECISIÓN DE MODELO (CMS-8)** — 2026-09-01
 
-**Estado: PASO 0 completo.** Primera tanda **CON DB** desde la 133.ª. El encargo
+**Estado: PASO 0 · ESCALÓN 1 · ESCALÓN 2 completos; ESCALÓN 3 medido hasta CMS-8.** Primera tanda **CON DB** desde la 133.ª. El encargo
 llega rotulado «135.ª (RETOMADA)» y el árbol ya tiene la 135.ª CIERRE, la 136.ª
 y la 137.ª commiteadas, así que **sus premisas son recordadas, no derivadas**
 (§regla 9) y se re-midieron todas antes de tocar nada.
@@ -83,6 +83,200 @@ saliera a 0, el cero sería del instrumento y no del objeto.
 
 Derivación con su congelada:
 `docs/research/cola-larga/derivaciones/paso0-138.{mjs,json}`.
+
+### CIERRE · ESCALONES 1, 2 y 3 — y el ESCALÓN 3 para en una decisión que no es de esta tanda
+
+**Estado: ESCALÓN 1 hecho · ESCALÓN 2 hecho · ESCALÓN 3 medido hasta el punto
+donde hace falta una decisión del propietario.** `arquetipos` sigue a **0 filas**.
+
+#### ESCALÓN 1 · la migración y su reversa, en la única ventana que §regla 30 admite
+
+`formulario-arq` entró en `bloques/arquetipos.ts` DESPUÉS de
+`20260831_015813_f3_5_arquetipos`, así que el esquema declaraba **12** bloques y
+la DB tenía **11**. El complemento sale nombrado, no como cardinal.
+
+**La reversa, comparada ANTES vs TRAS-DOWN elemento a elemento en CUATRO ejes
+más el registro de migraciones** —nunca por el total, que `151 → 151` es exacto
+con dos tablas compensándose—:
+
+| eje | simétrica |
+|---|---|
+| tablas (151) · columnas (1884) · tipos (340) · constraints (1101) | **0 y 0** |
+| `payload_migrations` (26) | **0 y 0** |
+
+**Con su control positivo**, porque un «idéntico» tiene dos causas que se
+escriben igual: TRAS-UP creó **4/4 tablas y 14/14 tipos**.
+
+⚠ **Y los cuatro ejes no son adorno:** un `DROP TABLE … CASCADE` **no se lleva
+los tipos enum** —es por lo que `reset.mjs` dropea el esquema por `psql`—, así
+que un `down` que dejara 14 enums huérfanos daría «tablas idénticas» con el
+esquema sucio.
+
+⚠⚠ **§regla 30 en vivo, y el número es el que la regla predice:** `migrate:down`
+imprimió *«Rolling back batch 4 consisting of **27** migration(s)»* y
+`payload_migrations` dice que revirtió **UNA**.
+
+#### Y el `IF EXISTS` NO arregla §regla 42 aquí — compra otra cosa, y se mide
+
+Medido corriendo el `down` **sin** `IF EXISTS` sobre la DB real, dentro de
+`BEGIN…ROLLBACK` y **sin editar el fuente** (§regla 20: un sabotaje que edita el
+fuente sobrevive a la muerte de su corrida):
+
+| escenario | separadoras |
+|---|---|
+| **primera** pasada | **0 de 1** — las dos versiones corren limpio |
+| **segunda** pasada | **1 de 1** — sin él, `42P01 … does not exist` |
+
+> **Esta migración NO es una quinta instancia de §regla 42.** No emite su patrón
+> —`DROP TABLE … CASCADE` seguido del `DROP CONSTRAINT` que ese CASCADE ya se
+> llevó— porque no crea colección nueva y no toca
+> `payload_locked_documents_rels`. **El cardinal de la clase sigue en 4.**
+
+Lo que el `IF EXISTS` compra es **IDEMPOTENCIA**, que es otra propiedad. Escribir
+«§regla 42 muerde aquí» por una separadora de la doble pasada sería heredar el
+cardinal del descubrimiento en vez de derivarlo — justo lo que la corrección del
+2026-09-01 a esa regla previene.
+
+⚠ **La primera lectura del detector decía exactamente eso**, y se corrigió: los
+4 casos salen **IDÉNTICOS AL BIT**, así que lo que cambió es la lectura y no la
+medida.
+
+#### ESCALÓN 2 · el alta, y su efecto medido CORRIENDO
+
+`arquetipos` entra en `CATALOGOS` y en `SEMBRADAS` (11 → 12), con su evidencia:
+lo que la bloqueaba (esquema, resuelto por CMS-6 = A + C · entorno, resuelto
+hoy) y lo que la habilita (**4 documentos · 231 bloques · 0 bloqueos en los
+CUATRO ejes de 198 campos HTML · 0 media sin resolver**, 7 controles verdes).
+
+**Que aparezca en la lista y que el sembrador la recorra son dos afirmaciones.**
+El número que lo dice: sondeo **360 → 364 filas**, confirmado desde otro
+instrumento por el control del negativo (355 → 364, `required.delEsquema` 73 →
+83).
+
+Y su **ORDEN se deriva**: `arquetipos` no declara ni un `relationTo` —sólo
+`subida()`—, luego no depende de nadie ni nadie de ella.
+
+#### ⛔ Lo que el alta destapó, y es lo que para el ESCALÓN 3 — **CMS-8**
+
+**5 rutas `required` que ninguna tanda tenía nombradas**, derivadas enteras en
+UNA corrida (§regla 27) y **cada una con su unidad**:
+
+| ruta | clase | instancias | documentos |
+|---|---|---|---|
+| `imagen-arq.enlace.label` · `.href` | SIN DATO | **27 de 27** | 4 de 4 |
+| `texto-arq.contenido` | VACÍO | 1 de 100 | 1 |
+| `video-arq.url` | VACÍO | **2 de 2** | 2 |
+| `formulario-arq…opciones.texto` | VACÍO | 3 | 1 |
+
+**Es decisión de MODELO y es del propietario**, con el precedente exacto de las
+D1·D2·D3 de `paginas`. El mecanismo que lo hace decisión y no defecto: `enlace()`
+es un **`group`** con `label`/`href` `required`, y **un grupo en Payload no es
+opcional** — así que aunque el original enlazara algunas imágenes, las que no lo
+hicieran bloquearían igual.
+
+Expediente con las 4 opciones y **la operación de deshacer de cada una
+nombrada**: `ESQUEMA-CMS.md` §CMS-8. ⚠ **Y ahí la asimetría va AL REVÉS de lo
+habitual**: en un `NOT NULL`, **relajar es barato y re-imponer es caro** porque
+`SET NOT NULL` tiene ventana y la primera fila la cierra.
+
+⚠ **Y lo que NO queda atribuido se declara:** el 27/27 es un **100 % redondo**
+—§sondas 4 quinta cara—. El extractor **sí** emite `enlace`
+(`extractor-f35.mjs:469`), pero entre *«no lee éstos»* y *«los 27 de primer
+nivel no tienen enlace»* **no hay separadora medida**: el barrido del corpus
+tiene ventana de 900 caracteres y se lleva anclas vecinas y las apariciones
+dentro de `<style>`. **SIN ATRIBUIR**, y hace falta **sólo para la opción B**.
+
+#### Un defecto del sondeo, que `arquetipos` es el primer dominio en ejercer
+
+El informe de vacíos agrupa con `Set.add(r.slug ?? "(sin slug)")`, y en un
+`required` vacío **ANIDADO** el `dato` de esa vuelta es el sub-objeto: el slug
+sale `undefined` y **todos los documentos caen en un cubo**. El `Set` no da
+error: da `size === 1`. Es §regla 29 tercera cara con el colapso **dentro de la
+sonda**.
+
+**Medido:** `video-arq.url` salía *«en 1 documento(s): (sin slug)»* y son **2**.
+⚠ **Antes del alta el informe daba `(ninguno)` en las 11 colecciones**, o sea
+que este camino estaba **SIN PROBAR**. ⚠ **Y la señal estaba impresa**: el
+`(sin slug)` sale al lado del `1`, en la misma línea (§regla 1). Arreglado
+propagando `slugRaiz` por las 7 llamadas de `exige`; **`cms:sondeo-neg` 4/4**.
+
+⚠ **Y mi propio comparador salió 3/5 · NO ADJUDICA** a la primera, por comparar
+INSTANCIAS contra DOCUMENTOS — dos cardinales ciertos de unidades distintas.
+Corregido publicando las dos; congelada previa renombrada **por el ESTADO que
+describe**.
+
+#### ESCALÓN 3 · lo que sí se midió
+
+- **`qa:media-canales`**: **58 canales · 21 ejercidos · 39 sin dato · 4 de otro
+  sembrador · 0 ficheros a capturar · 0 guardas en rojo**. `arquetipos` aporta
+  **68 rutas con 0 ausentes**, resueltas **byte a byte** (la guarda de Linux, no
+  la de Windows — §regla 47);
+- **la siembra NO se corre.** `cms:seed` exige DB vacía, así que verificar el
+  bloqueo contra el hecho costaría `cms:reset` + `cms:seed` — vaciar la DB para
+  confirmar lo que un instrumento con negativo 4/4 ya predice. **`arquetipos` se
+  queda cableada a propósito**: con el alta puesta el sondeo grita; sin ella el
+  hueco vuelve a ser invisible (§sondas 6);
+- **build FUERA** (`NEXT_DIST_DIR=.next-138`), exit 0, **sin promocionar** — la
+  promoción se deja porque `.next` es la única foto contra la que las 131 de
+  abajo se pueden comparar.
+
+#### En vez de `clon-base`: la comparación de los builds, que es más fuerte y más barata
+
+| | |
+|---|---|
+| rutas del manifiesto | **429 → 429**, simétrica **0 y 0** (dinámicas 17 → 17, **0 y 0**) |
+| membresía de HTML prerenderizado | **0 y 0** |
+| **la 138.ª alcanza al bundle de web** | **NO**, y derivado: `git diff --name-only 16405ae..HEAD` da **0 ficheros de `apps/web/src`**, y ninguna migración entra al bundle — **con testigo positivo** porque un 0 sin él no vale: `"Aviso legal"` 1709 · `"entradas-blog"` 59 · `"nextpostslink"` 126, contra `f3_5_formulario_arq` **0** · `f3_5_arquetipos` **0** · `MigrateUpArgs` **0** |
+
+**Así que la 138.ª es NO-OP sobre el render POR CONSTRUCCIÓN**, y `clon-base` no
+tendría nada que medir que esto no cubra ya.
+
+#### ⛔ Y lo que la comparación destapó, fichado SIN ATRIBUIR
+
+**131 de 428 documentos difieren en HTML VISIBLE** entre el build base
+(`.next`, 2026-08-31 14:54) y el de hoy. **No son de esta tanda** —el intervalo
+cubre las tandas 133.ª–137.ª— y por eso se fichan con su cardinal y **sin
+atribuir**: atribuirlas a la 138.ª sería tan falso como no contarlas.
+
+Reconstruidos dos casos a mano, son de **dos clases**:
+
+- `aviso-legal.html` — sólo el NÚMERO de trozos del payload (20 `<RSC/>` contra
+  21). Serialización;
+- **`blog.html` — pierde `<link rel="next" href="/blog/page/2"/>`**, con
+  `/blog/page/2` emitida en los dos builds. **Eso sí es contenido**, y es lo que
+  hay que mirar.
+
+**Lo que haría falta para atribuirlo:** un build contra el commit anterior a la
+tanda que lo introdujo. Con `.next-138` conservado, la mitad del par ya está.
+
+#### El instrumento se estrenó con dos defectos, los dos cazados por su propia señal
+
+1. comparar al bit dio **428 de 428** — el **100 % redondo** — y era el
+   `BUILD_ID`, que Next inyecta distinto en cada build;
+2. normalizado, **196**; y reconstruido un caso, el primer byte divergente era
+   **el ORDEN del payload RSC** con el título idéntico.
+
+Los dos son §sondas 4 —quinta cara y sobre-casado— cometidos **dentro de mi
+propio comparador**, y de ahí sale la regla que sube a `CLAUDE.md`.
+
+#### Barrido de §regla 12 — acotado, con su número y verificado CORRIENDO contra HEAD
+
+**7 candidatos · 3 REGLA · 4 EVENTO.** Las 3 reglas suben a `CLAUDE.md` y el
+cruce **ENDURECIDO manda** (el laxo va al lado): las tres dan **«en HEAD: NO
+estaba» → «ahora: ya escrito»**, que es lo único que prueba que llegaron. Los
+tres testigos del propio cruce pasan.
+
+⚠ **Y el barrido se cazó a sí mismo un falso diagnóstico:** las claves de R1 y
+R2 no casaban y la primera lectura fue *«el cruce da falso negativo»*. Era al
+revés — el cruce tenía razón: `plano()` ya normaliza espacios y mayúsculas, y
+mis `enunciadoClave` no eran la forma escrita. Ajustadas a la canónica, con el
+ANTES/DESPUÉS contra HEAD como salvaguarda de que el ajuste no afloja el cruce
+(§regla 21).
+
+#### Guardas
+
+`typecheck` **0** · `typecheck:cms` **0** · `qa:lib` **0** (219 sondas) ·
+`cms:sondeo-neg` **4/4** · `qa:media-canales` **0 en rojo**.
 
 
 ## ✅ §137.ª · **CMS-7 CERRADO EN `A · NO UNIFICAR`, Y LA GUARDA QUE AFIRMABA DE MÁS YA NOMBRA — PERO SU CONTROL NO PODÍA VIVIR DONDE EL CÓDIGO CORRE** — 2026-09-01

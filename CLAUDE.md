@@ -1251,11 +1251,64 @@ tampoco es del contenedor. Sin abrir el socket, la primera lectura fue *«otro
 proceso ocupa el puerto»*, que es **falsa y plausible**: `ECONNREFUSED`
 significa justo lo contrario, que **no hay nadie escuchando**.
 
+> ⚠⚠ **Y EL SEXTO CANAL, QUE ES EL QUE EXPLICA A LOS OTROS CINCO Y NADIE MIRÓ
+> EN CINCO TANDAS: `NetworkSettings.Networks` PUEDE ESTAR VACÍO — UN CONTENEDOR
+> CORRIENDO PUEDE ESTAR ATADO A CERO REDES (2026-09-01, 138.ª).**
+>
+> La tabla de arriba deja el defecto en *«el publish»* y ahí se quedó, con la
+> conclusión de que era del proxy de Docker Desktop y por tanto del
+> propietario. **Le faltaba una fila**, y es causal en vez de sintomática:
+>
+> > **Sin endpoint de red no hay nada que publicar.** `PortBindings` se puede
+> > escribir sobre un contenedor sin redes —es sólo configuración— y
+> > `NetworkSettings.Ports` sale vacío **necesariamente**, no por avería. Así
+> > que *«el binding está declarado y no aplicado»* no era el defecto: era su
+> > **síntoma**.
+>
+> **La regla operativa, y cuesta un `docker inspect`: ante un binding declarado
+> y no publicado, se mira `NetworkSettings.Networks` ANTES de culpar al proxy.**
+> Si está vacío, ni `restart` ni reiniciar el demonio lo arreglan —los dos
+> conservan la ausencia de endpoint—; lo arregla **recrear el contenedor con su
+> red y su volumen**, que es una operación distinta de reiniciarlo.
+>
+> ⚠ **Y por qué se pagó tan caro: las dos premisas falsas se sostenían.** Ésta
+> decía «no hay nada más que mirar» y la del volumen decía «recrear mata los
+> datos» — o sea que **una cerraba el diagnóstico y la otra cerraba la única
+> salida**. Ninguna de las dos daba error, y las dos se leían como resultados
+> de haber medido.
+
 ⚠ **Y su corolario de operación, que decide si algo se puede tocar:** antes de
 reiniciar un contenedor con datos, se mira **si su volumen tiene NOMBRE o es
-ANÓNIMO**. Un anónimo (`2ebbe245…`, un hash) está atado al contenedor:
-sobrevive a `stop`/`start`/`restart` y **muere con una recreación** — que es
-por lo que `docker compose up` y `docker start` no son intercambiables aquí.
+ANÓNIMO**. Un anónimo es un hash (`2ebbe245…`) en vez de un nombre puesto por
+alguien, y sobrevive a `stop`/`start`/`restart`.
+
+> ⚠⚠ **CORREGIDA LA SEGUNDA MITAD el 2026-09-01 (138.ª): AQUÍ DECÍA QUE UN
+> VOLUMEN ANÓNIMO «MUERE CON UNA RECREACIÓN», Y ES FALSO — ANÓNIMO NO ES
+> EFÍMERO.**
+>
+> > **«Anónimo» dice quién le puso el NOMBRE, no cuánto vive.** El volumen
+> > aparece en `docker volume ls` con su hash y **se puede montar por ese hash
+> > en un contenedor nuevo**. Lo que lo destruye es `docker rm -v` o
+> > `compose down -v` — **no recrear el contenedor**.
+>
+> **Medido:** `kunak-cms-pg` se recreó montando
+> `2ebbe24576e1054e853caa761eb316a23113e15fb8316846435cee4bf2c0d658` por su ID
+> y **no se perdió nada**: 151 tablas, `paginas=31 · productos=19 ·
+> entradas_blog=152`, socket abierto en 77 ms.
+>
+> **Y lo que costó la lectura vieja no fue un borrado: fue CINCO TANDAS.** Con
+> «muere con una recreación» escrito, recrear el contenedor —que era la única
+> salida al binding no publicado— quedaba **fichado como imposible**, y las
+> tandas 134.ª–137.ª corrieron OFFLINE dando el entorno por bloqueado y del
+> propietario. La salida costaba **un `docker inspect`**. Es §*antes de fichar
+> una indeterminación, enumera las separadoras candidatas y di por qué cada una
+> no sirve* — aquí ni siquiera se enumeró: la premisa falsa cerró la búsqueda.
+>
+> ⚠ **Y `docker compose up` y `docker start` siguen sin ser intercambiables**,
+> que era la mitad cierta: `compose up` puede recrear con un volumen **nuevo**
+> si el `docker-compose.yml` no nombra el existente. La diferencia no es que la
+> recreación mate el volumen — es **contra qué volumen se recrea**, y eso se
+> mira antes, no después.
 
 ⚠ **La cuarta es de 2026-08-10 y merece nombre propio, porque el error no fue
 mirar poco: fue mirar EL CANAL EQUIVOCADO.**
@@ -2077,6 +2130,37 @@ comparada tenía `total = 4`, donde los dos modelos emiten lo mismo. O sea
 > sobre el poder discriminante, y **sólo la segunda explica un verde**. Un alcance
 > estrecho no produce por sí solo un falso verde: lo produce que **lo que cayó
 > dentro no distinguiera nada**.
+
+> ⚠⚠ **Y SU CASO MÁS BARATO DE COMETER, PORQUE EL RUIDO LO PONE EL PROPIO
+> GENERADOR: COMPARAR DOS ARTEFACTOS GENERADOS EXIGE NORMALIZAR LO QUE EL
+> GENERADOR PRODUCE DISTINTO POR CONSTRUCCIÓN (2026-09-01).**
+>
+> > **Un id de build, el orden de serialización, una marca de tiempo: nada de
+> > eso es el contenido, y todo entra en el `diff`.** Sin normalizarlo, el
+> > comparador contesta **«¿es el mismo BUILD?»** en vez de **«¿es el mismo
+> > CONTENIDO?»** — y las dos preguntas se escriben igual.
+>
+> **Medido en dos vueltas, y la segunda sólo salió reconstruyendo un caso:**
+> comparar el HTML prerenderizado al bit dio **428 de 428 distintas** —el
+> **100 % redondo**, o sea §sondas 4 en su quinta cara— y era el `BUILD_ID`.
+> Normalizado, quedaron **196**; y el primer byte divergente de
+> `aviso-legal.html` resultó ser **el ORDEN de las líneas del payload RSC**, con
+> el título idéntico. Descontado eso, **131**.
+>
+> **Las dos mitades operativas:**
+>
+> 1. **la normalización se aplica a LOS DOS lados y PUBLICA SU CARDINAL de
+>    sustituciones** —aquí `428 y 428`—: si fuera 0 en alguno, no está
+>    ocurriendo y el veredicto no vale. Aplicarla a un solo lado es §regla 32
+>    con el objeto cambiado;
+> 2. **y lo que quede se publica en DOS cubos, no en uno**: el artefacto
+>    COMPLETO y el **contenido que de verdad se consume** —aquí el HTML sin los
+>    `<script>` del payload—. El primero puede moverse sin que nada cambie para
+>    el consumidor, y sólo el segundo contesta la pregunta.
+>
+> ⚠ **Y la señal de la primera vuelta era gratis y estaba escrita:** un 100 %
+> redondo es del instrumento antes que del objeto. Perseguir las 428 como si
+> fueran contenido habría costado la tanda.
 
 > ⚠⚠ **Y EL DETECTOR DE SEPARADORAS TIENE SU PROPIO NIVEL: SE COMPARA EL
 > VEREDICTO, NO EL ARTEFACTO ENTERO (2026-09-01).**

@@ -1,0 +1,80 @@
+==============================================================================
+138.ª · BARRIDO DE §regla 12 — REGLA vs EVENTO, con los DOS cruces y su NEGATIVO
+==============================================================================
+
+── TESTIGOS DEL CRUCE (antes de creerse ningún número) ──
+  T+ · un enunciado que SE SABE escrito en CLAUDE.md
+      espera «ya escrito» → «ya escrito» ✓
+  T- · un enunciado INVENTADO que no puede estar
+      espera «NO está» → «NO está» ✓
+  T± · un TITULAR EN MAYÚSCULAS que lleva meses escrito
+      espera «ya escrito» → «ya escrito» ✓
+  HEAD legible para el antes/después: SÍ ✓
+
+── CANDIDATOS ──
+
+  R1 · REGLA
+      Un volumen ANÓNIMO no es EFÍMERO: «anónimo» dice quién le puso el nombre, no cuánto vive. Aparece en `docker volume ls` con su hash y se puede montar por ese hash en un contenedor NUEVO. Lo que lo destruye es `docker rm -v` o `compose down -v`, no recrear el contenedor.
+      POR QUÉ: Medido: `kunak-cms-pg` se recreó montando `2ebbe245…` por su ID y no se perdió nada — 151 tablas, `paginas=31 · productos=19 · entradas_blog=152`, socket en 77 ms. Y lo que costó la lectura vieja no fue un borrado: fueron CINCO TANDAS. Con «muere con una recreación» escrito en CLAUDE.md, recrear el contenedor —la única salida al binding no publicado— quedaba fichado como IMPOSIBLE, y las tandas 134.ª–137.ª corrieron OFFLINE dando el entorno por bloqueado. La salida costaba un `docker inspect`. Es §*antes de fichar una indeterminación, enumera las separadoras candidatas*: aquí ni se enumeró, porque la premisa falsa cerró la búsqueda.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §*lo DECLARADO y lo PUBLICADO son dos canales*
+
+  R2 · REGLA
+      Un contenedor CORRIENDO puede estar atado a CERO redes, y entonces `NetworkSettings.Ports` sale vacío NECESARIAMENTE, no por avería. Ante un binding declarado y no publicado se mira `NetworkSettings.Networks` ANTES de culpar al proxy: si está vacío, ni `restart` ni reiniciar el demonio lo arreglan —los dos conservan la ausencia de endpoint—; lo arregla recrear el contenedor con su red y su volumen.
+      POR QUÉ: La tabla de los cinco canales dejaba el defecto en «el publish» y de ahí en el proxy de Docker Desktop, o sea del propietario. Le faltaba una fila, y es CAUSAL en vez de sintomática: sin endpoint de red no hay nada que publicar, así que «el binding está declarado y no aplicado» no era el defecto sino su SÍNTOMA. Las dos premisas falsas se sostenían entre ellas: ésta cerraba el diagnóstico y la del volumen cerraba la única salida.
+      cruce LAXO (vocabulario) ....... ya escrito
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §*lo DECLARADO y lo PUBLICADO son dos canales*
+
+  R3 · REGLA
+      Comparar dos ARTEFACTOS GENERADOS exige normalizar lo que el generador produce distinto por construcción —un id de build, el orden de serialización— o el comparador mide «¿es el mismo build?» en vez de «¿es el mismo contenido?». Y la normalización se aplica a LOS DOS lados y publica su cardinal de sustituciones: si fuera 0 en alguno, no está ocurriendo.
+      POR QUÉ: Medido en dos vueltas: comparar el HTML prerenderizado al bit dio 428 de 428 distintas —el 100 % redondo, la señal de §sondas 4 quinta cara— y era el BUILD_ID. Normalizado, quedaron 196; reconstruido un caso a mano, el primer byte divergente de `aviso-legal.html` es el ORDEN de las líneas del payload RSC, con el título idéntico. Es §*el detector de separadoras tiene su propio NIVEL: se compara EL VEREDICTO, no el artefacto entero* con el artefacto puesto en un BUILD.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: CLAUDE.md, §*el detector de separadoras tiene su propio NIVEL*
+
+  E1 · EVENTO
+      CMS-8 levantado: los 5 `required` de `arquetipos` que paran la siembra, con sus dos sub-problemas separados (8a `imagen-arq.enlace` 27/27 · 8b los 3 vacíos) y las opciones con su operación de deshacer NOMBRADA.
+      POR QUÉ: Tiene fecha, cardinales y opciones sobre ESTE repo. La regla que lo gobierna —§regla 23, se cita el criterio CON SU OPERACIÓN— ya está escrita y se aplicó; lo que se añade es que en un `NOT NULL` la asimetría va AL REVÉS (relajar es barato, re-imponer tiene ventana), y eso es una aplicación, no un enunciado nuevo.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: ESQUEMA-CMS.md §CMS-8 + PENDIENTES-QA.md §138.ª + PLAN-FASE-3.md
+
+  E2 · EVENTO
+      El sondeo agrupaba documentos con `Set.add(r.slug ?? "(sin slug)")` y el slug no llega a los required ANIDADOS, así que todos colapsaban en un cubo y `.size` daba 1. `video-arq.url` salía «en 1 documento(s)» y son 2.
+      POR QUÉ: Es una instancia de §regla 29 tercera cara —una llave que colapsa da un cardinal que no es el de un conjunto— con el colapso DENTRO de la sonda, y de §*una regla derivada sobre un dominio donde el caso NO SE DA*: antes del alta el informe de vacíos daba (ninguno) en las 11 colecciones. Las dos reglas ya están escritas.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... ya escrito   ← manda
+      en HEAD (antes de esta tanda) .. ya estaba
+      DESTINO: PENDIENTES-QA.md §138.ª + la cabecera de `exige` en sondeo.mjs
+
+  E3 · EVENTO
+      La migración de `formulario-arq` NO es una quinta instancia de §regla 42: no emite el patrón `DROP TABLE … CASCADE` + `DROP CONSTRAINT`, y medido sin `IF EXISTS` da 0 separadoras en la PRIMERA pasada. El cardinal de la clase sigue en 4. Lo que el `IF EXISTS` compra es idempotencia: 1 separadora, en la SEGUNDA pasada.
+      POR QUÉ: Es la aplicación de §regla 42 con su corrección del 2026-09-01 —el cardinal de una clase se DERIVA, no se hereda del descubrimiento— y de §*antes de fichar una indeterminación, comprueba que las dos hipótesis sean DISTINTAS*. Tiene números y fecha, no enunciado nuevo.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: PENDIENTES-QA.md §138.ª + la cabecera de la migración
+
+  E4 · EVENTO
+      131 de 428 documentos prerenderizados difieren en HTML VISIBLE entre el build base (2026-08-31 14:54) y el de hoy — entre ellos `blog.html`, que pierde `<link rel="next" href="/blog/page/2"/>` con `/blog/page/2` emitida en los dos. NO atribuidas a la 138.ª: `git diff --name-only 16405ae..HEAD` da 0 ficheros de `apps/web/src`, y ninguna migración entra al bundle (testigos 1709 · 59 · 126 contra 0 · 0 · 0).
+      POR QUÉ: Es una ficha con su cardinal y su no-atribución, sobre ESTE repo y este intervalo. La regla que lo gobierna —§regla 16, «mismo código» es un hecho negativo y se DERIVA del diff— ya está escrita y es justo lo que se aplicó para no atribuirlo mal.
+      cruce LAXO (vocabulario) ....... NO está
+      cruce ENDURECIDO (enunciado) ... NO está   ← manda
+      en HEAD (antes de esta tanda) .. NO estaba
+      DESTINO: PENDIENTES-QA.md §138.ª
+
+── VEREDICTO ──
+  candidatos ................ 7
+  · REGLA ................... 3
+      · YA escritas ......... 3 :: R1, R2, R3
+      · SUBEN a CLAUDE.md ... 0
+  · EVENTO (se quedan) ...... 4
+  (el número se escribe aunque sea cero: «no encontré» y «no barrí» son la misma salida)
+
+  ✅ los tres testigos pasan y HEAD es legible — el cruce ADJUDICA

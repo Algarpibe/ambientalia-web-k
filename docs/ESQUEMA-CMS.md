@@ -7366,3 +7366,134 @@ y su exclusión razonada (`googletagmanager.com`).
    firmó con *«cero pérdida medida»* y **esa medición no está hecha aquí**;
 4. si el `<form>` **sin sus `<script>`** sigue funcionando — necesita render, y
    la 132.ª es OFFLINE.
+
+---
+
+## CMS-8 · QUÉ SE HACE CON LOS 5 `required` DE `arquetipos` QUE PARAN LA SIEMBRA — ⛔ **ABIERTO** (2026-09-01, 138.ª)
+
+**Levantado por el ESCALÓN 2 de la 138.ª**, al cablear `arquetipos` al sembrador.
+No es un hallazgo buscado: el alta movió el sondeo de **360 a 364 filas** —o sea
+que el sembrador ya la recorre, que era lo que el alta tenía que demostrar— y
+con las 4 filas dentro aparecieron **5 rutas `required` que ninguna tanda tenía
+nombradas**.
+
+**No lo decide esta tanda**, y el precedente es exacto: las **D1 · D2 · D3** de
+`paginas` (96.ª → 98.ª) fueron del propietario por la misma razón — *«una
+decisión de MODELO no se toma de paso»*.
+
+### Los 5, derivados en UNA corrida y cada uno CON SU UNIDAD
+
+§regla 27: un proceso que aborta en el primer fallo contesta *«hay al menos
+uno»*, nunca *«hay N»*. El sondeo recorre los cuatro ejes, así que el
+denominador está entero de una vez y no de una en una:
+
+| ruta | clase | instancias | documentos | denominador de su bloque |
+|---|---|---|---|---|
+| `imagen-arq.enlace.label` | SIN DATO | **27** | 4 de 4 | 27 instancias ⇒ **el 100 %** |
+| `imagen-arq.enlace.href` | SIN DATO | **27** | 4 de 4 | ídem |
+| `texto-arq.contenido` | VACÍO | 1 | 1 | de 100 |
+| `video-arq.url` | VACÍO | 2 | 2 | de **2** ⇒ el 100 % |
+| `formulario-arq.campos[].opciones[].texto` | VACÍO | 3 | 1 | de 1 formulario |
+
+⚠ **Las dos cifras son ciertas y no son la misma** (§*cada denominador se
+escribe CON SU UNIDAD*): el sondeo publica los `SIN DATO` en **instancias** y
+los `VACÍO` en **documentos**. `formulario-arq…texto` son **3 instancias en 1
+documento**. Derivación con control 5/5:
+`derivaciones/bloqueos-siembra-138.json`.
+
+### Son DOS problemas, no uno — y sólo el segundo tiene precedente resuelto
+
+---
+
+#### CMS-8a · `imagen-arq.enlace` — un `required` que el dato NO EJERCE NUNCA
+
+**El mecanismo, y es de FORMA, no de dato:** `enlace()` (`campos/comunes.ts:703`)
+es un **`group`** con `label` y `href` `required`. **Un grupo en Payload no es
+opcional**: sus `required` internos se exigen SIEMPRE, exista o no el enlace. Así
+que aunque el original enlazara algunas imágenes, **las que no lo hicieran
+bloquearían igual** — el modelo, tal como está escrito, **exige enlace en las
+27**.
+
+⚠ **Y lo que NO está adjudicado se declara, porque el 27/27 es un 100 % redondo**
+—la señal de §sondas 4 quinta cara: *un campo ausente en el 100 % de su tipo dice
+«no lo sé leer» antes que «el original no lo trae»*—. El instrumento **no** está
+muerto: `extractor-f35.mjs:469` emite `enlace` cuando halla `<a>` dentro del
+módulo. Pero entre las dos causas **no hay separadora medida**:
+
+| candidata | por qué no cierra |
+|---|---|
+| el extractor no lee ESTOS enlaces | emite el campo; su cero podría ser del dominio |
+| los 27 de primer nivel no tienen enlace | un barrido del corpus halla `<a>` cerca de `et_pb_image` (25 · 12 · 9 · 6, con `et_pb_button` de control positivo), **pero ese barrido no adjudica**: ventana de 900 caracteres que se lleva anclas vecinas y las apariciones de la clase dentro de `<style>` (§*el markup se busca sobre el HTML sin `<style>` ni `<script>`*) |
+
+**Queda SIN ATRIBUIR, y la decisión no lo necesita** —el mecanismo de FORMA
+bloquea en las dos ramas—, pero **la opción B sí**: no se puede saber qué se
+pierde al tirar el campo sin saber si alguna imagen lo ejerce.
+
+**Las opciones, con su OPERACIÓN DE DESHACER NOMBRADA** (§regla 23: la conclusión
+sola es simétrica y al releerla el signo se invierte):
+
+| | qué hace | qué cuesta | **deshacer es…** | SQL |
+|---|---|---|---|---|
+| **A** · `enlace` OPCIONAL en `imagen-arq` — quitar el `required` de `label`/`href` para este uso, y validar la coherencia (si hay `href`, hay `label`) | desbloquea las 27 sin tocar el dato | el modelo deja de garantizar que un enlace esté completo; hay que escribir el validador de coherencia | **RE-IMPONER `required`**, y ése **es el lado CARO**: `SET NOT NULL` sólo corre mientras no haya filas con `NULL`, o sea **sólo antes de sembrar** (§regla 30) | `DROP NOT NULL` en 2 columnas |
+| **B** · QUITAR `enlace` de `imagen-arq` | modelo más pequeño y honesto **si** el original nunca enlaza | **necesita CMS-8a·SIN-ATRIBUIR resuelto**: sin él no se sabe qué se tira | **volver a añadir el campo Y RE-EXTRAER** — caro en dato y en decisión | `DROP COLUMN` ×3 |
+| **C** · dejarlo como está y NO sembrar `arquetipos` | nada que deshacer | **F3-5 sigue en `0 filas · 0 lectores`**, que es justo lo que la fase lleva pendiente | trivial | ninguno |
+| **D** · rellenar `enlace` en el extractor con un valor por defecto | desbloquea | **inventa dato**: va contra la regla 1 del repo (fidelidad al original) y contra §*una cota es una muestra convertida en regla* | quitar el relleno **y re-extraer** | ninguno |
+
+> **La asimetría, con su operación delante y no sólo su conclusión: aquí el lado
+> barato NO es el de siempre.** El criterio del repo —*se toma la que empieza
+> SEPARADA porque deshacerla es FUSIONAR*— se aplica a modelos que conviven. Éste
+> es un `NOT NULL`, y su asimetría va **al revés**: **relajar es barato y
+> re-imponer es caro**, porque `SET NOT NULL` tiene **ventana** y la primera fila
+> la cierra. O sea que **A es irreversible en la práctica en cuanto se siembre**,
+> y eso hay que decirlo antes de elegirla, no después.
+
+**Y por eso la opción A, si se elige, se aplica ANTES de la primera fila**, con su
+migración y su reversa probada — exactamente como la de `formulario-arq` de esta
+misma tanda.
+
+---
+
+#### CMS-8b · los 3 VACÍOS — y aquí el repo YA tiene el patrón resuelto
+
+`required` con `""`. Payload lo rechaza igual que la ausencia, **pero el dato SÍ
+está**: lo que está sin respaldo no es el dato, es el `required`.
+
+**Precedente exacto y ya en el código:** `requeridoConVacio()`
+(`campos/comunes.ts:90`), escrito para el `<h1>` de plantilla vacío de `esmog`
+—1 de 37— y en uso en `grupo-a.ts:173`. Declara el vacío como valor legal y
+**deja la AUSENCIA matando**, que es la distinción que `required` no sabe hacer.
+Exige una `fuente` con su denominador, a propósito: *un vacío legal sin caso que
+lo ejerza es un camino de render sin estrenar, no una decisión*.
+
+| ruta | ¿el vacío es dato medido? | qué haría falta antes de aplicarlo |
+|---|---|---|
+| `texto-arq.contenido` (1 de 100) | plausible: un módulo de texto vacío se pinta | **comprobar en el original** que ese módulo existe y no pinta nada |
+| `formulario-arq…opciones.texto` (3, en 1 formulario) | plausible: una `<option>` con texto vacío es el «— elige —» de un `<select>` | ídem, mirando el `<select>` servido |
+| **`video-arq.url` (2 de 2 ⇒ el 100 %)** | ⚠ **NO se da por bueno**: un vídeo sin URL es un vídeo que no se puede pintar, y **2 de 2 es un 100 % redondo** — la señal de §sondas 4 quinta cara. La primera hipótesis es **el extractor**, no el dato | **derivar de dónde saca `url` el extractor** y si el original sirve el vídeo por otro canal |
+
+> **Los tres se parecen y sólo dos son la misma pregunta.** Aplicar
+> `requeridoConVacio` a los tres de golpe metería el tercero por el hueco — y el
+> tercero huele a defecto de instrumento, no a decisión de modelo.
+
+---
+
+### Lo que esta ficha **NO** dice
+
+- **no dice que el seed muera**: lo dice el SONDEO, que es una **predicción** con
+  su negativo 4/4 y con antecedente de haber acertado (su propio código cita *«lo
+  delató un 400 del seed»*). **Verificarlo contra el hecho exige `cms:reset` +
+  `cms:seed`**, o sea vaciar la DB, y eso no se hace para confirmar lo que el
+  instrumento ya predice y nadie ha contradicho;
+- **no toca el esquema, ni el extractor, ni una fila.** `arquetipos` se queda
+  **cableada** a propósito: con el alta puesta, el sondeo grita; sin ella, el
+  hueco vuelve a ser invisible. Es el defecto en la dirección que grita
+  (§sondas 6);
+- **no atribuye el 27/27** entre extractor y dato: eso es CMS-8a·SIN-ATRIBUIR y
+  hace falta **sólo para la opción B**.
+
+### Condición para cerrar
+
+Decisión del propietario sobre **8a** (4 opciones) y sobre **8b** (los 3 por
+separado, no en bloque). Con 8a resuelta en A, su migración va **antes de la
+primera fila** — la ventana de §regla 30 sigue abierta hoy: `arquetipos` a **0
+filas**, medido.

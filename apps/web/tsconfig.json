@@ -40,6 +40,8 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
+    ".next-138/types/**/*.ts",
+    ".next-138/dev/types/**/*.ts",
     ".next-nuevo/types/**/*.ts",
     ".next-nuevo/dev/types/**/*.ts",
     ".next-p1/types/**/*.ts",
