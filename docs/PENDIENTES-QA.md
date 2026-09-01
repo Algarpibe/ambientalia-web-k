@@ -1,5 +1,158 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ⛔ §134.ª · **EL SOCKET NO ABRE Y LOS TRES ESCALONES SE QUEDAN FUERA — PERO EL PUNTO 3 SÍ SE CONTESTA, Y LA SONDA QUE LO CONTESTÓ LLEGÓ CON DOS DEFECTOS** — 2026-09-01
+
+**Estado: PASO 0 completo · ESCALONES 1, 2 y 3 BLOQUEADOS por el entorno.**
+
+### El bloqueo, con sus cinco canales y no con uno
+
+El encargo pedía comprobar Docker **abriendo un socket**, no leyendo el «Up» de
+`docker ps`. Los cinco canales, y los cuatro primeros dicen que sí:
+
+| canal | dice |
+|---|---|
+| `docker ps` | `Up 16 minutes` |
+| `pg_isready` **dentro** del contenedor | *accepting connections* |
+| `HostConfig.PortBindings` (**declarado**) | `{"5432/tcp":[{"HostPort":"55432"}]}` |
+| `NetworkSettings.Ports` (**publicado**) | `{"5432/tcp":[]}` ← **vacío** |
+| **el socket a `127.0.0.1:55432`** | **`ECONNREFUSED`** |
+
+O sea que **Postgres sirve y lo que falta es el publish al host**. Se intentó
+lo único que estaba en el alcance del paso 2 —`restart` del contenedor
+**EXISTENTE**, no `compose up`—, comprobado antes como no destructivo: el
+volumen es **ANÓNIMO** (`2ebbe245…`), está atado al contenedor y sobrevive a
+`stop`/`start`/`restart`; sólo moriría con una recreación. **No republica**:
+sigue `{"5432/tcp":[]}`. Luego no es del contenedor — es del proxy de puertos
+de Docker Desktop (29.6.2, `com.docker.backend.exe` vivo), y **es del
+propietario**.
+
+⚠ **Y la lectura de la 133.ª —«otro proyecto ocupa el puerto 55432»— queda
+BORRADA, no conciliada**: `ECONNREFUSED` significa exactamente lo contrario,
+que **no hay nadie escuchando**. Estaba en `PLAN-FASE-3.md`, que se lee cada
+vez que alguien abre el plan; corregida en esta tanda.
+
+### PASO 0 punto 3 · `F3-5-CODE-DIVERGE` re-medida CON el tramo puesto
+
+La 133.ª la midió en `d4174a4`, o sea **antes** de que el tramo entrara
+(`1d83527`), y el tramo sólo puede hacer el censo **más permisivo**: el número
+podía haberse movido y nadie lo había vuelto a mirar. Contestado en las **dos
+direcciones** y en **una sola corrida** (§regla 27):
+
+| dirección | resultado |
+|---|---|
+| **A · ¿lo VIEJO está mal?** | **9 de 9 siguen BLOQUEANDO.** El tramo NO mueve el veredicto |
+| **B · ¿lo NUEVO está sobre-generalizado?** | **ALCANZA** 3 campos `campoHtml` de `paginas` · **ADMITE DE MÁS 0 de 23** |
+
+**Y el mecanismo explica la A, que es lo que la hace fiable:** los **21** tokens
+fuera del censo en esos 9 son la clase `formulario` —`<form>` `<input>`
+`<select>` `<option>` `<button>` `<label>` `<fieldset>` `<legend>` `<textarea>`
++ `action` `method` `for` `name` `value` `placeholder` `required` `novalidate`
+`selected` `data-autofill` `data-sitekey` `data-styles-version`—, que es
+**exactamente** lo que el tramo dejó FUERA con su razón (CMS-6 opción C). No
+podía moverlo.
+
+La B se publica con **los dos cardinales de §regla 25** y en **las dos
+unidades**: 0 de 23 sobre los 167 campos `campoHtml` de `paginas` (estrecha) y
+0 de 23 sobre las 1170 cadenas del catálogo (ancha, superconjunto).
+
+⇒ **la ficha NO se encoge**: sigue siendo una divergencia de MODELO —qué
+validador se le puso a cada colección— y no un defecto vivo en algo ya
+sembrado. La decisión de unificarlas sigue siendo del propietario.
+
+⚠ **Y un dato que la ficha no tenía:** `codigo-arq` da **0 instancias** en la
+congelada canónica, no 1 — CMS-6·C llevó el formulario a `formulario-arq` (**1
+instancia**). Se publica el reparto de los tres, porque un 0 sin su destino se
+lee como pérdida.
+
+⚠ **Alcance declarado (§regla 14):** esto mide **el catálogo congelado**, no la
+tabla sembrada. Y el `apareceFuera` de la 133.ª se midió contra el corpus del
+**arquetipo A**, no contra `paginas`: ese hueco es justo lo que la dirección B
+tapa, y por eso su número **no se hereda**.
+
+### La sonda llegó con DOS defectos, y ninguno daba error
+
+§sondas 1 otra vez: una sonda nueva es código sin tests, y el único control es
+mirar su salida contra algo que ya sabes.
+
+| # | defecto | qué publicó | qué lo cazó |
+|---|---|---|---|
+| 1 | el lector del tramo **SOBRE-CASABA**: buscaba el comentario «Tramo F3-5» y leía «del marcador al cierre», pero el comentario vive **DENTRO** del array | **205 tokens donde hay 23** | el control del **cardinal conocido de antemano** |
+| 2 | `campoValidador` cogía «el primer campo con `validate`» y un `select` trae el suyo | `unidad`/`select` en vez de `contenido`/`campoHtml` — **el veredicto salía BIEN por el selector equivocado** | el control que exige resolver **por nombre derivado del fuente** |
+
+El 1 se corrigió derivando el tramo del **`diff` contra `d4174a4`** (§regla 8b),
+con su testigo: el estado PRE tiene que dar **43/81**, y da 43/81.
+
+**Negativos 2/2, cada uno cae por UN control y es el suyo:**
+
+- `censo-mudo` — el validador deja de ver: 9 de 9 pasa a **0 de 9** y cae el
+  testigo del validador (acepta el `<form>` conocido);
+- `tokenizador-mudo` — el inventario sale vacío y cae el testigo del
+  tokenizador (**0 de 23** en el lote donde SÍ están).
+
+> ⚠ **Y el segundo enseña por qué ese testigo NO es opcional: publica el MISMO
+> `ADMITE DE MÁS 0 de 23` que la corrida limpia.** Un instrumento ciego y un
+> corpus limpio dan el mismo número, y sólo el caso conocido de antemano los
+> separa (§regla 28c, su caso peor).
+
+**El control ata el MECANISMO, no el recuento** (§regla 5ter): exigir «bloquean
+9» convertiría el HALLAZGO en control, y el día que el tramo sí moviera el
+veredicto caería y se leería como avería del instrumento.
+
+### PASO 0 punto 4 · qué hay ya en el repo
+
+- el **extractor existe** (`extractor-f35.mjs`, emite `catalogo.arquetipos`);
+- **`arquetipos` NO está cableada** — ni en `CATALOGOS` ni en `SEMBRADAS` (11
+  colecciones). La premisa del encargo se confirma;
+- **la migración de `formulario-arq` NO EXISTE**: la última es
+  `20260831_015813_f3_5_arquetipos` (67 tablas de bloque) y `formulario-arq`
+  entró el 2026-09-01. Crearla necesita `migrate:create` contra la DB;
+- el **§regla 42 de la migración de `arquetipos` YA está arreglado** por la
+  126.ª (`DROP CONSTRAINT IF EXISTS`, con su diagnóstico escrito al lado y
+  verificado en la ventana de §regla 30).
+
+### PASO 0 punto 1 · derivado, no recordado
+
+1560 congeladas (**568** artefactos de §regla 7) · `qa:lib` **219 sondas**
+compilan y declaran su mínimo, **114/114** casos · manifiesto
+`apps/web/.next/prerender-manifest.json` (mtime 2026-08-31 14:54:40) con **429**
+rutas estáticas + **17** dinámicas · **0 sondas en vuelo** (los 88 `node` son
+servidores MCP; ninguno con `qa/`, `scripts/`, `next` ni `seed`).
+
+### Barrido de §regla 12 — 5 candidatos, 3 REGLA, **2 suben**
+
+**Y su cruce se adjudicó ANTES de usarlo**, porque el encargo avisa de que el de
+la 133.ª publicó «0 de 6» con 4 reglas ya escritas. **3 testigos, 3 pasan** —
+uno positivo, uno inventado y **uno en MAYÚSCULAS**, que es la tercera cara del
+mismo sub-casado (la 133.ª arregló el salto de línea y el `>` de cita; faltaba
+la caja, y muerde justo **el día que se escribe la regla**).
+
+| id | veredicto |
+|---|---|
+| **R1** · *un servicio se da por disponible ABRIENDO UN SOCKET, no leyendo el estado de su proceso* | **SUBE** — §El principio |
+| **R2** · *un MARCADOR DE TEXTO no delimita una región de código* | **SUBE** — §regla 8b |
+| **R3** · *el control se ata al MECANISMO, no al recuento esperado* | **NO sube**: ya es ley en §regla 21 (*«se ata a lo que es cierto en los dos estados»*), sólo que redactado para negativos |
+| E1 · el reparto de `F3-5-CODE-DIVERGE` | evento — aquí y en el PLAN |
+| E2 · el volumen anónimo y la migración que falta | evento — aquí y en el PLAN |
+
+**Y que las dos LLEGARON se midió, no se supuso** (§regla 21: un caso que pasa a
+verde ajustando su expectativa no ha arreglado nada): el MISMO cruce corrido
+contra `HEAD:CLAUDE.md` da **«NO está» en las dos**, y contra el árbol **«ya
+escrito» en las dos**. La diferencia es el texto, no el instrumento.
+
+Derivaciones: `derivaciones/paso0-134.{mjs}` + `paso0-134-CON-TRAMO.json` + sus
+2 negativos · `regla12-barrido-134.{mjs,json,log}` y su
+`-ANTES-DE-SUBIR-LAS-REGLAS`.
+
+### Lo que NO se hizo, y por qué el orden importa
+
+ESCALÓN 1 (cablear), 2 (la reversa) y 3 (sembrar) quedan fuera por el socket.
+**Y no se adelantó el ESCALÓN 1** aunque su edición no necesite DB: la ventana
+de §regla 30 para probar la reversa **se cierra en cuanto entre la primera
+fila**, así que cablear antes de poder probarla pondría los escalones al revés
+y gastaría la única comprobación que sólo se puede hacer AHORA.
+
+---
+
 ## ✅ §133.ª · **CMS-6 RESUELTO A+C — LA PÉRDIDA VISIBLE ES 0 DE 286, Y EL REPO YA MODELABA ESE MISMO FORMULARIO 9 VECES SIN VALIDADOR** — 2026-09-01
 
 **Encargo:** aplicar la decisión del propietario (CMS-6 = A + C), medir la

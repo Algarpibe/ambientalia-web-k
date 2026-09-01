@@ -1,0 +1,116 @@
+{
+ "meta": {
+  "tanda": "134.ª",
+  "fecha": "2026-09-01"
+ },
+ "testigos": [
+  {
+   "id": "T+",
+   "espera": true,
+   "clave": "Una medición tomada a un nivel que puede absorber el error no es una medición",
+   "que": "un enunciado que SE SABE escrito en CLAUDE.md",
+   "resultado": true
+  },
+  {
+   "id": "T-",
+   "espera": false,
+   "clave": "Antes de medir un color se calibra el monitor contra una carta de grises",
+   "que": "un enunciado INVENTADO que no puede estar",
+   "resultado": false
+  },
+  {
+   "id": "T±",
+   "espera": true,
+   "clave": "UN SELECTOR QUE NO CASA CON NADA NO ES UN CERO: ES UN DEFECTO",
+   "que": "un TITULAR EN MAYÚSCULAS que lleva meses escrito",
+   "resultado": true
+  }
+ ],
+ "candidatos": [
+  {
+   "id": "R1",
+   "tipo": "REGLA",
+   "enunciado": "Un servicio se da por disponible ABRIENDO UN SOCKET, no leyendo el estado de su proceso. Lo DECLARADO y lo PUBLICADO son dos canales distintos, y el cliente usa el segundo: un contenedor puede estar `Up`, servir por dentro y tener su binding declarado sin que nadie lo haya publicado al host.",
+   "porQue": "Medido dos tandas seguidas. `docker ps` dice `Up 16 minutes`, `pg_isready` DENTRO dice *accepting connections*, `HostConfig.PortBindings` declara `5432→55432` — y `NetworkSettings.Ports` sale `{\"5432/tcp\":[]}` y el socket da ECONNREFUSED. Los cuatro primeros canales son ciertos y ninguno contesta la pregunta que se estaba haciendo. La 133.ª lo escribió SÓLO en su acta (`0359ba0` toca `PENDIENTES-QA.md`, no `CLAUDE.md`), que es §regla 12 en su forma pura.",
+   "vocabulario": [
+    "socket",
+    "publicado",
+    "declarado"
+   ],
+   "enunciadoClave": "se da por disponible ABRIENDO UN SOCKET, no leyendo el estado de su proceso",
+   "destino": "CLAUDE.md, §El principio — verificar contra la salida SERVIDA, con el canal puesto en el puerto",
+   "laxo": true,
+   "endurecido": true,
+   "enHead": false
+  },
+  {
+   "id": "R2",
+   "tipo": "REGLA",
+   "enunciado": "Un MARCADOR DE TEXTO no delimita una región de código. Si el marcador puede vivir DENTRO de la región —un comentario en medio de un array—, leer «del marcador al cierre» se traga la cola entera y no da error: da un número plausible de más. Lo que delimita es la ESTRUCTURA (casar llaves) o el `diff`.",
+   "porQue": "Medido en esta misma tanda, sobre la sonda que la tanda escribió: leer el tramo por su comentario «Tramo F3-5» publicó 205 tokens donde hay 23, porque el comentario está DENTRO del array y no delante. Es la cara *sobre-casado* de §sondas 4 aplicada a un lector de fuente. Lo cazó el control del cardinal conocido de antemano, no la lectura del código.",
+   "vocabulario": [
+    "marcador",
+    "sobre-casa",
+    "estructura"
+   ],
+   "enunciadoClave": "Un MARCADOR DE TEXTO no delimita una región de código",
+   "destino": "CLAUDE.md, §sondas 4 (cara sobre-casado) / §regla 8b (derivar del `diff`)",
+   "laxo": true,
+   "endurecido": true,
+   "enHead": false
+  },
+  {
+   "id": "R3",
+   "tipo": "REGLA",
+   "enunciado": "El control de una re-medición se ata al MECANISMO, no al recuento que se espera. Atar el control al número convierte el HALLAZGO en control: el día que el objeto cambie de verdad, el control cae y se lee como avería del instrumento en vez de como el resultado.",
+   "porQue": "Aplicado aquí: el control de «9 de 9 bloquean» NO es exigir 9, es exigir que el validador siga rechazando un `<form>` testigo y aceptando un html limpio. Con el control atado al 9, una tanda futura en la que el tramo SÍ moviera el veredicto leería su propio hallazgo como instrumento roto.",
+   "vocabulario": [
+    "control",
+    "mecanismo",
+    "hallazgo"
+   ],
+   "enunciadoClave": "se ata al MECANISMO, no al recuento que se espera",
+   "destino": "CLAUDE.md, §regla 5ter (arreglar el objeto caduca el control)",
+   "laxo": true,
+   "endurecido": false,
+   "enHead": false
+  },
+  {
+   "id": "E1",
+   "tipo": "EVENTO",
+   "enunciado": "`F3-5-CODE-DIVERGE` re-medida con el tramo puesto: A · 9 de 9 siguen bloqueando; B · ALCANZA 3 campos y ADMITE DE MÁS 0 de 23. Y `codigo-arq` da 0 instancias, no 1.",
+   "porQue": "Tiene fecha, cardinal y nombre propio: es un hallazgo sobre ESTE repo, no una regla.",
+   "vocabulario": [
+    "F3-5-CODE-DIVERGE"
+   ],
+   "enunciadoClave": "F3-5-CODE-DIVERGE",
+   "destino": "PENDIENTES-QA.md §134.ª + ESQUEMA-CMS.md §2o.9 + PLAN-FASE-3.md",
+   "laxo": false,
+   "endurecido": false,
+   "enHead": false
+  },
+  {
+   "id": "E2",
+   "tipo": "EVENTO",
+   "enunciado": "El volumen de `kunak-cms-pg` es ANÓNIMO (`2ebbe245…`): sobrevive a stop/start/restart y moriría con un `compose up` que recreara el contenedor. Y la migración de `formulario-arq` no existe: la última es del 2026-08-31.",
+   "porQue": "Hechos de la instalación y del árbol de hoy, con su fecha y su hash: evento.",
+   "vocabulario": [
+    "kunak-cms-pg"
+   ],
+   "enunciadoClave": "kunak-cms-pg",
+   "destino": "PENDIENTES-QA.md §134.ª + PLAN-FASE-3.md (celda F3-5)",
+   "laxo": true,
+   "endurecido": true,
+   "enHead": true
+  }
+ ],
+ "resumen": {
+  "total": 5,
+  "reglas": 3,
+  "eventos": 2,
+  "laxoSi": 4,
+  "endSi": 3
+ },
+ "limite": "sólo ve enunciados en prosa; una regla escrita en código es invisible para este barrido",
+ "ok": true
+}

@@ -1220,6 +1220,43 @@ proyecto costaron una tanda cada una:
 | «si el editor tocó la tipografía, quedará rastro en el marcado» | **Divi no escribe marcado: COMPILA CSS**, y lo sirve en el mismo `<style>`. Los 10 ejes que se miraron eran atributos y estructura; **ninguno era CSS** |
 | «el esquema no expresa `gallery` por ningún canal» | se leyó **`KIND_DE_DIVI`, la tabla de traducción DE UNA SONDA** —`f33-cmp`, que sólo cubre una colección—. El esquema lo expresa: `MODULO_GALLERY` está en `bloques/kb.ts`, y el comparador de la OTRA colección ve sus **6 items con los dos lados** |
 
+⚠⚠ **Y LA MISMA REGLA CON EL CANAL PUESTO EN UN PUERTO, QUE ES DONDE SE HA
+PAGADO DOS TANDAS SEGUIDAS: UN SERVICIO SE DA POR DISPONIBLE ABRIENDO UN
+SOCKET, NO LEYENDO EL ESTADO DE SU PROCESO (2026-09-01).**
+
+Todo lo de arriba dice *verifica contra lo servido* mirando HTML y CSS. Vale
+igual para la infraestructura, y ahí el error es más barato de cometer porque
+hay **cuatro canales que contestan que sí** y ninguno es el que usa el cliente:
+
+> **Lo DECLARADO y lo PUBLICADO son dos canales distintos.** Un contenedor
+> puede estar `Up`, servir por dentro, y tener su binding **escrito** en la
+> configuración sin que nadie lo haya **publicado** al host. Los cuatro
+> primeros son ciertos; el quinto —abrir el socket— es el único que contesta
+> *«¿puedo conectarme?»*.
+
+**Medido, con los cinco canales al lado:**
+
+| canal | dice |
+|---|---|
+| `docker ps` | `Up 16 minutes` |
+| `pg_isready` **dentro** | *accepting connections* |
+| `HostConfig.PortBindings` (**declarado**) | `{"5432/tcp":[{"HostPort":"55432"}]}` |
+| `NetworkSettings.Ports` (**publicado**) | `{"5432/tcp":[]}` ← **vacío** |
+| **el socket** | **`ECONNREFUSED`** |
+
+**Y el diagnóstico que el socket permite y `docker ps` no:** con Postgres
+sirviendo por dentro, el defecto **no puede ser del servicio** — es del
+publish. Un `restart` del contenedor **no lo republica** (medido), así que
+tampoco es del contenedor. Sin abrir el socket, la primera lectura fue *«otro
+proceso ocupa el puerto»*, que es **falsa y plausible**: `ECONNREFUSED`
+significa justo lo contrario, que **no hay nadie escuchando**.
+
+⚠ **Y su corolario de operación, que decide si algo se puede tocar:** antes de
+reiniciar un contenedor con datos, se mira **si su volumen tiene NOMBRE o es
+ANÓNIMO**. Un anónimo (`2ebbe245…`, un hash) está atado al contenedor:
+sobrevive a `stop`/`start`/`restart` y **muere con una recreación** — que es
+por lo que `docker compose up` y `docker start` no son intercambiables aquí.
+
 ⚠ **La cuarta es de 2026-08-10 y merece nombre propio, porque el error no fue
 mirar poco: fue mirar EL CANAL EQUIVOCADO.**
 
@@ -3480,6 +3517,37 @@ FAMILIA DE CALIBRACIÓN fabricada a mano.
 > **Operativamente, y cuesta una línea:** un pre-registro sobre un cambio de
 > instrumento **empieza pegando el `diff`** —o la lista de símbolos que toca— y
 > predice **sobre esa lista**, no sobre la que uno recuerda haber escrito.
+>
+> ⚠⚠ **Y SU TERCERA MITAD, QUE NO ES DE MEMORIA SINO DE DELIMITACIÓN: UN
+> MARCADOR DE TEXTO NO DELIMITA UNA REGIÓN DE CÓDIGO (2026-09-01).**
+>
+> Las dos de arriba persiguen una lista escrita **de memoria**. Falta el caso
+> en que sí se deriva del fuente — y se deriva mal, porque el delimitador
+> elegido es un comentario:
+>
+> > **Si el marcador puede vivir DENTRO de la región que dice delimitar** —un
+> > comentario en medio de un array, una cabecera de sección a media función—
+> > **leer «del marcador al cierre» se traga la cola entera.** No da error: da
+> > **un número plausible de más**, que es la cara *sobre-casado* de §sondas 4
+> > cometida sobre un lector de FUENTE en vez de sobre un selector.
+>
+> **Medido:** derivar los tokens de una ampliación de whitelist por su
+> comentario `Tramo F3-5` publicó **205 tokens donde hay 23** — el comentario
+> documenta el tramo **desde dentro** del array, así que la lectura se llevó
+> los 43 anteriores y de propina el array siguiente.
+>
+> **Las dos mitades operativas:**
+>
+> 1. **lo que delimita código es la ESTRUCTURA o el `diff`, no la prosa.** Casar
+>    llaves acota el array; `git show <commit-anterior>` acota **lo añadido**, y
+>    ninguna de las dos se puede confundir por dónde esté un comentario;
+> 2. **y el control es el CARDINAL CONOCIDO DE ANTEMANO por el otro lado**: el
+>    estado PRE tiene que reproducir su número publicado (aquí 43/81). Sin él,
+>    los 205 pasan — porque un token de más no rompe nada, sólo infla.
+>
+> ⚠ Es §*un instrumento que vive DENTRO del documento que mide se contamina con
+> lo que se escriba sobre él* con el objeto cambiado: allí el canario se
+> auto-casaba con su documentación; aquí el **delimitador** se la traga.
 
 **9 · UN RECUENTO —O UNA AUSENCIA— AFIRMADOS DE MEMORIA SE BARREN ANTES DE
 USARSE.** (2026-08-04)

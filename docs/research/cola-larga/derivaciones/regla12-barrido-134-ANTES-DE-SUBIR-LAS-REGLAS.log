@@ -1,0 +1,54 @@
+==============================================================================
+134.ª · BARRIDO DE §regla 12 — REGLA vs EVENTO, con los DOS cruces y su NEGATIVO
+==============================================================================
+
+## 0 · EL CRUCE SE ADJUDICA ANTES DE USARLO (§regla 28c)
+   ✅ T+ · un enunciado que SE SABE escrito en CLAUDE.md → ya escrito, como se esperaba
+   ✅ T- · un enunciado INVENTADO que no puede estar → NO está, como se esperaba
+
+   | id | tipo   | cruce A (laxo, heredado) | cruce B (ENDURECIDO, manda) |
+   |----|--------|--------------------------|------------------------------|
+   | R1 | REGLA  | NO está                  | NO está                      |
+   | R2 | REGLA  | ya escrito               | NO está                      |
+   | R3 | REGLA  | ya escrito               | NO está                      |
+   | E1 | EVENTO | NO está                  | NO está                      |
+   | E2 | EVENTO | ya escrito               | ya escrito                   |
+
+   laxo «ya escrito» ......... 3 de 5
+   ENDURECIDO «ya escrito» ... 1 de 5   ← el que manda
+   ⚠ el laxo SOBRE-CASA (basta con que el vocabulario exista en algún sitio) y el
+     endurecido SUB-CASA (exige el literal). Ninguno adjudica solo — la decisión va A MANO.
+
+   candidatos: 5  ·  REGLA 3  ·  EVENTO 2
+
+── LAS REGLAS, con su destino ──
+
+   R1 · Un servicio se da por disponible ABRIENDO UN SOCKET, no leyendo el estado de su proceso. Lo DECLARADO y lo PUBLICADO son dos canales distintos, y el cliente usa el segundo: un contenedor puede estar `Up`, servir por dentro y tener su binding declarado sin que nadie lo haya publicado al host.
+      por qué: Medido dos tandas seguidas. `docker ps` dice `Up 16 minutes`, `pg_isready` DENTRO dice *accepting connections*, `HostConfig.PortBindings` declara `5432→55432` — y `NetworkSettings.Ports` sale `{"5432/tcp":[]}` y el socket da ECONNREFUSED. Los cuatro primeros canales son ciertos y ninguno contesta la pregunta que se estaba haciendo. La 133.ª lo escribió SÓLO en su acta (`0359ba0` toca `PENDIENTES-QA.md`, no `CLAUDE.md`), que es §regla 12 en su forma pura.
+      destino: CLAUDE.md, §El principio — verificar contra la salida SERVIDA, con el canal puesto en el puerto
+      cruces: laxo NO está · ENDURECIDO NO está
+
+   R2 · Un MARCADOR DE TEXTO no delimita una región de código. Si el marcador puede vivir DENTRO de la región —un comentario en medio de un array—, leer «del marcador al cierre» se traga la cola entera y no da error: da un número plausible de más. Lo que delimita es la ESTRUCTURA (casar llaves) o el `diff`.
+      por qué: Medido en esta misma tanda, sobre la sonda que la tanda escribió: leer el tramo por su comentario «Tramo F3-5» publicó 205 tokens donde hay 23, porque el comentario está DENTRO del array y no delante. Es la cara *sobre-casado* de §sondas 4 aplicada a un lector de fuente. Lo cazó el control del cardinal conocido de antemano, no la lectura del código.
+      destino: CLAUDE.md, §sondas 4 (cara sobre-casado) / §regla 8b (derivar del `diff`)
+      cruces: laxo ya escrito · ENDURECIDO NO está
+
+   R3 · El control de una re-medición se ata al MECANISMO, no al recuento que se espera. Atar el control al número convierte el HALLAZGO en control: el día que el objeto cambie de verdad, el control cae y se lee como avería del instrumento en vez de como el resultado.
+      por qué: Aplicado aquí: el control de «9 de 9 bloquean» NO es exigir 9, es exigir que el validador siga rechazando un `<form>` testigo y aceptando un html limpio. Con el control atado al 9, una tanda futura en la que el tramo SÍ moviera el veredicto leería su propio hallazgo como instrumento roto.
+      destino: CLAUDE.md, §regla 5ter (arreglar el objeto caduca el control)
+      cruces: laxo ya escrito · ENDURECIDO NO está
+
+── LOS EVENTOS, que se quedan donde están ──
+   E1 · PENDIENTES-QA.md §134.ª + ESQUEMA-CMS.md §2o.9 + PLAN-FASE-3.md
+   E2 · PENDIENTES-QA.md §134.ª + PLAN-FASE-3.md (celda F3-5)
+
+── LÍMITE DECLARADO (§regla 14) ──
+   este barrido sólo ve enunciados YA ESCRITOS EN PROSA de las actas de la tanda.
+   Una regla que viva EN EL CÓDIGO —un ternario, un `??`, un `slice`— es invisible
+   para él: su cero es cierto de la prosa y NO del repo.
+   Y el cruce endurecido exige el literal: un enunciado REFORMULADO sale «NO está»
+   aunque su contenido ya sea ley — por eso la adjudicación final es a mano.
+
+==============================================================================
+VEREDICTO · 3 reglas · 2 eventos · endurecido 1/5 · el cruce pasa sus 2 testigos
+==============================================================================
