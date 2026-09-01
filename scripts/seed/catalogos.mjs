@@ -178,6 +178,52 @@ export const CATALOGOS = [
    * pasa entero, con negativo 4/4. */
   { coleccion: "documentos-cientificos", json: "medidas/a-extraido.json", en: "catalogo.documentos-cientificos" },
   /**
+   * ✅ **`arquetipos` — 138.ª · ESCALÓN 2. F3-5, las 4 rutas del lote.**
+   *
+   * El alta se escribe **con su evidencia**, que es lo único que la hace
+   * auditable dentro de una lista enumerada a mano (§regla 9, 7.º caso).
+   *
+   * ── QUÉ LA BLOQUEABA, NOMBRADO POR LA 133.ª ────────────────────────────
+   * Eran **dos cosas y las dos están resueltas**:
+   *   1 · el ESQUEMA — el censo no admitía el formulario, así que el extractor
+   *       daba bloqueos. Resuelto por **CMS-6 = A + C** (`ESQUEMA` §2o.9): el
+   *       Tramo F3-5 mete 23 tokens (`ETIQUETAS_CENSADAS` 43→46 ·
+   *       `ATRIBUTOS_CENSADOS` 81→101) y el formulario va TIPADO;
+   *   2 · el ENTORNO — el socket daba `ECONNREFUSED` porque el contenedor
+   *       corría atado a cero redes. Resuelto el 2026-09-01.
+   *
+   * ── QUÉ LA HABILITA HOY, DERIVADO DE LA CONGELADA ──────────────────────
+   * De `medidas/f35-extraido.json` (2026-09-01, resuelta por **mtime** y no
+   * por nombre — §regla 5), con sus **7 controles en verde**:
+   *
+   *   | | |
+   *   |---|---|
+   *   | documentos · bloques | **4 · 231** |
+   *   | bloqueos, recorriendo **los CUATRO ejes** y no el primero que falle | **0** de 198 campos HTML |
+   *   | media sin resolver, **byte a byte** (la guarda de Linux, §regla 47) | **0** |
+   *   | tipos del corpus sin `kind` · controles del `<form>` sin sitio | **0 · 0** |
+   *
+   * Y **CMS-7 = A** (137.ª) fija dónde vive cada modelo: `formulario-arq`
+   * aquí, `codigo` en `paginas`. Su migración es de esta misma tanda, con la
+   * reversa probada mientras `arquetipos` estaba a 0 filas (§regla 30).
+   *
+   * ── POR QUÉ VA AQUÍ Y NO EN OTRO SITIO DEL ORDEN ───────────────────────
+   * `CATALOGOS` fija el ORDEN de siembra, así que la posición es una
+   * afirmación de dependencia y se DERIVA: `arquetipos` no declara **ni un
+   * `relationTo`** —sólo `subida()`, o sea media, que no es un catálogo sino
+   * una derivación de los campos `upload`—. No depende de nadie y nadie
+   * depende de ella, luego el orden es libre y va al final, que es lo
+   * conservador. Si me equivoco, el invariante 3 de `cms:sondeo` —*el orden
+   * declarado es topológico sobre el grafo DERIVADO*— lo dice.
+   *
+   * ⚠ **Y el alta NO prueba que el sembrador la recorra**: que una colección
+   * aparezca en la lista y que el sembrador intente escribir sus filas son dos
+   * afirmaciones (§*el marcador prueba que el build es nuevo, no que el cambio
+   * tenga efecto*). El número que lo dice es el recuento de filas, medido
+   * ANTES y DESPUÉS **corriendo**: 360 → 364.
+   */
+  { coleccion: "arquetipos", json: "medidas/f35-extraido.json", en: "catalogo.arquetipos" },
+  /**
    * ✅ **`autores` — 117.ª · ESCALÓN 2.** Sale del MISMO fichero que las
    * entradas y por la misma corrida, a propósito: los autores se DERIVAN de
    * las firmas, así que dos derivaciones independientes podrían dar un Δ0 en

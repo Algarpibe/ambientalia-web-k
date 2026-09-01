@@ -156,6 +156,21 @@ export const SEMBRADAS = [
   "entradas-blog",
   "terminos-kunakpedia",
   "documentos-cientificos",
+  /**
+   * ✅ **`arquetipos` ENTRA — 138.ª · ESCALÓN 2. Las 12 desde el 2026-09-01.**
+   *
+   * La razón entera, con su evidencia derivada y lo que la bloqueaba, vive en
+   * `catalogos.mjs` junto a la línea que fija su orden — aquí sólo se declara
+   * que ENTRA, porque esta lista es la que el PASO 2 usa de denominador y lo
+   * que tiene que viajar con el dato es el alcance.
+   *
+   * En corto: la 133.ª nombró **dos** bloqueadores —el esquema (resuelto por
+   * CMS-6 = A + C) y el entorno (resuelto el 2026-09-01)—; el extractor da
+   * **4 documentos · 231 bloques · 0 bloqueos en los CUATRO ejes · 0 media sin
+   * resolver**; y su migración es de esta tanda, con la reversa probada
+   * mientras la tabla estaba a 0 filas.
+   */
+  "arquetipos",
 ];
 
 export const FUERA_DE_BLOQUE_1 = {

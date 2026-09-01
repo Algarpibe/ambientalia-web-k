@@ -160,14 +160,13 @@
     },
     "vacios": {
       "arquetipos · bloques[texto-arq].contenido": [
-        "monitor-calidad-aire"
+        "(sin slug)"
       ],
       "arquetipos · bloques[video-arq].url": [
-        "monitor-calidad-aire",
-        "software-de-medicion-calidad-del-aire"
+        "(sin slug)"
       ],
       "arquetipos · bloques[formulario-arq].campos[].opciones[].texto": [
-        "monitor-calidad-aire"
+        "(sin slug)"
       ]
     }
   },

@@ -336,10 +336,36 @@ const visitadas = new Set();
 /**
  * @param {boolean} entraEnAusentes  el sabotaje `grupo` lo pone a `false`, que
  *   es el defecto original: pedir `&& v` para descender.
+ * @param {string|undefined} slugRaiz  el slug del DOCUMENTO, propagado por la
+ *   recursión.
+ *
+ * ⚠⚠ **`slugRaiz` NO ES UN ADORNO: SIN ÉL, EL RECUENTO DE DOCUMENTOS ERA UNA
+ * LLAVE QUE COLAPSA (138.ª, 2026-09-01).**
+ *
+ * El informe de vacíos agrupa con `Set.add(r.slug ?? "(sin slug)")`. Cuando el
+ * `required` vacío vive **anidado** —dentro de un `blocks`, de un `array`— el
+ * `dato` de esa vuelta de la recursión es el SUB-OBJETO, no el documento, así
+ * que `dato.slug` sale `undefined` y **todos los documentos caen en el mismo
+ * cubo**. El `Set` no da error: da `size === 1` por muchos que haya, que es
+ * §regla 29 tercera cara —*una llave que colapsa da un cardinal que no es el de
+ * un conjunto*— con el colapso dentro de la sonda.
+ *
+ * **Medido:** `arquetipos · bloques[video-arq].url` salía *«en 1 documento(s):
+ * (sin slug)»* y son **2 documentos** (`monitor-calidad-aire` y
+ * `software-de-medicion-calidad-del-aire`).
+ *
+ * ⚠ **Y por qué no se había visto: ningún dominio anterior lo ejercía.** Antes
+ * del alta de `arquetipos` el informe de vacíos daba **(ninguno)** en las 11
+ * colecciones, así que este camino estaba **SIN PROBAR** —§*una regla derivada
+ * sobre un dominio donde el caso NO SE DA*, cometida sobre la propia sonda—.
+ *
+ * ⚠ **La señal estaba impresa y no se leyó:** el `(sin slug)` sale al lado del
+ * `1` en la misma línea. §regla 1 —*lo que imprime y lo que cuenta no pueden
+ * discrepar*— tenía puesto el aviso.
  */
-function exige(campos, dato, col, ruta = "", entraEnAusentes = true) {
+function exige(campos, dato, col, ruta = "", entraEnAusentes = true, slugRaiz = undefined) {
   for (const c of camposPropios(campos)) {
-    if (!c?.name) { if (Array.isArray(c?.fields)) exige(c.fields, dato, col, ruta, entraEnAusentes); continue; }
+    if (!c?.name) { if (Array.isArray(c?.fields)) exige(c.fields, dato, col, ruta, entraEnAusentes, slugRaiz); continue; }
     const aqui = ruta ? `${ruta}.${c.name}` : c.name;
     const v = dato?.[c.name];
     if (c.required) {
@@ -357,11 +383,11 @@ function exige(campos, dato, col, ruta = "", entraEnAusentes = true) {
        * valor** —el claim vacío de un monográfico se pinta— así que lo que está
        * sin respaldo no es el dato, es el `required`.
        */
-      if (v === "") { requeridosVacios.push({ col, ruta: aqui, slug: dato?.slug }); continue; }
+      if (v === "") { requeridosVacios.push({ col, ruta: aqui, slug: slugRaiz ?? dato?.slug }); continue; }
     }
     if (c.type === "group") {
-      if (v === undefined || v === null) { if (entraEnAusentes) exige(c.fields, {}, col, aqui, entraEnAusentes); }
-      else exige(c.fields, v, col, aqui, entraEnAusentes);
+      if (v === undefined || v === null) { if (entraEnAusentes) exige(c.fields, {}, col, aqui, entraEnAusentes, slugRaiz); }
+      else exige(c.fields, v, col, aqui, entraEnAusentes, slugRaiz);
     }
     /* Arrays y blocks: cobertura EXTRA, dependiente del dato. No entran en el
      * conjunto mínimo —sin ítems no hay nada que auditar y eso es legítimo—
@@ -385,7 +411,7 @@ function exige(campos, dato, col, ruta = "", entraEnAusentes = true) {
       const propios = camposPropios(c.fields);
       const transparente = envoltorioTransparente(c, v);
       for (const item of v)
-        exige(c.fields, transparente ? { [propios[0].name]: item } : item, col, `${aqui}[]`, entraEnAusentes);
+        exige(c.fields, transparente ? { [propios[0].name]: item } : item, col, `${aqui}[]`, entraEnAusentes, slugRaiz);
     }
     if (c.type === "blocks" && Array.isArray(v))
       for (const [i, item] of v.entries()) {
@@ -407,7 +433,7 @@ function exige(campos, dato, col, ruta = "", entraEnAusentes = true) {
         let b = null;
         try { b = eligeBloque(c.blocks ?? [], item, `${col}.${aqui}[${i}]`); }
         catch { bloquesSinResolver.push(`${col}.${aqui}[${i}]`); continue; }
-        exige(b.fields, item, col, `${aqui}[${b.slug}]`, entraEnAusentes);
+        exige(b.fields, item, col, `${aqui}[${b.slug}]`, entraEnAusentes, slugRaiz);
       }
   }
 }
@@ -420,7 +446,8 @@ for (const c of CATALOGOS) {
   const cfg = config.collections.find((x) => x.slug === c.coleccion);
   for (const r of requeridosDeConfig(cfg.fields)) esperadas.add(`${c.coleccion}·${r}`);
   for (const fila of catalogos.get(c.coleccion))
-    exige(cfg.fields, (PREPARA[c.coleccion] ?? ((x) => x))(fila), c.coleccion, "", SABOTAJE !== "grupo");
+    { const prepFila = (PREPARA[c.coleccion] ?? ((x) => x))(fila);
+    exige(cfg.fields, prepFila, c.coleccion, "", SABOTAJE !== "grupo", prepFila?.slug); }
 }
 
 /* Un bloque que la sonda no supo resolver no se auditó, y eso NO puede pasar por

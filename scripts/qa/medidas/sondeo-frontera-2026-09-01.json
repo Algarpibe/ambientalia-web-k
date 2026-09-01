@@ -2,7 +2,7 @@
   "meta": {
     "fecha": "2026-09-01",
     "sabotaje": null,
-    "filas": 364,
+    "filas": 360,
     "alcance": "los 9 catálogos de CATALOGOS contra la config RESUELTA, sin escribir en la DB. Las taxonomías derivadas entran como destino de relación, no como origen."
   },
   "grafo": {
@@ -22,8 +22,7 @@
       "autores",
       "entradas-blog",
       "terminos-kunakpedia",
-      "documentos-cientificos",
-      "arquetipos"
+      "documentos-cientificos"
     ],
     "aristas": [
       {
@@ -143,38 +142,23 @@
       "autores": 0,
       "entradas-blog": 0,
       "terminos-kunakpedia": 0,
-      "documentos-cientificos": 0,
-      "arquetipos": 0
+      "documentos-cientificos": 0
     },
     "porDestino": {},
     "total": 0
   },
   "required": {
-    "delEsquema": 83,
-    "cubiertas": 83,
-    "extra": 113,
+    "delEsquema": 78,
+    "cubiertas": 78,
+    "extra": 94,
     "sinAuditar": [],
-    "sinDato": {
-      "arquetipos · bloques[imagen-arq].enlace.label": 27,
-      "arquetipos · bloques[imagen-arq].enlace.href": 27
-    },
-    "vacios": {
-      "arquetipos · bloques[texto-arq].contenido": [
-        "monitor-calidad-aire"
-      ],
-      "arquetipos · bloques[video-arq].url": [
-        "monitor-calidad-aire",
-        "software-de-medicion-calidad-del-aire"
-      ],
-      "arquetipos · bloques[formulario-arq].campos[].opciones[].texto": [
-        "monitor-calidad-aire"
-      ]
-    }
+    "sinDato": {},
+    "vacios": {}
   },
   "validate": {
     "rechazos": [],
     "porRuta": {},
-    "noEvaluables": 5150
+    "noEvaluables": 4351
   },
   "instrumento": {
     "sinLlave": [],
@@ -184,7 +168,7 @@
       {
         "canal": "creaContexto().media — resolución de assets contra apps/web/public",
         "sustituto": "constante `0` (un id de media falso)",
-        "llamadas": 845,
+        "llamadas": 739,
         "queNoDice": "si el fichero existe, si la ruta es local, ni si el asset vive fuera. Ese canal lo mide `qa:media-canales`."
       },
       {

@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "fecha": "2026-09-01T23:16:46.598Z",
+    "sonda": "bloqueos-siembra-138"
+  },
+  "docs": 4,
+  "censoBloques": {
+    "texto-arq": 100,
+    "imagen-arq": 27,
+    "icono-arq": 70,
+    "boton-arq": 24,
+    "slider-ancho-arq": 3,
+    "cta-arq": 1,
+    "tabla-arq": 1,
+    "galeria-arq": 1,
+    "video-arq": 2,
+    "formulario-arq": 1,
+    "slider-arq": 1
+  },
+  "totalBloques": 231,
+  "imagenArq": {
+    "instancias": 27,
+    "conEnlace": 0,
+    "sinEnlace": 27,
+    "forma": "group con label+href required (campos/comunes.ts:enlace)",
+    "ejemplosSinEnlace": [
+      {
+        "slug": "monitor-calidad-aire",
+        "imagen": "/images/uploads/2022/12/punteado.svg"
+      },
+      {
+        "slug": "monitor-calidad-aire",
+        "imagen": "/images/uploads/2024/01/ganador-airlab-2021-2023-2.svg"
+      },
+      {
+        "slug": "monitor-calidad-aire",
+        "imagen": "/images/uploads/2022/12/punteado.svg"
+      }
+    ]
+  },
+  "vacios": {
+    "texto-arq.contenido": {
+      "n": 1,
+      "donde": [
+        "monitor-calidad-aire"
+      ]
+    },
+    "video-arq.url": {
+      "n": 2,
+      "donde": [
+        "monitor-calidad-aire",
+        "software-de-medicion-calidad-del-aire"
+      ]
+    },
+    "formulario-arq.opciones.texto": {
+      "n": 3,
+      "donde": [
+        "monitor-calidad-aire·field[27]·valor=",
+        "monitor-calidad-aire·field[27]·valor=",
+        "monitor-calidad-aire·field[51]·valor="
+      ]
+    }
+  },
+  "control": [
+    {
+      "bloque": "imagen-arq",
+      "ruta": "enlace.label",
+      "clase": "SIN DATO",
+      "esperadas": 27,
+      "medidas": 27,
+      "reproduce": true
+    },
+    {
+      "bloque": "imagen-arq",
+      "ruta": "enlace.href",
+      "clase": "SIN DATO",
+      "esperadas": 27,
+      "medidas": 27,
+      "reproduce": true
+    },
+    {
+      "bloque": "texto-arq",
+      "ruta": "contenido",
+      "clase": "VACÍO",
+      "esperadas": 1,
+      "medidas": 1,
+      "reproduce": true
+    },
+    {
+      "bloque": "video-arq",
+      "ruta": "url",
+      "clase": "VACÍO",
+      "esperadas": 1,
+      "medidas": 2,
+      "reproduce": false
+    },
+    {
+      "bloque": "formulario-arq",
+      "ruta": "campos[].opciones[].texto",
+      "clase": "VACÍO",
+      "esperadas": 1,
+      "medidas": 3,
+      "reproduce": false
+    }
+  ],
+  "veredicto": {
+    "testigosQueReproducen": 3,
+    "de": 5,
+    "adjudica": false
+  }
+}
