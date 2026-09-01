@@ -55,12 +55,28 @@ elemento, no ese 0.
 1. **La siembra no se corrió**: `arquetipos` **NO está cableada al sembrador** —
    no aparece ni en `CATALOGOS` ni en `SEMBRADAS` (11 colecciones)—, así que
    «correr el sembrador» no era posible: hay que cablearla primero;
-2. **el entorno no lo permitió**: el contenedor `kunak-cms-pg` **no arranca**
-   porque otro proyecto (`salestracker-postgres-e2e`, *Up 14 minutes (healthy)*)
-   ocupa el puerto **55432**. No se para un contenedor ajeno en uso: es decisión
-   del propietario. Sin Postgres quedan sin correr **`qa:media-canales`** (los 12
-   canales · 121 rutas de §regla 48), la siembra, la diferencia simétrica del
-   entorno y `clon-base`;
+2. **el entorno no lo permitió, y el motivo NO es el que parecía.** La primera
+   lectura fue *«otro proyecto (`salestracker-postgres-e2e`) ocupa el puerto
+   55432»*: cierta, y **no era la causa**. Parado ése con autorización del
+   propietario, el puerto queda **LIBRE** (`netstat`: nadie escucha) y
+   `kunak-cms-pg` **arranca y sirve** —consulta real: **151 tablas · 13 de
+   `arquetipos` · 0 filas**, el estado de partida congelado en
+   `derivaciones/tablas-133-ANTES.txt`—, pero **Docker no publica el binding al
+   host**: `HostConfig.PortBindings` dice `55432` y `NetworkSettings.Ports` sale
+   **vacío**, así que desde el host es `ECONNREFUSED`. Tres formas de arrancarlo
+   —`start`, `restart`, `stop`+`start`— con el mismo resultado.
+
+   **Y la lectura correcta la dio la comprobación, no `docker ps`** (§*el
+   veredicto lo da la salida servida*): `docker ps` imprime `5432/tcp` —que se
+   lee como «expuesto»— y lo que dirime es **abrir un socket desde el host**.
+   El paso 3 del protocolo de Docker se cumplió y por eso el bloqueo está
+   nombrado en vez de confundido con el puerto ocupado.
+
+   Sin conexión desde el host quedan sin correr **`qa:media-canales`** (los 12
+   canales · 121 rutas de §regla 48), la migración de `formulario-arq` con su
+   reversa, la siembra, la diferencia simétrica del entorno y `clon-base`.
+   ⚠ `salestracker-postgres-e2e` **queda PARADO**: restaurarlo es
+   `docker start salestracker-postgres-e2e`;
 3. **`F3-5-MEDIA-360`**: `data-main-image-url` trae
    `https://kunakair.com/…/kunak360_IMG_01.jpg` — un **canal de media implícito**
    (§regla 48) que ningún campo `upload` declara. Fichado, no resuelto;
