@@ -150,6 +150,119 @@ servidores MCP (`chrome-devtools-mcp`, `codegraph`, `n8n-mcp`, `firebase-tools`,
 una tanda pendiente. Eso es **B**; aquí sólo se dimensiona.
 
 
+### ESCALÓN 1 · PREDICCIONES — commiteadas ANTES de medir
+
+#### La referencia NO es «38.29 s y ~91 s»: es un MODELO POR FASES, y por eso se puede extrapolar
+
+El encargo cita dos números. Derivados de sus congeladas
+(`scripts/qa/medidas/a-sp13-{frio,tibio,sintetico-189}.json`, **misma máquina**
+—`Core Ultra 9 285H`, 16 núcleos, 31.4 GB, Next 16.2.12, Postgres en el mismo
+contenedor de hoy—) resulta que A-SP13 no midió un total: **descompuso el build
+en seis fases y aisló la que escala.**
+
+| fase | 31 rutas (frío) | 220 rutas (sintético) | Δ |
+|---|---|---|---|
+| arranque | 3.334 | 3.293 | ~0 |
+| compilación | 8.095 | 10.424 | +2.3 |
+| typescript | 8.344 | 10.262 | +1.9 |
+| datos | 13.037 | 14.270 | +1.2 |
+| **generación** | **6.095** | **48.207** | **+42.1** |
+| cierre | 2.845 | 4.953 | +2.1 |
+| **total (mediana)** | **41.839** | **91.409** | **+49.6** |
+
+> **Una sola fase se lleva el 85 % del crecimiento.** Así que extrapolar el
+> TOTAL linealmente y extrapolar **la generación** son dos modelos distintos, y
+> conviene calcular los dos y ver si concuerdan (§*dos modelos que predicen lo
+> mismo en todo tu dominio son uno solo* — aquí **sí** separan, porque el fijo
+> no es cero).
+
+**Ajuste de dos puntos sobre el TOTAL:** pendiente
+`(91.409 − 41.839)/189 = **0.2623 s/ruta**`, intercepto **33.71 s**.
+A 426 → **145.4 s**.
+
+**Ajuste sobre la GENERACIÓN sola:** `(48.207 − 6.095)/189 = **0.2228 s/ruta**`
+con intercepto ≈ 0 (−0.81, o sea proporcional). A 426 → 94.9 s, más el `fijo`
+de 220 (43.2) → **138.1 s**.
+
+**Concuerdan en ~140 s**, y ésa es la base. Encima van dos correcciones **al
+alza que tengo motivo para esperar**, y las escribo antes para que no sean
+excusa después:
+
+1. **el fuente ha crecido un 42 %** — `apps/web/src` tenía **117** ficheros
+   `.ts/.tsx/.css` en el commit de A-SP13 (`ec5fbf3`, 2026-08-06) y hoy tiene
+   **166**. `compilación`+`typescript` sumaban **20.7 s** a 220 rutas y no
+   dependen del nº de rutas sino del fuente: **+6 a +9 s**;
+2. **las 189 rutas sintéticas eran CLONES DE UN SOLO documento** simple
+   (`contaminacion-por-metano`), y las 426 de hoy son **heterogéneas** — incluyen
+   arquetipos con muchos módulos. El `porRuta` derivado de clones es una **cota
+   INFERIOR** del coste real por ruta: **+10 a +15 %** sobre el término de
+   generación.
+
+**Y sí, espero escalado LINEAL en la generación** — con el matiz de que es
+**ligeramente super-lineal**: de 31 a 220 las rutas se multiplicaron por **7.10**
+y la generación por **7.91** (razón **1.11**). Eso dice que **el paralelismo de
+Next ya estaba saturado a 31 rutas**, así que no queda holgura que absorba más
+carga y no hay motivo para esperar sub-linealidad. Lo que sí podría romperlo por
+arriba es presión de memoria a 426, que a 220 no daba señal.
+
+> **P1 · el rebuild a 426 rutas tarda ≈ 155 s** (banda **130–200 s**).
+>
+> Cálculo: generación `0.2228 × 426 = 94.9`, ×1.12 por heterogeneidad = **106 s**;
+> fijo `43.2 + 7` por el crecimiento del fuente = **50 s**. Total **156 s**, que
+> redondeo a **155**.
+>
+> **Qué la refutaría, dicho por delante:** menos de 130 s significa que el
+> `porRuta` de los clones no era cota inferior sino superior —o sea que las
+> rutas reales son **más baratas** que el clon—; más de 200 s significa que hay
+> un término **no lineal** que a 220 no se veía, y entonces el modelo de A-SP13
+> no extrapola y hay que decirlo.
+
+⚠ **Y el alcance, que A-SP13 escribe en su propia `meta` y hay que repetir:**
+*«un tiempo es propiedad de ESTA máquina, ESTA fecha y ESTA configuración»*. P1
+es una predicción sobre **esta** máquina, no sobre el VPS de la tanda B.
+
+#### P2 · el gancho dispara solo, con `PUBLICAR_URL` puesta
+
+> **P2 · SÍ.** Con `PUBLICAR_URL` apuntando al publicador, guardar un documento
+> **publicado** en el admin provoca el rebuild **sin que nadie llame a
+> `POST /rebuild` a mano**.
+
+**Por qué lo predigo así:** `TRASPASO-CMS.md §6` dice que el webhook es
+**opt-in** y que *«en producción tiene que estar»*, o sea que el mecanismo
+existe y lo único que falta es la variable. **Qué lo refutaría:** que el gancho
+esté declarado y no cableado (§regla 3, *documentado no es conectado*) — que es
+un modo de fallo real de este repo y por eso lo escribo como refutador y no como
+imposible.
+
+#### P3 · la vista previa enseña el borrador
+
+> **P3 · SÍ.** Con `PREVIEW_SECRETO` puesta, `/vista-previa/<slug>?token=…`
+> muestra el cambio **antes** de publicar.
+
+**Por qué:** §1 declara que el sitio *«no lee la DB al servir **salvo la vista
+previa**»* — o sea que esa ruta es la excepción de runtime declarada. **Qué lo
+refutaría:** que la ruta esté prerenderizada estáticamente en el build, en cuyo
+caso serviría la foto del build y no el borrador.
+
+#### P4 · cuántas rutas quedan editables desde el admin
+
+**426 rutas emitidas.** No todas tienen documento detrás: los **listados no son
+contenido, son CONSULTAS** (§regla 12, 2.º enunciado ascendido), y las páginas
+construidas a mano viven en `src/lib/*.ts`, no en el CMS.
+
+Censo parcial de la DB (6 colecciones, derivado hoy): `paginas 31` ·
+`entradas_blog 152` · `productos 19` · `arquetipos 4` ·
+`documentos_cientificos 23` · `terminos_kunakpedia 37` = **266**, más las que no
+conté (`casos`, `faqs`, `sectores`, `monograficos`).
+
+> **P4 · ≈ 280 rutas editables de 426**, o sea **~146 no editables** entre
+> listados, series paginadas y páginas de `src/lib/`.
+>
+> Y **las 4 de F3-5 se cuentan aparte**, como el encargo pide: hoy son
+> **editables en el admin y sin camino al píxel** —`arquetipos` tiene 4 filas y
+> **0 consumidores** en el render—, que es una tercera categoría distinta de
+> «editable» y de «no editable», y el ESCALÓN 3 la nombra como tal.
+
 ## 🔄 §141.ª · **CABLEAR LOS LECTORES DE `arquetipos` (F3-5, la segunda mitad)** — 2026-09-02
 
 **Estado: PASO 0 completo.** Continuación misma-fecha de la 140.ª, que dejó
