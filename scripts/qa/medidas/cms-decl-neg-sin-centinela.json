@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-23",
+    "fecha": "2026-09-02",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
     "sabotaje": "sin-centinela"
@@ -12,9 +12,11 @@
       "casos.sectores": "objeto",
       "casos.soluciones": "slug",
       "entradas-blog.categorias": "objeto",
+      "entradas-blog.firmas.autor": "objeto",
       "entradas-blog.recurso": "objeto",
       "entradas-blog.etiquetas": "objeto",
-      "documentos-cientificos.categoria": "objeto"
+      "documentos-cientificos.categoria": "objeto",
+      "documentos-cientificos.firmas.autor": "objeto"
     },
     "conKind": [
       [
@@ -56,6 +58,10 @@
       [
         "paginas.bloques.filas.columnas.modulos",
         "slider"
+      ],
+      [
+        "paginas.bloques.filas.columnas.modulos",
+        "tabla"
       ],
       [
         "paginas.bloques.filas.columnas.modulos",
@@ -116,12 +122,80 @@
       [
         "monograficos.cuerpo.filas.columnas.modulos",
         "serie"
+      ],
+      [
+        "arquetipos.bloques",
+        "texto-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "imagen-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "icono-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "boton-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "slider-ancho-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "cta-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "tabla-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "galeria-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "video-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "formulario-arq"
+      ],
+      [
+        "arquetipos.bloques",
+        "slider-arq"
       ]
     ],
     "centinelas": [
       "productos.image"
     ],
     "listas": {
+      "arquetipos.bloques": {
+        "presente": 4,
+        "ausente": 0
+      },
+      "arquetipos.bloques.campos": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "arquetipos.bloques.campos.opciones": {
+        "presente": 6,
+        "ausente": 0
+      },
+      "arquetipos.bloques.items": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "arquetipos.bloques.ocultos": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "autores.redes": {
+        "presente": 5,
+        "ausente": 0
+      },
       "casos.galeria": {
         "presente": 48,
         "ausente": 9
@@ -134,11 +208,19 @@
         "presente": 53,
         "ausente": 4
       },
+      "documentos-cientificos.firmas": {
+        "presente": 23,
+        "ausente": 0
+      },
       "entradas-blog.categorias": {
         "presente": 152,
         "ausente": 0
       },
       "entradas-blog.etiquetas": {
+        "presente": 152,
+        "ausente": 0
+      },
+      "entradas-blog.firmas": {
         "presente": 152,
         "ausente": 0
       },
@@ -238,8 +320,20 @@
         "presente": 169,
         "ausente": 0
       },
+      "paginas.bloques.filas.columnas.modulos.cabeceras": {
+        "presente": 0,
+        "ausente": 1
+      },
       "paginas.bloques.filas.columnas.modulos.diapositivas": {
         "presente": 1,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos.filas": {
+        "presente": 1,
+        "ausente": 0
+      },
+      "paginas.bloques.filas.columnas.modulos.filas.celdas": {
+        "presente": 11,
         "ausente": 0
       },
       "paginas.bloques.filas.columnas.modulos.pines": {
@@ -328,7 +422,9 @@
       "entradas-blog.categorias": "objeto",
       "entradas-blog.etiquetas": "objeto",
       "entradas-blog.recurso": "objeto",
-      "documentos-cientificos.categoria": "objeto"
+      "entradas-blog.firmas.autor": "objeto",
+      "documentos-cientificos.categoria": "objeto",
+      "documentos-cientificos.firmas.autor": "objeto"
     },
     "conKind": {
       "paginas.bloques.modulosSueltos": [
@@ -342,7 +438,8 @@
         "slider-completo",
         "slider",
         "mapa",
-        "icono"
+        "icono",
+        "tabla"
       ],
       "paginas.bloques.filas.columnas.modulos": [
         "texto-pagina",
@@ -355,7 +452,8 @@
         "slider-completo",
         "slider",
         "mapa",
-        "icono"
+        "icono",
+        "tabla"
       ],
       "sectores.body": [
         "ctaDescarga",
@@ -374,6 +472,20 @@
         "tabla",
         "ctaDescarga",
         "mapaProyectos"
+      ],
+      "arquetipos.bloques": [
+        "texto-arq",
+        "icono-arq",
+        "imagen-arq",
+        "boton-arq",
+        "slider-ancho-arq",
+        "video-arq",
+        "cta-arq",
+        "tabla-arq",
+        "galeria-arq",
+        "formulario-arq",
+        "codigo-arq",
+        "slider-arq"
       ]
     },
     "centinelas": [],
@@ -391,16 +503,22 @@
     ]
   },
   "contrato": {
-    "evaluadas": 83,
-    "minimo": 83,
+    "evaluadas": 108,
+    "minimo": 108,
     "suficiente": true
   },
   "veredicto": {
-    "verificadas": 82,
+    "verificadas": 106,
     "huecos": [
       {
         "tipo": "centinelaVacio",
         "ruta": "productos.image",
+        "declarado": "(nada)"
+      },
+      {
+        "tipo": "vaciaEsAusente",
+        "ruta": "paginas.bloques.filas.columnas.modulos.cabeceras",
+        "derivado": "ausente en 1 de 1",
         "declarado": "(nada)"
       }
     ],
@@ -447,8 +565,16 @@
         "slug": "icono"
       },
       {
+        "ruta": "paginas.bloques.modulosSueltos",
+        "slug": "tabla"
+      },
+      {
         "ruta": "paginas.bloques.filas.columnas.modulos",
         "slug": "slider-completo"
+      },
+      {
+        "ruta": "arquetipos.bloques",
+        "slug": "codigo-arq"
       }
     ],
     "listasSinEjercitar": [
@@ -462,6 +588,9 @@
       "productos.cuerpo.filas",
       "productos.cuerpo.filas.celdas",
       "paginas.bloques.modulosSueltos.pines",
+      "paginas.bloques.modulosSueltos.cabeceras",
+      "paginas.bloques.modulosSueltos.filas",
+      "paginas.bloques.modulosSueltos.filas.celdas",
       "monograficos.cuerpo.filas.columnas.modulos.filas.celdas"
     ],
     "ok": false

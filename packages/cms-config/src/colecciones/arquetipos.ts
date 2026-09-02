@@ -108,6 +108,39 @@ export const arquetipos: CollectionConfig = {
       required: true,
       minRows: 1,
       blocks: bloquesArquetipo,
+      /**
+       * ⚠⚠ **`conKind` — AÑADIDO POR LA 141.ª (PASO 0), Y FALTABA DESDE QUE SE
+       * ESCRIBIÓ ESTE FICHERO.**
+       *
+       * El `kind` de un bloque **no se deriva de la forma**: la ida lo ve
+       * porque el dato medido lo trae, y el render no tiene ida — lo lee de
+       * esta declaración (`mapeo.mjs:655` la construye, `:781` la consume).
+       * Sin ella `aMedido` devuelve el cuerpo **sin su discriminante**, así que
+       * los 231 módulos llegarían al render como bloques anónimos.
+       *
+       * **Y el defecto habría sido SILENCIOSO**: un `kind` ausente no lanza —
+       * `undefined` en un `switch` de render no falla, no pinta (§regla 6
+       * gemela) —. Es el modo de fallo exacto de `articulos-kb` en F3-1: seis
+       * páginas servidas con sus filas, sus columnas y CERO módulos, con
+       * `npm run check`, `qa:slugs` y el `prerender-manifest` en verde.
+       *
+       * **Por qué la 140.ª no podía verlo, que es la lección:** con 0 lectores
+       * ninguna sonda recorría el camino del dato al render. El round-trip
+       * mide **ida ↔ vuelta**, no **el contexto del render** — y ésa es
+       * literalmente la razón por la que `qa:cms-lectura` existe (*«sin la
+       * segunda, el primero sería un verde prestado: verifica un contexto y el
+       * build usa otro»*). Lo destapó correrla ANTES de cablear.
+       *
+       * Cardinal, y hay que declararlo (§regla 14): el campo tiene **12** tipos
+       * de bloque y esta línea los cubre los 12 por construcción, pero
+       * `qa:cms-decl` sólo verifica los **11 EJERCITADOS** — `codigo-arq` está
+       * a **0 filas** en las 4, así que queda **SIN EJERCITAR**, no verificado.
+       *
+       * Es la misma línea que ya llevan las cuatro familias con bloques que
+       * funcionan: `bloques/kb.ts:402` · `bloques/monografico.ts:144` ·
+       * `bloques/paginas.ts:724` · `colecciones/sectores.ts:33`.
+       */
+      custom: { conKind: true },
       admin: {
         description:
           "Los módulos de PRIMER NIVEL del cuerpo (§2n): 90 · 35 · 70 · 36 = 231 medidos, 0 documentos vacíos. " +

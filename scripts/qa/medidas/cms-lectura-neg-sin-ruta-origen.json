@@ -1,14 +1,14 @@
 {
   "meta": {
-    "fecha": "2026-08-24",
+    "fecha": "2026-09-02",
     "pregunta": "¿proyecta el contexto del RENDER (declaraciones de la config) lo mismo que el de la IDA (mapas que la ida llenó)?",
     "fuente": "los mismos documentos de la misma DB, con `depth: 1`, por el mismo walker",
     "noPrueba": "que la proyección sea fiel al dato medido — eso es `qa:cms-roundtrip`. Prueba que el camino del render no pierde nada respecto del verificado.",
     "sabotaje": "sin-ruta-origen"
   },
   "contrato": {
-    "evaluadas": 384,
-    "minimo": 384,
+    "evaluadas": 392,
+    "minimo": 392,
     "suficiente": true
   },
   "porColeccion": {
@@ -47,6 +47,11 @@
       "comparados": 19,
       "distintos": 0
     },
+    "autores": {
+      "documentos": 5,
+      "comparados": 5,
+      "distintos": 0
+    },
     "entradas-blog": {
       "documentos": 152,
       "comparados": 152,
@@ -62,6 +67,11 @@
       "comparados": 23,
       "distintos": 23
     },
+    "arquetipos": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 4
+    },
     "categorias": {
       "documentos": 4,
       "comparados": 4,
@@ -73,8 +83,8 @@
       "distintos": 0
     },
     "categorias-recursos": {
-      "documentos": 10,
-      "comparados": 10,
+      "documentos": 9,
+      "comparados": 9,
       "distintos": 0
     },
     "categorias-cientificas": {
@@ -84,8 +94,8 @@
     }
   },
   "veredicto": {
-    "comparados": 384,
-    "distintos": 234,
+    "comparados": 392,
+    "distintos": 238,
     "ok": false
   },
   "diferencias": [
@@ -184,134 +194,134 @@
       "coleccion": "paginas",
       "id": 1,
       "slug": "kunak-air-cloud",
-      "ida": "{\"slug\":\"kunak-air-cloud\",\"prefijo\":\"centro-de-ayuda\",\"seo\":{\"title\":\"Kunak Air Cloud - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\\n<p>Software de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-",
-      "render": "{\"slug\":\"kunak-air-cloud\",\"prefijo\":\"centro-de-ayuda\",\"seo\":{\"title\":\"Kunak Air Cloud - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\\n<p>Software de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-"
+      "ida": "{\"slug\":\"kunak-air-cloud\",\"prefijo\":\"centro-de-ayuda\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Kunak Air Cloud - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\\n<p>Software de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/",
+      "render": "{\"slug\":\"kunak-air-cloud\",\"prefijo\":\"centro-de-ayuda\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Kunak Air Cloud - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\\n<p>Software de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/"
     },
     {
       "coleccion": "paginas",
       "id": 2,
       "slug": "kunak-air",
-      "ida": "{\"slug\":\"kunak-air\",\"prefijo\":\"centro-de-ayuda\",\"seo\":{\"title\":\"Kunak AIR - Kunak\"},\"titulo\":\"Kunak AIR\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak AIR</h1>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/ar",
-      "render": "{\"slug\":\"kunak-air\",\"prefijo\":\"centro-de-ayuda\",\"seo\":{\"title\":\"Kunak AIR - Kunak\"},\"titulo\":\"Kunak AIR\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak AIR</h1>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/ar"
+      "ida": "{\"slug\":\"kunak-air\",\"prefijo\":\"centro-de-ayuda\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Kunak AIR - Kunak\"},\"titulo\":\"Kunak AIR\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak AIR</h1>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayu",
+      "render": "{\"slug\":\"kunak-air\",\"prefijo\":\"centro-de-ayuda\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Kunak AIR - Kunak\"},\"titulo\":\"Kunak AIR\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak AIR</h1>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayu"
     },
     {
       "coleccion": "paginas",
       "id": 3,
       "slug": "articulos-de-ayuda",
-      "ida": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Pro\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Pro</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-a",
-      "render": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Pro\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Pro</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-a"
+      "ida": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Pro\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Pro</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air",
+      "render": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Pro\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Pro</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air"
     },
     {
       "coleccion": "paginas",
       "id": 4,
       "slug": "video-tutoriales",
-      "ida": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"}]},{\"ancho\":\"1_2\",\"modulos\"",
-      "render": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"}]},{\"ancho\":\"1_2\",\"modulos\""
+      "ida": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"}]},{\"ancho\":",
+      "render": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"}]},{\"ancho\":"
     },
     {
       "coleccion": "paginas",
       "id": 5,
       "slug": "centro-de-ayuda",
-      "ida": "{\"slug\":\"centro-de-ayuda\",\"prefijo\":\"soporte\",\"seo\":{\"title\":\"Centro de ayuda - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Kunak AIR</h2>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"imagen-pagina\",\"src\":\"/",
-      "render": "{\"slug\":\"centro-de-ayuda\",\"prefijo\":\"soporte\",\"seo\":{\"title\":\"Centro de ayuda - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Kunak AIR</h2>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"imagen-pagina\",\"src\":\"/"
+      "ida": "{\"slug\":\"centro-de-ayuda\",\"prefijo\":\"soporte\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Centro de ayuda - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Kunak AIR</h2>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"imagen-p",
+      "render": "{\"slug\":\"centro-de-ayuda\",\"prefijo\":\"soporte\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Centro de ayuda - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Kunak AIR</h2>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"imagen-p"
     },
     {
       "coleccion": "paginas",
       "id": 6,
       "slug": "articulos-de-ayuda",
-      "ida": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-de-ayud",
-      "render": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-de-ayud"
+      "ida": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte",
+      "render": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte"
     },
     {
       "coleccion": "paginas",
       "id": 7,
       "slug": "video-tutoriales",
-      "ida": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales</p>\"}]},{\"ancho",
-      "render": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales</p>\"}]},{\"ancho"
+      "ida": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales<",
+      "render": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales<"
     },
     {
       "coleccion": "paginas",
       "id": 8,
       "slug": "productos",
-      "ida": "{\"slug\":\"productos\",\"seo\":{\"title\":\"Sistemas de sensores de calidad del aire - Kunak\",\"description\":\"La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS.\"},\"titulo\":\"Sistemas de sensores de calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Sistemas ",
-      "render": "{\"slug\":\"productos\",\"seo\":{\"title\":\"Sistemas de sensores de calidad del aire - Kunak\",\"description\":\"La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS.\"},\"titulo\":\"Sistemas de sensores de calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Sistemas "
+      "ida": "{\"slug\":\"productos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Sistemas de sensores de calidad del aire - Kunak\",\"description\":\"La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS.\"},\"titulo\":\"Sistemas de sensores de calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\"",
+      "render": "{\"slug\":\"productos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Sistemas de sensores de calidad del aire - Kunak\",\"description\":\"La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS.\"},\"titulo\":\"Sistemas de sensores de calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\""
     },
     {
       "coleccion": "paginas",
       "id": 9,
       "slug": "sectores",
-      "ida": "{\"slug\":\"sectores\",\"seo\":{\"title\":\"Sectores - Kunak\"},\"titulo\":\"Soluciones líderes de control del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soluciones líderes de control del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"",
-      "render": "{\"slug\":\"sectores\",\"seo\":{\"title\":\"Sectores - Kunak\"},\"titulo\":\"Soluciones líderes de control del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soluciones líderes de control del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<p>Empre"
+      "ida": "{\"slug\":\"sectores\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Sectores - Kunak\"},\"titulo\":\"Soluciones líderes de control del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soluciones líderes de control del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-p",
+      "render": "{\"slug\":\"sectores\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Sectores - Kunak\"},\"titulo\":\"Soluciones líderes de control del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soluciones líderes de control del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-pagina\",\""
     },
     {
       "coleccion": "paginas",
       "id": 10,
       "slug": "recursos",
-      "ida": "{\"slug\":\"recursos\",\"seo\":{\"title\":\"Recursos - Kunak\"},\"titulo\":\"Centro de recursos sobre la calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Centro de recursos sobre la calidad del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-pagi",
-      "render": "{\"slug\":\"recursos\",\"seo\":{\"title\":\"Recursos - Kunak\"},\"titulo\":\"Centro de recursos sobre la calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Centro de recursos sobre la calidad del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-pagina\",\"htm"
+      "ida": "{\"slug\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Recursos - Kunak\"},\"titulo\":\"Centro de recursos sobre la calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Centro de recursos sobre la calidad del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"ki",
+      "render": "{\"slug\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Recursos - Kunak\"},\"titulo\":\"Centro de recursos sobre la calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Centro de recursos sobre la calidad del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"tex"
     },
     {
       "coleccion": "paginas",
       "id": 11,
       "slug": "kunakpedia",
-      "ida": "{\"slug\":\"kunakpedia\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Kunakpedia - Kunak\",\"description\":\"Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak.\"},\"titulo\":\"Kunakpedia\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":",
-      "render": "{\"slug\":\"kunakpedia\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Kunakpedia - Kunak\",\"description\":\"Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak.\"},\"titulo\":\"Kunakpedia\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-p"
+      "ida": "{\"slug\":\"kunakpedia\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Kunakpedia - Kunak\",\"description\":\"Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak.\"},\"titulo\":\"Kunakpedia\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de rec",
+      "render": "{\"slug\":\"kunakpedia\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Kunakpedia - Kunak\",\"description\":\"Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak.\"},\"titulo\":\"Kunakpedia\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{"
     },
     {
       "coleccion": "paginas",
       "id": 12,
       "slug": "documentos-cientificos",
-      "ida": "{\"slug\":\"documentos-cientificos\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Documentos científicos - Kunak\",\"description\":\"Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions.\"},\"titulo\":\"Precisión validada por organismos independientes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",",
-      "render": "{\"slug\":\"documentos-cientificos\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Documentos científicos - Kunak\",\"description\":\"Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions.\"},\"titulo\":\"Precisión validada por organismos independientes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\","
+      "ida": "{\"slug\":\"documentos-cientificos\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Documentos científicos - Kunak\",\"description\":\"Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions.\"},\"titulo\":\"Precisión validada por organismos independientes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"",
+      "render": "{\"slug\":\"documentos-cientificos\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Documentos científicos - Kunak\",\"description\":\"Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions.\"},\"titulo\":\"Precisión validada por organismos independientes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\""
     },
     {
       "coleccion": "paginas",
       "id": 13,
       "slug": "preguntas-frecuentes",
-      "ida": "{\"slug\":\"preguntas-frecuentes\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Preguntas frecuentes - Kunak\",\"description\":\"Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak.\"},\"titulo\":\"Preguntas frecuentes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.",
-      "render": "{\"slug\":\"preguntas-frecuentes\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Preguntas frecuentes - Kunak\",\"description\":\"Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak.\"},\"titulo\":\"Preguntas frecuentes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"al"
+      "ida": "{\"slug\":\"preguntas-frecuentes\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Preguntas frecuentes - Kunak\",\"description\":\"Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak.\"},\"titulo\":\"Preguntas frecuentes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/20",
+      "render": "{\"slug\":\"preguntas-frecuentes\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Preguntas frecuentes - Kunak\",\"description\":\"Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak.\"},\"titulo\":\"Preguntas frecuentes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/pu"
     },
     {
       "coleccion": "paginas",
       "id": 15,
       "slug": "contacto",
-      "ida": "{\"slug\":\"contacto\",\"seo\":{\"title\":\"Contacto - Kunak\"},\"titulo\":\"Contacta con nosotros\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[]},{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Contacta con nosotros</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h3>¿En qué podemos ayudarte?</h3>\"},{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.",
-      "render": "{\"slug\":\"contacto\",\"seo\":{\"title\":\"Contacto - Kunak\"},\"titulo\":\"Contacta con nosotros\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[]},{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Contacta con nosotros</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h3>¿En qué podemos ayudarte?</h3>\"},{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc."
+      "ida": "{\"slug\":\"contacto\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Contacto - Kunak\"},\"titulo\":\"Contacta con nosotros\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[]},{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Contacta con nosotros</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h3>¿En qué podemos ayudarte?</h3>\"},{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activeh",
+      "render": "{\"slug\":\"contacto\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Contacto - Kunak\"},\"titulo\":\"Contacta con nosotros\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[]},{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Contacta con nosotros</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h3>¿En qué podemos ayudarte?</h3>\"},{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activeh"
     },
     {
       "coleccion": "paginas",
       "id": 16,
       "slug": "descarga-catalogo",
-      "ida": "{\"slug\":\"descarga-catalogo\",\"seo\":{\"title\":\"Descarga de catálogo - Kunak\"},\"titulo\":\"Descarga de catálogo - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_80_\\\" class=\\\"_form _form_80 _inline-form  _dark\\\" novalidate data-styles-version=\\\"5\\\">\\n  <input type=\\\"hidden\\\" n",
-      "render": "{\"slug\":\"descarga-catalogo\",\"seo\":{\"title\":\"Descarga de catálogo - Kunak\"},\"titulo\":\"Descarga de catálogo - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_80_\\\" class=\\\"_form _form_80 _inline-form  _dark\\\" novalidate data-styles-version=\\\"5\\\">\\n  <input type=\\\"hidden\\\" n"
+      "ida": "{\"slug\":\"descarga-catalogo\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Descarga de catálogo - Kunak\"},\"titulo\":\"Descarga de catálogo - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_80_\\\" class=\\\"_form _form_80 _inline-form  _dark\\\" novalidate data-styles-version=\\\"5\\\">\\n  <input ty",
+      "render": "{\"slug\":\"descarga-catalogo\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Descarga de catálogo - Kunak\"},\"titulo\":\"Descarga de catálogo - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_80_\\\" class=\\\"_form _form_80 _inline-form  _dark\\\" novalidate data-styles-version=\\\"5\\\">\\n  <input ty"
     },
     {
       "coleccion": "paginas",
       "id": 17,
       "slug": "empresa",
-      "ida": "{\"slug\":\"empresa\",\"seo\":{\"title\":\"Empresa - Quiénes somos, nuestra misión y visión - Kunak\"},\"titulo\":\"Misión\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Sobre nosotros</p>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h2>Fabricamos soluciones fiables para el análi",
-      "render": "{\"slug\":\"empresa\",\"seo\":{\"title\":\"Empresa - Quiénes somos, nuestra misión y visión - Kunak\"},\"titulo\":\"Misión\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Sobre nosotros</p>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h2>Fabricamos soluciones fiables para el análisis prec"
+      "ida": "{\"slug\":\"empresa\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Empresa - Quiénes somos, nuestra misión y visión - Kunak\"},\"titulo\":\"Misión\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Sobre nosotros</p>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h2>Fabricamos soluciones fiable",
+      "render": "{\"slug\":\"empresa\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Empresa - Quiénes somos, nuestra misión y visión - Kunak\"},\"titulo\":\"Misión\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Sobre nosotros</p>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h2>Fabricamos soluciones fiables para e"
     },
     {
       "coleccion": "paginas",
       "id": 18,
       "slug": "premios-y-reconocimientos",
-      "ida": "{\"slug\":\"premios-y-reconocimientos\",\"prefijo\":\"empresa\",\"seo\":{\"title\":\"Premios y reconocimientos - Kunak\"},\"titulo\":\"Premios  y reconocimientos\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Premios  y reconocimientos</h1>\"},{\"kind\":\"texto-pagina\",\"html\"",
-      "render": "{\"slug\":\"premios-y-reconocimientos\",\"prefijo\":\"empresa\",\"seo\":{\"title\":\"Premios y reconocimientos - Kunak\"},\"titulo\":\"Premios  y reconocimientos\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Premios  y reconocimientos</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h2>De"
+      "ida": "{\"slug\":\"premios-y-reconocimientos\",\"prefijo\":\"empresa\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Premios y reconocimientos - Kunak\"},\"titulo\":\"Premios  y reconocimientos\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Premios  y reconocimientos</h1>\"},{\"kind\":\"texto",
+      "render": "{\"slug\":\"premios-y-reconocimientos\",\"prefijo\":\"empresa\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Premios y reconocimientos - Kunak\"},\"titulo\":\"Premios  y reconocimientos\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Premios  y reconocimientos</h1>\"},{\"kind\":\"texto-pagina\""
     },
     {
       "coleccion": "paginas",
       "id": 29,
       "slug": "soporte",
-      "ida": "{\"slug\":\"soporte\",\"seo\":{\"title\":\"Soporte - Kunak\"},\"titulo\":\"Soporte\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soporte</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"icono\",\"icono\":\"\"},{\"kind\":\"texto-pagina\"",
-      "render": "{\"slug\":\"soporte\",\"seo\":{\"title\":\"Soporte - Kunak\"},\"titulo\":\"Soporte\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soporte</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"icono\",\"icono\":\"\"},{\"kind\":\"texto-pagina\",\"html\":"
+      "ida": "{\"slug\":\"soporte\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Soporte - Kunak\"},\"titulo\":\"Soporte\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soporte</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"icono\",\"icono\":\"\"},{\"kind\"",
+      "render": "{\"slug\":\"soporte\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Soporte - Kunak\"},\"titulo\":\"Soporte\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soporte</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"icono\",\"icono\":\"\"},{\"kind\":\"texto-"
     },
     {
       "coleccion": "paginas",
       "id": 30,
       "slug": "servicio-de-reparacion",
-      "ida": "{\"slug\":\"servicio-de-reparacion\",\"prefijo\":\"soporte\",\"seo\":{\"title\":\"Servicio de reparación (RMA) - Kunak\"},\"titulo\":\"Servicio de reparación (RMA)\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Servicio de reparación (RMA)</h1>\"}]},{\"ancho\":\"1_2\",\"modulos",
-      "render": "{\"slug\":\"servicio-de-reparacion\",\"prefijo\":\"soporte\",\"seo\":{\"title\":\"Servicio de reparación (RMA) - Kunak\"},\"titulo\":\"Servicio de reparación (RMA)\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Servicio de reparación (RMA)</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},"
+      "ida": "{\"slug\":\"servicio-de-reparacion\",\"prefijo\":\"soporte\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Servicio de reparación (RMA) - Kunak\"},\"titulo\":\"Servicio de reparación (RMA)\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Servicio de reparación (RMA)</h1>\"}]},{\"ancho\"",
+      "render": "{\"slug\":\"servicio-de-reparacion\",\"prefijo\":\"soporte\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Servicio de reparación (RMA) - Kunak\"},\"titulo\":\"Servicio de reparación (RMA)\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/api/media/file/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Servicio de reparación (RMA)</h1>\"}]},{\"ancho\":\"1_2\",\""
     },
     {
       "coleccion": "sectores",
@@ -1703,8 +1713,8 @@
       "coleccion": "documentos-cientificos",
       "id": 20,
       "slug": "desafio-airlab-de-microsensores-2023",
-      "ida": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"portada\":{\"src\":\"/images/uploads/20",
-      "render": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"portada\":{\"src\":\"/api/media/file/ai"
+      "ida": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"firmas\":[{\"autor\":{\"slug\":\"kunak\",\"",
+      "render": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"firmas\":[{\"autor\":{\"slug\":\"kunak\",\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -1726,6 +1736,34 @@
       "slug": "evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico",
       "ida": "{\"slug\":\"evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Evaluación de microsensores para la medición de calidad del aire en Ciudad de México - Kunak\",\"ogImage\":\"/images/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg\"}",
       "render": "{\"slug\":\"evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Evaluación de microsensores para la medición de calidad del aire en Ciudad de México - Kunak\",\"ogImage\":\"/images/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg\"}"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 1,
+      "slug": "monitor-calidad-aire",
+      "ida": "{\"slug\":\"monitor-calidad-aire\",\"titulo\":\"Monitor de calidad del aire profesional | Kunak AIR Pro\",\"arquetipo\":\"producto\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunaka",
+      "render": "{\"slug\":\"monitor-calidad-aire\",\"titulo\":\"Monitor de calidad del aire profesional | Kunak AIR Pro\",\"arquetipo\":\"producto\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunaka"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 2,
+      "slug": "accesorios",
+      "ida": "{\"slug\":\"accesorios\",\"titulo\":\"Accesorios para sensores de calidad del aire\",\"arquetipo\":\"catalogo\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop",
+      "render": "{\"slug\":\"accesorios\",\"titulo\":\"Accesorios para sensores de calidad del aire\",\"arquetipo\":\"catalogo\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 3,
+      "slug": "software-de-medicion-calidad-del-aire",
+      "ida": "{\"slug\":\"software-de-medicion-calidad-del-aire\",\"titulo\":\"Software para el análisis de la calidad del aire | Kunak AIR Cloud\",\"arquetipo\":\"software\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"",
+      "render": "{\"slug\":\"software-de-medicion-calidad-del-aire\",\"titulo\":\"Software para el análisis de la calidad del aire | Kunak AIR Cloud\",\"arquetipo\":\"software\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\""
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 4,
+      "slug": "kunak-api",
+      "ida": "{\"slug\":\"kunak-api\",\"titulo\":\"Kunak API\",\"arquetipo\":\"software\",\"varianteCorta\":true,\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop=\\\"item\\\"><span",
+      "render": "{\"slug\":\"kunak-api\",\"titulo\":\"Kunak API\",\"arquetipo\":\"software\",\"varianteCorta\":true,\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop=\\\"item\\\"><span"
     }
   ]
 }

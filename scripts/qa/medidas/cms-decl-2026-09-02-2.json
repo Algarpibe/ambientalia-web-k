@@ -3,7 +3,7 @@
     "fecha": "2026-09-02",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
-    "sabotaje": "control"
+    "sabotaje": null
   },
   "derivado": {
     "formaDeRel": {

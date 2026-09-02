@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fecha": "2026-08-23",
+    "fecha": "2026-09-02",
     "pregunta": "¿lo que la config DECLARA para la vuelta coincide con lo que la IDA deriva del dato medido?",
     "fuente": "aPayload sobre los 9 catálogos (derivación) · declaracionesDe(config) (declaración)",
     "sabotaje": "selector-muerto"
@@ -19,7 +19,9 @@
       "entradas-blog.categorias": "objeto",
       "entradas-blog.etiquetas": "objeto",
       "entradas-blog.recurso": "objeto",
-      "documentos-cientificos.categoria": "objeto"
+      "entradas-blog.firmas.autor": "objeto",
+      "documentos-cientificos.categoria": "objeto",
+      "documentos-cientificos.firmas.autor": "objeto"
     },
     "conKind": {
       "paginas.bloques.modulosSueltos": [
@@ -33,7 +35,8 @@
         "slider-completo",
         "slider",
         "mapa",
-        "icono"
+        "icono",
+        "tabla"
       ],
       "paginas.bloques.filas.columnas.modulos": [
         "texto-pagina",
@@ -46,7 +49,8 @@
         "slider-completo",
         "slider",
         "mapa",
-        "icono"
+        "icono",
+        "tabla"
       ],
       "sectores.body": [
         "ctaDescarga",
@@ -65,6 +69,20 @@
         "tabla",
         "ctaDescarga",
         "mapaProyectos"
+      ],
+      "arquetipos.bloques": [
+        "texto-arq",
+        "icono-arq",
+        "imagen-arq",
+        "boton-arq",
+        "slider-ancho-arq",
+        "video-arq",
+        "cta-arq",
+        "tabla-arq",
+        "galeria-arq",
+        "formulario-arq",
+        "codigo-arq",
+        "slider-arq"
       ]
     },
     "centinelas": [
@@ -118,7 +136,15 @@
       },
       {
         "tipo": "formaDeRel",
+        "ruta": "entradas-blog.firmas.autor"
+      },
+      {
+        "tipo": "formaDeRel",
         "ruta": "documentos-cientificos.categoria"
+      },
+      {
+        "tipo": "formaDeRel",
+        "ruta": "documentos-cientificos.firmas.autor"
       },
       {
         "tipo": "conKind",
@@ -135,6 +161,10 @@
       {
         "tipo": "conKind",
         "ruta": "monograficos.cuerpo.filas.columnas.modulos"
+      },
+      {
+        "tipo": "conKind",
+        "ruta": "arquetipos.bloques"
       },
       {
         "tipo": "centinelaVacio",
@@ -158,11 +188,17 @@
       "paginas.bloques.modulosSueltos",
       "paginas.bloques.modulosSueltos.diapositivas",
       "paginas.bloques.modulosSueltos.pines",
+      "paginas.bloques.modulosSueltos.cabeceras",
+      "paginas.bloques.modulosSueltos.filas",
+      "paginas.bloques.modulosSueltos.filas.celdas",
       "paginas.bloques.filas",
       "paginas.bloques.filas.columnas",
       "paginas.bloques.filas.columnas.modulos",
       "paginas.bloques.filas.columnas.modulos.diapositivas",
       "paginas.bloques.filas.columnas.modulos.pines",
+      "paginas.bloques.filas.columnas.modulos.cabeceras",
+      "paginas.bloques.filas.columnas.modulos.filas",
+      "paginas.bloques.filas.columnas.modulos.filas.celdas",
       "sectores.breadcrumb",
       "sectores.hero.ctas",
       "sectores.hero.paragraphs",
@@ -201,8 +237,16 @@
       "casos.sectores",
       "casos.galeria",
       "casos.soluciones",
+      "autores.redes",
       "entradas-blog.categorias",
-      "entradas-blog.etiquetas"
+      "entradas-blog.etiquetas",
+      "entradas-blog.firmas",
+      "documentos-cientificos.firmas",
+      "arquetipos.bloques",
+      "arquetipos.bloques.items",
+      "arquetipos.bloques.campos",
+      "arquetipos.bloques.campos.opciones",
+      "arquetipos.bloques.ocultos"
     ],
     "ok": false
   }

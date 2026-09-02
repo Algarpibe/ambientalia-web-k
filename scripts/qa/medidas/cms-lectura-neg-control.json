@@ -1,14 +1,14 @@
 {
   "meta": {
-    "fecha": "2026-08-24",
+    "fecha": "2026-09-02",
     "pregunta": "¿proyecta el contexto del RENDER (declaraciones de la config) lo mismo que el de la IDA (mapas que la ida llenó)?",
     "fuente": "los mismos documentos de la misma DB, con `depth: 1`, por el mismo walker",
     "noPrueba": "que la proyección sea fiel al dato medido — eso es `qa:cms-roundtrip`. Prueba que el camino del render no pierde nada respecto del verificado.",
     "sabotaje": "control"
   },
   "contrato": {
-    "evaluadas": 384,
-    "minimo": 384,
+    "evaluadas": 392,
+    "minimo": 392,
     "suficiente": true
   },
   "porColeccion": {
@@ -47,6 +47,11 @@
       "comparados": 19,
       "distintos": 0
     },
+    "autores": {
+      "documentos": 5,
+      "comparados": 5,
+      "distintos": 0
+    },
     "entradas-blog": {
       "documentos": 152,
       "comparados": 152,
@@ -62,6 +67,11 @@
       "comparados": 23,
       "distintos": 0
     },
+    "arquetipos": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 0
+    },
     "categorias": {
       "documentos": 4,
       "comparados": 4,
@@ -73,8 +83,8 @@
       "distintos": 0
     },
     "categorias-recursos": {
-      "documentos": 10,
-      "comparados": 10,
+      "documentos": 9,
+      "comparados": 9,
       "distintos": 0
     },
     "categorias-cientificas": {
@@ -84,7 +94,7 @@
     }
   },
   "veredicto": {
-    "comparados": 384,
+    "comparados": 392,
     "distintos": 0,
     "ok": true
   },

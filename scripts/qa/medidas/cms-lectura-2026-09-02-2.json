@@ -4,99 +4,99 @@
     "pregunta": "¿proyecta el contexto del RENDER (declaraciones de la config) lo mismo que el de la IDA (mapas que la ida llenó)?",
     "fuente": "los mismos documentos de la misma DB, con `depth: 1`, por el mismo walker",
     "noPrueba": "que la proyección sea fiel al dato medido — eso es `qa:cms-roundtrip`. Prueba que el camino del render no pierde nada respecto del verificado.",
-    "sabotaje": "sin-documentos"
+    "sabotaje": null
   },
   "contrato": {
-    "evaluadas": 0,
+    "evaluadas": 392,
     "minimo": 392,
-    "suficiente": false
+    "suficiente": true
   },
   "porColeccion": {
     "productos": {
       "documentos": 19,
-      "comparados": 0,
+      "comparados": 19,
       "distintos": 0
     },
     "paginas": {
       "documentos": 31,
-      "comparados": 0,
+      "comparados": 31,
       "distintos": 0
     },
     "sectores": {
       "documentos": 4,
-      "comparados": 0,
+      "comparados": 4,
       "distintos": 0
     },
     "monograficos": {
       "documentos": 2,
-      "comparados": 0,
+      "comparados": 2,
       "distintos": 0
     },
     "taxonomia-sectores": {
       "documentos": 11,
-      "comparados": 0,
+      "comparados": 11,
       "distintos": 0
     },
     "casos": {
       "documentos": 57,
-      "comparados": 0,
+      "comparados": 57,
       "distintos": 0
     },
     "faqs": {
       "documentos": 19,
-      "comparados": 0,
+      "comparados": 19,
       "distintos": 0
     },
     "autores": {
       "documentos": 5,
-      "comparados": 0,
+      "comparados": 5,
       "distintos": 0
     },
     "entradas-blog": {
       "documentos": 152,
-      "comparados": 0,
+      "comparados": 152,
       "distintos": 0
     },
     "terminos-kunakpedia": {
       "documentos": 37,
-      "comparados": 0,
+      "comparados": 37,
       "distintos": 0
     },
     "documentos-cientificos": {
       "documentos": 23,
-      "comparados": 0,
+      "comparados": 23,
       "distintos": 0
     },
     "arquetipos": {
       "documentos": 4,
-      "comparados": 0,
+      "comparados": 4,
       "distintos": 0
     },
     "categorias": {
       "documentos": 4,
-      "comparados": 0,
+      "comparados": 4,
       "distintos": 0
     },
     "etiquetas": {
       "documentos": 12,
-      "comparados": 0,
+      "comparados": 12,
       "distintos": 0
     },
     "categorias-recursos": {
       "documentos": 9,
-      "comparados": 0,
+      "comparados": 9,
       "distintos": 0
     },
     "categorias-cientificas": {
       "documentos": 3,
-      "comparados": 0,
+      "comparados": 3,
       "distintos": 0
     }
   },
   "veredicto": {
-    "comparados": 0,
+    "comparados": 392,
     "distintos": 0,
-    "ok": false
+    "ok": true
   },
   "diferencias": []
 }

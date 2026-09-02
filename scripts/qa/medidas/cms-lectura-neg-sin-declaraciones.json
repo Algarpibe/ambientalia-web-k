@@ -1,14 +1,14 @@
 {
   "meta": {
-    "fecha": "2026-08-24",
+    "fecha": "2026-09-02",
     "pregunta": "¿proyecta el contexto del RENDER (declaraciones de la config) lo mismo que el de la IDA (mapas que la ida llenó)?",
     "fuente": "los mismos documentos de la misma DB, con `depth: 1`, por el mismo walker",
     "noPrueba": "que la proyección sea fiel al dato medido — eso es `qa:cms-roundtrip`. Prueba que el camino del render no pierde nada respecto del verificado.",
     "sabotaje": "sin-declaraciones"
   },
   "contrato": {
-    "evaluadas": 384,
-    "minimo": 384,
+    "evaluadas": 392,
+    "minimo": 392,
     "suficiente": true
   },
   "porColeccion": {
@@ -47,6 +47,11 @@
       "comparados": 19,
       "distintos": 0
     },
+    "autores": {
+      "documentos": 5,
+      "comparados": 5,
+      "distintos": 0
+    },
     "entradas-blog": {
       "documentos": 152,
       "comparados": 152,
@@ -62,6 +67,11 @@
       "comparados": 23,
       "distintos": 23
     },
+    "arquetipos": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 4
+    },
     "categorias": {
       "documentos": 4,
       "comparados": 4,
@@ -73,8 +83,8 @@
       "distintos": 0
     },
     "categorias-recursos": {
-      "documentos": 10,
-      "comparados": 10,
+      "documentos": 9,
+      "comparados": 9,
       "distintos": 0
     },
     "categorias-cientificas": {
@@ -84,8 +94,8 @@
     }
   },
   "veredicto": {
-    "comparados": 384,
-    "distintos": 270,
+    "comparados": 392,
+    "distintos": 274,
     "ok": false
   },
   "diferencias": [
@@ -135,211 +145,211 @@
       "coleccion": "paginas",
       "id": 1,
       "slug": "kunak-air-cloud",
-      "ida": "{\"slug\":\"kunak-air-cloud\",\"prefijo\":\"centro-de-ayuda\",\"seo\":{\"title\":\"Kunak Air Cloud - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\\n<p>Software de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-",
-      "render": "{\"slug\":\"kunak-air-cloud\",\"prefijo\":\"centro-de-ayuda\",\"seo\":{\"title\":\"Kunak Air Cloud - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>AIR Cloud</h1>\\n<p>Software de calidad del aire</p>\"},{\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-"
+      "ida": "{\"slug\":\"kunak-air-cloud\",\"prefijo\":\"centro-de-ayuda\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Kunak Air Cloud - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\\n<p>Software de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/",
+      "render": "{\"slug\":\"kunak-air-cloud\",\"prefijo\":\"centro-de-ayuda\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Kunak Air Cloud - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>AIR Cloud</h1>\\n<p>Software de calidad del aire</p>\"},{\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-clou"
     },
     {
       "coleccion": "paginas",
       "id": 2,
       "slug": "kunak-air",
-      "ida": "{\"slug\":\"kunak-air\",\"prefijo\":\"centro-de-ayuda\",\"seo\":{\"title\":\"Kunak AIR - Kunak\"},\"titulo\":\"Kunak AIR\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak AIR</h1>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/ar",
-      "render": "{\"slug\":\"kunak-air\",\"prefijo\":\"centro-de-ayuda\",\"seo\":{\"title\":\"Kunak AIR - Kunak\"},\"titulo\":\"Kunak AIR\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>Kunak AIR</h1>\\n<p>Monitor de calidad del aire</p>\"},{\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air\\\">¿Q"
+      "ida": "{\"slug\":\"kunak-air\",\"prefijo\":\"centro-de-ayuda\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Kunak AIR - Kunak\"},\"titulo\":\"Kunak AIR\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak AIR</h1>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayu",
+      "render": "{\"slug\":\"kunak-air\",\"prefijo\":\"centro-de-ayuda\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Kunak AIR - Kunak\"},\"titulo\":\"Kunak AIR\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>Kunak AIR</h1>\\n<p>Monitor de calidad del aire</p>\"},{\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es"
     },
     {
       "coleccion": "paginas",
       "id": 3,
       "slug": "articulos-de-ayuda",
-      "ida": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Pro\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Pro</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-a",
-      "render": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Pro\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>AIR Pro</h1>\"},{\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air\\\">¿Qué es Kunak "
+      "ida": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Pro\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Pro</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air",
+      "render": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Pro\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>AIR Pro</h1>\"},{\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air\\\""
     },
     {
       "coleccion": "paginas",
       "id": 4,
       "slug": "video-tutoriales",
-      "ida": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"}]},{\"ancho\":\"1_2\",\"modulos\"",
-      "render": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\""
+      "ida": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"}]},{\"ancho\":",
+      "render": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"centro-de-ayuda/kunak-air\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h2>AIR Pro</h2>\\n<p>Video Tutorials</p>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":"
     },
     {
       "coleccion": "paginas",
       "id": 5,
       "slug": "centro-de-ayuda",
-      "ida": "{\"slug\":\"centro-de-ayuda\",\"prefijo\":\"soporte\",\"seo\":{\"title\":\"Centro de ayuda - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Kunak AIR</h2>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"imagen-pagina\",\"src\":\"/",
-      "render": "{\"slug\":\"centro-de-ayuda\",\"prefijo\":\"soporte\",\"seo\":{\"title\":\"Centro de ayuda - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h2>Kunak AIR</h2>\\n<p>Monitor de calidad del aire</p>\"},{\"src\":\"/images/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled.jpg\",\"alt\":\"Kunak "
+      "ida": "{\"slug\":\"centro-de-ayuda\",\"prefijo\":\"soporte\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Centro de ayuda - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Kunak AIR</h2>\\n<p>Monitor de calidad del aire</p>\"},{\"kind\":\"imagen-p",
+      "render": "{\"slug\":\"centro-de-ayuda\",\"prefijo\":\"soporte\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Centro de ayuda - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h2>Kunak AIR</h2>\\n<p>Monitor de calidad del aire</p>\"},{\"src\":\"/images/uploads/2023/02/01-Kunak-AIR-Pro-1-scaled.jpg"
     },
     {
       "coleccion": "paginas",
       "id": 6,
       "slug": "articulos-de-ayuda",
-      "ida": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-de-ayud",
-      "render": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>AIR Cloud</h1>\"},{\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/q"
+      "ida": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>AIR Cloud</h1>\"},{\"kind\":\"toggle\",\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte",
+      "render": "{\"slug\":\"articulos-de-ayuda\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Artículos de ayuda - Kunak\"},\"titulo\":\"AIR Cloud\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>AIR Cloud</h1>\"},{\"titulo\":\"Artículos de ayuda\",\"cuerpo\":\"<ul>\\n<li><a target=\\\"_blank\\\" href=\\\"https://kunakair.com/es/soporte/centro-de-ayuda/kunak-air-cloud/artic"
     },
     {
       "coleccion": "paginas",
       "id": 7,
       "slug": "video-tutoriales",
-      "ida": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales</p>\"}]},{\"ancho",
-      "render": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales</p>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho"
+      "ida": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales<",
+      "render": "{\"slug\":\"video-tutoriales\",\"prefijo\":\"soporte/centro-de-ayuda/kunak-air-cloud\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Video tutoriales - Kunak\"},\"titulo\":\"Kunak Help Center\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Kunak Help Center</h1>\"}]}]},{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h2>AIR Cloud</h2>\\n<p>Video Tutoriales</p>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"col"
     },
     {
       "coleccion": "paginas",
       "id": 8,
       "slug": "productos",
-      "ida": "{\"slug\":\"productos\",\"seo\":{\"title\":\"Sistemas de sensores de calidad del aire - Kunak\",\"description\":\"La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS.\"},\"titulo\":\"Sistemas de sensores de calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Sistemas ",
-      "render": "{\"slug\":\"productos\",\"seo\":{\"title\":\"Sistemas de sensores de calidad del aire - Kunak\",\"description\":\"La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS.\"},\"titulo\":\"Sistemas de sensores de calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Sistemas de sensores de calidad"
+      "ida": "{\"slug\":\"productos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Sistemas de sensores de calidad del aire - Kunak\",\"description\":\"La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS.\"},\"titulo\":\"Sistemas de sensores de calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\"",
+      "render": "{\"slug\":\"productos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Sistemas de sensores de calidad del aire - Kunak\",\"description\":\"La solución más precisa y fiable para la vigilancia de la contaminación del aire. Premiado por la US EPA y Airparif. Certificado por MCERTS.\"},\"titulo\":\"Sistemas de sensores de calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Sistemas de sens"
     },
     {
       "coleccion": "paginas",
       "id": 9,
       "slug": "sectores",
-      "ida": "{\"slug\":\"sectores\",\"seo\":{\"title\":\"Sectores - Kunak\"},\"titulo\":\"Soluciones líderes de control del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soluciones líderes de control del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"",
-      "render": "{\"slug\":\"sectores\",\"seo\":{\"title\":\"Sectores - Kunak\"},\"titulo\":\"Soluciones líderes de control del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Soluciones líderes de control del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"html\":\"<p>Empresas y organizaciones por fin pueden controlar parámetros cr"
+      "ida": "{\"slug\":\"sectores\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Sectores - Kunak\"},\"titulo\":\"Soluciones líderes de control del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soluciones líderes de control del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-p",
+      "render": "{\"slug\":\"sectores\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Sectores - Kunak\"},\"titulo\":\"Soluciones líderes de control del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Soluciones líderes de control del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"html\":\"<p>Empresas y organizaciones por fin pueden controla"
     },
     {
       "coleccion": "paginas",
       "id": 10,
       "slug": "recursos",
-      "ida": "{\"slug\":\"recursos\",\"seo\":{\"title\":\"Recursos - Kunak\"},\"titulo\":\"Centro de recursos sobre la calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Centro de recursos sobre la calidad del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"texto-pagi",
-      "render": "{\"slug\":\"recursos\",\"seo\":{\"title\":\"Recursos - Kunak\"},\"titulo\":\"Centro de recursos sobre la calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Centro de recursos sobre la calidad del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"html\":\"<p>En Kunak queremos que nuestros clientes y distribuid"
+      "ida": "{\"slug\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Recursos - Kunak\"},\"titulo\":\"Centro de recursos sobre la calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Centro de recursos sobre la calidad del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"ki",
+      "render": "{\"slug\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Recursos - Kunak\"},\"titulo\":\"Centro de recursos sobre la calidad del aire\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Centro de recursos sobre la calidad del aire</h1>\"}]},{\"ancho\":\"2_3\",\"modulos\":[{\"html\":\"<p>En Kunak queremos que nuestros client"
     },
     {
       "coleccion": "paginas",
       "id": 11,
       "slug": "kunakpedia",
-      "ida": "{\"slug\":\"kunakpedia\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Kunakpedia - Kunak\",\"description\":\"Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak.\"},\"titulo\":\"Kunakpedia\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":",
-      "render": "{\"slug\":\"kunakpedia\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Kunakpedia - Kunak\",\"description\":\"Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak.\"},\"titulo\":\"Kunakpedia\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Kunakpedia</h1>\"},"
+      "ida": "{\"slug\":\"kunakpedia\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Kunakpedia - Kunak\",\"description\":\"Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak.\"},\"titulo\":\"Kunakpedia\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de rec",
+      "render": "{\"slug\":\"kunakpedia\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Kunakpedia - Kunak\",\"description\":\"Glosario con definiciones claras sobre monitorización ambiental, calidad del aire y tecnología desarrollada por Kunak.\"},\"titulo\":\"Kunakpedia\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Kun"
     },
     {
       "coleccion": "paginas",
       "id": 12,
       "slug": "documentos-cientificos",
-      "ida": "{\"slug\":\"documentos-cientificos\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Documentos científicos - Kunak\",\"description\":\"Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions.\"},\"titulo\":\"Precisión validada por organismos independientes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",",
-      "render": "{\"slug\":\"documentos-cientificos\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Documentos científicos - Kunak\",\"description\":\"Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions.\"},\"titulo\":\"Precisión validada por organismos independientes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"src\":\"/images/uploads/"
+      "ida": "{\"slug\":\"documentos-cientificos\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Documentos científicos - Kunak\",\"description\":\"Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions.\"},\"titulo\":\"Precisión validada por organismos independientes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"",
+      "render": "{\"slug\":\"documentos-cientificos\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Documentos científicos - Kunak\",\"description\":\"Consult scientific studies and publications from independent institutions that validate the accuracy and reliability of Kunak solutions.\"},\"titulo\":\"Precisión validada por organismos independientes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"src\":\"/"
     },
     {
       "coleccion": "paginas",
       "id": 13,
       "slug": "preguntas-frecuentes",
-      "ida": "{\"slug\":\"preguntas-frecuentes\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Preguntas frecuentes - Kunak\",\"description\":\"Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak.\"},\"titulo\":\"Preguntas frecuentes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.",
-      "render": "{\"slug\":\"preguntas-frecuentes\",\"prefijo\":\"recursos\",\"seo\":{\"title\":\"Preguntas frecuentes - Kunak\",\"description\":\"Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak.\"},\"titulo\":\"Preguntas frecuentes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de r"
+      "ida": "{\"slug\":\"preguntas-frecuentes\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Preguntas frecuentes - Kunak\",\"description\":\"Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak.\"},\"titulo\":\"Preguntas frecuentes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/20",
+      "render": "{\"slug\":\"preguntas-frecuentes\",\"prefijo\":\"recursos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Preguntas frecuentes - Kunak\",\"description\":\"Resuelve tus dudas sobre calidad del aire, sensores y monitorización ambiental con las respuestas técnicas y prácticas de Kunak.\"},\"titulo\":\"Preguntas frecuentes\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"2_3\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"al"
     },
     {
       "coleccion": "paginas",
       "id": 14,
       "slug": "aviso-legal",
-      "ida": "{\"slug\":\"aviso-legal\",\"seo\":{\"title\":\"Aviso legal - Kunak\"},\"titulo\":\"Aviso legal - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Aviso Legal</h2>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>El presente aviso legal regula el uso del sitio web www.kunakair.com (en adelante, LA WEB), del que es titular KUNAK TECHNOLOGIES S.L., (en adelante, KUNAK).</p>",
-      "render": "{\"slug\":\"aviso-legal\",\"seo\":{\"title\":\"Aviso legal - Kunak\"},\"titulo\":\"Aviso legal - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Aviso Legal</h2>\"},{\"html\":\"<p>El presente aviso legal regula el uso del sitio web www.kunakair.com (en adelante, LA WEB), del que es titular KUNAK TECHNOLOGIES S.L., (en adelante, KUNAK).</p>\\n<p>La navegación por el sitio web de KUNAK"
+      "ida": "{\"slug\":\"aviso-legal\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Aviso legal - Kunak\"},\"titulo\":\"Aviso legal - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Aviso Legal</h2>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>El presente aviso legal regula el uso del sitio web www.kunakair.com (en adelante, LA WEB), del que es titular KUNAK TECHNOLOGIES S.L., (en adelan",
+      "render": "{\"slug\":\"aviso-legal\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Aviso legal - Kunak\"},\"titulo\":\"Aviso legal - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Aviso Legal</h2>\"},{\"html\":\"<p>El presente aviso legal regula el uso del sitio web www.kunakair.com (en adelante, LA WEB), del que es titular KUNAK TECHNOLOGIES S.L., (en adelante, KUNAK).</p>\\n<p>La navegación por el sit"
     },
     {
       "coleccion": "paginas",
       "id": 15,
       "slug": "contacto",
-      "ida": "{\"slug\":\"contacto\",\"seo\":{\"title\":\"Contacto - Kunak\"},\"titulo\":\"Contacta con nosotros\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[]},{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Contacta con nosotros</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h3>¿En qué podemos ayudarte?</h3>\"},{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.",
-      "render": "{\"slug\":\"contacto\",\"seo\":{\"title\":\"Contacto - Kunak\"},\"titulo\":\"Contacta con nosotros\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[]},{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>Contacta con nosotros</h1>\"},{\"html\":\"<h3>¿En qué podemos ayudarte?</h3>\"},{\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_69_\\\" class=\\\"_form _form_69 _inline-form  "
+      "ida": "{\"slug\":\"contacto\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Contacto - Kunak\"},\"titulo\":\"Contacta con nosotros\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[]},{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Contacta con nosotros</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h3>¿En qué podemos ayudarte?</h3>\"},{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activeh",
+      "render": "{\"slug\":\"contacto\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Contacto - Kunak\"},\"titulo\":\"Contacta con nosotros\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[]},{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<h1>Contacta con nosotros</h1>\"},{\"html\":\"<h3>¿En qué podemos ayudarte?</h3>\"},{\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_69_\\\" class=\\\"_form _form_69"
     },
     {
       "coleccion": "paginas",
       "id": 16,
       "slug": "descarga-catalogo",
-      "ida": "{\"slug\":\"descarga-catalogo\",\"seo\":{\"title\":\"Descarga de catálogo - Kunak\"},\"titulo\":\"Descarga de catálogo - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_80_\\\" class=\\\"_form _form_80 _inline-form  _dark\\\" novalidate data-styles-version=\\\"5\\\">\\n  <input type=\\\"hidden\\\" n",
-      "render": "{\"slug\":\"descarga-catalogo\",\"seo\":{\"title\":\"Descarga de catálogo - Kunak\"},\"titulo\":\"Descarga de catálogo - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_80_\\\" class=\\\"_form _form_80 _inline-form  _dark\\\" novalidate data-styles-version=\\\"5\\\">\\n  <input type=\\\"hidden\\\" name=\\\"u\\\" value="
+      "ida": "{\"slug\":\"descarga-catalogo\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Descarga de catálogo - Kunak\"},\"titulo\":\"Descarga de catálogo - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"codigo\",\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_80_\\\" class=\\\"_form _form_80 _inline-form  _dark\\\" novalidate data-styles-version=\\\"5\\\">\\n  <input ty",
+      "render": "{\"slug\":\"descarga-catalogo\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Descarga de catálogo - Kunak\"},\"titulo\":\"Descarga de catálogo - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/proc.php\\\" id=\\\"_form_80_\\\" class=\\\"_form _form_80 _inline-form  _dark\\\" novalidate data-styles-version=\\\"5\\\">\\n  <input type=\\\"hidden\\\" na"
     },
     {
       "coleccion": "paginas",
       "id": 17,
       "slug": "empresa",
-      "ida": "{\"slug\":\"empresa\",\"seo\":{\"title\":\"Empresa - Quiénes somos, nuestra misión y visión - Kunak\"},\"titulo\":\"Misión\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Sobre nosotros</p>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h2>Fabricamos soluciones fiables para el análi",
-      "render": "{\"slug\":\"empresa\",\"seo\":{\"title\":\"Empresa - Quiénes somos, nuestra misión y visión - Kunak\"},\"titulo\":\"Misión\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<p>Sobre nosotros</p>\"},{\"html\":\"<h2>Fabricamos soluciones fiables para el análisis preciso de gases y partículas y la monitorización ambiental</h2"
+      "ida": "{\"slug\":\"empresa\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Empresa - Quiénes somos, nuestra misión y visión - Kunak\"},\"titulo\":\"Misión\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Sobre nosotros</p>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h2>Fabricamos soluciones fiable",
+      "render": "{\"slug\":\"empresa\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Empresa - Quiénes somos, nuestra misión y visión - Kunak\"},\"titulo\":\"Misión\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<p>Sobre nosotros</p>\"},{\"html\":\"<h2>Fabricamos soluciones fiables para el análisis preciso de gases y partículas y la monitorizació"
     },
     {
       "coleccion": "paginas",
       "id": 18,
       "slug": "premios-y-reconocimientos",
-      "ida": "{\"slug\":\"premios-y-reconocimientos\",\"prefijo\":\"empresa\",\"seo\":{\"title\":\"Premios y reconocimientos - Kunak\"},\"titulo\":\"Premios  y reconocimientos\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Premios  y reconocimientos</h1>\"},{\"kind\":\"texto-pagina\",\"html\"",
-      "render": "{\"slug\":\"premios-y-reconocimientos\",\"prefijo\":\"empresa\",\"seo\":{\"title\":\"Premios y reconocimientos - Kunak\"},\"titulo\":\"Premios  y reconocimientos\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Premios  y reconocimientos</h1>\"},{\"html\":\"<h2>Desde el primer día, nos hemos esforzado por ser una empresa "
+      "ida": "{\"slug\":\"premios-y-reconocimientos\",\"prefijo\":\"empresa\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Premios y reconocimientos - Kunak\"},\"titulo\":\"Premios  y reconocimientos\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Premios  y reconocimientos</h1>\"},{\"kind\":\"texto",
+      "render": "{\"slug\":\"premios-y-reconocimientos\",\"prefijo\":\"empresa\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Premios y reconocimientos - Kunak\"},\"titulo\":\"Premios  y reconocimientos\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Premios  y reconocimientos</h1>\"},{\"html\":\"<h2>Desde el primer día, nos hemos esforzado por s"
     },
     {
       "coleccion": "paginas",
       "id": 19,
       "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
-      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-ciudades\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en ciudades - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en ciudades - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en Bilbao</h2>\\n<p>Rell",
-      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-ciudades\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en ciudades - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en ciudades - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en Bilbao</h2>\\n<p>Rellene el siguiente formu"
+      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-ciudades\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en ciudades - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en ciudades - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en Bilba",
+      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-ciudades\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en ciudades - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en ciudades - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en Bilbao</h2>\\n<p>Rellene el "
     },
     {
       "coleccion": "paginas",
       "id": 20,
       "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-industria",
-      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-industria\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en industria - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en industria - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la planta de Ceme",
-      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-industria\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en industria - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en industria - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la planta de Cemex</h2>\\n<p>Rellene el "
+      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-industria\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en industria - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en industria - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la",
+      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-industria\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en industria - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en industria - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la planta de Cemex</h2>\\"
     },
     {
       "coleccion": "paginas",
       "id": 21,
       "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
-      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-las-minas\",\"seo\":{\"title\":\"Informe técnico: Control de la calidad del aire en las minas - Kunak\"},\"titulo\":\"Informe técnico: Control de la calidad del aire en las minas - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la mina de oro de",
-      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-las-minas\",\"seo\":{\"title\":\"Informe técnico: Control de la calidad del aire en las minas - Kunak\"},\"titulo\":\"Informe técnico: Control de la calidad del aire en las minas - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la mina de oro de Barrick</h2>\"},{\"html"
+      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-las-minas\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: Control de la calidad del aire en las minas - Kunak\"},\"titulo\":\"Informe técnico: Control de la calidad del aire en las minas - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la",
+      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-las-minas\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: Control de la calidad del aire en las minas - Kunak\"},\"titulo\":\"Informe técnico: Control de la calidad del aire en las minas - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la mina de oro de Barric"
     },
     {
       "coleccion": "paginas",
       "id": 22,
       "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-obras",
-      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-obras\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en obras - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en obras - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la demolición del estadio Vic",
-      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-obras\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en obras - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en obras - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la demolición del estadio Vicente Calderón</h2>\\n<p"
+      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-obras\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en obras - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en obras - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la demolición ",
+      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-obras\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: control de la calidad del aire en obras - Kunak\"},\"titulo\":\"Informe técnico: control de la calidad del aire en obras - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en la demolición del estadio Vicente Ca"
     },
     {
       "coleccion": "paginas",
       "id": 23,
       "slug": "informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
-      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-puertos\",\"seo\":{\"title\":\"Informe técnico: Control de la calidad del aire en puertos - Kunak\"},\"titulo\":\"Informe técnico: Control de la calidad del aire en puertos - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en los puertos de la APB</",
-      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-puertos\",\"seo\":{\"title\":\"Informe técnico: Control de la calidad del aire en puertos - Kunak\"},\"titulo\":\"Informe técnico: Control de la calidad del aire en puertos - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en los puertos de la APB</h2>\"},{\"html\":\"<p>Rell"
+      "ida": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-puertos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: Control de la calidad del aire en puertos - Kunak\"},\"titulo\":\"Informe técnico: Control de la calidad del aire en puertos - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Informe técnico: Control de la calidad del aire en los puer",
+      "render": "{\"slug\":\"informe-tecnico-control-de-la-calidad-del-aire-en-puertos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Informe técnico: Control de la calidad del aire en puertos - Kunak\"},\"titulo\":\"Informe técnico: Control de la calidad del aire en puertos - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Informe técnico: Control de la calidad del aire en los puertos de la APB</h2>\"},{"
     },
     {
       "coleccion": "paginas",
       "id": 24,
       "slug": "newsletter",
-      "ida": "{\"slug\":\"newsletter\",\"seo\":{\"title\":\"Suscríbete - Kunak\"},\"titulo\":\"Suscríbete - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Únete a nuestra comunidad</h2>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Suscríbete a nuestra newsletter y recibe las noticias más relevantes del sector cada mes en tu bandeja de entrada.</p>\"},{\"kind\":\"codigo\",\"html\":\"<for",
-      "render": "{\"slug\":\"newsletter\",\"seo\":{\"title\":\"Suscríbete - Kunak\"},\"titulo\":\"Suscríbete - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Únete a nuestra comunidad</h2>\"},{\"html\":\"<p>Suscríbete a nuestra newsletter y recibe las noticias más relevantes del sector cada mes en tu bandeja de entrada.</p>\"},{\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/pr"
+      "ida": "{\"slug\":\"newsletter\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Suscríbete - Kunak\"},\"titulo\":\"Suscríbete - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Únete a nuestra comunidad</h2>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Suscríbete a nuestra newsletter y recibe las noticias más relevantes del sector cada mes en tu bandeja de entrada.</p>\"},{\"kind\":\"codig",
+      "render": "{\"slug\":\"newsletter\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Suscríbete - Kunak\"},\"titulo\":\"Suscríbete - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Únete a nuestra comunidad</h2>\"},{\"html\":\"<p>Suscríbete a nuestra newsletter y recibe las noticias más relevantes del sector cada mes en tu bandeja de entrada.</p>\"},{\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.acti"
     },
     {
       "coleccion": "paginas",
       "id": 25,
       "slug": "politica-de-cookies",
-      "ida": "{\"slug\":\"politica-de-cookies\",\"seo\":{\"title\":\"Política de cookies - Kunak\"},\"titulo\":\"Política de cookies\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Política de cookies</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h3>¿Qué son las cookies?</h3>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Una cookie es un fichero que se descarga en su ordenador al acceder a det",
-      "render": "{\"slug\":\"politica-de-cookies\",\"seo\":{\"title\":\"Política de cookies - Kunak\"},\"titulo\":\"Política de cookies\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Política de cookies</h1>\"},{\"html\":\"<h3>¿Qué son las cookies?</h3>\"},{\"html\":\"<p>Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entr"
+      "ida": "{\"slug\":\"politica-de-cookies\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Política de cookies - Kunak\"},\"titulo\":\"Política de cookies\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h1>Política de cookies</h1>\"},{\"kind\":\"texto-pagina\",\"html\":\"<h3>¿Qué son las cookies?</h3>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Una cookie es un fichero que se descarga en su ordenador a",
+      "render": "{\"slug\":\"politica-de-cookies\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Política de cookies - Kunak\"},\"titulo\":\"Política de cookies\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h1>Política de cookies</h1>\"},{\"html\":\"<h3>¿Qué son las cookies?</h3>\"},{\"html\":\"<p>Una cookie es un fichero que se descarga en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una p"
     },
     {
       "coleccion": "paginas",
       "id": 26,
       "slug": "politica-de-privacidad-y-de-proteccion-de-datos",
-      "ida": "{\"slug\":\"politica-de-privacidad-y-de-proteccion-de-datos\",\"seo\":{\"title\":\"Política de privacidad y de protección de datos - Kunak\"},\"titulo\":\"Política de privacidad y de protección de datos - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Política de privacidad y de protección de datos</h2>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Conforme al artíc",
-      "render": "{\"slug\":\"politica-de-privacidad-y-de-proteccion-de-datos\",\"seo\":{\"title\":\"Política de privacidad y de protección de datos - Kunak\"},\"titulo\":\"Política de privacidad y de protección de datos - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Política de privacidad y de protección de datos</h2>\"},{\"html\":\"<p>Conforme al artículo 13 del Reglamento (UE) 2016/679 del Parl"
+      "ida": "{\"slug\":\"politica-de-privacidad-y-de-proteccion-de-datos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Política de privacidad y de protección de datos - Kunak\"},\"titulo\":\"Política de privacidad y de protección de datos - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Política de privacidad y de protección de datos</h2>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Co",
+      "render": "{\"slug\":\"politica-de-privacidad-y-de-proteccion-de-datos\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Política de privacidad y de protección de datos - Kunak\"},\"titulo\":\"Política de privacidad y de protección de datos - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Política de privacidad y de protección de datos</h2>\"},{\"html\":\"<p>Conforme al artículo 13 del Reglamento (UE) 20"
     },
     {
       "coleccion": "paginas",
       "id": 28,
       "slug": "sistema-interno-de-informacion",
-      "ida": "{\"slug\":\"sistema-interno-de-informacion\",\"seo\":{\"title\":\"Política interna del canal del informante - Kunak\"},\"titulo\":\"Política interna del canal del informante\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Introducción, objeto y aplicación</h2>\\n<p>La Ley 2/2023, de 20 de febrero, reguladora de la protección de las personas que informen sobre infr",
-      "render": "{\"slug\":\"sistema-interno-de-informacion\",\"seo\":{\"title\":\"Política interna del canal del informante - Kunak\"},\"titulo\":\"Política interna del canal del informante\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Introducción, objeto y aplicación</h2>\\n<p>La Ley 2/2023, de 20 de febrero, reguladora de la protección de las personas que informen sobre infracciones normativas y "
+      "ida": "{\"slug\":\"sistema-interno-de-informacion\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Política interna del canal del informante - Kunak\"},\"titulo\":\"Política interna del canal del informante\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Introducción, objeto y aplicación</h2>\\n<p>La Ley 2/2023, de 20 de febrero, reguladora de la protección de las personas que info",
+      "render": "{\"slug\":\"sistema-interno-de-informacion\",\"regimen\":\"BT\",\"seo\":{\"title\":\"Política interna del canal del informante - Kunak\"},\"titulo\":\"Política interna del canal del informante\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Introducción, objeto y aplicación</h2>\\n<p>La Ley 2/2023, de 20 de febrero, reguladora de la protección de las personas que informen sobre infraccione"
     },
     {
       "coleccion": "paginas",
       "id": 29,
       "slug": "soporte",
-      "ida": "{\"slug\":\"soporte\",\"seo\":{\"title\":\"Soporte - Kunak\"},\"titulo\":\"Soporte\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soporte</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"icono\",\"icono\":\"\"},{\"kind\":\"texto-pagina\"",
-      "render": "{\"slug\":\"soporte\",\"seo\":{\"title\":\"Soporte - Kunak\"},\"titulo\":\"Soporte\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Soporte</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"icono\":\"\"},{\"html\":\"<p style=\\\"text-align: center;\\\">Centro de ayuda</p>\"}]},{\"ancho\":\"1_3\",\""
+      "ida": "{\"slug\":\"soporte\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Soporte - Kunak\"},\"titulo\":\"Soporte\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Soporte</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"kind\":\"icono\",\"icono\":\"\"},{\"kind\"",
+      "render": "{\"slug\":\"soporte\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Soporte - Kunak\"},\"titulo\":\"Soporte\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Soporte</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_3\",\"modulos\":[{\"icono\":\"\"},{\"html\":\"<p style=\\\"text-align: center;\\\">Centro de ayuda</p>\"}]},{"
     },
     {
       "coleccion": "paginas",
       "id": 30,
       "slug": "servicio-de-reparacion",
-      "ida": "{\"slug\":\"servicio-de-reparacion\",\"prefijo\":\"soporte\",\"seo\":{\"title\":\"Servicio de reparación (RMA) - Kunak\"},\"titulo\":\"Servicio de reparación (RMA)\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Servicio de reparación (RMA)</h1>\"}]},{\"ancho\":\"1_2\",\"modulos",
-      "render": "{\"slug\":\"servicio-de-reparacion\",\"prefijo\":\"soporte\",\"seo\":{\"title\":\"Servicio de reparación (RMA) - Kunak\"},\"titulo\":\"Servicio de reparación (RMA)\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Servicio de reparación (RMA)</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":\"1_5\",\"modulos\""
+      "ida": "{\"slug\":\"servicio-de-reparacion\",\"prefijo\":\"soporte\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Servicio de reparación (RMA) - Kunak\"},\"titulo\":\"Servicio de reparación (RMA)\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"kind\":\"imagen-pagina\",\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"kind\":\"texto-pagina\",\"html\":\"<h1>Servicio de reparación (RMA)</h1>\"}]},{\"ancho\"",
+      "render": "{\"slug\":\"servicio-de-reparacion\",\"prefijo\":\"soporte\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Servicio de reparación (RMA) - Kunak\"},\"titulo\":\"Servicio de reparación (RMA)\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"1_2\",\"modulos\":[{\"src\":\"/images/uploads/2022/12/punteado.svg\",\"alt\":\"Imagen de recurso\"},{\"html\":\"<h1>Servicio de reparación (RMA)</h1>\"}]},{\"ancho\":\"1_2\",\"modulos\":[]}]},{\"columnas\":[{\"ancho\":"
     },
     {
       "coleccion": "paginas",
       "id": 31,
       "slug": "suscribete",
-      "ida": "{\"slug\":\"suscribete\",\"seo\":{\"title\":\"Suscríbete - Kunak\"},\"titulo\":\"Suscríbete - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Únete a nuestra comunidad</h2>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Suscríbete a nuestra newsletter y recibe las noticias más relevantes del sector cada mes en tu bandeja de entrada.</p>\"},{\"kind\":\"codigo\",\"html\":\"<for",
-      "render": "{\"slug\":\"suscribete\",\"seo\":{\"title\":\"Suscríbete - Kunak\"},\"titulo\":\"Suscríbete - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Únete a nuestra comunidad</h2>\"},{\"html\":\"<p>Suscríbete a nuestra newsletter y recibe las noticias más relevantes del sector cada mes en tu bandeja de entrada.</p>\"},{\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.activehosted.com/pr"
+      "ida": "{\"slug\":\"suscribete\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Suscríbete - Kunak\"},\"titulo\":\"Suscríbete - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"kind\":\"texto-pagina\",\"html\":\"<h2>Únete a nuestra comunidad</h2>\"},{\"kind\":\"texto-pagina\",\"html\":\"<p>Suscríbete a nuestra newsletter y recibe las noticias más relevantes del sector cada mes en tu bandeja de entrada.</p>\"},{\"kind\":\"codig",
+      "render": "{\"slug\":\"suscribete\",\"regimen\":\"B-\",\"seo\":{\"title\":\"Suscríbete - Kunak\"},\"titulo\":\"Suscríbete - Kunak\",\"bloques\":[{\"filas\":[{\"columnas\":[{\"ancho\":\"4_4\",\"modulos\":[{\"html\":\"<h2>Únete a nuestra comunidad</h2>\"},{\"html\":\"<p>Suscríbete a nuestra newsletter y recibe las noticias más relevantes del sector cada mes en tu bandeja de entrada.</p>\"},{\"html\":\"<form method=\\\"POST\\\" action=\\\"https://kunak.acti"
     },
     {
       "coleccion": "sectores",
@@ -758,15 +768,15 @@
       "coleccion": "entradas-blog",
       "id": 1,
       "slug": "estamos-listos-para-ayudarle",
-      "ida": "{\"slug\":\"estamos-listos-para-ayudarle\",\"seo\":{\"title\":\"Estamos listos para ayudarle - Kunak\"},\"titulo\":\"Estamos listos para ayudarle\",\"fechaPublicacion\":\"18 marzo 2020\",\"fechaActualizacion\":\"20 enero 2023\",\"extracto\":\"Queridos amigos/as, Esperamos que estéis bien y que la situación actual os afecte lo menos posible. En Kunak Technologies, en nuestro afán de continuar brindando el mejor servicio, h",
-      "render": "{\"slug\":\"estamos-listos-para-ayudarle\",\"seo\":{\"title\":\"Estamos listos para ayudarle - Kunak\"},\"titulo\":\"Estamos listos para ayudarle\",\"fechaPublicacion\":\"18 marzo 2020\",\"fechaActualizacion\":\"20 enero 2023\",\"extracto\":\"Queridos amigos/as, Esperamos que estéis bien y que la situación actual os afecte lo menos posible. En Kunak Technologies, en nuestro afán de continuar brindando el mejor servicio, h"
+      "ida": "{\"slug\":\"estamos-listos-para-ayudarle\",\"seo\":{\"title\":\"Estamos listos para ayudarle - Kunak\"},\"titulo\":\"Estamos listos para ayudarle\",\"fechaPublicacion\":\"18 marzo 2020\",\"fechaActualizacion\":\"20 enero 2023\",\"categorias\":[{\"nombre\":\"Noticias\",\"slug\":\"noticias\"}],\"etiquetas\":[],\"firmas\":[{\"autor\":{\"slug\":\"javier-fernandez\",\"nombre\":\"Fco. Javier Fernández Huerta\",\"fotoOrigen\":\"https://kunakair.com/wp-",
+      "render": "{\"slug\":\"estamos-listos-para-ayudarle\",\"seo\":{\"title\":\"Estamos listos para ayudarle - Kunak\"},\"titulo\":\"Estamos listos para ayudarle\",\"fechaPublicacion\":\"18 marzo 2020\",\"fechaActualizacion\":\"20 enero 2023\",\"categorias\":[\"noticias\"],\"etiquetas\":[],\"firmas\":[{\"autor\":\"javier-fernandez\",\"papel\":\"escrito\",\"proemio\":\"Escrito por el Director General y cofundador ‹NOMBRE›\"}],\"cuerpo\":\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\"
     },
     {
       "coleccion": "entradas-blog",
       "id": 2,
       "slug": "nos-hemos-mudado",
-      "ida": "{\"slug\":\"nos-hemos-mudado\",\"seo\":{\"title\":\"Nos hemos mudado a unas nuevas y modernas oficinas - Kunak\"},\"titulo\":\"¡Nos hemos mudado!\",\"fechaPublicacion\":\"24 mayo 2019\",\"fechaActualizacion\":\"14 junio 2023\",\"extracto\":\"El crecimiento que estamos viviendo nos ha hecho dar un gran salto, hacer las maletas y trasladarnos a unas nuevas instalaciones. Gracias a la confianza de nuestros clientes y al gran",
-      "render": "{\"slug\":\"nos-hemos-mudado\",\"seo\":{\"title\":\"Nos hemos mudado a unas nuevas y modernas oficinas - Kunak\"},\"titulo\":\"¡Nos hemos mudado!\",\"fechaPublicacion\":\"24 mayo 2019\",\"fechaActualizacion\":\"14 junio 2023\",\"extracto\":\"El crecimiento que estamos viviendo nos ha hecho dar un gran salto, hacer las maletas y trasladarnos a unas nuevas instalaciones. Gracias a la confianza de nuestros clientes y al gran"
+      "ida": "{\"slug\":\"nos-hemos-mudado\",\"seo\":{\"title\":\"Nos hemos mudado a unas nuevas y modernas oficinas - Kunak\"},\"titulo\":\"¡Nos hemos mudado!\",\"fechaPublicacion\":\"24 mayo 2019\",\"fechaActualizacion\":\"14 junio 2023\",\"categorias\":[{\"nombre\":\"Noticias\",\"slug\":\"noticias\"}],\"etiquetas\":[],\"firmas\":[{\"autor\":{\"slug\":\"kunak\",\"nombre\":\"Equipo de marketing y comunicación\",\"fotoOrigen\":\"https://kunakair.com/wp-conten",
+      "render": "{\"slug\":\"nos-hemos-mudado\",\"seo\":{\"title\":\"Nos hemos mudado a unas nuevas y modernas oficinas - Kunak\"},\"titulo\":\"¡Nos hemos mudado!\",\"fechaPublicacion\":\"24 mayo 2019\",\"fechaActualizacion\":\"14 junio 2023\",\"categorias\":[\"noticias\"],\"etiquetas\":[],\"firmas\":[{\"autor\":\"kunak\",\"papel\":\"escrito\",\"proemio\":\"Escrito por el ‹NOMBRE›\"}],\"cuerpo\":\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<p>El creci"
     },
     {
       "coleccion": "entradas-blog",
@@ -807,8 +817,8 @@
       "coleccion": "entradas-blog",
       "id": 8,
       "slug": "proyecto-simgo",
-      "ida": "{\"slug\":\"proyecto-simgo\",\"seo\":{\"title\":\"Proyecto SIMGO - Kunak\",\"ogImage\":\"/images/uploads/2025/10/GN-v2-2c.png\"},\"titulo\":\"Proyecto SIMGO\",\"fechaPublicacion\":\"24 febrero 2026\",\"fechaActualizacion\":\"13 mayo 2026\",\"extracto\":\"NOTA DE PRENSA Kunak Technologies desarrolla el proyecto SIMGO con el apoyo del Gobierno de Navarra   Orcoyen (Navarra), 24 de febrero de 2026.   Kunak Technologies S.L. ha p",
-      "render": "{\"slug\":\"proyecto-simgo\",\"seo\":{\"title\":\"Proyecto SIMGO - Kunak\",\"ogImage\":\"/images/uploads/2025/10/GN-v2-2c.png\"},\"titulo\":\"Proyecto SIMGO\",\"fechaPublicacion\":\"24 febrero 2026\",\"fechaActualizacion\":\"13 mayo 2026\",\"extracto\":\"NOTA DE PRENSA Kunak Technologies desarrolla el proyecto SIMGO con el apoyo del Gobierno de Navarra   Orcoyen (Navarra), 24 de febrero de 2026.   Kunak Technologies S.L. ha p"
+      "ida": "{\"slug\":\"proyecto-simgo\",\"seo\":{\"title\":\"Proyecto SIMGO - Kunak\",\"ogImage\":\"/images/uploads/2025/10/GN-v2-2c.png\"},\"titulo\":\"Proyecto SIMGO\",\"fechaPublicacion\":\"24 febrero 2026\",\"fechaActualizacion\":\"13 mayo 2026\",\"categorias\":[{\"nombre\":\"Noticias\",\"slug\":\"noticias\"}],\"etiquetas\":[],\"firmas\":[{\"autor\":{\"slug\":\"kunak\",\"nombre\":\"Equipo de marketing y comunicación\",\"fotoOrigen\":\"https://kunakair.com/",
+      "render": "{\"slug\":\"proyecto-simgo\",\"seo\":{\"title\":\"Proyecto SIMGO - Kunak\",\"ogImage\":\"/images/uploads/2025/10/GN-v2-2c.png\"},\"titulo\":\"Proyecto SIMGO\",\"fechaPublicacion\":\"24 febrero 2026\",\"fechaActualizacion\":\"13 mayo 2026\",\"categorias\":[\"noticias\"],\"etiquetas\":[],\"firmas\":[{\"autor\":\"kunak\",\"papel\":\"escrito\",\"proemio\":\"Escrito por el ‹NOMBRE›\"}],\"cuerpo\":\"\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t<p"
     },
     {
       "coleccion": "entradas-blog",
@@ -1472,8 +1482,8 @@
       "coleccion": "entradas-blog",
       "id": 103,
       "slug": "en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco",
-      "ida": "{\"slug\":\"en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco\",\"seo\":{\"title\":\"En directo: datos de calidad del aire en la Diamond League en el Estadio Luis II de Mónaco - Kunak\"},\"titulo\":\"En directo: datos de calidad del aire en la Diamond League en el Estadio Luis II de Mónaco\",\"fechaPublicacion\":\"12 julio 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"extracto",
-      "render": "{\"slug\":\"en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco\",\"seo\":{\"title\":\"En directo: datos de calidad del aire en la Diamond League en el Estadio Luis II de Mónaco - Kunak\"},\"titulo\":\"En directo: datos de calidad del aire en la Diamond League en el Estadio Luis II de Mónaco\",\"fechaPublicacion\":\"12 julio 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"extracto"
+      "ida": "{\"slug\":\"en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco\",\"seo\":{\"title\":\"En directo: datos de calidad del aire en la Diamond League en el Estadio Luis II de Mónaco - Kunak\"},\"titulo\":\"En directo: datos de calidad del aire en la Diamond League en el Estadio Luis II de Mónaco\",\"fechaPublicacion\":\"12 julio 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"categori",
+      "render": "{\"slug\":\"en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco\",\"seo\":{\"title\":\"En directo: datos de calidad del aire en la Diamond League en el Estadio Luis II de Mónaco - Kunak\"},\"titulo\":\"En directo: datos de calidad del aire en la Diamond League en el Estadio Luis II de Mónaco\",\"fechaPublicacion\":\"12 julio 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"categori"
     },
     {
       "coleccion": "entradas-blog",
@@ -1486,8 +1496,8 @@
       "coleccion": "entradas-blog",
       "id": 105,
       "slug": "kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0",
-      "ida": "{\"slug\":\"kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0\",\"seo\":{\"title\":\"Kunak participa en la formación de los profesionales del futuro 4.0 - Kunak\"},\"titulo\":\"Kunak participa en la formación de los profesionales del futuro 4.0\",\"fechaPublicacion\":\"10 abril 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"extracto\":\"Kunak ha participado en la creación del Aula Industria 4.0 junto ",
-      "render": "{\"slug\":\"kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0\",\"seo\":{\"title\":\"Kunak participa en la formación de los profesionales del futuro 4.0 - Kunak\"},\"titulo\":\"Kunak participa en la formación de los profesionales del futuro 4.0\",\"fechaPublicacion\":\"10 abril 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"extracto\":\"Kunak ha participado en la creación del Aula Industria 4.0 junto "
+      "ida": "{\"slug\":\"kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0\",\"seo\":{\"title\":\"Kunak participa en la formación de los profesionales del futuro 4.0 - Kunak\"},\"titulo\":\"Kunak participa en la formación de los profesionales del futuro 4.0\",\"fechaPublicacion\":\"10 abril 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"categorias\":[{\"nombre\":\"Artículos\",\"slug\":\"articulos\"}],\"etiquetas\":[{\"nombr",
+      "render": "{\"slug\":\"kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0\",\"seo\":{\"title\":\"Kunak participa en la formación de los profesionales del futuro 4.0 - Kunak\"},\"titulo\":\"Kunak participa en la formación de los profesionales del futuro 4.0\",\"fechaPublicacion\":\"10 abril 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"categorias\":[\"articulos\"],\"etiquetas\":[\"monitorizacion-ambiental\"],\"firmas\":"
     },
     {
       "coleccion": "entradas-blog",
@@ -1500,15 +1510,15 @@
       "coleccion": "entradas-blog",
       "id": 107,
       "slug": "eugreenweek-we-have-gone-green",
-      "ida": "{\"slug\":\"eugreenweek-we-have-gone-green\",\"seo\":{\"title\":\"#SemanaVerdeEuropea: nos hemos pintado de verde! - Kunak\"},\"titulo\":\"#SemanaVerdeEuropea: nos hemos pintado de verde!\",\"fechaPublicacion\":\"13 mayo 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"extracto\":\"¡Hemos cambiado el color de nuestra web! Como parte de la #SemanaVerdeEuropea hemos cambiado el color de nuestra web por el verde. Todos somo",
-      "render": "{\"slug\":\"eugreenweek-we-have-gone-green\",\"seo\":{\"title\":\"#SemanaVerdeEuropea: nos hemos pintado de verde! - Kunak\"},\"titulo\":\"#SemanaVerdeEuropea: nos hemos pintado de verde!\",\"fechaPublicacion\":\"13 mayo 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"extracto\":\"¡Hemos cambiado el color de nuestra web! Como parte de la #SemanaVerdeEuropea hemos cambiado el color de nuestra web por el verde. Todos somo"
+      "ida": "{\"slug\":\"eugreenweek-we-have-gone-green\",\"seo\":{\"title\":\"#SemanaVerdeEuropea: nos hemos pintado de verde! - Kunak\"},\"titulo\":\"#SemanaVerdeEuropea: nos hemos pintado de verde!\",\"fechaPublicacion\":\"13 mayo 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"categorias\":[{\"nombre\":\"Noticias\",\"slug\":\"noticias\"}],\"etiquetas\":[{\"nombre\":\"Monitorización ambiental\",\"slug\":\"monitorizacion-ambiental\"}],\"firmas\":[{\"",
+      "render": "{\"slug\":\"eugreenweek-we-have-gone-green\",\"seo\":{\"title\":\"#SemanaVerdeEuropea: nos hemos pintado de verde! - Kunak\"},\"titulo\":\"#SemanaVerdeEuropea: nos hemos pintado de verde!\",\"fechaPublicacion\":\"13 mayo 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"categorias\":[\"noticias\"],\"etiquetas\":[\"monitorizacion-ambiental\"],\"firmas\":[{\"autor\":\"kunak\",\"papel\":\"escrito\",\"proemio\":\"Escrito por el ‹NOMBRE›\"}],\"cu"
     },
     {
       "coleccion": "entradas-blog",
       "id": 108,
       "slug": "fourth-session-of-the-united-nations-environment-assembly-2",
-      "ida": "{\"slug\":\"fourth-session-of-the-united-nations-environment-assembly-2\",\"seo\":{\"title\":\"Cuarta Sesión de la Asamblea de las Naciones Unidas para el Medio Ambiente - Kunak\"},\"titulo\":\"Cuarta Sesión de la Asamblea de las Naciones Unidas para el Medio Ambiente\",\"fechaPublicacion\":\"8 marzo 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"extracto\":\"Estamos muy orgullosos de participar en la Cuarta Sesión de ",
-      "render": "{\"slug\":\"fourth-session-of-the-united-nations-environment-assembly-2\",\"seo\":{\"title\":\"Cuarta Sesión de la Asamblea de las Naciones Unidas para el Medio Ambiente - Kunak\"},\"titulo\":\"Cuarta Sesión de la Asamblea de las Naciones Unidas para el Medio Ambiente\",\"fechaPublicacion\":\"8 marzo 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"extracto\":\"Estamos muy orgullosos de participar en la Cuarta Sesión de "
+      "ida": "{\"slug\":\"fourth-session-of-the-united-nations-environment-assembly-2\",\"seo\":{\"title\":\"Cuarta Sesión de la Asamblea de las Naciones Unidas para el Medio Ambiente - Kunak\"},\"titulo\":\"Cuarta Sesión de la Asamblea de las Naciones Unidas para el Medio Ambiente\",\"fechaPublicacion\":\"8 marzo 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"categorias\":[{\"nombre\":\"Eventos\",\"slug\":\"eventos\"}],\"etiquetas\":[{\"nomb",
+      "render": "{\"slug\":\"fourth-session-of-the-united-nations-environment-assembly-2\",\"seo\":{\"title\":\"Cuarta Sesión de la Asamblea de las Naciones Unidas para el Medio Ambiente - Kunak\"},\"titulo\":\"Cuarta Sesión de la Asamblea de las Naciones Unidas para el Medio Ambiente\",\"fechaPublicacion\":\"8 marzo 2019\",\"fechaActualizacion\":\"15 junio 2026\",\"categorias\":[\"eventos\"],\"etiquetas\":[\"monitorizacion-ambiental\"],\"firma"
     },
     {
       "coleccion": "entradas-blog",
@@ -1942,21 +1952,21 @@
       "id": 18,
       "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite",
       "ida": "{\"slug\":\"informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Informe de co-ubicación en Glasgow Kerbside - Kunak AIR Lite - Kunak\",\"ogImage\":\"/images/uploads/2025/02/ricardo-sensor-report-air-lite.jpg\"},\"titulo\":\"Informe de co-ubicación en Glasgow Kerbside – Kunak AIR Lite\",\"autores\":\"",
-      "render": "{\"slug\":\"informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite\",\"categoria\":\"evaluaciones-independientes\",\"seo\":{\"title\":\"Informe de co-ubicación en Glasgow Kerbside - Kunak AIR Lite - Kunak\",\"ogImage\":\"/images/uploads/2025/02/ricardo-sensor-report-air-lite.jpg\"},\"titulo\":\"Informe de co-ubicación en Glasgow Kerbside – Kunak AIR Lite\",\"autores\":\"Ricardo\",\"anyo\":\"2024\",\"portada\":{\"src\":\"/images"
+      "render": "{\"slug\":\"informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite\",\"categoria\":\"evaluaciones-independientes\",\"seo\":{\"title\":\"Informe de co-ubicación en Glasgow Kerbside - Kunak AIR Lite - Kunak\",\"ogImage\":\"/images/uploads/2025/02/ricardo-sensor-report-air-lite.jpg\"},\"titulo\":\"Informe de co-ubicación en Glasgow Kerbside – Kunak AIR Lite\",\"autores\":\"Ricardo\",\"anyo\":\"2024\",\"firmas\":[{\"autor\":\"kunak"
     },
     {
       "coleccion": "documentos-cientificos",
       "id": 19,
       "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro",
       "ida": "{\"slug\":\"informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Informe de co-ubicación en Glasgow Kerbside - Kunak AIR Pro - Kunak\",\"ogImage\":\"/images/uploads/2025/02/ricardo-sensor-report.jpg\"},\"titulo\":\"Informe de co-ubicación en Glasgow Kerbside – Kunak AIR Pro\",\"autores\":\"Ricardo\",\"an",
-      "render": "{\"slug\":\"informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro\",\"categoria\":\"evaluaciones-independientes\",\"seo\":{\"title\":\"Informe de co-ubicación en Glasgow Kerbside - Kunak AIR Pro - Kunak\",\"ogImage\":\"/images/uploads/2025/02/ricardo-sensor-report.jpg\"},\"titulo\":\"Informe de co-ubicación en Glasgow Kerbside – Kunak AIR Pro\",\"autores\":\"Ricardo\",\"anyo\":\"2024\",\"portada\":{\"src\":\"/images/uploads/202"
+      "render": "{\"slug\":\"informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro\",\"categoria\":\"evaluaciones-independientes\",\"seo\":{\"title\":\"Informe de co-ubicación en Glasgow Kerbside - Kunak AIR Pro - Kunak\",\"ogImage\":\"/images/uploads/2025/02/ricardo-sensor-report.jpg\"},\"titulo\":\"Informe de co-ubicación en Glasgow Kerbside – Kunak AIR Pro\",\"autores\":\"Ricardo\",\"anyo\":\"2024\",\"firmas\":[{\"autor\":\"kunak\",\"papel\":\"e"
     },
     {
       "coleccion": "documentos-cientificos",
       "id": 20,
       "slug": "desafio-airlab-de-microsensores-2023",
-      "ida": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"portada\":{\"src\":\"/images/uploads/20",
-      "render": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":\"evaluaciones-independientes\",\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"portada\":{\"src\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.j"
+      "ida": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"firmas\":[{\"autor\":{\"slug\":\"kunak\",\"",
+      "render": "{\"slug\":\"desafio-airlab-de-microsensores-2023\",\"categoria\":\"evaluaciones-independientes\",\"seo\":{\"title\":\"Desafío AIRLAB de microsensores 2023 - Kunak\",\"ogImage\":\"/images/uploads/2025/02/airlab-microsensors-challenge-2023-kunak.jpg\"},\"titulo\":\"Desafío AIRLAB de microsensores 2023\",\"autores\":\"Airparif\",\"anyo\":\"2023\",\"firmas\":[{\"autor\":\"kunak\",\"papel\":\"escrito\",\"proemio\":\"Escrito por el ‹NOMBRE›\"}],\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -1970,7 +1980,7 @@
       "id": 22,
       "slug": "soluciones-avanzadas-de-monitorizacion",
       "ida": "{\"slug\":\"soluciones-avanzadas-de-monitorizacion\",\"prefijo\":\"estudios-cientificos\",\"categoria\":{\"nombre\":\"Artículos técnicos\",\"slug\":\"articulos-tecnicos\"},\"seo\":{\"title\":\"Soluciones avanzadas de monitorización - Kunak\",\"ogImage\":\"/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg\"},\"titulo\":\"Soluciones avanzadas de monitorización\",\"autores\":\"Revista Hydrocarbon Engineering\",\"an",
-      "render": "{\"slug\":\"soluciones-avanzadas-de-monitorizacion\",\"prefijo\":\"estudios-cientificos\",\"categoria\":\"articulos-tecnicos\",\"seo\":{\"title\":\"Soluciones avanzadas de monitorización - Kunak\",\"ogImage\":\"/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg\"},\"titulo\":\"Soluciones avanzadas de monitorización\",\"autores\":\"Revista Hydrocarbon Engineering\",\"anyo\":\"2026\",\"portada\":{\"src\":\"/images/up"
+      "render": "{\"slug\":\"soluciones-avanzadas-de-monitorizacion\",\"prefijo\":\"estudios-cientificos\",\"categoria\":\"articulos-tecnicos\",\"seo\":{\"title\":\"Soluciones avanzadas de monitorización - Kunak\",\"ogImage\":\"/images/uploads/2026/07/February_2026_Kunak_Hydrocarbon_engineering.jpg\"},\"titulo\":\"Soluciones avanzadas de monitorización\",\"autores\":\"Revista Hydrocarbon Engineering\",\"anyo\":\"2026\",\"firmas\":[{\"autor\":\"kunak\",\""
     },
     {
       "coleccion": "documentos-cientificos",
@@ -1978,6 +1988,34 @@
       "slug": "evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico",
       "ida": "{\"slug\":\"evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico\",\"categoria\":{\"nombre\":\"Evaluaciones independientes\",\"slug\":\"evaluaciones-independientes\"},\"seo\":{\"title\":\"Evaluación de microsensores para la medición de calidad del aire en Ciudad de México - Kunak\",\"ogImage\":\"/images/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg\"}",
       "render": "{\"slug\":\"evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico\",\"categoria\":\"evaluaciones-independientes\",\"seo\":{\"title\":\"Evaluación de microsensores para la medición de calidad del aire en Ciudad de México - Kunak\",\"ogImage\":\"/images/uploads/2025/02/SEDEMA-Evaluation-of-Low-Cost-Air-Quality-Sensors-in-Mexico-City.jpg\"},\"titulo\":\"Evaluación de microsensores para la m"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 1,
+      "slug": "monitor-calidad-aire",
+      "ida": "{\"slug\":\"monitor-calidad-aire\",\"titulo\":\"Monitor de calidad del aire profesional | Kunak AIR Pro\",\"arquetipo\":\"producto\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunaka",
+      "render": "{\"slug\":\"monitor-calidad-aire\",\"titulo\":\"Monitor de calidad del aire profesional | Kunak AIR Pro\",\"arquetipo\":\"producto\",\"bloques\":[{\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itempr"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 2,
+      "slug": "accesorios",
+      "ida": "{\"slug\":\"accesorios\",\"titulo\":\"Accesorios para sensores de calidad del aire\",\"arquetipo\":\"catalogo\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop",
+      "render": "{\"slug\":\"accesorios\",\"titulo\":\"Accesorios para sensores de calidad del aire\",\"arquetipo\":\"catalogo\",\"bloques\":[{\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop=\\\"item\\\"><span ite"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 3,
+      "slug": "software-de-medicion-calidad-del-aire",
+      "ida": "{\"slug\":\"software-de-medicion-calidad-del-aire\",\"titulo\":\"Software para el análisis de la calidad del aire | Kunak AIR Cloud\",\"arquetipo\":\"software\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"",
+      "render": "{\"slug\":\"software-de-medicion-calidad-del-aire\",\"titulo\":\"Software para el análisis de la calidad del aire | Kunak AIR Cloud\",\"arquetipo\":\"software\",\"bloques\":[{\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 4,
+      "slug": "kunak-api",
+      "ida": "{\"slug\":\"kunak-api\",\"titulo\":\"Kunak API\",\"arquetipo\":\"software\",\"varianteCorta\":true,\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop=\\\"item\\\"><span",
+      "render": "{\"slug\":\"kunak-api\",\"titulo\":\"Kunak API\",\"arquetipo\":\"software\",\"varianteCorta\":true,\"bloques\":[{\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop=\\\"item\\\"><span itemprop=\\\"name\\\">"
     }
   ]
 }

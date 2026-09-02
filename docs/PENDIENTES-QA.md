@@ -187,6 +187,156 @@ falta escribir instrumento: hizo falta **ejercitarlo antes de cablear**, que es
 §regla 24 —*el negativo de un comparador se corre antes de que exista el lado
 que va a medir*— aplicada al comparador de lectura en vez de al de píxeles.
 
+### ESCALÓN 1 · el arreglo del `conKind`, las predicciones, y ⚠⚠ EL CORTE LIMPIO
+
+#### 1 · El arreglo, verificado POR EFECTO y no por frescura
+
+`custom: { conKind: true }` sobre `arquetipos.bloques`
+(`colecciones/arquetipos.ts:106`). Una línea de **esquema**; `proyector.ts` y
+`mapeo.mjs` sin tocar, luego **0 familias cableadas caducadas**.
+
+| sonda | antes | después |
+|---|---|---|
+| `qa:cms-decl` · huecos | **12** | **1** (el preexistente de `paginas`) |
+| `qa:cms-lectura` | **388/392**, EXIT=2 | **392/392, EXIT=0** |
+| `qa:cms-lectura-neg` | — | **4/4** (3 sabotajes + control) |
+| `typecheck` · `typecheck:cms` | — | **EXIT=0** los dos |
+
+**Y el verde está respaldado por el sabotaje que ejercita este defecto exacto:**
+`cms-lectura.neg.mjs` §`SABOTAJE=sin-declaraciones` — *«sin las declaraciones de
+`custom` la vuelta pierde el término embebido y el `kind`»*. O sea que la sonda
+**sabe fallar por este motivo**, que es lo que convierte el 392/392 en evidencia
+y no en un verde de una guarda que no mira.
+
+#### 2 · Lo que NO es de esta tanda, atribuido con su fecha
+
+`qa:cms-decl` sigue en **EXIT=2** y `qa:cms-decl-neg` en **5/8**. Los **3** casos
+rojos del negativo dependen todos de *«0 huecos»*, y el hueco es **uno solo y
+ajeno**. Datado contra el archivo en vez de supuesto:
+
+| congelada | `ok` | huecos |
+|---|---|---|
+| `cms-decl-2026-08-18` | `true` | **0** |
+| `cms-decl-2026-08-23-2` | `true` | **0** |
+| **`cms-decl-2026-08-27`** | **`false`** | **1** · `vaciaEsAusente paginas.bloques.filas.columnas.modulos.cabeceras` |
+| `cms-decl-2026-09-02` (hoy, tras el arreglo) | `false` | **1** · el mismo |
+
+Apareció **entre el 23 y el 27 de agosto**, o sea **cinco tandas antes**, y
+`cms-decl-neg` lleva en 5/8 desde entonces. Se ficha; no se arregla aquí, porque
+es de `paginas` y esta tanda no la toca.
+
+**Higiene tras negativos** (nota de operación): `git status` → **0 borrados** ·
+**0 fuentes de sonda tocadas**. Las 12 congeladas `-neg-*` modificadas eran de
+**2026-08-23** y se han actualizado al esquema de hoy — §regla 5bis, caducidad
+por evolución del objeto, no por esta tanda.
+
+#### 3 · PREDICCIONES, escritas antes de medir
+
+**P1 · las 4 rutas a Δ0** contra `clon-base-1440-2026-09-02.json` y
+`clon-base-390-2026-09-02.json` — **426 rutas cada uno**, `mtime` 14:37 y 15:12
+del 2026-09-02, o sea de la **140.ª, la tanda inmediatamente anterior**: §regla
+51 satisfecha con **0 tandas de distancia**, no «el más reciente disponible».
+Las 4 dianas están dentro, con su `docH` y su `h1`:
+
+| ruta | `docH` @1440 | `h1.y` |
+|---|---|---|
+| `/monitor-calidad-aire` | 12867 | 421.39 |
+| `/accesorios` | 11291 | 392.59 |
+| `/software-de-medicion-calidad-del-aire` | 11802 | 421.39 |
+| `/kunak-api` | 5380 | 392.59 |
+
+> **Se predice Δ0 en las 426, no sólo en las 4.** Y la predicción es fuerte
+> **porque el cambio es de esquema y las 4 rutas siguen leyendo de `src/lib`**:
+> esto es el **control NO-OP** del `conKind`, no la verificación del cableado.
+> Un Δ≠0 aquí no sería «el cableado movió algo» — sería que una declaración de
+> `custom` mueve píxeles en rutas que no la consumen, y eso no tiene mecanismo.
+
+**P2 · qué NO puede llegar a Δ0, y por qué** — declarado por adelantado como
+hizo el precedente (`lib/cms/arquetipo-a.ts` con sus 4 rutas de T4b):
+
+- **por transformación del seed: NADA.** Derivado del extraído:
+  `bloqueos.total = 0` en los **4 ejes** sobre **198 campos HTML** ·
+  `mediaSinResolver = []` · **0** `<script>` · **0** `data-media` · **0**
+  ofuscación de Cloudflare en 184 658 bytes. Así que **el delta de las 2 rutas
+  de `paginas` no aplica a este lote**;
+- **`T-nombre-media` NO es candidato, y por poco.** Es la única transformación
+  del extraído: **6 pares distintos · 12 ocurrencias**, todas en
+  `monitor-calidad-aire·galeria` (`NO2_UK.webp → no2_uk.webp` … `PM2.5_belgium
+  .webp → pm25_belgium.webp`). Parecía discrepancia y no lo es: derivado **byte
+  a byte** (`readdirSync().includes()`, nunca `existsSync` — §regla 47),
+  **sólo existen las minúsculas**, y `src/lib/monitor.ts:223,228` **ya sirve
+  esas**. La transformación va del **original al clon**, no entre las dos
+  versiones del clon;
+- **y lo que SÍ es candidato es todo, por el corte limpio de abajo.**
+
+**P3 · el manifiesto no cambia de cardinal**, derivado y citado con su fichero:
+`apps/web/.next/prerender-manifest.json` → **429 claves crudas**;
+`clon-base-1440-2026-09-02.json` → **426 rutas**. La diferencia son **3, y se
+nombran** en vez de restarse: `/_global-error` · `/_not-found` · `/favicon.ico`.
+**Diferencia simétrica en la otra dirección: 0** — el baseline cubre todas las
+páginas reales. Las 4 dianas: **EMITIDA** las cuatro.
+
+---
+
+### ⚠⚠ CORTE LIMPIO — EL MODELO DE `arquetipos` NO EXPRESA LO QUE LAS 4 PÁGINAS CONSUMEN. INTERSECCIÓN **CERO**.
+
+El punto 8 del encargo pregunta por un campo que exija **modificar
+`proyector.ts`**. Ése no se da: el `conKind` era esquema. **Pero hay un corte
+mayor, y no es de proyector: es de MODELO.**
+
+**La medición, y es de una línea:**
+
+| lado | qué es | n |
+|---|---|---|
+| **A** · lo que las 4 `page.tsx` importan de `@/lib/<ruta>` | `S2_BODY` · `SPEC_ROWS` · `FRAMES_360` · `CONTAMINANT_CHIPS` · `ANCLAS` · `HERO` · `INTRO_RIGHT_ITEMS` … | **22 constantes** |
+| **B** · lo que `arquetipos` expresa | `kind` · `pieza` · `contenido` · `imagen` · `alt` · `items` · `campos` … | **31 campos** |
+| **A ∩ B** | | **0** |
+
+**No es que los nombres difieran: son dos modelos distintos del mismo objeto.**
+`src/lib/monitor.ts` tiene **45 exports tipados POR SECCIÓN**, consumidos por 11
+componentes calibrados (`HeroProducto` · `Beneficios` · `Especificaciones` ·
+`GaleriaEnsayos` · `SondasMeteorologicas` · `PaquetesEnergia` …).
+`arquetipos` guarda el cuerpo del **BUILDER**: 90 bloques planos con **HTML
+servido literal**, y del ORIGINAL —la miga trae `href="https://kunakair.com/es/"`,
+sin la Regla de rutas locales aplicada—.
+
+**Y el contraste con el precedente que SÍ funcionó es el que lo cierra**, porque
+demuestra que la diferencia no es «cablear es caro» sino **una propiedad del
+modelo**:
+
+| | GRUPO A (F2-3, cableado y a Δ0) | **F3-5 (`arquetipos`)** |
+|---|---|---|
+| lo que devuelve el lector | `DocumentoCientifico[]` — el tipo de `types/kunak.ts:609` | 90 bloques `{kind, contenido}` |
+| ¿lo consumía ya el render? | **sí** — `listados/TarjetaCientifica.tsx` usa ese mismo tipo | **no existe consumidor**: 0 ficheros de `apps/web/src/` mencionan `texto-arq`, `icono-arq` ni `bloquesArquetipo` |
+| qué costó cablear | cambiar de dónde viene el array | **escribir el arquetipo entero otra vez** |
+
+**El coste real está medido, porque el repo ya lo pagó una vez.** Renderizar
+bloques de builder para `paginas` (F3-3) costó
+`components/cola-larga/CuerpoPagina.tsx` **653 líneas** + `PaginaF33.tsx` **228**
++ la hoja `app/f33.css` derivada con `qa:f33-clases` + la geometría de
+`qa:f33-geo` + un comparador `qa:f33-cmp` — que **aún seguía a 0 ejes
+comparados** cuando se escribió su cabecera.
+
+**Y hay una asimetría que F3-3 no tenía y ésta sí:** las 31 páginas de la cola
+larga **se estrenaron** sirviendo desde el CMS — no había clon anterior que
+igualar. Las 4 de F3-5 **llevan meses calibradas al píxel**. Sustituir sus 11
+componentes por HTML plano del builder **no puede dar Δ0 contra
+`clon-base-*-2026-09-02`**, que es exactamente lo que P1 pide predecir: sería
+tirar la calibración y recalibrar contra un objetivo que se acaba de mover, o
+sea **fabricar una FAMILIA DE CALIBRACIÓN** con el CMS de coartada.
+
+> **Por eso PARO aquí y lo reporto, que es lo que el punto 8 manda cuando el
+> trabajo real excede el radio declarado.** El encargo asume que «cablear los
+> lectores» es cambiar la FUENTE del dato manteniendo el render — cierto en
+> GRUPO A por una propiedad del modelo que **F3-5 no tiene**. Aquí «cablear» es
+> **reescribir las 4 páginas**, y eso tiene su propio radio, su propia sonda de
+> geometría y su propio criterio de aceptación. No es un arreglo de paso.
+
+**Lo que esta tanda SÍ deja hecho y verificado:** el `conKind`, que era un
+defecto real, medido, silencioso y **bloqueante para cualquier cableado futuro**
+— sin él los 231 módulos llegan al render sin discriminante y las 4 rutas
+responderían **200 con el cuerpo vacío**.
+
 ## ✅ §140.ª · **CMS-9 = A' — LA GUARDA DENTRO DE SU INVARIANTE, Y `ARQUETIPOS` SEMBRADA (4 FILAS)** — 2026-09-02
 
 **Estado: PASO 0 · ESCALÓN 1 · ESCALÓN 2 completos.** Continuación misma-fecha
