@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "fecha": "2026-09-02",
+    "tanda": "139.ª",
+    "que": "Alcance completo de la colisión de slug entre `arquetipos` (F3-5) y `productos` (CPT solutions), derivado tras el primer intento real de `cms:seed` con arquetipos cableada."
+  },
+  "arquetiposSlugs": [
+    { "slug": "monitor-calidad-aire", "arquetipo": "producto", "colisiona": true },
+    { "slug": "accesorios", "arquetipo": "catalogo", "colisiona": false },
+    { "slug": "software-de-medicion-calidad-del-aire", "arquetipo": "software", "colisiona": true },
+    { "slug": "kunak-api", "arquetipo": "software", "colisiona": true }
+  ],
+  "productosColisionantes": [
+    { "id": 11, "slug": "monitor-calidad-aire", "titulo": "AIR Pro", "pagina": "propia", "padre": null },
+    { "id": 18, "slug": "software-de-medicion-calidad-del-aire", "pagina": "propia", "padre": null },
+    { "id": 9, "slug": "kunak-api", "pagina": "propia", "padre": null }
+  ],
+  "productosPaginaPropiaTotal": 16,
+  "productosPaginaPropiaSinColision": 13,
+  "cruceConPaginas": { "colisionesConPaginas": 0, "nota": "0 de los 16 `pagina:propia` de productos casan con ningún slug de la colección `paginas`" },
+  "productosCamposDeCuerpo": [],
+  "productosCamposFicha": ["titulo", "tagline", "description", "highlight", "bullets_titulo", "image", "seo"],
+  "veredicto": "3 de 4 slugs de arquetipos colisionan con productos.pagina='propia' + padre vacío (genuino, por diseño, no accidental). productos no tiene campo de cuerpo, así que no puede cumplir por sí solo la promesa de 'página propia' para esas 3 rutas. Decisión de modelo (CMS-9), no resuelta en esta tanda."
+}

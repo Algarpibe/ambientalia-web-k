@@ -7369,7 +7369,7 @@ y su exclusión razonada (`googletagmanager.com`).
 
 ---
 
-## CMS-8 · QUÉ SE HACE CON LOS 5 `required` DE `arquetipos` QUE PARAN LA SIEMBRA — ⛔ **ABIERTO** (2026-09-01, 138.ª)
+## CMS-8 · QUÉ SE HACE CON LOS 5 `required` DE `arquetipos` QUE PARAN LA SIEMBRA — ✅ **RESUELTO** (2026-09-02, 139.ª; abierto 2026-09-01, 138.ª)
 
 **Levantado por el ESCALÓN 2 de la 138.ª**, al cablear `arquetipos` al sembrador.
 No es un hallazgo buscado: el alta movió el sondeo de **360 a 364 filas** —o sea
@@ -7497,3 +7497,179 @@ Decisión del propietario sobre **8a** (4 opciones) y sobre **8b** (los 3 por
 separado, no en bloque). Con 8a resuelta en A, su migración va **antes de la
 primera fila** — la ventana de §regla 30 sigue abierta hoy: `arquetipos` a **0
 filas**, medido.
+
+---
+
+### ✅ RESUELTO (139.ª, 2026-09-02)
+
+**8a = A.** `enlace()` (`campos/comunes.ts`) gana un tercer parámetro
+`{opcional}`: con él, `label`/`href` dejan el `required` de Payload y se
+sustituyen por un validador de COHERENCIA en `href` (si hay `href`, hay
+`label`; lee `label` por `siblingData`, mismo patrón que `unidadDe`).
+Aplicado **sólo** al uso de `imagen-arq` — los otros dos consumidores de
+`enlace()` (`boton-arq.destino`, `cta-arq.destino`, derivados con `grep`, 3
+usos en total) no se tocan, porque ahí el `required` sí es la decisión (el
+módulo existe para enlazar). Migración
+`20260902_151020_f3_5_imagen_arq_enlace_opcional`, reversa probada elemento
+a elemento (§regla 30).
+
+**8b, los dos que SÍ, comprobados en el original antes de aplicar nada:**
+
+- `texto-arq.contenido` (1 de 100): `et_pb_text_24` de `monitor-calidad-aire`
+  existe en el HTML servido —entre la galería y `et_pb_text_25.lista-resultados`—
+  y no lleva `.et_pb_text_inner` dentro: separador vacío real, no hueco del
+  extractor;
+- `formulario-arq…opciones.texto` (3, en 1 formulario): los `<select
+  name="field[27]">` y `<select name="field[51]">` de `monitor-calidad-aire`
+  traen el placeholder «— elige —» de ActiveCampaign como `<option>` sin
+  texto (`field[27]` trae DOS: la #1 `selected` y una segunda `value=""` en
+  medio del listado de 269 países — #242).
+
+Los dos pasan por `requeridoConVacio()`, que se corrigió en la misma tanda
+para **ENCADENAR** con un `validate` previo en vez de sustituirlo —
+`contenido` ya traía `validaHtmlCorpus` (whitelist de etiquetas) y aplicar la
+función tal cual la habría perdido en silencio. El único consumidor previo
+(`grupo-a.ts:173`, sin `validate` propio) no cambia de comportamiento.
+Migración `20260902_152309_f3_5_vacios_texto_y_formulario`, misma disciplina
+de reversa.
+
+**8b, el que NO — ficha de instrumento, no de esquema:**
+
+`video-arq.url` se queda `required: true`, sin tocar. Derivado
+`extractor-f35.mjs:478`: para `et_pb_video`, el extractor busca `src` en el
+propio `.et_pb_video_box` o, si no, en un `<img>` dentro del módulo. Los 2
+vídeos reales (`monitor-calidad-aire`, `software-de-medicion-calidad-del-aire`)
+son embeds de YouTube servidos como `<iframe src="https://www.youtube.com/embed/…">`
+DENTRO de `.et_pb_video_box` — un canal que el extractor no contempla, así
+que los dos casan `src ?? ""` y el `required` los rechaza correctamente. Es
+dato real del original por un canal que el instrumento no lee (§sondas 4,
+quinta cara), confirmado y no sólo sospechado. **Arreglar el extractor queda
+para otra tanda** — el encargo lo pedía así explícitamente y el arreglo no es
+de una línea sin riesgo: hay que decidir el orden de preferencia entre
+`.et_pb_video_box[src]`, `<img src>` e `iframe[src]` con más de una instancia
+delante.
+
+Ambas migraciones probadas con `migrate` → `migrate:down` → `migrate`,
+comparación ELEMENTO A ELEMENTO (tablas · columnas · tipos · constraints ·
+`payload_migrations`) contra la línea base, **0 y 0** en los cinco ejes las
+dos veces. El log de `migrate:down` mintió sobre el alcance las TRES veces
+que se corrió esta tanda (`«Rolling back batch N consisting of N
+migration(s)»` revirtiendo siempre UNA) — se verificó en la tabla, nunca en
+el log (§regla 30). §regla 42 no aplica a ninguna de las dos: ningún `DROP
+TABLE`/`DROP CONSTRAINT`, sólo `ALTER COLUMN`.
+
+---
+
+## CMS-9 · `arquetipos` COLISIONA CON `productos` EN 3 DE SUS 4 SLUGS — ⛔ **ABIERTO** (2026-09-02, 139.ª)
+
+**Descubierto al intentar sembrar `arquetipos` por primera vez** (F3-5 llevaba
+`0 filas` desde que se escribió el esquema en la 126.ª; nadie lo había podido
+ejercitar hasta resolver CMS-8). No estaba en los 5 bloqueos que el sondeo de
+la 138.ª predijo —ésos eran de `required`, no de unicidad— y no lo predecía
+nada: `qa:slugs` sólo corre sobre lo que el build EMITE, y el build no emitía
+`arquetipos` porque no había filas.
+
+### El hecho, medido
+
+`registro-slug.ts` —la guarda que impone unicidad de slug **en el plano de
+`/es/`, ENTRE familias**— rechazó el primer `create` de `arquetipos` con:
+
+> `COLISIÓN DE SLUG ENTRE FAMILIAS: «monitor-calidad-aire» ya está en el
+> plano de /es/, reclamado por «productos» (documento 11), y ahora lo pide
+> «arquetipos».`
+
+Derivado el alcance completo, no sólo la primera colisión (§regla 27 — un
+proceso que aborta en el primero contesta «hay al menos uno», nunca «hay
+N»):
+
+| slug de `arquetipos` (F3-5) | ¿colisiona con `productos`? | doc de `productos` |
+|---|---|---|
+| `monitor-calidad-aire` | **SÍ** | id 11 · slug `monitor-calidad-aire` · título «AIR Pro» |
+| `software-de-medicion-calidad-del-aire` | **SÍ** | id 18 · slug idéntico |
+| `kunak-api` | **SÍ** | id 9 · slug idéntico |
+| `accesorios` | no | `productos` tiene `accesories` (con errata, verbatim del original) — no casa |
+
+**3 de 4 · el 75 %.**
+
+### No es un falso positivo de la guarda — comprobado, no supuesto
+
+`registroDeSlug` sólo exige unicidad de plano para los documentos de
+`productos` **sin `padre`** (§2e: 6 de 24 no llevan `padre` y viven en el
+plano; los otros 18 cuelgan de un segmento y su unicidad es la nativa de la
+colección — así lo documenta el propio hook). Medido: los cuatro documentos
+de `productos` en cuestión —`monitor-calidad-aire` · `kunak-api` ·
+`software-de-medicion-calidad-del-aire` · `accesories`— tienen **`padre`
+vacío los cuatro**, o sea que **los tres colisionantes SÍ están en el
+plano**: `productos` los declara con intención de servirlos en
+`/es/<slug>` directo, exactamente donde F3-5 también los quiere servir.
+
+### Lo que esto significa, sin decidir por nadie — y con la investigación C ya hecha (no muta nada)
+
+`productos` es el CPT `solutions` (§2e, `packages/cms-config/src/colecciones/productos.ts`,
+cerrado sobre las 24 URLs de `solutions-sitemap.xml`) — el catálogo detrás de
+`/accesorios`. **Y ya lleva un discriminador propio para exactamente esta
+pregunta**, escrito en §2e antes de que `arquetipos` existiera: el campo
+`pagina` (`"propia"` | `"ninguna"`, `required` sin defecto — CMS-PR3), que
+dice si el documento del CPT **tiene página dedicada en `/es/`**. `productos`
+sólo entra en el plano (`enElPlano: (doc) => !doc.padre && doc.pagina ===
+"propia"`, `productos.ts:364`) cuando `pagina === "propia"` — no basta con
+`padre` vacío, hace falta las dos cosas.
+
+**Los 3 que colisionan tienen `pagina: "propia"`** —igual que otros 13
+documentos de `productos` que NO colisionan con nada (`amoniaco`, `ozono`,
+`dioxido-de-carbono`, `metano`, `estacion-de-monitoreo-de-calidad-del-aire`…
+16 en total, 0 de los otros 13 casan con `paginas` ni con `arquetipos`)—.
+Así que **no son residuos de sitemap sin cuerpo**: `productos` los declara
+con intención real de servirlos en el plano, con su `tagline` propio medido
+(«Monitor de calidad de aire para profesionales», «Software de calidad del
+aire», «Fácil integración de datos»).
+
+**Y lo que SÍ es nuevo es esto: `productos` no tiene NINGÚN campo de cuerpo
+—ni `bloques`, ni rico, nada—.** Sus columnas son sólo card/ficha:
+`titulo · tagline · description · highlight · bullets_titulo · image · seo`.
+Así que un documento `pagina: "propia"` de `productos` **no puede, por sí
+mismo, renderizar la página completa que promete**. Eso es exactamente lo
+que `arquetipos` sí trae —el cuerpo entero, extraído del HTML servido— para
+estas 3 mismas rutas. Las dos colecciones no están duplicando el mismo dato:
+**una tiene la ficha corta (`productos`, pensada para tarjetas/cruces) y la
+otra el cuerpo completo (`arquetipos`)**, y las dos reclaman a la vez el
+mismo hueco del plano porque `productos.pagina` se escribió en §2e sin que
+existiera todavía nada que pudiera cumplir la promesa de «página propia».
+
+**No se resuelve aquí — sigue siendo una decisión de MODELO** (qué
+colección renderiza `/es/monitor-calidad-aire` cuando dos la reclaman), pero
+la investigación C ya está hecha y descarta la lectura más simple («son
+basura de sitemap»). Las salidas visibles, cada una con su operación de
+deshacer y ninguna aplicada:
+
+| | qué haría | qué costaría deshacer |
+|---|---|---|
+| **A** · los 3 documentos de `productos` dejan de reclamar el plano —`pagina` pasa a `"ninguna"` con su `hrefServido`, o se añade un tercer valor tipo `"delegada"`— y `arquetipos` se queda con el plano; el render de `/es/<slug>` para estas 3 rutas resuelve desde `arquetipos` | una colección por responsabilidad: ficha corta en `productos`, cuerpo en `arquetipos` | volver a poner `pagina: "propia"` en los 3 si `arquetipos` deja de cubrirlos |
+| **B** · `arquetipos` renombra sus 3 slugs colisionantes o los saca del plano | `productos` no se toca, sigue reclamando esas 3 URLs | volver a nombrarlos como el original si resulta que el cuerpo SÍ tiene que vivir ahí |
+| **D** · dejar `arquetipos` en 0 filas y no sembrarlo hasta decidir | nada que deshacer | F3-5 sigue en `0 filas · 0 lectores` |
+
+> **A es la lectura que más encaja con lo medido** —`productos` no puede
+> cumplir «página propia» sin cuerpo, y `arquetipos` sí lo tiene—, pero
+> sigue sin aplicarse: falta comprobar si algo del build o del admin ya lee
+> `productos.hrefServido`/`pagina` para estas 3 rutas de una forma que A
+> rompería, y ésa es la comprobación que le toca a la tanda que lo cierre.
+
+### Estado de la DB tras el intento
+
+Nada corrupto: `cms:reset` + `cms:seed` sembró las otras 11 colecciones de
+`SEMBRADAS` con normalidad (`productos` 19 · `paginas` 31 · `sectores` 4 ·
+`monograficos` 2 · `casos` 57 · `faqs` 19 · `autores` 5 · `entradas-blog`
+152 · `terminos-kunakpedia` 37 · `documentos-cientificos` 23) y murió
+limpiamente en el primer `create` de `arquetipos`, sin fila parcial (Payload
+crea por documento). `cms:seed-kb` (6 artículos) y `cms:seed-listados` (12
+descripciones · 68 extractos · 10 `categorias-recursos`) se corrieron
+después para restaurar el resto del pipeline (§regla 20) — `arquetipos`
+sigue en **0 filas**, y es la única pieza que falta.
+
+### Condición para cerrar
+
+Decisión del propietario sobre A/B/D (o una quinta que no esté aquí). La
+investigación que antes pedía «C» ya está hecha (arriba): no son residuos de
+sitemap, `productos` no tiene cuerpo y `arquetipos` sí. Falta decidir A vs B
+y, si es A, comprobar que nada lea `productos.pagina`/`hrefServido` para
+estas 3 rutas de una forma que el cambio rompa.

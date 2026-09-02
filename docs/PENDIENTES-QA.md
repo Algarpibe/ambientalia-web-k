@@ -27987,4 +27987,104 @@ Los dos EVENTOS que se quedan: el desalineamiento (ya cubierto por §*31 de 31
 rutas no es un hallazgo*) y el comentario JSX dentro de un `map` (sintaxis, no
 método). Cruces publicados al lado: el **laxo** dice «ya escrito» en **4 de 6** y
 el **endurecido** en **1 de 6**, discrepando en 5 — el laxo sobre-casa 3 de las
+
+---
+
+## 139.ª · CMS-8 APLICADA, Y SEMBRAR — CIERRA CMS-8, ABRE CMS-9 (2026-09-02)
+
+### Lo predicho vs lo medido, los dos lados
+
+| predicho por el encargo | medido |
+|---|---|
+| «`arquetipos` sigue a 0 filas, la ventana de §regla 30 abierta» | ✅ confirmado en PASO 0: `arquetipos` a 0 filas |
+| «5 bloqueos `required`, cada uno con su unidad» | ✅ reproducidos 5/5 contra `bloqueos-siembra-138.json` |
+| «tras A y B, si siguen apareciendo bloqueos, el sondeo tenía razón otra vez» | ⚠ **parcialmente falso, y en la dirección buena**: tras A y B los 5 `required` YA NO bloquean (los 5 se resuelven). Lo que bloquea es algo que el sondeo de la 138.ª **no medía** — unicidad de slug, no `required` |
+| «sembrar es lo que cierra la mitad que F3-5 lleva pendiente» | ❌ no cierra: `arquetipos` sigue en 0 filas, ahora por un bloqueador nuevo y no anticipado |
+| «`qa:media-canales` byte a byte, los dos cardinales» | ✅ 745/745, **0 y 0** en Windows y Linux — sin caso de §regla 47 en este lote |
+
+### CMS-8 · CIERRE completo
+
+**ESCALÓN 1 (CMS-8a = A).** `enlace()` gana `{opcional}`; aplicado sólo a
+`imagen-arq.enlace`. Migración `20260902_151020_f3_5_imagen_arq_enlace_opcional`,
+reversa probada ELEMENTO A ELEMENTO (tablas 155 · columnas 1934 · tipos 354 ·
+constraints 472 · `payload_migrations` 27/28, **0 y 0** en los cinco), control
+positivo con un segundo ciclo down→up. §regla 42 no aplica —sin
+`DROP TABLE`/`DROP CONSTRAINT`, sólo 2 `ALTER COLUMN`—, y esta vez ni hace
+falta medir separadoras: el patrón no tiene dónde vivir.
+
+**ESCALÓN 2 (CMS-8b).** `texto-arq.contenido` y `formulario-arq…opciones.texto`
+comprobados EN EL ORIGINAL antes de tocar el esquema:
+
+- `et_pb_text_24` de `monitor-calidad-aire` (entre la galería y
+  `et_pb_text_25.lista-resultados`) existe en el HTML servido y no lleva
+  `.et_pb_text_inner` — separador vacío real;
+- `<select name="field[27]">` trae DOS `<option>` sin texto (#1 `selected`,
+  #242 en medio del listado de 269 países) y `<select name="field[51]">` una
+  (#1 de 16) — los placeholders «— elige —» de ActiveCampaign, servidos.
+
+Los dos pasan por `requeridoConVacio()`, que se corrigió para **encadenar**
+con un `validate` previo (`campoHtml` ya traía `validaHtmlCorpus`) en vez de
+sustituirlo — el único consumidor previo (`grupo-a.ts:173`) no cambia de
+comportamiento. `video-arq.url` se queda `required`: derivado el canal del
+extractor, los 2 vídeos son embeds de YouTube en `<iframe src>` dentro de
+`.et_pb_video_box`, y `extractor-f35.mjs:478` sólo mira `src` en el propio
+contenedor o en un `<img>` — ninguno casa con `<iframe>`. Es dato real por un
+canal no leído (§sondas 4, 5.ª cara), fichado, sin tocar extractor ni
+esquema. Migración `20260902_152309_f3_5_vacios_texto_y_formulario`, misma
+disciplina de reversa, **0 y 0** en los cinco ejes.
+
+**El log de `migrate:down` mintió sobre el alcance las TRES veces** que se
+corrió esta tanda —`«Rolling back batch N consisting of N migration(s)»`,
+revirtiendo siempre UNA—: verificado en la tabla, nunca en el log (§regla 30).
+
+### ESCALÓN 3 · sembrar — y lo nuevo que apareció
+
+`qa:media-canales`: 58 canales · 21 ejercidos · 39 sin dato · 0 a capturar.
+Re-verificado BYTE A BYTE aparte (§regla 47, script temporal no commiteado):
+745 rutas distintas, **0 ausentes en los dos cardinales** — Windows y Linux
+coinciden, sin el factor 6 que otro lote midió.
+
+`cms:reset` + `cms:seed` corrido por primera vez con `arquetipos` cableada
+(desde la 138.ª). Las otras 11 colecciones de `SEMBRADAS` sembraron con
+normalidad. `arquetipos` murió en el **primer** `create` —no por `required`
+(los 5 de CMS-8 ya no bloquean, confirmado: no reaparece ninguno), por
+**unicidad de slug**:
+
+> `COLISIÓN DE SLUG ENTRE FAMILIAS: «monitor-calidad-aire» ya está en el
+> plano de /es/, reclamado por «productos» (documento 11), y ahora lo pide
+> «arquetipos».`
+
+Derivado el alcance completo (§regla 27, no sólo el primero que abortó):
+**3 de los 4** slugs de `arquetipos` colisionan con `productos`
+(`monitor-calidad-aire` · `software-de-medicion-calidad-del-aire` ·
+`kunak-api`; `accesorios` no, `productos` tiene `accesories` con errata).
+Investigado sin mutar nada: los 3 documentos de `productos` tienen
+`pagina: "propia"` (CMS-PR3, §2e) y `padre` vacío — genuinamente reclaman el
+plano por diseño, no por accidente — y **`productos` no tiene ningún campo
+de cuerpo**, sólo ficha corta, así que no puede por sí mismo cumplir la
+promesa de «página propia» que `arquetipos` sí cumple para esas 3 rutas. Los
+otros 13 documentos `pagina: "propia"` de `productos` no colisionan con nada
+(0 contra `paginas`, 0 contra `arquetipos`).
+
+Nueva decisión de MODELO — **`CMS-9`, `ESQUEMA-CMS.md` §CMS-9, ⛔ ABIERTO** —
+sobre quién renderiza `/es/<slug>` para esas 3 rutas cuando dos colecciones
+lo reclaman. **No decidida aquí.** DB restaurada y consistente: `cms:seed-kb`
+(6 artículos) y `cms:seed-listados` (12 · 68 · 10) repusieron el resto del
+pipeline (§regla 20). `arquetipos` es la única colección en `0 filas`.
+
+### Barrido §regla 12 (acotado a esta tanda)
+
+Ningún enunciado de esta tanda tiene forma de regla general nueva —el
+hallazgo de CMS-9 es un hecho de este esquema concreto (`productos` vs
+`arquetipos`), no un patrón que se repita fuera de él—. **0 candidatos**,
+publicado con su cero en vez de omitido.
+
+### Estado de cierre
+
+CMS-8 ✅ resuelto entero (8a y 8b). F3-5 sigue en `0 filas · 0 lectores`,
+pero el bloqueador cambió de nombre y de naturaleza: de `CMS-8` (`required`,
+resuelto) a `CMS-9` (unicidad de slug entre `productos` y `arquetipos`,
+abierto). Commits: ESCALÓN 1 (`372a269`) y ESCALÓN 2 (`8fcdea3`) en `main`;
+ESCALÓN 3 no se commitea como «hecho» porque no lo está — sólo la
+documentación de lo encontrado.
 4 promovidas, consistente con lo que midió la 128.ª.

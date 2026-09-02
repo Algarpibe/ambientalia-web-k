@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "fecha": "2026-09-02",
+    "tanda": "139.ª",
+    "que": "Re-verificación BYTE A BYTE (§regla 47) de las rutas que qa:media-canales resuelve con existsSync (Windows-loose). No modifica scripts/seed/seed.mjs — sólo cruza su mediaAuditada contra readdirSync(dir).includes(basename).",
+    "script": "temporal, no commiteado (_tmp-media-bytexact-139.mjs, borrado tras correr)"
+  },
+  "canonico": "scripts/qa/medidas/media-canales-2026-09-02.json",
+  "recuentoCanonico": { "referencias": 745, "rutasDistintas": 745, "ausentes": 0 },
+  "reVerificacion": {
+    "rutasDistintas": 745,
+    "ausentesExistsSync_Windows": 0,
+    "ausentesByteExact_Linux": 0,
+    "discrepancias": []
+  },
+  "veredicto": "LOS DOS CARDINALES COINCIDEN: 0 y 0. No hay caso de §regla 47 en este lote (a diferencia del lote donde se midió factor 6) — publicado, no supuesto."
+}
