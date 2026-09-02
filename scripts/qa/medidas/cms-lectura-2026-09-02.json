@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "fecha": "2026-09-02",
+    "pregunta": "¿proyecta el contexto del RENDER (declaraciones de la config) lo mismo que el de la IDA (mapas que la ida llenó)?",
+    "fuente": "los mismos documentos de la misma DB, con `depth: 1`, por el mismo walker",
+    "noPrueba": "que la proyección sea fiel al dato medido — eso es `qa:cms-roundtrip`. Prueba que el camino del render no pierde nada respecto del verificado.",
+    "sabotaje": null
+  },
+  "contrato": {
+    "evaluadas": 392,
+    "minimo": 392,
+    "suficiente": true
+  },
+  "porColeccion": {
+    "productos": {
+      "documentos": 19,
+      "comparados": 19,
+      "distintos": 0
+    },
+    "paginas": {
+      "documentos": 31,
+      "comparados": 31,
+      "distintos": 0
+    },
+    "sectores": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 0
+    },
+    "monograficos": {
+      "documentos": 2,
+      "comparados": 2,
+      "distintos": 0
+    },
+    "taxonomia-sectores": {
+      "documentos": 11,
+      "comparados": 11,
+      "distintos": 0
+    },
+    "casos": {
+      "documentos": 57,
+      "comparados": 57,
+      "distintos": 0
+    },
+    "faqs": {
+      "documentos": 19,
+      "comparados": 19,
+      "distintos": 0
+    },
+    "autores": {
+      "documentos": 5,
+      "comparados": 5,
+      "distintos": 0
+    },
+    "entradas-blog": {
+      "documentos": 152,
+      "comparados": 152,
+      "distintos": 0
+    },
+    "terminos-kunakpedia": {
+      "documentos": 37,
+      "comparados": 37,
+      "distintos": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 23,
+      "comparados": 23,
+      "distintos": 0
+    },
+    "arquetipos": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 4
+    },
+    "categorias": {
+      "documentos": 4,
+      "comparados": 4,
+      "distintos": 0
+    },
+    "etiquetas": {
+      "documentos": 12,
+      "comparados": 12,
+      "distintos": 0
+    },
+    "categorias-recursos": {
+      "documentos": 9,
+      "comparados": 9,
+      "distintos": 0
+    },
+    "categorias-cientificas": {
+      "documentos": 3,
+      "comparados": 3,
+      "distintos": 0
+    }
+  },
+  "veredicto": {
+    "comparados": 392,
+    "distintos": 4,
+    "ok": false
+  },
+  "diferencias": [
+    {
+      "coleccion": "arquetipos",
+      "id": 1,
+      "slug": "monitor-calidad-aire",
+      "ida": "{\"slug\":\"monitor-calidad-aire\",\"titulo\":\"Monitor de calidad del aire profesional | Kunak AIR Pro\",\"arquetipo\":\"producto\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunaka",
+      "render": "{\"slug\":\"monitor-calidad-aire\",\"titulo\":\"Monitor de calidad del aire profesional | Kunak AIR Pro\",\"arquetipo\":\"producto\",\"bloques\":[{\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itempr"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 2,
+      "slug": "accesorios",
+      "ida": "{\"slug\":\"accesorios\",\"titulo\":\"Accesorios para sensores de calidad del aire\",\"arquetipo\":\"catalogo\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop",
+      "render": "{\"slug\":\"accesorios\",\"titulo\":\"Accesorios para sensores de calidad del aire\",\"arquetipo\":\"catalogo\",\"bloques\":[{\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop=\\\"item\\\"><span ite"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 3,
+      "slug": "software-de-medicion-calidad-del-aire",
+      "ida": "{\"slug\":\"software-de-medicion-calidad-del-aire\",\"titulo\":\"Software para el análisis de la calidad del aire | Kunak AIR Cloud\",\"arquetipo\":\"software\",\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"",
+      "render": "{\"slug\":\"software-de-medicion-calidad-del-aire\",\"titulo\":\"Software para el análisis de la calidad del aire | Kunak AIR Cloud\",\"arquetipo\":\"software\",\"bloques\":[{\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https"
+    },
+    {
+      "coleccion": "arquetipos",
+      "id": 4,
+      "slug": "kunak-api",
+      "ida": "{\"slug\":\"kunak-api\",\"titulo\":\"Kunak API\",\"arquetipo\":\"software\",\"varianteCorta\":true,\"bloques\":[{\"kind\":\"texto-arq\",\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop=\\\"item\\\"><span",
+      "render": "{\"slug\":\"kunak-api\",\"titulo\":\"Kunak API\",\"arquetipo\":\"software\",\"varianteCorta\":true,\"bloques\":[{\"pieza\":\"breadcrumbs\",\"contenido\":\"<ol class=\\\"kunak-breadcrumbs\\\" itemscope itemtype=\\\"http://schema.org/BreadcrumbList\\\"><li itemprop=\\\"itemListElement\\\" itemscope itemtype=\\\"http://schema.org/ListItem\\\"><a itemprop=\\\"item\\\" href=\\\"https://kunakair.com/es/\\\" itemprop=\\\"item\\\"><span itemprop=\\\"name\\\">"
+    }
+  ]
+}

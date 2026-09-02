@@ -1,5 +1,192 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🔄 §141.ª · **CABLEAR LOS LECTORES DE `arquetipos` (F3-5, la segunda mitad)** — 2026-09-02
+
+**Estado: PASO 0 completo.** Continuación misma-fecha de la 140.ª, que dejó
+`arquetipos` **sembrada con 4 filas y 0 lectores en el render**.
+
+### PASO 0 · lo derivado antes de tocar nada
+
+**Entorno, en los tres pasos que el encargo exige y con el canal correcto:**
+
+| paso | qué se hizo | resultado |
+|---|---|---|
+| (a) demonio | `Docker Desktop.exe` no corría — arrancado | `Server 29.6.2` |
+| (b) contenedor | `docker start kunak-cms-pg` (**nunca `compose up`**) | `Up`, `0.0.0.0:55432->5432/tcp` |
+| (c) **el socket** | `net.connect(55432)` — no `docker ps`, no `PortBindings` | **ABIERTO en 2 ms** |
+
+**155 tablas** en `public`, derivadas de `information_schema`.
+
+**La tanda es la 141.ª, derivado del árbol:** `HEAD 303835b` · **728 commits**
+· árbol limpio · último commit `140.ª ESCALÓN 2 + CIERRE`. Coincide con lo que
+el encargo veía, y se comprobó en vez de heredarse.
+
+**`arquetipos` tiene 4 filas, derivadas CONSULTANDO LA DB** (no leyendo el acta
+de la 140.ª):
+
+| id | slug | arquetipo | varianteCorta |
+|---|---|---|---|
+| 1 | `monitor-calidad-aire` | `producto` | — |
+| 2 | `accesorios` | `catalogo` | — |
+| 3 | `software-de-medicion-calidad-del-aire` | `software` | — |
+| 4 | `kunak-api` | `software` | **t** |
+
+**Y su cuerpo, censado por tipo contra las 12 tablas de bloque de primer
+nivel** — `231` en total, que **reproduce exacto** el `90 · 35 · 70 · 36 = 231`
+que el esquema declara (§*cruzar con otra medición del mismo objeto es
+obligatorio antes de creerse un recuento*):
+
+| bloque | filas | | bloque | filas |
+|---|---|---|---|---|
+| `texto-arq` | **100** | | `video-arq` | 2 |
+| `icono-arq` | **70** | | `slider-arq` | 1 |
+| `imagen-arq` | 27 | | `formulario-arq` | 1 |
+| `boton-arq` | 24 | | `cta-arq` | 1 |
+| `slider-ancho-arq` | 3 | | `tabla-arq` | 1 |
+| | | | `galeria-arq` | 1 |
+| | | | **`codigo-arq`** | **0** ← sin ejercitar |
+
+**Censo de lectores de las 4 rutas — confirmado ruta a ruta:** las cuatro
+`page.tsx` importan constantes de `@/lib/<ruta>` con `import` de módulo
+**síncrono**; ninguna es `async`, ninguna llama a `leeColeccion`. **0 lectores
+del CMS**, como la 140.ª declaró.
+
+**⚠ EL FALSO AMIGO, comprobado antes de reutilizar una línea:**
+`apps/web/src/lib/cms/arquetipo-a.ts` **NO es el lector de `arquetipos`**. Su
+propia cabecera lo dice y sus exports lo confirman: es el catálogo del **GRUPO
+A** de F2-3 — `documentos-cientificos` · `entradas-blog` · `terminos-
+kunakpedia`. El nombre coincide y la colección no.
+
+**El instrumento que sí se reutiliza:** `leeColeccion<T>()` de
+`apps/web/src/lib/cms/proyector.ts`, **213 líneas** ✓ derivado.
+
+### ⚠⚠ PUNTO 7 — `qa:cms-lectura` YA CUBRE `arquetipos`, Y NO POR LISTA A MANO
+
+Escribir esa cobertura **no es parte de esta tanda: ya está**, y está bien
+puesta. `cms-lectura.mjs:50` la **DERIVA**:
+
+```js
+const COLECCIONES = [...SEMBRADAS, ...TAXONOMIAS_DERIVADAS.map((t) => t.coleccion)];
+```
+
+Derivado ejecutando: `SEMBRADAS` = **12** (con `arquetipos` dentro, alta de la
+138.ª) + **4** taxonomías = **16 colecciones**. Es §regla 9, 7.º caso resuelta
+en su día: `arquetipos` entró en la sonda **sola**, el día que entró en
+`SEMBRADAS`, sin que nadie tocara la sonda. Negativo: `cms-lectura.neg.mjs`,
+existe.
+
+### ⚠⚠ EL HALLAZGO DEL PASO 0 — NO ES CORTE LIMPIO, PERO SÍ ES UN BLOQUEO, Y LA 140.ª NO PODÍA VERLO
+
+El punto 8 pregunta si `arquetipos` tiene algún campo que el proyector genérico
+no exprese sin **modificar `proyector.ts`**. La respuesta no se lee: se corre.
+`qa:cms-lectura` (`EXIT=2`):
+
+```
+  ✓  productos  19 · paginas 31 · sectores 4 · monograficos 2 · … (15 colecciones)
+  ❌ arquetipos                 4 doc  · 4 DISTINTOS
+  ❌ cms-lectura: 388/392 documentos IDÉNTICOS por los dos contextos.
+```
+
+**Las 4 filas, las 4 mal, y el diff nombra la pieza:**
+
+```
+ida    {"slug":"monitor-calidad-aire",…,"bloques":[{"kind":"texto-arq","pieza":"breadcrumbs",…
+render {"slug":"monitor-calidad-aire",…,"bloques":[{               "pieza":"breadcrumbs",…
+```
+
+**Falta `kind`** — el discriminante de bloque. Y `kind` es exactamente la pieza
+que este documento ya tiene fichada como mortal: §regla 6 gemela del render,
+*«el discriminador de bloque que llega al render se llama `kind` —lo pone la
+vuelta del proyector— y el componente miraba `blockType`: las 6 páginas de
+`articulos-kb` se servían con sus filas, sus columnas y CERO módulos»*.
+
+**Dos hipótesis, y se separan en un `grep`:**
+
+| # | hipótesis | veredicto |
+|---|---|---|
+| H1 | el proyector no puede expresarlo → hay que tocar `proyector.ts` → **CORTE LIMPIO** | **refutada** |
+| H2 | lo pone `DEVUELVE[coleccion]` y falta la entrada | **refutada** — `DEVUELVE` sólo tiene `productos` y `taxonomia-sectores` |
+| **H3** | lo decide una **declaración `custom`** que la ida DERIVA y el render LEE | ✅ **confirmada** |
+
+`mapeo.mjs:655` construye la declaración y `mapeo.mjs:781` la consume:
+
+```js
+if (campo.type === "blocks" && campo.custom?.conKind)
+  acc.conKind.set(aqui, new Set((campo.blocks ?? []).map((b) => b.slug)));
+…
+conKind(ruta, slug, cuerpo) {
+  return decl.conKind.get(limpia(ruta))?.has(slug) ? { kind: slug, ...cuerpo } : cuerpo;
+}
+```
+
+Y **la guarda que existe justo para esto ya lo estaba gritando.** `qa:cms-decl`
+(`EXIT=2`), con su cardinal:
+
+```
+  ❌ 12 HUECO(S) — la ida lo ve y nadie lo declaró; el render lo proyectaría mal:
+      · conKind  arquetipos.bloques  ←  texto-arq   declarado: (nada)
+      · conKind  arquetipos.bloques  ←  imagen-arq  declarado: (nada)
+      … (11 en total)
+      · vaciaEsAusente paginas.bloques.filas.columnas.modulos.cabeceras
+```
+
+**La aritmética cierra en dos términos y hay que escribir los dos** (§*un resto
+huérfano es el único síntoma de que falta un término*):
+
+> **12 huecos = 11 nuevos (`conKind arquetipos.bloques`) + 1 PREEXISTENTE.**
+
+El 12.º **no es de esta tanda**, y está derivado en vez de supuesto: la
+congelada `cms-decl-2026-08-27.json` ya trae ese hueco **con la misma ruta y el
+mismo texto**, y ya salía `ok: false`. O sea que `qa:cms-decl` **llevaba en
+rojo desde antes**, por otra cosa.
+
+**Y por qué son 11 y no 12, que también hay que declararlo** (§regla 14): el
+esquema tiene **12** tipos de bloque y `codigo-arq` está a **0 filas**, así que
+la guarda no lo ejercita. Un `custom: { conKind: true }` cubre los 12 por
+construcción, pero **sólo 11 quedan verificados** — `codigo-arq` sale **SIN
+EJERCITAR**, no verificado.
+
+### ✅ VEREDICTO DEL PUNTO 8 — SIGUE ADELANTE
+
+**No hay corte limpio.** El arreglo es **una declaración en el ESQUEMA**, no una
+modificación del proyector:
+
+```ts
+{ name: "bloques", type: "blocks", …, custom: { conKind: true } }
+```
+
+Exactamente la misma línea que ya llevan **las cuatro** familias con bloques que
+sí funcionan — `bloques/kb.ts:402` · `bloques/monografico.ts:144` ·
+`bloques/paginas.ts:724` · `colecciones/sectores.ts:33`. **No toca
+`proyector.ts` ni `mapeo.mjs`**, así que no caduca a ninguna familia ya
+cableada: el radio es un campo de una colección con 4 filas y 0 lectores.
+
+### ⚠⚠ Y LA LECCIÓN EPISTÉMICA LLEGÓ EN EL PASO 0, NO EN EL ESCALÓN 3
+
+El encargo la anticipaba para el ESCALÓN 3 —*«con 0 lectores no había camino
+del dato al píxel, así que el verde de `clon-base` de la 140.ª era estructural»*—
+y es cierta. Pero **se cobró antes**, y con un instrumento distinto:
+
+> **Un defecto en el camino del dato al render no lo puede ver ninguna sonda
+> que no recorra ese camino — y con 0 lectores NINGUNA lo recorría.** La 140.ª
+> cerró con round-trip a 0 diferencias, `clon-base` verde y el manifiesto
+> intacto, y las 4 filas se proyectaban **sin su discriminante de bloque**. Los
+> tres verdes eran ciertos: el round-trip mide **ida ↔ vuelta**, no **el
+> contexto del render**; y ésa es literalmente la razón por la que
+> `qa:cms-lectura` existe —*«sin la segunda, el primero sería un verde
+> prestado: verifica un contexto y el build usa otro»*—.
+
+Y lo que lo hace regla y no anécdota: **el defecto habría sido silencioso**. Un
+`kind` ausente no lanza — `undefined` en un `switch` de render **no falla, no
+pinta** (§regla 6 gemela). Las 4 rutas habrían respondido **200 con cabecera,
+pie y 231 módulos ausentes**, que es el modo de fallo exacto de `articulos-kb`
+en la F3-1.
+
+**Lo que sí lo cazó fue correr la sonda que ya cubría la colección.** No hizo
+falta escribir instrumento: hizo falta **ejercitarlo antes de cablear**, que es
+§regla 24 —*el negativo de un comparador se corre antes de que exista el lado
+que va a medir*— aplicada al comparador de lectura en vez de al de píxeles.
+
 ## ✅ §140.ª · **CMS-9 = A' — LA GUARDA DENTRO DE SU INVARIANTE, Y `ARQUETIPOS` SEMBRADA (4 FILAS)** — 2026-09-02
 
 **Estado: PASO 0 · ESCALÓN 1 · ESCALÓN 2 completos.** Continuación misma-fecha
