@@ -20,8 +20,88 @@
  * transacción**, y cualquier `SELECT` posterior en ella falla también. Así que
  * el orden no es estilo, es lo único que funciona. Y si el `find` no ve nada por
  * una carrera, **el `UNIQUE` sigue estando** — las dos capas, no una.
+ *
+ * ── CMS-9 = A' (140.ª): SÓLO ARBITRA EL PLANO QUIEN EL PLANO EMITE ─────────
+ * `ESQUEMA-CMS.md` §CMS-9 midió que `arquetipos` colisiona con `productos` en
+ * 3 de sus 4 slugs (`kunak-api` · `monitor-calidad-aire` ·
+ * `software-de-medicion-calidad-del-aire`). El invariante que este registro
+ * protege es **dos EMISORES sirviendo la misma URL** — y esos 3 no lo son:
+ * los sirve una CARPETA ESTÁTICA de `apps/web/src/app/` (`monitor-calidad-aire/
+ * page.tsx` y hermanas), no `/[slug]`. Con un emisor y dos DESCRIPTORES
+ * (`productos` documenta la página, `arquetipos` la va a servir — F3-5,
+ * "cablear los lectores es la 140.ª/141.ª"), la guarda arbitraba **fuera de
+ * su invariante** (§regla 25).
+ *
+ * `scripts/qa/slugs.mjs:403` ya deriva esto mismo del lado de LECTURA
+ * (`esFamiliaDelPlano`, comparando `srcRoute` contra el `prerender-manifest`
+ * DESPUÉS del build). Aquí no hay build: el `create` ocurre antes. El
+ * equivalente sin build es el árbol de `apps/web/src/app/`, que es la MISMA
+ * fuente de la que sale el manifiesto — y ya existe un derivador exacto,
+ * `rutasConstruidas()` de `../entorno.mjs`, usado hoy por el render
+ * (`apps/web/src/lib/cms/proyector.ts`) para la misma pregunta ("¿qué ruta ya
+ * sirve una carpeta estática?"). No es un concepto nuevo: es CABLEAR el mismo
+ * derivador a un segundo consumidor.
+ *
+ * No es una lista de 3 slugs a mano (§regla 9, 7.º caso): es un FILTRO
+ * derivado del árbol, aplicado dentro de `enPlano()` — o sea a las TRES
+ * colecciones que lo llaman (`entradas-blog`, `terminos-kunakpedia`,
+ * `paginas`, `articulos-kb`, `productos`, `arquetipos`), no sólo a las dos en
+ * cuestión. Medido antes de aplicar (140.ª, PASO 0): de los 219 slugs hoy en
+ * el registro, sólo los 3 de `productos` de arriba casan con una carpeta
+ * estática — 0 en las otras 4 familias. Las 2 filas de `productos` sin ruta
+ * (`sensor-de-calidad-del-aire` · `estacion-de-monitoreo-de-calidad-del-aire`)
+ * NO entran en este filtro: no las emite NADIE (ni el plano ni una carpeta),
+ * así que no hay colisión de EMISORES que evitar — es el caso YA FICHADO en
+ * `PENDIENTES-QA.md` §F3-3-REGISTRO-SOBRE-RECLAMA, y sigue sin tocarse.
  */
+import { existsSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import type { CollectionBeforeValidateHook, CollectionAfterChangeHook, CollectionAfterDeleteHook } from "payload";
+import { rutasConstruidas } from "../entorno.mjs";
+
+/**
+ * `apps/web/src/app`, resuelto SIN asumir `process.cwd()` — a diferencia de
+ * `proyector.ts` (que puede confiar en él porque sólo corre dentro del
+ * proceso de `apps/web`), este hook corre dentro de TRES procesos distintos
+ * con cwd distinto: el admin (`apps/cms`), los scripts de siembra (cwd = raíz
+ * del repo) y, si algún día escribe, `apps/web`. Se ancla al propio fichero
+ * (`import.meta.url`) y sube verificando, igual que `buscaApp()` de
+ * `scripts/qa/lib.mjs` — nunca a una profundidad fija sin comprobar.
+ */
+function resuelveAppDir(): string {
+  let dir = path.dirname(fileURLToPath(import.meta.url));
+  for (let i = 0; i < 8; i++) {
+    const candidato = path.join(dir, "apps/web/src/app");
+    if (existsSync(candidato)) return candidato;
+    const arriba = path.dirname(dir);
+    if (arriba === dir) break;
+    dir = arriba;
+  }
+  throw new Error(
+    `registro-slug: no se encuentra 'apps/web/src/app' subiendo desde ` +
+      `${fileURLToPath(import.meta.url)}.\n` +
+      `  Sin árbol no se puede derivar quién emite cada slug de un segmento — ` +
+      `seguir sin él reclamaría en el plano rutas que sirve una carpeta estática, ` +
+      `que es exactamente CMS-9.`,
+  );
+}
+
+let rutasEstaticasCache: Set<string> | null = null;
+
+/**
+ * Slugs de UN segmento que una carpeta estática de `app/` ya sirve. El plano
+ * (`/[slug]`) NUNCA los emite — Next resuelve la ruta estática primero — así
+ * que ninguna familia debería arbitrar unicidad de plano sobre ellos.
+ * Memoizado: el árbol no cambia dentro de la vida del proceso.
+ */
+function rutasEstaticasDeUnSegmento(): Set<string> {
+  if (!rutasEstaticasCache) {
+    const todas = rutasConstruidas(resuelveAppDir()) as Set<string>;
+    rutasEstaticasCache = new Set([...todas].filter((r) => r !== "/" && r.split("/").length === 2));
+  }
+  return rutasEstaticasCache;
+}
 
 /** Un documento del que sólo nos importan estas dos cosas. */
 type Doc = Record<string, unknown> | null | undefined;
@@ -60,7 +140,10 @@ export function registroDeSlug({ familia, enElPlano = () => true }: OpcionesRegi
   const enPlano = (d: Doc): string | null => {
     if (!d) return null;
     const doc = d as Record<string, unknown>;
-    return enElPlano(doc) ? texto(doc.slug) : null;
+    if (!enElPlano(doc)) return null;
+    const slug = texto(doc.slug);
+    if (slug && rutasEstaticasDeUnSegmento().has(`/${slug}`)) return null; // lo emite una carpeta estática, no el plano
+    return slug;
   };
 
   /** Suelta un slug. Por `slug` + `familia`, que se conocen siempre (el id no). */

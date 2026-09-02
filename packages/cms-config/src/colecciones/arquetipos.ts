@@ -21,14 +21,24 @@
  * API/desarrollador no existe»*. Modelarlo como un cuarto valor del
  * discriminante habría creado un arquetipo que la medición niega.
  *
- * ── El registro de slugs: SIN predicado, y se deriva por qué ───────────────
- * `paginas` necesita `enElPlano` porque **12 de sus 31** no están en el plano
- * de raíz; `articulos-kb` reserva 6 de 6 que no usa y está fichado. Aquí las
- * **4 de 4 son de UN SEGMENTO** —derivado de los `page.tsx` de `apps/web/src/app`—,
- * así que el dominio de la guarda y su invariante **coinciden** y el predicado
- * sobraría. Se dice con su número en vez de copiarse de la colección de al
- * lado (§*una guarda cuyo dominio es más ancho que su invariante deja de
- * proteger y pasa a BLOQUEAR*).
+ * ── El registro de slugs: SIN predicado, y por qué SIGUE sin hacer falta uno
+ * ─────────────────────────────────────────────────────────────────────────
+ * ⚠⚠ **CORREGIDO (140.ª, CMS-9): esto decía que las 4 SÍ arbitran el plano
+ * de `/es/`, y era falso — medido, no leído.** `ESQUEMA-CMS.md` §CMS-9 (139.ª)
+ * encontró que **3 de las 4** (`kunak-api` · `monitor-calidad-aire` ·
+ * `software-de-medicion-calidad-del-aire`) YA estaban reclamadas por
+ * `productos`, con el mismo slug. Las 4 SÍ son de un segmento —eso seguía
+ * siendo cierto—, pero «de un segmento» no es lo mismo que «lo emite el
+ * plano»: las 4 las sirve una CARPETA ESTÁTICA de `apps/web/src/app/`
+ * (`monitor-calidad-aire/page.tsx` y hermanas), nunca `/[slug]`.
+ *
+ * `registro-slug.ts` (§CMS-9 = A') ahora filtra eso DERIVANDO del árbol de
+ * `app/` — el mismo derivador que usa el render (`rutasConstruidas()` de
+ * `../entorno.mjs`) — así que ninguna de las 4 llega a arbitrar el plano
+ * NUNCA, con `productos` reclamándolas o sin reclamarlas. `enElPlano` sigue
+ * sin hacer falta aquí, pero no porque el dominio y el invariante coincidan
+ * (coincidían en el segmento, no en el EMISOR): sigue sin hacer falta porque
+ * el filtro nuevo ya deja esta colección en 0 reclamos, siempre.
  *
  * ── Lo que esta colección NO hace todavía, con su cardinal ─────────────────
  * · **0 lectores en el render**: las 4 rutas siguen sirviéndose de `src/lib/`.
@@ -52,8 +62,10 @@ export const arquetipos: CollectionConfig = {
   slug: "arquetipos",
   labels: { singular: "Arquetipo", plural: "Arquetipos" },
   admin: { useAsTitle: "titulo", group: "Contenido" },
-  /* Las 4 son de un segmento: el slug ES su URL, así que reclamarlo en el plano
-     de `/es/` es exactamente lo que la guarda existe para hacer. */
+  /* Las 4 son de un segmento, pero las sirve una carpeta ESTÁTICA de `app/`,
+     no el plano — `registro-slug.ts` §CMS-9 lo filtra solo, derivado del
+     árbol. Sin `enElPlano`: el filtro deja esta colección en 0 reclamos
+     siempre, así que un predicado propio no aportaría nada. */
   hooks: registroDeSlug({ familia: "arquetipos" }),
   fields: [
     {

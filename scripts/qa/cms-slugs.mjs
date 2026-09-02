@@ -22,7 +22,7 @@
  * meterle una dependencia de servicio convertiría «la DB está apagada» en «el
  * código está mal». `qa:slugs` sí entra, y es estática.
  *
- * ── Los CINCO invariantes, y qué ve cada uno ──────────────────────────────
+ * ── Los SEIS invariantes, y qué ve cada uno ───────────────────────────────
  *   1 · un alta legítima entra **y deja su registro**;
  *   2 · **el mismo slug desde otra familia CAE** — el caso literal del §4. El
  *       slug de la sonda lleva `accesorios`, que es con el que `ENRUTADO.md` §2
@@ -33,14 +33,32 @@
  *       inventaría colisiones que en la URL real no existen;
  *   5 · **borrar libera el slug** — si no, renombrar o borrar quemaría el slug
  *       para siempre y la guarda bloquearía altas legítimas, que es la otra
- *       forma de que una guarda deje de servir.
+ *       forma de que una guarda deje de servir;
+ *   6 · **CMS-9 (140.ª): un slug que EMITE UNA CARPETA ESTÁTICA no arbitra el
+ *       plano** — dos familias distintas pueden reclamarlo SIN colisión,
+ *       porque ninguna de las dos es quien lo sirve de verdad (lo sirve
+ *       `apps/web/src/app/casos-de-exito/page.tsx`, no `/[slug]`). Antes de
+ *       CMS-9 esto habría caído igual que el invariante 2 — es el caso real
+ *       medido en `ESQUEMA-CMS.md` §CMS-9 (139.ª), con `casos-de-exito` en vez
+ *       de `monitor-calidad-aire` porque ésta última ya tiene dueño real en la
+ *       DB sembrada y mediría el `unique` DE CAMPO en vez del registro.
  *
  * ── Los sabotajes, cada uno por SU invariante (`qa:cms-slugs-neg`) ─────────
  *   · `sin-hook`        — se le quita el hook a `terminos-kunakpedia` ⇒ rompe **2**
  *   · `fuera-plano`     — `productos` registra aunque tenga `padre` ⇒ rompe **4**
  *   · `sin-afterdelete` — `entradas-blog` no suelta al borrar ⇒ rompe **5**
- *   · CONTROL           — sin sabotaje, los cinco pasan. Sin él, una sonda que
+ *   · CONTROL           — sin sabotaje, los seis pasan. Sin él, una sonda que
  *                         fallara siempre aprobaría los tres sabotajes.
+ *
+ * ⚠ **El 6 no lleva sabotaje propio, y es el mismo patrón que ya tienen el 1 y
+ * el 3 en este fichero**: no todo invariante necesita un interruptor de
+ * config para poder romperse — el filtro que el 6 comprueba vive DENTRO de
+ * `enPlano()`, compartido por las seis, y no hay forma de desactivarlo sólo
+ * para una colección sin añadir superficie que ninguna colección real
+ * necesita. Se verificó DISCRIMINANDO por el otro canal disponible: corrido
+ * contra el código de la 139.ª (antes de CMS-9), el 6 CAE — es exactamente
+ * la colisión que `ESQUEMA-CMS.md` §CMS-9 midió. Contra el código de la
+ * 140.ª, pasa. Acta con los dos lados en `PENDIENTES-QA.md`.
  */
 import { Evaluadas, env, w } from "./lib.mjs";
 
@@ -61,6 +79,14 @@ const { registroDeSlug } = await import("../../packages/cms-config/src/hooks/reg
 const MARCA = `qa-slugs-${process.pid}`;
 const SLUG_A = `${MARCA}-accesorios`;
 const SLUG_B = `${MARCA}-otro`;
+/**
+ * ⚠ SIN prefijo de MARCA a propósito — tiene que ser el nombre LITERAL de una
+ * carpeta estática real de `apps/web/src/app/` para que el filtro de CMS-9 la
+ * reconozca. `casos-de-exito` está entre las «estáticas sin dueño» de
+ * `medidas/slugs-2026-09-02.json` (ninguna familia la reclama hoy), así que no
+ * hay fixture real con este slug que este test pueda pisar.
+ */
+const SLUG_ESTATICO = "casos-de-exito";
 
 const config = await construyeConfig();
 
@@ -93,9 +119,9 @@ if (SABOTAJE === "sin-hook") {
 
 const payload = await getPayload({ config });
 
-const ev = new Evaluadas({ nombre: "cms-slugs", unidad: "invariantes del plano", minimo: 5 });
+const ev = new Evaluadas({ nombre: "cms-slugs", unidad: "invariantes del plano", minimo: 6 });
 const pasos = [];
-const creados = { "entradas-blog": [], "terminos-kunakpedia": [], productos: [], categorias: [] };
+const creados = { "entradas-blog": [], "terminos-kunakpedia": [], productos: [], categorias: [], autores: [] };
 
 const anota = (paso, esperado, obtenido, ok) => {
   pasos.push({ paso, esperado, obtenido, ok });
@@ -145,13 +171,23 @@ const anota = (paso, esperado, obtenido, ok) => {
  * fixture, y 0 restantes** — `productos {slug, titulo, pagina}` ·
  * `terminos-kunakpedia {slug, seo.title, fechaPublicacion, cuerpo}`.
  */
-const cuerpoBlog = (slug, categoria) => ({
+/**
+ * ⚠⚠ **`firmas` ES `required · minRows: 1` (`grupo-a.ts:96`) desde ANTES de
+ * esta tanda, y este fixture no la traía — §regla 5ter, la misma clase que
+ * `pagina` y `fechaPublicacion` ya se cobraron aquí dos veces (ver la nota de
+ * arriba).** Cazado al correr el CONTROL: `entradas-blog` moría en el paso 1
+ * con `ValidationError: Firmas — This field requires at least 1 Rows`, ANTES
+ * de llegar al invariante 6 — «0 de 6 invariantes evaluados», no un rojo del
+ * invariante 6. Se arregla dándole un autor real, no aflojando el fixture.
+ */
+const cuerpoBlog = (slug, categoria, autor) => ({
   slug,
   titulo: "sonda",
   fechaPublicacion: "7 enero 2025",
   cuerpo: "<p>sonda</p>",
   seo: { title: "sonda" },
   categorias: [categoria],
+  firmas: [{ autor }],
 });
 const cuerpoTermino = (slug) => ({
   slug,
@@ -194,11 +230,13 @@ try {
   console.log(`\n════════ GUARDA DE COLISIÓN · mitad de ENTRADA ════════`);
   console.log(`  sabotaje: ${SABOTAJE ?? "(ninguno — CONTROL)"}\n`);
 
-  /* 0 · Andamio: la categoría que `entradas-blog` exige (1..n, obligatoria). */
+  /* 0 · Andamio: la categoría y el autor que `entradas-blog` exige (1..n,
+   * obligatorias las dos). */
   cat = await crear("categorias", { nombre: MARCA, slug: `${MARCA}-cat` });
+  const autor = await crear("autores", { nombre: MARCA, slug: `${MARCA}-autor` });
 
   /* 1 · El alta legítima entra, y deja su registro. ───────────────────────── */
-  await crear("entradas-blog", cuerpoBlog(SLUG_A, cat.id));
+  await crear("entradas-blog", cuerpoBlog(SLUG_A, cat.id, autor.id));
   const reg = await payload.find({
     collection: "slugs",
     where: { slug: { equals: SLUG_A } },
@@ -246,12 +284,30 @@ try {
   /* 5 · Borrar libera el slug: si no, un borrado lo quema para siempre. ───── */
   const idBlog = creados["entradas-blog"].pop();
   await payload.delete({ collection: "entradas-blog", id: idBlog });
-  const r5 = await intenta(() => crear("entradas-blog", cuerpoBlog(SLUG_A, cat.id)));
+  const r5 = await intenta(() => crear("entradas-blog", cuerpoBlog(SLUG_A, cat.id, autor.id)));
   ok = anota(
     "5 · borrar ⇒ suelta el slug y se puede reusar",
     "pasa",
     r5.mensaje,
     !r5.cayo,
+  ) && ok;
+  ev.ok();
+
+  /* 6 · CMS-9: un slug de carpeta ESTÁTICA no arbitra el plano — dos familias
+   * distintas lo reclaman y NINGUNA colisiona, porque ninguna es quien lo
+   * sirve de verdad. Antes de CMS-9 la segunda habría caído igual que el 2. */
+  const r6a = await intenta(() => crear("entradas-blog", cuerpoBlog(SLUG_ESTATICO, cat.id, autor.id)));
+  const r6b = await intenta(() => crear("terminos-kunakpedia", cuerpoTermino(SLUG_ESTATICO)));
+  const reg6 = await payload.find({
+    collection: "slugs",
+    where: { slug: { equals: SLUG_ESTATICO } },
+    limit: 1,
+  });
+  ok = anota(
+    "6 · slug de carpeta ESTÁTICA, dos familias ⇒ ninguna arbitra",
+    "las dos pasan · 0 en `slugs`",
+    `blog:${r6a.mensaje} · término:${r6b.mensaje} · ${reg6.totalDocs} en el registro`,
+    !r6a.cayo && !r6b.cayo && reg6.totalDocs === 0,
   ) && ok;
   ev.ok();
 } finally {
@@ -279,7 +335,7 @@ w(`medidas/cms-slugs${sufijo}.json`, {
 
 console.log(
   ok
-    ? `\n✅ cms-slugs: los 5 invariantes del plano se comportan como el §4 dice.\n`
+    ? `\n✅ cms-slugs: los 6 invariantes del plano se comportan como el §4 dice.\n`
     : `\n❌ cms-slugs: algún invariante NO se comporta como el §4 dice.\n`,
 );
 

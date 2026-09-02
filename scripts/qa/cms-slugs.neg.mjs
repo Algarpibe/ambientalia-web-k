@@ -23,6 +23,14 @@
  *                         otra forma de que una guarda deje de servir, y la que
  *                         no se ve mirando sólo si «sabe decir que no».
  *
+ * ⚠ El invariante **6** (CMS-9, 140.ª) no tiene sabotaje propio aquí — mismo
+ * patrón que el 1 y el 3, ya sin nombre en esta lista: vive DENTRO de
+ * `enPlano()`, compartida por las seis, y no hay forma de apagarla sólo para
+ * una colección sin añadir una superficie que ninguna colección real
+ * necesita. Se verificó discriminando por el otro canal: contra el código
+ * anterior a CMS-9 el 6 CAE (la colisión real que §CMS-9 midió); contra el de
+ * la 140.ª, pasa. `qa:cms-slugs-neg` sólo comprueba que el CONTROL lo incluye.
+ *
  * Uso: npm run qa:cms-slugs-neg      (necesita el Postgres del CMS vivo)
  */
 import { existsSync, readFileSync, rmSync } from "node:fs";
@@ -110,9 +118,9 @@ const ctlOut = (ctl.stdout || "") + (ctl.stderr || "");
 if (ctl.status !== 0) {
   fallos++;
   console.log(`  ❌ CONTROL                          exit ${ctl.status} — sin sabotaje tiene que salir 0`);
-} else if (!/los 5 invariantes del plano/.test(ctlOut)) {
+} else if (!/los 6 invariantes del plano/.test(ctlOut)) {
   fallos++;
-  console.log(`  ❌ CONTROL                          exit 0 pero sin la línea de los 5 invariantes`);
+  console.log(`  ❌ CONTROL                          exit 0 pero sin la línea de los 6 invariantes`);
 } else console.log(`  ✓  CONTROL          (sin sabotaje) exit 0 — la sonda no falla siempre`);
 
 console.log(
