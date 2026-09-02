@@ -1,0 +1,43 @@
+{
+  "fase": "ocioso",
+  "pendiente": false,
+  "desde": "2026-08-09T01:48:18.506Z",
+  "motivo": "entradas-blog:guia-cms-traspaso-f25 update",
+  "ultimoExito": {
+    "cuando": "2026-08-09T01:48:18.503Z",
+    "motivo": "entradas-blog:guia-cms-traspaso-f25 update",
+    "segundos": 38.29,
+    "buildId": "OeWb0DlPe1dXTXkRlPRbi",
+    "rutas": 31
+  },
+  "ultimoFallo": null,
+  "builds": 2,
+  "disparos": 2,
+  "coalescidos": 0,
+  "promocionRequierePararServidor": false,
+  "historia": [
+    {
+      "build": 1,
+      "empezo": 1786239717994,
+      "disparosPrevios": 1,
+      "motivo": "entradas-blog:guia-cms-traspaso-f25 create",
+      "codigo": 1,
+      "termino": 1786239753901
+    },
+    {
+      "build": 2,
+      "empezo": 1786240060172,
+      "disparosPrevios": 2,
+      "motivo": "entradas-blog:guia-cms-traspaso-f25 update",
+      "codigo": 0,
+      "termino": 1786240098459
+    }
+  ],
+  "ganchos": {
+    "PUBLICAR_CMD": null,
+    "SABOTAJE": null
+  },
+  "pid": 18184,
+  "dist": ".next",
+  "arrancado": 1786238743682
+}
