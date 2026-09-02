@@ -1,5 +1,155 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🔄 §142.ª · **EL RECORRIDO DEL EDITOR, ENTERO Y A LA ESCALA DE HOY** — 2026-09-02
+
+**Plan A de A+B.** Esta tanda **no escribe producto**: opera lo que ya existe y
+su salida **dimensiona la tanda B**. El renderizador de F3-5 queda **APLAZADO,
+no cancelado** — la 141.ª lo dejó dimensionado y ahí sigue.
+
+### PASO 0 · lo derivado antes de tocar nada
+
+**La tanda es la 142.ª, derivado del árbol:** `HEAD a396520` · **731 commits** ·
+árbol limpio · último commit `141.ª CIERRE`. Coincide con lo que el encargo
+veía, y se comprobó en vez de heredarse.
+
+#### (1) Las seis variables de `TRASPASO-CMS.md §6`, derivadas — y una falsa contradicción resuelta
+
+| variable | ¿puesta hoy? | dónde |
+|---|---|---|
+| `DATABASE_URI` | ✅ | `apps/cms/.env` · `apps/web/.env` |
+| `PAYLOAD_SECRET` | ✅ | `apps/cms/.env` · `apps/web/.env` |
+| `PREVIEW_SECRETO` | ✅ | `apps/web/.env` |
+| `PUBLICAR_SECRETO` | ❌ | en ninguno |
+| `PUBLICAR_URL` | ❌ | en ninguno |
+| `PUBLICAR_SERVIDOR` | ❌ | en ninguno |
+
+**`PREVIEW_SECRETO` parecía contradecir al documento** —*«no está en ningún
+`.env` del repo A PROPÓSITO»*— y **no lo contradice**: `apps/web/.env` está
+**IGNORADO por git** (`.gitignore:17`), así que la frase es cierta **de los
+ficheros versionados**. Los dos `.env` con contenido son locales; los dos
+`.env.example` son los versionados y **ninguno de los dos la nombra**. O sea
+que alguien la puso *como quien despliega*, que es exactamente lo que el
+documento manda.
+
+> **Y esto se derivó en vez de leerse**, porque las dos lecturas —«el documento
+> miente» y «el fichero no es del repo»— **se escriben igual** desde el
+> contenido del `.env`. Lo que las separa es `git ls-files`, y cuesta una línea.
+
+**Consecuencia declarada por adelantado, para que no se cuente como hallazgo:**
+las tres ausentes son las del **publicador**. Un fallo por cualquiera de ellas
+**NO es un hallazgo de esta tanda** — es lo ya documentado en §6, y contarlo
+como hallazgo sería el error que este repo castiga. Ponerlas es parte del
+recorrido.
+
+#### (2) Docker, en los tres pasos y con el canal que contesta
+
+| paso | qué se hizo | resultado |
+|---|---|---|
+| (a) demonio | `docker version` | `Server 29.6.2` |
+| (b) contenedor | `kunak-cms-pg` **ya existente** (nunca `compose up`) | `Up About an hour` |
+| (c) **el socket** | `net.connect(55432)` — no `docker ps` | **ABIERTO en 2 ms** |
+
+Y los dos canales que la 138.ª añadió, los dos sanos: `NetworkSettings.Ports`
+**publicado** (no vacío) y `NetworkSettings.Networks` = **`bridge`** (no cero
+redes). Volumen: el anónimo `2ebbe245…` de siempre, montado por su ID.
+
+#### (3) ⚠ El cardinal de rutas: **426**, y mi primer número era OTRA UNIDAD
+
+El encargo decía «~426, DERÍVALO CON SU FICHERO». Derivado de
+`apps/web/.next/prerender-manifest.json` (mtime **2026-09-02 13:01**, `BUILD_ID`
+`9SKeO6AguGU4ByPyHrtkL`):
+
+| unidad | n |
+|---|---|
+| **crudo** — `Object.keys(routes).length` | **429** |
+| **la del publicador** — `contarRutas()`, que filtra `/_*` y las que llevan punto | **426** |
+
+**Las 3 descartadas, nombradas y no muestreadas:** `/_global-error` ·
+`/_not-found` · `/favicon.ico`.
+
+> **Publicar «429» habría sido el quinto error de unidad seguido** después de
+> los cuatro de la 141.ª, y con la misma cara: un número plausible, derivado de
+> un fichero real, **que no es comparable con el 31 de `estado.json`** porque
+> ése lo escribió `contarRutas()`. La comparación se hace **en la unidad que se
+> afirma**, y aquí la afirma el publicador.
+
+**El salto real, en la unidad del publicador: 31 → 426, o sea ×13.7.**
+
+#### (4) `estado.json`: el último recorrido real, y lo que lleva dentro
+
+Congelado del **2026-08-09** (hace 24 días): `38.29 s` · buildId
+`OeWb0DlPe1dXTXkRlPRbi` · **31 rutas** · `dist: ".next"` ·
+`promocionRequierePararServidor: **false**` — o sea que en aquella corrida
+`PUBLICAR_SERVIDOR` **sí estaba puesta**, y hoy no lo está. Derivado, no
+heredado.
+
+Y su `historia` archiva **dos** builds: el #1 con **`codigo: 1`** y el #2 con
+`codigo: 0`. **El camino de fallo ya se recorrió una vez** — esta tanda lo
+vuelve a recorrer a propósito para mirar qué ve el editor.
+
+#### (5) ⚠⚠ `PUBLICAR_DIST` GANA sobre `NEXT_DIST_DIR` — derivado del `spawn`, no supuesto
+
+`publicador.mjs:241-244` lanza el build con
+`env: { ...process.env, NEXT_DIST_DIR: \`${NOMBRE_DIST}-nuevo\` }`. El *spread*
+va **primero** y la asignación explícita **después**, así que:
+
+> **Un `NEXT_DIST_DIR` exportado en mi terminal NO llega al build del
+> publicador: se lo pisa.** Quien decide dónde construye y adónde promociona es
+> **`PUBLICAR_DIST`** (`NOMBRE_DIST`, defecto `.next`).
+
+**Consecuencia operativa de esta tanda:** sin `PUBLICAR_DIST`, el publicador
+promociona sobre el **`.next` canónico**, que es lo que hace un editor de
+verdad y por tanto lo que hay que ejercitar. El riesgo no es la promoción: es
+**promocionar con una sonda midiendo**, que es el modo de fallo de la 110.ª. De
+ahí la guarda de (7).
+
+#### (6) NO existe usuario admin — **0 filas**, consultado a la DB
+
+`SELECT count(*) FROM usuarios` → **0**. `seed.mjs:980` salta `usuarios` con el
+comentario *«el admin puede existir»*, y **no lo garantiza**: hoy no existe.
+
+> **Crear el primer usuario es el PRIMER PASO de cualquier editor**, así que su
+> procedimiento se escribe en el ESCALÓN 2 en vez de darse por sabido. Y
+> `TRASPASO-CMS.md §2` ya avisa de la trampa: **el defecto del campo `rol` es
+> `editor`**, así que hay que cambiarlo a `Admin` a mano esa primera vez.
+
+#### (7) `P1` de la 141.ª: **sigue SIN EJERCITAR**, y no se hereda como verde
+
+P1 era *«las 4 rutas de F3-5 a Δ0 contra `clon-base-1440-2026-09-02.json`»*. La
+141.ª la dejó sin ejercitar porque `leeColeccion("arquetipos")` **no tiene
+consumidores**, y escribió que su verificación sería la primera medida de la
+142.ª **«cuando ya haya lectores»**.
+
+**Derivado hoy, no recordado:** `grep "arquetipos"` sobre `apps/web/src` da **9
+aciertos y los 9 son PROSA en comentarios** — ni una lectura de colección. El
+control del mismo patrón sobre `entradas-blog`, que sí se consume, da **12**
+aciertos, así que el patrón funciona y el cero es del objeto.
+
+> **Como esta tanda APLAZA el renderizador, la precondición de P1 sigue sin
+> cumplirse. P1 SIGUE FICHADA, y ejercitarla es de la tanda B.** Declararla
+> verde aquí sería heredar un SIN EJERCITAR como probado, que es justo lo que
+> el encargo prohíbe.
+
+⚠ **Y el cero se cazó a la primera por su control:** la primera corrida del
+mismo `grep` dio **cero en las dos mitades, la medida Y EL CONTROL** — porque un
+`cd apps/web` de una llamada anterior **había persistido** y estaba buscando
+`apps/web/src` desde dentro de `apps/web`. Un cero con el control también a cero
+es §sondas 4 en su forma más barata: **el instrumento, no el objeto**. Rehecho
+con rutas absolutas.
+
+#### (8) Campo libre — §regla 18, procesos y no árbol
+
+`git status` limpio **no es un puerto libre**. Derivado: **0 puertos**
+escuchando en 3000/3001/4000, y las **68** líneas de `node.exe` son **todas**
+servidores MCP (`chrome-devtools-mcp`, `codegraph`, `n8n-mcp`, `firebase-tools`,
+`context7`, `modelcontextprotocol`). **Cero son `scripts/qa/*`.**
+
+#### (9) `Dockerfile` y compose: NO se tocan
+
+`TRASPASO-CMS.md §6` ya los declara **SIN VERIFICAR** y dice que verificarlos es
+una tanda pendiente. Eso es **B**; aquí sólo se dimensiona.
+
+
 ## 🔄 §141.ª · **CABLEAR LOS LECTORES DE `arquetipos` (F3-5, la segunda mitad)** — 2026-09-02
 
 **Estado: PASO 0 completo.** Continuación misma-fecha de la 140.ª, que dejó
