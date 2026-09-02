@@ -28066,6 +28066,34 @@ promesa de «página propia» que `arquetipos` sí cumple para esas 3 rutas. Los
 otros 13 documentos `pagina: "propia"` de `productos` no colisionan con nada
 (0 contra `paginas`, 0 contra `arquetipos`).
 
+> ⚠ **CORREGIDO el mismo día, tras investigación del propietario: el «13» de
+> arriba es FALSO — nunca se cruzó `padre` para esas 13.** De los 16 con
+> `pagina: "propia"`, sólo **5** tienen `padre` vacío (están en el plano):
+> `estacion-de-monitoreo-de-calidad-del-aire` · `kunak-api` ·
+> `monitor-calidad-aire` · `sensor-de-calidad-del-aire` ·
+> `software-de-medicion-calidad-del-aire`. Los otros **11** cuelgan de un
+> `padre` (10 de `cartuchos-inteligentes`, 1 de `sensor-de-calidad-del-aire`)
+> y **nunca intentan registrarse en el plano** — no estuvieron nunca en
+> riesgo, no son «13 sin colisión». De los 5 en el plano: 3 son ésta ficha;
+> los otros 2 (`estacion-de-monitoreo-de-calidad-del-aire`,
+> `sensor-de-calidad-del-aire`) son un caso YA FICHADO desde la 94.ª/95.ª —
+> §F3-3-REGISTRO-SOBRE-RECLAMA — sin ruta que los sirva, decisión aparte.
+>
+> **Y el propietario refutó la lectura A que esta ficha proponía como más
+> plausible**: `pagina: "ninguna"` significa «no tiene página propia», y
+> para los 3 colisionantes eso es falso — el original SÍ los sirve.
+> Escribirlo sería mentir en el dato para contentar la guarda. Investigado
+> también: 0 consumidores de `productos.pagina`/`hrefServido` en
+> `apps/web/src`, y las 3 rutas las emiten sus CARPETAS ESTÁTICAS en `app/`
+> (no `[slug]`, que no importa de `productos`). El hallazgo de fondo:
+> `pagina` hace DOS trabajos —hecho medido y predicado de reclamo— y
+> `qa:slugs` YA tiene el heurístico que distingue «emite» de «describe»
+> (`esFamiliaDelPlano`, `slugs.mjs:403`, escrito para estas MISMAS 3 rutas
+> en una tanda anterior) pero **sólo del lado de lectura**; no existe en
+> `registro-slug.ts`, que es donde ocurre la colisión. Separarlos exige
+> crecer el mecanismo — CORTE LIMPIO, sigue en `ESQUEMA-CMS.md` §CMS-9 sin
+> resolver, ahora con las dos preguntas encargadas ya contestadas.
+
 Nueva decisión de MODELO — **`CMS-9`, `ESQUEMA-CMS.md` §CMS-9, ⛔ ABIERTO** —
 sobre quién renderiza `/es/<slug>` para esas 3 rutas cuando dos colecciones
 lo reclaman. **No decidida aquí.** DB restaurada y consistente: `cms:seed-kb`

@@ -2,7 +2,8 @@
   "meta": {
     "fecha": "2026-09-02",
     "tanda": "139.ª",
-    "que": "Alcance completo de la colisión de slug entre `arquetipos` (F3-5) y `productos` (CPT solutions), derivado tras el primer intento real de `cms:seed` con arquetipos cableada."
+    "que": "Alcance completo de la colisión de slug entre `arquetipos` (F3-5) y `productos` (CPT solutions), derivado tras el primer intento real de `cms:seed` con arquetipos cableada.",
+    "CORREGIDO": "productosPaginaPropiaSinColision=13 abajo es FALSO — nunca se cruzó `padre` para esas 13. Ver cms9-colision-slug-139-investigacion2.json para el cardinal correcto (sólo 5 de los 16 tienen padre vacío / están en el plano) y las dos preguntas encargadas por el propietario, ya contestadas."
   },
   "arquetiposSlugs": [
     { "slug": "monitor-calidad-aire", "arquetipo": "producto", "colisiona": true },

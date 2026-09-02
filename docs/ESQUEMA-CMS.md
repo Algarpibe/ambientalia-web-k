@@ -7594,65 +7594,108 @@ N»):
 ### No es un falso positivo de la guarda — comprobado, no supuesto
 
 `registroDeSlug` sólo exige unicidad de plano para los documentos de
-`productos` **sin `padre`** (§2e: 6 de 24 no llevan `padre` y viven en el
-plano; los otros 18 cuelgan de un segmento y su unicidad es la nativa de la
-colección — así lo documenta el propio hook). Medido: los cuatro documentos
-de `productos` en cuestión —`monitor-calidad-aire` · `kunak-api` ·
-`software-de-medicion-calidad-del-aire` · `accesories`— tienen **`padre`
-vacío los cuatro**, o sea que **los tres colisionantes SÍ están en el
-plano**: `productos` los declara con intención de servirlos en
-`/es/<slug>` directo, exactamente donde F3-5 también los quiere servir.
+`productos` **sin `padre`** (§2e; los que cuelgan de un segmento tienen
+unicidad nativa de colección). ⚠ **Cardinal CORREGIDO tras cruzar `padre` en
+las 19 filas, no sólo en las 4 en cuestión** (la primera versión de esta
+ficha decía «16 con `pagina: propia`, 13 sin colisión» — falso: nunca se
+cruzó `padre` para las otras 12): de los **16** documentos `pagina:
+"propia"`, **11 cuelgan de un `padre`** (10 de `cartuchos-inteligentes`, 1
+de `sensor-de-calidad-del-aire`) y **nunca intentan registrarse en el
+plano** — no estuvieron nunca en riesgo. Sólo **5** tienen `padre` vacío y
+SÍ entran en el plano: `estacion-de-monitoreo-de-calidad-del-aire` ·
+`kunak-api` · `monitor-calidad-aire` · `sensor-de-calidad-del-aire` ·
+`software-de-medicion-calidad-del-aire`. De esos 5: **3 colisionan con
+`arquetipos`** (el asunto de esta ficha) y **2 no tienen ninguna ruta que
+los sirva** — son un caso YA FICHADO, distinto y anterior, en
+`PENDIENTES-QA.md` §F3-3-REGISTRO-SOBRE-RECLAMA (94.ª/95.ª, 2026-08-22): no
+se confunden ni se cierran juntos.
 
-### Lo que esto significa, sin decidir por nadie — y con la investigación C ya hecha (no muta nada)
+### Investigado por el propietario, no supuesto por la tanda — y cambia el marco
 
-`productos` es el CPT `solutions` (§2e, `packages/cms-config/src/colecciones/productos.ts`,
-cerrado sobre las 24 URLs de `solutions-sitemap.xml`) — el catálogo detrás de
-`/accesorios`. **Y ya lleva un discriminador propio para exactamente esta
-pregunta**, escrito en §2e antes de que `arquetipos` existiera: el campo
-`pagina` (`"propia"` | `"ninguna"`, `required` sin defecto — CMS-PR3), que
-dice si el documento del CPT **tiene página dedicada en `/es/`**. `productos`
-sólo entra en el plano (`enElPlano: (doc) => !doc.padre && doc.pagina ===
-"propia"`, `productos.ts:364`) cuando `pagina === "propia"` — no basta con
-`padre` vacío, hace falta las dos cosas.
+El propietario investigó directamente (sin mutar nada) y REFUTÓ la lectura
+«A» que esta ficha proponía como más plausible en su primera versión:
 
-**Los 3 que colisionan tienen `pagina: "propia"`** —igual que otros 13
-documentos de `productos` que NO colisionan con nada (`amoniaco`, `ozono`,
-`dioxido-de-carbono`, `metano`, `estacion-de-monitoreo-de-calidad-del-aire`…
-16 en total, 0 de los otros 13 casan con `paginas` ni con `arquetipos`)—.
-Así que **no son residuos de sitemap sin cuerpo**: `productos` los declara
-con intención real de servirlos en el plano, con su `tagline` propio medido
-(«Monitor de calidad de aire para profesionales», «Software de calidad del
-aire», «Fácil integración de datos»).
+- **0 consumidores** de `productos.pagina` en `apps/web/src`;
+- **0 consumidores** de `productos.hrefServido` en el render (sólo su
+  definición, su migración y `payload-types.ts`);
+- **`[slug]/page.tsx` NO importa de `productos`** — sus fuentes son
+  `paginasColaLarga`, `blog`, `terminos` y `cola` (confirmado leyendo el
+  fichero: 0 líneas mencionan `productos`);
+- **las 3 rutas colisionantes las emiten sus CARPETAS ESTÁTICAS** en
+  `app/` (`apps/web/src/app/monitor-calidad-aire/page.tsx` y hermanas),
+  leyendo de `src/lib/` — confirmado, no derivan de ningún catálogo del CMS.
 
-**Y lo que SÍ es nuevo es esto: `productos` no tiene NINGÚN campo de cuerpo
-—ni `bloques`, ni rico, nada—.** Sus columnas son sólo card/ficha:
-`titulo · tagline · description · highlight · bullets_titulo · image · seo`.
-Así que un documento `pagina: "propia"` de `productos` **no puede, por sí
-mismo, renderizar la página completa que promete**. Eso es exactamente lo
-que `arquetipos` sí trae —el cuerpo entero, extraído del HTML servido— para
-estas 3 mismas rutas. Las dos colecciones no están duplicando el mismo dato:
-**una tiene la ficha corta (`productos`, pensada para tarjetas/cruces) y la
-otra el cuerpo completo (`arquetipos`)**, y las dos reclaman a la vez el
-mismo hueco del plano porque `productos.pagina` se escribió en §2e sin que
-existiera todavía nada que pudiera cumplir la promesa de «página propia».
+**Por qué A es falsa, en las palabras del propietario:** las 3 filas que YA
+están en `pagina: "ninguna"` —`accesories` · `air-cloud` · `ozone-2`— son
+documentos INGLESES del CPT que el original NO sirve en su propia URL, y por
+eso su `hrefServido` apunta a otra parte. `pagina: "ninguna"` significa
+literalmente «este documento no tiene página propia». Para
+`monitor-calidad-aire`, `software-…` y `kunak-api` eso es **falso**: el
+original SÍ las sirve (son páginas reales, medidas, con su `tagline`
+propio). Escribir `pagina: "ninguna"` en esos 3 sería **mentir en el dato
+para contentar a una guarda** — la regla 1 del repo (fidelidad al original)
+al revés, con una medición real de coartada. **`pagina` no se toca en esos
+3.**
 
-**No se resuelve aquí — sigue siendo una decisión de MODELO** (qué
-colección renderiza `/es/monitor-calidad-aire` cuando dos la reclaman), pero
-la investigación C ya está hecha y descarta la lectura más simple («son
-basura de sitemap»). Las salidas visibles, cada una con su operación de
-deshacer y ninguna aplicada:
+### Lo que la colisión destapa de verdad: `pagina` hace DOS trabajos a la vez
 
-| | qué haría | qué costaría deshacer |
-|---|---|---|
-| **A** · los 3 documentos de `productos` dejan de reclamar el plano —`pagina` pasa a `"ninguna"` con su `hrefServido`, o se añade un tercer valor tipo `"delegada"`— y `arquetipos` se queda con el plano; el render de `/es/<slug>` para estas 3 rutas resuelve desde `arquetipos` | una colección por responsabilidad: ficha corta en `productos`, cuerpo en `arquetipos` | volver a poner `pagina: "propia"` en los 3 si `arquetipos` deja de cubrirlos |
-| **B** · `arquetipos` renombra sus 3 slugs colisionantes o los saca del plano | `productos` no se toca, sigue reclamando esas 3 URLs | volver a nombrarlos como el original si resulta que el cuerpo SÍ tiene que vivir ahí |
-| **D** · dejar `arquetipos` en 0 filas y no sembrarlo hasta decidir | nada que deshacer | F3-5 sigue en `0 filas · 0 lectores` |
+Es un **HECHO MEDIDO** («el original sirve esta página en su propia URL») y
+a la vez el **PREDICADO** que reclama el slug en el plano
+(`enElPlano: (doc) => !doc.padre && doc.pagina === "propia"`,
+`productos.ts:364`). Mientras sean el mismo campo, no se puede expresar
+«tiene página propia Y no reclama el plano», que es justo lo que hace falta
+aquí: `productos` DESCRIBE esas 3 URLs (es cierto, medido, no se toca) y
+`arquetipos` las va a EMITIR (F3-5 existe para eso — «cablear los lectores
+es la 140.ª», `PLAN-FASE-3.md`). Las dos cosas son ciertas a la vez y el
+campo actual sólo puede decir una.
 
-> **A es la lectura que más encaja con lo medido** —`productos` no puede
-> cumplir «página propia» sin cuerpo, y `arquetipos` sí lo tiene—, pero
-> sigue sin aplicarse: falta comprobar si algo del build o del admin ya lee
-> `productos.hrefServido`/`pagina` para estas 3 rutas de una forma que A
-> rompería, y ésa es la comprobación que le toca a la tanda que lo cierre.
+### Las dos preguntas encargadas, derivadas del código — no de la memoria
+
+**1 · ¿Se puede separar el predicado del hecho sin falsear `pagina` y sin
+una lista de slugs a mano?** Leído `registro-slug.ts` entero (140 líneas):
+**no existe ningún concepto de FUERZA DE RECLAMO.** `reclamar()`
+(línea ~74) es una carrera binaria — primer `create` que llega gana,
+cualquier `create` posterior con el mismo slug **tira**, sin mirar si el
+primero realmente va a renderizar algo. No hay «reclamo débil/defensivo» vs
+«reclamo fuerte/de propiedad», ni aquí ni en ningún otro `enElPlano` del
+repo (`paginas` usa `!doc.prefijo`, mismo patrón binario). Separar el hecho
+del predicado sin mentir en el dato exige uno de dos: **(a)** un concepto
+nuevo de prioridad/arbitraje entre colecciones —qué reclamo cede ante cuál,
+y con qué criterio DERIVADO, no una lista de 3 slugs— o **(b)** la lista a
+mano que el encargo prohíbe. Ninguna de las dos es gratis: la (a) es crecer
+el mecanismo; la (b) es exactamente §regla 9, 7.º caso.
+
+**2 · ¿`qa:slugs` ya distingue «emite» de «describe», o esa distinción no
+existe hoy en el registro?** **Existe — pero SÓLO EN EL LADO DE LECTURA, no
+en el de escritura.** `scripts/qa/slugs.mjs:403`, comprobación B
+(«sombra»), tiene exactamente este heurístico, ya escrito y ya usado sobre
+estos MISMOS 3 slugs: `esFamiliaDelPlano = (slugs) => slugs.some((s) =>
+quienEmite.get("/" + s) === "/[slug]")`. Una familia sólo se somete a la
+comprobación de sombra si **alguno** de sus slugs lo emite de verdad
+`/[slug]`; si ninguno lo hace —el caso de `productos`, cuyas páginas son
+rutas estáticas propias—, la sonda **no la trata como sombra: es su
+enrutado normal**. El propio comentario del código dice que, sin este
+heurístico, «derivar las familias hacía aparecer 3 sombras que eran el
+enrutado normal de `productos`» — **las mismas 3 de esta ficha**, vistas
+antes desde el lado de verificación. Pero esta distinción vive **sólo en
+`qa:slugs`** (que compara el registro contra el `prerender-manifest` DESPUÉS
+de que todo esté sembrado y construido) y **no existe en `registro-slug.ts`**
+(que es donde ocurre la colisión: en el `create`, antes de que haya nada que
+comparar). El lado de escritura no puede preguntarle al build «¿quién emite
+esto de verdad?» — no hay build en marcha durante un `create`.
+
+### CORTE LIMPIO — se para aquí, como pidió el encargo
+
+Separar el predicado del hecho **exige crecer el mecanismo** (un concepto de
+prioridad/arbitraje que hoy no existe) — cumple la condición de parada que
+el propio encargo fijó. **No se implementa nada.** Queda como CMS-9, con sus
+opciones y su operación de deshacer, decisión del propietario:
+
+| | qué haría | qué costaría deshacer | toca schema/mecanismo nuevo |
+|---|---|---|---|
+| **A'** · nuevo concepto de reclamo en `registro-slug.ts` (p. ej. `reclamar(..., {fuerza: "debil"\|"fuerte"}`), y `productos` pasa sus 3 (o los 5) reclamos a «débil» — cede ante un reclamo fuerte en vez de tirar | separa hecho y emisión sin falsear `pagina`; es la lectura que más encaja con lo medido | quitar el concepto si deja de hacer falta | **SÍ** — mecanismo nuevo, no trivial |
+| **B** · `arquetipos` renombra sus 3 slugs colisionantes o los saca del plano (`enElPlano` propio en vez del default `() => true`) | `productos` no se toca | volver a nombrarlos si el cuerpo SÍ tiene que vivir en el plano | no, pero dejaría a `arquetipos` con un `enElPlano` ad-hoc para 3 de 4 documentos |
+| **D** · dejar `arquetipos` en 0 filas y no sembrarlo hasta decidir | nada que deshacer | F3-5 sigue en `0 filas · 0 lectores` | no |
 
 ### Estado de la DB tras el intento
 
@@ -7664,12 +7707,10 @@ limpiamente en el primer `create` de `arquetipos`, sin fila parcial (Payload
 crea por documento). `cms:seed-kb` (6 artículos) y `cms:seed-listados` (12
 descripciones · 68 extractos · 10 `categorias-recursos`) se corrieron
 después para restaurar el resto del pipeline (§regla 20) — `arquetipos`
-sigue en **0 filas**, y es la única pieza que falta.
+sigue en **0 filas**, y es la única pieza que falta. **No se siembra**:
+queda cableada a propósito para que el sondeo grite (§sondas 6).
 
 ### Condición para cerrar
 
-Decisión del propietario sobre A/B/D (o una quinta que no esté aquí). La
-investigación que antes pedía «C» ya está hecha (arriba): no son residuos de
-sitemap, `productos` no tiene cuerpo y `arquetipos` sí. Falta decidir A vs B
-y, si es A, comprobar que nada lea `productos.pagina`/`hrefServido` para
-estas 3 rutas de una forma que el cambio rompa.
+Decisión del propietario entre A'/B/D (o una quinta que no esté aquí). Si es
+A', el diseño del concepto de prioridad es su propia tanda — no es una línea.

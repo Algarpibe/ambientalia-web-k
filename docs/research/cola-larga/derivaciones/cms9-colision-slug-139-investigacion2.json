@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "fecha": "2026-09-02",
+    "tanda": "139.ª",
+    "que": "Segunda pasada, tras investigación del propietario. Corrige el cardinal de la primera versión (cms9-colision-slug-139.json, que decía '16 propia / 13 sin colisión' sin haber cruzado `padre` para esas 13) y añade las dos preguntas encargadas: (1) ¿se puede separar el predicado del hecho sin falsear `pagina` ni una lista a mano?, (2) ¿`qa:slugs` ya distingue emite de describe?",
+    "supersede": "cms9-colision-slug-139.json queda con su error declarado, no se borra (§regla 7bis: no se pisa una congelada, se corrige al lado)"
+  },
+  "productosPaginaPropia": {
+    "total": 16,
+    "conPadre_nuncaEnElPlano": 11,
+    "conPadreDetalle": { "cartuchos-inteligentes": 10, "sensor-de-calidad-del-aire": 1 },
+    "sinPadre_enElPlano": 5,
+    "sinPadreDetalle": [
+      "estacion-de-monitoreo-de-calidad-del-aire",
+      "kunak-api",
+      "monitor-calidad-aire",
+      "sensor-de-calidad-del-aire",
+      "software-de-medicion-calidad-del-aire"
+    ]
+  },
+  "de_los_5_en_el_plano": {
+    "colisionanConArquetipos": ["kunak-api", "monitor-calidad-aire", "software-de-medicion-calidad-del-aire"],
+    "reclamoSinRuta_yaFichado_94_95": ["estacion-de-monitoreo-de-calidad-del-aire", "sensor-de-calidad-del-aire"],
+    "nota": "los 2 de reclamo-sin-ruta son un caso DISTINTO y ANTERIOR (PENDIENTES-QA.md §F3-3-REGISTRO-SOBRE-RECLAMA, 94.ª/95.ª), no se cierran junto con CMS-9"
+  },
+  "investigacionDelPropietario": {
+    "consumidoresProductosPaginaEnAppsWebSrc": 0,
+    "consumidoresHrefServidoEnRender": 0,
+    "slugPageTsxImportaDeProductos": false,
+    "slugPageTsxFuentes": ["paginasColaLarga", "blog", "terminos", "cola"],
+    "las3RutasColisionantesEmitidasPor": "carpetas estáticas en apps/web/src/app/<slug>/page.tsx, leyendo src/lib/",
+    "opcionARefutada": true,
+    "porQueARefutada": "pagina:'ninguna' significa 'no tiene página propia'; para los 3 colisionantes eso es falso (el original SÍ los sirve, medido). Escribirlo mentiría en el dato para contentar la guarda."
+  },
+  "pregunta1_separarPredicadoDelHecho": {
+    "fuenteLeida": "packages/cms-config/src/hooks/registro-slug.ts, las 140 líneas",
+    "conceptoDeFuerzaDeReclamoExiste": false,
+    "mecanismoActual": "reclamar() es una carrera binaria: primer create gana, cualquier create posterior con el mismo slug tira, sin mirar si el primero renderiza algo de verdad",
+    "otrosEnElPlanoEnElRepo": ["paginas: !doc.prefijo", "productos: !doc.padre && doc.pagina==='propia'"],
+    "conclusion": "no existe forma de separar sin (a) un concepto nuevo de prioridad/arbitraje entre colecciones (crecer el mecanismo) o (b) una lista de slugs a mano (§regla 9, 7.º caso). Ninguna es gratis."
+  },
+  "pregunta2_qaSlugsDistingueEmiteDeDescribe": {
+    "existeEnLecturaVerificacion": true,
+    "donde": "scripts/qa/slugs.mjs:403, comprobación B (sombra), función esFamiliaDelPlano",
+    "heuristico": "una familia sólo entra en la comprobación de sombra si ALGUNO de sus slugs lo emite de verdad /[slug]; si ninguno lo hace (caso de productos), no es sombra: es su enrutado normal",
+    "yaVioEstasMismas3Rutas": true,
+    "citaDelCodigo": "sin esto, derivar las familias hacía aparecer 3 sombras que eran el enrutado normal de productos",
+    "existeEnEscrituraRegistro": false,
+    "porQueNoAyudaAlaColision": "registro-slug.ts actúa en el create, antes de que exista ningún build/manifiesto contra el que preguntar quién emite de verdad"
+  },
+  "veredicto": "CORTE LIMPIO confirmado: separar predicado de hecho exige crecer el mecanismo. No se implementa nada. CMS-9 queda abierta con A' (nuevo concepto de fuerza de reclamo), B (arquetipos cede el plano en esos 3) y D (no sembrar) — decisión del propietario."
+}
