@@ -6241,6 +6241,63 @@ contra el que se comparó.
 
 ---
 
+**52 · «CABLEAR UN LECTOR» ES CAMBIAR LA FUENTE **SÓLO SI** EL MODELO GUARDA LA
+FORMA QUE EL RENDER YA CONSUME — Y ESO SE MIDE CON UNA INTERSECCIÓN, ANTES DE
+DIMENSIONAR NADA.** (2026-09-02)
+
+Migrar una familia al CMS se enuncia siempre igual —*«que lea de Payload en vez
+de `src/lib/`»*— y esa frase **esconde dos trabajos de magnitud distinta**, sin
+ninguna señal que los separe:
+
+> **Si el modelo devuelve el TIPO que el componente ya consumía, cablear es
+> cambiar de dónde viene el array: el render no se toca y el Δ0 es posible por
+> construcción. Si el modelo guarda OTRA REPRESENTACIÓN del mismo contenido,
+> cablear es ESCRIBIR EL ARQUETIPO OTRA VEZ** — renderizador, hoja, geometría y
+> comparador—, **y el Δ0 contra el clon anterior es imposible por
+> construcción.**
+
+**El discriminador cuesta una línea y es un CARDINAL, no un juicio:**
+
+> **la intersección entre lo que el modelo EXPRESA y lo que el render
+> CONSUME.** Alta ⇒ cambio de fuente. **Cero ⇒ reescritura, y es otra tanda con
+> su propio radio.**
+
+**Medido, con los dos lados de la separadora en el mismo repo:**
+
+| familia | lo que devuelve el lector | ¿lo consumía ya el render? | qué costó |
+|---|---|---|---|
+| GRUPO A (F2-3) | `DocumentoCientifico[]`, el tipo de `types/kunak.ts` | **sí** — `TarjetaCientifica.tsx` usaba ese tipo | cambiar de dónde viene el array |
+| **F3-5 (`arquetipos`)** | 90 bloques `{kind, contenido}` | **no** — **intersección 0** entre 22 constantes y 31 campos | **382–881 líneas + hoja de 543–597 + geometría + comparador** |
+
+**Y la causa NO es que el modelo no lleve el contenido** —lo llevaba entero—.
+Es que **un modelo de FLUJO ORDENADO y un render de HUECOS CON NOMBRE son dos
+representaciones del mismo objeto**, y traducir la primera a la segunda es
+literalmente el trabajo de un renderizador.
+
+**Las tres mitades operativas:**
+
+1. **la intersección se mide ANTES de aceptar el encargo**, no después de
+   empezar: los nombres que el render importa contra los campos que el modelo
+   expresa. Es un `grep` de imports y un recorrido del catálogo;
+2. **cuando salga cero, el criterio de aceptación CAMBIA y hay que decirlo.** Un
+   Δ≠0 contra el clon anterior deja de ser un fallo: la familia que se estrena
+   desde el CMS **tiene** que moverse respecto de un clon calibrado a mano. El
+   NO-OP se mide **contra el ORIGINAL**; medirlo contra el clon calibrado es
+   exigirle al CMS que reproduzca una calibración a mano, o sea **fabricar una
+   FAMILIA DE CALIBRACIÓN** con el clon de coartada;
+3. **y el coste se declara en el nivel que sí rompe, con su cardinal** —*«rompe
+   REGRESIÓN, umbral cero, en 4 de 426 rutas»*—, en vez de disfrazarse de
+   concesión. «Aceptamos que P1 se cae» y «P1 no aplica a esta familia» se
+   escriben parecido y **sólo la segunda es cierta**.
+
+> ⚠ **Y la asimetría que decide si el caso te va a morder: ¿la familia se
+> ESTRENA desde el CMS, o ya estaba clonada?** Una cola larga que nunca tuvo
+> clon no tiene calibración que perder, así que el corte no se nota. Una familia
+> **con meses de QA al píxel** sí — y ahí el mismo trabajo, con el mismo
+> modelo, tiene un coste que la anterior no pagó.
+
+---
+
 ## Comandos
 
 ```bash

@@ -337,6 +337,221 @@ defecto real, medido, silencioso y **bloqueante para cualquier cableado futuro**
 — sin él los 231 módulos llegan al render sin discriminante y las 4 rutas
 responderían **200 con el cuerpo vacío**.
 
+### CIERRE · tres correcciones del propietario, verificadas — y la 141.ª cierra en «parar aquí»
+
+El propietario corrigió el planteamiento del corte limpio en tres puntos.
+**Los tres derivados antes de darlos por buenos, y los tres son ciertos.** Dos
+de ellos me pillan **el mismo error, y es de UNIDAD.**
+
+#### C1 · El cardinal de `pieza` — yo publiqué una cifra sin su unidad
+
+| unidad | módulos | con `pieza` | sin |
+|---|---|---|---|
+| **DOCUMENTO** (`monitor-calidad-aire`) | 90 | **34** | 56 ← *lo que publiqué* |
+| **LOTE** (los 4) | **231** | **74** | 157 ← *lo que el propietario cuenta* |
+
+**Las dos son ciertas y miden objetos distintos.** El fallo no fue contar mal:
+fue publicar la de **documento** etiquetada como si fuera del **lote**, y encima
+justo debajo de una tabla de piezas que también era de un solo documento. Es
+§*cada denominador se escribe CON SU UNIDAD* — «34 con pieza, 56 sin» y «74 de
+231» se escriben igual y sólo una contesta *«¿cuánto del lote lleva `pieza`?»*.
+Y los **231** cuadran al bit con el `90 · 35 · 70 · 36` que el modelo declara.
+
+#### C2 · `pieza` es SEMÁNTICA, no clase posicional del builder — y `bloquesArquetipo` ya es tipado
+
+Derivado: **12 bloques** (`texto-arq` · `icono-arq` · `imagen-arq` ·
+`boton-arq` · `slider-ancho-arq` · `slider-arq` · `video-arq` · `codigo-arq` ·
+`formulario-arq` · `cta-arq` · `tabla-arq` · `galeria-arq`), **con campos
+reales**. Y `pieza` toma **11 valores distintos en el lote** ✓ exacto:
+
+```
+breadcrumbs · clear · galeria · iconos-certificicados · iconos-md-2 ·
+iconos-xs-2 iconos-md-3 · iconos-xs-2 iconos-md-6 · lista-resultados ·
+menu-anclas · modulo-beneficios · parametros clear-both
+```
+
+**Mi «clase posicional del builder» era falso** y la corrección se sostiene.
+**Y un matiz que la tanda siguiente necesita, dicho con su reparto porque no es
+11/11:** de los 11, **6 son semánticos** (`breadcrumbs` · `galeria` ·
+`iconos-certificicados` · `lista-resultados` · `menu-anclas` ·
+`modulo-beneficios`) y **5 llevan PRESENTACIÓN dentro** — los tres de
+`iconos-*` traen la rejilla responsive (`xs-2` / `md-6`), y `clear` /
+`parametros clear-both` son flujo. El renderizador tendrá que decidir qué hace
+con esos 5; no es un problema, es un campo del dimensionado.
+
+#### C3 · «No existe renderizador» era cierto de `arquetipos` y yo lo escribí del REPO
+
+**El mismo error de unidad, tercera vez.** Mi grep buscó `texto-arq|icono-arq|
+bloquesArquetipo` — los tipos de **este lote** — y de ahí concluí *«no hay
+renderizador»*. Lo correcto es que **no hay renderizador DE `arquetipos`**, y el
+patrón existe **dos veces**, las dos derivadas:
+
+| precedente | componente | líneas | hoja derivada |
+|---|---|---|---|
+| **F3-1** · `articulos-kb` | `components/kb/CuerpoKb.tsx` | **382** | `app/kb.css` · **543** |
+| **F3-3** · cola larga | `cola-larga/CuerpoPagina.tsx` + `PaginaF33.tsx` | **653 + 228** | `app/f33.css` · **597** |
+
+Y con eso **la causa de la intersección cero se re-enuncia bien**: no es que el
+modelo no lleve el contenido —lo lleva: visor 360, especificaciones, sellos,
+chips, FAQ y sondas están todos en el dato—. Es que
+
+> **el modelo es un FLUJO ORDENADO de módulos y los 4 componentes son HUECOS
+> CON NOMBRE.** Traducir flujo → huecos es literalmente el trabajo de un
+> renderizador, y este repo ya lo ha escrito dos veces.
+
+#### C4 · Y la ETIQUETA estaba mal: que P1 se caiga NO es una concesión
+
+Mi acta escribió *«implica ACEPTAR que P1 se cae»*, como si fuera un precio.
+**No lo es: es el resultado ESPERADO**, y la diferencia no es de matiz —decide
+si la tanda siguiente lee un Δ≠0 como éxito o como regresión—.
+
+> **«El CMS está puesto» = FIEL AL ORIGINAL, no «no movió nada».** Que 4 rutas
+> dejen de dar Δ0 contra un clon **calibrado a mano** es lo que tiene que pasar
+> cuando el contenido pasa a salir del CMS.
+
+**Lo que sí es coste, y va con su cardinal:** rompe el nivel **REGRESIÓN**
+—umbral cero, clon contra clon— en **4 de 426 rutas**. Eso se declara; no se
+esconde y no se disfraza de concesión.
+
+#### C5 · El `conKind` es NO-OP EN PÍXELES **por construcción** — y por qué no se corrió `clon-base`
+
+**Derivado con su control** (§*antes de creerse un cero, comprueba que el patrón
+casa donde SÍ debe*):
+
+| patrón | resultado |
+|---|---|
+| `leeColeccion<…>("<coleccion>")` en `apps/web/src/` | casa **8 colecciones**: `sectores` · `productos` · `monograficos` · `etiquetas` · `documentos-cientificos` · `categorias-recursos` · `categorias-cientificas` · `casos` |
+| el mismo patrón sobre `"arquetipos"` | **0** |
+
+**0 consumidores ⇒ no hay camino del cambio al píxel.** El `conKind` sólo se
+lee dentro de `leeColeccion("arquetipos")`, y nadie la llama. Así que
+`clon-base` **no se corrió**, y esto se declara en vez de omitirse (§regla 14):
+la predicción **P1 queda SIN EJERCITAR**, no verificada. Su verificación es la
+primera medida de la 142.ª, cuando ya haya lectores y la sonda tenga poder.
+
+### ⚠⚠ Y LA LECCIÓN DE LA TANDA NO ES EL `conKind`: ES QUE COMETÍ **CUATRO** VECES EL MISMO ERROR DE UNIDAD, Y LAS CUATRO PRODUJERON UN NÚMERO PLAUSIBLE
+
+Ninguna dio error. Las cuatro se leían como dato:
+
+| # | lo que publiqué | la unidad que era | la unidad que dije |
+|---|---|---|---|
+| 1 | «34 con pieza, 56 sin» | **un documento** (90 módulos) | el lote (231) |
+| 2 | «`pieza` es clase posicional del builder» | — | **falso**: 11 valores semánticos |
+| 3 | «no existe renderizador» | **de `arquetipos`** | del repo — y existen **dos** |
+| 4 | «0 consumidores» → el grep dio **5** | casaba `arquetipo-a` (**el fichero**) | la colección `arquetipos` |
+
+**Las cuatro son §*la causa común: el NIVEL al que se mide*, y las cuatro veces
+el nivel de arriba estaba a mano** — el documento en vez del lote, el repo en
+vez de la colección, el nombre del fichero en vez del de la colección. Y la 4.ª
+la cometí **después** de haber escrito las tres primeras en este acta, o sea que
+**«más atención» no es el remedio**: lo único que las cazó fue **exhibir el
+control** —*¿el patrón casa donde SÍ debe?*—, que en la 4.ª contestó `8` y dejó
+el `0` en pie.
+
+> **La forma general, y es barata: un grep cuyo resultado vas a publicar lleva
+> su control al lado.** No «¿casa aquí?» sino **«¿casa donde debe y sólo donde
+> debe?»**. Sin él, un `5` producido por un nombre de fichero parecido es
+> indistinguible de un `5` de verdad — y en esta tanda ese 5 habría **derribado
+> el corte limpio entero** por dos minutos.
+
+⚠ **Y el falso amigo del PASO 0 se cobró aquí, tres escalones después.** El
+punto 5 del encargo avisaba de `arquetipo-a.ts` y lo comprobé al empezar; aun
+así el mismo nombre volvió a casar en un grep de cierre. **Un falso amigo no se
+neutraliza comprobándolo una vez: hay que escribir los patrones para que no lo
+casen** — aquí, exigir la comilla y el paréntesis de la colección.
+
+### ⚠⚠ Y ESA DECISIÓN NO ESTABA ESCRITA — `§8-FIDELIDAD` SEGUÍA FICHADA COMO «INDECIDIBLE, LO DECIDE EL PROPIETARIO»
+
+Derivado, no supuesto: `PENDIENTES-QA.md` §*INDECIDIBLE hoy* la lista con esas
+palabras —*«el propietario, eligiendo cuál de las dos afirmaciones tiene que
+sostener §8»*— y **`ESQUEMA-CMS.md` §8 escribe hoy la lectura CONTRARIA**:
+
+> *«Con el sitio leyendo de Payload, las mismas sondas contra el clon actual,
+> **umbral CERO**, TODAS las rutas que el build emite, 2 anchos.»*
+
+**Dos lecturas escritas a la vez, y cada lector elige la suya** — que es
+exactamente §*la salida es BORRAR una, nunca conciliarlas con una nota al pie*.
+La decisión se escribe **en esta tanda**, porque §MENCIONADO NO ES DOCUMENTADO:
+tomada en conversación y no escrita, la tanda siguiente la desharía **con toda
+la razón aparente del mundo**, comprobando contra el registro.
+
+### VEREDICTO DE LA 141.ª
+
+**Se para aquí, por decisión del propietario.** Lo que queda hecho y verificado:
+
+| | |
+|---|---|
+| `conKind` declarado en `arquetipos.bloques` | `qa:cms-decl` 12 huecos → **1** (ajeno) · `qa:cms-lectura` **392/392, EXIT=0** · negativo **4/4** |
+| el corte limpio | documentado con sus cardinales y sus dos precedentes dimensionados |
+| `§8-FIDELIDAD` | **DECIDIDA** y escrita, tras 22 tandas fichada como indecidible |
+
+**La 142.ª se dimensiona con su radio completo**, y ya no hay que derivarlo:
+
+- **renderizador** `CuerpoArquetipo.tsx` — referencia 382–881 líneas según cuál
+  de los dos precedentes se siga;
+- **hoja derivada** — referencia `kb.css` 543 / `f33.css` 597, y se deriva con
+  una sonda de clases, no se escribe a mano;
+- **geometría** del original (patrón `qa:f33-geo`);
+- **comparador de dos lados** con su negativo corrido **antes** de que exista el
+  lado nuevo (§regla 24);
+- y **su NO-OP se mide contra el ORIGINAL, no contra `clon-base-*-2026-09-02`**
+  — medir contra el clon calibrado sería exigirle al CMS que reproduzca una
+  calibración a mano, o sea **fabricar una FAMILIA DE CALIBRACIÓN** con el clon
+  de coartada.
+
+**Y una constricción heredada que la 142.ª no puede saltarse:** de los 12 tipos
+de bloque, `codigo-arq` está a **0 filas** en las 4 — así que su rama de render
+nace **SIN ESTRENAR** y se declara así (§*un campo que ADMITE un caso y que
+ningún dato de calibración EJERCITA es un camino de render sin estrenar*), no se
+da por soportada.
+
+## ⛔ §BASELINE-390-INFIELES · **`clon-base-390-2026-09-02.json` sirve para REGRESIÓN y NO para ACEPTACIÓN — lleva 2 rutas infieles dentro** — 141.ª, 2026-09-02
+
+**La congelada es correcta y el problema no es suyo.** Es que **una misma
+congelada contesta dos preguntas distintas y sólo vale para una**:
+
+| pregunta | ¿vale esta congelada? |
+|---|---|
+| **REGRESIÓN** — *¿el clon se movió respecto de ayer?* | **SÍ.** Es su trabajo: umbral cero, clon contra clon |
+| **ACEPTACIÓN** — *¿el clon es fiel al original?* | **NO.** Lleva dentro 2 rutas que **ya son infieles** |
+
+**Las 2 rutas, nombradas:** `/aviso-legal` y
+`/politica-de-privacidad-y-de-proteccion-de-datos`, con **±30 / ∓30.6 px**. La
+causa está fichada desde la 140.ª y datada nueve tandas antes: un correo que
+**Cloudflare ofusca** y cuya restitución **no persistió** en el extraído
+canónico de `paginas` (§El principio, quinto canal — *un marcado y el `<script>`
+que lo REPARA son una unidad; media unidad es un defecto que el original no
+tiene*).
+
+### ⚠⚠ Lo que hay que saber leer, y es una TRAMPA CON EL SIGNO INVERTIDO
+
+> **El día que la restitución del correo persista, esas 2 rutas van a salir con
+> Δ≠0 contra esta congelada — y NO será una regresión: será que dejaron de ser
+> infieles.** La congelada es la foto de un estado **con el defecto puesto**, así
+> que acercarse al original **es alejarse de ella**.
+
+Leerlo al revés —*«el arreglo movió 2 rutas, revertir»*— es exactamente
+§*el eje que no lee como defecto esconde la mejora igual que esconde la deriva*,
+y aquí el instrumento que lo escondería es la propia línea base.
+
+**La comprobación que discrimina, y no es el recuento:** `|clon − ORIGINAL|`
+**antes y después**, par a par. Si baja, el cambio acerca. `clon-base` no puede
+contestarlo **por construcción** —sólo tiene un lado—, así que su rojo en esas 2
+rutas **no adjudica**: hay que ir a un comparador de dos lados.
+
+### Y desde hoy esto no es una nota al margen: es §8
+
+Con `§8-FIDELIDAD` **decidida como «fiel al ORIGINAL»** (141.ª,
+`ESQUEMA-CMS.md` §8), una congelada de clon **no puede ser la referencia de
+aceptación de nada** — ni ésta ni ninguna. Sirve para regresión, que es una
+pregunta legítima y **distinta**, y su veredicto se publica **al lado** del de
+fidelidad, nunca en su lugar.
+
+**Alcance de la ficha, con su cardinal:** **2 de 426 rutas** a **390**. A 1440
+no se observó (la 140.ª midió 426/426 sin regresión). No se sabe si el efecto
+existe a 1440 y está tapado —§regla espejo— porque **nadie lo ha medido contra
+el original**: eso es SIN PROBAR, no un cero.
+
 ## ✅ §140.ª · **CMS-9 = A' — LA GUARDA DENTRO DE SU INVARIANTE, Y `ARQUETIPOS` SEMBRADA (4 FILAS)** — 2026-09-02
 
 **Estado: PASO 0 · ESCALÓN 1 · ESCALÓN 2 completos.** Continuación misma-fecha
@@ -3862,11 +4077,21 @@ esta misma tanda (§8), que sostiene DOS afirmaciones separables:
 es un defecto del clon — **son instrumentos que no pueden pronunciarse**. El
 listón se puede cumplir con ellas puestas, y su verde no significaría nada.
 
-#### ⚠ INDECIDIBLE hoy — 2, con lo que las decidiría
+#### ⚠ INDECIDIBLE hoy — **1**, con lo que la decidiría
+
+> ✅ **`§8-FIDELIDAD` SALE DE AQUÍ: DECIDIDA POR EL PROPIETARIO EL 2026-09-02
+> (141.ª).** Estuvo fichada como indecidible desde la 119.ª. **La decisión es
+> «el clon es fiel al ORIGINAL»**, no «la migración no movió nada» — ver
+> §141.ª ·C4 y `ESQUEMA-CMS.md` §8, reescrito en la misma tanda.
+>
+> **Y con eso la fila de abajo se cumple en su rama cara: BLOQUEA**, y lo que
+> falta es lo que ella misma nombraba — *un comparador de dos lados sobre las
+> 426, que no existe; el eje mejor cubierto llega al **33.7 %** sumando cinco
+> comparadores*. Eso deja de ser una hipótesis condicional y pasa a ser
+> **trabajo con radio**.
 
 | ficha | qué la decide |
 |---|---|
-| `§8-FIDELIDAD` (L106) | **el propietario, eligiendo cuál de las dos afirmaciones tiene que sostener §8.** Si aceptación = «la migración no movió nada», **no bloquea** y el listón ya es alcanzable. Si aceptación = «el clon es fiel al original», **bloquea**, y lo que falta es un comparador de dos lados sobre las 426 que **no existe** — el eje mejor cubierto llega al 33.7 % sumando cinco comparadores |
 | `F3-LH-DERIVA-DEL-ORIGINAL-AGOSTO` (L4815) | **una medición contra el original vivo.** El sitio se movió entre el 11 y el 19 de agosto; si el objetivo derivó, parte de lo medido antes describe un original que ya no existe. No se puede decidir offline **por construcción**: hace falta red |
 
 #### · NO BLOQUEA — 33, y el reparto por MOTIVO

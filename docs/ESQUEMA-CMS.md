@@ -5547,11 +5547,47 @@ omite. Entran en el inventario de §F2-5 · CASOS LEGALES NUNCA OBSERVADOS.
 
 ## 8 · Aceptación de la migración
 
-**Cuándo se puede decir que el CMS está puesto.** El listón lo da el clon actual,
-que es determinista:
+> ⚠⚠ **DECIDIDO POR EL PROPIETARIO EL 2026-09-02 (141.ª), TRAS 22 TANDAS
+> FICHADO COMO INDECIDIBLE — Y LO QUE ESTE § DECÍA ERA LA OTRA LECTURA.**
+>
+> > **«El CMS está puesto» = EL CLON ES FIEL AL ORIGINAL.** No «la migración no
+> > movió nada».
+>
+> **El párrafo que ocupaba este sitio decía lo contrario** —*«el listón lo da el
+> clon actual… umbral CERO contra el clon actual»*— y está **BORRADO, no
+> anotado**: mientras las dos lecturas estuvieran escritas **cada lector elegía
+> la suya** (§*la salida es BORRAR una, nunca conciliarlas con una nota al
+> pie*), y `PENDIENTES-QA.md` llevaba desde la 119.ª fichando la elección como
+> pendiente del propietario mientras este § la daba por hecha en su rama barata.
+>
+> **Las tres consecuencias, y ninguna sobra:**
+>
+> 1. **la rama que se cumple es la CARA.** La ficha `§8-FIDELIDAD` decía *«si
+>    aceptación = el clon es fiel al original, **BLOQUEA**, y lo que falta es un
+>    comparador de dos lados sobre las 426 que no existe — el eje mejor cubierto
+>    llega al **33.7 %** sumando cinco comparadores»*. Eso ya no es una
+>    condicional: **es el trabajo pendiente, con su cardinal**;
+> 2. **un Δ≠0 contra `clon-base` deja de ser un fallo por defecto.** Cuando una
+>    familia pasa a leer del CMS, que su ruta se mueva respecto de un clon
+>    **calibrado a mano** es el resultado ESPERADO. Lo que se declara es **el
+>    coste en el nivel REGRESIÓN** —cuántas de las 426 rompen umbral cero—, y se
+>    declara con su número, sin disfrazarlo de concesión;
+> 3. **y el NO-OP de una migración se mide contra el ORIGINAL.** Medirlo contra
+>    el clon calibrado es exigirle al CMS que reproduzca una calibración a mano:
+>    **fabricar una FAMILIA DE CALIBRACIÓN** con el clon de coartada.
 
-> Con el sitio leyendo de Payload, **las mismas sondas contra el clon actual,
-> umbral CERO, TODAS las rutas que el build emite, 2 anchos.**
+**Cuándo se puede decir que el CMS está puesto.** El listón es la **fidelidad al
+original**, medida por comparadores de dos lados:
+
+> Con el sitio leyendo de Payload, **comparadores de DOS LADOS contra el
+> original, TODAS las rutas que el build emite, 2 anchos** — con el contrato de
+> §8.1 (umbral cero **en esos dos anchos**; en los intermedios, comportamiento
+> de rango).
+>
+> **El clon actual sigue siendo instrumento, pero de OTRA pregunta:**
+> `clon-base` mide **REGRESIÓN** (clon contra clon, umbral cero) y su veredicto
+> se publica **al lado** del de fidelidad, nunca en su lugar. Las dos
+> afirmaciones son distintas y §8 sólo se cierra con la primera.
 
 > ⚠⚠ **EL DENOMINADOR NO ES UN NÚMERO ESCRITO AQUÍ: ES EL `prerender-manifest`,
 > Y SE CITA CON SU FICHERO (reescrito 2026-08-27, 119.ª).**
@@ -5674,9 +5710,23 @@ leerse una cosa por la otra:
 
 | se puede escribir | respaldado por |
 |---|---|
-| «la migración no movió el clon: **Δ0 en 426 rutas × 2 anchos**» | `clon-base --cmp` contra su congelada nombrada |
+| «la migración no movió el clon: **Δ0 en 426 rutas × 2 anchos**» | `clon-base --cmp` contra su congelada nombrada. ⚠ Es **REGRESIÓN**, no el listón de §8 |
 | «la fidelidad no bajó **donde estaba medida**: `docH` 62 · `base` 139 · …» | `qa:cobertura`, re-derivada **después** de migrar |
-| ~~«el clon es fiel al original»~~ | **nada** — 0 sondas de dos lados sobre las 426 |
+| **«el clon es fiel al original»** ← **EL LISTÓN, desde la 141.ª** | **todavía nada: 0 sondas de dos lados sobre las 426.** El eje mejor cubierto llega al **33.7 %** sumando cinco comparadores |
+
+> ⚠⚠ **LA TERCERA FILA CAMBIÓ DE PAPEL EL 2026-09-02, Y NO PORQUE SE MIDIERA
+> NADA NUEVO: PORQUE EL PROPIETARIO DECIDIÓ CUÁL DE LAS DOS SOSTIENE §8.**
+>
+> Estuvo **tachada** desde la 119.ª —*«no se puede escribir»*—, y era la lectura
+> correcta **mientras la elección seguía abierta**. Con §8 = fidelidad, esa fila
+> deja de ser lo que no se puede escribir y pasa a ser **lo único que cierra la
+> migración**. Su columna derecha no ha mejorado: sigue en **0 comparadores de
+> dos lados sobre las 426**, y ése es el hueco, ahora con nombre y con dueño.
+>
+> **Y las dos primeras filas NO se borran** — miden regresión y cobertura, que
+> siguen siendo ciertas y útiles. Lo que se prohíbe es **citarlas como si
+> cerraran §8**: «no movió nada» y «es fiel» son dos afirmaciones, y sólo la
+> segunda es el listón.
 
 ### 8.1 · ⚠ El contrato NO es el mismo a todos los anchos (2026-08-02)
 

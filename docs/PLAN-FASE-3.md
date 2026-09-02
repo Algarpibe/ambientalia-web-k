@@ -2109,6 +2109,84 @@ irreducibles, 0 de 788 capturados).
 > colándola»*. Es la precondición de la siembra, fichada en `ESQUEMA-CMS.md`
 > §2o.5. Derivación: `derivaciones/bloqueos-f35-131.{mjs,log}`.
 
+> ✏️ **ACTUALIZADO 2026-09-02 (141.ª) — `arquetipos` deja de ser «0 filas · 0
+> lectores»: es 4 FILAS · 0 LECTORES, y el motivo de los 0 lectores ya NO es un
+> bloqueo de siembra sino un CORTE LIMPIO DE MODELO.**
+>
+> La 140.ª sembró (4 filas · 231 módulos, round-trip idéntico contra su propia
+> extracción), así que la mitad de «0 filas» está cerrada. **Lo que la 141.ª
+> añade son dos cosas y conviene no mezclarlas:**
+>
+> **(a) UN DEFECTO REAL QUE NADIE PODÍA VER, arreglado y verificado.** El campo
+> `bloques` no declaraba `custom: { conKind: true }`, así que el render
+> proyectaba los 231 módulos **sin su discriminante de bloque**:
+>
+> | sonda | antes | después |
+> |---|---|---|
+> | `qa:cms-decl` · huecos | **12** | **1** (ajeno, de `paginas`, del 23→27 ago) |
+> | `qa:cms-lectura` | **388/392**, EXIT=2 | **392/392, EXIT=0** |
+> | `qa:cms-lectura-neg` | — | **4/4** |
+>
+> Era **silencioso**: un `kind` ausente no lanza, y las 4 rutas habrían
+> respondido **200 con cabecera, pie y 231 módulos ausentes** — el modo de fallo
+> exacto de `articulos-kb` en F3-1. **Y la 140.ª no podía verlo por
+> construcción: con 0 lectores ninguna sonda recorría el camino del dato al
+> render.** El round-trip mide **ida ↔ vuelta**, no el contexto del render; ésa
+> es literalmente la razón por la que `qa:cms-lectura` existe. Lo destapó
+> correrla **antes** de cablear.
+>
+> **(b) EL CORTE LIMPIO, que es lo que deja los 0 lectores en pie.** Medido:
+>
+> | lado | n |
+> |---|---|
+> | constantes que las 4 `page.tsx` importan de `@/lib/<ruta>` | **22** |
+> | campos que `arquetipos` expresa | **31** |
+> | **intersección** | **0** |
+>
+> **Y la causa no es que el modelo no lleve el contenido** —lo lleva: visor 360,
+> especificaciones, sellos, chips, FAQ y sondas están todos en el dato, y
+> `bloquesArquetipo` son **12 bloques tipados con campos reales**, con `pieza`
+> tomando **11 valores semánticos** en el lote (`breadcrumbs` · `menu-anclas` ·
+> `modulo-beneficios` · `lista-resultados` · `iconos-certificicados` · `galeria`
+> …). Es que
+>
+> > **el modelo es un FLUJO ORDENADO de módulos y los 4 componentes son HUECOS
+> > CON NOMBRE.** Traducir flujo → huecos es el trabajo de un **renderizador**, y
+> > este repo ya lo ha escrito **dos veces**.
+>
+> **Los dos precedentes, dimensionados** — así la 142.ª no tiene que derivarlos:
+>
+> | precedente | componente | líneas | hoja derivada |
+> |---|---|---|---|
+> | **F3-1** · `articulos-kb` | `components/kb/CuerpoKb.tsx` | **382** | `app/kb.css` · **543** |
+> | **F3-3** · cola larga | `cola-larga/CuerpoPagina.tsx` + `PaginaF33.tsx` | **653 + 228** | `app/f33.css` · **597** |
+>
+> **La asimetría que F3-3 no tenía y F3-5 sí:** las 31 páginas de la cola larga
+> **se estrenaron** sirviendo del CMS —no había clon anterior que igualar—. Las
+> 4 de F3-5 **llevan meses calibradas al píxel** con 11 componentes propios.
+>
+> **⚠ Y eso NO es un obstáculo, es el criterio de aceptación puesto en su
+> sitio** (`ESQUEMA-CMS.md` §8, reescrito el mismo día): «el CMS está puesto» =
+> **FIEL AL ORIGINAL**, no «no movió nada». Que estas 4 rutas dejen de dar Δ0
+> contra un clon calibrado a mano es el resultado **ESPERADO**. Lo que se
+> declara con su cardinal es el coste en el nivel **REGRESIÓN** —umbral cero,
+> clon contra clon—: **4 de 426 rutas**.
+>
+> **El radio de la 142.ª, ya derivado:** renderizador `CuerpoArquetipo.tsx` ·
+> hoja derivada con una sonda de clases (no escrita a mano) · geometría del
+> original (patrón `qa:f33-geo`) · comparador de dos lados **con su negativo
+> corrido ANTES de que exista el lado nuevo** (§regla 24) · y **su NO-OP medido
+> contra el ORIGINAL**, nunca contra `clon-base-*-2026-09-02` — medirlo contra
+> el clon calibrado sería exigirle al CMS que reproduzca una calibración a mano,
+> o sea fabricar una FAMILIA DE CALIBRACIÓN con el clon de coartada.
+>
+> **Y una constricción heredada que la 142.ª no puede saltarse:** de los 12
+> tipos de bloque, **`codigo-arq` está a 0 filas** en las 4, así que su rama de
+> render nace **SIN ESTRENAR** y se declara así (§*un campo que ADMITE un caso y
+> que ningún dato de calibración EJERCITA es un camino de render sin estrenar*).
+> `qa:cms-decl` verifica **11 de los 12** por el mismo motivo.
+
+
 > ✏️ **ACTUALIZADO 2026-09-01 (132.ª) — el estado de F3-5 sigue siendo el mismo,
 > y ahora la precondición está DECIDIBLE en vez de sólo fichada.**
 >
