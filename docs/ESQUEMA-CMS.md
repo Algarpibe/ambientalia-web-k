@@ -7560,7 +7560,7 @@ TABLE`/`DROP CONSTRAINT`, sólo `ALTER COLUMN`.
 
 ---
 
-## CMS-9 · `arquetipos` COLISIONA CON `productos` EN 3 DE SUS 4 SLUGS — ⛔ **ABIERTO** (2026-09-02, 139.ª)
+## CMS-9 · `arquetipos` COLISIONA CON `productos` EN 3 DE SUS 4 SLUGS — ✅ **RESUELTA = A'** (2026-09-02, 140.ª)
 
 **Descubierto al intentar sembrar `arquetipos` por primera vez** (F3-5 llevaba
 `0 filas` desde que se escribió el esquema en la 126.ª; nadie lo había podido
@@ -7710,7 +7710,97 @@ después para restaurar el resto del pipeline (§regla 20) — `arquetipos`
 sigue en **0 filas**, y es la única pieza que falta. **No se siembra**:
 queda cableada a propósito para que el sondeo grite (§sondas 6).
 
-### Condición para cerrar
+### RESUELTA (2026-09-02, 140.ª) — y A' no era el A' de la tabla de abajo
 
-Decisión del propietario entre A'/B/D (o una quinta que no esté aquí). Si es
-A', el diseño del concepto de prioridad es su propia tanda — no es una línea.
+**Condición para cerrar, tal como la dejó la 139.ª:** decisión del propietario
+entre A'/B/D, y si era A', *«el diseño del concepto de prioridad es su propia
+tanda — no es una línea»*. Eso seguía siendo cierto del A' **tal como está
+descrito en la tabla** (§CORTE LIMPIO, arriba: `reclamar(..., {fuerza:
+"debil"|"fuerte"})`, un concepto de arbitraje NUEVO entre reclamos que
+colisionan). **No se implementó eso.**
+
+Lo que se implementó es un A' DISTINTO, que el propio encargo de la 140.ª
+reformuló citando la pregunta 2 de esta misma ficha: *«`esFamiliaDelPlano`
+existe — pero SÓLO EN EL LADO DE LECTURA»* (`scripts/qa/slugs.mjs:403`). En
+vez de crecer el mecanismo de arbitraje, se llevó ESE MISMO discriminador
+—«¿lo emite el plano dinámico, o algo distinto?»— al lado de ESCRITURA, con
+la única adaptación que exige no tener build ahí: en vez de leer `srcRoute`
+del `prerender-manifest`, se deriva de `apps/web/src/app/` con
+`rutasConstruidas()` (`packages/cms-config/src/entorno.mjs`) — la MISMA
+función que ya usa el render (`apps/web/src/lib/cms/proyector.ts`) para la
+misma pregunta. No es un concepto nuevo: es cablear un derivador que ya
+existía a un segundo consumidor.
+
+**Y el resultado es distinto del A original que la 139.ª refutó.** A decía
+*«`pagina: "ninguna"` en los 3 documentos colisionantes»* — falso, porque
+`productos` SÍ describe esas páginas (el original las sirve). Lo que A' hace
+no es mentir en `pagina`: es dejar de reclamar el PLANO DE `/es/` (la tabla
+`slugs`) para cualquier slug que una carpeta estática ya sirve —
+independientemente de qué colección lo declare—. `productos` sigue
+describiendo sus 19 productos, con `pagina: "propia"` intacto en los 5 que
+la tenían; simplemente esos 5 (3 con carpeta estática + 2 sin ninguna ruta,
+§F3-3-REGISTRO-SOBRE-RECLAMA, sin tocar) dejan de competir por un plano que
+—medido, no supuesto— **nunca los sirve**: `/[slug]/page.tsx` no importa de
+`productos` (0 líneas, confirmado leyendo el fichero, ya lo había verificado
+el propietario en la 139.ª).
+
+**Implementación:** `packages/cms-config/src/hooks/registro-slug.ts`,
+función `enPlano()` — compartida por las 6 colecciones que llaman a
+`registroDeSlug()`. Detalle, verificación NO-OP y el 6.º invariante de
+`qa:cms-slugs` que la prueba discriminante (cae contra el código de la
+139.ª, pasa contra el de la 140.ª): commit `d0c33db`.
+
+**Medido, antes y después, sobre el registro real:**
+
+| familia | reclama ANTES | reclama DESPUÉS | qué cambió |
+|---|---|---|---|
+| `entradas-blog` | 152 | 152 | nada — 0 slugs casan una carpeta estática |
+| `terminos-kunakpedia` | 37 | 37 | nada |
+| `paginas` | 19 | 19 | nada |
+| `articulos-kb` | 6 | 6 | nada (su propio hueco sigue fichado aparte) |
+| `productos` | 5 | **2** | deja de reclamar `kunak-api` · `monitor-calidad-aire` · `software-de-medicion-calidad-del-aire` — las 3 de esta ficha |
+| `arquetipos` | — (0 filas) | **0 en el plano, 4 filas reales** | sus 4 slugs (incluido `accesorios`, sin colisión previa) quedan TODOS fuera del plano — ninguno lo emite el `/[slug]` dinámico |
+
+`npm run qa:cms-slugs` (control + 3 sabotajes) y `npm run qa:slugs` sin mover
+un slug fuera de lo de la tabla. `qa:slugs` final: **223 slugs de 6
+familias, 0 colisiones, 0 sombras, 0 huérfanas** —
+`medidas/slugs-2026-09-02-2.json`.
+
+**Y un hallazgo lateral que bloqueaba el PRIMER seed real de `arquetipos`,
+sin relación con CMS-9:** `video-arq.url` es `required` y el extractor
+(`extractor-f35.mjs`, caso `et_pb_video`) sólo leía `src` del contenedor o de
+un `<img>` — los 2 vídeos reales son `<iframe src>` de YouTube dentro de
+`.et_pb_video_box`, un canal que el 139.ª ya había diagnosticado entero y
+fichado sin tocar (`PENDIENTES-QA.md` §ESCALÓN 2, CMS-8b). Añadida la lectura
+de `<iframe src>` como tercer fallback (mismo patrón que `imgDe`), con
+autorización explícita del propietario para tocarlo en esta misma tanda.
+Negativo de `extractor-f35` 7/7 + control, congelada re-derivada con
+`PISAR=1` (git conserva el estado anterior).
+
+**`arquetipos` sembrada: 4 filas, round-trip 4/4 IDÉNTICAS contra su propia
+extracción.** `productos` también 19/19 IDÉNTICAS. El round-trip completo
+(392 documentos, 16 colecciones) destapó DOS gaps sistémicos **sin relación
+con CMS-9 ni con este ESCALÓN**, no tocados aquí: `entradas-blog`/
+`documentos-cientificos` — `firmas[].autor.{fotoOrigen,cargo,redes}` no
+sobrevive el round-trip en el 100 % de ambas colecciones (152/152 ·
+23/23) — y una fila de `paginas` (`politica-de-cookies`, tabla de cookies con
+forma distinta al releer). Quedan como pendientes propios, cada uno con su
+propia tanda.
+
+**`clon-base` a los dos anchos, contra el baseline previo más reciente
+disponible:** @1440 **426/426 sin regresión** (`clon-base-1440-2026-08-31-
+tras-marcador-software.json`). @390, contra `clon-base-390-t126-tras-
+escalon2.json` (la más reciente a ese ancho, de 9 tandas atrás): **2 con
+regresión**, `/aviso-legal` y `/politica-de-privacidad-y-de-proteccion-de-
+datos`, ±30/∓30.6 px. Investigado antes de tratarlo como regresión de esta
+tanda: es el MISMO hallazgo, con los MISMOS números, que `PENDIENTES-QA.md`
+(líneas ~1994-2027, el propio acta de ese baseline) ya documentó — Cloudflare
+ofusca el `mailto:` con un placeholder de 17 caracteres, y la diferencia de
+longitud con el correo real desplaza el ajuste de línea exactamente un
+renglón. `medidas/f33-extraido.json` —la fuente de `paginas`, no tocada por
+esta tanda, `mtime` 2026-08-26— sigue con el correo OFUSCADO hoy: el baseline
+de comparación (`t126-tras-escalon2`) fue medido en un momento en que esa
+restitución estaba aplicada de forma no persistida en el canónico, así que la
+comparación de HOY contra ESE baseline reproduce el mismo delta que el propio
+121.ª/126.ª ya habían aislado — no un efecto de sembrar `arquetipos`, que no
+toca `paginas` en absoluto. §regla 12 nueva más abajo.

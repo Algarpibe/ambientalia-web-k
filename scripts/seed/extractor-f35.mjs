@@ -112,6 +112,21 @@ const oUndef = (v) => (v === undefined || v === null || v === "" ? undefined : v
 const RE_IMG = /<img\b[^>]*>/i;
 const imgDe = (html, n) => RE_IMG.exec(dentro(html, n))?.[0] ?? null;
 const attrTag = (tag, nombre) => (tag ? new RegExp(`\\b${nombre}="([^"]*)"`).exec(tag)?.[1] : undefined);
+/**
+ * ⚠⚠ **CANAL AÑADIDO 2026-09-02 (140.ª, ESCALÓN 2) — fichado sin tocar por la
+ * 139.ª en `PENDIENTES-QA.md` §ESCALÓN 2 (CMS-8b): «los 2 vídeos son embeds de
+ * YouTube en `<iframe src>` dentro de `.et_pb_video_box`, y este extractor
+ * sólo miraba `src` en el propio contenedor o en un `<img>` — ninguno casa con
+ * `<iframe>`. Es dato real por un canal NO LEÍDO».**
+ *
+ * Medido en el corpus: `.et_pb_video_box` no lleva `src` propio y no contiene
+ * `<img>` — contiene exactamente UN `<iframe src="https://www.youtube.com/
+ * embed/…">` (`monitor-calidad-aire.html` y `software-…html`, 1 cada uno).
+ * Mismo patrón que `imgDe`, mismo nivel de búsqueda (dentro de `n`, no sólo
+ * de `.et_pb_video_box`, porque el iframe cuelga de ahí de todas formas).
+ */
+const RE_IFRAME = /<iframe\b[^>]*>/i;
+const iframeDe = (html, n) => RE_IFRAME.exec(dentro(html, n))?.[0] ?? null;
 
 /**
  * URL del original → ruta local. **La cola viaja VERBATIM**, igual que en
@@ -475,7 +490,10 @@ function aBloque(html, n, donde) {
       return { ...base, texto: texto(html, a), destino: href ? { label: texto(html, a), href, external: extern(href) } : undefined };
     }
     case "et_pb_video": {
-      const src = attr(buscaClase(n, "et_pb_video_box") ?? n, "src") ?? attrTag(imgDe(html, n), "src");
+      const src =
+        attr(buscaClase(n, "et_pb_video_box") ?? n, "src") ??
+        attrTag(imgDe(html, n), "src") ??
+        attrTag(iframeDe(html, n), "src");
       const poster = attr(n, "poster");
       return { ...base, url: src ?? "", portada: poster ? resuelveMedia(rutaLocalMedia(poster), `${donde}·video`) : undefined };
     }

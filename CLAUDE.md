@@ -6193,6 +6193,54 @@ dos versiones del mismo modelo, eran dos modelos que no comparten un campo.
 
 ---
 
+**51 · UN BASELINE DE `clon-base` «EL MÁS RECIENTE DISPONIBLE» NO BASTA SI ESTÁ
+A VARIAS TANDAS DE DISTANCIA — CONFLACIA TRABAJO LEGÍTIMO CON REGRESIÓN, Y LAS
+DOS SALEN CON LA MISMA FORMA.** (2026-09-02)
+
+`clon-base` compara el clon contra sí mismo, y su umbral cero sólo tiene
+sentido si **lo único que cambió entre las dos corridas es lo que se está
+midiendo**. Eso es cierto contra el baseline INMEDIATAMENTE anterior. No lo
+es contra «el más reciente que hay archivado», si ese archivo es de varias
+tandas atrás:
+
+> **Entre dos corridas separadas por N tandas hay N tandas de trabajo
+> LEGÍTIMO en medio, y cualquier delta que dejaran —commiteado o no— sale
+> con la MISMA forma que una regresión real: `❌ /ruta`, deltas de píxeles,
+> umbral cero roto.** El comparador no distingue *«esto lo movió tu cambio
+> de hoy»* de *«esto ya estaba movido desde hace una semana y nadie lo había
+> vuelto a medir a este ancho»*.
+
+**Medido:** comparado el build de la 140.ª contra
+`clon-base-390-t126-tras-escalon2.json` —el baseline a 390 más reciente
+disponible, de **9 tandas atrás**, porque no había ninguno más nuevo a ese
+ancho— salieron **2 rutas con regresión**, `/aviso-legal` y
+`/politica-de-privacidad-y-de-proteccion-de-datos`, ±30/∓30.6 px. La propia
+tanda que produjo ESE baseline (`t126`) ya había medido y documentado el
+MISMO delta, con los MISMOS números, como el efecto de restituir un correo
+que Cloudflare ofusca (§El principio, quinto canal) — un cambio que **no
+persistió** en el extraído canónico (`f33-extraido.json`, `mtime` de 7 días
+antes del propio baseline). O sea: el baseline capturó un instante en que la
+restitución SÍ estaba aplicada, y el canónico volvió a quedarse sin ella
+después — el delta de hoy no lo produjo la 140.ª, lo produjo la ausencia de
+esa restitución, que lleva ahí desde antes de que existiera el baseline
+contra el que se comparó.
+
+**Las dos mitades operativas:**
+
+1. **antes de leer un `❌` de `clon-base` como regresión de la tanda en
+   curso, se comprueba si el mismo hallazgo —mismos números, mismo signo o
+   signo opuesto exacto— ya está documentado en una tanda anterior.** Un
+   `grep` de la ruta y la magnitud en `PENDIENTES-QA.md` contesta en un
+   minuto lo que perseguir el código puede costar una tarde;
+2. **y cuando el baseline disponible está a varias tandas de distancia, se
+   dice con su número** —«9 tandas atrás», no sólo el nombre del fichero—,
+   porque es la magnitud que decide cuánto trabajo intermedio puede estar
+   conflacionado dentro de cualquier delta que aparezca. Es §*una limitación
+   declarada sin su número se lee como una nota al pie* con el número puesto
+   en la EDAD del baseline, no en un recuento de rutas.
+
+---
+
 ## Comandos
 
 ```bash

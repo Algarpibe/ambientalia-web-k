@@ -3,7 +3,7 @@
     "fecha": "2026-09-02",
     "tanda": "131.ª",
     "sonda": "cms:extractor-f35",
-    "saboteada": null
+    "saboteada": "control-sin-sitio"
   },
   "alcance": {
     "docs": [
@@ -36,9 +36,9 @@
       "detalle": "0 tipos sin kind"
     },
     {
-      "ok": true,
+      "ok": false,
       "nombre": "todo control del `<form>` tiene sitio en `formulario-arq` — lo que no lo tenga sale NOMBRADO",
-      "detalle": "0 controles sin sitio"
+      "detalle": "monitor-calidad-aire: <input type=file> — el modelo expresa texto · seleccion · casillas"
     },
     {
       "ok": true,

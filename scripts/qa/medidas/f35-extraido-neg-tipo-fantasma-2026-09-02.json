@@ -3,7 +3,7 @@
     "fecha": "2026-09-02",
     "tanda": "131.ª",
     "sonda": "cms:extractor-f35",
-    "saboteada": null
+    "saboteada": "tipo-fantasma"
   },
   "alcance": {
     "docs": [
@@ -28,12 +28,12 @@
     {
       "ok": true,
       "nombre": "§sondas 4bis · se emitieron bloques (0 emitido no puede salir verde)",
-      "detalle": "231 bloques"
+      "detalle": "230 bloques"
     },
     {
-      "ok": true,
+      "ok": false,
       "nombre": "todo tipo del corpus casa un `kind` — lo que no case sale NOMBRADO",
-      "detalle": "0 tipos sin kind"
+      "detalle": "et_pb_un_tipo_que_divi_no_sirve"
     },
     {
       "ok": true,
@@ -48,7 +48,7 @@
     {
       "ok": true,
       "nombre": "los CUATRO ejes de `validaHtmlCorpus` se recorren (no el primero que falle)",
-      "detalle": "4 ejes · 198 campos HTML comprobados"
+      "detalle": "4 ejes · 197 campos HTML comprobados"
     },
     {
       "ok": true,
@@ -59,7 +59,7 @@
   "porDoc": {
     "monitor-calidad-aire": {
       "modulosN1": 90,
-      "bloques": 90
+      "bloques": 89
     },
     "accesorios": {
       "modulosN1": 35,
@@ -81,7 +81,7 @@
       "host": [],
       "atributo": []
     },
-    "camposHtml": 198,
+    "camposHtml": 197,
     "total": 0
   },
   "transformaciones": {
@@ -156,11 +156,6 @@
         "titulo": "Monitor de calidad del aire profesional | Kunak AIR Pro",
         "arquetipo": "producto",
         "bloques": [
-          {
-            "kind": "texto-arq",
-            "pieza": "breadcrumbs",
-            "contenido": "<ol class=\"kunak-breadcrumbs\" itemscope itemtype=\"http://schema.org/BreadcrumbList\"><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/\" itemprop=\"item\"><span itemprop=\"name\">Inicio</span></a><meta itemprop=\"position\" content=\"1\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><a itemprop=\"item\" href=\"https://kunakair.com/es/productos/\"><span itemprop=\"name\">Productos</span></a><meta itemprop=\"position\" content=\"2\"></li><li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\"><span itemprop=\"name\">AIR Pro</span><meta itemprop=\"position\" content=\"3\"></li></ol>"
-          },
           {
             "kind": "imagen-arq",
             "imagen": "/images/uploads/2022/12/punteado.svg",

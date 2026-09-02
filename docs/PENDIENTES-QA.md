@@ -1,5 +1,208 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## ✅ §140.ª · **CMS-9 = A' — LA GUARDA DENTRO DE SU INVARIANTE, Y `ARQUETIPOS` SEMBRADA (4 FILAS)** — 2026-09-02
+
+**Estado: PASO 0 · ESCALÓN 1 · ESCALÓN 2 completos.** Continuación misma-fecha
+de la 139.ª, que dejó CMS-9 en CORTE LIMPIO con tres opciones (A'/B/D) y su
+operación de deshacer cada una nombrada.
+
+### PASO 0 · lo derivado antes de tocar nada
+
+- Socket verificado ABRIENDO (55432, no sólo `docker ps`): conexión TCP
+  directa, 200 OK. `arquetipos` confirmada en **0 filas**.
+- El discriminador que A' necesita **ya existía en el repo**, del lado de
+  lectura: `esFamiliaDelPlano` en `scripts/qa/slugs.mjs:403`. Del lado de
+  escritura no existía nada — ni un concepto de arbitraje, ni el filtro que
+  finalmente se implementó.
+- Derivado el árbol de `apps/web/src/app/`: **7 rutas estáticas de UN
+  segmento** con `page.tsx` propio (`accesorios · blog · casos-de-exito ·
+  glosario · kunak-api · monitor-calidad-aire · software-de-medicion-
+  calidad-del-aire`). De los 219 slugs en el registro `slugs` ANTES de tocar
+  nada, sólo **3** casaban una de esas 7 —los 3 de `productos` de la ficha
+  CMS-9— y **0** en las otras 4 familias (`entradas-blog · terminos-
+  kunakpedia · paginas · articulos-kb`). Ése era el alcance real de A': media
+  hora, no una tanda.
+
+### ESCALÓN 1 · CMS-9 = A' (no el A' de la tabla de la 139.ª)
+
+El encargo reencuadró A' antes de escribir código: no es el «concepto de
+prioridad/arbitraje» que la 139.ª refutó como CRECER EL MECANISMO — es
+llevar el discriminador que YA EXISTE del lado de lectura (`srcRoute` contra
+el `prerender-manifest`, DESPUÉS del build) al lado de escritura, derivado
+SIN build del mismo árbol de `app/` del que sale el manifiesto.
+
+Implementado en `packages/cms-config/src/hooks/registro-slug.ts`, dentro de
+`enPlano()` — la función que las 6 colecciones que llaman a
+`registroDeSlug()` comparten, así que el filtro alcanza a todas por
+construcción, no sólo a `productos`/`arquetipos`. Reutiliza
+`rutasConstruidas()` de `entorno.mjs` — la MISMA función que ya usa el
+render (`proyector.ts`) para la misma pregunta, no una segunda definición.
+
+`apps/web/src/app` se resuelve **sin asumir `process.cwd()`**: el hook
+corre en tres procesos con cwd distinto (admin de `apps/cms`, scripts de
+siembra desde la raíz, y potencialmente `apps/web`), así que se ancla a
+`import.meta.url` del propio fichero y sube verificando — mismo patrón que
+`buscaApp()` de `scripts/qa/lib.mjs`.
+
+**Fricción no anticipada:** importar `entorno.mjs` (JS) desde un `.ts` DENTRO
+de `packages/cms-config` no typecheckea — ese paquete no lleva `allowJs` (a
+diferencia de `apps/web`, que sí, y por eso `proyector.ts` nunca necesitó
+esto). Se añadió `entorno.d.mts` con la firma real — y la primera versión
+declaraba `hrefSegunEntorno(href: string, …)`, más estricta que el cuerpo JS
+real (que acepta `unknown` a propósito y lo devuelve tal cual si no es
+string) y **rompía el typecheck de `apps/web`**. Corregido a `unknown`
+antes de continuar. `npm run typecheck` + `typecheck:cms` + `typecheck:cms-app`
+los tres en verde.
+
+**NO-OP verificado, no supuesto:**
+
+| familia | reclamaba antes | reclama después |
+|---|---|---|
+| `entradas-blog` (152) · `terminos-kunakpedia` (37) · `paginas` (19) · `articulos-kb` (6) | igual | igual — 0 slugs casaban una carpeta estática |
+| `productos` | 5 | **2** (`sensor-de-calidad-del-aire` · `estacion-de-monitoreo-de-calidad-del-aire`, sin ruta — §F3-3-REGISTRO-SOBRE-RECLAMA, sin tocar) |
+
+**Negativo:** `qa:cms-slugs` gana un 6.º invariante — dos familias reclamando
+el MISMO slug de carpeta estática (`casos-de-exito`, elegido por ser una
+estática real SIN dueño, para no medir el `unique` de campo de `productos`
+por accidente) tienen que pasar las DOS, con 0 filas resultantes en `slugs`.
+No lleva sabotaje propio dedicado (mismo patrón que los invariantes 1 y 3
+del fichero: el filtro vive dentro de `enPlano()`, compartida por las 6, y
+no hay forma de apagarlo para una sola colección sin superficie que ninguna
+colección real necesita). Verificado DISCRIMINANDO por el otro canal: con
+`git stash` sobre sólo `registro-slug.ts`, el caso 6 CAE con el mensaje
+EXACTO de colisión que `ESQUEMA-CMS.md` §CMS-9 midió; restaurado el fix,
+pasa. `qa:cms-slugs-neg` completo (control + 3 sabotajes) 4/4.
+
+⚠ **Y de paso se cazó un fixture caducado que no tiene nada que ver con
+CMS-9**: `cuerpoBlog()` de `cms-slugs.mjs` no traía `firmas`, que pasó a
+`required · minRows: 1` en `entradas-blog` en algún momento anterior (no
+derivado el commit exacto). El CONTROL moría en el paso 1 —«0 de 6
+invariantes evaluados»— y NO era un rojo del invariante 6: era el mismo
+`ValidationError` que §regla 5ter ya cataloga dos veces en este mismo
+fichero (`pagina`, `fechaPublicacion`). Arreglado dándole un autor real
+(scaffold nuevo, igual que `categorias`), no aflojando el fixture.
+
+Commit `d0c33db`, push.
+
+### ESCALÓN 2 · sembrar
+
+**1 · `qa:media-canales` — BYTE A BYTE.** `scripts/seed/seed.mjs`'s `media()`
+resolvía con `fs.existsSync`, case-INsensitive en Windows (§regla 47).
+Añadida `existeByte()` (`readdirSync(dir).includes(basename)`), exportada.
+Los dos cardinales de hoy —Windows (existsSync) y Linux (byte a byte)—
+**coinciden: 0 AUSENTES los dos**. No había discrepancia hoy; el fix cierra
+la ventana para la próxima vez que sí la haya. `58 canales · 21 ejercidos ·
+39 sin dato · 4 de otro sembrador`, congelada idéntica a la de PASO 0.
+
+**2 · Reset + reseed, pipeline completo.** `cms:reset` (dropea, migra,
+purga `media/`) → `cms:seed` → `cms:seed-kb` → `cms:seed-listados`.
+
+En el primer intento, `cms:seed` murió en `arquetipos` — **no por CMS-9**
+(las otras 11 colecciones, incluida `productos`, sembraron limpias, sin
+colisión) sino por `video-arq.url` (`required`), que ya estaba fichado por
+la 139.ª como canal no leído: los 2 vídeos reales son `<iframe src>` de
+YouTube dentro de `.et_pb_video_box`, y `extractor-f35.mjs` sólo leía `src`
+del contenedor o de un `<img>`. **Autorizado por el propietario tocarlo en
+esta misma tanda** (pregunta explícita, no asumido): añadida la lectura de
+`<iframe src>` como tercer fallback (mismo patrón que `imgDe`/`RE_IMG`).
+Verificado contra el corpus (`monitor-calidad-aire.html` ·
+`software-…html`, 1 `<iframe>` cada uno, sin `src` propio en
+`.et_pb_video_box` y sin `<img>`). Negativo `cms:extractor-f35-neg` 7/7 +
+control. Congelada re-derivada con `PISAR=1` (git conserva el estado
+anterior, tracked).
+
+Segundo intento, reset+reseed limpio: **✅ 392 documentos en 16 colecciones**,
+incluida `arquetipos` **4/4**. `slugs`: `productos` **2** (no 5 — el fix de
+CMS-9 se auto-aplicó al resembrar desde cero, sin script de limpieza aparte:
+las 3 filas stale nunca se re-crean porque `enPlano()` ya no las reclama
+desde el primer `create`). `arquetipos` no aparece como familia en el
+registro — 0 reclamos, los 4 los sirve una carpeta estática cada uno.
+
+**3-4 · Sondeo + round-trip.** `cms:sondeo`: **0 defectos de instrumento**,
+`0` `required` sin dato en las 83 rutas del esquema + 109 extra, `0`
+huérfanas — incluida `arquetipos`. `qa:cms-roundtrip`: **arquetipos 4/4
+IDÉNTICAS**, **productos 19/19 IDÉNTICAS** — los dos objetos de esta tanda,
+limpios.
+
+⚠ **Y el round-trip completo (392 documentos) destapó DOS gaps sin relación
+con CMS-9, no tocados aquí — cada uno su propia tanda:**
+
+- `entradas-blog` (152/152) y `documentos-cientificos` (23/23) — **el
+  100 % de ambas**, `firmas[].autor.{fotoOrigen,cargo,redes}` no sobrevive
+  el round-trip. Un `conDiferencia` de 100 % redondo en dos colecciones que
+  comparten el mismo patrón (`firmas[].autor`, relación embebida) es la
+  quinta cara de §sondas 4 — instrumento o mapeo, no dato: sospecha
+  fundada, sin diagnosticar aquí;
+- `paginas` — 1 de 31 (`politica-de-cookies`), una tabla de cookies con
+  forma distinta al releer (`{celdas:[{texto}]}` esperado vs `[string]`
+  real).
+
+**5 · `clon-base`, los dos anchos, umbral CERO.**
+
+@1440, contra `clon-base-1440-2026-08-31-tras-marcador-software.json` (426
+rutas, el baseline previo más reciente a ese ancho): **426 de 426
+comparadas · 0 con regresión.**
+
+@390, contra `clon-base-390-t126-tras-escalon2.json` (426 rutas — el
+baseline previo más reciente a ese ancho, de **9 tandas atrás**, no había
+ninguno más nuevo): **426 de 426 comparadas · 2 con regresión** —
+`/aviso-legal` (`docH +30 · S1 h +30.6`) y `/politica-de-privacidad-y-de-
+proteccion-de-datos` (`docH −30 · S1 h −30.59`).
+
+**Investigado antes de tratarlo como regresión de esta tanda —§regla del
+CORTE del propio encargo dice "para" ante esto, y por eso se investigó hasta
+poder decidir, no se paró a ciegas:**
+
+1. Ninguno de los dos routes lo toca `arquetipos` (0 lectores) ni
+   `registro-slug.ts` (hooks de escritura, nunca corren durante el `next
+   build` de SSG, que sólo LEE vía Local API);
+2. `medidas/f33-extraido.json` —la fuente de `paginas`, no tocada por esta
+   tanda, `mtime` 2026-08-26, 7 días antes del baseline elegido— **sigue con
+   el correo OFUSCADO hoy** (`email-protection`/`cdn-cgi` presentes,
+   `info@kunak` ausente): confirmado leyendo el documento extraído;
+3. Los números —±30 / ∓30.6 px, signo opuesto entre las dos rutas, |Δ|
+   exacto de un renglón— **coinciden al bit** con un hallazgo YA
+   documentado en este mismo fichero (líneas ~1994-2027, la propia acta que
+   produjo el baseline `t126-tras-escalon2`): Cloudflare ofusca el
+   `mailto:` con un placeholder de 17 caracteres, y la diferencia de
+   longitud con el correo real desplaza el ajuste de línea. Ese hallazgo
+   cita además un antecedente de la **121.ª** (`f69c4ad`) para el mismo
+   síntoma.
+
+**Conclusión: el baseline `t126` fue medido en un momento en que esa
+restitución del correo estaba aplicada de forma NO persistida en el
+extraído canónico** (T12, según el propio acta de esa tanda, «restituido EN
+LA ENTRADA»), y `f33-extraido.json` volvió a quedar con el placeholder desde
+entonces — un gap anterior a esta tanda por 7+ días, del que ninguna sonda
+de este ESCALÓN puede ser causa. No se trató como regresión de la 140.ª: no
+lo es, y el §regla nueva de abajo generaliza por qué un baseline «el más
+reciente disponible» no basta cuando está a varias tandas de distancia.
+
+**6 · `qa:slugs` final.** `223 slugs de 6 familias, 0 colisiones, 0 sombras,
+0 huérfanas`. `productos` **2**, `arquetipos` ausente de la lista de
+familias (0 reclamos). `estáticas sin dueño`: **7** (las 4 de siempre +
+`kunak-api` · `monitor-calidad-aire` · `software-de-medicion-calidad-del-
+aire`, liberadas por CMS-9). Congelada: `medidas/slugs-2026-09-02-2.json`.
+
+### Barrido §regla 12 (acotado a esta tanda) — **1 candidato**
+
+A diferencia de la 139.ª (0 candidatos), esta tanda sí deja una regla
+general: la investigación del §5 de arriba —un baseline de `clon-base` que
+es «el más reciente disponible» pero está a varias tandas de distancia
+conflacia trabajo legítimo intermedio con una regresión real, con la MISMA
+forma (`❌ /ruta`, deltas de píxeles) para las dos. Subida a `CLAUDE.md`
+como regla nueva del catálogo de §sondas.
+
+### Estado de cierre
+
+CMS-9 ✅ resuelta = A' (reformulado, no el A' de la tabla de la 139.ª). F3-5
+pasa de `0 filas · 0 lectores` a **4 filas · 0 lectores** — cablear el
+render sigue siendo otra tanda (`PLAN-FASE-3.md`). Dos pendientes nuevos,
+sin tocar aquí: el round-trip de `firmas[].autor` (100 % de dos
+colecciones) y la restitución del correo de Cloudflare en
+`f33-extraido.json` (7+ días sin persistir). Commits: ESCALÓN 1 `d0c33db`;
+ESCALÓN 2 + CIERRE, siguiente commit de esta misma tanda.
+
 ## ✅ §138.ª · **LA REVERSA PROBADA EN SU ÚNICA VENTANA, `arquetipos` CABLEADA — Y LA SIEMBRA PARA EN 5 `required` QUE SON DECISIÓN DE MODELO (CMS-8)** — 2026-09-01
 
 **Estado: PASO 0 · ESCALÓN 1 · ESCALÓN 2 completos; ESCALÓN 3 medido hasta CMS-8.** Primera tanda **CON DB** desde la 133.ª. El encargo

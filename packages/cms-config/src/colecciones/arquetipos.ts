@@ -41,13 +41,13 @@
  * el filtro nuevo ya deja esta colección en 0 reclamos, siempre.
  *
  * ── Lo que esta colección NO hace todavía, con su cardinal ─────────────────
- * · **0 lectores en el render**: las 4 rutas siguen sirviéndose de `src/lib/`.
- *   §F3-5 «hecho» es *el content type escrito con sus SIN PROBAR declarados y
- *   no cableados*, y eso es lo que hay aquí — no el sitio servido desde Payload,
- *   que es la segunda mitad y otra tanda;
- * · **0 filas sembradas**: el extractor del lote no existe. Un content type sin
- *   dato es un camino de render SIN ESTRENAR, y se declara en vez de suponerse
- *   soportado (`npm run qa:nunca-vistos`);
+ * ⚠ **ACTUALIZADO (140.ª): SEMBRADA, 4 filas.** El extractor SÍ existe desde
+ * la 131.ª (`cms:extractor-f35`) y el bloqueo de siembra era CMS-9, no falta
+ * de extractor — esta frase estaba caducada desde antes de esa tanda.
+ * · **0 lectores en el render, todavía**: las 4 rutas siguen sirviéndose de
+ *   `src/lib/`. §F3-5 «hecho» es *el content type escrito con sus SIN PROBAR
+ *   declarados y no cableados, Y sembrado* — cablear el render (leer de
+ *   Payload en vez de `src/lib/`) es la segunda mitad, y es la 141.ª;
  * · ⚠ y por eso **una ruta que responda 200 no prueba que sirva contenido**:
  *   ninguna guarda de este repo mira DENTRO. Lo que lo distingue es el
  *   comparador de dos lados —`qa:productos-cmp`—, no el manifiesto.

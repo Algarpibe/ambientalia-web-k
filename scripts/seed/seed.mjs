@@ -198,6 +198,30 @@ export const RUTAS_EN_FRONTERA = [];
 
 const PUBLICO = path.join(APP, "public");
 
+/**
+ * ⚠⚠ **BYTE A BYTE, NO `existsSync` — `CLAUDE.md` §regla 47 (140.ª).**
+ *
+ * `fs.existsSync` en Windows es CASE-INSENSITIVE: contesta que sí a
+ * `NO2_UK.webp` teniendo `no2_uk.webp` en disco, y en Linux (donde esto se
+ * despliega de verdad) contesta que no. La guarda no falla en Windows: **cambia
+ * de opinión al desplegar**, y del lado bueno para quien la corre — un
+ * `MEDIA AUSENTE` que no salta en dev puede saltar el primer día en producción.
+ *
+ * Se comprueba leyendo el directorio y buscando el nombre EXACTO —
+ * `readdirSync(dir).includes(basename)` — que es case-sensitive en cualquier
+ * sistema de ficheros porque no delega en el SO la comparación de nombres:
+ * compara los bytes que Node ya leyó. Un directorio ausente no es una
+ * excepción que haya que propagar: es «no está», igual que `existsSync` lo
+ * habría dicho.
+ */
+export const existeByte = (abs) => {
+  try {
+    return fs.readdirSync(path.dirname(abs)).includes(path.basename(abs));
+  } catch {
+    return false;
+  }
+};
+
 /* ══════════════════════════════════════════════════════════════════════════
  * CONTEXTO — lo que el walker no puede derivar de la forma
  * ═════════════════════════════════════════════════════════════════════════ */
@@ -276,7 +300,7 @@ export function creaContexto(payload, { sondeo = false, llave = esSlug } = {}) {
     if (mediaPorRuta.has(ruta)) return mediaPorRuta.get(ruta);
 
     const abs = path.join(PUBLICO, decodeURIComponent(ruta));
-    const existe = fs.existsSync(abs);
+    const existe = existeByte(abs);
     /**
      * ⚠ **En SONDEO se ANOTA; sembrando se TIRA** — la misma asimetría que `rel`
      * unas líneas más abajo, y por la misma razón, escrita ahora porque su

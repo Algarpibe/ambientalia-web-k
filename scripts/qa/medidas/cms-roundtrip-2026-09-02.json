@@ -1,0 +1,4430 @@
+{
+  "meta": {
+    "fecha": "2026-09-02",
+    "sabotaje": null,
+    "alcance": {
+      "comparadas": [
+        "categorias",
+        "etiquetas",
+        "categorias-recursos",
+        "categorias-cientificas",
+        "productos",
+        "paginas",
+        "sectores",
+        "monograficos",
+        "taxonomia-sectores",
+        "casos",
+        "faqs",
+        "autores",
+        "entradas-blog",
+        "terminos-kunakpedia",
+        "documentos-cientificos",
+        "arquetipos"
+      ],
+      "pares": 392,
+      "fuera": {
+        "articulos-kb": "§2d.1 — no tiene contraparte medida en `src/lib`: las 6 instancias no están transcritas",
+        "media": "no es un catálogo: se deriva de los campos `upload` de los demás",
+        "usuarios": "infraestructura (CMS-0f), sin lado medido",
+        "slugs": "registro del plano (§4): lo escriben los hooks, no un seed"
+      },
+      "rutasEnFrontera": []
+    }
+  },
+  "porColeccion": {
+    "categorias": {
+      "documentos": 4,
+      "conDiferencia": 0
+    },
+    "etiquetas": {
+      "documentos": 12,
+      "conDiferencia": 0
+    },
+    "categorias-recursos": {
+      "documentos": 9,
+      "conDiferencia": 0
+    },
+    "categorias-cientificas": {
+      "documentos": 3,
+      "conDiferencia": 0
+    },
+    "productos": {
+      "documentos": 19,
+      "conDiferencia": 0
+    },
+    "paginas": {
+      "documentos": 31,
+      "conDiferencia": 1
+    },
+    "sectores": {
+      "documentos": 4,
+      "conDiferencia": 0
+    },
+    "monograficos": {
+      "documentos": 2,
+      "conDiferencia": 0
+    },
+    "taxonomia-sectores": {
+      "documentos": 11,
+      "conDiferencia": 0
+    },
+    "casos": {
+      "documentos": 57,
+      "conDiferencia": 0
+    },
+    "faqs": {
+      "documentos": 19,
+      "conDiferencia": 0
+    },
+    "autores": {
+      "documentos": 5,
+      "conDiferencia": 0
+    },
+    "entradas-blog": {
+      "documentos": 152,
+      "conDiferencia": 152
+    },
+    "terminos-kunakpedia": {
+      "documentos": 37,
+      "conDiferencia": 0
+    },
+    "documentos-cientificos": {
+      "documentos": 23,
+      "conDiferencia": 23
+    },
+    "arquetipos": {
+      "documentos": 4,
+      "conDiferencia": 0
+    }
+  },
+  "diferencias": [
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[0]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"Cookie\"},{\"texto\":\"Propia o de terceros\"},{\"texto\":\"Tipo\"},{\"texto…",
+      "real": "[\"Cookie\",\"Propia o de terceros\",\"Tipo\",\"Propósito\",\"Más información\"]"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[1]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"cookie_notice_accepted\"},{\"texto\":\"Propia\"},{\"texto\":\"Necesaria\"},…",
+      "real": "[\"cookie_notice_accepted\",\"Propia\",\"Necesaria\",\"Persistente (1 año)\",\"Esta cookie recue…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[2]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"wordpress_logged_in_[hash]\"},{\"texto\":\"Propia\"},{\"texto\":\"Necesari…",
+      "real": "[\"wordpress_logged_in_[hash]\",\"Propia\",\"Necesaria\",\"De sesión\",\"Después del login, Word…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[3]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"wordpress_[hash]\"},{\"texto\":\"Propia\"},{\"texto\":\"Necesaria\"},{\"text…",
+      "real": "[\"wordpress_[hash]\",\"Propia\",\"Necesaria\",\"De sesión\",\"Esta cookie se activa durante el …"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[4]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"_icl_current_language\"},{\"texto\":\"De terceros (WPML)\"},{\"texto\":\"N…",
+      "real": "[\"_icl_current_language\",\"De terceros (WPML)\",\"Necesaria\",\"De sesión\",\"Indentifica el l…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[5]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"_icl_current_admin_language_[hash]\"},{\"texto\":\"De terceros (WPML)\"…",
+      "real": "[\"_icl_current_admin_language_[hash]\",\"De terceros (WPML)\",\"Necesaria\",\"De sesión\",\"Rec…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[6]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"_ga\"},{\"texto\":\"De terceros (Google Analytics)\"},{\"texto\":\"Estadís…",
+      "real": "[\"_ga\",\"De terceros (Google Analytics)\",\"Estadística\",\"Persistente (2 años)\",\"Se usa pa…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[7]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"_gat\"},{\"texto\":\"De terceros (Google Analytics)\"},{\"texto\":\"Estadí…",
+      "real": "[\"_gat\",\"De terceros (Google Analytics)\",\"Estadística\",\"Persistente (1 minuto)\",\"Se usa…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[8]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"_gid\"},{\"texto\":\"De terceros (Google Analytics)\"},{\"texto\":\"Estadí…",
+      "real": "[\"_gid\",\"De terceros (Google Analytics)\",\"Estadística\",\"Persistente (24 horas)\",\"Se usa…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[9]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"NID\"},{\"texto\":\"De terceros (Google Analytics)\"},{\"texto\":\"Estadís…",
+      "real": "[\"NID\",\"De terceros (Google Analytics)\",\"Estadística\",\"Persistente (6 meses)\",\"Un ident…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].filas[10]",
+      "clase": "FORMA",
+      "esperado": "{\"celdas\":[{\"texto\":\"1P_JAR\"},{\"texto\":\"De terceros (Google Analytics)\"},{\"texto\":\"Esta…",
+      "real": "[\"1P_JAR\",\"De terceros (Google Analytics)\",\"Estadística\",\"Persistente (1 semana)\",\"Tran…"
+    },
+    {
+      "coleccion": "paginas",
+      "slug": "politica-de-cookies",
+      "ruta": "bloques[0].filas[0].columnas[0].modulos[5].cabeceras",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estamos-listos-para-ayudarle",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Javier_Fernandez_1.jpg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estamos-listos-para-ayudarle",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Director General y cofundador\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estamos-listos-para-ayudarle",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/javier-fernandez-huerta-a901ab15…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "nos-hemos-mudado",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "nos-hemos-mudado",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "nos-hemos-mudado",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "covid-19-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "covid-19-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "covid-19-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Javier_Fernandez_1.jpg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Director General y cofundador\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-emisiones-coronavirus-contaminacion",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/javier-fernandez-huerta-a901ab15…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-redes-hibridas-monitorizacion-ambiental",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-redes-hibridas-monitorizacion-ambiental",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-redes-hibridas-monitorizacion-ambiental",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-como-controlar-las-emisiones-en-mineria-junio-2025",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-como-controlar-las-emisiones-en-mineria-junio-2025",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-como-controlar-las-emisiones-en-mineria-junio-2025",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-simgo",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-simgo",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-simgo",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "el-sensor-de-calidad-del-aire-mas-preciso",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "el-sensor-de-calidad-del-aire-mas-preciso",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "el-sensor-de-calidad-del-aire-mas-preciso",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-aire-remediacion-suelos-contaminados",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-aire-remediacion-suelos-contaminados",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-aire-remediacion-suelos-contaminados",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/edurne-ibarrola-kunak.jpeg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Directora Científica (CSO)\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/eibarrola/\"}]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-del-trafico-urbano",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "particulas-ultrafinas-puf",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "particulas-ultrafinas-puf",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "particulas-ultrafinas-puf",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "emisiones-ganaderas-y-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "emisiones-ganaderas-y-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "emisiones-ganaderas-y-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-olores-en-edar",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-olores-en-edar",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-olores-en-edar",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-islas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-islas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-islas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "corrosion-ambiental-causas-factores-y-como-prevenirla",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "corrosion-ambiental-causas-factores-y-como-prevenirla",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "corrosion-ambiental-causas-factores-y-como-prevenirla",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "biometano-y-biogas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "biometano-y-biogas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "biometano-y-biogas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/irene-lara-kunak.jpg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Jefa de producto\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calibracion-de-sensores-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/irene-lara-ibeas-phd-25712969/\"}]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-acustica",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-acustica",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-acustica",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "nueva-directiva-de-calidad-del-aire-ue-2024-2881",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "nueva-directiva-de-calidad-del-aire-ue-2024-2881",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "nueva-directiva-de-calidad-del-aire-ue-2024-2881",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-de-la-industria-petroquimica",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-de-la-industria-petroquimica",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-de-la-industria-petroquimica",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "running-for-clean-air",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "running-for-clean-air",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "running-for-clean-air",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-vertederos",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-vertederos",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-vertederos",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-produccion-de-energia",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-produccion-de-energia",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-produccion-de-energia",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-control-de-olores-en-vertederos-y-edar",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-control-de-olores-en-vertederos-y-edar",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-control-de-olores-en-vertederos-y-edar",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-pure-cities",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-pure-cities",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-pure-cities",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-metano",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-metano",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-por-metano",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-del-acero-en-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-del-acero-en-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-del-acero-en-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "gases-de-efecto-invernadero-y-accion-climatica",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/irene-lara-kunak.jpg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "gases-de-efecto-invernadero-y-accion-climatica",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Jefa de producto\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "gases-de-efecto-invernadero-y-accion-climatica",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/irene-lara-ibeas-phd-25712969/\"}]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "microsensores-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "microsensores-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "microsensores-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-juegos-olimpicos-de-paris-2024",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-juegos-olimpicos-de-paris-2024",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-juegos-olimpicos-de-paris-2024",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-nueva-york",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-nueva-york",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-nueva-york",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/irene-lara-kunak.jpg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Jefa de producto\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/irene-lara-ibeas-phd-25712969/\"}]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ruta": "firmas[1].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ruta": "firmas[1].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-las-comunidades",
+      "ruta": "firmas[1].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-industria-papelera",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-industria-papelera",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-industria-papelera",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-puertos",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-puertos",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-puertos",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-los-aeropuertos",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-los-aeropuertos",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-los-aeropuertos",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-madrid",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-madrid",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-en-madrid",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "guia-sobre-la-contaminacion-urbana",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "guia-sobre-la-contaminacion-urbana",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "guia-sobre-la-contaminacion-urbana",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-certificado-mcerts",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-certificado-mcerts",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-certificado-mcerts",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ehs-industrial",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ehs-industrial",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ehs-industrial",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-los-asentamientos-informales",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-los-asentamientos-informales",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-en-los-asentamientos-informales",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-gases-en-los-vertederos-de-basura",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-gases-en-los-vertederos-de-basura",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-gases-en-los-vertederos-de-basura",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "control-de-la-contaminacion-del-aire-en-la-industria-seminario-web",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "control-de-la-contaminacion-del-aire-en-la-industria-seminario-web",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "control-de-la-contaminacion-del-aire-en-la-industria-seminario-web",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-mal-olor-industrial",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-mal-olor-industrial",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-mal-olor-industrial",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-alrededor-de-los-colegios",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-alrededor-de-los-colegios",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-del-aire-alrededor-de-los-colegios",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "despliegue-estaciones-kunak-air-pro-filipinas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "despliegue-estaciones-kunak-air-pro-filipinas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "despliegue-estaciones-kunak-air-pro-filipinas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "redes-hibridas-vigilancia-calidad-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "redes-hibridas-vigilancia-calidad-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "redes-hibridas-vigilancia-calidad-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-industria-cementera",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-industria-cementera",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-industria-cementera",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-cloud-plataforma-web-calidad-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-cloud-plataforma-web-calidad-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-cloud-plataforma-web-calidad-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-volcanes",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-volcanes",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-volcanes",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-sensor-multi-contaminante-preciso-airlab",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-sensor-multi-contaminante-preciso-airlab",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-sensor-multi-contaminante-preciso-airlab",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "directrices-oms-calidad-aire-innovacion",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "directrices-oms-calidad-aire-innovacion",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "directrices-oms-calidad-aire-innovacion",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "conferencia-partes-cop26-incendios",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "conferencia-partes-cop26-incendios",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "conferencia-partes-cop26-incendios",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estres-por-calor-bienestar",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estres-por-calor-bienestar",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "estres-por-calor-bienestar",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "zonas-bajas-emisiones-monitorizacion",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "zonas-bajas-emisiones-monitorizacion",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "zonas-bajas-emisiones-monitorizacion",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitores-calidad-aire-moviles",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitores-calidad-aire-moviles",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitores-calidad-aire-moviles",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "entrevista-jelle-hofman-investigador-calidad-del-aire-imec",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "entrevista-jelle-hofman-investigador-calidad-del-aire-imec",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "entrevista-jelle-hofman-investigador-calidad-del-aire-imec",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-incendios-forestales-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-incendios-forestales-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-incendios-forestales-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "entrevista-agustin-torres-product-manager-suez",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "entrevista-agustin-torres-product-manager-suez",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "entrevista-agustin-torres-product-manager-suez",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-calidad-aire-movilidad",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-calidad-aire-movilidad",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-calidad-aire-movilidad",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/edurne-ibarrola-kunak.jpeg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Directora Científica (CSO)\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/eibarrola/\"}]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contador-particulas-suspension-movilidad-sostenible",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contador-particulas-suspension-movilidad-sostenible",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contador-particulas-suspension-movilidad-sostenible",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-aire-deporte",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-aire-deporte",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-aire-deporte",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-mal-olor-sensores",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-mal-olor-sensores",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-mal-olor-sensores",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-emisiones-proyecto-trafair",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-emisiones-proyecto-trafair",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "detectores-emisiones-proyecto-trafair",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "efectos-de-la-contaminacion-en-la-salud",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "efectos-de-la-contaminacion-en-la-salud",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "efectos-de-la-contaminacion-en-la-salud",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-exterior-rendimiento-uso",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-exterior-rendimiento-uso",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-exterior-rendimiento-uso",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "necesidad-estandares-y-programas-certificacion",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/edurne-ibarrola-kunak.jpeg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "necesidad-estandares-y-programas-certificacion",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Directora Científica (CSO)\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "necesidad-estandares-y-programas-certificacion",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/eibarrola/\"}]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-calidad-del-aire-en-europa",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-calidad-del-aire-en-europa",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-calidad-del-aire-en-europa",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "premios-pyme-2024-kunak",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "premios-pyme-2024-kunak",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "premios-pyme-2024-kunak",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "premios-aqe-2024",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "premios-aqe-2024",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "premios-aqe-2024",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-transporte-urbano",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-transporte-urbano",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-transporte-urbano",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-referente-en-medicion-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-referente-en-medicion-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-referente-en-medicion-de-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-la-calidad-del-aire-en-puertos-maritimos",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-la-calidad-del-aire-en-puertos-maritimos",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medicion-de-la-calidad-del-aire-en-puertos-maritimos",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "plan-recuperacion-transformacion-resiliencia-zbe",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "plan-recuperacion-transformacion-resiliencia-zbe",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "plan-recuperacion-transformacion-resiliencia-zbe",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-aire-tiempo-real-kunak-air-lite",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-aire-tiempo-real-kunak-air-lite",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-aire-tiempo-real-kunak-air-lite",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medir-calidad-aire-asic-2022",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medir-calidad-aire-asic-2022",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medir-calidad-aire-asic-2022",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "fondos-nextgen-eu-zonas-bajas-emisiones",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "fondos-nextgen-eu-zonas-bajas-emisiones",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "fondos-nextgen-eu-zonas-bajas-emisiones",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "lanzamiento-kunak-air-pro",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Javier_Fernandez_1.jpg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "lanzamiento-kunak-air-pro",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Director General y cofundador\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "lanzamiento-kunak-air-pro",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/javier-fernandez-huerta-a901ab15…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-exterior-pamplona",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-exterior-pamplona",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-exterior-pamplona",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-proveedor-sensores-calidad-aire-brightsites-signify",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-proveedor-sensores-calidad-aire-brightsites-signify",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-proveedor-sensores-calidad-aire-brightsites-signify",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "vigilancia-calidad-aire-maraton-valencia-2019",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "vigilancia-calidad-aire-maraton-valencia-2019",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "vigilancia-calidad-aire-maraton-valencia-2019",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-aire-paises-sanos",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-aire-paises-sanos",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "calidad-aire-paises-sanos",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "por-que-es-importante-monitorizar-en-tiempo-real",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "por-que-es-importante-monitorizar-en-tiempo-real",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "por-que-es-importante-monitorizar-en-tiempo-real",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "workshop-sensores-ambientales-bajo-coste",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "workshop-sensores-ambientales-bajo-coste",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "workshop-sensores-ambientales-bajo-coste",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "eugreenweek-we-have-gone-green",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "eugreenweek-we-have-gone-green",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "eugreenweek-we-have-gone-green",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "fourth-session-of-the-united-nations-environment-assembly-2",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "fourth-session-of-the-united-nations-environment-assembly-2",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "fourth-session-of-the-united-nations-environment-assembly-2",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "todas-nuestras-soluciones-en-el-iotswc",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"website\",\"href\":\"https://kunakair.com\"}]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-greencities-malaga-2018",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-greencities-malaga-2018",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-greencities-malaga-2018",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "participamos-con-suez-en-el-4yfn-del-mobile-world-congress",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "participamos-con-suez-en-el-4yfn-del-mobile-world-congress",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "participamos-con-suez-en-el-4yfn-del-mobile-world-congress",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-oem-industrial-iot-en-el-basque-industry-4-0",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-oem-industrial-iot-en-el-basque-industry-4-0",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-oem-industrial-iot-en-el-basque-industry-4-0",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-la-smart-city-expo-world-congress-2017",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-la-smart-city-expo-world-congress-2017",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-la-smart-city-expo-world-congress-2017",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-la-feria-sensortest-2017-con-alphasense",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-la-feria-sensortest-2017-con-alphasense",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "exponemos-en-la-feria-sensortest-2017-con-alphasense",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-aqemission-monitoring-2017-con-alphasense",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-aqemission-monitoring-2017-con-alphasense",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-aqemission-monitoring-2017-con-alphasense",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "quemas-prescritas-agricolas-calidad-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "quemas-prescritas-agricolas-calidad-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "quemas-prescritas-agricolas-calidad-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medidores-de-calidad-del-aire-mediciones-indicativas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medidores-de-calidad-del-aire-mediciones-indicativas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "medidores-de-calidad-del-aire-mediciones-indicativas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-urbano",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-urbano",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-urbano",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-urbano-donostia",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-urbano-donostia",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "sensores-calidad-aire-urbano-donostia",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "control-emisiones-industriales",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "control-emisiones-industriales",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "control-emisiones-industriales",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "emisiones-de-las-refinerias-de-petroleo",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "emisiones-de-las-refinerias-de-petroleo",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "emisiones-de-las-refinerias-de-petroleo",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-en-refinerias",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-en-refinerias",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-en-refinerias",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-por-obras",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-por-obras",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-del-aire-por-obras",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-aire-obras-demoliciones-derribos",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-aire-obras-demoliciones-derribos",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "contaminacion-aire-obras-demoliciones-derribos",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-mineria-calidad-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-mineria-calidad-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "impacto-ambiental-mineria-calidad-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-near-reference",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/edurne-ibarrola-kunak.jpeg\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-near-reference",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Directora Científica (CSO)\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-near-reference",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/in/eibarrola/\"}]"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-near-reference",
+      "ruta": "firmas[1].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-near-reference",
+      "ruta": "firmas[1].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-near-reference",
+      "ruta": "firmas[1].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-perimetral",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-perimetral",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-perimetral",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-fugitivas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-fugitivas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "monitorizacion-de-emisiones-fugitivas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-obtiene-el-sello-reconcilia",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-obtiene-el-sello-reconcilia",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "kunak-obtiene-el-sello-reconcilia",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "descarga-catalogo-kunak",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "descarga-catalogo-kunak",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "descarga-catalogo-kunak",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-control-de-la-contaminacion-del-aire-en-la-industria",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-control-de-la-contaminacion-del-aire-en-la-industria",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "entradas-blog",
+      "slug": "webinar-control-de-la-contaminacion-del-aire-en-la-industria",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-de-sensores-contra-incendios-forestales-de-la-us-epa",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-de-sensores-contra-incendios-forestales-de-la-us-epa",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-de-sensores-contra-incendios-forestales-de-la-us-epa",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "kunak-air-pro-informe-de-evaluacion-en-campo",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "kunak-air-pro-informe-de-evaluacion-en-campo",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "kunak-air-pro-informe-de-evaluacion-en-campo",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "kunak-air-lite-informe-de-evaluacion-en-campo",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "kunak-air-lite-informe-de-evaluacion-en-campo",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "kunak-air-lite-informe-de-evaluacion-en-campo",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-airlab-de-microsensores-2023",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-airlab-de-microsensores-2023",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-airlab-de-microsensores-2023",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "soluciones-avanzadas-de-monitorizacion",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "soluciones-avanzadas-de-monitorizacion",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "soluciones-avanzadas-de-monitorizacion",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico",
+      "ruta": "firmas[0].autor.fotoOrigen",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"https://kunakair.com/wp-content/uploads/2024/04/Kunak_K_Logo_Cuadrado.png\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico",
+      "ruta": "firmas[0].autor.cargo",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "\"Marketing y comunicación\""
+    },
+    {
+      "coleccion": "documentos-cientificos",
+      "slug": "evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico",
+      "ruta": "firmas[0].autor.redes",
+      "clase": "FORMA",
+      "esperado": "(ausente)",
+      "real": "[{\"red\":\"linkedin\",\"href\":\"https://www.linkedin.com/company/kunak/\"},{\"red\":\"facebook\",…"
+    }
+  ]
+}

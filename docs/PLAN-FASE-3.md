@@ -2143,6 +2143,38 @@ irreducibles, 0 de 788 capturados).
 > Acta: `PENDIENTES-QA.md` §132.ª. Derivaciones:
 > `derivaciones/{paso0,clases,fichas}-132.{mjs,log,json}`.
 
+> ✏️ **ACTUALIZADO 2026-09-02 (140.ª) — `arquetipos` DEJA DE ESTAR EN 0 FILAS.
+> Pasa de «0 filas · 0 lectores» a «4 filas · 0 lectores».**
+>
+> El bloqueador que paraba la siembra no era ya CMS-6 (`el bloqueo se encoge
+> a un campo`, resuelto en 133.ª) sino **CMS-9**, descubierto al intentar
+> sembrar por primera vez tras resolver CMS-8 (139.ª): `arquetipos`
+> colisionaba de slug con `productos` en 3 de sus 4 rutas, porque el
+> registro de unicidad de plano (`registro-slug.ts`) no distinguía «lo emite
+> el plano dinámico» de «lo emite una carpeta estática». Resuelto en 140.ª
+> como CMS-9 = A' (`ESQUEMA-CMS.md` §CMS-9): el registro ahora filtra,
+> derivado del árbol de `apps/web/src/app/`, cualquier slug que una carpeta
+> estática ya sirve — no un concepto de arbitraje nuevo, sino el mismo
+> discriminador que `qa:slugs` ya usaba del lado de lectura, cableado
+> también al de escritura.
+>
+> Un segundo bloqueo, sin relación con CMS-9 y ya fichado por la 139.ª
+> (`video-arq.url` sin dato porque el extractor no leía `<iframe src>` de
+> los embeds de YouTube), se arregló en la misma tanda con autorización
+> explícita del propietario.
+>
+> **`arquetipos` sembrada: 4 filas, round-trip 4/4 IDÉNTICAS contra su
+> propia extracción.** `qa:cms-slugs` (6 invariantes) y `qa:slugs` (223
+> slugs · 0 colisiones · 0 sombras · 0 huérfanas) en verde. `clon-base`
+> @1440 sin regresión; @390, 2 rutas con delta identificado como un gap
+> PREVIO y no relacionado (Cloudflare/`mailto`, `PENDIENTES-QA.md` §140.ª).
+>
+> **Lo que sigue sin cambiar: 0 LECTORES.** Las 4 rutas del lote siguen
+> sirviéndose de `src/lib/`, sin tocar Payload. Cablear el render —el
+> segundo «hecho» de F3-5— es su propia tanda (**141.ª**).
+>
+> Acta: `PENDIENTES-QA.md` §140.ª.
+
 > ⚠⚠ **LA CONDICIÓN DE REAPERTURA NO EXIGE CLONAR, y eso salió de enumerar las
 > separadoras en vez de copiar la primera.** El encargo la enunció *«si se
 > clonan los 2 vecinos de `monitor` a ≥0.7…»*. Derivado
