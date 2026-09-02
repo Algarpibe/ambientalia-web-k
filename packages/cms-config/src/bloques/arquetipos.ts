@@ -350,8 +350,18 @@ const ICONO: Block = {
 const IMAGEN: Block = {
   slug: "imagen-arq",
   labels: { singular: "Imagen", plural: "Imágenes" },
-  /* 27 instancias en 4/4. */
-  fields: [...COMUNES_MODULO, subida("imagen", { requerida: true }), { name: "alt", type: "text" }, enlace("enlace")],
+  /* 27 instancias en 4/4. CMS-8a: `enlace` pasa a OPCIONAL — el `required`
+     que exigía label+href en las 27 nunca fue una decisión medida, era el
+     efecto lateral de `enlace()` siendo un `group` (Payload no hace un group
+     opcional por sí mismo). Ahora sólo exige coherencia (si hay `href`, hay
+     `label`). Qué fracción de las 27 trae `href` de verdad sigue abierto en
+     CMS-8a·SIN-ATRIBUIR (docs/ESQUEMA-CMS.md). */
+  fields: [
+    ...COMUNES_MODULO,
+    subida("imagen", { requerida: true }),
+    { name: "alt", type: "text" },
+    enlace("enlace", {}, { opcional: true }),
+  ],
 };
 
 const BOTON: Block = {

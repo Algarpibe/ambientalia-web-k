@@ -699,14 +699,50 @@ export function seo({
 /** `SeoA` del grupo A: `description` falta en los 23 documentos científicos. */
 export const seoA: Field = seo({ description: true, ogImage: true });
 
-/** `SectorLink` — `external` solo si el destino es externo (regla de rutas locales). */
-export function enlace(name: string, extra: Partial<Field> = {}): Field {
+/**
+ * Coherencia de un `enlace` OPCIONAL (CMS-8a): si hay `href`, tiene que haber
+ * `label` — un enlace sin texto no se puede pintar. Va en el campo `href`,
+ * leyendo `label` por `siblingData` (mismo patrón que `unidadDe`).
+ */
+export function validaCoherenciaEnlace(
+  valor: unknown,
+  opciones?: { siblingData?: { label?: unknown } },
+): true | string {
+  const href = typeof valor === "string" ? valor.trim() : "";
+  const label = opciones?.siblingData?.label;
+  const hayLabel = typeof label === "string" && label.trim() !== "";
+  if (href !== "" && !hayLabel)
+    return "Si `href` tiene valor, `label` es obligatorio: un enlace sin texto no se puede pintar.";
+  return true;
+}
+
+/**
+ * `SectorLink` — `external` solo si el destino es externo (regla de rutas locales).
+ *
+ * `opcional` (CMS-8a): `label`/`href` dejan el `required` de Payload y pasan a
+ * un validador de COHERENCIA. Ese `required` original **nunca fue una
+ * decisión medida** — `enlace()` es un `group`, y un `group` de Payload no es
+ * opcional por sí mismo, así que el modelo afirmaba «todo enlace lleva texto y
+ * destino» sin que nadie lo hubiera elegido. Por defecto sigue como estaba,
+ * porque `boton-arq.destino` y `cta-arq.destino` SÍ son ese caso: su razón de
+ * ser es enlazar, así que el `required` ahí es una decisión, no un accidente.
+ */
+export function enlace(
+  name: string,
+  extra: Partial<Field> = {},
+  { opcional = false }: { opcional?: boolean } = {},
+): Field {
   return {
     name,
     type: "group",
     fields: [
-      { name: "label", type: "text", required: true },
-      { name: "href", type: "text", required: true },
+      { name: "label", type: "text", required: !opcional },
+      {
+        name: "href",
+        type: "text",
+        required: !opcional,
+        ...(opcional ? { validate: validaCoherenciaEnlace } : {}),
+      },
       { name: "external", type: "checkbox" },
     ],
     ...extra,
