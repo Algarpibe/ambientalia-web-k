@@ -26,6 +26,7 @@ import * as migration_20260831_014031_f3_5_medida_breakpoint_767 from './2026083
 import * as migration_20260831_015813_f3_5_arquetipos from './20260831_015813_f3_5_arquetipos';
 import * as migration_20260901_230502_f3_5_formulario_arq from './20260901_230502_f3_5_formulario_arq';
 import * as migration_20260902_151020_f3_5_imagen_arq_enlace_opcional from './20260902_151020_f3_5_imagen_arq_enlace_opcional';
+import * as migration_20260902_152309_f3_5_vacios_texto_y_formulario from './20260902_152309_f3_5_vacios_texto_y_formulario';
 
 export const migrations = [
   {
@@ -166,6 +167,11 @@ export const migrations = [
   {
     up: migration_20260902_151020_f3_5_imagen_arq_enlace_opcional.up,
     down: migration_20260902_151020_f3_5_imagen_arq_enlace_opcional.down,
-    name: '20260902_151020_f3_5_imagen_arq_enlace_opcional'
+    name: '20260902_151020_f3_5_imagen_arq_enlace_opcional',
+  },
+  {
+    up: migration_20260902_152309_f3_5_vacios_texto_y_formulario.up,
+    down: migration_20260902_152309_f3_5_vacios_texto_y_formulario.down,
+    name: '20260902_152309_f3_5_vacios_texto_y_formulario'
   },
 ];

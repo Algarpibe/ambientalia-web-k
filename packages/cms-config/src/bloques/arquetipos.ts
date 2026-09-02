@@ -171,7 +171,7 @@
  */
 import type { Block, Field } from "payload";
 
-import { campoHtml, conDefecto, enlace, htmlLinea, medida, subida } from "../campos/comunes.ts";
+import { campoHtml, conDefecto, enlace, htmlLinea, medida, requeridoConVacio, subida } from "../campos/comunes.ts";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    LA PIEZA — el marcador semántico, y es un CAMPO
@@ -336,8 +336,20 @@ const COMUNES_MODULO: Field[] = [pieza, ritmo];
 const TEXTO: Block = {
   slug: "texto-arq",
   labels: { singular: "Texto", plural: "Textos" },
-  /* 100 instancias en 4/4 documentos — el tipo más frecuente del lote. */
-  fields: [...COMUNES_MODULO, campoHtml("contenido", { requerido: true })],
+  /* 100 instancias en 4/4 documentos — el tipo más frecuente del lote.
+     CMS-8b: 1 de 100 llega VACÍO, y se comprobó EN EL ORIGINAL (139.ª) antes
+     de aplicar nada — `et_pb_text_24` de `monitor-calidad-aire` existe en el
+     HTML servido, entre la galería y el módulo `lista-resultados`, y no lleva
+     `.et_pb_text_inner` dentro: es un separador vacío real, no un hueco del
+     extractor. `requeridoConVacio` compone con `validaHtmlCorpus` (encadena,
+     no sustituye) para no perder el whitelist de etiquetas. */
+  fields: [
+    ...COMUNES_MODULO,
+    requeridoConVacio(
+      campoHtml("contenido"),
+      "139.ª · `et_pb_text_24` de monitor-calidad-aire, módulo vacío servido entre la galería y `lista-resultados` — 1 de 100",
+    ),
+  ],
 };
 
 const ICONO: Block = {
@@ -536,9 +548,19 @@ const FORMULARIO: Block = {
         {
           name: "opciones",
           type: "array",
+          /* CMS-8b: `texto` VACÍO comprobado EN EL ORIGINAL (139.ª) — el
+             `<select>` servido de `field[27]` y `field[51]` en
+             monitor-calidad-aire trae el «— elige —» de ActiveCampaign como
+             `<option>` sin texto (`<option selected></option>` y, en
+             `field[27]`, una segunda `<option value="">` sin texto en medio
+             del listado de países). 3 instancias en 1 formulario, las 3
+             servidas, ninguna del extractor. */
           fields: [
             { name: "valor", type: "text" },
-            { name: "texto", type: "text", required: true },
+            requeridoConVacio(
+              { name: "texto", type: "text" } as Field,
+              "139.ª · monitor-calidad-aire, `<select>` field[27] (×2) y field[51] (×1) — placeholder de ActiveCampaign sin texto",
+            ),
           ],
         },
       ],

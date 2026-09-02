@@ -90,7 +90,7 @@ type EditorLexical = ReturnType<typeof lexicalEditor>;
 export function requeridoConVacio<T extends Field>(campo: T, fuente: string): T {
   const c = campo as Field & {
     required?: boolean;
-    validate?: unknown;
+    validate?: (valor: unknown, opciones?: unknown) => true | string | Promise<true | string>;
     admin?: { description?: string };
     custom?: Record<string, unknown>;
   };
@@ -98,11 +98,20 @@ export function requeridoConVacio<T extends Field>(campo: T, fuente: string): T 
   /* `required` de Payload rechaza `""`, así que no puede convivir con esto: se
    * quita a propósito y el rechazo de la ausencia lo hace el `validate`. */
   c.required = false;
-  c.validate = (valor: unknown) =>
-    valor === undefined || valor === null
-      ? `\`${"name" in campo ? campo.name : "?"}\` es obligatorio. La cadena VACÍA sí es un valor legal ` +
+  /* El campo puede llegar con SU PROPIO `validate` (p. ej. `campoHtml` trae
+   * `validaHtmlCorpus`, que exige el whitelist de etiquetas). Sobrescribirlo
+   * sería exactamente §regla 6 —una ausencia [aquí, la del validador previo]
+   * se rechaza, no se sustituye—, así que se ENCADENA: primero rechaza la
+   * AUSENCIA, y sólo si hay valor delega en lo que ya hubiera. */
+  const validaPrevio = c.validate;
+  c.validate = (valor: unknown, opciones?: unknown) => {
+    if (valor === undefined || valor === null)
+      return (
+        `\`${"name" in campo ? campo.name : "?"}\` es obligatorio. La cadena VACÍA sí es un valor legal ` +
         `(${fuente}) — lo que no lo es es que la clave no esté: «vacío» y «ausente» son dos cosas.`
-      : true;
+      );
+    return validaPrevio ? validaPrevio(valor, opciones) : true;
+  };
   c.admin = {
     ...(c.admin ?? {}),
     description: `Obligatorio. La cadena VACÍA es dato medido y se admite — ${fuente}.`,
