@@ -263,6 +263,171 @@ conté (`casos`, `faqs`, `sectores`, `monograficos`).
 > **0 consumidores** en el render—, que es una tercera categoría distinta de
 > «editable» y de «no editable», y el ESCALÓN 3 la nombra como tal.
 
+### ESCALÓN 2 · el recorrido — PARCIAL (pasos 1 y 6, y P1 medida)
+
+#### Paso 1 · los tres procesos, y el sitio SIRVE (no sólo escucha)
+
+| proceso | puerto | comprobado con |
+|---|---|---|
+| Postgres `kunak-cms-pg` | 55432 | **socket abierto en 2 ms** |
+| publicador | 4000 | `GET /estado` contesta JSON |
+| sitio (`next start`) | 3000 | **`GET /` → 200, 232 641 bytes** |
+| admin (`cms:dev`) | 3001 | `GET /admin` → 200, y **redirige solo** a `/admin/create-first-user` |
+
+Las tres variables que faltaban se pusieron en `apps/cms/.env` —
+`PUBLICAR_SECRETO`, `PUBLICAR_URL=http://127.0.0.1:4000`, `PUBLICAR_SERVIDOR=1`—.
+**Es configuración del recorrido, no un hallazgo**, como el PASO 0 declaró por
+adelantado. El publicador arrancó con `gestiona servidor: true`, o sea que
+`PUBLICAR_SERVIDOR` **tomó efecto** y la promoción no exige parar nada por
+fuera.
+
+⚠ **Y una nota de operación que NO es un defecto del MVP:** con `next dev`, el
+admin servido en **`127.0.0.1`** renderiza **en blanco** — Next bloquea los
+recursos de desarrollo cross-origin desde esa IP y lo dice en su log
+(*«Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr»*).
+En **`localhost`** funciona. Es del modo desarrollo, no de `next start`, y se
+apunta porque cuesta media hora diagnosticarlo.
+
+#### ⚠⚠ Paso 1bis · `estado.json` NO ESTÁ VERSIONADO, y la corrida de hoy borró la evidencia de la anterior
+
+Derivado antes de arrancar nada: `scripts/publicar/estado.json` cae en
+`.gitignore:71`. Así que el congelado del **2026-08-09** —38.29 s, 31 rutas,
+`OeWb0DlPe1dXTXkRlPRbi`, y su `historia` con **un build de `codigo: 1`**— iba a
+desaparecer **en el acto de arrancar el publicador**, que reinicia el fichero.
+
+**Confirmado en la corrida:** tras arrancar, `GET /estado` daba `historia: []`,
+`builds: 0`, `ultimoExito: null`. Sin la congelación previa, el ANTES de esta
+tanda no existiría.
+
+> **Es §regla 5 con el escritor FUERA de `w()`.** La guarda que impide pisar una
+> congelada vive en `w()` y protege **a las sondas**; el publicador escribe con
+> `writeFileSync` pelado, igual que los scripts de `derivaciones/` de la nota
+> del 2026-08-29. Y aquí no hace falta ni un borrado a mano: **lo pisa el
+> arranque**.
+
+Congelado en `scripts/qa/medidas/publicador-estado-2026-08-09-31rutas.json`, con
+**el nombre derivado del ESTADO que describe** (fecha + cardinal) y no del
+proceso que lo escribió.
+
+#### ⚠⚠ P1 · REFUTADA — 108.44 s, por debajo de la banda, y POR EL MECANISMO QUE PRE-REGISTRÉ
+
+| | |
+|---|---|
+| **predicho** | **155 s**, banda **130–200** |
+| **medido** | **108.44 s** · **420 rutas** · buildId `qLzb1ivvbp74M6jijkAoB` |
+| congelada | `scripts/qa/medidas/publicador-estado-2026-09-02-142a-P1.json` |
+
+**Cae fuera por abajo, y el ESCALÓN 1 escribió exactamente qué significaría
+eso:** *«menos de 130 s significa que el `porRuta` de los clones no era cota
+inferior sino superior — o sea que las rutas reales son **más baratas** que el
+clon»*. Eso es lo que dice el dato.
+
+**Y el escalado no es «ligeramente super-lineal» como predije: es MARCADAMENTE
+SUB-LINEAL en el tramo nuevo.**
+
+| tramo | pendiente |
+|---|---|
+| 31 → 220 (A-SP13, clones) | **0.2623 s/ruta** |
+| 220 → 420 (hoy, rutas reales) | **0.0852 s/ruta** |
+
+O sea **un tercio**. La extrapolación de dos puntos de A-SP13 daba **143.9 s a
+420** y el real es **108.44**: **25 % por debajo**. El modelo de A-SP13 **no
+extrapola** fuera de su población de clones, y ahora se sabe con su número.
+
+> **La lección es la que el ESCALÓN 1 ya nombró y salió por el otro lado: 189
+> clones de UN documento no son una muestra del sitio.** Predije que serían más
+> baratos que la media y por eso su `porRuta` sería cota **inferior**. Es al
+> revés — un documento científico con su cuerpo rico es **más caro** que la
+> mediana de un sitio donde muchas rutas son listados y páginas cortas.
+
+⚠ **Y el número se cita con SU CARDINAL, no con el que yo esperaba:** son
+**420 rutas**, no 426 — por el punto siguiente. A `0.0852 s/ruta`, las 6 que
+faltan son **+0.5 s**: la refutación no depende de eso.
+
+#### ⚠⚠ Y EL BUILD EMITIÓ 420 DONDE EL DE LAS 13:01 EMITÍA 426 — Y EL NETO «−6» ESCONDE **28 RUTAS TOCADAS**
+
+Comparado **por diferencia simétrica y no por recuento** (§*un cardinal es un
+contenedor y absorbe la membresía*), contra el build anterior que la promoción
+dejó en `apps/web/.next-anterior`:
+
+| | n |
+|---|---|
+| sólo en el ANTERIOR (13:01) | **17** |
+| sólo en el NUEVO (18:42) | **11** |
+| **neto** | **−6** |
+
+**Y las 17 y las 11 son la MISMA familia con un segmento de menos:**
+`/recursos/articulos/contaminacion-minera` → `/recursos/contaminacion-minera`.
+
+**Es la firma exacta que §regla 20 documenta desde la 99.ª tanda**, con su
+causa nombrada allí: falta el término **`articulos`** de `categorias-recursos`
+—lo escribe `cms:seed-listados`, que el round-trip **no corre**— y sin él toda
+la familia pierde un segmento.
+
+**Derivado en la DB, no supuesto:** `categorias_recursos` tiene **9 términos** y
+**`articulos` NO está** (`count = 0`).
+
+**Y tiene coste SERVIDO, medido:**
+
+| ruta | hoy |
+|---|---|
+| `/recursos/articulos` | **404** |
+| `/recursos/articulos/contaminacion-minera` | **404** |
+| `/recursos/contaminacion-minera` | 200 (y no debería existir) |
+
+> **El entorno estaba degradado ANTES de esta tanda** —el build de las 13:01 ya
+> es de hoy y sí las tenía, así que el reseteo cae entre medias— y **ninguna
+> escritura mía puede haberlo causado: las dos que lo intentaron fueron
+> DENEGADAS por el entorno**. La atribución es limpia por eso, no por
+> argumento.
+
+**Restaurador: `npm run cms:seed-listados`**, y la comprobación de que funcionó
+**no es el recuento sino la diferencia simétrica contra el build de las 13:01**,
+con sus dos lados a **0 y 0** (§regla 20, tercera mitad).
+
+#### Paso 6 · qué ve el editor durante el build — y sí basta, con un pero
+
+`GET /estado` durante los 108 s devolvió, en el instante del disparo:
+
+```
+fase: "construyendo" · desde: "2026-09-02T23:40:29.401Z"
+motivo: "142a:medicion-P1-a-426-rutas" · builds: 1 · disparos: 1 · coalescidos: 0
+```
+
+y al terminar, `fase: "ocioso"` con `ultimoExito` completo —cuándo, motivo,
+**segundos**, `buildId` y **rutas**— y `ultimoFallo: null`.
+
+**Contesta las tres preguntas que un editor se hace** —*¿está pasando algo?*
+(`fase`), *¿desde cuándo?* (`desde`), *¿fue lo mío?* (`motivo`)— y eso es más de
+lo que da la mayoría de los CMS. **El pero es que no dice CUÁNTO FALTA**: con
+`fase: "construyendo"` y `desde` hace 90 s, el editor no tiene forma de saber si
+quedan 20 s o se colgó. El dato para estimarlo **existe** —`ultimoExito.segundos`
+del build anterior— y no está puesto delante.
+
+**La promoción se verificó por su efecto, no por su log:** `BUILD_ID` servido
+pasó de `9SKeO6AguGU4ByPyHrtkL` a **`qLzb1ivvbp74M6jijkAoB`**, y el servidor web
+volvió solo (`GET /` → 200) sin que nadie parase nada — que es lo que
+`PUBLICAR_SERVIDOR=1` compra.
+
+#### Lo que queda BLOQUEADO, y por qué no sale verde
+
+Los pasos **2, 3, 4, 5, 7 y 8** necesitan **escribir en la DB** (crear el
+usuario, editar el documento, deshacerlo). Las dos órdenes que lo intentaron
+—`node --env-file=apps/cms/.env …`— fueron **DENEGADAS por el entorno**, no
+fallaron. Así que:
+
+> **Salen FICHADOS con su motivo, no verdes** — igual que la 141.ª hizo con su
+> P1. Un paso no ejercitado por falta de permiso no es un paso que funcione.
+
+**Y el sujeto del recorrido se corrige por decisión del propietario:** se hace
+**con la sesión del EDITOR, no la del admin**, porque el MVP es del editor y
+*«un recorrido hecho con privilegios de admin no se puede atribuir al editor:
+es un veredicto sobre otro sujeto»*. Verificado en
+`colecciones/usuarios.ts` —`defaultValue: "editor"` (L77), acceso
+`adminOUnoMismo` (L56/58) y `hidden` declarado literalmente *«Cosmética, NO la
+guarda»* (L66)—. Sus falsadores ya existen (`qa:roles-neg`, 3 casos), así que
+aquí la guarda **se usa, no se vuelve a probar**.
+
 ## 🔄 §141.ª · **CABLEAR LOS LECTORES DE `arquetipos` (F3-5, la segunda mitad)** — 2026-09-02
 
 **Estado: PASO 0 completo.** Continuación misma-fecha de la 140.ª, que dejó

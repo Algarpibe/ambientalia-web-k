@@ -1,0 +1,35 @@
+{
+  "fase": "ocioso",
+  "pendiente": false,
+  "desde": "2026-09-02T23:42:21.495Z",
+  "motivo": "142a:medicion-P1-a-426-rutas",
+  "ultimoExito": {
+    "cuando": "2026-09-02T23:42:21.488Z",
+    "motivo": "142a:medicion-P1-a-426-rutas",
+    "segundos": 108.44,
+    "buildId": "qLzb1ivvbp74M6jijkAoB",
+    "rutas": 420
+  },
+  "ultimoFallo": null,
+  "builds": 1,
+  "disparos": 1,
+  "coalescidos": 0,
+  "promocionRequierePararServidor": false,
+  "historia": [
+    {
+      "build": 1,
+      "empezo": 1788392429401,
+      "disparosPrevios": 1,
+      "motivo": "142a:medicion-P1-a-426-rutas",
+      "codigo": 0,
+      "termino": 1788392537839
+    }
+  ],
+  "ganchos": {
+    "PUBLICAR_CMD": null,
+    "SABOTAJE": null
+  },
+  "pid": 30596,
+  "dist": ".next",
+  "arrancado": 1788391739376
+}

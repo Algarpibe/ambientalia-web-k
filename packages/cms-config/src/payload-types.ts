@@ -4016,7 +4016,7 @@ export interface Arquetipo {
   bloques: (
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -4024,7 +4024,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -4050,7 +4050,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -4076,7 +4076,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -4102,7 +4102,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -4129,16 +4129,16 @@ export interface Arquetipo {
           };
         };
         /**
-         * HTML del corpus (CMS-0e · §3.1). Admite las 43 etiquetas censadas en 209/209. Prohibido `<script>` (§3.3 · T4). Rango medido: 275–69 784 caracteres.
+         * Obligatorio. La cadena VACÍA es dato medido y se admite — 139.ª · `et_pb_text_24` de monitor-calidad-aire, módulo vacío servido entre la galería y `lista-resultados` — 1 de 100.
          */
-        contenido: string;
+        contenido?: string | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'texto-arq';
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -4146,7 +4146,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -4172,7 +4172,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -4198,7 +4198,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -4224,7 +4224,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -4265,7 +4265,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -4273,7 +4273,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -4299,7 +4299,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -4325,7 +4325,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -4351,7 +4351,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -4379,9 +4379,9 @@ export interface Arquetipo {
         };
         imagen: number | Media;
         alt?: string | null;
-        enlace: {
-          label: string;
-          href: string;
+        enlace?: {
+          label?: string | null;
+          href?: string | null;
           external?: boolean | null;
         };
         id?: string | null;
@@ -4390,7 +4390,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -4398,7 +4398,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -4424,7 +4424,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -4450,7 +4450,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -4476,7 +4476,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -4514,7 +4514,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -4522,7 +4522,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -4548,7 +4548,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -4574,7 +4574,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -4600,7 +4600,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -4636,7 +4636,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -4644,7 +4644,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -4670,7 +4670,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -4696,7 +4696,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -4722,7 +4722,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -4756,7 +4756,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -4764,7 +4764,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -4790,7 +4790,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -4816,7 +4816,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -4842,7 +4842,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -4888,7 +4888,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -4896,7 +4896,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -4922,7 +4922,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -4948,7 +4948,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -4974,7 +4974,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -5010,7 +5010,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -5018,7 +5018,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -5044,7 +5044,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -5070,7 +5070,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -5096,7 +5096,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -5135,7 +5135,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -5143,7 +5143,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -5169,7 +5169,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -5195,7 +5195,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -5221,7 +5221,154 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
+           */
+          pb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+        };
+        destino: string;
+        metodo: 'POST' | 'GET';
+        textoBoton: string;
+        campos?:
+          | {
+              nombre: string;
+              tipo: 'texto' | 'seleccion' | 'casillas';
+              etiqueta?: string | null;
+              requerido?: boolean | null;
+              opciones?:
+                | {
+                    valor?: string | null;
+                    /**
+                     * Obligatorio. La cadena VACÍA es dato medido y se admite — 139.ª · monitor-calidad-aire, `<select>` field[27] (×2) y field[51] (×1) — placeholder de ActiveCampaign sin texto.
+                     */
+                    texto?: string | null;
+                    id?: string | null;
+                  }[]
+                | null;
+              id?: string | null;
+            }[]
+          | null;
+        ocultos?:
+          | {
+              nombre: string;
+              valor?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'formulario-arq';
+      }
+    | {
+        /**
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
+         */
+        pieza?: string | null;
+        /**
+         * Vacío = el default RESPONSIVE de Divi (sección 4 % de la sección · fila 2 % de la fila · módulo 2.75 % de la fila). Nunca se escribe el px del default: un porcentaje citado sin su contenedor se lee como constante.
+         */
+        ritmo?: {
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           */
+          mb?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           */
+          pt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
+           */
+          mt?: {
+            valor?: number | null;
+            /**
+             * Obligatoria si hay `valor`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤980px (pestaña TABLET de Divi; es el ancho al que lo aplican f33.css y kb.css). Vacío = hereda el de escritorio.
+             */
+            movilValor?: number | null;
+            /**
+             * Obligatoria si hay `movilValor`. Sin ella el dato es ambiguo a 1440.
+             */
+            movilUnidad?: ('px' | 'pct') | null;
+            /**
+             * Override a ≤767px (pestaña MÓVIL de Divi). Vacío = hereda el de ≤980, y ése el de escritorio. SIN ESTRENAR: el render todavía no emite este tramo.
+             */
+            valor767?: number | null;
+            /**
+             * Obligatoria si hay `valor767`. Sin ella el dato es ambiguo a 1440.
+             */
+            unidad767?: ('px' | 'pct') | null;
+          };
+          /**
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -5257,7 +5404,7 @@ export interface Arquetipo {
       }
     | {
         /**
-         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias: sin ella la varianza inter-instancia no es medible. Censados 18, de los que 7 tienen ≥2 instancias.
+         * Marcador semántico que el editor escribe en el builder (`menu-anclas`, `iconos-md-3`…). Es la LLAVE de emparejamiento entre instancias. Censados 18, de los que 7 tienen ≥2 instancias — y los otros 11 SÍ son medibles: la CASCADA no necesita segunda instancia (128.ª).
          */
         pieza?: string | null;
         /**
@@ -5265,7 +5412,7 @@ export interface Arquetipo {
          */
         ritmo?: {
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en 3 piezas: `iconos-xs-2` (2 inst: 31.6719 vs 0,31.6719 @1440; 30 vs 0,30 @390) · `iconos-md-3` (2 inst, mismos valores) · `menu-anclas` (3 inst: 31.6719 · 0,27.2 · 27.2 @1440). Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO (3 instancias del MISMO arquetipo), con la CASCADA de acuerdo en las 3 piezas: `parametros` y `clear-both` (monitor 0 · estacion 9 · sensor 0, ganador `.et_pb_text_14` con `0.5em !important`) y `menu-anclas` (31.6719 · 27.2 · 31.6719 @1440, ganador `.et_pb_text_15` con `1.7rem !important`). 5 de 33 pares. ⚠ CORREGIDO en la 127.ª: `iconos-xs-2` e `iconos-md-3` NO son campo — su `[31.6719]` vs `[0, 31.6719]` es la regla `:last-child` del constructor sobre otro número de hermanos, y ningún ganador suyo lleva ordinal. Vacío = el default de Divi, que es 2.75 % DE LA FILA — lo da `mbPorDefecto(anchoFila, tipoColumna)`, no un px.
            */
           mb?: {
             valor?: number | null;
@@ -5291,7 +5438,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia MEDIDA en `menu-anclas` (3 inst @1440: PRODUCTO 0 · CATÁLOGO 0,17 · SOFTWARE 17). Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
+           * Vacío = el default responsive de Divi. CAMPO · varianza inter-instancia en la familia PRODUCTO con la cascada de acuerdo: `menu-anclas` (monitor 0 · estacion 17 · sensor 0 @1440, ganador `.et_pb_text_15` con `1em !important`) y `clear` (monitor 0 · estacion 32 a los dos anchos, ganador `.et_pb_text_16..29` con `2rem !important`). 3 de 33 pares. Vacío = el default de Divi, que en fila es 2 % DE LA FILA y en sección 4 % DE LA SECCIÓN.
            */
           pt?: {
             valor?: number | null;
@@ -5317,7 +5464,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares (marcador × ancho) con varianza en la familia PRODUCTO, y los 33 salen SIN ESCRIBIR: su único valor observado es 0, el INICIAL de la propiedad, así que no hay declaración a la que preguntarle nada. Eso NO lo prueba plantilla: puede ser un campo que el editor puso uniforme (falso negativo declarado del test B), y el test A no lo rescata solo (`FN-bp`: 45·32·20 casos en los tres `B-`). El denominador subió de 13 a 33 al medir la familia: la ausencia está mejor sostenida, no resuelta. Se deja al default; no se cablea.
            */
           mt?: {
             valor?: number | null;
@@ -5343,7 +5490,7 @@ export interface Arquetipo {
             unidad767?: ('px' | 'pct') | null;
           };
           /**
-           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 13 pares (marcador × ancho) con varianza. Mismo motivo que `mt`. Se deja al default; no se cablea.
+           * Vacío = el default responsive de Divi. ⚠ SIN PROBAR — 0 de 33 pares con varianza; 31 SIN ESCRIBIR y 2 PLANTILLA por cascada (`kunak-faq-item`, ganador `.kunak-faq-item{padding:17px}`, genérico y sin ordinal). Mismo motivo que `mt`. Se deja al default; no se cablea.
            */
           pb?: {
             valor?: number | null;
@@ -9038,6 +9185,83 @@ export interface ArquetiposSelect<T extends boolean = true> {
                 | {
                     imagen?: T;
                     alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'formulario-arq'?:
+          | T
+          | {
+              pieza?: T;
+              ritmo?:
+                | T
+                | {
+                    mb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    mt?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                    pb?:
+                      | T
+                      | {
+                          valor?: T;
+                          unidad?: T;
+                          movilValor?: T;
+                          movilUnidad?: T;
+                          valor767?: T;
+                          unidad767?: T;
+                        };
+                  };
+              destino?: T;
+              metodo?: T;
+              textoBoton?: T;
+              campos?:
+                | T
+                | {
+                    nombre?: T;
+                    tipo?: T;
+                    etiqueta?: T;
+                    requerido?: T;
+                    opciones?:
+                      | T
+                      | {
+                          valor?: T;
+                          texto?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              ocultos?:
+                | T
+                | {
+                    nombre?: T;
+                    valor?: T;
                     id?: T;
                   };
               id?: T;
