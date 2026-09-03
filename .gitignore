@@ -69,6 +69,11 @@ media/
 # Se cierra con un comodín anclado al prefijo, que es lo que las sondas usan.
 .next-*/
 scripts/publicar/estado*.json
+# 143.ª · el log del servidor web. Se trunca en cada arranque, así que es un
+# artefacto de la corrida y no evidencia — pero EXISTIR es la mitad del arreglo
+# de B1: antes su `stdio` era `"ignore"` y el aviso de Next, junto con cualquier
+# fallo de enlace del puerto, se enterraban ahí.
+scripts/publicar/servidor-web.log
 corpus/fuentes-neg-*/
 
 # Estado del HARNESS del agente, no del proyecto (hoy: `.atl/skill-registry.md`,

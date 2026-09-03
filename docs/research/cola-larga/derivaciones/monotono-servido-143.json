@@ -1,0 +1,99 @@
+{
+  "fecha": "2026-09-03T14:32:01.059Z",
+  "puertos": {
+    "control": 4100,
+    "web": 3100
+  },
+  "partida": {
+    "buildIdServido": "KzZPN7uR-9AK89asgKoTt",
+    "discoAntes": "KzZPN7uR-9AK89asgKoTt",
+    "c2": {
+      "httpDelId": 200,
+      "httpDelFalso": 404
+    }
+  },
+  "veredicto": {
+    "publicaciones": 3,
+    "relevosMedidos": 3,
+    "observacionesServidas": 3,
+    "valoresDistintos": 3,
+    "repeticionesConsecutivas": 0,
+    "cadena": [
+      "KzZPN7uR-9AK89asgKoTt",
+      "pTUiSavEiR6w_A0oPq7l3",
+      "seKgjKmY-fOwfXQB7ENTw",
+      "VPZgeKpZ9gKOChK9yUFmD"
+    ],
+    "valoresDistintosEnLaCadena": 4,
+    "cadenaSinRepeticiones": true,
+    "P1": "CONFIRMADA"
+  },
+  "control": {
+    "K1_C2_discrimina": {
+      "ok": true,
+      "nota": "200 para el id servido y 404 para uno falso, en las 3"
+    },
+    "K2_C1_y_C2_concuerdan": {
+      "ok": true,
+      "nota": "el servido coincide con el disco en las 3"
+    },
+    "K3_no_es_el_build_de_partida": {
+      "ok": true,
+      "buildIdDePartida": "KzZPN7uR-9AK89asgKoTt"
+    },
+    "K4_el_canal_ve_tambien_lo_VIEJO": {
+      "ok": true,
+      "servidoDePartida": "KzZPN7uR-9AK89asgKoTt",
+      "discoAntes": "KzZPN7uR-9AK89asgKoTt",
+      "nota": "polaridad: sin esto, un canal que devolviera siempre el disco pasaría K1-K3"
+    },
+    "vale": true
+  },
+  "observaciones": [
+    {
+      "n": 1,
+      "segundos": 94.87,
+      "buildIdEnDisco": "pTUiSavEiR6w_A0oPq7l3",
+      "buildIdServidoC1": "pTUiSavEiR6w_A0oPq7l3",
+      "httpC1": 200,
+      "C2_httpDelIdServido": 200,
+      "C2_httpDeUnIdFalso": 404,
+      "estadoBuildId": "pTUiSavEiR6w_A0oPq7l3",
+      "estadoBuildIdServido": "pTUiSavEiR6w_A0oPq7l3",
+      "estadoLlegoAlSitio": true,
+      "estadoUltimoFallo": null,
+      "builds": 1,
+      "servidoIgualADisco": true
+    },
+    {
+      "n": 2,
+      "segundos": 84.32,
+      "buildIdEnDisco": "seKgjKmY-fOwfXQB7ENTw",
+      "buildIdServidoC1": "seKgjKmY-fOwfXQB7ENTw",
+      "httpC1": 200,
+      "C2_httpDelIdServido": 200,
+      "C2_httpDeUnIdFalso": 404,
+      "estadoBuildId": "seKgjKmY-fOwfXQB7ENTw",
+      "estadoBuildIdServido": "seKgjKmY-fOwfXQB7ENTw",
+      "estadoLlegoAlSitio": true,
+      "estadoUltimoFallo": null,
+      "builds": 2,
+      "servidoIgualADisco": true
+    },
+    {
+      "n": 3,
+      "segundos": 78.54,
+      "buildIdEnDisco": "VPZgeKpZ9gKOChK9yUFmD",
+      "buildIdServidoC1": "VPZgeKpZ9gKOChK9yUFmD",
+      "httpC1": 200,
+      "C2_httpDelIdServido": 200,
+      "C2_httpDeUnIdFalso": 404,
+      "estadoBuildId": "VPZgeKpZ9gKOChK9yUFmD",
+      "estadoBuildIdServido": "VPZgeKpZ9gKOChK9yUFmD",
+      "estadoLlegoAlSitio": true,
+      "estadoUltimoFallo": null,
+      "builds": 3,
+      "servidoIgualADisco": true
+    }
+  ]
+}

@@ -331,6 +331,160 @@ tiene que decidir con su cardinal de medidas bajo sospecha.
 
 ---
 
+### ESCALÓN 2 · EL ARREGLO — P1 CONFIRMADA, Y P2 SÓLO EN SU MITAD SUSTANTIVA
+
+#### El arreglo son TRES defectos, no dos — y el tercero es el que cierra la clase
+
+El encargo veía dos apilados y hay **tres**, porque arreglar 1 y 2 hace el
+defecto *improbable* y sólo 3 lo hace **imposible de repetir en silencio**:
+
+| # | defecto | arreglo | por qué así |
+|---|---|---|---|
+| 1 | el `kill` mataba al **shell** | **se quita el `shell`**, no se añade un `taskkill` | se arregla la CLASE y no la instancia (§sondas 4). Sin shell **no hay nieto**. Es lo que ya hicieron `programada.mjs` y `publicar.mjs` |
+| 2 | el reemplazo **moría mudo** (`stdio:"ignore"`) | va a `scripts/publicar/servidor-web.log` | *un fallo que no se ve es el modo que este repo no acepta*, y era el propio `stdio` el que lo enterraba |
+| 3 | **nadie comprobaba que el servidor recogiera el build** | `esperaServido()` compara **servido contra disco** y el estado publica los dos | §*promocionar un artefacto no es servirlo* |
+
+**Y tres piezas más que salieron de aplicar el arreglo, no de planearlo:**
+
+* **`mataArbol()`** — `taskkill /PID … /T /F`, porque `next start` **bifurca
+  trabajadores**: sin shell ya no hay nieto de `cmd.exe`, pero sigue habiendo
+  descendencia, y matar sólo al padre dejaría el mismo defecto con otro nieto;
+* **`puertoLibre()`** — la comprobación **por EFECTO** (§regla 53): en Windows un
+  `kill` sobre el proceso equivocado **devuelve sin error** y deja el puerto
+  tomado, que es literalmente el defecto 1. ⚠ Y **NO TIRA** (§regla 31): un
+  puerto tomado **no impide promocionar** —el artefacto está bien—, así que
+  tirar marcaría el build como FALLIDO, que es falso. Se declara y la
+  consecuencia la caza `esperaServido()`, que es el nivel donde vive la
+  afirmación *«la publicación llegó al sitio»*;
+* **el GANCHO DE SALIDA**, que no estaba y es la otra mitad de cómo la 142.ª
+  acabó con **cinco** servidores vivos: sin él el publicador al morir deja el
+  suyo huérfano **con el puerto tomado**. `SIGINT`/`SIGTERM` **relevan** la
+  terminación por defecto, así que se devuelve explícitamente con `130`/`143`
+  (§4bis-sexta).
+
+#### (b) · SE ARREGLA LO QUE ERA ARREGLABLE, Y LO QUE NO SE JUSTIFICA CON MEDIDA
+
+**Medido, y decide el arreglo:** `output: "standalone"` produce
+`.next/standalone/apps/web/server.js` con su config congelada dentro — pero
+**NO copia `static/` ni `public/`**: los dos directorios están **ausentes** del
+árbol standalone (comprobado). Next documenta que hay que copiarlos a mano.
+
+> **Usar el servidor del standalone aquí añadiría un paso de copia a CADA
+> promoción, y un paso de copia olvidado sirve páginas SIN CSS NI ASSETS** — o
+> sea la salida plausible-y-falsa, que es peor que el aviso. El `standalone` es
+> para el contenedor (B4); el publicador local sirve con `next start`, que lee
+> todo de `.next` y de `public/`.
+
+**Y lo que sí se arregla de (b) es que el aviso SE VEA** — que era la mitad
+accionable. Con `stdio` al log, la primera corrida lo trae:
+
+```
+▲ Next.js 16.2.12
+- Local:         http://localhost:3100
+✓ Ready in 185ms
+⚠ "next start" does not work with "output: standalone" configuration.
+  Use "node .next/standalone/server.js" instead.
+```
+
+**El `✓ Ready in 185ms` al lado del aviso es el dato**: `next start` **avisa y
+sirve**. Lo que estaba roto no era el camino, era que nadie podía leer el aviso.
+
+#### La medición · `derivaciones/monotono-servido-143.{mjs,json}`
+
+**Dos canales independientes, porque uno solo no se puede cruzar:**
+
+| canal | qué es |
+|---|---|
+| **C1** | el `buildId` del payload RSC del HTML de `GET /` — `\"b\":\"<id>\"` |
+| **C2** | la **resolución** de `/_next/static/<id>/_ssgManifest.js`: 200 con el id del servidor, 404 con otro. **No es una cadena en un cuerpo: es enrutado** |
+
+**Ninguno de los dos es `.next/BUILD_ID`**, que es el canal que este defecto
+**no mueve**.
+
+#### ✅ P1 · CONFIRMADA
+
+| # | disco | **servido** | C2 (id / falso) | s |
+|---|---|---|---|---|
+| **partida** | `KzZPN7uR…` | **`KzZPN7uR-9AK89asgKoTt`** | 200 / 404 | — |
+| 1 | `pTUiSavEiR6w_A0oPq7l3` | **igual** | 200 / 404 | 89.56 |
+| 2 | `seKgjKmY-fOwfXQB7ENTw` | **igual** | 200 / 404 | 79.67 |
+| 3 | `VPZgeKpZ9gKOChK9yUFmD` | **igual** | 200 / 404 | 72.68 |
+
+**4 valores distintos · 0 repeticiones · 3 relevos medidos** — y el
+`SERVIDO en 0.84 / 0.81 / 0.91 s` lo dice el propio publicador, que es la guarda
+nueva funcionando.
+
+**Y es el INVERSO EXACTO de la 142.ª:** allí **cinco servidores** servían
+**cinco `buildId`** distintos porque cada uno estaba congelado en el suyo; aquí
+**un servidor** sirve **cuatro sucesivos**.
+
+**El control, cuatro testigos y por las DOS polaridades** (§regla 28d):
+
+| testigo | qué separa |
+|---|---|
+| **K1** · C2 discrimina | 200 para el id servido y **404 para uno falso**, en las 3. Sin esto C2 contestaría lo mismo a todo |
+| **K2** · C1 y C2 concuerdan | el servido coincide con el disco en las 3 |
+| **K3** · no es el build de partida | el caso conocido de antemano |
+| **K4** · **el canal ve también lo VIEJO** | el servidor de partida sirve `KzZPN7uR…`, **igual al disco de antes**. **Sin K4, un canal que devolviera siempre el disco pasaría K1–K3 sin medir nada de lo servido** |
+
+#### El ESTADO ya no miente — y es la mitad que el editor lee
+
+Antes (congelado en `medidas/publicar-estado-2026-09-02-142a-congelado-por-la-143.json`,
+la 142.ª con `builds: 7`): `{"buildId":"KzZPN7uR…","rutas":426}` — **el del
+DISCO, publicado como si fuera lo servido**, mientras el sitio no cambiaba.
+
+Ahora:
+
+```json
+{ "buildId": "VPZgeKpZ9gKOChK9yUFmD",
+  "buildIdServido": "VPZgeKpZ9gKOChK9yUFmD",
+  "llegoAlSitio": true,
+  "segundosHastaServido": 0.91, "rutas": 426 }
+```
+
+**Se publican los DOS lados del par** (§sondas 1: *un número de un par se cita
+con sus dos lados o no se cita*) — `KzZPN7uR…` a secas no se podía leer mal, y
+era exactamente lo que el estado publicaba.
+
+⚠ **Y un detalle que es §regla 6 sobre el propio estado:** un éxito limpia
+`ultimoFallo` **salvo el que `promociona()` acaba de escribir** porque el
+servidor no recogió la promoción. Limpiarlo ahí sería enterrar el hallazgo justo
+después de encontrarlo.
+
+#### ⚠ P2 · CONFIRMADA EN SU MITAD SUSTANTIVA, **SIN EJERCITAR** EN SU FORMA ESTRICTA
+
+**La mitad sustantiva —*«(b) no es lo que rompe el monótono»*— está CONFIRMADA
+con medida:** `next start` corrió (el aviso del log es suyo), sirvió, y las 3
+publicaciones llegaron al sitio.
+
+**La forma estricta —*«(a) SOLA basta»*— queda SIN EJERCITAR, y el motivo es que
+mi arreglo las ACOPLA.** Son separables —se podía haber dejado
+`spawn("npm", …, {shell:true})` y cambiar sólo el `kill` por un `taskkill /T`—
+pero **arreglar la CLASE en vez de la instancia obliga a quitar el shell**, y sin
+shell no se puede invocar `npm` en Windows: hay que llamar al binario de Next
+directamente. O sea que **el arreglo de (a) por su vía correcta cambia también la
+vía de invocación**, que es de lo que (b) habla.
+
+> **Se declara, no se presenta como probado** (§*«el comparador sólo mira X» y
+> «lo que cayó dentro no distinguía nada» son dos afirmaciones*): **0 instancias
+> separadoras** entre *«bastó (a)»* y *«bastaron (a)+(b)»*, porque no se corrió
+> la variante con el shell puesto. **No cambia qué se entrega**; sí impide
+> atribuir el mérito a una de las dos mitades.
+
+**Y lo que el ESCALÓN 1 pre-registró como lo que NO significaría, sigue en pie:**
+la observación **sin derivar** de la 142.ª —`/recursos/articulos` 404 a las 18:45
+y 200 a las 19:2x— **sigue sin atribuir**: el monótono no la mira.
+
+#### Nota de coste, con su ESTADO (§regla 54)
+
+Los 3 builds fueron **89.56 · 79.67 · 72.68 s**, los tres **en caliente**. La
+banda caliente de la 142.ª era **88.56–89.96** (rango 1.40 en 4 corridas), así
+que **dos de estos tres caen POR DEBAJO de ella**. Se anota como observación con
+su fecha, **no como un modelo nuevo**: n = 3 contra n = 4, y este árbol tiene un
+`.next` recién promocionado tres veces seguidas, que no es la misma condición.
+
+---
+
 ## 🔄 §142.ª · **EL RECORRIDO DEL EDITOR, ENTERO Y A LA ESCALA DE HOY** — 2026-09-02
 
 **Plan A de A+B.** Esta tanda **no escribe producto**: opera lo que ya existe y

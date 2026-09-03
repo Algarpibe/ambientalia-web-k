@@ -82,8 +82,9 @@
  * > disparar el siguiente: se conserva en `ultimoFallo` hasta que un build
  * > termine bien.
  */
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import { createServer } from "node:http";
+import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -203,29 +204,251 @@ function log(...xs) {
 
 /* ══════════════════════════════════════════════════════════════════════════
  * EL SERVIDOR WEB — sólo si el publicador lo gestiona
+ *
+ * ⚠⚠ REESCRITO 2026-09-03 (143.ª · B1). LA VERSIÓN ANTERIOR TENÍA EL MECANISMO
+ * CABLEADO Y NO FUNCIONABA, Y LOS TRES DEFECTOS ERAN INDEPENDIENTES.
+ *
+ * Medido por la 142.ª con un monótono de cinco servidores: el del editor llevaba
+ * **7 builds** sirviendo el de cinco horas antes (PID 25100, vivo al cerrar).
+ * Toda la cadena salía verde menos el último eslabón — el gancho dispara, el
+ * build sale `codigo 0`, la promoción deja el `.next` bueno, `GET /estado`
+ * publica su `ultimoExito` con sus rutas — **y el sitio no cambiaba nunca**.
+ *
+ * Los tres defectos, y hay que nombrarlos por separado porque arreglar uno
+ * dejaba los otros dos en pie:
+ *
+ *   1 · **el `kill` mataba al SHELL, no al servidor.** `spawn("npm", …,
+ *       {shell:true})` crea en Windows `cmd.exe` → `node`, y `p.kill()` mata el
+ *       `cmd.exe`: el `node` sobrevive **con el puerto tomado**. Se arregla en
+ *       la CLASE y no en la instancia (§sondas 4) — **no se añade un
+ *       `taskkill`: se quita el shell**, y sin shell no hay nieto. Es lo que ya
+ *       hicieron `qa/programada.mjs` y `qa/publicar.mjs` en su día;
+ *   2 · **el reemplazo moría en silencio** porque su `stdio` era `"ignore"`:
+ *       no podía enlazar el puerto que el huérfano retenía, y nadie lo veía.
+ *       Ahora va a un LOG. Un fallo que no se ve es el modo que este repo no
+ *       acepta, y era el propio `stdio` lo que lo enterraba;
+ *   3 · **y nadie comprobaba que el servidor recogiera el build.** Éste es el
+ *       que de verdad cierra la clase: con 1 y 2 arreglados el defecto se hace
+ *       improbable, con 3 se hace **imposible de repetir en silencio**. Se
+ *       verifica **contra lo SERVIDO** (§El principio), no contra el disco.
+ *
+ * ⚠ Y el 3 es el que ninguna sonda del repo podía dar: `publica-e2e` tiene el
+ * invariante `E4·el cambio llega SERVIDO` y lo mide con
+ * `rutasEmitidas(leeManifiesto())`, o sea **el `prerender-manifest.json` en
+ * disco**. Su verde es cierto de la PROMOCIÓN y mudo sobre el SERVICIO. Además
+ * `GESTIONA_SERVIDOR` es falso en las 0 corridas de sonda que ponen
+ * `PUBLICAR_SERVIDOR=1`, así que este código **no se ejecutaba en ninguna** —
+ * cero instancias separadoras por construcción.
  * ═════════════════════════════════════════════════════════════════════════ */
 let servidorWeb = null;
 
-function paraServidor() {
-  if (!servidorWeb) return Promise.resolve();
+/* El log del servidor. NO es `"ignore"`: el aviso de Next sobre `output:
+ * standalone` y cualquier fallo de enlace del puerto salen por aquí, y su
+ * ausencia es lo que costó la 142.ª. Se trunca en cada arranque para que lo que
+ * se lea sea del servidor vivo y no de otro de hace días (§regla 5, las fugas
+ * de los logs: un nombre canónico sin guarda da la corrida de otro día con
+ * toda la cara de ser la tuya). */
+const LOG_SERVIDOR = path.join(RAIZ, "scripts/publicar/servidor-web.log");
+
+/**
+ * El binario de Next, resuelto en el árbol. Se invoca **con `process.execPath`**
+ * —o sea el `node` que corre este publicador— y **sin shell**, que es el arreglo
+ * del defecto 1: sin `cmd.exe` en medio no hay nieto que sobreviva al `kill`.
+ */
+const NEXT_BIN = path.join(RAIZ, "node_modules/next/dist/bin/next");
+
+/**
+ * ¿Está el puerto libre? La comprobación es **por EFECTO**, no por que el `kill`
+ * devuelva (§regla 53): en Windows un `kill` sobre el proceso equivocado
+ * devuelve sin error y deja el puerto tomado, que es exactamente el defecto 1.
+ */
+function puertoLibre(puerto) {
   return new Promise((res) => {
-    const p = servidorWeb;
-    servidorWeb = null;
-    p.once("exit", () => res());
-    p.kill();
-    setTimeout(res, 5000).unref();
+    const s = net.createServer();
+    s.once("error", () => res(false));
+    s.once("listening", () => s.close(() => res(true)));
+    s.listen(puerto, "127.0.0.1");
   });
+}
+
+/**
+ * Mata el ÁRBOL, no el proceso. `next start` bifurca trabajadores, así que
+ * aunque se haya quitado el shell sigue habiendo descendencia — y matar sólo al
+ * padre dejaría el mismo defecto con otro nieto.
+ */
+function mataArbol(pid) {
+  if (!pid) return;
+  try {
+    if (process.platform === "win32")
+      spawnSync("taskkill", ["/PID", String(pid), "/T", "/F"], { stdio: "ignore" });
+    else process.kill(-pid, "SIGKILL");
+  } catch {
+    /* ya muerto: no es un fallo, y la comprobación de verdad es `puertoLibre` */
+  }
+}
+
+/**
+ * Para el servidor y **comprueba POR EFECTO que el puerto quedó libre**, que es
+ * la mitad que faltaba: en Windows un `kill` sobre el proceso equivocado
+ * devuelve sin error y deja el puerto tomado (§regla 53).
+ *
+ * ⚠ **NO TIRA, y la razón es de nivel (§regla 31).** Un puerto que sigue tomado
+ * NO impide promocionar —el artefacto está bien y el rename es correcto—, así
+ * que tirar aquí marcaría el build como FALLIDO, que es falso. Se **declara**, y
+ * la consecuencia la caza `esperaServido()` con su diagnóstico completo, que es
+ * el nivel donde la afirmación *«la publicación llegó al sitio»* vive.
+ *
+ * Devuelve si el puerto quedó libre, para que `promociona()` lo registre.
+ */
+async function paraServidor() {
+  const p = servidorWeb;
+  servidorWeb = null;
+  if (p) {
+    await new Promise((res) => {
+      p.once("exit", () => res());
+      mataArbol(p.pid);
+      setTimeout(res, 5000).unref();
+    });
+  }
+  if (!GESTIONA_SERVIDOR) return { libre: null };
+  for (let i = 0; i < 40; i++) {
+    if (await puertoLibre(PUERTO_WEB)) return { libre: true };
+    await new Promise((r) => setTimeout(r, 250));
+  }
+  log(
+    `⚠⚠ el puerto :${PUERTO_WEB} sigue TOMADO 10 s después de parar el servidor.\n` +
+      `   No es nuestro proceso —acaba de morir con su árbol—: lo tiene OTRO.\n` +
+      `   Se promociona igual (el artefacto está bien), pero el servidor nuevo no\n` +
+      `   podrá enlazar y la publicación NO llegará al sitio. Libera el puerto o\n` +
+      `   cambia PUBLICAR_PUERTO_WEB.`,
+  );
+  return { libre: false };
 }
 
 function arrancaServidor() {
   if (!GESTIONA_SERVIDOR) return;
-  servidorWeb = spawn("npm", ["run", "start", "-w", "web"], {
-    shell: true,
-    cwd: RAIZ,
-    env: { ...process.env, PORT: String(PUERTO_WEB) },
-    stdio: "ignore",
+  /* ⚠ `next start` y NO el servidor del `standalone`, y la razón está MEDIDA
+   * (143.ª): `output: "standalone"` produce `.next/standalone/apps/web/server.js`
+   * con su config congelada dentro, pero **NO copia `static/` ni `public/`** —
+   * comprobado: los dos directorios están ausentes del árbol standalone—. Next
+   * documenta que hay que copiarlos a mano, así que usarlo aquí añadiría un paso
+   * de copia a CADA promoción y un paso de copia olvidado sirve **páginas sin
+   * CSS ni assets**, o sea la salida plausible-y-falsa. El `standalone` es para
+   * el contenedor (B4); el publicador local sirve con `next start`, que lee todo
+   * de `.next` y de `public/`.
+   *
+   * Su aviso —*«next start does not work with output: standalone»*,
+   * `next/dist/server/next.js:227`— es un `log.warn`, **no un `throw`** (el
+   * `throw` de tres líneas más abajo es para `output: "export"`), así que sirve.
+   * Y ahora **el aviso se VE**, que es lo que faltaba: va al log de abajo. */
+  const fd = fs.openSync(LOG_SERVIDOR, "w");
+  const hijo = spawn(process.execPath, [NEXT_BIN, "start", "-p", String(PUERTO_WEB)], {
+    cwd: APP,
+    env: { ...process.env, PORT: String(PUERTO_WEB), NEXT_DIST_DIR: NOMBRE_DIST },
+    stdio: ["ignore", fd, fd],
   });
-  log(`servidor web arrancado en :${PUERTO_WEB}`);
+  servidorWeb = hijo;
+  /* ⚠ La comparación es contra ESTE hijo, no contra la variable de módulo: si ya
+   * hay un relevo arrancado, `servidorWeb` apunta al nuevo y comparar con `null`
+   * atribuiría la muerte de éste al otro. Es §*un cardinal es un contenedor*
+   * cometido sobre una referencia. */
+  hijo.once("exit", (codigo, senal) => {
+    if (servidorWeb !== hijo) return; // lo paramos nosotros, o ya hay relevo
+    servidorWeb = null;
+    estado.ultimoFallo = {
+      cuando: new Date().toISOString(),
+      motivo: "el servidor web MURIÓ solo",
+      codigo,
+      senal,
+      cola: colaLog(),
+      servido: "NADA se está sirviendo en este puerto",
+    };
+    guardaEstado();
+    log(`❌ el servidor web murió (codigo ${codigo}, señal ${senal}) — ver ${LOG_SERVIDOR}`);
+  });
+  log(`servidor web arrancado en :${PUERTO_WEB} (pid ${hijo.pid}) — log en ${LOG_SERVIDOR}`);
+}
+
+/* ⚠⚠ EL GANCHO DE SALIDA, y su ausencia es la otra mitad de cómo la 142.ª acabó
+ * con CINCO servidores vivos: sin esto, el publicador al morir deja el suyo
+ * huérfano **con el puerto tomado**, y el siguiente publicador se encuentra un
+ * servidor que sirve un build de hace horas.
+ *
+ * `exit` es un aviso y no releva nada. `SIGINT`/`SIGTERM` **sí relevan** la
+ * terminación por defecto, así que hay que devolverla explícitamente
+ * (§4bis-sexta: *cualquier gancho que RELEVE un comportamiento por defecto tiene
+ * que devolver el fallo a su sitio*). Se mata el ÁRBOL de forma síncrona porque
+ * en `exit` no queda bucle de eventos donde esperar nada. */
+let cerrando = false;
+function cierraServidorAlSalir() {
+  if (cerrando) return;
+  cerrando = true;
+  const p = servidorWeb;
+  servidorWeb = null;
+  if (p) mataArbol(p.pid);
+}
+process.on("exit", cierraServidorAlSalir);
+for (const senal of ["SIGINT", "SIGTERM"]) {
+  process.on(senal, () => {
+    cierraServidorAlSalir();
+    process.exit(senal === "SIGINT" ? 130 : 143); // devuelve la terminación que el gancho relevó
+  });
+}
+
+/** Las últimas líneas del log del servidor, que es donde vive la causa. */
+function colaLog() {
+  try {
+    return fs.readFileSync(LOG_SERVIDOR, "utf8").split(/\r?\n/).filter(Boolean).slice(-25).join("\n");
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * ⚠⚠ EL `buildId` **SERVIDO**, que es el único que contesta la pregunta que el
+ * editor hace — *«¿cambió el sitio?»*.
+ *
+ * `estado.ultimoExito.buildId` sale de `.next/BUILD_ID`, o sea **del disco**, y
+ * el disco es justo el canal que este defecto NO mueve: la promoción aterriza
+ * siempre. Por eso el estado publicaba un verde con su número de rutas mientras
+ * el sitio no cambiaba — §*promocionar un artefacto no es servirlo*.
+ *
+ * El canal es el `buildId` del payload RSC del propio HTML servido, `"b":"<id>"`.
+ * Se eligió porque `/_next/static/<id>/` **no aparece** en el HTML de Next 16
+ * App Router (comprobado: 0 ocurrencias), así que no hay una segunda cadena que
+ * leer; el segundo canal —la resolución de `/_next/static/<id>/_ssgManifest.js`—
+ * es un comportamiento de enrutado y lo comprueba la derivación de fuera, no
+ * este proceso.
+ */
+async function buildIdServido() {
+  try {
+    const r = await fetch(`http://127.0.0.1:${PUERTO_WEB}/`, { redirect: "manual" });
+    const html = await r.text();
+    const m = /\\"b\\":\\"([A-Za-z0-9_-]{8,40})\\"/.exec(html) || /"b":"([A-Za-z0-9_-]{8,40})"/.exec(html);
+    return m ? m[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Espera a que el servidor sirva EL BUILD QUE ACABAMOS DE PROMOCIONAR, y
+ * devuelve qué pasó. **No tira**: quien decide qué hacer con un desacuerdo es
+ * `promociona()`, que es quien tiene el estado a mano.
+ *
+ * ⚠ La comparación es SERVIDO contra DISCO, y ése es el punto: si coinciden, la
+ * publicación llegó al sitio; si no, el servidor está anclado a otro build y hay
+ * que decirlo **en voz alta**, que es lo que no pasaba.
+ */
+async function esperaServido(buildIdEnDisco, ms = 60_000) {
+  const t0 = Date.now();
+  let visto = null;
+  while (Date.now() - t0 < ms) {
+    visto = await buildIdServido();
+    if (visto === buildIdEnDisco) return { ok: true, servido: visto, segundos: +((Date.now() - t0) / 1000).toFixed(2) };
+    await new Promise((r) => setTimeout(r, 500));
+  }
+  return { ok: false, servido: visto, segundos: +((Date.now() - t0) / 1000).toFixed(2) };
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -294,7 +517,7 @@ async function promociona() {
       "el build salió 0 pero `.next-nuevo` no tiene BUILD_ID.\n" +
         "  Un exit 0 sin artefacto es un verde que no se puede cobrar: se rechaza.",
     );
-  await paraServidor();
+  const { libre } = await paraServidor();
   fs.rmSync(DIST_ANTERIOR, { recursive: true, force: true });
 
   const apartado = fs.existsSync(DIST);
@@ -311,7 +534,49 @@ async function promociona() {
     throw new Error(`no se pudo promocionar \`${NOMBRE_DIST}-nuevo\` → \`${NOMBRE_DIST}\`: ${e.message}`);
   }
   arrancaServidor();
-  return fs.readFileSync(path.join(DIST, "BUILD_ID"), "utf8").trim();
+  const buildId = fs.readFileSync(path.join(DIST, "BUILD_ID"), "utf8").trim();
+
+  /* ⚠⚠ Y AQUÍ LA MITAD QUE FALTABA, que es la que convierte el defecto de la
+   * 142.ª en imposible-de-repetir-en-silencio en vez de sólo improbable:
+   * **comprobar que el servidor sirve el build que acabamos de promocionar.**
+   *
+   * Sin esto, `promociona()` devolvía el `BUILD_ID` **del disco** y el estado lo
+   * publicaba como si fuera lo servido. Los dos números son ciertos y sólo uno
+   * contesta la pregunta del editor. §*promocionar un artefacto no es servirlo*.
+   *
+   * Si el publicador NO gestiona el servidor, no hay nada que comprobar y se
+   * declara —`null` es ausencia, no un verde (§regla 6)—: quien despliegue es
+   * quien tiene que recoger la promoción, y el estado lo dice. */
+  if (!GESTIONA_SERVIDOR) return { buildId, servido: null, notaServido: "el publicador no gestiona el servidor: nadie ha comprobado lo servido" };
+
+  const v = await esperaServido(buildId);
+  if (!v.ok) {
+    /* No se tira: el artefacto ESTÁ promocionado y tirar aquí lo daría por
+     * fallido, que es falso. Lo que se hace es lo contrario de lo que pasaba —
+     * decirlo, con los dos lados del par y su diagnóstico. */
+    log(
+      `❌❌ PROMOCIONADO ${buildId} PERO EL SERVIDOR SIRVE ${v.servido ?? "NADA"} ` +
+        `tras ${v.segundos}s — la publicación NO ha llegado al sitio`,
+    );
+    estado.ultimoFallo = {
+      cuando: new Date().toISOString(),
+      motivo: "el servidor NO recogió la promoción",
+      buildIdEnDisco: buildId,
+      buildIdServido: v.servido,
+      segundos: v.segundos,
+      /* el puerto quedó libre o no: es lo que separa «el servidor nuevo no pudo
+       * enlazar» de «enlazó y sirve otro build», que son dos causas distintas
+       * con dos arreglos distintos */
+      puertoQuedoLibre: libre,
+      cola: colaLog(),
+      servido:
+        v.servido === null
+          ? "el servidor no contesta: mira el log del servidor web"
+          : `se sigue sirviendo ${v.servido}, o sea un build ANTERIOR`,
+    };
+    guardaEstado();
+  }
+  return { buildId, servido: v.servido, segundosHastaServido: v.ok ? v.segundos : null };
 }
 
 async function unaVuelta(motivo) {
@@ -365,17 +630,36 @@ async function unaVuelta(motivo) {
     return;
   }
 
-  const buildId = await promociona();
+  const { buildId, servido, segundosHastaServido, notaServido } = await promociona();
+  /* ⚠ `buildId` es el del DISCO y `buildIdServido` el que el sitio devuelve. Se
+   * publican **los dos**, porque un par se cita con sus dos lados o no se cita
+   * (§sondas 1): `9SKeO…` a secas no se puede leer mal, y era exactamente lo que
+   * el estado publicaba mientras el sitio no cambiaba. */
   estado.ultimoExito = {
     cuando: new Date().toISOString(),
     motivo,
     segundos: r.segundos,
     buildId,
+    buildIdServido: servido,
+    llegoAlSitio: notaServido ? null : servido === buildId,
+    segundosHastaServido: segundosHastaServido ?? null,
+    ...(notaServido ? { notaServido } : {}),
     rutas: contarRutas(),
   };
-  estado.ultimoFallo = null; // un éxito sí lo limpia; un disparo nuevo, no
+  /* Un éxito limpia el fallo — **salvo el que `promociona()` acaba de escribir**
+   * porque el servidor no recogió la promoción. Limpiarlo aquí sería enterrar el
+   * hallazgo justo después de encontrarlo, que es §regla 6 con el objeto puesto
+   * en el propio estado. */
+  if (notaServido || servido === buildId) estado.ultimoFallo = null;
   guardaEstado();
-  log(`✓ build #${estado.builds} OK (${r.segundos}s) — promocionado ${buildId}`);
+  log(
+    `✓ build #${estado.builds} OK (${r.segundos}s) — promocionado ${buildId}` +
+      (notaServido
+        ? " · servido SIN COMPROBAR (el publicador no gestiona el servidor)"
+        : servido === buildId
+          ? ` · SERVIDO en ${segundosHastaServido}s`
+          : ` · ⚠ SERVIDO sigue siendo ${servido ?? "NADA"}`),
+  );
 }
 
 function contarRutas() {
