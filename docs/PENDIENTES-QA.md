@@ -362,6 +362,126 @@ no es SSG— y la diferencia 500/404 es sólo que la referencia SÍ alcanza la D
 y el contenedor no. Elegir la ruta a mano en vez de derivarla del manifiesto
 es lo que casi fabrica el falso hallazgo.
 
+### ESCALÓN 3 · VEREDICTO
+
+#### (1) Qué transfiere de Windows al contenedor, y qué no — cada uno con su prueba
+
+| lo de B1 | ¿transfiere? | prueba |
+|---|---|---|
+| el defecto (a), `p.kill()` sobre el shell | **NO — no tiene dónde vivir** | `scripts/` ausente de la imagen; PID 1 es `next-server`; `CMD` en forma exec |
+| el defecto (b), `next start` con `output: standalone` | **NO** | `CMD = ["node","apps/web/server.js"]` |
+| el defecto (c), no comprobar lo SERVIDO | **la DISCIPLINA sí; el código no** | `BUILD_ID` horneado = servido, y coinciden por construcción: imagen nueva ⇒ proceso nuevo |
+| `PUBLICAR_SERVIDOR=1` y su supervisor | **NO** | el contenedor no ejecuta `publicador.mjs`: Docker es el supervisor |
+
+**Y lo que transfiere en la dirección contraria, que es lo que esta tanda
+añade:** los defectos del contenedor **no son los de Windows con otro traje**.
+Son cuatro propios —workspaces, `CMD`, anclaje de `.dockerignore`, `.gitignore`
+fuera del contexto— y **ninguno se podía ver desde el lado de Windows**, porque
+allí `npm ci` ya tenía `node_modules`, `next start` encuentra su `.next`, y
+`.gitignore` está presente.
+
+#### (2) LA PREGUNTA DE MODELO — respuesta con su coste, y NO se decide aquí
+
+**¿Publicar en este contenedor exige RECONSTRUIR LA IMAGEN?** Con el diseño
+actual, **sí**, y ahora con el mecanismo medido en vez de razonado:
+`Dockerfile:112-113` **hornea** `.next/standalone` y `.next/static` en capas
+`COPY`; el servicio `app` de `docker-compose.yml` **no declara ningún volumen**;
+y el proceso que sirve es **PID 1**, así que no hay supervisor dentro que pueda
+reiniciar sólo al hijo.
+
+**Las dos rutas, con su coste medido esta tanda:**
+
+| | qué dispara una publicación | coste medido | qué NO evita |
+|---|---|---|---|
+| **A · reconstruir la imagen** (lo que el Dockerfile encoda hoy) | `docker build` + redeploy | **≈200 s** con `.dockerignore` corregido (era 676 s), más el push de **819 MB** comprimidos al registro | nada: es el modelo completo |
+| **B · montar `.next` como volumen** | `npm run build` fuera + reiniciar el contenedor | el `next build` sigue costando **134,3 s** medidos en el contenedor (108–204 s en frío, §regla 54) | **no evita el reinicio**: `node apps/web/server.js` carga sus manifiestos al arrancar, igual que `next start` — es la premisa entera de B1 (§regla 53), no una particularidad de `next start` |
+
+> **La diferencia entre A y B NO es «¿hace falta reiniciar?» —las dos lo
+> necesitan— sino QUÉ dispara el reinicio y quién tiene permiso para hacerlo.**
+> Y B, para conservar el modelo del publicador tal como está escrito
+> (coalescer · promoción por rename · `llegoAlSitio`), exige además que el
+> ENTRYPOINT del contenedor **sea `publicador.mjs`** con `PUBLICAR_SERVIDOR=1`,
+> o sea una imagen distinta de ésta: con `scripts/`, con `packages/`, con
+> `node_modules` completo. Eso no es una casilla de `docker-compose.yml`.
+
+⚠⚠ **CORTE LIMPIO aplicado, como el encargo mandaba.** No se ha implementado ni
+el volumen ni el supervisor. **La decisión es del propietario**, y su operación
+de deshacer, nombrada (§regla 23): A empieza SEPARADA —imagen inmutable, el
+publicador fuera— y deshacerla es **meter el publicador dentro**, que es el lado
+caro; B empieza JUNTA y deshacerla es **sacarlo**, el lado barato. Por el
+criterio de asimetría, **B es la que se deshace mejor** — y aun así **A es la
+que hoy está escrita**, así que elegir A sería elegir CONTRA el criterio y
+**obliga a escribir su condición de reapertura**.
+
+#### (3) EL TAMAÑO, FICHADO CON SU CARDINAL (no olvidado)
+
+Las dos imágenes pesan **2.02 GB exactos** (819 MB comprimidos), así que **el
+defecto de anclaje no era el peso** — refutada la explicación fácil. Derivado
+por capas y por contenido:
+
+| capa / directorio | tamaño |
+|---|---|
+| `COPY … /public ./public` | **699 MB** ← el mayor con diferencia |
+| `COPY … /standalone ./` | 257 MB |
+| base `node:24.14.1-slim` (3 capas) | ≈243 MB |
+| `COPY … /static` | 1,43 MB |
+| **dentro**: `/app/public` | 668 M |
+| **dentro**: `/app/apps` | 145 M |
+| **dentro**: `/app/node_modules` | 103 M — `@img` 33 M · **`drizzle-kit` 18 M** · `next` 16 M · **`@esbuild` 10 M** · **`prettier` 9,6 M** · `payload` 4,6 M |
+
+**Dos cosas que salen de ahí y son de B3:**
+
+1. **el 33 % del peso son los assets del sitio** (`public/`, 668 MB de imágenes
+   y vídeos del original). La pregunta de B3 no es «cómo adelgazar la imagen»
+   sino **si esos assets deben viajar dentro de ella** o servirse de un volumen
+   o un CDN;
+2. **≈38 MB de herramienta de BUILD viajan al runtime** —`drizzle-kit`,
+   `@esbuild`, `prettier`— dentro del `standalone`. Es poco al lado de `public/`
+   pero es superficie que no se ejecuta.
+
+⚠ **Y la comparación con `:dev` (279 MB) NO es válida y se retira:**
+`Dockerfile.dev` es `alpine` + `npm install` **del `package.json` raíz**, **sin
+copiar fuente ni assets** — espera el árbol montado por volumen
+(`docker-compose.yml`, servicio `dev`). No contiene ni la app ni sus assets, así
+que los 279 MB no son «lo mismo más pequeño». ⚠ Y arrastra **el mismo defecto de
+workspaces** que el principal: su `npm install` tampoco instalaría `next`; hoy
+no se nota porque el volumen monta el `node_modules` del host encima.
+
+#### (4) B3 y B4, REDIMENSIONADAS con lo medido
+
+**B3 · variables del destino** — crece, y con trabajo nombrado:
+
+| ítem | de dónde sale |
+|---|---|
+| `docker-compose.yml` no declara `DATABASE_URI`, ni Postgres, ni red | PASO 0 |
+| su `env_file` apunta a `.env`/`.env.local` de la RAÍZ, **que no existen** | PASO 0 |
+| **`--build-arg` deja el secreto en la caché de capas de la máquina que construye** — hoy da igual (portátil), en el VPS no. Salida conocida: `RUN --mount=type=secret`, que **este Dockerfile ya usa** para las cachés de npm (L21-23) | propietario, y **Docker lo confirma**: `SecretsUsedInArgOrEnv` en L71 y L73 |
+| ⚠ y el linter de Docker **sub-casa**: marca `PAYLOAD_SECRET` y **no** `DATABASE_URI`, que lleva la contraseña dentro — casa por el NOMBRE, no por el contenido | medido esta tanda |
+| en destino `host.docker.internal` **no aplica**: Postgres será otro contenedor en la red de Easypanel | PASO 0 |
+| decidir si `public/` (668 MB) viaja en la imagen | (3) de arriba |
+
+**B4 · el cron** — no cambia de tamaño, pero **cambia de sitio**: con el modelo
+A, el `POST /cron` del publicador **no tiene dónde correr dentro de esta
+imagen** (no hay `publicador.mjs`). O sea que B4 **depende de la decisión de
+(2)** y no se puede dimensionar antes.
+
+#### (5) `PLAN-FASE-3.md` · de SEIS lecturas a UNA
+
+Ejecutado como la 141.ª con §8-FIDELIDAD: **borrar la vieja, no anotarla**.
+
+- **creada** `### ESTADO DE `arquetipos` — LA ÚNICA LECTURA, y se DERIVA` al
+  principio de F3-5, con su derivación del día: **4 filas** (`select count(*)`
+  contra `kunak-cms-pg`) · **0 lectores** (`grep` en `apps/web/src`: las 5
+  coincidencias son comentarios que usan la palabra en su sentido genérico);
+- **neutralizadas** las lecturas de estado de los bloques `✏️ ACTUALIZADO` de
+  las tandas 131.ª, 132.ª, 140.ª y 141.ª, y las 5 de la celda de la tabla
+  (133.ª, 135.ª, 136.ª, 138.ª, 139.ª). **Lo MEDIDO de cada una se conserva**:
+  lo que se quitó es el estado, que caduca en cuanto alguien siembra;
+- **la fila de la tabla** deja de abrir con «PRIMERA MITAD HECHA (126.ª)» y pasa
+  a apuntar a la lectura única, declarándose como HISTORIAL;
+- **control por las dos polaridades**: `0` ocurrencias del enunciado viejo ·
+  `1` sección canónica, referenciada 5 veces.
+
 ## 🔄 §143.ª · **QUE PUBLICAR CAMBIE EL SITIO** — 2026-09-03
 
 **B1 de B1–B4.** Los otros tres se verifican **publicando**, así que van detrás.
