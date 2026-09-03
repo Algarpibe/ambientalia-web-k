@@ -6298,6 +6298,79 @@ literalmente el trabajo de un renderizador.
 
 ---
 
+---
+
+**53 · PROMOCIONAR UN ARTEFACTO NO ES SERVIRLO: EL PROCESO QUE SIRVE ES UN CANAL
+MÁS, Y SU VERSIÓN SE COMPRUEBA POR SEPARADO.** (2026-09-02)
+
+§El principio manda verificar contra la salida servida, y su nota de
+infraestructura ya avisa de que *lo DECLARADO y lo PUBLICADO son dos canales*.
+Falta el caso en que el artefacto **está publicado, en disco, correcto** — y
+aun así no es lo que se sirve:
+
+> **Un proceso servidor de larga vida puede quedarse con la versión que había
+> cuando ARRANCÓ.** Sustituir el directorio por debajo —un `rename` atómico, un
+> despliegue azul/verde mal rematado— deja el disco perfecto y **no alcanza al
+> proceso**. Así que «el build promocionó» y «el sitio sirve el build nuevo» son
+> **dos afirmaciones**, y sólo la segunda es la que le importa a quien publica.
+
+**Y el modo de fallo es el peor del catálogo, porque toda la cadena sale verde
+menos el último eslabón**: el gancho avisa, el build sale `codigo 0`, la
+promoción deja el `.next` bueno, el estado publica `ultimoExito` con su cardinal
+de rutas — y el sitio no cambia. **Quien publicó cree que publicó.**
+
+**Cómo se comprueba, y cuesta una línea: se compara el IDENTIFICADOR DE BUILD
+SERVIDO contra el del disco.** No que la página cargue —carga— ni que el
+contenido «parezca» nuevo. Medido con cinco servidores de edades distintas
+leyendo el mismo directorio: **cada uno sirve el `buildId` que había al
+arrancar**, y el más viejo llevaba siete promociones sirviendo el primero.
+
+⚠ **Y la causa de que no se reinicie casi nunca es la que se supone.** En
+Windows, `spawn("npm", […], {shell:true})` crea **`cmd.exe` → `node`**: un
+`p.kill()` mata el `cmd.exe` y **el `node` sobrevive con el puerto tomado**. El
+reemplazo que se lanza detrás no puede enlazar y **muere en silencio si su
+`stdio` es `"ignore"`**. O sea que el mecanismo de reinicio *existe, está
+cableado y no funciona* — §regla 3 (*documentado no es conectado*) con el
+objeto puesto en un **proceso** en vez de en una llamada.
+
+> **Operativamente, y son dos mitades:** (1) toda guarda de despliegue compara
+> **la versión servida**, no la del artefacto; (2) cualquier `kill` sobre un
+> proceso lanzado con `shell:true` **se verifica por su efecto** —¿el puerto
+> quedó libre?— y no por que la llamada devuelva.
+
+---
+
+**54 · UN EJE QUE NO DISCRIMINA EN UN DOMINIO PEQUEÑO PUEDE SER EL QUE MANDA EN
+UNO GRANDE — ASÍ QUE SE EXTRAPOLA CON SU ESTADO, NO SÓLO CON SU TAMAÑO.**
+(2026-09-02)
+
+Este documento ya avisa de que una regla derivada sobre un dominio donde el caso
+no se da está SIN PROBAR, y de que dos variables confundidas producen enunciados
+invertidos. Falta el caso en que la variable **sí se midió, salió despreciable,
+y por eso se descartó**:
+
+> **Un eje puede valer 1 s en el dominio donde se calibró y 100 s en el dominio
+> al que extrapolas.** Descartarlo por su magnitud en el dominio pequeño no es
+> un descuido de medición — es haber medido bien y haber leído el resultado
+> como si la razón entre los dos ejes fuera constante.
+
+**Medido:** una sonda distinguía build **frío** y **tibio** y a 31 rutas la
+diferencia era **1.2 s**, o sea ruido. A 426 rutas el mismo eje vale **hasta
+115 s** —más que el propio tiempo caliente—, y el reparto se parte limpio:
+**4 corridas calientes en un rango de 1.4 s** contra **3 frías entre 108 y 204**.
+
+**Y la consecuencia sobre la predicción es la que enseña:** la banda predicha
+acabó **cubriendo el estado frío por casualidad**, no por acierto — o sea que
+una predicción sin estado declarado puede «acertar» sobre un fenómeno que no es
+el que se creía estar prediciendo.
+
+> **Operativamente: una predicción de magnitud se escribe CON EL ESTADO en el
+> que se afirma** —«≈89 s en caliente», no «≈89 s»—, **y cuando la fuente
+> distinga estados, se predice uno por estado** aunque en su dominio la
+> diferencia fuera despreciable. Es §*un default expresado como porcentaje se
+> lee como constante en cuanto se cita* con el contenedor puesto en **el estado
+> del sistema** en vez de en el denominador.
+
 ## Comandos
 
 ```bash

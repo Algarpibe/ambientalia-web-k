@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "que": "el recorrido del editor: pasos 1-8 con sesion de EDITOR, y el defecto del reinicio del servidor",
+    "fecha": "2026-09-02",
+    "tanda": "142a",
+    "maquina": "Core Ultra 9 285H · 16 nucleos · 31.4 GB · Windows_NT 10.0.26200 · Next 16.2.12"
+  },
+  "P1": {
+    "prediccion": 155,
+    "banda": [
+      130,
+      200
+    ],
+    "medidas": [
+      {
+        "s": 108.44,
+        "rutas": 420,
+        "estado": "fria"
+      },
+      {
+        "s": 203.97,
+        "rutas": 426,
+        "estado": "fria"
+      },
+      {
+        "s": 128.77,
+        "rutas": 426,
+        "estado": "fria"
+      },
+      {
+        "s": 89.22,
+        "rutas": 426,
+        "estado": "caliente"
+      },
+      {
+        "s": 89.4,
+        "rutas": 426,
+        "estado": "caliente"
+      },
+      {
+        "s": 89.96,
+        "rutas": 426,
+        "estado": "caliente"
+      },
+      {
+        "s": 88.56,
+        "rutas": 426,
+        "estado": "caliente"
+      }
+    ],
+    "caliente": {
+      "n": 4,
+      "min": 88.56,
+      "max": 89.96,
+      "rango": 1.4
+    },
+    "veredicto": "REFUTADA en caliente (89 s); la banda cubre por casualidad el estado FRIO"
+  },
+  "P2": {
+    "veredicto": "CONFIRMADA",
+    "clic": "19:28:59",
+    "buildArranco": "19:29:02",
+    "segundos": 3,
+    "motivo": "entradas-blog:nos-hemos-mudado update",
+    "disparos": 94,
+    "coalescidos": 88,
+    "builds": 7
+  },
+  "P3": {
+    "veredicto": "mecanismo CONFIRMADO, BLOQUEADA en el servidor del publicador",
+    "sinToken": 404,
+    "tokenFalso": 404,
+    "servidorSano": 200,
+    "servidorDelPublicador": 500
+  },
+  "P4": {
+    "prediccion": 280,
+    "rinden": 11,
+    "de": 18,
+    "sinAdjudicar": 5,
+    "nota": "unidad = coleccion visible en el menu, no ruta"
+  },
+  "pareada": {
+    "A": {
+      "coleccion": "entradas-blog",
+      "ruta": "/nos-hemos-mudado",
+      "marca": 2,
+      "delta": "≠0 · llego al sitio"
+    },
+    "B": {
+      "coleccion": "arquetipos",
+      "ruta": "/kunak-api",
+      "marca": 0,
+      "delta": "0 en contenido · UN hunk y es el buildId"
+    }
+  },
+  "defectoServidor": {
+    "enunciado": "un next start sirve para siempre el build que habia en disco al arrancar; PUBLICAR_SERVIDOR=1 no lo reinicia en Windows",
+    "servidores": [
+      {
+        "puerto": 3000,
+        "arrancado": "18:28",
+        "buildId": "9SKeO6AguGU4ByPyHrtkL"
+      },
+      {
+        "puerto": 3010,
+        "arrancado": "19:24",
+        "buildId": "JZeKiAeAWAljmZHDL8i4c"
+      },
+      {
+        "puerto": 3012,
+        "arrancado": "19:31",
+        "buildId": "jhbAKko-laQ8bdCCJ6CSW"
+      },
+      {
+        "puerto": 3013,
+        "arrancado": "19:35",
+        "buildId": "3idZfj9xm0KwARj4lLhKm"
+      },
+      {
+        "puerto": 3014,
+        "arrancado": "19:41",
+        "buildId": "KzZPN7uR-9AK89asgKoTt"
+      }
+    ],
+    "buildIdEnDisco": "KzZPN7uR-9AK89asgKoTt",
+    "pid3000": 25100,
+    "nacido": "18:28:59",
+    "buildsSobrevividos": 7,
+    "mecanismo": "spawn(shell:true) crea cmd.exe -> node; p.kill() mata el cmd.exe y el node sobrevive con el puerto tomado; el nuevo muere en silencio por stdio:ignore",
+    "sinDerivar": "una observacion NO encaja: /recursos/articulos dio 404 en 3000 a las 18:45 y 200 a las 19:2x, o sea que algo del contenido SI seguia al disco. El mecanismo exacto de la capa que congela queda SIN DERIVAR"
+  },
+  "paso8": {
+    "blog": "revertido",
+    "arquetipo": "revertido",
+    "hunksContraElOriginal": 1,
+    "esElBuildId": true,
+    "entorno": "426 rutas, simetrica 0/0"
+  }
+}

@@ -428,6 +428,297 @@ es un veredicto sobre otro sujeto»*. Verificado en
 guarda»* (L66)—. Sus falsadores ya existen (`qa:roles-neg`, 3 casos), así que
 aquí la guarda **se usa, no se vuelve a probar**.
 
+### ESCALÓN 2 · el recorrido COMPLETO — con sesión de EDITOR
+
+El propietario creó el primer usuario (admin) en el navegador y desde esa sesión
+un segundo con rol `editor`. **Los pasos 2‑5, 7 y 8 se hicieron con la sesión
+del editor**, no la del admin, y esa corrección es suya: *«un recorrido hecho
+con privilegios de admin no se puede atribuir al editor: es un veredicto sobre
+otro sujeto»*. Ninguna credencial pasó por mí.
+
+#### Restauración previa del entorno — §regla 20, con su comprobación
+
+`npm run cms:seed-listados` devolvió el término `articulos` (**9 → 10**
+categorías‑recursos). Comprobado **por diferencia simétrica y no por recuento**,
+contra las 426 rutas del build de las 13:01 congeladas en
+`medidas/rutas-1301-referencia-142a.json`:
+
+**`solo en la referencia: 0` · `solo ahora: 0`** — y `/recursos/articulos` y sus
+hijas vuelven de **404 a 200**.
+
+#### Paso 2 · lo que el editor VE en el menú — observado, no inferido
+
+**18 colecciones**, en cinco grupos: `sectores` · `monograficos` — `productos` —
+`casos` · `faqs` · `entradas-blog` · `terminos-kunakpedia` ·
+`documentos-cientificos` · `paginas` · **`arquetipos`** · **`articulos-kb`** —
+`taxonomia-sectores` · `categorias` · `etiquetas` · `categorias-recursos` ·
+`categorias-cientificas` · `autores` — `media`.
+
+**El grupo `Sistema` NO aparece**: ni `usuarios` ni `slugs`. El `admin.hidden`
+cumple su papel cosmético, y **la guarda real es el `access`**, que ya falsa
+`qa:roles-neg` con sus tres casos — aquí se **usa**, no se vuelve a probar.
+
+Y lo que el editor ve en su propia cuenta (observación del propietario): el
+campo **`Rol` se renderiza EDITABLE** en `/admin/account`, con el texto *«Sólo
+un admin puede cambiar este campo»* debajo. Es **coherente** con que la guarda
+sea un hook que TIRA y no un `access` de campo — pero el editor ve un desplegable
+que puede tocar, y sólo se entera al guardar.
+
+#### ⚠⚠ P2 · CONFIRMADA — el gancho dispara solo, y en 3 SEGUNDOS
+
+| | |
+|---|---|
+| clic en `Guardar` (sesión de editor) | **19:28:59** |
+| el publicador arranca el build | **19:29:02** |
+| `motivo` que registra | `entradas-blog:nos-hemos-mudado update` |
+| ¿alguien llamó a `POST /rebuild`? | **no** |
+
+**Y el coalescer quedó medido de propina, con el seed de coartada:** el seed
+disparó **90 avisos** y el recorrido entero cerró en **94 disparos · 88
+coalescidos · 7 builds**. La cabecera del gancho predecía *«63 documentos ⇒ dos
+builds innecesarios por siembra»*; medido, 89 avisos del seed produjeron **un**
+build. El coalescer contiene lo que promete.
+
+#### P3 · mecanismo CONFIRMADO, y BLOQUEADA donde el editor la usaría
+
+| canal | resultado |
+|---|---|
+| `/vista-previa/<slug>` **sin token** | **404** ✓ rechaza |
+| con **token inventado** | **404** ✓ rechaza |
+| con token bueno, **servidor sano** | **200**, y con la cinta `VISTA PREVIA · publicado · esta página ya está en el sitio` |
+| con token bueno, **servidor del publicador (:3000)** | **500** ❌ |
+
+**Y el contraste que P3 pedía se midió:** durante el build, el sitio servía
+todavía `¡Nos hemos mudado!` y la vista previa ya servía
+`¡Nos hemos mudado! · 142a`. La preview lee la DB viva; el sitio, el build. Es
+exactamente lo que §1 de `TRASPASO-CMS.md` declara, y **`dynamic =
+"force-dynamic"` (L62) es su mecanismo**.
+
+El 500 **no es de la ruta**: es del servidor, y su causa es el hallazgo de abajo.
+
+#### La medida PAREADA que el propietario diseñó — y hubo que medirla bien
+
+| | colección | ruta | `142a` en la página | Δ de contenido |
+|---|---|---|---|---|
+| **A** | `entradas-blog` (con lector) | `/nos-hemos-mudado` | **2 veces** | **≠ 0 · llegó** |
+| **B** | `arquetipos` (0 lectores) | `/kunak-api` | **0 veces** | **0 · NO llegó** |
+
+**El editor recibió el recorrido COMPLETO en los dos casos**: guardó, el gancho
+disparó (`arquetipos:kunak-api update`, disparo 92), el build tardó **89.40 s** y
+`ultimoExito` salió **en verde con sus 426 rutas**. Y el sitio no se movió.
+
+⚠ **Y la comparación tuvo que hacerse contra un servidor arrancado DESPUÉS del
+build**, porque en el viejo el Δ habría salido 0 **por el motivo equivocado** —
+§*un Δ de cero puede ser dos errores que se anulan*, aquí «arquetipos no tiene
+lector» y «el servidor no recoge la promoción» predicen **lo mismo**.
+
+⚠ **Y el Δ de B se publicó NORMALIZADO:** el `diff` crudo daba «≠0» con **el
+mismo número de bytes**. Es **un solo hunk y es el `buildId`** — o sea Δ=0 en
+contenido. Sin normalizar lo que el generador produce distinto por
+construcción, el comparador contesta *«¿es el mismo BUILD?»* en vez de *«¿es el
+mismo CONTENIDO?»*.
+
+#### Paso 8 · la vuelta, comprobada igual que la ida
+
+Las dos revertidas desde el admin, las dos `publicado`. Contra los «antes»
+originales: **1 hunk en cada una, y es el `buildId`** — o sea idénticas al bit en
+contenido. Entorno final: **426 rutas, simétrica 0/0**.
+
+⚠ **Y una reversión costó cuatro intentos por un error MÍO, no del CMS:** la
+página se había desplazado y mis clics caían en el desplegable de `Estado`.
+Se anota porque el síntoma —*«guardo y no pasa nada»*— es indistinguible de un
+defecto, y lo que lo dirimió fue mirar `disparos` en `GET /estado`, que **no
+subía**.
+
+---
+
+### ⚠⚠⚠ EL HALLAZGO DE LA TANDA · UN `next start` SIRVE PARA SIEMPRE EL BUILD QUE HABÍA EN DISCO CUANDO ARRANCÓ — Y `PUBLICAR_SERVIDOR=1` NO LO REINICIA EN WINDOWS
+
+**Cinco servidores, cinco edades, un monótono perfecto.** Todos leen el mismo
+`apps/web/.next`; el `buildId` en disco al medir era `KzZPN7uR-9AK89asgKoTt`:
+
+| puerto | arrancado | `buildId` que sirve | o sea |
+|---|---|---|---|
+| **3000** (el del publicador) | 18:28 | `9SKeO6AguGU4ByPyHrtkL` | el build de las **13:01** |
+| 3010 | 19:24 | `JZeKiAeAWAljmZHDL8i4c` | build #3 |
+| 3012 | 19:31 | `jhbAKko-laQ8bdCCJ6CSW` | build #4 |
+| 3013 | 19:35 | `3idZfj9xm0KwARj4lLhKm` | build #5 |
+| **3014** | 19:41 | **`KzZPN7uR-9AK89asgKoTt`** | **el actual** |
+
+**El servidor del editor lleva 7 builds sirviendo el de las 13:01.** PID
+**25100**, nacido a las **18:28:59** —el instante en que arrancó el
+publicador—, **vivo al terminar la tanda**.
+
+**El mecanismo, derivado del árbol de procesos:** el publicador hace
+`spawn("npm", […], {shell:true})`, que en Windows crea **`cmd.exe` → `node`**
+(padre de 25100 = `cmd.exe /d /s /c next start`). `paraServidor()` hace
+`p.kill()` sobre el `cmd.exe` y **el `node` sobrevive con el puerto tomado**;
+`arrancaServidor()` lanza uno nuevo que no puede enlazar `:3000` y **muere en
+silencio, porque su `stdio` es `"ignore"`**.
+
+**La cadena completa, y todo sale verde menos el último eslabón:**
+
+| paso | ¿bien? |
+|---|---|
+| el gancho dispara en 3 s | ✅ |
+| el build corre y sale `codigo 0` | ✅ **7 de 7** |
+| la promoción deja el `.next` correcto en disco | ✅ |
+| **el servidor recoge el build nuevo** | ❌ |
+| `GET /estado` dice `ultimoExito` con sus rutas | ✅ **y por eso miente** |
+
+> **El editor publica, espera 90 s, ve un verde con su número de rutas — y el
+> sitio no cambia. Nunca.** Es el modo de fallo que el propio publicador dice
+> existir para impedir —*«un webhook que falla en silencio es el peor de los
+> modos de fallo de este repo con otro traje: quien publicó cree que
+> publicó»*— cometido **un eslabón más abajo del que vigila**.
+
+⚠ **Y lo que NO está derivado, declarado en vez de omitido:** una observación
+**no encaja** con el modelo. A las 18:45, `/recursos/articulos` daba **404** en
+:3000, y a las 19:2x daba **200** — o sea que algo del contenido **sí** seguía
+al disco. Con `output: standalone`, `next start` avisa por su cuenta de que *«no
+funciona con esta configuración»*. **Qué capa exactamente se congela queda SIN
+DERIVAR**; lo que está medido —y basta para la ficha— es el monótono de cinco
+servidores por `buildId`.
+
+**Y el arreglo NO es de esta tanda**, que no escribe producto. Se dimensiona en
+el ESCALÓN 3.
+
+---
+
+### ESCALÓN 3 · VEREDICTO DEL MVP Y DIMENSIONADO DE B
+
+#### P1 · REFUTADA en caliente — y el estado de caché es la variable que no predije
+
+**7 builds medidos**, todos `codigo 0`, y se parten limpiamente en dos:
+
+| estado | n | s |
+|---|---|---|
+| **fría** (los 3 primeros) | 3 | 108.44 · **203.97** · 128.77 |
+| **caliente** (los 4 últimos) | 4 | 89.22 · 89.40 · 89.96 · **88.56** |
+
+**En caliente el rango es 1.40 s en 4 corridas** — o sea un número estable. En
+frío va de 108 a 204, casi el doble.
+
+| | |
+|---|---|
+| predicho | **155 s**, banda 130–200 |
+| medido en **caliente** | **≈ 89 s a 426 rutas** |
+
+**REFUTADA**, y por el mecanismo pre‑registrado —*«el `porRuta` de los clones era
+cota SUPERIOR»*—. La extrapolación de A‑SP13 daba **143.9 s**; el real caliente
+es **89**, un **38 % por debajo**.
+
+> **Y la lección es que predije la magnitud sin predecir la VARIABLE.** A‑SP13
+> distinguía `frio` y `tibio` y a 31 rutas eso valía **1.2 s**, así que lo leí
+> como ruido. A 426 rutas la misma variable vale **hasta 115 s** — más que el
+> propio tiempo caliente. **Un eje que no discrimina en un dominio pequeño puede
+> ser el que manda en uno grande**, y mi banda de 130–200 acabó cubriendo el
+> estado FRÍO por casualidad, no por acierto.
+
+**El número que va al traspaso es el caliente con su alcance:** *«≈ 89 s a 426
+rutas, caché caliente, en ESTA máquina»*. Un despliegue que reconstruya en un
+contenedor nuevo paga el frío **cada vez**.
+
+#### P2 · CONFIRMADA · P3 · mecanismo CONFIRMADO, bloqueada en producción · P4 · ver abajo
+
+#### P4 · cuántas rutas puede editar hoy una persona — con su unidad
+
+**Predije ≈280 rutas editables de 426. La predicción estaba en la unidad
+equivocada**, y eso es lo que hay que corregir antes que el número: lo que el
+editor abre en el admin son **colecciones**, no rutas, y la relación no es 1:1
+(un listado es una consulta, no un documento).
+
+**En la unidad correcta —colección visible en el menú del editor—**
+(`medidas/menu-editor-lectores-142a.json`, con 3 testigos de control: dos
+polaridades y las dos formas de lector):
+
+| | n |
+|---|---|
+| colecciones visibles al editor | **18** |
+| con lector **y** consumidor en el render | **11** |
+| **sin camino al sitio, inequívocas** | **2** — `arquetipos` · `articulos-kb` |
+| **SIN ADJUDICAR por el instrumento** | **5** |
+
+**Las 2 inequívocas, cada una con dos fuentes independientes:**
+
+- **`arquetipos`** — 0 lectoras, 0 consumidores; la 141.ª ya lo midió; y **esta
+  tanda lo confirmó empíricamente** con la medida pareada (Δ=0);
+- **`articulos-kb`** — lectora sí, **0 consumidores**; y `TRASPASO-CMS.md §3` lo
+  dice por su lado: *«la biblioteca pendiente de construir: el dato existe, la
+  plantilla no»*.
+
+**Las 5 SIN ADJUDICAR** (`taxonomia-sectores` · `categorias` ·
+`categorias-cientificas` · `autores` · `media`) **no son «no rinden»**: son
+taxonomías y media que se resuelven por `relationship`/`depth`, y un detector de
+**lector nombrado** no puede verlas. Es una limitación **del instrumento**, y se
+declara con su cardinal en vez de contarse como defecto.
+
+> ⚠ **Y el detector se cazó a sí mismo:** su v1 sólo conocía la forma
+> `leeColeccion()` y dejaba `faqs` en 0 lectoras. **Su control negativo falló y
+> el barrido se negó a adjudicar** (`exit 1`). La forma que faltaba —`todos()`—
+> se **derivó** de los exports de `proyector.ts` y `local.ts`, no se recordó.
+
+#### ⚠⚠ FICHA DE MVP · **el admin ofrece al editor colecciones cuya edición no llega al sitio servido, sin señalarlo**
+
+Enunciado del propietario, y esta tanda lo **midió** en vez de suponerlo. Su
+alcance con cardinal: **2 de 18 colecciones inequívocas**, `arquetipos` (4 filas,
+4 rutas) y `articulos-kb`.
+
+**Lo que agrava el caso es que el CMS le dice al editor lo contrario:** el campo
+`Estado` lleva debajo *«Sólo «Publicado» sale en el sitio»*, y en estas dos
+colecciones **nada sale en el sitio**, publicado o no.
+
+**Reparto para B, corto:** esconder del menú del editor las colecciones sin
+lector —el mecanismo ya existe y está probado, es el mismo `admin.hidden` que
+esconde `Sistema`— o marcarlas en la interfaz. **La decisión es del
+propietario**; lo que esta tanda aporta es que **el predicado se puede derivar**
+(`menu-editor-lectores-142a.json`) en vez de escribirse a mano, que es lo que
+convertiría la lista en el conjunto enumerado de §regla 9.
+
+#### Qué le falta al recorrido para que lo complete alguien que no ha leído este repo — **el pendiente del MVP**
+
+| # | qué falta | evidencia |
+|---|---|---|
+| **1** | **el servidor no recoge lo publicado** (§ hallazgo). Sin esto, publicar no publica | monótono de 5 servidores |
+| **2** | **la vista previa da 500** en el servidor real — consecuencia de (1) | 500 en :3000, 200 en uno sano |
+| **3** | **`GET /estado` no dice cuánto falta.** El dato existe (`ultimoExito.segundos`) y no está delante | observado durante 90 s |
+| **4** | **crear el primer usuario no está guiado**: el `Rol` viene a `Editor` y hay que saber cambiarlo | §2 lo documenta; el formulario no lo impone |
+| **5** | **2 colecciones editables sin efecto**, sin señal (la ficha) | 2 de 18 |
+| **6** | `cms:seed-listados` **hay que saber que existe**: un reseteo deja 28 rutas mal y el síntoma es un neto de −6 | §regla 20 |
+| **7** | en desarrollo, el admin en `127.0.0.1` sale **en blanco**; hay que usar `localhost` | log de Next |
+
+**Los 7 son de operación, no de modelo.** El modelo de contenido aguantó el
+recorrido entero sin una sola incidencia.
+
+#### B, dimensionada — y **no es una tanda**
+
+| bloque | qué es | ¿independiente? |
+|---|---|---|
+| **B1 · el reinicio del servidor** | arreglar (1) y con él (2). Es `scripts/publicar/publicador.mjs`, y **tiene negativo que escribir**: hoy ninguna sonda mira el `buildId` SERVIDO | sí, y **va primero: sin esto no hay MVP** |
+| **B2 · el `Dockerfile`** | ya declarado SIN VERIFICAR en `TRASPASO §6`. Construir la imagen y correrla | sí — **y B1 puede disolverlo o agravarlo**: en un contenedor el servidor es el PID 1 y se reinicia distinto |
+| **B3 · las variables del destino** | VPS Hostinger + Easypanel (CMS‑0). `PREVIEW_SECRETO` y `PUBLICAR_URL` **no están en ningún `.env` versionado** a propósito | sí |
+| **B4 · el cron de `POST /cron`** | sin él **no hay salidas programadas**. Hoy `Publicar En` es un campo que no hace nada | sí |
+| **B5 · la ficha del menú** | esconder o marcar las 2 sin lector | sí, y es el más barato |
+
+> **B son al menos TRES tandas, no una.** Y lo que la haría más es **B2**: la
+> imagen está sin verificar, así que su radio **no se puede acotar hasta
+> construirla** — puede ser «funciona» o puede ser un arquetipo de despliegue
+> entero. Es el mismo corte que la 141.ª aplicó a F3‑5: **medir la intersección
+> antes de aceptar el encargo**.
+
+**Y el orden no es de gusto: B1 va primero** porque B2, B3 y B4 se verifican
+todos **publicando**, y hoy publicar no cambia el sitio. Verificar B2 sobre el
+defecto (1) daría un verde que no vale — un despliegue que «funciona» porque
+nadie miró el `buildId` servido.
+
+#### Lo que esta tanda NO ejercitó, fichado y no verde
+
+- **`P1` de la 141.ª** sigue **SIN EJERCITAR**: su precondición era *«cuando ya
+  haya lectores»* y el renderizador de F3‑5 sigue **APLAZADO**;
+- **`codigo-arq`**, la rama de render sin estrenar que la 141.ª heredó, sigue
+  **SIN ESTRENAR**;
+- **el `Dockerfile`** sigue **SIN VERIFICAR**, como estaba.
+
 ## 🔄 §141.ª · **CABLEAR LOS LECTORES DE `arquetipos` (F3-5, la segunda mitad)** — 2026-09-02
 
 **Estado: PASO 0 completo.** Continuación misma-fecha de la 140.ª, que dejó

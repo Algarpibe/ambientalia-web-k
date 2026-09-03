@@ -1,0 +1,83 @@
+{
+  "fase": "ocioso",
+  "pendiente": false,
+  "desde": "2026-09-03T00:40:12.313Z",
+  "motivo": "entradas-blog:nos-hemos-mudado update",
+  "ultimoExito": {
+    "cuando": "2026-09-03T00:40:12.308Z",
+    "motivo": "entradas-blog:nos-hemos-mudado update",
+    "segundos": 88.56,
+    "buildId": "KzZPN7uR-9AK89asgKoTt",
+    "rutas": 426
+  },
+  "ultimoFallo": null,
+  "builds": 7,
+  "disparos": 94,
+  "coalescidos": 88,
+  "promocionRequierePararServidor": false,
+  "historia": [
+    {
+      "build": 1,
+      "empezo": 1788392429401,
+      "disparosPrevios": 1,
+      "motivo": "142a:medicion-P1-a-426-rutas",
+      "codigo": 0,
+      "termino": 1788392537839
+    },
+    {
+      "build": 2,
+      "empezo": 1788394023325,
+      "disparosPrevios": 2,
+      "motivo": "etiquetas:calidad-del-aire update",
+      "codigo": 0,
+      "termino": 1788394227294
+    },
+    {
+      "build": 3,
+      "empezo": 1788394242814,
+      "disparosPrevios": 90,
+      "motivo": "categorias-recursos:productos-kunak update",
+      "codigo": 0,
+      "termino": 1788394371580
+    },
+    {
+      "build": 4,
+      "empezo": 1788395342943,
+      "disparosPrevios": 91,
+      "motivo": "entradas-blog:nos-hemos-mudado update",
+      "codigo": 0,
+      "termino": 1788395432166
+    },
+    {
+      "build": 5,
+      "empezo": 1788395577533,
+      "disparosPrevios": 92,
+      "motivo": "arquetipos:kunak-api update",
+      "codigo": 0,
+      "termino": 1788395666932
+    },
+    {
+      "build": 6,
+      "empezo": 1788395772874,
+      "disparosPrevios": 93,
+      "motivo": "arquetipos:kunak-api update",
+      "codigo": 0,
+      "termino": 1788395862838
+    },
+    {
+      "build": 7,
+      "empezo": 1788395913878,
+      "disparosPrevios": 94,
+      "motivo": "entradas-blog:nos-hemos-mudado update",
+      "codigo": 0,
+      "termino": 1788396002435
+    }
+  ],
+  "ganchos": {
+    "PUBLICAR_CMD": null,
+    "SABOTAJE": null
+  },
+  "pid": 30596,
+  "dist": ".next",
+  "arrancado": 1788391739376
+}

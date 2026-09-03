@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "que": "colecciones visibles en el menú del EDITOR y si su edición llega al sitio servido",
+    "fecha": "2026-09-02",
+    "tanda": "142a",
+    "unidad": "colección visible en el menú del editor",
+    "formasDeLector": [
+      "leeColeccion<T>()",
+      "todos<T>()",
+      "payload.find({collection})"
+    ],
+    "control": "3 testigos: 2 polaridades y las 2 formas de lector"
+  },
+  "filas": [
+    {
+      "slug": "sectores",
+      "lectoras": 1,
+      "consumidores": 1,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/sectores.ts"
+      ]
+    },
+    {
+      "slug": "monograficos",
+      "lectoras": 1,
+      "consumidores": 1,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/sectores.ts"
+      ]
+    },
+    {
+      "slug": "productos",
+      "lectoras": 1,
+      "consumidores": 3,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/productos.ts"
+      ]
+    },
+    {
+      "slug": "casos",
+      "lectoras": 1,
+      "consumidores": 3,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/casos.ts"
+      ]
+    },
+    {
+      "slug": "faqs",
+      "lectoras": 1,
+      "consumidores": 1,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/faqs.ts"
+      ]
+    },
+    {
+      "slug": "entradas-blog",
+      "lectoras": 1,
+      "consumidores": 3,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/arquetipo-a.ts"
+      ]
+    },
+    {
+      "slug": "terminos-kunakpedia",
+      "lectoras": 1,
+      "consumidores": 3,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/arquetipo-a.ts"
+      ]
+    },
+    {
+      "slug": "documentos-cientificos",
+      "lectoras": 1,
+      "consumidores": 3,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/arquetipo-a.ts"
+      ]
+    },
+    {
+      "slug": "paginas",
+      "lectoras": 1,
+      "consumidores": 5,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/paginas.ts"
+      ]
+    },
+    {
+      "slug": "arquetipos",
+      "lectoras": 0,
+      "consumidores": 0,
+      "rinde": false,
+      "donde": []
+    },
+    {
+      "slug": "articulos-kb",
+      "lectoras": 1,
+      "consumidores": 0,
+      "rinde": false,
+      "donde": [
+        "apps/web/src/lib/cms/articulos-kb.ts"
+      ]
+    },
+    {
+      "slug": "taxonomia-sectores",
+      "lectoras": 0,
+      "consumidores": 0,
+      "rinde": false,
+      "donde": []
+    },
+    {
+      "slug": "categorias",
+      "lectoras": 0,
+      "consumidores": 0,
+      "rinde": false,
+      "donde": []
+    },
+    {
+      "slug": "etiquetas",
+      "lectoras": 1,
+      "consumidores": 1,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/listados.ts"
+      ]
+    },
+    {
+      "slug": "categorias-recursos",
+      "lectoras": 1,
+      "consumidores": 1,
+      "rinde": true,
+      "donde": [
+        "apps/web/src/lib/cms/listados.ts"
+      ]
+    },
+    {
+      "slug": "categorias-cientificas",
+      "lectoras": 1,
+      "consumidores": 0,
+      "rinde": false,
+      "donde": [
+        "apps/web/src/lib/cms/documentos.ts"
+      ]
+    },
+    {
+      "slug": "autores",
+      "lectoras": 0,
+      "consumidores": 0,
+      "rinde": false,
+      "donde": []
+    },
+    {
+      "slug": "media",
+      "lectoras": 1,
+      "consumidores": 0,
+      "rinde": false,
+      "donde": [
+        "apps/web/src/lib/cms/proyector.ts"
+      ]
+    }
+  ],
+  "rinden": 11,
+  "de": 18,
+  "noRinden": [
+    "arquetipos",
+    "articulos-kb",
+    "taxonomia-sectores",
+    "categorias",
+    "categorias-cientificas",
+    "autores",
+    "media"
+  ]
+}

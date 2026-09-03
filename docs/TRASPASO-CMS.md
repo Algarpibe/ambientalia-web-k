@@ -94,9 +94,13 @@ conserva la URL del original: es la llave con la que el render reconstruye el
 - **`Publicar En`**: si está en Borrador y esa hora pasa, el cron lo publica y
   reconstruye. Vacío = manual.
 - **Al guardar un publicado**, el admin avisa al publicador y este reconstruye
-  y **promociona solo si el build sale bien**. Números medidos: un rebuild del
-  sitio actual (31 rutas) tarda **~36–40 s**; la estimación A-SP13 para el
-  sitio completo (~220 rutas) es **~91 s**.
+  y **promociona solo si el build sale bien**. El aviso tarda **~3 s** desde el
+  clic en `Guardar` (medido, 142.ª). Números **medidos a la escala de hoy (426
+  rutas)**: **≈ 89 s con caché caliente** —4 corridas, rango 1.4 s— y
+  **108–204 s en frío**, o sea que un contenedor recién creado paga el doble.
+  *(Las cifras viejas de este punto —«31 rutas ~36–40 s» y la estimación A-SP13
+  de «~91 s a 220 rutas»— quedan **superadas**: la extrapolación de A-SP13 daba
+  143.9 s a 426 y el real caliente es 89.)*
 - **Mientras reconstruye, el sitio anterior sigue servido entero** — no hay
   ventana sin sitio (el build se hace fuera y se promociona al final).
 - **Si el build FALLA, el sitio NO cambia**: se queda el anterior, y
@@ -167,6 +171,77 @@ correspondiente **no arranca** — es la dirección segura, no un descuido):
 publicador (con el `Bearer` de `PUBLICAR_SECRETO`); este publica lo vencido
 (`Publicar En` ≤ ahora) y reconstruye. Sin cron del sistema no hay salidas
 programadas — el servidor no mira el reloj solo.
+
+### ⚠⚠ DEFECTO ABIERTO · EL SERVIDOR WEB NO RECOGE LO PUBLICADO (142.ª, 2026-09-02)
+
+**Es lo primero que hay que arreglar antes de desplegar, y hoy no está.**
+
+> **Un `next start` sirve para siempre el build que había en disco cuando
+> arrancó.** La promoción del publicador deja el `.next` correcto y **el proceso
+> que sirve no lo recoge**. Sólo lo recoge un proceso arrancado DESPUÉS.
+
+**Medido con cinco servidores de edades distintas leyendo el mismo `.next`:**
+cada uno sirve el `buildId` que había al arrancar, y el del publicador llevaba
+**siete builds** sirviendo uno de cinco horas antes.
+
+**Y `PUBLICAR_SERVIDOR=1` no lo arregla en Windows**, aunque su contrato diga que
+sí: `spawn("npm", […], {shell:true})` crea **`cmd.exe` → `node`**, `p.kill()`
+mata el `cmd.exe`, **el `node` sobrevive con el puerto tomado**, y el servidor
+nuevo muere **en silencio** porque su `stdio` es `"ignore"`.
+
+**Qué ve quien publica, y por qué es el peor de los modos de fallo:**
+
+| eslabón | estado |
+|---|---|
+| el gancho avisa al publicador (~3 s) | ✅ |
+| el build corre y sale `codigo 0` | ✅ |
+| la promoción deja el `.next` bueno en disco | ✅ |
+| **el servidor recoge el build nuevo** | ❌ |
+| `GET /estado` dice `ultimoExito` con sus rutas | ✅ **y por eso engaña** |
+
+**El editor publica, espera ~90 s, ve un verde con su número de rutas — y el
+sitio no cambia.**
+
+**Mientras no esté arreglado, la operación es:** tras cada publicación,
+**reiniciar el servidor web a mano** (parar el proceso que tiene el puerto y
+volver a arrancarlo). Y **la comprobación no es que la página cargue**: es que el
+`buildId` servido coincida con `apps/web/.next/BUILD_ID`.
+
+**Consecuencia colateral:** `/vista-previa/<slug>` devuelve **500** en un
+servidor que haya sobrevivido a una promoción. En uno recién arrancado da **200**
+y funciona como está documentado — o sea que **la preview no está rota: está
+detrás de este defecto**.
+
+⚠ **Lo que NO está derivado:** qué capa exactamente se congela. Con `output:
+standalone`, `next start` avisa por su cuenta de que *«no funciona con esta
+configuración»*, y hay una observación que no encaja con un congelado total
+(una ruta nueva llegó a servirse). Lo medido y suficiente para operar es el
+monótono por `buildId`.
+
+### Cosas que hay que saber y no estaban escritas (142.ª)
+
+- **`GET /estado` no dice cuánto falta.** Da `fase`, `desde` y `motivo`, que
+  contestan *¿pasa algo?*, *¿desde cuándo?* y *¿fue lo mío?* — pero con
+  `construyendo` desde hace 90 s no hay forma de saber si quedan 20 s o se
+  colgó. El dato para estimarlo ya existe: `ultimoExito.segundos`.
+- **`scripts/publicar/estado.json` NO está versionado** (`.gitignore:71`) **y el
+  ARRANQUE del publicador lo reinicia**. Si hace falta conservar el historial de
+  una corrida, se copia **antes** de arrancar.
+- **Tiempo de rebuild medido a 426 rutas, en la máquina de desarrollo:**
+  **≈ 89 s con caché caliente** (4 corridas, rango 1.4 s) y **108–204 s en
+  frío**. Un despliegue que reconstruya en un contenedor nuevo paga el frío
+  **cada vez**.
+- **En desarrollo, el admin servido en `127.0.0.1` sale EN BLANCO**: Next
+  bloquea sus recursos de desarrollo cross-origin desde esa IP. Usa
+  `localhost`. No afecta a `next start`.
+- **Dos colecciones del menú del editor NO llegan al sitio**: `arquetipos` (4
+  filas) y `articulos-kb`. Se pueden editar y publicar con el recorrido
+  completo en verde, y **no cambian nada** — ver `PENDIENTES-QA.md` §142.ª,
+  FICHA DE MVP.
+- **Tras un reseteo de la DB hay que correr `npm run cms:seed-listados`**, o la
+  familia `/recursos/articulos/*` pierde un segmento: **28 rutas tocadas** bajo
+  un neto de −6, con 17 sirviendo 404. Se comprueba por **diferencia simétrica**
+  contra una lista de rutas buena, nunca por el recuento.
 
 **⚠ El `Dockerfile` está SIN VERIFICAR**: nadie ha construido ni corrido esa
 imagen todavía. El despliegue verificado hasta hoy es el de arriba (Node +
