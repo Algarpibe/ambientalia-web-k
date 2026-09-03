@@ -209,6 +209,128 @@ seis con su unidad (§*cada denominador se escribe CON SU UNIDAD*).
 
 ---
 
+### ESCALÓN 1 · LAS PREDICCIONES, ESCRITAS Y COMMITEADAS ANTES DE MEDIR
+
+⚠ **Los hechos negativos que estas predicciones afirman se comprobaron al
+escribirlas, no de memoria** (§regla 8b): que `iniciarClon` mata el **árbol**
+—`taskkill /PID … /T /F`, leído en `lib.mjs:1759`— y que el canal del `buildId`
+servido existe y es cuál.
+
+#### El INSTRUMENTO, nombrado antes de usarlo — y son DOS canales
+
+El criterio de B1 **no puede pasar por `qa:publicar`** (comparte la ceguera: §(4)
+del PASO 0). Se mide **directamente sobre lo servido**, y con dos canales
+independientes para poder cruzarlos (§sondas 4):
+
+| canal | qué es | verificado en disco |
+|---|---|---|
+| **C1 · el `buildId` del payload RSC** | `\"b\":\"<id>\"` en el HTML de `GET /` | ✅ **1** ocurrencia única |
+| **C2 · la resolución de ruta** | `GET /_next/static/<id>/_ssgManifest.js` → **200** con el `<id>` del servidor, **404** con otro | ✅ el fichero existe para el build en disco |
+
+**C2 es genuinamente independiente de C1**: no es una cadena en un cuerpo, es un
+comportamiento de enrutado. **Y `/_next/static/<id>/` NO aparece en el HTML de
+Next 16 App Router** —comprobado: 0 ocurrencias— así que C2 hay que construirlo,
+no leerlo. Se exige que **los dos concuerden**; si discrepan, la corrida no
+adjudica.
+
+⚠ **Y lo que estos dos canales NO son: el `.next/BUILD_ID` del disco.** Ése es
+el canal que B1 **no mueve**, y es el único que el repo tiene cableado hoy
+(§(5) del PASO 0).
+
+---
+
+#### P1 · tras el arreglo, el `buildId` SERVIDO cambia en cada publicación — monótono, sin repeticiones
+
+**Predicción:** **4 observaciones · 4 valores distintos · 0 repeticiones**, en
+orden temporal ascendente.
+
+**Y el número de publicaciones encadenadas es 3, no 1, y el motivo es una
+separadora:** el defecto de (a) produce una **constante** —el mismo `buildId`
+para siempre—, así que **una sola publicación no distingue «cambia una vez» de
+«cambia siempre»**. El modo de fallo que hay que ejercitar es el del huérfano
+sosteniendo el puerto, y ése **sólo aparece en el SEGUNDO reinicio**: el primero
+encuentra el puerto libre lo mates bien o mal. Con 3 publicaciones hay **3
+reinicios**, o sea el caso del huérfano ejercitado **dos veces**.
+
+| n | qué compra | por qué no basta con menos |
+|---|---|---|
+| 1 publicación (2 obs.) | que cambie alguna vez | **0 separadoras** del caso huérfano |
+| 2 publicaciones (3 obs.) | el huérfano ejercitado **1** vez | un acierto único puede ser suerte del puerto |
+| **3 publicaciones (4 obs.)** | el huérfano ejercitado **2** veces | ← **lo que se va a medir** |
+
+**Coste declarado**, derivado de la 142.ª y **con su ESTADO** (§regla 54): en
+**caliente** los 4 builds midieron 88.56 · 89.22 · 89.40 · 89.96 s, rango 1.40 s.
+Así que **3 builds calientes ≈ 270 s**; en **frío** la 142.ª midió 108–204 s, o
+sea que si el primero sale frío el total puede irse a **~380 s**. **Se predice
+en caliente y se declara el estado al reportar** — una banda sin estado son dos
+predicciones.
+
+**Criterio de fallo, escrito antes:** cualquier **repetición** de un `buildId`
+entre observaciones consecutivas refuta P1. Que los dos canales **discrepen** no
+refuta P1 ni la confirma: **la corrida no adjudica** y se repite.
+
+---
+
+#### P2 · ¿basta con arreglar sólo (a)?
+
+**Predicción: SÍ, (a) sola basta para el monótono.**
+
+**El razonamiento, y se escribe para que se pueda auditar:** (b) es un
+**`_log.warn`**, no un `throw` —derivado en `next.js:227`, con el `throw` de
+`output:"export"` tres líneas más abajo—, así que `next start` **avisa y sigue
+sirviendo desde `.next`**. La cadena que B1 rompe es *parar → promocionar →
+arrancar*, y lo único que la rompe es que el `node` nieto sobreviva al `kill` y
+retenga `:3000`. Liberado el puerto, el reemplazo enlaza y sirve el build
+promocionado.
+
+**⚠ Y QUÉ SIGNIFICARÍA que bastara — las tres mitades, porque «bastó» invita a
+tres conclusiones y sólo una está respaldada:**
+
+| lo que SÍ significaría | lo que NO significaría |
+|---|---|
+| que `next start` **sirve correctamente** el `.next` promocionado, o sea que el aviso de Next no tiene consecuencia **para este criterio** | ~~que (b) es inocuo~~ — el criterio es el `buildId`, y la observación **sin derivar** de la 142.ª (`/recursos/articulos` 404 a las 18:45 y 200 a las 19:2x) sigue **sin atribuir**: es otra capa, y este criterio no la mira |
+| que el mecanismo del huérfano era **el eslabón único** | ~~que el `stdio:"ignore"` está bien~~ — es un defecto de **OCULTACIÓN** independiente, y el monótono **no puede verlo por construcción**: cuando el arreglo funciona **no hay fallo que enterrar**, o sea **0 instancias separadoras** |
+| — | ~~que (b) no hay que arreglarlo~~ — (b) se arregla **igual**, porque §*cuando lo que replicas es un VALOR SERVIDO, escribe el valor*: `next start` sobre un build standalone es un camino que el proveedor declara no soportado, y depender de un `warn` es depender de que no se convierta en `throw` en la versión siguiente |
+
+**Y la simétrica, que es la que hay que decir en voz alta:** si (a) **NO**
+bastara, eso **no confirma (b)** automáticamente. Habría que separar «el puerto
+sigue tomado» —el arreglo de (a) no funcionó— de «el puerto está libre y el
+servidor nuevo sirve el build viejo» —ahí sí, y entonces (b) o una tercera
+causa—. La separadora es **el PID**: si el `node` de `:3000` es **nuevo** y aun
+así sirve un `buildId` viejo, (a) está arreglado y el defecto es otro.
+
+---
+
+#### P3 · ¿cuántos de los otros 4 sitios de la clase cambian de comportamiento al arreglarse?
+
+**Predicción: 0 de 4.**
+
+**Y el 0 se predice con su mecanismo sitio a sitio, no en agregado** — porque un
+0 agregado no se puede auditar:
+
+| sitio | por qué NO cambia de comportamiento |
+|---|---|
+| `qa/programada.mjs:119` | el shell **ya está quitado** (`spawn(process.execPath, …)`). Arreglarlo es sólo dejar ver stderr |
+| `qa/publicar.mjs:73` | idem — shell ya quitado, y su propio comentario lo documenta |
+| `qa/lib.mjs:1778` (`iniciarClon`) | **ya mata el ÁRBOL** con `taskkill /PID … /T /F`, así que no deja huérfano. Arreglarlo es sólo dejar ver stderr |
+| `qa/publicar.mjs:305` (`ejecuta`) | se **espera** con `on("close")` y nunca se mata. Arreglarlo es mirar el código de salida de `docker stop`/`docker start`, que **hoy no falla** |
+
+**⚠ Y el 0 es una predicción FALSIFICABLE, con lo que significaría cada
+resultado escrito antes:**
+
+| resultado | qué significa |
+|---|---|
+| **0 cambian** | los cuatro arreglos son **NO-OP**: la ocultación era real y **no estaba ocultando nada que ocurriera**. El arreglo es preventivo, y se declara así |
+| **≥1 cambia** | **NO es una regresión: es un HALLAZGO.** Un `stdio:"ignore"` que al quitarse cambia el resultado estaba enterrando **un fallo que pasaba todo el tiempo** — y eso es exactamente lo que §sondas 6 dice del valor benigno. Se ficha con su cardinal, no se revierte |
+
+**Y el riesgo declarado del que más pesa:** `lib.mjs:1778` está en la ruta de
+**23 sondas** que miden el clon (§(5) del PASO 0). Tocarlo exige **NO-OP
+probado**, no supuesto — y esa es la razón de que su veredicto pueda ser
+*«fichado con su radio»* en vez de *«arreglado»*, que es lo que el ESCALÓN 3
+tiene que decidir con su cardinal de medidas bajo sospecha.
+
+---
+
 ## 🔄 §142.ª · **EL RECORRIDO DEL EDITOR, ENTERO Y A LA ESCALA DE HOY** — 2026-09-02
 
 **Plan A de A+B.** Esta tanda **no escribe producto**: opera lo que ya existe y
