@@ -613,6 +613,82 @@ causa plausible de coartada.
 
 ---
 
+### CIERRE · 143.ª
+
+#### Qué queda hecho, y en qué unidad
+
+| | estado |
+|---|---|
+| **B1 · que publicar cambie el sitio** | ✅ **HECHO Y MEDIDO** — 4 `buildId` **servidos** distintos en 3 publicaciones encadenadas, 0 repeticiones, control de 4 testigos por las dos polaridades |
+| el estado que el editor lee | ✅ publica **los dos lados del par** más `llegoAlSitio` y `segundosHastaServido` |
+| la clase, barrida entera y hacia atrás | ✅ **3 abiertos + 2 ya arreglados**, no 5 · **2 arreglados** hoy · **1 fichada** con su radio |
+| el hueco del `buildId` en el `meta` | ✅ **dimensionado**: **ADITIVO**, radio **23** (no 220), media hora. **Sin arreglar a propósito** |
+| **B2 · B3 · B4** | ⏸ **detrás de B1 por construcción**: se verifican **publicando** |
+| el Dockerfile | ⏸ **SIN VERIFICAR** — y **no se toca**: verificarlo sobre este defecto daba un verde que no valía |
+
+#### Barrido §regla 12 — **4 enunciados de esta tanda son regla y no evento**
+
+| # | dónde va | por qué ahí |
+|---|---|---|
+| **55** | `CLAUDE.md`, regla nueva | *un invariante se lee por lo que MIDE su cuerpo, no por lo que dice su nombre* — el catálogo de §*la causa común* gana un contenedor: **el artefacto en disco** |
+| **56** | `CLAUDE.md`, regla nueva | *arreglar la CLASE puede ACOPLAR dos defectos que el fuente mantenía separados* — y entonces la atribución se pierde aunque el arreglo sea correcto |
+| **57** | `CLAUDE.md`, regla nueva | *un puerto por defecto es un recurso COMPARTIDO con el resto de la máquina* |
+| **—** | **pegado a §regla 9**, no como número nuevo | *cuando el patrón que buscas ES un defecto, su documentación lo contiene por escrito*, así que el falso positivo del comentario **está garantizado, no es incidental**. Su sitio es **al lado de la regla que afina**, que es lo que §regla 12 pide |
+
+**Los demás enunciados de esta tanda son EVENTOS** con su fecha y su número y se
+quedan aquí: el monótono de 4 `buildId`, los cardinales 0/452, el reparto de la
+clase, los coeficientes de coste.
+
+#### Los tripwires de carga, **RE-DERIVADOS** y no citados (§regla 19)
+
+| marcador | anclado a línea | posición | ocurrencias libres |
+|---|---|---|---|
+| `KV-01` | **1** | **19.4 %** | 3 (las otras 2 son su documentación) |
+| `KV-08` | **1** | **100.0 %** | 2 |
+
+**Y el truncado sube su cota: REFUTADO a 375 580 bytes = 2.50× el aviso de
+150 000** —el fichero **que esta sesión cargó**, derivado de
+`git show 6ccefb6:CLAUDE.md` y no del disco de ahora—, contra el **1.84×** de
+la 121.ª. En chars normalizados son **366 085**, o sea **2.44×**: **las dos
+cifras con su unidad** (§*cada denominador se escribe CON SU UNIDAD*), porque
+`wc -c` cuenta CRLF y JS no.
+
+#### Verificaciones
+
+| qué | resultado |
+|---|---|
+| `typecheck -w web` | **EXIT=0** |
+| `typecheck:cms` (`cms-config`) | **EXIT=0** |
+| `typecheck:cms-app` | **EXIT=0** |
+| `qa:lib` (contrato de sondas) | **EXIT=0** · `114/114` casos · **las 219 sondas COMPILAN y declaran su mínimo**, 0 sin contrato |
+| testigos de `ejecuta()` | **2/2**, una por polaridad |
+
+⚠ **`npm run check` NO se corrió**, y es deliberado: **construye**, y esta tanda
+acaba de promocionar tres builds sobre `.next`. Correrlo ahora reconstruiría en
+sitio el artefacto recién verificado. Los tres typechecks cubren el eje de
+tipos; el eje de build lo cubren **los tres builds a `codigo 0`** que la propia
+medición encadenó.
+
+#### Lo que NO se hizo, con su motivo
+
+* **el `buildId` servido en el `meta`** — dimensionado (aditivo, radio 23) y
+  **no aplicado**: el encargo pedía dimensionarlo. Lo que compra es que **en
+  adelante** una congelada se pueda interrogar; **hacia atrás no recupera nada**;
+* **la mudez de `iniciarClon`** — fichada con su radio de **23 sondas**. Su
+  arreglo es de 2 líneas y su NO-OP es de una tanda;
+* **los 131 de 428** — **incógnita con su causa de indecidibilidad**, en las dos
+  direcciones y con sus 3 separadoras candidatas enumeradas. **No adoptada como
+  hipótesis**;
+* **la forma estricta de P2** —*«(a) sola basta»*— **SIN EJERCITAR**, con su
+  motivo: el arreglo de clase las acopla (§regla 56, que sale de aquí);
+* **`arquetipos=4`** cuando el plan de F3-5 dice `0 filas sembradas`:
+  **observación con su fecha, sin atribuir** — el intervalo cubre las tandas
+  140.ª–142.ª;
+* **`/recursos/articulos` 404→200** de la 142.ª: **sigue sin atribuir**. El
+  monótono no lo mira, y el ESCALÓN 1 lo pre-registró como tal.
+
+---
+
 ## 🔄 §142.ª · **EL RECORRIDO DEL EDITOR, ENTERO Y A LA ESCALA DE HOY** — 2026-09-02
 
 **Plan A de A+B.** Esta tanda **no escribe producto**: opera lo que ya existe y

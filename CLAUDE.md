@@ -3763,6 +3763,35 @@ las rutas del build: **lo nuevo entra solo**.
 > casan, ¿cuántas son comentario?*—, y el mismo defecto tiene la otra cara: el
 > `origen` de `qa:enlaces` señalaba una línea de comentario como emisor,
 > atribuyendo 68 páginas a un fichero que no las emite.
+>
+> ⚠⚠ **Y SU CASO GARANTIZADO, no incidental (2026-09-03): CUANDO EL PATRÓN QUE
+> BUSCAS ES UN DEFECTO, SU DOCUMENTACIÓN LO CONTIENE POR ESCRITO.**
+>
+> El aviso de arriba trata el comentario como un falso positivo **de
+> probabilidad**: puede haber uno, se comprueba. Hay un caso en que la
+> probabilidad es **1**:
+>
+> > **Un barrido que busca un patrón defectuoso casa, por construcción, con
+> > cada sitio donde alguien EXPLICÓ ese defecto** — porque explicarlo es
+> > escribirlo. Y esos sitios son justo los que documentan que el defecto **ya
+> > se arregló**, así que el barrido convierte cada arreglo pasado en un
+> > pendiente presente.
+>
+> **Medido:** un barrido de `spawn(…, {shell:true})` publicó **11 sitios** y
+> **dos eran comentarios** — uno de ellos, literalmente, *«la primera versión
+> lo lanzaba con `spawn(..., {shell:true})`»*, la nota de un arreglo hecho
+> tandas atrás. Despojando comentarios y cadenas antes de buscar (**180 803
+> caracteres**), quedan **7**.
+>
+> **Operativamente: un barrido sobre FUENTE despoja comentarios y cadenas antes
+> de buscar, y publica el CARDINAL DE LO DESPOJADO como control** — si sale 0,
+> el despojo no está ocurriendo. Y su testigo va **por las dos polaridades**: el
+> comentario conocido tiene que desaparecer **y** una ocurrencia de código
+> conocida tiene que sobrevivir, o el despojo se está llevando el objeto.
+>
+> ⚠ Y el control se ata a **la LÍNEA** conocida, no al fichero: exigir «cero
+> ocurrencias en `programada.mjs`» falla si ese fichero tiene además un
+> `spawnSync` legítimo — §*la causa común* cometida sobre el propio control.
 
 ⚠ **Y EL 8.º CASO, QUE ES EL QUE CIERRA LA REGLA POR ARRIBA (2026-08-19, 79.ª
 tanda): CUANDO HAY QUE TOCAR UN CONJUNTO, LA ELECCIÓN ENTRE «RENOMBRAR EL
@@ -6370,6 +6399,125 @@ el que se creía estar prediciendo.
 > diferencia fuera despreciable. Es §*un default expresado como porcentaje se
 > lee como constante en cuanto se cita* con el contenedor puesto en **el estado
 > del sistema** en vez de en el denominador.
+
+---
+
+**55 · UN INVARIANTE SE LEE POR LO QUE MIDE SU CUERPO, NO POR LO QUE DICE SU
+NOMBRE — Y UN NOMBRE QUE NOMBRA UN CANAL SOBRE UN CUERPO QUE MIDE OTRO DA UN
+VERDE CIERTO DEL CANAL EQUIVOCADO.** (2026-09-03)
+
+§El principio manda verificar contra la salida servida, y §regla 53 añade que el
+proceso que sirve es un canal más. Falta el caso en que el instrumento **ya tiene
+el invariante que hace falta, con el nombre correcto**, y lo mide en otro canal:
+
+> **El nombre de un invariante es prosa: no lo ejecuta nadie** (§sondas 3). Así
+> que *«el cambio llega SERVIDO»* puede estar implementado leyendo **un fichero
+> del artefacto en disco**, y su verde es **cierto de lo que mide** —la
+> promoción— y **mudo sobre lo que nombra** —el servicio—. No hay contradicción
+> a la vista: hay que abrir el cuerpo.
+
+**Medido:** el invariante `E4·el cambio llega SERVIDO` de `qa:publica-e2e` es
+`rutasEmitidas(leeManifiesto())`, y `leeManifiesto()` hace
+`readFileSync(APP + "/.next/prerender-manifest.json")`. **Ningún `fetch` a un
+servidor web en toda la sonda** —0 de 8 invariantes entre ella y `qa:publicar`
+abren ese socket; sus 3 `fetch` van al proceso de control—. Con eso, un defecto
+que hacía que **publicar no cambiara el sitio** convivió con su verde.
+
+**Es §*la causa común: el NIVEL al que se mide* con un contenedor nuevo en el
+catálogo: EL ARTEFACTO EN DISCO**, que está un nivel por encima de lo servido y
+se lo come entero — la promoción aterriza siempre, así que el fichero cambia
+aunque nadie lo sirva.
+
+**Las dos mitades operativas:**
+
+1. **antes de leer el verde de un invariante, lee QUÉ LEE SU CUERPO.** Un
+   `readFileSync` donde el nombre dice «servido» es la señal, y cuesta un
+   `grep`: **¿hay algún `fetch` en esta sonda, y a qué puerto va?**;
+2. **y la señal de que un código entero es inalcanzable es GRATIS: mira si su
+   bandera se pone en algún sitio.** Aquí `GESTIONA_SERVIDOR` es
+   `PUBLICAR_SERVIDOR === "1"` y **0 sondas y 0 scripts de npm** la ponen, así
+   que la función donde vivía el defecto **no se ejecutaba en ninguna corrida**
+   — cero instancias separadoras **por construcción**, no por pobreza del
+   dominio.
+
+> **Y el corolario que decide dónde se pone la guarda: la comprobación de que un
+> artefacto LLEGÓ tiene que vivir en el productor, no sólo en la sonda.** Aquí el
+> arreglo fue que el propio publicador compare **servido contra disco** y publique
+> **los dos lados del par** (§sondas 1) con un `llegoAlSitio`. Una sonda se corre
+> cuando alguien se acuerda; el productor corre en cada publicación.
+
+---
+
+**56 · ARREGLAR LA CLASE PUEDE ACOPLAR DOS DEFECTOS QUE EL FUENTE MANTENÍA
+SEPARADOS — Y ENTONCES LA ATRIBUCIÓN SE PIERDE, AUNQUE EL ARREGLO SEA CORRECTO.**
+(2026-09-03)
+
+§sondas 4 manda arreglar la CLASE y no la instancia, y tiene razón. Le falta
+decir lo que eso cuesta cuando hay **dos** defectos y alguien quiere saber cuál
+mordía:
+
+> **Dos defectos pueden ser separables en el fuente —dos líneas, dos ficheros— y
+> quedar ACOPLADOS por el arreglo de clase**, porque el arreglo correcto de uno
+> obliga a cambiar el mecanismo del otro. Entonces la corrida que lo verifica
+> tiene **0 instancias separadoras** entre *«bastó A»* y *«bastaron A+B»*, y el
+> verde **no adjudica el mérito** por más veces que se repita.
+
+**Medido:** un `spawn("npm", …, {shell:true})` cuyo `kill` mataba al shell (A) y
+un `next start` sobre un build `standalone` (B). Se podía arreglar A **sola**
+—cambiar el `kill` por un `taskkill /T`— y dejar B en pie. Pero arreglar A **en
+la clase** es **quitar el shell**, y sin shell no se puede invocar `npm` en
+Windows: hay que llamar al binario directamente, que es **la vía de invocación de
+la que B habla**. Un arreglo, dos defectos, y la atribución perdida.
+
+**Las dos mitades operativas:**
+
+1. **si la atribución importa, arregla POR SEPARADO y mide entre medias** — es
+   el único modo de tener separadoras;
+2. **y si no importa, DECLARA el acoplamiento en vez de presentar la
+   atribución.** *«Bastó A»* y *«bastaron A+B»* se escriben casi igual y sólo la
+   segunda está respaldada — es §*«el comparador sólo mira X» y «lo que cayó
+   dentro no distinguía nada» son dos afirmaciones* con el objeto puesto en el
+   ARREGLO en vez de en el comparador.
+
+> **Y la señal para verlo antes de medir: el arreglo toca la línea del OTRO
+> defecto.** Si el diff del arreglo de A incluye lo que B nombra, ya están
+> acoplados — y eso se ve en el `diff`, no después.
+
+---
+
+**57 · UN PUERTO POR DEFECTO ES UN RECURSO COMPARTIDO CON EL RESTO DE LA
+MÁQUINA: «ESTÁ TOMADO» NO IMPLICA «HAY UN HUÉRFANO NUESTRO».** (2026-09-03)
+
+Este documento manda mirar los procesos antes de construir (§regla 18) y no
+matar una corrida por parecer muerta. Le falta la pregunta anterior a matar
+nada:
+
+> **`PUERTO || 3000` no reserva nada.** El 3000, el 3001, el 8080 son los
+> valores por defecto **de todo el mundo**, así que un puerto tomado puede ser
+> de otro proyecto de la misma máquina — y matarlo es un daño a trabajo ajeno
+> que ninguna guarda de este repo va a detectar.
+
+**Medido:** al ir a medir el defecto del publicador, `:3000` estaba tomado por
+`C:\dev\kbi-app\node_modules\…\next start`, **otro proyecto**, nacido ese mismo
+día. Leído como *«un huérfano de la tanda anterior»* —que es lo que el propio
+`publicador.mjs:181` documenta y lo que la 142.ª acababa de medir— se habría
+matado el servidor de otra persona.
+
+**Las tres mitades operativas, y la tercera es la que evita el daño:**
+
+1. **antes de matar un proceso por su puerto, deriva DE QUIÉN es** —su
+   `CommandLine` y su ruta, no sólo su PID—. `Get-CimInstance Win32_Process` en
+   Windows, `ps -o args` en POSIX. Cuesta una orden;
+2. **y para MEDIR, pide un puerto libre al SO en vez de usar el por defecto.** Es
+   lo que ya hace `iniciarClon` (`puertoLibre()`), y es la razón por la que el
+   defecto del huérfano **no le aplica**: nunca es el mismo puerto dos veces;
+3. **el por defecto se declara como lo que es — una ELECCIÓN de despliegue, no
+   una propiedad del programa.** Un publicador que enlaza `:3000` porque nadie
+   le dijo otra cosa está compitiendo con el resto de la máquina, y su fallo de
+   enlace es el fallo silencioso de siempre si su `stdio` va a `"ignore"`.
+
+
+---
 
 ## Comandos
 
