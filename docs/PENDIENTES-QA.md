@@ -1,5 +1,177 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🔄 §144.ª · **B2 — EL DOCKERFILE, LA PRIMERA MEDIDA EN LA PLATAFORMA DE DESTINO** — 2026-09-03
+
+**B2 de B1–B4.** No es una verificación: puede rediseñar el modelo de
+publicación. `TRASPASO-CMS.md:246` ya lo decía — *«el Dockerfile está SIN
+VERIFICAR: nadie ha construido ni corrido esa imagen todavía»*.
+
+### PASO 0 · derivado antes de tocar nada
+
+**La tanda es la 144.ª, derivado del árbol:** `HEAD 6f67b05` · árbol limpio ·
+último commit `143.ª CIERRE`. Coincide con lo que el encargo veía.
+
+#### (1) El entorno
+
+Docker Desktop **ya estaba corriendo** (a diferencia de la 143.ª). `docker ps`:
+`kunak-cms-pg` `Up 2 hours`, `0.0.0.0:55432->5432/tcp` publicado —canal
+declarado y canal publicado coinciden, no es el caso de §regla infra
+(`NetworkSettings.Networks` no vacío, comprobado por la 143.ª y no repetido aquí
+porque no cambió nada del contenedor de Postgres).
+
+⚠ **`:3000` está OCUPADO, y NO es nuestro.** `netstat` → PID 34724 →
+`Get-CimInstance Win32_Process` → `"node" "C:\dev\kbi-app\node_modules\...\next"
+start`, creado hoy a las 7:52. Es exactamente la instancia que §regla 57 de
+`CLAUDE.md` ya documenta —otro proyecto de la misma máquina— y por la misma
+regla **no se toca**. Puertos para esta tanda, verificados libres antes de
+usarse: contenedor en **3900**, referencia local en **3901**.
+
+#### (2) El reparto de los tres defectos de B1 — derivado, no supuesto
+
+| defecto (B1, `publicador.mjs`) | ¿sobrevive dentro del contenedor? | por qué |
+|---|---|---|
+| (a) `p.kill()` mata `cmd.exe`, el `node` sobrevive | **NO** | el `CMD` del Dockerfile es forma **exec** (`["node","server.js"]`, JSON), sin shell de por medio; y el contenedor **no ejecuta el código de `arrancaServidor`/`paraServidor`** de `publicador.mjs` en absoluto — no hay ese fichero en la imagen (`scripts/` está en `.dockerignore`). Docker gestiona el proceso, no ese código |
+| (b) `next start` no es el camino soportado por `output: standalone` | **NO** | `Dockerfile:114` invoca `server.js` standalone directamente; nunca pasa por `next start` ni por su aviso enterrado |
+| (c) nadie comprobaba que el servidor recogiera el build | **SÍ, pero DESPLAZADO** | no como código interno — no hay proceso de larga duración que sobreviva a una promoción *dentro* del contenedor: imagen nueva = contenedor nuevo = proceso que arranca leyendo sus propios ficheros desde cero. Reaparece como **disciplina de verificación EXTERNA post-despliegue** — comprobar desde fuera que el `buildId` SERVIDO por el contenedor nuevo es el que se acaba de construir. Mismo principio (§El principio), aplicado al redeploy en vez de al webhook |
+
+**B1 lo disuelve, no lo agrava** — la lectura que `PENDIENTES-QA.md:1387` dejaba
+abierta («B1 puede disolverlo o agravarlo») se cierra en la primera dirección
+para (a) y (b), y en una tercera forma (desplazado, no agravado ni heredado tal
+cual) para (c).
+
+#### (3) DOS DEFECTOS PROPIOS DEL DOCKERFILE, medidos ANTES de construir nada
+
+Ninguno de la clase B1. Los dos se derivaron del árbol y **uno se reprodujo
+localmente sin Docker**, antes de gastar un solo `docker build`:
+
+**(i) El `CMD` está roto para este monorepo.** `.next/standalone` de un
+workspace **no deja `server.js` en su raíz** — lo deja bajo el subárbol del
+paquete. Comprobado en el `.next` local ya existente
+(`apps/web/.next/standalone/`): contiene `apps/` y `node_modules/`, **cero**
+`server.js` en la raíz; sí está en `apps/web/server.js`. `Dockerfile:114` es
+`CMD ["node", "server.js"]` con `WORKDIR /app` — busca `/app/server.js`, que no
+existe.
+
+> Reproducido **sin Docker**, desde `apps/web/.next/standalone`:
+> `node server.js` → `Error: Cannot find module '…\.next\standalone\server.js'`
+> (`MODULE_NOT_FOUND`, exit 1) — `node apps/web/server.js` → arranca
+> (`▲ Next.js 16.2.12 … ✓ Ready in 0ms`). El fallo no depende del SO: es
+> resolución de módulos de Node contra el `WORKDIR`, y el contenedor Linux lo va
+> a reproducir idéntico.
+
+**(ii) Ninguna variable de entorno cruza a la etapa `builder`.** El Dockerfile
+sólo declara `ARG NODE_VERSION` y `ENV NODE_ENV=production` (`grep '^ARG\|^ENV'`
+→ 5 líneas, ninguna de datos). Este árbol **lee contenido por Local API durante
+el build** (`next.config.ts`, comentario propio: *"desde aquí las páginas leen
+por Local API en build"*), y `construyeConfig()`
+(`packages/cms-config/src/payload.config.ts:57`) **tira** si `DATABASE_URI` no
+está definido — sin valor por defecto, a propósito (*"apuntaría a una DB que no
+es la que crees"*). `PAYLOAD_SECRET` exige lo mismo. Sin `ARG`/`ENV` para las
+dos, `RUN npm run build` de la etapa `builder` va a fallar con ese mensaje
+exacto, **antes de intentar hablar con Postgres**.
+
+**Cómo alcanza el contenedor a `kunak-cms-pg` — derivado antes de arrancar,
+como pide el encargo:** `host.docker.internal:55432`. Comprobado con un
+contenedor `postgres:17-alpine` desechable: `pg_isready -h host.docker.internal
+-p 55432` → `accepting connections`. Docker Desktop expone ese nombre igual en
+la etapa de **build** que en la de **run** — no hace falta `--add-host` ni red
+custom para esta medición local. **En destino (VPS + Easypanel) esto NO
+aplica**: Postgres será otro contenedor en la red que gestione Easypanel,
+alcanzable por nombre de servicio — se anota para B3, no se resuelve aquí.
+
+**`docker-compose.yml` no declara Postgres**, y su `env_file` apunta a
+`.env.local`/`.env` en la RAÍZ del repo, que no existen (sólo hay
+`apps/web/.env` y `apps/cms/.env`). Es andamio anterior al CMS
+(`image: ai-website-cloner:latest`, sin red ni volumen para la DB), no
+adaptado — confirma la lectura del encargo. No se arregla aquí: B3 redimensiona
+variables de destino.
+
+#### (4) LA PREGUNTA QUE PUEDE REDISEÑAR B — las dos direcciones, medidas
+
+`Dockerfile:100-101` **COPIA** `.next/standalone` y `.next/static` dentro de la
+imagen — son capas inmutables. `docker-compose.yml` **no declara ningún
+`volumes:` para el servicio `app`** (sólo `dev` monta el árbol para desarrollo).
+Con eso ya derivado, las dos direcciones:
+
+- **¿Publicar exige reconstruir la imagen?** Con el diseño actual, sí: no hay
+  ningún punto de montaje externo que un `publicador.mjs` corriendo fuera del
+  contenedor pudiera escribir. La única forma de que el contenido cambie es que
+  cambien los bytes de las capas `COPY`, y eso es `docker build`;
+- **¿Basta montar `.next` como volumen?** Montar `.next/standalone` (o las
+  rutas que `server.js` lee) como volumen externo evitaría el `docker build`
+  —el `npm run build` podría correr fuera, en host o en un contenedor
+  builder— **pero no evita reiniciar el proceso**. `node apps/web/server.js`
+  es el mismo tipo de servidor Node de larga vida que `next start`: carga sus
+  manifiestos y rutas **una vez, al arrancar**, y no los revisa por petición
+  (es la premisa entera de B1 — *"un proceso servidor de larga vida puede
+  quedarse con la versión que había cuando ARRANCÓ"*, §regla 53 — general para
+  cualquier servidor Node de producción, no específica de `next start`). Un
+  volumen montado con contenido nuevo por debajo de un proceso que ya arrancó
+  **no lo entera**. Y reiniciar el PID 1 de un contenedor **es reiniciar el
+  contenedor** — no hay, en el Dockerfile actual, ningún proceso supervisor
+  dentro de la imagen (el propio `publicador.mjs`, corriendo COMO el PID 1,
+  gestionando un hijo `next start`/`server.js`) que pudiera reiniciar sólo el
+  hijo sin llevarse el contenedor por delante.
+
+> **Veredicto de esta derivación, sin construir nada:** las dos rutas terminan
+> necesitando un reinicio externo del contenedor tras cada publicación. La
+> diferencia entre ellas no es «¿hace falta reiniciar?» —las dos lo necesitan—
+> sino **qué dispara ese reinicio**: un `docker build` completo (capas nuevas,
+> minutos, necesita el daemon de Docker en la ruta de publicación) contra un
+> `npm run build` sobre un volumen + `docker restart` (evita las capas, sigue
+> necesitando el coste medido del build —89 s caliente, 108–204 s frío— y sigue
+> necesitando algo externo con permiso para reiniciar el contenedor). **Es una
+> decisión de arquitectura, no una casilla de `docker-compose.yml`.**
+>
+> ⚠⚠ **CORTE LIMPIO.** Esto sale «exige reconstruir la imagen» en el diseño tal
+> como está escrito. Por el encargo: **para aquí** en cuanto a rediseñar el
+> modelo de publicación — no se implementa ni el volumen ni un supervisor
+> dentro de la imagen en esta tanda. Lo que sigue (ESCALÓN 1 y 2) mide si el
+> Dockerfile *tal cual* —con sus dos defectos propios corregidos— construye y
+> sirve correctamente, que es una pregunta distinta y previa: hace falta
+> saberlo aunque el modelo de publicación quede pendiente de decisión.
+
+### ESCALÓN 1 · predicciones, ANTES de medir
+
+**P1 · ¿construye la imagen a la primera?** **NO.** Predicción: al menos DOS
+fallos antes de un contenedor sirviendo, y son de naturaleza distinta —uno de
+`docker build`, otro de `docker run`—:
+
+1. **Intento 1** (Dockerfile tal cual, sin `--build-arg`): falla en la etapa
+   `builder`, en `RUN npm run build`, con el mensaje exacto de
+   `payload.config.ts:57` (`DATABASE_URI no está definido…`). No llega a
+   intentar conectar con Postgres.
+2. **Intento 2** (Dockerfile con `ARG`/`ENV` para `DATABASE_URI` y
+   `PAYLOAD_SECRET` añadidos a la etapa `builder`, pasados por
+   `--build-arg`): predicción — la etapa `builder` **completa**
+   (`host.docker.internal:55432` ya verificado alcanzable en build). `docker
+   build` sale con código 0. El contenedor **no arranca**: `docker run` muere
+   con `MODULE_NOT_FOUND` de `/app/server.js`, ya reproducido sin Docker en el
+   PASO 0.
+3. **Intento 3** (con el `CMD` corregido a `apps/web/server.js`): predicción —
+   arranca y responde en `:3900`.
+
+**P2 · Δ0 de contenido contra lo que sirve el árbol local hoy.** Universo: las
+**426** rutas de `prerender-manifest.json` (el mismo que ya sirve el `.next`
+local, `BUILD_ID VPZgeKpZ9gKOChK9yUFmD`, confirmado en el PASO 0). Sonda:
+comparador ad hoc nuevo —no existe uno que compare dos BASES arbitrarias, sólo
+`clon-base.mjs` que arranca su propio clon vía `iniciarClon()`—,
+`derivaciones/144-docker-cmp.mjs`, GET a `:3900` (contenedor) y a `:3901`
+(referencia local, `next start` contra el mismo `.next`), normalizando
+`BUILD_ID`/orden del payload RSC antes de diffear (§regla 32bis: comparar dos
+artefactos generados exige normalizar lo que el generador produce distinto por
+construcción). Predicción: **Δ0 en las 426 SI Y SÓLO SI nadie escribió en la
+DB** entre el build de referencia (143.ª) y el build de la imagen (hoy); si
+algo cambió el contenido real, aparecerá como Δ≠0 y se declarará como cambio de
+DATO, no de mecanismo — el corte se hace comparando qué filas tocó cada uno,
+no asumiendo.
+
+**P3 · cuál de los tres defectos de B1 reaparece dentro del contenedor.**
+Predicción, ya derivada en el PASO 0 (2): **NINGUNO, 0 de 3**. (a) y (b) no
+tienen código que ejecutar dentro de la imagen; (c) reaparece **desplazado**
+—como verificación externa post-redeploy—, no como el mismo defecto de código,
+así que no cuenta como reaparición para el cardinal que pide P3.
+
 ## 🔄 §143.ª · **QUE PUBLICAR CAMBIE EL SITIO** — 2026-09-03
 
 **B1 de B1–B4.** Los otros tres se verifican **publicando**, así que van detrás.
