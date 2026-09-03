@@ -1,0 +1,43 @@
+{
+  "fecha": "2026-09-03T22:41:51.860Z",
+  "universo": 426,
+  "controlNormalizador": {
+    "A": 426,
+    "B": 426,
+    "ok": true
+  },
+  "cubo1_artefactoCompleto": 235,
+  "cubo2_contenidoConsumido": 19,
+  "restos": [
+    {
+      "r": "/blog/page/6",
+      "i": 2800,
+      "a": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><title>Blog - Página 6 de 8 - Kunak</title><meta name=\"descri",
+      "b": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><link rel=\"next\" href=\"/blog/page/7\"/><title>Blog - Página 6 "
+    },
+    {
+      "r": "/etiqueta/calidad-del-aire/page/2",
+      "i": 7353,
+      "a": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><title>Calidad del aire - Página 2 de 4 - Kunak</title><meta ",
+      "b": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><link rel=\"next\" href=\"/etiqueta/calidad-del-aire/page/3\"/><t"
+    },
+    {
+      "r": "/etiqueta/contaminantes-atmosfericos",
+      "i": 6627,
+      "a": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><title>Contaminantes atmosféricos - Kunak</title><meta name=\"",
+      "b": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><link rel=\"next\" href=\"/etiqueta/contaminantes-atmosfericos/p"
+    },
+    {
+      "r": "/etiqueta/contaminantes-atmosfericos/page/3",
+      "i": 6016,
+      "a": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><link rel=\"next\" href=\"/etiqueta/contaminantes-atmosfericos/p",
+      "b": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><title>Contaminantes atmosféricos - Página 3 de 4 - Kunak</ti"
+    },
+    {
+      "r": "/etiqueta/emisiones-industriales/page/2",
+      "i": 5770,
+      "a": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><link rel=\"next\" href=\"/etiqueta/emisiones-industriales/page/",
+      "b": "png\" as=\"image\"/><meta name=\"next-size-adjust\" content=\"\"/><title>Emisiones industriales - Página 2 de 3 - Kunak</title>"
+    }
+  ]
+}

@@ -191,6 +191,177 @@ alcance**. O sea que el compose actual **no puede servir `/vista-previa`** —
 no por un defecto del contenedor, sino porque nadie le ha dado la variable.
 Eso es exactamente lo que B3 tiene que resolver.
 
+### ESCALÓN 2 · LA MEDIDA
+
+#### P1 · NO construye a la primera — y falló por una causa que NO predije
+
+| intento | qué se cambió | resultado |
+|---|---|---|
+| **1** | el `Dockerfile` tal cual | ❌ **`sh: 1: next: not found`**, exit 127, en `RUN npm run build` de la etapa `builder` |
+| **2** | los tres arreglos + `--build-arg` | ✅ **EXIT 0**, imagen `:144-test`, **676 s** |
+| **3** | `.dockerignore` corregido | ✅ EXIT 0, imagen `:144-fix`, **≈200 s** |
+
+⚠ **Mi predicción del fallo era otra.** El ESCALÓN 1 decía que el intento 1
+moriría por `DATABASE_URI no está definido`. **Murió antes**, por un defecto que
+el PASO 0 no vio: **el patrón de caché de dependencias del ejemplo original es
+para UNA app, y esto es un monorepo de workspaces npm.** `COPY package.json …
+./` copia sólo el `package.json` **raíz**, así que `npm ci` no sabe que
+`apps/web` depende de `next` y no lo instala — y **sale con éxito**, que es lo
+que lo hace invisible hasta la etapa siguiente.
+
+**Diagnosticado midiendo dentro del artefacto, no leyendo:** construida sólo la
+etapa `dependencies` e inspeccionada, `node_modules/.bin/next` **AUSENTE** y
+`node_modules/next` **AUSENTE**. Arreglo: copiar los **tres** `package.json` de
+workspace (`apps/web`, `apps/cms`, `packages/cms-config`) antes del `npm ci`.
+Verificado después: `npm ci` real (**925 paquetes en 26 s**) y
+`node_modules/.bin/next -> ../next/dist/bin/next` **presente**.
+
+**Y el `CMD` era el segundo bloqueador, en el arranque y no en el build:** con
+`["node","server.js"]` el contenedor muere con `MODULE_NOT_FOUND` (predicho en
+el PASO 0 y reproducido sin Docker); con `["node","apps/web/server.js"]`
+arranca. O sea que **«construye» y «sirve» son dos preguntas**, y el Dockerfile
+fallaba una en cada una.
+
+**El reparto del tiempo del intento 2, que es lo que hace medible el defecto de
+`.dockerignore`:**
+
+| etapa | s |
+|---|---|
+| `#6` cargar contexto | **311,3** |
+| `#13` `COPY . .` | **172,0** |
+| `#14` `npm run build` (el `next build` de verdad) | 134,3 |
+| `#20` exportar capas | 26,0 |
+
+**483 s de 676 (71 %) eran contexto**, no build. En el intento 3, con el
+`.dockerignore` corregido, `#6` baja a **90,3 s** y el total a ≈200 s.
+
+#### Los DOS defectos de `.dockerignore` — y el primero tuve que REFUTARLO yo
+
+**v1 de mi arreglo (`.next-*`): INSUFICIENTE, y salió plausible.** Lo destapó
+que el contexto seguía en GBs después de «arreglarlo». Medido con un contexto de
+prueba (`busybox` + `find`, patrones `.next` y `.next-*`):
+
+| fichero | veredicto |
+|---|---|
+| `/ctx/.next-raiz-x/f.txt` | **excluido** |
+| `/ctx/apps/web/.next-121b/f.txt` | **ENTRA** |
+
+> **Los patrones de `.dockerignore` están ANCLADOS A LA RAÍZ del contexto — no
+> son como los de `.gitignore`.** Así que `.next` a secas nunca excluyó
+> `apps/web/.next` (359 MB) ni las **16** instantáneas `apps/web/.next-*` que
+> dejan `publicador.mjs` y las campañas de medición.
+
+**v2 (`**/.next`, `**/.next-*`, `**/node_modules`): verificada por las DOS
+polaridades en la misma corrida** — excluye lo anidado **y conserva**
+`apps/web/src` y `apps/web/public`. Sin la segunda mitad, un `**/` demasiado
+ancho se habría llevado el contenido bueno sin avisar.
+
+#### ⚠⚠ EL HALLAZGO QUE NO ESTABA EN NINGUNA PREDICCIÓN: EL SECRETO VIAJA EN LA IMAGEN
+
+La lectura que los dos dábamos por buena —*«los `ARG` viven sólo en la etapa
+`builder`, el secreto no viaja»*— es **cierta de `ARG`/`ENV` y falsa de la
+imagen**. Medido sobre `:144-test`:
+
+```
+find /app -name "*.env"   →  /app/apps/web/.env      ← DENTRO de la imagen final
+env | grep DATABASE_URI   →  0                        ← no está como variable
+```
+
+**La cadena, entera y por el mismo defecto de anclaje:** el patrón `.env` de
+`.dockerignore` es de raíz y los `.env` reales viven en `apps/web/` y
+`apps/cms/` → `COPY . .` los mete en `builder` → **`output: standalone` copia el
+`.env` al árbol standalone** → `COPY --from=builder …/standalone ./` lo lleva al
+`runner`.
+
+**Y la prueba de que además se LEE**, que es lo que lo convierte de higiene en
+defecto: sin `DATABASE_URI` en `ENV`, el contenedor **no tira por variable
+ausente** — intenta conectar al host del `.env` local
+(`ECONNREFUSED 127.0.0.1:55432`).
+
+**Arreglo y control POR LAS DOS POLARIDADES en la misma corrida**
+(`derivaciones/144-secreto-en-imagen.{mjs,json}`), porque un `find` que no
+encuentra y uno que no sabe buscar dan la misma salida (§sondas 4):
+
+| imagen | papel | esperado | hallado |
+|---|---|---|---|
+| `:144-test` | ANTES · **control positivo** | ≥1 | **1** → `/app/apps/web/.env` ✅ |
+| `:144-fix` | DESPUÉS · el hallazgo | 0 | **0** ✅ |
+
+Con el control en verde, el 0 de la segunda es **ausencia medida** y no silencio.
+⚠ La sonda **no lee** el contenido de ningún `.env`: la presencia más el
+`ECONNREFUSED` ya prueban el mecanismo, y leerlo sólo añadiría el secreto.
+
+#### ⚠⚠ Y EL CSS FABRICADO DESDE ARTEFACTOS DE BUILDS VIEJOS — 200, se ve bien, y está mal
+
+`:144-test` servía **6 hojas / 129 924 bytes** contra **5 / 112 576** de la
+referencia: **+17 348 bytes (+15,4 %)** y **173 reglas** que el fuente no usa.
+
+**Mecanismo medido, en dos capas que se suman:**
+
+1. el defecto de anclaje deja entrar `apps/web/.next` y las 16 `.next-*`;
+2. **`.dockerignore` excluía `.gitignore`** — y **Tailwind v4 lo usa para su
+   detección automática de contenido**. Sin él dentro del contexto, Tailwind
+   escanea esos artefactos y emite utilidades de builds pasados.
+
+| clase de más | en `apps/web/src` | en `apps/web/.next-121b` |
+|---|---|---|
+| `not-sr-only` | **0** | 4 |
+| `-inset-1` | **0** | 1 |
+| `flex-grow` | 1 | 12 |
+
+**Tras el arreglo:** 5 hojas / **112 575** contra 112 576 — **1 byte**, y es
+redondeo de coma flotante en un `lab()` (`60.745` contra `60.7449`), Linux
+contra Windows. Las 173 reglas de más → **1**.
+
+> **Y esto es la salida plausible-y-falsa en su forma pura:** la página responde
+> **200**, tiene CSS, y se ve bien. Ninguna guarda de este repo la habría visto.
+
+#### P2 · Δ DE CONTENIDO — 426/426, EN TRES CUBOS
+
+`derivaciones/144-p2-cubos.{mjs,json}`, sobre `:144-fix` contra la referencia
+local. §regla 32bis manda normalizar lo que el generador produce distinto por
+construcción y publicar el artefacto completo **y** el contenido consumido:
+
+| cubo | qué se normaliza | distintas |
+|---|---|---|
+| 1 · artefacto COMPLETO | `buildId` + hashes de chunk | **235** |
+| 2 | + troceado del payload RSC | **19** |
+| **3 · el CONTENIDO CONSUMIDO** | + **orden** de las etiquetas de `<head>` | **0** |
+
+**CONTROL de los normalizadores: 852 sustituciones cada uno = 2 × 426**, o sea
+que los cuatro ocurren en los dos lados de las 426 — sin eso, un cubo 3 a cero
+no distinguiría «idénticos» de «el normalizador no corrió».
+
+Los cuatro artefactos, cada uno comprobado antes de normalizarlo: el hash de
+chunk cambia porque el CSS difiere en **ese 1 byte del `lab()`**; el `<head>`
+tiene el **mismo conjunto de 35 etiquetas** en los dos lados y sólo cambia la
+secuencia (comprobado: `rel="next"` está en los dos con el mismo `href`, y el
+`<title>` es idéntico — leerlo como «falta el `rel=next`» habría fichado un
+defecto que no existe).
+
+#### P3 · NINGUNO de los tres defectos de B1 reaparece — 0 de 3, con prueba
+
+| defecto | prueba **dentro** del contenedor | veredicto |
+|---|---|---|
+| (a) `p.kill()` mata el `cmd.exe` | `/app` = `apps node_modules public` — **`scripts/` AUSENTE**: no hay `publicador.mjs`. PID 1 es `next-server` directo y el `CMD` es forma **exec** | no aplica |
+| (b) `next start` no soportado | `CMD = ["node","apps/web/server.js"]` — el standalone | no aplica |
+| (c) nadie comprueba lo servido | `BUILD_ID` horneado `DNRFzRjLlLyjj9iRDbc3D` = **servido** `DNRFzRjLlLyjj9iRDbc3D` — coinciden **por construcción** | **desplazado**, no heredado |
+
+#### P4 · las dos mitades, tal como se pre-registraron
+
+- **(a) las 426 rutas SSG sin `DATABASE_URI`: `200` en las 426.** Se cumple, y
+  el universo es el bueno (el manifiesto), no rutas elegidas a mano;
+- **(b) `/vista-previa`: `404`, no 500** — y el mecanismo no es el que la
+  predicción suponía: su guarda de `PREVIEW_SECRETO` dispara **antes** de leer
+  la DB, así que ni llega a consultarla. **Esperado, no se ficha.**
+
+⚠ **Y una lectura que estuve a punto de fichar mal:** probando a mano,
+`/sectores/urbano` daba **500** en el contenedor y **404** en la referencia.
+No es un hallazgo de P4(a): esa ruta **no está en el `prerender-manifest`** —
+no es SSG— y la diferencia 500/404 es sólo que la referencia SÍ alcanza la DB
+y el contenedor no. Elegir la ruta a mano en vez de derivarla del manifiesto
+es lo que casi fabrica el falso hallazgo.
+
 ## 🔄 §143.ª · **QUE PUBLICAR CAMBIE EL SITIO** — 2026-09-03
 
 **B1 de B1–B4.** Los otros tres se verifican **publicando**, así que van detrás.

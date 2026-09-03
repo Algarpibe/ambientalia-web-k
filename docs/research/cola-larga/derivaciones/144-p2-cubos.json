@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "fecha": "2026-09-03T22:43:40.497Z",
+    "A": "http://localhost:3900",
+    "B": "http://localhost:3901",
+    "bidA": "DNRFzRjLlLyjj9iRDbc3D",
+    "bidB": "VPZgeKpZ9gKOChK9yUFmD",
+    "universo": 426
+  },
+  "control": {
+    "bid": 852,
+    "hash": 852,
+    "rsc": 852,
+    "head": 852
+  },
+  "controlOk": true,
+  "cubos": {
+    "c1_artefactoCompleto": 235,
+    "c2_sinRsc": 19,
+    "c3_sinRscNiOrdenHead": 0
+  },
+  "restos": []
+}

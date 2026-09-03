@@ -1,0 +1,3422 @@
+{
+  "meta": {
+    "fecha": "2026-09-03T22:38:28.350Z",
+    "BASE_A": "http://localhost:3900",
+    "BASE_B": "http://localhost:3901",
+    "buildIdA": "DNRFzRjLlLyjj9iRDbc3D",
+    "buildIdB": "VPZgeKpZ9gKOChK9yUFmD",
+    "universo": 426
+  },
+  "comparadas": 426,
+  "distintas": 426,
+  "detalle": [
+    {
+      "ruta": "/",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 232010,
+      "lenB": 232010,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/aaqms-estaciones-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 183632,
+      "lenB": 183632,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/accesorios",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 202498,
+      "lenB": 202498,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/additive-presenta-sistema-kunak-air-en-sensortest-2018",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 93514,
+      "lenB": 93514,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/amoniaco-nh3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 175248,
+      "lenB": 175248,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/aviso-legal",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 108386,
+      "lenB": 108343,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/biometano-y-biogas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 246609,
+      "lenB": 246609,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/blog",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 128480,
+      "lenB": 128437,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/blog/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 129548,
+      "lenB": 129505,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/blog/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 123693,
+      "lenB": 123736,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/blog/page/4",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 113752,
+      "lenB": 113709,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/blog/page/5",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 113455,
+      "lenB": 113455,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/blog/page/6",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 112020,
+      "lenB": 111977,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/blog/page/7",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 108662,
+      "lenB": 108662,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/blog/page/8",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 99710,
+      "lenB": 99710,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calibracion-de-sensores-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 181377,
+      "lenB": 181377,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-aire-paises-sanos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 113757,
+      "lenB": 113757,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-aire-tiempo-real-kunak-air-lite",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 139602,
+      "lenB": 139602,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 130076,
+      "lenB": 130076,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-del-aire-alrededor-de-los-colegios",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 162499,
+      "lenB": 162499,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-del-aire-en-islas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 232018,
+      "lenB": 232018,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-del-aire-en-las-comunidades",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 212678,
+      "lenB": 212678,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-del-aire-en-los-aeropuertos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 157982,
+      "lenB": 157982,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-del-aire-en-los-asentamientos-informales",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 129781,
+      "lenB": 129781,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/calidad-del-aire-en-puertos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 232407,
+      "lenB": 232407,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/case-studies/distrito-baja-emision-rio-de-janeiro",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 148546,
+      "lenB": 148546,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135634,
+      "lenB": 135634,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 124470,
+      "lenB": 124470,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 145497,
+      "lenB": 145497,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 225273,
+      "lenB": 225273,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 117636,
+      "lenB": 117636,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/calidad-del-aire-en-planta-procesamiento-alimentos-singapur",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 124121,
+      "lenB": 124121,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/calle-30-natura-sensores-de-calidad-del-aire-kunak-air",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 127934,
+      "lenB": 127934,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/citytraq-calidad-del-aire-urbano",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135880,
+      "lenB": 135880,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/clean-air-champions-league",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 132512,
+      "lenB": 132512,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-ambiental-actividades-portuarias-bahia-cadiz",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 126762,
+      "lenB": 126762,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-avanzado-de-olores-y-gases-en-el-vertedero-de-valdemingomez",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 130084,
+      "lenB": 130084,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-contaminacion-por-malos-olores-en-edar-arazuri",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 115261,
+      "lenB": 115261,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-emisiones-plantas-ternium-en-mexico",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138140,
+      "lenB": 138140,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-calidad-del-aire-en-el-volcan-turrialba",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 139560,
+      "lenB": 139560,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-calidad-del-aire-en-la-formula-e",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 125946,
+      "lenB": 125946,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-calidad-del-aire-en-puertos-apb",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 124782,
+      "lenB": 124782,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-atmosferica-universidad-de-chipre",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 118745,
+      "lenB": 118745,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-en-bilbao",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 136501,
+      "lenB": 136501,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-de-la-contaminacion-por-malos-olores-en-des-moines-iowa",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 128818,
+      "lenB": 128818,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-emisiones-de-olor-en-ptar-en-israel",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 120741,
+      "lenB": 120741,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-emisiones-olor-y-material-particulado-en-cerro-patacon-panama",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 127986,
+      "lenB": 127986,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/control-quemas-controladas-cana-azucar",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 121207,
+      "lenB": 121207,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/cuantificacion-emisiones-particulas-difusas-puerto-bilbao",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 121085,
+      "lenB": 121085,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/demolicion-estadio-vicente-calderon",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 101738,
+      "lenB": 101738,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/estudio-de-la-contaminacion-atmosferica-gwadair",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 129953,
+      "lenB": 129953,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/medicion-contaminantes-ambientales-ciudad-cartagena-colombia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 117971,
+      "lenB": 117971,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-ambiental-aeropuerto-subic-bay",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138551,
+      "lenB": 138551,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-ambiental-instalacion-petroleo-gas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 124025,
+      "lenB": 124025,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-ambiental-mediante-boyas-en-neom",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 130942,
+      "lenB": 130942,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-avanzada-de-la-calidad-del-aire-en-el-puerto-de-le-havre",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 136868,
+      "lenB": 136868,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-de-gases-toxicos-por-sargazo-en-el-caribe",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 130077,
+      "lenB": 130077,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-de-gases-y-particulas-en-metro-valparaiso",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 121996,
+      "lenB": 121996,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 145868,
+      "lenB": 145868,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-en-una-planta-petroquimica-en-alemania",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 137376,
+      "lenB": 137376,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-de-la-calidad-del-aire-y-estres-termico-budapest-2023",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 126279,
+      "lenB": 126279,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-de-olores-en-estaciones-depuradoras-de-aguas-residuales-en-oman",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 117829,
+      "lenB": 117829,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/monitorizacion-de-polvo-en-la-mina-northparkes-australia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 128660,
+      "lenB": 128660,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/porto-alegre-red-de-control-de-la-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138132,
+      "lenB": 138132,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/prediccion-del-impacto-ambiental-de-las-operaciones-portuarias-en-el-puerto-de-almeria",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 125100,
+      "lenB": 125100,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/pure-cities",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 134393,
+      "lenB": 134393,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/red-calidad-de-aire-para-world-athletics",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 114444,
+      "lenB": 114444,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/red-de-control-de-emisiones-en-planta-de-aluminio",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 137513,
+      "lenB": 137513,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/red-de-monitoreo-de-polvo-en-la-mina-de-oro-pueblo-viejo-barrick",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 119297,
+      "lenB": 119297,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/red-de-monitorizacion-ambiental-mades-paraguay",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 134630,
+      "lenB": 134630,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/red-de-vigilancia-ambiental-en-la-mina-de-cobre-de-first-quantum-minerals",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 136466,
+      "lenB": 136466,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/red-hibrida-calidad-aire-atmo-france",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 116345,
+      "lenB": 116345,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/red-monitorizacion-polvo-particulas-minas-brasil-iron",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 119540,
+      "lenB": 119540,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/red-sensores-calidad-aire-alaquas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 121447,
+      "lenB": 121447,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/respirar-fundo-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 128857,
+      "lenB": 128857,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/running-for-clean-air-ciudades-saludables",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 145243,
+      "lenB": 145243,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/sistema-de-alerta-de-contaminacion-de-acuifero-por-lindano",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 100472,
+      "lenB": 100429,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/sistema-de-medicion-de-calidad-de-aire-para-edusi-rivas-vaciamadrid",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 106330,
+      "lenB": 106287,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/sistema-de-vigilancia-de-la-calidad-del-aire-en-minas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 131614,
+      "lenB": 131614,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/suministro-integracion-red-calidad-aire-urbano-donostia-san-sebastian",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 129748,
+      "lenB": 129748,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 123970,
+      "lenB": 123970,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/vigilancia-contaminacion-aire-albacete",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135824,
+      "lenB": 135824,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/casos-de-exito/vigilancia-de-la-contaminacion-ambiental-en-la-planta-de-cemex-de-monterrey",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 122427,
+      "lenB": 122427,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 96525,
+      "lenB": 96525,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air/articulos-de-ayuda",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 91069,
+      "lenB": 91026,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 105371,
+      "lenB": 105371,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 102077,
+      "lenB": 102077,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103350,
+      "lenB": 103350,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-es-kunak-air",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 126790,
+      "lenB": 126790,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air/articulos-de-ayuda/que-puedes-hacer-con-kunak-air",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 112052,
+      "lenB": 112052,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air/video-tutoriales",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103016,
+      "lenB": 102973,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/centro-de-ayuda/kunak-air-cloud",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 93418,
+      "lenB": 93418,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/cianuro-de-hidrogeno-hcn",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 196024,
+      "lenB": 196024,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/cloro-cl2-dioxido-de-cloro-clo2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 191123,
+      "lenB": 191080,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/cloruro-de-hidrogeno-hcl",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 261186,
+      "lenB": 261186,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/comparativa-de-los-informes-de-evaluacion-de-aqspec",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104832,
+      "lenB": 104789,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/comparativa-de-pequenos-sensores-de-calidad-del-aire-del-ayuntamiento-de-sabadell",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 94553,
+      "lenB": 94553,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/compuestos-organicos-volatiles",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 176939,
+      "lenB": 176939,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/conferencia-partes-cop26-incendios",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 133432,
+      "lenB": 133432,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contacto",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 134053,
+      "lenB": 134053,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contador-particulas-suspension-movilidad-sostenible",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 136408,
+      "lenB": 136408,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-acustica",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 228385,
+      "lenB": 228385,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-aire-deporte",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 142586,
+      "lenB": 142586,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-aire-obras-demoliciones-derribos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 152997,
+      "lenB": 152997,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-de-la-industria-de-fertilizantes-y-su-impacto-en-la-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 184365,
+      "lenB": 184365,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-del-aire-en-madrid",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 156043,
+      "lenB": 156043,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-del-aire-en-nueva-york",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 219025,
+      "lenB": 219025,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-del-aire-en-vertederos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 256619,
+      "lenB": 256619,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-del-aire-por-obras",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 205582,
+      "lenB": 205582,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-del-aire-urbano",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 211374,
+      "lenB": 211374,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-del-transporte-urbano",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 218150,
+      "lenB": 218150,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-incendios-forestales-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 195545,
+      "lenB": 195545,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-juegos-olimpicos-de-paris-2024",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 149063,
+      "lenB": 149063,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-mal-olor-sensores",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 193943,
+      "lenB": 193943,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-por-metano",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 324104,
+      "lenB": 324104,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminacion-por-produccion-de-energia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 225692,
+      "lenB": 225692,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/contaminantes-atmosfericos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 225586,
+      "lenB": 225543,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/control-de-la-contaminacion-del-aire-en-la-industria-seminario-web",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 127376,
+      "lenB": 127376,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/control-emisiones-industriales",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 188867,
+      "lenB": 188867,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/corrosion-ambiental-causas-factores-y-como-prevenirla",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 229871,
+      "lenB": 229871,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/covid-19-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104217,
+      "lenB": 104217,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/descarga-catalogo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138813,
+      "lenB": 138770,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/descarga-catalogo-kunak",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97427,
+      "lenB": 97427,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/despliegue-estaciones-kunak-air-pro-filipinas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104783,
+      "lenB": 104783,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/detectores-calidad-aire-movilidad",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 141036,
+      "lenB": 141036,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/detectores-emisiones-coronavirus-contaminacion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 124149,
+      "lenB": 124149,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/detectores-emisiones-proyecto-trafair",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 113155,
+      "lenB": 113155,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/dioxido-de-azufre",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138068,
+      "lenB": 138025,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/dioxido-de-carbono",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 162892,
+      "lenB": 162892,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/dioxido-de-nitrogeno",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 144653,
+      "lenB": 144610,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/directrices-oms-calidad-aire-innovacion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 110667,
+      "lenB": 110710,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/efectos-de-la-contaminacion-en-la-salud",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 126305,
+      "lenB": 126305,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/ehs-industrial",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 172842,
+      "lenB": 172842,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/el-sensor-de-calidad-del-aire-mas-preciso",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 116512,
+      "lenB": 116512,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/emisiones-atmosfericas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 112182,
+      "lenB": 112182,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/emisiones-de-las-refinerias-de-petroleo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 230182,
+      "lenB": 230182,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/emisiones-ganaderas-y-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 248782,
+      "lenB": 248782,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/emisiones-por-chimenea",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 272579,
+      "lenB": 272579,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/empresa",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 123452,
+      "lenB": 123452,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/empresa/premios-y-reconocimientos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 105024,
+      "lenB": 105067,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/en-directo-datos-de-calidad-del-aire-en-la-diamond-league-en-el-estadio-luis-ii-de-monaco",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 109752,
+      "lenB": 109795,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/entrevista-agustin-torres-product-manager-suez",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 121378,
+      "lenB": 121378,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/entrevista-jelle-hofman-investigador-calidad-del-aire-imec",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 114876,
+      "lenB": 114876,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/esmog",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 154302,
+      "lenB": 154259,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/estaciones-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135312,
+      "lenB": 135312,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/estamos-listos-para-ayudarle",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104769,
+      "lenB": 104726,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/estres-por-calor-bienestar",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 139004,
+      "lenB": 139004,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/estudio-de-la-contaminacion-atmosferica-en-el-oceano-gwadair",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 106662,
+      "lenB": 106662,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 139238,
+      "lenB": 139195,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/calidad-del-aire/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 140987,
+      "lenB": 140987,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/calidad-del-aire/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 132143,
+      "lenB": 132186,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/calidad-del-aire/page/4",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 119041,
+      "lenB": 118998,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/co2-es",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 123352,
+      "lenB": 123395,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/contaminantes-atmosfericos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 136709,
+      "lenB": 136666,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/contaminantes-atmosfericos/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 137633,
+      "lenB": 137633,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/contaminantes-atmosfericos/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135489,
+      "lenB": 135489,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/contaminantes-atmosfericos/page/4",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 132596,
+      "lenB": 132596,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/cov",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 115091,
+      "lenB": 115048,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/emisiones-industriales",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138715,
+      "lenB": 138715,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/emisiones-industriales/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 134560,
+      "lenB": 134517,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/emisiones-industriales/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 115571,
+      "lenB": 115614,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/gases-de-efecto-invernadero",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 133459,
+      "lenB": 133502,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/h2s-es",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 110244,
+      "lenB": 110287,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/malos-olores",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 124250,
+      "lenB": 124250,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 139988,
+      "lenB": 139988,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/10",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 112911,
+      "lenB": 112911,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/11",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95807,
+      "lenB": 95807,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 141911,
+      "lenB": 141954,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138122,
+      "lenB": 138079,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/4",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 136743,
+      "lenB": 136700,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/5",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 131286,
+      "lenB": 131243,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/6",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 128870,
+      "lenB": 128827,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/7",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 125570,
+      "lenB": 125570,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/8",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 119643,
+      "lenB": 119643,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/monitorizacion-ambiental/page/9",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 112924,
+      "lenB": 112881,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/normativa-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 139462,
+      "lenB": 139462,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/normativa-de-calidad-del-aire/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 134870,
+      "lenB": 134870,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/normativa-de-calidad-del-aire/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103167,
+      "lenB": 103167,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/particulas-en-suspension",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138956,
+      "lenB": 138913,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/particulas-en-suspension/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 123335,
+      "lenB": 123378,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/sensor-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 140880,
+      "lenB": 140880,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/sensor-de-calidad-del-aire/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 133513,
+      "lenB": 133513,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/sensor-de-calidad-del-aire/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 131123,
+      "lenB": 131123,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/etiqueta/sensor-de-calidad-del-aire/page/4",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 118285,
+      "lenB": 118242,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/eugreenweek-we-have-gone-green",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97919,
+      "lenB": 97919,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/exponemos-en-greencities-malaga-2018",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 96216,
+      "lenB": 96216,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/exponemos-en-la-feria-sensortest-2017-con-alphasense",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 94577,
+      "lenB": 94577,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/exponemos-en-la-smart-city-expo-world-congress-2017",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 99678,
+      "lenB": 99678,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/exposicion-atletas-a-contaminacion-atmosferica-mundial-atletismo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 126929,
+      "lenB": 126929,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/a-que-altura-debe-instalarse-el-equipo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83117,
+      "lenB": 83117,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/cada-cuanto-se-calibra-el-equipo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83314,
+      "lenB": 83314,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/cada-cuanto-tiempo-se-reemplazan-los-cartuchos-y-se-renueva-el-software",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83866,
+      "lenB": 83866,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/como-se-comunica-el-equipo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 82984,
+      "lenB": 83027,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/como-se-integran-los-datos-a-una-tercera-plataforma",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83284,
+      "lenB": 83284,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/cual-es-la-diferencia-entre-calibracion-y-correccion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 84366,
+      "lenB": 84366,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/cual-es-la-diferencia-entre-el-sensor-de-particulas-del-air-pro-y-el-air-lite",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83829,
+      "lenB": 83829,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/cual-es-la-duracion-de-la-bateria",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83012,
+      "lenB": 83055,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/cuenta-esta-tecnologia-con-certificaciones",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83479,
+      "lenB": 83479,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/el-equipo-es-portatil-o-fijo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83278,
+      "lenB": 83235,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/el-equipo-tiene-memoria-interna",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83010,
+      "lenB": 83010,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/es-obligatorio-el-uso-de-la-plataforma-kunak-air-cloud",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83437,
+      "lenB": 83437,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/los-equipos-kunak-son-certificados-atex",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83448,
+      "lenB": 83448,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/pueden-utilizarse-los-equipos-en-interiores",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83200,
+      "lenB": 83200,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/puedo-instalarlo-en-un-vehiculo-o-en-un-dron-para-monitoreo-en-movimiento",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83414,
+      "lenB": 83414,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/que-area-cubre-cada-dispositivo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83587,
+      "lenB": 83587,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/que-opciones-de-calibracion-existen",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83566,
+      "lenB": 83566,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/se-pueden-conectar-sondas-meteorologicas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83299,
+      "lenB": 83256,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/faqs/se-pueden-obtener-los-datos-en-local-modbus",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83200,
+      "lenB": 83200,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/fluoruro-de-hidrogeno-hf",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 192732,
+      "lenB": 192732,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/fondos-nextgen-eu-zonas-bajas-emisiones",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 122746,
+      "lenB": 122746,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/fourth-session-of-the-united-nations-environment-assembly-2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 99111,
+      "lenB": 99111,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/ganamos-la-fase-2-del-horizonte-2020-de-la-union-europea",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 99615,
+      "lenB": 99615,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/gases-de-efecto-invernadero",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 195553,
+      "lenB": 195510,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/gases-de-efecto-invernadero-y-accion-climatica",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 248797,
+      "lenB": 248797,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/glosario",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 89196,
+      "lenB": 89196,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/glosario/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 90740,
+      "lenB": 90740,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/glosario/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 90715,
+      "lenB": 90715,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/glosario/page/4",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 91129,
+      "lenB": 91129,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/glosario/page/5",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 90889,
+      "lenB": 90889,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/glosario/page/6",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 90721,
+      "lenB": 90678,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/glosario/page/7",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 90705,
+      "lenB": 90705,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/glosario/page/8",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87139,
+      "lenB": 87096,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/guia-sobre-la-contaminacion-urbana",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 154619,
+      "lenB": 154619,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/hasta-que-punto-la-calidad-del-aire-afecta-el-rendimiento-de-los-atletas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 125717,
+      "lenB": 125717,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/hidrocarburos-no-metanicos-nmhc",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 239763,
+      "lenB": 239763,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/huella-de-carbono",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 167609,
+      "lenB": 167566,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/impacto-ambiental-de-la-industria-petroquimica",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 216349,
+      "lenB": 216349,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/impacto-ambiental-del-acero-en-la-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 205693,
+      "lenB": 205693,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/impacto-ambiental-industria-cementera",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 205632,
+      "lenB": 205632,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/impacto-ambiental-industria-papelera",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 217972,
+      "lenB": 217972,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/impacto-ambiental-mineria-calidad-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 168561,
+      "lenB": 168561,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/indice-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 130194,
+      "lenB": 130194,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/informe-tecnico-control-de-la-calidad-del-aire-en-ciudades",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135799,
+      "lenB": 135799,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/informe-tecnico-control-de-la-calidad-del-aire-en-industria",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135786,
+      "lenB": 135829,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/informe-tecnico-control-de-la-calidad-del-aire-en-las-minas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 136012,
+      "lenB": 136012,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/informe-tecnico-control-de-la-calidad-del-aire-en-obras",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135856,
+      "lenB": 135813,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/informe-tecnico-control-de-la-calidad-del-aire-en-puertos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 135961,
+      "lenB": 136004,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/inmisiones-atmosfericas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 118524,
+      "lenB": 118524,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/instalamos-el-segundo-monitor-de-calidad-del-aire-de-la-iaaf-en-el-estadio-addis-abeba-de-etiopia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104736,
+      "lenB": 104693,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/justicia-ambiental",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 131474,
+      "lenB": 131474,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/justicia-ambiental-el-derecho-a-respirar-aire-limpio",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 204630,
+      "lenB": 204630,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/justicia-climatica-financiacion-climatica-y-seguridad-climatica",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 249918,
+      "lenB": 249918,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-air-pro-certificacion-grado-1-pm2-5-corea-del-sur",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 127144,
+      "lenB": 127101,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-air-pro-certificado-mcerts",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 105660,
+      "lenB": 105660,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-air-pro-sensor-multi-contaminante-preciso-airlab",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 107548,
+      "lenB": 107548,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-api",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 147235,
+      "lenB": 147235,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-cloud-plataforma-web-calidad-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 177839,
+      "lenB": 177839,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-colabora-en-la-estrategia-de-economia-circular-de-navarra",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 116217,
+      "lenB": 116174,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-en-la-jornada-iot-del-instituto-smart-cities-de-la-upna",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95343,
+      "lenB": 95300,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-en-ute-con-labaqua-monitorizara-la-calidad-del-aire-y-contaminacion-acustica-en-los-puertos-baleares",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104195,
+      "lenB": 104195,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-gana-el-premio-best-air-quality-network-monitoring-award-en-aqe-2024",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104626,
+      "lenB": 104669,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-obtiene-el-sello-reconcilia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 112223,
+      "lenB": 112223,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-oem-industrial-iot-en-el-basque-industry-4-0",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97704,
+      "lenB": 97704,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-participa-en-aqemission-monitoring-2017-con-alphasense",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95428,
+      "lenB": 95428,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-participa-en-el-smart-city-expo-world-congress-2016-con-el-icex",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 94437,
+      "lenB": 94437,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-participa-en-la-cuarta-sesion-de-la-asamblea-de-las-naciones-unidas-para-el-medio-ambiente",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 100650,
+      "lenB": 100650,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-participa-en-la-formacion-de-los-profesionales-del-futuro-4-0",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 99598,
+      "lenB": 99555,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-proveedor-sensores-calidad-aire-brightsites-signify",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 105354,
+      "lenB": 105397,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-referente-en-medicion-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 121986,
+      "lenB": 121986,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-seleccionado-para-un-evento-de-aceleracion-de-negocios-con-suez-en-barcelona",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97772,
+      "lenB": 97729,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/kunak-y-decidata-ganan-el-reto-velatia-en-el-bizkaia-open-future",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97923,
+      "lenB": 97923,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/la-contaminacion-del-aire-el-asesino-silencioso-de-europa",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 163780,
+      "lenB": 163780,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/la-iaaf-apuesta-por-kunak-para-monitorizar-la-calidad-del-aire-en-pistas-de-atletismo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 106663,
+      "lenB": 106620,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/la-iaaf-invita-a-kunak-a-presentar-su-candidatura-como-socio-global-para-la-monitorizacion-de-la-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 94956,
+      "lenB": 94956,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/la-oms-ops-elige-a-kunak-para-medir-la-calidad-del-aire-en-haiti",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 99282,
+      "lenB": 99282,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/lanzamiento-kunak-air-pro",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 107022,
+      "lenB": 107022,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/ldar",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 166942,
+      "lenB": 166942,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/ldar-deteccion-y-reparacion-inteligente-de-fugas-industriales",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 271259,
+      "lenB": 271259,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/maraton-de-mexico-primera-vez-en-la-historia-en-monitorizar-la-calidad-del-aire-durante-una-maraton",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 99917,
+      "lenB": 99874,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/medicion-de-gases-en-los-vertederos-de-basura",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 256655,
+      "lenB": 256655,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/medicion-de-la-calidad-del-aire-en-puertos-maritimos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 127401,
+      "lenB": 127401,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/medicion-de-pm10-en-entornos-con-alta-presencia-de-particulas-gruesas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 199276,
+      "lenB": 199276,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/medidores-de-calidad-del-aire-mediciones-indicativas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 129087,
+      "lenB": 129087,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/medir-calidad-aire-asic-2022",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 120968,
+      "lenB": 120968,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/mencion-de-honor-de-la-us-epa-reto-wildland-fire-sensors-challenge",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 105445,
+      "lenB": 105402,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/metano",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 146640,
+      "lenB": 146597,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/microsensores-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 138054,
+      "lenB": 138054,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitor-calidad-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 285630,
+      "lenB": 285630,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitores-calidad-aire-moviles",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 147349,
+      "lenB": 147349,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-aire-remediacion-suelos-contaminados",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 291070,
+      "lenB": 291070,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-del-trafico-urbano",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 307040,
+      "lenB": 307040,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-en-refinerias",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 255016,
+      "lenB": 255016,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-de-emisiones-fugitivas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 229934,
+      "lenB": 229934,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 134555,
+      "lenB": 134555,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-de-la-calidad-del-aire-en-centros-de-datos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 300489,
+      "lenB": 300489,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-de-olores-en-edar",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 286925,
+      "lenB": 286925,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-mal-olor-industrial",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 193744,
+      "lenB": 193744,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-near-reference",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 264001,
+      "lenB": 264001,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monitorizacion-perimetral",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 229656,
+      "lenB": 229656,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/monoxido-de-carbono",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 163532,
+      "lenB": 163489,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/necesidad-estandares-y-programas-certificacion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 107585,
+      "lenB": 107585,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/newsletter",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 137583,
+      "lenB": 137583,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/normativa-seveso-el-control-de-riesgos-con-las-sustancias-peligrosas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 204527,
+      "lenB": 204527,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/nos-hemos-mudado",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95673,
+      "lenB": 95673,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/nueva-directiva-de-calidad-del-aire-ue-2024-2881",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 167499,
+      "lenB": 167499,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/oxido-nitrico-no",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 245759,
+      "lenB": 245759,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/oxidos-de-nitrogeno-nox",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 244719,
+      "lenB": 244719,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/oxigeno",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 195449,
+      "lenB": 195449,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/ozono-troposferico",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 148324,
+      "lenB": 148324,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/participamos-con-suez-en-el-4yfn-del-mobile-world-congress",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95021,
+      "lenB": 94978,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/particulas-en-suspension",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 137734,
+      "lenB": 137691,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/particulas-ultrafinas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 180770,
+      "lenB": 180727,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/particulas-ultrafinas-puf",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 244181,
+      "lenB": 244181,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/plan-recuperacion-transformacion-resiliencia-zbe",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 124311,
+      "lenB": 124311,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/politica-de-cookies",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104977,
+      "lenB": 104977,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/politica-de-privacidad-y-de-proteccion-de-datos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 82487,
+      "lenB": 82487,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/politica-de-seguridad-de-la-informacion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 98082,
+      "lenB": 98082,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/por-que-es-importante-monitorizar-en-tiempo-real",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 117022,
+      "lenB": 117022,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/premios-aqe-2024",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 115837,
+      "lenB": 115837,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/premios-pyme-2024-kunak",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 121185,
+      "lenB": 121185,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/presentamos-nuestra-solucion-de-calidad-del-aire-en-el-ii-foro-de-las-ciudades",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95149,
+      "lenB": 95149,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/presentamos-nuestra-solucion-para-productos-inteligentes-con-markibar-en-hostelco16",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95198,
+      "lenB": 95198,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/productos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 91099,
+      "lenB": 91056,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/productos-inteligentes-e-industria-4-0-en-imic-biemh-2018",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97795,
+      "lenB": 97795,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/proyecto-iaaf-instalado-en-yokohama-un-nuevo-equipo-de-monitorizacion-de-calidad-el-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103496,
+      "lenB": 103496,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/proyecto-pure-cities",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 189959,
+      "lenB": 189959,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/proyecto-simgo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97338,
+      "lenB": 97338,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/que-esta-pasando-con-la-calidad-del-aire-en-ciudad-de-mexico",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 111410,
+      "lenB": 111410,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/quemas-prescritas-agricolas-calidad-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 125864,
+      "lenB": 125864,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 91483,
+      "lenB": 91483,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/articulos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 151955,
+      "lenB": 151912,
+      "primeraDiff": 1809
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-en-la-construccion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 105677,
+      "lenB": 105634,
+      "primeraDiff": 1793
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-en-puertos-y-aeropuertos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 98689,
+      "lenB": 98646,
+      "primeraDiff": 1797
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-minera",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 94500,
+      "lenB": 94457,
+      "primeraDiff": 1833
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-urbana",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 150820,
+      "lenB": 150820,
+      "primeraDiff": 1764
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-urbana/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 121479,
+      "lenB": 121436,
+      "primeraDiff": 1556
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-y-salud",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 147055,
+      "lenB": 147055,
+      "primeraDiff": 1653
+    },
+    {
+      "ruta": "/recursos/articulos/contaminacion-y-salud/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 107119,
+      "lenB": 107076,
+      "primeraDiff": 1698
+    },
+    {
+      "ruta": "/recursos/articulos/industria-y-contaminacion-por-olores",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 149026,
+      "lenB": 148983,
+      "primeraDiff": 1809
+    },
+    {
+      "ruta": "/recursos/articulos/industria-y-contaminacion-por-olores/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 109278,
+      "lenB": 109235,
+      "primeraDiff": 1693
+    },
+    {
+      "ruta": "/recursos/articulos/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 152177,
+      "lenB": 152134,
+      "primeraDiff": 1736
+    },
+    {
+      "ruta": "/recursos/articulos/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 148437,
+      "lenB": 148394,
+      "primeraDiff": 1769
+    },
+    {
+      "ruta": "/recursos/articulos/page/4",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 140889,
+      "lenB": 140846,
+      "primeraDiff": 1757
+    },
+    {
+      "ruta": "/recursos/articulos/page/5",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 139509,
+      "lenB": 139509,
+      "primeraDiff": 1536
+    },
+    {
+      "ruta": "/recursos/articulos/page/6",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 113056,
+      "lenB": 113013,
+      "primeraDiff": 1791
+    },
+    {
+      "ruta": "/recursos/articulos/petroleo-y-gas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 102079,
+      "lenB": 102036,
+      "primeraDiff": 1757
+    },
+    {
+      "ruta": "/recursos/articulos/productos-kunak",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 112380,
+      "lenB": 112337,
+      "primeraDiff": 1721
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 83439,
+      "lenB": 83439,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-detallada-de-la-calidad-del-aire-urbano-a-partir-de-mediciones-moviles-de-la-contaminacion-atmosferica",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103733,
+      "lenB": 103733,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 102501,
+      "lenB": 102501,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/correlacion-entre-las-actividades-de-los-cruceros-y-las-concentraciones-de-pm-en-el-aire-de-la-bahia-de-kotor",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103671,
+      "lenB": 103628,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/desafio-de-sensores-contra-incendios-forestales-de-la-us-epa",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103980,
+      "lenB": 103980,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-del-uso-de-estaciones-de-control-de-la-calidad-del-aire-basadas-en-sensores-electroquimicos-para-la-deteccion-precoz-de-olores",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 100937,
+      "lenB": 100980,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/evaluacion-espaciotemporal-y-cartografia-de-la-calidad-del-aire-y-la-contaminacion-acustica-en-una-megaciudad-latinoamericana",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 105089,
+      "lenB": 105046,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/exposicion-de-los-atletas-a-la-contaminacion-atmosferica-durante-los-mundiales-de-atletismo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103012,
+      "lenB": 103012,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 99907,
+      "lenB": 99864,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/inferencia-espaciotemporal-de-la-calidad-del-aire-a-partir-de-datos-de-sensores-de-bajo-coste",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 102172,
+      "lenB": 102172,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/plan-de-control-ambiental-de-las-obras-mahou-calderon-2018-2020-en-la-ciudad-de-madrid",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 100695,
+      "lenB": 100695,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/redes-de-sensores-de-la-calidad-del-aire-para-la-elaboracion-de-politicas-basadas-en-pruebas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103280,
+      "lenB": 103280,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sensores-amperometricos-de-gas-como-plataforma-tecnologica-emergente-de-bajo-coste-para-aplicaciones-de-monitorizacion-de-la-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 102172,
+      "lenB": 102172,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/sistemas-de-sensores-de-la-calidad-del-aire-como-herramientas-de-apoyo-a-la-orientacion-en-los-estadios-de-atletismo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 102525,
+      "lenB": 102525,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/articulos-cientificos-y-estudios/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 105532,
+      "lenB": 105489,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-airlab-de-microsensores-2023",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95453,
+      "lenB": 95496,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/desafio-de-los-sensores-de-incendios-forestales-evaluacion-del-solucionador-n-19",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97413,
+      "lenB": 97370,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/evaluacion-de-microsensores-para-la-medicion-de-calidad-del-aire-en-ciudad-de-mexico",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 96363,
+      "lenB": 96363,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-lite",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95006,
+      "lenB": 95049,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/informe-de-co-ubicacion-en-glasgow-kerbside-kunak-air-pro",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 94796,
+      "lenB": 94753,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-lite-informe-de-evaluacion-en-campo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95785,
+      "lenB": 95785,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/kunak-air-pro-informe-de-evaluacion-en-campo",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 95749,
+      "lenB": 95749,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/documentos-cientificos/evaluaciones-independientes/vigilancia-dinamica-y-estacionaria-de-la-exposicion-a-los-contaminantes-atmosfericos-durante-los-maratones",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 102941,
+      "lenB": 102941,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/estudios-cientificos/articulos-tecnicos/soluciones-avanzadas-de-monitorizacion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 96811,
+      "lenB": 96854,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/kunakpedia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 100776,
+      "lenB": 100776,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/preguntas-frecuentes",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 102207,
+      "lenB": 102207,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/recursos/seminarios-web",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97556,
+      "lenB": 97513,
+      "primeraDiff": 1773
+    },
+    {
+      "ruta": "/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 94509,
+      "lenB": 94509,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/red-de-sensores-de-calidad-del-aire-para-rivas-vaciamadrid-2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 97770,
+      "lenB": 97770,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/redes-de-vigilancia-de-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 139423,
+      "lenB": 139380,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/redes-hibridas-vigilancia-calidad-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 140732,
+      "lenB": 140732,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/ruido",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 180275,
+      "lenB": 180232,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/running-for-clean-air",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 204425,
+      "lenB": 204425,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sargazo-problemas-ambientales-y-monitorizacion-del-impacto",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 212091,
+      "lenB": 212091,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/scientific-category/articulos-cientificos-y-estudios",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 173440,
+      "lenB": 173483,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/scientific-category/articulos-cientificos-y-estudios/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 174621,
+      "lenB": 174621,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/scientific-category/articulos-cientificos-y-estudios/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 174452,
+      "lenB": 174452,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/scientific-category/articulos-tecnicos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 90895,
+      "lenB": 90895,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/scientific-category/evaluaciones-independientes",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 133845,
+      "lenB": 133802,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/scientific-category/evaluaciones-independientes/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 134843,
+      "lenB": 134843,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sebastian-coe-world-athletics-calidad-aire-factor-determinante-eleccion-ciudades",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 122573,
+      "lenB": 122573,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/edar",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 86611,
+      "lenB": 86611,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/industria/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87634,
+      "lenB": 87634,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/industria/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87634,
+      "lenB": 87634,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/investigacion-consultoria/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87685,
+      "lenB": 87685,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/metalurgia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 86619,
+      "lenB": 86619,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/oil-gas-es",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 86633,
+      "lenB": 86633,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/olores",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 86595,
+      "lenB": 86595,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/puertos",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 86657,
+      "lenB": 86657,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/puertos/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87612,
+      "lenB": 87612,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/sports",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 86595,
+      "lenB": 86595,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/urbano/page/2",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87550,
+      "lenB": 87550,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/urbano/page/3",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87550,
+      "lenB": 87550,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sector/urbano/page/4",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87550,
+      "lenB": 87550,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sectores",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 92090,
+      "lenB": 92090,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sectores/calidad-del-aire-en-las-ciudades",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 159768,
+      "lenB": 159768,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sectores/contaminacion-por-construccion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 152811,
+      "lenB": 152811,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sectores/control-de-emisiones-industriales",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 174974,
+      "lenB": 174931,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sectores/estudio-de-la-contaminacion-atmosferica",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 157330,
+      "lenB": 157287,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sectores/monitorizacion-ambiental-y-control-de-olores-en-edar",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 224859,
+      "lenB": 224859,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sectores/monitorizacion-de-emisiones-en-petroleo-y-gas",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 209195,
+      "lenB": 209238,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sensor-calidad-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 151206,
+      "lenB": 151206,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sensores-calidad-aire-exterior-pamplona",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 132274,
+      "lenB": 132274,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sensores-calidad-aire-exterior-rendimiento-uso",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 124576,
+      "lenB": 124576,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sensores-calidad-aire-urbano-donostia",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 145927,
+      "lenB": 145927,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sensores-calidad-aire-volcanes",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 167029,
+      "lenB": 167029,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sistema-critico-lora-k-de-ultra-largo-alcance-a-169-mhz-en-ettc2018",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 94860,
+      "lenB": 94860,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sistema-interno-de-informacion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 144118,
+      "lenB": 144118,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/software-de-medicion-calidad-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 212704,
+      "lenB": 212704,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/soporte",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 81523,
+      "lenB": 81480,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/soporte/centro-de-ayuda",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 104386,
+      "lenB": 104343,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 89229,
+      "lenB": 89186,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 137588,
+      "lenB": 137545,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/soporte/centro-de-ayuda/kunak-air-cloud/video-tutoriales",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 98841,
+      "lenB": 98841,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/soporte/servicio-de-reparacion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 87540,
+      "lenB": 87497,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/sulfuro-de-hidrogeno",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 196408,
+      "lenB": 196365,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/suscribete",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 137583,
+      "lenB": 137583,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/todas-nuestras-soluciones-en-el-iotswc",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 93465,
+      "lenB": 93465,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/vigilancia-calidad-aire-maraton-valencia-2019",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 108154,
+      "lenB": 108154,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/vigilancia-perimetral-industrial",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 128395,
+      "lenB": 128352,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/webinar-calidad-del-aire-en-europa",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103549,
+      "lenB": 103549,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/webinar-como-controlar-las-emisiones-en-mineria-junio-2025",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 129700,
+      "lenB": 129700,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/webinar-control-de-la-contaminacion-del-aire-en-la-industria",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 117566,
+      "lenB": 117566,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/webinar-control-de-olores-en-vertederos-y-edar",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 103551,
+      "lenB": 103508,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 109030,
+      "lenB": 109030,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/webinar-redes-hibridas-monitorizacion-ambiental",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 108909,
+      "lenB": 108866,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/workshop-sensores-ambientales-bajo-coste",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 101178,
+      "lenB": 101135,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/zonas-bajas-emisiones-monitorizacion",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 204533,
+      "lenB": 204533,
+      "primeraDiff": 1206
+    },
+    {
+      "ruta": "/zonas-de-bajas-emisiones-y-el-control-de-la-contaminacion-del-aire",
+      "statusA": 200,
+      "statusB": 200,
+      "lenA": 240366,
+      "lenB": 240366,
+      "primeraDiff": 1206
+    }
+  ]
+}

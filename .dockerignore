@@ -1,23 +1,62 @@
+# ⚠⚠ LOS PATRONES DE `.dockerignore` ESTÁN ANCLADOS A LA RAÍZ DEL CONTEXTO —
+# NO son como los de `.gitignore`, que casan a cualquier profundidad.
+#
+# Medido (144.ª, contexto de prueba con `busybox` y un `find`): con `.next` y
+# `.next-*` declarados, `/.next-raiz-x/` se excluye y **`apps/web/.next-121b/`
+# ENTRA**. O sea que en este monorepo `.next` a secas nunca ha excluido
+# `apps/web/.next` (359 MB) ni las 16 instantáneas `apps/web/.next-*` (~5 GB)
+# que dejan `publicador.mjs` y las campañas de medición. De ahí que cada
+# `docker build` arrastrara GBs de artefactos de build ajenos.
+#
+# Por eso todo lo que pueda aparecer ANIDADO va con `**/`.
+
 # Dependencies (reinstalled inside Docker)
 node_modules
+**/node_modules
 pnpm-debug.log*
 npm-debug.log*
 yarn-debug.log*
 
 # Build output
 .next
+**/.next
+# Instantáneas de la promoción de `publicador.mjs` y de campañas de medición
+# (.next-anterior, .next-nuevo, .next-<N>-previo…). `.gitignore:70` ya las
+# ignoraba (`.next-*/`); `.dockerignore` no.
+.next-*
+**/.next-*
 out
 build
 dist
 
 # Git
 .git
-.gitignore
+# ⚠ `.gitignore` SÍ entra, y no es descuido (144.ª, medido): Tailwind v4 lo usa
+# para su detección automática de contenido. Sin él dentro del contexto,
+# Tailwind escanea lo que la capa de arriba haya dejado entrar —artefactos de
+# builds viejos— y emite utilidades que el fuente nunca usa: 173 reglas de más
+# y +17 348 bytes de CSS (+15,4 %) contra el mismo build hecho en el host. La
+# página responde 200 y se ve bien, que es lo que lo hace invisible.
+# .gitignore  ← NO excluir
 
 # Environment files (pass via docker-compose env_file or runtime env vars)
+#
+# ⚠⚠ MEDIDO 2026-09-03 (144.ª): SIN LOS `**/` DE ABAJO, EL SECRETO VIAJA EN LA
+# IMAGEN FINAL. Los patrones anclados a la raíz no excluían `apps/web/.env` ni
+# `apps/cms/.env`, que es donde viven los de verdad. La cadena completa:
+# `COPY . .` los mete en `builder` → `output: standalone` copia el `.env` al
+# árbol standalone → `COPY --from=builder …/standalone ./` lo lleva al runner.
+# Comprobado dentro de la imagen construida: `/app/apps/web/.env` PRESENTE, y
+# el contenedor sin `DATABASE_URI` en `ENV` no tiraba por variable ausente —
+# intentaba conectar al host del `.env` (`ECONNREFUSED 127.0.0.1:55432`), o sea
+# que además lo estaba LEYENDO.
 .env
+**/.env
 .env.local
+**/.env.local
 .env.*.local
+**/.env.*.local
+!**/.env.example
 
 # Editor / OS
 .vscode
@@ -47,6 +86,12 @@ GEMINI.md
 # Docs / research (large, not needed at runtime)
 docs
 scripts
+
+# Corpus / assets del original y de las QA (GBs, no forman parte del build de
+# Next: son el material de recon y comparación, no algo que la app importe)
+media
+media-corpus
+corpus
 
 # Docker files themselves (no need to copy into image)
 Dockerfile
