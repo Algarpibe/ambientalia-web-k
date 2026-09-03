@@ -485,6 +485,134 @@ su fecha, **no como un modelo nuevo**: n = 3 contra n = 4, y este árbol tiene u
 
 ---
 
+### ESCALÓN 3 · EL BARRIDO HACIA ATRÁS
+
+#### Los sitios de la clase, cada uno con su veredicto
+
+**Y son 3 abiertos + 2 ya arreglados, no 5** (PASO 0 §3, barrido de 655 ficheros
+con su control de cuatro testigos):
+
+| sitio | S · K · I | veredicto |
+|---|---|---|
+| **`publicar/publicador.mjs:222`** | ✅ ✅ ✅ | ✅ **ARREGLADO Y MEDIDO** — shell quitado, `mataArbol()`, `puertoLibre()`, gancho de salida, log, y `esperaServido()`. P1 CONFIRMADA con 4 `buildId` servidos distintos |
+| **`qa/publicar.mjs:305`** (`ejecuta`) | ✅ — ✅ | ✅ **ARREGLADO**, con sus **dos testigos** por polaridad |
+| **`qa/lib.mjs:1778`** (`iniciarClon`) | ✅ — ✅ | ⛔ **FICHADA** — y (a) **NO APLICA con prueba**; sólo queda la mudez |
+| `publicador.mjs:240` · `:241` (el build) | ✅ — — | **NO APLICA**: se espera con `on("close")`, nadie le hace `kill()`, y su salida se **captura** (es la `cola` que alimenta `ultimoFallo`) |
+| `qa/a-sp13.mjs:129` · `qa/programada.mjs:180` | ✅ — — | **NO APLICA**: procesos de vida corta esperados; ni se matan ni se silencian |
+| **`qa/programada.mjs:119`** · **`qa/publicar.mjs:73`** | — · ✅ | ✅ **YA ESTABAN ARREGLADOS** antes de esta tanda: `spawn(process.execPath, […])` **sin shell**, y su propio comentario documenta por qué |
+
+**`qa/publicar.mjs:305` · ARREGLADO, y su verificación se toma DONDE EL CASO
+EXISTE** (§regla 28e): `ejecuta()` sólo se llama para
+`docker stop/start kunak-cms-pg`, que hoy devuelve **0**, así que la rama nueva
+**no se ejercita ahí** y un control atado a esa corrida no distinguiría *«la
+rama funciona»* de *«la rama está muerta»*. Los dos testigos, sobre la función
+**cortada del fuente por estructura** (972 chars, con control de que el corte
+trae las dos piezas del arreglo):
+
+| testigo | qué separa | resultado |
+|---|---|---|
+| **T-NO-OP** | `docker start kunak-cms-pg` → la rama **no** fira | ✅ `codigo 0 · aviso false` |
+| **T-GRITA** | `docker start <inventado>` → la rama fira **y el aviso sale** | ✅ `codigo 1 · aviso true`, con *«No such container»* dentro |
+
+Sin T-GRITA, un `ejecuta()` con la rama muerta pasaría T-NO-OP igual.
+`derivaciones/ejecuta-testigos-143.{mjs,json}`.
+
+⚠ **Y una observación que NO se arregla aquí:** Node emite
+`[DEP0190] Passing args to a child process with shell option true can lead to
+security vulnerabilities`. En `ejecuta()` los argumentos son **literales del
+fuente**, así que no hay inyección; quitar el `shell` cambiaría la resolución de
+`docker.exe` en Windows y necesita su propio NO-OP. Se **nombra**, no se toca.
+
+#### ⛔ `iniciarClon()` · FICHADA — y (a) NO APLICA CON PRUEBA
+
+**El defecto del huérfano NO APLICA, y no es una opinión: está en el fuente.**
+
+| pieza | qué hace | por qué cierra (a) |
+|---|---|---|
+| `puertoLibre()` | pide un puerto **libre al SO** en cada corrida | **ningún huérfano puede retener «su» puerto**: nunca es el mismo dos veces |
+| `parar()` | `taskkill /PID … /T /F` en Windows · `process.kill(-pid)` en POSIX | mata el **ÁRBOL**, que es lo que faltaba en el publicador |
+| `detached` en POSIX | grupo propio | para que el `kill` de grupo alcance a `next` |
+
+**Lo que queda es SÓLO la mudez** (`stdio: "ignore"`), y se ficha **con su radio
+declarado**: `lib.mjs` está en la ruta de **23 sondas** (unidad: *importan
+`lib.mjs` ∧ congelan ∧ usan `iniciarClon` ∧ no declaran `SIN_CLON`*), así que su
+NO-OP no se prueba con una corrida — es una tanda con su propio alcance.
+
+#### QUÉ MEDIDAS QUEDAN BAJO SOSPECHA, CON SU CARDINAL
+
+`derivaciones/bajo-sospecha-143.{mjs,json}`, con su control de dos polaridades
+(`clon-base` dentro · `ruido` fuera). **Y son DOS sospechas distintas, no una —
+meterlas en un número sería §*dos definiciones del mismo conjunto*:**
+
+| sospecha | cardinal | mecanismo |
+|---|---|---|
+| **S1 · LA MUDEZ** | **0 congeladas** | `iniciarClon` **TIRA** si el clon no responde en 90 s, así que un servidor que no arranca **no produce congelada: produce excepción**. La mudez pierde el **MOTIVO**, no la detección — es pérdida de diagnóstico, no de validez |
+| **S2 · EL DISCRIMINANTE AUSENTE** | **452 congeladas de 26 sondas** | **0** llevan `buildId` SERVIDO y **0** llevan si el clon fue PROPIO o EXTERNO. Ninguna se puede interrogar sobre qué build midió |
+
+**Y arreglar una NO mueve la otra:** quitar la mudez no añade discriminante, y
+añadir el `buildId` al `meta` no necesita tocar la mudez.
+
+⚠ **Los dos denominadores de sondas se publican CON SU UNIDAD, y NO se
+concilian** (§*cada denominador se escribe CON SU UNIDAD*): **23** en el PASO 0
+§(5) —*importan `lib.mjs` ∧ congelan ∧ `iniciarClon` ∧ sin `SIN_CLON`*— y **26**
+aquí —*`iniciarClon` ∧ congelan*—. **No miden el mismo conjunto**, así que los
+dos son ciertos; borrar uno sería tirar una medida buena.
+
+#### El `buildId` en el `meta` · ADITIVO, y el radio es 23 no 220
+
+Dimensionado en el PASO 0 §(5). El veredicto, con lo que decide:
+
+* **ADITIVO PARA EL DATO.** `w()` compara el **cuerpo entero**
+  (`previo === cuerpo`) y desvía a un nombre fechado si difiere. **Ningún valor
+  ya medido cambia de valor**, así que **ninguna congelada se vuelve FALSA** —
+  que es lo que §regla 5bis exige para hablar de caducidad. Pasan a estar
+  **INCOMPLETAS**;
+* **NO aditivo para la comparación byte a byte** entre dos congeladas: el campo
+  nuevo sale como diferencia;
+* **el radio de CADUCIDAD es 23**, no 220: un `buildId` servido sólo le dice algo
+  a una sonda que **abra el clon**, y las otras 196 de las 219 que importan
+  `lib.mjs` ni lo tocan. **Media hora, no una tanda.**
+
+**Se deja SIN ARREGLAR a propósito**: el encargo pedía dimensionarlo, y el
+número que decide —23— es el que convierte la deuda en trabajo con forma.
+
+#### ⛔ LA INCÓGNITA, EN LAS DOS DIRECCIONES Y SIN CERRAR
+
+> **¿Pueden los 131 de 428 documentos sin atribuir venir de medidas tomadas
+> contra un servidor anclado a otro build?**
+
+**HOY NO SE PUEDE PROBAR NI DESCARTAR, y la causa de la indecidibilidad es
+concreta: el archivo no lleva el discriminante.** Las dos direcciones, con lo
+derivado de cada una:
+
+| dirección | lo derivado |
+|---|---|
+| **A FAVOR de que puedan** | `html-cmp` mide por **canal SERVIDO** —`iniciarClon()` + `fetch(BASE + ruta)`, `html-cmp.mjs:357` y `:398`— **no leyendo ficheros del disco**. Y con `CLON=<base>` puesto, `iniciarClon` **no gestiona el servidor**: usa el externo, que **sí puede estar anclado**. En ese caso la congelada registraría el `buildId` **del disco** (`html-cmp.mjs:85`, `readFileSync(".next/BUILD_ID")`) **como si fuera el servido** |
+| **EN CONTRA** | un clon **PROPIO** de `iniciarClon` nace **después** del build y con **puerto libre pedido al SO**, así que **no puede estar anclado por construcción**. Y **`PUBLICAR_SERVIDOR=1` lo pone 0 sondas y 0 scripts**, o sea que el servidor de larga vida del publicador **no interviene en ninguna medición** |
+
+**LA CONSTRICCIÓN que estrecha la incógnita, derivada y barata: `0` scripts de
+`npm` ponen `CLON=`.** Así que la hipótesis del anclaje **exige una acción
+manual** —alguien escribiendo `CLON=` en su terminal— **y el archivo no registra
+si ocurrió**: 0 de 452 congeladas dicen si el clon fue propio o externo.
+
+> **Se escribe así, como incógnita con su causa de indecidibilidad, y NO como
+> hipótesis adoptada.** Es §*antes de fichar una indeterminación, enumera las
+> separadoras candidatas y di por qué cada una no sirve* — y aquí las tres
+> candidatas están enumeradas: **(1)** el `buildId` servido en el `meta` (no
+> existe: 0 de 452); **(2)** el `propio/externo` en el `meta` (no existe: 0 de
+> 452); **(3)** un registro de qué variables llevaba la terminal (no existe).
+> **La primera es la que la haría decidible en adelante**, y su coste está
+> dimensionado arriba: **23 sondas, media hora** — pero **hacia atrás no
+> recupera nada**, porque el dato no se tomó.
+
+⚠ **Y lo que NO se hace: atribuir los 131 a esto.** El intervalo cubre las tandas
+133.ª–137.ª y la hipótesis del anclaje es **una** de las candidatas, no la única
+ni la más probable. Adoptarla sin discriminante sería exactamente el
+*«pendiente inventado»* que §regla 29 describe — y peor, porque llegaría con una
+causa plausible de coartada.
+
+---
+
 ## 🔄 §142.ª · **EL RECORRIDO DEL EDITOR, ENTERO Y A LA ESCALA DE HOY** — 2026-09-02
 
 **Plan A de A+B.** Esta tanda **no escribe producto**: opera lo que ya existe y

@@ -1,0 +1,61 @@
+{
+  "fecha": "2026-09-03T14:41:39.105Z",
+  "resumen": {
+    "S1_LA_MUDEZ": {
+      "congeladasBajoSospecha": 0,
+      "mecanismo": "`iniciarClon` TIRA si el clon no responde en 90 s, así que un servidor que no arranca no produce congelada: produce excepción. La mudez pierde el MOTIVO, no la detección",
+      "tiraSiNoArranca": true
+    },
+    "S2_EL_DISCRIMINANTE_AUSENTE": {
+      "sondasQueMidenElClonYCongelan": 26,
+      "congeladasDeEsasSondas": 452,
+      "conBuildIdServido": 0,
+      "conPropioOExterno": 0,
+      "conBuildIdDeDisco": 11,
+      "sinDiscriminante": 452
+    },
+    "CONSTRICCION": {
+      "scriptsDeNpmQuePonenCLON": 0,
+      "nombres": [],
+      "lectura": "un clon EXTERNO exige poner `CLON=` A MANO. La hipótesis del anclaje no se puede descartar, pero requiere una acción manual que el archivo no registra"
+    }
+  },
+  "control": {
+    "C1_clonbase_mide_el_clon": {
+      "ok": true
+    },
+    "C2_ruido_no_mide_el_clon": {
+      "ok": true,
+      "nota": "mide sólo el original: si saliera dentro, el detector no discrimina"
+    },
+    "vale": true
+  },
+  "sondasQueMidenElClon": [
+    "ancho-cuerpo.mjs",
+    "barra-cmp.mjs",
+    "cabecera-cmp.mjs",
+    "clase-rango.mjs",
+    "clon-base.mjs",
+    "clon-estados.mjs",
+    "cmp-srcset.mjs",
+    "cms-roundtrip.mjs",
+    "comportamiento.mjs",
+    "f33-cmp.mjs",
+    "ficha-cmp.mjs",
+    "html-cmp.mjs",
+    "kb-barra.mjs",
+    "kb-cmp.mjs",
+    "lh-cmp.mjs",
+    "lh-letra.mjs",
+    "lib.mjs",
+    "lib.test.mjs",
+    "lib.test.neg.mjs",
+    "media-poblaciones.mjs",
+    "negativos.mjs",
+    "pie-cmp.mjs",
+    "productos-cmp.mjs",
+    "programada.mjs",
+    "rsc-original.neg.mjs",
+    "t4b-bloque.mjs"
+  ]
+}

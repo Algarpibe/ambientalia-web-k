@@ -300,10 +300,38 @@ try {
   fs.rmSync(path.join(RAIZ, "scripts/publicar/estado.next-prueba.json"), { force: true });
 }
 
+/**
+ * ⚠ 143.ª · ESCALÓN 3 — ERA EL SEGUNDO SITIO DE LA CLASE DE B1, EN SU CARA DE
+ * **OCULTACIÓN**: `stdio: "ignore"` **y el código de salida descartado**.
+ *
+ * No tenía el defecto del huérfano —se espera con `on("close")` y nunca se le
+ * hace `kill()`— así que lo suyo no era el puerto: era que **un `docker start`
+ * que falle dejaba la sonda siguiendo en silencio**. Y esta función existe justo
+ * para levantar la DB que el invariante D acaba de parar, o sea que su fallo es
+ * el que deja el entorno roto para todo lo que venga detrás.
+ *
+ * Se arregla la mitad accionable: **el código de salida se mira y un fallo se
+ * dice en voz alta con su cola**. `stdio` pasa a capturar en vez de tirar, que
+ * es de donde sale la cola.
+ */
 function ejecuta(cmd, args) {
   return new Promise((res) => {
-    const p = spawn(cmd, args, { shell: true, stdio: "ignore" });
-    p.on("close", res);
+    const p = spawn(cmd, args, { shell: true, stdio: ["ignore", "pipe", "pipe"] });
+    const cola = [];
+    for (const s of [p.stdout, p.stderr]) s.on("data", (d) => cola.push(d.toString()));
+    p.on("close", (codigo) => {
+      /* No se traga (§regla 6). Y no TIRA: esto corre en un `finally`, así que
+       * tirar aquí taparía el veredicto de los invariantes con un error de
+       * limpieza — §regla 31 otra vez, con el contenedor puesto en el `finally`. */
+      if (codigo !== 0)
+        console.log(
+          `\n⚠⚠ \`${cmd} ${args.join(" ")}\` FALLÓ con codigo ${codigo}.\n` +
+            `   Antes esto era MUDO (\`stdio: "ignore"\` y el codigo descartado), así que\n` +
+            `   una DB que no vuelve a levantarse dejaba el entorno roto en silencio.\n` +
+            `   ${cola.join("").split(/\r?\n/).filter(Boolean).slice(-6).join("\n   ")}`,
+        );
+      res(codigo);
+    });
   });
 }
 

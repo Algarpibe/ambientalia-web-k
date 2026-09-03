@@ -1,0 +1,39 @@
+{
+  "fecha": "2026-09-03T14:40:45.101Z",
+  "que": "los dos testigos de ejecuta() de qa/publicar.mjs, tomados donde el caso existe (§regla 28e)",
+  "cortadaDelFuente": {
+    "chars": 972,
+    "traeLasDosPiezas": true
+  },
+  "resultados": [
+    {
+      "etiqueta": "T-NO-OP",
+      "args": [
+        "start",
+        "kunak-cms-pg"
+      ],
+      "esperaCodigo": 0,
+      "esperaAviso": false,
+      "codigo": 0,
+      "aviso": false,
+      "ok": true,
+      "lineas": []
+    },
+    {
+      "etiqueta": "T-GRITA",
+      "args": [
+        "start",
+        "no-existe-este-contenedor-143"
+      ],
+      "esperaCodigo": "≠0",
+      "esperaAviso": true,
+      "codigo": 1,
+      "aviso": true,
+      "ok": true,
+      "lineas": [
+        "\n⚠⚠ `docker start no-existe-este-contenedor-143` FALLÓ con codigo 1.\n   Antes esto era MUDO (`stdio: \"ignore\"` y el codigo descartado), así que\n   una DB que no vuelve a levantarse dejaba el entorno roto en silencio.\n   Error response from daemon: No such container: no-existe-este-contenedor-143\n   failed to start containers: no-existe-este-contenedor-143"
+      ]
+    }
+  ],
+  "vale": true
+}
