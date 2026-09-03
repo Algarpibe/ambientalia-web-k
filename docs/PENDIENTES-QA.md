@@ -1,5 +1,214 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🔄 §143.ª · **QUE PUBLICAR CAMBIE EL SITIO** — 2026-09-03
+
+**B1 de B1–B4.** Los otros tres se verifican **publicando**, así que van detrás.
+El Dockerfile **no se toca aquí**: verificarlo sobre este defecto daría un verde
+que no vale.
+
+### PASO 0 · lo derivado antes de tocar nada
+
+**La tanda es la 143.ª, derivado del árbol:** `HEAD 6ccefb6` · árbol limpio ·
+último commit `142.ª CIERRE`. Coincide con lo que el encargo veía.
+
+#### (1) El entorno, en TRES pasos y con el socket como quinto canal
+
+Docker Desktop **no estaba corriendo** —`tasklist` da **0 procesos** `docker*`—
+así que el paso 1 no era arrancar el contenedor sino el demonio.
+
+| paso | orden | resultado |
+|---|---|---|
+| 0 · el canal que decide | socket a `127.0.0.1:55432` | **`ECONNREFUSED`** |
+| 1 | `Start-Process "Docker Desktop.exe"` | demonio responde |
+| 2 | `docker start kunak-cms-pg` (estaba `Exited (255)`) | arriba |
+| 3 | socket a `127.0.0.1:55432` | **ABIERTO en 1 ms** |
+
+**Y los dos canales que la 138.ª añadió, comprobados los dos** porque son los que
+distinguen «declarado» de «publicado» y «publicado» de «hay endpoint»:
+`NetworkSettings.Networks` trae **`bridge`** con su `EndpointID` —**no vacío**, o
+sea que no es el caso de la 138.ª— y `NetworkSettings.Ports` publica
+`5432/tcp → 0.0.0.0:55432`.
+
+**La DB conserva sus datos** —el socket abierto no lo prueba, así que se
+consultó—: **155 tablas** · `paginas=31 · productos=19 · entradas_blog=152` ·
+**`arquetipos=4`**.
+
+> ⚠ **Y ese `arquetipos=4` NO es lo que la última acta de F3-5 dice.** El plan
+> afirma `0 filas sembradas`, medido en la 139.ª. Hoy hay 4. **No se atribuye**:
+> queda como observación con su fecha, porque el intervalo cubre las tandas
+> 140.ª–142.ª y ninguna de ellas es esta tanda. Es dato para quien retome F3-5,
+> no un hallazgo de B1.
+
+#### (2) B1 SON DOS DEFECTOS APILADOS — los dos derivados del fuente
+
+**(a) `p.kill()` mata el `cmd.exe` y el `node` sobrevive con el puerto.** Ya
+medido por la 142.ª (cinco servidores, cinco `buildId`, PID 25100 con 7 builds
+encima). El sitio exacto, leído hoy: `publicador.mjs:222` es
+`spawn("npm", ["run","start","-w","web"], { shell:true, …, stdio:"ignore" })` y
+`paraServidor()` (~L208) hace `p.kill()` sobre esa variable.
+
+**(b) `next start` NO es el camino del build standalone, y su aviso va a stderr —
+donde el `stdio:"ignore"` lo entierra.** Derivado en los tres canales, no
+supuesto:
+
+| canal | qué dice |
+|---|---|
+| `apps/web/package.json` | `"start": "next start"` |
+| `apps/web/next.config.ts` | `output: "standalone"` |
+| **el fuente de Next 16.2.12** | `node_modules/next/dist/server/next.js:227` — `_log.warn('"next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.')` |
+
+⚠ **Y la forma exacta del (b) importa, porque cambia lo que hay que arreglar:**
+la línea 227 es un **`warn`**, no un `throw` — el `throw` está tres líneas más
+abajo y es para `output: "export"` (`E375`). O sea que **`next start` avisa y
+sigue sirviendo**. Así que (b) **no es «el servidor no arranca»**: es
+**«arranca por un camino que Next declara no soportado, y el aviso no se ve»**.
+Lo que eso rompe se mide en el ESCALÓN 2 — declararlo roto desde el fuente
+sería §*el veredicto lo da la salida servida* al revés.
+
+**Arreglar sólo (a) deja (b) en pie**, confirmado: son dos líneas distintas de
+dos ficheros distintos, y ningún cambio en `paraServidor()` toca `"start"`.
+
+#### (3) LA CLASE, barrida ENTERA y HACIA ATRÁS — y son 3, no 5
+
+`derivaciones/clase-spawn-shell-143.{mjs,json}` · **655 ficheros** · **13
+llamadas** a `spawn`/`spawnSync`/`fork` en fuente propio.
+
+⚠ **La v1 publicó 11 sitios con `shell:true` y DOS eran COMENTARIOS.** Es el
+falso positivo que §regla 9 nombra —*un barrido por literal casa dentro de
+comentarios*— y aquí llega en su forma peor: **el comentario DESCRIBE el
+defecto**, así que su texto contiene el patrón exacto. `programada.mjs:202` es
+literalmente *«la primera versión lo lanzaba con `spawn(..., {shell:true})`»*, o
+sea la documentación de un arreglo **ya hecho**, contada como código pendiente.
+La v2 despoja comentarios y cadenas antes de buscar (**180 803 caracteres
+despojados**) con su testigo positivo: el `spawnSync` real de `:180` sobrevive.
+
+**La clase tiene TRES componentes y no todos los sitios los tienen todos**, así
+que el veredicto depende de cuáles — y agregarlos daría el reparto equivocado:
+
+* **(S)** `shell: true` → el hijo real es `cmd.exe`, no el proceso que crees
+* **(K)** alguien le hace `kill()` → mata el shell, el nieto sobrevive
+* **(I)** `stdio: "ignore"` → entierra stderr, o sea el aviso **y** el fallo
+
+| sitio | S | K | I | veredicto |
+|---|---|---|---|---|
+| **`publicar/publicador.mjs:222`** | ✅ | ✅ | ✅ | **CLASE PLENA — es B1** |
+| `qa/lib.mjs:1778` (`iniciarClon`) | ✅ | — | ✅ | **CLASE MUDA** (stderr enterrado) |
+| `qa/publicar.mjs:305` (`ejecuta`) | ✅ | — | ✅ | **CLASE MUDA** |
+| `publicador.mjs:240` · `:241` (el build) | ✅ | — | — | ALCANZADO, no ejerce |
+| `qa/a-sp13.mjs:129` | ✅ | — | — | ALCANZADO, no ejerce |
+| `qa/programada.mjs:180` (`spawnSync`) | ✅ | — | — | ALCANZADO, no ejerce |
+| **`qa/programada.mjs:119`** | — | — | ✅ | **YA ARREGLADO** el shell |
+| **`qa/publicar.mjs:73`** | — | ✅ | ✅ | **YA ARREGLADO** el shell |
+
+**O sea que de los cinco sitios del encargo, DOS ya estaban arreglados** —
+`programada.mjs` y `publicar.mjs` lanzan `spawn(process.execPath, […])` **sin
+shell**, y su propio comentario documenta por qué—. Lo que queda abierto son
+**1 CLASE PLENA + 2 CLASE MUDA**, y las dos mudas son de OCULTACIÓN, no de
+puerto huérfano.
+
+⚠ **Y una corrección al reparto, del propio detector:** marcó
+`publicar.mjs:305` como `K=true` y **no lo es**. En ese fichero hay **dos**
+variables llamadas `p` —la del publicador en `:73`, que sí se mata, y la de
+`ejecuta()` en `:305`, que se espera con `on("close")` y nunca se mata— y el
+detector las confundió por nombre. `:305` es **CLASE MUDA**, no plena. Lo que
+oculta es real: `ejecuta()` sirve para `docker stop`/`docker start
+kunak-cms-pg` y **su código de salida se descarta**, así que un `docker start`
+que falle deja la sonda siguiendo en silencio.
+
+#### (4) ⚠⚠ EL HALLAZGO MAYOR QUE EL ARREGLO · EL VERDE DE `qa:publicar` Y DE `publica-e2e` **NO PODÍA** PONERSE ROJO POR B1
+
+El encargo pedía derivar si podían. **No podían**, y se dice con cardinales
+porque *«el comparador sólo mira X»* y *«lo que cayó dentro no distinguía nada»*
+son dos afirmaciones distintas y **sólo la segunda explica un verde**:
+
+| cardinal | valor |
+|---|---|
+| invariantes de `publicar` + `publica-e2e` | 4 + 4 = **8** |
+| de esos 8, los que abren un socket contra el **servidor web** | **0** |
+| `fetch` de `publica-e2e` | **3**, y los **3** van al **publicador** (`URL_PUB`), ninguno al sitio |
+| apariciones de `PUBLICAR_SERVIDOR`/`iniciarClon`/`next start` en las dos sondas | **0** |
+| quién pone `PUBLICAR_SERVIDOR=1` en todo el árbol | **nadie** (0 sondas · 0 scripts de npm; sólo docs) |
+| sabotajes del negativo de `publica-e2e` | **2**, y caen **E1** y **E2** — **0 ejercitan E4** |
+
+**Y el mecanismo es más fino que «no lo mira»: `GESTIONA_SERVIDOR =
+process.env.PUBLICAR_SERVIDOR === "1"`, y `arrancaServidor()` retorna en la
+primera línea si es falso.** O sea que **el código donde vive B1 NO SE EJECUTA
+en ninguna corrida de sonda del repo**. Cero instancias separadoras **por
+construcción**, no por pobreza del dominio.
+
+> ⚠⚠ **Pero el hallazgo que de verdad enseña es OTRO, y está en el NOMBRE de un
+> invariante: `publica-e2e` TIENE el invariante que B1 viola — `E4·el cambio
+> llega SERVIDO` — y lo mide en el DISCO.**
+>
+> Su cuerpo (L287–306) es `rutasEmitidas(leeManifiesto())` tres veces, y
+> `leeManifiesto()` (`lib.mjs:609`) hace
+> `readFileSync(APP + "/.next/prerender-manifest.json")`. **Nunca abre un
+> socket.** Así que su verde es cierto **de la PROMOCIÓN** —el rename aterriza,
+> el manifiesto cambia— y **mudo sobre el SERVICIO**, que es exactamente el
+> eslabón donde B1 vive.
+>
+> **Es §*la causa común: el NIVEL al que se mide* con un contenedor nuevo en el
+> catálogo — EL ARTEFACTO EN DISCO, que está un nivel por encima de lo servido y
+> se lo come entero.** Y es §*el veredicto lo da la salida servida* en su forma
+> más barata de cometer: **el invariante se NOMBRA por lo servido y se MIDE en
+> el fichero**, así que quien lo lea no tiene forma de notar la diferencia.
+
+#### (5) EL HUECO DEL INSTRUMENTO, DIMENSIONADO — y no cuesta una tanda: cuesta 23 familias
+
+`derivaciones/buildid-servido-143.{mjs,json}`, con su control de tres testigos.
+
+**(a) ¿registra hoy alguna congelada el `buildId` SERVIDO?** **NO — 0 de 224
+sondas.** Y el reparto por CANAL es lo que contesta la pregunta, porque el campo
+existe y no dice de dónde sale:
+
+| canal | sondas | cuáles |
+|---|---|---|
+| **DISCO** (`.next/BUILD_ID`) | **4** | `html-cmp` · `lib.mjs` · `publicar` · `publicar.neg` |
+| **SERVIDO** (extraído de la respuesta) | **0** | — |
+
+**61 congeladas de 1594** llevan el campo, **las 61 del disco**. Y `clon-base`
+—cuyo `meta` es `{width, base, rutas}`— **no lleva ninguno**: 137 congeladas sin
+discriminante, con `base` llevando el puerto redactado.
+
+**(b) ⚠ Y la misma ceguera está DENTRO de la guarda que existe para esto.** La
+protección de `w()` contra corridas contaminadas es
+`RUTA_BUILD_ID = enApp(".next/BUILD_ID")`, o sea **disco contra disco**. Vigila
+*«¿reconstruyó alguien mientras medías?»* y es **ciega por construcción** a
+*«¿está el servidor anclado a otro build?»* — que no mueve el disco. Una
+congelada tomada contra un servidor anclado sale con **nombre limpio**.
+
+**(c) ¿ADITIVO o CADUCA?** **ADITIVO PARA EL DATO.** `w()` compara el **cuerpo
+entero** (`previo === cuerpo`) y desvía a un nombre fechado si difiere; **ningún
+valor ya medido cambia de valor**, así que **ninguna afirmación de una congelada
+se vuelve FALSA** — que es lo que §regla 5bis exige para hablar de caducidad.
+Pasan a estar **INCOMPLETAS**, no incorrectas. Lo que sí rompe es la
+**comparación byte a byte** entre dos congeladas: el campo nuevo sale como
+diferencia.
+
+**(d) Y el RADIO, con su unidad, porque el del encargo no se pudo reproducir:**
+
+| unidad | n |
+|---|---|
+| scripts de `npm` totales | 279 |
+| comandos `qa:*` | 230 |
+| ficheros `.mjs` en `scripts/qa` | 224 |
+| **que importan `lib.mjs`** | **219** |
+| que importan **y congelan** | 154 |
+| **que importan, congelan Y MIDEN EL CLON** ← el radio real | **23** |
+| familias de congeladas | 351 |
+
+**El «≥220 de 493» del encargo no se pudo derivar en ninguna de esas seis
+unidades.** El 220 encaja con *importar `lib.mjs`* (219); el 493 no encaja con
+nada que este árbol produzca hoy, así que **no se reproduce**: se publican las
+seis con su unidad (§*cada denominador se escribe CON SU UNIDAD*).
+
+> **Y la conclusión operativa del dimensionado: el radio de caducidad es 23, no
+> 220** — porque un `buildId` servido **sólo le dice algo a una sonda que abra
+> el clon**, y las otras 196 ni lo tocan. **Media hora**, no una tanda. Se deja
+> **SIN ARREGLAR** en esta tanda por lo que el encargo manda: dimensionarlo.
+
+---
+
 ## 🔄 §142.ª · **EL RECORRIDO DEL EDITOR, ENTERO Y A LA ESCALA DE HOY** — 2026-09-02
 
 **Plan A de A+B.** Esta tanda **no escribe producto**: opera lo que ya existe y

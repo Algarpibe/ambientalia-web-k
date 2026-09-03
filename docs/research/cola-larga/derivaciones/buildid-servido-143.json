@@ -1,0 +1,109 @@
+{
+  "fecha": "2026-09-03T13:51:46.184Z",
+  "resumen": {
+    "congeladasTotal": 1594,
+    "congeladasConCampoBuildId": 61,
+    "sondasQueEscribenBuildId_porCanal": {
+      "disco": 4,
+      "SERVIDO": 0,
+      "otro": 9
+    },
+    "sondasDisco": [
+      "html-cmp.mjs",
+      "lib.mjs",
+      "publicar.mjs",
+      "publicar.neg.mjs"
+    ],
+    "sondasServido": [],
+    "sondasEnQA": 224,
+    "importanLibMjs": 219,
+    "importanYCongelan": 154,
+    "importanYCongelanYMidenClon": 23,
+    "familiasDeCongeladas": 351,
+    "veredicto3": {
+      "wComparaCuerpoEntero": true,
+      "wDesviaSiDifiere": true,
+      "aditivoParaElDato": true,
+      "rompeComparacionByteABit": true,
+      "familiasQueSeDesviarianEnSuPrimeraCorrida": 23
+    }
+  },
+  "control": {
+    "T1_htmlcmp_es_DISCO": {
+      "ok": true,
+      "nota": "html-cmp lee .next/BUILD_ID"
+    },
+    "T2_clonbase_no_escribe_ninguno": {
+      "ok": true,
+      "nota": "clon-base.meta es {width, base, rutas}"
+    },
+    "T3_guarda_de_w_lee_DISCO": {
+      "ok": true,
+      "nota": "RUTA_BUILD_ID = enApp('.next/BUILD_ID') — ciega a un servidor anclado"
+    },
+    "vale": true
+  },
+  "congeladasConCampoBuildId": [
+    "html-antes-2026-08-07-2.json",
+    "html-antes-2026-08-07.json",
+    "html-antes-2026-08-08.json",
+    "html-antes.json",
+    "html-base-vacia-neg-base-vacia.json",
+    "html-cascaron-antes.json",
+    "html-cascaron-despues.json",
+    "html-casi-toda-sin-comparar-neg-casi-toda-sin-comparar.json",
+    "html-cmp-neg-base-vacia-base.json",
+    "html-cmp-neg-casi-toda-sin-comparar-base.json",
+    "html-cmp-neg-filas-alteradas-base.json",
+    "html-cmp-neg-filas-renumeradas-base.json",
+    "html-cmp-neg-inv-bytescarga-base.json",
+    "html-cmp-neg-inv-nfilas-base.json",
+    "html-cmp-neg-inv-nmascaras-base.json",
+    "html-cmp-neg-ruta-fantasma-base.json",
+    "html-cmp-neg-solo-bundle-base.json",
+    "html-cmp-neg-solo-reparto-base.json",
+    "html-cmp-neg-visible-alterado-base.json",
+    "html-control-diana-neg-control-diana.json",
+    "html-control-neg-control.json",
+    "html-despues-2026-08-10.json",
+    "html-despues.json",
+    "html-diag-neg-diag.json",
+    "html-diag2-neg-diag2.json",
+    "html-f23-base.json",
+    "html-f23-canario-SONDA-UN-SOLO-NIVEL.json",
+    "html-f23-canario.json",
+    "html-f23-casos.json",
+    "html-f23-contrato.json",
+    "html-f23-prod-base.json",
+    "html-f23-prod-control.json",
+    "html-f23-prod-d3.json",
+    "html-f23-prod-despues.json",
+    "html-f23-prod-diag2.json",
+    "html-f23-prod-fase.json",
+    "html-f23-prod-operacion.json",
+    "html-f23-productos-diag.json",
+    "html-f23-productos.json",
+    "html-f23-sectores.json",
+    "html-f23-slug-REVERTIDA-1-async.json",
+    "html-f23-slug-REVERTIDA-2-t4a.json",
+    "html-f24-base.json",
+    "html-f24-verif.json",
+    "html-f25-paso0.json",
+    "html-filas-alteradas-neg-filas-alteradas.json",
+    "html-filas-renumeradas-neg-filas-renumeradas.json",
+    "html-hash-alterado-neg-hash-alterado.json",
+    "html-inv-bytescarga-neg-inv-bytescarga.json",
+    "html-inv-nfilas-neg-inv-nfilas.json",
+    "html-inv-nmascaras-neg-inv-nmascaras.json",
+    "html-operacion-antes.json",
+    "html-operacion-despues.json",
+    "html-ruta-fantasma-neg-ruta-fantasma.json",
+    "html-solo-bundle-neg-solo-bundle.json",
+    "html-solo-reparto-neg-solo-reparto.json",
+    "html-visible-alterado-neg-visible-alterado.json",
+    "publicador-estado-2026-08-09-31rutas.json",
+    "publicador-estado-2026-09-02-142a-P1.json",
+    "publicador-estado-2026-09-02-142a-recorrido-completo.json",
+    "recorrido-editor-142a.json"
+  ]
+}

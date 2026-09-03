@@ -1,0 +1,181 @@
+{
+  "fecha": "2026-09-03T13:12:54.362Z",
+  "resumen": {
+    "ficherosBarridos": 655,
+    "caracteresDespojados": 180803,
+    "llamadasHalladas": 13,
+    "conShellTrue": 7,
+    "CLASE_PLENA": 2,
+    "CLASE_KILL": 0,
+    "CLASE_MUDA": 1,
+    "ALCANZADO_sin_ejercer": 4,
+    "MUDO_sin_shell": 2,
+    "FUERA": 4
+  },
+  "control": {
+    "T1_publicador222_ejerce": {
+      "ok": true,
+      "veredicto": "CLASE-PLENA (S+K+I)"
+    },
+    "T2_publicar73_ya_arreglado": {
+      "ok": true,
+      "S": false,
+      "veredicto": "MUDO (I) sin shell — no hay nieto, pero stderr enterrado"
+    },
+    "T3_comentario_202_despojado": {
+      "ok": true,
+      "caracteresDespojados": 180803,
+      "halladoEn202": false
+    },
+    "T4_codigo_180_sobrevive": {
+      "ok": true,
+      "S": true
+    },
+    "vale": true
+  },
+  "sitios": [
+    {
+      "rel": "scripts/publicar/publicador.mjs",
+      "linea": 222,
+      "fn": "spawn",
+      "variable": "servidorWeb",
+      "S": true,
+      "K": true,
+      "I": true,
+      "esperado": false,
+      "veredicto": "CLASE-PLENA (S+K+I)"
+    },
+    {
+      "rel": "scripts/publicar/publicador.mjs",
+      "linea": 240,
+      "fn": "spawn",
+      "variable": null,
+      "S": true,
+      "K": false,
+      "I": false,
+      "esperado": false,
+      "veredicto": "ALCANZADO (S) sin ejercer"
+    },
+    {
+      "rel": "scripts/publicar/publicador.mjs",
+      "linea": 241,
+      "fn": "spawn",
+      "variable": null,
+      "S": true,
+      "K": false,
+      "I": false,
+      "esperado": false,
+      "veredicto": "ALCANZADO (S) sin ejercer"
+    },
+    {
+      "rel": "scripts/qa/a-sp13.mjs",
+      "linea": 129,
+      "fn": "spawn",
+      "variable": "p",
+      "S": true,
+      "K": false,
+      "I": false,
+      "esperado": false,
+      "veredicto": "ALCANZADO (S) sin ejercer"
+    },
+    {
+      "rel": "scripts/qa/lib.mjs",
+      "linea": 1778,
+      "fn": "spawn",
+      "variable": "hijo",
+      "S": true,
+      "K": false,
+      "I": true,
+      "esperado": false,
+      "veredicto": "CLASE-MUDA (S+I) — sin kill, stderr enterrado"
+    },
+    {
+      "rel": "scripts/qa/lib.mjs",
+      "linea": 1796,
+      "fn": "spawnSync",
+      "variable": null,
+      "S": false,
+      "K": false,
+      "I": true,
+      "esperado": true,
+      "veredicto": "FUERA-DE-ALCANCE"
+    },
+    {
+      "rel": "scripts/qa/lib.test.mjs",
+      "linea": 377,
+      "fn": "spawnSync",
+      "variable": "r",
+      "S": false,
+      "K": false,
+      "I": false,
+      "esperado": true,
+      "veredicto": "FUERA-DE-ALCANCE"
+    },
+    {
+      "rel": "scripts/qa/lib.test.mjs",
+      "linea": 437,
+      "fn": "spawnSync",
+      "variable": "r",
+      "S": false,
+      "K": false,
+      "I": false,
+      "esperado": true,
+      "veredicto": "FUERA-DE-ALCANCE"
+    },
+    {
+      "rel": "scripts/qa/programada.mjs",
+      "linea": 119,
+      "fn": "spawn",
+      "variable": "servidor",
+      "S": false,
+      "K": false,
+      "I": true,
+      "esperado": false,
+      "veredicto": "MUDO (I) sin shell — no hay nieto, pero stderr enterrado"
+    },
+    {
+      "rel": "scripts/qa/programada.mjs",
+      "linea": 180,
+      "fn": "spawnSync",
+      "variable": "b",
+      "S": true,
+      "K": false,
+      "I": false,
+      "esperado": true,
+      "veredicto": "ALCANZADO (S) sin ejercer"
+    },
+    {
+      "rel": "scripts/qa/publica-e2e.mjs",
+      "linea": 86,
+      "fn": "spawn",
+      "variable": "p",
+      "S": false,
+      "K": true,
+      "I": false,
+      "esperado": false,
+      "veredicto": "FUERA-DE-ALCANCE"
+    },
+    {
+      "rel": "scripts/qa/publicar.mjs",
+      "linea": 73,
+      "fn": "spawn",
+      "variable": "p",
+      "S": false,
+      "K": true,
+      "I": true,
+      "esperado": false,
+      "veredicto": "MUDO (I) sin shell — no hay nieto, pero stderr enterrado"
+    },
+    {
+      "rel": "scripts/qa/publicar.mjs",
+      "linea": 305,
+      "fn": "spawn",
+      "variable": "p",
+      "S": true,
+      "K": true,
+      "I": true,
+      "esperado": false,
+      "veredicto": "CLASE-PLENA (S+K+I)"
+    }
+  ]
+}
