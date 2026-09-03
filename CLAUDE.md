@@ -6516,6 +6516,105 @@ matado el servidor de otra persona.
    le dijo otra cosa está compitiendo con el resto de la máquina, y su fallo de
    enlace es el fallo silencioso de siempre si su `stdio` va a `"ignore"`.
 
+---
+
+**58 · DOS FICHEROS DE PATRONES CON LA MISMA SINTAXIS PUEDEN TENER ANCLAJE
+DISTINTO — Y EL PATRÓN COPIADO DE UNO A OTRO SE LEE CORRECTO Y NO EXCLUYE
+NADA.** (2026-09-03)
+
+§*el marcador prueba que el build es nuevo, no que el cambio tenga efecto* dice
+que un cambio puede estar servido y ser inerte. Ésta es su forma en un fichero
+de exclusiones, y es peor porque **el patrón se copia del hermano que sí
+funciona**:
+
+> **`.gitignore` casa a CUALQUIER PROFUNDIDAD; `.dockerignore` está ANCLADO A LA
+> RAÍZ del contexto.** Así que un patrón que en uno excluye todo el árbol, en el
+> otro excluye **sólo el nivel superior** — sin error, sin aviso, y con la línea
+> escrita a la vista de quien la revise.
+
+**Medido:** `.next` en `.dockerignore` nunca excluyó `apps/web/.next`, y las 16
+instantáneas `apps/web/.next-*` de campañas anteriores tampoco. Coste: **483 s
+de 676 (71 %)** de un `docker build` gastados en transferir artefactos ajenos —
+y, peor, **CSS fabricado desde ellos** (abajo, §regla 60).
+
+**Y el arreglo también se equivocó primero, por la misma causa:** añadir
+`.next-*` es **insuficiente**; hace falta `**/.next`, `**/.next-*`,
+`**/node_modules`, `**/.env`.
+
+**Las dos mitades operativas:**
+
+1. **antes de copiar un patrón de un fichero de exclusiones a otro, comprueba su
+   SEMÁNTICA DE ANCLAJE** — y no leyendo la documentación, sino con un contexto
+   de prueba de tres ficheros: uno en la raíz, uno anidado, y un `find` que diga
+   cuál llegó. Cuesta un minuto y contesta al bit;
+2. **y la verificación va POR LAS DOS POLARIDADES** (§regla 28d): que excluya lo
+   anidado **y** que conserve lo que no debe tocar. Un `**/` demasiado ancho se
+   lleva el contenido bueno con la misma cara de arreglo.
+
+---
+
+**59 · COMPROBAR QUE UN SECRETO NO ESTÁ EN LAS VARIABLES NO ES COMPROBAR QUE NO
+ESTÁ EN EL ARTEFACTO.** (2026-09-03)
+
+Es §El principio —*lo DECLARADO y lo PUBLICADO son dos canales*— con el objeto
+puesto en un secreto, y su trampa es que **la comprobación que uno hace es
+correcta**:
+
+> **`ARG`/`ENV` bien acotados a una etapa de build son una afirmación sobre las
+> VARIABLES.** El secreto puede viajar igual **como FICHERO**, por una cadena de
+> copias en la que **ninguna etapa lo nombra**: el `.env` entra al contexto (su
+> patrón de exclusión estaba anclado a la raíz), `COPY . .` lo mete, el
+> empaquetador lo **copia dentro de su salida** —Next lo hace con
+> `output: standalone`—, y el `COPY` de esa salida lo lleva a la imagen final.
+
+**Medido:** `env | grep DATABASE_URI` → **0** dentro del contenedor, y
+`find /app -name "*.env"` → **`/app/apps/web/.env`**. Las dos son ciertas. Y la
+prueba de que además se LEE: sin la variable puesta, el proceso **no tira por
+ausencia** — intenta conectar al host que dice el fichero.
+
+**Las tres mitades operativas:**
+
+1. **la pregunta se hace sobre el ARTEFACTO, no sobre su receta**: `find` dentro
+   de la imagen construida, no `grep` sobre el `Dockerfile`;
+2. **con CONTROL POSITIVO en la misma corrida** — la versión ANTES del arreglo
+   tiene que dar ≥1, o el 0 de la de después no es ausencia: es una sonda muda
+   (§sondas 4);
+3. **y no hace falta leer el fichero para probarlo.** Su presencia más el error
+   de conexión al host que contiene ya cierran el mecanismo; leerlo sólo añade
+   el secreto a la transcripción.
+
+⚠ **Y el linter que avisa de esto SUB-CASA, así que su silencio no es una
+prueba:** el `SecretsUsedInArgOrEnv` de Docker marcó `PAYLOAD_SECRET` y **no**
+`DATABASE_URI`, que lleva la contraseña dentro — casa por el NOMBRE de la
+variable, no por su contenido.
+
+---
+
+**60 · EXCLUIR UN FICHERO «POR HIGIENE» PUEDE CAMBIAR EL COMPORTAMIENTO DE UNA
+HERRAMIENTA, NO SÓLO EL TAMAÑO — Y LA SALIDA SIGUE SIENDO PLAUSIBLE.**
+(2026-09-03)
+
+Una lista de exclusiones se escribe pensando en peso y en limpieza. Pero:
+
+> **Hay ficheros que una herramienta LEE como parte de su contrato**, y
+> excluirlos no la rompe: **le cambia el resultado**. Tailwind v4 usa
+> `.gitignore` para su detección automática de contenido; sin él dentro del
+> contexto de build, escanea lo que la capa de arriba haya dejado entrar y emite
+> utilidades **de artefactos de builds viejos**.
+
+**Medido:** `+17 348 bytes de CSS (+15,4 %)` y **173 reglas** que el fuente no
+usa, con su procedencia comprobada clase por clase —`not-sr-only` **0** veces en
+`src` y **4** en un `.next-*` de otra tanda—. **La página respondía `200`, tenía
+CSS y se veía bien.**
+
+**Operativamente, y es una pregunta por línea:** ante cada entrada de una lista
+de exclusiones, **¿alguna herramienta del build LEE este fichero?** Si la
+respuesta no es un no derivado, la entrada se declara con su motivo — y si se
+excluye igual, el efecto se mide **por el render**, no por el tamaño.
+
+> **Y la señal de que ya está pasando es la de siempre: un artefacto que crece
+> sin que el fuente lo explique.** Aquí, dos hojas de estilo de más y un
+> conjunto de reglas que no casa con ninguna clase escrita.
 
 ---
 
