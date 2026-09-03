@@ -172,6 +172,25 @@ tienen código que ejecutar dentro de la imagen; (c) reaparece **desplazado**
 —como verificación externa post-redeploy—, no como el mismo defecto de código,
 así que no cuenta como reaparición para el cardinal que pide P3.
 
+**P4 · LA DB EN RUNTIME SON DOS PREDICCIONES, NO UNA — y se parten ANTES de
+arrancar el contenedor, o lo que es DISEÑO se ficha como hallazgo.**
+
+Corrección del propietario, aceptada y verificada contra el árbol antes de
+correr nada. Las dos mitades no se leen igual y por eso van por separado:
+
+| | qué se predice | si falla sin `DATABASE_URI` |
+|---|---|---|
+| **(a) las 426 rutas SSG** | **NO tocan Postgres en petición.** Derivado, no supuesto: **0** `export const revalidate` en todo `apps/web/src/app` (no hay ISR), **0** *route handlers* (`route.ts`), y `dynamicParams = false` en las 20 rutas con segmento dinámico —lo que no esté prerenderizado da 404 sin consultar nada— | **ES HALLAZGO.** Significaría que algo lee la DB en un camino que tiene que ser estático |
+| **(b) `/vista-previa/[slug]`** | **NECESITA la DB por construcción.** `export const dynamic = "force-dynamic"` (línea 62) + `cms()` → `payload.find()` en cada petición (L111-112); su propia cabecera lo dice: *«lee Postgres en cada petición»* (L20). Y **no entra en el universo de P2**: su L25 declara que no aparece en el `prerender-manifest` | **NO se ficha: es lo esperado.** Lo que SÍ se ficha —y es de **B3**, no de aquí— es que `docker-compose.yml` no le dé forma de alcanzarla |
+
+**Y la mitad de B3 ya está derivada desde el PASO 0**, así que se declara aquí
+en vez de dejarla para el ESCALÓN 3: el servicio `app` de `docker-compose.yml`
+**no declara `DATABASE_URI`**, su `env_file` apunta a `.env`/`.env.local` **en
+la raíz, que no existen**, y el compose **no trae Postgres ni red que lo
+alcance**. O sea que el compose actual **no puede servir `/vista-previa`** —
+no por un defecto del contenedor, sino porque nadie le ha dado la variable.
+Eso es exactamente lo que B3 tiene que resolver.
+
 ## 🔄 §143.ª · **QUE PUBLICAR CAMBIE EL SITIO** — 2026-09-03
 
 **B1 de B1–B4.** Los otros tres se verifican **publicando**, así que van detrás.
