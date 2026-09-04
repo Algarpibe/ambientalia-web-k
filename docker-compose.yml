@@ -1,3 +1,10 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# MODELO DE PUBLICACIÓN: **B — volumen + `docker restart`** (`CMS-10`, 145.ª).
+#
+# El publicador corre FUERA de estos contenedores, construye con
+# `NEXT_DIST_DIR`, promociona por rename, y reinicia `app` con `docker restart`.
+# Aquí sólo vive la mitad del contrato que le toca al despliegue: qué se monta.
+# ═══════════════════════════════════════════════════════════════════════════
 services:
   app:
     build:
@@ -6,12 +13,42 @@ services:
       target: runner
     image: ai-website-cloner:latest
     container_name: ai-website-cloner
+    # ⚠ NO es decoración: es la política que hace posible la variante B′
+    # —publicador DENTRO, que se reinicia saliendo— si el destino no permitiera
+    # `docker restart` desde fuera. Medido (145.ª,
+    # `derivaciones/autorreinicio-145.json`): con `unless-stopped` un contenedor
+    # cuyo proceso principal sale VUELVE (RestartCount 0 → 4); con `no`, no.
     restart: unless-stopped
     ports:
       - "${PORT:-3000}:3000"
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
+      # ⚠ `:?` y no un defecto: sin ellas el proceso NO arranca, que es la
+      # dirección segura y lo que `TRASPASO-CMS.md §6` ya declara. Un defecto
+      # silencioso aquí es §regla 6 — convertir «no lo sé» en «está bien».
+      - DATABASE_URI=${DATABASE_URI:?falta DATABASE_URI}
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET:?falta PAYLOAD_SECRET}
+      # Opcional: el volumen persistente de la media (`CMS-0b`). Sin ella, la
+      # ruta anclada del paquete es una decisión, no un accidente del cwd.
+      - MEDIA_DIR=${MEDIA_DIR:-}
+    volumes:
+      # ── EL VOLUMEN DE B ──────────────────────────────────────────────────
+      # Lo que el `server.js` de la IMAGEN lee: manifiestos, `server/` y
+      # `static`. `:ro` porque quien escribe es el publicador, desde el host.
+      - ${BUILD_DIR:-./apps/web/.next}:/app/apps/web/.next:ro
+      # ── EL TAPÓN, Y NO ES HIGIENE ────────────────────────────────────────
+      # `output: standalone` deja una COPIA del `.env` del paquete dentro de
+      # `.next/standalone`, así que montar `.next` entero **reintroduce en el
+      # contenedor el secreto que la 144.ª sacó de la imagen**. Medido con su
+      # control positivo (145.ª, `derivaciones/secreto-por-volumen-145.json`):
+      # imagen sola 0 · con el volumen **1** · con este tapón **0**, y el sitio
+      # sigue sirviendo el `buildId` del host.
+      #
+      # Y no quita nada: en modo B el `server.js` que corre es el de la IMAGEN
+      # —con sus `node_modules` de Linux—, no el del standalone, que además
+      # viene compilado para la plataforma del host.
+      - /app/apps/web/.next/standalone
     env_file:
       - path: .env.local
         required: false

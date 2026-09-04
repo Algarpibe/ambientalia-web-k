@@ -1,0 +1,151 @@
+puertos: control :4200 · web (contenedor) :3910
+buildId en DISCO antes de empezar: VPZgeKpZ9gKOChK9yUFmD
+contenedor kunak-b-monotono arrancado desde ai-website-cloner:144-fix
+contenedor de PARTIDA sirve VPZgeKpZ9gKOChK9yUFmD · C2 id=200 falso=404
+  [pub] [2026-09-04T18:20:12.843Z] publicador escuchando en :4200 · web :3910 · gestiona servidor: true · modo CONTENEDOR: kunak-b-monotono
+publicador vivo, pid 29788, modo contenedor
+
+──── PUBLICACIÓN 1/3 ────
+  [pub] [2026-09-04T18:20:13.045Z] build #1 — monotono-145 #1
+  /rebuild → 202
+  [pub] (node:29788) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  [pub] 
+> web@0.3.1 build
+> next build
+
+  [pub] ▲ Next.js 16.2.12 (Turbopack)
+  [pub] - Environments: .env
+
+  [pub]   Creating an optimized production build ...
+  [pub] (node:22300) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  [pub] (node:38916) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  [pub] (node:26104) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  [pub] ✓ Compiled successfully in 45s
+  [pub]   Running TypeScript ...
+  [pub]   Finished TypeScript in 11.7s ...
+  [pub]   Collecting page data using 15 workers ...
+  [pub]   Generating static pages using 15 workers (0/429) ...
+  [pub]   Generating static pages using 15 workers (107/429) 
+  [pub]   Generating static pages using 15 workers (214/429) 
+  [pub]   Generating static pages using 15 workers (321/429) 
+  [pub] ✓ Generating static pages using 15 workers (429/429) in 76s
+  [pub]   Finalizing page optimization ...
+  [pub] 
+  [pub] Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ● /[slug]
+│ ├ /estamos-listos-para-ayudarle
+│ ├ /nos-hemos-mudado
+│ ├ /webinar-deteccion-temprana-de-episodios-de-contaminacion-por-malos-olores-en-edar
+│ └ [+205 more paths]
+├ ○ /accesorios
+├ ○ /blog
+├ ● /blog/page/[n]
+│ ├ /blog/page/2
+│ ├ /blog/page/3
+│ ├ /blog/page/4
+│ └ [+4 more paths]
+├ ● /case-studies/[slug]
+│ ├ /case-studies/monitorizacion-calidad-aire-planta-fertilizantes-lifeco
+│ ├ /case-studies/monitoreo-ambiental-en-el-puerto-de-cotonu
+│ ├ /case-studies/monitoreo-del-trafico-y-la-calidad-del-aire-en-castel-d-ario
+│ └ /case-studies/distrito-baja-emision-rio-de-janeiro
+├ ○ /casos-de-exito
+├ ● /casos-de-exito/[slug]
+│ ├ /casos-de-exito/analisis-de-la-calidad-del-aire-estaciones-moviles-en-belgica
+│ ├ /casos-de-exito/red-calidad-de-aire-para-world-athletics
+│ ├ /casos-de-exito/transformacion-digital-y-un-aire-mas-limpio-en-etiopia
+│ └ [+50 more paths]
+├ ● /centro-de-ayuda/[...ruta]
+│ ├ /centro-de-ayuda/kunak-air/articulos-de-ayuda/como-garantiza-kunak-la-mejor-precision
+│ ├ /centro-de-ayuda/kunak-air/articulos-de-ayuda/evidencias-de-funcionamiento
+│ ├ /centro-de-ayuda/kunak-air/articulos-de-ayuda/por-que-kunak-air-es-la-mejor-estacion-de-calidad-del-aire
+│ └ [+6 more paths]
+├ ● /empresa/[...ruta]
+│ └ /empresa/premios-y-reconocimientos
+├ ● /etiqueta/[slug]
+│ ├ /etiqueta/sensor-de-calidad-del-aire
+│ ├ /etiqueta/emisiones-industriales
+│ ├ /etiqueta/monitorizacion-ambiental
+│ └ [+9 more paths]
+├ ● /etiqueta/[slug]/page/[n]
+│ ├ /etiqueta/sensor-de-calidad-del-aire/page/2
+│ ├ /etiqueta/sensor-de-calidad-del-aire/page/3
+│ ├ /etiqueta/sensor-de-calidad-del-aire/page/4
+│ └ [+21 more paths]
+├ ● /faqs/[slug]
+│ ├ /faqs/el-equipo-tiene-memoria-interna
+│ ├ /faqs/a-que-altura-debe-instalarse-el-equipo
+│ ├ /faqs/cual-es-la-duracion-de-la-bateria
+│ └ [+16 more paths]
+├ ○ /glosario
+├ ● /glosario/page/[n]
+│ ├ /glosario/page/2
+│ ├ /glosario/page/3
+│ ├ /glosario/page/4
+│ └ [+4 more paths]
+├ ○ /kunak-api
+├ ○ /monitor-calidad-aire
+├ ● /recursos/[...ruta]
+│ ├ /recursos/documentos-cientificos/articulos-cientificos-y-estudios/uso-de-un-sistema-basado-en-sensores-para-medir-con-precision-los-olores-a-bajas-concentraciones
+│ ├ /recursos/documentos-cientificos/articulos-cientificos-y-estudios/cartografia-movil-de-la-calidad-del-aire-mediante-sensores-instalados-en-vehiculos-del-servicio-postal
+│ ├ /recursos/documentos-cientificos/articulos-cientificos-y-estudios/idoneidad-de-una-red-de-comunicaciones-moviles-para-realizar-mediciones-de-la-calidad-del-aire-de-alta-resolucion
+│ └ [+41 more paths]
+├ ● /scientific-category/[slug]
+│ ├ /scientific-category/articulos-cientificos-y-estudios
+│ ├ /scientific-category/evaluaciones-independientes
+│ └ /scientific-category/articulos-tecnicos
+├ ● /scientific-category/[slug]/page/[n]
+│ ├ /scientific-category/articulos-cientificos-y-estudios/page/2
+│ ├ /scientific-category/articulos-cientificos-y-estudios/page/3
+│ └ /scientific-category/evaluaciones-independientes/page/2
+├ ● /sector/[slug]
+│ ├ /sector/edar
+│ ├ /sector/metalurgia
+│ ├ /sector/oil-gas-es
+│ └ [+3 more paths]
+├ ● /sector/[slug]/page/[n]
+│ ├ /sector/industria/page/2
+│ ├ /sector/industria/page/3
+│ ├ /sector/investigacion-consultoria/page/2
+│ └ [+4 more paths]
+├ ● /sectores/[slug]
+│ ├ /sectores/calidad-del-aire-en-las-ciudades
+│ ├ /sectores/control-de-emisiones-industriales
+│ ├ /sectores/contaminacion-por-construccion
+│ └ [+3 more paths]
+├ ○ /software-de-medicion-calidad-del-aire
+├ ● /soporte/[...ruta]
+│ ├ /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda/que-es-kunak-air-cloud
+│ ├ /soporte/centro-de-ayuda
+│ ├ /soporte/centro-de-ayuda/kunak-air-cloud/articulos-de-ayuda
+│ └ [+2 more paths]
+└ ƒ /vista-previa/[slug]
+
+
+  [pub] ○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+  [pub] [2026-09-04T18:23:10.557Z] contenedor `kunak-b-monotono` reiniciado (StartedAt 2026-09-04T18:23:09.806626131Z)
+
+parando el publicador y el contenedor…
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+[TypeError: fetch failed] {
+  [cause]: Error: read ECONNRESET
+      at TCP.onStreamRead (node:internal/stream_base_commons:216:20) {
+    errno: -4077,
+    code: 'ECONNRESET',
+    syscall: 'read'
+  }
+}
+
+Node.js v26.4.0

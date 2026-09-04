@@ -148,12 +148,12 @@ medidos»*; derivado del `estado.json` congelado, el coste de B es **72.68 ·
 | candidato | coste por publicación, **derivado** |
 |---|---|
 | **A · imagen inmutable** | **≈200 s** con `.dockerignore` corregido (676 s con el roto) **+ push de 819 MB** |
-| **B · volumen + `docker restart`** ✅ | **72.68–89.57 s** caliente · **108–204 s** frío (§regla 54) |
+| **B · volumen + `docker restart`** ✅ | el `next build` (**72–90 s** caliente · **108–204 s** frío) **+ 4.09 s** de reinicio ⚠ *cifra corregida en el ESCALÓN 2, ver abajo* |
 | **C · volumen + supervisor dentro** | como B, más escribir y mantener el supervisor |
 
-**Las tres separadoras, y las tres derivadas del repo:** (1) el coste difiere en
-más de 2× y el push no tiene equivalente en B; (2) B conserva el publicador
-entero con el arreglo de B1 dentro, mientras que con A **no tiene dónde vivir**
+**Las tres separadoras, y las tres derivadas del repo:** (1) el coste —**cuyo
+enunciado se corrigió al medirlo**, abajo—; (2) B conserva el publicador entero
+con el arreglo de B1 dentro, mientras que con A **no tiene dónde vivir**
 —`scripts/` está en `.dockerignore`, leído del fichero—; (3) con A el `POST
 /cron` de B4 **no se aplaza: se bloquea**.
 
@@ -187,6 +187,114 @@ hornear, con el `docker build` que ya salió verde (`:144-fix`, exit 0).
 prohíbe el reinicio de un contenedor hermano, B no es viable y la decisión se
 reabre*. Y acotado por lo medido en (2b): si se cumple, **queda B′**, que no
 necesita el socket sino una casilla de la interfaz.
+
+### ESCALÓN 2 · B implementada en local — **P1 CONFIRMADA, con cinco controles**
+
+#### (1) Qué monta el volumen, DERIVADO del artefacto y no elegido
+
+| pieza | tamaño **medido** | ¿cambia con cada build? | ¿va al volumen? |
+|---|---|---|---|
+| `.next/standalone` | **204 M** | sí | **no** — ver el defecto de plataforma abajo |
+| `.next/` (manifiestos, `server/`) | 359 M con el standalone dentro | sí | **sí** |
+| `.next/static` | 1.4 M | sí | sí (va dentro de `.next`) |
+| `public/` | **668 M** (667 M en `images/`) | no | no: sigue horneado |
+
+⚠⚠ **Y HAY UN DEFECTO DE PLATAFORMA QUE SÓLO EXISTE EN DESARROLLO, DERIVADO
+ANTES DE MONTAR NADA:** el árbol `standalone` que produce el host es de
+**Windows** —lleva `@img/sharp-win32-x64` con su `.node`, censado: **1 binario
+nativo**— y el contenedor es Linux. En el VPS no se daría (host Linux,
+contenedor Linux). **La salida no es evitar B: es montar sólo lo que el
+`server.js` de la IMAGEN lee**, que son los manifiestos y `server/` —JavaScript
+portable— con los `node_modules` de la imagen intactos.
+
+⚠ **Y otro hallazgo que ninguna medida anterior podía tener:** `output:
+standalone` **preserva el nombre del `distDir`**, así que el standalone del host
+lleva `apps/web/.next-nuevo/` (el publicador construye con
+`NEXT_DIST_DIR=.next-nuevo`) y su `server.js` lleva `"distDir":"./.next-nuevo"`
+congelado dentro con un `process.chdir(__dirname)`. **Es auto-consistente**, pero
+no cuadra con lo que el `Dockerfile` espera — que es otra razón para no montarlo.
+
+#### (2) El criterio de aceptación es EL DE B1, no uno nuevo — y sale CONFIRMADA
+
+`derivaciones/monotono-contenedor-145.{mjs,json,log}`. **3 publicaciones
+encadenadas, observadas por HTTP DESDE FUERA del contenedor:**
+
+| | `buildId` servido |
+|---|---|
+| partida | `ihQFRUm3LOJN6czIlxQFl` |
+| tras la 1.ª | `WPymagtdrT6Aa_EErB24Z` |
+| tras la 2.ª | `gFIbAY68_c_H2ktuBRjL4` |
+| tras la 3.ª | `8KgKWvK4tKbclMaMQqJew` |
+
+**4 valores distintos en la cadena · 0 repeticiones consecutivas · `P1
+CONFIRMADA`.** Los cinco controles en verde, y el K4 es el que el encargo exige
+—*el testigo que exige ver también lo viejo*—:
+
+| control | qué asegura | ok |
+|---|---|---|
+| K1 · C2 discrimina | 200 para el id servido, **404 para uno falso**, en las 3 | ✅ |
+| K2 · C1 y C2 concuerdan | el servido coincide con el disco en las 3 | ✅ |
+| K3 · no es el build de partida | ninguno de los 3 repite `ihQFRUm3…` | ✅ |
+| **K4 · el canal ve también lo VIEJO** | el de partida **es** el disco de antes: sin esto, un canal que devolviera siempre el disco pasaría K1–K3 | ✅ |
+| **K5 · el reinicio, por EFECTO** | `StartedAt` avanzó en las 3 — no basta con que `docker restart` devuelva 0 (§regla 53) | ✅ |
+
+#### (3) ⚠⚠ EL COSTE CORRIGE LO QUE EL ESCALÓN 1 HABÍA ESCRITO — Y EL ERROR ERA §regla 54 COMETIDA POR MÍ
+
+El ESCALÓN 1 publicó *«B 72.68–89.57 s contra A ≈200 s: difieren en más de
+2×»*. **Medido a través del contenedor, los totales son 178.22 · 201.51 ·
+188.89 s** — o sea que el enunciado, tal cual, era falso.
+
+**Y la causa no es que B sea más cara: es que el enunciado atribuía a B un coste
+que es del `next build`, que A también paga dentro de su etapa `builder`.**
+Descompuesto:
+
+| componente | medido |
+|---|---|
+| `next build` | **159.01 · 184.58 · 171.94 s** — dentro de la banda **fría** de la 142.ª (108–204 s) |
+| **lo que B AÑADE** (`docker restart` + volver a servir) | **`segundosHastaServido` = 4.09 s** |
+| push al registro | **0** |
+
+> **El enunciado que sí se sostiene: A y B pagan EL MISMO build, y lo que los
+> separa es el EMPAQUETADO — B añade 4.09 s medidos; A añade reconstruir la
+> imagen y subir 819 MB.** Es más fuerte que el «2×» al que sustituye, porque
+> aquél dependía del estado de caché y éste no.
+
+**Se BORRÓ la lectura vieja en los dos sitios** (`ESQUEMA-CMS.md` §CMS-10 y la
+tabla de arriba), no se anotó al pie: mientras las dos estén escritas, cada
+lector elige la suya.
+
+⚠ **Y el estado se declara, que es la mitad que faltaba en el ESCALÓN 1:** los
+159–185 s son **con Docker corriendo dos contenedores**, o sea el estado en que
+B se va a usar de verdad. Los 72–90 de la 143.ª eran **sin contenedor**.
+
+#### (4) La sonda mató su propia corrida, y el objeto estaba bien
+
+La primera corrida murió con `TypeError: fetch failed / read ECONNRESET` justo
+tras el primer `docker restart` — **con el reinicio ya verificado en el log**
+(`StartedAt` avanzado). §regla 21 en su caso más limpio: *«el sabotaje dejó de
+morder» y «la sonda tiene razón» dan la misma salida desde fuera*, y aquí la
+tercera —**el instrumento se rompió**— también. Se dirimió mirando el log: el
+mecanismo había funcionado.
+
+**Y al morir se llevó la congelada**, que es §regla 5 cobrada sobre una
+derivación con `writeFileSync` pelado. El log se conserva como artefacto
+(`monotono-contenedor-145-neg-medidor-econnreset.log`) y todo `fetch` del medidor
+pasa ahora por un reintento que **publica su cardinal** (`reintentosDeRed: 3` en
+la corrida buena) — porque un `ECONNRESET` contra un puerto que se está
+reiniciando no es un veredicto sobre nada, y dejarlo abortar hace que *«el
+mecanismo falló»* y *«se cortó una conexión»* se escriban igual.
+
+⚠ **Y su hermana, de lectura:** el harness informó **«exit code 0»** de la
+corrida que murió. Era el `echo` del final del comando compuesto, no `node`
+(§regla 11 con el objeto puesto en `cmd > log; echo "EXIT=$?"`). El veredicto
+estaba en el log, y la congelada **no existía** — que es la señal que sí
+discrimina.
+
+#### (5) Los tres defectos del `Dockerfile` y los dos del `.dockerignore` NO se reabren
+
+Comprobado, no supuesto: la imagen usada es `:144-fix` —la arreglada— y sirve
+`DNRFzRjLlLyjj9iRDbc3D` sin volumen, o sea que su `CMD` corregido funciona. El
+cambio a volumen **no los toca**: monta encima, no reconstruye.
 
 ## 🔄 §144.ª · **B2 — EL DOCKERFILE, LA PRIMERA MEDIDA EN LA PLATAFORMA DE DESTINO** — 2026-09-03
 

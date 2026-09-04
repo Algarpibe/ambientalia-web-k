@@ -1,0 +1,59 @@
+{
+  "fase": "ocioso",
+  "pendiente": false,
+  "desde": "2026-09-04T18:34:56.447Z",
+  "motivo": "monotono-145 #3",
+  "ultimoExito": {
+    "cuando": "2026-09-04T18:34:56.441Z",
+    "motivo": "monotono-145 #3",
+    "segundos": 171.93,
+    "buildId": "8KgKWvK4tKbclMaMQqJew",
+    "buildIdServido": "8KgKWvK4tKbclMaMQqJew",
+    "llegoAlSitio": true,
+    "segundosHastaServido": 4.09,
+    "contenedor": "kunak-b-monotono",
+    "reinicio": {
+      "reiniciado": true,
+      "startedAt": "2026-09-04T18:34:51.239355964Z"
+    },
+    "rutas": 426
+  },
+  "ultimoFallo": null,
+  "builds": 3,
+  "disparos": 3,
+  "coalescidos": 0,
+  "promocionRequierePararServidor": false,
+  "historia": [
+    {
+      "build": 1,
+      "empezo": 1788546327813,
+      "disparosPrevios": 1,
+      "motivo": "monotono-145 #1",
+      "codigo": 0,
+      "termino": 1788546486826
+    },
+    {
+      "build": 2,
+      "empezo": 1788546506110,
+      "disparosPrevios": 2,
+      "motivo": "monotono-145 #2",
+      "codigo": 0,
+      "termino": 1788546690686
+    },
+    {
+      "build": 3,
+      "empezo": 1788546707665,
+      "disparosPrevios": 3,
+      "motivo": "monotono-145 #3",
+      "codigo": 0,
+      "termino": 1788546879600
+    }
+  ],
+  "ganchos": {
+    "PUBLICAR_CMD": null,
+    "SABOTAJE": null
+  },
+  "pid": 29088,
+  "dist": ".next",
+  "arrancado": 1788546327593
+}

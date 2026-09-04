@@ -7875,7 +7875,7 @@ mediciones congeladas de las tandas 142.ª–144.ª y del `estado.json` de la 14
 | | qué dispara una publicación | coste por publicación | qué exige que hoy no hay |
 |---|---|---|---|
 | **A · imagen inmutable** | `docker build` + redeploy | **≈200 s** con `.dockerignore` corregido (**676 s** con el roto) **+ push de 819 MB** comprimidos al registro | un registro y un CI; y **no deja sitio al publicador**: `scripts/` está en `.dockerignore` (derivado del fichero), así que `publicador.mjs` **no viaja en la imagen** |
-| **B · volumen + `docker restart`** ✅ | `npm run build` fuera + `docker restart` | **72.68 – 89.57 s** en caliente (n=3, `estado.json` de la 143.ª) · **108 – 204 s en frío** (142.ª) · `segundosHastaServido` **0.91 s** | acceso al demonio de Docker desde donde corra el publicador |
+| **B · volumen + `docker restart`** ✅ | `npm run build` fuera + `docker restart` | el `next build` (**72–90 s** caliente · **108–204 s** frío, §regla 54) **más 4.09 s** de reinicio medidos a través del contenedor. Sin push | acceso al demonio de Docker desde donde corra el publicador |
 | **C · volumen + supervisor dentro** | build fuera + señal al supervisor | igual que B en el build, más el supervisor | cambiar `CMD ["node","apps/web/server.js"]` (forma exec, **PID 1**) por un supervisor, escribirlo y mantenerlo |
 
 > ⚠ **§regla 54 — el coste se escribe CON SU ESTADO, y aquí la variable no es
@@ -7885,10 +7885,28 @@ mediciones congeladas de las tandas 142.ª–144.ª y del `estado.json` de la 14
 
 ### Las separadoras que decidieron — y son tres, no una
 
-1. **coste por publicación.** B (**72.68–89.57 s** caliente) contra A (**≈200 s
-   + 819 MB de push**). El ciclo de un editor —guardar, mirar, corregir— no
-   tolera 200 s más una subida; 90 s sí. **A y B difieren en más de 2×, y el
-   push no tiene equivalente en B**;
+1. **coste por publicación — y el enunciado se CORRIGIÓ al medirlo, 145.ª
+   ESCALÓN 2.** La primera redacción de esta ficha decía *«B 72.68–89.57 s
+   contra A ≈200 s: difieren en más de 2×»*. **Está mal, y el error es §regla
+   54 cometida aquí mismo**: comparaba B **en caliente** contra A **sin
+   declarar su estado**, y además atribuía a B un coste que es del `next
+   build` — el mismo build que A también paga, dentro de su etapa `builder`.
+
+   **Lo medido a través del contenedor** (`derivaciones/monotono-contenedor-145.json`,
+   3 publicaciones encadenadas) descompone el total y deja ver qué separa de
+   verdad:
+
+   | componente | B, medido |
+   |---|---|
+   | `next build` | **159.01 · 184.58 · 171.94 s** — dentro de la banda **fría** que la 142.ª ya midió (108–204 s) |
+   | **lo que B AÑADE**: `docker restart` + volver a servir | **`segundosHastaServido` = 4.09 s** |
+   | push al registro | **0** |
+
+   > **Así que A y B pagan EL MISMO build, y lo que los separa es el
+   > empaquetado: B añade 4.09 s medidos; A añade reconstruir la imagen y
+   > subir 819 MB comprimidos.** Ése es el enunciado que sí se sostiene, y es
+   > más fuerte que el «2×» que sustituye — porque el 2× dependía del estado
+   > de caché y esto no.
 2. **B conserva el publicador ENTERO, con el arreglo de B1 dentro.** Lo que la
    143.ª dejó funcionando —coalescer, promoción por rename sólo con exit 0,
    `llegoAlSitio` comparando **el `buildId` SERVIDO contra el del disco**

@@ -1,0 +1,23 @@
+{
+  "fecha": "2026-09-04T18:15:41.870Z",
+  "imagen": "ai-website-cloner:144-fix",
+  "puerto": 3910,
+  "buildIdEnDisco": "VPZgeKpZ9gKOChK9yUFmD",
+  "casos": {
+    "sinVolumen": {
+      "pregunta": "sin volumen, ¿qué buildId sirve? (el testigo que exige ver lo viejo)",
+      "arranque": 0,
+      "buildId": "DNRFzRjLlLyjj9iRDbc3D",
+      "http": 200,
+      "intentos": 2
+    },
+    "conVolumen": {
+      "pregunta": "con el .next del host montado, ¿sirve el buildId del host?",
+      "arranque": 0,
+      "buildId": "VPZgeKpZ9gKOChK9yUFmD",
+      "http": 200,
+      "intentos": 2
+    }
+  },
+  "veredicto": "✅ B VIABLE — con volumen sirve el buildId del HOST, sin volumen sirve el HORNEADO, y son DISTINTOS"
+}

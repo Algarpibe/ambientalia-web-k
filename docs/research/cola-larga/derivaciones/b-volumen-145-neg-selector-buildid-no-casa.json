@@ -1,0 +1,26 @@
+{
+  "fecha": "2026-09-04T18:14:39.520Z",
+  "imagen": "ai-website-cloner:144-fix",
+  "puerto": 3910,
+  "buildIdEnDisco": "VPZgeKpZ9gKOChK9yUFmD",
+  "casos": {
+    "sinVolumen": {
+      "pregunta": "sin volumen, ¿qué buildId sirve? (el testigo que exige ver lo viejo)",
+      "arranque": 0,
+      "buildId": null,
+      "http": 200,
+      "intentos": 2,
+      "nota": "200 sin buildId legible"
+    },
+    "conVolumen": {
+      "pregunta": "con el .next del host montado, ¿sirve el buildId del host?",
+      "arranque": 0,
+      "buildId": null,
+      "http": 200,
+      "intentos": 2,
+      "nota": "200 sin buildId legible",
+      "logs": "▲ Next.js 16.2.12\n- Local:         http://localhost:3000\n- Network:       http://0.0.0.0:3000\n✓ Ready in 0ms\n"
+    }
+  },
+  "veredicto": "EL VOLUMEN NO SIRVE — el contenedor no responde con él montado; ver logs"
+}

@@ -117,7 +117,36 @@ const ESTADO_FICHERO = path.join(
 
 const PUERTO = Number(process.env.PUBLICAR_PUERTO || 4000);
 const PUERTO_WEB = Number(process.env.PUBLICAR_PUERTO_WEB || 3000);
-const GESTIONA_SERVIDOR = process.env.PUBLICAR_SERVIDOR === "1";
+
+/* ═════════════════════════════════════════════════════════════════════════
+ * MODELO DE PUBLICACIÓN — `CMS-10` (145.ª): **B, volumen + `docker restart`**.
+ *
+ * El publicador construye FUERA, escribe en un directorio que el contenedor
+ * monta como volumen, y **reinicia el contenedor** para que lo recoja. El
+ * arreglo de B1 no se tira: se TRADUCE — lo que en local era «matar el árbol
+ * del proceso y comprobar que el puerto quedó libre» aquí es «reiniciar el
+ * contenedor y comprobar que el `buildId` SERVIDO cambió». El invariante es el
+ * mismo (§regla 53: se verifica **por efecto**, no porque la orden devuelva) y
+ * el canal también (§regla 55: lo SERVIDO, nunca el artefacto en disco).
+ *
+ * ⚠ `PUBLICAR_CONTENEDOR` es una variable PROPIA y no una sobrecarga de
+ * `PUBLICAR_SERVIDOR`: un interruptor de dos valores al que se le añade un
+ * tercer significado es §regla 9 en su cara de *rama `else`* —el mapeo bautiza
+ * lo nuevo con el nombre de lo viejo—. Aquí `PUBLICAR_SERVIDOR` conserva su
+ * semántica («¿gestiono yo el servidor?») y `PUBLICAR_CONTENEDOR` dice **cuál
+ * es ese servidor**. Ponerla implica gestionar, porque declarar el contenedor y
+ * no reiniciarlo no significa nada.
+ *
+ * ⚠⚠ Y POR QUÉ EL VOLUMEN NO EVITA EL REINICIO, medido y no supuesto (144.ª):
+ * `node apps/web/server.js` carga sus manifiestos **al arrancar**, igual que
+ * `next start`. El volumen ahorra reconstruir la IMAGEN (≈200 s + 819 MB de
+ * push); no ahorra el reinicio. Lo que sí cambia respecto del modelo local es
+ * que **ya no hay ventana sin servicio**: el contenedor sigue sirviendo el
+ * build anterior hasta que se reinicia, así que aquí NO se para nada antes de
+ * promocionar.
+ * ═════════════════════════════════════════════════════════════════════════ */
+const CONTENEDOR = process.env.PUBLICAR_CONTENEDOR || null;
+const GESTIONA_SERVIDOR = process.env.PUBLICAR_SERVIDOR === "1" || Boolean(CONTENEDOR);
 
 /**
  * ⚠ **Sin defecto a propósito, igual que `PAYLOAD_SECRET`.** Un secreto por
@@ -301,6 +330,16 @@ function mataArbol(pid) {
  * Devuelve si el puerto quedó libre, para que `promociona()` lo registre.
  */
 async function paraServidor() {
+  /* ⚠ MODO CONTENEDOR (`CMS-10`, B): no hay nada que parar, y **es
+   * deliberado**. El contenedor sigue sirviendo el build anterior mientras se
+   * promociona, así que B no abre la ventana sin servicio que el modelo local
+   * sí abre. `libre` vale `null` porque la pregunta *«¿quedó el puerto
+   * libre?»* no se le hace a este modelo — y `null` es AUSENCIA declarada, no
+   * un verde (§regla 6: una ausencia se rechaza o se declara, nunca se
+   * sustituye por un valor benigno). */
+  if (CONTENEDOR)
+    return { libre: null, nota: `modo contenedor (${CONTENEDOR}): no se para nada antes de promocionar` };
+
   const p = servidorWeb;
   servidorWeb = null;
   if (p) {
@@ -325,7 +364,60 @@ async function paraServidor() {
   return { libre: false };
 }
 
+/**
+ * MODO CONTENEDOR (`CMS-10`, B) — reinicia el contenedor para que recoja el
+ * build recién promocionado del volumen.
+ *
+ * ⚠ **Se comprueba POR EFECTO, no porque `docker restart` devuelva 0**
+ * (§regla 53, la misma razón por la que `paraServidor()` mira `puertoLibre` y
+ * no el `kill`): un `restart` sobre el contenedor equivocado —o sobre uno que
+ * no existe— puede devolver sin que nada se reinicie. El efecto observable es
+ * que `State.StartedAt` AVANCE.
+ *
+ * ⚠⚠ **NO TIRA, y por el mismo motivo de nivel que `paraServidor()`**
+ * (§regla 31): el artefacto ESTÁ promocionado y el rename es correcto, así que
+ * marcar el build como fallido aquí sería falso. Se declara, y la consecuencia
+ * la caza `esperaServido()`, que es el nivel donde vive la afirmación *«la
+ * publicación llegó al sitio»*.
+ */
+function reiniciaContenedor() {
+  const antes = spawnSync(
+    "docker",
+    ["inspect", CONTENEDOR, "--format", "{{.State.StartedAt}}"],
+    { encoding: "utf8" },
+  );
+  if (antes.status !== 0) {
+    log(
+      `⚠⚠ no se puede inspeccionar el contenedor \`${CONTENEDOR}\`: ${(antes.stderr || "").trim()}\n` +
+        `   La promoción está hecha, pero NADIE va a recogerla. Comprueba el nombre\n` +
+        `   en PUBLICAR_CONTENEDOR y que el demonio de Docker sea alcanzable.`,
+    );
+    return { reiniciado: false, motivo: "no se pudo inspeccionar el contenedor" };
+  }
+
+  const r = spawnSync("docker", ["restart", CONTENEDOR], { encoding: "utf8" });
+  const despues = spawnSync(
+    "docker",
+    ["inspect", CONTENEDOR, "--format", "{{.State.StartedAt}}"],
+    { encoding: "utf8" },
+  );
+  const avanzo =
+    despues.status === 0 && despues.stdout.trim() !== antes.stdout.trim();
+
+  if (!avanzo) {
+    log(
+      `⚠⚠ \`docker restart ${CONTENEDOR}\` devolvió ${r.status} pero \`StartedAt\` NO avanzó\n` +
+        `   (${antes.stdout.trim()} → ${despues.stdout.trim()}). El contenedor sigue con el\n` +
+        `   proceso viejo, así que seguirá sirviendo el build ANTERIOR.`,
+    );
+    return { reiniciado: false, motivo: "StartedAt no avanzó", exit: r.status };
+  }
+  log(`contenedor \`${CONTENEDOR}\` reiniciado (StartedAt ${despues.stdout.trim()})`);
+  return { reiniciado: true, startedAt: despues.stdout.trim() };
+}
+
 function arrancaServidor() {
+  if (CONTENEDOR) return reiniciaContenedor();
   if (!GESTIONA_SERVIDOR) return;
   /* ⚠ `next start` y NO el servidor del `standalone`, y la razón está MEDIDA
    * (143.ª): `output: "standalone"` produce `.next/standalone/apps/web/server.js`
@@ -533,7 +625,7 @@ async function promociona() {
     }
     throw new Error(`no se pudo promocionar \`${NOMBRE_DIST}-nuevo\` → \`${NOMBRE_DIST}\`: ${e.message}`);
   }
-  arrancaServidor();
+  const relevo = arrancaServidor();
   const buildId = fs.readFileSync(path.join(DIST, "BUILD_ID"), "utf8").trim();
 
   /* ⚠⚠ Y AQUÍ LA MITAD QUE FALTABA, que es la que convierte el defecto de la
@@ -568,6 +660,14 @@ async function promociona() {
        * enlazar» de «enlazó y sirve otro build», que son dos causas distintas
        * con dos arreglos distintos */
       puertoQuedoLibre: libre,
+      /* ⚠ El equivalente de lo anterior en modo contenedor (`CMS-10`, B), y es
+       * el mismo reparto de causas con otro mecanismo: si el reinicio NO
+       * ocurrió, el contenedor sigue con el proceso viejo y por eso sirve el
+       * build anterior; si SÍ ocurrió y aun así sirve otro, el defecto está en
+       * el volumen —qué se montó, o dónde—. Sin este campo las dos causas se
+       * escriben igual. */
+      contenedor: CONTENEDOR,
+      reinicio: relevo ?? null,
       cola: colaLog(),
       servido:
         v.servido === null
@@ -576,7 +676,12 @@ async function promociona() {
     };
     guardaEstado();
   }
-  return { buildId, servido: v.servido, segundosHastaServido: v.ok ? v.segundos : null };
+  return {
+    buildId,
+    servido: v.servido,
+    segundosHastaServido: v.ok ? v.segundos : null,
+    reinicio: relevo ?? null,
+  };
 }
 
 async function unaVuelta(motivo) {
@@ -630,7 +735,8 @@ async function unaVuelta(motivo) {
     return;
   }
 
-  const { buildId, servido, segundosHastaServido, notaServido } = await promociona();
+  const { buildId, servido, segundosHastaServido, notaServido, reinicio } =
+    await promociona();
   /* ⚠ `buildId` es el del DISCO y `buildIdServido` el que el sitio devuelve. Se
    * publican **los dos**, porque un par se cita con sus dos lados o no se cita
    * (§sondas 1): `9SKeO…` a secas no se puede leer mal, y era exactamente lo que
@@ -644,6 +750,11 @@ async function unaVuelta(motivo) {
     llegoAlSitio: notaServido ? null : servido === buildId,
     segundosHastaServido: segundosHastaServido ?? null,
     ...(notaServido ? { notaServido } : {}),
+    /* Modo contenedor (`CMS-10`, B): qué mecanismo hizo que el servidor
+     * recogiera el build. Va en el ÉXITO y no sólo en el fallo, porque
+     * `llegoAlSitio: true` no dice POR QUÉ llegó — y sin eso no se distingue
+     * «el reinicio funcionó» de «el contenedor se reinició por otra razón». */
+    ...(CONTENEDOR ? { contenedor: CONTENEDOR, reinicio: reinicio ?? null } : {}),
     rutas: contarRutas(),
   };
   /* Un éxito limpia el fallo — **salvo el que `promociona()` acaba de escribir**
@@ -930,8 +1041,16 @@ function reparaPromocionAMedias() {
 
 servidor.listen(PUERTO, () => {
   estado.ganchos = { PUBLICAR_CMD: CMD, SABOTAJE };
-  log(`publicador escuchando en :${PUERTO} · web :${PUERTO_WEB} · gestiona servidor: ${GESTIONA_SERVIDOR}`);
+  log(
+    `publicador escuchando en :${PUERTO} · web :${PUERTO_WEB} · gestiona servidor: ${GESTIONA_SERVIDOR}` +
+      (CONTENEDOR ? ` · modo CONTENEDOR: ${CONTENEDOR}` : ""),
+  );
   reparaPromocionAMedias();
   guardaEstado();
-  if (GESTIONA_SERVIDOR && fs.existsSync(path.join(DIST, "BUILD_ID"))) arrancaServidor();
+  /* ⚠ En modo contenedor NO se arranca nada al inicio: el contenedor ya está
+   * corriendo y sirviendo. Llamar aquí a `arrancaServidor()` lo REINICIARÍA sin
+   * que haya build nuevo que recoger — una interrupción de servicio gratis cada
+   * vez que se levanta el publicador. */
+  if (!CONTENEDOR && GESTIONA_SERVIDOR && fs.existsSync(path.join(DIST, "BUILD_ID")))
+    arrancaServidor();
 });

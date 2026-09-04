@@ -1,0 +1,117 @@
+{
+  "fecha": "2026-09-04T18:35:00.808Z",
+  "imagen": "ai-website-cloner:144-fix",
+  "contenedor": "kunak-b-monotono",
+  "reintentosDeRed": 3,
+  "puertos": {
+    "control": 4200,
+    "web": 3910
+  },
+  "partida": {
+    "buildIdServido": "ihQFRUm3LOJN6czIlxQFl",
+    "discoAntes": "ihQFRUm3LOJN6czIlxQFl",
+    "c2": {
+      "httpDelId": 200,
+      "httpDelFalso": 404
+    }
+  },
+  "veredicto": {
+    "modelo": "B · volumen + `docker restart` (CMS-10)",
+    "publicaciones": 3,
+    "relevosMedidos": 3,
+    "observadoDesde": "FUERA del contenedor, por HTTP al puerto publicado",
+    "cadena": [
+      "ihQFRUm3LOJN6czIlxQFl",
+      "WPymagtdrT6Aa_EErB24Z",
+      "gFIbAY68_c_H2ktuBRjL4",
+      "8KgKWvK4tKbclMaMQqJew"
+    ],
+    "valoresDistintosEnLaCadena": 4,
+    "cadenaSinRepeticiones": true,
+    "P1": "CONFIRMADA"
+  },
+  "control": {
+    "K1_C2_discrimina": {
+      "ok": true,
+      "nota": "200 para el id servido y 404 para uno falso, en las 3"
+    },
+    "K2_C1_y_C2_concuerdan": {
+      "ok": true,
+      "nota": "el servido coincide con el disco en las 3"
+    },
+    "K3_no_es_el_build_de_partida": {
+      "ok": true,
+      "buildIdDePartida": "ihQFRUm3LOJN6czIlxQFl"
+    },
+    "K4_el_canal_ve_tambien_lo_VIEJO": {
+      "ok": true,
+      "servidoDePartida": "ihQFRUm3LOJN6czIlxQFl",
+      "discoAntes": "ihQFRUm3LOJN6czIlxQFl",
+      "nota": "polaridad: sin esto, un canal que devolviera siempre el disco pasaría K1-K3"
+    },
+    "K5_el_reinicio_se_verifico_por_EFECTO": {
+      "ok": true,
+      "nota": "`StartedAt` avanzó en las 3 — no basta con que `docker restart` devuelva 0 (§regla 53)"
+    },
+    "vale": true
+  },
+  "observaciones": [
+    {
+      "n": 1,
+      "segundos": 178.22,
+      "buildIdEnDisco": "WPymagtdrT6Aa_EErB24Z",
+      "buildIdServidoC1": "WPymagtdrT6Aa_EErB24Z",
+      "httpC1": 200,
+      "C2_httpDelIdServido": 200,
+      "C2_httpDeUnIdFalso": 404,
+      "estadoBuildId": "WPymagtdrT6Aa_EErB24Z",
+      "estadoBuildIdServido": "WPymagtdrT6Aa_EErB24Z",
+      "estadoLlegoAlSitio": true,
+      "estadoReinicio": {
+        "reiniciado": true,
+        "startedAt": "2026-09-04T18:28:19.675044018Z"
+      },
+      "estadoUltimoFallo": null,
+      "builds": 1,
+      "servidoIgualADisco": true
+    },
+    {
+      "n": 2,
+      "segundos": 201.51,
+      "buildIdEnDisco": "gFIbAY68_c_H2ktuBRjL4",
+      "buildIdServidoC1": "gFIbAY68_c_H2ktuBRjL4",
+      "httpC1": 200,
+      "C2_httpDelIdServido": 200,
+      "C2_httpDeUnIdFalso": 404,
+      "estadoBuildId": "gFIbAY68_c_H2ktuBRjL4",
+      "estadoBuildIdServido": "gFIbAY68_c_H2ktuBRjL4",
+      "estadoLlegoAlSitio": true,
+      "estadoReinicio": {
+        "reiniciado": true,
+        "startedAt": "2026-09-04T18:31:41.706508765Z"
+      },
+      "estadoUltimoFallo": null,
+      "builds": 2,
+      "servidoIgualADisco": true
+    },
+    {
+      "n": 3,
+      "segundos": 188.89,
+      "buildIdEnDisco": "8KgKWvK4tKbclMaMQqJew",
+      "buildIdServidoC1": "8KgKWvK4tKbclMaMQqJew",
+      "httpC1": 200,
+      "C2_httpDelIdServido": 200,
+      "C2_httpDeUnIdFalso": 404,
+      "estadoBuildId": "8KgKWvK4tKbclMaMQqJew",
+      "estadoBuildIdServido": "8KgKWvK4tKbclMaMQqJew",
+      "estadoLlegoAlSitio": true,
+      "estadoReinicio": {
+        "reiniciado": true,
+        "startedAt": "2026-09-04T18:34:51.239355964Z"
+      },
+      "estadoUltimoFallo": null,
+      "builds": 3,
+      "servidoIgualADisco": true
+    }
+  ]
+}
