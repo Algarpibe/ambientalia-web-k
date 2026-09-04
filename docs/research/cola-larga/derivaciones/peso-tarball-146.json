@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "tanda": "146.ª",
+    "escalon": "ESCALÓN 2 · peso por cubo EN EL TARBALL",
+    "fecha": "2026-09-04T23:25:30.221Z",
+    "proposito": "el reparto en MiB de disco NO predice lo que viaja: el ratio de compresión no es uniforme"
+  },
+  "control": {
+    "tarballEnteroMedidoMiB": 1320.25,
+    "sumaDeCubosComprimidosMiB": 1322.77,
+    "desviacionPct": 0.2,
+    "lectura": "el método vale: trocear pierde poco ratio"
+  },
+  "porCubo": [
+    {
+      "cubo": "apps/web/public",
+      "ficheros": 2755,
+      "leidos": 2755,
+      "ausentes": 0,
+      "crudoMiB": 661.14,
+      "comprimidoMiB": 649.57,
+      "ratio": 1.02,
+      "entraEnDocker": true
+    },
+    {
+      "cubo": "media-corpus",
+      "ficheros": 1248,
+      "leidos": 1248,
+      "ausentes": 0,
+      "crudoMiB": 593.65,
+      "comprimidoMiB": 585.47,
+      "ratio": 1.01,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "scripts",
+      "ficheros": 1889,
+      "leidos": 1889,
+      "ausentes": 0,
+      "crudoMiB": 353.6,
+      "comprimidoMiB": 46.46,
+      "ratio": 7.61,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "corpus",
+      "ficheros": 763,
+      "leidos": 763,
+      "ausentes": 0,
+      "crudoMiB": 178.76,
+      "comprimidoMiB": 29.26,
+      "ratio": 6.11,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "docs",
+      "ficheros": 730,
+      "leidos": 730,
+      "ausentes": 0,
+      "crudoMiB": 20.92,
+      "comprimidoMiB": 10.32,
+      "ratio": 2.03,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "(resto)",
+      "ficheros": 292,
+      "leidos": 292,
+      "ausentes": 0,
+      "crudoMiB": 17.79,
+      "comprimidoMiB": 1.69,
+      "ratio": 10.56,
+      "entraEnDocker": true
+    },
+    {
+      "cubo": "Dockerfile",
+      "ficheros": 1,
+      "leidos": 1,
+      "ausentes": 0,
+      "crudoMiB": 0.01,
+      "comprimidoMiB": 0,
+      "ratio": 2.45,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "LICENSE",
+      "ficheros": 1,
+      "leidos": 1,
+      "ausentes": 0,
+      "crudoMiB": 0,
+      "comprimidoMiB": 0,
+      "ratio": 1.63,
+      "entraEnDocker": false
+    }
+  ],
+  "candidatos": [
+    {
+      "candidato": "no tocar nada",
+      "quitaMiBTarball": 0,
+      "tarballResultanteMiB": 1322.77
+    },
+    {
+      "candidato": "quitar SÓLO el arrastre de public/ (lo que nadie cita)",
+      "quitaMiBTarball": 29.02,
+      "ficheros": 258,
+      "crudoMiB": 32.02,
+      "tarballResultanteMiB": 1293.75,
+      "ratioUsado": 1.1,
+      "nota": "ratio derivado de una MUESTRA de 20 ficheros del arrastre, no del conjunto"
+    },
+    {
+      "candidato": "quitar de public/ lo que SOLAPA con media/ (CMS-0b)",
+      "ficheros": 950,
+      "crudoMiB": 120.37,
+      "bloqueo": "el HTML los pide por `/images/…`, no por el canal de media/: mover el byte no basta, hay que cambiar el canal del render",
+      "quitaMiBTarball": 118.01,
+      "tarballResultanteMiB": 1204.76,
+      "nota": "ratio del cubo public/ entero (1.02×)"
+    },
+    {
+      "candidato": "sacar public/ ENTERO del repo",
+      "quitaMiBTarball": 649.57,
+      "tarballResultanteMiB": 673.2
+    },
+    {
+      "candidato": "sacar del repo lo que el .dockerignore YA excluye (media-corpus + scripts + corpus + docs)",
+      "quitaMiBTarball": 671.51,
+      "tarballResultanteMiB": 651.26
+    }
+  ]
+}

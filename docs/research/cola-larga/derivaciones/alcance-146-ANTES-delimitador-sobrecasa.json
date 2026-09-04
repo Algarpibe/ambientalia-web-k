@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "tanda": "146.ª",
+    "escalon": "ESCALÓN 2 · P2 + desglose por origen",
+    "fecha": "2026-09-04T23:07:21.357Z",
+    "saboteada": null,
+    "acredita": true,
+    "buildLeido": {
+      "BUILD_ID": "8KgKWvK4tKbclMaMQqJew",
+      "mtime": "2026-09-04T18:33:23.091Z",
+      "rutasHtml": 428
+    }
+  },
+  "canales": {
+    "html": 428,
+    "rsc": 3458,
+    "css": 8,
+    "js": 23,
+    "fuente": 166
+  },
+  "alcance": {
+    "porRUTA_cotaBaja": {
+      "alcanzables": 2489,
+      "alcanzablesMiB": 626.95,
+      "arrastre": 266,
+      "arrastreMiB": 34.19,
+      "pctArrastreFicheros": 9.7,
+      "pctArrastreMiB": 5.2
+    },
+    "porBASENAME_cotaAlta": {
+      "alcanzables": 2518,
+      "alcanzablesMiB": 633.82,
+      "arrastre": 237,
+      "arrastreMiB": 27.32
+    },
+    "nota": "las dos cotas ACOTAN: por ruta sub-casa si el render compone la URL por trozos; por basename sobre-casa si dos años traen el mismo nombre. El valor real está entre las dos."
+  },
+  "reglaSesentaYUno": {
+    "pregunta": "de los `src` CITADOS, ¿cuántos NO tienen fichero en public/?",
+    "citadasSinFichero": 1730,
+    "muestra": [
+      "images/uploads/2025/07/AAQMS-Ambient-Air-Quality-Monitoring-Station-Kunak.jpg\\",
+      "images/uploads/2025/07/AAQMS-Ambient-Air-Quality-Monitoring-Stations-Kunak.jpg\\",
+      "images/uploads/2025/07/air-quality-sensor-systems.jpg\\",
+      "images/uploads/2026/07/certificacion-ens.png\\",
+      "images/uploads/2022/12/punteado.svg\\",
+      "images/uploads/2023/03/kunak-air-accessories.jpg\\",
+      "images/uploads/2023/09/EHS-industrial-1024x683.webp\\",
+      "images/uploads/2025/02/Control-de-la-contaminacion-del-aire-en-los-JJOO-de-Paris-2024-Kunak-1024x683.jpg\\",
+      "images/uploads/2025/03/Industria-petroquimica-1024x686.jpg\\",
+      "images/uploads/2022/12/kunak_IMG_0017-300x300-2.jpg\\",
+      "images/uploads/2022/12/kunak_IMG_0047-copia-300x300-1.jpg\\",
+      "images/uploads/2022/12/kunak_IMG_0015-300x300-1.jpg\\",
+      "images/uploads/2022/12/kunak-air-indoor-charger.jpg\\",
+      "images/uploads/2022/12/kunak_IMG_0061-copia-300X300.jpg\\",
+      "images/uploads/2022/12/rain-gauge.jpg\\",
+      "images/uploads/2023/01/Sound-level-meter.jpg\\",
+      "images/uploads/2022/12/pyranometer.jpg\\",
+      "images/uploads/2022/12/apogee-su-202-ultraviolet-A-sensor.jpg\\",
+      "images/uploads/2022/12/WBGT-300x300-1.jpg\\",
+      "images/uploads/2024/07/gashood-air-pro.jpg\\"
+    ]
+  },
+  "auditoriaDelCeroDeApiMedia": {
+    "pregunta": "¿el HTML consume media/ por ALGÚN canal? — se busca por NOMBRE, no por prefijo de URL",
+    "ficherosSoloEnMedia": 2202,
+    "deEsosCitadosEnElHtml": 1,
+    "muestraCitados": [
+      "1-300x300.jpg"
+    ],
+    "controlPositivo": "images/uploads/2017/11/Javier-Fernández-@KunaK_sensing-contaminación-ambiental-y-acústica.mp4",
+    "veredicto": "hay consumo de media/ — el cero de `/api/media/` era del patrón"
+  },
+  "desglosePorOrigen": [
+    {
+      "origen": "captura del original · uploads de WordPress",
+      "ficheros": 2696,
+      "MiB": 657.69,
+      "pctMiB": 99.5,
+      "alcanzables": 2481,
+      "alcanzablesMiB": 626.95
+    },
+    {
+      "origen": "otros de images/",
+      "ficheros": 27,
+      "MiB": 2.09,
+      "pctMiB": 0.3,
+      "alcanzables": 0,
+      "alcanzablesMiB": 0
+    },
+    {
+      "origen": "fuentes",
+      "ficheros": 15,
+      "MiB": 1.35,
+      "pctMiB": 0.2,
+      "alcanzables": 0,
+      "alcanzablesMiB": 0
+    },
+    {
+      "origen": "logos",
+      "ficheros": 1,
+      "MiB": 0.01,
+      "pctMiB": 0,
+      "alcanzables": 0,
+      "alcanzablesMiB": 0
+    },
+    {
+      "origen": "tema Divi / KunakAir",
+      "ficheros": 10,
+      "MiB": 0.01,
+      "pctMiB": 0,
+      "alcanzables": 8,
+      "alcanzablesMiB": 0
+    },
+    {
+      "origen": "SEO (favicon, og, manifest)",
+      "ficheros": 5,
+      "MiB": 0.01,
+      "pctMiB": 0,
+      "alcanzables": 0,
+      "alcanzablesMiB": 0
+    },
+    {
+      "origen": "vídeos",
+      "ficheros": 1,
+      "MiB": 0,
+      "pctMiB": 0,
+      "alcanzables": 0,
+      "alcanzablesMiB": 0
+    }
+  ],
+  "formaDelArrastre": {
+    "total": 266,
+    "variantesDeWordPress": 186,
+    "variantesMiB": 23.22,
+    "noVariantes": 80,
+    "noVariantesMiB": 10.98,
+    "lectura": "el arrastre es sobre todo VARIANTES de WordPress: lo produjo la captura, no el clon"
+  },
+  "masPesadosDelArrastre": [
+    {
+      "rel": "images/uploads/2018/07/Programa-Suez-Go-Seeds-en-@4YFN_MWC-2018-4.mp4",
+      "MiB": 4.22
+    },
+    {
+      "rel": "images/uploads/2026/05/Centro-de-datos_Wisconsin_EE-UU-1080x675.png",
+      "MiB": 1.9
+    },
+    {
+      "rel": "images/uploads/2024/03/91-1080x675.png",
+      "MiB": 1.1
+    },
+    {
+      "rel": "images/uploads/2026/05/Beam-Beijing-Pollution_UFP_Kunak-1080x675.png",
+      "MiB": 1.07
+    },
+    {
+      "rel": "images/other/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-solid-900.svg",
+      "MiB": 0.88
+    },
+    {
+      "rel": "images/other/wp-content/themes/Divi/core/admin/fonts/fontawesome/fa-brands-400.svg",
+      "MiB": 0.71
+    },
+    {
+      "rel": "images/uploads/2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1-1080x675.png",
+      "MiB": 0.66
+    },
+    {
+      "rel": "images/uploads/2022/11/Webinar-Air-pollution-in-the-industry-Mediano-1-1024x576.png",
+      "MiB": 0.55
+    },
+    {
+      "rel": "images/uploads/2023/02/leakage-detection.jpg",
+      "MiB": 0.45
+    },
+    {
+      "rel": "images/uploads/2023/02/particle-size-analysis.jpg",
+      "MiB": 0.4
+    },
+    {
+      "rel": "images/uploads/2023/02/control-panel.jpg",
+      "MiB": 0.34
+    },
+    {
+      "rel": "images/uploads/2022/12/imagen-banner-principal.jpg",
+      "MiB": 0.33
+    },
+    {
+      "rel": "images/uploads/2023/02/pollution-sources-identification.jpg",
+      "MiB": 0.32
+    },
+    {
+      "rel": "images/other/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.svg",
+      "MiB": 0.29
+    },
+    {
+      "rel": "images/uploads/2025/11/depuradora-de-aguas-residuales-1080x675.jpg",
+      "MiB": 0.27
+    },
+    {
+      "rel": "images/uploads/2026/05/Movilidad-urbana-sostenible_Kunak-1080x675.jpg",
+      "MiB": 0.27
+    },
+    {
+      "rel": "images/uploads/2023/02/urban-air-quality-1-1280x683.jpg",
+      "MiB": 0.27
+    },
+    {
+      "rel": "images/uploads/2025/11/depuradora-de-aguas-residuales-1024x681.jpg",
+      "MiB": 0.26
+    },
+    {
+      "rel": "images/uploads/2026/06/monitorizacion-perimetral_Kunak-1080x675.jpg",
+      "MiB": 0.26
+    },
+    {
+      "rel": "images/uploads/2026/04/red-de-monitorizacion-ambiental-edar-1280x853.jpg",
+      "MiB": 0.25
+    }
+  ]
+}

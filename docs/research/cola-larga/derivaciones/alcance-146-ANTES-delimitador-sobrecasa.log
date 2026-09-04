@@ -1,0 +1,41 @@
+═══ 146.ª ESCALÓN 2 · P2 — ALCANCE de public/ ═══
+
+  build leído: BUILD_ID=8KgKWvK4tKbclMaMQqJew  mtime=2026-09-04T18:33:23.091Z
+  public/: 2755 ficheros · 661.14 MiB
+  canal html: 428 ficheros
+  canal rsc: 3458 ficheros
+  canal css: 8 ficheros
+  canal js: 23 ficheros
+  canal fuente: 166 ficheros
+
+── LOS DOS LADOS (diferencia simétrica, nunca la resta) ──
+  por RUTA (cota baja de alcance):
+     alcanzables 2489 f · 626.95 MiB
+     ARRASTRE    266 f · 34.19 MiB  (9.7% f · 5.2% MiB)
+  por BASENAME (cota alta de alcance):
+     alcanzables 2518 f · 633.82 MiB
+     ARRASTRE    237 f · 27.32 MiB
+
+── §regla 61, el otro lado ──
+  rutas citadas SIN fichero en public/: 1730
+
+── AUDITORÍA DEL CERO de /api/media/ ──
+  ficheros exclusivos de media/: 2202 · citados en el HTML: 1
+  control positivo: images/uploads/2017/11/Javier-Fernández-@KunaK_sensing-contaminación-ambiental-y-acústica.mp4
+  hay consumo de media/ — el cero de `/api/media/` era del patrón
+
+── DESGLOSE de los 661.14 MiB POR ORIGEN ──
+     657.69 MiB ( 99.5%)   2696 f  alcanzables  2481  captura del original · uploads de WordPress
+       2.09 MiB (  0.3%)     27 f  alcanzables     0  otros de images/
+       1.35 MiB (  0.2%)     15 f  alcanzables     0  fuentes
+       0.01 MiB (    0%)      1 f  alcanzables     0  logos
+       0.01 MiB (    0%)     10 f  alcanzables     8  tema Divi / KunakAir
+       0.01 MiB (    0%)      5 f  alcanzables     0  SEO (favicon, og, manifest)
+          0 MiB (    0%)      1 f  alcanzables     0  vídeos
+
+── FORMA del arrastre ──
+  variantes de WordPress: 186 f · 23.22 MiB
+  NO variantes:           80 f · 10.98 MiB
+  el arrastre es sobre todo VARIANTES de WordPress: lo produjo la captura, no el clon
+
+✓ congelado en docs\research\cola-larga\derivaciones\alcance-146.json

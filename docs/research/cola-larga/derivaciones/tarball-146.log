@@ -1,0 +1,19 @@
+═══ 146.ª ESCALÓN 2 · P3 — EL TARBALL, CONTRA EL ARTEFACTO ═══
+
+  repo Algarpibe/ambientalia-web-k · rama main · HEAD 4894b43
+  URL: https://codeload.github.com/Algarpibe/ambientalia-web-k/tar.gz/refs/heads/main
+
+  intento 1: http=200 · 1320.25 MiB en 85.5s · íntegro=true · descomprimido 1832.04 MiB
+  intento 2: http=200 · 1320.25 MiB en 75.5s · íntegro=true · descomprimido 1832.04 MiB
+
+── CONTROLES ──
+  dos intentos independientes · tamaños iguales: true
+  íntegros: 2 de 2
+
+── VEREDICTO ──
+  EL ORIGEN SIRVE UN ARCHIVO ÍNTEGRO en 2 de 2 intentos. El `gzip: unexpected end of file` del despliegue NO es del archivo: es de la TRANSFERENCIA — se cortó en el camino a Easypanel
+
+── COMPRESIÓN ──
+  rastreado 1825.78 MiB → tarball 1320.25 MiB (ratio 1.38×)
+
+✓ congelado en docs\research\cola-larga\derivaciones\tarball-146.json

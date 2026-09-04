@@ -1,0 +1,37 @@
+═══ 146.ª ESCALÓN 2 · P1 — SOLAPE public/ ↔ media/ POR HASH ═══
+
+  public/ 2755 ficheros · 661.14 MiB
+  media/  3418 ficheros · 304.36 MiB
+
+── TESTIGOS (§regla 28d, uno por polaridad) ──
+  POSITIVO (debe salir DENTRO): 01-Kunak-AIR-Pro-1-scaled-2.jpg
+  NEGATIVO (debe salir FUERA):  fonts/fa-brands-400.woff2
+
+  hasheando 6173 ficheros…
+  hecho en 7.4s
+
+── VEREDICTO DE LOS TESTIGOS ──
+  positivo DENTRO: ✓
+  negativo FUERA:  ✓
+  ✓ el comparador discrimina — el número significa algo
+
+── LOS DOS LADOS (nunca la resta) ──
+  en AMBOS:        950 f · 120.37 MiB
+  sólo en public/: 1805 f · 540.78 MiB
+  sólo en media/:  2474 f · 184.61 MiB
+
+── REPARTO por subdirectorio de public/ ──
+     657.69 MiB   2696 f  solapan   950 ( 35.2%) = 120.37 MiB  images/uploads
+       2.09 MiB     26 f  solapan     0 (    0%) = 0 MiB  images/other
+       1.35 MiB     15 f  solapan     0 (    0%) = 0 MiB  fonts
+       0.01 MiB      1 f  solapan     0 (    0%) = 0 MiB  images/logos
+       0.01 MiB     10 f  solapan     0 (    0%) = 0 MiB  images/theme
+       0.01 MiB      5 f  solapan     0 (    0%) = 0 MiB  seo
+          0 MiB      1 f  solapan     0 (    0%) = 0 MiB  images
+          0 MiB      1 f  solapan     0 (    0%) = 0 MiB  videos
+
+── SEPARADORA: ¿por qué URL los pide el HTML? ──
+  428 HTML leídos · /api/media/ ×0 · /images/ ×27163
+  el HTML NO pide NADA por /api/media/: el solape por hash no basta para mover un solo fichero al volumen sin cambiar además el canal del render
+
+✓ congelado en docs\research\cola-larga\derivaciones\solape-146.json

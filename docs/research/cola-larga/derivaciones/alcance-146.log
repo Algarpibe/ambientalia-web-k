@@ -1,0 +1,47 @@
+═══ 146.ª ESCALÓN 2 · P2 — ALCANCE de public/ ═══
+
+  build leído: BUILD_ID=8KgKWvK4tKbclMaMQqJew  mtime=2026-09-04T18:33:23.091Z
+  public/: 2755 ficheros · 661.14 MiB
+  canal html: 428 ficheros
+  canal rsc: 3458 ficheros
+  canal css: 8 ficheros
+  canal js: 23 ficheros
+  canal fuente: 166 ficheros
+
+── CONTROLES DEL INSTRUMENTO (por las dos polaridades) ──
+  despojo de comentarios: 163 ficheros · 640053 chars
+  testigo NEGATIVO (el logo, citado sólo en comentario): no sale ✓
+  testigo POSITIVO (el regex sigue casando):             el regex casa ✓ (2497)
+
+── LOS DOS LADOS (diferencia simétrica, nunca la resta) ──
+  por RUTA (cota baja de alcance):
+     alcanzables 2497 f · 629.12 MiB
+     ARRASTRE    258 f · 32.02 MiB  (9.4% f · 4.8% MiB)
+  por BASENAME (cota alta de alcance):
+     alcanzables 2517 f · 633.82 MiB
+     ARRASTRE    238 f · 27.33 MiB
+
+── §regla 61, el otro lado ──
+  rutas citadas SIN fichero en public/: 357
+  de OTRO dominio (dato, no defecto):    243
+
+── AUDITORÍA DEL CERO de /api/media/ ──
+  ficheros exclusivos de media/: 2202 · citados en el HTML: 0
+  control positivo: images/uploads/2017/11/Javier-Fernández-@KunaK_sensing-contaminación-ambiental-y-acústica.mp4
+  el cero es DEL OBJETO: el HTML no cita ni un fichero exclusivo de media/ con nombre discriminante. Mecanismo DECLARADO en CMS-0g — el clon renderiza `/images/uploads/…` a propósito, y el campo de PROCEDENCIA existe justamente para reconstruir esa cadena. O sea: mismo byte, otra URL
+
+── DESGLOSE de los 661.14 MiB POR ORIGEN ──
+     657.69 MiB ( 99.5%)   2696 f  alcanzables  2489  captura del original · uploads de WordPress
+       2.09 MiB (  0.3%)     27 f  alcanzables     0  otros de images/
+       1.35 MiB (  0.2%)     15 f  alcanzables     0  fuentes
+       0.01 MiB (    0%)      1 f  alcanzables     0  logos
+       0.01 MiB (    0%)     10 f  alcanzables     8  tema Divi / KunakAir
+       0.01 MiB (    0%)      5 f  alcanzables     0  SEO (favicon, og, manifest)
+          0 MiB (    0%)      1 f  alcanzables     0  vídeos
+
+── FORMA del arrastre ──
+  variantes de WordPress: 186 f · 23.22 MiB
+  NO variantes:           72 f · 8.81 MiB
+  el arrastre es sobre todo VARIANTES de WordPress: lo produjo la captura, no el clon
+
+✓ congelado en docs\research\cola-larga\derivaciones\alcance-146.json

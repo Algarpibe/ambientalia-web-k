@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "tanda": "146.ª",
+    "escalon": "ESCALÓN 2 · P1",
+    "fecha": "2026-09-04T23:02:18.578Z",
+    "saboteada": null,
+    "acredita": true,
+    "criterioDeIdentidad": "SHA-256 del contenido, sobre los bytes del DISCO",
+    "segundosHasheando": 7.4
+  },
+  "testigos": {
+    "positivo": {
+      "rel": "01-Kunak-AIR-Pro-1-scaled-2.jpg",
+      "bytes": 64892
+    },
+    "negativo": {
+      "rel": "fonts/fa-brands-400.woff2",
+      "bytes": 78460
+    },
+    "positivoDentro": true,
+    "negativoFuera": true,
+    "veredicto": "DISCRIMINA"
+  },
+  "cardinales": {
+    "publicTotal": {
+      "ficheros": 2755,
+      "MiB": 661.14
+    },
+    "mediaTotal": {
+      "ficheros": 3418,
+      "MiB": 304.36
+    },
+    "enAmbos": {
+      "ficheros": 950,
+      "MiB": 120.37
+    },
+    "soloEnPublic": {
+      "ficheros": 1805,
+      "MiB": 540.78
+    },
+    "soloEnMedia": {
+      "ficheros": 2474,
+      "MiB": 184.61
+    }
+  },
+  "repartoDelSolapePorCubo": [
+    {
+      "cubo": "images/uploads",
+      "ficheros": 2696,
+      "MiB": 657.69,
+      "solapan": 950,
+      "solapanMiB": 120.37,
+      "pctFicheros": 35.2
+    },
+    {
+      "cubo": "images/other",
+      "ficheros": 26,
+      "MiB": 2.09,
+      "solapan": 0,
+      "solapanMiB": 0,
+      "pctFicheros": 0
+    },
+    {
+      "cubo": "fonts",
+      "ficheros": 15,
+      "MiB": 1.35,
+      "solapan": 0,
+      "solapanMiB": 0,
+      "pctFicheros": 0
+    },
+    {
+      "cubo": "images/logos",
+      "ficheros": 1,
+      "MiB": 0.01,
+      "solapan": 0,
+      "solapanMiB": 0,
+      "pctFicheros": 0
+    },
+    {
+      "cubo": "images/theme",
+      "ficheros": 10,
+      "MiB": 0.01,
+      "solapan": 0,
+      "solapanMiB": 0,
+      "pctFicheros": 0
+    },
+    {
+      "cubo": "seo",
+      "ficheros": 5,
+      "MiB": 0.01,
+      "solapan": 0,
+      "solapanMiB": 0,
+      "pctFicheros": 0
+    },
+    {
+      "cubo": "images",
+      "ficheros": 1,
+      "MiB": 0,
+      "solapan": 0,
+      "solapanMiB": 0,
+      "pctFicheros": 0
+    },
+    {
+      "cubo": "videos",
+      "ficheros": 1,
+      "MiB": 0,
+      "solapan": 0,
+      "solapanMiB": 0,
+      "pctFicheros": 0
+    }
+  ],
+  "separadoraDeURL": {
+    "pregunta": "mismo byte no es misma URL — ¿por dónde los pide el HTML emitido?",
+    "htmlLeidos": 428,
+    "ocurrenciasApiMedia": 0,
+    "ocurrenciasImages": 27163,
+    "lectura": "el HTML NO pide NADA por /api/media/: el solape por hash no basta para mover un solo fichero al volumen sin cambiar además el canal del render"
+  },
+  "muestraEnAmbos": [
+    {
+      "rel": "images/uploads/2018/03/cloud-aqi-e1676883908116.jpg",
+      "MiB": 0.16,
+      "enMedia": "cloud-aqi-e1676883908116.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/03/cloud-operation-alarms-e1676884474183.jpg",
+      "MiB": 0.11,
+      "enMedia": "cloud-operation-alarms-e1676884474183.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/03/cloud-time-variation-e1676884641219.jpg",
+      "MiB": 0.18,
+      "enMedia": "cloud-time-variation-e1676884641219.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/06/IMG-20160729-WA0013-sice.jpg",
+      "MiB": 0.51,
+      "enMedia": "IMG-20160729-WA0013-sice.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/06/kunak_monitorizacion_de_perimetro_emisiones_industriales_tecnalia.jpg",
+      "MiB": 0.08,
+      "enMedia": "kunak_monitorizacion_de_perimetro_emisiones_industriales_tecnalia.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/09/inmobiliaria-Rivas-Vaciamadrid2.jpg",
+      "MiB": 0.1,
+      "enMedia": "inmobiliaria-Rivas-Vaciamadrid2.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/09/sensor-calidad-aire-rivas-vaciamadrid-1-600x600.jpg",
+      "MiB": 0.07,
+      "enMedia": "sensor-calidad-aire-rivas-vaciamadrid-1-600x600.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/09/sensor-calidad-aire-rivas-vaciamadrid-2-600x600.jpg",
+      "MiB": 0.08,
+      "enMedia": "sensor-calidad-aire-rivas-vaciamadrid-2-600x600.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/09/sensor-calidad-aire-rivas-vaciamadrid-3-600x600.jpg",
+      "MiB": 0.05,
+      "enMedia": "sensor-calidad-aire-rivas-vaciamadrid-3-600x600.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/09/sensor-calidad-aire-rivas-vaciamadrid-4-600x600.jpg",
+      "MiB": 0.05,
+      "enMedia": "sensor-calidad-aire-rivas-vaciamadrid-4-600x600.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/09/sensor-calidad-aire-rivas-vaciamadrid-5-600x600.jpg",
+      "MiB": 0.08,
+      "enMedia": "sensor-calidad-aire-rivas-vaciamadrid-5-600x600.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/09/sensor-calidad-aire-rivas-vaciamadrid-6-600x600.jpg",
+      "MiB": 0.14,
+      "enMedia": "sensor-calidad-aire-rivas-vaciamadrid-6-600x600.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/11/Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF-480x275.jpg",
+      "MiB": 0.03,
+      "enMedia": "Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF-480x275.jpg"
+    },
+    {
+      "rel": "images/uploads/2018/11/Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF.jpg",
+      "MiB": 0.07,
+      "enMedia": "Kunak-AIR-medira-la-calidad-del-aire-para-analizar-el-rendimiento-de-los-athletas-para-la-IAAF.jpg"
+    },
+    {
+      "rel": "images/uploads/2019/05/calidad-del-aire-ciudad-de-mexico-1024x682.jpeg",
+      "MiB": 0.05,
+      "enMedia": "calidad-del-aire-ciudad-de-mexico-1024x682.jpeg"
+    }
+  ],
+  "muestraSoloPublicPesados": [
+    {
+      "rel": "images/uploads/2026/02/ternium.mp4",
+      "MiB": 32.54
+    },
+    {
+      "rel": "images/uploads/2025/02/Lagos-marathon-WA-clean-air-project-15-02-2025.mp4",
+      "MiB": 20.36
+    },
+    {
+      "rel": "images/uploads/2020/03/VIDEO-OBRAS-DEMOLICIONES.mp4",
+      "MiB": 18.96
+    },
+    {
+      "rel": "images/uploads/2024/10/Almacenaje-producto-de-acero-1.jpg",
+      "MiB": 17.62
+    },
+    {
+      "rel": "images/uploads/2025/04/Porto-Alegre-air-quality-monitoring-network.mp4",
+      "MiB": 15.3
+    },
+    {
+      "rel": "images/uploads/2024/11/Efectos-del-ozono-troposferico-en-la-vegetacion-y-los-ecosistemas-de-Ecologistas-en-Accion.pdf",
+      "MiB": 14.28
+    },
+    {
+      "rel": "images/uploads/2025/12/Respirar-Fundo-Proyecto-de-monitorizacion-de-la-calidad-del-aire-en-escuelas-portuguesas.mp4",
+      "MiB": 13.01
+    },
+    {
+      "rel": "images/uploads/2024/05/Kids_Want_Climate_Justice_34168280266.jpg",
+      "MiB": 10.64
+    },
+    {
+      "rel": "images/uploads/2020/10/CIRCULAR-NAVARRE-CATALOGUE.pdf",
+      "MiB": 9.8
+    },
+    {
+      "rel": "images/uploads/2025/11/Procesos_y_gases_generados_por_una_EDAR.pdf",
+      "MiB": 7.78
+    },
+    {
+      "rel": "images/uploads/2023/04/cartridges.gif",
+      "MiB": 7.58
+    },
+    {
+      "rel": "images/uploads/2026/05/Trabajo-industrial-en-espacios-confinados-y-riesgo-ante-oxigeno_Kunak-scaled.png",
+      "MiB": 7.06
+    },
+    {
+      "rel": "images/uploads/2017/11/Javier-Fernández-@KunaK_sensing-contaminación-ambiental-y-acústica.mp4",
+      "MiB": 6.65
+    },
+    {
+      "rel": "images/uploads/2023/05/GwadAir_video.mp4",
+      "MiB": 6.55
+    },
+    {
+      "rel": "images/uploads/2023/05/GwadAir.gif",
+      "MiB": 5.4
+    }
+  ]
+}

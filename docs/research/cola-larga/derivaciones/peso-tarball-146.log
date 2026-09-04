@@ -1,0 +1,26 @@
+═══ 146.ª · PESO DE CADA CUBO EN EL TARBALL (medido, no estimado) ═══
+
+  tarball entero medido: 1320.25 MiB
+
+       1.69 MiB comp ·     17.79 MiB crudo · ratio 10.56×  (resto)
+          0 MiB comp ·      0.01 MiB crudo · ratio  2.45×  Dockerfile
+          0 MiB comp ·         0 MiB crudo · ratio  1.63×  LICENSE
+     649.57 MiB comp ·    661.14 MiB crudo · ratio  1.02×  apps/web/public
+      29.26 MiB comp ·    178.76 MiB crudo · ratio  6.11×  corpus
+      10.32 MiB comp ·     20.92 MiB crudo · ratio  2.03×  docs
+     585.47 MiB comp ·    593.65 MiB crudo · ratio  1.01×  media-corpus
+      46.46 MiB comp ·     353.6 MiB crudo · ratio  7.61×  scripts
+
+── CONTROL del método ──
+  tarball entero medido:      1320.25 MiB
+  suma de cubos comprimidos:  1322.77 MiB
+  desviación: 0.2%  → el método vale: trocear pierde poco ratio
+
+── QUÉ QUITA CADA CANDIDATO, EN MiB DE TARBALL ──
+  quita        0 MiB → tarball  1322.77 MiB  no tocar nada
+  quita    29.02 MiB → tarball  1293.75 MiB  quitar SÓLO el arrastre de public/ (lo que nadie cita)
+  quita   118.01 MiB → tarball  1204.76 MiB  quitar de public/ lo que SOLAPA con media/ (CMS-0b)
+  quita   649.57 MiB → tarball    673.2 MiB  sacar public/ ENTERO del repo
+  quita   671.51 MiB → tarball   651.26 MiB  sacar del repo lo que el .dockerignore YA excluye (media-corpus + scripts + corpus + docs)
+
+✓ congelado en docs\research\cola-larga\derivaciones\peso-tarball-146.json

@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "tanda": "146.ª",
+    "escalon": "ESCALÓN 2 · P3",
+    "fecha": "2026-09-04T23:22:43.542Z",
+    "proposito": "separar «archivo corrupto en origen» de «transferencia cortada» — dan el mismo error",
+    "repo": "Algarpibe/ambientalia-web-k",
+    "rama": "main",
+    "head": "4894b43ed52f983d1a2f4cd56781dfb0448b23c0",
+    "url": "https://codeload.github.com/Algarpibe/ambientalia-web-k/tar.gz/refs/heads/main"
+  },
+  "intentos": [
+    {
+      "intento": 1,
+      "httpCode": "200",
+      "exitCurl": 0,
+      "stderrCurl": null,
+      "segundos": 85.5,
+      "bytes": 1384386676,
+      "MiB": 1320.25,
+      "velocidadBytesSeg": 16466746,
+      "integro": true,
+      "bytesDescomprimidos": 1921034240,
+      "MiBDescomprimidos": 1832.04,
+      "errorGzip": null
+    },
+    {
+      "intento": 2,
+      "httpCode": "200",
+      "exitCurl": 0,
+      "stderrCurl": null,
+      "segundos": 75.5,
+      "bytes": 1384386676,
+      "MiB": 1320.25,
+      "velocidadBytesSeg": 18351646,
+      "integro": true,
+      "bytesDescomprimidos": 1921034240,
+      "MiBDescomprimidos": 1832.04,
+      "errorGzip": null
+    }
+  ],
+  "controles": {
+    "dosIntentosIndependientes": true,
+    "tamanosIguales": true,
+    "algunoIntegro": true,
+    "todosIntegros": true
+  },
+  "veredicto": "EL ORIGEN SIRVE UN ARCHIVO ÍNTEGRO en 2 de 2 intentos. El `gzip: unexpected end of file` del despliegue NO es del archivo: es de la TRANSFERENCIA — se cortó en el camino a Easypanel",
+  "compresion": {
+    "rastreadoMiB": 1825.78,
+    "tarballMiB": 1320.25,
+    "ratio": 1.38
+  },
+  "publicEnElCaminoConB": {
+    "porPUBLICACION": {
+      "pasa": false,
+      "evidencia": "docker-compose.yml:39 monta SÓLO `.next` (`:ro`); publicador.mjs toca `public/` en 0 líneas de código"
+    },
+    "porCONSTRUIR_LA_IMAGEN": {
+      "pasa": true,
+      "frecuencia": "UNA vez con B — frente a cada publicación con A",
+      "evidencia": "`.dockerignore` no excluye `apps/web/public`; Dockerfile:137 lo copia a la imagen"
+    },
+    "porTRAER_EL_REPO_AL_HOST": {
+      "pasa": true,
+      "evidencia": "con B quien construye es el publicador EN EL HOST, así que el host necesita el árbol. CMS-10 decidió el modelo de publicación, NO el de entrega del código: eso queda abierto"
+    }
+  }
+}
