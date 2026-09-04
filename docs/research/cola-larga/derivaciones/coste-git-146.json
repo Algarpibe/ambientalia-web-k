@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "tanda": "146.ª",
+    "escalon": "ESCALÓN 3 · la pregunta aparte",
+    "fecha": "2026-09-04T23:29:25.228Z",
+    "pregunta": "¿tiene sentido que 2 755 ficheros binarios de 661 MiB estén rastreados en git? — SE MIDE, NO SE DECIDE",
+    "advertencia": "el coste de un binario en git no es su tamaño: es su tamaño POR CADA VERSIÓN. Git no delta-comprime dos JPEG."
+  },
+  "packPorCubo": [
+    {
+      "cubo": "apps/web/public",
+      "blobsEnElHistorial": 2731,
+      "contenidoMiB": 657.48,
+      "enElPackMiB": 645.73,
+      "exclusivoMiB": 645.73,
+      "exclusivoBlobs": 2731,
+      "compartidoMiB": 0,
+      "compartidoBlobs": 0
+    },
+    {
+      "cubo": "media-corpus",
+      "blobsEnElHistorial": 400,
+      "contenidoMiB": 197.71,
+      "enElPackMiB": 195.46,
+      "exclusivoMiB": 195.46,
+      "exclusivoBlobs": 400,
+      "compartidoMiB": 0,
+      "compartidoBlobs": 0
+    },
+    {
+      "cubo": "docs",
+      "blobsEnElHistorial": 1606,
+      "contenidoMiB": 333.92,
+      "enElPackMiB": 74.18,
+      "exclusivoMiB": 74.18,
+      "exclusivoBlobs": 1606,
+      "compartidoMiB": 0,
+      "compartidoBlobs": 0
+    },
+    {
+      "cubo": "scripts",
+      "blobsEnElHistorial": 3424,
+      "contenidoMiB": 619.97,
+      "enElPackMiB": 46.9,
+      "exclusivoMiB": 46.9,
+      "exclusivoBlobs": 3424,
+      "compartidoMiB": 0,
+      "compartidoBlobs": 0
+    },
+    {
+      "cubo": "(resto)",
+      "blobsEnElHistorial": 1171,
+      "contenidoMiB": 54.59,
+      "enElPackMiB": 8.36,
+      "exclusivoMiB": 8.36,
+      "exclusivoBlobs": 1171,
+      "compartidoMiB": 0,
+      "compartidoBlobs": 0
+    },
+    {
+      "cubo": "corpus",
+      "blobsEnElHistorial": 689,
+      "contenidoMiB": 178.99,
+      "enElPackMiB": 5.42,
+      "exclusivoMiB": 5.42,
+      "exclusivoBlobs": 689,
+      "compartidoMiB": 0,
+      "compartidoBlobs": 0
+    },
+    {
+      "cubo": "Dockerfile",
+      "blobsEnElHistorial": 4,
+      "contenidoMiB": 0.02,
+      "enElPackMiB": 0.01,
+      "exclusivoMiB": 0.01,
+      "exclusivoBlobs": 4,
+      "compartidoMiB": 0,
+      "compartidoBlobs": 0
+    },
+    {
+      "cubo": "LICENSE",
+      "blobsEnElHistorial": 1,
+      "contenidoMiB": 0,
+      "enElPackMiB": 0,
+      "exclusivoMiB": 0,
+      "exclusivoBlobs": 1,
+      "compartidoMiB": 0,
+      "compartidoBlobs": 0
+    }
+  ],
+  "blobsEnMasDeUnCubo": 0,
+  "avisoDeAtribucion": "git deduplica por contenido: un mismo JPEG en media-corpus/ y en apps/web/public/ es UN blob. El `quita X MiB` de cada cubo usa su EXCLUSIVO, no su total — sacar uno no libera lo que el otro retiene.",
+  "multiplicadorDePublic": {
+    "rutasDistintasEnElHistorial": 2731,
+    "rutasConMasDeUnaVersion": 0,
+    "versionesTotales": 2731,
+    "mediaVersionesPorRuta": 1,
+    "enElPack": {
+      "actualMiB": 645.73,
+      "historicoMiB": 0,
+      "blobsHistoricos": 0
+    },
+    "contenido": {
+      "actualMiB": 657.48,
+      "historicoMiB": 0
+    },
+    "masVersiones": [
+      {
+        "ruta": "apps/web/public/fonts/fa-brands-400.eot",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-brands-400.ttf",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-brands-400.woff",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-brands-400.woff2",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-regular-400.eot",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-regular-400.ttf",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-regular-400.woff",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-regular-400.woff2",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-solid-900.eot",
+        "versiones": 1
+      },
+      {
+        "ruta": "apps/web/public/fonts/fa-solid-900.ttf",
+        "versiones": 1
+      }
+    ],
+    "lectura": "ningún fichero de public/ se ha re-capturado: el coste histórico es CERO y el pack es sólo el estado actual"
+  },
+  "costeOperativo": {
+    "packTotalMiB": 894.64,
+    "sueltosMiB": 88.56,
+    "gitEnDiscoMiB": 983.2,
+    "clonCompletoMiB": 2720.42,
+    "tarballMiB": 1320.25,
+    "aportacionDePublicAlPackMiB": 645.73,
+    "pctDelPack": 72.2
+  },
+  "costeDeCadaSalida": [
+    {
+      "salida": "no hacer nada",
+      "trabajo": "cero",
+      "loQuePagas": "cada clon completo transfiere 894.64 MiB de pack; cada tarball de despliegue, 1320.25 MiB",
+      "reversible": "n/a"
+    },
+    {
+      "salida": "dejar de RASTREAR public/ de aquí en adelante (`.gitignore` + volumen/CDN)",
+      "trabajo": "una línea en `.gitignore`, más resolver CÓMO llega public/ al destino (hoy llega por la imagen)",
+      "loQuePagas": "el pack NO encoge: los 645.73 MiB ya escritos siguen en el historial. Sólo deja de CRECER",
+      "deshacer": "volver a añadirlo — barato, es un `git add`",
+      "reversible": "sí, barato"
+    },
+    {
+      "salida": "REESCRIBIR el historial para sacar public/ (`git filter-repo`)",
+      "trabajo": "reescribe TODOS los commits: cambian los SHA, hay que forzar el push y cualquier clon existente queda huérfano",
+      "loQuePagas": "el pack baja ~645.73 MiB (72.2% del pack)",
+      "deshacer": "NO se deshace: los SHA nuevos son otros commits. La única vuelta atrás es un clon guardado de antes",
+      "reversible": "NO — es la única de la lista que no tiene operación de deshacer"
+    },
+    {
+      "salida": "Git LFS para los binarios",
+      "trabajo": "migrar el historial (mismo coste que filter-repo) y que el destino tenga cliente LFS",
+      "loQuePagas": "el pack baja, pero el tarball de GitHub NO trae los objetos LFS: el despliegue tendría que hacer `lfs pull`",
+      "deshacer": "migrar de vuelta — caro, mismo coste que la ida",
+      "reversible": "sí, caro"
+    }
+  ]
+}

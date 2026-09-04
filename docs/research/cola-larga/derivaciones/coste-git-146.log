@@ -1,0 +1,33 @@
+═══ 146.ª ESCALÓN 3 · EL COSTE EN GIT (medido, no estimado) ═══
+
+  objetos alcanzables en TODO el historial: 16271
+
+── EL PACK, POR CUBO — EXCLUSIVO vs COMPARTIDO ──
+  (git deduplica por contenido: un blob en dos cubos NO se libera sacando uno)
+  exclusivo    645.73 MiB ( 2731 blobs) · compartido        0 MiB (    0)  apps/web/public
+  exclusivo    195.46 MiB (  400 blobs) · compartido        0 MiB (    0)  media-corpus
+  exclusivo     74.18 MiB ( 1606 blobs) · compartido        0 MiB (    0)  docs
+  exclusivo      46.9 MiB ( 3424 blobs) · compartido        0 MiB (    0)  scripts
+  exclusivo      8.36 MiB ( 1171 blobs) · compartido        0 MiB (    0)  (resto)
+  exclusivo      5.42 MiB (  689 blobs) · compartido        0 MiB (    0)  corpus
+  exclusivo      0.01 MiB (    4 blobs) · compartido        0 MiB (    0)  Dockerfile
+  exclusivo         0 MiB (    1 blobs) · compartido        0 MiB (    0)  LICENSE
+
+  blobs presentes en MÁS DE UN cubo: 0
+
+── EL MULTIPLICADOR de public/ ──
+  rutas distintas en el historial: 2731
+  con MÁS DE UNA versión:          0
+  versiones totales:               2731  (media 1.00 por ruta)
+  en el pack — ACTUAL:   645.73 MiB
+  en el pack — HISTÓRICO (versiones muertas): 0 MiB en 0 blobs
+
+── COSTE OPERATIVO ──
+  pack total:                    894.64 MiB
+  de eso, public/:               645.73 MiB (72.2%)
+  clon completo (pack + árbol):  2720.42 MiB
+  tarball de despliegue:         1320.25 MiB
+
+  ningún fichero de public/ se ha re-capturado: el coste histórico es CERO y el pack es sólo el estado actual
+
+✓ congelado en docs\research\cola-larga\derivaciones\coste-git-146.json

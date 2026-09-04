@@ -7990,3 +7990,247 @@ afirmaciones, §regla 15— y **por efecto**, §regla 53): `docker restart` sobr
 contenedor existente mueve `StartedAt` y devuelve 0; sobre uno inventado
 devuelve 1. **Los dos controles hacían falta**: sin el negativo, un mecanismo
 que devolviera 0 siempre pasaría igual.
+
+---
+
+## CMS-11 · QUÉ SE HACE CON LOS 661 MiB DE `apps/web/public` — ⏳ **ABIERTA: EL REPARTO ESTÁ MEDIDO, LA DECISIÓN ES DEL PROPIETARIO** (2026-09-04, 146.ª)
+
+**Qué se decide:** si `apps/web/public` se deja como está, se poda, se mueve a
+un volumen o se saca del repositorio. **No es una decisión de limpieza**:
+decide cómo llega el sitio al VPS y qué se transfiere en cada despliegue.
+
+**Esta ficha no elige.** Trae los candidatos con su coste medido, sus
+separadoras y **la operación de deshacer de cada uno** (§regla 23), que es lo
+único que impide que el signo se invierta al releerla.
+
+Ninguna cifra de aquí es una premisa heredada: las cinco derivaciones están
+congeladas en `docs/research/cola-larga/derivaciones/` —`paso0-146`,
+`solape-146`, `alcance-146`, `tarball-146`, `peso-tarball-146`,
+`coste-git-146`— con sus controles.
+
+---
+
+### 0 · LO PRIMERO, PORQUE CAMBIA LA PREGUNTA: `public/` NO ES EL PROBLEMA ENTERO
+
+El encargo preguntaba por los 661 MiB de `public/`. Medido el reparto de **lo
+que viaja** —el tarball, no el disco—:
+
+| cubo | en disco | **en el tarball** | ratio |
+|---|---|---|---|
+| `apps/web/public` | 661.14 MiB | **649.57 MiB** | **1.02×** |
+| `media-corpus` | 593.65 MiB | **585.47 MiB** | **1.01×** |
+| `scripts` | 353.60 MiB | 46.46 MiB | 7.61× |
+| `corpus` | 178.76 MiB | 29.26 MiB | 6.11× |
+| `docs` | 20.92 MiB | 10.32 MiB | 2.03× |
+| (resto) | 17.79 MiB | 1.69 MiB | 10.56× |
+
+> **`public/` y `media-corpus` son el 93.5 % del tarball**, los dos con ratio
+> ~1 porque son JPEG/PNG/MP4 ya comprimidos. Y **`scripts` era el 2.º cubo en
+> disco (19.4 %) y es el 4.º en el tarball (3.5 %)**.
+>
+> **Leer el reparto en MiB de disco y proponer recortes con él da la respuesta
+> equivocada**, y es §*un default expresado como porcentaje se lee como
+> constante en cuanto se cita* con el contenedor puesto en **la unidad**: los
+> dos números se escriben igual y sólo uno predice lo que se transfiere.
+
+Control del método: suma de cubos comprimidos por separado **1 322.77 MiB**
+contra el tarball entero medido **1 320.25 MiB** → **0.2 % de desviación**, así
+que trocear apenas pierde ratio.
+
+**Y el 62.8 % del tarball es material que el `.dockerignore` YA descarta de la
+imagen** —`media-corpus` + `scripts` + `corpus` + `docs`—: el tarball no lee
+`.dockerignore`.
+
+---
+
+### 1 · EL FALLO DEL DESPLIEGUE NO ES DE `public/`, Y B NO LO DISUELVE
+
+El encargo pedía derivar si aplicar B hace desaparecer el fallo. **No lo hace**,
+y las dos mitades están medidas.
+
+**(a) El archivo no está corrupto: se corta la transferencia.** Dos descargas
+independientes del mismo tarball desde `codeload.github.com`:
+
+| | http | MiB | segundos | íntegro |
+|---|---|---|---|---|
+| intento 1 | 200 | 1 320.25 | 85.5 | **sí** |
+| intento 2 | 200 | 1 320.25 | 75.5 | **sí** |
+
+**2 de 2 íntegros, mismo tamaño al byte.** Las dos causas posibles del
+`gzip: unexpected end of file` producen el mismo mensaje y sólo esto las
+separa: el origen sirve bien, **lo que falla es el camino a Easypanel**.
+
+**(b) B cambia la FRECUENCIA, no el camino.** Derivado de los tres ficheros que
+lo deciden, y son tres caminos distintos:
+
+| camino | ¿pasa `public/`? | frecuencia | evidencia |
+|---|---|---|---|
+| cada **PUBLICACIÓN** | **NO** | por cada *Publicar* | `docker-compose.yml:39` monta **sólo** `.next` (`:ro`); `publicador.mjs` toca `public/` en **0 líneas de código** |
+| construir la **IMAGEN** | **SÍ** | **una vez** con B (contra *cada publicación* con A) | `.dockerignore` no excluye `apps/web/public`; `Dockerfile:137` lo copia |
+| traer el **REPO** al host | **SÍ** | una vez, y en cada actualización | con B quien construye es el publicador **en el host**, así que el host necesita el árbol |
+
+> **CMS-10 decidió el modelo de PUBLICACIÓN, no el de ENTREGA DEL CÓDIGO.** Ese
+> tercer camino queda abierto, y es donde vive el fallo. Un `git clone` con
+> reintentos y reanudación no tiene el modo de fallo que tiene un tarball de
+> 1 320 MiB de un tirón — pero **eso no está medido** y se declara SIN PROBAR:
+> esta tanda no toca el VPS.
+
+**Consecuencia para el reparto: encoger `public/` es un arreglo por MAGNITUD,
+no por causa.** Baja la probabilidad del corte; no lo cierra.
+
+---
+
+### 2 · LO QUE HAY DENTRO DE LOS 661 MiB, MEDIDO
+
+**Por origen** — el 99.5 % es una sola cosa:
+
+| origen | MiB | ficheros | alcanzables |
+|---|---|---|---|
+| captura del original · uploads de WordPress | **657.69** (99.5 %) | 2 696 | 2 489 |
+| otros de `images/` (`wp-content` del tema) | 2.09 | 27 | **0** |
+| fuentes (FontAwesome de Divi) | 1.35 | 15 | **0** |
+| tema Divi / KunakAir | 0.01 | 10 | 8 |
+| SEO (favicon) | 0.01 | 5 | **0** |
+| logos | 0.01 | 1 | **0** |
+| vídeos | 0 | 1 | 0 |
+
+**Por uso** — y aquí el resultado va **en contra** de lo que el pre-registro
+predijo, por 6×:
+
+| | ficheros | MiB |
+|---|---|---|
+| **alcanzables** (alguien los cita) | **2 497** | 629.12 |
+| **arrastre** (nadie los cita) | **258** (9.4 %) | 32.02 (4.8 %) |
+
+> **El arrastre es pequeño, y la causa está medida:** el clon emite `srcset`
+> —**638 atributos en 74 HTML, 7 696 menciones de variantes**—, así que las
+> variantes de WordPress **se citan**. De los 2 755 ficheros, **1 561 son
+> variantes y 1 375 están citadas**. La predicción asumía que el clon usaba un
+> tamaño y las demás sobraban; es §regla 43 de la 145.ª leída del derecho.
+
+**Por solape con `media/` (CMS-0b)** — con los dos testigos vivos:
+
+| | ficheros | MiB |
+|---|---|---|
+| en **AMBOS** | **950** | **120.37** |
+| sólo en `public/` | 1 805 | 540.78 |
+| sólo en `media/` | 2 474 | 184.61 |
+
+---
+
+### 3 · ⚠ LA SEPARADORA QUE DECIDE SI CMS-0b SIRVE DE ALGO: MISMO BYTE NO ES MISMA URL
+
+El encargo apuntaba que un solape alto disolvería buena parte de la pregunta
+vía CMS-0b. **Medido, no lo disuelve** — y el motivo no es el byte:
+
+> En **428 HTML**: `/api/media/` **×0** contra `/images/` **×27 163**.
+
+Auditado como §sondas 4 manda —con testigo **por NOMBRE**, no por prefijo de
+URL, y control positivo vivo—: **0 de 2 202** ficheros exclusivos de `media/`
+se citan en el HTML con nombre discriminante.
+
+**Y el cero es DEL OBJETO, con mecanismo DECLARADO**, no un descuido:
+`CMS-0g` creó el campo de PROCEDENCIA precisamente *«para que la vuelta pueda
+reconstruir la cadena que el clon renderiza»*, o sea `/images/uploads/…`.
+
+> **Mover los 950 ficheros al volumen exige además cambiar el CANAL DEL
+> RENDER.** CMS-0b está decidida y no se redecide; lo que esta medición añade
+> es que **aplicarla no basta**: sin tocar el render, los 950 bytes estarían
+> en el volumen y las páginas seguirían pidiéndolos por `/images/…`.
+
+---
+
+### 4 · LOS CANDIDATOS, CON SU COSTE, SU SEPARADORA Y SU OPERACIÓN DE DESHACER
+
+Coste en **MiB de tarball**, que es la unidad que viaja. Punto de partida:
+**1 322.77 MiB**.
+
+| # | candidato | quita | tarball queda | **operación de DESHACER** | lado |
+|---|---|---|---|---|---|
+| **A** | **dejarlo como está** | 0 | 1 322.77 | n/a | — |
+| **B** | **podar el arrastre** (258 f que nadie cita) | **29.02** (−2.2 %) | 1 293.75 | `git revert` del commit de borrado | **barato** |
+| **C** | **aplicar CMS-0b al solape** (950 f) | **118.01** (−8.9 %) | 1 204.76 | volver a colocar los ficheros | **barato**, pero ⚠ **bloqueado**: hay que cambiar el canal del render primero |
+| **D** | **sacar `public/` del repo** y servirlo del volumen | **649.57** (−49.1 %) | 673.20 | `git add` de vuelta | **barato** (el historial no se toca) |
+| **E** | **sacar del repo lo que el `.dockerignore` YA excluye** (`media-corpus` + `scripts` + `corpus` + `docs`) | **671.51** (−50.8 %) | 651.26 | `git add` de vuelta | **barato**, pero ⚠ se lleva las **congeladas de `medidas/`**, que son la evidencia de §regla 2 |
+| **D+E** | los dos | **1 321.08** | **1.69** | ídem | — |
+
+**Las separadoras, que es lo que distingue candidatos que parecen alternativas:**
+
+1. **B y C no compiten con D: son subconjuntos suyos.** Si se hace D, B y C
+   dejan de tener objeto. Sólo tiene sentido elegir entre ellos si `public/`
+   se queda;
+2. **C tiene una precondición que B y D no tienen** —cambiar el canal del
+   render—, así que su coste real **no es 118.01 MiB: es 118.01 MiB más una
+   tanda de render**. Compararlo con B por el número solo invierte la decisión;
+3. **D y E atacan cosas distintas.** D reduce lo que la IMAGEN necesita; E
+   reduce sólo el tarball, porque esos cubos **ya están fuera de la imagen**.
+   Si el problema es el tarball, **E quita más que D y no toca el despliegue**;
+4. **y ninguno de los cinco cierra la causa medida** (§1: se corta la
+   transferencia). Todos bajan la probabilidad.
+
+⚠ **D tiene un coste que el número no enseña: hoy `public/` llega al VPS
+DENTRO DE LA IMAGEN** (`Dockerfile:137`). Sacarlo del repo obliga a decidir por
+dónde llega — un volumen más, un CDN, o un paso de copia. **Eso es trabajo de
+despliegue, no de repositorio**, y es la razón por la que D no es «borrar una
+carpeta».
+
+---
+
+### 5 · LA PREGUNTA APARTE: ¿TIENE SENTIDO QUE 2 755 BINARIOS DE 661 MiB ESTÉN RASTREADOS EN GIT?
+
+**No se decide aquí. Se le pone número y coste**, que es lo que el encargo pide.
+
+**El coste medido, y hay una sorpresa que va a favor del estado actual:**
+
+| | valor |
+|---|---|
+| pack total | **894.64 MiB** |
+| de eso, `public/` | **645.73 MiB · 72.2 %** — y **exclusivo**: 0 blobs compartidos con otro cubo |
+| rutas de `public/` en TODO el historial | 2 731 |
+| rutas con **más de una versión** | **0** |
+| versiones por ruta | **1.00** |
+| pack ocupado por versiones **muertas** | **0 MiB en 0 blobs** |
+| clon completo (pack + árbol) | **2 720.42 MiB** |
+
+> ⚠ **EL ARGUMENTO CLÁSICO CONTRA BINARIOS EN GIT NO SE HA MATERIALIZADO
+> AQUÍ, Y CONVIENE DECIRLO ANTES QUE NADA.** El coste de un binario en git no
+> es su tamaño sino **su tamaño por cada versión** —git no delta-comprime dos
+> JPEG—, y ese multiplicador **vale 1.00**: cada asset se capturó una vez y no
+> se ha re-capturado nunca. **0 MiB de historial muerto.**
+>
+> O sea que el pack no está inflado por el versionado: **está ocupado por el
+> estado actual**, y eso es exactamente lo que cualquier otra forma de guardar
+> los ficheros también ocuparía.
+
+**Las cuatro salidas, con su trabajo y su reversibilidad:**
+
+| salida | trabajo | qué pagas | **deshacer** |
+|---|---|---|---|
+| **no hacer nada** | cero | cada clon transfiere 894.64 MiB; cada tarball, 1 320.25 | n/a |
+| **dejar de rastrearlo de aquí en adelante** | una línea de `.gitignore` + resolver cómo llega al destino | **el pack NO encoge**: lo ya escrito sigue en el historial. Sólo deja de crecer | `git add` — **barato** |
+| **reescribir el historial** (`filter-repo`) | reescribe TODOS los commits: cambian los SHA, push forzado, clones ajenos huérfanos | el pack baja ~645.73 MiB (72.2 %) | **NO SE DESHACE** — los SHA nuevos son otros commits. La única vuelta es un clon guardado de antes |
+| **Git LFS** | migrar el historial (mismo coste que `filter-repo`) + cliente LFS en destino | el pack baja, pero **el tarball de GitHub NO trae los objetos LFS**: el despliegue necesitaría `lfs pull` | migrar de vuelta — **caro** |
+
+> **§regla 23 con la operación nombrada, porque es lo que decide:** de las
+> cuatro, **tres se deshacen y una no**. Reescribir el historial es la única
+> sin operación de deshacer, así que si se toma se toma **contra** el criterio
+> de asimetría de §1.5b y necesita su condición de reapertura escrita.
+>
+> ⚠ **Y la de LFS tiene una trampa que su número esconde:** baja el pack y
+> **no baja el tarball** — que es justo donde está el fallo medido. Elegirla
+> por el número del pack sería optimizar la magnitud equivocada.
+
+---
+
+### 6 · LO QUE ESTA FICHA NO CONTESTA, DECLARADO
+
+1. **si el VPS puede hacer `git clone`** — la tanda no toca el VPS. Es la
+   separadora que decidiría si el tercer camino de §1(b) se puede cambiar sin
+   tocar el tamaño de nada, y está **SIN MEDIR**;
+2. **cuánto tarda el clon contra el tarball desde el VPS** — ídem;
+3. **si el render puede pedir por el canal de `media/`** sin regresión de
+   fidelidad — es la precondición de C, y no se ha probado;
+4. **las 357 rutas citadas SIN fichero** que la medición del alcance destapó
+   (muestra concentrada en 2024–2025, o sea contenido posterior a la captura):
+   es un hallazgo de §regla 61 que **no es de esta tanda** y queda fichado con
+   su cardinal en `PENDIENTES-QA.md`.

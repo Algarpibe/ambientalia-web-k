@@ -31267,3 +31267,144 @@ abierto). Commits: ESCALÓN 1 (`372a269`) y ESCALÓN 2 (`8fcdea3`) en `main`;
 ESCALÓN 3 no se commitea como «hecho» porque no lo está — sólo la
 documentación de lo encontrado.
 4 promovidas, consistente con lo que midió la 128.ª.
+
+---
+
+## 146.ª · QUÉ SON LOS 661 MiB DE `apps/web/public` — EXPEDIENTE CERRADO, DECISIÓN ABIERTA (2026-09-04)
+
+Tanda de expediente: mide y trae el reparto. **No decide, no despliega, no toca
+el VPS.** El reparto para el propietario vive en `ESQUEMA-CMS.md §CMS-11`; aquí
+va el acta con lo que se midió, lo que falló y lo que queda fichado.
+
+Seis derivaciones congeladas en `docs/research/cola-larga/derivaciones/`:
+`paso0-146` · `solape-146` · `alcance-146` · `tarball-146` · `peso-tarball-146`
+· `coste-git-146`.
+
+### Las premisas del encargo, contrastadas
+
+| premisa | derivado | ¿coincide? |
+|---|---|---|
+| `public/` = 2 755 ficheros rastreados | **2 755** | ✅ exacto |
+| `public/` = 668 MB | **661.14 MiB** = 693.26 MB decimales | ⚠ el 668 no es ninguna de las dos unidades |
+| pack = 895 MB | **894.64 MiB** | ✅ |
+| `media/` = 313 MB | **304.36 MiB** = 319.15 MB decimales · 3 418 f | ≈ con otra unidad |
+| DNS → `72.60.166.93` | resuelve | ✅ |
+| proxy 301 en 0.16 s | **301 en 0.161 s** | ✅ |
+
+Y el dato que el encargo no traía: **`media/` tiene 0 ficheros rastreados**
+(`.gitignore:61`), así que **no puede estar en el tarball** — eso acotaba P1
+antes de medirla.
+
+### DOS DE MIS TRES PREDICCIONES FALLARON, Y LAS DOS POR LA MISMA RAÍZ
+
+| | predicho | medido | |
+|---|---|---|---|
+| **P1** solape (ficheros) | 550–900 | **950** | ✗ por arriba |
+| **P1** solape (MiB) | 90–200 | **120.37** | ✓ |
+| **P2** arrastre | 1 450–2 050 | **258** | ✗ **por 6×** |
+| **P3** causa del fallo | corte de transferencia | **corte de transferencia** | ✓ |
+
+**La raíz de las dos es la misma: supuse un modelo de variantes sin medirlo.**
+
+- en **P1** puse el techo en `3 418 / 5 ≈ 684` dando por hecho **4 variantes
+  siempre**. `sharp` **no agranda**: una imagen pequeña genera menos, la ratio
+  real es ~2.6 y el techo era más alto;
+- en **P2** supuse que *«el clon usa un tamaño y las demás variantes son
+  arrastre»*. **El clon emite `srcset`** —638 atributos en 74 HTML, 7 696
+  menciones—, así que **1 375 de las 1 561 variantes están citadas**. Es
+  §regla 43 de la 145.ª leída del derecho: allí el `srcset` rompía la captura,
+  aquí explica por qué el arrastre es bajo.
+
+> **Y la lección de método es la de §regla 9 con el objeto cambiado:** las dos
+> predicciones traían su razonamiento explícito y su rango, que es lo que las
+> hizo falsables — pero el razonamiento descansaba en **un parámetro del
+> generador (`imageSizes`) leído del esquema y no medido sobre el dato**. Un
+> parámetro declarado y un parámetro ejercido no son el mismo número.
+
+### EL INSTRUMENTO DEL ALCANCE LLEGÓ CON TRES DEFECTOS Y CONVERGIÓ EN TRES VUELTAS
+
+| vuelta | citadas-sin-fichero | alcanzables |
+|---|---|---|
+| v1 · delimitador sobre-casa | **1 730** | 2 489 |
+| v2 · + backtick, escape y despojo de comentarios | 483 | 2 489 |
+| v3 · + `&` y anclaje de dominio ajeno | **357** (+243 ajenas) | **2 497** |
+
+1. **el delimitador se llevaba el carácter PEGADO** a la ruta —un backtick, o
+   la barra invertida del escape del payload RSC—, así que el `rel` no casaba
+   con ningún fichero y el asset salía **a la vez** como arrastre y como
+   «citado sin fichero». §sondas 4 en su cara de SOBRE-CASADO, sobre el
+   delimitador. Coste: **1 730 falsos**;
+2. **`KunakLogo.tsx` cita el SVG SÓLO EN UN COMENTARIO** —el componente lo
+   **inlinea**—, así que contarlo como alcanzable convertía arrastre en uso.
+   Es §regla 9 y su caso garantizado del 2026-09-03: *un barrido que busca un
+   patrón casa, por construcción, con cada sitio donde alguien lo DOCUMENTÓ*.
+   Despojo con su control publicado (**163 ficheros · 640 053 chars**) y sus
+   dos testigos por polaridad —el logo NO debe salir, y el regex SÍ debe
+   seguir casando—;
+3. **`/images/…` aparece dentro de URLs de OTROS DOMINIOS** (who.int,
+   nasa.gov): **243**, separadas en su propio cubo porque son un DATO y no un
+   asset roto.
+
+La corrida defectuosa se conserva en
+`alcance-146-ANTES-delimitador-sobrecasa.{json,log}` (§regla 5, con el nombre
+derivado del estado).
+
+### EL CERO QUE HABÍA QUE AUDITAR, Y SU VUELTA
+
+`solape-146` publicó `/api/media/` **×0** contra `/images/` **×27 163**. Un
+cero así no se cree: se audita. El testigo correcto **no es el prefijo de URL
+sino el NOMBRE de fichero**, y con control positivo vivo dio **0 de 2 202**
+ficheros exclusivos de `media/` citados.
+
+⚠ **La primera versión del veredicto dijo «hay consumo de media/» sobre UNA
+coincidencia**, y era `1-300x300.jpg` — un basename genérico que casa por azar
+dentro de cualquier cadena que lo contenga. Es §*un discriminador hallado en
+una sola instancia tampoco es un discriminador*, y se arregló exigiendo que el
+nombre sea discriminante (≥12 caracteres, sin empezar por dígito suelto).
+
+**El cero es DEL OBJETO y con mecanismo DECLARADO** —`CMS-0g` existe
+justamente para que el clon reconstruya `/images/uploads/…`—. Consecuencia:
+**mismo byte, otra URL**, y CMS-0b **no disuelve** la pregunta.
+
+### LA SOSPECHA QUE SE MIDIÓ Y SALIÓ FALSA
+
+Al repartir el pack por cubo atribuí cada blob a su **primera** ruta, y
+sospeché que `media-corpus` y `public/` compartirían blobs —git deduplica por
+contenido— lo que habría inflado el «quita X MiB» de cada uno. **Medido: 0
+blobs en más de un cubo.** El reparto era correcto.
+
+Lo que sí explica la diferencia entre disco y pack es otra cosa: `media-corpus`
+tiene **1 248 rutas y 400 blobs distintos** — o sea **duplicación interna**,
+los mismos assets capturados en varias campañas.
+
+### EL RESULTADO, EN UNA TABLA
+
+| | |
+|---|---|
+| tarball medido (2 de 2 íntegros, mismo byte) | **1 320.25 MiB** |
+| `public/` en el tarball | **649.57 MiB** (ratio 1.02×) |
+| `public/` alcanzable / arrastre | **2 497 f · 629.12 MiB** / **258 f · 32.02 MiB** |
+| solape con `media/` | **950 f · 120.37 MiB**, bloqueado por el canal de URL |
+| `public/` en el pack | **645.73 MiB · 72.2 %**, **0 MiB de historial muerto** |
+| versiones por ruta de `public/` | **1.00** |
+
+### FICHADO, Y NO ES DE ESTA TANDA
+
+> **§REGLA 61 · 357 RUTAS CITADAS SIN FICHERO EN `public/`.** El instrumento
+> del alcance las destapó al medir el otro lado de la diferencia simétrica.
+> La muestra está concentrada en **2024–2025**, o sea contenido publicado
+> después de la captura de assets. **No se persigue aquí**: se ficha con su
+> cardinal y con el aviso de que **243 más son de otros dominios y no cuentan**
+> (se separaron en su propio cubo).
+>
+> Lo que haría falta para adjudicarlo: comprobar cuántas de las 357 están en
+> rutas que el build emite y cuántas viven en contenido no clonado. Es una
+> corrida de `alcance-146` con el reparto por ruta emisora.
+
+### CONDICIÓN DE REAPERTURA DE CMS-11
+
+La ficha queda abierta. **La separadora que más barato la cerraría no es de
+tamaño: es si el VPS puede traer el código por `git clone` en vez de por
+tarball** — porque el fallo medido es de transferencia, no de archivo, y un
+clon con reintentos no tiene ese modo de fallo. Está **SIN MEDIR** y requiere
+tocar el VPS, que esta tanda tenía prohibido.

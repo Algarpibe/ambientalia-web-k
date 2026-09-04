@@ -6691,6 +6691,97 @@ harness informó **«exit code 0»** otra vez.
 
 ---
 
+**63 · UN REPARTO DE TAMAÑO SE HACE EN LA UNIDAD QUE VIAJA, NO EN LA QUE SE
+ALMACENA — Y EL RATIO DE COMPRESIÓN NO ES UNIFORME, ASÍ QUE LOS DOS REPARTOS
+NO SE PARECEN.** (2026-09-04)
+
+§*un default expresado como porcentaje se lee como constante en cuanto se cita*
+protege de citar un número sin su denominador. Ésta es la misma familia con el
+denominador cambiado por **la unidad**, y muerde donde nadie mira porque los
+dos números están medidos y los dos son ciertos:
+
+> **«Cuánto ocupa» y «cuánto se transfiere» son dos repartos distintos del
+> mismo conjunto, y el segundo NO se deduce del primero.** Un cubo de JPEG
+> pesa lo mismo comprimido; uno de JSON encoge 7×. Así que **el orden de los
+> cubos cambia**, y proponer recortes con el reparto equivocado ataca la parte
+> que no viaja.
+
+**Medido:** el reparto en disco ponía `scripts` como **2.º cubo (19.4 %)**;
+comprimido cae al **4.º (3.5 %)**, de 353.60 MiB a **46.46**. Y los dos
+primeros —`public/` y `media-corpus`, ratio **1.02×** y **1.01×**— pasan a ser
+el **93.5 %** de lo que se transfiere. Con el reparto de disco, podar
+`scripts` parecía la segunda palanca; en la unidad que viaja no es ni la
+cuarta.
+
+**Las dos mitades operativas:**
+
+1. **la unidad la decide el CONSUMIDOR del número**, no el que lo mide: si lo
+   que duele es una transferencia, se mide comprimido; si lo que duele es el
+   disco, en crudo. Y se escribe con su unidad al lado, siempre;
+2. **y el troceo lleva su CONTROL**: comprimir cubo a cubo pierde algo de ratio
+   frente a comprimir el flujo entero, así que la suma de los cubos se compara
+   con el artefacto entero medido y **se publica la desviación**. Si es grande,
+   los números son cota y no valor. Medido aquí: **0.2 %**.
+
+---
+
+**64 · IDENTIDAD DE CONTENIDO NO ES IDENTIDAD DE REFERENCIA: MISMO BYTE, OTRA
+URL.** (2026-09-04)
+
+Este documento manda comparar conjuntos **por hash y no por nombre**, y tiene
+razón — un hash es el criterio de identidad correcto para *«¿son el mismo
+fichero?»*. Le faltaba decir qué pregunta **no** contesta:
+
+> **Que dos ficheros sean idénticos al bit no los hace intercambiables.** Un
+> consumidor no pide contenido: pide una **DIRECCIÓN**. Así que un solape del
+> 100 % por hash puede valer **cero** operativamente si quien lo consume
+> resuelve por otra ruta — y el hash, por construcción, no dice nada de la
+> ruta.
+
+**Medido:** 950 ficheros idénticos entre dos almacenes, **120.37 MiB**, y en
+428 documentos servidos el canal de destino aparece **0 veces** contra
+**27 163** del canal de origen. Mover los bytes no habría movido nada: las
+páginas los seguirían pidiendo por donde los piden hoy.
+
+**Operativamente, y es una comprobación aparte del solape:** cuando un solape
+por contenido vaya a justificar mover, deduplicar o repuntar algo, **mide
+además por qué REFERENCIA lo pide el consumidor**, y publica los dos números
+juntos. `950 ficheros solapan` y `0 se piden por el canal de destino` son las
+dos mitades de la misma decisión, y sólo la primera se escribe sola.
+
+> **Y el corolario que ahorra la tanda: si el canal de destino sale a CERO, ese
+> cero se AUDITA antes de creerlo** (§sondas 4) — y el testigo correcto **no es
+> el prefijo de la URL sino el NOMBRE del fichero**, porque un prefijo mal
+> escrito y una ausencia real dan la misma salida.
+
+---
+
+**65 · UN RIESGO CONOCIDO DE UNA HERRAMIENTA SE MIDE EN TU REPO ANTES DE
+USARLO COMO ARGUMENTO: PUEDE NO HABERSE MATERIALIZADO.** (2026-09-04)
+
+§regla 9 persigue **números** afirmados de memoria. Ésta persigue algo que ni
+siquiera parece un número: **un riesgo genérico bien documentado**, que llega
+con la autoridad de la documentación de la herramienta y **sin denominador**.
+
+> **«Los binarios inflan git porque cada versión añade un blob entero», «los
+> índices penalizan las escrituras», «los joins no escalan» son afirmaciones
+> sobre un MECANISMO, no sobre tu repo.** El mecanismo es real; **cuánto se ha
+> materializado es una medición**, y puede ser cero.
+
+**Medido:** el coste de un binario en git no es su tamaño sino **su tamaño por
+cada versión**, y ese multiplicador aquí vale **1.00** — 2 731 rutas, 2 731
+versiones, **0 con más de una**, y **0 MiB de historial muerto**. O sea que el
+pack no está inflado por el versionado: está ocupado por el estado actual, que
+es lo que cualquier otra forma de guardar esos ficheros también ocuparía. Un
+informe que citara el riesgo genérico habría propuesto reescribir el historial
+—la **única** salida sin operación de deshacer— para recuperar **cero**.
+
+**Operativamente:** antes de que un riesgo genérico entre en una comparación de
+candidatos, **derívale su multiplicador en el repo que tienes delante** y
+publícalo. Si sale 1, el riesgo existe y **no se ha cobrado**, y eso cambia qué
+candidato gana.
+
+---
 ## Comandos
 
 ```bash
