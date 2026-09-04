@@ -1,0 +1,35 @@
+{
+  "fecha": "2026-09-04T17:57:21.310Z",
+  "casos": {
+    "cliAlcanzable": {
+      "pregunta": "¿un proceso node puede hablar con el demonio de Docker?",
+      "exit": 0,
+      "servidor": "29.6.2",
+      "error": null,
+      "veredicto": "SÍ"
+    },
+    "restartPositivo": {
+      "pregunta": "¿node puede reiniciar un contenedor que existe, POR EFECTO?",
+      "contenedor": "kunak-restart-probe",
+      "exit": 0,
+      "startedAtAntes": "2026-09-04T17:56:44.301487018Z",
+      "startedAtDespues": "2026-09-04T17:57:32.792242632Z",
+      "cambio": true,
+      "error": null,
+      "veredicto": "SÍ"
+    },
+    "restartNegativo": {
+      "pregunta": "¿el mecanismo sabe FALLAR? (sin esto, el positivo no prueba nada)",
+      "contenedor": "kunak-no-existe-u6idsaoa",
+      "exit": 1,
+      "error": "Error response from daemon: No such container: kunak-no-existe-u6idsaoa",
+      "veredicto": "SÍ, falla como debe"
+    },
+    "canal": {
+      "pregunta": "¿por qué endpoint habla node con el demonio?",
+      "host": "npipe:////./pipe/dockerDesktopLinuxEngine",
+      "nota": "en destino este endpoint es el socket de Docker, y quien lo gobierna es Easypanel: por eso la mitad de DESTINO no se puede derivar desde aquí."
+    }
+  },
+  "veredicto": "B ES VIABLE EN LOCAL — node reinicia el contenedor, y el mecanismo sabe fallar"
+}

@@ -1,0 +1,41 @@
+{
+  "fecha": "2026-09-04T18:02:22.165Z",
+  "imagen": "postgres:17-alpine",
+  "casos": {
+    "positivo": {
+      "politica": "unless-stopped",
+      "inicial": {
+        "status": "running",
+        "restartCount": 0,
+        "startedAt": "2026-09-04T18:02:23.184495324Z"
+      },
+      "final": {
+        "status": "running",
+        "restartCount": 4,
+        "startedAt": "2026-09-04T18:02:37.609257664Z"
+      },
+      "volvio": true,
+      "veredicto": "VUELVE SOLO"
+    },
+    "negativo": {
+      "politica": "no",
+      "inicial": {
+        "status": "running",
+        "restartCount": 0,
+        "startedAt": "2026-09-04T18:02:40.862558737Z"
+      },
+      "final": {
+        "status": "exited",
+        "restartCount": 0,
+        "startedAt": "2026-09-04T18:02:40.862558737Z"
+      },
+      "volvio": false,
+      "veredicto": "NO vuelve"
+    }
+  },
+  "veredicto": "SEPARADORA SOSTENIDA — un contenedor con `unless-stopped` se reinicia SOLO al salir su proceso, y sin la política NO lo hace. B no necesita el socket de Docker en destino: le basta con que el servicio tenga política de reinicio.",
+  "consecuencia": {
+    "enDestino": "la pregunta a Easypanel deja de ser «¿me das /var/run/docker.sock?» (root, casi siempre que no) y pasa a ser «¿qué política de reinicio tiene el servicio?», que es una casilla de su interfaz y el valor por defecto de casi todo orquestador.",
+    "enLocal": "las DOS vías quedan disponibles: `docker restart` desde fuera (medido en corte-limpio-restart-145.json) y la auto-salida desde dentro."
+  }
+}

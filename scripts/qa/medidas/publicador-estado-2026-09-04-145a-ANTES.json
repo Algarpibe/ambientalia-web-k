@@ -1,0 +1,54 @@
+{
+  "fase": "ocioso",
+  "pendiente": false,
+  "desde": "2026-09-03T14:31:57.827Z",
+  "motivo": "monotono-143 #3",
+  "ultimoExito": {
+    "cuando": "2026-09-03T14:31:57.818Z",
+    "motivo": "monotono-143 #3",
+    "segundos": 72.68,
+    "buildId": "VPZgeKpZ9gKOChK9yUFmD",
+    "buildIdServido": "VPZgeKpZ9gKOChK9yUFmD",
+    "llegoAlSitio": true,
+    "segundosHastaServido": 0.91,
+    "rutas": 426
+  },
+  "ultimoFallo": null,
+  "builds": 3,
+  "disparos": 3,
+  "coalescidos": 0,
+  "promocionRequierePararServidor": false,
+  "historia": [
+    {
+      "build": 1,
+      "empezo": 1788445660179,
+      "disparosPrevios": 1,
+      "motivo": "monotono-143 #1",
+      "codigo": 0,
+      "termino": 1788445749746
+    },
+    {
+      "build": 2,
+      "empezo": 1788445755073,
+      "disparosPrevios": 2,
+      "motivo": "monotono-143 #2",
+      "codigo": 0,
+      "termino": 1788445834742
+    },
+    {
+      "build": 3,
+      "empezo": 1788445839429,
+      "disparosPrevios": 3,
+      "motivo": "monotono-143 #3",
+      "codigo": 0,
+      "termino": 1788445912109
+    }
+  ],
+  "ganchos": {
+    "PUBLICAR_CMD": null,
+    "SABOTAJE": null
+  },
+  "pid": 26124,
+  "dist": ".next",
+  "arrancado": 1788445659275
+}

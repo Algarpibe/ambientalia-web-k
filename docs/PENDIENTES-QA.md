@@ -1,5 +1,139 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🔄 §145.ª · **B3 — LA DECISIÓN DEL PROPIETARIO ESCRITA, Y B IMPLEMENTADA** — 2026-09-04
+
+**El propietario decidió el modelo de publicación: B — volumen + `docker
+restart`.** El publicador sigue construyendo fuera, escribe en un volumen
+montado, y reinicia el contenedor desde fuera. Ni imagen inmutable ni supervisor
+dentro.
+
+### PASO 0 · la compuerta, derivada antes de gastar nada
+
+**La tanda es la 145.ª, derivado del árbol:** `HEAD 5ea0a52` · árbol limpio ·
+último commit `144.ª CIERRE`. Coincide con lo que el encargo veía.
+
+#### (1) El entorno, en TRES pasos y con el socket como canal que decide
+
+Docker Desktop **no estaba corriendo** —`Get-Process *docker*` da **0
+procesos**—, así que el paso 1 era el demonio y no el contenedor.
+
+| paso | orden | resultado |
+|---|---|---|
+| 0 · el canal que decide | socket a `127.0.0.1:55432` | **`ECONNREFUSED`** |
+| 1 | `Start-Process "Docker Desktop.exe"` | demonio **29.6.2** responde |
+| 2 | `docker start kunak-cms-pg` (estaba `Exited (255)`) | `Up` |
+| 3 | socket a `127.0.0.1:55432` | **ABIERTO en 2 ms** |
+
+⚠ **Y el paso 1 tuvo su propio cero que hubo que auditar:** `docker ps` devolvió
+**salida vacía**, que no distingue *«demonio OK y 0 contenedores»* de *«comando
+mudo»* (§sondas 4). Dirimido con `docker version --format {{.Server.Version}}` →
+`29.6.2`, y `docker ps -a` → `kunak-cms-pg | Exited (255)`.
+
+**Los dos canales de la §138.ª, comprobados los dos** —son los que distinguen
+«declarado» de «publicado» y «publicado» de «hay endpoint»—:
+`NetworkSettings.Networks` trae **`bridge`** con `EndpointID`
+`10c376931f5c…` —**no vacío**, no es el caso de la 138.ª— y
+`NetworkSettings.Ports` publica `5432/tcp → 0.0.0.0:55432` **y** `[::]:55432`.
+
+**La DB conserva sus datos** —el socket abierto no lo prueba, así que se
+consultó—: **155 tablas** · `paginas=31 · productos=19 · entradas_blog=152 ·
+arquetipos=4`. **Idéntico a la 143.ª y a la 144.ª**, incluido el `arquetipos=4`
+que aquéllas dejaron como observación sin atribuir.
+
+⚠ **Y el usuario de la DB no es el que uno escribe por defecto:** `psql -U
+postgres` da `FATAL: role "postgres" does not exist`. Derivado del contenedor
+(`docker inspect … .Config.Env`): **`POSTGRES_USER=kunak`**,
+`POSTGRES_DB=kunak_cms`. Se anota porque es una hora perdida por sesión si se
+supone.
+
+#### (2) ⚠⚠ EL CORTE LIMPIO — B ES VIABLE EN LOCAL, Y SU RIESGO EN DESTINO NO ES EL QUE EL ENCARGO FICHABA
+
+El encargo enuncia el riesgo único de B así: *«que el publicador pueda reiniciar
+el contenedor. Implica acceso al socket de Docker, que es root»*. **La primera
+mitad se midió y sale que sí; la segunda es una premisa, y tiene una separadora
+que la parte.**
+
+**(a) LOCAL — medido, y por EFECTO, no porque el comando devuelva** (§regla 53).
+La pregunta se hizo **desde un proceso node hijo**, que es lo que el publicador
+es: que el operador pueda y que node pueda son dos afirmaciones (§regla 15).
+Derivación: `derivaciones/corte-limpio-restart-145.{mjs,json}`.
+
+| caso | qué se preguntó | resultado |
+|---|---|---|
+| CLI alcanzable | ¿node habla con el demonio? | **SÍ** — `Server 29.6.2` |
+| **control POSITIVO** | restart sobre contenedor que EXISTE | **SÍ** — `StartedAt` `17:56:44` → `17:57:32`, exit 0 |
+| **control NEGATIVO** | restart sobre contenedor INVENTADO | **SÍ, falla como debe** — exit 1, `No such container` |
+
+**Los dos controles hacían falta** (§regla 28d): sin el negativo, un mecanismo
+que devolviera 0 siempre pasaría igual. El canal por el que node habla es
+`npipe:////./pipe/dockerDesktopLinuxEngine`.
+
+**(b) DESTINO — y aquí el encargo tenía una premisa que NO es la única vía.**
+Antes de fichar la indeterminación se enumeraron las separadoras candidatas
+(§*antes de fichar una indeterminación, enumera las separadoras candidatas y di
+por qué cada una no sirve*), y hay una que **no necesita el socket**:
+
+> **Un contenedor con política `restart: unless-stopped` vuelve a arrancar SOLO
+> cuando su proceso principal SALE.** Así que un publicador que viviera DENTRO
+> del contenedor no necesitaría hablar con el demonio: le bastaría con
+> terminarse.
+
+**Medido, con las dos polaridades** (`derivaciones/autorreinicio-145.{mjs,json}`):
+
+| política | `RestartCount` | estado final | veredicto |
+|---|---|---|---|
+| `unless-stopped` | **0 → 4** | `running`, `StartedAt` avanzado | **VUELVE SOLO** |
+| `no` (control negativo) | 0 → 0 | **`exited`** | **NO vuelve** |
+
+> ⚠⚠ **Y LO QUE ESTO ES Y LO QUE NO ES, porque la refutación cómoda estaba a
+> mano** (§regla 40). **NO disuelve el riesgo de B**: B, tal como el propietario
+> la definió, pone el publicador **FUERA** del contenedor, y desde fuera la vía
+> es `docker restart` — que en el host del VPS exige acceso al demonio.
+>
+> **Lo que abre es una VARIANTE medida, B′ —publicador DENTRO, que se reinicia
+> saliendo—, disponible si B choca con Easypanel.** Es información que cambia la
+> pregunta al propietario: deja de ser *«si Easypanel no da el socket, B muere»*
+> y pasa a ser *«si Easypanel no da el socket, queda B′ con una casilla de su
+> interfaz»*.
+
+#### (3) EL VPS **NO** ES ALCANZABLE DESDE ESTA MÁQUINA HOY — declarado SIN EJERCITAR, con su derivación
+
+El encargo pide decirlo **antes** de empezar, no a mitad. Derivado, no supuesto:
+
+| canal | qué dice |
+|---|---|
+| credenciales de despliegue de ESTE proyecto en el repo | **0** |
+| `ssh`/`scp`/`rsync` en `scripts/` `apps/` `docs/` (ripgrep) | **0 ficheros** |
+| ídem en todo el árbol fuera de `node_modules` | **1** — `package-lock.json`, o sea nombres de paquetes npm |
+| scripts de despliegue en los **279** de `package.json` | **0** — los 4 que casan son `qa:productos-*`, falso positivo de `prod` dentro de `productos` |
+| claves en `~/.ssh` | **1**, `salestracker_migration_ed25519` — **de otro proyecto** |
+| hosts en `known_hosts` | **1**, `72.60.166.93` — **ningún documento del repo lo atribuye a este VPS** |
+| `DATABASE_URI` de los dos `.env` | **`localhost`** los dos |
+
+**Así que B3 se parte en dos y esta tanda hace la mitad LOCAL.** La pregunta
+*«¿permite Easypanel que un proceso reinicie un contenedor hermano?»* queda
+**SIN EJERCITAR** — no se supone en ninguna dirección—, y lo que (2b) aporta es
+que **ya no es una pregunta binaria de vida o muerte**: tiene dos vías, y la
+segunda está medida.
+
+> ⚠ **Y el falso positivo del barrido por literal se cazó en la misma corrida**
+> (§regla 9): `prod` casa dentro de `productos`, así que *«4 scripts de
+> despliegue»* habría sido un hallazgo inventado con su número al lado.
+
+#### (4) `estado.json` congelado ANTES de tocar nada
+
+No está versionado (`.gitignore:71` → `scripts/publicar/estado*.json`), así que
+la evidencia del criterio monótono de la 143.ª sólo existía en disco. Congelada
+en `medidas/publicador-estado-2026-09-04-145a-ANTES.json`: **3 builds**,
+`buildId == buildIdServido == VPZgeKpZ9gKOChK9yUFmD`, `llegoAlSitio: true`,
+`segundosHastaServido: 0.91`, **426 rutas**.
+
+#### (5) La numeración de la decisión, derivada
+
+`CMS-9` es la más alta, y **no de memoria**: barrido `CMS-[0-9]+[a-z]*` sobre
+`docs/ESQUEMA-CMS.md` (19 identificadores) y sobre `docs/` entero (los mismos
+19). **La decisión de esta tanda es `CMS-10`.**
+
 ## 🔄 §144.ª · **B2 — EL DOCKERFILE, LA PRIMERA MEDIDA EN LA PLATAFORMA DE DESTINO** — 2026-09-03
 
 **B2 de B1–B4.** No es una verificación: puede rediseñar el modelo de
