@@ -7854,3 +7854,113 @@ restitución estaba aplicada de forma no persistida en el canónico, así que la
 comparación de HOY contra ESE baseline reproduce el mismo delta que el propio
 121.ª/126.ª ya habían aislado — no un efecto de sembrar `arquetipos`, que no
 toca `paginas` en absoluto. §regla 12 nueva más abajo.
+
+---
+
+## CMS-10 · EL MODELO DE PUBLICACIÓN EN DESTINO = **B, VOLUMEN + `docker restart`** — ✅ **DECIDIDA POR EL PROPIETARIO** (2026-09-04, 145.ª)
+
+**Qué se decide:** qué ocurre en el VPS cuando un editor pulsa *Publicar*. No es
+una decisión de infraestructura: decide si el publicador —coalescido, promoción
+por rename, `llegoAlSitio`— sobrevive al despliegue o hay que reescribirlo.
+
+**La decisión:** el publicador **sigue construyendo fuera**, escribe en un
+**volumen montado**, y **reinicia el contenedor desde fuera**. Ni imagen
+inmutable ni supervisor dentro.
+
+### Los tres candidatos, con su coste MEDIDO
+
+Ninguna de estas cifras es una premisa del encargo: las tres se derivan de
+mediciones congeladas de las tandas 142.ª–144.ª y del `estado.json` de la 143.ª.
+
+| | qué dispara una publicación | coste por publicación | qué exige que hoy no hay |
+|---|---|---|---|
+| **A · imagen inmutable** | `docker build` + redeploy | **≈200 s** con `.dockerignore` corregido (**676 s** con el roto) **+ push de 819 MB** comprimidos al registro | un registro y un CI; y **no deja sitio al publicador**: `scripts/` está en `.dockerignore` (derivado del fichero), así que `publicador.mjs` **no viaja en la imagen** |
+| **B · volumen + `docker restart`** ✅ | `npm run build` fuera + `docker restart` | **72.68 – 89.57 s** en caliente (n=3, `estado.json` de la 143.ª) · **108 – 204 s en frío** (142.ª) · `segundosHastaServido` **0.91 s** | acceso al demonio de Docker desde donde corra el publicador |
+| **C · volumen + supervisor dentro** | build fuera + señal al supervisor | igual que B en el build, más el supervisor | cambiar `CMD ["node","apps/web/server.js"]` (forma exec, **PID 1**) por un supervisor, escribirlo y mantenerlo |
+
+> ⚠ **§regla 54 — el coste se escribe CON SU ESTADO, y aquí la variable no es
+> despreciable:** la 142.ª midió que el eje frío/caliente vale **1.2 s a 31
+> rutas** y **hasta 115 s a 426** — más que el propio tiempo caliente. Una banda
+> sin estado son dos predicciones.
+
+### Las separadoras que decidieron — y son tres, no una
+
+1. **coste por publicación.** B (**72.68–89.57 s** caliente) contra A (**≈200 s
+   + 819 MB de push**). El ciclo de un editor —guardar, mirar, corregir— no
+   tolera 200 s más una subida; 90 s sí. **A y B difieren en más de 2×, y el
+   push no tiene equivalente en B**;
+2. **B conserva el publicador ENTERO, con el arreglo de B1 dentro.** Lo que la
+   143.ª dejó funcionando —coalescer, promoción por rename sólo con exit 0,
+   `llegoAlSitio` comparando **el `buildId` SERVIDO contra el del disco**
+   (§regla 55)— es código que sigue corriendo tal cual con B. Con A ese código
+   **no tiene dónde vivir**: `scripts/` está excluido de la imagen;
+3. **con A no hay dónde correr el cron de B4.** El `POST /cron` vive en
+   `publicador.mjs`, que A no embarca. O sea que A **no aplaza** B4: la
+   **bloquea** hasta introducir un segundo mecanismo (un cron del host, un
+   servicio aparte), que es trabajo que B no necesita.
+
+### §regla 23 — el criterio de asimetría, con su OPERACIÓN nombrada y su signo DERIVADO
+
+El criterio raíz de §1.5b es *«entre dos opciones reversibles se toma **la que
+se deshace mejor**»*, y su Razón 3 lo instancia: *«fusionar luego es más barato
+que separar luego»*, o sea que **favorece la que empieza SEPARADA**.
+
+**El eje sobre el que se aplica aquí hay que derivarlo, y es «¿el BUILD y la
+IMAGEN están fusionados o separados?»** —derivado del `Dockerfile`, no
+supuesto: L116, L124 y L125 hacen `COPY` de `public`, `.next/standalone` y
+`.next/static` **dentro de capas de la imagen**:
+
+| opción | estado en ese eje | operación de DESHACER | lado |
+|---|---|---|---|
+| **A** | build **FUSIONADO** en la imagen | separar el build de la imagen: montar volumen, decidir qué va dentro, dar acceso al publicador | **caro** |
+| **B** ✅ | build **SEPARADO**, en un volumen | **fusionar**: quitar el volumen y volver a hornear — el `docker build` que lo hace ya existe y **ya salió verde** (`:144-fix`, exit 0, 144.ª) | **barato** |
+
+**Así que B es la SEPARADA y va A FAVOR del criterio.** Por eso **no necesita
+condición de reapertura** — pero sí su operación de deshacer nombrada, que es lo
+que §regla 23 exige y lo único que impide que el signo se invierta al releerlo:
+
+> **ir a A después es el lado BARATO: se quita el volumen y se vuelve a hornear
+> el build en la imagen, con el `docker build` que ya está medido en verde.**
+
+> ⚠⚠ **Y LA DISCREPANCIA CON LA 144.ª NO ERA UN ERROR DE SIGNO: ERA QUE «B»
+> NOMBRABA DOS OPCIONES DISTINTAS.** La 144.ª escribió *«A empieza SEPARADA —el
+> publicador fuera— y B empieza JUNTA»*, que es la etiqueta contraria a la de
+> arriba. Las dos son correctas **de su eje**: aquélla mide *dónde vive el
+> publicador*, y en ese eje describe la variante que ella misma proponía como
+> necesaria —**el ENTRYPOINT del contenedor siendo `publicador.mjs`**, o sea el
+> publicador DENTRO—. **Eso es B′, no la B que el propietario decidió**, que
+> deja el publicador fuera.
+>
+> **Las dos llegan a B, por ejes distintos, y eso la sostiene más que un eje
+> solo.** No se borra ninguna (§*una lectura se BORRA cuando las dos miden lo
+> mismo* — aquí no lo miden): se nombran las dos con su eje, y la variante se
+> bautiza **B′** para que no vuelvan a compartir nombre.
+
+### El disparador que sí existe, y se escribe aunque hoy salga que sí
+
+> **Si Easypanel prohíbe que un proceso reinicie un contenedor hermano, B no es
+> viable y la decisión se reabre.**
+
+**Estado hoy: SIN EJERCITAR.** El VPS no es alcanzable desde la máquina de
+desarrollo —derivado, no supuesto: 0 credenciales de este proyecto en el repo, 0
+ficheros con `ssh`/`scp`/`rsync` en `scripts/ apps/ docs/`, 0 scripts de
+despliegue en los 279 de `package.json`, la única clave de `~/.ssh` es de otro
+proyecto—. No se supone en ninguna dirección.
+
+**Y lo que la 145.ª midió acota ese disparador sin cerrarlo** (`derivaciones/
+autorreinicio-145.json`, las dos polaridades): un contenedor con
+`restart: unless-stopped` **vuelve a arrancar solo** cuando su proceso principal
+sale (`RestartCount` 0 → 4), y con `restart: no` **no vuelve** (`exited`). O sea
+que si el disparador se cumple, **queda B′** —publicador dentro, que se reinicia
+saliendo— y ésa **no necesita el socket de Docker**: necesita una casilla de la
+interfaz de Easypanel.
+
+> **La pregunta al propietario deja de ser «si Easypanel no da el socket, B
+> muere» y pasa a ser «si no lo da, ¿tiene el servicio política de reinicio?».**
+
+**Lo verificado en LOCAL** (`derivaciones/corte-limpio-restart-145.json`, desde
+un proceso **node hijo** —que el operador pueda y que node pueda son dos
+afirmaciones, §regla 15— y **por efecto**, §regla 53): `docker restart` sobre un
+contenedor existente mueve `StartedAt` y devuelve 0; sobre uno inventado
+devuelve 1. **Los dos controles hacían falta**: sin el negativo, un mecanismo
+que devolviera 0 siempre pasaría igual.

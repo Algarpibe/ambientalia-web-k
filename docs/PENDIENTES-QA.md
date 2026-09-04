@@ -134,6 +134,60 @@ en `medidas/publicador-estado-2026-09-04-145a-ANTES.json`: **3 builds**,
 `docs/ESQUEMA-CMS.md` (19 identificadores) y sobre `docs/` entero (los mismos
 19). **La decisión de esta tanda es `CMS-10`.**
 
+### ESCALÓN 1 · la decisión escrita como decisión — `CMS-10` en `ESQUEMA-CMS.md`
+
+Con sus cuatro partes, no sólo la conclusión: los tres candidatos costados, las
+tres separadoras, §regla 23 con su signo **derivado**, y el disparador de
+reapertura.
+
+**Ninguna cifra del encargo se usó como premisa.** El encargo citaba *«~90-110 s
+medidos»*; derivado del `estado.json` congelado, el coste de B es **72.68 ·
+79.67 · 89.57 s** (n=3) — o sea **por debajo** de la banda citada, y con
+`segundosHastaServido` de **0.91 s**.
+
+| candidato | coste por publicación, **derivado** |
+|---|---|
+| **A · imagen inmutable** | **≈200 s** con `.dockerignore` corregido (676 s con el roto) **+ push de 819 MB** |
+| **B · volumen + `docker restart`** ✅ | **72.68–89.57 s** caliente · **108–204 s** frío (§regla 54) |
+| **C · volumen + supervisor dentro** | como B, más escribir y mantener el supervisor |
+
+**Las tres separadoras, y las tres derivadas del repo:** (1) el coste difiere en
+más de 2× y el push no tiene equivalente en B; (2) B conserva el publicador
+entero con el arreglo de B1 dentro, mientras que con A **no tiene dónde vivir**
+—`scripts/` está en `.dockerignore`, leído del fichero—; (3) con A el `POST
+/cron` de B4 **no se aplaza: se bloquea**.
+
+#### ⚠⚠ §regla 23 · el signo se DERIVÓ, y al derivarlo apareció que «B» nombraba DOS opciones
+
+El encargo dice *«A es la FUSIONADA y B la SEPARADA»*. La 144.ª había escrito lo
+contrario: *«A empieza SEPARADA —el publicador fuera— y B empieza JUNTA»*.
+**Las dos conclusiones coinciden (B se deshace mejor) y las etiquetas son
+opuestas**, que es exactamente la forma que §regla 23 predice.
+
+**No es un error de signo de nadie: son dos EJES distintos, y la 144.ª estaba
+describiendo otra opción con el mismo nombre.**
+
+| eje | A | B | quién lo usó |
+|---|---|---|---|
+| **¿el BUILD y la IMAGEN están fusionados?** (derivado del `Dockerfile` L116·124·125: `COPY` de `public`, `standalone` y `static` **dentro de capas**) | **FUSIONADO** | **SEPARADO** ✅ | el encargo — **y es el eje de la B decidida** |
+| ¿dónde vive el publicador? | fuera | **dentro**, con el ENTRYPOINT siendo `publicador.mjs` | la 144.ª — pero eso es **B′**, no la B del propietario |
+
+La B que el propietario decidió **deja el publicador fuera**, así que el eje que
+manda es el primero: **B es la SEPARADA, va A FAVOR del criterio, y no necesita
+condición de reapertura.** Su operación de deshacer, nombrada como §regla 23
+exige: **ir a A después es el lado BARATO** —quitar el volumen y volver a
+hornear, con el `docker build` que ya salió verde (`:144-fix`, exit 0).
+
+> **Y las dos lecturas NO se borran, porque no miden lo mismo** (§*una lectura se
+> borra cuando las dos miden lo mismo*): se nombran con su eje, y la variante de
+> la 144.ª se bautiza **B′** para que no vuelvan a compartir nombre. Que **dos
+> ejes independientes den B** la sostiene más que uno solo.
+
+**El disparador, escrito aunque hoy no se pueda ejercitar:** *si Easypanel
+prohíbe el reinicio de un contenedor hermano, B no es viable y la decisión se
+reabre*. Y acotado por lo medido en (2b): si se cumple, **queda B′**, que no
+necesita el socket sino una casilla de la interfaz.
+
 ## 🔄 §144.ª · **B2 — EL DOCKERFILE, LA PRIMERA MEDIDA EN LA PLATAFORMA DE DESTINO** — 2026-09-03
 
 **B2 de B1–B4.** No es una verificación: puede rediseñar el modelo de
