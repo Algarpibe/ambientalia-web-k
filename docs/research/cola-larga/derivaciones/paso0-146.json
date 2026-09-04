@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "tanda": "146.ª",
+    "paso": "PASO 0 — el terreno",
+    "fecha": "2026-09-04T22:56:20.838Z",
+    "head": "318bb13091dafa933bf75c7b3a013816c7c272ec",
+    "proposito": "derivar las seis cifras que el encargo trae como premisa, y por dónde pasa public/ en el despliegue"
+  },
+  "contraste": [
+    {
+      "que": "apps/web/public · ficheros RASTREADOS",
+      "premisaEncargo": 2755,
+      "derivado": 2755,
+      "coincide": true
+    },
+    {
+      "que": "apps/web/public · tamaño",
+      "premisaEncargo": "668 MB (sin unidad declarada)",
+      "derivadoBytes": 693259560,
+      "derivadoMiB": 661.14,
+      "derivadoMB_decimal": 693.26,
+      "nota": "661.14 MiB = 693.26 MB decimales. El 668 del encargo no es ninguno de los dos: probablemente `du` en bloques de disco (asigna por cluster y redondea al alza)."
+    },
+    {
+      "que": "git count-objects · size-pack",
+      "premisaEncargo": "895 MB",
+      "derivado": "916112 KiB",
+      "derivadoMiB": 894.64
+    },
+    {
+      "que": "media/ · tamaño (CMS-0b)",
+      "premisaEncargo": "313 MB",
+      "derivadoBytes": 319147718,
+      "derivadoMiB": 304.36,
+      "derivadoMB_decimal": 319.15,
+      "ficheros": 3418,
+      "rastreadosEnGit": 0,
+      "nota": "319.15 MB decimales ≈ el 313 del encargo con otra unidad. Y el dato que el encargo NO trae: media/ tiene 0 ficheros rastreados (.gitignore:61), así que NO viaja en el tarball de GitHub por construcción."
+    }
+  ],
+  "publicDir": {
+    "ficherosRastreados": 2755,
+    "ficherosEnDisco": 2755,
+    "bytesBlob": 693259560,
+    "bytesDisco": 693259667,
+    "deltaBytes": 107,
+    "MiBBlob": 661.14,
+    "ficherosQueDifierenBlobVsDisco": 2,
+    "difieren": [
+      {
+        "ruta": "apps/web/public/images/uploads/2022/03/EXPERT.svg",
+        "blob": 4123,
+        "disco": 4177,
+        "delta": 54
+      },
+      {
+        "ruta": "apps/web/public/images/uploads/2022/03/VIEWER.svg",
+        "blob": 4150,
+        "disco": 4203,
+        "delta": 53
+      }
+    ]
+  },
+  "mediaDir": {
+    "ficheros": 3418,
+    "bytes": 319147718,
+    "MiB": 304.36,
+    "rastreadosEnGit": 0
+  },
+  "repoEntero": {
+    "ficherosRastreados": 7675,
+    "bytesRastreados": 1914466049,
+    "MiBRastreados": 1825.78,
+    "rutasEntrecomilladasPorGit": 15,
+    "packMiB": 894.64,
+    "sueltosMiB": 88.45
+  },
+  "repartoPorCubo": [
+    {
+      "cubo": "apps/web/public",
+      "ficheros": 2755,
+      "bytes": 693259560,
+      "MB": 661.14,
+      "entraEnDocker": true
+    },
+    {
+      "cubo": "media-corpus",
+      "ficheros": 1248,
+      "bytes": 622488195,
+      "MB": 593.65,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "scripts",
+      "ficheros": 1889,
+      "bytes": 370750999,
+      "MB": 353.58,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "corpus",
+      "ficheros": 763,
+      "bytes": 187432096,
+      "MB": 178.75,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "docs",
+      "ficheros": 726,
+      "bytes": 21904207,
+      "MB": 20.89,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "(resto)",
+      "ficheros": 292,
+      "bytes": 18622723,
+      "MB": 17.76,
+      "entraEnDocker": true
+    },
+    {
+      "cubo": "Dockerfile",
+      "ficheros": 1,
+      "bytes": 7202,
+      "MB": 0.01,
+      "entraEnDocker": false
+    },
+    {
+      "cubo": "LICENSE",
+      "ficheros": 1,
+      "bytes": 1067,
+      "MB": 0,
+      "entraEnDocker": false
+    }
+  ],
+  "resumenReparto": {
+    "entraEnContextoDocker": {
+      "MiB": 678.9,
+      "ficheros": 3047
+    },
+    "excluidoDeDockerPeroENELTARBALL": {
+      "MiB": 1146.87,
+      "ficheros": 4628,
+      "nota": "esto es lo que el `.dockerignore` ya saca de la imagen y que el TARBALL de GitHub sigue llevando: el tarball no lee `.dockerignore`."
+    }
+  },
+  "caminoDeDespliegue": {
+    "dockerignoreExcluyePublic": false,
+    "dockerfileCopiaPublic": [
+      {
+        "fichero": "Dockerfile",
+        "linea": 137,
+        "texto": "COPY --from=builder --chown=node:node /app/apps/web/public ./apps/web/public"
+      }
+    ],
+    "composeMonta": [
+      {
+        "fichero": "docker-compose.yml",
+        "linea": 39,
+        "texto": "- ${BUILD_DIR:-./apps/web/.next}:/app/apps/web/.next:ro"
+      },
+      {
+        "fichero": "docker-compose.yml",
+        "linea": 82,
+        "texto": "- .:/app"
+      }
+    ],
+    "publicadorTocaPublic": 0
+  },
+  "prefijosDerivadosDelDockerignore": [
+    "apps/web/public",
+    "node_modules",
+    "docs",
+    "scripts",
+    "media",
+    "media-corpus",
+    "corpus",
+    "Dockerfile",
+    "LICENSE"
+  ]
+}

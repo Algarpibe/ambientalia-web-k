@@ -1,0 +1,44 @@
+═══ PASO 0 · 146.ª — EL TERRENO ═══
+
+── CONTRASTE con las premisas del encargo ──
+  apps/web/public · ficheros RASTREADOS
+     encargo:  2755
+     derivado: 2755
+  apps/web/public · tamaño
+     encargo:  668 MB (sin unidad declarada)
+     derivado: 661.14 MiB / 693.26 MB
+     ⚠ 661.14 MiB = 693.26 MB decimales. El 668 del encargo no es ninguno de los dos: probablemente `du` en bloques de disco (asigna por cluster y redondea al alza).
+  git count-objects · size-pack
+     encargo:  895 MB
+     derivado: 916112 KiB
+  media/ · tamaño (CMS-0b)
+     encargo:  313 MB
+     derivado: 304.36 MiB / 319.15 MB
+     ⚠ 319.15 MB decimales ≈ el 313 del encargo con otra unidad. Y el dato que el encargo NO trae: media/ tiene 0 ficheros rastreados (.gitignore:61), así que NO viaja en el tarball de GitHub por construcción.
+
+── REPARTO de lo RASTREADO (lo que el tarball lleva) ──
+     661.14 MB   2755 f  →docker  apps/web/public
+     593.65 MB   1248 f    (excl)  media-corpus
+     353.58 MB   1889 f    (excl)  scripts
+     178.75 MB    763 f    (excl)  corpus
+      20.89 MB    726 f    (excl)  docs
+      17.76 MB    292 f  →docker  (resto)
+       0.01 MB      1 f    (excl)  Dockerfile
+          0 MB      1 f    (excl)  LICENSE
+
+  entra en el contexto de Docker: 678.9 MiB · 3047 f
+  excluido de Docker y AUN ASÍ en el tarball: 1146.87 MiB · 4628 f
+
+── public/ blob vs disco ──
+  blob 693259560 · disco 693259667 · delta 107 en 2 ficheros
+     apps/web/public/images/uploads/2022/03/EXPERT.svg  blob 4123 → disco 4177 (+54)
+     apps/web/public/images/uploads/2022/03/VIEWER.svg  blob 4150 → disco 4203 (+53)
+
+── POR DÓNDE PASA public/ EN EL DESPLIEGUE ──
+  ¿el .dockerignore lo excluye?  NO
+  Dockerfile:137  COPY --from=builder --chown=node:node /app/apps/web/public ./apps/web/public
+  compose:39  - ${BUILD_DIR:-./apps/web/.next}:/app/apps/web/.next:ro
+  compose:82  - .:/app
+  líneas de publicador.mjs que tocan public/ (fuera de comentario): 0
+
+✓ congelado en docs\research\cola-larga\derivaciones\paso0-146.json
