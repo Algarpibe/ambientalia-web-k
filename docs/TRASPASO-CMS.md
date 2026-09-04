@@ -145,7 +145,13 @@ parece un error y NO lo es — «arreglarlo» rompería la fidelidad medida:
 ## 6 · Operación y despliegue
 
 **Variables de entorno** (sin ninguna de las obligatorias, el proceso
-correspondiente **no arranca** — es la dirección segura, no un descuido):
+correspondiente **no arranca** — es la dirección segura, no un descuido).
+
+> ⚠ **La lista se DERIVÓ del código el 2026-09-04 (145.ª), no se copió: son
+> NUEVE, no seis.** Un barrido de `process.env.*` sobre `apps/`, `packages/` y
+> `scripts/` —descontando las de sonda y sabotaje— sacó **tres que esta tabla no
+> tenía**, y una de ellas es el mecanismo de una decisión ya tomada. §regla 9:
+> un recuento afirmado de memoria se barre antes de usarse.
 
 | variable | quién la necesita | qué pasa sin ella |
 |---|---|---|
@@ -154,7 +160,17 @@ correspondiente **no arranca** — es la dirección segura, no un descuido):
 | `PUBLICAR_SECRETO` | publicador (y el admin para avisar) | el publicador no arranca; el admin avisa con 401 y lo grita |
 | `PUBLICAR_URL` | el admin | **el webhook es opt-in**: sin ella, guardar NO reconstruye (así el seed y las sondas no disparan builds). En producción tiene que estar |
 | `PREVIEW_SECRETO` | el sitio (ruta `/vista-previa`) | **la preview revienta** — no está en ningún `.env` del repo a propósito: la pone quien despliega |
-| `PUBLICAR_SERVIDOR=1` | publicador | si no la pones, la promoción exige parar el servidor web por fuera |
+| `PUBLICAR_SERVIDOR=1` | publicador | ⚠ **su semántica cambió con `CMS-10`**: hoy significa *«¿gestiono yo el servidor?»*, y **poner `PUBLICAR_CONTENEDOR` ya la implica** — declarar el contenedor y no reiniciarlo no significa nada. Sin ninguna de las dos, la promoción exige parar el servidor web por fuera |
+| **`PUBLICAR_CONTENEDOR`** | publicador | **NUEVA (`CMS-10`, modelo B).** Dice **cuál** es el servidor: con ella, tras promocionar el publicador hace `docker restart` de ese contenedor y comprueba **por efecto** que `StartedAt` avanzó. Sin ella, el publicador vuelve al modo local (`next start`), que es lo que hacía antes |
+| **`MEDIA_DIR`** | admin (colección `media`) | **no revienta**, y ése es el punto: cae a la ruta anclada al paquete, *«una decisión, no un accidente del `cwd`»*. **Es el mecanismo de `CMS-0b`** —el volumen persistente de la media— y **en producción tiene que estar**, o los uploads viven dentro del contenedor y mueren con él |
+| **`PG_POOL_MAX`** | admin, build, publicador | **no revienta**: defecto **3**, dimensionado para `3 × 16 = 48 < 100` conexiones. Se sube por entorno en una máquina con otra `max_connections`, sin tocar código |
+
+> **Y las tres nuevas no son del mismo tipo:** `PUBLICAR_CONTENEDOR` estrena
+> comportamiento; `MEDIA_DIR` **ya existía y llevaba sin aplicarse** —su propio
+> comentario en `packages/cms-config/src/colecciones/media.ts:33` dice que es
+> «por donde entrará el volumen persistente de CMS-0b cuando F2-4 despliegue»—;
+> y `PG_POOL_MAX` es un afinado que sólo importa si la DB del destino tiene otro
+> límite.
 
 **Dependencias de build:**
 
@@ -172,9 +188,24 @@ publicador (con el `Bearer` de `PUBLICAR_SECRETO`); este publica lo vencido
 (`Publicar En` ≤ ahora) y reconstruye. Sin cron del sistema no hay salidas
 programadas — el servidor no mira el reloj solo.
 
-### ⚠⚠ DEFECTO ABIERTO · EL SERVIDOR WEB NO RECOGE LO PUBLICADO (142.ª, 2026-09-02)
+### ✅ CERRADO · EL SERVIDOR WEB NO RECOGÍA LO PUBLICADO (142.ª la midió · 143.ª la arregló · 145.ª la confirmó en contenedor)
 
-**Es lo primero que hay que arreglar antes de desplegar, y hoy no está.**
+> ⚠ **Esta sección decía «DEFECTO ABIERTO · es lo primero que hay que arreglar
+> antes de desplegar, y hoy no está» y llevaba así desde el 2026-09-02, con el
+> defecto arreglado desde el 2026-09-03.** Se corrige el estado y **se conserva
+> todo lo medido**, que es lo que sigue valiendo (§regla 12: lo que caduca es el
+> estado, no la medición). El estado vivía **aquí**, que es el documento que lee
+> quien despliega — o sea el peor sitio posible para una lectura caducada.
+
+**Estado hoy (2026-09-04):**
+
+| | |
+|---|---|
+| **modelo local** (`PUBLICAR_SERVIDOR=1`) | ✅ **arreglado y medido** por la 143.ª — 4 `buildId` **servidos** distintos en 3 publicaciones encadenadas, 0 repeticiones, 4 controles por las dos polaridades |
+| **modelo del destino** (`CMS-10` = B, contenedor + volumen) | ✅ **medido por la 145.ª** — misma cadena de 4 valores distintos observada **desde fuera del contenedor**, con 5 controles. `derivaciones/monotono-contenedor-145.json` |
+| lo que hay que hacer al desplegar | poner **`PUBLICAR_CONTENEDOR`** con el nombre del servicio; el publicador reinicia y **comprueba por efecto** que el `buildId` servido cambió |
+
+**Lo medido entonces, que sigue siendo cierto y es la razón de todo lo demás:**
 
 > **Un `next start` sirve para siempre el build que había en disco cuando
 > arrancó.** La promoción del publicador deja el `.next` correcto y **el proceso
@@ -202,15 +233,24 @@ nuevo muere **en silencio** porque su `stdio` es `"ignore"`.
 **El editor publica, espera ~90 s, ve un verde con su número de rutas — y el
 sitio no cambia.**
 
-**Mientras no esté arreglado, la operación es:** tras cada publicación,
-**reiniciar el servidor web a mano** (parar el proceso que tiene el puerto y
-volver a arrancarlo). Y **la comprobación no es que la página cargue**: es que el
-`buildId` servido coincida con `apps/web/.next/BUILD_ID`.
+~~**Mientras no esté arreglado, la operación es:** reiniciar el servidor web a
+mano tras cada publicación.~~ **Ya no hace falta** — lo hace el publicador. Lo
+que **sí sigue en pie de ese párrafo, y es lo importante**: *«la comprobación no
+es que la página cargue: es que el `buildId` servido coincida con
+`apps/web/.next/BUILD_ID`»*. Eso es hoy `llegoAlSitio` en `GET /estado`, y lo
+comprueba el propio publicador en cada publicación.
 
-**Consecuencia colateral:** `/vista-previa/<slug>` devuelve **500** en un
-servidor que haya sobrevivido a una promoción. En uno recién arrancado da **200**
-y funciona como está documentado — o sea que **la preview no está rota: está
-detrás de este defecto**.
+**Consecuencia colateral:** `/vista-previa/<slug>` devolvía **500** en un
+servidor que hubiera sobrevivido a una promoción. En uno recién arrancado daba
+**200** y funcionaba como está documentado — o sea que **la preview no estaba
+rota: estaba detrás de este defecto**. Con el defecto cerrado, ya no hay
+servidores que sobrevivan a una promoción: el publicador los releva.
+
+> ⚠ **Y esto NO se declara verificado, que es distinto de deducido.** Lo de
+> arriba es lo que el mecanismo implica; **nadie ha vuelto a pedir
+> `/vista-previa/<slug>` tras una publicación** —ni la 143.ª ni la 145.ª lo
+> midieron: sus cadenas observan `GET /` —. Se trata como **SIN PROBAR** hasta
+> que alguien lo pida, y es una medición barata para la tanda que despliegue.
 
 ⚠ **Lo que NO está derivado:** qué capa exactamente se congela. Con `output:
 standalone`, `next start` avisa por su cuenta de que *«no funciona con esta

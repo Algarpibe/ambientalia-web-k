@@ -7917,6 +7917,14 @@ mediciones congeladas de las tandas 142.ª–144.ª y del `estado.json` de la 14
    **bloquea** hasta introducir un segundo mecanismo (un cron del host, un
    servicio aparte), que es trabajo que B no necesita.
 
+4. **⚠ AÑADIDA EN EL ESCALÓN 3, y no estaba prevista: el build DENTRO de Docker
+   es frágil, y con A cada publicación pasa por él.** Medido al reconstruir la
+   imagen: **falló 2 de 2**, con **152 y 124 timeouts** de 60 s en páginas y
+   puntos distintos (163/429 y 214/429) — o sea **contención de recursos**, no
+   determinismo (§regla 16), con Postgres sano en las dos (6 conexiones de 100).
+   Con **B** eso no aparece: el build lo hace el publicador **en el host**,
+   donde funcionó **tres veces seguidas**, y la imagen se construye **una vez**.
+
 ### §regla 23 — el criterio de asimetría, con su OPERACIÓN nombrada y su signo DERIVADO
 
 El criterio raíz de §1.5b es *«entre dos opciones reversibles se toma **la que

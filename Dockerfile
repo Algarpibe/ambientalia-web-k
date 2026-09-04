@@ -113,7 +113,28 @@ ENV HOSTNAME="0.0.0.0"
 # ENV NEXT_TELEMETRY_DISABLED=1
 
 # Copy production assets
-COPY --from=builder --chown=node:node /app/apps/web/public ./public
+#
+# ⚠⚠ EL DESTINO ES `./apps/web/public` Y NO `./public`, Y ES LA TERCERA VEZ QUE
+# ESTE DOCKERFILE SE EQUIVOCA EN LO MISMO (145.ª, medido).
+#
+# `output: standalone` en un monorepo **preserva la ruta del paquete dentro del
+# workspace**, así que `server.js` vive en `/app/apps/web/server.js` y hace
+# `process.chdir(__dirname)`. Su `cwd` es `/app/apps/web`, y ahí es donde Next
+# busca `./public`. Con el destino en `/app/public` el fichero **está en la
+# imagen y no se sirve**.
+#
+# Medido con su control positivo, no razonado: `GET /images/logos/kunak-logo.svg`
+# daba **404 (10 796 bytes de HTML de error)** con `/app/public`, y **200 con
+# 6 037 bytes** —el tamaño exacto del fichero— copiándolo a
+# `/app/apps/web/public` dentro del mismo contenedor.
+#
+# ⚠ Y por qué no lo vio la 144.ª aunque comparó el contenedor contra la
+# referencia local: su comparador mira **HTML normalizado**, y el HTML es
+# idéntico — las etiquetas `<img>` están, con su `src` correcto. Lo que falla es
+# lo que hay detrás del `src`. Es §*la causa común: el NIVEL al que se mide*, con
+# el HTML absorbiendo que ningún asset cargue: la página responde **200** y se
+# ve rota, que es la salida plausible-y-falsa que este repo persigue.
+COPY --from=builder --chown=node:node /app/apps/web/public ./apps/web/public
 
 # Set the correct permission for prerender cache
 RUN mkdir .next

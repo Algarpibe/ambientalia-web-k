@@ -296,6 +296,206 @@ Comprobado, no supuesto: la imagen usada es `:144-fix` —la arreglada— y sirv
 `DNRFzRjLlLyjj9iRDbc3D` sin volumen, o sea que su `CMD` corregido funciona. El
 cambio a volumen **no los toca**: monta encima, no reconstruye.
 
+⚠ **Pero sí reintroduce el SECRETO por el volumen, y se cierra.** Medido sobre
+el **artefacto** y no sobre el `.dockerignore` (§regla 59), con control positivo
+—`:144-test`, la de antes del arreglo, da **1**, así que el `find` mira—:
+
+| caso | ficheros `.env` dentro |
+|---|---|
+| control positivo (`:144-test`) | **1** — `/app/apps/web/.env` |
+| imagen arreglada sola | **0** |
+| **con el volumen de B** | **1** — `/app/apps/web/.next/standalone/apps/web/.env` |
+| **con el tapón** (volumen anónimo sobre `.next/standalone`) | **0**, y **sigue sirviendo** el `buildId` del host |
+
+`output: standalone` copia el `.env` del paquete dentro del árbol standalone, y
+montar `.next` entero lo mete en el contenedor **por una ruta que la 144.ª no
+cerró**. No está en la ruta que el proceso lee (`/app/apps/web/.env`, derivado
+del `chdir`), pero **está dentro**. El tapón lleva su contrapartida porque sin
+ella sería un arreglo falso: **uno que quitara el secreto rompiendo el servicio
+daría el mismo 0 en el recuento**.
+
+### ESCALÓN 3 · las variables, `CMS-0b`, y un CUARTO defecto del `Dockerfile`
+
+#### (1) Las variables del destino son NUEVE, no seis — derivadas del código
+
+Barrido de `process.env.*` sobre `apps/`, `packages/` y `scripts/`, descontando
+las de sonda y sabotaje. **Tres que `TRASPASO-CMS.md §6` no tenía**, y no son
+del mismo tipo:
+
+| variable | qué es | sin ella |
+|---|---|---|
+| **`PUBLICAR_CONTENEDOR`** | **estrena comportamiento** (`CMS-10`): dice cuál es el servidor a reiniciar | el publicador vuelve al modo local (`next start`) |
+| **`MEDIA_DIR`** | **ya existía y llevaba sin aplicarse** — es el mecanismo de `CMS-0b` | **no revienta**: cae a la ruta anclada al paquete. En producción los uploads vivirían dentro del contenedor y morirían con él |
+| **`PG_POOL_MAX`** | afinado; defecto **3**, dimensionado para `3 × 16 = 48 < 100` | nada, salvo que la DB del destino tenga otro límite |
+
+**Y `PUBLICAR_SERVIDOR` cambia de semántica**, como el encargo anticipaba: hoy
+es *«¿gestiono yo el servidor?»*, y **`PUBLICAR_CONTENEDOR` ya la implica**
+—declarar el contenedor y no reiniciarlo no significa nada—. Se escribió como
+variable **propia** y no como tercer valor de `PUBLICAR_SERVIDOR`: un
+interruptor de dos al que se le añade un significado es §regla 9 en su cara de
+*rama `else`*.
+
+#### (2) La pregunta de los assets NO era una pregunta: eran DOS, y sólo una es `CMS-0b`
+
+El encargo sospechaba que la pregunta 2 fuera *«CMS-0b sin aplicar»*. **Lo es
+para un canal y no para el otro**, y confundirlos es §*dos lecturas del mismo
+conjunto* con el objeto puesto en la palabra «assets»:
+
+| canal | qué es | tamaño **medido** | ¿en la imagen? | veredicto |
+|---|---|---|---|---|
+| `media/` | **uploads del CMS** | **313 M** | **no** (`.dockerignore`) | **`CMS-0b` SIN APLICAR** — no se vuelve a decidir: se aplica poniendo `MEDIA_DIR` |
+| `apps/web/public/` | **assets del CLON** | **668 M** (667 M en `images/`) | **sí**, `Dockerfile:116` | **NO es `CMS-0b`**: pregunta abierta y distinta |
+
+**Y el mecanismo de `CMS-0b` ya está escrito**, no hay que inventarlo:
+`media.ts:33` deja `DIR_MEDIA` sobreescribible por `MEDIA_DIR`, con su comentario
+diciendo que es *«por donde entrará el volumen persistente de CMS-0b cuando F2-4
+despliegue»*.
+
+**La predicción se PRE-REGISTRÓ antes de medir** (`pre-registro-assets-145.md`)
+y **se confirma**: `public/` **no deja de hornearse solo**. Son `COPY`
+independientes —L116 para `public`, L124-125 para el build— y B sólo tapa el
+segundo. La imagen sigue en 2.02 GB.
+
+#### (3) ⚠⚠ EL TESTIGO DEL PRE-REGISTRO ENCONTRÓ OTRA COSA — UN CUARTO DEFECTO DEL `Dockerfile`, Y ES EL TERCERO DE LA MISMA FAMILIA
+
+El pre-registro fijaba *«un fichero concreto de `public/images/`, pedido por
+HTTP»*. Pedido:
+
+| | |
+|---|---|
+| `GET /images/logos/kunak-logo.svg` | **404**, 10 796 bytes — o sea la página de error |
+| el fichero **en la imagen** | **existe**, 6 037 bytes |
+
+> **Un 404 sobre un fichero que está en la imagen no es un asset que falte: es
+> una ruta que no cuadra.**
+
+Derivado: `public/` va a **`/app/public`** (L116) y `server.js` hace
+`process.chdir(__dirname)` = `/app/apps/web`, donde Next busca `./public` →
+**`/app/apps/web/public`**, que no existe. **Es el tercer sitio donde este
+`Dockerfile` se equivoca en lo mismo**: en un monorepo `output: standalone`
+preserva la ruta del paquete, y sus `COPY` están escritos para un proyecto de
+una sola app.
+
+**Arreglado (`Dockerfile:116` → `./apps/web/public`) y VERIFICADO por las dos
+polaridades** (`derivaciones/assets-servidos-145.json`):
+
+| | HTTP | bytes |
+|---|---|---|
+| sin el arreglo | **404** | 10 796 (HTML de error) |
+| **con el arreglo** | **200** | **6 037 = los del fichero en disco** |
+
+**No basta con el 200**: una página de error también lo sería. Lo que cierra es
+que los bytes coincidan.
+
+⚠ **Y por qué no lo vio la 144.ª aunque comparó el contenedor contra la
+referencia:** su comparador mira **HTML normalizado**, y el HTML es **idéntico**
+—los `<img>` están, con su `src` correcto—. Lo que falla es lo que hay **detrás**
+del `src`. §*La causa común: el NIVEL al que se mide*, con el HTML absorbiendo
+que **ningún** asset cargue: la página responde **200 y se ve rota**.
+
+#### (4) La reconstrucción completa de la imagen queda SIN EJERCITAR — y su razón está medida
+
+`docker build` con el Dockerfile arreglado **falló las dos veces**, y §regla 16
+dice cómo leerlo: **no es determinista, es contención**.
+
+| corrida | timeouts de 60 s | murió en | primera página que agotó |
+|---|---|---|---|
+| 1 | **152** | 163/429 | `/dioxido-de-carbono` |
+| 2 | **124** | 214/429 | `/medir-calidad-aire-asic-2022` |
+
+**Páginas distintas, puntos distintos, y las dos fallan**: eso es contención de
+recursos —`next build` con 15 workers dentro del contenedor contra Postgres por
+`host.docker.internal`, que en Windows pasa por el proxy de Docker Desktop—, no
+un defecto del código. Postgres estaba **sano** durante las dos: **6 conexiones
+de 100**, socket en 2 ms.
+
+**Por eso el arreglo se verificó por el efecto y no por la reconstrucción**: una
+imagen derivada de `:144-fix` que mueve `public` al destino corregido produce
+exactamente lo que el `COPY` arreglado producirá, y da el 200 de arriba.
+
+> ⚠ **Y su peso NO se lee como el de la imagen real:** `:145-publicfix` pesa
+> **3.4 GB** porque un `mv` en una capa nueva **no borra los 668 M de la capa
+> anterior** — sólo los oculta. La imagen que el `Dockerfile` arreglado produce
+> seguirá en ≈2.02 GB, porque su `COPY` va directo al destino bueno. Se anota
+> para que nadie cite 3.4 GB como el tamaño de nada.
+
+⚠ **Y queda una anotación de higiene, que es de la 144.ª y sigue viva:** los dos
+`docker build` de esta tanda pasaron el secreto por `--build-arg`, así que **está
+en la caché de capas de esta máquina**. Aquí da igual —es la DB local—, pero es
+exactamente lo que la 144.ª fichó como inaceptable en el VPS, con su salida ya
+nombrada: `RUN --mount=type=secret`, que este `Dockerfile` **ya usa** para las
+cachés de npm.
+
+> ⚠⚠ **Y ESTO REFUERZA B CON UNA SEPARADORA QUE NO ESTABA EN LA TABLA:** con
+> **A**, cada publicación pasa por este build frágil. Con **B, no** — el build
+> lo hace el publicador **en el host**, donde funcionó **tres veces seguidas**
+> (159.01 · 184.58 · 171.94 s), y la imagen se construye **una vez**, no en cada
+> publicación.
+
+#### (5) B4 · el cron, REDIMENSIONADA ahora que B está decidida
+
+La 144.ª la dejó sin dimensionar porque *«depende de la decisión de (2)»*. Con B:
+
+- **el `POST /cron` EXISTE y es alcanzable**, porque el publicador corre fuera
+  del contenedor. Con A no viajaba en la imagen y había que introducir un
+  segundo mecanismo;
+- **es idempotente sin memoria**, derivado del fuente: la idempotencia es la
+  **transición** `estado: borrador ∧ publicarEn ≤ ahora ⇒ publicado`, no una
+  marca auxiliar ni un corte guardado en el proceso. *«Seguro de reintentar: es
+  la propiedad que hace que un cron pueda correr cada minuto sin pensar»*;
+- **lo que falta NO es código: es una pieza de despliegue** — un cron del
+  sistema (o un timer de Easypanel) que haga un `POST` con el `Bearer` de
+  `PUBLICAR_SECRETO`. Y su granularidad es libre, precisamente por la
+  idempotencia.
+
+### CIERRE · 145.ª
+
+#### Qué queda hecho, y en qué unidad
+
+| | estado |
+|---|---|
+| **la decisión, escrita como decisión** | ✅ `CMS-10` en `ESQUEMA-CMS.md`, con los 3 candidatos costados, 3 separadoras, §regla 23 con su signo **derivado** y su disparador |
+| **B implementada en local** | ✅ `publicador.mjs` con `PUBLICAR_CONTENEDOR`; `docker-compose.yml` con el volumen y el tapón |
+| **el criterio de B1, a través del contenedor** | ✅ **P1 CONFIRMADA** — 4 `buildId` servidos distintos en 3 publicaciones, **5 controles** incluido el K4 de polaridad y el K5 por efecto |
+| el secreto por el volumen | ✅ **detectado y cerrado**, con control positivo y con la contrapartida de que el sitio siga sirviendo |
+| las variables del destino | ✅ **9, derivadas** — 3 que la tabla no tenía |
+| `CMS-0b` | ✅ **no se redecide: se aplica**. Su mecanismo (`MEDIA_DIR`) ya estaba escrito |
+| **un CUARTO defecto del `Dockerfile`** | ✅ hallado por el testigo del pre-registro, arreglado y **verificado por las dos polaridades** |
+| **B4** | ✅ **redimensionada**: no es código, es una pieza de despliegue |
+| los 3 typechecks | ✅ `web` · `@kunak/cms-config` · `cms`, los tres **EXIT 0** |
+
+#### Lo que queda SIN EJERCITAR, con su razón — no se hereda como verde
+
+| | por qué |
+|---|---|
+| **la mitad de DESTINO de B3** | el VPS **no es alcanzable** desde esta máquina, derivado en el PASO 0 con sus 7 canales. Acotado, no cerrado: si Easypanel prohíbe el reinicio, **queda B′** |
+| **la reconstrucción completa de la imagen** | `docker build` falló **2 de 2** por **contención** (152 y 124 timeouts, páginas y puntos distintos), no por el arreglo. Verificado por efecto en su lugar |
+| **`/vista-previa/<slug>` tras una publicación** | ni la 143.ª ni ésta lo pidieron: sus cadenas observan `GET /`. Es una medición barata para la tanda que despliegue |
+
+#### Barrido §regla 12 — **2 enunciados son regla y no evento**
+
+| # | dónde va | por qué ahí |
+|---|---|---|
+| **61** | `CLAUDE.md`, regla nueva | *comparar HTML no es comparar la página: el `src` puede ser correcto y no haber nada detrás* — el catálogo de §*la causa común* gana un contenedor: **el HTML sobre sus recursos**, y su salida es 200 con el sitio roto |
+| **62** | `CLAUDE.md`, regla nueva | *`cmd > log; echo "EXIT=$?"` protege el veredicto dentro del log y se lo quita a quien lanza* — la forma que §regla 11 recomienda hace que el harness informe **0 siempre**. Mordió **dos veces** en esta sesión |
+
+**Los demás son EVENTOS** y se quedan aquí: los `buildId` de la cadena, los
+4.09 s, los 313/668 M, el `sharp-win32-x64`, el `distDir` congelado.
+
+#### Los tripwires de carga, **RE-DERIVADOS** y no citados (§regla 19)
+
+Medidos sobre **el fichero que esta sesión cargó** —`git show 5ea0a52:CLAUDE.md`,
+no el del disco a mitad de tanda—, y anclados a línea completa para que el
+instrumento no se auto-case con su propia documentación:
+
+| marcador | anclado a línea | posición | ocurrencias libres |
+|---|---|---|---|
+| `KV-01` | **1** | **19.0 %** | 3 (las otras son su documentación) |
+| `KV-08` | **1** | **100.0 %** | 2 |
+
+**El truncado sigue REFUTADO: 378 846 chars = 2.53× el aviso de 150 000**, con
+los dos marcadores llegando.
+
 ## 🔄 §144.ª · **B2 — EL DOCKERFILE, LA PRIMERA MEDIDA EN LA PLATAFORMA DE DESTINO** — 2026-09-03
 
 **B2 de B1–B4.** No es una verificación: puede rediseñar el modelo de

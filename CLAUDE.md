@@ -6618,6 +6618,79 @@ excluye igual, el efecto se mide **por el render**, no por el tamaño.
 
 ---
 
+---
+
+**61 · COMPARAR HTML NO ES COMPARAR LA PÁGINA: EL `src` DE UN `<img>` PUEDE SER
+CORRECTO Y NO HABER NADA DETRÁS.** (2026-09-04)
+
+§*La causa común* lleva un catálogo de contenedores que absorben el defecto —una
+fila, una caja, un total, el protocolo, el artefacto en disco—. Falta el que usa
+casi todo comparador de este repo:
+
+> **El HTML es el nivel de arriba de los RECURSOS que referencia.** Dos
+> documentos pueden ser idénticos al bit —las mismas etiquetas, los mismos
+> `src`, los mismos `href`— y uno servir sus assets y el otro no. El HTML no se
+> mueve un byte, porque **la referencia es correcta en los dos**: lo que cambia
+> es si detrás hay algo.
+
+**Y su salida es la peor del catálogo:** la página responde **200**, el
+comparador da **Δ0**, y el sitio **se ve roto**. No hay error, no hay diferencia
+de contenido, y ninguna guarda de HTML puede verlo **por construcción**.
+
+**Medido:** un contenedor servía `GET /images/logos/kunak-logo.svg` con **404 y
+10 796 bytes** —la página de error— teniendo el fichero **dentro de la imagen**
+con sus 6 037 bytes. El comparador de la tanda anterior había comparado ese
+contenedor contra su referencia local y salió limpio: comparaba **HTML
+normalizado**. La causa era una ruta —`public/` en `/app/public` y el servidor
+buscándolo en `/app/apps/web/public`—, o sea **todos** los assets caídos.
+
+**Las dos mitades operativas:**
+
+1. **la comprobación que discrimina es PEDIR el recurso, no listarlo ni verlo
+   referenciado** — y **no basta con el 200**: una página de error también lo
+   es. Lo que cierra es que **los bytes coincidan** con el fichero de origen;
+2. **y su cardinal se publica**: *«N assets referenciados, M pedidos, K con los
+   bytes correctos»*. Un comparador que sólo mire HTML se declara con esa
+   limitación (§regla 14), porque su verde es cierto **del marcado** y mudo
+   sobre la página.
+
+> **Y la señal para sospecharlo es gratis: un 404 sobre un fichero que SÍ está
+> en el artefacto.** Eso nunca es un asset que falte — es una ruta que no cuadra,
+> y casi siempre la pone quien escribió el despliegue, no quien escribió la app.
+
+---
+
+**62 · `cmd > log; echo "EXIT=$?"` PROTEGE EL VEREDICTO DENTRO DEL LOG Y SE LO
+QUITA A QUIEN LANZA — EL ESTADO QUE SE INFORMA ES EL DEL `echo`.** (2026-09-04)
+
+§regla 11 prohíbe pipear una sonda —*«en `A | B` el exit es el de B»*— y ofrece
+la forma correcta: `npm run qa:x > /tmp/x.log; echo "EXIT=$?"`. **Está bien, y
+tiene una mitad que no estaba escrita:**
+
+> **En un comando COMPUESTO, el estado de salida es el del ÚLTIMO comando.** Así
+> que la forma que §regla 11 recomienda hace que quien lanza —un harness, un CI,
+> un `&&` de más arriba— reciba **el exit del `echo`, que es 0 SIEMPRE**. El
+> veredicto no se pierde: se muda **al log**, y el que lo lea en el sitio de
+> antes lee un verde permanente.
+
+**Medido dos veces en la misma sesión, y la segunda con una corrida muerta:** una
+sonda abortó con `TypeError: fetch failed` y el harness informó **«exit code
+0»**; un `docker build` falló con `EXIT_BUILD=1` **escrito dentro del log** y el
+harness informó **«exit code 0»** otra vez.
+
+**Las dos mitades operativas:**
+
+1. **el veredicto se lee en el LOG o en la CONGELADA, nunca en el "exit code"
+   que informa quien lanzó** — y por eso la línea `echo "EXIT=$?"` hay que
+   **leerla**, no sólo escribirla;
+2. **y la señal que sí discrimina es la CONGELADA QUE NO EXISTE.** Una sonda que
+   termina bien deja su fichero; una que muere, no. `ls` sobre `medidas/` o sobre
+   `derivaciones/` contesta en una línea lo que el estado de salida ya no puede
+   —y es §regla 2 (*congelar*) cobrando su segunda utilidad: no sólo auditar
+   después, sino **detectar que la corrida no llegó al final**.
+
+---
+
 ## Comandos
 
 ```bash

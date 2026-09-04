@@ -1,0 +1,22 @@
+{
+  "fecha": "2026-09-04T18:57:12.656Z",
+  "testigo": "images/logos/kunak-logo.svg",
+  "bytesEnDisco": 6037,
+  "casos": {
+    "sinArreglo": {
+      "pregunta": "la imagen con `public` en /app/public — el estado ANTES",
+      "imagen": "ai-website-cloner:144-fix",
+      "arranque": 0,
+      "http": 404,
+      "bytes": 10796
+    },
+    "conArreglo": {
+      "pregunta": "la imagen con `public` en /app/apps/web/public — el efecto del COPY corregido",
+      "imagen": "ai-website-cloner:145-publicfix",
+      "arranque": 0,
+      "http": 200,
+      "bytes": 6037
+    }
+  },
+  "veredicto": "✅ EL ARREGLO SIRVE LOS ASSETS — sin él 404 (10796 bytes de HTML de error), con él 200 y 6037 bytes = los del fichero en disco"
+}

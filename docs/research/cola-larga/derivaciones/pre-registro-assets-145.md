@@ -69,3 +69,51 @@ pregunta que la 144.ª ya fichó (*«la pregunta de B3 no es cómo adelgazar la
 imagen sino si esos assets deben viajar dentro de ella»*). Lo que esta tanda
 aporta es **separar los dos canales con su cardinal** y decir cuál ya está
 decidido.
+
+---
+
+## RESULTADO — medido el mismo día, después de escribir lo de arriba
+
+### ✅ La predicción se CONFIRMA: el problema NO desaparece solo
+
+**Sobre el artefacto, no sobre el `Dockerfile`:** un `find` dentro de la imagen
+`ai-website-cloner:144-fix` encuentra `/app/public/images` con sus 4
+subdirectorios (`logos`, `other`, `theme`, …). El volumen de B monta **sólo**
+`.next`, así que `public/` **sigue viniendo de la capa horneada** y la imagen
+sigue pesando 2.02 GB. Hace falta un segundo montaje explícito, que es una
+decisión aparte de `CMS-10`.
+
+### ⚠⚠ Y EL TESTIGO QUE EL PRE-REGISTRO FIJÓ ENCONTRÓ OTRA COSA — UN CUARTO DEFECTO DEL `Dockerfile`
+
+El pre-registro decía: *«el testigo es un fichero concreto de `public/images/`,
+pedido al contenedor por HTTP»*. Pedido:
+
+| | resultado |
+|---|---|
+| `GET /images/logos/kunak-logo.svg` | **HTTP 404**, 10 796 bytes (o sea la página de error, no el SVG) |
+| el fichero **en la imagen** | **existe**: `/app/public/images/logos/kunak-logo.svg`, 6 037 bytes |
+
+**Un 404 sobre un fichero que está en la imagen no es un asset que falte: es una
+ruta que no cuadra.** Derivado:
+
+- `public/` está en **`/app/public`** — donde `Dockerfile:116` lo pone;
+- `server.js` hace **`process.chdir(__dirname)`** = `/app/apps/web`, y ahí Next
+  busca `./public` → **`/app/apps/web/public`**, que **no existe**.
+
+**Control positivo, y cierra el diagnóstico al bit:** copiando `public` a
+`/app/apps/web/public` dentro del mismo contenedor, el mismo `GET` pasa a
+**HTTP 200 con 6 037 bytes** — el tamaño exacto del fichero.
+
+> **Es el TERCER sitio donde este `Dockerfile` se equivoca en lo mismo:** en un
+> monorepo, `output: standalone` **preserva la ruta del paquete**, y las rutas de
+> `COPY` están escritas para un proyecto de una sola app. La 144.ª ya lo pagó dos
+> veces (`server.js` en la raíz, y los `.env` anidados del `.dockerignore`).
+
+**Y por qué no lo vio la 144.ª aunque comparó el contenedor contra la referencia
+local:** su comparador (P2) mira **HTML normalizado**, y el HTML es **idéntico**
+—las etiquetas `<img>` están, con su `src` correcto—. Lo que falla es lo que hay
+**detrás** del `src`. Es §*la causa común: el NIVEL al que se mide*, con el HTML
+absorbiendo que ningún asset cargue: **la página responde 200 y se ve rota**, que
+es exactamente la salida plausible-y-falsa que este repo persigue.
+
+**Arreglado** en `Dockerfile:116` → destino `./apps/web/public`.
