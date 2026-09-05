@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "tanda": "147.ª",
+    "paso": "PASO 0 — el terreno de la ENTREGA",
+    "fecha": "2026-09-05",
+    "contesta": "de qué tamaño es el terreno, si el repo es público, y qué declara el origen sobre el tamaño",
+    "noContesta": "ninguno de los cuatro caminos de entrega: eso es el ESCALÓN 2 y se predice antes en el ESCALÓN 1"
+  },
+  "vps": {
+    "hostname": "srv1066825",
+    "kernel": "6.8.0-136-generic",
+    "disco_total_kb": "100476656",
+    "disco_usado_kb": "18814416",
+    "disco_libre_kb": "81645856",
+    "disco_pct": "19%",
+    "ram_total_mb": "7940",
+    "ram_usada_mb": "3211",
+    "ram_disponible_mb": "4729",
+    "nucleos": "2",
+    "load1": "0.30",
+    "uptime_dias": "46",
+    "dns_web": "72.60.166.93",
+    "proxy_http": "308",
+    "reinicio_pendiente": "si",
+    "herr_curl": "si",
+    "herr_wget": "si",
+    "herr_git": "si",
+    "herr_tar": "si",
+    "herr_gzip": "si",
+    "herr_docker": "si",
+    "tmp_libre_kb": "81645856"
+  },
+  "contraste": [
+    {
+      "que": "disco total",
+      "premisaEncargo": "96G",
+      "derivado": "95.8G",
+      "coincide": true
+    },
+    {
+      "que": "disco usado",
+      "premisaEncargo": "20G",
+      "derivado": "17.9G",
+      "coincide": false,
+      "nota": "terreno vivo: se mueve entre medidas"
+    },
+    {
+      "que": "disco libre",
+      "premisaEncargo": "77G",
+      "derivado": "77.9G",
+      "coincide": true
+    },
+    {
+      "que": "disco % de uso",
+      "premisaEncargo": "21%",
+      "derivado": "19%",
+      "coincide": false
+    },
+    {
+      "que": "CPU",
+      "premisaEncargo": "5 %",
+      "derivado": "15 % (load1 0.30 sobre 2 núcleos)",
+      "coincide": null,
+      "nota": "la premisa no dice su denominador: 5 % de 1 núcleo y de 2 no son lo mismo"
+    },
+    {
+      "que": "RAM",
+      "premisaEncargo": "~3 GB",
+      "derivado": "total 7940 MB · usada 3211 MB · disponible 4729 MB",
+      "coincide": null,
+      "nota": "«~3 GB» es cierto de lo USADO y falso del TOTAL — sin unidad, las dos lecturas se escriben igual"
+    },
+    {
+      "que": "DNS web.ambientalia.cloud",
+      "premisaEncargo": "72.60.166.93",
+      "derivado": "72.60.166.93",
+      "coincide": true
+    },
+    {
+      "que": "el proxy responde",
+      "premisaEncargo": "301",
+      "derivado": "308",
+      "coincide": false,
+      "nota": "301 y 308 son los dos «redirección permanente» y NO son el mismo byte (§regla del 301/308)"
+    }
+  ],
+  "canal": {
+    "repoPublico": true,
+    "apiStatusSinCredenciales": "200",
+    "declaraContentLength": false,
+    "contentLength": null,
+    "declaraTransferEncoding": false,
+    "etag": "\"ea4d74ff2ab1efae7437e6aced1ed310399eb2d83496b9f997928dab3b5bd99d\"",
+    "etagEstable": true,
+    "contentType": "application/x-gzip"
+  },
+  "arbol": {
+    "head": "0f2fee3c319ba2b5d8b23ebdf5e5f873bc34fc8e",
+    "ficherosVersionados": 7696,
+    "conNombreEscapado": 15,
+    "packBytes": 938098032.64,
+    "packMiB": 894.64
+  },
+  "herramientasAusentes": []
+}
