@@ -1,0 +1,43 @@
+############ ARRANQUE · 2026-09-05T13:49:10Z ############
+
+======== A · GUARDA: nada que ya exista se toca ========
+  ambientalia_project_kunak-db: libre
+  ambientalia_project_web: libre
+  servicios corriendo ANTES: 29
+
+======== B · SECRETOS (generados aquí, no impresos) ========
+  generado /etc/easypanel/kunak-clon.env
+  longitudes (no los valores): PGPASS=48 PAYLOAD_SECRET=64 PUBLICAR_SECRETO=64 PREVIEW_SECRETO=64
+
+======== C · POSTGRES PROPIO ========
+  creado ambientalia_project_kunak-db
+  (limitado a 0.5 CPU y 512M: no puede competir con producción)
+  esperando a que acepte conexiones........... -> LISTO en 12s
+
+  -- y el CANAL que importa no es pg_isready, es el SOCKET (§El principio) --
+1
+
+======== D · EL SITIO, con las NUEVE variables ========
+  creado ambientalia_project_web
+  (limitado a 1.0 CPU y 1024M de los 4 738 disponibles)
+  las nueve: DATABASE_URI PAYLOAD_SECRET PUBLICAR_SECRETO PREVIEW_SECRETO
+             PUBLICAR_URL PUBLICAR_SERVIDOR PUBLICAR_CONTENEDOR MEDIA_DIR PG_POOL_MAX
+  esperando a que la tarea arranque. -> contenedor arriba en 2s
+
+  -- estado de la tarea --
+ambientalia_project_web.1 Running less than a second ago 
+
+  -- ¿escucha? El canal es el SOCKET, no el estado del proceso --
+HTTP 200
+  -> sirve en 1s
+
+======== E · IMPACTO SOBRE PRODUCCIÓN (el invariante) ========
+  servicios corriendo DESPUÉS: 31
+  carga: 0.70, 0.46, 0.24
+  memoria: usado=3429 disponible=4511
+  -- los 25 de antes siguen con sus réplicas? --
+      3 0/0
+      1 0/1
+     27 1/1
+
+############ FIN ARRANQUE ############

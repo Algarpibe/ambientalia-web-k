@@ -1,0 +1,26 @@
+############ P3 · 2026-09-05T13:49:42Z ############
+
+======== P3a · RUTAS DEL MANIFIESTO ========
+rutas_en_manifiesto=429
+rutas_pedibles=427  (descontadas /_global-error y /_not-found)
+muestra=20
+status_200=20/20
+
+======== P3b · EL ASSET TESTIGO, POR BYTES ========
+esperado: 6037 bytes en /images/logos/kunak-logo.svg
+
+-- (1) EN EL VPS, la imagen que se entregó (145-publicfix) --
+  status=200  bytes=6037  veredicto=COINCIDE
+
+-- (2) SEPARADORA en LOCAL: 144-fix, la imagen con el defecto --
+  status=404  bytes=10796
+  (si esto diera 6037, el testigo NO separa y P3b no prueba nada)
+
+======== P3c · LOS TRES CARDINALES DE ASSETS ========
+referenciados=107
+pedidos=107
+con_bytes_correctos=106
+DISCREPANCIAS (1):
+  /favicon.ico?favicon.2vob68tjqpejf.ico status=200 (sin fichero de origen que comparar)
+
+############ FIN P3 ############

@@ -135,6 +135,136 @@ routers compitiendo por el mismo Host con la misma prioridad (`0`).
 > —y si la web corporativa se mueve o el clon usa otro— es una decisión del
 > propietario, no un arreglo.
 
+### ESCALÓN 2 · LA ENTREGA — **255 SEGUNDOS DE PUNTA A PUNTA, Y PRODUCCIÓN NO SE ENTERÓ**
+
+Derivaciones: `entrega-148.{sh,log}` · `arranque-148.{sh,log}` · `p3-148.{sh,log}`.
+
+| tramo | medido |
+|---|---|
+| `docker save \| gzip` en el host | **96 s** → **1 430.09 MiB** (1.397 GiB) |
+| `scp` al VPS | **85 s** → **16.82 MiB/s = 141.1 Mbps de SUBIDA** |
+| `docker load` en el VPS | **43 s** |
+| **total** | **255 s = 4 min 15 s** |
+
+**La completitud se comprobó por donde §regla 66 manda, no por el protocolo:**
+`gzip -t` **OK en los dos lados** y `sha256` **idéntico**
+(`f29478c5…3f0e0a`) — o sea que lo que llegó es bit a bit lo que salió, sin
+depender de que nadie declarara un `Content-Length`.
+
+#### Las predicciones, evaluadas — **y las tres fallaron POR EL MISMO LADO**
+
+| | predicho | medido | veredicto |
+|---|---|---|---|
+| **P1a** bytes | **[1.4, 2.2] GiB** | **1.397 GiB** | ❌ **REFUTADA por 3.2 MiB — un 0.22 %** |
+| **P1b** empaquetado | 3–10 min | **1.6 min** | ❌ refutada por abajo |
+| **P1b** `load` | 1–4 min | **43 s** | ❌ refutada por abajo |
+| **P1b** `scp` | `bytes / subida` | 85 s | ⚠ **INEVALUABLE** — ver abajo |
+| **P2** | NO toca el VPS | **0 build_procs en 4 muestras** | ✅ confirmada |
+| **P3a** rutas | 20 de 20 | **20/20** | ✅ |
+| **P3b** asset | 200 · 6 037 bytes | **200 · 6 037** | ✅ **con separadora** |
+| **P3c** cardinales | los tres iguales | **107 · 107 · 107** | ✅ (tras corregir la sonda) |
+
+> ⚠⚠ **P1b · scp NO SE PUEDE REFUTAR CON ESTA MEDICIÓN, Y ESO ES UN DEFECTO DEL
+> PRE-REGISTRO, NO UN RESULTADO.** La fórmula era `t ≈ bytes / ancho_de_subida`
+> y el ancho de subida **se despejó de ese mismo tiempo** (`16.82 MiB/s = 1 430
+> MiB / 85 s`). O sea que la predicción y la medición comparten término:
+> **0 instancias separadoras POR CONSTRUCCIÓN**, no por pobreza del dominio. Una
+> fórmula cuyo único término desconocido sale de la propia observación **no
+> predice: describe.** Lo que sí queda medido y es reutilizable es el número:
+> **141.1 Mbps de subida**, que ninguna tanda tenía y que hace evaluable la
+> próxima predicción.
+
+**Y las tres refutaciones van en la misma dirección, que es el hallazgo:** los
+tres tramos salieron **más rápidos y más pequeños** de lo predicho. El
+razonamiento por componentes de P1a había dado **~1.44 GiB** —error del **3 %**
+contra los 1.397 medidos— y aun así la predicción falló, **porque el intervalo se
+ensanchó «por prudencia» hacia arriba y arrastró el centro a 1.7**. La derivación
+era buena; lo que la estropeó fue el margen.
+
+#### ⚠⚠ EL MISMO ARTEFACTO, TRES NÚMEROS — Y EL «+1.38 GB» DEL PASO 0 ERA UNO DE ELLOS
+
+| medida | host | VPS |
+|---|---|---|
+| `docker images` | **3.4 GB** | **1.84 GB** |
+| `docker inspect .Size` | **1 500 426 968** | **1 840 470 314** |
+| capas | 12 | 12 |
+| **lo que VIAJÓ** | **1 430.09 MiB**, `sha256` idéntico | ídem |
+
+**Es la misma imagen —lo prueba el `sha256`— y ningún par de esos números
+coincide.** En el host, `docker images` (3.4 GB) y `docker inspect .Size`
+(1.4 GiB) **se contradicen entre sí**; en el VPS concuerdan. Consecuencia
+directa: **el «+1.38 GB» que este acta publicó en el PASO 0 salía de `docker
+images` en el host**, que es la métrica que no viaja. Medido por `.Size`, el
+sobrecoste real de `145-publicfix` sobre `144-fix` es **+650 MiB**, no +1.38 GB.
+
+> **Es §regla 63 —*el reparto se hace en la unidad que VIAJA, no en la que se
+> almacena*— con una cara que no estaba escrita: no son dos unidades, son TRES,
+> y una de ellas depende del DEMONIO que la reporta.** «El tamaño de la imagen»
+> no es un número: es una pregunta incompleta hasta que se dice **medido dónde y
+> con qué orden**.
+
+#### P2 · EL BUILD NUNCA TOCÓ EL VPS — con las dos polaridades
+
+| muestreo | `build_procs` | `load_procs` | `load average` |
+|---|---|---|---|
+| antes | **0** | 27 | 0.08 |
+| pre-scp | **0** | 27 | 0.12 |
+| pre-load | **0** | 27 | 0.47 |
+| **post-load** | **0** | 27 | **1.29** ← el máximo |
+
+**El `0` vale porque el `27` de al lado prueba que la sonda no está muda**
+(§sondas 4 · §regla 28c): ve perfectamente lo que SÍ está pasando —`dockerd`,
+`containerd`, `gzip`— y aun así no ve ni un proceso de compilación. Carga máxima
+**1.29 sobre 2 núcleos**, o sea que **nunca llegó a saturar**, y eso durante el
+`docker load`, que es el tramo más caro del VPS en toda la operación.
+
+Y la prueba mecánica que no depende del muestreo: **`prerender-manifest.json`
+viaja DENTRO de la imagen con sus 429 rutas**. Las páginas estaban construidas
+antes de que el VPS viera un solo byte.
+
+#### P3 · Y EL ASSET SE VERIFICÓ POR BYTES, CON SU SEPARADORA
+
+```
+145-publicfix (VPS)  /images/logos/kunak-logo.svg  →  200 ·  6 037 bytes  COINCIDE
+144-fix       (local) mismo asset                  →  404 · 10 796 bytes
+```
+
+**Los `10 796` no son un número nuevo: son EXACTAMENTE el que §regla 61 registró**
+cuando el defecto se descubrió. La separadora no sólo separa — **reproduce el
+defecto al byte contra un registro independiente y anterior**, que es la mejor
+adjudicación que una sonda de este repo puede tener (§sondas 4: *cruzar con otra
+medición del mismo objeto hecha con otro instrumento*).
+
+**Y P3c se corrigió por el lado que tocaba: la sonda.** Publicó `107 · 107 ·
+**106**` con una discrepancia en `/favicon.ico?favicon.2vob68tjqpejf.ico`
+—*«sin fichero de origen que comparar»*—. No era del clon: mi lista de rutas
+candidatas no contemplaba `/_next/static/media/`. Derivado a mano, el favicon
+sirve **25 931 bytes** y su origen mide **25 931**. **El cardinal real es
+107 · 107 · 107**, y lo que estaba mal era el instrumento.
+
+#### LO QUE QUEDÓ CORRIENDO, Y LO QUE NO SE TOCÓ
+
+| | |
+|---|---|
+| `ambientalia_project_kunak-db` | Postgres **propio**, `postgres:17`, volumen `kunak-clon-pgdata`, **0.5 CPU / 512M** |
+| `ambientalia_project_web` | el clon, `145-publicfix`, volumen `kunak-clon-media`, **1.0 CPU / 1024M**, **las nueve variables** |
+| servicios a `1/1` | **25 → 27** (los dos nuevos, ninguno tocado) |
+| carga del VPS | **0.27** · memoria disponible **4 508 MB** · disco libre **76 GB** |
+| `web.ambientalia.cloud` | **sigue sirviendo `<title>Inicio \| Ambientalia</title>`** |
+
+**Postgres es propio y no uno de los seis existentes**, como el encargo
+recomendaba: el clon corre migraciones, y compartir base con producción no es una
+optimización sino un acoplamiento. Los dos servicios llevan **límite de CPU y
+memoria**, así que no pueden competir con el negocio ni en el peor caso.
+
+**El sitio respondió `HTTP 200` un segundo después de arrancar** — porque las 429
+páginas ya venían construidas, que es justo lo que P2 afirmaba.
+
+> ⚠ **Y una guarda del arranque que no llegó a dispararse pero se declara:** el
+> script comprueba **primero** si alguno de los dos nombres ya existe y **para**
+> si es así, en vez de pisarlo. Salió `libre` en los dos. Sin esa guarda, un
+> segundo pase habría reemplazado un servicio en vez de fallar en voz alta.
+
 ## 🔄 §147.ª · **CÓMO LLEGA EL CÓDIGO AL VPS — LOS CUATRO CAMINOS COMPLETAN, ASÍ QUE CMS-11 DEJA DE SER DE TAMAÑO** — 2026-09-05
 
 **El control positivo no reprodujo el fallo, y eso es el hallazgo.** El encargo
