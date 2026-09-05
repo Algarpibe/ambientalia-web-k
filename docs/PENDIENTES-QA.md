@@ -1,5 +1,140 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🔄 §148.ª · **ENTREGAR UNA IMAGEN YA CONSTRUIDA — Y EL PASO 0 CORRIGE SEIS CIFRAS DEL ENCARGO, UNA DE ELLAS UN RIESGO DE PRODUCCIÓN** — 2026-09-05
+
+**El encargo avisó de que ninguna de sus cifras es premisa. Se derivaron todas, y
+seis salieron distintas** — cuatro de recuento, una que cambia qué artefacto hay
+que llevar, y una que habría tumbado la web corporativa.
+
+Derivación congelada: `paso0-148.{sh,log}` (142 líneas, `EXIT=0`).
+
+### PASO 0 · EL TERRENO, CON SU DENOMINADOR
+
+| | encargo | **derivado** | cómo |
+|---|---|---|---|
+| núcleos | 2 | **2** ✅ | `nproc` |
+| RAM | 7 940 MB | **7 940**, 3 202 usados, **4 738 disponibles** ✅ | `free -m` |
+| Postgres | «CINCO» | **SEIS** ❌ | `docker ps --filter ancestor=postgres:17` |
+| servicios | «~24 de negocio» | **29 swarm** · 25 corriendo · 4 a 0 réplicas ❌ | `docker service ls` |
+| servicio `web` | «está PARADO» | **NUNCA EXISTIÓ en swarm** ❌ | `docker service inspect` → no |
+| el fallo | «el despliegue murió construyendo» | **murió DESCARGANDO** ❌ | el log de la acción |
+| la imagen | `144-fix` | **`144-fix` ES LA QUE TIENE EL DEFECTO** ❌ | `find` dentro del artefacto |
+| el dominio | «falló por atarse a un servicio inexistente» | **lo sirve PRODUCCIÓN hoy** ❌ | `curl` al dominio |
+
+**El reparto de los 25 corriendo, que es lo que convierte «~24» en una
+restricción usable:** 11 aplicaciones de negocio · 6 Postgres · 6 visores de DB
+(5 `pgweb` + 1 `dbgate`) · 2 de plataforma (`easypanel`, `traefik`). Y **78 GB
+libres de 96** en disco, que es holgura de sobra para una imagen de 2–3.4 GB:
+**la restricción de este VPS es CPU y RAM, no disco** — y eso decide el diseño,
+porque entregar bytes no compite con producción y construir sí.
+
+### ⚠⚠ EL FALLO DEL PROPIETARIO NO FUE DEL BUILD: EL BUILD NUNCA CORRIÓ
+
+**Un solo intento con log**, `2026-09-04 22:23:40 → 22:24:15` — **35 segundos**:
+
+```
+### Download Github Archive Started...
+curl: (23) Failure writing output to destination, passed 1370 returned 0
+gzip: stdin: unexpected end of file
+tar:  Unexpected EOF in archive
+Command failed with exit code 2: tar -xz '--strip-components=1' -C .../web/code
+```
+
+Easypanel descarga el repo como tarball de GitHub y lo descomprime **al vuelo**
+(`curl | tar -xz`). El `curl: (23)` es `CURLE_WRITE_ERROR`: **curl no pudo
+escribir en el pipe porque el `tar` del otro lado ya había muerto**, y el `tar`
+murió porque el gzip vio un final de fichero que no tocaba. Dejó `web/code` a
+**107 MB**, a medias.
+
+> **Esto NO refuta la decisión CMS-10 = B, pero SÍ corrige su atribución.** El
+> encargo dice *«construir en ese VPS es un riesgo para producción»* y *«el
+> despliegue que falló era el modelo A»*. Lo segundo es cierto **de la
+> intención** y falso **de lo medido**: no hay ni una medición de un `next build`
+> muriendo en este VPS, porque **nunca llegó a empezar**. Lo que sí está medido
+> es que la descarga revienta.
+
+Y es §regla 66 de la 147.ª cobrándose sobre el caso real: *«un origen que no
+declara tamaño sirve un stream que no puede avisar de su propio truncamiento»*.
+El tarball de `codeload.github.com` se genera al vuelo y **no lleva
+`Content-Length`**, así que ni curl ni tar pueden distinguir *terminado* de
+*cortado*. La 147.ª corrió esa misma tubería desde el VPS y **completó en 60 s
+con 1 320.30 MiB** — o sea que el fallo es **episódico**, no determinista, que es
+justo lo que su control positivo dijo sin poder explicarlo.
+
+### PUNTO 5 · EL CORTE LIMPIO **NO** SE ACTIVA — HAY CAMINO, Y CON SU CONTROL
+
+| camino | ¿disponible? | evidencia |
+|---|---|---|
+| registro externo | **NO** | `/root/.docker/config.json` **no existe**: cero credenciales |
+| **imagen local (`save`/`load`)** | **SÍ** | **13 servicios corriendo hoy** con imágenes locales |
+| API del panel | **NO** | `GET /api/trpc/...` → **401**, y no hay credenciales |
+
+**La evidencia de que swarm acepta una imagen local aquí va con su control**
+(§sondas 4, el pleno): `ambientalia_project_hub-api` corre referenciando
+`easypanel/ambientalia_project/hub-api` **sin digest**, y ese repo **no existe en
+ningún registro** (`docker manifest inspect` → `denied`). El control es
+`ambientalia_project_n8n`, que sí usa una imagen pública (`n8nio/n8n:2.21.7`). Y
+el swarm tiene **UN SOLO NODO**, así que no hay ningún otro sitio al que
+planificar la tarea: una imagen cargada en este host **es** la imagen del
+servicio.
+
+### ⚠⚠ LA IMAGEN QUE EL ENCARGO NOMBRA ES LA QUE TIENE EL DEFECTO
+
+Hay **dos** candidatas, no una. Y §regla 61 —el defecto por el que la 145.ª
+existe— es exactamente lo que P3 va a medir:
+
+| imagen | `.env` dentro | `public/` vive en | veredicto |
+|---|---|---|---|
+| `144-test` (13:56) | **1** — `/app/apps/web/.env` | — | **control positivo NATURAL** |
+| **`144-fix`** ← la del encargo | 0 | **`/app/public`** | ❌ **assets en 404** |
+| **`145-publicfix`** | 0 | **`/app/apps/web/public`** | ✅ **la buena** |
+| testigo fabricado | **1** | — | control |
+
+**La sonda del secreto llegó MUDA y lo dijo un testigo, no un razonamiento.** La
+primera versión daba `0` en las tres imágenes — y también **en una imagen con un
+`.env` plantado a propósito**, porque el shell de Windows expandía el glob antes
+de que llegara al contenedor. Es §sondas 4 con el cero puesto en un `find`. Con
+las comillas puestas, el control positivo **natural** apareció solo: `144-test`
+da **1**, y las dos candidatas dan **0** — o sea las dos polaridades (§regla 28d),
+sabe ver lo expuesto y sabe ver lo limpio.
+
+**Y el precio de `145-publicfix` está medido, no estimado:** es `144-fix` más una
+capa `RUN mv /app/public /app/apps/web/public`, y un `mv` que cruza capas **copia
+los 699 MB enteros** en vez de moverlos. De ahí **3.4 GB contra 2.02**: el
+arreglo cuesta **+1.38 GB de transferencia** por mover un directorio de sitio.
+
+### ⚠⚠⚠ EL ESCALÓN 3, TAL COMO ESTÁ ESCRITO, TUMBA LA WEB CORPORATIVA
+
+El encargo dice *«qué queda para que `web.ambientalia.cloud` sirva el clon … el
+dominio en Easypanel, que falló por atarse a un servicio inexistente»*. Medido
+contra la salida servida:
+
+```
+GET https://web.ambientalia.cloud/  →  200 · 144 327 bytes
+                                        <title>Inicio | Ambientalia</title>
+```
+
+**Ese dominio no está libre: sirve HOY la web corporativa de Ambientalia**, desde
+`ambientalia_project_ambientalia-web`, que lleva 6 semanas corriendo. Y en
+Traefik hay **DOS** routers reclamándolo:
+
+| router | regla | estado |
+|---|---|---|
+| `ambientalia_project_ambientalia-web-0` | ``Host(`web.ambientalia.cloud`)`` | **vivo, es producción** |
+| `ambientalia_project_web-0` | ``Host(`web.ambientalia.cloud/`)`` ← **barra final** | **muerto: no es un host válido** |
+
+El diagnóstico del encargo —*«se ató a un servicio inexistente»*— es cierto y
+**no es lo que impide que enrute**: lo que lo impide es que **el host está mal
+escrito**, con una `/` dentro del `Host(...)`. Y esa errata **es hoy lo único que
+separa al clon de robarle el dominio a producción**: corregirla dejaría dos
+routers compitiendo por el mismo Host con la misma prioridad (`0`).
+
+> **Se PARA en el dominio y se reporta, como el encargo manda.** El ESCALÓN 2
+> sigue adelante sin tocarlo: el servicio se arranca y se verifica **por la red
+> interna**, no por `web.ambientalia.cloud`. Elegir qué dominio sirve el clon
+> —y si la web corporativa se mueve o el clon usa otro— es una decisión del
+> propietario, no un arreglo.
+
 ## 🔄 §147.ª · **CÓMO LLEGA EL CÓDIGO AL VPS — LOS CUATRO CAMINOS COMPLETAN, ASÍ QUE CMS-11 DEJA DE SER DE TAMAÑO** — 2026-09-05
 
 **El control positivo no reprodujo el fallo, y eso es el hallazgo.** El encargo
