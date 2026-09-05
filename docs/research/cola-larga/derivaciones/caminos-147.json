@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "tanda": "147.ª",
+    "escalon": "ESCALÓN 2 — los cuatro caminos, medidos en el VPS",
+    "fecha": "2026-09-05T12:57:47Z",
+    "preRegistro": "pre-registro-entrega-147.md (commit 1d0ced0)",
+    "contesta": "si cada camino de entrega COMPLETA, con su tamaño, su tiempo y su cardinal de ficheros",
+    "noContesta": "si Easypanel completa — los cuatro se corrieron por SSH en el HOST, y el fallo original ocurrió DENTRO de la tubería de Easypanel, que es otro entorno y no se tocó"
+  },
+  "control": {
+    "gzip_t_sobre_integro": 0,
+    "gzip_t_sobre_truncado": 1,
+    "bytesTruncado": 100000000,
+    "discrimina": true,
+    "guionLlegoAlFinal": true,
+    "limpiezaOk": true,
+    "etagEstableDuranteLaCorrida": true
+  },
+  "denominadorFicheros": 7700,
+  "shaEsperado": "1d0ced0e054e443bad952a425bbdcd7aa5dc579b",
+  "etag": "\"b553889a881d2018993c208f4a8018e377109e5c6129cb10ddad72e23eab4863\"",
+  "caminos": [
+    {
+      "id": 1,
+      "nombre": "TUBERÍA  curl | tar -xz",
+      "bytesTransferidos": 1384435972,
+      "bytesNota": "el tarball no se mide dos veces: es el mismo artefacto que el camino 2",
+      "segundos": 60.05,
+      "exits": {
+        "curl": 0,
+        "tar": 0
+      },
+      "exitAparente": 0,
+      "ficheros": 7700,
+      "bytesEnDisco": 1914654037,
+      "todosLosExitCero": true,
+      "ficherosCuadran": true,
+      "completa": true,
+      "MiBTransferidos": 1320.3
+    },
+    {
+      "id": 2,
+      "nombre": "SEPARADO  curl -o  +  tar -xzf",
+      "bytesTransferidos": 1384435972,
+      "segundos": 81.99,
+      "segundosDesglose": {
+        "descarga": 54.94,
+        "gzip_t": 8.91,
+        "extraccion": 27.05
+      },
+      "exits": {
+        "curl": 0,
+        "tar": 0,
+        "gzip_t": 0
+      },
+      "ficheros": 7700,
+      "bytesEnDisco": 1914654037,
+      "todosLosExitCero": true,
+      "ficherosCuadran": true,
+      "completa": true,
+      "MiBTransferidos": 1320.3
+    },
+    {
+      "id": 3,
+      "nombre": "git clone COMPLETO",
+      "bytesTransferidos": 921278874,
+      "segundos": 27,
+      "exits": {
+        "git": 0
+      },
+      "ficheros": 7700,
+      "bytesEnDisco": 1914654037,
+      "objetos": 16299,
+      "shaCorrecto": true,
+      "todosLosExitCero": true,
+      "ficherosCuadran": true,
+      "completa": true,
+      "MiBTransferidos": 878.6
+    },
+    {
+      "id": 4,
+      "nombre": "git clone --depth 1",
+      "bytesTransferidos": 925211034,
+      "segundos": 29.65,
+      "exits": {
+        "git": 0
+      },
+      "ficheros": 7700,
+      "bytesEnDisco": 1914654037,
+      "objetos": 7449,
+      "shaCorrecto": true,
+      "todosLosExitCero": true,
+      "ficherosCuadran": true,
+      "completa": true,
+      "MiBTransferidos": 882.35
+    }
+  ],
+  "bytesEnDiscoDistintos": 1,
+  "bytesEnDisco": [
+    1914654037
+  ],
+  "tarballMiB": 1320.3,
+  "ahorroClonPct": 33.5,
+  "veredictos": [
+    {
+      "id": "P1",
+      "prediccion": "la TUBERÍA falla (control positivo), y falla tarde",
+      "medido": "exit curl 0 · exit tar 0 · 60.05s · 7700/7700 ficheros",
+      "veredicto": "REFUTADA",
+      "consecuencia": "el control positivo NO funciona: el fallo no se reproduce desde el host por SSH"
+    },
+    {
+      "id": "P1-mecanismo",
+      "prediccion": "el acoplamiento hace que la tubería tarde ≈ max(descarga, extracción) — la extracción sería el cuello de botella y dejaría la conexión ociosa",
+      "medido": "tubería 60.05s · descarga 54.94s · extracción 27.05s · max=54.94s",
+      "veredicto": "el SOLAPAMIENTO se confirma, la DIRECCIÓN no",
+      "consecuencia": "la extracción es 2.03× MÁS RÁPIDA que la descarga: el pipe nunca se llena, curl nunca se bloquea, la conexión nunca queda ociosa. El mecanismo predicho EXIGE lo contrario"
+    },
+    {
+      "id": "P2",
+      "prediccion": "el SEPARADO completa, gzip -t en verde y el cardinal exacto",
+      "medido": "exits {\"curl\":0,\"tar\":0,\"gzip_t\":0} · gzip -t 0 · 7700/7700 ficheros · sha256 de 2 descargas IDÉNTICO",
+      "veredicto": "CONFIRMADA",
+      "consecuencia": "el artefacto es reproducible al byte entre peticiones: el etag identifica contenido"
+    },
+    {
+      "id": "P3a",
+      "prediccion": "git clone completo transfiere 890–950 MiB",
+      "medido": "878.6 MiB en 27s (16299 objetos)",
+      "veredicto": "REFUTADA",
+      "consecuencia": "11.40 MiB por DEBAJO del rango predicho (1.3 %)"
+    },
+    {
+      "id": "P3b",
+      "prediccion": "git clone --depth 1 transfiere 850–950 MiB y NO es sustancialmente menor",
+      "medido": "882.35 MiB en 29.65s (7449 objetos)",
+      "veredicto": "CONFIRMADA en rango",
+      "consecuencia": "y el SIGNO va al revés de lo que sugiere el nombre: el shallow es 3.75 MiB MÁS GRANDE y 2.65s MÁS LENTO que el completo, con 8850 objetos MENOS"
+    },
+    {
+      "id": "P3c",
+      "prediccion": "el clone transfiere ~32 % menos que el tarball",
+      "medido": "clone 878.6 MiB contra tarball 1320.3 MiB → 33.5 % menos",
+      "veredicto": "CONFIRMADA",
+      "consecuencia": "git es el canal más barato en bytes Y el más rápido de los cuatro"
+    },
+    {
+      "id": "P4",
+      "prediccion": "si P2 completa y P1 falla, de la CAUSA no queda nada que public/ explique",
+      "medido": "P1 COMPLETA · P2 COMPLETA",
+      "veredicto": "PREMISA NO CUMPLIDA — el condicional no aplica",
+      "consecuencia": "los CUATRO completan, así que la conclusión es MÁS fuerte que la del condicional: el tamaño no impide la entrega por NINGÚN camino medido"
+    }
+  ],
+  "balance": {
+    "aciertos": 3,
+    "fallos": 2,
+    "niUnaNiOtra": 2,
+    "cualesNiUnaNiOtra": [
+      {
+        "id": "P1-mecanismo",
+        "veredicto": "el SOLAPAMIENTO se confirma, la DIRECCIÓN no"
+      },
+      {
+        "id": "P4",
+        "veredicto": "PREMISA NO CUMPLIDA — el condicional no aplica"
+      }
+    ],
+    "total": 7,
+    "cuadra": true
+  },
+  "sha256TarballDosDescargas": {
+    "a": "9ba87b384638fc43746c37679499da565c8c67d02c89bad060ef5e8a54e691a4",
+    "b": "9ba87b384638fc43746c37679499da565c8c67d02c89bad060ef5e8a54e691a4",
+    "iguales": true
+  }
+}

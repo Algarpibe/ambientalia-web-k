@@ -1,0 +1,66 @@
+=== ENTORNO ===
+fecha_utc=2026-09-05T12:57:47Z
+denominador_ficheros=7700
+sha_esperado=1d0ced0e054e443bad952a425bbdcd7aa5dc579b
+disco_libre_kb_inicio=81645500
+etag_al_empezar="b553889a881d2018993c208f4a8018e377109e5c6129cb10ddad72e23eab4863"
+
+=== CAMINO 1 · TUBERIA (control positivo) ===
+c1_exit_curl=0
+c1_exit_tar=0
+c1_exit_tuberia_APARENTE=0
+c1_segundos=60.053198773
+c1_ficheros=7700
+c1_bytes_en_disco=1914654037
+c1_curl_err=
+c1_tar_err=
+
+=== CAMINO 2 · SEPARADO ===
+c2_size_download=1384435972
+c2_speed_bps=25206957
+c2_tiempo_curl=54.922772
+c2_http=200
+c2_exit_descarga=0
+c2_segundos_descarga=54.938888632
+c2_bytes_fichero=1384435972
+c2_gzip_t_exit=0
+c2_segundos_gzip_t=8.910253024
+c2_gzip_err=
+c2_sha256_1=9ba87b384638fc43746c37679499da565c8c67d02c89bad060ef5e8a54e691a4
+testigo_gzip_t_sobre_TRUNCADO_exit=1   # tiene que ser != 0
+testigo_bytes_truncado=100000000
+c2_exit_tar=0
+c2_segundos_extraccion=27.048078823
+c2_ficheros=7700
+c2_bytes_extraido=1914654037
+c2_tar_err=
+c2_exit_descarga_2=0
+c2_segundos_descarga_2=59.265231310
+c2_bytes_fichero_2=1384435972
+c2_sha256_2=9ba87b384638fc43746c37679499da565c8c67d02c89bad060ef5e8a54e691a4
+
+=== CAMINO 3 · git clone COMPLETO ===
+c3_exit=0
+c3_segundos=26.996570425
+c3_ficheros=7700
+c3_bytes_pack=921799364
+c3_bytes_git_entero=922886279
+c3_bytes_checkout=1914654037
+c3_sha=1d0ced0e054e443bad952a425bbdcd7aa5dc579b
+c3_recibido_segun_git=Receiving objects: 100% (16299/16299), 878.60 MiB
+
+=== CAMINO 4 · git clone --depth 1 ===
+c4_exit=0
+c4_segundos=29.654696462
+c4_ficheros=7700
+c4_bytes_pack=925449512
+c4_bytes_git_entero=926536474
+c4_bytes_checkout=1914654037
+c4_sha=1d0ced0e054e443bad952a425bbdcd7aa5dc579b
+c4_recibido_segun_git=Receiving objects: 100% (7449/7449), 882.35 MiB
+
+=== CIERRE ===
+etag_al_terminar="b553889a881d2018993c208f4a8018e377109e5c6129cb10ddad72e23eab4863"
+disco_libre_kb_fin=81645256
+limpieza_ok=si
+FIN_DEL_GUION

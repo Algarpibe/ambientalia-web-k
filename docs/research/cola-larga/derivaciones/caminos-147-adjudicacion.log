@@ -1,0 +1,61 @@
+═══ ESCALÓN 2 · 147.ª — LOS CUATRO CAMINOS DE ENTREGA ═══
+
+── CONTROL del instrumento (antes de leer ningún resultado) ──
+  gzip -t sobre el ÍNTEGRO   → exit 0  (tiene que ser 0)
+  gzip -t sobre el TRUNCADO  → exit 1  (tiene que ser ≠0)
+  ¿discrimina? SÍ — la corrida adjudica
+  guión hasta el final: sí · limpieza: sí · etag estable durante la corrida: sí
+
+── LOS CUATRO CAMINOS ──
+   #  camino                      transferido      tiempo   exits        ficheros   ¿completa?
+   1  TUBERÍA  curl | tar -xz       1320.3 MiB    60.05s   {"curl":0,"tar":0}  7700/7700   ✓ SÍ
+   2  SEPARADO  curl -o  +  tar -xzf    1320.3 MiB    81.99s   {"curl":0,"tar":0,"gzip_t":0}  7700/7700   ✓ SÍ
+   3  git clone COMPLETO             878.6 MiB       27s   {"git":0}     7700/7700   ✓ SÍ
+   4  git clone --depth 1           882.35 MiB    29.65s   {"git":0}     7700/7700   ✓ SÍ
+
+  bytes en disco tras extraer: IDÉNTICOS en los 4 caminos (1914654037)
+
+── ADJUDICACIÓN contra el pre-registro ──
+
+  P1 · REFUTADA
+     predije: la TUBERÍA falla (control positivo), y falla tarde
+     medido:  exit curl 0 · exit tar 0 · 60.05s · 7700/7700 ficheros
+     ⇒ el control positivo NO funciona: el fallo no se reproduce desde el host por SSH
+
+  P1-mecanismo · el SOLAPAMIENTO se confirma, la DIRECCIÓN no
+     predije: el acoplamiento hace que la tubería tarde ≈ max(descarga, extracción) — la extracción sería el cuello de botella y dejaría la conexión ociosa
+     medido:  tubería 60.05s · descarga 54.94s · extracción 27.05s · max=54.94s
+     ⇒ la extracción es 2.03× MÁS RÁPIDA que la descarga: el pipe nunca se llena, curl nunca se bloquea, la conexión nunca queda ociosa. El mecanismo predicho EXIGE lo contrario
+
+  P2 · CONFIRMADA
+     predije: el SEPARADO completa, gzip -t en verde y el cardinal exacto
+     medido:  exits {"curl":0,"tar":0,"gzip_t":0} · gzip -t 0 · 7700/7700 ficheros · sha256 de 2 descargas IDÉNTICO
+     ⇒ el artefacto es reproducible al byte entre peticiones: el etag identifica contenido
+
+  P3a · REFUTADA
+     predije: git clone completo transfiere 890–950 MiB
+     medido:  878.6 MiB en 27s (16299 objetos)
+     ⇒ 11.40 MiB por DEBAJO del rango predicho (1.3 %)
+
+  P3b · CONFIRMADA en rango
+     predije: git clone --depth 1 transfiere 850–950 MiB y NO es sustancialmente menor
+     medido:  882.35 MiB en 29.65s (7449 objetos)
+     ⇒ y el SIGNO va al revés de lo que sugiere el nombre: el shallow es 3.75 MiB MÁS GRANDE y 2.65s MÁS LENTO que el completo, con 8850 objetos MENOS
+
+  P3c · CONFIRMADA
+     predije: el clone transfiere ~32 % menos que el tarball
+     medido:  clone 878.6 MiB contra tarball 1320.3 MiB → 33.5 % menos
+     ⇒ git es el canal más barato en bytes Y el más rápido de los cuatro
+
+  P4 · PREMISA NO CUMPLIDA — el condicional no aplica
+     predije: si P2 completa y P1 falla, de la CAUSA no queda nada que public/ explique
+     medido:  P1 COMPLETA · P2 COMPLETA
+     ⇒ los CUATRO completan, así que la conclusión es MÁS fuerte que la del condicional: el tamaño no impide la entrega por NINGÚN camino medido
+
+── BALANCE ──
+  3 confirmadas · 2 refutadas · 2 ni una ni otra · de 7  (cuadra)
+     · P1-mecanismo: el SOLAPAMIENTO se confirma, la DIRECCIÓN no
+     · P4: PREMISA NO CUMPLIDA — el condicional no aplica
+
+✓ congelado en docs/research/cola-larga/derivaciones/caminos-147.json
+✓ evaluadas 4/4 caminos · 7 predicciones adjudicadas
