@@ -100,8 +100,18 @@ sabe ver lo expuesto y sabe ver lo limpio.
 
 **Y el precio de `145-publicfix` está medido, no estimado:** es `144-fix` más una
 capa `RUN mv /app/public /app/apps/web/public`, y un `mv` que cruza capas **copia
-los 699 MB enteros** en vez de moverlos. De ahí **3.4 GB contra 2.02**: el
-arreglo cuesta **+1.38 GB de transferencia** por mover un directorio de sitio.
+los 699 MB enteros** en vez de moverlos. `docker images` **en el host** dice
+**3.4 GB contra 2.02**.
+
+> ⚠⚠ **CORREGIDO EN EL ESCALÓN 2 DE ESTA MISMA TANDA, Y LA CIFRA VIEJA NO SE
+> CONSERVA COMO LECTURA ALTERNATIVA:** aquí llegó a estar escrito *«el arreglo
+> cuesta **+1.38 GB de transferencia**»*, y **es falso** — ese número sale de
+> `docker images` **en el host**, que es la métrica que **no viaja**. Medido por
+> `docker inspect .Size`, el sobrecoste es **+650 MiB**; y lo que de verdad se
+> transfirió fueron **1 430.09 MiB** en total. El mismo `sha256` da **tres
+> números** según dónde y con qué orden se mida (ESCALÓN 2, §*el mismo
+> artefacto, tres números*). **Se corrige aquí, en el sitio donde decidía**, y
+> no con una nota al pie más abajo.
 
 ### ⚠⚠⚠ EL ESCALÓN 3, TAL COMO ESTÁ ESCRITO, TUMBA LA WEB CORPORATIVA
 
@@ -264,6 +274,169 @@ páginas ya venían construidas, que es justo lo que P2 afirmaba.
 > script comprueba **primero** si alguno de los dos nombres ya existe y **para**
 > si es así, en vez de pisarlo. Salió `libre` en los dos. Sin esa guarda, un
 > segundo pase habría reemplazado un servicio en vez de fallar en voz alta.
+
+### ESCALÓN 3 · EL REPARTO — **LO QUE FALTA NO ES EL DOMINIO: ES QUE EL CICLO DE PUBLICACIÓN NO CRUZA MÁQUINAS**
+
+Derivación: `reparto-148.{sh,log}` — sólo lectura, no toca nada.
+
+#### (1) El dominio · **el backend YA está bien; lo roto es una errata de una barra**
+
+De los **58** routers de Traefik, cuatro mencionan `web.ambientalia.cloud`:
+
+| router | host declarado | ¿válido? | backend |
+|---|---|---|---|
+| `http/https-…ambientalia-web-0` | `web.ambientalia.cloud` | **SÍ** | `http://ambientalia_project_ambientalia-web:80/` ← **producción** |
+| `http/https-…web-0` | `web.ambientalia.cloud/` | **NO** — barra dentro | `http://ambientalia_project_web:3000/` ← **el clon, y apunta BIEN** |
+
+> ⚠⚠ **El backend del clon está correcto: nombre del servicio y puerto exactos,
+> resolviendo al servicio que esta tanda acaba de crear.** O sea que **corregir
+> la barra pondría el clon en producción EN EL ACTO** — y por eso no se corrige:
+> pondría **dos routers compitiendo por el mismo Host con la misma prioridad
+> (`0`)**, y el que perdiera sería la web corporativa de Ambientalia.
+
+**La errata es hoy la única guarda que hay.** Y eso merece enunciado propio,
+porque invita justo a lo contrario de lo que hay que hacer:
+
+> **Una errata puede ser lo único que impide un daño.** Un host mal escrito, una
+> variable sin exportar, un `if` invertido: corregir «lo que está claramente
+> mal» sin derivar **qué está bloqueando hoy** es aplicar un arreglo correcto y
+> producir el daño que la errata contenía.
+
+**Lo que queda es una DECISIÓN, no un arreglo**, y es del propietario:
+
+| opción | coste | qué pasa con la web corporativa |
+|---|---|---|
+| **A** · el clon toma otro dominio (`kunak.`, `clon.`…) | crear el dominio en el panel; Let's Encrypt emite solo | **intacta** |
+| **B** · la web corporativa se muda y el clon toma `web.` | mover un dominio de producción | **cambia de URL** |
+| **C** · se deja como está | **cero** | intacta; el clon sigue sólo por red interna |
+
+**HTTPS no es trabajo pendiente en ninguna de las tres**: el certificado de
+`web.ambientalia.cloud` **ya está emitido** (`traefik/dump/web.ambientalia.cloud/`),
+y para un dominio nuevo Easypanel lo pide automáticamente. Lo que decide el
+HTTPS es qué dominio se elija, no una tarea aparte.
+
+#### (2) ⚠⚠ B4 SE QUEDA CORTA — el problema no es el cron, es que **el publicador y el sitio ya no están en la misma máquina**
+
+La 145.ª redimensionó B4 a *«no es código, es una pieza de despliegue: un cron
+que haga un `POST` con el `Bearer`»*. **Eso era cierto con el sitio corriendo
+junto al publicador. Ya no lo es**, y lo dice el fuente:
+
+| pieza | qué hace | dónde llega |
+|---|---|---|
+| promoción | `fs.renameSync(DIST_NUEVO, DIST)` (`publicador.mjs:618,712`) | **el sistema de ficheros LOCAL** |
+| reinicio | `spawnSync("docker", ["restart", CONTENEDOR])` (`:398`) | **el demonio Docker LOCAL** |
+
+Y el contenedor del VPS monta **sólo `/app/media`**: su `.next` **viaja dentro de
+la imagen**. Así que hay **dos** roturas, no una:
+
+1. **no hay volumen que promocionar** — un `rename` en el host no toca el VPS;
+2. **`docker restart` no alcanza otro demonio** — y aunque alcanzara, reiniciar
+   un contenedor cuyo `.next` está **dentro de la imagen** sirve exactamente el
+   mismo contenido. `BUILD_ID` medido hoy: `DNRFzRjLlLyjj9iRDbc3D`.
+
+> **Es §regla 53 —*promocionar un artefacto no es servirlo*— con una vuelta más:
+> aquí el artefacto se promociona en UNA MÁQUINA y el servidor corre en OTRA.**
+> El invariante de B1 —*monótono por `buildId` SERVIDO*— sigue siendo el
+> correcto; lo que ha dejado de existir es el mecanismo que lo hacía avanzar.
+
+**Consecuencia honesta de esta tanda:** lo entregado hoy **sirve y está
+verificado, y es de UN SOLO TIRO**. Publicar contenido nuevo exige repetir la
+operación a mano: reconstruir la imagen y volver a entregarla (**255 s medidos**,
+más el `docker build`). El ciclo automático **no está**, y no por falta de un
+cron.
+
+**Las tres formas de cerrarlo, con lo que cada una cuesta:**
+
+| | qué es | coste |
+|---|---|---|
+| **B′ · publicador remoto** | el publicador del host entrega la imagen y hace `docker service update --image` por SSH | **extensión natural de lo medido hoy** — los 255 s ya están, falta cablearlos y añadir el destino remoto a `PUBLICAR_CONTENEDOR` |
+| **B″ · volumen de `.next` en el VPS** | replicar el modelo B tal cual: montar `.next` como volumen y escribirlo por la red | reintroduce la promoción por `rename` **a través de la red**, que es justo lo que §regla 66 castiga |
+| **A · construir en el VPS** | lo que CMS-10 descartó | **2 núcleos compartidos con 11 aplicaciones de negocio** |
+
+**B′ es la única que conserva lo que ya funciona**, y su unidad de aceptación
+sigue siendo la de B1: `buildId` **servido** monótono, ahora leído a través de la
+red en vez de en `localhost`.
+
+#### (3) La pregunta de la 147.ª · **RESPONDIDA A MEDIAS, y pasa a FICHA SIN PERSEGUIR**
+
+La 147.ª dejó abierto *«por qué falla la tubería de Easypanel»* tras medir que
+**los cuatro caminos completan**. Esta tanda encontró **el log del fallo real**,
+que ella no tenía, y con él la pregunta se parte en dos:
+
+| | estado |
+|---|---|
+| **¿en qué fase murió?** | ✅ **RESPONDIDA**: en la **descarga**, no en el build. `curl: (23)` + `gzip: unexpected end of file`, 35 s |
+| **¿por qué llegó truncado ESE día?** | ⚠ **SIN RESPUESTA, y se ficha sin perseguir** |
+
+**Y se ficha por una razón derivada, no por cansancio:** el clon corre hoy desde
+`ai-website-cloner:145-publicfix`, **que no pasó por esa tubería** — llegó por
+`save`/`scp`/`load` con `sha256` verificado. Con CMS-10 = B, **la tubería de
+Easypanel no está en ningún camino crítico del clon**.
+
+> ⚠ **Lo que sí queda escrito para quien la reabra, porque es la mitad cara de
+> reencontrar:** el mecanismo ya tiene nombre (§regla 66 — el tarball de
+> `codeload` no lleva `Content-Length`, así que **nadie puede distinguir
+> terminado de cortado**) y la 147.ª midió que **la misma tubería completa en
+> 60 s con 1 320.30 MiB**. O sea que lo que falta no es el mecanismo: es **por
+> qué se cortó esa vez**, y eso es episódico. Reabrirla exige muestrear cargas
+> (§la regla del cero aplicada al muestreo), no razonar sobre el log.
+
+#### (4) ⚠ Y un riesgo que queda VIVO y hay que decir en voz alta
+
+**Easypanel sigue teniendo `web` declarado con `source = GitHub`.** El servicio
+swarm que esta tanda creó se llama igual, así que:
+
+> **Si el propietario pulsa «Deploy» en ese servicio desde el panel, Easypanel
+> intentará reconstruir desde GitHub y PISARÁ el servicio que hoy sirve el
+> clon.**
+
+No se ha tocado la definición —es la evidencia del fallo (§regla 5)— y cambiar su
+`source` a «imagen» exige credenciales del panel, que esta sesión no tiene (401).
+**Queda como aviso, no como arreglo.**
+
+### CIERRE · 148.ª
+
+| | estado |
+|---|---|
+| censo del VPS con su denominador | ✅ y **corrige 4 cifras del encargo** |
+| el fallo del propietario, atribuido | ✅ **de la descarga, no del build** — un solo intento, 35 s |
+| corte limpio del punto 5 | ✅ **no se activa**: 13 servicios corren hoy con imagen local |
+| imagen entregada y verificada | ✅ **1 430.09 MiB · `sha256` idéntico · `gzip -t` OK · 255 s** |
+| **el clon corriendo en el VPS** | ✅ **`HTTP 200`, 20/20 rutas, 107/107 assets por BYTES** |
+| P2 · el build no toca el VPS | ✅ **confirmada con las dos polaridades** |
+| producción intacta | ✅ 25 → 27 servicios, **ninguno tocado**; `web.ambientalia.cloud` sigue sirviendo la corporativa |
+| Postgres | ✅ **propio**, con límite de CPU y memoria |
+| temporales borrados | ✅ los dos lados; **la imagen se queda**, que es lo que importa |
+| los tres typechecks | ✅ `web` · `@kunak/cms-config` · `cms`, **los tres EXIT 0** |
+
+#### Lo que queda SIN EJERCITAR, con su razón — no se hereda como verde
+
+| | por qué |
+|---|---|
+| **el ciclo de publicación completo** | el publicador y el sitio están en **máquinas distintas**: promoción y reinicio son locales. **B′ lo cierra**, y no es esta tanda |
+| **el dominio** | es una **decisión del propietario**: `web.ambientalia.cloud` lo sirve producción |
+| **el admin de Payload en el VPS** | esta tanda entregó **el SITIO**. El admin corre desde otra ruta de la misma imagen y **no se ha pedido ni probado** |
+| **407 de las 427 rutas pedibles** | la muestra fue de **20**, declarada como muestra (§regla 14) |
+| **por qué se truncó ESA descarga** | episódico; exige muestreo, no razonamiento |
+
+#### Barrido §regla 12 — **4 enunciados son regla y no evento**
+
+Barridas las secciones de esta tanda buscando enunciados sin fecha ni nombre
+propio que sigan diciendo qué hacer la próxima vez. **Cuatro**, y van a
+`CLAUDE.md`:
+
+1. **§regla 63 gana una cara**: no son dos unidades, son **tres**, y una depende
+   del **demonio que la reporta** — `docker images` dio 3.4 GB en un lado y 1.84
+   en el otro **para el mismo `sha256`**, y en el host se contradice con `docker
+   inspect`;
+2. **68** · una predicción cuyo término desconocido **se despeja de la propia
+   medición** no predice, describe: **0 separadoras por construcción**. Con su
+   mitad del margen — un intervalo ensanchado «por prudencia» hacia un lado
+   **desplaza el centro y falla por el otro**;
+3. **69** · antes de atribuir un fallo a una fase, **deriva en qué fase murió**.
+   Lo dice el log, no la intención de quien lanzó;
+4. **70** · una errata puede ser **lo único que impide un daño**: antes de
+   corregir «lo que está claramente mal», deriva **qué está bloqueando hoy**.
 
 ## 🔄 §147.ª · **CÓMO LLEGA EL CÓDIGO AL VPS — LOS CUATRO CAMINOS COMPLETAN, ASÍ QUE CMS-11 DEJA DE SER DE TAMAÑO** — 2026-09-05
 

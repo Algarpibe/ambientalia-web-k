@@ -1,0 +1,54 @@
+############ REPARTO · 2026-09-05T13:56:51Z ############
+
+======== 1 · EL DOMINIO: quién reclama qué ========
+routers totales: 58
+
+los que mencionan web.ambientalia.cloud:
+  http-ambientalia_project_ambientalia-web-0
+     host='web.ambientalia.cloud'  ¿host VÁLIDO? SÍ
+     -> servicio: ambientalia_project_ambientalia-web-0   entryPoints=['http']
+  http-ambientalia_project_web-0
+     host='web.ambientalia.cloud/'  ¿host VÁLIDO? NO — lleva una barra dentro
+     -> servicio: ambientalia_project_web-0   entryPoints=['http']
+  https-ambientalia_project_ambientalia-web-0
+     host='web.ambientalia.cloud'  ¿host VÁLIDO? SÍ
+     -> servicio: ambientalia_project_ambientalia-web-0   entryPoints=['https']
+  https-ambientalia_project_web-0
+     host='web.ambientalia.cloud/'  ¿host VÁLIDO? NO — lleva una barra dentro
+     -> servicio: ambientalia_project_web-0   entryPoints=['https']
+
+¿existe el servicio de Traefik al que apunta cada uno?
+  ambientalia_project_ambientalia-web-0: DEFINIDO -> [{'url': 'http://ambientalia_project_ambientalia-web:80/'}]
+  ambientalia_project_web-0: DEFINIDO -> [{'url': 'http://ambientalia_project_web:3000/'}]
+
+======== 2 · ¿EL PANEL VE EL SERVICIO NUEVO? ========
+swarm lo tiene:       SÍ
+Easypanel lo declara: SÍ (directorio del intento fallido)
+-- y el source que Easypanel tiene guardado para él sigue siendo GitHub --
+   (si el propietario pulsa Deploy, Easypanel intentará reconstruir y PISARÁ este servicio)
+
+-- réplicas del servicio nuevo --
+ambientalia_project_web 1/1 ai-website-cloner:145-publicfix
+ambientalia_project_kunak-db 1/1 postgres:17
+
+======== 3 · EL CICLO DE PUBLICACIÓN: por dónde se rompe ========
+-- (a) cómo promociona el publicador, derivado del fuente --
+   618:    fs.renameSync(DIST_NUEVO, DIST);
+   712:      fs.renameSync(DIST_NUEVO, DIST);
+   398:  const r = spawnSync("docker", ["restart", CONTENEDOR], { encoding: "utf8" });
+   -> promoción = rename en el SISTEMA DE FICHEROS LOCAL
+   -> reinicio  = docker restart contra el DEMONIO LOCAL
+
+-- (b) ¿dónde vive el .next del contenedor del VPS? --
+   montajes del contenedor: /app/media 
+   .next dentro de la imagen: SI
+   -> el .next viaja DENTRO de la imagen: no hay volumen que promocionar
+
+-- (c) el buildId servido HOY (la unidad de B1) --
+   BUILD_ID=DNRFzRjLlLyjj9iRDbc3D
+======== 4 · LA PREGUNTA DE LA 147.ª, REDIMENSIONADA ========
+-- ¿sigue la tubería de Easypanel en algún camino crítico? --
+   el clon corre desde imagen local: ai-website-cloner:145-publicfix
+   ¿pasó por curl|tar de Easypanel? NO — llegó por docker save/scp/load, verificado por sha256
+
+############ FIN REPARTO ############

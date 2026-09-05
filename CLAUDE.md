@@ -6882,6 +6882,164 @@ shallow fuerza un pack nuevo que no puede reutilizarlas.
 > anterior ya predecía que no hay nada que podar, las dos **concuerdan**, y el
 > resultado raro es el esperado.
 
+> ⚠⚠ **Y LA CARA QUE LE FALTABA A §regla 63, MEDIDA EL 2026-09-05: NO SON DOS
+> UNIDADES, SON TRES — Y UNA DE ELLAS DEPENDE DEL DEMONIO QUE LA REPORTA.**
+>
+> §regla 63 reparte entre **lo que se almacena** y **lo que viaja**, y con eso
+> basta mientras haya un solo observador. En cuanto hay dos máquinas, aparece la
+> tercera:
+>
+> > **El mismo artefacto, probado idéntico por su `sha256`, puede tener un
+> > tamaño distinto en cada demonio — y en uno de ellos, dos órdenes distintas
+> > pueden contradecirse entre sí.** «El tamaño de la imagen» no es un número:
+> > es una pregunta incompleta hasta que se dice **medido dónde y con qué
+> > orden**.
+>
+> **Medido:** una imagen entregada de un host a un VPS, con `sha256` idéntico en
+> los dos lados y 12 capas en los dos.
+>
+> | medida | host | VPS |
+> |---|---|---|
+> | `docker images` | **3.4 GB** | **1.84 GB** |
+> | `docker inspect .Size` | **1 500 426 968** | **1 840 470 314** |
+> | **lo transferido** | **1 430.09 MiB** | idéntico |
+>
+> En el VPS las dos órdenes concuerdan; **en el host se contradicen entre sí** —
+> 3.4 GB contra 1.4 GiB para lo mismo.
+>
+> **Y lo que costó no fue un número feo: fue un ARGUMENTO.** Una tanda publicó
+> «esta imagen cuesta **+1.38 GB** sobre la otra» tomando `docker images` **en
+> el host**, que es la métrica que no viaja. Por `.Size` el sobrecoste real es
+> **+650 MiB**. La cifra decidía qué artefacto llevar, así que estaba en la
+> ruta de una decisión.
+>
+> **Operativamente, y cuesta una palabra: todo tamaño de artefacto se escribe
+> con SU OBSERVADOR** —«3.4 GB según `docker images` en el host»—, y **el que
+> sostiene una decisión de transferencia es el que se transfiere**, medido sobre
+> el fichero que sale. Es §*un denominador sin unidad no se puede auditar* con
+> la unidad cambiada por **quién mide**.
+
+---
+
+**68 · UNA PREDICCIÓN CUYO TÉRMINO DESCONOCIDO SE DESPEJA DE LA PROPIA MEDICIÓN
+NO PREDICE: DESCRIBE — Y TIENE 0 SEPARADORAS POR CONSTRUCCIÓN.** (2026-09-05)
+
+Este documento ya exige contar **instancias separadoras** antes de creerse que un
+modelo se ha elegido, y §regla 39 protege un umbral pre-registrado de un
+instrumento sin adjudicar. Falta el caso en que **la predicción misma** es la que
+no puede fallar:
+
+> **Si una predicción tiene la forma `y = f(x)` y `x` se va a DESPEJAR de la
+> misma observación que da `y`, la predicción y la medición comparten término:
+> se cumple siempre.** No es que sea holgada — es que **no existe ninguna
+> observación que la refute**, y eso se sabe **antes de medir**, con álgebra.
+
+**Medido:** un pre-registro predijo el tiempo de una transferencia como
+`t ≈ bytes / ancho_de_subida`, declarando —bien— que el ancho de subida no
+estaba medido en ningún sitio del repo. Al medir, el ancho se calculó como
+`bytes / t`. La fórmula «acertó» y **no podía no acertar**.
+
+**Las dos mitades operativas:**
+
+1. **antes de cerrar un pre-registro, mira cada término de cada predicción y
+   pregunta de dónde va a salir su valor.** Si sale de la corrida que la
+   evalúa, la predicción **no es una predicción**: se declara como **lo que de
+   verdad es —una MEDICIÓN pendiente— y se publica su número**, que es lo
+   reutilizable (aquí: **141.1 Mbps de subida**, que ninguna tanda tenía);
+2. **y una predicción de este tipo se puede rescatar fijando el término por otra
+   vía** —una medida anterior, un control independiente—, pero entonces **hay
+   que decir de dónde sale**, o vuelve a ser circular sin que se note.
+
+> ⚠ **Y SU MITAD DEL MARGEN, del mismo día, porque estropea predicciones cuya
+> derivación era BUENA: UN INTERVALO ENSANCHADO «POR PRUDENCIA» HACIA UN LADO
+> DESPLAZA EL CENTRO Y FALLA POR EL OTRO.**
+>
+> **Medido:** una derivación por componentes predijo **~1.44 GiB** y lo medido
+> fueron **1.397** — un error del **3 %**, o sea una derivación excelente. La
+> predicción publicada, en cambio, fue el intervalo **[1.4, 2.2] GiB con centro
+> 1.7**, ensanchado hacia arriba «por si acaso». **Falló**, por **3.2 MiB**
+> —un 0.22 %— y **por el lado que el ensanchado no cubría**.
+>
+> > **Un margen asimétrico no añade seguridad: mueve la predicción.** El
+> > intervalo se pone **alrededor de la derivación**, no hacia el lado que
+> > parece seguro — y si la derivación merece un margen, se dice **±** y se
+> > justifica, en vez de estirar un extremo.
+>
+> **Y la señal de que ya está pasando es que el «centro» declarado no sea el
+> número que la derivación produjo.** Aquí la derivación daba 1.44 y el centro
+> publicado era 1.7: **ese hueco es el margen colándose en la predicción**.
+
+---
+
+**69 · ANTES DE ATRIBUIR UN FALLO A UNA FASE, DERIVA EN QUÉ FASE MURIÓ — LO DICE
+EL LOG, NO LA INTENCIÓN DE QUIEN LO LANZÓ.** (2026-09-05)
+
+§El principio manda verificar contra la salida servida. Ésta es la misma regla
+puesta sobre **la atribución de un fallo a una etapa**, y se cuela porque la
+atribución equivocada suele ser **la etapa que uno estaba mirando**:
+
+> **Un proceso de varias fases —descargar, construir, empaquetar, desplegar—
+> falla en UNA, y el nombre de la operación es el de TODAS.** Así que «el
+> despliegue falló» se lee como «falló desplegando», y quien lo lanzó atribuye
+> el fallo a la fase que le preocupaba, no a la que murió. Las dos frases se
+> escriben igual y **sólo una está en el log**.
+
+**Medido:** un despliegue se dio por muerto **construyendo**, y de ahí un
+razonamiento entero sobre contención de CPU, núcleos y páginas. El log decía
+otra cosa: murió en la **descarga**, a los **35 segundos**, con `curl: (23)` y
+`gzip: unexpected end of file`. **El build nunca llegó a empezar**, así que no
+existía ni una medición de lo que se estaba discutiendo.
+
+**Y lo que lo hace caro no es el error, es que la conclusión SOBREVIVE:** la
+decisión que salió de ahí (*no construir en esa máquina*) seguía siendo correcta
+por otras razones, así que **nada chirriaba** — y la atribución falsa viajó a la
+tanda siguiente como si fuera un dato medido.
+
+> **Operativamente, y cuesta un `cat`: la fase se deriva del LOG y de la marca
+> de tiempo, no del nombre de la operación.** Un fallo de 35 s en un proceso
+> cuyo build tarda minutos **ya dice** que el build no corrió. Y la atribución
+> se escribe con las dos mitades separadas: **«la decisión sigue en pie»** y
+> **«su motivo medido es otro»** — porque sólo la segunda es la que la tanda
+> siguiente puede verificar.
+
+---
+
+**70 · UNA ERRATA PUEDE SER LO ÚNICO QUE IMPIDE UN DAÑO: ANTES DE CORREGIR «LO
+QUE ESTÁ CLARAMENTE MAL», DERIVA QUÉ ESTÁ BLOQUEANDO HOY.** (2026-09-05)
+
+Todo lo escrito arriba persigue defectos que **hay que arreglar**. Ésta persigue
+el caso en que el arreglo es correcto, evidente, de una sola línea — y
+**destructivo**:
+
+> **Una configuración rota no siempre está inerte: puede estar CONTENIENDO algo.**
+> Un host mal escrito, una variable sin exportar, una ruta con un carácter de
+> más: mientras no case, no hace nada — y **eso puede ser justo lo que impide
+> que un recurso compartido cambie de dueño**. Corregirla no «arregla» nada: la
+> deja pasar.
+
+**Medido:** un router de proxy inverso declaraba `` Host(`ejemplo.dominio/`) `` —
+con una **barra dentro del host**, que no es un hostname válido, así que la regla
+**nunca casa**. Su backend, en cambio, estaba **perfecto**: servicio y puerto
+exactos. Y otro router, bien escrito, servía **ese mismo host** con **la misma
+prioridad (`0`)** apuntando a **una aplicación en producción**. Corregir la
+errata —el arreglo obvio, una barra— habría puesto dos routers a competir por el
+mismo Host, con la web corporativa como posible perdedora.
+
+**Las dos mitades operativas:**
+
+1. **antes de corregir una errata, deriva qué pasaría si NO estuviera** — y en
+   un recurso con dueño (un host, un puerto, un nombre de servicio, una clave
+   única) eso significa **buscar quién más lo reclama**. Si hay otro, la errata
+   estaba haciendo de guarda;
+2. **y entonces lo que queda no es un arreglo, es una DECISIÓN del propietario**
+   —quién se queda el recurso—, que se presenta con sus opciones y su coste, no
+   se resuelve por el camino de «esto está mal escrito».
+
+> **Y la señal para sospecharlo es gratis: una configuración rota cuyo RESTO
+> está bien.** Un backend correcto detrás de una regla que no casa nunca no es
+> un descuido a medias — es algo que se configuró bien y **se quedó a un
+> carácter de activarse**.
+
 ---
 ## Comandos
 

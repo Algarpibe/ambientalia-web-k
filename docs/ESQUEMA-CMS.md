@@ -7993,10 +7993,86 @@ que devolviera 0 siempre pasaría igual.
 
 ---
 
-## CMS-11 · QUÉ SE HACE CON LOS 661 MiB DE `apps/web/public` — ⏳ **ABIERTA, PERO YA NO ES UNA DECISIÓN DE TAMAÑO** (2026-09-04, 146.ª · **reenunciada 2026-09-05, 147.ª**)
+## CMS-10-bis · **EL MODELO B NO CRUZA MÁQUINAS — Y CON EL SITIO YA EN EL VPS, ESO NO ES UNA HIPÓTESIS** (2026-09-05, 148.ª)
+
+**`CMS-10 = B` sigue decidida y sigue siendo correcta.** Lo que la 148.ª mide es
+que **su implementación supone que el publicador y el servidor comparten
+máquina**, y desde hoy no la comparten: el clon corre en el VPS
+(`ambientalia_project_web`, `ai-website-cloner:145-publicfix`, `BUILD_ID
+DNRFzRjLlLyjj9iRDbc3D`) y el publicador vive en el host del propietario.
+
+Derivado del fuente, no supuesto (`reparto-148.log` §3):
+
+| pieza de B | qué hace | hasta dónde llega |
+|---|---|---|
+| promoción | `fs.renameSync(DIST_NUEVO, DIST)` — `publicador.mjs:618,712` | **el sistema de ficheros LOCAL** |
+| reinicio | `spawnSync("docker", ["restart", CONTENEDOR])` — `:398` | **el demonio Docker LOCAL** |
+
+Y el contenedor del VPS monta **sólo `/app/media`**: su `.next` **viaja dentro de
+la imagen**. Así que hay **dos** roturas y no una: **no hay volumen que
+promocionar**, y **`docker restart` no alcanza otro demonio** — y aunque lo
+alcanzara, reiniciar un contenedor cuyo `.next` está dentro de la imagen sirve
+exactamente el mismo contenido.
+
+> **Es §regla 53 —*promocionar un artefacto no es servirlo*— con una vuelta más:
+> aquí el artefacto se promociona en UNA MÁQUINA y el servidor corre en OTRA.**
+> El invariante de aceptación **no cambia** —B1: `buildId` **SERVIDO** monótono—;
+> lo que ha dejado de existir es el mecanismo que lo hacía avanzar.
+
+**Consecuencia declarada, no escondida:** lo entregado por la 148.ª **sirve y
+está verificado, y es de UN SOLO TIRO**. Publicar contenido nuevo exige hoy
+repetir la operación a mano —reconstruir la imagen y reentregarla, **255 s
+medidos** más el `docker build`—. **B4 se queda corta**: la 145.ª la redimensionó
+a *«un cron que haga un POST»*, y eso era cierto **con el sitio junto al
+publicador**.
+
+**Los tres candidatos para cerrarlo, con su operación de deshacer (§regla 23):**
+
+| | qué es | coste | deshacer |
+|---|---|---|---|
+| **B′ · publicador remoto** ← **recomendado** | el publicador entrega la imagen y hace `docker service update --image` por SSH | **extensión de lo ya medido**: los 255 s existen, falta cablearlos y que `PUBLICAR_CONTENEDOR` diga **en qué demonio** | volver al modo local: quitar el destino remoto |
+| **B″ · volumen de `.next` en el VPS** | montar `.next` como volumen y escribirlo por la red | reintroduce la promoción por `rename` **a través de la red**, que es justo lo que §regla 66 castiga | desmontar el volumen |
+| **A · construir en el VPS** | lo que `CMS-10` descartó | **2 núcleos compartidos con 11 aplicaciones de negocio** | — |
+
+**B′ es la única que conserva lo que ya funciona**, y se elige **con** el criterio
+de §regla 23 escrito: entre B′ y B″, deshacer B′ es *quitar un destino* y
+deshacer B″ es *desmontar un volumen con estado dentro* — el lado barato es el
+primero.
+
+> ⚠ **Y un riesgo VIVO que no es del modelo sino del panel:** Easypanel sigue
+> teniendo `web` declarado con `source = GitHub`. **Si alguien pulsa «Deploy» en
+> ese servicio, Easypanel reconstruirá desde GitHub y pisará el servicio que hoy
+> sirve el clon.** Cambiar su `source` a «imagen» exige credenciales del panel
+> (la API responde **401**), así que queda como **aviso**, no como arreglo.
+
+---
+
+## CMS-11 · QUÉ SE HACE CON LOS 661 MiB DE `apps/web/public` — ⏳ **ABIERTA, Y LA 148.ª LE QUITA LO QUE LE QUEDABA DE URGENCIA** (2026-09-04, 146.ª · reenunciada 147.ª · **medida en destino 2026-09-05, 148.ª**)
 
 **Qué se decide:** si `apps/web/public` se deja como está, se poda, se mueve a
 un volumen o se saca del repositorio.
+
+> ⚠⚠ **LA 148.ª ENTREGÓ LA IMAGEN ENTERA Y EL SITIO CORRE. La pregunta pierde su
+> último argumento de urgencia.** La 147.ª ya había quitado el de *«¿cabe?»*
+> midiendo los cuatro caminos; la 148.ª quita el de *«¿y con la imagen?»*:
+>
+> | | medido |
+> |---|---|
+> | imagen empaquetada | **1 430.09 MiB** comprimidos |
+> | entrega punta a punta | **255 s** (96 + 85 + 43) |
+> | `sha256` en los dos lados | **idéntico** |
+> | disco libre en el VPS **después** | **76 GB de 96** |
+>
+> Y **`public/` sigue siendo el 80 % de esos MiB** —es webp ya comprimido, ratio
+> **1.02×**—, así que podarlo **seguiría siendo la palanca**: lo que cambia es
+> que ahora es una **optimización cronometrada** (cuánto baja de 255 s) y no un
+> bloqueo. El reparto de la 146.ª se conserva entero como expediente.
+>
+> ⚠ **Y una cifra de esta familia queda CORREGIDA por la 148.ª:** el sobrecoste
+> de `145-publicfix` sobre `144-fix` se publicó como **+1.38 GB** leyendo
+> `docker images` **en el host**, que es la métrica que no viaja. Por
+> `docker inspect .Size` son **+650 MiB**. §regla 63 gana ahí su tercera cara:
+> el mismo `sha256` da tres números y uno depende **del demonio que lo reporta**.
 
 > ⚠⚠ **LA 147.ª MIDIÓ LA ENTREGA EN EL VPS Y LA PREGUNTA CAMBIÓ DE ENUNCIADO.**
 > Esta ficha nació como *«qué se recorta para que el despliegue quepa»*. Los
