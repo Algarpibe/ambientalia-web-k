@@ -1,5 +1,128 @@
 # Pendientes de QA — clon kunakair.com/es
 
+## 🔄 §147.ª · **CÓMO LLEGA EL CÓDIGO AL VPS — LOS CUATRO CAMINOS COMPLETAN, ASÍ QUE CMS-11 DEJA DE SER DE TAMAÑO** — 2026-09-05
+
+**El control positivo no reprodujo el fallo, y eso es el hallazgo.** El encargo
+marcó P1 —la tubería `curl | tar -xz`, la forma que falló en Easypanel— como
+control positivo de toda la tanda, con la instrucción de decirlo si no fallaba.
+**No falló.** Ni ella ni ninguno de los otros tres.
+
+Derivaciones: `paso0-147.{mjs,json,log}` · `pre-registro-entrega-147.md`
+(commiteado **antes** de medir, `1d0ced0`) · `caminos-147.{sh,log}` medido en el
+VPS y `caminos-147.mjs` que adjudica aparte.
+
+### LOS CUATRO CAMINOS
+
+| # | camino | transferido | tiempo | exits | ficheros | ¿completa? |
+|---|---|---|---|---|---|---|
+| 1 | TUBERÍA `curl \| tar -xz` | 1 320.30 MiB | **60.05 s** | curl 0 · tar 0 | 7 700/7 700 | **SÍ** |
+| 2 | SEPARADO `curl -o` + `tar -xzf` | 1 320.30 MiB | 81.99 s | 0 · 0 · 0 | 7 700/7 700 | **SÍ** |
+| 3 | **`git clone`** | **878.60 MiB** | **27.00 s** | 0 | 7 700/7 700 | **SÍ** |
+| 4 | `git clone --depth 1` | 882.35 MiB | 29.65 s | 0 | 7 700/7 700 | **SÍ** |
+
+Los cuatro dejan **exactamente los mismos 1 914 654 037 bytes** en disco.
+«Completa» no es el exit sino el **cardinal** (§regla 61); el exit de la tubería
+se leyó con `${PIPESTATUS[@]}` porque en `A | B` el exit es el de B y el de
+`curl` es justo el que diría si la transferencia se cortó (§regla 11/62).
+
+**Control por las dos polaridades** (§regla 28d): `gzip -t` **exit 0** sobre el
+íntegro y **exit 1** sobre una copia truncada a 100 MB. Sin el lado negativo,
+el verde no distinguiría «está bien» de «no sé mirar».
+
+### BALANCE DE MIS PREDICCIONES: 3 CONFIRMADAS · 2 REFUTADAS · 2 NI UNA NI OTRA
+
+**P1 · REFUTADA.** Predije que la tubería fallaría. Completa en 60 s.
+
+**P1-mecanismo · el solapamiento se confirma, la DIRECCIÓN no.** Predije que la
+tubería tardaría ≈ max(descarga, extracción) — y acertó: 60.05 contra un max de
+54.94. Lo que falló es de qué lado está el cuello de botella: **la extracción es
+2.03× MÁS RÁPIDA que la descarga** (27.05 s contra 54.94), así que el pipe nunca
+se llena, `curl` nunca se bloquea y la conexión nunca queda ociosa. **Mi
+mecanismo exigía exactamente lo contrario.**
+
+> Y eso invierte la lectura de la tubería: **no es el camino frágil, es el más
+> rápido de los dos del tarball** —60.05 contra 81.99 s— precisamente porque
+> solapa descarga y extracción en vez de encadenarlas.
+
+**P2 · CONFIRMADA.** Y con la comprobación **sustituida y declarada antes de
+medir**: el encargo mandaba *«comprobar el tamaño contra el que el origen
+declara»*, y el PASO 0 midió que **el origen no declara ninguno** — ni
+`content-length` ni `transfer-encoding`. En su lugar, `gzip -t` (cuyo trailer
+lleva CRC32 e ISIZE), el sha256 de **dos** descargas —**idéntico**, luego el
+artefacto es reproducible al byte— y el cardinal.
+
+**P3a · REFUTADA por poco.** Predije 890–950 MiB; salieron **878.60**, un 1.3 %
+por debajo.
+
+**P3b · CONFIRMADA en rango, con el signo al revés de lo que sugiere el
+nombre.** `--depth 1` transfiere **3.75 MiB MÁS** y tarda **2.65 s MÁS** que el
+completo, con **8 850 objetos MENOS** (7 449 contra 16 299). Mecanismo: el clone
+completo se sirve del pack ya empaquetado; el shallow obliga al servidor a
+**generar uno a medida**, sin reutilizar las cadenas de delta. **Es lo que
+predecía el 1.00 de la 146.ª**: sin historial muerto, un shallow no tiene qué
+podar — y entonces no ahorra, cuesta. El testigo pedía sospechar del instrumento
+si bajaba de 500 MiB; no bajó, así que **las dos medidas concuerdan**.
+
+**P3c · CONFIRMADA.** El clone transfiere **33.5 % menos** que el tarball
+(predije ~32 %). **Git es el más barato en bytes y el más rápido**, por más del
+doble.
+
+**P4 · PREMISA NO CUMPLIDA.** El condicional era «si P2 completa **y P1
+falla**». La conclusión real es **más fuerte**: el tamaño no impide la entrega
+por **ninguno** de los cuatro caminos.
+
+### QUÉ QUEDA DE LA HIPÓTESIS `public/`
+
+| queda | no queda |
+|---|---|
+| la **MAGNITUD**: 649.57 MiB del tarball, el tiempo, el tamaño de la imagen | la **CAUSA**: el fallo de entrega |
+
+La 146.ª escribió *«encoger `public/` es un arreglo por MAGNITUD, no por
+causa»*. La 147.ª lo sube un escalón: **«arreglo por magnitud que además NO HACE
+FALTA para entregar»**. Los cinco candidatos de CMS-11 §4 pasan de **bloqueo** a
+**optimización**, con su número intacto.
+
+### LAS PREMISAS DEL ENCARGO: 3 DE 8 NO COINCIDÍAN, 2 NO TENÍAN UNIDAD, Y UNA MÁS ERA FALSA
+
+| | premisa | derivado |
+|---|---|---|
+| ✗ | disco usado 20G · uso 21% | **17.9G · 19%** (terreno vivo) |
+| ✗ | el proxy responde **301** | **308** — y no son el mismo byte |
+| · | CPU 5 % | 15 % — **sin denominador**: 5 % de 1 núcleo y de 2 no es lo mismo |
+| · | RAM ~3 GB | total 7 940 · **usada 3 211** · disponible 4 729 MB |
+| ✗ | «el VPS **hoy no sirve nada**» | **12 contenedores en producción**, uno con 19 h de uptime |
+
+⚠ **La última importa por dos motivos.** De operación: el encargo autorizaba
+trabajar en `/tmp` sobre un host que se creía ocioso, y **no lo está** — nada
+destructivo se hizo, y menos mal. Y de lectura: los cuatro caminos completaron
+**compitiendo con 12 servicios vivos, 2 núcleos y 3.2 GB ya en uso**, así que el
+resultado es **más fuerte**, no más débil.
+
+### LO QUE ESTA TANDA NO CONTESTA — Y ES AHORA LA INCÓGNITA PRINCIPAL
+
+**POR QUÉ FALLA EASYPANEL, SIN MEDIR.** Los cuatro caminos se corrieron **por
+SSH en el host**; el `gzip: unexpected end of file` ocurrió **dentro de la
+tubería de Easypanel**. Son dos entornos: el «no falla» del host **no refuta**
+el fallo de allí, lo deja **sin ejercitar** — que es lo que el pre-registro
+declaró por delante, no una excusa escrita después.
+
+Candidatas enumeradas para que la tanda que lo mida no empiece por la primera
+que se le ocurra: memoria del constructor (12 contenedores, 3.2 GB en uso de
+7.9), 2 núcleos compartidos, `Build Cache: 0 B`, timeouts propios de Easypanel,
+y el contexto de build que la 145.ª midió inflado por el anclaje del
+`.dockerignore` (§regla 58).
+
+⚠ **Y antes que todas ellas, la barata: ¿sigue vivo el fallo?** Está
+**reportado, no re-observado** — la 147.ª no lo vio ni una vez en cuatro
+caminos. Un defecto que ya no se reproduce y un defecto arreglado **se escriben
+igual** (§regla 28d), y averiguar cuál es cuesta una corrida.
+
+**El VPS quedó como se encontró:** `/tmp/entrega-147` borrado, guión borrado,
+disco a 244 KB del valor inicial (ruido del sistema), y **nada de Easypanel
+tocado** — la inspección de contenedores fue de solo lectura.
+
+---
+
 ## 🔄 §145.ª · **B3 — LA DECISIÓN DEL PROPIETARIO ESCRITA, Y B IMPLEMENTADA** — 2026-09-04
 
 **El propietario decidió el modelo de publicación: B — volumen + `docker

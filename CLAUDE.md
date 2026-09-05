@@ -4478,6 +4478,18 @@ lo que sigue sin medir: `PENDIENTES-QA.md` §META-CANARIOS-DE-CARGA.
 > >    con **275 470 chars**, o sea **1.84×** el aviso de 150 000. El truncado
 > >    sigue **REFUTADO**.
 > >
+> > ✅ **RE-DERIVADO 2026-09-05 (147.ª), y el margen vuelve a subir:** el
+> > fichero que la sesión cargó —`git show <HEAD-de-arranque>:CLAUDE.md`—
+> > mide **387 338 chars = 2.58× el aviso**, y **los dos marcadores llegaron**.
+> > Truncado **REFUTADO** a casi el triple.
+> >
+> > **Y el reparto sigue sano sin tocar nada, que es lo que la re-derivación
+> > venía a comprobar:** `KV-01` al **18.6 %** (primer quinto) y `KV-08` al
+> > **100.0 %**. La alarma de la 120.ª —que `KV-01` se había ido al 79.8 %—
+> > era de la búsqueda por prefijo, y aquí queda medida con su número: anclado
+> > a línea completa el prefijo da **1** ocurrencia, y buscándolo como prefijo
+> > da **11**. Un factor de **11×** entre el instrumento bueno y el malo.
+> >
 > > **La regla, que es lo reutilizable y vale para cualquier canario futuro:**
 > >
 > > > **Un marcador se localiza por su FORMA COMPLETA —`KV-nn · XXXXXX`—, nunca
@@ -6780,6 +6792,95 @@ informe que citara el riesgo genérico habría propuesto reescribir el historial
 candidatos, **derívale su multiplicador en el repo que tienes delante** y
 publícalo. Si sale 1, el riesgo existe y **no se ha cobrado**, y eso cambia qué
 candidato gana.
+
+---
+
+**66 · UN ORIGEN QUE NO DECLARA TAMAÑO SIRVE UN STREAM QUE NO PUEDE AVISAR DE
+SU PROPIO TRUNCAMIENTO — Y LA COMPROBACIÓN DE COMPLETITUD HAY QUE SACARLA DEL
+FORMATO, NO DEL PROTOCOLO.** (2026-09-05)
+
+§El principio manda verificar contra la salida servida. Le faltaba el caso en
+que **el canal no dice cuánto va a servir**, y ahí la comprobación obvia no es
+que esté mal: **es que no existe**.
+
+> **`Content-Length` es lo que permite a un cliente distinguir un stream
+> TERMINADO de uno CORTADO.** Sin él —y HTTP/2 no lo exige, porque su marco de
+> trama sustituye al `Transfer-Encoding`— las dos cosas se leen **exactamente
+> igual**: la conexión se cierra y el cliente da por bueno lo que llegó.
+
+**Y de ahí salen dos errores distintos, no uno:**
+
+1. **el de la MEDICIÓN** — planificar *«comprobaré el tamaño contra el que el
+   origen declara»* sobre un origen que no declara ninguno. La comprobación se
+   escribe, se lee razonable, y **no se puede ejecutar**;
+2. **el del DIAGNÓSTICO** — leer un artefacto truncado como *«el origen sirve
+   mal»*. El origen puede estar sirviendo perfectamente: lo que falta es el
+   número con el que el cliente se habría quejado.
+
+**La sustituta se saca del FORMATO, que sí lleva su propia contabilidad.** El
+trailer de gzip guarda **CRC32 e ISIZE**, así que `gzip -t` detecta el
+truncamiento **desde dentro** sin necesitar ninguna cabecera. Un `.tar` tiene
+sus bloques de fin; un ZIP, su directorio central. **El formato casi siempre
+sabe si está entero; el protocolo, a veces no.**
+
+**Y va con su testigo por las dos polaridades** (§regla 28d), o el verde no
+vale: `gzip -t` tiene que **pasar** sobre el íntegro **y fallar** sobre una
+copia truncada a mano. Medido: exit 0 y exit 1 sobre el mismo artefacto de
+1 320 MiB cortado a 100 MB.
+
+> **Operativamente, y cuesta una cabecera: antes de planificar una comprobación
+> de completitud, mira si el origen DECLARA el tamaño.** Si no lo declara, la
+> comprobación cambia de sitio —del protocolo al formato— y eso se escribe
+> **antes** de medir, no después de ver el resultado.
+>
+> ⚠ **Y el `etag` no lo sustituye por sí solo.** Identifica el artefacto y no
+> dice su tamaño: sirve para saber **si estás midiendo lo mismo entre
+> corridas** —que ya es mucho, y es lo que salva una medida tomada a caballo de
+> un push—, no para saber si llegó entero. Comprobar que es estable es una
+> pregunta; comprobar que el contenido es reproducible al byte, otra: eso lo
+> contesta el **sha256 de dos descargas**.
+
+---
+
+**67 · UNA OPCIÓN QUE SE LLAMA «REDUCIDA» PUEDE TRANSFERIR MÁS Y TARDAR MÁS —
+PORQUE OBLIGA AL SERVIDOR A GENERAR EL ARTEFACTO EN VEZ DE SERVIR EL QUE YA
+TIENE.** (2026-09-05)
+
+§*una API que toma una opción nombrada por la INTENCIÓN elige POR TI el valor
+concreto* avisa de que el **valor servido** puede no ser el que entiendes por
+esa palabra. Ésta es la misma raíz con el objeto cambiado: no el valor, **el
+COSTE**.
+
+> **`--depth 1`, `--filter`, `--sparse`, `?fields=`, un `SELECT` de dos
+> columnas: todos prometen menos por su nombre, y todos pueden costar más.** El
+> mecanismo es siempre el mismo — **una petición completa se sirve de un
+> artefacto PRE-CALCULADO; una recortada obliga a calcular uno a medida**, y
+> ese cálculo ni reutiliza el trabajo hecho ni sale gratis.
+
+**Medido:** `git clone --depth 1` transfiere **882.35 MiB** contra **878.60**
+del clone completo —**3.75 MiB MÁS**— y tarda **29.65 s contra 27.00**
+—**2.65 s MÁS**—, con **8 850 objetos MENOS** (7 449 contra 16 299). El clone
+completo se sirve del pack ya empaquetado, con sus cadenas de delta hechas; el
+shallow fuerza un pack nuevo que no puede reutilizarlas.
+
+**Las dos mitades operativas:**
+
+1. **el ahorro de una opción de recorte se MIDE, no se deduce de su nombre** —
+   y se miden **las dos magnitudes**, bytes y tiempo, porque pueden ir en
+   direcciones distintas. Aquí fueron en la misma, y la mala;
+2. **y el ahorro depende de que HAYA algo que recortar, lo cual es una
+   propiedad del repo, no de la opción.** Si una medida anterior ya dijo que no
+   lo hay —aquí, un multiplicador de versiones de **1.00** y **0 MiB de
+   historial muerto**—, la opción **no tiene de dónde ahorrar** y lo único que
+   queda es su coste. Es §*una regla derivada sobre un dominio donde el caso NO
+   SE DA está SIN PROBAR para ese caso*, leída al derecho: el dominio donde
+   `--depth 1` gana es aquél **con historial que podar**.
+
+> **Y el corolario de lectura, que es el que evita perseguir el instrumento:**
+> cuando el recorte salga MÁS CARO, la primera hipótesis **no** es que la
+> medición esté mal. Se cruza contra lo que se sabía del repo — si una medida
+> anterior ya predecía que no hay nada que podar, las dos **concuerdan**, y el
+> resultado raro es el esperado.
 
 ---
 ## Comandos

@@ -7993,20 +7993,77 @@ que devolviera 0 siempre pasaría igual.
 
 ---
 
-## CMS-11 · QUÉ SE HACE CON LOS 661 MiB DE `apps/web/public` — ⏳ **ABIERTA: EL REPARTO ESTÁ MEDIDO, LA DECISIÓN ES DEL PROPIETARIO** (2026-09-04, 146.ª)
+## CMS-11 · QUÉ SE HACE CON LOS 661 MiB DE `apps/web/public` — ⏳ **ABIERTA, PERO YA NO ES UNA DECISIÓN DE TAMAÑO** (2026-09-04, 146.ª · **reenunciada 2026-09-05, 147.ª**)
 
 **Qué se decide:** si `apps/web/public` se deja como está, se poda, se mueve a
-un volumen o se saca del repositorio. **No es una decisión de limpieza**:
-decide cómo llega el sitio al VPS y qué se transfiere en cada despliegue.
+un volumen o se saca del repositorio.
+
+> ⚠⚠ **LA 147.ª MIDIÓ LA ENTREGA EN EL VPS Y LA PREGUNTA CAMBIÓ DE ENUNCIADO.**
+> Esta ficha nació como *«qué se recorta para que el despliegue quepa»*. Los
+> **cuatro** caminos de entrega **completan**, así que **nada tiene que caber**:
+> lo que queda es una **optimización con su coste**, no un bloqueo. El reparto
+> de MiB de la 146.ª se conserva entero **como expediente** y sigue siendo
+> correcto — lo que ya no es cierto es que decida si el sitio puede llegar.
 
 **Esta ficha no elige.** Trae los candidatos con su coste medido, sus
 separadoras y **la operación de deshacer de cada uno** (§regla 23), que es lo
 único que impide que el signo se invierta al releerla.
 
-Ninguna cifra de aquí es una premisa heredada: las cinco derivaciones están
+Ninguna cifra de aquí es una premisa heredada: las derivaciones están
 congeladas en `docs/research/cola-larga/derivaciones/` —`paso0-146`,
 `solape-146`, `alcance-146`, `tarball-146`, `peso-tarball-146`,
-`coste-git-146`— con sus controles.
+`coste-git-146`, y de la 147.ª `paso0-147`, `pre-registro-entrega-147` y
+`caminos-147`— con sus controles.
+
+---
+
+### 0-bis · LO QUE LA 147.ª MIDIÓ EN EL VPS, Y POR QUÉ REESCRIBE LA PREGUNTA
+
+Cuatro caminos de entrega, corridos **en el VPS** (`caminos-147.sh`, congelado
+en `caminos-147.log`) y adjudicados aparte contra un pre-registro commiteado
+**antes** de medir (`1d0ced0`):
+
+| # | camino | transferido | tiempo | exits | ficheros | ¿completa? |
+|---|---|---|---|---|---|---|
+| 1 | TUBERÍA `curl \| tar -xz` | 1 320.30 MiB | **60.05 s** | curl 0 · tar 0 | 7 700/7 700 | **SÍ** |
+| 2 | SEPARADO `curl -o` + `tar -xzf` | 1 320.30 MiB | 81.99 s | 0 · 0 · 0 | 7 700/7 700 | **SÍ** |
+| 3 | **`git clone`** | **878.60 MiB** | **27.00 s** | 0 | 7 700/7 700 | **SÍ** |
+| 4 | `git clone --depth 1` | 882.35 MiB | 29.65 s | 0 | 7 700/7 700 | **SÍ** |
+
+Y los cuatro dejan **exactamente los mismos 1 914 654 037 bytes** en disco.
+«Completa» no es el exit: es el **cardinal** (§regla 61), y el instrumento que
+lo dice lleva su control por las dos polaridades — `gzip -t` **pasa** sobre el
+íntegro y **falla** sobre una copia truncada a 100 MB (§regla 28d).
+
+**Las tres consecuencias, en orden de peso:**
+
+1. **el tamaño NO impide la entrega.** El camino que el encargo marcó como
+   control positivo —la tubería, la forma que falló en Easypanel— entrega
+   1 320 MiB **íntegros en 60 s**. Con eso, ninguno de los cinco candidatos de
+   §4 es una precondición de nada: los cinco pasan de bloqueo a optimización;
+2. **`git clone` es el camino más barato Y el más rápido**, y no por poco:
+   **33.5 % menos de bytes** que el tarball (878.60 contra 1 320.30 MiB) y
+   **menos de la mitad de tiempo** (27.00 s contra 60.05). El §1(b) apuntaba
+   que el tercer camino —traer el repo al host— era el que quedaba abierto;
+   está medido y **el candidato ganador es git, sin tocar el tamaño de nada**;
+3. **y `--depth 1` NO ahorra: cuesta.** Transfiere **3.75 MiB MÁS** y tarda
+   **2.65 s MÁS** que el completo, con **8 850 objetos MENOS** (7 449 contra
+   16 299). No es una anomalía: es lo que **predecía el 1.00** de §5 — sin
+   historial muerto un shallow no tiene qué podar, y encima obliga al servidor
+   a generar un pack a medida en vez de servir el ya empaquetado.
+
+⚠ **Y LO QUE ESTO NO DICE, QUE ES LA MITAD QUE HAY QUE LEER:** los cuatro se
+corrieron **por SSH en el host**, y el fallo original ocurrió **dentro de la
+tubería de Easypanel**, que es otro entorno. Un «no falla» aquí **no refuta**
+que allí falle: deja el caso **SIN EJERCITAR**. Lo que sí queda demostrado es
+que **el fallo no es del camino ni del tamaño** — es del entorno, y ése está
+**SIN MEDIR** porque esta tanda no lo tocó.
+
+> **Y el resultado es más fuerte de lo que parece, no más débil:** el host
+> **no estaba ocioso**. Corrían **12 contenedores en producción** del
+> propietario (portal, hub-api, sales-tracker, desk, n8n, zoho-sync, dos pgweb,
+> landing-studio, dos DB y traefik) sobre **2 núcleos** y con **3.2 GB de RAM
+> ya en uso**. Los cuatro caminos completaron **compitiendo con todo eso**.
 
 ---
 
@@ -8070,13 +8127,25 @@ lo deciden, y son tres caminos distintos:
 | traer el **REPO** al host | **SÍ** | una vez, y en cada actualización | con B quien construye es el publicador **en el host**, así que el host necesita el árbol |
 
 > **CMS-10 decidió el modelo de PUBLICACIÓN, no el de ENTREGA DEL CÓDIGO.** Ese
-> tercer camino queda abierto, y es donde vive el fallo. Un `git clone` con
-> reintentos y reanudación no tiene el modo de fallo que tiene un tarball de
-> 1 320 MiB de un tirón — pero **eso no está medido** y se declara SIN PROBAR:
-> esta tanda no toca el VPS.
+> tercer camino queda abierto, y es donde vive el fallo.
+>
+> ✅ **MEDIDO POR LA 147.ª (§0-bis), y el resultado va más allá de lo que esta
+> frase esperaba.** Aquí decía que un `git clone` *«no tiene el modo de fallo
+> que tiene un tarball de 1 320 MiB de un tirón»* y lo declaraba SIN PROBAR.
+> Corridos los cuatro caminos en el VPS: **el tarball de un tirón TAMPOCO
+> falla** — la tubería entrega los 1 320 MiB íntegros en 60 s. Así que git no
+> gana por evitar un modo de fallo que no se reproduce: gana por **33.5 % menos
+> de bytes y menos de la mitad de tiempo**.
 
 **Consecuencia para el reparto: encoger `public/` es un arreglo por MAGNITUD,
-no por causa.** Baja la probabilidad del corte; no lo cierra.
+no por causa.**
+
+> ⚠ **Y la 147.ª lo sube un escalón, que es lo que cambia qué se hace con él:**
+> de *«arreglo por magnitud, no por causa»* a **«arreglo por magnitud que
+> además NO HACE FALTA para entregar»**. Si el mismo tarball llega íntegro por
+> los dos caminos medidos, el tamaño no es la variable que decide — y una
+> variable que no decide no se arregla encogiéndola. Los cinco candidatos de §4
+> siguen siendo ciertos **como optimización**; ninguno es ya una precondición.
 
 ---
 
@@ -8165,8 +8234,12 @@ Coste en **MiB de tarball**, que es la unidad que viaja. Punto de partida:
 3. **D y E atacan cosas distintas.** D reduce lo que la IMAGEN necesita; E
    reduce sólo el tarball, porque esos cubos **ya están fuera de la imagen**.
    Si el problema es el tarball, **E quita más que D y no toca el despliegue**;
-4. **y ninguno de los cinco cierra la causa medida** (§1: se corta la
-   transferencia). Todos bajan la probabilidad.
+4. **y ninguno de los cinco cierra la causa** — pero **por un motivo distinto
+   del que esta lista decía al escribirse.** La 146.ª razonaba que sólo bajaban
+   *la probabilidad del corte*; la 147.ª midió que **desde el host no hay corte
+   que bajar** (§0-bis: los cuatro caminos completan). Así que no es que se
+   queden cortos: es que **atacan una variable que no decide**. Siguen valiendo
+   como optimización de tiempo y de bytes, con su número intacto.
 
 ⚠ **D tiene un coste que el número no enseña: hoy `public/` llega al VPS
 DENTRO DE LA IMAGEN** (`Dockerfile:137`). Sacarlo del repo obliga a decidir por
@@ -8224,13 +8297,36 @@ carpeta».
 
 ### 6 · LO QUE ESTA FICHA NO CONTESTA, DECLARADO
 
-1. **si el VPS puede hacer `git clone`** — la tanda no toca el VPS. Es la
-   separadora que decidiría si el tercer camino de §1(b) se puede cambiar sin
-   tocar el tamaño de nada, y está **SIN MEDIR**;
-2. **cuánto tarda el clon contra el tarball desde el VPS** — ídem;
+1. ~~**si el VPS puede hacer `git clone`**~~ — ✅ **CERRADO por la 147.ª**:
+   sí, **878.60 MiB en 27.00 s**, con los 7 700 ficheros y el SHA correcto;
+2. ~~**cuánto tarda el clon contra el tarball desde el VPS**~~ — ✅ **CERRADO**:
+   **27.00 s** contra **60.05 s** (tubería) y **81.99 s** (separado);
 3. **si el render puede pedir por el canal de `media/`** sin regresión de
    fidelidad — es la precondición de C, y no se ha probado;
 4. **las 357 rutas citadas SIN fichero** que la medición del alcance destapó
    (muestra concentrada en 2024–2025, o sea contenido posterior a la captura):
    es un hallazgo de §regla 61 que **no es de esta tanda** y queda fichado con
    su cardinal en `PENDIENTES-QA.md`.
+
+**Y lo que la 147.ª añade a esta lista al cerrar los dos primeros** — porque
+una guarda que se re-declara publica **lo que ahora cubre Y lo que sigue sin
+probar**, no sólo el hueco recién tapado (§regla 25):
+
+5. ⚠ **POR QUÉ FALLA EASYPANEL — SIN MEDIR, y es ahora la incógnita
+   principal.** Los cuatro caminos se corrieron **por SSH en el host**; el
+   `gzip: unexpected end of file` original ocurrió **dentro de la tubería de
+   Easypanel**. Son dos entornos, así que el «no falla» del host **no refuta**
+   el fallo de allí: lo deja **sin ejercitar**. Las candidatas enumeradas, para
+   que la tanda que lo mida no empiece por la primera que se le ocurra
+   (§*antes de fichar una indeterminación, enumera las separadoras*):
+   memoria del constructor (hay **12 contenedores vivos y 3.2 GB ya en uso**
+   de 7.9), **2 núcleos** compartidos, `Build Cache: 0 B`, timeouts propios de
+   Easypanel, y el contexto de build que la 145.ª ya midió inflado por el
+   anclaje del `.dockerignore` (§regla 58);
+6. **si cambiar la entrega a `git clone` es un cambio de UNA LÍNEA o de una
+   tanda** — el número dice que gana (33.5 % menos, menos de la mitad de
+   tiempo), y **cuánto cuesta cablearlo en Easypanel no está medido**;
+7. **si el fallo se reproduce siquiera hoy.** El original está reportado, no
+   re-observado: la 147.ª no lo vio ni una vez en cuatro caminos. Antes de
+   arreglar nada conviene saber **si sigue vivo**, porque un defecto que no se
+   reproduce y un defecto arreglado se escriben igual (§regla 28d).
